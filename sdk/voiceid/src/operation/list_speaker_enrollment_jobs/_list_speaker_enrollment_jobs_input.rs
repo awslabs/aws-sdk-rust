@@ -36,16 +36,14 @@ impl ListSpeakerEnrollmentJobsInput {
 }
 impl ListSpeakerEnrollmentJobsInput {
     /// Creates a new builder-style object to manufacture [`ListSpeakerEnrollmentJobsInput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput).
-    pub fn builder() -> crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsInputBuilder {
         crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSpeakerEnrollmentJobsInput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSpeakerEnrollmentJobsInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::SpeakerEnrollmentJobStatus>,
@@ -73,17 +71,12 @@ impl ListSpeakerEnrollmentJobsInputBuilder {
         self
     }
     /// <p>Provides the status of your speaker enrollment Job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SpeakerEnrollmentJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::SpeakerEnrollmentJobStatus>) -> Self {
         self.job_status = input;
         self
     }
     /// <p>Provides the status of your speaker enrollment Job.</p>
-    pub fn get_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpeakerEnrollmentJobStatus> {
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::SpeakerEnrollmentJobStatus> {
         &self.job_status
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.</p>
@@ -121,13 +114,11 @@ impl ListSpeakerEnrollmentJobsInputBuilder {
         crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput {
-                domain_id: self.domain_id,
-                job_status: self.job_status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput {
+            domain_id: self.domain_id,
+            job_status: self.job_status,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

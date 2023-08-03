@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`profiling_groups(Option<Vec<ProfilingGroupDescription>>)`](crate::operation::list_profiling_groups::ListProfilingGroupsOutput::profiling_groups): <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profiling_groups::ListProfilingGroupsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<ListProfilingGroupsError>`](crate::operation::list_profiling_groups::ListProfilingGroupsError)
-    pub fn list_profiling_groups(
-        &self,
-    ) -> crate::operation::list_profiling_groups::builders::ListProfilingGroupsFluentBuilder {
-        crate::operation::list_profiling_groups::builders::ListProfilingGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_profiling_groups(&self) -> crate::operation::list_profiling_groups::builders::ListProfilingGroupsFluentBuilder {
+        crate::operation::list_profiling_groups::builders::ListProfilingGroupsFluentBuilder::new(self.handle.clone())
     }
 }

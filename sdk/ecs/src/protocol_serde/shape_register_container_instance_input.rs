@@ -7,14 +7,10 @@ pub fn ser_register_container_instance_input(
         object.key("cluster").string(var_1.as_str());
     }
     if let Some(var_2) = &input.instance_identity_document {
-        object
-            .key("instanceIdentityDocument")
-            .string(var_2.as_str());
+        object.key("instanceIdentityDocument").string(var_2.as_str());
     }
     if let Some(var_3) = &input.instance_identity_document_signature {
-        object
-            .key("instanceIdentityDocumentSignature")
-            .string(var_3.as_str());
+        object.key("instanceIdentityDocumentSignature").string(var_3.as_str());
     }
     if let Some(var_4) = &input.total_resources {
         let mut array_5 = object.key("totalResources").start_array();
@@ -55,10 +51,7 @@ pub fn ser_register_container_instance_input(
             {
                 #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_platform_device::ser_platform_device(
-                    &mut object_18,
-                    item_17,
-                )?;
+                crate::protocol_serde::shape_platform_device::ser_platform_device(&mut object_18, item_17)?;
                 object_18.finish();
             }
         }

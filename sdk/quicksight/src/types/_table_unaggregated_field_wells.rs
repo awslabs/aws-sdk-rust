@@ -23,9 +23,7 @@ impl TableUnaggregatedFieldWells {
 
 /// A builder for [`TableUnaggregatedFieldWells`](crate::types::TableUnaggregatedFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableUnaggregatedFieldWellsBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::UnaggregatedField>>,
 }
@@ -42,23 +40,16 @@ impl TableUnaggregatedFieldWellsBuilder {
         self
     }
     /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnaggregatedField>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnaggregatedField>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnaggregatedField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnaggregatedField>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`TableUnaggregatedFieldWells`](crate::types::TableUnaggregatedFieldWells).
     pub fn build(self) -> crate::types::TableUnaggregatedFieldWells {
-        crate::types::TableUnaggregatedFieldWells {
-            values: self.values,
-        }
+        crate::types::TableUnaggregatedFieldWells { values: self.values }
     }
 }

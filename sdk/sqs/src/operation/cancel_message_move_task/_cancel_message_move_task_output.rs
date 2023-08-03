@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelMessageMoveTaskOutput {
 }
 impl CancelMessageMoveTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelMessageMoveTaskOutput`](crate::operation::cancel_message_move_task::CancelMessageMoveTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_message_move_task::builders::CancelMessageMoveTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_message_move_task::builders::CancelMessageMoveTaskOutputBuilder {
         crate::operation::cancel_message_move_task::builders::CancelMessageMoveTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelMessageMoveTaskOutput`](crate::operation::cancel_message_move_task::CancelMessageMoveTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelMessageMoveTaskOutputBuilder {
     pub(crate) approximate_number_of_messages_moved: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CancelMessageMoveTaskOutputBuilder {
         self
     }
     /// <p>The approximate number of messages already moved to the destination queue.</p>
-    pub fn set_approximate_number_of_messages_moved(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_approximate_number_of_messages_moved(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_number_of_messages_moved = input;
         self
     }
@@ -67,9 +60,7 @@ impl CancelMessageMoveTaskOutputBuilder {
     /// Consumes the builder and constructs a [`CancelMessageMoveTaskOutput`](crate::operation::cancel_message_move_task::CancelMessageMoveTaskOutput).
     pub fn build(self) -> crate::operation::cancel_message_move_task::CancelMessageMoveTaskOutput {
         crate::operation::cancel_message_move_task::CancelMessageMoveTaskOutput {
-            approximate_number_of_messages_moved: self
-                .approximate_number_of_messages_moved
-                .unwrap_or_default(),
+            approximate_number_of_messages_moved: self.approximate_number_of_messages_moved.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

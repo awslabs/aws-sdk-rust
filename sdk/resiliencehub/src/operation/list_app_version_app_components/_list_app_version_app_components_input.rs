@@ -36,16 +36,14 @@ impl ListAppVersionAppComponentsInput {
 }
 impl ListAppVersionAppComponentsInput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionAppComponentsInput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsInput).
-    pub fn builder() -> crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsInputBuilder{
+    pub fn builder() -> crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsInputBuilder {
         crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppVersionAppComponentsInput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppVersionAppComponentsInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -116,13 +114,11 @@ impl ListAppVersionAppComponentsInputBuilder {
         crate::operation::list_app_version_app_components::ListAppVersionAppComponentsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsInput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_app_version_app_components::ListAppVersionAppComponentsInput {
+            app_arn: self.app_arn,
+            app_version: self.app_version,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

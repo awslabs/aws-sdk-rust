@@ -23,9 +23,7 @@ impl StreamModeDetails {
 
 /// A builder for [`StreamModeDetails`](crate::types::StreamModeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamModeDetailsBuilder {
     pub(crate) stream_mode: ::std::option::Option<crate::types::StreamMode>,
 }
@@ -36,10 +34,7 @@ impl StreamModeDetailsBuilder {
         self
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn set_stream_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamMode>,
-    ) -> Self {
+    pub fn set_stream_mode(mut self, input: ::std::option::Option<crate::types::StreamMode>) -> Self {
         self.stream_mode = input;
         self
     }

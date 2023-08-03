@@ -37,9 +37,7 @@ impl DescribeAutoMLJobV2FluentBuilder {
         }
     }
     /// Access the DescribeAutoMLJobV2 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMlJobV2InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMlJobV2InputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeAutoMLJobV2FluentBuilder {
             crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeAutoMLJobV2FluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeAutoMLJobV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeAutoMLJobV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeAutoMLJobV2FluentBuilder {
             crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error>,
     > {
         self.customize_middleware().await
     }
     /// <p>Requests information about an AutoML job V2 using its unique name.</p>
-    pub fn auto_ml_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_ml_job_name(input.into());
         self
     }
     /// <p>Requests information about an AutoML job V2 using its unique name.</p>
-    pub fn set_auto_ml_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_ml_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_ml_job_name(input);
         self
     }

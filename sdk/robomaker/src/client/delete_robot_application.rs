@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`application_version(impl ::std::convert::Into<String>)`](crate::operation::delete_robot_application::builders::DeleteRobotApplicationFluentBuilder::application_version) / [`set_application_version(Option<String>)`](crate::operation::delete_robot_application::builders::DeleteRobotApplicationFluentBuilder::set_application_version): <p>The version of the robot application to delete.</p>
     /// - On success, responds with [`DeleteRobotApplicationOutput`](crate::operation::delete_robot_application::DeleteRobotApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteRobotApplicationError>`](crate::operation::delete_robot_application::DeleteRobotApplicationError)
-    pub fn delete_robot_application(
-        &self,
-    ) -> crate::operation::delete_robot_application::builders::DeleteRobotApplicationFluentBuilder
-    {
+    pub fn delete_robot_application(&self) -> crate::operation::delete_robot_application::builders::DeleteRobotApplicationFluentBuilder {
         crate::operation::delete_robot_application::builders::DeleteRobotApplicationFluentBuilder::new(self.handle.clone())
     }
 }

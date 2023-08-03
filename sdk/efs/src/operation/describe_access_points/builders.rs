@@ -38,9 +38,7 @@ impl DescribeAccessPointsFluentBuilder {
         }
     }
     /// Access the DescribeAccessPoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_access_points::builders::DescribeAccessPointsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_access_points::builders::DescribeAccessPointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeAccessPointsFluentBuilder {
             crate::operation::describe_access_points::DescribeAccessPoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_access_points::DescribeAccessPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_access_points::DescribeAccessPointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeAccessPointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeAccessPointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_access_points::DescribeAccessPointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_access_points::DescribeAccessPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_access_points::DescribeAccessPointsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeAccessPointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_access_points::DescribeAccessPointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_access_points::DescribeAccessPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_access_points::DescribeAccessPointsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl DescribeAccessPointsFluentBuilder {
             crate::operation::describe_access_points::DescribeAccessPoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_access_points::DescribeAccessPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_access_points::DescribeAccessPointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator {
-        crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator {
+        crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator::new(self.handle, self.inner)
     }
     /// <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -163,18 +145,12 @@ impl DescribeAccessPointsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
-    pub fn access_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_point_id(input.into());
         self
     }
     /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
-    pub fn set_access_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_point_id(input);
         self
     }
@@ -183,18 +159,12 @@ impl DescribeAccessPointsFluentBuilder {
         self.inner.get_access_point_id()
     }
     /// <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }

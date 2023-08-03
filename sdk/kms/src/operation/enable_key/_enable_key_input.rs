@@ -36,9 +36,7 @@ impl EnableKeyInput {
 
 /// A builder for [`EnableKeyInput`](crate::operation::enable_key::EnableKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableKeyInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
@@ -79,14 +77,7 @@ impl EnableKeyInputBuilder {
         &self.key_id
     }
     /// Consumes the builder and constructs a [`EnableKeyInput`](crate::operation::enable_key::EnableKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_key::EnableKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::enable_key::EnableKeyInput {
-            key_id: self.key_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_key::EnableKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::enable_key::EnableKeyInput { key_id: self.key_id })
     }
 }

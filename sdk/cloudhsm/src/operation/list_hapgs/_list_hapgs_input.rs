@@ -22,9 +22,7 @@ impl ListHapgsInput {
 
 /// A builder for [`ListHapgsInput`](crate::operation::list_hapgs::ListHapgsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHapgsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl ListHapgsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListHapgsInput`](crate::operation::list_hapgs::ListHapgsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_hapgs::ListHapgsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_hapgs::ListHapgsInput {
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hapgs::ListHapgsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_hapgs::ListHapgsInput { next_token: self.next_token })
     }
 }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetScalingPlanResourceForecastDataOut
 }
 impl GetScalingPlanResourceForecastDataOutput {
     /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataOutput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput).
-    pub fn builder() -> crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataOutputBuilder{
+    pub fn builder() -> crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataOutputBuilder {
         crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetScalingPlanResourceForecastDataOutput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastDataOutputBuilder {
     pub(crate) datapoints: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl GetScalingPlanResourceForecastDataOutputBuilder {
         self
     }
     /// <p>The data points to return.</p>
-    pub fn set_datapoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
-    ) -> Self {
+    pub fn set_datapoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>) -> Self {
         self.datapoints = input;
         self
     }
     /// <p>The data points to return.</p>
-    pub fn get_datapoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Datapoint>> {
+    pub fn get_datapoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Datapoint>> {
         &self.datapoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +64,9 @@ impl GetScalingPlanResourceForecastDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetScalingPlanResourceForecastDataOutput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput).
-    pub fn build(self) -> crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput{
+    pub fn build(self) -> crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput {
         crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput {
-            datapoints: self.datapoints
-            ,
+            datapoints: self.datapoints,
             _request_id: self._request_id,
         }
     }

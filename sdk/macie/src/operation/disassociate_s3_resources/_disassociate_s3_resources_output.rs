@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for DisassociateS3ResourcesOutput {
 }
 impl DisassociateS3ResourcesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateS3ResourcesOutput`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesOutputBuilder {
         crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateS3ResourcesOutput`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateS3ResourcesOutputBuilder {
-    pub(crate) failed_s3_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>,
+    pub(crate) failed_s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>,
     _request_id: Option<String>,
 }
 impl DisassociateS3ResourcesOutputBuilder {
@@ -51,17 +46,12 @@ impl DisassociateS3ResourcesOutputBuilder {
         self
     }
     /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
-    pub fn set_failed_s3_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>,
-    ) -> Self {
+    pub fn set_failed_s3_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>) -> Self {
         self.failed_s3_resources = input;
         self
     }
     /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
-    pub fn get_failed_s3_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>> {
+    pub fn get_failed_s3_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>> {
         &self.failed_s3_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +64,7 @@ impl DisassociateS3ResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateS3ResourcesOutput`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput {
+    pub fn build(self) -> crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput {
         crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput {
             failed_s3_resources: self.failed_s3_resources,
             _request_id: self._request_id,

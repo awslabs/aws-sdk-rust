@@ -37,9 +37,7 @@ impl UpdateResourcePolicyFluentBuilder {
         }
     }
     /// Access the UpdateResourcePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resource_policy::builders::UpdateResourcePolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_resource_policy::builders::UpdateResourcePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateResourcePolicyFluentBuilder {
             crate::operation::update_resource_policy::UpdateResourcePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_policy::UpdateResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_policy::UpdateResourcePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateResourcePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateResourcePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_policy::UpdateResourcePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_policy::UpdateResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_policy::UpdateResourcePolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateResourcePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_policy::UpdateResourcePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_policy::UpdateResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_policy::UpdateResourcePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateResourcePolicyFluentBuilder {
             crate::operation::update_resource_policy::UpdateResourcePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_policy::UpdateResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_policy::UpdateResourcePolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -155,19 +142,13 @@ impl UpdateResourcePolicyFluentBuilder {
     }
     /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    pub fn expected_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_revision_id(input.into());
         self
     }
     /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    pub fn set_expected_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_revision_id(input);
         self
     }

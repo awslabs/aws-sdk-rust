@@ -23,9 +23,7 @@ impl ExportReadSet {
 
 /// A builder for [`ExportReadSet`](crate::types::ExportReadSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportReadSetBuilder {
     pub(crate) read_set_id: ::std::option::Option<::std::string::String>,
 }

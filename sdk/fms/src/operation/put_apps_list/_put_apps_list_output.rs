@@ -35,9 +35,7 @@ impl PutAppsListOutput {
 
 /// A builder for [`PutAppsListOutput`](crate::operation::put_apps_list::PutAppsListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppsListOutputBuilder {
     pub(crate) apps_list: ::std::option::Option<crate::types::AppsListData>,
     pub(crate) apps_list_arn: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl PutAppsListOutputBuilder {
         self
     }
     /// <p>The details of the Firewall Manager applications list.</p>
-    pub fn set_apps_list(
-        mut self,
-        input: ::std::option::Option<crate::types::AppsListData>,
-    ) -> Self {
+    pub fn set_apps_list(mut self, input: ::std::option::Option<crate::types::AppsListData>) -> Self {
         self.apps_list = input;
         self
     }
@@ -62,18 +57,12 @@ impl PutAppsListOutputBuilder {
         &self.apps_list
     }
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
-    pub fn apps_list_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn apps_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.apps_list_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
-    pub fn set_apps_list_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_apps_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apps_list_arn = input;
         self
     }

@@ -10,10 +10,7 @@ impl GetResponsePlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_response_plan::GetResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_response_plan::GetResponsePlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_response_plan::GetResponsePlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_response_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetResponsePlanFluentBuilder {
         }
     }
     /// Access the GetResponsePlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_response_plan::builders::GetResponsePlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_response_plan::builders::GetResponsePlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetResponsePlanFluentBuilder {
             crate::operation::get_response_plan::GetResponsePlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_response_plan::GetResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_response_plan::GetResponsePlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetResponsePlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetResponsePlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_response_plan::GetResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_response_plan::GetResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_response_plan::GetResponsePlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetResponsePlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_response_plan::GetResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_response_plan::GetResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_response_plan::GetResponsePlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetResponsePlanFluentBuilder {
             crate::operation::get_response_plan::GetResponsePlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_response_plan::GetResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_response_plan::GetResponsePlanError>,
     > {
         self.customize_middleware().await
     }

@@ -67,33 +67,24 @@ impl NodeGroupConfiguration {
 
 /// A builder for [`NodeGroupConfiguration`](crate::types::NodeGroupConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeGroupConfigurationBuilder {
     pub(crate) node_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) slots: ::std::option::Option<::std::string::String>,
     pub(crate) replica_count: ::std::option::Option<i32>,
     pub(crate) primary_availability_zone: ::std::option::Option<::std::string::String>,
-    pub(crate) replica_availability_zones:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replica_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) primary_outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replica_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NodeGroupConfigurationBuilder {
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
-    pub fn node_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
-    pub fn set_node_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_group_id = input;
         self
     }
@@ -133,18 +124,12 @@ impl NodeGroupConfigurationBuilder {
         &self.replica_count
     }
     /// <p>The Availability Zone where the primary node of this node group (shard) is launched.</p>
-    pub fn primary_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone where the primary node of this node group (shard) is launched.</p>
-    pub fn set_primary_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_availability_zone = input;
         self
     }
@@ -157,42 +142,28 @@ impl NodeGroupConfigurationBuilder {
     /// To override the contents of this collection use [`set_replica_availability_zones`](Self::set_replica_availability_zones).
     ///
     /// <p>A list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not specified.</p>
-    pub fn replica_availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replica_availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replica_availability_zones.unwrap_or_default();
         v.push(input.into());
         self.replica_availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not specified.</p>
-    pub fn set_replica_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replica_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replica_availability_zones = input;
         self
     }
     /// <p>A list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not specified.</p>
-    pub fn get_replica_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replica_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replica_availability_zones
     }
     /// <p>The outpost ARN of the primary node.</p>
-    pub fn primary_outpost_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The outpost ARN of the primary node.</p>
-    pub fn set_primary_outpost_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_outpost_arn = input;
         self
     }
@@ -205,27 +176,19 @@ impl NodeGroupConfigurationBuilder {
     /// To override the contents of this collection use [`set_replica_outpost_arns`](Self::set_replica_outpost_arns).
     ///
     /// <p>The outpost ARN of the node replicas.</p>
-    pub fn replica_outpost_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replica_outpost_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replica_outpost_arns.unwrap_or_default();
         v.push(input.into());
         self.replica_outpost_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The outpost ARN of the node replicas.</p>
-    pub fn set_replica_outpost_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replica_outpost_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replica_outpost_arns = input;
         self
     }
     /// <p>The outpost ARN of the node replicas.</p>
-    pub fn get_replica_outpost_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replica_outpost_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replica_outpost_arns
     }
     /// Consumes the builder and constructs a [`NodeGroupConfiguration`](crate::types::NodeGroupConfiguration).

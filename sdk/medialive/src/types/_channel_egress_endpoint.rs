@@ -23,9 +23,7 @@ impl ChannelEgressEndpoint {
 
 /// A builder for [`ChannelEgressEndpoint`](crate::types::ChannelEgressEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelEgressEndpointBuilder {
     pub(crate) source_ip: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ChannelEgressEndpointBuilder {
     }
     /// Consumes the builder and constructs a [`ChannelEgressEndpoint`](crate::types::ChannelEgressEndpoint).
     pub fn build(self) -> crate::types::ChannelEgressEndpoint {
-        crate::types::ChannelEgressEndpoint {
-            source_ip: self.source_ip,
-        }
+        crate::types::ChannelEgressEndpoint { source_ip: self.source_ip }
     }
 }

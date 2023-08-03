@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`total_count(Option<i32>)`](crate::operation::search_address_books::SearchAddressBooksOutput::total_count): <p>The total number of address books returned.</p>
     /// - On failure, responds with [`SdkError<SearchAddressBooksError>`](crate::operation::search_address_books::SearchAddressBooksError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn search_address_books(
-        &self,
-    ) -> crate::operation::search_address_books::builders::SearchAddressBooksFluentBuilder {
-        crate::operation::search_address_books::builders::SearchAddressBooksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_address_books(&self) -> crate::operation::search_address_books::builders::SearchAddressBooksFluentBuilder {
+        crate::operation::search_address_books::builders::SearchAddressBooksFluentBuilder::new(self.handle.clone())
     }
 }

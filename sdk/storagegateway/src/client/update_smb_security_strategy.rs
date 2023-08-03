@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSmbSecurityStrategyOutput`](crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<UpdateSMBSecurityStrategyError>`](crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategyError)
-    pub fn update_smb_security_strategy(&self) -> crate::operation::update_smb_security_strategy::builders::UpdateSMBSecurityStrategyFluentBuilder{
+    pub fn update_smb_security_strategy(&self) -> crate::operation::update_smb_security_strategy::builders::UpdateSMBSecurityStrategyFluentBuilder {
         crate::operation::update_smb_security_strategy::builders::UpdateSMBSecurityStrategyFluentBuilder::new(self.handle.clone())
     }
 }

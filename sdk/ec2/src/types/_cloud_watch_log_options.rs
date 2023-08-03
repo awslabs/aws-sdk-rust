@@ -41,9 +41,7 @@ impl CloudWatchLogOptions {
 
 /// A builder for [`CloudWatchLogOptions`](crate::types::CloudWatchLogOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogOptionsBuilder {
     pub(crate) log_enabled: ::std::option::Option<bool>,
     pub(crate) log_group_arn: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl CloudWatchLogOptionsBuilder {
         &self.log_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log group to send logs to.</p>
-    pub fn log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log group to send logs to.</p>
-    pub fn set_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_arn = input;
         self
     }
@@ -89,19 +81,13 @@ impl CloudWatchLogOptionsBuilder {
     }
     /// <p>Configured log format. Default format is <code>json</code>.</p>
     /// <p>Valid values: <code>json</code> | <code>text</code> </p>
-    pub fn log_output_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_output_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_output_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Configured log format. Default format is <code>json</code>.</p>
     /// <p>Valid values: <code>json</code> | <code>text</code> </p>
-    pub fn set_log_output_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_output_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_output_format = input;
         self
     }

@@ -10,10 +10,7 @@ impl GetSchemaVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_schema_version::GetSchemaVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_version::GetSchemaVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_version::GetSchemaVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_schema_version();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetSchemaVersionFluentBuilder {
         }
     }
     /// Access the GetSchemaVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_schema_version::builders::GetSchemaVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_schema_version::builders::GetSchemaVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetSchemaVersionFluentBuilder {
             crate::operation::get_schema_version::GetSchemaVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_version::GetSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_version::GetSchemaVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetSchemaVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetSchemaVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_schema_version::GetSchemaVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_version::GetSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_version::GetSchemaVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetSchemaVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_schema_version::GetSchemaVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_version::GetSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_version::GetSchemaVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetSchemaVersionFluentBuilder {
             crate::operation::get_schema_version::GetSchemaVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_version::GetSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_version::GetSchemaVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +133,12 @@ impl GetSchemaVersionFluentBuilder {
         self.inner.get_schema_id()
     }
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_version_id(input.into());
         self
     }
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_version_id(input);
         self
     }
@@ -174,17 +152,12 @@ impl GetSchemaVersionFluentBuilder {
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn set_schema_version_number(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
+    pub fn set_schema_version_number(mut self, input: ::std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
         self.inner = self.inner.set_schema_version_number(input);
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn get_schema_version_number(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+    pub fn get_schema_version_number(&self) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
         self.inner.get_schema_version_number()
     }
 }

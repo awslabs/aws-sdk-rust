@@ -26,7 +26,7 @@ impl DescribeCacheEngineVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCacheEngineVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cache_engine_versions::builders::DescribeCacheEngineVersionsInputBuilder,
+    inner: crate::operation::describe_cache_engine_versions::builders::DescribeCacheEngineVersionsInputBuilder,
 }
 impl DescribeCacheEngineVersionsFluentBuilder {
     /// Creates a new `DescribeCacheEngineVersions`.
@@ -37,7 +37,7 @@ impl DescribeCacheEngineVersionsFluentBuilder {
         }
     }
     /// Access the DescribeCacheEngineVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_cache_engine_versions::builders::DescribeCacheEngineVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_cache_engine_versions::builders::DescribeCacheEngineVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeCacheEngineVersionsFluentBuilder {
             crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeCacheEngineVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeCacheEngineVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeCacheEngineVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeCacheEngineVersionsFluentBuilder {
             crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_engine_versions::paginator::DescribeCacheEngineVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_cache_engine_versions::paginator::DescribeCacheEngineVersionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_cache_engine_versions::paginator::DescribeCacheEngineVersionsPaginator {
         crate::operation::describe_cache_engine_versions::paginator::DescribeCacheEngineVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code> </p>
@@ -142,19 +131,13 @@ impl DescribeCacheEngineVersionsFluentBuilder {
     }
     /// <p>The cache engine version to return.</p>
     /// <p>Example: <code>1.4.14</code> </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The cache engine version to return.</p>
     /// <p>Example: <code>1.4.14</code> </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -171,10 +154,7 @@ impl DescribeCacheEngineVersionsFluentBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn cache_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_parameter_group_family(input.into());
         self
     }
@@ -186,10 +166,7 @@ impl DescribeCacheEngineVersionsFluentBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn set_cache_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_parameter_group_family(input);
         self
     }
@@ -201,9 +178,7 @@ impl DescribeCacheEngineVersionsFluentBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn get_cache_parameter_group_family(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cache_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_parameter_group_family()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>

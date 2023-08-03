@@ -43,9 +43,7 @@ impl ListProfilesInput {
 
 /// A builder for [`ListProfilesInput`](crate::operation::list_profiles::ListProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfilesInputBuilder {
     pub(crate) profile_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) profile_owner_type: ::std::option::Option<crate::types::ProfileOwnerType>,
@@ -54,18 +52,12 @@ pub struct ListProfilesInputBuilder {
 }
 impl ListProfilesInputBuilder {
     /// <p>Prefix for profile name.</p>
-    pub fn profile_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Prefix for profile name.</p>
-    pub fn set_profile_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_name_prefix = input;
         self
     }
@@ -79,10 +71,7 @@ impl ListProfilesInputBuilder {
         self
     }
     /// <p>Profile owner type.</p>
-    pub fn set_profile_owner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileOwnerType>,
-    ) -> Self {
+    pub fn set_profile_owner_type(mut self, input: ::std::option::Option<crate::types::ProfileOwnerType>) -> Self {
         self.profile_owner_type = input;
         self
     }
@@ -119,12 +108,7 @@ impl ListProfilesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListProfilesInput`](crate::operation::list_profiles::ListProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_profiles::ListProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_profiles::ListProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_profiles::ListProfilesInput {
             profile_name_prefix: self.profile_name_prefix,
             profile_owner_type: self.profile_owner_type,

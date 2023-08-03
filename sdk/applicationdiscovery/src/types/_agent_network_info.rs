@@ -30,9 +30,7 @@ impl AgentNetworkInfo {
 
 /// A builder for [`AgentNetworkInfo`](crate::types::AgentNetworkInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentNetworkInfoBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) mac_address: ::std::option::Option<::std::string::String>,

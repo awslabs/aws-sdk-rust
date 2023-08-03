@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`portal_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_trust_store::builders::DisassociateTrustStoreFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_trust_store::builders::DisassociateTrustStoreFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
     /// - On success, responds with [`DisassociateTrustStoreOutput`](crate::operation::disassociate_trust_store::DisassociateTrustStoreOutput)
     /// - On failure, responds with [`SdkError<DisassociateTrustStoreError>`](crate::operation::disassociate_trust_store::DisassociateTrustStoreError)
-    pub fn disassociate_trust_store(
-        &self,
-    ) -> crate::operation::disassociate_trust_store::builders::DisassociateTrustStoreFluentBuilder
-    {
+    pub fn disassociate_trust_store(&self) -> crate::operation::disassociate_trust_store::builders::DisassociateTrustStoreFluentBuilder {
         crate::operation::disassociate_trust_store::builders::DisassociateTrustStoreFluentBuilder::new(self.handle.clone())
     }
 }

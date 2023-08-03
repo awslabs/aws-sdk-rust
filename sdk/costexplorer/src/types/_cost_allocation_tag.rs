@@ -37,9 +37,7 @@ impl CostAllocationTag {
 
 /// A builder for [`CostAllocationTag`](crate::types::CostAllocationTag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostAllocationTagBuilder {
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::CostAllocationTagType>,
@@ -66,10 +64,7 @@ impl CostAllocationTagBuilder {
         self
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CostAllocationTagType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CostAllocationTagType>) -> Self {
         self.r#type = input;
         self
     }
@@ -83,10 +78,7 @@ impl CostAllocationTagBuilder {
         self
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CostAllocationTagStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CostAllocationTagStatus>) -> Self {
         self.status = input;
         self
     }

@@ -10,10 +10,7 @@ impl TagDeliveryStreamInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::tag_delivery_stream::TagDeliveryStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_delivery_stream::TagDeliveryStreamError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_delivery_stream::TagDeliveryStreamError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.tag_delivery_stream();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl TagDeliveryStreamFluentBuilder {
         }
     }
     /// Access the TagDeliveryStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::tag_delivery_stream::builders::TagDeliveryStreamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::tag_delivery_stream::builders::TagDeliveryStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl TagDeliveryStreamFluentBuilder {
             crate::operation::tag_delivery_stream::TagDeliveryStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_delivery_stream::TagDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_delivery_stream::TagDeliveryStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl TagDeliveryStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl TagDeliveryStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_delivery_stream::TagDeliveryStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_delivery_stream::TagDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_delivery_stream::TagDeliveryStreamError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl TagDeliveryStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_delivery_stream::TagDeliveryStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_delivery_stream::TagDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_delivery_stream::TagDeliveryStreamError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl TagDeliveryStreamFluentBuilder {
             crate::operation::tag_delivery_stream::TagDeliveryStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_delivery_stream::TagDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_delivery_stream::TagDeliveryStreamError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
         self
     }
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
@@ -154,10 +132,7 @@ impl TagDeliveryStreamFluentBuilder {
         self
     }
     /// <p>A set of key-value pairs to use to create the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

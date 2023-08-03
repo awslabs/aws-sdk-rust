@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdatePublicSharingSettingsError>`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError)
-    pub fn update_public_sharing_settings(&self) -> crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsFluentBuilder{
+    pub fn update_public_sharing_settings(
+        &self,
+    ) -> crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsFluentBuilder {
         crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsFluentBuilder::new(self.handle.clone())
     }
 }

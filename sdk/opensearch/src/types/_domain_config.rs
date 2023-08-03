@@ -27,12 +27,10 @@ pub struct DomainConfig {
     pub cognito_options: ::std::option::Option<crate::types::CognitoOptionsStatus>,
     /// <p>Key-value pairs to enable encryption at rest.</p>
     #[doc(hidden)]
-    pub encryption_at_rest_options:
-        ::std::option::Option<crate::types::EncryptionAtRestOptionsStatus>,
+    pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptionsStatus>,
     /// <p>Whether node-to-node encryption is enabled or disabled.</p>
     #[doc(hidden)]
-    pub node_to_node_encryption_options:
-        ::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus>,
+    pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus>,
     /// <p>Key-value pairs to specify advanced configuration options. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced options</a>.</p>
     #[doc(hidden)]
     pub advanced_options: ::std::option::Option<crate::types::AdvancedOptionsStatus>,
@@ -44,8 +42,7 @@ pub struct DomainConfig {
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
     /// <p>Container for fine-grained access control settings for the domain.</p>
     #[doc(hidden)]
-    pub advanced_security_options:
-        ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
+    pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
     /// <p>Container for Auto-Tune settings for the domain.</p>
     #[doc(hidden)]
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsStatus>,
@@ -89,15 +86,11 @@ impl DomainConfig {
         self.cognito_options.as_ref()
     }
     /// <p>Key-value pairs to enable encryption at rest.</p>
-    pub fn encryption_at_rest_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionAtRestOptionsStatus> {
+    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::EncryptionAtRestOptionsStatus> {
         self.encryption_at_rest_options.as_ref()
     }
     /// <p>Whether node-to-node encryption is enabled or disabled.</p>
-    pub fn node_to_node_encryption_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NodeToNodeEncryptionOptionsStatus> {
+    pub fn node_to_node_encryption_options(&self) -> ::std::option::Option<&crate::types::NodeToNodeEncryptionOptionsStatus> {
         self.node_to_node_encryption_options.as_ref()
     }
     /// <p>Key-value pairs to specify advanced configuration options. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced options</a>.</p>
@@ -105,21 +98,15 @@ impl DomainConfig {
         self.advanced_options.as_ref()
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn log_publishing_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LogPublishingOptionsStatus> {
+    pub fn log_publishing_options(&self) -> ::std::option::Option<&crate::types::LogPublishingOptionsStatus> {
         self.log_publishing_options.as_ref()
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
-    pub fn domain_endpoint_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DomainEndpointOptionsStatus> {
+    pub fn domain_endpoint_options(&self) -> ::std::option::Option<&crate::types::DomainEndpointOptionsStatus> {
         self.domain_endpoint_options.as_ref()
     }
     /// <p>Container for fine-grained access control settings for the domain.</p>
-    pub fn advanced_security_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AdvancedSecurityOptionsStatus> {
+    pub fn advanced_security_options(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityOptionsStatus> {
         self.advanced_security_options.as_ref()
     }
     /// <p>Container for Auto-Tune settings for the domain.</p>
@@ -127,21 +114,15 @@ impl DomainConfig {
         self.auto_tune_options.as_ref()
     }
     /// <p>Container for information about the progress of an existing configuration change.</p>
-    pub fn change_progress_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
+    pub fn change_progress_details(&self) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
     /// <p>Container for off-peak window options for the domain.</p>
-    pub fn off_peak_window_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OffPeakWindowOptionsStatus> {
+    pub fn off_peak_window_options(&self) -> ::std::option::Option<&crate::types::OffPeakWindowOptionsStatus> {
         self.off_peak_window_options.as_ref()
     }
     /// <p>Software update options for the domain.</p>
-    pub fn software_update_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SoftwareUpdateOptionsStatus> {
+    pub fn software_update_options(&self) -> ::std::option::Option<&crate::types::SoftwareUpdateOptionsStatus> {
         self.software_update_options.as_ref()
     }
 }
@@ -154,9 +135,7 @@ impl DomainConfig {
 
 /// A builder for [`DomainConfig`](crate::types::DomainConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainConfigBuilder {
     pub(crate) engine_version: ::std::option::Option<crate::types::VersionStatus>,
     pub(crate) cluster_config: ::std::option::Option<crate::types::ClusterConfigStatus>,
@@ -165,23 +144,16 @@ pub struct DomainConfigBuilder {
     pub(crate) snapshot_options: ::std::option::Option<crate::types::SnapshotOptionsStatus>,
     pub(crate) vpc_options: ::std::option::Option<crate::types::VpcDerivedInfoStatus>,
     pub(crate) cognito_options: ::std::option::Option<crate::types::CognitoOptionsStatus>,
-    pub(crate) encryption_at_rest_options:
-        ::std::option::Option<crate::types::EncryptionAtRestOptionsStatus>,
-    pub(crate) node_to_node_encryption_options:
-        ::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus>,
+    pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptionsStatus>,
+    pub(crate) node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus>,
     pub(crate) advanced_options: ::std::option::Option<crate::types::AdvancedOptionsStatus>,
-    pub(crate) log_publishing_options:
-        ::std::option::Option<crate::types::LogPublishingOptionsStatus>,
-    pub(crate) domain_endpoint_options:
-        ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
-    pub(crate) advanced_security_options:
-        ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
+    pub(crate) log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptionsStatus>,
+    pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
+    pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsStatus>,
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
-    pub(crate) off_peak_window_options:
-        ::std::option::Option<crate::types::OffPeakWindowOptionsStatus>,
-    pub(crate) software_update_options:
-        ::std::option::Option<crate::types::SoftwareUpdateOptionsStatus>,
+    pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptionsStatus>,
+    pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptionsStatus>,
 }
 impl DomainConfigBuilder {
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
@@ -190,10 +162,7 @@ impl DomainConfigBuilder {
         self
     }
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<crate::types::VersionStatus>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<crate::types::VersionStatus>) -> Self {
         self.engine_version = input;
         self
     }
@@ -207,10 +176,7 @@ impl DomainConfigBuilder {
         self
     }
     /// <p>Container for the cluster configuration of a the domain.</p>
-    pub fn set_cluster_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterConfigStatus>,
-    ) -> Self {
+    pub fn set_cluster_config(mut self, input: ::std::option::Option<crate::types::ClusterConfigStatus>) -> Self {
         self.cluster_config = input;
         self
     }
@@ -224,10 +190,7 @@ impl DomainConfigBuilder {
         self
     }
     /// <p>Container for EBS options configured for the domain.</p>
-    pub fn set_ebs_options(
-        mut self,
-        input: ::std::option::Option<crate::types::EbsOptionsStatus>,
-    ) -> Self {
+    pub fn set_ebs_options(mut self, input: ::std::option::Option<crate::types::EbsOptionsStatus>) -> Self {
         self.ebs_options = input;
         self
     }
@@ -241,17 +204,12 @@ impl DomainConfigBuilder {
         self
     }
     /// <p>Specifies the access policies for the domain.</p>
-    pub fn set_access_policies(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPoliciesStatus>,
-    ) -> Self {
+    pub fn set_access_policies(mut self, input: ::std::option::Option<crate::types::AccessPoliciesStatus>) -> Self {
         self.access_policies = input;
         self
     }
     /// <p>Specifies the access policies for the domain.</p>
-    pub fn get_access_policies(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessPoliciesStatus> {
+    pub fn get_access_policies(&self) -> &::std::option::Option<crate::types::AccessPoliciesStatus> {
         &self.access_policies
     }
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
@@ -260,17 +218,12 @@ impl DomainConfigBuilder {
         self
     }
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
-    pub fn set_snapshot_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotOptionsStatus>,
-    ) -> Self {
+    pub fn set_snapshot_options(mut self, input: ::std::option::Option<crate::types::SnapshotOptionsStatus>) -> Self {
         self.snapshot_options = input;
         self
     }
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
-    pub fn get_snapshot_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotOptionsStatus> {
+    pub fn get_snapshot_options(&self) -> &::std::option::Option<crate::types::SnapshotOptionsStatus> {
         &self.snapshot_options
     }
     /// <p>The current VPC options for the domain and the status of any updates to their configuration.</p>
@@ -279,10 +232,7 @@ impl DomainConfigBuilder {
         self
     }
     /// <p>The current VPC options for the domain and the status of any updates to their configuration.</p>
-    pub fn set_vpc_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcDerivedInfoStatus>,
-    ) -> Self {
+    pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::VpcDerivedInfoStatus>) -> Self {
         self.vpc_options = input;
         self
     }
@@ -296,61 +246,40 @@ impl DomainConfigBuilder {
         self
     }
     /// <p>Container for Amazon Cognito options for the domain.</p>
-    pub fn set_cognito_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CognitoOptionsStatus>,
-    ) -> Self {
+    pub fn set_cognito_options(mut self, input: ::std::option::Option<crate::types::CognitoOptionsStatus>) -> Self {
         self.cognito_options = input;
         self
     }
     /// <p>Container for Amazon Cognito options for the domain.</p>
-    pub fn get_cognito_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CognitoOptionsStatus> {
+    pub fn get_cognito_options(&self) -> &::std::option::Option<crate::types::CognitoOptionsStatus> {
         &self.cognito_options
     }
     /// <p>Key-value pairs to enable encryption at rest.</p>
-    pub fn encryption_at_rest_options(
-        mut self,
-        input: crate::types::EncryptionAtRestOptionsStatus,
-    ) -> Self {
+    pub fn encryption_at_rest_options(mut self, input: crate::types::EncryptionAtRestOptionsStatus) -> Self {
         self.encryption_at_rest_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key-value pairs to enable encryption at rest.</p>
-    pub fn set_encryption_at_rest_options(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionAtRestOptionsStatus>,
-    ) -> Self {
+    pub fn set_encryption_at_rest_options(mut self, input: ::std::option::Option<crate::types::EncryptionAtRestOptionsStatus>) -> Self {
         self.encryption_at_rest_options = input;
         self
     }
     /// <p>Key-value pairs to enable encryption at rest.</p>
-    pub fn get_encryption_at_rest_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionAtRestOptionsStatus> {
+    pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::EncryptionAtRestOptionsStatus> {
         &self.encryption_at_rest_options
     }
     /// <p>Whether node-to-node encryption is enabled or disabled.</p>
-    pub fn node_to_node_encryption_options(
-        mut self,
-        input: crate::types::NodeToNodeEncryptionOptionsStatus,
-    ) -> Self {
+    pub fn node_to_node_encryption_options(mut self, input: crate::types::NodeToNodeEncryptionOptionsStatus) -> Self {
         self.node_to_node_encryption_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether node-to-node encryption is enabled or disabled.</p>
-    pub fn set_node_to_node_encryption_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus>,
-    ) -> Self {
+    pub fn set_node_to_node_encryption_options(mut self, input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus>) -> Self {
         self.node_to_node_encryption_options = input;
         self
     }
     /// <p>Whether node-to-node encryption is enabled or disabled.</p>
-    pub fn get_node_to_node_encryption_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus> {
+    pub fn get_node_to_node_encryption_options(&self) -> &::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus> {
         &self.node_to_node_encryption_options
     }
     /// <p>Key-value pairs to specify advanced configuration options. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced options</a>.</p>
@@ -359,83 +288,54 @@ impl DomainConfigBuilder {
         self
     }
     /// <p>Key-value pairs to specify advanced configuration options. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced options</a>.</p>
-    pub fn set_advanced_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AdvancedOptionsStatus>,
-    ) -> Self {
+    pub fn set_advanced_options(mut self, input: ::std::option::Option<crate::types::AdvancedOptionsStatus>) -> Self {
         self.advanced_options = input;
         self
     }
     /// <p>Key-value pairs to specify advanced configuration options. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced options</a>.</p>
-    pub fn get_advanced_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdvancedOptionsStatus> {
+    pub fn get_advanced_options(&self) -> &::std::option::Option<crate::types::AdvancedOptionsStatus> {
         &self.advanced_options
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn log_publishing_options(
-        mut self,
-        input: crate::types::LogPublishingOptionsStatus,
-    ) -> Self {
+    pub fn log_publishing_options(mut self, input: crate::types::LogPublishingOptionsStatus) -> Self {
         self.log_publishing_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn set_log_publishing_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LogPublishingOptionsStatus>,
-    ) -> Self {
+    pub fn set_log_publishing_options(mut self, input: ::std::option::Option<crate::types::LogPublishingOptionsStatus>) -> Self {
         self.log_publishing_options = input;
         self
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn get_log_publishing_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogPublishingOptionsStatus> {
+    pub fn get_log_publishing_options(&self) -> &::std::option::Option<crate::types::LogPublishingOptionsStatus> {
         &self.log_publishing_options
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
-    pub fn domain_endpoint_options(
-        mut self,
-        input: crate::types::DomainEndpointOptionsStatus,
-    ) -> Self {
+    pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptionsStatus) -> Self {
         self.domain_endpoint_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
-    pub fn set_domain_endpoint_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
-    ) -> Self {
+    pub fn set_domain_endpoint_options(mut self, input: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>) -> Self {
         self.domain_endpoint_options = input;
         self
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
-    pub fn get_domain_endpoint_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainEndpointOptionsStatus> {
+    pub fn get_domain_endpoint_options(&self) -> &::std::option::Option<crate::types::DomainEndpointOptionsStatus> {
         &self.domain_endpoint_options
     }
     /// <p>Container for fine-grained access control settings for the domain.</p>
-    pub fn advanced_security_options(
-        mut self,
-        input: crate::types::AdvancedSecurityOptionsStatus,
-    ) -> Self {
+    pub fn advanced_security_options(mut self, input: crate::types::AdvancedSecurityOptionsStatus) -> Self {
         self.advanced_security_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container for fine-grained access control settings for the domain.</p>
-    pub fn set_advanced_security_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
-    ) -> Self {
+    pub fn set_advanced_security_options(mut self, input: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>) -> Self {
         self.advanced_security_options = input;
         self
     }
     /// <p>Container for fine-grained access control settings for the domain.</p>
-    pub fn get_advanced_security_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsStatus> {
+    pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsStatus> {
         &self.advanced_security_options
     }
     /// <p>Container for Auto-Tune settings for the domain.</p>
@@ -444,17 +344,12 @@ impl DomainConfigBuilder {
         self
     }
     /// <p>Container for Auto-Tune settings for the domain.</p>
-    pub fn set_auto_tune_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoTuneOptionsStatus>,
-    ) -> Self {
+    pub fn set_auto_tune_options(mut self, input: ::std::option::Option<crate::types::AutoTuneOptionsStatus>) -> Self {
         self.auto_tune_options = input;
         self
     }
     /// <p>Container for Auto-Tune settings for the domain.</p>
-    pub fn get_auto_tune_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoTuneOptionsStatus> {
+    pub fn get_auto_tune_options(&self) -> &::std::option::Option<crate::types::AutoTuneOptionsStatus> {
         &self.auto_tune_options
     }
     /// <p>Container for information about the progress of an existing configuration change.</p>
@@ -463,61 +358,40 @@ impl DomainConfigBuilder {
         self
     }
     /// <p>Container for information about the progress of an existing configuration change.</p>
-    pub fn set_change_progress_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeProgressDetails>,
-    ) -> Self {
+    pub fn set_change_progress_details(mut self, input: ::std::option::Option<crate::types::ChangeProgressDetails>) -> Self {
         self.change_progress_details = input;
         self
     }
     /// <p>Container for information about the progress of an existing configuration change.</p>
-    pub fn get_change_progress_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
+    pub fn get_change_progress_details(&self) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
         &self.change_progress_details
     }
     /// <p>Container for off-peak window options for the domain.</p>
-    pub fn off_peak_window_options(
-        mut self,
-        input: crate::types::OffPeakWindowOptionsStatus,
-    ) -> Self {
+    pub fn off_peak_window_options(mut self, input: crate::types::OffPeakWindowOptionsStatus) -> Self {
         self.off_peak_window_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container for off-peak window options for the domain.</p>
-    pub fn set_off_peak_window_options(
-        mut self,
-        input: ::std::option::Option<crate::types::OffPeakWindowOptionsStatus>,
-    ) -> Self {
+    pub fn set_off_peak_window_options(mut self, input: ::std::option::Option<crate::types::OffPeakWindowOptionsStatus>) -> Self {
         self.off_peak_window_options = input;
         self
     }
     /// <p>Container for off-peak window options for the domain.</p>
-    pub fn get_off_peak_window_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::OffPeakWindowOptionsStatus> {
+    pub fn get_off_peak_window_options(&self) -> &::std::option::Option<crate::types::OffPeakWindowOptionsStatus> {
         &self.off_peak_window_options
     }
     /// <p>Software update options for the domain.</p>
-    pub fn software_update_options(
-        mut self,
-        input: crate::types::SoftwareUpdateOptionsStatus,
-    ) -> Self {
+    pub fn software_update_options(mut self, input: crate::types::SoftwareUpdateOptionsStatus) -> Self {
         self.software_update_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Software update options for the domain.</p>
-    pub fn set_software_update_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SoftwareUpdateOptionsStatus>,
-    ) -> Self {
+    pub fn set_software_update_options(mut self, input: ::std::option::Option<crate::types::SoftwareUpdateOptionsStatus>) -> Self {
         self.software_update_options = input;
         self
     }
     /// <p>Software update options for the domain.</p>
-    pub fn get_software_update_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SoftwareUpdateOptionsStatus> {
+    pub fn get_software_update_options(&self) -> &::std::option::Option<crate::types::SoftwareUpdateOptionsStatus> {
         &self.software_update_options
     }
     /// Consumes the builder and constructs a [`DomainConfig`](crate::types::DomainConfig).

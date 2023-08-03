@@ -17,9 +17,7 @@ impl GetRegistryScanningConfigurationOutput {
         self.registry_id.as_deref()
     }
     /// <p>The scanning configuration for the registry.</p>
-    pub fn scanning_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RegistryScanningConfiguration> {
+    pub fn scanning_configuration(&self) -> ::std::option::Option<&crate::types::RegistryScanningConfiguration> {
         self.scanning_configuration.as_ref()
     }
 }
@@ -30,20 +28,17 @@ impl ::aws_http::request_id::RequestId for GetRegistryScanningConfigurationOutpu
 }
 impl GetRegistryScanningConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetRegistryScanningConfigurationOutput`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput).
-    pub fn builder() -> crate::operation::get_registry_scanning_configuration::builders::GetRegistryScanningConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_registry_scanning_configuration::builders::GetRegistryScanningConfigurationOutputBuilder {
         crate::operation::get_registry_scanning_configuration::builders::GetRegistryScanningConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegistryScanningConfigurationOutput`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegistryScanningConfigurationOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
-    pub(crate) scanning_configuration:
-        ::std::option::Option<crate::types::RegistryScanningConfiguration>,
+    pub(crate) scanning_configuration: ::std::option::Option<crate::types::RegistryScanningConfiguration>,
     _request_id: Option<String>,
 }
 impl GetRegistryScanningConfigurationOutputBuilder {
@@ -62,25 +57,17 @@ impl GetRegistryScanningConfigurationOutputBuilder {
         &self.registry_id
     }
     /// <p>The scanning configuration for the registry.</p>
-    pub fn scanning_configuration(
-        mut self,
-        input: crate::types::RegistryScanningConfiguration,
-    ) -> Self {
+    pub fn scanning_configuration(mut self, input: crate::types::RegistryScanningConfiguration) -> Self {
         self.scanning_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scanning configuration for the registry.</p>
-    pub fn set_scanning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryScanningConfiguration>,
-    ) -> Self {
+    pub fn set_scanning_configuration(mut self, input: ::std::option::Option<crate::types::RegistryScanningConfiguration>) -> Self {
         self.scanning_configuration = input;
         self
     }
     /// <p>The scanning configuration for the registry.</p>
-    pub fn get_scanning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistryScanningConfiguration> {
+    pub fn get_scanning_configuration(&self) -> &::std::option::Option<crate::types::RegistryScanningConfiguration> {
         &self.scanning_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,15 +80,10 @@ impl GetRegistryScanningConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRegistryScanningConfigurationOutput`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput {
         crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput {
-            registry_id: self.registry_id
-            ,
-            scanning_configuration: self.scanning_configuration
-            ,
+            registry_id: self.registry_id,
+            scanning_configuration: self.scanning_configuration,
             _request_id: self._request_id,
         }
     }

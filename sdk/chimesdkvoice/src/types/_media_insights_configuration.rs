@@ -59,18 +59,12 @@ impl MediaInsightsConfigurationBuilder {
         &self.disabled
     }
     /// <p>The configuration's ARN.</p>
-    pub fn configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration's ARN.</p>
-    pub fn set_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_arn = input;
         self
     }

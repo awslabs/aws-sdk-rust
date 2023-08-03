@@ -10,10 +10,7 @@ impl StopApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_application::StopApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_application::StopApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_application::StopApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_application();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl StopApplicationFluentBuilder {
         }
     }
     /// Access the StopApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_application::builders::StopApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_application::builders::StopApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl StopApplicationFluentBuilder {
             crate::operation::stop_application::StopApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_application::StopApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_application::StopApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl StopApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl StopApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_application::StopApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_application::StopApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_application::StopApplicationError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl StopApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_application::StopApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_application::StopApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_application::StopApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl StopApplicationFluentBuilder {
             crate::operation::stop_application::StopApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_application::StopApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_application::StopApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Name of the running application to stop.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>Name of the running application to stop.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }

@@ -64,9 +64,7 @@ impl LineChartLineStyleSettings {
 
 /// A builder for [`LineChartLineStyleSettings`](crate::types::LineChartLineStyleSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineChartLineStyleSettingsBuilder {
     pub(crate) line_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) line_interpolation: ::std::option::Option<crate::types::LineInterpolation>,
@@ -80,10 +78,7 @@ impl LineChartLineStyleSettingsBuilder {
         self
     }
     /// <p>Configuration option that determines whether to show the line for the series.</p>
-    pub fn set_line_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_line_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.line_visibility = input;
         self
     }
@@ -107,10 +102,7 @@ impl LineChartLineStyleSettingsBuilder {
     /// <li> <p> <code>SMOOTH</code>: Show as a smooth curve.</p> </li>
     /// <li> <p> <code>STEPPED</code>: Show steps in line.</p> </li>
     /// </ul>
-    pub fn set_line_interpolation(
-        mut self,
-        input: ::std::option::Option<crate::types::LineInterpolation>,
-    ) -> Self {
+    pub fn set_line_interpolation(mut self, input: ::std::option::Option<crate::types::LineInterpolation>) -> Self {
         self.line_interpolation = input;
         self
     }
@@ -120,9 +112,7 @@ impl LineChartLineStyleSettingsBuilder {
     /// <li> <p> <code>SMOOTH</code>: Show as a smooth curve.</p> </li>
     /// <li> <p> <code>STEPPED</code>: Show steps in line.</p> </li>
     /// </ul>
-    pub fn get_line_interpolation(
-        &self,
-    ) -> &::std::option::Option<crate::types::LineInterpolation> {
+    pub fn get_line_interpolation(&self) -> &::std::option::Option<crate::types::LineInterpolation> {
         &self.line_interpolation
     }
     /// <p>Line style for line series.</p>
@@ -141,10 +131,7 @@ impl LineChartLineStyleSettingsBuilder {
     /// <li> <p> <code>DOTTED</code>: Show as a dotted line.</p> </li>
     /// <li> <p> <code>DASHED</code>: Show as a dashed line.</p> </li>
     /// </ul>
-    pub fn set_line_style(
-        mut self,
-        input: ::std::option::Option<crate::types::LineChartLineStyle>,
-    ) -> Self {
+    pub fn set_line_style(mut self, input: ::std::option::Option<crate::types::LineChartLineStyle>) -> Self {
         self.line_style = input;
         self
     }

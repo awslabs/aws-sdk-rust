@@ -36,9 +36,7 @@ impl PutOutcomeInput {
 
 /// A builder for [`PutOutcomeInput`](crate::operation::put_outcome::PutOutcomeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutOutcomeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl PutOutcomeInputBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -97,12 +92,7 @@ impl PutOutcomeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutOutcomeInput`](crate::operation::put_outcome::PutOutcomeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_outcome::PutOutcomeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_outcome::PutOutcomeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_outcome::PutOutcomeInput {
             name: self.name,
             description: self.description,

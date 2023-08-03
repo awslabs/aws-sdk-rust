@@ -29,18 +29,14 @@ impl GetResourcePoliciesInput {
 }
 impl GetResourcePoliciesInput {
     /// Creates a new builder-style object to manufacture [`GetResourcePoliciesInput`](crate::operation::get_resource_policies::GetResourcePoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder {
-        crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder {
+        crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePoliciesInput`](crate::operation::get_resource_policies::GetResourcePoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +88,12 @@ impl GetResourcePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`GetResourcePoliciesInput`](crate::operation::get_resource_policies::GetResourcePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_policies::GetResourcePoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_policies::GetResourcePoliciesInput {
-                resource_arn: self.resource_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resource_policies::GetResourcePoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_resource_policies::GetResourcePoliciesInput {
+            resource_arn: self.resource_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

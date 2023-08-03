@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetResolverDnssecConfigOutput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput) with field(s):
     ///   - [`resolver_dnssec_config(Option<ResolverDnssecConfig>)`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput::resolver_dnssec_config): <p>The information about a configuration for DNSSEC validation.</p>
     /// - On failure, responds with [`SdkError<GetResolverDnssecConfigError>`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError)
-    pub fn get_resolver_dnssec_config(
-        &self,
-    ) -> crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigFluentBuilder
-    {
+    pub fn get_resolver_dnssec_config(&self) -> crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigFluentBuilder {
         crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigFluentBuilder::new(self.handle.clone())
     }
 }

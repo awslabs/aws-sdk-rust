@@ -25,9 +25,7 @@ impl ContactListDestination {
     /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
-    pub fn contact_list_import_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContactListImportAction> {
+    pub fn contact_list_import_action(&self) -> ::std::option::Option<&crate::types::ContactListImportAction> {
         self.contact_list_import_action.as_ref()
     }
 }
@@ -40,28 +38,19 @@ impl ContactListDestination {
 
 /// A builder for [`ContactListDestination`](crate::types::ContactListDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactListDestinationBuilder {
     pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
-    pub(crate) contact_list_import_action:
-        ::std::option::Option<crate::types::ContactListImportAction>,
+    pub(crate) contact_list_import_action: ::std::option::Option<crate::types::ContactListImportAction>,
 }
 impl ContactListDestinationBuilder {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the contact list.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_list_name = input;
         self
     }
@@ -74,10 +63,7 @@ impl ContactListDestinationBuilder {
     /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
-    pub fn contact_list_import_action(
-        mut self,
-        input: crate::types::ContactListImportAction,
-    ) -> Self {
+    pub fn contact_list_import_action(mut self, input: crate::types::ContactListImportAction) -> Self {
         self.contact_list_import_action = ::std::option::Option::Some(input);
         self
     }
@@ -86,10 +72,7 @@ impl ContactListDestinationBuilder {
     /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
-    pub fn set_contact_list_import_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactListImportAction>,
-    ) -> Self {
+    pub fn set_contact_list_import_action(mut self, input: ::std::option::Option<crate::types::ContactListImportAction>) -> Self {
         self.contact_list_import_action = input;
         self
     }
@@ -98,9 +81,7 @@ impl ContactListDestinationBuilder {
     /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
-    pub fn get_contact_list_import_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactListImportAction> {
+    pub fn get_contact_list_import_action(&self) -> &::std::option::Option<crate::types::ContactListImportAction> {
         &self.contact_list_import_action
     }
     /// Consumes the builder and constructs a [`ContactListDestination`](crate::types::ContactListDestination).

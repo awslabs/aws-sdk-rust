@@ -9,10 +9,7 @@ pub fn ser_endpoint_batch_request(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_endpoint_batch_item::ser_endpoint_batch_item(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_endpoint_batch_item::ser_endpoint_batch_item(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

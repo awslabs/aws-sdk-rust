@@ -23,16 +23,14 @@ impl DescribeDomainChangeProgressInput {
 }
 impl DescribeDomainChangeProgressInput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressInput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput).
-    pub fn builder() -> crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder{
+    pub fn builder() -> crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder {
         crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDomainChangeProgressInput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) change_id: ::std::option::Option<::std::string::String>,
@@ -73,11 +71,9 @@ impl DescribeDomainChangeProgressInputBuilder {
         crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput {
-                domain_name: self.domain_name,
-                change_id: self.change_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput {
+            domain_name: self.domain_name,
+            change_id: self.change_id,
+        })
     }
 }

@@ -36,12 +36,9 @@ impl ListUserPoolsOutput {
 
 /// A builder for [`ListUserPoolsOutput`](crate::operation::list_user_pools::ListUserPoolsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserPoolsOutputBuilder {
-    pub(crate) user_pools:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>>,
+    pub(crate) user_pools: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +55,12 @@ impl ListUserPoolsOutputBuilder {
         self
     }
     /// <p>The user pools from the response to list users.</p>
-    pub fn set_user_pools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>>,
-    ) -> Self {
+    pub fn set_user_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>>) -> Self {
         self.user_pools = input;
         self
     }
     /// <p>The user pools from the response to list users.</p>
-    pub fn get_user_pools(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>> {
+    pub fn get_user_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>> {
         &self.user_pools
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>

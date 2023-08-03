@@ -30,9 +30,7 @@ impl DatasourcePackageUsageInfo {
 
 /// A builder for [`DatasourcePackageUsageInfo`](crate::types::DatasourcePackageUsageInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasourcePackageUsageInfoBuilder {
     pub(crate) volume_usage_in_bytes: ::std::option::Option<i64>,
     pub(crate) volume_usage_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -58,17 +56,12 @@ impl DatasourcePackageUsageInfoBuilder {
         self
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn set_volume_usage_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_volume_usage_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.volume_usage_update_time = input;
         self
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn get_volume_usage_update_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_volume_usage_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.volume_usage_update_time
     }
     /// Consumes the builder and constructs a [`DatasourcePackageUsageInfo`](crate::types::DatasourcePackageUsageInfo).

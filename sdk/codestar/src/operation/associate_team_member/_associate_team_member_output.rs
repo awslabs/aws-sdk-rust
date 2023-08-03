@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for AssociateTeamMemberOutput {
 }
 impl AssociateTeamMemberOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTeamMemberOutput`](crate::operation::associate_team_member::AssociateTeamMemberOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_team_member::builders::AssociateTeamMemberOutputBuilder {
-        crate::operation::associate_team_member::builders::AssociateTeamMemberOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::associate_team_member::builders::AssociateTeamMemberOutputBuilder {
+        crate::operation::associate_team_member::builders::AssociateTeamMemberOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTeamMemberOutput`](crate::operation::associate_team_member::AssociateTeamMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTeamMemberOutputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateTeamMemberOutputBuilder {
     /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }

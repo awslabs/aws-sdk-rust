@@ -46,16 +46,14 @@ impl CreateResolverQueryLogConfigInput {
 }
 impl CreateResolverQueryLogConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateResolverQueryLogConfigInput`](crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput).
-    pub fn builder() -> crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigInputBuilder{
+    pub fn builder() -> crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigInputBuilder {
         crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResolverQueryLogConfigInput`](crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResolverQueryLogConfigInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
@@ -83,10 +81,7 @@ impl CreateResolverQueryLogConfigInputBuilder {
     /// <li> <p> <b>CloudWatch Logs log group</b>: </p> <p> <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code> </p> </li>
     /// <li> <p> <b>Kinesis Data Firehose delivery stream</b>:</p> <p> <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code> </p> </li>
     /// </ul>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -96,10 +91,7 @@ impl CreateResolverQueryLogConfigInputBuilder {
     /// <li> <p> <b>CloudWatch Logs log group</b>: </p> <p> <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code> </p> </li>
     /// <li> <p> <b>Kinesis Data Firehose delivery stream</b>:</p> <p> <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code> </p> </li>
     /// </ul>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -113,18 +105,12 @@ impl CreateResolverQueryLogConfigInputBuilder {
         &self.destination_arn
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -144,10 +130,7 @@ impl CreateResolverQueryLogConfigInputBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -162,13 +145,11 @@ impl CreateResolverQueryLogConfigInputBuilder {
         crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput {
-                name: self.name,
-                destination_arn: self.destination_arn,
-                creator_request_id: self.creator_request_id,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput {
+            name: self.name,
+            destination_arn: self.destination_arn,
+            creator_request_id: self.creator_request_id,
+            tags: self.tags,
+        })
     }
 }

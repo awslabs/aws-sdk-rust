@@ -4,9 +4,7 @@ pub fn ser_aws_ec2_launch_template_data_capacity_reservation_specification_detai
     input: &crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.capacity_reservation_preference {
-        object
-            .key("CapacityReservationPreference")
-            .string(var_1.as_str());
+        object.key("CapacityReservationPreference").string(var_1.as_str());
     }
     if let Some(var_2) = &input.capacity_reservation_target {
         #[allow(unused_mut)]
@@ -24,12 +22,7 @@ pub(crate) fn de_aws_ec2_launch_template_data_capacity_reservation_specification
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -39,40 +32,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CapacityReservationPreference" => {
-                                builder = builder.set_capacity_reservation_preference(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CapacityReservationPreference" => {
+                            builder = builder.set_capacity_reservation_preference(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "CapacityReservationTarget" => {
-                                builder = builder.set_capacity_reservation_target(
+                            );
+                        }
+                        "CapacityReservationTarget" => {
+                            builder = builder.set_capacity_reservation_target(
                                     crate::protocol_serde::shape_aws_ec2_launch_template_data_capacity_reservation_specification_capacity_reservation_target_details::de_aws_ec2_launch_template_data_capacity_reservation_specification_capacity_reservation_target_details(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

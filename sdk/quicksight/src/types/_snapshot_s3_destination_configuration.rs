@@ -10,9 +10,7 @@ pub struct SnapshotS3DestinationConfiguration {
 }
 impl SnapshotS3DestinationConfiguration {
     /// <p>A structure that contains details about the Amazon S3 bucket that the generated dashboard snapshot is saved in.</p>
-    pub fn bucket_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3BucketConfiguration> {
+    pub fn bucket_configuration(&self) -> ::std::option::Option<&crate::types::S3BucketConfiguration> {
         self.bucket_configuration.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl SnapshotS3DestinationConfiguration {
 
 /// A builder for [`SnapshotS3DestinationConfiguration`](crate::types::SnapshotS3DestinationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotS3DestinationConfigurationBuilder {
     pub(crate) bucket_configuration: ::std::option::Option<crate::types::S3BucketConfiguration>,
 }
@@ -38,17 +34,12 @@ impl SnapshotS3DestinationConfigurationBuilder {
         self
     }
     /// <p>A structure that contains details about the Amazon S3 bucket that the generated dashboard snapshot is saved in.</p>
-    pub fn set_bucket_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3BucketConfiguration>,
-    ) -> Self {
+    pub fn set_bucket_configuration(mut self, input: ::std::option::Option<crate::types::S3BucketConfiguration>) -> Self {
         self.bucket_configuration = input;
         self
     }
     /// <p>A structure that contains details about the Amazon S3 bucket that the generated dashboard snapshot is saved in.</p>
-    pub fn get_bucket_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3BucketConfiguration> {
+    pub fn get_bucket_configuration(&self) -> &::std::option::Option<crate::types::S3BucketConfiguration> {
         &self.bucket_configuration
     }
     /// Consumes the builder and constructs a [`SnapshotS3DestinationConfiguration`](crate::types::SnapshotS3DestinationConfiguration).

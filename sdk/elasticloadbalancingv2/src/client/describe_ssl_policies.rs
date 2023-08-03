@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`ssl_policies(Option<Vec<SslPolicy>>)`](crate::operation::describe_ssl_policies::DescribeSslPoliciesOutput::ssl_policies): <p>Information about the security policies.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_ssl_policies::DescribeSslPoliciesOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     /// - On failure, responds with [`SdkError<DescribeSSLPoliciesError>`](crate::operation::describe_ssl_policies::DescribeSSLPoliciesError)
-    pub fn describe_ssl_policies(
-        &self,
-    ) -> crate::operation::describe_ssl_policies::builders::DescribeSSLPoliciesFluentBuilder {
-        crate::operation::describe_ssl_policies::builders::DescribeSSLPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ssl_policies(&self) -> crate::operation::describe_ssl_policies::builders::DescribeSSLPoliciesFluentBuilder {
+        crate::operation::describe_ssl_policies::builders::DescribeSSLPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

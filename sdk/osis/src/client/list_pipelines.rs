@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipelines::ListPipelinesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     ///   - [`pipelines(Option<Vec<PipelineSummary>>)`](crate::operation::list_pipelines::ListPipelinesOutput::pipelines): <p>A list of all existing Data Prepper pipelines.</p>
     /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
-    pub fn list_pipelines(
-        &self,
-    ) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
-        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_pipelines(&self) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
+        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
     }
 }

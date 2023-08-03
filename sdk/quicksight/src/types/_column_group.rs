@@ -10,9 +10,7 @@ pub struct ColumnGroup {
 }
 impl ColumnGroup {
     /// <p>Geospatial column group that denotes a hierarchy.</p>
-    pub fn geo_spatial_column_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GeoSpatialColumnGroup> {
+    pub fn geo_spatial_column_group(&self) -> ::std::option::Option<&crate::types::GeoSpatialColumnGroup> {
         self.geo_spatial_column_group.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl ColumnGroup {
 
 /// A builder for [`ColumnGroup`](crate::types::ColumnGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnGroupBuilder {
     pub(crate) geo_spatial_column_group: ::std::option::Option<crate::types::GeoSpatialColumnGroup>,
 }
@@ -38,17 +34,12 @@ impl ColumnGroupBuilder {
         self
     }
     /// <p>Geospatial column group that denotes a hierarchy.</p>
-    pub fn set_geo_spatial_column_group(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoSpatialColumnGroup>,
-    ) -> Self {
+    pub fn set_geo_spatial_column_group(mut self, input: ::std::option::Option<crate::types::GeoSpatialColumnGroup>) -> Self {
         self.geo_spatial_column_group = input;
         self
     }
     /// <p>Geospatial column group that denotes a hierarchy.</p>
-    pub fn get_geo_spatial_column_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::GeoSpatialColumnGroup> {
+    pub fn get_geo_spatial_column_group(&self) -> &::std::option::Option<crate::types::GeoSpatialColumnGroup> {
         &self.geo_spatial_column_group
     }
     /// Consumes the builder and constructs a [`ColumnGroup`](crate::types::ColumnGroup).

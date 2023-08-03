@@ -21,8 +21,7 @@ pub struct PortMapping {
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>,
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
     #[doc(hidden)]
-    pub destination_traffic_state:
-        ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
+    pub destination_traffic_state: ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
 }
 impl PortMapping {
     /// <p>The accelerator port.</p>
@@ -38,9 +37,7 @@ impl PortMapping {
         self.endpoint_id.as_deref()
     }
     /// <p>The EC2 instance IP address and port number in the virtual private cloud (VPC) subnet.</p>
-    pub fn destination_socket_address(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SocketAddress> {
+    pub fn destination_socket_address(&self) -> ::std::option::Option<&crate::types::SocketAddress> {
         self.destination_socket_address.as_ref()
     }
     /// <p>The protocols supported by the endpoint group.</p>
@@ -48,9 +45,7 @@ impl PortMapping {
         self.protocols.as_deref()
     }
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
-    pub fn destination_traffic_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomRoutingDestinationTrafficState> {
+    pub fn destination_traffic_state(&self) -> ::std::option::Option<&crate::types::CustomRoutingDestinationTrafficState> {
         self.destination_traffic_state.as_ref()
     }
 }
@@ -63,18 +58,14 @@ impl PortMapping {
 
 /// A builder for [`PortMapping`](crate::types::PortMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortMappingBuilder {
     pub(crate) accelerator_port: ::std::option::Option<i32>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_socket_address: ::std::option::Option<crate::types::SocketAddress>,
-    pub(crate) protocols:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>,
-    pub(crate) destination_traffic_state:
-        ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>,
+    pub(crate) destination_traffic_state: ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
 }
 impl PortMappingBuilder {
     /// <p>The accelerator port.</p>
@@ -92,18 +83,12 @@ impl PortMappingBuilder {
         &self.accelerator_port
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_group_arn = input;
         self
     }
@@ -131,17 +116,12 @@ impl PortMappingBuilder {
         self
     }
     /// <p>The EC2 instance IP address and port number in the virtual private cloud (VPC) subnet.</p>
-    pub fn set_destination_socket_address(
-        mut self,
-        input: ::std::option::Option<crate::types::SocketAddress>,
-    ) -> Self {
+    pub fn set_destination_socket_address(mut self, input: ::std::option::Option<crate::types::SocketAddress>) -> Self {
         self.destination_socket_address = input;
         self
     }
     /// <p>The EC2 instance IP address and port number in the virtual private cloud (VPC) subnet.</p>
-    pub fn get_destination_socket_address(
-        &self,
-    ) -> &::std::option::Option<crate::types::SocketAddress> {
+    pub fn get_destination_socket_address(&self) -> &::std::option::Option<crate::types::SocketAddress> {
         &self.destination_socket_address
     }
     /// Appends an item to `protocols`.
@@ -156,39 +136,26 @@ impl PortMappingBuilder {
         self
     }
     /// <p>The protocols supported by the endpoint group.</p>
-    pub fn set_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>,
-    ) -> Self {
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>) -> Self {
         self.protocols = input;
         self
     }
     /// <p>The protocols supported by the endpoint group.</p>
-    pub fn get_protocols(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>> {
         &self.protocols
     }
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
-    pub fn destination_traffic_state(
-        mut self,
-        input: crate::types::CustomRoutingDestinationTrafficState,
-    ) -> Self {
+    pub fn destination_traffic_state(mut self, input: crate::types::CustomRoutingDestinationTrafficState) -> Self {
         self.destination_traffic_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
-    pub fn set_destination_traffic_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
-    ) -> Self {
+    pub fn set_destination_traffic_state(mut self, input: ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>) -> Self {
         self.destination_traffic_state = input;
         self
     }
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
-    pub fn get_destination_traffic_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomRoutingDestinationTrafficState> {
+    pub fn get_destination_traffic_state(&self) -> &::std::option::Option<crate::types::CustomRoutingDestinationTrafficState> {
         &self.destination_traffic_state
     }
     /// Consumes the builder and constructs a [`PortMapping`](crate::types::PortMapping).

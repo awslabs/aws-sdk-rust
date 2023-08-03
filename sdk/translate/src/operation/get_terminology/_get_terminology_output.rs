@@ -20,9 +20,7 @@ pub struct GetTerminologyOutput {
 }
 impl GetTerminologyOutput {
     /// <p>The properties of the custom terminology being retrieved.</p>
-    pub fn terminology_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TerminologyProperties> {
+    pub fn terminology_properties(&self) -> ::std::option::Option<&crate::types::TerminologyProperties> {
         self.terminology_properties.as_ref()
     }
     /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
@@ -30,15 +28,11 @@ impl GetTerminologyOutput {
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
-    pub fn terminology_data_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TerminologyDataLocation> {
+    pub fn terminology_data_location(&self) -> ::std::option::Option<&crate::types::TerminologyDataLocation> {
         self.terminology_data_location.as_ref()
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-    pub fn auxiliary_data_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TerminologyDataLocation> {
+    pub fn auxiliary_data_location(&self) -> ::std::option::Option<&crate::types::TerminologyDataLocation> {
         self.auxiliary_data_location.as_ref()
     }
 }
@@ -56,15 +50,11 @@ impl GetTerminologyOutput {
 
 /// A builder for [`GetTerminologyOutput`](crate::operation::get_terminology::GetTerminologyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTerminologyOutputBuilder {
     pub(crate) terminology_properties: ::std::option::Option<crate::types::TerminologyProperties>,
-    pub(crate) terminology_data_location:
-        ::std::option::Option<crate::types::TerminologyDataLocation>,
-    pub(crate) auxiliary_data_location:
-        ::std::option::Option<crate::types::TerminologyDataLocation>,
+    pub(crate) terminology_data_location: ::std::option::Option<crate::types::TerminologyDataLocation>,
+    pub(crate) auxiliary_data_location: ::std::option::Option<crate::types::TerminologyDataLocation>,
     _request_id: Option<String>,
 }
 impl GetTerminologyOutputBuilder {
@@ -74,17 +64,12 @@ impl GetTerminologyOutputBuilder {
         self
     }
     /// <p>The properties of the custom terminology being retrieved.</p>
-    pub fn set_terminology_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::TerminologyProperties>,
-    ) -> Self {
+    pub fn set_terminology_properties(mut self, input: ::std::option::Option<crate::types::TerminologyProperties>) -> Self {
         self.terminology_properties = input;
         self
     }
     /// <p>The properties of the custom terminology being retrieved.</p>
-    pub fn get_terminology_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::TerminologyProperties> {
+    pub fn get_terminology_properties(&self) -> &::std::option::Option<crate::types::TerminologyProperties> {
         &self.terminology_properties
     }
     /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
@@ -92,10 +77,7 @@ impl GetTerminologyOutputBuilder {
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
-    pub fn terminology_data_location(
-        mut self,
-        input: crate::types::TerminologyDataLocation,
-    ) -> Self {
+    pub fn terminology_data_location(mut self, input: crate::types::TerminologyDataLocation) -> Self {
         self.terminology_data_location = ::std::option::Option::Some(input);
         self
     }
@@ -104,10 +86,7 @@ impl GetTerminologyOutputBuilder {
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
-    pub fn set_terminology_data_location(
-        mut self,
-        input: ::std::option::Option<crate::types::TerminologyDataLocation>,
-    ) -> Self {
+    pub fn set_terminology_data_location(mut self, input: ::std::option::Option<crate::types::TerminologyDataLocation>) -> Self {
         self.terminology_data_location = input;
         self
     }
@@ -116,9 +95,7 @@ impl GetTerminologyOutputBuilder {
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
-    pub fn get_terminology_data_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::TerminologyDataLocation> {
+    pub fn get_terminology_data_location(&self) -> &::std::option::Option<crate::types::TerminologyDataLocation> {
         &self.terminology_data_location
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
@@ -127,17 +104,12 @@ impl GetTerminologyOutputBuilder {
         self
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-    pub fn set_auxiliary_data_location(
-        mut self,
-        input: ::std::option::Option<crate::types::TerminologyDataLocation>,
-    ) -> Self {
+    pub fn set_auxiliary_data_location(mut self, input: ::std::option::Option<crate::types::TerminologyDataLocation>) -> Self {
         self.auxiliary_data_location = input;
         self
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-    pub fn get_auxiliary_data_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::TerminologyDataLocation> {
+    pub fn get_auxiliary_data_location(&self) -> &::std::option::Option<crate::types::TerminologyDataLocation> {
         &self.auxiliary_data_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

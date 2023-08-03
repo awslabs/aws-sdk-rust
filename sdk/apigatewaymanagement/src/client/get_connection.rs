@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`identity(Option<Identity>)`](crate::operation::get_connection::GetConnectionOutput::identity): (undocumented)
     ///   - [`last_active_at(Option<DateTime>)`](crate::operation::get_connection::GetConnectionOutput::last_active_at): <p>The time in ISO 8601 format for when the connection was last active.</p>
     /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::operation::get_connection::GetConnectionError)
-    pub fn get_connection(
-        &self,
-    ) -> crate::operation::get_connection::builders::GetConnectionFluentBuilder {
-        crate::operation::get_connection::builders::GetConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_connection(&self) -> crate::operation::get_connection::builders::GetConnectionFluentBuilder {
+        crate::operation::get_connection::builders::GetConnectionFluentBuilder::new(self.handle.clone())
     }
 }

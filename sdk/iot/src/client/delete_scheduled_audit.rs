@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`scheduled_audit_name(impl ::std::convert::Into<String>)`](crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder::scheduled_audit_name) / [`set_scheduled_audit_name(Option<String>)`](crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder::set_scheduled_audit_name): <p>The name of the scheduled audit you want to delete.</p>
     /// - On success, responds with [`DeleteScheduledAuditOutput`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditOutput)
     /// - On failure, responds with [`SdkError<DeleteScheduledAuditError>`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditError)
-    pub fn delete_scheduled_audit(
-        &self,
-    ) -> crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder {
-        crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_scheduled_audit(&self) -> crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder {
+        crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::failure_reason): <p>The failure reason.</p>
     ///   - [`space_settings(Option<SpaceSettings>)`](crate::operation::describe_space::DescribeSpaceOutput::space_settings): <p>A collection of space settings.</p>
     /// - On failure, responds with [`SdkError<DescribeSpaceError>`](crate::operation::describe_space::DescribeSpaceError)
-    pub fn describe_space(
-        &self,
-    ) -> crate::operation::describe_space::builders::DescribeSpaceFluentBuilder {
-        crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_space(&self) -> crate::operation::describe_space::builders::DescribeSpaceFluentBuilder {
+        crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::new(self.handle.clone())
     }
 }

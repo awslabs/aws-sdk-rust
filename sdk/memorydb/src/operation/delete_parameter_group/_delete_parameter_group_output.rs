@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteParameterGroupOutput {
 }
 impl DeleteParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteParameterGroupOutput`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_parameter_group::builders::DeleteParameterGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_parameter_group::builders::DeleteParameterGroupOutputBuilder {
         crate::operation::delete_parameter_group::builders::DeleteParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteParameterGroupOutput`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteParameterGroupOutputBuilder {
     pub(crate) parameter_group: ::std::option::Option<crate::types::ParameterGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteParameterGroupOutputBuilder {
         self
     }
     /// <p>The parameter group that has been deleted.</p>
-    pub fn set_parameter_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterGroup>,
-    ) -> Self {
+    pub fn set_parameter_group(mut self, input: ::std::option::Option<crate::types::ParameterGroup>) -> Self {
         self.parameter_group = input;
         self
     }

@@ -17,8 +17,7 @@ pub struct ReplicationConfigurationTemplate {
     pub associate_default_security_group: ::std::option::Option<bool>,
     /// <p>Replication Configuration template server Security Groups IDs.</p>
     #[doc(hidden)]
-    pub replication_servers_security_groups_i_ds:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_servers_security_groups_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Replication Configuration template server instance type.</p>
     #[doc(hidden)]
     pub replication_server_instance_type: ::std::option::Option<::std::string::String>,
@@ -27,8 +26,7 @@ pub struct ReplicationConfigurationTemplate {
     pub use_dedicated_replication_server: ::std::option::Option<bool>,
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
     #[doc(hidden)]
-    pub default_large_staging_disk_type:
-        ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
+    pub default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration template EBS encryption.</p>
     #[doc(hidden)]
     pub ebs_encryption: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
@@ -40,24 +38,19 @@ pub struct ReplicationConfigurationTemplate {
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration template data plane routing.</p>
     #[doc(hidden)]
-    pub data_plane_routing:
-        ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
+    pub data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration template create Public IP.</p>
     #[doc(hidden)]
     pub create_public_ip: ::std::option::Option<bool>,
     /// <p>Replication Configuration template Staging Area Tags.</p>
     #[doc(hidden)]
-    pub staging_area_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Replication Configuration template use Fips Endpoint.</p>
     #[doc(hidden)]
     pub use_fips_endpoint: ::std::option::Option<bool>,
     /// <p>Replication Configuration template Tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ReplicationConfigurationTemplate {
     /// <p>Replication Configuration template ID.</p>
@@ -77,9 +70,7 @@ impl ReplicationConfigurationTemplate {
         self.associate_default_security_group
     }
     /// <p>Replication Configuration template server Security Groups IDs.</p>
-    pub fn replication_servers_security_groups_i_ds(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn replication_servers_security_groups_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.replication_servers_security_groups_i_ds.as_deref()
     }
     /// <p>Replication Configuration template server instance type.</p>
@@ -91,16 +82,11 @@ impl ReplicationConfigurationTemplate {
         self.use_dedicated_replication_server
     }
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
-    pub fn default_large_staging_disk_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>
-    {
+    pub fn default_large_staging_disk_type(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationDefaultLargeStagingDiskType> {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Replication Configuration template EBS encryption.</p>
-    pub fn ebs_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {
+    pub fn ebs_encryption(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {
         self.ebs_encryption.as_ref()
     }
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
@@ -112,9 +98,7 @@ impl ReplicationConfigurationTemplate {
         self.bandwidth_throttling
     }
     /// <p>Replication Configuration template data plane routing.</p>
-    pub fn data_plane_routing(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationConfigurationDataPlaneRouting> {
+    pub fn data_plane_routing(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationDataPlaneRouting> {
         self.data_plane_routing.as_ref()
     }
     /// <p>Replication Configuration template create Public IP.</p>
@@ -122,11 +106,7 @@ impl ReplicationConfigurationTemplate {
         self.create_public_ip
     }
     /// <p>Replication Configuration template Staging Area Tags.</p>
-    pub fn staging_area_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn staging_area_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.staging_area_tags.as_ref()
     }
     /// <p>Replication Configuration template use Fips Endpoint.</p>
@@ -134,43 +114,21 @@ impl ReplicationConfigurationTemplate {
         self.use_fips_endpoint
     }
     /// <p>Replication Configuration template Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::std::fmt::Debug for ReplicationConfigurationTemplate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicationConfigurationTemplate");
-        formatter.field(
-            "replication_configuration_template_id",
-            &self.replication_configuration_template_id,
-        );
+        formatter.field("replication_configuration_template_id", &self.replication_configuration_template_id);
         formatter.field("arn", &self.arn);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-        formatter.field(
-            "associate_default_security_group",
-            &self.associate_default_security_group,
-        );
-        formatter.field(
-            "replication_servers_security_groups_i_ds",
-            &self.replication_servers_security_groups_i_ds,
-        );
-        formatter.field(
-            "replication_server_instance_type",
-            &self.replication_server_instance_type,
-        );
-        formatter.field(
-            "use_dedicated_replication_server",
-            &self.use_dedicated_replication_server,
-        );
-        formatter.field(
-            "default_large_staging_disk_type",
-            &self.default_large_staging_disk_type,
-        );
+        formatter.field("associate_default_security_group", &self.associate_default_security_group);
+        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+        formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+        formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
         formatter.field("ebs_encryption", &self.ebs_encryption);
         formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
         formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
@@ -197,48 +155,32 @@ pub struct ReplicationConfigurationTemplateBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) staging_area_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) associate_default_security_group: ::std::option::Option<bool>,
-    pub(crate) replication_servers_security_groups_i_ds:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_servers_security_groups_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) replication_server_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) use_dedicated_replication_server: ::std::option::Option<bool>,
-    pub(crate) default_large_staging_disk_type:
-        ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
-    pub(crate) ebs_encryption:
-        ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
+    pub(crate) default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
+    pub(crate) ebs_encryption: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     pub(crate) ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bandwidth_throttling: ::std::option::Option<i64>,
-    pub(crate) data_plane_routing:
-        ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
+    pub(crate) data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     pub(crate) create_public_ip: ::std::option::Option<bool>,
-    pub(crate) staging_area_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ReplicationConfigurationTemplateBuilder {
     /// <p>Replication Configuration template ID.</p>
-    pub fn replication_configuration_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_configuration_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Replication Configuration template ID.</p>
-    pub fn set_replication_configuration_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_configuration_template_id = input;
         self
     }
     /// <p>Replication Configuration template ID.</p>
-    pub fn get_replication_configuration_template_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_configuration_template_id
     }
     /// <p>Replication Configuration template ARN.</p>
@@ -256,18 +198,12 @@ impl ReplicationConfigurationTemplateBuilder {
         &self.arn
     }
     /// <p>Replication Configuration template Staging Area subnet ID.</p>
-    pub fn staging_area_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn staging_area_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.staging_area_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Replication Configuration template Staging Area subnet ID.</p>
-    pub fn set_staging_area_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_staging_area_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.staging_area_subnet_id = input;
         self
     }
@@ -281,10 +217,7 @@ impl ReplicationConfigurationTemplateBuilder {
         self
     }
     /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
-    pub fn set_associate_default_security_group(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_associate_default_security_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.associate_default_security_group = input;
         self
     }
@@ -297,51 +230,33 @@ impl ReplicationConfigurationTemplateBuilder {
     /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
     ///
     /// <p>Replication Configuration template server Security Groups IDs.</p>
-    pub fn replication_servers_security_groups_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .replication_servers_security_groups_i_ds
-            .unwrap_or_default();
+    pub fn replication_servers_security_groups_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replication_servers_security_groups_i_ds.unwrap_or_default();
         v.push(input.into());
         self.replication_servers_security_groups_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Replication Configuration template server Security Groups IDs.</p>
-    pub fn set_replication_servers_security_groups_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_servers_security_groups_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_servers_security_groups_i_ds = input;
         self
     }
     /// <p>Replication Configuration template server Security Groups IDs.</p>
-    pub fn get_replication_servers_security_groups_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_servers_security_groups_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_servers_security_groups_i_ds
     }
     /// <p>Replication Configuration template server instance type.</p>
-    pub fn replication_server_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_server_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_server_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Replication Configuration template server instance type.</p>
-    pub fn set_replication_server_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_server_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_server_instance_type = input;
         self
     }
     /// <p>Replication Configuration template server instance type.</p>
-    pub fn get_replication_server_instance_type(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_server_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_server_instance_type
     }
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
@@ -350,10 +265,7 @@ impl ReplicationConfigurationTemplateBuilder {
         self
     }
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
-    pub fn set_use_dedicated_replication_server(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_use_dedicated_replication_server(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_dedicated_replication_server = input;
         self
     }
@@ -362,65 +274,43 @@ impl ReplicationConfigurationTemplateBuilder {
         &self.use_dedicated_replication_server
     }
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
-    pub fn default_large_staging_disk_type(
-        mut self,
-        input: crate::types::ReplicationConfigurationDefaultLargeStagingDiskType,
-    ) -> Self {
+    pub fn default_large_staging_disk_type(mut self, input: crate::types::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
         self.default_large_staging_disk_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
     pub fn set_default_large_staging_disk_type(
         mut self,
-        input: ::std::option::Option<
-            crate::types::ReplicationConfigurationDefaultLargeStagingDiskType,
-        >,
+        input: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     ) -> Self {
         self.default_large_staging_disk_type = input;
         self
     }
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
-    pub fn get_default_large_staging_disk_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>
-    {
+    pub fn get_default_large_staging_disk_type(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType> {
         &self.default_large_staging_disk_type
     }
     /// <p>Replication Configuration template EBS encryption.</p>
-    pub fn ebs_encryption(
-        mut self,
-        input: crate::types::ReplicationConfigurationEbsEncryption,
-    ) -> Self {
+    pub fn ebs_encryption(mut self, input: crate::types::ReplicationConfigurationEbsEncryption) -> Self {
         self.ebs_encryption = ::std::option::Option::Some(input);
         self
     }
     /// <p>Replication Configuration template EBS encryption.</p>
-    pub fn set_ebs_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
-    ) -> Self {
+    pub fn set_ebs_encryption(mut self, input: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>) -> Self {
         self.ebs_encryption = input;
         self
     }
     /// <p>Replication Configuration template EBS encryption.</p>
-    pub fn get_ebs_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption> {
+    pub fn get_ebs_encryption(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption> {
         &self.ebs_encryption
     }
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
-    pub fn ebs_encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ebs_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ebs_encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
-    pub fn set_ebs_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ebs_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ebs_encryption_key_arn = input;
         self
     }
@@ -443,25 +333,17 @@ impl ReplicationConfigurationTemplateBuilder {
         &self.bandwidth_throttling
     }
     /// <p>Replication Configuration template data plane routing.</p>
-    pub fn data_plane_routing(
-        mut self,
-        input: crate::types::ReplicationConfigurationDataPlaneRouting,
-    ) -> Self {
+    pub fn data_plane_routing(mut self, input: crate::types::ReplicationConfigurationDataPlaneRouting) -> Self {
         self.data_plane_routing = ::std::option::Option::Some(input);
         self
     }
     /// <p>Replication Configuration template data plane routing.</p>
-    pub fn set_data_plane_routing(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
-    ) -> Self {
+    pub fn set_data_plane_routing(mut self, input: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>) -> Self {
         self.data_plane_routing = input;
         self
     }
     /// <p>Replication Configuration template data plane routing.</p>
-    pub fn get_data_plane_routing(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting> {
+    pub fn get_data_plane_routing(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting> {
         &self.data_plane_routing
     }
     /// <p>Replication Configuration template create Public IP.</p>
@@ -496,19 +378,13 @@ impl ReplicationConfigurationTemplateBuilder {
     /// <p>Replication Configuration template Staging Area Tags.</p>
     pub fn set_staging_area_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.staging_area_tags = input;
         self
     }
     /// <p>Replication Configuration template Staging Area Tags.</p>
-    pub fn get_staging_area_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_staging_area_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.staging_area_tags
     }
     /// <p>Replication Configuration template use Fips Endpoint.</p>
@@ -530,32 +406,19 @@ impl ReplicationConfigurationTemplateBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Replication Configuration template Tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Replication Configuration template Tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Replication Configuration template Tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ReplicationConfigurationTemplate`](crate::types::ReplicationConfigurationTemplate).
@@ -583,32 +446,14 @@ impl ReplicationConfigurationTemplateBuilder {
 impl ::std::fmt::Debug for ReplicationConfigurationTemplateBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicationConfigurationTemplateBuilder");
-        formatter.field(
-            "replication_configuration_template_id",
-            &self.replication_configuration_template_id,
-        );
+        formatter.field("replication_configuration_template_id", &self.replication_configuration_template_id);
         formatter.field("arn", &self.arn);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-        formatter.field(
-            "associate_default_security_group",
-            &self.associate_default_security_group,
-        );
-        formatter.field(
-            "replication_servers_security_groups_i_ds",
-            &self.replication_servers_security_groups_i_ds,
-        );
-        formatter.field(
-            "replication_server_instance_type",
-            &self.replication_server_instance_type,
-        );
-        formatter.field(
-            "use_dedicated_replication_server",
-            &self.use_dedicated_replication_server,
-        );
-        formatter.field(
-            "default_large_staging_disk_type",
-            &self.default_large_staging_disk_type,
-        );
+        formatter.field("associate_default_security_group", &self.associate_default_security_group);
+        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+        formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+        formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
         formatter.field("ebs_encryption", &self.ebs_encryption);
         formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
         formatter.field("bandwidth_throttling", &self.bandwidth_throttling);

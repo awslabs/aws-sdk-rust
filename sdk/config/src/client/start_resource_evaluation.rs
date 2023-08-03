@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartResourceEvaluationOutput`](crate::operation::start_resource_evaluation::StartResourceEvaluationOutput) with field(s):
     ///   - [`resource_evaluation_id(Option<String>)`](crate::operation::start_resource_evaluation::StartResourceEvaluationOutput::resource_evaluation_id): <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
     /// - On failure, responds with [`SdkError<StartResourceEvaluationError>`](crate::operation::start_resource_evaluation::StartResourceEvaluationError)
-    pub fn start_resource_evaluation(
-        &self,
-    ) -> crate::operation::start_resource_evaluation::builders::StartResourceEvaluationFluentBuilder
-    {
+    pub fn start_resource_evaluation(&self) -> crate::operation::start_resource_evaluation::builders::StartResourceEvaluationFluentBuilder {
         crate::operation::start_resource_evaluation::builders::StartResourceEvaluationFluentBuilder::new(self.handle.clone())
     }
 }

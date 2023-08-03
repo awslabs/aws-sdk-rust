@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`orderable_cluster_options(Option<Vec<OrderableClusterOption>>)`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput::orderable_cluster_options): <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     /// - On failure, responds with [`SdkError<DescribeOrderableClusterOptionsError>`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError)
-    pub fn describe_orderable_cluster_options(&self) -> crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsFluentBuilder{
+    pub fn describe_orderable_cluster_options(
+        &self,
+    ) -> crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsFluentBuilder {
         crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsFluentBuilder::new(self.handle.clone())
     }
 }

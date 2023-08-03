@@ -26,7 +26,7 @@ impl ListIngestionDestinationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIngestionDestinationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsInputBuilder,
+    inner: crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsInputBuilder,
 }
 impl ListIngestionDestinationsFluentBuilder {
     /// Creates a new `ListIngestionDestinations`.
@@ -37,7 +37,7 @@ impl ListIngestionDestinationsFluentBuilder {
         }
     }
     /// Access the ListIngestionDestinations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListIngestionDestinationsFluentBuilder {
             crate::operation::list_ingestion_destinations::ListIngestionDestinations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ingestion_destinations::ListIngestionDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ingestion_destinations::ListIngestionDestinationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListIngestionDestinationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListIngestionDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ingestion_destinations::ListIngestionDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ingestion_destinations::ListIngestionDestinationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListIngestionDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ingestion_destinations::ListIngestionDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ingestion_destinations::ListIngestionDestinationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl ListIngestionDestinationsFluentBuilder {
             crate::operation::list_ingestion_destinations::ListIngestionDestinations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ingestion_destinations::ListIngestionDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ingestion_destinations::ListIngestionDestinationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_ingestion_destinations::paginator::ListIngestionDestinationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_ingestion_destinations::paginator::ListIngestionDestinationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_ingestion_destinations::paginator::ListIngestionDestinationsPaginator {
         crate::operation::list_ingestion_destinations::paginator::ListIngestionDestinationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
@@ -150,18 +130,12 @@ impl ListIngestionDestinationsFluentBuilder {
         self.inner.get_app_bundle_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn ingestion_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ingestion_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn set_ingestion_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ingestion_identifier(input);
         self
     }

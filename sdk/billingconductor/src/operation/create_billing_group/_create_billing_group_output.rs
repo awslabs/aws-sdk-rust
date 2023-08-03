@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateBillingGroupOutput {
 }
 impl CreateBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateBillingGroupOutput`](crate::operation::create_billing_group::CreateBillingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_billing_group::builders::CreateBillingGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_billing_group::builders::CreateBillingGroupOutputBuilder {
         crate::operation::create_billing_group::builders::CreateBillingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBillingGroupOutput`](crate::operation::create_billing_group::CreateBillingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBillingGroupOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

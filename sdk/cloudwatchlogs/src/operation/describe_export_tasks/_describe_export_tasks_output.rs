@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeExportTasksOutput {
 }
 impl DescribeExportTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExportTasksOutput`](crate::operation::describe_export_tasks::DescribeExportTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder {
-        crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder {
+        crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExportTasksOutput`](crate::operation::describe_export_tasks::DescribeExportTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExportTasksOutputBuilder {
     pub(crate) export_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ExportTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeExportTasksOutputBuilder {
         self
     }
     /// <p>The export tasks.</p>
-    pub fn set_export_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportTask>>,
-    ) -> Self {
+    pub fn set_export_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportTask>>) -> Self {
         self.export_tasks = input;
         self
     }
     /// <p>The export tasks.</p>
-    pub fn get_export_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportTask>> {
+    pub fn get_export_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportTask>> {
         &self.export_tasks
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>

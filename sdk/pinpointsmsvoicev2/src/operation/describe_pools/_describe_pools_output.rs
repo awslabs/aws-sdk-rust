@@ -35,9 +35,7 @@ impl DescribePoolsOutput {
 
 /// A builder for [`DescribePoolsOutput`](crate::operation::describe_pools::DescribePoolsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePoolsOutputBuilder {
     pub(crate) pools: ::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribePoolsOutputBuilder {
         self
     }
     /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
-    pub fn set_pools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>>,
-    ) -> Self {
+    pub fn set_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>>) -> Self {
         self.pools = input;
         self
     }
     /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
-    pub fn get_pools(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>> {
+    pub fn get_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>> {
         &self.pools
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>

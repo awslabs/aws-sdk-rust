@@ -26,11 +26,9 @@ pub fn ser_attribute_value_list(
             array_3.finish();
         }
         crate::types::AttributeValueList::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "AttributeValueList",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "AttributeValueList",
+            ))
         }
     }
     Ok(())

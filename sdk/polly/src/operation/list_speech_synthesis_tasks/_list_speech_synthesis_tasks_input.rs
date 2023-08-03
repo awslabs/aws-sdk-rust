@@ -29,18 +29,14 @@ impl ListSpeechSynthesisTasksInput {
 }
 impl ListSpeechSynthesisTasksInput {
     /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksInput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput).
-    pub fn builder(
-    ) -> crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder {
         crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSpeechSynthesisTasksInput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSpeechSynthesisTasksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl ListSpeechSynthesisTasksInputBuilder {
         crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                status: self.status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            status: self.status,
+        })
     }
 }

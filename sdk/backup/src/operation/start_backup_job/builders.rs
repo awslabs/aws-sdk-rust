@@ -10,10 +10,7 @@ impl StartBackupJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_backup_job::StartBackupJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_backup_job::StartBackupJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_backup_job::StartBackupJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_backup_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartBackupJobFluentBuilder {
         }
     }
     /// Access the StartBackupJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_backup_job::builders::StartBackupJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_backup_job::builders::StartBackupJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartBackupJobFluentBuilder {
             crate::operation::start_backup_job::StartBackupJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_backup_job::StartBackupJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_backup_job::StartBackupJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartBackupJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartBackupJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_backup_job::StartBackupJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_backup_job::StartBackupJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_backup_job::StartBackupJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartBackupJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_backup_job::StartBackupJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_backup_job::StartBackupJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_backup_job::StartBackupJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartBackupJobFluentBuilder {
             crate::operation::start_backup_job::StartBackupJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_backup_job::StartBackupJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_backup_job::StartBackupJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
@@ -171,18 +149,12 @@ impl StartBackupJobFluentBuilder {
         self.inner.get_iam_role_arn()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
@@ -257,19 +229,13 @@ impl StartBackupJobFluentBuilder {
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
     pub fn set_recovery_point_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_recovery_point_tags(input);
         self
     }
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
-    pub fn get_recovery_point_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_recovery_point_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_recovery_point_tags()
     }
     /// Adds a key-value pair to `BackupOptions`.
@@ -290,20 +256,14 @@ impl StartBackupJobFluentBuilder {
     /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     pub fn set_backup_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_backup_options(input);
         self
     }
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
-    pub fn get_backup_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_backup_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_backup_options()
     }
 }

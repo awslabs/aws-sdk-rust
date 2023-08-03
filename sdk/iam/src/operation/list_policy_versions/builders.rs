@@ -10,10 +10,7 @@ impl ListPolicyVersionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_policy_versions::ListPolicyVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_versions::ListPolicyVersionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_versions::ListPolicyVersionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_policy_versions();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListPolicyVersionsFluentBuilder {
         }
     }
     /// Access the ListPolicyVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListPolicyVersionsFluentBuilder {
             crate::operation::list_policy_versions::ListPolicyVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_versions::ListPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_versions::ListPolicyVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListPolicyVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListPolicyVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policy_versions::ListPolicyVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_versions::ListPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_versions::ListPolicyVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListPolicyVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policy_versions::ListPolicyVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_versions::ListPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_versions::ListPolicyVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListPolicyVersionsFluentBuilder {
             crate::operation::list_policy_versions::ListPolicyVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_versions::ListPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_versions::ListPolicyVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator {
-        crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator {
+        crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>

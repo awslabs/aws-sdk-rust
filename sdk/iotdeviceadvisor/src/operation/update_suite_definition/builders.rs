@@ -38,10 +38,7 @@ impl UpdateSuiteDefinitionFluentBuilder {
         }
     }
     /// Access the UpdateSuiteDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateSuiteDefinitionFluentBuilder {
             crate::operation::update_suite_definition::UpdateSuiteDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_suite_definition::UpdateSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_suite_definition::UpdateSuiteDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateSuiteDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateSuiteDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_suite_definition::UpdateSuiteDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_suite_definition::UpdateSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_suite_definition::UpdateSuiteDefinitionError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateSuiteDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_suite_definition::UpdateSuiteDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_suite_definition::UpdateSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_suite_definition::UpdateSuiteDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl UpdateSuiteDefinitionFluentBuilder {
             crate::operation::update_suite_definition::UpdateSuiteDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_suite_definition::UpdateSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_suite_definition::UpdateSuiteDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Suite definition ID of the test suite to be updated.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_id(input.into());
         self
     }
     /// <p>Suite definition ID of the test suite to be updated.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }
@@ -145,25 +125,17 @@ impl UpdateSuiteDefinitionFluentBuilder {
         self.inner.get_suite_definition_id()
     }
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
-    pub fn suite_definition_configuration(
-        mut self,
-        input: crate::types::SuiteDefinitionConfiguration,
-    ) -> Self {
+    pub fn suite_definition_configuration(mut self, input: crate::types::SuiteDefinitionConfiguration) -> Self {
         self.inner = self.inner.suite_definition_configuration(input);
         self
     }
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
-    pub fn set_suite_definition_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,
-    ) -> Self {
+    pub fn set_suite_definition_configuration(mut self, input: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>) -> Self {
         self.inner = self.inner.set_suite_definition_configuration(input);
         self
     }
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
-    pub fn get_suite_definition_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SuiteDefinitionConfiguration> {
+    pub fn get_suite_definition_configuration(&self) -> &::std::option::Option<crate::types::SuiteDefinitionConfiguration> {
         self.inner.get_suite_definition_configuration()
     }
 }

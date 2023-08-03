@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`assigned_private_ip_addresses(Option<Vec<AssignedPrivateIpAddress>>)`](crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput::assigned_private_ip_addresses): <p>The private IP addresses assigned to the network interface.</p>
     ///   - [`assigned_ipv4_prefixes(Option<Vec<Ipv4PrefixSpecification>>)`](crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput::assigned_ipv4_prefixes): <p>The IPv4 prefixes that are assigned to the network interface.</p>
     /// - On failure, responds with [`SdkError<AssignPrivateIpAddressesError>`](crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError)
-    pub fn assign_private_ip_addresses(&self) -> crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesFluentBuilder{
+    pub fn assign_private_ip_addresses(&self) -> crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesFluentBuilder {
         crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesFluentBuilder::new(self.handle.clone())
     }
 }

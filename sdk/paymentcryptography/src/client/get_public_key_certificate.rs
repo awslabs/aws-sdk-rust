@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`key_certificate(Option<String>)`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput::key_certificate): <p>The public key component of the asymmetric key pair in a certificate (PEM) format. It is signed by the root certificate authority (CA) within your service account. The certificate expires in 90 days.</p>
     ///   - [`key_certificate_chain(Option<String>)`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput::key_certificate_chain): <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
     /// - On failure, responds with [`SdkError<GetPublicKeyCertificateError>`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateError)
-    pub fn get_public_key_certificate(
-        &self,
-    ) -> crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateFluentBuilder
-    {
+    pub fn get_public_key_certificate(&self) -> crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateFluentBuilder {
         crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateFluentBuilder::new(self.handle.clone())
     }
 }

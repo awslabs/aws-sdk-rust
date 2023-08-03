@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteResponseHeadersPolicyOutput {
 }
 impl DeleteResponseHeadersPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResponseHeadersPolicyOutput`](crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput).
-    pub fn builder() -> crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyOutputBuilder {
         crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResponseHeadersPolicyOutput`](crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResponseHeadersPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteResponseHeadersPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteResponseHeadersPolicyOutput`](crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput {
+    pub fn build(self) -> crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput {
         crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput {
             _request_id: self._request_id,
         }

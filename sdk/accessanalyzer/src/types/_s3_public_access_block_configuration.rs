@@ -30,9 +30,7 @@ impl S3PublicAccessBlockConfiguration {
 
 /// A builder for [`S3PublicAccessBlockConfiguration`](crate::types::S3PublicAccessBlockConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3PublicAccessBlockConfigurationBuilder {
     pub(crate) ignore_public_acls: ::std::option::Option<bool>,
     pub(crate) restrict_public_buckets: ::std::option::Option<bool>,

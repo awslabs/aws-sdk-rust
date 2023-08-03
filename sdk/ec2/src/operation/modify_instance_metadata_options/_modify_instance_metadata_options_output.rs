@@ -8,8 +8,7 @@ pub struct ModifyInstanceMetadataOptionsOutput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The metadata options for the instance.</p>
     #[doc(hidden)]
-    pub instance_metadata_options:
-        ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
+    pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
     _request_id: Option<String>,
 }
 impl ModifyInstanceMetadataOptionsOutput {
@@ -18,9 +17,7 @@ impl ModifyInstanceMetadataOptionsOutput {
         self.instance_id.as_deref()
     }
     /// <p>The metadata options for the instance.</p>
-    pub fn instance_metadata_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceMetadataOptionsResponse> {
+    pub fn instance_metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptionsResponse> {
         self.instance_metadata_options.as_ref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ModifyInstanceMetadataOptionsOutput {
 }
 impl ModifyInstanceMetadataOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceMetadataOptionsOutput`](crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput).
-    pub fn builder() -> crate::operation::modify_instance_metadata_options::builders::ModifyInstanceMetadataOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::modify_instance_metadata_options::builders::ModifyInstanceMetadataOptionsOutputBuilder {
         crate::operation::modify_instance_metadata_options::builders::ModifyInstanceMetadataOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceMetadataOptionsOutput`](crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceMetadataOptionsOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_metadata_options:
-        ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
+    pub(crate) instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
     _request_id: Option<String>,
 }
 impl ModifyInstanceMetadataOptionsOutputBuilder {
@@ -63,25 +57,17 @@ impl ModifyInstanceMetadataOptionsOutputBuilder {
         &self.instance_id
     }
     /// <p>The metadata options for the instance.</p>
-    pub fn instance_metadata_options(
-        mut self,
-        input: crate::types::InstanceMetadataOptionsResponse,
-    ) -> Self {
+    pub fn instance_metadata_options(mut self, input: crate::types::InstanceMetadataOptionsResponse) -> Self {
         self.instance_metadata_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metadata options for the instance.</p>
-    pub fn set_instance_metadata_options(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
-    ) -> Self {
+    pub fn set_instance_metadata_options(mut self, input: ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>) -> Self {
         self.instance_metadata_options = input;
         self
     }
     /// <p>The metadata options for the instance.</p>
-    pub fn get_instance_metadata_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMetadataOptionsResponse> {
+    pub fn get_instance_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptionsResponse> {
         &self.instance_metadata_options
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -94,10 +80,7 @@ impl ModifyInstanceMetadataOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyInstanceMetadataOptionsOutput`](crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput
-    {
+    pub fn build(self) -> crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput {
         crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput {
             instance_id: self.instance_id,
             instance_metadata_options: self.instance_metadata_options,

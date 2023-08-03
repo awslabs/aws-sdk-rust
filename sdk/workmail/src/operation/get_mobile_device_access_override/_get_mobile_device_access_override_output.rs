@@ -56,16 +56,14 @@ impl ::aws_http::request_id::RequestId for GetMobileDeviceAccessOverrideOutput {
 }
 impl GetMobileDeviceAccessOverrideOutput {
     /// Creates a new builder-style object to manufacture [`GetMobileDeviceAccessOverrideOutput`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideOutput).
-    pub fn builder() -> crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideOutputBuilder{
+    pub fn builder() -> crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideOutputBuilder {
         crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMobileDeviceAccessOverrideOutput`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMobileDeviceAccessOverrideOutputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl GetMobileDeviceAccessOverrideOutputBuilder {
         self
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn set_effect(
-        mut self,
-        input: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
-    ) -> Self {
+    pub fn set_effect(mut self, input: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>) -> Self {
         self.effect = input;
         self
     }
@@ -141,10 +136,7 @@ impl GetMobileDeviceAccessOverrideOutputBuilder {
         self
     }
     /// <p>The date the override was first created.</p>
-    pub fn set_date_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_created = input;
         self
     }
@@ -158,10 +150,7 @@ impl GetMobileDeviceAccessOverrideOutputBuilder {
         self
     }
     /// <p>The date the description was last modified.</p>
-    pub fn set_date_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_modified = input;
         self
     }
@@ -179,10 +168,7 @@ impl GetMobileDeviceAccessOverrideOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMobileDeviceAccessOverrideOutput`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideOutput
-    {
+    pub fn build(self) -> crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideOutput {
         crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideOutput {
             user_id: self.user_id,
             device_id: self.device_id,

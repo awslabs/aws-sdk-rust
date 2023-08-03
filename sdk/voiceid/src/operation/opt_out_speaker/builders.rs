@@ -10,10 +10,7 @@ impl OptOutSpeakerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::opt_out_speaker::OptOutSpeakerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::opt_out_speaker::OptOutSpeakerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::opt_out_speaker::OptOutSpeakerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.opt_out_speaker();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl OptOutSpeakerFluentBuilder {
         }
     }
     /// Access the OptOutSpeaker as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::opt_out_speaker::builders::OptOutSpeakerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::opt_out_speaker::builders::OptOutSpeakerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl OptOutSpeakerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

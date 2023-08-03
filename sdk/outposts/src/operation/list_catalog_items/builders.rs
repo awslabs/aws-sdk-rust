@@ -10,10 +10,7 @@ impl ListCatalogItemsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_catalog_items::ListCatalogItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_catalog_items();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListCatalogItemsFluentBuilder {
         }
     }
     /// Access the ListCatalogItems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_catalog_items::builders::ListCatalogItemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_catalog_items::builders::ListCatalogItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListCatalogItemsFluentBuilder {
             crate::operation::list_catalog_items::ListCatalogItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListCatalogItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListCatalogItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_catalog_items::ListCatalogItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListCatalogItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_catalog_items::ListCatalogItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListCatalogItemsFluentBuilder {
             crate::operation::list_catalog_items::ListCatalogItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator {
-        crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator {
+        crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,17 +151,12 @@ impl ListCatalogItemsFluentBuilder {
         self
     }
     /// <p>Filters the results by item class.</p>
-    pub fn set_item_class_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>>,
-    ) -> Self {
+    pub fn set_item_class_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>>) -> Self {
         self.inner = self.inner.set_item_class_filter(input);
         self
     }
     /// <p>Filters the results by item class.</p>
-    pub fn get_item_class_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>> {
+    pub fn get_item_class_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>> {
         self.inner.get_item_class_filter()
     }
     /// Appends an item to `SupportedStorageFilter`.
@@ -195,17 +169,12 @@ impl ListCatalogItemsFluentBuilder {
         self
     }
     /// <p>Filters the results by storage option.</p>
-    pub fn set_supported_storage_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
-    ) -> Self {
+    pub fn set_supported_storage_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>) -> Self {
         self.inner = self.inner.set_supported_storage_filter(input);
         self
     }
     /// <p>Filters the results by storage option.</p>
-    pub fn get_supported_storage_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>> {
+    pub fn get_supported_storage_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>> {
         self.inner.get_supported_storage_filter()
     }
     /// Appends an item to `EC2FamilyFilter`.
@@ -213,25 +182,17 @@ impl ListCatalogItemsFluentBuilder {
     /// To override the contents of this collection use [`set_ec2_family_filter`](Self::set_ec2_family_filter).
     ///
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    pub fn ec2_family_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_family_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ec2_family_filter(input.into());
         self
     }
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    pub fn set_ec2_family_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ec2_family_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ec2_family_filter(input);
         self
     }
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    pub fn get_ec2_family_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ec2_family_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ec2_family_filter()
     }
 }

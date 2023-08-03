@@ -27,7 +27,7 @@ impl DescribeCustomerGatewaysInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCustomerGatewaysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysInputBuilder,
+    inner: crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysInputBuilder,
 }
 impl DescribeCustomerGatewaysFluentBuilder {
     /// Creates a new `DescribeCustomerGateways`.
@@ -38,10 +38,7 @@ impl DescribeCustomerGatewaysFluentBuilder {
         }
     }
     /// Access the DescribeCustomerGateways as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeCustomerGatewaysFluentBuilder {
             crate::operation::describe_customer_gateways::DescribeCustomerGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeCustomerGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeCustomerGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeCustomerGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DescribeCustomerGatewaysFluentBuilder {
             crate::operation::describe_customer_gateways::DescribeCustomerGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError>,
     > {
         self.customize_middleware().await
     }
@@ -130,27 +116,19 @@ impl DescribeCustomerGatewaysFluentBuilder {
     ///
     /// <p>One or more customer gateway IDs.</p>
     /// <p>Default: Describes all your customer gateways.</p>
-    pub fn customer_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_gateway_ids(input.into());
         self
     }
     /// <p>One or more customer gateway IDs.</p>
     /// <p>Default: Describes all your customer gateways.</p>
-    pub fn set_customer_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_customer_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_customer_gateway_ids(input);
         self
     }
     /// <p>One or more customer gateway IDs.</p>
     /// <p>Default: Describes all your customer gateways.</p>
-    pub fn get_customer_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_customer_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_customer_gateway_ids()
     }
     /// Appends an item to `Filters`.
@@ -193,10 +171,7 @@ impl DescribeCustomerGatewaysFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

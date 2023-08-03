@@ -10,10 +10,7 @@ impl UpdateApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_application();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateApplicationFluentBuilder {
         }
     }
     /// Access the UpdateApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateApplicationFluentBuilder {
             crate::operation::update_application::UpdateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateApplicationFluentBuilder {
             crate::operation::update_application::UpdateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
@@ -171,18 +149,12 @@ impl UpdateApplicationFluentBuilder {
         self.inner.get_cwe_monitor_enabled()
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
-    pub fn ops_item_sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_item_sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ops_item_sns_topic_arn(input.into());
         self
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
-    pub fn set_ops_item_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_item_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ops_item_sns_topic_arn(input);
         self
     }

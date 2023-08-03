@@ -43,16 +43,14 @@ impl ListAnomalyGroupTimeSeriesInput {
 }
 impl ListAnomalyGroupTimeSeriesInput {
     /// Creates a new builder-style object to manufacture [`ListAnomalyGroupTimeSeriesInput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesInput).
-    pub fn builder() -> crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesInputBuilder{
+    pub fn builder() -> crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesInputBuilder {
         crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnomalyGroupTimeSeriesInput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupTimeSeriesInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct ListAnomalyGroupTimeSeriesInputBuilder {
 }
 impl ListAnomalyGroupTimeSeriesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -82,18 +74,12 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_group_id = input;
         self
     }
@@ -150,14 +136,12 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
         crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesInput {
-                anomaly_detector_arn: self.anomaly_detector_arn,
-                anomaly_group_id: self.anomaly_group_id,
-                metric_name: self.metric_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesInput {
+            anomaly_detector_arn: self.anomaly_detector_arn,
+            anomaly_group_id: self.anomaly_group_id,
+            metric_name: self.metric_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

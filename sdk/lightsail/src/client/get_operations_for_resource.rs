@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_page_count(Option<String>)`](crate::operation::get_operations_for_resource::GetOperationsForResourceOutput::next_page_count): <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>   <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>  </note>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_operations_for_resource::GetOperationsForResourceOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetOperationsForResourceError>`](crate::operation::get_operations_for_resource::GetOperationsForResourceError)
-    pub fn get_operations_for_resource(&self) -> crate::operation::get_operations_for_resource::builders::GetOperationsForResourceFluentBuilder{
+    pub fn get_operations_for_resource(&self) -> crate::operation::get_operations_for_resource::builders::GetOperationsForResourceFluentBuilder {
         crate::operation::get_operations_for_resource::builders::GetOperationsForResourceFluentBuilder::new(self.handle.clone())
     }
 }

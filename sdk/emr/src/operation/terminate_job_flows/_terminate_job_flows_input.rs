@@ -16,17 +16,14 @@ impl TerminateJobFlowsInput {
 }
 impl TerminateJobFlowsInput {
     /// Creates a new builder-style object to manufacture [`TerminateJobFlowsInput`](crate::operation::terminate_job_flows::TerminateJobFlowsInput).
-    pub fn builder(
-    ) -> crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder {
+    pub fn builder() -> crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder {
         crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateJobFlowsInput`](crate::operation::terminate_job_flows::TerminateJobFlowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateJobFlowsInputBuilder {
     pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -43,30 +40,20 @@ impl TerminateJobFlowsInputBuilder {
         self
     }
     /// <p>A list of job flows to be shut down.</p>
-    pub fn set_job_flow_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.job_flow_ids = input;
         self
     }
     /// <p>A list of job flows to be shut down.</p>
-    pub fn get_job_flow_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.job_flow_ids
     }
     /// Consumes the builder and constructs a [`TerminateJobFlowsInput`](crate::operation::terminate_job_flows::TerminateJobFlowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_job_flows::TerminateJobFlowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::terminate_job_flows::TerminateJobFlowsInput {
-                job_flow_ids: self.job_flow_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::terminate_job_flows::TerminateJobFlowsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::terminate_job_flows::TerminateJobFlowsInput {
+            job_flow_ids: self.job_flow_ids,
+        })
     }
 }

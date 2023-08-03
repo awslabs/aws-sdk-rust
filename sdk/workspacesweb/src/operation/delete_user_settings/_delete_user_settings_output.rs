@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteUserSettingsOutput {
 }
 impl DeleteUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserSettingsOutput`](crate::operation::delete_user_settings::DeleteUserSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_user_settings::builders::DeleteUserSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::delete_user_settings::builders::DeleteUserSettingsOutputBuilder {
         crate::operation::delete_user_settings::builders::DeleteUserSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserSettingsOutput`](crate::operation::delete_user_settings::DeleteUserSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserSettingsOutputBuilder {
     _request_id: Option<String>,
 }

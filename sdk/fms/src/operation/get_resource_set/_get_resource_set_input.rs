@@ -22,9 +22,7 @@ impl GetResourceSetInput {
 
 /// A builder for [`GetResourceSetInput`](crate::operation::get_resource_set::GetResourceSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceSetInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetResourceSetInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceSetInput`](crate::operation::get_resource_set::GetResourceSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_set::GetResourceSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_resource_set::GetResourceSetInput {
-            identifier: self.identifier,
-        })
+    ) -> ::std::result::Result<crate::operation::get_resource_set::GetResourceSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_resource_set::GetResourceSetInput { identifier: self.identifier })
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SuspendContactRecordingOutput {
 }
 impl SuspendContactRecordingOutput {
     /// Creates a new builder-style object to manufacture [`SuspendContactRecordingOutput`](crate::operation::suspend_contact_recording::SuspendContactRecordingOutput).
-    pub fn builder(
-    ) -> crate::operation::suspend_contact_recording::builders::SuspendContactRecordingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::suspend_contact_recording::builders::SuspendContactRecordingOutputBuilder {
         crate::operation::suspend_contact_recording::builders::SuspendContactRecordingOutputBuilder::default()
     }
 }
 
 /// A builder for [`SuspendContactRecordingOutput`](crate::operation::suspend_contact_recording::SuspendContactRecordingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuspendContactRecordingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl SuspendContactRecordingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SuspendContactRecordingOutput`](crate::operation::suspend_contact_recording::SuspendContactRecordingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::suspend_contact_recording::SuspendContactRecordingOutput {
+    pub fn build(self) -> crate::operation::suspend_contact_recording::SuspendContactRecordingOutput {
         crate::operation::suspend_contact_recording::SuspendContactRecordingOutput {
             _request_id: self._request_id,
         }

@@ -22,9 +22,7 @@ impl ListDataLakesInput {
 
 /// A builder for [`ListDataLakesInput`](crate::operation::list_data_lakes::ListDataLakesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataLakesInputBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl ListDataLakesInputBuilder {
         self
     }
     /// <p>The list of regions where Security Lake is enabled.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
@@ -55,12 +50,7 @@ impl ListDataLakesInputBuilder {
     /// Consumes the builder and constructs a [`ListDataLakesInput`](crate::operation::list_data_lakes::ListDataLakesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_lakes::ListDataLakesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_data_lakes::ListDataLakesInput {
-            regions: self.regions,
-        })
+    ) -> ::std::result::Result<crate::operation::list_data_lakes::ListDataLakesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_data_lakes::ListDataLakesInput { regions: self.regions })
     }
 }

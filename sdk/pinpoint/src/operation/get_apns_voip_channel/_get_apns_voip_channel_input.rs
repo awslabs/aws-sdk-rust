@@ -15,34 +15,25 @@ impl GetApnsVoipChannelInput {
 }
 impl GetApnsVoipChannelInput {
     /// Creates a new builder-style object to manufacture [`GetApnsVoipChannelInput`](crate::operation::get_apns_voip_channel::GetApnsVoipChannelInput).
-    pub fn builder(
-    ) -> crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelInputBuilder {
+    pub fn builder() -> crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelInputBuilder {
         crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`GetApnsVoipChannelInput`](crate::operation::get_apns_voip_channel::GetApnsVoipChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApnsVoipChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }
 impl GetApnsVoipChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -53,14 +44,10 @@ impl GetApnsVoipChannelInputBuilder {
     /// Consumes the builder and constructs a [`GetApnsVoipChannelInput`](crate::operation::get_apns_voip_channel::GetApnsVoipChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_apns_voip_channel::GetApnsVoipChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_apns_voip_channel::GetApnsVoipChannelInput {
-                application_id: self.application_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_apns_voip_channel::GetApnsVoipChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_apns_voip_channel::GetApnsVoipChannelInput {
+            application_id: self.application_id,
+        })
     }
 }

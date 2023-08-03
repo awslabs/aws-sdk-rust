@@ -37,9 +37,7 @@ impl Subscription {
 
 /// A builder for [`Subscription`](crate::types::Subscription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscriptionBuilder {
     pub(crate) subscription_id: ::std::option::Option<::std::string::String>,
     pub(crate) end_point: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct SubscriptionBuilder {
 }
 impl SubscriptionBuilder {
     /// <p>The ID of the subscription.</p>
-    pub fn subscription_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subscription.</p>
-    pub fn set_subscription_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_id = input;
         self
     }
@@ -86,10 +78,7 @@ impl SubscriptionBuilder {
         self
     }
     /// <p>The protocol of the subscription.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionProtocolType>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::SubscriptionProtocolType>) -> Self {
         self.protocol = input;
         self
     }

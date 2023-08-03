@@ -23,9 +23,7 @@ impl MediaPackageOutputDestinationSettings {
 
 /// A builder for [`MediaPackageOutputDestinationSettings`](crate::types::MediaPackageOutputDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaPackageOutputDestinationSettingsBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl MediaPackageOutputDestinationSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`MediaPackageOutputDestinationSettings`](crate::types::MediaPackageOutputDestinationSettings).
     pub fn build(self) -> crate::types::MediaPackageOutputDestinationSettings {
-        crate::types::MediaPackageOutputDestinationSettings {
-            channel_id: self.channel_id,
-        }
+        crate::types::MediaPackageOutputDestinationSettings { channel_id: self.channel_id }
     }
 }

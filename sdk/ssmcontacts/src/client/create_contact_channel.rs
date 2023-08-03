@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateContactChannelOutput`](crate::operation::create_contact_channel::CreateContactChannelOutput) with field(s):
     ///   - [`contact_channel_arn(Option<String>)`](crate::operation::create_contact_channel::CreateContactChannelOutput::contact_channel_arn): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     /// - On failure, responds with [`SdkError<CreateContactChannelError>`](crate::operation::create_contact_channel::CreateContactChannelError)
-    pub fn create_contact_channel(
-        &self,
-    ) -> crate::operation::create_contact_channel::builders::CreateContactChannelFluentBuilder {
-        crate::operation::create_contact_channel::builders::CreateContactChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_contact_channel(&self) -> crate::operation::create_contact_channel::builders::CreateContactChannelFluentBuilder {
+        crate::operation::create_contact_channel::builders::CreateContactChannelFluentBuilder::new(self.handle.clone())
     }
 }

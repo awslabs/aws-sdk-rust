@@ -35,9 +35,7 @@ impl ListRootsOutput {
 
 /// A builder for [`ListRootsOutput`](crate::operation::list_roots::ListRootsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRootsOutputBuilder {
     pub(crate) roots: ::std::option::Option<::std::vec::Vec<crate::types::Root>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListRootsOutputBuilder {
         self
     }
     /// <p>A list of roots that are defined in an organization.</p>
-    pub fn set_roots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Root>>,
-    ) -> Self {
+    pub fn set_roots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Root>>) -> Self {
         self.roots = input;
         self
     }

@@ -27,7 +27,7 @@ impl AssociateInstanceEventWindowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateInstanceEventWindowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowInputBuilder,
+    inner: crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowInputBuilder,
 }
 impl AssociateInstanceEventWindowFluentBuilder {
     /// Creates a new `AssociateInstanceEventWindow`.
@@ -38,7 +38,7 @@ impl AssociateInstanceEventWindowFluentBuilder {
         }
     }
     /// Access the AssociateInstanceEventWindow as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AssociateInstanceEventWindowFluentBuilder {
             crate::operation::associate_instance_event_window::AssociateInstanceEventWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AssociateInstanceEventWindowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AssociateInstanceEventWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AssociateInstanceEventWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl AssociateInstanceEventWindowFluentBuilder {
             crate::operation::associate_instance_event_window::AssociateInstanceEventWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError>,
     > {
         self.customize_middleware().await
     }
@@ -136,18 +125,12 @@ impl AssociateInstanceEventWindowFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_event_window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_event_window_id(input.into());
         self
     }
     /// <p>The ID of the event window.</p>
-    pub fn set_instance_event_window_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_event_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_event_window_id(input);
         self
     }
@@ -156,25 +139,17 @@ impl AssociateInstanceEventWindowFluentBuilder {
         self.inner.get_instance_event_window_id()
     }
     /// <p>One or more targets associated with the specified event window.</p>
-    pub fn association_target(
-        mut self,
-        input: crate::types::InstanceEventWindowAssociationRequest,
-    ) -> Self {
+    pub fn association_target(mut self, input: crate::types::InstanceEventWindowAssociationRequest) -> Self {
         self.inner = self.inner.association_target(input);
         self
     }
     /// <p>One or more targets associated with the specified event window.</p>
-    pub fn set_association_target(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceEventWindowAssociationRequest>,
-    ) -> Self {
+    pub fn set_association_target(mut self, input: ::std::option::Option<crate::types::InstanceEventWindowAssociationRequest>) -> Self {
         self.inner = self.inner.set_association_target(input);
         self
     }
     /// <p>One or more targets associated with the specified event window.</p>
-    pub fn get_association_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceEventWindowAssociationRequest> {
+    pub fn get_association_target(&self) -> &::std::option::Option<crate::types::InstanceEventWindowAssociationRequest> {
         self.inner.get_association_target()
     }
 }

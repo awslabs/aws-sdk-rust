@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`completion_time(Option<DateTime>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::completion_time): <p>When the job completed.</p>
     ///   - [`sources(Option<Vec<ActivateReadSetSourceItem>>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::sources): <p>The job's source files.</p>
     /// - On failure, responds with [`SdkError<GetReadSetActivationJobError>`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobError)
-    pub fn get_read_set_activation_job(
-        &self,
-    ) -> crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder
-    {
+    pub fn get_read_set_activation_job(&self) -> crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder {
         crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::new(self.handle.clone())
     }
 }

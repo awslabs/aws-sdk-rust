@@ -29,7 +29,7 @@ impl DeleteReusableDelegationSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReusableDelegationSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder,
+    inner: crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder,
 }
 impl DeleteReusableDelegationSetFluentBuilder {
     /// Creates a new `DeleteReusableDelegationSet`.
@@ -40,7 +40,7 @@ impl DeleteReusableDelegationSetFluentBuilder {
         }
     }
     /// Access the DeleteReusableDelegationSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DeleteReusableDelegationSetFluentBuilder {
             crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DeleteReusableDelegationSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DeleteReusableDelegationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DeleteReusableDelegationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl DeleteReusableDelegationSetFluentBuilder {
             crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError>,
     > {
         self.customize_middleware().await
     }

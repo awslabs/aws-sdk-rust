@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchUpdateRuleOutput {
 }
 impl BatchUpdateRuleOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateRuleOutput`](crate::operation::batch_update_rule::BatchUpdateRuleOutput).
-    pub fn builder() -> crate::operation::batch_update_rule::builders::BatchUpdateRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_update_rule::builders::BatchUpdateRuleOutputBuilder {
         crate::operation::batch_update_rule::builders::BatchUpdateRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateRuleOutput`](crate::operation::batch_update_rule::BatchUpdateRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateRuleOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateSuccess>>,
-    pub(crate) unsuccessful:
-        ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateFailure>>,
+    pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateFailure>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateRuleOutputBuilder {
@@ -58,17 +54,12 @@ impl BatchUpdateRuleOutputBuilder {
         self
     }
     /// <p>The rules that were successfully updated.</p>
-    pub fn set_successful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateSuccess>>,
-    ) -> Self {
+    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateSuccess>>) -> Self {
         self.successful = input;
         self
     }
     /// <p>The rules that were successfully updated.</p>
-    pub fn get_successful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateSuccess>> {
+    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateSuccess>> {
         &self.successful
     }
     /// Appends an item to `unsuccessful`.
@@ -83,17 +74,12 @@ impl BatchUpdateRuleOutputBuilder {
         self
     }
     /// <p>The rules that the operation couldn't update.</p>
-    pub fn set_unsuccessful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateFailure>>,
-    ) -> Self {
+    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateFailure>>) -> Self {
         self.unsuccessful = input;
         self
     }
     /// <p>The rules that the operation couldn't update.</p>
-    pub fn get_unsuccessful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateFailure>> {
+    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateFailure>> {
         &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

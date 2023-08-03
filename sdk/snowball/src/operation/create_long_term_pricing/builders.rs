@@ -37,10 +37,7 @@ impl CreateLongTermPricingFluentBuilder {
         }
     }
     /// Access the CreateLongTermPricing as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_long_term_pricing::builders::CreateLongTermPricingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_long_term_pricing::builders::CreateLongTermPricingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateLongTermPricingFluentBuilder {
             crate::operation::create_long_term_pricing::CreateLongTermPricing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_long_term_pricing::CreateLongTermPricingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_long_term_pricing::CreateLongTermPricingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateLongTermPricingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateLongTermPricingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_long_term_pricing::CreateLongTermPricingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_long_term_pricing::CreateLongTermPricingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_long_term_pricing::CreateLongTermPricingError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateLongTermPricingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_long_term_pricing::CreateLongTermPricingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_long_term_pricing::CreateLongTermPricingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_long_term_pricing::CreateLongTermPricingError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateLongTermPricingFluentBuilder {
             crate::operation::create_long_term_pricing::CreateLongTermPricing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_long_term_pricing::CreateLongTermPricingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_long_term_pricing::CreateLongTermPricingError>,
     > {
         self.customize_middleware().await
     }
@@ -129,17 +115,12 @@ impl CreateLongTermPricingFluentBuilder {
         self
     }
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
-    pub fn set_long_term_pricing_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LongTermPricingType>,
-    ) -> Self {
+    pub fn set_long_term_pricing_type(mut self, input: ::std::option::Option<crate::types::LongTermPricingType>) -> Self {
         self.inner = self.inner.set_long_term_pricing_type(input);
         self
     }
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
-    pub fn get_long_term_pricing_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LongTermPricingType> {
+    pub fn get_long_term_pricing_type(&self) -> &::std::option::Option<crate::types::LongTermPricingType> {
         self.inner.get_long_term_pricing_type()
     }
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
@@ -148,10 +129,7 @@ impl CreateLongTermPricingFluentBuilder {
         self
     }
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
-    pub fn set_is_long_term_pricing_auto_renew(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_is_long_term_pricing_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_long_term_pricing_auto_renew(input);
         self
     }
@@ -165,10 +143,7 @@ impl CreateLongTermPricingFluentBuilder {
         self
     }
     /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
-    pub fn set_snowball_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SnowballType>,
-    ) -> Self {
+    pub fn set_snowball_type(mut self, input: ::std::option::Option<crate::types::SnowballType>) -> Self {
         self.inner = self.inner.set_snowball_type(input);
         self
     }

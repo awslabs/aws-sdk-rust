@@ -20,9 +20,7 @@ impl DisableRadiusOutput {
 
 /// A builder for [`DisableRadiusOutput`](crate::operation::disable_radius::DisableRadiusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableRadiusOutputBuilder {
     _request_id: Option<String>,
 }

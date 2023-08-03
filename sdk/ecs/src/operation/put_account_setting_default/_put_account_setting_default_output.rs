@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PutAccountSettingDefaultOutput {
 }
 impl PutAccountSettingDefaultOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountSettingDefaultOutput`](crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput).
-    pub fn builder() -> crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultOutputBuilder{
+    pub fn builder() -> crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultOutputBuilder {
         crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountSettingDefaultOutput`](crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountSettingDefaultOutputBuilder {
     pub(crate) setting: ::std::option::Option<crate::types::Setting>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl PutAccountSettingDefaultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAccountSettingDefaultOutput`](crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput {
+    pub fn build(self) -> crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput {
         crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput {
             setting: self.setting,
             _request_id: self._request_id,

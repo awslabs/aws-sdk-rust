@@ -6,10 +6,7 @@ pub fn ser_start_network_resource_update_input(
     if let Some(var_1) = &input.commitment_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("commitmentConfiguration").start_object();
-        crate::protocol_serde::shape_commitment_configuration::ser_commitment_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_commitment_configuration::ser_commitment_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.network_resource_arn {

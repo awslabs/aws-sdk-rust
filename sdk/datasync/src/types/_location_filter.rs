@@ -38,9 +38,7 @@ impl LocationFilter {
 
 /// A builder for [`LocationFilter`](crate::types::LocationFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocationFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::LocationFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,10 +51,7 @@ impl LocationFilterBuilder {
         self
     }
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::LocationFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -76,10 +71,7 @@ impl LocationFilterBuilder {
         self
     }
     /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3 locations.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

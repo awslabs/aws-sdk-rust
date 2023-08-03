@@ -29,18 +29,14 @@ impl LabelParameterVersionInput {
 }
 impl LabelParameterVersionInput {
     /// Creates a new builder-style object to manufacture [`LabelParameterVersionInput`](crate::operation::label_parameter_version::LabelParameterVersionInput).
-    pub fn builder(
-    ) -> crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder {
         crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`LabelParameterVersionInput`](crate::operation::label_parameter_version::LabelParameterVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelParameterVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_version: ::std::option::Option<i64>,
@@ -87,10 +83,7 @@ impl LabelParameterVersionInputBuilder {
         self
     }
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -101,16 +94,12 @@ impl LabelParameterVersionInputBuilder {
     /// Consumes the builder and constructs a [`LabelParameterVersionInput`](crate::operation::label_parameter_version::LabelParameterVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::label_parameter_version::LabelParameterVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::label_parameter_version::LabelParameterVersionInput {
-                name: self.name,
-                parameter_version: self.parameter_version,
-                labels: self.labels,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::label_parameter_version::LabelParameterVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::label_parameter_version::LabelParameterVersionInput {
+            name: self.name,
+            parameter_version: self.parameter_version,
+            labels: self.labels,
+        })
     }
 }

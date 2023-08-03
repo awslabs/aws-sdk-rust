@@ -52,17 +52,14 @@ impl DescribeWorkspacesInput {
 }
 impl DescribeWorkspacesInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspacesInput`](crate::operation::describe_workspaces::DescribeWorkspacesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_workspaces::builders::DescribeWorkspacesInputBuilder {
+    pub fn builder() -> crate::operation::describe_workspaces::builders::DescribeWorkspacesInputBuilder {
         crate::operation::describe_workspaces::builders::DescribeWorkspacesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspacesInput`](crate::operation::describe_workspaces::DescribeWorkspacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspacesInputBuilder {
     pub(crate) workspace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
@@ -78,10 +75,7 @@ impl DescribeWorkspacesInputBuilder {
     ///
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    pub fn workspace_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workspace_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.workspace_ids.unwrap_or_default();
         v.push(input.into());
         self.workspace_ids = ::std::option::Option::Some(v);
@@ -89,18 +83,13 @@ impl DescribeWorkspacesInputBuilder {
     }
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    pub fn set_workspace_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_workspace_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.workspace_ids = input;
         self
     }
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    pub fn get_workspace_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_workspace_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.workspace_ids
     }
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
@@ -176,19 +165,14 @@ impl DescribeWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkspacesInput`](crate::operation::describe_workspaces::DescribeWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workspaces::DescribeWorkspacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_workspaces::DescribeWorkspacesInput {
-                workspace_ids: self.workspace_ids,
-                directory_id: self.directory_id,
-                user_name: self.user_name,
-                bundle_id: self.bundle_id,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_workspaces::DescribeWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_workspaces::DescribeWorkspacesInput {
+            workspace_ids: self.workspace_ids,
+            directory_id: self.directory_id,
+            user_name: self.user_name,
+            bundle_id: self.bundle_id,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

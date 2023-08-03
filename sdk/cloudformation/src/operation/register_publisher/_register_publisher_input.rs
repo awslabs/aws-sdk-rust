@@ -26,17 +26,14 @@ impl RegisterPublisherInput {
 }
 impl RegisterPublisherInput {
     /// Creates a new builder-style object to manufacture [`RegisterPublisherInput`](crate::operation::register_publisher::RegisterPublisherInput).
-    pub fn builder() -> crate::operation::register_publisher::builders::RegisterPublisherInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_publisher::builders::RegisterPublisherInputBuilder {
         crate::operation::register_publisher::builders::RegisterPublisherInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterPublisherInput`](crate::operation::register_publisher::RegisterPublisherInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterPublisherInputBuilder {
     pub(crate) accept_terms_and_conditions: ::std::option::Option<bool>,
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
@@ -61,19 +58,13 @@ impl RegisterPublisherInputBuilder {
     }
     /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_arn = input;
         self
     }
@@ -85,15 +76,10 @@ impl RegisterPublisherInputBuilder {
     /// Consumes the builder and constructs a [`RegisterPublisherInput`](crate::operation::register_publisher::RegisterPublisherInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_publisher::RegisterPublisherInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_publisher::RegisterPublisherInput {
-                accept_terms_and_conditions: self.accept_terms_and_conditions,
-                connection_arn: self.connection_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_publisher::RegisterPublisherInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::register_publisher::RegisterPublisherInput {
+            accept_terms_and_conditions: self.accept_terms_and_conditions,
+            connection_arn: self.connection_arn,
+        })
     }
 }

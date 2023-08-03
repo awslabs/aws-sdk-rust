@@ -72,9 +72,7 @@ impl User {
 
 /// A builder for [`User`](crate::types::User).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) email: ::std::option::Option<::std::string::String>,
@@ -176,10 +174,7 @@ impl UserBuilder {
         self
     }
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
-    pub fn set_enabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.enabled_date = input;
         self
     }
@@ -193,10 +188,7 @@ impl UserBuilder {
         self
     }
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
-    pub fn set_disabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_disabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.disabled_date = input;
         self
     }

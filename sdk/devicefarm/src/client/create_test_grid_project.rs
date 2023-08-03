@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTestGridProjectOutput`](crate::operation::create_test_grid_project::CreateTestGridProjectOutput) with field(s):
     ///   - [`test_grid_project(Option<TestGridProject>)`](crate::operation::create_test_grid_project::CreateTestGridProjectOutput::test_grid_project): <p>ARN of the Selenium testing project that was created.</p>
     /// - On failure, responds with [`SdkError<CreateTestGridProjectError>`](crate::operation::create_test_grid_project::CreateTestGridProjectError)
-    pub fn create_test_grid_project(
-        &self,
-    ) -> crate::operation::create_test_grid_project::builders::CreateTestGridProjectFluentBuilder
-    {
+    pub fn create_test_grid_project(&self) -> crate::operation::create_test_grid_project::builders::CreateTestGridProjectFluentBuilder {
         crate::operation::create_test_grid_project::builders::CreateTestGridProjectFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,35 +16,25 @@ impl DeleteGlobalClusterInput {
 }
 impl DeleteGlobalClusterInput {
     /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterInput`](crate::operation::delete_global_cluster::DeleteGlobalClusterInput).
-    pub fn builder(
-    ) -> crate::operation::delete_global_cluster::builders::DeleteGlobalClusterInputBuilder {
-        crate::operation::delete_global_cluster::builders::DeleteGlobalClusterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_global_cluster::builders::DeleteGlobalClusterInputBuilder {
+        crate::operation::delete_global_cluster::builders::DeleteGlobalClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGlobalClusterInput`](crate::operation::delete_global_cluster::DeleteGlobalClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGlobalClusterInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGlobalClusterInputBuilder {
     /// <p>The cluster identifier of the global cluster being deleted.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier of the global cluster being deleted.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
         self
     }
@@ -55,14 +45,10 @@ impl DeleteGlobalClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGlobalClusterInput`](crate::operation::delete_global_cluster::DeleteGlobalClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_global_cluster::DeleteGlobalClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_global_cluster::DeleteGlobalClusterInput {
-                global_cluster_identifier: self.global_cluster_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_global_cluster::DeleteGlobalClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_global_cluster::DeleteGlobalClusterInput {
+            global_cluster_identifier: self.global_cluster_identifier,
+        })
     }
 }

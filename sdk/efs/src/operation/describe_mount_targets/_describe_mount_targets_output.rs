@@ -36,21 +36,17 @@ impl ::aws_http::request_id::RequestId for DescribeMountTargetsOutput {
 }
 impl DescribeMountTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMountTargetsOutput`](crate::operation::describe_mount_targets::DescribeMountTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_mount_targets::builders::DescribeMountTargetsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_mount_targets::builders::DescribeMountTargetsOutputBuilder {
         crate::operation::describe_mount_targets::builders::DescribeMountTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMountTargetsOutput`](crate::operation::describe_mount_targets::DescribeMountTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMountTargetsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) mount_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>>,
+    pub(crate) mount_targets: ::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -81,17 +77,12 @@ impl DescribeMountTargetsOutputBuilder {
         self
     }
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
-    pub fn set_mount_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>>,
-    ) -> Self {
+    pub fn set_mount_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>>) -> Self {
         self.mount_targets = input;
         self
     }
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
-    pub fn get_mount_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>> {
+    pub fn get_mount_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>> {
         &self.mount_targets
     }
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>

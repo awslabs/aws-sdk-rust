@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMediaPipelineOutput {
 }
 impl DeleteMediaPipelineOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMediaPipelineOutput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineOutputBuilder {
-        crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineOutputBuilder {
+        crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMediaPipelineOutput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMediaPipelineOutputBuilder {
     _request_id: Option<String>,
 }

@@ -5,29 +5,21 @@
 pub struct GetEnrollmentStatusInput {}
 impl GetEnrollmentStatusInput {
     /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusInput`](crate::operation::get_enrollment_status::GetEnrollmentStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_enrollment_status::builders::GetEnrollmentStatusInputBuilder {
-        crate::operation::get_enrollment_status::builders::GetEnrollmentStatusInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_enrollment_status::builders::GetEnrollmentStatusInputBuilder {
+        crate::operation::get_enrollment_status::builders::GetEnrollmentStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnrollmentStatusInput`](crate::operation::get_enrollment_status::GetEnrollmentStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnrollmentStatusInputBuilder {}
 impl GetEnrollmentStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetEnrollmentStatusInput`](crate::operation::get_enrollment_status::GetEnrollmentStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_enrollment_status::GetEnrollmentStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_enrollment_status::GetEnrollmentStatusInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::get_enrollment_status::GetEnrollmentStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_enrollment_status::GetEnrollmentStatusInput {})
     }
 }

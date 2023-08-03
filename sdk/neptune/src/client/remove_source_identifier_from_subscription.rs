@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionOutput) with field(s):
     ///   - [`event_subscription(Option<EventSubscription>)`](crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionOutput::event_subscription): <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     /// - On failure, responds with [`SdkError<RemoveSourceIdentifierFromSubscriptionError>`](crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionError)
-    pub fn remove_source_identifier_from_subscription(&self) -> crate::operation::remove_source_identifier_from_subscription::builders::RemoveSourceIdentifierFromSubscriptionFluentBuilder{
-        crate::operation::remove_source_identifier_from_subscription::builders::RemoveSourceIdentifierFromSubscriptionFluentBuilder::new(self.handle.clone())
+    pub fn remove_source_identifier_from_subscription(
+        &self,
+    ) -> crate::operation::remove_source_identifier_from_subscription::builders::RemoveSourceIdentifierFromSubscriptionFluentBuilder {
+        crate::operation::remove_source_identifier_from_subscription::builders::RemoveSourceIdentifierFromSubscriptionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

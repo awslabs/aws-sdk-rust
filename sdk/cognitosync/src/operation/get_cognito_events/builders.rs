@@ -10,10 +10,7 @@ impl GetCognitoEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_cognito_events::GetCognitoEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cognito_events::GetCognitoEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cognito_events::GetCognitoEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_cognito_events();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetCognitoEventsFluentBuilder {
         }
     }
     /// Access the GetCognitoEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_cognito_events::builders::GetCognitoEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_cognito_events::builders::GetCognitoEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetCognitoEventsFluentBuilder {
             crate::operation::get_cognito_events::GetCognitoEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cognito_events::GetCognitoEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cognito_events::GetCognitoEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetCognitoEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetCognitoEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cognito_events::GetCognitoEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cognito_events::GetCognitoEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cognito_events::GetCognitoEventsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetCognitoEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cognito_events::GetCognitoEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cognito_events::GetCognitoEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cognito_events::GetCognitoEventsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl GetCognitoEventsFluentBuilder {
             crate::operation::get_cognito_events::GetCognitoEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cognito_events::GetCognitoEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cognito_events::GetCognitoEventsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Cognito Identity Pool ID for the request</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>The Cognito Identity Pool ID for the request</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }

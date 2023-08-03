@@ -10,10 +10,7 @@ impl CreateAlgorithmInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_algorithm::CreateAlgorithmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_algorithm::CreateAlgorithmError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_algorithm::CreateAlgorithmError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_algorithm();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateAlgorithmFluentBuilder {
         }
     }
     /// Access the CreateAlgorithm as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_algorithm::builders::CreateAlgorithmInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_algorithm::builders::CreateAlgorithmInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateAlgorithmFluentBuilder {
             crate::operation::create_algorithm::CreateAlgorithm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_algorithm::CreateAlgorithmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_algorithm::CreateAlgorithmError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateAlgorithmFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateAlgorithmFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_algorithm::CreateAlgorithmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_algorithm::CreateAlgorithmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_algorithm::CreateAlgorithmError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateAlgorithmFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_algorithm::CreateAlgorithmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_algorithm::CreateAlgorithmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_algorithm::CreateAlgorithmError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateAlgorithmFluentBuilder {
             crate::operation::create_algorithm::CreateAlgorithm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_algorithm::CreateAlgorithmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_algorithm::CreateAlgorithmError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the algorithm.</p>
-    pub fn algorithm_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.algorithm_name(input.into());
         self
     }
     /// <p>The name of the algorithm.</p>
-    pub fn set_algorithm_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_algorithm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_algorithm_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl CreateAlgorithmFluentBuilder {
         self.inner.get_algorithm_name()
     }
     /// <p>A description of the algorithm.</p>
-    pub fn algorithm_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.algorithm_description(input.into());
         self
     }
     /// <p>A description of the algorithm.</p>
-    pub fn set_algorithm_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_algorithm_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_algorithm_description(input);
         self
     }
@@ -186,10 +158,7 @@ impl CreateAlgorithmFluentBuilder {
     /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
     /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
-    pub fn set_training_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingSpecification>,
-    ) -> Self {
+    pub fn set_training_specification(mut self, input: ::std::option::Option<crate::types::TrainingSpecification>) -> Self {
         self.inner = self.inner.set_training_specification(input);
         self
     }
@@ -203,9 +172,7 @@ impl CreateAlgorithmFluentBuilder {
     /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
     /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
-    pub fn get_training_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingSpecification> {
+    pub fn get_training_specification(&self) -> &::std::option::Option<crate::types::TrainingSpecification> {
         self.inner.get_training_specification()
     }
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
@@ -224,10 +191,7 @@ impl CreateAlgorithmFluentBuilder {
     /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
     /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
-    pub fn set_inference_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceSpecification>,
-    ) -> Self {
+    pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
         self.inner = self.inner.set_inference_specification(input);
         self
     }
@@ -237,31 +201,21 @@ impl CreateAlgorithmFluentBuilder {
     /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
     /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
-    pub fn get_inference_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceSpecification> {
+    pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
         self.inner.get_inference_specification()
     }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
-    pub fn validation_specification(
-        mut self,
-        input: crate::types::AlgorithmValidationSpecification,
-    ) -> Self {
+    pub fn validation_specification(mut self, input: crate::types::AlgorithmValidationSpecification) -> Self {
         self.inner = self.inner.validation_specification(input);
         self
     }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
-    pub fn set_validation_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::AlgorithmValidationSpecification>,
-    ) -> Self {
+    pub fn set_validation_specification(mut self, input: ::std::option::Option<crate::types::AlgorithmValidationSpecification>) -> Self {
         self.inner = self.inner.set_validation_specification(input);
         self
     }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
-    pub fn get_validation_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlgorithmValidationSpecification> {
+    pub fn get_validation_specification(&self) -> &::std::option::Option<crate::types::AlgorithmValidationSpecification> {
         self.inner.get_validation_specification()
     }
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
@@ -288,10 +242,7 @@ impl CreateAlgorithmFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

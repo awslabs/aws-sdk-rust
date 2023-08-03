@@ -18,9 +18,7 @@ pub struct CreateRuleGroupsNamespaceInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// Optional, user-provided tags for this rule groups namespace.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRuleGroupsNamespaceInput {
     /// The ID of the workspace in which to create the rule group namespace.
@@ -40,34 +38,26 @@ impl CreateRuleGroupsNamespaceInput {
         self.client_token.as_deref()
     }
     /// Optional, user-provided tags for this rule groups namespace.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateRuleGroupsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupsNamespaceInput`](crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceInput).
-    pub fn builder() -> crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceInputBuilder{
+    pub fn builder() -> crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceInputBuilder {
         crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRuleGroupsNamespaceInput`](crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRuleGroupsNamespaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRuleGroupsNamespaceInputBuilder {
     /// The ID of the workspace in which to create the rule group namespace.
@@ -131,32 +121,19 @@ impl CreateRuleGroupsNamespaceInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Optional, user-provided tags for this rule groups namespace.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// Optional, user-provided tags for this rule groups namespace.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// Optional, user-provided tags for this rule groups namespace.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleGroupsNamespaceInput`](crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceInput).
@@ -166,14 +143,12 @@ impl CreateRuleGroupsNamespaceInputBuilder {
         crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceInput {
-                workspace_id: self.workspace_id,
-                name: self.name,
-                data: self.data,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceInput {
+            workspace_id: self.workspace_id,
+            name: self.name,
+            data: self.data,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

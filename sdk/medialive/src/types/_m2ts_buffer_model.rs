@@ -38,13 +38,7 @@
 /// M2ts Buffer Model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsBufferModel {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsBufferModel {
         match s {
             "MULTIPLEX" => M2tsBufferModel::Multiplex,
             "NONE" => M2tsBufferModel::None,
-            other => {
-                M2tsBufferModel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => M2tsBufferModel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

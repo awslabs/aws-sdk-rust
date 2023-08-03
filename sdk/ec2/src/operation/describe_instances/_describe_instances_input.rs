@@ -229,17 +229,14 @@ impl DescribeInstancesInput {
 }
 impl DescribeInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
-    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesInputBuilder {
         crate::operation::describe_instances::builders::DescribeInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -442,10 +439,7 @@ impl DescribeInstancesInputBuilder {
     /// <li> <p> <code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code> | <code>hvm</code>).</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC that the instance is running in.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -558,18 +552,13 @@ impl DescribeInstancesInputBuilder {
     }
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -620,18 +609,13 @@ impl DescribeInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instances::DescribeInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instances::DescribeInstancesInput {
-                filters: self.filters,
-                instance_ids: self.instance_ids,
-                dry_run: self.dry_run,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_instances::DescribeInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_instances::DescribeInstancesInput {
+            filters: self.filters,
+            instance_ids: self.instance_ids,
+            dry_run: self.dry_run,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

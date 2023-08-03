@@ -8,8 +8,7 @@ pub struct ListInferenceSchedulersOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
     #[doc(hidden)]
-    pub inference_scheduler_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
+    pub inference_scheduler_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceSchedulersOutput {
@@ -18,9 +17,7 @@ impl ListInferenceSchedulersOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
-    pub fn inference_scheduler_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InferenceSchedulerSummary]> {
+    pub fn inference_scheduler_summaries(&self) -> ::std::option::Option<&[crate::types::InferenceSchedulerSummary]> {
         self.inference_scheduler_summaries.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListInferenceSchedulersOutput {
 }
 impl ListInferenceSchedulersOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceSchedulersOutput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersOutputBuilder {
         crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceSchedulersOutput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceSchedulersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) inference_scheduler_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
+    pub(crate) inference_scheduler_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceSchedulersOutputBuilder {
@@ -69,10 +61,7 @@ impl ListInferenceSchedulersOutputBuilder {
     /// To override the contents of this collection use [`set_inference_scheduler_summaries`](Self::set_inference_scheduler_summaries).
     ///
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
-    pub fn inference_scheduler_summaries(
-        mut self,
-        input: crate::types::InferenceSchedulerSummary,
-    ) -> Self {
+    pub fn inference_scheduler_summaries(mut self, input: crate::types::InferenceSchedulerSummary) -> Self {
         let mut v = self.inference_scheduler_summaries.unwrap_or_default();
         v.push(input);
         self.inference_scheduler_summaries = ::std::option::Option::Some(v);
@@ -87,9 +76,7 @@ impl ListInferenceSchedulersOutputBuilder {
         self
     }
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
-    pub fn get_inference_scheduler_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>> {
+    pub fn get_inference_scheduler_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>> {
         &self.inference_scheduler_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +89,7 @@ impl ListInferenceSchedulersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInferenceSchedulersOutput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput {
+    pub fn build(self) -> crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput {
         crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput {
             next_token: self.next_token,
             inference_scheduler_summaries: self.inference_scheduler_summaries,

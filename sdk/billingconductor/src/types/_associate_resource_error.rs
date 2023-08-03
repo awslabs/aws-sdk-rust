@@ -30,9 +30,7 @@ impl AssociateResourceError {
 
 /// A builder for [`AssociateResourceError`](crate::types::AssociateResourceError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateResourceErrorBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::AssociateResourceErrorReason>,
@@ -58,10 +56,7 @@ impl AssociateResourceErrorBuilder {
         self
     }
     /// <p>A static error code that's used to classify the type of failure.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociateResourceErrorReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AssociateResourceErrorReason>) -> Self {
         self.reason = input;
         self
     }

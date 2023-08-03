@@ -38,13 +38,7 @@
 /// Documentation update needed
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputTimecodeSource {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for InputTimecodeSource {
         match s {
             "EMBEDDED" => InputTimecodeSource::Embedded,
             "ZEROBASED" => InputTimecodeSource::Zerobased,
-            other => InputTimecodeSource::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InputTimecodeSource::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

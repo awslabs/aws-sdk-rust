@@ -21,8 +21,7 @@ pub struct EvaluationFormQuestion {
     pub question_type: ::std::option::Option<crate::types::EvaluationFormQuestionType>,
     /// <p>The properties of the type of question. Text questions do not have to define question type properties.</p>
     #[doc(hidden)]
-    pub question_type_properties:
-        ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>,
+    pub question_type_properties: ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>,
     /// <p>The scoring weight of the section.</p>
     #[doc(hidden)]
     pub weight: f64,
@@ -45,15 +44,11 @@ impl EvaluationFormQuestion {
         self.not_applicable_enabled
     }
     /// <p>The type of the question.</p>
-    pub fn question_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvaluationFormQuestionType> {
+    pub fn question_type(&self) -> ::std::option::Option<&crate::types::EvaluationFormQuestionType> {
         self.question_type.as_ref()
     }
     /// <p>The properties of the type of question. Text questions do not have to define question type properties.</p>
-    pub fn question_type_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvaluationFormQuestionTypeProperties> {
+    pub fn question_type_properties(&self) -> ::std::option::Option<&crate::types::EvaluationFormQuestionTypeProperties> {
         self.question_type_properties.as_ref()
     }
     /// <p>The scoring weight of the section.</p>
@@ -70,17 +65,14 @@ impl EvaluationFormQuestion {
 
 /// A builder for [`EvaluationFormQuestion`](crate::types::EvaluationFormQuestion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationFormQuestionBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) instructions: ::std::option::Option<::std::string::String>,
     pub(crate) ref_id: ::std::option::Option<::std::string::String>,
     pub(crate) not_applicable_enabled: ::std::option::Option<bool>,
     pub(crate) question_type: ::std::option::Option<crate::types::EvaluationFormQuestionType>,
-    pub(crate) question_type_properties:
-        ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>,
+    pub(crate) question_type_properties: ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>,
     pub(crate) weight: ::std::option::Option<f64>,
 }
 impl EvaluationFormQuestionBuilder {
@@ -146,39 +138,26 @@ impl EvaluationFormQuestionBuilder {
         self
     }
     /// <p>The type of the question.</p>
-    pub fn set_question_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFormQuestionType>,
-    ) -> Self {
+    pub fn set_question_type(mut self, input: ::std::option::Option<crate::types::EvaluationFormQuestionType>) -> Self {
         self.question_type = input;
         self
     }
     /// <p>The type of the question.</p>
-    pub fn get_question_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationFormQuestionType> {
+    pub fn get_question_type(&self) -> &::std::option::Option<crate::types::EvaluationFormQuestionType> {
         &self.question_type
     }
     /// <p>The properties of the type of question. Text questions do not have to define question type properties.</p>
-    pub fn question_type_properties(
-        mut self,
-        input: crate::types::EvaluationFormQuestionTypeProperties,
-    ) -> Self {
+    pub fn question_type_properties(mut self, input: crate::types::EvaluationFormQuestionTypeProperties) -> Self {
         self.question_type_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The properties of the type of question. Text questions do not have to define question type properties.</p>
-    pub fn set_question_type_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>,
-    ) -> Self {
+    pub fn set_question_type_properties(mut self, input: ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>) -> Self {
         self.question_type_properties = input;
         self
     }
     /// <p>The properties of the type of question. Text questions do not have to define question type properties.</p>
-    pub fn get_question_type_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties> {
+    pub fn get_question_type_properties(&self) -> &::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties> {
         &self.question_type_properties
     }
     /// <p>The scoring weight of the section.</p>

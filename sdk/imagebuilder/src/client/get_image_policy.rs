@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::get_image_policy::GetImagePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_image_policy::GetImagePolicyOutput::policy): <p>The image policy object.</p>
     /// - On failure, responds with [`SdkError<GetImagePolicyError>`](crate::operation::get_image_policy::GetImagePolicyError)
-    pub fn get_image_policy(
-        &self,
-    ) -> crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder {
-        crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_image_policy(&self) -> crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder {
+        crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder::new(self.handle.clone())
     }
 }

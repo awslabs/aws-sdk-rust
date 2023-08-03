@@ -31,9 +31,7 @@ impl ClassifierMetadata {
         self.number_of_test_documents
     }
     /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
-    pub fn evaluation_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClassifierEvaluationMetrics> {
+    pub fn evaluation_metrics(&self) -> ::std::option::Option<&crate::types::ClassifierEvaluationMetrics> {
         self.evaluation_metrics.as_ref()
     }
 }
@@ -41,14 +39,8 @@ impl ::std::fmt::Debug for ClassifierMetadata {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifierMetadata");
         formatter.field("number_of_labels", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "number_of_trained_documents",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "number_of_test_documents",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("number_of_trained_documents", &"*** Sensitive Data Redacted ***");
+        formatter.field("number_of_test_documents", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluation_metrics", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -118,17 +110,12 @@ impl ClassifierMetadataBuilder {
         self
     }
     /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
-    pub fn set_evaluation_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>,
-    ) -> Self {
+    pub fn set_evaluation_metrics(mut self, input: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>) -> Self {
         self.evaluation_metrics = input;
         self
     }
     /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
-    pub fn get_evaluation_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClassifierEvaluationMetrics> {
+    pub fn get_evaluation_metrics(&self) -> &::std::option::Option<crate::types::ClassifierEvaluationMetrics> {
         &self.evaluation_metrics
     }
     /// Consumes the builder and constructs a [`ClassifierMetadata`](crate::types::ClassifierMetadata).
@@ -145,14 +132,8 @@ impl ::std::fmt::Debug for ClassifierMetadataBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifierMetadataBuilder");
         formatter.field("number_of_labels", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "number_of_trained_documents",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "number_of_test_documents",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("number_of_trained_documents", &"*** Sensitive Data Redacted ***");
+        formatter.field("number_of_test_documents", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluation_metrics", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

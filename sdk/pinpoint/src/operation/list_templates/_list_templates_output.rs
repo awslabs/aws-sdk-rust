@@ -28,9 +28,7 @@ impl ListTemplatesOutput {
 
 /// A builder for [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplatesOutputBuilder {
     pub(crate) templates_response: ::std::option::Option<crate::types::TemplatesResponse>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl ListTemplatesOutputBuilder {
         self
     }
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
-    pub fn set_templates_response(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplatesResponse>,
-    ) -> Self {
+    pub fn set_templates_response(mut self, input: ::std::option::Option<crate::types::TemplatesResponse>) -> Self {
         self.templates_response = input;
         self
     }
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
-    pub fn get_templates_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplatesResponse> {
+    pub fn get_templates_response(&self) -> &::std::option::Option<crate::types::TemplatesResponse> {
         &self.templates_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

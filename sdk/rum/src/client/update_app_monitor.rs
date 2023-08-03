@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`custom_events(CustomEvents)`](crate::operation::update_app_monitor::builders::UpdateAppMonitorFluentBuilder::custom_events) / [`set_custom_events(Option<CustomEvents>)`](crate::operation::update_app_monitor::builders::UpdateAppMonitorFluentBuilder::set_custom_events): <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>  <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
     /// - On success, responds with [`UpdateAppMonitorOutput`](crate::operation::update_app_monitor::UpdateAppMonitorOutput)
     /// - On failure, responds with [`SdkError<UpdateAppMonitorError>`](crate::operation::update_app_monitor::UpdateAppMonitorError)
-    pub fn update_app_monitor(
-        &self,
-    ) -> crate::operation::update_app_monitor::builders::UpdateAppMonitorFluentBuilder {
-        crate::operation::update_app_monitor::builders::UpdateAppMonitorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_app_monitor(&self) -> crate::operation::update_app_monitor::builders::UpdateAppMonitorFluentBuilder {
+        crate::operation::update_app_monitor::builders::UpdateAppMonitorFluentBuilder::new(self.handle.clone())
     }
 }

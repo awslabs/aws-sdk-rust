@@ -6,12 +6,10 @@
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
-    pub predefined_scaling_metric_specification:
-        ::std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
+    pub predefined_scaling_metric_specification: ::std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
     #[doc(hidden)]
-    pub customized_scaling_metric_specification:
-        ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
+    pub customized_scaling_metric_specification: ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
     #[doc(hidden)]
     pub target_value: ::std::option::Option<f64>,
@@ -33,15 +31,11 @@ pub struct TargetTrackingConfiguration {
 }
 impl TargetTrackingConfiguration {
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn predefined_scaling_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredefinedScalingMetricSpecification> {
+    pub fn predefined_scaling_metric_specification(&self) -> ::std::option::Option<&crate::types::PredefinedScalingMetricSpecification> {
         self.predefined_scaling_metric_specification.as_ref()
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
-    pub fn customized_scaling_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomizedScalingMetricSpecification> {
+    pub fn customized_scaling_metric_specification(&self) -> ::std::option::Option<&crate::types::CustomizedScalingMetricSpecification> {
         self.customized_scaling_metric_specification.as_ref()
     }
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
@@ -77,14 +71,10 @@ impl TargetTrackingConfiguration {
 
 /// A builder for [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetTrackingConfigurationBuilder {
-    pub(crate) predefined_scaling_metric_specification:
-        ::std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
-    pub(crate) customized_scaling_metric_specification:
-        ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
+    pub(crate) predefined_scaling_metric_specification: ::std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
+    pub(crate) customized_scaling_metric_specification: ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
     pub(crate) target_value: ::std::option::Option<f64>,
     pub(crate) disable_scale_in: ::std::option::Option<bool>,
     pub(crate) scale_out_cooldown: ::std::option::Option<i32>,
@@ -93,10 +83,7 @@ pub struct TargetTrackingConfigurationBuilder {
 }
 impl TargetTrackingConfigurationBuilder {
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn predefined_scaling_metric_specification(
-        mut self,
-        input: crate::types::PredefinedScalingMetricSpecification,
-    ) -> Self {
+    pub fn predefined_scaling_metric_specification(mut self, input: crate::types::PredefinedScalingMetricSpecification) -> Self {
         self.predefined_scaling_metric_specification = ::std::option::Option::Some(input);
         self
     }
@@ -109,16 +96,11 @@ impl TargetTrackingConfigurationBuilder {
         self
     }
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn get_predefined_scaling_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredefinedScalingMetricSpecification> {
+    pub fn get_predefined_scaling_metric_specification(&self) -> &::std::option::Option<crate::types::PredefinedScalingMetricSpecification> {
         &self.predefined_scaling_metric_specification
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
-    pub fn customized_scaling_metric_specification(
-        mut self,
-        input: crate::types::CustomizedScalingMetricSpecification,
-    ) -> Self {
+    pub fn customized_scaling_metric_specification(mut self, input: crate::types::CustomizedScalingMetricSpecification) -> Self {
         self.customized_scaling_metric_specification = ::std::option::Option::Some(input);
         self
     }
@@ -131,9 +113,7 @@ impl TargetTrackingConfigurationBuilder {
         self
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
-    pub fn get_customized_scaling_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomizedScalingMetricSpecification> {
+    pub fn get_customized_scaling_metric_specification(&self) -> &::std::option::Option<crate::types::CustomizedScalingMetricSpecification> {
         &self.customized_scaling_metric_specification
     }
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>

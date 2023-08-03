@@ -23,9 +23,7 @@ impl InputDataConfig {
 
 /// A builder for [`InputDataConfig`](crate::types::InputDataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDataConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl InputDataConfigBuilder {
     }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).
     pub fn build(self) -> crate::types::InputDataConfig {
-        crate::types::InputDataConfig {
-            s3_uri: self.s3_uri,
-        }
+        crate::types::InputDataConfig { s3_uri: self.s3_uri }
     }
 }

@@ -5,9 +5,7 @@ pub fn ser_catalog_configuration_update(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.glue_data_catalog_configuration_update {
         #[allow(unused_mut)]
-        let mut object_2 = object
-            .key("GlueDataCatalogConfigurationUpdate")
-            .start_object();
+        let mut object_2 = object.key("GlueDataCatalogConfigurationUpdate").start_object();
         crate::protocol_serde::shape_glue_data_catalog_configuration_update::ser_glue_data_catalog_configuration_update(&mut object_2, var_1)?;
         object_2.finish();
     }

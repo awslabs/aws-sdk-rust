@@ -26,7 +26,7 @@ impl DescribeAuditSuppressionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAuditSuppressionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionInputBuilder,
+    inner: crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionInputBuilder,
 }
 impl DescribeAuditSuppressionFluentBuilder {
     /// Creates a new `DescribeAuditSuppression`.
@@ -37,10 +37,7 @@ impl DescribeAuditSuppressionFluentBuilder {
         }
     }
     /// Access the DescribeAuditSuppression as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeAuditSuppressionFluentBuilder {
             crate::operation::describe_audit_suppression::DescribeAuditSuppression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_audit_suppression::DescribeAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_audit_suppression::DescribeAuditSuppressionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeAuditSuppressionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeAuditSuppressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_audit_suppression::DescribeAuditSuppressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_audit_suppression::DescribeAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_audit_suppression::DescribeAuditSuppressionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeAuditSuppressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_audit_suppression::DescribeAuditSuppressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_audit_suppression::DescribeAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_audit_suppression::DescribeAuditSuppressionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeAuditSuppressionFluentBuilder {
             crate::operation::describe_audit_suppression::DescribeAuditSuppression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_audit_suppression::DescribeAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_audit_suppression::DescribeAuditSuppressionError>,
     > {
         self.customize_middleware().await
     }
@@ -143,17 +129,12 @@ impl DescribeAuditSuppressionFluentBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         self.inner.get_resource_identifier()
     }
 }

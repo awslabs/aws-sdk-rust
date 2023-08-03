@@ -44,16 +44,14 @@ impl ListDomainDeliverabilityCampaignsInput {
 }
 impl ListDomainDeliverabilityCampaignsInput {
     /// Creates a new builder-style object to manufacture [`ListDomainDeliverabilityCampaignsInput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsInput).
-    pub fn builder() -> crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsInputBuilder{
+    pub fn builder() -> crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsInputBuilder {
         crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDomainDeliverabilityCampaignsInput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainDeliverabilityCampaignsInputBuilder {
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -68,10 +66,7 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
         self
     }
     /// <p>The first day that you want to obtain deliverability data for.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -85,10 +80,7 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
         self
     }
     /// <p>The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
@@ -97,18 +89,12 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
         &self.end_date
     }
     /// <p>The domain to obtain deliverability data for.</p>
-    pub fn subscribed_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscribed_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscribed_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain to obtain deliverability data for.</p>
-    pub fn set_subscribed_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscribed_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscribed_domain = input;
         self
     }
@@ -145,20 +131,20 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListDomainDeliverabilityCampaignsInput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsInput {
-                start_date: self.start_date
-                ,
-                end_date: self.end_date
-                ,
-                subscribed_domain: self.subscribed_domain
-                ,
-                next_token: self.next_token
-                ,
-                page_size: self.page_size
-                ,
-            }
+                start_date: self.start_date,
+                end_date: self.end_date,
+                subscribed_domain: self.subscribed_domain,
+                next_token: self.next_token,
+                page_size: self.page_size,
+            },
         )
     }
 }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ValidateMatchmakingRuleSetOutput {
 }
 impl ValidateMatchmakingRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`ValidateMatchmakingRuleSetOutput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput).
-    pub fn builder() -> crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetOutputBuilder{
+    pub fn builder() -> crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetOutputBuilder {
         crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateMatchmakingRuleSetOutput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateMatchmakingRuleSetOutputBuilder {
     pub(crate) valid: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl ValidateMatchmakingRuleSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidateMatchmakingRuleSetOutput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput {
+    pub fn build(self) -> crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput {
         crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput {
             valid: self.valid,
             _request_id: self._request_id,

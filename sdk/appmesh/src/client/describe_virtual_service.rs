@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVirtualServiceOutput`](crate::operation::describe_virtual_service::DescribeVirtualServiceOutput) with field(s):
     ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::operation::describe_virtual_service::DescribeVirtualServiceOutput::virtual_service): <p>The full description of your virtual service.</p>
     /// - On failure, responds with [`SdkError<DescribeVirtualServiceError>`](crate::operation::describe_virtual_service::DescribeVirtualServiceError)
-    pub fn describe_virtual_service(
-        &self,
-    ) -> crate::operation::describe_virtual_service::builders::DescribeVirtualServiceFluentBuilder
-    {
+    pub fn describe_virtual_service(&self) -> crate::operation::describe_virtual_service::builders::DescribeVirtualServiceFluentBuilder {
         crate::operation::describe_virtual_service::builders::DescribeVirtualServiceFluentBuilder::new(self.handle.clone())
     }
 }

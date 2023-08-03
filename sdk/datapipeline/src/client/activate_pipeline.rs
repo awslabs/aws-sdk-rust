@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`start_timestamp(DateTime)`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::start_timestamp) / [`set_start_timestamp(Option<DateTime>)`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::set_start_timestamp): <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     /// - On success, responds with [`ActivatePipelineOutput`](crate::operation::activate_pipeline::ActivatePipelineOutput)
     /// - On failure, responds with [`SdkError<ActivatePipelineError>`](crate::operation::activate_pipeline::ActivatePipelineError)
-    pub fn activate_pipeline(
-        &self,
-    ) -> crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder {
-        crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn activate_pipeline(&self) -> crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder {
+        crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::new(self.handle.clone())
     }
 }

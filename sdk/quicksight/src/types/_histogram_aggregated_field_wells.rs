@@ -23,9 +23,7 @@ impl HistogramAggregatedFieldWells {
 
 /// A builder for [`HistogramAggregatedFieldWells`](crate::types::HistogramAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HistogramAggregatedFieldWellsBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
@@ -42,23 +40,16 @@ impl HistogramAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The value field wells of a histogram. Values are aggregated by <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The value field wells of a histogram. Values are aggregated by <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`HistogramAggregatedFieldWells`](crate::types::HistogramAggregatedFieldWells).
     pub fn build(self) -> crate::types::HistogramAggregatedFieldWells {
-        crate::types::HistogramAggregatedFieldWells {
-            values: self.values,
-        }
+        crate::types::HistogramAggregatedFieldWells { values: self.values }
     }
 }

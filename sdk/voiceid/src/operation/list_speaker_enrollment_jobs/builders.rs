@@ -26,7 +26,7 @@ impl ListSpeakerEnrollmentJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSpeakerEnrollmentJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsInputBuilder,
+    inner: crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsInputBuilder,
 }
 impl ListSpeakerEnrollmentJobsFluentBuilder {
     /// Creates a new `ListSpeakerEnrollmentJobs`.
@@ -37,7 +37,7 @@ impl ListSpeakerEnrollmentJobsFluentBuilder {
         }
     }
     /// Access the ListSpeakerEnrollmentJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSpeakerEnrollmentJobsFluentBuilder {
             crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSpeakerEnrollmentJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSpeakerEnrollmentJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSpeakerEnrollmentJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListSpeakerEnrollmentJobsFluentBuilder {
             crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_speaker_enrollment_jobs::paginator::ListSpeakerEnrollmentJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_speaker_enrollment_jobs::paginator::ListSpeakerEnrollmentJobsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_speaker_enrollment_jobs::paginator::ListSpeakerEnrollmentJobsPaginator {
         crate::operation::list_speaker_enrollment_jobs::paginator::ListSpeakerEnrollmentJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the domain that contains the speaker enrollment jobs.</p>
@@ -149,17 +135,12 @@ impl ListSpeakerEnrollmentJobsFluentBuilder {
         self
     }
     /// <p>Provides the status of your speaker enrollment Job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SpeakerEnrollmentJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::SpeakerEnrollmentJobStatus>) -> Self {
         self.inner = self.inner.set_job_status(input);
         self
     }
     /// <p>Provides the status of your speaker enrollment Job.</p>
-    pub fn get_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpeakerEnrollmentJobStatus> {
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::SpeakerEnrollmentJobStatus> {
         self.inner.get_job_status()
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.</p>

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`batch_inference_jobs(Option<Vec<BatchInferenceJobSummary>>)`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput::batch_inference_jobs): <p>A list containing information on each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListBatchInferenceJobsError>`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError)
-    pub fn list_batch_inference_jobs(
-        &self,
-    ) -> crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder
-    {
+    pub fn list_batch_inference_jobs(&self) -> crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder {
         crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder::new(self.handle.clone())
     }
 }

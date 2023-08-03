@@ -35,9 +35,7 @@ impl HeatMapConfiguration {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a heat map.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HeatMapSortConfiguration> {
+    pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::HeatMapSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
@@ -45,9 +43,7 @@ impl HeatMapConfiguration {
         self.row_label_options.as_ref()
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
-    pub fn column_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn column_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.column_label_options.as_ref()
     }
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
@@ -76,9 +72,7 @@ impl HeatMapConfiguration {
 
 /// A builder for [`HeatMapConfiguration`](crate::types::HeatMapConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HeatMapConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::HeatMapFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::HeatMapSortConfiguration>,
@@ -96,10 +90,7 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The field wells of the visual.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::HeatMapFieldWells>,
-    ) -> Self {
+    pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::HeatMapFieldWells>) -> Self {
         self.field_wells = input;
         self
     }
@@ -113,17 +104,12 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of a heat map.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::HeatMapSortConfiguration>,
-    ) -> Self {
+    pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::HeatMapSortConfiguration>) -> Self {
         self.sort_configuration = input;
         self
     }
     /// <p>The sort configuration of a heat map.</p>
-    pub fn get_sort_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::HeatMapSortConfiguration> {
+    pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::HeatMapSortConfiguration> {
         &self.sort_configuration
     }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
@@ -132,17 +118,12 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
-    pub fn set_row_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_row_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.row_label_options = input;
         self
     }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
-    pub fn get_row_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_row_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.row_label_options
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
@@ -151,17 +132,12 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
-    pub fn set_column_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_column_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.column_label_options = input;
         self
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
-    pub fn get_column_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_column_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.column_label_options
     }
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
@@ -170,10 +146,7 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
-    pub fn set_color_scale(
-        mut self,
-        input: ::std::option::Option<crate::types::ColorScale>,
-    ) -> Self {
+    pub fn set_color_scale(mut self, input: ::std::option::Option<crate::types::ColorScale>) -> Self {
         self.color_scale = input;
         self
     }
@@ -201,10 +174,7 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
-    pub fn set_data_labels(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLabelOptions>,
-    ) -> Self {
+    pub fn set_data_labels(mut self, input: ::std::option::Option<crate::types::DataLabelOptions>) -> Self {
         self.data_labels = input;
         self
     }
@@ -218,10 +188,7 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn set_tooltip(
-        mut self,
-        input: ::std::option::Option<crate::types::TooltipOptions>,
-    ) -> Self {
+    pub fn set_tooltip(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
         self.tooltip = input;
         self
     }

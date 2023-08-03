@@ -32,9 +32,7 @@ impl DeleteVirtualInterfaceOutput {
     /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> ::std::option::Option<&crate::types::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
 }
@@ -45,18 +43,14 @@ impl ::aws_http::request_id::RequestId for DeleteVirtualInterfaceOutput {
 }
 impl DeleteVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualInterfaceOutput`](crate::operation::delete_virtual_interface::DeleteVirtualInterfaceOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_interface::builders::DeleteVirtualInterfaceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_virtual_interface::builders::DeleteVirtualInterfaceOutputBuilder {
         crate::operation::delete_virtual_interface::builders::DeleteVirtualInterfaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualInterfaceOutput`](crate::operation::delete_virtual_interface::DeleteVirtualInterfaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualInterfaceOutputBuilder {
     pub(crate) virtual_interface_state: ::std::option::Option<crate::types::VirtualInterfaceState>,
     _request_id: Option<String>,
@@ -90,10 +84,7 @@ impl DeleteVirtualInterfaceOutputBuilder {
     /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
-    pub fn set_virtual_interface_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualInterfaceState>,
-    ) -> Self {
+    pub fn set_virtual_interface_state(mut self, input: ::std::option::Option<crate::types::VirtualInterfaceState>) -> Self {
         self.virtual_interface_state = input;
         self
     }
@@ -109,9 +100,7 @@ impl DeleteVirtualInterfaceOutputBuilder {
     /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
-    pub fn get_virtual_interface_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualInterfaceState> {
+    pub fn get_virtual_interface_state(&self) -> &::std::option::Option<crate::types::VirtualInterfaceState> {
         &self.virtual_interface_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

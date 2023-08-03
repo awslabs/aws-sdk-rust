@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`url(Option<String>)`](crate::operation::get_attachment::GetAttachmentOutput::url): <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
     ///   - [`url_expiry(Option<String>)`](crate::operation::get_attachment::GetAttachmentOutput::url_expiry): <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     /// - On failure, responds with [`SdkError<GetAttachmentError>`](crate::operation::get_attachment::GetAttachmentError)
-    pub fn get_attachment(
-        &self,
-    ) -> crate::operation::get_attachment::builders::GetAttachmentFluentBuilder {
-        crate::operation::get_attachment::builders::GetAttachmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_attachment(&self) -> crate::operation::get_attachment::builders::GetAttachmentFluentBuilder {
+        crate::operation::get_attachment::builders::GetAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,8 +27,7 @@ impl RemoveTagsFromResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder,
+    inner: crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder,
 }
 impl RemoveTagsFromResourceFluentBuilder {
     /// Creates a new `RemoveTagsFromResource`.
@@ -39,10 +38,7 @@ impl RemoveTagsFromResourceFluentBuilder {
         }
     }
     /// Access the RemoveTagsFromResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl RemoveTagsFromResourceFluentBuilder {
             crate::operation::remove_tags_from_resource::RemoveTagsFromResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl RemoveTagsFromResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl RemoveTagsFromResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl RemoveTagsFromResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl RemoveTagsFromResourceFluentBuilder {
             crate::operation::remove_tags_from_resource::RemoveTagsFromResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon RDS resource that the tags are removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The Amazon RDS resource that the tags are removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }
@@ -155,10 +134,7 @@ impl RemoveTagsFromResourceFluentBuilder {
         self
     }
     /// <p>The tag key (name) of the tag to be removed.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }

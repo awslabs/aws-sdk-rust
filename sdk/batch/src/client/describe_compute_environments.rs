@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`compute_environments(Option<Vec<ComputeEnvironmentDetail>>)`](crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput::compute_environments): <p>The list of compute environments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeComputeEnvironmentsError>`](crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError)
-    pub fn describe_compute_environments(&self) -> crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsFluentBuilder{
+    pub fn describe_compute_environments(
+        &self,
+    ) -> crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsFluentBuilder {
         crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsFluentBuilder::new(self.handle.clone())
     }
 }

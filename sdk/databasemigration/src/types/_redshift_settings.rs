@@ -263,10 +263,7 @@ impl ::std::fmt::Debug for RedshiftSettings {
         formatter.field("empty_as_null", &self.empty_as_null);
         formatter.field("encryption_mode", &self.encryption_mode);
         formatter.field("explicit_ids", &self.explicit_ids);
-        formatter.field(
-            "file_transfer_upload_streams",
-            &self.file_transfer_upload_streams,
-        );
+        formatter.field("file_transfer_upload_streams", &self.file_transfer_upload_streams);
         formatter.field("load_timeout", &self.load_timeout);
         formatter.field("max_file_size", &self.max_file_size);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
@@ -276,19 +273,13 @@ impl ::std::fmt::Debug for RedshiftSettings {
         formatter.field("replace_chars", &self.replace_chars);
         formatter.field("server_name", &self.server_name);
         formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field(
-            "server_side_encryption_kms_key_id",
-            &self.server_side_encryption_kms_key_id,
-        );
+        formatter.field("server_side_encryption_kms_key_id", &self.server_side_encryption_kms_key_id);
         formatter.field("time_format", &self.time_format);
         formatter.field("trim_blanks", &self.trim_blanks);
         formatter.field("truncate_columns", &self.truncate_columns);
         formatter.field("username", &self.username);
         formatter.field("write_buffer_size", &self.write_buffer_size);
-        formatter.field(
-            "secrets_manager_access_role_arn",
-            &self.secrets_manager_access_role_arn,
-        );
+        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
         formatter.finish()
@@ -356,18 +347,12 @@ impl RedshiftSettingsBuilder {
         &self.accept_any_date
     }
     /// <p>Code to run after connecting. This parameter should contain the code itself, not the name of a file containing the code.</p>
-    pub fn after_connect_script(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_connect_script(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_connect_script = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Code to run after connecting. This parameter should contain the code itself, not the name of a file containing the code.</p>
-    pub fn set_after_connect_script(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_connect_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_connect_script = input;
         self
     }
@@ -378,20 +363,14 @@ impl RedshiftSettingsBuilder {
     /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
     /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
-    pub fn bucket_folder(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_folder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_folder = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
     /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
-    pub fn set_bucket_folder(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_folder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_folder = input;
         self
     }
@@ -458,18 +437,12 @@ impl RedshiftSettingsBuilder {
         &self.connection_timeout
     }
     /// <p>The name of the Amazon Redshift data warehouse (service) that you are working with.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Redshift data warehouse (service) that you are working with.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -520,10 +493,7 @@ impl RedshiftSettingsBuilder {
     /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
     /// </note>
     /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionModeValue>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionModeValue>) -> Self {
         self.encryption_mode = input;
         self
     }
@@ -639,18 +609,12 @@ impl RedshiftSettingsBuilder {
         &self.remove_quotes
     }
     /// <p>A list of characters that you want to replace. Use with <code>ReplaceChars</code>.</p>
-    pub fn replace_invalid_chars(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replace_invalid_chars(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replace_invalid_chars = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of characters that you want to replace. Use with <code>ReplaceChars</code>.</p>
-    pub fn set_replace_invalid_chars(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replace_invalid_chars(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replace_invalid_chars = input;
         self
     }
@@ -659,18 +623,12 @@ impl RedshiftSettingsBuilder {
         &self.replace_invalid_chars
     }
     /// <p>A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified characters instead. The default is <code>"?"</code>.</p>
-    pub fn replace_chars(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replace_chars(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replace_chars = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified characters instead. The default is <code>"?"</code>.</p>
-    pub fn set_replace_chars(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replace_chars(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replace_chars = input;
         self
     }
@@ -693,18 +651,12 @@ impl RedshiftSettingsBuilder {
         &self.server_name
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn set_service_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_access_role_arn = input;
         self
     }
@@ -713,25 +665,17 @@ impl RedshiftSettingsBuilder {
         &self.service_access_role_arn
     }
     /// <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.</p>
-    pub fn server_side_encryption_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_side_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_side_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.</p>
-    pub fn set_server_side_encryption_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_side_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_side_encryption_kms_key_id = input;
         self
     }
     /// <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.</p>
-    pub fn get_server_side_encryption_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_server_side_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_side_encryption_kms_key_id
     }
     /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
@@ -810,44 +754,30 @@ impl RedshiftSettingsBuilder {
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secrets_manager_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn set_secrets_manager_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secrets_manager_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = input;
         self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn get_secrets_manager_access_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secrets_manager_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_access_role_arn
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secrets_manager_secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_secret_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint connection details.</p>
-    pub fn set_secrets_manager_secret_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secrets_manager_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_secret_id = input;
         self
     }
@@ -921,10 +851,7 @@ impl ::std::fmt::Debug for RedshiftSettingsBuilder {
         formatter.field("empty_as_null", &self.empty_as_null);
         formatter.field("encryption_mode", &self.encryption_mode);
         formatter.field("explicit_ids", &self.explicit_ids);
-        formatter.field(
-            "file_transfer_upload_streams",
-            &self.file_transfer_upload_streams,
-        );
+        formatter.field("file_transfer_upload_streams", &self.file_transfer_upload_streams);
         formatter.field("load_timeout", &self.load_timeout);
         formatter.field("max_file_size", &self.max_file_size);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
@@ -934,19 +861,13 @@ impl ::std::fmt::Debug for RedshiftSettingsBuilder {
         formatter.field("replace_chars", &self.replace_chars);
         formatter.field("server_name", &self.server_name);
         formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field(
-            "server_side_encryption_kms_key_id",
-            &self.server_side_encryption_kms_key_id,
-        );
+        formatter.field("server_side_encryption_kms_key_id", &self.server_side_encryption_kms_key_id);
         formatter.field("time_format", &self.time_format);
         formatter.field("trim_blanks", &self.trim_blanks);
         formatter.field("truncate_columns", &self.truncate_columns);
         formatter.field("username", &self.username);
         formatter.field("write_buffer_size", &self.write_buffer_size);
-        formatter.field(
-            "secrets_manager_access_role_arn",
-            &self.secrets_manager_access_role_arn,
-        );
+        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
         formatter.finish()

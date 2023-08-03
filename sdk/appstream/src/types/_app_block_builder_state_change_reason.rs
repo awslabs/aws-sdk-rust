@@ -13,9 +13,7 @@ pub struct AppBlockBuilderStateChangeReason {
 }
 impl AppBlockBuilderStateChangeReason {
     /// <p>The state change reason code.</p>
-    pub fn code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppBlockBuilderStateChangeReasonCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The state change reason message.</p>
@@ -32,9 +30,7 @@ impl AppBlockBuilderStateChangeReason {
 
 /// A builder for [`AppBlockBuilderStateChangeReason`](crate::types::AppBlockBuilderStateChangeReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppBlockBuilderStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -46,17 +42,12 @@ impl AppBlockBuilderStateChangeReasonBuilder {
         self
     }
     /// <p>The state change reason code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReasonCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReasonCode>) -> Self {
         self.code = input;
         self
     }
     /// <p>The state change reason code.</p>
-    pub fn get_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppBlockBuilderStateChangeReasonCode> {
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::AppBlockBuilderStateChangeReasonCode> {
         &self.code
     }
     /// <p>The state change reason message.</p>

@@ -23,9 +23,7 @@ impl TableRow {
 
 /// A builder for [`TableRow`](crate::types::TableRow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableRowBuilder {
     pub(crate) cells: ::std::option::Option<::std::vec::Vec<crate::types::TableCell>>,
 }
@@ -42,10 +40,7 @@ impl TableRowBuilder {
         self
     }
     /// <p>A list of table cells in a row.</p>
-    pub fn set_cells(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableCell>>,
-    ) -> Self {
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableCell>>) -> Self {
         self.cells = input;
         self
     }

@@ -28,7 +28,7 @@ impl AcceptCertificateTransferInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptCertificateTransferFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferInputBuilder,
+    inner: crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferInputBuilder,
 }
 impl AcceptCertificateTransferFluentBuilder {
     /// Creates a new `AcceptCertificateTransfer`.
@@ -39,7 +39,7 @@ impl AcceptCertificateTransferFluentBuilder {
         }
     }
     /// Access the AcceptCertificateTransfer as a reference.
-    pub fn as_input(&self) -> &crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl AcceptCertificateTransferFluentBuilder {
             crate::operation::accept_certificate_transfer::AcceptCertificateTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_certificate_transfer::AcceptCertificateTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_certificate_transfer::AcceptCertificateTransferError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl AcceptCertificateTransferFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl AcceptCertificateTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_certificate_transfer::AcceptCertificateTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_certificate_transfer::AcceptCertificateTransferError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl AcceptCertificateTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_certificate_transfer::AcceptCertificateTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_certificate_transfer::AcceptCertificateTransferError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl AcceptCertificateTransferFluentBuilder {
             crate::operation::accept_certificate_transfer::AcceptCertificateTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_certificate_transfer::AcceptCertificateTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_certificate_transfer::AcceptCertificateTransferError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }

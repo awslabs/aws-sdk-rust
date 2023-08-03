@@ -13,9 +13,7 @@ pub struct RuleGroupsNamespaceStatus {
 }
 impl RuleGroupsNamespaceStatus {
     /// Status code of this namespace.
-    pub fn status_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RuleGroupsNamespaceStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::RuleGroupsNamespaceStatusCode> {
         self.status_code.as_ref()
     }
     /// The reason for failure if any.
@@ -32,9 +30,7 @@ impl RuleGroupsNamespaceStatus {
 
 /// A builder for [`RuleGroupsNamespaceStatus`](crate::types::RuleGroupsNamespaceStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupsNamespaceStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::RuleGroupsNamespaceStatusCode>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
@@ -46,32 +42,21 @@ impl RuleGroupsNamespaceStatusBuilder {
         self
     }
     /// Status code of this namespace.
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleGroupsNamespaceStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::RuleGroupsNamespaceStatusCode>) -> Self {
         self.status_code = input;
         self
     }
     /// Status code of this namespace.
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuleGroupsNamespaceStatusCode> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::RuleGroupsNamespaceStatusCode> {
         &self.status_code
     }
     /// The reason for failure if any.
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// The reason for failure if any.
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }

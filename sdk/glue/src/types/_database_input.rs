@@ -16,13 +16,10 @@ pub struct DatabaseInput {
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
     #[doc(hidden)]
-    pub create_table_default_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
+    pub create_table_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
     #[doc(hidden)]
     pub target_database: ::std::option::Option<crate::types::DatabaseIdentifier>,
@@ -45,17 +42,11 @@ impl DatabaseInput {
     }
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
-    pub fn create_table_default_permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PrincipalPermissions]> {
+    pub fn create_table_default_permissions(&self) -> ::std::option::Option<&[crate::types::PrincipalPermissions]> {
         self.create_table_default_permissions.as_deref()
     }
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
@@ -76,18 +67,13 @@ impl DatabaseInput {
 
 /// A builder for [`DatabaseInput`](crate::types::DatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) create_table_default_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) create_table_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     pub(crate) target_database: ::std::option::Option<crate::types::DatabaseIdentifier>,
     pub(crate) federated_database: ::std::option::Option<crate::types::FederatedDatabase>,
 }
@@ -140,11 +126,7 @@ impl DatabaseInputBuilder {
     ///
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -152,22 +134,13 @@ impl DatabaseInputBuilder {
     }
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Appends an item to `create_table_default_permissions`.
@@ -175,27 +148,19 @@ impl DatabaseInputBuilder {
     /// To override the contents of this collection use [`set_create_table_default_permissions`](Self::set_create_table_default_permissions).
     ///
     /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
-    pub fn create_table_default_permissions(
-        mut self,
-        input: crate::types::PrincipalPermissions,
-    ) -> Self {
+    pub fn create_table_default_permissions(mut self, input: crate::types::PrincipalPermissions) -> Self {
         let mut v = self.create_table_default_permissions.unwrap_or_default();
         v.push(input);
         self.create_table_default_permissions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
-    pub fn set_create_table_default_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
-    ) -> Self {
+    pub fn set_create_table_default_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>) -> Self {
         self.create_table_default_permissions = input;
         self
     }
     /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
-    pub fn get_create_table_default_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>> {
+    pub fn get_create_table_default_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>> {
         &self.create_table_default_permissions
     }
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
@@ -204,10 +169,7 @@ impl DatabaseInputBuilder {
         self
     }
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
-    pub fn set_target_database(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseIdentifier>,
-    ) -> Self {
+    pub fn set_target_database(mut self, input: ::std::option::Option<crate::types::DatabaseIdentifier>) -> Self {
         self.target_database = input;
         self
     }
@@ -221,17 +183,12 @@ impl DatabaseInputBuilder {
         self
     }
     /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
-    pub fn set_federated_database(
-        mut self,
-        input: ::std::option::Option<crate::types::FederatedDatabase>,
-    ) -> Self {
+    pub fn set_federated_database(mut self, input: ::std::option::Option<crate::types::FederatedDatabase>) -> Self {
         self.federated_database = input;
         self
     }
     /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
-    pub fn get_federated_database(
-        &self,
-    ) -> &::std::option::Option<crate::types::FederatedDatabase> {
+    pub fn get_federated_database(&self) -> &::std::option::Option<crate::types::FederatedDatabase> {
         &self.federated_database
     }
     /// Consumes the builder and constructs a [`DatabaseInput`](crate::types::DatabaseInput).

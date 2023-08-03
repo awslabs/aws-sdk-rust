@@ -18,8 +18,7 @@ pub struct GrantPermissionsInput {
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
     #[doc(hidden)]
-    pub permissions_with_grant_option:
-        ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl GrantPermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -40,32 +39,26 @@ impl GrantPermissionsInput {
         self.permissions.as_deref()
     }
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
-    pub fn permissions_with_grant_option(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Permission]> {
+    pub fn permissions_with_grant_option(&self) -> ::std::option::Option<&[crate::types::Permission]> {
         self.permissions_with_grant_option.as_deref()
     }
 }
 impl GrantPermissionsInput {
     /// Creates a new builder-style object to manufacture [`GrantPermissionsInput`](crate::operation::grant_permissions::GrantPermissionsInput).
-    pub fn builder() -> crate::operation::grant_permissions::builders::GrantPermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::grant_permissions::builders::GrantPermissionsInputBuilder {
         crate::operation::grant_permissions::builders::GrantPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GrantPermissionsInput`](crate::operation::grant_permissions::GrantPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrantPermissionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    pub(crate) permissions_with_grant_option:
-        ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub(crate) permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl GrantPermissionsInputBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -90,10 +83,7 @@ impl GrantPermissionsInputBuilder {
     }
     /// <p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p>
     /// <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakePrincipal>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
         self.principal = input;
         self
     }
@@ -128,17 +118,12 @@ impl GrantPermissionsInputBuilder {
         self
     }
     /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
     /// Appends an item to `permissions_with_grant_option`.
@@ -153,26 +138,18 @@ impl GrantPermissionsInputBuilder {
         self
     }
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
-    pub fn set_permissions_with_grant_option(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions_with_grant_option(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions_with_grant_option = input;
         self
     }
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
-    pub fn get_permissions_with_grant_option(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions_with_grant_option(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions_with_grant_option
     }
     /// Consumes the builder and constructs a [`GrantPermissionsInput`](crate::operation::grant_permissions::GrantPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::grant_permissions::GrantPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::grant_permissions::GrantPermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::grant_permissions::GrantPermissionsInput {
             catalog_id: self.catalog_id,
             principal: self.principal,

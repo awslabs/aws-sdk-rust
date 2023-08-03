@@ -15,16 +15,14 @@ impl DeleteResourcesByExternalIdInput {
 }
 impl DeleteResourcesByExternalIdInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcesByExternalIdInput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput).
-    pub fn builder() -> crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdInputBuilder{
+    pub fn builder() -> crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdInputBuilder {
         crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourcesByExternalIdInput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourcesByExternalIdInputBuilder {
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DeleteResourcesByExternalIdInputBuilder {
         crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput {
-                external_id: self.external_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput {
+            external_id: self.external_id,
+        })
     }
 }

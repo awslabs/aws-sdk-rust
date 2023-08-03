@@ -37,9 +37,7 @@ impl FormButton {
 
 /// A builder for [`FormButton`](crate::types::FormButton).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FormButtonBuilder {
     pub(crate) excluded: ::std::option::Option<bool>,
     pub(crate) children: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl FormButtonBuilder {
         self
     }
     /// <p>The position of the button.</p>
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldPosition>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::FieldPosition>) -> Self {
         self.position = input;
         self
     }

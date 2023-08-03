@@ -10,10 +10,7 @@ impl PromoteReadReplicaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::promote_read_replica::PromoteReadReplicaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::promote_read_replica::PromoteReadReplicaError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::promote_read_replica::PromoteReadReplicaError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.promote_read_replica();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl PromoteReadReplicaFluentBuilder {
         }
     }
     /// Access the PromoteReadReplica as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::promote_read_replica::builders::PromoteReadReplicaInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::promote_read_replica::builders::PromoteReadReplicaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl PromoteReadReplicaFluentBuilder {
             crate::operation::promote_read_replica::PromoteReadReplica,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::promote_read_replica::PromoteReadReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::promote_read_replica::PromoteReadReplicaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl PromoteReadReplicaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl PromoteReadReplicaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::promote_read_replica::PromoteReadReplicaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::promote_read_replica::PromoteReadReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::promote_read_replica::PromoteReadReplicaError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl PromoteReadReplicaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::promote_read_replica::PromoteReadReplicaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::promote_read_replica::PromoteReadReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::promote_read_replica::PromoteReadReplicaError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl PromoteReadReplicaFluentBuilder {
             crate::operation::promote_read_replica::PromoteReadReplica,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::promote_read_replica::PromoteReadReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::promote_read_replica::PromoteReadReplicaError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +117,7 @@ impl PromoteReadReplicaFluentBuilder {
     /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -146,10 +127,7 @@ impl PromoteReadReplicaFluentBuilder {
     /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
@@ -203,10 +181,7 @@ impl PromoteReadReplicaFluentBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
@@ -219,10 +194,7 @@ impl PromoteReadReplicaFluentBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn set_preferred_backup_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }

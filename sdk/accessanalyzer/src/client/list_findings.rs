@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`findings(Option<Vec<FindingSummary>>)`](crate::operation::list_findings::ListFindingsOutput::findings): <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_findings::ListFindingsOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::operation::list_findings::ListFindingsError)
-    pub fn list_findings(
-        &self,
-    ) -> crate::operation::list_findings::builders::ListFindingsFluentBuilder {
-        crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_findings(&self) -> crate::operation::list_findings::builders::ListFindingsFluentBuilder {
+        crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(self.handle.clone())
     }
 }

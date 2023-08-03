@@ -28,35 +28,27 @@ impl ::std::fmt::Display for TooManyTrafficPolicyVersionsForCurrentPolicy {
     }
 }
 impl ::std::error::Error for TooManyTrafficPolicyVersionsForCurrentPolicy {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyTrafficPolicyVersionsForCurrentPolicy
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyTrafficPolicyVersionsForCurrentPolicy {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyTrafficPolicyVersionsForCurrentPolicy
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyTrafficPolicyVersionsForCurrentPolicy {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyTrafficPolicyVersionsForCurrentPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyTrafficPolicyVersionsForCurrentPolicy`](crate::types::error::TooManyTrafficPolicyVersionsForCurrentPolicy).
-    pub fn builder(
-    ) -> crate::types::error::builders::TooManyTrafficPolicyVersionsForCurrentPolicyBuilder {
-        crate::types::error::builders::TooManyTrafficPolicyVersionsForCurrentPolicyBuilder::default(
-        )
+    pub fn builder() -> crate::types::error::builders::TooManyTrafficPolicyVersionsForCurrentPolicyBuilder {
+        crate::types::error::builders::TooManyTrafficPolicyVersionsForCurrentPolicyBuilder::default()
     }
 }
 
 /// A builder for [`TooManyTrafficPolicyVersionsForCurrentPolicy`](crate::types::error::TooManyTrafficPolicyVersionsForCurrentPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyTrafficPolicyVersionsForCurrentPolicyBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -83,10 +75,7 @@ impl TooManyTrafficPolicyVersionsForCurrentPolicyBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

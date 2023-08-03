@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeIpamPoolsOutput {
 }
 impl DescribeIpamPoolsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpamPoolsOutput`](crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsOutputBuilder {
         crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpamPoolsOutput`](crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamPoolsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_pools: ::std::option::Option<::std::vec::Vec<crate::types::IpamPool>>,
@@ -71,17 +68,12 @@ impl DescribeIpamPoolsOutputBuilder {
         self
     }
     /// <p>Information about the IPAM pools.</p>
-    pub fn set_ipam_pools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamPool>>,
-    ) -> Self {
+    pub fn set_ipam_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamPool>>) -> Self {
         self.ipam_pools = input;
         self
     }
     /// <p>Information about the IPAM pools.</p>
-    pub fn get_ipam_pools(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamPool>> {
+    pub fn get_ipam_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamPool>> {
         &self.ipam_pools
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

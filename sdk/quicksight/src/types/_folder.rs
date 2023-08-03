@@ -65,9 +65,7 @@ impl Folder {
 
 /// A builder for [`Folder`](crate::types::Folder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FolderBuilder {
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -126,10 +124,7 @@ impl FolderBuilder {
         self
     }
     /// <p>The type of folder it is.</p>
-    pub fn set_folder_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FolderType>,
-    ) -> Self {
+    pub fn set_folder_type(mut self, input: ::std::option::Option<crate::types::FolderType>) -> Self {
         self.folder_type = input;
         self
     }
@@ -149,17 +144,12 @@ impl FolderBuilder {
         self
     }
     /// <p>An array of ancestor ARN strings for the folder.</p>
-    pub fn set_folder_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_folder_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.folder_path = input;
         self
     }
     /// <p>An array of ancestor ARN strings for the folder.</p>
-    pub fn get_folder_path(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_folder_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.folder_path
     }
     /// <p>The time that the folder was created.</p>
@@ -168,10 +158,7 @@ impl FolderBuilder {
         self
     }
     /// <p>The time that the folder was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -185,10 +172,7 @@ impl FolderBuilder {
         self
     }
     /// <p>The time that the folder was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

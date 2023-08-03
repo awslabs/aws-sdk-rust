@@ -29,18 +29,14 @@ impl SearchFlowTemplatesInput {
 }
 impl SearchFlowTemplatesInput {
     /// Creates a new builder-style object to manufacture [`SearchFlowTemplatesInput`](crate::operation::search_flow_templates::SearchFlowTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::search_flow_templates::builders::SearchFlowTemplatesInputBuilder {
-        crate::operation::search_flow_templates::builders::SearchFlowTemplatesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::search_flow_templates::builders::SearchFlowTemplatesInputBuilder {
+        crate::operation::search_flow_templates::builders::SearchFlowTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchFlowTemplatesInput`](crate::operation::search_flow_templates::SearchFlowTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchFlowTemplatesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl SearchFlowTemplatesInputBuilder {
         self
     }
     /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateFilter>> {
         &self.filters
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -103,16 +94,12 @@ impl SearchFlowTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`SearchFlowTemplatesInput`](crate::operation::search_flow_templates::SearchFlowTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_flow_templates::SearchFlowTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_flow_templates::SearchFlowTemplatesInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_flow_templates::SearchFlowTemplatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_flow_templates::SearchFlowTemplatesInput {
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

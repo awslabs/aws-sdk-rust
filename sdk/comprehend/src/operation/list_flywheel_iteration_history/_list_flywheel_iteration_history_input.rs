@@ -36,16 +36,14 @@ impl ListFlywheelIterationHistoryInput {
 }
 impl ListFlywheelIterationHistoryInput {
     /// Creates a new builder-style object to manufacture [`ListFlywheelIterationHistoryInput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput).
-    pub fn builder() -> crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryInputBuilder{
+    pub fn builder() -> crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryInputBuilder {
         crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFlywheelIterationHistoryInput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFlywheelIterationHistoryInputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::FlywheelIterationFilter>,
@@ -73,10 +71,7 @@ impl ListFlywheelIterationHistoryInputBuilder {
         self
     }
     /// <p>Filter the flywheel iteration history based on creation time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::FlywheelIterationFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::FlywheelIterationFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -119,13 +114,11 @@ impl ListFlywheelIterationHistoryInputBuilder {
         crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput {
-                flywheel_arn: self.flywheel_arn,
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput {
+            flywheel_arn: self.flywheel_arn,
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

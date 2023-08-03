@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProfileObjectTypesOutput {
 }
 impl ListProfileObjectTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectTypesOutput`](crate::operation::list_profile_object_types::ListProfileObjectTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_profile_object_types::builders::ListProfileObjectTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_profile_object_types::builders::ListProfileObjectTypesOutputBuilder {
         crate::operation::list_profile_object_types::builders::ListProfileObjectTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileObjectTypesOutput`](crate::operation::list_profile_object_types::ListProfileObjectTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileObjectTypesOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListProfileObjectTypesOutputBuilder {
         self
     }
     /// <p>The list of ListProfileObjectTypes instances.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of ListProfileObjectTypes instances.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeItem>> {
         &self.items
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -96,9 +86,7 @@ impl ListProfileObjectTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProfileObjectTypesOutput`](crate::operation::list_profile_object_types::ListProfileObjectTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_profile_object_types::ListProfileObjectTypesOutput {
+    pub fn build(self) -> crate::operation::list_profile_object_types::ListProfileObjectTypesOutput {
         crate::operation::list_profile_object_types::ListProfileObjectTypesOutput {
             items: self.items,
             next_token: self.next_token,

@@ -19,9 +19,7 @@ impl UpdateLayerOutput {
 
 /// A builder for [`UpdateLayerOutput`](crate::operation::update_layer::UpdateLayerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLayerOutputBuilder {
     _request_id: Option<String>,
 }

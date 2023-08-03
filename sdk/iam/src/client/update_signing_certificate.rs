@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`status(StatusType)`](crate::operation::update_signing_certificate::builders::UpdateSigningCertificateFluentBuilder::status) / [`set_status(Option<StatusType>)`](crate::operation::update_signing_certificate::builders::UpdateSigningCertificateFluentBuilder::set_status): <p> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
     /// - On success, responds with [`UpdateSigningCertificateOutput`](crate::operation::update_signing_certificate::UpdateSigningCertificateOutput)
     /// - On failure, responds with [`SdkError<UpdateSigningCertificateError>`](crate::operation::update_signing_certificate::UpdateSigningCertificateError)
-    pub fn update_signing_certificate(
-        &self,
-    ) -> crate::operation::update_signing_certificate::builders::UpdateSigningCertificateFluentBuilder
-    {
+    pub fn update_signing_certificate(&self) -> crate::operation::update_signing_certificate::builders::UpdateSigningCertificateFluentBuilder {
         crate::operation::update_signing_certificate::builders::UpdateSigningCertificateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSlotTypeVersionOutput {
 }
 impl DeleteSlotTypeVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSlotTypeVersionOutput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionOutputBuilder {
         crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSlotTypeVersionOutput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSlotTypeVersionOutputBuilder {
     _request_id: Option<String>,
 }

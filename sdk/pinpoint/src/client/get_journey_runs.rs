@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetJourneyRunsOutput`](crate::operation::get_journey_runs::GetJourneyRunsOutput) with field(s):
     ///   - [`journey_runs_response(Option<JourneyRunsResponse>)`](crate::operation::get_journey_runs::GetJourneyRunsOutput::journey_runs_response): <p>Provides information from all runs of a journey.</p>
     /// - On failure, responds with [`SdkError<GetJourneyRunsError>`](crate::operation::get_journey_runs::GetJourneyRunsError)
-    pub fn get_journey_runs(
-        &self,
-    ) -> crate::operation::get_journey_runs::builders::GetJourneyRunsFluentBuilder {
-        crate::operation::get_journey_runs::builders::GetJourneyRunsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_journey_runs(&self) -> crate::operation::get_journey_runs::builders::GetJourneyRunsFluentBuilder {
+        crate::operation::get_journey_runs::builders::GetJourneyRunsFluentBuilder::new(self.handle.clone())
     }
 }

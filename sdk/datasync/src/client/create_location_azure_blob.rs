@@ -14,10 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationAzureBlobOutput`](crate::operation::create_location_azure_blob::CreateLocationAzureBlobOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_azure_blob::CreateLocationAzureBlobOutput::location_arn): <p>The ARN of the Azure Blob Storage transfer location that you created.</p>
     /// - On failure, responds with [`SdkError<CreateLocationAzureBlobError>`](crate::operation::create_location_azure_blob::CreateLocationAzureBlobError)
-    pub fn create_location_azure_blob(
-        &self,
-    ) -> crate::operation::create_location_azure_blob::builders::CreateLocationAzureBlobFluentBuilder
-    {
+    pub fn create_location_azure_blob(&self) -> crate::operation::create_location_azure_blob::builders::CreateLocationAzureBlobFluentBuilder {
         crate::operation::create_location_azure_blob::builders::CreateLocationAzureBlobFluentBuilder::new(self.handle.clone())
     }
 }

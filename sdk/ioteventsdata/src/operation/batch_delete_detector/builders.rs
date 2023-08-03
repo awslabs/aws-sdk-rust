@@ -37,9 +37,7 @@ impl BatchDeleteDetectorFluentBuilder {
         }
     }
     /// Access the BatchDeleteDetector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_detector::builders::BatchDeleteDetectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_detector::builders::BatchDeleteDetectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl BatchDeleteDetectorFluentBuilder {
             crate::operation::batch_delete_detector::BatchDeleteDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_detector::BatchDeleteDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_detector::BatchDeleteDetectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl BatchDeleteDetectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl BatchDeleteDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_detector::BatchDeleteDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_detector::BatchDeleteDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_detector::BatchDeleteDetectorError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl BatchDeleteDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_detector::BatchDeleteDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_detector::BatchDeleteDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_detector::BatchDeleteDetectorError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl BatchDeleteDetectorFluentBuilder {
             crate::operation::batch_delete_detector::BatchDeleteDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_detector::BatchDeleteDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_detector::BatchDeleteDetectorError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +119,12 @@ impl BatchDeleteDetectorFluentBuilder {
         self
     }
     /// <p>The list of one or more detectors to be deleted.</p>
-    pub fn set_detectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>>,
-    ) -> Self {
+    pub fn set_detectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>>) -> Self {
         self.inner = self.inner.set_detectors(input);
         self
     }
     /// <p>The list of one or more detectors to be deleted.</p>
-    pub fn get_detectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>> {
+    pub fn get_detectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>> {
         self.inner.get_detectors()
     }
 }

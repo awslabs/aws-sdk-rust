@@ -28,8 +28,7 @@ impl CancelSpotFleetRequestsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder,
+    inner: crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder,
 }
 impl CancelSpotFleetRequestsFluentBuilder {
     /// Creates a new `CancelSpotFleetRequests`.
@@ -40,10 +39,7 @@ impl CancelSpotFleetRequestsFluentBuilder {
         }
     }
     /// Access the CancelSpotFleetRequests as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl CancelSpotFleetRequestsFluentBuilder {
             crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl CancelSpotFleetRequestsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl CancelSpotFleetRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl CancelSpotFleetRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl CancelSpotFleetRequestsFluentBuilder {
             crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError>,
     > {
         self.customize_middleware().await
     }
@@ -145,25 +130,17 @@ impl CancelSpotFleetRequestsFluentBuilder {
     /// To override the contents of this collection use [`set_spot_fleet_request_ids`](Self::set_spot_fleet_request_ids).
     ///
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn spot_fleet_request_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spot_fleet_request_ids(input.into());
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn set_spot_fleet_request_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_spot_fleet_request_ids(input);
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn get_spot_fleet_request_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_spot_fleet_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_spot_fleet_request_ids()
     }
     /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>

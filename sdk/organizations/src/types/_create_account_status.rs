@@ -95,9 +95,7 @@ impl CreateAccountStatus {
     /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
     /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
     /// </ul>
-    pub fn failure_reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateAccountFailureReason> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&crate::types::CreateAccountFailureReason> {
         self.failure_reason.as_ref()
     }
 }
@@ -173,10 +171,7 @@ impl CreateAccountStatusBuilder {
         self
     }
     /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateAccountState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CreateAccountState>) -> Self {
         self.state = input;
         self
     }
@@ -190,10 +185,7 @@ impl CreateAccountStatusBuilder {
         self
     }
     /// <p>The date and time that the request was made for the account creation.</p>
-    pub fn set_requested_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_requested_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.requested_timestamp = input;
         self
     }
@@ -207,10 +199,7 @@ impl CreateAccountStatusBuilder {
         self
     }
     /// <p>The date and time that the account was created and the request completed.</p>
-    pub fn set_completed_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_timestamp = input;
         self
     }
@@ -236,18 +225,12 @@ impl CreateAccountStatusBuilder {
         &self.account_id
     }
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
-    pub fn gov_cloud_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gov_cloud_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gov_cloud_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
-    pub fn set_gov_cloud_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gov_cloud_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gov_cloud_account_id = input;
         self
     }
@@ -293,10 +276,7 @@ impl CreateAccountStatusBuilder {
     /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
     /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
     /// </ul>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateAccountFailureReason>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<crate::types::CreateAccountFailureReason>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -317,9 +297,7 @@ impl CreateAccountStatusBuilder {
     /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
     /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
     /// </ul>
-    pub fn get_failure_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateAccountFailureReason> {
+    pub fn get_failure_reason(&self) -> &::std::option::Option<crate::types::CreateAccountFailureReason> {
         &self.failure_reason
     }
     /// Consumes the builder and constructs a [`CreateAccountStatus`](crate::types::CreateAccountStatus).

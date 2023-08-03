@@ -23,9 +23,7 @@ impl AccessControlListConfiguration {
 
 /// A builder for [`AccessControlListConfiguration`](crate::types::AccessControlListConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessControlListConfigurationBuilder {
     pub(crate) key_path: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AccessControlListConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`AccessControlListConfiguration`](crate::types::AccessControlListConfiguration).
     pub fn build(self) -> crate::types::AccessControlListConfiguration {
-        crate::types::AccessControlListConfiguration {
-            key_path: self.key_path,
-        }
+        crate::types::AccessControlListConfiguration { key_path: self.key_path }
     }
 }

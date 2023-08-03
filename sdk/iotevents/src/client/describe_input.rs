@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeInputOutput`](crate::operation::describe_input::DescribeInputOutput) with field(s):
     ///   - [`input(Option<Input>)`](crate::operation::describe_input::DescribeInputOutput::input): <p>Information about the input.</p>
     /// - On failure, responds with [`SdkError<DescribeInputError>`](crate::operation::describe_input::DescribeInputError)
-    pub fn describe_input(
-        &self,
-    ) -> crate::operation::describe_input::builders::DescribeInputFluentBuilder {
-        crate::operation::describe_input::builders::DescribeInputFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_input(&self) -> crate::operation::describe_input::builders::DescribeInputFluentBuilder {
+        crate::operation::describe_input::builders::DescribeInputFluentBuilder::new(self.handle.clone())
     }
 }

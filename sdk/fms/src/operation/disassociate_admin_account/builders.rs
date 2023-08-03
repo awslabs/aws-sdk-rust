@@ -27,7 +27,7 @@ impl DisassociateAdminAccountInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateAdminAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder,
+    inner: crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder,
 }
 impl DisassociateAdminAccountFluentBuilder {
     /// Creates a new `DisassociateAdminAccount`.
@@ -38,10 +38,7 @@ impl DisassociateAdminAccountFluentBuilder {
         }
     }
     /// Access the DisassociateAdminAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DisassociateAdminAccountFluentBuilder {
             crate::operation::disassociate_admin_account::DisassociateAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_admin_account::DisassociateAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_admin_account::DisassociateAdminAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DisassociateAdminAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DisassociateAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_admin_account::DisassociateAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_admin_account::DisassociateAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_admin_account::DisassociateAdminAccountError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DisassociateAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_admin_account::DisassociateAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_admin_account::DisassociateAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_admin_account::DisassociateAdminAccountError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DisassociateAdminAccountFluentBuilder {
             crate::operation::disassociate_admin_account::DisassociateAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_admin_account::DisassociateAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_admin_account::DisassociateAdminAccountError>,
     > {
         self.customize_middleware().await
     }

@@ -39,8 +39,7 @@ impl DisableAwsServiceAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableAWSServiceAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder,
+    inner: crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder,
 }
 impl DisableAWSServiceAccessFluentBuilder {
     /// Creates a new `DisableAWSServiceAccess`.
@@ -51,10 +50,7 @@ impl DisableAWSServiceAccessFluentBuilder {
         }
     }
     /// Access the DisableAWSServiceAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +62,7 @@ impl DisableAWSServiceAccessFluentBuilder {
             crate::operation::disable_aws_service_access::DisableAWSServiceAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_aws_service_access::DisableAWSServiceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_aws_service_access::DisableAWSServiceAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +72,7 @@ impl DisableAWSServiceAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +81,7 @@ impl DisableAWSServiceAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_aws_service_access::DisableAwsServiceAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_aws_service_access::DisableAWSServiceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_aws_service_access::DisableAWSServiceAccessError>,
     > {
         let op = self
             .inner
@@ -115,9 +104,7 @@ impl DisableAWSServiceAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_aws_service_access::DisableAwsServiceAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_aws_service_access::DisableAWSServiceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_aws_service_access::DisableAWSServiceAccessError>,
     > {
         self.send_middleware().await
     }
@@ -131,25 +118,17 @@ impl DisableAWSServiceAccessFluentBuilder {
             crate::operation::disable_aws_service_access::DisableAWSServiceAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_aws_service_access::DisableAWSServiceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_aws_service_access::DisableAWSServiceAccessError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_principal(input.into());
         self
     }
     /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_principal(input);
         self
     }

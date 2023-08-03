@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateContainerRecipeOutput {
 }
 impl CreateContainerRecipeOutput {
     /// Creates a new builder-style object to manufacture [`CreateContainerRecipeOutput`](crate::operation::create_container_recipe::CreateContainerRecipeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_container_recipe::builders::CreateContainerRecipeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_container_recipe::builders::CreateContainerRecipeOutputBuilder {
         crate::operation::create_container_recipe::builders::CreateContainerRecipeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContainerRecipeOutput`](crate::operation::create_container_recipe::CreateContainerRecipeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContainerRecipeOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -83,18 +79,12 @@ impl CreateContainerRecipeOutputBuilder {
         &self.client_token
     }
     /// <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
-    pub fn container_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
-    pub fn set_container_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_recipe_arn = input;
         self
     }

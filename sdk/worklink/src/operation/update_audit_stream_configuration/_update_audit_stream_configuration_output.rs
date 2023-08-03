@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAuditStreamConfigurationOutput 
 }
 impl UpdateAuditStreamConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAuditStreamConfigurationOutput`](crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput).
-    pub fn builder() -> crate::operation::update_audit_stream_configuration::builders::UpdateAuditStreamConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_audit_stream_configuration::builders::UpdateAuditStreamConfigurationOutputBuilder {
         crate::operation::update_audit_stream_configuration::builders::UpdateAuditStreamConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAuditStreamConfigurationOutput`](crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAuditStreamConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateAuditStreamConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAuditStreamConfigurationOutput`](crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput {
         crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput {
             _request_id: self._request_id,
         }

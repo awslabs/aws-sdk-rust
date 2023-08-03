@@ -30,9 +30,7 @@ impl DeleteMlModelOutput {
 
 /// A builder for [`DeleteMlModelOutput`](crate::operation::delete_ml_model::DeleteMlModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMlModelOutputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

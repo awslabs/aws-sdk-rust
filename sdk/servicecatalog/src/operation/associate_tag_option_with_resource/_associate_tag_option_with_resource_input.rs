@@ -22,16 +22,14 @@ impl AssociateTagOptionWithResourceInput {
 }
 impl AssociateTagOptionWithResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateTagOptionWithResourceInput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput).
-    pub fn builder() -> crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceInputBuilder{
+    pub fn builder() -> crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceInputBuilder {
         crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTagOptionWithResourceInput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTagOptionWithResourceInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_option_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl AssociateTagOptionWithResourceInputBuilder {
         &self.resource_id
     }
     /// <p>The TagOption identifier.</p>
-    pub fn tag_option_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_option_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The TagOption identifier.</p>
-    pub fn set_tag_option_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tag_option_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_option_id = input;
         self
     }
@@ -80,11 +72,9 @@ impl AssociateTagOptionWithResourceInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput {
-                resource_id: self.resource_id
-                ,
-                tag_option_id: self.tag_option_id
-                ,
-            }
+                resource_id: self.resource_id,
+                tag_option_id: self.tag_option_id,
+            },
         )
     }
 }

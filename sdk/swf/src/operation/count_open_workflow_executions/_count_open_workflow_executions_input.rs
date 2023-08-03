@@ -49,24 +49,20 @@ impl CountOpenWorkflowExecutionsInput {
     /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn execution_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkflowExecutionFilter> {
+    pub fn execution_filter(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
     }
 }
 impl CountOpenWorkflowExecutionsInput {
     /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsInput`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput).
-    pub fn builder() -> crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder {
         crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`CountOpenWorkflowExecutionsInput`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CountOpenWorkflowExecutionsInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) start_time_filter: ::std::option::Option<crate::types::ExecutionTimeFilter>,
@@ -95,17 +91,12 @@ impl CountOpenWorkflowExecutionsInputBuilder {
         self
     }
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
-    pub fn set_start_time_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
-    ) -> Self {
+    pub fn set_start_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.start_time_filter = input;
         self
     }
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
-    pub fn get_start_time_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+    pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         &self.start_time_filter
     }
     /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
@@ -118,10 +109,7 @@ impl CountOpenWorkflowExecutionsInputBuilder {
     /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowTypeFilter>,
-    ) -> Self {
+    pub fn set_type_filter(mut self, input: ::std::option::Option<crate::types::WorkflowTypeFilter>) -> Self {
         self.type_filter = input;
         self
     }
@@ -161,19 +149,14 @@ impl CountOpenWorkflowExecutionsInputBuilder {
     /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_execution_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
-    ) -> Self {
+    pub fn set_execution_filter(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionFilter>) -> Self {
         self.execution_filter = input;
         self
     }
     /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn get_execution_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
+    pub fn get_execution_filter(&self) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
         &self.execution_filter
     }
     /// Consumes the builder and constructs a [`CountOpenWorkflowExecutionsInput`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput).
@@ -183,14 +166,12 @@ impl CountOpenWorkflowExecutionsInputBuilder {
         crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput {
-                domain: self.domain,
-                start_time_filter: self.start_time_filter,
-                type_filter: self.type_filter,
-                tag_filter: self.tag_filter,
-                execution_filter: self.execution_filter,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput {
+            domain: self.domain,
+            start_time_filter: self.start_time_filter,
+            type_filter: self.type_filter,
+            tag_filter: self.tag_filter,
+            execution_filter: self.execution_filter,
+        })
     }
 }

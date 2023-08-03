@@ -57,9 +57,7 @@ impl ListSpacesInput {
 
 /// A builder for [`ListSpacesInput`](crate::operation::list_spaces::ListSpacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSpacesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -126,18 +124,12 @@ impl ListSpacesInputBuilder {
         &self.sort_by
     }
     /// <p>A parameter to search for the Domain ID.</p>
-    pub fn domain_id_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_id_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id_equals = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A parameter to search for the Domain ID.</p>
-    pub fn set_domain_id_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_id_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id_equals = input;
         self
     }
@@ -146,18 +138,12 @@ impl ListSpacesInputBuilder {
         &self.domain_id_equals
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn space_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn space_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn set_space_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_space_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.space_name_contains = input;
         self
     }
@@ -166,12 +152,7 @@ impl ListSpacesInputBuilder {
         &self.space_name_contains
     }
     /// Consumes the builder and constructs a [`ListSpacesInput`](crate::operation::list_spaces::ListSpacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_spaces::ListSpacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_spaces::ListSpacesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_spaces::ListSpacesInput {
             next_token: self.next_token,
             max_results: self.max_results,

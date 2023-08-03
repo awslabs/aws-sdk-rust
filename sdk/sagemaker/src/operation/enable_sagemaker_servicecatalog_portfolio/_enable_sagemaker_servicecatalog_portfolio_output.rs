@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for EnableSagemakerServicecatalogPortfoli
 }
 impl EnableSagemakerServicecatalogPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`EnableSagemakerServicecatalogPortfolioOutput`](crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioOutput).
-    pub fn builder() -> crate::operation::enable_sagemaker_servicecatalog_portfolio::builders::EnableSagemakerServicecatalogPortfolioOutputBuilder{
+    pub fn builder() -> crate::operation::enable_sagemaker_servicecatalog_portfolio::builders::EnableSagemakerServicecatalogPortfolioOutputBuilder {
         crate::operation::enable_sagemaker_servicecatalog_portfolio::builders::EnableSagemakerServicecatalogPortfolioOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableSagemakerServicecatalogPortfolioOutput`](crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableSagemakerServicecatalogPortfolioOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl EnableSagemakerServicecatalogPortfolioOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableSagemakerServicecatalogPortfolioOutput`](crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioOutput).
-    pub fn build(self) -> crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioOutput{
+    pub fn build(self) -> crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioOutput {
         crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioOutput {
             _request_id: self._request_id,
         }

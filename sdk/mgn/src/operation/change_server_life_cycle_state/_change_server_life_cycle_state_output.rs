@@ -14,9 +14,7 @@ pub struct ChangeServerLifeCycleStateOutput {
     pub is_archived: ::std::option::Option<bool>,
     /// <p>Source server Tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Source server launched instance.</p>
     #[doc(hidden)]
     pub launched_instance: ::std::option::Option<crate::types::LaunchedInstance>,
@@ -60,11 +58,7 @@ impl ChangeServerLifeCycleStateOutput {
         self.is_archived
     }
     /// <p>Source server Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Source server launched instance.</p>
@@ -72,9 +66,7 @@ impl ChangeServerLifeCycleStateOutput {
         self.launched_instance.as_ref()
     }
     /// <p>Source server data replication info.</p>
-    pub fn data_replication_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> ::std::option::Option<&crate::types::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Source server lifecycle state.</p>
@@ -133,7 +125,7 @@ impl ::aws_http::request_id::RequestId for ChangeServerLifeCycleStateOutput {
 }
 impl ChangeServerLifeCycleStateOutput {
     /// Creates a new builder-style object to manufacture [`ChangeServerLifeCycleStateOutput`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput).
-    pub fn builder() -> crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateOutputBuilder{
+    pub fn builder() -> crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateOutputBuilder {
         crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateOutputBuilder::default()
     }
 }
@@ -145,9 +137,7 @@ pub struct ChangeServerLifeCycleStateOutputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) is_archived: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) launched_instance: ::std::option::Option<crate::types::LaunchedInstance>,
     pub(crate) data_replication_info: ::std::option::Option<crate::types::DataReplicationInfo>,
     pub(crate) life_cycle: ::std::option::Option<crate::types::LifeCycle>,
@@ -161,18 +151,12 @@ pub struct ChangeServerLifeCycleStateOutputBuilder {
 }
 impl ChangeServerLifeCycleStateOutputBuilder {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -213,32 +197,19 @@ impl ChangeServerLifeCycleStateOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Source server Tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Source server Tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Source server Tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Source server launched instance.</p>
@@ -247,10 +218,7 @@ impl ChangeServerLifeCycleStateOutputBuilder {
         self
     }
     /// <p>Source server launched instance.</p>
-    pub fn set_launched_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchedInstance>,
-    ) -> Self {
+    pub fn set_launched_instance(mut self, input: ::std::option::Option<crate::types::LaunchedInstance>) -> Self {
         self.launched_instance = input;
         self
     }
@@ -264,17 +232,12 @@ impl ChangeServerLifeCycleStateOutputBuilder {
         self
     }
     /// <p>Source server data replication info.</p>
-    pub fn set_data_replication_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DataReplicationInfo>,
-    ) -> Self {
+    pub fn set_data_replication_info(mut self, input: ::std::option::Option<crate::types::DataReplicationInfo>) -> Self {
         self.data_replication_info = input;
         self
     }
     /// <p>Source server data replication info.</p>
-    pub fn get_data_replication_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataReplicationInfo> {
+    pub fn get_data_replication_info(&self) -> &::std::option::Option<crate::types::DataReplicationInfo> {
         &self.data_replication_info
     }
     /// <p>Source server lifecycle state.</p>
@@ -297,10 +260,7 @@ impl ChangeServerLifeCycleStateOutputBuilder {
         self
     }
     /// <p>Source server properties.</p>
-    pub fn set_source_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceProperties>,
-    ) -> Self {
+    pub fn set_source_properties(mut self, input: ::std::option::Option<crate::types::SourceProperties>) -> Self {
         self.source_properties = input;
         self
     }
@@ -314,10 +274,7 @@ impl ChangeServerLifeCycleStateOutputBuilder {
         self
     }
     /// <p>Source server replication type.</p>
-    pub fn set_replication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationType>,
-    ) -> Self {
+    pub fn set_replication_type(mut self, input: ::std::option::Option<crate::types::ReplicationType>) -> Self {
         self.replication_type = input;
         self
     }
@@ -326,18 +283,12 @@ impl ChangeServerLifeCycleStateOutputBuilder {
         &self.replication_type
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn vcenter_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vcenter_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vcenter_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn set_vcenter_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vcenter_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vcenter_client_id = input;
         self
     }
@@ -346,18 +297,12 @@ impl ChangeServerLifeCycleStateOutputBuilder {
         &self.vcenter_client_id
     }
     /// <p>Source server application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -366,18 +311,12 @@ impl ChangeServerLifeCycleStateOutputBuilder {
         &self.application_id
     }
     /// <p>Source server user provided ID.</p>
-    pub fn user_provided_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_provided_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_provided_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server user provided ID.</p>
-    pub fn set_user_provided_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_provided_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_provided_id = input;
         self
     }
@@ -386,18 +325,12 @@ impl ChangeServerLifeCycleStateOutputBuilder {
         &self.user_provided_id
     }
     /// <p>Source server fqdn for action framework.</p>
-    pub fn fqdn_for_action_framework(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fqdn_for_action_framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fqdn_for_action_framework = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server fqdn for action framework.</p>
-    pub fn set_fqdn_for_action_framework(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fqdn_for_action_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fqdn_for_action_framework = input;
         self
     }
@@ -415,9 +348,7 @@ impl ChangeServerLifeCycleStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ChangeServerLifeCycleStateOutput`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput {
+    pub fn build(self) -> crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput {
         crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput {
             source_server_id: self.source_server_id,
             arn: self.arn,

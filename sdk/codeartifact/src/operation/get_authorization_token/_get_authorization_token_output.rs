@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetAuthorizationTokenOutput {
 }
 impl GetAuthorizationTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder {
         crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAuthorizationTokenOutputBuilder {
     pub(crate) authorization_token: ::std::option::Option<::std::string::String>,
     pub(crate) expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -47,18 +43,12 @@ pub struct GetAuthorizationTokenOutputBuilder {
 }
 impl GetAuthorizationTokenOutputBuilder {
     /// <p> The returned authentication token. </p>
-    pub fn authorization_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The returned authentication token. </p>
-    pub fn set_authorization_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorization_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_token = input;
         self
     }
@@ -72,10 +62,7 @@ impl GetAuthorizationTokenOutputBuilder {
         self
     }
     /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
-    pub fn set_expiration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration = input;
         self
     }

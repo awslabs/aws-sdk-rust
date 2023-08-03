@@ -37,9 +37,7 @@ impl UnprocessedStatistics {
 
 /// A builder for [`UnprocessedStatistics`](crate::types::UnprocessedStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnprocessedStatisticsBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

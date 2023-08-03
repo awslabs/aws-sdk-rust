@@ -72,9 +72,7 @@ impl BackendApiAppSyncAuthSettings {
 
 /// A builder for [`BackendApiAppSyncAuthSettings`](crate::types::BackendApiAppSyncAuthSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendApiAppSyncAuthSettingsBuilder {
     pub(crate) cognito_user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct BackendApiAppSyncAuthSettingsBuilder {
 }
 impl BackendApiAppSyncAuthSettingsBuilder {
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
-    pub fn cognito_user_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cognito_user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cognito_user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
-    pub fn set_cognito_user_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cognito_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cognito_user_pool_id = input;
         self
     }
@@ -135,18 +127,12 @@ impl BackendApiAppSyncAuthSettingsBuilder {
         &self.expiration_time
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn open_id_auth_ttl(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_auth_ttl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_auth_ttl = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn set_open_id_auth_ttl(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_auth_ttl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.open_id_auth_ttl = input;
         self
     }
@@ -155,18 +141,12 @@ impl BackendApiAppSyncAuthSettingsBuilder {
         &self.open_id_auth_ttl
     }
     /// <p>The clientID for openID, if openID was used as an authentication setting to access your data models.</p>
-    pub fn open_id_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The clientID for openID, if openID was used as an authentication setting to access your data models.</p>
-    pub fn set_open_id_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.open_id_client_id = input;
         self
     }
@@ -175,18 +155,12 @@ impl BackendApiAppSyncAuthSettingsBuilder {
         &self.open_id_client_id
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn open_id_iat_ttl(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_iat_ttl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_iat_ttl = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn set_open_id_iat_ttl(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_iat_ttl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.open_id_iat_ttl = input;
         self
     }
@@ -195,18 +169,12 @@ impl BackendApiAppSyncAuthSettingsBuilder {
         &self.open_id_iat_ttl
     }
     /// <p>The openID issuer URL, if openID was used as an authentication setting to access your data models.</p>
-    pub fn open_id_issue_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_issue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_issue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The openID issuer URL, if openID was used as an authentication setting to access your data models.</p>
-    pub fn set_open_id_issue_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_issue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.open_id_issue_url = input;
         self
     }
@@ -215,18 +183,12 @@ impl BackendApiAppSyncAuthSettingsBuilder {
         &self.open_id_issue_url
     }
     /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
-    pub fn open_id_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
-    pub fn set_open_id_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.open_id_provider_name = input;
         self
     }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`failure_details(FailureDetails)`](crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultFluentBuilder::failure_details) / [`set_failure_details(Option<FailureDetails>)`](crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultFluentBuilder::set_failure_details): <p>Represents information about failure details.</p>
     /// - On success, responds with [`PutThirdPartyJobFailureResultOutput`](crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultOutput)
     /// - On failure, responds with [`SdkError<PutThirdPartyJobFailureResultError>`](crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError)
-    pub fn put_third_party_job_failure_result(&self) -> crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultFluentBuilder{
+    pub fn put_third_party_job_failure_result(
+        &self,
+    ) -> crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultFluentBuilder {
         crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultFluentBuilder::new(self.handle.clone())
     }
 }

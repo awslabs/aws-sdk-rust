@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeObservationOutput {
 }
 impl DescribeObservationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeObservationOutput`](crate::operation::describe_observation::DescribeObservationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_observation::builders::DescribeObservationOutputBuilder {
-        crate::operation::describe_observation::builders::DescribeObservationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_observation::builders::DescribeObservationOutputBuilder {
+        crate::operation::describe_observation::builders::DescribeObservationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeObservationOutput`](crate::operation::describe_observation::DescribeObservationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeObservationOutputBuilder {
     pub(crate) observation: ::std::option::Option<crate::types::Observation>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeObservationOutputBuilder {
         self
     }
     /// <p>Information about the observation.</p>
-    pub fn set_observation(
-        mut self,
-        input: ::std::option::Option<crate::types::Observation>,
-    ) -> Self {
+    pub fn set_observation(mut self, input: ::std::option::Option<crate::types::Observation>) -> Self {
         self.observation = input;
         self
     }

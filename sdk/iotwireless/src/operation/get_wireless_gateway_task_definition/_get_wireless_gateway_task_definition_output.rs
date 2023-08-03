@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for GetWirelessGatewayTaskDefinitionOutpu
 }
 impl GetWirelessGatewayTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskDefinitionOutput`](crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput).
-    pub fn builder() -> crate::operation::get_wireless_gateway_task_definition::builders::GetWirelessGatewayTaskDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_gateway_task_definition::builders::GetWirelessGatewayTaskDefinitionOutputBuilder {
         crate::operation::get_wireless_gateway_task_definition::builders::GetWirelessGatewayTaskDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayTaskDefinitionOutput`](crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayTaskDefinitionOutputBuilder {
     pub(crate) auto_create_tasks: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -94,17 +92,12 @@ impl GetWirelessGatewayTaskDefinitionOutputBuilder {
         self
     }
     /// <p>Information about the gateways to update.</p>
-    pub fn set_update(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate>,
-    ) -> Self {
+    pub fn set_update(mut self, input: ::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate>) -> Self {
         self.update = input;
         self
     }
     /// <p>Information about the gateways to update.</p>
-    pub fn get_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate> {
+    pub fn get_update(&self) -> &::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate> {
         &self.update
     }
     /// <p>The Amazon Resource Name of the resource.</p>
@@ -131,17 +124,12 @@ impl GetWirelessGatewayTaskDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayTaskDefinitionOutput`](crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput).
-    pub fn build(self) -> crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput{
+    pub fn build(self) -> crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput {
         crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput {
-            auto_create_tasks: self.auto_create_tasks
-                .unwrap_or_default()
-            ,
-            name: self.name
-            ,
-            update: self.update
-            ,
-            arn: self.arn
-            ,
+            auto_create_tasks: self.auto_create_tasks.unwrap_or_default(),
+            name: self.name,
+            update: self.update,
+            arn: self.arn,
             _request_id: self._request_id,
         }
     }

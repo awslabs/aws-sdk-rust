@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateDefaultViewOutput {
 }
 impl AssociateDefaultViewOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDefaultViewOutput`](crate::operation::associate_default_view::AssociateDefaultViewOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_default_view::builders::AssociateDefaultViewOutputBuilder {
+    pub fn builder() -> crate::operation::associate_default_view::builders::AssociateDefaultViewOutputBuilder {
         crate::operation::associate_default_view::builders::AssociateDefaultViewOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDefaultViewOutput`](crate::operation::associate_default_view::AssociateDefaultViewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDefaultViewOutputBuilder {
     pub(crate) view_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

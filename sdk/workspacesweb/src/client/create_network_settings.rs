@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNetworkSettingsOutput`](crate::operation::create_network_settings::CreateNetworkSettingsOutput) with field(s):
     ///   - [`network_settings_arn(Option<String>)`](crate::operation::create_network_settings::CreateNetworkSettingsOutput::network_settings_arn): <p>The ARN of the network settings.</p>
     /// - On failure, responds with [`SdkError<CreateNetworkSettingsError>`](crate::operation::create_network_settings::CreateNetworkSettingsError)
-    pub fn create_network_settings(
-        &self,
-    ) -> crate::operation::create_network_settings::builders::CreateNetworkSettingsFluentBuilder
-    {
-        crate::operation::create_network_settings::builders::CreateNetworkSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_network_settings(&self) -> crate::operation::create_network_settings::builders::CreateNetworkSettingsFluentBuilder {
+        crate::operation::create_network_settings::builders::CreateNetworkSettingsFluentBuilder::new(self.handle.clone())
     }
 }

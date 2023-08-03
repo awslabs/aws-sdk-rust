@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`operation_id(Option<String>)`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     ///   - [`password(Option<String>)`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput::password): <p>To finish transferring a domain to another Amazon Web Services account, the account that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.</p>
     /// - On failure, responds with [`SdkError<TransferDomainToAnotherAwsAccountError>`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError)
-    pub fn transfer_domain_to_another_aws_account(&self) -> crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountFluentBuilder{
+    pub fn transfer_domain_to_another_aws_account(
+        &self,
+    ) -> crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountFluentBuilder {
         crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountFluentBuilder::new(self.handle.clone())
     }
 }

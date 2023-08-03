@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListScheduleGroupsOutput {
 }
 impl ListScheduleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListScheduleGroupsOutput`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder {
         crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListScheduleGroupsOutput`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScheduleGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) schedule_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>>,
+    pub(crate) schedule_groups: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListScheduleGroupsOutputBuilder {
@@ -72,17 +68,12 @@ impl ListScheduleGroupsOutputBuilder {
         self
     }
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub fn set_schedule_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>>,
-    ) -> Self {
+    pub fn set_schedule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>>) -> Self {
         self.schedule_groups = input;
         self
     }
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub fn get_schedule_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>> {
+    pub fn get_schedule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>> {
         &self.schedule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

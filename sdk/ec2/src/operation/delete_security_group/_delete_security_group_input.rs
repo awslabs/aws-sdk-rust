@@ -29,18 +29,14 @@ impl DeleteSecurityGroupInput {
 }
 impl DeleteSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityGroupInput`](crate::operation::delete_security_group::DeleteSecurityGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_security_group::builders::DeleteSecurityGroupInputBuilder {
-        crate::operation::delete_security_group::builders::DeleteSecurityGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_security_group::builders::DeleteSecurityGroupInputBuilder {
+        crate::operation::delete_security_group::builders::DeleteSecurityGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSecurityGroupInput`](crate::operation::delete_security_group::DeleteSecurityGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSecurityGroupInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl DeleteSecurityGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSecurityGroupInput`](crate::operation::delete_security_group::DeleteSecurityGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_security_group::DeleteSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_security_group::DeleteSecurityGroupInput {
-                group_id: self.group_id,
-                group_name: self.group_name,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_security_group::DeleteSecurityGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_security_group::DeleteSecurityGroupInput {
+            group_id: self.group_id,
+            group_name: self.group_name,
+            dry_run: self.dry_run,
+        })
     }
 }

@@ -9,8 +9,7 @@ pub struct ForwardActionConfig {
     pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>>,
     /// <p>The target group stickiness for the rule.</p>
     #[doc(hidden)]
-    pub target_group_stickiness_config:
-        ::std::option::Option<crate::types::TargetGroupStickinessConfig>,
+    pub target_group_stickiness_config: ::std::option::Option<crate::types::TargetGroupStickinessConfig>,
 }
 impl ForwardActionConfig {
     /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
@@ -18,9 +17,7 @@ impl ForwardActionConfig {
         self.target_groups.as_deref()
     }
     /// <p>The target group stickiness for the rule.</p>
-    pub fn target_group_stickiness_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetGroupStickinessConfig> {
+    pub fn target_group_stickiness_config(&self) -> ::std::option::Option<&crate::types::TargetGroupStickinessConfig> {
         self.target_group_stickiness_config.as_ref()
     }
 }
@@ -33,14 +30,10 @@ impl ForwardActionConfig {
 
 /// A builder for [`ForwardActionConfig`](crate::types::ForwardActionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForwardActionConfigBuilder {
-    pub(crate) target_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>>,
-    pub(crate) target_group_stickiness_config:
-        ::std::option::Option<crate::types::TargetGroupStickinessConfig>,
+    pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>>,
+    pub(crate) target_group_stickiness_config: ::std::option::Option<crate::types::TargetGroupStickinessConfig>,
 }
 impl ForwardActionConfigBuilder {
     /// Appends an item to `target_groups`.
@@ -55,39 +48,26 @@ impl ForwardActionConfigBuilder {
         self
     }
     /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
-    pub fn set_target_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>>,
-    ) -> Self {
+    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>>) -> Self {
         self.target_groups = input;
         self
     }
     /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
-    pub fn get_target_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>> {
+    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>> {
         &self.target_groups
     }
     /// <p>The target group stickiness for the rule.</p>
-    pub fn target_group_stickiness_config(
-        mut self,
-        input: crate::types::TargetGroupStickinessConfig,
-    ) -> Self {
+    pub fn target_group_stickiness_config(mut self, input: crate::types::TargetGroupStickinessConfig) -> Self {
         self.target_group_stickiness_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target group stickiness for the rule.</p>
-    pub fn set_target_group_stickiness_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupStickinessConfig>,
-    ) -> Self {
+    pub fn set_target_group_stickiness_config(mut self, input: ::std::option::Option<crate::types::TargetGroupStickinessConfig>) -> Self {
         self.target_group_stickiness_config = input;
         self
     }
     /// <p>The target group stickiness for the rule.</p>
-    pub fn get_target_group_stickiness_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetGroupStickinessConfig> {
+    pub fn get_target_group_stickiness_config(&self) -> &::std::option::Option<crate::types::TargetGroupStickinessConfig> {
         &self.target_group_stickiness_config
     }
     /// Consumes the builder and constructs a [`ForwardActionConfig`](crate::types::ForwardActionConfig).

@@ -30,9 +30,7 @@ impl UsageStatisticsSortBy {
 
 /// A builder for [`UsageStatisticsSortBy`](crate::types::UsageStatisticsSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageStatisticsSortByBuilder {
     pub(crate) key: ::std::option::Option<crate::types::UsageStatisticsSortKey>,
     pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,
@@ -44,10 +42,7 @@ impl UsageStatisticsSortByBuilder {
         self
     }
     /// <p>The field to sort the results by.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageStatisticsSortKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::UsageStatisticsSortKey>) -> Self {
         self.key = input;
         self
     }

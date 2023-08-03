@@ -29,17 +29,14 @@ impl StartMessageMoveTaskInput {
 }
 impl StartMessageMoveTaskInput {
     /// Creates a new builder-style object to manufacture [`StartMessageMoveTaskInput`](crate::operation::start_message_move_task::StartMessageMoveTaskInput).
-    pub fn builder(
-    ) -> crate::operation::start_message_move_task::builders::StartMessageMoveTaskInputBuilder {
+    pub fn builder() -> crate::operation::start_message_move_task::builders::StartMessageMoveTaskInputBuilder {
         crate::operation::start_message_move_task::builders::StartMessageMoveTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMessageMoveTaskInput`](crate::operation::start_message_move_task::StartMessageMoveTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMessageMoveTaskInputBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl StartMessageMoveTaskInputBuilder {
         &self.source_arn
     }
     /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -86,10 +77,7 @@ impl StartMessageMoveTaskInputBuilder {
         self
     }
     /// <p>The number of messages to be moved per second (the message movement rate). You can use this field to define a fixed message movement rate. The maximum value for messages per second is 500. If this field is left blank, the system will optimize the rate based on the queue message backlog size, which may vary throughout the duration of the message movement task.</p>
-    pub fn set_max_number_of_messages_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_max_number_of_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_number_of_messages_per_second = input;
         self
     }
@@ -100,16 +88,12 @@ impl StartMessageMoveTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartMessageMoveTaskInput`](crate::operation::start_message_move_task::StartMessageMoveTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_message_move_task::StartMessageMoveTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_message_move_task::StartMessageMoveTaskInput {
-                source_arn: self.source_arn,
-                destination_arn: self.destination_arn,
-                max_number_of_messages_per_second: self.max_number_of_messages_per_second,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_message_move_task::StartMessageMoveTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_message_move_task::StartMessageMoveTaskInput {
+            source_arn: self.source_arn,
+            destination_arn: self.destination_arn,
+            max_number_of_messages_per_second: self.max_number_of_messages_per_second,
+        })
     }
 }

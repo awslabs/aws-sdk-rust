@@ -67,9 +67,7 @@ impl Host {
 
 /// A builder for [`Host`](crate::types::Host).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) host_arn: ::std::option::Option<::std::string::String>,
@@ -114,10 +112,7 @@ impl HostBuilder {
         self
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderType>,
-    ) -> Self {
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
         self.provider_type = input;
         self
     }
@@ -126,18 +121,12 @@ impl HostBuilder {
         &self.provider_type
     }
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
-    pub fn provider_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
-    pub fn set_provider_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_endpoint = input;
         self
     }
@@ -151,10 +140,7 @@ impl HostBuilder {
         self
     }
     /// <p>The VPC configuration provisioned for the host.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }
@@ -177,18 +163,12 @@ impl HostBuilder {
         &self.status
     }
     /// <p>The status description for the host.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status description for the host.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

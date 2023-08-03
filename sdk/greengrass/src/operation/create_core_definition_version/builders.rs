@@ -26,7 +26,7 @@ impl CreateCoreDefinitionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCoreDefinitionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder,
+    inner: crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder,
 }
 impl CreateCoreDefinitionVersionFluentBuilder {
     /// Creates a new `CreateCoreDefinitionVersion`.
@@ -37,7 +37,7 @@ impl CreateCoreDefinitionVersionFluentBuilder {
         }
     }
     /// Access the CreateCoreDefinitionVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateCoreDefinitionVersionFluentBuilder {
             crate::operation::create_core_definition_version::CreateCoreDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_definition_version::CreateCoreDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_definition_version::CreateCoreDefinitionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateCoreDefinitionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateCoreDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_definition_version::CreateCoreDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_definition_version::CreateCoreDefinitionVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateCoreDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_definition_version::CreateCoreDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_definition_version::CreateCoreDefinitionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateCoreDefinitionVersionFluentBuilder {
             crate::operation::create_core_definition_version::CreateCoreDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_definition_version::CreateCoreDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_definition_version::CreateCoreDefinitionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -141,18 +124,12 @@ impl CreateCoreDefinitionVersionFluentBuilder {
         self.inner.get_amzn_client_token()
     }
     /// The ID of the core definition.
-    pub fn core_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_definition_id(input.into());
         self
     }
     /// The ID of the core definition.
-    pub fn set_core_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_definition_id(input);
         self
     }
@@ -170,10 +147,7 @@ impl CreateCoreDefinitionVersionFluentBuilder {
         self
     }
     /// A list of cores in the core definition version.
-    pub fn set_cores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
-    ) -> Self {
+    pub fn set_cores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Core>>) -> Self {
         self.inner = self.inner.set_cores(input);
         self
     }

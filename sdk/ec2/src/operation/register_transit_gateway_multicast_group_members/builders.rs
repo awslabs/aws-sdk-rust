@@ -5,16 +5,16 @@ pub use crate::operation::register_transit_gateway_multicast_group_members::_reg
 
 impl RegisterTransitGatewayMulticastGroupMembersInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.register_transit_gateway_multicast_group_members();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl RegisterTransitGatewayMulticastGroupMembersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterTransitGatewayMulticastGroupMembersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersInputBuilder,
+    inner: crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersInputBuilder,
 }
 impl RegisterTransitGatewayMulticastGroupMembersFluentBuilder {
     /// Creates a new `RegisterTransitGatewayMulticastGroupMembers`.
@@ -38,15 +38,24 @@ impl RegisterTransitGatewayMulticastGroupMembersFluentBuilder {
         }
     }
     /// Access the RegisterTransitGatewayMulticastGroupMembers as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembers, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembers,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +64,19 @@ impl RegisterTransitGatewayMulticastGroupMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -82,54 +94,53 @@ impl RegisterTransitGatewayMulticastGroupMembersFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembers, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembers,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_multicast_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_multicast_domain_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_multicast_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_multicast_domain_id(input);
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn get_transit_gateway_multicast_domain_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_multicast_domain_id()
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
-    pub fn group_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_ip_address(input.into());
         self
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
-    pub fn set_group_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_ip_address(input);
         self
     }
@@ -142,25 +153,17 @@ impl RegisterTransitGatewayMulticastGroupMembersFluentBuilder {
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
     ///
     /// <p>The group members' network interface IDs to register with the transit gateway multicast group.</p>
-    pub fn network_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_ids(input.into());
         self
     }
     /// <p>The group members' network interface IDs to register with the transit gateway multicast group.</p>
-    pub fn set_network_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_network_interface_ids(input);
         self
     }
     /// <p>The group members' network interface IDs to register with the transit gateway multicast group.</p>
-    pub fn get_network_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_network_interface_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

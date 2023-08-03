@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`tag_keys(Vec<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::set_tag_keys): <p>Tag keys that you want to remove from the specified resource.</p>
     /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError)
-    pub fn remove_tags_from_resource(
-        &self,
-    ) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder
-    {
+    pub fn remove_tags_from_resource(&self) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::new(self.handle.clone())
     }
 }

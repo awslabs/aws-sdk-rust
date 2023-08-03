@@ -26,7 +26,7 @@ impl CancelBatchPredictionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelBatchPredictionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobInputBuilder,
+    inner: crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobInputBuilder,
 }
 impl CancelBatchPredictionJobFluentBuilder {
     /// Creates a new `CancelBatchPredictionJob`.
@@ -37,7 +37,7 @@ impl CancelBatchPredictionJobFluentBuilder {
         }
     }
     /// Access the CancelBatchPredictionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CancelBatchPredictionJobFluentBuilder {
             crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CancelBatchPredictionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CancelBatchPredictionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CancelBatchPredictionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CancelBatchPredictionJobFluentBuilder {
             crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError>,
     > {
         self.customize_middleware().await
     }

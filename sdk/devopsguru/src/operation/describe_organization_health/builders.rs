@@ -26,7 +26,7 @@ impl DescribeOrganizationHealthInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOrganizationHealthFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_organization_health::builders::DescribeOrganizationHealthInputBuilder,
+    inner: crate::operation::describe_organization_health::builders::DescribeOrganizationHealthInputBuilder,
 }
 impl DescribeOrganizationHealthFluentBuilder {
     /// Creates a new `DescribeOrganizationHealth`.
@@ -37,7 +37,7 @@ impl DescribeOrganizationHealthFluentBuilder {
         }
     }
     /// Access the DescribeOrganizationHealth as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_organization_health::builders::DescribeOrganizationHealthInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_organization_health::builders::DescribeOrganizationHealthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeOrganizationHealthFluentBuilder {
             crate::operation::describe_organization_health::DescribeOrganizationHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organization_health::DescribeOrganizationHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_health::DescribeOrganizationHealthError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeOrganizationHealthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeOrganizationHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_health::DescribeOrganizationHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organization_health::DescribeOrganizationHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_health::DescribeOrganizationHealthError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeOrganizationHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_health::DescribeOrganizationHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organization_health::DescribeOrganizationHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_health::DescribeOrganizationHealthError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeOrganizationHealthFluentBuilder {
             crate::operation::describe_organization_health::DescribeOrganizationHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organization_health::DescribeOrganizationHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_health::DescribeOrganizationHealthError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +119,12 @@ impl DescribeOrganizationHealthFluentBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `OrganizationalUnitIds`.
@@ -148,25 +132,17 @@ impl DescribeOrganizationHealthFluentBuilder {
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
     ///
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organizational_unit_ids(input.into());
         self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn set_organizational_unit_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_organizational_unit_ids(input);
         self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn get_organizational_unit_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_organizational_unit_ids()
     }
 }

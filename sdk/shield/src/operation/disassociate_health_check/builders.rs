@@ -27,8 +27,7 @@ impl DisassociateHealthCheckInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateHealthCheckFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::disassociate_health_check::builders::DisassociateHealthCheckInputBuilder,
+    inner: crate::operation::disassociate_health_check::builders::DisassociateHealthCheckInputBuilder,
 }
 impl DisassociateHealthCheckFluentBuilder {
     /// Creates a new `DisassociateHealthCheck`.
@@ -39,10 +38,7 @@ impl DisassociateHealthCheckFluentBuilder {
         }
     }
     /// Access the DisassociateHealthCheck as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_health_check::builders::DisassociateHealthCheckInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_health_check::builders::DisassociateHealthCheckInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DisassociateHealthCheckFluentBuilder {
             crate::operation::disassociate_health_check::DisassociateHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_health_check::DisassociateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_health_check::DisassociateHealthCheckError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DisassociateHealthCheckFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DisassociateHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_health_check::DisassociateHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_health_check::DisassociateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_health_check::DisassociateHealthCheckError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DisassociateHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_health_check::DisassociateHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_health_check::DisassociateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_health_check::DisassociateHealthCheckError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl DisassociateHealthCheckFluentBuilder {
             crate::operation::disassociate_health_check::DisassociateHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_health_check::DisassociateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_health_check::DisassociateHealthCheckError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from. </p>
-    pub fn protection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protection_id(input.into());
         self
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from. </p>
-    pub fn set_protection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protection_id(input);
         self
     }
@@ -146,18 +125,12 @@ impl DisassociateHealthCheckFluentBuilder {
         self.inner.get_protection_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
-    pub fn health_check_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
-    pub fn set_health_check_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_arn(input);
         self
     }

@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for StatusReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "INTERNAL_ERROR" => StatusReasonCode::InternalError,
-            "NO_AVAILABLE_CONFIGURATION_RECORDER" => {
-                StatusReasonCode::NoAvailableConfigurationRecorder
-            }
-            other => {
-                StatusReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "NO_AVAILABLE_CONFIGURATION_RECORDER" => StatusReasonCode::NoAvailableConfigurationRecorder,
+            other => StatusReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,9 +69,7 @@ impl StatusReasonCode {
     pub fn as_str(&self) -> &str {
         match self {
             StatusReasonCode::InternalError => "INTERNAL_ERROR",
-            StatusReasonCode::NoAvailableConfigurationRecorder => {
-                "NO_AVAILABLE_CONFIGURATION_RECORDER"
-            }
+            StatusReasonCode::NoAvailableConfigurationRecorder => "NO_AVAILABLE_CONFIGURATION_RECORDER",
             StatusReasonCode::Unknown(value) => value.as_str(),
         }
     }

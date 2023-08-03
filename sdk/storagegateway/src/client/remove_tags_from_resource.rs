@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput) with field(s):
     ///   - [`resource_arn(Option<String>)`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that the tags were removed from.</p>
     /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError)
-    pub fn remove_tags_from_resource(
-        &self,
-    ) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder
-    {
+    pub fn remove_tags_from_resource(&self) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::new(self.handle.clone())
     }
 }

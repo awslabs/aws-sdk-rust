@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`load_balancer_target_groups(Option<Vec<LoadBalancerTargetGroupState>>)`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput::load_balancer_target_groups): <p>Information about the target groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeLoadBalancerTargetGroupsError>`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsError)
-    pub fn describe_load_balancer_target_groups(&self) -> crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder{
+    pub fn describe_load_balancer_target_groups(
+        &self,
+    ) -> crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder {
         crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

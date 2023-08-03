@@ -11,10 +11,11 @@ pub fn ser_update_project_input(
     }
     if let Some(var_3) = &input.service_catalog_provisioning_update_details {
         #[allow(unused_mut)]
-        let mut object_4 = object
-            .key("ServiceCatalogProvisioningUpdateDetails")
-            .start_object();
-        crate::protocol_serde::shape_service_catalog_provisioning_update_details::ser_service_catalog_provisioning_update_details(&mut object_4, var_3)?;
+        let mut object_4 = object.key("ServiceCatalogProvisioningUpdateDetails").start_object();
+        crate::protocol_serde::shape_service_catalog_provisioning_update_details::ser_service_catalog_provisioning_update_details(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
     if let Some(var_5) = &input.tags {

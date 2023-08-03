@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelDataQualityRulesetEvaluationRun
 }
 impl CancelDataQualityRulesetEvaluationRunOutput {
     /// Creates a new builder-style object to manufacture [`CancelDataQualityRulesetEvaluationRunOutput`](crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunOutput).
-    pub fn builder() -> crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunOutputBuilder {
         crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDataQualityRulesetEvaluationRunOutput`](crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDataQualityRulesetEvaluationRunOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl CancelDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelDataQualityRulesetEvaluationRunOutput`](crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunOutput).
-    pub fn build(self) -> crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunOutput{
+    pub fn build(self) -> crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunOutput {
         crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunOutput {
             _request_id: self._request_id,
         }

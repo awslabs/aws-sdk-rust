@@ -52,13 +52,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -104,26 +98,18 @@ impl ::std::convert::From<&str> for FindingReasonCode {
             "DISK_IOPS_OVER_PROVISIONED" => FindingReasonCode::DiskIopsOverProvisioned,
             "DISK_IOPS_UNDER_PROVISIONED" => FindingReasonCode::DiskIopsUnderProvisioned,
             "DISK_THROUGHPUT_OVER_PROVISIONED" => FindingReasonCode::DiskThroughputOverProvisioned,
-            "DISK_THROUGHPUT_UNDER_PROVISIONED" => {
-                FindingReasonCode::DiskThroughputUnderProvisioned
-            }
+            "DISK_THROUGHPUT_UNDER_PROVISIONED" => FindingReasonCode::DiskThroughputUnderProvisioned,
             "EBS_IOPS_OVER_PROVISIONED" => FindingReasonCode::EbsIopsOverProvisioned,
             "EBS_IOPS_UNDER_PROVISIONED" => FindingReasonCode::EbsIopsUnderProvisioned,
             "EBS_THROUGHPUT_OVER_PROVISIONED" => FindingReasonCode::EbsThroughputOverProvisioned,
             "EBS_THROUGHPUT_UNDER_PROVISIONED" => FindingReasonCode::EbsThroughputUnderProvisioned,
             "MEMORY_OVER_PROVISIONED" => FindingReasonCode::MemoryOverProvisioned,
             "MEMORY_UNDER_PROVISIONED" => FindingReasonCode::MemoryUnderProvisioned,
-            "NETWORK_BANDWIDTH_OVER_PROVISIONED" => {
-                FindingReasonCode::NetworkBandwidthOverProvisioned
-            }
-            "NETWORK_BANDWIDTH_UNDER_PROVISIONED" => {
-                FindingReasonCode::NetworkBandwidthUnderProvisioned
-            }
+            "NETWORK_BANDWIDTH_OVER_PROVISIONED" => FindingReasonCode::NetworkBandwidthOverProvisioned,
+            "NETWORK_BANDWIDTH_UNDER_PROVISIONED" => FindingReasonCode::NetworkBandwidthUnderProvisioned,
             "NETWORK_PPS_OVER_PROVISIONED" => FindingReasonCode::NetworkPpsOverProvisioned,
             "NETWORK_PPS_UNDER_PROVISIONED" => FindingReasonCode::NetworkPpsUnderProvisioned,
-            other => {
-                FindingReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => FindingReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -143,21 +129,15 @@ impl FindingReasonCode {
             FindingReasonCode::DiskIopsOverProvisioned => "DISK_IOPS_OVER_PROVISIONED",
             FindingReasonCode::DiskIopsUnderProvisioned => "DISK_IOPS_UNDER_PROVISIONED",
             FindingReasonCode::DiskThroughputOverProvisioned => "DISK_THROUGHPUT_OVER_PROVISIONED",
-            FindingReasonCode::DiskThroughputUnderProvisioned => {
-                "DISK_THROUGHPUT_UNDER_PROVISIONED"
-            }
+            FindingReasonCode::DiskThroughputUnderProvisioned => "DISK_THROUGHPUT_UNDER_PROVISIONED",
             FindingReasonCode::EbsIopsOverProvisioned => "EBS_IOPS_OVER_PROVISIONED",
             FindingReasonCode::EbsIopsUnderProvisioned => "EBS_IOPS_UNDER_PROVISIONED",
             FindingReasonCode::EbsThroughputOverProvisioned => "EBS_THROUGHPUT_OVER_PROVISIONED",
             FindingReasonCode::EbsThroughputUnderProvisioned => "EBS_THROUGHPUT_UNDER_PROVISIONED",
             FindingReasonCode::MemoryOverProvisioned => "MEMORY_OVER_PROVISIONED",
             FindingReasonCode::MemoryUnderProvisioned => "MEMORY_UNDER_PROVISIONED",
-            FindingReasonCode::NetworkBandwidthOverProvisioned => {
-                "NETWORK_BANDWIDTH_OVER_PROVISIONED"
-            }
-            FindingReasonCode::NetworkBandwidthUnderProvisioned => {
-                "NETWORK_BANDWIDTH_UNDER_PROVISIONED"
-            }
+            FindingReasonCode::NetworkBandwidthOverProvisioned => "NETWORK_BANDWIDTH_OVER_PROVISIONED",
+            FindingReasonCode::NetworkBandwidthUnderProvisioned => "NETWORK_BANDWIDTH_UNDER_PROVISIONED",
             FindingReasonCode::NetworkPpsOverProvisioned => "NETWORK_PPS_OVER_PROVISIONED",
             FindingReasonCode::NetworkPpsUnderProvisioned => "NETWORK_PPS_UNDER_PROVISIONED",
             FindingReasonCode::Unknown(value) => value.as_str(),

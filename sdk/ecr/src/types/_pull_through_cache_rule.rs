@@ -44,9 +44,7 @@ impl PullThroughCacheRule {
 
 /// A builder for [`PullThroughCacheRule`](crate::types::PullThroughCacheRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PullThroughCacheRuleBuilder {
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) upstream_registry_url: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct PullThroughCacheRuleBuilder {
 }
 impl PullThroughCacheRuleBuilder {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
-    pub fn ecr_repository_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecr_repository_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
-    pub fn set_ecr_repository_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecr_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ecr_repository_prefix = input;
         self
     }
@@ -75,18 +67,12 @@ impl PullThroughCacheRuleBuilder {
         &self.ecr_repository_prefix
     }
     /// <p>The upstream registry URL associated with the pull through cache rule.</p>
-    pub fn upstream_registry_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn upstream_registry_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upstream_registry_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upstream registry URL associated with the pull through cache rule.</p>
-    pub fn set_upstream_registry_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_upstream_registry_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upstream_registry_url = input;
         self
     }
@@ -100,10 +86,7 @@ impl PullThroughCacheRuleBuilder {
         self
     }
     /// <p>The date and time the pull through cache was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

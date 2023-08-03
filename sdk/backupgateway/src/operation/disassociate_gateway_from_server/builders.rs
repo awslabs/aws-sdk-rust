@@ -26,7 +26,7 @@ impl DisassociateGatewayFromServerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateGatewayFromServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerInputBuilder,
+    inner: crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerInputBuilder,
 }
 impl DisassociateGatewayFromServerFluentBuilder {
     /// Creates a new `DisassociateGatewayFromServer`.
@@ -37,7 +37,7 @@ impl DisassociateGatewayFromServerFluentBuilder {
         }
     }
     /// Access the DisassociateGatewayFromServer as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateGatewayFromServerFluentBuilder {
             crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateGatewayFromServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateGatewayFromServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateGatewayFromServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisassociateGatewayFromServerFluentBuilder {
             crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError>,
     > {
         self.customize_middleware().await
     }

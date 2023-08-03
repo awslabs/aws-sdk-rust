@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Icd10CmAttributeType {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for Icd10CmAttributeType {
             "SYSTEM_ORGAN_SITE" => Icd10CmAttributeType::SystemOrganSite,
             "TIME_EXPRESSION" => Icd10CmAttributeType::TimeExpression,
             "TIME_TO_DX_NAME" => Icd10CmAttributeType::TimeToDxName,
-            other => Icd10CmAttributeType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Icd10CmAttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

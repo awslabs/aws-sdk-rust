@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`aggregated_values(Option<Vec<AggregatedValue>>)`](crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput::aggregated_values): <p>The requested aggregated values.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<GetAssetPropertyAggregatesError>`](crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError)
-    pub fn get_asset_property_aggregates(&self) -> crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesFluentBuilder{
+    pub fn get_asset_property_aggregates(
+        &self,
+    ) -> crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesFluentBuilder {
         crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesFluentBuilder::new(self.handle.clone())
     }
 }

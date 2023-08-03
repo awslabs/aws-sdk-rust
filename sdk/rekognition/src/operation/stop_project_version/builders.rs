@@ -10,10 +10,7 @@ impl StopProjectVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_project_version::StopProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_project_version::StopProjectVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_project_version::StopProjectVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_project_version();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StopProjectVersionFluentBuilder {
         }
     }
     /// Access the StopProjectVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_project_version::builders::StopProjectVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_project_version::builders::StopProjectVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl StopProjectVersionFluentBuilder {
             crate::operation::stop_project_version::StopProjectVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_project_version::StopProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_project_version::StopProjectVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl StopProjectVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl StopProjectVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_project_version::StopProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_project_version::StopProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_project_version::StopProjectVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl StopProjectVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_project_version::StopProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_project_version::StopProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_project_version::StopProjectVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +103,19 @@ impl StopProjectVersionFluentBuilder {
             crate::operation::stop_project_version::StopProjectVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_project_version::StopProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_project_version::StopProjectVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
-    pub fn project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_version_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_version_arn(input);
         self
     }

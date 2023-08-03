@@ -32,13 +32,10 @@ impl AwsDynamoDbTableBillingModeSummary {
 
 /// A builder for [`AwsDynamoDbTableBillingModeSummary`](crate::types::AwsDynamoDbTableBillingModeSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableBillingModeSummaryBuilder {
     pub(crate) billing_mode: ::std::option::Option<::std::string::String>,
-    pub(crate) last_update_to_pay_per_request_date_time:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) last_update_to_pay_per_request_date_time: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableBillingModeSummaryBuilder {
     /// <p>The method used to charge for read and write throughput and to manage capacity.</p>
@@ -57,27 +54,19 @@ impl AwsDynamoDbTableBillingModeSummaryBuilder {
     }
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_update_to_pay_per_request_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_update_to_pay_per_request_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_update_to_pay_per_request_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_last_update_to_pay_per_request_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_update_to_pay_per_request_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_update_to_pay_per_request_date_time = input;
         self
     }
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn get_last_update_to_pay_per_request_date_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_update_to_pay_per_request_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_update_to_pay_per_request_date_time
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableBillingModeSummary`](crate::types::AwsDynamoDbTableBillingModeSummary).

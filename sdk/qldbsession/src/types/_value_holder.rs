@@ -30,9 +30,7 @@ impl ValueHolder {
 
 /// A builder for [`ValueHolder`](crate::types::ValueHolder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValueHolderBuilder {
     pub(crate) ion_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) ion_text: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ValueHolderBuilder {
         self
     }
     /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn set_ion_binary(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_ion_binary(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.ion_binary = input;
         self
     }

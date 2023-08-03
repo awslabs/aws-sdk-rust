@@ -15,20 +15,14 @@ pub fn ser_website_configuration(
     }
     if let Some(var_3) = &input.redirect_all_requests_to {
         let inner_writer = scope.start_el("RedirectAllRequestsTo");
-        crate::protocol_serde::shape_redirect_all_requests_to::ser_redirect_all_requests_to(
-            var_3,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_redirect_all_requests_to::ser_redirect_all_requests_to(var_3, inner_writer)?
     }
     if let Some(var_4) = &input.routing_rules {
         let mut inner_writer = scope.start_el("RoutingRules").finish();
         for list_item_5 in var_4 {
             {
                 let inner_writer = inner_writer.start_el("RoutingRule");
-                crate::protocol_serde::shape_routing_rule::ser_routing_rule(
-                    list_item_5,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_routing_rule::ser_routing_rule(list_item_5, inner_writer)?
             }
         }
     }

@@ -26,8 +26,7 @@ impl UpdateJobShipmentStateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateJobShipmentStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateInputBuilder,
+    inner: crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateInputBuilder,
 }
 impl UpdateJobShipmentStateFluentBuilder {
     /// Creates a new `UpdateJobShipmentState`.
@@ -38,10 +37,7 @@ impl UpdateJobShipmentStateFluentBuilder {
         }
     }
     /// Access the UpdateJobShipmentState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateJobShipmentStateFluentBuilder {
             crate::operation::update_job_shipment_state::UpdateJobShipmentState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_shipment_state::UpdateJobShipmentStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_shipment_state::UpdateJobShipmentStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateJobShipmentStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateJobShipmentStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_shipment_state::UpdateJobShipmentStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_shipment_state::UpdateJobShipmentStateError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateJobShipmentStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_shipment_state::UpdateJobShipmentStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_shipment_state::UpdateJobShipmentStateError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateJobShipmentStateFluentBuilder {
             crate::operation::update_job_shipment_state::UpdateJobShipmentState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_shipment_state::UpdateJobShipmentStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_shipment_state::UpdateJobShipmentStateError>,
     > {
         self.customize_middleware().await
     }
@@ -148,10 +133,7 @@ impl UpdateJobShipmentStateFluentBuilder {
     /// <p>The state of a device when it is being shipped. </p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
-    pub fn set_shipment_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ShipmentState>,
-    ) -> Self {
+    pub fn set_shipment_state(mut self, input: ::std::option::Option<crate::types::ShipmentState>) -> Self {
         self.inner = self.inner.set_shipment_state(input);
         self
     }

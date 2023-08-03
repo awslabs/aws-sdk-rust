@@ -37,9 +37,7 @@ impl JobDetails {
 
 /// A builder for [`JobDetails`](crate::types::JobDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobDetailsBuilder {
     pub(crate) translated_documents_count: ::std::option::Option<i32>,
     pub(crate) documents_with_errors_count: ::std::option::Option<i32>,

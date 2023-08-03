@@ -58,9 +58,7 @@ impl CoreNetworkChange {
 
 /// A builder for [`CoreNetworkChange`](crate::types::CoreNetworkChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ChangeType>,
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
@@ -118,17 +116,12 @@ impl CoreNetworkChangeBuilder {
         self
     }
     /// <p>The previous values for a core network.</p>
-    pub fn set_previous_values(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetworkChangeValues>,
-    ) -> Self {
+    pub fn set_previous_values(mut self, input: ::std::option::Option<crate::types::CoreNetworkChangeValues>) -> Self {
         self.previous_values = input;
         self
     }
     /// <p>The previous values for a core network.</p>
-    pub fn get_previous_values(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoreNetworkChangeValues> {
+    pub fn get_previous_values(&self) -> &::std::option::Option<crate::types::CoreNetworkChangeValues> {
         &self.previous_values
     }
     /// <p>The new value for a core network</p>
@@ -137,10 +130,7 @@ impl CoreNetworkChangeBuilder {
         self
     }
     /// <p>The new value for a core network</p>
-    pub fn set_new_values(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetworkChangeValues>,
-    ) -> Self {
+    pub fn set_new_values(mut self, input: ::std::option::Option<crate::types::CoreNetworkChangeValues>) -> Self {
         self.new_values = input;
         self
     }
@@ -149,18 +139,12 @@ impl CoreNetworkChangeBuilder {
         &self.new_values
     }
     /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
-    pub fn identifier_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identifier_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
-    pub fn set_identifier_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identifier_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier_path = input;
         self
     }

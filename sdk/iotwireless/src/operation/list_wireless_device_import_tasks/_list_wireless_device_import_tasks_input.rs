@@ -22,16 +22,14 @@ impl ListWirelessDeviceImportTasksInput {
 }
 impl ListWirelessDeviceImportTasksInput {
     /// Creates a new builder-style object to manufacture [`ListWirelessDeviceImportTasksInput`](crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput).
-    pub fn builder() -> crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksInputBuilder{
+    pub fn builder() -> crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksInputBuilder {
         crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWirelessDeviceImportTasksInput`](crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWirelessDeviceImportTasksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,13 +70,9 @@ impl ListWirelessDeviceImportTasksInputBuilder {
         crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

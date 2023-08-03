@@ -37,9 +37,7 @@ impl ServiceHealth {
 
 /// A builder for [`ServiceHealth`](crate::types::ServiceHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceHealthBuilder {
     pub(crate) service_name: ::std::option::Option<crate::types::ServiceName>,
     pub(crate) insight: ::std::option::Option<crate::types::ServiceInsightHealth>,
@@ -52,10 +50,7 @@ impl ServiceHealthBuilder {
         self
     }
     /// <p>The name of the Amazon Web Services service.</p>
-    pub fn set_service_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
         self.service_name = input;
         self
     }
@@ -69,10 +64,7 @@ impl ServiceHealthBuilder {
         self
     }
     /// <p>Represents the health of an Amazon Web Services service. This is a <code>ServiceInsightHealth</code> that contains the number of open proactive and reactive insights for this service.</p>
-    pub fn set_insight(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceInsightHealth>,
-    ) -> Self {
+    pub fn set_insight(mut self, input: ::std::option::Option<crate::types::ServiceInsightHealth>) -> Self {
         self.insight = input;
         self
     }

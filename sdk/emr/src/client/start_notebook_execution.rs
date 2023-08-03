@@ -18,10 +18,7 @@ impl super::Client {
     /// - On success, responds with [`StartNotebookExecutionOutput`](crate::operation::start_notebook_execution::StartNotebookExecutionOutput) with field(s):
     ///   - [`notebook_execution_id(Option<String>)`](crate::operation::start_notebook_execution::StartNotebookExecutionOutput::notebook_execution_id): <p>The unique identifier of the notebook execution.</p>
     /// - On failure, responds with [`SdkError<StartNotebookExecutionError>`](crate::operation::start_notebook_execution::StartNotebookExecutionError)
-    pub fn start_notebook_execution(
-        &self,
-    ) -> crate::operation::start_notebook_execution::builders::StartNotebookExecutionFluentBuilder
-    {
+    pub fn start_notebook_execution(&self) -> crate::operation::start_notebook_execution::builders::StartNotebookExecutionFluentBuilder {
         crate::operation::start_notebook_execution::builders::StartNotebookExecutionFluentBuilder::new(self.handle.clone())
     }
 }

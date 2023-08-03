@@ -10,10 +10,7 @@ impl SyncDeploymentJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::sync_deployment_job::SyncDeploymentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sync_deployment_job::SyncDeploymentJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sync_deployment_job::SyncDeploymentJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.sync_deployment_job();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl SyncDeploymentJobFluentBuilder {
         }
     }
     /// Access the SyncDeploymentJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::sync_deployment_job::builders::SyncDeploymentJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::sync_deployment_job::builders::SyncDeploymentJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl SyncDeploymentJobFluentBuilder {
             crate::operation::sync_deployment_job::SyncDeploymentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sync_deployment_job::SyncDeploymentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sync_deployment_job::SyncDeploymentJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl SyncDeploymentJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl SyncDeploymentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::sync_deployment_job::SyncDeploymentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sync_deployment_job::SyncDeploymentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sync_deployment_job::SyncDeploymentJobError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl SyncDeploymentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::sync_deployment_job::SyncDeploymentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sync_deployment_job::SyncDeploymentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sync_deployment_job::SyncDeploymentJobError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +107,17 @@ impl SyncDeploymentJobFluentBuilder {
             crate::operation::sync_deployment_job::SyncDeploymentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sync_deployment_job::SyncDeploymentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sync_deployment_job::SyncDeploymentJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

@@ -4,9 +4,7 @@ pub fn ser_document(
     input: &crate::types::Document,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.content {
-        object
-            .key("Content")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("Content").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     if let Some(var_2) = &input.content_type {
         object.key("ContentType").string(var_2.as_str());

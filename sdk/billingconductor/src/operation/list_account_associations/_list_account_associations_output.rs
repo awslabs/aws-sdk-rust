@@ -5,8 +5,7 @@
 pub struct ListAccountAssociationsOutput {
     /// <p> The list of linked accounts in the payer account. </p>
     #[doc(hidden)]
-    pub linked_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>>,
+    pub linked_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>>,
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAccountAssociationsOutput {
 }
 impl ListAccountAssociationsOutput {
     /// <p> The list of linked accounts in the payer account. </p>
-    pub fn linked_accounts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccountAssociationsListElement]> {
+    pub fn linked_accounts(&self) -> ::std::option::Option<&[crate::types::AccountAssociationsListElement]> {
         self.linked_accounts.as_deref()
     }
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAccountAssociationsOutput {
 }
 impl ListAccountAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssociationsOutput`](crate::operation::list_account_associations::ListAccountAssociationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_account_associations::builders::ListAccountAssociationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_associations::builders::ListAccountAssociationsOutputBuilder {
         crate::operation::list_account_associations::builders::ListAccountAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountAssociationsOutput`](crate::operation::list_account_associations::ListAccountAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAssociationsOutputBuilder {
-    pub(crate) linked_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>>,
+    pub(crate) linked_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListAccountAssociationsOutputBuilder {
         self
     }
     /// <p> The list of linked accounts in the payer account. </p>
-    pub fn set_linked_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>>,
-    ) -> Self {
+    pub fn set_linked_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>>) -> Self {
         self.linked_accounts = input;
         self
     }
     /// <p> The list of linked accounts in the payer account. </p>
-    pub fn get_linked_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>> {
+    pub fn get_linked_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>> {
         &self.linked_accounts
     }
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
@@ -99,9 +86,7 @@ impl ListAccountAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccountAssociationsOutput`](crate::operation::list_account_associations::ListAccountAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_account_associations::ListAccountAssociationsOutput {
+    pub fn build(self) -> crate::operation::list_account_associations::ListAccountAssociationsOutput {
         crate::operation::list_account_associations::ListAccountAssociationsOutput {
             linked_accounts: self.linked_accounts,
             next_token: self.next_token,

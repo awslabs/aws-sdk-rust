@@ -37,10 +37,7 @@ impl DescribeInstanceHealthFluentBuilder {
         }
     }
     /// Access the DescribeInstanceHealth as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_instance_health::builders::DescribeInstanceHealthInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_instance_health::builders::DescribeInstanceHealthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeInstanceHealthFluentBuilder {
             crate::operation::describe_instance_health::DescribeInstanceHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_health::DescribeInstanceHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_health::DescribeInstanceHealthError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeInstanceHealthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeInstanceHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_health::DescribeInstanceHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_health::DescribeInstanceHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_health::DescribeInstanceHealthError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeInstanceHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_health::DescribeInstanceHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_health::DescribeInstanceHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_health::DescribeInstanceHealthError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeInstanceHealthFluentBuilder {
             crate::operation::describe_instance_health::DescribeInstanceHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_health::DescribeInstanceHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_health::DescribeInstanceHealthError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -153,10 +133,7 @@ impl DescribeInstanceHealthFluentBuilder {
         self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
         self.inner = self.inner.set_instances(input);
         self
     }

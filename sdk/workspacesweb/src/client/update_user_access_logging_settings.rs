@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateUserAccessLoggingSettingsOutput`](crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsOutput) with field(s):
     ///   - [`user_access_logging_settings(Option<UserAccessLoggingSettings>)`](crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsOutput::user_access_logging_settings): <p>The user access logging settings.</p>
     /// - On failure, responds with [`SdkError<UpdateUserAccessLoggingSettingsError>`](crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsError)
-    pub fn update_user_access_logging_settings(&self) -> crate::operation::update_user_access_logging_settings::builders::UpdateUserAccessLoggingSettingsFluentBuilder{
+    pub fn update_user_access_logging_settings(
+        &self,
+    ) -> crate::operation::update_user_access_logging_settings::builders::UpdateUserAccessLoggingSettingsFluentBuilder {
         crate::operation::update_user_access_logging_settings::builders::UpdateUserAccessLoggingSettingsFluentBuilder::new(self.handle.clone())
     }
 }

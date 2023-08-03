@@ -14,7 +14,12 @@ impl super::Client {
     ///   - [`group_by_key(Option<String>)`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryOutput::group_by_key): <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<GetAggregateConformancePackComplianceSummaryError>`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError)
-    pub fn get_aggregate_conformance_pack_compliance_summary(&self) -> crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryFluentBuilder{
-        crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryFluentBuilder::new(self.handle.clone())
+    pub fn get_aggregate_conformance_pack_compliance_summary(
+        &self,
+    ) -> crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryFluentBuilder
+    {
+        crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`pending_maintenance_actions(Option<Vec<ResourcePendingMaintenanceActions>>)`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput::pending_maintenance_actions): <p>A list of the pending maintenance actions for the resource.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput::marker): <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
     /// - On failure, responds with [`SdkError<DescribePendingMaintenanceActionsError>`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError)
-    pub fn describe_pending_maintenance_actions(&self) -> crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder{
+    pub fn describe_pending_maintenance_actions(
+        &self,
+    ) -> crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder {
         crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::new(self.handle.clone())
     }
 }

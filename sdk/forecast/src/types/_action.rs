@@ -49,9 +49,7 @@ impl Action {
 
 /// A builder for [`Action`](crate::types::Action).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
@@ -59,18 +57,12 @@ pub struct ActionBuilder {
 }
 impl ActionBuilder {
     /// <p>The related time series that you are modifying. This value is case insensitive.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The related time series that you are modifying. This value is case insensitive.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }

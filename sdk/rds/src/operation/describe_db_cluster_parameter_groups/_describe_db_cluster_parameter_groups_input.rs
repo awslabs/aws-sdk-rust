@@ -49,16 +49,14 @@ impl DescribeDbClusterParameterGroupsInput {
 }
 impl DescribeDbClusterParameterGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsInput`](crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput).
-    pub fn builder() -> crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsInputBuilder {
         crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterParameterGroupsInput`](crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterParameterGroupsInputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -71,10 +69,7 @@ impl DescribeDbClusterParameterGroupsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -83,10 +78,7 @@ impl DescribeDbClusterParameterGroupsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
         self
     }
@@ -95,9 +87,7 @@ impl DescribeDbClusterParameterGroupsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
     /// Appends an item to `filters`.
@@ -112,10 +102,7 @@ impl DescribeDbClusterParameterGroupsInputBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -158,18 +145,19 @@ impl DescribeDbClusterParameterGroupsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterParameterGroupsInput`](crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput {
-                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
-                ,
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
+                filters: self.filters,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

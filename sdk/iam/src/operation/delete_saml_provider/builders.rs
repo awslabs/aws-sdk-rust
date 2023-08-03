@@ -10,10 +10,7 @@ impl DeleteSamlProviderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_saml_provider::DeleteSamlProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_saml_provider::DeleteSAMLProviderError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_saml_provider::DeleteSAMLProviderError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_saml_provider();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DeleteSAMLProviderFluentBuilder {
         }
     }
     /// Access the DeleteSAMLProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_saml_provider::builders::DeleteSamlProviderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_saml_provider::builders::DeleteSamlProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DeleteSAMLProviderFluentBuilder {
             crate::operation::delete_saml_provider::DeleteSAMLProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_saml_provider::DeleteSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_saml_provider::DeleteSAMLProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DeleteSAMLProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DeleteSAMLProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_saml_provider::DeleteSamlProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_saml_provider::DeleteSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_saml_provider::DeleteSAMLProviderError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DeleteSAMLProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_saml_provider::DeleteSamlProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_saml_provider::DeleteSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_saml_provider::DeleteSAMLProviderError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl DeleteSAMLProviderFluentBuilder {
             crate::operation::delete_saml_provider::DeleteSAMLProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_saml_provider::DeleteSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_saml_provider::DeleteSAMLProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-    pub fn saml_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.saml_provider_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-    pub fn set_saml_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_saml_provider_arn(input);
         self
     }

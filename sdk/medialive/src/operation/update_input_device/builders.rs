@@ -10,10 +10,7 @@ impl UpdateInputDeviceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_input_device::UpdateInputDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_input_device::UpdateInputDeviceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input_device::UpdateInputDeviceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_input_device();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateInputDeviceFluentBuilder {
         }
     }
     /// Access the UpdateInputDevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_input_device::builders::UpdateInputDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_input_device::builders::UpdateInputDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateInputDeviceFluentBuilder {
             crate::operation::update_input_device::UpdateInputDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_input_device::UpdateInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input_device::UpdateInputDeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateInputDeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateInputDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_input_device::UpdateInputDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_input_device::UpdateInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input_device::UpdateInputDeviceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateInputDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_input_device::UpdateInputDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_input_device::UpdateInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input_device::UpdateInputDeviceError>,
     > {
         self.send_middleware().await
     }
@@ -116,47 +102,31 @@ impl UpdateInputDeviceFluentBuilder {
             crate::operation::update_input_device::UpdateInputDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_input_device::UpdateInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input_device::UpdateInputDeviceError>,
     > {
         self.customize_middleware().await
     }
     /// The settings that you want to apply to the HD input device.
-    pub fn hd_device_settings(
-        mut self,
-        input: crate::types::InputDeviceConfigurableSettings,
-    ) -> Self {
+    pub fn hd_device_settings(mut self, input: crate::types::InputDeviceConfigurableSettings) -> Self {
         self.inner = self.inner.hd_device_settings(input);
         self
     }
     /// The settings that you want to apply to the HD input device.
-    pub fn set_hd_device_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
-    ) -> Self {
+    pub fn set_hd_device_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>) -> Self {
         self.inner = self.inner.set_hd_device_settings(input);
         self
     }
     /// The settings that you want to apply to the HD input device.
-    pub fn get_hd_device_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
+    pub fn get_hd_device_settings(&self) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
         self.inner.get_hd_device_settings()
     }
     /// The unique ID of the input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_device_id(input.into());
         self
     }
     /// The unique ID of the input device. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
     }
@@ -179,25 +149,17 @@ impl UpdateInputDeviceFluentBuilder {
         self.inner.get_name()
     }
     /// The settings that you want to apply to the UHD input device.
-    pub fn uhd_device_settings(
-        mut self,
-        input: crate::types::InputDeviceConfigurableSettings,
-    ) -> Self {
+    pub fn uhd_device_settings(mut self, input: crate::types::InputDeviceConfigurableSettings) -> Self {
         self.inner = self.inner.uhd_device_settings(input);
         self
     }
     /// The settings that you want to apply to the UHD input device.
-    pub fn set_uhd_device_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
-    ) -> Self {
+    pub fn set_uhd_device_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>) -> Self {
         self.inner = self.inner.set_uhd_device_settings(input);
         self
     }
     /// The settings that you want to apply to the UHD input device.
-    pub fn get_uhd_device_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
+    pub fn get_uhd_device_settings(&self) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
         self.inner.get_uhd_device_settings()
     }
 }

@@ -9,124 +9,123 @@ pub fn de_modify_event_subscription_http_error(
     crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled(
+        None => {
+            return Err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EventSubscriptionQuotaExceeded" => crate::operation::modify_event_subscription::ModifyEventSubscriptionError::EventSubscriptionQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "EventSubscriptionQuotaExceeded" => {
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::EventSubscriptionQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EventSubscriptionQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_event_subscription_quota_exceeded_fault::de_event_subscription_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_event_subscription_quota_exceeded_fault::de_event_subscription_quota_exceeded_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "SNSInvalidTopic" => crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SnsInvalidTopicFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnsInvalidTopicFaultBuilder::default();
-                    output = crate::protocol_serde::shape_sns_invalid_topic_fault::de_sns_invalid_topic_fault_xml_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnsInvalidTopicFaultBuilder::default();
+                output = crate::protocol_serde::shape_sns_invalid_topic_fault::de_sns_invalid_topic_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SNSNoAuthorization" => crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SnsNoAuthorizationFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnsNoAuthorizationFaultBuilder::default();
-                    output = crate::protocol_serde::shape_sns_no_authorization_fault::de_sns_no_authorization_fault_xml_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnsNoAuthorizationFaultBuilder::default();
+                output = crate::protocol_serde::shape_sns_no_authorization_fault::de_sns_no_authorization_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SNSTopicArnNotFound" => crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SnsTopicArnNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnsTopicArnNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_sns_topic_arn_not_found_fault::de_sns_topic_arn_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnsTopicArnNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_sns_topic_arn_not_found_fault::de_sns_topic_arn_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "SubscriptionCategoryNotFound" => crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SubscriptionCategoryNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "SubscriptionCategoryNotFound" => {
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SubscriptionCategoryNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SubscriptionCategoryNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_subscription_category_not_found_fault::de_subscription_category_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_subscription_category_not_found_fault::de_subscription_category_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "SubscriptionNotFound" => crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SubscriptionNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SubscriptionNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_subscription_not_found_fault::de_subscription_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SubscriptionNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_subscription_not_found_fault::de_subscription_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::modify_event_subscription::ModifyEventSubscriptionError::generic(generic)
+        _ => crate::operation::modify_event_subscription::ModifyEventSubscriptionError::generic(generic),
     })
 }
 
@@ -142,10 +141,9 @@ pub fn de_modify_event_subscription_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionOutputBuilder::default();
-        output = crate::protocol_serde::shape_modify_event_subscription::de_modify_event_subscription(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_modify_event_subscription::de_modify_event_subscription(_response_body, output)
+            .map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -154,10 +152,7 @@ pub fn de_modify_event_subscription_http_response_with_props(
 pub fn de_modify_event_subscription(
     inp: &[u8],
     mut builder: crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionOutputBuilder,
-) -> Result<
-    crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

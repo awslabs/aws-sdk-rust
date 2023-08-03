@@ -79,9 +79,7 @@ impl CdmaObj {
 
 /// A builder for [`CdmaObj`](crate::types::CdmaObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CdmaObjBuilder {
     pub(crate) system_id: ::std::option::Option<i32>,
     pub(crate) network_id: ::std::option::Option<i32>,
@@ -156,10 +154,7 @@ impl CdmaObjBuilder {
         self
     }
     /// <p>CDMA local identification (local ID) parameters.</p>
-    pub fn set_cdma_local_id(
-        mut self,
-        input: ::std::option::Option<crate::types::CdmaLocalId>,
-    ) -> Self {
+    pub fn set_cdma_local_id(mut self, input: ::std::option::Option<crate::types::CdmaLocalId>) -> Self {
         self.cdma_local_id = input;
         self
     }
@@ -221,17 +216,12 @@ impl CdmaObjBuilder {
         self
     }
     /// <p>CDMA network measurement reports.</p>
-    pub fn set_cdma_nmr(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CdmaNmrObj>>,
-    ) -> Self {
+    pub fn set_cdma_nmr(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CdmaNmrObj>>) -> Self {
         self.cdma_nmr = input;
         self
     }
     /// <p>CDMA network measurement reports.</p>
-    pub fn get_cdma_nmr(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CdmaNmrObj>> {
+    pub fn get_cdma_nmr(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CdmaNmrObj>> {
         &self.cdma_nmr
     }
     /// Consumes the builder and constructs a [`CdmaObj`](crate::types::CdmaObj).

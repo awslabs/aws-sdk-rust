@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ReserveContactOutput`](crate::operation::reserve_contact::ReserveContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::operation::reserve_contact::ReserveContactOutput::contact_id): <p>UUID of a contact.</p>
     /// - On failure, responds with [`SdkError<ReserveContactError>`](crate::operation::reserve_contact::ReserveContactError)
-    pub fn reserve_contact(
-        &self,
-    ) -> crate::operation::reserve_contact::builders::ReserveContactFluentBuilder {
-        crate::operation::reserve_contact::builders::ReserveContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reserve_contact(&self) -> crate::operation::reserve_contact::builders::ReserveContactFluentBuilder {
+        crate::operation::reserve_contact::builders::ReserveContactFluentBuilder::new(self.handle.clone())
     }
 }

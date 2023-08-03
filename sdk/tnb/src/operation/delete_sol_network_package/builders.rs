@@ -28,8 +28,7 @@ impl DeleteSolNetworkPackageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSolNetworkPackageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageInputBuilder,
+    inner: crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageInputBuilder,
 }
 impl DeleteSolNetworkPackageFluentBuilder {
     /// Creates a new `DeleteSolNetworkPackage`.
@@ -40,10 +39,7 @@ impl DeleteSolNetworkPackageFluentBuilder {
         }
     }
     /// Access the DeleteSolNetworkPackage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DeleteSolNetworkPackageFluentBuilder {
             crate::operation::delete_sol_network_package::DeleteSolNetworkPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DeleteSolNetworkPackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DeleteSolNetworkPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sol_network_package::DeleteSolNetworkPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DeleteSolNetworkPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sol_network_package::DeleteSolNetworkPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl DeleteSolNetworkPackageFluentBuilder {
             crate::operation::delete_sol_network_package::DeleteSolNetworkPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError>,
     > {
         self.customize_middleware().await
     }

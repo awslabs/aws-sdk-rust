@@ -36,9 +36,7 @@ impl UpdateMeshInput {
 
 /// A builder for [`UpdateMeshInput`](crate::operation::update_mesh::UpdateMeshInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMeshInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) spec: ::std::option::Option<crate::types::MeshSpec>,
@@ -88,12 +86,7 @@ impl UpdateMeshInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateMeshInput`](crate::operation::update_mesh::UpdateMeshInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_mesh::UpdateMeshInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_mesh::UpdateMeshInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_mesh::UpdateMeshInput {
             mesh_name: self.mesh_name,
             spec: self.spec,

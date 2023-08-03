@@ -5,16 +5,16 @@ pub use crate::operation::get_license_manager_report_generator::_get_license_man
 
 impl GetLicenseManagerReportGeneratorInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_license_manager_report_generator();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetLicenseManagerReportGeneratorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLicenseManagerReportGeneratorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorInputBuilder,
+    inner: crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorInputBuilder,
 }
 impl GetLicenseManagerReportGeneratorFluentBuilder {
     /// Creates a new `GetLicenseManagerReportGenerator`.
@@ -37,15 +37,20 @@ impl GetLicenseManagerReportGeneratorFluentBuilder {
         }
     }
     /// Access the GetLicenseManagerReportGenerator as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGenerator, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGenerator,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetLicenseManagerReportGeneratorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,41 +87,40 @@ impl GetLicenseManagerReportGeneratorFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGenerator, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGenerator,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-    pub fn license_manager_report_generator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .license_manager_report_generator_arn(input.into());
+    pub fn license_manager_report_generator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.license_manager_report_generator_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-    pub fn set_license_manager_report_generator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_manager_report_generator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_manager_report_generator_arn(input);
         self
     }
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-    pub fn get_license_manager_report_generator_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_license_manager_report_generator_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_manager_report_generator_arn()
     }
 }

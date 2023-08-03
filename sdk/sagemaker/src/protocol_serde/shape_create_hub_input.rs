@@ -24,10 +24,7 @@ pub fn ser_create_hub_input(
     if let Some(var_7) = &input.s3_storage_config {
         #[allow(unused_mut)]
         let mut object_8 = object.key("S3StorageConfig").start_object();
-        crate::protocol_serde::shape_hub_s3_storage_config::ser_hub_s3_storage_config(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_hub_s3_storage_config::ser_hub_s3_storage_config(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.tags {

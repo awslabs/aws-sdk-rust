@@ -29,17 +29,14 @@ impl CreateOptOutListInput {
 }
 impl CreateOptOutListInput {
     /// Creates a new builder-style object to manufacture [`CreateOptOutListInput`](crate::operation::create_opt_out_list::CreateOptOutListInput).
-    pub fn builder() -> crate::operation::create_opt_out_list::builders::CreateOptOutListInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_opt_out_list::builders::CreateOptOutListInputBuilder {
         crate::operation::create_opt_out_list::builders::CreateOptOutListInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOptOutListInput`](crate::operation::create_opt_out_list::CreateOptOutListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOptOutListInputBuilder {
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -47,18 +44,12 @@ pub struct CreateOptOutListInputBuilder {
 }
 impl CreateOptOutListInputBuilder {
     /// <p>The name of the new OptOutList.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the new OptOutList.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
@@ -78,10 +69,7 @@ impl CreateOptOutListInputBuilder {
         self
     }
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -106,16 +94,11 @@ impl CreateOptOutListInputBuilder {
     /// Consumes the builder and constructs a [`CreateOptOutListInput`](crate::operation::create_opt_out_list::CreateOptOutListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_opt_out_list::CreateOptOutListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_opt_out_list::CreateOptOutListInput {
-                opt_out_list_name: self.opt_out_list_name,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_opt_out_list::CreateOptOutListInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_opt_out_list::CreateOptOutListInput {
+            opt_out_list_name: self.opt_out_list_name,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

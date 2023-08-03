@@ -36,11 +36,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCacheClusterOutput`](crate::operation::create_cache_cluster::CreateCacheClusterOutput) with field(s):
     ///   - [`cache_cluster(Option<CacheCluster>)`](crate::operation::create_cache_cluster::CreateCacheClusterOutput::cache_cluster): <p>Contains all of the attributes of a specific cluster.</p>
     /// - On failure, responds with [`SdkError<CreateCacheClusterError>`](crate::operation::create_cache_cluster::CreateCacheClusterError)
-    pub fn create_cache_cluster(
-        &self,
-    ) -> crate::operation::create_cache_cluster::builders::CreateCacheClusterFluentBuilder {
-        crate::operation::create_cache_cluster::builders::CreateCacheClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_cache_cluster(&self) -> crate::operation::create_cache_cluster::builders::CreateCacheClusterFluentBuilder {
+        crate::operation::create_cache_cluster::builders::CreateCacheClusterFluentBuilder::new(self.handle.clone())
     }
 }

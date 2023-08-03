@@ -6,10 +6,7 @@ pub fn ser_create_stage_input(
     if let Some(var_1) = &input.access_log_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("accessLogSettings").start_object();
-        crate::protocol_serde::shape_access_log_settings::ser_access_log_settings(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_access_log_settings::ser_access_log_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.auto_deploy {
@@ -37,10 +34,7 @@ pub fn ser_create_stage_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = object_10.key(key_11.as_str()).start_object();
-                crate::protocol_serde::shape_route_settings::ser_route_settings(
-                    &mut object_13,
-                    value_12,
-                )?;
+                crate::protocol_serde::shape_route_settings::ser_route_settings(&mut object_13, value_12)?;
                 object_13.finish();
             }
         }

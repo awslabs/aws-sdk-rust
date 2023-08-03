@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`notebook_instance_name(impl ::std::convert::Into<String>)`](crate::operation::stop_notebook_instance::builders::StopNotebookInstanceFluentBuilder::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::operation::stop_notebook_instance::builders::StopNotebookInstanceFluentBuilder::set_notebook_instance_name): <p>The name of the notebook instance to terminate.</p>
     /// - On success, responds with [`StopNotebookInstanceOutput`](crate::operation::stop_notebook_instance::StopNotebookInstanceOutput)
     /// - On failure, responds with [`SdkError<StopNotebookInstanceError>`](crate::operation::stop_notebook_instance::StopNotebookInstanceError)
-    pub fn stop_notebook_instance(
-        &self,
-    ) -> crate::operation::stop_notebook_instance::builders::StopNotebookInstanceFluentBuilder {
-        crate::operation::stop_notebook_instance::builders::StopNotebookInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_notebook_instance(&self) -> crate::operation::stop_notebook_instance::builders::StopNotebookInstanceFluentBuilder {
+        crate::operation::stop_notebook_instance::builders::StopNotebookInstanceFluentBuilder::new(self.handle.clone())
     }
 }

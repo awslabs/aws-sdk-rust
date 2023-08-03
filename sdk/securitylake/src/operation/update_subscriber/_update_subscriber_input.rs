@@ -43,17 +43,14 @@ impl UpdateSubscriberInput {
 }
 impl UpdateSubscriberInput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriberInput`](crate::operation::update_subscriber::UpdateSubscriberInput).
-    pub fn builder() -> crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder {
         crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSubscriberInput`](crate::operation::update_subscriber::UpdateSubscriberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSubscriberInputBuilder {
     pub(crate) subscriber_id: ::std::option::Option<::std::string::String>,
     pub(crate) subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
@@ -63,18 +60,12 @@ pub struct UpdateSubscriberInputBuilder {
 }
 impl UpdateSubscriberInputBuilder {
     /// <p>A value created by Security Lake that uniquely identifies your subscription.</p>
-    pub fn subscriber_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value created by Security Lake that uniquely identifies your subscription.</p>
-    pub fn set_subscriber_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_id = input;
         self
     }
@@ -88,10 +79,7 @@ impl UpdateSubscriberInputBuilder {
         self
     }
     /// <p>The AWS identity used to access your data.</p>
-    pub fn set_subscriber_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsIdentity>,
-    ) -> Self {
+    pub fn set_subscriber_identity(mut self, input: ::std::option::Option<crate::types::AwsIdentity>) -> Self {
         self.subscriber_identity = input;
         self
     }
@@ -100,18 +88,12 @@ impl UpdateSubscriberInputBuilder {
         &self.subscriber_identity
     }
     /// <p>The name of the Security Lake account subscriber.</p>
-    pub fn subscriber_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Security Lake account subscriber.</p>
-    pub fn set_subscriber_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_name = input;
         self
     }
@@ -120,18 +102,12 @@ impl UpdateSubscriberInputBuilder {
         &self.subscriber_name
     }
     /// <p>The description of the Security Lake account subscriber.</p>
-    pub fn subscriber_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the Security Lake account subscriber.</p>
-    pub fn set_subscriber_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_description = input;
         self
     }
@@ -151,26 +127,18 @@ impl UpdateSubscriberInputBuilder {
         self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`UpdateSubscriberInput`](crate::operation::update_subscriber::UpdateSubscriberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_subscriber::UpdateSubscriberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_subscriber::UpdateSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_subscriber::UpdateSubscriberInput {
             subscriber_id: self.subscriber_id,
             subscriber_identity: self.subscriber_identity,

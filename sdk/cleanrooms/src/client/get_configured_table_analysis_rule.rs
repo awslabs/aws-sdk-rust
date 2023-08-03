@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetConfiguredTableAnalysisRuleOutput`](crate::operation::get_configured_table_analysis_rule::GetConfiguredTableAnalysisRuleOutput) with field(s):
     ///   - [`analysis_rule(Option<ConfiguredTableAnalysisRule>)`](crate::operation::get_configured_table_analysis_rule::GetConfiguredTableAnalysisRuleOutput::analysis_rule): <p>The entire analysis rule output.</p>
     /// - On failure, responds with [`SdkError<GetConfiguredTableAnalysisRuleError>`](crate::operation::get_configured_table_analysis_rule::GetConfiguredTableAnalysisRuleError)
-    pub fn get_configured_table_analysis_rule(&self) -> crate::operation::get_configured_table_analysis_rule::builders::GetConfiguredTableAnalysisRuleFluentBuilder{
+    pub fn get_configured_table_analysis_rule(
+        &self,
+    ) -> crate::operation::get_configured_table_analysis_rule::builders::GetConfiguredTableAnalysisRuleFluentBuilder {
         crate::operation::get_configured_table_analysis_rule::builders::GetConfiguredTableAnalysisRuleFluentBuilder::new(self.handle.clone())
     }
 }

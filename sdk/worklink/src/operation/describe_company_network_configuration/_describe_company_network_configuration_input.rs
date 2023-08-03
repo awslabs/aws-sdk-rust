@@ -15,16 +15,14 @@ impl DescribeCompanyNetworkConfigurationInput {
 }
 impl DescribeCompanyNetworkConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeCompanyNetworkConfigurationInput`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput).
-    pub fn builder() -> crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationInputBuilder {
         crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCompanyNetworkConfigurationInput`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCompanyNetworkConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DescribeCompanyNetworkConfigurationInputBuilder {
         &self.fleet_arn
     }
     /// Consumes the builder and constructs a [`DescribeCompanyNetworkConfigurationInput`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput {
-                fleet_arn: self.fleet_arn
-                ,
-            }
+            crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput { fleet_arn: self.fleet_arn },
         )
     }
 }

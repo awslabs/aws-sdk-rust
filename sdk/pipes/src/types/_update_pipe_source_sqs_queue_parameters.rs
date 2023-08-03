@@ -30,9 +30,7 @@ impl UpdatePipeSourceSqsQueueParameters {
 
 /// A builder for [`UpdatePipeSourceSqsQueueParameters`](crate::types::UpdatePipeSourceSqsQueueParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipeSourceSqsQueueParametersBuilder {
     pub(crate) batch_size: ::std::option::Option<i32>,
     pub(crate) maximum_batching_window_in_seconds: ::std::option::Option<i32>,
@@ -58,10 +56,7 @@ impl UpdatePipeSourceSqsQueueParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
     }

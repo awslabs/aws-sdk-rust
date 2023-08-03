@@ -5,16 +5,16 @@ pub use crate::operation::describe_engine_default_parameters::_describe_engine_d
 
 impl DescribeEngineDefaultParametersInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_engine_default_parameters();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeEngineDefaultParametersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEngineDefaultParametersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder,
+    inner: crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder,
 }
 impl DescribeEngineDefaultParametersFluentBuilder {
     /// Creates a new `DescribeEngineDefaultParameters`.
@@ -37,15 +37,20 @@ impl DescribeEngineDefaultParametersFluentBuilder {
         }
     }
     /// Access the DescribeEngineDefaultParameters as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParameters, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParameters,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeEngineDefaultParametersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,48 +87,49 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParameters, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParameters,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_engine_default_parameters::paginator::DescribeEngineDefaultParametersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_engine_default_parameters::paginator::DescribeEngineDefaultParametersPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_engine_default_parameters::paginator::DescribeEngineDefaultParametersPaginator {
         crate::operation::describe_engine_default_parameters::paginator::DescribeEngineDefaultParametersPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the cache parameter group family.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
-    pub fn cache_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_parameter_group_family(input.into());
         self
     }
     /// <p>The name of the cache parameter group family.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
-    pub fn set_cache_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_parameter_group_family(input);
         self
     }
     /// <p>The name of the cache parameter group family.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
-    pub fn get_cache_parameter_group_family(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cache_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_parameter_group_family()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>

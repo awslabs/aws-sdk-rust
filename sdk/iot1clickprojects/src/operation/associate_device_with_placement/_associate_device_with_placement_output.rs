@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateDeviceWithPlacementOutput {
 }
 impl AssociateDeviceWithPlacementOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDeviceWithPlacementOutput`](crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementOutput).
-    pub fn builder() -> crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementOutputBuilder{
+    pub fn builder() -> crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementOutputBuilder {
         crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDeviceWithPlacementOutput`](crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithPlacementOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AssociateDeviceWithPlacementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateDeviceWithPlacementOutput`](crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementOutput {
+    pub fn build(self) -> crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementOutput {
         crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementOutput {
             _request_id: self._request_id,
         }

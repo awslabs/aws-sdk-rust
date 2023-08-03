@@ -26,7 +26,7 @@ impl SearchRasterDataCollectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchRasterDataCollectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionInputBuilder,
+    inner: crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionInputBuilder,
 }
 impl SearchRasterDataCollectionFluentBuilder {
     /// Creates a new `SearchRasterDataCollection`.
@@ -37,7 +37,7 @@ impl SearchRasterDataCollectionFluentBuilder {
         }
     }
     /// Access the SearchRasterDataCollection as a reference.
-    pub fn as_input(&self) -> &crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SearchRasterDataCollectionFluentBuilder {
             crate::operation::search_raster_data_collection::SearchRasterDataCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_raster_data_collection::SearchRasterDataCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SearchRasterDataCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SearchRasterDataCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_raster_data_collection::SearchRasterDataCollectionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SearchRasterDataCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_raster_data_collection::SearchRasterDataCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl SearchRasterDataCollectionFluentBuilder {
             crate::operation::search_raster_data_collection::SearchRasterDataCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_raster_data_collection::SearchRasterDataCollectionError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_raster_data_collection::paginator::SearchRasterDataCollectionPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::search_raster_data_collection::paginator::SearchRasterDataCollectionPaginator{
+    pub fn into_paginator(self) -> crate::operation::search_raster_data_collection::paginator::SearchRasterDataCollectionPaginator {
         crate::operation::search_raster_data_collection::paginator::SearchRasterDataCollectionPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
@@ -141,10 +130,7 @@ impl SearchRasterDataCollectionFluentBuilder {
         self.inner.get_arn()
     }
     /// <p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
-    pub fn raster_data_collection_query(
-        mut self,
-        input: crate::types::RasterDataCollectionQueryWithBandFilterInput,
-    ) -> Self {
+    pub fn raster_data_collection_query(mut self, input: crate::types::RasterDataCollectionQueryWithBandFilterInput) -> Self {
         self.inner = self.inner.raster_data_collection_query(input);
         self
     }
@@ -157,9 +143,7 @@ impl SearchRasterDataCollectionFluentBuilder {
         self
     }
     /// <p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
-    pub fn get_raster_data_collection_query(
-        &self,
-    ) -> &::std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput> {
+    pub fn get_raster_data_collection_query(&self) -> &::std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput> {
         self.inner.get_raster_data_collection_query()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>

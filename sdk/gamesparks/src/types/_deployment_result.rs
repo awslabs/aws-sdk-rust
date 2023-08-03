@@ -30,9 +30,7 @@ impl DeploymentResult {
 
 /// A builder for [`DeploymentResult`](crate::types::DeploymentResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentResultBuilder {
     pub(crate) result_code: ::std::option::Option<crate::types::ResultCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl DeploymentResultBuilder {
         self
     }
     /// <p>The type of deployment result.</p>
-    pub fn set_result_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ResultCode>,
-    ) -> Self {
+    pub fn set_result_code(mut self, input: ::std::option::Option<crate::types::ResultCode>) -> Self {
         self.result_code = input;
         self
     }

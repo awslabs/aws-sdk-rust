@@ -6,10 +6,7 @@ pub fn ser_write_segment_request(
     if let Some(var_1) = &input.dimensions {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Dimensions").start_object();
-        crate::protocol_serde::shape_segment_dimensions::ser_segment_dimensions(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_segment_dimensions::ser_segment_dimensions(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.name {
@@ -18,10 +15,7 @@ pub fn ser_write_segment_request(
     if let Some(var_4) = &input.segment_groups {
         #[allow(unused_mut)]
         let mut object_5 = object.key("SegmentGroups").start_object();
-        crate::protocol_serde::shape_segment_group_list::ser_segment_group_list(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_segment_group_list::ser_segment_group_list(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tags {

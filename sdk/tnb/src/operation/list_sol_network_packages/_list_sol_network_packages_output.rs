@@ -8,8 +8,7 @@ pub struct ListSolNetworkPackagesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
     #[doc(hidden)]
-    pub network_packages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
+    pub network_packages: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolNetworkPackagesOutput {
@@ -18,9 +17,7 @@ impl ListSolNetworkPackagesOutput {
         self.next_token.as_deref()
     }
     /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
-    pub fn network_packages(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListSolNetworkPackageInfo]> {
+    pub fn network_packages(&self) -> ::std::option::Option<&[crate::types::ListSolNetworkPackageInfo]> {
         self.network_packages.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSolNetworkPackagesOutput {
 }
 impl ListSolNetworkPackagesOutput {
     /// Creates a new builder-style object to manufacture [`ListSolNetworkPackagesOutput`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesOutputBuilder {
         crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSolNetworkPackagesOutput`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolNetworkPackagesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) network_packages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
+    pub(crate) network_packages: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolNetworkPackagesOutputBuilder {
@@ -76,17 +68,12 @@ impl ListSolNetworkPackagesOutputBuilder {
         self
     }
     /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
-    pub fn set_network_packages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
-    ) -> Self {
+    pub fn set_network_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>) -> Self {
         self.network_packages = input;
         self
     }
     /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
-    pub fn get_network_packages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>> {
+    pub fn get_network_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>> {
         &self.network_packages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,9 +86,7 @@ impl ListSolNetworkPackagesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSolNetworkPackagesOutput`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput {
+    pub fn build(self) -> crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput {
         crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput {
             next_token: self.next_token,
             network_packages: self.network_packages,

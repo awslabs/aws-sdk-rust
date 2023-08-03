@@ -15,34 +15,25 @@ impl DescribeControlPanelInput {
 }
 impl DescribeControlPanelInput {
     /// Creates a new builder-style object to manufacture [`DescribeControlPanelInput`](crate::operation::describe_control_panel::DescribeControlPanelInput).
-    pub fn builder(
-    ) -> crate::operation::describe_control_panel::builders::DescribeControlPanelInputBuilder {
+    pub fn builder() -> crate::operation::describe_control_panel::builders::DescribeControlPanelInputBuilder {
         crate::operation::describe_control_panel::builders::DescribeControlPanelInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeControlPanelInput`](crate::operation::describe_control_panel::DescribeControlPanelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeControlPanelInputBuilder {
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeControlPanelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_panel_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeControlPanelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeControlPanelInput`](crate::operation::describe_control_panel::DescribeControlPanelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_control_panel::DescribeControlPanelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_control_panel::DescribeControlPanelInput {
-                control_panel_arn: self.control_panel_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_control_panel::DescribeControlPanelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_control_panel::DescribeControlPanelInput {
+            control_panel_arn: self.control_panel_arn,
+        })
     }
 }

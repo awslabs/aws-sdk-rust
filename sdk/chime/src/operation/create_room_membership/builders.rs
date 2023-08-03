@@ -37,9 +37,7 @@ impl CreateRoomMembershipFluentBuilder {
         }
     }
     /// Access the CreateRoomMembership as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_room_membership::builders::CreateRoomMembershipInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_room_membership::builders::CreateRoomMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateRoomMembershipFluentBuilder {
             crate::operation::create_room_membership::CreateRoomMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_room_membership::CreateRoomMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_room_membership::CreateRoomMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateRoomMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateRoomMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_room_membership::CreateRoomMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_room_membership::CreateRoomMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_room_membership::CreateRoomMembershipError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateRoomMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_room_membership::CreateRoomMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_room_membership::CreateRoomMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_room_membership::CreateRoomMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateRoomMembershipFluentBuilder {
             crate::operation::create_room_membership::CreateRoomMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_room_membership::CreateRoomMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_room_membership::CreateRoomMembershipError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +157,7 @@ impl CreateRoomMembershipFluentBuilder {
         self
     }
     /// <p>The role of the member.</p>
-    pub fn set_role(
-        mut self,
-        input: ::std::option::Option<crate::types::RoomMembershipRole>,
-    ) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoomMembershipRole>) -> Self {
         self.inner = self.inner.set_role(input);
         self
     }

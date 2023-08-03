@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListReceivedGrantsForOrganizationOutp
 }
 impl ListReceivedGrantsForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`ListReceivedGrantsForOrganizationOutput`](crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationOutput).
-    pub fn builder() -> crate::operation::list_received_grants_for_organization::builders::ListReceivedGrantsForOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::list_received_grants_for_organization::builders::ListReceivedGrantsForOrganizationOutputBuilder {
         crate::operation::list_received_grants_for_organization::builders::ListReceivedGrantsForOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReceivedGrantsForOrganizationOutput`](crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReceivedGrantsForOrganizationOutputBuilder {
     pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListReceivedGrantsForOrganizationOutputBuilder {
         self
     }
     /// <p>Lists the grants the organization has received.</p>
-    pub fn set_grants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
-    ) -> Self {
+    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>) -> Self {
         self.grants = input;
         self
     }
@@ -91,12 +86,10 @@ impl ListReceivedGrantsForOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReceivedGrantsForOrganizationOutput`](crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationOutput).
-    pub fn build(self) -> crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationOutput{
+    pub fn build(self) -> crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationOutput {
         crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationOutput {
-            grants: self.grants
-            ,
-            next_token: self.next_token
-            ,
+            grants: self.grants,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

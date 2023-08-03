@@ -19,12 +19,10 @@ pub struct GameSessionQueue {
     pub timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. </p>
     #[doc(hidden)]
-    pub player_latency_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
+    pub player_latency_policies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
     #[doc(hidden)]
-    pub destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
     #[doc(hidden)]
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
@@ -56,27 +54,19 @@ impl GameSessionQueue {
         self.timeout_in_seconds
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. </p>
-    pub fn player_latency_policies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PlayerLatencyPolicy]> {
+    pub fn player_latency_policies(&self) -> ::std::option::Option<&[crate::types::PlayerLatencyPolicy]> {
         self.player_latency_policies.as_deref()
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-    pub fn destinations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GameSessionQueueDestination]> {
+    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::GameSessionQueueDestination]> {
         self.destinations.as_deref()
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
-    pub fn filter_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FilterConfiguration> {
+    pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
-    pub fn priority_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PriorityConfiguration> {
+    pub fn priority_configuration(&self) -> ::std::option::Option<&crate::types::PriorityConfiguration> {
         self.priority_configuration.as_ref()
     }
     /// <p> Information that is added to all events that are related to this game session queue.</p>
@@ -97,17 +87,13 @@ impl GameSessionQueue {
 
 /// A builder for [`GameSessionQueue`](crate::types::GameSessionQueue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GameSessionQueueBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) game_session_queue_arn: ::std::option::Option<::std::string::String>,
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
-    pub(crate) player_latency_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
-    pub(crate) destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
+    pub(crate) player_latency_policies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
     pub(crate) filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
     pub(crate) priority_configuration: ::std::option::Option<crate::types::PriorityConfiguration>,
     pub(crate) custom_event_data: ::std::option::Option<::std::string::String>,
@@ -133,10 +119,7 @@ impl GameSessionQueueBuilder {
     /// ::gamesessionqueue/
     /// <queue name></queue>
     /// </region></code>. In a Amazon GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
-    pub fn game_session_queue_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_queue_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_queue_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -145,10 +128,7 @@ impl GameSessionQueueBuilder {
     /// ::gamesessionqueue/
     /// <queue name></queue>
     /// </region></code>. In a Amazon GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
-    pub fn set_game_session_queue_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_queue_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_queue_arn = input;
         self
     }
@@ -186,17 +166,12 @@ impl GameSessionQueueBuilder {
         self
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. </p>
-    pub fn set_player_latency_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
-    ) -> Self {
+    pub fn set_player_latency_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>) -> Self {
         self.player_latency_policies = input;
         self
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. </p>
-    pub fn get_player_latency_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>> {
+    pub fn get_player_latency_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>> {
         &self.player_latency_policies
     }
     /// Appends an item to `destinations`.
@@ -211,17 +186,12 @@ impl GameSessionQueueBuilder {
         self
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>> {
         &self.destinations
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
@@ -230,17 +200,12 @@ impl GameSessionQueueBuilder {
         self
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
-    pub fn set_filter_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterConfiguration>,
-    ) -> Self {
+    pub fn set_filter_configuration(mut self, input: ::std::option::Option<crate::types::FilterConfiguration>) -> Self {
         self.filter_configuration = input;
         self
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
-    pub fn get_filter_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterConfiguration> {
+    pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
         &self.filter_configuration
     }
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
@@ -249,32 +214,21 @@ impl GameSessionQueueBuilder {
         self
     }
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
-    pub fn set_priority_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PriorityConfiguration>,
-    ) -> Self {
+    pub fn set_priority_configuration(mut self, input: ::std::option::Option<crate::types::PriorityConfiguration>) -> Self {
         self.priority_configuration = input;
         self
     }
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
-    pub fn get_priority_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PriorityConfiguration> {
+    pub fn get_priority_configuration(&self) -> &::std::option::Option<crate::types::PriorityConfiguration> {
         &self.priority_configuration
     }
     /// <p> Information that is added to all events that are related to this game session queue.</p>
-    pub fn custom_event_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_event_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_event_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Information that is added to all events that are related to this game session queue.</p>
-    pub fn set_custom_event_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_event_data = input;
         self
     }
@@ -283,18 +237,12 @@ impl GameSessionQueueBuilder {
         &self.custom_event_data
     }
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
-    pub fn notification_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
-    pub fn set_notification_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_target = input;
         self
     }

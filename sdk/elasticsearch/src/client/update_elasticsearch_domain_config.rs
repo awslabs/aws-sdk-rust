@@ -22,7 +22,9 @@ impl super::Client {
     ///   - [`domain_config(Option<ElasticsearchDomainConfig>)`](crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput::domain_config): <p>The status of the updated Elasticsearch domain. </p>
     ///   - [`dry_run_results(Option<DryRunResults>)`](crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput::dry_run_results): <p>Contains result of DryRun. </p>
     /// - On failure, responds with [`SdkError<UpdateElasticsearchDomainConfigError>`](crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError)
-    pub fn update_elasticsearch_domain_config(&self) -> crate::operation::update_elasticsearch_domain_config::builders::UpdateElasticsearchDomainConfigFluentBuilder{
+    pub fn update_elasticsearch_domain_config(
+        &self,
+    ) -> crate::operation::update_elasticsearch_domain_config::builders::UpdateElasticsearchDomainConfigFluentBuilder {
         crate::operation::update_elasticsearch_domain_config::builders::UpdateElasticsearchDomainConfigFluentBuilder::new(self.handle.clone())
     }
 }

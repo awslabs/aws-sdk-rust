@@ -32,21 +32,15 @@ impl FunnelChartConfiguration {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FunnelChartSortConfiguration> {
+    pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::FunnelChartSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The label options of the categories that are displayed in a <code>FunnelChartVisual</code>.</p>
-    pub fn category_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn category_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.category_label_options.as_ref()
     }
     /// <p>The label options for the values that are displayed in a <code>FunnelChartVisual</code>.</p>
-    pub fn value_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn value_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.value_label_options.as_ref()
     }
     /// <p>The tooltip configuration of a <code>FunnelChartVisual</code>.</p>
@@ -54,9 +48,7 @@ impl FunnelChartConfiguration {
         self.tooltip.as_ref()
     }
     /// <p>The options that determine the presentation of the data labels.</p>
-    pub fn data_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FunnelChartDataLabelOptions> {
+    pub fn data_label_options(&self) -> ::std::option::Option<&crate::types::FunnelChartDataLabelOptions> {
         self.data_label_options.as_ref()
     }
     /// <p>The visual palette configuration of a <code>FunnelChartVisual</code>.</p>
@@ -73,13 +65,10 @@ impl FunnelChartConfiguration {
 
 /// A builder for [`FunnelChartConfiguration`](crate::types::FunnelChartConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunnelChartConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::FunnelChartFieldWells>,
-    pub(crate) sort_configuration:
-        ::std::option::Option<crate::types::FunnelChartSortConfiguration>,
+    pub(crate) sort_configuration: ::std::option::Option<crate::types::FunnelChartSortConfiguration>,
     pub(crate) category_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) value_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
@@ -93,10 +82,7 @@ impl FunnelChartConfigurationBuilder {
         self
     }
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::FunnelChartFieldWells>,
-    ) -> Self {
+    pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::FunnelChartFieldWells>) -> Self {
         self.field_wells = input;
         self
     }
@@ -110,17 +96,12 @@ impl FunnelChartConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FunnelChartSortConfiguration>,
-    ) -> Self {
+    pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::FunnelChartSortConfiguration>) -> Self {
         self.sort_configuration = input;
         self
     }
     /// <p>The sort configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn get_sort_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunnelChartSortConfiguration> {
+    pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::FunnelChartSortConfiguration> {
         &self.sort_configuration
     }
     /// <p>The label options of the categories that are displayed in a <code>FunnelChartVisual</code>.</p>
@@ -129,17 +110,12 @@ impl FunnelChartConfigurationBuilder {
         self
     }
     /// <p>The label options of the categories that are displayed in a <code>FunnelChartVisual</code>.</p>
-    pub fn set_category_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_category_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.category_label_options = input;
         self
     }
     /// <p>The label options of the categories that are displayed in a <code>FunnelChartVisual</code>.</p>
-    pub fn get_category_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_category_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.category_label_options
     }
     /// <p>The label options for the values that are displayed in a <code>FunnelChartVisual</code>.</p>
@@ -148,17 +124,12 @@ impl FunnelChartConfigurationBuilder {
         self
     }
     /// <p>The label options for the values that are displayed in a <code>FunnelChartVisual</code>.</p>
-    pub fn set_value_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_value_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.value_label_options = input;
         self
     }
     /// <p>The label options for the values that are displayed in a <code>FunnelChartVisual</code>.</p>
-    pub fn get_value_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_value_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.value_label_options
     }
     /// <p>The tooltip configuration of a <code>FunnelChartVisual</code>.</p>
@@ -167,10 +138,7 @@ impl FunnelChartConfigurationBuilder {
         self
     }
     /// <p>The tooltip configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn set_tooltip(
-        mut self,
-        input: ::std::option::Option<crate::types::TooltipOptions>,
-    ) -> Self {
+    pub fn set_tooltip(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
         self.tooltip = input;
         self
     }
@@ -184,17 +152,12 @@ impl FunnelChartConfigurationBuilder {
         self
     }
     /// <p>The options that determine the presentation of the data labels.</p>
-    pub fn set_data_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::FunnelChartDataLabelOptions>,
-    ) -> Self {
+    pub fn set_data_label_options(mut self, input: ::std::option::Option<crate::types::FunnelChartDataLabelOptions>) -> Self {
         self.data_label_options = input;
         self
     }
     /// <p>The options that determine the presentation of the data labels.</p>
-    pub fn get_data_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunnelChartDataLabelOptions> {
+    pub fn get_data_label_options(&self) -> &::std::option::Option<crate::types::FunnelChartDataLabelOptions> {
         &self.data_label_options
     }
     /// <p>The visual palette configuration of a <code>FunnelChartVisual</code>.</p>
@@ -203,10 +166,7 @@ impl FunnelChartConfigurationBuilder {
         self
     }
     /// <p>The visual palette configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn set_visual_palette(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualPalette>,
-    ) -> Self {
+    pub fn set_visual_palette(mut self, input: ::std::option::Option<crate::types::VisualPalette>) -> Self {
         self.visual_palette = input;
         self
     }

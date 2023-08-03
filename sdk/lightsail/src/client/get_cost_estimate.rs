@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetCostEstimateOutput`](crate::operation::get_cost_estimate::GetCostEstimateOutput) with field(s):
     ///   - [`resources_budget_estimate(Option<Vec<ResourceBudgetEstimate>>)`](crate::operation::get_cost_estimate::GetCostEstimateOutput::resources_budget_estimate): <p>Returns the estimate's forecasted cost or usage.</p>
     /// - On failure, responds with [`SdkError<GetCostEstimateError>`](crate::operation::get_cost_estimate::GetCostEstimateError)
-    pub fn get_cost_estimate(
-        &self,
-    ) -> crate::operation::get_cost_estimate::builders::GetCostEstimateFluentBuilder {
-        crate::operation::get_cost_estimate::builders::GetCostEstimateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_cost_estimate(&self) -> crate::operation::get_cost_estimate::builders::GetCostEstimateFluentBuilder {
+        crate::operation::get_cost_estimate::builders::GetCostEstimateFluentBuilder::new(self.handle.clone())
     }
 }

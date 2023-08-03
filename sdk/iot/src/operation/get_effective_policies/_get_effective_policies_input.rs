@@ -29,17 +29,14 @@ impl GetEffectivePoliciesInput {
 }
 impl GetEffectivePoliciesInput {
     /// Creates a new builder-style object to manufacture [`GetEffectivePoliciesInput`](crate::operation::get_effective_policies::GetEffectivePoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::get_effective_policies::builders::GetEffectivePoliciesInputBuilder {
+    pub fn builder() -> crate::operation::get_effective_policies::builders::GetEffectivePoliciesInputBuilder {
         crate::operation::get_effective_policies::builders::GetEffectivePoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEffectivePoliciesInput`](crate::operation::get_effective_policies::GetEffectivePoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEffectivePoliciesInputBuilder {
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) cognito_identity_pool_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl GetEffectivePoliciesInputBuilder {
         &self.principal
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn cognito_identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cognito_identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cognito_identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn set_cognito_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cognito_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cognito_identity_pool_id = input;
         self
     }
@@ -97,16 +88,12 @@ impl GetEffectivePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`GetEffectivePoliciesInput`](crate::operation::get_effective_policies::GetEffectivePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_effective_policies::GetEffectivePoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_effective_policies::GetEffectivePoliciesInput {
-                principal: self.principal,
-                cognito_identity_pool_id: self.cognito_identity_pool_id,
-                thing_name: self.thing_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_effective_policies::GetEffectivePoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_effective_policies::GetEffectivePoliciesInput {
+            principal: self.principal,
+            cognito_identity_pool_id: self.cognito_identity_pool_id,
+            thing_name: self.thing_name,
+        })
     }
 }

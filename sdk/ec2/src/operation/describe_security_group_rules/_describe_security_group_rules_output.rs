@@ -5,8 +5,7 @@
 pub struct DescribeSecurityGroupRulesOutput {
     /// <p>Information about security group rules.</p>
     #[doc(hidden)]
-    pub security_group_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
+    pub security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeSecurityGroupRulesOutput {
 }
 impl DescribeSecurityGroupRulesOutput {
     /// <p>Information about security group rules.</p>
-    pub fn security_group_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityGroupRule]> {
+    pub fn security_group_rules(&self) -> ::std::option::Option<&[crate::types::SecurityGroupRule]> {
         self.security_group_rules.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeSecurityGroupRulesOutput {
 }
 impl DescribeSecurityGroupRulesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityGroupRulesOutput`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput).
-    pub fn builder() -> crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesOutputBuilder {
         crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSecurityGroupRulesOutput`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupRulesOutputBuilder {
-    pub(crate) security_group_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
+    pub(crate) security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeSecurityGroupRulesOutputBuilder {
         self
     }
     /// <p>Information about security group rules.</p>
-    pub fn set_security_group_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
-    ) -> Self {
+    pub fn set_security_group_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>) -> Self {
         self.security_group_rules = input;
         self
     }
     /// <p>Information about security group rules.</p>
-    pub fn get_security_group_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>> {
+    pub fn get_security_group_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>> {
         &self.security_group_rules
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -97,9 +86,7 @@ impl DescribeSecurityGroupRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSecurityGroupRulesOutput`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput {
+    pub fn build(self) -> crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput {
         crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput {
             security_group_rules: self.security_group_rules,
             next_token: self.next_token,

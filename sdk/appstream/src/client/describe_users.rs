@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`users(Option<Vec<User>>)`](crate::operation::describe_users::DescribeUsersOutput::users): <p>Information about users in the user pool.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_users::DescribeUsersOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeUsersError>`](crate::operation::describe_users::DescribeUsersError)
-    pub fn describe_users(
-        &self,
-    ) -> crate::operation::describe_users::builders::DescribeUsersFluentBuilder {
-        crate::operation::describe_users::builders::DescribeUsersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_users(&self) -> crate::operation::describe_users::builders::DescribeUsersFluentBuilder {
+        crate::operation::describe_users::builders::DescribeUsersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateParticipantInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_participant::CreateParticipantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_participant::CreateParticipantError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_participant::CreateParticipantError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_participant();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateParticipantFluentBuilder {
         }
     }
     /// Access the CreateParticipant as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_participant::builders::CreateParticipantInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_participant::builders::CreateParticipantInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateParticipantFluentBuilder {
             crate::operation::create_participant::CreateParticipant,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_participant::CreateParticipantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_participant::CreateParticipantError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateParticipantFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateParticipantFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_participant::CreateParticipantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_participant::CreateParticipantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_participant::CreateParticipantError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateParticipantFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_participant::CreateParticipantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_participant::CreateParticipantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_participant::CreateParticipantError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateParticipantFluentBuilder {
             crate::operation::create_participant::CreateParticipant,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_participant::CreateParticipantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_participant::CreateParticipantError>,
     > {
         self.customize_middleware().await
     }
@@ -176,10 +160,7 @@ impl CreateParticipantFluentBuilder {
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
     /// <p> <code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
-    pub fn set_participant_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantDetailsToAdd>,
-    ) -> Self {
+    pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetailsToAdd>) -> Self {
         self.inner = self.inner.set_participant_details(input);
         self
     }
@@ -187,9 +168,7 @@ impl CreateParticipantFluentBuilder {
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
     /// <p> <code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
-    pub fn get_participant_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParticipantDetailsToAdd> {
+    pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetailsToAdd> {
         self.inner.get_participant_details()
     }
 }

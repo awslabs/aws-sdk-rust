@@ -23,26 +23,18 @@ impl Timezone {
 
 /// A builder for [`Timezone`](crate::types::Timezone).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimezoneBuilder {
     pub(crate) timezone_name: ::std::option::Option<::std::string::String>,
 }
 impl TimezoneBuilder {
     /// <p>The name of the time zone.</p>
-    pub fn timezone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timezone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the time zone.</p>
-    pub fn set_timezone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timezone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone_name = input;
         self
     }

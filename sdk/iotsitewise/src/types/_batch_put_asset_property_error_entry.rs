@@ -30,13 +30,10 @@ impl BatchPutAssetPropertyErrorEntry {
 
 /// A builder for [`BatchPutAssetPropertyErrorEntry`](crate::types::BatchPutAssetPropertyErrorEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyErrorEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyError>>,
 }
 impl BatchPutAssetPropertyErrorEntryBuilder {
     /// <p>The ID of the failed entry.</p>
@@ -65,17 +62,12 @@ impl BatchPutAssetPropertyErrorEntryBuilder {
         self
     }
     /// <p>The list of update property value errors.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>The list of update property value errors.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyError>> {
         &self.errors
     }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyErrorEntry`](crate::types::BatchPutAssetPropertyErrorEntry).

@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeInstancesOutput {
 }
 impl DescribeInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesOutput`](crate::operation::describe_instances::DescribeInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder {
         crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancesOutput`](crate::operation::describe_instances::DescribeInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     _request_id: Option<String>,
@@ -50,10 +47,7 @@ impl DescribeInstancesOutputBuilder {
         self
     }
     /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
         self.instances = input;
         self
     }

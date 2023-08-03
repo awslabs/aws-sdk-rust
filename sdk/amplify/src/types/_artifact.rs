@@ -30,27 +30,19 @@ impl Artifact {
 
 /// A builder for [`Artifact`](crate::types::Artifact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactBuilder {
     pub(crate) artifact_file_name: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_id: ::std::option::Option<::std::string::String>,
 }
 impl ArtifactBuilder {
     /// <p> The file name for the artifact. </p>
-    pub fn artifact_file_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_file_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The file name for the artifact. </p>
-    pub fn set_artifact_file_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_file_name = input;
         self
     }

@@ -28,8 +28,7 @@ impl CreateStorediScsiVolumeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStorediSCSIVolumeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder,
+    inner: crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder,
 }
 impl CreateStorediSCSIVolumeFluentBuilder {
     /// Creates a new `CreateStorediSCSIVolume`.
@@ -40,10 +39,7 @@ impl CreateStorediSCSIVolumeFluentBuilder {
         }
     }
     /// Access the CreateStorediSCSIVolume as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl CreateStorediSCSIVolumeFluentBuilder {
             crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolume,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolumeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolumeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl CreateStorediSCSIVolumeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl CreateStorediSCSIVolumeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolumeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolumeError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl CreateStorediSCSIVolumeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolumeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolumeError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl CreateStorediSCSIVolumeFluentBuilder {
             crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolume,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolumeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolumeError>,
     > {
         self.customize_middleware().await
     }
@@ -204,19 +189,13 @@ impl CreateStorediSCSIVolumeFluentBuilder {
     }
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -270,10 +249,7 @@ impl CreateStorediSCSIVolumeFluentBuilder {
     /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

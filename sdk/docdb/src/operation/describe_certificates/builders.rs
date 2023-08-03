@@ -37,9 +37,7 @@ impl DescribeCertificatesFluentBuilder {
         }
     }
     /// Access the DescribeCertificates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_certificates::builders::DescribeCertificatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_certificates::builders::DescribeCertificatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeCertificatesFluentBuilder {
             crate::operation::describe_certificates::DescribeCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_certificates::DescribeCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_certificates::DescribeCertificatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeCertificatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_certificates::DescribeCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_certificates::DescribeCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_certificates::DescribeCertificatesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_certificates::DescribeCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_certificates::DescribeCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_certificates::DescribeCertificatesError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +105,22 @@ impl DescribeCertificatesFluentBuilder {
             crate::operation::describe_certificates::DescribeCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_certificates::DescribeCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_certificates::DescribeCertificatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_certificates::paginator::DescribeCertificatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_certificates::paginator::DescribeCertificatesPaginator {
-        crate::operation::describe_certificates::paginator::DescribeCertificatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_certificates::paginator::DescribeCertificatesPaginator {
+        crate::operation::describe_certificates::paginator::DescribeCertificatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the specified certificate is returned. If this parameter is omitted, a list of up to <code>MaxRecords</code> certificates is returned. This parameter is not case sensitive.</p>
     /// <p>Constraints</p>
     /// <ul>
     /// <li> <p>Must match an existing <code>CertificateIdentifier</code>.</p> </li>
     /// </ul>
-    pub fn certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_identifier(input.into());
         self
     }
@@ -150,10 +129,7 @@ impl DescribeCertificatesFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing <code>CertificateIdentifier</code>.</p> </li>
     /// </ul>
-    pub fn set_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_identifier(input);
         self
     }
@@ -175,10 +151,7 @@ impl DescribeCertificatesFluentBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

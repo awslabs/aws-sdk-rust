@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_channel_policy::builders::PutChannelPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_channel_policy::builders::PutChannelPolicyFluentBuilder::set_policy): <p>The policy to attach to the specified channel.</p>
     /// - On success, responds with [`PutChannelPolicyOutput`](crate::operation::put_channel_policy::PutChannelPolicyOutput)
     /// - On failure, responds with [`SdkError<PutChannelPolicyError>`](crate::operation::put_channel_policy::PutChannelPolicyError)
-    pub fn put_channel_policy(
-        &self,
-    ) -> crate::operation::put_channel_policy::builders::PutChannelPolicyFluentBuilder {
-        crate::operation::put_channel_policy::builders::PutChannelPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_channel_policy(&self) -> crate::operation::put_channel_policy::builders::PutChannelPolicyFluentBuilder {
+        crate::operation::put_channel_policy::builders::PutChannelPolicyFluentBuilder::new(self.handle.clone())
     }
 }

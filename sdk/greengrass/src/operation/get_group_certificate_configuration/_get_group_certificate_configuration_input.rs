@@ -15,16 +15,14 @@ impl GetGroupCertificateConfigurationInput {
 }
 impl GetGroupCertificateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetGroupCertificateConfigurationInput`](crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput).
-    pub fn builder() -> crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationInputBuilder {
         crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetGroupCertificateConfigurationInput`](crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupCertificateConfigurationInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl GetGroupCertificateConfigurationInputBuilder {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`GetGroupCertificateConfigurationInput`](crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput {
-                group_id: self.group_id
-                ,
-            }
+            crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput { group_id: self.group_id },
         )
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCollectionOutput`](crate::operation::create_collection::CreateCollectionOutput) with field(s):
     ///   - [`create_collection_detail(Option<CreateCollectionDetail>)`](crate::operation::create_collection::CreateCollectionOutput::create_collection_detail): <p>Details about the collection.</p>
     /// - On failure, responds with [`SdkError<CreateCollectionError>`](crate::operation::create_collection::CreateCollectionError)
-    pub fn create_collection(
-        &self,
-    ) -> crate::operation::create_collection::builders::CreateCollectionFluentBuilder {
-        crate::operation::create_collection::builders::CreateCollectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_collection(&self) -> crate::operation::create_collection::builders::CreateCollectionFluentBuilder {
+        crate::operation::create_collection::builders::CreateCollectionFluentBuilder::new(self.handle.clone())
     }
 }

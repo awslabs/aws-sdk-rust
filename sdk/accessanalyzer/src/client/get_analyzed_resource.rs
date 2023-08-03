@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAnalyzedResourceOutput`](crate::operation::get_analyzed_resource::GetAnalyzedResourceOutput) with field(s):
     ///   - [`resource(Option<AnalyzedResource>)`](crate::operation::get_analyzed_resource::GetAnalyzedResourceOutput::resource): <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
     /// - On failure, responds with [`SdkError<GetAnalyzedResourceError>`](crate::operation::get_analyzed_resource::GetAnalyzedResourceError)
-    pub fn get_analyzed_resource(
-        &self,
-    ) -> crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceFluentBuilder {
-        crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_analyzed_resource(&self) -> crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceFluentBuilder {
+        crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceFluentBuilder::new(self.handle.clone())
     }
 }

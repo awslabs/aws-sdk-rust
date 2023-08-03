@@ -55,9 +55,7 @@ impl ListExecutorsInput {
 
 /// A builder for [`ListExecutorsInput`](crate::operation::list_executors::ListExecutorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExecutorsInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) executor_state_filter: ::std::option::Option<crate::types::ExecutorState>,
@@ -97,10 +95,7 @@ impl ListExecutorsInputBuilder {
     /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
     /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
-    pub fn set_executor_state_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutorState>,
-    ) -> Self {
+    pub fn set_executor_state_filter(mut self, input: ::std::option::Option<crate::types::ExecutorState>) -> Self {
         self.executor_state_filter = input;
         self
     }
@@ -145,10 +140,7 @@ impl ListExecutorsInputBuilder {
     /// Consumes the builder and constructs a [`ListExecutorsInput`](crate::operation::list_executors::ListExecutorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_executors::ListExecutorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_executors::ListExecutorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_executors::ListExecutorsInput {
             session_id: self.session_id,
             executor_state_filter: self.executor_state_filter,

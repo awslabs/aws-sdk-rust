@@ -27,16 +27,14 @@ impl ListReusableDelegationSetsInput {
 }
 impl ListReusableDelegationSetsInput {
     /// Creates a new builder-style object to manufacture [`ListReusableDelegationSetsInput`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsInput).
-    pub fn builder() -> crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsInputBuilder{
+    pub fn builder() -> crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsInputBuilder {
         crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReusableDelegationSetsInput`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReusableDelegationSetsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -83,11 +81,9 @@ impl ListReusableDelegationSetsInputBuilder {
         crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsInput {
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsInput {
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

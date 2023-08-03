@@ -13,9 +13,7 @@ pub fn ser_update_launch_configuration_template_input(
         object.key("exportBucketArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.launch_configuration_template_id {
-        object
-            .key("launchConfigurationTemplateID")
-            .string(var_4.as_str());
+        object.key("launchConfigurationTemplateID").string(var_4.as_str());
     }
     if let Some(var_5) = &input.launch_disposition {
         object.key("launchDisposition").string(var_5.as_str());
@@ -27,9 +25,7 @@ pub fn ser_update_launch_configuration_template_input(
         object_7.finish();
     }
     if let Some(var_8) = &input.target_instance_type_right_sizing_method {
-        object
-            .key("targetInstanceTypeRightSizingMethod")
-            .string(var_8.as_str());
+        object.key("targetInstanceTypeRightSizingMethod").string(var_8.as_str());
     }
     Ok(())
 }

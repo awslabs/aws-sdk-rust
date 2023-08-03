@@ -23,9 +23,7 @@ impl DynatraceConnectorProfileCredentials {
 
 /// A builder for [`DynatraceConnectorProfileCredentials`](crate::types::DynatraceConnectorProfileCredentials).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynatraceConnectorProfileCredentialsBuilder {
     pub(crate) api_token: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DynatraceConnectorProfileCredentialsBuilder {
     }
     /// Consumes the builder and constructs a [`DynatraceConnectorProfileCredentials`](crate::types::DynatraceConnectorProfileCredentials).
     pub fn build(self) -> crate::types::DynatraceConnectorProfileCredentials {
-        crate::types::DynatraceConnectorProfileCredentials {
-            api_token: self.api_token,
-        }
+        crate::types::DynatraceConnectorProfileCredentials { api_token: self.api_token }
     }
 }

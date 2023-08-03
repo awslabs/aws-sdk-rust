@@ -29,17 +29,14 @@ impl UpdateVoiceConnectorInput {
 }
 impl UpdateVoiceConnectorInput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceConnectorInput`](crate::operation::update_voice_connector::UpdateVoiceConnectorInput).
-    pub fn builder(
-    ) -> crate::operation::update_voice_connector::builders::UpdateVoiceConnectorInputBuilder {
+    pub fn builder() -> crate::operation::update_voice_connector::builders::UpdateVoiceConnectorInputBuilder {
         crate::operation::update_voice_connector::builders::UpdateVoiceConnectorInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVoiceConnectorInput`](crate::operation::update_voice_connector::UpdateVoiceConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVoiceConnectorInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct UpdateVoiceConnectorInputBuilder {
 }
 impl UpdateVoiceConnectorInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -97,16 +88,12 @@ impl UpdateVoiceConnectorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVoiceConnectorInput`](crate::operation::update_voice_connector::UpdateVoiceConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_voice_connector::UpdateVoiceConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_voice_connector::UpdateVoiceConnectorInput {
-                voice_connector_id: self.voice_connector_id,
-                name: self.name,
-                require_encryption: self.require_encryption,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_voice_connector::UpdateVoiceConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_voice_connector::UpdateVoiceConnectorInput {
+            voice_connector_id: self.voice_connector_id,
+            name: self.name,
+            require_encryption: self.require_encryption,
+        })
     }
 }

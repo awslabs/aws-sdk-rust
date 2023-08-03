@@ -39,12 +39,9 @@ impl ListAttacksOutput {
 
 /// A builder for [`ListAttacksOutput`](crate::operation::list_attacks::ListAttacksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttacksOutputBuilder {
-    pub(crate) attack_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>>,
+    pub(crate) attack_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +58,12 @@ impl ListAttacksOutputBuilder {
         self
     }
     /// <p>The attack information for the specified time range.</p>
-    pub fn set_attack_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>>,
-    ) -> Self {
+    pub fn set_attack_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>>) -> Self {
         self.attack_summaries = input;
         self
     }
     /// <p>The attack information for the specified time range.</p>
-    pub fn get_attack_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>> {
+    pub fn get_attack_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>> {
         &self.attack_summaries
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>

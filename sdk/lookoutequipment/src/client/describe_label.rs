@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`equipment(Option<String>)`](crate::operation::describe_label::DescribeLabelOutput::equipment): <p> Indicates that a label pertains to a particular piece of equipment. </p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_label::DescribeLabelOutput::created_at): <p> The time at which the label was created. </p>
     /// - On failure, responds with [`SdkError<DescribeLabelError>`](crate::operation::describe_label::DescribeLabelError)
-    pub fn describe_label(
-        &self,
-    ) -> crate::operation::describe_label::builders::DescribeLabelFluentBuilder {
-        crate::operation::describe_label::builders::DescribeLabelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_label(&self) -> crate::operation::describe_label::builders::DescribeLabelFluentBuilder {
+        crate::operation::describe_label::builders::DescribeLabelFluentBuilder::new(self.handle.clone())
     }
 }

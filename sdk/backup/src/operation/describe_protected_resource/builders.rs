@@ -26,7 +26,7 @@ impl DescribeProtectedResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProtectedResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder,
+    inner: crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder,
 }
 impl DescribeProtectedResourceFluentBuilder {
     /// Creates a new `DescribeProtectedResource`.
@@ -37,7 +37,7 @@ impl DescribeProtectedResourceFluentBuilder {
         }
     }
     /// Access the DescribeProtectedResource as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeProtectedResourceFluentBuilder {
             crate::operation::describe_protected_resource::DescribeProtectedResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protected_resource::DescribeProtectedResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protected_resource::DescribeProtectedResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeProtectedResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeProtectedResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_protected_resource::DescribeProtectedResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protected_resource::DescribeProtectedResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protected_resource::DescribeProtectedResourceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeProtectedResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_protected_resource::DescribeProtectedResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protected_resource::DescribeProtectedResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protected_resource::DescribeProtectedResourceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeProtectedResourceFluentBuilder {
             crate::operation::describe_protected_resource::DescribeProtectedResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protected_resource::DescribeProtectedResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protected_resource::DescribeProtectedResourceError>,
     > {
         self.customize_middleware().await
     }

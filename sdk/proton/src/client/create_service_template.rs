@@ -12,12 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateServiceTemplateOutput`](crate::operation::create_service_template::CreateServiceTemplateOutput) with field(s):
     ///   - [`service_template(Option<ServiceTemplate>)`](crate::operation::create_service_template::CreateServiceTemplateOutput::service_template): <p>The service template detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateServiceTemplateError>`](crate::operation::create_service_template::CreateServiceTemplateError)
-    pub fn create_service_template(
-        &self,
-    ) -> crate::operation::create_service_template::builders::CreateServiceTemplateFluentBuilder
-    {
-        crate::operation::create_service_template::builders::CreateServiceTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_service_template(&self) -> crate::operation::create_service_template::builders::CreateServiceTemplateFluentBuilder {
+        crate::operation::create_service_template::builders::CreateServiceTemplateFluentBuilder::new(self.handle.clone())
     }
 }

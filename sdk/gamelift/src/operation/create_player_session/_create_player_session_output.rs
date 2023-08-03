@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePlayerSessionOutput {
 }
 impl CreatePlayerSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionOutput`](crate::operation::create_player_session::CreatePlayerSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_player_session::builders::CreatePlayerSessionOutputBuilder {
-        crate::operation::create_player_session::builders::CreatePlayerSessionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_player_session::builders::CreatePlayerSessionOutputBuilder {
+        crate::operation::create_player_session::builders::CreatePlayerSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePlayerSessionOutput`](crate::operation::create_player_session::CreatePlayerSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePlayerSessionOutputBuilder {
     pub(crate) player_session: ::std::option::Option<crate::types::PlayerSession>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreatePlayerSessionOutputBuilder {
         self
     }
     /// <p>Object that describes the newly created player session record.</p>
-    pub fn set_player_session(
-        mut self,
-        input: ::std::option::Option<crate::types::PlayerSession>,
-    ) -> Self {
+    pub fn set_player_session(mut self, input: ::std::option::Option<crate::types::PlayerSession>) -> Self {
         self.player_session = input;
         self
     }

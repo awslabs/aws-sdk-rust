@@ -17,9 +17,7 @@ impl PointInTimeRecoverySummary {
         self.status.as_ref()
     }
     /// <p>Specifies the earliest possible restore point of the table in ISO 8601 format.</p>
-    pub fn earliest_restorable_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn earliest_restorable_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.earliest_restorable_timestamp.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl PointInTimeRecoverySummary {
 
 /// A builder for [`PointInTimeRecoverySummary`](crate::types::PointInTimeRecoverySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PointInTimeRecoverySummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
     pub(crate) earliest_restorable_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -46,10 +42,7 @@ impl PointInTimeRecoverySummaryBuilder {
         self
     }
     /// <p>Shows if point-in-time recovery is enabled or disabled for the specified table.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>) -> Self {
         self.status = input;
         self
     }
@@ -63,17 +56,12 @@ impl PointInTimeRecoverySummaryBuilder {
         self
     }
     /// <p>Specifies the earliest possible restore point of the table in ISO 8601 format.</p>
-    pub fn set_earliest_restorable_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_earliest_restorable_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.earliest_restorable_timestamp = input;
         self
     }
     /// <p>Specifies the earliest possible restore point of the table in ISO 8601 format.</p>
-    pub fn get_earliest_restorable_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_earliest_restorable_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.earliest_restorable_timestamp
     }
     /// Consumes the builder and constructs a [`PointInTimeRecoverySummary`](crate::types::PointInTimeRecoverySummary).

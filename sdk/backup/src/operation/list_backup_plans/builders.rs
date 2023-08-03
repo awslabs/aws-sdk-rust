@@ -10,10 +10,7 @@ impl ListBackupPlansInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_backup_plans::ListBackupPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_plans::ListBackupPlansError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_plans::ListBackupPlansError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_backup_plans();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListBackupPlansFluentBuilder {
         }
     }
     /// Access the ListBackupPlans as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_backup_plans::builders::ListBackupPlansInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_backup_plans::builders::ListBackupPlansInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListBackupPlansFluentBuilder {
             crate::operation::list_backup_plans::ListBackupPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_plans::ListBackupPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_plans::ListBackupPlansError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListBackupPlansFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListBackupPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backup_plans::ListBackupPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_plans::ListBackupPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_plans::ListBackupPlansError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListBackupPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backup_plans::ListBackupPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_plans::ListBackupPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_plans::ListBackupPlansError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListBackupPlansFluentBuilder {
             crate::operation::list_backup_plans::ListBackupPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_plans::ListBackupPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_plans::ListBackupPlansError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_backup_plans::paginator::ListBackupPlansPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_backup_plans::paginator::ListBackupPlansPaginator {
-        crate::operation::list_backup_plans::paginator::ListBackupPlansPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_backup_plans::paginator::ListBackupPlansPaginator {
+        crate::operation::list_backup_plans::paginator::ListBackupPlansPaginator::new(self.handle, self.inner)
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`authorizer_name(impl ::std::convert::Into<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::set_authorizer_name): <p>The name of the authorizer to delete.</p>
     /// - On success, responds with [`DeleteAuthorizerOutput`](crate::operation::delete_authorizer::DeleteAuthorizerOutput)
     /// - On failure, responds with [`SdkError<DeleteAuthorizerError>`](crate::operation::delete_authorizer::DeleteAuthorizerError)
-    pub fn delete_authorizer(
-        &self,
-    ) -> crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder {
-        crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_authorizer(&self) -> crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder {
+        crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::new(self.handle.clone())
     }
 }

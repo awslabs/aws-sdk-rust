@@ -22,17 +22,14 @@ impl UnmonitorInstancesInput {
 }
 impl UnmonitorInstancesInput {
     /// Creates a new builder-style object to manufacture [`UnmonitorInstancesInput`](crate::operation::unmonitor_instances::UnmonitorInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::unmonitor_instances::builders::UnmonitorInstancesInputBuilder {
+    pub fn builder() -> crate::operation::unmonitor_instances::builders::UnmonitorInstancesInputBuilder {
         crate::operation::unmonitor_instances::builders::UnmonitorInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`UnmonitorInstancesInput`](crate::operation::unmonitor_instances::UnmonitorInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnmonitorInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -50,17 +47,12 @@ impl UnmonitorInstancesInputBuilder {
         self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -80,15 +72,10 @@ impl UnmonitorInstancesInputBuilder {
     /// Consumes the builder and constructs a [`UnmonitorInstancesInput`](crate::operation::unmonitor_instances::UnmonitorInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::unmonitor_instances::UnmonitorInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::unmonitor_instances::UnmonitorInstancesInput {
-                instance_ids: self.instance_ids,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::unmonitor_instances::UnmonitorInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::unmonitor_instances::UnmonitorInstancesInput {
+            instance_ids: self.instance_ids,
+            dry_run: self.dry_run,
+        })
     }
 }

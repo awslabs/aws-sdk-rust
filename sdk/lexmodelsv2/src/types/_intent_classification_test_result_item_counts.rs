@@ -9,14 +9,10 @@ pub struct IntentClassificationTestResultItemCounts {
     pub total_result_count: ::std::option::Option<i32>,
     /// <p>The number of matched, mismatched, and execution error results for speech transcription for the intent.</p>
     #[doc(hidden)]
-    pub speech_transcription_result_counts: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-    >,
+    pub speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
     /// <p>The number of matched and mismatched results for intent recognition for the intent.</p>
     #[doc(hidden)]
-    pub intent_match_result_counts: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-    >,
+    pub intent_match_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
 }
 impl IntentClassificationTestResultItemCounts {
     /// <p>The total number of results in the intent classification test.</p>
@@ -26,15 +22,11 @@ impl IntentClassificationTestResultItemCounts {
     /// <p>The number of matched, mismatched, and execution error results for speech transcription for the intent.</p>
     pub fn speech_transcription_result_counts(
         &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
-    {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
         self.speech_transcription_result_counts.as_ref()
     }
     /// <p>The number of matched and mismatched results for intent recognition for the intent.</p>
-    pub fn intent_match_result_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
-    {
+    pub fn intent_match_result_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
         self.intent_match_result_counts.as_ref()
     }
 }
@@ -47,17 +39,11 @@ impl IntentClassificationTestResultItemCounts {
 
 /// A builder for [`IntentClassificationTestResultItemCounts`](crate::types::IntentClassificationTestResultItemCounts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentClassificationTestResultItemCountsBuilder {
     pub(crate) total_result_count: ::std::option::Option<i32>,
-    pub(crate) speech_transcription_result_counts: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-    >,
-    pub(crate) intent_match_result_counts: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-    >,
+    pub(crate) speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
+    pub(crate) intent_match_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
 }
 impl IntentClassificationTestResultItemCountsBuilder {
     /// <p>The total number of results in the intent classification test.</p>
@@ -79,11 +65,7 @@ impl IntentClassificationTestResultItemCountsBuilder {
     /// To override the contents of this collection use [`set_speech_transcription_result_counts`](Self::set_speech_transcription_result_counts).
     ///
     /// <p>The number of matched, mismatched, and execution error results for speech transcription for the intent.</p>
-    pub fn speech_transcription_result_counts(
-        mut self,
-        k: crate::types::TestResultMatchStatus,
-        v: i32,
-    ) -> Self {
+    pub fn speech_transcription_result_counts(mut self, k: crate::types::TestResultMatchStatus, v: i32) -> Self {
         let mut hash_map = self.speech_transcription_result_counts.unwrap_or_default();
         hash_map.insert(k, v);
         self.speech_transcription_result_counts = ::std::option::Option::Some(hash_map);
@@ -92,9 +74,7 @@ impl IntentClassificationTestResultItemCountsBuilder {
     /// <p>The number of matched, mismatched, and execution error results for speech transcription for the intent.</p>
     pub fn set_speech_transcription_result_counts(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
     ) -> Self {
         self.speech_transcription_result_counts = input;
         self
@@ -102,8 +82,7 @@ impl IntentClassificationTestResultItemCountsBuilder {
     /// <p>The number of matched, mismatched, and execution error results for speech transcription for the intent.</p>
     pub fn get_speech_transcription_result_counts(
         &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
-    {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
         &self.speech_transcription_result_counts
     }
     /// Adds a key-value pair to `intent_match_result_counts`.
@@ -111,11 +90,7 @@ impl IntentClassificationTestResultItemCountsBuilder {
     /// To override the contents of this collection use [`set_intent_match_result_counts`](Self::set_intent_match_result_counts).
     ///
     /// <p>The number of matched and mismatched results for intent recognition for the intent.</p>
-    pub fn intent_match_result_counts(
-        mut self,
-        k: crate::types::TestResultMatchStatus,
-        v: i32,
-    ) -> Self {
+    pub fn intent_match_result_counts(mut self, k: crate::types::TestResultMatchStatus, v: i32) -> Self {
         let mut hash_map = self.intent_match_result_counts.unwrap_or_default();
         hash_map.insert(k, v);
         self.intent_match_result_counts = ::std::option::Option::Some(hash_map);
@@ -124,18 +99,13 @@ impl IntentClassificationTestResultItemCountsBuilder {
     /// <p>The number of matched and mismatched results for intent recognition for the intent.</p>
     pub fn set_intent_match_result_counts(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
     ) -> Self {
         self.intent_match_result_counts = input;
         self
     }
     /// <p>The number of matched and mismatched results for intent recognition for the intent.</p>
-    pub fn get_intent_match_result_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
-    {
+    pub fn get_intent_match_result_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
         &self.intent_match_result_counts
     }
     /// Consumes the builder and constructs a [`IntentClassificationTestResultItemCounts`](crate::types::IntentClassificationTestResultItemCounts).

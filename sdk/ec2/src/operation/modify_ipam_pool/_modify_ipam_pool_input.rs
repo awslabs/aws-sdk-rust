@@ -30,12 +30,10 @@ pub struct ModifyIpamPoolInput {
     pub clear_allocation_default_netmask_length: ::std::option::Option<bool>,
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     #[doc(hidden)]
-    pub add_allocation_resource_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
+    pub add_allocation_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
     /// <p>Remove tag allocation rules from a pool.</p>
     #[doc(hidden)]
-    pub remove_allocation_resource_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
+    pub remove_allocation_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
 }
 impl ModifyIpamPoolInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -72,15 +70,11 @@ impl ModifyIpamPoolInput {
         self.clear_allocation_default_netmask_length
     }
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn add_allocation_resource_tags(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RequestIpamResourceTag]> {
+    pub fn add_allocation_resource_tags(&self) -> ::std::option::Option<&[crate::types::RequestIpamResourceTag]> {
         self.add_allocation_resource_tags.as_deref()
     }
     /// <p>Remove tag allocation rules from a pool.</p>
-    pub fn remove_allocation_resource_tags(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RequestIpamResourceTag]> {
+    pub fn remove_allocation_resource_tags(&self) -> ::std::option::Option<&[crate::types::RequestIpamResourceTag]> {
         self.remove_allocation_resource_tags.as_deref()
     }
 }
@@ -93,9 +87,7 @@ impl ModifyIpamPoolInput {
 
 /// A builder for [`ModifyIpamPoolInput`](crate::operation::modify_ipam_pool::ModifyIpamPoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIpamPoolInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
@@ -105,10 +97,8 @@ pub struct ModifyIpamPoolInputBuilder {
     pub(crate) allocation_max_netmask_length: ::std::option::Option<i32>,
     pub(crate) allocation_default_netmask_length: ::std::option::Option<i32>,
     pub(crate) clear_allocation_default_netmask_length: ::std::option::Option<bool>,
-    pub(crate) add_allocation_resource_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
-    pub(crate) remove_allocation_resource_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
+    pub(crate) add_allocation_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
+    pub(crate) remove_allocation_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
 }
 impl ModifyIpamPoolInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -204,10 +194,7 @@ impl ModifyIpamPoolInputBuilder {
         self
     }
     /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
-    pub fn set_allocation_default_netmask_length(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_allocation_default_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocation_default_netmask_length = input;
         self
     }
@@ -221,10 +208,7 @@ impl ModifyIpamPoolInputBuilder {
         self
     }
     /// <p>Clear the default netmask length allocation rule for this pool.</p>
-    pub fn set_clear_allocation_default_netmask_length(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_clear_allocation_default_netmask_length(mut self, input: ::std::option::Option<bool>) -> Self {
         self.clear_allocation_default_netmask_length = input;
         self
     }
@@ -237,27 +221,19 @@ impl ModifyIpamPoolInputBuilder {
     /// To override the contents of this collection use [`set_add_allocation_resource_tags`](Self::set_add_allocation_resource_tags).
     ///
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn add_allocation_resource_tags(
-        mut self,
-        input: crate::types::RequestIpamResourceTag,
-    ) -> Self {
+    pub fn add_allocation_resource_tags(mut self, input: crate::types::RequestIpamResourceTag) -> Self {
         let mut v = self.add_allocation_resource_tags.unwrap_or_default();
         v.push(input);
         self.add_allocation_resource_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_add_allocation_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
-    ) -> Self {
+    pub fn set_add_allocation_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>) -> Self {
         self.add_allocation_resource_tags = input;
         self
     }
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn get_add_allocation_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
+    pub fn get_add_allocation_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
         &self.add_allocation_resource_tags
     }
     /// Appends an item to `remove_allocation_resource_tags`.
@@ -265,10 +241,7 @@ impl ModifyIpamPoolInputBuilder {
     /// To override the contents of this collection use [`set_remove_allocation_resource_tags`](Self::set_remove_allocation_resource_tags).
     ///
     /// <p>Remove tag allocation rules from a pool.</p>
-    pub fn remove_allocation_resource_tags(
-        mut self,
-        input: crate::types::RequestIpamResourceTag,
-    ) -> Self {
+    pub fn remove_allocation_resource_tags(mut self, input: crate::types::RequestIpamResourceTag) -> Self {
         let mut v = self.remove_allocation_resource_tags.unwrap_or_default();
         v.push(input);
         self.remove_allocation_resource_tags = ::std::option::Option::Some(v);
@@ -283,18 +256,13 @@ impl ModifyIpamPoolInputBuilder {
         self
     }
     /// <p>Remove tag allocation rules from a pool.</p>
-    pub fn get_remove_allocation_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
+    pub fn get_remove_allocation_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
         &self.remove_allocation_resource_tags
     }
     /// Consumes the builder and constructs a [`ModifyIpamPoolInput`](crate::operation::modify_ipam_pool::ModifyIpamPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_ipam_pool::ModifyIpamPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::modify_ipam_pool::ModifyIpamPoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_ipam_pool::ModifyIpamPoolInput {
             dry_run: self.dry_run,
             ipam_pool_id: self.ipam_pool_id,

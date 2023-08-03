@@ -15,16 +15,14 @@ impl GetContactReachabilityStatusInput {
 }
 impl GetContactReachabilityStatusInput {
     /// Creates a new builder-style object to manufacture [`GetContactReachabilityStatusInput`](crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput).
-    pub fn builder() -> crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusInputBuilder {
         crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetContactReachabilityStatusInput`](crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactReachabilityStatusInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl GetContactReachabilityStatusInputBuilder {
         crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput {
-                domain_name: self.domain_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput {
+            domain_name: self.domain_name,
+        })
     }
 }

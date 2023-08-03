@@ -29,18 +29,14 @@ impl ListEvaluationFormsInput {
 }
 impl ListEvaluationFormsInput {
     /// Creates a new builder-style object to manufacture [`ListEvaluationFormsInput`](crate::operation::list_evaluation_forms::ListEvaluationFormsInput).
-    pub fn builder(
-    ) -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsInputBuilder {
-        crate::operation::list_evaluation_forms::builders::ListEvaluationFormsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsInputBuilder {
+        crate::operation::list_evaluation_forms::builders::ListEvaluationFormsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEvaluationFormsInput`](crate::operation::list_evaluation_forms::ListEvaluationFormsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEvaluationFormsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +88,12 @@ impl ListEvaluationFormsInputBuilder {
     /// Consumes the builder and constructs a [`ListEvaluationFormsInput`](crate::operation::list_evaluation_forms::ListEvaluationFormsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_evaluation_forms::ListEvaluationFormsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_evaluation_forms::ListEvaluationFormsInput {
-                instance_id: self.instance_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_evaluation_forms::ListEvaluationFormsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_evaluation_forms::ListEvaluationFormsInput {
+            instance_id: self.instance_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

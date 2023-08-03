@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for FinalizeDeviceClaimOutput {
 }
 impl FinalizeDeviceClaimOutput {
     /// Creates a new builder-style object to manufacture [`FinalizeDeviceClaimOutput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimOutput).
-    pub fn builder(
-    ) -> crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimOutputBuilder {
-        crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimOutputBuilder {
+        crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimOutputBuilder::default()
     }
 }
 
 /// A builder for [`FinalizeDeviceClaimOutput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FinalizeDeviceClaimOutputBuilder {
     pub(crate) state: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

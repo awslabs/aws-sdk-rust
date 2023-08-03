@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for GetWorldTemplateBodyOutput {
 }
 impl GetWorldTemplateBodyOutput {
     /// Creates a new builder-style object to manufacture [`GetWorldTemplateBodyOutput`](crate::operation::get_world_template_body::GetWorldTemplateBodyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_world_template_body::builders::GetWorldTemplateBodyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_world_template_body::builders::GetWorldTemplateBodyOutputBuilder {
         crate::operation::get_world_template_body::builders::GetWorldTemplateBodyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorldTemplateBodyOutput`](crate::operation::get_world_template_body::GetWorldTemplateBodyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorldTemplateBodyOutputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWorldTemplateBodyOutputBuilder {
     /// <p>The world template body.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The world template body.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }

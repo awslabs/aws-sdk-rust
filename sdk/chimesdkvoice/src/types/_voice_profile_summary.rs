@@ -81,18 +81,12 @@ pub struct VoiceProfileSummaryBuilder {
 }
 impl VoiceProfileSummaryBuilder {
     /// <p>The ID of the voice profile in a voice profile summary.</p>
-    pub fn voice_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice profile in a voice profile summary.</p>
-    pub fn set_voice_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_id = input;
         self
     }
@@ -101,18 +95,12 @@ impl VoiceProfileSummaryBuilder {
         &self.voice_profile_id
     }
     /// <p>The ARN of the voice profile in a voice profile summary.</p>
-    pub fn voice_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the voice profile in a voice profile summary.</p>
-    pub fn set_voice_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_arn = input;
         self
     }
@@ -121,18 +109,12 @@ impl VoiceProfileSummaryBuilder {
         &self.voice_profile_arn
     }
     /// <p>The ID of the voice profile domain in a voice profile summary.</p>
-    pub fn voice_profile_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice profile domain in a voice profile summary.</p>
-    pub fn set_voice_profile_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_domain_id = input;
         self
     }
@@ -146,10 +128,7 @@ impl VoiceProfileSummaryBuilder {
         self
     }
     /// <p>The time at which a voice profile summary was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -163,10 +142,7 @@ impl VoiceProfileSummaryBuilder {
         self
     }
     /// <p>The time at which a voice profile summary was last updated.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }
@@ -180,10 +156,7 @@ impl VoiceProfileSummaryBuilder {
         self
     }
     /// <p>Extends the life of the voice profile. You can use <code>UpdateVoiceProfile</code> to refresh an existing voice profile's voice print and extend the life of the summary.</p>
-    pub fn set_expiration_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_timestamp = input;
         self
     }

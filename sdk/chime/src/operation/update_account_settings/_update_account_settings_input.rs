@@ -22,18 +22,14 @@ impl UpdateAccountSettingsInput {
 }
 impl UpdateAccountSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder {
         crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_settings: ::std::option::Option<crate::types::AccountSettings>,
@@ -59,10 +55,7 @@ impl UpdateAccountSettingsInputBuilder {
         self
     }
     /// <p>The Amazon Chime account settings to update.</p>
-    pub fn set_account_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountSettings>,
-    ) -> Self {
+    pub fn set_account_settings(mut self, input: ::std::option::Option<crate::types::AccountSettings>) -> Self {
         self.account_settings = input;
         self
     }
@@ -73,15 +66,11 @@ impl UpdateAccountSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_account_settings::UpdateAccountSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_account_settings::UpdateAccountSettingsInput {
-                account_id: self.account_id,
-                account_settings: self.account_settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_account_settings::UpdateAccountSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_account_settings::UpdateAccountSettingsInput {
+            account_id: self.account_id,
+            account_settings: self.account_settings,
+        })
     }
 }

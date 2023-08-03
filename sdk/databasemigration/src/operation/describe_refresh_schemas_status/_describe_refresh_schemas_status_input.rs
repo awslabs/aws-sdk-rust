@@ -16,16 +16,14 @@ impl DescribeRefreshSchemasStatusInput {
 }
 impl DescribeRefreshSchemasStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeRefreshSchemasStatusInput`](crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusInput).
-    pub fn builder() -> crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusInputBuilder {
         crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRefreshSchemasStatusInput`](crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRefreshSchemasStatusInputBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,8 @@ impl DescribeRefreshSchemasStatusInputBuilder {
         crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusInput {
-                endpoint_arn: self.endpoint_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusInput {
+            endpoint_arn: self.endpoint_arn,
+        })
     }
 }

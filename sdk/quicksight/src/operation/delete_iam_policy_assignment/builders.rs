@@ -26,7 +26,7 @@ impl DeleteIamPolicyAssignmentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIAMPolicyAssignmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentInputBuilder,
+    inner: crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentInputBuilder,
 }
 impl DeleteIAMPolicyAssignmentFluentBuilder {
     /// Creates a new `DeleteIAMPolicyAssignment`.
@@ -37,7 +37,7 @@ impl DeleteIAMPolicyAssignmentFluentBuilder {
         }
     }
     /// Access the DeleteIAMPolicyAssignment as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteIAMPolicyAssignmentFluentBuilder {
             crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteIAMPolicyAssignmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteIAMPolicyAssignmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignmentError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteIAMPolicyAssignmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignmentError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteIAMPolicyAssignmentFluentBuilder {
             crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl DeleteIAMPolicyAssignmentFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The name of the assignment. </p>
-    pub fn assignment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assignment_name(input.into());
         self
     }
     /// <p>The name of the assignment. </p>
-    pub fn set_assignment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assignment_name(input);
         self
     }

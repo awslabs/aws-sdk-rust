@@ -41,18 +41,14 @@ impl ::aws_http::request_id::RequestId for UpdateFleetCapacityOutput {
 }
 impl UpdateFleetCapacityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetCapacityOutput`](crate::operation::update_fleet_capacity::UpdateFleetCapacityOutput).
-    pub fn builder(
-    ) -> crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityOutputBuilder {
-        crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityOutputBuilder {
+        crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFleetCapacityOutput`](crate::operation::update_fleet_capacity::UpdateFleetCapacityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFleetCapacityOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,

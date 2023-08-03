@@ -10,10 +10,7 @@ impl CopyOptionGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::copy_option_group::CopyOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_option_group::CopyOptionGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_option_group::CopyOptionGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.copy_option_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CopyOptionGroupFluentBuilder {
         }
     }
     /// Access the CopyOptionGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::copy_option_group::builders::CopyOptionGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::copy_option_group::builders::CopyOptionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CopyOptionGroupFluentBuilder {
             crate::operation::copy_option_group::CopyOptionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_option_group::CopyOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_option_group::CopyOptionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CopyOptionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CopyOptionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_option_group::CopyOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_option_group::CopyOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_option_group::CopyOptionGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CopyOptionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_option_group::CopyOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_option_group::CopyOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_option_group::CopyOptionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CopyOptionGroupFluentBuilder {
             crate::operation::copy_option_group::CopyOptionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_option_group::CopyOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_option_group::CopyOptionGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +111,7 @@ impl CopyOptionGroupFluentBuilder {
     /// <ul>
     /// <li> <p>Must specify a valid option group.</p> </li>
     /// </ul>
-    pub fn source_option_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_option_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_option_group_identifier(input.into());
         self
     }
@@ -139,10 +120,7 @@ impl CopyOptionGroupFluentBuilder {
     /// <ul>
     /// <li> <p>Must specify a valid option group.</p> </li>
     /// </ul>
-    pub fn set_source_option_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_option_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_option_group_identifier(input);
         self
     }
@@ -151,9 +129,7 @@ impl CopyOptionGroupFluentBuilder {
     /// <ul>
     /// <li> <p>Must specify a valid option group.</p> </li>
     /// </ul>
-    pub fn get_source_option_group_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_option_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_option_group_identifier()
     }
     /// <p>The identifier for the copied option group.</p>
@@ -165,10 +141,7 @@ impl CopyOptionGroupFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-option-group</code> </p>
-    pub fn target_option_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_option_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_option_group_identifier(input.into());
         self
     }
@@ -181,10 +154,7 @@ impl CopyOptionGroupFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-option-group</code> </p>
-    pub fn set_target_option_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_option_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_option_group_identifier(input);
         self
     }
@@ -197,31 +167,21 @@ impl CopyOptionGroupFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-option-group</code> </p>
-    pub fn get_target_option_group_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_option_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_option_group_identifier()
     }
     /// <p>The description for the copied option group.</p>
-    pub fn target_option_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_option_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_option_group_description(input.into());
         self
     }
     /// <p>The description for the copied option group.</p>
-    pub fn set_target_option_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_option_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_option_group_description(input);
         self
     }
     /// <p>The description for the copied option group.</p>
-    pub fn get_target_option_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_option_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_option_group_description()
     }
     /// Appends an item to `Tags`.
@@ -234,10 +194,7 @@ impl CopyOptionGroupFluentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

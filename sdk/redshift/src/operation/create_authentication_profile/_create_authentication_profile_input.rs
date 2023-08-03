@@ -22,34 +22,26 @@ impl CreateAuthenticationProfileInput {
 }
 impl CreateAuthenticationProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateAuthenticationProfileInput`](crate::operation::create_authentication_profile::CreateAuthenticationProfileInput).
-    pub fn builder() -> crate::operation::create_authentication_profile::builders::CreateAuthenticationProfileInputBuilder{
+    pub fn builder() -> crate::operation::create_authentication_profile::builders::CreateAuthenticationProfileInputBuilder {
         crate::operation::create_authentication_profile::builders::CreateAuthenticationProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAuthenticationProfileInput`](crate::operation::create_authentication_profile::CreateAuthenticationProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAuthenticationProfileInputBuilder {
     pub(crate) authentication_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_profile_content: ::std::option::Option<::std::string::String>,
 }
 impl CreateAuthenticationProfileInputBuilder {
     /// <p>The name of the authentication profile to be created.</p>
-    pub fn authentication_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the authentication profile to be created.</p>
-    pub fn set_authentication_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_profile_name = input;
         self
     }
@@ -58,25 +50,17 @@ impl CreateAuthenticationProfileInputBuilder {
         &self.authentication_profile_name
     }
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    pub fn authentication_profile_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_profile_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_profile_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    pub fn set_authentication_profile_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_profile_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_profile_content = input;
         self
     }
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    pub fn get_authentication_profile_content(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_authentication_profile_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_profile_content
     }
     /// Consumes the builder and constructs a [`CreateAuthenticationProfileInput`](crate::operation::create_authentication_profile::CreateAuthenticationProfileInput).
@@ -86,11 +70,9 @@ impl CreateAuthenticationProfileInputBuilder {
         crate::operation::create_authentication_profile::CreateAuthenticationProfileInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_authentication_profile::CreateAuthenticationProfileInput {
-                authentication_profile_name: self.authentication_profile_name,
-                authentication_profile_content: self.authentication_profile_content,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_authentication_profile::CreateAuthenticationProfileInput {
+            authentication_profile_name: self.authentication_profile_name,
+            authentication_profile_content: self.authentication_profile_content,
+        })
     }
 }

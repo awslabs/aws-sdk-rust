@@ -15,16 +15,14 @@ impl DescribeIdentityProviderConfigurationInput {
 }
 impl DescribeIdentityProviderConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityProviderConfigurationInput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput).
-    pub fn builder() -> crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationInputBuilder {
         crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdentityProviderConfigurationInput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdentityProviderConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DescribeIdentityProviderConfigurationInputBuilder {
         &self.fleet_arn
     }
     /// Consumes the builder and constructs a [`DescribeIdentityProviderConfigurationInput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput {
-                fleet_arn: self.fleet_arn
-                ,
-            }
+            crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput { fleet_arn: self.fleet_arn },
         )
     }
 }

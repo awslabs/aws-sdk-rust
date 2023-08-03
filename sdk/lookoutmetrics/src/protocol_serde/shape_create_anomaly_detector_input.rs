@@ -6,16 +6,11 @@ pub fn ser_create_anomaly_detector_input(
     if let Some(var_1) = &input.anomaly_detector_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AnomalyDetectorConfig").start_object();
-        crate::protocol_serde::shape_anomaly_detector_config::ser_anomaly_detector_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_anomaly_detector_config::ser_anomaly_detector_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.anomaly_detector_description {
-        object
-            .key("AnomalyDetectorDescription")
-            .string(var_3.as_str());
+        object.key("AnomalyDetectorDescription").string(var_3.as_str());
     }
     if let Some(var_4) = &input.anomaly_detector_name {
         object.key("AnomalyDetectorName").string(var_4.as_str());

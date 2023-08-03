@@ -10,9 +10,7 @@ pub fn ser_delete_relational_database_input(
         object.key("skipFinalSnapshot").boolean(*var_2);
     }
     if let Some(var_3) = &input.final_relational_database_snapshot_name {
-        object
-            .key("finalRelationalDatabaseSnapshotName")
-            .string(var_3.as_str());
+        object.key("finalRelationalDatabaseSnapshotName").string(var_3.as_str());
     }
     Ok(())
 }

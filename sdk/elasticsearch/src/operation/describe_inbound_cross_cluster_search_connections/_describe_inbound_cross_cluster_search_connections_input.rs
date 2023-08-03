@@ -46,16 +46,15 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
 }
 impl DescribeInboundCrossClusterSearchConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInboundCrossClusterSearchConnectionsInput`](crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput).
-    pub fn builder() -> crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsInputBuilder {
         crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInboundCrossClusterSearchConnectionsInput`](crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInboundCrossClusterSearchConnectionsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -90,10 +89,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
     /// <li>destination-domain-info.domain-name</li>
     /// </ul>
     /// <p></p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -138,16 +134,18 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeInboundCrossClusterSearchConnectionsInput`](crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput {
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

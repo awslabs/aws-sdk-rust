@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`gateway_arn(Option<String>)`](crate::operation::update_gateway_information::UpdateGatewayInformationOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     ///   - [`gateway_name(Option<String>)`](crate::operation::update_gateway_information::UpdateGatewayInformationOutput::gateway_name): <p>The name you configured for your gateway.</p>
     /// - On failure, responds with [`SdkError<UpdateGatewayInformationError>`](crate::operation::update_gateway_information::UpdateGatewayInformationError)
-    pub fn update_gateway_information(
-        &self,
-    ) -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationFluentBuilder
-    {
+    pub fn update_gateway_information(&self) -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationFluentBuilder {
         crate::operation::update_gateway_information::builders::UpdateGatewayInformationFluentBuilder::new(self.handle.clone())
     }
 }

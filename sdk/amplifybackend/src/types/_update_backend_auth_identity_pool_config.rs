@@ -23,9 +23,7 @@ impl UpdateBackendAuthIdentityPoolConfig {
 
 /// A builder for [`UpdateBackendAuthIdentityPoolConfig`](crate::types::UpdateBackendAuthIdentityPoolConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBackendAuthIdentityPoolConfigBuilder {
     pub(crate) unauthenticated_login: ::std::option::Option<bool>,
 }

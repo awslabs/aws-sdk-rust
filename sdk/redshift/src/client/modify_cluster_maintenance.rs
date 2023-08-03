@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyClusterMaintenanceOutput`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<ModifyClusterMaintenanceError>`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError)
-    pub fn modify_cluster_maintenance(
-        &self,
-    ) -> crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceFluentBuilder
-    {
+    pub fn modify_cluster_maintenance(&self) -> crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceFluentBuilder {
         crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceFluentBuilder::new(self.handle.clone())
     }
 }

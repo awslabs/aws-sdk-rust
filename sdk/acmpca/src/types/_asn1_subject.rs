@@ -129,9 +129,7 @@ impl Asn1Subject {
 
 /// A builder for [`Asn1Subject`](crate::types::Asn1Subject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Asn1SubjectBuilder {
     pub(crate) country: ::std::option::Option<::std::string::String>,
     pub(crate) organization: ::std::option::Option<::std::string::String>,
@@ -147,8 +145,7 @@ pub struct Asn1SubjectBuilder {
     pub(crate) initials: ::std::option::Option<::std::string::String>,
     pub(crate) pseudonym: ::std::option::Option<::std::string::String>,
     pub(crate) generation_qualifier: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>>,
+    pub(crate) custom_attributes: ::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>>,
 }
 impl Asn1SubjectBuilder {
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
@@ -180,18 +177,12 @@ impl Asn1SubjectBuilder {
         &self.organization
     }
     /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
-    pub fn organizational_unit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
-    pub fn set_organizational_unit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organizational_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit = input;
         self
     }
@@ -200,25 +191,17 @@ impl Asn1SubjectBuilder {
         &self.organizational_unit
     }
     /// <p>Disambiguating information for the certificate subject.</p>
-    pub fn distinguished_name_qualifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distinguished_name_qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distinguished_name_qualifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Disambiguating information for the certificate subject.</p>
-    pub fn set_distinguished_name_qualifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distinguished_name_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distinguished_name_qualifier = input;
         self
     }
     /// <p>Disambiguating information for the certificate subject.</p>
-    pub fn get_distinguished_name_qualifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_distinguished_name_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.distinguished_name_qualifier
     }
     /// <p>State in which the subject of the certificate is located.</p>
@@ -253,18 +236,12 @@ impl Asn1SubjectBuilder {
         &self.common_name
     }
     /// <p>The certificate serial number.</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate serial number.</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serial_number = input;
         self
     }
@@ -357,18 +334,12 @@ impl Asn1SubjectBuilder {
         &self.pseudonym
     }
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
-    pub fn generation_qualifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_qualifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
-    pub fn set_generation_qualifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_qualifier = input;
         self
     }
@@ -394,10 +365,7 @@ impl Asn1SubjectBuilder {
     /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
-    pub fn set_custom_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>>,
-    ) -> Self {
+    pub fn set_custom_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>>) -> Self {
         self.custom_attributes = input;
         self
     }
@@ -405,9 +373,7 @@ impl Asn1SubjectBuilder {
     /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
-    pub fn get_custom_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>> {
+    pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>> {
         &self.custom_attributes
     }
     /// Consumes the builder and constructs a [`Asn1Subject`](crate::types::Asn1Subject).

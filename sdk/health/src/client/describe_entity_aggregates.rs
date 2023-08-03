@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEntityAggregatesOutput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput) with field(s):
     ///   - [`entity_aggregates(Option<Vec<EntityAggregate>>)`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput::entity_aggregates): <p>The number of entities that are affected by each of the specified events.</p>
     /// - On failure, responds with [`SdkError<DescribeEntityAggregatesError>`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesError)
-    pub fn describe_entity_aggregates(
-        &self,
-    ) -> crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesFluentBuilder
-    {
+    pub fn describe_entity_aggregates(&self) -> crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesFluentBuilder {
         crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesFluentBuilder::new(self.handle.clone())
     }
 }

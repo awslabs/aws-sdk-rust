@@ -5,8 +5,7 @@
 pub struct DescribeLocalGatewayVirtualInterfacesOutput {
     /// <p>Information about the virtual interfaces.</p>
     #[doc(hidden)]
-    pub local_gateway_virtual_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayVirtualInterface>>,
+    pub local_gateway_virtual_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayVirtualInterface>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeLocalGatewayVirtualInterfacesOutput {
 }
 impl DescribeLocalGatewayVirtualInterfacesOutput {
     /// <p>Information about the virtual interfaces.</p>
-    pub fn local_gateway_virtual_interfaces(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LocalGatewayVirtualInterface]> {
+    pub fn local_gateway_virtual_interfaces(&self) -> ::std::option::Option<&[crate::types::LocalGatewayVirtualInterface]> {
         self.local_gateway_virtual_interfaces.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeLocalGatewayVirtualInterfaces
 }
 impl DescribeLocalGatewayVirtualInterfacesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocalGatewayVirtualInterfacesOutput`](crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesOutput).
-    pub fn builder() -> crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesOutputBuilder {
         crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocalGatewayVirtualInterfacesOutput`](crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocalGatewayVirtualInterfacesOutputBuilder {
-    pub(crate) local_gateway_virtual_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayVirtualInterface>>,
+    pub(crate) local_gateway_virtual_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayVirtualInterface>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeLocalGatewayVirtualInterfacesOutputBuilder {
     /// To override the contents of this collection use [`set_local_gateway_virtual_interfaces`](Self::set_local_gateway_virtual_interfaces).
     ///
     /// <p>Information about the virtual interfaces.</p>
-    pub fn local_gateway_virtual_interfaces(
-        mut self,
-        input: crate::types::LocalGatewayVirtualInterface,
-    ) -> Self {
+    pub fn local_gateway_virtual_interfaces(mut self, input: crate::types::LocalGatewayVirtualInterface) -> Self {
         let mut v = self.local_gateway_virtual_interfaces.unwrap_or_default();
         v.push(input);
         self.local_gateway_virtual_interfaces = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeLocalGatewayVirtualInterfacesOutputBuilder {
         self
     }
     /// <p>Information about the virtual interfaces.</p>
-    pub fn get_local_gateway_virtual_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayVirtualInterface>> {
+    pub fn get_local_gateway_virtual_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayVirtualInterface>> {
         &self.local_gateway_virtual_interfaces
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,12 +89,10 @@ impl DescribeLocalGatewayVirtualInterfacesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLocalGatewayVirtualInterfacesOutput`](crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesOutput).
-    pub fn build(self) -> crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesOutput{
+    pub fn build(self) -> crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesOutput {
         crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesOutput {
-            local_gateway_virtual_interfaces: self.local_gateway_virtual_interfaces
-            ,
-            next_token: self.next_token
-            ,
+            local_gateway_virtual_interfaces: self.local_gateway_virtual_interfaces,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -64,18 +64,14 @@ impl DescribePlayerSessionsInput {
 }
 impl DescribePlayerSessionsInput {
     /// Creates a new builder-style object to manufacture [`DescribePlayerSessionsInput`](crate::operation::describe_player_sessions::DescribePlayerSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_player_sessions::builders::DescribePlayerSessionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_player_sessions::builders::DescribePlayerSessionsInputBuilder {
         crate::operation::describe_player_sessions::builders::DescribePlayerSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePlayerSessionsInput`](crate::operation::describe_player_sessions::DescribePlayerSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePlayerSessionsInputBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
@@ -86,18 +82,12 @@ pub struct DescribePlayerSessionsInputBuilder {
 }
 impl DescribePlayerSessionsInputBuilder {
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
@@ -120,18 +110,12 @@ impl DescribePlayerSessionsInputBuilder {
         &self.player_id
     }
     /// <p>A unique identifier for a player session to retrieve.</p>
-    pub fn player_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn player_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a player session to retrieve.</p>
-    pub fn set_player_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_player_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_session_id = input;
         self
     }
@@ -147,10 +131,7 @@ impl DescribePlayerSessionsInputBuilder {
     /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
     /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
-    pub fn player_session_status_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn player_session_status_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_session_status_filter = ::std::option::Option::Some(input.into());
         self
     }
@@ -162,10 +143,7 @@ impl DescribePlayerSessionsInputBuilder {
     /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
     /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
-    pub fn set_player_session_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_player_session_status_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_session_status_filter = input;
         self
     }
@@ -177,9 +155,7 @@ impl DescribePlayerSessionsInputBuilder {
     /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
     /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
-    pub fn get_player_session_status_filter(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_player_session_status_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.player_session_status_filter
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
@@ -213,19 +189,15 @@ impl DescribePlayerSessionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribePlayerSessionsInput`](crate::operation::describe_player_sessions::DescribePlayerSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_player_sessions::DescribePlayerSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_player_sessions::DescribePlayerSessionsInput {
-                game_session_id: self.game_session_id,
-                player_id: self.player_id,
-                player_session_id: self.player_session_id,
-                player_session_status_filter: self.player_session_status_filter,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_player_sessions::DescribePlayerSessionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_player_sessions::DescribePlayerSessionsInput {
+            game_session_id: self.game_session_id,
+            player_id: self.player_id,
+            player_session_id: self.player_session_id,
+            player_session_status_filter: self.player_session_status_filter,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

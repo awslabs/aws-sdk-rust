@@ -15,17 +15,14 @@ impl PutRegistryPolicyInput {
 }
 impl PutRegistryPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutRegistryPolicyInput`](crate::operation::put_registry_policy::PutRegistryPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_registry_policy::builders::PutRegistryPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_registry_policy::builders::PutRegistryPolicyInputBuilder {
         crate::operation::put_registry_policy::builders::PutRegistryPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutRegistryPolicyInput`](crate::operation::put_registry_policy::PutRegistryPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRegistryPolicyInputBuilder {
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl PutRegistryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutRegistryPolicyInput`](crate::operation::put_registry_policy::PutRegistryPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_registry_policy::PutRegistryPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_registry_policy::PutRegistryPolicyInput {
-                policy_text: self.policy_text,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_registry_policy::PutRegistryPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_registry_policy::PutRegistryPolicyInput {
+            policy_text: self.policy_text,
+        })
     }
 }

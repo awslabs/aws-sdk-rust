@@ -36,9 +36,7 @@ impl ListLensesOutput {
 
 /// A builder for [`ListLensesOutput`](crate::operation::list_lenses::ListLensesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLensesOutputBuilder {
     pub(crate) lens_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LensSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListLensesOutputBuilder {
         self
     }
     /// <p>List of lens summaries of available lenses.</p>
-    pub fn set_lens_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LensSummary>>,
-    ) -> Self {
+    pub fn set_lens_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LensSummary>>) -> Self {
         self.lens_summaries = input;
         self
     }
     /// <p>List of lens summaries of available lenses.</p>
-    pub fn get_lens_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LensSummary>> {
+    pub fn get_lens_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LensSummary>> {
         &self.lens_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

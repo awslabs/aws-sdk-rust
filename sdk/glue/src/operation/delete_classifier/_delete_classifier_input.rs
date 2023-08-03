@@ -15,17 +15,14 @@ impl DeleteClassifierInput {
 }
 impl DeleteClassifierInput {
     /// Creates a new builder-style object to manufacture [`DeleteClassifierInput`](crate::operation::delete_classifier::DeleteClassifierInput).
-    pub fn builder() -> crate::operation::delete_classifier::builders::DeleteClassifierInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_classifier::builders::DeleteClassifierInputBuilder {
         crate::operation::delete_classifier::builders::DeleteClassifierInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClassifierInput`](crate::operation::delete_classifier::DeleteClassifierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClassifierInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeleteClassifierInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClassifierInput`](crate::operation::delete_classifier::DeleteClassifierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_classifier::DeleteClassifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_classifier::DeleteClassifierInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_classifier::DeleteClassifierInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_classifier::DeleteClassifierInput { name: self.name })
     }
 }

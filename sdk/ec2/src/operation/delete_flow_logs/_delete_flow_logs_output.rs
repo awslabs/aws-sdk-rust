@@ -28,9 +28,7 @@ impl DeleteFlowLogsOutput {
 
 /// A builder for [`DeleteFlowLogsOutput`](crate::operation::delete_flow_logs::DeleteFlowLogsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFlowLogsOutputBuilder {
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl DeleteFlowLogsOutputBuilder {
         self
     }
     /// <p>Information about the flow logs that could not be deleted successfully.</p>
-    pub fn set_unsuccessful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
-    ) -> Self {
+    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>) -> Self {
         self.unsuccessful = input;
         self
     }
     /// <p>Information about the flow logs that could not be deleted successfully.</p>
-    pub fn get_unsuccessful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
+    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
         &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

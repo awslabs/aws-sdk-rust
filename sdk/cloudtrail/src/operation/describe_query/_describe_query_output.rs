@@ -40,9 +40,7 @@ impl DescribeQueryOutput {
         self.query_status.as_ref()
     }
     /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
-    pub fn query_statistics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::QueryStatisticsForDescribeQuery> {
+    pub fn query_statistics(&self) -> ::std::option::Option<&crate::types::QueryStatisticsForDescribeQuery> {
         self.query_statistics.as_ref()
     }
     /// <p>The error message returned if a query failed.</p>
@@ -72,15 +70,12 @@ impl DescribeQueryOutput {
 
 /// A builder for [`DescribeQueryOutput`](crate::operation::describe_query::DescribeQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeQueryOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) query_status: ::std::option::Option<crate::types::QueryStatus>,
-    pub(crate) query_statistics:
-        ::std::option::Option<crate::types::QueryStatisticsForDescribeQuery>,
+    pub(crate) query_statistics: ::std::option::Option<crate::types::QueryStatisticsForDescribeQuery>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
@@ -121,10 +116,7 @@ impl DescribeQueryOutputBuilder {
         self
     }
     /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> </p>
-    pub fn set_query_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStatus>,
-    ) -> Self {
+    pub fn set_query_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
         self.query_status = input;
         self
     }
@@ -133,40 +125,26 @@ impl DescribeQueryOutputBuilder {
         &self.query_status
     }
     /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
-    pub fn query_statistics(
-        mut self,
-        input: crate::types::QueryStatisticsForDescribeQuery,
-    ) -> Self {
+    pub fn query_statistics(mut self, input: crate::types::QueryStatisticsForDescribeQuery) -> Self {
         self.query_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
-    pub fn set_query_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStatisticsForDescribeQuery>,
-    ) -> Self {
+    pub fn set_query_statistics(mut self, input: ::std::option::Option<crate::types::QueryStatisticsForDescribeQuery>) -> Self {
         self.query_statistics = input;
         self
     }
     /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
-    pub fn get_query_statistics(
-        &self,
-    ) -> &::std::option::Option<crate::types::QueryStatisticsForDescribeQuery> {
+    pub fn get_query_statistics(&self) -> &::std::option::Option<crate::types::QueryStatisticsForDescribeQuery> {
         &self.query_statistics
     }
     /// <p>The error message returned if a query failed.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message returned if a query failed.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -175,18 +153,12 @@ impl DescribeQueryOutputBuilder {
         &self.error_message
     }
     /// <p>The URI for the S3 bucket where CloudTrail delivered query results, if applicable.</p>
-    pub fn delivery_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI for the S3 bucket where CloudTrail delivered query results, if applicable.</p>
-    pub fn set_delivery_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_uri = input;
         self
     }
@@ -200,10 +172,7 @@ impl DescribeQueryOutputBuilder {
         self
     }
     /// <p>The delivery status.</p>
-    pub fn set_delivery_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryStatus>,
-    ) -> Self {
+    pub fn set_delivery_status(mut self, input: ::std::option::Option<crate::types::DeliveryStatus>) -> Self {
         self.delivery_status = input;
         self
     }

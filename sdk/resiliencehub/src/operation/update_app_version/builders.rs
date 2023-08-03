@@ -10,10 +10,7 @@ impl UpdateAppVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_app_version::UpdateAppVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version::UpdateAppVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version::UpdateAppVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_app_version();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateAppVersionFluentBuilder {
         }
     }
     /// Access the UpdateAppVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_app_version::builders::UpdateAppVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_app_version::builders::UpdateAppVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl UpdateAppVersionFluentBuilder {
             crate::operation::update_app_version::UpdateAppVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version::UpdateAppVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version::UpdateAppVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl UpdateAppVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl UpdateAppVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_version::UpdateAppVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version::UpdateAppVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version::UpdateAppVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl UpdateAppVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_version::UpdateAppVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version::UpdateAppVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version::UpdateAppVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl UpdateAppVersionFluentBuilder {
             crate::operation::update_app_version::UpdateAppVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version::UpdateAppVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version::UpdateAppVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -147,11 +131,7 @@ impl UpdateAppVersionFluentBuilder {
     /// <p>Key: <code>"failover-regions"</code> </p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note>
-    pub fn additional_info(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.additional_info(k.into(), v);
         self
     }
@@ -162,12 +142,7 @@ impl UpdateAppVersionFluentBuilder {
     /// </note>
     pub fn set_additional_info(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_additional_info(input);
         self
@@ -179,9 +154,7 @@ impl UpdateAppVersionFluentBuilder {
     /// </note>
     pub fn get_additional_info(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_additional_info()
     }
 }

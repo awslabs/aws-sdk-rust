@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`SendBulkEmailOutput`](crate::operation::send_bulk_email::SendBulkEmailOutput) with field(s):
     ///   - [`bulk_email_entry_results(Option<Vec<BulkEmailEntryResult>>)`](crate::operation::send_bulk_email::SendBulkEmailOutput::bulk_email_entry_results): <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
     /// - On failure, responds with [`SdkError<SendBulkEmailError>`](crate::operation::send_bulk_email::SendBulkEmailError)
-    pub fn send_bulk_email(
-        &self,
-    ) -> crate::operation::send_bulk_email::builders::SendBulkEmailFluentBuilder {
-        crate::operation::send_bulk_email::builders::SendBulkEmailFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_bulk_email(&self) -> crate::operation::send_bulk_email::builders::SendBulkEmailFluentBuilder {
+        crate::operation::send_bulk_email::builders::SendBulkEmailFluentBuilder::new(self.handle.clone())
     }
 }

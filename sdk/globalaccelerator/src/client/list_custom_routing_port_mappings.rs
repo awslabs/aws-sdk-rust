@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`port_mappings(Option<Vec<PortMapping>>)`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput::port_mappings): <p>The port mappings for a custom routing accelerator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListCustomRoutingPortMappingsError>`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError)
-    pub fn list_custom_routing_port_mappings(&self) -> crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder{
+    pub fn list_custom_routing_port_mappings(
+        &self,
+    ) -> crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder {
         crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::new(self.handle.clone())
     }
 }

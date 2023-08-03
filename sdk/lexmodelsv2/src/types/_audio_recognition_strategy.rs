@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AudioRecognitionStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,12 +48,8 @@ pub enum AudioRecognitionStrategy {
 impl ::std::convert::From<&str> for AudioRecognitionStrategy {
     fn from(s: &str) -> Self {
         match s {
-            "UseSlotValuesAsCustomVocabulary" => {
-                AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary
-            }
-            other => AudioRecognitionStrategy::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "UseSlotValuesAsCustomVocabulary" => AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary,
+            other => AudioRecognitionStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -74,9 +64,7 @@ impl AudioRecognitionStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary => {
-                "UseSlotValuesAsCustomVocabulary"
-            }
+            AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary => "UseSlotValuesAsCustomVocabulary",
             AudioRecognitionStrategy::Unknown(value) => value.as_str(),
         }
     }

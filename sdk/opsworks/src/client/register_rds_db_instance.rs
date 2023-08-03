@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`db_password(impl ::std::convert::Into<String>)`](crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceFluentBuilder::db_password) / [`set_db_password(Option<String>)`](crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceFluentBuilder::set_db_password): <p>The database password.</p>
     /// - On success, responds with [`RegisterRdsDbInstanceOutput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceOutput)
     /// - On failure, responds with [`SdkError<RegisterRdsDbInstanceError>`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceError)
-    pub fn register_rds_db_instance(
-        &self,
-    ) -> crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceFluentBuilder
-    {
+    pub fn register_rds_db_instance(&self) -> crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceFluentBuilder {
         crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceFluentBuilder::new(self.handle.clone())
     }
 }

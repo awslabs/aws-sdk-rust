@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetHealthCheckCountOutput`](crate::operation::get_health_check_count::GetHealthCheckCountOutput) with field(s):
     ///   - [`health_check_count(Option<i64>)`](crate::operation::get_health_check_count::GetHealthCheckCountOutput::health_check_count): <p>The number of health checks associated with the current Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<GetHealthCheckCountError>`](crate::operation::get_health_check_count::GetHealthCheckCountError)
-    pub fn get_health_check_count(
-        &self,
-    ) -> crate::operation::get_health_check_count::builders::GetHealthCheckCountFluentBuilder {
-        crate::operation::get_health_check_count::builders::GetHealthCheckCountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_health_check_count(&self) -> crate::operation::get_health_check_count::builders::GetHealthCheckCountFluentBuilder {
+        crate::operation::get_health_check_count::builders::GetHealthCheckCountFluentBuilder::new(self.handle.clone())
     }
 }

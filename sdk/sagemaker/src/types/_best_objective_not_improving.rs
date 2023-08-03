@@ -23,9 +23,7 @@ impl BestObjectiveNotImproving {
 
 /// A builder for [`BestObjectiveNotImproving`](crate::types::BestObjectiveNotImproving).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BestObjectiveNotImprovingBuilder {
     pub(crate) max_number_of_training_jobs_not_improving: ::std::option::Option<i32>,
 }
@@ -36,10 +34,7 @@ impl BestObjectiveNotImprovingBuilder {
         self
     }
     /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
-    pub fn set_max_number_of_training_jobs_not_improving(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_max_number_of_training_jobs_not_improving(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_number_of_training_jobs_not_improving = input;
         self
     }
@@ -50,8 +45,7 @@ impl BestObjectiveNotImprovingBuilder {
     /// Consumes the builder and constructs a [`BestObjectiveNotImproving`](crate::types::BestObjectiveNotImproving).
     pub fn build(self) -> crate::types::BestObjectiveNotImproving {
         crate::types::BestObjectiveNotImproving {
-            max_number_of_training_jobs_not_improving: self
-                .max_number_of_training_jobs_not_improving,
+            max_number_of_training_jobs_not_improving: self.max_number_of_training_jobs_not_improving,
         }
     }
 }

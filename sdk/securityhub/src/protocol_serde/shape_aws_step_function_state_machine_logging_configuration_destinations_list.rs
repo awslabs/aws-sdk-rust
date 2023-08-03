@@ -2,20 +2,11 @@
 pub(crate) fn de_aws_step_function_state_machine_logging_configuration_destinations_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<
-    Option<
-        ::std::vec::Vec<
-            crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails,
-        >,
-    >,
+    Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -39,10 +30,8 @@ where
             }
             Ok(Some(items))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start array or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start array or null",
+        )),
     }
 }

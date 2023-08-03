@@ -21,8 +21,7 @@ pub struct BatchPutDocumentInput {
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     #[doc(hidden)]
-    pub custom_document_enrichment_configuration:
-        ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
+    pub custom_document_enrichment_configuration: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
 }
 impl BatchPutDocumentInput {
     /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
@@ -45,31 +44,25 @@ impl BatchPutDocumentInput {
     }
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn custom_document_enrichment_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomDocumentEnrichmentConfiguration> {
+    pub fn custom_document_enrichment_configuration(&self) -> ::std::option::Option<&crate::types::CustomDocumentEnrichmentConfiguration> {
         self.custom_document_enrichment_configuration.as_ref()
     }
 }
 impl BatchPutDocumentInput {
     /// Creates a new builder-style object to manufacture [`BatchPutDocumentInput`](crate::operation::batch_put_document::BatchPutDocumentInput).
-    pub fn builder() -> crate::operation::batch_put_document::builders::BatchPutDocumentInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_put_document::builders::BatchPutDocumentInputBuilder {
         crate::operation::batch_put_document::builders::BatchPutDocumentInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchPutDocumentInput`](crate::operation::batch_put_document::BatchPutDocumentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutDocumentInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) documents: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
-    pub(crate) custom_document_enrichment_configuration:
-        ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
+    pub(crate) custom_document_enrichment_configuration: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
 }
 impl BatchPutDocumentInputBuilder {
     /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
@@ -124,10 +117,7 @@ impl BatchPutDocumentInputBuilder {
     /// <li> <p>5 MB extracted text for any file</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    pub fn set_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
-    ) -> Self {
+    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
         self.documents = input;
         self
     }
@@ -143,10 +133,7 @@ impl BatchPutDocumentInputBuilder {
     }
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn custom_document_enrichment_configuration(
-        mut self,
-        input: crate::types::CustomDocumentEnrichmentConfiguration,
-    ) -> Self {
+    pub fn custom_document_enrichment_configuration(mut self, input: crate::types::CustomDocumentEnrichmentConfiguration) -> Self {
         self.custom_document_enrichment_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -161,26 +148,18 @@ impl BatchPutDocumentInputBuilder {
     }
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn get_custom_document_enrichment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
+    pub fn get_custom_document_enrichment_configuration(&self) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
         &self.custom_document_enrichment_configuration
     }
     /// Consumes the builder and constructs a [`BatchPutDocumentInput`](crate::operation::batch_put_document::BatchPutDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_document::BatchPutDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_put_document::BatchPutDocumentInput {
-                index_id: self.index_id,
-                role_arn: self.role_arn,
-                documents: self.documents,
-                custom_document_enrichment_configuration: self
-                    .custom_document_enrichment_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_put_document::BatchPutDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_put_document::BatchPutDocumentInput {
+            index_id: self.index_id,
+            role_arn: self.role_arn,
+            documents: self.documents,
+            custom_document_enrichment_configuration: self.custom_document_enrichment_configuration,
+        })
     }
 }

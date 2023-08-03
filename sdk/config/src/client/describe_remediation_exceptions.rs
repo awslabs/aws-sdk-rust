@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`remediation_exceptions(Option<Vec<RemediationException>>)`](crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput::remediation_exceptions): <p>Returns a list of remediation exception objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribeRemediationExceptionsError>`](crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError)
-    pub fn describe_remediation_exceptions(&self) -> crate::operation::describe_remediation_exceptions::builders::DescribeRemediationExceptionsFluentBuilder{
+    pub fn describe_remediation_exceptions(
+        &self,
+    ) -> crate::operation::describe_remediation_exceptions::builders::DescribeRemediationExceptionsFluentBuilder {
         crate::operation::describe_remediation_exceptions::builders::DescribeRemediationExceptionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,9 +35,7 @@ impl GetFindingsOutput {
 
 /// A builder for [`GetFindingsOutput`](crate::operation::get_findings::GetFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetFindingsOutputBuilder {
         self
     }
     /// <p>The findings that matched the filters specified in the request.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>>) -> Self {
         self.findings = input;
         self
     }
     /// <p>The findings that matched the filters specified in the request.</p>
-    pub fn get_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>> {
         &self.findings
     }
     /// <p>The pagination token to use to request the next page of results.</p>

@@ -18,7 +18,10 @@ pub fn ser_update_pipe_source_self_managed_kafka_parameters(
     if let Some(var_3) = &input.credentials {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Credentials").start_object();
-        crate::protocol_serde::shape_self_managed_kafka_access_configuration_credentials::ser_self_managed_kafka_access_configuration_credentials(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_self_managed_kafka_access_configuration_credentials::ser_self_managed_kafka_access_configuration_credentials(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
     if let Some(var_5) = &input.server_root_ca_certificate {
@@ -27,7 +30,10 @@ pub fn ser_update_pipe_source_self_managed_kafka_parameters(
     if let Some(var_6) = &input.vpc {
         #[allow(unused_mut)]
         let mut object_7 = object.key("Vpc").start_object();
-        crate::protocol_serde::shape_self_managed_kafka_access_configuration_vpc::ser_self_managed_kafka_access_configuration_vpc(&mut object_7, var_6)?;
+        crate::protocol_serde::shape_self_managed_kafka_access_configuration_vpc::ser_self_managed_kafka_access_configuration_vpc(
+            &mut object_7,
+            var_6,
+        )?;
         object_7.finish();
     }
     Ok(())

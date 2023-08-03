@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPortfolioSummaryOutput {
 }
 impl GetPortfolioSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetPortfolioSummaryOutput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryOutputBuilder {
-        crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryOutputBuilder {
+        crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPortfolioSummaryOutput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPortfolioSummaryOutputBuilder {
     pub(crate) assessment_summary: ::std::option::Option<crate::types::AssessmentSummary>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetPortfolioSummaryOutputBuilder {
         self
     }
     /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
-    pub fn set_assessment_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentSummary>,
-    ) -> Self {
+    pub fn set_assessment_summary(mut self, input: ::std::option::Option<crate::types::AssessmentSummary>) -> Self {
         self.assessment_summary = input;
         self
     }
     /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
-    pub fn get_assessment_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssessmentSummary> {
+    pub fn get_assessment_summary(&self) -> &::std::option::Option<crate::types::AssessmentSummary> {
         &self.assessment_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

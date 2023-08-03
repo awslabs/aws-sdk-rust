@@ -31,9 +31,7 @@ impl TrialComponentArtifact {
 
 /// A builder for [`TrialComponentArtifact`](crate::types::TrialComponentArtifact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrialComponentArtifactBuilder {
     pub(crate) media_type: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

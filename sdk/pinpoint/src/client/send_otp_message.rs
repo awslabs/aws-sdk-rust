@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`SendOtpMessageOutput`](crate::operation::send_otp_message::SendOtpMessageOutput) with field(s):
     ///   - [`message_response(Option<MessageResponse>)`](crate::operation::send_otp_message::SendOtpMessageOutput::message_response): <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     /// - On failure, responds with [`SdkError<SendOTPMessageError>`](crate::operation::send_otp_message::SendOTPMessageError)
-    pub fn send_otp_message(
-        &self,
-    ) -> crate::operation::send_otp_message::builders::SendOTPMessageFluentBuilder {
-        crate::operation::send_otp_message::builders::SendOTPMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_otp_message(&self) -> crate::operation::send_otp_message::builders::SendOTPMessageFluentBuilder {
+        crate::operation::send_otp_message::builders::SendOTPMessageFluentBuilder::new(self.handle.clone())
     }
 }

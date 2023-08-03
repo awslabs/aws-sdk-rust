@@ -26,7 +26,7 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypeOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsInputBuilder,
+    inner: crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsInputBuilder,
 }
 impl DescribeInstanceTypeOfferingsFluentBuilder {
     /// Creates a new `DescribeInstanceTypeOfferings`.
@@ -37,7 +37,7 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
         }
     }
     /// Access the DescribeInstanceTypeOfferings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
             crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
             crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_type_offerings::paginator::DescribeInstanceTypeOfferingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_instance_type_offerings::paginator::DescribeInstanceTypeOfferingsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_instance_type_offerings::paginator::DescribeInstanceTypeOfferingsPaginator {
         crate::operation::describe_instance_type_offerings::paginator::DescribeInstanceTypeOfferingsPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -146,10 +135,7 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
         self
     }
     /// <p>The location type.</p>
-    pub fn set_location_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationType>,
-    ) -> Self {
+    pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.inner = self.inner.set_location_type(input);
         self
     }
@@ -175,10 +161,7 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
     /// <li> <p> <code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p> </li>
     /// <li> <p> <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

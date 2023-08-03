@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DetachInternetGatewayOutput {
 }
 impl DetachInternetGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DetachInternetGatewayOutput`](crate::operation::detach_internet_gateway::DetachInternetGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::detach_internet_gateway::builders::DetachInternetGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_internet_gateway::builders::DetachInternetGatewayOutputBuilder {
         crate::operation::detach_internet_gateway::builders::DetachInternetGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachInternetGatewayOutput`](crate::operation::detach_internet_gateway::DetachInternetGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachInternetGatewayOutputBuilder {
     _request_id: Option<String>,
 }

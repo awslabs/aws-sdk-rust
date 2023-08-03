@@ -59,10 +59,7 @@ impl UpdateRegexPatternSetFluentBuilder {
         }
     }
     /// Access the UpdateRegexPatternSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +71,7 @@ impl UpdateRegexPatternSetFluentBuilder {
             crate::operation::update_regex_pattern_set::UpdateRegexPatternSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -86,10 +81,7 @@ impl UpdateRegexPatternSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -98,9 +90,7 @@ impl UpdateRegexPatternSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError>,
     > {
         let op = self
             .inner
@@ -123,9 +113,7 @@ impl UpdateRegexPatternSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError>,
     > {
         self.send_middleware().await
     }
@@ -139,25 +127,17 @@ impl UpdateRegexPatternSetFluentBuilder {
             crate::operation::update_regex_pattern_set::UpdateRegexPatternSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regex_pattern_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.regex_pattern_set_id(input.into());
         self
     }
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn set_regex_pattern_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regex_pattern_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_regex_pattern_set_id(input);
         self
     }
@@ -175,17 +155,12 @@ impl UpdateRegexPatternSetFluentBuilder {
         self
     }
     /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
     /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetUpdate>> {
         self.inner.get_updates()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>

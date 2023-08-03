@@ -78,16 +78,14 @@ impl GetRelationalDatabaseLogEventsInput {
 }
 impl GetRelationalDatabaseLogEventsInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogEventsInput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput).
-    pub fn builder() -> crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsInputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsInputBuilder {
         crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseLogEventsInput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogEventsInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,
@@ -98,18 +96,12 @@ pub struct GetRelationalDatabaseLogEventsInputBuilder {
 }
 impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>The name of your database for which to get log events.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your database for which to get log events.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -119,19 +111,13 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     }
     /// <p>The name of the log stream.</p>
     /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
-    pub fn log_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log stream.</p>
     /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
-    pub fn set_log_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream_name = input;
         self
     }
@@ -156,10 +142,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -188,10 +171,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
     /// </ul>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -250,19 +230,13 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput {
-                relational_database_name: self.relational_database_name
-                ,
-                log_stream_name: self.log_stream_name
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-                start_from_head: self.start_from_head
-                ,
-                page_token: self.page_token
-                ,
-            }
+                relational_database_name: self.relational_database_name,
+                log_stream_name: self.log_stream_name,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                start_from_head: self.start_from_head,
+                page_token: self.page_token,
+            },
         )
     }
 }

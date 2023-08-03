@@ -71,16 +71,14 @@ impl PutPackageOriginConfigurationInput {
 }
 impl PutPackageOriginConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutPackageOriginConfigurationInput`](crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput).
-    pub fn builder() -> crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder {
         crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutPackageOriginConfigurationInput`](crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPackageOriginConfigurationInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -201,18 +199,13 @@ impl PutPackageOriginConfigurationInputBuilder {
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
-    pub fn set_restrictions(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageOriginRestrictions>,
-    ) -> Self {
+    pub fn set_restrictions(mut self, input: ::std::option::Option<crate::types::PackageOriginRestrictions>) -> Self {
         self.restrictions = input;
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
-    pub fn get_restrictions(
-        &self,
-    ) -> &::std::option::Option<crate::types::PackageOriginRestrictions> {
+    pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::PackageOriginRestrictions> {
         &self.restrictions
     }
     /// Consumes the builder and constructs a [`PutPackageOriginConfigurationInput`](crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput).
@@ -222,23 +215,14 @@ impl PutPackageOriginConfigurationInputBuilder {
         crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput {
-                domain: self.domain
-                ,
-                domain_owner: self.domain_owner
-                ,
-                repository: self.repository
-                ,
-                format: self.format
-                ,
-                namespace: self.namespace
-                ,
-                package: self.package
-                ,
-                restrictions: self.restrictions
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+            repository: self.repository,
+            format: self.format,
+            namespace: self.namespace,
+            package: self.package,
+            restrictions: self.restrictions,
+        })
     }
 }

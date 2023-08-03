@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateBrowserSettingsOutput`](crate::operation::create_browser_settings::CreateBrowserSettingsOutput) with field(s):
     ///   - [`browser_settings_arn(Option<String>)`](crate::operation::create_browser_settings::CreateBrowserSettingsOutput::browser_settings_arn): <p>The ARN of the browser settings.</p>
     /// - On failure, responds with [`SdkError<CreateBrowserSettingsError>`](crate::operation::create_browser_settings::CreateBrowserSettingsError)
-    pub fn create_browser_settings(
-        &self,
-    ) -> crate::operation::create_browser_settings::builders::CreateBrowserSettingsFluentBuilder
-    {
-        crate::operation::create_browser_settings::builders::CreateBrowserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_browser_settings(&self) -> crate::operation::create_browser_settings::builders::CreateBrowserSettingsFluentBuilder {
+        crate::operation::create_browser_settings::builders::CreateBrowserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

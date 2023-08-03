@@ -30,9 +30,7 @@ impl FailoverConfig {
 
 /// A builder for [`FailoverConfig`](crate::types::FailoverConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailoverConfigBuilder {
     pub(crate) primary: ::std::option::Option<crate::types::Primary>,
     pub(crate) secondary: ::std::option::Option<crate::types::Secondary>,

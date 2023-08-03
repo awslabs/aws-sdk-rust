@@ -26,8 +26,7 @@ impl DeregisterJobDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterJobDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionInputBuilder,
+    inner: crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionInputBuilder,
 }
 impl DeregisterJobDefinitionFluentBuilder {
     /// Creates a new `DeregisterJobDefinition`.
@@ -38,10 +37,7 @@ impl DeregisterJobDefinitionFluentBuilder {
         }
     }
     /// Access the DeregisterJobDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeregisterJobDefinitionFluentBuilder {
             crate::operation::deregister_job_definition::DeregisterJobDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_job_definition::DeregisterJobDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_job_definition::DeregisterJobDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeregisterJobDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeregisterJobDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_job_definition::DeregisterJobDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_job_definition::DeregisterJobDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_job_definition::DeregisterJobDefinitionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeregisterJobDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_job_definition::DeregisterJobDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_job_definition::DeregisterJobDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_job_definition::DeregisterJobDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeregisterJobDefinitionFluentBuilder {
             crate::operation::deregister_job_definition::DeregisterJobDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_job_definition::DeregisterJobDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_job_definition::DeregisterJobDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
-    pub fn job_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_definition(input.into());
         self
     }
     /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
-    pub fn set_job_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_definition(input);
         self
     }

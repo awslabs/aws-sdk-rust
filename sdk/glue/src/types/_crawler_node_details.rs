@@ -23,9 +23,7 @@ impl CrawlerNodeDetails {
 
 /// A builder for [`CrawlerNodeDetails`](crate::types::CrawlerNodeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrawlerNodeDetailsBuilder {
     pub(crate) crawls: ::std::option::Option<::std::vec::Vec<crate::types::Crawl>>,
 }
@@ -42,10 +40,7 @@ impl CrawlerNodeDetailsBuilder {
         self
     }
     /// <p>A list of crawls represented by the crawl node.</p>
-    pub fn set_crawls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Crawl>>,
-    ) -> Self {
+    pub fn set_crawls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Crawl>>) -> Self {
         self.crawls = input;
         self
     }
@@ -55,8 +50,6 @@ impl CrawlerNodeDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`CrawlerNodeDetails`](crate::types::CrawlerNodeDetails).
     pub fn build(self) -> crate::types::CrawlerNodeDetails {
-        crate::types::CrawlerNodeDetails {
-            crawls: self.crawls,
-        }
+        crate::types::CrawlerNodeDetails { crawls: self.crawls }
     }
 }

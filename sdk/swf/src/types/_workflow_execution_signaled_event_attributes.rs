@@ -27,9 +27,7 @@ impl WorkflowExecutionSignaledEventAttributes {
         self.input.as_deref()
     }
     /// <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
-    pub fn external_workflow_execution(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkflowExecution> {
+    pub fn external_workflow_execution(&self) -> ::std::option::Option<&crate::types::WorkflowExecution> {
         self.external_workflow_execution.as_ref()
     }
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event. This field is set only if the signal was initiated by another workflow execution.</p>
@@ -46,9 +44,7 @@ impl WorkflowExecutionSignaledEventAttributes {
 
 /// A builder for [`WorkflowExecutionSignaledEventAttributes`](crate::types::WorkflowExecutionSignaledEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowExecutionSignaledEventAttributesBuilder {
     pub(crate) signal_name: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<::std::string::String>,
@@ -90,17 +86,12 @@ impl WorkflowExecutionSignaledEventAttributesBuilder {
         self
     }
     /// <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
-    pub fn set_external_workflow_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_external_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.external_workflow_execution = input;
         self
     }
     /// <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
-    pub fn get_external_workflow_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+    pub fn get_external_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
         &self.external_workflow_execution
     }
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event. This field is set only if the signal was initiated by another workflow execution.</p>

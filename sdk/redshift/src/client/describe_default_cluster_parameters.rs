@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeDefaultClusterParametersOutput`](crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersOutput) with field(s):
     ///   - [`default_cluster_parameters(Option<DefaultClusterParameters>)`](crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersOutput::default_cluster_parameters): <p>Describes the default cluster parameters for a parameter group family.</p>
     /// - On failure, responds with [`SdkError<DescribeDefaultClusterParametersError>`](crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersError)
-    pub fn describe_default_cluster_parameters(&self) -> crate::operation::describe_default_cluster_parameters::builders::DescribeDefaultClusterParametersFluentBuilder{
+    pub fn describe_default_cluster_parameters(
+        &self,
+    ) -> crate::operation::describe_default_cluster_parameters::builders::DescribeDefaultClusterParametersFluentBuilder {
         crate::operation::describe_default_cluster_parameters::builders::DescribeDefaultClusterParametersFluentBuilder::new(self.handle.clone())
     }
 }

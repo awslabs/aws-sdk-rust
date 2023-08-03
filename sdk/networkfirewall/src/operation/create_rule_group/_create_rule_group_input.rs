@@ -110,9 +110,7 @@ impl CreateRuleGroupInput {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
@@ -129,9 +127,7 @@ impl CreateRuleGroupInput {
 
 /// A builder for [`CreateRuleGroupInput`](crate::operation::create_rule_group::CreateRuleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRuleGroupInputBuilder {
     pub(crate) rule_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group: ::std::option::Option<crate::types::RuleGroup>,
@@ -141,24 +137,17 @@ pub struct CreateRuleGroupInputBuilder {
     pub(crate) capacity: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) source_metadata: ::std::option::Option<crate::types::SourceMetadata>,
 }
 impl CreateRuleGroupInputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    pub fn rule_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    pub fn set_rule_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_name = input;
         self
     }
@@ -305,10 +294,7 @@ impl CreateRuleGroupInputBuilder {
         self
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -337,25 +323,17 @@ impl CreateRuleGroupInputBuilder {
         &self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
@@ -364,10 +342,7 @@ impl CreateRuleGroupInputBuilder {
         self
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
-    pub fn set_source_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceMetadata>,
-    ) -> Self {
+    pub fn set_source_metadata(mut self, input: ::std::option::Option<crate::types::SourceMetadata>) -> Self {
         self.source_metadata = input;
         self
     }
@@ -378,10 +353,7 @@ impl CreateRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateRuleGroupInput`](crate::operation::create_rule_group::CreateRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_rule_group::CreateRuleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_rule_group::CreateRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rule_group::CreateRuleGroupInput {
             rule_group_name: self.rule_group_name,
             rule_group: self.rule_group,

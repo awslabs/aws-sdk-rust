@@ -5,23 +5,23 @@
 pub struct DisassociateServiceQuotaTemplateInput {}
 impl DisassociateServiceQuotaTemplateInput {
     /// Creates a new builder-style object to manufacture [`DisassociateServiceQuotaTemplateInput`](crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput).
-    pub fn builder() -> crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateInputBuilder {
         crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateServiceQuotaTemplateInput`](crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateServiceQuotaTemplateInputBuilder {}
 impl DisassociateServiceQuotaTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateServiceQuotaTemplateInput`](crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput {})
     }
 }

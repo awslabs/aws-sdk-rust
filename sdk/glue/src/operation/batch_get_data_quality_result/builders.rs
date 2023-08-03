@@ -26,7 +26,7 @@ impl BatchGetDataQualityResultInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetDataQualityResultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultInputBuilder,
+    inner: crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultInputBuilder,
 }
 impl BatchGetDataQualityResultFluentBuilder {
     /// Creates a new `BatchGetDataQualityResult`.
@@ -37,7 +37,7 @@ impl BatchGetDataQualityResultFluentBuilder {
         }
     }
     /// Access the BatchGetDataQualityResult as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchGetDataQualityResultFluentBuilder {
             crate::operation::batch_get_data_quality_result::BatchGetDataQualityResult,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchGetDataQualityResultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchGetDataQualityResultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchGetDataQualityResultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchGetDataQualityResultFluentBuilder {
             crate::operation::batch_get_data_quality_result::BatchGetDataQualityResult,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +119,7 @@ impl BatchGetDataQualityResultFluentBuilder {
         self
     }
     /// <p>A list of unique result IDs for the data quality results.</p>
-    pub fn set_result_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_result_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_result_ids(input);
         self
     }

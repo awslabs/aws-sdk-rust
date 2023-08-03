@@ -50,9 +50,7 @@ impl CreateListInput {
 
 /// A builder for [`CreateListInput`](crate::operation::create_list::CreateListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateListInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) elements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -87,10 +85,7 @@ impl CreateListInputBuilder {
         self
     }
     /// <p> The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API. </p>
-    pub fn set_elements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.elements = input;
         self
     }
@@ -99,18 +94,12 @@ impl CreateListInputBuilder {
         &self.elements
     }
     /// <p> The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
-    pub fn variable_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variable_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variable_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
-    pub fn set_variable_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variable_type = input;
         self
     }
@@ -144,10 +133,7 @@ impl CreateListInputBuilder {
         self
     }
     /// <p> A collection of the key and value pairs. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -156,12 +142,7 @@ impl CreateListInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateListInput`](crate::operation::create_list::CreateListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_list::CreateListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_list::CreateListInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_list::CreateListInput {
             name: self.name,
             elements: self.elements,

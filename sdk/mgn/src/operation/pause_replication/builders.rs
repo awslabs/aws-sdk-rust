@@ -10,10 +10,7 @@ impl PauseReplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::pause_replication::PauseReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::pause_replication::PauseReplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::pause_replication::PauseReplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.pause_replication();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PauseReplicationFluentBuilder {
         }
     }
     /// Access the PauseReplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::pause_replication::builders::PauseReplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::pause_replication::builders::PauseReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PauseReplicationFluentBuilder {
             crate::operation::pause_replication::PauseReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::pause_replication::PauseReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::pause_replication::PauseReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PauseReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PauseReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::pause_replication::PauseReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::pause_replication::PauseReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::pause_replication::PauseReplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PauseReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::pause_replication::PauseReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::pause_replication::PauseReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::pause_replication::PauseReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl PauseReplicationFluentBuilder {
             crate::operation::pause_replication::PauseReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::pause_replication::PauseReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::pause_replication::PauseReplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Pause Replication Request source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Pause Replication Request source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }

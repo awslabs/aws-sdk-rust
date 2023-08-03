@@ -23,9 +23,7 @@ impl DeletePipelineInput {
 
 /// A builder for [`DeletePipelineInput`](crate::operation::delete_pipeline::DeletePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePipelineInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl DeletePipelineInputBuilder {
     /// Consumes the builder and constructs a [`DeletePipelineInput`](crate::operation::delete_pipeline::DeletePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pipeline::DeletePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_pipeline::DeletePipelineInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_pipeline::DeletePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_pipeline::DeletePipelineInput { id: self.id })
     }
 }

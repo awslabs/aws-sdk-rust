@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`component_name(impl ::std::convert::Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::set_component_name): <p>The name of the component.</p>
     /// - On success, responds with [`DeleteComponentOutput`](crate::operation::delete_component::DeleteComponentOutput)
     /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::operation::delete_component::DeleteComponentError)
-    pub fn delete_component(
-        &self,
-    ) -> crate::operation::delete_component::builders::DeleteComponentFluentBuilder {
-        crate::operation::delete_component::builders::DeleteComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_component(&self) -> crate::operation::delete_component::builders::DeleteComponentFluentBuilder {
+        crate::operation::delete_component::builders::DeleteComponentFluentBuilder::new(self.handle.clone())
     }
 }

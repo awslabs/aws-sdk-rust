@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`members(Option<Vec<Member>>)`](crate::operation::list_group_members::ListGroupMembersOutput::members): <p>The members associated to the group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_group_members::ListGroupMembersOutput::next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     /// - On failure, responds with [`SdkError<ListGroupMembersError>`](crate::operation::list_group_members::ListGroupMembersError)
-    pub fn list_group_members(
-        &self,
-    ) -> crate::operation::list_group_members::builders::ListGroupMembersFluentBuilder {
-        crate::operation::list_group_members::builders::ListGroupMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_group_members(&self) -> crate::operation::list_group_members::builders::ListGroupMembersFluentBuilder {
+        crate::operation::list_group_members::builders::ListGroupMembersFluentBuilder::new(self.handle.clone())
     }
 }

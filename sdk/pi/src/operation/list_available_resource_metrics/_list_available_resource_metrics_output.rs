@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAvailableResourceMetricsOutput {
 }
 impl ListAvailableResourceMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableResourceMetricsOutput`](crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput).
-    pub fn builder() -> crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsOutputBuilder{
+    pub fn builder() -> crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsOutputBuilder {
         crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableResourceMetricsOutput`](crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableResourceMetricsOutputBuilder {
-    pub(crate) metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseResourceMetric>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::ResponseResourceMetric>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListAvailableResourceMetricsOutputBuilder {
         self
     }
     /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseResourceMetric>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseResourceMetric>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseResourceMetric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseResourceMetric>> {
         &self.metrics
     }
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
@@ -94,9 +86,7 @@ impl ListAvailableResourceMetricsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAvailableResourceMetricsOutput`](crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput {
+    pub fn build(self) -> crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput {
         crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput {
             metrics: self.metrics,
             next_token: self.next_token,

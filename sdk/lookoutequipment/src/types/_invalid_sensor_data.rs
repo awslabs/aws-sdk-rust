@@ -30,9 +30,7 @@ impl InvalidSensorData {
 
 /// A builder for [`InvalidSensorData`](crate::types::InvalidSensorData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidSensorDataBuilder {
     pub(crate) affected_sensor_count: ::std::option::Option<i32>,
     pub(crate) total_number_of_invalid_values: ::std::option::Option<i32>,

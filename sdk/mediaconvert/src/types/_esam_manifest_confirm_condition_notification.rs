@@ -23,9 +23,7 @@ impl EsamManifestConfirmConditionNotification {
 
 /// A builder for [`EsamManifestConfirmConditionNotification`](crate::types::EsamManifestConfirmConditionNotification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EsamManifestConfirmConditionNotificationBuilder {
     pub(crate) mcc_xml: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl EsamManifestConfirmConditionNotificationBuilder {
     }
     /// Consumes the builder and constructs a [`EsamManifestConfirmConditionNotification`](crate::types::EsamManifestConfirmConditionNotification).
     pub fn build(self) -> crate::types::EsamManifestConfirmConditionNotification {
-        crate::types::EsamManifestConfirmConditionNotification {
-            mcc_xml: self.mcc_xml,
-        }
+        crate::types::EsamManifestConfirmConditionNotification { mcc_xml: self.mcc_xml }
     }
 }

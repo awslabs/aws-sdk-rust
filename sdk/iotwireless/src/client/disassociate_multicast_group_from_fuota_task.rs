@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`multicast_group_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskFluentBuilder::multicast_group_id) / [`set_multicast_group_id(Option<String>)`](crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskFluentBuilder::set_multicast_group_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput)
     /// - On failure, responds with [`SdkError<DisassociateMulticastGroupFromFuotaTaskError>`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError)
-    pub fn disassociate_multicast_group_from_fuota_task(&self) -> crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskFluentBuilder{
-        crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_multicast_group_from_fuota_task(
+        &self,
+    ) -> crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskFluentBuilder {
+        crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -35,9 +35,7 @@ impl DateRange {
 
 /// A builder for [`DateRange`](crate::types::DateRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateRangeBuilder {
     pub(crate) from_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) to_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -51,10 +49,7 @@ impl DateRangeBuilder {
     }
     /// <p>This value is the beginning date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
-    pub fn set_from_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_from_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.from_date = input;
         self
     }
@@ -71,10 +66,7 @@ impl DateRangeBuilder {
     }
     /// <p>This value is the end date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
-    pub fn set_to_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_to_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.to_date = input;
         self
     }

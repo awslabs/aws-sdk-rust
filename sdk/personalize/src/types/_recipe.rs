@@ -89,9 +89,7 @@ impl Recipe {
 
 /// A builder for [`Recipe`](crate::types::Recipe).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_arn: ::std::option::Option<::std::string::String>,
@@ -133,18 +131,12 @@ impl RecipeBuilder {
         &self.recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train the model.</p>
-    pub fn algorithm_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train the model.</p>
-    pub fn set_algorithm_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_algorithm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.algorithm_arn = input;
         self
     }
@@ -153,18 +145,12 @@ impl RecipeBuilder {
         &self.algorithm_arn
     }
     /// <p>The ARN of the FeatureTransformation object.</p>
-    pub fn feature_transformation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_transformation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_transformation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the FeatureTransformation object.</p>
-    pub fn set_feature_transformation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_transformation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_transformation_arn = input;
         self
     }
@@ -206,10 +192,7 @@ impl RecipeBuilder {
         self
     }
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -252,17 +235,12 @@ impl RecipeBuilder {
         self
     }
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`Recipe`](crate::types::Recipe).

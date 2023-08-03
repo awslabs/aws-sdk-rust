@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`resource_arn(Option<String>)`](crate::operation::create_resource_policy::CreateResourcePolicyOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was attached to.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::create_resource_policy::CreateResourcePolicyOutput::revision_id): <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
     /// - On failure, responds with [`SdkError<CreateResourcePolicyError>`](crate::operation::create_resource_policy::CreateResourcePolicyError)
-    pub fn create_resource_policy(
-        &self,
-    ) -> crate::operation::create_resource_policy::builders::CreateResourcePolicyFluentBuilder {
-        crate::operation::create_resource_policy::builders::CreateResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_resource_policy(&self) -> crate::operation::create_resource_policy::builders::CreateResourcePolicyFluentBuilder {
+        crate::operation::create_resource_policy::builders::CreateResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

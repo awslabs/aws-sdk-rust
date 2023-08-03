@@ -30,9 +30,7 @@ impl AccountAttribute {
 
 /// A builder for [`AccountAttribute`](crate::types::AccountAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountAttributeBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AccountAttributeName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl AccountAttributeBuilder {
         self
     }
     /// <p>The name of the account attribute.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountAttributeName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AccountAttributeName>) -> Self {
         self.name = input;
         self
     }

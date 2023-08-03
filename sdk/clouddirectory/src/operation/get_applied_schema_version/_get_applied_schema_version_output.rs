@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for GetAppliedSchemaVersionOutput {
 }
 impl GetAppliedSchemaVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetAppliedSchemaVersionOutput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionOutputBuilder {
         crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppliedSchemaVersionOutput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppliedSchemaVersionOutputBuilder {
     pub(crate) applied_schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAppliedSchemaVersionOutputBuilder {
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
-    pub fn applied_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn applied_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.applied_schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
-    pub fn set_applied_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_applied_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.applied_schema_arn = input;
         self
     }
@@ -68,9 +58,7 @@ impl GetAppliedSchemaVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAppliedSchemaVersionOutput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput {
+    pub fn build(self) -> crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput {
         crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput {
             applied_schema_arn: self.applied_schema_arn,
             _request_id: self._request_id,

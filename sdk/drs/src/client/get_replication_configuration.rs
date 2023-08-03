@@ -23,7 +23,9 @@ impl super::Client {
     ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
     ///   - [`auto_replicate_new_disks(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::auto_replicate_new_disks): <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
     /// - On failure, responds with [`SdkError<GetReplicationConfigurationError>`](crate::operation::get_replication_configuration::GetReplicationConfigurationError)
-    pub fn get_replication_configuration(&self) -> crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder{
+    pub fn get_replication_configuration(
+        &self,
+    ) -> crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder {
         crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

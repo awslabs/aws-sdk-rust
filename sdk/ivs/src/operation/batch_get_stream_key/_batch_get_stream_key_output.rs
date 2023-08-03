@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchGetStreamKeyOutput {
 }
 impl BatchGetStreamKeyOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetStreamKeyOutput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyOutputBuilder {
         crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetStreamKeyOutput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetStreamKeyOutputBuilder {
     pub(crate) stream_keys: ::std::option::Option<::std::vec::Vec<crate::types::StreamKey>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>,
@@ -57,17 +54,12 @@ impl BatchGetStreamKeyOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_stream_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamKey>>,
-    ) -> Self {
+    pub fn set_stream_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamKey>>) -> Self {
         self.stream_keys = input;
         self
     }
     /// <p></p>
-    pub fn get_stream_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamKey>> {
+    pub fn get_stream_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamKey>> {
         &self.stream_keys
     }
     /// Appends an item to `errors`.
@@ -82,10 +74,7 @@ impl BatchGetStreamKeyOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>) -> Self {
         self.errors = input;
         self
     }

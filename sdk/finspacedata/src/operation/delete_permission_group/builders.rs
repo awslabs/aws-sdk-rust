@@ -37,10 +37,7 @@ impl DeletePermissionGroupFluentBuilder {
         }
     }
     /// Access the DeletePermissionGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_permission_group::builders::DeletePermissionGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_permission_group::builders::DeletePermissionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeletePermissionGroupFluentBuilder {
             crate::operation::delete_permission_group::DeletePermissionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_group::DeletePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_group::DeletePermissionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeletePermissionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeletePermissionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permission_group::DeletePermissionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_group::DeletePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_group::DeletePermissionGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeletePermissionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permission_group::DeletePermissionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_group::DeletePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_group::DeletePermissionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeletePermissionGroupFluentBuilder {
             crate::operation::delete_permission_group::DeletePermissionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_group::DeletePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_group::DeletePermissionGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the permission group that you want to delete.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_group_id(input.into());
         self
     }
     /// <p>The unique identifier for the permission group that you want to delete.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_group_id(input);
         self
     }

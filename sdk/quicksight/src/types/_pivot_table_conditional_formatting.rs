@@ -6,14 +6,11 @@
 pub struct PivotTableConditionalFormatting {
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
     #[doc(hidden)]
-    pub conditional_formatting_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingOption>>,
+    pub conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingOption>>,
 }
 impl PivotTableConditionalFormatting {
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-    pub fn conditional_formatting_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PivotTableConditionalFormattingOption]> {
+    pub fn conditional_formatting_options(&self) -> ::std::option::Option<&[crate::types::PivotTableConditionalFormattingOption]> {
         self.conditional_formatting_options.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl PivotTableConditionalFormatting {
 
 /// A builder for [`PivotTableConditionalFormatting`](crate::types::PivotTableConditionalFormatting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableConditionalFormattingBuilder {
-    pub(crate) conditional_formatting_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingOption>>,
+    pub(crate) conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingOption>>,
 }
 impl PivotTableConditionalFormattingBuilder {
     /// Appends an item to `conditional_formatting_options`.
@@ -39,10 +33,7 @@ impl PivotTableConditionalFormattingBuilder {
     /// To override the contents of this collection use [`set_conditional_formatting_options`](Self::set_conditional_formatting_options).
     ///
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-    pub fn conditional_formatting_options(
-        mut self,
-        input: crate::types::PivotTableConditionalFormattingOption,
-    ) -> Self {
+    pub fn conditional_formatting_options(mut self, input: crate::types::PivotTableConditionalFormattingOption) -> Self {
         let mut v = self.conditional_formatting_options.unwrap_or_default();
         v.push(input);
         self.conditional_formatting_options = ::std::option::Option::Some(v);
@@ -51,18 +42,13 @@ impl PivotTableConditionalFormattingBuilder {
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
     pub fn set_conditional_formatting_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::PivotTableConditionalFormattingOption>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingOption>>,
     ) -> Self {
         self.conditional_formatting_options = input;
         self
     }
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-    pub fn get_conditional_formatting_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingOption>>
-    {
+    pub fn get_conditional_formatting_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingOption>> {
         &self.conditional_formatting_options
     }
     /// Consumes the builder and constructs a [`PivotTableConditionalFormatting`](crate::types::PivotTableConditionalFormatting).

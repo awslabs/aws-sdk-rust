@@ -22,16 +22,14 @@ impl DescribeFlywheelIterationInput {
 }
 impl DescribeFlywheelIterationInput {
     /// Creates a new builder-style object to manufacture [`DescribeFlywheelIterationInput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput).
-    pub fn builder() -> crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder{
+    pub fn builder() -> crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder {
         crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFlywheelIterationInput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFlywheelIterationInputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flywheel_iteration_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DescribeFlywheelIterationInputBuilder {
         &self.flywheel_arn
     }
     /// <p></p>
-    pub fn flywheel_iteration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flywheel_iteration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_iteration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_flywheel_iteration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flywheel_iteration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flywheel_iteration_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DescribeFlywheelIterationInputBuilder {
         crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput {
-                flywheel_arn: self.flywheel_arn,
-                flywheel_iteration_id: self.flywheel_iteration_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput {
+            flywheel_arn: self.flywheel_arn,
+            flywheel_iteration_id: self.flywheel_iteration_id,
+        })
     }
 }

@@ -12,13 +12,19 @@ pub fn ser_update_pipe_source_parameters(
     if let Some(var_3) = &input.kinesis_stream_parameters {
         #[allow(unused_mut)]
         let mut object_4 = object.key("KinesisStreamParameters").start_object();
-        crate::protocol_serde::shape_update_pipe_source_kinesis_stream_parameters::ser_update_pipe_source_kinesis_stream_parameters(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_update_pipe_source_kinesis_stream_parameters::ser_update_pipe_source_kinesis_stream_parameters(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
     if let Some(var_5) = &input.dynamo_db_stream_parameters {
         #[allow(unused_mut)]
         let mut object_6 = object.key("DynamoDBStreamParameters").start_object();
-        crate::protocol_serde::shape_update_pipe_source_dynamo_db_stream_parameters::ser_update_pipe_source_dynamo_db_stream_parameters(&mut object_6, var_5)?;
+        crate::protocol_serde::shape_update_pipe_source_dynamo_db_stream_parameters::ser_update_pipe_source_dynamo_db_stream_parameters(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     if let Some(var_7) = &input.sqs_queue_parameters {
@@ -30,13 +36,19 @@ pub fn ser_update_pipe_source_parameters(
     if let Some(var_9) = &input.active_mq_broker_parameters {
         #[allow(unused_mut)]
         let mut object_10 = object.key("ActiveMQBrokerParameters").start_object();
-        crate::protocol_serde::shape_update_pipe_source_active_mq_broker_parameters::ser_update_pipe_source_active_mq_broker_parameters(&mut object_10, var_9)?;
+        crate::protocol_serde::shape_update_pipe_source_active_mq_broker_parameters::ser_update_pipe_source_active_mq_broker_parameters(
+            &mut object_10,
+            var_9,
+        )?;
         object_10.finish();
     }
     if let Some(var_11) = &input.rabbit_mq_broker_parameters {
         #[allow(unused_mut)]
         let mut object_12 = object.key("RabbitMQBrokerParameters").start_object();
-        crate::protocol_serde::shape_update_pipe_source_rabbit_mq_broker_parameters::ser_update_pipe_source_rabbit_mq_broker_parameters(&mut object_12, var_11)?;
+        crate::protocol_serde::shape_update_pipe_source_rabbit_mq_broker_parameters::ser_update_pipe_source_rabbit_mq_broker_parameters(
+            &mut object_12,
+            var_11,
+        )?;
         object_12.finish();
     }
     if let Some(var_13) = &input.managed_streaming_kafka_parameters {
@@ -48,7 +60,10 @@ pub fn ser_update_pipe_source_parameters(
     if let Some(var_15) = &input.self_managed_kafka_parameters {
         #[allow(unused_mut)]
         let mut object_16 = object.key("SelfManagedKafkaParameters").start_object();
-        crate::protocol_serde::shape_update_pipe_source_self_managed_kafka_parameters::ser_update_pipe_source_self_managed_kafka_parameters(&mut object_16, var_15)?;
+        crate::protocol_serde::shape_update_pipe_source_self_managed_kafka_parameters::ser_update_pipe_source_self_managed_kafka_parameters(
+            &mut object_16,
+            var_15,
+        )?;
         object_16.finish();
     }
     Ok(())

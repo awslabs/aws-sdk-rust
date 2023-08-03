@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVirtualRoutersOutput {
 }
 impl ListVirtualRoutersOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualRoutersOutput`](crate::operation::list_virtual_routers::ListVirtualRoutersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_virtual_routers::builders::ListVirtualRoutersOutputBuilder {
+    pub fn builder() -> crate::operation::list_virtual_routers::builders::ListVirtualRoutersOutputBuilder {
         crate::operation::list_virtual_routers::builders::ListVirtualRoutersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualRoutersOutput`](crate::operation::list_virtual_routers::ListVirtualRoutersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualRoutersOutputBuilder {
-    pub(crate) virtual_routers:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>>,
+    pub(crate) virtual_routers: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListVirtualRoutersOutputBuilder {
         self
     }
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
-    pub fn set_virtual_routers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>>,
-    ) -> Self {
+    pub fn set_virtual_routers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>>) -> Self {
         self.virtual_routers = input;
         self
     }
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
-    pub fn get_virtual_routers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>> {
+    pub fn get_virtual_routers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>> {
         &self.virtual_routers
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

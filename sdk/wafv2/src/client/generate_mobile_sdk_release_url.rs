@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GenerateMobileSdkReleaseUrlOutput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput) with field(s):
     ///   - [`url(Option<String>)`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput::url): <p>The presigned download URL for the specified SDK release.</p>
     /// - On failure, responds with [`SdkError<GenerateMobileSdkReleaseUrlError>`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlError)
-    pub fn generate_mobile_sdk_release_url(&self) -> crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlFluentBuilder{
+    pub fn generate_mobile_sdk_release_url(
+        &self,
+    ) -> crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlFluentBuilder {
         crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlFluentBuilder::new(self.handle.clone())
     }
 }

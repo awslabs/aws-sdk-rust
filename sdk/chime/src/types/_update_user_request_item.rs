@@ -31,9 +31,7 @@ impl UpdateUserRequestItem {
         self.user_type.as_ref()
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn alexa_for_business_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AlexaForBusinessMetadata> {
+    pub fn alexa_for_business_metadata(&self) -> ::std::option::Option<&crate::types::AlexaForBusinessMetadata> {
         self.alexa_for_business_metadata.as_ref()
     }
 }
@@ -46,15 +44,12 @@ impl UpdateUserRequestItem {
 
 /// A builder for [`UpdateUserRequestItem`](crate::types::UpdateUserRequestItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserRequestItemBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) license_type: ::std::option::Option<crate::types::License>,
     pub(crate) user_type: ::std::option::Option<crate::types::UserType>,
-    pub(crate) alexa_for_business_metadata:
-        ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
+    pub(crate) alexa_for_business_metadata: ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
 }
 impl UpdateUserRequestItemBuilder {
     /// <p>The user ID.</p>
@@ -100,25 +95,17 @@ impl UpdateUserRequestItemBuilder {
         &self.user_type
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn alexa_for_business_metadata(
-        mut self,
-        input: crate::types::AlexaForBusinessMetadata,
-    ) -> Self {
+    pub fn alexa_for_business_metadata(mut self, input: crate::types::AlexaForBusinessMetadata) -> Self {
         self.alexa_for_business_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn set_alexa_for_business_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
-    ) -> Self {
+    pub fn set_alexa_for_business_metadata(mut self, input: ::std::option::Option<crate::types::AlexaForBusinessMetadata>) -> Self {
         self.alexa_for_business_metadata = input;
         self
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn get_alexa_for_business_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlexaForBusinessMetadata> {
+    pub fn get_alexa_for_business_metadata(&self) -> &::std::option::Option<crate::types::AlexaForBusinessMetadata> {
         &self.alexa_for_business_metadata
     }
     /// Consumes the builder and constructs a [`UpdateUserRequestItem`](crate::types::UpdateUserRequestItem).

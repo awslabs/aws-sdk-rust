@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`network_resource(Option<NetworkResource>)`](crate::operation::get_network_resource::GetNetworkResourceOutput::network_resource): <p>Information about the network resource.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_network_resource::GetNetworkResourceOutput::tags): <p> The network resource tags. </p>
     /// - On failure, responds with [`SdkError<GetNetworkResourceError>`](crate::operation::get_network_resource::GetNetworkResourceError)
-    pub fn get_network_resource(
-        &self,
-    ) -> crate::operation::get_network_resource::builders::GetNetworkResourceFluentBuilder {
-        crate::operation::get_network_resource::builders::GetNetworkResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_network_resource(&self) -> crate::operation::get_network_resource::builders::GetNetworkResourceFluentBuilder {
+        crate::operation::get_network_resource::builders::GetNetworkResourceFluentBuilder::new(self.handle.clone())
     }
 }

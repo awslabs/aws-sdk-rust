@@ -30,9 +30,7 @@ impl LambdaConfiguration {
 
 /// A builder for [`LambdaConfiguration`](crate::types::LambdaConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaConfigurationBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) invocation_type: ::std::option::Option<crate::types::InvocationType>,
@@ -58,10 +56,7 @@ impl LambdaConfigurationBuilder {
         self
     }
     /// <p>Controls how the Lambda function is invoked.</p>
-    pub fn set_invocation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InvocationType>,
-    ) -> Self {
+    pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::InvocationType>) -> Self {
         self.invocation_type = input;
         self
     }

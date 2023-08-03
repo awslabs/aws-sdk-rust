@@ -27,34 +27,27 @@ impl ::std::fmt::Display for RequestedRangeNotSatisfiableException {
     }
 }
 impl ::std::error::Error for RequestedRangeNotSatisfiableException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::RequestedRangeNotSatisfiableException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::RequestedRangeNotSatisfiableException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for RequestedRangeNotSatisfiableException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RequestedRangeNotSatisfiableException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl RequestedRangeNotSatisfiableException {
     /// Creates a new builder-style object to manufacture [`RequestedRangeNotSatisfiableException`](crate::types::error::RequestedRangeNotSatisfiableException).
-    pub fn builder() -> crate::types::error::builders::RequestedRangeNotSatisfiableExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::RequestedRangeNotSatisfiableExceptionBuilder {
         crate::types::error::builders::RequestedRangeNotSatisfiableExceptionBuilder::default()
     }
 }
 
 /// A builder for [`RequestedRangeNotSatisfiableException`](crate::types::error::RequestedRangeNotSatisfiableException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestedRangeNotSatisfiableExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl RequestedRangeNotSatisfiableExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

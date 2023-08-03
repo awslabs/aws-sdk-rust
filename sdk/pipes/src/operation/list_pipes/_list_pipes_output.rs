@@ -63,10 +63,7 @@ impl ListPipesOutputBuilder {
         self
     }
     /// <p>The pipes returned by the call.</p>
-    pub fn set_pipes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Pipe>>,
-    ) -> Self {
+    pub fn set_pipes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pipe>>) -> Self {
         self.pipes = input;
         self
     }

@@ -36,9 +36,7 @@ impl ListStacksOutput {
 
 /// A builder for [`ListStacksOutput`](crate::operation::list_stacks::ListStacksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStacksOutputBuilder {
     pub(crate) stack_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListStacksOutputBuilder {
         self
     }
     /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
-    pub fn set_stack_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackSummary>>,
-    ) -> Self {
+    pub fn set_stack_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackSummary>>) -> Self {
         self.stack_summaries = input;
         self
     }
     /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
-    pub fn get_stack_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackSummary>> {
+    pub fn get_stack_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackSummary>> {
         &self.stack_summaries
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>

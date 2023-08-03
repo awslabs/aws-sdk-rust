@@ -49,16 +49,15 @@ impl ::aws_http::request_id::RequestId for DescribeAppVersionResourcesResolution
 }
 impl DescribeAppVersionResourcesResolutionStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput).
-    pub fn builder() -> crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusOutputBuilder {
         crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppVersionResourcesResolutionStatusOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -97,18 +96,12 @@ impl DescribeAppVersionResourcesResolutionStatusOutputBuilder {
         &self.app_version
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn set_resolution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolution_id = input;
         self
     }
@@ -122,10 +115,7 @@ impl DescribeAppVersionResourcesResolutionStatusOutputBuilder {
         self
     }
     /// <p>The status of the action.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceResolutionStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceResolutionStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -134,18 +124,12 @@ impl DescribeAppVersionResourcesResolutionStatusOutputBuilder {
         &self.status
     }
     /// <p>The returned error message for the request.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The returned error message for the request.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -163,18 +147,13 @@ impl DescribeAppVersionResourcesResolutionStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput).
-    pub fn build(self) -> crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput{
+    pub fn build(self) -> crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput {
         crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput {
-            app_arn: self.app_arn
-            ,
-            app_version: self.app_version
-            ,
-            resolution_id: self.resolution_id
-            ,
-            status: self.status
-            ,
-            error_message: self.error_message
-            ,
+            app_arn: self.app_arn,
+            app_version: self.app_version,
+            resolution_id: self.resolution_id,
+            status: self.status,
+            error_message: self.error_message,
             _request_id: self._request_id,
         }
     }

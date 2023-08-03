@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateUserProfileOutput`](crate::operation::create_user_profile::CreateUserProfileOutput) with field(s):
     ///   - [`iam_user_arn(Option<String>)`](crate::operation::create_user_profile::CreateUserProfileOutput::iam_user_arn): <p>The user's IAM ARN.</p>
     /// - On failure, responds with [`SdkError<CreateUserProfileError>`](crate::operation::create_user_profile::CreateUserProfileError)
-    pub fn create_user_profile(
-        &self,
-    ) -> crate::operation::create_user_profile::builders::CreateUserProfileFluentBuilder {
-        crate::operation::create_user_profile::builders::CreateUserProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_user_profile(&self) -> crate::operation::create_user_profile::builders::CreateUserProfileFluentBuilder {
+        crate::operation::create_user_profile::builders::CreateUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

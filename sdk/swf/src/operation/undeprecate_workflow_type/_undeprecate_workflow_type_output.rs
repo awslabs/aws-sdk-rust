@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UndeprecateWorkflowTypeOutput {
 }
 impl UndeprecateWorkflowTypeOutput {
     /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeOutput`](crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeOutputBuilder {
         crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UndeprecateWorkflowTypeOutput`](crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UndeprecateWorkflowTypeOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UndeprecateWorkflowTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UndeprecateWorkflowTypeOutput`](crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput {
+    pub fn build(self) -> crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput {
         crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput {
             _request_id: self._request_id,
         }

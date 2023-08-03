@@ -23,9 +23,7 @@ impl MemberAccount {
 
 /// A builder for [`MemberAccount`](crate::types::MemberAccount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberAccountBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl MemberAccountBuilder {
     }
     /// Consumes the builder and constructs a [`MemberAccount`](crate::types::MemberAccount).
     pub fn build(self) -> crate::types::MemberAccount {
-        crate::types::MemberAccount {
-            account_id: self.account_id,
-        }
+        crate::types::MemberAccount { account_id: self.account_id }
     }
 }

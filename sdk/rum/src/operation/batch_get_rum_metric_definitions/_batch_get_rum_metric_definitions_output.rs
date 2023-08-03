@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for BatchGetRumMetricDefinitionsOutput {
 }
 impl BatchGetRumMetricDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetRumMetricDefinitionsOutput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput).
-    pub fn builder() -> crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsOutputBuilder {
         crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetRumMetricDefinitionsOutput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetRumMetricDefinitionsOutputBuilder {
-    pub(crate) metric_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
+    pub(crate) metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl BatchGetRumMetricDefinitionsOutputBuilder {
         self
     }
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
-    pub fn set_metric_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
-    ) -> Self {
+    pub fn set_metric_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>) -> Self {
         self.metric_definitions = input;
         self
     }
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
-    pub fn get_metric_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
+    pub fn get_metric_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
         &self.metric_definitions
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -94,10 +86,7 @@ impl BatchGetRumMetricDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetRumMetricDefinitionsOutput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput
-    {
+    pub fn build(self) -> crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput {
         crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput {
             metric_definitions: self.metric_definitions,
             next_token: self.next_token,

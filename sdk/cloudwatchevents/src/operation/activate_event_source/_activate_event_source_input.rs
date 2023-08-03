@@ -15,18 +15,14 @@ impl ActivateEventSourceInput {
 }
 impl ActivateEventSourceInput {
     /// Creates a new builder-style object to manufacture [`ActivateEventSourceInput`](crate::operation::activate_event_source::ActivateEventSourceInput).
-    pub fn builder(
-    ) -> crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder {
-        crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder {
+        crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateEventSourceInput`](crate::operation::activate_event_source::ActivateEventSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateEventSourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl ActivateEventSourceInputBuilder {
     /// Consumes the builder and constructs a [`ActivateEventSourceInput`](crate::operation::activate_event_source::ActivateEventSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::activate_event_source::ActivateEventSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::activate_event_source::ActivateEventSourceInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::activate_event_source::ActivateEventSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::activate_event_source::ActivateEventSourceInput { name: self.name })
     }
 }

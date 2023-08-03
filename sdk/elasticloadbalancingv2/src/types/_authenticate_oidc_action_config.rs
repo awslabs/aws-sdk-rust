@@ -34,9 +34,7 @@ pub struct AuthenticateOidcActionConfig {
     pub session_timeout: ::std::option::Option<i64>,
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     #[doc(hidden)]
-    pub authentication_request_extra_params: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub authentication_request_extra_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
     /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
@@ -44,8 +42,7 @@ pub struct AuthenticateOidcActionConfig {
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub on_unauthenticated_request:
-        ::std::option::Option<crate::types::AuthenticateOidcActionConditionalBehaviorEnum>,
+    pub on_unauthenticated_request: ::std::option::Option<crate::types::AuthenticateOidcActionConditionalBehaviorEnum>,
     /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
     #[doc(hidden)]
     pub use_existing_client_secret: ::std::option::Option<bool>,
@@ -91,9 +88,7 @@ impl AuthenticateOidcActionConfig {
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn authentication_request_extra_params(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.authentication_request_extra_params.as_ref()
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
@@ -102,9 +97,7 @@ impl AuthenticateOidcActionConfig {
     /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
-    pub fn on_unauthenticated_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticateOidcActionConditionalBehaviorEnum> {
+    pub fn on_unauthenticated_request(&self) -> ::std::option::Option<&crate::types::AuthenticateOidcActionConditionalBehaviorEnum> {
         self.on_unauthenticated_request.as_ref()
     }
     /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
@@ -121,9 +114,7 @@ impl AuthenticateOidcActionConfig {
 
 /// A builder for [`AuthenticateOidcActionConfig`](crate::types::AuthenticateOidcActionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthenticateOidcActionConfigBuilder {
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_endpoint: ::std::option::Option<::std::string::String>,
@@ -134,11 +125,8 @@ pub struct AuthenticateOidcActionConfigBuilder {
     pub(crate) session_cookie_name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
     pub(crate) session_timeout: ::std::option::Option<i64>,
-    pub(crate) authentication_request_extra_params: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) on_unauthenticated_request:
-        ::std::option::Option<crate::types::AuthenticateOidcActionConditionalBehaviorEnum>,
+    pub(crate) authentication_request_extra_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) on_unauthenticated_request: ::std::option::Option<crate::types::AuthenticateOidcActionConditionalBehaviorEnum>,
     pub(crate) use_existing_client_secret: ::std::option::Option<bool>,
 }
 impl AuthenticateOidcActionConfigBuilder {
@@ -157,18 +145,12 @@ impl AuthenticateOidcActionConfigBuilder {
         &self.issuer
     }
     /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
-    pub fn authorization_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
-    pub fn set_authorization_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorization_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_endpoint = input;
         self
     }
@@ -177,18 +159,12 @@ impl AuthenticateOidcActionConfigBuilder {
         &self.authorization_endpoint
     }
     /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
-    pub fn token_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
-    pub fn set_token_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_token_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_endpoint = input;
         self
     }
@@ -197,18 +173,12 @@ impl AuthenticateOidcActionConfigBuilder {
         &self.token_endpoint
     }
     /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
-    pub fn user_info_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_info_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_info_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
-    pub fn set_user_info_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_info_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_info_endpoint = input;
         self
     }
@@ -231,18 +201,12 @@ impl AuthenticateOidcActionConfigBuilder {
         &self.client_id
     }
     /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.</p>
-    pub fn client_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.</p>
-    pub fn set_client_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_secret = input;
         self
     }
@@ -251,18 +215,12 @@ impl AuthenticateOidcActionConfigBuilder {
         &self.client_secret
     }
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
-    pub fn session_cookie_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_cookie_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_cookie_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
-    pub fn set_session_cookie_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_cookie_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_cookie_name = input;
         self
     }
@@ -319,9 +277,7 @@ impl AuthenticateOidcActionConfigBuilder {
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn set_authentication_request_extra_params(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.authentication_request_extra_params = input;
         self
@@ -329,9 +285,7 @@ impl AuthenticateOidcActionConfigBuilder {
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn get_authentication_request_extra_params(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.authentication_request_extra_params
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
@@ -340,10 +294,7 @@ impl AuthenticateOidcActionConfigBuilder {
     /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
-    pub fn on_unauthenticated_request(
-        mut self,
-        input: crate::types::AuthenticateOidcActionConditionalBehaviorEnum,
-    ) -> Self {
+    pub fn on_unauthenticated_request(mut self, input: crate::types::AuthenticateOidcActionConditionalBehaviorEnum) -> Self {
         self.on_unauthenticated_request = ::std::option::Option::Some(input);
         self
     }
@@ -366,9 +317,7 @@ impl AuthenticateOidcActionConfigBuilder {
     /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
-    pub fn get_on_unauthenticated_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticateOidcActionConditionalBehaviorEnum> {
+    pub fn get_on_unauthenticated_request(&self) -> &::std::option::Option<crate::types::AuthenticateOidcActionConditionalBehaviorEnum> {
         &self.on_unauthenticated_request
     }
     /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>

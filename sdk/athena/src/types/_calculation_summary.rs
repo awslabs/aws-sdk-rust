@@ -37,9 +37,7 @@ impl CalculationSummary {
 
 /// A builder for [`CalculationSummary`](crate::types::CalculationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculationSummaryBuilder {
     pub(crate) calculation_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct CalculationSummaryBuilder {
 }
 impl CalculationSummaryBuilder {
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn set_calculation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculation_execution_id = input;
         self
     }
@@ -86,10 +78,7 @@ impl CalculationSummaryBuilder {
         self
     }
     /// <p>Contains information about the status of the calculation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CalculationStatus>) -> Self {
         self.status = input;
         self
     }

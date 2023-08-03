@@ -22,17 +22,14 @@ impl DisassociateFleetInput {
 }
 impl DisassociateFleetInput {
     /// Creates a new builder-style object to manufacture [`DisassociateFleetInput`](crate::operation::disassociate_fleet::DisassociateFleetInput).
-    pub fn builder() -> crate::operation::disassociate_fleet::builders::DisassociateFleetInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_fleet::builders::DisassociateFleetInputBuilder {
         crate::operation::disassociate_fleet::builders::DisassociateFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateFleetInput`](crate::operation::disassociate_fleet::DisassociateFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateFleetInputBuilder {
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DisassociateFleetInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFleetInput`](crate::operation::disassociate_fleet::DisassociateFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_fleet::DisassociateFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_fleet::DisassociateFleetInput {
-                fleet_name: self.fleet_name,
-                stack_name: self.stack_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_fleet::DisassociateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disassociate_fleet::DisassociateFleetInput {
+            fleet_name: self.fleet_name,
+            stack_name: self.stack_name,
+        })
     }
 }

@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyVpcEndpointOutput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<ModifyVpcEndpointError>`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointError)
-    pub fn modify_vpc_endpoint(
-        &self,
-    ) -> crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointFluentBuilder {
-        crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_vpc_endpoint(&self) -> crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointFluentBuilder {
+        crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointFluentBuilder::new(self.handle.clone())
     }
 }

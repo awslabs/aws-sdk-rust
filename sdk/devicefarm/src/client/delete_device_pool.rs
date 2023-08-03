@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
     /// - On success, responds with [`DeleteDevicePoolOutput`](crate::operation::delete_device_pool::DeleteDevicePoolOutput)
     /// - On failure, responds with [`SdkError<DeleteDevicePoolError>`](crate::operation::delete_device_pool::DeleteDevicePoolError)
-    pub fn delete_device_pool(
-        &self,
-    ) -> crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder {
-        crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_device_pool(&self) -> crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder {
+        crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder::new(self.handle.clone())
     }
 }

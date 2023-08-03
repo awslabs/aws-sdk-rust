@@ -29,16 +29,14 @@ impl DescribeOrganizationConfigurationInput {
 }
 impl DescribeOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,16 +86,18 @@ impl DescribeOrganizationConfigurationInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput {
-                detector_id: self.detector_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                detector_id: self.detector_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

@@ -92,26 +92,20 @@ impl CreateCustomLogSourceInput {
         self.event_classes.as_deref()
     }
     /// <p>The configuration for the third-party custom source.</p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomLogSourceConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::CustomLogSourceConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl CreateCustomLogSourceInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomLogSourceInput`](crate::operation::create_custom_log_source::CreateCustomLogSourceInput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder {
         crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomLogSourceInput`](crate::operation::create_custom_log_source::CreateCustomLogSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomLogSourceInputBuilder {
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,
@@ -134,18 +128,12 @@ impl CreateCustomLogSourceInputBuilder {
         &self.source_name
     }
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_version = input;
         self
     }
@@ -189,10 +177,7 @@ impl CreateCustomLogSourceInputBuilder {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn event_classes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_classes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_classes.unwrap_or_default();
         v.push(input.into());
         self.event_classes = ::std::option::Option::Some(v);
@@ -230,10 +215,7 @@ impl CreateCustomLogSourceInputBuilder {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn set_event_classes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_classes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_classes = input;
         self
     }
@@ -269,9 +251,7 @@ impl CreateCustomLogSourceInputBuilder {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn get_event_classes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_classes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_classes
     }
     /// <p>The configuration for the third-party custom source.</p>
@@ -280,33 +260,24 @@ impl CreateCustomLogSourceInputBuilder {
         self
     }
     /// <p>The configuration for the third-party custom source.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLogSourceConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CustomLogSourceConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The configuration for the third-party custom source.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLogSourceConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CustomLogSourceConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`CreateCustomLogSourceInput`](crate::operation::create_custom_log_source::CreateCustomLogSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_log_source::CreateCustomLogSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_custom_log_source::CreateCustomLogSourceInput {
-                source_name: self.source_name,
-                source_version: self.source_version,
-                event_classes: self.event_classes,
-                configuration: self.configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_custom_log_source::CreateCustomLogSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_custom_log_source::CreateCustomLogSourceInput {
+            source_name: self.source_name,
+            source_version: self.source_version,
+            event_classes: self.event_classes,
+            configuration: self.configuration,
+        })
     }
 }

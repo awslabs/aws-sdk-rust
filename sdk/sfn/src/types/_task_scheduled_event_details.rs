@@ -90,18 +90,12 @@ pub struct TaskScheduledEventDetailsBuilder {
 }
 impl TaskScheduledEventDetailsBuilder {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service name of the resource in a task state.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -185,10 +179,7 @@ impl TaskScheduledEventDetailsBuilder {
         self
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
-    pub fn set_task_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskCredentials>,
-    ) -> Self {
+    pub fn set_task_credentials(mut self, input: ::std::option::Option<crate::types::TaskCredentials>) -> Self {
         self.task_credentials = input;
         self
     }

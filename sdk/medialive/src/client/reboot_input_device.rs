@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`input_device_id(impl ::std::convert::Into<String>)`](crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder::set_input_device_id): The unique ID of the input device to reboot. For example, hd-123456789abcdef.
     /// - On success, responds with [`RebootInputDeviceOutput`](crate::operation::reboot_input_device::RebootInputDeviceOutput)
     /// - On failure, responds with [`SdkError<RebootInputDeviceError>`](crate::operation::reboot_input_device::RebootInputDeviceError)
-    pub fn reboot_input_device(
-        &self,
-    ) -> crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder {
-        crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reboot_input_device(&self) -> crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder {
+        crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder::new(self.handle.clone())
     }
 }

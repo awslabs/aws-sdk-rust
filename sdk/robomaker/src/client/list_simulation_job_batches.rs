@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`simulation_job_batch_summaries(Option<Vec<SimulationJobBatchSummary>>)`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput::simulation_job_batch_summaries): <p>A list of simulation job batch summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     /// - On failure, responds with [`SdkError<ListSimulationJobBatchesError>`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError)
-    pub fn list_simulation_job_batches(&self) -> crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesFluentBuilder{
+    pub fn list_simulation_job_batches(&self) -> crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesFluentBuilder {
         crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesFluentBuilder::new(self.handle.clone())
     }
 }

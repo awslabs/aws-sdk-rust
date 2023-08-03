@@ -63,9 +63,7 @@ impl DefaultPushNotificationTemplate {
 
 /// A builder for [`DefaultPushNotificationTemplate`](crate::types::DefaultPushNotificationTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultPushNotificationTemplateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) body: ::std::option::Option<::std::string::String>,

@@ -56,9 +56,7 @@ impl CalculateRouteMatrixSummary {
 
 /// A builder for [`CalculateRouteMatrixSummary`](crate::types::CalculateRouteMatrixSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculateRouteMatrixSummaryBuilder {
     pub(crate) data_source: ::std::option::Option<::std::string::String>,
     pub(crate) route_count: ::std::option::Option<i32>,
@@ -132,10 +130,7 @@ impl CalculateRouteMatrixSummaryBuilder {
         self
     }
     /// <p>The unit of measurement for route distances.</p>
-    pub fn set_distance_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::DistanceUnit>,
-    ) -> Self {
+    pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.distance_unit = input;
         self
     }

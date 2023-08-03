@@ -23,17 +23,14 @@ impl UpdateBridgeStateInput {
 }
 impl UpdateBridgeStateInput {
     /// Creates a new builder-style object to manufacture [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
-    pub fn builder(
-    ) -> crate::operation::update_bridge_state::builders::UpdateBridgeStateInputBuilder {
+    pub fn builder() -> crate::operation::update_bridge_state::builders::UpdateBridgeStateInputBuilder {
         crate::operation::update_bridge_state::builders::UpdateBridgeStateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBridgeStateInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) desired_state: ::std::option::Option<crate::types::DesiredState>,
@@ -59,10 +56,7 @@ impl UpdateBridgeStateInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DesiredState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::DesiredState>) -> Self {
         self.desired_state = input;
         self
     }
@@ -73,15 +67,10 @@ impl UpdateBridgeStateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bridge_state::UpdateBridgeStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_bridge_state::UpdateBridgeStateInput {
-                bridge_arn: self.bridge_arn,
-                desired_state: self.desired_state,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_bridge_state::UpdateBridgeStateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_bridge_state::UpdateBridgeStateInput {
+            bridge_arn: self.bridge_arn,
+            desired_state: self.desired_state,
+        })
     }
 }

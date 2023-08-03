@@ -27,9 +27,7 @@ impl EndpointNetworkConfiguration {
 
 /// A builder for [`EndpointNetworkConfiguration`](crate::types::EndpointNetworkConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointNetworkConfigurationBuilder {
     pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -50,19 +48,14 @@ impl EndpointNetworkConfigurationBuilder {
     /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
-    pub fn set_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_addresses = input;
         self
     }
     /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
-    pub fn get_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ip_addresses
     }
     /// Consumes the builder and constructs a [`EndpointNetworkConfiguration`](crate::types::EndpointNetworkConfiguration).

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`VerifyOtpMessageOutput`](crate::operation::verify_otp_message::VerifyOtpMessageOutput) with field(s):
     ///   - [`verification_response(Option<VerificationResponse>)`](crate::operation::verify_otp_message::VerifyOtpMessageOutput::verification_response): <p>Verify OTP Message Response.</p>
     /// - On failure, responds with [`SdkError<VerifyOTPMessageError>`](crate::operation::verify_otp_message::VerifyOTPMessageError)
-    pub fn verify_otp_message(
-        &self,
-    ) -> crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder {
-        crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn verify_otp_message(&self) -> crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder {
+        crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder::new(self.handle.clone())
     }
 }

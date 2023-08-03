@@ -30,9 +30,7 @@ impl OperationResultFilter {
 
 /// A builder for [`OperationResultFilter`](crate::types::OperationResultFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperationResultFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OperationResultFilterName>,
     pub(crate) values: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl OperationResultFilterBuilder {
         self
     }
     /// <p>The type of filter to apply.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationResultFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::OperationResultFilterName>) -> Self {
         self.name = input;
         self
     }

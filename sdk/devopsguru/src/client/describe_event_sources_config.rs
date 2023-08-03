@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeEventSourcesConfigOutput`](crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput) with field(s):
     ///   - [`event_sources(Option<EventSourcesConfig>)`](crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput::event_sources): <p>Lists the event sources in the configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeEventSourcesConfigError>`](crate::operation::describe_event_sources_config::DescribeEventSourcesConfigError)
-    pub fn describe_event_sources_config(&self) -> crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigFluentBuilder{
+    pub fn describe_event_sources_config(
+        &self,
+    ) -> crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigFluentBuilder {
         crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_group_membership::DeleteGroupMembershipOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::delete_group_membership::DeleteGroupMembershipOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteGroupMembershipError>`](crate::operation::delete_group_membership::DeleteGroupMembershipError)
-    pub fn delete_group_membership(
-        &self,
-    ) -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder
-    {
-        crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_group_membership(&self) -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder {
+        crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::new(self.handle.clone())
     }
 }

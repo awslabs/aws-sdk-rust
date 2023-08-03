@@ -82,7 +82,7 @@ impl ::std::fmt::Debug for RegisterAppInstanceUserEndpointInput {
 }
 impl RegisterAppInstanceUserEndpointInput {
     /// Creates a new builder-style object to manufacture [`RegisterAppInstanceUserEndpointInput`](crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointInput).
-    pub fn builder() -> crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointInputBuilder{
+    pub fn builder() -> crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointInputBuilder {
         crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointInputBuilder::default()
     }
 }
@@ -101,18 +101,12 @@ pub struct RegisterAppInstanceUserEndpointInputBuilder {
 }
 impl RegisterAppInstanceUserEndpointInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_user_arn = input;
         self
     }
@@ -152,10 +146,7 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
     /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInstanceUserEndpointType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AppInstanceUserEndpointType>) -> Self {
         self.r#type = input;
         self
     }
@@ -189,32 +180,21 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         self
     }
     /// <p>The attributes of an <code>Endpoint</code>.</p>
-    pub fn set_endpoint_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointAttributes>,
-    ) -> Self {
+    pub fn set_endpoint_attributes(mut self, input: ::std::option::Option<crate::types::EndpointAttributes>) -> Self {
         self.endpoint_attributes = input;
         self
     }
     /// <p>The attributes of an <code>Endpoint</code>.</p>
-    pub fn get_endpoint_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndpointAttributes> {
+    pub fn get_endpoint_attributes(&self) -> &::std::option::Option<crate::types::EndpointAttributes> {
         &self.endpoint_attributes
     }
     /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -228,10 +208,7 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         self
     }
     /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
-    pub fn set_allow_messages(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowMessages>,
-    ) -> Self {
+    pub fn set_allow_messages(mut self, input: ::std::option::Option<crate::types::AllowMessages>) -> Self {
         self.allow_messages = input;
         self
     }
@@ -248,21 +225,14 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointInput {
-                app_instance_user_arn: self.app_instance_user_arn
-                ,
-                name: self.name
-                ,
-                r#type: self.r#type
-                ,
-                resource_arn: self.resource_arn
-                ,
-                endpoint_attributes: self.endpoint_attributes
-                ,
-                client_request_token: self.client_request_token
-                ,
-                allow_messages: self.allow_messages
-                ,
-            }
+                app_instance_user_arn: self.app_instance_user_arn,
+                name: self.name,
+                r#type: self.r#type,
+                resource_arn: self.resource_arn,
+                endpoint_attributes: self.endpoint_attributes,
+                client_request_token: self.client_request_token,
+                allow_messages: self.allow_messages,
+            },
         )
     }
 }

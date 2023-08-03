@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanFluentBuilder::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanFluentBuilder::set_capacity_units): <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     /// - On success, responds with [`UpdateRescoreExecutionPlanOutput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanOutput)
     /// - On failure, responds with [`SdkError<UpdateRescoreExecutionPlanError>`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanError)
-    pub fn update_rescore_execution_plan(&self) -> crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanFluentBuilder{
+    pub fn update_rescore_execution_plan(
+        &self,
+    ) -> crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanFluentBuilder {
         crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanFluentBuilder::new(self.handle.clone())
     }
 }

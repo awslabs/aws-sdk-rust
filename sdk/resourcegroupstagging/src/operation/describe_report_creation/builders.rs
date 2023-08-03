@@ -38,10 +38,7 @@ impl DescribeReportCreationFluentBuilder {
         }
     }
     /// Access the DescribeReportCreation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_report_creation::builders::DescribeReportCreationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_report_creation::builders::DescribeReportCreationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeReportCreationFluentBuilder {
             crate::operation::describe_report_creation::DescribeReportCreation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_creation::DescribeReportCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_creation::DescribeReportCreationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeReportCreationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeReportCreationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_report_creation::DescribeReportCreationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_creation::DescribeReportCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_creation::DescribeReportCreationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeReportCreationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_report_creation::DescribeReportCreationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_creation::DescribeReportCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_creation::DescribeReportCreationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DescribeReportCreationFluentBuilder {
             crate::operation::describe_report_creation::DescribeReportCreation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_creation::DescribeReportCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_creation::DescribeReportCreationError>,
     > {
         self.customize_middleware().await
     }

@@ -38,10 +38,7 @@ impl CreateMitigationActionFluentBuilder {
         }
     }
     /// Access the CreateMitigationAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_mitigation_action::builders::CreateMitigationActionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_mitigation_action::builders::CreateMitigationActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateMitigationActionFluentBuilder {
             crate::operation::create_mitigation_action::CreateMitigationAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mitigation_action::CreateMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_mitigation_action::CreateMitigationActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateMitigationActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateMitigationActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_mitigation_action::CreateMitigationActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mitigation_action::CreateMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_mitigation_action::CreateMitigationActionError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateMitigationActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_mitigation_action::CreateMitigationActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mitigation_action::CreateMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_mitigation_action::CreateMitigationActionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl CreateMitigationActionFluentBuilder {
             crate::operation::create_mitigation_action::CreateMitigationAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mitigation_action::CreateMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_mitigation_action::CreateMitigationActionError>,
     > {
         self.customize_middleware().await
     }
@@ -158,17 +144,12 @@ impl CreateMitigationActionFluentBuilder {
         self
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
-    pub fn set_action_params(
-        mut self,
-        input: ::std::option::Option<crate::types::MitigationActionParams>,
-    ) -> Self {
+    pub fn set_action_params(mut self, input: ::std::option::Option<crate::types::MitigationActionParams>) -> Self {
         self.inner = self.inner.set_action_params(input);
         self
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
-    pub fn get_action_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::MitigationActionParams> {
+    pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
         self.inner.get_action_params()
     }
     /// Appends an item to `tags`.
@@ -181,10 +162,7 @@ impl CreateMitigationActionFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the mitigation action.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

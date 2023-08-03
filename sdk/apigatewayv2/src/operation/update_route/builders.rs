@@ -10,10 +10,7 @@ impl UpdateRouteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_route::UpdateRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route::UpdateRouteError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_route();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateRouteFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_route::UpdateRoute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_route::UpdateRoute, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateRouteFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_route::UpdateRoute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_route::UpdateRoute, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>,
     > {
         self.customize_middleware().await
@@ -145,25 +133,17 @@ impl UpdateRouteFluentBuilder {
     /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
     ///
     /// <p>The authorization scopes supported by this route.</p>
-    pub fn authorization_scopes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorization_scopes(input.into());
         self
     }
     /// <p>The authorization scopes supported by this route.</p>
-    pub fn set_authorization_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_authorization_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_authorization_scopes(input);
         self
     }
     /// <p>The authorization scopes supported by this route.</p>
-    pub fn get_authorization_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorization_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_authorization_scopes()
     }
     /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
@@ -172,32 +152,21 @@ impl UpdateRouteFluentBuilder {
         self
     }
     /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
-    pub fn set_authorization_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizationType>,
-    ) -> Self {
+    pub fn set_authorization_type(mut self, input: ::std::option::Option<crate::types::AuthorizationType>) -> Self {
         self.inner = self.inner.set_authorization_type(input);
         self
     }
     /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
-    pub fn get_authorization_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthorizationType> {
+    pub fn get_authorization_type(&self) -> &::std::option::Option<crate::types::AuthorizationType> {
         self.inner.get_authorization_type()
     }
     /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-    pub fn authorizer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorizer_id(input.into());
         self
     }
     /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-    pub fn set_authorizer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorizer_id(input);
         self
     }
@@ -206,18 +175,12 @@ impl UpdateRouteFluentBuilder {
         self.inner.get_authorizer_id()
     }
     /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
-    pub fn model_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_selection_expression(input.into());
         self
     }
     /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
-    pub fn set_model_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_selection_expression(input);
         self
     }
@@ -226,18 +189,12 @@ impl UpdateRouteFluentBuilder {
         self.inner.get_model_selection_expression()
     }
     /// <p>The operation name for the route.</p>
-    pub fn operation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_name(input.into());
         self
     }
     /// <p>The operation name for the route.</p>
-    pub fn set_operation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_name(input);
         self
     }
@@ -261,19 +218,13 @@ impl UpdateRouteFluentBuilder {
     /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
     pub fn set_request_models(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_request_models(input);
         self
     }
     /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
-    pub fn get_request_models(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_models(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_models()
     }
     /// Adds a key-value pair to `RequestParameters`.
@@ -281,20 +232,14 @@ impl UpdateRouteFluentBuilder {
     /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
     ///
     /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
-    pub fn request_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ParameterConstraints,
-    ) -> Self {
+    pub fn request_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ParameterConstraints) -> Self {
         self.inner = self.inner.request_parameters(k.into(), v);
         self
     }
     /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
     pub fn set_request_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>>,
     ) -> Self {
         self.inner = self.inner.set_request_parameters(input);
         self
@@ -302,9 +247,7 @@ impl UpdateRouteFluentBuilder {
     /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
     pub fn get_request_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>> {
         self.inner.get_request_parameters()
     }
     /// <p>The route ID.</p>
@@ -336,25 +279,17 @@ impl UpdateRouteFluentBuilder {
         self.inner.get_route_key()
     }
     /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
-    pub fn route_response_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_response_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_response_selection_expression(input.into());
         self
     }
     /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
-    pub fn set_route_response_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_response_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_response_selection_expression(input);
         self
     }
     /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
-    pub fn get_route_response_selection_expression(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_route_response_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_route_response_selection_expression()
     }
     /// <p>The target for the route.</p>

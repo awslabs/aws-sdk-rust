@@ -10,10 +10,7 @@ impl GetLinksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_links::GetLinksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_links::GetLinksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_links::GetLinksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_links();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetLinksFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_links::GetLinks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_links::GetLinks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_links::GetLinksError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl GetLinksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl GetLinksFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_links::GetLinks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_links::GetLinks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_links::GetLinksError>,
     > {
         self.customize_middleware().await
@@ -120,18 +108,12 @@ impl GetLinksFluentBuilder {
         crate::operation::get_links::paginator::GetLinksPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -149,10 +131,7 @@ impl GetLinksFluentBuilder {
         self
     }
     /// <p>One or more link IDs. The maximum is 10.</p>
-    pub fn set_link_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_link_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_link_ids(input);
         self
     }

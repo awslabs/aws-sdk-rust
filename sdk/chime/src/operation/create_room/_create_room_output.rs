@@ -28,9 +28,7 @@ impl CreateRoomOutput {
 
 /// A builder for [`CreateRoomOutput`](crate::operation::create_room::CreateRoomOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoomOutputBuilder {
     pub(crate) room: ::std::option::Option<crate::types::Room>,
     _request_id: Option<String>,

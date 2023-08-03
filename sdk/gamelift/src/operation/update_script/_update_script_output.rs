@@ -28,9 +28,7 @@ impl UpdateScriptOutput {
 
 /// A builder for [`UpdateScriptOutput`](crate::operation::update_script::UpdateScriptOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateScriptOutputBuilder {
     pub(crate) script: ::std::option::Option<crate::types::Script>,
     _request_id: Option<String>,

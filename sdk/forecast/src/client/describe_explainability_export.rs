@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_explainability_export::DescribeExplainabilityExportOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
     ///   - [`format(Option<String>)`](crate::operation::describe_explainability_export::DescribeExplainabilityExportOutput::format): <p>The format of the exported data, CSV or PARQUET.</p>
     /// - On failure, responds with [`SdkError<DescribeExplainabilityExportError>`](crate::operation::describe_explainability_export::DescribeExplainabilityExportError)
-    pub fn describe_explainability_export(&self) -> crate::operation::describe_explainability_export::builders::DescribeExplainabilityExportFluentBuilder{
+    pub fn describe_explainability_export(
+        &self,
+    ) -> crate::operation::describe_explainability_export::builders::DescribeExplainabilityExportFluentBuilder {
         crate::operation::describe_explainability_export::builders::DescribeExplainabilityExportFluentBuilder::new(self.handle.clone())
     }
 }

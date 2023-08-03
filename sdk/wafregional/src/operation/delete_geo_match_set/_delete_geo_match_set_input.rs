@@ -22,35 +22,26 @@ impl DeleteGeoMatchSetInput {
 }
 impl DeleteGeoMatchSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteGeoMatchSetInput`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetInputBuilder {
+    pub fn builder() -> crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetInputBuilder {
         crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGeoMatchSetInput`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGeoMatchSetInputBuilder {
     pub(crate) geo_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGeoMatchSetInputBuilder {
     /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub fn geo_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn geo_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geo_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub fn set_geo_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_geo_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.geo_match_set_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteGeoMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGeoMatchSetInput`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput {
-                geo_match_set_id: self.geo_match_set_id,
-                change_token: self.change_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput {
+            geo_match_set_id: self.geo_match_set_id,
+            change_token: self.change_token,
+        })
     }
 }

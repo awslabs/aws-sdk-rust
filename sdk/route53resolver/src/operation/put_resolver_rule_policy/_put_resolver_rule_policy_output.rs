@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for PutResolverRulePolicyOutput {
 }
 impl PutResolverRulePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResolverRulePolicyOutput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyOutputBuilder {
         crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutResolverRulePolicyOutput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResolverRulePolicyOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,

@@ -37,9 +37,7 @@ impl UseCase {
 
 /// A builder for [`UseCase`](crate::types::UseCase).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UseCaseBuilder {
     pub(crate) use_case_id: ::std::option::Option<::std::string::String>,
     pub(crate) use_case_arn: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl UseCaseBuilder {
         self
     }
     /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
-    pub fn set_use_case_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UseCaseType>,
-    ) -> Self {
+    pub fn set_use_case_type(mut self, input: ::std::option::Option<crate::types::UseCaseType>) -> Self {
         self.use_case_type = input;
         self
     }

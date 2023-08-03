@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeStandardsControlsOutput {
 }
 impl DescribeStandardsControlsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStandardsControlsOutput`](crate::operation::describe_standards_controls::DescribeStandardsControlsOutput).
-    pub fn builder() -> crate::operation::describe_standards_controls::builders::DescribeStandardsControlsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_standards_controls::builders::DescribeStandardsControlsOutputBuilder {
         crate::operation::describe_standards_controls::builders::DescribeStandardsControlsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStandardsControlsOutput`](crate::operation::describe_standards_controls::DescribeStandardsControlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStandardsControlsOutputBuilder {
     pub(crate) controls: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControl>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeStandardsControlsOutputBuilder {
         self
     }
     /// <p>A list of security standards controls.</p>
-    pub fn set_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControl>>,
-    ) -> Self {
+    pub fn set_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControl>>) -> Self {
         self.controls = input;
         self
     }
     /// <p>A list of security standards controls.</p>
-    pub fn get_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControl>> {
+    pub fn get_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControl>> {
         &self.controls
     }
     /// <p>The pagination token to use to request the next page of results.</p>
@@ -93,9 +86,7 @@ impl DescribeStandardsControlsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStandardsControlsOutput`](crate::operation::describe_standards_controls::DescribeStandardsControlsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_standards_controls::DescribeStandardsControlsOutput {
+    pub fn build(self) -> crate::operation::describe_standards_controls::DescribeStandardsControlsOutput {
         crate::operation::describe_standards_controls::DescribeStandardsControlsOutput {
             controls: self.controls,
             next_token: self.next_token,

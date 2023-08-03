@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for EnableSharingWithAwsOrganizationOutpu
 }
 impl EnableSharingWithAwsOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`EnableSharingWithAwsOrganizationOutput`](crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput).
-    pub fn builder() -> crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder {
         crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableSharingWithAwsOrganizationOutput`](crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableSharingWithAwsOrganizationOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl EnableSharingWithAwsOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableSharingWithAwsOrganizationOutput`](crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput).
-    pub fn build(self) -> crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput{
+    pub fn build(self) -> crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput {
         crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput {
-            return_value: self.return_value
-            ,
+            return_value: self.return_value,
             _request_id: self._request_id,
         }
     }

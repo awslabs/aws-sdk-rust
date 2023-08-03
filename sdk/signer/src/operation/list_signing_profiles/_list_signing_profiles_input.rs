@@ -43,18 +43,14 @@ impl ListSigningProfilesInput {
 }
 impl ListSigningProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListSigningProfilesInput`](crate::operation::list_signing_profiles::ListSigningProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder {
-        crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder {
+        crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSigningProfilesInput`](crate::operation::list_signing_profiles::ListSigningProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSigningProfilesInputBuilder {
     pub(crate) include_canceled: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -131,34 +127,25 @@ impl ListSigningProfilesInputBuilder {
         self
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn set_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>>,
-    ) -> Self {
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>>) -> Self {
         self.statuses = input;
         self
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn get_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>> {
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>> {
         &self.statuses
     }
     /// Consumes the builder and constructs a [`ListSigningProfilesInput`](crate::operation::list_signing_profiles::ListSigningProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_signing_profiles::ListSigningProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_signing_profiles::ListSigningProfilesInput {
-                include_canceled: self.include_canceled,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                platform_id: self.platform_id,
-                statuses: self.statuses,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_signing_profiles::ListSigningProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_signing_profiles::ListSigningProfilesInput {
+            include_canceled: self.include_canceled,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            platform_id: self.platform_id,
+            statuses: self.statuses,
+        })
     }
 }

@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`ImportStacksToStackSetOutput`](crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput::operation_id): <p>The unique identifier for the stack set operation.</p>
     /// - On failure, responds with [`SdkError<ImportStacksToStackSetError>`](crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError)
-    pub fn import_stacks_to_stack_set(
-        &self,
-    ) -> crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetFluentBuilder
-    {
+    pub fn import_stacks_to_stack_set(&self) -> crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetFluentBuilder {
         crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetFluentBuilder::new(self.handle.clone())
     }
 }

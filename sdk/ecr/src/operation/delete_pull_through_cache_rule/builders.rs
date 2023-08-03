@@ -26,7 +26,7 @@ impl DeletePullThroughCacheRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePullThroughCacheRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder,
+    inner: crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder,
 }
 impl DeletePullThroughCacheRuleFluentBuilder {
     /// Creates a new `DeletePullThroughCacheRule`.
@@ -37,7 +37,7 @@ impl DeletePullThroughCacheRuleFluentBuilder {
         }
     }
     /// Access the DeletePullThroughCacheRule as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeletePullThroughCacheRuleFluentBuilder {
             crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeletePullThroughCacheRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeletePullThroughCacheRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeletePullThroughCacheRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeletePullThroughCacheRuleFluentBuilder {
             crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
-    pub fn ecr_repository_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ecr_repository_prefix(input.into());
         self
     }
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
-    pub fn set_ecr_repository_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecr_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ecr_repository_prefix(input);
         self
     }

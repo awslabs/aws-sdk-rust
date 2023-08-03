@@ -23,17 +23,14 @@ impl LaunchTemplateIamInstanceProfileSpecification {
 }
 impl LaunchTemplateIamInstanceProfileSpecification {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateIamInstanceProfileSpecification`](crate::types::LaunchTemplateIamInstanceProfileSpecification).
-    pub fn builder() -> crate::types::builders::LaunchTemplateIamInstanceProfileSpecificationBuilder
-    {
+    pub fn builder() -> crate::types::builders::LaunchTemplateIamInstanceProfileSpecificationBuilder {
         crate::types::builders::LaunchTemplateIamInstanceProfileSpecificationBuilder::default()
     }
 }
 
 /// A builder for [`LaunchTemplateIamInstanceProfileSpecification`](crate::types::LaunchTemplateIamInstanceProfileSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateIamInstanceProfileSpecificationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

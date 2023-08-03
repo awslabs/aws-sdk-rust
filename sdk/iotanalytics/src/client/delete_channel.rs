@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`channel_name(impl ::std::convert::Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_channel_name): <p>The name of the channel to delete.</p>
     /// - On success, responds with [`DeleteChannelOutput`](crate::operation::delete_channel::DeleteChannelOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::operation::delete_channel::DeleteChannelError)
-    pub fn delete_channel(
-        &self,
-    ) -> crate::operation::delete_channel::builders::DeleteChannelFluentBuilder {
-        crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_channel(&self) -> crate::operation::delete_channel::builders::DeleteChannelFluentBuilder {
+        crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`effective_time(DateTime)`](crate::operation::revoke_signing_profile::builders::RevokeSigningProfileFluentBuilder::effective_time) / [`set_effective_time(Option<DateTime>)`](crate::operation::revoke_signing_profile::builders::RevokeSigningProfileFluentBuilder::set_effective_time): <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
     /// - On success, responds with [`RevokeSigningProfileOutput`](crate::operation::revoke_signing_profile::RevokeSigningProfileOutput)
     /// - On failure, responds with [`SdkError<RevokeSigningProfileError>`](crate::operation::revoke_signing_profile::RevokeSigningProfileError)
-    pub fn revoke_signing_profile(
-        &self,
-    ) -> crate::operation::revoke_signing_profile::builders::RevokeSigningProfileFluentBuilder {
-        crate::operation::revoke_signing_profile::builders::RevokeSigningProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn revoke_signing_profile(&self) -> crate::operation::revoke_signing_profile::builders::RevokeSigningProfileFluentBuilder {
+        crate::operation::revoke_signing_profile::builders::RevokeSigningProfileFluentBuilder::new(self.handle.clone())
     }
 }

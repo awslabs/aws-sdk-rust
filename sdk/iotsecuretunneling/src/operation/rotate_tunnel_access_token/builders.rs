@@ -29,8 +29,7 @@ impl RotateTunnelAccessTokenInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RotateTunnelAccessTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenInputBuilder,
+    inner: crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenInputBuilder,
 }
 impl RotateTunnelAccessTokenFluentBuilder {
     /// Creates a new `RotateTunnelAccessToken`.
@@ -41,10 +40,7 @@ impl RotateTunnelAccessTokenFluentBuilder {
         }
     }
     /// Access the RotateTunnelAccessToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl RotateTunnelAccessTokenFluentBuilder {
             crate::operation::rotate_tunnel_access_token::RotateTunnelAccessToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl RotateTunnelAccessTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl RotateTunnelAccessTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl RotateTunnelAccessTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +108,7 @@ impl RotateTunnelAccessTokenFluentBuilder {
             crate::operation::rotate_tunnel_access_token::RotateTunnelAccessToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +132,7 @@ impl RotateTunnelAccessTokenFluentBuilder {
         self
     }
     /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
-    pub fn set_client_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientMode>,
-    ) -> Self {
+    pub fn set_client_mode(mut self, input: ::std::option::Option<crate::types::ClientMode>) -> Self {
         self.inner = self.inner.set_client_mode(input);
         self
     }
@@ -164,17 +146,12 @@ impl RotateTunnelAccessTokenFluentBuilder {
         self
     }
     /// <p>The destination configuration.</p>
-    pub fn set_destination_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfig>,
-    ) -> Self {
+    pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self
     }
     /// <p>The destination configuration.</p>
-    pub fn get_destination_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+    pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         self.inner.get_destination_config()
     }
 }

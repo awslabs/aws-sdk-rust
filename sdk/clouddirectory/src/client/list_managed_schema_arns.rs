@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`schema_arns(Option<Vec<String>>)`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput::schema_arns): <p>The ARNs for all AWS managed schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListManagedSchemaArnsError>`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError)
-    pub fn list_managed_schema_arns(
-        &self,
-    ) -> crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder
-    {
+    pub fn list_managed_schema_arns(&self) -> crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder {
         crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -71,8 +71,7 @@ pub struct Image {
     pub source_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The infrastructure that Image Builder used to create this image.</p>
     #[doc(hidden)]
-    pub infrastructure_configuration:
-        ::std::option::Option<crate::types::InfrastructureConfiguration>,
+    pub infrastructure_configuration: ::std::option::Option<crate::types::InfrastructureConfiguration>,
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
     #[doc(hidden)]
     pub distribution_configuration: ::std::option::Option<crate::types::DistributionConfiguration>,
@@ -87,9 +86,7 @@ pub struct Image {
     pub output_resources: ::std::option::Option<crate::types::OutputResources>,
     /// <p>The tags that apply to this image.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
     /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
@@ -106,8 +103,7 @@ pub struct Image {
     pub scan_state: ::std::option::Option<crate::types::ImageScanState>,
     /// <p>Contains settings for vulnerability scans.</p>
     #[doc(hidden)]
-    pub image_scanning_configuration:
-        ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl Image {
     /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
@@ -188,21 +184,15 @@ impl Image {
         self.source_pipeline_arn.as_deref()
     }
     /// <p>The infrastructure that Image Builder used to create this image.</p>
-    pub fn infrastructure_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InfrastructureConfiguration> {
+    pub fn infrastructure_configuration(&self) -> ::std::option::Option<&crate::types::InfrastructureConfiguration> {
         self.infrastructure_configuration.as_ref()
     }
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
-    pub fn distribution_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DistributionConfiguration> {
+    pub fn distribution_configuration(&self) -> ::std::option::Option<&crate::types::DistributionConfiguration> {
         self.distribution_configuration.as_ref()
     }
     /// <p>The image tests that ran when that Image Builder created this image.</p>
-    pub fn image_tests_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageTestsConfiguration> {
+    pub fn image_tests_configuration(&self) -> ::std::option::Option<&crate::types::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
     /// <p>The date on which Image Builder created this image.</p>
@@ -214,11 +204,7 @@ impl Image {
         self.output_resources.as_ref()
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
@@ -239,9 +225,7 @@ impl Image {
         self.scan_state.as_ref()
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn image_scanning_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
+    pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
 }
@@ -254,9 +238,7 @@ impl Image {
 
 /// A builder for [`Image`](crate::types::Image).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ImageType>,
@@ -270,22 +252,16 @@ pub struct ImageBuilder {
     pub(crate) container_recipe: ::std::option::Option<crate::types::ContainerRecipe>,
     pub(crate) source_pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_pipeline_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) infrastructure_configuration:
-        ::std::option::Option<crate::types::InfrastructureConfiguration>,
-    pub(crate) distribution_configuration:
-        ::std::option::Option<crate::types::DistributionConfiguration>,
-    pub(crate) image_tests_configuration:
-        ::std::option::Option<crate::types::ImageTestsConfiguration>,
+    pub(crate) infrastructure_configuration: ::std::option::Option<crate::types::InfrastructureConfiguration>,
+    pub(crate) distribution_configuration: ::std::option::Option<crate::types::DistributionConfiguration>,
+    pub(crate) image_tests_configuration: ::std::option::Option<crate::types::ImageTestsConfiguration>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
     pub(crate) output_resources: ::std::option::Option<crate::types::OutputResources>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) build_type: ::std::option::Option<crate::types::BuildType>,
     pub(crate) image_source: ::std::option::Option<crate::types::ImageSource>,
     pub(crate) scan_state: ::std::option::Option<crate::types::ImageScanState>,
-    pub(crate) image_scanning_configuration:
-        ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl ImageBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
@@ -451,10 +427,7 @@ impl ImageBuilder {
         self
     }
     /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
-    pub fn set_enhanced_image_metadata_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enhanced_image_metadata_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_image_metadata_enabled = input;
         self
     }
@@ -496,10 +469,7 @@ impl ImageBuilder {
         self
     }
     /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
-    pub fn set_image_recipe(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageRecipe>,
-    ) -> Self {
+    pub fn set_image_recipe(mut self, input: ::std::option::Option<crate::types::ImageRecipe>) -> Self {
         self.image_recipe = input;
         self
     }
@@ -513,10 +483,7 @@ impl ImageBuilder {
         self
     }
     /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
-    pub fn set_container_recipe(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerRecipe>,
-    ) -> Self {
+    pub fn set_container_recipe(mut self, input: ::std::option::Option<crate::types::ContainerRecipe>) -> Self {
         self.container_recipe = input;
         self
     }
@@ -525,18 +492,12 @@ impl ImageBuilder {
         &self.container_recipe
     }
     /// <p>The name of the image pipeline that created this image.</p>
-    pub fn source_pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the image pipeline that created this image.</p>
-    pub fn set_source_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_pipeline_name = input;
         self
     }
@@ -545,18 +506,12 @@ impl ImageBuilder {
         &self.source_pipeline_name
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
-    pub fn source_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
-    pub fn set_source_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_pipeline_arn = input;
         self
     }
@@ -565,69 +520,45 @@ impl ImageBuilder {
         &self.source_pipeline_arn
     }
     /// <p>The infrastructure that Image Builder used to create this image.</p>
-    pub fn infrastructure_configuration(
-        mut self,
-        input: crate::types::InfrastructureConfiguration,
-    ) -> Self {
+    pub fn infrastructure_configuration(mut self, input: crate::types::InfrastructureConfiguration) -> Self {
         self.infrastructure_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The infrastructure that Image Builder used to create this image.</p>
-    pub fn set_infrastructure_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InfrastructureConfiguration>,
-    ) -> Self {
+    pub fn set_infrastructure_configuration(mut self, input: ::std::option::Option<crate::types::InfrastructureConfiguration>) -> Self {
         self.infrastructure_configuration = input;
         self
     }
     /// <p>The infrastructure that Image Builder used to create this image.</p>
-    pub fn get_infrastructure_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InfrastructureConfiguration> {
+    pub fn get_infrastructure_configuration(&self) -> &::std::option::Option<crate::types::InfrastructureConfiguration> {
         &self.infrastructure_configuration
     }
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
-    pub fn distribution_configuration(
-        mut self,
-        input: crate::types::DistributionConfiguration,
-    ) -> Self {
+    pub fn distribution_configuration(mut self, input: crate::types::DistributionConfiguration) -> Self {
         self.distribution_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
-    pub fn set_distribution_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionConfiguration>,
-    ) -> Self {
+    pub fn set_distribution_configuration(mut self, input: ::std::option::Option<crate::types::DistributionConfiguration>) -> Self {
         self.distribution_configuration = input;
         self
     }
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
-    pub fn get_distribution_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DistributionConfiguration> {
+    pub fn get_distribution_configuration(&self) -> &::std::option::Option<crate::types::DistributionConfiguration> {
         &self.distribution_configuration
     }
     /// <p>The image tests that ran when that Image Builder created this image.</p>
-    pub fn image_tests_configuration(
-        mut self,
-        input: crate::types::ImageTestsConfiguration,
-    ) -> Self {
+    pub fn image_tests_configuration(mut self, input: crate::types::ImageTestsConfiguration) -> Self {
         self.image_tests_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The image tests that ran when that Image Builder created this image.</p>
-    pub fn set_image_tests_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageTestsConfiguration>,
-    ) -> Self {
+    pub fn set_image_tests_configuration(mut self, input: ::std::option::Option<crate::types::ImageTestsConfiguration>) -> Self {
         self.image_tests_configuration = input;
         self
     }
     /// <p>The image tests that ran when that Image Builder created this image.</p>
-    pub fn get_image_tests_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
+    pub fn get_image_tests_configuration(&self) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
         &self.image_tests_configuration
     }
     /// <p>The date on which Image Builder created this image.</p>
@@ -650,10 +581,7 @@ impl ImageBuilder {
         self
     }
     /// <p>The output resources that Image Builder produces for this image.</p>
-    pub fn set_output_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputResources>,
-    ) -> Self {
+    pub fn set_output_resources(mut self, input: ::std::option::Option<crate::types::OutputResources>) -> Self {
         self.output_resources = input;
         self
     }
@@ -666,32 +594,19 @@ impl ImageBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that apply to this image.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
@@ -729,10 +644,7 @@ impl ImageBuilder {
         self
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn set_image_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageSource>,
-    ) -> Self {
+    pub fn set_image_source(mut self, input: ::std::option::Option<crate::types::ImageSource>) -> Self {
         self.image_source = input;
         self
     }
@@ -746,10 +658,7 @@ impl ImageBuilder {
         self
     }
     /// <p>Contains information about the current state of scans for this image.</p>
-    pub fn set_scan_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanState>,
-    ) -> Self {
+    pub fn set_scan_state(mut self, input: ::std::option::Option<crate::types::ImageScanState>) -> Self {
         self.scan_state = input;
         self
     }
@@ -758,25 +667,17 @@ impl ImageBuilder {
         &self.scan_state
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn image_scanning_configuration(
-        mut self,
-        input: crate::types::ImageScanningConfiguration,
-    ) -> Self {
+    pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn set_image_scanning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    ) -> Self {
+    pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn get_image_scanning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+    pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).

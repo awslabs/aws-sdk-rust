@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`directory_id(impl ::std::convert::Into<String>)`](crate::operation::disable_radius::builders::DisableRadiusFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::disable_radius::builders::DisableRadiusFluentBuilder::set_directory_id): <p>The identifier of the directory for which to disable MFA.</p>
     /// - On success, responds with [`DisableRadiusOutput`](crate::operation::disable_radius::DisableRadiusOutput)
     /// - On failure, responds with [`SdkError<DisableRadiusError>`](crate::operation::disable_radius::DisableRadiusError)
-    pub fn disable_radius(
-        &self,
-    ) -> crate::operation::disable_radius::builders::DisableRadiusFluentBuilder {
-        crate::operation::disable_radius::builders::DisableRadiusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_radius(&self) -> crate::operation::disable_radius::builders::DisableRadiusFluentBuilder {
+        crate::operation::disable_radius::builders::DisableRadiusFluentBuilder::new(self.handle.clone())
     }
 }

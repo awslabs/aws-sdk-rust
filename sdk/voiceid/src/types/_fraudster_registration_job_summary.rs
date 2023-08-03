@@ -39,9 +39,7 @@ impl FraudsterRegistrationJobSummary {
         self.job_id.as_deref()
     }
     /// <p>The current status of the fraudster registration job.</p>
-    pub fn job_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FraudsterRegistrationJobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<&crate::types::FraudsterRegistrationJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
@@ -134,17 +132,12 @@ impl FraudsterRegistrationJobSummaryBuilder {
         self
     }
     /// <p>The current status of the fraudster registration job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>) -> Self {
         self.job_status = input;
         self
     }
     /// <p>The current status of the fraudster registration job.</p>
-    pub fn get_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::FraudsterRegistrationJobStatus> {
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::FraudsterRegistrationJobStatus> {
         &self.job_status
     }
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
@@ -167,10 +160,7 @@ impl FraudsterRegistrationJobSummaryBuilder {
         self
     }
     /// <p>A timestamp of when the fraudster registration job was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -184,10 +174,7 @@ impl FraudsterRegistrationJobSummaryBuilder {
         self
     }
     /// <p>A timestamp of when the fraudster registration job ended.</p>
-    pub fn set_ended_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
@@ -201,10 +188,7 @@ impl FraudsterRegistrationJobSummaryBuilder {
         self
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::FailureDetails>) -> Self {
         self.failure_details = input;
         self
     }
@@ -218,10 +202,7 @@ impl FraudsterRegistrationJobSummaryBuilder {
         self
     }
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
-    pub fn set_job_progress(
-        mut self,
-        input: ::std::option::Option<crate::types::JobProgress>,
-    ) -> Self {
+    pub fn set_job_progress(mut self, input: ::std::option::Option<crate::types::JobProgress>) -> Self {
         self.job_progress = input;
         self
     }

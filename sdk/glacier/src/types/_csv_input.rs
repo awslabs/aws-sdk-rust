@@ -58,9 +58,7 @@ impl CsvInput {
 
 /// A builder for [`CsvInput`](crate::types::CsvInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CsvInputBuilder {
     pub(crate) file_header_info: ::std::option::Option<crate::types::FileHeaderInfo>,
     pub(crate) comments: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl CsvInputBuilder {
         self
     }
     /// <p>Describes the first line of input. Valid values are <code>None</code>, <code>Ignore</code>, and <code>Use</code>.</p>
-    pub fn set_file_header_info(
-        mut self,
-        input: ::std::option::Option<crate::types::FileHeaderInfo>,
-    ) -> Self {
+    pub fn set_file_header_info(mut self, input: ::std::option::Option<crate::types::FileHeaderInfo>) -> Self {
         self.file_header_info = input;
         self
     }
@@ -102,18 +97,12 @@ impl CsvInputBuilder {
         &self.comments
     }
     /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
-    pub fn quote_escape_character(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quote_escape_character(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quote_escape_character = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
-    pub fn set_quote_escape_character(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quote_escape_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quote_escape_character = input;
         self
     }
@@ -122,18 +111,12 @@ impl CsvInputBuilder {
         &self.quote_escape_character
     }
     /// <p>A value used to separate individual records from each other.</p>
-    pub fn record_delimiter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value used to separate individual records from each other.</p>
-    pub fn set_record_delimiter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_delimiter = input;
         self
     }
@@ -142,18 +125,12 @@ impl CsvInputBuilder {
         &self.record_delimiter
     }
     /// <p>A value used to separate individual fields from each other within a record.</p>
-    pub fn field_delimiter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn field_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value used to separate individual fields from each other within a record.</p>
-    pub fn set_field_delimiter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_field_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_delimiter = input;
         self
     }
@@ -162,18 +139,12 @@ impl CsvInputBuilder {
         &self.field_delimiter
     }
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
-    pub fn quote_character(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quote_character(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quote_character = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
-    pub fn set_quote_character(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quote_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quote_character = input;
         self
     }

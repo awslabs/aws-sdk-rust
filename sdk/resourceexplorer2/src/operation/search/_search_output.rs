@@ -49,9 +49,7 @@ impl SearchOutput {
 
 /// A builder for [`SearchOutput`](crate::operation::search::SearchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,10 +70,7 @@ impl SearchOutputBuilder {
         self
     }
     /// <p>The list of structures that describe the resources that match the query.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }

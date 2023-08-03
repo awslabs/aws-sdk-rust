@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`auth_type(Option<AuthType>)`](crate::operation::create_service::CreateServiceOutput::auth_type): <p>The type of IAM policy.</p>
     ///   - [`dns_entry(Option<DnsEntry>)`](crate::operation::create_service::CreateServiceOutput::dns_entry): <p>The public DNS name of the service.</p>
     /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::operation::create_service::CreateServiceError)
-    pub fn create_service(
-        &self,
-    ) -> crate::operation::create_service::builders::CreateServiceFluentBuilder {
-        crate::operation::create_service::builders::CreateServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_service(&self) -> crate::operation::create_service::builders::CreateServiceFluentBuilder {
+        crate::operation::create_service::builders::CreateServiceFluentBuilder::new(self.handle.clone())
     }
 }

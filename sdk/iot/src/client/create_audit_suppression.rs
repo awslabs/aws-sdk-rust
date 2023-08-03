@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`client_request_token(impl ::std::convert::Into<String>)`](crate::operation::create_audit_suppression::builders::CreateAuditSuppressionFluentBuilder::client_request_token) / [`set_client_request_token(Option<String>)`](crate::operation::create_audit_suppression::builders::CreateAuditSuppressionFluentBuilder::set_client_request_token): <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     /// - On success, responds with [`CreateAuditSuppressionOutput`](crate::operation::create_audit_suppression::CreateAuditSuppressionOutput)
     /// - On failure, responds with [`SdkError<CreateAuditSuppressionError>`](crate::operation::create_audit_suppression::CreateAuditSuppressionError)
-    pub fn create_audit_suppression(
-        &self,
-    ) -> crate::operation::create_audit_suppression::builders::CreateAuditSuppressionFluentBuilder
-    {
+    pub fn create_audit_suppression(&self) -> crate::operation::create_audit_suppression::builders::CreateAuditSuppressionFluentBuilder {
         crate::operation::create_audit_suppression::builders::CreateAuditSuppressionFluentBuilder::new(self.handle.clone())
     }
 }

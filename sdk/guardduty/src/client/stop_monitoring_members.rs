@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StopMonitoringMembersOutput`](crate::operation::stop_monitoring_members::StopMonitoringMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::stop_monitoring_members::StopMonitoringMembersOutput::unprocessed_accounts): <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
     /// - On failure, responds with [`SdkError<StopMonitoringMembersError>`](crate::operation::stop_monitoring_members::StopMonitoringMembersError)
-    pub fn stop_monitoring_members(
-        &self,
-    ) -> crate::operation::stop_monitoring_members::builders::StopMonitoringMembersFluentBuilder
-    {
-        crate::operation::stop_monitoring_members::builders::StopMonitoringMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_monitoring_members(&self) -> crate::operation::stop_monitoring_members::builders::StopMonitoringMembersFluentBuilder {
+        crate::operation::stop_monitoring_members::builders::StopMonitoringMembersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,9 +28,7 @@ impl UpdateProfileOutput {
 
 /// A builder for [`UpdateProfileOutput`](crate::operation::update_profile::UpdateProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProfileOutputBuilder {
     pub(crate) profile: ::std::option::Option<crate::types::ProfileDetail>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateProfileOutputBuilder {
         self
     }
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn set_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileDetail>,
-    ) -> Self {
+    pub fn set_profile(mut self, input: ::std::option::Option<crate::types::ProfileDetail>) -> Self {
         self.profile = input;
         self
     }

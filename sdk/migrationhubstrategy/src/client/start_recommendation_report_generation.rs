@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`StartRecommendationReportGenerationOutput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput::id): <p> The ID of the recommendation report generation task. </p>
     /// - On failure, responds with [`SdkError<StartRecommendationReportGenerationError>`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError)
-    pub fn start_recommendation_report_generation(&self) -> crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationFluentBuilder{
+    pub fn start_recommendation_report_generation(
+        &self,
+    ) -> crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationFluentBuilder {
         crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationFluentBuilder::new(self.handle.clone())
     }
 }

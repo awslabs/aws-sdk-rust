@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`snowball_limit(Option<i32>)`](crate::operation::get_snowball_usage::GetSnowballUsageOutput::snowball_limit): <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
     ///   - [`snowballs_in_use(Option<i32>)`](crate::operation::get_snowball_usage::GetSnowballUsageOutput::snowballs_in_use): <p>The number of Snow devices that this account is currently using.</p>
     /// - On failure, responds with [`SdkError<GetSnowballUsageError>`](crate::operation::get_snowball_usage::GetSnowballUsageError)
-    pub fn get_snowball_usage(
-        &self,
-    ) -> crate::operation::get_snowball_usage::builders::GetSnowballUsageFluentBuilder {
-        crate::operation::get_snowball_usage::builders::GetSnowballUsageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_snowball_usage(&self) -> crate::operation::get_snowball_usage::builders::GetSnowballUsageFluentBuilder {
+        crate::operation::get_snowball_usage::builders::GetSnowballUsageFluentBuilder::new(self.handle.clone())
     }
 }

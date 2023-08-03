@@ -53,9 +53,7 @@ pub struct DescribeSecretOutput {
     /// </ul>
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     #[doc(hidden)]
-    pub version_ids_to_stages: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub version_ids_to_stages: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
     #[doc(hidden)]
     pub owning_service: ::std::option::Option<::std::string::String>,
@@ -72,8 +70,7 @@ pub struct DescribeSecretOutput {
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub replication_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
+    pub replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }
 impl DescribeSecretOutput {
@@ -141,9 +138,7 @@ impl DescribeSecretOutput {
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub fn version_ids_to_stages(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.version_ids_to_stages.as_ref()
     }
     /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
@@ -164,9 +159,7 @@ impl DescribeSecretOutput {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
-    pub fn replication_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationStatusType]> {
+    pub fn replication_status(&self) -> ::std::option::Option<&[crate::types::ReplicationStatusType]> {
         self.replication_status.as_deref()
     }
 }
@@ -184,9 +177,7 @@ impl DescribeSecretOutput {
 
 /// A builder for [`DescribeSecretOutput`](crate::operation::describe_secret::DescribeSecretOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecretOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -201,14 +192,12 @@ pub struct DescribeSecretOutputBuilder {
     pub(crate) deleted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_rotation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) version_ids_to_stages: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) version_ids_to_stages:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) owning_service: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
+    pub(crate) replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }
 impl DescribeSecretOutputBuilder {
@@ -286,18 +275,12 @@ impl DescribeSecretOutputBuilder {
         &self.rotation_enabled
     }
     /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
-    pub fn rotation_lambda_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rotation_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
-    pub fn set_rotation_lambda_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rotation_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rotation_lambda_arn = input;
         self
     }
@@ -311,10 +294,7 @@ impl DescribeSecretOutputBuilder {
         self
     }
     /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
-    pub fn set_rotation_rules(
-        mut self,
-        input: ::std::option::Option<crate::types::RotationRulesType>,
-    ) -> Self {
+    pub fn set_rotation_rules(mut self, input: ::std::option::Option<crate::types::RotationRulesType>) -> Self {
         self.rotation_rules = input;
         self
     }
@@ -328,10 +308,7 @@ impl DescribeSecretOutputBuilder {
         self
     }
     /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
-    pub fn set_last_rotated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_rotated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_rotated_date = input;
         self
     }
@@ -345,10 +322,7 @@ impl DescribeSecretOutputBuilder {
         self
     }
     /// <p>The last date and time that this secret was modified in any way.</p>
-    pub fn set_last_changed_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_changed_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_changed_date = input;
         self
     }
@@ -362,10 +336,7 @@ impl DescribeSecretOutputBuilder {
         self
     }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
-    pub fn set_last_accessed_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_accessed_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_accessed_date = input;
         self
     }
@@ -381,10 +352,7 @@ impl DescribeSecretOutputBuilder {
     }
     /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
     /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
-    pub fn set_deleted_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deleted_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deleted_date = input;
         self
     }
@@ -399,10 +367,7 @@ impl DescribeSecretOutputBuilder {
         self
     }
     /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
-    pub fn set_next_rotation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_next_rotation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.next_rotation_date = input;
         self
     }
@@ -422,10 +387,7 @@ impl DescribeSecretOutputBuilder {
         self
     }
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -445,11 +407,7 @@ impl DescribeSecretOutputBuilder {
     /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
     /// </ul>
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
-    pub fn version_ids_to_stages(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn version_ids_to_stages(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.version_ids_to_stages.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.version_ids_to_stages = ::std::option::Option::Some(hash_map);
@@ -465,12 +423,7 @@ impl DescribeSecretOutputBuilder {
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub fn set_version_ids_to_stages(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.version_ids_to_stages = input;
         self
@@ -485,24 +438,16 @@ impl DescribeSecretOutputBuilder {
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub fn get_version_ids_to_stages(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.version_ids_to_stages
     }
     /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
-    pub fn owning_service(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owning_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_service = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
-    pub fn set_owning_service(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owning_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owning_service = input;
         self
     }
@@ -516,10 +461,7 @@ impl DescribeSecretOutputBuilder {
         self
     }
     /// <p>The date the secret was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -528,18 +470,12 @@ impl DescribeSecretOutputBuilder {
         &self.created_date
     }
     /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
-    pub fn primary_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
-    pub fn set_primary_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_region = input;
         self
     }
@@ -569,10 +505,7 @@ impl DescribeSecretOutputBuilder {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
-    pub fn set_replication_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
-    ) -> Self {
+    pub fn set_replication_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>) -> Self {
         self.replication_status = input;
         self
     }
@@ -582,9 +515,7 @@ impl DescribeSecretOutputBuilder {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
-    pub fn get_replication_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
+    pub fn get_replication_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
         &self.replication_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

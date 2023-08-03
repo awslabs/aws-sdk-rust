@@ -33,8 +33,7 @@ impl UpdateRealtimeLogConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRealtimeLogConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigInputBuilder,
+    inner: crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigInputBuilder,
 }
 impl UpdateRealtimeLogConfigFluentBuilder {
     /// Creates a new `UpdateRealtimeLogConfig`.
@@ -45,10 +44,7 @@ impl UpdateRealtimeLogConfigFluentBuilder {
         }
     }
     /// Access the UpdateRealtimeLogConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +56,7 @@ impl UpdateRealtimeLogConfigFluentBuilder {
             crate::operation::update_realtime_log_config::UpdateRealtimeLogConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +66,7 @@ impl UpdateRealtimeLogConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +75,7 @@ impl UpdateRealtimeLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError>,
     > {
         let op = self
             .inner
@@ -109,9 +98,7 @@ impl UpdateRealtimeLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +112,7 @@ impl UpdateRealtimeLogConfigFluentBuilder {
             crate::operation::update_realtime_log_config::UpdateRealtimeLogConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -141,17 +126,12 @@ impl UpdateRealtimeLogConfigFluentBuilder {
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn set_end_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
-    ) -> Self {
+    pub fn set_end_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>) -> Self {
         self.inner = self.inner.set_end_points(input);
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn get_end_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndPoint>> {
+    pub fn get_end_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndPoint>> {
         self.inner.get_end_points()
     }
     /// Appends an item to `Fields`.
@@ -166,10 +146,7 @@ impl UpdateRealtimeLogConfigFluentBuilder {
     }
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }

@@ -8,8 +8,7 @@ pub struct ListMembershipsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of memberships returned from the ListMemberships operation.</p>
     #[doc(hidden)]
-    pub membership_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>>,
+    pub membership_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>>,
     _request_id: Option<String>,
 }
 impl ListMembershipsOutput {
@@ -18,9 +17,7 @@ impl ListMembershipsOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of memberships returned from the ListMemberships operation.</p>
-    pub fn membership_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MembershipSummary]> {
+    pub fn membership_summaries(&self) -> ::std::option::Option<&[crate::types::MembershipSummary]> {
         self.membership_summaries.as_deref()
     }
 }
@@ -38,13 +35,10 @@ impl ListMembershipsOutput {
 
 /// A builder for [`ListMembershipsOutput`](crate::operation::list_memberships::ListMembershipsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMembershipsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) membership_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>>,
+    pub(crate) membership_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>>,
     _request_id: Option<String>,
 }
 impl ListMembershipsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListMembershipsOutputBuilder {
         self
     }
     /// <p>The list of memberships returned from the ListMemberships operation.</p>
-    pub fn set_membership_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>>,
-    ) -> Self {
+    pub fn set_membership_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>>) -> Self {
         self.membership_summaries = input;
         self
     }
     /// <p>The list of memberships returned from the ListMemberships operation.</p>
-    pub fn get_membership_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>> {
+    pub fn get_membership_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>> {
         &self.membership_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

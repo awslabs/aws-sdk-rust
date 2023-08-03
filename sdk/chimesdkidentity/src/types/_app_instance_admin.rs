@@ -37,9 +37,7 @@ impl AppInstanceAdmin {
 
 /// A builder for [`AppInstanceAdmin`](crate::types::AppInstanceAdmin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppInstanceAdminBuilder {
     pub(crate) admin: ::std::option::Option<crate::types::Identity>,
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl AppInstanceAdminBuilder {
         &self.admin
     }
     /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -86,10 +78,7 @@ impl AppInstanceAdminBuilder {
         self
     }
     /// <p>The time at which an administrator was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }

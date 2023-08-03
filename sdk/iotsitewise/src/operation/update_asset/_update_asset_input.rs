@@ -43,9 +43,7 @@ impl UpdateAssetInput {
 
 /// A builder for [`UpdateAssetInput`](crate::operation::update_asset::UpdateAssetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssetInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ impl UpdateAssetInputBuilder {
         &self.client_token
     }
     /// <p>A description for the asset.</p>
-    pub fn asset_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the asset.</p>
-    pub fn set_asset_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_description = input;
         self
     }
@@ -116,12 +108,7 @@ impl UpdateAssetInputBuilder {
         &self.asset_description
     }
     /// Consumes the builder and constructs a [`UpdateAssetInput`](crate::operation::update_asset::UpdateAssetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_asset::UpdateAssetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_asset::UpdateAssetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_asset::UpdateAssetInput {
             asset_id: self.asset_id,
             asset_name: self.asset_name,

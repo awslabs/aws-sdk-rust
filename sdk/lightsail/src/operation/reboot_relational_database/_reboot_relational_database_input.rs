@@ -15,35 +15,25 @@ impl RebootRelationalDatabaseInput {
 }
 impl RebootRelationalDatabaseInput {
     /// Creates a new builder-style object to manufacture [`RebootRelationalDatabaseInput`](crate::operation::reboot_relational_database::RebootRelationalDatabaseInput).
-    pub fn builder(
-    ) -> crate::operation::reboot_relational_database::builders::RebootRelationalDatabaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::reboot_relational_database::builders::RebootRelationalDatabaseInputBuilder {
         crate::operation::reboot_relational_database::builders::RebootRelationalDatabaseInputBuilder::default()
     }
 }
 
 /// A builder for [`RebootRelationalDatabaseInput`](crate::operation::reboot_relational_database::RebootRelationalDatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootRelationalDatabaseInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
 }
 impl RebootRelationalDatabaseInputBuilder {
     /// <p>The name of your database to reboot.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your database to reboot.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl RebootRelationalDatabaseInputBuilder {
         crate::operation::reboot_relational_database::RebootRelationalDatabaseInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::reboot_relational_database::RebootRelationalDatabaseInput {
-                relational_database_name: self.relational_database_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::reboot_relational_database::RebootRelationalDatabaseInput {
+            relational_database_name: self.relational_database_name,
+        })
     }
 }

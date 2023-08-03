@@ -39,13 +39,7 @@
 /// This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AfdSignaling {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AfdSignaling {
             "AUTO" => AfdSignaling::Auto,
             "FIXED" => AfdSignaling::Fixed,
             "NONE" => AfdSignaling::None,
-            other => {
-                AfdSignaling::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AfdSignaling::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

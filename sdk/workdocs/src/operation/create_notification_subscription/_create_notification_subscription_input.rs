@@ -36,16 +36,14 @@ impl CreateNotificationSubscriptionInput {
 }
 impl CreateNotificationSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateNotificationSubscriptionInput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionInput).
-    pub fn builder() -> crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionInputBuilder {
         crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNotificationSubscriptionInput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNotificationSubscriptionInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct CreateNotificationSubscriptionInputBuilder {
 }
 impl CreateNotificationSubscriptionInputBuilder {
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -93,10 +85,7 @@ impl CreateNotificationSubscriptionInputBuilder {
         self
     }
     /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionProtocolType>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::SubscriptionProtocolType>) -> Self {
         self.protocol = input;
         self
     }
@@ -110,10 +99,7 @@ impl CreateNotificationSubscriptionInputBuilder {
         self
     }
     /// <p>The notification type.</p>
-    pub fn set_subscription_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionType>,
-    ) -> Self {
+    pub fn set_subscription_type(mut self, input: ::std::option::Option<crate::types::SubscriptionType>) -> Self {
         self.subscription_type = input;
         self
     }
@@ -128,17 +114,11 @@ impl CreateNotificationSubscriptionInputBuilder {
         crate::operation::create_notification_subscription::CreateNotificationSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_notification_subscription::CreateNotificationSubscriptionInput {
-                organization_id: self.organization_id
-                ,
-                endpoint: self.endpoint
-                ,
-                protocol: self.protocol
-                ,
-                subscription_type: self.subscription_type
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_notification_subscription::CreateNotificationSubscriptionInput {
+            organization_id: self.organization_id,
+            endpoint: self.endpoint,
+            protocol: self.protocol,
+            subscription_type: self.subscription_type,
+        })
     }
 }

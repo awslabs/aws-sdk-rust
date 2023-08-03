@@ -37,9 +37,7 @@ impl GetResourcePoliciesResponseEntry {
 
 /// A builder for [`GetResourcePoliciesResponseEntry`](crate::types::GetResourcePoliciesResponseEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesResponseEntryBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_hash: ::std::option::Option<::std::string::String>,

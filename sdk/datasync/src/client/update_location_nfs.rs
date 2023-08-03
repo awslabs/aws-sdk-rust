@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`mount_options(NfsMountOptions)`](crate::operation::update_location_nfs::builders::UpdateLocationNfsFluentBuilder::mount_options) / [`set_mount_options(Option<NfsMountOptions>)`](crate::operation::update_location_nfs::builders::UpdateLocationNfsFluentBuilder::set_mount_options): <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     /// - On success, responds with [`UpdateLocationNfsOutput`](crate::operation::update_location_nfs::UpdateLocationNfsOutput)
     /// - On failure, responds with [`SdkError<UpdateLocationNfsError>`](crate::operation::update_location_nfs::UpdateLocationNfsError)
-    pub fn update_location_nfs(
-        &self,
-    ) -> crate::operation::update_location_nfs::builders::UpdateLocationNfsFluentBuilder {
-        crate::operation::update_location_nfs::builders::UpdateLocationNfsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_location_nfs(&self) -> crate::operation::update_location_nfs::builders::UpdateLocationNfsFluentBuilder {
+        crate::operation::update_location_nfs::builders::UpdateLocationNfsFluentBuilder::new(self.handle.clone())
     }
 }

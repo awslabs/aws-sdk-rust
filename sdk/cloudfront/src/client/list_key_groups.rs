@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ListKeyGroupsOutput`](crate::operation::list_key_groups::ListKeyGroupsOutput) with field(s):
     ///   - [`key_group_list(Option<KeyGroupList>)`](crate::operation::list_key_groups::ListKeyGroupsOutput::key_group_list): <p>A list of key groups.</p>
     /// - On failure, responds with [`SdkError<ListKeyGroupsError>`](crate::operation::list_key_groups::ListKeyGroupsError)
-    pub fn list_key_groups(
-        &self,
-    ) -> crate::operation::list_key_groups::builders::ListKeyGroupsFluentBuilder {
-        crate::operation::list_key_groups::builders::ListKeyGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_key_groups(&self) -> crate::operation::list_key_groups::builders::ListKeyGroupsFluentBuilder {
+        crate::operation::list_key_groups::builders::ListKeyGroupsFluentBuilder::new(self.handle.clone())
     }
 }

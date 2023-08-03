@@ -5,18 +5,14 @@
 pub struct GetPackageConfigurationInput {}
 impl GetPackageConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetPackageConfigurationInput`](crate::operation::get_package_configuration::GetPackageConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_package_configuration::builders::GetPackageConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_package_configuration::builders::GetPackageConfigurationInputBuilder {
         crate::operation::get_package_configuration::builders::GetPackageConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPackageConfigurationInput`](crate::operation::get_package_configuration::GetPackageConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPackageConfigurationInputBuilder {}
 impl GetPackageConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetPackageConfigurationInput`](crate::operation::get_package_configuration::GetPackageConfigurationInput).
@@ -26,8 +22,6 @@ impl GetPackageConfigurationInputBuilder {
         crate::operation::get_package_configuration::GetPackageConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_package_configuration::GetPackageConfigurationInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::get_package_configuration::GetPackageConfigurationInput {})
     }
 }

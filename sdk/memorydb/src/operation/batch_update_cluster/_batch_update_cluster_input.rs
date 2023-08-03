@@ -22,17 +22,14 @@ impl BatchUpdateClusterInput {
 }
 impl BatchUpdateClusterInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateClusterInput`](crate::operation::batch_update_cluster::BatchUpdateClusterInput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_cluster::builders::BatchUpdateClusterInputBuilder {
+    pub fn builder() -> crate::operation::batch_update_cluster::builders::BatchUpdateClusterInputBuilder {
         crate::operation::batch_update_cluster::builders::BatchUpdateClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateClusterInput`](crate::operation::batch_update_cluster::BatchUpdateClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateClusterInputBuilder {
     pub(crate) cluster_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) service_update: ::std::option::Option<crate::types::ServiceUpdateRequest>,
@@ -43,27 +40,19 @@ impl BatchUpdateClusterInputBuilder {
     /// To override the contents of this collection use [`set_cluster_names`](Self::set_cluster_names).
     ///
     /// <p>The cluster names to apply the updates.</p>
-    pub fn cluster_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cluster_names.unwrap_or_default();
         v.push(input.into());
         self.cluster_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The cluster names to apply the updates.</p>
-    pub fn set_cluster_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cluster_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cluster_names = input;
         self
     }
     /// <p>The cluster names to apply the updates.</p>
-    pub fn get_cluster_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cluster_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cluster_names
     }
     /// <p>The unique ID of the service update</p>
@@ -72,10 +61,7 @@ impl BatchUpdateClusterInputBuilder {
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceUpdateRequest>,
-    ) -> Self {
+    pub fn set_service_update(mut self, input: ::std::option::Option<crate::types::ServiceUpdateRequest>) -> Self {
         self.service_update = input;
         self
     }
@@ -86,15 +72,10 @@ impl BatchUpdateClusterInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateClusterInput`](crate::operation::batch_update_cluster::BatchUpdateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_cluster::BatchUpdateClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_update_cluster::BatchUpdateClusterInput {
-                cluster_names: self.cluster_names,
-                service_update: self.service_update,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_update_cluster::BatchUpdateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_update_cluster::BatchUpdateClusterInput {
+            cluster_names: self.cluster_names,
+            service_update: self.service_update,
+        })
     }
 }

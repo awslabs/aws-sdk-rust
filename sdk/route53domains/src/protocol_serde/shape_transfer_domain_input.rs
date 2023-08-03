@@ -55,9 +55,7 @@ pub fn ser_transfer_domain_input(
         object.key("PrivacyProtectAdminContact").boolean(*var_16);
     }
     if let Some(var_17) = &input.privacy_protect_registrant_contact {
-        object
-            .key("PrivacyProtectRegistrantContact")
-            .boolean(*var_17);
+        object.key("PrivacyProtectRegistrantContact").boolean(*var_17);
     }
     if let Some(var_18) = &input.privacy_protect_tech_contact {
         object.key("PrivacyProtectTechContact").boolean(*var_18);

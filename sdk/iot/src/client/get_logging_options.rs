@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::get_logging_options::GetLoggingOptionsOutput::role_arn): <p>The ARN of the IAM role that grants access.</p>
     ///   - [`log_level(Option<LogLevel>)`](crate::operation::get_logging_options::GetLoggingOptionsOutput::log_level): <p>The logging level.</p>
     /// - On failure, responds with [`SdkError<GetLoggingOptionsError>`](crate::operation::get_logging_options::GetLoggingOptionsError)
-    pub fn get_logging_options(
-        &self,
-    ) -> crate::operation::get_logging_options::builders::GetLoggingOptionsFluentBuilder {
-        crate::operation::get_logging_options::builders::GetLoggingOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_logging_options(&self) -> crate::operation::get_logging_options::builders::GetLoggingOptionsFluentBuilder {
+        crate::operation::get_logging_options::builders::GetLoggingOptionsFluentBuilder::new(self.handle.clone())
     }
 }

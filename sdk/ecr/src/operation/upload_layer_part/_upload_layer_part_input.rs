@@ -57,9 +57,7 @@ impl UploadLayerPartInput {
 
 /// A builder for [`UploadLayerPartInput`](crate::operation::upload_layer_part::UploadLayerPartInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadLayerPartInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl UploadLayerPartInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to which you are uploading layer parts.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to which you are uploading layer parts.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -151,10 +143,7 @@ impl UploadLayerPartInputBuilder {
         self
     }
     /// <p>The base64-encoded layer part payload.</p>
-    pub fn set_layer_part_blob(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_layer_part_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.layer_part_blob = input;
         self
     }
@@ -165,10 +154,7 @@ impl UploadLayerPartInputBuilder {
     /// Consumes the builder and constructs a [`UploadLayerPartInput`](crate::operation::upload_layer_part::UploadLayerPartInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::upload_layer_part::UploadLayerPartInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::upload_layer_part::UploadLayerPartInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::upload_layer_part::UploadLayerPartInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

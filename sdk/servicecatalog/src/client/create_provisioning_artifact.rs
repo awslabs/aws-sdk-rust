@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`info(Option<HashMap<String, String>>)`](crate::operation::create_provisioning_artifact::CreateProvisioningArtifactOutput::info): <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>  <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>  <p> <code>LoadTemplateFromURL</code> </p>  <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>  <p> <code>ImportFromPhysicalId</code> </p>  <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     ///   - [`status(Option<Status>)`](crate::operation::create_provisioning_artifact::CreateProvisioningArtifactOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<CreateProvisioningArtifactError>`](crate::operation::create_provisioning_artifact::CreateProvisioningArtifactError)
-    pub fn create_provisioning_artifact(&self) -> crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactFluentBuilder{
+    pub fn create_provisioning_artifact(&self) -> crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactFluentBuilder {
         crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactFluentBuilder::new(self.handle.clone())
     }
 }

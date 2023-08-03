@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DisassociateSigninDelegateGroupsFromA
 }
 impl DisassociateSigninDelegateGroupsFromAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateSigninDelegateGroupsFromAccountOutput`](crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountOutput).
-    pub fn builder() -> crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountOutputBuilder {
         crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSigninDelegateGroupsFromAccountOutput`](crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSigninDelegateGroupsFromAccountOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DisassociateSigninDelegateGroupsFromAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateSigninDelegateGroupsFromAccountOutput`](crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountOutput).
-    pub fn build(self) -> crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountOutput{
+    pub fn build(self) -> crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountOutput {
         crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountOutput {
             _request_id: self._request_id,
         }

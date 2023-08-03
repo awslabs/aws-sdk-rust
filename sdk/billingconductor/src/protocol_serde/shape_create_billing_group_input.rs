@@ -12,10 +12,7 @@ pub fn ser_create_billing_group_input(
     if let Some(var_3) = &input.computation_preference {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ComputationPreference").start_object();
-        crate::protocol_serde::shape_computation_preference::ser_computation_preference(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_computation_preference::ser_computation_preference(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.description {

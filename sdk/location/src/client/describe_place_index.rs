@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`data_source_configuration(Option<DataSourceConfiguration>)`](crate::operation::describe_place_index::DescribePlaceIndexOutput::data_source_configuration): <p>The specified data storage option for requesting Places.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_place_index::DescribePlaceIndexOutput::tags): <p>Tags associated with place index resource.</p>
     /// - On failure, responds with [`SdkError<DescribePlaceIndexError>`](crate::operation::describe_place_index::DescribePlaceIndexError)
-    pub fn describe_place_index(
-        &self,
-    ) -> crate::operation::describe_place_index::builders::DescribePlaceIndexFluentBuilder {
-        crate::operation::describe_place_index::builders::DescribePlaceIndexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_place_index(&self) -> crate::operation::describe_place_index::builders::DescribePlaceIndexFluentBuilder {
+        crate::operation::describe_place_index::builders::DescribePlaceIndexFluentBuilder::new(self.handle.clone())
     }
 }

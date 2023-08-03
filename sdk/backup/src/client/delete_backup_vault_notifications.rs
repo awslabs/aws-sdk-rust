@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`backup_vault_name(impl ::std::convert::Into<String>)`](crate::operation::delete_backup_vault_notifications::builders::DeleteBackupVaultNotificationsFluentBuilder::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::operation::delete_backup_vault_notifications::builders::DeleteBackupVaultNotificationsFluentBuilder::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     /// - On success, responds with [`DeleteBackupVaultNotificationsOutput`](crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsOutput)
     /// - On failure, responds with [`SdkError<DeleteBackupVaultNotificationsError>`](crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError)
-    pub fn delete_backup_vault_notifications(&self) -> crate::operation::delete_backup_vault_notifications::builders::DeleteBackupVaultNotificationsFluentBuilder{
+    pub fn delete_backup_vault_notifications(
+        &self,
+    ) -> crate::operation::delete_backup_vault_notifications::builders::DeleteBackupVaultNotificationsFluentBuilder {
         crate::operation::delete_backup_vault_notifications::builders::DeleteBackupVaultNotificationsFluentBuilder::new(self.handle.clone())
     }
 }

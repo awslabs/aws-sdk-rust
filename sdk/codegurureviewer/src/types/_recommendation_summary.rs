@@ -51,9 +51,7 @@ impl RecommendationSummary {
         self.description.as_deref()
     }
     /// <p>The type of a recommendation.</p>
-    pub fn recommendation_category(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationCategory> {
+    pub fn recommendation_category(&self) -> ::std::option::Option<&crate::types::RecommendationCategory> {
         self.recommendation_category.as_ref()
     }
     /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
@@ -74,9 +72,7 @@ impl RecommendationSummary {
 
 /// A builder for [`RecommendationSummary`](crate::types::RecommendationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationSummaryBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
@@ -103,18 +99,12 @@ impl RecommendationSummaryBuilder {
         &self.file_path
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -170,17 +160,12 @@ impl RecommendationSummaryBuilder {
         self
     }
     /// <p>The type of a recommendation.</p>
-    pub fn set_recommendation_category(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationCategory>,
-    ) -> Self {
+    pub fn set_recommendation_category(mut self, input: ::std::option::Option<crate::types::RecommendationCategory>) -> Self {
         self.recommendation_category = input;
         self
     }
     /// <p>The type of a recommendation.</p>
-    pub fn get_recommendation_category(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationCategory> {
+    pub fn get_recommendation_category(&self) -> &::std::option::Option<crate::types::RecommendationCategory> {
         &self.recommendation_category
     }
     /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
@@ -189,10 +174,7 @@ impl RecommendationSummaryBuilder {
         self
     }
     /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
-    pub fn set_rule_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleMetadata>,
-    ) -> Self {
+    pub fn set_rule_metadata(mut self, input: ::std::option::Option<crate::types::RuleMetadata>) -> Self {
         self.rule_metadata = input;
         self
     }

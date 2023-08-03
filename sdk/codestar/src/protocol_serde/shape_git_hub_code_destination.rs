@@ -16,9 +16,7 @@ pub fn ser_git_hub_code_destination(
         object.key("owner").string(var_4.as_str());
     }
     {
-        object
-            .key("privateRepository")
-            .boolean(input.private_repository);
+        object.key("privateRepository").boolean(input.private_repository);
     }
     {
         object.key("issuesEnabled").boolean(input.issues_enabled);

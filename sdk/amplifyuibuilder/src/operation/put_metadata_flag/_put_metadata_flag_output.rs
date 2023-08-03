@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutMetadataFlagOutput {
 }
 impl PutMetadataFlagOutput {
     /// Creates a new builder-style object to manufacture [`PutMetadataFlagOutput`](crate::operation::put_metadata_flag::PutMetadataFlagOutput).
-    pub fn builder() -> crate::operation::put_metadata_flag::builders::PutMetadataFlagOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_metadata_flag::builders::PutMetadataFlagOutputBuilder {
         crate::operation::put_metadata_flag::builders::PutMetadataFlagOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutMetadataFlagOutput`](crate::operation::put_metadata_flag::PutMetadataFlagOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetadataFlagOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,9 +28,7 @@ impl StartModelOutput {
 
 /// A builder for [`StartModelOutput`](crate::operation::start_model::StartModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartModelOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ModelHostingStatus>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StartModelOutputBuilder {
         self
     }
     /// <p>The current running status of the model.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelHostingStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelHostingStatus>) -> Self {
         self.status = input;
         self
     }

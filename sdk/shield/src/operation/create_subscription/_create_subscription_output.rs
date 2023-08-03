@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateSubscriptionOutput {
 }
 impl CreateSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionOutput`](crate::operation::create_subscription::CreateSubscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_subscription::builders::CreateSubscriptionOutputBuilder {
+    pub fn builder() -> crate::operation::create_subscription::builders::CreateSubscriptionOutputBuilder {
         crate::operation::create_subscription::builders::CreateSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubscriptionOutput`](crate::operation::create_subscription::CreateSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

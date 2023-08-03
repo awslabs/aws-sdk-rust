@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetSessionTokenOutput`](crate::operation::get_session_token::GetSessionTokenOutput) with field(s):
     ///   - [`credentials(Option<Credentials>)`](crate::operation::get_session_token::GetSessionTokenOutput::credentials): <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>   <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>  </note>
     /// - On failure, responds with [`SdkError<GetSessionTokenError>`](crate::operation::get_session_token::GetSessionTokenError)
-    pub fn get_session_token(
-        &self,
-    ) -> crate::operation::get_session_token::builders::GetSessionTokenFluentBuilder {
-        crate::operation::get_session_token::builders::GetSessionTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_session_token(&self) -> crate::operation::get_session_token::builders::GetSessionTokenFluentBuilder {
+        crate::operation::get_session_token::builders::GetSessionTokenFluentBuilder::new(self.handle.clone())
     }
 }

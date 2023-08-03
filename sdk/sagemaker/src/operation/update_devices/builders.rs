@@ -10,10 +10,7 @@ impl UpdateDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_devices::UpdateDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_devices::UpdateDevicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_devices::UpdateDevicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_devices();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDevicesFluentBuilder {
         }
     }
     /// Access the UpdateDevices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_devices::builders::UpdateDevicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_devices::builders::UpdateDevicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl UpdateDevicesFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name(input.into());
         self
     }
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }
@@ -144,10 +130,7 @@ impl UpdateDevicesFluentBuilder {
         self
     }
     /// <p>List of devices to register with Edge Manager agent.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.inner = self.inner.set_devices(input);
         self
     }

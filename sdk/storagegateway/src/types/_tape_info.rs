@@ -72,9 +72,7 @@ impl TapeInfo {
 
 /// A builder for [`TapeInfo`](crate::types::TapeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TapeInfoBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_barcode: ::std::option::Option<::std::string::String>,
@@ -176,10 +174,7 @@ impl TapeInfoBuilder {
         self
     }
     /// <p>The date that the tape became subject to tape retention lock.</p>
-    pub fn set_retention_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_retention_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.retention_start_date = input;
         self
     }
@@ -193,10 +188,7 @@ impl TapeInfoBuilder {
         self
     }
     /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
-    pub fn set_pool_entry_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_pool_entry_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.pool_entry_date = input;
         self
     }

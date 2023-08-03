@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum S3Permission {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for S3Permission {
             "READ_ACP" => S3Permission::ReadAcp,
             "WRITE" => S3Permission::Write,
             "WRITE_ACP" => S3Permission::WriteAcp,
-            other => {
-                S3Permission::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => S3Permission::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

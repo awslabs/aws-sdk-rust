@@ -10,9 +10,7 @@ pub fn ser_aggregation_function(
         object_2.finish();
     }
     if let Some(var_3) = &input.categorical_aggregation_function {
-        object
-            .key("CategoricalAggregationFunction")
-            .string(var_3.as_str());
+        object.key("CategoricalAggregationFunction").string(var_3.as_str());
     }
     if let Some(var_4) = &input.date_aggregation_function {
         object.key("DateAggregationFunction").string(var_4.as_str());
@@ -28,17 +26,9 @@ pub fn ser_aggregation_function(
 
 pub(crate) fn de_aggregation_function<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AggregationFunction>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AggregationFunction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -48,64 +38,45 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "NumericalAggregationFunction" => {
-                                builder = builder.set_numerical_aggregation_function(
-                                    crate::protocol_serde::shape_numerical_aggregation_function::de_numerical_aggregation_function(tokens)?
-                                );
-                            }
-                            "CategoricalAggregationFunction" => {
-                                builder = builder.set_categorical_aggregation_function(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::CategoricalAggregationFunction::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "DateAggregationFunction" => {
-                                builder = builder.set_date_aggregation_function(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::DateAggregationFunction::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "AttributeAggregationFunction" => {
-                                builder = builder.set_attribute_aggregation_function(
-                                    crate::protocol_serde::shape_attribute_aggregation_function::de_attribute_aggregation_function(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "NumericalAggregationFunction" => {
+                            builder = builder.set_numerical_aggregation_function(
+                                crate::protocol_serde::shape_numerical_aggregation_function::de_numerical_aggregation_function(tokens)?,
+                            );
                         }
-                    }
+                        "CategoricalAggregationFunction" => {
+                            builder = builder.set_categorical_aggregation_function(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CategoricalAggregationFunction::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DateAggregationFunction" => {
+                            builder = builder.set_date_aggregation_function(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DateAggregationFunction::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AttributeAggregationFunction" => {
+                            builder = builder.set_attribute_aggregation_function(
+                                crate::protocol_serde::shape_attribute_aggregation_function::de_attribute_aggregation_function(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

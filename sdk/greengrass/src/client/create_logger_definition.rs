@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::create_logger_definition::CreateLoggerDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::create_logger_definition::CreateLoggerDefinitionOutput::name): The name of the definition.
     /// - On failure, responds with [`SdkError<CreateLoggerDefinitionError>`](crate::operation::create_logger_definition::CreateLoggerDefinitionError)
-    pub fn create_logger_definition(
-        &self,
-    ) -> crate::operation::create_logger_definition::builders::CreateLoggerDefinitionFluentBuilder
-    {
+    pub fn create_logger_definition(&self) -> crate::operation::create_logger_definition::builders::CreateLoggerDefinitionFluentBuilder {
         crate::operation::create_logger_definition::builders::CreateLoggerDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

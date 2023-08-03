@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetObjectAttributesOutput`](crate::operation::get_object_attributes::GetObjectAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<AttributeKeyAndValue>>)`](crate::operation::get_object_attributes::GetObjectAttributesOutput::attributes): <p>The attributes that are associated with the object.</p>
     /// - On failure, responds with [`SdkError<GetObjectAttributesError>`](crate::operation::get_object_attributes::GetObjectAttributesError)
-    pub fn get_object_attributes(
-        &self,
-    ) -> crate::operation::get_object_attributes::builders::GetObjectAttributesFluentBuilder {
-        crate::operation::get_object_attributes::builders::GetObjectAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_object_attributes(&self) -> crate::operation::get_object_attributes::builders::GetObjectAttributesFluentBuilder {
+        crate::operation::get_object_attributes::builders::GetObjectAttributesFluentBuilder::new(self.handle.clone())
     }
 }

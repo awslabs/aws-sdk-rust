@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for StopTextTranslationJobOutput {
 }
 impl StopTextTranslationJobOutput {
     /// Creates a new builder-style object to manufacture [`StopTextTranslationJobOutput`](crate::operation::stop_text_translation_job::StopTextTranslationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_text_translation_job::builders::StopTextTranslationJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_text_translation_job::builders::StopTextTranslationJobOutputBuilder {
         crate::operation::stop_text_translation_job::builders::StopTextTranslationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopTextTranslationJobOutput`](crate::operation::stop_text_translation_job::StopTextTranslationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTextTranslationJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -84,9 +80,7 @@ impl StopTextTranslationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopTextTranslationJobOutput`](crate::operation::stop_text_translation_job::StopTextTranslationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_text_translation_job::StopTextTranslationJobOutput {
+    pub fn build(self) -> crate::operation::stop_text_translation_job::StopTextTranslationJobOutput {
         crate::operation::stop_text_translation_job::StopTextTranslationJobOutput {
             job_id: self.job_id,
             job_status: self.job_status,

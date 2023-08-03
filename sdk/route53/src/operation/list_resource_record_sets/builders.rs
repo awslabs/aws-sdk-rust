@@ -66,8 +66,7 @@ impl ListResourceRecordSetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceRecordSetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsInputBuilder,
+    inner: crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsInputBuilder,
 }
 impl ListResourceRecordSetsFluentBuilder {
     /// Creates a new `ListResourceRecordSets`.
@@ -78,10 +77,7 @@ impl ListResourceRecordSetsFluentBuilder {
         }
     }
     /// Access the ListResourceRecordSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -93,9 +89,7 @@ impl ListResourceRecordSetsFluentBuilder {
             crate::operation::list_resource_record_sets::ListResourceRecordSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_record_sets::ListResourceRecordSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_record_sets::ListResourceRecordSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -105,10 +99,7 @@ impl ListResourceRecordSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,9 +108,7 @@ impl ListResourceRecordSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_record_sets::ListResourceRecordSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_record_sets::ListResourceRecordSetsError>,
     > {
         let op = self
             .inner
@@ -142,9 +131,7 @@ impl ListResourceRecordSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_record_sets::ListResourceRecordSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_record_sets::ListResourceRecordSetsError>,
     > {
         self.send_middleware().await
     }
@@ -158,25 +145,17 @@ impl ListResourceRecordSetsFluentBuilder {
             crate::operation::list_resource_record_sets::ListResourceRecordSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_record_sets::ListResourceRecordSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_record_sets::ListResourceRecordSetsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
@@ -185,18 +164,12 @@ impl ListResourceRecordSetsFluentBuilder {
         self.inner.get_hosted_zone_id()
     }
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
-    pub fn start_record_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_record_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_record_name(input.into());
         self
     }
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
-    pub fn set_start_record_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_record_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_record_name(input);
         self
     }
@@ -236,10 +209,7 @@ impl ListResourceRecordSetsFluentBuilder {
     /// <li> <p> <b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p> </li>
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
-    pub fn set_start_record_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RrType>,
-    ) -> Self {
+    pub fn set_start_record_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
         self.inner = self.inner.set_start_record_type(input);
         self
     }
@@ -261,18 +231,12 @@ impl ListResourceRecordSetsFluentBuilder {
         self.inner.get_start_record_type()
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
-    pub fn start_record_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_record_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_record_identifier(input.into());
         self
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
-    pub fn set_start_record_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_record_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_record_identifier(input);
         self
     }

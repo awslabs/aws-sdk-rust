@@ -48,9 +48,7 @@ pub struct CreateDomainNameOutput {
     pub security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     #[doc(hidden)]
     pub mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthentication>,
@@ -101,9 +99,7 @@ impl CreateDomainNameOutput {
         self.distribution_hosted_zone_id.as_deref()
     }
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
-    pub fn endpoint_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EndpointConfiguration> {
+    pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::EndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
     /// <p>The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
@@ -119,17 +115,11 @@ impl CreateDomainNameOutput {
         self.security_policy.as_ref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
-    pub fn mutual_tls_authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MutualTlsAuthentication> {
+    pub fn mutual_tls_authentication(&self) -> ::std::option::Option<&crate::types::MutualTlsAuthentication> {
         self.mutual_tls_authentication.as_ref()
     }
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
@@ -144,17 +134,14 @@ impl ::aws_http::request_id::RequestId for CreateDomainNameOutput {
 }
 impl CreateDomainNameOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainNameOutput`](crate::operation::create_domain_name::CreateDomainNameOutput).
-    pub fn builder() -> crate::operation::create_domain_name::builders::CreateDomainNameOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_domain_name::builders::CreateDomainNameOutputBuilder {
         crate::operation::create_domain_name::builders::CreateDomainNameOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDomainNameOutput`](crate::operation::create_domain_name::CreateDomainNameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDomainNameOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
@@ -170,11 +157,8 @@ pub struct CreateDomainNameOutputBuilder {
     pub(crate) domain_name_status: ::std::option::Option<crate::types::DomainNameStatus>,
     pub(crate) domain_name_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) mutual_tls_authentication:
-        ::std::option::Option<crate::types::MutualTlsAuthentication>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthentication>,
     pub(crate) ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -194,18 +178,12 @@ impl CreateDomainNameOutputBuilder {
         &self.domain_name
     }
     /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_name = input;
         self
     }
@@ -214,18 +192,12 @@ impl CreateDomainNameOutputBuilder {
         &self.certificate_name
     }
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -239,32 +211,21 @@ impl CreateDomainNameOutputBuilder {
         self
     }
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-    pub fn set_certificate_upload_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_certificate_upload_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.certificate_upload_date = input;
         self
     }
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-    pub fn get_certificate_upload_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_certificate_upload_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.certificate_upload_date
     }
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
-    pub fn regional_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regional_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regional_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
-    pub fn set_regional_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regional_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regional_domain_name = input;
         self
     }
@@ -273,18 +234,12 @@ impl CreateDomainNameOutputBuilder {
         &self.regional_domain_name
     }
     /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
-    pub fn regional_hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regional_hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regional_hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
-    pub fn set_regional_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regional_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regional_hosted_zone_id = input;
         self
     }
@@ -293,18 +248,12 @@ impl CreateDomainNameOutputBuilder {
         &self.regional_hosted_zone_id
     }
     /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
-    pub fn regional_certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regional_certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regional_certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
-    pub fn set_regional_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regional_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regional_certificate_name = input;
         self
     }
@@ -313,18 +262,12 @@ impl CreateDomainNameOutputBuilder {
         &self.regional_certificate_name
     }
     /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
-    pub fn regional_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regional_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regional_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
-    pub fn set_regional_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regional_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regional_certificate_arn = input;
         self
     }
@@ -333,18 +276,12 @@ impl CreateDomainNameOutputBuilder {
         &self.regional_certificate_arn
     }
     /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the Amazon CloudFront documentation.</p>
-    pub fn distribution_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the Amazon CloudFront documentation.</p>
-    pub fn set_distribution_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_domain_name = input;
         self
     }
@@ -353,18 +290,12 @@ impl CreateDomainNameOutputBuilder {
         &self.distribution_domain_name
     }
     /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
-    pub fn distribution_hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
-    pub fn set_distribution_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_hosted_zone_id = input;
         self
     }
@@ -378,17 +309,12 @@ impl CreateDomainNameOutputBuilder {
         self
     }
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
-    pub fn set_endpoint_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointConfiguration>,
-    ) -> Self {
+    pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointConfiguration>) -> Self {
         self.endpoint_configuration = input;
         self
     }
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
-    pub fn get_endpoint_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndpointConfiguration> {
+    pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointConfiguration> {
         &self.endpoint_configuration
     }
     /// <p>The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
@@ -397,10 +323,7 @@ impl CreateDomainNameOutputBuilder {
         self
     }
     /// <p>The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
-    pub fn set_domain_name_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainNameStatus>,
-    ) -> Self {
+    pub fn set_domain_name_status(mut self, input: ::std::option::Option<crate::types::DomainNameStatus>) -> Self {
         self.domain_name_status = input;
         self
     }
@@ -409,18 +332,12 @@ impl CreateDomainNameOutputBuilder {
         &self.domain_name_status
     }
     /// <p>An optional text message containing detailed information about status of the DomainName migration.</p>
-    pub fn domain_name_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_name_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional text message containing detailed information about status of the DomainName migration.</p>
-    pub fn set_domain_name_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_name_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name_status_message = input;
         self
     }
@@ -434,10 +351,7 @@ impl CreateDomainNameOutputBuilder {
         self
     }
     /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
-    pub fn set_security_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityPolicy>,
-    ) -> Self {
+    pub fn set_security_policy(mut self, input: ::std::option::Option<crate::types::SecurityPolicy>) -> Self {
         self.security_policy = input;
         self
     }
@@ -450,76 +364,47 @@ impl CreateDomainNameOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
-    pub fn mutual_tls_authentication(
-        mut self,
-        input: crate::types::MutualTlsAuthentication,
-    ) -> Self {
+    pub fn mutual_tls_authentication(mut self, input: crate::types::MutualTlsAuthentication) -> Self {
         self.mutual_tls_authentication = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
-    pub fn set_mutual_tls_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::MutualTlsAuthentication>,
-    ) -> Self {
+    pub fn set_mutual_tls_authentication(mut self, input: ::std::option::Option<crate::types::MutualTlsAuthentication>) -> Self {
         self.mutual_tls_authentication = input;
         self
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
-    pub fn get_mutual_tls_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::MutualTlsAuthentication> {
+    pub fn get_mutual_tls_authentication(&self) -> &::std::option::Option<crate::types::MutualTlsAuthentication> {
         &self.mutual_tls_authentication
     }
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
-    pub fn ownership_verification_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ownership_verification_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ownership_verification_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
-    pub fn set_ownership_verification_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ownership_verification_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ownership_verification_certificate_arn = input;
         self
     }
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
-    pub fn get_ownership_verification_certificate_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ownership_verification_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ownership_verification_certificate_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

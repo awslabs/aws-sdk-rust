@@ -52,9 +52,7 @@ impl RevokeGrantInput {
 
 /// A builder for [`RevokeGrantInput`](crate::operation::revoke_grant::RevokeGrantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeGrantInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) grant_id: ::std::option::Option<::std::string::String>,
@@ -128,12 +126,7 @@ impl RevokeGrantInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`RevokeGrantInput`](crate::operation::revoke_grant::RevokeGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_grant::RevokeGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_grant::RevokeGrantInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_grant::RevokeGrantInput {
             key_id: self.key_id,
             grant_id: self.grant_id,

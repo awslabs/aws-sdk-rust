@@ -10,10 +10,7 @@ impl DetachStaticIpInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detach_static_ip::DetachStaticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_static_ip::DetachStaticIpError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_static_ip::DetachStaticIpError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detach_static_ip();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DetachStaticIpFluentBuilder {
         }
     }
     /// Access the DetachStaticIp as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detach_static_ip::builders::DetachStaticIpInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detach_static_ip::builders::DetachStaticIpInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DetachStaticIpFluentBuilder {
             crate::operation::detach_static_ip::DetachStaticIp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_static_ip::DetachStaticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_static_ip::DetachStaticIpError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DetachStaticIpFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DetachStaticIpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_static_ip::DetachStaticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_static_ip::DetachStaticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_static_ip::DetachStaticIpError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DetachStaticIpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_static_ip::DetachStaticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_static_ip::DetachStaticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_static_ip::DetachStaticIpError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DetachStaticIpFluentBuilder {
             crate::operation::detach_static_ip::DetachStaticIp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_static_ip::DetachStaticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_static_ip::DetachStaticIpError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the static IP to detach from the instance.</p>
-    pub fn static_ip_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn static_ip_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.static_ip_name(input.into());
         self
     }
     /// <p>The name of the static IP to detach from the instance.</p>
-    pub fn set_static_ip_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_static_ip_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_static_ip_name(input);
         self
     }

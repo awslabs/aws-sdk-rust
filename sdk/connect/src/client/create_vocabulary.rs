@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`vocabulary_id(Option<String>)`](crate::operation::create_vocabulary::CreateVocabularyOutput::vocabulary_id): <p>The identifier of the custom vocabulary.</p>
     ///   - [`state(Option<VocabularyState>)`](crate::operation::create_vocabulary::CreateVocabularyOutput::state): <p>The current state of the custom vocabulary.</p>
     /// - On failure, responds with [`SdkError<CreateVocabularyError>`](crate::operation::create_vocabulary::CreateVocabularyError)
-    pub fn create_vocabulary(
-        &self,
-    ) -> crate::operation::create_vocabulary::builders::CreateVocabularyFluentBuilder {
-        crate::operation::create_vocabulary::builders::CreateVocabularyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_vocabulary(&self) -> crate::operation::create_vocabulary::builders::CreateVocabularyFluentBuilder {
+        crate::operation::create_vocabulary::builders::CreateVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

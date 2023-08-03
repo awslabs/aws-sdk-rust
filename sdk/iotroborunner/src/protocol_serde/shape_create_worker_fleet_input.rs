@@ -4,9 +4,7 @@ pub fn ser_create_worker_fleet_input(
     input: &crate::operation::create_worker_fleet::CreateWorkerFleetInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.additional_fixed_properties {
-        object
-            .key("additionalFixedProperties")
-            .string(var_1.as_str());
+        object.key("additionalFixedProperties").string(var_1.as_str());
     }
     if let Some(var_2) = &input.client_token {
         object.key("clientToken").string(var_2.as_str());

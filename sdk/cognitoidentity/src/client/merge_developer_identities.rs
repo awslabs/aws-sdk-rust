@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`MergeDeveloperIdentitiesOutput`](crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput) with field(s):
     ///   - [`identity_id(Option<String>)`](crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
     /// - On failure, responds with [`SdkError<MergeDeveloperIdentitiesError>`](crate::operation::merge_developer_identities::MergeDeveloperIdentitiesError)
-    pub fn merge_developer_identities(
-        &self,
-    ) -> crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesFluentBuilder
-    {
+    pub fn merge_developer_identities(&self) -> crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesFluentBuilder {
         crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesFluentBuilder::new(self.handle.clone())
     }
 }

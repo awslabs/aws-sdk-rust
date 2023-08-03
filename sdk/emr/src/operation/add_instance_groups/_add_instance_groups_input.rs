@@ -23,20 +23,16 @@ impl AddInstanceGroupsInput {
 }
 impl AddInstanceGroupsInput {
     /// Creates a new builder-style object to manufacture [`AddInstanceGroupsInput`](crate::operation::add_instance_groups::AddInstanceGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder {
+    pub fn builder() -> crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder {
         crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`AddInstanceGroupsInput`](crate::operation::add_instance_groups::AddInstanceGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddInstanceGroupsInputBuilder {
-    pub(crate) instance_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>>,
+    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>>,
     pub(crate) job_flow_id: ::std::option::Option<::std::string::String>,
 }
 impl AddInstanceGroupsInputBuilder {
@@ -52,17 +48,12 @@ impl AddInstanceGroupsInputBuilder {
         self
     }
     /// <p>Instance groups to add.</p>
-    pub fn set_instance_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>>,
-    ) -> Self {
+    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>>) -> Self {
         self.instance_groups = input;
         self
     }
     /// <p>Instance groups to add.</p>
-    pub fn get_instance_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>> {
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>> {
         &self.instance_groups
     }
     /// <p>Job flow in which to add the instance groups.</p>
@@ -82,15 +73,10 @@ impl AddInstanceGroupsInputBuilder {
     /// Consumes the builder and constructs a [`AddInstanceGroupsInput`](crate::operation::add_instance_groups::AddInstanceGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_instance_groups::AddInstanceGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_instance_groups::AddInstanceGroupsInput {
-                instance_groups: self.instance_groups,
-                job_flow_id: self.job_flow_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_instance_groups::AddInstanceGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::add_instance_groups::AddInstanceGroupsInput {
+            instance_groups: self.instance_groups,
+            job_flow_id: self.job_flow_id,
+        })
     }
 }

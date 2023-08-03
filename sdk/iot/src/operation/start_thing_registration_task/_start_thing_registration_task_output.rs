@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartThingRegistrationTaskOutput {
 }
 impl StartThingRegistrationTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartThingRegistrationTaskOutput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput).
-    pub fn builder() -> crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskOutputBuilder{
+    pub fn builder() -> crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskOutputBuilder {
         crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartThingRegistrationTaskOutput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartThingRegistrationTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StartThingRegistrationTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartThingRegistrationTaskOutput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput {
+    pub fn build(self) -> crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput {
         crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput {
             task_id: self.task_id,
             _request_id: self._request_id,

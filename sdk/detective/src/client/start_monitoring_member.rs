@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::start_monitoring_member::builders::StartMonitoringMemberFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::start_monitoring_member::builders::StartMonitoringMemberFluentBuilder::set_account_id): <p>The account ID of the member account to try to enable.</p>  <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     /// - On success, responds with [`StartMonitoringMemberOutput`](crate::operation::start_monitoring_member::StartMonitoringMemberOutput)
     /// - On failure, responds with [`SdkError<StartMonitoringMemberError>`](crate::operation::start_monitoring_member::StartMonitoringMemberError)
-    pub fn start_monitoring_member(
-        &self,
-    ) -> crate::operation::start_monitoring_member::builders::StartMonitoringMemberFluentBuilder
-    {
-        crate::operation::start_monitoring_member::builders::StartMonitoringMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_monitoring_member(&self) -> crate::operation::start_monitoring_member::builders::StartMonitoringMemberFluentBuilder {
+        crate::operation::start_monitoring_member::builders::StartMonitoringMemberFluentBuilder::new(self.handle.clone())
     }
 }

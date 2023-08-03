@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyWorkspaceAccessPropertiesOutput
 }
 impl ModifyWorkspaceAccessPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyWorkspaceAccessPropertiesOutput`](crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesOutput).
-    pub fn builder() -> crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesOutputBuilder {
         crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyWorkspaceAccessPropertiesOutput`](crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyWorkspaceAccessPropertiesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl ModifyWorkspaceAccessPropertiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyWorkspaceAccessPropertiesOutput`](crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesOutput
-    {
+    pub fn build(self) -> crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesOutput {
         crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesOutput {
             _request_id: self._request_id,
         }

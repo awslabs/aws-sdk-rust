@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`source_image_orientation_correction(Option<OrientationCorrection>)`](crate::operation::compare_faces::CompareFacesOutput::source_image_orientation_correction): <p>The value of <code>SourceImageOrientationCorrection</code> is always null.</p>  <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>  <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     ///   - [`target_image_orientation_correction(Option<OrientationCorrection>)`](crate::operation::compare_faces::CompareFacesOutput::target_image_orientation_correction): <p>The value of <code>TargetImageOrientationCorrection</code> is always null.</p>  <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>  <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     /// - On failure, responds with [`SdkError<CompareFacesError>`](crate::operation::compare_faces::CompareFacesError)
-    pub fn compare_faces(
-        &self,
-    ) -> crate::operation::compare_faces::builders::CompareFacesFluentBuilder {
-        crate::operation::compare_faces::builders::CompareFacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn compare_faces(&self) -> crate::operation::compare_faces::builders::CompareFacesFluentBuilder {
+        crate::operation::compare_faces::builders::CompareFacesFluentBuilder::new(self.handle.clone())
     }
 }

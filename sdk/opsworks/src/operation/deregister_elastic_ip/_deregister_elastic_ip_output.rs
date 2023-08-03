@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterElasticIpOutput {
 }
 impl DeregisterElasticIpOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterElasticIpOutput`](crate::operation::deregister_elastic_ip::DeregisterElasticIpOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpOutputBuilder {
-        crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpOutputBuilder {
+        crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterElasticIpOutput`](crate::operation::deregister_elastic_ip::DeregisterElasticIpOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterElasticIpOutputBuilder {
     _request_id: Option<String>,
 }

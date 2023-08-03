@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeclineHandshakeOutput`](crate::operation::decline_handshake::DeclineHandshakeOutput) with field(s):
     ///   - [`handshake(Option<Handshake>)`](crate::operation::decline_handshake::DeclineHandshakeOutput::handshake): <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
     /// - On failure, responds with [`SdkError<DeclineHandshakeError>`](crate::operation::decline_handshake::DeclineHandshakeError)
-    pub fn decline_handshake(
-        &self,
-    ) -> crate::operation::decline_handshake::builders::DeclineHandshakeFluentBuilder {
-        crate::operation::decline_handshake::builders::DeclineHandshakeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn decline_handshake(&self) -> crate::operation::decline_handshake::builders::DeclineHandshakeFluentBuilder {
+        crate::operation::decline_handshake::builders::DeclineHandshakeFluentBuilder::new(self.handle.clone())
     }
 }

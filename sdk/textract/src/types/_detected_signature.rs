@@ -23,9 +23,7 @@ impl DetectedSignature {
 
 /// A builder for [`DetectedSignature`](crate::types::DetectedSignature).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectedSignatureBuilder {
     pub(crate) page: ::std::option::Option<i32>,
 }

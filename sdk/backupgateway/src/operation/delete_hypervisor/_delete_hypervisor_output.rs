@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for DeleteHypervisorOutput {
 }
 impl DeleteHypervisorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHypervisorOutput`](crate::operation::delete_hypervisor::DeleteHypervisorOutput).
-    pub fn builder() -> crate::operation::delete_hypervisor::builders::DeleteHypervisorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_hypervisor::builders::DeleteHypervisorOutputBuilder {
         crate::operation::delete_hypervisor::builders::DeleteHypervisorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHypervisorOutput`](crate::operation::delete_hypervisor::DeleteHypervisorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHypervisorOutputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteHypervisorOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_arn = input;
         self
     }

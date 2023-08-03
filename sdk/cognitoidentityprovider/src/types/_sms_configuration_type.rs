@@ -41,9 +41,7 @@ impl SmsConfigurationType {
 
 /// A builder for [`SmsConfigurationType`](crate::types::SmsConfigurationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmsConfigurationTypeBuilder {
     pub(crate) sns_caller_arn: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
@@ -51,18 +49,12 @@ pub struct SmsConfigurationTypeBuilder {
 }
 impl SmsConfigurationTypeBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS caller. This is the ARN of the IAM role in your Amazon Web Services account that Amazon Cognito will use to send SMS messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>. </p>
-    pub fn sns_caller_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_caller_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_caller_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS caller. This is the ARN of the IAM role in your Amazon Web Services account that Amazon Cognito will use to send SMS messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>. </p>
-    pub fn set_sns_caller_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_caller_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_caller_arn = input;
         self
     }

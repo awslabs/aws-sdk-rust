@@ -48,9 +48,7 @@ impl AnalyticsS3BucketDestination {
 
 /// A builder for [`AnalyticsS3BucketDestination`](crate::types::AnalyticsS3BucketDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsS3BucketDestinationBuilder {
     pub(crate) format: ::std::option::Option<crate::types::AnalyticsS3ExportFileFormat>,
     pub(crate) bucket_account_id: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl AnalyticsS3BucketDestinationBuilder {
         self
     }
     /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsS3ExportFileFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::AnalyticsS3ExportFileFormat>) -> Self {
         self.format = input;
         self
     }
@@ -78,20 +73,14 @@ impl AnalyticsS3BucketDestinationBuilder {
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
     /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
-    pub fn bucket_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
     /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
-    pub fn set_bucket_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_account_id = input;
         self
     }

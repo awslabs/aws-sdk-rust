@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`iam_instance_profile_associations(Option<Vec<IamInstanceProfileAssociation>>)`](crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsOutput::iam_instance_profile_associations): <p>Information about the IAM instance profile associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeIamInstanceProfileAssociationsError>`](crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsError)
-    pub fn describe_iam_instance_profile_associations(&self) -> crate::operation::describe_iam_instance_profile_associations::builders::DescribeIamInstanceProfileAssociationsFluentBuilder{
-        crate::operation::describe_iam_instance_profile_associations::builders::DescribeIamInstanceProfileAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_iam_instance_profile_associations(
+        &self,
+    ) -> crate::operation::describe_iam_instance_profile_associations::builders::DescribeIamInstanceProfileAssociationsFluentBuilder {
+        crate::operation::describe_iam_instance_profile_associations::builders::DescribeIamInstanceProfileAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

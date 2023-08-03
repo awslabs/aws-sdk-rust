@@ -77,9 +77,7 @@ impl S3ModelDataSource {
 
 /// A builder for [`S3ModelDataSource`](crate::types::S3ModelDataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ModelDataSourceBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) s3_data_type: ::std::option::Option<crate::types::S3ModelDataType>,
@@ -110,10 +108,7 @@ impl S3ModelDataSourceBuilder {
     /// <p>Specifies the type of ML model data to deploy.</p>
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix as part of the ML model data to deploy. A valid key name prefix identified by <code>S3Uri</code> always ends with a forward slash (/).</p>
     /// <p>If you choose <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML model data to deploy.</p>
-    pub fn set_s3_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ModelDataType>,
-    ) -> Self {
+    pub fn set_s3_data_type(mut self, input: ::std::option::Option<crate::types::S3ModelDataType>) -> Self {
         self.s3_data_type = input;
         self
     }
@@ -165,10 +160,7 @@ impl S3ModelDataSourceBuilder {
     /// <li> <p>Ambiguous file names will result in model deployment failure. For example, if your uncompressed ML model consists of two S3 objects <code>s3://mybucket/model/weights</code> and <code>s3://mybucket/model/weights/part1</code> and you specify <code>s3://mybucket/model/</code> as the value of <code>S3Uri</code> and <code>S3Prefix</code> as the value of <code>S3DataType</code>, then it will result in name clash between <code>/opt/ml/model/weights</code> (a regular file) and <code>/opt/ml/model/weights/</code> (a directory).</p> </li>
     /// <li> <p>Do not organize the model artifacts in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3 console using folders</a>. When you create a folder in S3 console, S3 creates a 0-byte object with a key set to the folder name you provide. They key of the 0-byte object ends with a slash (/) which violates SageMaker restrictions on model artifact file names, leading to model deployment failure. </p> </li>
     /// </ul>
-    pub fn set_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCompressionType>,
-    ) -> Self {
+    pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::ModelCompressionType>) -> Self {
         self.compression_type = input;
         self
     }
@@ -191,9 +183,7 @@ impl S3ModelDataSourceBuilder {
     /// <li> <p>Ambiguous file names will result in model deployment failure. For example, if your uncompressed ML model consists of two S3 objects <code>s3://mybucket/model/weights</code> and <code>s3://mybucket/model/weights/part1</code> and you specify <code>s3://mybucket/model/</code> as the value of <code>S3Uri</code> and <code>S3Prefix</code> as the value of <code>S3DataType</code>, then it will result in name clash between <code>/opt/ml/model/weights</code> (a regular file) and <code>/opt/ml/model/weights/</code> (a directory).</p> </li>
     /// <li> <p>Do not organize the model artifacts in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3 console using folders</a>. When you create a folder in S3 console, S3 creates a 0-byte object with a key set to the folder name you provide. They key of the 0-byte object ends with a slash (/) which violates SageMaker restrictions on model artifact file names, leading to model deployment failure. </p> </li>
     /// </ul>
-    pub fn get_compression_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelCompressionType> {
+    pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::ModelCompressionType> {
         &self.compression_type
     }
     /// Consumes the builder and constructs a [`S3ModelDataSource`](crate::types::S3ModelDataSource).

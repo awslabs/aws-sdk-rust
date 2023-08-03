@@ -50,17 +50,14 @@ impl CreateVirtualServiceInput {
 }
 impl CreateVirtualServiceInput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualServiceInput`](crate::operation::create_virtual_service::CreateVirtualServiceInput).
-    pub fn builder(
-    ) -> crate::operation::create_virtual_service::builders::CreateVirtualServiceInputBuilder {
+    pub fn builder() -> crate::operation::create_virtual_service::builders::CreateVirtualServiceInputBuilder {
         crate::operation::create_virtual_service::builders::CreateVirtualServiceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVirtualServiceInput`](crate::operation::create_virtual_service::CreateVirtualServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVirtualServiceInputBuilder {
     pub(crate) virtual_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +68,12 @@ pub struct CreateVirtualServiceInputBuilder {
 }
 impl CreateVirtualServiceInputBuilder {
     /// <p>The name to use for the virtual service.</p>
-    pub fn virtual_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to use for the virtual service.</p>
-    pub fn set_virtual_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_service_name = input;
         self
     }
@@ -110,10 +101,7 @@ impl CreateVirtualServiceInputBuilder {
         self
     }
     /// <p>The virtual service specification to apply.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualServiceSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualServiceSpec>) -> Self {
         self.spec = input;
         self
     }
@@ -133,10 +121,7 @@ impl CreateVirtualServiceInputBuilder {
         self
     }
     /// <p>Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>) -> Self {
         self.tags = input;
         self
     }
@@ -175,19 +160,15 @@ impl CreateVirtualServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateVirtualServiceInput`](crate::operation::create_virtual_service::CreateVirtualServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_virtual_service::CreateVirtualServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_virtual_service::CreateVirtualServiceInput {
-                virtual_service_name: self.virtual_service_name,
-                mesh_name: self.mesh_name,
-                spec: self.spec,
-                tags: self.tags,
-                client_token: self.client_token,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_virtual_service::CreateVirtualServiceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_virtual_service::CreateVirtualServiceInput {
+            virtual_service_name: self.virtual_service_name,
+            mesh_name: self.mesh_name,
+            spec: self.spec,
+            tags: self.tags,
+            client_token: self.client_token,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

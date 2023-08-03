@@ -6,8 +6,7 @@
 pub struct ResponseTimeRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
-    pub services:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
+    pub services: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     #[doc(hidden)]
     pub client_impacting: ::std::option::Option<bool>,
@@ -31,12 +30,9 @@ impl ResponseTimeRootCause {
 
 /// A builder for [`ResponseTimeRootCause`](crate::types::ResponseTimeRootCause).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseTimeRootCauseBuilder {
-    pub(crate) services:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
+    pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
     pub(crate) client_impacting: ::std::option::Option<bool>,
 }
 impl ResponseTimeRootCauseBuilder {
@@ -52,17 +48,12 @@ impl ResponseTimeRootCauseBuilder {
         self
     }
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
-    pub fn set_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
-    ) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>>) -> Self {
         self.services = input;
         self
     }
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
-    pub fn get_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>> {
         &self.services
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>

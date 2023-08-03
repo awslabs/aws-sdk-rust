@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput::next_token): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     ///   - [`reserved_nodes_offerings(Option<Vec<ReservedNodesOffering>>)`](crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput::reserved_nodes_offerings): <p>Lists available reserved node offerings.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedNodesOfferingsError>`](crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError)
-    pub fn describe_reserved_nodes_offerings(&self) -> crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsFluentBuilder{
+    pub fn describe_reserved_nodes_offerings(
+        &self,
+    ) -> crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsFluentBuilder {
         crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

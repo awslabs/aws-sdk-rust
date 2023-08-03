@@ -5,16 +5,16 @@ pub use crate::operation::modify_instance_capacity_reservation_attributes::_modi
 
 impl ModifyInstanceCapacityReservationAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.modify_instance_capacity_reservation_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ModifyInstanceCapacityReservationAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyInstanceCapacityReservationAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesInputBuilder,
+    inner: crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesInputBuilder,
 }
 impl ModifyInstanceCapacityReservationAttributesFluentBuilder {
     /// Creates a new `ModifyInstanceCapacityReservationAttributes`.
@@ -37,15 +37,24 @@ impl ModifyInstanceCapacityReservationAttributesFluentBuilder {
         }
     }
     /// Access the ModifyInstanceCapacityReservationAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl ModifyInstanceCapacityReservationAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl ModifyInstanceCapacityReservationAttributesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the instance to be modified.</p>
@@ -109,25 +134,17 @@ impl ModifyInstanceCapacityReservationAttributesFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
-    pub fn capacity_reservation_specification(
-        mut self,
-        input: crate::types::CapacityReservationSpecification,
-    ) -> Self {
+    pub fn capacity_reservation_specification(mut self, input: crate::types::CapacityReservationSpecification) -> Self {
         self.inner = self.inner.capacity_reservation_specification(input);
         self
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
-    pub fn set_capacity_reservation_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationSpecification>,
-    ) -> Self {
+    pub fn set_capacity_reservation_specification(mut self, input: ::std::option::Option<crate::types::CapacityReservationSpecification>) -> Self {
         self.inner = self.inner.set_capacity_reservation_specification(input);
         self
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
-    pub fn get_capacity_reservation_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
+    pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
         self.inner.get_capacity_reservation_specification()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

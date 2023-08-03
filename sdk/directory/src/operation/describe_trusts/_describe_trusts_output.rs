@@ -38,9 +38,7 @@ impl DescribeTrustsOutput {
 
 /// A builder for [`DescribeTrustsOutput`](crate::operation::describe_trusts::DescribeTrustsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustsOutputBuilder {
     pub(crate) trusts: ::std::option::Option<::std::vec::Vec<crate::types::Trust>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -61,10 +59,7 @@ impl DescribeTrustsOutputBuilder {
     }
     /// <p>The list of Trust objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub fn set_trusts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Trust>>,
-    ) -> Self {
+    pub fn set_trusts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trust>>) -> Self {
         self.trusts = input;
         self
     }

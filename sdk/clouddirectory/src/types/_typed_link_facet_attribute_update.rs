@@ -30,9 +30,7 @@ impl TypedLinkFacetAttributeUpdate {
 
 /// A builder for [`TypedLinkFacetAttributeUpdate`](crate::types::TypedLinkFacetAttributeUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypedLinkFacetAttributeUpdateBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::TypedLinkAttributeDefinition>,
     pub(crate) action: ::std::option::Option<crate::types::UpdateActionType>,
@@ -44,17 +42,12 @@ impl TypedLinkFacetAttributeUpdateBuilder {
         self
     }
     /// <p>The attribute to update.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedLinkAttributeDefinition>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::TypedLinkAttributeDefinition>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The attribute to update.</p>
-    pub fn get_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::TypedLinkAttributeDefinition> {
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::TypedLinkAttributeDefinition> {
         &self.attribute
     }
     /// <p>The action to perform when updating the attribute.</p>
@@ -63,10 +56,7 @@ impl TypedLinkFacetAttributeUpdateBuilder {
         self
     }
     /// <p>The action to perform when updating the attribute.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateActionType>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::UpdateActionType>) -> Self {
         self.action = input;
         self
     }

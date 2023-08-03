@@ -37,10 +37,7 @@ impl BatchGetFreeTrialInfoFluentBuilder {
         }
     }
     /// Access the BatchGetFreeTrialInfo as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchGetFreeTrialInfoFluentBuilder {
             crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfo,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchGetFreeTrialInfoFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchGetFreeTrialInfoFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchGetFreeTrialInfoFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl BatchGetFreeTrialInfoFluentBuilder {
             crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfo,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +119,12 @@ impl BatchGetFreeTrialInfoFluentBuilder {
         self
     }
     /// <p>The account IDs to get free trial status for.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The account IDs to get free trial status for.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

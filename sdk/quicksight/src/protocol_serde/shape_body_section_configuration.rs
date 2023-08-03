@@ -9,10 +9,7 @@ pub fn ser_body_section_configuration(
     if let Some(var_2) = &input.content {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Content").start_object();
-        crate::protocol_serde::shape_body_section_content::ser_body_section_content(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_body_section_content::ser_body_section_content(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.style {
@@ -32,17 +29,9 @@ pub fn ser_body_section_configuration(
 
 pub(crate) fn de_body_section_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::BodySectionConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::BodySectionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,52 +41,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "SectionId" => {
-                                builder = builder.set_section_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "SectionId" => {
+                            builder = builder.set_section_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Content" => {
-                                builder = builder.set_content(
-                                    crate::protocol_serde::shape_body_section_content::de_body_section_content(tokens)?
-                                );
-                            }
-                            "Style" => {
-                                builder = builder.set_style(
-                                    crate::protocol_serde::shape_section_style::de_section_style(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "PageBreakConfiguration" => {
-                                builder = builder.set_page_break_configuration(
-                                    crate::protocol_serde::shape_section_page_break_configuration::de_section_page_break_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "Content" => {
+                            builder = builder.set_content(crate::protocol_serde::shape_body_section_content::de_body_section_content(tokens)?);
+                        }
+                        "Style" => {
+                            builder = builder.set_style(crate::protocol_serde::shape_section_style::de_section_style(tokens)?);
+                        }
+                        "PageBreakConfiguration" => {
+                            builder = builder.set_page_break_configuration(
+                                crate::protocol_serde::shape_section_page_break_configuration::de_section_page_break_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -26,8 +26,7 @@ impl DisassociateConnectPeerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateConnectPeerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerInputBuilder,
+    inner: crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerInputBuilder,
 }
 impl DisassociateConnectPeerFluentBuilder {
     /// Creates a new `DisassociateConnectPeer`.
@@ -38,10 +37,7 @@ impl DisassociateConnectPeerFluentBuilder {
         }
     }
     /// Access the DisassociateConnectPeer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DisassociateConnectPeerFluentBuilder {
             crate::operation::disassociate_connect_peer::DisassociateConnectPeer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connect_peer::DisassociateConnectPeerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connect_peer::DisassociateConnectPeerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DisassociateConnectPeerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DisassociateConnectPeerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connect_peer::DisassociateConnectPeerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connect_peer::DisassociateConnectPeerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connect_peer::DisassociateConnectPeerError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DisassociateConnectPeerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connect_peer::DisassociateConnectPeerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connect_peer::DisassociateConnectPeerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connect_peer::DisassociateConnectPeerError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DisassociateConnectPeerFluentBuilder {
             crate::operation::disassociate_connect_peer::DisassociateConnectPeer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connect_peer::DisassociateConnectPeerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connect_peer::DisassociateConnectPeerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -145,18 +124,12 @@ impl DisassociateConnectPeerFluentBuilder {
         self.inner.get_global_network_id()
     }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
-    pub fn connect_peer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_peer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connect_peer_id(input.into());
         self
     }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
-    pub fn set_connect_peer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connect_peer_id(input);
         self
     }

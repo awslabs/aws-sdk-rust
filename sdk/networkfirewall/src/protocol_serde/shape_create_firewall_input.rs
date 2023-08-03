@@ -18,10 +18,7 @@ pub fn ser_create_firewall_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_subnet_mapping::ser_subnet_mapping(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_subnet_mapping::ser_subnet_mapping(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -34,9 +31,7 @@ pub fn ser_create_firewall_input(
         object.key("SubnetChangeProtection").boolean(*var_9);
     }
     if let Some(var_10) = &input.firewall_policy_change_protection {
-        object
-            .key("FirewallPolicyChangeProtection")
-            .boolean(*var_10);
+        object.key("FirewallPolicyChangeProtection").boolean(*var_10);
     }
     if let Some(var_11) = &input.description {
         object.key("Description").string(var_11.as_str());
@@ -56,10 +51,7 @@ pub fn ser_create_firewall_input(
     if let Some(var_16) = &input.encryption_configuration {
         #[allow(unused_mut)]
         let mut object_17 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
     Ok(())

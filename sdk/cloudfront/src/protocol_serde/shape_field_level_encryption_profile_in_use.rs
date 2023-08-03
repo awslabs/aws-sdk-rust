@@ -3,10 +3,7 @@
 pub fn de_field_level_encryption_profile_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::FieldLevelEncryptionProfileInUseBuilder,
-) -> Result<
-    crate::types::error::builders::FieldLevelEncryptionProfileInUseBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::FieldLevelEncryptionProfileInUseBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

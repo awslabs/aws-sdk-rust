@@ -15,16 +15,14 @@ impl GetContainerServiceDeploymentsInput {
 }
 impl GetContainerServiceDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`GetContainerServiceDeploymentsInput`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput).
-    pub fn builder() -> crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsInputBuilder{
+    pub fn builder() -> crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsInputBuilder {
         crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerServiceDeploymentsInput`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerServiceDeploymentsInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,8 @@ impl GetContainerServiceDeploymentsInputBuilder {
         crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput {
-                service_name: self.service_name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput {
+            service_name: self.service_name,
+        })
     }
 }

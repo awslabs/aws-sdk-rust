@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`image_id(Option<ImageIdentifier>)`](crate::operation::start_image_scan::StartImageScanOutput::image_id): <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     ///   - [`image_scan_status(Option<ImageScanStatus>)`](crate::operation::start_image_scan::StartImageScanOutput::image_scan_status): <p>The current state of the scan.</p>
     /// - On failure, responds with [`SdkError<StartImageScanError>`](crate::operation::start_image_scan::StartImageScanError)
-    pub fn start_image_scan(
-        &self,
-    ) -> crate::operation::start_image_scan::builders::StartImageScanFluentBuilder {
-        crate::operation::start_image_scan::builders::StartImageScanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_image_scan(&self) -> crate::operation::start_image_scan::builders::StartImageScanFluentBuilder {
+        crate::operation::start_image_scan::builders::StartImageScanFluentBuilder::new(self.handle.clone())
     }
 }

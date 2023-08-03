@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for PutManagedInsightRulesOutput {
 }
 impl PutManagedInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`PutManagedInsightRulesOutput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesOutputBuilder {
         crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutManagedInsightRulesOutput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutManagedInsightRulesOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl PutManagedInsightRulesOutputBuilder {
         self
     }
     /// <p> An array that lists the rules that could not be enabled. </p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>) -> Self {
         self.failures = input;
         self
     }
     /// <p> An array that lists the rules that could not be enabled. </p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +64,7 @@ impl PutManagedInsightRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutManagedInsightRulesOutput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput {
+    pub fn build(self) -> crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput {
         crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput {
             failures: self.failures,
             _request_id: self._request_id,

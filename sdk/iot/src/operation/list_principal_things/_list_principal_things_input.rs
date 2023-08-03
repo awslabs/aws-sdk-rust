@@ -30,18 +30,14 @@ impl ListPrincipalThingsInput {
 }
 impl ListPrincipalThingsInput {
     /// Creates a new builder-style object to manufacture [`ListPrincipalThingsInput`](crate::operation::list_principal_things::ListPrincipalThingsInput).
-    pub fn builder(
-    ) -> crate::operation::list_principal_things::builders::ListPrincipalThingsInputBuilder {
-        crate::operation::list_principal_things::builders::ListPrincipalThingsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_principal_things::builders::ListPrincipalThingsInputBuilder {
+        crate::operation::list_principal_things::builders::ListPrincipalThingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPrincipalThingsInput`](crate::operation::list_principal_things::ListPrincipalThingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrincipalThingsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -93,16 +89,12 @@ impl ListPrincipalThingsInputBuilder {
     /// Consumes the builder and constructs a [`ListPrincipalThingsInput`](crate::operation::list_principal_things::ListPrincipalThingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_principal_things::ListPrincipalThingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_principal_things::ListPrincipalThingsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                principal: self.principal,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_principal_things::ListPrincipalThingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_principal_things::ListPrincipalThingsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            principal: self.principal,
+        })
     }
 }

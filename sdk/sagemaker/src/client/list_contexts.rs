@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`context_summaries(Option<Vec<ContextSummary>>)`](crate::operation::list_contexts::ListContextsOutput::context_summaries): <p>A list of contexts and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contexts::ListContextsOutput::next_token): <p>A token for getting the next set of contexts, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListContextsError>`](crate::operation::list_contexts::ListContextsError)
-    pub fn list_contexts(
-        &self,
-    ) -> crate::operation::list_contexts::builders::ListContextsFluentBuilder {
-        crate::operation::list_contexts::builders::ListContextsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_contexts(&self) -> crate::operation::list_contexts::builders::ListContextsFluentBuilder {
+        crate::operation::list_contexts::builders::ListContextsFluentBuilder::new(self.handle.clone())
     }
 }

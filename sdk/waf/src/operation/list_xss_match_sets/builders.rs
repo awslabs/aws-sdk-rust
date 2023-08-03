@@ -10,10 +10,7 @@ impl ListXssMatchSetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_xss_match_sets::ListXssMatchSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_xss_match_sets::ListXssMatchSetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_xss_match_sets::ListXssMatchSetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_xss_match_sets();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl ListXssMatchSetsFluentBuilder {
         }
     }
     /// Access the ListXssMatchSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_xss_match_sets::builders::ListXssMatchSetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_xss_match_sets::builders::ListXssMatchSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl ListXssMatchSetsFluentBuilder {
             crate::operation::list_xss_match_sets::ListXssMatchSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_xss_match_sets::ListXssMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_xss_match_sets::ListXssMatchSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl ListXssMatchSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl ListXssMatchSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_xss_match_sets::ListXssMatchSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_xss_match_sets::ListXssMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_xss_match_sets::ListXssMatchSetsError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl ListXssMatchSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_xss_match_sets::ListXssMatchSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_xss_match_sets::ListXssMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_xss_match_sets::ListXssMatchSetsError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl ListXssMatchSetsFluentBuilder {
             crate::operation::list_xss_match_sets::ListXssMatchSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_xss_match_sets::ListXssMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_xss_match_sets::ListXssMatchSetsError>,
     > {
         self.customize_middleware().await
     }

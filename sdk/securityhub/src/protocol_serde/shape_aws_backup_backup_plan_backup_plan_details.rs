@@ -35,66 +35,50 @@ pub fn ser_aws_backup_backup_plan_backup_plan_details(
 
 pub(crate) fn de_aws_backup_backup_plan_backup_plan_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsBackupBackupPlanBackupPlanDetailsBuilder::default();
+            let mut builder = crate::types::builders::AwsBackupBackupPlanBackupPlanDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "BackupPlanName" => {
-                                builder = builder.set_backup_plan_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "BackupPlanName" => {
+                            builder = builder.set_backup_plan_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "AdvancedBackupSettings" => {
-                                builder = builder.set_advanced_backup_settings(
+                            );
+                        }
+                        "AdvancedBackupSettings" => {
+                            builder = builder.set_advanced_backup_settings(
                                     crate::protocol_serde::shape_aws_backup_backup_plan_advanced_backup_settings_list::de_aws_backup_backup_plan_advanced_backup_settings_list(tokens)?
                                 );
-                            }
-                            "BackupPlanRule" => {
-                                builder = builder.set_backup_plan_rule(
-                                    crate::protocol_serde::shape_aws_backup_backup_plan_rule_list::de_aws_backup_backup_plan_rule_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "BackupPlanRule" => {
+                            builder = builder.set_backup_plan_rule(
+                                crate::protocol_serde::shape_aws_backup_backup_plan_rule_list::de_aws_backup_backup_plan_rule_list(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

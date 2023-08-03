@@ -10,10 +10,7 @@ impl ListPermissionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_permissions::ListPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_permissions();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListPermissionsFluentBuilder {
         }
     }
     /// Access the ListPermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_permissions::builders::ListPermissionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_permissions::builders::ListPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListPermissionsFluentBuilder {
             crate::operation::list_permissions::ListPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permissions::ListPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permissions::ListPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl ListPermissionsFluentBuilder {
             crate::operation::list_permissions::ListPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_permissions::paginator::ListPermissionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_permissions::paginator::ListPermissionsPaginator {
-        crate::operation::list_permissions::paginator::ListPermissionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_permissions::paginator::ListPermissionsPaginator {
+        crate::operation::list_permissions::paginator::ListPermissionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,10 +134,7 @@ impl ListPermissionsFluentBuilder {
         self
     }
     /// <p>Specifies a principal to filter the permissions returned.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakePrincipal>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
     }
@@ -172,10 +148,7 @@ impl ListPermissionsFluentBuilder {
         self
     }
     /// <p>Specifies a resource type to filter the permissions returned.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::DataLakeResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -229,18 +202,12 @@ impl ListPermissionsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Indicates that related permissions should be included in the results.</p>
-    pub fn include_related(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn include_related(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.include_related(input.into());
         self
     }
     /// <p>Indicates that related permissions should be included in the results.</p>
-    pub fn set_include_related(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_include_related(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_include_related(input);
         self
     }

@@ -26,7 +26,7 @@ impl UpdateContributorInsightsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContributorInsightsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_contributor_insights::builders::UpdateContributorInsightsInputBuilder,
+    inner: crate::operation::update_contributor_insights::builders::UpdateContributorInsightsInputBuilder,
 }
 impl UpdateContributorInsightsFluentBuilder {
     /// Creates a new `UpdateContributorInsights`.
@@ -37,7 +37,7 @@ impl UpdateContributorInsightsFluentBuilder {
         }
     }
     /// Access the UpdateContributorInsights as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_contributor_insights::builders::UpdateContributorInsightsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_contributor_insights::builders::UpdateContributorInsightsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateContributorInsightsFluentBuilder {
             crate::operation::update_contributor_insights::UpdateContributorInsights,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contributor_insights::UpdateContributorInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contributor_insights::UpdateContributorInsightsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateContributorInsightsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateContributorInsightsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_contributor_insights::UpdateContributorInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contributor_insights::UpdateContributorInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contributor_insights::UpdateContributorInsightsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateContributorInsightsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_contributor_insights::UpdateContributorInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contributor_insights::UpdateContributorInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contributor_insights::UpdateContributorInsightsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateContributorInsightsFluentBuilder {
             crate::operation::update_contributor_insights::UpdateContributorInsights,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contributor_insights::UpdateContributorInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contributor_insights::UpdateContributorInsightsError>,
     > {
         self.customize_middleware().await
     }
@@ -149,25 +138,17 @@ impl UpdateContributorInsightsFluentBuilder {
         self.inner.get_index_name()
     }
     /// <p>Represents the contributor insights action.</p>
-    pub fn contributor_insights_action(
-        mut self,
-        input: crate::types::ContributorInsightsAction,
-    ) -> Self {
+    pub fn contributor_insights_action(mut self, input: crate::types::ContributorInsightsAction) -> Self {
         self.inner = self.inner.contributor_insights_action(input);
         self
     }
     /// <p>Represents the contributor insights action.</p>
-    pub fn set_contributor_insights_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ContributorInsightsAction>,
-    ) -> Self {
+    pub fn set_contributor_insights_action(mut self, input: ::std::option::Option<crate::types::ContributorInsightsAction>) -> Self {
         self.inner = self.inner.set_contributor_insights_action(input);
         self
     }
     /// <p>Represents the contributor insights action.</p>
-    pub fn get_contributor_insights_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContributorInsightsAction> {
+    pub fn get_contributor_insights_action(&self) -> &::std::option::Option<crate::types::ContributorInsightsAction> {
         self.inner.get_contributor_insights_action()
     }
 }

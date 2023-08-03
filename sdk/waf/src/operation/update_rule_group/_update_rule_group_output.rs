@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateRuleGroupOutput {
 }
 impl UpdateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleGroupOutput`](crate::operation::update_rule_group::UpdateRuleGroupOutput).
-    pub fn builder() -> crate::operation::update_rule_group::builders::UpdateRuleGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_rule_group::builders::UpdateRuleGroupOutputBuilder {
         crate::operation::update_rule_group::builders::UpdateRuleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRuleGroupOutput`](crate::operation::update_rule_group::UpdateRuleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleGroupOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

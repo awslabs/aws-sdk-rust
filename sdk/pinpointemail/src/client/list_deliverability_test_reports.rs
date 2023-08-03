@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`deliverability_test_reports(Option<Vec<DeliverabilityTestReport>>)`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput::deliverability_test_reports): <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput::next_token): <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<ListDeliverabilityTestReportsError>`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError)
-    pub fn list_deliverability_test_reports(&self) -> crate::operation::list_deliverability_test_reports::builders::ListDeliverabilityTestReportsFluentBuilder{
+    pub fn list_deliverability_test_reports(
+        &self,
+    ) -> crate::operation::list_deliverability_test_reports::builders::ListDeliverabilityTestReportsFluentBuilder {
         crate::operation::list_deliverability_test_reports::builders::ListDeliverabilityTestReportsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateProjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_project::CreateProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_project::CreateProjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_project::CreateProjectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_project();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateProjectFluentBuilder {
         }
     }
     /// Access the CreateProject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateProjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

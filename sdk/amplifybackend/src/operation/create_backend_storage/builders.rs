@@ -37,9 +37,7 @@ impl CreateBackendStorageFluentBuilder {
         }
     }
     /// Access the CreateBackendStorage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_backend_storage::builders::CreateBackendStorageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_backend_storage::builders::CreateBackendStorageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateBackendStorageFluentBuilder {
             crate::operation::create_backend_storage::CreateBackendStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backend_storage::CreateBackendStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backend_storage::CreateBackendStorageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateBackendStorageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateBackendStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_backend_storage::CreateBackendStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backend_storage::CreateBackendStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backend_storage::CreateBackendStorageError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateBackendStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_backend_storage::CreateBackendStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backend_storage::CreateBackendStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backend_storage::CreateBackendStorageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateBackendStorageFluentBuilder {
             crate::operation::create_backend_storage::CreateBackendStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backend_storage::CreateBackendStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backend_storage::CreateBackendStorageError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl CreateBackendStorageFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backend_environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backend_environment_name(input);
         self
     }
@@ -157,40 +138,26 @@ impl CreateBackendStorageFluentBuilder {
         self.inner.get_backend_environment_name()
     }
     /// <p>The resource configuration for creating backend storage.</p>
-    pub fn resource_config(
-        mut self,
-        input: crate::types::CreateBackendStorageResourceConfig,
-    ) -> Self {
+    pub fn resource_config(mut self, input: crate::types::CreateBackendStorageResourceConfig) -> Self {
         self.inner = self.inner.resource_config(input);
         self
     }
     /// <p>The resource configuration for creating backend storage.</p>
-    pub fn set_resource_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateBackendStorageResourceConfig>,
-    ) -> Self {
+    pub fn set_resource_config(mut self, input: ::std::option::Option<crate::types::CreateBackendStorageResourceConfig>) -> Self {
         self.inner = self.inner.set_resource_config(input);
         self
     }
     /// <p>The resource configuration for creating backend storage.</p>
-    pub fn get_resource_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateBackendStorageResourceConfig> {
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::CreateBackendStorageResourceConfig> {
         self.inner.get_resource_config()
     }
     /// <p>The name of the storage resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of the storage resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }

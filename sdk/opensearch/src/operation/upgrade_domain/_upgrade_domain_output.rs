@@ -18,9 +18,7 @@ pub struct UpgradeDomainOutput {
     pub perform_check_only: ::std::option::Option<bool>,
     /// <p>The advanced options configuration for the domain.</p>
     #[doc(hidden)]
-    pub advanced_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Container for information about a configuration change happening on a domain.</p>
     #[doc(hidden)]
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
@@ -44,17 +42,11 @@ impl UpgradeDomainOutput {
         self.perform_check_only
     }
     /// <p>The advanced options configuration for the domain.</p>
-    pub fn advanced_options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn advanced_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.advanced_options.as_ref()
     }
     /// <p>Container for information about a configuration change happening on a domain.</p>
-    pub fn change_progress_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
+    pub fn change_progress_details(&self) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
 }
@@ -72,17 +64,13 @@ impl UpgradeDomainOutput {
 
 /// A builder for [`UpgradeDomainOutput`](crate::operation::upgrade_domain::UpgradeDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeDomainOutputBuilder {
     pub(crate) upgrade_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_version: ::std::option::Option<::std::string::String>,
     pub(crate) perform_check_only: ::std::option::Option<bool>,
-    pub(crate) advanced_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
 }
@@ -116,18 +104,12 @@ impl UpgradeDomainOutputBuilder {
         &self.domain_name
     }
     /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
-    pub fn target_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
-    pub fn set_target_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_version = input;
         self
     }
@@ -167,19 +149,13 @@ impl UpgradeDomainOutputBuilder {
     /// <p>The advanced options configuration for the domain.</p>
     pub fn set_advanced_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.advanced_options = input;
         self
     }
     /// <p>The advanced options configuration for the domain.</p>
-    pub fn get_advanced_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_advanced_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.advanced_options
     }
     /// <p>Container for information about a configuration change happening on a domain.</p>
@@ -188,17 +164,12 @@ impl UpgradeDomainOutputBuilder {
         self
     }
     /// <p>Container for information about a configuration change happening on a domain.</p>
-    pub fn set_change_progress_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeProgressDetails>,
-    ) -> Self {
+    pub fn set_change_progress_details(mut self, input: ::std::option::Option<crate::types::ChangeProgressDetails>) -> Self {
         self.change_progress_details = input;
         self
     }
     /// <p>Container for information about a configuration change happening on a domain.</p>
-    pub fn get_change_progress_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
+    pub fn get_change_progress_details(&self) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
         &self.change_progress_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

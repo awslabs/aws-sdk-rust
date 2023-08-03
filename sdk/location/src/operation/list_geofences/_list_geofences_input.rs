@@ -40,9 +40,7 @@ impl ListGeofencesInput {
 
 /// A builder for [`ListGeofencesInput`](crate::operation::list_geofences::ListGeofencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGeofencesInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,18 +48,12 @@ pub struct ListGeofencesInputBuilder {
 }
 impl ListGeofencesInputBuilder {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the geofence collection storing the list of geofences.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_name = input;
         self
     }
@@ -106,10 +98,7 @@ impl ListGeofencesInputBuilder {
     /// Consumes the builder and constructs a [`ListGeofencesInput`](crate::operation::list_geofences::ListGeofencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_geofences::ListGeofencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_geofences::ListGeofencesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_geofences::ListGeofencesInput {
             collection_name: self.collection_name,
             next_token: self.next_token,

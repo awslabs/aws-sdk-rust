@@ -161,9 +161,7 @@ impl Replication {
         self.replication_update_time.as_ref()
     }
     /// <p>The timestamp when replication was last stopped.</p>
-    pub fn replication_last_stop_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replication_last_stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_last_stop_time.as_ref()
     }
 }
@@ -176,9 +174,7 @@ impl Replication {
 
 /// A builder for [`Replication`](crate::types::Replication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationBuilder {
     pub(crate) replication_config_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
@@ -201,40 +197,26 @@ pub struct ReplicationBuilder {
 }
 impl ReplicationBuilder {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
-    pub fn replication_config_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
-    pub fn set_replication_config_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_identifier = input;
         self
     }
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
-    pub fn get_replication_config_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_config_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_config_identifier
     }
     /// <p>The Amazon Resource Name for the <code>ReplicationConfig</code> associated with the replication.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name for the <code>ReplicationConfig</code> associated with the replication.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_arn = input;
         self
     }
@@ -243,18 +225,12 @@ impl ReplicationBuilder {
         &self.replication_config_arn
     }
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data source.</p>
-    pub fn source_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data source.</p>
-    pub fn set_source_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_endpoint_arn = input;
         self
     }
@@ -263,18 +239,12 @@ impl ReplicationBuilder {
         &self.source_endpoint_arn
     }
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data target.</p>
-    pub fn target_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data target.</p>
-    pub fn set_target_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_endpoint_arn = input;
         self
     }
@@ -288,10 +258,7 @@ impl ReplicationBuilder {
         self
     }
     /// <p>The type of the serverless replication.</p>
-    pub fn set_replication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationTypeValue>,
-    ) -> Self {
+    pub fn set_replication_type(mut self, input: ::std::option::Option<crate::types::MigrationTypeValue>) -> Self {
         self.replication_type = input;
         self
     }
@@ -319,10 +286,7 @@ impl ReplicationBuilder {
         self
     }
     /// <p>Information about provisioning resources for an DMS serverless replication.</p>
-    pub fn set_provision_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionData>,
-    ) -> Self {
+    pub fn set_provision_data(mut self, input: ::std::option::Option<crate::types::ProvisionData>) -> Self {
         self.provision_data = input;
         self
     }
@@ -397,27 +361,19 @@ impl ReplicationBuilder {
     /// To override the contents of this collection use [`set_failure_messages`](Self::set_failure_messages).
     ///
     /// <p>Error and other information about why a serverless replication failed.</p>
-    pub fn failure_messages(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_messages.unwrap_or_default();
         v.push(input.into());
         self.failure_messages = ::std::option::Option::Some(v);
         self
     }
     /// <p>Error and other information about why a serverless replication failed.</p>
-    pub fn set_failure_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_messages = input;
         self
     }
     /// <p>Error and other information about why a serverless replication failed.</p>
-    pub fn get_failure_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_messages
     }
     /// <p>This object provides a collection of statistics about a serverless replication.</p>
@@ -426,10 +382,7 @@ impl ReplicationBuilder {
         self
     }
     /// <p>This object provides a collection of statistics about a serverless replication.</p>
-    pub fn set_replication_stats(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationStats>,
-    ) -> Self {
+    pub fn set_replication_stats(mut self, input: ::std::option::Option<crate::types::ReplicationStats>) -> Self {
         self.replication_stats = input;
         self
     }
@@ -438,18 +391,12 @@ impl ReplicationBuilder {
         &self.replication_stats
     }
     /// <p>The replication type.</p>
-    pub fn start_replication_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_replication_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_replication_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The replication type.</p>
-    pub fn set_start_replication_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_replication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_replication_type = input;
         self
     }
@@ -463,10 +410,7 @@ impl ReplicationBuilder {
         self
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    pub fn set_cdc_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_cdc_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.cdc_start_time = input;
         self
     }
@@ -475,18 +419,12 @@ impl ReplicationBuilder {
         &self.cdc_start_time
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    pub fn cdc_start_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_start_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cdc_start_position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    pub fn set_cdc_start_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cdc_start_position = input;
         self
     }
@@ -495,18 +433,12 @@ impl ReplicationBuilder {
         &self.cdc_start_position
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
-    pub fn cdc_stop_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_stop_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cdc_stop_position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
-    pub fn set_cdc_stop_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_stop_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cdc_stop_position = input;
         self
     }
@@ -515,18 +447,12 @@ impl ReplicationBuilder {
         &self.cdc_stop_position
     }
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
-    pub fn recovery_checkpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_checkpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_checkpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
-    pub fn set_recovery_checkpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_checkpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_checkpoint = input;
         self
     }
@@ -540,17 +466,12 @@ impl ReplicationBuilder {
         self
     }
     /// <p>The time the serverless replication was created.</p>
-    pub fn set_replication_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_replication_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.replication_create_time = input;
         self
     }
     /// <p>The time the serverless replication was created.</p>
-    pub fn get_replication_create_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_replication_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.replication_create_time
     }
     /// <p>The time the serverless replication was updated.</p>
@@ -559,17 +480,12 @@ impl ReplicationBuilder {
         self
     }
     /// <p>The time the serverless replication was updated.</p>
-    pub fn set_replication_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_replication_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.replication_update_time = input;
         self
     }
     /// <p>The time the serverless replication was updated.</p>
-    pub fn get_replication_update_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_replication_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.replication_update_time
     }
     /// <p>The timestamp when replication was last stopped.</p>
@@ -578,17 +494,12 @@ impl ReplicationBuilder {
         self
     }
     /// <p>The timestamp when replication was last stopped.</p>
-    pub fn set_replication_last_stop_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_replication_last_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.replication_last_stop_time = input;
         self
     }
     /// <p>The timestamp when replication was last stopped.</p>
-    pub fn get_replication_last_stop_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_replication_last_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.replication_last_stop_time
     }
     /// Consumes the builder and constructs a [`Replication`](crate::types::Replication).

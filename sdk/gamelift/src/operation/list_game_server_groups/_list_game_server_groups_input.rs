@@ -22,17 +22,14 @@ impl ListGameServerGroupsInput {
 }
 impl ListGameServerGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListGameServerGroupsInput`](crate::operation::list_game_server_groups::ListGameServerGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_game_server_groups::builders::ListGameServerGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_game_server_groups::builders::ListGameServerGroupsInputBuilder {
         crate::operation::list_game_server_groups::builders::ListGameServerGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGameServerGroupsInput`](crate::operation::list_game_server_groups::ListGameServerGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGameServerGroupsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl ListGameServerGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListGameServerGroupsInput`](crate::operation::list_game_server_groups::ListGameServerGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_game_server_groups::ListGameServerGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_game_server_groups::ListGameServerGroupsInput {
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_game_server_groups::ListGameServerGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_game_server_groups::ListGameServerGroupsInput {
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

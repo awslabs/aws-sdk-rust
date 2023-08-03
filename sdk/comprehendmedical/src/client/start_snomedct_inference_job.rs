@@ -13,7 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StartSnomedctInferenceJobOutput`](crate::operation::start_snomedct_inference_job::StartSnomedctInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_snomedct_inference_job::StartSnomedctInferenceJobOutput::job_id): <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
     /// - On failure, responds with [`SdkError<StartSNOMEDCTInferenceJobError>`](crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError)
-    pub fn start_snomedct_inference_job(&self) -> crate::operation::start_snomedct_inference_job::builders::StartSNOMEDCTInferenceJobFluentBuilder{
+    pub fn start_snomedct_inference_job(&self) -> crate::operation::start_snomedct_inference_job::builders::StartSNOMEDCTInferenceJobFluentBuilder {
         crate::operation::start_snomedct_inference_job::builders::StartSNOMEDCTInferenceJobFluentBuilder::new(self.handle.clone())
     }
 }

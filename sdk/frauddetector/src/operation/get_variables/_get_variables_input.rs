@@ -36,9 +36,7 @@ impl GetVariablesInput {
 
 /// A builder for [`GetVariablesInput`](crate::operation::get_variables::GetVariablesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVariablesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl GetVariablesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetVariablesInput`](crate::operation::get_variables::GetVariablesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_variables::GetVariablesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_variables::GetVariablesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_variables::GetVariablesInput {
             name: self.name,
             next_token: self.next_token,

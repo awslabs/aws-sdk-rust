@@ -34,7 +34,7 @@ impl RemoveAccountFromOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveAccountFromOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationInputBuilder,
+    inner: crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationInputBuilder,
 }
 impl RemoveAccountFromOrganizationFluentBuilder {
     /// Creates a new `RemoveAccountFromOrganization`.
@@ -45,7 +45,7 @@ impl RemoveAccountFromOrganizationFluentBuilder {
         }
     }
     /// Access the RemoveAccountFromOrganization as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl RemoveAccountFromOrganizationFluentBuilder {
             crate::operation::remove_account_from_organization::RemoveAccountFromOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl RemoveAccountFromOrganizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl RemoveAccountFromOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl RemoveAccountFromOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl RemoveAccountFromOrganizationFluentBuilder {
             crate::operation::remove_account_from_organization::RemoveAccountFromOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationError>,
     > {
         self.customize_middleware().await
     }

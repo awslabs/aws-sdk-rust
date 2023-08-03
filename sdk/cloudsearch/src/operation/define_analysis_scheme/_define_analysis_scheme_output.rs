@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DefineAnalysisSchemeOutput {
 }
 impl DefineAnalysisSchemeOutput {
     /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeOutput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput).
-    pub fn builder(
-    ) -> crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeOutputBuilder {
+    pub fn builder() -> crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeOutputBuilder {
         crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DefineAnalysisSchemeOutput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefineAnalysisSchemeOutputBuilder {
     pub(crate) analysis_scheme: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,
@@ -44,17 +41,12 @@ impl DefineAnalysisSchemeOutputBuilder {
         self
     }
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
-    pub fn set_analysis_scheme(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
-    ) -> Self {
+    pub fn set_analysis_scheme(mut self, input: ::std::option::Option<crate::types::AnalysisSchemeStatus>) -> Self {
         self.analysis_scheme = input;
         self
     }
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
-    pub fn get_analysis_scheme(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalysisSchemeStatus> {
+    pub fn get_analysis_scheme(&self) -> &::std::option::Option<crate::types::AnalysisSchemeStatus> {
         &self.analysis_scheme
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

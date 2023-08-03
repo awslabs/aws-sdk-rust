@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListConstraintsForPortfolioOutput {
 }
 impl ListConstraintsForPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`ListConstraintsForPortfolioOutput`](crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput).
-    pub fn builder() -> crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioOutputBuilder{
+    pub fn builder() -> crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioOutputBuilder {
         crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConstraintsForPortfolioOutput`](crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConstraintsForPortfolioOutputBuilder {
-    pub(crate) constraint_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConstraintDetail>>,
+    pub(crate) constraint_details: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,32 +54,21 @@ impl ListConstraintsForPortfolioOutputBuilder {
         self
     }
     /// <p>Information about the constraints.</p>
-    pub fn set_constraint_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintDetail>>,
-    ) -> Self {
+    pub fn set_constraint_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintDetail>>) -> Self {
         self.constraint_details = input;
         self
     }
     /// <p>Information about the constraints.</p>
-    pub fn get_constraint_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConstraintDetail>> {
+    pub fn get_constraint_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConstraintDetail>> {
         &self.constraint_details
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -100,9 +86,7 @@ impl ListConstraintsForPortfolioOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConstraintsForPortfolioOutput`](crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput {
+    pub fn build(self) -> crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput {
         crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput {
             constraint_details: self.constraint_details,
             next_page_token: self.next_page_token,

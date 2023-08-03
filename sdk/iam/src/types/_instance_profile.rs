@@ -72,9 +72,7 @@ impl InstanceProfile {
 
 /// A builder for [`InstanceProfile`](crate::types::InstanceProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceProfileBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
@@ -100,18 +98,12 @@ impl InstanceProfileBuilder {
         &self.path
     }
     /// <p>The name identifying the instance profile.</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name identifying the instance profile.</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_profile_name = input;
         self
     }
@@ -120,18 +112,12 @@ impl InstanceProfileBuilder {
         &self.instance_profile_name
     }
     /// <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn instance_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn set_instance_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_profile_id = input;
         self
     }
@@ -159,10 +145,7 @@ impl InstanceProfileBuilder {
         self
     }
     /// <p>The date when the instance profile was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
@@ -182,10 +165,7 @@ impl InstanceProfileBuilder {
         self
     }
     /// <p>The role associated with the instance profile.</p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.roles = input;
         self
     }
@@ -205,10 +185,7 @@ impl InstanceProfileBuilder {
         self
     }
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

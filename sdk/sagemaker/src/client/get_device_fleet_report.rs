@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`agent_versions(Option<Vec<AgentVersion>>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::agent_versions): <p>The versions of Edge Manager agent deployed on the fleet.</p>
     ///   - [`model_stats(Option<Vec<EdgeModelStat>>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::model_stats): <p>Status of model on device.</p>
     /// - On failure, responds with [`SdkError<GetDeviceFleetReportError>`](crate::operation::get_device_fleet_report::GetDeviceFleetReportError)
-    pub fn get_device_fleet_report(
-        &self,
-    ) -> crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder
-    {
-        crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_device_fleet_report(&self) -> crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder {
+        crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder::new(self.handle.clone())
     }
 }

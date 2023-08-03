@@ -37,9 +37,7 @@ impl DescribeReleaseLabelFluentBuilder {
         }
     }
     /// Access the DescribeReleaseLabel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_release_label::builders::DescribeReleaseLabelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_release_label::builders::DescribeReleaseLabelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeReleaseLabelFluentBuilder {
             crate::operation::describe_release_label::DescribeReleaseLabel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_release_label::DescribeReleaseLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_release_label::DescribeReleaseLabelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeReleaseLabelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeReleaseLabelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_release_label::DescribeReleaseLabelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_release_label::DescribeReleaseLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_release_label::DescribeReleaseLabelError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeReleaseLabelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_release_label::DescribeReleaseLabelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_release_label::DescribeReleaseLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_release_label::DescribeReleaseLabelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeReleaseLabelFluentBuilder {
             crate::operation::describe_release_label::DescribeReleaseLabel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_release_label::DescribeReleaseLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_release_label::DescribeReleaseLabelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The target release label to be described.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.release_label(input.into());
         self
     }
     /// <p>The target release label to be described.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_release_label(input);
         self
     }

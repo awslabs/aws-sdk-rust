@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicOutput::subscriptions): <p>A list of subscriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicOutput::next_token): <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListSubscriptionsByTopicError>`](crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError)
-    pub fn list_subscriptions_by_topic(&self) -> crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicFluentBuilder{
+    pub fn list_subscriptions_by_topic(&self) -> crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicFluentBuilder {
         crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicFluentBuilder::new(self.handle.clone())
     }
 }

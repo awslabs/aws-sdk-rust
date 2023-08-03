@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for NotifyResourceDeploymentStatusChangeO
 }
 impl NotifyResourceDeploymentStatusChangeOutput {
     /// Creates a new builder-style object to manufacture [`NotifyResourceDeploymentStatusChangeOutput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput).
-    pub fn builder() -> crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeOutputBuilder{
+    pub fn builder() -> crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeOutputBuilder {
         crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeOutputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyResourceDeploymentStatusChangeOutput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyResourceDeploymentStatusChangeOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl NotifyResourceDeploymentStatusChangeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`NotifyResourceDeploymentStatusChangeOutput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput).
-    pub fn build(self) -> crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput{
+    pub fn build(self) -> crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput {
         crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput {
             _request_id: self._request_id,
         }

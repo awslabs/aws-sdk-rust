@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListVolumeInitiatorsOutput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput) with field(s):
     ///   - [`initiators(Option<Vec<String>>)`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput::initiators): <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
     /// - On failure, responds with [`SdkError<ListVolumeInitiatorsError>`](crate::operation::list_volume_initiators::ListVolumeInitiatorsError)
-    pub fn list_volume_initiators(
-        &self,
-    ) -> crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsFluentBuilder {
-        crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_volume_initiators(&self) -> crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsFluentBuilder {
+        crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsFluentBuilder::new(self.handle.clone())
     }
 }

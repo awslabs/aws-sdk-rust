@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`upload_id(Option<String>)`](crate::operation::initiate_layer_upload::InitiateLayerUploadOutput::upload_id): <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
     ///   - [`part_size(Option<i64>)`](crate::operation::initiate_layer_upload::InitiateLayerUploadOutput::part_size): <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
     /// - On failure, responds with [`SdkError<InitiateLayerUploadError>`](crate::operation::initiate_layer_upload::InitiateLayerUploadError)
-    pub fn initiate_layer_upload(
-        &self,
-    ) -> crate::operation::initiate_layer_upload::builders::InitiateLayerUploadFluentBuilder {
-        crate::operation::initiate_layer_upload::builders::InitiateLayerUploadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn initiate_layer_upload(&self) -> crate::operation::initiate_layer_upload::builders::InitiateLayerUploadFluentBuilder {
+        crate::operation::initiate_layer_upload::builders::InitiateLayerUploadFluentBuilder::new(self.handle.clone())
     }
 }

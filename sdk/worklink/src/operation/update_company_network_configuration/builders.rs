@@ -5,16 +5,16 @@ pub use crate::operation::update_company_network_configuration::_update_company_
 
 impl UpdateCompanyNetworkConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_company_network_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -23,13 +23,11 @@ impl UpdateCompanyNetworkConfigurationInputBuilder {
 /// Fluent builder constructing a request to `UpdateCompanyNetworkConfiguration`.
 ///
 /// <p>Updates the company network configuration for the fleet.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCompanyNetworkConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationInputBuilder,
+    inner: crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationInputBuilder,
 }
 impl UpdateCompanyNetworkConfigurationFluentBuilder {
     /// Creates a new `UpdateCompanyNetworkConfiguration`.
@@ -40,15 +38,20 @@ impl UpdateCompanyNetworkConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateCompanyNetworkConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +60,17 @@ impl UpdateCompanyNetworkConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +88,26 @@ impl UpdateCompanyNetworkConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the fleet.</p>
@@ -135,10 +148,7 @@ impl UpdateCompanyNetworkConfigurationFluentBuilder {
         self
     }
     /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -151,25 +161,17 @@ impl UpdateCompanyNetworkConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The security groups associated with access to the provided subnets.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>The security groups associated with access to the provided subnets.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>The security groups associated with access to the provided subnets.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
 }

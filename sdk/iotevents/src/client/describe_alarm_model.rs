@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`alarm_event_actions(Option<AlarmEventActions>)`](crate::operation::describe_alarm_model::DescribeAlarmModelOutput::alarm_event_actions): <p>Contains information about one or more alarm actions.</p>
     ///   - [`alarm_capabilities(Option<AlarmCapabilities>)`](crate::operation::describe_alarm_model::DescribeAlarmModelOutput::alarm_capabilities): <p>Contains the configuration information of alarm state changes.</p>
     /// - On failure, responds with [`SdkError<DescribeAlarmModelError>`](crate::operation::describe_alarm_model::DescribeAlarmModelError)
-    pub fn describe_alarm_model(
-        &self,
-    ) -> crate::operation::describe_alarm_model::builders::DescribeAlarmModelFluentBuilder {
-        crate::operation::describe_alarm_model::builders::DescribeAlarmModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_alarm_model(&self) -> crate::operation::describe_alarm_model::builders::DescribeAlarmModelFluentBuilder {
+        crate::operation::describe_alarm_model::builders::DescribeAlarmModelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeProtectedResourceOutput {
 }
 impl DescribeProtectedResourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectedResourceOutput`](crate::operation::describe_protected_resource::DescribeProtectedResourceOutput).
-    pub fn builder() -> crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder{
+    pub fn builder() -> crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder {
         crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProtectedResourceOutput`](crate::operation::describe_protected_resource::DescribeProtectedResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProtectedResourceOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl DescribeProtectedResourceOutputBuilder {
         &self.resource_arn
     }
     /// <p>The type of Amazon Web Services resource saved as a recovery point; for example, an Amazon EBS volume or an Amazon RDS database.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of Amazon Web Services resource saved as a recovery point; for example, an Amazon EBS volume or an Amazon RDS database.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -100,10 +92,7 @@ impl DescribeProtectedResourceOutputBuilder {
         self
     }
     /// <p>The date and time that a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_last_backup_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_backup_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_backup_time = input;
         self
     }
@@ -112,18 +101,12 @@ impl DescribeProtectedResourceOutputBuilder {
         &self.last_backup_time
     }
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -141,9 +124,7 @@ impl DescribeProtectedResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeProtectedResourceOutput`](crate::operation::describe_protected_resource::DescribeProtectedResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_protected_resource::DescribeProtectedResourceOutput {
+    pub fn build(self) -> crate::operation::describe_protected_resource::DescribeProtectedResourceOutput {
         crate::operation::describe_protected_resource::DescribeProtectedResourceOutput {
             resource_arn: self.resource_arn,
             resource_type: self.resource_type,

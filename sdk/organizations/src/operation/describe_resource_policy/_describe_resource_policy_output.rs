@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeResourcePolicyOutput {
 }
 impl DescribeResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder {
         crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResourcePolicyOutput`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourcePolicyOutputBuilder {
     pub(crate) resource_policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeResourcePolicyOutputBuilder {
         self
     }
     /// <p>A structure that contains details about the resource policy.</p>
-    pub fn set_resource_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourcePolicy>,
-    ) -> Self {
+    pub fn set_resource_policy(mut self, input: ::std::option::Option<crate::types::ResourcePolicy>) -> Self {
         self.resource_policy = input;
         self
     }

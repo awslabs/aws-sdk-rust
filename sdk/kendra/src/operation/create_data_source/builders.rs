@@ -10,10 +10,7 @@ impl CreateDataSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_data_source::CreateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source::CreateDataSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source::CreateDataSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_data_source();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateDataSourceFluentBuilder {
         }
     }
     /// Access the CreateDataSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_data_source::builders::CreateDataSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_data_source::builders::CreateDataSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateDataSourceFluentBuilder {
             crate::operation::create_data_source::CreateDataSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source::CreateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source::CreateDataSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateDataSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateDataSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_source::CreateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source::CreateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source::CreateDataSourceError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateDataSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_source::CreateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source::CreateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source::CreateDataSourceError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateDataSourceFluentBuilder {
             crate::operation::create_data_source::CreateDataSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source::CreateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source::CreateDataSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -177,19 +161,14 @@ impl CreateDataSourceFluentBuilder {
     /// <p>Configuration information to connect to your data source repository.</p>
     /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>Configuration information to connect to your data source repository.</p>
     /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         self.inner.get_configuration()
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
@@ -198,17 +177,12 @@ impl CreateDataSourceFluentBuilder {
         self
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
         self.inner = self.inner.set_vpc_configuration(input);
         self
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn get_vpc_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
         self.inner.get_vpc_configuration()
     }
     /// <p>A description for the data source connector.</p>
@@ -275,10 +249,7 @@ impl CreateDataSourceFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -301,18 +272,12 @@ impl CreateDataSourceFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.language_code(input.into());
         self
     }
     /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -322,10 +287,7 @@ impl CreateDataSourceFluentBuilder {
     }
     /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn custom_document_enrichment_configuration(
-        mut self,
-        input: crate::types::CustomDocumentEnrichmentConfiguration,
-    ) -> Self {
+    pub fn custom_document_enrichment_configuration(mut self, input: crate::types::CustomDocumentEnrichmentConfiguration) -> Self {
         self.inner = self.inner.custom_document_enrichment_configuration(input);
         self
     }
@@ -335,16 +297,12 @@ impl CreateDataSourceFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_custom_document_enrichment_configuration(input);
+        self.inner = self.inner.set_custom_document_enrichment_configuration(input);
         self
     }
     /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn get_custom_document_enrichment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
+    pub fn get_custom_document_enrichment_configuration(&self) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
         self.inner.get_custom_document_enrichment_configuration()
     }
 }

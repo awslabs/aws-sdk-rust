@@ -93,9 +93,7 @@ impl SupportedInstanceType {
 
 /// A builder for [`SupportedInstanceType`](crate::types::SupportedInstanceType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SupportedInstanceTypeBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) memory_gb: ::std::option::Option<f32>,
@@ -181,18 +179,12 @@ impl SupportedInstanceTypeBuilder {
         &self.is64_bits_only
     }
     /// <p>The Amazon EC2 family and generation for the <code>SupportedInstanceType</code>.</p>
-    pub fn instance_family_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_family_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_family_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 family and generation for the <code>SupportedInstanceType</code>.</p>
-    pub fn set_instance_family_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_family_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_family_id = input;
         self
     }

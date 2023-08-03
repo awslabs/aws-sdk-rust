@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_alias::builders::DeleteAliasFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_alias::builders::DeleteAliasFluentBuilder::set_name): <p>The name of the alias.</p>
     /// - On success, responds with [`DeleteAliasOutput`](crate::operation::delete_alias::DeleteAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteAliasError>`](crate::operation::delete_alias::DeleteAliasError)
-    pub fn delete_alias(
-        &self,
-    ) -> crate::operation::delete_alias::builders::DeleteAliasFluentBuilder {
+    pub fn delete_alias(&self) -> crate::operation::delete_alias::builders::DeleteAliasFluentBuilder {
         crate::operation::delete_alias::builders::DeleteAliasFluentBuilder::new(self.handle.clone())
     }
 }

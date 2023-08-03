@@ -26,7 +26,7 @@ impl CreateRobotApplicationVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRobotApplicationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder,
+    inner: crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder,
 }
 impl CreateRobotApplicationVersionFluentBuilder {
     /// Creates a new `CreateRobotApplicationVersion`.
@@ -37,7 +37,7 @@ impl CreateRobotApplicationVersionFluentBuilder {
         }
     }
     /// Access the CreateRobotApplicationVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateRobotApplicationVersionFluentBuilder {
             crate::operation::create_robot_application_version::CreateRobotApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_robot_application_version::CreateRobotApplicationVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateRobotApplicationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateRobotApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_robot_application_version::CreateRobotApplicationVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateRobotApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_robot_application_version::CreateRobotApplicationVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateRobotApplicationVersionFluentBuilder {
             crate::operation::create_robot_application_version::CreateRobotApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_robot_application_version::CreateRobotApplicationVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl CreateRobotApplicationVersionFluentBuilder {
         self.inner.get_application()
     }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn current_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_revision_id(input.into());
         self
     }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn set_current_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_revision_id(input);
         self
     }
@@ -164,10 +147,7 @@ impl CreateRobotApplicationVersionFluentBuilder {
         self
     }
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
-    pub fn set_s3_etags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_s3_etags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_s3_etags(input);
         self
     }

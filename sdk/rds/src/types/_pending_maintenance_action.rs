@@ -60,9 +60,7 @@ impl PendingMaintenanceAction {
 
 /// A builder for [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingMaintenanceActionBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) auto_applied_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -92,17 +90,12 @@ impl PendingMaintenanceActionBuilder {
         self
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date.</p>
-    pub fn set_auto_applied_after_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_auto_applied_after_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.auto_applied_after_date = input;
         self
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date.</p>
-    pub fn get_auto_applied_after_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_auto_applied_after_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.auto_applied_after_date
     }
     /// <p>The date when the maintenance action is automatically applied.</p>
@@ -113,10 +106,7 @@ impl PendingMaintenanceActionBuilder {
     }
     /// <p>The date when the maintenance action is automatically applied.</p>
     /// <p>On this date, the maintenance action is applied to the resource as soon as possible, regardless of the maintenance window for the resource. There might be a delay of one or more days from this date before the maintenance action is applied.</p>
-    pub fn set_forced_apply_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_forced_apply_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.forced_apply_date = input;
         self
     }
@@ -126,18 +116,12 @@ impl PendingMaintenanceActionBuilder {
         &self.forced_apply_date
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-    pub fn opt_in_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_in_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_in_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-    pub fn set_opt_in_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_in_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_in_status = input;
         self
     }
@@ -151,10 +135,7 @@ impl PendingMaintenanceActionBuilder {
         self
     }
     /// <p>The effective date when the pending maintenance action is applied to the resource. This date takes into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-    pub fn set_current_apply_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_current_apply_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.current_apply_date = input;
         self
     }

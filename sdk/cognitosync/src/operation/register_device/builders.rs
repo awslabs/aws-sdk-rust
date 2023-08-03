@@ -10,10 +10,7 @@ impl RegisterDeviceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_device::RegisterDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_device::RegisterDeviceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_device::RegisterDeviceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_device();
         fluent_builder.inner = self;
@@ -62,9 +59,7 @@ impl RegisterDeviceFluentBuilder {
         }
     }
     /// Access the RegisterDevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_device::builders::RegisterDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_device::builders::RegisterDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -86,10 +81,7 @@ impl RegisterDeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -140,18 +132,12 @@ impl RegisterDeviceFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }

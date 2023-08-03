@@ -15,18 +15,14 @@ impl DisableAlarmActionsInput {
 }
 impl DisableAlarmActionsInput {
     /// Creates a new builder-style object to manufacture [`DisableAlarmActionsInput`](crate::operation::disable_alarm_actions::DisableAlarmActionsInput).
-    pub fn builder(
-    ) -> crate::operation::disable_alarm_actions::builders::DisableAlarmActionsInputBuilder {
-        crate::operation::disable_alarm_actions::builders::DisableAlarmActionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disable_alarm_actions::builders::DisableAlarmActionsInputBuilder {
+        crate::operation::disable_alarm_actions::builders::DisableAlarmActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableAlarmActionsInput`](crate::operation::disable_alarm_actions::DisableAlarmActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableAlarmActionsInputBuilder {
     pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -43,30 +39,21 @@ impl DisableAlarmActionsInputBuilder {
         self
     }
     /// <p>The names of the alarms.</p>
-    pub fn set_alarm_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alarm_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.alarm_names = input;
         self
     }
     /// <p>The names of the alarms.</p>
-    pub fn get_alarm_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alarm_names
     }
     /// Consumes the builder and constructs a [`DisableAlarmActionsInput`](crate::operation::disable_alarm_actions::DisableAlarmActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_alarm_actions::DisableAlarmActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_alarm_actions::DisableAlarmActionsInput {
-                alarm_names: self.alarm_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disable_alarm_actions::DisableAlarmActionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disable_alarm_actions::DisableAlarmActionsInput {
+            alarm_names: self.alarm_names,
+        })
     }
 }

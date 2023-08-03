@@ -16,9 +16,7 @@ pub struct TransformJobDefinition {
     pub batch_strategy: ::std::option::Option<crate::types::BatchStrategy>,
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
     #[doc(hidden)]
-    pub environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A description of the input source and the way the transform job consumes it.</p>
     #[doc(hidden)]
     pub transform_input: ::std::option::Option<crate::types::TransformInput>,
@@ -44,11 +42,7 @@ impl TransformJobDefinition {
         self.batch_strategy.as_ref()
     }
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn environment(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>A description of the input source and the way the transform job consumes it.</p>
@@ -73,16 +67,12 @@ impl TransformJobDefinition {
 
 /// A builder for [`TransformJobDefinition`](crate::types::TransformJobDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformJobDefinitionBuilder {
     pub(crate) max_concurrent_transforms: ::std::option::Option<i32>,
     pub(crate) max_payload_in_mb: ::std::option::Option<i32>,
     pub(crate) batch_strategy: ::std::option::Option<crate::types::BatchStrategy>,
-    pub(crate) environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) transform_input: ::std::option::Option<crate::types::TransformInput>,
     pub(crate) transform_output: ::std::option::Option<crate::types::TransformOutput>,
     pub(crate) transform_resources: ::std::option::Option<crate::types::TransformResources>,
@@ -124,10 +114,7 @@ impl TransformJobDefinitionBuilder {
     }
     /// <p>A string that determines the number of records included in a single mini-batch.</p>
     /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
-    pub fn set_batch_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchStrategy>,
-    ) -> Self {
+    pub fn set_batch_strategy(mut self, input: ::std::option::Option<crate::types::BatchStrategy>) -> Self {
         self.batch_strategy = input;
         self
     }
@@ -141,11 +128,7 @@ impl TransformJobDefinitionBuilder {
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn environment(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.environment = ::std::option::Option::Some(hash_map);
@@ -154,19 +137,13 @@ impl TransformJobDefinitionBuilder {
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
     pub fn set_environment(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.environment = input;
         self
     }
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// <p>A description of the input source and the way the transform job consumes it.</p>
@@ -175,10 +152,7 @@ impl TransformJobDefinitionBuilder {
         self
     }
     /// <p>A description of the input source and the way the transform job consumes it.</p>
-    pub fn set_transform_input(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformInput>,
-    ) -> Self {
+    pub fn set_transform_input(mut self, input: ::std::option::Option<crate::types::TransformInput>) -> Self {
         self.transform_input = input;
         self
     }
@@ -192,10 +166,7 @@ impl TransformJobDefinitionBuilder {
         self
     }
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
-    pub fn set_transform_output(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformOutput>,
-    ) -> Self {
+    pub fn set_transform_output(mut self, input: ::std::option::Option<crate::types::TransformOutput>) -> Self {
         self.transform_output = input;
         self
     }
@@ -209,17 +180,12 @@ impl TransformJobDefinitionBuilder {
         self
     }
     /// <p>Identifies the ML compute instances for the transform job.</p>
-    pub fn set_transform_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformResources>,
-    ) -> Self {
+    pub fn set_transform_resources(mut self, input: ::std::option::Option<crate::types::TransformResources>) -> Self {
         self.transform_resources = input;
         self
     }
     /// <p>Identifies the ML compute instances for the transform job.</p>
-    pub fn get_transform_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformResources> {
+    pub fn get_transform_resources(&self) -> &::std::option::Option<crate::types::TransformResources> {
         &self.transform_resources
     }
     /// Consumes the builder and constructs a [`TransformJobDefinition`](crate::types::TransformJobDefinition).

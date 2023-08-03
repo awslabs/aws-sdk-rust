@@ -22,16 +22,14 @@ impl DescribeSecurityGroupReferencesInput {
 }
 impl DescribeSecurityGroupReferencesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityGroupReferencesInput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput).
-    pub fn builder() -> crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesInputBuilder{
+    pub fn builder() -> crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesInputBuilder {
         crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSecurityGroupReferencesInput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupReferencesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_id: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +61,7 @@ impl DescribeSecurityGroupReferencesInputBuilder {
         self
     }
     /// <p>The IDs of the security groups in your account.</p>
-    pub fn set_group_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_id = input;
         self
     }
@@ -83,11 +78,9 @@ impl DescribeSecurityGroupReferencesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput {
-                dry_run: self.dry_run
-                ,
-                group_id: self.group_id
-                ,
-            }
+                dry_run: self.dry_run,
+                group_id: self.group_id,
+            },
         )
     }
 }

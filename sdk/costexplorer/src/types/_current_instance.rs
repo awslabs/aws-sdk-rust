@@ -24,8 +24,7 @@ pub struct CurrentInstance {
     pub reservation_covered_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
     #[doc(hidden)]
-    pub savings_plans_covered_hours_in_lookback_period:
-        ::std::option::Option<::std::string::String>,
+    pub savings_plans_covered_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
     #[doc(hidden)]
     pub on_demand_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
@@ -57,9 +56,7 @@ impl CurrentInstance {
         self.resource_details.as_ref()
     }
     /// <p>Utilization information of the current instance during the lookback period.</p>
-    pub fn resource_utilization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceUtilization> {
+    pub fn resource_utilization(&self) -> ::std::option::Option<&crate::types::ResourceUtilization> {
         self.resource_utilization.as_ref()
     }
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
@@ -68,8 +65,7 @@ impl CurrentInstance {
     }
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
     pub fn savings_plans_covered_hours_in_lookback_period(&self) -> ::std::option::Option<&str> {
-        self.savings_plans_covered_hours_in_lookback_period
-            .as_deref()
+        self.savings_plans_covered_hours_in_lookback_period.as_deref()
     }
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
     pub fn on_demand_hours_in_lookback_period(&self) -> ::std::option::Option<&str> {
@@ -97,19 +93,15 @@ impl CurrentInstance {
 
 /// A builder for [`CurrentInstance`](crate::types::CurrentInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CurrentInstanceBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagValues>>,
     pub(crate) resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     pub(crate) resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
-    pub(crate) reservation_covered_hours_in_lookback_period:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) savings_plans_covered_hours_in_lookback_period:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) reservation_covered_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
+    pub(crate) savings_plans_covered_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
     pub(crate) on_demand_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
     pub(crate) total_running_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
     pub(crate) monthly_cost: ::std::option::Option<::std::string::String>,
@@ -131,18 +123,12 @@ impl CurrentInstanceBuilder {
         &self.resource_id
     }
     /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -162,10 +148,7 @@ impl CurrentInstanceBuilder {
         self
     }
     /// <p>Cost allocation resource tags that are applied to the instance.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagValues>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagValues>>) -> Self {
         self.tags = input;
         self
     }
@@ -179,10 +162,7 @@ impl CurrentInstanceBuilder {
         self
     }
     /// <p>Details about the resource and utilization.</p>
-    pub fn set_resource_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDetails>,
-    ) -> Self {
+    pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
         self.resource_details = input;
         self
     }
@@ -196,107 +176,68 @@ impl CurrentInstanceBuilder {
         self
     }
     /// <p>Utilization information of the current instance during the lookback period.</p>
-    pub fn set_resource_utilization(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceUtilization>,
-    ) -> Self {
+    pub fn set_resource_utilization(mut self, input: ::std::option::Option<crate::types::ResourceUtilization>) -> Self {
         self.resource_utilization = input;
         self
     }
     /// <p>Utilization information of the current instance during the lookback period.</p>
-    pub fn get_resource_utilization(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceUtilization> {
+    pub fn get_resource_utilization(&self) -> &::std::option::Option<crate::types::ResourceUtilization> {
         &self.resource_utilization
     }
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
-    pub fn reservation_covered_hours_in_lookback_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.reservation_covered_hours_in_lookback_period =
-            ::std::option::Option::Some(input.into());
+    pub fn reservation_covered_hours_in_lookback_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reservation_covered_hours_in_lookback_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
-    pub fn set_reservation_covered_hours_in_lookback_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_covered_hours_in_lookback_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_covered_hours_in_lookback_period = input;
         self
     }
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
-    pub fn get_reservation_covered_hours_in_lookback_period(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reservation_covered_hours_in_lookback_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.reservation_covered_hours_in_lookback_period
     }
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
-    pub fn savings_plans_covered_hours_in_lookback_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.savings_plans_covered_hours_in_lookback_period =
-            ::std::option::Option::Some(input.into());
+    pub fn savings_plans_covered_hours_in_lookback_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.savings_plans_covered_hours_in_lookback_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
-    pub fn set_savings_plans_covered_hours_in_lookback_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_savings_plans_covered_hours_in_lookback_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.savings_plans_covered_hours_in_lookback_period = input;
         self
     }
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
-    pub fn get_savings_plans_covered_hours_in_lookback_period(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_savings_plans_covered_hours_in_lookback_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.savings_plans_covered_hours_in_lookback_period
     }
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
-    pub fn on_demand_hours_in_lookback_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn on_demand_hours_in_lookback_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_demand_hours_in_lookback_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
-    pub fn set_on_demand_hours_in_lookback_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_on_demand_hours_in_lookback_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.on_demand_hours_in_lookback_period = input;
         self
     }
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
-    pub fn get_on_demand_hours_in_lookback_period(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_on_demand_hours_in_lookback_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.on_demand_hours_in_lookback_period
     }
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
-    pub fn total_running_hours_in_lookback_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn total_running_hours_in_lookback_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.total_running_hours_in_lookback_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
-    pub fn set_total_running_hours_in_lookback_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_total_running_hours_in_lookback_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.total_running_hours_in_lookback_period = input;
         self
     }
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
-    pub fn get_total_running_hours_in_lookback_period(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_total_running_hours_in_lookback_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.total_running_hours_in_lookback_period
     }
     /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
@@ -314,18 +255,12 @@ impl CurrentInstanceBuilder {
         &self.monthly_cost
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -341,10 +276,8 @@ impl CurrentInstanceBuilder {
             tags: self.tags,
             resource_details: self.resource_details,
             resource_utilization: self.resource_utilization,
-            reservation_covered_hours_in_lookback_period: self
-                .reservation_covered_hours_in_lookback_period,
-            savings_plans_covered_hours_in_lookback_period: self
-                .savings_plans_covered_hours_in_lookback_period,
+            reservation_covered_hours_in_lookback_period: self.reservation_covered_hours_in_lookback_period,
+            savings_plans_covered_hours_in_lookback_period: self.savings_plans_covered_hours_in_lookback_period,
             on_demand_hours_in_lookback_period: self.on_demand_hours_in_lookback_period,
             total_running_hours_in_lookback_period: self.total_running_hours_in_lookback_period,
             monthly_cost: self.monthly_cost,

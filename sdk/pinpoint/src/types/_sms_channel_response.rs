@@ -114,9 +114,7 @@ impl SmsChannelResponse {
 
 /// A builder for [`SmsChannelResponse`](crate::types::SmsChannelResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmsChannelResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
@@ -135,18 +133,12 @@ pub struct SmsChannelResponseBuilder {
 }
 impl SmsChannelResponseBuilder {
     /// <p>The unique identifier for the application that the SMS channel applies to.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that the SMS channel applies to.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -155,18 +147,12 @@ impl SmsChannelResponseBuilder {
         &self.application_id
     }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -231,18 +217,12 @@ impl SmsChannelResponseBuilder {
         &self.is_archived
     }
     /// <p>The user who last modified the SMS channel.</p>
-    pub fn last_modified_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user who last modified the SMS channel.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -251,18 +231,12 @@ impl SmsChannelResponseBuilder {
         &self.last_modified_by
     }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was last modified.</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -290,10 +264,7 @@ impl SmsChannelResponseBuilder {
         self
     }
     /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
-    pub fn set_promotional_messages_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_promotional_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotional_messages_per_second = input;
         self
     }
@@ -335,10 +306,7 @@ impl SmsChannelResponseBuilder {
         self
     }
     /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
-    pub fn set_transactional_messages_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_transactional_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transactional_messages_per_second = input;
         self
     }

@@ -26,8 +26,7 @@ impl ListManagedInsightRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListManagedInsightRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesInputBuilder,
+    inner: crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesInputBuilder,
 }
 impl ListManagedInsightRulesFluentBuilder {
     /// Creates a new `ListManagedInsightRules`.
@@ -38,10 +37,7 @@ impl ListManagedInsightRulesFluentBuilder {
         }
     }
     /// Access the ListManagedInsightRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListManagedInsightRulesFluentBuilder {
             crate::operation::list_managed_insight_rules::ListManagedInsightRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_insight_rules::ListManagedInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_insight_rules::ListManagedInsightRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListManagedInsightRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListManagedInsightRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_insight_rules::ListManagedInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_insight_rules::ListManagedInsightRulesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListManagedInsightRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_insight_rules::ListManagedInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_insight_rules::ListManagedInsightRulesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListManagedInsightRulesFluentBuilder {
             crate::operation::list_managed_insight_rules::ListManagedInsightRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_insight_rules::ListManagedInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_insight_rules::ListManagedInsightRulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_managed_insight_rules::paginator::ListManagedInsightRulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_managed_insight_rules::paginator::ListManagedInsightRulesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_managed_insight_rules::paginator::ListManagedInsightRulesPaginator {
         crate::operation::list_managed_insight_rules::paginator::ListManagedInsightRulesPaginator::new(self.handle, self.inner)
     }
     /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>

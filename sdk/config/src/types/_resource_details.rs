@@ -18,8 +18,7 @@ pub struct ResourceDetails {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing extensions through the CloudFormation registry</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the CloudFormation User Guide.</p>
     /// </note>
     #[doc(hidden)]
-    pub resource_configuration_schema_type:
-        ::std::option::Option<crate::types::ResourceConfigurationSchemaType>,
+    pub resource_configuration_schema_type: ::std::option::Option<crate::types::ResourceConfigurationSchemaType>,
 }
 impl ResourceDetails {
     /// <p>A unique resource ID for an evaluation.</p>
@@ -38,9 +37,7 @@ impl ResourceDetails {
     /// <p>You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services public extensions</i>" within the CloudFormation registry or with the following CLI commmand: <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing extensions through the CloudFormation registry</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the CloudFormation User Guide.</p>
     /// </note>
-    pub fn resource_configuration_schema_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceConfigurationSchemaType> {
+    pub fn resource_configuration_schema_type(&self) -> ::std::option::Option<&crate::types::ResourceConfigurationSchemaType> {
         self.resource_configuration_schema_type.as_ref()
     }
 }
@@ -53,15 +50,12 @@ impl ResourceDetails {
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDetailsBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_configuration: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_configuration_schema_type:
-        ::std::option::Option<crate::types::ResourceConfigurationSchemaType>,
+    pub(crate) resource_configuration_schema_type: ::std::option::Option<crate::types::ResourceConfigurationSchemaType>,
 }
 impl ResourceDetailsBuilder {
     /// <p>A unique resource ID for an evaluation.</p>
@@ -79,18 +73,12 @@ impl ResourceDetailsBuilder {
         &self.resource_id
     }
     /// <p>The type of resource being evaluated.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource being evaluated.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -99,18 +87,12 @@ impl ResourceDetailsBuilder {
         &self.resource_type
     }
     /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
-    pub fn resource_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
-    pub fn set_resource_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_configuration = input;
         self
     }
@@ -122,10 +104,7 @@ impl ResourceDetailsBuilder {
     /// <p>You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services public extensions</i>" within the CloudFormation registry or with the following CLI commmand: <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing extensions through the CloudFormation registry</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the CloudFormation User Guide.</p>
     /// </note>
-    pub fn resource_configuration_schema_type(
-        mut self,
-        input: crate::types::ResourceConfigurationSchemaType,
-    ) -> Self {
+    pub fn resource_configuration_schema_type(mut self, input: crate::types::ResourceConfigurationSchemaType) -> Self {
         self.resource_configuration_schema_type = ::std::option::Option::Some(input);
         self
     }
@@ -133,10 +112,7 @@ impl ResourceDetailsBuilder {
     /// <p>You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services public extensions</i>" within the CloudFormation registry or with the following CLI commmand: <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing extensions through the CloudFormation registry</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the CloudFormation User Guide.</p>
     /// </note>
-    pub fn set_resource_configuration_schema_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceConfigurationSchemaType>,
-    ) -> Self {
+    pub fn set_resource_configuration_schema_type(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationSchemaType>) -> Self {
         self.resource_configuration_schema_type = input;
         self
     }
@@ -144,9 +120,7 @@ impl ResourceDetailsBuilder {
     /// <p>You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services public extensions</i>" within the CloudFormation registry or with the following CLI commmand: <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing extensions through the CloudFormation registry</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the CloudFormation User Guide.</p>
     /// </note>
-    pub fn get_resource_configuration_schema_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceConfigurationSchemaType> {
+    pub fn get_resource_configuration_schema_type(&self) -> &::std::option::Option<crate::types::ResourceConfigurationSchemaType> {
         &self.resource_configuration_schema_type
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).

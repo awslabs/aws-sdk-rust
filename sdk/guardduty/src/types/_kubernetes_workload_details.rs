@@ -65,9 +65,7 @@ impl KubernetesWorkloadDetails {
 
 /// A builder for [`KubernetesWorkloadDetails`](crate::types::KubernetesWorkloadDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KubernetesWorkloadDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -160,17 +158,12 @@ impl KubernetesWorkloadDetailsBuilder {
         self
     }
     /// <p>Containers running as part of the Kubernetes workload.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>Containers running as part of the Kubernetes workload.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
         &self.containers
     }
     /// Appends an item to `volumes`.
@@ -185,10 +178,7 @@ impl KubernetesWorkloadDetailsBuilder {
         self
     }
     /// <p>Volumes used by the Kubernetes workload.</p>
-    pub fn set_volumes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
-    ) -> Self {
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
         self.volumes = input;
         self
     }

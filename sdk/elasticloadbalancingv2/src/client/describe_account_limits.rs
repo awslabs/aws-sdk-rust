@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`limits(Option<Vec<Limit>>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::limits): <p>Information about the limits.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountLimitsError>`](crate::operation::describe_account_limits::DescribeAccountLimitsError)
-    pub fn describe_account_limits(
-        &self,
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder
-    {
-        crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_account_limits(&self) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder {
+        crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::new(self.handle.clone())
     }
 }

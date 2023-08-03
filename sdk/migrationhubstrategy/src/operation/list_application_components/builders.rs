@@ -26,7 +26,7 @@ impl ListApplicationComponentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationComponentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder,
+    inner: crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder,
 }
 impl ListApplicationComponentsFluentBuilder {
     /// Creates a new `ListApplicationComponents`.
@@ -37,7 +37,7 @@ impl ListApplicationComponentsFluentBuilder {
         }
     }
     /// Access the ListApplicationComponents as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListApplicationComponentsFluentBuilder {
             crate::operation::list_application_components::ListApplicationComponents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_components::ListApplicationComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_components::ListApplicationComponentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListApplicationComponentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListApplicationComponentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_components::ListApplicationComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_components::ListApplicationComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_components::ListApplicationComponentsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListApplicationComponentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_components::ListApplicationComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_components::ListApplicationComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_components::ListApplicationComponentsError>,
     > {
         self.send_middleware().await
     }
@@ -114,41 +105,28 @@ impl ListApplicationComponentsFluentBuilder {
             crate::operation::list_application_components::ListApplicationComponents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_components::ListApplicationComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_components::ListApplicationComponentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator {
         crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator::new(self.handle, self.inner)
     }
     /// <p> Criteria for filtering the list of application components. </p>
-    pub fn application_component_criteria(
-        mut self,
-        input: crate::types::ApplicationComponentCriteria,
-    ) -> Self {
+    pub fn application_component_criteria(mut self, input: crate::types::ApplicationComponentCriteria) -> Self {
         self.inner = self.inner.application_component_criteria(input);
         self
     }
     /// <p> Criteria for filtering the list of application components. </p>
-    pub fn set_application_component_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationComponentCriteria>,
-    ) -> Self {
+    pub fn set_application_component_criteria(mut self, input: ::std::option::Option<crate::types::ApplicationComponentCriteria>) -> Self {
         self.inner = self.inner.set_application_component_criteria(input);
         self
     }
     /// <p> Criteria for filtering the list of application components. </p>
-    pub fn get_application_component_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationComponentCriteria> {
+    pub fn get_application_component_criteria(&self) -> &::std::option::Option<crate::types::ApplicationComponentCriteria> {
         self.inner.get_application_component_criteria()
     }
     /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
@@ -189,17 +167,12 @@ impl ListApplicationComponentsFluentBuilder {
         self
     }
     /// <p> The group ID specified in to filter on. </p>
-    pub fn set_group_id_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.inner = self.inner.set_group_id_filter(input);
         self
     }
     /// <p> The group ID specified in to filter on. </p>
-    pub fn get_group_id_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
         self.inner.get_group_id_filter()
     }
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>

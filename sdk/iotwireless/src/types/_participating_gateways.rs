@@ -37,9 +37,7 @@ impl ParticipatingGateways {
 
 /// A builder for [`ParticipatingGateways`](crate::types::ParticipatingGateways).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParticipatingGatewaysBuilder {
     pub(crate) downlink_mode: ::std::option::Option<crate::types::DownlinkMode>,
     pub(crate) gateway_list: ::std::option::Option<::std::vec::Vec<crate::types::GatewayListItem>>,
@@ -52,10 +50,7 @@ impl ParticipatingGatewaysBuilder {
         self
     }
     /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
-    pub fn set_downlink_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DownlinkMode>,
-    ) -> Self {
+    pub fn set_downlink_mode(mut self, input: ::std::option::Option<crate::types::DownlinkMode>) -> Self {
         self.downlink_mode = input;
         self
     }
@@ -75,17 +70,12 @@ impl ParticipatingGatewaysBuilder {
         self
     }
     /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
-    pub fn set_gateway_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayListItem>>,
-    ) -> Self {
+    pub fn set_gateway_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayListItem>>) -> Self {
         self.gateway_list = input;
         self
     }
     /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
-    pub fn get_gateway_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayListItem>> {
+    pub fn get_gateway_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayListItem>> {
         &self.gateway_list
     }
     /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>

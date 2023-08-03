@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelHandshakeOutput`](crate::operation::cancel_handshake::CancelHandshakeOutput) with field(s):
     ///   - [`handshake(Option<Handshake>)`](crate::operation::cancel_handshake::CancelHandshakeOutput::handshake): <p>A structure that contains details about the handshake that you canceled.</p>
     /// - On failure, responds with [`SdkError<CancelHandshakeError>`](crate::operation::cancel_handshake::CancelHandshakeError)
-    pub fn cancel_handshake(
-        &self,
-    ) -> crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder {
-        crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_handshake(&self) -> crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder {
+        crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder::new(self.handle.clone())
     }
 }

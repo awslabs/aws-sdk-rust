@@ -26,7 +26,7 @@ impl PutAppLaunchConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAppLaunchConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder,
+    inner: crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder,
 }
 impl PutAppLaunchConfigurationFluentBuilder {
     /// Creates a new `PutAppLaunchConfiguration`.
@@ -37,7 +37,7 @@ impl PutAppLaunchConfigurationFluentBuilder {
         }
     }
     /// Access the PutAppLaunchConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutAppLaunchConfigurationFluentBuilder {
             crate::operation::put_app_launch_configuration::PutAppLaunchConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutAppLaunchConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutAppLaunchConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutAppLaunchConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl PutAppLaunchConfigurationFluentBuilder {
             crate::operation::put_app_launch_configuration::PutAppLaunchConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -167,10 +156,7 @@ impl PutAppLaunchConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_server_group_launch_configurations`](Self::set_server_group_launch_configurations).
     ///
     /// <p>Information about the launch configurations for server groups in the application.</p>
-    pub fn server_group_launch_configurations(
-        mut self,
-        input: crate::types::ServerGroupLaunchConfiguration,
-    ) -> Self {
+    pub fn server_group_launch_configurations(mut self, input: crate::types::ServerGroupLaunchConfiguration) -> Self {
         self.inner = self.inner.server_group_launch_configurations(input);
         self
     }
@@ -183,9 +169,7 @@ impl PutAppLaunchConfigurationFluentBuilder {
         self
     }
     /// <p>Information about the launch configurations for server groups in the application.</p>
-    pub fn get_server_group_launch_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>> {
+    pub fn get_server_group_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>> {
         self.inner.get_server_group_launch_configurations()
     }
 }

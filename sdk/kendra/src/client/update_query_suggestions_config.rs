@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`attribute_suggestions_config(AttributeSuggestionsUpdateConfig)`](crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigFluentBuilder::attribute_suggestions_config) / [`set_attribute_suggestions_config(Option<AttributeSuggestionsUpdateConfig>)`](crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigFluentBuilder::set_attribute_suggestions_config): <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     /// - On success, responds with [`UpdateQuerySuggestionsConfigOutput`](crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateQuerySuggestionsConfigError>`](crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError)
-    pub fn update_query_suggestions_config(&self) -> crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigFluentBuilder{
+    pub fn update_query_suggestions_config(
+        &self,
+    ) -> crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigFluentBuilder {
         crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigFluentBuilder::new(self.handle.clone())
     }
 }

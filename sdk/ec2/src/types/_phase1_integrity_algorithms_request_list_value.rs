@@ -23,9 +23,7 @@ impl Phase1IntegrityAlgorithmsRequestListValue {
 
 /// A builder for [`Phase1IntegrityAlgorithmsRequestListValue`](crate::types::Phase1IntegrityAlgorithmsRequestListValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Phase1IntegrityAlgorithmsRequestListValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

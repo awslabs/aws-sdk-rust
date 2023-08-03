@@ -53,9 +53,7 @@ impl PolicySummary {
         self.resource_type.as_deref()
     }
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy.</p>
-    pub fn security_service_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SecurityServiceType> {
+    pub fn security_service_type(&self) -> ::std::option::Option<&crate::types::SecurityServiceType> {
         self.security_service_type.as_ref()
     }
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
@@ -86,9 +84,7 @@ impl PolicySummary {
 
 /// A builder for [`PolicySummary`](crate::types::PolicySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicySummaryBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
@@ -143,18 +139,12 @@ impl PolicySummaryBuilder {
         &self.policy_name
     }
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -168,17 +158,12 @@ impl PolicySummaryBuilder {
         self
     }
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy.</p>
-    pub fn set_security_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityServiceType>,
-    ) -> Self {
+    pub fn set_security_service_type(mut self, input: ::std::option::Option<crate::types::SecurityServiceType>) -> Self {
         self.security_service_type = input;
         self
     }
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy.</p>
-    pub fn get_security_service_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SecurityServiceType> {
+    pub fn get_security_service_type(&self) -> &::std::option::Option<crate::types::SecurityServiceType> {
         &self.security_service_type
     }
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
@@ -205,10 +190,7 @@ impl PolicySummaryBuilder {
     /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
     /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
-    pub fn set_delete_unused_fm_managed_resources(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_delete_unused_fm_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_unused_fm_managed_resources = input;
         self
     }
@@ -232,10 +214,7 @@ impl PolicySummaryBuilder {
     /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the policy.</p> </li>
     /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p> </li>
     /// </ul>
-    pub fn set_policy_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerPolicyStatus>,
-    ) -> Self {
+    pub fn set_policy_status(mut self, input: ::std::option::Option<crate::types::CustomerPolicyStatus>) -> Self {
         self.policy_status = input;
         self
     }
@@ -256,9 +235,7 @@ impl PolicySummaryBuilder {
             resource_type: self.resource_type,
             security_service_type: self.security_service_type,
             remediation_enabled: self.remediation_enabled.unwrap_or_default(),
-            delete_unused_fm_managed_resources: self
-                .delete_unused_fm_managed_resources
-                .unwrap_or_default(),
+            delete_unused_fm_managed_resources: self.delete_unused_fm_managed_resources.unwrap_or_default(),
             policy_status: self.policy_status,
         }
     }

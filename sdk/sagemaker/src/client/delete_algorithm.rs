@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`algorithm_name(impl ::std::convert::Into<String>)`](crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder::algorithm_name) / [`set_algorithm_name(Option<String>)`](crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder::set_algorithm_name): <p>The name of the algorithm to delete.</p>
     /// - On success, responds with [`DeleteAlgorithmOutput`](crate::operation::delete_algorithm::DeleteAlgorithmOutput)
     /// - On failure, responds with [`SdkError<DeleteAlgorithmError>`](crate::operation::delete_algorithm::DeleteAlgorithmError)
-    pub fn delete_algorithm(
-        &self,
-    ) -> crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder {
-        crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_algorithm(&self) -> crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder {
+        crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder::new(self.handle.clone())
     }
 }

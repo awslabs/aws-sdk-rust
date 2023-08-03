@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CompleteWorkflowExecutionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum CompleteWorkflowExecutionFailedCause {
 impl ::std::convert::From<&str> for CompleteWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
-            "OPERATION_NOT_PERMITTED" => {
-                CompleteWorkflowExecutionFailedCause::OperationNotPermitted
-            }
+            "OPERATION_NOT_PERMITTED" => CompleteWorkflowExecutionFailedCause::OperationNotPermitted,
             "UNHANDLED_DECISION" => CompleteWorkflowExecutionFailedCause::UnhandledDecision,
-            other => CompleteWorkflowExecutionFailedCause::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => CompleteWorkflowExecutionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,9 +68,7 @@ impl CompleteWorkflowExecutionFailedCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            CompleteWorkflowExecutionFailedCause::OperationNotPermitted => {
-                "OPERATION_NOT_PERMITTED"
-            }
+            CompleteWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
             CompleteWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
             CompleteWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
         }

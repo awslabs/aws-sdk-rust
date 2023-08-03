@@ -63,9 +63,7 @@ pub enum DataSourceParameters {
 impl DataSourceParameters {
     /// Tries to convert the enum instance into [`AmazonElasticsearchParameters`](crate::types::DataSourceParameters::AmazonElasticsearchParameters), extracting the inner [`AmazonElasticsearchParameters`](crate::types::AmazonElasticsearchParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_amazon_elasticsearch_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AmazonElasticsearchParameters, &Self> {
+    pub fn as_amazon_elasticsearch_parameters(&self) -> ::std::result::Result<&crate::types::AmazonElasticsearchParameters, &Self> {
         if let DataSourceParameters::AmazonElasticsearchParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -78,9 +76,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`AmazonOpenSearchParameters`](crate::types::DataSourceParameters::AmazonOpenSearchParameters), extracting the inner [`AmazonOpenSearchParameters`](crate::types::AmazonOpenSearchParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_amazon_open_search_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AmazonOpenSearchParameters, &Self> {
+    pub fn as_amazon_open_search_parameters(&self) -> ::std::result::Result<&crate::types::AmazonOpenSearchParameters, &Self> {
         if let DataSourceParameters::AmazonOpenSearchParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -93,9 +89,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`AthenaParameters`](crate::types::DataSourceParameters::AthenaParameters), extracting the inner [`AthenaParameters`](crate::types::AthenaParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_athena_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AthenaParameters, &Self> {
+    pub fn as_athena_parameters(&self) -> ::std::result::Result<&crate::types::AthenaParameters, &Self> {
         if let DataSourceParameters::AthenaParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -108,9 +102,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`AuroraParameters`](crate::types::DataSourceParameters::AuroraParameters), extracting the inner [`AuroraParameters`](crate::types::AuroraParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aurora_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AuroraParameters, &Self> {
+    pub fn as_aurora_parameters(&self) -> ::std::result::Result<&crate::types::AuroraParameters, &Self> {
         if let DataSourceParameters::AuroraParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -123,9 +115,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`AuroraPostgreSqlParameters`](crate::types::DataSourceParameters::AuroraPostgreSqlParameters), extracting the inner [`AuroraPostgreSqlParameters`](crate::types::AuroraPostgreSqlParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aurora_postgre_sql_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AuroraPostgreSqlParameters, &Self> {
+    pub fn as_aurora_postgre_sql_parameters(&self) -> ::std::result::Result<&crate::types::AuroraPostgreSqlParameters, &Self> {
         if let DataSourceParameters::AuroraPostgreSqlParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -138,9 +128,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`AwsIotAnalyticsParameters`](crate::types::DataSourceParameters::AwsIotAnalyticsParameters), extracting the inner [`AwsIotAnalyticsParameters`](crate::types::AwsIotAnalyticsParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aws_iot_analytics_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AwsIotAnalyticsParameters, &Self> {
+    pub fn as_aws_iot_analytics_parameters(&self) -> ::std::result::Result<&crate::types::AwsIotAnalyticsParameters, &Self> {
         if let DataSourceParameters::AwsIotAnalyticsParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -153,9 +141,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`DatabricksParameters`](crate::types::DataSourceParameters::DatabricksParameters), extracting the inner [`DatabricksParameters`](crate::types::DatabricksParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_databricks_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::DatabricksParameters, &Self> {
+    pub fn as_databricks_parameters(&self) -> ::std::result::Result<&crate::types::DatabricksParameters, &Self> {
         if let DataSourceParameters::DatabricksParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -168,9 +154,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`ExasolParameters`](crate::types::DataSourceParameters::ExasolParameters), extracting the inner [`ExasolParameters`](crate::types::ExasolParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_exasol_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ExasolParameters, &Self> {
+    pub fn as_exasol_parameters(&self) -> ::std::result::Result<&crate::types::ExasolParameters, &Self> {
         if let DataSourceParameters::ExasolParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -183,9 +167,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`JiraParameters`](crate::types::DataSourceParameters::JiraParameters), extracting the inner [`JiraParameters`](crate::types::JiraParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_jira_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::JiraParameters, &Self> {
+    pub fn as_jira_parameters(&self) -> ::std::result::Result<&crate::types::JiraParameters, &Self> {
         if let DataSourceParameters::JiraParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -198,9 +180,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`MariaDbParameters`](crate::types::DataSourceParameters::MariaDbParameters), extracting the inner [`MariaDbParameters`](crate::types::MariaDbParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_maria_db_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::MariaDbParameters, &Self> {
+    pub fn as_maria_db_parameters(&self) -> ::std::result::Result<&crate::types::MariaDbParameters, &Self> {
         if let DataSourceParameters::MariaDbParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -213,9 +193,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`MySqlParameters`](crate::types::DataSourceParameters::MySqlParameters), extracting the inner [`MySqlParameters`](crate::types::MySqlParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_my_sql_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::MySqlParameters, &Self> {
+    pub fn as_my_sql_parameters(&self) -> ::std::result::Result<&crate::types::MySqlParameters, &Self> {
         if let DataSourceParameters::MySqlParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -228,9 +206,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`OracleParameters`](crate::types::DataSourceParameters::OracleParameters), extracting the inner [`OracleParameters`](crate::types::OracleParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_oracle_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::OracleParameters, &Self> {
+    pub fn as_oracle_parameters(&self) -> ::std::result::Result<&crate::types::OracleParameters, &Self> {
         if let DataSourceParameters::OracleParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -243,9 +219,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`PostgreSqlParameters`](crate::types::DataSourceParameters::PostgreSqlParameters), extracting the inner [`PostgreSqlParameters`](crate::types::PostgreSqlParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_postgre_sql_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::PostgreSqlParameters, &Self> {
+    pub fn as_postgre_sql_parameters(&self) -> ::std::result::Result<&crate::types::PostgreSqlParameters, &Self> {
         if let DataSourceParameters::PostgreSqlParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -258,9 +232,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`PrestoParameters`](crate::types::DataSourceParameters::PrestoParameters), extracting the inner [`PrestoParameters`](crate::types::PrestoParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_presto_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::PrestoParameters, &Self> {
+    pub fn as_presto_parameters(&self) -> ::std::result::Result<&crate::types::PrestoParameters, &Self> {
         if let DataSourceParameters::PrestoParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -286,9 +258,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`RedshiftParameters`](crate::types::DataSourceParameters::RedshiftParameters), extracting the inner [`RedshiftParameters`](crate::types::RedshiftParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_redshift_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::RedshiftParameters, &Self> {
+    pub fn as_redshift_parameters(&self) -> ::std::result::Result<&crate::types::RedshiftParameters, &Self> {
         if let DataSourceParameters::RedshiftParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -314,9 +284,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`ServiceNowParameters`](crate::types::DataSourceParameters::ServiceNowParameters), extracting the inner [`ServiceNowParameters`](crate::types::ServiceNowParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_service_now_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ServiceNowParameters, &Self> {
+    pub fn as_service_now_parameters(&self) -> ::std::result::Result<&crate::types::ServiceNowParameters, &Self> {
         if let DataSourceParameters::ServiceNowParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -329,9 +297,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`SnowflakeParameters`](crate::types::DataSourceParameters::SnowflakeParameters), extracting the inner [`SnowflakeParameters`](crate::types::SnowflakeParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_snowflake_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SnowflakeParameters, &Self> {
+    pub fn as_snowflake_parameters(&self) -> ::std::result::Result<&crate::types::SnowflakeParameters, &Self> {
         if let DataSourceParameters::SnowflakeParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -344,9 +310,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`SparkParameters`](crate::types::DataSourceParameters::SparkParameters), extracting the inner [`SparkParameters`](crate::types::SparkParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_spark_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SparkParameters, &Self> {
+    pub fn as_spark_parameters(&self) -> ::std::result::Result<&crate::types::SparkParameters, &Self> {
         if let DataSourceParameters::SparkParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -359,9 +323,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`SqlServerParameters`](crate::types::DataSourceParameters::SqlServerParameters), extracting the inner [`SqlServerParameters`](crate::types::SqlServerParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sql_server_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SqlServerParameters, &Self> {
+    pub fn as_sql_server_parameters(&self) -> ::std::result::Result<&crate::types::SqlServerParameters, &Self> {
         if let DataSourceParameters::SqlServerParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -374,9 +336,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`TeradataParameters`](crate::types::DataSourceParameters::TeradataParameters), extracting the inner [`TeradataParameters`](crate::types::TeradataParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_teradata_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TeradataParameters, &Self> {
+    pub fn as_teradata_parameters(&self) -> ::std::result::Result<&crate::types::TeradataParameters, &Self> {
         if let DataSourceParameters::TeradataParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -389,9 +349,7 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`TwitterParameters`](crate::types::DataSourceParameters::TwitterParameters), extracting the inner [`TwitterParameters`](crate::types::TwitterParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_twitter_parameters(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TwitterParameters, &Self> {
+    pub fn as_twitter_parameters(&self) -> ::std::result::Result<&crate::types::TwitterParameters, &Self> {
         if let DataSourceParameters::TwitterParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for AcceptAddressTransferOutput {
 }
 impl AcceptAddressTransferOutput {
     /// Creates a new builder-style object to manufacture [`AcceptAddressTransferOutput`](crate::operation::accept_address_transfer::AcceptAddressTransferOutput).
-    pub fn builder(
-    ) -> crate::operation::accept_address_transfer::builders::AcceptAddressTransferOutputBuilder
-    {
+    pub fn builder() -> crate::operation::accept_address_transfer::builders::AcceptAddressTransferOutputBuilder {
         crate::operation::accept_address_transfer::builders::AcceptAddressTransferOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptAddressTransferOutput`](crate::operation::accept_address_transfer::AcceptAddressTransferOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptAddressTransferOutputBuilder {
     pub(crate) address_transfer: ::std::option::Option<crate::types::AddressTransfer>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl AcceptAddressTransferOutputBuilder {
         self
     }
     /// <p>An Elastic IP address transfer.</p>
-    pub fn set_address_transfer(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressTransfer>,
-    ) -> Self {
+    pub fn set_address_transfer(mut self, input: ::std::option::Option<crate::types::AddressTransfer>) -> Self {
         self.address_transfer = input;
         self
     }

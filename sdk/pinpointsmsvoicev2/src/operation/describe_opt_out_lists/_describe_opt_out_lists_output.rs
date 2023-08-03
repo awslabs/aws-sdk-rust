@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeOptOutListsOutput {
 }
 impl DescribeOptOutListsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOptOutListsOutput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsOutputBuilder {
         crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOptOutListsOutput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOptOutListsOutputBuilder {
-    pub(crate) opt_out_lists:
-        ::std::option::Option<::std::vec::Vec<crate::types::OptOutListInformation>>,
+    pub(crate) opt_out_lists: ::std::option::Option<::std::vec::Vec<crate::types::OptOutListInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl DescribeOptOutListsOutputBuilder {
         self
     }
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
-    pub fn set_opt_out_lists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptOutListInformation>>,
-    ) -> Self {
+    pub fn set_opt_out_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptOutListInformation>>) -> Self {
         self.opt_out_lists = input;
         self
     }
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
-    pub fn get_opt_out_lists(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptOutListInformation>> {
+    pub fn get_opt_out_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptOutListInformation>> {
         &self.opt_out_lists
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>

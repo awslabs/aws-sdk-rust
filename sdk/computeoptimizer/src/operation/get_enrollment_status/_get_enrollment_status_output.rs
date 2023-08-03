@@ -51,18 +51,14 @@ impl ::aws_http::request_id::RequestId for GetEnrollmentStatusOutput {
 }
 impl GetEnrollmentStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusOutput`](crate::operation::get_enrollment_status::GetEnrollmentStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_enrollment_status::builders::GetEnrollmentStatusOutputBuilder {
-        crate::operation::get_enrollment_status::builders::GetEnrollmentStatusOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_enrollment_status::builders::GetEnrollmentStatusOutputBuilder {
+        crate::operation::get_enrollment_status::builders::GetEnrollmentStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnrollmentStatusOutput`](crate::operation::get_enrollment_status::GetEnrollmentStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnrollmentStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
@@ -88,19 +84,13 @@ impl GetEnrollmentStatusOutputBuilder {
     }
     /// <p>The reason for the enrollment status of the account.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the enrollment status of the account.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -129,17 +119,12 @@ impl GetEnrollmentStatusOutputBuilder {
         self
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
@@ -148,10 +133,7 @@ impl GetEnrollmentStatusOutputBuilder {
         self
     }
     /// <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
-    pub fn set_number_of_member_accounts_opted_in(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_number_of_member_accounts_opted_in(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_member_accounts_opted_in = input;
         self
     }

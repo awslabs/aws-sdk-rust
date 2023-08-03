@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateApprovedOriginOutput {
 }
 impl AssociateApprovedOriginOutput {
     /// Creates a new builder-style object to manufacture [`AssociateApprovedOriginOutput`](crate::operation::associate_approved_origin::AssociateApprovedOriginOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_approved_origin::builders::AssociateApprovedOriginOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_approved_origin::builders::AssociateApprovedOriginOutputBuilder {
         crate::operation::associate_approved_origin::builders::AssociateApprovedOriginOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateApprovedOriginOutput`](crate::operation::associate_approved_origin::AssociateApprovedOriginOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApprovedOriginOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl AssociateApprovedOriginOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateApprovedOriginOutput`](crate::operation::associate_approved_origin::AssociateApprovedOriginOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_approved_origin::AssociateApprovedOriginOutput {
+    pub fn build(self) -> crate::operation::associate_approved_origin::AssociateApprovedOriginOutput {
         crate::operation::associate_approved_origin::AssociateApprovedOriginOutput {
             _request_id: self._request_id,
         }

@@ -35,9 +35,7 @@ impl ListHapgsOutput {
 
 /// A builder for [`ListHapgsOutput`](crate::operation::list_hapgs::ListHapgsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHapgsOutputBuilder {
     pub(crate) hapg_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListHapgsOutputBuilder {
         self
     }
     /// <p>The list of high-availability partition groups.</p>
-    pub fn set_hapg_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hapg_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hapg_list = input;
         self
     }

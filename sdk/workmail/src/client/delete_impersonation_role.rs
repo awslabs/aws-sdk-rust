@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`impersonation_role_id(impl ::std::convert::Into<String>)`](crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleFluentBuilder::impersonation_role_id) / [`set_impersonation_role_id(Option<String>)`](crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleFluentBuilder::set_impersonation_role_id): <p>The ID of the impersonation role to delete.</p>
     /// - On success, responds with [`DeleteImpersonationRoleOutput`](crate::operation::delete_impersonation_role::DeleteImpersonationRoleOutput)
     /// - On failure, responds with [`SdkError<DeleteImpersonationRoleError>`](crate::operation::delete_impersonation_role::DeleteImpersonationRoleError)
-    pub fn delete_impersonation_role(
-        &self,
-    ) -> crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleFluentBuilder
-    {
+    pub fn delete_impersonation_role(&self) -> crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleFluentBuilder {
         crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleFluentBuilder::new(self.handle.clone())
     }
 }

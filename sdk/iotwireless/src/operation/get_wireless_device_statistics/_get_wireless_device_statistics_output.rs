@@ -46,16 +46,14 @@ impl ::aws_http::request_id::RequestId for GetWirelessDeviceStatisticsOutput {
 }
 impl GetWirelessDeviceStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessDeviceStatisticsOutput`](crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsOutput).
-    pub fn builder() -> crate::operation::get_wireless_device_statistics::builders::GetWirelessDeviceStatisticsOutputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_device_statistics::builders::GetWirelessDeviceStatisticsOutputBuilder {
         crate::operation::get_wireless_device_statistics::builders::GetWirelessDeviceStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessDeviceStatisticsOutput`](crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessDeviceStatisticsOutputBuilder {
     pub(crate) wireless_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_uplink_received_at: ::std::option::Option<::std::string::String>,
@@ -65,18 +63,12 @@ pub struct GetWirelessDeviceStatisticsOutputBuilder {
 }
 impl GetWirelessDeviceStatisticsOutputBuilder {
     /// <p>The ID of the wireless device.</p>
-    pub fn wireless_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wireless_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the wireless device.</p>
-    pub fn set_wireless_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wireless_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wireless_device_id = input;
         self
     }
@@ -87,20 +79,14 @@ impl GetWirelessDeviceStatisticsOutputBuilder {
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
-    pub fn last_uplink_received_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_uplink_received_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_uplink_received_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
-    pub fn set_last_uplink_received_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_uplink_received_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_uplink_received_at = input;
         self
     }
@@ -116,10 +102,7 @@ impl GetWirelessDeviceStatisticsOutputBuilder {
         self
     }
     /// <p>Information about the wireless device's operations.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanDeviceMetadata>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanDeviceMetadata>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -133,10 +116,7 @@ impl GetWirelessDeviceStatisticsOutputBuilder {
         self
     }
     /// <p>MetaData for Sidewalk device.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkDeviceMetadata>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkDeviceMetadata>) -> Self {
         self.sidewalk = input;
         self
     }
@@ -154,9 +134,7 @@ impl GetWirelessDeviceStatisticsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetWirelessDeviceStatisticsOutput`](crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsOutput {
+    pub fn build(self) -> crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsOutput {
         crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsOutput {
             wireless_device_id: self.wireless_device_id,
             last_uplink_received_at: self.last_uplink_received_at,

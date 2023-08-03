@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateCapacityReservationOutput {
 }
 impl CreateCapacityReservationOutput {
     /// Creates a new builder-style object to manufacture [`CreateCapacityReservationOutput`](crate::operation::create_capacity_reservation::CreateCapacityReservationOutput).
-    pub fn builder() -> crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder{
+    pub fn builder() -> crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder {
         crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCapacityReservationOutput`](crate::operation::create_capacity_reservation::CreateCapacityReservationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CreateCapacityReservationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCapacityReservationOutput`](crate::operation::create_capacity_reservation::CreateCapacityReservationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_capacity_reservation::CreateCapacityReservationOutput {
+    pub fn build(self) -> crate::operation::create_capacity_reservation::CreateCapacityReservationOutput {
         crate::operation::create_capacity_reservation::CreateCapacityReservationOutput {
             _request_id: self._request_id,
         }

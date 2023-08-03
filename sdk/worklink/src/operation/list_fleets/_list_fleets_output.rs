@@ -35,12 +35,9 @@ impl ListFleetsOutput {
 
 /// A builder for [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFleetsOutputBuilder {
-    pub(crate) fleet_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>>,
+    pub(crate) fleet_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListFleetsOutputBuilder {
         self
     }
     /// <p>The summary list of the fleets.</p>
-    pub fn set_fleet_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>>,
-    ) -> Self {
+    pub fn set_fleet_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>>) -> Self {
         self.fleet_summary_list = input;
         self
     }
     /// <p>The summary list of the fleets.</p>
-    pub fn get_fleet_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>> {
+    pub fn get_fleet_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>> {
         &self.fleet_summary_list
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>

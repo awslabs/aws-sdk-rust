@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchUnsuspendUserOutput`](crate::operation::batch_unsuspend_user::BatchUnsuspendUserOutput) with field(s):
     ///   - [`user_errors(Option<Vec<UserError>>)`](crate::operation::batch_unsuspend_user::BatchUnsuspendUserOutput::user_errors): <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     /// - On failure, responds with [`SdkError<BatchUnsuspendUserError>`](crate::operation::batch_unsuspend_user::BatchUnsuspendUserError)
-    pub fn batch_unsuspend_user(
-        &self,
-    ) -> crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserFluentBuilder {
-        crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_unsuspend_user(&self) -> crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserFluentBuilder {
+        crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserFluentBuilder::new(self.handle.clone())
     }
 }

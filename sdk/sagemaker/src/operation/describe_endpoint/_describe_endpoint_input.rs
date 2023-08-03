@@ -15,34 +15,25 @@ impl DescribeEndpointInput {
 }
 impl DescribeEndpointInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
-    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder {
         crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEndpointInputBuilder {
     /// <p>The name of the endpoint.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -53,10 +44,7 @@ impl DescribeEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_endpoint::DescribeEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_endpoint::DescribeEndpointInput {
             endpoint_name: self.endpoint_name,
         })

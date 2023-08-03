@@ -29,17 +29,14 @@ impl ListStreamSessionsInput {
 }
 impl ListStreamSessionsInput {
     /// Creates a new builder-style object to manufacture [`ListStreamSessionsInput`](crate::operation::list_stream_sessions::ListStreamSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_stream_sessions::builders::ListStreamSessionsInputBuilder {
+    pub fn builder() -> crate::operation::list_stream_sessions::builders::ListStreamSessionsInputBuilder {
         crate::operation::list_stream_sessions::builders::ListStreamSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamSessionsInput`](crate::operation::list_stream_sessions::ListStreamSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamSessionsInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListStreamSessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListStreamSessionsInput`](crate::operation::list_stream_sessions::ListStreamSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stream_sessions::ListStreamSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_stream_sessions::ListStreamSessionsInput {
-                channel_arn: self.channel_arn,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_stream_sessions::ListStreamSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_stream_sessions::ListStreamSessionsInput {
+            channel_arn: self.channel_arn,
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

@@ -58,9 +58,7 @@ impl UserPoolDescriptionType {
 
 /// A builder for [`UserPoolDescriptionType`](crate::types::UserPoolDescriptionType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserPoolDescriptionTypeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -104,10 +102,7 @@ impl UserPoolDescriptionTypeBuilder {
         self
     }
     /// <p>The Lambda configuration information in a user pool description.</p>
-    pub fn set_lambda_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaConfigType>,
-    ) -> Self {
+    pub fn set_lambda_config(mut self, input: ::std::option::Option<crate::types::LambdaConfigType>) -> Self {
         self.lambda_config = input;
         self
     }
@@ -135,10 +130,7 @@ impl UserPoolDescriptionTypeBuilder {
         self
     }
     /// <p>The date the user pool description was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -152,10 +144,7 @@ impl UserPoolDescriptionTypeBuilder {
         self
     }
     /// <p>The date the user pool description was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

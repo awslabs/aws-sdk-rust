@@ -48,10 +48,7 @@ impl LabelParameterVersionFluentBuilder {
         }
     }
     /// Access the LabelParameterVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +60,7 @@ impl LabelParameterVersionFluentBuilder {
             crate::operation::label_parameter_version::LabelParameterVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::label_parameter_version::LabelParameterVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::label_parameter_version::LabelParameterVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +70,7 @@ impl LabelParameterVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +79,7 @@ impl LabelParameterVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::label_parameter_version::LabelParameterVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::label_parameter_version::LabelParameterVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::label_parameter_version::LabelParameterVersionError>,
     > {
         let op = self
             .inner
@@ -112,9 +102,7 @@ impl LabelParameterVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::label_parameter_version::LabelParameterVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::label_parameter_version::LabelParameterVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::label_parameter_version::LabelParameterVersionError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +116,7 @@ impl LabelParameterVersionFluentBuilder {
             crate::operation::label_parameter_version::LabelParameterVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::label_parameter_version::LabelParameterVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::label_parameter_version::LabelParameterVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -172,10 +158,7 @@ impl LabelParameterVersionFluentBuilder {
         self
     }
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_labels(input);
         self
     }

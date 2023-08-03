@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateOutpostOutput`](crate::operation::update_outpost::UpdateOutpostOutput) with field(s):
     ///   - [`outpost(Option<Outpost>)`](crate::operation::update_outpost::UpdateOutpostOutput::outpost): <p>Information about an Outpost.</p>
     /// - On failure, responds with [`SdkError<UpdateOutpostError>`](crate::operation::update_outpost::UpdateOutpostError)
-    pub fn update_outpost(
-        &self,
-    ) -> crate::operation::update_outpost::builders::UpdateOutpostFluentBuilder {
-        crate::operation::update_outpost::builders::UpdateOutpostFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_outpost(&self) -> crate::operation::update_outpost::builders::UpdateOutpostFluentBuilder {
+        crate::operation::update_outpost::builders::UpdateOutpostFluentBuilder::new(self.handle.clone())
     }
 }

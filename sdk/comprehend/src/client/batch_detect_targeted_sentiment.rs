@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`result_list(Option<Vec<BatchDetectTargetedSentimentItemResult>>)`](crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     ///   - [`error_list(Option<Vec<BatchItemError>>)`](crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput::error_list): <p>List of errors that the operation can return.</p>
     /// - On failure, responds with [`SdkError<BatchDetectTargetedSentimentError>`](crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentError)
-    pub fn batch_detect_targeted_sentiment(&self) -> crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentFluentBuilder{
+    pub fn batch_detect_targeted_sentiment(
+        &self,
+    ) -> crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentFluentBuilder {
         crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentFluentBuilder::new(self.handle.clone())
     }
 }

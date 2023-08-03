@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateMembershipOutput`](crate::operation::update_membership::UpdateMembershipOutput) with field(s):
     ///   - [`membership(Option<Membership>)`](crate::operation::update_membership::UpdateMembershipOutput::membership): <p>The membership object.</p>
     /// - On failure, responds with [`SdkError<UpdateMembershipError>`](crate::operation::update_membership::UpdateMembershipError)
-    pub fn update_membership(
-        &self,
-    ) -> crate::operation::update_membership::builders::UpdateMembershipFluentBuilder {
-        crate::operation::update_membership::builders::UpdateMembershipFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_membership(&self) -> crate::operation::update_membership::builders::UpdateMembershipFluentBuilder {
+        crate::operation::update_membership::builders::UpdateMembershipFluentBuilder::new(self.handle.clone())
     }
 }

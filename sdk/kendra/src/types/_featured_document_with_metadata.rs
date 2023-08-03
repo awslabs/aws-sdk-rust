@@ -37,9 +37,7 @@ impl FeaturedDocumentWithMetadata {
 
 /// A builder for [`FeaturedDocumentWithMetadata`](crate::types::FeaturedDocumentWithMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeaturedDocumentWithMetadataBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

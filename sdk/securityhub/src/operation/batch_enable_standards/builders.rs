@@ -38,9 +38,7 @@ impl BatchEnableStandardsFluentBuilder {
         }
     }
     /// Access the BatchEnableStandards as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_enable_standards::builders::BatchEnableStandardsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_enable_standards::builders::BatchEnableStandardsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl BatchEnableStandardsFluentBuilder {
             crate::operation::batch_enable_standards::BatchEnableStandards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_enable_standards::BatchEnableStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_enable_standards::BatchEnableStandardsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl BatchEnableStandardsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl BatchEnableStandardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_enable_standards::BatchEnableStandardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_enable_standards::BatchEnableStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_enable_standards::BatchEnableStandardsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl BatchEnableStandardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_enable_standards::BatchEnableStandardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_enable_standards::BatchEnableStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_enable_standards::BatchEnableStandardsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl BatchEnableStandardsFluentBuilder {
             crate::operation::batch_enable_standards::BatchEnableStandards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_enable_standards::BatchEnableStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_enable_standards::BatchEnableStandardsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl BatchEnableStandardsFluentBuilder {
     /// To override the contents of this collection use [`set_standards_subscription_requests`](Self::set_standards_subscription_requests).
     ///
     /// <p>The list of standards checks to enable.</p>
-    pub fn standards_subscription_requests(
-        mut self,
-        input: crate::types::StandardsSubscriptionRequest,
-    ) -> Self {
+    pub fn standards_subscription_requests(mut self, input: crate::types::StandardsSubscriptionRequest) -> Self {
         self.inner = self.inner.standards_subscription_requests(input);
         self
     }
@@ -144,9 +128,7 @@ impl BatchEnableStandardsFluentBuilder {
         self
     }
     /// <p>The list of standards checks to enable.</p>
-    pub fn get_standards_subscription_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscriptionRequest>> {
+    pub fn get_standards_subscription_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscriptionRequest>> {
         self.inner.get_standards_subscription_requests()
     }
 }

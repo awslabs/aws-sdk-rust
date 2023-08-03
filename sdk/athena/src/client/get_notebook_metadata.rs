@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetNotebookMetadataOutput`](crate::operation::get_notebook_metadata::GetNotebookMetadataOutput) with field(s):
     ///   - [`notebook_metadata(Option<NotebookMetadata>)`](crate::operation::get_notebook_metadata::GetNotebookMetadataOutput::notebook_metadata): <p>The metadata that is returned for the specified notebook ID.</p>
     /// - On failure, responds with [`SdkError<GetNotebookMetadataError>`](crate::operation::get_notebook_metadata::GetNotebookMetadataError)
-    pub fn get_notebook_metadata(
-        &self,
-    ) -> crate::operation::get_notebook_metadata::builders::GetNotebookMetadataFluentBuilder {
-        crate::operation::get_notebook_metadata::builders::GetNotebookMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_notebook_metadata(&self) -> crate::operation::get_notebook_metadata::builders::GetNotebookMetadataFluentBuilder {
+        crate::operation::get_notebook_metadata::builders::GetNotebookMetadataFluentBuilder::new(self.handle.clone())
     }
 }

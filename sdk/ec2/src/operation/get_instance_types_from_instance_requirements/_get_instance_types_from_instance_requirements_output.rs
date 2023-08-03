@@ -5,9 +5,7 @@
 pub struct GetInstanceTypesFromInstanceRequirementsOutput {
     /// <p>The instance types with the specified instance attributes.</p>
     #[doc(hidden)]
-    pub instance_types: ::std::option::Option<
-        ::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>,
-    >,
+    pub instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +13,7 @@ pub struct GetInstanceTypesFromInstanceRequirementsOutput {
 }
 impl GetInstanceTypesFromInstanceRequirementsOutput {
     /// <p>The instance types with the specified instance attributes.</p>
-    pub fn instance_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceTypeInfoFromInstanceRequirements]> {
+    pub fn instance_types(&self) -> ::std::option::Option<&[crate::types::InstanceTypeInfoFromInstanceRequirements]> {
         self.instance_types.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -32,20 +28,17 @@ impl ::aws_http::request_id::RequestId for GetInstanceTypesFromInstanceRequireme
 }
 impl GetInstanceTypesFromInstanceRequirementsOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceTypesFromInstanceRequirementsOutput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput).
-    pub fn builder() -> crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsOutputBuilder {
         crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceTypesFromInstanceRequirementsOutput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceTypesFromInstanceRequirementsOutputBuilder {
-    pub(crate) instance_types: ::std::option::Option<
-        ::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>,
-    >,
+    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +48,7 @@ impl GetInstanceTypesFromInstanceRequirementsOutputBuilder {
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
     ///
     /// <p>The instance types with the specified instance attributes.</p>
-    pub fn instance_types(
-        mut self,
-        input: crate::types::InstanceTypeInfoFromInstanceRequirements,
-    ) -> Self {
+    pub fn instance_types(mut self, input: crate::types::InstanceTypeInfoFromInstanceRequirements) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
         v.push(input);
         self.instance_types = ::std::option::Option::Some(v);
@@ -67,19 +57,13 @@ impl GetInstanceTypesFromInstanceRequirementsOutputBuilder {
     /// <p>The instance types with the specified instance attributes.</p>
     pub fn set_instance_types(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>>,
     ) -> Self {
         self.instance_types = input;
         self
     }
     /// <p>The instance types with the specified instance attributes.</p>
-    pub fn get_instance_types(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>,
-    > {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>> {
         &self.instance_types
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -106,12 +90,10 @@ impl GetInstanceTypesFromInstanceRequirementsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetInstanceTypesFromInstanceRequirementsOutput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput).
-    pub fn build(self) -> crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput{
+    pub fn build(self) -> crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput {
         crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput {
-            instance_types: self.instance_types
-            ,
-            next_token: self.next_token
-            ,
+            instance_types: self.instance_types,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

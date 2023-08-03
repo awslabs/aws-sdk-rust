@@ -10,10 +10,7 @@ impl GetDeploymentGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_deployment_group::GetDeploymentGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_group::GetDeploymentGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_group::GetDeploymentGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_deployment_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDeploymentGroupFluentBuilder {
         }
     }
     /// Access the GetDeploymentGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_deployment_group::builders::GetDeploymentGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_deployment_group::builders::GetDeploymentGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetDeploymentGroupFluentBuilder {
             crate::operation::get_deployment_group::GetDeploymentGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_group::GetDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_group::GetDeploymentGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetDeploymentGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetDeploymentGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deployment_group::GetDeploymentGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_group::GetDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_group::GetDeploymentGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetDeploymentGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deployment_group::GetDeploymentGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_group::GetDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_group::GetDeploymentGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetDeploymentGroupFluentBuilder {
             crate::operation::get_deployment_group::GetDeploymentGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_group::GetDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_group::GetDeploymentGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl GetDeploymentGroupFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>The name of a deployment group for the specified application.</p>
-    pub fn deployment_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_group_name(input.into());
         self
     }
     /// <p>The name of a deployment group for the specified application.</p>
-    pub fn set_deployment_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_group_name(input);
         self
     }

@@ -10,10 +10,7 @@ impl ListLensSharesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_lens_shares::ListLensSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lens_shares::ListLensSharesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lens_shares::ListLensSharesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_lens_shares();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListLensSharesFluentBuilder {
         }
     }
     /// Access the ListLensShares as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_lens_shares::builders::ListLensSharesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_lens_shares::builders::ListLensSharesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListLensSharesFluentBuilder {
             crate::operation::list_lens_shares::ListLensShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lens_shares::ListLensSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lens_shares::ListLensSharesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListLensSharesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListLensSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_lens_shares::ListLensSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lens_shares::ListLensSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lens_shares::ListLensSharesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListLensSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_lens_shares::ListLensSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lens_shares::ListLensSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lens_shares::ListLensSharesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListLensSharesFluentBuilder {
             crate::operation::list_lens_shares::ListLensShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lens_shares::ListLensSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lens_shares::ListLensSharesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_lens_shares::paginator::ListLensSharesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_lens_shares::paginator::ListLensSharesPaginator {
-        crate::operation::list_lens_shares::paginator::ListLensSharesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_lens_shares::paginator::ListLensSharesPaginator {
+        crate::operation::list_lens_shares::paginator::ListLensSharesPaginator::new(self.handle, self.inner)
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -157,18 +136,12 @@ impl ListLensSharesFluentBuilder {
         self.inner.get_lens_alias()
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
-    pub fn shared_with_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_with_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_with_prefix(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
-    pub fn set_shared_with_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_with_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shared_with_prefix(input);
         self
     }

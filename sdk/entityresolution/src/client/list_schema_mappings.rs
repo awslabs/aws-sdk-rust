@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`schema_list(Option<Vec<SchemaMappingSummary>>)`](crate::operation::list_schema_mappings::ListSchemaMappingsOutput::schema_list): <p>A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schema_mappings::ListSchemaMappingsOutput::next_token): <p>The pagination token from the previous <code>ListDomains</code> API call.</p>
     /// - On failure, responds with [`SdkError<ListSchemaMappingsError>`](crate::operation::list_schema_mappings::ListSchemaMappingsError)
-    pub fn list_schema_mappings(
-        &self,
-    ) -> crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder {
-        crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_schema_mappings(&self) -> crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder {
+        crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder::new(self.handle.clone())
     }
 }

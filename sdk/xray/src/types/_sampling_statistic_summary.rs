@@ -51,9 +51,7 @@ impl SamplingStatisticSummary {
 
 /// A builder for [`SamplingStatisticSummary`](crate::types::SamplingStatisticSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SamplingStatisticSummaryBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -82,10 +80,7 @@ impl SamplingStatisticSummaryBuilder {
         self
     }
     /// <p>The start time of the reporting window.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

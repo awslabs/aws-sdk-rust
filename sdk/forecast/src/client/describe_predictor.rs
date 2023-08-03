@@ -30,11 +30,7 @@ impl super::Client {
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_predictor::DescribePredictorOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
     ///   - [`optimization_metric(Option<OptimizationMetric>)`](crate::operation::describe_predictor::DescribePredictorOutput::optimization_metric): <p>The accuracy metric used to optimize the predictor.</p>
     /// - On failure, responds with [`SdkError<DescribePredictorError>`](crate::operation::describe_predictor::DescribePredictorError)
-    pub fn describe_predictor(
-        &self,
-    ) -> crate::operation::describe_predictor::builders::DescribePredictorFluentBuilder {
-        crate::operation::describe_predictor::builders::DescribePredictorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_predictor(&self) -> crate::operation::describe_predictor::builders::DescribePredictorFluentBuilder {
+        crate::operation::describe_predictor::builders::DescribePredictorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVoiceProfileOutput`](crate::operation::create_voice_profile::CreateVoiceProfileOutput) with field(s):
     ///   - [`voice_profile(Option<VoiceProfile>)`](crate::operation::create_voice_profile::CreateVoiceProfileOutput::voice_profile): <p>The requested voice profile.</p>
     /// - On failure, responds with [`SdkError<CreateVoiceProfileError>`](crate::operation::create_voice_profile::CreateVoiceProfileError)
-    pub fn create_voice_profile(
-        &self,
-    ) -> crate::operation::create_voice_profile::builders::CreateVoiceProfileFluentBuilder {
-        crate::operation::create_voice_profile::builders::CreateVoiceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_voice_profile(&self) -> crate::operation::create_voice_profile::builders::CreateVoiceProfileFluentBuilder {
+        crate::operation::create_voice_profile::builders::CreateVoiceProfileFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl CreateStackInstancesFluentBuilder {
         }
     }
     /// Access the CreateStackInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_stack_instances::builders::CreateStackInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_stack_instances::builders::CreateStackInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateStackInstancesFluentBuilder {
             crate::operation::create_stack_instances::CreateStackInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stack_instances::CreateStackInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stack_instances::CreateStackInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateStackInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateStackInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_stack_instances::CreateStackInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stack_instances::CreateStackInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stack_instances::CreateStackInstancesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateStackInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_stack_instances::CreateStackInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stack_instances::CreateStackInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stack_instances::CreateStackInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateStackInstancesFluentBuilder {
             crate::operation::create_stack_instances::CreateStackInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stack_instances::CreateStackInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stack_instances::CreateStackInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
@@ -154,10 +135,7 @@ impl CreateStackInstancesFluentBuilder {
     }
     /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_accounts(input);
         self
     }
@@ -174,18 +152,13 @@ impl CreateStackInstancesFluentBuilder {
     }
     /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn set_deployment_targets(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentTargets>,
-    ) -> Self {
+    pub fn set_deployment_targets(mut self, input: ::std::option::Option<crate::types::DeploymentTargets>) -> Self {
         self.inner = self.inner.set_deployment_targets(input);
         self
     }
     /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn get_deployment_targets(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentTargets> {
+    pub fn get_deployment_targets(&self) -> &::std::option::Option<crate::types::DeploymentTargets> {
         self.inner.get_deployment_targets()
     }
     /// Appends an item to `Regions`.
@@ -198,10 +171,7 @@ impl CreateStackInstancesFluentBuilder {
         self
     }
     /// <p>The names of one or more Amazon Web Services Regions where you want to create stack instances using the specified Amazon Web Services accounts.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_regions(input);
         self
     }
@@ -237,10 +207,7 @@ impl CreateStackInstancesFluentBuilder {
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
-    pub fn set_parameter_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameter_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameter_overrides(input);
         self
     }
@@ -254,31 +221,21 @@ impl CreateStackInstancesFluentBuilder {
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
-    pub fn get_parameter_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameter_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameter_overrides()
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn operation_preferences(
-        mut self,
-        input: crate::types::StackSetOperationPreferences,
-    ) -> Self {
+    pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.inner = self.inner.operation_preferences(input);
         self
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn set_operation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationPreferences>,
-    ) -> Self {
+    pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.inner = self.inner.set_operation_preferences(input);
         self
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn get_operation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+    pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         self.inner.get_operation_preferences()
     }
     /// <p>The unique identifier for this stack set operation.</p>

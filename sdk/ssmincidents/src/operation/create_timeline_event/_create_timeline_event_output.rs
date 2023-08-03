@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateTimelineEventOutput {
 }
 impl CreateTimelineEventOutput {
     /// Creates a new builder-style object to manufacture [`CreateTimelineEventOutput`](crate::operation::create_timeline_event::CreateTimelineEventOutput).
-    pub fn builder(
-    ) -> crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder {
-        crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder {
+        crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTimelineEventOutput`](crate::operation::create_timeline_event::CreateTimelineEventOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTimelineEventOutputBuilder {
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct CreateTimelineEventOutputBuilder {
 }
 impl CreateTimelineEventOutputBuilder {
     /// <p>The ARN of the incident record that you added the event to.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the incident record that you added the event to.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_record_arn = input;
         self
     }

@@ -44,9 +44,7 @@ impl AwsRdsDbSecurityGroupEc2SecurityGroup {
 
 /// A builder for [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbSecurityGroupEc2SecurityGroupBuilder {
     pub(crate) ec2_security_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct AwsRdsDbSecurityGroupEc2SecurityGroupBuilder {
 }
 impl AwsRdsDbSecurityGroupEc2SecurityGroupBuilder {
     /// <p>Specifies the ID for the EC2 security group.</p>
-    pub fn ec2_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID for the EC2 security group.</p>
-    pub fn set_ec2_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_id = input;
         self
     }
@@ -75,18 +67,12 @@ impl AwsRdsDbSecurityGroupEc2SecurityGroupBuilder {
         &self.ec2_security_group_id
     }
     /// <p>Specifies the name of the EC2 security group.</p>
-    pub fn ec2_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the EC2 security group.</p>
-    pub fn set_ec2_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_name = input;
         self
     }
@@ -95,18 +81,12 @@ impl AwsRdsDbSecurityGroupEc2SecurityGroupBuilder {
         &self.ec2_security_group_name
     }
     /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
-    pub fn ec2_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
-    pub fn set_ec2_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = input;
         self
     }

@@ -10,10 +10,7 @@ impl DescribeAttachmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_attachment::DescribeAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_attachment::DescribeAttachmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_attachment::DescribeAttachmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_attachment();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl DescribeAttachmentFluentBuilder {
         }
     }
     /// Access the DescribeAttachment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_attachment::builders::DescribeAttachmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_attachment::builders::DescribeAttachmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl DescribeAttachmentFluentBuilder {
             crate::operation::describe_attachment::DescribeAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_attachment::DescribeAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_attachment::DescribeAttachmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl DescribeAttachmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl DescribeAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_attachment::DescribeAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_attachment::DescribeAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_attachment::DescribeAttachmentError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl DescribeAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_attachment::DescribeAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_attachment::DescribeAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_attachment::DescribeAttachmentError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +107,17 @@ impl DescribeAttachmentFluentBuilder {
             crate::operation::describe_attachment::DescribeAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_attachment::DescribeAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_attachment::DescribeAttachmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_id(input.into());
         self
     }
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_id(input);
         self
     }

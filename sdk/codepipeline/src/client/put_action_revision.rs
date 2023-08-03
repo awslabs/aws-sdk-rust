@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`new_revision(bool)`](crate::operation::put_action_revision::PutActionRevisionOutput::new_revision): <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
     ///   - [`pipeline_execution_id(Option<String>)`](crate::operation::put_action_revision::PutActionRevisionOutput::pipeline_execution_id): <p>The ID of the current workflow state of the pipeline.</p>
     /// - On failure, responds with [`SdkError<PutActionRevisionError>`](crate::operation::put_action_revision::PutActionRevisionError)
-    pub fn put_action_revision(
-        &self,
-    ) -> crate::operation::put_action_revision::builders::PutActionRevisionFluentBuilder {
-        crate::operation::put_action_revision::builders::PutActionRevisionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_action_revision(&self) -> crate::operation::put_action_revision::builders::PutActionRevisionFluentBuilder {
+        crate::operation::put_action_revision::builders::PutActionRevisionFluentBuilder::new(self.handle.clone())
     }
 }

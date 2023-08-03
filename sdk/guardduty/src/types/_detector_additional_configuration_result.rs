@@ -37,9 +37,7 @@ impl DetectorAdditionalConfigurationResult {
 
 /// A builder for [`DetectorAdditionalConfigurationResult`](crate::types::DetectorAdditionalConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorAdditionalConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FeatureAdditionalConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
@@ -52,10 +50,7 @@ impl DetectorAdditionalConfigurationResultBuilder {
         self
     }
     /// <p>Name of the additional configuration.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureAdditionalConfiguration>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::FeatureAdditionalConfiguration>) -> Self {
         self.name = input;
         self
     }
@@ -83,10 +78,7 @@ impl DetectorAdditionalConfigurationResultBuilder {
         self
     }
     /// <p>The timestamp at which the additional configuration was last updated. This is in UTC format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

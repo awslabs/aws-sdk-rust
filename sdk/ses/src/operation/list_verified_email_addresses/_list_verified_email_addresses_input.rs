@@ -5,16 +5,14 @@
 pub struct ListVerifiedEmailAddressesInput {}
 impl ListVerifiedEmailAddressesInput {
     /// Creates a new builder-style object to manufacture [`ListVerifiedEmailAddressesInput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput).
-    pub fn builder() -> crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesInputBuilder{
+    pub fn builder() -> crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesInputBuilder {
         crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVerifiedEmailAddressesInput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVerifiedEmailAddressesInputBuilder {}
 impl ListVerifiedEmailAddressesInputBuilder {
     /// Consumes the builder and constructs a [`ListVerifiedEmailAddressesInput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput).
@@ -24,8 +22,6 @@ impl ListVerifiedEmailAddressesInputBuilder {
         crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput {})
     }
 }

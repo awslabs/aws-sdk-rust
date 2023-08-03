@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteUsageLimitOutput {
 }
 impl DeleteUsageLimitOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUsageLimitOutput`](crate::operation::delete_usage_limit::DeleteUsageLimitOutput).
-    pub fn builder() -> crate::operation::delete_usage_limit::builders::DeleteUsageLimitOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_usage_limit::builders::DeleteUsageLimitOutputBuilder {
         crate::operation::delete_usage_limit::builders::DeleteUsageLimitOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUsageLimitOutput`](crate::operation::delete_usage_limit::DeleteUsageLimitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUsageLimitOutputBuilder {
     pub(crate) usage_limit: ::std::option::Option<crate::types::UsageLimit>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteUsageLimitOutputBuilder {
         self
     }
     /// <p>The deleted usage limit object.</p>
-    pub fn set_usage_limit(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimit>,
-    ) -> Self {
+    pub fn set_usage_limit(mut self, input: ::std::option::Option<crate::types::UsageLimit>) -> Self {
         self.usage_limit = input;
         self
     }

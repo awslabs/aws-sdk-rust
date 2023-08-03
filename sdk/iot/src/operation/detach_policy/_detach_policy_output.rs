@@ -19,9 +19,7 @@ impl DetachPolicyOutput {
 
 /// A builder for [`DetachPolicyOutput`](crate::operation::detach_policy::DetachPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachPolicyOutputBuilder {
     _request_id: Option<String>,
 }

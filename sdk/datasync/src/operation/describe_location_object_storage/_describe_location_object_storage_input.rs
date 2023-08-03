@@ -16,16 +16,14 @@ impl DescribeLocationObjectStorageInput {
 }
 impl DescribeLocationObjectStorageInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationObjectStorageInput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput).
-    pub fn builder() -> crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder{
+    pub fn builder() -> crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder {
         crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationObjectStorageInput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationObjectStorageInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
@@ -51,11 +49,8 @@ impl DescribeLocationObjectStorageInputBuilder {
         crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput {
-                location_arn: self.location_arn
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput {
+            location_arn: self.location_arn,
+        })
     }
 }

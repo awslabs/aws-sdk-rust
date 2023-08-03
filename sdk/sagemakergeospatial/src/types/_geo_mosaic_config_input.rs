@@ -30,9 +30,7 @@ impl GeoMosaicConfigInput {
 
 /// A builder for [`GeoMosaicConfigInput`](crate::types::GeoMosaicConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeoMosaicConfigInputBuilder {
     pub(crate) algorithm_name: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
     pub(crate) target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,17 +42,12 @@ impl GeoMosaicConfigInputBuilder {
         self
     }
     /// <p>The name of the algorithm being used for geomosaic.</p>
-    pub fn set_algorithm_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
-    ) -> Self {
+    pub fn set_algorithm_name(mut self, input: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>) -> Self {
         self.algorithm_name = input;
         self
     }
     /// <p>The name of the algorithm being used for geomosaic.</p>
-    pub fn get_algorithm_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlgorithmNameGeoMosaic> {
+    pub fn get_algorithm_name(&self) -> &::std::option::Option<crate::types::AlgorithmNameGeoMosaic> {
         &self.algorithm_name
     }
     /// Appends an item to `target_bands`.
@@ -69,17 +62,12 @@ impl GeoMosaicConfigInputBuilder {
         self
     }
     /// <p>The target bands for geomosaic.</p>
-    pub fn set_target_bands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_bands = input;
         self
     }
     /// <p>The target bands for geomosaic.</p>
-    pub fn get_target_bands(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_bands
     }
     /// Consumes the builder and constructs a [`GeoMosaicConfigInput`](crate::types::GeoMosaicConfigInput).

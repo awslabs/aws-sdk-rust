@@ -26,7 +26,7 @@ impl GetComponentVersionArtifactInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComponentVersionArtifactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactInputBuilder,
+    inner: crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactInputBuilder,
 }
 impl GetComponentVersionArtifactFluentBuilder {
     /// Creates a new `GetComponentVersionArtifact`.
@@ -37,7 +37,7 @@ impl GetComponentVersionArtifactFluentBuilder {
         }
     }
     /// Access the GetComponentVersionArtifact as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetComponentVersionArtifactFluentBuilder {
             crate::operation::get_component_version_artifact::GetComponentVersionArtifact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_component_version_artifact::GetComponentVersionArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_component_version_artifact::GetComponentVersionArtifactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetComponentVersionArtifactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetComponentVersionArtifactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_component_version_artifact::GetComponentVersionArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_component_version_artifact::GetComponentVersionArtifactError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetComponentVersionArtifactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_component_version_artifact::GetComponentVersionArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_component_version_artifact::GetComponentVersionArtifactError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetComponentVersionArtifactFluentBuilder {
             crate::operation::get_component_version_artifact::GetComponentVersionArtifact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_component_version_artifact::GetComponentVersionArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_component_version_artifact::GetComponentVersionArtifactError>,
     > {
         self.customize_middleware().await
     }
@@ -136,19 +125,13 @@ impl GetComponentVersionArtifactFluentBuilder {
     }
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
-    pub fn artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.artifact_name(input.into());
         self
     }
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
-    pub fn set_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_artifact_name(input);
         self
     }

@@ -30,10 +30,7 @@ pub fn ser_create_image_recipe_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_component_configuration::ser_component_configuration(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_component_configuration::ser_component_configuration(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

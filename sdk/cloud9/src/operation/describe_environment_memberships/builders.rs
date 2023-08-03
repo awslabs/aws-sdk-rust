@@ -26,7 +26,7 @@ impl DescribeEnvironmentMembershipsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentMembershipsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder,
+    inner: crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder,
 }
 impl DescribeEnvironmentMembershipsFluentBuilder {
     /// Creates a new `DescribeEnvironmentMemberships`.
@@ -37,7 +37,7 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
         }
     }
     /// Access the DescribeEnvironmentMemberships as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
             crate::operation::describe_environment_memberships::DescribeEnvironmentMemberships,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
             crate::operation::describe_environment_memberships::DescribeEnvironmentMemberships,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator {
         crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>
@@ -141,18 +130,12 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
         self.inner.get_user_arn()
     }
     /// <p>The ID of the environment to get environment member information about.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The ID of the environment to get environment member information about.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -182,10 +165,7 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     /// <p>If no value is specified, information about all environment members are returned.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permissions>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permissions>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
@@ -196,9 +176,7 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     /// <p>If no value is specified, information about all environment members are returned.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permissions>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permissions>> {
         self.inner.get_permissions()
     }
     /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>

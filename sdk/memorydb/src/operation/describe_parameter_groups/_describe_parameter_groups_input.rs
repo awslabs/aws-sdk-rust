@@ -29,18 +29,14 @@ impl DescribeParameterGroupsInput {
 }
 impl DescribeParameterGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeParameterGroupsInput`](crate::operation::describe_parameter_groups::DescribeParameterGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsInputBuilder {
         crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeParameterGroupsInput`](crate::operation::describe_parameter_groups::DescribeParameterGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeParameterGroupsInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -48,18 +44,12 @@ pub struct DescribeParameterGroupsInputBuilder {
 }
 impl DescribeParameterGroupsInputBuilder {
     /// <p>The name of a specific parameter group to return details for.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a specific parameter group to return details for.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -102,12 +92,10 @@ impl DescribeParameterGroupsInputBuilder {
         crate::operation::describe_parameter_groups::DescribeParameterGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_parameter_groups::DescribeParameterGroupsInput {
-                parameter_group_name: self.parameter_group_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_parameter_groups::DescribeParameterGroupsInput {
+            parameter_group_name: self.parameter_group_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -44,9 +44,7 @@ impl S3Action {
 
 /// A builder for [`S3Action`](crate::types::S3Action).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl S3ActionBuilder {
         self
     }
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
-    pub fn set_canned_acl(
-        mut self,
-        input: ::std::option::Option<crate::types::CannedAccessControlList>,
-    ) -> Self {
+    pub fn set_canned_acl(mut self, input: ::std::option::Option<crate::types::CannedAccessControlList>) -> Self {
         self.canned_acl = input;
         self
     }

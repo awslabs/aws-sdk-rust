@@ -23,17 +23,14 @@ impl CreateOrganizationInput {
 }
 impl CreateOrganizationInput {
     /// Creates a new builder-style object to manufacture [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
-    pub fn builder(
-    ) -> crate::operation::create_organization::builders::CreateOrganizationInputBuilder {
+    pub fn builder() -> crate::operation::create_organization::builders::CreateOrganizationInputBuilder {
         crate::operation::create_organization::builders::CreateOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOrganizationInputBuilder {
     pub(crate) feature_set: ::std::option::Option<crate::types::OrganizationFeatureSet>,
 }
@@ -52,10 +49,7 @@ impl CreateOrganizationInputBuilder {
     /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the Amazon Web Services GovCloud (US) Region.</p> </li>
     /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>Organizations User Guide.</i> </p> </li>
     /// </ul>
-    pub fn set_feature_set(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationFeatureSet>,
-    ) -> Self {
+    pub fn set_feature_set(mut self, input: ::std::option::Option<crate::types::OrganizationFeatureSet>) -> Self {
         self.feature_set = input;
         self
     }
@@ -70,14 +64,9 @@ impl CreateOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_organization::CreateOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_organization::CreateOrganizationInput {
-                feature_set: self.feature_set,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_organization::CreateOrganizationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_organization::CreateOrganizationInput {
+            feature_set: self.feature_set,
+        })
     }
 }

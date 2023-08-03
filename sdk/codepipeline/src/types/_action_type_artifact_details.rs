@@ -30,9 +30,7 @@ impl ActionTypeArtifactDetails {
 
 /// A builder for [`ActionTypeArtifactDetails`](crate::types::ActionTypeArtifactDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionTypeArtifactDetailsBuilder {
     pub(crate) minimum_count: ::std::option::Option<i32>,
     pub(crate) maximum_count: ::std::option::Option<i32>,

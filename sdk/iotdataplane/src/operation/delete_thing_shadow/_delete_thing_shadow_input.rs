@@ -23,17 +23,14 @@ impl DeleteThingShadowInput {
 }
 impl DeleteThingShadowInput {
     /// Creates a new builder-style object to manufacture [`DeleteThingShadowInput`](crate::operation::delete_thing_shadow::DeleteThingShadowInput).
-    pub fn builder(
-    ) -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowInputBuilder {
+    pub fn builder() -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowInputBuilder {
         crate::operation::delete_thing_shadow::builders::DeleteThingShadowInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteThingShadowInput`](crate::operation::delete_thing_shadow::DeleteThingShadowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThingShadowInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) shadow_name: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,10 @@ impl DeleteThingShadowInputBuilder {
     /// Consumes the builder and constructs a [`DeleteThingShadowInput`](crate::operation::delete_thing_shadow::DeleteThingShadowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_thing_shadow::DeleteThingShadowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_thing_shadow::DeleteThingShadowInput {
-                thing_name: self.thing_name,
-                shadow_name: self.shadow_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_thing_shadow::DeleteThingShadowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_thing_shadow::DeleteThingShadowInput {
+            thing_name: self.thing_name,
+            shadow_name: self.shadow_name,
+        })
     }
 }

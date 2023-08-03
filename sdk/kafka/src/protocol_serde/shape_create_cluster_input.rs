@@ -6,19 +6,13 @@ pub fn ser_create_cluster_input(
     if let Some(var_1) = &input.broker_node_group_info {
         #[allow(unused_mut)]
         let mut object_2 = object.key("brokerNodeGroupInfo").start_object();
-        crate::protocol_serde::shape_broker_node_group_info::ser_broker_node_group_info(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_broker_node_group_info::ser_broker_node_group_info(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.client_authentication {
         #[allow(unused_mut)]
         let mut object_4 = object.key("clientAuthentication").start_object();
-        crate::protocol_serde::shape_client_authentication::ser_client_authentication(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_client_authentication::ser_client_authentication(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.cluster_name {
@@ -27,10 +21,7 @@ pub fn ser_create_cluster_input(
     if let Some(var_6) = &input.configuration_info {
         #[allow(unused_mut)]
         let mut object_7 = object.key("configurationInfo").start_object();
-        crate::protocol_serde::shape_configuration_info::ser_configuration_info(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_configuration_info::ser_configuration_info(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.encryption_info {
@@ -60,10 +51,7 @@ pub fn ser_create_cluster_input(
     if let Some(var_15) = &input.open_monitoring {
         #[allow(unused_mut)]
         let mut object_16 = object.key("openMonitoring").start_object();
-        crate::protocol_serde::shape_open_monitoring_info::ser_open_monitoring_info(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_open_monitoring_info::ser_open_monitoring_info(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.storage_mode {

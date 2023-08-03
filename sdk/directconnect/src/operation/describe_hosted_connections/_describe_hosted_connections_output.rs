@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeHostedConnectionsOutput {
 }
 impl DescribeHostedConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsOutput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput).
-    pub fn builder() -> crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsOutputBuilder {
         crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHostedConnectionsOutput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHostedConnectionsOutputBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl DescribeHostedConnectionsOutputBuilder {
         self
     }
     /// <p>The connections.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>) -> Self {
         self.connections = input;
         self
     }
     /// <p>The connections.</p>
-    pub fn get_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
         &self.connections
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +64,7 @@ impl DescribeHostedConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeHostedConnectionsOutput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput {
+    pub fn build(self) -> crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput {
         crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput {
             connections: self.connections,
             _request_id: self._request_id,

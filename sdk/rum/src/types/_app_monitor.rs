@@ -21,9 +21,7 @@ pub struct AppMonitor {
     pub last_modified: ::std::option::Option<::std::string::String>,
     /// <p>The list of tag keys and values associated with this app monitor.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The current state of the app monitor.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StateEnum>,
@@ -60,11 +58,7 @@ impl AppMonitor {
         self.last_modified.as_deref()
     }
     /// <p>The list of tag keys and values associated with this app monitor.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The current state of the app monitor.</p>
@@ -72,9 +66,7 @@ impl AppMonitor {
         self.state.as_ref()
     }
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
-    pub fn app_monitor_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppMonitorConfiguration> {
+    pub fn app_monitor_configuration(&self) -> ::std::option::Option<&crate::types::AppMonitorConfiguration> {
         self.app_monitor_configuration.as_ref()
     }
     /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
@@ -96,21 +88,16 @@ impl AppMonitor {
 
 /// A builder for [`AppMonitor`](crate::types::AppMonitor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppMonitorBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) created: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::StateEnum>,
-    pub(crate) app_monitor_configuration:
-        ::std::option::Option<crate::types::AppMonitorConfiguration>,
+    pub(crate) app_monitor_configuration: ::std::option::Option<crate::types::AppMonitorConfiguration>,
     pub(crate) data_storage: ::std::option::Option<crate::types::DataStorage>,
     pub(crate) custom_events: ::std::option::Option<crate::types::CustomEvents>,
 }
@@ -172,18 +159,12 @@ impl AppMonitorBuilder {
         &self.created
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
-    pub fn last_modified(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified = input;
         self
     }
@@ -196,32 +177,19 @@ impl AppMonitorBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tag keys and values associated with this app monitor.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of tag keys and values associated with this app monitor.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of tag keys and values associated with this app monitor.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The current state of the app monitor.</p>
@@ -239,25 +207,17 @@ impl AppMonitorBuilder {
         &self.state
     }
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
-    pub fn app_monitor_configuration(
-        mut self,
-        input: crate::types::AppMonitorConfiguration,
-    ) -> Self {
+    pub fn app_monitor_configuration(mut self, input: crate::types::AppMonitorConfiguration) -> Self {
         self.app_monitor_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
-    pub fn set_app_monitor_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AppMonitorConfiguration>,
-    ) -> Self {
+    pub fn set_app_monitor_configuration(mut self, input: ::std::option::Option<crate::types::AppMonitorConfiguration>) -> Self {
         self.app_monitor_configuration = input;
         self
     }
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
-    pub fn get_app_monitor_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppMonitorConfiguration> {
+    pub fn get_app_monitor_configuration(&self) -> &::std::option::Option<crate::types::AppMonitorConfiguration> {
         &self.app_monitor_configuration
     }
     /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
@@ -266,10 +226,7 @@ impl AppMonitorBuilder {
         self
     }
     /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
-    pub fn set_data_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::DataStorage>,
-    ) -> Self {
+    pub fn set_data_storage(mut self, input: ::std::option::Option<crate::types::DataStorage>) -> Self {
         self.data_storage = input;
         self
     }
@@ -285,10 +242,7 @@ impl AppMonitorBuilder {
     }
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
-    pub fn set_custom_events(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomEvents>,
-    ) -> Self {
+    pub fn set_custom_events(mut self, input: ::std::option::Option<crate::types::CustomEvents>) -> Self {
         self.custom_events = input;
         self
     }

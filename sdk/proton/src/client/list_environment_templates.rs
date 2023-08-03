@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput::next_token): <p>A token that indicates the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
     ///   - [`templates(Option<Vec<EnvironmentTemplateSummary>>)`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput::templates): <p>An array of environment templates with detail data.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentTemplatesError>`](crate::operation::list_environment_templates::ListEnvironmentTemplatesError)
-    pub fn list_environment_templates(
-        &self,
-    ) -> crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder
-    {
+    pub fn list_environment_templates(&self) -> crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder {
         crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

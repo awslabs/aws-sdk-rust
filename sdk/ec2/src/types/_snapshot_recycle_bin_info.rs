@@ -51,9 +51,7 @@ impl SnapshotRecycleBinInfo {
 
 /// A builder for [`SnapshotRecycleBinInfo`](crate::types::SnapshotRecycleBinInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotRecycleBinInfoBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) recycle_bin_enter_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -82,17 +80,12 @@ impl SnapshotRecycleBinInfoBuilder {
         self
     }
     /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
-    pub fn set_recycle_bin_enter_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_recycle_bin_enter_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.recycle_bin_enter_time = input;
         self
     }
     /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
-    pub fn get_recycle_bin_enter_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_recycle_bin_enter_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.recycle_bin_enter_time
     }
     /// <p>The date and time when the snapshot is to be permanently deleted from the Recycle Bin.</p>
@@ -101,17 +94,12 @@ impl SnapshotRecycleBinInfoBuilder {
         self
     }
     /// <p>The date and time when the snapshot is to be permanently deleted from the Recycle Bin.</p>
-    pub fn set_recycle_bin_exit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_recycle_bin_exit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.recycle_bin_exit_time = input;
         self
     }
     /// <p>The date and time when the snapshot is to be permanently deleted from the Recycle Bin.</p>
-    pub fn get_recycle_bin_exit_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_recycle_bin_exit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.recycle_bin_exit_time
     }
     /// <p>The description for the snapshot.</p>

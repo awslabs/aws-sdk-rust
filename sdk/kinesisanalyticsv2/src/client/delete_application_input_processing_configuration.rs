@@ -10,7 +10,12 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput::application_version_id): <p>The current application version ID.</p>
     /// - On failure, responds with [`SdkError<DeleteApplicationInputProcessingConfigurationError>`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError)
-    pub fn delete_application_input_processing_configuration(&self) -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationFluentBuilder{
-        crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn delete_application_input_processing_configuration(
+        &self,
+    ) -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationFluentBuilder
+    {
+        crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

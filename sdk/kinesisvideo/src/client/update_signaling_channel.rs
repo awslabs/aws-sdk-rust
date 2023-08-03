@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`single_master_configuration(SingleMasterConfiguration)`](crate::operation::update_signaling_channel::builders::UpdateSignalingChannelFluentBuilder::single_master_configuration) / [`set_single_master_configuration(Option<SingleMasterConfiguration>)`](crate::operation::update_signaling_channel::builders::UpdateSignalingChannelFluentBuilder::set_single_master_configuration): <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
     /// - On success, responds with [`UpdateSignalingChannelOutput`](crate::operation::update_signaling_channel::UpdateSignalingChannelOutput)
     /// - On failure, responds with [`SdkError<UpdateSignalingChannelError>`](crate::operation::update_signaling_channel::UpdateSignalingChannelError)
-    pub fn update_signaling_channel(
-        &self,
-    ) -> crate::operation::update_signaling_channel::builders::UpdateSignalingChannelFluentBuilder
-    {
+    pub fn update_signaling_channel(&self) -> crate::operation::update_signaling_channel::builders::UpdateSignalingChannelFluentBuilder {
         crate::operation::update_signaling_channel::builders::UpdateSignalingChannelFluentBuilder::new(self.handle.clone())
     }
 }

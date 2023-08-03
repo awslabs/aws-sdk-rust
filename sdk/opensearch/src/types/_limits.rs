@@ -37,14 +37,11 @@ impl Limits {
 
 /// A builder for [`Limits`](crate::types::Limits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LimitsBuilder {
     pub(crate) storage_types: ::std::option::Option<::std::vec::Vec<crate::types::StorageType>>,
     pub(crate) instance_limits: ::std::option::Option<crate::types::InstanceLimits>,
-    pub(crate) additional_limits:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>>,
+    pub(crate) additional_limits: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>>,
 }
 impl LimitsBuilder {
     /// Appends an item to `storage_types`.
@@ -59,17 +56,12 @@ impl LimitsBuilder {
         self
     }
     /// <p>Storage-related attributes that are available for a given instance type.</p>
-    pub fn set_storage_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageType>>,
-    ) -> Self {
+    pub fn set_storage_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageType>>) -> Self {
         self.storage_types = input;
         self
     }
     /// <p>Storage-related attributes that are available for a given instance type.</p>
-    pub fn get_storage_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageType>> {
+    pub fn get_storage_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageType>> {
         &self.storage_types
     }
     /// <p>The limits for a given instance type.</p>
@@ -78,10 +70,7 @@ impl LimitsBuilder {
         self
     }
     /// <p>The limits for a given instance type.</p>
-    pub fn set_instance_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceLimits>,
-    ) -> Self {
+    pub fn set_instance_limits(mut self, input: ::std::option::Option<crate::types::InstanceLimits>) -> Self {
         self.instance_limits = input;
         self
     }
@@ -101,17 +90,12 @@ impl LimitsBuilder {
         self
     }
     /// <p>List of additional limits that are specific to a given instance type for each of its instance roles.</p>
-    pub fn set_additional_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>>,
-    ) -> Self {
+    pub fn set_additional_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>>) -> Self {
         self.additional_limits = input;
         self
     }
     /// <p>List of additional limits that are specific to a given instance type for each of its instance roles.</p>
-    pub fn get_additional_limits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>> {
+    pub fn get_additional_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>> {
         &self.additional_limits
     }
     /// Consumes the builder and constructs a [`Limits`](crate::types::Limits).

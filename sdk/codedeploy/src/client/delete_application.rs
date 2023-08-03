@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`application_name(impl ::std::convert::Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::application_name) / [`set_application_name(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_application_name): <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
-    pub fn delete_application(
-        &self,
-    ) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
-        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_application(&self) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
+        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(self.handle.clone())
     }
 }

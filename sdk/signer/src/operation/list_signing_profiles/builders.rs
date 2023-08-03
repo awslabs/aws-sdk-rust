@@ -37,9 +37,7 @@ impl ListSigningProfilesFluentBuilder {
         }
     }
     /// Access the ListSigningProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListSigningProfilesFluentBuilder {
             crate::operation::list_signing_profiles::ListSigningProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_profiles::ListSigningProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_profiles::ListSigningProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListSigningProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListSigningProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signing_profiles::ListSigningProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_profiles::ListSigningProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_profiles::ListSigningProfilesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListSigningProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signing_profiles::ListSigningProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_profiles::ListSigningProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_profiles::ListSigningProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListSigningProfilesFluentBuilder {
             crate::operation::list_signing_profiles::ListSigningProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_profiles::ListSigningProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_profiles::ListSigningProfilesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator {
-        crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator {
+        crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator::new(self.handle, self.inner)
     }
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     pub fn include_canceled(mut self, input: bool) -> Self {
@@ -199,17 +181,12 @@ impl ListSigningProfilesFluentBuilder {
         self
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn set_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>>,
-    ) -> Self {
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>>) -> Self {
         self.inner = self.inner.set_statuses(input);
         self
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn get_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>> {
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>> {
         self.inner.get_statuses()
     }
 }

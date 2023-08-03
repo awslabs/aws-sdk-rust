@@ -18,10 +18,7 @@ pub fn ser_put_telemetry_records_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_telemetry_record::ser_telemetry_record(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_telemetry_record::ser_telemetry_record(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

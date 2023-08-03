@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RemoveBackendConfigOutput`](crate::operation::remove_backend_config::RemoveBackendConfigOutput) with field(s):
     ///   - [`error(Option<String>)`](crate::operation::remove_backend_config::RemoveBackendConfigOutput::error): <p>If the request fails, this error is returned.</p>
     /// - On failure, responds with [`SdkError<RemoveBackendConfigError>`](crate::operation::remove_backend_config::RemoveBackendConfigError)
-    pub fn remove_backend_config(
-        &self,
-    ) -> crate::operation::remove_backend_config::builders::RemoveBackendConfigFluentBuilder {
-        crate::operation::remove_backend_config::builders::RemoveBackendConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_backend_config(&self) -> crate::operation::remove_backend_config::builders::RemoveBackendConfigFluentBuilder {
+        crate::operation::remove_backend_config::builders::RemoveBackendConfigFluentBuilder::new(self.handle.clone())
     }
 }

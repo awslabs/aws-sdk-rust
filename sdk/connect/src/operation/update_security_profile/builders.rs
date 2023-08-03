@@ -38,10 +38,7 @@ impl UpdateSecurityProfileFluentBuilder {
         }
     }
     /// Access the UpdateSecurityProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_security_profile::builders::UpdateSecurityProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_security_profile::builders::UpdateSecurityProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateSecurityProfileFluentBuilder {
             crate::operation::update_security_profile::UpdateSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_profile::UpdateSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_profile::UpdateSecurityProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateSecurityProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_security_profile::UpdateSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_profile::UpdateSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_profile::UpdateSecurityProfileError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_security_profile::UpdateSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_profile::UpdateSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_profile::UpdateSecurityProfileError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl UpdateSecurityProfileFluentBuilder {
             crate::operation::update_security_profile::UpdateSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_profile::UpdateSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_profile::UpdateSecurityProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -148,32 +134,21 @@ impl UpdateSecurityProfileFluentBuilder {
         self
     }
     /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
     /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_permissions()
     }
     /// <p>The identifier for the security profle.</p>
-    pub fn security_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_id(input.into());
         self
     }
     /// <p>The identifier for the security profle.</p>
-    pub fn set_security_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_id(input);
         self
     }
@@ -211,9 +186,7 @@ impl UpdateSecurityProfileFluentBuilder {
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub fn set_allowed_access_control_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_allowed_access_control_tags(input);
         self
@@ -221,9 +194,7 @@ impl UpdateSecurityProfileFluentBuilder {
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub fn get_allowed_access_control_tags(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_allowed_access_control_tags()
     }
     /// Appends an item to `TagRestrictedResources`.
@@ -231,25 +202,17 @@ impl UpdateSecurityProfileFluentBuilder {
     /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
     ///
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    pub fn tag_restricted_resources(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_restricted_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_restricted_resources(input.into());
         self
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    pub fn set_tag_restricted_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_restricted_resources(input);
         self
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    pub fn get_tag_restricted_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_restricted_resources()
     }
 }

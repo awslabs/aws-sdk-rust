@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CompleteSnapshotOutput {
 }
 impl CompleteSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CompleteSnapshotOutput`](crate::operation::complete_snapshot::CompleteSnapshotOutput).
-    pub fn builder() -> crate::operation::complete_snapshot::builders::CompleteSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_snapshot::builders::CompleteSnapshotOutputBuilder {
         crate::operation::complete_snapshot::builders::CompleteSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteSnapshotOutput`](crate::operation::complete_snapshot::CompleteSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteSnapshotOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,

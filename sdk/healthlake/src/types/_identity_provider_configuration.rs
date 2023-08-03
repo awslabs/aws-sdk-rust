@@ -24,9 +24,7 @@ pub struct IdentityProviderConfiguration {
 }
 impl IdentityProviderConfiguration {
     /// <p>The authorization strategy that you selected when you created the data store.</p>
-    pub fn authorization_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthorizationStrategy> {
+    pub fn authorization_strategy(&self) -> ::std::option::Option<&crate::types::AuthorizationStrategy> {
         self.authorization_strategy.as_ref()
     }
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
@@ -56,9 +54,7 @@ impl IdentityProviderConfiguration {
 
 /// A builder for [`IdentityProviderConfiguration`](crate::types::IdentityProviderConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityProviderConfigurationBuilder {
     pub(crate) authorization_strategy: ::std::option::Option<crate::types::AuthorizationStrategy>,
     pub(crate) fine_grained_authorization_enabled: ::std::option::Option<bool>,
@@ -72,17 +68,12 @@ impl IdentityProviderConfigurationBuilder {
         self
     }
     /// <p>The authorization strategy that you selected when you created the data store.</p>
-    pub fn set_authorization_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizationStrategy>,
-    ) -> Self {
+    pub fn set_authorization_strategy(mut self, input: ::std::option::Option<crate::types::AuthorizationStrategy>) -> Self {
         self.authorization_strategy = input;
         self
     }
     /// <p>The authorization strategy that you selected when you created the data store.</p>
-    pub fn get_authorization_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthorizationStrategy> {
+    pub fn get_authorization_strategy(&self) -> &::std::option::Option<crate::types::AuthorizationStrategy> {
         &self.authorization_strategy
     }
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
@@ -91,10 +82,7 @@ impl IdentityProviderConfigurationBuilder {
         self
     }
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
-    pub fn set_fine_grained_authorization_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_fine_grained_authorization_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.fine_grained_authorization_enabled = input;
         self
     }
@@ -132,18 +120,12 @@ impl IdentityProviderConfigurationBuilder {
         &self.metadata
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode the access token created by the authorization server.</p>
-    pub fn idp_lambda_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idp_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idp_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode the access token created by the authorization server.</p>
-    pub fn set_idp_lambda_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idp_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idp_lambda_arn = input;
         self
     }
@@ -155,9 +137,7 @@ impl IdentityProviderConfigurationBuilder {
     pub fn build(self) -> crate::types::IdentityProviderConfiguration {
         crate::types::IdentityProviderConfiguration {
             authorization_strategy: self.authorization_strategy,
-            fine_grained_authorization_enabled: self
-                .fine_grained_authorization_enabled
-                .unwrap_or_default(),
+            fine_grained_authorization_enabled: self.fine_grained_authorization_enabled.unwrap_or_default(),
             metadata: self.metadata,
             idp_lambda_arn: self.idp_lambda_arn,
         }

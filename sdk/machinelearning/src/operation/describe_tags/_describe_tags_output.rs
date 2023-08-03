@@ -43,9 +43,7 @@ impl DescribeTagsOutput {
 
 /// A builder for [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTagsOutputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
@@ -73,10 +71,7 @@ impl DescribeTagsOutputBuilder {
         self
     }
     /// <p>The type of the tagged ML object.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TaggableResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TaggableResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -96,10 +91,7 @@ impl DescribeTagsOutputBuilder {
         self
     }
     /// <p>A list of tags associated with the ML object.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

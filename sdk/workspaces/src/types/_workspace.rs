@@ -50,12 +50,10 @@ pub struct Workspace {
     pub workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     /// <p>The modification states of the WorkSpace.</p>
     #[doc(hidden)]
-    pub modification_states:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModificationState>>,
+    pub modification_states: ::std::option::Option<::std::vec::Vec<crate::types::ModificationState>>,
     /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
     #[doc(hidden)]
-    pub related_workspaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
+    pub related_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
 }
 impl Workspace {
     /// <p>The identifier of the WorkSpace.</p>
@@ -113,9 +111,7 @@ impl Workspace {
         self.root_volume_encryption_enabled
     }
     /// <p>The properties of the WorkSpace.</p>
-    pub fn workspace_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkspaceProperties> {
+    pub fn workspace_properties(&self) -> ::std::option::Option<&crate::types::WorkspaceProperties> {
         self.workspace_properties.as_ref()
     }
     /// <p>The modification states of the WorkSpace.</p>
@@ -123,9 +119,7 @@ impl Workspace {
         self.modification_states.as_deref()
     }
     /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
-    pub fn related_workspaces(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RelatedWorkspaceProperties]> {
+    pub fn related_workspaces(&self) -> ::std::option::Option<&[crate::types::RelatedWorkspaceProperties]> {
         self.related_workspaces.as_deref()
     }
 }
@@ -138,9 +132,7 @@ impl Workspace {
 
 /// A builder for [`Workspace`](crate::types::Workspace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkspaceBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
@@ -156,10 +148,8 @@ pub struct WorkspaceBuilder {
     pub(crate) user_volume_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) root_volume_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
-    pub(crate) modification_states:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModificationState>>,
-    pub(crate) related_workspaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
+    pub(crate) modification_states: ::std::option::Option<::std::vec::Vec<crate::types::ModificationState>>,
+    pub(crate) related_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
 }
 impl WorkspaceBuilder {
     /// <p>The identifier of the WorkSpace.</p>
@@ -267,18 +257,12 @@ impl WorkspaceBuilder {
         &self.subnet_id
     }
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -301,18 +285,12 @@ impl WorkspaceBuilder {
         &self.error_code
     }
     /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a WorkSpace</a>. </p>
-    pub fn computer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn computer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a WorkSpace</a>. </p>
-    pub fn set_computer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_computer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.computer_name = input;
         self
     }
@@ -321,18 +299,12 @@ impl WorkspaceBuilder {
         &self.computer_name
     }
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
-    pub fn volume_encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
-    pub fn set_volume_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_encryption_key = input;
         self
     }
@@ -346,10 +318,7 @@ impl WorkspaceBuilder {
         self
     }
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
-    pub fn set_user_volume_encryption_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_user_volume_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_volume_encryption_enabled = input;
         self
     }
@@ -363,10 +332,7 @@ impl WorkspaceBuilder {
         self
     }
     /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
-    pub fn set_root_volume_encryption_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_root_volume_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.root_volume_encryption_enabled = input;
         self
     }
@@ -380,17 +346,12 @@ impl WorkspaceBuilder {
         self
     }
     /// <p>The properties of the WorkSpace.</p>
-    pub fn set_workspace_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceProperties>,
-    ) -> Self {
+    pub fn set_workspace_properties(mut self, input: ::std::option::Option<crate::types::WorkspaceProperties>) -> Self {
         self.workspace_properties = input;
         self
     }
     /// <p>The properties of the WorkSpace.</p>
-    pub fn get_workspace_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkspaceProperties> {
+    pub fn get_workspace_properties(&self) -> &::std::option::Option<crate::types::WorkspaceProperties> {
         &self.workspace_properties
     }
     /// Appends an item to `modification_states`.
@@ -405,17 +366,12 @@ impl WorkspaceBuilder {
         self
     }
     /// <p>The modification states of the WorkSpace.</p>
-    pub fn set_modification_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModificationState>>,
-    ) -> Self {
+    pub fn set_modification_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModificationState>>) -> Self {
         self.modification_states = input;
         self
     }
     /// <p>The modification states of the WorkSpace.</p>
-    pub fn get_modification_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModificationState>> {
+    pub fn get_modification_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModificationState>> {
         &self.modification_states
     }
     /// Appends an item to `related_workspaces`.
@@ -430,17 +386,12 @@ impl WorkspaceBuilder {
         self
     }
     /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
-    pub fn set_related_workspaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
-    ) -> Self {
+    pub fn set_related_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>>) -> Self {
         self.related_workspaces = input;
         self
     }
     /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
-    pub fn get_related_workspaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>> {
+    pub fn get_related_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>> {
         &self.related_workspaces
     }
     /// Consumes the builder and constructs a [`Workspace`](crate::types::Workspace).

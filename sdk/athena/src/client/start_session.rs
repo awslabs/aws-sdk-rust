@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`session_id(Option<String>)`](crate::operation::start_session::StartSessionOutput::session_id): <p>The session ID.</p>
     ///   - [`state(Option<SessionState>)`](crate::operation::start_session::StartSessionOutput::state): <p>The state of the session. A description of each state follows.</p>  <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>  <p> <code>CREATED</code> - The session has been started.</p>  <p> <code>IDLE</code> - The session is able to accept a calculation.</p>  <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>  <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>  <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>  <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>  <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
     /// - On failure, responds with [`SdkError<StartSessionError>`](crate::operation::start_session::StartSessionError)
-    pub fn start_session(
-        &self,
-    ) -> crate::operation::start_session::builders::StartSessionFluentBuilder {
-        crate::operation::start_session::builders::StartSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_session(&self) -> crate::operation::start_session::builders::StartSessionFluentBuilder {
+        crate::operation::start_session::builders::StartSessionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,16 +16,14 @@ impl GetIdentityDkimAttributesInput {
 }
 impl GetIdentityDkimAttributesInput {
     /// Creates a new builder-style object to manufacture [`GetIdentityDkimAttributesInput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput).
-    pub fn builder() -> crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesInputBuilder{
+    pub fn builder() -> crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesInputBuilder {
         crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityDkimAttributesInput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesInputBuilder {
     pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl GetIdentityDkimAttributesInputBuilder {
         self
     }
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
-    pub fn set_identities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.identities = input;
         self
     }
@@ -60,10 +55,6 @@ impl GetIdentityDkimAttributesInputBuilder {
         crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput {
-                identities: self.identities,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput { identities: self.identities })
     }
 }

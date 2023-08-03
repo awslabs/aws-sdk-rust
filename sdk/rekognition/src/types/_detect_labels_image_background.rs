@@ -30,9 +30,7 @@ impl DetectLabelsImageBackground {
 
 /// A builder for [`DetectLabelsImageBackground`](crate::types::DetectLabelsImageBackground).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectLabelsImageBackgroundBuilder {
     pub(crate) quality: ::std::option::Option<crate::types::DetectLabelsImageQuality>,
     pub(crate) dominant_colors: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
@@ -44,10 +42,7 @@ impl DetectLabelsImageBackgroundBuilder {
         self
     }
     /// <p>The quality of the image background as defined by brightness and sharpness.</p>
-    pub fn set_quality(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectLabelsImageQuality>,
-    ) -> Self {
+    pub fn set_quality(mut self, input: ::std::option::Option<crate::types::DetectLabelsImageQuality>) -> Self {
         self.quality = input;
         self
     }
@@ -67,17 +62,12 @@ impl DetectLabelsImageBackgroundBuilder {
         self
     }
     /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    pub fn set_dominant_colors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
-    ) -> Self {
+    pub fn set_dominant_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>) -> Self {
         self.dominant_colors = input;
         self
     }
     /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    pub fn get_dominant_colors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantColor>> {
+    pub fn get_dominant_colors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantColor>> {
         &self.dominant_colors
     }
     /// Consumes the builder and constructs a [`DetectLabelsImageBackground`](crate::types::DetectLabelsImageBackground).

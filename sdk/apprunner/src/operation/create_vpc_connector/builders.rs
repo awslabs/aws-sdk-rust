@@ -10,10 +10,7 @@ impl CreateVpcConnectorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_connector::CreateVpcConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_connector::CreateVpcConnectorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_connector::CreateVpcConnectorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_vpc_connector();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateVpcConnectorFluentBuilder {
         }
     }
     /// Access the CreateVpcConnector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_vpc_connector::builders::CreateVpcConnectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_vpc_connector::builders::CreateVpcConnectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateVpcConnectorFluentBuilder {
             crate::operation::create_vpc_connector::CreateVpcConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_connector::CreateVpcConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_connector::CreateVpcConnectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateVpcConnectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateVpcConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_connector::CreateVpcConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_connector::CreateVpcConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_connector::CreateVpcConnectorError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateVpcConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_connector::CreateVpcConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_connector::CreateVpcConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_connector::CreateVpcConnectorError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateVpcConnectorFluentBuilder {
             crate::operation::create_vpc_connector::CreateVpcConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_connector::CreateVpcConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_connector::CreateVpcConnectorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A name for the VPC connector.</p>
-    pub fn vpc_connector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_connector_name(input.into());
         self
     }
     /// <p>A name for the VPC connector.</p>
-    pub fn set_vpc_connector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_connector_name(input);
         self
     }
@@ -156,10 +134,7 @@ impl CreateVpcConnectorFluentBuilder {
     /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
     /// <p> App Runner currently only provides support for IPv4. </p>
     /// </note>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnets(input);
         self
     }
@@ -174,25 +149,17 @@ impl CreateVpcConnectorFluentBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
     /// Appends an item to `Tags`.
@@ -205,10 +172,7 @@ impl CreateVpcConnectorFluentBuilder {
         self
     }
     /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -10,10 +10,7 @@ impl ListStateMachinesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_state_machines::ListStateMachinesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machines::ListStateMachinesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machines::ListStateMachinesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_state_machines();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ListStateMachinesFluentBuilder {
         }
     }
     /// Access the ListStateMachines as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_state_machines::builders::ListStateMachinesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_state_machines::builders::ListStateMachinesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl ListStateMachinesFluentBuilder {
             crate::operation::list_state_machines::ListStateMachines,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machines::ListStateMachinesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machines::ListStateMachinesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl ListStateMachinesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl ListStateMachinesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_state_machines::ListStateMachinesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machines::ListStateMachinesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machines::ListStateMachinesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl ListStateMachinesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_state_machines::ListStateMachinesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machines::ListStateMachinesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machines::ListStateMachinesError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +105,15 @@ impl ListStateMachinesFluentBuilder {
             crate::operation::list_state_machines::ListStateMachines,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machines::ListStateMachinesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machines::ListStateMachinesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_state_machines::paginator::ListStateMachinesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_state_machines::paginator::ListStateMachinesPaginator {
-        crate::operation::list_state_machines::paginator::ListStateMachinesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_state_machines::paginator::ListStateMachinesPaginator {
+        crate::operation::list_state_machines::paginator::ListStateMachinesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>

@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
@@ -82,9 +76,7 @@ impl ::std::convert::From<&str> for Type {
             "EXPORT_ASSETS_TO_S3" => Type::ExportAssetsToS3,
             "EXPORT_ASSET_TO_SIGNED_URL" => Type::ExportAssetToSignedUrl,
             "EXPORT_REVISIONS_TO_S3" => Type::ExportRevisionsToS3,
-            "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY" => {
-                Type::ImportAssetsFromLakeFormationTagPolicy
-            }
+            "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY" => Type::ImportAssetsFromLakeFormationTagPolicy,
             "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES" => Type::ImportAssetsFromRedshiftDataShares,
             "IMPORT_ASSETS_FROM_S3" => Type::ImportAssetsFromS3,
             "IMPORT_ASSET_FROM_API_GATEWAY_API" => Type::ImportAssetFromApiGatewayApi,
@@ -108,9 +100,7 @@ impl Type {
             Type::ExportAssetsToS3 => "EXPORT_ASSETS_TO_S3",
             Type::ExportAssetToSignedUrl => "EXPORT_ASSET_TO_SIGNED_URL",
             Type::ExportRevisionsToS3 => "EXPORT_REVISIONS_TO_S3",
-            Type::ImportAssetsFromLakeFormationTagPolicy => {
-                "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY"
-            }
+            Type::ImportAssetsFromLakeFormationTagPolicy => "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY",
             Type::ImportAssetsFromRedshiftDataShares => "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
             Type::ImportAssetsFromS3 => "IMPORT_ASSETS_FROM_S3",
             Type::ImportAssetFromApiGatewayApi => "IMPORT_ASSET_FROM_API_GATEWAY_API",

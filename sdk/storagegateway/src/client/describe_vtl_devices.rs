@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`vtl_devices(Option<Vec<VtlDevice>>)`](crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput::vtl_devices): <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput::marker): <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>
     /// - On failure, responds with [`SdkError<DescribeVTLDevicesError>`](crate::operation::describe_vtl_devices::DescribeVTLDevicesError)
-    pub fn describe_vtl_devices(
-        &self,
-    ) -> crate::operation::describe_vtl_devices::builders::DescribeVTLDevicesFluentBuilder {
-        crate::operation::describe_vtl_devices::builders::DescribeVTLDevicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_vtl_devices(&self) -> crate::operation::describe_vtl_devices::builders::DescribeVTLDevicesFluentBuilder {
+        crate::operation::describe_vtl_devices::builders::DescribeVTLDevicesFluentBuilder::new(self.handle.clone())
     }
 }

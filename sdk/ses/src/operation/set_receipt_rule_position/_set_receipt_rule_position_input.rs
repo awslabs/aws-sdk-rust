@@ -30,18 +30,14 @@ impl SetReceiptRulePositionInput {
 }
 impl SetReceiptRulePositionInput {
     /// Creates a new builder-style object to manufacture [`SetReceiptRulePositionInput`](crate::operation::set_receipt_rule_position::SetReceiptRulePositionInput).
-    pub fn builder(
-    ) -> crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionInputBuilder {
         crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionInputBuilder::default()
     }
 }
 
 /// A builder for [`SetReceiptRulePositionInput`](crate::operation::set_receipt_rule_position::SetReceiptRulePositionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetReceiptRulePositionInputBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
@@ -49,18 +45,12 @@ pub struct SetReceiptRulePositionInputBuilder {
 }
 impl SetReceiptRulePositionInputBuilder {
     /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_name = input;
         self
     }
@@ -103,12 +93,10 @@ impl SetReceiptRulePositionInputBuilder {
         crate::operation::set_receipt_rule_position::SetReceiptRulePositionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::set_receipt_rule_position::SetReceiptRulePositionInput {
-                rule_set_name: self.rule_set_name,
-                rule_name: self.rule_name,
-                after: self.after,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::set_receipt_rule_position::SetReceiptRulePositionInput {
+            rule_set_name: self.rule_set_name,
+            rule_name: self.rule_name,
+            after: self.after,
+        })
     }
 }

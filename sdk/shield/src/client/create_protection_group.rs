@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_protection_group::builders::CreateProtectionGroupFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_protection_group::builders::CreateProtectionGroupFluentBuilder::set_tags): <p>One or more tag key-value pairs for the protection group.</p>
     /// - On success, responds with [`CreateProtectionGroupOutput`](crate::operation::create_protection_group::CreateProtectionGroupOutput)
     /// - On failure, responds with [`SdkError<CreateProtectionGroupError>`](crate::operation::create_protection_group::CreateProtectionGroupError)
-    pub fn create_protection_group(
-        &self,
-    ) -> crate::operation::create_protection_group::builders::CreateProtectionGroupFluentBuilder
-    {
-        crate::operation::create_protection_group::builders::CreateProtectionGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_protection_group(&self) -> crate::operation::create_protection_group::builders::CreateProtectionGroupFluentBuilder {
+        crate::operation::create_protection_group::builders::CreateProtectionGroupFluentBuilder::new(self.handle.clone())
     }
 }

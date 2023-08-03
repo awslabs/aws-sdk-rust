@@ -26,7 +26,7 @@ impl ListResolverQueryLogConfigsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResolverQueryLogConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsInputBuilder,
+    inner: crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsInputBuilder,
 }
 impl ListResolverQueryLogConfigsFluentBuilder {
     /// Creates a new `ListResolverQueryLogConfigs`.
@@ -37,7 +37,7 @@ impl ListResolverQueryLogConfigsFluentBuilder {
         }
     }
     /// Access the ListResolverQueryLogConfigs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListResolverQueryLogConfigsFluentBuilder {
             crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListResolverQueryLogConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListResolverQueryLogConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListResolverQueryLogConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListResolverQueryLogConfigsFluentBuilder {
             crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_query_log_configs::paginator::ListResolverQueryLogConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_resolver_query_log_configs::paginator::ListResolverQueryLogConfigsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_resolver_query_log_configs::paginator::ListResolverQueryLogConfigsPaginator {
         crate::operation::list_resolver_query_log_configs::paginator::ListResolverQueryLogConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
@@ -171,10 +160,7 @@ impl ListResolverQueryLogConfigsFluentBuilder {
     /// <p>An optional specification to return a subset of query logging configurations.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -7,17 +7,12 @@ pub fn ser_create_vpc_ingress_connection_input(
         object.key("ServiceArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.vpc_ingress_connection_name {
-        object
-            .key("VpcIngressConnectionName")
-            .string(var_2.as_str());
+        object.key("VpcIngressConnectionName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.ingress_vpc_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("IngressVpcConfiguration").start_object();
-        crate::protocol_serde::shape_ingress_vpc_configuration::ser_ingress_vpc_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_ingress_vpc_configuration::ser_ingress_vpc_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.tags {

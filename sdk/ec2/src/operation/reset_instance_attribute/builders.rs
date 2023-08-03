@@ -38,10 +38,7 @@ impl ResetInstanceAttributeFluentBuilder {
         }
     }
     /// Access the ResetInstanceAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ResetInstanceAttributeFluentBuilder {
             crate::operation::reset_instance_attribute::ResetInstanceAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_instance_attribute::ResetInstanceAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_instance_attribute::ResetInstanceAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ResetInstanceAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ResetInstanceAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_instance_attribute::ResetInstanceAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_instance_attribute::ResetInstanceAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_instance_attribute::ResetInstanceAttributeError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ResetInstanceAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_instance_attribute::ResetInstanceAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_instance_attribute::ResetInstanceAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_instance_attribute::ResetInstanceAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl ResetInstanceAttributeFluentBuilder {
             crate::operation::reset_instance_attribute::ResetInstanceAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_instance_attribute::ResetInstanceAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_instance_attribute::ResetInstanceAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +120,7 @@ impl ResetInstanceAttributeFluentBuilder {
     /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }

@@ -35,13 +35,10 @@ impl RetrieveOutput {
 
 /// A builder for [`RetrieveOutput`](crate::operation::retrieve::RetrieveOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetrieveOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
-    pub(crate) result_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>>,
+    pub(crate) result_items: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>>,
     _request_id: Option<String>,
 }
 impl RetrieveOutputBuilder {
@@ -71,17 +68,12 @@ impl RetrieveOutputBuilder {
         self
     }
     /// <p>The results of the retrieved relevant passages for the search.</p>
-    pub fn set_result_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>>,
-    ) -> Self {
+    pub fn set_result_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>>) -> Self {
         self.result_items = input;
         self
     }
     /// <p>The results of the retrieved relevant passages for the search.</p>
-    pub fn get_result_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>> {
+    pub fn get_result_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>> {
         &self.result_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

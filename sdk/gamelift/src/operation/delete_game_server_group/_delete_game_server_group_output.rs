@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteGameServerGroupOutput {
 }
 impl DeleteGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGameServerGroupOutput`](crate::operation::delete_game_server_group::DeleteGameServerGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_game_server_group::builders::DeleteGameServerGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_game_server_group::builders::DeleteGameServerGroupOutputBuilder {
         crate::operation::delete_game_server_group::builders::DeleteGameServerGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGameServerGroupOutput`](crate::operation::delete_game_server_group::DeleteGameServerGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGameServerGroupOutputBuilder {
     pub(crate) game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteGameServerGroupOutputBuilder {
         self
     }
     /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
-    pub fn set_game_server_group(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerGroup>,
-    ) -> Self {
+    pub fn set_game_server_group(mut self, input: ::std::option::Option<crate::types::GameServerGroup>) -> Self {
         self.game_server_group = input;
         self
     }

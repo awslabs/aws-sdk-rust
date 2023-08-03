@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateNumberOfDomainControllersOutput
 }
 impl UpdateNumberOfDomainControllersOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNumberOfDomainControllersOutput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput).
-    pub fn builder() -> crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersOutputBuilder{
+    pub fn builder() -> crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersOutputBuilder {
         crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNumberOfDomainControllersOutput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNumberOfDomainControllersOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateNumberOfDomainControllersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateNumberOfDomainControllersOutput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput
-    {
+    pub fn build(self) -> crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput {
         crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput {
             _request_id: self._request_id,
         }

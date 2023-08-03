@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteOtaUpdateOutput {
 }
 impl DeleteOtaUpdateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOtaUpdateOutput`](crate::operation::delete_ota_update::DeleteOtaUpdateOutput).
-    pub fn builder() -> crate::operation::delete_ota_update::builders::DeleteOtaUpdateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_ota_update::builders::DeleteOtaUpdateOutputBuilder {
         crate::operation::delete_ota_update::builders::DeleteOtaUpdateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOtaUpdateOutput`](crate::operation::delete_ota_update::DeleteOtaUpdateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOtaUpdateOutputBuilder {
     _request_id: Option<String>,
 }

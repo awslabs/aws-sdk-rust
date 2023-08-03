@@ -44,9 +44,7 @@ impl BatchAlarmActionErrorEntry {
 
 /// A builder for [`BatchAlarmActionErrorEntry`](crate::types::BatchAlarmActionErrorEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAlarmActionErrorEntryBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
@@ -82,18 +80,12 @@ impl BatchAlarmActionErrorEntryBuilder {
         &self.error_code
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that describes the error.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

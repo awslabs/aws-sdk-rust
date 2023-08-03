@@ -26,7 +26,7 @@ impl RestoreCertificateAuthorityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreCertificateAuthorityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::restore_certificate_authority::builders::RestoreCertificateAuthorityInputBuilder,
+    inner: crate::operation::restore_certificate_authority::builders::RestoreCertificateAuthorityInputBuilder,
 }
 impl RestoreCertificateAuthorityFluentBuilder {
     /// Creates a new `RestoreCertificateAuthority`.
@@ -37,7 +37,7 @@ impl RestoreCertificateAuthorityFluentBuilder {
         }
     }
     /// Access the RestoreCertificateAuthority as a reference.
-    pub fn as_input(&self) -> &crate::operation::restore_certificate_authority::builders::RestoreCertificateAuthorityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::restore_certificate_authority::builders::RestoreCertificateAuthorityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RestoreCertificateAuthorityFluentBuilder {
             crate::operation::restore_certificate_authority::RestoreCertificateAuthority,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RestoreCertificateAuthorityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RestoreCertificateAuthorityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_certificate_authority::RestoreCertificateAuthorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RestoreCertificateAuthorityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_certificate_authority::RestoreCertificateAuthorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError>,
     > {
         self.send_middleware().await
     }
@@ -114,27 +105,19 @@ impl RestoreCertificateAuthorityFluentBuilder {
             crate::operation::restore_certificate_authority::RestoreCertificateAuthority,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }

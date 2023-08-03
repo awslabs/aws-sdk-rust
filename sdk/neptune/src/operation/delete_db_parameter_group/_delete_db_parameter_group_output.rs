@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDbParameterGroupOutput {
 }
 impl DeleteDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbParameterGroupOutput`](crate::operation::delete_db_parameter_group::DeleteDbParameterGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_db_parameter_group::builders::DeleteDbParameterGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_parameter_group::builders::DeleteDbParameterGroupOutputBuilder {
         crate::operation::delete_db_parameter_group::builders::DeleteDbParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbParameterGroupOutput`](crate::operation::delete_db_parameter_group::DeleteDbParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbParameterGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteDbParameterGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDbParameterGroupOutput`](crate::operation::delete_db_parameter_group::DeleteDbParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_db_parameter_group::DeleteDbParameterGroupOutput {
+    pub fn build(self) -> crate::operation::delete_db_parameter_group::DeleteDbParameterGroupOutput {
         crate::operation::delete_db_parameter_group::DeleteDbParameterGroupOutput {
             _request_id: self._request_id,
         }

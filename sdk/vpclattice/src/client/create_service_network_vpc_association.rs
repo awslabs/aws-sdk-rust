@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`created_by(Option<String>)`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput::created_by): <p>The account that created the association.</p>
     ///   - [`security_group_ids(Option<Vec<String>>)`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput::security_group_ids): <p>The IDs of the security groups.</p>
     /// - On failure, responds with [`SdkError<CreateServiceNetworkVpcAssociationError>`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationError)
-    pub fn create_service_network_vpc_association(&self) -> crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationFluentBuilder{
+    pub fn create_service_network_vpc_association(
+        &self,
+    ) -> crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationFluentBuilder {
         crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationFluentBuilder::new(self.handle.clone())
     }
 }

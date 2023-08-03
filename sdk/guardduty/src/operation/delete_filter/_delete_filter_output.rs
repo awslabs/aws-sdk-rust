@@ -19,9 +19,7 @@ impl DeleteFilterOutput {
 
 /// A builder for [`DeleteFilterOutput`](crate::operation::delete_filter::DeleteFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFilterOutputBuilder {
     _request_id: Option<String>,
 }

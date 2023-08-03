@@ -13,15 +13,11 @@ pub struct BandwidthReductionFilter {
 }
 impl BandwidthReductionFilter {
     /// Optionally specify the level of sharpening to apply when you use the Bandwidth reduction filter. Sharpening adds contrast to the edges of your video content and can reduce softness. Keep the default value Off to apply no sharpening. Set Sharpening strength to Low to apply a minimal amount of sharpening, or High to apply a maximum amount of sharpening.
-    pub fn sharpening(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BandwidthReductionFilterSharpening> {
+    pub fn sharpening(&self) -> ::std::option::Option<&crate::types::BandwidthReductionFilterSharpening> {
         self.sharpening.as_ref()
     }
     /// Specify the strength of the Bandwidth reduction filter. For most workflows, we recommend that you choose Auto to reduce the bandwidth of your output with little to no perceptual decrease in video quality. For high quality and high bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We recommend that you choose High for low bitrate outputs. Note that High may incur a slight increase in the softness of your output.
-    pub fn strength(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BandwidthReductionFilterStrength> {
+    pub fn strength(&self) -> ::std::option::Option<&crate::types::BandwidthReductionFilterStrength> {
         self.strength.as_ref()
     }
 }
@@ -34,9 +30,7 @@ impl BandwidthReductionFilter {
 
 /// A builder for [`BandwidthReductionFilter`](crate::types::BandwidthReductionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BandwidthReductionFilterBuilder {
     pub(crate) sharpening: ::std::option::Option<crate::types::BandwidthReductionFilterSharpening>,
     pub(crate) strength: ::std::option::Option<crate::types::BandwidthReductionFilterStrength>,
@@ -48,17 +42,12 @@ impl BandwidthReductionFilterBuilder {
         self
     }
     /// Optionally specify the level of sharpening to apply when you use the Bandwidth reduction filter. Sharpening adds contrast to the edges of your video content and can reduce softness. Keep the default value Off to apply no sharpening. Set Sharpening strength to Low to apply a minimal amount of sharpening, or High to apply a maximum amount of sharpening.
-    pub fn set_sharpening(
-        mut self,
-        input: ::std::option::Option<crate::types::BandwidthReductionFilterSharpening>,
-    ) -> Self {
+    pub fn set_sharpening(mut self, input: ::std::option::Option<crate::types::BandwidthReductionFilterSharpening>) -> Self {
         self.sharpening = input;
         self
     }
     /// Optionally specify the level of sharpening to apply when you use the Bandwidth reduction filter. Sharpening adds contrast to the edges of your video content and can reduce softness. Keep the default value Off to apply no sharpening. Set Sharpening strength to Low to apply a minimal amount of sharpening, or High to apply a maximum amount of sharpening.
-    pub fn get_sharpening(
-        &self,
-    ) -> &::std::option::Option<crate::types::BandwidthReductionFilterSharpening> {
+    pub fn get_sharpening(&self) -> &::std::option::Option<crate::types::BandwidthReductionFilterSharpening> {
         &self.sharpening
     }
     /// Specify the strength of the Bandwidth reduction filter. For most workflows, we recommend that you choose Auto to reduce the bandwidth of your output with little to no perceptual decrease in video quality. For high quality and high bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We recommend that you choose High for low bitrate outputs. Note that High may incur a slight increase in the softness of your output.
@@ -67,17 +56,12 @@ impl BandwidthReductionFilterBuilder {
         self
     }
     /// Specify the strength of the Bandwidth reduction filter. For most workflows, we recommend that you choose Auto to reduce the bandwidth of your output with little to no perceptual decrease in video quality. For high quality and high bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We recommend that you choose High for low bitrate outputs. Note that High may incur a slight increase in the softness of your output.
-    pub fn set_strength(
-        mut self,
-        input: ::std::option::Option<crate::types::BandwidthReductionFilterStrength>,
-    ) -> Self {
+    pub fn set_strength(mut self, input: ::std::option::Option<crate::types::BandwidthReductionFilterStrength>) -> Self {
         self.strength = input;
         self
     }
     /// Specify the strength of the Bandwidth reduction filter. For most workflows, we recommend that you choose Auto to reduce the bandwidth of your output with little to no perceptual decrease in video quality. For high quality and high bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We recommend that you choose High for low bitrate outputs. Note that High may incur a slight increase in the softness of your output.
-    pub fn get_strength(
-        &self,
-    ) -> &::std::option::Option<crate::types::BandwidthReductionFilterStrength> {
+    pub fn get_strength(&self) -> &::std::option::Option<crate::types::BandwidthReductionFilterStrength> {
         &self.strength
     }
     /// Consumes the builder and constructs a [`BandwidthReductionFilter`](crate::types::BandwidthReductionFilter).

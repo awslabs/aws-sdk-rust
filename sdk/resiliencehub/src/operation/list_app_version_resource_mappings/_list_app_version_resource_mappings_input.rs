@@ -36,16 +36,14 @@ impl ListAppVersionResourceMappingsInput {
 }
 impl ListAppVersionResourceMappingsInput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionResourceMappingsInput`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsInput).
-    pub fn builder() -> crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsInputBuilder{
+    pub fn builder() -> crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsInputBuilder {
         crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppVersionResourceMappingsInput`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppVersionResourceMappingsInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -118,15 +116,11 @@ impl ListAppVersionResourceMappingsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsInput {
-                app_arn: self.app_arn
-                ,
-                app_version: self.app_version
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                app_arn: self.app_arn,
+                app_version: self.app_version,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

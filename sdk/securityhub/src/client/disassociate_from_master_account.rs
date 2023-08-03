@@ -5,10 +5,10 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountFluentBuilder::send) it.
     /// - On success, responds with [`DisassociateFromMasterAccountOutput`](crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountOutput)
     /// - On failure, responds with [`SdkError<DisassociateFromMasterAccountError>`](crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError)
-    #[deprecated(
-        note = "This API has been deprecated, use DisassociateFromAdministratorAccount API instead."
-    )]
-    pub fn disassociate_from_master_account(&self) -> crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountFluentBuilder{
+    #[deprecated(note = "This API has been deprecated, use DisassociateFromAdministratorAccount API instead.")]
+    pub fn disassociate_from_master_account(
+        &self,
+    ) -> crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountFluentBuilder {
         crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountFluentBuilder::new(self.handle.clone())
     }
 }

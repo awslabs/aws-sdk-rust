@@ -10,9 +10,7 @@ pub struct DescribeModelPackagingJobOutput {
 }
 impl DescribeModelPackagingJobOutput {
     /// <p>The description of the model packaging job. </p>
-    pub fn model_packaging_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelPackagingDescription> {
+    pub fn model_packaging_description(&self) -> ::std::option::Option<&crate::types::ModelPackagingDescription> {
         self.model_packaging_description.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeModelPackagingJobOutput {
 }
 impl DescribeModelPackagingJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelPackagingJobOutput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput).
-    pub fn builder() -> crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobOutputBuilder {
         crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelPackagingJobOutput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelPackagingJobOutputBuilder {
-    pub(crate) model_packaging_description:
-        ::std::option::Option<crate::types::ModelPackagingDescription>,
+    pub(crate) model_packaging_description: ::std::option::Option<crate::types::ModelPackagingDescription>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackagingJobOutputBuilder {
     /// <p>The description of the model packaging job. </p>
-    pub fn model_packaging_description(
-        mut self,
-        input: crate::types::ModelPackagingDescription,
-    ) -> Self {
+    pub fn model_packaging_description(mut self, input: crate::types::ModelPackagingDescription) -> Self {
         self.model_packaging_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The description of the model packaging job. </p>
-    pub fn set_model_packaging_description(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackagingDescription>,
-    ) -> Self {
+    pub fn set_model_packaging_description(mut self, input: ::std::option::Option<crate::types::ModelPackagingDescription>) -> Self {
         self.model_packaging_description = input;
         self
     }
     /// <p>The description of the model packaging job. </p>
-    pub fn get_model_packaging_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackagingDescription> {
+    pub fn get_model_packaging_description(&self) -> &::std::option::Option<crate::types::ModelPackagingDescription> {
         &self.model_packaging_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +58,7 @@ impl DescribeModelPackagingJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeModelPackagingJobOutput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput {
+    pub fn build(self) -> crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput {
         crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput {
             model_packaging_description: self.model_packaging_description,
             _request_id: self._request_id,

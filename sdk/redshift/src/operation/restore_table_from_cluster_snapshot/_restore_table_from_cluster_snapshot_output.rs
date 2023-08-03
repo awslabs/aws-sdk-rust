@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for RestoreTableFromClusterSnapshotOutput
 }
 impl RestoreTableFromClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreTableFromClusterSnapshotOutput`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput).
-    pub fn builder() -> crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotOutputBuilder{
+    pub fn builder() -> crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotOutputBuilder {
         crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreTableFromClusterSnapshotOutput`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreTableFromClusterSnapshotOutputBuilder {
     pub(crate) table_restore_status: ::std::option::Option<crate::types::TableRestoreStatus>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl RestoreTableFromClusterSnapshotOutputBuilder {
         self
     }
     /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
-    pub fn set_table_restore_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TableRestoreStatus>,
-    ) -> Self {
+    pub fn set_table_restore_status(mut self, input: ::std::option::Option<crate::types::TableRestoreStatus>) -> Self {
         self.table_restore_status = input;
         self
     }
     /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
-    pub fn get_table_restore_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableRestoreStatus> {
+    pub fn get_table_restore_status(&self) -> &::std::option::Option<crate::types::TableRestoreStatus> {
         &self.table_restore_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,13 +58,9 @@ impl RestoreTableFromClusterSnapshotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreTableFromClusterSnapshotOutput`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput
-    {
+    pub fn build(self) -> crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput {
         crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput {
-            table_restore_status: self.table_restore_status
-            ,
+            table_restore_status: self.table_restore_status,
             _request_id: self._request_id,
         }
     }

@@ -22,26 +22,18 @@ impl GetQuantumTaskInput {
 
 /// A builder for [`GetQuantumTaskInput`](crate::operation::get_quantum_task::GetQuantumTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQuantumTaskInputBuilder {
     pub(crate) quantum_task_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetQuantumTaskInputBuilder {
     /// <p>the ARN of the task to retrieve.</p>
-    pub fn quantum_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>the ARN of the task to retrieve.</p>
-    pub fn set_quantum_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetQuantumTaskInputBuilder {
     /// Consumes the builder and constructs a [`GetQuantumTaskInput`](crate::operation::get_quantum_task::GetQuantumTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_quantum_task::GetQuantumTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_quantum_task::GetQuantumTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_quantum_task::GetQuantumTaskInput {
             quantum_task_arn: self.quantum_task_arn,
         })

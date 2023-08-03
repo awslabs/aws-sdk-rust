@@ -30,27 +30,19 @@ impl AlertTarget {
 
 /// A builder for [`AlertTarget`](crate::types::AlertTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlertTargetBuilder {
     pub(crate) alert_target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AlertTargetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
-    pub fn alert_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alert_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
-    pub fn set_alert_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alert_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alert_target_arn = input;
         self
     }

@@ -73,17 +73,14 @@ impl DescribeKeyPairsInput {
 }
 impl DescribeKeyPairsInput {
     /// Creates a new builder-style object to manufacture [`DescribeKeyPairsInput`](crate::operation::describe_key_pairs::DescribeKeyPairsInput).
-    pub fn builder() -> crate::operation::describe_key_pairs::builders::DescribeKeyPairsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_key_pairs::builders::DescribeKeyPairsInputBuilder {
         crate::operation::describe_key_pairs::builders::DescribeKeyPairsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeKeyPairsInput`](crate::operation::describe_key_pairs::DescribeKeyPairsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeKeyPairsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -130,10 +127,7 @@ impl DescribeKeyPairsInputBuilder {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -168,10 +162,7 @@ impl DescribeKeyPairsInputBuilder {
     }
     /// <p>The key pair names.</p>
     /// <p>Default: Describes all of your key pairs.</p>
-    pub fn set_key_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_key_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.key_names = input;
         self
     }
@@ -192,17 +183,12 @@ impl DescribeKeyPairsInputBuilder {
         self
     }
     /// <p>The IDs of the key pairs.</p>
-    pub fn set_key_pair_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_key_pair_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.key_pair_ids = input;
         self
     }
     /// <p>The IDs of the key pairs.</p>
-    pub fn get_key_pair_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_key_pair_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.key_pair_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -239,18 +225,13 @@ impl DescribeKeyPairsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeKeyPairsInput`](crate::operation::describe_key_pairs::DescribeKeyPairsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_key_pairs::DescribeKeyPairsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_key_pairs::DescribeKeyPairsInput {
-                filters: self.filters,
-                key_names: self.key_names,
-                key_pair_ids: self.key_pair_ids,
-                dry_run: self.dry_run,
-                include_public_key: self.include_public_key,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_key_pairs::DescribeKeyPairsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_key_pairs::DescribeKeyPairsInput {
+            filters: self.filters,
+            key_names: self.key_names,
+            key_pair_ids: self.key_pair_ids,
+            dry_run: self.dry_run,
+            include_public_key: self.include_public_key,
+        })
     }
 }

@@ -26,7 +26,7 @@ impl DeletePublishingDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePublishingDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationInputBuilder,
+    inner: crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationInputBuilder,
 }
 impl DeletePublishingDestinationFluentBuilder {
     /// Creates a new `DeletePublishingDestination`.
@@ -37,7 +37,7 @@ impl DeletePublishingDestinationFluentBuilder {
         }
     }
     /// Access the DeletePublishingDestination as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeletePublishingDestinationFluentBuilder {
             crate::operation::delete_publishing_destination::DeletePublishingDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_publishing_destination::DeletePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_publishing_destination::DeletePublishingDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeletePublishingDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeletePublishingDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_publishing_destination::DeletePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_publishing_destination::DeletePublishingDestinationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeletePublishingDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_publishing_destination::DeletePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_publishing_destination::DeletePublishingDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeletePublishingDestinationFluentBuilder {
             crate::operation::delete_publishing_destination::DeletePublishingDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_publishing_destination::DeletePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_publishing_destination::DeletePublishingDestinationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DeletePublishingDestinationFluentBuilder {
         self.inner.get_detector_id()
     }
     /// <p>The ID of the publishing destination to delete.</p>
-    pub fn destination_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_id(input.into());
         self
     }
     /// <p>The ID of the publishing destination to delete.</p>
-    pub fn set_destination_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_id(input);
         self
     }

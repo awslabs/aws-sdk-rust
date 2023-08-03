@@ -36,9 +36,7 @@ impl KxSavedownStorageConfiguration {
 
 /// A builder for [`KxSavedownStorageConfiguration`](crate::types::KxSavedownStorageConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KxSavedownStorageConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::KxSavedownStorageType>,
     pub(crate) size: ::std::option::Option<i32>,
@@ -56,10 +54,7 @@ impl KxSavedownStorageConfigurationBuilder {
     /// <ul>
     /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KxSavedownStorageType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::KxSavedownStorageType>) -> Self {
         self.r#type = input;
         self
     }

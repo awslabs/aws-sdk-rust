@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteRuleGroupOutput {
 }
 impl DeleteRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRuleGroupOutput`](crate::operation::delete_rule_group::DeleteRuleGroupOutput).
-    pub fn builder() -> crate::operation::delete_rule_group::builders::DeleteRuleGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_rule_group::builders::DeleteRuleGroupOutputBuilder {
         crate::operation::delete_rule_group::builders::DeleteRuleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRuleGroupOutput`](crate::operation::delete_rule_group::DeleteRuleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRuleGroupOutputBuilder {
     pub(crate) rule_group_response: ::std::option::Option<crate::types::RuleGroupResponse>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl DeleteRuleGroupOutputBuilder {
         self
     }
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
-    pub fn set_rule_group_response(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleGroupResponse>,
-    ) -> Self {
+    pub fn set_rule_group_response(mut self, input: ::std::option::Option<crate::types::RuleGroupResponse>) -> Self {
         self.rule_group_response = input;
         self
     }
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
-    pub fn get_rule_group_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuleGroupResponse> {
+    pub fn get_rule_group_response(&self) -> &::std::option::Option<crate::types::RuleGroupResponse> {
         &self.rule_group_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

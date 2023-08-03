@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConflictHandlerType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ConflictHandlerType {
             "LAMBDA" => ConflictHandlerType::Lambda,
             "NONE" => ConflictHandlerType::None,
             "OPTIMISTIC_CONCURRENCY" => ConflictHandlerType::OptimisticConcurrency,
-            other => ConflictHandlerType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConflictHandlerType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -23,9 +23,7 @@ impl OrganizationScanEc2InstanceWithFindings {
 
 /// A builder for [`OrganizationScanEc2InstanceWithFindings`](crate::types::OrganizationScanEc2InstanceWithFindings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationScanEc2InstanceWithFindingsBuilder {
     pub(crate) ebs_volumes: ::std::option::Option<crate::types::OrganizationEbsVolumes>,
 }
@@ -36,10 +34,7 @@ impl OrganizationScanEc2InstanceWithFindingsBuilder {
         self
     }
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
-    pub fn set_ebs_volumes(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationEbsVolumes>,
-    ) -> Self {
+    pub fn set_ebs_volumes(mut self, input: ::std::option::Option<crate::types::OrganizationEbsVolumes>) -> Self {
         self.ebs_volumes = input;
         self
     }

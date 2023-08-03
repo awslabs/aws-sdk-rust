@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`limit(Option<ReusableDelegationSetLimit>)`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput::limit): <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
     ///   - [`count(i64)`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput::count): <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
     /// - On failure, responds with [`SdkError<GetReusableDelegationSetLimitError>`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError)
-    pub fn get_reusable_delegation_set_limit(&self) -> crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitFluentBuilder{
+    pub fn get_reusable_delegation_set_limit(
+        &self,
+    ) -> crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitFluentBuilder {
         crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitFluentBuilder::new(self.handle.clone())
     }
 }

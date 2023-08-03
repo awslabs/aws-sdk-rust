@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BatchGetAssetPropertyValueHistoryErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,18 +54,10 @@ pub enum BatchGetAssetPropertyValueHistoryErrorCode {
 impl ::std::convert::From<&str> for BatchGetAssetPropertyValueHistoryErrorCode {
     fn from(s: &str) -> Self {
         match s {
-            "AccessDeniedException" => {
-                BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException
-            }
-            "InvalidRequestException" => {
-                BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException
-            }
-            "ResourceNotFoundException" => {
-                BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException
-            }
-            other => BatchGetAssetPropertyValueHistoryErrorCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "AccessDeniedException" => BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException,
+            "InvalidRequestException" => BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException,
+            "ResourceNotFoundException" => BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException,
+            other => BatchGetAssetPropertyValueHistoryErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,25 +72,15 @@ impl BatchGetAssetPropertyValueHistoryErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException => {
-                "AccessDeniedException"
-            }
-            BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException => {
-                "InvalidRequestException"
-            }
-            BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException => {
-                "ResourceNotFoundException"
-            }
+            BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException => "AccessDeniedException",
+            BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException => "InvalidRequestException",
+            BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException => "ResourceNotFoundException",
             BatchGetAssetPropertyValueHistoryErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDeniedException",
-            "InvalidRequestException",
-            "ResourceNotFoundException",
-        ]
+        &["AccessDeniedException", "InvalidRequestException", "ResourceNotFoundException"]
     }
 }
 impl ::std::convert::AsRef<str> for BatchGetAssetPropertyValueHistoryErrorCode {

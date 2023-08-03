@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`capacity_forecast(Option<CapacityForecast>)`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput::capacity_forecast): <p>The capacity forecast.</p>
     ///   - [`update_time(Option<DateTime>)`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput::update_time): <p>The time the forecast was made.</p>
     /// - On failure, responds with [`SdkError<GetPredictiveScalingForecastError>`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastError)
-    pub fn get_predictive_scaling_forecast(&self) -> crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastFluentBuilder{
+    pub fn get_predictive_scaling_forecast(
+        &self,
+    ) -> crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastFluentBuilder {
         crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastFluentBuilder::new(self.handle.clone())
     }
 }

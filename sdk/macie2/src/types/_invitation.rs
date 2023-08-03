@@ -44,9 +44,7 @@ impl Invitation {
 
 /// A builder for [`Invitation`](crate::types::Invitation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvitationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) invitation_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl InvitationBuilder {
         &self.account_id
     }
     /// <p>The unique identifier for the invitation.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the invitation.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invitation_id = input;
         self
     }
@@ -94,10 +86,7 @@ impl InvitationBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
-    pub fn set_invited_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invited_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invited_at = input;
         self
     }
@@ -111,17 +100,12 @@ impl InvitationBuilder {
         self
     }
     /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
-    pub fn set_relationship_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationshipStatus>,
-    ) -> Self {
+    pub fn set_relationship_status(mut self, input: ::std::option::Option<crate::types::RelationshipStatus>) -> Self {
         self.relationship_status = input;
         self
     }
     /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
-    pub fn get_relationship_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelationshipStatus> {
+    pub fn get_relationship_status(&self) -> &::std::option::Option<crate::types::RelationshipStatus> {
         &self.relationship_status
     }
     /// Consumes the builder and constructs a [`Invitation`](crate::types::Invitation).

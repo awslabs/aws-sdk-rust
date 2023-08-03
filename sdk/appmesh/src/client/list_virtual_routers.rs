@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`virtual_routers(Option<Vec<VirtualRouterRef>>)`](crate::operation::list_virtual_routers::ListVirtualRoutersOutput::virtual_routers): <p>The list of existing virtual routers for the specified service mesh.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_virtual_routers::ListVirtualRoutersOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListVirtualRoutersError>`](crate::operation::list_virtual_routers::ListVirtualRoutersError)
-    pub fn list_virtual_routers(
-        &self,
-    ) -> crate::operation::list_virtual_routers::builders::ListVirtualRoutersFluentBuilder {
-        crate::operation::list_virtual_routers::builders::ListVirtualRoutersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_virtual_routers(&self) -> crate::operation::list_virtual_routers::builders::ListVirtualRoutersFluentBuilder {
+        crate::operation::list_virtual_routers::builders::ListVirtualRoutersFluentBuilder::new(self.handle.clone())
     }
 }

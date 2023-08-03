@@ -38,9 +38,7 @@ impl CreateGlobalClusterFluentBuilder {
         }
     }
     /// Access the CreateGlobalCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl CreateGlobalClusterFluentBuilder {
             crate::operation::create_global_cluster::CreateGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_cluster::CreateGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_cluster::CreateGlobalClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl CreateGlobalClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl CreateGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_global_cluster::CreateGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_cluster::CreateGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_cluster::CreateGlobalClusterError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl CreateGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_global_cluster::CreateGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_cluster::CreateGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_cluster::CreateGlobalClusterError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl CreateGlobalClusterFluentBuilder {
             crate::operation::create_global_cluster::CreateGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_cluster::CreateGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_cluster::CreateGlobalClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The cluster identifier of the new global database cluster.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier of the new global database cluster.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
@@ -144,25 +125,17 @@ impl CreateGlobalClusterFluentBuilder {
         self.inner.get_global_cluster_identifier()
     }
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
-    pub fn source_db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_cluster_identifier(input.into());
         self
     }
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
-    pub fn set_source_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_cluster_identifier(input);
         self
     }
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
-    pub fn get_source_db_cluster_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_cluster_identifier()
     }
     /// <p>The name of the database engine to be used in the global database.</p>
@@ -184,19 +157,13 @@ impl CreateGlobalClusterFluentBuilder {
     }
     /// <p>The Neptune engine version to be used by the global database.</p>
     /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The Neptune engine version to be used by the global database.</p>
     /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }

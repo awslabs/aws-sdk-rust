@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`storage_virtual_machine_arn(Option<String>)`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput::storage_virtual_machine_arn): <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
     ///   - [`fsx_filesystem_arn(Option<String>)`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput::fsx_filesystem_arn): <p>The ARN of the FSx for ONTAP file system.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationFsxOntapError>`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapError)
-    pub fn describe_location_fsx_ontap(&self) -> crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapFluentBuilder{
+    pub fn describe_location_fsx_ontap(&self) -> crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapFluentBuilder {
         crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapFluentBuilder::new(self.handle.clone())
     }
 }

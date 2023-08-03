@@ -22,9 +22,7 @@ impl GetAccessorInput {
 
 /// A builder for [`GetAccessorInput`](crate::operation::get_accessor::GetAccessorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessorInputBuilder {
     pub(crate) accessor_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetAccessorInputBuilder {
         &self.accessor_id
     }
     /// Consumes the builder and constructs a [`GetAccessorInput`](crate::operation::get_accessor::GetAccessorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_accessor::GetAccessorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_accessor::GetAccessorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_accessor::GetAccessorInput {
             accessor_id: self.accessor_id,
         })

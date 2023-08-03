@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`safety_rules_to_override(Vec<String>)`](crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateFluentBuilder::safety_rules_to_override) / [`set_safety_rules_to_override(Option<Vec<String>>)`](crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateFluentBuilder::set_safety_rules_to_override): <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     /// - On success, responds with [`UpdateRoutingControlStateOutput`](crate::operation::update_routing_control_state::UpdateRoutingControlStateOutput)
     /// - On failure, responds with [`SdkError<UpdateRoutingControlStateError>`](crate::operation::update_routing_control_state::UpdateRoutingControlStateError)
-    pub fn update_routing_control_state(&self) -> crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateFluentBuilder{
+    pub fn update_routing_control_state(&self) -> crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateFluentBuilder {
         crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateFluentBuilder::new(self.handle.clone())
     }
 }

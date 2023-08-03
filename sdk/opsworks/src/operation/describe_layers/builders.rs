@@ -10,10 +10,7 @@ impl DescribeLayersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_layers::DescribeLayersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_layers::DescribeLayersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_layers::DescribeLayersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_layers();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeLayersFluentBuilder {
         }
     }
     /// Access the DescribeLayers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_layers::builders::DescribeLayersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_layers::builders::DescribeLayersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl DescribeLayersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -141,10 +133,7 @@ impl DescribeLayersFluentBuilder {
         self
     }
     /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
     }

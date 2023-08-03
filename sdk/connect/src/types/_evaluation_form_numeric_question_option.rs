@@ -44,9 +44,7 @@ impl EvaluationFormNumericQuestionOption {
 
 /// A builder for [`EvaluationFormNumericQuestionOption`](crate::types::EvaluationFormNumericQuestionOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationFormNumericQuestionOptionBuilder {
     pub(crate) min_value: ::std::option::Option<i32>,
     pub(crate) max_value: ::std::option::Option<i32>,

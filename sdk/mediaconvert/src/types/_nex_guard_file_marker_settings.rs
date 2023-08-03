@@ -44,9 +44,7 @@ impl NexGuardFileMarkerSettings {
 
 /// A builder for [`NexGuardFileMarkerSettings`](crate::types::NexGuardFileMarkerSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NexGuardFileMarkerSettingsBuilder {
     pub(crate) license: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<i32>,
@@ -102,10 +100,7 @@ impl NexGuardFileMarkerSettingsBuilder {
         self
     }
     /// Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value.
-    pub fn set_strength(
-        mut self,
-        input: ::std::option::Option<crate::types::WatermarkingStrength>,
-    ) -> Self {
+    pub fn set_strength(mut self, input: ::std::option::Option<crate::types::WatermarkingStrength>) -> Self {
         self.strength = input;
         self
     }

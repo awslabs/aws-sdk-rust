@@ -37,9 +37,7 @@ impl UpdateRoutingControlFluentBuilder {
         }
     }
     /// Access the UpdateRoutingControl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_routing_control::builders::UpdateRoutingControlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_routing_control::builders::UpdateRoutingControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateRoutingControlFluentBuilder {
             crate::operation::update_routing_control::UpdateRoutingControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control::UpdateRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_control::UpdateRoutingControlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateRoutingControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateRoutingControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_control::UpdateRoutingControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control::UpdateRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_control::UpdateRoutingControlError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateRoutingControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_control::UpdateRoutingControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control::UpdateRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_control::UpdateRoutingControlError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateRoutingControlFluentBuilder {
             crate::operation::update_routing_control::UpdateRoutingControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control::UpdateRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_control::UpdateRoutingControlError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_control_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_control_arn(input);
         self
     }
@@ -143,18 +124,12 @@ impl UpdateRoutingControlFluentBuilder {
         self.inner.get_routing_control_arn()
     }
     /// <p>The name of the routing control.</p>
-    pub fn routing_control_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_control_name(input.into());
         self
     }
     /// <p>The name of the routing control.</p>
-    pub fn set_routing_control_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_control_name(input);
         self
     }

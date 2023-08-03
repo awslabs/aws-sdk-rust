@@ -29,7 +29,7 @@ impl StartDocumentTextDetectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDocumentTextDetectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionInputBuilder,
+    inner: crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionInputBuilder,
 }
 impl StartDocumentTextDetectionFluentBuilder {
     /// Creates a new `StartDocumentTextDetection`.
@@ -40,7 +40,7 @@ impl StartDocumentTextDetectionFluentBuilder {
         }
     }
     /// Access the StartDocumentTextDetection as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl StartDocumentTextDetectionFluentBuilder {
             crate::operation::start_document_text_detection::StartDocumentTextDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_text_detection::StartDocumentTextDetectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl StartDocumentTextDetectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl StartDocumentTextDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_text_detection::StartDocumentTextDetectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl StartDocumentTextDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_text_detection::StartDocumentTextDetectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl StartDocumentTextDetectionFluentBuilder {
             crate::operation::start_document_text_detection::StartDocumentTextDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_text_detection::StartDocumentTextDetectionError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +118,7 @@ impl StartDocumentTextDetectionFluentBuilder {
         self
     }
     /// <p>The location of the document to be processed.</p>
-    pub fn set_document_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentLocation>,
-    ) -> Self {
+    pub fn set_document_location(mut self, input: ::std::option::Option<crate::types::DocumentLocation>) -> Self {
         self.inner = self.inner.set_document_location(input);
         self
     }
@@ -141,18 +127,12 @@ impl StartDocumentTextDetectionFluentBuilder {
         self.inner.get_document_location()
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -180,17 +160,12 @@ impl StartDocumentTextDetectionFluentBuilder {
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         self.inner.get_notification_channel()
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
@@ -199,10 +174,7 @@ impl StartDocumentTextDetectionFluentBuilder {
         self
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }

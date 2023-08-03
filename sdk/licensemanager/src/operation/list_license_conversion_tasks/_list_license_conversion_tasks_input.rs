@@ -29,16 +29,14 @@ impl ListLicenseConversionTasksInput {
 }
 impl ListLicenseConversionTasksInput {
     /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksInput`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksInput).
-    pub fn builder() -> crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksInputBuilder{
+    pub fn builder() -> crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksInputBuilder {
         crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLicenseConversionTasksInput`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicenseConversionTasksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -85,10 +83,7 @@ impl ListLicenseConversionTasksInputBuilder {
         self
     }
     /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -103,12 +98,10 @@ impl ListLicenseConversionTasksInputBuilder {
         crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

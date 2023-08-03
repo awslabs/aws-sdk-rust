@@ -28,9 +28,7 @@ impl GetDataCatalogOutput {
 
 /// A builder for [`GetDataCatalogOutput`](crate::operation::get_data_catalog::GetDataCatalogOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataCatalogOutputBuilder {
     pub(crate) data_catalog: ::std::option::Option<crate::types::DataCatalog>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetDataCatalogOutputBuilder {
         self
     }
     /// <p>The data catalog returned.</p>
-    pub fn set_data_catalog(
-        mut self,
-        input: ::std::option::Option<crate::types::DataCatalog>,
-    ) -> Self {
+    pub fn set_data_catalog(mut self, input: ::std::option::Option<crate::types::DataCatalog>) -> Self {
         self.data_catalog = input;
         self
     }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`user_hierarchy_group_summary_list(Option<Vec<HierarchyGroupSummary>>)`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput::user_hierarchy_group_summary_list): <p>Information about the hierarchy groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListUserHierarchyGroupsError>`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError)
-    pub fn list_user_hierarchy_groups(
-        &self,
-    ) -> crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder
-    {
+    pub fn list_user_hierarchy_groups(&self) -> crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder {
         crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder::new(self.handle.clone())
     }
 }

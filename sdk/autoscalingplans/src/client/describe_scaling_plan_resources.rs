@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`scaling_plan_resources(Option<Vec<ScalingPlanResource>>)`](crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput::scaling_plan_resources): <p>Information about the scalable resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput::next_token): <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeScalingPlanResourcesError>`](crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError)
-    pub fn describe_scaling_plan_resources(&self) -> crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesFluentBuilder{
+    pub fn describe_scaling_plan_resources(
+        &self,
+    ) -> crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesFluentBuilder {
         crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,7 +28,7 @@ impl ListAttachedRolePoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAttachedRolePoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_attached_role_policies::builders::ListAttachedRolePoliciesInputBuilder,
+    inner: crate::operation::list_attached_role_policies::builders::ListAttachedRolePoliciesInputBuilder,
 }
 impl ListAttachedRolePoliciesFluentBuilder {
     /// Creates a new `ListAttachedRolePolicies`.
@@ -39,7 +39,7 @@ impl ListAttachedRolePoliciesFluentBuilder {
         }
     }
     /// Access the ListAttachedRolePolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_attached_role_policies::builders::ListAttachedRolePoliciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_attached_role_policies::builders::ListAttachedRolePoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ListAttachedRolePoliciesFluentBuilder {
             crate::operation::list_attached_role_policies::ListAttachedRolePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_role_policies::ListAttachedRolePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_role_policies::ListAttachedRolePoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ListAttachedRolePoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ListAttachedRolePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_role_policies::ListAttachedRolePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_role_policies::ListAttachedRolePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_role_policies::ListAttachedRolePoliciesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ListAttachedRolePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_role_policies::ListAttachedRolePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_role_policies::ListAttachedRolePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_role_policies::ListAttachedRolePoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl ListAttachedRolePoliciesFluentBuilder {
             crate::operation::list_attached_role_policies::ListAttachedRolePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_role_policies::ListAttachedRolePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_role_policies::ListAttachedRolePoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_attached_role_policies::paginator::ListAttachedRolePoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_attached_role_policies::paginator::ListAttachedRolePoliciesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_attached_role_policies::paginator::ListAttachedRolePoliciesPaginator {
         crate::operation::list_attached_role_policies::paginator::ListAttachedRolePoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name (friendly name, not ARN) of the role to list attached policies for.</p>

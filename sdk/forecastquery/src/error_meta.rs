@@ -28,32 +28,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_forecast::QueryForecastError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::query_forecast::QueryForecastError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::query_forecast::QueryForecastError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::query_forecast::QueryForecastError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -63,53 +47,25 @@ where
 impl From<crate::operation::query_forecast::QueryForecastError> for Error {
     fn from(err: crate::operation::query_forecast::QueryForecastError) -> Self {
         match err {
-            crate::operation::query_forecast::QueryForecastError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::query_forecast::QueryForecastError::InvalidNextTokenException(
-                inner,
-            ) => Error::InvalidNextTokenException(inner),
-            crate::operation::query_forecast::QueryForecastError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::query_forecast::QueryForecastError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::operation::query_forecast::QueryForecastError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::query_forecast::QueryForecastError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::query_forecast::QueryForecastError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::query_forecast::QueryForecastError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::query_forecast::QueryForecastError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::query_forecast::QueryForecastError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::query_forecast::QueryForecastError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::query_forecast::QueryForecastError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_what_if_forecast::QueryWhatIfForecastError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::query_what_if_forecast::QueryWhatIfForecastError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::query_what_if_forecast::QueryWhatIfForecastError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::query_what_if_forecast::QueryWhatIfForecastError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -120,10 +76,14 @@ impl From<crate::operation::query_what_if_forecast::QueryWhatIfForecastError> fo
     fn from(err: crate::operation::query_what_if_forecast::QueryWhatIfForecastError) -> Self {
         match err {
             crate::operation::query_what_if_forecast::QueryWhatIfForecastError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::query_what_if_forecast::QueryWhatIfForecastError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::query_what_if_forecast::QueryWhatIfForecastError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
             crate::operation::query_what_if_forecast::QueryWhatIfForecastError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::query_what_if_forecast::QueryWhatIfForecastError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::operation::query_what_if_forecast::QueryWhatIfForecastError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::query_what_if_forecast::QueryWhatIfForecastError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::query_what_if_forecast::QueryWhatIfForecastError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

@@ -49,9 +49,7 @@ impl Relationship {
 
 /// A builder for [`Relationship`](crate::types::Relationship).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelationshipBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RelationshipType>,
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -81,10 +79,7 @@ impl RelationshipBuilder {
     /// <li> <p> <i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table. </p> </li>
     /// <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table. </p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationshipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RelationshipType>) -> Self {
         self.r#type = input;
         self
     }
@@ -113,10 +108,7 @@ impl RelationshipBuilder {
         self
     }
     /// <p>An array of IDs for related blocks. You can get the type of the relationship from the <code>Type</code> element.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }

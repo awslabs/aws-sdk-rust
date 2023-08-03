@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeLoadBasedAutoScalingOutput`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput) with field(s):
     ///   - [`load_based_auto_scaling_configurations(Option<Vec<LoadBasedAutoScalingConfiguration>>)`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput::load_based_auto_scaling_configurations): <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeLoadBasedAutoScalingError>`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError)
-    pub fn describe_load_based_auto_scaling(&self) -> crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingFluentBuilder{
+    pub fn describe_load_based_auto_scaling(
+        &self,
+    ) -> crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingFluentBuilder {
         crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingFluentBuilder::new(self.handle.clone())
     }
 }

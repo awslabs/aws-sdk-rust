@@ -38,17 +38,14 @@ impl ::aws_http::request_id::RequestId for GetTaskProtectionOutput {
 }
 impl GetTaskProtectionOutput {
     /// Creates a new builder-style object to manufacture [`GetTaskProtectionOutput`](crate::operation::get_task_protection::GetTaskProtectionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_task_protection::builders::GetTaskProtectionOutputBuilder {
+    pub fn builder() -> crate::operation::get_task_protection::builders::GetTaskProtectionOutputBuilder {
         crate::operation::get_task_protection::builders::GetTaskProtectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTaskProtectionOutput`](crate::operation::get_task_protection::GetTaskProtectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTaskProtectionOutputBuilder {
     pub(crate) protected_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
@@ -77,10 +74,7 @@ impl GetTaskProtectionOutputBuilder {
     /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
     /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
     /// </ul>
-    pub fn set_protected_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>>,
-    ) -> Self {
+    pub fn set_protected_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>>) -> Self {
         self.protected_tasks = input;
         self
     }
@@ -90,9 +84,7 @@ impl GetTaskProtectionOutputBuilder {
     /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
     /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
     /// </ul>
-    pub fn get_protected_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>> {
+    pub fn get_protected_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>> {
         &self.protected_tasks
     }
     /// Appends an item to `failures`.
@@ -107,10 +99,7 @@ impl GetTaskProtectionOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
         self.failures = input;
         self
     }

@@ -37,9 +37,7 @@ impl FulfillmentUpdateResponseSpecification {
 
 /// A builder for [`FulfillmentUpdateResponseSpecification`](crate::types::FulfillmentUpdateResponseSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FulfillmentUpdateResponseSpecificationBuilder {
     pub(crate) frequency_in_seconds: ::std::option::Option<i32>,
     pub(crate) message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
@@ -72,17 +70,12 @@ impl FulfillmentUpdateResponseSpecificationBuilder {
         self
     }
     /// <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn set_message_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
-    ) -> Self {
+    pub fn set_message_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>) -> Self {
         self.message_groups = input;
         self
     }
     /// <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn get_message_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
+    pub fn get_message_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
         &self.message_groups
     }
     /// <p>Determines whether the user can interrupt an update message while it is playing.</p>

@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetOpsItemOutput`](crate::operation::get_ops_item::GetOpsItemOutput) with field(s):
     ///   - [`ops_item(Option<OpsItem>)`](crate::operation::get_ops_item::GetOpsItemOutput::ops_item): <p>The OpsItem.</p>
     /// - On failure, responds with [`SdkError<GetOpsItemError>`](crate::operation::get_ops_item::GetOpsItemError)
-    pub fn get_ops_item(
-        &self,
-    ) -> crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder {
+    pub fn get_ops_item(&self) -> crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder {
         crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder::new(self.handle.clone())
     }
 }

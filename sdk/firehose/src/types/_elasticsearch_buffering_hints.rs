@@ -32,9 +32,7 @@ impl ElasticsearchBufferingHints {
 
 /// A builder for [`ElasticsearchBufferingHints`](crate::types::ElasticsearchBufferingHints).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticsearchBufferingHintsBuilder {
     pub(crate) interval_in_seconds: ::std::option::Option<i32>,
     pub(crate) size_in_m_bs: ::std::option::Option<i32>,

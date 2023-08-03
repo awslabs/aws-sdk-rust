@@ -9,10 +9,7 @@ pub fn ser_ebs_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_ebs_block_device_config::ser_ebs_block_device_config(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_ebs_block_device_config::ser_ebs_block_device_config(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

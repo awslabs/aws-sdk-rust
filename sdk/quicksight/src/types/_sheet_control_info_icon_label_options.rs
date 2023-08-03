@@ -30,9 +30,7 @@ impl SheetControlInfoIconLabelOptions {
 
 /// A builder for [`SheetControlInfoIconLabelOptions`](crate::types::SheetControlInfoIconLabelOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SheetControlInfoIconLabelOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) info_icon_text: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl SheetControlInfoIconLabelOptionsBuilder {
         self
     }
     /// <p>The visibility configuration of info icon label options.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -56,18 +51,12 @@ impl SheetControlInfoIconLabelOptionsBuilder {
         &self.visibility
     }
     /// <p> The text content of info icon.</p>
-    pub fn info_icon_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn info_icon_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.info_icon_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The text content of info icon.</p>
-    pub fn set_info_icon_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_info_icon_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.info_icon_text = input;
         self
     }

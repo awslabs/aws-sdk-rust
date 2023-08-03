@@ -30,9 +30,7 @@ impl DetectorAdditionalConfiguration {
 
 /// A builder for [`DetectorAdditionalConfiguration`](crate::types::DetectorAdditionalConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorAdditionalConfigurationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FeatureAdditionalConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
@@ -44,10 +42,7 @@ impl DetectorAdditionalConfigurationBuilder {
         self
     }
     /// <p>Name of the additional configuration.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureAdditionalConfiguration>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::FeatureAdditionalConfiguration>) -> Self {
         self.name = input;
         self
     }

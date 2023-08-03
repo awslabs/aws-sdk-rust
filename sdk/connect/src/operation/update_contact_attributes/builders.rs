@@ -28,8 +28,7 @@ impl UpdateContactAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContactAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_contact_attributes::builders::UpdateContactAttributesInputBuilder,
+    inner: crate::operation::update_contact_attributes::builders::UpdateContactAttributesInputBuilder,
 }
 impl UpdateContactAttributesFluentBuilder {
     /// Creates a new `UpdateContactAttributes`.
@@ -40,10 +39,7 @@ impl UpdateContactAttributesFluentBuilder {
         }
     }
     /// Access the UpdateContactAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_contact_attributes::builders::UpdateContactAttributesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_contact_attributes::builders::UpdateContactAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl UpdateContactAttributesFluentBuilder {
             crate::operation::update_contact_attributes::UpdateContactAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contact_attributes::UpdateContactAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact_attributes::UpdateContactAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl UpdateContactAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl UpdateContactAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_contact_attributes::UpdateContactAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contact_attributes::UpdateContactAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact_attributes::UpdateContactAttributesError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl UpdateContactAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_contact_attributes::UpdateContactAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contact_attributes::UpdateContactAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact_attributes::UpdateContactAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +107,17 @@ impl UpdateContactAttributesFluentBuilder {
             crate::operation::update_contact_attributes::UpdateContactAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contact_attributes::UpdateContactAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact_attributes::UpdateContactAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn initial_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.initial_contact_id(input.into());
         self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn set_initial_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_initial_contact_id(input);
         self
     }
@@ -166,32 +145,19 @@ impl UpdateContactAttributesFluentBuilder {
     ///
     /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
     /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
     /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
     /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
 }

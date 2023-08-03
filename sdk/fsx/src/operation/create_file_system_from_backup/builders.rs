@@ -35,7 +35,7 @@ impl CreateFileSystemFromBackupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFileSystemFromBackupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupInputBuilder,
+    inner: crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupInputBuilder,
 }
 impl CreateFileSystemFromBackupFluentBuilder {
     /// Creates a new `CreateFileSystemFromBackup`.
@@ -46,7 +46,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
         }
     }
     /// Access the CreateFileSystemFromBackup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +58,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
             crate::operation::create_file_system_from_backup::CreateFileSystemFromBackup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +68,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +77,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupError>,
     > {
         let op = self
             .inner
@@ -107,9 +100,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +114,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
             crate::operation::create_file_system_from_backup::CreateFileSystemFromBackup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupError>,
     > {
         self.customize_middleware().await
     }
@@ -144,18 +133,12 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner.get_backup_id()
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -175,10 +158,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
     }
     /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
     /// <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types, Lustre file systems, and OpenZFS file systems provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -192,25 +172,17 @@ impl CreateFileSystemFromBackupFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `Tags`.
@@ -223,10 +195,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self
     }
     /// <p>The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -235,25 +204,17 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The configuration for this Microsoft Windows file system.</p>
-    pub fn windows_configuration(
-        mut self,
-        input: crate::types::CreateFileSystemWindowsConfiguration,
-    ) -> Self {
+    pub fn windows_configuration(mut self, input: crate::types::CreateFileSystemWindowsConfiguration) -> Self {
         self.inner = self.inner.windows_configuration(input);
         self
     }
     /// <p>The configuration for this Microsoft Windows file system.</p>
-    pub fn set_windows_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration>,
-    ) -> Self {
+    pub fn set_windows_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration>) -> Self {
         self.inner = self.inner.set_windows_configuration(input);
         self
     }
     /// <p>The configuration for this Microsoft Windows file system.</p>
-    pub fn get_windows_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration> {
+    pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration> {
         self.inner.get_windows_configuration()
     }
     /// <p>The Lustre configuration for the file system being created.</p> <note>
@@ -265,10 +226,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
-    pub fn lustre_configuration(
-        mut self,
-        input: crate::types::CreateFileSystemLustreConfiguration,
-    ) -> Self {
+    pub fn lustre_configuration(mut self, input: crate::types::CreateFileSystemLustreConfiguration) -> Self {
         self.inner = self.inner.lustre_configuration(input);
         self
     }
@@ -281,10 +239,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
-    pub fn set_lustre_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>,
-    ) -> Self {
+    pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>) -> Self {
         self.inner = self.inner.set_lustre_configuration(input);
         self
     }
@@ -297,9 +252,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
-    pub fn get_lustre_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateFileSystemLustreConfiguration> {
+    pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemLustreConfiguration> {
         self.inner.get_lustre_configuration()
     }
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
@@ -322,10 +275,7 @@ impl CreateFileSystemFromBackupFluentBuilder {
     /// <p> The default value is <code>SSD</code>. </p> <note>
     /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
     /// </note>
-    pub fn set_storage_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageType>,
-    ) -> Self {
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
@@ -377,19 +327,13 @@ impl CreateFileSystemFromBackupFluentBuilder {
     }
     /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
-    pub fn file_system_type_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_type_version(input.into());
         self
     }
     /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
-    pub fn set_file_system_type_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_type_version(input);
         self
     }
@@ -399,25 +343,17 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner.get_file_system_type_version()
     }
     /// <p>The OpenZFS configuration for the file system that's being created. </p>
-    pub fn open_zfs_configuration(
-        mut self,
-        input: crate::types::CreateFileSystemOpenZfsConfiguration,
-    ) -> Self {
+    pub fn open_zfs_configuration(mut self, input: crate::types::CreateFileSystemOpenZfsConfiguration) -> Self {
         self.inner = self.inner.open_zfs_configuration(input);
         self
     }
     /// <p>The OpenZFS configuration for the file system that's being created. </p>
-    pub fn set_open_zfs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>,
-    ) -> Self {
+    pub fn set_open_zfs_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
     }
     /// <p>The OpenZFS configuration for the file system that's being created. </p>
-    pub fn get_open_zfs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration> {
+    pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration> {
         self.inner.get_open_zfs_configuration()
     }
     /// <p>Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code> value.</p>

@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateIpAccessSettingsOutput`](crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput) with field(s):
     ///   - [`ip_access_settings(Option<IpAccessSettings>)`](crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput::ip_access_settings): <p>The IP access settings.</p>
     /// - On failure, responds with [`SdkError<UpdateIpAccessSettingsError>`](crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError)
-    pub fn update_ip_access_settings(
-        &self,
-    ) -> crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsFluentBuilder
-    {
+    pub fn update_ip_access_settings(&self) -> crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsFluentBuilder {
         crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl GetDataCatalogInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_data_catalog::GetDataCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_catalog::GetDataCatalogError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_catalog::GetDataCatalogError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_data_catalog();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDataCatalogFluentBuilder {
         }
     }
     /// Access the GetDataCatalog as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_data_catalog::builders::GetDataCatalogInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_data_catalog::builders::GetDataCatalogInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetDataCatalogFluentBuilder {
             crate::operation::get_data_catalog::GetDataCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_catalog::GetDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_catalog::GetDataCatalogError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetDataCatalogFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetDataCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_catalog::GetDataCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_catalog::GetDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_catalog::GetDataCatalogError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetDataCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_catalog::GetDataCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_catalog::GetDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_catalog::GetDataCatalogError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetDataCatalogFluentBuilder {
             crate::operation::get_data_catalog::GetDataCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_catalog::GetDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_catalog::GetDataCatalogError>,
     > {
         self.customize_middleware().await
     }

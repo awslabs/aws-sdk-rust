@@ -71,15 +71,12 @@ impl UpdateWorkgroupInput {
 
 /// A builder for [`UpdateWorkgroupInput`](crate::operation::update_workgroup::UpdateWorkgroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkgroupInputBuilder {
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) base_capacity: ::std::option::Option<i32>,
     pub(crate) enhanced_vpc_routing: ::std::option::Option<bool>,
-    pub(crate) config_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
+    pub(crate) config_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -87,18 +84,12 @@ pub struct UpdateWorkgroupInputBuilder {
 }
 impl UpdateWorkgroupInputBuilder {
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }
@@ -146,17 +137,12 @@ impl UpdateWorkgroupInputBuilder {
         self
     }
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    pub fn set_config_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
-    ) -> Self {
+    pub fn set_config_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>) -> Self {
         self.config_parameters = input;
         self
     }
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    pub fn get_config_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
+    pub fn get_config_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
         &self.config_parameters
     }
     /// <p>A value that specifies whether the workgroup can be accessible from a public network.</p>
@@ -185,10 +171,7 @@ impl UpdateWorkgroupInputBuilder {
         self
     }
     /// <p>An array of VPC subnet IDs to associate with the workgroup.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -201,27 +184,19 @@ impl UpdateWorkgroupInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
@@ -241,10 +216,7 @@ impl UpdateWorkgroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkgroupInput`](crate::operation::update_workgroup::UpdateWorkgroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workgroup::UpdateWorkgroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_workgroup::UpdateWorkgroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workgroup::UpdateWorkgroupInput {
             workgroup_name: self.workgroup_name,
             base_capacity: self.base_capacity,

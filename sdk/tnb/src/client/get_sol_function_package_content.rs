@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`content_type(Option<PackageContentType>)`](crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentOutput::content_type): <p>Indicates the media type of the resource.</p>
     ///   - [`package_content(Option<Blob>)`](crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentOutput::package_content): <p>Contents of the function package.</p>
     /// - On failure, responds with [`SdkError<GetSolFunctionPackageContentError>`](crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError)
-    pub fn get_sol_function_package_content(&self) -> crate::operation::get_sol_function_package_content::builders::GetSolFunctionPackageContentFluentBuilder{
+    pub fn get_sol_function_package_content(
+        &self,
+    ) -> crate::operation::get_sol_function_package_content::builders::GetSolFunctionPackageContentFluentBuilder {
         crate::operation::get_sol_function_package_content::builders::GetSolFunctionPackageContentFluentBuilder::new(self.handle.clone())
     }
 }

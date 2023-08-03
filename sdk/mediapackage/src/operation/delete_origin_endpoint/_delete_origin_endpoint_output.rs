@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteOriginEndpointOutput {
 }
 impl DeleteOriginEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOriginEndpointOutput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointOutputBuilder {
         crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOriginEndpointOutput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOriginEndpointOutputBuilder {
     _request_id: Option<String>,
 }

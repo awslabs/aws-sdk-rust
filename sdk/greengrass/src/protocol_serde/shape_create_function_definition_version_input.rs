@@ -6,10 +6,7 @@ pub fn ser_create_function_definition_version_input(
     if let Some(var_1) = &input.default_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DefaultConfig").start_object();
-        crate::protocol_serde::shape_function_default_config::ser_function_default_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_function_default_config::ser_function_default_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.functions {

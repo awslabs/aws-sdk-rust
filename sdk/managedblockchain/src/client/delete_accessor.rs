@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`accessor_id(impl ::std::convert::Into<String>)`](crate::operation::delete_accessor::builders::DeleteAccessorFluentBuilder::accessor_id) / [`set_accessor_id(Option<String>)`](crate::operation::delete_accessor::builders::DeleteAccessorFluentBuilder::set_accessor_id): <p>The unique identifier of the accessor.</p>
     /// - On success, responds with [`DeleteAccessorOutput`](crate::operation::delete_accessor::DeleteAccessorOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessorError>`](crate::operation::delete_accessor::DeleteAccessorError)
-    pub fn delete_accessor(
-        &self,
-    ) -> crate::operation::delete_accessor::builders::DeleteAccessorFluentBuilder {
-        crate::operation::delete_accessor::builders::DeleteAccessorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_accessor(&self) -> crate::operation::delete_accessor::builders::DeleteAccessorFluentBuilder {
+        crate::operation::delete_accessor::builders::DeleteAccessorFluentBuilder::new(self.handle.clone())
     }
 }

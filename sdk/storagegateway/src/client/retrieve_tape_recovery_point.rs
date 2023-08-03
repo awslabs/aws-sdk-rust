@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RetrieveTapeRecoveryPointOutput`](crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput) with field(s):
     ///   - [`tape_arn(Option<String>)`](crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery point was retrieved.</p>
     /// - On failure, responds with [`SdkError<RetrieveTapeRecoveryPointError>`](crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointError)
-    pub fn retrieve_tape_recovery_point(&self) -> crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointFluentBuilder{
+    pub fn retrieve_tape_recovery_point(&self) -> crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointFluentBuilder {
         crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointFluentBuilder::new(self.handle.clone())
     }
 }

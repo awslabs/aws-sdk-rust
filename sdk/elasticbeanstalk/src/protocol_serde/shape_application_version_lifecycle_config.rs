@@ -19,8 +19,7 @@ pub fn ser_application_version_lifecycle_config(
 
 pub fn de_application_version_lifecycle_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ApplicationVersionLifecycleConfig, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::ApplicationVersionLifecycleConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ApplicationVersionLifecycleConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

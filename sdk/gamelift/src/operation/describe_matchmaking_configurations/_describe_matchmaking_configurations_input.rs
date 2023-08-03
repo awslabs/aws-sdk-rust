@@ -36,16 +36,14 @@ impl DescribeMatchmakingConfigurationsInput {
 }
 impl DescribeMatchmakingConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingConfigurationsInput`](crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsInputBuilder {
         crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMatchmakingConfigurationsInput`](crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingConfigurationsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
@@ -65,10 +63,7 @@ impl DescribeMatchmakingConfigurationsInputBuilder {
         self
     }
     /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -77,18 +72,12 @@ impl DescribeMatchmakingConfigurationsInputBuilder {
         &self.names
     }
     /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_name = input;
         self
     }
@@ -125,18 +114,19 @@ impl DescribeMatchmakingConfigurationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMatchmakingConfigurationsInput`](crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsInput {
-                names: self.names
-                ,
-                rule_set_name: self.rule_set_name
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                names: self.names,
+                rule_set_name: self.rule_set_name,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }

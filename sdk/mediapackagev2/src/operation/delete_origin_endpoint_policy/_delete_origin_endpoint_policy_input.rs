@@ -29,16 +29,14 @@ impl DeleteOriginEndpointPolicyInput {
 }
 impl DeleteOriginEndpointPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteOriginEndpointPolicyInput`](crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyInput).
-    pub fn builder() -> crate::operation::delete_origin_endpoint_policy::builders::DeleteOriginEndpointPolicyInputBuilder{
+    pub fn builder() -> crate::operation::delete_origin_endpoint_policy::builders::DeleteOriginEndpointPolicyInputBuilder {
         crate::operation::delete_origin_endpoint_policy::builders::DeleteOriginEndpointPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOriginEndpointPolicyInput`](crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOriginEndpointPolicyInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DeleteOriginEndpointPolicyInputBuilder {
 }
 impl DeleteOriginEndpointPolicyInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_group_name = input;
         self
     }
@@ -80,18 +72,12 @@ impl DeleteOriginEndpointPolicyInputBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn origin_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn set_origin_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_endpoint_name = input;
         self
     }
@@ -106,12 +92,10 @@ impl DeleteOriginEndpointPolicyInputBuilder {
         crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyInput {
-                channel_group_name: self.channel_group_name,
-                channel_name: self.channel_name,
-                origin_endpoint_name: self.origin_endpoint_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyInput {
+            channel_group_name: self.channel_group_name,
+            channel_name: self.channel_name,
+            origin_endpoint_name: self.origin_endpoint_name,
+        })
     }
 }

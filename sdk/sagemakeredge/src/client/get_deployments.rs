@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDeploymentsOutput`](crate::operation::get_deployments::GetDeploymentsOutput) with field(s):
     ///   - [`deployments(Option<Vec<EdgeDeployment>>)`](crate::operation::get_deployments::GetDeploymentsOutput::deployments): <p>Returns a list of the configurations of the active deployments on the device.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentsError>`](crate::operation::get_deployments::GetDeploymentsError)
-    pub fn get_deployments(
-        &self,
-    ) -> crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder {
-        crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_deployments(&self) -> crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder {
+        crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

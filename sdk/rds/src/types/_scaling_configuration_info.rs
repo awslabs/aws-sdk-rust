@@ -65,9 +65,7 @@ impl ScalingConfigurationInfo {
 
 /// A builder for [`ScalingConfigurationInfo`](crate::types::ScalingConfigurationInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingConfigurationInfoBuilder {
     pub(crate) min_capacity: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
@@ -139,20 +137,14 @@ impl ScalingConfigurationInfoBuilder {
     /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless v1 cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-    pub fn timeout_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timeout_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timeout_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless v1 cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-    pub fn set_timeout_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timeout_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timeout_action = input;
         self
     }

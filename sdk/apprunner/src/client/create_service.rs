@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`service(Option<Service>)`](crate::operation::create_service::CreateServiceOutput::service): <p>A description of the App Runner service that's created by this request.</p>
     ///   - [`operation_id(Option<String>)`](crate::operation::create_service::CreateServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a> call to track the operation's progress.</p>
     /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::operation::create_service::CreateServiceError)
-    pub fn create_service(
-        &self,
-    ) -> crate::operation::create_service::builders::CreateServiceFluentBuilder {
-        crate::operation::create_service::builders::CreateServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_service(&self) -> crate::operation::create_service::builders::CreateServiceFluentBuilder {
+        crate::operation::create_service::builders::CreateServiceFluentBuilder::new(self.handle.clone())
     }
 }

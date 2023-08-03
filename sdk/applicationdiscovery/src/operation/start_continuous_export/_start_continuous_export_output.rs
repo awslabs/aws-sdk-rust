@@ -20,9 +20,7 @@ pub struct StartContinuousExportOutput {
     /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub schema_storage_config: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub schema_storage_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartContinuousExportOutput {
@@ -46,11 +44,7 @@ impl StartContinuousExportOutput {
     /// <ul>
     /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
     /// </ul>
-    pub fn schema_storage_config(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn schema_storage_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.schema_storage_config.as_ref()
     }
 }
@@ -61,26 +55,20 @@ impl ::aws_http::request_id::RequestId for StartContinuousExportOutput {
 }
 impl StartContinuousExportOutput {
     /// Creates a new builder-style object to manufacture [`StartContinuousExportOutput`](crate::operation::start_continuous_export::StartContinuousExportOutput).
-    pub fn builder(
-    ) -> crate::operation::start_continuous_export::builders::StartContinuousExportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_continuous_export::builders::StartContinuousExportOutputBuilder {
         crate::operation::start_continuous_export::builders::StartContinuousExportOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartContinuousExportOutput`](crate::operation::start_continuous_export::StartContinuousExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartContinuousExportOutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
-    pub(crate) schema_storage_config: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) schema_storage_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartContinuousExportOutputBuilder {
@@ -118,10 +106,7 @@ impl StartContinuousExportOutputBuilder {
         self
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -135,10 +120,7 @@ impl StartContinuousExportOutputBuilder {
         self
     }
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -170,9 +152,7 @@ impl StartContinuousExportOutputBuilder {
     /// </ul>
     pub fn set_schema_storage_config(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.schema_storage_config = input;
         self
@@ -181,11 +161,7 @@ impl StartContinuousExportOutputBuilder {
     /// <ul>
     /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
     /// </ul>
-    pub fn get_schema_storage_config(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_schema_storage_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.schema_storage_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -38,10 +38,7 @@ impl StopRelationalDatabaseFluentBuilder {
         }
     }
     /// Access the StopRelationalDatabase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_relational_database::builders::StopRelationalDatabaseInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_relational_database::builders::StopRelationalDatabaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl StopRelationalDatabaseFluentBuilder {
             crate::operation::stop_relational_database::StopRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_relational_database::StopRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_relational_database::StopRelationalDatabaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl StopRelationalDatabaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl StopRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_relational_database::StopRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_relational_database::StopRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_relational_database::StopRelationalDatabaseError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl StopRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_relational_database::StopRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_relational_database::StopRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_relational_database::StopRelationalDatabaseError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl StopRelationalDatabaseFluentBuilder {
             crate::operation::stop_relational_database::StopRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_relational_database::StopRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_relational_database::StopRelationalDatabaseError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of your database to stop.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
     /// <p>The name of your database to stop.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
@@ -145,25 +125,17 @@ impl StopRelationalDatabaseFluentBuilder {
         self.inner.get_relational_database_name()
     }
     /// <p>The name of your new database snapshot to be created before stopping your database.</p>
-    pub fn relational_database_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_snapshot_name(input.into());
         self
     }
     /// <p>The name of your new database snapshot to be created before stopping your database.</p>
-    pub fn set_relational_database_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_snapshot_name(input);
         self
     }
     /// <p>The name of your new database snapshot to be created before stopping your database.</p>
-    pub fn get_relational_database_snapshot_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_relational_database_snapshot_name()
     }
 }

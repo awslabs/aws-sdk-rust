@@ -10,10 +10,7 @@ impl UpdateSecurityInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_security::UpdateSecurityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security::UpdateSecurityError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security::UpdateSecurityError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_security();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateSecurityFluentBuilder {
         }
     }
     /// Access the UpdateSecurity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_security::builders::UpdateSecurityInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_security::builders::UpdateSecurityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateSecurityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,17 +112,12 @@ impl UpdateSecurityFluentBuilder {
         self
     }
     /// <p>Includes all client authentication related information.</p>
-    pub fn set_client_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAuthentication>,
-    ) -> Self {
+    pub fn set_client_authentication(mut self, input: ::std::option::Option<crate::types::ClientAuthentication>) -> Self {
         self.inner = self.inner.set_client_authentication(input);
         self
     }
     /// <p>Includes all client authentication related information.</p>
-    pub fn get_client_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+    pub fn get_client_authentication(&self) -> &::std::option::Option<crate::types::ClientAuthentication> {
         self.inner.get_client_authentication()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -148,18 +135,12 @@ impl UpdateSecurityFluentBuilder {
         self.inner.get_cluster_arn()
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }
@@ -173,10 +154,7 @@ impl UpdateSecurityFluentBuilder {
         self
     }
     /// <p>Includes all encryption-related information.</p>
-    pub fn set_encryption_info(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionInfo>,
-    ) -> Self {
+    pub fn set_encryption_info(mut self, input: ::std::option::Option<crate::types::EncryptionInfo>) -> Self {
         self.inner = self.inner.set_encryption_info(input);
         self
     }

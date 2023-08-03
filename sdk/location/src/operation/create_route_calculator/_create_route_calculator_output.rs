@@ -53,18 +53,14 @@ impl ::aws_http::request_id::RequestId for CreateRouteCalculatorOutput {
 }
 impl CreateRouteCalculatorOutput {
     /// Creates a new builder-style object to manufacture [`CreateRouteCalculatorOutput`](crate::operation::create_route_calculator::CreateRouteCalculatorOutput).
-    pub fn builder(
-    ) -> crate::operation::create_route_calculator::builders::CreateRouteCalculatorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_route_calculator::builders::CreateRouteCalculatorOutputBuilder {
         crate::operation::create_route_calculator::builders::CreateRouteCalculatorOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRouteCalculatorOutput`](crate::operation::create_route_calculator::CreateRouteCalculatorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRouteCalculatorOutputBuilder {
     pub(crate) calculator_name: ::std::option::Option<::std::string::String>,
     pub(crate) calculator_arn: ::std::option::Option<::std::string::String>,
@@ -76,10 +72,7 @@ impl CreateRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
-    pub fn calculator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -87,10 +80,7 @@ impl CreateRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
-    pub fn set_calculator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_name = input;
         self
     }
@@ -105,10 +95,7 @@ impl CreateRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
-    pub fn calculator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -116,10 +103,7 @@ impl CreateRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
-    pub fn set_calculator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_arn = input;
         self
     }
@@ -142,10 +126,7 @@ impl CreateRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }

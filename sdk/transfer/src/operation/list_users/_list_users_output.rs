@@ -42,9 +42,7 @@ impl ListUsersOutput {
 
 /// A builder for [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
@@ -92,10 +90,7 @@ impl ListUsersOutputBuilder {
         self
     }
     /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn set_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedUser>>,
-    ) -> Self {
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedUser>>) -> Self {
         self.users = input;
         self
     }

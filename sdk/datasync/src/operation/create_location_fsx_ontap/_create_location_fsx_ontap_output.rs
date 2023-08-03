@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateLocationFsxOntapOutput {
 }
 impl CreateLocationFsxOntapOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxOntapOutput`](crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput).
-    pub fn builder(
-    ) -> crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapOutputBuilder {
         crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationFsxOntapOutput`](crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationFsxOntapOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl CreateLocationFsxOntapOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLocationFsxOntapOutput`](crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput {
+    pub fn build(self) -> crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput {
         crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput {
             location_arn: self.location_arn,
             _request_id: self._request_id,

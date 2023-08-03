@@ -23,9 +23,7 @@ impl GpuDeviceMemoryInfo {
 
 /// A builder for [`GpuDeviceMemoryInfo`](crate::types::GpuDeviceMemoryInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GpuDeviceMemoryInfoBuilder {
     pub(crate) size_in_mi_b: ::std::option::Option<i32>,
 }

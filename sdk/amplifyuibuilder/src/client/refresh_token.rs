@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`access_token(Option<String>)`](crate::operation::refresh_token::RefreshTokenOutput::access_token): <p>The access token.</p>
     ///   - [`expires_in(Option<i32>)`](crate::operation::refresh_token::RefreshTokenOutput::expires_in): <p>The date and time when the new access token expires.</p>
     /// - On failure, responds with [`SdkError<RefreshTokenError>`](crate::operation::refresh_token::RefreshTokenError)
-    pub fn refresh_token(
-        &self,
-    ) -> crate::operation::refresh_token::builders::RefreshTokenFluentBuilder {
-        crate::operation::refresh_token::builders::RefreshTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn refresh_token(&self) -> crate::operation::refresh_token::builders::RefreshTokenFluentBuilder {
+        crate::operation::refresh_token::builders::RefreshTokenFluentBuilder::new(self.handle.clone())
     }
 }

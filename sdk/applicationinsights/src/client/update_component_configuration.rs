@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`auto_config_enabled(bool)`](crate::operation::update_component_configuration::builders::UpdateComponentConfigurationFluentBuilder::auto_config_enabled) / [`set_auto_config_enabled(Option<bool>)`](crate::operation::update_component_configuration::builders::UpdateComponentConfigurationFluentBuilder::set_auto_config_enabled): <p> Automatically configures the component by applying the recommended configurations. </p>
     /// - On success, responds with [`UpdateComponentConfigurationOutput`](crate::operation::update_component_configuration::UpdateComponentConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateComponentConfigurationError>`](crate::operation::update_component_configuration::UpdateComponentConfigurationError)
-    pub fn update_component_configuration(&self) -> crate::operation::update_component_configuration::builders::UpdateComponentConfigurationFluentBuilder{
+    pub fn update_component_configuration(
+        &self,
+    ) -> crate::operation::update_component_configuration::builders::UpdateComponentConfigurationFluentBuilder {
         crate::operation::update_component_configuration::builders::UpdateComponentConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

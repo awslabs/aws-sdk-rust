@@ -38,13 +38,7 @@
 /// Mpeg2 Timecode Insertion Behavior
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mpeg2TimecodeInsertionBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Mpeg2TimecodeInsertionBehavior {
         match s {
             "DISABLED" => Mpeg2TimecodeInsertionBehavior::Disabled,
             "GOP_TIMECODE" => Mpeg2TimecodeInsertionBehavior::GopTimecode,
-            other => Mpeg2TimecodeInsertionBehavior::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => Mpeg2TimecodeInsertionBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

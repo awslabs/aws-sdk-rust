@@ -10,10 +10,7 @@ impl CreateContextInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_context::CreateContextOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_context::CreateContextError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_context::CreateContextError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_context();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateContextFluentBuilder {
         }
     }
     /// Access the CreateContext as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_context::builders::CreateContextInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_context::builders::CreateContextInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateContextFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -175,30 +167,17 @@ impl CreateContextFluentBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of properties to add to the context.</p>
-    pub fn properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.properties(k.into(), v.into());
         self
     }
     /// <p>A list of properties to add to the context.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_properties(input);
         self
     }
     /// <p>A list of properties to add to the context.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_properties()
     }
     /// Appends an item to `Tags`.
@@ -211,10 +190,7 @@ impl CreateContextFluentBuilder {
         self
     }
     /// <p>A list of tags to apply to the context.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

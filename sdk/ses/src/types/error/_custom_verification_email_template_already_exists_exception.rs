@@ -36,62 +36,45 @@ impl ::std::fmt::Display for CustomVerificationEmailTemplateAlreadyExistsExcepti
     }
 }
 impl ::std::error::Error for CustomVerificationEmailTemplateAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::CustomVerificationEmailTemplateAlreadyExistsException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::CustomVerificationEmailTemplateAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for CustomVerificationEmailTemplateAlreadyExistsException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CustomVerificationEmailTemplateAlreadyExistsException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl CustomVerificationEmailTemplateAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`CustomVerificationEmailTemplateAlreadyExistsException`](crate::types::error::CustomVerificationEmailTemplateAlreadyExistsException).
-    pub fn builder(
-    ) -> crate::types::error::builders::CustomVerificationEmailTemplateAlreadyExistsExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::CustomVerificationEmailTemplateAlreadyExistsExceptionBuilder {
         crate::types::error::builders::CustomVerificationEmailTemplateAlreadyExistsExceptionBuilder::default()
     }
 }
 
 /// A builder for [`CustomVerificationEmailTemplateAlreadyExistsException`](crate::types::error::CustomVerificationEmailTemplateAlreadyExistsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomVerificationEmailTemplateAlreadyExistsExceptionBuilder {
-    pub(crate) custom_verification_email_template_name:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) custom_verification_email_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl CustomVerificationEmailTemplateAlreadyExistsExceptionBuilder {
     /// <p>Indicates that the provided custom verification email template with the specified template name already exists.</p>
-    pub fn custom_verification_email_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_verification_email_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_verification_email_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the provided custom verification email template with the specified template name already exists.</p>
-    pub fn set_custom_verification_email_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_verification_email_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_verification_email_template_name = input;
         self
     }
     /// <p>Indicates that the provided custom verification email template with the specified template name already exists.</p>
-    pub fn get_custom_verification_email_template_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_custom_verification_email_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_verification_email_template_name
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -115,17 +98,12 @@ impl CustomVerificationEmailTemplateAlreadyExistsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }
     /// Consumes the builder and constructs a [`CustomVerificationEmailTemplateAlreadyExistsException`](crate::types::error::CustomVerificationEmailTemplateAlreadyExistsException).
-    pub fn build(
-        self,
-    ) -> crate::types::error::CustomVerificationEmailTemplateAlreadyExistsException {
+    pub fn build(self) -> crate::types::error::CustomVerificationEmailTemplateAlreadyExistsException {
         crate::types::error::CustomVerificationEmailTemplateAlreadyExistsException {
             custom_verification_email_template_name: self.custom_verification_email_template_name,
             message: self.message,

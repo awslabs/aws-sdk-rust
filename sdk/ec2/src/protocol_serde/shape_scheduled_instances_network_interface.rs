@@ -74,7 +74,9 @@ pub fn ser_scheduled_instances_network_interface(
         for item_27 in var_26 {
             #[allow(unused_mut)]
             let mut entry_29 = list_28.entry();
-            crate::protocol_serde::shape_scheduled_instances_private_ip_address_config::ser_scheduled_instances_private_ip_address_config(entry_29, item_27)?;
+            crate::protocol_serde::shape_scheduled_instances_private_ip_address_config::ser_scheduled_instances_private_ip_address_config(
+                entry_29, item_27,
+            )?;
         }
         list_28.finish();
     }

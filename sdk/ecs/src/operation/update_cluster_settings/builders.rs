@@ -37,10 +37,7 @@ impl UpdateClusterSettingsFluentBuilder {
         }
     }
     /// Access the UpdateClusterSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_cluster_settings::builders::UpdateClusterSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_cluster_settings::builders::UpdateClusterSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateClusterSettingsFluentBuilder {
             crate::operation::update_cluster_settings::UpdateClusterSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_settings::UpdateClusterSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_settings::UpdateClusterSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateClusterSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateClusterSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_cluster_settings::UpdateClusterSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_settings::UpdateClusterSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_settings::UpdateClusterSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateClusterSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_cluster_settings::UpdateClusterSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_settings::UpdateClusterSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_settings::UpdateClusterSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateClusterSettingsFluentBuilder {
             crate::operation::update_cluster_settings::UpdateClusterSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_settings::UpdateClusterSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_settings::UpdateClusterSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -151,19 +137,14 @@ impl UpdateClusterSettingsFluentBuilder {
     /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p> <important>
     /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
     /// </important>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
     /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p> <important>
     /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
     /// </important>
-    pub fn get_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>> {
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>> {
         self.inner.get_settings()
     }
 }

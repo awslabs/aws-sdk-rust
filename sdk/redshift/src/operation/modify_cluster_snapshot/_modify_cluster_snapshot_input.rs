@@ -33,18 +33,14 @@ impl ModifyClusterSnapshotInput {
 }
 impl ModifyClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterSnapshotInput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotInputBuilder {
         crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClusterSnapshotInput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterSnapshotInputBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) manual_snapshot_retention_period: ::std::option::Option<i32>,
@@ -52,18 +48,12 @@ pub struct ModifyClusterSnapshotInputBuilder {
 }
 impl ModifyClusterSnapshotInputBuilder {
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_identifier = input;
         self
     }
@@ -81,10 +71,7 @@ impl ModifyClusterSnapshotInputBuilder {
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_snapshot_retention_period = input;
         self
     }
@@ -111,16 +98,12 @@ impl ModifyClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClusterSnapshotInput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput {
-                snapshot_identifier: self.snapshot_identifier,
-                manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-                force: self.force.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput {
+            snapshot_identifier: self.snapshot_identifier,
+            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
+            force: self.force.unwrap_or_default(),
+        })
     }
 }

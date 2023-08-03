@@ -10,10 +10,7 @@ impl CreateLocationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_location::CreateLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location::CreateLocationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location::CreateLocationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_location();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateLocationFluentBuilder {
         }
     }
     /// Access the CreateLocation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_location::builders::CreateLocationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_location::builders::CreateLocationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateLocationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl CreateLocationFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>A descriptive name for the custom location.</p>
-    pub fn location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location_name(input.into());
         self
     }
     /// <p>A descriptive name for the custom location.</p>
-    pub fn set_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location_name(input);
         self
     }
@@ -144,10 +130,7 @@ impl CreateLocationFluentBuilder {
         self
     }
     /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Rareference</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

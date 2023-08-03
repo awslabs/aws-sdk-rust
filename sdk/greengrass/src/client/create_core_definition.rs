@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::create_core_definition::CreateCoreDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::create_core_definition::CreateCoreDefinitionOutput::name): The name of the definition.
     /// - On failure, responds with [`SdkError<CreateCoreDefinitionError>`](crate::operation::create_core_definition::CreateCoreDefinitionError)
-    pub fn create_core_definition(
-        &self,
-    ) -> crate::operation::create_core_definition::builders::CreateCoreDefinitionFluentBuilder {
-        crate::operation::create_core_definition::builders::CreateCoreDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_core_definition(&self) -> crate::operation::create_core_definition::builders::CreateCoreDefinitionFluentBuilder {
+        crate::operation::create_core_definition::builders::CreateCoreDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

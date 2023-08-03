@@ -58,9 +58,7 @@ impl MaintenanceWindowExecution {
 
 /// A builder for [`MaintenanceWindowExecution`](crate::types::MaintenanceWindowExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaintenanceWindowExecutionBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl MaintenanceWindowExecutionBuilder {
         &self.window_id
     }
     /// <p>The ID of the maintenance window execution.</p>
-    pub fn window_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_execution_id = input;
         self
     }
@@ -110,32 +102,21 @@ impl MaintenanceWindowExecutionBuilder {
         self
     }
     /// <p>The status of the execution.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the execution.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
         &self.status
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -149,10 +130,7 @@ impl MaintenanceWindowExecutionBuilder {
         self
     }
     /// <p>The time the execution started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -166,10 +144,7 @@ impl MaintenanceWindowExecutionBuilder {
         self
     }
     /// <p>The time the execution finished.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }

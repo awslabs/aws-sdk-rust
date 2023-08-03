@@ -27,34 +27,27 @@ impl ::std::fmt::Display for ApprovalRuleTemplateNameAlreadyExistsException {
     }
 }
 impl ::std::error::Error for ApprovalRuleTemplateNameAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ApprovalRuleTemplateNameAlreadyExistsException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ApprovalRuleTemplateNameAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ApprovalRuleTemplateNameAlreadyExistsException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ApprovalRuleTemplateNameAlreadyExistsException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl ApprovalRuleTemplateNameAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`ApprovalRuleTemplateNameAlreadyExistsException`](crate::types::error::ApprovalRuleTemplateNameAlreadyExistsException).
-    pub fn builder(
-    ) -> crate::types::error::builders::ApprovalRuleTemplateNameAlreadyExistsExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::ApprovalRuleTemplateNameAlreadyExistsExceptionBuilder {
         crate::types::error::builders::ApprovalRuleTemplateNameAlreadyExistsExceptionBuilder::default()
     }
 }
 
 /// A builder for [`ApprovalRuleTemplateNameAlreadyExistsException`](crate::types::error::ApprovalRuleTemplateNameAlreadyExistsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalRuleTemplateNameAlreadyExistsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl ApprovalRuleTemplateNameAlreadyExistsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

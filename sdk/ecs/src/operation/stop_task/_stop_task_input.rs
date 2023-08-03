@@ -36,9 +36,7 @@ impl StopTaskInput {
 
 /// A builder for [`StopTaskInput`](crate::operation::stop_task::StopTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTaskInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) task: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl StopTaskInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`StopTaskInput`](crate::operation::stop_task::StopTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_task::StopTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_task::StopTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_task::StopTaskInput {
             cluster: self.cluster,
             task: self.task,

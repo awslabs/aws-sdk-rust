@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSignalingChannelOutput {
 }
 impl DeleteSignalingChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSignalingChannelOutput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelOutputBuilder {
         crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSignalingChannelOutput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSignalingChannelOutputBuilder {
     _request_id: Option<String>,
 }

@@ -11,20 +11,16 @@ pub struct DescribeHyperParameterTuningJobOutput {
     pub hyper_parameter_tuning_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.</p>
     #[doc(hidden)]
-    pub hyper_parameter_tuning_job_config:
-        ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
+    pub hyper_parameter_tuning_job_config: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs that this tuning job launches.</p>
     #[doc(hidden)]
-    pub training_job_definition:
-        ::std::option::Option<crate::types::HyperParameterTrainingJobDefinition>,
+    pub training_job_definition: ::std::option::Option<crate::types::HyperParameterTrainingJobDefinition>,
     /// <p>A list of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.</p>
     #[doc(hidden)]
-    pub training_job_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>,
+    pub training_job_definitions: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>,
     /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
     #[doc(hidden)]
-    pub hyper_parameter_tuning_job_status:
-        ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
+    pub hyper_parameter_tuning_job_status: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
     /// <p>The date and time that the tuning job started.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -36,8 +32,7 @@ pub struct DescribeHyperParameterTuningJobOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status, that this tuning job launched.</p>
     #[doc(hidden)]
-    pub training_job_status_counters:
-        ::std::option::Option<crate::types::TrainingJobStatusCounters>,
+    pub training_job_status_counters: ::std::option::Option<crate::types::TrainingJobStatusCounters>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status of their final objective metric, that this tuning job launched.</p>
     #[doc(hidden)]
     pub objective_status_counters: ::std::option::Option<crate::types::ObjectiveStatusCounters>,
@@ -46,23 +41,19 @@ pub struct DescribeHyperParameterTuningJobOutput {
     pub best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
     /// <p>If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> for the training job with the best objective metric value of all training jobs launched by this tuning job and all parent jobs specified for the warm start tuning job.</p>
     #[doc(hidden)]
-    pub overall_best_training_job:
-        ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
+    pub overall_best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
     /// <p>The configuration for starting the hyperparameter parameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
     #[doc(hidden)]
-    pub warm_start_config:
-        ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
+    pub warm_start_config: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
     /// <p>If the tuning job failed, the reason it failed.</p>
     #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
     #[doc(hidden)]
-    pub tuning_job_completion_details:
-        ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
+    pub tuning_job_completion_details: ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
     /// <p>The total resources consumed by your hyperparameter tuning job.</p>
     #[doc(hidden)]
-    pub consumed_resources:
-        ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
+    pub consumed_resources: ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
     /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
     #[doc(hidden)]
     pub autotune: ::std::option::Option<crate::types::Autotune>,
@@ -78,27 +69,19 @@ impl DescribeHyperParameterTuningJobOutput {
         self.hyper_parameter_tuning_job_arn.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.</p>
-    pub fn hyper_parameter_tuning_job_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobConfig> {
+    pub fn hyper_parameter_tuning_job_config(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobConfig> {
         self.hyper_parameter_tuning_job_config.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs that this tuning job launches.</p>
-    pub fn training_job_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTrainingJobDefinition> {
+    pub fn training_job_definition(&self) -> ::std::option::Option<&crate::types::HyperParameterTrainingJobDefinition> {
         self.training_job_definition.as_ref()
     }
     /// <p>A list of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.</p>
-    pub fn training_job_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HyperParameterTrainingJobDefinition]> {
+    pub fn training_job_definitions(&self) -> ::std::option::Option<&[crate::types::HyperParameterTrainingJobDefinition]> {
         self.training_job_definitions.as_deref()
     }
     /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
-    pub fn hyper_parameter_tuning_job_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobStatus> {
+    pub fn hyper_parameter_tuning_job_status(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobStatus> {
         self.hyper_parameter_tuning_job_status.as_ref()
     }
     /// <p>The date and time that the tuning job started.</p>
@@ -106,9 +89,7 @@ impl DescribeHyperParameterTuningJobOutput {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the tuning job ended.</p>
-    pub fn hyper_parameter_tuning_end_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn hyper_parameter_tuning_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.hyper_parameter_tuning_end_time.as_ref()
     }
     /// <p>The date and time that the status of the tuning job was modified. </p>
@@ -116,33 +97,23 @@ impl DescribeHyperParameterTuningJobOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status, that this tuning job launched.</p>
-    pub fn training_job_status_counters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrainingJobStatusCounters> {
+    pub fn training_job_status_counters(&self) -> ::std::option::Option<&crate::types::TrainingJobStatusCounters> {
         self.training_job_status_counters.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status of their final objective metric, that this tuning job launched.</p>
-    pub fn objective_status_counters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ObjectiveStatusCounters> {
+    pub fn objective_status_counters(&self) -> ::std::option::Option<&crate::types::ObjectiveStatusCounters> {
         self.objective_status_counters.as_ref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> object that describes the training job that completed with the best current <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>.</p>
-    pub fn best_training_job(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTrainingJobSummary> {
+    pub fn best_training_job(&self) -> ::std::option::Option<&crate::types::HyperParameterTrainingJobSummary> {
         self.best_training_job.as_ref()
     }
     /// <p>If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> for the training job with the best objective metric value of all training jobs launched by this tuning job and all parent jobs specified for the warm start tuning job.</p>
-    pub fn overall_best_training_job(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTrainingJobSummary> {
+    pub fn overall_best_training_job(&self) -> ::std::option::Option<&crate::types::HyperParameterTrainingJobSummary> {
         self.overall_best_training_job.as_ref()
     }
     /// <p>The configuration for starting the hyperparameter parameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
-    pub fn warm_start_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobWarmStartConfig> {
+    pub fn warm_start_config(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobWarmStartConfig> {
         self.warm_start_config.as_ref()
     }
     /// <p>If the tuning job failed, the reason it failed.</p>
@@ -150,15 +121,11 @@ impl DescribeHyperParameterTuningJobOutput {
         self.failure_reason.as_deref()
     }
     /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
-    pub fn tuning_job_completion_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobCompletionDetails> {
+    pub fn tuning_job_completion_details(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobCompletionDetails> {
         self.tuning_job_completion_details.as_ref()
     }
     /// <p>The total resources consumed by your hyperparameter tuning job.</p>
-    pub fn consumed_resources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobConsumedResources> {
+    pub fn consumed_resources(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobConsumedResources> {
         self.consumed_resources.as_ref()
     }
     /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
@@ -173,135 +140,90 @@ impl ::aws_http::request_id::RequestId for DescribeHyperParameterTuningJobOutput
 }
 impl DescribeHyperParameterTuningJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHyperParameterTuningJobOutput`](crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobOutput).
-    pub fn builder() -> crate::operation::describe_hyper_parameter_tuning_job::builders::DescribeHyperParameterTuningJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_hyper_parameter_tuning_job::builders::DescribeHyperParameterTuningJobOutputBuilder {
         crate::operation::describe_hyper_parameter_tuning_job::builders::DescribeHyperParameterTuningJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHyperParameterTuningJobOutput`](crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHyperParameterTuningJobOutputBuilder {
     pub(crate) hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) hyper_parameter_tuning_job_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) hyper_parameter_tuning_job_config:
-        ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
-    pub(crate) training_job_definition:
-        ::std::option::Option<crate::types::HyperParameterTrainingJobDefinition>,
-    pub(crate) training_job_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>,
-    pub(crate) hyper_parameter_tuning_job_status:
-        ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
+    pub(crate) hyper_parameter_tuning_job_config: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
+    pub(crate) training_job_definition: ::std::option::Option<crate::types::HyperParameterTrainingJobDefinition>,
+    pub(crate) training_job_definitions: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>,
+    pub(crate) hyper_parameter_tuning_job_status: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) hyper_parameter_tuning_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) training_job_status_counters:
-        ::std::option::Option<crate::types::TrainingJobStatusCounters>,
-    pub(crate) objective_status_counters:
-        ::std::option::Option<crate::types::ObjectiveStatusCounters>,
-    pub(crate) best_training_job:
-        ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
-    pub(crate) overall_best_training_job:
-        ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
-    pub(crate) warm_start_config:
-        ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
+    pub(crate) training_job_status_counters: ::std::option::Option<crate::types::TrainingJobStatusCounters>,
+    pub(crate) objective_status_counters: ::std::option::Option<crate::types::ObjectiveStatusCounters>,
+    pub(crate) best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
+    pub(crate) overall_best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
+    pub(crate) warm_start_config: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) tuning_job_completion_details:
-        ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
-    pub(crate) consumed_resources:
-        ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
+    pub(crate) tuning_job_completion_details: ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
+    pub(crate) consumed_resources: ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
     pub(crate) autotune: ::std::option::Option<crate::types::Autotune>,
     _request_id: Option<String>,
 }
 impl DescribeHyperParameterTuningJobOutputBuilder {
     /// <p>The name of the hyperparameter tuning job.</p>
-    pub fn hyper_parameter_tuning_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hyper_parameter_tuning_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hyperparameter tuning job.</p>
-    pub fn set_hyper_parameter_tuning_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hyper_parameter_tuning_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = input;
         self
     }
     /// <p>The name of the hyperparameter tuning job.</p>
-    pub fn get_hyper_parameter_tuning_job_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hyper_parameter_tuning_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.hyper_parameter_tuning_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
-    pub fn hyper_parameter_tuning_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hyper_parameter_tuning_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
-    pub fn set_hyper_parameter_tuning_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hyper_parameter_tuning_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
-    pub fn get_hyper_parameter_tuning_job_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hyper_parameter_tuning_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hyper_parameter_tuning_job_arn
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.</p>
-    pub fn hyper_parameter_tuning_job_config(
-        mut self,
-        input: crate::types::HyperParameterTuningJobConfig,
-    ) -> Self {
+    pub fn hyper_parameter_tuning_job_config(mut self, input: crate::types::HyperParameterTuningJobConfig) -> Self {
         self.hyper_parameter_tuning_job_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.</p>
-    pub fn set_hyper_parameter_tuning_job_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
-    ) -> Self {
+    pub fn set_hyper_parameter_tuning_job_config(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>) -> Self {
         self.hyper_parameter_tuning_job_config = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.</p>
-    pub fn get_hyper_parameter_tuning_job_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobConfig> {
+    pub fn get_hyper_parameter_tuning_job_config(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobConfig> {
         &self.hyper_parameter_tuning_job_config
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs that this tuning job launches.</p>
-    pub fn training_job_definition(
-        mut self,
-        input: crate::types::HyperParameterTrainingJobDefinition,
-    ) -> Self {
+    pub fn training_job_definition(mut self, input: crate::types::HyperParameterTrainingJobDefinition) -> Self {
         self.training_job_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs that this tuning job launches.</p>
-    pub fn set_training_job_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTrainingJobDefinition>,
-    ) -> Self {
+    pub fn set_training_job_definition(mut self, input: ::std::option::Option<crate::types::HyperParameterTrainingJobDefinition>) -> Self {
         self.training_job_definition = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs that this tuning job launches.</p>
-    pub fn get_training_job_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTrainingJobDefinition> {
+    pub fn get_training_job_definition(&self) -> &::std::option::Option<crate::types::HyperParameterTrainingJobDefinition> {
         &self.training_job_definition
     }
     /// Appends an item to `training_job_definitions`.
@@ -309,10 +231,7 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
     /// To override the contents of this collection use [`set_training_job_definitions`](Self::set_training_job_definitions).
     ///
     /// <p>A list of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.</p>
-    pub fn training_job_definitions(
-        mut self,
-        input: crate::types::HyperParameterTrainingJobDefinition,
-    ) -> Self {
+    pub fn training_job_definitions(mut self, input: crate::types::HyperParameterTrainingJobDefinition) -> Self {
         let mut v = self.training_job_definitions.unwrap_or_default();
         v.push(input);
         self.training_job_definitions = ::std::option::Option::Some(v);
@@ -321,40 +240,27 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
     /// <p>A list of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.</p>
     pub fn set_training_job_definitions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>,
     ) -> Self {
         self.training_job_definitions = input;
         self
     }
     /// <p>A list of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.</p>
-    pub fn get_training_job_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>
-    {
+    pub fn get_training_job_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>> {
         &self.training_job_definitions
     }
     /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
-    pub fn hyper_parameter_tuning_job_status(
-        mut self,
-        input: crate::types::HyperParameterTuningJobStatus,
-    ) -> Self {
+    pub fn hyper_parameter_tuning_job_status(mut self, input: crate::types::HyperParameterTuningJobStatus) -> Self {
         self.hyper_parameter_tuning_job_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
-    pub fn set_hyper_parameter_tuning_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
-    ) -> Self {
+    pub fn set_hyper_parameter_tuning_job_status(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>) -> Self {
         self.hyper_parameter_tuning_job_status = input;
         self
     }
     /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
-    pub fn get_hyper_parameter_tuning_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobStatus> {
+    pub fn get_hyper_parameter_tuning_job_status(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobStatus> {
         &self.hyper_parameter_tuning_job_status
     }
     /// <p>The date and time that the tuning job started.</p>
@@ -363,10 +269,7 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         self
     }
     /// <p>The date and time that the tuning job started.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -380,17 +283,12 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         self
     }
     /// <p>The date and time that the tuning job ended.</p>
-    pub fn set_hyper_parameter_tuning_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_hyper_parameter_tuning_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.hyper_parameter_tuning_end_time = input;
         self
     }
     /// <p>The date and time that the tuning job ended.</p>
-    pub fn get_hyper_parameter_tuning_end_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_hyper_parameter_tuning_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.hyper_parameter_tuning_end_time
     }
     /// <p>The date and time that the status of the tuning job was modified. </p>
@@ -399,10 +297,7 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         self
     }
     /// <p>The date and time that the status of the tuning job was modified. </p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -411,128 +306,82 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         &self.last_modified_time
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status, that this tuning job launched.</p>
-    pub fn training_job_status_counters(
-        mut self,
-        input: crate::types::TrainingJobStatusCounters,
-    ) -> Self {
+    pub fn training_job_status_counters(mut self, input: crate::types::TrainingJobStatusCounters) -> Self {
         self.training_job_status_counters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status, that this tuning job launched.</p>
-    pub fn set_training_job_status_counters(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingJobStatusCounters>,
-    ) -> Self {
+    pub fn set_training_job_status_counters(mut self, input: ::std::option::Option<crate::types::TrainingJobStatusCounters>) -> Self {
         self.training_job_status_counters = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status, that this tuning job launched.</p>
-    pub fn get_training_job_status_counters(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingJobStatusCounters> {
+    pub fn get_training_job_status_counters(&self) -> &::std::option::Option<crate::types::TrainingJobStatusCounters> {
         &self.training_job_status_counters
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status of their final objective metric, that this tuning job launched.</p>
-    pub fn objective_status_counters(
-        mut self,
-        input: crate::types::ObjectiveStatusCounters,
-    ) -> Self {
+    pub fn objective_status_counters(mut self, input: crate::types::ObjectiveStatusCounters) -> Self {
         self.objective_status_counters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status of their final objective metric, that this tuning job launched.</p>
-    pub fn set_objective_status_counters(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectiveStatusCounters>,
-    ) -> Self {
+    pub fn set_objective_status_counters(mut self, input: ::std::option::Option<crate::types::ObjectiveStatusCounters>) -> Self {
         self.objective_status_counters = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status of their final objective metric, that this tuning job launched.</p>
-    pub fn get_objective_status_counters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectiveStatusCounters> {
+    pub fn get_objective_status_counters(&self) -> &::std::option::Option<crate::types::ObjectiveStatusCounters> {
         &self.objective_status_counters
     }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> object that describes the training job that completed with the best current <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>.</p>
-    pub fn best_training_job(
-        mut self,
-        input: crate::types::HyperParameterTrainingJobSummary,
-    ) -> Self {
+    pub fn best_training_job(mut self, input: crate::types::HyperParameterTrainingJobSummary) -> Self {
         self.best_training_job = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> object that describes the training job that completed with the best current <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>.</p>
-    pub fn set_best_training_job(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
-    ) -> Self {
+    pub fn set_best_training_job(mut self, input: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>) -> Self {
         self.best_training_job = input;
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> object that describes the training job that completed with the best current <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>.</p>
-    pub fn get_best_training_job(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTrainingJobSummary> {
+    pub fn get_best_training_job(&self) -> &::std::option::Option<crate::types::HyperParameterTrainingJobSummary> {
         &self.best_training_job
     }
     /// <p>If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> for the training job with the best objective metric value of all training jobs launched by this tuning job and all parent jobs specified for the warm start tuning job.</p>
-    pub fn overall_best_training_job(
-        mut self,
-        input: crate::types::HyperParameterTrainingJobSummary,
-    ) -> Self {
+    pub fn overall_best_training_job(mut self, input: crate::types::HyperParameterTrainingJobSummary) -> Self {
         self.overall_best_training_job = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> for the training job with the best objective metric value of all training jobs launched by this tuning job and all parent jobs specified for the warm start tuning job.</p>
-    pub fn set_overall_best_training_job(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
-    ) -> Self {
+    pub fn set_overall_best_training_job(mut self, input: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>) -> Self {
         self.overall_best_training_job = input;
         self
     }
     /// <p>If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> for the training job with the best objective metric value of all training jobs launched by this tuning job and all parent jobs specified for the warm start tuning job.</p>
-    pub fn get_overall_best_training_job(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTrainingJobSummary> {
+    pub fn get_overall_best_training_job(&self) -> &::std::option::Option<crate::types::HyperParameterTrainingJobSummary> {
         &self.overall_best_training_job
     }
     /// <p>The configuration for starting the hyperparameter parameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
-    pub fn warm_start_config(
-        mut self,
-        input: crate::types::HyperParameterTuningJobWarmStartConfig,
-    ) -> Self {
+    pub fn warm_start_config(mut self, input: crate::types::HyperParameterTuningJobWarmStartConfig) -> Self {
         self.warm_start_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for starting the hyperparameter parameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
-    pub fn set_warm_start_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
-    ) -> Self {
+    pub fn set_warm_start_config(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>) -> Self {
         self.warm_start_config = input;
         self
     }
     /// <p>The configuration for starting the hyperparameter parameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
-    pub fn get_warm_start_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig> {
+    pub fn get_warm_start_config(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig> {
         &self.warm_start_config
     }
     /// <p>If the tuning job failed, the reason it failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the tuning job failed, the reason it failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -541,47 +390,31 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         &self.failure_reason
     }
     /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
-    pub fn tuning_job_completion_details(
-        mut self,
-        input: crate::types::HyperParameterTuningJobCompletionDetails,
-    ) -> Self {
+    pub fn tuning_job_completion_details(mut self, input: crate::types::HyperParameterTuningJobCompletionDetails) -> Self {
         self.tuning_job_completion_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
-    pub fn set_tuning_job_completion_details(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
-    ) -> Self {
+    pub fn set_tuning_job_completion_details(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>) -> Self {
         self.tuning_job_completion_details = input;
         self
     }
     /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
-    pub fn get_tuning_job_completion_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails> {
+    pub fn get_tuning_job_completion_details(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails> {
         &self.tuning_job_completion_details
     }
     /// <p>The total resources consumed by your hyperparameter tuning job.</p>
-    pub fn consumed_resources(
-        mut self,
-        input: crate::types::HyperParameterTuningJobConsumedResources,
-    ) -> Self {
+    pub fn consumed_resources(mut self, input: crate::types::HyperParameterTuningJobConsumedResources) -> Self {
         self.consumed_resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total resources consumed by your hyperparameter tuning job.</p>
-    pub fn set_consumed_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
-    ) -> Self {
+    pub fn set_consumed_resources(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>) -> Self {
         self.consumed_resources = input;
         self
     }
     /// <p>The total resources consumed by your hyperparameter tuning job.</p>
-    pub fn get_consumed_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources> {
+    pub fn get_consumed_resources(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources> {
         &self.consumed_resources
     }
     /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
@@ -608,47 +441,26 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeHyperParameterTuningJobOutput`](crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobOutput
-    {
+    pub fn build(self) -> crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobOutput {
         crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobOutput {
-            hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name
-            ,
-            hyper_parameter_tuning_job_arn: self.hyper_parameter_tuning_job_arn
-            ,
-            hyper_parameter_tuning_job_config: self.hyper_parameter_tuning_job_config
-            ,
-            training_job_definition: self.training_job_definition
-            ,
-            training_job_definitions: self.training_job_definitions
-            ,
-            hyper_parameter_tuning_job_status: self.hyper_parameter_tuning_job_status
-            ,
-            creation_time: self.creation_time
-            ,
-            hyper_parameter_tuning_end_time: self.hyper_parameter_tuning_end_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            training_job_status_counters: self.training_job_status_counters
-            ,
-            objective_status_counters: self.objective_status_counters
-            ,
-            best_training_job: self.best_training_job
-            ,
-            overall_best_training_job: self.overall_best_training_job
-            ,
-            warm_start_config: self.warm_start_config
-            ,
-            failure_reason: self.failure_reason
-            ,
-            tuning_job_completion_details: self.tuning_job_completion_details
-            ,
-            consumed_resources: self.consumed_resources
-            ,
-            autotune: self.autotune
-            ,
+            hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,
+            hyper_parameter_tuning_job_arn: self.hyper_parameter_tuning_job_arn,
+            hyper_parameter_tuning_job_config: self.hyper_parameter_tuning_job_config,
+            training_job_definition: self.training_job_definition,
+            training_job_definitions: self.training_job_definitions,
+            hyper_parameter_tuning_job_status: self.hyper_parameter_tuning_job_status,
+            creation_time: self.creation_time,
+            hyper_parameter_tuning_end_time: self.hyper_parameter_tuning_end_time,
+            last_modified_time: self.last_modified_time,
+            training_job_status_counters: self.training_job_status_counters,
+            objective_status_counters: self.objective_status_counters,
+            best_training_job: self.best_training_job,
+            overall_best_training_job: self.overall_best_training_job,
+            warm_start_config: self.warm_start_config,
+            failure_reason: self.failure_reason,
+            tuning_job_completion_details: self.tuning_job_completion_details,
+            consumed_resources: self.consumed_resources,
+            autotune: self.autotune,
             _request_id: self._request_id,
         }
     }

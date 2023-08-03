@@ -61,9 +61,7 @@ impl AnalyticsIntentStageMetric {
 
 /// A builder for [`AnalyticsIntentStageMetric`](crate::types::AnalyticsIntentStageMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsIntentStageMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentStageMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
@@ -90,10 +88,7 @@ impl AnalyticsIntentStageMetricBuilder {
     /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent stage.</p> </li>
     /// <li> <p> <code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsIntentStageMetricName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentStageMetricName>) -> Self {
         self.name = input;
         self
     }
@@ -124,10 +119,7 @@ impl AnalyticsIntentStageMetricBuilder {
     /// <li> <p> <code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
         self.statistic = input;
         self
     }
@@ -146,10 +138,7 @@ impl AnalyticsIntentStageMetricBuilder {
         self
     }
     /// <p>Specifies whether to sort the results in ascending or descending order of the summary statistic (<code>value</code> in the response).</p>
-    pub fn set_order(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsSortOrder>,
-    ) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::AnalyticsSortOrder>) -> Self {
         self.order = input;
         self
     }

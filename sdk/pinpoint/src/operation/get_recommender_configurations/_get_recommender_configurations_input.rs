@@ -22,16 +22,14 @@ impl GetRecommenderConfigurationsInput {
 }
 impl GetRecommenderConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`GetRecommenderConfigurationsInput`](crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput).
-    pub fn builder() -> crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsInputBuilder {
         crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommenderConfigurationsInput`](crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommenderConfigurationsInputBuilder {
     pub(crate) page_size: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl GetRecommenderConfigurationsInputBuilder {
         crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput {
-                page_size: self.page_size,
-                token: self.token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput {
+            page_size: self.page_size,
+            token: self.token,
+        })
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteIngestionDestinationOutput {
 }
 impl DeleteIngestionDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIngestionDestinationOutput`](crate::operation::delete_ingestion_destination::DeleteIngestionDestinationOutput).
-    pub fn builder() -> crate::operation::delete_ingestion_destination::builders::DeleteIngestionDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_ingestion_destination::builders::DeleteIngestionDestinationOutputBuilder {
         crate::operation::delete_ingestion_destination::builders::DeleteIngestionDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIngestionDestinationOutput`](crate::operation::delete_ingestion_destination::DeleteIngestionDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIngestionDestinationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteIngestionDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteIngestionDestinationOutput`](crate::operation::delete_ingestion_destination::DeleteIngestionDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_ingestion_destination::DeleteIngestionDestinationOutput {
+    pub fn build(self) -> crate::operation::delete_ingestion_destination::DeleteIngestionDestinationOutput {
         crate::operation::delete_ingestion_destination::DeleteIngestionDestinationOutput {
             _request_id: self._request_id,
         }

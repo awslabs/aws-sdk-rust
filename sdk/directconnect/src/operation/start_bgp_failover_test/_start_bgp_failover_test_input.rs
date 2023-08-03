@@ -33,17 +33,14 @@ impl StartBgpFailoverTestInput {
 }
 impl StartBgpFailoverTestInput {
     /// Creates a new builder-style object to manufacture [`StartBgpFailoverTestInput`](crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput).
-    pub fn builder(
-    ) -> crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestInputBuilder {
+    pub fn builder() -> crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestInputBuilder {
         crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestInputBuilder::default()
     }
 }
 
 /// A builder for [`StartBgpFailoverTestInput`](crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBgpFailoverTestInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) bgp_peers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -51,18 +48,12 @@ pub struct StartBgpFailoverTestInputBuilder {
 }
 impl StartBgpFailoverTestInputBuilder {
     /// <p>The ID of the virtual interface you want to test.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface you want to test.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_id = input;
         self
     }
@@ -82,10 +73,7 @@ impl StartBgpFailoverTestInputBuilder {
         self
     }
     /// <p>The BGP peers to place in the DOWN state.</p>
-    pub fn set_bgp_peers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bgp_peers = input;
         self
     }
@@ -116,16 +104,12 @@ impl StartBgpFailoverTestInputBuilder {
     /// Consumes the builder and constructs a [`StartBgpFailoverTestInput`](crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput {
-                virtual_interface_id: self.virtual_interface_id,
-                bgp_peers: self.bgp_peers,
-                test_duration_in_minutes: self.test_duration_in_minutes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput {
+            virtual_interface_id: self.virtual_interface_id,
+            bgp_peers: self.bgp_peers,
+            test_duration_in_minutes: self.test_duration_in_minutes,
+        })
     }
 }

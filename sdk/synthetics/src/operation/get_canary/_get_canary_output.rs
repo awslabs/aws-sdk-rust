@@ -28,9 +28,7 @@ impl GetCanaryOutput {
 
 /// A builder for [`GetCanaryOutput`](crate::operation::get_canary::GetCanaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCanaryOutputBuilder {
     pub(crate) canary: ::std::option::Option<crate::types::Canary>,
     _request_id: Option<String>,

@@ -10,10 +10,7 @@ impl GetCoreDefinitionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_core_definition::GetCoreDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_definition::GetCoreDefinitionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_definition::GetCoreDefinitionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_core_definition();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetCoreDefinitionFluentBuilder {
         }
     }
     /// Access the GetCoreDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_core_definition::builders::GetCoreDefinitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_core_definition::builders::GetCoreDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetCoreDefinitionFluentBuilder {
             crate::operation::get_core_definition::GetCoreDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_definition::GetCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_definition::GetCoreDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetCoreDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetCoreDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_definition::GetCoreDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_definition::GetCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_definition::GetCoreDefinitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetCoreDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_definition::GetCoreDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_definition::GetCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_definition::GetCoreDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetCoreDefinitionFluentBuilder {
             crate::operation::get_core_definition::GetCoreDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_definition::GetCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_definition::GetCoreDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the core definition.
-    pub fn core_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_definition_id(input.into());
         self
     }
     /// The ID of the core definition.
-    pub fn set_core_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_definition_id(input);
         self
     }

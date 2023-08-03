@@ -7,11 +7,7 @@ pub fn ser_lifecycle_expiration(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.date {
         let mut inner_writer = scope.start_el("Date").finish();
-        inner_writer.data(
-            var_1
-                .fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
-                .as_ref(),
-        );
+        inner_writer.data(var_1.fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref());
     }
     if input.days != 0 {
         let mut inner_writer = scope.start_el("Days").finish();
@@ -19,10 +15,7 @@ pub fn ser_lifecycle_expiration(
     }
     if input.expired_object_delete_marker {
         let mut inner_writer = scope.start_el("ExpiredObjectDeleteMarker").finish();
-        inner_writer.data(
-            ::aws_smithy_types::primitive::Encoder::from(input.expired_object_delete_marker)
-                .encode(),
-        );
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.expired_object_delete_marker).encode());
     }
     scope.finish();
     Ok(())

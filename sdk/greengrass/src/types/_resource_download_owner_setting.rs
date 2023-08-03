@@ -30,9 +30,7 @@ impl ResourceDownloadOwnerSetting {
 
 /// A builder for [`ResourceDownloadOwnerSetting`](crate::types::ResourceDownloadOwnerSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDownloadOwnerSettingBuilder {
     pub(crate) group_owner: ::std::option::Option<::std::string::String>,
     pub(crate) group_permission: ::std::option::Option<crate::types::Permission>,
@@ -58,10 +56,7 @@ impl ResourceDownloadOwnerSettingBuilder {
         self
     }
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
-    pub fn set_group_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::Permission>,
-    ) -> Self {
+    pub fn set_group_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
         self.group_permission = input;
         self
     }

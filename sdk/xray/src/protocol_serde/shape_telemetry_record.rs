@@ -35,10 +35,7 @@ pub fn ser_telemetry_record(
     if let Some(var_6) = &input.backend_connection_errors {
         #[allow(unused_mut)]
         let mut object_7 = object.key("BackendConnectionErrors").start_object();
-        crate::protocol_serde::shape_backend_connection_errors::ser_backend_connection_errors(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_backend_connection_errors::ser_backend_connection_errors(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

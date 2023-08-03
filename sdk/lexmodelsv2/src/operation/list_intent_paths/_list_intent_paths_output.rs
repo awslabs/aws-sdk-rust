@@ -5,15 +5,12 @@
 pub struct ListIntentPathsOutput {
     /// <p>A list of objects, each of which contains information about a node in the intent path for which you requested metrics.</p>
     #[doc(hidden)]
-    pub node_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>>,
+    pub node_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>>,
     _request_id: Option<String>,
 }
 impl ListIntentPathsOutput {
     /// <p>A list of objects, each of which contains information about a node in the intent path for which you requested metrics.</p>
-    pub fn node_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnalyticsIntentNodeSummary]> {
+    pub fn node_summaries(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentNodeSummary]> {
         self.node_summaries.as_deref()
     }
 }
@@ -24,20 +21,16 @@ impl ::aws_http::request_id::RequestId for ListIntentPathsOutput {
 }
 impl ListIntentPathsOutput {
     /// Creates a new builder-style object to manufacture [`ListIntentPathsOutput`](crate::operation::list_intent_paths::ListIntentPathsOutput).
-    pub fn builder() -> crate::operation::list_intent_paths::builders::ListIntentPathsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_intent_paths::builders::ListIntentPathsOutputBuilder {
         crate::operation::list_intent_paths::builders::ListIntentPathsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIntentPathsOutput`](crate::operation::list_intent_paths::ListIntentPathsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntentPathsOutputBuilder {
-    pub(crate) node_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>>,
+    pub(crate) node_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>>,
     _request_id: Option<String>,
 }
 impl ListIntentPathsOutputBuilder {
@@ -53,17 +46,12 @@ impl ListIntentPathsOutputBuilder {
         self
     }
     /// <p>A list of objects, each of which contains information about a node in the intent path for which you requested metrics.</p>
-    pub fn set_node_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>>,
-    ) -> Self {
+    pub fn set_node_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>>) -> Self {
         self.node_summaries = input;
         self
     }
     /// <p>A list of objects, each of which contains information about a node in the intent path for which you requested metrics.</p>
-    pub fn get_node_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>> {
+    pub fn get_node_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>> {
         &self.node_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

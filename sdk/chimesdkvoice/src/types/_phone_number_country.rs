@@ -9,8 +9,7 @@ pub struct PhoneNumberCountry {
     pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>The supported phone number types.</p>
     #[doc(hidden)]
-    pub supported_phone_number_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
+    pub supported_phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
 }
 impl PhoneNumberCountry {
     /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
@@ -18,9 +17,7 @@ impl PhoneNumberCountry {
         self.country_code.as_deref()
     }
     /// <p>The supported phone number types.</p>
-    pub fn supported_phone_number_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PhoneNumberType]> {
+    pub fn supported_phone_number_types(&self) -> ::std::option::Option<&[crate::types::PhoneNumberType]> {
         self.supported_phone_number_types.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl PhoneNumberCountry {
 
 /// A builder for [`PhoneNumberCountry`](crate::types::PhoneNumberCountry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhoneNumberCountryBuilder {
     pub(crate) country_code: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_phone_number_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
+    pub(crate) supported_phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
 }
 impl PhoneNumberCountryBuilder {
     /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
@@ -68,17 +62,12 @@ impl PhoneNumberCountryBuilder {
         self
     }
     /// <p>The supported phone number types.</p>
-    pub fn set_supported_phone_number_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
-    ) -> Self {
+    pub fn set_supported_phone_number_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
         self.supported_phone_number_types = input;
         self
     }
     /// <p>The supported phone number types.</p>
-    pub fn get_supported_phone_number_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
+    pub fn get_supported_phone_number_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
         &self.supported_phone_number_types
     }
     /// Consumes the builder and constructs a [`PhoneNumberCountry`](crate::types::PhoneNumberCountry).

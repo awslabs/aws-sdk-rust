@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`evaluation_form_id(Option<String>)`](crate::operation::create_evaluation_form::CreateEvaluationFormOutput::evaluation_form_id): <p>The unique identifier for the evaluation form.</p>
     ///   - [`evaluation_form_arn(Option<String>)`](crate::operation::create_evaluation_form::CreateEvaluationFormOutput::evaluation_form_arn): <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     /// - On failure, responds with [`SdkError<CreateEvaluationFormError>`](crate::operation::create_evaluation_form::CreateEvaluationFormError)
-    pub fn create_evaluation_form(
-        &self,
-    ) -> crate::operation::create_evaluation_form::builders::CreateEvaluationFormFluentBuilder {
-        crate::operation::create_evaluation_form::builders::CreateEvaluationFormFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_evaluation_form(&self) -> crate::operation::create_evaluation_form::builders::CreateEvaluationFormFluentBuilder {
+        crate::operation::create_evaluation_form::builders::CreateEvaluationFormFluentBuilder::new(self.handle.clone())
     }
 }

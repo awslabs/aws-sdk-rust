@@ -42,21 +42,16 @@ impl ::aws_http::request_id::RequestId for GetOutpostInstanceTypesOutput {
 }
 impl GetOutpostInstanceTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetOutpostInstanceTypesOutput`](crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesOutputBuilder {
         crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOutpostInstanceTypesOutput`](crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOutpostInstanceTypesOutputBuilder {
-    pub(crate) instance_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeItem>>,
+    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
@@ -75,17 +70,12 @@ impl GetOutpostInstanceTypesOutputBuilder {
         self
     }
     /// <p>Information about the instance types.</p>
-    pub fn set_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeItem>>,
-    ) -> Self {
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeItem>>) -> Self {
         self.instance_types = input;
         self
     }
     /// <p>Information about the instance types.</p>
-    pub fn get_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeItem>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeItem>> {
         &self.instance_types
     }
     /// <p>The pagination token.</p>
@@ -140,9 +130,7 @@ impl GetOutpostInstanceTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetOutpostInstanceTypesOutput`](crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput {
+    pub fn build(self) -> crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput {
         crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput {
             instance_types: self.instance_types,
             next_token: self.next_token,

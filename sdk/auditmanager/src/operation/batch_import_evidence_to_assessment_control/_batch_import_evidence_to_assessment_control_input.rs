@@ -36,37 +36,28 @@ impl BatchImportEvidenceToAssessmentControlInput {
 }
 impl BatchImportEvidenceToAssessmentControlInput {
     /// Creates a new builder-style object to manufacture [`BatchImportEvidenceToAssessmentControlInput`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput).
-    pub fn builder() -> crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlInputBuilder{
+    pub fn builder() -> crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlInputBuilder {
         crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchImportEvidenceToAssessmentControlInput`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
-    pub(crate) manual_evidence:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>>,
+    pub(crate) manual_evidence: ::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>>,
 }
 impl BatchImportEvidenceToAssessmentControlInputBuilder {
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -75,18 +66,12 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
         &self.assessment_id
     }
     /// <p> The identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_set_id = input;
         self
     }
@@ -120,32 +105,28 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
         self
     }
     /// <p> The list of manual evidence objects. </p>
-    pub fn set_manual_evidence(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>>,
-    ) -> Self {
+    pub fn set_manual_evidence(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>>) -> Self {
         self.manual_evidence = input;
         self
     }
     /// <p> The list of manual evidence objects. </p>
-    pub fn get_manual_evidence(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>> {
+    pub fn get_manual_evidence(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>> {
         &self.manual_evidence
     }
     /// Consumes the builder and constructs a [`BatchImportEvidenceToAssessmentControlInput`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput {
-                assessment_id: self.assessment_id
-                ,
-                control_set_id: self.control_set_id
-                ,
-                control_id: self.control_id
-                ,
-                manual_evidence: self.manual_evidence
-                ,
-            }
+                assessment_id: self.assessment_id,
+                control_set_id: self.control_set_id,
+                control_id: self.control_id,
+                manual_evidence: self.manual_evidence,
+            },
         )
     }
 }

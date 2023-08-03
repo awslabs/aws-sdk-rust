@@ -32,16 +32,14 @@ impl ListTrafficPolicyVersionsInput {
 }
 impl ListTrafficPolicyVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListTrafficPolicyVersionsInput`](crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsInput).
-    pub fn builder() -> crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsInputBuilder {
         crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrafficPolicyVersionsInput`](crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrafficPolicyVersionsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_version_marker: ::std::option::Option<::std::string::String>,
@@ -64,27 +62,19 @@ impl ListTrafficPolicyVersionsInputBuilder {
     }
     /// <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>
     /// <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
-    pub fn traffic_policy_version_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_version_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_version_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>
     /// <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
-    pub fn set_traffic_policy_version_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_version_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_policy_version_marker = input;
         self
     }
     /// <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>
     /// <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
-    pub fn get_traffic_policy_version_marker(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_traffic_policy_version_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.traffic_policy_version_marker
     }
     /// <p>The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you submit another request.</p>
@@ -108,12 +98,10 @@ impl ListTrafficPolicyVersionsInputBuilder {
         crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsInput {
-                id: self.id,
-                traffic_policy_version_marker: self.traffic_policy_version_marker,
-                max_items: self.max_items,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsInput {
+            id: self.id,
+            traffic_policy_version_marker: self.traffic_policy_version_marker,
+            max_items: self.max_items,
+        })
     }
 }

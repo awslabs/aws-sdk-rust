@@ -25,9 +25,7 @@ impl ComponentRunWith {
     }
     /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass currently supports this feature on only Linux core devices.</p>
     /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
-    pub fn system_resource_limits(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SystemResourceLimits> {
+    pub fn system_resource_limits(&self) -> ::std::option::Option<&crate::types::SystemResourceLimits> {
         self.system_resource_limits.as_ref()
     }
     /// <p>The Windows user to use to run this component on Windows core devices. The user must exist on each Windows core device, and its name and password must be in the LocalSystem account's Credentials Manager instance.</p>
@@ -45,9 +43,7 @@ impl ComponentRunWith {
 
 /// A builder for [`ComponentRunWith`](crate::types::ComponentRunWith).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentRunWithBuilder {
     pub(crate) posix_user: ::std::option::Option<::std::string::String>,
     pub(crate) system_resource_limits: ::std::option::Option<crate::types::SystemResourceLimits>,
@@ -79,18 +75,13 @@ impl ComponentRunWithBuilder {
     }
     /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass currently supports this feature on only Linux core devices.</p>
     /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
-    pub fn set_system_resource_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemResourceLimits>,
-    ) -> Self {
+    pub fn set_system_resource_limits(mut self, input: ::std::option::Option<crate::types::SystemResourceLimits>) -> Self {
         self.system_resource_limits = input;
         self
     }
     /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass currently supports this feature on only Linux core devices.</p>
     /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
-    pub fn get_system_resource_limits(
-        &self,
-    ) -> &::std::option::Option<crate::types::SystemResourceLimits> {
+    pub fn get_system_resource_limits(&self) -> &::std::option::Option<crate::types::SystemResourceLimits> {
         &self.system_resource_limits
     }
     /// <p>The Windows user to use to run this component on Windows core devices. The user must exist on each Windows core device, and its name and password must be in the LocalSystem account's Credentials Manager instance.</p>

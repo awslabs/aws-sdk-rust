@@ -44,8 +44,7 @@ pub struct GetDimensionValuesOutput {
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub dimension_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
+    pub dimension_values: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
     #[doc(hidden)]
     pub return_size: ::std::option::Option<i32>,
@@ -98,9 +97,7 @@ impl GetDimensionValuesOutput {
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
     /// </ul>
-    pub fn dimension_values(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DimensionValuesWithAttributes]> {
+    pub fn dimension_values(&self) -> ::std::option::Option<&[crate::types::DimensionValuesWithAttributes]> {
         self.dimension_values.as_deref()
     }
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
@@ -123,20 +120,16 @@ impl ::aws_http::request_id::RequestId for GetDimensionValuesOutput {
 }
 impl GetDimensionValuesOutput {
     /// Creates a new builder-style object to manufacture [`GetDimensionValuesOutput`](crate::operation::get_dimension_values::GetDimensionValuesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder {
+    pub fn builder() -> crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder {
         crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDimensionValuesOutput`](crate::operation::get_dimension_values::GetDimensionValuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDimensionValuesOutputBuilder {
-    pub(crate) dimension_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
+    pub(crate) dimension_values: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
     pub(crate) return_size: ::std::option::Option<i32>,
     pub(crate) total_size: ::std::option::Option<i32>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -233,10 +226,7 @@ impl GetDimensionValuesOutputBuilder {
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
     /// </ul>
-    pub fn set_dimension_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
-    ) -> Self {
+    pub fn set_dimension_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>) -> Self {
         self.dimension_values = input;
         self
     }
@@ -280,9 +270,7 @@ impl GetDimensionValuesOutputBuilder {
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
     /// </ul>
-    pub fn get_dimension_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>> {
+    pub fn get_dimension_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>> {
         &self.dimension_values
     }
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
@@ -314,18 +302,12 @@ impl GetDimensionValuesOutputBuilder {
         &self.total_size
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

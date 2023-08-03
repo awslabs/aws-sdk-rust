@@ -51,9 +51,7 @@ impl DkimAttributes {
 
 /// A builder for [`DkimAttributes`](crate::types::DkimAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DkimAttributesBuilder {
     pub(crate) signing_enabled: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::DkimStatus>,
@@ -121,10 +119,7 @@ impl DkimAttributesBuilder {
         self
     }
     /// <p>A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon Pinpoint detects these records in the DNS configuration for your domain, the DKIM authentication process is complete. Amazon Pinpoint usually detects these records within about 72 hours of adding them to the DNS configuration for your domain.</p>
-    pub fn set_tokens(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tokens = input;
         self
     }

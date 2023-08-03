@@ -37,9 +37,7 @@ impl S3LogDeliveryDescription {
 
 /// A builder for [`S3LogDeliveryDescription`](crate::types::S3LogDeliveryDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3LogDeliveryDescriptionBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

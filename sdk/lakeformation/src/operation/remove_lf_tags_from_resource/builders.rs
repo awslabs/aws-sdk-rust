@@ -26,7 +26,7 @@ impl RemoveLfTagsFromResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveLFTagsFromResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder,
+    inner: crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder,
 }
 impl RemoveLFTagsFromResourceFluentBuilder {
     /// Creates a new `RemoveLFTagsFromResource`.
@@ -37,7 +37,7 @@ impl RemoveLFTagsFromResourceFluentBuilder {
         }
     }
     /// Access the RemoveLFTagsFromResource as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RemoveLFTagsFromResourceFluentBuilder {
             crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RemoveLFTagsFromResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RemoveLFTagsFromResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RemoveLFTagsFromResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RemoveLFTagsFromResourceFluentBuilder {
             crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +147,7 @@ impl RemoveLFTagsFromResourceFluentBuilder {
         self
     }
     /// <p>The LF-tags to be removed from the resource.</p>
-    pub fn set_lf_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
         self.inner = self.inner.set_lf_tags(input);
         self
     }

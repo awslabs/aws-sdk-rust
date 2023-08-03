@@ -42,20 +42,16 @@ impl ::aws_http::request_id::RequestId for GetExperimentResultsOutput {
 }
 impl GetExperimentResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetExperimentResultsOutput`](crate::operation::get_experiment_results::GetExperimentResultsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_experiment_results::builders::GetExperimentResultsOutputBuilder {
+    pub fn builder() -> crate::operation::get_experiment_results::builders::GetExperimentResultsOutputBuilder {
         crate::operation::get_experiment_results::builders::GetExperimentResultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetExperimentResultsOutput`](crate::operation::get_experiment_results::GetExperimentResultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExperimentResultsOutputBuilder {
-    pub(crate) results_data:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>>,
+    pub(crate) results_data: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>>,
     pub(crate) reports: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReport>>,
     pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
@@ -74,17 +70,12 @@ impl GetExperimentResultsOutputBuilder {
         self
     }
     /// <p>An array of structures that include experiment results including metric names and values. </p>
-    pub fn set_results_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>>,
-    ) -> Self {
+    pub fn set_results_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>>) -> Self {
         self.results_data = input;
         self
     }
     /// <p>An array of structures that include experiment results including metric names and values. </p>
-    pub fn get_results_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>> {
+    pub fn get_results_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>> {
         &self.results_data
     }
     /// Appends an item to `reports`.
@@ -99,17 +90,12 @@ impl GetExperimentResultsOutputBuilder {
         self
     }
     /// <p>An array of structures that include the reports that you requested.</p>
-    pub fn set_reports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReport>>,
-    ) -> Self {
+    pub fn set_reports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReport>>) -> Self {
         self.reports = input;
         self
     }
     /// <p>An array of structures that include the reports that you requested.</p>
-    pub fn get_reports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentReport>> {
+    pub fn get_reports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentReport>> {
         &self.reports
     }
     /// Appends an item to `timestamps`.
@@ -124,17 +110,12 @@ impl GetExperimentResultsOutputBuilder {
         self
     }
     /// <p>The timestamps of each result returned.</p>
-    pub fn set_timestamps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
         self.timestamps = input;
         self
     }
     /// <p>The timestamps of each result returned.</p>
-    pub fn get_timestamps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
         &self.timestamps
     }
     /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>

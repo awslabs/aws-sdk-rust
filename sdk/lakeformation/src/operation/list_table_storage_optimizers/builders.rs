@@ -26,7 +26,7 @@ impl ListTableStorageOptimizersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTableStorageOptimizersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersInputBuilder,
+    inner: crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersInputBuilder,
 }
 impl ListTableStorageOptimizersFluentBuilder {
     /// Creates a new `ListTableStorageOptimizers`.
@@ -37,7 +37,7 @@ impl ListTableStorageOptimizersFluentBuilder {
         }
     }
     /// Access the ListTableStorageOptimizers as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListTableStorageOptimizersFluentBuilder {
             crate::operation::list_table_storage_optimizers::ListTableStorageOptimizers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListTableStorageOptimizersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListTableStorageOptimizersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListTableStorageOptimizersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListTableStorageOptimizersFluentBuilder {
             crate::operation::list_table_storage_optimizers::ListTableStorageOptimizers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_table_storage_optimizers::paginator::ListTableStorageOptimizersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_table_storage_optimizers::paginator::ListTableStorageOptimizersPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_table_storage_optimizers::paginator::ListTableStorageOptimizersPaginator {
         crate::operation::list_table_storage_optimizers::paginator::ListTableStorageOptimizersPaginator::new(self.handle, self.inner)
     }
     /// <p>The Catalog ID of the table.</p>
@@ -141,18 +130,12 @@ impl ListTableStorageOptimizersFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>Name of the database where the table is present.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>Name of the database where the table is present.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -180,17 +163,12 @@ impl ListTableStorageOptimizersFluentBuilder {
         self
     }
     /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
-    pub fn set_storage_optimizer_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OptimizerType>,
-    ) -> Self {
+    pub fn set_storage_optimizer_type(mut self, input: ::std::option::Option<crate::types::OptimizerType>) -> Self {
         self.inner = self.inner.set_storage_optimizer_type(input);
         self
     }
     /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
-    pub fn get_storage_optimizer_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OptimizerType> {
+    pub fn get_storage_optimizer_type(&self) -> &::std::option::Option<crate::types::OptimizerType> {
         self.inner.get_storage_optimizer_type()
     }
     /// <p>The number of storage optimizers to return on each call.</p>

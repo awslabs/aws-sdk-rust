@@ -63,9 +63,7 @@ impl InvalidClientException {
 
 /// A builder for [`InvalidClientException`](crate::types::error::InvalidClientException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidClientExceptionBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) error_description: ::std::option::Option<::std::string::String>,
@@ -88,18 +86,12 @@ impl InvalidClientExceptionBuilder {
         &self.error
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn error_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_description = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_error_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_description = input;
         self
     }
@@ -128,10 +120,7 @@ impl InvalidClientExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

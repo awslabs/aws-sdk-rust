@@ -30,27 +30,19 @@ impl GetRecordsInput {
 
 /// A builder for [`GetRecordsInput`](crate::operation::get_records::GetRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecordsInputBuilder {
     pub(crate) shard_iterator: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl GetRecordsInputBuilder {
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
-    pub fn shard_iterator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_iterator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
-    pub fn set_shard_iterator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shard_iterator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shard_iterator = input;
         self
     }
@@ -73,12 +65,7 @@ impl GetRecordsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetRecordsInput`](crate::operation::get_records::GetRecordsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_records::GetRecordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_records::GetRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_records::GetRecordsInput {
             shard_iterator: self.shard_iterator,
             limit: self.limit,

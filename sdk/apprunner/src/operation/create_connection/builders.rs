@@ -10,10 +10,7 @@ impl CreateConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_connection();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateConnectionFluentBuilder {
         }
     }
     /// Access the CreateConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_connection::builders::CreateConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_connection::builders::CreateConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateConnectionFluentBuilder {
             crate::operation::create_connection::CreateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl CreateConnectionFluentBuilder {
             crate::operation::create_connection::CreateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_name(input.into());
         self
     }
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_name(input);
         self
     }
@@ -149,10 +127,7 @@ impl CreateConnectionFluentBuilder {
         self
     }
     /// <p>The source repository provider.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderType>,
-    ) -> Self {
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
         self.inner = self.inner.set_provider_type(input);
         self
     }
@@ -170,10 +145,7 @@ impl CreateConnectionFluentBuilder {
         self
     }
     /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

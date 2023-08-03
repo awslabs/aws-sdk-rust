@@ -33,9 +33,7 @@ impl CreateBulkImportJobInput {
         self.files.as_deref()
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn error_report_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ErrorReportLocation> {
+    pub fn error_report_location(&self) -> ::std::option::Option<&crate::types::ErrorReportLocation> {
         self.error_report_location.as_ref()
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
@@ -45,18 +43,14 @@ impl CreateBulkImportJobInput {
 }
 impl CreateBulkImportJobInput {
     /// Creates a new builder-style object to manufacture [`CreateBulkImportJobInput`](crate::operation::create_bulk_import_job::CreateBulkImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInputBuilder {
-        crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInputBuilder {
+        crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBulkImportJobInput`](crate::operation::create_bulk_import_job::CreateBulkImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBulkImportJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_role_arn: ::std::option::Option<::std::string::String>,
@@ -105,10 +99,7 @@ impl CreateBulkImportJobInputBuilder {
         self
     }
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    pub fn set_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
-    ) -> Self {
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::File>>) -> Self {
         self.files = input;
         self
     }
@@ -122,17 +113,12 @@ impl CreateBulkImportJobInputBuilder {
         self
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn set_error_report_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorReportLocation>,
-    ) -> Self {
+    pub fn set_error_report_location(mut self, input: ::std::option::Option<crate::types::ErrorReportLocation>) -> Self {
         self.error_report_location = input;
         self
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn get_error_report_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::ErrorReportLocation> {
+    pub fn get_error_report_location(&self) -> &::std::option::Option<crate::types::ErrorReportLocation> {
         &self.error_report_location
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
@@ -141,10 +127,7 @@ impl CreateBulkImportJobInputBuilder {
         self
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-    pub fn set_job_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::JobConfiguration>,
-    ) -> Self {
+    pub fn set_job_configuration(mut self, input: ::std::option::Option<crate::types::JobConfiguration>) -> Self {
         self.job_configuration = input;
         self
     }
@@ -155,18 +138,14 @@ impl CreateBulkImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateBulkImportJobInput`](crate::operation::create_bulk_import_job::CreateBulkImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bulk_import_job::CreateBulkImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_bulk_import_job::CreateBulkImportJobInput {
-                job_name: self.job_name,
-                job_role_arn: self.job_role_arn,
-                files: self.files,
-                error_report_location: self.error_report_location,
-                job_configuration: self.job_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_bulk_import_job::CreateBulkImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_bulk_import_job::CreateBulkImportJobInput {
+            job_name: self.job_name,
+            job_role_arn: self.job_role_arn,
+            files: self.files,
+            error_report_location: self.error_report_location,
+            job_configuration: self.job_configuration,
+        })
     }
 }

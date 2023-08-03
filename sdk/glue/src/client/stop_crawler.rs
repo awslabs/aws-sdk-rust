@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_crawler::builders::StopCrawlerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_crawler::builders::StopCrawlerFluentBuilder::set_name): <p>Name of the crawler to stop.</p>
     /// - On success, responds with [`StopCrawlerOutput`](crate::operation::stop_crawler::StopCrawlerOutput)
     /// - On failure, responds with [`SdkError<StopCrawlerError>`](crate::operation::stop_crawler::StopCrawlerError)
-    pub fn stop_crawler(
-        &self,
-    ) -> crate::operation::stop_crawler::builders::StopCrawlerFluentBuilder {
+    pub fn stop_crawler(&self) -> crate::operation::stop_crawler::builders::StopCrawlerFluentBuilder {
         crate::operation::stop_crawler::builders::StopCrawlerFluentBuilder::new(self.handle.clone())
     }
 }

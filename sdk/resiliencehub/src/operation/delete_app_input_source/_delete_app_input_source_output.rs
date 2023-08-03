@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteAppInputSourceOutput {
 }
 impl DeleteAppInputSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppInputSourceOutput`](crate::operation::delete_app_input_source::DeleteAppInputSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_app_input_source::builders::DeleteAppInputSourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_app_input_source::builders::DeleteAppInputSourceOutputBuilder {
         crate::operation::delete_app_input_source::builders::DeleteAppInputSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppInputSourceOutput`](crate::operation::delete_app_input_source::DeleteAppInputSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppInputSourceOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_input_source: ::std::option::Option<crate::types::AppInputSource>,
@@ -66,10 +62,7 @@ impl DeleteAppInputSourceOutputBuilder {
         self
     }
     /// <p>The name of the input source from where the application resource is imported from.</p>
-    pub fn set_app_input_source(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInputSource>,
-    ) -> Self {
+    pub fn set_app_input_source(mut self, input: ::std::option::Option<crate::types::AppInputSource>) -> Self {
         self.app_input_source = input;
         self
     }

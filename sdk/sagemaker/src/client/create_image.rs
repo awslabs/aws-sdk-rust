@@ -11,9 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateImageOutput`](crate::operation::create_image::CreateImageOutput) with field(s):
     ///   - [`image_arn(Option<String>)`](crate::operation::create_image::CreateImageOutput::image_arn): <p>The ARN of the image.</p>
     /// - On failure, responds with [`SdkError<CreateImageError>`](crate::operation::create_image::CreateImageError)
-    pub fn create_image(
-        &self,
-    ) -> crate::operation::create_image::builders::CreateImageFluentBuilder {
+    pub fn create_image(&self) -> crate::operation::create_image::builders::CreateImageFluentBuilder {
         crate::operation::create_image::builders::CreateImageFluentBuilder::new(self.handle.clone())
     }
 }

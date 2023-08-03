@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StartReplicationTaskTypeValue {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for StartReplicationTaskTypeValue {
             "reload-target" => StartReplicationTaskTypeValue::ReloadTarget,
             "resume-processing" => StartReplicationTaskTypeValue::ResumeProcessing,
             "start-replication" => StartReplicationTaskTypeValue::StartReplication,
-            other => StartReplicationTaskTypeValue::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => StartReplicationTaskTypeValue::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

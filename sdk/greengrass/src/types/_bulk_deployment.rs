@@ -37,9 +37,7 @@ impl BulkDeployment {
 
 /// A builder for [`BulkDeployment`](crate::types::BulkDeployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BulkDeploymentBuilder {
     pub(crate) bulk_deployment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bulk_deployment_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct BulkDeploymentBuilder {
 }
 impl BulkDeploymentBuilder {
     /// The ARN of the bulk deployment.
-    pub fn bulk_deployment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the bulk deployment.
-    pub fn set_bulk_deployment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bulk_deployment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bulk_deployment_arn = input;
         self
     }
@@ -67,18 +59,12 @@ impl BulkDeploymentBuilder {
         &self.bulk_deployment_arn
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the bulk deployment.
-    pub fn set_bulk_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bulk_deployment_id = input;
         self
     }

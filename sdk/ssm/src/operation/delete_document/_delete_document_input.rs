@@ -43,9 +43,7 @@ impl DeleteDocumentInput {
 
 /// A builder for [`DeleteDocumentInput`](crate::operation::delete_document::DeleteDocumentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDocumentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl DeleteDocumentInputBuilder {
         &self.name
     }
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -118,10 +110,7 @@ impl DeleteDocumentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDocumentInput`](crate::operation::delete_document::DeleteDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_document::DeleteDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_document::DeleteDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_document::DeleteDocumentInput {
             name: self.name,
             document_version: self.document_version,

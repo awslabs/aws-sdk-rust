@@ -37,10 +37,7 @@ impl UpdatePermissionGroupFluentBuilder {
         }
     }
     /// Access the UpdatePermissionGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_permission_group::builders::UpdatePermissionGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_permission_group::builders::UpdatePermissionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdatePermissionGroupFluentBuilder {
             crate::operation::update_permission_group::UpdatePermissionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permission_group::UpdatePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permission_group::UpdatePermissionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdatePermissionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdatePermissionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_permission_group::UpdatePermissionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permission_group::UpdatePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permission_group::UpdatePermissionGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdatePermissionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_permission_group::UpdatePermissionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permission_group::UpdatePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permission_group::UpdatePermissionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdatePermissionGroupFluentBuilder {
             crate::operation::update_permission_group::UpdatePermissionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permission_group::UpdatePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permission_group::UpdatePermissionGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the permission group to update.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_group_id(input.into());
         self
     }
     /// <p>The unique identifier for the permission group to update.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_group_id(input);
         self
     }
@@ -203,10 +183,7 @@ impl UpdatePermissionGroupFluentBuilder {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn set_application_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
-    ) -> Self {
+    pub fn set_application_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>) -> Self {
         self.inner = self.inner.set_application_permissions(input);
         self
     }
@@ -222,9 +199,7 @@ impl UpdatePermissionGroupFluentBuilder {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn get_application_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
+    pub fn get_application_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
         self.inner.get_application_permissions()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>

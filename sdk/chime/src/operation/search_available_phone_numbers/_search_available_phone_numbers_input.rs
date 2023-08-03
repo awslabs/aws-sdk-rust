@@ -64,16 +64,14 @@ impl SearchAvailablePhoneNumbersInput {
 }
 impl SearchAvailablePhoneNumbersInput {
     /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersInput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput).
-    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder{
+    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder {
         crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchAvailablePhoneNumbersInput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersInputBuilder {
     pub(crate) area_code: ::std::option::Option<::std::string::String>,
     pub(crate) city: ::std::option::Option<::std::string::String>,
@@ -142,18 +140,12 @@ impl SearchAvailablePhoneNumbersInputBuilder {
         &self.state
     }
     /// <p>The toll-free prefix that you use to filter results. Only applies to the US.</p>
-    pub fn toll_free_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn toll_free_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.toll_free_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The toll-free prefix that you use to filter results. Only applies to the US.</p>
-    pub fn set_toll_free_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_toll_free_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.toll_free_prefix = input;
         self
     }
@@ -167,10 +159,7 @@ impl SearchAvailablePhoneNumbersInputBuilder {
         self
     }
     /// <p>The phone number type used to filter results. Required for non-US numbers.</p>
-    pub fn set_phone_number_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberType>,
-    ) -> Self {
+    pub fn set_phone_number_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberType>) -> Self {
         self.phone_number_type = input;
         self
     }
@@ -213,17 +202,15 @@ impl SearchAvailablePhoneNumbersInputBuilder {
         crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput {
-                area_code: self.area_code,
-                city: self.city,
-                country: self.country,
-                state: self.state,
-                toll_free_prefix: self.toll_free_prefix,
-                phone_number_type: self.phone_number_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput {
+            area_code: self.area_code,
+            city: self.city,
+            country: self.country,
+            state: self.state,
+            toll_free_prefix: self.toll_free_prefix,
+            phone_number_type: self.phone_number_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

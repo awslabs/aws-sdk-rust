@@ -10,10 +10,7 @@ impl CreateArtifactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_artifact::CreateArtifactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_artifact::CreateArtifactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_artifact::CreateArtifactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_artifact();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateArtifactFluentBuilder {
         }
     }
     /// Access the CreateArtifact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_artifact::builders::CreateArtifactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_artifact::builders::CreateArtifactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateArtifactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl CreateArtifactFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.artifact_name(input.into());
         self
     }
     /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn set_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_artifact_name(input);
         self
     }
@@ -140,10 +126,7 @@ impl CreateArtifactFluentBuilder {
         self
     }
     /// <p>The ID, ID type, and URI of the source.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ArtifactSource>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
@@ -152,18 +135,12 @@ impl CreateArtifactFluentBuilder {
         self.inner.get_source()
     }
     /// <p>The artifact type.</p>
-    pub fn artifact_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.artifact_type(input.into());
         self
     }
     /// <p>The artifact type.</p>
-    pub fn set_artifact_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_artifact_type(input);
         self
     }
@@ -176,30 +153,17 @@ impl CreateArtifactFluentBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of properties to add to the artifact.</p>
-    pub fn properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.properties(k.into(), v.into());
         self
     }
     /// <p>A list of properties to add to the artifact.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_properties(input);
         self
     }
     /// <p>A list of properties to add to the artifact.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_properties()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -208,17 +172,12 @@ impl CreateArtifactFluentBuilder {
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn set_metadata_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataProperties>,
-    ) -> Self {
+    pub fn set_metadata_properties(mut self, input: ::std::option::Option<crate::types::MetadataProperties>) -> Self {
         self.inner = self.inner.set_metadata_properties(input);
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn get_metadata_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+    pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         self.inner.get_metadata_properties()
     }
     /// Appends an item to `Tags`.
@@ -231,10 +190,7 @@ impl CreateArtifactFluentBuilder {
         self
     }
     /// <p>A list of tags to apply to the artifact.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

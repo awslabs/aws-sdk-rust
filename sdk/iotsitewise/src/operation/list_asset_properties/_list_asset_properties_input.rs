@@ -46,18 +46,14 @@ impl ListAssetPropertiesInput {
 }
 impl ListAssetPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ListAssetPropertiesInput`](crate::operation::list_asset_properties::ListAssetPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::list_asset_properties::builders::ListAssetPropertiesInputBuilder {
-        crate::operation::list_asset_properties::builders::ListAssetPropertiesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_asset_properties::builders::ListAssetPropertiesInputBuilder {
+        crate::operation::list_asset_properties::builders::ListAssetPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssetPropertiesInput`](crate::operation::list_asset_properties::ListAssetPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetPropertiesInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -123,10 +119,7 @@ impl ListAssetPropertiesInputBuilder {
     /// <li> <p> <code>BASE</code> – The list includes only base asset properties for a given asset model ID. </p> </li>
     /// </ul>
     /// <p>Default: <code>BASE</code> </p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAssetPropertiesFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAssetPropertiesFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -142,17 +135,13 @@ impl ListAssetPropertiesInputBuilder {
     /// Consumes the builder and constructs a [`ListAssetPropertiesInput`](crate::operation::list_asset_properties::ListAssetPropertiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_asset_properties::ListAssetPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_asset_properties::ListAssetPropertiesInput {
-                asset_id: self.asset_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filter: self.filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_asset_properties::ListAssetPropertiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_asset_properties::ListAssetPropertiesInput {
+            asset_id: self.asset_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filter: self.filter,
+        })
     }
 }

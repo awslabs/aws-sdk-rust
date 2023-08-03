@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`remove_tag_keys(Vec<String>)`](crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceFluentBuilder::remove_tag_keys) / [`set_remove_tag_keys(Option<Vec<String>>)`](crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceFluentBuilder::set_remove_tag_keys): <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
     /// - On success, responds with [`ChangeTagsForResourceOutput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput)
     /// - On failure, responds with [`SdkError<ChangeTagsForResourceError>`](crate::operation::change_tags_for_resource::ChangeTagsForResourceError)
-    pub fn change_tags_for_resource(
-        &self,
-    ) -> crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceFluentBuilder
-    {
+    pub fn change_tags_for_resource(&self) -> crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceFluentBuilder {
         crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceFluentBuilder::new(self.handle.clone())
     }
 }

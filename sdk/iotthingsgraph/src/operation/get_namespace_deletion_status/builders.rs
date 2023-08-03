@@ -27,7 +27,7 @@ impl GetNamespaceDeletionStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetNamespaceDeletionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusInputBuilder,
+    inner: crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusInputBuilder,
 }
 impl GetNamespaceDeletionStatusFluentBuilder {
     /// Creates a new `GetNamespaceDeletionStatus`.
@@ -38,7 +38,7 @@ impl GetNamespaceDeletionStatusFluentBuilder {
         }
     }
     /// Access the GetNamespaceDeletionStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetNamespaceDeletionStatusFluentBuilder {
             crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetNamespaceDeletionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetNamespaceDeletionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetNamespaceDeletionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetNamespaceDeletionStatusFluentBuilder {
             crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusError>,
     > {
         self.customize_middleware().await
     }

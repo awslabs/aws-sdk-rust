@@ -31,19 +31,16 @@ impl DescribeLaunchConfigurationsInput {
 }
 impl DescribeLaunchConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchConfigurationsInput`](crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_launch_configurations::builders::DescribeLaunchConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_launch_configurations::builders::DescribeLaunchConfigurationsInputBuilder {
         crate::operation::describe_launch_configurations::builders::DescribeLaunchConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLaunchConfigurationsInput`](crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationsInputBuilder {
-    pub(crate) launch_configuration_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) launch_configuration_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -54,10 +51,7 @@ impl DescribeLaunchConfigurationsInputBuilder {
     ///
     /// <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn launch_configuration_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.launch_configuration_names.unwrap_or_default();
         v.push(input.into());
         self.launch_configuration_names = ::std::option::Option::Some(v);
@@ -65,18 +59,13 @@ impl DescribeLaunchConfigurationsInputBuilder {
     }
     /// <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn set_launch_configuration_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_launch_configuration_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.launch_configuration_names = input;
         self
     }
     /// <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn get_launch_configuration_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_configuration_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.launch_configuration_names
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -114,12 +103,10 @@ impl DescribeLaunchConfigurationsInputBuilder {
         crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput {
-                launch_configuration_names: self.launch_configuration_names,
-                next_token: self.next_token,
-                max_records: self.max_records,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput {
+            launch_configuration_names: self.launch_configuration_names,
+            next_token: self.next_token,
+            max_records: self.max_records,
+        })
     }
 }

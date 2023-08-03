@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UndeprecateActivityTypeOutput {
 }
 impl UndeprecateActivityTypeOutput {
     /// Creates a new builder-style object to manufacture [`UndeprecateActivityTypeOutput`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeOutputBuilder {
         crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UndeprecateActivityTypeOutput`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UndeprecateActivityTypeOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UndeprecateActivityTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UndeprecateActivityTypeOutput`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput {
+    pub fn build(self) -> crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput {
         crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput {
             _request_id: self._request_id,
         }

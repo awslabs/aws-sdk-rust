@@ -23,9 +23,7 @@ impl City {
 
 /// A builder for [`City`](crate::types::City).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CityBuilder {
     pub(crate) city_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl CityBuilder {
     }
     /// Consumes the builder and constructs a [`City`](crate::types::City).
     pub fn build(self) -> crate::types::City {
-        crate::types::City {
-            city_name: self.city_name,
-        }
+        crate::types::City { city_name: self.city_name }
     }
 }

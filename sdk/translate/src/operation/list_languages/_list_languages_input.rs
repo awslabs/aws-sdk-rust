@@ -15,9 +15,7 @@ pub struct ListLanguagesInput {
 }
 impl ListLanguagesInput {
     /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
-    pub fn display_language_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DisplayLanguageCode> {
+    pub fn display_language_code(&self) -> ::std::option::Option<&crate::types::DisplayLanguageCode> {
         self.display_language_code.as_ref()
     }
     /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
@@ -38,9 +36,7 @@ impl ListLanguagesInput {
 
 /// A builder for [`ListLanguagesInput`](crate::operation::list_languages::ListLanguagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLanguagesInputBuilder {
     pub(crate) display_language_code: ::std::option::Option<crate::types::DisplayLanguageCode>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,12 @@ impl ListLanguagesInputBuilder {
         self
     }
     /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
-    pub fn set_display_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DisplayLanguageCode>,
-    ) -> Self {
+    pub fn set_display_language_code(mut self, input: ::std::option::Option<crate::types::DisplayLanguageCode>) -> Self {
         self.display_language_code = input;
         self
     }
     /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
-    pub fn get_display_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
+    pub fn get_display_language_code(&self) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
         &self.display_language_code
     }
     /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
@@ -97,10 +88,7 @@ impl ListLanguagesInputBuilder {
     /// Consumes the builder and constructs a [`ListLanguagesInput`](crate::operation::list_languages::ListLanguagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_languages::ListLanguagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_languages::ListLanguagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_languages::ListLanguagesInput {
             display_language_code: self.display_language_code,
             next_token: self.next_token,

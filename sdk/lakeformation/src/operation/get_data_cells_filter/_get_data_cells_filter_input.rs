@@ -36,17 +36,14 @@ impl GetDataCellsFilterInput {
 }
 impl GetDataCellsFilterInput {
     /// Creates a new builder-style object to manufacture [`GetDataCellsFilterInput`](crate::operation::get_data_cells_filter::GetDataCellsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_cells_filter::builders::GetDataCellsFilterInputBuilder {
+    pub fn builder() -> crate::operation::get_data_cells_filter::builders::GetDataCellsFilterInputBuilder {
         crate::operation::get_data_cells_filter::builders::GetDataCellsFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataCellsFilterInput`](crate::operation::get_data_cells_filter::GetDataCellsFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataCellsFilterInputBuilder {
     pub(crate) table_catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct GetDataCellsFilterInputBuilder {
 }
 impl GetDataCellsFilterInputBuilder {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn table_catalog_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_catalog_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn set_table_catalog_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_catalog_id = input;
         self
     }
@@ -75,18 +66,12 @@ impl GetDataCellsFilterInputBuilder {
         &self.table_catalog_id
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -125,17 +110,13 @@ impl GetDataCellsFilterInputBuilder {
     /// Consumes the builder and constructs a [`GetDataCellsFilterInput`](crate::operation::get_data_cells_filter::GetDataCellsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_cells_filter::GetDataCellsFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_data_cells_filter::GetDataCellsFilterInput {
-                table_catalog_id: self.table_catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_data_cells_filter::GetDataCellsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_data_cells_filter::GetDataCellsFilterInput {
+            table_catalog_id: self.table_catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            name: self.name,
+        })
     }
 }

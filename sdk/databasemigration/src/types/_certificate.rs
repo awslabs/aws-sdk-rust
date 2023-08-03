@@ -41,9 +41,7 @@ impl Certificate {
         self.certificate_identifier.as_deref()
     }
     /// <p>The date that the certificate was created.</p>
-    pub fn certificate_creation_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn certificate_creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.certificate_creation_date.as_ref()
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
@@ -88,9 +86,7 @@ impl Certificate {
 
 /// A builder for [`Certificate`](crate::types::Certificate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateBuilder {
     pub(crate) certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -105,18 +101,12 @@ pub struct CertificateBuilder {
 }
 impl CertificateBuilder {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn set_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_identifier = input;
         self
     }
@@ -130,32 +120,21 @@ impl CertificateBuilder {
         self
     }
     /// <p>The date that the certificate was created.</p>
-    pub fn set_certificate_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_certificate_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.certificate_creation_date = input;
         self
     }
     /// <p>The date that the certificate was created.</p>
-    pub fn get_certificate_creation_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_certificate_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.certificate_creation_date
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-    pub fn certificate_pem(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_pem = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-    pub fn set_certificate_pem(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_pem = input;
         self
     }
@@ -169,10 +148,7 @@ impl CertificateBuilder {
         self
     }
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
-    pub fn set_certificate_wallet(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_certificate_wallet(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.certificate_wallet = input;
         self
     }
@@ -181,18 +157,12 @@ impl CertificateBuilder {
         &self.certificate_wallet
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -201,18 +171,12 @@ impl CertificateBuilder {
         &self.certificate_arn
     }
     /// <p>The owner of the certificate.</p>
-    pub fn certificate_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner of the certificate.</p>
-    pub fn set_certificate_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_owner = input;
         self
     }
@@ -226,10 +190,7 @@ impl CertificateBuilder {
         self
     }
     /// <p>The beginning date that the certificate is valid.</p>
-    pub fn set_valid_from_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_from_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_from_date = input;
         self
     }
@@ -243,10 +204,7 @@ impl CertificateBuilder {
         self
     }
     /// <p>The final date that the certificate is valid.</p>
-    pub fn set_valid_to_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_to_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_to_date = input;
         self
     }
@@ -255,18 +213,12 @@ impl CertificateBuilder {
         &self.valid_to_date
     }
     /// <p>The signing algorithm for the certificate.</p>
-    pub fn signing_algorithm(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signing algorithm for the certificate.</p>
-    pub fn set_signing_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signing_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_algorithm = input;
         self
     }

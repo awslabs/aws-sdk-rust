@@ -15,10 +15,7 @@ pub fn ser_create_hosted_zone_input_input(
     }
     if let Some(var_3) = &input.hosted_zone_config {
         let inner_writer = scope.start_el("HostedZoneConfig");
-        crate::protocol_serde::shape_hosted_zone_config::ser_hosted_zone_config(
-            var_3,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_hosted_zone_config::ser_hosted_zone_config(var_3, inner_writer)?
     }
     if let Some(var_4) = &input.name {
         let mut inner_writer = scope.start_el("Name").finish();

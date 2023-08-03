@@ -30,9 +30,7 @@ impl AbortVaultLockInput {
 
 /// A builder for [`AbortVaultLockInput`](crate::operation::abort_vault_lock::AbortVaultLockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AbortVaultLockInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl AbortVaultLockInputBuilder {
     /// Consumes the builder and constructs a [`AbortVaultLockInput`](crate::operation::abort_vault_lock::AbortVaultLockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::abort_vault_lock::AbortVaultLockInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::abort_vault_lock::AbortVaultLockInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::abort_vault_lock::AbortVaultLockInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

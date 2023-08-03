@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::get_container_recipe::GetContainerRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`container_recipe(Option<ContainerRecipe>)`](crate::operation::get_container_recipe::GetContainerRecipeOutput::container_recipe): <p>The container recipe object that is returned.</p>
     /// - On failure, responds with [`SdkError<GetContainerRecipeError>`](crate::operation::get_container_recipe::GetContainerRecipeError)
-    pub fn get_container_recipe(
-        &self,
-    ) -> crate::operation::get_container_recipe::builders::GetContainerRecipeFluentBuilder {
-        crate::operation::get_container_recipe::builders::GetContainerRecipeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_container_recipe(&self) -> crate::operation::get_container_recipe::builders::GetContainerRecipeFluentBuilder {
+        crate::operation::get_container_recipe::builders::GetContainerRecipeFluentBuilder::new(self.handle.clone())
     }
 }

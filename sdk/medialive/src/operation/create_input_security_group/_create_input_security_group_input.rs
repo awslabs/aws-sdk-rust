@@ -6,50 +6,34 @@
 pub struct CreateInputSecurityGroupInput {
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// List of IPv4 CIDR addresses to whitelist
     #[doc(hidden)]
-    pub whitelist_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
+    pub whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
 }
 impl CreateInputSecurityGroupInput {
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// List of IPv4 CIDR addresses to whitelist
-    pub fn whitelist_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InputWhitelistRuleCidr]> {
+    pub fn whitelist_rules(&self) -> ::std::option::Option<&[crate::types::InputWhitelistRuleCidr]> {
         self.whitelist_rules.as_deref()
     }
 }
 impl CreateInputSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateInputSecurityGroupInput`](crate::operation::create_input_security_group::CreateInputSecurityGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_input_security_group::builders::CreateInputSecurityGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_input_security_group::builders::CreateInputSecurityGroupInputBuilder {
         crate::operation::create_input_security_group::builders::CreateInputSecurityGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInputSecurityGroupInput`](crate::operation::create_input_security_group::CreateInputSecurityGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInputSecurityGroupInputBuilder {
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) whitelist_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
 }
 impl CreateInputSecurityGroupInputBuilder {
     /// Adds a key-value pair to `tags`.
@@ -57,32 +41,19 @@ impl CreateInputSecurityGroupInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `whitelist_rules`.
@@ -97,17 +68,12 @@ impl CreateInputSecurityGroupInputBuilder {
         self
     }
     /// List of IPv4 CIDR addresses to whitelist
-    pub fn set_whitelist_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
-    ) -> Self {
+    pub fn set_whitelist_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>) -> Self {
         self.whitelist_rules = input;
         self
     }
     /// List of IPv4 CIDR addresses to whitelist
-    pub fn get_whitelist_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>> {
+    pub fn get_whitelist_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>> {
         &self.whitelist_rules
     }
     /// Consumes the builder and constructs a [`CreateInputSecurityGroupInput`](crate::operation::create_input_security_group::CreateInputSecurityGroupInput).
@@ -117,11 +83,9 @@ impl CreateInputSecurityGroupInputBuilder {
         crate::operation::create_input_security_group::CreateInputSecurityGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_input_security_group::CreateInputSecurityGroupInput {
-                tags: self.tags,
-                whitelist_rules: self.whitelist_rules,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_input_security_group::CreateInputSecurityGroupInput {
+            tags: self.tags,
+            whitelist_rules: self.whitelist_rules,
+        })
     }
 }

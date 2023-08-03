@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateStorageVirtualMachineOutput`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput) with field(s):
     ///   - [`storage_virtual_machine(Option<StorageVirtualMachine>)`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput::storage_virtual_machine): <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateStorageVirtualMachineError>`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineError)
-    pub fn update_storage_virtual_machine(&self) -> crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineFluentBuilder{
+    pub fn update_storage_virtual_machine(
+        &self,
+    ) -> crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineFluentBuilder {
         crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineFluentBuilder::new(self.handle.clone())
     }
 }

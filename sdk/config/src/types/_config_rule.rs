@@ -54,8 +54,7 @@ pub struct ConfigRule {
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
     #[doc(hidden)]
-    pub evaluation_modes:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>>,
+    pub evaluation_modes: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>>,
 }
 impl ConfigRule {
     /// <p>The name that you assign to the Config rule. The name is required if you are adding a new rule.</p>
@@ -95,9 +94,7 @@ impl ConfigRule {
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
-    pub fn maximum_execution_frequency(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaximumExecutionFrequency> {
+    pub fn maximum_execution_frequency(&self) -> ::std::option::Option<&crate::types::MaximumExecutionFrequency> {
         self.maximum_execution_frequency.as_ref()
     }
     /// <p>Indicates whether the Config rule is active or is currently being deleted by Config. It can also indicate the evaluation status for the Config rule.</p>
@@ -114,9 +111,7 @@ impl ConfigRule {
         self.created_by.as_deref()
     }
     /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
-    pub fn evaluation_modes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EvaluationModeConfiguration]> {
+    pub fn evaluation_modes(&self) -> ::std::option::Option<&[crate::types::EvaluationModeConfiguration]> {
         self.evaluation_modes.as_deref()
     }
 }
@@ -129,9 +124,7 @@ impl ConfigRule {
 
 /// A builder for [`ConfigRule`](crate::types::ConfigRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigRuleBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) config_rule_arn: ::std::option::Option<::std::string::String>,
@@ -140,27 +133,19 @@ pub struct ConfigRuleBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) input_parameters: ::std::option::Option<::std::string::String>,
-    pub(crate) maximum_execution_frequency:
-        ::std::option::Option<crate::types::MaximumExecutionFrequency>,
+    pub(crate) maximum_execution_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
     pub(crate) config_rule_state: ::std::option::Option<crate::types::ConfigRuleState>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
-    pub(crate) evaluation_modes:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>>,
+    pub(crate) evaluation_modes: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>>,
 }
 impl ConfigRuleBuilder {
     /// <p>The name that you assign to the Config rule. The name is required if you are adding a new rule.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that you assign to the Config rule. The name is required if you are adding a new rule.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_name = input;
         self
     }
@@ -169,18 +154,12 @@ impl ConfigRuleBuilder {
         &self.config_rule_name
     }
     /// <p>The Amazon Resource Name (ARN) of the Config rule.</p>
-    pub fn config_rule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Config rule.</p>
-    pub fn set_config_rule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_arn = input;
         self
     }
@@ -189,18 +168,12 @@ impl ConfigRuleBuilder {
         &self.config_rule_arn
     }
     /// <p>The ID of the Config rule.</p>
-    pub fn config_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Config rule.</p>
-    pub fn set_config_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_id = input;
         self
     }
@@ -257,18 +230,12 @@ impl ConfigRuleBuilder {
         &self.source
     }
     /// <p>A string, in JSON format, that is passed to the Config rule Lambda function.</p>
-    pub fn input_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string, in JSON format, that is passed to the Config rule Lambda function.</p>
-    pub fn set_input_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_parameters = input;
         self
     }
@@ -283,10 +250,7 @@ impl ConfigRuleBuilder {
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
-    pub fn maximum_execution_frequency(
-        mut self,
-        input: crate::types::MaximumExecutionFrequency,
-    ) -> Self {
+    pub fn maximum_execution_frequency(mut self, input: crate::types::MaximumExecutionFrequency) -> Self {
         self.maximum_execution_frequency = ::std::option::Option::Some(input);
         self
     }
@@ -297,10 +261,7 @@ impl ConfigRuleBuilder {
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
-    pub fn set_maximum_execution_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
-    ) -> Self {
+    pub fn set_maximum_execution_frequency(mut self, input: ::std::option::Option<crate::types::MaximumExecutionFrequency>) -> Self {
         self.maximum_execution_frequency = input;
         self
     }
@@ -311,9 +272,7 @@ impl ConfigRuleBuilder {
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
-    pub fn get_maximum_execution_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaximumExecutionFrequency> {
+    pub fn get_maximum_execution_frequency(&self) -> &::std::option::Option<crate::types::MaximumExecutionFrequency> {
         &self.maximum_execution_frequency
     }
     /// <p>Indicates whether the Config rule is active or is currently being deleted by Config. It can also indicate the evaluation status for the Config rule.</p>
@@ -328,10 +287,7 @@ impl ConfigRuleBuilder {
     /// <p>Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.</p>
     /// <p>Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.</p>
     /// <p>Config temporarily sets the state of a rule to <code>DELETING</code> after you use the <code>DeleteConfigRule</code> request to delete the rule. After Config deletes the rule, the rule and all of its evaluations are erased and are no longer available.</p>
-    pub fn set_config_rule_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigRuleState>,
-    ) -> Self {
+    pub fn set_config_rule_state(mut self, input: ::std::option::Option<crate::types::ConfigRuleState>) -> Self {
         self.config_rule_state = input;
         self
     }
@@ -374,17 +330,12 @@ impl ConfigRuleBuilder {
         self
     }
     /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
-    pub fn set_evaluation_modes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>>,
-    ) -> Self {
+    pub fn set_evaluation_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>>) -> Self {
         self.evaluation_modes = input;
         self
     }
     /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
-    pub fn get_evaluation_modes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>> {
+    pub fn get_evaluation_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>> {
         &self.evaluation_modes
     }
     /// Consumes the builder and constructs a [`ConfigRule`](crate::types::ConfigRule).

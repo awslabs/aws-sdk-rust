@@ -13,9 +13,7 @@ pub fn ser_update_fleet_attributes_input(
         object.key("Description").string(var_3.as_str());
     }
     if let Some(var_4) = &input.new_game_session_protection_policy {
-        object
-            .key("NewGameSessionProtectionPolicy")
-            .string(var_4.as_str());
+        object.key("NewGameSessionProtectionPolicy").string(var_4.as_str());
     }
     if let Some(var_5) = &input.resource_creation_limit_policy {
         #[allow(unused_mut)]
@@ -35,10 +33,7 @@ pub fn ser_update_fleet_attributes_input(
     if let Some(var_10) = &input.anywhere_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("AnywhereConfiguration").start_object();
-        crate::protocol_serde::shape_anywhere_configuration::ser_anywhere_configuration(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_anywhere_configuration::ser_anywhere_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

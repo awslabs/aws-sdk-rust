@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::get_package_version::GetPackageVersionOutput::creation_date): <p>The date when the package version was created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::get_package_version::GetPackageVersionOutput::last_modified_date): <p>The date when the package version was last updated.</p>
     /// - On failure, responds with [`SdkError<GetPackageVersionError>`](crate::operation::get_package_version::GetPackageVersionError)
-    pub fn get_package_version(
-        &self,
-    ) -> crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder {
-        crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_package_version(&self) -> crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder {
+        crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::new(self.handle.clone())
     }
 }

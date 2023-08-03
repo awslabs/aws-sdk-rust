@@ -15,34 +15,25 @@ impl DeleteOpsMetadataInput {
 }
 impl DeleteOpsMetadataInput {
     /// Creates a new builder-style object to manufacture [`DeleteOpsMetadataInput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataInputBuilder {
+    pub fn builder() -> crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataInputBuilder {
         crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOpsMetadataInput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOpsMetadataInputBuilder {
     pub(crate) ops_metadata_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOpsMetadataInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-    pub fn ops_metadata_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_metadata_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_metadata_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-    pub fn set_ops_metadata_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_metadata_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_metadata_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteOpsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOpsMetadataInput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_ops_metadata::DeleteOpsMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_ops_metadata::DeleteOpsMetadataInput {
-                ops_metadata_arn: self.ops_metadata_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_ops_metadata::DeleteOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_ops_metadata::DeleteOpsMetadataInput {
+            ops_metadata_arn: self.ops_metadata_arn,
+        })
     }
 }

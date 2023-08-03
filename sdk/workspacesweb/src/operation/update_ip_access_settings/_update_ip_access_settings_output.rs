@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateIpAccessSettingsOutput {
 }
 impl UpdateIpAccessSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIpAccessSettingsOutput`](crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsOutputBuilder {
         crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIpAccessSettingsOutput`](crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIpAccessSettingsOutputBuilder {
     pub(crate) ip_access_settings: ::std::option::Option<crate::types::IpAccessSettings>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateIpAccessSettingsOutputBuilder {
         self
     }
     /// <p>The IP access settings.</p>
-    pub fn set_ip_access_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAccessSettings>,
-    ) -> Self {
+    pub fn set_ip_access_settings(mut self, input: ::std::option::Option<crate::types::IpAccessSettings>) -> Self {
         self.ip_access_settings = input;
         self
     }
@@ -65,9 +58,7 @@ impl UpdateIpAccessSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateIpAccessSettingsOutput`](crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput {
+    pub fn build(self) -> crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput {
         crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput {
             ip_access_settings: self.ip_access_settings,
             _request_id: self._request_id,

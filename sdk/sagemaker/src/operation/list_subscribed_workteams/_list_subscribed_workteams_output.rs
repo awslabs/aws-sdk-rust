@@ -5,8 +5,7 @@
 pub struct ListSubscribedWorkteamsOutput {
     /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
     #[doc(hidden)]
-    pub subscribed_workteams:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubscribedWorkteam>>,
+    pub subscribed_workteams: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedWorkteam>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of work teams, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSubscribedWorkteamsOutput {
 }
 impl ListSubscribedWorkteamsOutput {
     /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
-    pub fn subscribed_workteams(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SubscribedWorkteam]> {
+    pub fn subscribed_workteams(&self) -> ::std::option::Option<&[crate::types::SubscribedWorkteam]> {
         self.subscribed_workteams.as_deref()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of work teams, use it in the subsequent request.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSubscribedWorkteamsOutput {
 }
 impl ListSubscribedWorkteamsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscribedWorkteamsOutput`](crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsOutputBuilder {
         crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSubscribedWorkteamsOutput`](crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubscribedWorkteamsOutputBuilder {
-    pub(crate) subscribed_workteams:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubscribedWorkteam>>,
+    pub(crate) subscribed_workteams: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedWorkteam>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListSubscribedWorkteamsOutputBuilder {
         self
     }
     /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
-    pub fn set_subscribed_workteams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedWorkteam>>,
-    ) -> Self {
+    pub fn set_subscribed_workteams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedWorkteam>>) -> Self {
         self.subscribed_workteams = input;
         self
     }
     /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
-    pub fn get_subscribed_workteams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedWorkteam>> {
+    pub fn get_subscribed_workteams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedWorkteam>> {
         &self.subscribed_workteams
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of work teams, use it in the subsequent request.</p>
@@ -99,9 +86,7 @@ impl ListSubscribedWorkteamsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSubscribedWorkteamsOutput`](crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput {
+    pub fn build(self) -> crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput {
         crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput {
             subscribed_workteams: self.subscribed_workteams,
             next_token: self.next_token,

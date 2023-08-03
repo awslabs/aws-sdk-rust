@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateLocationFsxLustreOutput {
 }
 impl CreateLocationFsxLustreOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxLustreOutput`](crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreOutput).
-    pub fn builder(
-    ) -> crate::operation::create_location_fsx_lustre::builders::CreateLocationFsxLustreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_location_fsx_lustre::builders::CreateLocationFsxLustreOutputBuilder {
         crate::operation::create_location_fsx_lustre::builders::CreateLocationFsxLustreOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationFsxLustreOutput`](crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationFsxLustreOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl CreateLocationFsxLustreOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLocationFsxLustreOutput`](crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreOutput {
+    pub fn build(self) -> crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreOutput {
         crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreOutput {
             location_arn: self.location_arn,
             _request_id: self._request_id,

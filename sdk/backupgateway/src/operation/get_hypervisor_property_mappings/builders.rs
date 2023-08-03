@@ -26,7 +26,7 @@ impl GetHypervisorPropertyMappingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHypervisorPropertyMappingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsInputBuilder,
+    inner: crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsInputBuilder,
 }
 impl GetHypervisorPropertyMappingsFluentBuilder {
     /// Creates a new `GetHypervisorPropertyMappings`.
@@ -37,7 +37,7 @@ impl GetHypervisorPropertyMappingsFluentBuilder {
         }
     }
     /// Access the GetHypervisorPropertyMappings as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetHypervisorPropertyMappingsFluentBuilder {
             crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetHypervisorPropertyMappingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetHypervisorPropertyMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetHypervisorPropertyMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetHypervisorPropertyMappingsFluentBuilder {
             crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hypervisor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hypervisor_arn(input);
         self
     }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetIdentityProviderByIdentifierOutput`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput) with field(s):
     ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput::identity_provider): <p>The identity provider details.</p>
     /// - On failure, responds with [`SdkError<GetIdentityProviderByIdentifierError>`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError)
-    pub fn get_identity_provider_by_identifier(&self) -> crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierFluentBuilder{
+    pub fn get_identity_provider_by_identifier(
+        &self,
+    ) -> crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierFluentBuilder {
         crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierFluentBuilder::new(self.handle.clone())
     }
 }

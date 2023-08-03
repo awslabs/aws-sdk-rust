@@ -88,9 +88,7 @@ impl DescribedAgreement {
 
 /// A builder for [`DescribedAgreement`](crate::types::DescribedAgreement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribedAgreementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) agreement_id: ::std::option::Option<::std::string::String>,
@@ -152,10 +150,7 @@ impl DescribedAgreementBuilder {
         self
     }
     /// <p>The current status of the agreement, either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AgreementStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -178,18 +173,12 @@ impl DescribedAgreementBuilder {
         &self.server_id
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn local_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn set_local_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_profile_id = input;
         self
     }
@@ -198,18 +187,12 @@ impl DescribedAgreementBuilder {
         &self.local_profile_id
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
-    pub fn partner_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
-    pub fn set_partner_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partner_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_profile_id = input;
         self
     }
@@ -218,18 +201,12 @@ impl DescribedAgreementBuilder {
         &self.partner_profile_id
     }
     /// <p>The landing directory (folder) for files that are transferred by using the AS2 protocol.</p>
-    pub fn base_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The landing directory (folder) for files that are transferred by using the AS2 protocol.</p>
-    pub fn set_base_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_base_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_directory = input;
         self
     }
@@ -266,10 +243,7 @@ impl DescribedAgreementBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

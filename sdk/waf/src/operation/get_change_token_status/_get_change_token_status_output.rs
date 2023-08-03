@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetChangeTokenStatusOutput {
 }
 impl GetChangeTokenStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetChangeTokenStatusOutput`](crate::operation::get_change_token_status::GetChangeTokenStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_change_token_status::builders::GetChangeTokenStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_change_token_status::builders::GetChangeTokenStatusOutputBuilder {
         crate::operation::get_change_token_status::builders::GetChangeTokenStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetChangeTokenStatusOutput`](crate::operation::get_change_token_status::GetChangeTokenStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChangeTokenStatusOutputBuilder {
     pub(crate) change_token_status: ::std::option::Option<crate::types::ChangeTokenStatus>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetChangeTokenStatusOutputBuilder {
         self
     }
     /// <p>The status of the change token.</p>
-    pub fn set_change_token_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeTokenStatus>,
-    ) -> Self {
+    pub fn set_change_token_status(mut self, input: ::std::option::Option<crate::types::ChangeTokenStatus>) -> Self {
         self.change_token_status = input;
         self
     }
     /// <p>The status of the change token.</p>
-    pub fn get_change_token_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChangeTokenStatus> {
+    pub fn get_change_token_status(&self) -> &::std::option::Option<crate::types::ChangeTokenStatus> {
         &self.change_token_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

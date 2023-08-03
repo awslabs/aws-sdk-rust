@@ -23,9 +23,7 @@ impl ZendeskSourceProperties {
 
 /// A builder for [`ZendeskSourceProperties`](crate::types::ZendeskSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ZendeskSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ZendeskSourcePropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`ZendeskSourceProperties`](crate::types::ZendeskSourceProperties).
     pub fn build(self) -> crate::types::ZendeskSourceProperties {
-        crate::types::ZendeskSourceProperties {
-            object: self.object,
-        }
+        crate::types::ZendeskSourceProperties { object: self.object }
     }
 }

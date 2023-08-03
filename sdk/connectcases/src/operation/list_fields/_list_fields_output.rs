@@ -35,9 +35,7 @@ impl ListFieldsOutput {
 
 /// A builder for [`ListFieldsOutput`](crate::operation::list_fields::ListFieldsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFieldsOutputBuilder {
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFieldsOutputBuilder {
         self
     }
     /// <p>List of detailed field information.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSummary>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSummary>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>List of detailed field information.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSummary>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSummary>> {
         &self.fields
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>

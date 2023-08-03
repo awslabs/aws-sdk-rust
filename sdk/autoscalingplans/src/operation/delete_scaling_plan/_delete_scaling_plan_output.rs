@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteScalingPlanOutput {
 }
 impl DeleteScalingPlanOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScalingPlanOutput`](crate::operation::delete_scaling_plan::DeleteScalingPlanOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_scaling_plan::builders::DeleteScalingPlanOutputBuilder {
+    pub fn builder() -> crate::operation::delete_scaling_plan::builders::DeleteScalingPlanOutputBuilder {
         crate::operation::delete_scaling_plan::builders::DeleteScalingPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteScalingPlanOutput`](crate::operation::delete_scaling_plan::DeleteScalingPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScalingPlanOutputBuilder {
     _request_id: Option<String>,
 }

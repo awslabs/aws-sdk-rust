@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSnapshotScheduleOutput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput) with field(s):
     ///   - [`volume_arn(Option<String>)`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput::volume_arn): <p>The volume which snapshot schedule was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteSnapshotScheduleError>`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError)
-    pub fn delete_snapshot_schedule(
-        &self,
-    ) -> crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleFluentBuilder
-    {
+    pub fn delete_snapshot_schedule(&self) -> crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleFluentBuilder {
         crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPublishedSchemaArnsOutput {
 }
 impl ListPublishedSchemaArnsOutput {
     /// Creates a new builder-style object to manufacture [`ListPublishedSchemaArnsOutput`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsOutputBuilder {
         crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPublishedSchemaArnsOutput`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPublishedSchemaArnsOutputBuilder {
     pub(crate) schema_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListPublishedSchemaArnsOutputBuilder {
         self
     }
     /// <p>The ARNs of published schemas.</p>
-    pub fn set_schema_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_schema_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.schema_arns = input;
         self
     }
     /// <p>The ARNs of published schemas.</p>
-    pub fn get_schema_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_schema_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.schema_arns
     }
     /// <p>The pagination token.</p>
@@ -95,9 +86,7 @@ impl ListPublishedSchemaArnsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPublishedSchemaArnsOutput`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput {
+    pub fn build(self) -> crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput {
         crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput {
             schema_arns: self.schema_arns,
             next_token: self.next_token,

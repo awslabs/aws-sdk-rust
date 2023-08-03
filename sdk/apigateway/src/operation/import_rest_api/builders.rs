@@ -10,10 +10,7 @@ impl ImportRestApiInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_rest_api::ImportRestApiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_rest_api::ImportRestApiError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_rest_api::ImportRestApiError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_rest_api();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ImportRestApiFluentBuilder {
         }
     }
     /// Access the ImportRestApi as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_rest_api::builders::ImportRestApiInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_rest_api::builders::ImportRestApiInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ImportRestApiFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,11 +130,7 @@ impl ImportRestApiFluentBuilder {
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameters(k.into(), v.into());
         self
     }
@@ -152,12 +140,7 @@ impl ImportRestApiFluentBuilder {
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -167,11 +150,7 @@ impl ImportRestApiFluentBuilder {
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_parameters()
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>

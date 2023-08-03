@@ -10,10 +10,7 @@ impl StartTaskExecutionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_task_execution::StartTaskExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_task_execution::StartTaskExecutionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_task_execution::StartTaskExecutionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_task_execution();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl StartTaskExecutionFluentBuilder {
         }
     }
     /// Access the StartTaskExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_task_execution::builders::StartTaskExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_task_execution::builders::StartTaskExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl StartTaskExecutionFluentBuilder {
             crate::operation::start_task_execution::StartTaskExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_task_execution::StartTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_task_execution::StartTaskExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl StartTaskExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl StartTaskExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_task_execution::StartTaskExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_task_execution::StartTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_task_execution::StartTaskExecutionError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl StartTaskExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_task_execution::StartTaskExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_task_execution::StartTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_task_execution::StartTaskExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl StartTaskExecutionFluentBuilder {
             crate::operation::start_task_execution::StartTaskExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_task_execution::StartTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_task_execution::StartTaskExecutionError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +131,7 @@ impl StartTaskExecutionFluentBuilder {
     }
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    pub fn set_override_options(
-        mut self,
-        input: ::std::option::Option<crate::types::Options>,
-    ) -> Self {
+    pub fn set_override_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.inner = self.inner.set_override_options(input);
         self
     }
@@ -169,17 +150,12 @@ impl StartTaskExecutionFluentBuilder {
         self
     }
     /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    pub fn set_includes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    ) -> Self {
+    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.inner = self.inner.set_includes(input);
         self
     }
     /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    pub fn get_includes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         self.inner.get_includes()
     }
     /// Appends an item to `Excludes`.
@@ -192,17 +168,12 @@ impl StartTaskExecutionFluentBuilder {
         self
     }
     /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    pub fn set_excludes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    ) -> Self {
+    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.inner = self.inner.set_excludes(input);
         self
     }
     /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    pub fn get_excludes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         self.inner.get_excludes()
     }
     /// Appends an item to `Tags`.
@@ -217,10 +188,7 @@ impl StartTaskExecutionFluentBuilder {
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
     /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

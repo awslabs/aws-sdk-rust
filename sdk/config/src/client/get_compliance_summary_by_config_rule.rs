@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`GetComplianceSummaryByConfigRuleOutput`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput) with field(s):
     ///   - [`compliance_summary(Option<ComplianceSummary>)`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput::compliance_summary): <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
     /// - On failure, responds with [`SdkError<GetComplianceSummaryByConfigRuleError>`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleError)
-    pub fn get_compliance_summary_by_config_rule(&self) -> crate::operation::get_compliance_summary_by_config_rule::builders::GetComplianceSummaryByConfigRuleFluentBuilder{
+    pub fn get_compliance_summary_by_config_rule(
+        &self,
+    ) -> crate::operation::get_compliance_summary_by_config_rule::builders::GetComplianceSummaryByConfigRuleFluentBuilder {
         crate::operation::get_compliance_summary_by_config_rule::builders::GetComplianceSummaryByConfigRuleFluentBuilder::new(self.handle.clone())
     }
 }

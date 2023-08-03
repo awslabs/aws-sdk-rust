@@ -9,10 +9,7 @@ pub fn ser_modify_report_definition_input(
     if let Some(var_2) = &input.report_definition {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ReportDefinition").start_object();
-        crate::protocol_serde::shape_report_definition::ser_report_definition(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_report_definition::ser_report_definition(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

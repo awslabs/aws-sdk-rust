@@ -23,9 +23,7 @@ impl Record {
 
 /// A builder for [`Record`](crate::types::Record).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordBuilder {
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
 }

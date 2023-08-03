@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountLimitsOutput {
 }
 impl DescribeAccountLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder {
         crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountLimitsOutputBuilder {
     pub(crate) max_number_of_auto_scaling_groups: ::std::option::Option<i32>,
     pub(crate) max_number_of_launch_configurations: ::std::option::Option<i32>,
@@ -68,10 +64,7 @@ impl DescribeAccountLimitsOutputBuilder {
         self
     }
     /// <p>The maximum number of groups allowed for your account. The default is 200 groups per Region.</p>
-    pub fn set_max_number_of_auto_scaling_groups(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_max_number_of_auto_scaling_groups(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_number_of_auto_scaling_groups = input;
         self
     }
@@ -85,10 +78,7 @@ impl DescribeAccountLimitsOutputBuilder {
         self
     }
     /// <p>The maximum number of launch configurations allowed for your account. The default is 200 launch configurations per Region.</p>
-    pub fn set_max_number_of_launch_configurations(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_max_number_of_launch_configurations(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_number_of_launch_configurations = input;
         self
     }
@@ -116,10 +106,7 @@ impl DescribeAccountLimitsOutputBuilder {
         self
     }
     /// <p>The current number of launch configurations for your account.</p>
-    pub fn set_number_of_launch_configurations(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_number_of_launch_configurations(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_launch_configurations = input;
         self
     }

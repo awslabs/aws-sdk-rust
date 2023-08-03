@@ -29,9 +29,7 @@ impl CreateTagOptionInput {
 
 /// A builder for [`CreateTagOptionInput`](crate::operation::create_tag_option::CreateTagOptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTagOptionInputBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl CreateTagOptionInputBuilder {
     /// Consumes the builder and constructs a [`CreateTagOptionInput`](crate::operation::create_tag_option::CreateTagOptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_tag_option::CreateTagOptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_tag_option::CreateTagOptionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tag_option::CreateTagOptionInput {
             key: self.key,
             value: self.value,

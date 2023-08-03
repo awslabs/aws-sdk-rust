@@ -18,8 +18,7 @@ pub struct MixedMeasureMapping {
     pub measure_value_type: ::std::option::Option<crate::types::MeasureValueType>,
     /// <p>Required when measureValueType is MULTI. Attribute mappings for MULTI value measures.</p>
     #[doc(hidden)]
-    pub multi_measure_attribute_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
+    pub multi_measure_attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
 }
 impl MixedMeasureMapping {
     /// <p>Refers to the value of measure_name in a result row. This field is required if MeasureNameColumn is provided.</p>
@@ -39,9 +38,7 @@ impl MixedMeasureMapping {
         self.measure_value_type.as_ref()
     }
     /// <p>Required when measureValueType is MULTI. Attribute mappings for MULTI value measures.</p>
-    pub fn multi_measure_attribute_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MultiMeasureAttributeMapping]> {
+    pub fn multi_measure_attribute_mappings(&self) -> ::std::option::Option<&[crate::types::MultiMeasureAttributeMapping]> {
         self.multi_measure_attribute_mappings.as_deref()
     }
 }
@@ -54,16 +51,13 @@ impl MixedMeasureMapping {
 
 /// A builder for [`MixedMeasureMapping`](crate::types::MixedMeasureMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MixedMeasureMappingBuilder {
     pub(crate) measure_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_column: ::std::option::Option<::std::string::String>,
     pub(crate) target_measure_name: ::std::option::Option<::std::string::String>,
     pub(crate) measure_value_type: ::std::option::Option<crate::types::MeasureValueType>,
-    pub(crate) multi_measure_attribute_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
+    pub(crate) multi_measure_attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
 }
 impl MixedMeasureMappingBuilder {
     /// <p>Refers to the value of measure_name in a result row. This field is required if MeasureNameColumn is provided.</p>
@@ -81,18 +75,12 @@ impl MixedMeasureMappingBuilder {
         &self.measure_name
     }
     /// <p>This field refers to the source column from which measure-value is to be read for result materialization.</p>
-    pub fn source_column(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_column = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This field refers to the source column from which measure-value is to be read for result materialization.</p>
-    pub fn set_source_column(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_column = input;
         self
     }
@@ -101,18 +89,12 @@ impl MixedMeasureMappingBuilder {
         &self.source_column
     }
     /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise. </p>
-    pub fn target_measure_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_measure_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_measure_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise. </p>
-    pub fn set_target_measure_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_measure_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_measure_name = input;
         self
     }
@@ -126,10 +108,7 @@ impl MixedMeasureMappingBuilder {
         self
     }
     /// <p>Type of the value that is to be read from sourceColumn. If the mapping is for MULTI, use MeasureValueType.MULTI.</p>
-    pub fn set_measure_value_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MeasureValueType>,
-    ) -> Self {
+    pub fn set_measure_value_type(mut self, input: ::std::option::Option<crate::types::MeasureValueType>) -> Self {
         self.measure_value_type = input;
         self
     }
@@ -142,10 +121,7 @@ impl MixedMeasureMappingBuilder {
     /// To override the contents of this collection use [`set_multi_measure_attribute_mappings`](Self::set_multi_measure_attribute_mappings).
     ///
     /// <p>Required when measureValueType is MULTI. Attribute mappings for MULTI value measures.</p>
-    pub fn multi_measure_attribute_mappings(
-        mut self,
-        input: crate::types::MultiMeasureAttributeMapping,
-    ) -> Self {
+    pub fn multi_measure_attribute_mappings(mut self, input: crate::types::MultiMeasureAttributeMapping) -> Self {
         let mut v = self.multi_measure_attribute_mappings.unwrap_or_default();
         v.push(input);
         self.multi_measure_attribute_mappings = ::std::option::Option::Some(v);
@@ -160,9 +136,7 @@ impl MixedMeasureMappingBuilder {
         self
     }
     /// <p>Required when measureValueType is MULTI. Attribute mappings for MULTI value measures.</p>
-    pub fn get_multi_measure_attribute_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>> {
+    pub fn get_multi_measure_attribute_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>> {
         &self.multi_measure_attribute_mappings
     }
     /// Consumes the builder and constructs a [`MixedMeasureMapping`](crate::types::MixedMeasureMapping).

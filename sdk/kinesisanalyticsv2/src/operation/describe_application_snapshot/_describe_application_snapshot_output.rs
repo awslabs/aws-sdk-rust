@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeApplicationSnapshotOutput {
 }
 impl DescribeApplicationSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotOutput`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput).
-    pub fn builder() -> crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotOutputBuilder{
+    pub fn builder() -> crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotOutputBuilder {
         crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationSnapshotOutput`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationSnapshotOutputBuilder {
     pub(crate) snapshot_details: ::std::option::Option<crate::types::SnapshotDetails>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeApplicationSnapshotOutputBuilder {
         self
     }
     /// <p>An object containing information about the application snapshot.</p>
-    pub fn set_snapshot_details(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotDetails>,
-    ) -> Self {
+    pub fn set_snapshot_details(mut self, input: ::std::option::Option<crate::types::SnapshotDetails>) -> Self {
         self.snapshot_details = input;
         self
     }
@@ -63,9 +58,7 @@ impl DescribeApplicationSnapshotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationSnapshotOutput`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput {
+    pub fn build(self) -> crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput {
         crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput {
             snapshot_details: self.snapshot_details,
             _request_id: self._request_id,

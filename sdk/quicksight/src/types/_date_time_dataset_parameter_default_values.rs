@@ -23,9 +23,7 @@ impl DateTimeDatasetParameterDefaultValues {
 
 /// A builder for [`DateTimeDatasetParameterDefaultValues`](crate::types::DateTimeDatasetParameterDefaultValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateTimeDatasetParameterDefaultValuesBuilder {
     pub(crate) static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
 }
@@ -42,17 +40,12 @@ impl DateTimeDatasetParameterDefaultValuesBuilder {
         self
     }
     /// <p>A list of static default values for a given date time parameter.</p>
-    pub fn set_static_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
+    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
         self.static_values = input;
         self
     }
     /// <p>A list of static default values for a given date time parameter.</p>
-    pub fn get_static_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
         &self.static_values
     }
     /// Consumes the builder and constructs a [`DateTimeDatasetParameterDefaultValues`](crate::types::DateTimeDatasetParameterDefaultValues).

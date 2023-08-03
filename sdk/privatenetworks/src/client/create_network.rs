@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`network(Option<Network>)`](crate::operation::create_network::CreateNetworkOutput::network): <p>Information about the network.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_network::CreateNetworkOutput::tags): <p> The network tags. </p>
     /// - On failure, responds with [`SdkError<CreateNetworkError>`](crate::operation::create_network::CreateNetworkError)
-    pub fn create_network(
-        &self,
-    ) -> crate::operation::create_network::builders::CreateNetworkFluentBuilder {
-        crate::operation::create_network::builders::CreateNetworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_network(&self) -> crate::operation::create_network::builders::CreateNetworkFluentBuilder {
+        crate::operation::create_network::builders::CreateNetworkFluentBuilder::new(self.handle.clone())
     }
 }

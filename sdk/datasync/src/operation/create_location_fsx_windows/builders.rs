@@ -26,7 +26,7 @@ impl CreateLocationFsxWindowsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationFsxWindowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsInputBuilder,
+    inner: crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsInputBuilder,
 }
 impl CreateLocationFsxWindowsFluentBuilder {
     /// Creates a new `CreateLocationFsxWindows`.
@@ -37,7 +37,7 @@ impl CreateLocationFsxWindowsFluentBuilder {
         }
     }
     /// Access the CreateLocationFsxWindows as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateLocationFsxWindowsFluentBuilder {
             crate::operation::create_location_fsx_windows::CreateLocationFsxWindows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateLocationFsxWindowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateLocationFsxWindowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateLocationFsxWindowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateLocationFsxWindowsFluentBuilder {
             crate::operation::create_location_fsx_windows::CreateLocationFsxWindows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl CreateLocationFsxWindowsFluentBuilder {
         self.inner.get_subdirectory()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    pub fn fsx_filesystem_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fsx_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fsx_filesystem_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    pub fn set_fsx_filesystem_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fsx_filesystem_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fsx_filesystem_arn(input);
         self
     }
@@ -165,10 +148,7 @@ impl CreateLocationFsxWindowsFluentBuilder {
     /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
     /// </ul>
     /// </note>
-    pub fn security_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_arns(input.into());
         self
     }
@@ -179,10 +159,7 @@ impl CreateLocationFsxWindowsFluentBuilder {
     /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_security_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_arns(input);
         self
     }
@@ -193,9 +170,7 @@ impl CreateLocationFsxWindowsFluentBuilder {
     /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_security_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_arns()
     }
     /// Appends an item to `Tags`.
@@ -208,10 +183,7 @@ impl CreateLocationFsxWindowsFluentBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

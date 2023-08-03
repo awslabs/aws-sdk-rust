@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::operation::describe_artifact::DescribeArtifactOutput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::operation::describe_artifact::DescribeArtifactOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     /// - On failure, responds with [`SdkError<DescribeArtifactError>`](crate::operation::describe_artifact::DescribeArtifactError)
-    pub fn describe_artifact(
-        &self,
-    ) -> crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder {
-        crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_artifact(&self) -> crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder {
+        crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder::new(self.handle.clone())
     }
 }

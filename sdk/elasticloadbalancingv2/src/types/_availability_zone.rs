@@ -15,8 +15,7 @@ pub struct AvailabilityZone {
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     #[doc(hidden)]
-    pub load_balancer_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>,
+    pub load_balancer_addresses: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>,
 }
 impl AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
@@ -32,9 +31,7 @@ impl AvailabilityZone {
         self.outpost_id.as_deref()
     }
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
-    pub fn load_balancer_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LoadBalancerAddress]> {
+    pub fn load_balancer_addresses(&self) -> ::std::option::Option<&[crate::types::LoadBalancerAddress]> {
         self.load_balancer_addresses.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl AvailabilityZone {
 
 /// A builder for [`AvailabilityZone`](crate::types::AvailabilityZone).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailabilityZoneBuilder {
     pub(crate) zone_name: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
-    pub(crate) load_balancer_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>,
+    pub(crate) load_balancer_addresses: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>,
 }
 impl AvailabilityZoneBuilder {
     /// <p>The name of the Availability Zone.</p>
@@ -112,17 +106,12 @@ impl AvailabilityZoneBuilder {
         self
     }
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
-    pub fn set_load_balancer_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>,
-    ) -> Self {
+    pub fn set_load_balancer_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>) -> Self {
         self.load_balancer_addresses = input;
         self
     }
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
-    pub fn get_load_balancer_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>> {
+    pub fn get_load_balancer_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>> {
         &self.load_balancer_addresses
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).

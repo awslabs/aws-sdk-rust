@@ -77,9 +77,7 @@ impl AllocateAddressOutput {
 
 /// A builder for [`AllocateAddressOutput`](crate::operation::allocate_address::AllocateAddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllocateAddressOutputBuilder {
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
@@ -107,18 +105,12 @@ impl AllocateAddressOutputBuilder {
         &self.public_ip
     }
     /// <p>The ID that represents the allocation of the Elastic IP address.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID that represents the allocation of the Elastic IP address.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
@@ -127,18 +119,12 @@ impl AllocateAddressOutputBuilder {
         &self.allocation_id
     }
     /// <p>The ID of an address pool.</p>
-    pub fn public_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an address pool.</p>
-    pub fn set_public_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ipv4_pool = input;
         self
     }
@@ -147,18 +133,12 @@ impl AllocateAddressOutputBuilder {
         &self.public_ipv4_pool
     }
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
-    pub fn network_border_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_border_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
-    pub fn set_network_border_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_border_group = input;
         self
     }
@@ -181,18 +161,12 @@ impl AllocateAddressOutputBuilder {
         &self.domain
     }
     /// <p>The customer-owned IP address.</p>
-    pub fn customer_owned_ip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-owned IP address.</p>
-    pub fn set_customer_owned_ip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_owned_ip = input;
         self
     }
@@ -201,18 +175,12 @@ impl AllocateAddressOutputBuilder {
         &self.customer_owned_ip
     }
     /// <p>The ID of the customer-owned address pool.</p>
-    pub fn customer_owned_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the customer-owned address pool.</p>
-    pub fn set_customer_owned_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = input;
         self
     }

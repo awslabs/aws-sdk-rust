@@ -16,21 +16,15 @@ pub struct Definition {
 }
 impl Definition {
     /// <p>The Identity and Access Management (IAM) action definition details. </p>
-    pub fn iam_action_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IamActionDefinition> {
+    pub fn iam_action_definition(&self) -> ::std::option::Option<&crate::types::IamActionDefinition> {
         self.iam_action_definition.as_ref()
     }
     /// <p>The service control policies (SCPs) action definition details. </p>
-    pub fn scp_action_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScpActionDefinition> {
+    pub fn scp_action_definition(&self) -> ::std::option::Option<&crate::types::ScpActionDefinition> {
         self.scp_action_definition.as_ref()
     }
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
-    pub fn ssm_action_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SsmActionDefinition> {
+    pub fn ssm_action_definition(&self) -> ::std::option::Option<&crate::types::SsmActionDefinition> {
         self.ssm_action_definition.as_ref()
     }
 }
@@ -43,9 +37,7 @@ impl Definition {
 
 /// A builder for [`Definition`](crate::types::Definition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefinitionBuilder {
     pub(crate) iam_action_definition: ::std::option::Option<crate::types::IamActionDefinition>,
     pub(crate) scp_action_definition: ::std::option::Option<crate::types::ScpActionDefinition>,
@@ -58,17 +50,12 @@ impl DefinitionBuilder {
         self
     }
     /// <p>The Identity and Access Management (IAM) action definition details. </p>
-    pub fn set_iam_action_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::IamActionDefinition>,
-    ) -> Self {
+    pub fn set_iam_action_definition(mut self, input: ::std::option::Option<crate::types::IamActionDefinition>) -> Self {
         self.iam_action_definition = input;
         self
     }
     /// <p>The Identity and Access Management (IAM) action definition details. </p>
-    pub fn get_iam_action_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamActionDefinition> {
+    pub fn get_iam_action_definition(&self) -> &::std::option::Option<crate::types::IamActionDefinition> {
         &self.iam_action_definition
     }
     /// <p>The service control policies (SCPs) action definition details. </p>
@@ -77,17 +64,12 @@ impl DefinitionBuilder {
         self
     }
     /// <p>The service control policies (SCPs) action definition details. </p>
-    pub fn set_scp_action_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::ScpActionDefinition>,
-    ) -> Self {
+    pub fn set_scp_action_definition(mut self, input: ::std::option::Option<crate::types::ScpActionDefinition>) -> Self {
         self.scp_action_definition = input;
         self
     }
     /// <p>The service control policies (SCPs) action definition details. </p>
-    pub fn get_scp_action_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScpActionDefinition> {
+    pub fn get_scp_action_definition(&self) -> &::std::option::Option<crate::types::ScpActionDefinition> {
         &self.scp_action_definition
     }
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
@@ -96,17 +78,12 @@ impl DefinitionBuilder {
         self
     }
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
-    pub fn set_ssm_action_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SsmActionDefinition>,
-    ) -> Self {
+    pub fn set_ssm_action_definition(mut self, input: ::std::option::Option<crate::types::SsmActionDefinition>) -> Self {
         self.ssm_action_definition = input;
         self
     }
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
-    pub fn get_ssm_action_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::SsmActionDefinition> {
+    pub fn get_ssm_action_definition(&self) -> &::std::option::Option<crate::types::SsmActionDefinition> {
         &self.ssm_action_definition
     }
     /// Consumes the builder and constructs a [`Definition`](crate::types::Definition).

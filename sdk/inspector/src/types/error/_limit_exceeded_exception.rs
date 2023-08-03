@@ -63,9 +63,7 @@ impl LimitExceededException {
 
 /// A builder for [`LimitExceededException`](crate::types::error::LimitExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LimitExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::LimitExceededErrorCode>,
@@ -93,10 +91,7 @@ impl LimitExceededExceptionBuilder {
         self
     }
     /// <p>Code that indicates the type of error that is generated.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LimitExceededErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::LimitExceededErrorCode>) -> Self {
         self.error_code = input;
         self
     }
@@ -125,10 +120,7 @@ impl LimitExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

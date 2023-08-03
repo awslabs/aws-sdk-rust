@@ -19,9 +19,7 @@ impl DeleteLexiconOutput {
 
 /// A builder for [`DeleteLexiconOutput`](crate::operation::delete_lexicon::DeleteLexiconOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLexiconOutputBuilder {
     _request_id: Option<String>,
 }

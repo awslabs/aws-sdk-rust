@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for RegisterContainerImageOutput {
 }
 impl RegisterContainerImageOutput {
     /// Creates a new builder-style object to manufacture [`RegisterContainerImageOutput`](crate::operation::register_container_image::RegisterContainerImageOutput).
-    pub fn builder(
-    ) -> crate::operation::register_container_image::builders::RegisterContainerImageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::register_container_image::builders::RegisterContainerImageOutputBuilder {
         crate::operation::register_container_image::builders::RegisterContainerImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterContainerImageOutput`](crate::operation::register_container_image::RegisterContainerImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterContainerImageOutputBuilder {
     pub(crate) container_image: ::std::option::Option<crate::types::ContainerImage>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl RegisterContainerImageOutputBuilder {
         self
     }
     /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
-    pub fn set_container_image(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerImage>,
-    ) -> Self {
+    pub fn set_container_image(mut self, input: ::std::option::Option<crate::types::ContainerImage>) -> Self {
         self.container_image = input;
         self
     }

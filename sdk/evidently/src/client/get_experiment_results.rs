@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`timestamps(Option<Vec<DateTime>>)`](crate::operation::get_experiment_results::GetExperimentResultsOutput::timestamps): <p>The timestamps of each result returned.</p>
     ///   - [`details(Option<String>)`](crate::operation::get_experiment_results::GetExperimentResultsOutput::details): <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
     /// - On failure, responds with [`SdkError<GetExperimentResultsError>`](crate::operation::get_experiment_results::GetExperimentResultsError)
-    pub fn get_experiment_results(
-        &self,
-    ) -> crate::operation::get_experiment_results::builders::GetExperimentResultsFluentBuilder {
-        crate::operation::get_experiment_results::builders::GetExperimentResultsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_experiment_results(&self) -> crate::operation::get_experiment_results::builders::GetExperimentResultsFluentBuilder {
+        crate::operation::get_experiment_results::builders::GetExperimentResultsFluentBuilder::new(self.handle.clone())
     }
 }

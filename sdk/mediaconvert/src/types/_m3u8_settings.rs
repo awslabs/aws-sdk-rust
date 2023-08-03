@@ -149,9 +149,7 @@ impl M3u8Settings {
 
 /// A builder for [`M3u8Settings`](crate::types::M3u8Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct M3u8SettingsBuilder {
     pub(crate) audio_duration: ::std::option::Option<crate::types::M3u8AudioDuration>,
     pub(crate) audio_frames_per_pes: ::std::option::Option<i32>,
@@ -180,10 +178,7 @@ impl M3u8SettingsBuilder {
         self
     }
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
-    pub fn set_audio_duration(
-        mut self,
-        input: ::std::option::Option<crate::types::M3u8AudioDuration>,
-    ) -> Self {
+    pub fn set_audio_duration(mut self, input: ::std::option::Option<crate::types::M3u8AudioDuration>) -> Self {
         self.audio_duration = input;
         self
     }
@@ -231,10 +226,7 @@ impl M3u8SettingsBuilder {
         self
     }
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value AUTO to allow all PTS values.
-    pub fn set_data_pts_control(
-        mut self,
-        input: ::std::option::Option<crate::types::M3u8DataPtsControl>,
-    ) -> Self {
+    pub fn set_data_pts_control(mut self, input: ::std::option::Option<crate::types::M3u8DataPtsControl>) -> Self {
         self.data_pts_control = input;
         self
     }
@@ -262,10 +254,7 @@ impl M3u8SettingsBuilder {
         self
     }
     /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    pub fn set_nielsen_id3(
-        mut self,
-        input: ::std::option::Option<crate::types::M3u8NielsenId3>,
-    ) -> Self {
+    pub fn set_nielsen_id3(mut self, input: ::std::option::Option<crate::types::M3u8NielsenId3>) -> Self {
         self.nielsen_id3 = input;
         self
     }
@@ -293,10 +282,7 @@ impl M3u8SettingsBuilder {
         self
     }
     /// When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
-    pub fn set_pcr_control(
-        mut self,
-        input: ::std::option::Option<crate::types::M3u8PcrControl>,
-    ) -> Self {
+    pub fn set_pcr_control(mut self, input: ::std::option::Option<crate::types::M3u8PcrControl>) -> Self {
         self.pcr_control = input;
         self
     }
@@ -394,10 +380,7 @@ impl M3u8SettingsBuilder {
         self
     }
     /// For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose Passthrough and choose Ad markers if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML.
-    pub fn set_scte35_source(
-        mut self,
-        input: ::std::option::Option<crate::types::M3u8Scte35Source>,
-    ) -> Self {
+    pub fn set_scte35_source(mut self, input: ::std::option::Option<crate::types::M3u8Scte35Source>) -> Self {
         self.scte35_source = input;
         self
     }
@@ -411,10 +394,7 @@ impl M3u8SettingsBuilder {
         self
     }
     /// Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3 metadata in this output: set ID3 metadata to None or leave blank.
-    pub fn set_timed_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::TimedMetadata>,
-    ) -> Self {
+    pub fn set_timed_metadata(mut self, input: ::std::option::Option<crate::types::TimedMetadata>) -> Self {
         self.timed_metadata = input;
         self
     }

@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for PutAlertManagerDefinitionOutput {
 }
 impl PutAlertManagerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`PutAlertManagerDefinitionOutput`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionOutput).
-    pub fn builder() -> crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionOutputBuilder {
         crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAlertManagerDefinitionOutput`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAlertManagerDefinitionOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl PutAlertManagerDefinitionOutputBuilder {
         self
     }
     /// The status of alert manager definition.
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -64,9 +59,7 @@ impl PutAlertManagerDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAlertManagerDefinitionOutput`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionOutput {
+    pub fn build(self) -> crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionOutput {
         crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionOutput {
             status: self.status,
             _request_id: self._request_id,

@@ -10,10 +10,7 @@ impl InviteUsersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::invite_users::InviteUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invite_users::InviteUsersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invite_users::InviteUsersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.invite_users();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl InviteUsersFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::invite_users::InviteUsers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::invite_users::InviteUsers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::invite_users::InviteUsersError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl InviteUsersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl InviteUsersFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::invite_users::InviteUsers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::invite_users::InviteUsers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::invite_users::InviteUsersError>,
     > {
         self.customize_middleware().await
@@ -131,25 +119,17 @@ impl InviteUsersFluentBuilder {
     /// To override the contents of this collection use [`set_user_email_list`](Self::set_user_email_list).
     ///
     /// <p>The user email addresses to which to send the email invitation.</p>
-    pub fn user_email_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_email_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_email_list(input.into());
         self
     }
     /// <p>The user email addresses to which to send the email invitation.</p>
-    pub fn set_user_email_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_email_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_email_list(input);
         self
     }
     /// <p>The user email addresses to which to send the email invitation.</p>
-    pub fn get_user_email_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_email_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_email_list()
     }
     /// <p>The user type.</p>

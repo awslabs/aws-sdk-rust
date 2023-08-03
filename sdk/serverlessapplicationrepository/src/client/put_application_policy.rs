@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutApplicationPolicyOutput`](crate::operation::put_application_policy::PutApplicationPolicyOutput) with field(s):
     ///   - [`statements(Option<Vec<ApplicationPolicyStatement>>)`](crate::operation::put_application_policy::PutApplicationPolicyOutput::statements): <p>An array of policy statements applied to the application.</p>
     /// - On failure, responds with [`SdkError<PutApplicationPolicyError>`](crate::operation::put_application_policy::PutApplicationPolicyError)
-    pub fn put_application_policy(
-        &self,
-    ) -> crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder {
-        crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_application_policy(&self) -> crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder {
+        crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl DescribePullRequestEventsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePullRequestEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder,
+    inner: crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder,
 }
 impl DescribePullRequestEventsFluentBuilder {
     /// Creates a new `DescribePullRequestEvents`.
@@ -37,7 +37,7 @@ impl DescribePullRequestEventsFluentBuilder {
         }
     }
     /// Access the DescribePullRequestEvents as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribePullRequestEventsFluentBuilder {
             crate::operation::describe_pull_request_events::DescribePullRequestEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pull_request_events::DescribePullRequestEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pull_request_events::DescribePullRequestEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribePullRequestEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribePullRequestEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pull_request_events::DescribePullRequestEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pull_request_events::DescribePullRequestEventsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribePullRequestEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pull_request_events::DescribePullRequestEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pull_request_events::DescribePullRequestEventsError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl DescribePullRequestEventsFluentBuilder {
             crate::operation::describe_pull_request_events::DescribePullRequestEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pull_request_events::DescribePullRequestEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pull_request_events::DescribePullRequestEventsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_pull_request_events::paginator::DescribePullRequestEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_pull_request_events::paginator::DescribePullRequestEventsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_pull_request_events::paginator::DescribePullRequestEventsPaginator {
         crate::operation::describe_pull_request_events::paginator::DescribePullRequestEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
@@ -155,17 +135,12 @@ impl DescribePullRequestEventsFluentBuilder {
         self
     }
     /// <p>Optional. The pull request event type about which you want to return information.</p>
-    pub fn set_pull_request_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequestEventType>,
-    ) -> Self {
+    pub fn set_pull_request_event_type(mut self, input: ::std::option::Option<crate::types::PullRequestEventType>) -> Self {
         self.inner = self.inner.set_pull_request_event_type(input);
         self
     }
     /// <p>Optional. The pull request event type about which you want to return information.</p>
-    pub fn get_pull_request_event_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PullRequestEventType> {
+    pub fn get_pull_request_event_type(&self) -> &::std::option::Option<crate::types::PullRequestEventType> {
         self.inner.get_pull_request_event_type()
     }
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>

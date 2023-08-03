@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for MergeBranchesByFastForwardOutput {
 }
 impl MergeBranchesByFastForwardOutput {
     /// Creates a new builder-style object to manufacture [`MergeBranchesByFastForwardOutput`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardOutput).
-    pub fn builder() -> crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardOutputBuilder{
+    pub fn builder() -> crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardOutputBuilder {
         crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardOutputBuilder::default()
     }
 }
 
 /// A builder for [`MergeBranchesByFastForwardOutput`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergeBranchesByFastForwardOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl MergeBranchesByFastForwardOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`MergeBranchesByFastForwardOutput`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardOutput {
+    pub fn build(self) -> crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardOutput {
         crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardOutput {
             commit_id: self.commit_id,
             tree_id: self.tree_id,

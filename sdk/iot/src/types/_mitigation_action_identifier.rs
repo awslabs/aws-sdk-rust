@@ -37,9 +37,7 @@ impl MitigationActionIdentifier {
 
 /// A builder for [`MitigationActionIdentifier`](crate::types::MitigationActionIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MitigationActionIdentifierBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) action_arn: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl MitigationActionIdentifierBuilder {
         self
     }
     /// <p>The date when this mitigation action was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

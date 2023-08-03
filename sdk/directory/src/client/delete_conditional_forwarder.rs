@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`remote_domain_name(impl ::std::convert::Into<String>)`](crate::operation::delete_conditional_forwarder::builders::DeleteConditionalForwarderFluentBuilder::remote_domain_name) / [`set_remote_domain_name(Option<String>)`](crate::operation::delete_conditional_forwarder::builders::DeleteConditionalForwarderFluentBuilder::set_remote_domain_name): <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
     /// - On success, responds with [`DeleteConditionalForwarderOutput`](crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput)
     /// - On failure, responds with [`SdkError<DeleteConditionalForwarderError>`](crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError)
-    pub fn delete_conditional_forwarder(&self) -> crate::operation::delete_conditional_forwarder::builders::DeleteConditionalForwarderFluentBuilder{
+    pub fn delete_conditional_forwarder(&self) -> crate::operation::delete_conditional_forwarder::builders::DeleteConditionalForwarderFluentBuilder {
         crate::operation::delete_conditional_forwarder::builders::DeleteConditionalForwarderFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl PutPermissionPolicyFluentBuilder {
         }
     }
     /// Access the PutPermissionPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +56,7 @@ impl PutPermissionPolicyFluentBuilder {
             crate::operation::put_permission_policy::PutPermissionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_permission_policy::PutPermissionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +66,7 @@ impl PutPermissionPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +75,7 @@ impl PutPermissionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_permission_policy::PutPermissionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_permission_policy::PutPermissionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError>,
     > {
         let op = self
             .inner
@@ -107,9 +98,7 @@ impl PutPermissionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_permission_policy::PutPermissionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_permission_policy::PutPermissionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +112,7 @@ impl PutPermissionPolicyFluentBuilder {
             crate::operation::put_permission_policy::PutPermissionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_permission_policy::PutPermissionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError>,
     > {
         self.customize_middleware().await
     }

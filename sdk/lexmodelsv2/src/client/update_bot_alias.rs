@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::update_bot_alias::UpdateBotAliasOutput::creation_date_time): <p>A timestamp of the date and time that the bot was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::update_bot_alias::UpdateBotAliasOutput::last_updated_date_time): <p>A timestamp of the date and time that the bot was last updated.</p>
     /// - On failure, responds with [`SdkError<UpdateBotAliasError>`](crate::operation::update_bot_alias::UpdateBotAliasError)
-    pub fn update_bot_alias(
-        &self,
-    ) -> crate::operation::update_bot_alias::builders::UpdateBotAliasFluentBuilder {
-        crate::operation::update_bot_alias::builders::UpdateBotAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_bot_alias(&self) -> crate::operation::update_bot_alias::builders::UpdateBotAliasFluentBuilder {
+        crate::operation::update_bot_alias::builders::UpdateBotAliasFluentBuilder::new(self.handle.clone())
     }
 }

@@ -57,17 +57,14 @@ impl CreateConnectPeerInput {
 }
 impl CreateConnectPeerInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectPeerInput`](crate::operation::create_connect_peer::CreateConnectPeerInput).
-    pub fn builder(
-    ) -> crate::operation::create_connect_peer::builders::CreateConnectPeerInputBuilder {
+    pub fn builder() -> crate::operation::create_connect_peer::builders::CreateConnectPeerInputBuilder {
         crate::operation::create_connect_peer::builders::CreateConnectPeerInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectPeerInput`](crate::operation::create_connect_peer::CreateConnectPeerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectPeerInputBuilder {
     pub(crate) connect_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_address: ::std::option::Option<::std::string::String>,
@@ -79,18 +76,12 @@ pub struct CreateConnectPeerInputBuilder {
 }
 impl CreateConnectPeerInputBuilder {
     /// <p>The ID of the connection attachment.</p>
-    pub fn connect_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the connection attachment.</p>
-    pub fn set_connect_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connect_attachment_id = input;
         self
     }
@@ -99,18 +90,12 @@ impl CreateConnectPeerInputBuilder {
         &self.connect_attachment_id
     }
     /// <p>A Connect peer core network address.</p>
-    pub fn core_network_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A Connect peer core network address.</p>
-    pub fn set_core_network_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_address = input;
         self
     }
@@ -138,10 +123,7 @@ impl CreateConnectPeerInputBuilder {
         self
     }
     /// <p>The Connect peer BGP options.</p>
-    pub fn set_bgp_options(
-        mut self,
-        input: ::std::option::Option<crate::types::BgpOptions>,
-    ) -> Self {
+    pub fn set_bgp_options(mut self, input: ::std::option::Option<crate::types::BgpOptions>) -> Self {
         self.bgp_options = input;
         self
     }
@@ -154,27 +136,19 @@ impl CreateConnectPeerInputBuilder {
     /// To override the contents of this collection use [`set_inside_cidr_blocks`](Self::set_inside_cidr_blocks).
     ///
     /// <p>The inside IP addresses used for BGP peering.</p>
-    pub fn inside_cidr_blocks(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inside_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inside_cidr_blocks.unwrap_or_default();
         v.push(input.into());
         self.inside_cidr_blocks = ::std::option::Option::Some(v);
         self
     }
     /// <p>The inside IP addresses used for BGP peering.</p>
-    pub fn set_inside_cidr_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inside_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inside_cidr_blocks = input;
         self
     }
     /// <p>The inside IP addresses used for BGP peering.</p>
-    pub fn get_inside_cidr_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inside_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.inside_cidr_blocks
     }
     /// Appends an item to `tags`.
@@ -189,10 +163,7 @@ impl CreateConnectPeerInputBuilder {
         self
     }
     /// <p>The tags associated with the peer request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -217,20 +188,15 @@ impl CreateConnectPeerInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectPeerInput`](crate::operation::create_connect_peer::CreateConnectPeerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_connect_peer::CreateConnectPeerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_connect_peer::CreateConnectPeerInput {
-                connect_attachment_id: self.connect_attachment_id,
-                core_network_address: self.core_network_address,
-                peer_address: self.peer_address,
-                bgp_options: self.bgp_options,
-                inside_cidr_blocks: self.inside_cidr_blocks,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_connect_peer::CreateConnectPeerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_connect_peer::CreateConnectPeerInput {
+            connect_attachment_id: self.connect_attachment_id,
+            core_network_address: self.core_network_address,
+            peer_address: self.peer_address,
+            bgp_options: self.bgp_options,
+            inside_cidr_blocks: self.inside_cidr_blocks,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

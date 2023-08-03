@@ -68,17 +68,14 @@ impl GetMetricWidgetImageInput {
 }
 impl GetMetricWidgetImageInput {
     /// Creates a new builder-style object to manufacture [`GetMetricWidgetImageInput`](crate::operation::get_metric_widget_image::GetMetricWidgetImageInput).
-    pub fn builder(
-    ) -> crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageInputBuilder {
+    pub fn builder() -> crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageInputBuilder {
         crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMetricWidgetImageInput`](crate::operation::get_metric_widget_image::GetMetricWidgetImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricWidgetImageInputBuilder {
     pub(crate) metric_widget: ::std::option::Option<::std::string::String>,
     pub(crate) output_format: ::std::option::Option<::std::string::String>,
@@ -87,20 +84,14 @@ impl GetMetricWidgetImageInputBuilder {
     /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
     /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
     /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation point appears next to the graph legend.</p>
-    pub fn metric_widget(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_widget(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_widget = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
     /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
     /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation point appears next to the graph legend.</p>
-    pub fn set_metric_widget(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_widget(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_widget = input;
         self
     }
@@ -132,10 +123,7 @@ impl GetMetricWidgetImageInputBuilder {
     /// <p> <code> </code> </p>
     /// <p> <code></code> </p>
     /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
-    pub fn output_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_format = ::std::option::Option::Some(input.into());
         self
     }
@@ -161,10 +149,7 @@ impl GetMetricWidgetImageInputBuilder {
     /// <p> <code> </code> </p>
     /// <p> <code></code> </p>
     /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_format = input;
         self
     }
@@ -196,15 +181,11 @@ impl GetMetricWidgetImageInputBuilder {
     /// Consumes the builder and constructs a [`GetMetricWidgetImageInput`](crate::operation::get_metric_widget_image::GetMetricWidgetImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_metric_widget_image::GetMetricWidgetImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_metric_widget_image::GetMetricWidgetImageInput {
-                metric_widget: self.metric_widget,
-                output_format: self.output_format,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_metric_widget_image::GetMetricWidgetImageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_metric_widget_image::GetMetricWidgetImageInput {
+            metric_widget: self.metric_widget,
+            output_format: self.output_format,
+        })
     }
 }

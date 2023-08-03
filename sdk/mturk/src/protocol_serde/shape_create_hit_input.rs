@@ -81,10 +81,7 @@ pub fn ser_create_hit_input(
             {
                 #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_hit_layout_parameter::ser_hit_layout_parameter(
-                    &mut object_24,
-                    item_23,
-                )?;
+                crate::protocol_serde::shape_hit_layout_parameter::ser_hit_layout_parameter(&mut object_24, item_23)?;
                 object_24.finish();
             }
         }

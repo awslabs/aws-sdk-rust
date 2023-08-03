@@ -22,9 +22,7 @@ impl DescribeRecipeInput {
 
 /// A builder for [`DescribeRecipeInput`](crate::operation::describe_recipe::DescribeRecipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecipeInputBuilder {
     pub(crate) recipe_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeRecipeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRecipeInput`](crate::operation::describe_recipe::DescribeRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_recipe::DescribeRecipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_recipe::DescribeRecipeInput {
-            recipe_arn: self.recipe_arn,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_recipe::DescribeRecipeInput { recipe_arn: self.recipe_arn })
     }
 }

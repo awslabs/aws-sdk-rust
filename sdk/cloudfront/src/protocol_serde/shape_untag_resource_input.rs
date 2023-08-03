@@ -11,8 +11,7 @@ pub fn ser_tag_keys_http_payload(
 
 pub fn ser_tag_keys_payload(
     input: &crate::types::TagKeys,
-) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

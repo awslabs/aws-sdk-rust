@@ -72,9 +72,7 @@ impl DescribeProjectOutput {
 
 /// A builder for [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectOutputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
@@ -146,18 +144,12 @@ impl DescribeProjectOutputBuilder {
         &self.portal_id
     }
     /// <p>The project's description.</p>
-    pub fn project_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The project's description.</p>
-    pub fn set_project_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_description = input;
         self
     }
@@ -171,17 +163,12 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
-    pub fn set_project_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_project_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.project_creation_date = input;
         self
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
-    pub fn get_project_creation_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_project_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.project_creation_date
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
@@ -190,17 +177,12 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
-    pub fn set_project_last_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_project_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.project_last_update_date = input;
         self
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
-    pub fn get_project_last_update_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_project_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.project_last_update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

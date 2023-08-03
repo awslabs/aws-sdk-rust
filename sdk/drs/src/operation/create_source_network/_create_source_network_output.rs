@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateSourceNetworkOutput {
 }
 impl CreateSourceNetworkOutput {
     /// Creates a new builder-style object to manufacture [`CreateSourceNetworkOutput`](crate::operation::create_source_network::CreateSourceNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::create_source_network::builders::CreateSourceNetworkOutputBuilder {
-        crate::operation::create_source_network::builders::CreateSourceNetworkOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_source_network::builders::CreateSourceNetworkOutputBuilder {
+        crate::operation::create_source_network::builders::CreateSourceNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSourceNetworkOutput`](crate::operation::create_source_network::CreateSourceNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSourceNetworkOutputBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSourceNetworkOutputBuilder {
     /// <p>ID of the created Source Network.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the created Source Network.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_network_id = input;
         self
     }

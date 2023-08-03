@@ -35,9 +35,7 @@ impl DescribeFleetsOutput {
 
 /// A builder for [`DescribeFleetsOutput`](crate::operation::describe_fleets::DescribeFleetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) fleets: ::std::option::Option<::std::vec::Vec<crate::types::FleetData>>,
@@ -70,10 +68,7 @@ impl DescribeFleetsOutputBuilder {
         self
     }
     /// <p>Information about the EC2 Fleets.</p>
-    pub fn set_fleets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetData>>,
-    ) -> Self {
+    pub fn set_fleets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetData>>) -> Self {
         self.fleets = input;
         self
     }

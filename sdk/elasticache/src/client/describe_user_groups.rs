@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`user_groups(Option<Vec<UserGroup>>)`](crate::operation::describe_user_groups::DescribeUserGroupsOutput::user_groups): <p>Returns a list of user groups.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_user_groups::DescribeUserGroupsOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     /// - On failure, responds with [`SdkError<DescribeUserGroupsError>`](crate::operation::describe_user_groups::DescribeUserGroupsError)
-    pub fn describe_user_groups(
-        &self,
-    ) -> crate::operation::describe_user_groups::builders::DescribeUserGroupsFluentBuilder {
-        crate::operation::describe_user_groups::builders::DescribeUserGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_user_groups(&self) -> crate::operation::describe_user_groups::builders::DescribeUserGroupsFluentBuilder {
+        crate::operation::describe_user_groups::builders::DescribeUserGroupsFluentBuilder::new(self.handle.clone())
     }
 }

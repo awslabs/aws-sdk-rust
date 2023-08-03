@@ -50,9 +50,7 @@ impl EcsServiceRecommendationFilter {
 
 /// A builder for [`EcsServiceRecommendationFilter`](crate::types::EcsServiceRecommendationFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsServiceRecommendationFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EcsServiceRecommendationFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -74,10 +72,7 @@ impl EcsServiceRecommendationFilterBuilder {
     /// <p>You can filter your Amazon ECS service recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
     /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon ECS service recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon ECS service recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon ECS service recommendations. Use this filter to find all of your Amazon ECS service recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon ECS service recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::EcsServiceRecommendationFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::EcsServiceRecommendationFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -87,9 +82,7 @@ impl EcsServiceRecommendationFilterBuilder {
     /// <p>You can filter your Amazon ECS service recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
     /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon ECS service recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon ECS service recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon ECS service recommendations. Use this filter to find all of your Amazon ECS service recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon ECS service recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
-    pub fn get_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::EcsServiceRecommendationFilterName> {
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::EcsServiceRecommendationFilterName> {
         &self.name
     }
     /// Appends an item to `values`.
@@ -114,10 +107,7 @@ impl EcsServiceRecommendationFilterBuilder {
     /// <li> <p>If you specify the <code>name</code> parameter as <code>Finding</code>, specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code>.</p> </li>
     /// <li> <p>If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p> </li>
     /// </ul>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

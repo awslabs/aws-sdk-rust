@@ -23,35 +23,26 @@ impl DeleteVpnGatewayInput {
 }
 impl DeleteVpnGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpnGatewayInput`](crate::operation::delete_vpn_gateway::DeleteVpnGatewayInput).
-    pub fn builder() -> crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayInputBuilder {
         crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpnGatewayInput`](crate::operation::delete_vpn_gateway::DeleteVpnGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpnGatewayInputBuilder {
     pub(crate) vpn_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteVpnGatewayInputBuilder {
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn vpn_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn set_vpn_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_gateway_id = input;
         self
     }
@@ -76,15 +67,10 @@ impl DeleteVpnGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpnGatewayInput`](crate::operation::delete_vpn_gateway::DeleteVpnGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vpn_gateway::DeleteVpnGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_vpn_gateway::DeleteVpnGatewayInput {
-                vpn_gateway_id: self.vpn_gateway_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_vpn_gateway::DeleteVpnGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_vpn_gateway::DeleteVpnGatewayInput {
+            vpn_gateway_id: self.vpn_gateway_id,
+            dry_run: self.dry_run,
+        })
     }
 }

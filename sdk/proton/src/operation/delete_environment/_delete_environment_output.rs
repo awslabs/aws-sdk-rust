@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteEnvironmentOutput {
 }
 impl DeleteEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder {
         crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentOutputBuilder {
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteEnvironmentOutputBuilder {
         self
     }
     /// <p>The detailed data of the environment being deleted.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }

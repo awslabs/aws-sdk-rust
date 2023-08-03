@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ContinueAsNewWorkflowExecutionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -78,17 +72,21 @@ pub enum ContinueAsNewWorkflowExecutionFailedCause {
 impl ::std::convert::From<&str> for ContinueAsNewWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
-                        "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED" => ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded,
-"DEFAULT_CHILD_POLICY_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultChildPolicyUndefined,
-"DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined,
-"DEFAULT_TASK_LIST_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskListUndefined,
-"DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined,
-"OPERATION_NOT_PERMITTED" => ContinueAsNewWorkflowExecutionFailedCause::OperationNotPermitted,
-"UNHANDLED_DECISION" => ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision,
-"WORKFLOW_TYPE_DEPRECATED" => ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated,
-"WORKFLOW_TYPE_DOES_NOT_EXIST" => ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist,
-other => ContinueAsNewWorkflowExecutionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED" => {
+                ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded
+            }
+            "DEFAULT_CHILD_POLICY_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultChildPolicyUndefined,
+            "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED" => {
+                ContinueAsNewWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined
+            }
+            "DEFAULT_TASK_LIST_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskListUndefined,
+            "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined,
+            "OPERATION_NOT_PERMITTED" => ContinueAsNewWorkflowExecutionFailedCause::OperationNotPermitted,
+            "UNHANDLED_DECISION" => ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision,
+            "WORKFLOW_TYPE_DEPRECATED" => ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated,
+            "WORKFLOW_TYPE_DOES_NOT_EXIST" => ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist,
+            other => ContinueAsNewWorkflowExecutionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for ContinueAsNewWorkflowExecutionFailedCause {
@@ -102,17 +100,21 @@ impl ContinueAsNewWorkflowExecutionFailedCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded => "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED",
-    ContinueAsNewWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => "DEFAULT_CHILD_POLICY_UNDEFINED",
-    ContinueAsNewWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-    ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
-    ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-    ContinueAsNewWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-    ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
-    ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated => "WORKFLOW_TYPE_DEPRECATED",
-    ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => "WORKFLOW_TYPE_DOES_NOT_EXIST",
-    ContinueAsNewWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
-}
+            ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded => {
+                "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED"
+            }
+            ContinueAsNewWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => "DEFAULT_CHILD_POLICY_UNDEFINED",
+            ContinueAsNewWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => {
+                "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED"
+            }
+            ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
+            ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED",
+            ContinueAsNewWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+            ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
+            ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated => "WORKFLOW_TYPE_DEPRECATED",
+            ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => "WORKFLOW_TYPE_DOES_NOT_EXIST",
+            ContinueAsNewWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

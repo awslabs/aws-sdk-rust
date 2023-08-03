@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdatePublicSharingSettingsOutput {
 }
 impl UpdatePublicSharingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePublicSharingSettingsOutput`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput).
-    pub fn builder() -> crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsOutputBuilder {
         crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePublicSharingSettingsOutput`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePublicSharingSettingsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -82,9 +80,7 @@ impl UpdatePublicSharingSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePublicSharingSettingsOutput`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput {
+    pub fn build(self) -> crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput {
         crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput {
             request_id: self.request_id,
             status: self.status.unwrap_or_default(),

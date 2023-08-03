@@ -19,9 +19,7 @@ impl StopResourceOutput {
 
 /// A builder for [`StopResourceOutput`](crate::operation::stop_resource::StopResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopResourceOutputBuilder {
     _request_id: Option<String>,
 }

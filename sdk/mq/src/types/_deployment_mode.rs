@@ -39,13 +39,7 @@
 /// <p>The broker's deployment mode.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeploymentMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DeploymentMode {
             "ACTIVE_STANDBY_MULTI_AZ" => DeploymentMode::ActiveStandbyMultiAz,
             "CLUSTER_MULTI_AZ" => DeploymentMode::ClusterMultiAz,
             "SINGLE_INSTANCE" => DeploymentMode::SingleInstance,
-            other => {
-                DeploymentMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DeploymentMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl DeploymentMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE_STANDBY_MULTI_AZ",
-            "CLUSTER_MULTI_AZ",
-            "SINGLE_INSTANCE",
-        ]
+        &["ACTIVE_STANDBY_MULTI_AZ", "CLUSTER_MULTI_AZ", "SINGLE_INSTANCE"]
     }
 }
 impl ::std::convert::AsRef<str> for DeploymentMode {

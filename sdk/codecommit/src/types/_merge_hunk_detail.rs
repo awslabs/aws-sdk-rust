@@ -37,9 +37,7 @@ impl MergeHunkDetail {
 
 /// A builder for [`MergeHunkDetail`](crate::types::MergeHunkDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergeHunkDetailBuilder {
     pub(crate) start_line: ::std::option::Option<i32>,
     pub(crate) end_line: ::std::option::Option<i32>,

@@ -33,19 +33,13 @@ pub fn ser_update_service_input(
     if let Some(var_9) = &input.deployment_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("deploymentConfiguration").start_object();
-        crate::protocol_serde::shape_deployment_configuration::ser_deployment_configuration(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_deployment_configuration::ser_deployment_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.network_configuration {
         #[allow(unused_mut)]
         let mut object_12 = object.key("networkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.placement_constraints {
@@ -54,10 +48,7 @@ pub fn ser_update_service_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_placement_constraint::ser_placement_constraint(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_placement_constraint::ser_placement_constraint(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -69,10 +60,7 @@ pub fn ser_update_service_input(
             {
                 #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_placement_strategy::ser_placement_strategy(
-                    &mut object_20,
-                    item_19,
-                )?;
+                crate::protocol_serde::shape_placement_strategy::ser_placement_strategy(&mut object_20, item_19)?;
                 object_20.finish();
             }
         }
@@ -102,10 +90,7 @@ pub fn ser_update_service_input(
             {
                 #[allow(unused_mut)]
                 let mut object_29 = array_27.value().start_object();
-                crate::protocol_serde::shape_load_balancer::ser_load_balancer(
-                    &mut object_29,
-                    item_28,
-                )?;
+                crate::protocol_serde::shape_load_balancer::ser_load_balancer(&mut object_29, item_28)?;
                 object_29.finish();
             }
         }
@@ -120,10 +105,7 @@ pub fn ser_update_service_input(
             {
                 #[allow(unused_mut)]
                 let mut object_34 = array_32.value().start_object();
-                crate::protocol_serde::shape_service_registry::ser_service_registry(
-                    &mut object_34,
-                    item_33,
-                )?;
+                crate::protocol_serde::shape_service_registry::ser_service_registry(&mut object_34, item_33)?;
                 object_34.finish();
             }
         }

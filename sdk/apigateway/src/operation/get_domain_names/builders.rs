@@ -10,10 +10,7 @@ impl GetDomainNamesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_domain_names::GetDomainNamesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_names::GetDomainNamesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_names::GetDomainNamesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_domain_names();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDomainNamesFluentBuilder {
         }
     }
     /// Access the GetDomainNames as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_domain_names::builders::GetDomainNamesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_domain_names::builders::GetDomainNamesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetDomainNamesFluentBuilder {
             crate::operation::get_domain_names::GetDomainNames,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_names::GetDomainNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_names::GetDomainNamesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetDomainNamesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetDomainNamesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_domain_names::GetDomainNamesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_names::GetDomainNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_names::GetDomainNamesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetDomainNamesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_domain_names::GetDomainNamesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_names::GetDomainNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_names::GetDomainNamesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetDomainNamesFluentBuilder {
             crate::operation::get_domain_names::GetDomainNames,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_names::GetDomainNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_names::GetDomainNamesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_domain_names::paginator::GetDomainNamesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_domain_names::paginator::GetDomainNamesPaginator {
-        crate::operation::get_domain_names::paginator::GetDomainNamesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_domain_names::paginator::GetDomainNamesPaginator {
+        crate::operation::get_domain_names::paginator::GetDomainNamesPaginator::new(self.handle, self.inner)
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

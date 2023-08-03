@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for ListInstanceProfileTagsOutput {
 }
 impl ListInstanceProfileTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceProfileTagsOutput`](crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsOutputBuilder {
         crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceProfileTagsOutput`](crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceProfileTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
@@ -66,10 +62,7 @@ impl ListInstanceProfileTagsOutputBuilder {
         self
     }
     /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -115,9 +108,7 @@ impl ListInstanceProfileTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInstanceProfileTagsOutput`](crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput {
+    pub fn build(self) -> crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput {
         crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput {
             tags: self.tags,
             is_truncated: self.is_truncated.unwrap_or_default(),

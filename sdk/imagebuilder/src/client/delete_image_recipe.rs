@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_image_recipe::DeleteImageRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_recipe_arn(Option<String>)`](crate::operation::delete_image_recipe::DeleteImageRecipeOutput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteImageRecipeError>`](crate::operation::delete_image_recipe::DeleteImageRecipeError)
-    pub fn delete_image_recipe(
-        &self,
-    ) -> crate::operation::delete_image_recipe::builders::DeleteImageRecipeFluentBuilder {
-        crate::operation::delete_image_recipe::builders::DeleteImageRecipeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_image_recipe(&self) -> crate::operation::delete_image_recipe::builders::DeleteImageRecipeFluentBuilder {
+        crate::operation::delete_image_recipe::builders::DeleteImageRecipeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -40,9 +40,7 @@ impl CoverageResource {
         self.account_id.as_deref()
     }
     /// <p>Information about the resource for which the coverage statistics are retrieved.</p>
-    pub fn resource_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CoverageResourceDetails> {
+    pub fn resource_details(&self) -> ::std::option::Option<&crate::types::CoverageResourceDetails> {
         self.resource_details.as_ref()
     }
     /// <p>Represents the status of the EKS cluster coverage.</p>
@@ -67,9 +65,7 @@ impl CoverageResource {
 
 /// A builder for [`CoverageResource`](crate::types::CoverageResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageResourceBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
@@ -128,17 +124,12 @@ impl CoverageResourceBuilder {
         self
     }
     /// <p>Information about the resource for which the coverage statistics are retrieved.</p>
-    pub fn set_resource_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageResourceDetails>,
-    ) -> Self {
+    pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::CoverageResourceDetails>) -> Self {
         self.resource_details = input;
         self
     }
     /// <p>Information about the resource for which the coverage statistics are retrieved.</p>
-    pub fn get_resource_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoverageResourceDetails> {
+    pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::CoverageResourceDetails> {
         &self.resource_details
     }
     /// <p>Represents the status of the EKS cluster coverage.</p>
@@ -147,10 +138,7 @@ impl CoverageResourceBuilder {
         self
     }
     /// <p>Represents the status of the EKS cluster coverage.</p>
-    pub fn set_coverage_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageStatus>,
-    ) -> Self {
+    pub fn set_coverage_status(mut self, input: ::std::option::Option<crate::types::CoverageStatus>) -> Self {
         self.coverage_status = input;
         self
     }
@@ -178,10 +166,7 @@ impl CoverageResourceBuilder {
         self
     }
     /// <p>The timestamp at which the coverage details for the resource were last updated. This is in UTC format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

@@ -51,9 +51,7 @@ impl SchemaVersionListItem {
 
 /// A builder for [`SchemaVersionListItem`](crate::types::SchemaVersionListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaVersionListItemBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl SchemaVersionListItemBuilder {
         &self.schema_arn
     }
     /// <p>The unique identifier of the schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version_id = input;
         self
     }
@@ -116,10 +108,7 @@ impl SchemaVersionListItemBuilder {
         self
     }
     /// <p>The status of the schema version.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SchemaVersionStatus>) -> Self {
         self.status = input;
         self
     }

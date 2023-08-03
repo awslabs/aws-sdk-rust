@@ -33,13 +33,19 @@ pub fn ser_import_client_branding_input(
     if let Some(var_10) = &input.device_type_linux {
         #[allow(unused_mut)]
         let mut object_11 = object.key("DeviceTypeLinux").start_object();
-        crate::protocol_serde::shape_default_import_client_branding_attributes::ser_default_import_client_branding_attributes(&mut object_11, var_10)?;
+        crate::protocol_serde::shape_default_import_client_branding_attributes::ser_default_import_client_branding_attributes(
+            &mut object_11,
+            var_10,
+        )?;
         object_11.finish();
     }
     if let Some(var_12) = &input.device_type_web {
         #[allow(unused_mut)]
         let mut object_13 = object.key("DeviceTypeWeb").start_object();
-        crate::protocol_serde::shape_default_import_client_branding_attributes::ser_default_import_client_branding_attributes(&mut object_13, var_12)?;
+        crate::protocol_serde::shape_default_import_client_branding_attributes::ser_default_import_client_branding_attributes(
+            &mut object_13,
+            var_12,
+        )?;
         object_13.finish();
     }
     Ok(())

@@ -29,9 +29,7 @@ impl RegisterVolumeOutput {
 
 /// A builder for [`RegisterVolumeOutput`](crate::operation::register_volume::RegisterVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterVolumeOutputBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

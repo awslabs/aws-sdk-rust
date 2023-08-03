@@ -9,10 +9,7 @@ pub fn ser_action_remote_ip_details(
     if let Some(var_2) = &input.organization {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Organization").start_object();
-        crate::protocol_serde::shape_ip_organization_details::ser_ip_organization_details(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_ip_organization_details::ser_ip_organization_details(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.country {
@@ -38,17 +35,9 @@ pub fn ser_action_remote_ip_details(
 
 pub(crate) fn de_action_remote_ip_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ActionRemoteIpDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ActionRemoteIpDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -58,55 +47,41 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IpAddressV4" => {
                             builder = builder.set_ip_address_v4(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "Organization" => {
-                            builder = builder.set_organization(
-                                    crate::protocol_serde::shape_ip_organization_details::de_ip_organization_details(tokens)?
-                                );
+                            builder =
+                                builder.set_organization(crate::protocol_serde::shape_ip_organization_details::de_ip_organization_details(tokens)?);
                         }
                         "Country" => {
-                            builder = builder.set_country(
-                                crate::protocol_serde::shape_country::de_country(tokens)?,
-                            );
+                            builder = builder.set_country(crate::protocol_serde::shape_country::de_country(tokens)?);
                         }
                         "City" => {
-                            builder = builder
-                                .set_city(crate::protocol_serde::shape_city::de_city(tokens)?);
+                            builder = builder.set_city(crate::protocol_serde::shape_city::de_city(tokens)?);
                         }
                         "GeoLocation" => {
-                            builder = builder.set_geo_location(
-                                crate::protocol_serde::shape_geo_location::de_geo_location(tokens)?,
-                            );
+                            builder = builder.set_geo_location(crate::protocol_serde::shape_geo_location::de_geo_location(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

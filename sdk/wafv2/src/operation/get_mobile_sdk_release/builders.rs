@@ -38,9 +38,7 @@ impl GetMobileSdkReleaseFluentBuilder {
         }
     }
     /// Access the GetMobileSdkRelease as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_mobile_sdk_release::builders::GetMobileSdkReleaseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_mobile_sdk_release::builders::GetMobileSdkReleaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetMobileSdkReleaseFluentBuilder {
             crate::operation::get_mobile_sdk_release::GetMobileSdkRelease,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetMobileSdkReleaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetMobileSdkReleaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetMobileSdkReleaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl GetMobileSdkReleaseFluentBuilder {
             crate::operation::get_mobile_sdk_release::GetMobileSdkRelease,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +125,12 @@ impl GetMobileSdkReleaseFluentBuilder {
         self.inner.get_platform()
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
-    pub fn release_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.release_version(input.into());
         self
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
-    pub fn set_release_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_release_version(input);
         self
     }

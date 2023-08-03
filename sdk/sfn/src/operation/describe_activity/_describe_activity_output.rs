@@ -53,17 +53,14 @@ impl ::aws_http::request_id::RequestId for DescribeActivityOutput {
 }
 impl DescribeActivityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivityOutput`](crate::operation::describe_activity::DescribeActivityOutput).
-    pub fn builder() -> crate::operation::describe_activity::builders::DescribeActivityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_activity::builders::DescribeActivityOutputBuilder {
         crate::operation::describe_activity::builders::DescribeActivityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeActivityOutput`](crate::operation::describe_activity::DescribeActivityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActivityOutputBuilder {
     pub(crate) activity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -132,10 +129,7 @@ impl DescribeActivityOutputBuilder {
         self
     }
     /// <p>The date the activity is created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

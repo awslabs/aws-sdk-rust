@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`identity_pools(Option<Vec<IdentityPoolShortDescription>>)`](crate::operation::list_identity_pools::ListIdentityPoolsOutput::identity_pools): <p>The identity pools returned by the ListIdentityPools action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identity_pools::ListIdentityPoolsOutput::next_token): <p>A pagination token.</p>
     /// - On failure, responds with [`SdkError<ListIdentityPoolsError>`](crate::operation::list_identity_pools::ListIdentityPoolsError)
-    pub fn list_identity_pools(
-        &self,
-    ) -> crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder {
-        crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_identity_pools(&self) -> crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder {
+        crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder::new(self.handle.clone())
     }
 }

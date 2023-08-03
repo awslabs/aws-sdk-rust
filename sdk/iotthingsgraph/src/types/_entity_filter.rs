@@ -30,9 +30,7 @@ impl EntityFilter {
 
 /// A builder for [`EntityFilter`](crate::types::EntityFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EntityFilterName>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl EntityFilterBuilder {
         self
     }
     /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::EntityFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl EntityFilterBuilder {
         self
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.value = input;
         self
     }

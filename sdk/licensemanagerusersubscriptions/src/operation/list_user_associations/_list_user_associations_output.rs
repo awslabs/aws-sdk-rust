@@ -5,8 +5,7 @@
 pub struct ListUserAssociationsOutput {
     /// <p>Metadata that describes the list user association operation.</p>
     #[doc(hidden)]
-    pub instance_user_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>>,
+    pub instance_user_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListUserAssociationsOutput {
 }
 impl ListUserAssociationsOutput {
     /// <p>Metadata that describes the list user association operation.</p>
-    pub fn instance_user_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceUserSummary]> {
+    pub fn instance_user_summaries(&self) -> ::std::option::Option<&[crate::types::InstanceUserSummary]> {
         self.instance_user_summaries.as_deref()
     }
     /// <p>Token for the next set of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListUserAssociationsOutput {
 }
 impl ListUserAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserAssociationsOutput`](crate::operation::list_user_associations::ListUserAssociationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_user_associations::builders::ListUserAssociationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_user_associations::builders::ListUserAssociationsOutputBuilder {
         crate::operation::list_user_associations::builders::ListUserAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserAssociationsOutput`](crate::operation::list_user_associations::ListUserAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserAssociationsOutputBuilder {
-    pub(crate) instance_user_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>>,
+    pub(crate) instance_user_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListUserAssociationsOutputBuilder {
         self
     }
     /// <p>Metadata that describes the list user association operation.</p>
-    pub fn set_instance_user_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>>,
-    ) -> Self {
+    pub fn set_instance_user_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>>) -> Self {
         self.instance_user_summaries = input;
         self
     }
     /// <p>Metadata that describes the list user association operation.</p>
-    pub fn get_instance_user_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>> {
+    pub fn get_instance_user_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>> {
         &self.instance_user_summaries
     }
     /// <p>Token for the next set of results.</p>

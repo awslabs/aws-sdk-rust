@@ -17,9 +17,7 @@ impl ObjectAttributeUpdate {
         self.object_attribute_key.as_ref()
     }
     /// <p>The action to perform as part of the attribute update.</p>
-    pub fn object_attribute_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ObjectAttributeAction> {
+    pub fn object_attribute_action(&self) -> ::std::option::Option<&crate::types::ObjectAttributeAction> {
         self.object_attribute_action.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl ObjectAttributeUpdate {
 
 /// A builder for [`ObjectAttributeUpdate`](crate::types::ObjectAttributeUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObjectAttributeUpdateBuilder {
     pub(crate) object_attribute_key: ::std::option::Option<crate::types::AttributeKey>,
     pub(crate) object_attribute_action: ::std::option::Option<crate::types::ObjectAttributeAction>,
@@ -46,10 +42,7 @@ impl ObjectAttributeUpdateBuilder {
         self
     }
     /// <p>The key of the attribute being updated.</p>
-    pub fn set_object_attribute_key(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeKey>,
-    ) -> Self {
+    pub fn set_object_attribute_key(mut self, input: ::std::option::Option<crate::types::AttributeKey>) -> Self {
         self.object_attribute_key = input;
         self
     }
@@ -63,17 +56,12 @@ impl ObjectAttributeUpdateBuilder {
         self
     }
     /// <p>The action to perform as part of the attribute update.</p>
-    pub fn set_object_attribute_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectAttributeAction>,
-    ) -> Self {
+    pub fn set_object_attribute_action(mut self, input: ::std::option::Option<crate::types::ObjectAttributeAction>) -> Self {
         self.object_attribute_action = input;
         self
     }
     /// <p>The action to perform as part of the attribute update.</p>
-    pub fn get_object_attribute_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectAttributeAction> {
+    pub fn get_object_attribute_action(&self) -> &::std::option::Option<crate::types::ObjectAttributeAction> {
         &self.object_attribute_action
     }
     /// Consumes the builder and constructs a [`ObjectAttributeUpdate`](crate::types::ObjectAttributeUpdate).

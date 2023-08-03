@@ -76,9 +76,7 @@ impl S3ParquetSource {
         self.max_files_in_band
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DirectSourceAdditionalOptions> {
+    pub fn additional_options(&self) -> ::std::option::Option<&crate::types::S3DirectSourceAdditionalOptions> {
         self.additional_options.as_ref()
     }
     /// <p>Specifies the data schema for the S3 Parquet source.</p>
@@ -95,9 +93,7 @@ impl S3ParquetSource {
 
 /// A builder for [`S3ParquetSource`](crate::types::S3ParquetSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ParquetSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -108,8 +104,7 @@ pub struct S3ParquetSourceBuilder {
     pub(crate) recurse: ::std::option::Option<bool>,
     pub(crate) max_band: ::std::option::Option<i32>,
     pub(crate) max_files_in_band: ::std::option::Option<i32>,
-    pub(crate) additional_options:
-        ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
+    pub(crate) additional_options: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
     pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3ParquetSourceBuilder {
@@ -139,10 +134,7 @@ impl S3ParquetSourceBuilder {
         self
     }
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub fn set_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.paths = input;
         self
     }
@@ -156,17 +148,12 @@ impl S3ParquetSourceBuilder {
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn set_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ParquetCompressionType>,
-    ) -> Self {
+    pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::ParquetCompressionType>) -> Self {
         self.compression_type = input;
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn get_compression_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParquetCompressionType> {
+    pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::ParquetCompressionType> {
         &self.compression_type
     }
     /// Appends an item to `exclusions`.
@@ -181,10 +168,7 @@ impl S3ParquetSourceBuilder {
         self
     }
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
-    pub fn set_exclusions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exclusions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclusions = input;
         self
     }
@@ -263,25 +247,17 @@ impl S3ParquetSourceBuilder {
         &self.max_files_in_band
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_options(
-        mut self,
-        input: crate::types::S3DirectSourceAdditionalOptions,
-    ) -> Self {
+    pub fn additional_options(mut self, input: crate::types::S3DirectSourceAdditionalOptions) -> Self {
         self.additional_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn set_additional_options(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
-    ) -> Self {
+    pub fn set_additional_options(mut self, input: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>) -> Self {
         self.additional_options = input;
         self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn get_additional_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DirectSourceAdditionalOptions> {
+    pub fn get_additional_options(&self) -> &::std::option::Option<crate::types::S3DirectSourceAdditionalOptions> {
         &self.additional_options
     }
     /// Appends an item to `output_schemas`.
@@ -296,17 +272,12 @@ impl S3ParquetSourceBuilder {
         self
     }
     /// <p>Specifies the data schema for the S3 Parquet source.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
     /// <p>Specifies the data schema for the S3 Parquet source.</p>
-    pub fn get_output_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3ParquetSource`](crate::types::S3ParquetSource).

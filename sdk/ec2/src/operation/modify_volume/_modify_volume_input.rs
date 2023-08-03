@@ -100,9 +100,7 @@ impl ModifyVolumeInput {
 
 /// A builder for [`ModifyVolumeInput`](crate::operation::modify_volume::ModifyVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVolumeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
@@ -187,10 +185,7 @@ impl ModifyVolumeInputBuilder {
     }
     /// <p>The target EBS volume type of the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>Default: The existing type is retained.</p>
-    pub fn set_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeType>,
-    ) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.volume_type = input;
         self
     }
@@ -269,12 +264,7 @@ impl ModifyVolumeInputBuilder {
         &self.multi_attach_enabled
     }
     /// Consumes the builder and constructs a [`ModifyVolumeInput`](crate::operation::modify_volume::ModifyVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_volume::ModifyVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_volume::ModifyVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_volume::ModifyVolumeInput {
             dry_run: self.dry_run,
             volume_id: self.volume_id,

@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`ledgers(Option<Vec<LedgerSummary>>)`](crate::operation::list_ledgers::ListLedgersOutput::ledgers): <p>The ledgers that are associated with the current Amazon Web Services account and Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ledgers::ListLedgersOutput::next_token): <p>A pagination token, indicating whether there are more results available:</p>  <ul>   <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>   <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<ListLedgersError>`](crate::operation::list_ledgers::ListLedgersError)
-    pub fn list_ledgers(
-        &self,
-    ) -> crate::operation::list_ledgers::builders::ListLedgersFluentBuilder {
+    pub fn list_ledgers(&self) -> crate::operation::list_ledgers::builders::ListLedgersFluentBuilder {
         crate::operation::list_ledgers::builders::ListLedgersFluentBuilder::new(self.handle.clone())
     }
 }

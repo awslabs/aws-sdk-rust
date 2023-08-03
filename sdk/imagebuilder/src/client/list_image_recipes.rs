@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`image_recipe_summary_list(Option<Vec<ImageRecipeSummary>>)`](crate::operation::list_image_recipes::ListImageRecipesOutput::image_recipe_summary_list): <p>The list of image pipelines.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_image_recipes::ListImageRecipesOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListImageRecipesError>`](crate::operation::list_image_recipes::ListImageRecipesError)
-    pub fn list_image_recipes(
-        &self,
-    ) -> crate::operation::list_image_recipes::builders::ListImageRecipesFluentBuilder {
-        crate::operation::list_image_recipes::builders::ListImageRecipesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_image_recipes(&self) -> crate::operation::list_image_recipes::builders::ListImageRecipesFluentBuilder {
+        crate::operation::list_image_recipes::builders::ListImageRecipesFluentBuilder::new(self.handle.clone())
     }
 }

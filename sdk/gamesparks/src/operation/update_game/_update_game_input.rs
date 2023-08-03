@@ -29,9 +29,7 @@ impl UpdateGameInput {
 
 /// A builder for [`UpdateGameInput`](crate::operation::update_game::UpdateGameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGameInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl UpdateGameInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateGameInput`](crate::operation::update_game::UpdateGameInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_game::UpdateGameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_game::UpdateGameInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_game::UpdateGameInput {
             game_name: self.game_name,
             description: self.description,

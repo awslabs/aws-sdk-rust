@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput) with field(s):
     ///   - [`offering_transaction(Option<OfferingTransaction>)`](crate::operation::purchase_offering::PurchaseOfferingOutput::offering_transaction): <p>Represents the offering transaction for the purchase result.</p>
     /// - On failure, responds with [`SdkError<PurchaseOfferingError>`](crate::operation::purchase_offering::PurchaseOfferingError)
-    pub fn purchase_offering(
-        &self,
-    ) -> crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder {
-        crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn purchase_offering(&self) -> crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder {
+        crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::new(self.handle.clone())
     }
 }

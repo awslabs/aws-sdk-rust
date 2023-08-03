@@ -24,17 +24,14 @@ impl CreateFlowTemplateInput {
 }
 impl CreateFlowTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateFlowTemplateInput`](crate::operation::create_flow_template::CreateFlowTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_flow_template::builders::CreateFlowTemplateInputBuilder {
+    pub fn builder() -> crate::operation::create_flow_template::builders::CreateFlowTemplateInputBuilder {
         crate::operation::create_flow_template::builders::CreateFlowTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFlowTemplateInput`](crate::operation::create_flow_template::CreateFlowTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFlowTemplateInputBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
     pub(crate) compatible_namespace_version: ::std::option::Option<i64>,
@@ -46,10 +43,7 @@ impl CreateFlowTemplateInputBuilder {
         self
     }
     /// <p>The workflow <code>DefinitionDocument</code>.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.definition = input;
         self
     }
@@ -77,15 +71,10 @@ impl CreateFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateFlowTemplateInput`](crate::operation::create_flow_template::CreateFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_flow_template::CreateFlowTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_flow_template::CreateFlowTemplateInput {
-                definition: self.definition,
-                compatible_namespace_version: self.compatible_namespace_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_flow_template::CreateFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_flow_template::CreateFlowTemplateInput {
+            definition: self.definition,
+            compatible_namespace_version: self.compatible_namespace_version,
+        })
     }
 }

@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DisassociateTimeSeriesFromAssetProper
 }
 impl DisassociateTimeSeriesFromAssetPropertyOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput).
-    pub fn builder() -> crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyOutputBuilder
+    {
         crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTimeSeriesFromAssetPropertyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DisassociateTimeSeriesFromAssetPropertyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput).
-    pub fn build(self) -> crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput{
+    pub fn build(self) -> crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput {
         crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput {
             _request_id: self._request_id,
         }

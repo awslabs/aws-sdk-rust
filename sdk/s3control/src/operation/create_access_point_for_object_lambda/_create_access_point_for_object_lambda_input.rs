@@ -29,16 +29,14 @@ impl CreateAccessPointForObjectLambdaInput {
 }
 impl CreateAccessPointForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPointForObjectLambdaInput`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput).
-    pub fn builder() -> crate::operation::create_access_point_for_object_lambda::builders::CreateAccessPointForObjectLambdaInputBuilder{
+    pub fn builder() -> crate::operation::create_access_point_for_object_lambda::builders::CreateAccessPointForObjectLambdaInputBuilder {
         crate::operation::create_access_point_for_object_lambda::builders::CreateAccessPointForObjectLambdaInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPointForObjectLambdaInput`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPointForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -79,30 +77,27 @@ impl CreateAccessPointForObjectLambdaInputBuilder {
         self
     }
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`CreateAccessPointForObjectLambdaInput`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-                configuration: self.configuration
-                ,
-            }
+                account_id: self.account_id,
+                name: self.name,
+                configuration: self.configuration,
+            },
         )
     }
 }

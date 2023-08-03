@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::operation::list_connector_definitions::ListConnectorDefinitionsOutput::definitions): Information about a definition.
     ///   - [`next_token(Option<String>)`](crate::operation::list_connector_definitions::ListConnectorDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     /// - On failure, responds with [`SdkError<ListConnectorDefinitionsError>`](crate::operation::list_connector_definitions::ListConnectorDefinitionsError)
-    pub fn list_connector_definitions(
-        &self,
-    ) -> crate::operation::list_connector_definitions::builders::ListConnectorDefinitionsFluentBuilder
-    {
+    pub fn list_connector_definitions(&self) -> crate::operation::list_connector_definitions::builders::ListConnectorDefinitionsFluentBuilder {
         crate::operation::list_connector_definitions::builders::ListConnectorDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

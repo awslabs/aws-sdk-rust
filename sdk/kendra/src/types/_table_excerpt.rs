@@ -30,9 +30,7 @@ impl TableExcerpt {
 
 /// A builder for [`TableExcerpt`](crate::types::TableExcerpt).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableExcerptBuilder {
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
     pub(crate) total_number_of_rows: ::std::option::Option<i32>,
@@ -50,10 +48,7 @@ impl TableExcerptBuilder {
         self
     }
     /// <p>A list of rows in the table excerpt.</p>
-    pub fn set_rows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
-    ) -> Self {
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>) -> Self {
         self.rows = input;
         self
     }

@@ -30,21 +30,18 @@ impl PurchaseScheduledInstancesInput {
 }
 impl PurchaseScheduledInstancesInput {
     /// Creates a new builder-style object to manufacture [`PurchaseScheduledInstancesInput`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput).
-    pub fn builder() -> crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesInputBuilder{
+    pub fn builder() -> crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesInputBuilder {
         crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseScheduledInstancesInput`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseScheduledInstancesInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) purchase_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>>,
+    pub(crate) purchase_requests: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>>,
 }
 impl PurchaseScheduledInstancesInputBuilder {
     /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -87,17 +84,12 @@ impl PurchaseScheduledInstancesInputBuilder {
         self
     }
     /// <p>The purchase requests.</p>
-    pub fn set_purchase_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>>,
-    ) -> Self {
+    pub fn set_purchase_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>>) -> Self {
         self.purchase_requests = input;
         self
     }
     /// <p>The purchase requests.</p>
-    pub fn get_purchase_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>> {
+    pub fn get_purchase_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>> {
         &self.purchase_requests
     }
     /// Consumes the builder and constructs a [`PurchaseScheduledInstancesInput`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput).
@@ -107,12 +99,10 @@ impl PurchaseScheduledInstancesInputBuilder {
         crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput {
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-                purchase_requests: self.purchase_requests,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput {
+            client_token: self.client_token,
+            dry_run: self.dry_run,
+            purchase_requests: self.purchase_requests,
+        })
     }
 }

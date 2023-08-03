@@ -23,9 +23,7 @@ impl Logging {
 
 /// A builder for [`Logging`](crate::types::Logging).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingBuilder {
     pub(crate) access_log: ::std::option::Option<crate::types::AccessLog>,
 }
@@ -46,8 +44,6 @@ impl LoggingBuilder {
     }
     /// Consumes the builder and constructs a [`Logging`](crate::types::Logging).
     pub fn build(self) -> crate::types::Logging {
-        crate::types::Logging {
-            access_log: self.access_log,
-        }
+        crate::types::Logging { access_log: self.access_log }
     }
 }

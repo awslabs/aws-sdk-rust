@@ -37,10 +37,7 @@ impl DeleteScheduledActionFluentBuilder {
         }
     }
     /// Access the DeleteScheduledAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteScheduledActionFluentBuilder {
             crate::operation::delete_scheduled_action::DeleteScheduledAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_scheduled_action::DeleteScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_action::DeleteScheduledActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteScheduledActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteScheduledActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_scheduled_action::DeleteScheduledActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_scheduled_action::DeleteScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_action::DeleteScheduledActionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteScheduledActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_scheduled_action::DeleteScheduledActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_scheduled_action::DeleteScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_action::DeleteScheduledActionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteScheduledActionFluentBuilder {
             crate::operation::delete_scheduled_action::DeleteScheduledAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_scheduled_action::DeleteScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_action::DeleteScheduledActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the scheduled action to delete. </p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_name(input.into());
         self
     }
     /// <p>The name of the scheduled action to delete. </p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
     }

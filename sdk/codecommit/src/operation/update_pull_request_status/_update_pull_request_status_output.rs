@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdatePullRequestStatusOutput {
 }
 impl UpdatePullRequestStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestStatusOutput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusOutputBuilder {
         crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePullRequestStatusOutput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePullRequestStatusOutputBuilder {
     pub(crate) pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdatePullRequestStatusOutputBuilder {
         self
     }
     /// <p>Information about the pull request.</p>
-    pub fn set_pull_request(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequest>,
-    ) -> Self {
+    pub fn set_pull_request(mut self, input: ::std::option::Option<crate::types::PullRequest>) -> Self {
         self.pull_request = input;
         self
     }
@@ -65,9 +58,7 @@ impl UpdatePullRequestStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestStatusOutput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_pull_request_status::UpdatePullRequestStatusOutput {
+    pub fn build(self) -> crate::operation::update_pull_request_status::UpdatePullRequestStatusOutput {
         crate::operation::update_pull_request_status::UpdatePullRequestStatusOutput {
             pull_request: self.pull_request,
             _request_id: self._request_id,

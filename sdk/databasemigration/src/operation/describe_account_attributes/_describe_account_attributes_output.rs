@@ -33,16 +33,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountAttributesOutput {
 }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
-    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder {
         crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutputBuilder {
     pub(crate) account_quotas: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
     pub(crate) unique_account_identifier: ::std::option::Option<::std::string::String>,
@@ -61,36 +59,25 @@ impl DescribeAccountAttributesOutputBuilder {
         self
     }
     /// <p>Account quota information.</p>
-    pub fn set_account_quotas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
-    ) -> Self {
+    pub fn set_account_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>) -> Self {
         self.account_quotas = input;
         self
     }
     /// <p>Account quota information.</p>
-    pub fn get_account_quotas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>> {
+    pub fn get_account_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>> {
         &self.account_quotas
     }
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
-    pub fn unique_account_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unique_account_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unique_account_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
-    pub fn set_unique_account_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_unique_account_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unique_account_identifier = input;
         self
     }
@@ -110,9 +97,7 @@ impl DescribeAccountAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
+    pub fn build(self) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
         crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
             account_quotas: self.account_quotas,
             unique_account_identifier: self.unique_account_identifier,

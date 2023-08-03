@@ -10,10 +10,7 @@ impl PutBotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_bot::PutBotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bot::PutBotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_bot();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl PutBotFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_bot::PutBot,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_bot::PutBot, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
     > {
         let handle = self.handle.clone();
@@ -61,20 +55,15 @@ impl PutBotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bot::PutBotOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_bot::PutBotOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>>
+    {
         let op = self
             .inner
             .build()
@@ -94,10 +83,8 @@ impl PutBotFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bot::PutBotOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_bot::PutBotOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>>
+    {
         self.send_middleware().await
     }
 
@@ -106,10 +93,7 @@ impl PutBotFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_bot::PutBot,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_bot::PutBot, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
     > {
         self.customize_middleware().await
@@ -152,10 +136,7 @@ impl PutBotFluentBuilder {
         self
     }
     /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
-    pub fn set_intents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
-    ) -> Self {
+    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>) -> Self {
         self.inner = self.inner.set_intents(input);
         self
     }
@@ -243,10 +224,7 @@ impl PutBotFluentBuilder {
     /// <li> <p>IntentB</p> </li>
     /// <li> <p>IntentC</p> </li>
     /// </ul>
-    pub fn set_nlu_intent_confidence_threshold(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_nlu_intent_confidence_threshold(input);
         self
     }
@@ -291,10 +269,7 @@ impl PutBotFluentBuilder {
     /// <li> <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
     /// <li> <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
     /// </ul>
-    pub fn set_clarification_prompt(
-        mut self,
-        input: ::std::option::Option<crate::types::Prompt>,
-    ) -> Self {
+    pub fn set_clarification_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
         self.inner = self.inner.set_clarification_prompt(input);
         self
     }
@@ -322,10 +297,7 @@ impl PutBotFluentBuilder {
     /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex tries to elicit a correct response a few more times. </p>
     /// <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p>
     /// <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
-    pub fn set_abort_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::Statement>,
-    ) -> Self {
+    pub fn set_abort_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
         self.inner = self.inner.set_abort_statement(input);
         self
     }
@@ -404,10 +376,7 @@ impl PutBotFluentBuilder {
     }
     /// <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p>
     /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
-    pub fn set_process_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessBehavior>,
-    ) -> Self {
+    pub fn set_process_behavior(mut self, input: ::std::option::Option<crate::types::ProcessBehavior>) -> Self {
         self.inner = self.inner.set_process_behavior(input);
         self
     }
@@ -488,10 +457,7 @@ impl PutBotFluentBuilder {
         self
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

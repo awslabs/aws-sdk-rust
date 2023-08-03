@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`network_insights_analyses(Option<Vec<NetworkInsightsAnalysis>>)`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput::network_insights_analyses): <p>Information about the network insights analyses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeNetworkInsightsAnalysesError>`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesError)
-    pub fn describe_network_insights_analyses(&self) -> crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder{
+    pub fn describe_network_insights_analyses(
+        &self,
+    ) -> crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder {
         crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::new(self.handle.clone())
     }
 }

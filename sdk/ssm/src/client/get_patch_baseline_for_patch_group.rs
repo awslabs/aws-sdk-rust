@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`patch_group(Option<String>)`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput::patch_group): <p>The name of the patch group.</p>
     ///   - [`operating_system(Option<OperatingSystem>)`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput::operating_system): <p>The operating system rule specified for patch groups using the patch baseline.</p>
     /// - On failure, responds with [`SdkError<GetPatchBaselineForPatchGroupError>`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupError)
-    pub fn get_patch_baseline_for_patch_group(&self) -> crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupFluentBuilder{
+    pub fn get_patch_baseline_for_patch_group(
+        &self,
+    ) -> crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupFluentBuilder {
         crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupFluentBuilder::new(self.handle.clone())
     }
 }

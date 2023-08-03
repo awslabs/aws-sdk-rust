@@ -33,9 +33,7 @@ pub fn ser_create_connector_input(
     }
     if let Some(var_11) = &input.kafka_cluster_client_authentication {
         #[allow(unused_mut)]
-        let mut object_12 = object
-            .key("kafkaClusterClientAuthentication")
-            .start_object();
+        let mut object_12 = object.key("kafkaClusterClientAuthentication").start_object();
         crate::protocol_serde::shape_kafka_cluster_client_authentication::ser_kafka_cluster_client_authentication(&mut object_12, var_11)?;
         object_12.finish();
     }
@@ -67,17 +65,12 @@ pub fn ser_create_connector_input(
         array_19.finish();
     }
     if let Some(var_22) = &input.service_execution_role_arn {
-        object
-            .key("serviceExecutionRoleArn")
-            .string(var_22.as_str());
+        object.key("serviceExecutionRoleArn").string(var_22.as_str());
     }
     if let Some(var_23) = &input.worker_configuration {
         #[allow(unused_mut)]
         let mut object_24 = object.key("workerConfiguration").start_object();
-        crate::protocol_serde::shape_worker_configuration::ser_worker_configuration(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_worker_configuration::ser_worker_configuration(&mut object_24, var_23)?;
         object_24.finish();
     }
     Ok(())

@@ -30,17 +30,14 @@ impl DescribeEndpointsInput {
 }
 impl DescribeEndpointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsInput`](crate::operation::describe_endpoints::DescribeEndpointsInput).
-    pub fn builder() -> crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder {
         crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointsInput`](crate::operation::describe_endpoints::DescribeEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) mode: ::std::option::Option<crate::types::DescribeEndpointsMode>,
@@ -67,10 +64,7 @@ impl DescribeEndpointsInputBuilder {
         self
     }
     /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeEndpointsMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DescribeEndpointsMode>) -> Self {
         self.mode = input;
         self
     }
@@ -95,16 +89,11 @@ impl DescribeEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointsInput`](crate::operation::describe_endpoints::DescribeEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_endpoints::DescribeEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_endpoints::DescribeEndpointsInput {
-                max_results: self.max_results,
-                mode: self.mode,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_endpoints::DescribeEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_endpoints::DescribeEndpointsInput {
+            max_results: self.max_results,
+            mode: self.mode,
+            next_token: self.next_token,
+        })
     }
 }

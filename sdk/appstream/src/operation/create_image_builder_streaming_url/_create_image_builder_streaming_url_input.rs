@@ -22,16 +22,14 @@ impl CreateImageBuilderStreamingUrlInput {
 }
 impl CreateImageBuilderStreamingUrlInput {
     /// Creates a new builder-style object to manufacture [`CreateImageBuilderStreamingUrlInput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput).
-    pub fn builder() -> crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingUrlInputBuilder{
+    pub fn builder() -> crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingUrlInputBuilder {
         crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateImageBuilderStreamingUrlInput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImageBuilderStreamingUrlInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) validity: ::std::option::Option<i64>,
@@ -74,11 +72,9 @@ impl CreateImageBuilderStreamingUrlInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput {
-                name: self.name
-                ,
-                validity: self.validity
-                ,
-            }
+                name: self.name,
+                validity: self.validity,
+            },
         )
     }
 }

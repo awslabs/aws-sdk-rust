@@ -55,18 +55,14 @@ impl DescribeClusterVersionsInput {
 }
 impl DescribeClusterVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterVersionsInput`](crate::operation::describe_cluster_versions::DescribeClusterVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder {
         crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterVersionsInput`](crate::operation::describe_cluster_versions::DescribeClusterVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterVersionsInputBuilder {
     pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_parameter_group_family: ::std::option::Option<::std::string::String>,
@@ -76,19 +72,13 @@ pub struct DescribeClusterVersionsInputBuilder {
 impl DescribeClusterVersionsInputBuilder {
     /// <p>The specific cluster version to return.</p>
     /// <p>Example: <code>1.0</code> </p>
-    pub fn cluster_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific cluster version to return.</p>
     /// <p>Example: <code>1.0</code> </p>
-    pub fn set_cluster_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_version = input;
         self
     }
@@ -104,10 +94,7 @@ impl DescribeClusterVersionsInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn cluster_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
@@ -118,10 +105,7 @@ impl DescribeClusterVersionsInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn set_cluster_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_parameter_group_family = input;
         self
     }
@@ -132,9 +116,7 @@ impl DescribeClusterVersionsInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn get_cluster_parameter_group_family(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cluster_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_parameter_group_family
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
@@ -178,13 +160,11 @@ impl DescribeClusterVersionsInputBuilder {
         crate::operation::describe_cluster_versions::DescribeClusterVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cluster_versions::DescribeClusterVersionsInput {
-                cluster_version: self.cluster_version,
-                cluster_parameter_group_family: self.cluster_parameter_group_family,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cluster_versions::DescribeClusterVersionsInput {
+            cluster_version: self.cluster_version,
+            cluster_parameter_group_family: self.cluster_parameter_group_family,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

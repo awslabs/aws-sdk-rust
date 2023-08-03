@@ -22,26 +22,18 @@ impl ExportSnapshotInput {
 
 /// A builder for [`ExportSnapshotInput`](crate::operation::export_snapshot::ExportSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportSnapshotInputBuilder {
     pub(crate) source_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl ExportSnapshotInputBuilder {
     /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-    pub fn source_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-    pub fn set_source_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_snapshot_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl ExportSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`ExportSnapshotInput`](crate::operation::export_snapshot::ExportSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::export_snapshot::ExportSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::export_snapshot::ExportSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_snapshot::ExportSnapshotInput {
             source_snapshot_name: self.source_snapshot_name,
         })

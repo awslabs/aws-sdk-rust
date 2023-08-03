@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_streaming_images::ListStreamingImagesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`streaming_images(Option<Vec<StreamingImage>>)`](crate::operation::list_streaming_images::ListStreamingImagesOutput::streaming_images): <p>A collection of streaming images.</p>
     /// - On failure, responds with [`SdkError<ListStreamingImagesError>`](crate::operation::list_streaming_images::ListStreamingImagesError)
-    pub fn list_streaming_images(
-        &self,
-    ) -> crate::operation::list_streaming_images::builders::ListStreamingImagesFluentBuilder {
-        crate::operation::list_streaming_images::builders::ListStreamingImagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_streaming_images(&self) -> crate::operation::list_streaming_images::builders::ListStreamingImagesFluentBuilder {
+        crate::operation::list_streaming_images::builders::ListStreamingImagesFluentBuilder::new(self.handle.clone())
     }
 }

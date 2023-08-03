@@ -44,9 +44,7 @@ impl RepositorySyncDefinition {
 
 /// A builder for [`RepositorySyncDefinition`](crate::types::RepositorySyncDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositorySyncDefinitionBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) parent: ::std::option::Option<::std::string::String>,

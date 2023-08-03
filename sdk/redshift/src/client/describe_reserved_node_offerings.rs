@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     ///   - [`reserved_node_offerings(Option<Vec<ReservedNodeOffering>>)`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput::reserved_node_offerings): <p>A list of <code>ReservedNodeOffering</code> objects.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedNodeOfferingsError>`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError)
-    pub fn describe_reserved_node_offerings(&self) -> crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder{
+    pub fn describe_reserved_node_offerings(
+        &self,
+    ) -> crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder {
         crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

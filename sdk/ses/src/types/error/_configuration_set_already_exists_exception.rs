@@ -36,34 +36,27 @@ impl ::std::fmt::Display for ConfigurationSetAlreadyExistsException {
     }
 }
 impl ::std::error::Error for ConfigurationSetAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ConfigurationSetAlreadyExistsException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ConfigurationSetAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ConfigurationSetAlreadyExistsException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConfigurationSetAlreadyExistsException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl ConfigurationSetAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`ConfigurationSetAlreadyExistsException`](crate::types::error::ConfigurationSetAlreadyExistsException).
-    pub fn builder() -> crate::types::error::builders::ConfigurationSetAlreadyExistsExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::ConfigurationSetAlreadyExistsExceptionBuilder {
         crate::types::error::builders::ConfigurationSetAlreadyExistsExceptionBuilder::default()
     }
 }
 
 /// A builder for [`ConfigurationSetAlreadyExistsException`](crate::types::error::ConfigurationSetAlreadyExistsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationSetAlreadyExistsExceptionBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -71,18 +64,12 @@ pub struct ConfigurationSetAlreadyExistsExceptionBuilder {
 }
 impl ConfigurationSetAlreadyExistsExceptionBuilder {
     /// <p>Indicates that the configuration set does not exist.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the configuration set does not exist.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -111,10 +98,7 @@ impl ConfigurationSetAlreadyExistsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

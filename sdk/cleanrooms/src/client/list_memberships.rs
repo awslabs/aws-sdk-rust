@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_memberships::ListMembershipsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     ///   - [`membership_summaries(Option<Vec<MembershipSummary>>)`](crate::operation::list_memberships::ListMembershipsOutput::membership_summaries): <p>The list of memberships returned from the ListMemberships operation.</p>
     /// - On failure, responds with [`SdkError<ListMembershipsError>`](crate::operation::list_memberships::ListMembershipsError)
-    pub fn list_memberships(
-        &self,
-    ) -> crate::operation::list_memberships::builders::ListMembershipsFluentBuilder {
-        crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_memberships(&self) -> crate::operation::list_memberships::builders::ListMembershipsFluentBuilder {
+        crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::new(self.handle.clone())
     }
 }

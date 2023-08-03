@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ pub enum ActionType {
 impl ::std::convert::From<&str> for ActionType {
     fn from(s: &str) -> Self {
         match s {
-            "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE" => {
-                ActionType::AddOrganizationsServiceLinkedRole
-            }
+            "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE" => ActionType::AddOrganizationsServiceLinkedRole,
             "APPROVE_ALL_FEATURES" => ActionType::ApproveAllFeatures,
             "ENABLE_ALL_FEATURES" => ActionType::EnableAllFeatures,
             "INVITE" => ActionType::InviteAccountToOrganization,
@@ -84,9 +76,7 @@ impl ActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ActionType::AddOrganizationsServiceLinkedRole => {
-                "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE"
-            }
+            ActionType::AddOrganizationsServiceLinkedRole => "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE",
             ActionType::ApproveAllFeatures => "APPROVE_ALL_FEATURES",
             ActionType::EnableAllFeatures => "ENABLE_ALL_FEATURES",
             ActionType::InviteAccountToOrganization => "INVITE",

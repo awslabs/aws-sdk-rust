@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAcceleratorOutput`](crate::operation::describe_accelerator::DescribeAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<Accelerator>)`](crate::operation::describe_accelerator::DescribeAcceleratorOutput::accelerator): <p>The description of the accelerator.</p>
     /// - On failure, responds with [`SdkError<DescribeAcceleratorError>`](crate::operation::describe_accelerator::DescribeAcceleratorError)
-    pub fn describe_accelerator(
-        &self,
-    ) -> crate::operation::describe_accelerator::builders::DescribeAcceleratorFluentBuilder {
-        crate::operation::describe_accelerator::builders::DescribeAcceleratorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_accelerator(&self) -> crate::operation::describe_accelerator::builders::DescribeAcceleratorFluentBuilder {
+        crate::operation::describe_accelerator::builders::DescribeAcceleratorFluentBuilder::new(self.handle.clone())
     }
 }

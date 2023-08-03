@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInstanceEventWindowOutput`](crate::operation::create_instance_event_window::CreateInstanceEventWindowOutput) with field(s):
     ///   - [`instance_event_window(Option<InstanceEventWindow>)`](crate::operation::create_instance_event_window::CreateInstanceEventWindowOutput::instance_event_window): <p>Information about the event window.</p>
     /// - On failure, responds with [`SdkError<CreateInstanceEventWindowError>`](crate::operation::create_instance_event_window::CreateInstanceEventWindowError)
-    pub fn create_instance_event_window(&self) -> crate::operation::create_instance_event_window::builders::CreateInstanceEventWindowFluentBuilder{
+    pub fn create_instance_event_window(&self) -> crate::operation::create_instance_event_window::builders::CreateInstanceEventWindowFluentBuilder {
         crate::operation::create_instance_event_window::builders::CreateInstanceEventWindowFluentBuilder::new(self.handle.clone())
     }
 }

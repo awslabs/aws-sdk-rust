@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetLaunchProfileMemberOutput {
 }
 impl GetLaunchProfileMemberOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileMemberOutput`](crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput).
-    pub fn builder(
-    ) -> crate::operation::get_launch_profile_member::builders::GetLaunchProfileMemberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_launch_profile_member::builders::GetLaunchProfileMemberOutputBuilder {
         crate::operation::get_launch_profile_member::builders::GetLaunchProfileMemberOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLaunchProfileMemberOutput`](crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLaunchProfileMemberOutputBuilder {
     pub(crate) member: ::std::option::Option<crate::types::LaunchProfileMembership>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetLaunchProfileMemberOutputBuilder {
         self
     }
     /// <p>The member.</p>
-    pub fn set_member(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchProfileMembership>,
-    ) -> Self {
+    pub fn set_member(mut self, input: ::std::option::Option<crate::types::LaunchProfileMembership>) -> Self {
         self.member = input;
         self
     }
@@ -65,9 +58,7 @@ impl GetLaunchProfileMemberOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLaunchProfileMemberOutput`](crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput {
+    pub fn build(self) -> crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput {
         crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput {
             member: self.member,
             _request_id: self._request_id,

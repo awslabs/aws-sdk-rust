@@ -36,18 +36,14 @@ impl UpgradePublishedSchemaInput {
 }
 impl UpgradePublishedSchemaInput {
     /// Creates a new builder-style object to manufacture [`UpgradePublishedSchemaInput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput).
-    pub fn builder(
-    ) -> crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaInputBuilder
-    {
+    pub fn builder() -> crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaInputBuilder {
         crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaInputBuilder::default()
     }
 }
 
 /// A builder for [`UpgradePublishedSchemaInput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradePublishedSchemaInputBuilder {
     pub(crate) development_schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) published_schema_arn: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct UpgradePublishedSchemaInputBuilder {
 }
 impl UpgradePublishedSchemaInputBuilder {
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
-    pub fn development_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn development_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.development_schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
-    pub fn set_development_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_development_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.development_schema_arn = input;
         self
     }
@@ -76,18 +66,12 @@ impl UpgradePublishedSchemaInputBuilder {
         &self.development_schema_arn
     }
     /// <p>The ARN of the published schema to be upgraded.</p>
-    pub fn published_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn published_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.published_schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the published schema to be upgraded.</p>
-    pub fn set_published_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_published_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.published_schema_arn = input;
         self
     }
@@ -96,18 +80,12 @@ impl UpgradePublishedSchemaInputBuilder {
         &self.published_schema_arn
     }
     /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minor_version = input;
         self
     }
@@ -132,17 +110,13 @@ impl UpgradePublishedSchemaInputBuilder {
     /// Consumes the builder and constructs a [`UpgradePublishedSchemaInput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput {
-                development_schema_arn: self.development_schema_arn,
-                published_schema_arn: self.published_schema_arn,
-                minor_version: self.minor_version,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput {
+            development_schema_arn: self.development_schema_arn,
+            published_schema_arn: self.published_schema_arn,
+            minor_version: self.minor_version,
+            dry_run: self.dry_run,
+        })
     }
 }

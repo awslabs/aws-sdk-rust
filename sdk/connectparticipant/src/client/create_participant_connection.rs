@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`websocket(Option<Websocket>)`](crate::operation::create_participant_connection::CreateParticipantConnectionOutput::websocket): <p>Creates the participant's websocket connection.</p>
     ///   - [`connection_credentials(Option<ConnectionCredentials>)`](crate::operation::create_participant_connection::CreateParticipantConnectionOutput::connection_credentials): <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
     /// - On failure, responds with [`SdkError<CreateParticipantConnectionError>`](crate::operation::create_participant_connection::CreateParticipantConnectionError)
-    pub fn create_participant_connection(&self) -> crate::operation::create_participant_connection::builders::CreateParticipantConnectionFluentBuilder{
+    pub fn create_participant_connection(
+        &self,
+    ) -> crate::operation::create_participant_connection::builders::CreateParticipantConnectionFluentBuilder {
         crate::operation::create_participant_connection::builders::CreateParticipantConnectionFluentBuilder::new(self.handle.clone())
     }
 }

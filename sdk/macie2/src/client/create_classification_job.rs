@@ -20,10 +20,7 @@ impl super::Client {
     ///   - [`job_arn(Option<String>)`](crate::operation::create_classification_job::CreateClassificationJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the job.</p>
     ///   - [`job_id(Option<String>)`](crate::operation::create_classification_job::CreateClassificationJobOutput::job_id): <p>The unique identifier for the job.</p>
     /// - On failure, responds with [`SdkError<CreateClassificationJobError>`](crate::operation::create_classification_job::CreateClassificationJobError)
-    pub fn create_classification_job(
-        &self,
-    ) -> crate::operation::create_classification_job::builders::CreateClassificationJobFluentBuilder
-    {
+    pub fn create_classification_job(&self) -> crate::operation::create_classification_job::builders::CreateClassificationJobFluentBuilder {
         crate::operation::create_classification_job::builders::CreateClassificationJobFluentBuilder::new(self.handle.clone())
     }
 }

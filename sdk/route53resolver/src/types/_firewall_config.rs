@@ -41,9 +41,7 @@ impl FirewallConfig {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-    pub fn firewall_fail_open(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FirewallFailOpenStatus> {
+    pub fn firewall_fail_open(&self) -> ::std::option::Option<&crate::types::FirewallFailOpenStatus> {
         self.firewall_fail_open.as_ref()
     }
 }
@@ -56,9 +54,7 @@ impl FirewallConfig {
 
 /// A builder for [`FirewallConfig`](crate::types::FirewallConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirewallConfigBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -124,10 +120,7 @@ impl FirewallConfigBuilder {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-    pub fn set_firewall_fail_open(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallFailOpenStatus>,
-    ) -> Self {
+    pub fn set_firewall_fail_open(mut self, input: ::std::option::Option<crate::types::FirewallFailOpenStatus>) -> Self {
         self.firewall_fail_open = input;
         self
     }
@@ -137,9 +130,7 @@ impl FirewallConfigBuilder {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-    pub fn get_firewall_fail_open(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallFailOpenStatus> {
+    pub fn get_firewall_fail_open(&self) -> &::std::option::Option<crate::types::FirewallFailOpenStatus> {
         &self.firewall_fail_open
     }
     /// Consumes the builder and constructs a [`FirewallConfig`](crate::types::FirewallConfig).

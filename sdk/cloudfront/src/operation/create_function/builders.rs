@@ -10,10 +10,7 @@ impl CreateFunctionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_function::CreateFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_function::CreateFunctionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_function();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateFunctionFluentBuilder {
         }
     }
     /// Access the CreateFunction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_function::builders::CreateFunctionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_function::builders::CreateFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl CreateFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -137,10 +129,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
-    pub fn set_function_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionConfig>,
-    ) -> Self {
+    pub fn set_function_config(mut self, input: ::std::option::Option<crate::types::FunctionConfig>) -> Self {
         self.inner = self.inner.set_function_config(input);
         self
     }
@@ -154,10 +143,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_function_code(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_function_code(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_function_code(input);
         self
     }

@@ -58,9 +58,7 @@ impl RecommendationReportDetails {
 
 /// A builder for [`RecommendationReportDetails`](crate::types::RecommendationReportDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationReportDetailsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::RecommendationReportStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl RecommendationReportDetailsBuilder {
         self
     }
     /// <p> The status of the recommendation report generation task. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationReportStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationReportStatus>) -> Self {
         self.status = input;
         self
     }
@@ -88,18 +83,12 @@ impl RecommendationReportDetailsBuilder {
         &self.status
     }
     /// <p> The status message for recommendation report generation. </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The status message for recommendation report generation. </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -113,10 +102,7 @@ impl RecommendationReportDetailsBuilder {
         self
     }
     /// <p> The time that the recommendation report generation task starts. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -130,10 +116,7 @@ impl RecommendationReportDetailsBuilder {
         self
     }
     /// <p> The time that the recommendation report generation task completes. </p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }
@@ -167,10 +150,7 @@ impl RecommendationReportDetailsBuilder {
         self
     }
     /// <p> The Amazon S3 key name of the report file. </p>
-    pub fn set_s3_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_s3_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.s3_keys = input;
         self
     }

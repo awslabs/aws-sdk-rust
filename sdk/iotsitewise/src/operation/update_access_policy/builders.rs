@@ -10,10 +10,7 @@ impl UpdateAccessPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_access_policy::UpdateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_policy::UpdateAccessPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_policy::UpdateAccessPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_access_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateAccessPolicyFluentBuilder {
         }
     }
     /// Access the UpdateAccessPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateAccessPolicyFluentBuilder {
             crate::operation::update_access_policy::UpdateAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_policy::UpdateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_policy::UpdateAccessPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateAccessPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_access_policy::UpdateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_policy::UpdateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_policy::UpdateAccessPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_access_policy::UpdateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_policy::UpdateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_policy::UpdateAccessPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateAccessPolicyFluentBuilder {
             crate::operation::update_access_policy::UpdateAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_policy::UpdateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_policy::UpdateAccessPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_policy_id(input.into());
         self
     }
     /// <p>The ID of the access policy.</p>
-    pub fn set_access_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_policy_id(input);
         self
     }
@@ -148,10 +126,7 @@ impl UpdateAccessPolicyFluentBuilder {
         self
     }
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
-    pub fn set_access_policy_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::Identity>,
-    ) -> Self {
+    pub fn set_access_policy_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.inner = self.inner.set_access_policy_identity(input);
         self
     }
@@ -165,10 +140,7 @@ impl UpdateAccessPolicyFluentBuilder {
         self
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-    pub fn set_access_policy_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::Resource>,
-    ) -> Self {
+    pub fn set_access_policy_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.inner = self.inner.set_access_policy_resource(input);
         self
     }
@@ -182,10 +154,7 @@ impl UpdateAccessPolicyFluentBuilder {
         self
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn set_access_policy_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::Permission>,
-    ) -> Self {
+    pub fn set_access_policy_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
         self.inner = self.inner.set_access_policy_permission(input);
         self
     }

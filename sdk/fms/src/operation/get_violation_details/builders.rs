@@ -37,9 +37,7 @@ impl GetViolationDetailsFluentBuilder {
         }
     }
     /// Access the GetViolationDetails as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_violation_details::builders::GetViolationDetailsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_violation_details::builders::GetViolationDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetViolationDetailsFluentBuilder {
             crate::operation::get_violation_details::GetViolationDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_violation_details::GetViolationDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_violation_details::GetViolationDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetViolationDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetViolationDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_violation_details::GetViolationDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_violation_details::GetViolationDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_violation_details::GetViolationDetailsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetViolationDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_violation_details::GetViolationDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_violation_details::GetViolationDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_violation_details::GetViolationDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetViolationDetailsFluentBuilder {
             crate::operation::get_violation_details::GetViolationDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_violation_details::GetViolationDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_violation_details::GetViolationDetailsError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl GetViolationDetailsFluentBuilder {
         self.inner.get_policy_id()
     }
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
-    pub fn member_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_account(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
-    pub fn set_member_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_account(input);
         self
     }
@@ -171,18 +152,12 @@ impl GetViolationDetailsFluentBuilder {
         self.inner.get_resource_id()
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

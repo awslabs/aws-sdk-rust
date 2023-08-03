@@ -10,10 +10,7 @@ impl GetNetworkSiteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_network_site::GetNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_site::GetNetworkSiteError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_site::GetNetworkSiteError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_network_site();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetNetworkSiteFluentBuilder {
         }
     }
     /// Access the GetNetworkSite as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_network_site::builders::GetNetworkSiteInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_network_site::builders::GetNetworkSiteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetNetworkSiteFluentBuilder {
             crate::operation::get_network_site::GetNetworkSite,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_site::GetNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_site::GetNetworkSiteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetNetworkSiteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetNetworkSiteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_site::GetNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_site::GetNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_site::GetNetworkSiteError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetNetworkSiteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_site::GetNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_site::GetNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_site::GetNetworkSiteError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetNetworkSiteFluentBuilder {
             crate::operation::get_network_site::GetNetworkSite,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_site::GetNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_site::GetNetworkSiteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_site_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_site_arn(input);
         self
     }

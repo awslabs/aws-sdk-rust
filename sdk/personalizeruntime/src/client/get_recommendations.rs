@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`item_list(Option<Vec<PredictedItem>>)`](crate::operation::get_recommendations::GetRecommendationsOutput::item_list): <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
     ///   - [`recommendation_id(Option<String>)`](crate::operation::get_recommendations::GetRecommendationsOutput::recommendation_id): <p>The ID of the recommendation.</p>
     /// - On failure, responds with [`SdkError<GetRecommendationsError>`](crate::operation::get_recommendations::GetRecommendationsError)
-    pub fn get_recommendations(
-        &self,
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder {
-        crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_recommendations(&self) -> crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder {
+        crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

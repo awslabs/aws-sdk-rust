@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`encryption_algorithms(Option<Vec<EncryptionAlgorithmSpec>>)`](crate::operation::get_public_key::GetPublicKeyOutput::encryption_algorithms): <p>The encryption algorithms that KMS supports for this key. </p>  <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>  <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
     ///   - [`signing_algorithms(Option<Vec<SigningAlgorithmSpec>>)`](crate::operation::get_public_key::GetPublicKeyOutput::signing_algorithms): <p>The signing algorithms that KMS supports for this key.</p>  <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>SIGN_VERIFY</code>.</p>
     /// - On failure, responds with [`SdkError<GetPublicKeyError>`](crate::operation::get_public_key::GetPublicKeyError)
-    pub fn get_public_key(
-        &self,
-    ) -> crate::operation::get_public_key::builders::GetPublicKeyFluentBuilder {
-        crate::operation::get_public_key::builders::GetPublicKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_public_key(&self) -> crate::operation::get_public_key::builders::GetPublicKeyFluentBuilder {
+        crate::operation::get_public_key::builders::GetPublicKeyFluentBuilder::new(self.handle.clone())
     }
 }

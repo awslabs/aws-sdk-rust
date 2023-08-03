@@ -29,18 +29,14 @@ impl ListTopicsDetectionJobsInput {
 }
 impl ListTopicsDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListTopicsDetectionJobsInput`](crate::operation::list_topics_detection_jobs::ListTopicsDetectionJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_topics_detection_jobs::builders::ListTopicsDetectionJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_topics_detection_jobs::builders::ListTopicsDetectionJobsInputBuilder {
         crate::operation::list_topics_detection_jobs::builders::ListTopicsDetectionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTopicsDetectionJobsInput`](crate::operation::list_topics_detection_jobs::ListTopicsDetectionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicsDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::TopicsDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl ListTopicsDetectionJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicsDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TopicsDetectionJobFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -99,12 +92,10 @@ impl ListTopicsDetectionJobsInputBuilder {
         crate::operation::list_topics_detection_jobs::ListTopicsDetectionJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_topics_detection_jobs::ListTopicsDetectionJobsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_topics_detection_jobs::ListTopicsDetectionJobsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

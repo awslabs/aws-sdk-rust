@@ -10,10 +10,7 @@ impl DescribeAppInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_app::DescribeAppOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app::DescribeAppError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app::DescribeAppError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_app();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl DescribeAppFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_app::DescribeApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::describe_app::DescribeApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_app::DescribeAppError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl DescribeAppFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl DescribeAppFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_app::DescribeApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::describe_app::DescribeApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_app::DescribeAppError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl DescribeAppFluentBuilder {
         self.inner.get_domain_id()
     }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_profile_name(input.into());
         self
     }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_profile_name(input);
         self
     }

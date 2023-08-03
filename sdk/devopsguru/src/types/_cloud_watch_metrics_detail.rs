@@ -12,8 +12,7 @@ pub struct CloudWatchMetricsDetail {
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> An array of CloudWatch dimensions associated with </p>
     #[doc(hidden)]
-    pub dimensions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
     /// <p> The type of statistic associated with the CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     #[doc(hidden)]
     pub stat: ::std::option::Option<crate::types::CloudWatchMetricsStat>,
@@ -53,9 +52,7 @@ impl CloudWatchMetricsDetail {
         self.period
     }
     /// <p>This object returns anomaly metric data.</p>
-    pub fn metric_data_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchMetricsDataSummary> {
+    pub fn metric_data_summary(&self) -> ::std::option::Option<&crate::types::CloudWatchMetricsDataSummary> {
         self.metric_data_summary.as_ref()
     }
 }
@@ -68,19 +65,15 @@ impl CloudWatchMetricsDetail {
 
 /// A builder for [`CloudWatchMetricsDetail`](crate::types::CloudWatchMetricsDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchMetricsDetailBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
     pub(crate) stat: ::std::option::Option<crate::types::CloudWatchMetricsStat>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
     pub(crate) period: ::std::option::Option<i32>,
-    pub(crate) metric_data_summary:
-        ::std::option::Option<crate::types::CloudWatchMetricsDataSummary>,
+    pub(crate) metric_data_summary: ::std::option::Option<crate::types::CloudWatchMetricsDataSummary>,
 }
 impl CloudWatchMetricsDetailBuilder {
     /// <p> The name of the CloudWatch metric. </p>
@@ -123,17 +116,12 @@ impl CloudWatchMetricsDetailBuilder {
         self
     }
     /// <p> An array of CloudWatch dimensions associated with </p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p> An array of CloudWatch dimensions associated with </p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>> {
         &self.dimensions
     }
     /// <p> The type of statistic associated with the CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
@@ -142,10 +130,7 @@ impl CloudWatchMetricsDetailBuilder {
         self
     }
     /// <p> The type of statistic associated with the CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
-    pub fn set_stat(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchMetricsStat>,
-    ) -> Self {
+    pub fn set_stat(mut self, input: ::std::option::Option<crate::types::CloudWatchMetricsStat>) -> Self {
         self.stat = input;
         self
     }
@@ -182,25 +167,17 @@ impl CloudWatchMetricsDetailBuilder {
         &self.period
     }
     /// <p>This object returns anomaly metric data.</p>
-    pub fn metric_data_summary(
-        mut self,
-        input: crate::types::CloudWatchMetricsDataSummary,
-    ) -> Self {
+    pub fn metric_data_summary(mut self, input: crate::types::CloudWatchMetricsDataSummary) -> Self {
         self.metric_data_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>This object returns anomaly metric data.</p>
-    pub fn set_metric_data_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchMetricsDataSummary>,
-    ) -> Self {
+    pub fn set_metric_data_summary(mut self, input: ::std::option::Option<crate::types::CloudWatchMetricsDataSummary>) -> Self {
         self.metric_data_summary = input;
         self
     }
     /// <p>This object returns anomaly metric data.</p>
-    pub fn get_metric_data_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchMetricsDataSummary> {
+    pub fn get_metric_data_summary(&self) -> &::std::option::Option<crate::types::CloudWatchMetricsDataSummary> {
         &self.metric_data_summary
     }
     /// Consumes the builder and constructs a [`CloudWatchMetricsDetail`](crate::types::CloudWatchMetricsDetail).

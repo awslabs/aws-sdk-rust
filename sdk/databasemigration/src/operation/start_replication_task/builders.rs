@@ -38,9 +38,7 @@ impl StartReplicationTaskFluentBuilder {
         }
     }
     /// Access the StartReplicationTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_replication_task::builders::StartReplicationTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_replication_task::builders::StartReplicationTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl StartReplicationTaskFluentBuilder {
             crate::operation::start_replication_task::StartReplicationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication_task::StartReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication_task::StartReplicationTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl StartReplicationTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl StartReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_replication_task::StartReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication_task::StartReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication_task::StartReplicationTaskError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl StartReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_replication_task::StartReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication_task::StartReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication_task::StartReplicationTaskError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl StartReplicationTaskFluentBuilder {
             crate::operation::start_replication_task::StartReplicationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication_task::StartReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication_task::StartReplicationTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }
@@ -148,10 +129,7 @@ impl StartReplicationTaskFluentBuilder {
     /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
     /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
     /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
-    pub fn start_replication_task_type(
-        mut self,
-        input: crate::types::StartReplicationTaskTypeValue,
-    ) -> Self {
+    pub fn start_replication_task_type(mut self, input: crate::types::StartReplicationTaskTypeValue) -> Self {
         self.inner = self.inner.start_replication_task_type(input);
         self
     }
@@ -160,10 +138,7 @@ impl StartReplicationTaskFluentBuilder {
     /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
     /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
     /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
-    pub fn set_start_replication_task_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StartReplicationTaskTypeValue>,
-    ) -> Self {
+    pub fn set_start_replication_task_type(mut self, input: ::std::option::Option<crate::types::StartReplicationTaskTypeValue>) -> Self {
         self.inner = self.inner.set_start_replication_task_type(input);
         self
     }
@@ -172,9 +147,7 @@ impl StartReplicationTaskFluentBuilder {
     /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
     /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
     /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
-    pub fn get_start_replication_task_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::StartReplicationTaskTypeValue> {
+    pub fn get_start_replication_task_type(&self) -> &::std::option::Option<crate::types::StartReplicationTaskTypeValue> {
         self.inner.get_start_replication_task_type()
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
@@ -185,10 +158,7 @@ impl StartReplicationTaskFluentBuilder {
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    pub fn set_cdc_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_cdc_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_cdc_start_time(input);
         self
     }
@@ -204,10 +174,7 @@ impl StartReplicationTaskFluentBuilder {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
-    pub fn cdc_start_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_start_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cdc_start_position(input.into());
         self
     }
@@ -218,10 +185,7 @@ impl StartReplicationTaskFluentBuilder {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
-    pub fn set_cdc_start_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cdc_start_position(input);
         self
     }
@@ -238,20 +202,14 @@ impl StartReplicationTaskFluentBuilder {
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
-    pub fn cdc_stop_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_stop_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cdc_stop_position(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
-    pub fn set_cdc_stop_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_stop_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cdc_stop_position(input);
         self
     }

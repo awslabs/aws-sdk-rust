@@ -38,9 +38,7 @@ impl CancelTaskExecutionFluentBuilder {
         }
     }
     /// Access the CancelTaskExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_task_execution::builders::CancelTaskExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_task_execution::builders::CancelTaskExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl CancelTaskExecutionFluentBuilder {
             crate::operation::cancel_task_execution::CancelTaskExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_task_execution::CancelTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_task_execution::CancelTaskExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl CancelTaskExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl CancelTaskExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_task_execution::CancelTaskExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_task_execution::CancelTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_task_execution::CancelTaskExecutionError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl CancelTaskExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_task_execution::CancelTaskExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_task_execution::CancelTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_task_execution::CancelTaskExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl CancelTaskExecutionFluentBuilder {
             crate::operation::cancel_task_execution::CancelTaskExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_task_execution::CancelTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_task_execution::CancelTaskExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-    pub fn task_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_execution_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-    pub fn set_task_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_execution_arn(input);
         self
     }

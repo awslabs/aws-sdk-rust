@@ -30,9 +30,7 @@ impl InferenceAcceleratorOverride {
 
 /// A builder for [`InferenceAcceleratorOverride`](crate::types::InferenceAcceleratorOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceAcceleratorOverrideBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_type: ::std::option::Option<::std::string::String>,

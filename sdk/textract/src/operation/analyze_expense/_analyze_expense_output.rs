@@ -35,13 +35,10 @@ impl AnalyzeExpenseOutput {
 
 /// A builder for [`AnalyzeExpenseOutput`](crate::operation::analyze_expense::AnalyzeExpenseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyzeExpenseOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
-    pub(crate) expense_documents:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>>,
+    pub(crate) expense_documents: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>>,
     _request_id: Option<String>,
 }
 impl AnalyzeExpenseOutputBuilder {
@@ -51,10 +48,7 @@ impl AnalyzeExpenseOutputBuilder {
         self
     }
     /// <p>Information about the input document.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
@@ -74,17 +68,12 @@ impl AnalyzeExpenseOutputBuilder {
         self
     }
     /// <p>The expenses detected by Amazon Textract.</p>
-    pub fn set_expense_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>>,
-    ) -> Self {
+    pub fn set_expense_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>>) -> Self {
         self.expense_documents = input;
         self
     }
     /// <p>The expenses detected by Amazon Textract.</p>
-    pub fn get_expense_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>> {
+    pub fn get_expense_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>> {
         &self.expense_documents
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

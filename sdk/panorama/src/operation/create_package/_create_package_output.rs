@@ -42,9 +42,7 @@ impl CreatePackageOutput {
 
 /// A builder for [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePackageOutputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl CreatePackageOutputBuilder {
         self
     }
     /// <p>The package's storage location.</p>
-    pub fn set_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLocation>,
-    ) -> Self {
+    pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::StorageLocation>) -> Self {
         self.storage_location = input;
         self
     }

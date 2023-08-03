@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateColumnStatisticsForPartitionOut
 }
 impl UpdateColumnStatisticsForPartitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateColumnStatisticsForPartitionOutput`](crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput).
-    pub fn builder() -> crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionOutputBuilder{
+    pub fn builder() -> crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionOutputBuilder {
         crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateColumnStatisticsForPartitionOutput`](crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateColumnStatisticsForPartitionOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl UpdateColumnStatisticsForPartitionOutputBuilder {
         self
     }
     /// <p>Error occurred during updating column statistics data.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Error occurred during updating column statistics data.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +64,9 @@ impl UpdateColumnStatisticsForPartitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateColumnStatisticsForPartitionOutput`](crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput).
-    pub fn build(self) -> crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput{
+    pub fn build(self) -> crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput {
         crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput {
-            errors: self.errors
-            ,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }

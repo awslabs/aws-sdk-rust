@@ -30,9 +30,7 @@ pub struct AwsApiCallAction {
     pub remote_account_details: ::std::option::Option<crate::types::RemoteAccountDetails>,
     /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
     #[doc(hidden)]
-    pub affected_resources: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub affected_resources: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AwsApiCallAction {
     /// <p>The Amazon Web Services API name.</p>
@@ -64,17 +62,11 @@ impl AwsApiCallAction {
         self.service_name.as_deref()
     }
     /// <p>The details of the Amazon Web Services account that made the API call. This field appears if the call was made from outside your account.</p>
-    pub fn remote_account_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RemoteAccountDetails> {
+    pub fn remote_account_details(&self) -> ::std::option::Option<&crate::types::RemoteAccountDetails> {
         self.remote_account_details.as_ref()
     }
     /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
-    pub fn affected_resources(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn affected_resources(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.affected_resources.as_ref()
     }
 }
@@ -87,9 +79,7 @@ impl AwsApiCallAction {
 
 /// A builder for [`AwsApiCallAction`](crate::types::AwsApiCallAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiCallActionBuilder {
     pub(crate) api: ::std::option::Option<::std::string::String>,
     pub(crate) caller_type: ::std::option::Option<::std::string::String>,
@@ -99,9 +89,7 @@ pub struct AwsApiCallActionBuilder {
     pub(crate) remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) remote_account_details: ::std::option::Option<crate::types::RemoteAccountDetails>,
-    pub(crate) affected_resources: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) affected_resources: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AwsApiCallActionBuilder {
     /// <p>The Amazon Web Services API name.</p>
@@ -138,10 +126,7 @@ impl AwsApiCallActionBuilder {
         self
     }
     /// <p>The domain information for the Amazon Web Services API call.</p>
-    pub fn set_domain_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainDetails>,
-    ) -> Self {
+    pub fn set_domain_details(mut self, input: ::std::option::Option<crate::types::DomainDetails>) -> Self {
         self.domain_details = input;
         self
     }
@@ -183,10 +168,7 @@ impl AwsApiCallActionBuilder {
         self
     }
     /// <p>The remote IP information of the connection that initiated the Amazon Web Services API call.</p>
-    pub fn set_remote_ip_details(
-        mut self,
-        input: ::std::option::Option<crate::types::RemoteIpDetails>,
-    ) -> Self {
+    pub fn set_remote_ip_details(mut self, input: ::std::option::Option<crate::types::RemoteIpDetails>) -> Self {
         self.remote_ip_details = input;
         self
     }
@@ -214,17 +196,12 @@ impl AwsApiCallActionBuilder {
         self
     }
     /// <p>The details of the Amazon Web Services account that made the API call. This field appears if the call was made from outside your account.</p>
-    pub fn set_remote_account_details(
-        mut self,
-        input: ::std::option::Option<crate::types::RemoteAccountDetails>,
-    ) -> Self {
+    pub fn set_remote_account_details(mut self, input: ::std::option::Option<crate::types::RemoteAccountDetails>) -> Self {
         self.remote_account_details = input;
         self
     }
     /// <p>The details of the Amazon Web Services account that made the API call. This field appears if the call was made from outside your account.</p>
-    pub fn get_remote_account_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::RemoteAccountDetails> {
+    pub fn get_remote_account_details(&self) -> &::std::option::Option<crate::types::RemoteAccountDetails> {
         &self.remote_account_details
     }
     /// Adds a key-value pair to `affected_resources`.
@@ -245,19 +222,13 @@ impl AwsApiCallActionBuilder {
     /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
     pub fn set_affected_resources(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.affected_resources = input;
         self
     }
     /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
-    pub fn get_affected_resources(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_affected_resources(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.affected_resources
     }
     /// Consumes the builder and constructs a [`AwsApiCallAction`](crate::types::AwsApiCallAction).

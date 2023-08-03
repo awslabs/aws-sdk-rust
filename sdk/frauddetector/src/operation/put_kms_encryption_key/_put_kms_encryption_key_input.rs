@@ -17,37 +17,27 @@ impl PutKmsEncryptionKeyInput {
 }
 impl PutKmsEncryptionKeyInput {
     /// Creates a new builder-style object to manufacture [`PutKmsEncryptionKeyInput`](crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput).
-    pub fn builder(
-    ) -> crate::operation::put_kms_encryption_key::builders::PutKmsEncryptionKeyInputBuilder {
-        crate::operation::put_kms_encryption_key::builders::PutKmsEncryptionKeyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_kms_encryption_key::builders::PutKmsEncryptionKeyInputBuilder {
+        crate::operation::put_kms_encryption_key::builders::PutKmsEncryptionKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutKmsEncryptionKeyInput`](crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutKmsEncryptionKeyInputBuilder {
     pub(crate) kms_encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutKmsEncryptionKeyInputBuilder {
     /// <p>The KMS encryption key ARN.</p>
     /// <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
-    pub fn kms_encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS encryption key ARN.</p>
     /// <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
-    pub fn set_kms_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kms_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_encryption_key_arn = input;
         self
     }
@@ -59,14 +49,10 @@ impl PutKmsEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`PutKmsEncryptionKeyInput`](crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput {
-                kms_encryption_key_arn: self.kms_encryption_key_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput {
+            kms_encryption_key_arn: self.kms_encryption_key_arn,
+        })
     }
 }

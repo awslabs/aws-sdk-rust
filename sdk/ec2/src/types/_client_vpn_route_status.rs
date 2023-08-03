@@ -30,9 +30,7 @@ impl ClientVpnRouteStatus {
 
 /// A builder for [`ClientVpnRouteStatus`](crate::types::ClientVpnRouteStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientVpnRouteStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ClientVpnRouteStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ClientVpnRouteStatusBuilder {
         self
     }
     /// <p>The state of the Client VPN endpoint route.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnRouteStatusCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::ClientVpnRouteStatusCode>) -> Self {
         self.code = input;
         self
     }

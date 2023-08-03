@@ -47,9 +47,7 @@ impl RetentionPeriod {
 
 /// A builder for [`RetentionPeriod`](crate::types::RetentionPeriod).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetentionPeriodBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RetentionPeriodType>,
     pub(crate) value: ::std::option::Option<i32>,
@@ -61,10 +59,7 @@ impl RetentionPeriodBuilder {
         self
     }
     /// <p>Defines the type of time for the retention period of an FSx for ONTAP SnapLock volume. Set it to one of the valid types. If you set it to <code>INFINITE</code>, the files are retained forever. If you set it to <code>UNSPECIFIED</code>, the files are retained until you set an explicit retention period. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriodType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RetentionPeriodType>) -> Self {
         self.r#type = input;
         self
     }

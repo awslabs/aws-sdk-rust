@@ -16,12 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStreamProcessorOutput`](crate::operation::create_stream_processor::CreateStreamProcessorOutput) with field(s):
     ///   - [`stream_processor_arn(Option<String>)`](crate::operation::create_stream_processor::CreateStreamProcessorOutput::stream_processor_arn): <p>Amazon Resource Number for the newly created stream processor.</p>
     /// - On failure, responds with [`SdkError<CreateStreamProcessorError>`](crate::operation::create_stream_processor::CreateStreamProcessorError)
-    pub fn create_stream_processor(
-        &self,
-    ) -> crate::operation::create_stream_processor::builders::CreateStreamProcessorFluentBuilder
-    {
-        crate::operation::create_stream_processor::builders::CreateStreamProcessorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_stream_processor(&self) -> crate::operation::create_stream_processor::builders::CreateStreamProcessorFluentBuilder {
+        crate::operation::create_stream_processor::builders::CreateStreamProcessorFluentBuilder::new(self.handle.clone())
     }
 }

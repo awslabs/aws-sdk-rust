@@ -32,9 +32,7 @@ impl LabelingJobStoppingConditions {
 
 /// A builder for [`LabelingJobStoppingConditions`](crate::types::LabelingJobStoppingConditions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelingJobStoppingConditionsBuilder {
     pub(crate) max_human_labeled_object_count: ::std::option::Option<i32>,
     pub(crate) max_percentage_of_input_dataset_labeled: ::std::option::Option<i32>,
@@ -60,10 +58,7 @@ impl LabelingJobStoppingConditionsBuilder {
         self
     }
     /// <p>The maximum number of input data objects that should be labeled.</p>
-    pub fn set_max_percentage_of_input_dataset_labeled(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_max_percentage_of_input_dataset_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_percentage_of_input_dataset_labeled = input;
         self
     }

@@ -22,34 +22,26 @@ impl UpdatePullRequestDescriptionInput {
 }
 impl UpdatePullRequestDescriptionInput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestDescriptionInput`](crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput).
-    pub fn builder() -> crate::operation::update_pull_request_description::builders::UpdatePullRequestDescriptionInputBuilder{
+    pub fn builder() -> crate::operation::update_pull_request_description::builders::UpdatePullRequestDescriptionInputBuilder {
         crate::operation::update_pull_request_description::builders::UpdatePullRequestDescriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePullRequestDescriptionInput`](crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePullRequestDescriptionInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePullRequestDescriptionInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl UpdatePullRequestDescriptionInputBuilder {
         crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput {
-                pull_request_id: self.pull_request_id,
-                description: self.description,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput {
+            pull_request_id: self.pull_request_id,
+            description: self.description,
+        })
     }
 }

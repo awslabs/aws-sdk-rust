@@ -37,9 +37,7 @@ impl DescribePatchGroupsFluentBuilder {
         }
     }
     /// Access the DescribePatchGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_patch_groups::builders::DescribePatchGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_patch_groups::builders::DescribePatchGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribePatchGroupsFluentBuilder {
             crate::operation::describe_patch_groups::DescribePatchGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_groups::DescribePatchGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_groups::DescribePatchGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribePatchGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribePatchGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_groups::DescribePatchGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_groups::DescribePatchGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribePatchGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_groups::DescribePatchGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_groups::DescribePatchGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl DescribePatchGroupsFluentBuilder {
             crate::operation::describe_patch_groups::DescribePatchGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_groups::DescribePatchGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_groups::DescribePatchGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator {
-        crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator {
+        crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of patch groups to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -167,10 +149,7 @@ impl DescribePatchGroupsFluentBuilder {
     /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p> </li>
     /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -180,9 +159,7 @@ impl DescribePatchGroupsFluentBuilder {
     /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p> </li>
     /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
         self.inner.get_filters()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>

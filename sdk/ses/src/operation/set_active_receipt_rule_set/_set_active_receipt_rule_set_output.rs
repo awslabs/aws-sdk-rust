@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for SetActiveReceiptRuleSetOutput {
 }
 impl SetActiveReceiptRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`SetActiveReceiptRuleSetOutput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput).
-    pub fn builder(
-    ) -> crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetOutputBuilder {
         crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetActiveReceiptRuleSetOutput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetActiveReceiptRuleSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -39,9 +35,7 @@ impl SetActiveReceiptRuleSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetActiveReceiptRuleSetOutput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput {
+    pub fn build(self) -> crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput {
         crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput {
             _request_id: self._request_id,
         }

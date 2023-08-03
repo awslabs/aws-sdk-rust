@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`permission_set_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetFluentBuilder::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetFluentBuilder::set_permission_set_arn): <p>The ARN of the permission set that will be used to remove access.</p>
     /// - On success, responds with [`DeleteInlinePolicyFromPermissionSetOutput`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetOutput)
     /// - On failure, responds with [`SdkError<DeleteInlinePolicyFromPermissionSetError>`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError)
-    pub fn delete_inline_policy_from_permission_set(&self) -> crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetFluentBuilder{
-        crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetFluentBuilder::new(self.handle.clone())
+    pub fn delete_inline_policy_from_permission_set(
+        &self,
+    ) -> crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetFluentBuilder {
+        crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

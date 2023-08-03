@@ -10,10 +10,7 @@ impl CreateClusterV2InputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_v2::CreateClusterV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_v2::CreateClusterV2Error,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_v2::CreateClusterV2Error, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_cluster_v2();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateClusterV2FluentBuilder {
         }
     }
     /// Access the CreateClusterV2 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_cluster_v2::builders::CreateClusterV2InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_cluster_v2::builders::CreateClusterV2InputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateClusterV2FluentBuilder {
             crate::operation::create_cluster_v2::CreateClusterV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_v2::CreateClusterV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_v2::CreateClusterV2Error>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateClusterV2FluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateClusterV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_v2::CreateClusterV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_v2::CreateClusterV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_v2::CreateClusterV2Error>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateClusterV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_v2::CreateClusterV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_v2::CreateClusterV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_v2::CreateClusterV2Error>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateClusterV2FluentBuilder {
             crate::operation::create_cluster_v2::CreateClusterV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_v2::CreateClusterV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_v2::CreateClusterV2Error>,
     > {
         self.customize_middleware().await
     }
@@ -141,30 +125,17 @@ impl CreateClusterV2FluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of tags that you want the cluster to have.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A map of tags that you want the cluster to have.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map of tags that you want the cluster to have.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Information about the provisioned cluster.</p>
@@ -173,10 +144,7 @@ impl CreateClusterV2FluentBuilder {
         self
     }
     /// <p>Information about the provisioned cluster.</p>
-    pub fn set_provisioned(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedRequest>,
-    ) -> Self {
+    pub fn set_provisioned(mut self, input: ::std::option::Option<crate::types::ProvisionedRequest>) -> Self {
         self.inner = self.inner.set_provisioned(input);
         self
     }
@@ -190,10 +158,7 @@ impl CreateClusterV2FluentBuilder {
         self
     }
     /// <p>Information about the serverless cluster.</p>
-    pub fn set_serverless(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerlessRequest>,
-    ) -> Self {
+    pub fn set_serverless(mut self, input: ::std::option::Option<crate::types::ServerlessRequest>) -> Self {
         self.inner = self.inner.set_serverless(input);
         self
     }

@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateUserPoolClientOutput {
 }
 impl UpdateUserPoolClientOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolClientOutput`](crate::operation::update_user_pool_client::UpdateUserPoolClientOutput).
-    pub fn builder(
-    ) -> crate::operation::update_user_pool_client::builders::UpdateUserPoolClientOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_user_pool_client::builders::UpdateUserPoolClientOutputBuilder {
         crate::operation::update_user_pool_client::builders::UpdateUserPoolClientOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserPoolClientOutput`](crate::operation::update_user_pool_client::UpdateUserPoolClientOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserPoolClientOutputBuilder {
     pub(crate) user_pool_client: ::std::option::Option<crate::types::UserPoolClientType>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl UpdateUserPoolClientOutputBuilder {
         self
     }
     /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
-    pub fn set_user_pool_client(
-        mut self,
-        input: ::std::option::Option<crate::types::UserPoolClientType>,
-    ) -> Self {
+    pub fn set_user_pool_client(mut self, input: ::std::option::Option<crate::types::UserPoolClientType>) -> Self {
         self.user_pool_client = input;
         self
     }

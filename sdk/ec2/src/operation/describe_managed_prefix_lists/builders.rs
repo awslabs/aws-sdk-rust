@@ -27,7 +27,7 @@ impl DescribeManagedPrefixListsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeManagedPrefixListsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsInputBuilder,
+    inner: crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsInputBuilder,
 }
 impl DescribeManagedPrefixListsFluentBuilder {
     /// Creates a new `DescribeManagedPrefixLists`.
@@ -38,7 +38,7 @@ impl DescribeManagedPrefixListsFluentBuilder {
         }
     }
     /// Access the DescribeManagedPrefixLists as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeManagedPrefixListsFluentBuilder {
             crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixLists,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeManagedPrefixListsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeManagedPrefixListsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeManagedPrefixListsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl DescribeManagedPrefixListsFluentBuilder {
             crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixLists,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_managed_prefix_lists::paginator::DescribeManagedPrefixListsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_managed_prefix_lists::paginator::DescribeManagedPrefixListsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_managed_prefix_lists::paginator::DescribeManagedPrefixListsPaginator {
         crate::operation::describe_managed_prefix_lists::paginator::DescribeManagedPrefixListsPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -161,10 +150,7 @@ impl DescribeManagedPrefixListsFluentBuilder {
     /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
     /// <li> <p> <code>prefix-list-name</code> - The name of the prefix list.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -210,25 +196,17 @@ impl DescribeManagedPrefixListsFluentBuilder {
     /// To override the contents of this collection use [`set_prefix_list_ids`](Self::set_prefix_list_ids).
     ///
     /// <p>One or more prefix list IDs.</p>
-    pub fn prefix_list_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix_list_ids(input.into());
         self
     }
     /// <p>One or more prefix list IDs.</p>
-    pub fn set_prefix_list_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_prefix_list_ids(input);
         self
     }
     /// <p>One or more prefix list IDs.</p>
-    pub fn get_prefix_list_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_prefix_list_ids()
     }
 }

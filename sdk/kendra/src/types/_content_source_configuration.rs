@@ -37,9 +37,7 @@ impl ContentSourceConfiguration {
 
 /// A builder for [`ContentSourceConfiguration`](crate::types::ContentSourceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContentSourceConfigurationBuilder {
     pub(crate) data_source_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) faq_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -51,27 +49,19 @@ impl ContentSourceConfigurationBuilder {
     /// To override the contents of this collection use [`set_data_source_ids`](Self::set_data_source_ids).
     ///
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
-    pub fn data_source_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_source_ids.unwrap_or_default();
         v.push(input.into());
         self.data_source_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
-    pub fn set_data_source_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_source_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_source_ids = input;
         self
     }
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
-    pub fn get_data_source_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_source_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_source_ids
     }
     /// Appends an item to `faq_ids`.
@@ -86,10 +76,7 @@ impl ContentSourceConfigurationBuilder {
         self
     }
     /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
-    pub fn set_faq_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_faq_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.faq_ids = input;
         self
     }

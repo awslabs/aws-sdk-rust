@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateWirelessGatewayWithThingOutp
 }
 impl AssociateWirelessGatewayWithThingOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingOutput`](crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingOutput).
-    pub fn builder() -> crate::operation::associate_wireless_gateway_with_thing::builders::AssociateWirelessGatewayWithThingOutputBuilder{
+    pub fn builder() -> crate::operation::associate_wireless_gateway_with_thing::builders::AssociateWirelessGatewayWithThingOutputBuilder {
         crate::operation::associate_wireless_gateway_with_thing::builders::AssociateWirelessGatewayWithThingOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWirelessGatewayWithThingOutput`](crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWirelessGatewayWithThingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AssociateWirelessGatewayWithThingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateWirelessGatewayWithThingOutput`](crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingOutput).
-    pub fn build(self) -> crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingOutput{
+    pub fn build(self) -> crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingOutput {
         crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingOutput {
             _request_id: self._request_id,
         }

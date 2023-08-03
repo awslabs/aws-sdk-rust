@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`origin_endpoint_name(impl ::std::convert::Into<String>)`](crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder::origin_endpoint_name) / [`set_origin_endpoint_name(Option<String>)`](crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder::set_origin_endpoint_name): <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
     /// - On success, responds with [`DeleteOriginEndpointOutput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointOutput)
     /// - On failure, responds with [`SdkError<DeleteOriginEndpointError>`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointError)
-    pub fn delete_origin_endpoint(
-        &self,
-    ) -> crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder {
-        crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_origin_endpoint(&self) -> crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder {
+        crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,17 +38,14 @@ impl DescribeServicesInput {
 }
 impl DescribeServicesInput {
     /// Creates a new builder-style object to manufacture [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
-    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesInputBuilder {
         crate::operation::describe_services::builders::DescribeServicesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServicesInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) format_version: ::std::option::Option<::std::string::String>,
@@ -72,19 +69,13 @@ impl DescribeServicesInputBuilder {
     }
     /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn format_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn set_format_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format_version = input;
         self
     }
@@ -124,10 +115,7 @@ impl DescribeServicesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_services::DescribeServicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_services::DescribeServicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_services::DescribeServicesInput {
             service_code: self.service_code,
             format_version: self.format_version,

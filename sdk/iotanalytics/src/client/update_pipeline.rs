@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`pipeline_activities(Vec<PipelineActivity>)`](crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::pipeline_activities) / [`set_pipeline_activities(Option<Vec<PipelineActivity>>)`](crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::set_pipeline_activities): <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>  <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>  <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
     /// - On success, responds with [`UpdatePipelineOutput`](crate::operation::update_pipeline::UpdatePipelineOutput)
     /// - On failure, responds with [`SdkError<UpdatePipelineError>`](crate::operation::update_pipeline::UpdatePipelineError)
-    pub fn update_pipeline(
-        &self,
-    ) -> crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder {
-        crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_pipeline(&self) -> crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder {
+        crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::new(self.handle.clone())
     }
 }

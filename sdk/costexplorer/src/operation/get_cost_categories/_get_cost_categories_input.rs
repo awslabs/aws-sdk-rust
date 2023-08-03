@@ -159,17 +159,14 @@ impl GetCostCategoriesInput {
 }
 impl GetCostCategoriesInput {
     /// Creates a new builder-style object to manufacture [`GetCostCategoriesInput`](crate::operation::get_cost_categories::GetCostCategoriesInput).
-    pub fn builder(
-    ) -> crate::operation::get_cost_categories::builders::GetCostCategoriesInputBuilder {
+    pub fn builder() -> crate::operation::get_cost_categories::builders::GetCostCategoriesInputBuilder {
         crate::operation::get_cost_categories::builders::GetCostCategoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCostCategoriesInput`](crate::operation::get_cost_categories::GetCostCategoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostCategoriesInputBuilder {
     pub(crate) search_string: ::std::option::Option<::std::string::String>,
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
@@ -182,19 +179,13 @@ pub struct GetCostCategoriesInputBuilder {
 impl GetCostCategoriesInputBuilder {
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
-    pub fn search_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn search_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
-    pub fn set_search_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_search_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.search_string = input;
         self
     }
@@ -209,10 +200,7 @@ impl GetCostCategoriesInputBuilder {
         self
     }
     /// <p>The time period of the request. </p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -221,18 +209,12 @@ impl GetCostCategoriesInputBuilder {
         &self.time_period
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn cost_category_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cost_category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn set_cost_category_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cost_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_name = input;
         self
     }
@@ -398,10 +380,7 @@ impl GetCostCategoriesInputBuilder {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>) -> Self {
         self.sort_by = input;
         self
     }
@@ -418,9 +397,7 @@ impl GetCostCategoriesInputBuilder {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
         &self.sort_by
     }
     /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
@@ -444,18 +421,12 @@ impl GetCostCategoriesInputBuilder {
         &self.max_results
     }
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -466,20 +437,15 @@ impl GetCostCategoriesInputBuilder {
     /// Consumes the builder and constructs a [`GetCostCategoriesInput`](crate::operation::get_cost_categories::GetCostCategoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cost_categories::GetCostCategoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_cost_categories::GetCostCategoriesInput {
-                search_string: self.search_string,
-                time_period: self.time_period,
-                cost_category_name: self.cost_category_name,
-                filter: self.filter,
-                sort_by: self.sort_by,
-                max_results: self.max_results,
-                next_page_token: self.next_page_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_cost_categories::GetCostCategoriesInput {
+            search_string: self.search_string,
+            time_period: self.time_period,
+            cost_category_name: self.cost_category_name,
+            filter: self.filter,
+            sort_by: self.sort_by,
+            max_results: self.max_results,
+            next_page_token: self.next_page_token,
+        })
     }
 }

@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStreamSummaryOutput`](crate::operation::describe_stream_summary::DescribeStreamSummaryOutput) with field(s):
     ///   - [`stream_description_summary(Option<StreamDescriptionSummary>)`](crate::operation::describe_stream_summary::DescribeStreamSummaryOutput::stream_description_summary): <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
     /// - On failure, responds with [`SdkError<DescribeStreamSummaryError>`](crate::operation::describe_stream_summary::DescribeStreamSummaryError)
-    pub fn describe_stream_summary(
-        &self,
-    ) -> crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder
-    {
-        crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_stream_summary(&self) -> crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder {
+        crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder::new(self.handle.clone())
     }
 }

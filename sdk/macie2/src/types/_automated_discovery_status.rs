@@ -38,13 +38,7 @@
 /// <p>The status of the automated sensitive data discovery configuration for an Amazon Macie account. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AutomatedDiscoveryStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AutomatedDiscoveryStatus {
         match s {
             "DISABLED" => AutomatedDiscoveryStatus::Disabled,
             "ENABLED" => AutomatedDiscoveryStatus::Enabled,
-            other => AutomatedDiscoveryStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AutomatedDiscoveryStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

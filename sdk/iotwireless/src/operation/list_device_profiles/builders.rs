@@ -10,10 +10,7 @@ impl ListDeviceProfilesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_device_profiles::ListDeviceProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_profiles::ListDeviceProfilesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_profiles::ListDeviceProfilesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_device_profiles();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDeviceProfilesFluentBuilder {
         }
     }
     /// Access the ListDeviceProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_device_profiles::builders::ListDeviceProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_device_profiles::builders::ListDeviceProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDeviceProfilesFluentBuilder {
             crate::operation::list_device_profiles::ListDeviceProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_profiles::ListDeviceProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_profiles::ListDeviceProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDeviceProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDeviceProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_profiles::ListDeviceProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_profiles::ListDeviceProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_profiles::ListDeviceProfilesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDeviceProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_profiles::ListDeviceProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_profiles::ListDeviceProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_profiles::ListDeviceProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListDeviceProfilesFluentBuilder {
             crate::operation::list_device_profiles::ListDeviceProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_profiles::ListDeviceProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_profiles::ListDeviceProfilesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_device_profiles::paginator::ListDeviceProfilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_device_profiles::paginator::ListDeviceProfilesPaginator {
-        crate::operation::list_device_profiles::paginator::ListDeviceProfilesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_device_profiles::paginator::ListDeviceProfilesPaginator {
+        crate::operation::list_device_profiles::paginator::ListDeviceProfilesPaginator::new(self.handle, self.inner)
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,17 +146,12 @@ impl ListDeviceProfilesFluentBuilder {
         self
     }
     /// <p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
-    pub fn set_device_profile_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceProfileType>,
-    ) -> Self {
+    pub fn set_device_profile_type(mut self, input: ::std::option::Option<crate::types::DeviceProfileType>) -> Self {
         self.inner = self.inner.set_device_profile_type(input);
         self
     }
     /// <p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
-    pub fn get_device_profile_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceProfileType> {
+    pub fn get_device_profile_type(&self) -> &::std::option::Option<crate::types::DeviceProfileType> {
         self.inner.get_device_profile_type()
     }
 }

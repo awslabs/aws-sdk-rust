@@ -29,18 +29,14 @@ impl DescribeRefreshScheduleInput {
 }
 impl DescribeRefreshScheduleInput {
     /// Creates a new builder-style object to manufacture [`DescribeRefreshScheduleInput`](crate::operation::describe_refresh_schedule::DescribeRefreshScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleInputBuilder {
         crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRefreshScheduleInput`](crate::operation::describe_refresh_schedule::DescribeRefreshScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRefreshScheduleInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct DescribeRefreshScheduleInputBuilder {
 }
 impl DescribeRefreshScheduleInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -102,12 +92,10 @@ impl DescribeRefreshScheduleInputBuilder {
         crate::operation::describe_refresh_schedule::DescribeRefreshScheduleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_refresh_schedule::DescribeRefreshScheduleInput {
-                aws_account_id: self.aws_account_id,
-                data_set_id: self.data_set_id,
-                schedule_id: self.schedule_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_refresh_schedule::DescribeRefreshScheduleInput {
+            aws_account_id: self.aws_account_id,
+            data_set_id: self.data_set_id,
+            schedule_id: self.schedule_id,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl UpdateJobExecutionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_job_execution::UpdateJobExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_execution::UpdateJobExecutionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_execution::UpdateJobExecutionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_job_execution();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateJobExecutionFluentBuilder {
         }
     }
     /// Access the UpdateJobExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_job_execution::builders::UpdateJobExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_job_execution::builders::UpdateJobExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateJobExecutionFluentBuilder {
             crate::operation::update_job_execution::UpdateJobExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_execution::UpdateJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_execution::UpdateJobExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateJobExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateJobExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_job_execution::UpdateJobExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_execution::UpdateJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_execution::UpdateJobExecutionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateJobExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_job_execution::UpdateJobExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_execution::UpdateJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_execution::UpdateJobExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateJobExecutionFluentBuilder {
             crate::operation::update_job_execution::UpdateJobExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_execution::UpdateJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_execution::UpdateJobExecutionError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl UpdateJobExecutionFluentBuilder {
         self
     }
     /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -183,19 +164,13 @@ impl UpdateJobExecutionFluentBuilder {
     /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn set_status_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_status_details(input);
         self
     }
     /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    pub fn get_status_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_status_details()
     }
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>

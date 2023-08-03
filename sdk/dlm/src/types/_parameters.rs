@@ -40,9 +40,7 @@ impl Parameters {
 
 /// A builder for [`Parameters`](crate::types::Parameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParametersBuilder {
     pub(crate) exclude_boot_volume: ::std::option::Option<bool>,
     pub(crate) no_reboot: ::std::option::Option<bool>,
@@ -91,18 +89,13 @@ impl ParametersBuilder {
     }
     /// <p> <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to exclude from multi-volume snapshot sets.</p>
     /// <p>If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then data volumes with the specified tags that are attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
-    pub fn set_exclude_data_volume_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_exclude_data_volume_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.exclude_data_volume_tags = input;
         self
     }
     /// <p> <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to exclude from multi-volume snapshot sets.</p>
     /// <p>If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then data volumes with the specified tags that are attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
-    pub fn get_exclude_data_volume_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_exclude_data_volume_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.exclude_data_volume_tags
     }
     /// Consumes the builder and constructs a [`Parameters`](crate::types::Parameters).

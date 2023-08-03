@@ -50,18 +50,14 @@ impl ListDistributedGrantsInput {
 }
 impl ListDistributedGrantsInput {
     /// Creates a new builder-style object to manufacture [`ListDistributedGrantsInput`](crate::operation::list_distributed_grants::ListDistributedGrantsInput).
-    pub fn builder(
-    ) -> crate::operation::list_distributed_grants::builders::ListDistributedGrantsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_distributed_grants::builders::ListDistributedGrantsInputBuilder {
         crate::operation::list_distributed_grants::builders::ListDistributedGrantsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributedGrantsInput`](crate::operation::list_distributed_grants::ListDistributedGrantsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributedGrantsInputBuilder {
     pub(crate) grant_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -81,10 +77,7 @@ impl ListDistributedGrantsInputBuilder {
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-    pub fn set_grant_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_grant_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.grant_arns = input;
         self
     }
@@ -118,10 +111,7 @@ impl ListDistributedGrantsInputBuilder {
     /// <li> <p> <code>ProductSKU</code> </p> </li>
     /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -167,17 +157,13 @@ impl ListDistributedGrantsInputBuilder {
     /// Consumes the builder and constructs a [`ListDistributedGrantsInput`](crate::operation::list_distributed_grants::ListDistributedGrantsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_distributed_grants::ListDistributedGrantsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_distributed_grants::ListDistributedGrantsInput {
-                grant_arns: self.grant_arns,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_distributed_grants::ListDistributedGrantsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_distributed_grants::ListDistributedGrantsInput {
+            grant_arns: self.grant_arns,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

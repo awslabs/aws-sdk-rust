@@ -26,7 +26,7 @@ impl UpdateUserSecurityProfilesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserSecurityProfilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder,
+    inner: crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder,
 }
 impl UpdateUserSecurityProfilesFluentBuilder {
     /// Creates a new `UpdateUserSecurityProfiles`.
@@ -37,7 +37,7 @@ impl UpdateUserSecurityProfilesFluentBuilder {
         }
     }
     /// Access the UpdateUserSecurityProfiles as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateUserSecurityProfilesFluentBuilder {
             crate::operation::update_user_security_profiles::UpdateUserSecurityProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateUserSecurityProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateUserSecurityProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateUserSecurityProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateUserSecurityProfilesFluentBuilder {
             crate::operation::update_user_security_profiles::UpdateUserSecurityProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl UpdateUserSecurityProfilesFluentBuilder {
     /// To override the contents of this collection use [`set_security_profile_ids`](Self::set_security_profile_ids).
     ///
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn security_profile_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_ids(input.into());
         self
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn set_security_profile_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_profile_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_profile_ids(input);
         self
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn get_security_profile_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_profile_ids()
     }
     /// <p>The identifier of the user account.</p>

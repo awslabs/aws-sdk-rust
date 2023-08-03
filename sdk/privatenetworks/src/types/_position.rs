@@ -51,9 +51,7 @@ impl Position {
 
 /// A builder for [`Position`](crate::types::Position).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PositionBuilder {
     pub(crate) latitude: ::std::option::Option<f64>,
     pub(crate) longitude: ::std::option::Option<f64>,
@@ -110,10 +108,7 @@ impl PositionBuilder {
         self
     }
     /// <p>The units used to measure the elevation of the position.</p>
-    pub fn set_elevation_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::ElevationUnit>,
-    ) -> Self {
+    pub fn set_elevation_unit(mut self, input: ::std::option::Option<crate::types::ElevationUnit>) -> Self {
         self.elevation_unit = input;
         self
     }
@@ -127,17 +122,12 @@ impl PositionBuilder {
         self
     }
     /// <p>The reference point from which elevation is reported.</p>
-    pub fn set_elevation_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ElevationReference>,
-    ) -> Self {
+    pub fn set_elevation_reference(mut self, input: ::std::option::Option<crate::types::ElevationReference>) -> Self {
         self.elevation_reference = input;
         self
     }
     /// <p>The reference point from which elevation is reported.</p>
-    pub fn get_elevation_reference(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElevationReference> {
+    pub fn get_elevation_reference(&self) -> &::std::option::Option<crate::types::ElevationReference> {
         &self.elevation_reference
     }
     /// Consumes the builder and constructs a [`Position`](crate::types::Position).

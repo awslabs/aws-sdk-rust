@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateControlPanelOutput`](crate::operation::update_control_panel::UpdateControlPanelOutput) with field(s):
     ///   - [`control_panel(Option<ControlPanel>)`](crate::operation::update_control_panel::UpdateControlPanelOutput::control_panel): <p>The control panel to update.</p>
     /// - On failure, responds with [`SdkError<UpdateControlPanelError>`](crate::operation::update_control_panel::UpdateControlPanelError)
-    pub fn update_control_panel(
-        &self,
-    ) -> crate::operation::update_control_panel::builders::UpdateControlPanelFluentBuilder {
-        crate::operation::update_control_panel::builders::UpdateControlPanelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_control_panel(&self) -> crate::operation::update_control_panel::builders::UpdateControlPanelFluentBuilder {
+        crate::operation::update_control_panel::builders::UpdateControlPanelFluentBuilder::new(self.handle.clone())
     }
 }

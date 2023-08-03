@@ -37,10 +37,7 @@ impl GetTargetResourceTypeFluentBuilder {
         }
     }
     /// Access the GetTargetResourceType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_target_resource_type::builders::GetTargetResourceTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_target_resource_type::builders::GetTargetResourceTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetTargetResourceTypeFluentBuilder {
             crate::operation::get_target_resource_type::GetTargetResourceType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_target_resource_type::GetTargetResourceTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_target_resource_type::GetTargetResourceTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetTargetResourceTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetTargetResourceTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_target_resource_type::GetTargetResourceTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_target_resource_type::GetTargetResourceTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_target_resource_type::GetTargetResourceTypeError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetTargetResourceTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_target_resource_type::GetTargetResourceTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_target_resource_type::GetTargetResourceTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_target_resource_type::GetTargetResourceTypeError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetTargetResourceTypeFluentBuilder {
             crate::operation::get_target_resource_type::GetTargetResourceType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_target_resource_type::GetTargetResourceTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_target_resource_type::GetTargetResourceTypeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

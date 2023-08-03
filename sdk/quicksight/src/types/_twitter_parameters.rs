@@ -30,9 +30,7 @@ impl TwitterParameters {
 
 /// A builder for [`TwitterParameters`](crate::types::TwitterParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TwitterParametersBuilder {
     pub(crate) query: ::std::option::Option<::std::string::String>,
     pub(crate) max_rows: ::std::option::Option<i32>,

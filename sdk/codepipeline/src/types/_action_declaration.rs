@@ -18,9 +18,7 @@ pub struct ActionDeclaration {
     /// <p> <i>JSON:</i> </p>
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
     #[doc(hidden)]
-    pub configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
     #[doc(hidden)]
     pub output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>>,
@@ -54,11 +52,7 @@ impl ActionDeclaration {
     /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
     /// <p> <i>JSON:</i> </p>
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.configuration.as_ref()
     }
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
@@ -91,18 +85,13 @@ impl ActionDeclaration {
 
 /// A builder for [`ActionDeclaration`](crate::types::ActionDeclaration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionDeclarationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     pub(crate) run_order: ::std::option::Option<i32>,
-    pub(crate) configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) output_artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>>,
+    pub(crate) configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>>,
     pub(crate) input_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::InputArtifact>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -129,10 +118,7 @@ impl ActionDeclarationBuilder {
         self
     }
     /// <p>Specifies the action type and the provider of the action.</p>
-    pub fn set_action_type_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeId>,
-    ) -> Self {
+    pub fn set_action_type_id(mut self, input: ::std::option::Option<crate::types::ActionTypeId>) -> Self {
         self.action_type_id = input;
         self
     }
@@ -162,11 +148,7 @@ impl ActionDeclarationBuilder {
     /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
     /// <p> <i>JSON:</i> </p>
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
-    pub fn configuration(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.configuration.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.configuration = ::std::option::Option::Some(hash_map);
@@ -178,9 +160,7 @@ impl ActionDeclarationBuilder {
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
     pub fn set_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.configuration = input;
         self
@@ -189,11 +169,7 @@ impl ActionDeclarationBuilder {
     /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
     /// <p> <i>JSON:</i> </p>
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.configuration
     }
     /// Appends an item to `output_artifacts`.
@@ -208,17 +184,12 @@ impl ActionDeclarationBuilder {
         self
     }
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
-    pub fn set_output_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>>,
-    ) -> Self {
+    pub fn set_output_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>>) -> Self {
         self.output_artifacts = input;
         self
     }
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
-    pub fn get_output_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>> {
+    pub fn get_output_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>> {
         &self.output_artifacts
     }
     /// Appends an item to `input_artifacts`.
@@ -233,17 +204,12 @@ impl ActionDeclarationBuilder {
         self
     }
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
-    pub fn set_input_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputArtifact>>,
-    ) -> Self {
+    pub fn set_input_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputArtifact>>) -> Self {
         self.input_artifacts = input;
         self
     }
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
-    pub fn get_input_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputArtifact>> {
+    pub fn get_input_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputArtifact>> {
         &self.input_artifacts
     }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>

@@ -10,10 +10,7 @@ impl GetOpsMetadataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_ops_metadata::GetOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ops_metadata::GetOpsMetadataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ops_metadata::GetOpsMetadataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_ops_metadata();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetOpsMetadataFluentBuilder {
         }
     }
     /// Access the GetOpsMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ops_metadata::builders::GetOpsMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_ops_metadata::builders::GetOpsMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetOpsMetadataFluentBuilder {
             crate::operation::get_ops_metadata::GetOpsMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ops_metadata::GetOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ops_metadata::GetOpsMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetOpsMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetOpsMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ops_metadata::GetOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ops_metadata::GetOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ops_metadata::GetOpsMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetOpsMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ops_metadata::GetOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ops_metadata::GetOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ops_metadata::GetOpsMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetOpsMetadataFluentBuilder {
             crate::operation::get_ops_metadata::GetOpsMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ops_metadata::GetOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ops_metadata::GetOpsMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>
-    pub fn ops_metadata_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_metadata_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ops_metadata_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>
-    pub fn set_ops_metadata_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_metadata_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ops_metadata_arn(input);
         self
     }

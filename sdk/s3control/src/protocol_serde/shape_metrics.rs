@@ -11,18 +11,13 @@ pub fn ser_metrics(
     }
     if let Some(var_2) = &input.event_threshold {
         let inner_writer = scope.start_el("EventThreshold");
-        crate::protocol_serde::shape_replication_time_value::ser_replication_time_value(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_replication_time_value::ser_replication_time_value(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
-pub fn de_metrics(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Metrics, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_metrics(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Metrics, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Metrics::builder();
     while let Some(mut tag) = decoder.next_tag() {

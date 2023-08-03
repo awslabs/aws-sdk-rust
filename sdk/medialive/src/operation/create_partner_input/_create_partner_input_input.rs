@@ -12,9 +12,7 @@ pub struct CreatePartnerInputInput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePartnerInputInput {
     /// Unique ID of the input.
@@ -26,33 +24,24 @@ impl CreatePartnerInputInput {
         self.request_id.as_deref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreatePartnerInputInput {
     /// Creates a new builder-style object to manufacture [`CreatePartnerInputInput`](crate::operation::create_partner_input::CreatePartnerInputInput).
-    pub fn builder(
-    ) -> crate::operation::create_partner_input::builders::CreatePartnerInputInputBuilder {
+    pub fn builder() -> crate::operation::create_partner_input::builders::CreatePartnerInputInputBuilder {
         crate::operation::create_partner_input::builders::CreatePartnerInputInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePartnerInputInput`](crate::operation::create_partner_input::CreatePartnerInputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePartnerInputInputBuilder {
     pub(crate) input_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePartnerInputInputBuilder {
     /// Unique ID of the input.
@@ -88,47 +77,29 @@ impl CreatePartnerInputInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePartnerInputInput`](crate::operation::create_partner_input::CreatePartnerInputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_partner_input::CreatePartnerInputInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_partner_input::CreatePartnerInputInput {
-                input_id: self.input_id,
-                request_id: self.request_id,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_partner_input::CreatePartnerInputInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_partner_input::CreatePartnerInputInput {
+            input_id: self.input_id,
+            request_id: self.request_id,
+            tags: self.tags,
+        })
     }
 }

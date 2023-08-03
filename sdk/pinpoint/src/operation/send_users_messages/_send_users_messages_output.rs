@@ -10,9 +10,7 @@ pub struct SendUsersMessagesOutput {
 }
 impl SendUsersMessagesOutput {
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
-    pub fn send_users_message_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SendUsersMessageResponse> {
+    pub fn send_users_message_response(&self) -> ::std::option::Option<&crate::types::SendUsersMessageResponse> {
         self.send_users_message_response.as_ref()
     }
 }
@@ -23,43 +21,31 @@ impl ::aws_http::request_id::RequestId for SendUsersMessagesOutput {
 }
 impl SendUsersMessagesOutput {
     /// Creates a new builder-style object to manufacture [`SendUsersMessagesOutput`](crate::operation::send_users_messages::SendUsersMessagesOutput).
-    pub fn builder(
-    ) -> crate::operation::send_users_messages::builders::SendUsersMessagesOutputBuilder {
+    pub fn builder() -> crate::operation::send_users_messages::builders::SendUsersMessagesOutputBuilder {
         crate::operation::send_users_messages::builders::SendUsersMessagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendUsersMessagesOutput`](crate::operation::send_users_messages::SendUsersMessagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendUsersMessagesOutputBuilder {
-    pub(crate) send_users_message_response:
-        ::std::option::Option<crate::types::SendUsersMessageResponse>,
+    pub(crate) send_users_message_response: ::std::option::Option<crate::types::SendUsersMessageResponse>,
     _request_id: Option<String>,
 }
 impl SendUsersMessagesOutputBuilder {
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
-    pub fn send_users_message_response(
-        mut self,
-        input: crate::types::SendUsersMessageResponse,
-    ) -> Self {
+    pub fn send_users_message_response(mut self, input: crate::types::SendUsersMessageResponse) -> Self {
         self.send_users_message_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
-    pub fn set_send_users_message_response(
-        mut self,
-        input: ::std::option::Option<crate::types::SendUsersMessageResponse>,
-    ) -> Self {
+    pub fn set_send_users_message_response(mut self, input: ::std::option::Option<crate::types::SendUsersMessageResponse>) -> Self {
         self.send_users_message_response = input;
         self
     }
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
-    pub fn get_send_users_message_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::SendUsersMessageResponse> {
+    pub fn get_send_users_message_response(&self) -> &::std::option::Option<crate::types::SendUsersMessageResponse> {
         &self.send_users_message_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

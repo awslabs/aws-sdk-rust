@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTypedLinkFacetNamesOutput {
 }
 impl ListTypedLinkFacetNamesOutput {
     /// Creates a new builder-style object to manufacture [`ListTypedLinkFacetNamesOutput`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesOutputBuilder {
         crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTypedLinkFacetNamesOutput`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypedLinkFacetNamesOutputBuilder {
     pub(crate) facet_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListTypedLinkFacetNamesOutputBuilder {
         self
     }
     /// <p>The names of typed link facets that exist within the schema.</p>
-    pub fn set_facet_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_facet_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.facet_names = input;
         self
     }
     /// <p>The names of typed link facets that exist within the schema.</p>
-    pub fn get_facet_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_facet_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.facet_names
     }
     /// <p>The pagination token.</p>
@@ -95,9 +86,7 @@ impl ListTypedLinkFacetNamesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTypedLinkFacetNamesOutput`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput {
+    pub fn build(self) -> crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput {
         crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput {
             facet_names: self.facet_names,
             next_token: self.next_token,

@@ -10,10 +10,7 @@ impl ListBridgesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_bridges::ListBridgesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bridges::ListBridgesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bridges::ListBridgesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_bridges();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListBridgesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_bridges::ListBridges,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_bridges::ListBridges, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_bridges::ListBridgesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListBridgesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListBridgesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_bridges::ListBridges,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_bridges::ListBridges, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_bridges::ListBridgesError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListBridgesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_bridges::paginator::ListBridgesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_bridges::paginator::ListBridgesPaginator {
-        crate::operation::list_bridges::paginator::ListBridgesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_bridges::paginator::ListBridgesPaginator::new(self.handle, self.inner)
     }
     /// Filter the list results to display only the bridges associated with the selected Amazon Resource Name (ARN).
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

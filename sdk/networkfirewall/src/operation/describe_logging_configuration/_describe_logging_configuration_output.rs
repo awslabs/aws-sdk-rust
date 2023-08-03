@@ -17,9 +17,7 @@ impl DescribeLoggingConfigurationOutput {
         self.firewall_arn.as_deref()
     }
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
@@ -30,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeLoggingConfigurationOutput {
 }
 impl DescribeLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingConfigurationOutput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationOutputBuilder {
         crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoggingConfigurationOutput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationOutputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
@@ -66,17 +62,12 @@ impl DescribeLoggingConfigurationOutputBuilder {
         self
     }
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -89,9 +80,7 @@ impl DescribeLoggingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLoggingConfigurationOutput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput {
         crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput {
             firewall_arn: self.firewall_arn,
             logging_configuration: self.logging_configuration,

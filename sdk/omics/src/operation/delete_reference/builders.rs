@@ -10,10 +10,7 @@ impl DeleteReferenceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_reference::DeleteReferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reference::DeleteReferenceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reference::DeleteReferenceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_reference();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteReferenceFluentBuilder {
         }
     }
     /// Access the DeleteReference as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_reference::builders::DeleteReferenceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_reference::builders::DeleteReferenceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteReferenceFluentBuilder {
             crate::operation::delete_reference::DeleteReference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reference::DeleteReferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reference::DeleteReferenceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteReferenceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteReferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_reference::DeleteReferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reference::DeleteReferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reference::DeleteReferenceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteReferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_reference::DeleteReferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reference::DeleteReferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reference::DeleteReferenceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteReferenceFluentBuilder {
             crate::operation::delete_reference::DeleteReference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reference::DeleteReferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reference::DeleteReferenceError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteReferenceFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The reference's store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_store_id(input.into());
         self
     }
     /// <p>The reference's store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_store_id(input);
         self
     }

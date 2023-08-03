@@ -36,16 +36,16 @@ impl ListAssessmentControlInsightsByControlDomainInput {
 }
 impl ListAssessmentControlInsightsByControlDomainInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentControlInsightsByControlDomainInput`](crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput).
-    pub fn builder() -> crate::operation::list_assessment_control_insights_by_control_domain::builders::ListAssessmentControlInsightsByControlDomainInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_assessment_control_insights_by_control_domain::builders::ListAssessmentControlInsightsByControlDomainInputBuilder
+    {
         crate::operation::list_assessment_control_insights_by_control_domain::builders::ListAssessmentControlInsightsByControlDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentControlInsightsByControlDomainInput`](crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentControlInsightsByControlDomainInputBuilder {
     pub(crate) control_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +54,12 @@ pub struct ListAssessmentControlInsightsByControlDomainInputBuilder {
 }
 impl ListAssessmentControlInsightsByControlDomainInputBuilder {
     /// <p>The unique identifier for the control domain. </p>
-    pub fn control_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the control domain. </p>
-    pub fn set_control_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_domain_id = input;
         self
     }
@@ -74,18 +68,12 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
         &self.control_domain_id
     }
     /// <p>The unique identifier for the active assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the active assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -122,18 +110,19 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssessmentControlInsightsByControlDomainInput`](crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput {
-                control_domain_id: self.control_domain_id
-                ,
-                assessment_id: self.assessment_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                control_domain_id: self.control_domain_id,
+                assessment_id: self.assessment_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

@@ -29,17 +29,14 @@ impl PutProfileObjectInput {
 }
 impl PutProfileObjectInput {
     /// Creates a new builder-style object to manufacture [`PutProfileObjectInput`](crate::operation::put_profile_object::PutProfileObjectInput).
-    pub fn builder() -> crate::operation::put_profile_object::builders::PutProfileObjectInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_profile_object::builders::PutProfileObjectInputBuilder {
         crate::operation::put_profile_object::builders::PutProfileObjectInputBuilder::default()
     }
 }
 
 /// A builder for [`PutProfileObjectInput`](crate::operation::put_profile_object::PutProfileObjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutProfileObjectInputBuilder {
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) object: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct PutProfileObjectInputBuilder {
 }
 impl PutProfileObjectInputBuilder {
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_type_name = input;
         self
     }
@@ -97,16 +88,11 @@ impl PutProfileObjectInputBuilder {
     /// Consumes the builder and constructs a [`PutProfileObjectInput`](crate::operation::put_profile_object::PutProfileObjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_profile_object::PutProfileObjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_profile_object::PutProfileObjectInput {
-                object_type_name: self.object_type_name,
-                object: self.object,
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_profile_object::PutProfileObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_profile_object::PutProfileObjectInput {
+            object_type_name: self.object_type_name,
+            object: self.object,
+            domain_name: self.domain_name,
+        })
     }
 }

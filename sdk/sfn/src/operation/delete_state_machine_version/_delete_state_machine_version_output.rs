@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStateMachineVersionOutput {
 }
 impl DeleteStateMachineVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStateMachineVersionOutput`](crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput).
-    pub fn builder() -> crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionOutputBuilder {
         crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStateMachineVersionOutput`](crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStateMachineVersionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteStateMachineVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteStateMachineVersionOutput`](crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput {
+    pub fn build(self) -> crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput {
         crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput {
             _request_id: self._request_id,
         }

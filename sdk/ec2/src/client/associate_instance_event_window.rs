@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateInstanceEventWindowOutput`](crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput) with field(s):
     ///   - [`instance_event_window(Option<InstanceEventWindow>)`](crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput::instance_event_window): <p>Information about the event window.</p>
     /// - On failure, responds with [`SdkError<AssociateInstanceEventWindowError>`](crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError)
-    pub fn associate_instance_event_window(&self) -> crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowFluentBuilder{
+    pub fn associate_instance_event_window(
+        &self,
+    ) -> crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowFluentBuilder {
         crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowFluentBuilder::new(self.handle.clone())
     }
 }

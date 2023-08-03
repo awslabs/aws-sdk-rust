@@ -19,9 +19,7 @@ impl StartFleetOutput {
 
 /// A builder for [`StartFleetOutput`](crate::operation::start_fleet::StartFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFleetOutputBuilder {
     _request_id: Option<String>,
 }

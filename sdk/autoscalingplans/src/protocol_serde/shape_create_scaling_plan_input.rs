@@ -9,10 +9,7 @@ pub fn ser_create_scaling_plan_input(
     if let Some(var_2) = &input.application_source {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ApplicationSource").start_object();
-        crate::protocol_serde::shape_application_source::ser_application_source(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_application_source::ser_application_source(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.scaling_instructions {
@@ -21,10 +18,7 @@ pub fn ser_create_scaling_plan_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_scaling_instruction::ser_scaling_instruction(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_scaling_instruction::ser_scaling_instruction(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

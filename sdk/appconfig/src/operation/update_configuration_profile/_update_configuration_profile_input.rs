@@ -50,16 +50,14 @@ impl UpdateConfigurationProfileInput {
 }
 impl UpdateConfigurationProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationProfileInput`](crate::operation::update_configuration_profile::UpdateConfigurationProfileInput).
-    pub fn builder() -> crate::operation::update_configuration_profile::builders::UpdateConfigurationProfileInputBuilder{
+    pub fn builder() -> crate::operation::update_configuration_profile::builders::UpdateConfigurationProfileInputBuilder {
         crate::operation::update_configuration_profile::builders::UpdateConfigurationProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationProfileInput`](crate::operation::update_configuration_profile::UpdateConfigurationProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationProfileInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct UpdateConfigurationProfileInputBuilder {
 }
 impl UpdateConfigurationProfileInputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -90,18 +82,12 @@ impl UpdateConfigurationProfileInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the configuration profile.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the configuration profile.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_profile_id = input;
         self
     }
@@ -138,18 +124,12 @@ impl UpdateConfigurationProfileInputBuilder {
         &self.description
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    pub fn retrieval_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retrieval_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retrieval_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    pub fn set_retrieval_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_retrieval_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retrieval_role_arn = input;
         self
     }
@@ -169,17 +149,12 @@ impl UpdateConfigurationProfileInputBuilder {
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn set_validators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
-    ) -> Self {
+    pub fn set_validators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>) -> Self {
         self.validators = input;
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn get_validators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
+    pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
         &self.validators
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationProfileInput`](crate::operation::update_configuration_profile::UpdateConfigurationProfileInput).
@@ -189,15 +164,13 @@ impl UpdateConfigurationProfileInputBuilder {
         crate::operation::update_configuration_profile::UpdateConfigurationProfileInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_configuration_profile::UpdateConfigurationProfileInput {
-                application_id: self.application_id,
-                configuration_profile_id: self.configuration_profile_id,
-                name: self.name,
-                description: self.description,
-                retrieval_role_arn: self.retrieval_role_arn,
-                validators: self.validators,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_configuration_profile::UpdateConfigurationProfileInput {
+            application_id: self.application_id,
+            configuration_profile_id: self.configuration_profile_id,
+            name: self.name,
+            description: self.description,
+            retrieval_role_arn: self.retrieval_role_arn,
+            validators: self.validators,
+        })
     }
 }

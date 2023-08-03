@@ -10,10 +10,7 @@ impl UpdateSchemaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_schema::UpdateSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_schema::UpdateSchemaError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_schema::UpdateSchemaError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_schema();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl UpdateSchemaFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_schema::UpdateSchema,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_schema::UpdateSchema, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_schema::UpdateSchemaError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl UpdateSchemaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl UpdateSchemaFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_schema::UpdateSchema,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_schema::UpdateSchema, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_schema::UpdateSchemaError>,
     > {
         self.customize_middleware().await
@@ -147,17 +135,12 @@ impl UpdateSchemaFluentBuilder {
         self
     }
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
-    pub fn set_schema_version_number(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
+    pub fn set_schema_version_number(mut self, input: ::std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
         self.inner = self.inner.set_schema_version_number(input);
         self
     }
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
-    pub fn get_schema_version_number(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+    pub fn get_schema_version_number(&self) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
         self.inner.get_schema_version_number()
     }
     /// <p>The new compatibility setting for the schema.</p>
@@ -166,10 +149,7 @@ impl UpdateSchemaFluentBuilder {
         self
     }
     /// <p>The new compatibility setting for the schema.</p>
-    pub fn set_compatibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Compatibility>,
-    ) -> Self {
+    pub fn set_compatibility(mut self, input: ::std::option::Option<crate::types::Compatibility>) -> Self {
         self.inner = self.inner.set_compatibility(input);
         self
     }

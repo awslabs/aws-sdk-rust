@@ -39,10 +39,7 @@ impl ModifyVolumeAttributeFluentBuilder {
         }
     }
     /// Access the ModifyVolumeAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl ModifyVolumeAttributeFluentBuilder {
             crate::operation::modify_volume_attribute::ModifyVolumeAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_volume_attribute::ModifyVolumeAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_volume_attribute::ModifyVolumeAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl ModifyVolumeAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl ModifyVolumeAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_volume_attribute::ModifyVolumeAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_volume_attribute::ModifyVolumeAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_volume_attribute::ModifyVolumeAttributeError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl ModifyVolumeAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_volume_attribute::ModifyVolumeAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_volume_attribute::ModifyVolumeAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_volume_attribute::ModifyVolumeAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl ModifyVolumeAttributeFluentBuilder {
             crate::operation::modify_volume_attribute::ModifyVolumeAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_volume_attribute::ModifyVolumeAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_volume_attribute::ModifyVolumeAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -131,17 +117,12 @@ impl ModifyVolumeAttributeFluentBuilder {
         self
     }
     /// <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
-    pub fn set_auto_enable_io(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_auto_enable_io(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.inner = self.inner.set_auto_enable_io(input);
         self
     }
     /// <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
-    pub fn get_auto_enable_io(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_auto_enable_io(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_auto_enable_io()
     }
     /// <p>The ID of the volume.</p>

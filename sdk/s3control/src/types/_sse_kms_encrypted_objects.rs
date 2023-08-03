@@ -25,9 +25,7 @@ impl SseKmsEncryptedObjects {
 
 /// A builder for [`SseKmsEncryptedObjects`](crate::types::SseKmsEncryptedObjects).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SseKmsEncryptedObjectsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>,
 }
@@ -38,10 +36,7 @@ impl SseKmsEncryptedObjectsBuilder {
         self
     }
     /// <p>Specifies whether Amazon S3 replicates objects that are created with server-side encryption by using an KMS key stored in Key Management Service.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>) -> Self {
         self.status = input;
         self
     }
@@ -51,8 +46,6 @@ impl SseKmsEncryptedObjectsBuilder {
     }
     /// Consumes the builder and constructs a [`SseKmsEncryptedObjects`](crate::types::SseKmsEncryptedObjects).
     pub fn build(self) -> crate::types::SseKmsEncryptedObjects {
-        crate::types::SseKmsEncryptedObjects {
-            status: self.status,
-        }
+        crate::types::SseKmsEncryptedObjects { status: self.status }
     }
 }

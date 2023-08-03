@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`traffic_mirror_filters(Option<Vec<TrafficMirrorFilter>>)`](crate::operation::describe_traffic_mirror_filters::DescribeTrafficMirrorFiltersOutput::traffic_mirror_filters): <p>Information about one or more Traffic Mirror filters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_traffic_mirror_filters::DescribeTrafficMirrorFiltersOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTrafficMirrorFiltersError>`](crate::operation::describe_traffic_mirror_filters::DescribeTrafficMirrorFiltersError)
-    pub fn describe_traffic_mirror_filters(&self) -> crate::operation::describe_traffic_mirror_filters::builders::DescribeTrafficMirrorFiltersFluentBuilder{
+    pub fn describe_traffic_mirror_filters(
+        &self,
+    ) -> crate::operation::describe_traffic_mirror_filters::builders::DescribeTrafficMirrorFiltersFluentBuilder {
         crate::operation::describe_traffic_mirror_filters::builders::DescribeTrafficMirrorFiltersFluentBuilder::new(self.handle.clone())
     }
 }

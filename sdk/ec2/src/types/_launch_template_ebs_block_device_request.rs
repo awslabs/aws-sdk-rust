@@ -102,9 +102,7 @@ impl LaunchTemplateEbsBlockDeviceRequest {
 
 /// A builder for [`LaunchTemplateEbsBlockDeviceRequest`](crate::types::LaunchTemplateEbsBlockDeviceRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateEbsBlockDeviceRequestBuilder {
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
@@ -248,10 +246,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
         self
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn set_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeType>,
-    ) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.volume_type = input;
         self
     }

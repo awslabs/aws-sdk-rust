@@ -45,9 +45,7 @@ impl UpdateAllowListInput {
 
 /// A builder for [`UpdateAllowListInput`](crate::operation::update_allow_list::UpdateAllowListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAllowListInputBuilder {
     pub(crate) criteria: ::std::option::Option<crate::types::AllowListCriteria>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -63,10 +61,7 @@ impl UpdateAllowListInputBuilder {
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
     /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
-    pub fn set_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowListCriteria>,
-    ) -> Self {
+    pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::AllowListCriteria>) -> Self {
         self.criteria = input;
         self
     }
@@ -120,10 +115,7 @@ impl UpdateAllowListInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAllowListInput`](crate::operation::update_allow_list::UpdateAllowListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_allow_list::UpdateAllowListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_allow_list::UpdateAllowListInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_allow_list::UpdateAllowListInput {
             criteria: self.criteria,
             description: self.description,

@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResponseHeadersPolicyAccessControlAllowMethodsValues {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for ResponseHeadersPolicyAccessControlAllowMetho
             "PATCH" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Patch,
             "POST" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Post,
             "PUT" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Put,
-            other => ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,9 +85,7 @@ impl ::std::str::FromStr for ResponseHeadersPolicyAccessControlAllowMethodsValue
     type Err = ::std::convert::Infallible;
 
     fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ResponseHeadersPolicyAccessControlAllowMethodsValues::from(
-            s,
-        ))
+        ::std::result::Result::Ok(ResponseHeadersPolicyAccessControlAllowMethodsValues::from(s))
     }
 }
 impl ResponseHeadersPolicyAccessControlAllowMethodsValues {
@@ -115,9 +105,7 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsValues {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL", "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT",
-        ]
+        &["ALL", "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     }
 }
 impl ::std::convert::AsRef<str> for ResponseHeadersPolicyAccessControlAllowMethodsValues {

@@ -19,9 +19,7 @@ impl StopEngagementOutput {
 
 /// A builder for [`StopEngagementOutput`](crate::operation::stop_engagement::StopEngagementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEngagementOutputBuilder {
     _request_id: Option<String>,
 }

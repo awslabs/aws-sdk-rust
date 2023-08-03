@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`notification_targets(Vec<NotificationTargetItem>)`](crate::operation::update_incident_record::builders::UpdateIncidentRecordFluentBuilder::notification_targets) / [`set_notification_targets(Option<Vec<NotificationTargetItem>>)`](crate::operation::update_incident_record::builders::UpdateIncidentRecordFluentBuilder::set_notification_targets): <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>  <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     /// - On success, responds with [`UpdateIncidentRecordOutput`](crate::operation::update_incident_record::UpdateIncidentRecordOutput)
     /// - On failure, responds with [`SdkError<UpdateIncidentRecordError>`](crate::operation::update_incident_record::UpdateIncidentRecordError)
-    pub fn update_incident_record(
-        &self,
-    ) -> crate::operation::update_incident_record::builders::UpdateIncidentRecordFluentBuilder {
-        crate::operation::update_incident_record::builders::UpdateIncidentRecordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_incident_record(&self) -> crate::operation::update_incident_record::builders::UpdateIncidentRecordFluentBuilder {
+        crate::operation::update_incident_record::builders::UpdateIncidentRecordFluentBuilder::new(self.handle.clone())
     }
 }

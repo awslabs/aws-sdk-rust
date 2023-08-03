@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListFargateProfilesOutput {
 }
 impl ListFargateProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListFargateProfilesOutput`](crate::operation::list_fargate_profiles::ListFargateProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_fargate_profiles::builders::ListFargateProfilesOutputBuilder {
-        crate::operation::list_fargate_profiles::builders::ListFargateProfilesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_fargate_profiles::builders::ListFargateProfilesOutputBuilder {
+        crate::operation::list_fargate_profiles::builders::ListFargateProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFargateProfilesOutput`](crate::operation::list_fargate_profiles::ListFargateProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFargateProfilesOutputBuilder {
     pub(crate) fargate_profile_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,27 +47,19 @@ impl ListFargateProfilesOutputBuilder {
     /// To override the contents of this collection use [`set_fargate_profile_names`](Self::set_fargate_profile_names).
     ///
     /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
-    pub fn fargate_profile_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fargate_profile_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fargate_profile_names.unwrap_or_default();
         v.push(input.into());
         self.fargate_profile_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
-    pub fn set_fargate_profile_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fargate_profile_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fargate_profile_names = input;
         self
     }
     /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
-    pub fn get_fargate_profile_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fargate_profile_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.fargate_profile_names
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

@@ -23,9 +23,7 @@ impl S3SetObjectTaggingOperation {
 
 /// A builder for [`S3SetObjectTaggingOperation`](crate::types::S3SetObjectTaggingOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3SetObjectTaggingOperationBuilder {
     pub(crate) tag_set: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
 }
@@ -42,10 +40,7 @@ impl S3SetObjectTaggingOperationBuilder {
         self
     }
     /// <p></p>
-    pub fn set_tag_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
-    ) -> Self {
+    pub fn set_tag_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
         self.tag_set = input;
         self
     }
@@ -55,8 +50,6 @@ impl S3SetObjectTaggingOperationBuilder {
     }
     /// Consumes the builder and constructs a [`S3SetObjectTaggingOperation`](crate::types::S3SetObjectTaggingOperation).
     pub fn build(self) -> crate::types::S3SetObjectTaggingOperation {
-        crate::types::S3SetObjectTaggingOperation {
-            tag_set: self.tag_set,
-        }
+        crate::types::S3SetObjectTaggingOperation { tag_set: self.tag_set }
     }
 }

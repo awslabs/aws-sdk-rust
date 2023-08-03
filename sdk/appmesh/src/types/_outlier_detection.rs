@@ -44,9 +44,7 @@ impl OutlierDetection {
 
 /// A builder for [`OutlierDetection`](crate::types::OutlierDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutlierDetectionBuilder {
     pub(crate) max_server_errors: ::std::option::Option<i64>,
     pub(crate) interval: ::std::option::Option<crate::types::Duration>,
@@ -88,10 +86,7 @@ impl OutlierDetectionBuilder {
         self
     }
     /// <p>The base amount of time for which a host is ejected.</p>
-    pub fn set_base_ejection_duration(
-        mut self,
-        input: ::std::option::Option<crate::types::Duration>,
-    ) -> Self {
+    pub fn set_base_ejection_duration(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
         self.base_ejection_duration = input;
         self
     }

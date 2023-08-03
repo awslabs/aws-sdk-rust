@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`reference_summary_list(Option<Vec<ReferenceSummary>>)`](crate::operation::list_contact_references::ListContactReferencesOutput::reference_summary_list): <p>Information about the flows.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contact_references::ListContactReferencesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p> <important>   <p>This is always returned as null in the response.</p>  </important>
     /// - On failure, responds with [`SdkError<ListContactReferencesError>`](crate::operation::list_contact_references::ListContactReferencesError)
-    pub fn list_contact_references(
-        &self,
-    ) -> crate::operation::list_contact_references::builders::ListContactReferencesFluentBuilder
-    {
-        crate::operation::list_contact_references::builders::ListContactReferencesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_contact_references(&self) -> crate::operation::list_contact_references::builders::ListContactReferencesFluentBuilder {
+        crate::operation::list_contact_references::builders::ListContactReferencesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct AdditionalResultAttributeValue {
 }
 impl AdditionalResultAttributeValue {
     /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
-    pub fn text_with_highlights_value(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TextWithHighlights> {
+    pub fn text_with_highlights_value(&self) -> ::std::option::Option<&crate::types::TextWithHighlights> {
         self.text_with_highlights_value.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl AdditionalResultAttributeValue {
 
 /// A builder for [`AdditionalResultAttributeValue`](crate::types::AdditionalResultAttributeValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdditionalResultAttributeValueBuilder {
     pub(crate) text_with_highlights_value: ::std::option::Option<crate::types::TextWithHighlights>,
 }
@@ -38,17 +34,12 @@ impl AdditionalResultAttributeValueBuilder {
         self
     }
     /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
-    pub fn set_text_with_highlights_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TextWithHighlights>,
-    ) -> Self {
+    pub fn set_text_with_highlights_value(mut self, input: ::std::option::Option<crate::types::TextWithHighlights>) -> Self {
         self.text_with_highlights_value = input;
         self
     }
     /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
-    pub fn get_text_with_highlights_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::TextWithHighlights> {
+    pub fn get_text_with_highlights_value(&self) -> &::std::option::Option<crate::types::TextWithHighlights> {
         &self.text_with_highlights_value
     }
     /// Consumes the builder and constructs a [`AdditionalResultAttributeValue`](crate::types::AdditionalResultAttributeValue).

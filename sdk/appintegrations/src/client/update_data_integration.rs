@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_data_integration::builders::UpdateDataIntegrationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_data_integration::builders::UpdateDataIntegrationFluentBuilder::set_description): <p>A description of the DataIntegration.</p>
     /// - On success, responds with [`UpdateDataIntegrationOutput`](crate::operation::update_data_integration::UpdateDataIntegrationOutput)
     /// - On failure, responds with [`SdkError<UpdateDataIntegrationError>`](crate::operation::update_data_integration::UpdateDataIntegrationError)
-    pub fn update_data_integration(
-        &self,
-    ) -> crate::operation::update_data_integration::builders::UpdateDataIntegrationFluentBuilder
-    {
-        crate::operation::update_data_integration::builders::UpdateDataIntegrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_data_integration(&self) -> crate::operation::update_data_integration::builders::UpdateDataIntegrationFluentBuilder {
+        crate::operation::update_data_integration::builders::UpdateDataIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

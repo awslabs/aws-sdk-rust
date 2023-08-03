@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteWebhookOutput`](crate::operation::delete_webhook::DeleteWebhookOutput) with field(s):
     ///   - [`webhook(Option<Webhook>)`](crate::operation::delete_webhook::DeleteWebhookOutput::webhook): <p> Describes a webhook that connects repository events to an Amplify app. </p>
     /// - On failure, responds with [`SdkError<DeleteWebhookError>`](crate::operation::delete_webhook::DeleteWebhookError)
-    pub fn delete_webhook(
-        &self,
-    ) -> crate::operation::delete_webhook::builders::DeleteWebhookFluentBuilder {
-        crate::operation::delete_webhook::builders::DeleteWebhookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_webhook(&self) -> crate::operation::delete_webhook::builders::DeleteWebhookFluentBuilder {
+        crate::operation::delete_webhook::builders::DeleteWebhookFluentBuilder::new(self.handle.clone())
     }
 }

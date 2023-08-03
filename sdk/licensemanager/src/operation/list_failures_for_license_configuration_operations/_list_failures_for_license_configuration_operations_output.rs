@@ -5,8 +5,7 @@
 pub struct ListFailuresForLicenseConfigurationOperationsOutput {
     /// <p>License configuration operations that failed.</p>
     #[doc(hidden)]
-    pub license_operation_failure_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseOperationFailure>>,
+    pub license_operation_failure_list: ::std::option::Option<::std::vec::Vec<crate::types::LicenseOperationFailure>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListFailuresForLicenseConfigurationOperationsOutput {
 }
 impl ListFailuresForLicenseConfigurationOperationsOutput {
     /// <p>License configuration operations that failed.</p>
-    pub fn license_operation_failure_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LicenseOperationFailure]> {
+    pub fn license_operation_failure_list(&self) -> ::std::option::Option<&[crate::types::LicenseOperationFailure]> {
         self.license_operation_failure_list.as_deref()
     }
     /// <p>Token for the next set of results.</p>
@@ -31,19 +28,18 @@ impl ::aws_http::request_id::RequestId for ListFailuresForLicenseConfigurationOp
 }
 impl ListFailuresForLicenseConfigurationOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput).
-    pub fn builder() -> crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsOutputBuilder
+    {
         crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFailuresForLicenseConfigurationOperationsOutputBuilder {
-    pub(crate) license_operation_failure_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseOperationFailure>>,
+    pub(crate) license_operation_failure_list: ::std::option::Option<::std::vec::Vec<crate::types::LicenseOperationFailure>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +49,7 @@ impl ListFailuresForLicenseConfigurationOperationsOutputBuilder {
     /// To override the contents of this collection use [`set_license_operation_failure_list`](Self::set_license_operation_failure_list).
     ///
     /// <p>License configuration operations that failed.</p>
-    pub fn license_operation_failure_list(
-        mut self,
-        input: crate::types::LicenseOperationFailure,
-    ) -> Self {
+    pub fn license_operation_failure_list(mut self, input: crate::types::LicenseOperationFailure) -> Self {
         let mut v = self.license_operation_failure_list.unwrap_or_default();
         v.push(input);
         self.license_operation_failure_list = ::std::option::Option::Some(v);
@@ -71,9 +64,7 @@ impl ListFailuresForLicenseConfigurationOperationsOutputBuilder {
         self
     }
     /// <p>License configuration operations that failed.</p>
-    pub fn get_license_operation_failure_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseOperationFailure>> {
+    pub fn get_license_operation_failure_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseOperationFailure>> {
         &self.license_operation_failure_list
     }
     /// <p>Token for the next set of results.</p>
@@ -100,12 +91,10 @@ impl ListFailuresForLicenseConfigurationOperationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput).
-    pub fn build(self) -> crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput{
+    pub fn build(self) -> crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput {
         crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput {
-            license_operation_failure_list: self.license_operation_failure_list
-            ,
-            next_token: self.next_token
-            ,
+            license_operation_failure_list: self.license_operation_failure_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

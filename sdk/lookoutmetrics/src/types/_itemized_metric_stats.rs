@@ -30,9 +30,7 @@ impl ItemizedMetricStats {
 
 /// A builder for [`ItemizedMetricStats`](crate::types::ItemizedMetricStats).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ItemizedMetricStatsBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) occurrence_count: ::std::option::Option<i32>,

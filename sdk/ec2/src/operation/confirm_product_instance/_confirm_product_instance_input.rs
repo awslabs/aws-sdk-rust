@@ -29,18 +29,14 @@ impl ConfirmProductInstanceInput {
 }
 impl ConfirmProductInstanceInput {
     /// Creates a new builder-style object to manufacture [`ConfirmProductInstanceInput`](crate::operation::confirm_product_instance::ConfirmProductInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::confirm_product_instance::builders::ConfirmProductInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::confirm_product_instance::builders::ConfirmProductInstanceInputBuilder {
         crate::operation::confirm_product_instance::builders::ConfirmProductInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmProductInstanceInput`](crate::operation::confirm_product_instance::ConfirmProductInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmProductInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_code: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ConfirmProductInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmProductInstanceInput`](crate::operation::confirm_product_instance::ConfirmProductInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::confirm_product_instance::ConfirmProductInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::confirm_product_instance::ConfirmProductInstanceInput {
-                instance_id: self.instance_id,
-                product_code: self.product_code,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::confirm_product_instance::ConfirmProductInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::confirm_product_instance::ConfirmProductInstanceInput {
+            instance_id: self.instance_id,
+            product_code: self.product_code,
+            dry_run: self.dry_run,
+        })
     }
 }

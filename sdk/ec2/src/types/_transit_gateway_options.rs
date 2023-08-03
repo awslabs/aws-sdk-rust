@@ -12,19 +12,16 @@ pub struct TransitGatewayOptions {
     pub transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether attachment requests are automatically accepted.</p>
     #[doc(hidden)]
-    pub auto_accept_shared_attachments:
-        ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,
+    pub auto_accept_shared_attachments: ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,
     /// <p>Indicates whether resource attachments are automatically associated with the default association route table.</p>
     #[doc(hidden)]
-    pub default_route_table_association:
-        ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>,
+    pub default_route_table_association: ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>,
     /// <p>The ID of the default association route table.</p>
     #[doc(hidden)]
     pub association_default_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table.</p>
     #[doc(hidden)]
-    pub default_route_table_propagation:
-        ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>,
+    pub default_route_table_propagation: ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>,
     /// <p>The ID of the default propagation route table.</p>
     #[doc(hidden)]
     pub propagation_default_route_table_id: ::std::option::Option<::std::string::String>,
@@ -48,15 +45,11 @@ impl TransitGatewayOptions {
         self.transit_gateway_cidr_blocks.as_deref()
     }
     /// <p>Indicates whether attachment requests are automatically accepted.</p>
-    pub fn auto_accept_shared_attachments(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoAcceptSharedAttachmentsValue> {
+    pub fn auto_accept_shared_attachments(&self) -> ::std::option::Option<&crate::types::AutoAcceptSharedAttachmentsValue> {
         self.auto_accept_shared_attachments.as_ref()
     }
     /// <p>Indicates whether resource attachments are automatically associated with the default association route table.</p>
-    pub fn default_route_table_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultRouteTableAssociationValue> {
+    pub fn default_route_table_association(&self) -> ::std::option::Option<&crate::types::DefaultRouteTableAssociationValue> {
         self.default_route_table_association.as_ref()
     }
     /// <p>The ID of the default association route table.</p>
@@ -64,9 +57,7 @@ impl TransitGatewayOptions {
         self.association_default_route_table_id.as_deref()
     }
     /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table.</p>
-    pub fn default_route_table_propagation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultRouteTablePropagationValue> {
+    pub fn default_route_table_propagation(&self) -> ::std::option::Option<&crate::types::DefaultRouteTablePropagationValue> {
         self.default_route_table_propagation.as_ref()
     }
     /// <p>The ID of the default propagation route table.</p>
@@ -95,20 +86,14 @@ impl TransitGatewayOptions {
 
 /// A builder for [`TransitGatewayOptions`](crate::types::TransitGatewayOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayOptionsBuilder {
     pub(crate) amazon_side_asn: ::std::option::Option<i64>,
-    pub(crate) transit_gateway_cidr_blocks:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) auto_accept_shared_attachments:
-        ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,
-    pub(crate) default_route_table_association:
-        ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>,
+    pub(crate) transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) auto_accept_shared_attachments: ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,
+    pub(crate) default_route_table_association: ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>,
     pub(crate) association_default_route_table_id: ::std::option::Option<::std::string::String>,
-    pub(crate) default_route_table_propagation:
-        ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>,
+    pub(crate) default_route_table_propagation: ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>,
     pub(crate) propagation_default_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_ecmp_support: ::std::option::Option<crate::types::VpnEcmpSupportValue>,
     pub(crate) dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
@@ -134,137 +119,89 @@ impl TransitGatewayOptionsBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_cidr_blocks`](Self::set_transit_gateway_cidr_blocks).
     ///
     /// <p>The transit gateway CIDR blocks.</p>
-    pub fn transit_gateway_cidr_blocks(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.transit_gateway_cidr_blocks.unwrap_or_default();
         v.push(input.into());
         self.transit_gateway_cidr_blocks = ::std::option::Option::Some(v);
         self
     }
     /// <p>The transit gateway CIDR blocks.</p>
-    pub fn set_transit_gateway_cidr_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_transit_gateway_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.transit_gateway_cidr_blocks = input;
         self
     }
     /// <p>The transit gateway CIDR blocks.</p>
-    pub fn get_transit_gateway_cidr_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transit_gateway_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.transit_gateway_cidr_blocks
     }
     /// <p>Indicates whether attachment requests are automatically accepted.</p>
-    pub fn auto_accept_shared_attachments(
-        mut self,
-        input: crate::types::AutoAcceptSharedAttachmentsValue,
-    ) -> Self {
+    pub fn auto_accept_shared_attachments(mut self, input: crate::types::AutoAcceptSharedAttachmentsValue) -> Self {
         self.auto_accept_shared_attachments = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether attachment requests are automatically accepted.</p>
-    pub fn set_auto_accept_shared_attachments(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,
-    ) -> Self {
+    pub fn set_auto_accept_shared_attachments(mut self, input: ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>) -> Self {
         self.auto_accept_shared_attachments = input;
         self
     }
     /// <p>Indicates whether attachment requests are automatically accepted.</p>
-    pub fn get_auto_accept_shared_attachments(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue> {
+    pub fn get_auto_accept_shared_attachments(&self) -> &::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue> {
         &self.auto_accept_shared_attachments
     }
     /// <p>Indicates whether resource attachments are automatically associated with the default association route table.</p>
-    pub fn default_route_table_association(
-        mut self,
-        input: crate::types::DefaultRouteTableAssociationValue,
-    ) -> Self {
+    pub fn default_route_table_association(mut self, input: crate::types::DefaultRouteTableAssociationValue) -> Self {
         self.default_route_table_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether resource attachments are automatically associated with the default association route table.</p>
-    pub fn set_default_route_table_association(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>,
-    ) -> Self {
+    pub fn set_default_route_table_association(mut self, input: ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>) -> Self {
         self.default_route_table_association = input;
         self
     }
     /// <p>Indicates whether resource attachments are automatically associated with the default association route table.</p>
-    pub fn get_default_route_table_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultRouteTableAssociationValue> {
+    pub fn get_default_route_table_association(&self) -> &::std::option::Option<crate::types::DefaultRouteTableAssociationValue> {
         &self.default_route_table_association
     }
     /// <p>The ID of the default association route table.</p>
-    pub fn association_default_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_default_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_default_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the default association route table.</p>
-    pub fn set_association_default_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_default_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_default_route_table_id = input;
         self
     }
     /// <p>The ID of the default association route table.</p>
-    pub fn get_association_default_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_association_default_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_default_route_table_id
     }
     /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table.</p>
-    pub fn default_route_table_propagation(
-        mut self,
-        input: crate::types::DefaultRouteTablePropagationValue,
-    ) -> Self {
+    pub fn default_route_table_propagation(mut self, input: crate::types::DefaultRouteTablePropagationValue) -> Self {
         self.default_route_table_propagation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table.</p>
-    pub fn set_default_route_table_propagation(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>,
-    ) -> Self {
+    pub fn set_default_route_table_propagation(mut self, input: ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>) -> Self {
         self.default_route_table_propagation = input;
         self
     }
     /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table.</p>
-    pub fn get_default_route_table_propagation(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultRouteTablePropagationValue> {
+    pub fn get_default_route_table_propagation(&self) -> &::std::option::Option<crate::types::DefaultRouteTablePropagationValue> {
         &self.default_route_table_propagation
     }
     /// <p>The ID of the default propagation route table.</p>
-    pub fn propagation_default_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn propagation_default_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.propagation_default_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the default propagation route table.</p>
-    pub fn set_propagation_default_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_propagation_default_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.propagation_default_route_table_id = input;
         self
     }
     /// <p>The ID of the default propagation route table.</p>
-    pub fn get_propagation_default_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_propagation_default_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.propagation_default_route_table_id
     }
     /// <p>Indicates whether Equal Cost Multipath Protocol support is enabled.</p>
@@ -273,17 +210,12 @@ impl TransitGatewayOptionsBuilder {
         self
     }
     /// <p>Indicates whether Equal Cost Multipath Protocol support is enabled.</p>
-    pub fn set_vpn_ecmp_support(
-        mut self,
-        input: ::std::option::Option<crate::types::VpnEcmpSupportValue>,
-    ) -> Self {
+    pub fn set_vpn_ecmp_support(mut self, input: ::std::option::Option<crate::types::VpnEcmpSupportValue>) -> Self {
         self.vpn_ecmp_support = input;
         self
     }
     /// <p>Indicates whether Equal Cost Multipath Protocol support is enabled.</p>
-    pub fn get_vpn_ecmp_support(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpnEcmpSupportValue> {
+    pub fn get_vpn_ecmp_support(&self) -> &::std::option::Option<crate::types::VpnEcmpSupportValue> {
         &self.vpn_ecmp_support
     }
     /// <p>Indicates whether DNS support is enabled.</p>
@@ -292,10 +224,7 @@ impl TransitGatewayOptionsBuilder {
         self
     }
     /// <p>Indicates whether DNS support is enabled.</p>
-    pub fn set_dns_support(
-        mut self,
-        input: ::std::option::Option<crate::types::DnsSupportValue>,
-    ) -> Self {
+    pub fn set_dns_support(mut self, input: ::std::option::Option<crate::types::DnsSupportValue>) -> Self {
         self.dns_support = input;
         self
     }
@@ -309,17 +238,12 @@ impl TransitGatewayOptionsBuilder {
         self
     }
     /// <p>Indicates whether multicast is enabled on the transit gateway</p>
-    pub fn set_multicast_support(
-        mut self,
-        input: ::std::option::Option<crate::types::MulticastSupportValue>,
-    ) -> Self {
+    pub fn set_multicast_support(mut self, input: ::std::option::Option<crate::types::MulticastSupportValue>) -> Self {
         self.multicast_support = input;
         self
     }
     /// <p>Indicates whether multicast is enabled on the transit gateway</p>
-    pub fn get_multicast_support(
-        &self,
-    ) -> &::std::option::Option<crate::types::MulticastSupportValue> {
+    pub fn get_multicast_support(&self) -> &::std::option::Option<crate::types::MulticastSupportValue> {
         &self.multicast_support
     }
     /// Consumes the builder and constructs a [`TransitGatewayOptions`](crate::types::TransitGatewayOptions).

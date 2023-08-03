@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`pools(Option<Vec<PoolInformation>>)`](crate::operation::describe_pools::DescribePoolsOutput::pools): <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_pools::DescribePoolsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribePoolsError>`](crate::operation::describe_pools::DescribePoolsError)
-    pub fn describe_pools(
-        &self,
-    ) -> crate::operation::describe_pools::builders::DescribePoolsFluentBuilder {
-        crate::operation::describe_pools::builders::DescribePoolsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_pools(&self) -> crate::operation::describe_pools::builders::DescribePoolsFluentBuilder {
+        crate::operation::describe_pools::builders::DescribePoolsFluentBuilder::new(self.handle.clone())
     }
 }

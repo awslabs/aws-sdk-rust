@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateLocationObjectStorageOutput {
 }
 impl CreateLocationObjectStorageOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationObjectStorageOutput`](crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput).
-    pub fn builder() -> crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageOutputBuilder{
+    pub fn builder() -> crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageOutputBuilder {
         crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationObjectStorageOutput`](crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationObjectStorageOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl CreateLocationObjectStorageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLocationObjectStorageOutput`](crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput {
+    pub fn build(self) -> crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput {
         crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput {
             location_arn: self.location_arn,
             _request_id: self._request_id,

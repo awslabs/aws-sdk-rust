@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`target_arn(Option<String>)`](crate::operation::delete_chap_credentials::DeleteChapCredentialsOutput::target_arn): <p>The Amazon Resource Name (ARN) of the target.</p>
     ///   - [`initiator_name(Option<String>)`](crate::operation::delete_chap_credentials::DeleteChapCredentialsOutput::initiator_name): <p>The iSCSI initiator that connects to the target.</p>
     /// - On failure, responds with [`SdkError<DeleteChapCredentialsError>`](crate::operation::delete_chap_credentials::DeleteChapCredentialsError)
-    pub fn delete_chap_credentials(
-        &self,
-    ) -> crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsFluentBuilder
-    {
-        crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_chap_credentials(&self) -> crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsFluentBuilder {
+        crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

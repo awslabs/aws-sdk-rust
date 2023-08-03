@@ -5,8 +5,7 @@
 pub struct GetEnrollmentStatusesForOrganizationOutput {
     /// <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
     #[doc(hidden)]
-    pub account_enrollment_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
+    pub account_enrollment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
     /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
     /// <p>This value is null when there are no more pages of account enrollment statuses to return.</p>
     #[doc(hidden)]
@@ -15,9 +14,7 @@ pub struct GetEnrollmentStatusesForOrganizationOutput {
 }
 impl GetEnrollmentStatusesForOrganizationOutput {
     /// <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
-    pub fn account_enrollment_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccountEnrollmentStatus]> {
+    pub fn account_enrollment_statuses(&self) -> ::std::option::Option<&[crate::types::AccountEnrollmentStatus]> {
         self.account_enrollment_statuses.as_deref()
     }
     /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
@@ -33,19 +30,16 @@ impl ::aws_http::request_id::RequestId for GetEnrollmentStatusesForOrganizationO
 }
 impl GetEnrollmentStatusesForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusesForOrganizationOutput`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput).
-    pub fn builder() -> crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationOutputBuilder {
         crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnrollmentStatusesForOrganizationOutput`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnrollmentStatusesForOrganizationOutputBuilder {
-    pub(crate) account_enrollment_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
+    pub(crate) account_enrollment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +49,19 @@ impl GetEnrollmentStatusesForOrganizationOutputBuilder {
     /// To override the contents of this collection use [`set_account_enrollment_statuses`](Self::set_account_enrollment_statuses).
     ///
     /// <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
-    pub fn account_enrollment_statuses(
-        mut self,
-        input: crate::types::AccountEnrollmentStatus,
-    ) -> Self {
+    pub fn account_enrollment_statuses(mut self, input: crate::types::AccountEnrollmentStatus) -> Self {
         let mut v = self.account_enrollment_statuses.unwrap_or_default();
         v.push(input);
         self.account_enrollment_statuses = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
-    pub fn set_account_enrollment_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
-    ) -> Self {
+    pub fn set_account_enrollment_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>) -> Self {
         self.account_enrollment_statuses = input;
         self
     }
     /// <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
-    pub fn get_account_enrollment_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>> {
+    pub fn get_account_enrollment_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>> {
         &self.account_enrollment_statuses
     }
     /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
@@ -105,12 +91,10 @@ impl GetEnrollmentStatusesForOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEnrollmentStatusesForOrganizationOutput`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput).
-    pub fn build(self) -> crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput{
+    pub fn build(self) -> crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput {
         crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput {
-            account_enrollment_statuses: self.account_enrollment_statuses
-            ,
-            next_token: self.next_token
-            ,
+            account_enrollment_statuses: self.account_enrollment_statuses,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

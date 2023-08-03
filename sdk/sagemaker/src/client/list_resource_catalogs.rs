@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`resource_catalogs(Option<Vec<ResourceCatalog>>)`](crate::operation::list_resource_catalogs::ListResourceCatalogsOutput::resource_catalogs): <p> A list of the requested <code>ResourceCatalog</code>s. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_catalogs::ListResourceCatalogsOutput::next_token): <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>
     /// - On failure, responds with [`SdkError<ListResourceCatalogsError>`](crate::operation::list_resource_catalogs::ListResourceCatalogsError)
-    pub fn list_resource_catalogs(
-        &self,
-    ) -> crate::operation::list_resource_catalogs::builders::ListResourceCatalogsFluentBuilder {
-        crate::operation::list_resource_catalogs::builders::ListResourceCatalogsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resource_catalogs(&self) -> crate::operation::list_resource_catalogs::builders::ListResourceCatalogsFluentBuilder {
+        crate::operation::list_resource_catalogs::builders::ListResourceCatalogsFluentBuilder::new(self.handle.clone())
     }
 }

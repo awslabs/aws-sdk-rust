@@ -30,24 +30,20 @@ impl ListCustomLineItemVersionsInput {
         self.next_token.as_deref()
     }
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListCustomLineItemVersionsFilter> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListCustomLineItemVersionsFilter> {
         self.filters.as_ref()
     }
 }
 impl ListCustomLineItemVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsInput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput).
-    pub fn builder() -> crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder {
         crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomLineItemVersionsInput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -103,17 +99,12 @@ impl ListCustomLineItemVersionsInputBuilder {
         self
     }
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListCustomLineItemVersionsFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListCustomLineItemVersionsFilter>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListCustomLineItemVersionsFilter> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListCustomLineItemVersionsFilter> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListCustomLineItemVersionsInput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput).
@@ -123,13 +114,11 @@ impl ListCustomLineItemVersionsInputBuilder {
         crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput {
-                arn: self.arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput {
+            arn: self.arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+        })
     }
 }

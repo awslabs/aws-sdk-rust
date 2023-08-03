@@ -29,9 +29,7 @@ impl DescribeProgramInput {
 
 /// A builder for [`DescribeProgramInput`](crate::operation::describe_program::DescribeProgramInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProgramInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeProgramInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProgramInput`](crate::operation::describe_program::DescribeProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_program::DescribeProgramInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_program::DescribeProgramInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_program::DescribeProgramInput {
             channel_name: self.channel_name,
             program_name: self.program_name,

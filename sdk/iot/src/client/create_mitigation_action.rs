@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`action_arn(Option<String>)`](crate::operation::create_mitigation_action::CreateMitigationActionOutput::action_arn): <p>The ARN for the new mitigation action.</p>
     ///   - [`action_id(Option<String>)`](crate::operation::create_mitigation_action::CreateMitigationActionOutput::action_id): <p>A unique identifier for the new mitigation action.</p>
     /// - On failure, responds with [`SdkError<CreateMitigationActionError>`](crate::operation::create_mitigation_action::CreateMitigationActionError)
-    pub fn create_mitigation_action(
-        &self,
-    ) -> crate::operation::create_mitigation_action::builders::CreateMitigationActionFluentBuilder
-    {
+    pub fn create_mitigation_action(&self) -> crate::operation::create_mitigation_action::builders::CreateMitigationActionFluentBuilder {
         crate::operation::create_mitigation_action::builders::CreateMitigationActionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_source_regions::DescribeSourceRegionsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`source_regions(Option<Vec<SourceRegion>>)`](crate::operation::describe_source_regions::DescribeSourceRegionsOutput::source_regions): <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
     /// - On failure, responds with [`SdkError<DescribeSourceRegionsError>`](crate::operation::describe_source_regions::DescribeSourceRegionsError)
-    pub fn describe_source_regions(
-        &self,
-    ) -> crate::operation::describe_source_regions::builders::DescribeSourceRegionsFluentBuilder
-    {
-        crate::operation::describe_source_regions::builders::DescribeSourceRegionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_source_regions(&self) -> crate::operation::describe_source_regions::builders::DescribeSourceRegionsFluentBuilder {
+        crate::operation::describe_source_regions::builders::DescribeSourceRegionsFluentBuilder::new(self.handle.clone())
     }
 }

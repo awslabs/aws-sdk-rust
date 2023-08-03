@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`entity_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceFluentBuilder::set_entity_id): <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     /// - On success, responds with [`DisassociateDelegateFromResourceOutput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceOutput)
     /// - On failure, responds with [`SdkError<DisassociateDelegateFromResourceError>`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError)
-    pub fn disassociate_delegate_from_resource(&self) -> crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceFluentBuilder{
+    pub fn disassociate_delegate_from_resource(
+        &self,
+    ) -> crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceFluentBuilder {
         crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceFluentBuilder::new(self.handle.clone())
     }
 }

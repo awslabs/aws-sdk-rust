@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetContainerServiceMetricDataOutput {
 }
 impl GetContainerServiceMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerServiceMetricDataOutput`](crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput).
-    pub fn builder() -> crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataOutputBuilder{
+    pub fn builder() -> crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataOutputBuilder {
         crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerServiceMetricDataOutput`](crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerServiceMetricDataOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<crate::types::ContainerServiceMetricName>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,
@@ -50,17 +48,12 @@ impl GetContainerServiceMetricDataOutputBuilder {
         self
     }
     /// <p>The name of the metric returned. </p>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServiceMetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::ContainerServiceMetricName>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The name of the metric returned. </p>
-    pub fn get_metric_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerServiceMetricName> {
+    pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::ContainerServiceMetricName> {
         &self.metric_name
     }
     /// Appends an item to `metric_data`.
@@ -75,17 +68,12 @@ impl GetContainerServiceMetricDataOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn set_metric_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,
-    ) -> Self {
+    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>) -> Self {
         self.metric_data = input;
         self
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn get_metric_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>> {
+    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>> {
         &self.metric_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,10 +86,7 @@ impl GetContainerServiceMetricDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetContainerServiceMetricDataOutput`](crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput
-    {
+    pub fn build(self) -> crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput {
         crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput {
             metric_name: self.metric_name,
             metric_data: self.metric_data,

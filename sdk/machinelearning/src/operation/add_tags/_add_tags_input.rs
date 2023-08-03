@@ -36,9 +36,7 @@ impl AddTagsInput {
 
 /// A builder for [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTagsInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl AddTagsInputBuilder {
         self
     }
     /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -88,10 +83,7 @@ impl AddTagsInputBuilder {
         self
     }
     /// <p>The type of the ML object to tag.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TaggableResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TaggableResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -100,12 +92,7 @@ impl AddTagsInputBuilder {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_tags::AddTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_tags::AddTagsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_tags::AddTagsInput {
             tags: self.tags,
             resource_id: self.resource_id,

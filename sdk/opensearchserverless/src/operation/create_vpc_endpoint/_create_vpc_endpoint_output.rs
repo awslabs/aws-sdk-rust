@@ -10,9 +10,7 @@ pub struct CreateVpcEndpointOutput {
 }
 impl CreateVpcEndpointOutput {
     /// <p>Details about the created interface VPC endpoint.</p>
-    pub fn create_vpc_endpoint_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateVpcEndpointDetail> {
+    pub fn create_vpc_endpoint_detail(&self) -> ::std::option::Option<&crate::types::CreateVpcEndpointDetail> {
         self.create_vpc_endpoint_detail.as_ref()
     }
 }
@@ -23,43 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateVpcEndpointOutput {
 }
 impl CreateVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointOutput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder {
         crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcEndpointOutput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointOutputBuilder {
-    pub(crate) create_vpc_endpoint_detail:
-        ::std::option::Option<crate::types::CreateVpcEndpointDetail>,
+    pub(crate) create_vpc_endpoint_detail: ::std::option::Option<crate::types::CreateVpcEndpointDetail>,
     _request_id: Option<String>,
 }
 impl CreateVpcEndpointOutputBuilder {
     /// <p>Details about the created interface VPC endpoint.</p>
-    pub fn create_vpc_endpoint_detail(
-        mut self,
-        input: crate::types::CreateVpcEndpointDetail,
-    ) -> Self {
+    pub fn create_vpc_endpoint_detail(mut self, input: crate::types::CreateVpcEndpointDetail) -> Self {
         self.create_vpc_endpoint_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the created interface VPC endpoint.</p>
-    pub fn set_create_vpc_endpoint_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateVpcEndpointDetail>,
-    ) -> Self {
+    pub fn set_create_vpc_endpoint_detail(mut self, input: ::std::option::Option<crate::types::CreateVpcEndpointDetail>) -> Self {
         self.create_vpc_endpoint_detail = input;
         self
     }
     /// <p>Details about the created interface VPC endpoint.</p>
-    pub fn get_create_vpc_endpoint_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateVpcEndpointDetail> {
+    pub fn get_create_vpc_endpoint_detail(&self) -> &::std::option::Option<crate::types::CreateVpcEndpointDetail> {
         &self.create_vpc_endpoint_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

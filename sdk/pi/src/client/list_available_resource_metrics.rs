@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`metrics(Option<Vec<ResponseResourceMetric>>)`](crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput::metrics): <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput::next_token): <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
     /// - On failure, responds with [`SdkError<ListAvailableResourceMetricsError>`](crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError)
-    pub fn list_available_resource_metrics(&self) -> crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsFluentBuilder{
+    pub fn list_available_resource_metrics(
+        &self,
+    ) -> crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsFluentBuilder {
         crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsFluentBuilder::new(self.handle.clone())
     }
 }

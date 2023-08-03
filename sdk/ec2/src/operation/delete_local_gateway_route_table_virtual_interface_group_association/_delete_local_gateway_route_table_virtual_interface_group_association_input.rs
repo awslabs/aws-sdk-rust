@@ -5,19 +5,15 @@
 pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput {
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
     #[doc(hidden)]
-    pub local_gateway_route_table_virtual_interface_group_association_id:
-        ::std::option::Option<::std::string::String>,
+    pub local_gateway_route_table_virtual_interface_group_association_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput {
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
-    pub fn local_gateway_route_table_virtual_interface_group_association_id(
-        &self,
-    ) -> ::std::option::Option<&str> {
-        self.local_gateway_route_table_virtual_interface_group_association_id
-            .as_deref()
+    pub fn local_gateway_route_table_virtual_interface_group_association_id(&self) -> ::std::option::Option<&str> {
+        self.local_gateway_route_table_virtual_interface_group_association_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -33,12 +29,9 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput {
 
 /// A builder for [`DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput`](crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
-    pub(crate) local_gateway_route_table_virtual_interface_group_association_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) local_gateway_route_table_virtual_interface_group_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
@@ -47,8 +40,7 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.local_gateway_route_table_virtual_interface_group_association_id =
-            ::std::option::Option::Some(input.into());
+        self.local_gateway_route_table_virtual_interface_group_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
@@ -60,9 +52,7 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
         self
     }
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
-    pub fn get_local_gateway_route_table_virtual_interface_group_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_virtual_interface_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_virtual_interface_group_association_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

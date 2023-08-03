@@ -15,16 +15,14 @@ impl ResendOperationAuthorizationInput {
 }
 impl ResendOperationAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`ResendOperationAuthorizationInput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput).
-    pub fn builder() -> crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder{
+    pub fn builder() -> crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder {
         crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`ResendOperationAuthorizationInput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResendOperationAuthorizationInputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl ResendOperationAuthorizationInputBuilder {
         crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput {
-                operation_id: self.operation_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput {
+            operation_id: self.operation_id,
+        })
     }
 }

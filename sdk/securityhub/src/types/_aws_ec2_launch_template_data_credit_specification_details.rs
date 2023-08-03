@@ -16,17 +16,14 @@ impl AwsEc2LaunchTemplateDataCreditSpecificationDetails {
 }
 impl AwsEc2LaunchTemplateDataCreditSpecificationDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataCreditSpecificationDetails`](crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataCreditSpecificationDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataCreditSpecificationDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataCreditSpecificationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataCreditSpecificationDetails`](crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataCreditSpecificationDetailsBuilder {
     pub(crate) cpu_credits: ::std::option::Option<::std::string::String>,
 }

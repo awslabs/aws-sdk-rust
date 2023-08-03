@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteRepositoryOutput {
 }
 impl DeleteRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryOutput`](crate::operation::delete_repository::DeleteRepositoryOutput).
-    pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryOutputBuilder {
         crate::operation::delete_repository::builders::DeleteRepositoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRepositoryOutput`](crate::operation::delete_repository::DeleteRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRepositoryOutputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::Repository>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteRepositoryOutputBuilder {
         self
     }
     /// <p>The repository that was deleted.</p>
-    pub fn set_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::Repository>,
-    ) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<crate::types::Repository>) -> Self {
         self.repository = input;
         self
     }

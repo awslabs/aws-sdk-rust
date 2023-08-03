@@ -10,10 +10,7 @@ impl RegisterCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_certificate::RegisterCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_certificate::RegisterCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_certificate::RegisterCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_certificate();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RegisterCertificateFluentBuilder {
         }
     }
     /// Access the RegisterCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_certificate::builders::RegisterCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_certificate::builders::RegisterCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RegisterCertificateFluentBuilder {
             crate::operation::register_certificate::RegisterCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_certificate::RegisterCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_certificate::RegisterCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RegisterCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RegisterCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_certificate::RegisterCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_certificate::RegisterCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_certificate::RegisterCertificateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RegisterCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_certificate::RegisterCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_certificate::RegisterCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_certificate::RegisterCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl RegisterCertificateFluentBuilder {
             crate::operation::register_certificate::RegisterCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_certificate::RegisterCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_certificate::RegisterCertificateError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl RegisterCertificateFluentBuilder {
         self.inner.get_directory_id()
     }
     /// <p>The certificate PEM string that needs to be registered.</p>
-    pub fn certificate_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_data(input.into());
         self
     }
     /// <p>The certificate PEM string that needs to be registered.</p>
-    pub fn set_certificate_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_data(input);
         self
     }
@@ -171,25 +149,17 @@ impl RegisterCertificateFluentBuilder {
         self.inner.get_type()
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn client_cert_auth_settings(
-        mut self,
-        input: crate::types::ClientCertAuthSettings,
-    ) -> Self {
+    pub fn client_cert_auth_settings(mut self, input: crate::types::ClientCertAuthSettings) -> Self {
         self.inner = self.inner.client_cert_auth_settings(input);
         self
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn set_client_cert_auth_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientCertAuthSettings>,
-    ) -> Self {
+    pub fn set_client_cert_auth_settings(mut self, input: ::std::option::Option<crate::types::ClientCertAuthSettings>) -> Self {
         self.inner = self.inner.set_client_cert_auth_settings(input);
         self
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn get_client_cert_auth_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientCertAuthSettings> {
+    pub fn get_client_cert_auth_settings(&self) -> &::std::option::Option<crate::types::ClientCertAuthSettings> {
         self.inner.get_client_cert_auth_settings()
     }
 }

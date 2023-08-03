@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`model_version_number(Option<String>)`](crate::operation::create_model_version::CreateModelVersionOutput::model_version_number): <p>The model version number of the model version created.</p>
     ///   - [`status(Option<String>)`](crate::operation::create_model_version::CreateModelVersionOutput::status): <p>The model version status. </p>
     /// - On failure, responds with [`SdkError<CreateModelVersionError>`](crate::operation::create_model_version::CreateModelVersionError)
-    pub fn create_model_version(
-        &self,
-    ) -> crate::operation::create_model_version::builders::CreateModelVersionFluentBuilder {
-        crate::operation::create_model_version::builders::CreateModelVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_model_version(&self) -> crate::operation::create_model_version::builders::CreateModelVersionFluentBuilder {
+        crate::operation::create_model_version::builders::CreateModelVersionFluentBuilder::new(self.handle.clone())
     }
 }

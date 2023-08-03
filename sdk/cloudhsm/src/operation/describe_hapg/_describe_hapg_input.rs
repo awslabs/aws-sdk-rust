@@ -23,9 +23,7 @@ impl DescribeHapgInput {
 
 /// A builder for [`DescribeHapgInput`](crate::operation::describe_hapg::DescribeHapgInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHapgInputBuilder {
     pub(crate) hapg_arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl DescribeHapgInputBuilder {
         &self.hapg_arn
     }
     /// Consumes the builder and constructs a [`DescribeHapgInput`](crate::operation::describe_hapg::DescribeHapgInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_hapg::DescribeHapgInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_hapg::DescribeHapgInput {
-            hapg_arn: self.hapg_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hapg::DescribeHapgInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_hapg::DescribeHapgInput { hapg_arn: self.hapg_arn })
     }
 }

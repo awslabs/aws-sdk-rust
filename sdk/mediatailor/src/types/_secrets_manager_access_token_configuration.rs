@@ -37,9 +37,7 @@ impl SecretsManagerAccessTokenConfiguration {
 
 /// A builder for [`SecretsManagerAccessTokenConfiguration`](crate::types::SecretsManagerAccessTokenConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecretsManagerAccessTokenConfigurationBuilder {
     pub(crate) header_name: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl SecretsManagerAccessTokenConfigurationBuilder {
         &self.secret_arn
     }
     /// <p>The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.</p>
-    pub fn secret_string_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_string_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_string_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.</p>
-    pub fn set_secret_string_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_string_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_string_key = input;
         self
     }

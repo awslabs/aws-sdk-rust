@@ -93,9 +93,7 @@ impl Grant {
 
 /// A builder for [`Grant`](crate::types::Grant).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrantBuilder {
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
     pub(crate) grant_name: ::std::option::Option<::std::string::String>,
@@ -106,8 +104,7 @@ pub struct GrantBuilder {
     pub(crate) grant_status: ::std::option::Option<crate::types::GrantStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) granted_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    pub(crate) granted_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
     pub(crate) options: ::std::option::Option<crate::types::Options>,
 }
 impl GrantBuilder {
@@ -168,18 +165,12 @@ impl GrantBuilder {
         &self.license_arn
     }
     /// <p>The grantee principal ARN.</p>
-    pub fn grantee_principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grantee_principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The grantee principal ARN.</p>
-    pub fn set_grantee_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grantee_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grantee_principal_arn = input;
         self
     }
@@ -207,10 +198,7 @@ impl GrantBuilder {
         self
     }
     /// <p>Grant status.</p>
-    pub fn set_grant_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GrantStatus>,
-    ) -> Self {
+    pub fn set_grant_status(mut self, input: ::std::option::Option<crate::types::GrantStatus>) -> Self {
         self.grant_status = input;
         self
     }
@@ -219,18 +207,12 @@ impl GrantBuilder {
         &self.grant_status
     }
     /// <p>Grant status reason.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Grant status reason.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -264,17 +246,12 @@ impl GrantBuilder {
         self
     }
     /// <p>Granted operations.</p>
-    pub fn set_granted_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
-    ) -> Self {
+    pub fn set_granted_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>) -> Self {
         self.granted_operations = input;
         self
     }
     /// <p>Granted operations.</p>
-    pub fn get_granted_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
+    pub fn get_granted_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
         &self.granted_operations
     }
     /// <p>The options specified for the grant.</p>

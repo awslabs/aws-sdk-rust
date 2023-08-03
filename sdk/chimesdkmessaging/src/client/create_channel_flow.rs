@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateChannelFlowOutput`](crate::operation::create_channel_flow::CreateChannelFlowOutput) with field(s):
     ///   - [`channel_flow_arn(Option<String>)`](crate::operation::create_channel_flow::CreateChannelFlowOutput::channel_flow_arn): <p>The ARN of the channel flow.</p>
     /// - On failure, responds with [`SdkError<CreateChannelFlowError>`](crate::operation::create_channel_flow::CreateChannelFlowError)
-    pub fn create_channel_flow(
-        &self,
-    ) -> crate::operation::create_channel_flow::builders::CreateChannelFlowFluentBuilder {
-        crate::operation::create_channel_flow::builders::CreateChannelFlowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_channel_flow(&self) -> crate::operation::create_channel_flow::builders::CreateChannelFlowFluentBuilder {
+        crate::operation::create_channel_flow::builders::CreateChannelFlowFluentBuilder::new(self.handle.clone())
     }
 }

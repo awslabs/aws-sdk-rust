@@ -23,9 +23,7 @@ impl MultipleOperatingModes {
 
 /// A builder for [`MultipleOperatingModes`](crate::types::MultipleOperatingModes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultipleOperatingModesBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
 }
@@ -36,10 +34,7 @@ impl MultipleOperatingModesBuilder {
         self
     }
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticalIssueStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatisticalIssueStatus>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl MultipleOperatingModesBuilder {
     }
     /// Consumes the builder and constructs a [`MultipleOperatingModes`](crate::types::MultipleOperatingModes).
     pub fn build(self) -> crate::types::MultipleOperatingModes {
-        crate::types::MultipleOperatingModes {
-            status: self.status,
-        }
+        crate::types::MultipleOperatingModes { status: self.status }
     }
 }

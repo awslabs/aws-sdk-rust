@@ -35,9 +35,7 @@ impl ListStatementsOutput {
 
 /// A builder for [`ListStatementsOutput`](crate::operation::list_statements::ListStatementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStatementsOutputBuilder {
     pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::StatementData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListStatementsOutputBuilder {
         self
     }
     /// <p>The SQL statements. </p>
-    pub fn set_statements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StatementData>>,
-    ) -> Self {
+    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StatementData>>) -> Self {
         self.statements = input;
         self
     }
     /// <p>The SQL statements. </p>
-    pub fn get_statements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StatementData>> {
+    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StatementData>> {
         &self.statements
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>

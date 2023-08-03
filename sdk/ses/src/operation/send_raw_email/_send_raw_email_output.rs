@@ -29,9 +29,7 @@ impl SendRawEmailOutput {
 
 /// A builder for [`SendRawEmailOutput`](crate::operation::send_raw_email::SendRawEmailOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendRawEmailOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -56,16 +56,14 @@ impl ::aws_http::request_id::RequestId for ListReviewPolicyResultsForHitOutput {
 }
 impl ListReviewPolicyResultsForHitOutput {
     /// Creates a new builder-style object to manufacture [`ListReviewPolicyResultsForHitOutput`](crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput).
-    pub fn builder() -> crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitOutputBuilder{
+    pub fn builder() -> crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitOutputBuilder {
         crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReviewPolicyResultsForHitOutput`](crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReviewPolicyResultsForHitOutputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_review_policy: ::std::option::Option<crate::types::ReviewPolicy>,
@@ -96,17 +94,12 @@ impl ListReviewPolicyResultsForHitOutputBuilder {
         self
     }
     /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
-    pub fn set_assignment_review_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewPolicy>,
-    ) -> Self {
+    pub fn set_assignment_review_policy(mut self, input: ::std::option::Option<crate::types::ReviewPolicy>) -> Self {
         self.assignment_review_policy = input;
         self
     }
     /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
-    pub fn get_assignment_review_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReviewPolicy> {
+    pub fn get_assignment_review_policy(&self) -> &::std::option::Option<crate::types::ReviewPolicy> {
         &self.assignment_review_policy
     }
     /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
@@ -115,10 +108,7 @@ impl ListReviewPolicyResultsForHitOutputBuilder {
         self
     }
     /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
-    pub fn set_hit_review_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewPolicy>,
-    ) -> Self {
+    pub fn set_hit_review_policy(mut self, input: ::std::option::Option<crate::types::ReviewPolicy>) -> Self {
         self.hit_review_policy = input;
         self
     }
@@ -132,17 +122,12 @@ impl ListReviewPolicyResultsForHitOutputBuilder {
         self
     }
     /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
-    pub fn set_assignment_review_report(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewReport>,
-    ) -> Self {
+    pub fn set_assignment_review_report(mut self, input: ::std::option::Option<crate::types::ReviewReport>) -> Self {
         self.assignment_review_report = input;
         self
     }
     /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
-    pub fn get_assignment_review_report(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReviewReport> {
+    pub fn get_assignment_review_report(&self) -> &::std::option::Option<crate::types::ReviewReport> {
         &self.assignment_review_report
     }
     /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
@@ -151,10 +136,7 @@ impl ListReviewPolicyResultsForHitOutputBuilder {
         self
     }
     /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
-    pub fn set_hit_review_report(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewReport>,
-    ) -> Self {
+    pub fn set_hit_review_report(mut self, input: ::std::option::Option<crate::types::ReviewReport>) -> Self {
         self.hit_review_report = input;
         self
     }
@@ -186,10 +168,7 @@ impl ListReviewPolicyResultsForHitOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReviewPolicyResultsForHitOutput`](crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput
-    {
+    pub fn build(self) -> crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput {
         crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput {
             hit_id: self.hit_id,
             assignment_review_policy: self.assignment_review_policy,

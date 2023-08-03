@@ -37,10 +37,7 @@ impl DeleteHsmConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteHsmConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteHsmConfigurationFluentBuilder {
             crate::operation::delete_hsm_configuration::DeleteHsmConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteHsmConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteHsmConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hsm_configuration::DeleteHsmConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteHsmConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hsm_configuration::DeleteHsmConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,32 +105,22 @@ impl DeleteHsmConfigurationFluentBuilder {
             crate::operation::delete_hsm_configuration::DeleteHsmConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    pub fn hsm_configuration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_configuration_identifier(input.into());
         self
     }
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    pub fn set_hsm_configuration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_configuration_identifier(input);
         self
     }
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    pub fn get_hsm_configuration_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hsm_configuration_identifier()
     }
 }

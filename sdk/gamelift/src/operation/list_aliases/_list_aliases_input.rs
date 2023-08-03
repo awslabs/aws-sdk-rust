@@ -28,9 +28,7 @@ impl ListAliasesInput {
     /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
     /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
     /// </ul>
-    pub fn routing_strategy_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RoutingStrategyType> {
+    pub fn routing_strategy_type(&self) -> ::std::option::Option<&crate::types::RoutingStrategyType> {
         self.routing_strategy_type.as_ref()
     }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -55,9 +53,7 @@ impl ListAliasesInput {
 
 /// A builder for [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAliasesInputBuilder {
     pub(crate) routing_strategy_type: ::std::option::Option<crate::types::RoutingStrategyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -81,10 +77,7 @@ impl ListAliasesInputBuilder {
     /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
     /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
     /// </ul>
-    pub fn set_routing_strategy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingStrategyType>,
-    ) -> Self {
+    pub fn set_routing_strategy_type(mut self, input: ::std::option::Option<crate::types::RoutingStrategyType>) -> Self {
         self.routing_strategy_type = input;
         self
     }
@@ -94,9 +87,7 @@ impl ListAliasesInputBuilder {
     /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
     /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
     /// </ul>
-    pub fn get_routing_strategy_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingStrategyType> {
+    pub fn get_routing_strategy_type(&self) -> &::std::option::Option<crate::types::RoutingStrategyType> {
         &self.routing_strategy_type
     }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -142,12 +133,7 @@ impl ListAliasesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_aliases::ListAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_aliases::ListAliasesInput {
             routing_strategy_type: self.routing_strategy_type,
             name: self.name,

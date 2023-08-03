@@ -27,28 +27,19 @@ pub fn ser_extended_s3_destination_update(
     if let Some(var_8) = &input.encryption_configuration {
         #[allow(unused_mut)]
         let mut object_9 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.cloud_watch_logging_options {
         #[allow(unused_mut)]
         let mut object_11 = object.key("CloudWatchLoggingOptions").start_object();
-        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.processing_configuration {
         #[allow(unused_mut)]
         let mut object_13 = object.key("ProcessingConfiguration").start_object();
-        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.s3_backup_mode {
@@ -57,25 +48,18 @@ pub fn ser_extended_s3_destination_update(
     if let Some(var_15) = &input.s3_backup_update {
         #[allow(unused_mut)]
         let mut object_16 = object.key("S3BackupUpdate").start_object();
-        crate::protocol_serde::shape_s3_destination_update::ser_s3_destination_update(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_s3_destination_update::ser_s3_destination_update(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.data_format_conversion_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object
-            .key("DataFormatConversionConfiguration")
-            .start_object();
+        let mut object_18 = object.key("DataFormatConversionConfiguration").start_object();
         crate::protocol_serde::shape_data_format_conversion_configuration::ser_data_format_conversion_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.dynamic_partitioning_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object
-            .key("DynamicPartitioningConfiguration")
-            .start_object();
+        let mut object_20 = object.key("DynamicPartitioningConfiguration").start_object();
         crate::protocol_serde::shape_dynamic_partitioning_configuration::ser_dynamic_partitioning_configuration(&mut object_20, var_19)?;
         object_20.finish();
     }

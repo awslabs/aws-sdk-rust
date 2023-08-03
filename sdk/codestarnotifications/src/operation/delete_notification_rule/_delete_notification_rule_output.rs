@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteNotificationRuleOutput {
 }
 impl DeleteNotificationRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationRuleOutput`](crate::operation::delete_notification_rule::DeleteNotificationRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_notification_rule::builders::DeleteNotificationRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_notification_rule::builders::DeleteNotificationRuleOutputBuilder {
         crate::operation::delete_notification_rule::builders::DeleteNotificationRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotificationRuleOutput`](crate::operation::delete_notification_rule::DeleteNotificationRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotificationRuleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

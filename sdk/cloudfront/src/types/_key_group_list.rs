@@ -44,9 +44,7 @@ impl KeyGroupList {
 
 /// A builder for [`KeyGroupList`](crate::types::KeyGroupList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyGroupListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -108,17 +106,12 @@ impl KeyGroupListBuilder {
         self
     }
     /// <p>A list of key groups.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyGroupSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyGroupSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A list of key groups.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyGroupSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyGroupSummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`KeyGroupList`](crate::types::KeyGroupList).

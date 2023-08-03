@@ -87,9 +87,7 @@ impl SuiteRunInformation {
 
 /// A builder for [`SuiteRunInformation`](crate::types::SuiteRunInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuiteRunInformationBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_definition_version: ::std::option::Option<::std::string::String>,
@@ -104,18 +102,12 @@ pub struct SuiteRunInformationBuilder {
 }
 impl SuiteRunInformationBuilder {
     /// <p>Suite definition ID of the suite run.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite definition ID of the suite run.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_id = input;
         self
     }
@@ -124,18 +116,12 @@ impl SuiteRunInformationBuilder {
         &self.suite_definition_id
     }
     /// <p>Suite definition version of the suite run.</p>
-    pub fn suite_definition_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite definition version of the suite run.</p>
-    pub fn set_suite_definition_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_version = input;
         self
     }
@@ -144,18 +130,12 @@ impl SuiteRunInformationBuilder {
         &self.suite_definition_version
     }
     /// <p>Suite definition name of the suite run.</p>
-    pub fn suite_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite definition name of the suite run.</p>
-    pub fn set_suite_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_name = input;
         self
     }
@@ -183,10 +163,7 @@ impl SuiteRunInformationBuilder {
         self
     }
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -200,10 +177,7 @@ impl SuiteRunInformationBuilder {
         self
     }
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -217,10 +191,7 @@ impl SuiteRunInformationBuilder {
         self
     }
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-    pub fn set_end_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_at = input;
         self
     }
@@ -234,10 +205,7 @@ impl SuiteRunInformationBuilder {
         self
     }
     /// <p>Status of the suite run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SuiteRunStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SuiteRunStatus>) -> Self {
         self.status = input;
         self
     }

@@ -37,9 +37,7 @@ impl GetImpersonationRoleFluentBuilder {
         }
     }
     /// Access the GetImpersonationRole as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_impersonation_role::builders::GetImpersonationRoleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_impersonation_role::builders::GetImpersonationRoleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetImpersonationRoleFluentBuilder {
             crate::operation::get_impersonation_role::GetImpersonationRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_impersonation_role::GetImpersonationRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_impersonation_role::GetImpersonationRoleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetImpersonationRoleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetImpersonationRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_impersonation_role::GetImpersonationRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_impersonation_role::GetImpersonationRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_impersonation_role::GetImpersonationRoleError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetImpersonationRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_impersonation_role::GetImpersonationRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_impersonation_role::GetImpersonationRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_impersonation_role::GetImpersonationRoleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetImpersonationRoleFluentBuilder {
             crate::operation::get_impersonation_role::GetImpersonationRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_impersonation_role::GetImpersonationRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_impersonation_role::GetImpersonationRoleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -143,18 +124,12 @@ impl GetImpersonationRoleFluentBuilder {
         self.inner.get_organization_id()
     }
     /// <p>The impersonation role ID to retrieve.</p>
-    pub fn impersonation_role_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.impersonation_role_id(input.into());
         self
     }
     /// <p>The impersonation role ID to retrieve.</p>
-    pub fn set_impersonation_role_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_impersonation_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_impersonation_role_id(input);
         self
     }

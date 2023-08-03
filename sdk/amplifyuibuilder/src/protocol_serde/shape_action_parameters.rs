@@ -6,46 +6,31 @@ pub fn ser_action_parameters(
     if let Some(var_1) = &input.r#type {
         #[allow(unused_mut)]
         let mut object_2 = object.key("type").start_object();
-        crate::protocol_serde::shape_component_property::ser_component_property(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_component_property::ser_component_property(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.url {
         #[allow(unused_mut)]
         let mut object_4 = object.key("url").start_object();
-        crate::protocol_serde::shape_component_property::ser_component_property(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_component_property::ser_component_property(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.anchor {
         #[allow(unused_mut)]
         let mut object_6 = object.key("anchor").start_object();
-        crate::protocol_serde::shape_component_property::ser_component_property(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_component_property::ser_component_property(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.target {
         #[allow(unused_mut)]
         let mut object_8 = object.key("target").start_object();
-        crate::protocol_serde::shape_component_property::ser_component_property(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_component_property::ser_component_property(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.global {
         #[allow(unused_mut)]
         let mut object_10 = object.key("global").start_object();
-        crate::protocol_serde::shape_component_property::ser_component_property(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_component_property::ser_component_property(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.model {
@@ -54,10 +39,7 @@ pub fn ser_action_parameters(
     if let Some(var_12) = &input.id {
         #[allow(unused_mut)]
         let mut object_13 = object.key("id").start_object();
-        crate::protocol_serde::shape_component_property::ser_component_property(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_component_property::ser_component_property(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.fields {
@@ -67,10 +49,7 @@ pub fn ser_action_parameters(
             {
                 #[allow(unused_mut)]
                 let mut object_18 = object_15.key(key_16.as_str()).start_object();
-                crate::protocol_serde::shape_component_property::ser_component_property(
-                    &mut object_18,
-                    value_17,
-                )?;
+                crate::protocol_serde::shape_component_property::ser_component_property(&mut object_18, value_17)?;
                 object_18.finish();
             }
         }
@@ -87,17 +66,9 @@ pub fn ser_action_parameters(
 
 pub(crate) fn de_action_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ActionParameters>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ActionParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -107,75 +78,54 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "type" => {
-                                builder = builder.set_type(
-                                    crate::protocol_serde::shape_component_property::de_component_property(tokens)?
-                                );
-                            }
-                            "url" => {
-                                builder = builder.set_url(
-                                    crate::protocol_serde::shape_component_property::de_component_property(tokens)?
-                                );
-                            }
-                            "anchor" => {
-                                builder = builder.set_anchor(
-                                    crate::protocol_serde::shape_component_property::de_component_property(tokens)?
-                                );
-                            }
-                            "target" => {
-                                builder = builder.set_target(
-                                    crate::protocol_serde::shape_component_property::de_component_property(tokens)?
-                                );
-                            }
-                            "global" => {
-                                builder = builder.set_global(
-                                    crate::protocol_serde::shape_component_property::de_component_property(tokens)?
-                                );
-                            }
-                            "model" => {
-                                builder = builder.set_model(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "type" => {
+                            builder = builder.set_type(crate::protocol_serde::shape_component_property::de_component_property(tokens)?);
+                        }
+                        "url" => {
+                            builder = builder.set_url(crate::protocol_serde::shape_component_property::de_component_property(tokens)?);
+                        }
+                        "anchor" => {
+                            builder = builder.set_anchor(crate::protocol_serde::shape_component_property::de_component_property(tokens)?);
+                        }
+                        "target" => {
+                            builder = builder.set_target(crate::protocol_serde::shape_component_property::de_component_property(tokens)?);
+                        }
+                        "global" => {
+                            builder = builder.set_global(crate::protocol_serde::shape_component_property::de_component_property(tokens)?);
+                        }
+                        "model" => {
+                            builder = builder.set_model(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "id" => {
-                                builder = builder.set_id(
-                                    crate::protocol_serde::shape_component_property::de_component_property(tokens)?
-                                );
-                            }
-                            "fields" => {
-                                builder = builder.set_fields(
-                                    crate::protocol_serde::shape_component_properties::de_component_properties(tokens)?
-                                );
-                            }
-                            "state" => {
-                                builder = builder.set_state(
-                                    crate::protocol_serde::shape_mutation_action_set_state_parameter::de_mutation_action_set_state_parameter(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "id" => {
+                            builder = builder.set_id(crate::protocol_serde::shape_component_property::de_component_property(tokens)?);
+                        }
+                        "fields" => {
+                            builder = builder.set_fields(crate::protocol_serde::shape_component_properties::de_component_properties(tokens)?);
+                        }
+                        "state" => {
+                            builder = builder.set_state(
+                                crate::protocol_serde::shape_mutation_action_set_state_parameter::de_mutation_action_set_state_parameter(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

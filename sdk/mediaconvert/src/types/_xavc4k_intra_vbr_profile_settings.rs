@@ -23,9 +23,7 @@ impl Xavc4kIntraVbrProfileSettings {
 
 /// A builder for [`Xavc4kIntraVbrProfileSettings`](crate::types::Xavc4kIntraVbrProfileSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Xavc4kIntraVbrProfileSettingsBuilder {
     pub(crate) xavc_class: ::std::option::Option<crate::types::Xavc4kIntraVbrProfileClass>,
 }
@@ -36,23 +34,16 @@ impl Xavc4kIntraVbrProfileSettingsBuilder {
         self
     }
     /// Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
-    pub fn set_xavc_class(
-        mut self,
-        input: ::std::option::Option<crate::types::Xavc4kIntraVbrProfileClass>,
-    ) -> Self {
+    pub fn set_xavc_class(mut self, input: ::std::option::Option<crate::types::Xavc4kIntraVbrProfileClass>) -> Self {
         self.xavc_class = input;
         self
     }
     /// Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
-    pub fn get_xavc_class(
-        &self,
-    ) -> &::std::option::Option<crate::types::Xavc4kIntraVbrProfileClass> {
+    pub fn get_xavc_class(&self) -> &::std::option::Option<crate::types::Xavc4kIntraVbrProfileClass> {
         &self.xavc_class
     }
     /// Consumes the builder and constructs a [`Xavc4kIntraVbrProfileSettings`](crate::types::Xavc4kIntraVbrProfileSettings).
     pub fn build(self) -> crate::types::Xavc4kIntraVbrProfileSettings {
-        crate::types::Xavc4kIntraVbrProfileSettings {
-            xavc_class: self.xavc_class,
-        }
+        crate::types::Xavc4kIntraVbrProfileSettings { xavc_class: self.xavc_class }
     }
 }

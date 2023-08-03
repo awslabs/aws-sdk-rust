@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for AcceptInboundConnectionOutput {
 }
 impl AcceptInboundConnectionOutput {
     /// Creates a new builder-style object to manufacture [`AcceptInboundConnectionOutput`](crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionOutputBuilder {
         crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptInboundConnectionOutput`](crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptInboundConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl AcceptInboundConnectionOutputBuilder {
         self
     }
     /// <p>Information about the accepted inbound connection.</p>
-    pub fn set_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::InboundConnection>,
-    ) -> Self {
+    pub fn set_connection(mut self, input: ::std::option::Option<crate::types::InboundConnection>) -> Self {
         self.connection = input;
         self
     }
@@ -66,9 +59,7 @@ impl AcceptInboundConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcceptInboundConnectionOutput`](crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput {
+    pub fn build(self) -> crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput {
         crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput {
             connection: self.connection,
             _request_id: self._request_id,

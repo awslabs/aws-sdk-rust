@@ -14,13 +14,10 @@ pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     #[doc(hidden)]
-    pub data_sources:
-        ::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>,
+    pub data_sources: ::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>,
     /// <p>A list of features that are configured for this organization.</p>
     #[doc(hidden)]
-    pub features: ::std::option::Option<
-        ::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>,
-    >,
+    pub features: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -47,15 +44,11 @@ impl DescribeOrganizationConfigurationOutput {
     }
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn data_sources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationDataSourceConfigurationsResult> {
+    pub fn data_sources(&self) -> ::std::option::Option<&crate::types::OrganizationDataSourceConfigurationsResult> {
         self.data_sources.as_ref()
     }
     /// <p>A list of features that are configured for this organization.</p>
-    pub fn features(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OrganizationFeatureConfigurationResult]> {
+    pub fn features(&self) -> ::std::option::Option<&[crate::types::OrganizationFeatureConfigurationResult]> {
         self.features.as_deref()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
@@ -68,9 +61,7 @@ impl DescribeOrganizationConfigurationOutput {
     /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>
     /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>
     /// </ul>
-    pub fn auto_enable_organization_members(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoEnableMembers> {
+    pub fn auto_enable_organization_members(&self) -> ::std::option::Option<&crate::types::AutoEnableMembers> {
         self.auto_enable_organization_members.as_ref()
     }
 }
@@ -81,27 +72,21 @@ impl ::aws_http::request_id::RequestId for DescribeOrganizationConfigurationOutp
 }
 impl DescribeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationOutputBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
     pub(crate) member_account_limit_reached: ::std::option::Option<bool>,
-    pub(crate) data_sources:
-        ::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>,
-    pub(crate) features: ::std::option::Option<
-        ::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>,
-    >,
+    pub(crate) data_sources: ::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) auto_enable_organization_members:
-        ::std::option::Option<crate::types::AutoEnableMembers>,
+    pub(crate) auto_enable_organization_members: ::std::option::Option<crate::types::AutoEnableMembers>,
     _request_id: Option<String>,
 }
 impl DescribeOrganizationConfigurationOutputBuilder {
@@ -141,27 +126,19 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     }
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn data_sources(
-        mut self,
-        input: crate::types::OrganizationDataSourceConfigurationsResult,
-    ) -> Self {
+    pub fn data_sources(mut self, input: crate::types::OrganizationDataSourceConfigurationsResult) -> Self {
         self.data_sources = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>) -> Self {
         self.data_sources = input;
         self
     }
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult> {
         &self.data_sources
     }
     /// Appends an item to `features`.
@@ -176,20 +153,12 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         self
     }
     /// <p>A list of features that are configured for this organization.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>,
-        >,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>>) -> Self {
         self.features = input;
         self
     }
     /// <p>A list of features that are configured for this organization.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>>
-    {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>> {
         &self.features
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
@@ -212,10 +181,7 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>
     /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>
     /// </ul>
-    pub fn auto_enable_organization_members(
-        mut self,
-        input: crate::types::AutoEnableMembers,
-    ) -> Self {
+    pub fn auto_enable_organization_members(mut self, input: crate::types::AutoEnableMembers) -> Self {
         self.auto_enable_organization_members = ::std::option::Option::Some(input);
         self
     }
@@ -225,10 +191,7 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>
     /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>
     /// </ul>
-    pub fn set_auto_enable_organization_members(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoEnableMembers>,
-    ) -> Self {
+    pub fn set_auto_enable_organization_members(mut self, input: ::std::option::Option<crate::types::AutoEnableMembers>) -> Self {
         self.auto_enable_organization_members = input;
         self
     }
@@ -238,9 +201,7 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>
     /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>
     /// </ul>
-    pub fn get_auto_enable_organization_members(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoEnableMembers> {
+    pub fn get_auto_enable_organization_members(&self) -> &::std::option::Option<crate::types::AutoEnableMembers> {
         &self.auto_enable_organization_members
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -253,22 +214,14 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
         crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
-            auto_enable: self.auto_enable
-                .unwrap_or_default()
-            ,
-            member_account_limit_reached: self.member_account_limit_reached
-                .unwrap_or_default()
-            ,
-            data_sources: self.data_sources
-            ,
-            features: self.features
-            ,
-            next_token: self.next_token
-            ,
-            auto_enable_organization_members: self.auto_enable_organization_members
-            ,
+            auto_enable: self.auto_enable.unwrap_or_default(),
+            member_account_limit_reached: self.member_account_limit_reached.unwrap_or_default(),
+            data_sources: self.data_sources,
+            features: self.features,
+            next_token: self.next_token,
+            auto_enable_organization_members: self.auto_enable_organization_members,
             _request_id: self._request_id,
         }
     }

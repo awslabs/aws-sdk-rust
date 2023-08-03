@@ -33,17 +33,14 @@ impl ListTrackerConsumersInput {
 }
 impl ListTrackerConsumersInput {
     /// Creates a new builder-style object to manufacture [`ListTrackerConsumersInput`](crate::operation::list_tracker_consumers::ListTrackerConsumersInput).
-    pub fn builder(
-    ) -> crate::operation::list_tracker_consumers::builders::ListTrackerConsumersInputBuilder {
+    pub fn builder() -> crate::operation::list_tracker_consumers::builders::ListTrackerConsumersInputBuilder {
         crate::operation::list_tracker_consumers::builders::ListTrackerConsumersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrackerConsumersInput`](crate::operation::list_tracker_consumers::ListTrackerConsumersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrackerConsumersInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -101,16 +98,12 @@ impl ListTrackerConsumersInputBuilder {
     /// Consumes the builder and constructs a [`ListTrackerConsumersInput`](crate::operation::list_tracker_consumers::ListTrackerConsumersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tracker_consumers::ListTrackerConsumersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_tracker_consumers::ListTrackerConsumersInput {
-                tracker_name: self.tracker_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_tracker_consumers::ListTrackerConsumersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tracker_consumers::ListTrackerConsumersInput {
+            tracker_name: self.tracker_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -41,10 +41,7 @@ impl DeleteTestGridProjectFluentBuilder {
         }
     }
     /// Access the DeleteTestGridProject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl DeleteTestGridProjectFluentBuilder {
             crate::operation::delete_test_grid_project::DeleteTestGridProject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_test_grid_project::DeleteTestGridProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_test_grid_project::DeleteTestGridProjectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl DeleteTestGridProjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl DeleteTestGridProjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_test_grid_project::DeleteTestGridProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_test_grid_project::DeleteTestGridProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_test_grid_project::DeleteTestGridProjectError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl DeleteTestGridProjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_test_grid_project::DeleteTestGridProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_test_grid_project::DeleteTestGridProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_test_grid_project::DeleteTestGridProjectError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl DeleteTestGridProjectFluentBuilder {
             crate::operation::delete_test_grid_project::DeleteTestGridProject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_test_grid_project::DeleteTestGridProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_test_grid_project::DeleteTestGridProjectError>,
     > {
         self.customize_middleware().await
     }

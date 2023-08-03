@@ -53,9 +53,7 @@ impl VpcPeeringAuthorization {
 
 /// A builder for [`VpcPeeringAuthorization`](crate::types::VpcPeeringAuthorization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcPeeringAuthorizationBuilder {
     pub(crate) game_lift_aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_vpc_aws_account_id: ::std::option::Option<::std::string::String>,
@@ -65,18 +63,12 @@ pub struct VpcPeeringAuthorizationBuilder {
 }
 impl VpcPeeringAuthorizationBuilder {
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn game_lift_aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_lift_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_lift_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn set_game_lift_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_lift_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_lift_aws_account_id = input;
         self
     }
@@ -85,18 +77,12 @@ impl VpcPeeringAuthorizationBuilder {
         &self.game_lift_aws_account_id
     }
     /// <p>The authorization's peer VPC Amazon Web Services account ID.</p>
-    pub fn peer_vpc_aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peer_vpc_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_vpc_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorization's peer VPC Amazon Web Services account ID.</p>
-    pub fn set_peer_vpc_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_peer_vpc_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_vpc_aws_account_id = input;
         self
     }
@@ -124,10 +110,7 @@ impl VpcPeeringAuthorizationBuilder {
         self
     }
     /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -141,10 +124,7 @@ impl VpcPeeringAuthorizationBuilder {
         self
     }
     /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_time = input;
         self
     }

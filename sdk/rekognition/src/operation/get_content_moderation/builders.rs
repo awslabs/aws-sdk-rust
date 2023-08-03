@@ -43,9 +43,7 @@ impl GetContentModerationFluentBuilder {
         }
     }
     /// Access the GetContentModeration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_content_moderation::builders::GetContentModerationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_content_moderation::builders::GetContentModerationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl GetContentModerationFluentBuilder {
             crate::operation::get_content_moderation::GetContentModeration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_content_moderation::GetContentModerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_content_moderation::GetContentModerationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl GetContentModerationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl GetContentModerationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_content_moderation::GetContentModerationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_content_moderation::GetContentModerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_content_moderation::GetContentModerationError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl GetContentModerationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_content_moderation::GetContentModerationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_content_moderation::GetContentModerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_content_moderation::GetContentModerationError>,
     > {
         self.send_middleware().await
     }
@@ -122,22 +111,15 @@ impl GetContentModerationFluentBuilder {
             crate::operation::get_content_moderation::GetContentModeration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_content_moderation::GetContentModerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_content_moderation::GetContentModerationError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_content_moderation::paginator::GetContentModerationPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_content_moderation::paginator::GetContentModerationPaginator {
-        crate::operation::get_content_moderation::paginator::GetContentModerationPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_content_moderation::paginator::GetContentModerationPaginator {
+        crate::operation::get_content_moderation::paginator::GetContentModerationPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,10 +169,7 @@ impl GetContentModerationFluentBuilder {
         self
     }
     /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentModerationSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ContentModerationSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -204,17 +183,12 @@ impl GetContentModerationFluentBuilder {
         self
     }
     /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
-    pub fn set_aggregate_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentModerationAggregateBy>,
-    ) -> Self {
+    pub fn set_aggregate_by(mut self, input: ::std::option::Option<crate::types::ContentModerationAggregateBy>) -> Self {
         self.inner = self.inner.set_aggregate_by(input);
         self
     }
     /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
-    pub fn get_aggregate_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentModerationAggregateBy> {
+    pub fn get_aggregate_by(&self) -> &::std::option::Option<crate::types::ContentModerationAggregateBy> {
         self.inner.get_aggregate_by()
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateRecipeJobOutput {
 }
 impl CreateRecipeJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateRecipeJobOutput`](crate::operation::create_recipe_job::CreateRecipeJobOutput).
-    pub fn builder() -> crate::operation::create_recipe_job::builders::CreateRecipeJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_recipe_job::builders::CreateRecipeJobOutputBuilder {
         crate::operation::create_recipe_job::builders::CreateRecipeJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRecipeJobOutput`](crate::operation::create_recipe_job::CreateRecipeJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRecipeJobOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDeviceOutput`](crate::operation::update_device::UpdateDeviceOutput)
     /// - On failure, responds with [`SdkError<UpdateDeviceError>`](crate::operation::update_device::UpdateDeviceError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn update_device(
-        &self,
-    ) -> crate::operation::update_device::builders::UpdateDeviceFluentBuilder {
-        crate::operation::update_device::builders::UpdateDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_device(&self) -> crate::operation::update_device::builders::UpdateDeviceFluentBuilder {
+        crate::operation::update_device::builders::UpdateDeviceFluentBuilder::new(self.handle.clone())
     }
 }

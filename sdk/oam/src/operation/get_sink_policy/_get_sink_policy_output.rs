@@ -42,9 +42,7 @@ impl GetSinkPolicyOutput {
 
 /// A builder for [`GetSinkPolicyOutput`](crate::operation::get_sink_policy::GetSinkPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSinkPolicyOutputBuilder {
     pub(crate) sink_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sink_id: ::std::option::Option<::std::string::String>,

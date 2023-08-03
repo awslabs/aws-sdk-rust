@@ -5,16 +5,16 @@ pub use crate::operation::batch_get_aggregate_resource_config::_batch_get_aggreg
 
 impl BatchGetAggregateResourceConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_get_aggregate_resource_config();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -31,7 +31,7 @@ impl BatchGetAggregateResourceConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetAggregateResourceConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder,
+    inner: crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder,
 }
 impl BatchGetAggregateResourceConfigFluentBuilder {
     /// Creates a new `BatchGetAggregateResourceConfig`.
@@ -42,15 +42,20 @@ impl BatchGetAggregateResourceConfigFluentBuilder {
         }
     }
     /// Access the BatchGetAggregateResourceConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -59,16 +64,17 @@ impl BatchGetAggregateResourceConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError>,
+    > {
         let op = self
             .inner
             .build()
@@ -86,39 +92,40 @@ impl BatchGetAggregateResourceConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn get_configuration_aggregator_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_aggregator_name()
     }
     /// Appends an item to `ResourceIdentifiers`.
@@ -126,25 +133,17 @@ impl BatchGetAggregateResourceConfigFluentBuilder {
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
     ///
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
-    pub fn resource_identifiers(
-        mut self,
-        input: crate::types::AggregateResourceIdentifier,
-    ) -> Self {
+    pub fn resource_identifiers(mut self, input: crate::types::AggregateResourceIdentifier) -> Self {
         self.inner = self.inner.resource_identifiers(input);
         self
     }
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
-    pub fn set_resource_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
-    ) -> Self {
+    pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>) -> Self {
         self.inner = self.inner.set_resource_identifiers(input);
         self
     }
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
-    pub fn get_resource_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
+    pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
         self.inner.get_resource_identifiers()
     }
 }

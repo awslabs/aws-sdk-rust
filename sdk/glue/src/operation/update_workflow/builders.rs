@@ -10,10 +10,7 @@ impl UpdateWorkflowInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_workflow::UpdateWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workflow::UpdateWorkflowError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workflow::UpdateWorkflowError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_workflow();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateWorkflowFluentBuilder {
         }
     }
     /// Access the UpdateWorkflow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_workflow::builders::UpdateWorkflowInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_workflow::builders::UpdateWorkflowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateWorkflowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -158,19 +150,13 @@ impl UpdateWorkflowFluentBuilder {
     /// <p>A collection of properties to be used as part of each execution of the workflow.</p>
     pub fn set_default_run_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_default_run_properties(input);
         self
     }
     /// <p>A collection of properties to be used as part of each execution of the workflow.</p>
-    pub fn get_default_run_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_default_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_default_run_properties()
     }
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>

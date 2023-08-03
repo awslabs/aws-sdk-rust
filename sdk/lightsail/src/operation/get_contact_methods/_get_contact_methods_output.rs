@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetContactMethodsOutput {
 }
 impl GetContactMethodsOutput {
     /// Creates a new builder-style object to manufacture [`GetContactMethodsOutput`](crate::operation::get_contact_methods::GetContactMethodsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_contact_methods::builders::GetContactMethodsOutputBuilder {
+    pub fn builder() -> crate::operation::get_contact_methods::builders::GetContactMethodsOutputBuilder {
         crate::operation::get_contact_methods::builders::GetContactMethodsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContactMethodsOutput`](crate::operation::get_contact_methods::GetContactMethodsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactMethodsOutputBuilder {
     pub(crate) contact_methods: ::std::option::Option<::std::vec::Vec<crate::types::ContactMethod>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl GetContactMethodsOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the contact methods.</p>
-    pub fn set_contact_methods(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactMethod>>,
-    ) -> Self {
+    pub fn set_contact_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactMethod>>) -> Self {
         self.contact_methods = input;
         self
     }
     /// <p>An array of objects that describe the contact methods.</p>
-    pub fn get_contact_methods(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactMethod>> {
+    pub fn get_contact_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactMethod>> {
         &self.contact_methods
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -30,9 +30,7 @@ impl AwsCloudFrontDistributionOriginSslProtocols {
 
 /// A builder for [`AwsCloudFrontDistributionOriginSslProtocols`](crate::types::AwsCloudFrontDistributionOriginSslProtocols).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginSslProtocolsBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) quantity: ::std::option::Option<i32>,
@@ -50,10 +48,7 @@ impl AwsCloudFrontDistributionOriginSslProtocolsBuilder {
         self
     }
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution. </p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.items = input;
         self
     }

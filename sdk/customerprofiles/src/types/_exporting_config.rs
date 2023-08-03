@@ -25,9 +25,7 @@ impl ExportingConfig {
 
 /// A builder for [`ExportingConfig`](crate::types::ExportingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportingConfigBuilder {
     pub(crate) s3_exporting: ::std::option::Option<crate::types::S3ExportingConfig>,
 }
@@ -38,10 +36,7 @@ impl ExportingConfigBuilder {
         self
     }
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
-    pub fn set_s3_exporting(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ExportingConfig>,
-    ) -> Self {
+    pub fn set_s3_exporting(mut self, input: ::std::option::Option<crate::types::S3ExportingConfig>) -> Self {
         self.s3_exporting = input;
         self
     }

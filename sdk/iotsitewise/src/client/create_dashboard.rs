@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`dashboard_id(Option<String>)`](crate::operation::create_dashboard::CreateDashboardOutput::dashboard_id): <p>The ID of the dashboard.</p>
     ///   - [`dashboard_arn(Option<String>)`](crate::operation::create_dashboard::CreateDashboardOutput::dashboard_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
     /// - On failure, responds with [`SdkError<CreateDashboardError>`](crate::operation::create_dashboard::CreateDashboardError)
-    pub fn create_dashboard(
-        &self,
-    ) -> crate::operation::create_dashboard::builders::CreateDashboardFluentBuilder {
-        crate::operation::create_dashboard::builders::CreateDashboardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dashboard(&self) -> crate::operation::create_dashboard::builders::CreateDashboardFluentBuilder {
+        crate::operation::create_dashboard::builders::CreateDashboardFluentBuilder::new(self.handle.clone())
     }
 }

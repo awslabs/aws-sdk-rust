@@ -26,17 +26,14 @@ impl ::aws_http::request_id::RequestId for VerifyDomainDkimOutput {
 }
 impl VerifyDomainDkimOutput {
     /// Creates a new builder-style object to manufacture [`VerifyDomainDkimOutput`](crate::operation::verify_domain_dkim::VerifyDomainDkimOutput).
-    pub fn builder() -> crate::operation::verify_domain_dkim::builders::VerifyDomainDkimOutputBuilder
-    {
+    pub fn builder() -> crate::operation::verify_domain_dkim::builders::VerifyDomainDkimOutputBuilder {
         crate::operation::verify_domain_dkim::builders::VerifyDomainDkimOutputBuilder::default()
     }
 }
 
 /// A builder for [`VerifyDomainDkimOutput`](crate::operation::verify_domain_dkim::VerifyDomainDkimOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyDomainDkimOutputBuilder {
     pub(crate) dkim_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -58,19 +55,14 @@ impl VerifyDomainDkimOutputBuilder {
     /// <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>
     /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
     /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
-    pub fn set_dkim_tokens(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dkim_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dkim_tokens = input;
         self
     }
     /// <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>
     /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
     /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
-    pub fn get_dkim_tokens(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dkim_tokens(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dkim_tokens
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

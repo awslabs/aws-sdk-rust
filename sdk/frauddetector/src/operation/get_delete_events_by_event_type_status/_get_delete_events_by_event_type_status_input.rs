@@ -15,33 +15,25 @@ impl GetDeleteEventsByEventTypeStatusInput {
 }
 impl GetDeleteEventsByEventTypeStatusInput {
     /// Creates a new builder-style object to manufacture [`GetDeleteEventsByEventTypeStatusInput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput).
-    pub fn builder() -> crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusInputBuilder {
         crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeleteEventsByEventTypeStatusInput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeleteEventsByEventTypeStatusInputBuilder {
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDeleteEventsByEventTypeStatusInputBuilder {
     /// <p>Name of event type for which to get the deletion status.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of event type for which to get the deletion status.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
@@ -50,12 +42,16 @@ impl GetDeleteEventsByEventTypeStatusInputBuilder {
         &self.event_type_name
     }
     /// Consumes the builder and constructs a [`GetDeleteEventsByEventTypeStatusInput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput {
-                event_type_name: self.event_type_name
-                ,
-            }
+                event_type_name: self.event_type_name,
+            },
         )
     }
 }

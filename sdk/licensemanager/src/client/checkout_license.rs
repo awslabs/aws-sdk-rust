@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`expiration(Option<String>)`](crate::operation::checkout_license::CheckoutLicenseOutput::expiration): <p>Date and time at which the license checkout expires.</p>
     ///   - [`license_arn(Option<String>)`](crate::operation::checkout_license::CheckoutLicenseOutput::license_arn): <p>Amazon Resource Name (ARN) of the checkout license.</p>
     /// - On failure, responds with [`SdkError<CheckoutLicenseError>`](crate::operation::checkout_license::CheckoutLicenseError)
-    pub fn checkout_license(
-        &self,
-    ) -> crate::operation::checkout_license::builders::CheckoutLicenseFluentBuilder {
-        crate::operation::checkout_license::builders::CheckoutLicenseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn checkout_license(&self) -> crate::operation::checkout_license::builders::CheckoutLicenseFluentBuilder {
+        crate::operation::checkout_license::builders::CheckoutLicenseFluentBuilder::new(self.handle.clone())
     }
 }

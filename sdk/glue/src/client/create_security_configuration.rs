@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_security_configuration::CreateSecurityConfigurationOutput::name): <p>The name assigned to the new security configuration.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::create_security_configuration::CreateSecurityConfigurationOutput::created_timestamp): <p>The time at which the new security configuration was created.</p>
     /// - On failure, responds with [`SdkError<CreateSecurityConfigurationError>`](crate::operation::create_security_configuration::CreateSecurityConfigurationError)
-    pub fn create_security_configuration(&self) -> crate::operation::create_security_configuration::builders::CreateSecurityConfigurationFluentBuilder{
+    pub fn create_security_configuration(
+        &self,
+    ) -> crate::operation::create_security_configuration::builders::CreateSecurityConfigurationFluentBuilder {
         crate::operation::create_security_configuration::builders::CreateSecurityConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_change_set::CreateChangeSetOutput::id): <p>The Amazon Resource Name (ARN) of the change set.</p>
     ///   - [`stack_id(Option<String>)`](crate::operation::create_change_set::CreateChangeSetOutput::stack_id): <p>The unique ID of the stack.</p>
     /// - On failure, responds with [`SdkError<CreateChangeSetError>`](crate::operation::create_change_set::CreateChangeSetError)
-    pub fn create_change_set(
-        &self,
-    ) -> crate::operation::create_change_set::builders::CreateChangeSetFluentBuilder {
-        crate::operation::create_change_set::builders::CreateChangeSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_change_set(&self) -> crate::operation::create_change_set::builders::CreateChangeSetFluentBuilder {
+        crate::operation::create_change_set::builders::CreateChangeSetFluentBuilder::new(self.handle.clone())
     }
 }

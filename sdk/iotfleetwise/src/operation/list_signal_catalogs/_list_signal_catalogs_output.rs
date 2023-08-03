@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSignalCatalogsOutput {
 }
 impl ListSignalCatalogsOutput {
     /// Creates a new builder-style object to manufacture [`ListSignalCatalogsOutput`](crate::operation::list_signal_catalogs::ListSignalCatalogsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_signal_catalogs::builders::ListSignalCatalogsOutputBuilder {
+    pub fn builder() -> crate::operation::list_signal_catalogs::builders::ListSignalCatalogsOutputBuilder {
         crate::operation::list_signal_catalogs::builders::ListSignalCatalogsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSignalCatalogsOutput`](crate::operation::list_signal_catalogs::ListSignalCatalogsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSignalCatalogsOutputBuilder {
-    pub(crate) summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListSignalCatalogsOutputBuilder {
         self
     }
     /// <p> A list of information about each signal catalog. </p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p> A list of information about each signal catalog. </p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>> {
         &self.summaries
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>

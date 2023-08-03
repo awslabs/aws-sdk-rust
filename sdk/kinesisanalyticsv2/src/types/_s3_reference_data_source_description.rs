@@ -41,9 +41,7 @@ impl S3ReferenceDataSourceDescription {
 
 /// A builder for [`S3ReferenceDataSourceDescription`](crate::types::S3ReferenceDataSourceDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ReferenceDataSourceDescriptionBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_key: ::std::option::Option<::std::string::String>,
@@ -81,20 +79,14 @@ impl S3ReferenceDataSourceDescriptionBuilder {
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table. </p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
-    pub fn reference_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table. </p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
-    pub fn set_reference_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_role_arn = input;
         self
     }

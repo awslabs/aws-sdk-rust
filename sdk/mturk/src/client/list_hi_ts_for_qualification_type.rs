@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`num_results(Option<i32>)`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput::num_results): <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
     ///   - [`hi_ts(Option<Vec<Hit>>)`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput::hi_ts): <p> The list of HIT elements returned by the query.</p>
     /// - On failure, responds with [`SdkError<ListHITsForQualificationTypeError>`](crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError)
-    pub fn list_hi_ts_for_qualification_type(&self) -> crate::operation::list_hi_ts_for_qualification_type::builders::ListHITsForQualificationTypeFluentBuilder{
+    pub fn list_hi_ts_for_qualification_type(
+        &self,
+    ) -> crate::operation::list_hi_ts_for_qualification_type::builders::ListHITsForQualificationTypeFluentBuilder {
         crate::operation::list_hi_ts_for_qualification_type::builders::ListHITsForQualificationTypeFluentBuilder::new(self.handle.clone())
     }
 }

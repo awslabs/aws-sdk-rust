@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetStudioMemberOutput`](crate::operation::get_studio_member::GetStudioMemberOutput) with field(s):
     ///   - [`member(Option<StudioMembership>)`](crate::operation::get_studio_member::GetStudioMemberOutput::member): <p>The member.</p>
     /// - On failure, responds with [`SdkError<GetStudioMemberError>`](crate::operation::get_studio_member::GetStudioMemberError)
-    pub fn get_studio_member(
-        &self,
-    ) -> crate::operation::get_studio_member::builders::GetStudioMemberFluentBuilder {
-        crate::operation::get_studio_member::builders::GetStudioMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_studio_member(&self) -> crate::operation::get_studio_member::builders::GetStudioMemberFluentBuilder {
+        crate::operation::get_studio_member::builders::GetStudioMemberFluentBuilder::new(self.handle.clone())
     }
 }

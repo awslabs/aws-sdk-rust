@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteUserHierarchyGroupOutput {
 }
 impl DeleteUserHierarchyGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserHierarchyGroupOutput`](crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupOutput).
-    pub fn builder() -> crate::operation::delete_user_hierarchy_group::builders::DeleteUserHierarchyGroupOutputBuilder{
+    pub fn builder() -> crate::operation::delete_user_hierarchy_group::builders::DeleteUserHierarchyGroupOutputBuilder {
         crate::operation::delete_user_hierarchy_group::builders::DeleteUserHierarchyGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserHierarchyGroupOutput`](crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserHierarchyGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteUserHierarchyGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteUserHierarchyGroupOutput`](crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupOutput {
+    pub fn build(self) -> crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupOutput {
         crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupOutput {
             _request_id: self._request_id,
         }

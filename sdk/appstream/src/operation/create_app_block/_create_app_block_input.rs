@@ -20,9 +20,7 @@ pub struct CreateAppBlockInput {
     pub setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
     /// <p>The tags assigned to the app block.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
     #[doc(hidden)]
     pub post_setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
@@ -52,11 +50,7 @@ impl CreateAppBlockInput {
         self.setup_script_details.as_ref()
     }
     /// <p>The tags assigned to the app block.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
@@ -77,18 +71,14 @@ impl CreateAppBlockInput {
 
 /// A builder for [`CreateAppBlockInput`](crate::operation::create_app_block::CreateAppBlockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppBlockInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_s3_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) post_setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
     pub(crate) packaging_type: ::std::option::Option<crate::types::PackagingType>,
 }
@@ -141,10 +131,7 @@ impl CreateAppBlockInputBuilder {
         self
     }
     /// <p>The source S3 location of the app block.</p>
-    pub fn set_source_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_source_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.source_s3_location = input;
         self
     }
@@ -158,10 +145,7 @@ impl CreateAppBlockInputBuilder {
         self
     }
     /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
-    pub fn set_setup_script_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ScriptDetails>,
-    ) -> Self {
+    pub fn set_setup_script_details(mut self, input: ::std::option::Option<crate::types::ScriptDetails>) -> Self {
         self.setup_script_details = input;
         self
     }
@@ -174,32 +158,19 @@ impl CreateAppBlockInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the app block.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the app block.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the app block.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
@@ -208,17 +179,12 @@ impl CreateAppBlockInputBuilder {
         self
     }
     /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
-    pub fn set_post_setup_script_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ScriptDetails>,
-    ) -> Self {
+    pub fn set_post_setup_script_details(mut self, input: ::std::option::Option<crate::types::ScriptDetails>) -> Self {
         self.post_setup_script_details = input;
         self
     }
     /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
-    pub fn get_post_setup_script_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScriptDetails> {
+    pub fn get_post_setup_script_details(&self) -> &::std::option::Option<crate::types::ScriptDetails> {
         &self.post_setup_script_details
     }
     /// <p>The packaging type of the app block.</p>
@@ -227,10 +193,7 @@ impl CreateAppBlockInputBuilder {
         self
     }
     /// <p>The packaging type of the app block.</p>
-    pub fn set_packaging_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackagingType>,
-    ) -> Self {
+    pub fn set_packaging_type(mut self, input: ::std::option::Option<crate::types::PackagingType>) -> Self {
         self.packaging_type = input;
         self
     }
@@ -241,10 +204,7 @@ impl CreateAppBlockInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppBlockInput`](crate::operation::create_app_block::CreateAppBlockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_app_block::CreateAppBlockInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_app_block::CreateAppBlockInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app_block::CreateAppBlockInput {
             name: self.name,
             description: self.description,

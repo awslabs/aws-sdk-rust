@@ -38,13 +38,7 @@
 /// <p>An enumeration specifying the currently ongoing maintenance operation.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FileSystemMaintenanceOperation {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for FileSystemMaintenanceOperation {
         match s {
             "BACKING_UP" => FileSystemMaintenanceOperation::BackingUp,
             "PATCHING" => FileSystemMaintenanceOperation::Patching,
-            other => FileSystemMaintenanceOperation::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => FileSystemMaintenanceOperation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

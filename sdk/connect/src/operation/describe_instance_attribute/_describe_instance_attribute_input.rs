@@ -22,16 +22,14 @@ impl DescribeInstanceAttributeInput {
 }
 impl DescribeInstanceAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceAttributeInput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput).
-    pub fn builder() -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder {
         crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceAttributeInput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceAttributeInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
@@ -57,17 +55,12 @@ impl DescribeInstanceAttributeInputBuilder {
         self
     }
     /// <p>The type of attribute.</p>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAttributeType>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::InstanceAttributeType>) -> Self {
         self.attribute_type = input;
         self
     }
     /// <p>The type of attribute.</p>
-    pub fn get_attribute_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAttributeType> {
+    pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
         &self.attribute_type
     }
     /// Consumes the builder and constructs a [`DescribeInstanceAttributeInput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput).
@@ -77,11 +70,9 @@ impl DescribeInstanceAttributeInputBuilder {
         crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput {
-                instance_id: self.instance_id,
-                attribute_type: self.attribute_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput {
+            instance_id: self.instance_id,
+            attribute_type: self.attribute_type,
+        })
     }
 }

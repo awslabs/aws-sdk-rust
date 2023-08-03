@@ -57,9 +57,7 @@ impl ExportApiInput {
 
 /// A builder for [`ExportApiInput`](crate::operation::export_api::ExportApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportApiInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) export_version: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl ExportApiInputBuilder {
         &self.api_id
     }
     /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
-    pub fn export_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
-    pub fn set_export_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_version = input;
         self
     }
@@ -132,18 +124,12 @@ impl ExportApiInputBuilder {
         &self.output_type
     }
     /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
-    pub fn specification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn specification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.specification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
-    pub fn set_specification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_specification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.specification = input;
         self
     }
@@ -166,12 +152,7 @@ impl ExportApiInputBuilder {
         &self.stage_name
     }
     /// Consumes the builder and constructs a [`ExportApiInput`](crate::operation::export_api::ExportApiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_api::ExportApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_api::ExportApiInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_api::ExportApiInput {
             api_id: self.api_id,
             export_version: self.export_version,

@@ -37,10 +37,7 @@ impl PutRepositoryTriggersFluentBuilder {
         }
     }
     /// Access the PutRepositoryTriggers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_repository_triggers::builders::PutRepositoryTriggersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_repository_triggers::builders::PutRepositoryTriggersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl PutRepositoryTriggersFluentBuilder {
             crate::operation::put_repository_triggers::PutRepositoryTriggers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_repository_triggers::PutRepositoryTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_triggers::PutRepositoryTriggersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl PutRepositoryTriggersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl PutRepositoryTriggersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_repository_triggers::PutRepositoryTriggersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_repository_triggers::PutRepositoryTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_triggers::PutRepositoryTriggersError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl PutRepositoryTriggersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_repository_triggers::PutRepositoryTriggersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_repository_triggers::PutRepositoryTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_triggers::PutRepositoryTriggersError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl PutRepositoryTriggersFluentBuilder {
             crate::operation::put_repository_triggers::PutRepositoryTriggers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_repository_triggers::PutRepositoryTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_triggers::PutRepositoryTriggersError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the repository where you want to create or update the trigger.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where you want to create or update the trigger.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -153,17 +133,12 @@ impl PutRepositoryTriggersFluentBuilder {
         self
     }
     /// <p>The JSON block of configuration information for each trigger.</p>
-    pub fn set_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>,
-    ) -> Self {
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>) -> Self {
         self.inner = self.inner.set_triggers(input);
         self
     }
     /// <p>The JSON block of configuration information for each trigger.</p>
-    pub fn get_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>> {
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>> {
         self.inner.get_triggers()
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`routing_profile_arn(Option<String>)`](crate::operation::create_routing_profile::CreateRoutingProfileOutput::routing_profile_arn): <p>The Amazon Resource Name (ARN) of the routing profile.</p>
     ///   - [`routing_profile_id(Option<String>)`](crate::operation::create_routing_profile::CreateRoutingProfileOutput::routing_profile_id): <p>The identifier of the routing profile.</p>
     /// - On failure, responds with [`SdkError<CreateRoutingProfileError>`](crate::operation::create_routing_profile::CreateRoutingProfileError)
-    pub fn create_routing_profile(
-        &self,
-    ) -> crate::operation::create_routing_profile::builders::CreateRoutingProfileFluentBuilder {
-        crate::operation::create_routing_profile::builders::CreateRoutingProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_routing_profile(&self) -> crate::operation::create_routing_profile::builders::CreateRoutingProfileFluentBuilder {
+        crate::operation::create_routing_profile::builders::CreateRoutingProfileFluentBuilder::new(self.handle.clone())
     }
 }

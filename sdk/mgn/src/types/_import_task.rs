@@ -65,9 +65,7 @@ impl ImportTask {
 
 /// A builder for [`ImportTask`](crate::types::ImportTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportTaskBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_source: ::std::option::Option<crate::types::S3BucketSource>,
@@ -98,10 +96,7 @@ impl ImportTaskBuilder {
         self
     }
     /// <p>Import task s3 bucket source.</p>
-    pub fn set_s3_bucket_source(
-        mut self,
-        input: ::std::option::Option<crate::types::S3BucketSource>,
-    ) -> Self {
+    pub fn set_s3_bucket_source(mut self, input: ::std::option::Option<crate::types::S3BucketSource>) -> Self {
         self.s3_bucket_source = input;
         self
     }
@@ -110,18 +105,12 @@ impl ImportTaskBuilder {
         &self.s3_bucket_source
     }
     /// <p>Import task creation datetime.</p>
-    pub fn creation_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Import task creation datetime.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -130,18 +119,12 @@ impl ImportTaskBuilder {
         &self.creation_date_time
     }
     /// <p>Import task end datetime.</p>
-    pub fn end_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn end_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Import task end datetime.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -183,10 +166,7 @@ impl ImportTaskBuilder {
         self
     }
     /// <p>Import task summary.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportTaskSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::ImportTaskSummary>) -> Self {
         self.summary = input;
         self
     }

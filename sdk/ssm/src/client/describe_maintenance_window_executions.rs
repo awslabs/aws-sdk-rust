@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`window_executions(Option<Vec<MaintenanceWindowExecution>>)`](crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput::window_executions): <p>Information about the maintenance window executions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowExecutionsError>`](crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError)
-    pub fn describe_maintenance_window_executions(&self) -> crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsFluentBuilder{
+    pub fn describe_maintenance_window_executions(
+        &self,
+    ) -> crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsFluentBuilder {
         crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

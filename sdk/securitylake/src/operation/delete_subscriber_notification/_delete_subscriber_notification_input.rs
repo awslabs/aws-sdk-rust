@@ -15,33 +15,25 @@ impl DeleteSubscriberNotificationInput {
 }
 impl DeleteSubscriberNotificationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriberNotificationInput`](crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationInput).
-    pub fn builder() -> crate::operation::delete_subscriber_notification::builders::DeleteSubscriberNotificationInputBuilder{
+    pub fn builder() -> crate::operation::delete_subscriber_notification::builders::DeleteSubscriberNotificationInputBuilder {
         crate::operation::delete_subscriber_notification::builders::DeleteSubscriberNotificationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSubscriberNotificationInput`](crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubscriberNotificationInputBuilder {
     pub(crate) subscriber_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSubscriberNotificationInputBuilder {
     /// <p>The ID of the Security Lake subscriber account.</p>
-    pub fn subscriber_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Security Lake subscriber account.</p>
-    pub fn set_subscriber_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteSubscriberNotificationInputBuilder {
         crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationInput {
-                subscriber_id: self.subscriber_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationInput {
+            subscriber_id: self.subscriber_id,
+        })
     }
 }

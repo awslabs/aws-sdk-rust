@@ -79,9 +79,7 @@ impl RdsInstanceDetails {
 
 /// A builder for [`RdsInstanceDetails`](crate::types::RdsInstanceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsInstanceDetailsBuilder {
     pub(crate) family: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ impl RdsInstanceDetailsBuilder {
         &self.family
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -143,18 +135,12 @@ impl RdsInstanceDetailsBuilder {
         &self.region
     }
     /// <p>The database engine that the recommended reservation supports.</p>
-    pub fn database_engine(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_engine = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine that the recommended reservation supports.</p>
-    pub fn set_database_engine(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_engine = input;
         self
     }
@@ -163,18 +149,12 @@ impl RdsInstanceDetailsBuilder {
         &self.database_engine
     }
     /// <p>The database edition that the recommended reservation supports.</p>
-    pub fn database_edition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_edition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_edition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database edition that the recommended reservation supports.</p>
-    pub fn set_database_edition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_edition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_edition = input;
         self
     }
@@ -183,18 +163,12 @@ impl RdsInstanceDetailsBuilder {
         &self.database_edition
     }
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
-    pub fn deployment_option(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_option(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_option = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
-    pub fn set_deployment_option(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_option = input;
         self
     }
@@ -203,18 +177,12 @@ impl RdsInstanceDetailsBuilder {
         &self.deployment_option
     }
     /// <p>The license model that the recommended reservation supports.</p>
-    pub fn license_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The license model that the recommended reservation supports.</p>
-    pub fn set_license_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }

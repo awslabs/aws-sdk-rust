@@ -22,18 +22,14 @@ impl GetParametersForImportInput {
 }
 impl GetParametersForImportInput {
     /// Creates a new builder-style object to manufacture [`GetParametersForImportInput`](crate::operation::get_parameters_for_import::GetParametersForImportInput).
-    pub fn builder(
-    ) -> crate::operation::get_parameters_for_import::builders::GetParametersForImportInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_parameters_for_import::builders::GetParametersForImportInputBuilder {
         crate::operation::get_parameters_for_import::builders::GetParametersForImportInputBuilder::default()
     }
 }
 
 /// A builder for [`GetParametersForImportInput`](crate::operation::get_parameters_for_import::GetParametersForImportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetParametersForImportInputBuilder {
     pub(crate) key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
     pub(crate) wrapping_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
@@ -45,10 +41,7 @@ impl GetParametersForImportInputBuilder {
         self
     }
     /// <p>The key block format type such as TR-34 or TR-31 to use during key material import. Import token is only required for TR-34 key import <code>TR34_KEY_BLOCK</code>. Import token is not required for TR-31 key import.</p>
-    pub fn set_key_material_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyMaterialType>,
-    ) -> Self {
+    pub fn set_key_material_type(mut self, input: ::std::option::Option<crate::types::KeyMaterialType>) -> Self {
         self.key_material_type = input;
         self
     }
@@ -62,10 +55,7 @@ impl GetParametersForImportInputBuilder {
         self
     }
     /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
-    pub fn set_wrapping_key_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAlgorithm>,
-    ) -> Self {
+    pub fn set_wrapping_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.wrapping_key_algorithm = input;
         self
     }
@@ -80,11 +70,9 @@ impl GetParametersForImportInputBuilder {
         crate::operation::get_parameters_for_import::GetParametersForImportInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_parameters_for_import::GetParametersForImportInput {
-                key_material_type: self.key_material_type,
-                wrapping_key_algorithm: self.wrapping_key_algorithm,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_parameters_for_import::GetParametersForImportInput {
+            key_material_type: self.key_material_type,
+            wrapping_key_algorithm: self.wrapping_key_algorithm,
+        })
     }
 }

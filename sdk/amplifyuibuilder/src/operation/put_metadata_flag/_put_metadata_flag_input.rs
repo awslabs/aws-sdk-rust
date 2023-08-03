@@ -43,9 +43,7 @@ impl PutMetadataFlagInput {
 
 /// A builder for [`PutMetadataFlagInput`](crate::operation::put_metadata_flag::PutMetadataFlagInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetadataFlagInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl PutMetadataFlagInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -107,10 +99,7 @@ impl PutMetadataFlagInputBuilder {
         self
     }
     /// <p>The metadata information to store.</p>
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<crate::types::PutMetadataFlagBody>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<crate::types::PutMetadataFlagBody>) -> Self {
         self.body = input;
         self
     }
@@ -121,10 +110,7 @@ impl PutMetadataFlagInputBuilder {
     /// Consumes the builder and constructs a [`PutMetadataFlagInput`](crate::operation::put_metadata_flag::PutMetadataFlagInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_metadata_flag::PutMetadataFlagInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_metadata_flag::PutMetadataFlagInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metadata_flag::PutMetadataFlagInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

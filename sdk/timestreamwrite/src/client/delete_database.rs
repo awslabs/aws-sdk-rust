@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`database_name(impl ::std::convert::Into<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::set_database_name): <p>The name of the Timestream database to be deleted.</p>
     /// - On success, responds with [`DeleteDatabaseOutput`](crate::operation::delete_database::DeleteDatabaseOutput)
     /// - On failure, responds with [`SdkError<DeleteDatabaseError>`](crate::operation::delete_database::DeleteDatabaseError)
-    pub fn delete_database(
-        &self,
-    ) -> crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder {
-        crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_database(&self) -> crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder {
+        crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

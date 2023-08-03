@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeFleetCapacityOutput {
 }
 impl DescribeFleetCapacityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetCapacityOutput`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityOutputBuilder {
         crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetCapacityOutput`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetCapacityOutputBuilder {
     pub(crate) fleet_capacity: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeFleetCapacityOutputBuilder {
         self
     }
     /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
-    pub fn set_fleet_capacity(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacity>>,
-    ) -> Self {
+    pub fn set_fleet_capacity(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacity>>) -> Self {
         self.fleet_capacity = input;
         self
     }
     /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
-    pub fn get_fleet_capacity(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetCapacity>> {
+    pub fn get_fleet_capacity(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetCapacity>> {
         &self.fleet_capacity
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>

@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`game_session_queues(Option<Vec<GameSessionQueue>>)`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput::game_session_queues): <p>A collection of objects that describe the requested game session queues.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeGameSessionQueuesError>`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError)
-    pub fn describe_game_session_queues(&self) -> crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesFluentBuilder{
+    pub fn describe_game_session_queues(&self) -> crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesFluentBuilder {
         crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesFluentBuilder::new(self.handle.clone())
     }
 }

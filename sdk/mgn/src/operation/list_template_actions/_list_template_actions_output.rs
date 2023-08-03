@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTemplateActionsOutput {
 }
 impl ListTemplateActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateActionsOutput`](crate::operation::list_template_actions::ListTemplateActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_template_actions::builders::ListTemplateActionsOutputBuilder {
-        crate::operation::list_template_actions::builders::ListTemplateActionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_template_actions::builders::ListTemplateActionsOutputBuilder {
+        crate::operation::list_template_actions::builders::ListTemplateActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTemplateActionsOutput`](crate::operation::list_template_actions::ListTemplateActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplateActionsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::TemplateActionDocument>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListTemplateActionsOutputBuilder {
         self
     }
     /// <p>List of template post migration custom actions.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateActionDocument>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateActionDocument>>) -> Self {
         self.items = input;
         self
     }
     /// <p>List of template post migration custom actions.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateActionDocument>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateActionDocument>> {
         &self.items
     }
     /// <p>Next token returned when listing template post migration custom actions.</p>

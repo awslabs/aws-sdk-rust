@@ -42,10 +42,7 @@ impl PutPublicAccessBlockFluentBuilder {
         }
     }
     /// Access the PutPublicAccessBlock as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_public_access_block::builders::PutPublicAccessBlockInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_public_access_block::builders::PutPublicAccessBlockInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl PutPublicAccessBlockFluentBuilder {
             crate::operation::put_public_access_block::PutPublicAccessBlock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_public_access_block::PutPublicAccessBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_public_access_block::PutPublicAccessBlockError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl PutPublicAccessBlockFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl PutPublicAccessBlockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_public_access_block::PutPublicAccessBlockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_public_access_block::PutPublicAccessBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_public_access_block::PutPublicAccessBlockError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl PutPublicAccessBlockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_public_access_block::PutPublicAccessBlockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_public_access_block::PutPublicAccessBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_public_access_block::PutPublicAccessBlockError>,
     > {
         self.send_middleware().await
     }
@@ -122,32 +110,22 @@ impl PutPublicAccessBlockFluentBuilder {
             crate::operation::put_public_access_block::PutPublicAccessBlock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_public_access_block::PutPublicAccessBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_public_access_block::PutPublicAccessBlockError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
-    pub fn public_access_block_configuration(
-        mut self,
-        input: crate::types::PublicAccessBlockConfiguration,
-    ) -> Self {
+    pub fn public_access_block_configuration(mut self, input: crate::types::PublicAccessBlockConfiguration) -> Self {
         self.inner = self.inner.public_access_block_configuration(input);
         self
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
-    pub fn set_public_access_block_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
-    ) -> Self {
+    pub fn set_public_access_block_configuration(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
         self.inner = self.inner.set_public_access_block_configuration(input);
         self
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
-    pub fn get_public_access_block_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
+    pub fn get_public_access_block_configuration(&self) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
         self.inner.get_public_access_block_configuration()
     }
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>

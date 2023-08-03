@@ -15,17 +15,14 @@ impl AssociateDefaultViewInput {
 }
 impl AssociateDefaultViewInput {
     /// Creates a new builder-style object to manufacture [`AssociateDefaultViewInput`](crate::operation::associate_default_view::AssociateDefaultViewInput).
-    pub fn builder(
-    ) -> crate::operation::associate_default_view::builders::AssociateDefaultViewInputBuilder {
+    pub fn builder() -> crate::operation::associate_default_view::builders::AssociateDefaultViewInputBuilder {
         crate::operation::associate_default_view::builders::AssociateDefaultViewInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDefaultViewInput`](crate::operation::associate_default_view::AssociateDefaultViewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDefaultViewInputBuilder {
     pub(crate) view_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl AssociateDefaultViewInputBuilder {
     /// Consumes the builder and constructs a [`AssociateDefaultViewInput`](crate::operation::associate_default_view::AssociateDefaultViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_default_view::AssociateDefaultViewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_default_view::AssociateDefaultViewInput {
-                view_arn: self.view_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_default_view::AssociateDefaultViewInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_default_view::AssociateDefaultViewInput { view_arn: self.view_arn })
     }
 }

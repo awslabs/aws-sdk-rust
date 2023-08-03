@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobOutput::job_id): <p>The identifier of the dominant language detection job to stop.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StopDominantLanguageDetectionJobError>`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobError)
-    pub fn stop_dominant_language_detection_job(&self) -> crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobFluentBuilder{
+    pub fn stop_dominant_language_detection_job(
+        &self,
+    ) -> crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobFluentBuilder {
         crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

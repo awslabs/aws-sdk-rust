@@ -22,16 +22,14 @@ impl UpdateOrganizationConfigurationInput {
 }
 impl UpdateOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder {
         crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) auto_enable: ::std::option::Option<bool>,
@@ -74,11 +72,9 @@ impl UpdateOrganizationConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput {
-                graph_arn: self.graph_arn
-                ,
-                auto_enable: self.auto_enable
-                ,
-            }
+                graph_arn: self.graph_arn,
+                auto_enable: self.auto_enable,
+            },
         )
     }
 }

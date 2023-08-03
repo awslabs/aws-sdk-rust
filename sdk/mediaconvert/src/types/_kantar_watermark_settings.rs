@@ -107,9 +107,7 @@ impl KantarWatermarkSettings {
 
 /// A builder for [`KantarWatermarkSettings`](crate::types::KantarWatermarkSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KantarWatermarkSettingsBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) content_reference: ::std::option::Option<::std::string::String>,
@@ -141,18 +139,12 @@ impl KantarWatermarkSettingsBuilder {
         &self.channel_name
     }
     /// Specify a unique identifier for Kantar to use for this piece of content.
-    pub fn content_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// Specify a unique identifier for Kantar to use for this piece of content.
-    pub fn set_content_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_reference = input;
         self
     }
@@ -161,18 +153,12 @@ impl KantarWatermarkSettingsBuilder {
         &self.content_reference
     }
     /// Provide the name of the AWS Secrets Manager secret where your Kantar credentials are stored. Note that your MediaConvert service role must provide access to this secret. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/granting-permissions-for-mediaconvert-to-access-secrets-manager-secret.html. For instructions on creating a secret, see https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html, in the AWS Secrets Manager User Guide.
-    pub fn credentials_secret_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credentials_secret_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials_secret_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Provide the name of the AWS Secrets Manager secret where your Kantar credentials are stored. Note that your MediaConvert service role must provide access to this secret. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/granting-permissions-for-mediaconvert-to-access-secrets-manager-secret.html. For instructions on creating a secret, see https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html, in the AWS Secrets Manager User Guide.
-    pub fn set_credentials_secret_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_credentials_secret_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials_secret_name = input;
         self
     }
@@ -209,18 +195,12 @@ impl KantarWatermarkSettingsBuilder {
         &self.kantar_license_id
     }
     /// Provide the HTTPS endpoint to the Kantar server. You should get this endpoint from Kantar.
-    pub fn kantar_server_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kantar_server_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kantar_server_url = ::std::option::Option::Some(input.into());
         self
     }
     /// Provide the HTTPS endpoint to the Kantar server. You should get this endpoint from Kantar.
-    pub fn set_kantar_server_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kantar_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kantar_server_url = input;
         self
     }
@@ -229,18 +209,12 @@ impl KantarWatermarkSettingsBuilder {
         &self.kantar_server_url
     }
     /// Optional. Specify the Amazon S3 bucket where you want MediaConvert to store your Kantar watermark XML logs. When you don't specify a bucket, MediaConvert doesn't save these logs. Note that your MediaConvert service role must provide access to this location. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
-    pub fn log_destination(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_destination = ::std::option::Option::Some(input.into());
         self
     }
     /// Optional. Specify the Amazon S3 bucket where you want MediaConvert to store your Kantar watermark XML logs. When you don't specify a bucket, MediaConvert doesn't save these logs. Note that your MediaConvert service role must provide access to this location. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
-    pub fn set_log_destination(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_destination = input;
         self
     }

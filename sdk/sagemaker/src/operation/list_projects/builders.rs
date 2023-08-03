@@ -10,10 +10,7 @@ impl ListProjectsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_projects::ListProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_projects::ListProjectsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_projects();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListProjectsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_projects::ListProjects,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_projects::ListProjects, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListProjectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListProjectsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_projects::ListProjects,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_projects::ListProjects, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListProjectsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_projects::paginator::ListProjectsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_projects::paginator::ListProjectsPaginator {
-        crate::operation::list_projects::paginator::ListProjectsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_projects::paginator::ListProjectsPaginator {
+        crate::operation::list_projects::paginator::ListProjectsPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that returns the projects that were created after a specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,10 +112,7 @@ impl ListProjectsFluentBuilder {
         self
     }
     /// <p>A filter that returns the projects that were created after a specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -146,10 +126,7 @@ impl ListProjectsFluentBuilder {
         self
     }
     /// <p>A filter that returns the projects that were created before a specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -172,18 +149,12 @@ impl ListProjectsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>A filter that returns the projects whose name contains a specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A filter that returns the projects whose name contains a specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -211,10 +182,7 @@ impl ListProjectsFluentBuilder {
         self
     }
     /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ProjectSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -228,10 +196,7 @@ impl ListProjectsFluentBuilder {
         self
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::ProjectSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

@@ -33,9 +33,7 @@ impl CreateVolumeFromBackupInput {
         self.name.as_deref()
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
-    pub fn ontap_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateOntapVolumeConfiguration> {
+    pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::CreateOntapVolumeConfiguration> {
         self.ontap_configuration.as_ref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -45,24 +43,19 @@ impl CreateVolumeFromBackupInput {
 }
 impl CreateVolumeFromBackupInput {
     /// Creates a new builder-style object to manufacture [`CreateVolumeFromBackupInput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupInput).
-    pub fn builder(
-    ) -> crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupInputBuilder {
         crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVolumeFromBackupInput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVolumeFromBackupInputBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) ontap_configuration:
-        ::std::option::Option<crate::types::CreateOntapVolumeConfiguration>,
+    pub(crate) ontap_configuration: ::std::option::Option<crate::types::CreateOntapVolumeConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateVolumeFromBackupInputBuilder {
@@ -81,18 +74,12 @@ impl CreateVolumeFromBackupInputBuilder {
         &self.backup_id
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -115,25 +102,17 @@ impl CreateVolumeFromBackupInputBuilder {
         &self.name
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
-    pub fn ontap_configuration(
-        mut self,
-        input: crate::types::CreateOntapVolumeConfiguration,
-    ) -> Self {
+    pub fn ontap_configuration(mut self, input: crate::types::CreateOntapVolumeConfiguration) -> Self {
         self.ontap_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
-    pub fn set_ontap_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateOntapVolumeConfiguration>,
-    ) -> Self {
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::CreateOntapVolumeConfiguration>) -> Self {
         self.ontap_configuration = input;
         self
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
-    pub fn get_ontap_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateOntapVolumeConfiguration> {
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::CreateOntapVolumeConfiguration> {
         &self.ontap_configuration
     }
     /// Appends an item to `tags`.
@@ -148,10 +127,7 @@ impl CreateVolumeFromBackupInputBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -166,14 +142,12 @@ impl CreateVolumeFromBackupInputBuilder {
         crate::operation::create_volume_from_backup::CreateVolumeFromBackupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_volume_from_backup::CreateVolumeFromBackupInput {
-                backup_id: self.backup_id,
-                client_request_token: self.client_request_token,
-                name: self.name,
-                ontap_configuration: self.ontap_configuration,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_volume_from_backup::CreateVolumeFromBackupInput {
+            backup_id: self.backup_id,
+            client_request_token: self.client_request_token,
+            name: self.name,
+            ontap_configuration: self.ontap_configuration,
+            tags: self.tags,
+        })
     }
 }

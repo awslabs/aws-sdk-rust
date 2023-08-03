@@ -22,9 +22,7 @@ impl GetWorkerFleetInput {
 
 /// A builder for [`GetWorkerFleetInput`](crate::operation::get_worker_fleet::GetWorkerFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkerFleetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetWorkerFleetInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkerFleetInput`](crate::operation::get_worker_fleet::GetWorkerFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_worker_fleet::GetWorkerFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_worker_fleet::GetWorkerFleetInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_worker_fleet::GetWorkerFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_worker_fleet::GetWorkerFleetInput { id: self.id })
     }
 }

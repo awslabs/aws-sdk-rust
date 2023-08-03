@@ -24,9 +24,7 @@ impl MxfSettings {
         self.profile.as_ref()
     }
     /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
-    pub fn xavc_profile_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MxfXavcProfileSettings> {
+    pub fn xavc_profile_settings(&self) -> ::std::option::Option<&crate::types::MxfXavcProfileSettings> {
         self.xavc_profile_settings.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl MxfSettings {
 
 /// A builder for [`MxfSettings`](crate::types::MxfSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MxfSettingsBuilder {
     pub(crate) afd_signaling: ::std::option::Option<crate::types::MxfAfdSignaling>,
     pub(crate) profile: ::std::option::Option<crate::types::MxfProfile>,
@@ -54,10 +50,7 @@ impl MxfSettingsBuilder {
         self
     }
     /// Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
-    pub fn set_afd_signaling(
-        mut self,
-        input: ::std::option::Option<crate::types::MxfAfdSignaling>,
-    ) -> Self {
+    pub fn set_afd_signaling(mut self, input: ::std::option::Option<crate::types::MxfAfdSignaling>) -> Self {
         self.afd_signaling = input;
         self
     }
@@ -85,17 +78,12 @@ impl MxfSettingsBuilder {
         self
     }
     /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
-    pub fn set_xavc_profile_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MxfXavcProfileSettings>,
-    ) -> Self {
+    pub fn set_xavc_profile_settings(mut self, input: ::std::option::Option<crate::types::MxfXavcProfileSettings>) -> Self {
         self.xavc_profile_settings = input;
         self
     }
     /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
-    pub fn get_xavc_profile_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MxfXavcProfileSettings> {
+    pub fn get_xavc_profile_settings(&self) -> &::std::option::Option<crate::types::MxfXavcProfileSettings> {
         &self.xavc_profile_settings
     }
     /// Consumes the builder and constructs a [`MxfSettings`](crate::types::MxfSettings).

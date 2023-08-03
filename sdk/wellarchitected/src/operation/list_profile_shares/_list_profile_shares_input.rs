@@ -43,17 +43,14 @@ impl ListProfileSharesInput {
 }
 impl ListProfileSharesInput {
     /// Creates a new builder-style object to manufacture [`ListProfileSharesInput`](crate::operation::list_profile_shares::ListProfileSharesInput).
-    pub fn builder(
-    ) -> crate::operation::list_profile_shares::builders::ListProfileSharesInputBuilder {
+    pub fn builder() -> crate::operation::list_profile_shares::builders::ListProfileSharesInputBuilder {
         crate::operation::list_profile_shares::builders::ListProfileSharesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileSharesInput`](crate::operation::list_profile_shares::ListProfileSharesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileSharesInputBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with_prefix: ::std::option::Option<::std::string::String>,
@@ -77,18 +74,12 @@ impl ListProfileSharesInputBuilder {
         &self.profile_arn
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the profile is shared.</p>
-    pub fn shared_with_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_with_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the profile is shared.</p>
-    pub fn set_shared_with_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_with_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with_prefix = input;
         self
     }
@@ -141,18 +132,13 @@ impl ListProfileSharesInputBuilder {
     /// Consumes the builder and constructs a [`ListProfileSharesInput`](crate::operation::list_profile_shares::ListProfileSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_profile_shares::ListProfileSharesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_profile_shares::ListProfileSharesInput {
-                profile_arn: self.profile_arn,
-                shared_with_prefix: self.shared_with_prefix,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_profile_shares::ListProfileSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_profile_shares::ListProfileSharesInput {
+            profile_arn: self.profile_arn,
+            shared_with_prefix: self.shared_with_prefix,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            status: self.status,
+        })
     }
 }

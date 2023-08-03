@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAppMonitorOutput {
 }
 impl UpdateAppMonitorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppMonitorOutput`](crate::operation::update_app_monitor::UpdateAppMonitorOutput).
-    pub fn builder() -> crate::operation::update_app_monitor::builders::UpdateAppMonitorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_app_monitor::builders::UpdateAppMonitorOutputBuilder {
         crate::operation::update_app_monitor::builders::UpdateAppMonitorOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAppMonitorOutput`](crate::operation::update_app_monitor::UpdateAppMonitorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAppMonitorOutputBuilder {
     _request_id: Option<String>,
 }

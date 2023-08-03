@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConstraintOutput {
 }
 impl DeleteConstraintOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConstraintOutput`](crate::operation::delete_constraint::DeleteConstraintOutput).
-    pub fn builder() -> crate::operation::delete_constraint::builders::DeleteConstraintOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_constraint::builders::DeleteConstraintOutputBuilder {
         crate::operation::delete_constraint::builders::DeleteConstraintOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConstraintOutput`](crate::operation::delete_constraint::DeleteConstraintOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConstraintOutputBuilder {
     _request_id: Option<String>,
 }

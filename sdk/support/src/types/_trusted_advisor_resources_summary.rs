@@ -44,9 +44,7 @@ impl TrustedAdvisorResourcesSummary {
 
 /// A builder for [`TrustedAdvisorResourcesSummary`](crate::types::TrustedAdvisorResourcesSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrustedAdvisorResourcesSummaryBuilder {
     pub(crate) resources_processed: ::std::option::Option<i64>,
     pub(crate) resources_flagged: ::std::option::Option<i64>,

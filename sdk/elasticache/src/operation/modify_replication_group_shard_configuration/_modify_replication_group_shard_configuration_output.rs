@@ -21,16 +21,15 @@ impl ::aws_http::request_id::RequestId for ModifyReplicationGroupShardConfigurat
 }
 impl ModifyReplicationGroupShardConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupShardConfigurationOutput`](crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationOutput).
-    pub fn builder() -> crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationOutputBuilder
+    {
         crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyReplicationGroupShardConfigurationOutput`](crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyReplicationGroupShardConfigurationOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,
@@ -42,10 +41,7 @@ impl ModifyReplicationGroupShardConfigurationOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn set_replication_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationGroup>,
-    ) -> Self {
+    pub fn set_replication_group(mut self, input: ::std::option::Option<crate::types::ReplicationGroup>) -> Self {
         self.replication_group = input;
         self
     }
@@ -63,10 +59,9 @@ impl ModifyReplicationGroupShardConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyReplicationGroupShardConfigurationOutput`](crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationOutput).
-    pub fn build(self) -> crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationOutput{
+    pub fn build(self) -> crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationOutput {
         crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationOutput {
-            replication_group: self.replication_group
-            ,
+            replication_group: self.replication_group,
             _request_id: self._request_id,
         }
     }

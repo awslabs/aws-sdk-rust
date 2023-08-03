@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateUserPoolDomainOutput {
 }
 impl CreateUserPoolDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserPoolDomainOutput`](crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainOutputBuilder {
         crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserPoolDomainOutput`](crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserPoolDomainOutputBuilder {
     pub(crate) cloud_front_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateUserPoolDomainOutputBuilder {
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
-    pub fn cloud_front_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_front_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_front_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
-    pub fn set_cloud_front_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_front_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_front_domain = input;
         self
     }

@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`streams_kms_key(Option<KmsKey>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::streams_kms_key): <p>KMS key to use for encrypting streams.</p>
     ///   - [`streams_kms_role(Option<String>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::streams_kms_role): <p>Role to use for encrypting streams with KMS key.</p>
     /// - On failure, responds with [`SdkError<GetMissionProfileError>`](crate::operation::get_mission_profile::GetMissionProfileError)
-    pub fn get_mission_profile(
-        &self,
-    ) -> crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder {
-        crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_mission_profile(&self) -> crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder {
+        crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder::new(self.handle.clone())
     }
 }

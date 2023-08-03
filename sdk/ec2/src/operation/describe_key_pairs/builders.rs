@@ -10,10 +10,7 @@ impl DescribeKeyPairsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_key_pairs::DescribeKeyPairsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_key_pairs::DescribeKeyPairsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_key_pairs::DescribeKeyPairsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_key_pairs();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeKeyPairsFluentBuilder {
         }
     }
     /// Access the DescribeKeyPairs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_key_pairs::builders::DescribeKeyPairsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_key_pairs::builders::DescribeKeyPairsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeKeyPairsFluentBuilder {
             crate::operation::describe_key_pairs::DescribeKeyPairs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_key_pairs::DescribeKeyPairsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_key_pairs::DescribeKeyPairsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeKeyPairsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeKeyPairsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_key_pairs::DescribeKeyPairsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_key_pairs::DescribeKeyPairsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_key_pairs::DescribeKeyPairsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeKeyPairsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_key_pairs::DescribeKeyPairsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_key_pairs::DescribeKeyPairsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_key_pairs::DescribeKeyPairsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DescribeKeyPairsFluentBuilder {
             crate::operation::describe_key_pairs::DescribeKeyPairs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_key_pairs::DescribeKeyPairsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_key_pairs::DescribeKeyPairsError>,
     > {
         self.customize_middleware().await
     }
@@ -159,10 +143,7 @@ impl DescribeKeyPairsFluentBuilder {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -195,10 +176,7 @@ impl DescribeKeyPairsFluentBuilder {
     }
     /// <p>The key pair names.</p>
     /// <p>Default: Describes all of your key pairs.</p>
-    pub fn set_key_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_key_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_key_names(input);
         self
     }
@@ -217,17 +195,12 @@ impl DescribeKeyPairsFluentBuilder {
         self
     }
     /// <p>The IDs of the key pairs.</p>
-    pub fn set_key_pair_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_key_pair_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_key_pair_ids(input);
         self
     }
     /// <p>The IDs of the key pairs.</p>
-    pub fn get_key_pair_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_key_pair_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_key_pair_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

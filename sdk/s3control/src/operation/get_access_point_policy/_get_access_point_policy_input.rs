@@ -46,17 +46,14 @@ impl GetAccessPointPolicyInput {
 }
 impl GetAccessPointPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyInput`](crate::operation::get_access_point_policy::GetAccessPointPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_access_point_policy::builders::GetAccessPointPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_access_point_policy::builders::GetAccessPointPolicyInputBuilder {
         crate::operation::get_access_point_policy::builders::GetAccessPointPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessPointPolicyInput`](crate::operation::get_access_point_policy::GetAccessPointPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPointPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -129,15 +126,11 @@ impl GetAccessPointPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessPointPolicyInput`](crate::operation::get_access_point_policy::GetAccessPointPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_access_point_policy::GetAccessPointPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_access_point_policy::GetAccessPointPolicyInput {
-                account_id: self.account_id,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_access_point_policy::GetAccessPointPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_access_point_policy::GetAccessPointPolicyInput {
+            account_id: self.account_id,
+            name: self.name,
+        })
     }
 }

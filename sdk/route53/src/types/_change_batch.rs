@@ -30,9 +30,7 @@ impl ChangeBatch {
 
 /// A builder for [`ChangeBatch`](crate::types::ChangeBatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeBatchBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) changes: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
@@ -64,10 +62,7 @@ impl ChangeBatchBuilder {
         self
     }
     /// <p>Information about the changes to make to the record sets.</p>
-    pub fn set_changes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
-    ) -> Self {
+    pub fn set_changes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Change>>) -> Self {
         self.changes = input;
         self
     }

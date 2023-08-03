@@ -2,8 +2,7 @@
 pub fn ser_post_content_headers(
     input: &crate::operation::post_content::PostContentInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.session_attributes {
         let formatted_2 = ::aws_smithy_types::base64::encode(inner_1);
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_post_content_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "session_attributes",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("x-amz-lex-session-attributes", header_value);
@@ -27,10 +23,7 @@ pub fn ser_post_content_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_attributes",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("x-amz-lex-request-attributes", header_value);
@@ -43,10 +36,7 @@ pub fn ser_post_content_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_type",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Content-Type", header_value);
@@ -59,10 +49,7 @@ pub fn ser_post_content_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "accept",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Accept", header_value);
@@ -75,10 +62,7 @@ pub fn ser_post_content_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "active_contexts",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("x-amz-lex-active-contexts", header_value);
@@ -90,16 +74,10 @@ pub fn ser_post_content_headers(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_post_content_op_response(
     op_response: &mut ::aws_smithy_http::operation::Response,
-) -> ::std::result::Result<
-    crate::operation::post_content::PostContentOutput,
-    crate::operation::post_content::PostContentError,
-> {
+) -> ::std::result::Result<crate::operation::post_content::PostContentOutput, crate::operation::post_content::PostContentError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
-    crate::protocol_serde::shape_post_content::de_post_content_http_response_with_props(
-        response,
-        &properties,
-    )
+    crate::protocol_serde::shape_post_content::de_post_content_http_response_with_props(response, &properties)
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -107,220 +85,192 @@ pub fn de_post_content_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::post_content::PostContentOutput,
-    crate::operation::post_content::PostContentError,
-> {
+) -> std::result::Result<crate::operation::post_content::PostContentOutput, crate::operation::post_content::PostContentError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::post_content::PostContentError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::post_content::PostContentError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::post_content::PostContentError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadGatewayException" => {
-            crate::operation::post_content::PostContentError::BadGatewayException({
+        "BadGatewayException" => crate::operation::post_content::PostContentError::BadGatewayException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadGatewayExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "BadRequestException" => {
-            crate::operation::post_content::PostContentError::BadRequestException({
+                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "BadRequestException" => crate::operation::post_content::PostContentError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ConflictException" => {
-            crate::operation::post_content::PostContentError::ConflictException({
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ConflictException" => crate::operation::post_content::PostContentError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DependencyFailedException" => {
-            crate::operation::post_content::PostContentError::DependencyFailedException({
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DependencyFailedException" => crate::operation::post_content::PostContentError::DependencyFailedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::DependencyFailedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalFailureException" => {
-            crate::operation::post_content::PostContentError::InternalFailureException({
+                let mut output = crate::types::error::builders::DependencyFailedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::post_content::PostContentError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::operation::post_content::PostContentError::LimitExceededException({
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::post_content::PostContentError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::post_content::PostContentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LoopDetectedException" => {
-            crate::operation::post_content::PostContentError::LoopDetectedException({
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::post_content::PostContentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LoopDetectedException" => crate::operation::post_content::PostContentError::LoopDetectedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LoopDetectedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_loop_detected_exception::de_loop_detected_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NotAcceptableException" => {
-            crate::operation::post_content::PostContentError::NotAcceptableException({
+                let mut output = crate::types::error::builders::LoopDetectedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_loop_detected_exception::de_loop_detected_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotAcceptableException" => crate::operation::post_content::PostContentError::NotAcceptableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NotAcceptableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_acceptable_exception::de_not_acceptable_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NotFoundException" => {
-            crate::operation::post_content::PostContentError::NotFoundException({
+                let mut output = crate::types::error::builders::NotAcceptableExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_acceptable_exception::de_not_acceptable_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::post_content::PostContentError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "RequestTimeoutException" => {
-            crate::operation::post_content::PostContentError::RequestTimeoutException({
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RequestTimeoutException" => crate::operation::post_content::PostContentError::RequestTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::RequestTimeoutExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UnsupportedMediaTypeException" => {
-            crate::operation::post_content::PostContentError::UnsupportedMediaTypeException({
+                let mut output = crate::types::error::builders::RequestTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedMediaTypeException" => crate::operation::post_content::PostContentError::UnsupportedMediaTypeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnsupportedMediaTypeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_media_type_exception::de_unsupported_media_type_exception_json_err(_response_body, output).map_err(crate::operation::post_content::PostContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::UnsupportedMediaTypeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_media_type_exception::de_unsupported_media_type_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::post_content::PostContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::post_content::PostContentError::generic(generic),
     })
 }
@@ -330,10 +280,7 @@ pub fn de_post_content_http_error(
 pub fn de_post_content_http_response_with_props(
     response: &mut ::http::Response<::aws_smithy_http::body::SdkBody>,
     properties: &::aws_smithy_http::property_bag::PropertyBag,
-) -> std::result::Result<
-    crate::operation::post_content::PostContentOutput,
-    crate::operation::post_content::PostContentError,
-> {
+) -> std::result::Result<crate::operation::post_content::PostContentOutput, crate::operation::post_content::PostContentError> {
     let mut _response_body = ::aws_smithy_http::body::SdkBody::taken();
     std::mem::swap(&mut _response_body, response.body_mut());
     let _response_body = &mut _response_body;
@@ -342,170 +289,101 @@ pub fn de_post_content_http_response_with_props(
     let _response_headers = response.headers();
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::post_content::builders::PostContentOutputBuilder::default();
+        let mut output = crate::operation::post_content::builders::PostContentOutputBuilder::default();
         output = output.set_active_contexts(
-            crate::protocol_serde::shape_post_content_output::de_active_contexts_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse activeContexts from header `x-amz-lex-active-contexts",
-                )
+            crate::protocol_serde::shape_post_content_output::de_active_contexts_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled("Failed to parse activeContexts from header `x-amz-lex-active-contexts")
             })?,
         );
         output = output.set_alternative_intents(
-            crate::protocol_serde::shape_post_content_output::de_alternative_intents_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_post_content_output::de_alternative_intents_header(_response_headers).map_err(|_| {
                 crate::operation::post_content::PostContentError::unhandled(
                     "Failed to parse alternativeIntents from header `x-amz-lex-alternative-intents",
                 )
             })?,
         );
-        output = output.set_audio_stream(Some(
-            crate::protocol_serde::shape_post_content_output::de_audio_stream_payload(
-                _response_body,
-            )?,
-        ));
+        output = output.set_audio_stream(Some(crate::protocol_serde::shape_post_content_output::de_audio_stream_payload(
+            _response_body,
+        )?));
         output = output.set_bot_version(
-            crate::protocol_serde::shape_post_content_output::de_bot_version_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse botVersion from header `x-amz-lex-bot-version",
-                )
+            crate::protocol_serde::shape_post_content_output::de_bot_version_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled("Failed to parse botVersion from header `x-amz-lex-bot-version")
             })?,
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_post_content_output::de_content_type_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse contentType from header `Content-Type",
-                )
-            })?,
+            crate::protocol_serde::shape_post_content_output::de_content_type_header(_response_headers)
+                .map_err(|_| crate::operation::post_content::PostContentError::unhandled("Failed to parse contentType from header `Content-Type"))?,
         );
         output = output.set_dialog_state(
-            crate::protocol_serde::shape_post_content_output::de_dialog_state_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse dialogState from header `x-amz-lex-dialog-state",
-                )
+            crate::protocol_serde::shape_post_content_output::de_dialog_state_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled("Failed to parse dialogState from header `x-amz-lex-dialog-state")
             })?,
         );
         output = output.set_encoded_input_transcript(
-            crate::protocol_serde::shape_post_content_output::de_encoded_input_transcript_header(_response_headers)
-                                    .map_err(|_|crate::operation::post_content::PostContentError::unhandled("Failed to parse encodedInputTranscript from header `x-amz-lex-encoded-input-transcript"))?
+            crate::protocol_serde::shape_post_content_output::de_encoded_input_transcript_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled(
+                    "Failed to parse encodedInputTranscript from header `x-amz-lex-encoded-input-transcript",
+                )
+            })?,
         );
         output = output.set_encoded_message(
-            crate::protocol_serde::shape_post_content_output::de_encoded_message_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse encodedMessage from header `x-amz-lex-encoded-message",
-                )
+            crate::protocol_serde::shape_post_content_output::de_encoded_message_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled("Failed to parse encodedMessage from header `x-amz-lex-encoded-message")
             })?,
         );
         output = output.set_input_transcript(
-            crate::protocol_serde::shape_post_content_output::de_input_transcript_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse inputTranscript from header `x-amz-lex-input-transcript",
-                )
+            crate::protocol_serde::shape_post_content_output::de_input_transcript_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled("Failed to parse inputTranscript from header `x-amz-lex-input-transcript")
             })?,
         );
         output = output.set_intent_name(
-            crate::protocol_serde::shape_post_content_output::de_intent_name_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse intentName from header `x-amz-lex-intent-name",
-                )
+            crate::protocol_serde::shape_post_content_output::de_intent_name_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled("Failed to parse intentName from header `x-amz-lex-intent-name")
             })?,
         );
         output = output.set_message(
             crate::protocol_serde::shape_post_content_output::de_message_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::post_content::PostContentError::unhandled(
-                        "Failed to parse message from header `x-amz-lex-message",
-                    )
-                })?,
+                .map_err(|_| crate::operation::post_content::PostContentError::unhandled("Failed to parse message from header `x-amz-lex-message"))?,
         );
         output = output.set_message_format(
-            crate::protocol_serde::shape_post_content_output::de_message_format_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse messageFormat from header `x-amz-lex-message-format",
-                )
+            crate::protocol_serde::shape_post_content_output::de_message_format_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled("Failed to parse messageFormat from header `x-amz-lex-message-format")
             })?,
         );
         output = output.set_nlu_intent_confidence(
-            crate::protocol_serde::shape_post_content_output::de_nlu_intent_confidence_header(_response_headers)
-                                    .map_err(|_|crate::operation::post_content::PostContentError::unhandled("Failed to parse nluIntentConfidence from header `x-amz-lex-nlu-intent-confidence"))?
-        );
-        output = output.set_sentiment_response(
-            crate::protocol_serde::shape_post_content_output::de_sentiment_response_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_post_content_output::de_nlu_intent_confidence_header(_response_headers).map_err(|_| {
                 crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse sentimentResponse from header `x-amz-lex-sentiment",
+                    "Failed to parse nluIntentConfidence from header `x-amz-lex-nlu-intent-confidence",
                 )
             })?,
         );
+        output = output.set_sentiment_response(
+            crate::protocol_serde::shape_post_content_output::de_sentiment_response_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled("Failed to parse sentimentResponse from header `x-amz-lex-sentiment")
+            })?,
+        );
         output = output.set_session_attributes(
-            crate::protocol_serde::shape_post_content_output::de_session_attributes_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_post_content_output::de_session_attributes_header(_response_headers).map_err(|_| {
                 crate::operation::post_content::PostContentError::unhandled(
                     "Failed to parse sessionAttributes from header `x-amz-lex-session-attributes",
                 )
             })?,
         );
         output = output.set_session_id(
-            crate::protocol_serde::shape_post_content_output::de_session_id_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse sessionId from header `x-amz-lex-session-id",
-                )
+            crate::protocol_serde::shape_post_content_output::de_session_id_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled("Failed to parse sessionId from header `x-amz-lex-session-id")
             })?,
         );
         output = output.set_slot_to_elicit(
-            crate::protocol_serde::shape_post_content_output::de_slot_to_elicit_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse slotToElicit from header `x-amz-lex-slot-to-elicit",
-                )
+            crate::protocol_serde::shape_post_content_output::de_slot_to_elicit_header(_response_headers).map_err(|_| {
+                crate::operation::post_content::PostContentError::unhandled("Failed to parse slotToElicit from header `x-amz-lex-slot-to-elicit")
             })?,
         );
         output = output.set_slots(
             crate::protocol_serde::shape_post_content_output::de_slots_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::post_content::PostContentError::unhandled(
-                        "Failed to parse slots from header `x-amz-lex-slots",
-                    )
-                })?,
+                .map_err(|_| crate::operation::post_content::PostContentError::unhandled("Failed to parse slots from header `x-amz-lex-slots"))?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

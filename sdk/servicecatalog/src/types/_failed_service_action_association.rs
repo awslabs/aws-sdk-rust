@@ -34,9 +34,7 @@ impl FailedServiceActionAssociation {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The error code. Valid values are listed below.</p>
-    pub fn error_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceActionAssociationErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ServiceActionAssociationErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A text description of the error.</p>
@@ -53,9 +51,7 @@ impl FailedServiceActionAssociation {
 
 /// A builder for [`FailedServiceActionAssociation`](crate::types::FailedServiceActionAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedServiceActionAssociationBuilder {
     pub(crate) service_action_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
@@ -65,18 +61,12 @@ pub struct FailedServiceActionAssociationBuilder {
 }
 impl FailedServiceActionAssociationBuilder {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn service_action_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_action_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn set_service_action_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_action_id = input;
         self
     }
@@ -99,18 +89,12 @@ impl FailedServiceActionAssociationBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
@@ -124,32 +108,21 @@ impl FailedServiceActionAssociationBuilder {
         self
     }
     /// <p>The error code. Valid values are listed below.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceActionAssociationErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ServiceActionAssociationErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error code. Valid values are listed below.</p>
-    pub fn get_error_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceActionAssociationErrorCode> {
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ServiceActionAssociationErrorCode> {
         &self.error_code
     }
     /// <p>A text description of the error.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A text description of the error.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

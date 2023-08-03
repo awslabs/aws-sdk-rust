@@ -38,10 +38,7 @@ impl GetSolFunctionPackageFluentBuilder {
         }
     }
     /// Access the GetSolFunctionPackage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_sol_function_package::builders::GetSolFunctionPackageInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_sol_function_package::builders::GetSolFunctionPackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetSolFunctionPackageFluentBuilder {
             crate::operation::get_sol_function_package::GetSolFunctionPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package::GetSolFunctionPackageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetSolFunctionPackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetSolFunctionPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_function_package::GetSolFunctionPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package::GetSolFunctionPackageError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetSolFunctionPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_function_package::GetSolFunctionPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package::GetSolFunctionPackageError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl GetSolFunctionPackageFluentBuilder {
             crate::operation::get_sol_function_package::GetSolFunctionPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package::GetSolFunctionPackageError>,
     > {
         self.customize_middleware().await
     }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeProfilingGroupOutput`](crate::operation::describe_profiling_group::DescribeProfilingGroupOutput) with field(s):
     ///   - [`profiling_group(Option<ProfilingGroupDescription>)`](crate::operation::describe_profiling_group::DescribeProfilingGroupOutput::profiling_group): <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
     /// - On failure, responds with [`SdkError<DescribeProfilingGroupError>`](crate::operation::describe_profiling_group::DescribeProfilingGroupError)
-    pub fn describe_profiling_group(
-        &self,
-    ) -> crate::operation::describe_profiling_group::builders::DescribeProfilingGroupFluentBuilder
-    {
+    pub fn describe_profiling_group(&self) -> crate::operation::describe_profiling_group::builders::DescribeProfilingGroupFluentBuilder {
         crate::operation::describe_profiling_group::builders::DescribeProfilingGroupFluentBuilder::new(self.handle.clone())
     }
 }

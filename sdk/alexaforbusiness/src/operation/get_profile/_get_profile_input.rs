@@ -22,9 +22,7 @@ impl GetProfileInput {
 
 /// A builder for [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProfileInputBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetProfileInputBuilder {
         &self.profile_arn
     }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_profile::GetProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_profile::GetProfileInput {
             profile_arn: self.profile_arn,
         })

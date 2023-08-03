@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`launch_template_versions(Option<Vec<LaunchTemplateVersion>>)`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput::launch_template_versions): <p>Information about the launch template versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeLaunchTemplateVersionsError>`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError)
-    pub fn describe_launch_template_versions(&self) -> crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsFluentBuilder{
+    pub fn describe_launch_template_versions(
+        &self,
+    ) -> crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsFluentBuilder {
         crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsFluentBuilder::new(self.handle.clone())
     }
 }

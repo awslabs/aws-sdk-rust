@@ -19,10 +19,7 @@ pub fn ser_custom_origin_config(
     }
     if let Some(var_4) = &input.origin_ssl_protocols {
         let inner_writer = scope.start_el("OriginSslProtocols");
-        crate::protocol_serde::shape_origin_ssl_protocols::ser_origin_ssl_protocols(
-            var_4,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_origin_ssl_protocols::ser_origin_ssl_protocols(var_4, inner_writer)?
     }
     if let Some(var_5) = &input.origin_read_timeout {
         let mut inner_writer = scope.start_el("OriginReadTimeout").finish();

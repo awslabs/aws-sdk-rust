@@ -10,10 +10,7 @@ impl StartMaintenanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_maintenance::StartMaintenanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_maintenance::StartMaintenanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_maintenance::StartMaintenanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_maintenance();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StartMaintenanceFluentBuilder {
         }
     }
     /// Access the StartMaintenance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_maintenance::builders::StartMaintenanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_maintenance::builders::StartMaintenanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl StartMaintenanceFluentBuilder {
             crate::operation::start_maintenance::StartMaintenance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_maintenance::StartMaintenanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_maintenance::StartMaintenanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl StartMaintenanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl StartMaintenanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_maintenance::StartMaintenanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_maintenance::StartMaintenanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_maintenance::StartMaintenanceError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl StartMaintenanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_maintenance::StartMaintenanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_maintenance::StartMaintenanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_maintenance::StartMaintenanceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl StartMaintenanceFluentBuilder {
             crate::operation::start_maintenance::StartMaintenance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_maintenance::StartMaintenanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_maintenance::StartMaintenanceError>,
     > {
         self.customize_middleware().await
     }
@@ -155,10 +139,7 @@ impl StartMaintenanceFluentBuilder {
     /// <ul>
     /// <li> <p> <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
     /// </ul>
-    pub fn set_engine_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
-    ) -> Self {
+    pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.inner = self.inner.set_engine_attributes(input);
         self
     }
@@ -167,9 +148,7 @@ impl StartMaintenanceFluentBuilder {
     /// <ul>
     /// <li> <p> <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
     /// </ul>
-    pub fn get_engine_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+    pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         self.inner.get_engine_attributes()
     }
 }

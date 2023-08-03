@@ -30,13 +30,10 @@ impl SummarizedAttackVector {
 
 /// A builder for [`SummarizedAttackVector`](crate::types::SummarizedAttackVector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SummarizedAttackVectorBuilder {
     pub(crate) vector_type: ::std::option::Option<::std::string::String>,
-    pub(crate) vector_counters:
-        ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,
+    pub(crate) vector_counters: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,
 }
 impl SummarizedAttackVectorBuilder {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
@@ -65,17 +62,12 @@ impl SummarizedAttackVectorBuilder {
         self
     }
     /// <p>The list of counters that describe the details of the attack.</p>
-    pub fn set_vector_counters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,
-    ) -> Self {
+    pub fn set_vector_counters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>) -> Self {
         self.vector_counters = input;
         self
     }
     /// <p>The list of counters that describe the details of the attack.</p>
-    pub fn get_vector_counters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>> {
+    pub fn get_vector_counters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>> {
         &self.vector_counters
     }
     /// Consumes the builder and constructs a [`SummarizedAttackVector`](crate::types::SummarizedAttackVector).

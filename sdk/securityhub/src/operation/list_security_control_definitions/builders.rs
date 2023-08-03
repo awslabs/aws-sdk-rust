@@ -5,16 +5,16 @@ pub use crate::operation::list_security_control_definitions::_list_security_cont
 
 impl ListSecurityControlDefinitionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_security_control_definitions();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListSecurityControlDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSecurityControlDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder,
+    inner: crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder,
 }
 impl ListSecurityControlDefinitionsFluentBuilder {
     /// Creates a new `ListSecurityControlDefinitions`.
@@ -37,15 +37,20 @@ impl ListSecurityControlDefinitionsFluentBuilder {
         }
     }
     /// Access the ListSecurityControlDefinitions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_security_control_definitions::ListSecurityControlDefinitions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_security_control_definitions::ListSecurityControlDefinitions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListSecurityControlDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl ListSecurityControlDefinitionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_security_control_definitions::ListSecurityControlDefinitions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_security_control_definitions::ListSecurityControlDefinitions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_security_control_definitions::paginator::ListSecurityControlDefinitionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_security_control_definitions::paginator::ListSecurityControlDefinitionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_security_control_definitions::paginator::ListSecurityControlDefinitionsPaginator {
         crate::operation::list_security_control_definitions::paginator::ListSecurityControlDefinitionsPaginator::new(self.handle, self.inner)
     }
     /// <p> The Amazon Resource Name (ARN) of the standard that you want to view controls for. </p>
-    pub fn standards_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.standards_arn(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the standard that you want to view controls for. </p>
-    pub fn set_standards_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standards_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_standards_arn(input);
         self
     }

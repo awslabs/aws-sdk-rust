@@ -15,10 +15,7 @@ pub fn ser_create_endpoint_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -63,10 +60,7 @@ pub fn ser_create_endpoint_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_port_override::ser_port_override(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_port_override::ser_port_override(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }

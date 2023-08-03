@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for PollForThirdPartyJobsOutput {
 }
 impl PollForThirdPartyJobsOutput {
     /// Creates a new builder-style object to manufacture [`PollForThirdPartyJobsOutput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsOutputBuilder {
         crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PollForThirdPartyJobsOutput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PollForThirdPartyJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>,
     _request_id: Option<String>,
@@ -51,10 +47,7 @@ impl PollForThirdPartyJobsOutputBuilder {
         self
     }
     /// <p>Information about the jobs to take action on.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>) -> Self {
         self.jobs = input;
         self
     }

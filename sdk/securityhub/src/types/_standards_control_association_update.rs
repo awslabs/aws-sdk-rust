@@ -44,9 +44,7 @@ impl StandardsControlAssociationUpdate {
 
 /// A builder for [`StandardsControlAssociationUpdate`](crate::types::StandardsControlAssociationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StandardsControlAssociationUpdateBuilder {
     pub(crate) standards_arn: ::std::option::Option<::std::string::String>,
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct StandardsControlAssociationUpdateBuilder {
 }
 impl StandardsControlAssociationUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the standard in which you want to update the control's enablement status.</p>
-    pub fn standards_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the standard in which you want to update the control's enablement status.</p>
-    pub fn set_standards_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standards_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standards_arn = input;
         self
     }
@@ -75,18 +67,12 @@ impl StandardsControlAssociationUpdateBuilder {
         &self.standards_arn
     }
     /// <p>The unique identifier for the security control whose enablement status you want to update.</p>
-    pub fn security_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the security control whose enablement status you want to update.</p>
-    pub fn set_security_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
@@ -100,32 +86,21 @@ impl StandardsControlAssociationUpdateBuilder {
         self
     }
     /// <p>The desired enablement status of the control in the standard.</p>
-    pub fn set_association_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationStatus>,
-    ) -> Self {
+    pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::AssociationStatus>) -> Self {
         self.association_status = input;
         self
     }
     /// <p>The desired enablement status of the control in the standard.</p>
-    pub fn get_association_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationStatus> {
+    pub fn get_association_status(&self) -> &::std::option::Option<crate::types::AssociationStatus> {
         &self.association_status
     }
     /// <p>The reason for updating the control's enablement status in the standard.</p>
-    pub fn updated_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn updated_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for updating the control's enablement status in the standard.</p>
-    pub fn set_updated_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_updated_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_reason = input;
         self
     }

@@ -29,9 +29,7 @@ impl EnableLdapsInput {
 
 /// A builder for [`EnableLdapsInput`](crate::operation::enable_ldaps::EnableLdapsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableLdapsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::LdapsType>,
@@ -66,12 +64,7 @@ impl EnableLdapsInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`EnableLdapsInput`](crate::operation::enable_ldaps::EnableLdapsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_ldaps::EnableLdapsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_ldaps::EnableLdapsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_ldaps::EnableLdapsInput {
             directory_id: self.directory_id,
             r#type: self.r#type,

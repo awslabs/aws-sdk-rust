@@ -29,18 +29,14 @@ impl ListFargateProfilesInput {
 }
 impl ListFargateProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListFargateProfilesInput`](crate::operation::list_fargate_profiles::ListFargateProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_fargate_profiles::builders::ListFargateProfilesInputBuilder {
-        crate::operation::list_fargate_profiles::builders::ListFargateProfilesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_fargate_profiles::builders::ListFargateProfilesInputBuilder {
+        crate::operation::list_fargate_profiles::builders::ListFargateProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFargateProfilesInput`](crate::operation::list_fargate_profiles::ListFargateProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFargateProfilesInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +88,12 @@ impl ListFargateProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListFargateProfilesInput`](crate::operation::list_fargate_profiles::ListFargateProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_fargate_profiles::ListFargateProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_fargate_profiles::ListFargateProfilesInput {
-                cluster_name: self.cluster_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_fargate_profiles::ListFargateProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_fargate_profiles::ListFargateProfilesInput {
+            cluster_name: self.cluster_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

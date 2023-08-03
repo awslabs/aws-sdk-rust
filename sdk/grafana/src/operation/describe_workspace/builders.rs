@@ -10,10 +10,7 @@ impl DescribeWorkspaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace::DescribeWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace::DescribeWorkspaceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace::DescribeWorkspaceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_workspace();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeWorkspaceFluentBuilder {
         }
     }
     /// Access the DescribeWorkspace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_workspace::builders::DescribeWorkspaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_workspace::builders::DescribeWorkspaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeWorkspaceFluentBuilder {
             crate::operation::describe_workspace::DescribeWorkspace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace::DescribeWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace::DescribeWorkspaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeWorkspaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeWorkspaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace::DescribeWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace::DescribeWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace::DescribeWorkspaceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeWorkspaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace::DescribeWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace::DescribeWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace::DescribeWorkspaceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeWorkspaceFluentBuilder {
             crate::operation::describe_workspace::DescribeWorkspace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace::DescribeWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace::DescribeWorkspaceError>,
     > {
         self.customize_middleware().await
     }

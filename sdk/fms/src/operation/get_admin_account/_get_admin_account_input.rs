@@ -12,18 +12,13 @@ impl GetAdminAccountInput {
 
 /// A builder for [`GetAdminAccountInput`](crate::operation::get_admin_account::GetAdminAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAdminAccountInputBuilder {}
 impl GetAdminAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetAdminAccountInput`](crate::operation::get_admin_account::GetAdminAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_admin_account::GetAdminAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_admin_account::GetAdminAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_admin_account::GetAdminAccountInput {})
     }
 }

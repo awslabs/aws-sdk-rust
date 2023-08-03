@@ -6,10 +6,7 @@ pub fn ser_path_options(
     if let Some(var_1) = &input.last_modified_date_condition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LastModifiedDateCondition").start_object();
-        crate::protocol_serde::shape_filter_expression::ser_filter_expression(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_filter_expression::ser_filter_expression(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.files_limit {
@@ -25,10 +22,7 @@ pub fn ser_path_options(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_dataset_parameter::ser_dataset_parameter(
-                    &mut object_9,
-                    value_8,
-                )?;
+                crate::protocol_serde::shape_dataset_parameter::ser_dataset_parameter(&mut object_9, value_8)?;
                 object_9.finish();
             }
         }
@@ -39,17 +33,9 @@ pub fn ser_path_options(
 
 pub(crate) fn de_path_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::PathOptions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::PathOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -59,42 +45,31 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LastModifiedDateCondition" => {
-                            builder = builder.set_last_modified_date_condition(
-                                    crate::protocol_serde::shape_filter_expression::de_filter_expression(tokens)?
-                                );
+                            builder = builder
+                                .set_last_modified_date_condition(crate::protocol_serde::shape_filter_expression::de_filter_expression(tokens)?);
                         }
                         "FilesLimit" => {
-                            builder = builder.set_files_limit(
-                                crate::protocol_serde::shape_files_limit::de_files_limit(tokens)?,
-                            );
+                            builder = builder.set_files_limit(crate::protocol_serde::shape_files_limit::de_files_limit(tokens)?);
                         }
                         "Parameters" => {
-                            builder = builder.set_parameters(
-                                    crate::protocol_serde::shape_path_parameters_map::de_path_parameters_map(tokens)?
-                                );
+                            builder = builder.set_parameters(crate::protocol_serde::shape_path_parameters_map::de_path_parameters_map(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

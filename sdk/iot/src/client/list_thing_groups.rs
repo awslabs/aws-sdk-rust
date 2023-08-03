@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`thing_groups(Option<Vec<GroupNameAndArn>>)`](crate::operation::list_thing_groups::ListThingGroupsOutput::thing_groups): <p>The thing groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_thing_groups::ListThingGroupsOutput::next_token): <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     /// - On failure, responds with [`SdkError<ListThingGroupsError>`](crate::operation::list_thing_groups::ListThingGroupsError)
-    pub fn list_thing_groups(
-        &self,
-    ) -> crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder {
-        crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_thing_groups(&self) -> crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder {
+        crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::new(self.handle.clone())
     }
 }

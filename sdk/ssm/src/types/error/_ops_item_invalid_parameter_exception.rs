@@ -42,9 +42,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::OpsItemInvalidPa
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for OpsItemInvalidParameterException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for OpsItemInvalidParameterException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -58,9 +56,7 @@ impl OpsItemInvalidParameterException {
 
 /// A builder for [`OpsItemInvalidParameterException`](crate::types::error::OpsItemInvalidParameterException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemInvalidParameterExceptionBuilder {
     pub(crate) parameter_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -71,27 +67,19 @@ impl OpsItemInvalidParameterExceptionBuilder {
     ///
     /// To override the contents of this collection use [`set_parameter_names`](Self::set_parameter_names).
     ///
-    pub fn parameter_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.parameter_names.unwrap_or_default();
         v.push(input.into());
         self.parameter_names = ::std::option::Option::Some(v);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_parameter_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_parameter_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.parameter_names = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_parameter_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parameter_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.parameter_names
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -115,10 +103,7 @@ impl OpsItemInvalidParameterExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

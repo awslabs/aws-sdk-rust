@@ -10,10 +10,7 @@ impl UpdateEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_endpoint::UpdateEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint::UpdateEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_endpoint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateEndpointFluentBuilder {
         }
     }
     /// Access the UpdateEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl UpdateEndpointFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -154,10 +140,7 @@ impl UpdateEndpointFluentBuilder {
         self
     }
     /// <p>Specifies the channel type and other settings for an endpoint.</p>
-    pub fn set_endpoint_request(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointRequest>,
-    ) -> Self {
+    pub fn set_endpoint_request(mut self, input: ::std::option::Option<crate::types::EndpointRequest>) -> Self {
         self.inner = self.inner.set_endpoint_request(input);
         self
     }

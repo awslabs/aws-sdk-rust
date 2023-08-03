@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_public_key::builders::DeletePublicKeyFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_public_key::builders::DeletePublicKeyFluentBuilder::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`DeletePublicKeyOutput`](crate::operation::delete_public_key::DeletePublicKeyOutput)
     /// - On failure, responds with [`SdkError<DeletePublicKeyError>`](crate::operation::delete_public_key::DeletePublicKeyError)
-    pub fn delete_public_key(
-        &self,
-    ) -> crate::operation::delete_public_key::builders::DeletePublicKeyFluentBuilder {
-        crate::operation::delete_public_key::builders::DeletePublicKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_public_key(&self) -> crate::operation::delete_public_key::builders::DeletePublicKeyFluentBuilder {
+        crate::operation::delete_public_key::builders::DeletePublicKeyFluentBuilder::new(self.handle.clone())
     }
 }

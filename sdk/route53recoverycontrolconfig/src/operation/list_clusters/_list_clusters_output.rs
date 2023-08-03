@@ -35,9 +35,7 @@ impl ListClustersOutput {
 
 /// A builder for [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClustersOutputBuilder {
     pub(crate) clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListClustersOutputBuilder {
         self
     }
     /// <p>An array of the clusters in an account.</p>
-    pub fn set_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
-    ) -> Self {
+    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>) -> Self {
         self.clusters = input;
         self
     }

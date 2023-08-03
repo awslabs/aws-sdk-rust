@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for VerifyEmailIdentityOutput {
 }
 impl VerifyEmailIdentityOutput {
     /// Creates a new builder-style object to manufacture [`VerifyEmailIdentityOutput`](crate::operation::verify_email_identity::VerifyEmailIdentityOutput).
-    pub fn builder(
-    ) -> crate::operation::verify_email_identity::builders::VerifyEmailIdentityOutputBuilder {
-        crate::operation::verify_email_identity::builders::VerifyEmailIdentityOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::verify_email_identity::builders::VerifyEmailIdentityOutputBuilder {
+        crate::operation::verify_email_identity::builders::VerifyEmailIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`VerifyEmailIdentityOutput`](crate::operation::verify_email_identity::VerifyEmailIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyEmailIdentityOutputBuilder {
     _request_id: Option<String>,
 }

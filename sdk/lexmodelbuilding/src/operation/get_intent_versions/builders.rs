@@ -10,10 +10,7 @@ impl GetIntentVersionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_intent_versions::GetIntentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_intent_versions::GetIntentVersionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_intent_versions::GetIntentVersionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_intent_versions();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl GetIntentVersionsFluentBuilder {
         }
     }
     /// Access the GetIntentVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_intent_versions::builders::GetIntentVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_intent_versions::builders::GetIntentVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl GetIntentVersionsFluentBuilder {
             crate::operation::get_intent_versions::GetIntentVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_intent_versions::GetIntentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_intent_versions::GetIntentVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl GetIntentVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl GetIntentVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_intent_versions::GetIntentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_intent_versions::GetIntentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_intent_versions::GetIntentVersionsError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl GetIntentVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_intent_versions::GetIntentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_intent_versions::GetIntentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_intent_versions::GetIntentVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +105,15 @@ impl GetIntentVersionsFluentBuilder {
             crate::operation::get_intent_versions::GetIntentVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_intent_versions::GetIntentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_intent_versions::GetIntentVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator {
-        crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator {
+        crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the intent for which versions should be returned.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

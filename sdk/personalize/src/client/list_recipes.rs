@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`recipes(Option<Vec<RecipeSummary>>)`](crate::operation::list_recipes::ListRecipesOutput::recipes): <p>The list of available recipes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recipes::ListRecipesOutput::next_token): <p>A token for getting the next set of recipes.</p>
     /// - On failure, responds with [`SdkError<ListRecipesError>`](crate::operation::list_recipes::ListRecipesError)
-    pub fn list_recipes(
-        &self,
-    ) -> crate::operation::list_recipes::builders::ListRecipesFluentBuilder {
+    pub fn list_recipes(&self) -> crate::operation::list_recipes::builders::ListRecipesFluentBuilder {
         crate::operation::list_recipes::builders::ListRecipesFluentBuilder::new(self.handle.clone())
     }
 }

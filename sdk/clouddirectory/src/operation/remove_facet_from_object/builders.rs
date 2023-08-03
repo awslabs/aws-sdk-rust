@@ -37,10 +37,7 @@ impl RemoveFacetFromObjectFluentBuilder {
         }
     }
     /// Access the RemoveFacetFromObject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl RemoveFacetFromObjectFluentBuilder {
             crate::operation::remove_facet_from_object::RemoveFacetFromObject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_facet_from_object::RemoveFacetFromObjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_facet_from_object::RemoveFacetFromObjectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl RemoveFacetFromObjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl RemoveFacetFromObjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_facet_from_object::RemoveFacetFromObjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_facet_from_object::RemoveFacetFromObjectError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl RemoveFacetFromObjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_facet_from_object::RemoveFacetFromObjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_facet_from_object::RemoveFacetFromObjectError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl RemoveFacetFromObjectFluentBuilder {
             crate::operation::remove_facet_from_object::RemoveFacetFromObject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_facet_from_object::RemoveFacetFromObjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_facet_from_object::RemoveFacetFromObjectError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the directory in which the object resides.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The ARN of the directory in which the object resides.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -149,10 +129,7 @@ impl RemoveFacetFromObjectFluentBuilder {
         self
     }
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
-    pub fn set_schema_facet(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
+    pub fn set_schema_facet(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
         self.inner = self.inner.set_schema_facet(input);
         self
     }
@@ -166,10 +143,7 @@ impl RemoveFacetFromObjectFluentBuilder {
         self
     }
     /// <p>A reference to the object to remove the facet from.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }

@@ -9,8 +9,7 @@ pub struct SpekeKeyProvider {
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
     #[doc(hidden)]
-    pub encryption_contract_configuration:
-        ::std::option::Option<crate::types::EncryptionContractConfiguration>,
+    pub encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     /// The resource ID to include in key requests.
     #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
@@ -30,9 +29,7 @@ impl SpekeKeyProvider {
         self.certificate_arn.as_deref()
     }
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    pub fn encryption_contract_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionContractConfiguration> {
+    pub fn encryption_contract_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionContractConfiguration> {
         self.encryption_contract_configuration.as_ref()
     }
     /// The resource ID to include in key requests.
@@ -61,13 +58,10 @@ impl SpekeKeyProvider {
 
 /// A builder for [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpekeKeyProviderBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) encryption_contract_configuration:
-        ::std::option::Option<crate::types::EncryptionContractConfiguration>,
+    pub(crate) encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -75,18 +69,12 @@ pub struct SpekeKeyProviderBuilder {
 }
 impl SpekeKeyProviderBuilder {
     /// An Amazon Resource Name (ARN) of a Certificate Manager certificate that MediaPackage will use for enforcing secure end-to-end data transfer with the key provider service.
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// An Amazon Resource Name (ARN) of a Certificate Manager certificate that MediaPackage will use for enforcing secure end-to-end data transfer with the key provider service.
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -95,25 +83,17 @@ impl SpekeKeyProviderBuilder {
         &self.certificate_arn
     }
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    pub fn encryption_contract_configuration(
-        mut self,
-        input: crate::types::EncryptionContractConfiguration,
-    ) -> Self {
+    pub fn encryption_contract_configuration(mut self, input: crate::types::EncryptionContractConfiguration) -> Self {
         self.encryption_contract_configuration = ::std::option::Option::Some(input);
         self
     }
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    pub fn set_encryption_contract_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_contract_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionContractConfiguration>) -> Self {
         self.encryption_contract_configuration = input;
         self
     }
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    pub fn get_encryption_contract_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionContractConfiguration> {
+    pub fn get_encryption_contract_configuration(&self) -> &::std::option::Option<crate::types::EncryptionContractConfiguration> {
         &self.encryption_contract_configuration
     }
     /// The resource ID to include in key requests.
@@ -156,10 +136,7 @@ impl SpekeKeyProviderBuilder {
         self
     }
     /// The system IDs to include in key requests.
-    pub fn set_system_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.system_ids = input;
         self
     }

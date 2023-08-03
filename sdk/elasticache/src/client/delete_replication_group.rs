@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteReplicationGroupOutput`](crate::operation::delete_replication_group::DeleteReplicationGroupOutput) with field(s):
     ///   - [`replication_group(Option<ReplicationGroup>)`](crate::operation::delete_replication_group::DeleteReplicationGroupOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
     /// - On failure, responds with [`SdkError<DeleteReplicationGroupError>`](crate::operation::delete_replication_group::DeleteReplicationGroupError)
-    pub fn delete_replication_group(
-        &self,
-    ) -> crate::operation::delete_replication_group::builders::DeleteReplicationGroupFluentBuilder
-    {
+    pub fn delete_replication_group(&self) -> crate::operation::delete_replication_group::builders::DeleteReplicationGroupFluentBuilder {
         crate::operation::delete_replication_group::builders::DeleteReplicationGroupFluentBuilder::new(self.handle.clone())
     }
 }

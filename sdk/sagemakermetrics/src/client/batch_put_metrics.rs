@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchPutMetricsOutput`](crate::operation::batch_put_metrics::BatchPutMetricsOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchPutMetricsError>>)`](crate::operation::batch_put_metrics::BatchPutMetricsOutput::errors): <p>Lists any errors that occur when inserting metric data.</p>
     /// - On failure, responds with [`SdkError<BatchPutMetricsError>`](crate::operation::batch_put_metrics::BatchPutMetricsError)
-    pub fn batch_put_metrics(
-        &self,
-    ) -> crate::operation::batch_put_metrics::builders::BatchPutMetricsFluentBuilder {
-        crate::operation::batch_put_metrics::builders::BatchPutMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_put_metrics(&self) -> crate::operation::batch_put_metrics::builders::BatchPutMetricsFluentBuilder {
+        crate::operation::batch_put_metrics::builders::BatchPutMetricsFluentBuilder::new(self.handle.clone())
     }
 }

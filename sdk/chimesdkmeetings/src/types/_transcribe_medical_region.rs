@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TranscribeMedicalRegion {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for TranscribeMedicalRegion {
             "us-east-1" => TranscribeMedicalRegion::UsEast1,
             "us-east-2" => TranscribeMedicalRegion::UsEast2,
             "us-west-2" => TranscribeMedicalRegion::UsWest2,
-            other => TranscribeMedicalRegion::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TranscribeMedicalRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

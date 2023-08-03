@@ -26,7 +26,7 @@ impl DescribeDomainEndpointOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDomainEndpointOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder,
+    inner: crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder,
 }
 impl DescribeDomainEndpointOptionsFluentBuilder {
     /// Creates a new `DescribeDomainEndpointOptions`.
@@ -37,7 +37,7 @@ impl DescribeDomainEndpointOptionsFluentBuilder {
         }
     }
     /// Access the DescribeDomainEndpointOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDomainEndpointOptionsFluentBuilder {
             crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDomainEndpointOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDomainEndpointOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDomainEndpointOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeDomainEndpointOptionsFluentBuilder {
             crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsError>,
     > {
         self.customize_middleware().await
     }

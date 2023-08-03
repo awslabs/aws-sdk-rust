@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDeviceUsageDataOutput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataOutput)
     /// - On failure, responds with [`SdkError<DeleteDeviceUsageDataError>`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn delete_device_usage_data(
-        &self,
-    ) -> crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder
-    {
+    pub fn delete_device_usage_data(&self) -> crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder {
         crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder::new(self.handle.clone())
     }
 }

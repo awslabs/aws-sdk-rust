@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     ///   - [`spot_fleet_request_configs(Option<Vec<SpotFleetRequestConfig>>)`](crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsOutput::spot_fleet_request_configs): <p>Information about the configuration of your Spot Fleet.</p>
     /// - On failure, responds with [`SdkError<DescribeSpotFleetRequestsError>`](crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsError)
-    pub fn describe_spot_fleet_requests(&self) -> crate::operation::describe_spot_fleet_requests::builders::DescribeSpotFleetRequestsFluentBuilder{
+    pub fn describe_spot_fleet_requests(&self) -> crate::operation::describe_spot_fleet_requests::builders::DescribeSpotFleetRequestsFluentBuilder {
         crate::operation::describe_spot_fleet_requests::builders::DescribeSpotFleetRequestsFluentBuilder::new(self.handle.clone())
     }
 }

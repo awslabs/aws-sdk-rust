@@ -51,9 +51,7 @@ impl FieldLevelEncryptionProfileSummary {
 
 /// A builder for [`FieldLevelEncryptionProfileSummary`](crate::types::FieldLevelEncryptionProfileSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -82,10 +80,7 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
         self
     }
     /// <p>The time when the the field-level encryption profile summary was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -113,17 +108,12 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
         self
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
-    pub fn set_encryption_entities(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionEntities>,
-    ) -> Self {
+    pub fn set_encryption_entities(mut self, input: ::std::option::Option<crate::types::EncryptionEntities>) -> Self {
         self.encryption_entities = input;
         self
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
-    pub fn get_encryption_entities(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionEntities> {
+    pub fn get_encryption_entities(&self) -> &::std::option::Option<crate::types::EncryptionEntities> {
         &self.encryption_entities
     }
     /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be longer than 128 characters.</p>

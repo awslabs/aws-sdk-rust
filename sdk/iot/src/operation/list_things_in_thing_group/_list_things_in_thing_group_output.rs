@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListThingsInThingGroupOutput {
 }
 impl ListThingsInThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListThingsInThingGroupOutput`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupOutputBuilder {
         crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingsInThingGroupOutput`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingsInThingGroupOutputBuilder {
     pub(crate) things: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListThingsInThingGroupOutputBuilder {
         self
     }
     /// <p>The things in the specified thing group.</p>
-    pub fn set_things(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_things(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.things = input;
         self
     }
@@ -93,9 +86,7 @@ impl ListThingsInThingGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListThingsInThingGroupOutput`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput {
+    pub fn build(self) -> crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput {
         crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput {
             things: self.things,
             next_token: self.next_token,

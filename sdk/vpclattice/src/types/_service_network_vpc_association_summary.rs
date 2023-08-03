@@ -45,9 +45,7 @@ impl ServiceNetworkVpcAssociationSummary {
         self.arn.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The account that created the association.</p>
@@ -88,9 +86,7 @@ impl ServiceNetworkVpcAssociationSummary {
 
 /// A builder for [`ServiceNetworkVpcAssociationSummary`](crate::types::ServiceNetworkVpcAssociationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceNetworkVpcAssociationSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -138,17 +134,12 @@ impl ServiceNetworkVpcAssociationSummaryBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
         &self.status
     }
     /// <p>The account that created the association.</p>
@@ -171,10 +162,7 @@ impl ServiceNetworkVpcAssociationSummaryBuilder {
         self
     }
     /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -183,18 +171,12 @@ impl ServiceNetworkVpcAssociationSummaryBuilder {
         &self.created_at
     }
     /// <p>The ID of the service network.</p>
-    pub fn service_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service network.</p>
-    pub fn set_service_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_id = input;
         self
     }
@@ -203,18 +185,12 @@ impl ServiceNetworkVpcAssociationSummaryBuilder {
         &self.service_network_id
     }
     /// <p>The name of the service network.</p>
-    pub fn service_network_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service network.</p>
-    pub fn set_service_network_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_name = input;
         self
     }
@@ -223,18 +199,12 @@ impl ServiceNetworkVpcAssociationSummaryBuilder {
         &self.service_network_name
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn set_service_network_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_arn = input;
         self
     }
@@ -262,10 +232,7 @@ impl ServiceNetworkVpcAssociationSummaryBuilder {
         self
     }
     /// <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

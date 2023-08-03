@@ -10,10 +10,7 @@ impl UpdateNamespaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_namespace::UpdateNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_namespace::UpdateNamespaceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_namespace::UpdateNamespaceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_namespace();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateNamespaceFluentBuilder {
         }
     }
     /// Access the UpdateNamespace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_namespace::builders::UpdateNamespaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_namespace::builders::UpdateNamespaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateNamespaceFluentBuilder {
             crate::operation::update_namespace::UpdateNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_namespace::UpdateNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_namespace::UpdateNamespaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateNamespaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_namespace::UpdateNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_namespace::UpdateNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_namespace::UpdateNamespaceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_namespace::UpdateNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_namespace::UpdateNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_namespace::UpdateNamespaceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateNamespaceFluentBuilder {
             crate::operation::update_namespace::UpdateNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_namespace::UpdateNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_namespace::UpdateNamespaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
     /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateNamespaceFluentBuilder {
         self.inner.get_namespace_name()
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    pub fn admin_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_user_password(input.into());
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    pub fn set_admin_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_user_password(input);
         self
     }
@@ -163,18 +135,12 @@ impl UpdateNamespaceFluentBuilder {
         self.inner.get_admin_user_password()
     }
     /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
-    pub fn admin_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_username(input.into());
         self
     }
     /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
-    pub fn set_admin_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_username(input);
         self
     }
@@ -197,18 +163,12 @@ impl UpdateNamespaceFluentBuilder {
         self.inner.get_kms_key_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
-    pub fn default_iam_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_iam_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
-    pub fn set_default_iam_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_iam_role_arn(input);
         self
     }
@@ -226,10 +186,7 @@ impl UpdateNamespaceFluentBuilder {
         self
     }
     /// <p>A list of IAM roles to associate with the namespace. This parameter must be updated together with <code>defaultIamRoleArn</code>.</p>
-    pub fn set_iam_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_iam_roles(input);
         self
     }
@@ -247,17 +204,12 @@ impl UpdateNamespaceFluentBuilder {
         self
     }
     /// <p>The types of logs the namespace can export. The export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub fn set_log_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
-    ) -> Self {
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>) -> Self {
         self.inner = self.inner.set_log_exports(input);
         self
     }
     /// <p>The types of logs the namespace can export. The export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub fn get_log_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogExport>> {
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogExport>> {
         self.inner.get_log_exports()
     }
 }

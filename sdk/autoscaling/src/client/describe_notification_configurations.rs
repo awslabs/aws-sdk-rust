@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`notification_configurations(Option<Vec<NotificationConfiguration>>)`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput::notification_configurations): <p>The notification configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeNotificationConfigurationsError>`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError)
-    pub fn describe_notification_configurations(&self) -> crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder{
+    pub fn describe_notification_configurations(
+        &self,
+    ) -> crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder {
         crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

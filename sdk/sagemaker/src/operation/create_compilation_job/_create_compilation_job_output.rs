@@ -27,17 +27,14 @@ impl ::aws_http::request_id::RequestId for CreateCompilationJobOutput {
 }
 impl CreateCompilationJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateCompilationJobOutput`](crate::operation::create_compilation_job::CreateCompilationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_compilation_job::builders::CreateCompilationJobOutputBuilder {
+    pub fn builder() -> crate::operation::create_compilation_job::builders::CreateCompilationJobOutputBuilder {
         crate::operation::create_compilation_job::builders::CreateCompilationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCompilationJobOutput`](crate::operation::create_compilation_job::CreateCompilationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCompilationJobOutputBuilder {
     pub(crate) compilation_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -47,10 +44,7 @@ impl CreateCompilationJobOutputBuilder {
     /// <ul>
     /// <li> <p> <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p> </li>
     /// </ul>
-    pub fn compilation_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compilation_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -58,10 +52,7 @@ impl CreateCompilationJobOutputBuilder {
     /// <ul>
     /// <li> <p> <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p> </li>
     /// </ul>
-    pub fn set_compilation_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compilation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compilation_job_arn = input;
         self
     }

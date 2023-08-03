@@ -16,9 +16,7 @@ pub fn ser_update_query_suggestions_config_input(
         );
     }
     if let Some(var_4) = &input.include_queries_without_user_information {
-        object
-            .key("IncludeQueriesWithoutUserInformation")
-            .boolean(*var_4);
+        object.key("IncludeQueriesWithoutUserInformation").boolean(*var_4);
     }
     if let Some(var_5) = &input.minimum_number_of_querying_users {
         object.key("MinimumNumberOfQueryingUsers").number(

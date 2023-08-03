@@ -88,15 +88,11 @@ impl Component {
         self.last_modified_at.as_ref()
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
-    pub fn last_deployment_attempted_at(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the component was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The component deployment status.</p>
@@ -135,29 +131,14 @@ impl ::std::fmt::Debug for Component {
         formatter.field("service_instance_name", &self.service_instance_name);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_at", &self.last_modified_at);
-        formatter.field(
-            "last_deployment_attempted_at",
-            &self.last_deployment_attempted_at,
-        );
-        formatter.field(
-            "last_deployment_succeeded_at",
-            &self.last_deployment_succeeded_at,
-        );
+        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("last_client_request_token", &self.last_client_request_token);
-        formatter.field(
-            "last_attempted_deployment_id",
-            &self.last_attempted_deployment_id,
-        );
-        formatter.field(
-            "last_succeeded_deployment_id",
-            &self.last_succeeded_deployment_id,
-        );
+        formatter.field("last_attempted_deployment_id", &self.last_attempted_deployment_id);
+        formatter.field("last_succeeded_deployment_id", &self.last_succeeded_deployment_id);
         formatter.finish()
     }
 }
@@ -233,18 +214,12 @@ impl ComponentBuilder {
         &self.arn
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -267,18 +242,12 @@ impl ComponentBuilder {
         &self.service_name
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_instance_name = input;
         self
     }
@@ -292,10 +261,7 @@ impl ComponentBuilder {
         self
     }
     /// <p>The time when the component was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -309,10 +275,7 @@ impl ComponentBuilder {
         self
     }
     /// <p>The time when the component was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_at = input;
         self
     }
@@ -326,17 +289,12 @@ impl ComponentBuilder {
         self
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
-    pub fn set_last_deployment_attempted_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_deployment_attempted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_deployment_attempted_at = input;
         self
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
-    pub fn get_last_deployment_attempted_at(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_deployment_attempted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_deployment_attempted_at
     }
     /// <p>The time when the component was last deployed successfully.</p>
@@ -345,17 +303,12 @@ impl ComponentBuilder {
         self
     }
     /// <p>The time when the component was last deployed successfully.</p>
-    pub fn set_last_deployment_succeeded_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_deployment_succeeded_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_deployment_succeeded_at = input;
         self
     }
     /// <p>The time when the component was last deployed successfully.</p>
-    pub fn get_last_deployment_succeeded_at(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_deployment_succeeded_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_deployment_succeeded_at
     }
     /// <p>The component deployment status.</p>
@@ -364,10 +317,7 @@ impl ComponentBuilder {
         self
     }
     /// <p>The component deployment status.</p>
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.deployment_status = input;
         self
     }
@@ -376,18 +326,12 @@ impl ComponentBuilder {
         &self.deployment_status
     }
     /// <p>The message associated with the component deployment status.</p>
-    pub fn deployment_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message associated with the component deployment status.</p>
-    pub fn set_deployment_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_status_message = input;
         self
     }
@@ -410,18 +354,12 @@ impl ComponentBuilder {
         &self.service_spec
     }
     /// <p>The last token the client requested.</p>
-    pub fn last_client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last token the client requested.</p>
-    pub fn set_last_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_client_request_token = input;
         self
     }
@@ -430,47 +368,31 @@ impl ComponentBuilder {
         &self.last_client_request_token
     }
     /// <p>The ID of the last attempted deployment of this component.</p>
-    pub fn last_attempted_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_attempted_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_attempted_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the last attempted deployment of this component.</p>
-    pub fn set_last_attempted_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_attempted_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_attempted_deployment_id = input;
         self
     }
     /// <p>The ID of the last attempted deployment of this component.</p>
-    pub fn get_last_attempted_deployment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_attempted_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_attempted_deployment_id
     }
     /// <p>The ID of the last successful deployment of this component.</p>
-    pub fn last_succeeded_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_succeeded_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_succeeded_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the last successful deployment of this component.</p>
-    pub fn set_last_succeeded_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_succeeded_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_succeeded_deployment_id = input;
         self
     }
     /// <p>The ID of the last successful deployment of this component.</p>
-    pub fn get_last_succeeded_deployment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_succeeded_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_succeeded_deployment_id
     }
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).
@@ -506,29 +428,14 @@ impl ::std::fmt::Debug for ComponentBuilder {
         formatter.field("service_instance_name", &self.service_instance_name);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_at", &self.last_modified_at);
-        formatter.field(
-            "last_deployment_attempted_at",
-            &self.last_deployment_attempted_at,
-        );
-        formatter.field(
-            "last_deployment_succeeded_at",
-            &self.last_deployment_succeeded_at,
-        );
+        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("last_client_request_token", &self.last_client_request_token);
-        formatter.field(
-            "last_attempted_deployment_id",
-            &self.last_attempted_deployment_id,
-        );
-        formatter.field(
-            "last_succeeded_deployment_id",
-            &self.last_succeeded_deployment_id,
-        );
+        formatter.field("last_attempted_deployment_id", &self.last_attempted_deployment_id);
+        formatter.field("last_succeeded_deployment_id", &self.last_succeeded_deployment_id);
         formatter.finish()
     }
 }

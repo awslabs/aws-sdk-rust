@@ -30,8 +30,7 @@ pub struct RackPhysicalProperties {
     pub optical_standard: ::std::option::Option<crate::types::OpticalStandard>,
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
     #[doc(hidden)]
-    pub maximum_supported_weight_lbs:
-        ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
+    pub maximum_supported_weight_lbs: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
 }
 impl RackPhysicalProperties {
     /// <p>The power draw available at the hardware placement position for the rack. </p>
@@ -59,9 +58,7 @@ impl RackPhysicalProperties {
         self.uplink_count.as_ref()
     }
     /// <p>The type of fiber used to attach the Outpost to the network. </p>
-    pub fn fiber_optic_cable_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FiberOpticCableType> {
+    pub fn fiber_optic_cable_type(&self) -> ::std::option::Option<&crate::types::FiberOpticCableType> {
         self.fiber_optic_cable_type.as_ref()
     }
     /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
@@ -69,9 +66,7 @@ impl RackPhysicalProperties {
         self.optical_standard.as_ref()
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
-    pub fn maximum_supported_weight_lbs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaximumSupportedWeightLbs> {
+    pub fn maximum_supported_weight_lbs(&self) -> ::std::option::Option<&crate::types::MaximumSupportedWeightLbs> {
         self.maximum_supported_weight_lbs.as_ref()
     }
 }
@@ -84,9 +79,7 @@ impl RackPhysicalProperties {
 
 /// A builder for [`RackPhysicalProperties`](crate::types::RackPhysicalProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RackPhysicalPropertiesBuilder {
     pub(crate) power_draw_kva: ::std::option::Option<crate::types::PowerDrawKva>,
     pub(crate) power_phase: ::std::option::Option<crate::types::PowerPhase>,
@@ -96,8 +89,7 @@ pub struct RackPhysicalPropertiesBuilder {
     pub(crate) uplink_count: ::std::option::Option<crate::types::UplinkCount>,
     pub(crate) fiber_optic_cable_type: ::std::option::Option<crate::types::FiberOpticCableType>,
     pub(crate) optical_standard: ::std::option::Option<crate::types::OpticalStandard>,
-    pub(crate) maximum_supported_weight_lbs:
-        ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
+    pub(crate) maximum_supported_weight_lbs: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
 }
 impl RackPhysicalPropertiesBuilder {
     /// <p>The power draw available at the hardware placement position for the rack. </p>
@@ -106,10 +98,7 @@ impl RackPhysicalPropertiesBuilder {
         self
     }
     /// <p>The power draw available at the hardware placement position for the rack. </p>
-    pub fn set_power_draw_kva(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerDrawKva>,
-    ) -> Self {
+    pub fn set_power_draw_kva(mut self, input: ::std::option::Option<crate::types::PowerDrawKva>) -> Self {
         self.power_draw_kva = input;
         self
     }
@@ -123,10 +112,7 @@ impl RackPhysicalPropertiesBuilder {
         self
     }
     /// <p>The power option that you can provide for hardware.</p>
-    pub fn set_power_phase(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerPhase>,
-    ) -> Self {
+    pub fn set_power_phase(mut self, input: ::std::option::Option<crate::types::PowerPhase>) -> Self {
         self.power_phase = input;
         self
     }
@@ -140,10 +126,7 @@ impl RackPhysicalPropertiesBuilder {
         self
     }
     /// <p>The power connector for the hardware. </p>
-    pub fn set_power_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerConnector>,
-    ) -> Self {
+    pub fn set_power_connector(mut self, input: ::std::option::Option<crate::types::PowerConnector>) -> Self {
         self.power_connector = input;
         self
     }
@@ -157,10 +140,7 @@ impl RackPhysicalPropertiesBuilder {
         self
     }
     /// <p>The position of the power feed.</p>
-    pub fn set_power_feed_drop(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerFeedDrop>,
-    ) -> Self {
+    pub fn set_power_feed_drop(mut self, input: ::std::option::Option<crate::types::PowerFeedDrop>) -> Self {
         self.power_feed_drop = input;
         self
     }
@@ -174,10 +154,7 @@ impl RackPhysicalPropertiesBuilder {
         self
     }
     /// <p>The uplink speed the rack supports for the connection to the Region. </p>
-    pub fn set_uplink_gbps(
-        mut self,
-        input: ::std::option::Option<crate::types::UplinkGbps>,
-    ) -> Self {
+    pub fn set_uplink_gbps(mut self, input: ::std::option::Option<crate::types::UplinkGbps>) -> Self {
         self.uplink_gbps = input;
         self
     }
@@ -191,10 +168,7 @@ impl RackPhysicalPropertiesBuilder {
         self
     }
     /// <p>The number of uplinks each Outpost network device.</p>
-    pub fn set_uplink_count(
-        mut self,
-        input: ::std::option::Option<crate::types::UplinkCount>,
-    ) -> Self {
+    pub fn set_uplink_count(mut self, input: ::std::option::Option<crate::types::UplinkCount>) -> Self {
         self.uplink_count = input;
         self
     }
@@ -208,17 +182,12 @@ impl RackPhysicalPropertiesBuilder {
         self
     }
     /// <p>The type of fiber used to attach the Outpost to the network. </p>
-    pub fn set_fiber_optic_cable_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FiberOpticCableType>,
-    ) -> Self {
+    pub fn set_fiber_optic_cable_type(mut self, input: ::std::option::Option<crate::types::FiberOpticCableType>) -> Self {
         self.fiber_optic_cable_type = input;
         self
     }
     /// <p>The type of fiber used to attach the Outpost to the network. </p>
-    pub fn get_fiber_optic_cable_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::FiberOpticCableType> {
+    pub fn get_fiber_optic_cable_type(&self) -> &::std::option::Option<crate::types::FiberOpticCableType> {
         &self.fiber_optic_cable_type
     }
     /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
@@ -227,10 +196,7 @@ impl RackPhysicalPropertiesBuilder {
         self
     }
     /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
-    pub fn set_optical_standard(
-        mut self,
-        input: ::std::option::Option<crate::types::OpticalStandard>,
-    ) -> Self {
+    pub fn set_optical_standard(mut self, input: ::std::option::Option<crate::types::OpticalStandard>) -> Self {
         self.optical_standard = input;
         self
     }
@@ -239,25 +205,17 @@ impl RackPhysicalPropertiesBuilder {
         &self.optical_standard
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
-    pub fn maximum_supported_weight_lbs(
-        mut self,
-        input: crate::types::MaximumSupportedWeightLbs,
-    ) -> Self {
+    pub fn maximum_supported_weight_lbs(mut self, input: crate::types::MaximumSupportedWeightLbs) -> Self {
         self.maximum_supported_weight_lbs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
-    pub fn set_maximum_supported_weight_lbs(
-        mut self,
-        input: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
-    ) -> Self {
+    pub fn set_maximum_supported_weight_lbs(mut self, input: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>) -> Self {
         self.maximum_supported_weight_lbs = input;
         self
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
-    pub fn get_maximum_supported_weight_lbs(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaximumSupportedWeightLbs> {
+    pub fn get_maximum_supported_weight_lbs(&self) -> &::std::option::Option<crate::types::MaximumSupportedWeightLbs> {
         &self.maximum_supported_weight_lbs
     }
     /// Consumes the builder and constructs a [`RackPhysicalProperties`](crate::types::RackPhysicalProperties).

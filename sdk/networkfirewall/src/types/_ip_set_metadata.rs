@@ -23,9 +23,7 @@ impl IpSetMetadata {
 
 /// A builder for [`IpSetMetadata`](crate::types::IpSetMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpSetMetadataBuilder {
     pub(crate) resolved_cidr_count: ::std::option::Option<i32>,
 }

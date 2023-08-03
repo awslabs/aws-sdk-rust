@@ -30,9 +30,7 @@ impl ConnectorConfigRequest {
 
 /// A builder for [`ConnectorConfigRequest`](crate::types::ConnectorConfigRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorConfigRequestBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) provider: ::std::option::Option<crate::types::ConnectorConfigProvider>,
@@ -58,10 +56,7 @@ impl ConnectorConfigRequestBuilder {
         self
     }
     /// <p>The cloud provider for the target cluster to connect.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorConfigProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::ConnectorConfigProvider>) -> Self {
         self.provider = input;
         self
     }

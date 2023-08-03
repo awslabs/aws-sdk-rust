@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`endpoint_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointFluentBuilder::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointFluentBuilder::set_endpoint_id): <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     /// - On success, responds with [`DeregisterAppInstanceUserEndpointOutput`](crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput)
     /// - On failure, responds with [`SdkError<DeregisterAppInstanceUserEndpointError>`](crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError)
-    pub fn deregister_app_instance_user_endpoint(&self) -> crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointFluentBuilder{
+    pub fn deregister_app_instance_user_endpoint(
+        &self,
+    ) -> crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointFluentBuilder {
         crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointFluentBuilder::new(self.handle.clone())
     }
 }

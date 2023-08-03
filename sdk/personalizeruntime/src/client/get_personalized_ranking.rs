@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`personalized_ranking(Option<Vec<PredictedItem>>)`](crate::operation::get_personalized_ranking::GetPersonalizedRankingOutput::personalized_ranking): <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
     ///   - [`recommendation_id(Option<String>)`](crate::operation::get_personalized_ranking::GetPersonalizedRankingOutput::recommendation_id): <p>The ID of the recommendation.</p>
     /// - On failure, responds with [`SdkError<GetPersonalizedRankingError>`](crate::operation::get_personalized_ranking::GetPersonalizedRankingError)
-    pub fn get_personalized_ranking(
-        &self,
-    ) -> crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingFluentBuilder
-    {
+    pub fn get_personalized_ranking(&self) -> crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingFluentBuilder {
         crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateOrganizationOutput`](crate::operation::create_organization::CreateOrganizationOutput) with field(s):
     ///   - [`organization(Option<Organization>)`](crate::operation::create_organization::CreateOrganizationOutput::organization): <p>A structure that contains details about the newly created organization.</p>
     /// - On failure, responds with [`SdkError<CreateOrganizationError>`](crate::operation::create_organization::CreateOrganizationError)
-    pub fn create_organization(
-        &self,
-    ) -> crate::operation::create_organization::builders::CreateOrganizationFluentBuilder {
-        crate::operation::create_organization::builders::CreateOrganizationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_organization(&self) -> crate::operation::create_organization::builders::CreateOrganizationFluentBuilder {
+        crate::operation::create_organization::builders::CreateOrganizationFluentBuilder::new(self.handle.clone())
     }
 }

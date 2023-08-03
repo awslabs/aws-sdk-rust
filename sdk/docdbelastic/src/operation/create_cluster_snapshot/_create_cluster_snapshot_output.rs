@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateClusterSnapshotOutput {
 }
 impl CreateClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateClusterSnapshotOutput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotOutputBuilder {
         crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClusterSnapshotOutput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterSnapshotOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::ClusterSnapshot>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateClusterSnapshotOutputBuilder {
         self
     }
     /// <p>Returns information about the new Elastic DocumentDB snapshot.</p>
-    pub fn set_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterSnapshot>,
-    ) -> Self {
+    pub fn set_snapshot(mut self, input: ::std::option::Option<crate::types::ClusterSnapshot>) -> Self {
         self.snapshot = input;
         self
     }

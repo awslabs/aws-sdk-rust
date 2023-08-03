@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`backup_vault_name(impl ::std::convert::Into<String>)`](crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyFluentBuilder::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyFluentBuilder::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     /// - On success, responds with [`DeleteBackupVaultAccessPolicyOutput`](crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteBackupVaultAccessPolicyError>`](crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyError)
-    pub fn delete_backup_vault_access_policy(&self) -> crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyFluentBuilder{
+    pub fn delete_backup_vault_access_policy(
+        &self,
+    ) -> crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyFluentBuilder {
         crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

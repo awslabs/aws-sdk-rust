@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateStreamModeOutput {
 }
 impl UpdateStreamModeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamModeOutput`](crate::operation::update_stream_mode::UpdateStreamModeOutput).
-    pub fn builder() -> crate::operation::update_stream_mode::builders::UpdateStreamModeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_stream_mode::builders::UpdateStreamModeOutputBuilder {
         crate::operation::update_stream_mode::builders::UpdateStreamModeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStreamModeOutput`](crate::operation::update_stream_mode::UpdateStreamModeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStreamModeOutputBuilder {
     _request_id: Option<String>,
 }

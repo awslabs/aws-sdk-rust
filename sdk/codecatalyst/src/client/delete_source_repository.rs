@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`project_name(Option<String>)`](crate::operation::delete_source_repository::DeleteSourceRepositoryOutput::project_name): <p>The name of the project in the space.</p>
     ///   - [`name(Option<String>)`](crate::operation::delete_source_repository::DeleteSourceRepositoryOutput::name): <p>The name of the repository.</p>
     /// - On failure, responds with [`SdkError<DeleteSourceRepositoryError>`](crate::operation::delete_source_repository::DeleteSourceRepositoryError)
-    pub fn delete_source_repository(
-        &self,
-    ) -> crate::operation::delete_source_repository::builders::DeleteSourceRepositoryFluentBuilder
-    {
+    pub fn delete_source_repository(&self) -> crate::operation::delete_source_repository::builders::DeleteSourceRepositoryFluentBuilder {
         crate::operation::delete_source_repository::builders::DeleteSourceRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

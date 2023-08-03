@@ -37,9 +37,7 @@ impl AttachmentReference {
 
 /// A builder for [`AttachmentReference`](crate::types::AttachmentReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachmentReferenceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl AttachmentReferenceBuilder {
         self
     }
     /// <p>Status of the attachment reference type.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReferenceStatus>) -> Self {
         self.status = input;
         self
     }

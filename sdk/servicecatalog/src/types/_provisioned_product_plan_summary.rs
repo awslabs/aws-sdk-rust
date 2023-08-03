@@ -58,9 +58,7 @@ impl ProvisionedProductPlanSummary {
 
 /// A builder for [`ProvisionedProductPlanSummary`](crate::types::ProvisionedProductPlanSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedProductPlanSummaryBuilder {
     pub(crate) plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) plan_id: ::std::option::Option<::std::string::String>,
@@ -99,18 +97,12 @@ impl ProvisionedProductPlanSummaryBuilder {
         &self.plan_id
     }
     /// <p>The product identifier.</p>
-    pub fn provision_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provision_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provision_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product identifier.</p>
-    pub fn set_provision_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provision_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provision_product_id = input;
         self
     }
@@ -119,18 +111,12 @@ impl ProvisionedProductPlanSummaryBuilder {
         &self.provision_product_id
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provision_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provision_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provision_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn set_provision_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provision_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provision_product_name = input;
         self
     }
@@ -144,32 +130,21 @@ impl ProvisionedProductPlanSummaryBuilder {
         self
     }
     /// <p>The plan type.</p>
-    pub fn set_plan_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedProductPlanType>,
-    ) -> Self {
+    pub fn set_plan_type(mut self, input: ::std::option::Option<crate::types::ProvisionedProductPlanType>) -> Self {
         self.plan_type = input;
         self
     }
     /// <p>The plan type.</p>
-    pub fn get_plan_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedProductPlanType> {
+    pub fn get_plan_type(&self) -> &::std::option::Option<crate::types::ProvisionedProductPlanType> {
         &self.plan_type
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }

@@ -29,17 +29,14 @@ impl ListApplicationsInput {
 }
 impl ListApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder {
         crate::operation::list_applications::builders::ListApplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -86,26 +83,18 @@ impl ListApplicationsInputBuilder {
         self
     }
     /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>) -> Self {
         self.states = input;
         self
     }
     /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>> {
         &self.states
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_applications::ListApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
             next_token: self.next_token,
             max_results: self.max_results,

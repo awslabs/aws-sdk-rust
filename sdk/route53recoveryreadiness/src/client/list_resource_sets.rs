@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_sets::ListResourceSetsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`resource_sets(Option<Vec<ResourceSetOutput>>)`](crate::operation::list_resource_sets::ListResourceSetsOutput::resource_sets): <p>A list of resource sets associated with the account.</p>
     /// - On failure, responds with [`SdkError<ListResourceSetsError>`](crate::operation::list_resource_sets::ListResourceSetsError)
-    pub fn list_resource_sets(
-        &self,
-    ) -> crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder {
-        crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resource_sets(&self) -> crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder {
+        crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::new(self.handle.clone())
     }
 }

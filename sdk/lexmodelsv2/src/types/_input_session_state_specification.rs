@@ -6,9 +6,7 @@
 pub struct InputSessionStateSpecification {
     /// <p>Session attributes for the session state.</p>
     #[doc(hidden)]
-    pub session_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Active contexts for the session state.</p>
     #[doc(hidden)]
     pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
@@ -18,11 +16,7 @@ pub struct InputSessionStateSpecification {
 }
 impl InputSessionStateSpecification {
     /// <p>Session attributes for the session state.</p>
-    pub fn session_attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn session_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.session_attributes.as_ref()
     }
     /// <p>Active contexts for the session state.</p>
@@ -43,13 +37,9 @@ impl InputSessionStateSpecification {
 
 /// A builder for [`InputSessionStateSpecification`](crate::types::InputSessionStateSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputSessionStateSpecificationBuilder {
-    pub(crate) session_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
     pub(crate) runtime_hints: ::std::option::Option<crate::types::RuntimeHints>,
 }
@@ -72,19 +62,13 @@ impl InputSessionStateSpecificationBuilder {
     /// <p>Session attributes for the session state.</p>
     pub fn set_session_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.session_attributes = input;
         self
     }
     /// <p>Session attributes for the session state.</p>
-    pub fn get_session_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.session_attributes
     }
     /// Appends an item to `active_contexts`.
@@ -99,17 +83,12 @@ impl InputSessionStateSpecificationBuilder {
         self
     }
     /// <p>Active contexts for the session state.</p>
-    pub fn set_active_contexts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
-    ) -> Self {
+    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>) -> Self {
         self.active_contexts = input;
         self
     }
     /// <p>Active contexts for the session state.</p>
-    pub fn get_active_contexts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
         &self.active_contexts
     }
     /// <p>Runtime hints for the session state.</p>
@@ -118,10 +97,7 @@ impl InputSessionStateSpecificationBuilder {
         self
     }
     /// <p>Runtime hints for the session state.</p>
-    pub fn set_runtime_hints(
-        mut self,
-        input: ::std::option::Option<crate::types::RuntimeHints>,
-    ) -> Self {
+    pub fn set_runtime_hints(mut self, input: ::std::option::Option<crate::types::RuntimeHints>) -> Self {
         self.runtime_hints = input;
         self
     }

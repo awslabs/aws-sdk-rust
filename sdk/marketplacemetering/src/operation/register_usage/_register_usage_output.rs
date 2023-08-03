@@ -13,9 +13,7 @@ pub struct RegisterUsageOutput {
 }
 impl RegisterUsageOutput {
     /// <p>(Optional) Only included when public key version has expired</p>
-    pub fn public_key_rotation_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn public_key_rotation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.public_key_rotation_timestamp.as_ref()
     }
     /// <p>JWT Token</p>
@@ -37,9 +35,7 @@ impl RegisterUsageOutput {
 
 /// A builder for [`RegisterUsageOutput`](crate::operation::register_usage::RegisterUsageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterUsageOutputBuilder {
     pub(crate) public_key_rotation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) signature: ::std::option::Option<::std::string::String>,
@@ -52,17 +48,12 @@ impl RegisterUsageOutputBuilder {
         self
     }
     /// <p>(Optional) Only included when public key version has expired</p>
-    pub fn set_public_key_rotation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_public_key_rotation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.public_key_rotation_timestamp = input;
         self
     }
     /// <p>(Optional) Only included when public key version has expired</p>
-    pub fn get_public_key_rotation_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_public_key_rotation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.public_key_rotation_timestamp
     }
     /// <p>JWT Token</p>

@@ -14,8 +14,7 @@ pub struct AssociateDataShareConsumerOutput {
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     #[doc(hidden)]
-    pub data_share_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>>,
+    pub data_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
     #[doc(hidden)]
     pub managed_by: ::std::option::Option<::std::string::String>,
@@ -35,9 +34,7 @@ impl AssociateDataShareConsumerOutput {
         self.allow_publicly_accessible_consumers
     }
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
-    pub fn data_share_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataShareAssociation]> {
+    pub fn data_share_associations(&self) -> ::std::option::Option<&[crate::types::DataShareAssociation]> {
         self.data_share_associations.as_deref()
     }
     /// <p>The identifier of a datashare to show its managing entity.</p>
@@ -52,39 +49,30 @@ impl ::aws_http::request_id::RequestId for AssociateDataShareConsumerOutput {
 }
 impl AssociateDataShareConsumerOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDataShareConsumerOutput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput).
-    pub fn builder() -> crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerOutputBuilder{
+    pub fn builder() -> crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerOutputBuilder {
         crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDataShareConsumerOutput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDataShareConsumerOutputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) producer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) allow_publicly_accessible_consumers: ::std::option::Option<bool>,
-    pub(crate) data_share_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>>,
+    pub(crate) data_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>>,
     pub(crate) managed_by: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateDataShareConsumerOutputBuilder {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
-    pub fn data_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
-    pub fn set_data_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
@@ -112,10 +100,7 @@ impl AssociateDataShareConsumerOutputBuilder {
         self
     }
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
-    pub fn set_allow_publicly_accessible_consumers(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_allow_publicly_accessible_consumers(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_publicly_accessible_consumers = input;
         self
     }
@@ -135,17 +120,12 @@ impl AssociateDataShareConsumerOutputBuilder {
         self
     }
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
-    pub fn set_data_share_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>>,
-    ) -> Self {
+    pub fn set_data_share_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>>) -> Self {
         self.data_share_associations = input;
         self
     }
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
-    pub fn get_data_share_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>> {
+    pub fn get_data_share_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>> {
         &self.data_share_associations
     }
     /// <p>The identifier of a datashare to show its managing entity.</p>
@@ -172,15 +152,11 @@ impl AssociateDataShareConsumerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateDataShareConsumerOutput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput {
+    pub fn build(self) -> crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput {
         crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput {
             data_share_arn: self.data_share_arn,
             producer_arn: self.producer_arn,
-            allow_publicly_accessible_consumers: self
-                .allow_publicly_accessible_consumers
-                .unwrap_or_default(),
+            allow_publicly_accessible_consumers: self.allow_publicly_accessible_consumers.unwrap_or_default(),
             data_share_associations: self.data_share_associations,
             managed_by: self.managed_by,
             _request_id: self._request_id,

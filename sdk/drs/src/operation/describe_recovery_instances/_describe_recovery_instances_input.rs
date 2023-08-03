@@ -15,9 +15,7 @@ pub struct DescribeRecoveryInstancesInput {
 }
 impl DescribeRecoveryInstancesInput {
     /// <p>A set of filters by which to return Recovery Instances.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DescribeRecoveryInstancesRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::DescribeRecoveryInstancesRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum number of Recovery Instances to retrieve.</p>
@@ -31,19 +29,16 @@ impl DescribeRecoveryInstancesInput {
 }
 impl DescribeRecoveryInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeRecoveryInstancesInput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput).
-    pub fn builder() -> crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder {
         crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecoveryInstancesInput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
+    pub(crate) filters: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -54,17 +49,12 @@ impl DescribeRecoveryInstancesInputBuilder {
         self
     }
     /// <p>A set of filters by which to return Recovery Instances.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A set of filters by which to return Recovery Instances.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters> {
         &self.filters
     }
     /// <p>Maximum number of Recovery Instances to retrieve.</p>
@@ -102,12 +92,10 @@ impl DescribeRecoveryInstancesInputBuilder {
         crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput {
-                filters: self.filters,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput {
+            filters: self.filters,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

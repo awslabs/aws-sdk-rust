@@ -36,9 +36,7 @@ impl ConsolidatedReportMetric {
         self.metric_type.as_ref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn risk_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -76,13 +74,10 @@ impl ConsolidatedReportMetric {
 
 /// A builder for [`ConsolidatedReportMetric`](crate::types::ConsolidatedReportMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConsolidatedReportMetricBuilder {
     pub(crate) metric_type: ::std::option::Option<crate::types::MetricType>,
-    pub(crate) risk_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) workload_arn: ::std::option::Option<::std::string::String>,
@@ -97,10 +92,7 @@ impl ConsolidatedReportMetricBuilder {
         self
     }
     /// <p>The metric type of a metric in the consolidated report. Currently only WORKLOAD metric types are supported.</p>
-    pub fn set_metric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricType>,
-    ) -> Self {
+    pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.metric_type = input;
         self
     }
@@ -120,17 +112,12 @@ impl ConsolidatedReportMetricBuilder {
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_risk_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
-    ) -> Self {
+    pub fn set_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
         self.risk_counts = input;
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_risk_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
         &self.risk_counts
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -149,19 +136,13 @@ impl ConsolidatedReportMetricBuilder {
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn set_workload_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_name = input;
         self
     }
@@ -190,10 +171,7 @@ impl ConsolidatedReportMetricBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -213,10 +191,7 @@ impl ConsolidatedReportMetricBuilder {
         self
     }
     /// <p>The metrics for the lenses in the workload.</p>
-    pub fn set_lenses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LensMetric>>,
-    ) -> Self {
+    pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LensMetric>>) -> Self {
         self.lenses = input;
         self
     }

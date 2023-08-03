@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetPipelineExecutionOutput`](crate::operation::get_pipeline_execution::GetPipelineExecutionOutput) with field(s):
     ///   - [`pipeline_execution(Option<PipelineExecution>)`](crate::operation::get_pipeline_execution::GetPipelineExecutionOutput::pipeline_execution): <p>Represents information about the execution of a pipeline.</p>
     /// - On failure, responds with [`SdkError<GetPipelineExecutionError>`](crate::operation::get_pipeline_execution::GetPipelineExecutionError)
-    pub fn get_pipeline_execution(
-        &self,
-    ) -> crate::operation::get_pipeline_execution::builders::GetPipelineExecutionFluentBuilder {
-        crate::operation::get_pipeline_execution::builders::GetPipelineExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_pipeline_execution(&self) -> crate::operation::get_pipeline_execution::builders::GetPipelineExecutionFluentBuilder {
+        crate::operation::get_pipeline_execution::builders::GetPipelineExecutionFluentBuilder::new(self.handle.clone())
     }
 }

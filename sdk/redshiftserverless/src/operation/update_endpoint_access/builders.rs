@@ -37,9 +37,7 @@ impl UpdateEndpointAccessFluentBuilder {
         }
     }
     /// Access the UpdateEndpointAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_endpoint_access::builders::UpdateEndpointAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_endpoint_access::builders::UpdateEndpointAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateEndpointAccessFluentBuilder {
             crate::operation::update_endpoint_access::UpdateEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint_access::UpdateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_access::UpdateEndpointAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateEndpointAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_endpoint_access::UpdateEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint_access::UpdateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_access::UpdateEndpointAccessError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_endpoint_access::UpdateEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint_access::UpdateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_access::UpdateEndpointAccessError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateEndpointAccessFluentBuilder {
             crate::operation::update_endpoint_access::UpdateEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint_access::UpdateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_access::UpdateEndpointAccessError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the VPC endpoint to update.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>The name of the VPC endpoint to update.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
@@ -147,25 +128,17 @@ impl UpdateEndpointAccessFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>The list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
     /// <p>The list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>The list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
 }

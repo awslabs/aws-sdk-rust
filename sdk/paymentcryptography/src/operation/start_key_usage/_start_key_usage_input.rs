@@ -22,26 +22,18 @@ impl StartKeyUsageInput {
 
 /// A builder for [`StartKeyUsageInput`](crate::operation::start_key_usage::StartKeyUsageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartKeyUsageInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartKeyUsageInputBuilder {
     /// <p>The <code>KeyArn</code> of the key.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyArn</code> of the key.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_identifier = input;
         self
     }
@@ -52,10 +44,7 @@ impl StartKeyUsageInputBuilder {
     /// Consumes the builder and constructs a [`StartKeyUsageInput`](crate::operation::start_key_usage::StartKeyUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_key_usage::StartKeyUsageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_key_usage::StartKeyUsageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_key_usage::StartKeyUsageInput {
             key_identifier: self.key_identifier,
         })

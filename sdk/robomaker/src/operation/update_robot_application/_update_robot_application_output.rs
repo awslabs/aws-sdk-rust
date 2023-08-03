@@ -70,18 +70,14 @@ impl ::aws_http::request_id::RequestId for UpdateRobotApplicationOutput {
 }
 impl UpdateRobotApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRobotApplicationOutput`](crate::operation::update_robot_application::UpdateRobotApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_robot_application::builders::UpdateRobotApplicationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_robot_application::builders::UpdateRobotApplicationOutputBuilder {
         crate::operation::update_robot_application::builders::UpdateRobotApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRobotApplicationOutput`](crate::operation::update_robot_application::UpdateRobotApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRobotApplicationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -148,10 +144,7 @@ impl UpdateRobotApplicationOutputBuilder {
         self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>) -> Self {
         self.sources = input;
         self
     }
@@ -165,17 +158,12 @@ impl UpdateRobotApplicationOutputBuilder {
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn get_robot_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
@@ -184,10 +172,7 @@ impl UpdateRobotApplicationOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -215,10 +200,7 @@ impl UpdateRobotApplicationOutputBuilder {
         self
     }
     /// <p>The object that contains the Docker image URI for your robot application.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }

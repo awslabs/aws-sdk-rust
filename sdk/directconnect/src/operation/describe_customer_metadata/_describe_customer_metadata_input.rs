@@ -5,18 +5,14 @@
 pub struct DescribeCustomerMetadataInput {}
 impl DescribeCustomerMetadataInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataInput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataInputBuilder {
         crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomerMetadataInput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomerMetadataInputBuilder {}
 impl DescribeCustomerMetadataInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCustomerMetadataInput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput).
@@ -26,8 +22,6 @@ impl DescribeCustomerMetadataInputBuilder {
         crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput {})
     }
 }

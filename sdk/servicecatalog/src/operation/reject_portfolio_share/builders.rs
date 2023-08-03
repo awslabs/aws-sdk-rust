@@ -37,9 +37,7 @@ impl RejectPortfolioShareFluentBuilder {
         }
     }
     /// Access the RejectPortfolioShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reject_portfolio_share::builders::RejectPortfolioShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reject_portfolio_share::builders::RejectPortfolioShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl RejectPortfolioShareFluentBuilder {
             crate::operation::reject_portfolio_share::RejectPortfolioShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_portfolio_share::RejectPortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_portfolio_share::RejectPortfolioShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl RejectPortfolioShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl RejectPortfolioShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_portfolio_share::RejectPortfolioShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_portfolio_share::RejectPortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_portfolio_share::RejectPortfolioShareError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl RejectPortfolioShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_portfolio_share::RejectPortfolioShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_portfolio_share::RejectPortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_portfolio_share::RejectPortfolioShareError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl RejectPortfolioShareFluentBuilder {
             crate::operation::reject_portfolio_share::RejectPortfolioShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_portfolio_share::RejectPortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_portfolio_share::RejectPortfolioShareError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +114,7 @@ impl RejectPortfolioShareFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -139,10 +123,7 @@ impl RejectPortfolioShareFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -186,10 +167,7 @@ impl RejectPortfolioShareFluentBuilder {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
     /// </ul>
     /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
-    pub fn set_portfolio_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PortfolioShareType>,
-    ) -> Self {
+    pub fn set_portfolio_share_type(mut self, input: ::std::option::Option<crate::types::PortfolioShareType>) -> Self {
         self.inner = self.inner.set_portfolio_share_type(input);
         self
     }
@@ -200,9 +178,7 @@ impl RejectPortfolioShareFluentBuilder {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
     /// </ul>
     /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
-    pub fn get_portfolio_share_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PortfolioShareType> {
+    pub fn get_portfolio_share_type(&self) -> &::std::option::Option<crate::types::PortfolioShareType> {
         self.inner.get_portfolio_share_type()
     }
 }

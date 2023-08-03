@@ -27,27 +27,16 @@ impl ListExtensionAssociationsInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::list_extension_associations::ListExtensionAssociationsInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/extensionassociations").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -55,23 +44,16 @@ impl ListExtensionAssociationsInput {
             fn uri_query(
                 _input: &crate::operation::list_extension_associations::ListExtensionAssociationsInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.resource_identifier {
                     {
-                        query.push_kv(
-                            "resource_identifier",
-                            &::aws_smithy_http::query::fmt_string(&inner_1),
-                        );
+                        query.push_kv("resource_identifier", &::aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.extension_identifier {
                     {
-                        query.push_kv(
-                            "extension_identifier",
-                            &::aws_smithy_http::query::fmt_string(&inner_2),
-                        );
+                        query.push_kv("extension_identifier", &::aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.extension_version_number {
@@ -84,18 +66,12 @@ impl ListExtensionAssociationsInput {
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {
                     if *inner_4 != 0 {
-                        query.push_kv(
-                            "max_results",
-                            ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
-                        );
+                        query.push_kv("max_results", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv(
-                            "next_token",
-                            &::aws_smithy_http::query::fmt_string(&inner_5),
-                        );
+                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -104,10 +80,7 @@ impl ListExtensionAssociationsInput {
             fn update_http_builder(
                 input: &crate::operation::list_extension_associations::ListExtensionAssociationsInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -129,10 +102,8 @@ impl ListExtensionAssociationsInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -141,29 +112,17 @@ impl ListExtensionAssociationsInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::list_extension_associations::ListExtensionAssociations::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "ListExtensionAssociations",
-            "appconfig",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op =
+            ::aws_smithy_http::operation::Operation::new(request, crate::operation::list_extension_associations::ListExtensionAssociations::new())
+                .with_metadata(::aws_smithy_http::operation::Metadata::new("ListExtensionAssociations", "appconfig"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -217,9 +176,7 @@ pub enum ListExtensionAssociationsError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for ListExtensionAssociationsError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -241,21 +198,13 @@ impl ::std::fmt::Display for ListExtensionAssociationsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListExtensionAssociationsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BadRequestException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InternalServerException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::list_extension_associations::ListExtensionAssociationsError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::list_extension_associations::ListExtensionAssociationsError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -271,27 +220,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListExtensionAssociationsEr
 impl ListExtensionAssociationsError {
     /// Creates the `ListExtensionAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `ListExtensionAssociationsError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

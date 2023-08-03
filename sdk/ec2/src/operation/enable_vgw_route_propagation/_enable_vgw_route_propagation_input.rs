@@ -30,16 +30,14 @@ impl EnableVgwRoutePropagationInput {
 }
 impl EnableVgwRoutePropagationInput {
     /// Creates a new builder-style object to manufacture [`EnableVgwRoutePropagationInput`](crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationInput).
-    pub fn builder() -> crate::operation::enable_vgw_route_propagation::builders::EnableVgwRoutePropagationInputBuilder{
+    pub fn builder() -> crate::operation::enable_vgw_route_propagation::builders::EnableVgwRoutePropagationInputBuilder {
         crate::operation::enable_vgw_route_propagation::builders::EnableVgwRoutePropagationInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableVgwRoutePropagationInput`](crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableVgwRoutePropagationInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl EnableVgwRoutePropagationInputBuilder {
         &self.gateway_id
     }
     /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_id = input;
         self
     }
@@ -101,12 +93,10 @@ impl EnableVgwRoutePropagationInputBuilder {
         crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationInput {
-                gateway_id: self.gateway_id,
-                route_table_id: self.route_table_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationInput {
+            gateway_id: self.gateway_id,
+            route_table_id: self.route_table_id,
+            dry_run: self.dry_run,
+        })
     }
 }

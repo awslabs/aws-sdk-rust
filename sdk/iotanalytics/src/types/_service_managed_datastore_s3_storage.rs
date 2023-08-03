@@ -13,9 +13,7 @@ impl ServiceManagedDatastoreS3Storage {
 
 /// A builder for [`ServiceManagedDatastoreS3Storage`](crate::types::ServiceManagedDatastoreS3Storage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceManagedDatastoreS3StorageBuilder {}
 impl ServiceManagedDatastoreS3StorageBuilder {
     /// Consumes the builder and constructs a [`ServiceManagedDatastoreS3Storage`](crate::types::ServiceManagedDatastoreS3Storage).

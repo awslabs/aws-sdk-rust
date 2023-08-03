@@ -35,9 +35,7 @@ impl DescribeHostsOutput {
 
 /// A builder for [`DescribeHostsOutput`](crate::operation::describe_hosts::DescribeHostsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHostsOutputBuilder {
     pub(crate) hosts: ::std::option::Option<::std::vec::Vec<crate::types::Host>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl DescribeHostsOutputBuilder {
         self
     }
     /// <p>Information about the Dedicated Hosts.</p>
-    pub fn set_hosts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Host>>,
-    ) -> Self {
+    pub fn set_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Host>>) -> Self {
         self.hosts = input;
         self
     }

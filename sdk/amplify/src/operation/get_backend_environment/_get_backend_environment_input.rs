@@ -23,18 +23,14 @@ impl GetBackendEnvironmentInput {
 }
 impl GetBackendEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`GetBackendEnvironmentInput`](crate::operation::get_backend_environment::GetBackendEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::get_backend_environment::builders::GetBackendEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_backend_environment::builders::GetBackendEnvironmentInputBuilder {
         crate::operation::get_backend_environment::builders::GetBackendEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackendEnvironmentInput`](crate::operation::get_backend_environment::GetBackendEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackendEnvironmentInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +51,12 @@ impl GetBackendEnvironmentInputBuilder {
         &self.app_id
     }
     /// <p> The name for the backend environment. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name for the backend environment. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -77,15 +67,11 @@ impl GetBackendEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`GetBackendEnvironmentInput`](crate::operation::get_backend_environment::GetBackendEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_backend_environment::GetBackendEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_backend_environment::GetBackendEnvironmentInput {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_backend_environment::GetBackendEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_backend_environment::GetBackendEnvironmentInput {
+            app_id: self.app_id,
+            environment_name: self.environment_name,
+        })
     }
 }

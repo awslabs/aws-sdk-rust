@@ -29,18 +29,14 @@ impl ResumeContactRecordingInput {
 }
 impl ResumeContactRecordingInput {
     /// Creates a new builder-style object to manufacture [`ResumeContactRecordingInput`](crate::operation::resume_contact_recording::ResumeContactRecordingInput).
-    pub fn builder(
-    ) -> crate::operation::resume_contact_recording::builders::ResumeContactRecordingInputBuilder
-    {
+    pub fn builder() -> crate::operation::resume_contact_recording::builders::ResumeContactRecordingInputBuilder {
         crate::operation::resume_contact_recording::builders::ResumeContactRecordingInputBuilder::default()
     }
 }
 
 /// A builder for [`ResumeContactRecordingInput`](crate::operation::resume_contact_recording::ResumeContactRecordingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeContactRecordingInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +72,12 @@ impl ResumeContactRecordingInputBuilder {
         &self.contact_id
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn initial_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn set_initial_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initial_contact_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl ResumeContactRecordingInputBuilder {
     /// Consumes the builder and constructs a [`ResumeContactRecordingInput`](crate::operation::resume_contact_recording::ResumeContactRecordingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resume_contact_recording::ResumeContactRecordingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::resume_contact_recording::ResumeContactRecordingInput {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                initial_contact_id: self.initial_contact_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::resume_contact_recording::ResumeContactRecordingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::resume_contact_recording::ResumeContactRecordingInput {
+            instance_id: self.instance_id,
+            contact_id: self.contact_id,
+            initial_contact_id: self.initial_contact_id,
+        })
     }
 }

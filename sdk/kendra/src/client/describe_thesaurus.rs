@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`term_count(Option<i64>)`](crate::operation::describe_thesaurus::DescribeThesaurusOutput::term_count): <p>The number of unique terms in the thesaurus file. For example, the synonyms <code>a,b,c</code> and <code>a=&gt;d</code>, the term count would be 4. </p>
     ///   - [`synonym_rule_count(Option<i64>)`](crate::operation::describe_thesaurus::DescribeThesaurusOutput::synonym_rule_count): <p>The number of synonym rules in the thesaurus file.</p>
     /// - On failure, responds with [`SdkError<DescribeThesaurusError>`](crate::operation::describe_thesaurus::DescribeThesaurusError)
-    pub fn describe_thesaurus(
-        &self,
-    ) -> crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder {
-        crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_thesaurus(&self) -> crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder {
+        crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder::new(self.handle.clone())
     }
 }

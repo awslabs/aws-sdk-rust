@@ -10,10 +10,7 @@ impl ListReviewableHiTsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hi_ts::ListReviewableHITsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_reviewable_hi_ts();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListReviewableHITsFluentBuilder {
         }
     }
     /// Access the ListReviewableHITs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListReviewableHITsFluentBuilder {
             crate::operation::list_reviewable_hi_ts::ListReviewableHITs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hi_ts::ListReviewableHITsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListReviewableHITsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListReviewableHITsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hi_ts::ListReviewableHITsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListReviewableHITsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hi_ts::ListReviewableHITsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListReviewableHITsFluentBuilder {
             crate::operation::list_reviewable_hi_ts::ListReviewableHITs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hi_ts::ListReviewableHITsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator {
-        crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator {
+        crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator::new(self.handle, self.inner)
     }
     /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,10 +132,7 @@ impl ListReviewableHITsFluentBuilder {
         self
     }
     /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewableHitStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReviewableHitStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

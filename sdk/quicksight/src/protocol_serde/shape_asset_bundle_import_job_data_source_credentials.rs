@@ -6,7 +6,10 @@ pub fn ser_asset_bundle_import_job_data_source_credentials(
     if let Some(var_1) = &input.credential_pair {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CredentialPair").start_object();
-        crate::protocol_serde::shape_asset_bundle_import_job_data_source_credential_pair::ser_asset_bundle_import_job_data_source_credential_pair(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_asset_bundle_import_job_data_source_credential_pair::ser_asset_bundle_import_job_data_source_credential_pair(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.secret_arn {
@@ -17,61 +20,45 @@ pub fn ser_asset_bundle_import_job_data_source_credentials(
 
 pub(crate) fn de_asset_bundle_import_job_data_source_credentials<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AssetBundleImportJobDataSourceCredentials>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AssetBundleImportJobDataSourceCredentials>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AssetBundleImportJobDataSourceCredentialsBuilder::default();
+            let mut builder = crate::types::builders::AssetBundleImportJobDataSourceCredentialsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CredentialPair" => {
-                                builder = builder.set_credential_pair(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CredentialPair" => {
+                            builder = builder.set_credential_pair(
                                     crate::protocol_serde::shape_asset_bundle_import_job_data_source_credential_pair::de_asset_bundle_import_job_data_source_credential_pair(tokens)?
                                 );
-                            }
-                            "SecretArn" => {
-                                builder = builder.set_secret_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "SecretArn" => {
+                            builder = builder.set_secret_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

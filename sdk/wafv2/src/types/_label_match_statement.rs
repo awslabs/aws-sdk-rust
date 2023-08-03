@@ -41,9 +41,7 @@ impl LabelMatchStatement {
 
 /// A builder for [`LabelMatchStatement`](crate::types::LabelMatchStatement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelMatchStatementBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::LabelMatchScope>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -55,10 +53,7 @@ impl LabelMatchStatementBuilder {
         self
     }
     /// <p>Specify whether you want to match using the label name or just the namespace. </p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelMatchScope>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::LabelMatchScope>) -> Self {
         self.scope = input;
         self
     }

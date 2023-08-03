@@ -62,18 +62,14 @@ impl PutSubscriptionFilterInput {
 }
 impl PutSubscriptionFilterInput {
     /// Creates a new builder-style object to manufacture [`PutSubscriptionFilterInput`](crate::operation::put_subscription_filter::PutSubscriptionFilterInput).
-    pub fn builder(
-    ) -> crate::operation::put_subscription_filter::builders::PutSubscriptionFilterInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_subscription_filter::builders::PutSubscriptionFilterInputBuilder {
         crate::operation::put_subscription_filter::builders::PutSubscriptionFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`PutSubscriptionFilterInput`](crate::operation::put_subscription_filter::PutSubscriptionFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSubscriptionFilterInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_name: ::std::option::Option<::std::string::String>,
@@ -84,18 +80,12 @@ pub struct PutSubscriptionFilterInputBuilder {
 }
 impl PutSubscriptionFilterInputBuilder {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -118,18 +108,12 @@ impl PutSubscriptionFilterInputBuilder {
         &self.filter_name
     }
     /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
-    pub fn filter_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
-    pub fn set_filter_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_pattern = input;
         self
     }
@@ -144,10 +128,7 @@ impl PutSubscriptionFilterInputBuilder {
     /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -158,10 +139,7 @@ impl PutSubscriptionFilterInputBuilder {
     /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -195,10 +173,7 @@ impl PutSubscriptionFilterInputBuilder {
         self
     }
     /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream. </p>
-    pub fn set_distribution(
-        mut self,
-        input: ::std::option::Option<crate::types::Distribution>,
-    ) -> Self {
+    pub fn set_distribution(mut self, input: ::std::option::Option<crate::types::Distribution>) -> Self {
         self.distribution = input;
         self
     }
@@ -209,19 +184,15 @@ impl PutSubscriptionFilterInputBuilder {
     /// Consumes the builder and constructs a [`PutSubscriptionFilterInput`](crate::operation::put_subscription_filter::PutSubscriptionFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_subscription_filter::PutSubscriptionFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_subscription_filter::PutSubscriptionFilterInput {
-                log_group_name: self.log_group_name,
-                filter_name: self.filter_name,
-                filter_pattern: self.filter_pattern,
-                destination_arn: self.destination_arn,
-                role_arn: self.role_arn,
-                distribution: self.distribution,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_subscription_filter::PutSubscriptionFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_subscription_filter::PutSubscriptionFilterInput {
+            log_group_name: self.log_group_name,
+            filter_name: self.filter_name,
+            filter_pattern: self.filter_pattern,
+            destination_arn: self.destination_arn,
+            role_arn: self.role_arn,
+            distribution: self.distribution,
+        })
     }
 }

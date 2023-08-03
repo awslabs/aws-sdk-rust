@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListNotificationChannelsOutput {
 }
 impl ListNotificationChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotificationChannelsOutput`](crate::operation::list_notification_channels::ListNotificationChannelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_notification_channels::builders::ListNotificationChannelsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_notification_channels::builders::ListNotificationChannelsOutputBuilder {
         crate::operation::list_notification_channels::builders::ListNotificationChannelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotificationChannelsOutput`](crate::operation::list_notification_channels::ListNotificationChannelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotificationChannelsOutputBuilder {
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListNotificationChannelsOutputBuilder {
         self
     }
     /// <p> An array that contains the requested notification channels. </p>
-    pub fn set_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>>,
-    ) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>>) -> Self {
         self.channels = input;
         self
     }
     /// <p> An array that contains the requested notification channels. </p>
-    pub fn get_channels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>> {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>> {
         &self.channels
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -95,9 +86,7 @@ impl ListNotificationChannelsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListNotificationChannelsOutput`](crate::operation::list_notification_channels::ListNotificationChannelsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_notification_channels::ListNotificationChannelsOutput {
+    pub fn build(self) -> crate::operation::list_notification_channels::ListNotificationChannelsOutput {
         crate::operation::list_notification_channels::ListNotificationChannelsOutput {
             channels: self.channels,
             next_token: self.next_token,

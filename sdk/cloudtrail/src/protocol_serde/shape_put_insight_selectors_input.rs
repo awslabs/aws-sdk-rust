@@ -12,10 +12,7 @@ pub fn ser_put_insight_selectors_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_insight_selector::ser_insight_selector(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_insight_selector::ser_insight_selector(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

@@ -16,17 +16,14 @@ impl OrganizationKubernetesAuditLogsConfigurationResult {
 }
 impl OrganizationKubernetesAuditLogsConfigurationResult {
     /// Creates a new builder-style object to manufacture [`OrganizationKubernetesAuditLogsConfigurationResult`](crate::types::OrganizationKubernetesAuditLogsConfigurationResult).
-    pub fn builder(
-    ) -> crate::types::builders::OrganizationKubernetesAuditLogsConfigurationResultBuilder {
+    pub fn builder() -> crate::types::builders::OrganizationKubernetesAuditLogsConfigurationResultBuilder {
         crate::types::builders::OrganizationKubernetesAuditLogsConfigurationResultBuilder::default()
     }
 }
 
 /// A builder for [`OrganizationKubernetesAuditLogsConfigurationResult`](crate::types::OrganizationKubernetesAuditLogsConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationKubernetesAuditLogsConfigurationResultBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
 }

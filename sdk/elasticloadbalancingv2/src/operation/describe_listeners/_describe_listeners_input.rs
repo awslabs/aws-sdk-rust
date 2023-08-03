@@ -36,17 +36,14 @@ impl DescribeListenersInput {
 }
 impl DescribeListenersInput {
     /// Creates a new builder-style object to manufacture [`DescribeListenersInput`](crate::operation::describe_listeners::DescribeListenersInput).
-    pub fn builder() -> crate::operation::describe_listeners::builders::DescribeListenersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_listeners::builders::DescribeListenersInputBuilder {
         crate::operation::describe_listeners::builders::DescribeListenersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeListenersInput`](crate::operation::describe_listeners::DescribeListenersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenersInputBuilder {
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) listener_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -55,18 +52,12 @@ pub struct DescribeListenersInputBuilder {
 }
 impl DescribeListenersInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_arn = input;
         self
     }
@@ -79,27 +70,19 @@ impl DescribeListenersInputBuilder {
     /// To override the contents of this collection use [`set_listener_arns`](Self::set_listener_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn listener_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn listener_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.listener_arns.unwrap_or_default();
         v.push(input.into());
         self.listener_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn set_listener_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_listener_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.listener_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn get_listener_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_listener_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.listener_arns
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -133,17 +116,12 @@ impl DescribeListenersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeListenersInput`](crate::operation::describe_listeners::DescribeListenersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_listeners::DescribeListenersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_listeners::DescribeListenersInput {
-                load_balancer_arn: self.load_balancer_arn,
-                listener_arns: self.listener_arns,
-                marker: self.marker,
-                page_size: self.page_size,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_listeners::DescribeListenersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_listeners::DescribeListenersInput {
+            load_balancer_arn: self.load_balancer_arn,
+            listener_arns: self.listener_arns,
+            marker: self.marker,
+            page_size: self.page_size,
+        })
     }
 }

@@ -54,9 +54,7 @@ impl FindMatchesParameters {
 
 /// A builder for [`FindMatchesParameters`](crate::types::FindMatchesParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindMatchesParametersBuilder {
     pub(crate) primary_key_column_name: ::std::option::Option<::std::string::String>,
     pub(crate) precision_recall_tradeoff: ::std::option::Option<f64>,
@@ -65,18 +63,12 @@ pub struct FindMatchesParametersBuilder {
 }
 impl FindMatchesParametersBuilder {
     /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
-    pub fn primary_key_column_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_key_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_key_column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
-    pub fn set_primary_key_column_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_key_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_key_column_name = input;
         self
     }

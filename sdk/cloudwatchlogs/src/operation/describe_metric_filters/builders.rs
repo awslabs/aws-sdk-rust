@@ -37,10 +37,7 @@ impl DescribeMetricFiltersFluentBuilder {
         }
     }
     /// Access the DescribeMetricFilters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeMetricFiltersFluentBuilder {
             crate::operation::describe_metric_filters::DescribeMetricFilters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_filters::DescribeMetricFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_filters::DescribeMetricFiltersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeMetricFiltersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeMetricFiltersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_filters::DescribeMetricFiltersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_filters::DescribeMetricFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_filters::DescribeMetricFiltersError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeMetricFiltersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_filters::DescribeMetricFiltersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_filters::DescribeMetricFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_filters::DescribeMetricFiltersError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl DescribeMetricFiltersFluentBuilder {
             crate::operation::describe_metric_filters::DescribeMetricFilters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_filters::DescribeMetricFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_filters::DescribeMetricFiltersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator {
-        crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator {
+        crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -155,18 +130,12 @@ impl DescribeMetricFiltersFluentBuilder {
         self.inner.get_log_group_name()
     }
     /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
-    pub fn filter_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_name_prefix(input.into());
         self
     }
     /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
-    pub fn set_filter_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_name_prefix(input);
         self
     }
@@ -217,18 +186,12 @@ impl DescribeMetricFiltersFluentBuilder {
         self.inner.get_metric_name()
     }
     /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
-    pub fn metric_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_namespace(input.into());
         self
     }
     /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
-    pub fn set_metric_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_namespace(input);
         self
     }

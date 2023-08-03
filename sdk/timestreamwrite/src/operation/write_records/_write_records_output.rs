@@ -28,9 +28,7 @@ impl WriteRecordsOutput {
 
 /// A builder for [`WriteRecordsOutput`](crate::operation::write_records::WriteRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WriteRecordsOutputBuilder {
     pub(crate) records_ingested: ::std::option::Option<crate::types::RecordsIngested>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl WriteRecordsOutputBuilder {
         self
     }
     /// <p>Information on the records ingested by this request.</p>
-    pub fn set_records_ingested(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordsIngested>,
-    ) -> Self {
+    pub fn set_records_ingested(mut self, input: ::std::option::Option<crate::types::RecordsIngested>) -> Self {
         self.records_ingested = input;
         self
     }

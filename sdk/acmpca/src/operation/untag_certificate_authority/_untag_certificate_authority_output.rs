@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UntagCertificateAuthorityOutput {
 }
 impl UntagCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`UntagCertificateAuthorityOutput`](crate::operation::untag_certificate_authority::UntagCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::untag_certificate_authority::builders::UntagCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::untag_certificate_authority::builders::UntagCertificateAuthorityOutputBuilder {
         crate::operation::untag_certificate_authority::builders::UntagCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`UntagCertificateAuthorityOutput`](crate::operation::untag_certificate_authority::UntagCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagCertificateAuthorityOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UntagCertificateAuthorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UntagCertificateAuthorityOutput`](crate::operation::untag_certificate_authority::UntagCertificateAuthorityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::untag_certificate_authority::UntagCertificateAuthorityOutput {
+    pub fn build(self) -> crate::operation::untag_certificate_authority::UntagCertificateAuthorityOutput {
         crate::operation::untag_certificate_authority::UntagCertificateAuthorityOutput {
             _request_id: self._request_id,
         }

@@ -43,10 +43,7 @@ impl DescribeInstanceStatusFluentBuilder {
         }
     }
     /// Access the DescribeInstanceStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_instance_status::builders::DescribeInstanceStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_instance_status::builders::DescribeInstanceStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +55,7 @@ impl DescribeInstanceStatusFluentBuilder {
             crate::operation::describe_instance_status::DescribeInstanceStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_status::DescribeInstanceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_status::DescribeInstanceStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +65,7 @@ impl DescribeInstanceStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +74,7 @@ impl DescribeInstanceStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_status::DescribeInstanceStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_status::DescribeInstanceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_status::DescribeInstanceStatusError>,
     > {
         let op = self
             .inner
@@ -107,9 +97,7 @@ impl DescribeInstanceStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_status::DescribeInstanceStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_status::DescribeInstanceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_status::DescribeInstanceStatusError>,
     > {
         self.send_middleware().await
     }
@@ -123,23 +111,15 @@ impl DescribeInstanceStatusFluentBuilder {
             crate::operation::describe_instance_status::DescribeInstanceStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_status::DescribeInstanceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_status::DescribeInstanceStatusError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator
-    {
-        crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator {
+        crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -181,10 +161,7 @@ impl DescribeInstanceStatusFluentBuilder {
     /// <li> <p> <code>system-status.reachability</code> - Filters on system status where the name is <code>reachability</code> (<code>passed</code> | <code>failed</code> | <code>initializing</code> | <code>insufficient-data</code>).</p> </li>
     /// <li> <p> <code>system-status.status</code> - The system status of the instance (<code>ok</code> | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code> | <code>not-applicable</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -221,19 +198,14 @@ impl DescribeInstanceStatusFluentBuilder {
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>

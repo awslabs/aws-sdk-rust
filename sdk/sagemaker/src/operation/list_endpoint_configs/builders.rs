@@ -37,9 +37,7 @@ impl ListEndpointConfigsFluentBuilder {
         }
     }
     /// Access the ListEndpointConfigs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_endpoint_configs::builders::ListEndpointConfigsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_endpoint_configs::builders::ListEndpointConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListEndpointConfigsFluentBuilder {
             crate::operation::list_endpoint_configs::ListEndpointConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoint_configs::ListEndpointConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_endpoint_configs::ListEndpointConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListEndpointConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListEndpointConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_endpoint_configs::ListEndpointConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoint_configs::ListEndpointConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_endpoint_configs::ListEndpointConfigsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListEndpointConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_endpoint_configs::ListEndpointConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoint_configs::ListEndpointConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_endpoint_configs::ListEndpointConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListEndpointConfigsFluentBuilder {
             crate::operation::list_endpoint_configs::ListEndpointConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoint_configs::ListEndpointConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_endpoint_configs::ListEndpointConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_endpoint_configs::paginator::ListEndpointConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_endpoint_configs::paginator::ListEndpointConfigsPaginator {
-        crate::operation::list_endpoint_configs::paginator::ListEndpointConfigsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_endpoint_configs::paginator::ListEndpointConfigsPaginator {
+        crate::operation::list_endpoint_configs::paginator::ListEndpointConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::EndpointConfigSortKey) -> Self {
@@ -139,10 +121,7 @@ impl ListEndpointConfigsFluentBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointConfigSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::EndpointConfigSortKey>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -193,18 +172,12 @@ impl ListEndpointConfigsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -218,10 +191,7 @@ impl ListEndpointConfigsFluentBuilder {
         self
     }
     /// <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -235,10 +205,7 @@ impl ListEndpointConfigsFluentBuilder {
         self
     }
     /// <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }

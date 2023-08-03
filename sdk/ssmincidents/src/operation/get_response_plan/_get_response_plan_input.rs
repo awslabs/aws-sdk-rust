@@ -22,9 +22,7 @@ impl GetResponsePlanInput {
 
 /// A builder for [`GetResponsePlanInput`](crate::operation::get_response_plan::GetResponsePlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResponsePlanInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetResponsePlanInputBuilder {
     /// Consumes the builder and constructs a [`GetResponsePlanInput`](crate::operation::get_response_plan::GetResponsePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_response_plan::GetResponsePlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_response_plan::GetResponsePlanInput {
-            arn: self.arn,
-        })
+    ) -> ::std::result::Result<crate::operation::get_response_plan::GetResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_response_plan::GetResponsePlanInput { arn: self.arn })
     }
 }

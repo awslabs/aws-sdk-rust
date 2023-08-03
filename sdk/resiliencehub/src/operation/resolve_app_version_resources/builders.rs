@@ -26,7 +26,7 @@ impl ResolveAppVersionResourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResolveAppVersionResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesInputBuilder,
+    inner: crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesInputBuilder,
 }
 impl ResolveAppVersionResourcesFluentBuilder {
     /// Creates a new `ResolveAppVersionResources`.
@@ -37,7 +37,7 @@ impl ResolveAppVersionResourcesFluentBuilder {
         }
     }
     /// Access the ResolveAppVersionResources as a reference.
-    pub fn as_input(&self) -> &crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ResolveAppVersionResourcesFluentBuilder {
             crate::operation::resolve_app_version_resources::ResolveAppVersionResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ResolveAppVersionResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ResolveAppVersionResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ResolveAppVersionResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ResolveAppVersionResourcesFluentBuilder {
             crate::operation::resolve_app_version_resources::ResolveAppVersionResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesError>,
     > {
         self.customize_middleware().await
     }

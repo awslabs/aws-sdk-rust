@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSipRuleOutput`](crate::operation::get_sip_rule::GetSipRuleOutput) with field(s):
     ///   - [`sip_rule(Option<SipRule>)`](crate::operation::get_sip_rule::GetSipRuleOutput::sip_rule): <p>The SIP rule details.</p>
     /// - On failure, responds with [`SdkError<GetSipRuleError>`](crate::operation::get_sip_rule::GetSipRuleError)
-    pub fn get_sip_rule(
-        &self,
-    ) -> crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder {
+    pub fn get_sip_rule(&self) -> crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder {
         crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder::new(self.handle.clone())
     }
 }

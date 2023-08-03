@@ -5,26 +5,20 @@
 pub struct GetConfigurationInput {}
 impl GetConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
-    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationInputBuilder {
         crate::operation::get_configuration::builders::GetConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConfigurationInputBuilder {}
 impl GetConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configuration::GetConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_configuration::GetConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_configuration::GetConfigurationInput {})
     }
 }

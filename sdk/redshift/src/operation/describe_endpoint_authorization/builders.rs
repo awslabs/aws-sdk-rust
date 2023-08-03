@@ -26,7 +26,7 @@ impl DescribeEndpointAuthorizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEndpointAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder,
+    inner: crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder,
 }
 impl DescribeEndpointAuthorizationFluentBuilder {
     /// Creates a new `DescribeEndpointAuthorization`.
@@ -37,7 +37,7 @@ impl DescribeEndpointAuthorizationFluentBuilder {
         }
     }
     /// Access the DescribeEndpointAuthorization as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeEndpointAuthorizationFluentBuilder {
             crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeEndpointAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeEndpointAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeEndpointAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl DescribeEndpointAuthorizationFluentBuilder {
             crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_endpoint_authorization::paginator::DescribeEndpointAuthorizationPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_endpoint_authorization::paginator::DescribeEndpointAuthorizationPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_endpoint_authorization::paginator::DescribeEndpointAuthorizationPaginator {
         crate::operation::describe_endpoint_authorization::paginator::DescribeEndpointAuthorizationPaginator::new(self.handle, self.inner)
     }
     /// <p>The cluster identifier of the cluster to access.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster to access.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }

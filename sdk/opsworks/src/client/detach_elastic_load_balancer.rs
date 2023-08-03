@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`layer_id(impl ::std::convert::Into<String>)`](crate::operation::detach_elastic_load_balancer::builders::DetachElasticLoadBalancerFluentBuilder::layer_id) / [`set_layer_id(Option<String>)`](crate::operation::detach_elastic_load_balancer::builders::DetachElasticLoadBalancerFluentBuilder::set_layer_id): <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
     /// - On success, responds with [`DetachElasticLoadBalancerOutput`](crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerOutput)
     /// - On failure, responds with [`SdkError<DetachElasticLoadBalancerError>`](crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerError)
-    pub fn detach_elastic_load_balancer(&self) -> crate::operation::detach_elastic_load_balancer::builders::DetachElasticLoadBalancerFluentBuilder{
+    pub fn detach_elastic_load_balancer(&self) -> crate::operation::detach_elastic_load_balancer::builders::DetachElasticLoadBalancerFluentBuilder {
         crate::operation::detach_elastic_load_balancer::builders::DetachElasticLoadBalancerFluentBuilder::new(self.handle.clone())
     }
 }

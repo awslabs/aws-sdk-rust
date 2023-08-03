@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`collectors(Option<Vec<Collector>>)`](crate::operation::list_collectors::ListCollectorsOutput::collectors): <p> The list of all the installed collectors. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_collectors::ListCollectorsOutput::next_token): <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListCollectorsError>`](crate::operation::list_collectors::ListCollectorsError)
-    pub fn list_collectors(
-        &self,
-    ) -> crate::operation::list_collectors::builders::ListCollectorsFluentBuilder {
-        crate::operation::list_collectors::builders::ListCollectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_collectors(&self) -> crate::operation::list_collectors::builders::ListCollectorsFluentBuilder {
+        crate::operation::list_collectors::builders::ListCollectorsFluentBuilder::new(self.handle.clone())
     }
 }

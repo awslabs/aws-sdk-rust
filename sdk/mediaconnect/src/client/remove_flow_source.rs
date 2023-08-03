@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`flow_arn(Option<String>)`](crate::operation::remove_flow_source::RemoveFlowSourceOutput::flow_arn): The ARN of the flow that is associated with the source you removed.
     ///   - [`source_arn(Option<String>)`](crate::operation::remove_flow_source::RemoveFlowSourceOutput::source_arn): The ARN of the source that was removed.
     /// - On failure, responds with [`SdkError<RemoveFlowSourceError>`](crate::operation::remove_flow_source::RemoveFlowSourceError)
-    pub fn remove_flow_source(
-        &self,
-    ) -> crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder {
-        crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_flow_source(&self) -> crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder {
+        crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -39,10 +39,7 @@ impl DescribeTrafficSourcesFluentBuilder {
         }
     }
     /// Access the DescribeTrafficSources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeTrafficSourcesFluentBuilder {
             crate::operation::describe_traffic_sources::DescribeTrafficSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_sources::DescribeTrafficSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_sources::DescribeTrafficSourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeTrafficSourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeTrafficSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_sources::DescribeTrafficSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_sources::DescribeTrafficSourcesError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeTrafficSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_sources::DescribeTrafficSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_sources::DescribeTrafficSourcesError>,
     > {
         self.send_middleware().await
     }
@@ -119,37 +107,23 @@ impl DescribeTrafficSourcesFluentBuilder {
             crate::operation::describe_traffic_sources::DescribeTrafficSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_sources::DescribeTrafficSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_sources::DescribeTrafficSourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator
-    {
-        crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator {
+        crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -164,10 +138,7 @@ impl DescribeTrafficSourcesFluentBuilder {
     /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
     /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
     /// </ul>
-    pub fn traffic_source_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_source_type(input.into());
         self
     }
@@ -178,10 +149,7 @@ impl DescribeTrafficSourcesFluentBuilder {
     /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
     /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
     /// </ul>
-    pub fn set_traffic_source_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_source_type(input);
         self
     }

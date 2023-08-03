@@ -10,9 +10,7 @@ pub struct WorkflowStepItem {
 }
 impl WorkflowStepItem {
     /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn appflow_integration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppflowIntegrationWorkflowStep> {
+    pub fn appflow_integration(&self) -> ::std::option::Option<&crate::types::AppflowIntegrationWorkflowStep> {
         self.appflow_integration.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl WorkflowStepItem {
 
 /// A builder for [`WorkflowStepItem`](crate::types::WorkflowStepItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowStepItemBuilder {
-    pub(crate) appflow_integration:
-        ::std::option::Option<crate::types::AppflowIntegrationWorkflowStep>,
+    pub(crate) appflow_integration: ::std::option::Option<crate::types::AppflowIntegrationWorkflowStep>,
 }
 impl WorkflowStepItemBuilder {
     /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn appflow_integration(
-        mut self,
-        input: crate::types::AppflowIntegrationWorkflowStep,
-    ) -> Self {
+    pub fn appflow_integration(mut self, input: crate::types::AppflowIntegrationWorkflowStep) -> Self {
         self.appflow_integration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn set_appflow_integration(
-        mut self,
-        input: ::std::option::Option<crate::types::AppflowIntegrationWorkflowStep>,
-    ) -> Self {
+    pub fn set_appflow_integration(mut self, input: ::std::option::Option<crate::types::AppflowIntegrationWorkflowStep>) -> Self {
         self.appflow_integration = input;
         self
     }
     /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn get_appflow_integration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppflowIntegrationWorkflowStep> {
+    pub fn get_appflow_integration(&self) -> &::std::option::Option<crate::types::AppflowIntegrationWorkflowStep> {
         &self.appflow_integration
     }
     /// Consumes the builder and constructs a [`WorkflowStepItem`](crate::types::WorkflowStepItem).

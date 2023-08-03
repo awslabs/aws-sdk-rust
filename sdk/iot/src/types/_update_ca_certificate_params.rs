@@ -23,9 +23,7 @@ impl UpdateCaCertificateParams {
 
 /// A builder for [`UpdateCaCertificateParams`](crate::types::UpdateCaCertificateParams).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCaCertificateParamsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::CaCertificateUpdateAction>,
 }
@@ -36,10 +34,7 @@ impl UpdateCaCertificateParamsBuilder {
         self
     }
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::CaCertificateUpdateAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::CaCertificateUpdateAction>) -> Self {
         self.action = input;
         self
     }
@@ -49,8 +44,6 @@ impl UpdateCaCertificateParamsBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateCaCertificateParams`](crate::types::UpdateCaCertificateParams).
     pub fn build(self) -> crate::types::UpdateCaCertificateParams {
-        crate::types::UpdateCaCertificateParams {
-            action: self.action,
-        }
+        crate::types::UpdateCaCertificateParams { action: self.action }
     }
 }

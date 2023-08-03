@@ -15,18 +15,14 @@ impl GetServerStrategiesInput {
 }
 impl GetServerStrategiesInput {
     /// Creates a new builder-style object to manufacture [`GetServerStrategiesInput`](crate::operation::get_server_strategies::GetServerStrategiesInput).
-    pub fn builder(
-    ) -> crate::operation::get_server_strategies::builders::GetServerStrategiesInputBuilder {
-        crate::operation::get_server_strategies::builders::GetServerStrategiesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_server_strategies::builders::GetServerStrategiesInputBuilder {
+        crate::operation::get_server_strategies::builders::GetServerStrategiesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServerStrategiesInput`](crate::operation::get_server_strategies::GetServerStrategiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServerStrategiesInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetServerStrategiesInputBuilder {
     /// Consumes the builder and constructs a [`GetServerStrategiesInput`](crate::operation::get_server_strategies::GetServerStrategiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_server_strategies::GetServerStrategiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_server_strategies::GetServerStrategiesInput {
-                server_id: self.server_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_server_strategies::GetServerStrategiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_server_strategies::GetServerStrategiesInput { server_id: self.server_id })
     }
 }

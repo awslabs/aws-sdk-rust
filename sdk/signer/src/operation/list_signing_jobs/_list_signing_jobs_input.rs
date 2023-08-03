@@ -78,9 +78,7 @@ impl ListSigningJobsInput {
 
 /// A builder for [`ListSigningJobsInput`](crate::operation::list_signing_jobs::ListSigningJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSigningJobsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SigningStatus>,
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
@@ -183,17 +181,12 @@ impl ListSigningJobsInputBuilder {
         self
     }
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
-    pub fn set_signature_expires_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_signature_expires_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.signature_expires_before = input;
         self
     }
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
-    pub fn get_signature_expires_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_signature_expires_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.signature_expires_before
     }
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
@@ -202,17 +195,12 @@ impl ListSigningJobsInputBuilder {
         self
     }
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
-    pub fn set_signature_expires_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_signature_expires_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.signature_expires_after = input;
         self
     }
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
-    pub fn get_signature_expires_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_signature_expires_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.signature_expires_after
     }
     /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
@@ -232,10 +220,7 @@ impl ListSigningJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListSigningJobsInput`](crate::operation::list_signing_jobs::ListSigningJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_signing_jobs::ListSigningJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_signing_jobs::ListSigningJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_signing_jobs::ListSigningJobsInput {
             status: self.status,
             platform_id: self.platform_id,

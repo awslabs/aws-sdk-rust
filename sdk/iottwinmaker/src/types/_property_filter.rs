@@ -37,9 +37,7 @@ impl PropertyFilter {
 
 /// A builder for [`PropertyFilter`](crate::types::PropertyFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyFilterBuilder {
     pub(crate) property_name: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct PropertyFilterBuilder {
 }
 impl PropertyFilterBuilder {
     /// <p>The property name associated with this property filter.</p>
-    pub fn property_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The property name associated with this property filter.</p>
-    pub fn set_property_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_name = input;
         self
     }

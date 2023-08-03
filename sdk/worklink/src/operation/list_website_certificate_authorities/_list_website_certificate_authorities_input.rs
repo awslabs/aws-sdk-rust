@@ -29,16 +29,14 @@ impl ListWebsiteCertificateAuthoritiesInput {
 }
 impl ListWebsiteCertificateAuthoritiesInput {
     /// Creates a new builder-style object to manufacture [`ListWebsiteCertificateAuthoritiesInput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput).
-    pub fn builder() -> crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesInputBuilder{
+    pub fn builder() -> crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesInputBuilder {
         crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWebsiteCertificateAuthoritiesInput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebsiteCertificateAuthoritiesInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,16 +86,18 @@ impl ListWebsiteCertificateAuthoritiesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListWebsiteCertificateAuthoritiesInput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput {
-                fleet_arn: self.fleet_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                fleet_arn: self.fleet_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

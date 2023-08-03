@@ -22,17 +22,14 @@ impl StartImageBuilderInput {
 }
 impl StartImageBuilderInput {
     /// Creates a new builder-style object to manufacture [`StartImageBuilderInput`](crate::operation::start_image_builder::StartImageBuilderInput).
-    pub fn builder(
-    ) -> crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder {
+    pub fn builder() -> crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder {
         crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder::default()
     }
 }
 
 /// A builder for [`StartImageBuilderInput`](crate::operation::start_image_builder::StartImageBuilderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImageBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) appstream_agent_version: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl StartImageBuilderInputBuilder {
         &self.name
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    pub fn appstream_agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.appstream_agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    pub fn set_appstream_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.appstream_agent_version = input;
         self
     }
@@ -75,15 +66,10 @@ impl StartImageBuilderInputBuilder {
     /// Consumes the builder and constructs a [`StartImageBuilderInput`](crate::operation::start_image_builder::StartImageBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_image_builder::StartImageBuilderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_image_builder::StartImageBuilderInput {
-                name: self.name,
-                appstream_agent_version: self.appstream_agent_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_image_builder::StartImageBuilderInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_image_builder::StartImageBuilderInput {
+            name: self.name,
+            appstream_agent_version: self.appstream_agent_version,
+        })
     }
 }

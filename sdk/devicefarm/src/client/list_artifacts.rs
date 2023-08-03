@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`artifacts(Option<Vec<Artifact>>)`](crate::operation::list_artifacts::ListArtifactsOutput::artifacts): <p>Information about the artifacts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_artifacts::ListArtifactsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::operation::list_artifacts::ListArtifactsError)
-    pub fn list_artifacts(
-        &self,
-    ) -> crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder {
-        crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_artifacts(&self) -> crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder {
+        crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::new(self.handle.clone())
     }
 }

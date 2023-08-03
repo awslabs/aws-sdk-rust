@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeFileSystemAssociationsOutput`](crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsOutput) with field(s):
     ///   - [`file_system_association_info_list(Option<Vec<FileSystemAssociationInfo>>)`](crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsOutput::file_system_association_info_list): <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
     /// - On failure, responds with [`SdkError<DescribeFileSystemAssociationsError>`](crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsError)
-    pub fn describe_file_system_associations(&self) -> crate::operation::describe_file_system_associations::builders::DescribeFileSystemAssociationsFluentBuilder{
+    pub fn describe_file_system_associations(
+        &self,
+    ) -> crate::operation::describe_file_system_associations::builders::DescribeFileSystemAssociationsFluentBuilder {
         crate::operation::describe_file_system_associations::builders::DescribeFileSystemAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

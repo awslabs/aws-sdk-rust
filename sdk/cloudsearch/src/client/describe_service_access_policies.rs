@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeServiceAccessPoliciesOutput`](crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesOutput) with field(s):
     ///   - [`access_policies(Option<AccessPoliciesStatus>)`](crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesOutput::access_policies): <p>The access rules configured for the domain specified in the request.</p>
     /// - On failure, responds with [`SdkError<DescribeServiceAccessPoliciesError>`](crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesError)
-    pub fn describe_service_access_policies(&self) -> crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesFluentBuilder{
+    pub fn describe_service_access_policies(
+        &self,
+    ) -> crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesFluentBuilder {
         crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

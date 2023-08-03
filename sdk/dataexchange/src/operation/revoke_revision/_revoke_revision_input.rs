@@ -36,9 +36,7 @@ impl RevokeRevisionInput {
 
 /// A builder for [`RevokeRevisionInput`](crate::operation::revoke_revision::RevokeRevisionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeRevisionInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl RevokeRevisionInputBuilder {
         &self.revision_id
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn revocation_comment(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn revocation_comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revocation_comment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn set_revocation_comment(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_revocation_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revocation_comment = input;
         self
     }
@@ -96,10 +88,7 @@ impl RevokeRevisionInputBuilder {
     /// Consumes the builder and constructs a [`RevokeRevisionInput`](crate::operation::revoke_revision::RevokeRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_revision::RevokeRevisionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::revoke_revision::RevokeRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_revision::RevokeRevisionInput {
             data_set_id: self.data_set_id,
             revision_id: self.revision_id,

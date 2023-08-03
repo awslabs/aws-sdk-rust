@@ -30,20 +30,16 @@ impl DescribePackagesInput {
 }
 impl DescribePackagesInput {
     /// Creates a new builder-style object to manufacture [`DescribePackagesInput`](crate::operation::describe_packages::DescribePackagesInput).
-    pub fn builder() -> crate::operation::describe_packages::builders::DescribePackagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_packages::builders::DescribePackagesInputBuilder {
         crate::operation::describe_packages::builders::DescribePackagesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePackagesInput`](crate::operation::describe_packages::DescribePackagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePackagesInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -60,17 +56,12 @@ impl DescribePackagesInputBuilder {
         self
     }
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>> {
         &self.filters
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
@@ -104,10 +95,7 @@ impl DescribePackagesInputBuilder {
     /// Consumes the builder and constructs a [`DescribePackagesInput`](crate::operation::describe_packages::DescribePackagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_packages::DescribePackagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_packages::DescribePackagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_packages::DescribePackagesInput {
             filters: self.filters,
             max_results: self.max_results,

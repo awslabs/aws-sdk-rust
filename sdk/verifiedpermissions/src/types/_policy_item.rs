@@ -81,9 +81,7 @@ impl PolicyItem {
 
 /// A builder for [`PolicyItem`](crate::types::PolicyItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyItemBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ pub struct PolicyItemBuilder {
 }
 impl PolicyItemBuilder {
     /// <p>The identifier of the PolicyStore where the policy you want information about is stored.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the PolicyStore where the policy you want information about is stored.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -143,10 +135,7 @@ impl PolicyItemBuilder {
     /// <li> <p> <code>static</code> </p> </li>
     /// <li> <p> <code>templateLinked</code> </p> </li>
     /// </ul>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
@@ -164,10 +153,7 @@ impl PolicyItemBuilder {
         self
     }
     /// <p>The principal associated with the policy.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.principal = input;
         self
     }
@@ -181,10 +167,7 @@ impl PolicyItemBuilder {
         self
     }
     /// <p>The resource associated with the policy.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.resource = input;
         self
     }
@@ -198,10 +181,7 @@ impl PolicyItemBuilder {
         self
     }
     /// <p>The policy definition of an item in the list of policies returned.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyDefinitionItem>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinitionItem>) -> Self {
         self.definition = input;
         self
     }
@@ -215,10 +195,7 @@ impl PolicyItemBuilder {
         self
     }
     /// <p>The date and time the policy was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -232,10 +209,7 @@ impl PolicyItemBuilder {
         self
     }
     /// <p>The date and time the policy was most recently updated.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }

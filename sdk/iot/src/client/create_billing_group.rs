@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`billing_group_arn(Option<String>)`](crate::operation::create_billing_group::CreateBillingGroupOutput::billing_group_arn): <p>The ARN of the billing group.</p>
     ///   - [`billing_group_id(Option<String>)`](crate::operation::create_billing_group::CreateBillingGroupOutput::billing_group_id): <p>The ID of the billing group.</p>
     /// - On failure, responds with [`SdkError<CreateBillingGroupError>`](crate::operation::create_billing_group::CreateBillingGroupError)
-    pub fn create_billing_group(
-        &self,
-    ) -> crate::operation::create_billing_group::builders::CreateBillingGroupFluentBuilder {
-        crate::operation::create_billing_group::builders::CreateBillingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_billing_group(&self) -> crate::operation::create_billing_group::builders::CreateBillingGroupFluentBuilder {
+        crate::operation::create_billing_group::builders::CreateBillingGroupFluentBuilder::new(self.handle.clone())
     }
 }

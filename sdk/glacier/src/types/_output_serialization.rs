@@ -23,9 +23,7 @@ impl OutputSerialization {
 
 /// A builder for [`OutputSerialization`](crate::types::OutputSerialization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputSerializationBuilder {
     pub(crate) csv: ::std::option::Option<crate::types::CsvOutput>,
 }

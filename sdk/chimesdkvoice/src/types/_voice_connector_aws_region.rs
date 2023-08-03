@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VoiceConnectorAwsRegion {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,9 +85,7 @@ impl ::std::convert::From<&str> for VoiceConnectorAwsRegion {
             "eu-west-2" => VoiceConnectorAwsRegion::EuWest2,
             "us-east-1" => VoiceConnectorAwsRegion::UsEast1,
             "us-west-2" => VoiceConnectorAwsRegion::UsWest2,
-            other => VoiceConnectorAwsRegion::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VoiceConnectorAwsRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

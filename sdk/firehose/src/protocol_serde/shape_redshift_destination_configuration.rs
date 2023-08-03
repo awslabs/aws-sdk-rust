@@ -24,10 +24,7 @@ pub fn ser_redshift_destination_configuration(
     if let Some(var_7) = &input.retry_options {
         #[allow(unused_mut)]
         let mut object_8 = object.key("RetryOptions").start_object();
-        crate::protocol_serde::shape_redshift_retry_options::ser_redshift_retry_options(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_redshift_retry_options::ser_redshift_retry_options(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.s3_configuration {
@@ -39,10 +36,7 @@ pub fn ser_redshift_destination_configuration(
     if let Some(var_11) = &input.processing_configuration {
         #[allow(unused_mut)]
         let mut object_12 = object.key("ProcessingConfiguration").start_object();
-        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.s3_backup_mode {
@@ -57,10 +51,7 @@ pub fn ser_redshift_destination_configuration(
     if let Some(var_16) = &input.cloud_watch_logging_options {
         #[allow(unused_mut)]
         let mut object_17 = object.key("CloudWatchLoggingOptions").start_object();
-        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_17, var_16)?;
         object_17.finish();
     }
     Ok(())

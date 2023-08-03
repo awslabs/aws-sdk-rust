@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RotateEncryptionKeyOutput`](crate::operation::rotate_encryption_key::RotateEncryptionKeyOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::rotate_encryption_key::RotateEncryptionKeyOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<RotateEncryptionKeyError>`](crate::operation::rotate_encryption_key::RotateEncryptionKeyError)
-    pub fn rotate_encryption_key(
-        &self,
-    ) -> crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyFluentBuilder {
-        crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn rotate_encryption_key(&self) -> crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyFluentBuilder {
+        crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyFluentBuilder::new(self.handle.clone())
     }
 }

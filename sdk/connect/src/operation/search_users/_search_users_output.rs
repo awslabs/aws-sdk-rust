@@ -42,9 +42,7 @@ impl SearchUsersOutput {
 
 /// A builder for [`SearchUsersOutput`](crate::operation::search_users::SearchUsersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchUsersOutputBuilder {
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::UserSearchSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,17 +62,12 @@ impl SearchUsersOutputBuilder {
         self
     }
     /// <p>Information about the users.</p>
-    pub fn set_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserSearchSummary>>,
-    ) -> Self {
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserSearchSummary>>) -> Self {
         self.users = input;
         self
     }
     /// <p>Information about the users.</p>
-    pub fn get_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSearchSummary>> {
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSearchSummary>> {
         &self.users
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

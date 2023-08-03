@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`instance_event_windows(Option<Vec<InstanceEventWindow>>)`](crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput::instance_event_windows): <p>Information about the event windows.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeInstanceEventWindowsError>`](crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError)
-    pub fn describe_instance_event_windows(&self) -> crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsFluentBuilder{
+    pub fn describe_instance_event_windows(
+        &self,
+    ) -> crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsFluentBuilder {
         crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsFluentBuilder::new(self.handle.clone())
     }
 }

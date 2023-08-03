@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`tags(Vec<StorageLensTag>)`](crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingFluentBuilder::tags) / [`set_tags(Option<Vec<StorageLensTag>>)`](crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingFluentBuilder::set_tags): <p>The tag set of the S3 Storage Lens configuration.</p> <note>   <p>You can set up to a maximum of 50 tags.</p>  </note>
     /// - On success, responds with [`PutStorageLensConfigurationTaggingOutput`](crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput)
     /// - On failure, responds with [`SdkError<PutStorageLensConfigurationTaggingError>`](crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingError)
-    pub fn put_storage_lens_configuration_tagging(&self) -> crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingFluentBuilder{
+    pub fn put_storage_lens_configuration_tagging(
+        &self,
+    ) -> crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingFluentBuilder {
         crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl EnableMacieInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_macie::EnableMacieOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_macie::EnableMacieError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_macie::EnableMacieError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_macie();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl EnableMacieFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::enable_macie::EnableMacie,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::enable_macie::EnableMacie, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::enable_macie::EnableMacieError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl EnableMacieFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl EnableMacieFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::enable_macie::EnableMacie,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::enable_macie::EnableMacie, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::enable_macie::EnableMacieError>,
     > {
         self.customize_middleware().await
@@ -127,25 +115,17 @@ impl EnableMacieFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn finding_publishing_frequency(
-        mut self,
-        input: crate::types::FindingPublishingFrequency,
-    ) -> Self {
+    pub fn finding_publishing_frequency(mut self, input: crate::types::FindingPublishingFrequency) -> Self {
         self.inner = self.inner.finding_publishing_frequency(input);
         self
     }
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn set_finding_publishing_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingPublishingFrequency>,
-    ) -> Self {
+    pub fn set_finding_publishing_frequency(mut self, input: ::std::option::Option<crate::types::FindingPublishingFrequency>) -> Self {
         self.inner = self.inner.set_finding_publishing_frequency(input);
         self
     }
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn get_finding_publishing_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+    pub fn get_finding_publishing_frequency(&self) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
         self.inner.get_finding_publishing_frequency()
     }
     /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>

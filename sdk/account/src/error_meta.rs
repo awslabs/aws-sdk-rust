@@ -31,32 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_alternate_contact::DeleteAlternateContactError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_alternate_contact::DeleteAlternateContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_alternate_contact::DeleteAlternateContactError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_alternate_contact::DeleteAlternateContactError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -66,41 +50,33 @@ where
 impl From<crate::operation::delete_alternate_contact::DeleteAlternateContactError> for Error {
     fn from(err: crate::operation::delete_alternate_contact::DeleteAlternateContactError) -> Self {
         match err {
-            crate::operation::delete_alternate_contact::DeleteAlternateContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_alternate_contact::DeleteAlternateContactError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_alternate_contact::DeleteAlternateContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_alternate_contact::DeleteAlternateContactError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::delete_alternate_contact::DeleteAlternateContactError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_alternate_contact::DeleteAlternateContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_region::DisableRegionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disable_region::DisableRegionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_region::DisableRegionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disable_region::DisableRegionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -110,49 +86,25 @@ where
 impl From<crate::operation::disable_region::DisableRegionError> for Error {
     fn from(err: crate::operation::disable_region::DisableRegionError) -> Self {
         match err {
-            crate::operation::disable_region::DisableRegionError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::disable_region::DisableRegionError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::disable_region::DisableRegionError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::disable_region::DisableRegionError::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::operation::disable_region::DisableRegionError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::disable_region::DisableRegionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::disable_region::DisableRegionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disable_region::DisableRegionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disable_region::DisableRegionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disable_region::DisableRegionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::disable_region::DisableRegionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disable_region::DisableRegionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::enable_region::EnableRegionError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::enable_region::EnableRegionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_region::EnableRegionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::enable_region::EnableRegionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -162,53 +114,25 @@ where
 impl From<crate::operation::enable_region::EnableRegionError> for Error {
     fn from(err: crate::operation::enable_region::EnableRegionError) -> Self {
         match err {
-            crate::operation::enable_region::EnableRegionError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::enable_region::EnableRegionError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::enable_region::EnableRegionError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::enable_region::EnableRegionError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::enable_region::EnableRegionError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::enable_region::EnableRegionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::enable_region::EnableRegionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::enable_region::EnableRegionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::enable_region::EnableRegionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::enable_region::EnableRegionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::enable_region::EnableRegionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::enable_region::EnableRegionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_alternate_contact::GetAlternateContactError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_alternate_contact::GetAlternateContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_alternate_contact::GetAlternateContactError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_alternate_contact::GetAlternateContactError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -219,40 +143,30 @@ impl From<crate::operation::get_alternate_contact::GetAlternateContactError> for
     fn from(err: crate::operation::get_alternate_contact::GetAlternateContactError) -> Self {
         match err {
             crate::operation::get_alternate_contact::GetAlternateContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_alternate_contact::GetAlternateContactError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_alternate_contact::GetAlternateContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_alternate_contact::GetAlternateContactError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_alternate_contact::GetAlternateContactError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_alternate_contact::GetAlternateContactError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_alternate_contact::GetAlternateContactError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::get_alternate_contact::GetAlternateContactError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_alternate_contact::GetAlternateContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_information::GetContactInformationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_contact_information::GetContactInformationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_information::GetContactInformationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_contact_information::GetContactInformationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -262,41 +176,33 @@ where
 impl From<crate::operation::get_contact_information::GetContactInformationError> for Error {
     fn from(err: crate::operation::get_contact_information::GetContactInformationError) -> Self {
         match err {
-            crate::operation::get_contact_information::GetContactInformationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_contact_information::GetContactInformationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_contact_information::GetContactInformationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_contact_information::GetContactInformationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_contact_information::GetContactInformationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_contact_information::GetContactInformationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_contact_information::GetContactInformationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_contact_information::GetContactInformationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::get_contact_information::GetContactInformationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_contact_information::GetContactInformationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_region_opt_status::GetRegionOptStatusError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_region_opt_status::GetRegionOptStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_region_opt_status::GetRegionOptStatusError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_region_opt_status::GetRegionOptStatusError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -308,34 +214,24 @@ impl From<crate::operation::get_region_opt_status::GetRegionOptStatusError> for 
         match err {
             crate::operation::get_region_opt_status::GetRegionOptStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_region_opt_status::GetRegionOptStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_region_opt_status::GetRegionOptStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_region_opt_status::GetRegionOptStatusError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::get_region_opt_status::GetRegionOptStatusError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_region_opt_status::GetRegionOptStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::list_regions::ListRegionsError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_regions::ListRegionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_regions::ListRegionsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_regions::ListRegionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -345,50 +241,24 @@ where
 impl From<crate::operation::list_regions::ListRegionsError> for Error {
     fn from(err: crate::operation::list_regions::ListRegionsError) -> Self {
         match err {
-            crate::operation::list_regions::ListRegionsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_regions::ListRegionsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_regions::ListRegionsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_regions::ListRegionsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_regions::ListRegionsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_regions::ListRegionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_regions::ListRegionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_regions::ListRegionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_regions::ListRegionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_regions::ListRegionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_alternate_contact::PutAlternateContactError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_alternate_contact::PutAlternateContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_alternate_contact::PutAlternateContactError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_alternate_contact::PutAlternateContactError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -399,39 +269,27 @@ impl From<crate::operation::put_alternate_contact::PutAlternateContactError> for
     fn from(err: crate::operation::put_alternate_contact::PutAlternateContactError) -> Self {
         match err {
             crate::operation::put_alternate_contact::PutAlternateContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::put_alternate_contact::PutAlternateContactError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::put_alternate_contact::PutAlternateContactError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::put_alternate_contact::PutAlternateContactError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_alternate_contact::PutAlternateContactError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::put_alternate_contact::PutAlternateContactError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_alternate_contact::PutAlternateContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_contact_information::PutContactInformationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_contact_information::PutContactInformationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_contact_information::PutContactInformationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_contact_information::PutContactInformationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -441,9 +299,15 @@ where
 impl From<crate::operation::put_contact_information::PutContactInformationError> for Error {
     fn from(err: crate::operation::put_contact_information::PutContactInformationError) -> Self {
         match err {
-            crate::operation::put_contact_information::PutContactInformationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::put_contact_information::PutContactInformationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::put_contact_information::PutContactInformationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::put_contact_information::PutContactInformationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_contact_information::PutContactInformationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_contact_information::PutContactInformationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::put_contact_information::PutContactInformationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_contact_information::PutContactInformationError::Unhandled(inner) => Error::Unhandled(inner),
         }

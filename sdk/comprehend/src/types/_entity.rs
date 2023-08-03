@@ -65,17 +65,14 @@ impl Entity {
 
 /// A builder for [`Entity`](crate::types::Entity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityBuilder {
     pub(crate) score: ::std::option::Option<f32>,
     pub(crate) r#type: ::std::option::Option<crate::types::EntityType>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) begin_offset: ::std::option::Option<i32>,
     pub(crate) end_offset: ::std::option::Option<i32>,
-    pub(crate) block_references:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlockReference>>,
+    pub(crate) block_references: ::std::option::Option<::std::vec::Vec<crate::types::BlockReference>>,
 }
 impl EntityBuilder {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
@@ -169,17 +166,12 @@ impl EntityBuilder {
         self
     }
     /// <p>A reference to each block for this entity. This field is empty for plain-text input.</p>
-    pub fn set_block_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockReference>>,
-    ) -> Self {
+    pub fn set_block_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockReference>>) -> Self {
         self.block_references = input;
         self
     }
     /// <p>A reference to each block for this entity. This field is empty for plain-text input.</p>
-    pub fn get_block_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockReference>> {
+    pub fn get_block_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockReference>> {
         &self.block_references
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).

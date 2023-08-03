@@ -13,9 +13,7 @@ impl DatadogMetadata {
 
 /// A builder for [`DatadogMetadata`](crate::types::DatadogMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatadogMetadataBuilder {}
 impl DatadogMetadataBuilder {
     /// Consumes the builder and constructs a [`DatadogMetadata`](crate::types::DatadogMetadata).

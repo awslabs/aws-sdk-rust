@@ -10,10 +10,7 @@ impl RegisterComputeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_compute::RegisterComputeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_compute::RegisterComputeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_compute::RegisterComputeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_compute();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl RegisterComputeFluentBuilder {
         }
     }
     /// Access the RegisterCompute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_compute::builders::RegisterComputeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_compute::builders::RegisterComputeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl RegisterComputeFluentBuilder {
             crate::operation::register_compute::RegisterCompute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_compute::RegisterComputeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_compute::RegisterComputeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl RegisterComputeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl RegisterComputeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_compute::RegisterComputeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_compute::RegisterComputeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_compute::RegisterComputeError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl RegisterComputeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_compute::RegisterComputeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_compute::RegisterComputeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_compute::RegisterComputeError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl RegisterComputeFluentBuilder {
             crate::operation::register_compute::RegisterCompute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_compute::RegisterComputeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_compute::RegisterComputeError>,
     > {
         self.customize_middleware().await
     }
@@ -156,18 +140,12 @@ impl RegisterComputeFluentBuilder {
         self.inner.get_compute_name()
     }
     /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
-    pub fn certificate_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_path(input.into());
         self
     }
     /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
-    pub fn set_certificate_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_path(input);
         self
     }

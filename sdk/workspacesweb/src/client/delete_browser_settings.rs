@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`browser_settings_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder::browser_settings_arn) / [`set_browser_settings_arn(Option<String>)`](crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder::set_browser_settings_arn): <p>The ARN of the browser settings.</p>
     /// - On success, responds with [`DeleteBrowserSettingsOutput`](crate::operation::delete_browser_settings::DeleteBrowserSettingsOutput)
     /// - On failure, responds with [`SdkError<DeleteBrowserSettingsError>`](crate::operation::delete_browser_settings::DeleteBrowserSettingsError)
-    pub fn delete_browser_settings(
-        &self,
-    ) -> crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder
-    {
-        crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_browser_settings(&self) -> crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder {
+        crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

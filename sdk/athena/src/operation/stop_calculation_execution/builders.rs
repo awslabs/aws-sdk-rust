@@ -28,7 +28,7 @@ impl StopCalculationExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopCalculationExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder,
+    inner: crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder,
 }
 impl StopCalculationExecutionFluentBuilder {
     /// Creates a new `StopCalculationExecution`.
@@ -39,10 +39,7 @@ impl StopCalculationExecutionFluentBuilder {
         }
     }
     /// Access the StopCalculationExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl StopCalculationExecutionFluentBuilder {
             crate::operation::stop_calculation_execution::StopCalculationExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_calculation_execution::StopCalculationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_calculation_execution::StopCalculationExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl StopCalculationExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl StopCalculationExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_calculation_execution::StopCalculationExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_calculation_execution::StopCalculationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_calculation_execution::StopCalculationExecutionError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl StopCalculationExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_calculation_execution::StopCalculationExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_calculation_execution::StopCalculationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_calculation_execution::StopCalculationExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl StopCalculationExecutionFluentBuilder {
             crate::operation::stop_calculation_execution::StopCalculationExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_calculation_execution::StopCalculationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_calculation_execution::StopCalculationExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculation_execution_id(input.into());
         self
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn set_calculation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calculation_execution_id(input);
         self
     }

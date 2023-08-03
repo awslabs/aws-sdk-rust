@@ -51,9 +51,7 @@ impl VirtualNodeData {
 
 /// A builder for [`VirtualNodeData`](crate::types::VirtualNodeData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualNodeDataBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_node_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl VirtualNodeDataBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual node.</p>
-    pub fn virtual_node_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_node_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual node.</p>
-    pub fn set_virtual_node_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_node_name = input;
         self
     }
@@ -116,10 +108,7 @@ impl VirtualNodeDataBuilder {
         self
     }
     /// <p>The associated metadata for the virtual node.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
         self.metadata = input;
         self
     }
@@ -133,10 +122,7 @@ impl VirtualNodeDataBuilder {
         self
     }
     /// <p>The current status for the virtual node.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualNodeStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualNodeStatus>) -> Self {
         self.status = input;
         self
     }

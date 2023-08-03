@@ -39,10 +39,7 @@ pub fn ser_s3_key_filter(
         for list_item_4 in var_3 {
             {
                 let inner_writer = scope.start_el("FilterRule");
-                crate::protocol_serde::shape_filter_rule::ser_filter_rule(
-                    list_item_4,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_filter_rule::ser_filter_rule(list_item_4, inner_writer)?
             }
         }
     }

@@ -5,8 +5,7 @@
 pub struct ListOfferingPromotionsOutput {
     /// <p>Information about the offering promotions.</p>
     #[doc(hidden)]
-    pub offering_promotions:
-        ::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>>,
+    pub offering_promotions: ::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>>,
     /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListOfferingPromotionsOutput {
 }
 impl ListOfferingPromotionsOutput {
     /// Creates a new builder-style object to manufacture [`ListOfferingPromotionsOutput`](crate::operation::list_offering_promotions::ListOfferingPromotionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_offering_promotions::builders::ListOfferingPromotionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_offering_promotions::builders::ListOfferingPromotionsOutputBuilder {
         crate::operation::list_offering_promotions::builders::ListOfferingPromotionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOfferingPromotionsOutput`](crate::operation::list_offering_promotions::ListOfferingPromotionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOfferingPromotionsOutputBuilder {
-    pub(crate) offering_promotions:
-        ::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>>,
+    pub(crate) offering_promotions: ::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListOfferingPromotionsOutputBuilder {
         self
     }
     /// <p>Information about the offering promotions.</p>
-    pub fn set_offering_promotions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>>,
-    ) -> Self {
+    pub fn set_offering_promotions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>>) -> Self {
         self.offering_promotions = input;
         self
     }
     /// <p>Information about the offering promotions.</p>
-    pub fn get_offering_promotions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>> {
+    pub fn get_offering_promotions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>> {
         &self.offering_promotions
     }
     /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>

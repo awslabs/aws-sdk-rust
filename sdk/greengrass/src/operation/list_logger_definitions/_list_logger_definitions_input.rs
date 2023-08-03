@@ -22,18 +22,14 @@ impl ListLoggerDefinitionsInput {
 }
 impl ListLoggerDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListLoggerDefinitionsInput`](crate::operation::list_logger_definitions::ListLoggerDefinitionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsInputBuilder {
         crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLoggerDefinitionsInput`](crate::operation::list_logger_definitions::ListLoggerDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLoggerDefinitionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListLoggerDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`ListLoggerDefinitionsInput`](crate::operation::list_logger_definitions::ListLoggerDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_logger_definitions::ListLoggerDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_logger_definitions::ListLoggerDefinitionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_logger_definitions::ListLoggerDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_logger_definitions::ListLoggerDefinitionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

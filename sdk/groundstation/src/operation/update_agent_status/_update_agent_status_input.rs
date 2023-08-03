@@ -14,8 +14,7 @@ pub struct UpdateAgentStatusInput {
     pub aggregate_status: ::std::option::Option<crate::types::AggregateStatus>,
     /// <p>List of component statuses for agent.</p>
     #[doc(hidden)]
-    pub component_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>,
+    pub component_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>,
 }
 impl UpdateAgentStatusInput {
     /// <p>UUID of agent to update.</p>
@@ -31,31 +30,25 @@ impl UpdateAgentStatusInput {
         self.aggregate_status.as_ref()
     }
     /// <p>List of component statuses for agent.</p>
-    pub fn component_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComponentStatusData]> {
+    pub fn component_statuses(&self) -> ::std::option::Option<&[crate::types::ComponentStatusData]> {
         self.component_statuses.as_deref()
     }
 }
 impl UpdateAgentStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder {
+    pub fn builder() -> crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder {
         crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAgentStatusInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) aggregate_status: ::std::option::Option<crate::types::AggregateStatus>,
-    pub(crate) component_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>,
+    pub(crate) component_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>,
 }
 impl UpdateAgentStatusInputBuilder {
     /// <p>UUID of agent to update.</p>
@@ -92,10 +85,7 @@ impl UpdateAgentStatusInputBuilder {
         self
     }
     /// <p>Aggregate status for agent.</p>
-    pub fn set_aggregate_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregateStatus>,
-    ) -> Self {
+    pub fn set_aggregate_status(mut self, input: ::std::option::Option<crate::types::AggregateStatus>) -> Self {
         self.aggregate_status = input;
         self
     }
@@ -115,33 +105,23 @@ impl UpdateAgentStatusInputBuilder {
         self
     }
     /// <p>List of component statuses for agent.</p>
-    pub fn set_component_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>,
-    ) -> Self {
+    pub fn set_component_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>) -> Self {
         self.component_statuses = input;
         self
     }
     /// <p>List of component statuses for agent.</p>
-    pub fn get_component_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>> {
+    pub fn get_component_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>> {
         &self.component_statuses
     }
     /// Consumes the builder and constructs a [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_agent_status::UpdateAgentStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_agent_status::UpdateAgentStatusInput {
-                agent_id: self.agent_id,
-                task_id: self.task_id,
-                aggregate_status: self.aggregate_status,
-                component_statuses: self.component_statuses,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_agent_status::UpdateAgentStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_agent_status::UpdateAgentStatusInput {
+            agent_id: self.agent_id,
+            task_id: self.task_id,
+            aggregate_status: self.aggregate_status,
+            component_statuses: self.component_statuses,
+        })
     }
 }

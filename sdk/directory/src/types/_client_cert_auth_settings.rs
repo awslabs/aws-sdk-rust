@@ -23,9 +23,7 @@ impl ClientCertAuthSettings {
 
 /// A builder for [`ClientCertAuthSettings`](crate::types::ClientCertAuthSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientCertAuthSettingsBuilder {
     pub(crate) ocsp_url: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ClientCertAuthSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`ClientCertAuthSettings`](crate::types::ClientCertAuthSettings).
     pub fn build(self) -> crate::types::ClientCertAuthSettings {
-        crate::types::ClientCertAuthSettings {
-            ocsp_url: self.ocsp_url,
-        }
+        crate::types::ClientCertAuthSettings { ocsp_url: self.ocsp_url }
     }
 }

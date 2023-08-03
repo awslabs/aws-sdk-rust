@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`topic_name(impl ::std::convert::Into<String>)`](crate::operation::deregister_event_topic::builders::DeregisterEventTopicFluentBuilder::topic_name) / [`set_topic_name(Option<String>)`](crate::operation::deregister_event_topic::builders::DeregisterEventTopicFluentBuilder::set_topic_name): <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
     /// - On success, responds with [`DeregisterEventTopicOutput`](crate::operation::deregister_event_topic::DeregisterEventTopicOutput)
     /// - On failure, responds with [`SdkError<DeregisterEventTopicError>`](crate::operation::deregister_event_topic::DeregisterEventTopicError)
-    pub fn deregister_event_topic(
-        &self,
-    ) -> crate::operation::deregister_event_topic::builders::DeregisterEventTopicFluentBuilder {
-        crate::operation::deregister_event_topic::builders::DeregisterEventTopicFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_event_topic(&self) -> crate::operation::deregister_event_topic::builders::DeregisterEventTopicFluentBuilder {
+        crate::operation::deregister_event_topic::builders::DeregisterEventTopicFluentBuilder::new(self.handle.clone())
     }
 }

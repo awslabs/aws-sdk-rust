@@ -17,9 +17,7 @@ impl AddBridgeSourceRequest {
         self.flow_source.as_ref()
     }
     /// Add a network source to an existing bridge.
-    pub fn network_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AddBridgeNetworkSourceRequest> {
+    pub fn network_source(&self) -> ::std::option::Option<&crate::types::AddBridgeNetworkSourceRequest> {
         self.network_source.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl AddBridgeSourceRequest {
 
 /// A builder for [`AddBridgeSourceRequest`](crate::types::AddBridgeSourceRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddBridgeSourceRequestBuilder {
     pub(crate) flow_source: ::std::option::Option<crate::types::AddBridgeFlowSourceRequest>,
     pub(crate) network_source: ::std::option::Option<crate::types::AddBridgeNetworkSourceRequest>,
@@ -46,17 +42,12 @@ impl AddBridgeSourceRequestBuilder {
         self
     }
     /// Add a flow source to an existing bridge.
-    pub fn set_flow_source(
-        mut self,
-        input: ::std::option::Option<crate::types::AddBridgeFlowSourceRequest>,
-    ) -> Self {
+    pub fn set_flow_source(mut self, input: ::std::option::Option<crate::types::AddBridgeFlowSourceRequest>) -> Self {
         self.flow_source = input;
         self
     }
     /// Add a flow source to an existing bridge.
-    pub fn get_flow_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::AddBridgeFlowSourceRequest> {
+    pub fn get_flow_source(&self) -> &::std::option::Option<crate::types::AddBridgeFlowSourceRequest> {
         &self.flow_source
     }
     /// Add a network source to an existing bridge.
@@ -65,17 +56,12 @@ impl AddBridgeSourceRequestBuilder {
         self
     }
     /// Add a network source to an existing bridge.
-    pub fn set_network_source(
-        mut self,
-        input: ::std::option::Option<crate::types::AddBridgeNetworkSourceRequest>,
-    ) -> Self {
+    pub fn set_network_source(mut self, input: ::std::option::Option<crate::types::AddBridgeNetworkSourceRequest>) -> Self {
         self.network_source = input;
         self
     }
     /// Add a network source to an existing bridge.
-    pub fn get_network_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::AddBridgeNetworkSourceRequest> {
+    pub fn get_network_source(&self) -> &::std::option::Option<crate::types::AddBridgeNetworkSourceRequest> {
         &self.network_source
     }
     /// Consumes the builder and constructs a [`AddBridgeSourceRequest`](crate::types::AddBridgeSourceRequest).

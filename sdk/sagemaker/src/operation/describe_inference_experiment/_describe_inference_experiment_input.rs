@@ -15,16 +15,14 @@ impl DescribeInferenceExperimentInput {
 }
 impl DescribeInferenceExperimentInput {
     /// Creates a new builder-style object to manufacture [`DescribeInferenceExperimentInput`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentInput).
-    pub fn builder() -> crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentInputBuilder{
+    pub fn builder() -> crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentInputBuilder {
         crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInferenceExperimentInput`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInferenceExperimentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeInferenceExperimentInputBuilder {
         crate::operation::describe_inference_experiment::DescribeInferenceExperimentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_inference_experiment::DescribeInferenceExperimentInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_inference_experiment::DescribeInferenceExperimentInput { name: self.name })
     }
 }

@@ -27,7 +27,7 @@ impl ListSubscriptionsByTopicInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSubscriptionsByTopicFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicInputBuilder,
+    inner: crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicInputBuilder,
 }
 impl ListSubscriptionsByTopicFluentBuilder {
     /// Creates a new `ListSubscriptionsByTopic`.
@@ -38,7 +38,7 @@ impl ListSubscriptionsByTopicFluentBuilder {
         }
     }
     /// Access the ListSubscriptionsByTopic as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListSubscriptionsByTopicFluentBuilder {
             crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopic,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListSubscriptionsByTopicFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListSubscriptionsByTopicFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListSubscriptionsByTopicFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError>,
     > {
         self.send_middleware().await
     }
@@ -115,19 +106,14 @@ impl ListSubscriptionsByTopicFluentBuilder {
             crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopic,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_subscriptions_by_topic::paginator::ListSubscriptionsByTopicPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_subscriptions_by_topic::paginator::ListSubscriptionsByTopicPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_subscriptions_by_topic::paginator::ListSubscriptionsByTopicPaginator {
         crate::operation::list_subscriptions_by_topic::paginator::ListSubscriptionsByTopicPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>

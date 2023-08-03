@@ -31,16 +31,14 @@ impl DescribeRecommendationFeedbackInput {
 }
 impl DescribeRecommendationFeedbackInput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationFeedbackInput`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput).
-    pub fn builder() -> crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackInputBuilder{
+    pub fn builder() -> crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackInputBuilder {
         crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecommendationFeedbackInput`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecommendationFeedbackInputBuilder {
     pub(crate) code_review_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +46,12 @@ pub struct DescribeRecommendationFeedbackInputBuilder {
 }
 impl DescribeRecommendationFeedbackInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_review_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_review_arn = input;
         self
     }
@@ -68,18 +60,12 @@ impl DescribeRecommendationFeedbackInputBuilder {
         &self.code_review_arn
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -111,15 +97,10 @@ impl DescribeRecommendationFeedbackInputBuilder {
         crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput {
-                code_review_arn: self.code_review_arn
-                ,
-                recommendation_id: self.recommendation_id
-                ,
-                user_id: self.user_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput {
+            code_review_arn: self.code_review_arn,
+            recommendation_id: self.recommendation_id,
+            user_id: self.user_id,
+        })
     }
 }

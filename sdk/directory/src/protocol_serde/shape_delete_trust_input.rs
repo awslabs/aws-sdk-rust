@@ -7,9 +7,7 @@ pub fn ser_delete_trust_input(
         object.key("TrustId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.delete_associated_conditional_forwarder {
-        object
-            .key("DeleteAssociatedConditionalForwarder")
-            .boolean(*var_2);
+        object.key("DeleteAssociatedConditionalForwarder").boolean(*var_2);
     }
     Ok(())
 }

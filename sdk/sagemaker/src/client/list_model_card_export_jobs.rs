@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`model_card_export_job_summaries(Option<Vec<ModelCardExportJobSummary>>)`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsOutput::model_card_export_job_summaries): <p>The summaries of the listed model card export jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card export jobs, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListModelCardExportJobsError>`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsError)
-    pub fn list_model_card_export_jobs(
-        &self,
-    ) -> crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder
-    {
+    pub fn list_model_card_export_jobs(&self) -> crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder {
         crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::new(self.handle.clone())
     }
 }

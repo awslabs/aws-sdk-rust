@@ -37,10 +37,7 @@ impl DescribeOriginEndpointFluentBuilder {
         }
     }
     /// Access the DescribeOriginEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeOriginEndpointFluentBuilder {
             crate::operation::describe_origin_endpoint::DescribeOriginEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_origin_endpoint::DescribeOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_origin_endpoint::DescribeOriginEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeOriginEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeOriginEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_origin_endpoint::DescribeOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_origin_endpoint::DescribeOriginEndpointError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeOriginEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_origin_endpoint::DescribeOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_origin_endpoint::DescribeOriginEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeOriginEndpointFluentBuilder {
             crate::operation::describe_origin_endpoint::DescribeOriginEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_origin_endpoint::DescribeOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_origin_endpoint::DescribeOriginEndpointError>,
     > {
         self.customize_middleware().await
     }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateEncryptionConfigOutput {
 }
 impl AssociateEncryptionConfigOutput {
     /// Creates a new builder-style object to manufacture [`AssociateEncryptionConfigOutput`](crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput).
-    pub fn builder() -> crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigOutputBuilder{
+    pub fn builder() -> crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigOutputBuilder {
         crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateEncryptionConfigOutput`](crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateEncryptionConfigOutputBuilder {
     pub(crate) update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl AssociateEncryptionConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateEncryptionConfigOutput`](crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput {
+    pub fn build(self) -> crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput {
         crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput {
             update: self.update,
             _request_id: self._request_id,

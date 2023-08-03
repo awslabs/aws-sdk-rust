@@ -30,18 +30,14 @@ impl DescribeLoadBalancersInput {
 }
 impl DescribeLoadBalancersInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder {
         crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancersInputBuilder {
     pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -53,27 +49,19 @@ impl DescribeLoadBalancersInputBuilder {
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
     ///
     /// <p>The names of the load balancers.</p>
-    pub fn load_balancer_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
         v.push(input.into());
         self.load_balancer_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the load balancers.</p>
-    pub fn set_load_balancer_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_load_balancer_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.load_balancer_names = input;
         self
     }
     /// <p>The names of the load balancers.</p>
-    pub fn get_load_balancer_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_load_balancer_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.load_balancer_names
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -107,16 +95,12 @@ impl DescribeLoadBalancersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_load_balancers::DescribeLoadBalancersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_load_balancers::DescribeLoadBalancersInput {
-                load_balancer_names: self.load_balancer_names,
-                marker: self.marker,
-                page_size: self.page_size,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_load_balancers::DescribeLoadBalancersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_load_balancers::DescribeLoadBalancersInput {
+            load_balancer_names: self.load_balancer_names,
+            marker: self.marker,
+            page_size: self.page_size,
+        })
     }
 }

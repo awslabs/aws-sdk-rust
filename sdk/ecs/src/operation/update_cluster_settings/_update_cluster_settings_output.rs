@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateClusterSettingsOutput {
 }
 impl UpdateClusterSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterSettingsOutput`](crate::operation::update_cluster_settings::UpdateClusterSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_cluster_settings::builders::UpdateClusterSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_cluster_settings::builders::UpdateClusterSettingsOutputBuilder {
         crate::operation::update_cluster_settings::builders::UpdateClusterSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClusterSettingsOutput`](crate::operation::update_cluster_settings::UpdateClusterSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterSettingsOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

@@ -36,18 +36,14 @@ impl DescribeSavingsPlanRatesInput {
 }
 impl DescribeSavingsPlanRatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSavingsPlanRatesInput`](crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_savings_plan_rates::builders::DescribeSavingsPlanRatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_savings_plan_rates::builders::DescribeSavingsPlanRatesInputBuilder {
         crate::operation::describe_savings_plan_rates::builders::DescribeSavingsPlanRatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSavingsPlanRatesInput`](crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlanRatesInputBuilder {
     pub(crate) savings_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateFilter>>,
@@ -56,18 +52,12 @@ pub struct DescribeSavingsPlanRatesInputBuilder {
 }
 impl DescribeSavingsPlanRatesInputBuilder {
     /// <p>The ID of the Savings Plan.</p>
-    pub fn savings_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn savings_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.savings_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Savings Plan.</p>
-    pub fn set_savings_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_savings_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.savings_plan_id = input;
         self
     }
@@ -87,17 +77,12 @@ impl DescribeSavingsPlanRatesInputBuilder {
         self
     }
     /// <p>The filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filters.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateFilter>> {
         &self.filters
     }
     /// <p>The token for the next page of results.</p>
@@ -135,13 +120,11 @@ impl DescribeSavingsPlanRatesInputBuilder {
         crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput {
-                savings_plan_id: self.savings_plan_id,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput {
+            savings_plan_id: self.savings_plan_id,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

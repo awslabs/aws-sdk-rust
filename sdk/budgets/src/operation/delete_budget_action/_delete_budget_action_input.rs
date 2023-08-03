@@ -29,17 +29,14 @@ impl DeleteBudgetActionInput {
 }
 impl DeleteBudgetActionInput {
     /// Creates a new builder-style object to manufacture [`DeleteBudgetActionInput`](crate::operation::delete_budget_action::DeleteBudgetActionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_budget_action::builders::DeleteBudgetActionInputBuilder {
+    pub fn builder() -> crate::operation::delete_budget_action::builders::DeleteBudgetActionInputBuilder {
         crate::operation::delete_budget_action::builders::DeleteBudgetActionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBudgetActionInput`](crate::operation::delete_budget_action::DeleteBudgetActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBudgetActionInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl DeleteBudgetActionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBudgetActionInput`](crate::operation::delete_budget_action::DeleteBudgetActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_budget_action::DeleteBudgetActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_budget_action::DeleteBudgetActionInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_budget_action::DeleteBudgetActionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_budget_action::DeleteBudgetActionInput {
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            action_id: self.action_id,
+        })
     }
 }

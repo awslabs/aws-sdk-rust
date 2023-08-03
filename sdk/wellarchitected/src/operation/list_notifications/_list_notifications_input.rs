@@ -29,17 +29,14 @@ impl ListNotificationsInput {
 }
 impl ListNotificationsInput {
     /// Creates a new builder-style object to manufacture [`ListNotificationsInput`](crate::operation::list_notifications::ListNotificationsInput).
-    pub fn builder() -> crate::operation::list_notifications::builders::ListNotificationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_notifications::builders::ListNotificationsInputBuilder {
         crate::operation::list_notifications::builders::ListNotificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotificationsInput`](crate::operation::list_notifications::ListNotificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotificationsInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListNotificationsInputBuilder {
     /// Consumes the builder and constructs a [`ListNotificationsInput`](crate::operation::list_notifications::ListNotificationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_notifications::ListNotificationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_notifications::ListNotificationsInput {
-                workload_id: self.workload_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_notifications::ListNotificationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_notifications::ListNotificationsInput {
+            workload_id: self.workload_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

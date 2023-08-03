@@ -10,10 +10,7 @@ impl UpdateDomainInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_domain::UpdateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain::UpdateDomainError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain::UpdateDomainError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_domain();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateDomainFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_domain::UpdateDomain,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_domain::UpdateDomain, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_domain::UpdateDomainError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateDomainFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_domain::UpdateDomain,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_domain::UpdateDomain, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_domain::UpdateDomainError>,
     > {
         self.customize_middleware().await
@@ -132,10 +120,7 @@ impl UpdateDomainFluentBuilder {
         self
     }
     /// <p>A collection of settings.</p>
-    pub fn set_default_user_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSettings>,
-    ) -> Self {
+    pub fn set_default_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
         self.inner = self.inner.set_default_user_settings(input);
         self
     }
@@ -144,25 +129,17 @@ impl UpdateDomainFluentBuilder {
         self.inner.get_default_user_settings()
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
-    pub fn domain_settings_for_update(
-        mut self,
-        input: crate::types::DomainSettingsForUpdate,
-    ) -> Self {
+    pub fn domain_settings_for_update(mut self, input: crate::types::DomainSettingsForUpdate) -> Self {
         self.inner = self.inner.domain_settings_for_update(input);
         self
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
-    pub fn set_domain_settings_for_update(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainSettingsForUpdate>,
-    ) -> Self {
+    pub fn set_domain_settings_for_update(mut self, input: ::std::option::Option<crate::types::DomainSettingsForUpdate>) -> Self {
         self.inner = self.inner.set_domain_settings_for_update(input);
         self
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
-    pub fn get_domain_settings_for_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainSettingsForUpdate> {
+    pub fn get_domain_settings_for_update(&self) -> &::std::option::Option<crate::types::DomainSettingsForUpdate> {
         self.inner.get_domain_settings_for_update()
     }
     /// <p>The default settings used to create a space within the Domain.</p>
@@ -171,39 +148,26 @@ impl UpdateDomainFluentBuilder {
         self
     }
     /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn set_default_space_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultSpaceSettings>,
-    ) -> Self {
+    pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
         self.inner = self.inner.set_default_space_settings(input);
         self
     }
     /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn get_default_space_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
+    pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
         self.inner.get_default_space_settings()
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
-    pub fn app_security_group_management(
-        mut self,
-        input: crate::types::AppSecurityGroupManagement,
-    ) -> Self {
+    pub fn app_security_group_management(mut self, input: crate::types::AppSecurityGroupManagement) -> Self {
         self.inner = self.inner.app_security_group_management(input);
         self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
-    pub fn set_app_security_group_management(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
-    ) -> Self {
+    pub fn set_app_security_group_management(mut self, input: ::std::option::Option<crate::types::AppSecurityGroupManagement>) -> Self {
         self.inner = self.inner.set_app_security_group_management(input);
         self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
-    pub fn get_app_security_group_management(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
+    pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         self.inner.get_app_security_group_management()
     }
 }

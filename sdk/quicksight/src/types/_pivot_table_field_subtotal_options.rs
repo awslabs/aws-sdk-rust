@@ -23,9 +23,7 @@ impl PivotTableFieldSubtotalOptions {
 
 /// A builder for [`PivotTableFieldSubtotalOptions`](crate::types::PivotTableFieldSubtotalOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableFieldSubtotalOptionsBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl PivotTableFieldSubtotalOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`PivotTableFieldSubtotalOptions`](crate::types::PivotTableFieldSubtotalOptions).
     pub fn build(self) -> crate::types::PivotTableFieldSubtotalOptions {
-        crate::types::PivotTableFieldSubtotalOptions {
-            field_id: self.field_id,
-        }
+        crate::types::PivotTableFieldSubtotalOptions { field_id: self.field_id }
     }
 }

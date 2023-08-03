@@ -24,35 +24,26 @@ impl UpdateCodeRepositoryInput {
 }
 impl UpdateCodeRepositoryInput {
     /// Creates a new builder-style object to manufacture [`UpdateCodeRepositoryInput`](crate::operation::update_code_repository::UpdateCodeRepositoryInput).
-    pub fn builder(
-    ) -> crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder {
+    pub fn builder() -> crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder {
         crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCodeRepositoryInput`](crate::operation::update_code_repository::UpdateCodeRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCodeRepositoryInputBuilder {
     pub(crate) code_repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) git_config: ::std::option::Option<crate::types::GitConfigForUpdate>,
 }
 impl UpdateCodeRepositoryInputBuilder {
     /// <p>The name of the Git repository to update.</p>
-    pub fn code_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Git repository to update.</p>
-    pub fn set_code_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_repository_name = input;
         self
     }
@@ -68,10 +59,7 @@ impl UpdateCodeRepositoryInputBuilder {
     }
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
-    pub fn set_git_config(
-        mut self,
-        input: ::std::option::Option<crate::types::GitConfigForUpdate>,
-    ) -> Self {
+    pub fn set_git_config(mut self, input: ::std::option::Option<crate::types::GitConfigForUpdate>) -> Self {
         self.git_config = input;
         self
     }
@@ -83,15 +71,11 @@ impl UpdateCodeRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCodeRepositoryInput`](crate::operation::update_code_repository::UpdateCodeRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_code_repository::UpdateCodeRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_code_repository::UpdateCodeRepositoryInput {
-                code_repository_name: self.code_repository_name,
-                git_config: self.git_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_code_repository::UpdateCodeRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_code_repository::UpdateCodeRepositoryInput {
+            code_repository_name: self.code_repository_name,
+            git_config: self.git_config,
+        })
     }
 }

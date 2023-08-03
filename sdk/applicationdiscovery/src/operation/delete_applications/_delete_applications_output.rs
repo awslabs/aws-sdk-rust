@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteApplicationsOutput {
 }
 impl DeleteApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationsOutput`](crate::operation::delete_applications::DeleteApplicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_applications::builders::DeleteApplicationsOutputBuilder {
+    pub fn builder() -> crate::operation::delete_applications::builders::DeleteApplicationsOutputBuilder {
         crate::operation::delete_applications::builders::DeleteApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationsOutput`](crate::operation::delete_applications::DeleteApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationsOutputBuilder {
     _request_id: Option<String>,
 }

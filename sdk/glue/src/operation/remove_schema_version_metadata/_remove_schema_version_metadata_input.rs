@@ -22,9 +22,7 @@ impl RemoveSchemaVersionMetadataInput {
         self.schema_id.as_ref()
     }
     /// <p>The version number of the schema.</p>
-    pub fn schema_version_number(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
+    pub fn schema_version_number(&self) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
         self.schema_version_number.as_ref()
     }
     /// <p>The unique version ID of the schema version.</p>
@@ -38,16 +36,14 @@ impl RemoveSchemaVersionMetadataInput {
 }
 impl RemoveSchemaVersionMetadataInput {
     /// Creates a new builder-style object to manufacture [`RemoveSchemaVersionMetadataInput`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput).
-    pub fn builder() -> crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataInputBuilder{
+    pub fn builder() -> crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataInputBuilder {
         crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveSchemaVersionMetadataInput`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveSchemaVersionMetadataInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,
@@ -75,32 +71,21 @@ impl RemoveSchemaVersionMetadataInputBuilder {
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn set_schema_version_number(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
+    pub fn set_schema_version_number(mut self, input: ::std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
         self.schema_version_number = input;
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn get_schema_version_number(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+    pub fn get_schema_version_number(&self) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
         &self.schema_version_number
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version_id = input;
         self
     }
@@ -114,17 +99,12 @@ impl RemoveSchemaVersionMetadataInputBuilder {
         self
     }
     /// <p>The value of the metadata key.</p>
-    pub fn set_metadata_key_value(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataKeyValuePair>,
-    ) -> Self {
+    pub fn set_metadata_key_value(mut self, input: ::std::option::Option<crate::types::MetadataKeyValuePair>) -> Self {
         self.metadata_key_value = input;
         self
     }
     /// <p>The value of the metadata key.</p>
-    pub fn get_metadata_key_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataKeyValuePair> {
+    pub fn get_metadata_key_value(&self) -> &::std::option::Option<crate::types::MetadataKeyValuePair> {
         &self.metadata_key_value
     }
     /// Consumes the builder and constructs a [`RemoveSchemaVersionMetadataInput`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput).
@@ -134,13 +114,11 @@ impl RemoveSchemaVersionMetadataInputBuilder {
         crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput {
-                schema_id: self.schema_id,
-                schema_version_number: self.schema_version_number,
-                schema_version_id: self.schema_version_id,
-                metadata_key_value: self.metadata_key_value,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput {
+            schema_id: self.schema_id,
+            schema_version_number: self.schema_version_number,
+            schema_version_id: self.schema_version_id,
+            metadata_key_value: self.metadata_key_value,
+        })
     }
 }

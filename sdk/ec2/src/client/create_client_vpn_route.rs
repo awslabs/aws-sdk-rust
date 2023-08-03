@@ -12,12 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateClientVpnRouteOutput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput) with field(s):
     ///   - [`status(Option<ClientVpnRouteStatus>)`](crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput::status): <p>The current state of the route.</p>
     /// - On failure, responds with [`SdkError<CreateClientVpnRouteError>`](crate::operation::create_client_vpn_route::CreateClientVpnRouteError)
-    pub fn create_client_vpn_route(
-        &self,
-    ) -> crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteFluentBuilder
-    {
-        crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_client_vpn_route(&self) -> crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteFluentBuilder {
+        crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteFluentBuilder::new(self.handle.clone())
     }
 }

@@ -41,19 +41,13 @@ pub fn ser_solution_config(
     if let Some(var_14) = &input.optimization_objective {
         #[allow(unused_mut)]
         let mut object_15 = object.key("optimizationObjective").start_object();
-        crate::protocol_serde::shape_optimization_objective::ser_optimization_objective(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_optimization_objective::ser_optimization_objective(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.training_data_config {
         #[allow(unused_mut)]
         let mut object_17 = object.key("trainingDataConfig").start_object();
-        crate::protocol_serde::shape_training_data_config::ser_training_data_config(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_training_data_config::ser_training_data_config(&mut object_17, var_16)?;
         object_17.finish();
     }
     Ok(())
@@ -61,17 +55,9 @@ pub fn ser_solution_config(
 
 pub(crate) fn de_solution_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SolutionConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SolutionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -81,67 +67,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "eventValueThreshold" => {
-                                builder = builder.set_event_value_threshold(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "eventValueThreshold" => {
+                            builder = builder.set_event_value_threshold(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "hpoConfig" => {
-                                builder = builder.set_hpo_config(
-                                    crate::protocol_serde::shape_hpo_config::de_hpo_config(tokens)?,
-                                );
-                            }
-                            "algorithmHyperParameters" => {
-                                builder = builder.set_algorithm_hyper_parameters(
-                                    crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?
-                                );
-                            }
-                            "featureTransformationParameters" => {
-                                builder = builder.set_feature_transformation_parameters(
-                                    crate::protocol_serde::shape_feature_transformation_parameters::de_feature_transformation_parameters(tokens)?
-                                );
-                            }
-                            "autoMLConfig" => {
-                                builder = builder.set_auto_ml_config(
-                                    crate::protocol_serde::shape_auto_ml_config::de_auto_ml_config(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "optimizationObjective" => {
-                                builder = builder.set_optimization_objective(
-                                    crate::protocol_serde::shape_optimization_objective::de_optimization_objective(tokens)?
-                                );
-                            }
-                            "trainingDataConfig" => {
-                                builder = builder.set_training_data_config(
-                                    crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "hpoConfig" => {
+                            builder = builder.set_hpo_config(crate::protocol_serde::shape_hpo_config::de_hpo_config(tokens)?);
+                        }
+                        "algorithmHyperParameters" => {
+                            builder =
+                                builder.set_algorithm_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                        }
+                        "featureTransformationParameters" => {
+                            builder = builder.set_feature_transformation_parameters(
+                                crate::protocol_serde::shape_feature_transformation_parameters::de_feature_transformation_parameters(tokens)?,
+                            );
+                        }
+                        "autoMLConfig" => {
+                            builder = builder.set_auto_ml_config(crate::protocol_serde::shape_auto_ml_config::de_auto_ml_config(tokens)?);
+                        }
+                        "optimizationObjective" => {
+                            builder = builder
+                                .set_optimization_objective(crate::protocol_serde::shape_optimization_objective::de_optimization_objective(tokens)?);
+                        }
+                        "trainingDataConfig" => {
+                            builder =
+                                builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -30,9 +30,7 @@ impl CancelArchivalInput {
 
 /// A builder for [`CancelArchivalInput`](crate::operation::cancel_archival::CancelArchivalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelArchivalInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl CancelArchivalInputBuilder {
     /// Consumes the builder and constructs a [`CancelArchivalInput`](crate::operation::cancel_archival::CancelArchivalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_archival::CancelArchivalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::cancel_archival::CancelArchivalInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_archival::CancelArchivalInput {
             gateway_arn: self.gateway_arn,
             tape_arn: self.tape_arn,

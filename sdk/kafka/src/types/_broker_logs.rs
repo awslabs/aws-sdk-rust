@@ -36,9 +36,7 @@ impl BrokerLogs {
 
 /// A builder for [`BrokerLogs`](crate::types::BrokerLogs).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BrokerLogsBuilder {
     pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogs>,
     pub(crate) firehose: ::std::option::Option<crate::types::Firehose>,
@@ -51,10 +49,7 @@ impl BrokerLogsBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_cloud_watch_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogs>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs(mut self, input: ::std::option::Option<crate::types::CloudWatchLogs>) -> Self {
         self.cloud_watch_logs = input;
         self
     }

@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for PutActionRevisionOutput {
 }
 impl PutActionRevisionOutput {
     /// Creates a new builder-style object to manufacture [`PutActionRevisionOutput`](crate::operation::put_action_revision::PutActionRevisionOutput).
-    pub fn builder(
-    ) -> crate::operation::put_action_revision::builders::PutActionRevisionOutputBuilder {
+    pub fn builder() -> crate::operation::put_action_revision::builders::PutActionRevisionOutputBuilder {
         crate::operation::put_action_revision::builders::PutActionRevisionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutActionRevisionOutput`](crate::operation::put_action_revision::PutActionRevisionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutActionRevisionOutputBuilder {
     pub(crate) new_revision: ::std::option::Option<bool>,
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl PutActionRevisionOutputBuilder {
         &self.new_revision
     }
     /// <p>The ID of the current workflow state of the pipeline.</p>
-    pub fn pipeline_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the current workflow state of the pipeline.</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_id = input;
         self
     }

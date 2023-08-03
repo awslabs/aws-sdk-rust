@@ -23,9 +23,7 @@ impl NetworkPath {
 
 /// A builder for [`NetworkPath`](crate::types::NetworkPath).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkPathBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
 }
@@ -42,10 +40,7 @@ impl NetworkPathBuilder {
         self
     }
     /// <p>The details on the steps in the network path.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>) -> Self {
         self.steps = input;
         self
     }

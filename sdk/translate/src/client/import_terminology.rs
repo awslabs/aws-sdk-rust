@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`terminology_properties(Option<TerminologyProperties>)`](crate::operation::import_terminology::ImportTerminologyOutput::terminology_properties): <p>The properties of the custom terminology being imported.</p>
     ///   - [`auxiliary_data_location(Option<TerminologyDataLocation>)`](crate::operation::import_terminology::ImportTerminologyOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
     /// - On failure, responds with [`SdkError<ImportTerminologyError>`](crate::operation::import_terminology::ImportTerminologyError)
-    pub fn import_terminology(
-        &self,
-    ) -> crate::operation::import_terminology::builders::ImportTerminologyFluentBuilder {
-        crate::operation::import_terminology::builders::ImportTerminologyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_terminology(&self) -> crate::operation::import_terminology::builders::ImportTerminologyFluentBuilder {
+        crate::operation::import_terminology::builders::ImportTerminologyFluentBuilder::new(self.handle.clone())
     }
 }

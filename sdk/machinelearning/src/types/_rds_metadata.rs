@@ -58,9 +58,7 @@ impl RdsMetadata {
 
 /// A builder for [`RdsMetadata`](crate::types::RdsMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsMetadataBuilder {
     pub(crate) database: ::std::option::Option<crate::types::RdsDatabase>,
     pub(crate) database_user_name: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl RdsMetadataBuilder {
         &self.database
     }
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
-    pub fn database_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
-    pub fn set_database_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_user_name = input;
         self
     }
@@ -105,18 +97,12 @@ impl RdsMetadataBuilder {
         &self.database_user_name
     }
     /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
-    pub fn select_sql_query(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn select_sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.select_sql_query = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
-    pub fn set_select_sql_query(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_select_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.select_sql_query = input;
         self
     }
@@ -125,18 +111,12 @@ impl RdsMetadataBuilder {
         &self.select_sql_query
     }
     /// <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-    pub fn resource_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-    pub fn set_resource_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_role = input;
         self
     }
@@ -159,18 +139,12 @@ impl RdsMetadataBuilder {
         &self.service_role
     }
     /// <p>The ID of the Data Pipeline instance that is used to carry to copy data from Amazon RDS to Amazon S3. You can use the ID to find details about the instance in the Data Pipeline console.</p>
-    pub fn data_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_pipeline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Data Pipeline instance that is used to carry to copy data from Amazon RDS to Amazon S3. You can use the ID to find details about the instance in the Data Pipeline console.</p>
-    pub fn set_data_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_pipeline_id = input;
         self
     }

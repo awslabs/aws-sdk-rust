@@ -51,9 +51,7 @@ impl CreateActivityInput {
 
 /// A builder for [`CreateActivityInput`](crate::operation::create_activity::CreateActivityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateActivityInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -116,10 +114,7 @@ impl CreateActivityInputBuilder {
     /// <p>The list of tags to add to a resource.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -132,10 +127,7 @@ impl CreateActivityInputBuilder {
     /// Consumes the builder and constructs a [`CreateActivityInput`](crate::operation::create_activity::CreateActivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_activity::CreateActivityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_activity::CreateActivityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_activity::CreateActivityInput {
             name: self.name,
             tags: self.tags,

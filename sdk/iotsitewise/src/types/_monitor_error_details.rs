@@ -30,9 +30,7 @@ impl MonitorErrorDetails {
 
 /// A builder for [`MonitorErrorDetails`](crate::types::MonitorErrorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitorErrorDetailsBuilder {
     pub(crate) code: ::std::option::Option<crate::types::MonitorErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl MonitorErrorDetailsBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorErrorCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::MonitorErrorCode>) -> Self {
         self.code = input;
         self
     }

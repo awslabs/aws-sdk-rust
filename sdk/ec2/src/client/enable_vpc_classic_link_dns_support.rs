@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`EnableVpcClassicLinkDnsSupportOutput`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<EnableVpcClassicLinkDnsSupportError>`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportError)
-    pub fn enable_vpc_classic_link_dns_support(&self) -> crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportFluentBuilder{
+    pub fn enable_vpc_classic_link_dns_support(
+        &self,
+    ) -> crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportFluentBuilder {
         crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl UpdateChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_channel::UpdateChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel::UpdateChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_channel();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateChannelFluentBuilder {
         }
     }
     /// Access the UpdateChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdateChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -116,18 +108,12 @@ impl UpdateChannelFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_group_name(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_group_name(input);
         self
     }

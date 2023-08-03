@@ -51,19 +51,16 @@ impl DescribeTrafficMirrorFiltersInput {
 }
 impl DescribeTrafficMirrorFiltersInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrafficMirrorFiltersInput`](crate::operation::describe_traffic_mirror_filters::DescribeTrafficMirrorFiltersInput).
-    pub fn builder() -> crate::operation::describe_traffic_mirror_filters::builders::DescribeTrafficMirrorFiltersInputBuilder{
+    pub fn builder() -> crate::operation::describe_traffic_mirror_filters::builders::DescribeTrafficMirrorFiltersInputBuilder {
         crate::operation::describe_traffic_mirror_filters::builders::DescribeTrafficMirrorFiltersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrafficMirrorFiltersInput`](crate::operation::describe_traffic_mirror_filters::DescribeTrafficMirrorFiltersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrafficMirrorFiltersInputBuilder {
-    pub(crate) traffic_mirror_filter_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) traffic_mirror_filter_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -75,27 +72,19 @@ impl DescribeTrafficMirrorFiltersInputBuilder {
     /// To override the contents of this collection use [`set_traffic_mirror_filter_ids`](Self::set_traffic_mirror_filter_ids).
     ///
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.traffic_mirror_filter_ids.unwrap_or_default();
         v.push(input.into());
         self.traffic_mirror_filter_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn set_traffic_mirror_filter_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.traffic_mirror_filter_ids = input;
         self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn get_traffic_mirror_filter_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_traffic_mirror_filter_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.traffic_mirror_filter_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -132,10 +121,7 @@ impl DescribeTrafficMirrorFiltersInputBuilder {
     /// <li> <p> <code>description</code>: The Traffic Mirror filter description.</p> </li>
     /// <li> <p> <code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -182,14 +168,12 @@ impl DescribeTrafficMirrorFiltersInputBuilder {
         crate::operation::describe_traffic_mirror_filters::DescribeTrafficMirrorFiltersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_traffic_mirror_filters::DescribeTrafficMirrorFiltersInput {
-                traffic_mirror_filter_ids: self.traffic_mirror_filter_ids,
-                dry_run: self.dry_run,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_traffic_mirror_filters::DescribeTrafficMirrorFiltersInput {
+            traffic_mirror_filter_ids: self.traffic_mirror_filter_ids,
+            dry_run: self.dry_run,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

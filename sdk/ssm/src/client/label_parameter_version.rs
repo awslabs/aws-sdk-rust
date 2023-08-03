@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`invalid_labels(Option<Vec<String>>)`](crate::operation::label_parameter_version::LabelParameterVersionOutput::invalid_labels): <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///   - [`parameter_version(i64)`](crate::operation::label_parameter_version::LabelParameterVersionOutput::parameter_version): <p>The version of the parameter that has been labeled.</p>
     /// - On failure, responds with [`SdkError<LabelParameterVersionError>`](crate::operation::label_parameter_version::LabelParameterVersionError)
-    pub fn label_parameter_version(
-        &self,
-    ) -> crate::operation::label_parameter_version::builders::LabelParameterVersionFluentBuilder
-    {
-        crate::operation::label_parameter_version::builders::LabelParameterVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn label_parameter_version(&self) -> crate::operation::label_parameter_version::builders::LabelParameterVersionFluentBuilder {
+        crate::operation::label_parameter_version::builders::LabelParameterVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -56,9 +56,7 @@ pub struct TableInput {
     pub table_type: ::std::option::Option<::std::string::String>,
     /// <p>These key-value pairs define properties associated with the table.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
     #[doc(hidden)]
     pub target_table: ::std::option::Option<crate::types::TableIdentifier>,
@@ -126,11 +124,7 @@ impl TableInput {
         self.table_type.as_deref()
     }
     /// <p>These key-value pairs define properties associated with the table.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
@@ -147,9 +141,7 @@ impl TableInput {
 
 /// A builder for [`TableInput`](crate::types::TableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -162,9 +154,7 @@ pub struct TableInputBuilder {
     pub(crate) view_original_text: ::std::option::Option<::std::string::String>,
     pub(crate) view_expanded_text: ::std::option::Option<::std::string::String>,
     pub(crate) table_type: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) target_table: ::std::option::Option<crate::types::TableIdentifier>,
 }
 impl TableInputBuilder {
@@ -216,10 +206,7 @@ impl TableInputBuilder {
         self
     }
     /// <p>The last time that the table was accessed.</p>
-    pub fn set_last_access_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_access_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_access_time = input;
         self
     }
@@ -233,10 +220,7 @@ impl TableInputBuilder {
         self
     }
     /// <p>The last time that column statistics were computed for this table.</p>
-    pub fn set_last_analyzed_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_analyzed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_analyzed_time = input;
         self
     }
@@ -264,17 +248,12 @@ impl TableInputBuilder {
         self
     }
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
-    pub fn set_storage_descriptor(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageDescriptor>,
-    ) -> Self {
+    pub fn set_storage_descriptor(mut self, input: ::std::option::Option<crate::types::StorageDescriptor>) -> Self {
         self.storage_descriptor = input;
         self
     }
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
-    pub fn get_storage_descriptor(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageDescriptor> {
+    pub fn get_storage_descriptor(&self) -> &::std::option::Option<crate::types::StorageDescriptor> {
         &self.storage_descriptor
     }
     /// Appends an item to `partition_keys`.
@@ -293,34 +272,23 @@ impl TableInputBuilder {
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
-    pub fn set_partition_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
-    ) -> Self {
+    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>) -> Self {
         self.partition_keys = input;
         self
     }
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
-    pub fn get_partition_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
         &self.partition_keys
     }
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
-    pub fn view_original_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn view_original_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_original_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
-    pub fn set_view_original_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_view_original_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.view_original_text = input;
         self
     }
@@ -329,18 +297,12 @@ impl TableInputBuilder {
         &self.view_original_text
     }
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
-    pub fn view_expanded_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn view_expanded_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_expanded_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
-    pub fn set_view_expanded_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_view_expanded_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.view_expanded_text = input;
         self
     }
@@ -412,32 +374,19 @@ impl TableInputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>These key-value pairs define properties associated with the table.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>These key-value pairs define properties associated with the table.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>These key-value pairs define properties associated with the table.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
@@ -446,10 +395,7 @@ impl TableInputBuilder {
         self
     }
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
-    pub fn set_target_table(
-        mut self,
-        input: ::std::option::Option<crate::types::TableIdentifier>,
-    ) -> Self {
+    pub fn set_target_table(mut self, input: ::std::option::Option<crate::types::TableIdentifier>) -> Self {
         self.target_table = input;
         self
     }

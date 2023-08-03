@@ -14,16 +14,13 @@ pub struct CreateStudioInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The studio encryption configuration.</p>
     #[doc(hidden)]
-    pub studio_encryption_configuration:
-        ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
+    pub studio_encryption_configuration: ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
     #[doc(hidden)]
     pub studio_name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
     #[doc(hidden)]
     pub user_role_arn: ::std::option::Option<::std::string::String>,
@@ -42,9 +39,7 @@ impl CreateStudioInput {
         self.display_name.as_deref()
     }
     /// <p>The studio encryption configuration.</p>
-    pub fn studio_encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StudioEncryptionConfiguration> {
+    pub fn studio_encryption_configuration(&self) -> ::std::option::Option<&crate::types::StudioEncryptionConfiguration> {
         self.studio_encryption_configuration.as_ref()
     }
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
@@ -52,11 +47,7 @@ impl CreateStudioInput {
         self.studio_name.as_deref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
@@ -70,10 +61,7 @@ impl ::std::fmt::Debug for CreateStudioInput {
         formatter.field("admin_role_arn", &self.admin_role_arn);
         formatter.field("client_token", &self.client_token);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "studio_encryption_configuration",
-            &self.studio_encryption_configuration,
-        );
+        formatter.field("studio_encryption_configuration", &self.studio_encryption_configuration);
         formatter.field("studio_name", &self.studio_name);
         formatter.field("tags", &self.tags);
         formatter.field("user_role_arn", &self.user_role_arn);
@@ -94,28 +82,19 @@ pub struct CreateStudioInputBuilder {
     pub(crate) admin_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) studio_encryption_configuration:
-        ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
+    pub(crate) studio_encryption_configuration: ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
     pub(crate) studio_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) user_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateStudioInputBuilder {
     /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn admin_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_admin_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_role_arn = input;
         self
     }
@@ -152,25 +131,17 @@ impl CreateStudioInputBuilder {
         &self.display_name
     }
     /// <p>The studio encryption configuration.</p>
-    pub fn studio_encryption_configuration(
-        mut self,
-        input: crate::types::StudioEncryptionConfiguration,
-    ) -> Self {
+    pub fn studio_encryption_configuration(mut self, input: crate::types::StudioEncryptionConfiguration) -> Self {
         self.studio_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The studio encryption configuration.</p>
-    pub fn set_studio_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_studio_encryption_configuration(mut self, input: ::std::option::Option<crate::types::StudioEncryptionConfiguration>) -> Self {
         self.studio_encryption_configuration = input;
         self
     }
     /// <p>The studio encryption configuration.</p>
-    pub fn get_studio_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StudioEncryptionConfiguration> {
+    pub fn get_studio_encryption_configuration(&self) -> &::std::option::Option<crate::types::StudioEncryptionConfiguration> {
         &self.studio_encryption_configuration
     }
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
@@ -192,47 +163,28 @@ impl CreateStudioInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn user_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_user_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_role_arn = input;
         self
     }
@@ -241,12 +193,7 @@ impl CreateStudioInputBuilder {
         &self.user_role_arn
     }
     /// Consumes the builder and constructs a [`CreateStudioInput`](crate::operation::create_studio::CreateStudioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_studio::CreateStudioInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_studio::CreateStudioInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_studio::CreateStudioInput {
             admin_role_arn: self.admin_role_arn,
             client_token: self.client_token,
@@ -264,10 +211,7 @@ impl ::std::fmt::Debug for CreateStudioInputBuilder {
         formatter.field("admin_role_arn", &self.admin_role_arn);
         formatter.field("client_token", &self.client_token);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "studio_encryption_configuration",
-            &self.studio_encryption_configuration,
-        );
+        formatter.field("studio_encryption_configuration", &self.studio_encryption_configuration);
         formatter.field("studio_name", &self.studio_name);
         formatter.field("tags", &self.tags);
         formatter.field("user_role_arn", &self.user_role_arn);

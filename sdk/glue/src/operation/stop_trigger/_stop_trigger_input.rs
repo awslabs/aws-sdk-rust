@@ -22,9 +22,7 @@ impl StopTriggerInput {
 
 /// A builder for [`StopTriggerInput`](crate::operation::stop_trigger::StopTriggerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTriggerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StopTriggerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopTriggerInput`](crate::operation::stop_trigger::StopTriggerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_trigger::StopTriggerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_trigger::StopTriggerInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_trigger::StopTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_trigger::StopTriggerInput { name: self.name })
     }
 }

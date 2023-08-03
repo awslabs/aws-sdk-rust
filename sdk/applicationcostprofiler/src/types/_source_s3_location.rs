@@ -37,9 +37,7 @@ impl SourceS3Location {
 
 /// A builder for [`SourceS3Location`](crate::types::SourceS3Location).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceS3LocationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl SourceS3LocationBuilder {
         self
     }
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
-    pub fn set_region(
-        mut self,
-        input: ::std::option::Option<crate::types::S3BucketRegion>,
-    ) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<crate::types::S3BucketRegion>) -> Self {
         self.region = input;
         self
     }

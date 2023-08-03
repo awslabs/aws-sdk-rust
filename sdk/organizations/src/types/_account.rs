@@ -185,10 +185,7 @@ impl AccountBuilder {
         self
     }
     /// <p>The method by which the account joined the organization.</p>
-    pub fn set_joined_method(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountJoinedMethod>,
-    ) -> Self {
+    pub fn set_joined_method(mut self, input: ::std::option::Option<crate::types::AccountJoinedMethod>) -> Self {
         self.joined_method = input;
         self
     }
@@ -202,10 +199,7 @@ impl AccountBuilder {
         self
     }
     /// <p>The date the account became a part of the organization.</p>
-    pub fn set_joined_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_joined_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.joined_timestamp = input;
         self
     }

@@ -45,18 +45,12 @@ pub struct MemberFabricConfigurationBuilder {
 }
 impl MemberFabricConfigurationBuilder {
     /// <p>The user name for the member's initial administrative user.</p>
-    pub fn admin_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name for the member's initial administrative user.</p>
-    pub fn set_admin_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_username = input;
         self
     }
@@ -65,18 +59,12 @@ impl MemberFabricConfigurationBuilder {
         &self.admin_username
     }
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-    pub fn admin_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-    pub fn set_admin_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_password = input;
         self
     }

@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StreamJournalToKinesisOutput`](crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput) with field(s):
     ///   - [`stream_id(Option<String>)`](crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput::stream_id): <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
     /// - On failure, responds with [`SdkError<StreamJournalToKinesisError>`](crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError)
-    pub fn stream_journal_to_kinesis(
-        &self,
-    ) -> crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisFluentBuilder
-    {
+    pub fn stream_journal_to_kinesis(&self) -> crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisFluentBuilder {
         crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisFluentBuilder::new(self.handle.clone())
     }
 }

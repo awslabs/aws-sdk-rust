@@ -8,8 +8,7 @@ pub struct ListWirelessGatewayTaskDefinitionsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of task definitions.</p>
     #[doc(hidden)]
-    pub task_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>>,
+    pub task_definitions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>>,
     _request_id: Option<String>,
 }
 impl ListWirelessGatewayTaskDefinitionsOutput {
@@ -18,9 +17,7 @@ impl ListWirelessGatewayTaskDefinitionsOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of task definitions.</p>
-    pub fn task_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UpdateWirelessGatewayTaskEntry]> {
+    pub fn task_definitions(&self) -> ::std::option::Option<&[crate::types::UpdateWirelessGatewayTaskEntry]> {
         self.task_definitions.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListWirelessGatewayTaskDefinitionsOut
 }
 impl ListWirelessGatewayTaskDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListWirelessGatewayTaskDefinitionsOutput`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput).
-    pub fn builder() -> crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsOutputBuilder {
         crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWirelessGatewayTaskDefinitionsOutput`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWirelessGatewayTaskDefinitionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) task_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>>,
+    pub(crate) task_definitions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>>,
     _request_id: Option<String>,
 }
 impl ListWirelessGatewayTaskDefinitionsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListWirelessGatewayTaskDefinitionsOutputBuilder {
         self
     }
     /// <p>The list of task definitions.</p>
-    pub fn set_task_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>>,
-    ) -> Self {
+    pub fn set_task_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>>) -> Self {
         self.task_definitions = input;
         self
     }
     /// <p>The list of task definitions.</p>
-    pub fn get_task_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>> {
+    pub fn get_task_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>> {
         &self.task_definitions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,12 +86,10 @@ impl ListWirelessGatewayTaskDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWirelessGatewayTaskDefinitionsOutput`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput).
-    pub fn build(self) -> crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput{
+    pub fn build(self) -> crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput {
         crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput {
-            next_token: self.next_token
-            ,
-            task_definitions: self.task_definitions
-            ,
+            next_token: self.next_token,
+            task_definitions: self.task_definitions,
             _request_id: self._request_id,
         }
     }

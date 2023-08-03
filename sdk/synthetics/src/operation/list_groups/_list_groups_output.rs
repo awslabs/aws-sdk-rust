@@ -35,9 +35,7 @@ impl ListGroupsOutput {
 
 /// A builder for [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupsOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListGroupsOutputBuilder {
         self
     }
     /// <p>An array of structures that each contain information about one group.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>An array of structures that each contain information about one group.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
         &self.groups
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>

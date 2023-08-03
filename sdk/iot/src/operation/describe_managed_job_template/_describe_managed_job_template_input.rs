@@ -22,34 +22,26 @@ impl DescribeManagedJobTemplateInput {
 }
 impl DescribeManagedJobTemplateInput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedJobTemplateInput`](crate::operation::describe_managed_job_template::DescribeManagedJobTemplateInput).
-    pub fn builder() -> crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateInputBuilder{
+    pub fn builder() -> crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateInputBuilder {
         crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeManagedJobTemplateInput`](crate::operation::describe_managed_job_template::DescribeManagedJobTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeManagedJobTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeManagedJobTemplateInputBuilder {
     /// <p>The unique name of a managed job template, which is required.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of a managed job template, which is required.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -58,18 +50,12 @@ impl DescribeManagedJobTemplateInputBuilder {
         &self.template_name
     }
     /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
-    pub fn template_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
-    pub fn set_template_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_version = input;
         self
     }
@@ -84,11 +70,9 @@ impl DescribeManagedJobTemplateInputBuilder {
         crate::operation::describe_managed_job_template::DescribeManagedJobTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_managed_job_template::DescribeManagedJobTemplateInput {
-                template_name: self.template_name,
-                template_version: self.template_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_managed_job_template::DescribeManagedJobTemplateInput {
+            template_name: self.template_name,
+            template_version: self.template_version,
+        })
     }
 }

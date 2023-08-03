@@ -34,18 +34,14 @@ impl ::aws_http::request_id::RequestId for UpdateFleetAttributesOutput {
 }
 impl UpdateFleetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetAttributesOutput`](crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesOutputBuilder {
         crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFleetAttributesOutput`](crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFleetAttributesOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,

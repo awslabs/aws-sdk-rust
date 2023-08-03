@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`deletes(i64)`](crate::operation::upload_documents::UploadDocumentsOutput::deletes): <p>The number of documents that were deleted from the search domain.</p>
     ///   - [`warnings(Option<Vec<DocumentServiceWarning>>)`](crate::operation::upload_documents::UploadDocumentsOutput::warnings): <p>Any warnings returned by the document service about the documents being uploaded.</p>
     /// - On failure, responds with [`SdkError<UploadDocumentsError>`](crate::operation::upload_documents::UploadDocumentsError)
-    pub fn upload_documents(
-        &self,
-    ) -> crate::operation::upload_documents::builders::UploadDocumentsFluentBuilder {
-        crate::operation::upload_documents::builders::UploadDocumentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn upload_documents(&self) -> crate::operation::upload_documents::builders::UploadDocumentsFluentBuilder {
+        crate::operation::upload_documents::builders::UploadDocumentsFluentBuilder::new(self.handle.clone())
     }
 }

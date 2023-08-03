@@ -53,9 +53,7 @@ impl ::aws_http::request_id::RequestId for GetParametersForImportOutput {
 }
 impl GetParametersForImportOutput {
     /// Creates a new builder-style object to manufacture [`GetParametersForImportOutput`](crate::operation::get_parameters_for_import::GetParametersForImportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder {
         crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder::default()
     }
 }
@@ -91,10 +89,7 @@ impl GetParametersForImportOutputBuilder {
         self
     }
     /// <p>The import token to send in a subsequent <code>ImportKeyMaterial</code> request.</p>
-    pub fn set_import_token(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_import_token(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.import_token = input;
         self
     }
@@ -108,10 +103,7 @@ impl GetParametersForImportOutputBuilder {
         self
     }
     /// <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
-    pub fn set_public_key(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_public_key(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.public_key = input;
         self
     }
@@ -125,10 +117,7 @@ impl GetParametersForImportOutputBuilder {
         self
     }
     /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
-    pub fn set_parameters_valid_to(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_parameters_valid_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.parameters_valid_to = input;
         self
     }
@@ -146,9 +135,7 @@ impl GetParametersForImportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetParametersForImportOutput`](crate::operation::get_parameters_for_import::GetParametersForImportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_parameters_for_import::GetParametersForImportOutput {
+    pub fn build(self) -> crate::operation::get_parameters_for_import::GetParametersForImportOutput {
         crate::operation::get_parameters_for_import::GetParametersForImportOutput {
             key_id: self.key_id,
             import_token: self.import_token,

@@ -23,9 +23,7 @@ impl TableInlineVisualization {
 
 /// A builder for [`TableInlineVisualization`](crate::types::TableInlineVisualization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableInlineVisualizationBuilder {
     pub(crate) data_bars: ::std::option::Option<crate::types::DataBarsOptions>,
 }
@@ -36,10 +34,7 @@ impl TableInlineVisualizationBuilder {
         self
     }
     /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
-    pub fn set_data_bars(
-        mut self,
-        input: ::std::option::Option<crate::types::DataBarsOptions>,
-    ) -> Self {
+    pub fn set_data_bars(mut self, input: ::std::option::Option<crate::types::DataBarsOptions>) -> Self {
         self.data_bars = input;
         self
     }
@@ -49,8 +44,6 @@ impl TableInlineVisualizationBuilder {
     }
     /// Consumes the builder and constructs a [`TableInlineVisualization`](crate::types::TableInlineVisualization).
     pub fn build(self) -> crate::types::TableInlineVisualization {
-        crate::types::TableInlineVisualization {
-            data_bars: self.data_bars,
-        }
+        crate::types::TableInlineVisualization { data_bars: self.data_bars }
     }
 }

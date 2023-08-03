@@ -10,10 +10,7 @@ impl RegisterRobotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_robot::RegisterRobotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_robot::RegisterRobotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_robot::RegisterRobotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_robot();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl RegisterRobotFluentBuilder {
         }
     }
     /// Access the RegisterRobot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_robot::builders::RegisterRobotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_robot::builders::RegisterRobotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,10 +61,7 @@ impl RegisterRobotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

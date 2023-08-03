@@ -27,17 +27,14 @@ impl ValidateTemplateInput {
 }
 impl ValidateTemplateInput {
     /// Creates a new builder-style object to manufacture [`ValidateTemplateInput`](crate::operation::validate_template::ValidateTemplateInput).
-    pub fn builder() -> crate::operation::validate_template::builders::ValidateTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::validate_template::builders::ValidateTemplateInputBuilder {
         crate::operation::validate_template::builders::ValidateTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateTemplateInput`](crate::operation::validate_template::ValidateTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateTemplateInputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) template_url: ::std::option::Option<::std::string::String>,
@@ -45,19 +42,13 @@ pub struct ValidateTemplateInputBuilder {
 impl ValidateTemplateInputBuilder {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -86,10 +77,7 @@ impl ValidateTemplateInputBuilder {
     /// Consumes the builder and constructs a [`ValidateTemplateInput`](crate::operation::validate_template::ValidateTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_template::ValidateTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::validate_template::ValidateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::validate_template::ValidateTemplateInput {
             template_body: self.template_body,
             template_url: self.template_url,

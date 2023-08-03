@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`identity_id(Option<String>)`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
     ///   - [`credentials(Option<Credentials>)`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput::credentials): <p>Credentials for the provided identity ID.</p>
     /// - On failure, responds with [`SdkError<GetCredentialsForIdentityError>`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityError)
-    pub fn get_credentials_for_identity(&self) -> crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityFluentBuilder{
+    pub fn get_credentials_for_identity(&self) -> crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityFluentBuilder {
         crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityFluentBuilder::new(self.handle.clone())
     }
 }

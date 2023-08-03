@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::set_client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     /// - On success, responds with [`DeleteWorkspaceOutput`](crate::operation::delete_workspace::DeleteWorkspaceOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::operation::delete_workspace::DeleteWorkspaceError)
-    pub fn delete_workspace(
-        &self,
-    ) -> crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder {
-        crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workspace(&self) -> crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder {
+        crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct RegisteredUserConsoleFeatureConfigurations {
 }
 impl RegisteredUserConsoleFeatureConfigurations {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
-    pub fn state_persistence(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StatePersistenceConfigurations> {
+    pub fn state_persistence(&self) -> ::std::option::Option<&crate::types::StatePersistenceConfigurations> {
         self.state_persistence.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl RegisteredUserConsoleFeatureConfigurations {
 
 /// A builder for [`RegisteredUserConsoleFeatureConfigurations`](crate::types::RegisteredUserConsoleFeatureConfigurations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisteredUserConsoleFeatureConfigurationsBuilder {
-    pub(crate) state_persistence:
-        ::std::option::Option<crate::types::StatePersistenceConfigurations>,
+    pub(crate) state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
 }
 impl RegisteredUserConsoleFeatureConfigurationsBuilder {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
-    pub fn state_persistence(
-        mut self,
-        input: crate::types::StatePersistenceConfigurations,
-    ) -> Self {
+    pub fn state_persistence(mut self, input: crate::types::StatePersistenceConfigurations) -> Self {
         self.state_persistence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
-    pub fn set_state_persistence(
-        mut self,
-        input: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
-    ) -> Self {
+    pub fn set_state_persistence(mut self, input: ::std::option::Option<crate::types::StatePersistenceConfigurations>) -> Self {
         self.state_persistence = input;
         self
     }
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
-    pub fn get_state_persistence(
-        &self,
-    ) -> &::std::option::Option<crate::types::StatePersistenceConfigurations> {
+    pub fn get_state_persistence(&self) -> &::std::option::Option<crate::types::StatePersistenceConfigurations> {
         &self.state_persistence
     }
     /// Consumes the builder and constructs a [`RegisteredUserConsoleFeatureConfigurations`](crate::types::RegisteredUserConsoleFeatureConfigurations).

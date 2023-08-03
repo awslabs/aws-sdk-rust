@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AggregationFindingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AggregationFindingType {
             "CODE_VULNERABILITY" => AggregationFindingType::CodeVulnerability,
             "NETWORK_REACHABILITY" => AggregationFindingType::NetworkReachability,
             "PACKAGE_VULNERABILITY" => AggregationFindingType::PackageVulnerability,
-            other => AggregationFindingType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AggregationFindingType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl AggregationFindingType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CODE_VULNERABILITY",
-            "NETWORK_REACHABILITY",
-            "PACKAGE_VULNERABILITY",
-        ]
+        &["CODE_VULNERABILITY", "NETWORK_REACHABILITY", "PACKAGE_VULNERABILITY"]
     }
 }
 impl ::std::convert::AsRef<str> for AggregationFindingType {

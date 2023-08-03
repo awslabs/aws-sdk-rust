@@ -42,9 +42,7 @@ impl PostDialogCodeHookInvocationSpecification {
         self.success_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
-    pub fn success_conditional(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
+    pub fn success_conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.success_conditional.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -56,9 +54,7 @@ impl PostDialogCodeHookInvocationSpecification {
         self.failure_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn failure_conditional(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
+    pub fn failure_conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.failure_conditional.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -70,9 +66,7 @@ impl PostDialogCodeHookInvocationSpecification {
         self.timeout_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
-    pub fn timeout_conditional(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
+    pub fn timeout_conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.timeout_conditional.as_ref()
     }
 }
@@ -85,9 +79,7 @@ impl PostDialogCodeHookInvocationSpecification {
 
 /// A builder for [`PostDialogCodeHookInvocationSpecification`](crate::types::PostDialogCodeHookInvocationSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostDialogCodeHookInvocationSpecificationBuilder {
     pub(crate) success_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) success_next_step: ::std::option::Option<crate::types::DialogState>,
@@ -106,17 +98,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn set_success_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_success_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.success_response = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn get_success_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_success_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.success_response
     }
     /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
@@ -125,10 +112,7 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self
     }
     /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
-    pub fn set_success_next_step(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_success_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.success_next_step = input;
         self
     }
@@ -142,17 +126,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self
     }
     /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
-    pub fn set_success_conditional(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalSpecification>,
-    ) -> Self {
+    pub fn set_success_conditional(mut self, input: ::std::option::Option<crate::types::ConditionalSpecification>) -> Self {
         self.success_conditional = input;
         self
     }
     /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
-    pub fn get_success_conditional(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+    pub fn get_success_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.success_conditional
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -161,17 +140,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn set_failure_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_failure_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.failure_response = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn get_failure_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_failure_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.failure_response
     }
     /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
@@ -180,10 +154,7 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self
     }
     /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn set_failure_next_step(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_failure_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.failure_next_step = input;
         self
     }
@@ -197,17 +168,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self
     }
     /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn set_failure_conditional(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalSpecification>,
-    ) -> Self {
+    pub fn set_failure_conditional(mut self, input: ::std::option::Option<crate::types::ConditionalSpecification>) -> Self {
         self.failure_conditional = input;
         self
     }
     /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn get_failure_conditional(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+    pub fn get_failure_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.failure_conditional
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -216,17 +182,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn set_timeout_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_timeout_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.timeout_response = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn get_timeout_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_timeout_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.timeout_response
     }
     /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
@@ -235,10 +196,7 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self
     }
     /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
-    pub fn set_timeout_next_step(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_timeout_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.timeout_next_step = input;
         self
     }
@@ -252,17 +210,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self
     }
     /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
-    pub fn set_timeout_conditional(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalSpecification>,
-    ) -> Self {
+    pub fn set_timeout_conditional(mut self, input: ::std::option::Option<crate::types::ConditionalSpecification>) -> Self {
         self.timeout_conditional = input;
         self
     }
     /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
-    pub fn get_timeout_conditional(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+    pub fn get_timeout_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.timeout_conditional
     }
     /// Consumes the builder and constructs a [`PostDialogCodeHookInvocationSpecification`](crate::types::PostDialogCodeHookInvocationSpecification).

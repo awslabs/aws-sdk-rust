@@ -31,27 +31,19 @@ impl GetLogRecordInput {
 
 /// A builder for [`GetLogRecordInput`](crate::operation::get_log_record::GetLogRecordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLogRecordInputBuilder {
     pub(crate) log_record_pointer: ::std::option::Option<::std::string::String>,
     pub(crate) unmask: ::std::option::Option<bool>,
 }
 impl GetLogRecordInputBuilder {
     /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
-    pub fn log_record_pointer(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_record_pointer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_record_pointer = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
-    pub fn set_log_record_pointer(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_record_pointer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_record_pointer = input;
         self
     }
@@ -79,10 +71,7 @@ impl GetLogRecordInputBuilder {
     /// Consumes the builder and constructs a [`GetLogRecordInput`](crate::operation::get_log_record::GetLogRecordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_log_record::GetLogRecordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_log_record::GetLogRecordInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_log_record::GetLogRecordInput {
             log_record_pointer: self.log_record_pointer,
             unmask: self.unmask,

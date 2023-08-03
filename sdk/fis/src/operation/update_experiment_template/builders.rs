@@ -26,7 +26,7 @@ impl UpdateExperimentTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateExperimentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_experiment_template::builders::UpdateExperimentTemplateInputBuilder,
+    inner: crate::operation::update_experiment_template::builders::UpdateExperimentTemplateInputBuilder,
 }
 impl UpdateExperimentTemplateFluentBuilder {
     /// Creates a new `UpdateExperimentTemplate`.
@@ -37,10 +37,7 @@ impl UpdateExperimentTemplateFluentBuilder {
         }
     }
     /// Access the UpdateExperimentTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_experiment_template::builders::UpdateExperimentTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_experiment_template::builders::UpdateExperimentTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateExperimentTemplateFluentBuilder {
             crate::operation::update_experiment_template::UpdateExperimentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment_template::UpdateExperimentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment_template::UpdateExperimentTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateExperimentTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateExperimentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_experiment_template::UpdateExperimentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment_template::UpdateExperimentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment_template::UpdateExperimentTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateExperimentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_experiment_template::UpdateExperimentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment_template::UpdateExperimentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment_template::UpdateExperimentTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateExperimentTemplateFluentBuilder {
             crate::operation::update_experiment_template::UpdateExperimentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment_template::UpdateExperimentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment_template::UpdateExperimentTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -156,29 +142,20 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// To override the contents of this collection use [`set_stop_conditions`](Self::set_stop_conditions).
     ///
     /// <p>The stop conditions for the experiment.</p>
-    pub fn stop_conditions(
-        mut self,
-        input: crate::types::UpdateExperimentTemplateStopConditionInput,
-    ) -> Self {
+    pub fn stop_conditions(mut self, input: crate::types::UpdateExperimentTemplateStopConditionInput) -> Self {
         self.inner = self.inner.stop_conditions(input);
         self
     }
     /// <p>The stop conditions for the experiment.</p>
     pub fn set_stop_conditions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::UpdateExperimentTemplateStopConditionInput>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateExperimentTemplateStopConditionInput>>,
     ) -> Self {
         self.inner = self.inner.set_stop_conditions(input);
         self
     }
     /// <p>The stop conditions for the experiment.</p>
-    pub fn get_stop_conditions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::UpdateExperimentTemplateStopConditionInput>,
-    > {
+    pub fn get_stop_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateExperimentTemplateStopConditionInput>> {
         self.inner.get_stop_conditions()
     }
     /// Adds a key-value pair to `targets`.
@@ -186,23 +163,14 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
     /// <p>The targets for the experiment.</p>
-    pub fn targets(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::UpdateExperimentTemplateTargetInput,
-    ) -> Self {
+    pub fn targets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::UpdateExperimentTemplateTargetInput) -> Self {
         self.inner = self.inner.targets(k.into(), v);
         self
     }
     /// <p>The targets for the experiment.</p>
     pub fn set_targets(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::UpdateExperimentTemplateTargetInput,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdateExperimentTemplateTargetInput>>,
     ) -> Self {
         self.inner = self.inner.set_targets(input);
         self
@@ -210,12 +178,7 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// <p>The targets for the experiment.</p>
     pub fn get_targets(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::UpdateExperimentTemplateTargetInput,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdateExperimentTemplateTargetInput>> {
         self.inner.get_targets()
     }
     /// Adds a key-value pair to `actions`.
@@ -223,23 +186,14 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
     /// <p>The actions for the experiment.</p>
-    pub fn actions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::UpdateExperimentTemplateActionInputItem,
-    ) -> Self {
+    pub fn actions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::UpdateExperimentTemplateActionInputItem) -> Self {
         self.inner = self.inner.actions(k.into(), v);
         self
     }
     /// <p>The actions for the experiment.</p>
     pub fn set_actions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::UpdateExperimentTemplateActionInputItem,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdateExperimentTemplateActionInputItem>>,
     ) -> Self {
         self.inner = self.inner.set_actions(input);
         self
@@ -247,12 +201,7 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// <p>The actions for the experiment.</p>
     pub fn get_actions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::UpdateExperimentTemplateActionInputItem,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdateExperimentTemplateActionInputItem>> {
         self.inner.get_actions()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
@@ -270,25 +219,17 @@ impl UpdateExperimentTemplateFluentBuilder {
         self.inner.get_role_arn()
     }
     /// <p>The configuration for experiment logging.</p>
-    pub fn log_configuration(
-        mut self,
-        input: crate::types::UpdateExperimentTemplateLogConfigurationInput,
-    ) -> Self {
+    pub fn log_configuration(mut self, input: crate::types::UpdateExperimentTemplateLogConfigurationInput) -> Self {
         self.inner = self.inner.log_configuration(input);
         self
     }
     /// <p>The configuration for experiment logging.</p>
-    pub fn set_log_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput>,
-    ) -> Self {
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput>) -> Self {
         self.inner = self.inner.set_log_configuration(input);
         self
     }
     /// <p>The configuration for experiment logging.</p>
-    pub fn get_log_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput> {
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput> {
         self.inner.get_log_configuration()
     }
 }

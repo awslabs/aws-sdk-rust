@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVirtualRouterOutput`](crate::operation::describe_virtual_router::DescribeVirtualRouterOutput) with field(s):
     ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::operation::describe_virtual_router::DescribeVirtualRouterOutput::virtual_router): <p>The full description of your virtual router.</p>
     /// - On failure, responds with [`SdkError<DescribeVirtualRouterError>`](crate::operation::describe_virtual_router::DescribeVirtualRouterError)
-    pub fn describe_virtual_router(
-        &self,
-    ) -> crate::operation::describe_virtual_router::builders::DescribeVirtualRouterFluentBuilder
-    {
-        crate::operation::describe_virtual_router::builders::DescribeVirtualRouterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_virtual_router(&self) -> crate::operation::describe_virtual_router::builders::DescribeVirtualRouterFluentBuilder {
+        crate::operation::describe_virtual_router::builders::DescribeVirtualRouterFluentBuilder::new(self.handle.clone())
     }
 }

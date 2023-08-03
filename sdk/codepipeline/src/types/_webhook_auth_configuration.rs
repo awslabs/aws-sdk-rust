@@ -30,27 +30,19 @@ impl WebhookAuthConfiguration {
 
 /// A builder for [`WebhookAuthConfiguration`](crate::types::WebhookAuthConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WebhookAuthConfigurationBuilder {
     pub(crate) allowed_ip_range: ::std::option::Option<::std::string::String>,
     pub(crate) secret_token: ::std::option::Option<::std::string::String>,
 }
 impl WebhookAuthConfigurationBuilder {
     /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
-    pub fn allowed_ip_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_ip_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_ip_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
-    pub fn set_allowed_ip_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_ip_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_ip_range = input;
         self
     }

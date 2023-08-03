@@ -10,10 +10,7 @@ pub fn ser_change_cidr_collection_input_input(
         for list_item_2 in var_1 {
             {
                 let inner_writer = inner_writer.start_el("member");
-                crate::protocol_serde::shape_cidr_collection_change::ser_cidr_collection_change(
-                    list_item_2,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_cidr_collection_change::ser_cidr_collection_change(list_item_2, inner_writer)?
             }
         }
     }

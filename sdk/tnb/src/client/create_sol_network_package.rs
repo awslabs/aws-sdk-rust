@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`nsd_usage_state(Option<NsdUsageState>)`](crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput::nsd_usage_state): <p>Usage state of the network service descriptor in the network package.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput::tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     /// - On failure, responds with [`SdkError<CreateSolNetworkPackageError>`](crate::operation::create_sol_network_package::CreateSolNetworkPackageError)
-    pub fn create_sol_network_package(
-        &self,
-    ) -> crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageFluentBuilder
-    {
+    pub fn create_sol_network_package(&self) -> crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageFluentBuilder {
         crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageFluentBuilder::new(self.handle.clone())
     }
 }

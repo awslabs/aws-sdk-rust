@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`result(impl ::std::convert::Into<String>)`](crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedFluentBuilder::result) / [`set_result(Option<String>)`](crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedFluentBuilder::set_result): <p>The result of the activity task. It is a free form string that is implementation specific.</p>
     /// - On success, responds with [`RespondActivityTaskCompletedOutput`](crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput)
     /// - On failure, responds with [`SdkError<RespondActivityTaskCompletedError>`](crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError)
-    pub fn respond_activity_task_completed(&self) -> crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedFluentBuilder{
+    pub fn respond_activity_task_completed(
+        &self,
+    ) -> crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedFluentBuilder {
         crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeKeyPairsOutput`](crate::operation::describe_key_pairs::DescribeKeyPairsOutput) with field(s):
     ///   - [`key_pairs(Option<Vec<KeyPairInfo>>)`](crate::operation::describe_key_pairs::DescribeKeyPairsOutput::key_pairs): <p>Information about the key pairs.</p>
     /// - On failure, responds with [`SdkError<DescribeKeyPairsError>`](crate::operation::describe_key_pairs::DescribeKeyPairsError)
-    pub fn describe_key_pairs(
-        &self,
-    ) -> crate::operation::describe_key_pairs::builders::DescribeKeyPairsFluentBuilder {
-        crate::operation::describe_key_pairs::builders::DescribeKeyPairsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_key_pairs(&self) -> crate::operation::describe_key_pairs::builders::DescribeKeyPairsFluentBuilder {
+        crate::operation::describe_key_pairs::builders::DescribeKeyPairsFluentBuilder::new(self.handle.clone())
     }
 }

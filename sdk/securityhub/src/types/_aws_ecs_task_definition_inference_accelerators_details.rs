@@ -23,17 +23,14 @@ impl AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
 }
 impl AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionInferenceAcceleratorsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionInferenceAcceleratorsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionInferenceAcceleratorsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionInferenceAcceleratorsDetailsBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_type: ::std::option::Option<::std::string::String>,

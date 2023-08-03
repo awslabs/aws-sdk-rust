@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeRecommenderOutput {
 }
 impl DescribeRecommenderOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommenderOutput`](crate::operation::describe_recommender::DescribeRecommenderOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_recommender::builders::DescribeRecommenderOutputBuilder {
-        crate::operation::describe_recommender::builders::DescribeRecommenderOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_recommender::builders::DescribeRecommenderOutputBuilder {
+        crate::operation::describe_recommender::builders::DescribeRecommenderOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecommenderOutput`](crate::operation::describe_recommender::DescribeRecommenderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecommenderOutputBuilder {
     pub(crate) recommender: ::std::option::Option<crate::types::Recommender>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeRecommenderOutputBuilder {
         self
     }
     /// <p>The properties of the recommender.</p>
-    pub fn set_recommender(
-        mut self,
-        input: ::std::option::Option<crate::types::Recommender>,
-    ) -> Self {
+    pub fn set_recommender(mut self, input: ::std::option::Option<crate::types::Recommender>) -> Self {
         self.recommender = input;
         self
     }

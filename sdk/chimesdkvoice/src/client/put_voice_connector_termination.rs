@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`PutVoiceConnectorTerminationOutput`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput) with field(s):
     ///   - [`termination(Option<Termination>)`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput::termination): <p>The updated termination settings.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorTerminationError>`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationError)
-    pub fn put_voice_connector_termination(&self) -> crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationFluentBuilder{
+    pub fn put_voice_connector_termination(
+        &self,
+    ) -> crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationFluentBuilder {
         crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationFluentBuilder::new(self.handle.clone())
     }
 }

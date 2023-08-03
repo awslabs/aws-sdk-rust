@@ -37,10 +37,7 @@ impl ListPolicyAttachmentsFluentBuilder {
         }
     }
     /// Access the ListPolicyAttachments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListPolicyAttachmentsFluentBuilder {
             crate::operation::list_policy_attachments::ListPolicyAttachments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_attachments::ListPolicyAttachmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_attachments::ListPolicyAttachmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListPolicyAttachmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListPolicyAttachmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_attachments::ListPolicyAttachmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_attachments::ListPolicyAttachmentsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListPolicyAttachmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_attachments::ListPolicyAttachmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_attachments::ListPolicyAttachmentsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl ListPolicyAttachmentsFluentBuilder {
             crate::operation::list_policy_attachments::ListPolicyAttachments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_attachments::ListPolicyAttachmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_attachments::ListPolicyAttachmentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator {
-        crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator {
+        crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -160,10 +135,7 @@ impl ListPolicyAttachmentsFluentBuilder {
         self
     }
     /// <p>The reference that identifies the policy object.</p>
-    pub fn set_policy_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_policy_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_policy_reference(input);
         self
     }
@@ -205,10 +177,7 @@ impl ListPolicyAttachmentsFluentBuilder {
         self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }

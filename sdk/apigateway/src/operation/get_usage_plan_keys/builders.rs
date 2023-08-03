@@ -10,10 +10,7 @@ impl GetUsagePlanKeysInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_plan_keys::GetUsagePlanKeysError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_plan_keys::GetUsagePlanKeysError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_usage_plan_keys();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetUsagePlanKeysFluentBuilder {
         }
     }
     /// Access the GetUsagePlanKeys as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetUsagePlanKeysFluentBuilder {
             crate::operation::get_usage_plan_keys::GetUsagePlanKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_plan_keys::GetUsagePlanKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_plan_keys::GetUsagePlanKeysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetUsagePlanKeysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetUsagePlanKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_plan_keys::GetUsagePlanKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_plan_keys::GetUsagePlanKeysError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetUsagePlanKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_plan_keys::GetUsagePlanKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_plan_keys::GetUsagePlanKeysError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl GetUsagePlanKeysFluentBuilder {
             crate::operation::get_usage_plan_keys::GetUsagePlanKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_plan_keys::GetUsagePlanKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_plan_keys::GetUsagePlanKeysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator {
-        crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator {
+        crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator::new(self.handle, self.inner)
     }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
-    pub fn usage_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_plan_id(input.into());
         self
     }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
-    pub fn set_usage_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_plan_id(input);
         self
     }

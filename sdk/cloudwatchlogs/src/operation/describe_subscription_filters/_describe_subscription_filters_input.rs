@@ -36,16 +36,14 @@ impl DescribeSubscriptionFiltersInput {
 }
 impl DescribeSubscriptionFiltersInput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscriptionFiltersInput`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput).
-    pub fn builder() -> crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersInputBuilder{
+    pub fn builder() -> crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersInputBuilder {
         crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSubscriptionFiltersInput`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubscriptionFiltersInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_name_prefix: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct DescribeSubscriptionFiltersInputBuilder {
 }
 impl DescribeSubscriptionFiltersInputBuilder {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -74,18 +66,12 @@ impl DescribeSubscriptionFiltersInputBuilder {
         &self.log_group_name
     }
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn filter_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn set_filter_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_name_prefix = input;
         self
     }
@@ -128,13 +114,11 @@ impl DescribeSubscriptionFiltersInputBuilder {
         crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput {
-                log_group_name: self.log_group_name,
-                filter_name_prefix: self.filter_name_prefix,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput {
+            log_group_name: self.log_group_name,
+            filter_name_prefix: self.filter_name_prefix,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

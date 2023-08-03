@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`provisioning_artifact_views(Option<Vec<ProvisioningArtifactView>>)`](crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionOutput::provisioning_artifact_views): <p>An array of objects with information about product views and provisioning artifacts.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListProvisioningArtifactsForServiceActionError>`](crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionError)
-    pub fn list_provisioning_artifacts_for_service_action(&self) -> crate::operation::list_provisioning_artifacts_for_service_action::builders::ListProvisioningArtifactsForServiceActionFluentBuilder{
-        crate::operation::list_provisioning_artifacts_for_service_action::builders::ListProvisioningArtifactsForServiceActionFluentBuilder::new(self.handle.clone())
+    pub fn list_provisioning_artifacts_for_service_action(
+        &self,
+    ) -> crate::operation::list_provisioning_artifacts_for_service_action::builders::ListProvisioningArtifactsForServiceActionFluentBuilder {
+        crate::operation::list_provisioning_artifacts_for_service_action::builders::ListProvisioningArtifactsForServiceActionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

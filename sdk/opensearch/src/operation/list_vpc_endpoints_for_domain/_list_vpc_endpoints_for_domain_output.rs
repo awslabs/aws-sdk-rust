@@ -5,8 +5,7 @@
 pub struct ListVpcEndpointsForDomainOutput {
     /// <p>Information about each endpoint associated with the domain.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
+    pub vpc_endpoint_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListVpcEndpointsForDomainOutput {
 }
 impl ListVpcEndpointsForDomainOutput {
     /// <p>Information about each endpoint associated with the domain.</p>
-    pub fn vpc_endpoint_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcEndpointSummary]> {
+    pub fn vpc_endpoint_summary_list(&self) -> ::std::option::Option<&[crate::types::VpcEndpointSummary]> {
         self.vpc_endpoint_summary_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVpcEndpointsForDomainOutput {
 }
 impl ListVpcEndpointsForDomainOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointsForDomainOutput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput).
-    pub fn builder() -> crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainOutputBuilder{
+    pub fn builder() -> crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainOutputBuilder {
         crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcEndpointsForDomainOutput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsForDomainOutputBuilder {
-    pub(crate) vpc_endpoint_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
+    pub(crate) vpc_endpoint_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListVpcEndpointsForDomainOutputBuilder {
         self
     }
     /// <p>Information about each endpoint associated with the domain.</p>
-    pub fn set_vpc_endpoint_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>) -> Self {
         self.vpc_endpoint_summary_list = input;
         self
     }
     /// <p>Information about each endpoint associated with the domain.</p>
-    pub fn get_vpc_endpoint_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>> {
+    pub fn get_vpc_endpoint_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>> {
         &self.vpc_endpoint_summary_list
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -97,9 +86,7 @@ impl ListVpcEndpointsForDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVpcEndpointsForDomainOutput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput {
+    pub fn build(self) -> crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput {
         crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput {
             vpc_endpoint_summary_list: self.vpc_endpoint_summary_list,
             next_token: self.next_token,

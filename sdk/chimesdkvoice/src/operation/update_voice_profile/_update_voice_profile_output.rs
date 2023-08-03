@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateVoiceProfileOutput {
 }
 impl UpdateVoiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceProfileOutput`](crate::operation::update_voice_profile::UpdateVoiceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::update_voice_profile::builders::UpdateVoiceProfileOutputBuilder {
+    pub fn builder() -> crate::operation::update_voice_profile::builders::UpdateVoiceProfileOutputBuilder {
         crate::operation::update_voice_profile::builders::UpdateVoiceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVoiceProfileOutput`](crate::operation::update_voice_profile::UpdateVoiceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVoiceProfileOutputBuilder {
     pub(crate) voice_profile: ::std::option::Option<crate::types::VoiceProfile>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateVoiceProfileOutputBuilder {
         self
     }
     /// <p>The updated voice profile settings.</p>
-    pub fn set_voice_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceProfile>,
-    ) -> Self {
+    pub fn set_voice_profile(mut self, input: ::std::option::Option<crate::types::VoiceProfile>) -> Self {
         self.voice_profile = input;
         self
     }

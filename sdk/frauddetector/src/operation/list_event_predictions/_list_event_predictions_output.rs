@@ -5,8 +5,7 @@
 pub struct ListEventPredictionsOutput {
     /// <p> The summary of the past predictions. </p>
     #[doc(hidden)]
-    pub event_prediction_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>>,
+    pub event_prediction_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>>,
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEventPredictionsOutput {
 }
 impl ListEventPredictionsOutput {
     /// <p> The summary of the past predictions. </p>
-    pub fn event_prediction_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EventPredictionSummary]> {
+    pub fn event_prediction_summaries(&self) -> ::std::option::Option<&[crate::types::EventPredictionSummary]> {
         self.event_prediction_summaries.as_deref()
     }
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEventPredictionsOutput {
 }
 impl ListEventPredictionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventPredictionsOutput`](crate::operation::list_event_predictions::ListEventPredictionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_event_predictions::builders::ListEventPredictionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_event_predictions::builders::ListEventPredictionsOutputBuilder {
         crate::operation::list_event_predictions::builders::ListEventPredictionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventPredictionsOutput`](crate::operation::list_event_predictions::ListEventPredictionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventPredictionsOutputBuilder {
-    pub(crate) event_prediction_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>>,
+    pub(crate) event_prediction_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListEventPredictionsOutputBuilder {
     /// To override the contents of this collection use [`set_event_prediction_summaries`](Self::set_event_prediction_summaries).
     ///
     /// <p> The summary of the past predictions. </p>
-    pub fn event_prediction_summaries(
-        mut self,
-        input: crate::types::EventPredictionSummary,
-    ) -> Self {
+    pub fn event_prediction_summaries(mut self, input: crate::types::EventPredictionSummary) -> Self {
         let mut v = self.event_prediction_summaries.unwrap_or_default();
         v.push(input);
         self.event_prediction_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p> The summary of the past predictions. </p>
-    pub fn set_event_prediction_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>>,
-    ) -> Self {
+    pub fn set_event_prediction_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>>) -> Self {
         self.event_prediction_summaries = input;
         self
     }
     /// <p> The summary of the past predictions. </p>
-    pub fn get_event_prediction_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>> {
+    pub fn get_event_prediction_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>> {
         &self.event_prediction_summaries
     }
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>

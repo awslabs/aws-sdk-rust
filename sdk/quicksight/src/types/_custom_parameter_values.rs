@@ -45,15 +45,12 @@ impl CustomParameterValues {
 
 /// A builder for [`CustomParameterValues`](crate::types::CustomParameterValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomParameterValuesBuilder {
     pub(crate) string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) integer_values: ::std::option::Option<::std::vec::Vec<i64>>,
     pub(crate) decimal_values: ::std::option::Option<::std::vec::Vec<f64>>,
-    pub(crate) date_time_values:
-        ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub(crate) date_time_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
 }
 impl CustomParameterValuesBuilder {
     /// Appends an item to `string_values`.
@@ -61,27 +58,19 @@ impl CustomParameterValuesBuilder {
     /// To override the contents of this collection use [`set_string_values`](Self::set_string_values).
     ///
     /// <p>A list of string-type parameter values.</p>
-    pub fn string_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn string_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.string_values.unwrap_or_default();
         v.push(input.into());
         self.string_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of string-type parameter values.</p>
-    pub fn set_string_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_string_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.string_values = input;
         self
     }
     /// <p>A list of string-type parameter values.</p>
-    pub fn get_string_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_string_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.string_values
     }
     /// Appends an item to `integer_values`.
@@ -96,10 +85,7 @@ impl CustomParameterValuesBuilder {
         self
     }
     /// <p>A list of integer-type parameter values.</p>
-    pub fn set_integer_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i64>>,
-    ) -> Self {
+    pub fn set_integer_values(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
         self.integer_values = input;
         self
     }
@@ -119,10 +105,7 @@ impl CustomParameterValuesBuilder {
         self
     }
     /// <p>A list of decimal-type parameter values.</p>
-    pub fn set_decimal_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<f64>>,
-    ) -> Self {
+    pub fn set_decimal_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.decimal_values = input;
         self
     }
@@ -142,17 +125,12 @@ impl CustomParameterValuesBuilder {
         self
     }
     /// <p>A list of datetime-type parameter values.</p>
-    pub fn set_date_time_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
+    pub fn set_date_time_values(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
         self.date_time_values = input;
         self
     }
     /// <p>A list of datetime-type parameter values.</p>
-    pub fn get_date_time_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_date_time_values(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
         &self.date_time_values
     }
     /// Consumes the builder and constructs a [`CustomParameterValues`](crate::types::CustomParameterValues).

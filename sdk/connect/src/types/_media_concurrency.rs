@@ -30,9 +30,7 @@ impl MediaConcurrency {
         self.concurrency
     }
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
-    pub fn cross_channel_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CrossChannelBehavior> {
+    pub fn cross_channel_behavior(&self) -> ::std::option::Option<&crate::types::CrossChannelBehavior> {
         self.cross_channel_behavior.as_ref()
     }
 }
@@ -45,9 +43,7 @@ impl MediaConcurrency {
 
 /// A builder for [`MediaConcurrency`](crate::types::MediaConcurrency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaConcurrencyBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     pub(crate) concurrency: ::std::option::Option<i32>,
@@ -97,17 +93,12 @@ impl MediaConcurrencyBuilder {
         self
     }
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
-    pub fn set_cross_channel_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::CrossChannelBehavior>,
-    ) -> Self {
+    pub fn set_cross_channel_behavior(mut self, input: ::std::option::Option<crate::types::CrossChannelBehavior>) -> Self {
         self.cross_channel_behavior = input;
         self
     }
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
-    pub fn get_cross_channel_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::CrossChannelBehavior> {
+    pub fn get_cross_channel_behavior(&self) -> &::std::option::Option<crate::types::CrossChannelBehavior> {
         &self.cross_channel_behavior
     }
     /// Consumes the builder and constructs a [`MediaConcurrency`](crate::types::MediaConcurrency).

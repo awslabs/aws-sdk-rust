@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`source_id(Option<String>)`](crate::operation::update_data_set::UpdateDataSetOutput::source_id): <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::update_data_set::UpdateDataSetOutput::updated_at): <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<UpdateDataSetError>`](crate::operation::update_data_set::UpdateDataSetError)
-    pub fn update_data_set(
-        &self,
-    ) -> crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder {
-        crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_data_set(&self) -> crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder {
+        crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::new(self.handle.clone())
     }
 }

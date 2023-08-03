@@ -37,10 +37,7 @@ impl ProvisionPermissionSetFluentBuilder {
         }
     }
     /// Access the ProvisionPermissionSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::provision_permission_set::builders::ProvisionPermissionSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::provision_permission_set::builders::ProvisionPermissionSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ProvisionPermissionSetFluentBuilder {
             crate::operation::provision_permission_set::ProvisionPermissionSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_permission_set::ProvisionPermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_permission_set::ProvisionPermissionSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ProvisionPermissionSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ProvisionPermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_permission_set::ProvisionPermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_permission_set::ProvisionPermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_permission_set::ProvisionPermissionSetError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ProvisionPermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_permission_set::ProvisionPermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_permission_set::ProvisionPermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_permission_set::ProvisionPermissionSetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ProvisionPermissionSetFluentBuilder {
             crate::operation::provision_permission_set::ProvisionPermissionSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_permission_set::ProvisionPermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_permission_set::ProvisionPermissionSetError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl ProvisionPermissionSetFluentBuilder {
         self.inner.get_instance_arn()
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
@@ -177,10 +157,7 @@ impl ProvisionPermissionSetFluentBuilder {
         self
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionTargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::ProvisionTargetType>) -> Self {
         self.inner = self.inner.set_target_type(input);
         self
     }

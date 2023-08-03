@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`milestone_number(i32)`](crate::operation::get_lens_review::GetLensReviewOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
     ///   - [`lens_review(Option<LensReview>)`](crate::operation::get_lens_review::GetLensReviewOutput::lens_review): <p>A lens review of a question.</p>
     /// - On failure, responds with [`SdkError<GetLensReviewError>`](crate::operation::get_lens_review::GetLensReviewError)
-    pub fn get_lens_review(
-        &self,
-    ) -> crate::operation::get_lens_review::builders::GetLensReviewFluentBuilder {
-        crate::operation::get_lens_review::builders::GetLensReviewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_lens_review(&self) -> crate::operation::get_lens_review::builders::GetLensReviewFluentBuilder {
+        crate::operation::get_lens_review::builders::GetLensReviewFluentBuilder::new(self.handle.clone())
     }
 }

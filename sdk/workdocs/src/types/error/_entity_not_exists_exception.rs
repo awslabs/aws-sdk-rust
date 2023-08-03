@@ -56,9 +56,7 @@ impl EntityNotExistsException {
 
 /// A builder for [`EntityNotExistsException`](crate::types::error::EntityNotExistsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityNotExistsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) entity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -91,10 +89,7 @@ impl EntityNotExistsExceptionBuilder {
         self
     }
     /// <p>The IDs of the non-existent resources.</p>
-    pub fn set_entity_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entity_ids = input;
         self
     }
@@ -109,10 +104,7 @@ impl EntityNotExistsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

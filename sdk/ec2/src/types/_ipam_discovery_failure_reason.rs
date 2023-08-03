@@ -50,9 +50,7 @@ impl IpamDiscoveryFailureReason {
 
 /// A builder for [`IpamDiscoveryFailureReason`](crate::types::IpamDiscoveryFailureReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpamDiscoveryFailureReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::IpamDiscoveryFailureCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl IpamDiscoveryFailureReasonBuilder {
     /// <li> <p> <code>throttling-failure</code> - IPAM account is already using the allotted transactions per second and IPAM is receiving a throttling error when assuming the Amazon Web Services IAM SLR.</p> </li>
     /// <li> <p> <code>unauthorized-failure</code> - Amazon Web Services account making the request is not authorized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">AuthFailure</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </li>
     /// </ul>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamDiscoveryFailureCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::IpamDiscoveryFailureCode>) -> Self {
         self.code = input;
         self
     }

@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FormDataSourceType {
     /// Will use passed in hooks to use when creating a form from scratch
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for FormDataSourceType {
         match s {
             "Custom" => FormDataSourceType::Custom,
             "DataStore" => FormDataSourceType::Datastore,
-            other => FormDataSourceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => FormDataSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

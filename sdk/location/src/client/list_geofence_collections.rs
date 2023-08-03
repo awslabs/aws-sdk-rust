@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`entries(Option<Vec<ListGeofenceCollectionsResponseEntry>>)`](crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput::entries): <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListGeofenceCollectionsError>`](crate::operation::list_geofence_collections::ListGeofenceCollectionsError)
-    pub fn list_geofence_collections(
-        &self,
-    ) -> crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsFluentBuilder
-    {
+    pub fn list_geofence_collections(&self) -> crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsFluentBuilder {
         crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsFluentBuilder::new(self.handle.clone())
     }
 }

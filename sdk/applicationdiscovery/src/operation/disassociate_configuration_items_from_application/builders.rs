@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_configuration_items_from_application::_di
 
 impl DisassociateConfigurationItemsFromApplicationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_configuration_items_from_application();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DisassociateConfigurationItemsFromApplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateConfigurationItemsFromApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder,
+    inner: crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder,
 }
 impl DisassociateConfigurationItemsFromApplicationFluentBuilder {
     /// Creates a new `DisassociateConfigurationItemsFromApplication`.
@@ -37,15 +37,25 @@ impl DisassociateConfigurationItemsFromApplicationFluentBuilder {
         }
     }
     /// Access the DisassociateConfigurationItemsFromApplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder
+    {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplication,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +64,19 @@ impl DisassociateConfigurationItemsFromApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,39 +94,44 @@ impl DisassociateConfigurationItemsFromApplicationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplication,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
-    pub fn application_configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_configuration_id(input.into());
         self
     }
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
-    pub fn set_application_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_configuration_id(input);
         self
     }
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
-    pub fn get_application_configuration_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_application_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_configuration_id()
     }
     /// Appends an item to `configurationIds`.
@@ -121,25 +139,17 @@ impl DisassociateConfigurationItemsFromApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
     ///
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    pub fn configuration_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_ids(input.into());
         self
     }
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    pub fn set_configuration_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_ids(input);
         self
     }
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    pub fn get_configuration_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_configuration_ids()
     }
 }

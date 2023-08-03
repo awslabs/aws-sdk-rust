@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`instance_recommendations(Option<Vec<InstanceRecommendation>>)`](crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput::instance_recommendations): <p>An array of objects that describe instance recommendations.</p>
     ///   - [`errors(Option<Vec<GetRecommendationError>>)`](crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput::errors): <p>An array of objects that describe errors of the request.</p>  <p>For example, an error is returned if you request recommendations for an instance of an unsupported instance family.</p>
     /// - On failure, responds with [`SdkError<GetEC2InstanceRecommendationsError>`](crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError)
-    pub fn get_ec2_instance_recommendations(&self) -> crate::operation::get_ec2_instance_recommendations::builders::GetEC2InstanceRecommendationsFluentBuilder{
+    pub fn get_ec2_instance_recommendations(
+        &self,
+    ) -> crate::operation::get_ec2_instance_recommendations::builders::GetEC2InstanceRecommendationsFluentBuilder {
         crate::operation::get_ec2_instance_recommendations::builders::GetEC2InstanceRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

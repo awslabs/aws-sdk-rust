@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`EnableControlOutput`](crate::operation::enable_control::EnableControlOutput) with field(s):
     ///   - [`operation_identifier(Option<String>)`](crate::operation::enable_control::EnableControlOutput::operation_identifier): <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     /// - On failure, responds with [`SdkError<EnableControlError>`](crate::operation::enable_control::EnableControlError)
-    pub fn enable_control(
-        &self,
-    ) -> crate::operation::enable_control::builders::EnableControlFluentBuilder {
-        crate::operation::enable_control::builders::EnableControlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn enable_control(&self) -> crate::operation::enable_control::builders::EnableControlFluentBuilder {
+        crate::operation::enable_control::builders::EnableControlFluentBuilder::new(self.handle.clone())
     }
 }

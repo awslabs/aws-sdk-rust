@@ -26,7 +26,7 @@ impl UpdateUserHierarchyStructureInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserHierarchyStructureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_user_hierarchy_structure::builders::UpdateUserHierarchyStructureInputBuilder,
+    inner: crate::operation::update_user_hierarchy_structure::builders::UpdateUserHierarchyStructureInputBuilder,
 }
 impl UpdateUserHierarchyStructureFluentBuilder {
     /// Creates a new `UpdateUserHierarchyStructure`.
@@ -37,7 +37,7 @@ impl UpdateUserHierarchyStructureFluentBuilder {
         }
     }
     /// Access the UpdateUserHierarchyStructure as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_user_hierarchy_structure::builders::UpdateUserHierarchyStructureInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_user_hierarchy_structure::builders::UpdateUserHierarchyStructureInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateUserHierarchyStructureFluentBuilder {
             crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructure,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateUserHierarchyStructureFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateUserHierarchyStructureFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateUserHierarchyStructureFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateUserHierarchyStructureFluentBuilder {
             crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructure,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureError>,
     > {
         self.customize_middleware().await
     }
@@ -126,17 +115,12 @@ impl UpdateUserHierarchyStructureFluentBuilder {
         self
     }
     /// <p>The hierarchy levels to update.</p>
-    pub fn set_hierarchy_structure(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyStructureUpdate>,
-    ) -> Self {
+    pub fn set_hierarchy_structure(mut self, input: ::std::option::Option<crate::types::HierarchyStructureUpdate>) -> Self {
         self.inner = self.inner.set_hierarchy_structure(input);
         self
     }
     /// <p>The hierarchy levels to update.</p>
-    pub fn get_hierarchy_structure(
-        &self,
-    ) -> &::std::option::Option<crate::types::HierarchyStructureUpdate> {
+    pub fn get_hierarchy_structure(&self) -> &::std::option::Option<crate::types::HierarchyStructureUpdate> {
         self.inner.get_hierarchy_structure()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>

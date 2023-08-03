@@ -33,10 +33,7 @@ pub fn ser_sql_application_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_reference_data_source::ser_reference_data_source(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_reference_data_source::ser_reference_data_source(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }

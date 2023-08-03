@@ -151,9 +151,7 @@ impl AnomalyMonitor {
 
 /// A builder for [`AnomalyMonitor`](crate::types::AnomalyMonitor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyMonitorBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
@@ -195,18 +193,12 @@ impl AnomalyMonitorBuilder {
         &self.monitor_name
     }
     /// <p>The date when the monitor was created. </p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date when the monitor was created. </p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -215,18 +207,12 @@ impl AnomalyMonitorBuilder {
         &self.creation_date
     }
     /// <p>The date when the monitor was last updated. </p>
-    pub fn last_updated_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date when the monitor was last updated. </p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_date = input;
         self
     }
@@ -235,18 +221,12 @@ impl AnomalyMonitorBuilder {
         &self.last_updated_date
     }
     /// <p>The date when the monitor last evaluated for anomalies. </p>
-    pub fn last_evaluated_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_evaluated_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_evaluated_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date when the monitor last evaluated for anomalies. </p>
-    pub fn set_last_evaluated_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_evaluated_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_evaluated_date = input;
         self
     }
@@ -260,10 +240,7 @@ impl AnomalyMonitorBuilder {
         self
     }
     /// <p>The possible type values. </p>
-    pub fn set_monitor_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorType>,
-    ) -> Self {
+    pub fn set_monitor_type(mut self, input: ::std::option::Option<crate::types::MonitorType>) -> Self {
         self.monitor_type = input;
         self
     }
@@ -277,10 +254,7 @@ impl AnomalyMonitorBuilder {
         self
     }
     /// <p>The dimensions to evaluate. </p>
-    pub fn set_monitor_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorDimension>,
-    ) -> Self {
+    pub fn set_monitor_dimension(mut self, input: ::std::option::Option<crate::types::MonitorDimension>) -> Self {
         self.monitor_dimension = input;
         self
     }
@@ -366,10 +340,7 @@ impl AnomalyMonitorBuilder {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    pub fn set_monitor_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::Expression>,
-    ) -> Self {
+    pub fn set_monitor_specification(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.monitor_specification = input;
         self
     }

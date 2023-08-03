@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetServerCertificateOutput`](crate::operation::get_server_certificate::GetServerCertificateOutput) with field(s):
     ///   - [`server_certificate(Option<ServerCertificate>)`](crate::operation::get_server_certificate::GetServerCertificateOutput::server_certificate): <p>A structure containing details about the server certificate.</p>
     /// - On failure, responds with [`SdkError<GetServerCertificateError>`](crate::operation::get_server_certificate::GetServerCertificateError)
-    pub fn get_server_certificate(
-        &self,
-    ) -> crate::operation::get_server_certificate::builders::GetServerCertificateFluentBuilder {
-        crate::operation::get_server_certificate::builders::GetServerCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_server_certificate(&self) -> crate::operation::get_server_certificate::builders::GetServerCertificateFluentBuilder {
+        crate::operation::get_server_certificate::builders::GetServerCertificateFluentBuilder::new(self.handle.clone())
     }
 }

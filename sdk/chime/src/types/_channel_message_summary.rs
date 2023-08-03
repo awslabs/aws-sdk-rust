@@ -155,10 +155,7 @@ impl ChannelMessageSummaryBuilder {
         self
     }
     /// <p>The type of message.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMessageType>) -> Self {
         self.r#type = input;
         self
     }
@@ -172,10 +169,7 @@ impl ChannelMessageSummaryBuilder {
         self
     }
     /// <p>The time at which the message summary was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -189,17 +183,12 @@ impl ChannelMessageSummaryBuilder {
         self
     }
     /// <p>The time at which a message was last updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>The time at which a message was last updated.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// <p>The time at which a message was last edited.</p>
@@ -208,17 +197,12 @@ impl ChannelMessageSummaryBuilder {
         self
     }
     /// <p>The time at which a message was last edited.</p>
-    pub fn set_last_edited_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_edited_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_edited_timestamp = input;
         self
     }
     /// <p>The time at which a message was last edited.</p>
-    pub fn get_last_edited_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_edited_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_edited_timestamp
     }
     /// <p>The message sender.</p>

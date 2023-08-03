@@ -20,11 +20,7 @@ impl super::Client {
     /// - On success, responds with [`PutObjectAclOutput`](crate::operation::put_object_acl::PutObjectAclOutput) with field(s):
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::put_object_acl::PutObjectAclOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<PutObjectAclError>`](crate::operation::put_object_acl::PutObjectAclError)
-    pub fn put_object_acl(
-        &self,
-    ) -> crate::operation::put_object_acl::builders::PutObjectAclFluentBuilder {
-        crate::operation::put_object_acl::builders::PutObjectAclFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_object_acl(&self) -> crate::operation::put_object_acl::builders::PutObjectAclFluentBuilder {
+        crate::operation::put_object_acl::builders::PutObjectAclFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`events(HashMap<String, String>)`](crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder::events) / [`set_events(Option<HashMap<String, String>>)`](crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder::set_events): <p>The events to configure</p>
     /// - On success, responds with [`SetCognitoEventsOutput`](crate::operation::set_cognito_events::SetCognitoEventsOutput)
     /// - On failure, responds with [`SdkError<SetCognitoEventsError>`](crate::operation::set_cognito_events::SetCognitoEventsError)
-    pub fn set_cognito_events(
-        &self,
-    ) -> crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder {
-        crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_cognito_events(&self) -> crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder {
+        crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder::new(self.handle.clone())
     }
 }

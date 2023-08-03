@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`host_reservation_set(Option<Vec<HostReservation>>)`](crate::operation::describe_host_reservations::DescribeHostReservationsOutput::host_reservation_set): <p>Details about the reservation's configuration.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_host_reservations::DescribeHostReservationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeHostReservationsError>`](crate::operation::describe_host_reservations::DescribeHostReservationsError)
-    pub fn describe_host_reservations(
-        &self,
-    ) -> crate::operation::describe_host_reservations::builders::DescribeHostReservationsFluentBuilder
-    {
+    pub fn describe_host_reservations(&self) -> crate::operation::describe_host_reservations::builders::DescribeHostReservationsFluentBuilder {
         crate::operation::describe_host_reservations::builders::DescribeHostReservationsFluentBuilder::new(self.handle.clone())
     }
 }

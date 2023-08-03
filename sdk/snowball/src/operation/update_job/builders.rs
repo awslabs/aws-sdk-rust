@@ -10,10 +10,7 @@ impl UpdateJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_job::UpdateJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job::UpdateJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_job();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateJobFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_job::UpdateJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_job::UpdateJob, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateJobFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_job::UpdateJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_job::UpdateJob, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
     > {
         self.customize_middleware().await
@@ -146,10 +134,7 @@ impl UpdateJobFluentBuilder {
         self
     }
     /// <p>The new or updated <code>Notification</code> object.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.inner = self.inner.set_notification(input);
         self
     }
@@ -163,10 +148,7 @@ impl UpdateJobFluentBuilder {
         self
     }
     /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::JobResource>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<crate::types::JobResource>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }
@@ -175,25 +157,17 @@ impl UpdateJobFluentBuilder {
         self.inner.get_resources()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-    pub fn on_device_service_configuration(
-        mut self,
-        input: crate::types::OnDeviceServiceConfiguration,
-    ) -> Self {
+    pub fn on_device_service_configuration(mut self, input: crate::types::OnDeviceServiceConfiguration) -> Self {
         self.inner = self.inner.on_device_service_configuration(input);
         self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-    pub fn set_on_device_service_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
-    ) -> Self {
+    pub fn set_on_device_service_configuration(mut self, input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>) -> Self {
         self.inner = self.inner.set_on_device_service_configuration(input);
         self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-    pub fn get_on_device_service_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
+    pub fn get_on_device_service_configuration(&self) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
         self.inner.get_on_device_service_configuration()
     }
     /// <p>The ID of the updated <code>Address</code> object.</p>
@@ -216,10 +190,7 @@ impl UpdateJobFluentBuilder {
         self
     }
     /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
-    pub fn set_shipping_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ShippingOption>,
-    ) -> Self {
+    pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.inner = self.inner.set_shipping_option(input);
         self
     }
@@ -249,33 +220,22 @@ impl UpdateJobFluentBuilder {
     }
     /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn set_snowball_capacity_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::SnowballCapacity>,
-    ) -> Self {
+    pub fn set_snowball_capacity_preference(mut self, input: ::std::option::Option<crate::types::SnowballCapacity>) -> Self {
         self.inner = self.inner.set_snowball_capacity_preference(input);
         self
     }
     /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn get_snowball_capacity_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnowballCapacity> {
+    pub fn get_snowball_capacity_preference(&self) -> &::std::option::Option<crate::types::SnowballCapacity> {
         self.inner.get_snowball_capacity_preference()
     }
     /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forwarding_address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forwarding_address_id(input.into());
         self
     }
     /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
-    pub fn set_forwarding_address_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forwarding_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_forwarding_address_id(input);
         self
     }
@@ -289,10 +249,7 @@ impl UpdateJobFluentBuilder {
         self
     }
     /// <p>Information identifying the person picking up the device.</p>
-    pub fn set_pickup_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PickupDetails>,
-    ) -> Self {
+    pub fn set_pickup_details(mut self, input: ::std::option::Option<crate::types::PickupDetails>) -> Self {
         self.inner = self.inner.set_pickup_details(input);
         self
     }

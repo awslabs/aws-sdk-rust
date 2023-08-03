@@ -36,9 +36,7 @@ impl ListBundlesOutput {
 
 /// A builder for [`ListBundlesOutput`](crate::operation::list_bundles::ListBundlesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBundlesOutputBuilder {
     pub(crate) bundle_list: ::std::option::Option<::std::vec::Vec<crate::types::BundleDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListBundlesOutputBuilder {
         self
     }
     /// <p> A list of bundles. </p>
-    pub fn set_bundle_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BundleDetails>>,
-    ) -> Self {
+    pub fn set_bundle_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BundleDetails>>) -> Self {
         self.bundle_list = input;
         self
     }
     /// <p> A list of bundles. </p>
-    pub fn get_bundle_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BundleDetails>> {
+    pub fn get_bundle_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BundleDetails>> {
         &self.bundle_list
     }
     /// <p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>

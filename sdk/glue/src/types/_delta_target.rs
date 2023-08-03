@@ -44,9 +44,7 @@ impl DeltaTarget {
 
 /// A builder for [`DeltaTarget`](crate::types::DeltaTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeltaTargetBuilder {
     pub(crate) delta_tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
@@ -66,32 +64,21 @@ impl DeltaTargetBuilder {
         self
     }
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
-    pub fn set_delta_tables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_delta_tables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.delta_tables = input;
         self
     }
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
-    pub fn get_delta_tables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_delta_tables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.delta_tables
     }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }

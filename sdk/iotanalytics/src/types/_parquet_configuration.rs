@@ -23,9 +23,7 @@ impl ParquetConfiguration {
 
 /// A builder for [`ParquetConfiguration`](crate::types::ParquetConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParquetConfigurationBuilder {
     pub(crate) schema_definition: ::std::option::Option<crate::types::SchemaDefinition>,
 }
@@ -36,10 +34,7 @@ impl ParquetConfigurationBuilder {
         self
     }
     /// <p>Information needed to define a schema.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaDefinition>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<crate::types::SchemaDefinition>) -> Self {
         self.schema_definition = input;
         self
     }

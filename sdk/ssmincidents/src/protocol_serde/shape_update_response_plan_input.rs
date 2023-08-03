@@ -40,9 +40,7 @@ pub fn ser_update_response_plan_input(
         array_11.finish();
     }
     if let Some(var_13) = &input.incident_template_dedupe_string {
-        object
-            .key("incidentTemplateDedupeString")
-            .string(var_13.as_str());
+        object.key("incidentTemplateDedupeString").string(var_13.as_str());
     }
     if let Some(var_14) = &input.incident_template_impact {
         object.key("incidentTemplateImpact").number(
@@ -51,9 +49,7 @@ pub fn ser_update_response_plan_input(
         );
     }
     if let Some(var_15) = &input.incident_template_notification_targets {
-        let mut array_16 = object
-            .key("incidentTemplateNotificationTargets")
-            .start_array();
+        let mut array_16 = object.key("incidentTemplateNotificationTargets").start_array();
         for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
@@ -65,9 +61,7 @@ pub fn ser_update_response_plan_input(
         array_16.finish();
     }
     if let Some(var_19) = &input.incident_template_summary {
-        object
-            .key("incidentTemplateSummary")
-            .string(var_19.as_str());
+        object.key("incidentTemplateSummary").string(var_19.as_str());
     }
     if let Some(var_20) = &input.incident_template_tags {
         #[allow(unused_mut)]

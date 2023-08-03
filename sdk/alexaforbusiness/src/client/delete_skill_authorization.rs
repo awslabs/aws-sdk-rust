@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSkillAuthorizationOutput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput)
     /// - On failure, responds with [`SdkError<DeleteSkillAuthorizationError>`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn delete_skill_authorization(
-        &self,
-    ) -> crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder
-    {
+    pub fn delete_skill_authorization(&self) -> crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder {
         crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,9 +27,7 @@ pub fn ser_engine_transcribe_settings(
         object.key("PartialResultsStability").string(var_6.as_str());
     }
     if let Some(var_7) = &input.content_identification_type {
-        object
-            .key("ContentIdentificationType")
-            .string(var_7.as_str());
+        object.key("ContentIdentificationType").string(var_7.as_str());
     }
     if let Some(var_8) = &input.content_redaction_type {
         object.key("ContentRedactionType").string(var_8.as_str());
@@ -41,9 +39,7 @@ pub fn ser_engine_transcribe_settings(
         object.key("LanguageModelName").string(var_10.as_str());
     }
     if input.identify_language {
-        object
-            .key("IdentifyLanguage")
-            .boolean(input.identify_language);
+        object.key("IdentifyLanguage").boolean(input.identify_language);
     }
     if let Some(var_11) = &input.language_options {
         object.key("LanguageOptions").string(var_11.as_str());

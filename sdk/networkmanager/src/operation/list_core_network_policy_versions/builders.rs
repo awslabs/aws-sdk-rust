@@ -26,7 +26,7 @@ impl ListCoreNetworkPolicyVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCoreNetworkPolicyVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsInputBuilder,
+    inner: crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsInputBuilder,
 }
 impl ListCoreNetworkPolicyVersionsFluentBuilder {
     /// Creates a new `ListCoreNetworkPolicyVersions`.
@@ -37,7 +37,7 @@ impl ListCoreNetworkPolicyVersionsFluentBuilder {
         }
     }
     /// Access the ListCoreNetworkPolicyVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCoreNetworkPolicyVersionsFluentBuilder {
             crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCoreNetworkPolicyVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCoreNetworkPolicyVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCoreNetworkPolicyVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListCoreNetworkPolicyVersionsFluentBuilder {
             crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_core_network_policy_versions::paginator::ListCoreNetworkPolicyVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_core_network_policy_versions::paginator::ListCoreNetworkPolicyVersionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_core_network_policy_versions::paginator::ListCoreNetworkPolicyVersionsPaginator {
         crate::operation::list_core_network_policy_versions::paginator::ListCoreNetworkPolicyVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }

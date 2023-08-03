@@ -5,8 +5,7 @@
 pub struct ListSimulationJobBatchesOutput {
     /// <p>A list of simulation job batch summaries.</p>
     #[doc(hidden)]
-    pub simulation_job_batch_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobBatchSummary>>,
+    pub simulation_job_batch_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobBatchSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSimulationJobBatchesOutput {
 }
 impl ListSimulationJobBatchesOutput {
     /// <p>A list of simulation job batch summaries.</p>
-    pub fn simulation_job_batch_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SimulationJobBatchSummary]> {
+    pub fn simulation_job_batch_summaries(&self) -> ::std::option::Option<&[crate::types::SimulationJobBatchSummary]> {
         self.simulation_job_batch_summaries.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSimulationJobBatchesOutput {
 }
 impl ListSimulationJobBatchesOutput {
     /// Creates a new builder-style object to manufacture [`ListSimulationJobBatchesOutput`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput).
-    pub fn builder() -> crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesOutputBuilder{
+    pub fn builder() -> crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesOutputBuilder {
         crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSimulationJobBatchesOutput`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSimulationJobBatchesOutputBuilder {
-    pub(crate) simulation_job_batch_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobBatchSummary>>,
+    pub(crate) simulation_job_batch_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobBatchSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListSimulationJobBatchesOutputBuilder {
     /// To override the contents of this collection use [`set_simulation_job_batch_summaries`](Self::set_simulation_job_batch_summaries).
     ///
     /// <p>A list of simulation job batch summaries.</p>
-    pub fn simulation_job_batch_summaries(
-        mut self,
-        input: crate::types::SimulationJobBatchSummary,
-    ) -> Self {
+    pub fn simulation_job_batch_summaries(mut self, input: crate::types::SimulationJobBatchSummary) -> Self {
         let mut v = self.simulation_job_batch_summaries.unwrap_or_default();
         v.push(input);
         self.simulation_job_batch_summaries = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListSimulationJobBatchesOutputBuilder {
         self
     }
     /// <p>A list of simulation job batch summaries.</p>
-    pub fn get_simulation_job_batch_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJobBatchSummary>> {
+    pub fn get_simulation_job_batch_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJobBatchSummary>> {
         &self.simulation_job_batch_summaries
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
@@ -100,9 +89,7 @@ impl ListSimulationJobBatchesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSimulationJobBatchesOutput`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput {
+    pub fn build(self) -> crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput {
         crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput {
             simulation_job_batch_summaries: self.simulation_job_batch_summaries,
             next_token: self.next_token,

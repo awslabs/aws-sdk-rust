@@ -36,9 +36,7 @@ impl UpdateChannelInput {
 
 /// A builder for [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelInputBuilder {
     pub(crate) channel: ::std::option::Option<::std::string::String>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
@@ -71,17 +69,12 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
         &self.destinations
     }
     /// <p> Changes the name of the channel. </p>
@@ -101,10 +94,7 @@ impl UpdateChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_channel::UpdateChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
             channel: self.channel,
             destinations: self.destinations,

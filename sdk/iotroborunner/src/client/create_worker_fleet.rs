@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_worker_fleet::CreateWorkerFleetOutput::created_at): Timestamp at which the resource was created.
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::create_worker_fleet::CreateWorkerFleetOutput::updated_at): Timestamp at which the resource was last updated.
     /// - On failure, responds with [`SdkError<CreateWorkerFleetError>`](crate::operation::create_worker_fleet::CreateWorkerFleetError)
-    pub fn create_worker_fleet(
-        &self,
-    ) -> crate::operation::create_worker_fleet::builders::CreateWorkerFleetFluentBuilder {
-        crate::operation::create_worker_fleet::builders::CreateWorkerFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_worker_fleet(&self) -> crate::operation::create_worker_fleet::builders::CreateWorkerFleetFluentBuilder {
+        crate::operation::create_worker_fleet::builders::CreateWorkerFleetFluentBuilder::new(self.handle.clone())
     }
 }

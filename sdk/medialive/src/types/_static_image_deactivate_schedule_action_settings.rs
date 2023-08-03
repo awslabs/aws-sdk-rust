@@ -30,9 +30,7 @@ impl StaticImageDeactivateScheduleActionSettings {
 
 /// A builder for [`StaticImageDeactivateScheduleActionSettings`](crate::types::StaticImageDeactivateScheduleActionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StaticImageDeactivateScheduleActionSettingsBuilder {
     pub(crate) fade_out: ::std::option::Option<i32>,
     pub(crate) layer: ::std::option::Option<i32>,

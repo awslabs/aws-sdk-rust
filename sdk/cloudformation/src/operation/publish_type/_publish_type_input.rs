@@ -59,9 +59,7 @@ impl PublishTypeInput {
 
 /// A builder for [`PublishTypeInput`](crate::operation::publish_type::PublishTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishTypeInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ThirdPartyType>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -126,10 +124,7 @@ impl PublishTypeInputBuilder {
     /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning 2.0.0</a>.</p>
     /// <p>If you don't specify a version number, CloudFormation increments the version number by one minor version release.</p>
     /// <p>You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the first version number to be <code>1.0.0</code>.</p>
-    pub fn public_version_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_version_number = ::std::option::Option::Some(input.into());
         self
     }
@@ -139,10 +134,7 @@ impl PublishTypeInputBuilder {
     /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning 2.0.0</a>.</p>
     /// <p>If you don't specify a version number, CloudFormation increments the version number by one minor version release.</p>
     /// <p>You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the first version number to be <code>1.0.0</code>.</p>
-    pub fn set_public_version_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_version_number = input;
         self
     }
@@ -156,12 +148,7 @@ impl PublishTypeInputBuilder {
         &self.public_version_number
     }
     /// Consumes the builder and constructs a [`PublishTypeInput`](crate::operation::publish_type::PublishTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::publish_type::PublishTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::publish_type::PublishTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_type::PublishTypeInput {
             r#type: self.r#type,
             arn: self.arn,

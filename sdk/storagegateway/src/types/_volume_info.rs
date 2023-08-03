@@ -75,9 +75,7 @@ impl VolumeInfo {
 
 /// A builder for [`VolumeInfo`](crate::types::VolumeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeInfoBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
@@ -188,18 +186,12 @@ impl VolumeInfoBuilder {
         &self.volume_size_in_bytes
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-    pub fn volume_attachment_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_attachment_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_attachment_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-    pub fn set_volume_attachment_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_attachment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_attachment_status = input;
         self
     }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RestartAppServerOutput {
 }
 impl RestartAppServerOutput {
     /// Creates a new builder-style object to manufacture [`RestartAppServerOutput`](crate::operation::restart_app_server::RestartAppServerOutput).
-    pub fn builder() -> crate::operation::restart_app_server::builders::RestartAppServerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::restart_app_server::builders::RestartAppServerOutputBuilder {
         crate::operation::restart_app_server::builders::RestartAppServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestartAppServerOutput`](crate::operation::restart_app_server::RestartAppServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestartAppServerOutputBuilder {
     _request_id: Option<String>,
 }

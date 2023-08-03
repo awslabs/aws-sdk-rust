@@ -38,9 +38,7 @@ impl ReplicationTaskAssessmentResult {
         self.replication_task_arn.as_deref()
     }
     /// <p>The date the task assessment was completed. </p>
-    pub fn replication_task_last_assessment_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replication_task_last_assessment_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_task_last_assessment_date.as_ref()
     }
     /// <p> The status of the task assessment. </p>
@@ -71,14 +69,11 @@ impl ReplicationTaskAssessmentResult {
 
 /// A builder for [`ReplicationTaskAssessmentResult`](crate::types::ReplicationTaskAssessmentResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationTaskAssessmentResultBuilder {
     pub(crate) replication_task_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_task_last_assessment_date:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) replication_task_last_assessment_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) assessment_status: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_results_file: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_results: ::std::option::Option<::std::string::String>,
@@ -86,18 +81,12 @@ pub struct ReplicationTaskAssessmentResultBuilder {
 }
 impl ReplicationTaskAssessmentResultBuilder {
     /// <p> The replication task identifier of the task on which the task assessment was run. </p>
-    pub fn replication_task_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The replication task identifier of the task on which the task assessment was run. </p>
-    pub fn set_replication_task_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_identifier = input;
         self
     }
@@ -106,18 +95,12 @@ impl ReplicationTaskAssessmentResultBuilder {
         &self.replication_task_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
@@ -126,40 +109,26 @@ impl ReplicationTaskAssessmentResultBuilder {
         &self.replication_task_arn
     }
     /// <p>The date the task assessment was completed. </p>
-    pub fn replication_task_last_assessment_date(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn replication_task_last_assessment_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.replication_task_last_assessment_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the task assessment was completed. </p>
-    pub fn set_replication_task_last_assessment_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_replication_task_last_assessment_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.replication_task_last_assessment_date = input;
         self
     }
     /// <p>The date the task assessment was completed. </p>
-    pub fn get_replication_task_last_assessment_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_replication_task_last_assessment_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.replication_task_last_assessment_date
     }
     /// <p> The status of the task assessment. </p>
-    pub fn assessment_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The status of the task assessment. </p>
-    pub fn set_assessment_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_status = input;
         self
     }
@@ -168,18 +137,12 @@ impl ReplicationTaskAssessmentResultBuilder {
         &self.assessment_status
     }
     /// <p> The file containing the results of the task assessment. </p>
-    pub fn assessment_results_file(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_results_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_results_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The file containing the results of the task assessment. </p>
-    pub fn set_assessment_results_file(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_results_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_results_file = input;
         self
     }
@@ -189,19 +152,13 @@ impl ReplicationTaskAssessmentResultBuilder {
     }
     /// <p> The task assessment results in JSON format. </p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
-    pub fn assessment_results(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_results(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_results = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The task assessment results in JSON format. </p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
-    pub fn set_assessment_results(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_results(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_results = input;
         self
     }
@@ -212,19 +169,13 @@ impl ReplicationTaskAssessmentResultBuilder {
     }
     /// <p> The URL of the S3 object containing the task assessment results. </p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
-    pub fn s3_object_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_object_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_object_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The URL of the S3 object containing the task assessment results. </p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
-    pub fn set_s3_object_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_object_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_object_url = input;
         self
     }

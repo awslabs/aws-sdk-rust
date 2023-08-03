@@ -5,8 +5,7 @@
 pub struct ListAttributeGroupsOutput {
     /// <p>This list of attribute groups.</p>
     #[doc(hidden)]
-    pub attribute_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>>,
+    pub attribute_groups: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAttributeGroupsOutput {
 }
 impl ListAttributeGroupsOutput {
     /// <p>This list of attribute groups.</p>
-    pub fn attribute_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AttributeGroupSummary]> {
+    pub fn attribute_groups(&self) -> ::std::option::Option<&[crate::types::AttributeGroupSummary]> {
         self.attribute_groups.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAttributeGroupsOutput {
 }
 impl ListAttributeGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAttributeGroupsOutput`](crate::operation::list_attribute_groups::ListAttributeGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder {
-        crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder {
+        crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttributeGroupsOutput`](crate::operation::list_attribute_groups::ListAttributeGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttributeGroupsOutputBuilder {
-    pub(crate) attribute_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>>,
+    pub(crate) attribute_groups: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListAttributeGroupsOutputBuilder {
         self
     }
     /// <p>This list of attribute groups.</p>
-    pub fn set_attribute_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>>,
-    ) -> Self {
+    pub fn set_attribute_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>>) -> Self {
         self.attribute_groups = input;
         self
     }
     /// <p>This list of attribute groups.</p>
-    pub fn get_attribute_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>> {
+    pub fn get_attribute_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>> {
         &self.attribute_groups
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>

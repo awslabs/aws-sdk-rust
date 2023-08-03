@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeEndpointSettingsOutput {
 }
 impl DescribeEndpointSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointSettingsOutput`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsOutputBuilder {
         crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointSettingsOutput`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointSettingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoint_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointSetting>>,
+    pub(crate) endpoint_settings: ::std::option::Option<::std::vec::Vec<crate::types::EndpointSetting>>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointSettingsOutputBuilder {
@@ -73,17 +68,12 @@ impl DescribeEndpointSettingsOutputBuilder {
         self
     }
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-    pub fn set_endpoint_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointSetting>>,
-    ) -> Self {
+    pub fn set_endpoint_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointSetting>>) -> Self {
         self.endpoint_settings = input;
         self
     }
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-    pub fn get_endpoint_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointSetting>> {
+    pub fn get_endpoint_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointSetting>> {
         &self.endpoint_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +86,7 @@ impl DescribeEndpointSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEndpointSettingsOutput`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput {
+    pub fn build(self) -> crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput {
         crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput {
             marker: self.marker,
             endpoint_settings: self.endpoint_settings,

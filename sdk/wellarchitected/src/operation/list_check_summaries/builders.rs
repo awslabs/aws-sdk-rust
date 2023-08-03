@@ -10,10 +10,7 @@ impl ListCheckSummariesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_check_summaries::ListCheckSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_check_summaries::ListCheckSummariesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_check_summaries::ListCheckSummariesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_check_summaries();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListCheckSummariesFluentBuilder {
         }
     }
     /// Access the ListCheckSummaries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_check_summaries::builders::ListCheckSummariesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_check_summaries::builders::ListCheckSummariesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListCheckSummariesFluentBuilder {
             crate::operation::list_check_summaries::ListCheckSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_check_summaries::ListCheckSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_check_summaries::ListCheckSummariesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListCheckSummariesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListCheckSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_check_summaries::ListCheckSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_check_summaries::ListCheckSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_check_summaries::ListCheckSummariesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListCheckSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_check_summaries::ListCheckSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_check_summaries::ListCheckSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_check_summaries::ListCheckSummariesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListCheckSummariesFluentBuilder {
             crate::operation::list_check_summaries::ListCheckSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_check_summaries::ListCheckSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_check_summaries::ListCheckSummariesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_check_summaries::paginator::ListCheckSummariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_check_summaries::paginator::ListCheckSummariesPaginator {
-        crate::operation::list_check_summaries::paginator::ListCheckSummariesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_check_summaries::paginator::ListCheckSummariesPaginator {
+        crate::operation::list_check_summaries::paginator::ListCheckSummariesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

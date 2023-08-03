@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAssetPropertyValueOutput {
 }
 impl GetAssetPropertyValueOutput {
     /// Creates a new builder-style object to manufacture [`GetAssetPropertyValueOutput`](crate::operation::get_asset_property_value::GetAssetPropertyValueOutput).
-    pub fn builder(
-    ) -> crate::operation::get_asset_property_value::builders::GetAssetPropertyValueOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_asset_property_value::builders::GetAssetPropertyValueOutputBuilder {
         crate::operation::get_asset_property_value::builders::GetAssetPropertyValueOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssetPropertyValueOutput`](crate::operation::get_asset_property_value::GetAssetPropertyValueOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssetPropertyValueOutputBuilder {
     pub(crate) property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetAssetPropertyValueOutputBuilder {
         self
     }
     /// <p>The current asset property value.</p>
-    pub fn set_property_value(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetPropertyValue>,
-    ) -> Self {
+    pub fn set_property_value(mut self, input: ::std::option::Option<crate::types::AssetPropertyValue>) -> Self {
         self.property_value = input;
         self
     }

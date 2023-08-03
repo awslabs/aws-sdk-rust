@@ -24,18 +24,14 @@ impl PutAccountSettingDefaultInput {
 }
 impl PutAccountSettingDefaultInput {
     /// Creates a new builder-style object to manufacture [`PutAccountSettingDefaultInput`](crate::operation::put_account_setting_default::PutAccountSettingDefaultInput).
-    pub fn builder(
-    ) -> crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultInputBuilder {
         crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountSettingDefaultInput`](crate::operation::put_account_setting_default::PutAccountSettingDefaultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountSettingDefaultInputBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SettingName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -79,11 +75,9 @@ impl PutAccountSettingDefaultInputBuilder {
         crate::operation::put_account_setting_default::PutAccountSettingDefaultInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_account_setting_default::PutAccountSettingDefaultInput {
-                name: self.name,
-                value: self.value,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_account_setting_default::PutAccountSettingDefaultInput {
+            name: self.name,
+            value: self.value,
+        })
     }
 }

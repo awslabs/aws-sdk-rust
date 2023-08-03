@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePolicyOutput`](crate::operation::update_policy::UpdatePolicyOutput) with field(s):
     ///   - [`policy(Option<Policy>)`](crate::operation::update_policy::UpdatePolicyOutput::policy): <p>A structure that contains details about the updated policy, showing the requested changes.</p>
     /// - On failure, responds with [`SdkError<UpdatePolicyError>`](crate::operation::update_policy::UpdatePolicyError)
-    pub fn update_policy(
-        &self,
-    ) -> crate::operation::update_policy::builders::UpdatePolicyFluentBuilder {
-        crate::operation::update_policy::builders::UpdatePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_policy(&self) -> crate::operation::update_policy::builders::UpdatePolicyFluentBuilder {
+        crate::operation::update_policy::builders::UpdatePolicyFluentBuilder::new(self.handle.clone())
     }
 }

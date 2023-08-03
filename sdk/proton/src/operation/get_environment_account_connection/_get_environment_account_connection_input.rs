@@ -15,16 +15,14 @@ impl GetEnvironmentAccountConnectionInput {
 }
 impl GetEnvironmentAccountConnectionInput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentAccountConnectionInput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput).
-    pub fn builder() -> crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionInputBuilder{
+    pub fn builder() -> crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionInputBuilder {
         crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnvironmentAccountConnectionInput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnvironmentAccountConnectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,6 @@ impl GetEnvironmentAccountConnectionInputBuilder {
         crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput {
-                id: self.id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput { id: self.id })
     }
 }

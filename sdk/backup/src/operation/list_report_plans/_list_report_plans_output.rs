@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListReportPlansOutput {
 }
 impl ListReportPlansOutput {
     /// Creates a new builder-style object to manufacture [`ListReportPlansOutput`](crate::operation::list_report_plans::ListReportPlansOutput).
-    pub fn builder() -> crate::operation::list_report_plans::builders::ListReportPlansOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_report_plans::builders::ListReportPlansOutputBuilder {
         crate::operation::list_report_plans::builders::ListReportPlansOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReportPlansOutput`](crate::operation::list_report_plans::ListReportPlansOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportPlansOutputBuilder {
     pub(crate) report_plans: ::std::option::Option<::std::vec::Vec<crate::types::ReportPlan>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListReportPlansOutputBuilder {
         self
     }
     /// <p>A list of your report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
-    pub fn set_report_plans(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportPlan>>,
-    ) -> Self {
+    pub fn set_report_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportPlan>>) -> Self {
         self.report_plans = input;
         self
     }
     /// <p>A list of your report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
-    pub fn get_report_plans(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportPlan>> {
+    pub fn get_report_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportPlan>> {
         &self.report_plans
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>

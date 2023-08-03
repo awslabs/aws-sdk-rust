@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput) with field(s):
     ///   - [`statuses(Option<Vec<TrustedAdvisorCheckRefreshStatus>>)`](crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput::statuses): <p>The refresh status of the specified Trusted Advisor checks.</p>
     /// - On failure, responds with [`SdkError<DescribeTrustedAdvisorCheckRefreshStatusesError>`](crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesError)
-    pub fn describe_trusted_advisor_check_refresh_statuses(&self) -> crate::operation::describe_trusted_advisor_check_refresh_statuses::builders::DescribeTrustedAdvisorCheckRefreshStatusesFluentBuilder{
-        crate::operation::describe_trusted_advisor_check_refresh_statuses::builders::DescribeTrustedAdvisorCheckRefreshStatusesFluentBuilder::new(self.handle.clone())
+    pub fn describe_trusted_advisor_check_refresh_statuses(
+        &self,
+    ) -> crate::operation::describe_trusted_advisor_check_refresh_statuses::builders::DescribeTrustedAdvisorCheckRefreshStatusesFluentBuilder {
+        crate::operation::describe_trusted_advisor_check_refresh_statuses::builders::DescribeTrustedAdvisorCheckRefreshStatusesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

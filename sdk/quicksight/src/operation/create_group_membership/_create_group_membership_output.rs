@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateGroupMembershipOutput {
 }
 impl CreateGroupMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupMembershipOutput`](crate::operation::create_group_membership::CreateGroupMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder {
         crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGroupMembershipOutput`](crate::operation::create_group_membership::CreateGroupMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGroupMembershipOutputBuilder {
     pub(crate) group_member: ::std::option::Option<crate::types::GroupMember>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -60,10 +56,7 @@ impl CreateGroupMembershipOutputBuilder {
         self
     }
     /// <p>The group member.</p>
-    pub fn set_group_member(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupMember>,
-    ) -> Self {
+    pub fn set_group_member(mut self, input: ::std::option::Option<crate::types::GroupMember>) -> Self {
         self.group_member = input;
         self
     }

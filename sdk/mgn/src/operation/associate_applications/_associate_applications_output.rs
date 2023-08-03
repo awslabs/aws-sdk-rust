@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateApplicationsOutput {
 }
 impl AssociateApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateApplicationsOutput`](crate::operation::associate_applications::AssociateApplicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_applications::builders::AssociateApplicationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_applications::builders::AssociateApplicationsOutputBuilder {
         crate::operation::associate_applications::builders::AssociateApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateApplicationsOutput`](crate::operation::associate_applications::AssociateApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApplicationsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`managed_action_history_items(Option<Vec<ManagedActionHistoryItem>>)`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryOutput::managed_action_history_items): <p>A list of completed and failed managed actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryOutput::next_token): <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeEnvironmentManagedActionHistoryError>`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryError)
-    pub fn describe_environment_managed_action_history(&self) -> crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder{
-        crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::new(self.handle.clone())
+    pub fn describe_environment_managed_action_history(
+        &self,
+    ) -> crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder {
+        crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

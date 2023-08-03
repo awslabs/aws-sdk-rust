@@ -37,9 +37,7 @@ impl ApplyMapping {
 
 /// A builder for [`ApplyMapping`](crate::types::ApplyMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplyMappingBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl ApplyMappingBuilder {
         self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -95,10 +90,7 @@ impl ApplyMappingBuilder {
         self
     }
     /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
-    pub fn set_mapping(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>,
-    ) -> Self {
+    pub fn set_mapping(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>) -> Self {
         self.mapping = input;
         self
     }

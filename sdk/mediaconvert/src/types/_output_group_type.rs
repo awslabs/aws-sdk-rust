@@ -41,13 +41,7 @@
 /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OutputGroupType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for OutputGroupType {
             "FILE_GROUP_SETTINGS" => OutputGroupType::FileGroupSettings,
             "HLS_GROUP_SETTINGS" => OutputGroupType::HlsGroupSettings,
             "MS_SMOOTH_GROUP_SETTINGS" => OutputGroupType::MsSmoothGroupSettings,
-            other => {
-                OutputGroupType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => OutputGroupType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

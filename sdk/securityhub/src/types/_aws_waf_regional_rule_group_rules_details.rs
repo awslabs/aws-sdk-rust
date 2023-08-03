@@ -19,9 +19,7 @@ pub struct AwsWafRegionalRuleGroupRulesDetails {
 }
 impl AwsWafRegionalRuleGroupRulesDetails {
     /// <p>The action that WAF should take on a web request when it matches the criteria defined in the rule. </p>
-    pub fn action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafRegionalRuleGroupRulesActionDetails> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::AwsWafRegionalRuleGroupRulesActionDetails> {
         self.action.as_ref()
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>. </p>
@@ -46,37 +44,26 @@ impl AwsWafRegionalRuleGroupRulesDetails {
 
 /// A builder for [`AwsWafRegionalRuleGroupRulesDetails`](crate::types::AwsWafRegionalRuleGroupRulesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRegionalRuleGroupRulesDetailsBuilder {
-    pub(crate) action:
-        ::std::option::Option<crate::types::AwsWafRegionalRuleGroupRulesActionDetails>,
+    pub(crate) action: ::std::option::Option<crate::types::AwsWafRegionalRuleGroupRulesActionDetails>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalRuleGroupRulesDetailsBuilder {
     /// <p>The action that WAF should take on a web request when it matches the criteria defined in the rule. </p>
-    pub fn action(
-        mut self,
-        input: crate::types::AwsWafRegionalRuleGroupRulesActionDetails,
-    ) -> Self {
+    pub fn action(mut self, input: crate::types::AwsWafRegionalRuleGroupRulesActionDetails) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action that WAF should take on a web request when it matches the criteria defined in the rule. </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafRegionalRuleGroupRulesActionDetails>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::AwsWafRegionalRuleGroupRulesActionDetails>) -> Self {
         self.action = input;
         self
     }
     /// <p>The action that WAF should take on a web request when it matches the criteria defined in the rule. </p>
-    pub fn get_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsWafRegionalRuleGroupRulesActionDetails> {
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::AwsWafRegionalRuleGroupRulesActionDetails> {
         &self.action
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>. </p>

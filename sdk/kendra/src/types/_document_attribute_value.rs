@@ -46,9 +46,7 @@ impl DocumentAttributeValue {
 
 /// A builder for [`DocumentAttributeValue`](crate::types::DocumentAttributeValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentAttributeValueBuilder {
     pub(crate) string_value: ::std::option::Option<::std::string::String>,
     pub(crate) string_list_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -75,27 +73,19 @@ impl DocumentAttributeValueBuilder {
     /// To override the contents of this collection use [`set_string_list_value`](Self::set_string_list_value).
     ///
     /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
-    pub fn string_list_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn string_list_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.string_list_value.unwrap_or_default();
         v.push(input.into());
         self.string_list_value = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
-    pub fn set_string_list_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_string_list_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.string_list_value = input;
         self
     }
     /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
-    pub fn get_string_list_value(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_string_list_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.string_list_value
     }
     /// <p>A long integer value.</p>
@@ -120,10 +110,7 @@ impl DocumentAttributeValueBuilder {
     }
     /// <p>A date expressed as an ISO 8601 string.</p>
     /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
-    pub fn set_date_value(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_value(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_value = input;
         self
     }

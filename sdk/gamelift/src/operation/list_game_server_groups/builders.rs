@@ -37,10 +37,7 @@ impl ListGameServerGroupsFluentBuilder {
         }
     }
     /// Access the ListGameServerGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_game_server_groups::builders::ListGameServerGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_game_server_groups::builders::ListGameServerGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListGameServerGroupsFluentBuilder {
             crate::operation::list_game_server_groups::ListGameServerGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_game_server_groups::ListGameServerGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_game_server_groups::ListGameServerGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListGameServerGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListGameServerGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_game_server_groups::ListGameServerGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_game_server_groups::ListGameServerGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_game_server_groups::ListGameServerGroupsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListGameServerGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_game_server_groups::ListGameServerGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_game_server_groups::ListGameServerGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_game_server_groups::ListGameServerGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListGameServerGroupsFluentBuilder {
             crate::operation::list_game_server_groups::ListGameServerGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_game_server_groups::ListGameServerGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_game_server_groups::ListGameServerGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_game_server_groups::paginator::ListGameServerGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_game_server_groups::paginator::ListGameServerGroupsPaginator {
-        crate::operation::list_game_server_groups::paginator::ListGameServerGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_game_server_groups::paginator::ListGameServerGroupsPaginator {
+        crate::operation::list_game_server_groups::paginator::ListGameServerGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The game server groups' limit.</p>
     pub fn limit(mut self, input: i32) -> Self {

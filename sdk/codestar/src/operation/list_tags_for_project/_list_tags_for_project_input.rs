@@ -29,17 +29,14 @@ impl ListTagsForProjectInput {
 }
 impl ListTagsForProjectInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForProjectInput`](crate::operation::list_tags_for_project::ListTagsForProjectInput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_project::builders::ListTagsForProjectInputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_project::builders::ListTagsForProjectInputBuilder {
         crate::operation::list_tags_for_project::builders::ListTagsForProjectInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForProjectInput`](crate::operation::list_tags_for_project::ListTagsForProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForProjectInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl ListTagsForProjectInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsForProjectInput`](crate::operation::list_tags_for_project::ListTagsForProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tags_for_project::ListTagsForProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_tags_for_project::ListTagsForProjectInput {
-                id: self.id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_tags_for_project::ListTagsForProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_project::ListTagsForProjectInput {
+            id: self.id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

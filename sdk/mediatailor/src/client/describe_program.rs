@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`clip_range(Option<ClipRange>)`](crate::operation::describe_program::DescribeProgramOutput::clip_range): <p>The clip range configuration settings.</p>
     ///   - [`duration_millis(Option<i64>)`](crate::operation::describe_program::DescribeProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
     /// - On failure, responds with [`SdkError<DescribeProgramError>`](crate::operation::describe_program::DescribeProgramError)
-    pub fn describe_program(
-        &self,
-    ) -> crate::operation::describe_program::builders::DescribeProgramFluentBuilder {
-        crate::operation::describe_program::builders::DescribeProgramFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_program(&self) -> crate::operation::describe_program::builders::DescribeProgramFluentBuilder {
+        crate::operation::describe_program::builders::DescribeProgramFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,7 +28,7 @@ impl DescribeInstanceRefreshesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceRefreshesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesInputBuilder,
+    inner: crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesInputBuilder,
 }
 impl DescribeInstanceRefreshesFluentBuilder {
     /// Creates a new `DescribeInstanceRefreshes`.
@@ -39,7 +39,7 @@ impl DescribeInstanceRefreshesFluentBuilder {
         }
     }
     /// Access the DescribeInstanceRefreshes as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeInstanceRefreshesFluentBuilder {
             crate::operation::describe_instance_refreshes::DescribeInstanceRefreshes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeInstanceRefreshesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeInstanceRefreshesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeInstanceRefreshesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DescribeInstanceRefreshesFluentBuilder {
             crate::operation::describe_instance_refreshes::DescribeInstanceRefreshes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -147,25 +130,17 @@ impl DescribeInstanceRefreshesFluentBuilder {
     /// To override the contents of this collection use [`set_instance_refresh_ids`](Self::set_instance_refresh_ids).
     ///
     /// <p>One or more instance refresh IDs.</p>
-    pub fn instance_refresh_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_refresh_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_refresh_ids(input.into());
         self
     }
     /// <p>One or more instance refresh IDs.</p>
-    pub fn set_instance_refresh_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_refresh_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_refresh_ids(input);
         self
     }
     /// <p>One or more instance refresh IDs.</p>
-    pub fn get_instance_refresh_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_refresh_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_refresh_ids()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>

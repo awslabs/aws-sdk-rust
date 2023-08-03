@@ -72,9 +72,7 @@ impl JournalKinesisStreamDescription {
         self.status.as_ref()
     }
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
-    pub fn kinesis_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisConfiguration> {
+    pub fn kinesis_configuration(&self) -> ::std::option::Option<&crate::types::KinesisConfiguration> {
         self.kinesis_configuration.as_ref()
     }
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
@@ -95,9 +93,7 @@ impl JournalKinesisStreamDescription {
 
 /// A builder for [`JournalKinesisStreamDescription`](crate::types::JournalKinesisStreamDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JournalKinesisStreamDescriptionBuilder {
     pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -132,10 +128,7 @@ impl JournalKinesisStreamDescriptionBuilder {
         self
     }
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -149,10 +142,7 @@ impl JournalKinesisStreamDescriptionBuilder {
         self
     }
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-    pub fn set_inclusive_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_inclusive_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inclusive_start_time = input;
         self
     }
@@ -166,10 +156,7 @@ impl JournalKinesisStreamDescriptionBuilder {
         self
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
-    pub fn set_exclusive_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_exclusive_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.exclusive_end_time = input;
         self
     }
@@ -239,17 +226,12 @@ impl JournalKinesisStreamDescriptionBuilder {
         self
     }
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
-    pub fn set_kinesis_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisConfiguration>,
-    ) -> Self {
+    pub fn set_kinesis_configuration(mut self, input: ::std::option::Option<crate::types::KinesisConfiguration>) -> Self {
         self.kinesis_configuration = input;
         self
     }
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
-    pub fn get_kinesis_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisConfiguration> {
+    pub fn get_kinesis_configuration(&self) -> &::std::option::Option<crate::types::KinesisConfiguration> {
         &self.kinesis_configuration
     }
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
@@ -258,10 +240,7 @@ impl JournalKinesisStreamDescriptionBuilder {
         self
     }
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
-    pub fn set_error_cause(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorCause>,
-    ) -> Self {
+    pub fn set_error_cause(mut self, input: ::std::option::Option<crate::types::ErrorCause>) -> Self {
         self.error_cause = input;
         self
     }

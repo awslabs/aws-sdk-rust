@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`apps_lists(Option<Vec<AppsListDataSummary>>)`](crate::operation::list_apps_lists::ListAppsListsOutput::apps_lists): <p>An array of <code>AppsListDataSummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_apps_lists::ListAppsListsOutput::next_token): <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     /// - On failure, responds with [`SdkError<ListAppsListsError>`](crate::operation::list_apps_lists::ListAppsListsError)
-    pub fn list_apps_lists(
-        &self,
-    ) -> crate::operation::list_apps_lists::builders::ListAppsListsFluentBuilder {
-        crate::operation::list_apps_lists::builders::ListAppsListsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_apps_lists(&self) -> crate::operation::list_apps_lists::builders::ListAppsListsFluentBuilder {
+        crate::operation::list_apps_lists::builders::ListAppsListsFluentBuilder::new(self.handle.clone())
     }
 }

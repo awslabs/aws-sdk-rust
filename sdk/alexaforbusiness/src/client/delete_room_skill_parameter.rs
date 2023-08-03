@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteRoomSkillParameterOutput`](crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput)
     /// - On failure, responds with [`SdkError<DeleteRoomSkillParameterError>`](crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn delete_room_skill_parameter(&self) -> crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterFluentBuilder{
+    pub fn delete_room_skill_parameter(&self) -> crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterFluentBuilder {
         crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterFluentBuilder::new(self.handle.clone())
     }
 }

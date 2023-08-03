@@ -28,12 +28,9 @@ impl GetEntitiesOutput {
 
 /// A builder for [`GetEntitiesOutput`](crate::operation::get_entities::GetEntitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEntitiesOutputBuilder {
-    pub(crate) descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>>,
+    pub(crate) descriptions: ::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>>,
     _request_id: Option<String>,
 }
 impl GetEntitiesOutputBuilder {
@@ -49,17 +46,12 @@ impl GetEntitiesOutputBuilder {
         self
     }
     /// <p>An array of descriptions for the specified entities.</p>
-    pub fn set_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>>,
-    ) -> Self {
+    pub fn set_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>>) -> Self {
         self.descriptions = input;
         self
     }
     /// <p>An array of descriptions for the specified entities.</p>
-    pub fn get_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>> {
+    pub fn get_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>> {
         &self.descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

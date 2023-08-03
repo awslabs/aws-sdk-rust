@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeregisterInstanceOutput`](crate::operation::deregister_instance::DeregisterInstanceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::deregister_instance::DeregisterInstanceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<DeregisterInstanceError>`](crate::operation::deregister_instance::DeregisterInstanceError)
-    pub fn deregister_instance(
-        &self,
-    ) -> crate::operation::deregister_instance::builders::DeregisterInstanceFluentBuilder {
-        crate::operation::deregister_instance::builders::DeregisterInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_instance(&self) -> crate::operation::deregister_instance::builders::DeregisterInstanceFluentBuilder {
+        crate::operation::deregister_instance::builders::DeregisterInstanceFluentBuilder::new(self.handle.clone())
     }
 }

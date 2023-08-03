@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateConfiguredTableAssociationOutput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationOutput) with field(s):
     ///   - [`configured_table_association(Option<ConfiguredTableAssociation>)`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationOutput::configured_table_association): <p>The entire updated configured table association.</p>
     /// - On failure, responds with [`SdkError<UpdateConfiguredTableAssociationError>`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationError)
-    pub fn update_configured_table_association(&self) -> crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationFluentBuilder{
+    pub fn update_configured_table_association(
+        &self,
+    ) -> crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationFluentBuilder {
         crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationFluentBuilder::new(self.handle.clone())
     }
 }

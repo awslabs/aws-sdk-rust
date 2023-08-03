@@ -28,9 +28,7 @@ impl DeletePeeringOutput {
 
 /// A builder for [`DeletePeeringOutput`](crate::operation::delete_peering::DeletePeeringOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePeeringOutputBuilder {
     pub(crate) peering: ::std::option::Option<crate::types::Peering>,
     _request_id: Option<String>,

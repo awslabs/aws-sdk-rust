@@ -10,10 +10,7 @@ impl CreateAwsLogSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_aws_log_source::CreateAwsLogSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_aws_log_source::CreateAwsLogSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_aws_log_source::CreateAwsLogSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_aws_log_source();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateAwsLogSourceFluentBuilder {
         }
     }
     /// Access the CreateAwsLogSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateAwsLogSourceFluentBuilder {
             crate::operation::create_aws_log_source::CreateAwsLogSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_aws_log_source::CreateAwsLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_aws_log_source::CreateAwsLogSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateAwsLogSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateAwsLogSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_aws_log_source::CreateAwsLogSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_aws_log_source::CreateAwsLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_aws_log_source::CreateAwsLogSourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateAwsLogSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_aws_log_source::CreateAwsLogSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_aws_log_source::CreateAwsLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_aws_log_source::CreateAwsLogSourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateAwsLogSourceFluentBuilder {
             crate::operation::create_aws_log_source::CreateAwsLogSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_aws_log_source::CreateAwsLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_aws_log_source::CreateAwsLogSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +117,12 @@ impl CreateAwsLogSourceFluentBuilder {
         self
     }
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
         self.inner.get_sources()
     }
 }

@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`user_provided_id(Option<String>)`](crate::operation::start_replication::StartReplicationOutput::user_provided_id): <p>Source server user provided ID.</p>
     ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::start_replication::StartReplicationOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<StartReplicationError>`](crate::operation::start_replication::StartReplicationError)
-    pub fn start_replication(
-        &self,
-    ) -> crate::operation::start_replication::builders::StartReplicationFluentBuilder {
-        crate::operation::start_replication::builders::StartReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_replication(&self) -> crate::operation::start_replication::builders::StartReplicationFluentBuilder {
+        crate::operation::start_replication::builders::StartReplicationFluentBuilder::new(self.handle.clone())
     }
 }

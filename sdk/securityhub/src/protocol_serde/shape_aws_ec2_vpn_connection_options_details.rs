@@ -4,9 +4,7 @@ pub fn ser_aws_ec2_vpn_connection_options_details(
     input: &crate::types::AwsEc2VpnConnectionOptionsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.static_routes_only {
-        object
-            .key("StaticRoutesOnly")
-            .boolean(input.static_routes_only);
+        object.key("StaticRoutesOnly").boolean(input.static_routes_only);
     }
     if let Some(var_1) = &input.tunnel_options {
         let mut array_2 = object.key("TunnelOptions").start_array();
@@ -25,59 +23,41 @@ pub fn ser_aws_ec2_vpn_connection_options_details(
 
 pub(crate) fn de_aws_ec2_vpn_connection_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsEc2VpnConnectionOptionsDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsEc2VpnConnectionOptionsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsEc2VpnConnectionOptionsDetailsBuilder::default();
+            let mut builder = crate::types::builders::AwsEc2VpnConnectionOptionsDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "StaticRoutesOnly" => {
-                                builder = builder.set_static_routes_only(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "TunnelOptions" => {
-                                builder = builder.set_tunnel_options(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "StaticRoutesOnly" => {
+                            builder = builder.set_static_routes_only(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "TunnelOptions" => {
+                            builder = builder.set_tunnel_options(
                                     crate::protocol_serde::shape_aws_ec2_vpn_connection_options_tunnel_options_list::de_aws_ec2_vpn_connection_options_tunnel_options_list(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

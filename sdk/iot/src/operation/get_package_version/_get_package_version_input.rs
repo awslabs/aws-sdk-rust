@@ -22,17 +22,14 @@ impl GetPackageVersionInput {
 }
 impl GetPackageVersionInput {
     /// Creates a new builder-style object to manufacture [`GetPackageVersionInput`](crate::operation::get_package_version::GetPackageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::get_package_version::builders::GetPackageVersionInputBuilder {
+    pub fn builder() -> crate::operation::get_package_version::builders::GetPackageVersionInputBuilder {
         crate::operation::get_package_version::builders::GetPackageVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPackageVersionInput`](crate::operation::get_package_version::GetPackageVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPackageVersionInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl GetPackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetPackageVersionInput`](crate::operation::get_package_version::GetPackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_package_version::GetPackageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_package_version::GetPackageVersionInput {
-                package_name: self.package_name,
-                version_name: self.version_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_package_version::GetPackageVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_package_version::GetPackageVersionInput {
+            package_name: self.package_name,
+            version_name: self.version_name,
+        })
     }
 }

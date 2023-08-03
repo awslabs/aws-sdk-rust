@@ -16,28 +16,23 @@ impl UpdateConnectionAliasPermissionInput {
         self.alias_id.as_deref()
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
-    pub fn connection_alias_permission(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectionAliasPermission> {
+    pub fn connection_alias_permission(&self) -> ::std::option::Option<&crate::types::ConnectionAliasPermission> {
         self.connection_alias_permission.as_ref()
     }
 }
 impl UpdateConnectionAliasPermissionInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionAliasPermissionInput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput).
-    pub fn builder() -> crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionInputBuilder{
+    pub fn builder() -> crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionInputBuilder {
         crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectionAliasPermissionInput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectionAliasPermissionInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
-    pub(crate) connection_alias_permission:
-        ::std::option::Option<crate::types::ConnectionAliasPermission>,
+    pub(crate) connection_alias_permission: ::std::option::Option<crate::types::ConnectionAliasPermission>,
 }
 impl UpdateConnectionAliasPermissionInputBuilder {
     /// <p>The identifier of the connection alias that you want to update permissions for.</p>
@@ -55,25 +50,17 @@ impl UpdateConnectionAliasPermissionInputBuilder {
         &self.alias_id
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
-    pub fn connection_alias_permission(
-        mut self,
-        input: crate::types::ConnectionAliasPermission,
-    ) -> Self {
+    pub fn connection_alias_permission(mut self, input: crate::types::ConnectionAliasPermission) -> Self {
         self.connection_alias_permission = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
-    pub fn set_connection_alias_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionAliasPermission>,
-    ) -> Self {
+    pub fn set_connection_alias_permission(mut self, input: ::std::option::Option<crate::types::ConnectionAliasPermission>) -> Self {
         self.connection_alias_permission = input;
         self
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
-    pub fn get_connection_alias_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionAliasPermission> {
+    pub fn get_connection_alias_permission(&self) -> &::std::option::Option<crate::types::ConnectionAliasPermission> {
         &self.connection_alias_permission
     }
     /// Consumes the builder and constructs a [`UpdateConnectionAliasPermissionInput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput).
@@ -85,11 +72,9 @@ impl UpdateConnectionAliasPermissionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput {
-                alias_id: self.alias_id
-                ,
-                connection_alias_permission: self.connection_alias_permission
-                ,
-            }
+                alias_id: self.alias_id,
+                connection_alias_permission: self.connection_alias_permission,
+            },
         )
     }
 }

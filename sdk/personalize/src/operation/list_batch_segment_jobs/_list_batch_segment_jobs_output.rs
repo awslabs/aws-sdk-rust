@@ -5,8 +5,7 @@
 pub struct ListBatchSegmentJobsOutput {
     /// <p>A list containing information on each job that is returned.</p>
     #[doc(hidden)]
-    pub batch_segment_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchSegmentJobSummary>>,
+    pub batch_segment_jobs: ::std::option::Option<::std::vec::Vec<crate::types::BatchSegmentJobSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListBatchSegmentJobsOutput {
 }
 impl ListBatchSegmentJobsOutput {
     /// <p>A list containing information on each job that is returned.</p>
-    pub fn batch_segment_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchSegmentJobSummary]> {
+    pub fn batch_segment_jobs(&self) -> ::std::option::Option<&[crate::types::BatchSegmentJobSummary]> {
         self.batch_segment_jobs.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListBatchSegmentJobsOutput {
 }
 impl ListBatchSegmentJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListBatchSegmentJobsOutput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsOutputBuilder {
         crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBatchSegmentJobsOutput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchSegmentJobsOutputBuilder {
-    pub(crate) batch_segment_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchSegmentJobSummary>>,
+    pub(crate) batch_segment_jobs: ::std::option::Option<::std::vec::Vec<crate::types::BatchSegmentJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListBatchSegmentJobsOutputBuilder {
         self
     }
     /// <p>A list containing information on each job that is returned.</p>
-    pub fn set_batch_segment_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchSegmentJobSummary>>,
-    ) -> Self {
+    pub fn set_batch_segment_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchSegmentJobSummary>>) -> Self {
         self.batch_segment_jobs = input;
         self
     }
     /// <p>A list containing information on each job that is returned.</p>
-    pub fn get_batch_segment_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchSegmentJobSummary>> {
+    pub fn get_batch_segment_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchSegmentJobSummary>> {
         &self.batch_segment_jobs
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>

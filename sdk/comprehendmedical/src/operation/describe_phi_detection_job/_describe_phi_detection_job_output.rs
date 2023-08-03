@@ -5,15 +5,12 @@
 pub struct DescribePhiDetectionJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties:
-        ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
+    pub comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribePhiDetectionJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobProperties> {
+    pub fn comprehend_medical_async_job_properties(&self) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobProperties> {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
@@ -24,29 +21,21 @@ impl ::aws_http::request_id::RequestId for DescribePhiDetectionJobOutput {
 }
 impl DescribePhiDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribePhiDetectionJobOutput`](crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_phi_detection_job::builders::DescribePhiDetectionJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_phi_detection_job::builders::DescribePhiDetectionJobOutputBuilder {
         crate::operation::describe_phi_detection_job::builders::DescribePhiDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePhiDetectionJobOutput`](crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePhiDetectionJobOutputBuilder {
-    pub(crate) comprehend_medical_async_job_properties:
-        ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
+    pub(crate) comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribePhiDetectionJobOutputBuilder {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        mut self,
-        input: crate::types::ComprehendMedicalAsyncJobProperties,
-    ) -> Self {
+    pub fn comprehend_medical_async_job_properties(mut self, input: crate::types::ComprehendMedicalAsyncJobProperties) -> Self {
         self.comprehend_medical_async_job_properties = ::std::option::Option::Some(input);
         self
     }
@@ -59,9 +48,7 @@ impl DescribePhiDetectionJobOutputBuilder {
         self
     }
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn get_comprehend_medical_async_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties> {
+    pub fn get_comprehend_medical_async_job_properties(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties> {
         &self.comprehend_medical_async_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +61,7 @@ impl DescribePhiDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePhiDetectionJobOutput`](crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput {
+    pub fn build(self) -> crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput {
         crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput {
             comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties,
             _request_id: self._request_id,

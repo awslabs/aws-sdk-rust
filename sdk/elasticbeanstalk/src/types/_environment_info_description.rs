@@ -46,9 +46,7 @@ impl EnvironmentInfoDescription {
 
 /// A builder for [`EnvironmentInfoDescription`](crate::types::EnvironmentInfoDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentInfoDescriptionBuilder {
     pub(crate) info_type: ::std::option::Option<crate::types::EnvironmentInfoType>,
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
@@ -62,10 +60,7 @@ impl EnvironmentInfoDescriptionBuilder {
         self
     }
     /// <p>The type of information retrieved.</p>
-    pub fn set_info_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentInfoType>,
-    ) -> Self {
+    pub fn set_info_type(mut self, input: ::std::option::Option<crate::types::EnvironmentInfoType>) -> Self {
         self.info_type = input;
         self
     }
@@ -74,18 +69,12 @@ impl EnvironmentInfoDescriptionBuilder {
         &self.info_type
     }
     /// <p>The Amazon EC2 Instance ID for this information.</p>
-    pub fn ec2_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 Instance ID for this information.</p>
-    pub fn set_ec2_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_instance_id = input;
         self
     }
@@ -99,10 +88,7 @@ impl EnvironmentInfoDescriptionBuilder {
         self
     }
     /// <p>The time stamp when this information was retrieved.</p>
-    pub fn set_sample_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_sample_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.sample_timestamp = input;
         self
     }

@@ -37,10 +37,7 @@ impl ListConnectorEntitiesFluentBuilder {
         }
     }
     /// Access the ListConnectorEntities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_connector_entities::builders::ListConnectorEntitiesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_connector_entities::builders::ListConnectorEntitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListConnectorEntitiesFluentBuilder {
             crate::operation::list_connector_entities::ListConnectorEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connector_entities::ListConnectorEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connector_entities::ListConnectorEntitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListConnectorEntitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListConnectorEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_connector_entities::ListConnectorEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connector_entities::ListConnectorEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connector_entities::ListConnectorEntitiesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListConnectorEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_connector_entities::ListConnectorEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connector_entities::ListConnectorEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connector_entities::ListConnectorEntitiesError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ListConnectorEntitiesFluentBuilder {
             crate::operation::list_connector_entities::ListConnectorEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connector_entities::ListConnectorEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connector_entities::ListConnectorEntitiesError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_name(input.into());
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
@@ -149,10 +129,7 @@ impl ListConnectorEntitiesFluentBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
     }
@@ -161,18 +138,12 @@ impl ListConnectorEntitiesFluentBuilder {
         self.inner.get_connector_type()
     }
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-    pub fn entities_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entities_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entities_path(input.into());
         self
     }
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-    pub fn set_entities_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entities_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entities_path(input);
         self
     }

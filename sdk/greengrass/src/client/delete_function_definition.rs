@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`function_definition_id(impl ::std::convert::Into<String>)`](crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder::function_definition_id) / [`set_function_definition_id(Option<String>)`](crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder::set_function_definition_id): The ID of the Lambda function definition.
     /// - On success, responds with [`DeleteFunctionDefinitionOutput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteFunctionDefinitionError>`](crate::operation::delete_function_definition::DeleteFunctionDefinitionError)
-    pub fn delete_function_definition(
-        &self,
-    ) -> crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder
-    {
+    pub fn delete_function_definition(&self) -> crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder {
         crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,9 +35,7 @@ impl ListPoliciesOutput {
 
 /// A builder for [`ListPoliciesOutput`](crate::operation::list_policies::ListPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPoliciesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicyItem>>,
@@ -70,17 +68,12 @@ impl ListPoliciesOutputBuilder {
         self
     }
     /// <p>Lists all policies that are available in the specified policy store.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyItem>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyItem>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>Lists all policies that are available in the specified policy store.</p>
-    pub fn get_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyItem>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyItem>> {
         &self.policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbProxyTargetGroupOutput`](crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput) with field(s):
     ///   - [`db_proxy_target_group(Option<DbProxyTargetGroup>)`](crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput::db_proxy_target_group): <p>The settings of the modified <code>DBProxyTarget</code>.</p>
     /// - On failure, responds with [`SdkError<ModifyDBProxyTargetGroupError>`](crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError)
-    pub fn modify_db_proxy_target_group(&self) -> crate::operation::modify_db_proxy_target_group::builders::ModifyDBProxyTargetGroupFluentBuilder{
+    pub fn modify_db_proxy_target_group(&self) -> crate::operation::modify_db_proxy_target_group::builders::ModifyDBProxyTargetGroupFluentBuilder {
         crate::operation::modify_db_proxy_target_group::builders::ModifyDBProxyTargetGroupFluentBuilder::new(self.handle.clone())
     }
 }

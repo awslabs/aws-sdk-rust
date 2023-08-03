@@ -21,19 +21,16 @@ impl ::aws_http::request_id::RequestId for GetTypedLinkFacetInformationOutput {
 }
 impl GetTypedLinkFacetInformationOutput {
     /// Creates a new builder-style object to manufacture [`GetTypedLinkFacetInformationOutput`](crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationOutput).
-    pub fn builder() -> crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationOutputBuilder{
+    pub fn builder() -> crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationOutputBuilder {
         crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTypedLinkFacetInformationOutput`](crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTypedLinkFacetInformationOutputBuilder {
-    pub(crate) identity_attribute_order:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) identity_attribute_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetTypedLinkFacetInformationOutputBuilder {
@@ -42,27 +39,19 @@ impl GetTypedLinkFacetInformationOutputBuilder {
     /// To override the contents of this collection use [`set_identity_attribute_order`](Self::set_identity_attribute_order).
     ///
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn identity_attribute_order(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_attribute_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identity_attribute_order.unwrap_or_default();
         v.push(input.into());
         self.identity_attribute_order = ::std::option::Option::Some(v);
         self
     }
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn set_identity_attribute_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_identity_attribute_order(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.identity_attribute_order = input;
         self
     }
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn get_identity_attribute_order(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identity_attribute_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.identity_attribute_order
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +64,7 @@ impl GetTypedLinkFacetInformationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTypedLinkFacetInformationOutput`](crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationOutput
-    {
+    pub fn build(self) -> crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationOutput {
         crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationOutput {
             identity_attribute_order: self.identity_attribute_order,
             _request_id: self._request_id,

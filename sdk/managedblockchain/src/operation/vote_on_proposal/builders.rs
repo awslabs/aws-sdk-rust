@@ -10,10 +10,7 @@ impl VoteOnProposalInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::vote_on_proposal::VoteOnProposalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::vote_on_proposal::VoteOnProposalError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::vote_on_proposal::VoteOnProposalError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.vote_on_proposal();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl VoteOnProposalFluentBuilder {
         }
     }
     /// Access the VoteOnProposal as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::vote_on_proposal::builders::VoteOnProposalInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::vote_on_proposal::builders::VoteOnProposalInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl VoteOnProposalFluentBuilder {
             crate::operation::vote_on_proposal::VoteOnProposal,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::vote_on_proposal::VoteOnProposalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::vote_on_proposal::VoteOnProposalError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl VoteOnProposalFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl VoteOnProposalFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::vote_on_proposal::VoteOnProposalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::vote_on_proposal::VoteOnProposalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::vote_on_proposal::VoteOnProposalError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl VoteOnProposalFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::vote_on_proposal::VoteOnProposalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::vote_on_proposal::VoteOnProposalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::vote_on_proposal::VoteOnProposalError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl VoteOnProposalFluentBuilder {
             crate::operation::vote_on_proposal::VoteOnProposal,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::vote_on_proposal::VoteOnProposalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::vote_on_proposal::VoteOnProposalError>,
     > {
         self.customize_middleware().await
     }
@@ -152,18 +136,12 @@ impl VoteOnProposalFluentBuilder {
         self.inner.get_proposal_id()
     }
     /// <p>The unique identifier of the member casting the vote. </p>
-    pub fn voter_member_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voter_member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voter_member_id(input.into());
         self
     }
     /// <p>The unique identifier of the member casting the vote. </p>
-    pub fn set_voter_member_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voter_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voter_member_id(input);
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::create_model_quality_job_definition::_create_model_qua
 
 impl CreateModelQualityJobDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_model_quality_job_definition();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateModelQualityJobDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelQualityJobDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionInputBuilder,
+    inner: crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionInputBuilder,
 }
 impl CreateModelQualityJobDefinitionFluentBuilder {
     /// Creates a new `CreateModelQualityJobDefinition`.
@@ -37,15 +37,20 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         }
     }
     /// Access the CreateModelQualityJobDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinition,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinition,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the monitoring job definition.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_definition_name(input.into());
         self
     }
     /// <p>The name of the monitoring job definition.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_definition_name(input);
         self
     }
@@ -115,47 +124,31 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         self.inner.get_job_definition_name()
     }
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
-    pub fn model_quality_baseline_config(
-        mut self,
-        input: crate::types::ModelQualityBaselineConfig,
-    ) -> Self {
+    pub fn model_quality_baseline_config(mut self, input: crate::types::ModelQualityBaselineConfig) -> Self {
         self.inner = self.inner.model_quality_baseline_config(input);
         self
     }
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
-    pub fn set_model_quality_baseline_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelQualityBaselineConfig>,
-    ) -> Self {
+    pub fn set_model_quality_baseline_config(mut self, input: ::std::option::Option<crate::types::ModelQualityBaselineConfig>) -> Self {
         self.inner = self.inner.set_model_quality_baseline_config(input);
         self
     }
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
-    pub fn get_model_quality_baseline_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelQualityBaselineConfig> {
+    pub fn get_model_quality_baseline_config(&self) -> &::std::option::Option<crate::types::ModelQualityBaselineConfig> {
         self.inner.get_model_quality_baseline_config()
     }
     /// <p>The container that runs the monitoring job.</p>
-    pub fn model_quality_app_specification(
-        mut self,
-        input: crate::types::ModelQualityAppSpecification,
-    ) -> Self {
+    pub fn model_quality_app_specification(mut self, input: crate::types::ModelQualityAppSpecification) -> Self {
         self.inner = self.inner.model_quality_app_specification(input);
         self
     }
     /// <p>The container that runs the monitoring job.</p>
-    pub fn set_model_quality_app_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelQualityAppSpecification>,
-    ) -> Self {
+    pub fn set_model_quality_app_specification(mut self, input: ::std::option::Option<crate::types::ModelQualityAppSpecification>) -> Self {
         self.inner = self.inner.set_model_quality_app_specification(input);
         self
     }
     /// <p>The container that runs the monitoring job.</p>
-    pub fn get_model_quality_app_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelQualityAppSpecification> {
+    pub fn get_model_quality_app_specification(&self) -> &::std::option::Option<crate::types::ModelQualityAppSpecification> {
         self.inner.get_model_quality_app_specification()
     }
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
@@ -164,39 +157,26 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         self
     }
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
-    pub fn set_model_quality_job_input(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelQualityJobInput>,
-    ) -> Self {
+    pub fn set_model_quality_job_input(mut self, input: ::std::option::Option<crate::types::ModelQualityJobInput>) -> Self {
         self.inner = self.inner.set_model_quality_job_input(input);
         self
     }
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
-    pub fn get_model_quality_job_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelQualityJobInput> {
+    pub fn get_model_quality_job_input(&self) -> &::std::option::Option<crate::types::ModelQualityJobInput> {
         self.inner.get_model_quality_job_input()
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn model_quality_job_output_config(
-        mut self,
-        input: crate::types::MonitoringOutputConfig,
-    ) -> Self {
+    pub fn model_quality_job_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
         self.inner = self.inner.model_quality_job_output_config(input);
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn set_model_quality_job_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringOutputConfig>,
-    ) -> Self {
+    pub fn set_model_quality_job_output_config(mut self, input: ::std::option::Option<crate::types::MonitoringOutputConfig>) -> Self {
         self.inner = self.inner.set_model_quality_job_output_config(input);
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn get_model_quality_job_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
+    pub fn get_model_quality_job_output_config(&self) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
         self.inner.get_model_quality_job_output_config()
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
@@ -205,10 +185,7 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         self
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    pub fn set_job_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringResources>,
-    ) -> Self {
+    pub fn set_job_resources(mut self, input: ::std::option::Option<crate::types::MonitoringResources>) -> Self {
         self.inner = self.inner.set_job_resources(input);
         self
     }
@@ -222,17 +199,12 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         self
     }
     /// <p>Specifies the network configuration for the monitoring job.</p>
-    pub fn set_network_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
-    ) -> Self {
+    pub fn set_network_config(mut self, input: ::std::option::Option<crate::types::MonitoringNetworkConfig>) -> Self {
         self.inner = self.inner.set_network_config(input);
         self
     }
     /// <p>Specifies the network configuration for the monitoring job.</p>
-    pub fn get_network_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
+    pub fn get_network_config(&self) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
         self.inner.get_network_config()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
@@ -255,17 +227,12 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
-    ) -> Self {
+    pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::MonitoringStoppingCondition>) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn get_stopping_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
+    pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
         self.inner.get_stopping_condition()
     }
     /// Appends an item to `Tags`.
@@ -278,10 +245,7 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

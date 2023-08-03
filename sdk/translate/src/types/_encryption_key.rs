@@ -30,9 +30,7 @@ impl EncryptionKey {
 
 /// A builder for [`EncryptionKey`](crate::types::EncryptionKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionKeyBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EncryptionKeyType>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl EncryptionKeyBuilder {
         self
     }
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKeyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionKeyType>) -> Self {
         self.r#type = input;
         self
     }

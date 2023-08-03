@@ -39,9 +39,7 @@ impl EventParameters {
 
 /// A builder for [`EventParameters`](crate::types::EventParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventParametersBuilder {
     pub(crate) event_type: ::std::option::Option<crate::types::EventTypeValues>,
     pub(crate) snapshot_owner: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,10 +52,7 @@ impl EventParametersBuilder {
         self
     }
     /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EventTypeValues>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::EventTypeValues>) -> Self {
         self.event_type = input;
         self
     }
@@ -70,44 +65,30 @@ impl EventParametersBuilder {
     /// To override the contents of this collection use [`set_snapshot_owner`](Self::set_snapshot_owner).
     ///
     /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
-    pub fn snapshot_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_owner.unwrap_or_default();
         v.push(input.into());
         self.snapshot_owner = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
-    pub fn set_snapshot_owner(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_snapshot_owner(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.snapshot_owner = input;
         self
     }
     /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
-    pub fn get_snapshot_owner(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_owner(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.snapshot_owner
     }
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
     /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
-    pub fn description_regex(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn description_regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description_regex = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
     /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
-    pub fn set_description_regex(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_description_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description_regex = input;
         self
     }

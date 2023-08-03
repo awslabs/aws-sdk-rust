@@ -23,9 +23,7 @@ impl DeleteHapgInput {
 
 /// A builder for [`DeleteHapgInput`](crate::operation::delete_hapg::DeleteHapgInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHapgInputBuilder {
     pub(crate) hapg_arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl DeleteHapgInputBuilder {
         &self.hapg_arn
     }
     /// Consumes the builder and constructs a [`DeleteHapgInput`](crate::operation::delete_hapg::DeleteHapgInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_hapg::DeleteHapgInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_hapg::DeleteHapgInput {
-            hapg_arn: self.hapg_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hapg::DeleteHapgInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_hapg::DeleteHapgInput { hapg_arn: self.hapg_arn })
     }
 }

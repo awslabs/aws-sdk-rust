@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateNetworkAnalyzerConfigurationOut
 }
 impl UpdateNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationOutput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput).
-    pub fn builder() -> crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationOutputBuilder {
         crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNetworkAnalyzerConfigurationOutput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNetworkAnalyzerConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateNetworkAnalyzerConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateNetworkAnalyzerConfigurationOutput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput {
         crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput {
             _request_id: self._request_id,
         }

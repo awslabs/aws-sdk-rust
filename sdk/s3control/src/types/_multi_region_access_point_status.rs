@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MultiRegionAccessPointStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,15 +65,11 @@ impl ::std::convert::From<&str> for MultiRegionAccessPointStatus {
         match s {
             "CREATING" => MultiRegionAccessPointStatus::Creating,
             "DELETING" => MultiRegionAccessPointStatus::Deleting,
-            "INCONSISTENT_ACROSS_REGIONS" => {
-                MultiRegionAccessPointStatus::InconsistentAcrossRegions
-            }
+            "INCONSISTENT_ACROSS_REGIONS" => MultiRegionAccessPointStatus::InconsistentAcrossRegions,
             "PARTIALLY_CREATED" => MultiRegionAccessPointStatus::PartiallyCreated,
             "PARTIALLY_DELETED" => MultiRegionAccessPointStatus::PartiallyDeleted,
             "READY" => MultiRegionAccessPointStatus::Ready,
-            other => MultiRegionAccessPointStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MultiRegionAccessPointStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -96,9 +86,7 @@ impl MultiRegionAccessPointStatus {
         match self {
             MultiRegionAccessPointStatus::Creating => "CREATING",
             MultiRegionAccessPointStatus::Deleting => "DELETING",
-            MultiRegionAccessPointStatus::InconsistentAcrossRegions => {
-                "INCONSISTENT_ACROSS_REGIONS"
-            }
+            MultiRegionAccessPointStatus::InconsistentAcrossRegions => "INCONSISTENT_ACROSS_REGIONS",
             MultiRegionAccessPointStatus::PartiallyCreated => "PARTIALLY_CREATED",
             MultiRegionAccessPointStatus::PartiallyDeleted => "PARTIALLY_DELETED",
             MultiRegionAccessPointStatus::Ready => "READY",

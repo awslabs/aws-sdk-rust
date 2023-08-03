@@ -5,8 +5,7 @@
 pub struct ListSuiteDefinitionsOutput {
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
     #[doc(hidden)]
-    pub suite_definition_information_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>>,
+    pub suite_definition_information_list: ::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>>,
     /// <p>A token used to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSuiteDefinitionsOutput {
 }
 impl ListSuiteDefinitionsOutput {
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
-    pub fn suite_definition_information_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SuiteDefinitionInformation]> {
+    pub fn suite_definition_information_list(&self) -> ::std::option::Option<&[crate::types::SuiteDefinitionInformation]> {
         self.suite_definition_information_list.as_deref()
     }
     /// <p>A token used to get the next set of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSuiteDefinitionsOutput {
 }
 impl ListSuiteDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSuiteDefinitionsOutput`](crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsOutputBuilder {
         crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSuiteDefinitionsOutput`](crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSuiteDefinitionsOutputBuilder {
-    pub(crate) suite_definition_information_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>>,
+    pub(crate) suite_definition_information_list: ::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,10 +47,7 @@ impl ListSuiteDefinitionsOutputBuilder {
     /// To override the contents of this collection use [`set_suite_definition_information_list`](Self::set_suite_definition_information_list).
     ///
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
-    pub fn suite_definition_information_list(
-        mut self,
-        input: crate::types::SuiteDefinitionInformation,
-    ) -> Self {
+    pub fn suite_definition_information_list(mut self, input: crate::types::SuiteDefinitionInformation) -> Self {
         let mut v = self.suite_definition_information_list.unwrap_or_default();
         v.push(input);
         self.suite_definition_information_list = ::std::option::Option::Some(v);
@@ -72,9 +62,7 @@ impl ListSuiteDefinitionsOutputBuilder {
         self
     }
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
-    pub fn get_suite_definition_information_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>> {
+    pub fn get_suite_definition_information_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>> {
         &self.suite_definition_information_list
     }
     /// <p>A token used to get the next set of results.</p>

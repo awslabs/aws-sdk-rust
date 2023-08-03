@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`client_vpn_target_networks(Option<Vec<TargetNetwork>>)`](crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput::client_vpn_target_networks): <p>Information about the associated target networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeClientVpnTargetNetworksError>`](crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksError)
-    pub fn describe_client_vpn_target_networks(&self) -> crate::operation::describe_client_vpn_target_networks::builders::DescribeClientVpnTargetNetworksFluentBuilder{
+    pub fn describe_client_vpn_target_networks(
+        &self,
+    ) -> crate::operation::describe_client_vpn_target_networks::builders::DescribeClientVpnTargetNetworksFluentBuilder {
         crate::operation::describe_client_vpn_target_networks::builders::DescribeClientVpnTargetNetworksFluentBuilder::new(self.handle.clone())
     }
 }

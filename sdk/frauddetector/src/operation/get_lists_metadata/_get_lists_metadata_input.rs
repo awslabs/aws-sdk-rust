@@ -29,17 +29,14 @@ impl GetListsMetadataInput {
 }
 impl GetListsMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetListsMetadataInput`](crate::operation::get_lists_metadata::GetListsMetadataInput).
-    pub fn builder() -> crate::operation::get_lists_metadata::builders::GetListsMetadataInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_lists_metadata::builders::GetListsMetadataInputBuilder {
         crate::operation::get_lists_metadata::builders::GetListsMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetListsMetadataInput`](crate::operation::get_lists_metadata::GetListsMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetListsMetadataInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl GetListsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetListsMetadataInput`](crate::operation::get_lists_metadata::GetListsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lists_metadata::GetListsMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_lists_metadata::GetListsMetadataInput {
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_lists_metadata::GetListsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_lists_metadata::GetListsMetadataInput {
+            name: self.name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

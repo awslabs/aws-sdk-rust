@@ -20,9 +20,7 @@ impl ConfiguredTableAnalysisRulePolicy {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`V1`](crate::types::ConfiguredTableAnalysisRulePolicy::V1), extracting the inner [`ConfiguredTableAnalysisRulePolicyV1`](crate::types::ConfiguredTableAnalysisRulePolicyV1).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_v1(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ConfiguredTableAnalysisRulePolicyV1, &Self> {
+    pub fn as_v1(&self) -> ::std::result::Result<&crate::types::ConfiguredTableAnalysisRulePolicyV1, &Self> {
         if let ConfiguredTableAnalysisRulePolicy::V1(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -28,20 +28,17 @@ impl ::aws_http::request_id::RequestId for RevokeSecurityGroupEgressOutput {
 }
 impl RevokeSecurityGroupEgressOutput {
     /// Creates a new builder-style object to manufacture [`RevokeSecurityGroupEgressOutput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput).
-    pub fn builder() -> crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressOutputBuilder{
+    pub fn builder() -> crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressOutputBuilder {
         crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeSecurityGroupEgressOutput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeSecurityGroupEgressOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
-    pub(crate) unknown_ip_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
+    pub(crate) unknown_ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     _request_id: Option<String>,
 }
 impl RevokeSecurityGroupEgressOutputBuilder {
@@ -71,17 +68,12 @@ impl RevokeSecurityGroupEgressOutputBuilder {
         self
     }
     /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
-    pub fn set_unknown_ip_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
+    pub fn set_unknown_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.unknown_ip_permissions = input;
         self
     }
     /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
-    pub fn get_unknown_ip_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_unknown_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.unknown_ip_permissions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -94,9 +86,7 @@ impl RevokeSecurityGroupEgressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RevokeSecurityGroupEgressOutput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput {
+    pub fn build(self) -> crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput {
         crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput {
             r#return: self.r#return,
             unknown_ip_permissions: self.unknown_ip_permissions,

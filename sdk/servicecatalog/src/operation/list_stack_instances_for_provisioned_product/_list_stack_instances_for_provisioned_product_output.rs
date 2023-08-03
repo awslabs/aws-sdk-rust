@@ -28,16 +28,15 @@ impl ::aws_http::request_id::RequestId for ListStackInstancesForProvisionedProdu
 }
 impl ListStackInstancesForProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`ListStackInstancesForProvisionedProductOutput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput).
-    pub fn builder() -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductOutputBuilder{
+    pub fn builder() -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductOutputBuilder
+    {
         crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStackInstancesForProvisionedProductOutput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStackInstancesForProvisionedProductOutputBuilder {
     pub(crate) stack_instances: ::std::option::Option<::std::vec::Vec<crate::types::StackInstance>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -56,32 +55,21 @@ impl ListStackInstancesForProvisionedProductOutputBuilder {
         self
     }
     /// <p>List of stack instances.</p>
-    pub fn set_stack_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackInstance>>,
-    ) -> Self {
+    pub fn set_stack_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackInstance>>) -> Self {
         self.stack_instances = input;
         self
     }
     /// <p>List of stack instances.</p>
-    pub fn get_stack_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackInstance>> {
+    pub fn get_stack_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackInstance>> {
         &self.stack_instances
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -99,12 +87,10 @@ impl ListStackInstancesForProvisionedProductOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStackInstancesForProvisionedProductOutput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput).
-    pub fn build(self) -> crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput{
+    pub fn build(self) -> crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput {
         crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput {
-            stack_instances: self.stack_instances
-            ,
-            next_page_token: self.next_page_token
-            ,
+            stack_instances: self.stack_instances,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }

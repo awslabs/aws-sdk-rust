@@ -23,9 +23,7 @@ impl SapoDataSourceProperties {
 
 /// A builder for [`SapoDataSourceProperties`](crate::types::SapoDataSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SapoDataSourcePropertiesBuilder {
     pub(crate) object_path: ::std::option::Option<::std::string::String>,
 }

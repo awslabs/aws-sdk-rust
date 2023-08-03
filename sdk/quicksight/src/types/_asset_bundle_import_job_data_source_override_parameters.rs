@@ -33,15 +33,11 @@ impl AssetBundleImportJobDataSourceOverrideParameters {
         self.name.as_deref()
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
-    pub fn data_source_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceParameters> {
+    pub fn data_source_parameters(&self) -> ::std::option::Option<&crate::types::DataSourceParameters> {
         self.data_source_parameters.as_ref()
     }
     /// <p>VPC connection properties.</p>
-    pub fn vpc_connection_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcConnectionProperties> {
+    pub fn vpc_connection_properties(&self) -> ::std::option::Option<&crate::types::VpcConnectionProperties> {
         self.vpc_connection_properties.as_ref()
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
@@ -49,49 +45,36 @@ impl AssetBundleImportJobDataSourceOverrideParameters {
         self.ssl_properties.as_ref()
     }
     /// <p>An optional structure that provides the credentials to be used to create the imported data source.</p>
-    pub fn credentials(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssetBundleImportJobDataSourceCredentials> {
+    pub fn credentials(&self) -> ::std::option::Option<&crate::types::AssetBundleImportJobDataSourceCredentials> {
         self.credentials.as_ref()
     }
 }
 impl AssetBundleImportJobDataSourceOverrideParameters {
     /// Creates a new builder-style object to manufacture [`AssetBundleImportJobDataSourceOverrideParameters`](crate::types::AssetBundleImportJobDataSourceOverrideParameters).
-    pub fn builder(
-    ) -> crate::types::builders::AssetBundleImportJobDataSourceOverrideParametersBuilder {
+    pub fn builder() -> crate::types::builders::AssetBundleImportJobDataSourceOverrideParametersBuilder {
         crate::types::builders::AssetBundleImportJobDataSourceOverrideParametersBuilder::default()
     }
 }
 
 /// A builder for [`AssetBundleImportJobDataSourceOverrideParameters`](crate::types::AssetBundleImportJobDataSourceOverrideParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDataSourceOverrideParametersBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_parameters: ::std::option::Option<crate::types::DataSourceParameters>,
-    pub(crate) vpc_connection_properties:
-        ::std::option::Option<crate::types::VpcConnectionProperties>,
+    pub(crate) vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
     pub(crate) ssl_properties: ::std::option::Option<crate::types::SslProperties>,
-    pub(crate) credentials:
-        ::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentials>,
+    pub(crate) credentials: ::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentials>,
 }
 impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
     /// <p>The ID of the data source to apply overrides to.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the data source to apply overrides to.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -119,39 +102,26 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
         self
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
-    pub fn set_data_source_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceParameters>,
-    ) -> Self {
+    pub fn set_data_source_parameters(mut self, input: ::std::option::Option<crate::types::DataSourceParameters>) -> Self {
         self.data_source_parameters = input;
         self
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
-    pub fn get_data_source_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceParameters> {
+    pub fn get_data_source_parameters(&self) -> &::std::option::Option<crate::types::DataSourceParameters> {
         &self.data_source_parameters
     }
     /// <p>VPC connection properties.</p>
-    pub fn vpc_connection_properties(
-        mut self,
-        input: crate::types::VpcConnectionProperties,
-    ) -> Self {
+    pub fn vpc_connection_properties(mut self, input: crate::types::VpcConnectionProperties) -> Self {
         self.vpc_connection_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>VPC connection properties.</p>
-    pub fn set_vpc_connection_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnectionProperties>,
-    ) -> Self {
+    pub fn set_vpc_connection_properties(mut self, input: ::std::option::Option<crate::types::VpcConnectionProperties>) -> Self {
         self.vpc_connection_properties = input;
         self
     }
     /// <p>VPC connection properties.</p>
-    pub fn get_vpc_connection_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
+    pub fn get_vpc_connection_properties(&self) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
         &self.vpc_connection_properties
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
@@ -160,10 +130,7 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
         self
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
-    pub fn set_ssl_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SslProperties>,
-    ) -> Self {
+    pub fn set_ssl_properties(mut self, input: ::std::option::Option<crate::types::SslProperties>) -> Self {
         self.ssl_properties = input;
         self
     }
@@ -172,25 +139,17 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
         &self.ssl_properties
     }
     /// <p>An optional structure that provides the credentials to be used to create the imported data source.</p>
-    pub fn credentials(
-        mut self,
-        input: crate::types::AssetBundleImportJobDataSourceCredentials,
-    ) -> Self {
+    pub fn credentials(mut self, input: crate::types::AssetBundleImportJobDataSourceCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional structure that provides the credentials to be used to create the imported data source.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentials>) -> Self {
         self.credentials = input;
         self
     }
     /// <p>An optional structure that provides the credentials to be used to create the imported data source.</p>
-    pub fn get_credentials(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentials> {
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentials> {
         &self.credentials
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobDataSourceOverrideParameters`](crate::types::AssetBundleImportJobDataSourceOverrideParameters).

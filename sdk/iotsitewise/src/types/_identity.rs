@@ -46,9 +46,7 @@ impl Identity {
 
 /// A builder for [`Identity`](crate::types::Identity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityBuilder {
     pub(crate) user: ::std::option::Option<crate::types::UserIdentity>,
     pub(crate) group: ::std::option::Option<crate::types::GroupIdentity>,
@@ -90,10 +88,7 @@ impl IdentityBuilder {
         self
     }
     /// <p>An IAM user identity.</p>
-    pub fn set_iam_user(
-        mut self,
-        input: ::std::option::Option<crate::types::IamUserIdentity>,
-    ) -> Self {
+    pub fn set_iam_user(mut self, input: ::std::option::Option<crate::types::IamUserIdentity>) -> Self {
         self.iam_user = input;
         self
     }
@@ -107,10 +102,7 @@ impl IdentityBuilder {
         self
     }
     /// <p>An IAM role identity.</p>
-    pub fn set_iam_role(
-        mut self,
-        input: ::std::option::Option<crate::types::IamRoleIdentity>,
-    ) -> Self {
+    pub fn set_iam_role(mut self, input: ::std::option::Option<crate::types::IamRoleIdentity>) -> Self {
         self.iam_role = input;
         self
     }

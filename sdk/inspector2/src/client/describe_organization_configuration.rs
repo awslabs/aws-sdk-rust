@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`auto_enable(Option<AutoEnable>)`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput::auto_enable): <p>The scan types are automatically enabled for new members of your organization.</p>
     ///   - [`max_account_limit_reached(Option<bool>)`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput::max_account_limit_reached): <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationConfigurationError>`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationError)
-    pub fn describe_organization_configuration(&self) -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder{
+    pub fn describe_organization_configuration(
+        &self,
+    ) -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

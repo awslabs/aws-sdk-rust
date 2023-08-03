@@ -10,10 +10,7 @@ impl GetMemberDetectorsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_member_detectors::GetMemberDetectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_member_detectors::GetMemberDetectorsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_member_detectors::GetMemberDetectorsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_member_detectors();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetMemberDetectorsFluentBuilder {
         }
     }
     /// Access the GetMemberDetectors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_member_detectors::builders::GetMemberDetectorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_member_detectors::builders::GetMemberDetectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetMemberDetectorsFluentBuilder {
             crate::operation::get_member_detectors::GetMemberDetectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_member_detectors::GetMemberDetectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_member_detectors::GetMemberDetectorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetMemberDetectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetMemberDetectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_member_detectors::GetMemberDetectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_member_detectors::GetMemberDetectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_member_detectors::GetMemberDetectorsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetMemberDetectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_member_detectors::GetMemberDetectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_member_detectors::GetMemberDetectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_member_detectors::GetMemberDetectorsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl GetMemberDetectorsFluentBuilder {
             crate::operation::get_member_detectors::GetMemberDetectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_member_detectors::GetMemberDetectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_member_detectors::GetMemberDetectorsError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +131,12 @@ impl GetMemberDetectorsFluentBuilder {
         self
     }
     /// <p>The account ID of the member account.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The account ID of the member account.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

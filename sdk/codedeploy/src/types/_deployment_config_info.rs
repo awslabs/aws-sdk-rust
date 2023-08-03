@@ -33,9 +33,7 @@ impl DeploymentConfigInfo {
         self.deployment_config_name.as_deref()
     }
     /// <p>Information about the number or percentage of minimum healthy instance.</p>
-    pub fn minimum_healthy_hosts(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MinimumHealthyHosts> {
+    pub fn minimum_healthy_hosts(&self) -> ::std::option::Option<&crate::types::MinimumHealthyHosts> {
         self.minimum_healthy_hosts.as_ref()
     }
     /// <p>The time at which the deployment configuration was created.</p>
@@ -47,9 +45,7 @@ impl DeploymentConfigInfo {
         self.compute_platform.as_ref()
     }
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
-    pub fn traffic_routing_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrafficRoutingConfig> {
+    pub fn traffic_routing_config(&self) -> ::std::option::Option<&crate::types::TrafficRoutingConfig> {
         self.traffic_routing_config.as_ref()
     }
 }
@@ -62,9 +58,7 @@ impl DeploymentConfigInfo {
 
 /// A builder for [`DeploymentConfigInfo`](crate::types::DeploymentConfigInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentConfigInfoBuilder {
     pub(crate) deployment_config_id: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_config_name: ::std::option::Option<::std::string::String>,
@@ -75,18 +69,12 @@ pub struct DeploymentConfigInfoBuilder {
 }
 impl DeploymentConfigInfoBuilder {
     /// <p>The deployment configuration ID.</p>
-    pub fn deployment_config_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_config_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment configuration ID.</p>
-    pub fn set_deployment_config_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_config_id = input;
         self
     }
@@ -95,18 +83,12 @@ impl DeploymentConfigInfoBuilder {
         &self.deployment_config_id
     }
     /// <p>The deployment configuration name.</p>
-    pub fn deployment_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment configuration name.</p>
-    pub fn set_deployment_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_config_name = input;
         self
     }
@@ -120,17 +102,12 @@ impl DeploymentConfigInfoBuilder {
         self
     }
     /// <p>Information about the number or percentage of minimum healthy instance.</p>
-    pub fn set_minimum_healthy_hosts(
-        mut self,
-        input: ::std::option::Option<crate::types::MinimumHealthyHosts>,
-    ) -> Self {
+    pub fn set_minimum_healthy_hosts(mut self, input: ::std::option::Option<crate::types::MinimumHealthyHosts>) -> Self {
         self.minimum_healthy_hosts = input;
         self
     }
     /// <p>Information about the number or percentage of minimum healthy instance.</p>
-    pub fn get_minimum_healthy_hosts(
-        &self,
-    ) -> &::std::option::Option<crate::types::MinimumHealthyHosts> {
+    pub fn get_minimum_healthy_hosts(&self) -> &::std::option::Option<crate::types::MinimumHealthyHosts> {
         &self.minimum_healthy_hosts
     }
     /// <p>The time at which the deployment configuration was created.</p>
@@ -139,10 +116,7 @@ impl DeploymentConfigInfoBuilder {
         self
     }
     /// <p>The time at which the deployment configuration was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -156,10 +130,7 @@ impl DeploymentConfigInfoBuilder {
         self
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    pub fn set_compute_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputePlatform>,
-    ) -> Self {
+    pub fn set_compute_platform(mut self, input: ::std::option::Option<crate::types::ComputePlatform>) -> Self {
         self.compute_platform = input;
         self
     }
@@ -173,17 +144,12 @@ impl DeploymentConfigInfoBuilder {
         self
     }
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
-    pub fn set_traffic_routing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficRoutingConfig>,
-    ) -> Self {
+    pub fn set_traffic_routing_config(mut self, input: ::std::option::Option<crate::types::TrafficRoutingConfig>) -> Self {
         self.traffic_routing_config = input;
         self
     }
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
-    pub fn get_traffic_routing_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
+    pub fn get_traffic_routing_config(&self) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
         &self.traffic_routing_config
     }
     /// Consumes the builder and constructs a [`DeploymentConfigInfo`](crate::types::DeploymentConfigInfo).

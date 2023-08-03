@@ -30,9 +30,7 @@ impl UiTemplateInfo {
 
 /// A builder for [`UiTemplateInfo`](crate::types::UiTemplateInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UiTemplateInfoBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) content_sha256: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl UiTemplateInfoBuilder {
         &self.url
     }
     /// <p>The SHA-256 digest of the contents of the template.</p>
-    pub fn content_sha256(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_sha256 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA-256 digest of the contents of the template.</p>
-    pub fn set_content_sha256(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_sha256 = input;
         self
     }

@@ -18,20 +18,16 @@ pub struct ResponseHeadersPolicyConfig {
     pub cors_config: ::std::option::Option<crate::types::ResponseHeadersPolicyCorsConfig>,
     /// <p>A configuration for a set of security-related HTTP response headers.</p>
     #[doc(hidden)]
-    pub security_headers_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicySecurityHeadersConfig>,
+    pub security_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicySecurityHeadersConfig>,
     /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
     #[doc(hidden)]
-    pub server_timing_headers_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig>,
+    pub server_timing_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig>,
     /// <p>A configuration for a set of custom HTTP response headers.</p>
     #[doc(hidden)]
-    pub custom_headers_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyCustomHeadersConfig>,
+    pub custom_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicyCustomHeadersConfig>,
     /// <p>A configuration for a set of HTTP headers to remove from the HTTP response.</p>
     #[doc(hidden)]
-    pub remove_headers_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyRemoveHeadersConfig>,
+    pub remove_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicyRemoveHeadersConfig>,
 }
 impl ResponseHeadersPolicyConfig {
     /// <p>A comment to describe the response headers policy.</p>
@@ -45,33 +41,23 @@ impl ResponseHeadersPolicyConfig {
         self.name.as_deref()
     }
     /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS).</p>
-    pub fn cors_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyCorsConfig> {
+    pub fn cors_config(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyCorsConfig> {
         self.cors_config.as_ref()
     }
     /// <p>A configuration for a set of security-related HTTP response headers.</p>
-    pub fn security_headers_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicySecurityHeadersConfig> {
+    pub fn security_headers_config(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicySecurityHeadersConfig> {
         self.security_headers_config.as_ref()
     }
     /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
-    pub fn server_timing_headers_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyServerTimingHeadersConfig> {
+    pub fn server_timing_headers_config(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyServerTimingHeadersConfig> {
         self.server_timing_headers_config.as_ref()
     }
     /// <p>A configuration for a set of custom HTTP response headers.</p>
-    pub fn custom_headers_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyCustomHeadersConfig> {
+    pub fn custom_headers_config(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyCustomHeadersConfig> {
         self.custom_headers_config.as_ref()
     }
     /// <p>A configuration for a set of HTTP headers to remove from the HTTP response.</p>
-    pub fn remove_headers_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyRemoveHeadersConfig> {
+    pub fn remove_headers_config(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyRemoveHeadersConfig> {
         self.remove_headers_config.as_ref()
     }
 }
@@ -84,21 +70,15 @@ impl ResponseHeadersPolicyConfig {
 
 /// A builder for [`ResponseHeadersPolicyConfig`](crate::types::ResponseHeadersPolicyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyConfigBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) cors_config: ::std::option::Option<crate::types::ResponseHeadersPolicyCorsConfig>,
-    pub(crate) security_headers_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicySecurityHeadersConfig>,
-    pub(crate) server_timing_headers_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig>,
-    pub(crate) custom_headers_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyCustomHeadersConfig>,
-    pub(crate) remove_headers_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyRemoveHeadersConfig>,
+    pub(crate) security_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicySecurityHeadersConfig>,
+    pub(crate) server_timing_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig>,
+    pub(crate) custom_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicyCustomHeadersConfig>,
+    pub(crate) remove_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicyRemoveHeadersConfig>,
 }
 impl ResponseHeadersPolicyConfigBuilder {
     /// <p>A comment to describe the response headers policy.</p>
@@ -141,46 +121,30 @@ impl ResponseHeadersPolicyConfigBuilder {
         self
     }
     /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS).</p>
-    pub fn set_cors_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicyCorsConfig>,
-    ) -> Self {
+    pub fn set_cors_config(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyCorsConfig>) -> Self {
         self.cors_config = input;
         self
     }
     /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS).</p>
-    pub fn get_cors_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyCorsConfig> {
+    pub fn get_cors_config(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyCorsConfig> {
         &self.cors_config
     }
     /// <p>A configuration for a set of security-related HTTP response headers.</p>
-    pub fn security_headers_config(
-        mut self,
-        input: crate::types::ResponseHeadersPolicySecurityHeadersConfig,
-    ) -> Self {
+    pub fn security_headers_config(mut self, input: crate::types::ResponseHeadersPolicySecurityHeadersConfig) -> Self {
         self.security_headers_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A configuration for a set of security-related HTTP response headers.</p>
-    pub fn set_security_headers_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicySecurityHeadersConfig>,
-    ) -> Self {
+    pub fn set_security_headers_config(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicySecurityHeadersConfig>) -> Self {
         self.security_headers_config = input;
         self
     }
     /// <p>A configuration for a set of security-related HTTP response headers.</p>
-    pub fn get_security_headers_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicySecurityHeadersConfig> {
+    pub fn get_security_headers_config(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicySecurityHeadersConfig> {
         &self.security_headers_config
     }
     /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
-    pub fn server_timing_headers_config(
-        mut self,
-        input: crate::types::ResponseHeadersPolicyServerTimingHeadersConfig,
-    ) -> Self {
+    pub fn server_timing_headers_config(mut self, input: crate::types::ResponseHeadersPolicyServerTimingHeadersConfig) -> Self {
         self.server_timing_headers_config = ::std::option::Option::Some(input);
         self
     }
@@ -193,53 +157,35 @@ impl ResponseHeadersPolicyConfigBuilder {
         self
     }
     /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
-    pub fn get_server_timing_headers_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig> {
+    pub fn get_server_timing_headers_config(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig> {
         &self.server_timing_headers_config
     }
     /// <p>A configuration for a set of custom HTTP response headers.</p>
-    pub fn custom_headers_config(
-        mut self,
-        input: crate::types::ResponseHeadersPolicyCustomHeadersConfig,
-    ) -> Self {
+    pub fn custom_headers_config(mut self, input: crate::types::ResponseHeadersPolicyCustomHeadersConfig) -> Self {
         self.custom_headers_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A configuration for a set of custom HTTP response headers.</p>
-    pub fn set_custom_headers_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicyCustomHeadersConfig>,
-    ) -> Self {
+    pub fn set_custom_headers_config(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyCustomHeadersConfig>) -> Self {
         self.custom_headers_config = input;
         self
     }
     /// <p>A configuration for a set of custom HTTP response headers.</p>
-    pub fn get_custom_headers_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyCustomHeadersConfig> {
+    pub fn get_custom_headers_config(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyCustomHeadersConfig> {
         &self.custom_headers_config
     }
     /// <p>A configuration for a set of HTTP headers to remove from the HTTP response.</p>
-    pub fn remove_headers_config(
-        mut self,
-        input: crate::types::ResponseHeadersPolicyRemoveHeadersConfig,
-    ) -> Self {
+    pub fn remove_headers_config(mut self, input: crate::types::ResponseHeadersPolicyRemoveHeadersConfig) -> Self {
         self.remove_headers_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A configuration for a set of HTTP headers to remove from the HTTP response.</p>
-    pub fn set_remove_headers_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicyRemoveHeadersConfig>,
-    ) -> Self {
+    pub fn set_remove_headers_config(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyRemoveHeadersConfig>) -> Self {
         self.remove_headers_config = input;
         self
     }
     /// <p>A configuration for a set of HTTP headers to remove from the HTTP response.</p>
-    pub fn get_remove_headers_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyRemoveHeadersConfig> {
+    pub fn get_remove_headers_config(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyRemoveHeadersConfig> {
         &self.remove_headers_config
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyConfig`](crate::types::ResponseHeadersPolicyConfig).

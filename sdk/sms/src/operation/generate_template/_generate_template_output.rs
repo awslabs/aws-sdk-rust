@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GenerateTemplateOutput {
 }
 impl GenerateTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GenerateTemplateOutput`](crate::operation::generate_template::GenerateTemplateOutput).
-    pub fn builder() -> crate::operation::generate_template::builders::GenerateTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::generate_template::builders::GenerateTemplateOutputBuilder {
         crate::operation::generate_template::builders::GenerateTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateTemplateOutput`](crate::operation::generate_template::GenerateTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateTemplateOutputBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GenerateTemplateOutputBuilder {
         self
     }
     /// <p>The location of the Amazon S3 object.</p>
-    pub fn set_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.s3_location = input;
         self
     }

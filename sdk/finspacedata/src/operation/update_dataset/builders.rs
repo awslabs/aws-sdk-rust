@@ -10,10 +10,7 @@ impl UpdateDatasetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_dataset::UpdateDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset::UpdateDatasetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset::UpdateDatasetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_dataset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDatasetFluentBuilder {
         }
     }
     /// Access the UpdateDataset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_dataset::builders::UpdateDatasetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_dataset::builders::UpdateDatasetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateDatasetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -143,18 +135,12 @@ impl UpdateDatasetFluentBuilder {
         self.inner.get_dataset_id()
     }
     /// <p>A display title for the Dataset.</p>
-    pub fn dataset_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_title(input.into());
         self
     }
     /// <p>A display title for the Dataset.</p>
-    pub fn set_dataset_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_title(input);
         self
     }
@@ -189,18 +175,12 @@ impl UpdateDatasetFluentBuilder {
         self.inner.get_kind()
     }
     /// <p>A description for the Dataset.</p>
-    pub fn dataset_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_description(input.into());
         self
     }
     /// <p>A description for the Dataset.</p>
-    pub fn set_dataset_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_description(input);
         self
     }
@@ -228,10 +208,7 @@ impl UpdateDatasetFluentBuilder {
         self
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaUnion>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<crate::types::SchemaUnion>) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
     }

@@ -11,9 +11,7 @@ pub struct GetDeploymentGroupOutput {
 }
 impl GetDeploymentGroupOutput {
     /// <p>Information about the deployment group.</p>
-    pub fn deployment_group_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentGroupInfo> {
+    pub fn deployment_group_info(&self) -> ::std::option::Option<&crate::types::DeploymentGroupInfo> {
         self.deployment_group_info.as_ref()
     }
 }
@@ -24,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetDeploymentGroupOutput {
 }
 impl GetDeploymentGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentGroupOutput`](crate::operation::get_deployment_group::GetDeploymentGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::get_deployment_group::builders::GetDeploymentGroupOutputBuilder {
+    pub fn builder() -> crate::operation::get_deployment_group::builders::GetDeploymentGroupOutputBuilder {
         crate::operation::get_deployment_group::builders::GetDeploymentGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeploymentGroupOutput`](crate::operation::get_deployment_group::GetDeploymentGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentGroupOutputBuilder {
     pub(crate) deployment_group_info: ::std::option::Option<crate::types::DeploymentGroupInfo>,
     _request_id: Option<String>,
@@ -46,17 +41,12 @@ impl GetDeploymentGroupOutputBuilder {
         self
     }
     /// <p>Information about the deployment group.</p>
-    pub fn set_deployment_group_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentGroupInfo>,
-    ) -> Self {
+    pub fn set_deployment_group_info(mut self, input: ::std::option::Option<crate::types::DeploymentGroupInfo>) -> Self {
         self.deployment_group_info = input;
         self
     }
     /// <p>Information about the deployment group.</p>
-    pub fn get_deployment_group_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentGroupInfo> {
+    pub fn get_deployment_group_info(&self) -> &::std::option::Option<crate::types::DeploymentGroupInfo> {
         &self.deployment_group_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

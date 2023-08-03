@@ -3,10 +3,7 @@
 pub fn de_too_many_remove_headers_in_response_headers_policy_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyRemoveHeadersInResponseHeadersPolicyBuilder,
-) -> Result<
-    crate::types::error::builders::TooManyRemoveHeadersInResponseHeadersPolicyBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::TooManyRemoveHeadersInResponseHeadersPolicyBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

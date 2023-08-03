@@ -23,9 +23,7 @@ impl BgpOptions {
 
 /// A builder for [`BgpOptions`](crate::types::BgpOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BgpOptionsBuilder {
     pub(crate) peer_asn: ::std::option::Option<i64>,
 }
@@ -46,8 +44,6 @@ impl BgpOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`BgpOptions`](crate::types::BgpOptions).
     pub fn build(self) -> crate::types::BgpOptions {
-        crate::types::BgpOptions {
-            peer_asn: self.peer_asn,
-        }
+        crate::types::BgpOptions { peer_asn: self.peer_asn }
     }
 }

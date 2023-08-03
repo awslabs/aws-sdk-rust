@@ -51,9 +51,7 @@ impl Change {
 
 /// A builder for [`Change`](crate::types::Change).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeBuilder {
     pub(crate) change_type: ::std::option::Option<::std::string::String>,
     pub(crate) entity: ::std::option::Option<crate::types::Entity>,
@@ -102,10 +100,7 @@ impl ChangeBuilder {
         self
     }
     /// <p>The tags associated with the change.</p>
-    pub fn set_entity_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_entity_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.entity_tags = input;
         self
     }

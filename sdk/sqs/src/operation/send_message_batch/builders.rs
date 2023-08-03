@@ -10,10 +10,7 @@ impl SendMessageBatchInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_message_batch::SendMessageBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_message_batch::SendMessageBatchError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_message_batch::SendMessageBatchError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_message_batch();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl SendMessageBatchFluentBuilder {
         }
     }
     /// Access the SendMessageBatch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_message_batch::builders::SendMessageBatchInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_message_batch::builders::SendMessageBatchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl SendMessageBatchFluentBuilder {
             crate::operation::send_message_batch::SendMessageBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_message_batch::SendMessageBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_message_batch::SendMessageBatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl SendMessageBatchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl SendMessageBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_message_batch::SendMessageBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_message_batch::SendMessageBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_message_batch::SendMessageBatchError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl SendMessageBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_message_batch::SendMessageBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_message_batch::SendMessageBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_message_batch::SendMessageBatchError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl SendMessageBatchFluentBuilder {
             crate::operation::send_message_batch::SendMessageBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_message_batch::SendMessageBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_message_batch::SendMessageBatchError>,
     > {
         self.customize_middleware().await
     }
@@ -156,17 +140,12 @@ impl SendMessageBatchFluentBuilder {
         self
     }
     /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchRequestEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchRequestEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchRequestEntry>> {
         self.inner.get_entries()
     }
 }

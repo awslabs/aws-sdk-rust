@@ -59,9 +59,7 @@ impl ControlDomainInsights {
 
 /// A builder for [`ControlDomainInsights`](crate::types::ControlDomainInsights).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ControlDomainInsightsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -105,10 +103,7 @@ impl ControlDomainInsightsBuilder {
         self
     }
     /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
-    pub fn set_controls_count_by_noncompliant_evidence(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_controls_count_by_noncompliant_evidence(mut self, input: ::std::option::Option<i32>) -> Self {
         self.controls_count_by_noncompliant_evidence = input;
         self
     }
@@ -136,10 +131,7 @@ impl ControlDomainInsightsBuilder {
         self
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain. </p>
-    pub fn set_evidence_insights(
-        mut self,
-        input: ::std::option::Option<crate::types::EvidenceInsights>,
-    ) -> Self {
+    pub fn set_evidence_insights(mut self, input: ::std::option::Option<crate::types::EvidenceInsights>) -> Self {
         self.evidence_insights = input;
         self
     }
@@ -153,10 +145,7 @@ impl ControlDomainInsightsBuilder {
         self
     }
     /// <p>The time when the control domain insights were last updated. </p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }

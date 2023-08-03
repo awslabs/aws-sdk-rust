@@ -10,10 +10,7 @@ impl GetCrawlersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_crawlers::GetCrawlersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_crawlers::GetCrawlersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_crawlers::GetCrawlersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_crawlers();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetCrawlersFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_crawlers::GetCrawlers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_crawlers::GetCrawlers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_crawlers::GetCrawlersError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetCrawlersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetCrawlersFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_crawlers::GetCrawlers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_crawlers::GetCrawlers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_crawlers::GetCrawlersError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl GetCrawlersFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_crawlers::paginator::GetCrawlersPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::get_crawlers::paginator::GetCrawlersPaginator {
-        crate::operation::get_crawlers::paginator::GetCrawlersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::get_crawlers::paginator::GetCrawlersPaginator::new(self.handle, self.inner)
     }
     /// <p>The number of crawlers to return on each call.</p>
     pub fn max_results(mut self, input: i32) -> Self {

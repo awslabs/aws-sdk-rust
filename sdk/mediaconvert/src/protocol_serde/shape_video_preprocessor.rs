@@ -42,10 +42,7 @@ pub fn ser_video_preprocessor(
     if let Some(var_13) = &input.partner_watermarking {
         #[allow(unused_mut)]
         let mut object_14 = object.key("partnerWatermarking").start_object();
-        crate::protocol_serde::shape_partner_watermarking::ser_partner_watermarking(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_partner_watermarking::ser_partner_watermarking(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.timecode_burnin {
@@ -59,17 +56,9 @@ pub fn ser_video_preprocessor(
 
 pub(crate) fn de_video_preprocessor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VideoPreprocessor>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VideoPreprocessor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -79,74 +68,46 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "colorCorrector" => {
-                                builder = builder.set_color_corrector(
-                                    crate::protocol_serde::shape_color_corrector::de_color_corrector(tokens)?
-                                );
-                            }
-                            "deinterlacer" => {
-                                builder = builder.set_deinterlacer(
-                                    crate::protocol_serde::shape_deinterlacer::de_deinterlacer(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "dolbyVision" => {
-                                builder = builder.set_dolby_vision(
-                                    crate::protocol_serde::shape_dolby_vision::de_dolby_vision(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "hdr10Plus" => {
-                                builder = builder.set_hdr10_plus(
-                                    crate::protocol_serde::shape_hdr10_plus::de_hdr10_plus(tokens)?,
-                                );
-                            }
-                            "imageInserter" => {
-                                builder = builder.set_image_inserter(
-                                    crate::protocol_serde::shape_image_inserter::de_image_inserter(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "noiseReducer" => {
-                                builder = builder.set_noise_reducer(
-                                    crate::protocol_serde::shape_noise_reducer::de_noise_reducer(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "partnerWatermarking" => {
-                                builder = builder.set_partner_watermarking(
-                                    crate::protocol_serde::shape_partner_watermarking::de_partner_watermarking(tokens)?
-                                );
-                            }
-                            "timecodeBurnin" => {
-                                builder = builder.set_timecode_burnin(
-                                    crate::protocol_serde::shape_timecode_burnin::de_timecode_burnin(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "colorCorrector" => {
+                            builder = builder.set_color_corrector(crate::protocol_serde::shape_color_corrector::de_color_corrector(tokens)?);
                         }
-                    }
+                        "deinterlacer" => {
+                            builder = builder.set_deinterlacer(crate::protocol_serde::shape_deinterlacer::de_deinterlacer(tokens)?);
+                        }
+                        "dolbyVision" => {
+                            builder = builder.set_dolby_vision(crate::protocol_serde::shape_dolby_vision::de_dolby_vision(tokens)?);
+                        }
+                        "hdr10Plus" => {
+                            builder = builder.set_hdr10_plus(crate::protocol_serde::shape_hdr10_plus::de_hdr10_plus(tokens)?);
+                        }
+                        "imageInserter" => {
+                            builder = builder.set_image_inserter(crate::protocol_serde::shape_image_inserter::de_image_inserter(tokens)?);
+                        }
+                        "noiseReducer" => {
+                            builder = builder.set_noise_reducer(crate::protocol_serde::shape_noise_reducer::de_noise_reducer(tokens)?);
+                        }
+                        "partnerWatermarking" => {
+                            builder =
+                                builder.set_partner_watermarking(crate::protocol_serde::shape_partner_watermarking::de_partner_watermarking(tokens)?);
+                        }
+                        "timecodeBurnin" => {
+                            builder = builder.set_timecode_burnin(crate::protocol_serde::shape_timecode_burnin::de_timecode_burnin(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

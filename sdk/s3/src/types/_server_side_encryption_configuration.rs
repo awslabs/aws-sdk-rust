@@ -23,12 +23,9 @@ impl ServerSideEncryptionConfiguration {
 
 /// A builder for [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerSideEncryptionConfigurationBuilder {
-    pub(crate) rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerSideEncryptionRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ServerSideEncryptionRule>>,
 }
 impl ServerSideEncryptionConfigurationBuilder {
     /// Appends an item to `rules`.
@@ -43,17 +40,12 @@ impl ServerSideEncryptionConfigurationBuilder {
         self
     }
     /// <p>Container for information about a particular server-side encryption configuration rule.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerSideEncryptionRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerSideEncryptionRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>Container for information about a particular server-side encryption configuration rule.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerSideEncryptionRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerSideEncryptionRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).

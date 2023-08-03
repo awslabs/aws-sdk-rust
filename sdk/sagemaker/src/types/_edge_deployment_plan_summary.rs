@@ -72,9 +72,7 @@ impl EdgeDeploymentPlanSummary {
 
 /// A builder for [`EdgeDeploymentPlanSummary`](crate::types::EdgeDeploymentPlanSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgeDeploymentPlanSummaryBuilder {
     pub(crate) edge_deployment_plan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct EdgeDeploymentPlanSummaryBuilder {
 }
 impl EdgeDeploymentPlanSummaryBuilder {
     /// <p>The ARN of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the edge deployment plan.</p>
-    pub fn set_edge_deployment_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_deployment_plan_arn = input;
         self
     }
@@ -107,18 +99,12 @@ impl EdgeDeploymentPlanSummaryBuilder {
         &self.edge_deployment_plan_arn
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = input;
         self
     }
@@ -127,18 +113,12 @@ impl EdgeDeploymentPlanSummaryBuilder {
         &self.edge_deployment_plan_name
     }
     /// <p>The name of the device fleet used for the deployment. </p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the device fleet used for the deployment. </p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -194,10 +174,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
         self
     }
     /// <p>The time when the edge deployment plan was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -211,10 +188,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
         self
     }
     /// <p>The time when the edge deployment plan was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

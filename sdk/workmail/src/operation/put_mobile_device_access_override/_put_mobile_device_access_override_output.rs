@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutMobileDeviceAccessOverrideOutput {
 }
 impl PutMobileDeviceAccessOverrideOutput {
     /// Creates a new builder-style object to manufacture [`PutMobileDeviceAccessOverrideOutput`](crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput).
-    pub fn builder() -> crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideOutputBuilder{
+    pub fn builder() -> crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideOutputBuilder {
         crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutMobileDeviceAccessOverrideOutput`](crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMobileDeviceAccessOverrideOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl PutMobileDeviceAccessOverrideOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutMobileDeviceAccessOverrideOutput`](crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput
-    {
+    pub fn build(self) -> crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput {
         crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput {
             _request_id: self._request_id,
         }

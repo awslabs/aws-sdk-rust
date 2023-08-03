@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PutAccountPolicyOutput`](crate::operation::put_account_policy::PutAccountPolicyOutput) with field(s):
     ///   - [`account_policy(Option<AccountPolicy>)`](crate::operation::put_account_policy::PutAccountPolicyOutput::account_policy): <p>The account policy that you created.</p>
     /// - On failure, responds with [`SdkError<PutAccountPolicyError>`](crate::operation::put_account_policy::PutAccountPolicyError)
-    pub fn put_account_policy(
-        &self,
-    ) -> crate::operation::put_account_policy::builders::PutAccountPolicyFluentBuilder {
-        crate::operation::put_account_policy::builders::PutAccountPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_account_policy(&self) -> crate::operation::put_account_policy::builders::PutAccountPolicyFluentBuilder {
+        crate::operation::put_account_policy::builders::PutAccountPolicyFluentBuilder::new(self.handle.clone())
     }
 }

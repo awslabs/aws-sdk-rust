@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEventSubscriptionsOutput {
 }
 impl ListEventSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventSubscriptionsOutput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsOutputBuilder {
         crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventSubscriptionsOutput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventSubscriptionsOutputBuilder {
     pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListEventSubscriptionsOutputBuilder {
         self
     }
     /// <p>Details of the returned event subscriptions.</p>
-    pub fn set_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
-    ) -> Self {
+    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
         self.subscriptions = input;
         self
     }
     /// <p>Details of the returned event subscriptions.</p>
-    pub fn get_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
         &self.subscriptions
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>

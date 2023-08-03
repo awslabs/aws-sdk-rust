@@ -40,9 +40,7 @@ impl SessionDataSortBy {
 
 /// A builder for [`SessionDataSortBy`](crate::types::SessionDataSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionDataSortByBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsSessionSortByName>,
     pub(crate) order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
@@ -64,10 +62,7 @@ impl SessionDataSortByBuilder {
     /// <li> <p> <code>numberOfTurns</code> – The number of turns that the session took.</p> </li>
     /// <li> <p> <code>conversationDurationSeconds</code> – The duration of the conversation in seconds.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsSessionSortByName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsSessionSortByName>) -> Self {
         self.name = input;
         self
     }
@@ -86,10 +81,7 @@ impl SessionDataSortByBuilder {
         self
     }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
-    pub fn set_order(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsSortOrder>,
-    ) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::AnalyticsSortOrder>) -> Self {
         self.order = input;
         self
     }

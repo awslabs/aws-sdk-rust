@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`cluster_arn(Option<String>)`](crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`unprocessed_scram_secrets(Option<Vec<UnprocessedScramSecret>>)`](crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretOutput::unprocessed_scram_secrets): <p>List of errors when associating secrets to cluster.</p>
     /// - On failure, responds with [`SdkError<BatchAssociateScramSecretError>`](crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretError)
-    pub fn batch_associate_scram_secret(&self) -> crate::operation::batch_associate_scram_secret::builders::BatchAssociateScramSecretFluentBuilder{
+    pub fn batch_associate_scram_secret(&self) -> crate::operation::batch_associate_scram_secret::builders::BatchAssociateScramSecretFluentBuilder {
         crate::operation::batch_associate_scram_secret::builders::BatchAssociateScramSecretFluentBuilder::new(self.handle.clone())
     }
 }

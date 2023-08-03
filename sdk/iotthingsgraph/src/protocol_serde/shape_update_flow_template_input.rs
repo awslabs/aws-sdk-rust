@@ -9,10 +9,7 @@ pub fn ser_update_flow_template_input(
     if let Some(var_2) = &input.definition {
         #[allow(unused_mut)]
         let mut object_3 = object.key("definition").start_object();
-        crate::protocol_serde::shape_definition_document::ser_definition_document(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_definition_document::ser_definition_document(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.compatible_namespace_version {

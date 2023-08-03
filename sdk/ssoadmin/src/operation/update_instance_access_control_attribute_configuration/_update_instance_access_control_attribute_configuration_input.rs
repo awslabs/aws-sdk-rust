@@ -8,8 +8,7 @@ pub struct UpdateInstanceAccessControlAttributeConfigurationInput {
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>Updates the attributes for your ABAC configuration.</p>
     #[doc(hidden)]
-    pub instance_access_control_attribute_configuration:
-        ::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
+    pub instance_access_control_attribute_configuration: ::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
 }
 impl UpdateInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
@@ -20,8 +19,7 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
     pub fn instance_access_control_attribute_configuration(
         &self,
     ) -> ::std::option::Option<&crate::types::InstanceAccessControlAttributeConfiguration> {
-        self.instance_access_control_attribute_configuration
-            .as_ref()
+        self.instance_access_control_attribute_configuration.as_ref()
     }
 }
 impl UpdateInstanceAccessControlAttributeConfigurationInput {
@@ -33,13 +31,10 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
 
 /// A builder for [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_access_control_attribute_configuration:
-        ::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
+    pub(crate) instance_access_control_attribute_configuration: ::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
 }
 impl UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
@@ -57,10 +52,7 @@ impl UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
         &self.instance_arn
     }
     /// <p>Updates the attributes for your ABAC configuration.</p>
-    pub fn instance_access_control_attribute_configuration(
-        mut self,
-        input: crate::types::InstanceAccessControlAttributeConfiguration,
-    ) -> Self {
+    pub fn instance_access_control_attribute_configuration(mut self, input: crate::types::InstanceAccessControlAttributeConfiguration) -> Self {
         self.instance_access_control_attribute_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -79,14 +71,17 @@ impl UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
         &self.instance_access_control_attribute_configuration
     }
     /// Consumes the builder and constructs a [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationInput {
-                instance_arn: self.instance_arn
-                ,
-                instance_access_control_attribute_configuration: self.instance_access_control_attribute_configuration
-                ,
-            }
+                instance_arn: self.instance_arn,
+                instance_access_control_attribute_configuration: self.instance_access_control_attribute_configuration,
+            },
         )
     }
 }

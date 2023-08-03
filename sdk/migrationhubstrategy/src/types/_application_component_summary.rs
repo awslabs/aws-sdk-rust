@@ -30,9 +30,7 @@ impl ApplicationComponentSummary {
 
 /// A builder for [`ApplicationComponentSummary`](crate::types::ApplicationComponentSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationComponentSummaryBuilder {
     pub(crate) app_type: ::std::option::Option<crate::types::AppType>,
     pub(crate) count: ::std::option::Option<i32>,

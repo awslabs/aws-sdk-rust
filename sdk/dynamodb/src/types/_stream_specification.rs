@@ -42,9 +42,7 @@ impl StreamSpecification {
 
 /// A builder for [`StreamSpecification`](crate::types::StreamSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamSpecificationBuilder {
     pub(crate) stream_enabled: ::std::option::Option<bool>,
     pub(crate) stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
@@ -82,10 +80,7 @@ impl StreamSpecificationBuilder {
     /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
     /// </ul>
-    pub fn set_stream_view_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamViewType>,
-    ) -> Self {
+    pub fn set_stream_view_type(mut self, input: ::std::option::Option<crate::types::StreamViewType>) -> Self {
         self.stream_view_type = input;
         self
     }

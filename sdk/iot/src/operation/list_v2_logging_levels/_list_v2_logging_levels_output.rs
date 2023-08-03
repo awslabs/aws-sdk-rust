@@ -5,8 +5,7 @@
 pub struct ListV2LoggingLevelsOutput {
     /// <p>The logging configuration for a target.</p>
     #[doc(hidden)]
-    pub log_target_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LogTargetConfiguration>>,
+    pub log_target_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogTargetConfiguration>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListV2LoggingLevelsOutput {
 }
 impl ListV2LoggingLevelsOutput {
     /// <p>The logging configuration for a target.</p>
-    pub fn log_target_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LogTargetConfiguration]> {
+    pub fn log_target_configurations(&self) -> ::std::option::Option<&[crate::types::LogTargetConfiguration]> {
         self.log_target_configurations.as_deref()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListV2LoggingLevelsOutput {
 }
 impl ListV2LoggingLevelsOutput {
     /// Creates a new builder-style object to manufacture [`ListV2LoggingLevelsOutput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsOutputBuilder {
+    pub fn builder() -> crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsOutputBuilder {
         crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListV2LoggingLevelsOutput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListV2LoggingLevelsOutputBuilder {
-    pub(crate) log_target_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LogTargetConfiguration>>,
+    pub(crate) log_target_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogTargetConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListV2LoggingLevelsOutputBuilder {
     /// To override the contents of this collection use [`set_log_target_configurations`](Self::set_log_target_configurations).
     ///
     /// <p>The logging configuration for a target.</p>
-    pub fn log_target_configurations(
-        mut self,
-        input: crate::types::LogTargetConfiguration,
-    ) -> Self {
+    pub fn log_target_configurations(mut self, input: crate::types::LogTargetConfiguration) -> Self {
         let mut v = self.log_target_configurations.unwrap_or_default();
         v.push(input);
         self.log_target_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The logging configuration for a target.</p>
-    pub fn set_log_target_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogTargetConfiguration>>,
-    ) -> Self {
+    pub fn set_log_target_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogTargetConfiguration>>) -> Self {
         self.log_target_configurations = input;
         self
     }
     /// <p>The logging configuration for a target.</p>
-    pub fn get_log_target_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogTargetConfiguration>> {
+    pub fn get_log_target_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogTargetConfiguration>> {
         &self.log_target_configurations
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>

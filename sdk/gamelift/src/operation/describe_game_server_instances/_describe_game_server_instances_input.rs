@@ -36,16 +36,14 @@ impl DescribeGameServerInstancesInput {
 }
 impl DescribeGameServerInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeGameServerInstancesInput`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput).
-    pub fn builder() -> crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder {
         crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGameServerInstancesInput`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameServerInstancesInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,18 +52,12 @@ pub struct DescribeGameServerInstancesInputBuilder {
 }
 impl DescribeGameServerInstancesInputBuilder {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_group_name = input;
         self
     }
@@ -85,17 +77,12 @@ impl DescribeGameServerInstancesInputBuilder {
         self
     }
     /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -133,13 +120,11 @@ impl DescribeGameServerInstancesInputBuilder {
         crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput {
-                game_server_group_name: self.game_server_group_name,
-                instance_ids: self.instance_ids,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput {
+            game_server_group_name: self.game_server_group_name,
+            instance_ids: self.instance_ids,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

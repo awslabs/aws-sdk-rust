@@ -39,9 +39,7 @@ impl Dimension {
 
 /// A builder for [`Dimension`](crate::types::Dimension).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -85,17 +83,12 @@ impl DimensionBuilder {
         self
     }
     /// <p>The data type of the dimension for the time-series data point.</p>
-    pub fn set_dimension_value_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionValueType>,
-    ) -> Self {
+    pub fn set_dimension_value_type(mut self, input: ::std::option::Option<crate::types::DimensionValueType>) -> Self {
         self.dimension_value_type = input;
         self
     }
     /// <p>The data type of the dimension for the time-series data point.</p>
-    pub fn get_dimension_value_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DimensionValueType> {
+    pub fn get_dimension_value_type(&self) -> &::std::option::Option<crate::types::DimensionValueType> {
         &self.dimension_value_type
     }
     /// Consumes the builder and constructs a [`Dimension`](crate::types::Dimension).

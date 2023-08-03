@@ -15,28 +15,19 @@ pub fn ser_create_model_version_input(
     if let Some(var_4) = &input.training_data_schema {
         #[allow(unused_mut)]
         let mut object_5 = object.key("trainingDataSchema").start_object();
-        crate::protocol_serde::shape_training_data_schema::ser_training_data_schema(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_training_data_schema::ser_training_data_schema(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.external_events_detail {
         #[allow(unused_mut)]
         let mut object_7 = object.key("externalEventsDetail").start_object();
-        crate::protocol_serde::shape_external_events_detail::ser_external_events_detail(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_external_events_detail::ser_external_events_detail(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.ingested_events_detail {
         #[allow(unused_mut)]
         let mut object_9 = object.key("ingestedEventsDetail").start_object();
-        crate::protocol_serde::shape_ingested_events_detail::ser_ingested_events_detail(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_ingested_events_detail::ser_ingested_events_detail(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.tags {

@@ -28,7 +28,7 @@ impl DeleteResponseHeadersPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResponseHeadersPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyInputBuilder,
+    inner: crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyInputBuilder,
 }
 impl DeleteResponseHeadersPolicyFluentBuilder {
     /// Creates a new `DeleteResponseHeadersPolicy`.
@@ -39,7 +39,7 @@ impl DeleteResponseHeadersPolicyFluentBuilder {
         }
     }
     /// Access the DeleteResponseHeadersPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteResponseHeadersPolicyFluentBuilder {
             crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteResponseHeadersPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteResponseHeadersPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteResponseHeadersPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DeleteResponseHeadersPolicyFluentBuilder {
             crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError>,
     > {
         self.customize_middleware().await
     }

@@ -10,10 +10,7 @@ impl GetCoipPoolUsageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_coip_pool_usage::GetCoipPoolUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_coip_pool_usage::GetCoipPoolUsageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_coip_pool_usage::GetCoipPoolUsageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_coip_pool_usage();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetCoipPoolUsageFluentBuilder {
         }
     }
     /// Access the GetCoipPoolUsage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetCoipPoolUsageFluentBuilder {
             crate::operation::get_coip_pool_usage::GetCoipPoolUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_coip_pool_usage::GetCoipPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_coip_pool_usage::GetCoipPoolUsageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetCoipPoolUsageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetCoipPoolUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_coip_pool_usage::GetCoipPoolUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_coip_pool_usage::GetCoipPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_coip_pool_usage::GetCoipPoolUsageError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetCoipPoolUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_coip_pool_usage::GetCoipPoolUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_coip_pool_usage::GetCoipPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_coip_pool_usage::GetCoipPoolUsageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetCoipPoolUsageFluentBuilder {
             crate::operation::get_coip_pool_usage::GetCoipPoolUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_coip_pool_usage::GetCoipPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_coip_pool_usage::GetCoipPoolUsageError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +142,7 @@ impl GetCoipPoolUsageFluentBuilder {
     /// <li> <p> <code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p> </li>
     /// <li> <p> <code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -57,18 +57,14 @@ impl StartRxNormInferenceJobInput {
 }
 impl StartRxNormInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobInput`](crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobInputBuilder {
         crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartRxNormInferenceJobInput`](crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRxNormInferenceJobInputBuilder {
     pub(crate) input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
@@ -85,10 +81,7 @@ impl StartRxNormInferenceJobInputBuilder {
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -102,10 +95,7 @@ impl StartRxNormInferenceJobInputBuilder {
         self
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
@@ -114,18 +104,12 @@ impl StartRxNormInferenceJobInputBuilder {
         &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -148,18 +132,12 @@ impl StartRxNormInferenceJobInputBuilder {
         &self.job_name
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -187,10 +165,7 @@ impl StartRxNormInferenceJobInputBuilder {
         self
     }
     /// <p>The language of the input documents. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -205,16 +180,14 @@ impl StartRxNormInferenceJobInputBuilder {
         crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobInput {
-                input_data_config: self.input_data_config,
-                output_data_config: self.output_data_config,
-                data_access_role_arn: self.data_access_role_arn,
-                job_name: self.job_name,
-                client_request_token: self.client_request_token,
-                kms_key: self.kms_key,
-                language_code: self.language_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobInput {
+            input_data_config: self.input_data_config,
+            output_data_config: self.output_data_config,
+            data_access_role_arn: self.data_access_role_arn,
+            job_name: self.job_name,
+            client_request_token: self.client_request_token,
+            kms_key: self.kms_key,
+            language_code: self.language_code,
+        })
     }
 }

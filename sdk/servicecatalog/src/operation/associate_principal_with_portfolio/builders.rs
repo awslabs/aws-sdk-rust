@@ -5,16 +5,16 @@ pub use crate::operation::associate_principal_with_portfolio::_associate_princip
 
 impl AssociatePrincipalWithPortfolioInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_principal_with_portfolio();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -31,7 +31,7 @@ impl AssociatePrincipalWithPortfolioInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociatePrincipalWithPortfolioFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder,
+    inner: crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder,
 }
 impl AssociatePrincipalWithPortfolioFluentBuilder {
     /// Creates a new `AssociatePrincipalWithPortfolio`.
@@ -42,15 +42,20 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
         }
     }
     /// Access the AssociatePrincipalWithPortfolio as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolio, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolio,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -59,16 +64,17 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError>,
+    > {
         let op = self
             .inner
             .build()
@@ -86,17 +92,26 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolio, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolio,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The language code.</p>
@@ -104,10 +119,7 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -116,10 +128,7 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -165,10 +174,7 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>
     /// <p>In the IAM Principal ARN format (<i>arn:partition:iam:::resource-type/resource-path/resource-name</i>), valid resource-type values include <b>user/</b>, <b>group/</b>, or <b>role/</b>. The "?" and "*" characters are allowed only after the resource-type in the resource-id segment. You can use special characters anywhere within the resource-id. </p>
     /// <p>The "*" character also matches the "/" character, allowing paths to be formed <i>within</i> the resource-id. For example, <i>arn:aws:iam:::role/<b>*</b>/ResourceName_?</i> matches both <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and <i>arn:aws:iam:::role/pathA/ResourceName_1</i>. </p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
@@ -192,10 +198,7 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>
     /// <p>In the IAM Principal ARN format (<i>arn:partition:iam:::resource-type/resource-path/resource-name</i>), valid resource-type values include <b>user/</b>, <b>group/</b>, or <b>role/</b>. The "?" and "*" characters are allowed only after the resource-type in the resource-id segment. You can use special characters anywhere within the resource-id. </p>
     /// <p>The "*" character also matches the "/" character, allowing paths to be formed <i>within</i> the resource-id. For example, <i>arn:aws:iam:::role/<b>*</b>/ResourceName_?</i> matches both <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and <i>arn:aws:iam:::role/pathA/ResourceName_1</i>. </p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self
     }
@@ -228,10 +231,7 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
         self
     }
     /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
-    pub fn set_principal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
+    pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.inner = self.inner.set_principal_type(input);
         self
     }

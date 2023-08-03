@@ -10,10 +10,7 @@ impl DescribeProductsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_products::DescribeProductsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_products::DescribeProductsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_products::DescribeProductsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_products();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeProductsFluentBuilder {
         }
     }
     /// Access the DescribeProducts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_products::builders::DescribeProductsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_products::builders::DescribeProductsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeProductsFluentBuilder {
             crate::operation::describe_products::DescribeProducts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_products::DescribeProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_products::DescribeProductsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeProductsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeProductsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_products::DescribeProductsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_products::DescribeProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_products::DescribeProductsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeProductsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_products::DescribeProductsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_products::DescribeProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_products::DescribeProductsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl DescribeProductsFluentBuilder {
             crate::operation::describe_products::DescribeProducts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_products::DescribeProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_products::DescribeProductsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_products::paginator::DescribeProductsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_products::paginator::DescribeProductsPaginator {
-        crate::operation::describe_products::paginator::DescribeProductsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_products::paginator::DescribeProductsPaginator {
+        crate::operation::describe_products::paginator::DescribeProductsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>

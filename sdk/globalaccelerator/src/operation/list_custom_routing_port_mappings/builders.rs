@@ -28,7 +28,7 @@ impl ListCustomRoutingPortMappingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsInputBuilder,
+    inner: crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsInputBuilder,
 }
 impl ListCustomRoutingPortMappingsFluentBuilder {
     /// Creates a new `ListCustomRoutingPortMappings`.
@@ -39,7 +39,7 @@ impl ListCustomRoutingPortMappingsFluentBuilder {
         }
     }
     /// Access the ListCustomRoutingPortMappings as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ListCustomRoutingPortMappingsFluentBuilder {
             crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ListCustomRoutingPortMappingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ListCustomRoutingPortMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ListCustomRoutingPortMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,31 +107,23 @@ impl ListCustomRoutingPortMappingsFluentBuilder {
             crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_custom_routing_port_mappings::paginator::ListCustomRoutingPortMappingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_custom_routing_port_mappings::paginator::ListCustomRoutingPortMappingsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_custom_routing_port_mappings::paginator::ListCustomRoutingPortMappingsPaginator {
         crate::operation::list_custom_routing_port_mappings::paginator::ListCustomRoutingPortMappingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accelerator_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accelerator_arn(input);
         self
     }
@@ -149,18 +132,12 @@ impl ListCustomRoutingPortMappingsFluentBuilder {
         self.inner.get_accelerator_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
     }

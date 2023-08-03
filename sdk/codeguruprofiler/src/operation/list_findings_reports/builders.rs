@@ -37,9 +37,7 @@ impl ListFindingsReportsFluentBuilder {
         }
     }
     /// Access the ListFindingsReports as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListFindingsReportsFluentBuilder {
             crate::operation::list_findings_reports::ListFindingsReports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings_reports::ListFindingsReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings_reports::ListFindingsReportsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListFindingsReportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListFindingsReportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_findings_reports::ListFindingsReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings_reports::ListFindingsReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings_reports::ListFindingsReportsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListFindingsReportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_findings_reports::ListFindingsReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings_reports::ListFindingsReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings_reports::ListFindingsReportsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListFindingsReportsFluentBuilder {
             crate::operation::list_findings_reports::ListFindingsReports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings_reports::ListFindingsReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings_reports::ListFindingsReportsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator {
-        crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator {
+        crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the profiling group from which to search for analysis data.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p>The name of the profiling group from which to search for analysis data.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -159,10 +135,7 @@ impl ListFindingsReportsFluentBuilder {
         self
     }
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -176,10 +149,7 @@ impl ListFindingsReportsFluentBuilder {
         self
     }
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

@@ -26,7 +26,7 @@ impl RegisterWorkspaceDirectoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterWorkspaceDirectoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryInputBuilder,
+    inner: crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryInputBuilder,
 }
 impl RegisterWorkspaceDirectoryFluentBuilder {
     /// Creates a new `RegisterWorkspaceDirectory`.
@@ -37,7 +37,7 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
         }
     }
     /// Access the RegisterWorkspaceDirectory as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
             crate::operation::register_workspace_directory::RegisterWorkspaceDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
             crate::operation::register_workspace_directory::RegisterWorkspaceDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +133,7 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
         self
     }
     /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -207,10 +193,7 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
         self
     }
     /// <p>The tags associated with the directory.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

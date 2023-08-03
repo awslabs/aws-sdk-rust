@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`AuthorizeSnapshotAccessOutput`](crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput) with field(s):
     ///   - [`snapshot(Option<Snapshot>)`](crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput::snapshot): <p>Describes a snapshot.</p>
     /// - On failure, responds with [`SdkError<AuthorizeSnapshotAccessError>`](crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError)
-    pub fn authorize_snapshot_access(
-        &self,
-    ) -> crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessFluentBuilder
-    {
+    pub fn authorize_snapshot_access(&self) -> crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessFluentBuilder {
         crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessFluentBuilder::new(self.handle.clone())
     }
 }

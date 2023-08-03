@@ -94,9 +94,7 @@ impl Header {
 
 /// A builder for [`Header`](crate::types::Header).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HeaderBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::StatefulRuleProtocol>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl HeaderBuilder {
         self
     }
     /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on Amazon Web Services and on the internet is IP.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::StatefulRuleProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::StatefulRuleProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -184,10 +179,7 @@ impl HeaderBuilder {
         self
     }
     /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection matches bidirectional traffic, both from the source to the destination and from the destination to the source. If set to <code>FORWARD</code>, the inspection only matches traffic going from the source to the destination. </p>
-    pub fn set_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::StatefulRuleDirection>,
-    ) -> Self {
+    pub fn set_direction(mut self, input: ::std::option::Option<crate::types::StatefulRuleDirection>) -> Self {
         self.direction = input;
         self
     }
@@ -237,18 +229,12 @@ impl HeaderBuilder {
         &self.destination
     }
     /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
-    pub fn destination_port(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_port = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
-    pub fn set_destination_port(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_port = input;
         self
     }

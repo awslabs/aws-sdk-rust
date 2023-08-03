@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateMembershipOutput {
 }
 impl CreateMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateMembershipOutput`](crate::operation::create_membership::CreateMembershipOutput).
-    pub fn builder() -> crate::operation::create_membership::builders::CreateMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_membership::builders::CreateMembershipOutputBuilder {
         crate::operation::create_membership::builders::CreateMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMembershipOutput`](crate::operation::create_membership::CreateMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMembershipOutputBuilder {
     pub(crate) membership: ::std::option::Option<crate::types::Membership>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateMembershipOutputBuilder {
         self
     }
     /// <p>The membership that was created.</p>
-    pub fn set_membership(
-        mut self,
-        input: ::std::option::Option<crate::types::Membership>,
-    ) -> Self {
+    pub fn set_membership(mut self, input: ::std::option::Option<crate::types::Membership>) -> Self {
         self.membership = input;
         self
     }

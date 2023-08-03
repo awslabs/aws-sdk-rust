@@ -51,9 +51,7 @@ impl Repository {
 
 /// A builder for [`Repository`](crate::types::Repository).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryBuilder {
     pub(crate) repository_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct RepositoryBuilder {
 }
 impl RepositoryBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
-    pub fn repository_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
-    pub fn set_repository_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_arn = input;
         self
     }
@@ -97,18 +89,12 @@ impl RepositoryBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -117,18 +103,12 @@ impl RepositoryBuilder {
         &self.repository_name
     }
     /// <p>The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code> operations.</p>
-    pub fn repository_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code> operations.</p>
-    pub fn set_repository_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_uri = input;
         self
     }
@@ -142,10 +122,7 @@ impl RepositoryBuilder {
         self
     }
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

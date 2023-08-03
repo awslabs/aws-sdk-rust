@@ -5,10 +5,7 @@ pub fn parse_http_error_metadata(
     response_status: u16,
     _response_headers: &::http::HeaderMap,
     response_body: &[u8],
-) -> ::std::result::Result<
-    ::aws_smithy_types::error::metadata::Builder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_xml::decode::XmlDecodeError> {
     // S3 HEAD responses have no response body to for an error code. Therefore,
     // check the HTTP response status and populate an error code for 404s.
     if response_body.is_empty() {
@@ -490,8 +487,7 @@ pub(crate) mod shape_website_configuration;
 
 pub fn parse_event_stream_error_metadata(
     payload: &::bytes::Bytes,
-) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_xml::decode::XmlDecodeError> {
     crate::rest_xml_unwrapped_errors::parse_error_metadata(payload.as_ref())
 }
 

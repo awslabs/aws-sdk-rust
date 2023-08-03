@@ -31,17 +31,14 @@ impl GetCommandInvocationInput {
 }
 impl GetCommandInvocationInput {
     /// Creates a new builder-style object to manufacture [`GetCommandInvocationInput`](crate::operation::get_command_invocation::GetCommandInvocationInput).
-    pub fn builder(
-    ) -> crate::operation::get_command_invocation::builders::GetCommandInvocationInputBuilder {
+    pub fn builder() -> crate::operation::get_command_invocation::builders::GetCommandInvocationInputBuilder {
         crate::operation::get_command_invocation::builders::GetCommandInvocationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCommandInvocationInput`](crate::operation::get_command_invocation::GetCommandInvocationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCommandInvocationInputBuilder {
     pub(crate) command_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -96,16 +93,12 @@ impl GetCommandInvocationInputBuilder {
     /// Consumes the builder and constructs a [`GetCommandInvocationInput`](crate::operation::get_command_invocation::GetCommandInvocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_command_invocation::GetCommandInvocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_command_invocation::GetCommandInvocationInput {
-                command_id: self.command_id,
-                instance_id: self.instance_id,
-                plugin_name: self.plugin_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_command_invocation::GetCommandInvocationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_command_invocation::GetCommandInvocationInput {
+            command_id: self.command_id,
+            instance_id: self.instance_id,
+            plugin_name: self.plugin_name,
+        })
     }
 }

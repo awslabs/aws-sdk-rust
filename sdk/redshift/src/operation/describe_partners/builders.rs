@@ -10,10 +10,7 @@ impl DescribePartnersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_partners::DescribePartnersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_partners::DescribePartnersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_partners::DescribePartnersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_partners();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribePartnersFluentBuilder {
         }
     }
     /// Access the DescribePartners as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_partners::builders::DescribePartnersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_partners::builders::DescribePartnersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribePartnersFluentBuilder {
             crate::operation::describe_partners::DescribePartners,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_partners::DescribePartnersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_partners::DescribePartnersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribePartnersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribePartnersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_partners::DescribePartnersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_partners::DescribePartnersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_partners::DescribePartnersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribePartnersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_partners::DescribePartnersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_partners::DescribePartnersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_partners::DescribePartnersError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribePartnersFluentBuilder {
             crate::operation::describe_partners::DescribePartners,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_partners::DescribePartnersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_partners::DescribePartnersError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DescribePartnersFluentBuilder {
         self.inner.get_account_id()
     }
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -157,18 +135,12 @@ impl DescribePartnersFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

@@ -15,18 +15,14 @@ impl GetAssessmentFrameworkInput {
 }
 impl GetAssessmentFrameworkInput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentFrameworkInput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkInput).
-    pub fn builder(
-    ) -> crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkInputBuilder {
         crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssessmentFrameworkInput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssessmentFrameworkInputBuilder {
     pub(crate) framework_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl GetAssessmentFrameworkInputBuilder {
     /// Consumes the builder and constructs a [`GetAssessmentFrameworkInput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_assessment_framework::GetAssessmentFrameworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_assessment_framework::GetAssessmentFrameworkInput {
-                framework_id: self.framework_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_assessment_framework::GetAssessmentFrameworkInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_assessment_framework::GetAssessmentFrameworkInput {
+            framework_id: self.framework_id,
+        })
     }
 }

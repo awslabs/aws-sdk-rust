@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     ///   - [`recovery_points(Option<Vec<RecoveryPointByBackupVault>>)`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput::recovery_points): <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
     /// - On failure, responds with [`SdkError<ListRecoveryPointsByBackupVaultError>`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError)
-    pub fn list_recovery_points_by_backup_vault(&self) -> crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultFluentBuilder{
+    pub fn list_recovery_points_by_backup_vault(
+        &self,
+    ) -> crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultFluentBuilder {
         crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultFluentBuilder::new(self.handle.clone())
     }
 }

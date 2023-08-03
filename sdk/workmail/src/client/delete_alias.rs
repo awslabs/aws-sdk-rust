@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`alias(impl ::std::convert::Into<String>)`](crate::operation::delete_alias::builders::DeleteAliasFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::delete_alias::builders::DeleteAliasFluentBuilder::set_alias): <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
     /// - On success, responds with [`DeleteAliasOutput`](crate::operation::delete_alias::DeleteAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteAliasError>`](crate::operation::delete_alias::DeleteAliasError)
-    pub fn delete_alias(
-        &self,
-    ) -> crate::operation::delete_alias::builders::DeleteAliasFluentBuilder {
+    pub fn delete_alias(&self) -> crate::operation::delete_alias::builders::DeleteAliasFluentBuilder {
         crate::operation::delete_alias::builders::DeleteAliasFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl DatasetSummary {
 
 /// A builder for [`DatasetSummary`](crate::types::DatasetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetSummaryBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl DatasetSummaryBuilder {
         self
     }
     /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

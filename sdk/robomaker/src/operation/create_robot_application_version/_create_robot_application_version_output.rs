@@ -70,16 +70,14 @@ impl ::aws_http::request_id::RequestId for CreateRobotApplicationVersionOutput {
 }
 impl CreateRobotApplicationVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateRobotApplicationVersionOutput`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput).
-    pub fn builder() -> crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionOutputBuilder {
         crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRobotApplicationVersionOutput`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRobotApplicationVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -146,10 +144,7 @@ impl CreateRobotApplicationVersionOutputBuilder {
         self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>) -> Self {
         self.sources = input;
         self
     }
@@ -163,17 +158,12 @@ impl CreateRobotApplicationVersionOutputBuilder {
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn get_robot_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
@@ -182,10 +172,7 @@ impl CreateRobotApplicationVersionOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -213,10 +200,7 @@ impl CreateRobotApplicationVersionOutputBuilder {
         self
     }
     /// <p>The object that contains the Docker image URI used to create your robot application.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }
@@ -234,10 +218,7 @@ impl CreateRobotApplicationVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateRobotApplicationVersionOutput`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput
-    {
+    pub fn build(self) -> crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput {
         crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput {
             arn: self.arn,
             name: self.name,

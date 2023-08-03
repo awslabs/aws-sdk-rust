@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetStudioMemberOutput {
 }
 impl GetStudioMemberOutput {
     /// Creates a new builder-style object to manufacture [`GetStudioMemberOutput`](crate::operation::get_studio_member::GetStudioMemberOutput).
-    pub fn builder() -> crate::operation::get_studio_member::builders::GetStudioMemberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_studio_member::builders::GetStudioMemberOutputBuilder {
         crate::operation::get_studio_member::builders::GetStudioMemberOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetStudioMemberOutput`](crate::operation::get_studio_member::GetStudioMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStudioMemberOutputBuilder {
     pub(crate) member: ::std::option::Option<crate::types::StudioMembership>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetStudioMemberOutputBuilder {
         self
     }
     /// <p>The member.</p>
-    pub fn set_member(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioMembership>,
-    ) -> Self {
+    pub fn set_member(mut self, input: ::std::option::Option<crate::types::StudioMembership>) -> Self {
         self.member = input;
         self
     }

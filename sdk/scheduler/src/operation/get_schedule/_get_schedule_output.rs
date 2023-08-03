@@ -137,9 +137,7 @@ impl GetScheduleOutput {
 
 /// A builder for [`GetScheduleOutput`](crate::operation::get_schedule::GetScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetScheduleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -210,10 +208,7 @@ impl GetScheduleOutputBuilder {
     /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
     /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-    pub fn schedule_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
@@ -227,10 +222,7 @@ impl GetScheduleOutputBuilder {
     /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
     /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
@@ -253,10 +245,7 @@ impl GetScheduleOutputBuilder {
         self
     }
     /// <p>The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code> for one-time schedules.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -270,10 +259,7 @@ impl GetScheduleOutputBuilder {
         self
     }
     /// <p>The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the <code>EndDate</code> you specify. EventBridge Scheduler ignores <code>EndDate</code> for one-time schedules.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
@@ -296,25 +282,17 @@ impl GetScheduleOutputBuilder {
         &self.description
     }
     /// <p>The timezone in which the scheduling expression is evaluated.</p>
-    pub fn schedule_expression_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timezone in which the scheduling expression is evaluated.</p>
-    pub fn set_schedule_expression_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression_timezone = input;
         self
     }
     /// <p>The timezone in which the scheduling expression is evaluated.</p>
-    pub fn get_schedule_expression_timezone(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_schedule_expression_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression_timezone
     }
     /// <p>Specifies whether the schedule is enabled or disabled.</p>
@@ -337,10 +315,7 @@ impl GetScheduleOutputBuilder {
         self
     }
     /// <p>The time at which the schedule was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -354,17 +329,12 @@ impl GetScheduleOutputBuilder {
         self
     }
     /// <p>The time at which the schedule was last modified.</p>
-    pub fn set_last_modification_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_date = input;
         self
     }
     /// <p>The time at which the schedule was last modified.</p>
-    pub fn get_last_modification_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_date
     }
     /// <p>The ARN for a customer managed KMS Key that is be used to encrypt and decrypt your data.</p>
@@ -401,17 +371,12 @@ impl GetScheduleOutputBuilder {
         self
     }
     /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
-    pub fn set_flexible_time_window(
-        mut self,
-        input: ::std::option::Option<crate::types::FlexibleTimeWindow>,
-    ) -> Self {
+    pub fn set_flexible_time_window(mut self, input: ::std::option::Option<crate::types::FlexibleTimeWindow>) -> Self {
         self.flexible_time_window = input;
         self
     }
     /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
-    pub fn get_flexible_time_window(
-        &self,
-    ) -> &::std::option::Option<crate::types::FlexibleTimeWindow> {
+    pub fn get_flexible_time_window(&self) -> &::std::option::Option<crate::types::FlexibleTimeWindow> {
         &self.flexible_time_window
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

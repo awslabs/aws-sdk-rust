@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`anomaly_detectors(Option<Vec<AnomalyDetector>>)`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput::anomaly_detectors): <p>The list of anomaly detection models returned by the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput::next_token): <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeAnomalyDetectorsError>`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError)
-    pub fn describe_anomaly_detectors(
-        &self,
-    ) -> crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsFluentBuilder
-    {
+    pub fn describe_anomaly_detectors(&self) -> crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsFluentBuilder {
         crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsFluentBuilder::new(self.handle.clone())
     }
 }

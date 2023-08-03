@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateFlowMediaStreamOutput {
 }
 impl UpdateFlowMediaStreamOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowMediaStreamOutput`](crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStreamOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStreamOutputBuilder {
         crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFlowMediaStreamOutput`](crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlowMediaStreamOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_stream: ::std::option::Option<crate::types::MediaStream>,
@@ -66,10 +62,7 @@ impl UpdateFlowMediaStreamOutputBuilder {
         self
     }
     /// The media stream that you updated.
-    pub fn set_media_stream(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStream>,
-    ) -> Self {
+    pub fn set_media_stream(mut self, input: ::std::option::Option<crate::types::MediaStream>) -> Self {
         self.media_stream = input;
         self
     }

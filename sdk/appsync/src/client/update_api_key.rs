@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateApiKeyOutput`](crate::operation::update_api_key::UpdateApiKeyOutput) with field(s):
     ///   - [`api_key(Option<ApiKey>)`](crate::operation::update_api_key::UpdateApiKeyOutput::api_key): <p>The API key.</p>
     /// - On failure, responds with [`SdkError<UpdateApiKeyError>`](crate::operation::update_api_key::UpdateApiKeyError)
-    pub fn update_api_key(
-        &self,
-    ) -> crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder {
-        crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_api_key(&self) -> crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder {
+        crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::new(self.handle.clone())
     }
 }

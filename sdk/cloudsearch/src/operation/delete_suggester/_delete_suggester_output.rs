@@ -29,9 +29,7 @@ impl DeleteSuggesterOutput {
 
 /// A builder for [`DeleteSuggesterOutput`](crate::operation::delete_suggester::DeleteSuggesterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSuggesterOutputBuilder {
     pub(crate) suggester: ::std::option::Option<crate::types::SuggesterStatus>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl DeleteSuggesterOutputBuilder {
         self
     }
     /// <p>The status of the suggester being deleted.</p>
-    pub fn set_suggester(
-        mut self,
-        input: ::std::option::Option<crate::types::SuggesterStatus>,
-    ) -> Self {
+    pub fn set_suggester(mut self, input: ::std::option::Option<crate::types::SuggesterStatus>) -> Self {
         self.suggester = input;
         self
     }

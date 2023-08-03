@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeIdentityIdFormatOutput`](crate::operation::describe_identity_id_format::DescribeIdentityIdFormatOutput) with field(s):
     ///   - [`statuses(Option<Vec<IdFormat>>)`](crate::operation::describe_identity_id_format::DescribeIdentityIdFormatOutput::statuses): <p>Information about the ID format for the resources.</p>
     /// - On failure, responds with [`SdkError<DescribeIdentityIdFormatError>`](crate::operation::describe_identity_id_format::DescribeIdentityIdFormatError)
-    pub fn describe_identity_id_format(&self) -> crate::operation::describe_identity_id_format::builders::DescribeIdentityIdFormatFluentBuilder{
+    pub fn describe_identity_id_format(&self) -> crate::operation::describe_identity_id_format::builders::DescribeIdentityIdFormatFluentBuilder {
         crate::operation::describe_identity_id_format::builders::DescribeIdentityIdFormatFluentBuilder::new(self.handle.clone())
     }
 }

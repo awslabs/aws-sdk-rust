@@ -27,7 +27,7 @@ impl ListJobExecutionsForJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListJobExecutionsForJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder,
+    inner: crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder,
 }
 impl ListJobExecutionsForJobFluentBuilder {
     /// Creates a new `ListJobExecutionsForJob`.
@@ -38,10 +38,7 @@ impl ListJobExecutionsForJobFluentBuilder {
         }
     }
     /// Access the ListJobExecutionsForJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListJobExecutionsForJobFluentBuilder {
             crate::operation::list_job_executions_for_job::ListJobExecutionsForJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_job_executions_for_job::ListJobExecutionsForJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_job_executions_for_job::ListJobExecutionsForJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListJobExecutionsForJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListJobExecutionsForJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_job_executions_for_job::ListJobExecutionsForJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_job_executions_for_job::ListJobExecutionsForJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListJobExecutionsForJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_job_executions_for_job::ListJobExecutionsForJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_job_executions_for_job::ListJobExecutionsForJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +106,14 @@ impl ListJobExecutionsForJobFluentBuilder {
             crate::operation::list_job_executions_for_job::ListJobExecutionsForJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_job_executions_for_job::ListJobExecutionsForJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_job_executions_for_job::ListJobExecutionsForJobError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_job_executions_for_job::paginator::ListJobExecutionsForJobPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_job_executions_for_job::paginator::ListJobExecutionsForJobPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_job_executions_for_job::paginator::ListJobExecutionsForJobPaginator {
         crate::operation::list_job_executions_for_job::paginator::ListJobExecutionsForJobPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
@@ -153,10 +136,7 @@ impl ListJobExecutionsForJobFluentBuilder {
         self
     }
     /// <p>The status of the job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

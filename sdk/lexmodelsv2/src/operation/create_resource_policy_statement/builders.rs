@@ -27,7 +27,7 @@ impl CreateResourcePolicyStatementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResourcePolicyStatementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder,
+    inner: crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder,
 }
 impl CreateResourcePolicyStatementFluentBuilder {
     /// Creates a new `CreateResourcePolicyStatement`.
@@ -38,7 +38,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
         }
     }
     /// Access the CreateResourcePolicyStatement as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
             crate::operation::create_resource_policy_statement::CreateResourcePolicyStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
             crate::operation::create_resource_policy_statement::CreateResourcePolicyStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError>,
     > {
         self.customize_middleware().await
     }
@@ -173,17 +162,12 @@ impl CreateResourcePolicyStatementFluentBuilder {
         self
     }
     /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
     }
     /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
-    pub fn get_principal(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_principal(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
         self.inner.get_principal()
     }
     /// Appends an item to `action`.
@@ -196,10 +180,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
         self
     }
     /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
@@ -226,10 +207,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
     pub fn set_condition(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
         >,
     ) -> Self {
         self.inner = self.inner.set_condition(input);
@@ -240,28 +218,19 @@ impl CreateResourcePolicyStatementFluentBuilder {
     pub fn get_condition(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         self.inner.get_condition()
     }
     /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    pub fn expected_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_revision_id(input.into());
         self
     }
     /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    pub fn set_expected_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_revision_id(input);
         self
     }

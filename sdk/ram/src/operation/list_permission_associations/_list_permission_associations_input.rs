@@ -39,9 +39,7 @@ impl ListPermissionAssociationsInput {
         self.permission_version
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn association_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceShareAssociationStatus> {
+    pub fn association_status(&self) -> ::std::option::Option<&crate::types::ResourceShareAssociationStatus> {
         self.association_status.as_ref()
     }
     /// <p>Specifies that you want to list only those associations with resource shares that include at least one resource of this resource type.</p>
@@ -68,21 +66,18 @@ impl ListPermissionAssociationsInput {
 }
 impl ListPermissionAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListPermissionAssociationsInput`](crate::operation::list_permission_associations::ListPermissionAssociationsInput).
-    pub fn builder() -> crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder {
         crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionAssociationsInput`](crate::operation::list_permission_associations::ListPermissionAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionAssociationsInputBuilder {
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_version: ::std::option::Option<i32>,
-    pub(crate) association_status:
-        ::std::option::Option<crate::types::ResourceShareAssociationStatus>,
+    pub(crate) association_status: ::std::option::Option<crate::types::ResourceShareAssociationStatus>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) feature_set: ::std::option::Option<crate::types::PermissionFeatureSet>,
     pub(crate) default_version: ::std::option::Option<bool>,
@@ -91,18 +86,12 @@ pub struct ListPermissionAssociationsInputBuilder {
 }
 impl ListPermissionAssociationsInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_arn = input;
         self
     }
@@ -125,40 +114,26 @@ impl ListPermissionAssociationsInputBuilder {
         &self.permission_version
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn association_status(
-        mut self,
-        input: crate::types::ResourceShareAssociationStatus,
-    ) -> Self {
+    pub fn association_status(mut self, input: crate::types::ResourceShareAssociationStatus) -> Self {
         self.association_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn set_association_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareAssociationStatus>,
-    ) -> Self {
+    pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::ResourceShareAssociationStatus>) -> Self {
         self.association_status = input;
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn get_association_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareAssociationStatus> {
+    pub fn get_association_status(&self) -> &::std::option::Option<crate::types::ResourceShareAssociationStatus> {
         &self.association_status
     }
     /// <p>Specifies that you want to list only those associations with resource shares that include at least one resource of this resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that include at least one resource of this resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -172,10 +147,7 @@ impl ListPermissionAssociationsInputBuilder {
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that have a <code>featureSet</code> with this value.</p>
-    pub fn set_feature_set(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionFeatureSet>,
-    ) -> Self {
+    pub fn set_feature_set(mut self, input: ::std::option::Option<crate::types::PermissionFeatureSet>) -> Self {
         self.feature_set = input;
         self
     }
@@ -235,17 +207,15 @@ impl ListPermissionAssociationsInputBuilder {
         crate::operation::list_permission_associations::ListPermissionAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_permission_associations::ListPermissionAssociationsInput {
-                permission_arn: self.permission_arn,
-                permission_version: self.permission_version,
-                association_status: self.association_status,
-                resource_type: self.resource_type,
-                feature_set: self.feature_set,
-                default_version: self.default_version,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_permission_associations::ListPermissionAssociationsInput {
+            permission_arn: self.permission_arn,
+            permission_version: self.permission_version,
+            association_status: self.association_status,
+            resource_type: self.resource_type,
+            feature_set: self.feature_set,
+            default_version: self.default_version,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

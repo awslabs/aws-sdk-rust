@@ -35,12 +35,9 @@ impl ListProjectsOutput {
 
 /// A builder for [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectsOutputBuilder {
-    pub(crate) project_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
+    pub(crate) project_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListProjectsOutputBuilder {
         self
     }
     /// <p>A list of summaries of projects.</p>
-    pub fn set_project_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
-    ) -> Self {
+    pub fn set_project_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>) -> Self {
         self.project_summary_list = input;
         self
     }
     /// <p>A list of summaries of projects.</p>
-    pub fn get_project_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
+    pub fn get_project_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
         &self.project_summary_list
     }
     /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>

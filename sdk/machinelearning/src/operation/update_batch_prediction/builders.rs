@@ -38,10 +38,7 @@ impl UpdateBatchPredictionFluentBuilder {
         }
     }
     /// Access the UpdateBatchPrediction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_batch_prediction::builders::UpdateBatchPredictionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_batch_prediction::builders::UpdateBatchPredictionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateBatchPredictionFluentBuilder {
             crate::operation::update_batch_prediction::UpdateBatchPrediction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_batch_prediction::UpdateBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_batch_prediction::UpdateBatchPredictionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateBatchPredictionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateBatchPredictionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_batch_prediction::UpdateBatchPredictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_batch_prediction::UpdateBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_batch_prediction::UpdateBatchPredictionError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateBatchPredictionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_batch_prediction::UpdateBatchPredictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_batch_prediction::UpdateBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_batch_prediction::UpdateBatchPredictionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl UpdateBatchPredictionFluentBuilder {
             crate::operation::update_batch_prediction::UpdateBatchPrediction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_batch_prediction::UpdateBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_batch_prediction::UpdateBatchPredictionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-    pub fn batch_prediction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.batch_prediction_id(input.into());
         self
     }
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_batch_prediction_id(input);
         self
     }
@@ -145,18 +125,12 @@ impl UpdateBatchPredictionFluentBuilder {
         self.inner.get_batch_prediction_id()
     }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.batch_prediction_name(input.into());
         self
     }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    pub fn set_batch_prediction_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_batch_prediction_name(input);
         self
     }

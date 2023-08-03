@@ -12,9 +12,7 @@ pub fn ser_scheduled_instances_block_device_mapping(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Ebs");
     if let Some(var_4) = &input.ebs {
-        crate::protocol_serde::shape_scheduled_instances_ebs::ser_scheduled_instances_ebs(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_scheduled_instances_ebs::ser_scheduled_instances_ebs(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("NoDevice");

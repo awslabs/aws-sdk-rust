@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`target_group_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder::target_group_arn) / [`set_target_group_arn(Option<String>)`](crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder::set_target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
     /// - On success, responds with [`DeleteTargetGroupOutput`](crate::operation::delete_target_group::DeleteTargetGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteTargetGroupError>`](crate::operation::delete_target_group::DeleteTargetGroupError)
-    pub fn delete_target_group(
-        &self,
-    ) -> crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder {
-        crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_target_group(&self) -> crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder {
+        crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder::new(self.handle.clone())
     }
 }

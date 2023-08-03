@@ -23,17 +23,14 @@ impl IotSiteWiseCustomerManagedDatastoreS3Storage {
 }
 impl IotSiteWiseCustomerManagedDatastoreS3Storage {
     /// Creates a new builder-style object to manufacture [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage).
-    pub fn builder() -> crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageBuilder
-    {
+    pub fn builder() -> crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageBuilder {
         crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageBuilder::default()
     }
 }
 
 /// A builder for [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3StorageBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix: ::std::option::Option<::std::string::String>,

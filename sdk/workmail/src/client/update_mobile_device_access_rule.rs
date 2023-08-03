@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`not_device_user_agents(Vec<String>)`](crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleFluentBuilder::not_device_user_agents) / [`set_not_device_user_agents(Option<Vec<String>>)`](crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleFluentBuilder::set_not_device_user_agents): <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
     /// - On success, responds with [`UpdateMobileDeviceAccessRuleOutput`](crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleOutput)
     /// - On failure, responds with [`SdkError<UpdateMobileDeviceAccessRuleError>`](crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError)
-    pub fn update_mobile_device_access_rule(&self) -> crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleFluentBuilder{
+    pub fn update_mobile_device_access_rule(
+        &self,
+    ) -> crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleFluentBuilder {
         crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleFluentBuilder::new(self.handle.clone())
     }
 }

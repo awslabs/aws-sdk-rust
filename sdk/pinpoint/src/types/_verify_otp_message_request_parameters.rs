@@ -37,9 +37,7 @@ impl VerifyOtpMessageRequestParameters {
 
 /// A builder for [`VerifyOtpMessageRequestParameters`](crate::types::VerifyOtpMessageRequestParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyOtpMessageRequestParametersBuilder {
     pub(crate) destination_identity: ::std::option::Option<::std::string::String>,
     pub(crate) otp: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct VerifyOtpMessageRequestParametersBuilder {
 }
 impl VerifyOtpMessageRequestParametersBuilder {
     /// <p>The destination identity to send OTP to.</p>
-    pub fn destination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination identity to send OTP to.</p>
-    pub fn set_destination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_identity = input;
         self
     }

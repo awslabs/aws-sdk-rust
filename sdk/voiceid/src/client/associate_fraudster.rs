@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateFraudsterOutput`](crate::operation::associate_fraudster::AssociateFraudsterOutput) with field(s):
     ///   - [`fraudster(Option<Fraudster>)`](crate::operation::associate_fraudster::AssociateFraudsterOutput::fraudster): <p>Contains all the information about a fraudster.</p>
     /// - On failure, responds with [`SdkError<AssociateFraudsterError>`](crate::operation::associate_fraudster::AssociateFraudsterError)
-    pub fn associate_fraudster(
-        &self,
-    ) -> crate::operation::associate_fraudster::builders::AssociateFraudsterFluentBuilder {
-        crate::operation::associate_fraudster::builders::AssociateFraudsterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_fraudster(&self) -> crate::operation::associate_fraudster::builders::AssociateFraudsterFluentBuilder {
+        crate::operation::associate_fraudster::builders::AssociateFraudsterFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`iot_job_id(Option<String>)`](crate::operation::create_deployment::CreateDeploymentOutput::iot_job_id): <p>The ID of the IoT job that applies the deployment to target devices.</p>
     ///   - [`iot_job_arn(Option<String>)`](crate::operation::create_deployment::CreateDeploymentOutput::iot_job_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::operation::create_deployment::CreateDeploymentError)
-    pub fn create_deployment(
-        &self,
-    ) -> crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder {
-        crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_deployment(&self) -> crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder {
+        crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

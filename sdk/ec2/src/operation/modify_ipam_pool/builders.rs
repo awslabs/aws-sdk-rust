@@ -10,10 +10,7 @@ impl ModifyIpamPoolInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam_pool::ModifyIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_pool::ModifyIpamPoolError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_pool::ModifyIpamPoolError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_ipam_pool();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ModifyIpamPoolFluentBuilder {
         }
     }
     /// Access the ModifyIpamPool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_ipam_pool::builders::ModifyIpamPoolInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_ipam_pool::builders::ModifyIpamPoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ModifyIpamPoolFluentBuilder {
             crate::operation::modify_ipam_pool::ModifyIpamPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_pool::ModifyIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_pool::ModifyIpamPoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ModifyIpamPoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ModifyIpamPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam_pool::ModifyIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_pool::ModifyIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_pool::ModifyIpamPoolError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ModifyIpamPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam_pool::ModifyIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_pool::ModifyIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_pool::ModifyIpamPoolError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl ModifyIpamPoolFluentBuilder {
             crate::operation::modify_ipam_pool::ModifyIpamPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_pool::ModifyIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_pool::ModifyIpamPoolError>,
     > {
         self.customize_middleware().await
     }
@@ -216,10 +200,7 @@ impl ModifyIpamPoolFluentBuilder {
         self
     }
     /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
-    pub fn set_allocation_default_netmask_length(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_allocation_default_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocation_default_netmask_length(input);
         self
     }
@@ -233,13 +214,8 @@ impl ModifyIpamPoolFluentBuilder {
         self
     }
     /// <p>Clear the default netmask length allocation rule for this pool.</p>
-    pub fn set_clear_allocation_default_netmask_length(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_clear_allocation_default_netmask_length(input);
+    pub fn set_clear_allocation_default_netmask_length(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_clear_allocation_default_netmask_length(input);
         self
     }
     /// <p>Clear the default netmask length allocation rule for this pool.</p>
@@ -251,25 +227,17 @@ impl ModifyIpamPoolFluentBuilder {
     /// To override the contents of this collection use [`set_add_allocation_resource_tags`](Self::set_add_allocation_resource_tags).
     ///
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn add_allocation_resource_tags(
-        mut self,
-        input: crate::types::RequestIpamResourceTag,
-    ) -> Self {
+    pub fn add_allocation_resource_tags(mut self, input: crate::types::RequestIpamResourceTag) -> Self {
         self.inner = self.inner.add_allocation_resource_tags(input);
         self
     }
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_add_allocation_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
-    ) -> Self {
+    pub fn set_add_allocation_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>) -> Self {
         self.inner = self.inner.set_add_allocation_resource_tags(input);
         self
     }
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn get_add_allocation_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
+    pub fn get_add_allocation_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
         self.inner.get_add_allocation_resource_tags()
     }
     /// Appends an item to `RemoveAllocationResourceTags`.
@@ -277,10 +245,7 @@ impl ModifyIpamPoolFluentBuilder {
     /// To override the contents of this collection use [`set_remove_allocation_resource_tags`](Self::set_remove_allocation_resource_tags).
     ///
     /// <p>Remove tag allocation rules from a pool.</p>
-    pub fn remove_allocation_resource_tags(
-        mut self,
-        input: crate::types::RequestIpamResourceTag,
-    ) -> Self {
+    pub fn remove_allocation_resource_tags(mut self, input: crate::types::RequestIpamResourceTag) -> Self {
         self.inner = self.inner.remove_allocation_resource_tags(input);
         self
     }
@@ -293,9 +258,7 @@ impl ModifyIpamPoolFluentBuilder {
         self
     }
     /// <p>Remove tag allocation rules from a pool.</p>
-    pub fn get_remove_allocation_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
+    pub fn get_remove_allocation_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
         self.inner.get_remove_allocation_resource_tags()
     }
 }

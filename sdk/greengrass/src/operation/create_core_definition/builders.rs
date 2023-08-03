@@ -37,9 +37,7 @@ impl CreateCoreDefinitionFluentBuilder {
         }
     }
     /// Access the CreateCoreDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_core_definition::builders::CreateCoreDefinitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_core_definition::builders::CreateCoreDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateCoreDefinitionFluentBuilder {
             crate::operation::create_core_definition::CreateCoreDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_definition::CreateCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_definition::CreateCoreDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateCoreDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateCoreDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_core_definition::CreateCoreDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_definition::CreateCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_definition::CreateCoreDefinitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateCoreDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_core_definition::CreateCoreDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_definition::CreateCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_definition::CreateCoreDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateCoreDefinitionFluentBuilder {
             crate::operation::create_core_definition::CreateCoreDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_definition::CreateCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_definition::CreateCoreDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -148,17 +129,12 @@ impl CreateCoreDefinitionFluentBuilder {
         self
     }
     /// Information about the initial version of the core definition.
-    pub fn set_initial_version(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreDefinitionVersion>,
-    ) -> Self {
+    pub fn set_initial_version(mut self, input: ::std::option::Option<crate::types::CoreDefinitionVersion>) -> Self {
         self.inner = self.inner.set_initial_version(input);
         self
     }
     /// Information about the initial version of the core definition.
-    pub fn get_initial_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoreDefinitionVersion> {
+    pub fn get_initial_version(&self) -> &::std::option::Option<crate::types::CoreDefinitionVersion> {
         self.inner.get_initial_version()
     }
     /// The name of the core definition.
@@ -180,30 +156,17 @@ impl CreateCoreDefinitionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag(s) to add to the new resource.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

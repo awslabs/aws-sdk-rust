@@ -37,17 +37,14 @@ impl DescribeRuleGroupInput {
 }
 impl DescribeRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleGroupInput`](crate::operation::describe_rule_group::DescribeRuleGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_rule_group::builders::DescribeRuleGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_rule_group::builders::DescribeRuleGroupInputBuilder {
         crate::operation::describe_rule_group::builders::DescribeRuleGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRuleGroupInput`](crate::operation::describe_rule_group::DescribeRuleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupInputBuilder {
     pub(crate) rule_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
@@ -56,19 +53,13 @@ pub struct DescribeRuleGroupInputBuilder {
 impl DescribeRuleGroupInputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_name = input;
         self
     }
@@ -79,19 +70,13 @@ impl DescribeRuleGroupInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_arn = input;
         self
     }
@@ -123,16 +108,11 @@ impl DescribeRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRuleGroupInput`](crate::operation::describe_rule_group::DescribeRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_rule_group::DescribeRuleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_rule_group::DescribeRuleGroupInput {
-                rule_group_name: self.rule_group_name,
-                rule_group_arn: self.rule_group_arn,
-                r#type: self.r#type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_rule_group::DescribeRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_rule_group::DescribeRuleGroupInput {
+            rule_group_name: self.rule_group_name,
+            rule_group_arn: self.rule_group_arn,
+            r#type: self.r#type,
+        })
     }
 }

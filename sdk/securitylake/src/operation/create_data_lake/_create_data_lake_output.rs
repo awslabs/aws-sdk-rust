@@ -28,9 +28,7 @@ impl CreateDataLakeOutput {
 
 /// A builder for [`CreateDataLakeOutput`](crate::operation::create_data_lake::CreateDataLakeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataLakeOutputBuilder {
     pub(crate) data_lakes: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeResource>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl CreateDataLakeOutputBuilder {
         self
     }
     /// <p>The created Security Lake configuration object.</p>
-    pub fn set_data_lakes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeResource>>,
-    ) -> Self {
+    pub fn set_data_lakes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeResource>>) -> Self {
         self.data_lakes = input;
         self
     }
     /// <p>The created Security Lake configuration object.</p>
-    pub fn get_data_lakes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeResource>> {
+    pub fn get_data_lakes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeResource>> {
         &self.data_lakes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

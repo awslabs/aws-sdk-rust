@@ -23,16 +23,14 @@ impl DeleteAlertManagerDefinitionInput {
 }
 impl DeleteAlertManagerDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteAlertManagerDefinitionInput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput).
-    pub fn builder() -> crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder {
         crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAlertManagerDefinitionInput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlertManagerDefinitionInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -73,11 +71,9 @@ impl DeleteAlertManagerDefinitionInputBuilder {
         crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput {
-                workspace_id: self.workspace_id,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput {
+            workspace_id: self.workspace_id,
+            client_token: self.client_token,
+        })
     }
 }

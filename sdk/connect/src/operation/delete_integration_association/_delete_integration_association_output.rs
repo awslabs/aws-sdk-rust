@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteIntegrationAssociationOutput {
 }
 impl DeleteIntegrationAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationAssociationOutput`](crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput).
-    pub fn builder() -> crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationOutputBuilder {
         crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIntegrationAssociationOutput`](crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntegrationAssociationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteIntegrationAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteIntegrationAssociationOutput`](crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput {
+    pub fn build(self) -> crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput {
         crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput {
             _request_id: self._request_id,
         }

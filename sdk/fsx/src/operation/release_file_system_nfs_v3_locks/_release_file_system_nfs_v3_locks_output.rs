@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ReleaseFileSystemNfsV3LocksOutput {
 }
 impl ReleaseFileSystemNfsV3LocksOutput {
     /// Creates a new builder-style object to manufacture [`ReleaseFileSystemNfsV3LocksOutput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput).
-    pub fn builder() -> crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksOutputBuilder{
+    pub fn builder() -> crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksOutputBuilder {
         crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReleaseFileSystemNfsV3LocksOutput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleaseFileSystemNfsV3LocksOutputBuilder {
     pub(crate) file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ReleaseFileSystemNfsV3LocksOutputBuilder {
         self
     }
     /// <p>A description of a specific Amazon FSx file system.</p>
-    pub fn set_file_system(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSystem>,
-    ) -> Self {
+    pub fn set_file_system(mut self, input: ::std::option::Option<crate::types::FileSystem>) -> Self {
         self.file_system = input;
         self
     }
@@ -63,9 +58,7 @@ impl ReleaseFileSystemNfsV3LocksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ReleaseFileSystemNfsV3LocksOutput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput {
+    pub fn build(self) -> crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput {
         crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput {
             file_system: self.file_system,
             _request_id: self._request_id,

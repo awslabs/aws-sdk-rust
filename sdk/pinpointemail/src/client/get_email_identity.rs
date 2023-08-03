@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`mail_from_attributes(Option<MailFromAttributes>)`](crate::operation::get_email_identity::GetEmailIdentityOutput::mail_from_attributes): <p>An object that contains information about the Mail-From attributes for the email identity.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::get_email_identity::GetEmailIdentityOutput::tags): <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
     /// - On failure, responds with [`SdkError<GetEmailIdentityError>`](crate::operation::get_email_identity::GetEmailIdentityError)
-    pub fn get_email_identity(
-        &self,
-    ) -> crate::operation::get_email_identity::builders::GetEmailIdentityFluentBuilder {
-        crate::operation::get_email_identity::builders::GetEmailIdentityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_email_identity(&self) -> crate::operation::get_email_identity::builders::GetEmailIdentityFluentBuilder {
+        crate::operation::get_email_identity::builders::GetEmailIdentityFluentBuilder::new(self.handle.clone())
     }
 }

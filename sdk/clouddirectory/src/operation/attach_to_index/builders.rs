@@ -10,10 +10,7 @@ impl AttachToIndexInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::attach_to_index::AttachToIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_to_index::AttachToIndexError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_to_index::AttachToIndexError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.attach_to_index();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AttachToIndexFluentBuilder {
         }
     }
     /// Access the AttachToIndex as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::attach_to_index::builders::AttachToIndexInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::attach_to_index::builders::AttachToIndexInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl AttachToIndexFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl AttachToIndexFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -140,10 +126,7 @@ impl AttachToIndexFluentBuilder {
         self
     }
     /// <p>A reference to the index that you are attaching the object to.</p>
-    pub fn set_index_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_index_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_index_reference(input);
         self
     }
@@ -157,10 +140,7 @@ impl AttachToIndexFluentBuilder {
         self
     }
     /// <p>A reference to the object that you are attaching to the index.</p>
-    pub fn set_target_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_target_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_target_reference(input);
         self
     }

@@ -23,12 +23,7 @@ pub struct GetTemplateOutput {
     pub required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>The status of the template.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TemplateStatus>,
@@ -52,9 +47,7 @@ impl GetTemplateOutput {
         self.description.as_deref()
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn layout_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LayoutConfiguration> {
+    pub fn layout_configuration(&self) -> ::std::option::Option<&crate::types::LayoutConfiguration> {
         self.layout_configuration.as_ref()
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
@@ -62,14 +55,7 @@ impl GetTemplateOutput {
         self.required_fields.as_deref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
     /// <p>The status of the template.</p>
@@ -91,9 +77,7 @@ impl GetTemplateOutput {
 
 /// A builder for [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateOutputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
@@ -101,12 +85,7 @@ pub struct GetTemplateOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) layout_configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
     pub(crate) required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     pub(crate) status: ::std::option::Option<crate::types::TemplateStatus>,
     _request_id: Option<String>,
 }
@@ -173,17 +152,12 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn set_layout_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutConfiguration>,
-    ) -> Self {
+    pub fn set_layout_configuration(mut self, input: ::std::option::Option<crate::types::LayoutConfiguration>) -> Self {
         self.layout_configuration = input;
         self
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn get_layout_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LayoutConfiguration> {
+    pub fn get_layout_configuration(&self) -> &::std::option::Option<crate::types::LayoutConfiguration> {
         &self.layout_configuration
     }
     /// Appends an item to `required_fields`.
@@ -198,17 +172,12 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn set_required_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
-    ) -> Self {
+    pub fn set_required_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>) -> Self {
         self.required_fields = input;
         self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn get_required_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
+    pub fn get_required_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
         &self.required_fields
     }
     /// Adds a key-value pair to `tags`.
@@ -216,11 +185,7 @@ impl GetTemplateOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.tags = ::std::option::Option::Some(hash_map);
@@ -229,12 +194,7 @@ impl GetTemplateOutputBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn set_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::option::Option<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     ) -> Self {
         self.tags = input;
         self
@@ -242,12 +202,7 @@ impl GetTemplateOutputBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn get_tags(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     /// <p>The status of the template.</p>
@@ -256,10 +211,7 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// <p>The status of the template.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateStatus>) -> Self {
         self.status = input;
         self
     }

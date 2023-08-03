@@ -37,10 +37,7 @@ impl DeleteCustomerGatewayFluentBuilder {
         }
     }
     /// Access the DeleteCustomerGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_customer_gateway::builders::DeleteCustomerGatewayInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_customer_gateway::builders::DeleteCustomerGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteCustomerGatewayFluentBuilder {
             crate::operation::delete_customer_gateway::DeleteCustomerGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_customer_gateway::DeleteCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_customer_gateway::DeleteCustomerGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteCustomerGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteCustomerGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_customer_gateway::DeleteCustomerGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_customer_gateway::DeleteCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_customer_gateway::DeleteCustomerGatewayError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteCustomerGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_customer_gateway::DeleteCustomerGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_customer_gateway::DeleteCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_customer_gateway::DeleteCustomerGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteCustomerGatewayFluentBuilder {
             crate::operation::delete_customer_gateway::DeleteCustomerGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_customer_gateway::DeleteCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_customer_gateway::DeleteCustomerGatewayError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn customer_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_gateway_id(input.into());
         self
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn set_customer_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_gateway_id(input);
         self
     }

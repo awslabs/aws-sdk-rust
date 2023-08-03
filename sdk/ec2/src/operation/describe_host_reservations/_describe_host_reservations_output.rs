@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeHostReservationsOutput {
 }
 impl DescribeHostReservationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHostReservationsOutput`](crate::operation::describe_host_reservations::DescribeHostReservationsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_host_reservations::builders::DescribeHostReservationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_host_reservations::builders::DescribeHostReservationsOutputBuilder {
         crate::operation::describe_host_reservations::builders::DescribeHostReservationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHostReservationsOutput`](crate::operation::describe_host_reservations::DescribeHostReservationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHostReservationsOutputBuilder {
-    pub(crate) host_reservation_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::HostReservation>>,
+    pub(crate) host_reservation_set: ::std::option::Option<::std::vec::Vec<crate::types::HostReservation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeHostReservationsOutputBuilder {
         self
     }
     /// <p>Details about the reservation's configuration.</p>
-    pub fn set_host_reservation_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HostReservation>>,
-    ) -> Self {
+    pub fn set_host_reservation_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostReservation>>) -> Self {
         self.host_reservation_set = input;
         self
     }
     /// <p>Details about the reservation's configuration.</p>
-    pub fn get_host_reservation_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostReservation>> {
+    pub fn get_host_reservation_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostReservation>> {
         &self.host_reservation_set
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -96,9 +86,7 @@ impl DescribeHostReservationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeHostReservationsOutput`](crate::operation::describe_host_reservations::DescribeHostReservationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_host_reservations::DescribeHostReservationsOutput {
+    pub fn build(self) -> crate::operation::describe_host_reservations::DescribeHostReservationsOutput {
         crate::operation::describe_host_reservations::DescribeHostReservationsOutput {
             host_reservation_set: self.host_reservation_set,
             next_token: self.next_token,

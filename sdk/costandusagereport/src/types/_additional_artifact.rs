@@ -39,13 +39,7 @@
 /// <p>The types of manifest that you want AWS to create for this report.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AdditionalArtifact {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AdditionalArtifact {
             "ATHENA" => AdditionalArtifact::Athena,
             "QUICKSIGHT" => AdditionalArtifact::Quicksight,
             "REDSHIFT" => AdditionalArtifact::Redshift,
-            other => AdditionalArtifact::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AdditionalArtifact::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

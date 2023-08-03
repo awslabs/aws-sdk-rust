@@ -12,10 +12,7 @@ pub fn ser_put_bot_alias_input(
     if let Some(var_3) = &input.conversation_logs {
         #[allow(unused_mut)]
         let mut object_4 = object.key("conversationLogs").start_object();
-        crate::protocol_serde::shape_conversation_logs_request::ser_conversation_logs_request(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_conversation_logs_request::ser_conversation_logs_request(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.description {

@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListUserProfilesOutput {
 }
 impl ListUserProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListUserProfilesOutput`](crate::operation::list_user_profiles::ListUserProfilesOutput).
-    pub fn builder() -> crate::operation::list_user_profiles::builders::ListUserProfilesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_user_profiles::builders::ListUserProfilesOutputBuilder {
         crate::operation::list_user_profiles::builders::ListUserProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserProfilesOutput`](crate::operation::list_user_profiles::ListUserProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserProfilesOutputBuilder {
-    pub(crate) user_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserProfileDetails>>,
+    pub(crate) user_profiles: ::std::option::Option<::std::vec::Vec<crate::types::UserProfileDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListUserProfilesOutputBuilder {
         self
     }
     /// <p>The list of user profiles.</p>
-    pub fn set_user_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserProfileDetails>>,
-    ) -> Self {
+    pub fn set_user_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserProfileDetails>>) -> Self {
         self.user_profiles = input;
         self
     }
     /// <p>The list of user profiles.</p>
-    pub fn get_user_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserProfileDetails>> {
+    pub fn get_user_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserProfileDetails>> {
         &self.user_profiles
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>

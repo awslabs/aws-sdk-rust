@@ -29,18 +29,14 @@ impl RemoveFacetFromObjectInput {
 }
 impl RemoveFacetFromObjectInput {
     /// Creates a new builder-style object to manufacture [`RemoveFacetFromObjectInput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput).
-    pub fn builder(
-    ) -> crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectInputBuilder {
         crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveFacetFromObjectInput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveFacetFromObjectInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
@@ -48,18 +44,12 @@ pub struct RemoveFacetFromObjectInputBuilder {
 }
 impl RemoveFacetFromObjectInputBuilder {
     /// <p>The ARN of the directory in which the object resides.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the directory in which the object resides.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -73,10 +63,7 @@ impl RemoveFacetFromObjectInputBuilder {
         self
     }
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
-    pub fn set_schema_facet(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
+    pub fn set_schema_facet(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
         self.schema_facet = input;
         self
     }
@@ -90,10 +77,7 @@ impl RemoveFacetFromObjectInputBuilder {
         self
     }
     /// <p>A reference to the object to remove the facet from.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }
@@ -104,16 +88,12 @@ impl RemoveFacetFromObjectInputBuilder {
     /// Consumes the builder and constructs a [`RemoveFacetFromObjectInput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput {
-                directory_arn: self.directory_arn,
-                schema_facet: self.schema_facet,
-                object_reference: self.object_reference,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput {
+            directory_arn: self.directory_arn,
+            schema_facet: self.schema_facet,
+            object_reference: self.object_reference,
+        })
     }
 }

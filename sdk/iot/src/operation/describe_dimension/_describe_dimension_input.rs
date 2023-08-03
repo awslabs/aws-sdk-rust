@@ -15,17 +15,14 @@ impl DescribeDimensionInput {
 }
 impl DescribeDimensionInput {
     /// Creates a new builder-style object to manufacture [`DescribeDimensionInput`](crate::operation::describe_dimension::DescribeDimensionInput).
-    pub fn builder() -> crate::operation::describe_dimension::builders::DescribeDimensionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_dimension::builders::DescribeDimensionInputBuilder {
         crate::operation::describe_dimension::builders::DescribeDimensionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDimensionInput`](crate::operation::describe_dimension::DescribeDimensionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDimensionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DescribeDimensionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDimensionInput`](crate::operation::describe_dimension::DescribeDimensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dimension::DescribeDimensionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_dimension::DescribeDimensionInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_dimension::DescribeDimensionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_dimension::DescribeDimensionInput { name: self.name })
     }
 }

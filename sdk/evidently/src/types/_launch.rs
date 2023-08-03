@@ -45,13 +45,10 @@ pub struct Launch {
     pub r#type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     #[doc(hidden)]
-    pub scheduled_splits_definition:
-        ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>,
+    pub scheduled_splits_definition: ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>,
     /// <p>The list of tag keys and values associated with this launch.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Launch {
     /// <p>The ARN of the launch.</p>
@@ -107,17 +104,11 @@ impl Launch {
         self.r#type.as_ref()
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn scheduled_splits_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduledSplitsLaunchDefinition> {
+    pub fn scheduled_splits_definition(&self) -> ::std::option::Option<&crate::types::ScheduledSplitsLaunchDefinition> {
         self.scheduled_splits_definition.as_ref()
     }
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -130,9 +121,7 @@ impl Launch {
 
 /// A builder for [`Launch`](crate::types::Launch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -147,11 +136,8 @@ pub struct LaunchBuilder {
     pub(crate) metric_monitors: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>>,
     pub(crate) randomization_salt: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::LaunchType>,
-    pub(crate) scheduled_splits_definition:
-        ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) scheduled_splits_definition: ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LaunchBuilder {
     /// <p>The ARN of the launch.</p>
@@ -211,18 +197,12 @@ impl LaunchBuilder {
         &self.status
     }
     /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -250,10 +230,7 @@ impl LaunchBuilder {
         self
     }
     /// <p>The date and time that the launch is created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -267,10 +244,7 @@ impl LaunchBuilder {
         self
     }
     /// <p>The date and time that the launch was most recently updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -284,10 +258,7 @@ impl LaunchBuilder {
         self
     }
     /// <p>A structure that contains information about the start and end times of the launch.</p>
-    pub fn set_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchExecution>,
-    ) -> Self {
+    pub fn set_execution(mut self, input: ::std::option::Option<crate::types::LaunchExecution>) -> Self {
         self.execution = input;
         self
     }
@@ -307,10 +278,7 @@ impl LaunchBuilder {
         self
     }
     /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroup>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroup>>) -> Self {
         self.groups = input;
         self
     }
@@ -330,32 +298,21 @@ impl LaunchBuilder {
         self
     }
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
-    pub fn set_metric_monitors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>>,
-    ) -> Self {
+    pub fn set_metric_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>>) -> Self {
         self.metric_monitors = input;
         self
     }
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
-    pub fn get_metric_monitors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>> {
+    pub fn get_metric_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>> {
         &self.metric_monitors
     }
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn randomization_salt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.randomization_salt = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
-    pub fn set_randomization_salt(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_randomization_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.randomization_salt = input;
         self
     }
@@ -378,25 +335,17 @@ impl LaunchBuilder {
         &self.r#type
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn scheduled_splits_definition(
-        mut self,
-        input: crate::types::ScheduledSplitsLaunchDefinition,
-    ) -> Self {
+    pub fn scheduled_splits_definition(mut self, input: crate::types::ScheduledSplitsLaunchDefinition) -> Self {
         self.scheduled_splits_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn set_scheduled_splits_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>,
-    ) -> Self {
+    pub fn set_scheduled_splits_definition(mut self, input: ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>) -> Self {
         self.scheduled_splits_definition = input;
         self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn get_scheduled_splits_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition> {
+    pub fn get_scheduled_splits_definition(&self) -> &::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition> {
         &self.scheduled_splits_definition
     }
     /// Adds a key-value pair to `tags`.
@@ -404,32 +353,19 @@ impl LaunchBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Launch`](crate::types::Launch).

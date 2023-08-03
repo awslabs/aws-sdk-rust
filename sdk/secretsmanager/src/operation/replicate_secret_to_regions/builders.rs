@@ -28,7 +28,7 @@ impl ReplicateSecretToRegionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReplicateSecretToRegionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsInputBuilder,
+    inner: crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsInputBuilder,
 }
 impl ReplicateSecretToRegionsFluentBuilder {
     /// Creates a new `ReplicateSecretToRegions`.
@@ -39,7 +39,7 @@ impl ReplicateSecretToRegionsFluentBuilder {
         }
     }
     /// Access the ReplicateSecretToRegions as a reference.
-    pub fn as_input(&self) -> &crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ReplicateSecretToRegionsFluentBuilder {
             crate::operation::replicate_secret_to_regions::ReplicateSecretToRegions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ReplicateSecretToRegionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ReplicateSecretToRegionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ReplicateSecretToRegionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl ReplicateSecretToRegionsFluentBuilder {
             crate::operation::replicate_secret_to_regions::ReplicateSecretToRegions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +135,12 @@ impl ReplicateSecretToRegionsFluentBuilder {
         self
     }
     /// <p>A list of Regions in which to replicate the secret.</p>
-    pub fn set_add_replica_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
-    ) -> Self {
+    pub fn set_add_replica_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>) -> Self {
         self.inner = self.inner.set_add_replica_regions(input);
         self
     }
     /// <p>A list of Regions in which to replicate the secret.</p>
-    pub fn get_add_replica_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>> {
+    pub fn get_add_replica_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>> {
         self.inner.get_add_replica_regions()
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
@@ -165,10 +149,7 @@ impl ReplicateSecretToRegionsFluentBuilder {
         self
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
-    pub fn set_force_overwrite_replica_secret(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_force_overwrite_replica_secret(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_overwrite_replica_secret(input);
         self
     }

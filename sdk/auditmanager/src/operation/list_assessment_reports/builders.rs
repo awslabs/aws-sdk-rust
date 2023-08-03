@@ -37,10 +37,7 @@ impl ListAssessmentReportsFluentBuilder {
         }
     }
     /// Access the ListAssessmentReports as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_assessment_reports::builders::ListAssessmentReportsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_assessment_reports::builders::ListAssessmentReportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListAssessmentReportsFluentBuilder {
             crate::operation::list_assessment_reports::ListAssessmentReports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_reports::ListAssessmentReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_reports::ListAssessmentReportsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListAssessmentReportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListAssessmentReportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_reports::ListAssessmentReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_reports::ListAssessmentReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_reports::ListAssessmentReportsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListAssessmentReportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_reports::ListAssessmentReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_reports::ListAssessmentReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_reports::ListAssessmentReportsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListAssessmentReportsFluentBuilder {
             crate::operation::list_assessment_reports::ListAssessmentReports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_reports::ListAssessmentReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_reports::ListAssessmentReportsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_reports::paginator::ListAssessmentReportsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_assessment_reports::paginator::ListAssessmentReportsPaginator {
-        crate::operation::list_assessment_reports::paginator::ListAssessmentReportsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_assessment_reports::paginator::ListAssessmentReportsPaginator {
+        crate::operation::list_assessment_reports::paginator::ListAssessmentReportsPaginator::new(self.handle, self.inner)
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

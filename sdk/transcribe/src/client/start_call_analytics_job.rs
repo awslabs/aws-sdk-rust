@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StartCallAnalyticsJobOutput`](crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput) with field(s):
     ///   - [`call_analytics_job(Option<CallAnalyticsJob>)`](crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput::call_analytics_job): <p>Provides detailed information about the current Call Analytics job, including job status and, if applicable, failure reason.</p>
     /// - On failure, responds with [`SdkError<StartCallAnalyticsJobError>`](crate::operation::start_call_analytics_job::StartCallAnalyticsJobError)
-    pub fn start_call_analytics_job(
-        &self,
-    ) -> crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobFluentBuilder
-    {
+    pub fn start_call_analytics_job(&self) -> crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobFluentBuilder {
         crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobFluentBuilder::new(self.handle.clone())
     }
 }

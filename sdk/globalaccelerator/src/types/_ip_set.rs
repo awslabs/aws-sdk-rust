@@ -39,9 +39,7 @@ impl IpSet {
 
 /// A builder for [`IpSet`](crate::types::IpSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpSetBuilder {
     pub(crate) ip_family: ::std::option::Option<::std::string::String>,
     pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -77,17 +75,12 @@ impl IpSetBuilder {
         self
     }
     /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
-    pub fn set_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_addresses = input;
         self
     }
     /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
-    pub fn get_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ip_addresses
     }
     /// <p>The types of IP addresses included in this IP set. </p>
@@ -96,10 +89,7 @@ impl IpSetBuilder {
         self
     }
     /// <p>The types of IP addresses included in this IP set. </p>
-    pub fn set_ip_address_family(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressFamily>,
-    ) -> Self {
+    pub fn set_ip_address_family(mut self, input: ::std::option::Option<crate::types::IpAddressFamily>) -> Self {
         self.ip_address_family = input;
         self
     }

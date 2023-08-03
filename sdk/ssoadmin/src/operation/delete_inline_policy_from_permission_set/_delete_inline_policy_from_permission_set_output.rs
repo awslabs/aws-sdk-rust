@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteInlinePolicyFromPermissionSetOu
 }
 impl DeleteInlinePolicyFromPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInlinePolicyFromPermissionSetOutput`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetOutput).
-    pub fn builder() -> crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetOutputBuilder{
+    pub fn builder() -> crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetOutputBuilder {
         crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInlinePolicyFromPermissionSetOutput`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInlinePolicyFromPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteInlinePolicyFromPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteInlinePolicyFromPermissionSetOutput`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetOutput).
-    pub fn build(self) -> crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetOutput{
+    pub fn build(self) -> crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetOutput {
         crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetOutput {
             _request_id: self._request_id,
         }

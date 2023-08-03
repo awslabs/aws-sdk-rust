@@ -38,18 +38,14 @@ impl UpdateAssumeRolePolicyInput {
 }
 impl UpdateAssumeRolePolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateAssumeRolePolicyInput`](crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyInputBuilder {
         crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssumeRolePolicyInput`](crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssumeRolePolicyInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
@@ -80,10 +76,7 @@ impl UpdateAssumeRolePolicyInputBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
@@ -95,10 +88,7 @@ impl UpdateAssumeRolePolicyInputBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -120,11 +110,9 @@ impl UpdateAssumeRolePolicyInputBuilder {
         crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyInput {
-                role_name: self.role_name,
-                policy_document: self.policy_document,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyInput {
+            role_name: self.role_name,
+            policy_document: self.policy_document,
+        })
     }
 }

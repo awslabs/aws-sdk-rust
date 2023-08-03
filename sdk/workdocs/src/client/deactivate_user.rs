@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`authentication_token(impl ::std::convert::Into<String>)`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     /// - On success, responds with [`DeactivateUserOutput`](crate::operation::deactivate_user::DeactivateUserOutput)
     /// - On failure, responds with [`SdkError<DeactivateUserError>`](crate::operation::deactivate_user::DeactivateUserError)
-    pub fn deactivate_user(
-        &self,
-    ) -> crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder {
-        crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deactivate_user(&self) -> crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder {
+        crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::new(self.handle.clone())
     }
 }

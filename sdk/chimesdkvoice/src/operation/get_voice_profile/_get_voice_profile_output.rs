@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVoiceProfileOutput {
 }
 impl GetVoiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceProfileOutput`](crate::operation::get_voice_profile::GetVoiceProfileOutput).
-    pub fn builder() -> crate::operation::get_voice_profile::builders::GetVoiceProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_voice_profile::builders::GetVoiceProfileOutputBuilder {
         crate::operation::get_voice_profile::builders::GetVoiceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceProfileOutput`](crate::operation::get_voice_profile::GetVoiceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceProfileOutputBuilder {
     pub(crate) voice_profile: ::std::option::Option<crate::types::VoiceProfile>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetVoiceProfileOutputBuilder {
         self
     }
     /// <p>The voice profile details.</p>
-    pub fn set_voice_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceProfile>,
-    ) -> Self {
+    pub fn set_voice_profile(mut self, input: ::std::option::Option<crate::types::VoiceProfile>) -> Self {
         self.voice_profile = input;
         self
     }

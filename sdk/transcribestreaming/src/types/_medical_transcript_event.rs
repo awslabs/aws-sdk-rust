@@ -24,9 +24,7 @@ impl MedicalTranscriptEvent {
 
 /// A builder for [`MedicalTranscriptEvent`](crate::types::MedicalTranscriptEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MedicalTranscriptEventBuilder {
     pub(crate) transcript: ::std::option::Option<crate::types::MedicalTranscript>,
 }
@@ -37,10 +35,7 @@ impl MedicalTranscriptEventBuilder {
         self
     }
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn set_transcript(
-        mut self,
-        input: ::std::option::Option<crate::types::MedicalTranscript>,
-    ) -> Self {
+    pub fn set_transcript(mut self, input: ::std::option::Option<crate::types::MedicalTranscript>) -> Self {
         self.transcript = input;
         self
     }
@@ -50,8 +45,6 @@ impl MedicalTranscriptEventBuilder {
     }
     /// Consumes the builder and constructs a [`MedicalTranscriptEvent`](crate::types::MedicalTranscriptEvent).
     pub fn build(self) -> crate::types::MedicalTranscriptEvent {
-        crate::types::MedicalTranscriptEvent {
-            transcript: self.transcript,
-        }
+        crate::types::MedicalTranscriptEvent { transcript: self.transcript }
     }
 }

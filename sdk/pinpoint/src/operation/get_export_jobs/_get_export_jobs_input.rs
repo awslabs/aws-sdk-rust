@@ -36,9 +36,7 @@ impl GetExportJobsInput {
 
 /// A builder for [`GetExportJobsInput`](crate::operation::get_export_jobs::GetExportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExportJobsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct GetExportJobsInputBuilder {
 }
 impl GetExportJobsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl GetExportJobsInputBuilder {
     /// Consumes the builder and constructs a [`GetExportJobsInput`](crate::operation::get_export_jobs::GetExportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_export_jobs::GetExportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_export_jobs::GetExportJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_export_jobs::GetExportJobsInput {
             application_id: self.application_id,
             page_size: self.page_size,

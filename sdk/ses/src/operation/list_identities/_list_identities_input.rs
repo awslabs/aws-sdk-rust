@@ -37,9 +37,7 @@ impl ListIdentitiesInput {
 
 /// A builder for [`ListIdentitiesInput`](crate::operation::list_identities::ListIdentitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentitiesInputBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ListIdentitiesInputBuilder {
         self
     }
     /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -94,10 +89,7 @@ impl ListIdentitiesInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentitiesInput`](crate::operation::list_identities::ListIdentitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_identities::ListIdentitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_identities::ListIdentitiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_identities::ListIdentitiesInput {
             identity_type: self.identity_type,
             next_token: self.next_token,

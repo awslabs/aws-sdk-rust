@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::create_function_definition::CreateFunctionDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::create_function_definition::CreateFunctionDefinitionOutput::name): The name of the definition.
     /// - On failure, responds with [`SdkError<CreateFunctionDefinitionError>`](crate::operation::create_function_definition::CreateFunctionDefinitionError)
-    pub fn create_function_definition(
-        &self,
-    ) -> crate::operation::create_function_definition::builders::CreateFunctionDefinitionFluentBuilder
-    {
+    pub fn create_function_definition(&self) -> crate::operation::create_function_definition::builders::CreateFunctionDefinitionFluentBuilder {
         crate::operation::create_function_definition::builders::CreateFunctionDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

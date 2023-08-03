@@ -10,10 +10,7 @@ impl GetVaultLockInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_vault_lock::GetVaultLockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vault_lock::GetVaultLockError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vault_lock::GetVaultLockError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_vault_lock();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl GetVaultLockFluentBuilder {
         }
     }
     /// Access the GetVaultLock as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_vault_lock::builders::GetVaultLockInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_vault_lock::builders::GetVaultLockInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,10 +64,7 @@ impl GetVaultLockFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

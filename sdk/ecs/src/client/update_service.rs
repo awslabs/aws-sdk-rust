@@ -24,11 +24,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateServiceOutput`](crate::operation::update_service::UpdateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::update_service::UpdateServiceOutput::service): <p>The full description of your service following the update call.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::operation::update_service::UpdateServiceError)
-    pub fn update_service(
-        &self,
-    ) -> crate::operation::update_service::builders::UpdateServiceFluentBuilder {
-        crate::operation::update_service::builders::UpdateServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_service(&self) -> crate::operation::update_service::builders::UpdateServiceFluentBuilder {
+        crate::operation::update_service::builders::UpdateServiceFluentBuilder::new(self.handle.clone())
     }
 }

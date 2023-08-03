@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`instance_type_details(Option<Vec<InstanceTypeDetails>>)`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput::instance_type_details): <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListInstanceTypeDetailsError>`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsError)
-    pub fn list_instance_type_details(
-        &self,
-    ) -> crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsFluentBuilder
-    {
+    pub fn list_instance_type_details(&self) -> crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsFluentBuilder {
         crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsFluentBuilder::new(self.handle.clone())
     }
 }

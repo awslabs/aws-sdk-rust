@@ -53,9 +53,7 @@ impl MacAttributes {
     }
     /// Tries to convert the enum instance into [`DukptIso9797Algorithm1`](crate::types::MacAttributes::DukptIso9797Algorithm1), extracting the inner [`MacAlgorithmDukpt`](crate::types::MacAlgorithmDukpt).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_dukpt_iso9797_algorithm1(
-        &self,
-    ) -> ::std::result::Result<&crate::types::MacAlgorithmDukpt, &Self> {
+    pub fn as_dukpt_iso9797_algorithm1(&self) -> ::std::result::Result<&crate::types::MacAlgorithmDukpt, &Self> {
         if let MacAttributes::DukptIso9797Algorithm1(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -68,9 +66,7 @@ impl MacAttributes {
     }
     /// Tries to convert the enum instance into [`DukptIso9797Algorithm3`](crate::types::MacAttributes::DukptIso9797Algorithm3), extracting the inner [`MacAlgorithmDukpt`](crate::types::MacAlgorithmDukpt).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_dukpt_iso9797_algorithm3(
-        &self,
-    ) -> ::std::result::Result<&crate::types::MacAlgorithmDukpt, &Self> {
+    pub fn as_dukpt_iso9797_algorithm3(&self) -> ::std::result::Result<&crate::types::MacAlgorithmDukpt, &Self> {
         if let MacAttributes::DukptIso9797Algorithm3(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -23,36 +23,26 @@ impl TestRenderEmailTemplateInput {
 }
 impl TestRenderEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`TestRenderEmailTemplateInput`](crate::operation::test_render_email_template::TestRenderEmailTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::test_render_email_template::builders::TestRenderEmailTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::test_render_email_template::builders::TestRenderEmailTemplateInputBuilder {
         crate::operation::test_render_email_template::builders::TestRenderEmailTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`TestRenderEmailTemplateInput`](crate::operation::test_render_email_template::TestRenderEmailTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestRenderEmailTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_data: ::std::option::Option<::std::string::String>,
 }
 impl TestRenderEmailTemplateInputBuilder {
     /// <p>The name of the template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -61,18 +51,12 @@ impl TestRenderEmailTemplateInputBuilder {
         &self.template_name
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn template_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn set_template_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_data = input;
         self
     }
@@ -87,11 +71,9 @@ impl TestRenderEmailTemplateInputBuilder {
         crate::operation::test_render_email_template::TestRenderEmailTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::test_render_email_template::TestRenderEmailTemplateInput {
-                template_name: self.template_name,
-                template_data: self.template_data,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::test_render_email_template::TestRenderEmailTemplateInput {
+            template_name: self.template_name,
+            template_data: self.template_data,
+        })
     }
 }

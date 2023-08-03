@@ -10,10 +10,7 @@ impl CreateBudgetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_budget::CreateBudgetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_budget::CreateBudgetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_budget();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateBudgetFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_budget::CreateBudget,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_budget::CreateBudget, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateBudgetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CreateBudgetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_budget::CreateBudget,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_budget::CreateBudget, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError>,
     > {
         self.customize_middleware().await
@@ -147,10 +135,7 @@ impl CreateBudgetFluentBuilder {
     /// To override the contents of this collection use [`set_notifications_with_subscribers`](Self::set_notifications_with_subscribers).
     ///
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
-    pub fn notifications_with_subscribers(
-        mut self,
-        input: crate::types::NotificationWithSubscribers,
-    ) -> Self {
+    pub fn notifications_with_subscribers(mut self, input: crate::types::NotificationWithSubscribers) -> Self {
         self.inner = self.inner.notifications_with_subscribers(input);
         self
     }
@@ -163,9 +148,7 @@ impl CreateBudgetFluentBuilder {
         self
     }
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
-    pub fn get_notifications_with_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>> {
+    pub fn get_notifications_with_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>> {
         self.inner.get_notifications_with_subscribers()
     }
 }

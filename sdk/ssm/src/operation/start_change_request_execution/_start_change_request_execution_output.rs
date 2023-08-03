@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for StartChangeRequestExecutionOutput {
 }
 impl StartChangeRequestExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartChangeRequestExecutionOutput`](crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput).
-    pub fn builder() -> crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionOutputBuilder {
         crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartChangeRequestExecutionOutput`](crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartChangeRequestExecutionOutputBuilder {
     pub(crate) automation_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartChangeRequestExecutionOutputBuilder {
     /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
-    pub fn automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automation_execution_id = input;
         self
     }
@@ -66,9 +58,7 @@ impl StartChangeRequestExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartChangeRequestExecutionOutput`](crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput {
+    pub fn build(self) -> crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput {
         crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput {
             automation_execution_id: self.automation_execution_id,
             _request_id: self._request_id,

@@ -15,17 +15,14 @@ impl GetCachePolicyConfigInput {
 }
 impl GetCachePolicyConfigInput {
     /// Creates a new builder-style object to manufacture [`GetCachePolicyConfigInput`](crate::operation::get_cache_policy_config::GetCachePolicyConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigInputBuilder {
         crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCachePolicyConfigInput`](crate::operation::get_cache_policy_config::GetCachePolicyConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCachePolicyConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl GetCachePolicyConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetCachePolicyConfigInput`](crate::operation::get_cache_policy_config::GetCachePolicyConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cache_policy_config::GetCachePolicyConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_cache_policy_config::GetCachePolicyConfigInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_cache_policy_config::GetCachePolicyConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_cache_policy_config::GetCachePolicyConfigInput { id: self.id })
     }
 }

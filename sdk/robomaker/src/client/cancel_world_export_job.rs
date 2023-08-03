@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`job(impl ::std::convert::Into<String>)`](crate::operation::cancel_world_export_job::builders::CancelWorldExportJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::cancel_world_export_job::builders::CancelWorldExportJobFluentBuilder::set_job): <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
     /// - On success, responds with [`CancelWorldExportJobOutput`](crate::operation::cancel_world_export_job::CancelWorldExportJobOutput)
     /// - On failure, responds with [`SdkError<CancelWorldExportJobError>`](crate::operation::cancel_world_export_job::CancelWorldExportJobError)
-    pub fn cancel_world_export_job(
-        &self,
-    ) -> crate::operation::cancel_world_export_job::builders::CancelWorldExportJobFluentBuilder
-    {
-        crate::operation::cancel_world_export_job::builders::CancelWorldExportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_world_export_job(&self) -> crate::operation::cancel_world_export_job::builders::CancelWorldExportJobFluentBuilder {
+        crate::operation::cancel_world_export_job::builders::CancelWorldExportJobFluentBuilder::new(self.handle.clone())
     }
 }

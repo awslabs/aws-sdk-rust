@@ -12,8 +12,7 @@ pub struct VerifiedAccessInstance {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
     #[doc(hidden)]
-    pub verified_access_trust_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProviderCondensed>>,
+    pub verified_access_trust_providers: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProviderCondensed>>,
     /// <p>The creation time.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
@@ -34,9 +33,7 @@ impl VerifiedAccessInstance {
         self.description.as_deref()
     }
     /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
-    pub fn verified_access_trust_providers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VerifiedAccessTrustProviderCondensed]> {
+    pub fn verified_access_trust_providers(&self) -> ::std::option::Option<&[crate::types::VerifiedAccessTrustProviderCondensed]> {
         self.verified_access_trust_providers.as_deref()
     }
     /// <p>The creation time.</p>
@@ -61,32 +58,23 @@ impl VerifiedAccessInstance {
 
 /// A builder for [`VerifiedAccessInstance`](crate::types::VerifiedAccessInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifiedAccessInstanceBuilder {
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) verified_access_trust_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProviderCondensed>>,
+    pub(crate) verified_access_trust_providers: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProviderCondensed>>,
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VerifiedAccessInstanceBuilder {
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_instance_id = input;
         self
     }
@@ -113,10 +101,7 @@ impl VerifiedAccessInstanceBuilder {
     /// To override the contents of this collection use [`set_verified_access_trust_providers`](Self::set_verified_access_trust_providers).
     ///
     /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
-    pub fn verified_access_trust_providers(
-        mut self,
-        input: crate::types::VerifiedAccessTrustProviderCondensed,
-    ) -> Self {
+    pub fn verified_access_trust_providers(mut self, input: crate::types::VerifiedAccessTrustProviderCondensed) -> Self {
         let mut v = self.verified_access_trust_providers.unwrap_or_default();
         v.push(input);
         self.verified_access_trust_providers = ::std::option::Option::Some(v);
@@ -125,33 +110,22 @@ impl VerifiedAccessInstanceBuilder {
     /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
     pub fn set_verified_access_trust_providers(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::VerifiedAccessTrustProviderCondensed>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProviderCondensed>>,
     ) -> Self {
         self.verified_access_trust_providers = input;
         self
     }
     /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
-    pub fn get_verified_access_trust_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProviderCondensed>>
-    {
+    pub fn get_verified_access_trust_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProviderCondensed>> {
         &self.verified_access_trust_providers
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
@@ -160,18 +134,12 @@ impl VerifiedAccessInstanceBuilder {
         &self.creation_time
     }
     /// <p>The last updated time.</p>
-    pub fn last_updated_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last updated time.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -191,10 +159,7 @@ impl VerifiedAccessInstanceBuilder {
         self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

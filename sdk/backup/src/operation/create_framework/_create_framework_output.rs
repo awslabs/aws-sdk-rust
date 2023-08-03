@@ -35,9 +35,7 @@ impl CreateFrameworkOutput {
 
 /// A builder for [`CreateFrameworkOutput`](crate::operation::create_framework::CreateFrameworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFrameworkOutputBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
     pub(crate) framework_arn: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct CreateFrameworkOutputBuilder {
 }
 impl CreateFrameworkOutputBuilder {
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn set_framework_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_name = input;
         self
     }
@@ -65,18 +57,12 @@ impl CreateFrameworkOutputBuilder {
         &self.framework_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn framework_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn set_framework_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_arn = input;
         self
     }

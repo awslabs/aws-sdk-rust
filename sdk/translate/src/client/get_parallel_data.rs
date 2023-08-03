@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`auxiliary_data_location(Option<ParallelDataDataLocation>)`](crate::operation::get_parallel_data::GetParallelDataOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     ///   - [`latest_update_attempt_auxiliary_data_location(Option<ParallelDataDataLocation>)`](crate::operation::get_parallel_data::GetParallelDataOutput::latest_update_attempt_auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     /// - On failure, responds with [`SdkError<GetParallelDataError>`](crate::operation::get_parallel_data::GetParallelDataError)
-    pub fn get_parallel_data(
-        &self,
-    ) -> crate::operation::get_parallel_data::builders::GetParallelDataFluentBuilder {
-        crate::operation::get_parallel_data::builders::GetParallelDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_parallel_data(&self) -> crate::operation::get_parallel_data::builders::GetParallelDataFluentBuilder {
+        crate::operation::get_parallel_data::builders::GetParallelDataFluentBuilder::new(self.handle.clone())
     }
 }

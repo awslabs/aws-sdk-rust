@@ -4,17 +4,13 @@ pub fn ser_hls_encryption_settings(
     input: &crate::types::HlsEncryptionSettings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.constant_initialization_vector {
-        object
-            .key("constantInitializationVector")
-            .string(var_1.as_str());
+        object.key("constantInitializationVector").string(var_1.as_str());
     }
     if let Some(var_2) = &input.encryption_method {
         object.key("encryptionMethod").string(var_2.as_str());
     }
     if let Some(var_3) = &input.initialization_vector_in_manifest {
-        object
-            .key("initializationVectorInManifest")
-            .string(var_3.as_str());
+        object.key("initializationVectorInManifest").string(var_3.as_str());
     }
     if let Some(var_4) = &input.offline_encrypted {
         object.key("offlineEncrypted").string(var_4.as_str());
@@ -22,19 +18,13 @@ pub fn ser_hls_encryption_settings(
     if let Some(var_5) = &input.speke_key_provider {
         #[allow(unused_mut)]
         let mut object_6 = object.key("spekeKeyProvider").start_object();
-        crate::protocol_serde::shape_speke_key_provider::ser_speke_key_provider(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_speke_key_provider::ser_speke_key_provider(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.static_key_provider {
         #[allow(unused_mut)]
         let mut object_8 = object.key("staticKeyProvider").start_object();
-        crate::protocol_serde::shape_static_key_provider::ser_static_key_provider(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_static_key_provider::ser_static_key_provider(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.r#type {
@@ -45,17 +35,9 @@ pub fn ser_hls_encryption_settings(
 
 pub(crate) fn de_hls_encryption_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HlsEncryptionSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HlsEncryptionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -65,98 +47,66 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "constantInitializationVector" => {
                             builder = builder.set_constant_initialization_vector(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "encryptionMethod" => {
                             builder = builder.set_encryption_method(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::HlsEncryptionType::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::HlsEncryptionType::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "initializationVectorInManifest" => {
                             builder = builder.set_initialization_vector_in_manifest(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::HlsInitializationVectorInManifest::from(
-                                            u.as_ref(),
-                                        )
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::HlsInitializationVectorInManifest::from(u.as_ref()))
                                     })
-                                })
-                                .transpose()?,
+                                    .transpose()?,
                             );
                         }
                         "offlineEncrypted" => {
                             builder = builder.set_offline_encrypted(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::HlsOfflineEncrypted::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::HlsOfflineEncrypted::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "spekeKeyProvider" => {
-                            builder = builder.set_speke_key_provider(
-                                    crate::protocol_serde::shape_speke_key_provider::de_speke_key_provider(tokens)?
-                                );
+                            builder = builder.set_speke_key_provider(crate::protocol_serde::shape_speke_key_provider::de_speke_key_provider(tokens)?);
                         }
                         "staticKeyProvider" => {
-                            builder = builder.set_static_key_provider(
-                                    crate::protocol_serde::shape_static_key_provider::de_static_key_provider(tokens)?
-                                );
+                            builder =
+                                builder.set_static_key_provider(crate::protocol_serde::shape_static_key_provider::de_static_key_provider(tokens)?);
                         }
                         "type" => {
                             builder = builder.set_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::HlsKeyProviderType::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::HlsKeyProviderType::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

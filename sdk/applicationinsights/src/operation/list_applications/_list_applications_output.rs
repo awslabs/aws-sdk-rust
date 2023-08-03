@@ -5,8 +5,7 @@
 pub struct ListApplicationsOutput {
     /// <p>The list of applications.</p>
     #[doc(hidden)]
-    pub application_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
+    pub application_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
         crate::operation::list_applications::builders::ListApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsOutputBuilder {
-    pub(crate) application_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
+    pub(crate) application_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListApplicationsOutputBuilder {
         self
     }
     /// <p>The list of applications.</p>
-    pub fn set_application_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
-    ) -> Self {
+    pub fn set_application_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>) -> Self {
         self.application_info_list = input;
         self
     }
     /// <p>The list of applications.</p>
-    pub fn get_application_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>> {
+    pub fn get_application_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>> {
         &self.application_info_list
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>

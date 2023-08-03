@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteNetworkAclEntryOutput {
 }
 impl DeleteNetworkAclEntryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkAclEntryOutput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryOutputBuilder {
         crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkAclEntryOutput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkAclEntryOutputBuilder {
     _request_id: Option<String>,
 }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`administrators(Option<Vec<Administrator>>)`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput::administrators): <p>The list of Detective administrator accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput::next_token): <p>If there are more accounts remaining in the results, then this is the pagination token to use to request the next page of accounts.</p>
     /// - On failure, responds with [`SdkError<ListOrganizationAdminAccountsError>`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsError)
-    pub fn list_organization_admin_accounts(&self) -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder{
+    pub fn list_organization_admin_accounts(
+        &self,
+    ) -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder {
         crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder::new(self.handle.clone())
     }
 }

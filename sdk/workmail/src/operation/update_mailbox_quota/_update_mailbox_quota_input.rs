@@ -29,17 +29,14 @@ impl UpdateMailboxQuotaInput {
 }
 impl UpdateMailboxQuotaInput {
     /// Creates a new builder-style object to manufacture [`UpdateMailboxQuotaInput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput).
-    pub fn builder(
-    ) -> crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaInputBuilder {
+    pub fn builder() -> crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaInputBuilder {
         crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMailboxQuotaInput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMailboxQuotaInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct UpdateMailboxQuotaInputBuilder {
 }
 impl UpdateMailboxQuotaInputBuilder {
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl UpdateMailboxQuotaInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMailboxQuotaInput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput {
-                organization_id: self.organization_id,
-                user_id: self.user_id,
-                mailbox_quota: self.mailbox_quota,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput {
+            organization_id: self.organization_id,
+            user_id: self.user_id,
+            mailbox_quota: self.mailbox_quota,
+        })
     }
 }

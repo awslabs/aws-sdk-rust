@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListHandshakesForAccountOutput {
 }
 impl ListHandshakesForAccountOutput {
     /// Creates a new builder-style object to manufacture [`ListHandshakesForAccountOutput`](crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput).
-    pub fn builder() -> crate::operation::list_handshakes_for_account::builders::ListHandshakesForAccountOutputBuilder{
+    pub fn builder() -> crate::operation::list_handshakes_for_account::builders::ListHandshakesForAccountOutputBuilder {
         crate::operation::list_handshakes_for_account::builders::ListHandshakesForAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHandshakesForAccountOutput`](crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHandshakesForAccountOutputBuilder {
     pub(crate) handshakes: ::std::option::Option<::std::vec::Vec<crate::types::Handshake>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListHandshakesForAccountOutputBuilder {
         self
     }
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
-    pub fn set_handshakes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Handshake>>,
-    ) -> Self {
+    pub fn set_handshakes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Handshake>>) -> Self {
         self.handshakes = input;
         self
     }
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
-    pub fn get_handshakes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Handshake>> {
+    pub fn get_handshakes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Handshake>> {
         &self.handshakes
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -93,9 +86,7 @@ impl ListHandshakesForAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListHandshakesForAccountOutput`](crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput {
+    pub fn build(self) -> crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput {
         crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput {
             handshakes: self.handshakes,
             next_token: self.next_token,

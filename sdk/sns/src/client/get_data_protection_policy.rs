@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDataProtectionPolicyOutput`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput) with field(s):
     ///   - [`data_protection_policy(Option<String>)`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput::data_protection_policy): <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
     /// - On failure, responds with [`SdkError<GetDataProtectionPolicyError>`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyError)
-    pub fn get_data_protection_policy(
-        &self,
-    ) -> crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder
-    {
+    pub fn get_data_protection_policy(&self) -> crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder {
         crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder::new(self.handle.clone())
     }
 }

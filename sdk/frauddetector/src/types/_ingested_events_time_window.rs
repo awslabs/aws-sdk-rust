@@ -30,9 +30,7 @@ impl IngestedEventsTimeWindow {
 
 /// A builder for [`IngestedEventsTimeWindow`](crate::types::IngestedEventsTimeWindow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestedEventsTimeWindowBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,

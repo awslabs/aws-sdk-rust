@@ -10,10 +10,7 @@ impl UpdateHubInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_hub::UpdateHubOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_hub::UpdateHubError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_hub::UpdateHubError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_hub();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl UpdateHubFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_hub::UpdateHub,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_hub::UpdateHub, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_hub::UpdateHubError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl UpdateHubFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl UpdateHubFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_hub::UpdateHub,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_hub::UpdateHub, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_hub::UpdateHubError>,
     > {
         self.customize_middleware().await
@@ -129,18 +117,12 @@ impl UpdateHubFluentBuilder {
         self.inner.get_hub_name()
     }
     /// <p>A description of the updated hub.</p>
-    pub fn hub_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hub_description(input.into());
         self
     }
     /// <p>A description of the updated hub.</p>
-    pub fn set_hub_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hub_description(input);
         self
     }
@@ -149,18 +131,12 @@ impl UpdateHubFluentBuilder {
         self.inner.get_hub_description()
     }
     /// <p>The display name of the hub.</p>
-    pub fn hub_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hub_display_name(input.into());
         self
     }
     /// <p>The display name of the hub.</p>
-    pub fn set_hub_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hub_display_name(input);
         self
     }
@@ -173,25 +149,17 @@ impl UpdateHubFluentBuilder {
     /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).
     ///
     /// <p>The searchable keywords for the hub.</p>
-    pub fn hub_search_keywords(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_search_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hub_search_keywords(input.into());
         self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn set_hub_search_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hub_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_hub_search_keywords(input);
         self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn get_hub_search_keywords(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hub_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_hub_search_keywords()
     }
 }

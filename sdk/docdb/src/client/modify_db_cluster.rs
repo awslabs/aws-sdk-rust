@@ -20,11 +20,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbClusterOutput`](crate::operation::modify_db_cluster::ModifyDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::modify_db_cluster::ModifyDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
     /// - On failure, responds with [`SdkError<ModifyDBClusterError>`](crate::operation::modify_db_cluster::ModifyDBClusterError)
-    pub fn modify_db_cluster(
-        &self,
-    ) -> crate::operation::modify_db_cluster::builders::ModifyDBClusterFluentBuilder {
-        crate::operation::modify_db_cluster::builders::ModifyDBClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_db_cluster(&self) -> crate::operation::modify_db_cluster::builders::ModifyDBClusterFluentBuilder {
+        crate::operation::modify_db_cluster::builders::ModifyDBClusterFluentBuilder::new(self.handle.clone())
     }
 }

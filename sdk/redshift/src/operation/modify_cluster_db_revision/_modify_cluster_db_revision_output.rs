@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyClusterDbRevisionOutput {
 }
 impl ModifyClusterDbRevisionOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterDbRevisionOutput`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionOutputBuilder {
         crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClusterDbRevisionOutput`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterDbRevisionOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl ModifyClusterDbRevisionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyClusterDbRevisionOutput`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput {
+    pub fn build(self) -> crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput {
         crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput {
             cluster: self.cluster,
             _request_id: self._request_id,

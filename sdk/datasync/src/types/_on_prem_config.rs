@@ -23,9 +23,7 @@ impl OnPremConfig {
 
 /// A builder for [`OnPremConfig`](crate::types::OnPremConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnPremConfigBuilder {
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl OnPremConfigBuilder {
         self
     }
     /// <p>ARNs of the agents to use for an NFS location.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -55,8 +50,6 @@ impl OnPremConfigBuilder {
     }
     /// Consumes the builder and constructs a [`OnPremConfig`](crate::types::OnPremConfig).
     pub fn build(self) -> crate::types::OnPremConfig {
-        crate::types::OnPremConfig {
-            agent_arns: self.agent_arns,
-        }
+        crate::types::OnPremConfig { agent_arns: self.agent_arns }
     }
 }

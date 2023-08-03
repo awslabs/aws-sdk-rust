@@ -17,11 +17,9 @@ pub fn ser_cryptogram_auth_response(
             object_2.finish();
         }
         crate::types::CryptogramAuthResponse::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "CryptogramAuthResponse",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "CryptogramAuthResponse",
+            ))
         }
     }
     Ok(())

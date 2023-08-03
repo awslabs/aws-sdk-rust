@@ -33,18 +33,14 @@ impl DescribeCanariesLastRunInput {
 }
 impl DescribeCanariesLastRunInput {
     /// Creates a new builder-style object to manufacture [`DescribeCanariesLastRunInput`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunInput).
-    pub fn builder(
-    ) -> crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunInputBuilder {
         crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCanariesLastRunInput`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCanariesLastRunInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -95,10 +91,7 @@ impl DescribeCanariesLastRunInputBuilder {
     /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
     /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
     /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -115,12 +108,10 @@ impl DescribeCanariesLastRunInputBuilder {
         crate::operation::describe_canaries_last_run::DescribeCanariesLastRunInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_canaries_last_run::DescribeCanariesLastRunInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                names: self.names,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_canaries_last_run::DescribeCanariesLastRunInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            names: self.names,
+        })
     }
 }

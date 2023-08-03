@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AcceptQualificationRequestOutput {
 }
 impl AcceptQualificationRequestOutput {
     /// Creates a new builder-style object to manufacture [`AcceptQualificationRequestOutput`](crate::operation::accept_qualification_request::AcceptQualificationRequestOutput).
-    pub fn builder() -> crate::operation::accept_qualification_request::builders::AcceptQualificationRequestOutputBuilder{
+    pub fn builder() -> crate::operation::accept_qualification_request::builders::AcceptQualificationRequestOutputBuilder {
         crate::operation::accept_qualification_request::builders::AcceptQualificationRequestOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptQualificationRequestOutput`](crate::operation::accept_qualification_request::AcceptQualificationRequestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptQualificationRequestOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AcceptQualificationRequestOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcceptQualificationRequestOutput`](crate::operation::accept_qualification_request::AcceptQualificationRequestOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::accept_qualification_request::AcceptQualificationRequestOutput {
+    pub fn build(self) -> crate::operation::accept_qualification_request::AcceptQualificationRequestOutput {
         crate::operation::accept_qualification_request::AcceptQualificationRequestOutput {
             _request_id: self._request_id,
         }

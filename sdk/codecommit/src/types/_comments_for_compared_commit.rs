@@ -65,9 +65,7 @@ impl CommentsForComparedCommit {
 
 /// A builder for [`CommentsForComparedCommit`](crate::types::CommentsForComparedCommit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommentsForComparedCommitBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) before_commit_id: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct CommentsForComparedCommitBuilder {
 }
 impl CommentsForComparedCommitBuilder {
     /// <p>The name of the repository that contains the compared commits.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that contains the compared commits.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -99,18 +91,12 @@ impl CommentsForComparedCommitBuilder {
         &self.repository_name
     }
     /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_commit_id = input;
         self
     }
@@ -119,18 +105,12 @@ impl CommentsForComparedCommitBuilder {
         &self.before_commit_id
     }
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_commit_id = input;
         self
     }
@@ -139,18 +119,12 @@ impl CommentsForComparedCommitBuilder {
         &self.after_commit_id
     }
     /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
-    pub fn before_blob_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
-    pub fn set_before_blob_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_blob_id = input;
         self
     }
@@ -159,18 +133,12 @@ impl CommentsForComparedCommitBuilder {
         &self.before_blob_id
     }
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
-    pub fn after_blob_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
-    pub fn set_after_blob_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_blob_id = input;
         self
     }
@@ -204,10 +172,7 @@ impl CommentsForComparedCommitBuilder {
         self
     }
     /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
-    pub fn set_comments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>,
-    ) -> Self {
+    pub fn set_comments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>) -> Self {
         self.comments = input;
         self
     }

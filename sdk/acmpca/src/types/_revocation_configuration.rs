@@ -30,9 +30,7 @@ impl RevocationConfiguration {
 
 /// A builder for [`RevocationConfiguration`](crate::types::RevocationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevocationConfigurationBuilder {
     pub(crate) crl_configuration: ::std::option::Option<crate::types::CrlConfiguration>,
     pub(crate) ocsp_configuration: ::std::option::Option<crate::types::OcspConfiguration>,
@@ -44,10 +42,7 @@ impl RevocationConfigurationBuilder {
         self
     }
     /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, Amazon Web Services Private CA makes further attempts every 15 minutes.</p>
-    pub fn set_crl_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CrlConfiguration>,
-    ) -> Self {
+    pub fn set_crl_configuration(mut self, input: ::std::option::Option<crate::types::CrlConfiguration>) -> Self {
         self.crl_configuration = input;
         self
     }
@@ -61,17 +56,12 @@ impl RevocationConfigurationBuilder {
         self
     }
     /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
-    pub fn set_ocsp_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OcspConfiguration>,
-    ) -> Self {
+    pub fn set_ocsp_configuration(mut self, input: ::std::option::Option<crate::types::OcspConfiguration>) -> Self {
         self.ocsp_configuration = input;
         self
     }
     /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
-    pub fn get_ocsp_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OcspConfiguration> {
+    pub fn get_ocsp_configuration(&self) -> &::std::option::Option<crate::types::OcspConfiguration> {
         &self.ocsp_configuration
     }
     /// Consumes the builder and constructs a [`RevocationConfiguration`](crate::types::RevocationConfiguration).

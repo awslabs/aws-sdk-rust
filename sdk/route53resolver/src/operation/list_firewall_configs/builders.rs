@@ -38,9 +38,7 @@ impl ListFirewallConfigsFluentBuilder {
         }
     }
     /// Access the ListFirewallConfigs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_firewall_configs::builders::ListFirewallConfigsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_firewall_configs::builders::ListFirewallConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListFirewallConfigsFluentBuilder {
             crate::operation::list_firewall_configs::ListFirewallConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_configs::ListFirewallConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_configs::ListFirewallConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListFirewallConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListFirewallConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_configs::ListFirewallConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_configs::ListFirewallConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_configs::ListFirewallConfigsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListFirewallConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_configs::ListFirewallConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_configs::ListFirewallConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_configs::ListFirewallConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListFirewallConfigsFluentBuilder {
             crate::operation::list_firewall_configs::ListFirewallConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_configs::ListFirewallConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_configs::ListFirewallConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator {
-        crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator {
+        crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>

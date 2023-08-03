@@ -36,18 +36,14 @@ impl DeleteLocalGatewayRouteInput {
 }
 impl DeleteLocalGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteInput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput).
-    pub fn builder(
-    ) -> crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteInputBuilder {
         crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLocalGatewayRouteInput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteInputBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct DeleteLocalGatewayRouteInputBuilder {
 }
 impl DeleteLocalGatewayRouteInputBuilder {
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -76,25 +66,17 @@ impl DeleteLocalGatewayRouteInputBuilder {
         &self.destination_cidr_block
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn get_local_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -112,18 +94,12 @@ impl DeleteLocalGatewayRouteInputBuilder {
         &self.dry_run
     }
     /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn destination_prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix_list_id = input;
         self
     }
@@ -138,13 +114,11 @@ impl DeleteLocalGatewayRouteInputBuilder {
         crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput {
-                destination_cidr_block: self.destination_cidr_block,
-                local_gateway_route_table_id: self.local_gateway_route_table_id,
-                dry_run: self.dry_run,
-                destination_prefix_list_id: self.destination_prefix_list_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput {
+            destination_cidr_block: self.destination_cidr_block,
+            local_gateway_route_table_id: self.local_gateway_route_table_id,
+            dry_run: self.dry_run,
+            destination_prefix_list_id: self.destination_prefix_list_id,
+        })
     }
 }

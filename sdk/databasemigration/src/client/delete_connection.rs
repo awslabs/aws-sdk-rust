@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput) with field(s):
     ///   - [`connection(Option<Connection>)`](crate::operation::delete_connection::DeleteConnectionOutput::connection): <p>The connection that is being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::operation::delete_connection::DeleteConnectionError)
-    pub fn delete_connection(
-        &self,
-    ) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {
-        crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_connection(&self) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {
+        crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::new(self.handle.clone())
     }
 }

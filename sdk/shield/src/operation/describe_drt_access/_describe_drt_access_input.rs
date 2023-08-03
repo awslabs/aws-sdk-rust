@@ -5,26 +5,20 @@
 pub struct DescribeDrtAccessInput {}
 impl DescribeDrtAccessInput {
     /// Creates a new builder-style object to manufacture [`DescribeDrtAccessInput`](crate::operation::describe_drt_access::DescribeDrtAccessInput).
-    pub fn builder(
-    ) -> crate::operation::describe_drt_access::builders::DescribeDrtAccessInputBuilder {
+    pub fn builder() -> crate::operation::describe_drt_access::builders::DescribeDrtAccessInputBuilder {
         crate::operation::describe_drt_access::builders::DescribeDrtAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDrtAccessInput`](crate::operation::describe_drt_access::DescribeDrtAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDrtAccessInputBuilder {}
 impl DescribeDrtAccessInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDrtAccessInput`](crate::operation::describe_drt_access::DescribeDrtAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_drt_access::DescribeDrtAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_drt_access::DescribeDrtAccessInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_drt_access::DescribeDrtAccessInput {})
     }
 }

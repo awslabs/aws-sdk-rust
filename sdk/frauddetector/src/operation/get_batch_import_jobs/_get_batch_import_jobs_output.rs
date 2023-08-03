@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetBatchImportJobsOutput {
 }
 impl GetBatchImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetBatchImportJobsOutput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsOutputBuilder {
-        crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsOutputBuilder {
+        crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBatchImportJobsOutput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBatchImportJobsOutputBuilder {
     pub(crate) batch_imports: ::std::option::Option<::std::vec::Vec<crate::types::BatchImport>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl GetBatchImportJobsOutputBuilder {
         self
     }
     /// <p>An array containing the details of each batch import job.</p>
-    pub fn set_batch_imports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchImport>>,
-    ) -> Self {
+    pub fn set_batch_imports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchImport>>) -> Self {
         self.batch_imports = input;
         self
     }
     /// <p>An array containing the details of each batch import job.</p>
-    pub fn get_batch_imports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchImport>> {
+    pub fn get_batch_imports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchImport>> {
         &self.batch_imports
     }
     /// <p>The next token for the subsequent resquest.</p>

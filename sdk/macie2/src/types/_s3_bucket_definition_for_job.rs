@@ -30,9 +30,7 @@ impl S3BucketDefinitionForJob {
 
 /// A builder for [`S3BucketDefinitionForJob`](crate::types::S3BucketDefinitionForJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3BucketDefinitionForJobBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl S3BucketDefinitionForJobBuilder {
         self
     }
     /// <p>An array that lists the names of the buckets.</p>
-    pub fn set_buckets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.buckets = input;
         self
     }

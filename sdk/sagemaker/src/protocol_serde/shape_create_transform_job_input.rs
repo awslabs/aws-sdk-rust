@@ -18,10 +18,7 @@ pub fn ser_create_transform_job_input(
     if let Some(var_4) = &input.model_client_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ModelClientConfig").start_object();
-        crate::protocol_serde::shape_model_client_config::ser_model_client_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_model_client_config::ser_model_client_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.max_payload_in_mb {
@@ -52,28 +49,19 @@ pub fn ser_create_transform_job_input(
     if let Some(var_14) = &input.transform_output {
         #[allow(unused_mut)]
         let mut object_15 = object.key("TransformOutput").start_object();
-        crate::protocol_serde::shape_transform_output::ser_transform_output(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_transform_output::ser_transform_output(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.data_capture_config {
         #[allow(unused_mut)]
         let mut object_17 = object.key("DataCaptureConfig").start_object();
-        crate::protocol_serde::shape_batch_data_capture_config::ser_batch_data_capture_config(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_batch_data_capture_config::ser_batch_data_capture_config(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.transform_resources {
         #[allow(unused_mut)]
         let mut object_19 = object.key("TransformResources").start_object();
-        crate::protocol_serde::shape_transform_resources::ser_transform_resources(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_transform_resources::ser_transform_resources(&mut object_19, var_18)?;
         object_19.finish();
     }
     if let Some(var_20) = &input.data_processing {
@@ -97,10 +85,7 @@ pub fn ser_create_transform_job_input(
     if let Some(var_26) = &input.experiment_config {
         #[allow(unused_mut)]
         let mut object_27 = object.key("ExperimentConfig").start_object();
-        crate::protocol_serde::shape_experiment_config::ser_experiment_config(
-            &mut object_27,
-            var_26,
-        )?;
+        crate::protocol_serde::shape_experiment_config::ser_experiment_config(&mut object_27, var_26)?;
         object_27.finish();
     }
     Ok(())

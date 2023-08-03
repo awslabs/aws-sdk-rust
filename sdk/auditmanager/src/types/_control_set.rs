@@ -37,9 +37,7 @@ impl ControlSet {
 
 /// A builder for [`ControlSet`](crate::types::ControlSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ControlSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl ControlSetBuilder {
         self
     }
     /// <p> The list of controls within the control set. </p>
-    pub fn set_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Control>>,
-    ) -> Self {
+    pub fn set_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Control>>) -> Self {
         self.controls = input;
         self
     }

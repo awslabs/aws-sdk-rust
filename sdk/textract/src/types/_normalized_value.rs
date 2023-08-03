@@ -30,9 +30,7 @@ impl NormalizedValue {
 
 /// A builder for [`NormalizedValue`](crate::types::NormalizedValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NormalizedValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) value_type: ::std::option::Option<crate::types::ValueType>,

@@ -5,16 +5,16 @@ pub use crate::operation::list_replace_permission_associations_work::_list_repla
 
 impl ListReplacePermissionAssociationsWorkInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_replace_permission_associations_work();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListReplacePermissionAssociationsWorkInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReplacePermissionAssociationsWorkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkInputBuilder,
+    inner: crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkInputBuilder,
 }
 impl ListReplacePermissionAssociationsWorkFluentBuilder {
     /// Creates a new `ListReplacePermissionAssociationsWork`.
@@ -37,15 +37,22 @@ impl ListReplacePermissionAssociationsWorkFluentBuilder {
         }
     }
     /// Access the ListReplacePermissionAssociationsWork as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWork, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWork,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl ListReplacePermissionAssociationsWorkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,24 +89,38 @@ impl ListReplacePermissionAssociationsWorkFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWork, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWork,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_replace_permission_associations_work::paginator::ListReplacePermissionAssociationsWorkPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_replace_permission_associations_work::paginator::ListReplacePermissionAssociationsWorkPaginator{
-        crate::operation::list_replace_permission_associations_work::paginator::ListReplacePermissionAssociationsWorkPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_replace_permission_associations_work::paginator::ListReplacePermissionAssociationsWorkPaginator {
+        crate::operation::list_replace_permission_associations_work::paginator::ListReplacePermissionAssociationsWorkPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// Appends an item to `workIds`.
     ///
@@ -110,10 +132,7 @@ impl ListReplacePermissionAssociationsWorkFluentBuilder {
         self
     }
     /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation. </p>
-    pub fn set_work_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_work_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_work_ids(input);
         self
     }
@@ -127,17 +146,12 @@ impl ListReplacePermissionAssociationsWorkFluentBuilder {
         self
     }
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus> {
         self.inner.get_status()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>

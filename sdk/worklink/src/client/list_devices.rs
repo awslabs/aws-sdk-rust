@@ -11,12 +11,8 @@ impl super::Client {
     ///   - [`devices(Option<Vec<DeviceSummary>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>Information about the devices.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn list_devices(
-        &self,
-    ) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {
         crate::operation::list_devices::builders::ListDevicesFluentBuilder::new(self.handle.clone())
     }
 }

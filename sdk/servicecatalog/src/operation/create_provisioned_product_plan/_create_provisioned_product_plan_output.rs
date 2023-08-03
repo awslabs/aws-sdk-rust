@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for CreateProvisionedProductPlanOutput {
 }
 impl CreateProvisionedProductPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateProvisionedProductPlanOutput`](crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput).
-    pub fn builder() -> crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanOutputBuilder{
+    pub fn builder() -> crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanOutputBuilder {
         crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProvisionedProductPlanOutput`](crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProvisionedProductPlanOutputBuilder {
     pub(crate) plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) plan_id: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ impl CreateProvisionedProductPlanOutputBuilder {
         &self.plan_id
     }
     /// <p>The product identifier.</p>
-    pub fn provision_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provision_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provision_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product identifier.</p>
-    pub fn set_provision_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provision_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provision_product_id = input;
         self
     }
@@ -117,18 +109,12 @@ impl CreateProvisionedProductPlanOutputBuilder {
         &self.provision_product_id
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provisioned_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn set_provisioned_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_name = input;
         self
     }
@@ -137,18 +123,12 @@ impl CreateProvisionedProductPlanOutputBuilder {
         &self.provisioned_product_name
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
@@ -166,9 +146,7 @@ impl CreateProvisionedProductPlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateProvisionedProductPlanOutput`](crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput {
+    pub fn build(self) -> crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput {
         crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput {
             plan_name: self.plan_name,
             plan_id: self.plan_id,

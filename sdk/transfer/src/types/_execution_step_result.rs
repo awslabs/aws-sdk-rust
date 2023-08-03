@@ -51,9 +51,7 @@ impl ExecutionStepResult {
 
 /// A builder for [`ExecutionStepResult`](crate::types::ExecutionStepResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionStepResultBuilder {
     pub(crate) step_type: ::std::option::Option<crate::types::WorkflowStepType>,
     pub(crate) outputs: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl ExecutionStepResultBuilder {
     /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
     /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
-    pub fn set_step_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStepType>,
-    ) -> Self {
+    pub fn set_step_type(mut self, input: ::std::option::Option<crate::types::WorkflowStepType>) -> Self {
         self.step_type = input;
         self
     }

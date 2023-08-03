@@ -26,7 +26,7 @@ impl AssociateDefaultVocabularyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDefaultVocabularyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder,
+    inner: crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder,
 }
 impl AssociateDefaultVocabularyFluentBuilder {
     /// Creates a new `AssociateDefaultVocabulary`.
@@ -37,7 +37,7 @@ impl AssociateDefaultVocabularyFluentBuilder {
         }
     }
     /// Access the AssociateDefaultVocabulary as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateDefaultVocabularyFluentBuilder {
             crate::operation::associate_default_vocabulary::AssociateDefaultVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateDefaultVocabularyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateDefaultVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateDefaultVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociateDefaultVocabularyFluentBuilder {
             crate::operation::associate_default_vocabulary::AssociateDefaultVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError>,
     > {
         self.customize_middleware().await
     }
@@ -140,32 +129,21 @@ impl AssociateDefaultVocabularyFluentBuilder {
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
         self.inner.get_language_code()
     }
     /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
-    pub fn vocabulary_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_id(input.into());
         self
     }
     /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
-    pub fn set_vocabulary_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_id(input);
         self
     }

@@ -35,16 +35,14 @@ impl GetRecommendationSummariesInput {
 }
 impl GetRecommendationSummariesInput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationSummariesInput`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput).
-    pub fn builder() -> crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesInputBuilder{
+    pub fn builder() -> crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesInputBuilder {
         crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationSummariesInput`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationSummariesInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -67,19 +65,14 @@ impl GetRecommendationSummariesInputBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// <p>The token to advance to the next page of recommendation summaries.</p>
@@ -120,12 +113,10 @@ impl GetRecommendationSummariesInputBuilder {
         crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput {
-                account_ids: self.account_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput {
+            account_ids: self.account_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

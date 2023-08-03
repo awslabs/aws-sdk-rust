@@ -25,16 +25,14 @@ impl DescribeOrganizationsAccessInput {
 }
 impl DescribeOrganizationsAccessInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationsAccessInput`](crate::operation::describe_organizations_access::DescribeOrganizationsAccessInput).
-    pub fn builder() -> crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessInputBuilder{
+    pub fn builder() -> crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessInputBuilder {
         crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationsAccessInput`](crate::operation::describe_organizations_access::DescribeOrganizationsAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationsAccessInputBuilder {
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }
@@ -75,10 +73,6 @@ impl DescribeOrganizationsAccessInputBuilder {
         crate::operation::describe_organizations_access::DescribeOrganizationsAccessInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_organizations_access::DescribeOrganizationsAccessInput {
-                call_as: self.call_as,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_organizations_access::DescribeOrganizationsAccessInput { call_as: self.call_as })
     }
 }

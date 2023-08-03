@@ -30,9 +30,7 @@ impl EmailAddress {
 
 /// A builder for [`EmailAddress`](crate::types::EmailAddress).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmailAddressBuilder {
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) verified: ::std::option::Option<bool>,

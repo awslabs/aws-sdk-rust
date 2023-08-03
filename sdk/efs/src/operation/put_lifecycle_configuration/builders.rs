@@ -41,7 +41,7 @@ impl PutLifecycleConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutLifecycleConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfigurationInputBuilder,
+    inner: crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfigurationInputBuilder,
 }
 impl PutLifecycleConfigurationFluentBuilder {
     /// Creates a new `PutLifecycleConfiguration`.
@@ -52,7 +52,7 @@ impl PutLifecycleConfigurationFluentBuilder {
         }
     }
     /// Access the PutLifecycleConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +64,7 @@ impl PutLifecycleConfigurationFluentBuilder {
             crate::operation::put_lifecycle_configuration::PutLifecycleConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +74,7 @@ impl PutLifecycleConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +83,7 @@ impl PutLifecycleConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError>,
     > {
         let op = self
             .inner
@@ -113,9 +106,7 @@ impl PutLifecycleConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -129,25 +120,17 @@ impl PutLifecycleConfigurationFluentBuilder {
             crate::operation::put_lifecycle_configuration::PutLifecycleConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -177,10 +160,7 @@ impl PutLifecycleConfigurationFluentBuilder {
     /// </ul> <note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
-    pub fn set_lifecycle_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
-    ) -> Self {
+    pub fn set_lifecycle_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>) -> Self {
         self.inner = self.inner.set_lifecycle_policies(input);
         self
     }
@@ -191,9 +171,7 @@ impl PutLifecycleConfigurationFluentBuilder {
     /// </ul> <note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
-    pub fn get_lifecycle_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>> {
+    pub fn get_lifecycle_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>> {
         self.inner.get_lifecycle_policies()
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`association_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemFluentBuilder::set_association_id): <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
     /// - On success, responds with [`DisassociateOpsItemRelatedItemOutput`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput)
     /// - On failure, responds with [`SdkError<DisassociateOpsItemRelatedItemError>`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError)
-    pub fn disassociate_ops_item_related_item(&self) -> crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemFluentBuilder{
+    pub fn disassociate_ops_item_related_item(
+        &self,
+    ) -> crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemFluentBuilder {
         crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemFluentBuilder::new(self.handle.clone())
     }
 }

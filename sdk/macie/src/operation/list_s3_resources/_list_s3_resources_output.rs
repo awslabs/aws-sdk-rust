@@ -5,8 +5,7 @@
 pub struct ListS3ResourcesOutput {
     /// <p>(Discontinued) A list of the associated S3 resources returned by the action.</p>
     #[doc(hidden)]
-    pub s3_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
+    pub s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
     /// <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListS3ResourcesOutput {
 }
 impl ListS3ResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListS3ResourcesOutput`](crate::operation::list_s3_resources::ListS3ResourcesOutput).
-    pub fn builder() -> crate::operation::list_s3_resources::builders::ListS3ResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_s3_resources::builders::ListS3ResourcesOutputBuilder {
         crate::operation::list_s3_resources::builders::ListS3ResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListS3ResourcesOutput`](crate::operation::list_s3_resources::ListS3ResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListS3ResourcesOutputBuilder {
-    pub(crate) s3_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
+    pub(crate) s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListS3ResourcesOutputBuilder {
         self
     }
     /// <p>(Discontinued) A list of the associated S3 resources returned by the action.</p>
-    pub fn set_s3_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
-    ) -> Self {
+    pub fn set_s3_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>) -> Self {
         self.s3_resources = input;
         self
     }
     /// <p>(Discontinued) A list of the associated S3 resources returned by the action.</p>
-    pub fn get_s3_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>> {
+    pub fn get_s3_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>> {
         &self.s3_resources
     }
     /// <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>

@@ -5,17 +5,14 @@
 pub struct StartCostEstimationInput {
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
     #[doc(hidden)]
-    pub resource_collection:
-        ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
+    pub resource_collection: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
     /// <p>The idempotency token used to identify each cost estimate request.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartCostEstimationInput {
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
-    pub fn resource_collection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CostEstimationResourceCollectionFilter> {
+    pub fn resource_collection(&self) -> ::std::option::Option<&crate::types::CostEstimationResourceCollectionFilter> {
         self.resource_collection.as_ref()
     }
     /// <p>The idempotency token used to identify each cost estimate request.</p>
@@ -25,44 +22,31 @@ impl StartCostEstimationInput {
 }
 impl StartCostEstimationInput {
     /// Creates a new builder-style object to manufacture [`StartCostEstimationInput`](crate::operation::start_cost_estimation::StartCostEstimationInput).
-    pub fn builder(
-    ) -> crate::operation::start_cost_estimation::builders::StartCostEstimationInputBuilder {
-        crate::operation::start_cost_estimation::builders::StartCostEstimationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_cost_estimation::builders::StartCostEstimationInputBuilder {
+        crate::operation::start_cost_estimation::builders::StartCostEstimationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartCostEstimationInput`](crate::operation::start_cost_estimation::StartCostEstimationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCostEstimationInputBuilder {
-    pub(crate) resource_collection:
-        ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
+    pub(crate) resource_collection: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartCostEstimationInputBuilder {
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
-    pub fn resource_collection(
-        mut self,
-        input: crate::types::CostEstimationResourceCollectionFilter,
-    ) -> Self {
+    pub fn resource_collection(mut self, input: crate::types::CostEstimationResourceCollectionFilter) -> Self {
         self.resource_collection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::CostEstimationResourceCollectionFilter> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::CostEstimationResourceCollectionFilter> {
         &self.resource_collection
     }
     /// <p>The idempotency token used to identify each cost estimate request.</p>
@@ -82,15 +66,11 @@ impl StartCostEstimationInputBuilder {
     /// Consumes the builder and constructs a [`StartCostEstimationInput`](crate::operation::start_cost_estimation::StartCostEstimationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_cost_estimation::StartCostEstimationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_cost_estimation::StartCostEstimationInput {
-                resource_collection: self.resource_collection,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_cost_estimation::StartCostEstimationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_cost_estimation::StartCostEstimationInput {
+            resource_collection: self.resource_collection,
+            client_token: self.client_token,
+        })
     }
 }

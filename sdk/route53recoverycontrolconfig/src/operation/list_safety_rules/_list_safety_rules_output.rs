@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSafetyRulesOutput {
 }
 impl ListSafetyRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListSafetyRulesOutput`](crate::operation::list_safety_rules::ListSafetyRulesOutput).
-    pub fn builder() -> crate::operation::list_safety_rules::builders::ListSafetyRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_safety_rules::builders::ListSafetyRulesOutputBuilder {
         crate::operation::list_safety_rules::builders::ListSafetyRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSafetyRulesOutput`](crate::operation::list_safety_rules::ListSafetyRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSafetyRulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) safety_rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
@@ -71,10 +68,7 @@ impl ListSafetyRulesOutputBuilder {
         self
     }
     /// <p>The list of safety rules in a control panel.</p>
-    pub fn set_safety_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_safety_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.safety_rules = input;
         self
     }

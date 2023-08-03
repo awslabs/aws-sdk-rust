@@ -37,16 +37,14 @@ impl UpdateTrafficPolicyInstanceInput {
 }
 impl UpdateTrafficPolicyInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyInstanceInput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput).
-    pub fn builder() -> crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder{
+    pub fn builder() -> crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder {
         crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrafficPolicyInstanceInput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrafficPolicyInstanceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ttl: ::std::option::Option<i64>,
@@ -83,18 +81,12 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
         &self.ttl
     }
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-    pub fn traffic_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-    pub fn set_traffic_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_policy_id = input;
         self
     }
@@ -123,13 +115,11 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
         crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput {
-                id: self.id,
-                ttl: self.ttl,
-                traffic_policy_id: self.traffic_policy_id,
-                traffic_policy_version: self.traffic_policy_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput {
+            id: self.id,
+            ttl: self.ttl,
+            traffic_policy_id: self.traffic_policy_id,
+            traffic_policy_version: self.traffic_policy_version,
+        })
     }
 }

@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
     ///   - [`format(Option<String>)`](crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput::format): <p>The format of the exported data, CSV or PARQUET.</p>
     /// - On failure, responds with [`SdkError<DescribePredictorBacktestExportJobError>`](crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError)
-    pub fn describe_predictor_backtest_export_job(&self) -> crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobFluentBuilder{
+    pub fn describe_predictor_backtest_export_job(
+        &self,
+    ) -> crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobFluentBuilder {
         crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobFluentBuilder::new(self.handle.clone())
     }
 }

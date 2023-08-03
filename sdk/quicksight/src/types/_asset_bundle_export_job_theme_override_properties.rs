@@ -9,9 +9,7 @@ pub struct AssetBundleExportJobThemeOverrideProperties {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Theme</code> resource properties to generate variables for in the returned CloudFormation template.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobThemePropertyToOverride>,
-    >,
+    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobThemePropertyToOverride>>,
 }
 impl AssetBundleExportJobThemeOverrideProperties {
     /// <p>The ARN of the specific <code>Theme</code> resource whose override properties are configured in this structure.</p>
@@ -19,9 +17,7 @@ impl AssetBundleExportJobThemeOverrideProperties {
         self.arn.as_deref()
     }
     /// <p>A list of <code>Theme</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetBundleExportJobThemePropertyToOverride]> {
+    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobThemePropertyToOverride]> {
         self.properties.as_deref()
     }
 }
@@ -34,14 +30,10 @@ impl AssetBundleExportJobThemeOverrideProperties {
 
 /// A builder for [`AssetBundleExportJobThemeOverrideProperties`](crate::types::AssetBundleExportJobThemeOverrideProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobThemeOverridePropertiesBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobThemePropertyToOverride>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobThemePropertyToOverride>>,
 }
 impl AssetBundleExportJobThemeOverridePropertiesBuilder {
     /// <p>The ARN of the specific <code>Theme</code> resource whose override properties are configured in this structure.</p>
@@ -63,10 +55,7 @@ impl AssetBundleExportJobThemeOverridePropertiesBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of <code>Theme</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(
-        mut self,
-        input: crate::types::AssetBundleExportJobThemePropertyToOverride,
-    ) -> Self {
+    pub fn properties(mut self, input: crate::types::AssetBundleExportJobThemePropertyToOverride) -> Self {
         let mut v = self.properties.unwrap_or_default();
         v.push(input);
         self.properties = ::std::option::Option::Some(v);
@@ -75,19 +64,13 @@ impl AssetBundleExportJobThemeOverridePropertiesBuilder {
     /// <p>A list of <code>Theme</code> resource properties to generate variables for in the returned CloudFormation template.</p>
     pub fn set_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AssetBundleExportJobThemePropertyToOverride>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobThemePropertyToOverride>>,
     ) -> Self {
         self.properties = input;
         self
     }
     /// <p>A list of <code>Theme</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobThemePropertyToOverride>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobThemePropertyToOverride>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobThemeOverrideProperties`](crate::types::AssetBundleExportJobThemeOverrideProperties).

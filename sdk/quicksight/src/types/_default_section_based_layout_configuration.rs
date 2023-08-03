@@ -6,14 +6,11 @@
 pub struct DefaultSectionBasedLayoutConfiguration {
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
     #[doc(hidden)]
-    pub canvas_size_options:
-        ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
+    pub canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
 }
 impl DefaultSectionBasedLayoutConfiguration {
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
-    pub fn canvas_size_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SectionBasedLayoutCanvasSizeOptions> {
+    pub fn canvas_size_options(&self) -> ::std::option::Option<&crate::types::SectionBasedLayoutCanvasSizeOptions> {
         self.canvas_size_options.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl DefaultSectionBasedLayoutConfiguration {
 
 /// A builder for [`DefaultSectionBasedLayoutConfiguration`](crate::types::DefaultSectionBasedLayoutConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultSectionBasedLayoutConfigurationBuilder {
-    pub(crate) canvas_size_options:
-        ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
+    pub(crate) canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
 }
 impl DefaultSectionBasedLayoutConfigurationBuilder {
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
-    pub fn canvas_size_options(
-        mut self,
-        input: crate::types::SectionBasedLayoutCanvasSizeOptions,
-    ) -> Self {
+    pub fn canvas_size_options(mut self, input: crate::types::SectionBasedLayoutCanvasSizeOptions) -> Self {
         self.canvas_size_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
-    pub fn set_canvas_size_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
-    ) -> Self {
+    pub fn set_canvas_size_options(mut self, input: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>) -> Self {
         self.canvas_size_options = input;
         self
     }
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
-    pub fn get_canvas_size_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions> {
+    pub fn get_canvas_size_options(&self) -> &::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions> {
         &self.canvas_size_options
     }
     /// Consumes the builder and constructs a [`DefaultSectionBasedLayoutConfiguration`](crate::types::DefaultSectionBasedLayoutConfiguration).

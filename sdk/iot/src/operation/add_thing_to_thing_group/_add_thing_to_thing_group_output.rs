@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AddThingToThingGroupOutput {
 }
 impl AddThingToThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`AddThingToThingGroupOutput`](crate::operation::add_thing_to_thing_group::AddThingToThingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupOutputBuilder {
         crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddThingToThingGroupOutput`](crate::operation::add_thing_to_thing_group::AddThingToThingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddThingToThingGroupOutputBuilder {
     _request_id: Option<String>,
 }

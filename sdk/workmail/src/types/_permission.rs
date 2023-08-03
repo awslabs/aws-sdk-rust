@@ -37,14 +37,11 @@ impl Permission {
 
 /// A builder for [`Permission`](crate::types::Permission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PermissionBuilder {
     pub(crate) grantee_id: ::std::option::Option<::std::string::String>,
     pub(crate) grantee_type: ::std::option::Option<crate::types::MemberType>,
-    pub(crate) permission_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) permission_values: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl PermissionBuilder {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
@@ -67,10 +64,7 @@ impl PermissionBuilder {
         self
     }
     /// <p>The type of user, group, or resource referred to in GranteeId.</p>
-    pub fn set_grantee_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberType>,
-    ) -> Self {
+    pub fn set_grantee_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
         self.grantee_type = input;
         self
     }
@@ -90,17 +84,12 @@ impl PermissionBuilder {
         self
     }
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    pub fn set_permission_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_permission_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.permission_values = input;
         self
     }
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    pub fn get_permission_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_permission_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.permission_values
     }
     /// Consumes the builder and constructs a [`Permission`](crate::types::Permission).

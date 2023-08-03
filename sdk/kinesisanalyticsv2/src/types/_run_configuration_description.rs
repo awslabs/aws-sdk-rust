@@ -6,24 +6,18 @@
 pub struct RunConfigurationDescription {
     /// <p>Describes the restore behavior of a restarting application.</p>
     #[doc(hidden)]
-    pub application_restore_configuration_description:
-        ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
+    pub application_restore_configuration_description: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
-    pub flink_run_configuration_description:
-        ::std::option::Option<crate::types::FlinkRunConfiguration>,
+    pub flink_run_configuration_description: ::std::option::Option<crate::types::FlinkRunConfiguration>,
 }
 impl RunConfigurationDescription {
     /// <p>Describes the restore behavior of a restarting application.</p>
-    pub fn application_restore_configuration_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationRestoreConfiguration> {
+    pub fn application_restore_configuration_description(&self) -> ::std::option::Option<&crate::types::ApplicationRestoreConfiguration> {
         self.application_restore_configuration_description.as_ref()
     }
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn flink_run_configuration_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FlinkRunConfiguration> {
+    pub fn flink_run_configuration_description(&self) -> ::std::option::Option<&crate::types::FlinkRunConfiguration> {
         self.flink_run_configuration_description.as_ref()
     }
 }
@@ -36,21 +30,14 @@ impl RunConfigurationDescription {
 
 /// A builder for [`RunConfigurationDescription`](crate::types::RunConfigurationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunConfigurationDescriptionBuilder {
-    pub(crate) application_restore_configuration_description:
-        ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
-    pub(crate) flink_run_configuration_description:
-        ::std::option::Option<crate::types::FlinkRunConfiguration>,
+    pub(crate) application_restore_configuration_description: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
+    pub(crate) flink_run_configuration_description: ::std::option::Option<crate::types::FlinkRunConfiguration>,
 }
 impl RunConfigurationDescriptionBuilder {
     /// <p>Describes the restore behavior of a restarting application.</p>
-    pub fn application_restore_configuration_description(
-        mut self,
-        input: crate::types::ApplicationRestoreConfiguration,
-    ) -> Self {
+    pub fn application_restore_configuration_description(mut self, input: crate::types::ApplicationRestoreConfiguration) -> Self {
         self.application_restore_configuration_description = ::std::option::Option::Some(input);
         self
     }
@@ -63,38 +50,27 @@ impl RunConfigurationDescriptionBuilder {
         self
     }
     /// <p>Describes the restore behavior of a restarting application.</p>
-    pub fn get_application_restore_configuration_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationRestoreConfiguration> {
+    pub fn get_application_restore_configuration_description(&self) -> &::std::option::Option<crate::types::ApplicationRestoreConfiguration> {
         &self.application_restore_configuration_description
     }
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn flink_run_configuration_description(
-        mut self,
-        input: crate::types::FlinkRunConfiguration,
-    ) -> Self {
+    pub fn flink_run_configuration_description(mut self, input: crate::types::FlinkRunConfiguration) -> Self {
         self.flink_run_configuration_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn set_flink_run_configuration_description(
-        mut self,
-        input: ::std::option::Option<crate::types::FlinkRunConfiguration>,
-    ) -> Self {
+    pub fn set_flink_run_configuration_description(mut self, input: ::std::option::Option<crate::types::FlinkRunConfiguration>) -> Self {
         self.flink_run_configuration_description = input;
         self
     }
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn get_flink_run_configuration_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::FlinkRunConfiguration> {
+    pub fn get_flink_run_configuration_description(&self) -> &::std::option::Option<crate::types::FlinkRunConfiguration> {
         &self.flink_run_configuration_description
     }
     /// Consumes the builder and constructs a [`RunConfigurationDescription`](crate::types::RunConfigurationDescription).
     pub fn build(self) -> crate::types::RunConfigurationDescription {
         crate::types::RunConfigurationDescription {
-            application_restore_configuration_description: self
-                .application_restore_configuration_description,
+            application_restore_configuration_description: self.application_restore_configuration_description,
             flink_run_configuration_description: self.flink_run_configuration_description,
         }
     }

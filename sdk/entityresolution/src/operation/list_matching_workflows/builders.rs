@@ -37,10 +37,7 @@ impl ListMatchingWorkflowsFluentBuilder {
         }
     }
     /// Access the ListMatchingWorkflows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListMatchingWorkflowsFluentBuilder {
             crate::operation::list_matching_workflows::ListMatchingWorkflows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_matching_workflows::ListMatchingWorkflowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_matching_workflows::ListMatchingWorkflowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListMatchingWorkflowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListMatchingWorkflowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_matching_workflows::ListMatchingWorkflowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_matching_workflows::ListMatchingWorkflowsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListMatchingWorkflowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_matching_workflows::ListMatchingWorkflowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_matching_workflows::ListMatchingWorkflowsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListMatchingWorkflowsFluentBuilder {
             crate::operation::list_matching_workflows::ListMatchingWorkflows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_matching_workflows::ListMatchingWorkflowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_matching_workflows::ListMatchingWorkflowsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_matching_workflows::paginator::ListMatchingWorkflowsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_matching_workflows::paginator::ListMatchingWorkflowsPaginator {
-        crate::operation::list_matching_workflows::paginator::ListMatchingWorkflowsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_matching_workflows::paginator::ListMatchingWorkflowsPaginator {
+        crate::operation::list_matching_workflows::paginator::ListMatchingWorkflowsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

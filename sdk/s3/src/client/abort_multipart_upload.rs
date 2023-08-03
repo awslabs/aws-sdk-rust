@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`AbortMultipartUploadOutput`](crate::operation::abort_multipart_upload::AbortMultipartUploadOutput) with field(s):
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::abort_multipart_upload::AbortMultipartUploadOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<AbortMultipartUploadError>`](crate::operation::abort_multipart_upload::AbortMultipartUploadError)
-    pub fn abort_multipart_upload(
-        &self,
-    ) -> crate::operation::abort_multipart_upload::builders::AbortMultipartUploadFluentBuilder {
-        crate::operation::abort_multipart_upload::builders::AbortMultipartUploadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn abort_multipart_upload(&self) -> crate::operation::abort_multipart_upload::builders::AbortMultipartUploadFluentBuilder {
+        crate::operation::abort_multipart_upload::builders::AbortMultipartUploadFluentBuilder::new(self.handle.clone())
     }
 }

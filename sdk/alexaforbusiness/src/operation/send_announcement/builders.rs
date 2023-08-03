@@ -10,10 +10,7 @@ impl SendAnnouncementInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_announcement::SendAnnouncementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_announcement::SendAnnouncementError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_announcement::SendAnnouncementError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_announcement();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SendAnnouncementFluentBuilder {
         }
     }
     /// Access the SendAnnouncement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_announcement::builders::SendAnnouncementInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_announcement::builders::SendAnnouncementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SendAnnouncementFluentBuilder {
             crate::operation::send_announcement::SendAnnouncement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_announcement::SendAnnouncementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_announcement::SendAnnouncementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SendAnnouncementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SendAnnouncementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_announcement::SendAnnouncementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_announcement::SendAnnouncementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_announcement::SendAnnouncementError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SendAnnouncementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_announcement::SendAnnouncementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_announcement::SendAnnouncementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_announcement::SendAnnouncementError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl SendAnnouncementFluentBuilder {
             crate::operation::send_announcement::SendAnnouncement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_announcement::SendAnnouncementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_announcement::SendAnnouncementError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl SendAnnouncementFluentBuilder {
         self
     }
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-    pub fn set_room_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_room_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_room_filters(input);
         self
     }
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-    pub fn get_room_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_room_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_room_filters()
     }
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
@@ -174,18 +153,12 @@ impl SendAnnouncementFluentBuilder {
         self.inner.get_time_to_live_in_seconds()
     }
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

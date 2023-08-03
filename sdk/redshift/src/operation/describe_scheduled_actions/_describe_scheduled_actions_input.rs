@@ -36,9 +36,7 @@ impl DescribeScheduledActionsInput {
         self.scheduled_action_name.as_deref()
     }
     /// <p>The type of the scheduled actions to retrieve. </p>
-    pub fn target_action_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduledActionTypeValues> {
+    pub fn target_action_type(&self) -> ::std::option::Option<&crate::types::ScheduledActionTypeValues> {
         self.target_action_type.as_ref()
     }
     /// <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
@@ -70,18 +68,14 @@ impl DescribeScheduledActionsInput {
 }
 impl DescribeScheduledActionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsInput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder {
         crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduledActionsInput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsInputBuilder {
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_action_type: ::std::option::Option<crate::types::ScheduledActionTypeValues>,
@@ -94,18 +88,12 @@ pub struct DescribeScheduledActionsInputBuilder {
 }
 impl DescribeScheduledActionsInputBuilder {
     /// <p>The name of the scheduled action to retrieve. </p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled action to retrieve. </p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_name = input;
         self
     }
@@ -119,17 +107,12 @@ impl DescribeScheduledActionsInputBuilder {
         self
     }
     /// <p>The type of the scheduled actions to retrieve. </p>
-    pub fn set_target_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledActionTypeValues>,
-    ) -> Self {
+    pub fn set_target_action_type(mut self, input: ::std::option::Option<crate::types::ScheduledActionTypeValues>) -> Self {
         self.target_action_type = input;
         self
     }
     /// <p>The type of the scheduled actions to retrieve. </p>
-    pub fn get_target_action_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledActionTypeValues> {
+    pub fn get_target_action_type(&self) -> &::std::option::Option<crate::types::ScheduledActionTypeValues> {
         &self.target_action_type
     }
     /// <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
@@ -138,10 +121,7 @@ impl DescribeScheduledActionsInputBuilder {
         self
     }
     /// <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -155,10 +135,7 @@ impl DescribeScheduledActionsInputBuilder {
         self
     }
     /// <p>The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -192,17 +169,12 @@ impl DescribeScheduledActionsInputBuilder {
         self
     }
     /// <p>List of scheduled action filters. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>List of scheduled action filters. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>> {
         &self.filters
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
@@ -246,17 +218,15 @@ impl DescribeScheduledActionsInputBuilder {
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput {
-                scheduled_action_name: self.scheduled_action_name,
-                target_action_type: self.target_action_type,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                active: self.active,
-                filters: self.filters,
-                marker: self.marker,
-                max_records: self.max_records,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput {
+            scheduled_action_name: self.scheduled_action_name,
+            target_action_type: self.target_action_type,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            active: self.active,
+            filters: self.filters,
+            marker: self.marker,
+            max_records: self.max_records,
+        })
     }
 }

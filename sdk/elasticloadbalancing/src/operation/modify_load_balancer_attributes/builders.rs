@@ -34,7 +34,7 @@ impl ModifyLoadBalancerAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder,
+    inner: crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder,
 }
 impl ModifyLoadBalancerAttributesFluentBuilder {
     /// Creates a new `ModifyLoadBalancerAttributes`.
@@ -45,7 +45,7 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
         }
     }
     /// Access the ModifyLoadBalancerAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
             crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +113,17 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
             crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -154,17 +137,12 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
         self
     }
     /// <p>The attributes for the load balancer.</p>
-    pub fn set_load_balancer_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerAttributes>,
-    ) -> Self {
+    pub fn set_load_balancer_attributes(mut self, input: ::std::option::Option<crate::types::LoadBalancerAttributes>) -> Self {
         self.inner = self.inner.set_load_balancer_attributes(input);
         self
     }
     /// <p>The attributes for the load balancer.</p>
-    pub fn get_load_balancer_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoadBalancerAttributes> {
+    pub fn get_load_balancer_attributes(&self) -> &::std::option::Option<crate::types::LoadBalancerAttributes> {
         self.inner.get_load_balancer_attributes()
     }
 }

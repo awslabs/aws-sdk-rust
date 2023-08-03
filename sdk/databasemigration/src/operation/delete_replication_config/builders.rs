@@ -26,8 +26,7 @@ impl DeleteReplicationConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReplicationConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_replication_config::builders::DeleteReplicationConfigInputBuilder,
+    inner: crate::operation::delete_replication_config::builders::DeleteReplicationConfigInputBuilder,
 }
 impl DeleteReplicationConfigFluentBuilder {
     /// Creates a new `DeleteReplicationConfig`.
@@ -38,10 +37,7 @@ impl DeleteReplicationConfigFluentBuilder {
         }
     }
     /// Access the DeleteReplicationConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_replication_config::builders::DeleteReplicationConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_replication_config::builders::DeleteReplicationConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteReplicationConfigFluentBuilder {
             crate::operation::delete_replication_config::DeleteReplicationConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_config::DeleteReplicationConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_config::DeleteReplicationConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteReplicationConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteReplicationConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_config::DeleteReplicationConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_config::DeleteReplicationConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_config::DeleteReplicationConfigError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteReplicationConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_config::DeleteReplicationConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_config::DeleteReplicationConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_config::DeleteReplicationConfigError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteReplicationConfigFluentBuilder {
             crate::operation::delete_replication_config::DeleteReplicationConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_config::DeleteReplicationConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_config::DeleteReplicationConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The replication config to delete.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_config_arn(input.into());
         self
     }
     /// <p>The replication config to delete.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_config_arn(input);
         self
     }

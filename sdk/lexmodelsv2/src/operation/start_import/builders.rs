@@ -10,10 +10,7 @@ impl StartImportInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_import::StartImportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import::StartImportError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_import();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl StartImportFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_import::StartImport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_import::StartImport, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl StartImportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl StartImportFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_import::StartImport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_import::StartImport, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError>,
     > {
         self.customize_middleware().await
@@ -127,25 +115,17 @@ impl StartImportFluentBuilder {
         self.inner.get_import_id()
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
-    pub fn resource_specification(
-        mut self,
-        input: crate::types::ImportResourceSpecification,
-    ) -> Self {
+    pub fn resource_specification(mut self, input: crate::types::ImportResourceSpecification) -> Self {
         self.inner = self.inner.resource_specification(input);
         self
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
-    pub fn set_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportResourceSpecification>,
-    ) -> Self {
+    pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ImportResourceSpecification>) -> Self {
         self.inner = self.inner.set_resource_specification(input);
         self
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
-    pub fn get_resource_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
+    pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
         self.inner.get_resource_specification()
     }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
@@ -154,10 +134,7 @@ impl StartImportFluentBuilder {
         self
     }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    pub fn set_merge_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeStrategy>,
-    ) -> Self {
+    pub fn set_merge_strategy(mut self, input: ::std::option::Option<crate::types::MergeStrategy>) -> Self {
         self.inner = self.inner.set_merge_strategy(input);
         self
     }
@@ -166,18 +143,12 @@ impl StartImportFluentBuilder {
         self.inner.get_merge_strategy()
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
-    pub fn file_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_password(input.into());
         self
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
-    pub fn set_file_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_password(input);
         self
     }

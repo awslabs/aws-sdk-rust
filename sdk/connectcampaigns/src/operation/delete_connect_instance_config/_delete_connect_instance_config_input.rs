@@ -16,33 +16,25 @@ impl DeleteConnectInstanceConfigInput {
 }
 impl DeleteConnectInstanceConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectInstanceConfigInput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput).
-    pub fn builder() -> crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder{
+    pub fn builder() -> crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder {
         crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectInstanceConfigInput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectInstanceConfigInputBuilder {
     pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConnectInstanceConfigInputBuilder {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connect_instance_id = input;
         self
     }
@@ -57,10 +49,8 @@ impl DeleteConnectInstanceConfigInputBuilder {
         crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput {
-                connect_instance_id: self.connect_instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput {
+            connect_instance_id: self.connect_instance_id,
+        })
     }
 }

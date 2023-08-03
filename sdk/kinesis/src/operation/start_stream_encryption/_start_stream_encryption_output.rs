@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StartStreamEncryptionOutput {
 }
 impl StartStreamEncryptionOutput {
     /// Creates a new builder-style object to manufacture [`StartStreamEncryptionOutput`](crate::operation::start_stream_encryption::StartStreamEncryptionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_stream_encryption::builders::StartStreamEncryptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_stream_encryption::builders::StartStreamEncryptionOutputBuilder {
         crate::operation::start_stream_encryption::builders::StartStreamEncryptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartStreamEncryptionOutput`](crate::operation::start_stream_encryption::StartStreamEncryptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartStreamEncryptionOutputBuilder {
     _request_id: Option<String>,
 }

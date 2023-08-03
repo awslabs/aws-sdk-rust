@@ -36,9 +36,7 @@ impl GetFindingsInput {
 
 /// A builder for [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,17 +69,12 @@ impl GetFindingsInputBuilder {
         self
     }
     /// <p>The IDs of the findings that you want to retrieve.</p>
-    pub fn set_finding_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.finding_ids = input;
         self
     }
     /// <p>The IDs of the findings that you want to retrieve.</p>
-    pub fn get_finding_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.finding_ids
     }
     /// <p>Represents the criteria used for sorting findings.</p>
@@ -90,10 +83,7 @@ impl GetFindingsInputBuilder {
         self
     }
     /// <p>Represents the criteria used for sorting findings.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::SortCriteria>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -102,12 +92,7 @@ impl GetFindingsInputBuilder {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_findings::GetFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_findings::GetFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_findings::GetFindingsInput {
             detector_id: self.detector_id,
             finding_ids: self.finding_ids,

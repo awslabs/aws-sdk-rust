@@ -22,26 +22,18 @@ impl GetTrustAnchorInput {
 
 /// A builder for [`GetTrustAnchorInput`](crate::operation::get_trust_anchor::GetTrustAnchorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrustAnchorInputBuilder {
     pub(crate) trust_anchor_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTrustAnchorInputBuilder {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn set_trust_anchor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_anchor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_anchor_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetTrustAnchorInputBuilder {
     /// Consumes the builder and constructs a [`GetTrustAnchorInput`](crate::operation::get_trust_anchor::GetTrustAnchorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_trust_anchor::GetTrustAnchorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_trust_anchor::GetTrustAnchorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_trust_anchor::GetTrustAnchorInput {
             trust_anchor_id: self.trust_anchor_id,
         })

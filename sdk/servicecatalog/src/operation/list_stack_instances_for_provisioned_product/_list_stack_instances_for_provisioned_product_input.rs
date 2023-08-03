@@ -44,16 +44,15 @@ impl ListStackInstancesForProvisionedProductInput {
 }
 impl ListStackInstancesForProvisionedProductInput {
     /// Creates a new builder-style object to manufacture [`ListStackInstancesForProvisionedProductInput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput).
-    pub fn builder() -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder{
+    pub fn builder() -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder
+    {
         crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStackInstancesForProvisionedProductInput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStackInstancesForProvisionedProductInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,
@@ -66,10 +65,7 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -78,10 +74,7 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -94,18 +87,12 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
         &self.accept_language
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_id = input;
         self
     }
@@ -142,18 +129,19 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListStackInstancesForProvisionedProductInput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput {
-                accept_language: self.accept_language
-                ,
-                provisioned_product_id: self.provisioned_product_id
-                ,
-                page_token: self.page_token
-                ,
-                page_size: self.page_size
-                ,
-            }
+                accept_language: self.accept_language,
+                provisioned_product_id: self.provisioned_product_id,
+                page_token: self.page_token,
+                page_size: self.page_size,
+            },
         )
     }
 }

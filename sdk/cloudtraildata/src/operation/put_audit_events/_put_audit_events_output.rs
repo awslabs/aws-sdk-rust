@@ -35,12 +35,9 @@ impl PutAuditEventsOutput {
 
 /// A builder for [`PutAuditEventsOutput`](crate::operation::put_audit_events::PutAuditEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAuditEventsOutputBuilder {
-    pub(crate) successful:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>>,
+    pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>>,
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl PutAuditEventsOutputBuilder {
         self
     }
     /// <p>Lists events in the provided event payload that were successfully ingested into CloudTrail.</p>
-    pub fn set_successful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>>,
-    ) -> Self {
+    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>>) -> Self {
         self.successful = input;
         self
     }
     /// <p>Lists events in the provided event payload that were successfully ingested into CloudTrail.</p>
-    pub fn get_successful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>> {
+    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>> {
         &self.successful
     }
     /// Appends an item to `failed`.
@@ -82,17 +74,12 @@ impl PutAuditEventsOutputBuilder {
         self
     }
     /// <p>Lists events in the provided event payload that could not be ingested into CloudTrail, and includes the error code and error message returned for events that could not be ingested.</p>
-    pub fn set_failed(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>>,
-    ) -> Self {
+    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>>) -> Self {
         self.failed = input;
         self
     }
     /// <p>Lists events in the provided event payload that could not be ingested into CloudTrail, and includes the error code and error message returned for events that could not be ingested.</p>
-    pub fn get_failed(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>> {
+    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>> {
         &self.failed
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

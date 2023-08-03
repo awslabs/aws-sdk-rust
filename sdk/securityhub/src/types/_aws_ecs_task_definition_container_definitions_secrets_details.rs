@@ -23,17 +23,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value_from: ::std::option::Option<::std::string::String>,

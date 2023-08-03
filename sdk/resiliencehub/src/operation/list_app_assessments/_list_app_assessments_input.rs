@@ -64,22 +64,18 @@ impl ListAppAssessmentsInput {
 }
 impl ListAppAssessmentsInput {
     /// Creates a new builder-style object to manufacture [`ListAppAssessmentsInput`](crate::operation::list_app_assessments::ListAppAssessmentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_app_assessments::builders::ListAppAssessmentsInputBuilder {
+    pub fn builder() -> crate::operation::list_app_assessments::builders::ListAppAssessmentsInputBuilder {
         crate::operation::list_app_assessments::builders::ListAppAssessmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppAssessmentsInput`](crate::operation::list_app_assessments::ListAppAssessmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppAssessmentsInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) assessment_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>,
+    pub(crate) assessment_status: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>,
     pub(crate) compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     pub(crate) invoker: ::std::option::Option<crate::types::AssessmentInvoker>,
     pub(crate) reverse_order: ::std::option::Option<bool>,
@@ -102,18 +98,12 @@ impl ListAppAssessmentsInputBuilder {
         &self.app_arn
     }
     /// <p>The name for the assessment.</p>
-    pub fn assessment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the assessment.</p>
-    pub fn set_assessment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_name = input;
         self
     }
@@ -133,17 +123,12 @@ impl ListAppAssessmentsInputBuilder {
         self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn set_assessment_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>,
-    ) -> Self {
+    pub fn set_assessment_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>) -> Self {
         self.assessment_status = input;
         self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn get_assessment_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>> {
+    pub fn get_assessment_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>> {
         &self.assessment_status
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
@@ -152,10 +137,7 @@ impl ListAppAssessmentsInputBuilder {
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn set_compliance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceStatus>,
-    ) -> Self {
+    pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.compliance_status = input;
         self
     }
@@ -169,10 +151,7 @@ impl ListAppAssessmentsInputBuilder {
         self
     }
     /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
-    pub fn set_invoker(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentInvoker>,
-    ) -> Self {
+    pub fn set_invoker(mut self, input: ::std::option::Option<crate::types::AssessmentInvoker>) -> Self {
         self.invoker = input;
         self
     }
@@ -225,21 +204,16 @@ impl ListAppAssessmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppAssessmentsInput`](crate::operation::list_app_assessments::ListAppAssessmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_assessments::ListAppAssessmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_app_assessments::ListAppAssessmentsInput {
-                app_arn: self.app_arn,
-                assessment_name: self.assessment_name,
-                assessment_status: self.assessment_status,
-                compliance_status: self.compliance_status,
-                invoker: self.invoker,
-                reverse_order: self.reverse_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_app_assessments::ListAppAssessmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_app_assessments::ListAppAssessmentsInput {
+            app_arn: self.app_arn,
+            assessment_name: self.assessment_name,
+            assessment_status: self.assessment_status,
+            compliance_status: self.compliance_status,
+            invoker: self.invoker,
+            reverse_order: self.reverse_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

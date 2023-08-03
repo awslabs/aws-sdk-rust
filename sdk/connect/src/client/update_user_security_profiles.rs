@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// - On success, responds with [`UpdateUserSecurityProfilesOutput`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput)
     /// - On failure, responds with [`SdkError<UpdateUserSecurityProfilesError>`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesError)
-    pub fn update_user_security_profiles(&self) -> crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesFluentBuilder{
+    pub fn update_user_security_profiles(
+        &self,
+    ) -> crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesFluentBuilder {
         crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesFluentBuilder::new(self.handle.clone())
     }
 }

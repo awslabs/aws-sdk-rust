@@ -38,10 +38,7 @@ impl DeleteInstanceSnapshotFluentBuilder {
         }
     }
     /// Access the DeleteInstanceSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_instance_snapshot::builders::DeleteInstanceSnapshotInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_instance_snapshot::builders::DeleteInstanceSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteInstanceSnapshotFluentBuilder {
             crate::operation::delete_instance_snapshot::DeleteInstanceSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteInstanceSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteInstanceSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteInstanceSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DeleteInstanceSnapshotFluentBuilder {
             crate::operation::delete_instance_snapshot::DeleteInstanceSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the snapshot to delete.</p>
-    pub fn instance_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_snapshot_name(input.into());
         self
     }
     /// <p>The name of the snapshot to delete.</p>
-    pub fn set_instance_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_snapshot_name(input);
         self
     }

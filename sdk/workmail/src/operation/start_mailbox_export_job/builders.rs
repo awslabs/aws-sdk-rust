@@ -37,10 +37,7 @@ impl StartMailboxExportJobFluentBuilder {
         }
     }
     /// Access the StartMailboxExportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartMailboxExportJobFluentBuilder {
             crate::operation::start_mailbox_export_job::StartMailboxExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_mailbox_export_job::StartMailboxExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_mailbox_export_job::StartMailboxExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartMailboxExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartMailboxExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_mailbox_export_job::StartMailboxExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_mailbox_export_job::StartMailboxExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_mailbox_export_job::StartMailboxExportJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartMailboxExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_mailbox_export_job::StartMailboxExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_mailbox_export_job::StartMailboxExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_mailbox_export_job::StartMailboxExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartMailboxExportJobFluentBuilder {
             crate::operation::start_mailbox_export_job::StartMailboxExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_mailbox_export_job::StartMailboxExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_mailbox_export_job::StartMailboxExportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl StartMailboxExportJobFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The identifier associated with the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier associated with the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -214,18 +194,12 @@ impl StartMailboxExportJobFluentBuilder {
         self.inner.get_kms_key_arn()
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }

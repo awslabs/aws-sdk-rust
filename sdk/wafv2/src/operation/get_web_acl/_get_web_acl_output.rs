@@ -42,9 +42,7 @@ impl GetWebAclOutput {
 
 /// A builder for [`GetWebAclOutput`](crate::operation::get_web_acl::GetWebAclOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWebAclOutputBuilder {
     pub(crate) web_acl: ::std::option::Option<crate::types::WebAcl>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,
@@ -81,18 +79,12 @@ impl GetWebAclOutputBuilder {
         &self.lock_token
     }
     /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code> and the account creation fraud prevention managed rule group <code>AWSManagedRulesACFPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn application_integration_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_integration_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_integration_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code> and the account creation fraud prevention managed rule group <code>AWSManagedRulesACFPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn set_application_integration_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_integration_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_integration_url = input;
         self
     }

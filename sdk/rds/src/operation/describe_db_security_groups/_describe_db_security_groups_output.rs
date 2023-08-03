@@ -29,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeDbSecurityGroupsOutput {
 }
 impl DescribeDbSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSecurityGroupsOutput`](crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput).
-    pub fn builder() -> crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsOutputBuilder {
         crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbSecurityGroupsOutput`](crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbSecurityGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroup>>,
+    pub(crate) db_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbSecurityGroupsOutputBuilder {
@@ -72,17 +69,12 @@ impl DescribeDbSecurityGroupsOutputBuilder {
         self
     }
     /// <p>A list of <code>DBSecurityGroup</code> instances.</p>
-    pub fn set_db_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroup>>,
-    ) -> Self {
+    pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroup>>) -> Self {
         self.db_security_groups = input;
         self
     }
     /// <p>A list of <code>DBSecurityGroup</code> instances.</p>
-    pub fn get_db_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroup>> {
+    pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroup>> {
         &self.db_security_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -95,9 +87,7 @@ impl DescribeDbSecurityGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbSecurityGroupsOutput`](crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput {
         crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput {
             marker: self.marker,
             db_security_groups: self.db_security_groups,

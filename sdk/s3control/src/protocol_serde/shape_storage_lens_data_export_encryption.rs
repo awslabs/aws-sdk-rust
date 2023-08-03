@@ -18,8 +18,7 @@ pub fn ser_storage_lens_data_export_encryption(
 
 pub fn de_storage_lens_data_export_encryption(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::StorageLensDataExportEncryption, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::StorageLensDataExportEncryption, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::StorageLensDataExportEncryption::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -27,17 +27,14 @@ impl ListHealthChecksInput {
 }
 impl ListHealthChecksInput {
     /// Creates a new builder-style object to manufacture [`ListHealthChecksInput`](crate::operation::list_health_checks::ListHealthChecksInput).
-    pub fn builder() -> crate::operation::list_health_checks::builders::ListHealthChecksInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_health_checks::builders::ListHealthChecksInputBuilder {
         crate::operation::list_health_checks::builders::ListHealthChecksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListHealthChecksInput`](crate::operation::list_health_checks::ListHealthChecksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHealthChecksInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -80,15 +77,10 @@ impl ListHealthChecksInputBuilder {
     /// Consumes the builder and constructs a [`ListHealthChecksInput`](crate::operation::list_health_checks::ListHealthChecksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_health_checks::ListHealthChecksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_health_checks::ListHealthChecksInput {
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_health_checks::ListHealthChecksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_health_checks::ListHealthChecksInput {
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

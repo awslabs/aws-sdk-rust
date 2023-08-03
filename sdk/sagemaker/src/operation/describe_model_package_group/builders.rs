@@ -26,7 +26,7 @@ impl DescribeModelPackageGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeModelPackageGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupInputBuilder,
+    inner: crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupInputBuilder,
 }
 impl DescribeModelPackageGroupFluentBuilder {
     /// Creates a new `DescribeModelPackageGroup`.
@@ -37,7 +37,7 @@ impl DescribeModelPackageGroupFluentBuilder {
         }
     }
     /// Access the DescribeModelPackageGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeModelPackageGroupFluentBuilder {
             crate::operation::describe_model_package_group::DescribeModelPackageGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_package_group::DescribeModelPackageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_package_group::DescribeModelPackageGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeModelPackageGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeModelPackageGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_package_group::DescribeModelPackageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_package_group::DescribeModelPackageGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeModelPackageGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_package_group::DescribeModelPackageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_package_group::DescribeModelPackageGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeModelPackageGroupFluentBuilder {
             crate::operation::describe_model_package_group::DescribeModelPackageGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_package_group::DescribeModelPackageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_package_group::DescribeModelPackageGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of gthe model group to describe.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_package_group_name(input.into());
         self
     }
     /// <p>The name of gthe model group to describe.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_package_group_name(input);
         self
     }

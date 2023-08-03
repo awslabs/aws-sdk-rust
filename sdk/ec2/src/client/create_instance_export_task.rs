@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInstanceExportTaskOutput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput) with field(s):
     ///   - [`export_task(Option<ExportTask>)`](crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput::export_task): <p>Information about the export instance task.</p>
     /// - On failure, responds with [`SdkError<CreateInstanceExportTaskError>`](crate::operation::create_instance_export_task::CreateInstanceExportTaskError)
-    pub fn create_instance_export_task(&self) -> crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskFluentBuilder{
+    pub fn create_instance_export_task(&self) -> crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskFluentBuilder {
         crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskFluentBuilder::new(self.handle.clone())
     }
 }

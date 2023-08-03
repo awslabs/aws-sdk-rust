@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteTrafficMirrorSessionOutput`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput) with field(s):
     ///   - [`traffic_mirror_session_id(Option<String>)`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput::traffic_mirror_session_id): <p>The ID of the deleted Traffic Mirror session.</p>
     /// - On failure, responds with [`SdkError<DeleteTrafficMirrorSessionError>`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionError)
-    pub fn delete_traffic_mirror_session(&self) -> crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionFluentBuilder{
+    pub fn delete_traffic_mirror_session(
+        &self,
+    ) -> crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionFluentBuilder {
         crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionFluentBuilder::new(self.handle.clone())
     }
 }

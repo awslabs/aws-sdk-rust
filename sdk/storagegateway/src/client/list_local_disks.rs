@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`gateway_arn(Option<String>)`](crate::operation::list_local_disks::ListLocalDisksOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     ///   - [`disks(Option<Vec<Disk>>)`](crate::operation::list_local_disks::ListLocalDisksOutput::disks): <p>A JSON object containing the following fields:</p>  <ul>   <li> <p> <code>ListLocalDisksOutput$Disks</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<ListLocalDisksError>`](crate::operation::list_local_disks::ListLocalDisksError)
-    pub fn list_local_disks(
-        &self,
-    ) -> crate::operation::list_local_disks::builders::ListLocalDisksFluentBuilder {
-        crate::operation::list_local_disks::builders::ListLocalDisksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_local_disks(&self) -> crate::operation::list_local_disks::builders::ListLocalDisksFluentBuilder {
+        crate::operation::list_local_disks::builders::ListLocalDisksFluentBuilder::new(self.handle.clone())
     }
 }

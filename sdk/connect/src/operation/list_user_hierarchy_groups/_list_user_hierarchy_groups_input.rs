@@ -29,18 +29,14 @@ impl ListUserHierarchyGroupsInput {
 }
 impl ListUserHierarchyGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListUserHierarchyGroupsInput`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsInputBuilder {
         crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserHierarchyGroupsInput`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserHierarchyGroupsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl ListUserHierarchyGroupsInputBuilder {
         crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

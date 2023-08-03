@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetDevEndpointsOutput {
 }
 impl GetDevEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`GetDevEndpointsOutput`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput).
-    pub fn builder() -> crate::operation::get_dev_endpoints::builders::GetDevEndpointsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_dev_endpoints::builders::GetDevEndpointsOutputBuilder {
         crate::operation::get_dev_endpoints::builders::GetDevEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDevEndpointsOutput`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevEndpointsOutputBuilder {
     pub(crate) dev_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetDevEndpointsOutputBuilder {
         self
     }
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    pub fn set_dev_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>,
-    ) -> Self {
+    pub fn set_dev_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>) -> Self {
         self.dev_endpoints = input;
         self
     }
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    pub fn get_dev_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>> {
+    pub fn get_dev_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>> {
         &self.dev_endpoints
     }
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>

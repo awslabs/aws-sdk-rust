@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateWorkspaceBundleOutput {
 }
 impl CreateWorkspaceBundleOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceBundleOutput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput).
-    pub fn builder(
-    ) -> crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleOutputBuilder {
         crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkspaceBundleOutput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkspaceBundleOutputBuilder {
     pub(crate) workspace_bundle: ::std::option::Option<crate::types::WorkspaceBundle>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateWorkspaceBundleOutputBuilder {
         self
     }
     /// <p>Describes a WorkSpace bundle.</p>
-    pub fn set_workspace_bundle(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceBundle>,
-    ) -> Self {
+    pub fn set_workspace_bundle(mut self, input: ::std::option::Option<crate::types::WorkspaceBundle>) -> Self {
         self.workspace_bundle = input;
         self
     }

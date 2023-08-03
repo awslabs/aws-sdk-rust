@@ -27,15 +27,11 @@ impl WorkspaceConnectionStatus {
         self.connection_state.as_ref()
     }
     /// <p>The timestamp of the connection status check.</p>
-    pub fn connection_state_check_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn connection_state_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.connection_state_check_timestamp.as_ref()
     }
     /// <p>The timestamp of the last known user connection.</p>
-    pub fn last_known_user_connection_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_known_user_connection_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_known_user_connection_timestamp.as_ref()
     }
 }
@@ -48,16 +44,12 @@ impl WorkspaceConnectionStatus {
 
 /// A builder for [`WorkspaceConnectionStatus`](crate::types::WorkspaceConnectionStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkspaceConnectionStatusBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_state: ::std::option::Option<crate::types::ConnectionState>,
-    pub(crate) connection_state_check_timestamp:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) last_known_user_connection_timestamp:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) connection_state_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_known_user_connection_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl WorkspaceConnectionStatusBuilder {
     /// <p>The identifier of the WorkSpace.</p>
@@ -80,10 +72,7 @@ impl WorkspaceConnectionStatusBuilder {
         self
     }
     /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</p>
-    pub fn set_connection_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionState>,
-    ) -> Self {
+    pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
         self.connection_state = input;
         self
     }
@@ -97,39 +86,26 @@ impl WorkspaceConnectionStatusBuilder {
         self
     }
     /// <p>The timestamp of the connection status check.</p>
-    pub fn set_connection_state_check_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_connection_state_check_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.connection_state_check_timestamp = input;
         self
     }
     /// <p>The timestamp of the connection status check.</p>
-    pub fn get_connection_state_check_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_connection_state_check_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.connection_state_check_timestamp
     }
     /// <p>The timestamp of the last known user connection.</p>
-    pub fn last_known_user_connection_timestamp(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn last_known_user_connection_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_known_user_connection_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of the last known user connection.</p>
-    pub fn set_last_known_user_connection_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_known_user_connection_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_known_user_connection_timestamp = input;
         self
     }
     /// <p>The timestamp of the last known user connection.</p>
-    pub fn get_last_known_user_connection_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_known_user_connection_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_known_user_connection_timestamp
     }
     /// Consumes the builder and constructs a [`WorkspaceConnectionStatus`](crate::types::WorkspaceConnectionStatus).

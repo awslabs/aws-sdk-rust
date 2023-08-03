@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput::next_token): <p>The token used to list the remaining schedules from the previous API call.</p>
     /// - On failure, responds with [`SdkError<ListBusinessReportSchedulesError>`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn list_business_report_schedules(&self) -> crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder{
+    pub fn list_business_report_schedules(
+        &self,
+    ) -> crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder {
         crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder::new(self.handle.clone())
     }
 }

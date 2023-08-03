@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`business_calling(Option<BusinessCallingSettings>)`](crate::operation::get_global_settings::GetGlobalSettingsOutput::business_calling): <p>The Amazon Chime Business Calling settings.</p>
     ///   - [`voice_connector(Option<VoiceConnectorSettings>)`](crate::operation::get_global_settings::GetGlobalSettingsOutput::voice_connector): <p>The Amazon Chime Voice Connector settings.</p>
     /// - On failure, responds with [`SdkError<GetGlobalSettingsError>`](crate::operation::get_global_settings::GetGlobalSettingsError)
-    pub fn get_global_settings(
-        &self,
-    ) -> crate::operation::get_global_settings::builders::GetGlobalSettingsFluentBuilder {
-        crate::operation::get_global_settings::builders::GetGlobalSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_global_settings(&self) -> crate::operation::get_global_settings::builders::GetGlobalSettingsFluentBuilder {
+        crate::operation::get_global_settings::builders::GetGlobalSettingsFluentBuilder::new(self.handle.clone())
     }
 }

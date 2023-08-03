@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePublishingDestinationOutput {
 }
 impl DeletePublishingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeletePublishingDestinationOutput`](crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput).
-    pub fn builder() -> crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationOutputBuilder {
         crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePublishingDestinationOutput`](crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePublishingDestinationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeletePublishingDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeletePublishingDestinationOutput`](crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput {
+    pub fn build(self) -> crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput {
         crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput {
             _request_id: self._request_id,
         }

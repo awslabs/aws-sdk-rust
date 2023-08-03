@@ -9,9 +9,7 @@ pub struct ArchiveRuleSummary {
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter used to define the archive rule.</p>
     #[doc(hidden)]
-    pub filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    >,
+    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     /// <p>The time at which the archive rule was created.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -25,11 +23,7 @@ impl ArchiveRuleSummary {
         self.rule_name.as_deref()
     }
     /// <p>A filter used to define the archive rule.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         self.filter.as_ref()
     }
     /// <p>The time at which the archive rule was created.</p>
@@ -50,14 +44,10 @@ impl ArchiveRuleSummary {
 
 /// A builder for [`ArchiveRuleSummary`](crate::types::ArchiveRuleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArchiveRuleSummaryBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
-    pub(crate) filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    >,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -81,32 +71,19 @@ impl ArchiveRuleSummaryBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>A filter used to define the archive rule.</p>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Criterion,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.filter = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A filter used to define the archive rule.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
         self.filter = input;
         self
     }
     /// <p>A filter used to define the archive rule.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         &self.filter
     }
     /// <p>The time at which the archive rule was created.</p>
@@ -115,10 +92,7 @@ impl ArchiveRuleSummaryBuilder {
         self
     }
     /// <p>The time at which the archive rule was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -132,10 +106,7 @@ impl ArchiveRuleSummaryBuilder {
         self
     }
     /// <p>The time at which the archive rule was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

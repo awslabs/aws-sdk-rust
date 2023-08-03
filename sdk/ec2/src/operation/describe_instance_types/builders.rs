@@ -37,10 +37,7 @@ impl DescribeInstanceTypesFluentBuilder {
         }
     }
     /// Access the DescribeInstanceTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_instance_types::builders::DescribeInstanceTypesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_instance_types::builders::DescribeInstanceTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeInstanceTypesFluentBuilder {
             crate::operation::describe_instance_types::DescribeInstanceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_types::DescribeInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_types::DescribeInstanceTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeInstanceTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeInstanceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_types::DescribeInstanceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_types::DescribeInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_types::DescribeInstanceTypesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeInstanceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_types::DescribeInstanceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_types::DescribeInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_types::DescribeInstanceTypesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl DescribeInstanceTypesFluentBuilder {
             crate::operation::describe_instance_types::DescribeInstanceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_types::DescribeInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_types::DescribeInstanceTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_types::paginator::DescribeInstanceTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_instance_types::paginator::DescribeInstanceTypesPaginator {
-        crate::operation::describe_instance_types::paginator::DescribeInstanceTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_instance_types::paginator::DescribeInstanceTypesPaginator {
+        crate::operation::describe_instance_types::paginator::DescribeInstanceTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -158,17 +139,12 @@ impl DescribeInstanceTypesFluentBuilder {
         self
     }
     /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>,
-    ) -> Self {
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>) -> Self {
         self.inner = self.inner.set_instance_types(input);
         self
     }
     /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
         self.inner.get_instance_types()
     }
     /// Appends an item to `Filters`.
@@ -285,10 +261,7 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <li> <p> <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.</p> </li>
     /// <li> <p> <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for the instance type. For example, "1" or "1,2".</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

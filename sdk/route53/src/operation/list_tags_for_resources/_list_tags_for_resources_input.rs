@@ -31,17 +31,14 @@ impl ListTagsForResourcesInput {
 }
 impl ListTagsForResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourcesInput`](crate::operation::list_tags_for_resources::ListTagsForResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesInputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesInputBuilder {
         crate::operation::list_tags_for_resources::builders::ListTagsForResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForResourcesInput`](crate::operation::list_tags_for_resources::ListTagsForResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForResourcesInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::TagResourceType>,
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -61,10 +58,7 @@ impl ListTagsForResourcesInputBuilder {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TagResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -88,31 +82,22 @@ impl ListTagsForResourcesInputBuilder {
         self
     }
     /// <p>A complex type that contains the ResourceId element for each resource for which you want to get a list of tags.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>A complex type that contains the ResourceId element for each resource for which you want to get a list of tags.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }
     /// Consumes the builder and constructs a [`ListTagsForResourcesInput`](crate::operation::list_tags_for_resources::ListTagsForResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tags_for_resources::ListTagsForResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_tags_for_resources::ListTagsForResourcesInput {
-                resource_type: self.resource_type,
-                resource_ids: self.resource_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_tags_for_resources::ListTagsForResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_resources::ListTagsForResourcesInput {
+            resource_type: self.resource_type,
+            resource_ids: self.resource_ids,
+        })
     }
 }

@@ -63,17 +63,12 @@ impl ListChannelsOutputBuilder {
         self
     }
     /// <p>The information about each channel.</p>
-    pub fn set_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>,
-    ) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>) -> Self {
         self.channels = input;
         self
     }
     /// <p>The information about each channel.</p>
-    pub fn get_channels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>> {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>> {
         &self.channels
     }
     /// <p>The token returned from previous API requests until the number of channels is reached.</p>

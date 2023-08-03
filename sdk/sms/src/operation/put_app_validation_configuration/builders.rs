@@ -26,7 +26,7 @@ impl PutAppValidationConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAppValidationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_app_validation_configuration::builders::PutAppValidationConfigurationInputBuilder,
+    inner: crate::operation::put_app_validation_configuration::builders::PutAppValidationConfigurationInputBuilder,
 }
 impl PutAppValidationConfigurationFluentBuilder {
     /// Creates a new `PutAppValidationConfiguration`.
@@ -37,7 +37,7 @@ impl PutAppValidationConfigurationFluentBuilder {
         }
     }
     /// Access the PutAppValidationConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_app_validation_configuration::builders::PutAppValidationConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_app_validation_configuration::builders::PutAppValidationConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutAppValidationConfigurationFluentBuilder {
             crate::operation::put_app_validation_configuration::PutAppValidationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutAppValidationConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutAppValidationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_app_validation_configuration::PutAppValidationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutAppValidationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_app_validation_configuration::PutAppValidationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl PutAppValidationConfigurationFluentBuilder {
             crate::operation::put_app_validation_configuration::PutAppValidationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -139,10 +128,7 @@ impl PutAppValidationConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_app_validation_configurations`](Self::set_app_validation_configurations).
     ///
     /// <p>The configuration for application validation.</p>
-    pub fn app_validation_configurations(
-        mut self,
-        input: crate::types::AppValidationConfiguration,
-    ) -> Self {
+    pub fn app_validation_configurations(mut self, input: crate::types::AppValidationConfiguration) -> Self {
         self.inner = self.inner.app_validation_configurations(input);
         self
     }
@@ -155,9 +141,7 @@ impl PutAppValidationConfigurationFluentBuilder {
         self
     }
     /// <p>The configuration for application validation.</p>
-    pub fn get_app_validation_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>> {
+    pub fn get_app_validation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>> {
         self.inner.get_app_validation_configurations()
     }
     /// Appends an item to `serverGroupValidationConfigurations`.
@@ -165,19 +149,14 @@ impl PutAppValidationConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_server_group_validation_configurations`](Self::set_server_group_validation_configurations).
     ///
     /// <p>The configuration for instance validation.</p>
-    pub fn server_group_validation_configurations(
-        mut self,
-        input: crate::types::ServerGroupValidationConfiguration,
-    ) -> Self {
+    pub fn server_group_validation_configurations(mut self, input: crate::types::ServerGroupValidationConfiguration) -> Self {
         self.inner = self.inner.server_group_validation_configurations(input);
         self
     }
     /// <p>The configuration for instance validation.</p>
     pub fn set_server_group_validation_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_server_group_validation_configurations(input);
         self
@@ -185,8 +164,7 @@ impl PutAppValidationConfigurationFluentBuilder {
     /// <p>The configuration for instance validation.</p>
     pub fn get_server_group_validation_configurations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>> {
         self.inner.get_server_group_validation_configurations()
     }
 }

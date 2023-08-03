@@ -49,16 +49,14 @@ impl UpdateDomainContactPrivacyInput {
 }
 impl UpdateDomainContactPrivacyInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainContactPrivacyInput`](crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput).
-    pub fn builder() -> crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyInputBuilder{
+    pub fn builder() -> crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyInputBuilder {
         crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainContactPrivacyInput`](crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainContactPrivacyInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) admin_privacy: ::std::option::Option<bool>,
@@ -147,13 +145,11 @@ impl UpdateDomainContactPrivacyInputBuilder {
         crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput {
-                domain_name: self.domain_name,
-                admin_privacy: self.admin_privacy,
-                registrant_privacy: self.registrant_privacy,
-                tech_privacy: self.tech_privacy,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput {
+            domain_name: self.domain_name,
+            admin_privacy: self.admin_privacy,
+            registrant_privacy: self.registrant_privacy,
+            tech_privacy: self.tech_privacy,
+        })
     }
 }

@@ -15,16 +15,14 @@ impl DeleteLoggingConfigurationInput {
 }
 impl DeleteLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder {
         crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DeleteLoggingConfigurationInputBuilder {
         crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput {
-                identifier: self.identifier,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput { identifier: self.identifier })
     }
 }

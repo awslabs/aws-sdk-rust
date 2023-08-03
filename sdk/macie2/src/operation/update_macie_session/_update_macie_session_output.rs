@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateMacieSessionOutput {
 }
 impl UpdateMacieSessionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMacieSessionOutput`](crate::operation::update_macie_session::UpdateMacieSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_macie_session::builders::UpdateMacieSessionOutputBuilder {
+    pub fn builder() -> crate::operation::update_macie_session::builders::UpdateMacieSessionOutputBuilder {
         crate::operation::update_macie_session::builders::UpdateMacieSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMacieSessionOutput`](crate::operation::update_macie_session::UpdateMacieSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMacieSessionOutputBuilder {
     _request_id: Option<String>,
 }

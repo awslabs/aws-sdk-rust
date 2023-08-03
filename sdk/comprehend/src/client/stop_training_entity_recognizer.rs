@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`entity_recognizer_arn(impl ::std::convert::Into<String>)`](crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerFluentBuilder::entity_recognizer_arn) / [`set_entity_recognizer_arn(Option<String>)`](crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerFluentBuilder::set_entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
     /// - On success, responds with [`StopTrainingEntityRecognizerOutput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput)
     /// - On failure, responds with [`SdkError<StopTrainingEntityRecognizerError>`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerError)
-    pub fn stop_training_entity_recognizer(&self) -> crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerFluentBuilder{
+    pub fn stop_training_entity_recognizer(
+        &self,
+    ) -> crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerFluentBuilder {
         crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerFluentBuilder::new(self.handle.clone())
     }
 }

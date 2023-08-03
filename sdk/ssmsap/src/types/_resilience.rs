@@ -44,9 +44,7 @@ impl Resilience {
 
 /// A builder for [`Resilience`](crate::types::Resilience).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResilienceBuilder {
     pub(crate) hsr_tier: ::std::option::Option<::std::string::String>,
     pub(crate) hsr_replication_mode: ::std::option::Option<crate::types::ReplicationMode>,
@@ -74,17 +72,12 @@ impl ResilienceBuilder {
         self
     }
     /// <p>The replication mode of the component.</p>
-    pub fn set_hsr_replication_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationMode>,
-    ) -> Self {
+    pub fn set_hsr_replication_mode(mut self, input: ::std::option::Option<crate::types::ReplicationMode>) -> Self {
         self.hsr_replication_mode = input;
         self
     }
     /// <p>The replication mode of the component.</p>
-    pub fn get_hsr_replication_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationMode> {
+    pub fn get_hsr_replication_mode(&self) -> &::std::option::Option<crate::types::ReplicationMode> {
         &self.hsr_replication_mode
     }
     /// <p>The operation mode of the component.</p>
@@ -93,10 +86,7 @@ impl ResilienceBuilder {
         self
     }
     /// <p>The operation mode of the component.</p>
-    pub fn set_hsr_operation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationMode>,
-    ) -> Self {
+    pub fn set_hsr_operation_mode(mut self, input: ::std::option::Option<crate::types::OperationMode>) -> Self {
         self.hsr_operation_mode = input;
         self
     }
@@ -110,10 +100,7 @@ impl ResilienceBuilder {
         self
     }
     /// <p>The cluster status of the component.</p>
-    pub fn set_cluster_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterStatus>,
-    ) -> Self {
+    pub fn set_cluster_status(mut self, input: ::std::option::Option<crate::types::ClusterStatus>) -> Self {
         self.cluster_status = input;
         self
     }

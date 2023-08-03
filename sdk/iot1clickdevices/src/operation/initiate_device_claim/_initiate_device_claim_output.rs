@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for InitiateDeviceClaimOutput {
 }
 impl InitiateDeviceClaimOutput {
     /// Creates a new builder-style object to manufacture [`InitiateDeviceClaimOutput`](crate::operation::initiate_device_claim::InitiateDeviceClaimOutput).
-    pub fn builder(
-    ) -> crate::operation::initiate_device_claim::builders::InitiateDeviceClaimOutputBuilder {
-        crate::operation::initiate_device_claim::builders::InitiateDeviceClaimOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::initiate_device_claim::builders::InitiateDeviceClaimOutputBuilder {
+        crate::operation::initiate_device_claim::builders::InitiateDeviceClaimOutputBuilder::default()
     }
 }
 
 /// A builder for [`InitiateDeviceClaimOutput`](crate::operation::initiate_device_claim::InitiateDeviceClaimOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateDeviceClaimOutputBuilder {
     pub(crate) state: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

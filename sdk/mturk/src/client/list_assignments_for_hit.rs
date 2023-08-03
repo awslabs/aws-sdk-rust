@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`num_results(Option<i32>)`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput::num_results): <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     ///   - [`assignments(Option<Vec<Assignment>>)`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput::assignments): <p> The collection of Assignment data structures returned by this call.</p>
     /// - On failure, responds with [`SdkError<ListAssignmentsForHITError>`](crate::operation::list_assignments_for_hit::ListAssignmentsForHITError)
-    pub fn list_assignments_for_hit(
-        &self,
-    ) -> crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHITFluentBuilder
-    {
+    pub fn list_assignments_for_hit(&self) -> crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHITFluentBuilder {
         crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHITFluentBuilder::new(self.handle.clone())
     }
 }

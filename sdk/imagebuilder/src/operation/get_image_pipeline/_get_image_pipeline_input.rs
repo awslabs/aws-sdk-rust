@@ -15,34 +15,25 @@ impl GetImagePipelineInput {
 }
 impl GetImagePipelineInput {
     /// Creates a new builder-style object to manufacture [`GetImagePipelineInput`](crate::operation::get_image_pipeline::GetImagePipelineInput).
-    pub fn builder() -> crate::operation::get_image_pipeline::builders::GetImagePipelineInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_image_pipeline::builders::GetImagePipelineInputBuilder {
         crate::operation::get_image_pipeline::builders::GetImagePipelineInputBuilder::default()
     }
 }
 
 /// A builder for [`GetImagePipelineInput`](crate::operation::get_image_pipeline::GetImagePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImagePipelineInputBuilder {
     pub(crate) image_pipeline_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetImagePipelineInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
-    pub fn image_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
-    pub fn set_image_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_pipeline_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetImagePipelineInputBuilder {
     /// Consumes the builder and constructs a [`GetImagePipelineInput`](crate::operation::get_image_pipeline::GetImagePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_image_pipeline::GetImagePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_image_pipeline::GetImagePipelineInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_image_pipeline::GetImagePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_image_pipeline::GetImagePipelineInput {
+            image_pipeline_arn: self.image_pipeline_arn,
+        })
     }
 }

@@ -9,30 +9,22 @@ pub struct MonitoringConfiguration {
     pub s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
     /// <p>The managed log persistence configuration for a job run.</p>
     #[doc(hidden)]
-    pub managed_persistence_monitoring_configuration:
-        ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
+    pub managed_persistence_monitoring_configuration: ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
     /// <p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_configuration:
-        ::std::option::Option<crate::types::CloudWatchLoggingConfiguration>,
+    pub cloud_watch_logging_configuration: ::std::option::Option<crate::types::CloudWatchLoggingConfiguration>,
 }
 impl MonitoringConfiguration {
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn s3_monitoring_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3MonitoringConfiguration> {
+    pub fn s3_monitoring_configuration(&self) -> ::std::option::Option<&crate::types::S3MonitoringConfiguration> {
         self.s3_monitoring_configuration.as_ref()
     }
     /// <p>The managed log persistence configuration for a job run.</p>
-    pub fn managed_persistence_monitoring_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ManagedPersistenceMonitoringConfiguration> {
+    pub fn managed_persistence_monitoring_configuration(&self) -> ::std::option::Option<&crate::types::ManagedPersistenceMonitoringConfiguration> {
         self.managed_persistence_monitoring_configuration.as_ref()
     }
     /// <p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>
-    pub fn cloud_watch_logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingConfiguration> {
+    pub fn cloud_watch_logging_configuration(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingConfiguration> {
         self.cloud_watch_logging_configuration.as_ref()
     }
 }
@@ -45,45 +37,29 @@ impl MonitoringConfiguration {
 
 /// A builder for [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringConfigurationBuilder {
-    pub(crate) s3_monitoring_configuration:
-        ::std::option::Option<crate::types::S3MonitoringConfiguration>,
-    pub(crate) managed_persistence_monitoring_configuration:
-        ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
-    pub(crate) cloud_watch_logging_configuration:
-        ::std::option::Option<crate::types::CloudWatchLoggingConfiguration>,
+    pub(crate) s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
+    pub(crate) managed_persistence_monitoring_configuration: ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
+    pub(crate) cloud_watch_logging_configuration: ::std::option::Option<crate::types::CloudWatchLoggingConfiguration>,
 }
 impl MonitoringConfigurationBuilder {
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn s3_monitoring_configuration(
-        mut self,
-        input: crate::types::S3MonitoringConfiguration,
-    ) -> Self {
+    pub fn s3_monitoring_configuration(mut self, input: crate::types::S3MonitoringConfiguration) -> Self {
         self.s3_monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn set_s3_monitoring_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
-    ) -> Self {
+    pub fn set_s3_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::S3MonitoringConfiguration>) -> Self {
         self.s3_monitoring_configuration = input;
         self
     }
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn get_s3_monitoring_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3MonitoringConfiguration> {
+    pub fn get_s3_monitoring_configuration(&self) -> &::std::option::Option<crate::types::S3MonitoringConfiguration> {
         &self.s3_monitoring_configuration
     }
     /// <p>The managed log persistence configuration for a job run.</p>
-    pub fn managed_persistence_monitoring_configuration(
-        mut self,
-        input: crate::types::ManagedPersistenceMonitoringConfiguration,
-    ) -> Self {
+    pub fn managed_persistence_monitoring_configuration(mut self, input: crate::types::ManagedPersistenceMonitoringConfiguration) -> Self {
         self.managed_persistence_monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -102,33 +78,24 @@ impl MonitoringConfigurationBuilder {
         &self.managed_persistence_monitoring_configuration
     }
     /// <p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>
-    pub fn cloud_watch_logging_configuration(
-        mut self,
-        input: crate::types::CloudWatchLoggingConfiguration,
-    ) -> Self {
+    pub fn cloud_watch_logging_configuration(mut self, input: crate::types::CloudWatchLoggingConfiguration) -> Self {
         self.cloud_watch_logging_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>
-    pub fn set_cloud_watch_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingConfiguration>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_configuration(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingConfiguration>) -> Self {
         self.cloud_watch_logging_configuration = input;
         self
     }
     /// <p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>
-    pub fn get_cloud_watch_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLoggingConfiguration> {
+    pub fn get_cloud_watch_logging_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingConfiguration> {
         &self.cloud_watch_logging_configuration
     }
     /// Consumes the builder and constructs a [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
     pub fn build(self) -> crate::types::MonitoringConfiguration {
         crate::types::MonitoringConfiguration {
             s3_monitoring_configuration: self.s3_monitoring_configuration,
-            managed_persistence_monitoring_configuration: self
-                .managed_persistence_monitoring_configuration,
+            managed_persistence_monitoring_configuration: self.managed_persistence_monitoring_configuration,
             cloud_watch_logging_configuration: self.cloud_watch_logging_configuration,
         }
     }

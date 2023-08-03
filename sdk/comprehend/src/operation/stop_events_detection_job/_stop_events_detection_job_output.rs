@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for StopEventsDetectionJobOutput {
 }
 impl StopEventsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopEventsDetectionJobOutput`](crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobOutputBuilder {
         crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopEventsDetectionJobOutput`](crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEventsDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -84,9 +80,7 @@ impl StopEventsDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopEventsDetectionJobOutput`](crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput {
+    pub fn build(self) -> crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput {
         crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput {
             job_id: self.job_id,
             job_status: self.job_status,

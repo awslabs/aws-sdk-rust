@@ -37,10 +37,7 @@ impl GetTemplateSyncStatusFluentBuilder {
         }
     }
     /// Access the GetTemplateSyncStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetTemplateSyncStatusFluentBuilder {
             crate::operation::get_template_sync_status::GetTemplateSyncStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_template_sync_status::GetTemplateSyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_template_sync_status::GetTemplateSyncStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetTemplateSyncStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetTemplateSyncStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_template_sync_status::GetTemplateSyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_template_sync_status::GetTemplateSyncStatusError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetTemplateSyncStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_template_sync_status::GetTemplateSyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_template_sync_status::GetTemplateSyncStatusError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetTemplateSyncStatusFluentBuilder {
             crate::operation::get_template_sync_status::GetTemplateSyncStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_template_sync_status::GetTemplateSyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_template_sync_status::GetTemplateSyncStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The template name.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The template name.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -149,10 +129,7 @@ impl GetTemplateSyncStatusFluentBuilder {
         self
     }
     /// <p>The template type.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateType>,
-    ) -> Self {
+    pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
     }
@@ -161,18 +138,12 @@ impl GetTemplateSyncStatusFluentBuilder {
         self.inner.get_template_type()
     }
     /// <p>The template major version.</p>
-    pub fn template_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_version(input.into());
         self
     }
     /// <p>The template major version.</p>
-    pub fn set_template_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_version(input);
         self
     }

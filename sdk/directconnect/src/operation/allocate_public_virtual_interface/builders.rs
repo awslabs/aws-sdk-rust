@@ -5,16 +5,16 @@ pub use crate::operation::allocate_public_virtual_interface::_allocate_public_vi
 
 impl AllocatePublicVirtualInterfaceInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.allocate_public_virtual_interface();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AllocatePublicVirtualInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceInputBuilder,
+    inner: crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceInputBuilder,
 }
 impl AllocatePublicVirtualInterfaceFluentBuilder {
     /// Creates a new `AllocatePublicVirtualInterface`.
@@ -40,15 +40,20 @@ impl AllocatePublicVirtualInterfaceFluentBuilder {
         }
     }
     /// Access the AllocatePublicVirtualInterface as a reference.
-    pub fn as_input(&self) -> &crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterface, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterface,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl AllocatePublicVirtualInterfaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,32 +90,35 @@ impl AllocatePublicVirtualInterfaceFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterface, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterface,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -118,18 +127,12 @@ impl AllocatePublicVirtualInterfaceFluentBuilder {
         self.inner.get_connection_id()
     }
     /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_account(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
     }
@@ -138,10 +141,7 @@ impl AllocatePublicVirtualInterfaceFluentBuilder {
         self.inner.get_owner_account()
     }
     /// <p>Information about the public virtual interface.</p>
-    pub fn new_public_virtual_interface_allocation(
-        mut self,
-        input: crate::types::NewPublicVirtualInterfaceAllocation,
-    ) -> Self {
+    pub fn new_public_virtual_interface_allocation(mut self, input: crate::types::NewPublicVirtualInterfaceAllocation) -> Self {
         self.inner = self.inner.new_public_virtual_interface_allocation(input);
         self
     }
@@ -150,15 +150,11 @@ impl AllocatePublicVirtualInterfaceFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::NewPublicVirtualInterfaceAllocation>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_new_public_virtual_interface_allocation(input);
+        self.inner = self.inner.set_new_public_virtual_interface_allocation(input);
         self
     }
     /// <p>Information about the public virtual interface.</p>
-    pub fn get_new_public_virtual_interface_allocation(
-        &self,
-    ) -> &::std::option::Option<crate::types::NewPublicVirtualInterfaceAllocation> {
+    pub fn get_new_public_virtual_interface_allocation(&self) -> &::std::option::Option<crate::types::NewPublicVirtualInterfaceAllocation> {
         self.inner.get_new_public_virtual_interface_allocation()
     }
 }

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteGameServerGroupOutput`](crate::operation::delete_game_server_group::DeleteGameServerGroupOutput) with field(s):
     ///   - [`game_server_group(Option<GameServerGroup>)`](crate::operation::delete_game_server_group::DeleteGameServerGroupOutput::game_server_group): <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
     /// - On failure, responds with [`SdkError<DeleteGameServerGroupError>`](crate::operation::delete_game_server_group::DeleteGameServerGroupError)
-    pub fn delete_game_server_group(
-        &self,
-    ) -> crate::operation::delete_game_server_group::builders::DeleteGameServerGroupFluentBuilder
-    {
+    pub fn delete_game_server_group(&self) -> crate::operation::delete_game_server_group::builders::DeleteGameServerGroupFluentBuilder {
         crate::operation::delete_game_server_group::builders::DeleteGameServerGroupFluentBuilder::new(self.handle.clone())
     }
 }

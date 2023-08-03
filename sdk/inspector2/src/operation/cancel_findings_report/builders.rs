@@ -37,9 +37,7 @@ impl CancelFindingsReportFluentBuilder {
         }
     }
     /// Access the CancelFindingsReport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_findings_report::builders::CancelFindingsReportInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_findings_report::builders::CancelFindingsReportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CancelFindingsReportFluentBuilder {
             crate::operation::cancel_findings_report::CancelFindingsReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_findings_report::CancelFindingsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_findings_report::CancelFindingsReportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CancelFindingsReportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CancelFindingsReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_findings_report::CancelFindingsReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_findings_report::CancelFindingsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_findings_report::CancelFindingsReportError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CancelFindingsReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_findings_report::CancelFindingsReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_findings_report::CancelFindingsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_findings_report::CancelFindingsReportError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CancelFindingsReportFluentBuilder {
             crate::operation::cancel_findings_report::CancelFindingsReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_findings_report::CancelFindingsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_findings_report::CancelFindingsReportError>,
     > {
         self.customize_middleware().await
     }

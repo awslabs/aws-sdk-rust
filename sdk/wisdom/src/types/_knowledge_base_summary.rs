@@ -27,16 +27,13 @@ pub struct KnowledgeBaseSummary {
     pub rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
     /// <p>The KMS key used for encryption.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The description of the knowledge base.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl KnowledgeBaseSummary {
     /// <p>The identifier of the knowledge base.</p>
@@ -60,21 +57,15 @@ impl KnowledgeBaseSummary {
         self.status.as_ref()
     }
     /// <p>Configuration information about the external data source.</p>
-    pub fn source_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceConfiguration> {
+    pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
     /// <p>Information about how to render the content.</p>
-    pub fn rendering_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RenderingConfiguration> {
+    pub fn rendering_configuration(&self) -> ::std::option::Option<&crate::types::RenderingConfiguration> {
         self.rendering_configuration.as_ref()
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The description of the knowledge base.</p>
@@ -82,11 +73,7 @@ impl KnowledgeBaseSummary {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -99,9 +86,7 @@ impl KnowledgeBaseSummary {
 
 /// A builder for [`KnowledgeBaseSummary`](crate::types::KnowledgeBaseSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KnowledgeBaseSummaryBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_arn: ::std::option::Option<::std::string::String>,
@@ -110,27 +95,18 @@ pub struct KnowledgeBaseSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::KnowledgeBaseStatus>,
     pub(crate) source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     pub(crate) rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
-    pub(crate) server_side_encryption_configuration:
-        ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl KnowledgeBaseSummaryBuilder {
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the knowledge base.</p>
-    pub fn set_knowledge_base_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
@@ -139,18 +115,12 @@ impl KnowledgeBaseSummaryBuilder {
         &self.knowledge_base_id
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn knowledge_base_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn set_knowledge_base_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_knowledge_base_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_arn = input;
         self
     }
@@ -178,17 +148,12 @@ impl KnowledgeBaseSummaryBuilder {
         self
     }
     /// <p>The type of knowledge base.</p>
-    pub fn set_knowledge_base_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KnowledgeBaseType>,
-    ) -> Self {
+    pub fn set_knowledge_base_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseType>) -> Self {
         self.knowledge_base_type = input;
         self
     }
     /// <p>The type of knowledge base.</p>
-    pub fn get_knowledge_base_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
+    pub fn get_knowledge_base_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
         &self.knowledge_base_type
     }
     /// <p>The status of the knowledge base summary.</p>
@@ -197,10 +162,7 @@ impl KnowledgeBaseSummaryBuilder {
         self
     }
     /// <p>The status of the knowledge base summary.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::KnowledgeBaseStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseStatus>) -> Self {
         self.status = input;
         self
     }
@@ -214,17 +176,12 @@ impl KnowledgeBaseSummaryBuilder {
         self
     }
     /// <p>Configuration information about the external data source.</p>
-    pub fn set_source_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConfiguration>,
-    ) -> Self {
+    pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::SourceConfiguration>) -> Self {
         self.source_configuration = input;
         self
     }
     /// <p>Configuration information about the external data source.</p>
-    pub fn get_source_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+    pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
         &self.source_configuration
     }
     /// <p>Information about how to render the content.</p>
@@ -233,39 +190,26 @@ impl KnowledgeBaseSummaryBuilder {
         self
     }
     /// <p>Information about how to render the content.</p>
-    pub fn set_rendering_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RenderingConfiguration>,
-    ) -> Self {
+    pub fn set_rendering_configuration(mut self, input: ::std::option::Option<crate::types::RenderingConfiguration>) -> Self {
         self.rendering_configuration = input;
         self
     }
     /// <p>Information about how to render the content.</p>
-    pub fn get_rendering_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RenderingConfiguration> {
+    pub fn get_rendering_configuration(&self) -> &::std::option::Option<crate::types::RenderingConfiguration> {
         &self.rendering_configuration
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(
-        mut self,
-        input: crate::types::ServerSideEncryptionConfiguration,
-    ) -> Self {
+    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn set_server_side_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.server_side_encryption_configuration = input;
         self
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn get_server_side_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+    pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         &self.server_side_encryption_configuration
     }
     /// <p>The description of the knowledge base.</p>
@@ -287,32 +231,19 @@ impl KnowledgeBaseSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`KnowledgeBaseSummary`](crate::types::KnowledgeBaseSummary).

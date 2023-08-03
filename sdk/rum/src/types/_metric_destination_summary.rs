@@ -37,9 +37,7 @@ impl MetricDestinationSummary {
 
 /// A builder for [`MetricDestinationSummary`](crate::types::MetricDestinationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDestinationSummaryBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::MetricDestination>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl MetricDestinationSummaryBuilder {
         self
     }
     /// <p>Specifies whether the destination is <code>CloudWatch</code> or <code>Evidently</code>.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -64,18 +59,12 @@ impl MetricDestinationSummaryBuilder {
         &self.destination
     }
     /// <p>If the destination is <code>Evidently</code>, this specifies the ARN of the Evidently experiment that receives the metrics.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the destination is <code>Evidently</code>, this specifies the ARN of the Evidently experiment that receives the metrics.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }

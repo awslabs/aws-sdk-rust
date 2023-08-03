@@ -38,10 +38,7 @@ impl AssociateAdminAccountFluentBuilder {
         }
     }
     /// Access the AssociateAdminAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_admin_account::builders::AssociateAdminAccountInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_admin_account::builders::AssociateAdminAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl AssociateAdminAccountFluentBuilder {
             crate::operation::associate_admin_account::AssociateAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_admin_account::AssociateAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_admin_account::AssociateAdminAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl AssociateAdminAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl AssociateAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_admin_account::AssociateAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_admin_account::AssociateAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_admin_account::AssociateAdminAccountError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl AssociateAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_admin_account::AssociateAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_admin_account::AssociateAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_admin_account::AssociateAdminAccountError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl AssociateAdminAccountFluentBuilder {
             crate::operation::associate_admin_account::AssociateAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_admin_account::AssociateAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_admin_account::AssociateAdminAccountError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager default administrator account. This account must be a member account of the organization in Organizations whose resources you want to protect. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
-    pub fn admin_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_account(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager default administrator account. This account must be a member account of the organization in Organizations whose resources you want to protect. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
-    pub fn set_admin_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_account(input);
         self
     }

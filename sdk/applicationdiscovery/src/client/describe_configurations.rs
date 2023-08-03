@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeConfigurationsOutput`](crate::operation::describe_configurations::DescribeConfigurationsOutput) with field(s):
     ///   - [`configurations(Option<Vec<HashMap<String, String>>>)`](crate::operation::describe_configurations::DescribeConfigurationsOutput::configurations): <p>A key in the response map. The value is an array of data.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationsError>`](crate::operation::describe_configurations::DescribeConfigurationsError)
-    pub fn describe_configurations(
-        &self,
-    ) -> crate::operation::describe_configurations::builders::DescribeConfigurationsFluentBuilder
-    {
+    pub fn describe_configurations(&self) -> crate::operation::describe_configurations::builders::DescribeConfigurationsFluentBuilder {
         crate::operation::describe_configurations::builders::DescribeConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

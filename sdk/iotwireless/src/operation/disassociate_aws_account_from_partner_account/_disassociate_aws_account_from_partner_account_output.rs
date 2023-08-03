@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DisassociateAwsAccountFromPartnerAcco
 }
 impl DisassociateAwsAccountFromPartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput).
-    pub fn builder() -> crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountOutputBuilder {
         crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateAwsAccountFromPartnerAccountOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DisassociateAwsAccountFromPartnerAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput).
-    pub fn build(self) -> crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput{
+    pub fn build(self) -> crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput {
         crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput {
             _request_id: self._request_id,
         }

@@ -29,9 +29,7 @@ impl GetFeatureInput {
 
 /// A builder for [`GetFeatureInput`](crate::operation::get_feature::GetFeatureInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFeatureInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) feature: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetFeatureInputBuilder {
         &self.feature
     }
     /// Consumes the builder and constructs a [`GetFeatureInput`](crate::operation::get_feature::GetFeatureInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_feature::GetFeatureInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_feature::GetFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_feature::GetFeatureInput {
             project: self.project,
             feature: self.feature,

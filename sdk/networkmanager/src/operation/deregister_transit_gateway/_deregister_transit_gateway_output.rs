@@ -5,15 +5,12 @@
 pub struct DeregisterTransitGatewayOutput {
     /// <p>The transit gateway registration information.</p>
     #[doc(hidden)]
-    pub transit_gateway_registration:
-        ::std::option::Option<crate::types::TransitGatewayRegistration>,
+    pub transit_gateway_registration: ::std::option::Option<crate::types::TransitGatewayRegistration>,
     _request_id: Option<String>,
 }
 impl DeregisterTransitGatewayOutput {
     /// <p>The transit gateway registration information.</p>
-    pub fn transit_gateway_registration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayRegistration> {
+    pub fn transit_gateway_registration(&self) -> ::std::option::Option<&crate::types::TransitGatewayRegistration> {
         self.transit_gateway_registration.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for DeregisterTransitGatewayOutput {
 }
 impl DeregisterTransitGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTransitGatewayOutput`](crate::operation::deregister_transit_gateway::DeregisterTransitGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayOutputBuilder {
         crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterTransitGatewayOutput`](crate::operation::deregister_transit_gateway::DeregisterTransitGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTransitGatewayOutputBuilder {
-    pub(crate) transit_gateway_registration:
-        ::std::option::Option<crate::types::TransitGatewayRegistration>,
+    pub(crate) transit_gateway_registration: ::std::option::Option<crate::types::TransitGatewayRegistration>,
     _request_id: Option<String>,
 }
 impl DeregisterTransitGatewayOutputBuilder {
     /// <p>The transit gateway registration information.</p>
-    pub fn transit_gateway_registration(
-        mut self,
-        input: crate::types::TransitGatewayRegistration,
-    ) -> Self {
+    pub fn transit_gateway_registration(mut self, input: crate::types::TransitGatewayRegistration) -> Self {
         self.transit_gateway_registration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The transit gateway registration information.</p>
-    pub fn set_transit_gateway_registration(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayRegistration>,
-    ) -> Self {
+    pub fn set_transit_gateway_registration(mut self, input: ::std::option::Option<crate::types::TransitGatewayRegistration>) -> Self {
         self.transit_gateway_registration = input;
         self
     }
     /// <p>The transit gateway registration information.</p>
-    pub fn get_transit_gateway_registration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayRegistration> {
+    pub fn get_transit_gateway_registration(&self) -> &::std::option::Option<crate::types::TransitGatewayRegistration> {
         &self.transit_gateway_registration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +58,7 @@ impl DeregisterTransitGatewayOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterTransitGatewayOutput`](crate::operation::deregister_transit_gateway::DeregisterTransitGatewayOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_transit_gateway::DeregisterTransitGatewayOutput {
+    pub fn build(self) -> crate::operation::deregister_transit_gateway::DeregisterTransitGatewayOutput {
         crate::operation::deregister_transit_gateway::DeregisterTransitGatewayOutput {
             transit_gateway_registration: self.transit_gateway_registration,
             _request_id: self._request_id,

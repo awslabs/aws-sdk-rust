@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteTransitGatewayRouteOutput {
 }
 impl DeleteTransitGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayRouteOutput`](crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteOutputBuilder{
+    pub fn builder() -> crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteOutputBuilder {
         crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTransitGatewayRouteOutput`](crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayRouteOutputBuilder {
     pub(crate) route: ::std::option::Option<crate::types::TransitGatewayRoute>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DeleteTransitGatewayRouteOutputBuilder {
         self
     }
     /// <p>Information about the route.</p>
-    pub fn set_route(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayRoute>,
-    ) -> Self {
+    pub fn set_route(mut self, input: ::std::option::Option<crate::types::TransitGatewayRoute>) -> Self {
         self.route = input;
         self
     }
@@ -63,9 +58,7 @@ impl DeleteTransitGatewayRouteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayRouteOutput`](crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput {
+    pub fn build(self) -> crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput {
         crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput {
             route: self.route,
             _request_id: self._request_id,

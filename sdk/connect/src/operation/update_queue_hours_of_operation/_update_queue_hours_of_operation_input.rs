@@ -29,16 +29,14 @@ impl UpdateQueueHoursOfOperationInput {
 }
 impl UpdateQueueHoursOfOperationInput {
     /// Creates a new builder-style object to manufacture [`UpdateQueueHoursOfOperationInput`](crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput).
-    pub fn builder() -> crate::operation::update_queue_hours_of_operation::builders::UpdateQueueHoursOfOperationInputBuilder{
+    pub fn builder() -> crate::operation::update_queue_hours_of_operation::builders::UpdateQueueHoursOfOperationInputBuilder {
         crate::operation::update_queue_hours_of_operation::builders::UpdateQueueHoursOfOperationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQueueHoursOfOperationInput`](crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQueueHoursOfOperationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl UpdateQueueHoursOfOperationInputBuilder {
         &self.queue_id
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hours_of_operation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn set_hours_of_operation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hours_of_operation_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl UpdateQueueHoursOfOperationInputBuilder {
         crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput {
-                instance_id: self.instance_id,
-                queue_id: self.queue_id,
-                hours_of_operation_id: self.hours_of_operation_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput {
+            instance_id: self.instance_id,
+            queue_id: self.queue_id,
+            hours_of_operation_id: self.hours_of_operation_id,
+        })
     }
 }

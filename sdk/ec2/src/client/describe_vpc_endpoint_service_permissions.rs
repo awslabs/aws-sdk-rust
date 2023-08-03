@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`allowed_principals(Option<Vec<AllowedPrincipal>>)`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsOutput::allowed_principals): <p>Information about the allowed principals.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcEndpointServicePermissionsError>`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsError)
-    pub fn describe_vpc_endpoint_service_permissions(&self) -> crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsFluentBuilder{
-        crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsFluentBuilder::new(self.handle.clone())
+    pub fn describe_vpc_endpoint_service_permissions(
+        &self,
+    ) -> crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsFluentBuilder {
+        crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

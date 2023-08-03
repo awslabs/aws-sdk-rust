@@ -15,33 +15,25 @@ impl GetRecommenderConfigurationInput {
 }
 impl GetRecommenderConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetRecommenderConfigurationInput`](crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput).
-    pub fn builder() -> crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationInputBuilder {
         crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommenderConfigurationInput`](crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommenderConfigurationInputBuilder {
     pub(crate) recommender_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRecommenderConfigurationInputBuilder {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn recommender_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_recommender_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommender_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetRecommenderConfigurationInputBuilder {
         crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput {
-                recommender_id: self.recommender_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput {
+            recommender_id: self.recommender_id,
+        })
     }
 }

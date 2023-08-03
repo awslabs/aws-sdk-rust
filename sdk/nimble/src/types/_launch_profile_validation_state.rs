@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LaunchProfileValidationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,15 +61,11 @@ impl ::std::convert::From<&str> for LaunchProfileValidationState {
     fn from(s: &str) -> Self {
         match s {
             "VALIDATION_FAILED" => LaunchProfileValidationState::ValidationFailed,
-            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => {
-                LaunchProfileValidationState::ValidationFailedInternalServerError
-            }
+            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationState::ValidationFailedInternalServerError,
             "VALIDATION_IN_PROGRESS" => LaunchProfileValidationState::ValidationInProgress,
             "VALIDATION_NOT_STARTED" => LaunchProfileValidationState::ValidationNotStarted,
             "VALIDATION_SUCCESS" => LaunchProfileValidationState::ValidationSuccess,
-            other => LaunchProfileValidationState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LaunchProfileValidationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,9 +81,7 @@ impl LaunchProfileValidationState {
     pub fn as_str(&self) -> &str {
         match self {
             LaunchProfileValidationState::ValidationFailed => "VALIDATION_FAILED",
-            LaunchProfileValidationState::ValidationFailedInternalServerError => {
-                "VALIDATION_FAILED_INTERNAL_SERVER_ERROR"
-            }
+            LaunchProfileValidationState::ValidationFailedInternalServerError => "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
             LaunchProfileValidationState::ValidationInProgress => "VALIDATION_IN_PROGRESS",
             LaunchProfileValidationState::ValidationNotStarted => "VALIDATION_NOT_STARTED",
             LaunchProfileValidationState::ValidationSuccess => "VALIDATION_SUCCESS",

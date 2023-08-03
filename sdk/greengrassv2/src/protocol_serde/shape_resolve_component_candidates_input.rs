@@ -9,10 +9,7 @@ pub fn ser_resolve_component_candidates_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_component_candidate::ser_component_candidate(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_component_candidate::ser_component_candidate(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -21,10 +18,7 @@ pub fn ser_resolve_component_candidates_input(
     if let Some(var_5) = &input.platform {
         #[allow(unused_mut)]
         let mut object_6 = object.key("platform").start_object();
-        crate::protocol_serde::shape_component_platform::ser_component_platform(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_component_platform::ser_component_platform(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

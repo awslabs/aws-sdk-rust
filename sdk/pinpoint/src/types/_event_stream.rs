@@ -86,9 +86,7 @@ impl EventStream {
 
 /// A builder for [`EventStream`](crate::types::EventStream).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventStreamBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_stream_arn: ::std::option::Option<::std::string::String>,
@@ -99,18 +97,12 @@ pub struct EventStreamBuilder {
 }
 impl EventStreamBuilder {
     /// <p>The unique identifier for the application to publish event data for.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application to publish event data for.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -133,10 +125,7 @@ impl EventStreamBuilder {
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
     /// </replaceable> </p>
-    pub fn destination_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -155,10 +144,7 @@ impl EventStreamBuilder {
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
     /// </replaceable> </p>
-    pub fn set_destination_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_stream_arn = input;
         self
     }
@@ -195,18 +181,12 @@ impl EventStreamBuilder {
         &self.external_id
     }
     /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -215,18 +195,12 @@ impl EventStreamBuilder {
         &self.last_modified_date
     }
     /// <p>The IAM user who last modified the event stream.</p>
-    pub fn last_updated_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM user who last modified the event stream.</p>
-    pub fn set_last_updated_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_by = input;
         self
     }

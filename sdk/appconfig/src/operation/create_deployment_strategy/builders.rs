@@ -26,7 +26,7 @@ impl CreateDeploymentStrategyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDeploymentStrategyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder,
+    inner: crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder,
 }
 impl CreateDeploymentStrategyFluentBuilder {
     /// Creates a new `CreateDeploymentStrategy`.
@@ -37,10 +37,7 @@ impl CreateDeploymentStrategyFluentBuilder {
         }
     }
     /// Access the CreateDeploymentStrategy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateDeploymentStrategyFluentBuilder {
             crate::operation::create_deployment_strategy::CreateDeploymentStrategy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment_strategy::CreateDeploymentStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment_strategy::CreateDeploymentStrategyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateDeploymentStrategyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateDeploymentStrategyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment_strategy::CreateDeploymentStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment_strategy::CreateDeploymentStrategyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateDeploymentStrategyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment_strategy::CreateDeploymentStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment_strategy::CreateDeploymentStrategyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateDeploymentStrategyFluentBuilder {
             crate::operation::create_deployment_strategy::CreateDeploymentStrategy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment_strategy::CreateDeploymentStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment_strategy::CreateDeploymentStrategyError>,
     > {
         self.customize_middleware().await
     }
@@ -211,10 +197,7 @@ impl CreateDeploymentStrategyFluentBuilder {
     /// <p> <code>2*(2^1)</code> </p>
     /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
-    pub fn set_growth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GrowthType>,
-    ) -> Self {
+    pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
         self.inner = self.inner.set_growth_type(input);
         self
     }
@@ -234,10 +217,7 @@ impl CreateDeploymentStrategyFluentBuilder {
         self
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    pub fn set_replicate_to(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicateTo>,
-    ) -> Self {
+    pub fn set_replicate_to(mut self, input: ::std::option::Option<crate::types::ReplicateTo>) -> Self {
         self.inner = self.inner.set_replicate_to(input);
         self
     }
@@ -250,30 +230,17 @@ impl CreateDeploymentStrategyFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

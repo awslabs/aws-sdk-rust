@@ -23,18 +23,14 @@ impl DeleteDomainAssociationInput {
 }
 impl DeleteDomainAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainAssociationInput`](crate::operation::delete_domain_association::DeleteDomainAssociationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_domain_association::builders::DeleteDomainAssociationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_domain_association::builders::DeleteDomainAssociationInputBuilder {
         crate::operation::delete_domain_association::builders::DeleteDomainAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDomainAssociationInput`](crate::operation::delete_domain_association::DeleteDomainAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDomainAssociationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -75,11 +71,9 @@ impl DeleteDomainAssociationInputBuilder {
         crate::operation::delete_domain_association::DeleteDomainAssociationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_domain_association::DeleteDomainAssociationInput {
-                app_id: self.app_id,
-                domain_name: self.domain_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_domain_association::DeleteDomainAssociationInput {
+            app_id: self.app_id,
+            domain_name: self.domain_name,
+        })
     }
 }

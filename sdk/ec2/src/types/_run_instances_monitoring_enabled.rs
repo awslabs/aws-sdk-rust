@@ -23,9 +23,7 @@ impl RunInstancesMonitoringEnabled {
 
 /// A builder for [`RunInstancesMonitoringEnabled`](crate::types::RunInstancesMonitoringEnabled).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunInstancesMonitoringEnabledBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl RunInstancesMonitoringEnabledBuilder {
     }
     /// Consumes the builder and constructs a [`RunInstancesMonitoringEnabled`](crate::types::RunInstancesMonitoringEnabled).
     pub fn build(self) -> crate::types::RunInstancesMonitoringEnabled {
-        crate::types::RunInstancesMonitoringEnabled {
-            enabled: self.enabled,
-        }
+        crate::types::RunInstancesMonitoringEnabled { enabled: self.enabled }
     }
 }

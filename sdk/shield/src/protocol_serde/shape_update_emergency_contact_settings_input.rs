@@ -9,10 +9,7 @@ pub fn ser_update_emergency_contact_settings_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_emergency_contact::ser_emergency_contact(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_emergency_contact::ser_emergency_contact(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

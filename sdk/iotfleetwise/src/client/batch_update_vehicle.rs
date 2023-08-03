@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`vehicles(Option<Vec<UpdateVehicleResponseItem>>)`](crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput::vehicles): <p> A list of information about the batch of updated vehicles. </p> <note>   <p>This list contains only unique IDs for the vehicles that were updated.</p>  </note>
     ///   - [`errors(Option<Vec<UpdateVehicleError>>)`](crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput::errors): <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
     /// - On failure, responds with [`SdkError<BatchUpdateVehicleError>`](crate::operation::batch_update_vehicle::BatchUpdateVehicleError)
-    pub fn batch_update_vehicle(
-        &self,
-    ) -> crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleFluentBuilder {
-        crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_update_vehicle(&self) -> crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleFluentBuilder {
+        crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleFluentBuilder::new(self.handle.clone())
     }
 }

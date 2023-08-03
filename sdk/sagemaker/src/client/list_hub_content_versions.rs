@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`hub_content_summaries(Option<Vec<HubContentInfo>>)`](crate::operation::list_hub_content_versions::ListHubContentVersionsOutput::hub_content_summaries): <p>The summaries of the listed hub content versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hub_content_versions::ListHubContentVersionsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content versions, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListHubContentVersionsError>`](crate::operation::list_hub_content_versions::ListHubContentVersionsError)
-    pub fn list_hub_content_versions(
-        &self,
-    ) -> crate::operation::list_hub_content_versions::builders::ListHubContentVersionsFluentBuilder
-    {
+    pub fn list_hub_content_versions(&self) -> crate::operation::list_hub_content_versions::builders::ListHubContentVersionsFluentBuilder {
         crate::operation::list_hub_content_versions::builders::ListHubContentVersionsFluentBuilder::new(self.handle.clone())
     }
 }

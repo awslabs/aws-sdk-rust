@@ -29,18 +29,14 @@ impl ListNetworkProfilesInput {
 }
 impl ListNetworkProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListNetworkProfilesInput`](crate::operation::list_network_profiles::ListNetworkProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_network_profiles::builders::ListNetworkProfilesInputBuilder {
-        crate::operation::list_network_profiles::builders::ListNetworkProfilesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_network_profiles::builders::ListNetworkProfilesInputBuilder {
+        crate::operation::list_network_profiles::builders::ListNetworkProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListNetworkProfilesInput`](crate::operation::list_network_profiles::ListNetworkProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworkProfilesInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::NetworkProfileType>,
@@ -67,10 +63,7 @@ impl ListNetworkProfilesInputBuilder {
         self
     }
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkProfileType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkProfileType>) -> Self {
         self.r#type = input;
         self
     }
@@ -95,16 +88,12 @@ impl ListNetworkProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListNetworkProfilesInput`](crate::operation::list_network_profiles::ListNetworkProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_network_profiles::ListNetworkProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_network_profiles::ListNetworkProfilesInput {
-                arn: self.arn,
-                r#type: self.r#type,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_network_profiles::ListNetworkProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_network_profiles::ListNetworkProfilesInput {
+            arn: self.arn,
+            r#type: self.r#type,
+            next_token: self.next_token,
+        })
     }
 }

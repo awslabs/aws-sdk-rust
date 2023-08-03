@@ -6,10 +6,7 @@ pub fn ser_search_insights_input(
     if let Some(var_1) = &input.filters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Filters").start_object();
-        crate::protocol_serde::shape_search_insights_filters::ser_search_insights_filters(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_search_insights_filters::ser_search_insights_filters(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.max_results {

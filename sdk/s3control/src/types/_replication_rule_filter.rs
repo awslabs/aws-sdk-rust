@@ -49,9 +49,7 @@ impl ReplicationRuleFilter {
 
 /// A builder for [`ReplicationRuleFilter`](crate::types::ReplicationRuleFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationRuleFilterBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) tag: ::std::option::Option<crate::types::S3Tag>,
@@ -106,10 +104,7 @@ impl ReplicationRuleFilterBuilder {
     /// <li> <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p> </li>
     /// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p> </li>
     /// </ul>
-    pub fn set_and(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationRuleAndOperator>,
-    ) -> Self {
+    pub fn set_and(mut self, input: ::std::option::Option<crate::types::ReplicationRuleAndOperator>) -> Self {
         self.and = input;
         self
     }

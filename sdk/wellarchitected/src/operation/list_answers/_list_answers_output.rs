@@ -72,16 +72,13 @@ impl ListAnswersOutput {
 
 /// A builder for [`ListAnswersOutput`](crate::operation::list_answers::ListAnswersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnswersOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_number: ::std::option::Option<i32>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) answer_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnswerSummary>>,
+    pub(crate) answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AnswerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -166,17 +163,12 @@ impl ListAnswersOutputBuilder {
         self
     }
     /// <p>List of answer summaries of lens review in a workload.</p>
-    pub fn set_answer_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnswerSummary>>,
-    ) -> Self {
+    pub fn set_answer_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnswerSummary>>) -> Self {
         self.answer_summaries = input;
         self
     }
     /// <p>List of answer summaries of lens review in a workload.</p>
-    pub fn get_answer_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnswerSummary>> {
+    pub fn get_answer_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnswerSummary>> {
         &self.answer_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

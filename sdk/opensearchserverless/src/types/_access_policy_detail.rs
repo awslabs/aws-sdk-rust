@@ -65,9 +65,7 @@ impl AccessPolicyDetail {
 
 /// A builder for [`AccessPolicyDetail`](crate::types::AccessPolicyDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessPolicyDetailBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl AccessPolicyDetailBuilder {
         self
     }
     /// <p>The type of access policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -110,18 +105,12 @@ impl AccessPolicyDetailBuilder {
         &self.name
     }
     /// <p>The version of the policy.</p>
-    pub fn policy_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the policy.</p>
-    pub fn set_policy_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_version = input;
         self
     }
@@ -149,10 +138,7 @@ impl AccessPolicyDetailBuilder {
         self
     }
     /// <p>The JSON policy document without any whitespaces.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Document>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.policy = input;
         self
     }

@@ -12,10 +12,7 @@ pub fn ser_create_report_group_input(
     if let Some(var_3) = &input.export_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("exportConfig").start_object();
-        crate::protocol_serde::shape_report_export_config::ser_report_export_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_report_export_config::ser_report_export_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.tags {

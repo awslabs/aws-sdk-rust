@@ -29,18 +29,14 @@ impl DeleteSourceRepositoryInput {
 }
 impl DeleteSourceRepositoryInput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceRepositoryInput`](crate::operation::delete_source_repository::DeleteSourceRepositoryInput).
-    pub fn builder(
-    ) -> crate::operation::delete_source_repository::builders::DeleteSourceRepositoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_source_repository::builders::DeleteSourceRepositoryInputBuilder {
         crate::operation::delete_source_repository::builders::DeleteSourceRepositoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSourceRepositoryInput`](crate::operation::delete_source_repository::DeleteSourceRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSourceRepositoryInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl DeleteSourceRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSourceRepositoryInput`](crate::operation::delete_source_repository::DeleteSourceRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_source_repository::DeleteSourceRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_source_repository::DeleteSourceRepositoryInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_source_repository::DeleteSourceRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_source_repository::DeleteSourceRepositoryInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            name: self.name,
+        })
     }
 }

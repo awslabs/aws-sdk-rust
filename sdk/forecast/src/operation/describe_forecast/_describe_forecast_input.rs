@@ -15,17 +15,14 @@ impl DescribeForecastInput {
 }
 impl DescribeForecastInput {
     /// Creates a new builder-style object to manufacture [`DescribeForecastInput`](crate::operation::describe_forecast::DescribeForecastInput).
-    pub fn builder() -> crate::operation::describe_forecast::builders::DescribeForecastInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_forecast::builders::DescribeForecastInputBuilder {
         crate::operation::describe_forecast::builders::DescribeForecastInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeForecastInput`](crate::operation::describe_forecast::DescribeForecastInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeForecastInputBuilder {
     pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl DescribeForecastInputBuilder {
     /// Consumes the builder and constructs a [`DescribeForecastInput`](crate::operation::describe_forecast::DescribeForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_forecast::DescribeForecastInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_forecast::DescribeForecastInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_forecast::DescribeForecastInput {
             forecast_arn: self.forecast_arn,
         })

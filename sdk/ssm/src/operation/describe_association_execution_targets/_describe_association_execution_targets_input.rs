@@ -14,8 +14,7 @@ pub struct DescribeAssociationExecutionTargetsInput {
     /// <p>ResourceId (EQUAL)</p>
     /// <p>ResourceType (EQUAL)</p>
     #[doc(hidden)]
-    pub filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -36,9 +35,7 @@ impl DescribeAssociationExecutionTargetsInput {
     /// <p>Status (EQUAL)</p>
     /// <p>ResourceId (EQUAL)</p>
     /// <p>ResourceType (EQUAL)</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociationExecutionTargetsFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::AssociationExecutionTargetsFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -52,38 +49,29 @@ impl DescribeAssociationExecutionTargetsInput {
 }
 impl DescribeAssociationExecutionTargetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationExecutionTargetsInput`](crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsInput).
-    pub fn builder() -> crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsInputBuilder{
+    pub fn builder() -> crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsInputBuilder {
         crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssociationExecutionTargetsInput`](crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssociationExecutionTargetsInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssociationExecutionTargetsInputBuilder {
     /// <p>The association ID that includes the execution for which you want to view details.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID that includes the execution for which you want to view details.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -123,12 +111,7 @@ impl DescribeAssociationExecutionTargetsInputBuilder {
     /// <p>Status (EQUAL)</p>
     /// <p>ResourceId (EQUAL)</p>
     /// <p>ResourceType (EQUAL)</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -136,10 +119,7 @@ impl DescribeAssociationExecutionTargetsInputBuilder {
     /// <p>Status (EQUAL)</p>
     /// <p>ResourceId (EQUAL)</p>
     /// <p>ResourceType (EQUAL)</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>>
-    {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -171,20 +151,20 @@ impl DescribeAssociationExecutionTargetsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAssociationExecutionTargetsInput`](crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsInput {
-                association_id: self.association_id
-                ,
-                execution_id: self.execution_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                association_id: self.association_id,
+                execution_id: self.execution_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

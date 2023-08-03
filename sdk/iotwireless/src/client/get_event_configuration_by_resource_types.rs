@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`connection_status(Option<ConnectionStatusResourceTypeEventConfiguration>)`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesOutput::connection_status): <p>Resource type event configuration for the connection status event.</p>
     ///   - [`message_delivery_status(Option<MessageDeliveryStatusResourceTypeEventConfiguration>)`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesOutput::message_delivery_status): <p>Resource type event configuration object for the message delivery status event.</p>
     /// - On failure, responds with [`SdkError<GetEventConfigurationByResourceTypesError>`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesError)
-    pub fn get_event_configuration_by_resource_types(&self) -> crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesFluentBuilder{
-        crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesFluentBuilder::new(self.handle.clone())
+    pub fn get_event_configuration_by_resource_types(
+        &self,
+    ) -> crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesFluentBuilder {
+        crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

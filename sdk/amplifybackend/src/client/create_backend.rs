@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`operation(Option<String>)`](crate::operation::create_backend::CreateBackendOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::operation::create_backend::CreateBackendOutput::status): <p>The current status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateBackendError>`](crate::operation::create_backend::CreateBackendError)
-    pub fn create_backend(
-        &self,
-    ) -> crate::operation::create_backend::builders::CreateBackendFluentBuilder {
-        crate::operation::create_backend::builders::CreateBackendFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_backend(&self) -> crate::operation::create_backend::builders::CreateBackendFluentBuilder {
+        crate::operation::create_backend::builders::CreateBackendFluentBuilder::new(self.handle.clone())
     }
 }

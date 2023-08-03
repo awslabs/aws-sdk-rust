@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSuggestedResiliencyPoliciesOutput
 }
 impl ListSuggestedResiliencyPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListSuggestedResiliencyPoliciesOutput`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput).
-    pub fn builder() -> crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesOutputBuilder{
+    pub fn builder() -> crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesOutputBuilder {
         crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSuggestedResiliencyPoliciesOutput`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSuggestedResiliencyPoliciesOutputBuilder {
-    pub(crate) resiliency_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>,
+    pub(crate) resiliency_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListSuggestedResiliencyPoliciesOutputBuilder {
         self
     }
     /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
-    pub fn set_resiliency_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>,
-    ) -> Self {
+    pub fn set_resiliency_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>) -> Self {
         self.resiliency_policies = input;
         self
     }
     /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
-    pub fn get_resiliency_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>> {
+    pub fn get_resiliency_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>> {
         &self.resiliency_policies
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -94,15 +86,10 @@ impl ListSuggestedResiliencyPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSuggestedResiliencyPoliciesOutput`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput
-    {
+    pub fn build(self) -> crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput {
         crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput {
-            resiliency_policies: self.resiliency_policies
-            ,
-            next_token: self.next_token
-            ,
+            resiliency_policies: self.resiliency_policies,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -23,15 +23,13 @@ pub struct VolumeRecommendation {
     pub finding: ::std::option::Option<crate::types::EbsFinding>,
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
     #[doc(hidden)]
-    pub utilization_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::EbsUtilizationMetric>>,
+    pub utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EbsUtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
     #[doc(hidden)]
     pub look_back_period_in_days: f64,
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
     #[doc(hidden)]
-    pub volume_recommendation_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendationOption>>,
+    pub volume_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendationOption>>,
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
     #[doc(hidden)]
     pub last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,9 +50,7 @@ impl VolumeRecommendation {
         self.account_id.as_deref()
     }
     /// <p>An array of objects that describe the current configuration of the volume.</p>
-    pub fn current_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VolumeConfiguration> {
+    pub fn current_configuration(&self) -> ::std::option::Option<&crate::types::VolumeConfiguration> {
         self.current_configuration.as_ref()
     }
     /// <p>The finding classification of the volume.</p>
@@ -67,9 +63,7 @@ impl VolumeRecommendation {
         self.finding.as_ref()
     }
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
-    pub fn utilization_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EbsUtilizationMetric]> {
+    pub fn utilization_metrics(&self) -> ::std::option::Option<&[crate::types::EbsUtilizationMetric]> {
         self.utilization_metrics.as_deref()
     }
     /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
@@ -77,9 +71,7 @@ impl VolumeRecommendation {
         self.look_back_period_in_days
     }
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
-    pub fn volume_recommendation_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VolumeRecommendationOption]> {
+    pub fn volume_recommendation_options(&self) -> ::std::option::Option<&[crate::types::VolumeRecommendationOption]> {
         self.volume_recommendation_options.as_deref()
     }
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
@@ -87,9 +79,7 @@ impl VolumeRecommendation {
         self.last_refresh_timestamp.as_ref()
     }
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
-    pub fn current_performance_risk(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CurrentPerformanceRisk> {
+    pub fn current_performance_risk(&self) -> ::std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
     /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
@@ -106,22 +96,17 @@ impl VolumeRecommendation {
 
 /// A builder for [`VolumeRecommendation`](crate::types::VolumeRecommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeRecommendationBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) current_configuration: ::std::option::Option<crate::types::VolumeConfiguration>,
     pub(crate) finding: ::std::option::Option<crate::types::EbsFinding>,
-    pub(crate) utilization_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::EbsUtilizationMetric>>,
+    pub(crate) utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EbsUtilizationMetric>>,
     pub(crate) look_back_period_in_days: ::std::option::Option<f64>,
-    pub(crate) volume_recommendation_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendationOption>>,
+    pub(crate) volume_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendationOption>>,
     pub(crate) last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) current_performance_risk:
-        ::std::option::Option<crate::types::CurrentPerformanceRisk>,
+    pub(crate) current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VolumeRecommendationBuilder {
@@ -159,17 +144,12 @@ impl VolumeRecommendationBuilder {
         self
     }
     /// <p>An array of objects that describe the current configuration of the volume.</p>
-    pub fn set_current_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeConfiguration>,
-    ) -> Self {
+    pub fn set_current_configuration(mut self, input: ::std::option::Option<crate::types::VolumeConfiguration>) -> Self {
         self.current_configuration = input;
         self
     }
     /// <p>An array of objects that describe the current configuration of the volume.</p>
-    pub fn get_current_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::VolumeConfiguration> {
+    pub fn get_current_configuration(&self) -> &::std::option::Option<crate::types::VolumeConfiguration> {
         &self.current_configuration
     }
     /// <p>The finding classification of the volume.</p>
@@ -213,17 +193,12 @@ impl VolumeRecommendationBuilder {
         self
     }
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
-    pub fn set_utilization_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EbsUtilizationMetric>>,
-    ) -> Self {
+    pub fn set_utilization_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EbsUtilizationMetric>>) -> Self {
         self.utilization_metrics = input;
         self
     }
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
-    pub fn get_utilization_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsUtilizationMetric>> {
+    pub fn get_utilization_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsUtilizationMetric>> {
         &self.utilization_metrics
     }
     /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
@@ -245,10 +220,7 @@ impl VolumeRecommendationBuilder {
     /// To override the contents of this collection use [`set_volume_recommendation_options`](Self::set_volume_recommendation_options).
     ///
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
-    pub fn volume_recommendation_options(
-        mut self,
-        input: crate::types::VolumeRecommendationOption,
-    ) -> Self {
+    pub fn volume_recommendation_options(mut self, input: crate::types::VolumeRecommendationOption) -> Self {
         let mut v = self.volume_recommendation_options.unwrap_or_default();
         v.push(input);
         self.volume_recommendation_options = ::std::option::Option::Some(v);
@@ -263,9 +235,7 @@ impl VolumeRecommendationBuilder {
         self
     }
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
-    pub fn get_volume_recommendation_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendationOption>> {
+    pub fn get_volume_recommendation_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendationOption>> {
         &self.volume_recommendation_options
     }
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
@@ -274,17 +244,12 @@ impl VolumeRecommendationBuilder {
         self
     }
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
-    pub fn set_last_refresh_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_refresh_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_refresh_timestamp = input;
         self
     }
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
-    pub fn get_last_refresh_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_refresh_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_refresh_timestamp
     }
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
@@ -293,17 +258,12 @@ impl VolumeRecommendationBuilder {
         self
     }
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
-    pub fn set_current_performance_risk(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
-    ) -> Self {
+    pub fn set_current_performance_risk(mut self, input: ::std::option::Option<crate::types::CurrentPerformanceRisk>) -> Self {
         self.current_performance_risk = input;
         self
     }
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
-    pub fn get_current_performance_risk(
-        &self,
-    ) -> &::std::option::Option<crate::types::CurrentPerformanceRisk> {
+    pub fn get_current_performance_risk(&self) -> &::std::option::Option<crate::types::CurrentPerformanceRisk> {
         &self.current_performance_risk
     }
     /// Appends an item to `tags`.
@@ -318,10 +278,7 @@ impl VolumeRecommendationBuilder {
         self
     }
     /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

@@ -35,17 +35,9 @@ pub fn ser_api_key_restrictions(
 
 pub(crate) fn de_api_key_restrictions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ApiKeyRestrictions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ApiKeyRestrictions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,42 +47,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AllowActions" => {
-                            builder = builder.set_allow_actions(
-                                    crate::protocol_serde::shape_api_key_action_list::de_api_key_action_list(tokens)?
-                                );
+                            builder = builder.set_allow_actions(crate::protocol_serde::shape_api_key_action_list::de_api_key_action_list(tokens)?);
                         }
                         "AllowResources" => {
-                            builder = builder.set_allow_resources(
-                                crate::protocol_serde::shape_geo_arn_list::de_geo_arn_list(tokens)?,
-                            );
+                            builder = builder.set_allow_resources(crate::protocol_serde::shape_geo_arn_list::de_geo_arn_list(tokens)?);
                         }
                         "AllowReferers" => {
-                            builder = builder.set_allow_referers(
-                                    crate::protocol_serde::shape_referer_pattern_list::de_referer_pattern_list(tokens)?
-                                );
+                            builder = builder.set_allow_referers(crate::protocol_serde::shape_referer_pattern_list::de_referer_pattern_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -39,10 +39,7 @@ impl AddTagsToCertificateFluentBuilder {
         }
     }
     /// Access the AddTagsToCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl AddTagsToCertificateFluentBuilder {
             crate::operation::add_tags_to_certificate::AddTagsToCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_certificate::AddTagsToCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_certificate::AddTagsToCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl AddTagsToCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl AddTagsToCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_certificate::AddTagsToCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_certificate::AddTagsToCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_certificate::AddTagsToCertificateError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl AddTagsToCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_certificate::AddTagsToCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_certificate::AddTagsToCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_certificate::AddTagsToCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -119,29 +107,21 @@ impl AddTagsToCertificateFluentBuilder {
             crate::operation::add_tags_to_certificate::AddTagsToCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_certificate::AddTagsToCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_certificate::AddTagsToCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
@@ -161,10 +141,7 @@ impl AddTagsToCertificateFluentBuilder {
         self
     }
     /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -30,9 +30,7 @@ impl FlexibleTimeWindow {
 
 /// A builder for [`FlexibleTimeWindow`](crate::types::FlexibleTimeWindow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlexibleTimeWindowBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::FlexibleTimeWindowMode>,
     pub(crate) maximum_window_in_minutes: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl FlexibleTimeWindowBuilder {
         self
     }
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FlexibleTimeWindowMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::FlexibleTimeWindowMode>) -> Self {
         self.mode = input;
         self
     }

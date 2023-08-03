@@ -29,16 +29,14 @@ impl BatchDisassociateProjectAssetsInput {
 }
 impl BatchDisassociateProjectAssetsInput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateProjectAssetsInput`](crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsInput).
-    pub fn builder() -> crate::operation::batch_disassociate_project_assets::builders::BatchDisassociateProjectAssetsInputBuilder{
+    pub fn builder() -> crate::operation::batch_disassociate_project_assets::builders::BatchDisassociateProjectAssetsInputBuilder {
         crate::operation::batch_disassociate_project_assets::builders::BatchDisassociateProjectAssetsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDisassociateProjectAssetsInput`](crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisassociateProjectAssetsInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +69,7 @@ impl BatchDisassociateProjectAssetsInputBuilder {
         self
     }
     /// <p>The IDs of the assets to be disassociated from the project.</p>
-    pub fn set_asset_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_asset_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.asset_ids = input;
         self
     }
@@ -103,15 +98,10 @@ impl BatchDisassociateProjectAssetsInputBuilder {
         crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsInput {
-                project_id: self.project_id
-                ,
-                asset_ids: self.asset_ids
-                ,
-                client_token: self.client_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsInput {
+            project_id: self.project_id,
+            asset_ids: self.asset_ids,
+            client_token: self.client_token,
+        })
     }
 }

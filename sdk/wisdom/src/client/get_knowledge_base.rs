@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetKnowledgeBaseOutput`](crate::operation::get_knowledge_base::GetKnowledgeBaseOutput) with field(s):
     ///   - [`knowledge_base(Option<KnowledgeBaseData>)`](crate::operation::get_knowledge_base::GetKnowledgeBaseOutput::knowledge_base): <p>The knowledge base.</p>
     /// - On failure, responds with [`SdkError<GetKnowledgeBaseError>`](crate::operation::get_knowledge_base::GetKnowledgeBaseError)
-    pub fn get_knowledge_base(
-        &self,
-    ) -> crate::operation::get_knowledge_base::builders::GetKnowledgeBaseFluentBuilder {
-        crate::operation::get_knowledge_base::builders::GetKnowledgeBaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_knowledge_base(&self) -> crate::operation::get_knowledge_base::builders::GetKnowledgeBaseFluentBuilder {
+        crate::operation::get_knowledge_base::builders::GetKnowledgeBaseFluentBuilder::new(self.handle.clone())
     }
 }

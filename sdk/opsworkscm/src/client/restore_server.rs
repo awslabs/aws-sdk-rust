@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`RestoreServerOutput`](crate::operation::restore_server::RestoreServerOutput) with field(s):
     ///   - [`server(Option<Server>)`](crate::operation::restore_server::RestoreServerOutput::server): <p>Describes a configuration management server. </p>
     /// - On failure, responds with [`SdkError<RestoreServerError>`](crate::operation::restore_server::RestoreServerError)
-    pub fn restore_server(
-        &self,
-    ) -> crate::operation::restore_server::builders::RestoreServerFluentBuilder {
-        crate::operation::restore_server::builders::RestoreServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restore_server(&self) -> crate::operation::restore_server::builders::RestoreServerFluentBuilder {
+        crate::operation::restore_server::builders::RestoreServerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,9 +29,7 @@ impl RegisterAgentInput {
 
 /// A builder for [`RegisterAgentInput`](crate::operation::register_agent::RegisterAgentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterAgentInputBuilder {
     pub(crate) discovery_data: ::std::option::Option<crate::types::DiscoveryData>,
     pub(crate) agent_details: ::std::option::Option<crate::types::AgentDetails>,
@@ -43,10 +41,7 @@ impl RegisterAgentInputBuilder {
         self
     }
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
-    pub fn set_discovery_data(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryData>,
-    ) -> Self {
+    pub fn set_discovery_data(mut self, input: ::std::option::Option<crate::types::DiscoveryData>) -> Self {
         self.discovery_data = input;
         self
     }
@@ -60,10 +55,7 @@ impl RegisterAgentInputBuilder {
         self
     }
     /// <p>Detailed information about the agent being registered.</p>
-    pub fn set_agent_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentDetails>,
-    ) -> Self {
+    pub fn set_agent_details(mut self, input: ::std::option::Option<crate::types::AgentDetails>) -> Self {
         self.agent_details = input;
         self
     }
@@ -74,10 +66,7 @@ impl RegisterAgentInputBuilder {
     /// Consumes the builder and constructs a [`RegisterAgentInput`](crate::operation::register_agent::RegisterAgentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_agent::RegisterAgentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_agent::RegisterAgentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_agent::RegisterAgentInput {
             discovery_data: self.discovery_data,
             agent_details: self.agent_details,

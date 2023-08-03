@@ -15,35 +15,25 @@ impl GetPhoneNumberOrderInput {
 }
 impl GetPhoneNumberOrderInput {
     /// Creates a new builder-style object to manufacture [`GetPhoneNumberOrderInput`](crate::operation::get_phone_number_order::GetPhoneNumberOrderInput).
-    pub fn builder(
-    ) -> crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderInputBuilder {
-        crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderInputBuilder {
+        crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPhoneNumberOrderInput`](crate::operation::get_phone_number_order::GetPhoneNumberOrderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPhoneNumberOrderInputBuilder {
     pub(crate) phone_number_order_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPhoneNumberOrderInputBuilder {
     /// <p>The ID of the phone number order .</p>
-    pub fn phone_number_order_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_order_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the phone number order .</p>
-    pub fn set_phone_number_order_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_order_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_order_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetPhoneNumberOrderInputBuilder {
     /// Consumes the builder and constructs a [`GetPhoneNumberOrderInput`](crate::operation::get_phone_number_order::GetPhoneNumberOrderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_phone_number_order::GetPhoneNumberOrderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_phone_number_order::GetPhoneNumberOrderInput {
-                phone_number_order_id: self.phone_number_order_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_phone_number_order::GetPhoneNumberOrderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_phone_number_order::GetPhoneNumberOrderInput {
+            phone_number_order_id: self.phone_number_order_id,
+        })
     }
 }

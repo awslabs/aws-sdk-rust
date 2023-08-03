@@ -30,23 +30,18 @@ impl UpdateDocumentationPartInput {
 }
 impl UpdateDocumentationPartInput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentationPartInput`](crate::operation::update_documentation_part::UpdateDocumentationPartInput).
-    pub fn builder(
-    ) -> crate::operation::update_documentation_part::builders::UpdateDocumentationPartInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_documentation_part::builders::UpdateDocumentationPartInputBuilder {
         crate::operation::update_documentation_part::builders::UpdateDocumentationPartInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDocumentationPartInput`](crate::operation::update_documentation_part::UpdateDocumentationPartInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDocumentationPartInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_part_id: ::std::option::Option<::std::string::String>,
-    pub(crate) patch_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateDocumentationPartInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -64,18 +59,12 @@ impl UpdateDocumentationPartInputBuilder {
         &self.rest_api_id
     }
     /// <p>The identifier of the to-be-updated documentation part.</p>
-    pub fn documentation_part_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_part_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documentation_part_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the to-be-updated documentation part.</p>
-    pub fn set_documentation_part_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_part_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.documentation_part_id = input;
         self
     }
@@ -95,17 +84,12 @@ impl UpdateDocumentationPartInputBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.patch_operations = input;
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateDocumentationPartInput`](crate::operation::update_documentation_part::UpdateDocumentationPartInput).
@@ -115,12 +99,10 @@ impl UpdateDocumentationPartInputBuilder {
         crate::operation::update_documentation_part::UpdateDocumentationPartInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_documentation_part::UpdateDocumentationPartInput {
-                rest_api_id: self.rest_api_id,
-                documentation_part_id: self.documentation_part_id,
-                patch_operations: self.patch_operations,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_documentation_part::UpdateDocumentationPartInput {
+            rest_api_id: self.rest_api_id,
+            documentation_part_id: self.documentation_part_id,
+            patch_operations: self.patch_operations,
+        })
     }
 }

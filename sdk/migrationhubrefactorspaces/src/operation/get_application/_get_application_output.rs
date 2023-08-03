@@ -35,9 +35,7 @@ pub struct GetApplicationOutput {
     pub state: ::std::option::Option<crate::types::ApplicationState>,
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Any error associated with the application resource. </p>
     #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorResponse>,
@@ -91,11 +89,7 @@ impl GetApplicationOutput {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the application resource. </p>
@@ -158,9 +152,7 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) proxy_type: ::std::option::Option<crate::types::ProxyType>,
     pub(crate) api_gateway_proxy: ::std::option::Option<crate::types::ApiGatewayProxyConfig>,
     pub(crate) state: ::std::option::Option<crate::types::ApplicationState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorResponse>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -196,18 +188,12 @@ impl GetApplicationOutputBuilder {
         &self.arn
     }
     /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
-    pub fn owner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
-    pub fn set_owner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account_id = input;
         self
     }
@@ -216,18 +202,12 @@ impl GetApplicationOutputBuilder {
         &self.owner_account_id
     }
     /// <p>The Amazon Web Services account ID of the application creator. </p>
-    pub fn created_by_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_by_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the application creator. </p>
-    pub fn set_created_by_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_created_by_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by_account_id = input;
         self
     }
@@ -236,18 +216,12 @@ impl GetApplicationOutputBuilder {
         &self.created_by_account_id
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -256,18 +230,12 @@ impl GetApplicationOutputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -309,17 +277,12 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>The endpoint URL of the API Gateway proxy. </p>
-    pub fn set_api_gateway_proxy(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiGatewayProxyConfig>,
-    ) -> Self {
+    pub fn set_api_gateway_proxy(mut self, input: ::std::option::Option<crate::types::ApiGatewayProxyConfig>) -> Self {
         self.api_gateway_proxy = input;
         self
     }
     /// <p>The endpoint URL of the API Gateway proxy. </p>
-    pub fn get_api_gateway_proxy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApiGatewayProxyConfig> {
+    pub fn get_api_gateway_proxy(&self) -> &::std::option::Option<crate::types::ApiGatewayProxyConfig> {
         &self.api_gateway_proxy
     }
     /// <p>The current state of the application. </p>
@@ -328,10 +291,7 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>The current state of the application. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ApplicationState>) -> Self {
         self.state = input;
         self
     }
@@ -344,32 +304,19 @@ impl GetApplicationOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Any error associated with the application resource. </p>
@@ -392,10 +339,7 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the application was last updated. </p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -409,10 +353,7 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the application is created. </p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }

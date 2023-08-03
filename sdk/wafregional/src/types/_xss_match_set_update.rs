@@ -34,9 +34,7 @@ impl XssMatchSetUpdate {
 
 /// A builder for [`XssMatchSetUpdate`](crate::types::XssMatchSetUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct XssMatchSetUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) xss_match_tuple: ::std::option::Option<crate::types::XssMatchTuple>,
@@ -62,10 +60,7 @@ impl XssMatchSetUpdateBuilder {
         self
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
-    pub fn set_xss_match_tuple(
-        mut self,
-        input: ::std::option::Option<crate::types::XssMatchTuple>,
-    ) -> Self {
+    pub fn set_xss_match_tuple(mut self, input: ::std::option::Option<crate::types::XssMatchTuple>) -> Self {
         self.xss_match_tuple = input;
         self
     }

@@ -10,10 +10,7 @@ impl AddPartnerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_partner::AddPartnerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_partner::AddPartnerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_partner::AddPartnerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_partner();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl AddPartnerFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_partner::AddPartner,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::add_partner::AddPartner, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::add_partner::AddPartnerError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl AddPartnerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl AddPartnerFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_partner::AddPartner,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::add_partner::AddPartner, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::add_partner::AddPartnerError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl AddPartnerFluentBuilder {
         self.inner.get_account_id()
     }
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -147,18 +129,12 @@ impl AddPartnerFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>The name of the database that receives data from the partner.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the database that receives data from the partner.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

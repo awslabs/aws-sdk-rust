@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterRdsDbInstanceOutput {
 }
 impl DeregisterRdsDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterRdsDbInstanceOutput`](crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceOutputBuilder {
         crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterRdsDbInstanceOutput`](crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterRdsDbInstanceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeregisterRdsDbInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterRdsDbInstanceOutput`](crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput {
+    pub fn build(self) -> crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput {
         crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput {
             _request_id: self._request_id,
         }

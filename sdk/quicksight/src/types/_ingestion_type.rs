@@ -38,13 +38,7 @@
 /// This defines the type of ingestion user wants to trigger. This is part of create ingestion request.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IngestionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for IngestionType {
         match s {
             "FULL_REFRESH" => IngestionType::FullRefresh,
             "INCREMENTAL_REFRESH" => IngestionType::IncrementalRefresh,
-            other => {
-                IngestionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => IngestionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

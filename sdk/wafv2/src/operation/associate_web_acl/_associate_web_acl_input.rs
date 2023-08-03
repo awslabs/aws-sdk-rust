@@ -47,9 +47,7 @@ impl AssociateWebAclInput {
 
 /// A builder for [`AssociateWebAclInput`](crate::operation::associate_web_acl::AssociateWebAclInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWebAclInputBuilder {
     pub(crate) web_acl_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -113,10 +111,7 @@ impl AssociateWebAclInputBuilder {
     /// Consumes the builder and constructs a [`AssociateWebAclInput`](crate::operation::associate_web_acl::AssociateWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_web_acl::AssociateWebAclInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_web_acl::AssociateWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_web_acl::AssociateWebAclInput {
             web_acl_arn: self.web_acl_arn,
             resource_arn: self.resource_arn,

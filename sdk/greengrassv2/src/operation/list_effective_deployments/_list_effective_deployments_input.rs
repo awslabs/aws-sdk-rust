@@ -29,18 +29,14 @@ impl ListEffectiveDeploymentsInput {
 }
 impl ListEffectiveDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`ListEffectiveDeploymentsInput`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsInputBuilder {
         crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEffectiveDeploymentsInput`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEffectiveDeploymentsInputBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -48,18 +44,12 @@ pub struct ListEffectiveDeploymentsInputBuilder {
 }
 impl ListEffectiveDeploymentsInputBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn set_core_device_thing_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_device_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_device_thing_name = input;
         self
     }
@@ -102,12 +92,10 @@ impl ListEffectiveDeploymentsInputBuilder {
         crate::operation::list_effective_deployments::ListEffectiveDeploymentsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_effective_deployments::ListEffectiveDeploymentsInput {
-                core_device_thing_name: self.core_device_thing_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_effective_deployments::ListEffectiveDeploymentsInput {
+            core_device_thing_name: self.core_device_thing_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

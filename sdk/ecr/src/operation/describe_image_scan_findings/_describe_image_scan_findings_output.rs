@@ -56,16 +56,14 @@ impl ::aws_http::request_id::RequestId for DescribeImageScanFindingsOutput {
 }
 impl DescribeImageScanFindingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageScanFindingsOutput`](crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput).
-    pub fn builder() -> crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsOutputBuilder {
         crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImageScanFindingsOutput`](crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageScanFindingsOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl DescribeImageScanFindingsOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -116,10 +108,7 @@ impl DescribeImageScanFindingsOutputBuilder {
         self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn set_image_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageIdentifier>,
-    ) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<crate::types::ImageIdentifier>) -> Self {
         self.image_id = input;
         self
     }
@@ -133,10 +122,7 @@ impl DescribeImageScanFindingsOutputBuilder {
         self
     }
     /// <p>The current state of the scan.</p>
-    pub fn set_image_scan_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanStatus>,
-    ) -> Self {
+    pub fn set_image_scan_status(mut self, input: ::std::option::Option<crate::types::ImageScanStatus>) -> Self {
         self.image_scan_status = input;
         self
     }
@@ -150,17 +136,12 @@ impl DescribeImageScanFindingsOutputBuilder {
         self
     }
     /// <p>The information contained in the image scan findings.</p>
-    pub fn set_image_scan_findings(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanFindings>,
-    ) -> Self {
+    pub fn set_image_scan_findings(mut self, input: ::std::option::Option<crate::types::ImageScanFindings>) -> Self {
         self.image_scan_findings = input;
         self
     }
     /// <p>The information contained in the image scan findings.</p>
-    pub fn get_image_scan_findings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageScanFindings> {
+    pub fn get_image_scan_findings(&self) -> &::std::option::Option<crate::types::ImageScanFindings> {
         &self.image_scan_findings
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageScanFindings</code> request. When the results of a <code>DescribeImageScanFindings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -187,9 +168,7 @@ impl DescribeImageScanFindingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeImageScanFindingsOutput`](crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput {
+    pub fn build(self) -> crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput {
         crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

@@ -21,8 +21,7 @@ pub struct TrustedAdvisorCheckSummary {
     pub resources_summary: ::std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     #[doc(hidden)]
-    pub category_specific_summary:
-        ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
+    pub category_specific_summary: ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
 }
 impl TrustedAdvisorCheckSummary {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
@@ -42,15 +41,11 @@ impl TrustedAdvisorCheckSummary {
         self.has_flagged_resources
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
-    pub fn resources_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrustedAdvisorResourcesSummary> {
+    pub fn resources_summary(&self) -> ::std::option::Option<&crate::types::TrustedAdvisorResourcesSummary> {
         self.resources_summary.as_ref()
     }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
-    pub fn category_specific_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrustedAdvisorCategorySpecificSummary> {
+    pub fn category_specific_summary(&self) -> ::std::option::Option<&crate::types::TrustedAdvisorCategorySpecificSummary> {
         self.category_specific_summary.as_ref()
     }
 }
@@ -63,18 +58,14 @@ impl TrustedAdvisorCheckSummary {
 
 /// A builder for [`TrustedAdvisorCheckSummary`](crate::types::TrustedAdvisorCheckSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCheckSummaryBuilder {
     pub(crate) check_id: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) has_flagged_resources: ::std::option::Option<bool>,
-    pub(crate) resources_summary:
-        ::std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
-    pub(crate) category_specific_summary:
-        ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
+    pub(crate) resources_summary: ::std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
+    pub(crate) category_specific_summary: ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
 }
 impl TrustedAdvisorCheckSummaryBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
@@ -134,47 +125,31 @@ impl TrustedAdvisorCheckSummaryBuilder {
         &self.has_flagged_resources
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
-    pub fn resources_summary(
-        mut self,
-        input: crate::types::TrustedAdvisorResourcesSummary,
-    ) -> Self {
+    pub fn resources_summary(mut self, input: crate::types::TrustedAdvisorResourcesSummary) -> Self {
         self.resources_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
-    pub fn set_resources_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
-    ) -> Self {
+    pub fn set_resources_summary(mut self, input: ::std::option::Option<crate::types::TrustedAdvisorResourcesSummary>) -> Self {
         self.resources_summary = input;
         self
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
-    pub fn get_resources_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrustedAdvisorResourcesSummary> {
+    pub fn get_resources_summary(&self) -> &::std::option::Option<crate::types::TrustedAdvisorResourcesSummary> {
         &self.resources_summary
     }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
-    pub fn category_specific_summary(
-        mut self,
-        input: crate::types::TrustedAdvisorCategorySpecificSummary,
-    ) -> Self {
+    pub fn category_specific_summary(mut self, input: crate::types::TrustedAdvisorCategorySpecificSummary) -> Self {
         self.category_specific_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
-    pub fn set_category_specific_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
-    ) -> Self {
+    pub fn set_category_specific_summary(mut self, input: ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>) -> Self {
         self.category_specific_summary = input;
         self
     }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
-    pub fn get_category_specific_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary> {
+    pub fn get_category_specific_summary(&self) -> &::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary> {
         &self.category_specific_summary
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorCheckSummary`](crate::types::TrustedAdvisorCheckSummary).

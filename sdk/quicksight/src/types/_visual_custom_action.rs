@@ -24,8 +24,7 @@ pub struct VisualCustomAction {
     /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     #[doc(hidden)]
-    pub action_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>>,
+    pub action_operations: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>>,
 }
 impl VisualCustomAction {
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
@@ -51,9 +50,7 @@ impl VisualCustomAction {
     }
     /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn action_operations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VisualCustomActionOperation]> {
+    pub fn action_operations(&self) -> ::std::option::Option<&[crate::types::VisualCustomActionOperation]> {
         self.action_operations.as_deref()
     }
 }
@@ -66,31 +63,22 @@ impl VisualCustomAction {
 
 /// A builder for [`VisualCustomAction`](crate::types::VisualCustomAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VisualCustomActionBuilder {
     pub(crate) custom_action_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WidgetStatus>,
     pub(crate) trigger: ::std::option::Option<crate::types::VisualCustomActionTrigger>,
-    pub(crate) action_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>>,
+    pub(crate) action_operations: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>>,
 }
 impl VisualCustomActionBuilder {
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
-    pub fn custom_action_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_action_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
-    pub fn set_custom_action_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_action_id = input;
         self
     }
@@ -142,10 +130,7 @@ impl VisualCustomActionBuilder {
     /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li>
     /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li>
     /// </ul>
-    pub fn set_trigger(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualCustomActionTrigger>,
-    ) -> Self {
+    pub fn set_trigger(mut self, input: ::std::option::Option<crate::types::VisualCustomActionTrigger>) -> Self {
         self.trigger = input;
         self
     }
@@ -172,18 +157,13 @@ impl VisualCustomActionBuilder {
     }
     /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn set_action_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>>,
-    ) -> Self {
+    pub fn set_action_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>>) -> Self {
         self.action_operations = input;
         self
     }
     /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn get_action_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>> {
+    pub fn get_action_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>> {
         &self.action_operations
     }
     /// Consumes the builder and constructs a [`VisualCustomAction`](crate::types::VisualCustomAction).

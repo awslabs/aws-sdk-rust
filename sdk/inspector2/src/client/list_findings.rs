@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_findings::ListFindingsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     ///   - [`findings(Option<Vec<Finding>>)`](crate::operation::list_findings::ListFindingsOutput::findings): <p>Contains details on the findings in your environment.</p>
     /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::operation::list_findings::ListFindingsError)
-    pub fn list_findings(
-        &self,
-    ) -> crate::operation::list_findings::builders::ListFindingsFluentBuilder {
-        crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_findings(&self) -> crate::operation::list_findings::builders::ListFindingsFluentBuilder {
+        crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(self.handle.clone())
     }
 }

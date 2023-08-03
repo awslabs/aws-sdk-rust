@@ -46,9 +46,7 @@ impl TimerStartedEventAttributes {
 
 /// A builder for [`TimerStartedEventAttributes`](crate::types::TimerStartedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimerStartedEventAttributesBuilder {
     pub(crate) timer_id: ::std::option::Option<::std::string::String>,
     pub(crate) control: ::std::option::Option<::std::string::String>,
@@ -86,19 +84,13 @@ impl TimerStartedEventAttributesBuilder {
     }
     /// <p>The duration of time after which the timer fires.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    pub fn start_to_fire_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_to_fire_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_to_fire_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The duration of time after which the timer fires.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    pub fn set_start_to_fire_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_to_fire_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_to_fire_timeout = input;
         self
     }
@@ -113,10 +105,7 @@ impl TimerStartedEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
@@ -130,9 +119,7 @@ impl TimerStartedEventAttributesBuilder {
             timer_id: self.timer_id,
             control: self.control,
             start_to_fire_timeout: self.start_to_fire_timeout,
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
         }
     }
 }

@@ -35,9 +35,7 @@ impl ListJobsOutput {
 
 /// A builder for [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobListDescriptor>>,
@@ -70,17 +68,12 @@ impl ListJobsOutputBuilder {
         self
     }
     /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobListDescriptor>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobListDescriptor>>) -> Self {
         self.jobs = input;
         self
     }
     /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
-    pub fn get_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobListDescriptor>> {
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobListDescriptor>> {
         &self.jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

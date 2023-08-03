@@ -24,9 +24,7 @@ impl RevisionTarget {
         self.description.as_deref()
     }
     /// <p>The date on which the database revision was released.</p>
-    pub fn database_revision_release_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn database_revision_release_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.database_revision_release_date.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl RevisionTarget {
 
 /// A builder for [`RevisionTarget`](crate::types::RevisionTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevisionTargetBuilder {
     pub(crate) database_revision: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -49,18 +45,12 @@ pub struct RevisionTargetBuilder {
 }
 impl RevisionTargetBuilder {
     /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
-    pub fn database_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
-    pub fn set_database_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_revision = input;
         self
     }
@@ -88,17 +78,12 @@ impl RevisionTargetBuilder {
         self
     }
     /// <p>The date on which the database revision was released.</p>
-    pub fn set_database_revision_release_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_database_revision_release_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.database_revision_release_date = input;
         self
     }
     /// <p>The date on which the database revision was released.</p>
-    pub fn get_database_revision_release_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_database_revision_release_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.database_revision_release_date
     }
     /// Consumes the builder and constructs a [`RevisionTarget`](crate::types::RevisionTarget).

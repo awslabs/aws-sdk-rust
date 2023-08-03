@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput) with field(s):
     ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput::distribution_id_list): <p>A list of distribution IDs.</p>
     /// - On failure, responds with [`SdkError<ListDistributionsByResponseHeadersPolicyIdError>`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError)
-    pub fn list_distributions_by_response_headers_policy_id(&self) -> crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdFluentBuilder{
-        crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdFluentBuilder::new(self.handle.clone())
+    pub fn list_distributions_by_response_headers_policy_id(
+        &self,
+    ) -> crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdFluentBuilder {
+        crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

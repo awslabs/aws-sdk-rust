@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`databases(Option<Vec<DatabaseResponse>>)`](crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput::databases): <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// - On failure, responds with [`SdkError<DescribeFleetAdvisorDatabasesError>`](crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError)
-    pub fn describe_fleet_advisor_databases(&self) -> crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesFluentBuilder{
+    pub fn describe_fleet_advisor_databases(
+        &self,
+    ) -> crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesFluentBuilder {
         crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesFluentBuilder::new(self.handle.clone())
     }
 }

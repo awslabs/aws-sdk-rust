@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateServiceTemplateOutput {
 }
 impl CreateServiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceTemplateOutput`](crate::operation::create_service_template::CreateServiceTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_service_template::builders::CreateServiceTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_service_template::builders::CreateServiceTemplateOutputBuilder {
         crate::operation::create_service_template::builders::CreateServiceTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceTemplateOutput`](crate::operation::create_service_template::CreateServiceTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceTemplateOutputBuilder {
     pub(crate) service_template: ::std::option::Option<crate::types::ServiceTemplate>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateServiceTemplateOutputBuilder {
         self
     }
     /// <p>The service template detail data that's returned by Proton.</p>
-    pub fn set_service_template(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceTemplate>,
-    ) -> Self {
+    pub fn set_service_template(mut self, input: ::std::option::Option<crate::types::ServiceTemplate>) -> Self {
         self.service_template = input;
         self
     }

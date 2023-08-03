@@ -38,9 +38,7 @@ impl AnalysisOptions {
         self.japanese_tokenization_dictionary.as_deref()
     }
     /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
-    pub fn algorithmic_stemming(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AlgorithmicStemming> {
+    pub fn algorithmic_stemming(&self) -> ::std::option::Option<&crate::types::AlgorithmicStemming> {
         self.algorithmic_stemming.as_ref()
     }
 }
@@ -53,9 +51,7 @@ impl AnalysisOptions {
 
 /// A builder for [`AnalysisOptions`](crate::types::AnalysisOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisOptionsBuilder {
     pub(crate) synonyms: ::std::option::Option<::std::string::String>,
     pub(crate) stopwords: ::std::option::Option<::std::string::String>,
@@ -93,18 +89,12 @@ impl AnalysisOptionsBuilder {
         &self.stopwords
     }
     /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
-    pub fn stemming_dictionary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stemming_dictionary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stemming_dictionary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
-    pub fn set_stemming_dictionary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stemming_dictionary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stemming_dictionary = input;
         self
     }
@@ -113,25 +103,17 @@ impl AnalysisOptionsBuilder {
         &self.stemming_dictionary
     }
     /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
-    pub fn japanese_tokenization_dictionary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn japanese_tokenization_dictionary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.japanese_tokenization_dictionary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
-    pub fn set_japanese_tokenization_dictionary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_japanese_tokenization_dictionary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.japanese_tokenization_dictionary = input;
         self
     }
     /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
-    pub fn get_japanese_tokenization_dictionary(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_japanese_tokenization_dictionary(&self) -> &::std::option::Option<::std::string::String> {
         &self.japanese_tokenization_dictionary
     }
     /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
@@ -140,17 +122,12 @@ impl AnalysisOptionsBuilder {
         self
     }
     /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
-    pub fn set_algorithmic_stemming(
-        mut self,
-        input: ::std::option::Option<crate::types::AlgorithmicStemming>,
-    ) -> Self {
+    pub fn set_algorithmic_stemming(mut self, input: ::std::option::Option<crate::types::AlgorithmicStemming>) -> Self {
         self.algorithmic_stemming = input;
         self
     }
     /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
-    pub fn get_algorithmic_stemming(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlgorithmicStemming> {
+    pub fn get_algorithmic_stemming(&self) -> &::std::option::Option<crate::types::AlgorithmicStemming> {
         &self.algorithmic_stemming
     }
     /// Consumes the builder and constructs a [`AnalysisOptions`](crate::types::AnalysisOptions).

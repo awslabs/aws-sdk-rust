@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateCertificateOutput {
 }
 impl CreateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateOutput`](crate::operation::create_certificate::CreateCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_certificate::builders::CreateCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::create_certificate::builders::CreateCertificateOutputBuilder {
         crate::operation::create_certificate::builders::CreateCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCertificateOutput`](crate::operation::create_certificate::CreateCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<crate::types::CertificateSummary>,
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
@@ -51,10 +48,7 @@ impl CreateCertificateOutputBuilder {
         self
     }
     /// <p>An object that describes the certificate created.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateSummary>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::CertificateSummary>) -> Self {
         self.certificate = input;
         self
     }
@@ -74,17 +68,12 @@ impl CreateCertificateOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
         &self.operations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -37,9 +37,7 @@ impl HistoryRecordEntry {
 
 /// A builder for [`HistoryRecordEntry`](crate::types::HistoryRecordEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HistoryRecordEntryBuilder {
     pub(crate) event_information: ::std::option::Option<crate::types::EventInformation>,
     pub(crate) event_type: ::std::option::Option<crate::types::FleetEventType>,
@@ -52,10 +50,7 @@ impl HistoryRecordEntryBuilder {
         self
     }
     /// <p>Information about the event.</p>
-    pub fn set_event_information(
-        mut self,
-        input: ::std::option::Option<crate::types::EventInformation>,
-    ) -> Self {
+    pub fn set_event_information(mut self, input: ::std::option::Option<crate::types::EventInformation>) -> Self {
         self.event_information = input;
         self
     }
@@ -69,10 +64,7 @@ impl HistoryRecordEntryBuilder {
         self
     }
     /// <p>The event type.</p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetEventType>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::FleetEventType>) -> Self {
         self.event_type = input;
         self
     }
@@ -86,10 +78,7 @@ impl HistoryRecordEntryBuilder {
         self
     }
     /// <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

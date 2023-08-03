@@ -37,9 +37,7 @@ impl CreateWebhookInput {
 
 /// A builder for [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWebhookInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
@@ -91,10 +89,7 @@ impl CreateWebhookInputBuilder {
     /// Consumes the builder and constructs a [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_webhook::CreateWebhookInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_webhook::CreateWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_webhook::CreateWebhookInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

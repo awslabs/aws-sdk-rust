@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`validation_warnings(Option<Vec<ValidationWarning>>)`](crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput::validation_warnings): <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
     ///   - [`errored(bool)`](crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput::errored): <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     /// - On failure, responds with [`SdkError<PutPipelineDefinitionError>`](crate::operation::put_pipeline_definition::PutPipelineDefinitionError)
-    pub fn put_pipeline_definition(
-        &self,
-    ) -> crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionFluentBuilder
-    {
-        crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_pipeline_definition(&self) -> crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionFluentBuilder {
+        crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,8 +9,7 @@ pub struct FileSourceSettings {
     pub convert608_to708: ::std::option::Option<crate::types::FileSourceConvert608To708>,
     /// Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you choose Enabled if you notice additional repeated lines in your output captions.
     #[doc(hidden)]
-    pub convert_paint_to_pop:
-        ::std::option::Option<crate::types::CaptionSourceConvertPaintOnToPopOn>,
+    pub convert_paint_to_pop: ::std::option::Option<crate::types::CaptionSourceConvertPaintOnToPopOn>,
     /// Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction. For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
     #[doc(hidden)]
     pub framerate: ::std::option::Option<crate::types::CaptionSourceFramerate>,
@@ -26,15 +25,11 @@ pub struct FileSourceSettings {
 }
 impl FileSourceSettings {
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
-    pub fn convert608_to708(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FileSourceConvert608To708> {
+    pub fn convert608_to708(&self) -> ::std::option::Option<&crate::types::FileSourceConvert608To708> {
         self.convert608_to708.as_ref()
     }
     /// Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you choose Enabled if you notice additional repeated lines in your output captions.
-    pub fn convert_paint_to_pop(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CaptionSourceConvertPaintOnToPopOn> {
+    pub fn convert_paint_to_pop(&self) -> ::std::option::Option<&crate::types::CaptionSourceConvertPaintOnToPopOn> {
         self.convert_paint_to_pop.as_ref()
     }
     /// Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction. For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
@@ -50,9 +45,7 @@ impl FileSourceSettings {
         self.time_delta
     }
     /// When you use the setting Time delta to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units, MediaConvert uses seconds by default.
-    pub fn time_delta_units(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FileSourceTimeDeltaUnits> {
+    pub fn time_delta_units(&self) -> ::std::option::Option<&crate::types::FileSourceTimeDeltaUnits> {
         self.time_delta_units.as_ref()
     }
 }
@@ -65,13 +58,10 @@ impl FileSourceSettings {
 
 /// A builder for [`FileSourceSettings`](crate::types::FileSourceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileSourceSettingsBuilder {
     pub(crate) convert608_to708: ::std::option::Option<crate::types::FileSourceConvert608To708>,
-    pub(crate) convert_paint_to_pop:
-        ::std::option::Option<crate::types::CaptionSourceConvertPaintOnToPopOn>,
+    pub(crate) convert_paint_to_pop: ::std::option::Option<crate::types::CaptionSourceConvertPaintOnToPopOn>,
     pub(crate) framerate: ::std::option::Option<crate::types::CaptionSourceFramerate>,
     pub(crate) source_file: ::std::option::Option<::std::string::String>,
     pub(crate) time_delta: ::std::option::Option<i32>,
@@ -84,39 +74,26 @@ impl FileSourceSettingsBuilder {
         self
     }
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
-    pub fn set_convert608_to708(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSourceConvert608To708>,
-    ) -> Self {
+    pub fn set_convert608_to708(mut self, input: ::std::option::Option<crate::types::FileSourceConvert608To708>) -> Self {
         self.convert608_to708 = input;
         self
     }
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
-    pub fn get_convert608_to708(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileSourceConvert608To708> {
+    pub fn get_convert608_to708(&self) -> &::std::option::Option<crate::types::FileSourceConvert608To708> {
         &self.convert608_to708
     }
     /// Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you choose Enabled if you notice additional repeated lines in your output captions.
-    pub fn convert_paint_to_pop(
-        mut self,
-        input: crate::types::CaptionSourceConvertPaintOnToPopOn,
-    ) -> Self {
+    pub fn convert_paint_to_pop(mut self, input: crate::types::CaptionSourceConvertPaintOnToPopOn) -> Self {
         self.convert_paint_to_pop = ::std::option::Option::Some(input);
         self
     }
     /// Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you choose Enabled if you notice additional repeated lines in your output captions.
-    pub fn set_convert_paint_to_pop(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptionSourceConvertPaintOnToPopOn>,
-    ) -> Self {
+    pub fn set_convert_paint_to_pop(mut self, input: ::std::option::Option<crate::types::CaptionSourceConvertPaintOnToPopOn>) -> Self {
         self.convert_paint_to_pop = input;
         self
     }
     /// Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you choose Enabled if you notice additional repeated lines in your output captions.
-    pub fn get_convert_paint_to_pop(
-        &self,
-    ) -> &::std::option::Option<crate::types::CaptionSourceConvertPaintOnToPopOn> {
+    pub fn get_convert_paint_to_pop(&self) -> &::std::option::Option<crate::types::CaptionSourceConvertPaintOnToPopOn> {
         &self.convert_paint_to_pop
     }
     /// Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction. For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
@@ -125,10 +102,7 @@ impl FileSourceSettingsBuilder {
         self
     }
     /// Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction. For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
-    pub fn set_framerate(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptionSourceFramerate>,
-    ) -> Self {
+    pub fn set_framerate(mut self, input: ::std::option::Option<crate::types::CaptionSourceFramerate>) -> Self {
         self.framerate = input;
         self
     }
@@ -170,17 +144,12 @@ impl FileSourceSettingsBuilder {
         self
     }
     /// When you use the setting Time delta to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units, MediaConvert uses seconds by default.
-    pub fn set_time_delta_units(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSourceTimeDeltaUnits>,
-    ) -> Self {
+    pub fn set_time_delta_units(mut self, input: ::std::option::Option<crate::types::FileSourceTimeDeltaUnits>) -> Self {
         self.time_delta_units = input;
         self
     }
     /// When you use the setting Time delta to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units, MediaConvert uses seconds by default.
-    pub fn get_time_delta_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileSourceTimeDeltaUnits> {
+    pub fn get_time_delta_units(&self) -> &::std::option::Option<crate::types::FileSourceTimeDeltaUnits> {
         &self.time_delta_units
     }
     /// Consumes the builder and constructs a [`FileSourceSettings`](crate::types::FileSourceSettings).

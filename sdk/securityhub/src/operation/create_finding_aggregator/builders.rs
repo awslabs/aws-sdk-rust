@@ -27,8 +27,7 @@ impl CreateFindingAggregatorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFindingAggregatorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_finding_aggregator::builders::CreateFindingAggregatorInputBuilder,
+    inner: crate::operation::create_finding_aggregator::builders::CreateFindingAggregatorInputBuilder,
 }
 impl CreateFindingAggregatorFluentBuilder {
     /// Creates a new `CreateFindingAggregator`.
@@ -39,10 +38,7 @@ impl CreateFindingAggregatorFluentBuilder {
         }
     }
     /// Access the CreateFindingAggregator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_finding_aggregator::builders::CreateFindingAggregatorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_finding_aggregator::builders::CreateFindingAggregatorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl CreateFindingAggregatorFluentBuilder {
             crate::operation::create_finding_aggregator::CreateFindingAggregator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_finding_aggregator::CreateFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_finding_aggregator::CreateFindingAggregatorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl CreateFindingAggregatorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl CreateFindingAggregatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_finding_aggregator::CreateFindingAggregatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_finding_aggregator::CreateFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_finding_aggregator::CreateFindingAggregatorError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl CreateFindingAggregatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_finding_aggregator::CreateFindingAggregatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_finding_aggregator::CreateFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_finding_aggregator::CreateFindingAggregatorError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl CreateFindingAggregatorFluentBuilder {
             crate::operation::create_finding_aggregator::CreateFindingAggregator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_finding_aggregator::CreateFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_finding_aggregator::CreateFindingAggregatorError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +118,7 @@ impl CreateFindingAggregatorFluentBuilder {
     /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
     /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
-    pub fn region_linking_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn region_linking_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.region_linking_mode(input.into());
         self
     }
@@ -148,10 +130,7 @@ impl CreateFindingAggregatorFluentBuilder {
     /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
     /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
-    pub fn set_region_linking_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_region_linking_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_region_linking_mode(input);
         self
     }
@@ -178,10 +157,7 @@ impl CreateFindingAggregatorFluentBuilder {
     }
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region. </p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_regions(input);
         self
     }

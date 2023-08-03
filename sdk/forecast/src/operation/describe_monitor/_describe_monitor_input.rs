@@ -22,9 +22,7 @@ impl DescribeMonitorInput {
 
 /// A builder for [`DescribeMonitorInput`](crate::operation::describe_monitor::DescribeMonitorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMonitorInputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DescribeMonitorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMonitorInput`](crate::operation::describe_monitor::DescribeMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_monitor::DescribeMonitorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_monitor::DescribeMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_monitor::DescribeMonitorInput {
             monitor_arn: self.monitor_arn,
         })

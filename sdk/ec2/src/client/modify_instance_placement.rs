@@ -14,10 +14,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyInstancePlacementOutput`](crate::operation::modify_instance_placement::ModifyInstancePlacementOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::modify_instance_placement::ModifyInstancePlacementOutput::return): <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     /// - On failure, responds with [`SdkError<ModifyInstancePlacementError>`](crate::operation::modify_instance_placement::ModifyInstancePlacementError)
-    pub fn modify_instance_placement(
-        &self,
-    ) -> crate::operation::modify_instance_placement::builders::ModifyInstancePlacementFluentBuilder
-    {
+    pub fn modify_instance_placement(&self) -> crate::operation::modify_instance_placement::builders::ModifyInstancePlacementFluentBuilder {
         crate::operation::modify_instance_placement::builders::ModifyInstancePlacementFluentBuilder::new(self.handle.clone())
     }
 }

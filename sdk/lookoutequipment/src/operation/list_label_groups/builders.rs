@@ -10,10 +10,7 @@ impl ListLabelGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_label_groups::ListLabelGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_label_groups::ListLabelGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_label_groups::ListLabelGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_label_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListLabelGroupsFluentBuilder {
         }
     }
     /// Access the ListLabelGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_label_groups::builders::ListLabelGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_label_groups::builders::ListLabelGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListLabelGroupsFluentBuilder {
             crate::operation::list_label_groups::ListLabelGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_label_groups::ListLabelGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_label_groups::ListLabelGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListLabelGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListLabelGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_label_groups::ListLabelGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_label_groups::ListLabelGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_label_groups::ListLabelGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListLabelGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_label_groups::ListLabelGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_label_groups::ListLabelGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_label_groups::ListLabelGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,43 +102,28 @@ impl ListLabelGroupsFluentBuilder {
             crate::operation::list_label_groups::ListLabelGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_label_groups::ListLabelGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_label_groups::ListLabelGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator {
-        crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator {
+        crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p> The beginning of the name of the label groups to be listed. </p>
-    pub fn label_group_name_begins_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name_begins_with(input.into());
         self
     }
     /// <p> The beginning of the name of the label groups to be listed. </p>
-    pub fn set_label_group_name_begins_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name_begins_with(input);
         self
     }
     /// <p> The beginning of the name of the label groups to be listed. </p>
-    pub fn get_label_group_name_begins_with(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_label_group_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_group_name_begins_with()
     }
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>

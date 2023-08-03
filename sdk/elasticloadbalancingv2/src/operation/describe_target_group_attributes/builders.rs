@@ -32,7 +32,7 @@ impl DescribeTargetGroupAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTargetGroupAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder,
+    inner: crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder,
 }
 impl DescribeTargetGroupAttributesFluentBuilder {
     /// Creates a new `DescribeTargetGroupAttributes`.
@@ -43,7 +43,7 @@ impl DescribeTargetGroupAttributesFluentBuilder {
         }
     }
     /// Access the DescribeTargetGroupAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl DescribeTargetGroupAttributesFluentBuilder {
             crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl DescribeTargetGroupAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl DescribeTargetGroupAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl DescribeTargetGroupAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +111,17 @@ impl DescribeTargetGroupAttributesFluentBuilder {
             crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_group_arn(input);
         self
     }

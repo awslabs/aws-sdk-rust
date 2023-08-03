@@ -23,9 +23,7 @@ impl ConnectAttachmentOptions {
 
 /// A builder for [`ConnectAttachmentOptions`](crate::types::ConnectAttachmentOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectAttachmentOptionsBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::TunnelProtocol>,
 }
@@ -36,10 +34,7 @@ impl ConnectAttachmentOptionsBuilder {
         self
     }
     /// <p>The protocol used for the attachment connection.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::TunnelProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::TunnelProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -49,8 +44,6 @@ impl ConnectAttachmentOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`ConnectAttachmentOptions`](crate::types::ConnectAttachmentOptions).
     pub fn build(self) -> crate::types::ConnectAttachmentOptions {
-        crate::types::ConnectAttachmentOptions {
-            protocol: self.protocol,
-        }
+        crate::types::ConnectAttachmentOptions { protocol: self.protocol }
     }
 }

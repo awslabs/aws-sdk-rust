@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateHitTypeOfHitOutput {
 }
 impl UpdateHitTypeOfHitOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHitTypeOfHitOutput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitOutput).
-    pub fn builder(
-    ) -> crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitOutputBuilder {
-        crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitOutputBuilder {
+        crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHitTypeOfHitOutput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHitTypeOfHitOutputBuilder {
     _request_id: Option<String>,
 }

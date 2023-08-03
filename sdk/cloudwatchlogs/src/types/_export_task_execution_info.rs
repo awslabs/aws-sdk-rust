@@ -30,9 +30,7 @@ impl ExportTaskExecutionInfo {
 
 /// A builder for [`ExportTaskExecutionInfo`](crate::types::ExportTaskExecutionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportTaskExecutionInfoBuilder {
     pub(crate) creation_time: ::std::option::Option<i64>,
     pub(crate) completion_time: ::std::option::Option<i64>,

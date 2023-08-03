@@ -28,7 +28,7 @@ impl GetResourceEvaluationSummaryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceEvaluationSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryInputBuilder,
+    inner: crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryInputBuilder,
 }
 impl GetResourceEvaluationSummaryFluentBuilder {
     /// Creates a new `GetResourceEvaluationSummary`.
@@ -39,7 +39,7 @@ impl GetResourceEvaluationSummaryFluentBuilder {
         }
     }
     /// Access the GetResourceEvaluationSummary as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetResourceEvaluationSummaryFluentBuilder {
             crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetResourceEvaluationSummaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetResourceEvaluationSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetResourceEvaluationSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl GetResourceEvaluationSummaryFluentBuilder {
             crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
-    pub fn resource_evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_evaluation_id(input.into());
         self
     }
     /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
-    pub fn set_resource_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_evaluation_id(input);
         self
     }

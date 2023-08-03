@@ -24,9 +24,7 @@ impl StaticPolicyDefinitionItem {
 
 /// A builder for [`StaticPolicyDefinitionItem`](crate::types::StaticPolicyDefinitionItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StaticPolicyDefinitionItemBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }

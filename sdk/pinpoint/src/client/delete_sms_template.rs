@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSmsTemplateOutput`](crate::operation::delete_sms_template::DeleteSmsTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::delete_sms_template::DeleteSmsTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<DeleteSmsTemplateError>`](crate::operation::delete_sms_template::DeleteSmsTemplateError)
-    pub fn delete_sms_template(
-        &self,
-    ) -> crate::operation::delete_sms_template::builders::DeleteSmsTemplateFluentBuilder {
-        crate::operation::delete_sms_template::builders::DeleteSmsTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_sms_template(&self) -> crate::operation::delete_sms_template::builders::DeleteSmsTemplateFluentBuilder {
+        crate::operation::delete_sms_template::builders::DeleteSmsTemplateFluentBuilder::new(self.handle.clone())
     }
 }

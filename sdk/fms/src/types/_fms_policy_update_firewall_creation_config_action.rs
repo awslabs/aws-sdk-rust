@@ -30,9 +30,7 @@ impl FmsPolicyUpdateFirewallCreationConfigAction {
 
 /// A builder for [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::types::FmsPolicyUpdateFirewallCreationConfigAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FmsPolicyUpdateFirewallCreationConfigActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_creation_config: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl FmsPolicyUpdateFirewallCreationConfigActionBuilder {
         &self.description
     }
     /// <p>A <code>FirewallCreationConfig</code> that you can copy into your current policy's <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a> in order to remedy scope violations.</p>
-    pub fn firewall_creation_config(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_creation_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_creation_config = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A <code>FirewallCreationConfig</code> that you can copy into your current policy's <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a> in order to remedy scope violations.</p>
-    pub fn set_firewall_creation_config(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_creation_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_creation_config = input;
         self
     }

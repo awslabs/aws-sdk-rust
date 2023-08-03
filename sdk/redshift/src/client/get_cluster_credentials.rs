@@ -15,12 +15,7 @@ impl super::Client {
     ///   - [`db_password(Option<String>)`](crate::operation::get_cluster_credentials::GetClusterCredentialsOutput::db_password): <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
     ///   - [`expiration(Option<DateTime>)`](crate::operation::get_cluster_credentials::GetClusterCredentialsOutput::expiration): <p>The date and time the password in <code>DbPassword</code> expires.</p>
     /// - On failure, responds with [`SdkError<GetClusterCredentialsError>`](crate::operation::get_cluster_credentials::GetClusterCredentialsError)
-    pub fn get_cluster_credentials(
-        &self,
-    ) -> crate::operation::get_cluster_credentials::builders::GetClusterCredentialsFluentBuilder
-    {
-        crate::operation::get_cluster_credentials::builders::GetClusterCredentialsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_cluster_credentials(&self) -> crate::operation::get_cluster_credentials::builders::GetClusterCredentialsFluentBuilder {
+        crate::operation::get_cluster_credentials::builders::GetClusterCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DisableProfileOutput`](crate::operation::disable_profile::DisableProfileOutput) with field(s):
     ///   - [`profile(Option<ProfileDetail>)`](crate::operation::disable_profile::DisableProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<DisableProfileError>`](crate::operation::disable_profile::DisableProfileError)
-    pub fn disable_profile(
-        &self,
-    ) -> crate::operation::disable_profile::builders::DisableProfileFluentBuilder {
-        crate::operation::disable_profile::builders::DisableProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_profile(&self) -> crate::operation::disable_profile::builders::DisableProfileFluentBuilder {
+        crate::operation::disable_profile::builders::DisableProfileFluentBuilder::new(self.handle.clone())
     }
 }

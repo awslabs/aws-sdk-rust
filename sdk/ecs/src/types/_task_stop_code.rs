@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TaskStopCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for TaskStopCode {
             "TaskFailedToStart" => TaskStopCode::TaskFailedToStart,
             "TerminationNotice" => TaskStopCode::TerminationNotice,
             "UserInitiated" => TaskStopCode::UserInitiated,
-            other => {
-                TaskStopCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TaskStopCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

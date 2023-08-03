@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`jobs(Option<Vec<SigningJob>>)`](crate::operation::list_signing_jobs::ListSigningJobsOutput::jobs): <p>A list of your signing jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_signing_jobs::ListSigningJobsOutput::next_token): <p>String for specifying the next set of paginated results.</p>
     /// - On failure, responds with [`SdkError<ListSigningJobsError>`](crate::operation::list_signing_jobs::ListSigningJobsError)
-    pub fn list_signing_jobs(
-        &self,
-    ) -> crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder {
-        crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_signing_jobs(&self) -> crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder {
+        crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::new(self.handle.clone())
     }
 }

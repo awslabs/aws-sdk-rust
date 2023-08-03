@@ -44,9 +44,7 @@ impl LustreLogConfiguration {
 
 /// A builder for [`LustreLogConfiguration`](crate::types::LustreLogConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LustreLogConfigurationBuilder {
     pub(crate) level: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -72,10 +70,7 @@ impl LustreLogConfigurationBuilder {
     /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
     /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
-    pub fn set_level(
-        mut self,
-        input: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>,
-    ) -> Self {
+    pub fn set_level(mut self, input: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>) -> Self {
         self.level = input;
         self
     }

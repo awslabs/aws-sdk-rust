@@ -44,9 +44,7 @@ impl SignalResourceInput {
 
 /// A builder for [`SignalResourceInput`](crate::operation::signal_resource::SignalResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignalResourceInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl SignalResourceInputBuilder {
         &self.stack_name
     }
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of the resource that given in the template.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of the resource that given in the template.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_resource_id = input;
         self
     }
@@ -108,10 +100,7 @@ impl SignalResourceInputBuilder {
         self
     }
     /// <p>The status of the signal, which is either success or failure. A failure signal causes CloudFormation to immediately fail the stack creation or update.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSignalStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceSignalStatus>) -> Self {
         self.status = input;
         self
     }
@@ -122,10 +111,7 @@ impl SignalResourceInputBuilder {
     /// Consumes the builder and constructs a [`SignalResourceInput`](crate::operation::signal_resource::SignalResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::signal_resource::SignalResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::signal_resource::SignalResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::signal_resource::SignalResourceInput {
             stack_name: self.stack_name,
             logical_resource_id: self.logical_resource_id,

@@ -30,9 +30,7 @@ impl DistributionConfigWithTags {
 
 /// A builder for [`DistributionConfigWithTags`](crate::types::DistributionConfigWithTags).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DistributionConfigWithTagsBuilder {
     pub(crate) distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
     pub(crate) tags: ::std::option::Option<crate::types::Tags>,
@@ -44,17 +42,12 @@ impl DistributionConfigWithTagsBuilder {
         self
     }
     /// <p>A distribution configuration.</p>
-    pub fn set_distribution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionConfig>,
-    ) -> Self {
+    pub fn set_distribution_config(mut self, input: ::std::option::Option<crate::types::DistributionConfig>) -> Self {
         self.distribution_config = input;
         self
     }
     /// <p>A distribution configuration.</p>
-    pub fn get_distribution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DistributionConfig> {
+    pub fn get_distribution_config(&self) -> &::std::option::Option<crate::types::DistributionConfig> {
         &self.distribution_config
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>

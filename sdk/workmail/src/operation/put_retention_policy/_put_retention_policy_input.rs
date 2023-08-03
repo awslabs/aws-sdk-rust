@@ -17,8 +17,7 @@ pub struct PutRetentionPolicyInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The retention policy folder configurations.</p>
     #[doc(hidden)]
-    pub folder_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
+    pub folder_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
 }
 impl PutRetentionPolicyInput {
     /// <p>The organization ID.</p>
@@ -38,9 +37,7 @@ impl PutRetentionPolicyInput {
         self.description.as_deref()
     }
     /// <p>The retention policy folder configurations.</p>
-    pub fn folder_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FolderConfiguration]> {
+    pub fn folder_configurations(&self) -> ::std::option::Option<&[crate::types::FolderConfiguration]> {
         self.folder_configurations.as_deref()
     }
 }
@@ -57,8 +54,7 @@ impl ::std::fmt::Debug for PutRetentionPolicyInput {
 }
 impl PutRetentionPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutRetentionPolicyInput`](crate::operation::put_retention_policy::PutRetentionPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_retention_policy::builders::PutRetentionPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_retention_policy::builders::PutRetentionPolicyInputBuilder {
         crate::operation::put_retention_policy::builders::PutRetentionPolicyInputBuilder::default()
     }
 }
@@ -71,23 +67,16 @@ pub struct PutRetentionPolicyInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) folder_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
+    pub(crate) folder_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
 }
 impl PutRetentionPolicyInputBuilder {
     /// <p>The organization ID.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization ID.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -149,35 +138,25 @@ impl PutRetentionPolicyInputBuilder {
         self
     }
     /// <p>The retention policy folder configurations.</p>
-    pub fn set_folder_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
-    ) -> Self {
+    pub fn set_folder_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>) -> Self {
         self.folder_configurations = input;
         self
     }
     /// <p>The retention policy folder configurations.</p>
-    pub fn get_folder_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>> {
+    pub fn get_folder_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>> {
         &self.folder_configurations
     }
     /// Consumes the builder and constructs a [`PutRetentionPolicyInput`](crate::operation::put_retention_policy::PutRetentionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_retention_policy::PutRetentionPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_retention_policy::PutRetentionPolicyInput {
-                organization_id: self.organization_id,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                folder_configurations: self.folder_configurations,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_retention_policy::PutRetentionPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_retention_policy::PutRetentionPolicyInput {
+            organization_id: self.organization_id,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            folder_configurations: self.folder_configurations,
+        })
     }
 }
 impl ::std::fmt::Debug for PutRetentionPolicyInputBuilder {

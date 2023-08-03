@@ -23,9 +23,7 @@ impl EndpointBatchRequest {
 
 /// A builder for [`EndpointBatchRequest`](crate::types::EndpointBatchRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointBatchRequestBuilder {
     pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::EndpointBatchItem>>,
 }
@@ -42,17 +40,12 @@ impl EndpointBatchRequestBuilder {
         self
     }
     /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
-    pub fn set_item(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointBatchItem>>,
-    ) -> Self {
+    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointBatchItem>>) -> Self {
         self.item = input;
         self
     }
     /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
-    pub fn get_item(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointBatchItem>> {
+    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointBatchItem>> {
         &self.item
     }
     /// Consumes the builder and constructs a [`EndpointBatchRequest`](crate::types::EndpointBatchRequest).

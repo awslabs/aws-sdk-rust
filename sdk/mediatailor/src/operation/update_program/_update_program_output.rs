@@ -98,9 +98,7 @@ impl UpdateProgramOutput {
 
 /// A builder for [`UpdateProgramOutput`](crate::operation::update_program::UpdateProgramOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProgramOutputBuilder {
     pub(crate) ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -128,10 +126,7 @@ impl UpdateProgramOutputBuilder {
         self
     }
     /// <p>The ad break configuration settings.</p>
-    pub fn set_ad_breaks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
-    ) -> Self {
+    pub fn set_ad_breaks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>) -> Self {
         self.ad_breaks = input;
         self
     }
@@ -173,10 +168,7 @@ impl UpdateProgramOutputBuilder {
         self
     }
     /// <p>The time the program was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -199,18 +191,12 @@ impl UpdateProgramOutputBuilder {
         &self.program_name
     }
     /// <p>The name to assign to the source location for this program.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to assign to the source location for this program.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -219,18 +205,12 @@ impl UpdateProgramOutputBuilder {
         &self.source_location_name
     }
     /// <p>The name that's used to refer to a VOD source.</p>
-    pub fn vod_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vod_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that's used to refer to a VOD source.</p>
-    pub fn set_vod_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vod_source_name = input;
         self
     }
@@ -239,18 +219,12 @@ impl UpdateProgramOutputBuilder {
         &self.vod_source_name
     }
     /// <p>The name of the LiveSource for this Program.</p>
-    pub fn live_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the LiveSource for this Program.</p>
-    pub fn set_live_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.live_source_name = input;
         self
     }
@@ -292,10 +266,7 @@ impl UpdateProgramOutputBuilder {
         self
     }
     /// <p>The scheduled start time for this Program.</p>
-    pub fn set_scheduled_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_start_time = input;
         self
     }

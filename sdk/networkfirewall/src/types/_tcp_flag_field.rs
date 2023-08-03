@@ -40,9 +40,7 @@ impl TcpFlagField {
 
 /// A builder for [`TcpFlagField`](crate::types::TcpFlagField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TcpFlagFieldBuilder {
     pub(crate) flags: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
     pub(crate) masks: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
@@ -70,10 +68,7 @@ impl TcpFlagFieldBuilder {
     /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li>
     /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li>
     /// </ul>
-    pub fn set_flags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
-    ) -> Self {
+    pub fn set_flags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>) -> Self {
         self.flags = input;
         self
     }
@@ -98,10 +93,7 @@ impl TcpFlagFieldBuilder {
         self
     }
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
-    pub fn set_masks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
-    ) -> Self {
+    pub fn set_masks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>) -> Self {
         self.masks = input;
         self
     }

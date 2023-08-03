@@ -23,9 +23,7 @@ impl PropertyFilter {
 
 /// A builder for [`PropertyFilter`](crate::types::PropertyFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyFilterBuilder {
     pub(crate) property: ::std::option::Option<crate::types::Property>,
 }
@@ -46,8 +44,6 @@ impl PropertyFilterBuilder {
     }
     /// Consumes the builder and constructs a [`PropertyFilter`](crate::types::PropertyFilter).
     pub fn build(self) -> crate::types::PropertyFilter {
-        crate::types::PropertyFilter {
-            property: self.property,
-        }
+        crate::types::PropertyFilter { property: self.property }
     }
 }

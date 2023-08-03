@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for ListDeadLetterSourceQueuesOutput {
 }
 impl ListDeadLetterSourceQueuesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeadLetterSourceQueuesOutput`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput).
-    pub fn builder() -> crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesOutputBuilder{
+    pub fn builder() -> crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesOutputBuilder {
         crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeadLetterSourceQueuesOutput`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeadLetterSourceQueuesOutputBuilder {
     pub(crate) queue_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListDeadLetterSourceQueuesOutputBuilder {
         self
     }
     /// <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
-    pub fn set_queue_urls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_queue_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.queue_urls = input;
         self
     }
@@ -92,9 +87,7 @@ impl ListDeadLetterSourceQueuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDeadLetterSourceQueuesOutput`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput {
+    pub fn build(self) -> crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput {
         crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput {
             queue_urls: self.queue_urls,
             next_token: self.next_token,

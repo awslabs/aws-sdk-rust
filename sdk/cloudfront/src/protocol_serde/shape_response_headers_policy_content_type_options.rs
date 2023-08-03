@@ -15,10 +15,7 @@ pub fn ser_response_headers_policy_content_type_options(
 
 pub fn de_response_headers_policy_content_type_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ResponseHeadersPolicyContentTypeOptions,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ResponseHeadersPolicyContentTypeOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyContentTypeOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {

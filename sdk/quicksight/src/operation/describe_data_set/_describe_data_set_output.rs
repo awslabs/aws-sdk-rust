@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeDataSetOutput {
 }
 impl DescribeDataSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSetOutput`](crate::operation::describe_data_set::DescribeDataSetOutput).
-    pub fn builder() -> crate::operation::describe_data_set::builders::DescribeDataSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_data_set::builders::DescribeDataSetOutputBuilder {
         crate::operation::describe_data_set::builders::DescribeDataSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSetOutput`](crate::operation::describe_data_set::DescribeDataSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSetOutputBuilder {
     pub(crate) data_set: ::std::option::Option<crate::types::DataSet>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

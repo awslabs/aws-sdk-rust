@@ -28,9 +28,7 @@ impl GetCurrentUserOutput {
 
 /// A builder for [`GetCurrentUserOutput`](crate::operation::get_current_user::GetCurrentUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCurrentUserOutputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,

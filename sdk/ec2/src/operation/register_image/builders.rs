@@ -10,10 +10,7 @@ impl RegisterImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_image::RegisterImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_image::RegisterImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_image::RegisterImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_image();
         fluent_builder.inner = self;
@@ -52,9 +49,7 @@ impl RegisterImageFluentBuilder {
         }
     }
     /// Access the RegisterImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_image::builders::RegisterImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_image::builders::RegisterImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -76,10 +71,7 @@ impl RegisterImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -130,18 +122,12 @@ impl RegisterImageFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
-    pub fn image_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_location(input.into());
         self
     }
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
-    pub fn set_image_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_location(input);
         self
     }
@@ -157,10 +143,7 @@ impl RegisterImageFluentBuilder {
     }
     /// <p>The architecture of the AMI.</p>
     /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::ArchitectureValues>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::ArchitectureValues>) -> Self {
         self.inner = self.inner.set_architecture(input);
         self
     }
@@ -183,19 +166,14 @@ impl RegisterImageFluentBuilder {
     /// <p>The block device mapping entries.</p>
     /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
     /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
     }
     /// <p>The block device mapping entries.</p>
     /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
     /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
         self.inner.get_block_device_mappings()
     }
     /// <p>A description for your AMI.</p>
@@ -280,27 +258,19 @@ impl RegisterImageFluentBuilder {
     ///
     /// <p>The billing product codes. Your account must be authorized to specify billing product codes.</p>
     /// <p>If your account is not authorized to specify billing product codes, you can publish AMIs that include billable software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon Web Services Marketplace. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
-    pub fn billing_products(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_products(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_products(input.into());
         self
     }
     /// <p>The billing product codes. Your account must be authorized to specify billing product codes.</p>
     /// <p>If your account is not authorized to specify billing product codes, you can publish AMIs that include billable software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon Web Services Marketplace. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
-    pub fn set_billing_products(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_billing_products(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_billing_products(input);
         self
     }
     /// <p>The billing product codes. Your account must be authorized to specify billing product codes.</p>
     /// <p>If your account is not authorized to specify billing product codes, you can publish AMIs that include billable software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon Web Services Marketplace. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
-    pub fn get_billing_products(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_billing_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_billing_products()
     }
     /// <p>The ID of the RAM disk.</p>
@@ -318,18 +288,12 @@ impl RegisterImageFluentBuilder {
         self.inner.get_ramdisk_id()
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn root_device_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn root_device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.root_device_name(input.into());
         self
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn set_root_device_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_root_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_root_device_name(input);
         self
     }
@@ -340,20 +304,14 @@ impl RegisterImageFluentBuilder {
     /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
     /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
     /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn sriov_net_support(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sriov_net_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sriov_net_support(input.into());
         self
     }
     /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
     /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
     /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn set_sriov_net_support(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sriov_net_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sriov_net_support(input);
         self
     }
@@ -365,19 +323,13 @@ impl RegisterImageFluentBuilder {
     }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
     /// <p>Default: <code>paravirtual</code> </p>
-    pub fn virtualization_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtualization_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtualization_type(input.into());
         self
     }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
     /// <p>Default: <code>paravirtual</code> </p>
-    pub fn set_virtualization_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtualization_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtualization_type(input);
         self
     }
@@ -398,10 +350,7 @@ impl RegisterImageFluentBuilder {
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_boot_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::BootModeValues>,
-    ) -> Self {
+    pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootModeValues>) -> Self {
         self.inner = self.inner.set_boot_mode(input);
         self
     }
@@ -418,10 +367,7 @@ impl RegisterImageFluentBuilder {
         self
     }
     /// <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_tpm_support(
-        mut self,
-        input: ::std::option::Option<crate::types::TpmSupportValues>,
-    ) -> Self {
+    pub fn set_tpm_support(mut self, input: ::std::option::Option<crate::types::TpmSupportValues>) -> Self {
         self.inner = self.inner.set_tpm_support(input);
         self
     }
@@ -453,10 +399,7 @@ impl RegisterImageFluentBuilder {
     /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
     /// <p>If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.</p>
     /// </note>
-    pub fn set_imds_support(
-        mut self,
-        input: ::std::option::Option<crate::types::ImdsSupportValues>,
-    ) -> Self {
+    pub fn set_imds_support(mut self, input: ::std::option::Option<crate::types::ImdsSupportValues>) -> Self {
         self.inner = self.inner.set_imds_support(input);
         self
     }

@@ -24,8 +24,7 @@ pub struct StackResourceSummary {
     pub resource_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     #[doc(hidden)]
-    pub drift_information:
-        ::std::option::Option<crate::types::StackResourceDriftInformationSummary>,
+    pub drift_information: ::std::option::Option<crate::types::StackResourceDriftInformationSummary>,
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     #[doc(hidden)]
     pub module_info: ::std::option::Option<crate::types::ModuleInfo>,
@@ -56,9 +55,7 @@ impl StackResourceSummary {
         self.resource_status_reason.as_deref()
     }
     /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn drift_information(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackResourceDriftInformationSummary> {
+    pub fn drift_information(&self) -> ::std::option::Option<&crate::types::StackResourceDriftInformationSummary> {
         self.drift_information.as_ref()
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
@@ -75,9 +72,7 @@ impl StackResourceSummary {
 
 /// A builder for [`StackResourceSummary`](crate::types::StackResourceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackResourceSummaryBuilder {
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) physical_resource_id: ::std::option::Option<::std::string::String>,
@@ -85,24 +80,17 @@ pub struct StackResourceSummaryBuilder {
     pub(crate) last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource_status: ::std::option::Option<crate::types::ResourceStatus>,
     pub(crate) resource_status_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) drift_information:
-        ::std::option::Option<crate::types::StackResourceDriftInformationSummary>,
+    pub(crate) drift_information: ::std::option::Option<crate::types::StackResourceDriftInformationSummary>,
     pub(crate) module_info: ::std::option::Option<crate::types::ModuleInfo>,
 }
 impl StackResourceSummaryBuilder {
     /// <p>The logical name of the resource specified in the template.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical name of the resource specified in the template.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_resource_id = input;
         self
     }
@@ -111,18 +99,12 @@ impl StackResourceSummaryBuilder {
         &self.logical_resource_id
     }
     /// <p>The name or unique identifier that corresponds to a physical instance ID of the resource.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique identifier that corresponds to a physical instance ID of the resource.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.physical_resource_id = input;
         self
     }
@@ -131,18 +113,12 @@ impl StackResourceSummaryBuilder {
         &self.physical_resource_id
     }
     /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -156,17 +132,12 @@ impl StackResourceSummaryBuilder {
         self
     }
     /// <p>Time the status was updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>Time the status was updated.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// <p>Current status of the resource.</p>
@@ -175,10 +146,7 @@ impl StackResourceSummaryBuilder {
         self
     }
     /// <p>Current status of the resource.</p>
-    pub fn set_resource_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.resource_status = input;
         self
     }
@@ -187,18 +155,12 @@ impl StackResourceSummaryBuilder {
         &self.resource_status
     }
     /// <p>Success/failure message associated with the resource.</p>
-    pub fn resource_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Success/failure message associated with the resource.</p>
-    pub fn set_resource_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_status_reason = input;
         self
     }
@@ -207,25 +169,17 @@ impl StackResourceSummaryBuilder {
         &self.resource_status_reason
     }
     /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn drift_information(
-        mut self,
-        input: crate::types::StackResourceDriftInformationSummary,
-    ) -> Self {
+    pub fn drift_information(mut self, input: crate::types::StackResourceDriftInformationSummary) -> Self {
         self.drift_information = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn set_drift_information(
-        mut self,
-        input: ::std::option::Option<crate::types::StackResourceDriftInformationSummary>,
-    ) -> Self {
+    pub fn set_drift_information(mut self, input: ::std::option::Option<crate::types::StackResourceDriftInformationSummary>) -> Self {
         self.drift_information = input;
         self
     }
     /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn get_drift_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackResourceDriftInformationSummary> {
+    pub fn get_drift_information(&self) -> &::std::option::Option<crate::types::StackResourceDriftInformationSummary> {
         &self.drift_information
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
@@ -234,10 +188,7 @@ impl StackResourceSummaryBuilder {
         self
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-    pub fn set_module_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ModuleInfo>,
-    ) -> Self {
+    pub fn set_module_info(mut self, input: ::std::option::Option<crate::types::ModuleInfo>) -> Self {
         self.module_info = input;
         self
     }

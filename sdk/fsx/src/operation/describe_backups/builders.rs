@@ -10,10 +10,7 @@ impl DescribeBackupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_backups::DescribeBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backups::DescribeBackupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backups::DescribeBackupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_backups();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl DescribeBackupsFluentBuilder {
         }
     }
     /// Access the DescribeBackups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_backups::builders::DescribeBackupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_backups::builders::DescribeBackupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl DescribeBackupsFluentBuilder {
             crate::operation::describe_backups::DescribeBackups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backups::DescribeBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backups::DescribeBackupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl DescribeBackupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl DescribeBackupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_backups::DescribeBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backups::DescribeBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backups::DescribeBackupsError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl DescribeBackupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_backups::DescribeBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backups::DescribeBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backups::DescribeBackupsError>,
     > {
         self.send_middleware().await
     }
@@ -123,22 +109,15 @@ impl DescribeBackupsFluentBuilder {
             crate::operation::describe_backups::DescribeBackups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backups::DescribeBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backups::DescribeBackupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_backups::paginator::DescribeBackupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_backups::paginator::DescribeBackupsPaginator {
-        crate::operation::describe_backups::paginator::DescribeBackupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_backups::paginator::DescribeBackupsPaginator {
+        crate::operation::describe_backups::paginator::DescribeBackupsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `BackupIds`.
     ///
@@ -150,10 +129,7 @@ impl DescribeBackupsFluentBuilder {
         self
     }
     /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
-    pub fn set_backup_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_backup_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_backup_ids(input);
         self
     }
@@ -171,10 +147,7 @@ impl DescribeBackupsFluentBuilder {
         self
     }
     /// <p>The filters structure. The supported names are <code>file-system-id</code>, <code>backup-type</code>, <code>file-system-type</code>, and <code>volume-id</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -70,17 +70,12 @@ impl DocumentTextBuilder {
         self
     }
     /// <p>Highlights in the document text.</p>
-    pub fn set_highlights(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
-    ) -> Self {
+    pub fn set_highlights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>) -> Self {
         self.highlights = input;
         self
     }
     /// <p>Highlights in the document text.</p>
-    pub fn get_highlights(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Highlight>> {
+    pub fn get_highlights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Highlight>> {
         &self.highlights
     }
     /// Consumes the builder and constructs a [`DocumentText`](crate::types::DocumentText).

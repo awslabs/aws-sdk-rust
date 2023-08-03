@@ -9,10 +9,7 @@ pub fn ser_create_route_input(
     if let Some(var_2) = &input.default_route {
         #[allow(unused_mut)]
         let mut object_3 = object.key("DefaultRoute").start_object();
-        crate::protocol_serde::shape_default_route_input::ser_default_route_input(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_default_route_input::ser_default_route_input(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.route_type {
@@ -34,10 +31,7 @@ pub fn ser_create_route_input(
     if let Some(var_10) = &input.uri_path_route {
         #[allow(unused_mut)]
         let mut object_11 = object.key("UriPathRoute").start_object();
-        crate::protocol_serde::shape_uri_path_route_input::ser_uri_path_route_input(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_uri_path_route_input::ser_uri_path_route_input(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

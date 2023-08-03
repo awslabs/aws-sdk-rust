@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for SearchFlowTemplatesOutput {
 }
 impl SearchFlowTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`SearchFlowTemplatesOutput`](crate::operation::search_flow_templates::SearchFlowTemplatesOutput).
-    pub fn builder(
-    ) -> crate::operation::search_flow_templates::builders::SearchFlowTemplatesOutputBuilder {
-        crate::operation::search_flow_templates::builders::SearchFlowTemplatesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::search_flow_templates::builders::SearchFlowTemplatesOutputBuilder {
+        crate::operation::search_flow_templates::builders::SearchFlowTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchFlowTemplatesOutput`](crate::operation::search_flow_templates::SearchFlowTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchFlowTemplatesOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl SearchFlowTemplatesOutputBuilder {
         self
     }
     /// <p>An array of objects that contain summary information about each workflow in the result set.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>An array of objects that contain summary information about each workflow in the result set.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>> {
         &self.summaries
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>

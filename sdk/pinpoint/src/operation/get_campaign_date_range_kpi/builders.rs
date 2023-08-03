@@ -26,7 +26,7 @@ impl GetCampaignDateRangeKpiInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCampaignDateRangeKpiFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiInputBuilder,
+    inner: crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiInputBuilder,
 }
 impl GetCampaignDateRangeKpiFluentBuilder {
     /// Creates a new `GetCampaignDateRangeKpi`.
@@ -37,10 +37,7 @@ impl GetCampaignDateRangeKpiFluentBuilder {
         }
     }
     /// Access the GetCampaignDateRangeKpi as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetCampaignDateRangeKpiFluentBuilder {
             crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpi,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetCampaignDateRangeKpiFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetCampaignDateRangeKpiFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetCampaignDateRangeKpiFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetCampaignDateRangeKpiFluentBuilder {
             crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpi,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -163,10 +143,7 @@ impl GetCampaignDateRangeKpiFluentBuilder {
         self
     }
     /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -222,10 +199,7 @@ impl GetCampaignDateRangeKpiFluentBuilder {
         self
     }
     /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }

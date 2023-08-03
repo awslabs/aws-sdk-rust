@@ -6,8 +6,7 @@ pub struct BatchUpdateFindingsInput {
     /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
     #[doc(hidden)]
-    pub finding_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
+    pub finding_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
     /// <p>The updated note.</p>
     #[doc(hidden)]
     pub note: ::std::option::Option<crate::types::NoteUpdate>,
@@ -45,9 +44,7 @@ pub struct BatchUpdateFindingsInput {
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     #[doc(hidden)]
-    pub user_defined_fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Used to update the workflow status of a finding.</p>
     /// <p>The workflow status indicates the progress of the investigation into the finding. </p>
     #[doc(hidden)]
@@ -59,9 +56,7 @@ pub struct BatchUpdateFindingsInput {
 impl BatchUpdateFindingsInput {
     /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
-    pub fn finding_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsSecurityFindingIdentifier]> {
+    pub fn finding_identifiers(&self) -> ::std::option::Option<&[crate::types::AwsSecurityFindingIdentifier]> {
         self.finding_identifiers.as_deref()
     }
     /// <p>The updated note.</p>
@@ -106,11 +101,7 @@ impl BatchUpdateFindingsInput {
         self.types.as_deref()
     }
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
-    pub fn user_defined_fields(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn user_defined_fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.user_defined_fields.as_ref()
     }
     /// <p>Used to update the workflow status of a finding.</p>
@@ -125,33 +116,25 @@ impl BatchUpdateFindingsInput {
 }
 impl BatchUpdateFindingsInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateFindingsInput`](crate::operation::batch_update_findings::BatchUpdateFindingsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_findings::builders::BatchUpdateFindingsInputBuilder {
-        crate::operation::batch_update_findings::builders::BatchUpdateFindingsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_update_findings::builders::BatchUpdateFindingsInputBuilder {
+        crate::operation::batch_update_findings::builders::BatchUpdateFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateFindingsInput`](crate::operation::batch_update_findings::BatchUpdateFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateFindingsInputBuilder {
-    pub(crate) finding_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
+    pub(crate) finding_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
     pub(crate) note: ::std::option::Option<crate::types::NoteUpdate>,
     pub(crate) severity: ::std::option::Option<crate::types::SeverityUpdate>,
     pub(crate) verification_state: ::std::option::Option<crate::types::VerificationState>,
     pub(crate) confidence: ::std::option::Option<i32>,
     pub(crate) criticality: ::std::option::Option<i32>,
     pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_defined_fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) workflow: ::std::option::Option<crate::types::WorkflowUpdate>,
-    pub(crate) related_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
+    pub(crate) related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
 }
 impl BatchUpdateFindingsInputBuilder {
     /// Appends an item to `finding_identifiers`.
@@ -160,10 +143,7 @@ impl BatchUpdateFindingsInputBuilder {
     ///
     /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
-    pub fn finding_identifiers(
-        mut self,
-        input: crate::types::AwsSecurityFindingIdentifier,
-    ) -> Self {
+    pub fn finding_identifiers(mut self, input: crate::types::AwsSecurityFindingIdentifier) -> Self {
         let mut v = self.finding_identifiers.unwrap_or_default();
         v.push(input);
         self.finding_identifiers = ::std::option::Option::Some(v);
@@ -171,18 +151,13 @@ impl BatchUpdateFindingsInputBuilder {
     }
     /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
-    pub fn set_finding_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
-    ) -> Self {
+    pub fn set_finding_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>) -> Self {
         self.finding_identifiers = input;
         self
     }
     /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
-    pub fn get_finding_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>> {
+    pub fn get_finding_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>> {
         &self.finding_identifiers
     }
     /// <p>The updated note.</p>
@@ -205,10 +180,7 @@ impl BatchUpdateFindingsInputBuilder {
         self
     }
     /// <p>Used to update the finding severity.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityUpdate>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::SeverityUpdate>) -> Self {
         self.severity = input;
         self
     }
@@ -236,10 +208,7 @@ impl BatchUpdateFindingsInputBuilder {
     /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
     /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
     /// </ul>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.verification_state = input;
         self
     }
@@ -251,9 +220,7 @@ impl BatchUpdateFindingsInputBuilder {
     /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
     /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
     /// </ul>
-    pub fn get_verification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationState> {
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         &self.verification_state
     }
     /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
@@ -318,10 +285,7 @@ impl BatchUpdateFindingsInputBuilder {
     /// <li> <p>Unusual Behaviors</p> </li>
     /// <li> <p>Sensitive Data Identifications </p> </li>
     /// </ul>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
         self
     }
@@ -355,19 +319,13 @@ impl BatchUpdateFindingsInputBuilder {
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn set_user_defined_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.user_defined_fields = input;
         self
     }
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
-    pub fn get_user_defined_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.user_defined_fields
     }
     /// <p>Used to update the workflow status of a finding.</p>
@@ -378,10 +336,7 @@ impl BatchUpdateFindingsInputBuilder {
     }
     /// <p>Used to update the workflow status of a finding.</p>
     /// <p>The workflow status indicates the progress of the investigation into the finding. </p>
-    pub fn set_workflow(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowUpdate>,
-    ) -> Self {
+    pub fn set_workflow(mut self, input: ::std::option::Option<crate::types::WorkflowUpdate>) -> Self {
         self.workflow = input;
         self
     }
@@ -402,39 +357,30 @@ impl BatchUpdateFindingsInputBuilder {
         self
     }
     /// <p>A list of findings that are related to the updated findings.</p>
-    pub fn set_related_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
-    ) -> Self {
+    pub fn set_related_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>) -> Self {
         self.related_findings = input;
         self
     }
     /// <p>A list of findings that are related to the updated findings.</p>
-    pub fn get_related_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
+    pub fn get_related_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
         &self.related_findings
     }
     /// Consumes the builder and constructs a [`BatchUpdateFindingsInput`](crate::operation::batch_update_findings::BatchUpdateFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_findings::BatchUpdateFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_update_findings::BatchUpdateFindingsInput {
-                finding_identifiers: self.finding_identifiers,
-                note: self.note,
-                severity: self.severity,
-                verification_state: self.verification_state,
-                confidence: self.confidence,
-                criticality: self.criticality,
-                types: self.types,
-                user_defined_fields: self.user_defined_fields,
-                workflow: self.workflow,
-                related_findings: self.related_findings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_update_findings::BatchUpdateFindingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_update_findings::BatchUpdateFindingsInput {
+            finding_identifiers: self.finding_identifiers,
+            note: self.note,
+            severity: self.severity,
+            verification_state: self.verification_state,
+            confidence: self.confidence,
+            criticality: self.criticality,
+            types: self.types,
+            user_defined_fields: self.user_defined_fields,
+            workflow: self.workflow,
+            related_findings: self.related_findings,
+        })
     }
 }

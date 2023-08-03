@@ -5,15 +5,12 @@
 pub struct AssociateTransitGatewayMulticastDomainOutput {
     /// <p>Information about the transit gateway multicast domain associations.</p>
     #[doc(hidden)]
-    pub associations:
-        ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
+    pub associations: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
     _request_id: Option<String>,
 }
 impl AssociateTransitGatewayMulticastDomainOutput {
     /// <p>Information about the transit gateway multicast domain associations.</p>
-    pub fn associations(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDomainAssociations> {
+    pub fn associations(&self) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDomainAssociations> {
         self.associations.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for AssociateTransitGatewayMulticastDomai
 }
 impl AssociateTransitGatewayMulticastDomainOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayMulticastDomainOutput`](crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput).
-    pub fn builder() -> crate::operation::associate_transit_gateway_multicast_domain::builders::AssociateTransitGatewayMulticastDomainOutputBuilder{
+    pub fn builder() -> crate::operation::associate_transit_gateway_multicast_domain::builders::AssociateTransitGatewayMulticastDomainOutputBuilder {
         crate::operation::associate_transit_gateway_multicast_domain::builders::AssociateTransitGatewayMulticastDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTransitGatewayMulticastDomainOutput`](crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTransitGatewayMulticastDomainOutputBuilder {
-    pub(crate) associations:
-        ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
+    pub(crate) associations: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
     _request_id: Option<String>,
 }
 impl AssociateTransitGatewayMulticastDomainOutputBuilder {
     /// <p>Information about the transit gateway multicast domain associations.</p>
-    pub fn associations(
-        mut self,
-        input: crate::types::TransitGatewayMulticastDomainAssociations,
-    ) -> Self {
+    pub fn associations(mut self, input: crate::types::TransitGatewayMulticastDomainAssociations) -> Self {
         self.associations = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the transit gateway multicast domain associations.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
-    ) -> Self {
+    pub fn set_associations(mut self, input: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>) -> Self {
         self.associations = input;
         self
     }
     /// <p>Information about the transit gateway multicast domain associations.</p>
-    pub fn get_associations(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations> {
+    pub fn get_associations(&self) -> &::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations> {
         &self.associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,9 @@ impl AssociateTransitGatewayMulticastDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateTransitGatewayMulticastDomainOutput`](crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput).
-    pub fn build(self) -> crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput{
+    pub fn build(self) -> crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput {
         crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput {
-            associations: self.associations
-            ,
+            associations: self.associations,
             _request_id: self._request_id,
         }
     }

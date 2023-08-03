@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`usage_report_subscriptions(Option<Vec<UsageReportSubscription>>)`](crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput::usage_report_subscriptions): <p>Information about the usage report subscription.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeUsageReportSubscriptionsError>`](crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsError)
-    pub fn describe_usage_report_subscriptions(&self) -> crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsFluentBuilder{
+    pub fn describe_usage_report_subscriptions(
+        &self,
+    ) -> crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsFluentBuilder {
         crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsFluentBuilder::new(self.handle.clone())
     }
 }

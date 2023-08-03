@@ -37,10 +37,7 @@ impl DeleteDBProxyEndpointFluentBuilder {
         }
     }
     /// Access the DeleteDBProxyEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteDBProxyEndpointFluentBuilder {
             crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteDBProxyEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteDBProxyEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteDBProxyEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteDBProxyEndpointFluentBuilder {
             crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the DB proxy endpoint to delete.</p>
-    pub fn db_proxy_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_endpoint_name(input.into());
         self
     }
     /// <p>The name of the DB proxy endpoint to delete.</p>
-    pub fn set_db_proxy_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_proxy_endpoint_name(input);
         self
     }

@@ -18,10 +18,7 @@ pub fn ser_update_endpoint_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_variant_property::ser_variant_property(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_variant_property::ser_variant_property(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -30,10 +27,7 @@ pub fn ser_update_endpoint_input(
     if let Some(var_8) = &input.deployment_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("DeploymentConfig").start_object();
-        crate::protocol_serde::shape_deployment_config::ser_deployment_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_deployment_config::ser_deployment_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.retain_deployment_config {

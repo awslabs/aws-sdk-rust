@@ -5,16 +5,16 @@ pub use crate::operation::start_input_device_maintenance_window::_start_input_de
 
 impl StartInputDeviceMaintenanceWindowInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.start_input_device_maintenance_window();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl StartInputDeviceMaintenanceWindowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartInputDeviceMaintenanceWindowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowInputBuilder,
+    inner: crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowInputBuilder,
 }
 impl StartInputDeviceMaintenanceWindowFluentBuilder {
     /// Creates a new `StartInputDeviceMaintenanceWindow`.
@@ -37,15 +37,20 @@ impl StartInputDeviceMaintenanceWindowFluentBuilder {
         }
     }
     /// Access the StartInputDeviceMaintenanceWindow as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindow, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindow,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl StartInputDeviceMaintenanceWindowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl StartInputDeviceMaintenanceWindowFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindow, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindow,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError>,
+    > {
         self.customize_middleware().await
     }
     /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_device_id(input.into());
         self
     }
     /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
     }

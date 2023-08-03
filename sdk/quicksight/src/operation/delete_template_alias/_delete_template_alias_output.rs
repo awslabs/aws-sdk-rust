@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for DeleteTemplateAliasOutput {
 }
 impl DeleteTemplateAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTemplateAliasOutput`](crate::operation::delete_template_alias::DeleteTemplateAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_template_alias::builders::DeleteTemplateAliasOutputBuilder {
-        crate::operation::delete_template_alias::builders::DeleteTemplateAliasOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_template_alias::builders::DeleteTemplateAliasOutputBuilder {
+        crate::operation::delete_template_alias::builders::DeleteTemplateAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTemplateAliasOutput`](crate::operation::delete_template_alias::DeleteTemplateAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTemplateAliasOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,

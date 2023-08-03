@@ -40,10 +40,7 @@ pub fn ser_create_usage_plan_input(
     if let Some(var_13) = &input.throttle {
         #[allow(unused_mut)]
         let mut object_14 = object.key("throttle").start_object();
-        crate::protocol_serde::shape_throttle_settings::ser_throttle_settings(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_throttle_settings::ser_throttle_settings(&mut object_14, var_13)?;
         object_14.finish();
     }
     Ok(())

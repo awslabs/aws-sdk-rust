@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`room_memberships(Option<Vec<RoomMembership>>)`](crate::operation::list_room_memberships::ListRoomMembershipsOutput::room_memberships): <p>The room membership details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_room_memberships::ListRoomMembershipsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListRoomMembershipsError>`](crate::operation::list_room_memberships::ListRoomMembershipsError)
-    pub fn list_room_memberships(
-        &self,
-    ) -> crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder {
-        crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_room_memberships(&self) -> crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder {
+        crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::new(self.handle.clone())
     }
 }

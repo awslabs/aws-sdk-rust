@@ -28,7 +28,7 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrafficMirrorFilterRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_traffic_mirror_filter_rule::builders::CreateTrafficMirrorFilterRuleInputBuilder,
+    inner: crate::operation::create_traffic_mirror_filter_rule::builders::CreateTrafficMirrorFilterRuleInputBuilder,
 }
 impl CreateTrafficMirrorFilterRuleFluentBuilder {
     /// Creates a new `CreateTrafficMirrorFilterRule`.
@@ -39,7 +39,7 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
         }
     }
     /// Access the CreateTrafficMirrorFilterRule as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_traffic_mirror_filter_rule::builders::CreateTrafficMirrorFilterRuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_traffic_mirror_filter_rule::builders::CreateTrafficMirrorFilterRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
             crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
             crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the filter that this rule is associated with.</p>
-    pub fn traffic_mirror_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_mirror_filter_id(input.into());
         self
     }
     /// <p>The ID of the filter that this rule is associated with.</p>
-    pub fn set_traffic_mirror_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_mirror_filter_id(input);
         self
     }
@@ -148,10 +131,7 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
         self
     }
     /// <p>The type of traffic.</p>
-    pub fn set_traffic_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficDirection>,
-    ) -> Self {
+    pub fn set_traffic_direction(mut self, input: ::std::option::Option<crate::types::TrafficDirection>) -> Self {
         self.inner = self.inner.set_traffic_direction(input);
         self
     }
@@ -179,10 +159,7 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
         self
     }
     /// <p>The action to take on the filtered traffic.</p>
-    pub fn set_rule_action(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficMirrorRuleAction>,
-    ) -> Self {
+    pub fn set_rule_action(mut self, input: ::std::option::Option<crate::types::TrafficMirrorRuleAction>) -> Self {
         self.inner = self.inner.set_rule_action(input);
         self
     }
@@ -191,25 +168,17 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
         self.inner.get_rule_action()
     }
     /// <p>The destination port range.</p>
-    pub fn destination_port_range(
-        mut self,
-        input: crate::types::TrafficMirrorPortRangeRequest,
-    ) -> Self {
+    pub fn destination_port_range(mut self, input: crate::types::TrafficMirrorPortRangeRequest) -> Self {
         self.inner = self.inner.destination_port_range(input);
         self
     }
     /// <p>The destination port range.</p>
-    pub fn set_destination_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficMirrorPortRangeRequest>,
-    ) -> Self {
+    pub fn set_destination_port_range(mut self, input: ::std::option::Option<crate::types::TrafficMirrorPortRangeRequest>) -> Self {
         self.inner = self.inner.set_destination_port_range(input);
         self
     }
     /// <p>The destination port range.</p>
-    pub fn get_destination_port_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrafficMirrorPortRangeRequest> {
+    pub fn get_destination_port_range(&self) -> &::std::option::Option<crate::types::TrafficMirrorPortRangeRequest> {
         self.inner.get_destination_port_range()
     }
     /// <p>The source port range.</p>
@@ -218,17 +187,12 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
         self
     }
     /// <p>The source port range.</p>
-    pub fn set_source_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficMirrorPortRangeRequest>,
-    ) -> Self {
+    pub fn set_source_port_range(mut self, input: ::std::option::Option<crate::types::TrafficMirrorPortRangeRequest>) -> Self {
         self.inner = self.inner.set_source_port_range(input);
         self
     }
     /// <p>The source port range.</p>
-    pub fn get_source_port_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrafficMirrorPortRangeRequest> {
+    pub fn get_source_port_range(&self) -> &::std::option::Option<crate::types::TrafficMirrorPortRangeRequest> {
         self.inner.get_source_port_range()
     }
     /// <p>The protocol, for example UDP, to assign to the Traffic Mirror rule.</p>
@@ -249,18 +213,12 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
         self.inner.get_protocol()
     }
     /// <p>The destination CIDR block to assign to the Traffic Mirror rule.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
     /// <p>The destination CIDR block to assign to the Traffic Mirror rule.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
@@ -269,18 +227,12 @@ impl CreateTrafficMirrorFilterRuleFluentBuilder {
         self.inner.get_destination_cidr_block()
     }
     /// <p>The source CIDR block to assign to the Traffic Mirror rule.</p>
-    pub fn source_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_cidr_block(input.into());
         self
     }
     /// <p>The source CIDR block to assign to the Traffic Mirror rule.</p>
-    pub fn set_source_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_cidr_block(input);
         self
     }

@@ -30,9 +30,7 @@ impl GroupedResourceCount {
 
 /// A builder for [`GroupedResourceCount`](crate::types::GroupedResourceCount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupedResourceCountBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_count: ::std::option::Option<i64>,

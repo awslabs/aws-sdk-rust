@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetCalculationExecutionStatusOutput {
 }
 impl GetCalculationExecutionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetCalculationExecutionStatusOutput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput).
-    pub fn builder() -> crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusOutputBuilder {
         crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCalculationExecutionStatusOutput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCalculationExecutionStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CalculationStatus>,
     pub(crate) statistics: ::std::option::Option<crate::types::CalculationStatistics>,
@@ -50,10 +48,7 @@ impl GetCalculationExecutionStatusOutputBuilder {
         self
     }
     /// <p>Contains information about the calculation execution status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CalculationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -67,10 +62,7 @@ impl GetCalculationExecutionStatusOutputBuilder {
         self
     }
     /// <p>Contains information about the DPU execution time and progress.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationStatistics>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::CalculationStatistics>) -> Self {
         self.statistics = input;
         self
     }
@@ -88,10 +80,7 @@ impl GetCalculationExecutionStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCalculationExecutionStatusOutput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput
-    {
+    pub fn build(self) -> crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput {
         crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput {
             status: self.status,
             statistics: self.statistics,

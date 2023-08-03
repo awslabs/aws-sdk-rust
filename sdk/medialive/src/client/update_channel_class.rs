@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateChannelClassOutput`](crate::operation::update_channel_class::UpdateChannelClassOutput) with field(s):
     ///   - [`channel(Option<Channel>)`](crate::operation::update_channel_class::UpdateChannelClassOutput::channel): Placeholder documentation for Channel
     /// - On failure, responds with [`SdkError<UpdateChannelClassError>`](crate::operation::update_channel_class::UpdateChannelClassError)
-    pub fn update_channel_class(
-        &self,
-    ) -> crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder {
-        crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_channel_class(&self) -> crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder {
+        crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder::new(self.handle.clone())
     }
 }

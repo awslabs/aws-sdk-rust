@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateProvisioningTemplateOutput {
 }
 impl UpdateProvisioningTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisioningTemplateOutput`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput).
-    pub fn builder() -> crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateOutputBuilder {
         crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProvisioningTemplateOutput`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProvisioningTemplateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateProvisioningTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateProvisioningTemplateOutput`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput {
+    pub fn build(self) -> crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput {
         crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput {
             _request_id: self._request_id,
         }

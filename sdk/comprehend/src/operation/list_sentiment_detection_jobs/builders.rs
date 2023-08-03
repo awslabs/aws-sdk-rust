@@ -26,7 +26,7 @@ impl ListSentimentDetectionJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSentimentDetectionJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsInputBuilder,
+    inner: crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsInputBuilder,
 }
 impl ListSentimentDetectionJobsFluentBuilder {
     /// Creates a new `ListSentimentDetectionJobs`.
@@ -37,7 +37,7 @@ impl ListSentimentDetectionJobsFluentBuilder {
         }
     }
     /// Access the ListSentimentDetectionJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSentimentDetectionJobsFluentBuilder {
             crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSentimentDetectionJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSentimentDetectionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSentimentDetectionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListSentimentDetectionJobsFluentBuilder {
             crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_sentiment_detection_jobs::paginator::ListSentimentDetectionJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_sentiment_detection_jobs::paginator::ListSentimentDetectionJobsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_sentiment_detection_jobs::paginator::ListSentimentDetectionJobsPaginator {
         crate::operation::list_sentiment_detection_jobs::paginator::ListSentimentDetectionJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
@@ -132,10 +121,7 @@ impl ListSentimentDetectionJobsFluentBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::SentimentDetectionJobFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

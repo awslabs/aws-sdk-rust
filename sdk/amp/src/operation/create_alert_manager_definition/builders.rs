@@ -26,7 +26,7 @@ impl CreateAlertManagerDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAlertManagerDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_alert_manager_definition::builders::CreateAlertManagerDefinitionInputBuilder,
+    inner: crate::operation::create_alert_manager_definition::builders::CreateAlertManagerDefinitionInputBuilder,
 }
 impl CreateAlertManagerDefinitionFluentBuilder {
     /// Creates a new `CreateAlertManagerDefinition`.
@@ -37,7 +37,7 @@ impl CreateAlertManagerDefinitionFluentBuilder {
         }
     }
     /// Access the CreateAlertManagerDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_alert_manager_definition::builders::CreateAlertManagerDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_alert_manager_definition::builders::CreateAlertManagerDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateAlertManagerDefinitionFluentBuilder {
             crate::operation::create_alert_manager_definition::CreateAlertManagerDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateAlertManagerDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateAlertManagerDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateAlertManagerDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateAlertManagerDefinitionFluentBuilder {
             crate::operation::create_alert_manager_definition::CreateAlertManagerDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionError>,
     > {
         self.customize_middleware().await
     }

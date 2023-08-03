@@ -9,8 +9,7 @@ pub struct IdentityDocument {
     pub document_index: ::std::option::Option<i32>,
     /// <p>The structure used to record information extracted from identity documents. Contains both normalized field and value of the extracted text.</p>
     #[doc(hidden)]
-    pub identity_document_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>>,
+    pub identity_document_fields: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>>,
     /// <p>Individual word recognition, as returned by document detection.</p>
     #[doc(hidden)]
     pub blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
@@ -21,9 +20,7 @@ impl IdentityDocument {
         self.document_index
     }
     /// <p>The structure used to record information extracted from identity documents. Contains both normalized field and value of the extracted text.</p>
-    pub fn identity_document_fields(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IdentityDocumentField]> {
+    pub fn identity_document_fields(&self) -> ::std::option::Option<&[crate::types::IdentityDocumentField]> {
         self.identity_document_fields.as_deref()
     }
     /// <p>Individual word recognition, as returned by document detection.</p>
@@ -40,13 +37,10 @@ impl IdentityDocument {
 
 /// A builder for [`IdentityDocument`](crate::types::IdentityDocument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityDocumentBuilder {
     pub(crate) document_index: ::std::option::Option<i32>,
-    pub(crate) identity_document_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>>,
+    pub(crate) identity_document_fields: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>>,
     pub(crate) blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
 }
 impl IdentityDocumentBuilder {
@@ -76,17 +70,12 @@ impl IdentityDocumentBuilder {
         self
     }
     /// <p>The structure used to record information extracted from identity documents. Contains both normalized field and value of the extracted text.</p>
-    pub fn set_identity_document_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>>,
-    ) -> Self {
+    pub fn set_identity_document_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>>) -> Self {
         self.identity_document_fields = input;
         self
     }
     /// <p>The structure used to record information extracted from identity documents. Contains both normalized field and value of the extracted text.</p>
-    pub fn get_identity_document_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>> {
+    pub fn get_identity_document_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>> {
         &self.identity_document_fields
     }
     /// Appends an item to `blocks`.
@@ -101,10 +90,7 @@ impl IdentityDocumentBuilder {
         self
     }
     /// <p>Individual word recognition, as returned by document detection.</p>
-    pub fn set_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
-    ) -> Self {
+    pub fn set_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>) -> Self {
         self.blocks = input;
         self
     }

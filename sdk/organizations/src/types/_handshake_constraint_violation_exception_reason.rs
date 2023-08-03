@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HandshakeConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,18 +75,22 @@ pub enum HandshakeConstraintViolationExceptionReason {
 impl ::std::convert::From<&str> for HandshakeConstraintViolationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-                        "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::AccountNumberLimitExceeded,
-"ALREADY_IN_AN_ORGANIZATION" => HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization,
-"HANDSHAKE_RATE_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
-"INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures,
-"MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED" => HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified,
-"ORGANIZATION_ALREADY_HAS_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures,
-"ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD" => HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord,
-"ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION" => HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration,
-"ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded,
-"PAYMENT_INSTRUMENT_REQUIRED" => HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired,
-other => HandshakeConstraintViolationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::AccountNumberLimitExceeded,
+            "ALREADY_IN_AN_ORGANIZATION" => HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization,
+            "HANDSHAKE_RATE_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
+            "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures,
+            "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED" => HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified,
+            "ORGANIZATION_ALREADY_HAS_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures,
+            "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD" => HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord,
+            "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION" => {
+                HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration
+            }
+            "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED" => {
+                HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded
+            }
+            "PAYMENT_INSTRUMENT_REQUIRED" => HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired,
+            other => HandshakeConstraintViolationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for HandshakeConstraintViolationExceptionReason {
@@ -106,18 +104,22 @@ impl HandshakeConstraintViolationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    HandshakeConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
-    HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization => "ALREADY_IN_AN_ORGANIZATION",
-    HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
-    HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures => "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES",
-    HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified => "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED",
-    HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures => "ORGANIZATION_ALREADY_HAS_ALL_FEATURES",
-    HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord => "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
-    HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration => "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION",
-    HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded => "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED",
-    HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => "PAYMENT_INSTRUMENT_REQUIRED",
-    HandshakeConstraintViolationExceptionReason::Unknown(value) => value.as_str()
-}
+            HandshakeConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+            HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization => "ALREADY_IN_AN_ORGANIZATION",
+            HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
+            HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures => "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES",
+            HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified => "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED",
+            HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures => "ORGANIZATION_ALREADY_HAS_ALL_FEATURES",
+            HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord => "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
+            HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration => {
+                "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION"
+            }
+            HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded => {
+                "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED"
+            }
+            HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => "PAYMENT_INSTRUMENT_REQUIRED",
+            HandshakeConstraintViolationExceptionReason::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

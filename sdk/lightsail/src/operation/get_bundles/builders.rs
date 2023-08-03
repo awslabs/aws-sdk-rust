@@ -10,10 +10,7 @@ impl GetBundlesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_bundles::GetBundlesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bundles::GetBundlesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bundles::GetBundlesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_bundles();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl GetBundlesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_bundles::GetBundles,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_bundles::GetBundles, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_bundles::GetBundlesError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl GetBundlesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl GetBundlesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_bundles::GetBundles,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_bundles::GetBundles, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_bundles::GetBundlesError>,
     > {
         self.customize_middleware().await
@@ -156,10 +144,7 @@ impl GetBundlesFluentBuilder {
     /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research bundles.</p>
     /// </important>
-    pub fn set_app_category(
-        mut self,
-        input: ::std::option::Option<crate::types::AppCategory>,
-    ) -> Self {
+    pub fn set_app_category(mut self, input: ::std::option::Option<crate::types::AppCategory>) -> Self {
         self.inner = self.inner.set_app_category(input);
         self
     }

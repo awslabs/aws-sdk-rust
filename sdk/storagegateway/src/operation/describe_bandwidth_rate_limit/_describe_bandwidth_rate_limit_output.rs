@@ -36,16 +36,14 @@ impl ::aws_http::request_id::RequestId for DescribeBandwidthRateLimitOutput {
 }
 impl DescribeBandwidthRateLimitOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBandwidthRateLimitOutput`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput).
-    pub fn builder() -> crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitOutputBuilder{
+    pub fn builder() -> crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitOutputBuilder {
         crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBandwidthRateLimitOutput`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
@@ -73,10 +71,7 @@ impl DescribeBandwidthRateLimitOutputBuilder {
         self
     }
     /// <p>The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
-    pub fn set_average_upload_rate_limit_in_bits_per_sec(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_average_upload_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = input;
         self
     }
@@ -90,10 +85,7 @@ impl DescribeBandwidthRateLimitOutputBuilder {
         self
     }
     /// <p>The average download bandwidth rate limit in bits per second. This field does not appear in the response if the download rate limit is not set.</p>
-    pub fn set_average_download_rate_limit_in_bits_per_sec(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_average_download_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
         self.average_download_rate_limit_in_bits_per_sec = input;
         self
     }
@@ -111,15 +103,11 @@ impl DescribeBandwidthRateLimitOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBandwidthRateLimitOutput`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput {
+    pub fn build(self) -> crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput {
         crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput {
             gateway_arn: self.gateway_arn,
-            average_upload_rate_limit_in_bits_per_sec: self
-                .average_upload_rate_limit_in_bits_per_sec,
-            average_download_rate_limit_in_bits_per_sec: self
-                .average_download_rate_limit_in_bits_per_sec,
+            average_upload_rate_limit_in_bits_per_sec: self.average_upload_rate_limit_in_bits_per_sec,
+            average_download_rate_limit_in_bits_per_sec: self.average_download_rate_limit_in_bits_per_sec,
             _request_id: self._request_id,
         }
     }

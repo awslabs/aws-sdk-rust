@@ -22,16 +22,14 @@ impl StartStudioSsoConfigurationRepairInput {
 }
 impl StartStudioSsoConfigurationRepairInput {
     /// Creates a new builder-style object to manufacture [`StartStudioSsoConfigurationRepairInput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput).
-    pub fn builder() -> crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder{
+    pub fn builder() -> crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder {
         crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder::default()
     }
 }
 
 /// A builder for [`StartStudioSsoConfigurationRepairInput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartStudioSsoConfigurationRepairInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl StartStudioSsoConfigurationRepairInputBuilder {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`StartStudioSsoConfigurationRepairInput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput {
-                client_token: self.client_token
-                ,
-                studio_id: self.studio_id
-                ,
-            }
+                client_token: self.client_token,
+                studio_id: self.studio_id,
+            },
         )
     }
 }

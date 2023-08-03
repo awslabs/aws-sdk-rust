@@ -44,30 +44,21 @@ impl OriginationIdentityMetadata {
 
 /// A builder for [`OriginationIdentityMetadata`](crate::types::OriginationIdentityMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginationIdentityMetadataBuilder {
     pub(crate) origination_identity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,
     pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,
-    pub(crate) number_capabilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
+    pub(crate) number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
 }
 impl OriginationIdentityMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
-    pub fn origination_identity_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
-    pub fn set_origination_identity_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity_arn = input;
         self
     }
@@ -76,18 +67,12 @@ impl OriginationIdentityMetadataBuilder {
         &self.origination_identity_arn
     }
     /// <p>The unique identifier of the origination identity.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the origination identity.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity = input;
         self
     }
@@ -96,18 +81,12 @@ impl OriginationIdentityMetadataBuilder {
         &self.origination_identity
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn set_iso_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
@@ -127,17 +106,12 @@ impl OriginationIdentityMetadataBuilder {
         self
     }
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub fn set_number_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
-    ) -> Self {
+    pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>) -> Self {
         self.number_capabilities = input;
         self
     }
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub fn get_number_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
+    pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
         &self.number_capabilities
     }
     /// Consumes the builder and constructs a [`OriginationIdentityMetadata`](crate::types::OriginationIdentityMetadata).

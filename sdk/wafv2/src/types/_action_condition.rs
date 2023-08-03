@@ -25,9 +25,7 @@ impl ActionCondition {
 
 /// A builder for [`ActionCondition`](crate::types::ActionCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionConditionBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ActionValue>,
 }
@@ -51,8 +49,6 @@ impl ActionConditionBuilder {
     }
     /// Consumes the builder and constructs a [`ActionCondition`](crate::types::ActionCondition).
     pub fn build(self) -> crate::types::ActionCondition {
-        crate::types::ActionCondition {
-            action: self.action,
-        }
+        crate::types::ActionCondition { action: self.action }
     }
 }

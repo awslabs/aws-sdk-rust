@@ -15,34 +15,25 @@ impl GetRegexPatternSetInput {
 }
 impl GetRegexPatternSetInput {
     /// Creates a new builder-style object to manufacture [`GetRegexPatternSetInput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetInput).
-    pub fn builder(
-    ) -> crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder {
+    pub fn builder() -> crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder {
         crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegexPatternSetInput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegexPatternSetInputBuilder {
     pub(crate) regex_pattern_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRegexPatternSetInputBuilder {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regex_pattern_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_pattern_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn set_regex_pattern_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regex_pattern_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex_pattern_set_id = input;
         self
     }
@@ -53,14 +44,10 @@ impl GetRegexPatternSetInputBuilder {
     /// Consumes the builder and constructs a [`GetRegexPatternSetInput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_regex_pattern_set::GetRegexPatternSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_regex_pattern_set::GetRegexPatternSetInput {
-                regex_pattern_set_id: self.regex_pattern_set_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_regex_pattern_set::GetRegexPatternSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_regex_pattern_set::GetRegexPatternSetInput {
+            regex_pattern_set_id: self.regex_pattern_set_id,
+        })
     }
 }

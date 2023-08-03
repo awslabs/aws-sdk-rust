@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput::kms_key_arn): <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     ///   - [`configuration_status(Option<ConfigurationStatus>)`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput::configuration_status): <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeDefaultEncryptionConfigurationError>`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationError)
-    pub fn describe_default_encryption_configuration(&self) -> crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationFluentBuilder{
-        crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn describe_default_encryption_configuration(
+        &self,
+    ) -> crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationFluentBuilder {
+        crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

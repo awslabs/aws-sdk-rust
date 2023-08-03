@@ -10,10 +10,7 @@ impl DeleteVoiceChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_channel::DeleteVoiceChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_channel::DeleteVoiceChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_channel::DeleteVoiceChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_voice_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteVoiceChannelFluentBuilder {
         }
     }
     /// Access the DeleteVoiceChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_voice_channel::builders::DeleteVoiceChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_voice_channel::builders::DeleteVoiceChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteVoiceChannelFluentBuilder {
             crate::operation::delete_voice_channel::DeleteVoiceChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_channel::DeleteVoiceChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_channel::DeleteVoiceChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteVoiceChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteVoiceChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_channel::DeleteVoiceChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_channel::DeleteVoiceChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_channel::DeleteVoiceChannelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteVoiceChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_channel::DeleteVoiceChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_channel::DeleteVoiceChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_channel::DeleteVoiceChannelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteVoiceChannelFluentBuilder {
             crate::operation::delete_voice_channel::DeleteVoiceChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_channel::DeleteVoiceChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_channel::DeleteVoiceChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

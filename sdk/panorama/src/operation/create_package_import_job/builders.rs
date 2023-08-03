@@ -26,8 +26,7 @@ impl CreatePackageImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePackageImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_package_import_job::builders::CreatePackageImportJobInputBuilder,
+    inner: crate::operation::create_package_import_job::builders::CreatePackageImportJobInputBuilder,
 }
 impl CreatePackageImportJobFluentBuilder {
     /// Creates a new `CreatePackageImportJob`.
@@ -38,10 +37,7 @@ impl CreatePackageImportJobFluentBuilder {
         }
     }
     /// Access the CreatePackageImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_package_import_job::builders::CreatePackageImportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_package_import_job::builders::CreatePackageImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreatePackageImportJobFluentBuilder {
             crate::operation::create_package_import_job::CreatePackageImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package_import_job::CreatePackageImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_package_import_job::CreatePackageImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreatePackageImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreatePackageImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_package_import_job::CreatePackageImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package_import_job::CreatePackageImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_package_import_job::CreatePackageImportJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreatePackageImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_package_import_job::CreatePackageImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package_import_job::CreatePackageImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_package_import_job::CreatePackageImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreatePackageImportJobFluentBuilder {
             crate::operation::create_package_import_job::CreatePackageImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package_import_job::CreatePackageImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_package_import_job::CreatePackageImportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +115,7 @@ impl CreatePackageImportJobFluentBuilder {
         self
     }
     /// <p>A job type for the package import job.</p>
-    pub fn set_job_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageImportJobType>,
-    ) -> Self {
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::PackageImportJobType>) -> Self {
         self.inner = self.inner.set_job_type(input);
         self
     }
@@ -147,17 +129,12 @@ impl CreatePackageImportJobFluentBuilder {
         self
     }
     /// <p>An input config for the package import job.</p>
-    pub fn set_input_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageImportJobInputConfig>,
-    ) -> Self {
+    pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::PackageImportJobInputConfig>) -> Self {
         self.inner = self.inner.set_input_config(input);
         self
     }
     /// <p>An input config for the package import job.</p>
-    pub fn get_input_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PackageImportJobInputConfig> {
+    pub fn get_input_config(&self) -> &::std::option::Option<crate::types::PackageImportJobInputConfig> {
         self.inner.get_input_config()
     }
     /// <p>An output config for the package import job.</p>
@@ -166,17 +143,12 @@ impl CreatePackageImportJobFluentBuilder {
         self
     }
     /// <p>An output config for the package import job.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageImportJobOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::PackageImportJobOutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
     /// <p>An output config for the package import job.</p>
-    pub fn get_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PackageImportJobOutputConfig> {
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::PackageImportJobOutputConfig> {
         self.inner.get_output_config()
     }
     /// <p>A client token for the package import job.</p>
@@ -203,17 +175,12 @@ impl CreatePackageImportJobFluentBuilder {
         self
     }
     /// <p>Tags for the package import job.</p>
-    pub fn set_job_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
-    ) -> Self {
+    pub fn set_job_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>) -> Self {
         self.inner = self.inner.set_job_tags(input);
         self
     }
     /// <p>Tags for the package import job.</p>
-    pub fn get_job_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
+    pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
         self.inner.get_job_tags()
     }
 }

@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`rule_set_name(impl ::std::convert::Into<String>)`](crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetFluentBuilder::rule_set_name) / [`set_rule_set_name(Option<String>)`](crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetFluentBuilder::set_rule_set_name): <p>The name of the rule set to create. The name must:</p>  <ul>   <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>   <li> <p>Start and end with a letter or number.</p> </li>   <li> <p>Contain less than 64 characters.</p> </li>  </ul>
     /// - On success, responds with [`CreateReceiptRuleSetOutput`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetOutput)
     /// - On failure, responds with [`SdkError<CreateReceiptRuleSetError>`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetError)
-    pub fn create_receipt_rule_set(
-        &self,
-    ) -> crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetFluentBuilder
-    {
-        crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_receipt_rule_set(&self) -> crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetFluentBuilder {
+        crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetFluentBuilder::new(self.handle.clone())
     }
 }

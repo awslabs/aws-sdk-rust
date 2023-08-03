@@ -148,8 +148,7 @@ impl ::std::fmt::Debug for RecognizeUtteranceInput {
 }
 impl RecognizeUtteranceInput {
     /// Creates a new builder-style object to manufacture [`RecognizeUtteranceInput`](crate::operation::recognize_utterance::RecognizeUtteranceInput).
-    pub fn builder(
-    ) -> crate::operation::recognize_utterance::builders::RecognizeUtteranceInputBuilder {
+    pub fn builder() -> crate::operation::recognize_utterance::builders::RecognizeUtteranceInputBuilder {
         crate::operation::recognize_utterance::builders::RecognizeUtteranceInputBuilder::default()
     }
 }
@@ -227,19 +226,13 @@ impl RecognizeUtteranceInputBuilder {
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn session_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn set_session_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_state = input;
         self
     }
@@ -251,20 +244,14 @@ impl RecognizeUtteranceInputBuilder {
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
     /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn request_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_attributes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
     /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn set_request_attributes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_attributes = input;
         self
     }
@@ -291,10 +278,7 @@ impl RecognizeUtteranceInputBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn request_content_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_content_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -315,10 +299,7 @@ impl RecognizeUtteranceInputBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_request_content_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_content_type = input;
         self
     }
@@ -356,10 +337,7 @@ impl RecognizeUtteranceInputBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn response_content_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_content_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -377,10 +355,7 @@ impl RecognizeUtteranceInputBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_response_content_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_content_type = input;
         self
     }
@@ -407,39 +382,29 @@ impl RecognizeUtteranceInputBuilder {
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn set_input_stream(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.input_stream = input;
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn get_input_stream(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.input_stream
     }
     /// Consumes the builder and constructs a [`RecognizeUtteranceInput`](crate::operation::recognize_utterance::RecognizeUtteranceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::recognize_utterance::RecognizeUtteranceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::recognize_utterance::RecognizeUtteranceInput {
-                bot_id: self.bot_id,
-                bot_alias_id: self.bot_alias_id,
-                locale_id: self.locale_id,
-                session_id: self.session_id,
-                session_state: self.session_state,
-                request_attributes: self.request_attributes,
-                request_content_type: self.request_content_type,
-                response_content_type: self.response_content_type,
-                input_stream: self.input_stream.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::recognize_utterance::RecognizeUtteranceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::recognize_utterance::RecognizeUtteranceInput {
+            bot_id: self.bot_id,
+            bot_alias_id: self.bot_alias_id,
+            locale_id: self.locale_id,
+            session_id: self.session_id,
+            session_state: self.session_state,
+            request_attributes: self.request_attributes,
+            request_content_type: self.request_content_type,
+            response_content_type: self.response_content_type,
+            input_stream: self.input_stream.unwrap_or_default(),
+        })
     }
 }
 impl ::std::fmt::Debug for RecognizeUtteranceInputBuilder {

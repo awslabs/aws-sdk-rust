@@ -23,9 +23,7 @@ impl PoolCidrBlock {
 
 /// A builder for [`PoolCidrBlock`](crate::types::PoolCidrBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PoolCidrBlockBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
 }

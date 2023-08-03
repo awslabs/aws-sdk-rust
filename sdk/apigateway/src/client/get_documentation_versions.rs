@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<DocumentationVersion>>)`](crate::operation::get_documentation_versions::GetDocumentationVersionsOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_documentation_versions::GetDocumentationVersionsOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetDocumentationVersionsError>`](crate::operation::get_documentation_versions::GetDocumentationVersionsError)
-    pub fn get_documentation_versions(
-        &self,
-    ) -> crate::operation::get_documentation_versions::builders::GetDocumentationVersionsFluentBuilder
-    {
+    pub fn get_documentation_versions(&self) -> crate::operation::get_documentation_versions::builders::GetDocumentationVersionsFluentBuilder {
         crate::operation::get_documentation_versions::builders::GetDocumentationVersionsFluentBuilder::new(self.handle.clone())
     }
 }

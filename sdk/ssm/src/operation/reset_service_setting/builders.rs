@@ -39,9 +39,7 @@ impl ResetServiceSettingFluentBuilder {
         }
     }
     /// Access the ResetServiceSetting as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_service_setting::builders::ResetServiceSettingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reset_service_setting::builders::ResetServiceSettingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl ResetServiceSettingFluentBuilder {
             crate::operation::reset_service_setting::ResetServiceSetting,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_service_setting::ResetServiceSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_service_setting::ResetServiceSettingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl ResetServiceSettingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl ResetServiceSettingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_service_setting::ResetServiceSettingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_service_setting::ResetServiceSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_service_setting::ResetServiceSettingError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl ResetServiceSettingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_service_setting::ResetServiceSettingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_service_setting::ResetServiceSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_service_setting::ResetServiceSettingError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl ResetServiceSettingFluentBuilder {
             crate::operation::reset_service_setting::ResetServiceSetting,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_service_setting::ResetServiceSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_service_setting::ResetServiceSettingError>,
     > {
         self.customize_middleware().await
     }

@@ -42,7 +42,7 @@ impl DisconnectCustomKeyStoreInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisconnectCustomKeyStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreInputBuilder,
+    inner: crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreInputBuilder,
 }
 impl DisconnectCustomKeyStoreFluentBuilder {
     /// Creates a new `DisconnectCustomKeyStore`.
@@ -53,7 +53,7 @@ impl DisconnectCustomKeyStoreFluentBuilder {
         }
     }
     /// Access the DisconnectCustomKeyStore as a reference.
-    pub fn as_input(&self) -> &crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +65,7 @@ impl DisconnectCustomKeyStoreFluentBuilder {
             crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +75,7 @@ impl DisconnectCustomKeyStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +84,7 @@ impl DisconnectCustomKeyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError>,
     > {
         let op = self
             .inner
@@ -114,9 +107,7 @@ impl DisconnectCustomKeyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError>,
     > {
         self.send_middleware().await
     }
@@ -130,25 +121,17 @@ impl DisconnectCustomKeyStoreFluentBuilder {
             crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    pub fn custom_key_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_key_store_id(input.into());
         self
     }
     /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    pub fn set_custom_key_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_key_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_key_store_id(input);
         self
     }

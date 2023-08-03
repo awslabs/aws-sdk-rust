@@ -118,16 +118,14 @@ impl DescribeOrderableDbInstanceOptionsInput {
 }
 impl DescribeOrderableDbInstanceOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsInput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput).
-    pub fn builder() -> crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder {
         crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrderableDbInstanceOptionsInput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrderableDbInstanceOptionsInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -206,18 +204,12 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         &self.engine
     }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -226,18 +218,12 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         &self.engine_version
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_class = input;
         self
     }
@@ -247,19 +233,13 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     }
     /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
-    pub fn license_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
-    pub fn set_license_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
@@ -271,20 +251,14 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
     /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn availability_zone_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
     /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn set_availability_zone_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_group = input;
         self
     }
@@ -323,10 +297,7 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -369,28 +340,24 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeOrderableDbInstanceOptionsInput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput {
-                engine: self.engine
-                ,
-                engine_version: self.engine_version
-                ,
-                db_instance_class: self.db_instance_class
-                ,
-                license_model: self.license_model
-                ,
-                availability_zone_group: self.availability_zone_group
-                ,
-                vpc: self.vpc
-                ,
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                engine: self.engine,
+                engine_version: self.engine_version,
+                db_instance_class: self.db_instance_class,
+                license_model: self.license_model,
+                availability_zone_group: self.availability_zone_group,
+                vpc: self.vpc,
+                filters: self.filters,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

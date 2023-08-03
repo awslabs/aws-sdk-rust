@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_destinations::ListDestinationsOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     ///   - [`destinations(Option<Vec<Destination>>)`](crate::operation::list_destinations::ListDestinationsOutput::destinations): List of destinations.
     /// - On failure, responds with [`SdkError<ListDestinationsError>`](crate::operation::list_destinations::ListDestinationsError)
-    pub fn list_destinations(
-        &self,
-    ) -> crate::operation::list_destinations::builders::ListDestinationsFluentBuilder {
-        crate::operation::list_destinations::builders::ListDestinationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_destinations(&self) -> crate::operation::list_destinations::builders::ListDestinationsFluentBuilder {
+        crate::operation::list_destinations::builders::ListDestinationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,9 +29,7 @@ impl CreateMembersInput {
 
 /// A builder for [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMembersInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_details: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>,
@@ -63,26 +61,18 @@ impl CreateMembersInputBuilder {
         self
     }
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    pub fn set_account_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>,
-    ) -> Self {
+    pub fn set_account_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>) -> Self {
         self.account_details = input;
         self
     }
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    pub fn get_account_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>> {
+    pub fn get_account_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>> {
         &self.account_details
     }
     /// Consumes the builder and constructs a [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_members::CreateMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_members::CreateMembersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_members::CreateMembersInput {
             detector_id: self.detector_id,
             account_details: self.account_details,

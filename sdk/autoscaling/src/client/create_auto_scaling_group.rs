@@ -32,10 +32,7 @@ impl super::Client {
     ///   - [`traffic_sources(Vec<TrafficSourceIdentifier>)`](crate::operation::create_auto_scaling_group::builders::CreateAutoScalingGroupFluentBuilder::traffic_sources) / [`set_traffic_sources(Option<Vec<TrafficSourceIdentifier>>)`](crate::operation::create_auto_scaling_group::builders::CreateAutoScalingGroupFluentBuilder::set_traffic_sources): <p>The list of traffic sources to attach to this Auto Scaling group. You can use any of the following as traffic sources for an Auto Scaling group: Classic Load Balancer, Application Load Balancer, Gateway Load Balancer, Network Load Balancer, and VPC Lattice.</p>
     /// - On success, responds with [`CreateAutoScalingGroupOutput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupOutput)
     /// - On failure, responds with [`SdkError<CreateAutoScalingGroupError>`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupError)
-    pub fn create_auto_scaling_group(
-        &self,
-    ) -> crate::operation::create_auto_scaling_group::builders::CreateAutoScalingGroupFluentBuilder
-    {
+    pub fn create_auto_scaling_group(&self) -> crate::operation::create_auto_scaling_group::builders::CreateAutoScalingGroupFluentBuilder {
         crate::operation::create_auto_scaling_group::builders::CreateAutoScalingGroupFluentBuilder::new(self.handle.clone())
     }
 }

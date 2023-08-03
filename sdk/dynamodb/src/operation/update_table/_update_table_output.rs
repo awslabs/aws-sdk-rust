@@ -29,9 +29,7 @@ impl UpdateTableOutput {
 
 /// A builder for [`UpdateTableOutput`](crate::operation::update_table::UpdateTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTableOutputBuilder {
     pub(crate) table_description: ::std::option::Option<crate::types::TableDescription>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl UpdateTableOutputBuilder {
         self
     }
     /// <p>Represents the properties of the table.</p>
-    pub fn set_table_description(
-        mut self,
-        input: ::std::option::Option<crate::types::TableDescription>,
-    ) -> Self {
+    pub fn set_table_description(mut self, input: ::std::option::Option<crate::types::TableDescription>) -> Self {
         self.table_description = input;
         self
     }

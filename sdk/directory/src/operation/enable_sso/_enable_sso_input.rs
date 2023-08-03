@@ -101,12 +101,7 @@ impl EnableSsoInputBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`EnableSsoInput`](crate::operation::enable_sso::EnableSsoInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_sso::EnableSsoInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_sso::EnableSsoInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_sso::EnableSsoInput {
             directory_id: self.directory_id,
             user_name: self.user_name,

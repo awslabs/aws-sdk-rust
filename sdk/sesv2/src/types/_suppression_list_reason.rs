@@ -53,13 +53,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SuppressionListReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -74,9 +68,7 @@ impl ::std::convert::From<&str> for SuppressionListReason {
         match s {
             "BOUNCE" => SuppressionListReason::Bounce,
             "COMPLAINT" => SuppressionListReason::Complaint,
-            other => SuppressionListReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SuppressionListReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

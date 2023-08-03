@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for GetServerStrategiesOutput {
 }
 impl GetServerStrategiesOutput {
     /// Creates a new builder-style object to manufacture [`GetServerStrategiesOutput`](crate::operation::get_server_strategies::GetServerStrategiesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_server_strategies::builders::GetServerStrategiesOutputBuilder {
-        crate::operation::get_server_strategies::builders::GetServerStrategiesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_server_strategies::builders::GetServerStrategiesOutputBuilder {
+        crate::operation::get_server_strategies::builders::GetServerStrategiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServerStrategiesOutput`](crate::operation::get_server_strategies::GetServerStrategiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServerStrategiesOutputBuilder {
-    pub(crate) server_strategies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>>,
+    pub(crate) server_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>>,
     _request_id: Option<String>,
 }
 impl GetServerStrategiesOutputBuilder {
@@ -51,17 +46,12 @@ impl GetServerStrategiesOutputBuilder {
         self
     }
     /// <p> A list of strategy recommendations for the server. </p>
-    pub fn set_server_strategies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>>,
-    ) -> Self {
+    pub fn set_server_strategies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>>) -> Self {
         self.server_strategies = input;
         self
     }
     /// <p> A list of strategy recommendations for the server. </p>
-    pub fn get_server_strategies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>> {
+    pub fn get_server_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>> {
         &self.server_strategies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

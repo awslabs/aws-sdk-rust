@@ -10,10 +10,7 @@ impl UpdateReportPlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_report_plan::UpdateReportPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_report_plan::UpdateReportPlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_report_plan::UpdateReportPlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_report_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateReportPlanFluentBuilder {
         }
     }
     /// Access the UpdateReportPlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_report_plan::builders::UpdateReportPlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_report_plan::builders::UpdateReportPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateReportPlanFluentBuilder {
             crate::operation::update_report_plan::UpdateReportPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_report_plan::UpdateReportPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_report_plan::UpdateReportPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateReportPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateReportPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_report_plan::UpdateReportPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_report_plan::UpdateReportPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_report_plan::UpdateReportPlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateReportPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_report_plan::UpdateReportPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_report_plan::UpdateReportPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_report_plan::UpdateReportPlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateReportPlanFluentBuilder {
             crate::operation::update_report_plan::UpdateReportPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_report_plan::UpdateReportPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_report_plan::UpdateReportPlanError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn report_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_plan_name(input.into());
         self
     }
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn set_report_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_plan_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateReportPlanFluentBuilder {
         self.inner.get_report_plan_name()
     }
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
-    pub fn report_plan_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_plan_description(input.into());
         self
     }
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
-    pub fn set_report_plan_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_plan_description(input);
         self
     }
@@ -168,17 +140,12 @@ impl UpdateReportPlanFluentBuilder {
         self
     }
     /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    pub fn set_report_delivery_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportDeliveryChannel>,
-    ) -> Self {
+    pub fn set_report_delivery_channel(mut self, input: ::std::option::Option<crate::types::ReportDeliveryChannel>) -> Self {
         self.inner = self.inner.set_report_delivery_channel(input);
         self
     }
     /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    pub fn get_report_delivery_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReportDeliveryChannel> {
+    pub fn get_report_delivery_channel(&self) -> &::std::option::Option<crate::types::ReportDeliveryChannel> {
         self.inner.get_report_delivery_channel()
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
@@ -191,10 +158,7 @@ impl UpdateReportPlanFluentBuilder {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
-    pub fn set_report_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportSetting>,
-    ) -> Self {
+    pub fn set_report_setting(mut self, input: ::std::option::Option<crate::types::ReportSetting>) -> Self {
         self.inner = self.inner.set_report_setting(input);
         self
     }
@@ -205,18 +169,12 @@ impl UpdateReportPlanFluentBuilder {
         self.inner.get_report_setting()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

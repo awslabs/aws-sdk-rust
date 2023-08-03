@@ -44,9 +44,7 @@ impl VerticalLayoutConfiguration {
 
 /// A builder for [`VerticalLayoutConfiguration`](crate::types::VerticalLayoutConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerticalLayoutConfigurationBuilder {
     pub(crate) tile_order: ::std::option::Option<crate::types::TileOrder>,
     pub(crate) tile_position: ::std::option::Option<crate::types::VerticalTilePosition>,
@@ -74,10 +72,7 @@ impl VerticalLayoutConfigurationBuilder {
         self
     }
     /// <p>Sets the position of vertical tiles.</p>
-    pub fn set_tile_position(
-        mut self,
-        input: ::std::option::Option<crate::types::VerticalTilePosition>,
-    ) -> Self {
+    pub fn set_tile_position(mut self, input: ::std::option::Option<crate::types::VerticalTilePosition>) -> Self {
         self.tile_position = input;
         self
     }
@@ -100,18 +95,12 @@ impl VerticalLayoutConfigurationBuilder {
         &self.tile_count
     }
     /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-    pub fn tile_aspect_ratio(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tile_aspect_ratio(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tile_aspect_ratio = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-    pub fn set_tile_aspect_ratio(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tile_aspect_ratio(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tile_aspect_ratio = input;
         self
     }

@@ -30,27 +30,19 @@ impl AuthorizerConfig {
 
 /// A builder for [`AuthorizerConfig`](crate::types::AuthorizerConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizerConfigBuilder {
     pub(crate) default_authorizer_name: ::std::option::Option<::std::string::String>,
     pub(crate) allow_authorizer_override: ::std::option::Option<bool>,
 }
 impl AuthorizerConfigBuilder {
     /// <p>The name of the authorization service for a domain configuration.</p>
-    pub fn default_authorizer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_authorizer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the authorization service for a domain configuration.</p>
-    pub fn set_default_authorizer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_authorizer_name = input;
         self
     }

@@ -10,10 +10,7 @@ impl ListProtectionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_protections::ListProtectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protections::ListProtectionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protections::ListProtectionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_protections();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListProtectionsFluentBuilder {
         }
     }
     /// Access the ListProtections as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_protections::builders::ListProtectionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_protections::builders::ListProtectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListProtectionsFluentBuilder {
             crate::operation::list_protections::ListProtections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protections::ListProtectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protections::ListProtectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListProtectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListProtectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_protections::ListProtectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protections::ListProtectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protections::ListProtectionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListProtectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_protections::ListProtectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protections::ListProtectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protections::ListProtectionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListProtectionsFluentBuilder {
             crate::operation::list_protections::ListProtections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protections::ListProtectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protections::ListProtectionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_protections::paginator::ListProtectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_protections::paginator::ListProtectionsPaginator {
-        crate::operation::list_protections::paginator::ListProtectionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_protections::paginator::ListProtectionsPaginator {
+        crate::operation::list_protections::paginator::ListProtectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
@@ -179,17 +158,12 @@ impl ListProtectionsFluentBuilder {
         self
     }
     /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
-    pub fn set_inclusion_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::InclusionProtectionFilters>,
-    ) -> Self {
+    pub fn set_inclusion_filters(mut self, input: ::std::option::Option<crate::types::InclusionProtectionFilters>) -> Self {
         self.inner = self.inner.set_inclusion_filters(input);
         self
     }
     /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
-    pub fn get_inclusion_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::InclusionProtectionFilters> {
+    pub fn get_inclusion_filters(&self) -> &::std::option::Option<crate::types::InclusionProtectionFilters> {
         self.inner.get_inclusion_filters()
     }
 }

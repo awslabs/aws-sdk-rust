@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetCodegenJobOutput`](crate::operation::get_codegen_job::GetCodegenJobOutput) with field(s):
     ///   - [`job(Option<CodegenJob>)`](crate::operation::get_codegen_job::GetCodegenJobOutput::job): <p>The configuration settings for the code generation job.</p>
     /// - On failure, responds with [`SdkError<GetCodegenJobError>`](crate::operation::get_codegen_job::GetCodegenJobError)
-    pub fn get_codegen_job(
-        &self,
-    ) -> crate::operation::get_codegen_job::builders::GetCodegenJobFluentBuilder {
-        crate::operation::get_codegen_job::builders::GetCodegenJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_codegen_job(&self) -> crate::operation::get_codegen_job::builders::GetCodegenJobFluentBuilder {
+        crate::operation::get_codegen_job::builders::GetCodegenJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,8 +23,7 @@ pub struct UpdateControlInput {
     pub action_plan_instructions: ::std::option::Option<::std::string::String>,
     /// <p> The data mapping sources for the control. </p>
     #[doc(hidden)]
-    pub control_mapping_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
+    pub control_mapping_sources: ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
 }
 impl UpdateControlInput {
     /// <p> The identifier for the control. </p>
@@ -52,9 +51,7 @@ impl UpdateControlInput {
         self.action_plan_instructions.as_deref()
     }
     /// <p> The data mapping sources for the control. </p>
-    pub fn control_mapping_sources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ControlMappingSource]> {
+    pub fn control_mapping_sources(&self) -> ::std::option::Option<&[crate::types::ControlMappingSource]> {
         self.control_mapping_sources.as_deref()
     }
 }
@@ -67,9 +64,7 @@ impl UpdateControlInput {
 
 /// A builder for [`UpdateControlInput`](crate::operation::update_control::UpdateControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateControlInputBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -77,8 +72,7 @@ pub struct UpdateControlInputBuilder {
     pub(crate) testing_information: ::std::option::Option<::std::string::String>,
     pub(crate) action_plan_title: ::std::option::Option<::std::string::String>,
     pub(crate) action_plan_instructions: ::std::option::Option<::std::string::String>,
-    pub(crate) control_mapping_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
+    pub(crate) control_mapping_sources: ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
 }
 impl UpdateControlInputBuilder {
     /// <p> The identifier for the control. </p>
@@ -124,18 +118,12 @@ impl UpdateControlInputBuilder {
         &self.description
     }
     /// <p> The steps that you should follow to determine if the control is met. </p>
-    pub fn testing_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn testing_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.testing_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The steps that you should follow to determine if the control is met. </p>
-    pub fn set_testing_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_testing_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.testing_information = input;
         self
     }
@@ -144,18 +132,12 @@ impl UpdateControlInputBuilder {
         &self.testing_information
     }
     /// <p> The title of the action plan for remediating the control. </p>
-    pub fn action_plan_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_plan_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_plan_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The title of the action plan for remediating the control. </p>
-    pub fn set_action_plan_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_plan_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_plan_title = input;
         self
     }
@@ -164,18 +146,12 @@ impl UpdateControlInputBuilder {
         &self.action_plan_title
     }
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-    pub fn action_plan_instructions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_plan_instructions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_plan_instructions = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-    pub fn set_action_plan_instructions(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_plan_instructions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_plan_instructions = input;
         self
     }
@@ -195,26 +171,18 @@ impl UpdateControlInputBuilder {
         self
     }
     /// <p> The data mapping sources for the control. </p>
-    pub fn set_control_mapping_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
-    ) -> Self {
+    pub fn set_control_mapping_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>) -> Self {
         self.control_mapping_sources = input;
         self
     }
     /// <p> The data mapping sources for the control. </p>
-    pub fn get_control_mapping_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>> {
+    pub fn get_control_mapping_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>> {
         &self.control_mapping_sources
     }
     /// Consumes the builder and constructs a [`UpdateControlInput`](crate::operation::update_control::UpdateControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_control::UpdateControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_control::UpdateControlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_control::UpdateControlInput {
             control_id: self.control_id,
             name: self.name,

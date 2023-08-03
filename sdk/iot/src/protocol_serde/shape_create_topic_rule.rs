@@ -2,8 +2,7 @@
 pub fn ser_create_topic_rule_headers(
     input: &crate::operation::create_topic_rule::CreateTopicRuleInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.tags {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_create_topic_rule_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "tags",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-tagging", header_value);
@@ -28,127 +24,117 @@ pub fn de_create_topic_rule_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_topic_rule::CreateTopicRuleOutput,
-    crate::operation::create_topic_rule::CreateTopicRuleError,
-> {
+) -> std::result::Result<crate::operation::create_topic_rule::CreateTopicRuleOutput, crate::operation::create_topic_rule::CreateTopicRuleError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::create_topic_rule::CreateTopicRuleError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingResourceUpdateException" => crate::operation::create_topic_rule::CreateTopicRuleError::ConflictingResourceUpdateException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictingResourceUpdateExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflicting_resource_update_exception::de_conflicting_resource_update_exception_json_err(_response_body, output).map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictingResourceUpdateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflicting_resource_update_exception::de_conflicting_resource_update_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalException" => crate::operation::create_topic_rule::CreateTopicRuleError::InternalException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output).map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::create_topic_rule::CreateTopicRuleError::InvalidRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceAlreadyExistsException" => crate::operation::create_topic_rule::CreateTopicRuleError::ResourceAlreadyExistsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_already_exists_exception::de_resource_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_already_exists_exception::de_resource_already_exists_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::create_topic_rule::CreateTopicRuleError::ServiceUnavailableException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SqlParseException" => crate::operation::create_topic_rule::CreateTopicRuleError::SqlParseException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SqlParseExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_sql_parse_exception::de_sql_parse_exception_json_err(_response_body, output).map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SqlParseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_sql_parse_exception::de_sql_parse_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_topic_rule::CreateTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_topic_rule::CreateTopicRuleError::generic(generic)
+        _ => crate::operation::create_topic_rule::CreateTopicRuleError::generic(generic),
     })
 }
 
@@ -157,17 +143,11 @@ pub fn de_create_topic_rule_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_topic_rule::CreateTopicRuleOutput,
-    crate::operation::create_topic_rule::CreateTopicRuleError,
-> {
+) -> std::result::Result<crate::operation::create_topic_rule::CreateTopicRuleOutput, crate::operation::create_topic_rule::CreateTopicRuleError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::create_topic_rule::builders::CreateTopicRuleOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::create_topic_rule::builders::CreateTopicRuleOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

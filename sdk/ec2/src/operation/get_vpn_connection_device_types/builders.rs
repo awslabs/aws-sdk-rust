@@ -26,7 +26,7 @@ impl GetVpnConnectionDeviceTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetVpnConnectionDeviceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesInputBuilder,
+    inner: crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesInputBuilder,
 }
 impl GetVpnConnectionDeviceTypesFluentBuilder {
     /// Creates a new `GetVpnConnectionDeviceTypes`.
@@ -37,7 +37,7 @@ impl GetVpnConnectionDeviceTypesFluentBuilder {
         }
     }
     /// Access the GetVpnConnectionDeviceTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetVpnConnectionDeviceTypesFluentBuilder {
             crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetVpnConnectionDeviceTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetVpnConnectionDeviceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetVpnConnectionDeviceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl GetVpnConnectionDeviceTypesFluentBuilder {
             crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_vpn_connection_device_types::paginator::GetVpnConnectionDeviceTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_vpn_connection_device_types::paginator::GetVpnConnectionDeviceTypesPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_vpn_connection_device_types::paginator::GetVpnConnectionDeviceTypesPaginator {
         crate::operation::get_vpn_connection_device_types::paginator::GetVpnConnectionDeviceTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results returned by <code>GetVpnConnectionDeviceTypes</code> in paginated output. When this parameter is used, <code>GetVpnConnectionDeviceTypes</code> only returns <code>MaxResults</code> results in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetVpnConnectionDeviceTypes</code> request with the returned <code>NextToken</code> value. This value can be between 200 and 1000. If this parameter is not used, then <code>GetVpnConnectionDeviceTypes</code> returns all results.</p>

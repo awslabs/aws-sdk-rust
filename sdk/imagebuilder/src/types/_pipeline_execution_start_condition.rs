@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PipelineExecutionStartCondition {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum PipelineExecutionStartCondition {
 impl ::std::convert::From<&str> for PipelineExecutionStartCondition {
     fn from(s: &str) -> Self {
         match s {
-            "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE" => {
-                PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable
-            }
+            "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE" => PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable,
             "EXPRESSION_MATCH_ONLY" => PipelineExecutionStartCondition::ExpressionMatchOnly,
-            other => PipelineExecutionStartCondition::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => PipelineExecutionStartCondition::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,19 +68,14 @@ impl PipelineExecutionStartCondition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable => {
-                "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE"
-            }
+            PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable => "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE",
             PipelineExecutionStartCondition::ExpressionMatchOnly => "EXPRESSION_MATCH_ONLY",
             PipelineExecutionStartCondition::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE",
-            "EXPRESSION_MATCH_ONLY",
-        ]
+        &["EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE", "EXPRESSION_MATCH_ONLY"]
     }
 }
 impl ::std::convert::AsRef<str> for PipelineExecutionStartCondition {

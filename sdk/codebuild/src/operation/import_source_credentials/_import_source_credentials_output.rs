@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ImportSourceCredentialsOutput {
 }
 impl ImportSourceCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`ImportSourceCredentialsOutput`](crate::operation::import_source_credentials::ImportSourceCredentialsOutput).
-    pub fn builder(
-    ) -> crate::operation::import_source_credentials::builders::ImportSourceCredentialsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::import_source_credentials::builders::ImportSourceCredentialsOutputBuilder {
         crate::operation::import_source_credentials::builders::ImportSourceCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportSourceCredentialsOutput`](crate::operation::import_source_credentials::ImportSourceCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportSourceCredentialsOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl ImportSourceCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ImportSourceCredentialsOutput`](crate::operation::import_source_credentials::ImportSourceCredentialsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::import_source_credentials::ImportSourceCredentialsOutput {
+    pub fn build(self) -> crate::operation::import_source_credentials::ImportSourceCredentialsOutput {
         crate::operation::import_source_credentials::ImportSourceCredentialsOutput {
             arn: self.arn,
             _request_id: self._request_id,

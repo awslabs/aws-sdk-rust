@@ -36,9 +36,7 @@ impl RegisterDevicesInput {
 
 /// A builder for [`RegisterDevicesInput`](crate::operation::register_devices::RegisterDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterDevicesInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
@@ -46,18 +44,12 @@ pub struct RegisterDevicesInputBuilder {
 }
 impl RegisterDevicesInputBuilder {
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -77,10 +69,7 @@ impl RegisterDevicesInputBuilder {
         self
     }
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.devices = input;
         self
     }
@@ -100,10 +89,7 @@ impl RegisterDevicesInputBuilder {
         self
     }
     /// <p>The tags associated with devices.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -114,10 +100,7 @@ impl RegisterDevicesInputBuilder {
     /// Consumes the builder and constructs a [`RegisterDevicesInput`](crate::operation::register_devices::RegisterDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_devices::RegisterDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_devices::RegisterDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_devices::RegisterDevicesInput {
             device_fleet_name: self.device_fleet_name,
             devices: self.devices,

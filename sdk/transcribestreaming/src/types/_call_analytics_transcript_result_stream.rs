@@ -34,9 +34,7 @@ impl CallAnalyticsTranscriptResultStream {
     }
     /// Tries to convert the enum instance into [`UtteranceEvent`](crate::types::CallAnalyticsTranscriptResultStream::UtteranceEvent), extracting the inner [`UtteranceEvent`](crate::types::UtteranceEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_utterance_event(
-        &self,
-    ) -> ::std::result::Result<&crate::types::UtteranceEvent, &Self> {
+    pub fn as_utterance_event(&self) -> ::std::result::Result<&crate::types::UtteranceEvent, &Self> {
         if let CallAnalyticsTranscriptResultStream::UtteranceEvent(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -22,18 +22,14 @@ impl DeleteIntentVersionInput {
 }
 impl DeleteIntentVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteIntentVersionInput`](crate::operation::delete_intent_version::DeleteIntentVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_intent_version::builders::DeleteIntentVersionInputBuilder {
-        crate::operation::delete_intent_version::builders::DeleteIntentVersionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_intent_version::builders::DeleteIntentVersionInputBuilder {
+        crate::operation::delete_intent_version::builders::DeleteIntentVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIntentVersionInput`](crate::operation::delete_intent_version::DeleteIntentVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntentVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DeleteIntentVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIntentVersionInput`](crate::operation::delete_intent_version::DeleteIntentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_intent_version::DeleteIntentVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_intent_version::DeleteIntentVersionInput {
-                name: self.name,
-                version: self.version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_intent_version::DeleteIntentVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_intent_version::DeleteIntentVersionInput {
+            name: self.name,
+            version: self.version,
+        })
     }
 }

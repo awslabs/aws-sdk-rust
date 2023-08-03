@@ -33,9 +33,7 @@ pub struct OpsItemSummary {
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
     #[doc(hidden)]
-    pub operational_data: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
-    >,
+    pub operational_data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>>,
     /// <p>A list of OpsItems by category.</p>
     #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
@@ -101,11 +99,7 @@ impl OpsItemSummary {
         self.title.as_deref()
     }
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
-    pub fn operational_data(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
-    > {
+    pub fn operational_data(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>> {
         self.operational_data.as_ref()
     }
     /// <p>A list of OpsItems by category.</p>
@@ -151,9 +145,7 @@ impl OpsItemSummary {
 
 /// A builder for [`OpsItemSummary`](crate::types::OpsItemSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemSummaryBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -164,9 +156,7 @@ pub struct OpsItemSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::OpsItemStatus>,
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
-    pub(crate) operational_data: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
-    >,
+    pub(crate) operational_data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<::std::string::String>,
     pub(crate) ops_item_type: ::std::option::Option<::std::string::String>,
@@ -196,10 +186,7 @@ impl OpsItemSummaryBuilder {
         self
     }
     /// <p>The date and time the OpsItem was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -208,18 +195,12 @@ impl OpsItemSummaryBuilder {
         &self.created_time
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
-    pub fn last_modified_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -233,10 +214,7 @@ impl OpsItemSummaryBuilder {
         self
     }
     /// <p>The date and time the OpsItem was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -319,11 +297,7 @@ impl OpsItemSummaryBuilder {
     /// To override the contents of this collection use [`set_operational_data`](Self::set_operational_data).
     ///
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
-    pub fn operational_data(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::OpsItemDataValue,
-    ) -> Self {
+    pub fn operational_data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::OpsItemDataValue) -> Self {
         let mut hash_map = self.operational_data.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.operational_data = ::std::option::Option::Some(hash_map);
@@ -332,19 +306,13 @@ impl OpsItemSummaryBuilder {
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
     pub fn set_operational_data(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>>,
     ) -> Self {
         self.operational_data = input;
         self
     }
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
-    pub fn get_operational_data(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
-    > {
+    pub fn get_operational_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>> {
         &self.operational_data
     }
     /// <p>A list of OpsItems by category.</p>
@@ -381,10 +349,7 @@ impl OpsItemSummaryBuilder {
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
     /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
-    pub fn ops_item_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_item_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -394,10 +359,7 @@ impl OpsItemSummaryBuilder {
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
     /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
-    pub fn set_ops_item_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_item_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_type = input;
         self
     }
@@ -416,10 +378,7 @@ impl OpsItemSummaryBuilder {
         self
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_actual_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_actual_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.actual_start_time = input;
         self
     }
@@ -433,10 +392,7 @@ impl OpsItemSummaryBuilder {
         self
     }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_actual_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_actual_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.actual_end_time = input;
         self
     }
@@ -450,10 +406,7 @@ impl OpsItemSummaryBuilder {
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_planned_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_planned_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.planned_start_time = input;
         self
     }
@@ -467,10 +420,7 @@ impl OpsItemSummaryBuilder {
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_planned_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_planned_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.planned_end_time = input;
         self
     }

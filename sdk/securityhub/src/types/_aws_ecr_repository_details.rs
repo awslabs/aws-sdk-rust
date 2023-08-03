@@ -9,15 +9,13 @@ pub struct AwsEcrRepositoryDetails {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The image scanning configuration for a repository.</p>
     #[doc(hidden)]
-    pub image_scanning_configuration:
-        ::std::option::Option<crate::types::AwsEcrRepositoryImageScanningConfigurationDetails>,
+    pub image_scanning_configuration: ::std::option::Option<crate::types::AwsEcrRepositoryImageScanningConfigurationDetails>,
     /// <p>The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
     #[doc(hidden)]
     pub image_tag_mutability: ::std::option::Option<::std::string::String>,
     /// <p>Information about the lifecycle policy for the repository.</p>
     #[doc(hidden)]
-    pub lifecycle_policy:
-        ::std::option::Option<crate::types::AwsEcrRepositoryLifecyclePolicyDetails>,
+    pub lifecycle_policy: ::std::option::Option<crate::types::AwsEcrRepositoryLifecyclePolicyDetails>,
     /// <p>The name of the repository.</p>
     #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
@@ -31,10 +29,7 @@ impl AwsEcrRepositoryDetails {
         self.arn.as_deref()
     }
     /// <p>The image scanning configuration for a repository.</p>
-    pub fn image_scanning_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEcrRepositoryImageScanningConfigurationDetails>
-    {
+    pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::AwsEcrRepositoryImageScanningConfigurationDetails> {
         self.image_scanning_configuration.as_ref()
     }
     /// <p>The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
@@ -42,9 +37,7 @@ impl AwsEcrRepositoryDetails {
         self.image_tag_mutability.as_deref()
     }
     /// <p>Information about the lifecycle policy for the repository.</p>
-    pub fn lifecycle_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEcrRepositoryLifecyclePolicyDetails> {
+    pub fn lifecycle_policy(&self) -> ::std::option::Option<&crate::types::AwsEcrRepositoryLifecyclePolicyDetails> {
         self.lifecycle_policy.as_ref()
     }
     /// <p>The name of the repository.</p>
@@ -65,16 +58,12 @@ impl AwsEcrRepositoryDetails {
 
 /// A builder for [`AwsEcrRepositoryDetails`](crate::types::AwsEcrRepositoryDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcrRepositoryDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) image_scanning_configuration:
-        ::std::option::Option<crate::types::AwsEcrRepositoryImageScanningConfigurationDetails>,
+    pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::AwsEcrRepositoryImageScanningConfigurationDetails>,
     pub(crate) image_tag_mutability: ::std::option::Option<::std::string::String>,
-    pub(crate) lifecycle_policy:
-        ::std::option::Option<crate::types::AwsEcrRepositoryLifecyclePolicyDetails>,
+    pub(crate) lifecycle_policy: ::std::option::Option<crate::types::AwsEcrRepositoryLifecyclePolicyDetails>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_policy_text: ::std::option::Option<::std::string::String>,
 }
@@ -94,43 +83,29 @@ impl AwsEcrRepositoryDetailsBuilder {
         &self.arn
     }
     /// <p>The image scanning configuration for a repository.</p>
-    pub fn image_scanning_configuration(
-        mut self,
-        input: crate::types::AwsEcrRepositoryImageScanningConfigurationDetails,
-    ) -> Self {
+    pub fn image_scanning_configuration(mut self, input: crate::types::AwsEcrRepositoryImageScanningConfigurationDetails) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The image scanning configuration for a repository.</p>
     pub fn set_image_scanning_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEcrRepositoryImageScanningConfigurationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEcrRepositoryImageScanningConfigurationDetails>,
     ) -> Self {
         self.image_scanning_configuration = input;
         self
     }
     /// <p>The image scanning configuration for a repository.</p>
-    pub fn get_image_scanning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEcrRepositoryImageScanningConfigurationDetails>
-    {
+    pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::AwsEcrRepositoryImageScanningConfigurationDetails> {
         &self.image_scanning_configuration
     }
     /// <p>The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
-    pub fn image_tag_mutability(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_tag_mutability(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_tag_mutability = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
-    pub fn set_image_tag_mutability(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_tag_mutability(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_tag_mutability = input;
         self
     }
@@ -139,40 +114,26 @@ impl AwsEcrRepositoryDetailsBuilder {
         &self.image_tag_mutability
     }
     /// <p>Information about the lifecycle policy for the repository.</p>
-    pub fn lifecycle_policy(
-        mut self,
-        input: crate::types::AwsEcrRepositoryLifecyclePolicyDetails,
-    ) -> Self {
+    pub fn lifecycle_policy(mut self, input: crate::types::AwsEcrRepositoryLifecyclePolicyDetails) -> Self {
         self.lifecycle_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the lifecycle policy for the repository.</p>
-    pub fn set_lifecycle_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEcrRepositoryLifecyclePolicyDetails>,
-    ) -> Self {
+    pub fn set_lifecycle_policy(mut self, input: ::std::option::Option<crate::types::AwsEcrRepositoryLifecyclePolicyDetails>) -> Self {
         self.lifecycle_policy = input;
         self
     }
     /// <p>Information about the lifecycle policy for the repository.</p>
-    pub fn get_lifecycle_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEcrRepositoryLifecyclePolicyDetails> {
+    pub fn get_lifecycle_policy(&self) -> &::std::option::Option<crate::types::AwsEcrRepositoryLifecyclePolicyDetails> {
         &self.lifecycle_policy
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -181,18 +142,12 @@ impl AwsEcrRepositoryDetailsBuilder {
         &self.repository_name
     }
     /// <p>The text of the repository policy.</p>
-    pub fn repository_policy_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the repository policy.</p>
-    pub fn set_repository_policy_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_policy_text = input;
         self
     }

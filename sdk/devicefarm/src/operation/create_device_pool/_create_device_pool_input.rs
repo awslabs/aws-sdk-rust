@@ -46,17 +46,14 @@ impl CreateDevicePoolInput {
 }
 impl CreateDevicePoolInput {
     /// Creates a new builder-style object to manufacture [`CreateDevicePoolInput`](crate::operation::create_device_pool::CreateDevicePoolInput).
-    pub fn builder() -> crate::operation::create_device_pool::builders::CreateDevicePoolInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_device_pool::builders::CreateDevicePoolInputBuilder {
         crate::operation::create_device_pool::builders::CreateDevicePoolInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDevicePoolInput`](crate::operation::create_device_pool::CreateDevicePoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDevicePoolInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -119,10 +116,7 @@ impl CreateDevicePoolInputBuilder {
         self
     }
     /// <p>The device pool's rules.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -150,18 +144,13 @@ impl CreateDevicePoolInputBuilder {
     /// Consumes the builder and constructs a [`CreateDevicePoolInput`](crate::operation::create_device_pool::CreateDevicePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_device_pool::CreateDevicePoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_device_pool::CreateDevicePoolInput {
-                project_arn: self.project_arn,
-                name: self.name,
-                description: self.description,
-                rules: self.rules,
-                max_devices: self.max_devices,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_device_pool::CreateDevicePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_device_pool::CreateDevicePoolInput {
+            project_arn: self.project_arn,
+            name: self.name,
+            description: self.description,
+            rules: self.rules,
+            max_devices: self.max_devices,
+        })
     }
 }

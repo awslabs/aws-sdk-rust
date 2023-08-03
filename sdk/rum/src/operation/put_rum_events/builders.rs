@@ -10,10 +10,7 @@ impl PutRumEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_rum_events::PutRumEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_rum_events::PutRumEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_rum_events::PutRumEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_rum_events();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl PutRumEventsFluentBuilder {
         }
     }
     /// Access the PutRumEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_rum_events::builders::PutRumEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_rum_events::builders::PutRumEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl PutRumEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -149,17 +141,12 @@ impl PutRumEventsFluentBuilder {
         self
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
-    pub fn set_app_monitor_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AppMonitorDetails>,
-    ) -> Self {
+    pub fn set_app_monitor_details(mut self, input: ::std::option::Option<crate::types::AppMonitorDetails>) -> Self {
         self.inner = self.inner.set_app_monitor_details(input);
         self
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
-    pub fn get_app_monitor_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppMonitorDetails> {
+    pub fn get_app_monitor_details(&self) -> &::std::option::Option<crate::types::AppMonitorDetails> {
         self.inner.get_app_monitor_details()
     }
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
@@ -168,10 +155,7 @@ impl PutRumEventsFluentBuilder {
         self
     }
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
-    pub fn set_user_details(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDetails>,
-    ) -> Self {
+    pub fn set_user_details(mut self, input: ::std::option::Option<crate::types::UserDetails>) -> Self {
         self.inner = self.inner.set_user_details(input);
         self
     }
@@ -189,17 +173,12 @@ impl PutRumEventsFluentBuilder {
         self
     }
     /// <p>An array of structures that contain the telemetry event data.</p>
-    pub fn set_rum_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RumEvent>>,
-    ) -> Self {
+    pub fn set_rum_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RumEvent>>) -> Self {
         self.inner = self.inner.set_rum_events(input);
         self
     }
     /// <p>An array of structures that contain the telemetry event data.</p>
-    pub fn get_rum_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RumEvent>> {
+    pub fn get_rum_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RumEvent>> {
         self.inner.get_rum_events()
     }
 }

@@ -40,8 +40,7 @@ pub struct SpotOptions {
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     /// <p>Default: <code>terminate</code> </p>
     #[doc(hidden)]
-    pub instance_interruption_behavior:
-        ::std::option::Option<crate::types::SpotInstanceInterruptionBehavior>,
+    pub instance_interruption_behavior: ::std::option::Option<crate::types::SpotInstanceInterruptionBehavior>,
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Supported only when <code>AllocationStrategy</code> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
     /// <p>Note that EC2 Fleet attempts to draw Spot Instances from the number of pools that you specify on a best effort basis. If a pool runs out of Spot capacity before fulfilling your target capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that your target capacity is met, you might receive Spot Instances from more than the number of pools that you specified. Similarly, if most of the pools have no Spot capacity, you might receive your full target capacity from fewer than the number of pools that you specified.</p>
     #[doc(hidden)]
@@ -94,22 +93,16 @@ impl SpotOptions {
     /// </dd>
     /// </dl>
     /// <p>Default: <code>lowest-price</code> </p>
-    pub fn allocation_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SpotAllocationStrategy> {
+    pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::SpotAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
     /// <p>The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only the capacity rebalance strategy is available.</p>
-    pub fn maintenance_strategies(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FleetSpotMaintenanceStrategies> {
+    pub fn maintenance_strategies(&self) -> ::std::option::Option<&crate::types::FleetSpotMaintenanceStrategies> {
         self.maintenance_strategies.as_ref()
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     /// <p>Default: <code>terminate</code> </p>
-    pub fn instance_interruption_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SpotInstanceInterruptionBehavior> {
+    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<&crate::types::SpotInstanceInterruptionBehavior> {
         self.instance_interruption_behavior.as_ref()
     }
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Supported only when <code>AllocationStrategy</code> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
@@ -149,15 +142,11 @@ impl SpotOptions {
 
 /// A builder for [`SpotOptions`](crate::types::SpotOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpotOptionsBuilder {
     pub(crate) allocation_strategy: ::std::option::Option<crate::types::SpotAllocationStrategy>,
-    pub(crate) maintenance_strategies:
-        ::std::option::Option<crate::types::FleetSpotMaintenanceStrategies>,
-    pub(crate) instance_interruption_behavior:
-        ::std::option::Option<crate::types::SpotInstanceInterruptionBehavior>,
+    pub(crate) maintenance_strategies: ::std::option::Option<crate::types::FleetSpotMaintenanceStrategies>,
+    pub(crate) instance_interruption_behavior: ::std::option::Option<crate::types::SpotInstanceInterruptionBehavior>,
     pub(crate) instance_pools_to_use_count: ::std::option::Option<i32>,
     pub(crate) single_instance_type: ::std::option::Option<bool>,
     pub(crate) single_availability_zone: ::std::option::Option<bool>,
@@ -225,10 +214,7 @@ impl SpotOptionsBuilder {
     /// </dd>
     /// </dl>
     /// <p>Default: <code>lowest-price</code> </p>
-    pub fn set_allocation_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotAllocationStrategy>,
-    ) -> Self {
+    pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::SpotAllocationStrategy>) -> Self {
         self.allocation_strategy = input;
         self
     }
@@ -260,56 +246,38 @@ impl SpotOptionsBuilder {
     /// </dd>
     /// </dl>
     /// <p>Default: <code>lowest-price</code> </p>
-    pub fn get_allocation_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpotAllocationStrategy> {
+    pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::SpotAllocationStrategy> {
         &self.allocation_strategy
     }
     /// <p>The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only the capacity rebalance strategy is available.</p>
-    pub fn maintenance_strategies(
-        mut self,
-        input: crate::types::FleetSpotMaintenanceStrategies,
-    ) -> Self {
+    pub fn maintenance_strategies(mut self, input: crate::types::FleetSpotMaintenanceStrategies) -> Self {
         self.maintenance_strategies = ::std::option::Option::Some(input);
         self
     }
     /// <p>The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only the capacity rebalance strategy is available.</p>
-    pub fn set_maintenance_strategies(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetSpotMaintenanceStrategies>,
-    ) -> Self {
+    pub fn set_maintenance_strategies(mut self, input: ::std::option::Option<crate::types::FleetSpotMaintenanceStrategies>) -> Self {
         self.maintenance_strategies = input;
         self
     }
     /// <p>The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only the capacity rebalance strategy is available.</p>
-    pub fn get_maintenance_strategies(
-        &self,
-    ) -> &::std::option::Option<crate::types::FleetSpotMaintenanceStrategies> {
+    pub fn get_maintenance_strategies(&self) -> &::std::option::Option<crate::types::FleetSpotMaintenanceStrategies> {
         &self.maintenance_strategies
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     /// <p>Default: <code>terminate</code> </p>
-    pub fn instance_interruption_behavior(
-        mut self,
-        input: crate::types::SpotInstanceInterruptionBehavior,
-    ) -> Self {
+    pub fn instance_interruption_behavior(mut self, input: crate::types::SpotInstanceInterruptionBehavior) -> Self {
         self.instance_interruption_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     /// <p>Default: <code>terminate</code> </p>
-    pub fn set_instance_interruption_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotInstanceInterruptionBehavior>,
-    ) -> Self {
+    pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<crate::types::SpotInstanceInterruptionBehavior>) -> Self {
         self.instance_interruption_behavior = input;
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     /// <p>Default: <code>terminate</code> </p>
-    pub fn get_instance_interruption_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpotInstanceInterruptionBehavior> {
+    pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<crate::types::SpotInstanceInterruptionBehavior> {
         &self.instance_interruption_behavior
     }
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Supported only when <code>AllocationStrategy</code> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
@@ -386,20 +354,14 @@ impl SpotOptionsBuilder {
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    pub fn max_total_price(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_total_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_total_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    pub fn set_max_total_price(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_total_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_total_price = input;
         self
     }

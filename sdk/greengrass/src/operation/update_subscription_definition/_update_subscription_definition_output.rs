@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateSubscriptionDefinitionOutput {
 }
 impl UpdateSubscriptionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionDefinitionOutput`](crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionOutput).
-    pub fn builder() -> crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionOutputBuilder {
         crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSubscriptionDefinitionOutput`](crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSubscriptionDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateSubscriptionDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionDefinitionOutput`](crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionOutput {
+    pub fn build(self) -> crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionOutput {
         crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionOutput {
             _request_id: self._request_id,
         }

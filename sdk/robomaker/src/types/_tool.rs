@@ -51,9 +51,7 @@ impl Tool {
 
 /// A builder for [`Tool`](crate::types::Tool).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ToolBuilder {
     pub(crate) stream_ui: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl ToolBuilder {
         self
     }
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
-    pub fn set_exit_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ExitBehavior>,
-    ) -> Self {
+    pub fn set_exit_behavior(mut self, input: ::std::option::Option<crate::types::ExitBehavior>) -> Self {
         self.exit_behavior = input;
         self
     }

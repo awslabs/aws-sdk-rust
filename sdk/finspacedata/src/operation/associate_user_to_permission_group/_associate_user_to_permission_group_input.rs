@@ -29,16 +29,14 @@ impl AssociateUserToPermissionGroupInput {
 }
 impl AssociateUserToPermissionGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateUserToPermissionGroupInput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupInput).
-    pub fn builder() -> crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupInputBuilder{
+    pub fn builder() -> crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupInputBuilder {
         crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateUserToPermissionGroupInput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateUserToPermissionGroupInputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct AssociateUserToPermissionGroupInputBuilder {
 }
 impl AssociateUserToPermissionGroupInputBuilder {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the permission group.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_group_id = input;
         self
     }
@@ -102,13 +94,10 @@ impl AssociateUserToPermissionGroupInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupInput {
-                permission_group_id: self.permission_group_id
-                ,
-                user_id: self.user_id
-                ,
-                client_token: self.client_token
-                ,
-            }
+                permission_group_id: self.permission_group_id,
+                user_id: self.user_id,
+                client_token: self.client_token,
+            },
         )
     }
 }

@@ -30,18 +30,14 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
 }
 impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
     /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder {
         crate::types::builders::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

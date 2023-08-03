@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`CreateLoadBalancerTlsCertificateOutput`](crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateLoadBalancerTlsCertificateError>`](crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError)
-    pub fn create_load_balancer_tls_certificate(&self) -> crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateFluentBuilder{
+    pub fn create_load_balancer_tls_certificate(
+        &self,
+    ) -> crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateFluentBuilder {
         crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`voice_profiles(Option<Vec<VoiceProfileSummary>>)`](crate::operation::list_voice_profiles::ListVoiceProfilesOutput::voice_profiles): <p>The list of voice profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_voice_profiles::ListVoiceProfilesOutput::next_token): <p>The token used to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListVoiceProfilesError>`](crate::operation::list_voice_profiles::ListVoiceProfilesError)
-    pub fn list_voice_profiles(
-        &self,
-    ) -> crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder {
-        crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_voice_profiles(&self) -> crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder {
+        crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ProvideAnomalyFeedbackOutput {
 }
 impl ProvideAnomalyFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`ProvideAnomalyFeedbackOutput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput).
-    pub fn builder(
-    ) -> crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackOutputBuilder
-    {
+    pub fn builder() -> crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackOutputBuilder {
         crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackOutputBuilder::default()
     }
 }
 
 /// A builder for [`ProvideAnomalyFeedbackOutput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackOutputBuilder {
     pub(crate) anomaly_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

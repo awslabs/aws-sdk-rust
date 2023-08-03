@@ -13,9 +13,7 @@ pub struct RepositoryAnalysis {
 }
 impl RepositoryAnalysis {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    pub fn repository_head(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RepositoryHeadSourceCodeType> {
+    pub fn repository_head(&self) -> ::std::option::Option<&crate::types::RepositoryHeadSourceCodeType> {
         self.repository_head.as_ref()
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
@@ -32,9 +30,7 @@ impl RepositoryAnalysis {
 
 /// A builder for [`RepositoryAnalysis`](crate::types::RepositoryAnalysis).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryAnalysisBuilder {
     pub(crate) repository_head: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
     pub(crate) source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
@@ -46,17 +42,12 @@ impl RepositoryAnalysisBuilder {
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    pub fn set_repository_head(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
-    ) -> Self {
+    pub fn set_repository_head(mut self, input: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>) -> Self {
         self.repository_head = input;
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    pub fn get_repository_head(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryHeadSourceCodeType> {
+    pub fn get_repository_head(&self) -> &::std::option::Option<crate::types::RepositoryHeadSourceCodeType> {
         &self.repository_head
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
@@ -65,10 +56,7 @@ impl RepositoryAnalysisBuilder {
         self
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
-    pub fn set_source_code_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceCodeType>,
-    ) -> Self {
+    pub fn set_source_code_type(mut self, input: ::std::option::Option<crate::types::SourceCodeType>) -> Self {
         self.source_code_type = input;
         self
     }

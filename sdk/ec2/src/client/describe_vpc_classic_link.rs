@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVpcClassicLinkOutput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput) with field(s):
     ///   - [`vpcs(Option<Vec<VpcClassicLink>>)`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput::vpcs): <p>The ClassicLink status of the VPCs.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcClassicLinkError>`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkError)
-    pub fn describe_vpc_classic_link(
-        &self,
-    ) -> crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkFluentBuilder
-    {
+    pub fn describe_vpc_classic_link(&self) -> crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkFluentBuilder {
         crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkFluentBuilder::new(self.handle.clone())
     }
 }

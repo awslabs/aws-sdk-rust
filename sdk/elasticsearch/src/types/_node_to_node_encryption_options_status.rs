@@ -30,9 +30,7 @@ impl NodeToNodeEncryptionOptionsStatus {
 
 /// A builder for [`NodeToNodeEncryptionOptionsStatus`](crate::types::NodeToNodeEncryptionOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeToNodeEncryptionOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,10 +42,7 @@ impl NodeToNodeEncryptionOptionsStatusBuilder {
         self
     }
     /// <p>Specifies the node-to-node encryption options for the specified Elasticsearch domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>) -> Self {
         self.options = input;
         self
     }

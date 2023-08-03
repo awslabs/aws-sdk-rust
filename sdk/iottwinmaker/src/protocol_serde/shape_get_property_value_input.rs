@@ -36,10 +36,7 @@ pub fn ser_get_property_value_input(
     if let Some(var_10) = &input.tabular_conditions {
         #[allow(unused_mut)]
         let mut object_11 = object.key("tabularConditions").start_object();
-        crate::protocol_serde::shape_tabular_conditions::ser_tabular_conditions(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_tabular_conditions::ser_tabular_conditions(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

@@ -37,9 +37,7 @@ impl DescribeDBParametersFluentBuilder {
         }
     }
     /// Access the DescribeDBParameters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_db_parameters::builders::DescribeDbParametersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_db_parameters::builders::DescribeDbParametersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeDBParametersFluentBuilder {
             crate::operation::describe_db_parameters::DescribeDBParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_parameters::DescribeDBParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_parameters::DescribeDBParametersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeDBParametersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeDBParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_parameters::DescribeDbParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_parameters::DescribeDBParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_parameters::DescribeDBParametersError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeDBParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_parameters::DescribeDbParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_parameters::DescribeDBParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_parameters::DescribeDBParametersError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +105,22 @@ impl DescribeDBParametersFluentBuilder {
             crate::operation::describe_db_parameters::DescribeDBParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_parameters::DescribeDBParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_parameters::DescribeDBParametersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_parameters::paginator::DescribeDbParametersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_parameters::paginator::DescribeDbParametersPaginator {
-        crate::operation::describe_db_parameters::paginator::DescribeDbParametersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_db_parameters::paginator::DescribeDbParametersPaginator {
+        crate::operation::describe_db_parameters::paginator::DescribeDbParametersPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
         self
     }
@@ -150,10 +129,7 @@ impl DescribeDBParametersFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
         self
     }
@@ -195,10 +171,7 @@ impl DescribeDBParametersFluentBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`agent_arns(Vec<String>)`](crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobFluentBuilder::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobFluentBuilder::set_agent_arns): <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>  <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
     /// - On success, responds with [`UpdateLocationAzureBlobOutput`](crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput)
     /// - On failure, responds with [`SdkError<UpdateLocationAzureBlobError>`](crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError)
-    pub fn update_location_azure_blob(
-        &self,
-    ) -> crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobFluentBuilder
-    {
+    pub fn update_location_azure_blob(&self) -> crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobFluentBuilder {
         crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,18 +36,14 @@ impl SearchNetworkProfilesInput {
 }
 impl SearchNetworkProfilesInput {
     /// Creates a new builder-style object to manufacture [`SearchNetworkProfilesInput`](crate::operation::search_network_profiles::SearchNetworkProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::search_network_profiles::builders::SearchNetworkProfilesInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_network_profiles::builders::SearchNetworkProfilesInputBuilder {
         crate::operation::search_network_profiles::builders::SearchNetworkProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchNetworkProfilesInput`](crate::operation::search_network_profiles::SearchNetworkProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchNetworkProfilesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -95,10 +91,7 @@ impl SearchNetworkProfilesInputBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -118,10 +111,7 @@ impl SearchNetworkProfilesInputBuilder {
         self
     }
     /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -132,17 +122,13 @@ impl SearchNetworkProfilesInputBuilder {
     /// Consumes the builder and constructs a [`SearchNetworkProfilesInput`](crate::operation::search_network_profiles::SearchNetworkProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_network_profiles::SearchNetworkProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_network_profiles::SearchNetworkProfilesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-                sort_criteria: self.sort_criteria,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_network_profiles::SearchNetworkProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_network_profiles::SearchNetworkProfilesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+            sort_criteria: self.sort_criteria,
+        })
     }
 }

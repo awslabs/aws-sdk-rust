@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateUserOutput`](crate::operation::associate_user::AssociateUserOutput) with field(s):
     ///   - [`instance_user_summary(Option<InstanceUserSummary>)`](crate::operation::associate_user::AssociateUserOutput::instance_user_summary): <p>Metadata that describes the associate user operation.</p>
     /// - On failure, responds with [`SdkError<AssociateUserError>`](crate::operation::associate_user::AssociateUserError)
-    pub fn associate_user(
-        &self,
-    ) -> crate::operation::associate_user::builders::AssociateUserFluentBuilder {
-        crate::operation::associate_user::builders::AssociateUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_user(&self) -> crate::operation::associate_user::builders::AssociateUserFluentBuilder {
+        crate::operation::associate_user::builders::AssociateUserFluentBuilder::new(self.handle.clone())
     }
 }

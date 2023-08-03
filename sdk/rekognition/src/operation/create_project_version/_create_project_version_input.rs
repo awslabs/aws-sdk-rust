@@ -20,9 +20,7 @@ pub struct CreateProjectVersionInput {
     pub testing_data: ::std::option::Option<crate::types::TestingData>,
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
@@ -57,11 +55,7 @@ impl CreateProjectVersionInput {
         self.testing_data.as_ref()
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
@@ -79,26 +73,21 @@ impl CreateProjectVersionInput {
 }
 impl CreateProjectVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateProjectVersionInput`](crate::operation::create_project_version::CreateProjectVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_project_version::builders::CreateProjectVersionInputBuilder {
+    pub fn builder() -> crate::operation::create_project_version::builders::CreateProjectVersionInputBuilder {
         crate::operation::create_project_version::builders::CreateProjectVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProjectVersionInput`](crate::operation::create_project_version::CreateProjectVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProjectVersionInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
     pub(crate) training_data: ::std::option::Option<crate::types::TrainingData>,
     pub(crate) testing_data: ::std::option::Option<crate::types::TestingData>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateProjectVersionInputBuilder {
@@ -136,10 +125,7 @@ impl CreateProjectVersionInputBuilder {
         self
     }
     /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -153,10 +139,7 @@ impl CreateProjectVersionInputBuilder {
         self
     }
     /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
-    pub fn set_training_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingData>,
-    ) -> Self {
+    pub fn set_training_data(mut self, input: ::std::option::Option<crate::types::TrainingData>) -> Self {
         self.training_data = input;
         self
     }
@@ -170,10 +153,7 @@ impl CreateProjectVersionInputBuilder {
         self
     }
     /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
-    pub fn set_testing_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TestingData>,
-    ) -> Self {
+    pub fn set_testing_data(mut self, input: ::std::option::Option<crate::types::TestingData>) -> Self {
         self.testing_data = input;
         self
     }
@@ -186,32 +166,19 @@ impl CreateProjectVersionInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
@@ -255,20 +222,16 @@ impl CreateProjectVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateProjectVersionInput`](crate::operation::create_project_version::CreateProjectVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_project_version::CreateProjectVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_project_version::CreateProjectVersionInput {
-                project_arn: self.project_arn,
-                version_name: self.version_name,
-                output_config: self.output_config,
-                training_data: self.training_data,
-                testing_data: self.testing_data,
-                tags: self.tags,
-                kms_key_id: self.kms_key_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_project_version::CreateProjectVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_project_version::CreateProjectVersionInput {
+            project_arn: self.project_arn,
+            version_name: self.version_name,
+            output_config: self.output_config,
+            training_data: self.training_data,
+            testing_data: self.testing_data,
+            tags: self.tags,
+            kms_key_id: self.kms_key_id,
+        })
     }
 }

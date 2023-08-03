@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`detector_ids(Option<Vec<String>>)`](crate::operation::list_detectors::ListDetectorsOutput::detector_ids): <p>A list of detector IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_detectors::ListDetectorsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     /// - On failure, responds with [`SdkError<ListDetectorsError>`](crate::operation::list_detectors::ListDetectorsError)
-    pub fn list_detectors(
-        &self,
-    ) -> crate::operation::list_detectors::builders::ListDetectorsFluentBuilder {
-        crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_detectors(&self) -> crate::operation::list_detectors::builders::ListDetectorsFluentBuilder {
+        crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::new(self.handle.clone())
     }
 }

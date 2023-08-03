@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetCognitoEventsOutput`](crate::operation::get_cognito_events::GetCognitoEventsOutput) with field(s):
     ///   - [`events(Option<HashMap<String, String>>)`](crate::operation::get_cognito_events::GetCognitoEventsOutput::events): <p>The Cognito Events returned from the GetCognitoEvents request</p>
     /// - On failure, responds with [`SdkError<GetCognitoEventsError>`](crate::operation::get_cognito_events::GetCognitoEventsError)
-    pub fn get_cognito_events(
-        &self,
-    ) -> crate::operation::get_cognito_events::builders::GetCognitoEventsFluentBuilder {
-        crate::operation::get_cognito_events::builders::GetCognitoEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_cognito_events(&self) -> crate::operation::get_cognito_events::builders::GetCognitoEventsFluentBuilder {
+        crate::operation::get_cognito_events::builders::GetCognitoEventsFluentBuilder::new(self.handle.clone())
     }
 }

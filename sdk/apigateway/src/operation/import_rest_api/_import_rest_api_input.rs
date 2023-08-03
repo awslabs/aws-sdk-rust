@@ -14,9 +14,7 @@ pub struct ImportRestApiInput {
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     #[doc(hidden)]
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -32,11 +30,7 @@ impl ImportRestApiInput {
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
@@ -53,14 +47,10 @@ impl ImportRestApiInput {
 
 /// A builder for [`ImportRestApiInput`](crate::operation::import_rest_api::ImportRestApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportRestApiInputBuilder {
     pub(crate) fail_on_warnings: ::std::option::Option<bool>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ImportRestApiInputBuilder {
@@ -88,11 +78,7 @@ impl ImportRestApiInputBuilder {
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -104,12 +90,7 @@ impl ImportRestApiInputBuilder {
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
@@ -119,11 +100,7 @@ impl ImportRestApiInputBuilder {
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
@@ -143,10 +120,7 @@ impl ImportRestApiInputBuilder {
     /// Consumes the builder and constructs a [`ImportRestApiInput`](crate::operation::import_rest_api::ImportRestApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_rest_api::ImportRestApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::import_rest_api::ImportRestApiInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_rest_api::ImportRestApiInput {
             fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
             parameters: self.parameters,

@@ -22,18 +22,14 @@ impl ListCoreDefinitionsInput {
 }
 impl ListCoreDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListCoreDefinitionsInput`](crate::operation::list_core_definitions::ListCoreDefinitionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_core_definitions::builders::ListCoreDefinitionsInputBuilder {
-        crate::operation::list_core_definitions::builders::ListCoreDefinitionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_core_definitions::builders::ListCoreDefinitionsInputBuilder {
+        crate::operation::list_core_definitions::builders::ListCoreDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCoreDefinitionsInput`](crate::operation::list_core_definitions::ListCoreDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoreDefinitionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListCoreDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`ListCoreDefinitionsInput`](crate::operation::list_core_definitions::ListCoreDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_core_definitions::ListCoreDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_core_definitions::ListCoreDefinitionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_core_definitions::ListCoreDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_core_definitions::ListCoreDefinitionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

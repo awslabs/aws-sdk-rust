@@ -27,34 +27,27 @@ impl ::std::fmt::Display for EncryptionIntegrityChecksFailedException {
     }
 }
 impl ::std::error::Error for EncryptionIntegrityChecksFailedException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::EncryptionIntegrityChecksFailedException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::EncryptionIntegrityChecksFailedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for EncryptionIntegrityChecksFailedException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for EncryptionIntegrityChecksFailedException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl EncryptionIntegrityChecksFailedException {
     /// Creates a new builder-style object to manufacture [`EncryptionIntegrityChecksFailedException`](crate::types::error::EncryptionIntegrityChecksFailedException).
-    pub fn builder(
-    ) -> crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder {
         crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder::default()
     }
 }
 
 /// A builder for [`EncryptionIntegrityChecksFailedException`](crate::types::error::EncryptionIntegrityChecksFailedException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionIntegrityChecksFailedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl EncryptionIntegrityChecksFailedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

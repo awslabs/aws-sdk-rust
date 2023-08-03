@@ -22,17 +22,14 @@ impl DeleteDomainEntryInput {
 }
 impl DeleteDomainEntryInput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainEntryInput`](crate::operation::delete_domain_entry::DeleteDomainEntryInput).
-    pub fn builder(
-    ) -> crate::operation::delete_domain_entry::builders::DeleteDomainEntryInputBuilder {
+    pub fn builder() -> crate::operation::delete_domain_entry::builders::DeleteDomainEntryInputBuilder {
         crate::operation::delete_domain_entry::builders::DeleteDomainEntryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDomainEntryInput`](crate::operation::delete_domain_entry::DeleteDomainEntryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDomainEntryInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_entry: ::std::option::Option<crate::types::DomainEntry>,
@@ -58,10 +55,7 @@ impl DeleteDomainEntryInputBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about your domain entries.</p>
-    pub fn set_domain_entry(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainEntry>,
-    ) -> Self {
+    pub fn set_domain_entry(mut self, input: ::std::option::Option<crate::types::DomainEntry>) -> Self {
         self.domain_entry = input;
         self
     }
@@ -72,15 +66,10 @@ impl DeleteDomainEntryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDomainEntryInput`](crate::operation::delete_domain_entry::DeleteDomainEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_domain_entry::DeleteDomainEntryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_domain_entry::DeleteDomainEntryInput {
-                domain_name: self.domain_name,
-                domain_entry: self.domain_entry,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_domain_entry::DeleteDomainEntryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_domain_entry::DeleteDomainEntryInput {
+            domain_name: self.domain_name,
+            domain_entry: self.domain_entry,
+        })
     }
 }

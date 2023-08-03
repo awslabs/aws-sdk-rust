@@ -50,17 +50,14 @@ impl ListLineageGroupsInput {
 }
 impl ListLineageGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListLineageGroupsInput`](crate::operation::list_lineage_groups::ListLineageGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_lineage_groups::builders::ListLineageGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_lineage_groups::builders::ListLineageGroupsInputBuilder {
         crate::operation::list_lineage_groups::builders::ListLineageGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLineageGroupsInput`](crate::operation::list_lineage_groups::ListLineageGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLineageGroupsInputBuilder {
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -76,10 +73,7 @@ impl ListLineageGroupsInputBuilder {
         self
     }
     /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -93,10 +87,7 @@ impl ListLineageGroupsInputBuilder {
         self
     }
     /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -110,10 +101,7 @@ impl ListLineageGroupsInputBuilder {
         self
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortLineageGroupsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortLineageGroupsBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -166,19 +154,14 @@ impl ListLineageGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListLineageGroupsInput`](crate::operation::list_lineage_groups::ListLineageGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lineage_groups::ListLineageGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_lineage_groups::ListLineageGroupsInput {
-                created_after: self.created_after,
-                created_before: self.created_before,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_lineage_groups::ListLineageGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_lineage_groups::ListLineageGroupsInput {
+            created_after: self.created_after,
+            created_before: self.created_before,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

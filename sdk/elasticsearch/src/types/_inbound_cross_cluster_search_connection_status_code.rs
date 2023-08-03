@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InboundCrossClusterSearchConnectionStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,14 +66,10 @@ impl ::std::convert::From<&str> for InboundCrossClusterSearchConnectionStatusCod
             "APPROVED" => InboundCrossClusterSearchConnectionStatusCode::Approved,
             "DELETED" => InboundCrossClusterSearchConnectionStatusCode::Deleted,
             "DELETING" => InboundCrossClusterSearchConnectionStatusCode::Deleting,
-            "PENDING_ACCEPTANCE" => {
-                InboundCrossClusterSearchConnectionStatusCode::PendingAcceptance
-            }
+            "PENDING_ACCEPTANCE" => InboundCrossClusterSearchConnectionStatusCode::PendingAcceptance,
             "REJECTED" => InboundCrossClusterSearchConnectionStatusCode::Rejected,
             "REJECTING" => InboundCrossClusterSearchConnectionStatusCode::Rejecting,
-            other => InboundCrossClusterSearchConnectionStatusCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => InboundCrossClusterSearchConnectionStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -97,9 +87,7 @@ impl InboundCrossClusterSearchConnectionStatusCode {
             InboundCrossClusterSearchConnectionStatusCode::Approved => "APPROVED",
             InboundCrossClusterSearchConnectionStatusCode::Deleted => "DELETED",
             InboundCrossClusterSearchConnectionStatusCode::Deleting => "DELETING",
-            InboundCrossClusterSearchConnectionStatusCode::PendingAcceptance => {
-                "PENDING_ACCEPTANCE"
-            }
+            InboundCrossClusterSearchConnectionStatusCode::PendingAcceptance => "PENDING_ACCEPTANCE",
             InboundCrossClusterSearchConnectionStatusCode::Rejected => "REJECTED",
             InboundCrossClusterSearchConnectionStatusCode::Rejecting => "REJECTING",
             InboundCrossClusterSearchConnectionStatusCode::Unknown(value) => value.as_str(),
@@ -107,14 +95,7 @@ impl InboundCrossClusterSearchConnectionStatusCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPROVED",
-            "DELETED",
-            "DELETING",
-            "PENDING_ACCEPTANCE",
-            "REJECTED",
-            "REJECTING",
-        ]
+        &["APPROVED", "DELETED", "DELETING", "PENDING_ACCEPTANCE", "REJECTED", "REJECTING"]
     }
 }
 impl ::std::convert::AsRef<str> for InboundCrossClusterSearchConnectionStatusCode {

@@ -24,9 +24,7 @@ impl DocumentLocation {
 
 /// A builder for [`DocumentLocation`](crate::types::DocumentLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentLocationBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }
@@ -47,8 +45,6 @@ impl DocumentLocationBuilder {
     }
     /// Consumes the builder and constructs a [`DocumentLocation`](crate::types::DocumentLocation).
     pub fn build(self) -> crate::types::DocumentLocation {
-        crate::types::DocumentLocation {
-            s3_object: self.s3_object,
-        }
+        crate::types::DocumentLocation { s3_object: self.s3_object }
     }
 }

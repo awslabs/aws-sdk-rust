@@ -26,8 +26,7 @@ impl DeleteDocumentationPartInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDocumentationPartFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_documentation_part::builders::DeleteDocumentationPartInputBuilder,
+    inner: crate::operation::delete_documentation_part::builders::DeleteDocumentationPartInputBuilder,
 }
 impl DeleteDocumentationPartFluentBuilder {
     /// Creates a new `DeleteDocumentationPart`.
@@ -38,10 +37,7 @@ impl DeleteDocumentationPartFluentBuilder {
         }
     }
     /// Access the DeleteDocumentationPart as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_documentation_part::builders::DeleteDocumentationPartInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_documentation_part::builders::DeleteDocumentationPartInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteDocumentationPartFluentBuilder {
             crate::operation::delete_documentation_part::DeleteDocumentationPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_documentation_part::DeleteDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_documentation_part::DeleteDocumentationPartError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteDocumentationPartFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteDocumentationPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_documentation_part::DeleteDocumentationPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_documentation_part::DeleteDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_documentation_part::DeleteDocumentationPartError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteDocumentationPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_documentation_part::DeleteDocumentationPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_documentation_part::DeleteDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_documentation_part::DeleteDocumentationPartError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteDocumentationPartFluentBuilder {
             crate::operation::delete_documentation_part::DeleteDocumentationPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_documentation_part::DeleteDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_documentation_part::DeleteDocumentationPartError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl DeleteDocumentationPartFluentBuilder {
         self.inner.get_rest_api_id()
     }
     /// <p>The identifier of the to-be-deleted documentation part.</p>
-    pub fn documentation_part_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_part_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.documentation_part_id(input.into());
         self
     }
     /// <p>The identifier of the to-be-deleted documentation part.</p>
-    pub fn set_documentation_part_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_part_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_documentation_part_id(input);
         self
     }

@@ -26,7 +26,7 @@ impl DescribeDataSharesForProducerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDataSharesForProducerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerInputBuilder,
+    inner: crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerInputBuilder,
 }
 impl DescribeDataSharesForProducerFluentBuilder {
     /// Creates a new `DescribeDataSharesForProducer`.
@@ -37,7 +37,7 @@ impl DescribeDataSharesForProducerFluentBuilder {
         }
     }
     /// Access the DescribeDataSharesForProducer as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDataSharesForProducerFluentBuilder {
             crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDataSharesForProducerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDataSharesForProducerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDataSharesForProducerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeDataSharesForProducerFluentBuilder {
             crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_data_shares_for_producer::paginator::DescribeDataSharesForProducerPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_data_shares_for_producer::paginator::DescribeDataSharesForProducerPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_data_shares_for_producer::paginator::DescribeDataSharesForProducerPaginator {
         crate::operation::describe_data_shares_for_producer::paginator::DescribeDataSharesForProducerPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
@@ -146,10 +135,7 @@ impl DescribeDataSharesForProducerFluentBuilder {
         self
     }
     /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataShareStatusForProducer>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataShareStatusForProducer>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

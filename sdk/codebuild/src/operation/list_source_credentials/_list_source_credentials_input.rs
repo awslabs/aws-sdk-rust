@@ -5,29 +5,21 @@
 pub struct ListSourceCredentialsInput {}
 impl ListSourceCredentialsInput {
     /// Creates a new builder-style object to manufacture [`ListSourceCredentialsInput`](crate::operation::list_source_credentials::ListSourceCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::list_source_credentials::builders::ListSourceCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_source_credentials::builders::ListSourceCredentialsInputBuilder {
         crate::operation::list_source_credentials::builders::ListSourceCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSourceCredentialsInput`](crate::operation::list_source_credentials::ListSourceCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceCredentialsInputBuilder {}
 impl ListSourceCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`ListSourceCredentialsInput`](crate::operation::list_source_credentials::ListSourceCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_source_credentials::ListSourceCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_source_credentials::ListSourceCredentialsInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::list_source_credentials::ListSourceCredentialsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_source_credentials::ListSourceCredentialsInput {})
     }
 }

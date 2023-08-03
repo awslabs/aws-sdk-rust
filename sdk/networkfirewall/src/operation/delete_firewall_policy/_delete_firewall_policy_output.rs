@@ -10,9 +10,7 @@ pub struct DeleteFirewallPolicyOutput {
 }
 impl DeleteFirewallPolicyOutput {
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
-    pub fn firewall_policy_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FirewallPolicyResponse> {
+    pub fn firewall_policy_response(&self) -> ::std::option::Option<&crate::types::FirewallPolicyResponse> {
         self.firewall_policy_response.as_ref()
     }
 }
@@ -23,20 +21,16 @@ impl ::aws_http::request_id::RequestId for DeleteFirewallPolicyOutput {
 }
 impl DeleteFirewallPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallPolicyOutput`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyOutputBuilder {
         crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFirewallPolicyOutput`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFirewallPolicyOutputBuilder {
-    pub(crate) firewall_policy_response:
-        ::std::option::Option<crate::types::FirewallPolicyResponse>,
+    pub(crate) firewall_policy_response: ::std::option::Option<crate::types::FirewallPolicyResponse>,
     _request_id: Option<String>,
 }
 impl DeleteFirewallPolicyOutputBuilder {
@@ -46,17 +40,12 @@ impl DeleteFirewallPolicyOutputBuilder {
         self
     }
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
-    pub fn set_firewall_policy_response(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallPolicyResponse>,
-    ) -> Self {
+    pub fn set_firewall_policy_response(mut self, input: ::std::option::Option<crate::types::FirewallPolicyResponse>) -> Self {
         self.firewall_policy_response = input;
         self
     }
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
-    pub fn get_firewall_policy_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallPolicyResponse> {
+    pub fn get_firewall_policy_response(&self) -> &::std::option::Option<crate::types::FirewallPolicyResponse> {
         &self.firewall_policy_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

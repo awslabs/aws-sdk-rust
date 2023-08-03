@@ -37,17 +37,14 @@ impl ListPolicyPrincipalsInput {
 }
 impl ListPolicyPrincipalsInput {
     /// Creates a new builder-style object to manufacture [`ListPolicyPrincipalsInput`](crate::operation::list_policy_principals::ListPolicyPrincipalsInput).
-    pub fn builder(
-    ) -> crate::operation::list_policy_principals::builders::ListPolicyPrincipalsInputBuilder {
+    pub fn builder() -> crate::operation::list_policy_principals::builders::ListPolicyPrincipalsInputBuilder {
         crate::operation::list_policy_principals::builders::ListPolicyPrincipalsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyPrincipalsInput`](crate::operation::list_policy_principals::ListPolicyPrincipalsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyPrincipalsInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -114,17 +111,13 @@ impl ListPolicyPrincipalsInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyPrincipalsInput`](crate::operation::list_policy_principals::ListPolicyPrincipalsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_policy_principals::ListPolicyPrincipalsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_policy_principals::ListPolicyPrincipalsInput {
-                policy_name: self.policy_name,
-                marker: self.marker,
-                page_size: self.page_size,
-                ascending_order: self.ascending_order,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_policy_principals::ListPolicyPrincipalsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_policy_principals::ListPolicyPrincipalsInput {
+            policy_name: self.policy_name,
+            marker: self.marker,
+            page_size: self.page_size,
+            ascending_order: self.ascending_order,
+        })
     }
 }

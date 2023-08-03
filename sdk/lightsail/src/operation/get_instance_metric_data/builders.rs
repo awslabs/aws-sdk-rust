@@ -38,10 +38,7 @@ impl GetInstanceMetricDataFluentBuilder {
         }
     }
     /// Access the GetInstanceMetricData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetInstanceMetricDataFluentBuilder {
             crate::operation::get_instance_metric_data::GetInstanceMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_metric_data::GetInstanceMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_metric_data::GetInstanceMetricDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetInstanceMetricDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetInstanceMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_metric_data::GetInstanceMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_metric_data::GetInstanceMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_metric_data::GetInstanceMetricDataError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetInstanceMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_metric_data::GetInstanceMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_metric_data::GetInstanceMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_metric_data::GetInstanceMetricDataError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl GetInstanceMetricDataFluentBuilder {
             crate::operation::get_instance_metric_data::GetInstanceMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_metric_data::GetInstanceMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_metric_data::GetInstanceMetricDataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the instance for which you want to get metrics data.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The name of the instance for which you want to get metrics data.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }
@@ -174,10 +154,7 @@ impl GetInstanceMetricDataFluentBuilder {
     /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::InstanceMetricName>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
@@ -220,10 +197,7 @@ impl GetInstanceMetricDataFluentBuilder {
         self
     }
     /// <p>The start time of the time period.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -237,10 +211,7 @@ impl GetInstanceMetricDataFluentBuilder {
         self
     }
     /// <p>The end time of the time period.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -288,10 +259,7 @@ impl GetInstanceMetricDataFluentBuilder {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
         self.inner = self.inner.set_statistics(input);
         self
     }
@@ -304,9 +272,7 @@ impl GetInstanceMetricDataFluentBuilder {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn get_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
         self.inner.get_statistics()
     }
 }

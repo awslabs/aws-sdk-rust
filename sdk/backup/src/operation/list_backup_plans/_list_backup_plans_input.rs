@@ -36,9 +36,7 @@ impl ListBackupPlansInput {
 
 /// A builder for [`ListBackupPlansInput`](crate::operation::list_backup_plans::ListBackupPlansInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupPlansInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -90,10 +88,7 @@ impl ListBackupPlansInputBuilder {
     /// Consumes the builder and constructs a [`ListBackupPlansInput`](crate::operation::list_backup_plans::ListBackupPlansInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_backup_plans::ListBackupPlansInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_backup_plans::ListBackupPlansInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_backup_plans::ListBackupPlansInput {
             next_token: self.next_token,
             max_results: self.max_results,

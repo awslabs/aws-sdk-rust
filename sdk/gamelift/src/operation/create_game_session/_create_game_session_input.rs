@@ -100,17 +100,14 @@ impl CreateGameSessionInput {
 }
 impl CreateGameSessionInput {
     /// Creates a new builder-style object to manufacture [`CreateGameSessionInput`](crate::operation::create_game_session::CreateGameSessionInput).
-    pub fn builder(
-    ) -> crate::operation::create_game_session::builders::CreateGameSessionInputBuilder {
+    pub fn builder() -> crate::operation::create_game_session::builders::CreateGameSessionInputBuilder {
         crate::operation::create_game_session::builders::CreateGameSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGameSessionInput`](crate::operation::create_game_session::CreateGameSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGameSessionInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
@@ -192,17 +189,12 @@ impl CreateGameSessionInputBuilder {
         self
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn set_game_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
-    ) -> Self {
+    pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>) -> Self {
         self.game_properties = input;
         self
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn get_game_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
+    pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
         &self.game_properties
     }
     /// <p>A unique identifier for a player or entity creating the game session. </p>
@@ -230,19 +222,13 @@ impl CreateGameSessionInputBuilder {
     }
     /// <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p>
     /// <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p>
     /// <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
@@ -259,10 +245,7 @@ impl CreateGameSessionInputBuilder {
     /// <custom id string or idempotency token></custom>
     /// </fleet>
     /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
@@ -274,10 +257,7 @@ impl CreateGameSessionInputBuilder {
     /// <custom id string or idempotency token></custom>
     /// </fleet>
     /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -293,18 +273,12 @@ impl CreateGameSessionInputBuilder {
         &self.idempotency_token
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_session_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn set_game_session_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_data = input;
         self
     }
@@ -329,23 +303,18 @@ impl CreateGameSessionInputBuilder {
     /// Consumes the builder and constructs a [`CreateGameSessionInput`](crate::operation::create_game_session::CreateGameSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_game_session::CreateGameSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_game_session::CreateGameSessionInput {
-                fleet_id: self.fleet_id,
-                alias_id: self.alias_id,
-                maximum_player_session_count: self.maximum_player_session_count,
-                name: self.name,
-                game_properties: self.game_properties,
-                creator_id: self.creator_id,
-                game_session_id: self.game_session_id,
-                idempotency_token: self.idempotency_token,
-                game_session_data: self.game_session_data,
-                location: self.location,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_game_session::CreateGameSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_game_session::CreateGameSessionInput {
+            fleet_id: self.fleet_id,
+            alias_id: self.alias_id,
+            maximum_player_session_count: self.maximum_player_session_count,
+            name: self.name,
+            game_properties: self.game_properties,
+            creator_id: self.creator_id,
+            game_session_id: self.game_session_id,
+            idempotency_token: self.idempotency_token,
+            game_session_data: self.game_session_data,
+            location: self.location,
+        })
     }
 }

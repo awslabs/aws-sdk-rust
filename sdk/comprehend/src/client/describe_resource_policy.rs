@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::last_modified_time): <p>The time at which the policy was last modified.</p>
     ///   - [`policy_revision_id(Option<String>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::policy_revision_id): <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
     /// - On failure, responds with [`SdkError<DescribeResourcePolicyError>`](crate::operation::describe_resource_policy::DescribeResourcePolicyError)
-    pub fn describe_resource_policy(
-        &self,
-    ) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder
-    {
+    pub fn describe_resource_policy(&self) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder {
         crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -50,17 +50,14 @@ impl ListHealthEventsInput {
 }
 impl ListHealthEventsInput {
     /// Creates a new builder-style object to manufacture [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
-    pub fn builder() -> crate::operation::list_health_events::builders::ListHealthEventsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_health_events::builders::ListHealthEventsInputBuilder {
         crate::operation::list_health_events::builders::ListHealthEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHealthEventsInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -90,10 +87,7 @@ impl ListHealthEventsInputBuilder {
         self
     }
     /// <p>The time when a health event started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -107,10 +101,7 @@ impl ListHealthEventsInputBuilder {
         self
     }
     /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -152,10 +143,7 @@ impl ListHealthEventsInputBuilder {
         self
     }
     /// <p>The status of a health event.</p>
-    pub fn set_event_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthEventStatus>,
-    ) -> Self {
+    pub fn set_event_status(mut self, input: ::std::option::Option<crate::types::HealthEventStatus>) -> Self {
         self.event_status = input;
         self
     }
@@ -166,19 +154,14 @@ impl ListHealthEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_health_events::ListHealthEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_health_events::ListHealthEventsInput {
-                monitor_name: self.monitor_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-                event_status: self.event_status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_health_events::ListHealthEventsInput {
+            monitor_name: self.monitor_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+            event_status: self.event_status,
+        })
     }
 }

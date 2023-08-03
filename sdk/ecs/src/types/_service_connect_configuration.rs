@@ -65,14 +65,11 @@ impl ServiceConnectConfiguration {
 
 /// A builder for [`ServiceConnectConfiguration`](crate::types::ServiceConnectConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceConnectConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) services:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectService>>,
+    pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectService>>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
 }
 impl ServiceConnectConfigurationBuilder {
@@ -120,19 +117,14 @@ impl ServiceConnectConfigurationBuilder {
     /// <p>The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used by other Amazon ECS services to connect to this service. </p>
     /// <p>This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to other services within the namespace. An example of this would be a frontend application that accepts incoming requests from either a load balancer that's attached to the service or by other means.</p>
     /// <p>An object selects a port from the task definition, assigns a name for the Cloud Map service, and a list of aliases (endpoints) and ports for client applications to refer to this service.</p>
-    pub fn set_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectService>>,
-    ) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectService>>) -> Self {
         self.services = input;
         self
     }
     /// <p>The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used by other Amazon ECS services to connect to this service. </p>
     /// <p>This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to other services within the namespace. An example of this would be a frontend application that accepts incoming requests from either a load balancer that's attached to the service or by other means.</p>
     /// <p>An object selects a port from the task definition, assigns a name for the Cloud Map service, and a list of aliases (endpoints) and ports for client applications to refer to this service.</p>
-    pub fn get_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectService>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectService>> {
         &self.services
     }
     /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
@@ -157,10 +149,7 @@ impl ServiceConnectConfigurationBuilder {
     /// <li> <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li>
     /// <li> <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li>
     /// </ul>
-    pub fn set_log_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LogConfiguration>,
-    ) -> Self {
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::LogConfiguration>) -> Self {
         self.log_configuration = input;
         self
     }

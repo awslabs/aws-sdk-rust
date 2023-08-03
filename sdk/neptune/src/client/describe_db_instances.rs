@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_instances::DescribeDbInstancesOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     ///   - [`db_instances(Option<Vec<DbInstance>>)`](crate::operation::describe_db_instances::DescribeDbInstancesOutput::db_instances): <p> A list of <code>DBInstance</code> instances.</p>
     /// - On failure, responds with [`SdkError<DescribeDBInstancesError>`](crate::operation::describe_db_instances::DescribeDBInstancesError)
-    pub fn describe_db_instances(
-        &self,
-    ) -> crate::operation::describe_db_instances::builders::DescribeDBInstancesFluentBuilder {
-        crate::operation::describe_db_instances::builders::DescribeDBInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_db_instances(&self) -> crate::operation::describe_db_instances::builders::DescribeDBInstancesFluentBuilder {
+        crate::operation::describe_db_instances::builders::DescribeDBInstancesFluentBuilder::new(self.handle.clone())
     }
 }

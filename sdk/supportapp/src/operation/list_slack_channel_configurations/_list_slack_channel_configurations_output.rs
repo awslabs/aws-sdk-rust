@@ -8,8 +8,7 @@ pub struct ListSlackChannelConfigurationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The configurations for a Slack channel.</p>
     #[doc(hidden)]
-    pub slack_channel_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>>,
+    pub slack_channel_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListSlackChannelConfigurationsOutput {
@@ -18,9 +17,7 @@ impl ListSlackChannelConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The configurations for a Slack channel.</p>
-    pub fn slack_channel_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SlackChannelConfiguration]> {
+    pub fn slack_channel_configurations(&self) -> ::std::option::Option<&[crate::types::SlackChannelConfiguration]> {
         self.slack_channel_configurations.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSlackChannelConfigurationsOutput 
 }
 impl ListSlackChannelConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSlackChannelConfigurationsOutput`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsOutputBuilder {
         crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSlackChannelConfigurationsOutput`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSlackChannelConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) slack_channel_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>>,
+    pub(crate) slack_channel_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListSlackChannelConfigurationsOutputBuilder {
@@ -67,10 +61,7 @@ impl ListSlackChannelConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_slack_channel_configurations`](Self::set_slack_channel_configurations).
     ///
     /// <p>The configurations for a Slack channel.</p>
-    pub fn slack_channel_configurations(
-        mut self,
-        input: crate::types::SlackChannelConfiguration,
-    ) -> Self {
+    pub fn slack_channel_configurations(mut self, input: crate::types::SlackChannelConfiguration) -> Self {
         let mut v = self.slack_channel_configurations.unwrap_or_default();
         v.push(input);
         self.slack_channel_configurations = ::std::option::Option::Some(v);
@@ -85,9 +76,7 @@ impl ListSlackChannelConfigurationsOutputBuilder {
         self
     }
     /// <p>The configurations for a Slack channel.</p>
-    pub fn get_slack_channel_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>> {
+    pub fn get_slack_channel_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>> {
         &self.slack_channel_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,10 +89,7 @@ impl ListSlackChannelConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSlackChannelConfigurationsOutput`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput {
         crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput {
             next_token: self.next_token,
             slack_channel_configurations: self.slack_channel_configurations,

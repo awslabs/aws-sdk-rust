@@ -27,13 +27,10 @@ pub struct Job {
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>Servers participating in a specific Job.</p>
     #[doc(hidden)]
-    pub participating_servers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
+    pub participating_servers: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
     /// <p>Tags associated with specific Job.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Job {
     /// <p>Job ID.</p>
@@ -65,17 +62,11 @@ impl Job {
         self.status.as_ref()
     }
     /// <p>Servers participating in a specific Job.</p>
-    pub fn participating_servers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ParticipatingServer]> {
+    pub fn participating_servers(&self) -> ::std::option::Option<&[crate::types::ParticipatingServer]> {
         self.participating_servers.as_deref()
     }
     /// <p>Tags associated with specific Job.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -112,11 +103,8 @@ pub struct JobBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
-    pub(crate) participating_servers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) participating_servers: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl JobBuilder {
     /// <p>Job ID.</p>
@@ -167,10 +155,7 @@ impl JobBuilder {
         self
     }
     /// <p>Job initiated by field.</p>
-    pub fn set_initiated_by(
-        mut self,
-        input: ::std::option::Option<crate::types::InitiatedBy>,
-    ) -> Self {
+    pub fn set_initiated_by(mut self, input: ::std::option::Option<crate::types::InitiatedBy>) -> Self {
         self.initiated_by = input;
         self
     }
@@ -179,18 +164,12 @@ impl JobBuilder {
         &self.initiated_by
     }
     /// <p>Job creation time.</p>
-    pub fn creation_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Job creation time.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -199,18 +178,12 @@ impl JobBuilder {
         &self.creation_date_time
     }
     /// <p>Job end time.</p>
-    pub fn end_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn end_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Job end time.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -244,17 +217,12 @@ impl JobBuilder {
         self
     }
     /// <p>Servers participating in a specific Job.</p>
-    pub fn set_participating_servers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
-    ) -> Self {
+    pub fn set_participating_servers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>) -> Self {
         self.participating_servers = input;
         self
     }
     /// <p>Servers participating in a specific Job.</p>
-    pub fn get_participating_servers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>> {
+    pub fn get_participating_servers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>> {
         &self.participating_servers
     }
     /// Adds a key-value pair to `tags`.
@@ -262,32 +230,19 @@ impl JobBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags associated with specific Job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags associated with specific Job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags associated with specific Job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).

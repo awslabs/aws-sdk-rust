@@ -26,7 +26,7 @@ impl SetSubscriptionAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetSubscriptionAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_subscription_attributes::builders::SetSubscriptionAttributesInputBuilder,
+    inner: crate::operation::set_subscription_attributes::builders::SetSubscriptionAttributesInputBuilder,
 }
 impl SetSubscriptionAttributesFluentBuilder {
     /// Creates a new `SetSubscriptionAttributes`.
@@ -37,7 +37,7 @@ impl SetSubscriptionAttributesFluentBuilder {
         }
     }
     /// Access the SetSubscriptionAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::set_subscription_attributes::builders::SetSubscriptionAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::set_subscription_attributes::builders::SetSubscriptionAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SetSubscriptionAttributesFluentBuilder {
             crate::operation::set_subscription_attributes::SetSubscriptionAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_subscription_attributes::SetSubscriptionAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_subscription_attributes::SetSubscriptionAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SetSubscriptionAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SetSubscriptionAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_subscription_attributes::SetSubscriptionAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_subscription_attributes::SetSubscriptionAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_subscription_attributes::SetSubscriptionAttributesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SetSubscriptionAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_subscription_attributes::SetSubscriptionAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_subscription_attributes::SetSubscriptionAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_subscription_attributes::SetSubscriptionAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl SetSubscriptionAttributesFluentBuilder {
             crate::operation::set_subscription_attributes::SetSubscriptionAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_subscription_attributes::SetSubscriptionAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_subscription_attributes::SetSubscriptionAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the subscription to modify.</p>
-    pub fn subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_arn(input.into());
         self
     }
     /// <p>The ARN of the subscription to modify.</p>
-    pub fn set_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_arn(input);
         self
     }
@@ -161,10 +144,7 @@ impl SetSubscriptionAttributesFluentBuilder {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_name(input.into());
         self
     }
@@ -189,10 +169,7 @@ impl SetSubscriptionAttributesFluentBuilder {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_name(input);
         self
     }
@@ -221,18 +198,12 @@ impl SetSubscriptionAttributesFluentBuilder {
         self.inner.get_attribute_name()
     }
     /// <p>The new value for the attribute in JSON format.</p>
-    pub fn attribute_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_value(input.into());
         self
     }
     /// <p>The new value for the attribute in JSON format.</p>
-    pub fn set_attribute_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_value(input);
         self
     }

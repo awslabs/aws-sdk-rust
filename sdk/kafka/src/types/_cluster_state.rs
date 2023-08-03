@@ -44,13 +44,7 @@
 /// <p>The state of the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ClusterState {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for ClusterState {
             "MAINTENANCE" => ClusterState::Maintenance,
             "REBOOTING_BROKER" => ClusterState::RebootingBroker,
             "UPDATING" => ClusterState::Updating,
-            other => {
-                ClusterState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ClusterState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

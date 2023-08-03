@@ -36,9 +36,7 @@ impl CreateLfTagInput {
 
 /// A builder for [`CreateLfTagInput`](crate::operation::create_lf_tag::CreateLfTagInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLfTagInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl CreateLfTagInputBuilder {
         self
     }
     /// <p>A list of possible values an attribute can take.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values = input;
         self
     }
@@ -97,12 +92,7 @@ impl CreateLfTagInputBuilder {
         &self.tag_values
     }
     /// Consumes the builder and constructs a [`CreateLfTagInput`](crate::operation::create_lf_tag::CreateLfTagInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_lf_tag::CreateLfTagInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_lf_tag::CreateLfTagInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_lf_tag::CreateLfTagInput {
             catalog_id: self.catalog_id,
             tag_key: self.tag_key,

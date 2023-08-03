@@ -9,9 +9,7 @@ pub(crate) fn reflens_get_account_authorization_details_output_marker(
     ::std::option::Option::Some(input)
 }
 
-pub(crate) fn reflens_get_group_output_marker(
-    input: &crate::operation::get_group::GetGroupOutput,
-) -> ::std::option::Option<&::std::string::String> {
+pub(crate) fn reflens_get_group_output_marker(input: &crate::operation::get_group::GetGroupOutput) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.marker {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

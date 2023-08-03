@@ -44,9 +44,7 @@ impl SourceCode {
 
 /// A builder for [`SourceCode`](crate::types::SourceCode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceCodeBuilder {
     pub(crate) version_control: ::std::option::Option<crate::types::VersionControl>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl SourceCodeBuilder {
         self
     }
     /// <p> The type of repository to use for the source code. </p>
-    pub fn set_version_control(
-        mut self,
-        input: ::std::option::Option<crate::types::VersionControl>,
-    ) -> Self {
+    pub fn set_version_control(mut self, input: ::std::option::Option<crate::types::VersionControl>) -> Self {
         self.version_control = input;
         self
     }
@@ -72,18 +67,12 @@ impl SourceCodeBuilder {
         &self.version_control
     }
     /// <p> The branch of the source code. </p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The branch of the source code. </p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_version = input;
         self
     }

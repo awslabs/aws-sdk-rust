@@ -29,17 +29,14 @@ impl DescribeByoipCidrsInput {
 }
 impl DescribeByoipCidrsInput {
     /// Creates a new builder-style object to manufacture [`DescribeByoipCidrsInput`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsInputBuilder {
+    pub fn builder() -> crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsInputBuilder {
         crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeByoipCidrsInput`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeByoipCidrsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,11 @@ impl DescribeByoipCidrsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeByoipCidrsInput`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput {
-                dry_run: self.dry_run,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput {
+            dry_run: self.dry_run,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

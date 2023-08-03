@@ -23,34 +23,26 @@ impl DescribeInputDeviceThumbnailInput {
 }
 impl DescribeInputDeviceThumbnailInput {
     /// Creates a new builder-style object to manufacture [`DescribeInputDeviceThumbnailInput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput).
-    pub fn builder() -> crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailInputBuilder{
+    pub fn builder() -> crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailInputBuilder {
         crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInputDeviceThumbnailInput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInputDeviceThumbnailInputBuilder {
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) accept: ::std::option::Option<crate::types::AcceptHeader>,
 }
 impl DescribeInputDeviceThumbnailInputBuilder {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_device_id = input;
         self
     }
@@ -79,11 +71,9 @@ impl DescribeInputDeviceThumbnailInputBuilder {
         crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput {
-                input_device_id: self.input_device_id,
-                accept: self.accept,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput {
+            input_device_id: self.input_device_id,
+            accept: self.accept,
+        })
     }
 }

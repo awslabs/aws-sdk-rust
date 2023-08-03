@@ -22,16 +22,14 @@ impl DescribeAggregationAuthorizationsInput {
 }
 impl DescribeAggregationAuthorizationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAggregationAuthorizationsInput`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput).
-    pub fn builder() -> crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsInputBuilder {
         crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAggregationAuthorizationsInput`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAggregationAuthorizationsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DescribeAggregationAuthorizationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAggregationAuthorizationsInput`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput {
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }

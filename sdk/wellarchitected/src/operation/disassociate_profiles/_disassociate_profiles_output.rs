@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateProfilesOutput {
 }
 impl DisassociateProfilesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateProfilesOutput`](crate::operation::disassociate_profiles::DisassociateProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_profiles::builders::DisassociateProfilesOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_profiles::builders::DisassociateProfilesOutputBuilder {
         crate::operation::disassociate_profiles::builders::DisassociateProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateProfilesOutput`](crate::operation::disassociate_profiles::DisassociateProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateProfilesOutputBuilder {
     _request_id: Option<String>,
 }

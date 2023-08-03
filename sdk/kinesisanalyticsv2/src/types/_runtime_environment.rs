@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RuntimeEnvironment {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for RuntimeEnvironment {
             "ZEPPELIN-FLINK-1_0" => RuntimeEnvironment::ZeppelinFlink10,
             "ZEPPELIN-FLINK-2_0" => RuntimeEnvironment::ZeppelinFlink20,
             "ZEPPELIN-FLINK-3_0" => RuntimeEnvironment::ZeppelinFlink30,
-            other => RuntimeEnvironment::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RuntimeEnvironment::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

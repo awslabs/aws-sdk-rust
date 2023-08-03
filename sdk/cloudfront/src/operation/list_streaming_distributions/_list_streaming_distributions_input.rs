@@ -23,16 +23,14 @@ impl ListStreamingDistributionsInput {
 }
 impl ListStreamingDistributionsInput {
     /// Creates a new builder-style object to manufacture [`ListStreamingDistributionsInput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsInput).
-    pub fn builder() -> crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsInputBuilder{
+    pub fn builder() -> crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsInputBuilder {
         crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamingDistributionsInput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamingDistributionsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -73,11 +71,9 @@ impl ListStreamingDistributionsInputBuilder {
         crate::operation::list_streaming_distributions::ListStreamingDistributionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_streaming_distributions::ListStreamingDistributionsInput {
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_streaming_distributions::ListStreamingDistributionsInput {
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

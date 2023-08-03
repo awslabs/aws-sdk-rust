@@ -44,9 +44,7 @@ impl Principal {
 
 /// A builder for [`Principal`](crate::types::Principal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrincipalBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PrincipalType>,
@@ -88,10 +86,7 @@ impl PrincipalBuilder {
         self
     }
     /// <p>Whether to allow or deny document access to the principal.</p>
-    pub fn set_access(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadAccessType>,
-    ) -> Self {
+    pub fn set_access(mut self, input: ::std::option::Option<crate::types::ReadAccessType>) -> Self {
         self.access = input;
         self
     }
@@ -100,18 +95,12 @@ impl PrincipalBuilder {
         &self.access
     }
     /// <p>The identifier of the data source the principal should access documents from.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the data source the principal should access documents from.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }

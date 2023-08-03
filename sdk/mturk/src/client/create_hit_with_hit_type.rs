@@ -16,12 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateHitWithHitTypeOutput`](crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeOutput) with field(s):
     ///   - [`hit(Option<Hit>)`](crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeOutput::hit): <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     /// - On failure, responds with [`SdkError<CreateHITWithHITTypeError>`](crate::operation::create_hit_with_hit_type::CreateHITWithHITTypeError)
-    pub fn create_hit_with_hit_type(
-        &self,
-    ) -> crate::operation::create_hit_with_hit_type::builders::CreateHITWithHITTypeFluentBuilder
-    {
-        crate::operation::create_hit_with_hit_type::builders::CreateHITWithHITTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_hit_with_hit_type(&self) -> crate::operation::create_hit_with_hit_type::builders::CreateHITWithHITTypeFluentBuilder {
+        crate::operation::create_hit_with_hit_type::builders::CreateHITWithHITTypeFluentBuilder::new(self.handle.clone())
     }
 }

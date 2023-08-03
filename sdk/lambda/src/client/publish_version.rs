@@ -44,11 +44,7 @@ impl super::Client {
     ///   - [`snap_start(Option<SnapStartResponse>)`](crate::operation::publish_version::PublishVersionOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     ///   - [`runtime_version_config(Option<RuntimeVersionConfig>)`](crate::operation::publish_version::PublishVersionOutput::runtime_version_config): <p>The ARN of the runtime and any errors that occured.</p>
     /// - On failure, responds with [`SdkError<PublishVersionError>`](crate::operation::publish_version::PublishVersionError)
-    pub fn publish_version(
-        &self,
-    ) -> crate::operation::publish_version::builders::PublishVersionFluentBuilder {
-        crate::operation::publish_version::builders::PublishVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn publish_version(&self) -> crate::operation::publish_version::builders::PublishVersionFluentBuilder {
+        crate::operation::publish_version::builders::PublishVersionFluentBuilder::new(self.handle.clone())
     }
 }

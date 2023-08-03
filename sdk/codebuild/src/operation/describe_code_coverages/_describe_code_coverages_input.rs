@@ -85,18 +85,14 @@ impl DescribeCodeCoveragesInput {
 }
 impl DescribeCodeCoveragesInput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeCoveragesInput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesInputBuilder {
         crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCodeCoveragesInput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCodeCoveragesInputBuilder {
     pub(crate) report_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -155,10 +151,7 @@ impl DescribeCodeCoveragesInputBuilder {
         self
     }
     /// <p>Specifies if the results are sorted in ascending or descending order.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
@@ -200,10 +193,7 @@ impl DescribeCodeCoveragesInputBuilder {
     /// <p>The results are sorted by the percentage of lines that are covered.</p>
     /// </dd>
     /// </dl>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportCodeCoverageSortByType>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ReportCodeCoverageSortByType>) -> Self {
         self.sort_by = input;
         self
     }
@@ -222,9 +212,7 @@ impl DescribeCodeCoveragesInputBuilder {
     /// <p>The results are sorted by the percentage of lines that are covered.</p>
     /// </dd>
     /// </dl>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReportCodeCoverageSortByType> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ReportCodeCoverageSortByType> {
         &self.sort_by
     }
     /// <p>The minimum line coverage percentage to report.</p>
@@ -258,20 +246,16 @@ impl DescribeCodeCoveragesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCodeCoveragesInput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_code_coverages::DescribeCodeCoveragesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_code_coverages::DescribeCodeCoveragesInput {
-                report_arn: self.report_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                sort_order: self.sort_order,
-                sort_by: self.sort_by,
-                min_line_coverage_percentage: self.min_line_coverage_percentage,
-                max_line_coverage_percentage: self.max_line_coverage_percentage,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_code_coverages::DescribeCodeCoveragesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_code_coverages::DescribeCodeCoveragesInput {
+            report_arn: self.report_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            sort_order: self.sort_order,
+            sort_by: self.sort_by,
+            min_line_coverage_percentage: self.min_line_coverage_percentage,
+            max_line_coverage_percentage: self.max_line_coverage_percentage,
+        })
     }
 }

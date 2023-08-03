@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`disassociate_schedule(bool)`](crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleFluentBuilder::disassociate_schedule) / [`set_disassociate_schedule(Option<bool>)`](crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleFluentBuilder::set_disassociate_schedule): <p>A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.</p>
     /// - On success, responds with [`ModifyClusterSnapshotScheduleOutput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput)
     /// - On failure, responds with [`SdkError<ModifyClusterSnapshotScheduleError>`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError)
-    pub fn modify_cluster_snapshot_schedule(&self) -> crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleFluentBuilder{
+    pub fn modify_cluster_snapshot_schedule(
+        &self,
+    ) -> crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleFluentBuilder {
         crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleFluentBuilder::new(self.handle.clone())
     }
 }

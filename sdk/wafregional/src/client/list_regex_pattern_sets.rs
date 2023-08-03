@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput::next_marker): <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`regex_pattern_sets(Option<Vec<RegexPatternSetSummary>>)`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput::regex_pattern_sets): <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListRegexPatternSetsError>`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError)
-    pub fn list_regex_pattern_sets(
-        &self,
-    ) -> crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsFluentBuilder
-    {
-        crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_regex_pattern_sets(&self) -> crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsFluentBuilder {
+        crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsFluentBuilder::new(self.handle.clone())
     }
 }

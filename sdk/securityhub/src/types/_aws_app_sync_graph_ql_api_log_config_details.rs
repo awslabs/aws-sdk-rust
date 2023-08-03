@@ -37,9 +37,7 @@ impl AwsAppSyncGraphQlApiLogConfigDetails {
 
 /// A builder for [`AwsAppSyncGraphQlApiLogConfigDetails`](crate::types::AwsAppSyncGraphQlApiLogConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiLogConfigDetailsBuilder {
     pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) exclude_verbose_content: ::std::option::Option<bool>,
@@ -47,18 +45,12 @@ pub struct AwsAppSyncGraphQlApiLogConfigDetailsBuilder {
 }
 impl AwsAppSyncGraphQlApiLogConfigDetailsBuilder {
     /// <p> The Amazon Resource Name (ARN) of the service role that AppSync assumes to publish to CloudWatch Logs in your account. </p>
-    pub fn cloud_watch_logs_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_logs_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the service role that AppSync assumes to publish to CloudWatch Logs in your account. </p>
-    pub fn set_cloud_watch_logs_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = input;
         self
     }
@@ -81,18 +73,12 @@ impl AwsAppSyncGraphQlApiLogConfigDetailsBuilder {
         &self.exclude_verbose_content
     }
     /// <p> The field logging level. </p>
-    pub fn field_log_level(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn field_log_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_log_level = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The field logging level. </p>
-    pub fn set_field_log_level(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_field_log_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_log_level = input;
         self
     }

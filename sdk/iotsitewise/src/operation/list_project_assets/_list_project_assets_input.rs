@@ -31,17 +31,14 @@ impl ListProjectAssetsInput {
 }
 impl ListProjectAssetsInput {
     /// Creates a new builder-style object to manufacture [`ListProjectAssetsInput`](crate::operation::list_project_assets::ListProjectAssetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_project_assets::builders::ListProjectAssetsInputBuilder {
+    pub fn builder() -> crate::operation::list_project_assets::builders::ListProjectAssetsInputBuilder {
         crate::operation::list_project_assets::builders::ListProjectAssetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProjectAssetsInput`](crate::operation::list_project_assets::ListProjectAssetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectAssetsInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,16 +93,11 @@ impl ListProjectAssetsInputBuilder {
     /// Consumes the builder and constructs a [`ListProjectAssetsInput`](crate::operation::list_project_assets::ListProjectAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_project_assets::ListProjectAssetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_project_assets::ListProjectAssetsInput {
-                project_id: self.project_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_project_assets::ListProjectAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_project_assets::ListProjectAssetsInput {
+            project_id: self.project_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

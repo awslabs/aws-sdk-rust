@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateSubscriberNotificationOutput`](crate::operation::update_subscriber_notification::UpdateSubscriberNotificationOutput) with field(s):
     ///   - [`subscriber_endpoint(Option<String>)`](crate::operation::update_subscriber_notification::UpdateSubscriberNotificationOutput::subscriber_endpoint): <p>The subscriber endpoint to which exception messages are posted.</p>
     /// - On failure, responds with [`SdkError<UpdateSubscriberNotificationError>`](crate::operation::update_subscriber_notification::UpdateSubscriberNotificationError)
-    pub fn update_subscriber_notification(&self) -> crate::operation::update_subscriber_notification::builders::UpdateSubscriberNotificationFluentBuilder{
+    pub fn update_subscriber_notification(
+        &self,
+    ) -> crate::operation::update_subscriber_notification::builders::UpdateSubscriberNotificationFluentBuilder {
         crate::operation::update_subscriber_notification::builders::UpdateSubscriberNotificationFluentBuilder::new(self.handle.clone())
     }
 }

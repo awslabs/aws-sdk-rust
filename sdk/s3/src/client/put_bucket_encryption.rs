@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::put_bucket_encryption::builders::PutBucketEncryptionFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::put_bucket_encryption::builders::PutBucketEncryptionFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`PutBucketEncryptionOutput`](crate::operation::put_bucket_encryption::PutBucketEncryptionOutput)
     /// - On failure, responds with [`SdkError<PutBucketEncryptionError>`](crate::operation::put_bucket_encryption::PutBucketEncryptionError)
-    pub fn put_bucket_encryption(
-        &self,
-    ) -> crate::operation::put_bucket_encryption::builders::PutBucketEncryptionFluentBuilder {
-        crate::operation::put_bucket_encryption::builders::PutBucketEncryptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_bucket_encryption(&self) -> crate::operation::put_bucket_encryption::builders::PutBucketEncryptionFluentBuilder {
+        crate::operation::put_bucket_encryption::builders::PutBucketEncryptionFluentBuilder::new(self.handle.clone())
     }
 }

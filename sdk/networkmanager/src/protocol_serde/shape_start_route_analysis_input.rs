@@ -6,7 +6,10 @@ pub fn ser_start_route_analysis_input(
     if let Some(var_1) = &input.destination {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Destination").start_object();
-        crate::protocol_serde::shape_route_analysis_endpoint_options_specification::ser_route_analysis_endpoint_options_specification(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_route_analysis_endpoint_options_specification::ser_route_analysis_endpoint_options_specification(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.include_return_path {
@@ -15,7 +18,10 @@ pub fn ser_start_route_analysis_input(
     if let Some(var_4) = &input.source {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Source").start_object();
-        crate::protocol_serde::shape_route_analysis_endpoint_options_specification::ser_route_analysis_endpoint_options_specification(&mut object_5, var_4)?;
+        crate::protocol_serde::shape_route_analysis_endpoint_options_specification::ser_route_analysis_endpoint_options_specification(
+            &mut object_5,
+            var_4,
+        )?;
         object_5.finish();
     }
     if let Some(var_6) = &input.use_middleboxes {

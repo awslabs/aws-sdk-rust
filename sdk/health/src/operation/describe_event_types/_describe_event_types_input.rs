@@ -40,17 +40,14 @@ impl DescribeEventTypesInput {
 }
 impl DescribeEventTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventTypesInput`](crate::operation::describe_event_types::DescribeEventTypesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_types::builders::DescribeEventTypesInputBuilder {
+    pub fn builder() -> crate::operation::describe_event_types::builders::DescribeEventTypesInputBuilder {
         crate::operation::describe_event_types::builders::DescribeEventTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventTypesInput`](crate::operation::describe_event_types::DescribeEventTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventTypesInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EventTypeFilter>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
@@ -64,10 +61,7 @@ impl DescribeEventTypesInputBuilder {
         self
     }
     /// <p>Values to narrow the results returned.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EventTypeFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EventTypeFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -126,17 +120,12 @@ impl DescribeEventTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventTypesInput`](crate::operation::describe_event_types::DescribeEventTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_types::DescribeEventTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_event_types::DescribeEventTypesInput {
-                filter: self.filter,
-                locale: self.locale,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_event_types::DescribeEventTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_event_types::DescribeEventTypesInput {
+            filter: self.filter,
+            locale: self.locale,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

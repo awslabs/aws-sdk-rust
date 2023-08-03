@@ -9,20 +9,15 @@ pub struct InputIdentifier {
     pub iot_events_input_identifier: ::std::option::Option<crate::types::IotEventsInputIdentifier>,
     /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
     #[doc(hidden)]
-    pub iot_site_wise_input_identifier:
-        ::std::option::Option<crate::types::IotSiteWiseInputIdentifier>,
+    pub iot_site_wise_input_identifier: ::std::option::Option<crate::types::IotSiteWiseInputIdentifier>,
 }
 impl InputIdentifier {
     /// <p> The identifier of the input routed to AWS IoT Events. </p>
-    pub fn iot_events_input_identifier(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IotEventsInputIdentifier> {
+    pub fn iot_events_input_identifier(&self) -> ::std::option::Option<&crate::types::IotEventsInputIdentifier> {
         self.iot_events_input_identifier.as_ref()
     }
     /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
-    pub fn iot_site_wise_input_identifier(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IotSiteWiseInputIdentifier> {
+    pub fn iot_site_wise_input_identifier(&self) -> ::std::option::Option<&crate::types::IotSiteWiseInputIdentifier> {
         self.iot_site_wise_input_identifier.as_ref()
     }
 }
@@ -35,58 +30,38 @@ impl InputIdentifier {
 
 /// A builder for [`InputIdentifier`](crate::types::InputIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputIdentifierBuilder {
-    pub(crate) iot_events_input_identifier:
-        ::std::option::Option<crate::types::IotEventsInputIdentifier>,
-    pub(crate) iot_site_wise_input_identifier:
-        ::std::option::Option<crate::types::IotSiteWiseInputIdentifier>,
+    pub(crate) iot_events_input_identifier: ::std::option::Option<crate::types::IotEventsInputIdentifier>,
+    pub(crate) iot_site_wise_input_identifier: ::std::option::Option<crate::types::IotSiteWiseInputIdentifier>,
 }
 impl InputIdentifierBuilder {
     /// <p> The identifier of the input routed to AWS IoT Events. </p>
-    pub fn iot_events_input_identifier(
-        mut self,
-        input: crate::types::IotEventsInputIdentifier,
-    ) -> Self {
+    pub fn iot_events_input_identifier(mut self, input: crate::types::IotEventsInputIdentifier) -> Self {
         self.iot_events_input_identifier = ::std::option::Option::Some(input);
         self
     }
     /// <p> The identifier of the input routed to AWS IoT Events. </p>
-    pub fn set_iot_events_input_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::IotEventsInputIdentifier>,
-    ) -> Self {
+    pub fn set_iot_events_input_identifier(mut self, input: ::std::option::Option<crate::types::IotEventsInputIdentifier>) -> Self {
         self.iot_events_input_identifier = input;
         self
     }
     /// <p> The identifier of the input routed to AWS IoT Events. </p>
-    pub fn get_iot_events_input_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::IotEventsInputIdentifier> {
+    pub fn get_iot_events_input_identifier(&self) -> &::std::option::Option<crate::types::IotEventsInputIdentifier> {
         &self.iot_events_input_identifier
     }
     /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
-    pub fn iot_site_wise_input_identifier(
-        mut self,
-        input: crate::types::IotSiteWiseInputIdentifier,
-    ) -> Self {
+    pub fn iot_site_wise_input_identifier(mut self, input: crate::types::IotSiteWiseInputIdentifier) -> Self {
         self.iot_site_wise_input_identifier = ::std::option::Option::Some(input);
         self
     }
     /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
-    pub fn set_iot_site_wise_input_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::IotSiteWiseInputIdentifier>,
-    ) -> Self {
+    pub fn set_iot_site_wise_input_identifier(mut self, input: ::std::option::Option<crate::types::IotSiteWiseInputIdentifier>) -> Self {
         self.iot_site_wise_input_identifier = input;
         self
     }
     /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
-    pub fn get_iot_site_wise_input_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::IotSiteWiseInputIdentifier> {
+    pub fn get_iot_site_wise_input_identifier(&self) -> &::std::option::Option<crate::types::IotSiteWiseInputIdentifier> {
         &self.iot_site_wise_input_identifier
     }
     /// Consumes the builder and constructs a [`InputIdentifier`](crate::types::InputIdentifier).

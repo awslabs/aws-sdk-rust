@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DetectStackResourceDriftOutput {
 }
 impl DetectStackResourceDriftOutput {
     /// Creates a new builder-style object to manufacture [`DetectStackResourceDriftOutput`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput).
-    pub fn builder() -> crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftOutputBuilder{
+    pub fn builder() -> crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftOutputBuilder {
         crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetectStackResourceDriftOutput`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectStackResourceDriftOutputBuilder {
     pub(crate) stack_resource_drift: ::std::option::Option<crate::types::StackResourceDrift>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DetectStackResourceDriftOutputBuilder {
         self
     }
     /// <p>Information about whether the resource's actual configuration has drifted from its expected template configuration, including actual and expected property values and any differences detected.</p>
-    pub fn set_stack_resource_drift(
-        mut self,
-        input: ::std::option::Option<crate::types::StackResourceDrift>,
-    ) -> Self {
+    pub fn set_stack_resource_drift(mut self, input: ::std::option::Option<crate::types::StackResourceDrift>) -> Self {
         self.stack_resource_drift = input;
         self
     }
     /// <p>Information about whether the resource's actual configuration has drifted from its expected template configuration, including actual and expected property values and any differences detected.</p>
-    pub fn get_stack_resource_drift(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackResourceDrift> {
+    pub fn get_stack_resource_drift(&self) -> &::std::option::Option<crate::types::StackResourceDrift> {
         &self.stack_resource_drift
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl DetectStackResourceDriftOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DetectStackResourceDriftOutput`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput {
+    pub fn build(self) -> crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput {
         crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput {
             stack_resource_drift: self.stack_resource_drift,
             _request_id: self._request_id,

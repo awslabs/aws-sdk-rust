@@ -26,7 +26,7 @@ impl ListFileSystemAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFileSystemAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder,
+    inner: crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder,
 }
 impl ListFileSystemAssociationsFluentBuilder {
     /// Creates a new `ListFileSystemAssociations`.
@@ -37,7 +37,7 @@ impl ListFileSystemAssociationsFluentBuilder {
         }
     }
     /// Access the ListFileSystemAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListFileSystemAssociationsFluentBuilder {
             crate::operation::list_file_system_associations::ListFileSystemAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_file_system_associations::ListFileSystemAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_file_system_associations::ListFileSystemAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListFileSystemAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListFileSystemAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_file_system_associations::ListFileSystemAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_file_system_associations::ListFileSystemAssociationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListFileSystemAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_file_system_associations::ListFileSystemAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_file_system_associations::ListFileSystemAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListFileSystemAssociationsFluentBuilder {
             crate::operation::list_file_system_associations::ListFileSystemAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_file_system_associations::ListFileSystemAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_file_system_associations::ListFileSystemAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_file_system_associations::paginator::ListFileSystemAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_file_system_associations::paginator::ListFileSystemAssociationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_file_system_associations::paginator::ListFileSystemAssociationsPaginator {
         crate::operation::list_file_system_associations::paginator::ListFileSystemAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>

@@ -15,20 +15,16 @@ impl BatchUpdateVehicleInput {
 }
 impl BatchUpdateVehicleInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateVehicleInput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleInput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleInputBuilder {
+    pub fn builder() -> crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleInputBuilder {
         crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateVehicleInput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateVehicleInputBuilder {
-    pub(crate) vehicles:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>,
+    pub(crate) vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>,
 }
 impl BatchUpdateVehicleInputBuilder {
     /// Appends an item to `vehicles`.
@@ -43,30 +39,18 @@ impl BatchUpdateVehicleInputBuilder {
         self
     }
     /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub fn set_vehicles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>,
-    ) -> Self {
+    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>) -> Self {
         self.vehicles = input;
         self
     }
     /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub fn get_vehicles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>> {
+    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>> {
         &self.vehicles
     }
     /// Consumes the builder and constructs a [`BatchUpdateVehicleInput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_vehicle::BatchUpdateVehicleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_update_vehicle::BatchUpdateVehicleInput {
-                vehicles: self.vehicles,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_update_vehicle::BatchUpdateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_update_vehicle::BatchUpdateVehicleInput { vehicles: self.vehicles })
     }
 }

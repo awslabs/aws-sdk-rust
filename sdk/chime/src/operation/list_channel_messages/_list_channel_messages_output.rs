@@ -11,8 +11,7 @@ pub struct ListChannelMessagesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The information about, and content of, each requested message.</p>
     #[doc(hidden)]
-    pub channel_messages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelMessageSummary>>,
+    pub channel_messages: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMessageSummary>>,
     _request_id: Option<String>,
 }
 impl ListChannelMessagesOutput {
@@ -25,9 +24,7 @@ impl ListChannelMessagesOutput {
         self.next_token.as_deref()
     }
     /// <p>The information about, and content of, each requested message.</p>
-    pub fn channel_messages(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChannelMessageSummary]> {
+    pub fn channel_messages(&self) -> ::std::option::Option<&[crate::types::ChannelMessageSummary]> {
         self.channel_messages.as_deref()
     }
 }
@@ -48,10 +45,8 @@ impl ::aws_http::request_id::RequestId for ListChannelMessagesOutput {
 }
 impl ListChannelMessagesOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelMessagesOutput`](crate::operation::list_channel_messages::ListChannelMessagesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_channel_messages::builders::ListChannelMessagesOutputBuilder {
-        crate::operation::list_channel_messages::builders::ListChannelMessagesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_channel_messages::builders::ListChannelMessagesOutputBuilder {
+        crate::operation::list_channel_messages::builders::ListChannelMessagesOutputBuilder::default()
     }
 }
 
@@ -61,8 +56,7 @@ impl ListChannelMessagesOutput {
 pub struct ListChannelMessagesOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) channel_messages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelMessageSummary>>,
+    pub(crate) channel_messages: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMessageSummary>>,
     _request_id: Option<String>,
 }
 impl ListChannelMessagesOutputBuilder {
@@ -106,17 +100,12 @@ impl ListChannelMessagesOutputBuilder {
         self
     }
     /// <p>The information about, and content of, each requested message.</p>
-    pub fn set_channel_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMessageSummary>>,
-    ) -> Self {
+    pub fn set_channel_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMessageSummary>>) -> Self {
         self.channel_messages = input;
         self
     }
     /// <p>The information about, and content of, each requested message.</p>
-    pub fn get_channel_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelMessageSummary>> {
+    pub fn get_channel_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelMessageSummary>> {
         &self.channel_messages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

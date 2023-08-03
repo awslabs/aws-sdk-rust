@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateVpcWithHostedZoneOutput`](crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput) with field(s):
     ///   - [`change_info(Option<ChangeInfo>)`](crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput::change_info): <p>A complex type that describes the changes made to your hosted zone.</p>
     /// - On failure, responds with [`SdkError<AssociateVPCWithHostedZoneError>`](crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError)
-    pub fn associate_vpc_with_hosted_zone(&self) -> crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVPCWithHostedZoneFluentBuilder{
+    pub fn associate_vpc_with_hosted_zone(
+        &self,
+    ) -> crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVPCWithHostedZoneFluentBuilder {
         crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVPCWithHostedZoneFluentBuilder::new(self.handle.clone())
     }
 }

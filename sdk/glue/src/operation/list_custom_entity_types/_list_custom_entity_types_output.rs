@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCustomEntityTypesOutput {
 }
 impl ListCustomEntityTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomEntityTypesOutput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesOutputBuilder {
         crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomEntityTypesOutput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomEntityTypesOutputBuilder {
-    pub(crate) custom_entity_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>,
+    pub(crate) custom_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListCustomEntityTypesOutputBuilder {
         self
     }
     /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
-    pub fn set_custom_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>,
-    ) -> Self {
+    pub fn set_custom_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>) -> Self {
         self.custom_entity_types = input;
         self
     }
     /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
-    pub fn get_custom_entity_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>> {
+    pub fn get_custom_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>> {
         &self.custom_entity_types
     }
     /// <p>A pagination token, if more results are available.</p>

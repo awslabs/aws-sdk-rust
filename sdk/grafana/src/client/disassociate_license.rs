@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateLicenseOutput`](crate::operation::disassociate_license::DisassociateLicenseOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::operation::disassociate_license::DisassociateLicenseOutput::workspace): <p>A structure containing information about the workspace.</p>
     /// - On failure, responds with [`SdkError<DisassociateLicenseError>`](crate::operation::disassociate_license::DisassociateLicenseError)
-    pub fn disassociate_license(
-        &self,
-    ) -> crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder {
-        crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_license(&self) -> crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder {
+        crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`vocabulary_id(impl ::std::convert::Into<String>)`](crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyFluentBuilder::vocabulary_id) / [`set_vocabulary_id(Option<String>)`](crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyFluentBuilder::set_vocabulary_id): <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
     /// - On success, responds with [`AssociateDefaultVocabularyOutput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput)
     /// - On failure, responds with [`SdkError<AssociateDefaultVocabularyError>`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError)
-    pub fn associate_default_vocabulary(&self) -> crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyFluentBuilder{
+    pub fn associate_default_vocabulary(&self) -> crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyFluentBuilder {
         crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

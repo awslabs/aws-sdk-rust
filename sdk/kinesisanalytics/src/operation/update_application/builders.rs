@@ -10,10 +10,7 @@ impl UpdateApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_application();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl UpdateApplicationFluentBuilder {
         }
     }
     /// Access the UpdateApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl UpdateApplicationFluentBuilder {
             crate::operation::update_application::UpdateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl UpdateApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl UpdateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl UpdateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +107,17 @@ impl UpdateApplicationFluentBuilder {
             crate::operation::update_application::UpdateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -167,17 +145,12 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>Describes application updates.</p>
-    pub fn set_application_update(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationUpdate>,
-    ) -> Self {
+    pub fn set_application_update(mut self, input: ::std::option::Option<crate::types::ApplicationUpdate>) -> Self {
         self.inner = self.inner.set_application_update(input);
         self
     }
     /// <p>Describes application updates.</p>
-    pub fn get_application_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationUpdate> {
+    pub fn get_application_update(&self) -> &::std::option::Option<crate::types::ApplicationUpdate> {
         self.inner.get_application_update()
     }
 }

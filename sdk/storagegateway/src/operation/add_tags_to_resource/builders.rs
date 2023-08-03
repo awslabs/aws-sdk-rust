@@ -10,10 +10,7 @@ impl AddTagsToResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_tags_to_resource();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl AddTagsToResourceFluentBuilder {
         }
     }
     /// Access the AddTagsToResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl AddTagsToResourceFluentBuilder {
             crate::operation::add_tags_to_resource::AddTagsToResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl AddTagsToResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl AddTagsToResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl AddTagsToResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl AddTagsToResourceFluentBuilder {
             crate::operation::add_tags_to_resource::AddTagsToResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +142,7 @@ impl AddTagsToResourceFluentBuilder {
     /// <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

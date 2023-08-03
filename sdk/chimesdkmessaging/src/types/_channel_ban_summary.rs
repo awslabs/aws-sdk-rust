@@ -23,9 +23,7 @@ impl ChannelBanSummary {
 
 /// A builder for [`ChannelBanSummary`](crate::types::ChannelBanSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelBanSummaryBuilder {
     pub(crate) member: ::std::option::Option<crate::types::Identity>,
 }
@@ -46,8 +44,6 @@ impl ChannelBanSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`ChannelBanSummary`](crate::types::ChannelBanSummary).
     pub fn build(self) -> crate::types::ChannelBanSummary {
-        crate::types::ChannelBanSummary {
-            member: self.member,
-        }
+        crate::types::ChannelBanSummary { member: self.member }
     }
 }

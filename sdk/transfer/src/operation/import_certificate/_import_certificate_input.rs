@@ -90,8 +90,7 @@ impl ::std::fmt::Debug for ImportCertificateInput {
 }
 impl ImportCertificateInput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
-    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateInputBuilder {
         crate::operation::import_certificate::builders::ImportCertificateInputBuilder::default()
     }
 }
@@ -116,10 +115,7 @@ impl ImportCertificateInputBuilder {
         self
     }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
-    pub fn set_usage(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateUsageType>,
-    ) -> Self {
+    pub fn set_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsageType>) -> Self {
         self.usage = input;
         self
     }
@@ -151,18 +147,12 @@ impl ImportCertificateInputBuilder {
         &self.certificate
     }
     /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
-    pub fn certificate_chain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
-    pub fn set_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_chain = input;
         self
     }
@@ -199,10 +189,7 @@ impl ImportCertificateInputBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn set_active_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_active_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.active_date = input;
         self
     }
@@ -216,10 +203,7 @@ impl ImportCertificateInputBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn set_inactive_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_inactive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inactive_date = input;
         self
     }
@@ -253,10 +237,7 @@ impl ImportCertificateInputBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -267,22 +248,17 @@ impl ImportCertificateInputBuilder {
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_certificate::ImportCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_certificate::ImportCertificateInput {
-                usage: self.usage,
-                certificate: self.certificate,
-                certificate_chain: self.certificate_chain,
-                private_key: self.private_key,
-                active_date: self.active_date,
-                inactive_date: self.inactive_date,
-                description: self.description,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::import_certificate::ImportCertificateInput {
+            usage: self.usage,
+            certificate: self.certificate,
+            certificate_chain: self.certificate_chain,
+            private_key: self.private_key,
+            active_date: self.active_date,
+            inactive_date: self.inactive_date,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for ImportCertificateInputBuilder {

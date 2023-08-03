@@ -37,9 +37,7 @@ impl BatchStopJobRunError {
 
 /// A builder for [`BatchStopJobRunError`](crate::types::BatchStopJobRunError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStopJobRunErrorBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl BatchStopJobRunErrorBuilder {
         self
     }
     /// <p>Specifies details about the error that was encountered.</p>
-    pub fn set_error_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorDetail>,
-    ) -> Self {
+    pub fn set_error_detail(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
         self.error_detail = input;
         self
     }

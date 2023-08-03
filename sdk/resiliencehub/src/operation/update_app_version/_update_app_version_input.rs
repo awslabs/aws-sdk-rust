@@ -12,9 +12,7 @@ pub struct UpdateAppVersionInput {
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note>
     #[doc(hidden)]
-    pub additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl UpdateAppVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
@@ -28,30 +26,23 @@ impl UpdateAppVersionInput {
     /// </note>
     pub fn additional_info(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.additional_info.as_ref()
     }
 }
 impl UpdateAppVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppVersionInput`](crate::operation::update_app_version::UpdateAppVersionInput).
-    pub fn builder() -> crate::operation::update_app_version::builders::UpdateAppVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_app_version::builders::UpdateAppVersionInputBuilder {
         crate::operation::update_app_version::builders::UpdateAppVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAppVersionInput`](crate::operation::update_app_version::UpdateAppVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAppVersionInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl UpdateAppVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
@@ -77,11 +68,7 @@ impl UpdateAppVersionInputBuilder {
     /// <p>Key: <code>"failover-regions"</code> </p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note>
-    pub fn additional_info(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.additional_info = ::std::option::Option::Some(hash_map);
@@ -94,12 +81,7 @@ impl UpdateAppVersionInputBuilder {
     /// </note>
     pub fn set_additional_info(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.additional_info = input;
         self
@@ -111,23 +93,16 @@ impl UpdateAppVersionInputBuilder {
     /// </note>
     pub fn get_additional_info(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.additional_info
     }
     /// Consumes the builder and constructs a [`UpdateAppVersionInput`](crate::operation::update_app_version::UpdateAppVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app_version::UpdateAppVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_app_version::UpdateAppVersionInput {
-                app_arn: self.app_arn,
-                additional_info: self.additional_info,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_app_version::UpdateAppVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_app_version::UpdateAppVersionInput {
+            app_arn: self.app_arn,
+            additional_info: self.additional_info,
+        })
     }
 }

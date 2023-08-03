@@ -7,9 +7,7 @@ pub fn ser_list_channels_input(
         object.key("filterByName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.filter_by_recording_configuration_arn {
-        object
-            .key("filterByRecordingConfigurationArn")
-            .string(var_2.as_str());
+        object.key("filterByRecordingConfigurationArn").string(var_2.as_str());
     }
     if input.max_results != 0 {
         object.key("maxResults").number(

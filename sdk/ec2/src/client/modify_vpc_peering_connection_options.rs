@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`accepter_peering_connection_options(Option<PeeringConnectionOptions>)`](crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsOutput::accepter_peering_connection_options): <p>Information about the VPC peering connection options for the accepter VPC.</p>
     ///   - [`requester_peering_connection_options(Option<PeeringConnectionOptions>)`](crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsOutput::requester_peering_connection_options): <p>Information about the VPC peering connection options for the requester VPC.</p>
     /// - On failure, responds with [`SdkError<ModifyVpcPeeringConnectionOptionsError>`](crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsError)
-    pub fn modify_vpc_peering_connection_options(&self) -> crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsFluentBuilder{
+    pub fn modify_vpc_peering_connection_options(
+        &self,
+    ) -> crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsFluentBuilder {
         crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMetricAttributionOutput`](crate::operation::create_metric_attribution::CreateMetricAttributionOutput) with field(s):
     ///   - [`metric_attribution_arn(Option<String>)`](crate::operation::create_metric_attribution::CreateMetricAttributionOutput::metric_attribution_arn): <p>The Amazon Resource Name (ARN) for the new metric attribution.</p>
     /// - On failure, responds with [`SdkError<CreateMetricAttributionError>`](crate::operation::create_metric_attribution::CreateMetricAttributionError)
-    pub fn create_metric_attribution(
-        &self,
-    ) -> crate::operation::create_metric_attribution::builders::CreateMetricAttributionFluentBuilder
-    {
+    pub fn create_metric_attribution(&self) -> crate::operation::create_metric_attribution::builders::CreateMetricAttributionFluentBuilder {
         crate::operation::create_metric_attribution::builders::CreateMetricAttributionFluentBuilder::new(self.handle.clone())
     }
 }

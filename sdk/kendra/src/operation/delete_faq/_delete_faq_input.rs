@@ -29,9 +29,7 @@ impl DeleteFaqInput {
 
 /// A builder for [`DeleteFaqInput`](crate::operation::delete_faq::DeleteFaqInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFaqInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl DeleteFaqInputBuilder {
         &self.index_id
     }
     /// Consumes the builder and constructs a [`DeleteFaqInput`](crate::operation::delete_faq::DeleteFaqInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_faq::DeleteFaqInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_faq::DeleteFaqInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_faq::DeleteFaqInput {
             id: self.id,
             index_id: self.index_id,

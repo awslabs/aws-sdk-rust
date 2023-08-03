@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateLogPatternOutput {
 }
 impl UpdateLogPatternOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLogPatternOutput`](crate::operation::update_log_pattern::UpdateLogPatternOutput).
-    pub fn builder() -> crate::operation::update_log_pattern::builders::UpdateLogPatternOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_log_pattern::builders::UpdateLogPatternOutputBuilder {
         crate::operation::update_log_pattern::builders::UpdateLogPatternOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLogPatternOutput`](crate::operation::update_log_pattern::UpdateLogPatternOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLogPatternOutputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_pattern: ::std::option::Option<crate::types::LogPattern>,
@@ -46,18 +43,12 @@ pub struct UpdateLogPatternOutputBuilder {
 }
 impl UpdateLogPatternOutputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -71,10 +62,7 @@ impl UpdateLogPatternOutputBuilder {
         self
     }
     /// <p>The successfully created log pattern.</p>
-    pub fn set_log_pattern(
-        mut self,
-        input: ::std::option::Option<crate::types::LogPattern>,
-    ) -> Self {
+    pub fn set_log_pattern(mut self, input: ::std::option::Option<crate::types::LogPattern>) -> Self {
         self.log_pattern = input;
         self
     }

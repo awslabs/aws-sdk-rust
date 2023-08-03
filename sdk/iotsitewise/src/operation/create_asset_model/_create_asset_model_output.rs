@@ -37,17 +37,14 @@ impl ::aws_http::request_id::RequestId for CreateAssetModelOutput {
 }
 impl CreateAssetModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssetModelOutput`](crate::operation::create_asset_model::CreateAssetModelOutput).
-    pub fn builder() -> crate::operation::create_asset_model::builders::CreateAssetModelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_asset_model::builders::CreateAssetModelOutputBuilder {
         crate::operation::create_asset_model::builders::CreateAssetModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAssetModelOutput`](crate::operation::create_asset_model::CreateAssetModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssetModelOutputBuilder {
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_arn: ::std::option::Option<::std::string::String>,
@@ -56,18 +53,12 @@ pub struct CreateAssetModelOutputBuilder {
 }
 impl CreateAssetModelOutputBuilder {
     /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
@@ -77,19 +68,13 @@ impl CreateAssetModelOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-    pub fn asset_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-    pub fn set_asset_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_arn = input;
         self
     }
@@ -104,10 +89,7 @@ impl CreateAssetModelOutputBuilder {
         self
     }
     /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn set_asset_model_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetModelStatus>,
-    ) -> Self {
+    pub fn set_asset_model_status(mut self, input: ::std::option::Option<crate::types::AssetModelStatus>) -> Self {
         self.asset_model_status = input;
         self
     }

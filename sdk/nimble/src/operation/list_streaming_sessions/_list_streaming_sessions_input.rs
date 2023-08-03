@@ -43,18 +43,14 @@ impl ListStreamingSessionsInput {
 }
 impl ListStreamingSessionsInput {
     /// Creates a new builder-style object to manufacture [`ListStreamingSessionsInput`](crate::operation::list_streaming_sessions::ListStreamingSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder {
         crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamingSessionsInput`](crate::operation::list_streaming_sessions::ListStreamingSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamingSessionsInputBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -136,18 +132,14 @@ impl ListStreamingSessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListStreamingSessionsInput`](crate::operation::list_streaming_sessions::ListStreamingSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_streaming_sessions::ListStreamingSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_streaming_sessions::ListStreamingSessionsInput {
-                created_by: self.created_by,
-                next_token: self.next_token,
-                owned_by: self.owned_by,
-                session_ids: self.session_ids,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_streaming_sessions::ListStreamingSessionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_streaming_sessions::ListStreamingSessionsInput {
+            created_by: self.created_by,
+            next_token: self.next_token,
+            owned_by: self.owned_by,
+            session_ids: self.session_ids,
+            studio_id: self.studio_id,
+        })
     }
 }

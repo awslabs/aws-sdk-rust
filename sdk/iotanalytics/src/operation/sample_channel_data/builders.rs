@@ -10,10 +10,7 @@ impl SampleChannelDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::sample_channel_data::SampleChannelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sample_channel_data::SampleChannelDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sample_channel_data::SampleChannelDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.sample_channel_data();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SampleChannelDataFluentBuilder {
         }
     }
     /// Access the SampleChannelData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::sample_channel_data::builders::SampleChannelDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::sample_channel_data::builders::SampleChannelDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SampleChannelDataFluentBuilder {
             crate::operation::sample_channel_data::SampleChannelData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sample_channel_data::SampleChannelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sample_channel_data::SampleChannelDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SampleChannelDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SampleChannelDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::sample_channel_data::SampleChannelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sample_channel_data::SampleChannelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sample_channel_data::SampleChannelDataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SampleChannelDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::sample_channel_data::SampleChannelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sample_channel_data::SampleChannelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sample_channel_data::SampleChannelDataError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl SampleChannelDataFluentBuilder {
             crate::operation::sample_channel_data::SampleChannelData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sample_channel_data::SampleChannelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sample_channel_data::SampleChannelDataError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl SampleChannelDataFluentBuilder {
         self
     }
     /// <p>The start of the time window from which sample messages are retrieved.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -173,10 +154,7 @@ impl SampleChannelDataFluentBuilder {
         self
     }
     /// <p>The end of the time window from which sample messages are retrieved.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

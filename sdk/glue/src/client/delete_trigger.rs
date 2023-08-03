@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTriggerOutput`](crate::operation::delete_trigger::DeleteTriggerOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_trigger::DeleteTriggerOutput::name): <p>The name of the trigger that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTriggerError>`](crate::operation::delete_trigger::DeleteTriggerError)
-    pub fn delete_trigger(
-        &self,
-    ) -> crate::operation::delete_trigger::builders::DeleteTriggerFluentBuilder {
-        crate::operation::delete_trigger::builders::DeleteTriggerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_trigger(&self) -> crate::operation::delete_trigger::builders::DeleteTriggerFluentBuilder {
+        crate::operation::delete_trigger::builders::DeleteTriggerFluentBuilder::new(self.handle.clone())
     }
 }

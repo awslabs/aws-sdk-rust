@@ -15,10 +15,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyReplicationConfigOutput`](crate::operation::modify_replication_config::ModifyReplicationConfigOutput) with field(s):
     ///   - [`replication_config(Option<ReplicationConfig>)`](crate::operation::modify_replication_config::ModifyReplicationConfigOutput::replication_config): <p>Information about the serverless replication config that was modified.</p>
     /// - On failure, responds with [`SdkError<ModifyReplicationConfigError>`](crate::operation::modify_replication_config::ModifyReplicationConfigError)
-    pub fn modify_replication_config(
-        &self,
-    ) -> crate::operation::modify_replication_config::builders::ModifyReplicationConfigFluentBuilder
-    {
+    pub fn modify_replication_config(&self) -> crate::operation::modify_replication_config::builders::ModifyReplicationConfigFluentBuilder {
         crate::operation::modify_replication_config::builders::ModifyReplicationConfigFluentBuilder::new(self.handle.clone())
     }
 }

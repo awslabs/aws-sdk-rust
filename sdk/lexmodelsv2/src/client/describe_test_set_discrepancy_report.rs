@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`test_set_discrepancy_raw_output_url(Option<String>)`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput::test_set_discrepancy_raw_output_url): <p>Pre-signed Amazon S3 URL to download the test set discrepancy report.</p>
     ///   - [`failure_reasons(Option<Vec<String>>)`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput::failure_reasons): <p>The failure report for the test set discrepancy report generation action.</p>
     /// - On failure, responds with [`SdkError<DescribeTestSetDiscrepancyReportError>`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError)
-    pub fn describe_test_set_discrepancy_report(&self) -> crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportFluentBuilder{
+    pub fn describe_test_set_discrepancy_report(
+        &self,
+    ) -> crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportFluentBuilder {
         crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportFluentBuilder::new(self.handle.clone())
     }
 }

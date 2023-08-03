@@ -49,21 +49,18 @@ impl ::aws_http::request_id::RequestId for UpdateTemplatePermissionsOutput {
 }
 impl UpdateTemplatePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplatePermissionsOutput`](crate::operation::update_template_permissions::UpdateTemplatePermissionsOutput).
-    pub fn builder() -> crate::operation::update_template_permissions::builders::UpdateTemplatePermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::update_template_permissions::builders::UpdateTemplatePermissionsOutputBuilder {
         crate::operation::update_template_permissions::builders::UpdateTemplatePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTemplatePermissionsOutput`](crate::operation::update_template_permissions::UpdateTemplatePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTemplatePermissionsOutputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -109,17 +106,12 @@ impl UpdateTemplatePermissionsOutputBuilder {
         self
     }
     /// <p>A list of resource permissions to be set on the template.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>A list of resource permissions to be set on the template.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -160,9 +152,7 @@ impl UpdateTemplatePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTemplatePermissionsOutput`](crate::operation::update_template_permissions::UpdateTemplatePermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_template_permissions::UpdateTemplatePermissionsOutput {
+    pub fn build(self) -> crate::operation::update_template_permissions::UpdateTemplatePermissionsOutput {
         crate::operation::update_template_permissions::UpdateTemplatePermissionsOutput {
             template_id: self.template_id,
             template_arn: self.template_arn,

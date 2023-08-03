@@ -29,17 +29,14 @@ impl PostCommentReplyInput {
 }
 impl PostCommentReplyInput {
     /// Creates a new builder-style object to manufacture [`PostCommentReplyInput`](crate::operation::post_comment_reply::PostCommentReplyInput).
-    pub fn builder() -> crate::operation::post_comment_reply::builders::PostCommentReplyInputBuilder
-    {
+    pub fn builder() -> crate::operation::post_comment_reply::builders::PostCommentReplyInputBuilder {
         crate::operation::post_comment_reply::builders::PostCommentReplyInputBuilder::default()
     }
 }
 
 /// A builder for [`PostCommentReplyInput`](crate::operation::post_comment_reply::PostCommentReplyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostCommentReplyInputBuilder {
     pub(crate) in_reply_to: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl PostCommentReplyInputBuilder {
         &self.in_reply_to
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -97,16 +88,11 @@ impl PostCommentReplyInputBuilder {
     /// Consumes the builder and constructs a [`PostCommentReplyInput`](crate::operation::post_comment_reply::PostCommentReplyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::post_comment_reply::PostCommentReplyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::post_comment_reply::PostCommentReplyInput {
-                in_reply_to: self.in_reply_to,
-                client_request_token: self.client_request_token,
-                content: self.content,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::post_comment_reply::PostCommentReplyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::post_comment_reply::PostCommentReplyInput {
+            in_reply_to: self.in_reply_to,
+            client_request_token: self.client_request_token,
+            content: self.content,
+        })
     }
 }

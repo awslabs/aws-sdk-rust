@@ -26,7 +26,7 @@ impl StartNextPendingJobExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartNextPendingJobExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionInputBuilder,
+    inner: crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionInputBuilder,
 }
 impl StartNextPendingJobExecutionFluentBuilder {
     /// Creates a new `StartNextPendingJobExecution`.
@@ -37,7 +37,7 @@ impl StartNextPendingJobExecutionFluentBuilder {
         }
     }
     /// Access the StartNextPendingJobExecution as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartNextPendingJobExecutionFluentBuilder {
             crate::operation::start_next_pending_job_execution::StartNextPendingJobExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartNextPendingJobExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartNextPendingJobExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartNextPendingJobExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartNextPendingJobExecutionFluentBuilder {
             crate::operation::start_next_pending_job_execution::StartNextPendingJobExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionError>,
     > {
         self.customize_middleware().await
     }
@@ -150,19 +139,13 @@ impl StartNextPendingJobExecutionFluentBuilder {
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn set_status_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_status_details(input);
         self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    pub fn get_status_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_status_details()
     }
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>

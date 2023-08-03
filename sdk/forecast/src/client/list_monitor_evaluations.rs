@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     ///   - [`predictor_monitor_evaluations(Option<Vec<PredictorMonitorEvaluation>>)`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput::predictor_monitor_evaluations): <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>  <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
     /// - On failure, responds with [`SdkError<ListMonitorEvaluationsError>`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsError)
-    pub fn list_monitor_evaluations(
-        &self,
-    ) -> crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsFluentBuilder
-    {
+    pub fn list_monitor_evaluations(&self) -> crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsFluentBuilder {
         crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`return_value(Option<bool>)`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput::return_value): <p>A boolean value that indicates whether the operation was successful.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     /// - On failure, responds with [`SdkError<SetDefaultPermissionVersionError>`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionError)
-    pub fn set_default_permission_version(&self) -> crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionFluentBuilder{
+    pub fn set_default_permission_version(
+        &self,
+    ) -> crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionFluentBuilder {
         crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionFluentBuilder::new(self.handle.clone())
     }
 }

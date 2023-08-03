@@ -5,16 +5,16 @@ pub use crate::operation::associate_client_vpn_target_network::_associate_client
 
 impl AssociateClientVpnTargetNetworkInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_client_vpn_target_network();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl AssociateClientVpnTargetNetworkInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateClientVpnTargetNetworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkInputBuilder,
+    inner: crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkInputBuilder,
 }
 impl AssociateClientVpnTargetNetworkFluentBuilder {
     /// Creates a new `AssociateClientVpnTargetNetwork`.
@@ -38,15 +38,20 @@ impl AssociateClientVpnTargetNetworkFluentBuilder {
         }
     }
     /// Access the AssociateClientVpnTargetNetwork as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetwork, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetwork,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl AssociateClientVpnTargetNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +88,35 @@ impl AssociateClientVpnTargetNetworkFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetwork, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetwork,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }

@@ -58,10 +58,7 @@ pub fn ser_hyper_parameter_training_job_definition(
     if let Some(var_19) = &input.output_data_config {
         #[allow(unused_mut)]
         let mut object_20 = object.key("OutputDataConfig").start_object();
-        crate::protocol_serde::shape_output_data_config::ser_output_data_config(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.resource_config {
@@ -73,16 +70,11 @@ pub fn ser_hyper_parameter_training_job_definition(
     if let Some(var_23) = &input.stopping_condition {
         #[allow(unused_mut)]
         let mut object_24 = object.key("StoppingCondition").start_object();
-        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_24, var_23)?;
         object_24.finish();
     }
     if input.enable_network_isolation {
-        object
-            .key("EnableNetworkIsolation")
-            .boolean(input.enable_network_isolation);
+        object.key("EnableNetworkIsolation").boolean(input.enable_network_isolation);
     }
     if input.enable_inter_container_traffic_encryption {
         object
@@ -90,17 +82,12 @@ pub fn ser_hyper_parameter_training_job_definition(
             .boolean(input.enable_inter_container_traffic_encryption);
     }
     if input.enable_managed_spot_training {
-        object
-            .key("EnableManagedSpotTraining")
-            .boolean(input.enable_managed_spot_training);
+        object.key("EnableManagedSpotTraining").boolean(input.enable_managed_spot_training);
     }
     if let Some(var_25) = &input.checkpoint_config {
         #[allow(unused_mut)]
         let mut object_26 = object.key("CheckpointConfig").start_object();
-        crate::protocol_serde::shape_checkpoint_config::ser_checkpoint_config(
-            &mut object_26,
-            var_25,
-        )?;
+        crate::protocol_serde::shape_checkpoint_config::ser_checkpoint_config(&mut object_26, var_25)?;
         object_26.finish();
     }
     if let Some(var_27) = &input.retry_strategy {
@@ -111,9 +98,7 @@ pub fn ser_hyper_parameter_training_job_definition(
     }
     if let Some(var_29) = &input.hyper_parameter_tuning_resource_config {
         #[allow(unused_mut)]
-        let mut object_30 = object
-            .key("HyperParameterTuningResourceConfig")
-            .start_object();
+        let mut object_30 = object.key("HyperParameterTuningResourceConfig").start_object();
         crate::protocol_serde::shape_hyper_parameter_tuning_resource_config::ser_hyper_parameter_tuning_resource_config(&mut object_30, var_29)?;
         object_30.finish();
     }
@@ -132,153 +117,112 @@ pub fn ser_hyper_parameter_training_job_definition(
 
 pub(crate) fn de_hyper_parameter_training_job_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HyperParameterTrainingJobDefinition>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HyperParameterTrainingJobDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::HyperParameterTrainingJobDefinitionBuilder::default();
+            let mut builder = crate::types::builders::HyperParameterTrainingJobDefinitionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DefinitionName" => {
-                                builder = builder.set_definition_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DefinitionName" => {
+                            builder = builder.set_definition_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "TuningObjective" => {
-                                builder = builder.set_tuning_objective(
-                                    crate::protocol_serde::shape_hyper_parameter_tuning_job_objective::de_hyper_parameter_tuning_job_objective(tokens)?
-                                );
-                            }
-                            "HyperParameterRanges" => {
-                                builder = builder.set_hyper_parameter_ranges(
-                                    crate::protocol_serde::shape_parameter_ranges::de_parameter_ranges(tokens)?
-                                );
-                            }
-                            "StaticHyperParameters" => {
-                                builder = builder.set_static_hyper_parameters(
-                                    crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?
-                                );
-                            }
-                            "AlgorithmSpecification" => {
-                                builder = builder.set_algorithm_specification(
-                                    crate::protocol_serde::shape_hyper_parameter_algorithm_specification::de_hyper_parameter_algorithm_specification(tokens)?
-                                );
-                            }
-                            "RoleArn" => {
-                                builder = builder.set_role_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "TuningObjective" => {
+                            builder = builder.set_tuning_objective(
+                                crate::protocol_serde::shape_hyper_parameter_tuning_job_objective::de_hyper_parameter_tuning_job_objective(tokens)?,
+                            );
+                        }
+                        "HyperParameterRanges" => {
+                            builder = builder.set_hyper_parameter_ranges(crate::protocol_serde::shape_parameter_ranges::de_parameter_ranges(tokens)?);
+                        }
+                        "StaticHyperParameters" => {
+                            builder =
+                                builder.set_static_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                        }
+                        "AlgorithmSpecification" => {
+                            builder = builder.set_algorithm_specification(
+                                crate::protocol_serde::shape_hyper_parameter_algorithm_specification::de_hyper_parameter_algorithm_specification(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "RoleArn" => {
+                            builder = builder.set_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "InputDataConfig" => {
-                                builder = builder.set_input_data_config(
-                                    crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens)?
-                                );
-                            }
-                            "VpcConfig" => {
-                                builder = builder.set_vpc_config(
-                                    crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?,
-                                );
-                            }
-                            "OutputDataConfig" => {
-                                builder = builder.set_output_data_config(
-                                    crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens)?
-                                );
-                            }
-                            "ResourceConfig" => {
-                                builder = builder.set_resource_config(
-                                    crate::protocol_serde::shape_resource_config::de_resource_config(tokens)?
-                                );
-                            }
-                            "StoppingCondition" => {
-                                builder = builder.set_stopping_condition(
-                                    crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens)?
-                                );
-                            }
-                            "EnableNetworkIsolation" => {
-                                builder = builder.set_enable_network_isolation(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "EnableInterContainerTrafficEncryption" => {
-                                builder = builder.set_enable_inter_container_traffic_encryption(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "EnableManagedSpotTraining" => {
-                                builder = builder.set_enable_managed_spot_training(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "CheckpointConfig" => {
-                                builder = builder.set_checkpoint_config(
-                                    crate::protocol_serde::shape_checkpoint_config::de_checkpoint_config(tokens)?
-                                );
-                            }
-                            "RetryStrategy" => {
-                                builder = builder.set_retry_strategy(
-                                    crate::protocol_serde::shape_retry_strategy::de_retry_strategy(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "HyperParameterTuningResourceConfig" => {
-                                builder = builder.set_hyper_parameter_tuning_resource_config(
-                                    crate::protocol_serde::shape_hyper_parameter_tuning_resource_config::de_hyper_parameter_tuning_resource_config(tokens)?
-                                );
-                            }
-                            "Environment" => {
-                                builder = builder.set_environment(
+                            );
+                        }
+                        "InputDataConfig" => {
+                            builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens)?);
+                        }
+                        "VpcConfig" => {
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                        }
+                        "OutputDataConfig" => {
+                            builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens)?);
+                        }
+                        "ResourceConfig" => {
+                            builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens)?);
+                        }
+                        "StoppingCondition" => {
+                            builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens)?);
+                        }
+                        "EnableNetworkIsolation" => {
+                            builder =
+                                builder.set_enable_network_isolation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "EnableInterContainerTrafficEncryption" => {
+                            builder = builder.set_enable_inter_container_traffic_encryption(
+                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
+                            );
+                        }
+                        "EnableManagedSpotTraining" => {
+                            builder =
+                                builder.set_enable_managed_spot_training(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "CheckpointConfig" => {
+                            builder = builder.set_checkpoint_config(crate::protocol_serde::shape_checkpoint_config::de_checkpoint_config(tokens)?);
+                        }
+                        "RetryStrategy" => {
+                            builder = builder.set_retry_strategy(crate::protocol_serde::shape_retry_strategy::de_retry_strategy(tokens)?);
+                        }
+                        "HyperParameterTuningResourceConfig" => {
+                            builder = builder.set_hyper_parameter_tuning_resource_config(
+                                crate::protocol_serde::shape_hyper_parameter_tuning_resource_config::de_hyper_parameter_tuning_resource_config(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "Environment" => {
+                            builder = builder.set_environment(
                                     crate::protocol_serde::shape_hyper_parameter_training_job_environment_map::de_hyper_parameter_training_job_environment_map(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

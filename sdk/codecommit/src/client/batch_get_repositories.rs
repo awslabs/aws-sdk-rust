@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`repositories(Option<Vec<RepositoryMetadata>>)`](crate::operation::batch_get_repositories::BatchGetRepositoriesOutput::repositories): <p>A list of repositories returned by the batch get repositories operation.</p>
     ///   - [`repositories_not_found(Option<Vec<String>>)`](crate::operation::batch_get_repositories::BatchGetRepositoriesOutput::repositories_not_found): <p>Returns a list of repository names for which information could not be found.</p>
     /// - On failure, responds with [`SdkError<BatchGetRepositoriesError>`](crate::operation::batch_get_repositories::BatchGetRepositoriesError)
-    pub fn batch_get_repositories(
-        &self,
-    ) -> crate::operation::batch_get_repositories::builders::BatchGetRepositoriesFluentBuilder {
-        crate::operation::batch_get_repositories::builders::BatchGetRepositoriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_repositories(&self) -> crate::operation::batch_get_repositories::builders::BatchGetRepositoriesFluentBuilder {
+        crate::operation::batch_get_repositories::builders::BatchGetRepositoriesFluentBuilder::new(self.handle.clone())
     }
 }

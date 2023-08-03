@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateLoadBalancerOutput {
 }
 impl CreateLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerOutput`](crate::operation::create_load_balancer::CreateLoadBalancerOutput).
-    pub fn builder(
-    ) -> crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder {
+    pub fn builder() -> crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder {
         crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoadBalancerOutput`](crate::operation::create_load_balancer::CreateLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerOutputBuilder {
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

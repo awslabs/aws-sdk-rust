@@ -55,9 +55,7 @@ impl RedirectActionConfig {
         self.query.as_deref()
     }
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
-    pub fn status_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RedirectActionStatusCodeEnum> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::RedirectActionStatusCodeEnum> {
         self.status_code.as_ref()
     }
 }
@@ -70,9 +68,7 @@ impl RedirectActionConfig {
 
 /// A builder for [`RedirectActionConfig`](crate::types::RedirectActionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedirectActionConfigBuilder {
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<::std::string::String>,
@@ -158,17 +154,12 @@ impl RedirectActionConfigBuilder {
         self
     }
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::RedirectActionStatusCodeEnum>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::RedirectActionStatusCodeEnum>) -> Self {
         self.status_code = input;
         self
     }
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::RedirectActionStatusCodeEnum> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::RedirectActionStatusCodeEnum> {
         &self.status_code
     }
     /// Consumes the builder and constructs a [`RedirectActionConfig`](crate::types::RedirectActionConfig).

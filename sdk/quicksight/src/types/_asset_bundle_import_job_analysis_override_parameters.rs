@@ -23,17 +23,14 @@ impl AssetBundleImportJobAnalysisOverrideParameters {
 }
 impl AssetBundleImportJobAnalysisOverrideParameters {
     /// Creates a new builder-style object to manufacture [`AssetBundleImportJobAnalysisOverrideParameters`](crate::types::AssetBundleImportJobAnalysisOverrideParameters).
-    pub fn builder() -> crate::types::builders::AssetBundleImportJobAnalysisOverrideParametersBuilder
-    {
+    pub fn builder() -> crate::types::builders::AssetBundleImportJobAnalysisOverrideParametersBuilder {
         crate::types::builders::AssetBundleImportJobAnalysisOverrideParametersBuilder::default()
     }
 }
 
 /// A builder for [`AssetBundleImportJobAnalysisOverrideParameters`](crate::types::AssetBundleImportJobAnalysisOverrideParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobAnalysisOverrideParametersBuilder {
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

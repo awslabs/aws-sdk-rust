@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutBackupVaultNotificationsOutput {
 }
 impl PutBackupVaultNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`PutBackupVaultNotificationsOutput`](crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsOutput).
-    pub fn builder() -> crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsOutputBuilder{
+    pub fn builder() -> crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsOutputBuilder {
         crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutBackupVaultNotificationsOutput`](crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBackupVaultNotificationsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl PutBackupVaultNotificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutBackupVaultNotificationsOutput`](crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsOutput {
+    pub fn build(self) -> crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsOutput {
         crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsOutput {
             _request_id: self._request_id,
         }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateWorkerBlockOutput {
 }
 impl CreateWorkerBlockOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkerBlockOutput`](crate::operation::create_worker_block::CreateWorkerBlockOutput).
-    pub fn builder(
-    ) -> crate::operation::create_worker_block::builders::CreateWorkerBlockOutputBuilder {
+    pub fn builder() -> crate::operation::create_worker_block::builders::CreateWorkerBlockOutputBuilder {
         crate::operation::create_worker_block::builders::CreateWorkerBlockOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkerBlockOutput`](crate::operation::create_worker_block::CreateWorkerBlockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkerBlockOutputBuilder {
     _request_id: Option<String>,
 }

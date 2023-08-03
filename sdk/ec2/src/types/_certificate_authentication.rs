@@ -23,33 +23,23 @@ impl CertificateAuthentication {
 
 /// A builder for [`CertificateAuthentication`](crate::types::CertificateAuthentication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateAuthenticationBuilder {
     pub(crate) client_root_certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl CertificateAuthenticationBuilder {
     /// <p>The ARN of the client certificate. </p>
-    pub fn client_root_certificate_chain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_root_certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_root_certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the client certificate. </p>
-    pub fn set_client_root_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_root_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_root_certificate_chain = input;
         self
     }
     /// <p>The ARN of the client certificate. </p>
-    pub fn get_client_root_certificate_chain(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_client_root_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_root_certificate_chain
     }
     /// Consumes the builder and constructs a [`CertificateAuthentication`](crate::types::CertificateAuthentication).

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`statements(Option<Vec<StatementData>>)`](crate::operation::list_statements::ListStatementsOutput::statements): <p>The SQL statements. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_statements::ListStatementsOutput::next_token): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     /// - On failure, responds with [`SdkError<ListStatementsError>`](crate::operation::list_statements::ListStatementsError)
-    pub fn list_statements(
-        &self,
-    ) -> crate::operation::list_statements::builders::ListStatementsFluentBuilder {
-        crate::operation::list_statements::builders::ListStatementsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_statements(&self) -> crate::operation::list_statements::builders::ListStatementsFluentBuilder {
+        crate::operation::list_statements::builders::ListStatementsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::update_stream::UpdateStreamOutput::description): <p>A description of the stream.</p>
     ///   - [`stream_version(Option<i32>)`](crate::operation::update_stream::UpdateStreamOutput::stream_version): <p>The stream version.</p>
     /// - On failure, responds with [`SdkError<UpdateStreamError>`](crate::operation::update_stream::UpdateStreamError)
-    pub fn update_stream(
-        &self,
-    ) -> crate::operation::update_stream::builders::UpdateStreamFluentBuilder {
-        crate::operation::update_stream::builders::UpdateStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_stream(&self) -> crate::operation::update_stream::builders::UpdateStreamFluentBuilder {
+        crate::operation::update_stream::builders::UpdateStreamFluentBuilder::new(self.handle.clone())
     }
 }

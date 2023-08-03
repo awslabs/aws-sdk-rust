@@ -37,9 +37,7 @@ impl UpdateGlobalNetworkFluentBuilder {
         }
     }
     /// Access the UpdateGlobalNetwork as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_global_network::builders::UpdateGlobalNetworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_global_network::builders::UpdateGlobalNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateGlobalNetworkFluentBuilder {
             crate::operation::update_global_network::UpdateGlobalNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_network::UpdateGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_network::UpdateGlobalNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateGlobalNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateGlobalNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_network::UpdateGlobalNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_network::UpdateGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_network::UpdateGlobalNetworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateGlobalNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_network::UpdateGlobalNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_network::UpdateGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_network::UpdateGlobalNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateGlobalNetworkFluentBuilder {
             crate::operation::update_global_network::UpdateGlobalNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_network::UpdateGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_network::UpdateGlobalNetworkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of your global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of your global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }

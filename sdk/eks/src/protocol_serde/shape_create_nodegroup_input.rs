@@ -55,19 +55,13 @@ pub fn ser_create_nodegroup_input(
     if let Some(var_17) = &input.remote_access {
         #[allow(unused_mut)]
         let mut object_18 = object.key("remoteAccess").start_object();
-        crate::protocol_serde::shape_remote_access_config::ser_remote_access_config(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_remote_access_config::ser_remote_access_config(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.scaling_config {
         #[allow(unused_mut)]
         let mut object_20 = object.key("scalingConfig").start_object();
-        crate::protocol_serde::shape_nodegroup_scaling_config::ser_nodegroup_scaling_config(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_nodegroup_scaling_config::ser_nodegroup_scaling_config(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.subnets {
@@ -104,10 +98,7 @@ pub fn ser_create_nodegroup_input(
     if let Some(var_32) = &input.update_config {
         #[allow(unused_mut)]
         let mut object_33 = object.key("updateConfig").start_object();
-        crate::protocol_serde::shape_nodegroup_update_config::ser_nodegroup_update_config(
-            &mut object_33,
-            var_32,
-        )?;
+        crate::protocol_serde::shape_nodegroup_update_config::ser_nodegroup_update_config(&mut object_33, var_32)?;
         object_33.finish();
     }
     if let Some(var_34) = &input.version {

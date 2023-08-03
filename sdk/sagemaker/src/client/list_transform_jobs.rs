@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`transform_job_summaries(Option<Vec<TransformJobSummary>>)`](crate::operation::list_transform_jobs::ListTransformJobsOutput::transform_job_summaries): <p>An array of <code>TransformJobSummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_transform_jobs::ListTransformJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>
     /// - On failure, responds with [`SdkError<ListTransformJobsError>`](crate::operation::list_transform_jobs::ListTransformJobsError)
-    pub fn list_transform_jobs(
-        &self,
-    ) -> crate::operation::list_transform_jobs::builders::ListTransformJobsFluentBuilder {
-        crate::operation::list_transform_jobs::builders::ListTransformJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_transform_jobs(&self) -> crate::operation::list_transform_jobs::builders::ListTransformJobsFluentBuilder {
+        crate::operation::list_transform_jobs::builders::ListTransformJobsFluentBuilder::new(self.handle.clone())
     }
 }

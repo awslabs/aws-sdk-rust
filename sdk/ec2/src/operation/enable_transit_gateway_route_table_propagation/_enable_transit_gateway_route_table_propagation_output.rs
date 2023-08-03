@@ -21,16 +21,15 @@ impl ::aws_http::request_id::RequestId for EnableTransitGatewayRouteTablePropaga
 }
 impl EnableTransitGatewayRouteTablePropagationOutput {
     /// Creates a new builder-style object to manufacture [`EnableTransitGatewayRouteTablePropagationOutput`](crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationOutput).
-    pub fn builder() -> crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationOutputBuilder {
         crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableTransitGatewayRouteTablePropagationOutput`](crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableTransitGatewayRouteTablePropagationOutputBuilder {
     pub(crate) propagation: ::std::option::Option<crate::types::TransitGatewayPropagation>,
     _request_id: Option<String>,
@@ -42,17 +41,12 @@ impl EnableTransitGatewayRouteTablePropagationOutputBuilder {
         self
     }
     /// <p>Information about route propagation.</p>
-    pub fn set_propagation(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPropagation>,
-    ) -> Self {
+    pub fn set_propagation(mut self, input: ::std::option::Option<crate::types::TransitGatewayPropagation>) -> Self {
         self.propagation = input;
         self
     }
     /// <p>Information about route propagation.</p>
-    pub fn get_propagation(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayPropagation> {
+    pub fn get_propagation(&self) -> &::std::option::Option<crate::types::TransitGatewayPropagation> {
         &self.propagation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +59,9 @@ impl EnableTransitGatewayRouteTablePropagationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableTransitGatewayRouteTablePropagationOutput`](crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationOutput).
-    pub fn build(self) -> crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationOutput{
+    pub fn build(self) -> crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationOutput {
         crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationOutput {
-            propagation: self.propagation
-            ,
+            propagation: self.propagation,
             _request_id: self._request_id,
         }
     }

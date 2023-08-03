@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`schema_version(Option<String>)`](crate::operation::put_code_binding::PutCodeBindingOutput::schema_version): <p>The version number of the schema.</p>
     ///   - [`status(Option<CodeGenerationStatus>)`](crate::operation::put_code_binding::PutCodeBindingOutput::status): <p>The current status of code binding generation.</p>
     /// - On failure, responds with [`SdkError<PutCodeBindingError>`](crate::operation::put_code_binding::PutCodeBindingError)
-    pub fn put_code_binding(
-        &self,
-    ) -> crate::operation::put_code_binding::builders::PutCodeBindingFluentBuilder {
-        crate::operation::put_code_binding::builders::PutCodeBindingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_code_binding(&self) -> crate::operation::put_code_binding::builders::PutCodeBindingFluentBuilder {
+        crate::operation::put_code_binding::builders::PutCodeBindingFluentBuilder::new(self.handle.clone())
     }
 }

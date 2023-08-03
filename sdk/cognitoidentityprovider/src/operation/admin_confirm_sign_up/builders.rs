@@ -10,10 +10,7 @@ impl AdminConfirmSignUpInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::admin_confirm_sign_up::AdminConfirmSignUpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.admin_confirm_sign_up();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl AdminConfirmSignUpFluentBuilder {
         }
     }
     /// Access the AdminConfirmSignUp as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::admin_confirm_sign_up::builders::AdminConfirmSignUpInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::admin_confirm_sign_up::builders::AdminConfirmSignUpInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl AdminConfirmSignUpFluentBuilder {
             crate::operation::admin_confirm_sign_up::AdminConfirmSignUp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl AdminConfirmSignUpFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl AdminConfirmSignUpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_confirm_sign_up::AdminConfirmSignUpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl AdminConfirmSignUpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_confirm_sign_up::AdminConfirmSignUpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl AdminConfirmSignUpFluentBuilder {
             crate::operation::admin_confirm_sign_up::AdminConfirmSignUp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError>,
     > {
         self.customize_middleware().await
     }
@@ -185,9 +169,7 @@ impl AdminConfirmSignUpFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
@@ -202,11 +184,7 @@ impl AdminConfirmSignUpFluentBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
 }

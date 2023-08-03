@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProblemType {
     #[allow(missing_docs)] // documentation missing in model
@@ -86,11 +80,7 @@ impl ProblemType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BinaryClassification",
-            "MulticlassClassification",
-            "Regression",
-        ]
+        &["BinaryClassification", "MulticlassClassification", "Regression"]
     }
 }
 impl ::std::convert::AsRef<str> for ProblemType {

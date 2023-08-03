@@ -9,10 +9,7 @@ pub fn ser_create_table_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_attribute_definition::ser_attribute_definition(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_attribute_definition::ser_attribute_definition(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_create_table_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_key_schema_element::ser_key_schema_element(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_key_schema_element::ser_key_schema_element(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -42,10 +36,7 @@ pub fn ser_create_table_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_local_secondary_index::ser_local_secondary_index(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_local_secondary_index::ser_local_secondary_index(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
@@ -57,10 +48,7 @@ pub fn ser_create_table_input(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_global_secondary_index::ser_global_secondary_index(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_global_secondary_index::ser_global_secondary_index(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
@@ -72,28 +60,19 @@ pub fn ser_create_table_input(
     if let Some(var_19) = &input.provisioned_throughput {
         #[allow(unused_mut)]
         let mut object_20 = object.key("ProvisionedThroughput").start_object();
-        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.stream_specification {
         #[allow(unused_mut)]
         let mut object_22 = object.key("StreamSpecification").start_object();
-        crate::protocol_serde::shape_stream_specification::ser_stream_specification(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_stream_specification::ser_stream_specification(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.sse_specification {
         #[allow(unused_mut)]
         let mut object_24 = object.key("SSESpecification").start_object();
-        crate::protocol_serde::shape_sse_specification::ser_sse_specification(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.tags {

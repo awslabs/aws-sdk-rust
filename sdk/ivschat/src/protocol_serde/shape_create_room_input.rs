@@ -27,10 +27,7 @@ pub fn ser_create_room_input(
     if let Some(var_4) = &input.message_review_handler {
         #[allow(unused_mut)]
         let mut object_5 = object.key("messageReviewHandler").start_object();
-        crate::protocol_serde::shape_message_review_handler::ser_message_review_handler(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_message_review_handler::ser_message_review_handler(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.name {

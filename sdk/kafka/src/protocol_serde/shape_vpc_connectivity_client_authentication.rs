@@ -6,19 +6,13 @@ pub fn ser_vpc_connectivity_client_authentication(
     if let Some(var_1) = &input.sasl {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sasl").start_object();
-        crate::protocol_serde::shape_vpc_connectivity_sasl::ser_vpc_connectivity_sasl(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_vpc_connectivity_sasl::ser_vpc_connectivity_sasl(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.tls {
         #[allow(unused_mut)]
         let mut object_4 = object.key("tls").start_object();
-        crate::protocol_serde::shape_vpc_connectivity_tls::ser_vpc_connectivity_tls(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_vpc_connectivity_tls::ser_vpc_connectivity_tls(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())
@@ -26,57 +20,39 @@ pub fn ser_vpc_connectivity_client_authentication(
 
 pub(crate) fn de_vpc_connectivity_client_authentication<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VpcConnectivityClientAuthentication>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VpcConnectivityClientAuthentication>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::VpcConnectivityClientAuthenticationBuilder::default();
+            let mut builder = crate::types::builders::VpcConnectivityClientAuthenticationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "sasl" => {
-                                builder = builder.set_sasl(
-                                    crate::protocol_serde::shape_vpc_connectivity_sasl::de_vpc_connectivity_sasl(tokens)?
-                                );
-                            }
-                            "tls" => {
-                                builder = builder.set_tls(
-                                    crate::protocol_serde::shape_vpc_connectivity_tls::de_vpc_connectivity_tls(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "sasl" => {
+                            builder = builder.set_sasl(crate::protocol_serde::shape_vpc_connectivity_sasl::de_vpc_connectivity_sasl(tokens)?);
                         }
-                    }
+                        "tls" => {
+                            builder = builder.set_tls(crate::protocol_serde::shape_vpc_connectivity_tls::de_vpc_connectivity_tls(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

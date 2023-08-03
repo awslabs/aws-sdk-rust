@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`mutual_tls_authentication(Option<MutualTlsAuthentication>)`](crate::operation::get_domain_name::GetDomainNameOutput::mutual_tls_authentication): <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     ///   - [`ownership_verification_certificate_arn(Option<String>)`](crate::operation::get_domain_name::GetDomainNameOutput::ownership_verification_certificate_arn): <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     /// - On failure, responds with [`SdkError<GetDomainNameError>`](crate::operation::get_domain_name::GetDomainNameError)
-    pub fn get_domain_name(
-        &self,
-    ) -> crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder {
-        crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_domain_name(&self) -> crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder {
+        crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::new(self.handle.clone())
     }
 }

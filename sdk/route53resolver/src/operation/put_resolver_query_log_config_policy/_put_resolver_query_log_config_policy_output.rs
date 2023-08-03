@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for PutResolverQueryLogConfigPolicyOutput
 }
 impl PutResolverQueryLogConfigPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResolverQueryLogConfigPolicyOutput`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput).
-    pub fn builder() -> crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyOutputBuilder {
         crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutResolverQueryLogConfigPolicyOutput`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResolverQueryLogConfigPolicyOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -61,14 +59,9 @@ impl PutResolverQueryLogConfigPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutResolverQueryLogConfigPolicyOutput`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput {
         crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput {
-            return_value: self.return_value
-                .unwrap_or_default()
-            ,
+            return_value: self.return_value.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

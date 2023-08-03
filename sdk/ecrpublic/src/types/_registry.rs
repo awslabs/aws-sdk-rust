@@ -51,9 +51,7 @@ impl Registry {
 
 /// A builder for [`Registry`](crate::types::Registry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistryBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) registry_arn: ::std::option::Option<::std::string::String>,
@@ -130,17 +128,12 @@ impl RegistryBuilder {
         self
     }
     /// <p>An array of objects that represents the aliases for a public registry.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryAlias>>,
-    ) -> Self {
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryAlias>>) -> Self {
         self.aliases = input;
         self
     }
     /// <p>An array of objects that represents the aliases for a public registry.</p>
-    pub fn get_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryAlias>> {
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryAlias>> {
         &self.aliases
     }
     /// Consumes the builder and constructs a [`Registry`](crate::types::Registry).

@@ -10,10 +10,7 @@ impl ListNodesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_nodes::ListNodesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_nodes::ListNodesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_nodes::ListNodesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_nodes();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListNodesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_nodes::ListNodes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_nodes::ListNodes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_nodes::ListNodesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListNodesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListNodesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_nodes::ListNodes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_nodes::ListNodes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_nodes::ListNodesError>,
     > {
         self.customize_middleware().await
@@ -124,10 +112,7 @@ impl ListNodesFluentBuilder {
         self
     }
     /// <p>Search for nodes by category.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::NodeCategory>) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }
@@ -136,18 +121,12 @@ impl ListNodesFluentBuilder {
         self.inner.get_category()
     }
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_account(input.into());
         self
     }
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
     }
@@ -170,18 +149,12 @@ impl ListNodesFluentBuilder {
         self.inner.get_package_name()
     }
     /// <p>Search for nodes by version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_version(input.into());
         self
     }
     /// <p>Search for nodes by version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_version(input);
         self
     }
@@ -190,18 +163,12 @@ impl ListNodesFluentBuilder {
         self.inner.get_package_version()
     }
     /// <p>Search for nodes by patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.patch_version(input.into());
         self
     }
     /// <p>Search for nodes by patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_patch_version(input);
         self
     }

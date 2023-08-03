@@ -10,10 +10,7 @@ impl GetServiceSettingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_service_settings::GetServiceSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_settings::GetServiceSettingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_settings::GetServiceSettingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_service_settings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetServiceSettingsFluentBuilder {
         }
     }
     /// Access the GetServiceSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_service_settings::builders::GetServiceSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_service_settings::builders::GetServiceSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetServiceSettingsFluentBuilder {
             crate::operation::get_service_settings::GetServiceSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_settings::GetServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_settings::GetServiceSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetServiceSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetServiceSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_settings::GetServiceSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_settings::GetServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_settings::GetServiceSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetServiceSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_settings::GetServiceSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_settings::GetServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_settings::GetServiceSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetServiceSettingsFluentBuilder {
             crate::operation::get_service_settings::GetServiceSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_settings::GetServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_settings::GetServiceSettingsError>,
     > {
         self.customize_middleware().await
     }

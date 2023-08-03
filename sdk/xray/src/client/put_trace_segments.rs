@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`PutTraceSegmentsOutput`](crate::operation::put_trace_segments::PutTraceSegmentsOutput) with field(s):
     ///   - [`unprocessed_trace_segments(Option<Vec<UnprocessedTraceSegment>>)`](crate::operation::put_trace_segments::PutTraceSegmentsOutput::unprocessed_trace_segments): <p>Segments that failed processing.</p>
     /// - On failure, responds with [`SdkError<PutTraceSegmentsError>`](crate::operation::put_trace_segments::PutTraceSegmentsError)
-    pub fn put_trace_segments(
-        &self,
-    ) -> crate::operation::put_trace_segments::builders::PutTraceSegmentsFluentBuilder {
-        crate::operation::put_trace_segments::builders::PutTraceSegmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_trace_segments(&self) -> crate::operation::put_trace_segments::builders::PutTraceSegmentsFluentBuilder {
+        crate::operation::put_trace_segments::builders::PutTraceSegmentsFluentBuilder::new(self.handle.clone())
     }
 }

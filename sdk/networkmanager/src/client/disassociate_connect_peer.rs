@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateConnectPeerOutput`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerOutput) with field(s):
     ///   - [`connect_peer_association(Option<ConnectPeerAssociation>)`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerOutput::connect_peer_association): <p>Describes the Connect peer association.</p>
     /// - On failure, responds with [`SdkError<DisassociateConnectPeerError>`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerError)
-    pub fn disassociate_connect_peer(
-        &self,
-    ) -> crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerFluentBuilder
-    {
+    pub fn disassociate_connect_peer(&self) -> crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerFluentBuilder {
         crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerFluentBuilder::new(self.handle.clone())
     }
 }

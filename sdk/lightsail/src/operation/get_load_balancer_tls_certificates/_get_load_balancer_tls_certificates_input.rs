@@ -15,33 +15,25 @@ impl GetLoadBalancerTlsCertificatesInput {
 }
 impl GetLoadBalancerTlsCertificatesInput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsCertificatesInput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput).
-    pub fn builder() -> crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesInputBuilder{
+    pub fn builder() -> crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesInputBuilder {
         crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoadBalancerTlsCertificatesInput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoadBalancerTlsCertificatesInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
 }
 impl GetLoadBalancerTlsCertificatesInputBuilder {
     /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -58,9 +50,8 @@ impl GetLoadBalancerTlsCertificatesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput {
-                load_balancer_name: self.load_balancer_name
-                ,
-            }
+                load_balancer_name: self.load_balancer_name,
+            },
         )
     }
 }

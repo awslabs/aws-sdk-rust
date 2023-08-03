@@ -15,18 +15,14 @@ impl StopEarthObservationJobInput {
 }
 impl StopEarthObservationJobInput {
     /// Creates a new builder-style object to manufacture [`StopEarthObservationJobInput`](crate::operation::stop_earth_observation_job::StopEarthObservationJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobInputBuilder {
         crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopEarthObservationJobInput`](crate::operation::stop_earth_observation_job::StopEarthObservationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEarthObservationJobInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl StopEarthObservationJobInputBuilder {
         crate::operation::stop_earth_observation_job::StopEarthObservationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_earth_observation_job::StopEarthObservationJobInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_earth_observation_job::StopEarthObservationJobInput { arn: self.arn })
     }
 }

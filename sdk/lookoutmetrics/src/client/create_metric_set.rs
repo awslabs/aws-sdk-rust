@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMetricSetOutput`](crate::operation::create_metric_set::CreateMetricSetOutput) with field(s):
     ///   - [`metric_set_arn(Option<String>)`](crate::operation::create_metric_set::CreateMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
     /// - On failure, responds with [`SdkError<CreateMetricSetError>`](crate::operation::create_metric_set::CreateMetricSetError)
-    pub fn create_metric_set(
-        &self,
-    ) -> crate::operation::create_metric_set::builders::CreateMetricSetFluentBuilder {
-        crate::operation::create_metric_set::builders::CreateMetricSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_metric_set(&self) -> crate::operation::create_metric_set::builders::CreateMetricSetFluentBuilder {
+        crate::operation::create_metric_set::builders::CreateMetricSetFluentBuilder::new(self.handle.clone())
     }
 }

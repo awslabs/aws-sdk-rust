@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartMessageMoveTaskOutput {
 }
 impl StartMessageMoveTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartMessageMoveTaskOutput`](crate::operation::start_message_move_task::StartMessageMoveTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::start_message_move_task::builders::StartMessageMoveTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_message_move_task::builders::StartMessageMoveTaskOutputBuilder {
         crate::operation::start_message_move_task::builders::StartMessageMoveTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMessageMoveTaskOutput`](crate::operation::start_message_move_task::StartMessageMoveTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMessageMoveTaskOutputBuilder {
     pub(crate) task_handle: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

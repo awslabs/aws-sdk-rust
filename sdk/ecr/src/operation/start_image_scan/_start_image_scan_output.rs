@@ -49,9 +49,7 @@ impl StartImageScanOutput {
 
 /// A builder for [`StartImageScanOutput`](crate::operation::start_image_scan::StartImageScanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImageScanOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl StartImageScanOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -100,10 +92,7 @@ impl StartImageScanOutputBuilder {
         self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn set_image_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageIdentifier>,
-    ) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<crate::types::ImageIdentifier>) -> Self {
         self.image_id = input;
         self
     }
@@ -117,10 +106,7 @@ impl StartImageScanOutputBuilder {
         self
     }
     /// <p>The current state of the scan.</p>
-    pub fn set_image_scan_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanStatus>,
-    ) -> Self {
+    pub fn set_image_scan_status(mut self, input: ::std::option::Option<crate::types::ImageScanStatus>) -> Self {
         self.image_scan_status = input;
         self
     }

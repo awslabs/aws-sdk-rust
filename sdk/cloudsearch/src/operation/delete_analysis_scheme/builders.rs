@@ -37,9 +37,7 @@ impl DeleteAnalysisSchemeFluentBuilder {
         }
     }
     /// Access the DeleteAnalysisScheme as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteAnalysisSchemeFluentBuilder {
             crate::operation::delete_analysis_scheme::DeleteAnalysisScheme,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteAnalysisSchemeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteAnalysisSchemeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteAnalysisSchemeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteAnalysisSchemeFluentBuilder {
             crate::operation::delete_analysis_scheme::DeleteAnalysisScheme,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DeleteAnalysisSchemeFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The name of the analysis scheme you want to delete.</p>
-    pub fn analysis_scheme_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analysis_scheme_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analysis_scheme_name(input.into());
         self
     }
     /// <p>The name of the analysis scheme you want to delete.</p>
-    pub fn set_analysis_scheme_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analysis_scheme_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analysis_scheme_name(input);
         self
     }

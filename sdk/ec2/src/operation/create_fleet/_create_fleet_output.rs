@@ -42,9 +42,7 @@ impl CreateFleetOutput {
 
 /// A builder for [`CreateFleetOutput`](crate::operation::create_fleet::CreateFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFleetOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::CreateFleetError>>,
@@ -78,17 +76,12 @@ impl CreateFleetOutputBuilder {
         self
     }
     /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateFleetError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateFleetError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateFleetError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateFleetError>> {
         &self.errors
     }
     /// Appends an item to `instances`.
@@ -103,17 +96,12 @@ impl CreateFleetOutputBuilder {
         self
     }
     /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateFleetInstance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateFleetInstance>>) -> Self {
         self.instances = input;
         self
     }
     /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
-    pub fn get_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateFleetInstance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateFleetInstance>> {
         &self.instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

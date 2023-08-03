@@ -37,16 +37,14 @@ impl ListReceivedLicensesForOrganizationInput {
 }
 impl ListReceivedLicensesForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`ListReceivedLicensesForOrganizationInput`](crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput).
-    pub fn builder() -> crate::operation::list_received_licenses_for_organization::builders::ListReceivedLicensesForOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::list_received_licenses_for_organization::builders::ListReceivedLicensesForOrganizationInputBuilder {
         crate::operation::list_received_licenses_for_organization::builders::ListReceivedLicensesForOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReceivedLicensesForOrganizationInput`](crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReceivedLicensesForOrganizationInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -73,10 +71,7 @@ impl ListReceivedLicensesForOrganizationInputBuilder {
     /// <li> <p> <code>Beneficiary</code> </p> </li>
     /// <li> <p> <code>ProductSKU</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -117,16 +112,18 @@ impl ListReceivedLicensesForOrganizationInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListReceivedLicensesForOrganizationInput`](crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput {
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

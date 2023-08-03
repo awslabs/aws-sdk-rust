@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`url(Option<String>)`](crate::operation::create_test_grid_url::CreateTestGridUrlOutput::url): <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
     ///   - [`expires(Option<DateTime>)`](crate::operation::create_test_grid_url::CreateTestGridUrlOutput::expires): <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
     /// - On failure, responds with [`SdkError<CreateTestGridUrlError>`](crate::operation::create_test_grid_url::CreateTestGridUrlError)
-    pub fn create_test_grid_url(
-        &self,
-    ) -> crate::operation::create_test_grid_url::builders::CreateTestGridUrlFluentBuilder {
-        crate::operation::create_test_grid_url::builders::CreateTestGridUrlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_test_grid_url(&self) -> crate::operation::create_test_grid_url::builders::CreateTestGridUrlFluentBuilder {
+        crate::operation::create_test_grid_url::builders::CreateTestGridUrlFluentBuilder::new(self.handle.clone())
     }
 }

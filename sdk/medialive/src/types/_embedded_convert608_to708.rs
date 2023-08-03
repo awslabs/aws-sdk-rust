@@ -38,13 +38,7 @@
 /// Embedded Convert608 To708
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EmbeddedConvert608To708 {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for EmbeddedConvert608To708 {
         match s {
             "DISABLED" => EmbeddedConvert608To708::Disabled,
             "UPCONVERT" => EmbeddedConvert608To708::Upconvert,
-            other => EmbeddedConvert608To708::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EmbeddedConvert608To708::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

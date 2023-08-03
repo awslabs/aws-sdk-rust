@@ -33,9 +33,7 @@ impl EntityDetails {
 
 /// A builder for [`EntityDetails`](crate::types::EntityDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityDetailsBuilder {
     pub(crate) entity_info: ::std::option::Option<crate::types::EntityInfo>,
     pub(crate) last_authenticated: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -47,10 +45,7 @@ impl EntityDetailsBuilder {
         self
     }
     /// <p>The&nbsp;<code>EntityInfo</code> object that contains details about the entity (user or role).</p>
-    pub fn set_entity_info(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityInfo>,
-    ) -> Self {
+    pub fn set_entity_info(mut self, input: ::std::option::Option<crate::types::EntityInfo>) -> Self {
         self.entity_info = input;
         self
     }
@@ -66,10 +61,7 @@ impl EntityDetailsBuilder {
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
-    pub fn set_last_authenticated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_authenticated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_authenticated = input;
         self
     }

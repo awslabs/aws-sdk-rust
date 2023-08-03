@@ -25,9 +25,7 @@ pub struct UpdateContainerServiceInput {
     /// </important>
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
     #[doc(hidden)]
-    pub public_domain_names: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub public_domain_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -61,43 +59,32 @@ impl UpdateContainerServiceInput {
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
     pub fn public_domain_names(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.public_domain_names.as_ref()
     }
     /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn private_registry_access(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PrivateRegistryAccessRequest> {
+    pub fn private_registry_access(&self) -> ::std::option::Option<&crate::types::PrivateRegistryAccessRequest> {
         self.private_registry_access.as_ref()
     }
 }
 impl UpdateContainerServiceInput {
     /// Creates a new builder-style object to manufacture [`UpdateContainerServiceInput`](crate::operation::update_container_service::UpdateContainerServiceInput).
-    pub fn builder(
-    ) -> crate::operation::update_container_service::builders::UpdateContainerServiceInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_container_service::builders::UpdateContainerServiceInputBuilder {
         crate::operation::update_container_service::builders::UpdateContainerServiceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContainerServiceInput`](crate::operation::update_container_service::UpdateContainerServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContainerServiceInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) power: ::std::option::Option<crate::types::ContainerServicePowerName>,
     pub(crate) scale: ::std::option::Option<i32>,
     pub(crate) is_disabled: ::std::option::Option<bool>,
-    pub(crate) public_domain_names: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    pub(crate) private_registry_access:
-        ::std::option::Option<crate::types::PrivateRegistryAccessRequest>,
+    pub(crate) public_domain_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) private_registry_access: ::std::option::Option<crate::types::PrivateRegistryAccessRequest>,
 }
 impl UpdateContainerServiceInputBuilder {
     /// <p>The name of the container service to update.</p>
@@ -124,10 +111,7 @@ impl UpdateContainerServiceInputBuilder {
     /// <p>The power for the container service.</p>
     /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
     /// <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each power option.</p>
-    pub fn set_power(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServicePowerName>,
-    ) -> Self {
+    pub fn set_power(mut self, input: ::std::option::Option<crate::types::ContainerServicePowerName>) -> Self {
         self.power = input;
         self
     }
@@ -178,11 +162,7 @@ impl UpdateContainerServiceInputBuilder {
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
-    pub fn public_domain_names(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn public_domain_names(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.public_domain_names.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.public_domain_names = ::std::option::Option::Some(hash_map);
@@ -196,12 +176,7 @@ impl UpdateContainerServiceInputBuilder {
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
     pub fn set_public_domain_names(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.public_domain_names = input;
         self
@@ -214,52 +189,38 @@ impl UpdateContainerServiceInputBuilder {
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
     pub fn get_public_domain_names(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.public_domain_names
     }
     /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn private_registry_access(
-        mut self,
-        input: crate::types::PrivateRegistryAccessRequest,
-    ) -> Self {
+    pub fn private_registry_access(mut self, input: crate::types::PrivateRegistryAccessRequest) -> Self {
         self.private_registry_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn set_private_registry_access(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivateRegistryAccessRequest>,
-    ) -> Self {
+    pub fn set_private_registry_access(mut self, input: ::std::option::Option<crate::types::PrivateRegistryAccessRequest>) -> Self {
         self.private_registry_access = input;
         self
     }
     /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn get_private_registry_access(
-        &self,
-    ) -> &::std::option::Option<crate::types::PrivateRegistryAccessRequest> {
+    pub fn get_private_registry_access(&self) -> &::std::option::Option<crate::types::PrivateRegistryAccessRequest> {
         &self.private_registry_access
     }
     /// Consumes the builder and constructs a [`UpdateContainerServiceInput`](crate::operation::update_container_service::UpdateContainerServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_container_service::UpdateContainerServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_container_service::UpdateContainerServiceInput {
-                service_name: self.service_name,
-                power: self.power,
-                scale: self.scale,
-                is_disabled: self.is_disabled,
-                public_domain_names: self.public_domain_names,
-                private_registry_access: self.private_registry_access,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_container_service::UpdateContainerServiceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_container_service::UpdateContainerServiceInput {
+            service_name: self.service_name,
+            power: self.power,
+            scale: self.scale,
+            is_disabled: self.is_disabled,
+            public_domain_names: self.public_domain_names,
+            private_registry_access: self.private_registry_access,
+        })
     }
 }

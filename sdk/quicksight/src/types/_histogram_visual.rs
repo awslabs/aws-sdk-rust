@@ -35,9 +35,7 @@ impl HistogramVisual {
         self.subtitle.as_ref()
     }
     /// <p>The configuration for a <code>HistogramVisual</code>.</p>
-    pub fn chart_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HistogramConfiguration> {
+    pub fn chart_configuration(&self) -> ::std::option::Option<&crate::types::HistogramConfiguration> {
         self.chart_configuration.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
@@ -54,9 +52,7 @@ impl HistogramVisual {
 
 /// A builder for [`HistogramVisual`](crate::types::HistogramVisual).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HistogramVisualBuilder {
     pub(crate) visual_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
@@ -85,10 +81,7 @@ impl HistogramVisualBuilder {
         self
     }
     /// <p>The title that is displayed on the visual.</p>
-    pub fn set_title(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
-    ) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<crate::types::VisualTitleLabelOptions>) -> Self {
         self.title = input;
         self
     }
@@ -102,10 +95,7 @@ impl HistogramVisualBuilder {
         self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
-    pub fn set_subtitle(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
-    ) -> Self {
+    pub fn set_subtitle(mut self, input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>) -> Self {
         self.subtitle = input;
         self
     }
@@ -119,17 +109,12 @@ impl HistogramVisualBuilder {
         self
     }
     /// <p>The configuration for a <code>HistogramVisual</code>.</p>
-    pub fn set_chart_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::HistogramConfiguration>,
-    ) -> Self {
+    pub fn set_chart_configuration(mut self, input: ::std::option::Option<crate::types::HistogramConfiguration>) -> Self {
         self.chart_configuration = input;
         self
     }
     /// <p>The configuration for a <code>HistogramVisual</code>.</p>
-    pub fn get_chart_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::HistogramConfiguration> {
+    pub fn get_chart_configuration(&self) -> &::std::option::Option<crate::types::HistogramConfiguration> {
         &self.chart_configuration
     }
     /// Appends an item to `actions`.
@@ -144,17 +129,12 @@ impl HistogramVisualBuilder {
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`HistogramVisual`](crate::types::HistogramVisual).

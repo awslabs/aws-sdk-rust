@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterDbProxyTargetsOutput {
 }
 impl DeregisterDbProxyTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterDbProxyTargetsOutput`](crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput).
-    pub fn builder() -> crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsOutputBuilder {
         crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterDbProxyTargetsOutput`](crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterDbProxyTargetsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeregisterDbProxyTargetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterDbProxyTargetsOutput`](crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput {
+    pub fn build(self) -> crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput {
         crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput {
             _request_id: self._request_id,
         }

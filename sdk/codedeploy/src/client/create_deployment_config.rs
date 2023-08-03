@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDeploymentConfigOutput`](crate::operation::create_deployment_config::CreateDeploymentConfigOutput) with field(s):
     ///   - [`deployment_config_id(Option<String>)`](crate::operation::create_deployment_config::CreateDeploymentConfigOutput::deployment_config_id): <p>A unique deployment configuration ID.</p>
     /// - On failure, responds with [`SdkError<CreateDeploymentConfigError>`](crate::operation::create_deployment_config::CreateDeploymentConfigError)
-    pub fn create_deployment_config(
-        &self,
-    ) -> crate::operation::create_deployment_config::builders::CreateDeploymentConfigFluentBuilder
-    {
+    pub fn create_deployment_config(&self) -> crate::operation::create_deployment_config::builders::CreateDeploymentConfigFluentBuilder {
         crate::operation::create_deployment_config::builders::CreateDeploymentConfigFluentBuilder::new(self.handle.clone())
     }
 }

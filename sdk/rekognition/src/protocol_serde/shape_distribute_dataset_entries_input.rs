@@ -9,10 +9,7 @@ pub fn ser_distribute_dataset_entries_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_distribute_dataset::ser_distribute_dataset(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_distribute_dataset::ser_distribute_dataset(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

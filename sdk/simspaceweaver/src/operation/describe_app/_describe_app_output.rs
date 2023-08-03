@@ -77,9 +77,7 @@ impl DescribeAppOutput {
 
 /// A builder for [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
@@ -140,10 +138,7 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The current lifecycle state of the custom app.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationAppStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationAppStatus>) -> Self {
         self.status = input;
         self
     }
@@ -157,17 +152,12 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The desired lifecycle state of the custom app.</p>
-    pub fn set_target_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationAppTargetStatus>,
-    ) -> Self {
+    pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::SimulationAppTargetStatus>) -> Self {
         self.target_status = input;
         self
     }
     /// <p>The desired lifecycle state of the custom app.</p>
-    pub fn get_target_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimulationAppTargetStatus> {
+    pub fn get_target_status(&self) -> &::std::option::Option<crate::types::SimulationAppTargetStatus> {
         &self.target_status
     }
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
@@ -176,10 +166,7 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
-    pub fn set_launch_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchOverrides>,
-    ) -> Self {
+    pub fn set_launch_overrides(mut self, input: ::std::option::Option<crate::types::LaunchOverrides>) -> Self {
         self.launch_overrides = input;
         self
     }
@@ -207,17 +194,12 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
-    pub fn set_endpoint_info(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationAppEndpointInfo>,
-    ) -> Self {
+    pub fn set_endpoint_info(mut self, input: ::std::option::Option<crate::types::SimulationAppEndpointInfo>) -> Self {
         self.endpoint_info = input;
         self
     }
     /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
-    pub fn get_endpoint_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimulationAppEndpointInfo> {
+    pub fn get_endpoint_info(&self) -> &::std::option::Option<crate::types::SimulationAppEndpointInfo> {
         &self.endpoint_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

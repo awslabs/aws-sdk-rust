@@ -39,10 +39,7 @@ impl PollForThirdPartyJobsFluentBuilder {
         }
     }
     /// Access the PollForThirdPartyJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl PollForThirdPartyJobsFluentBuilder {
             crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl PollForThirdPartyJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl PollForThirdPartyJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl PollForThirdPartyJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl PollForThirdPartyJobsFluentBuilder {
             crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +117,7 @@ impl PollForThirdPartyJobsFluentBuilder {
         self
     }
     /// <p>Represents information about an action type.</p>
-    pub fn set_action_type_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeId>,
-    ) -> Self {
+    pub fn set_action_type_id(mut self, input: ::std::option::Option<crate::types::ActionTypeId>) -> Self {
         self.inner = self.inner.set_action_type_id(input);
         self
     }

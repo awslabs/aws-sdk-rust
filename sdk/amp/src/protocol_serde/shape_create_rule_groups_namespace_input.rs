@@ -7,9 +7,7 @@ pub fn ser_create_rule_groups_namespace_input(
         object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.data {
-        object
-            .key("data")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("data").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.name {
         object.key("name").string(var_3.as_str());

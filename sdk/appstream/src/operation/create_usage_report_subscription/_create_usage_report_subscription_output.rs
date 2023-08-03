@@ -30,16 +30,14 @@ impl ::aws_http::request_id::RequestId for CreateUsageReportSubscriptionOutput {
 }
 impl CreateUsageReportSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateUsageReportSubscriptionOutput`](crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionOutput).
-    pub fn builder() -> crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionOutputBuilder {
         crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUsageReportSubscriptionOutput`](crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUsageReportSubscriptionOutputBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<crate::types::UsageReportSchedule>,
@@ -48,19 +46,13 @@ pub struct CreateUsageReportSubscriptionOutputBuilder {
 impl CreateUsageReportSubscriptionOutputBuilder {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
     /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
     /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -75,10 +67,7 @@ impl CreateUsageReportSubscriptionOutputBuilder {
         self
     }
     /// <p>The schedule for generating usage reports.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageReportSchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::UsageReportSchedule>) -> Self {
         self.schedule = input;
         self
     }
@@ -96,10 +85,7 @@ impl CreateUsageReportSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateUsageReportSubscriptionOutput`](crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionOutput
-    {
+    pub fn build(self) -> crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionOutput {
         crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionOutput {
             s3_bucket_name: self.s3_bucket_name,
             schedule: self.schedule,

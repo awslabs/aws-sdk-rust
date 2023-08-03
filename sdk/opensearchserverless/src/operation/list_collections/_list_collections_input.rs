@@ -36,9 +36,7 @@ impl ListCollectionsInput {
 
 /// A builder for [`ListCollectionsInput`](crate::operation::list_collections::ListCollectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollectionsInputBuilder {
     pub(crate) collection_filters: ::std::option::Option<crate::types::CollectionFilters>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,12 @@ impl ListCollectionsInputBuilder {
         self
     }
     /// <p>List of filter names and values that you can use for requests.</p>
-    pub fn set_collection_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectionFilters>,
-    ) -> Self {
+    pub fn set_collection_filters(mut self, input: ::std::option::Option<crate::types::CollectionFilters>) -> Self {
         self.collection_filters = input;
         self
     }
     /// <p>List of filter names and values that you can use for requests.</p>
-    pub fn get_collection_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::CollectionFilters> {
+    pub fn get_collection_filters(&self) -> &::std::option::Option<crate::types::CollectionFilters> {
         &self.collection_filters
     }
     /// <p>If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code> operations, which returns results in the next page.</p>
@@ -95,10 +88,7 @@ impl ListCollectionsInputBuilder {
     /// Consumes the builder and constructs a [`ListCollectionsInput`](crate::operation::list_collections::ListCollectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_collections::ListCollectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_collections::ListCollectionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_collections::ListCollectionsInput {
             collection_filters: self.collection_filters,
             next_token: self.next_token,

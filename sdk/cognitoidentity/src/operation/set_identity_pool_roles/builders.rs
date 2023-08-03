@@ -38,10 +38,7 @@ impl SetIdentityPoolRolesFluentBuilder {
         }
     }
     /// Access the SetIdentityPoolRoles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl SetIdentityPoolRolesFluentBuilder {
             crate::operation::set_identity_pool_roles::SetIdentityPoolRoles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_pool_roles::SetIdentityPoolRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_pool_roles::SetIdentityPoolRolesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl SetIdentityPoolRolesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl SetIdentityPoolRolesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_pool_roles::SetIdentityPoolRolesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_pool_roles::SetIdentityPoolRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_pool_roles::SetIdentityPoolRolesError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl SetIdentityPoolRolesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_pool_roles::SetIdentityPoolRolesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_pool_roles::SetIdentityPoolRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_pool_roles::SetIdentityPoolRolesError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl SetIdentityPoolRolesFluentBuilder {
             crate::operation::set_identity_pool_roles::SetIdentityPoolRoles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_pool_roles::SetIdentityPoolRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_pool_roles::SetIdentityPoolRolesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
@@ -149,30 +129,17 @@ impl SetIdentityPoolRolesFluentBuilder {
     /// To override the contents of this collection use [`set_roles`](Self::set_roles).
     ///
     /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
-    pub fn roles(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn roles(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.roles(k.into(), v.into());
         self
     }
     /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_roles(input);
         self
     }
     /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
-    pub fn get_roles(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_roles(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_roles()
     }
     /// Adds a key-value pair to `RoleMappings`.
@@ -181,11 +148,7 @@ impl SetIdentityPoolRolesFluentBuilder {
     ///
     /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
-    pub fn role_mappings(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::RoleMapping,
-    ) -> Self {
+    pub fn role_mappings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RoleMapping) -> Self {
         self.inner = self.inner.role_mappings(k.into(), v);
         self
     }
@@ -193,20 +156,14 @@ impl SetIdentityPoolRolesFluentBuilder {
     /// <p>Up to 25 rules can be specified per identity provider.</p>
     pub fn set_role_mappings(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>>,
     ) -> Self {
         self.inner = self.inner.set_role_mappings(input);
         self
     }
     /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
-    pub fn get_role_mappings(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
-    > {
+    pub fn get_role_mappings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>> {
         self.inner.get_role_mappings()
     }
 }

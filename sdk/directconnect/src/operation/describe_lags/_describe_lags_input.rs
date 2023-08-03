@@ -22,9 +22,7 @@ impl DescribeLagsInput {
 
 /// A builder for [`DescribeLagsInput`](crate::operation::describe_lags::DescribeLagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLagsInputBuilder {
     pub(crate) lag_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DescribeLagsInputBuilder {
         &self.lag_id
     }
     /// Consumes the builder and constructs a [`DescribeLagsInput`](crate::operation::describe_lags::DescribeLagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_lags::DescribeLagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_lags::DescribeLagsInput {
-            lag_id: self.lag_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_lags::DescribeLagsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_lags::DescribeLagsInput { lag_id: self.lag_id })
     }
 }

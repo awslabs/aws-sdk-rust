@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`return_size(Option<i32>)`](crate::operation::get_cost_categories::GetCostCategoriesOutput::return_size): <p>The number of objects that are returned.</p>
     ///   - [`total_size(Option<i32>)`](crate::operation::get_cost_categories::GetCostCategoriesOutput::total_size): <p>The total number of objects.</p>
     /// - On failure, responds with [`SdkError<GetCostCategoriesError>`](crate::operation::get_cost_categories::GetCostCategoriesError)
-    pub fn get_cost_categories(
-        &self,
-    ) -> crate::operation::get_cost_categories::builders::GetCostCategoriesFluentBuilder {
-        crate::operation::get_cost_categories::builders::GetCostCategoriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_cost_categories(&self) -> crate::operation::get_cost_categories::builders::GetCostCategoriesFluentBuilder {
+        crate::operation::get_cost_categories::builders::GetCostCategoriesFluentBuilder::new(self.handle.clone())
     }
 }

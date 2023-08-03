@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTranscriptionJobOutput {
 }
 impl GetTranscriptionJobOutput {
     /// Creates a new builder-style object to manufacture [`GetTranscriptionJobOutput`](crate::operation::get_transcription_job::GetTranscriptionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::get_transcription_job::builders::GetTranscriptionJobOutputBuilder {
-        crate::operation::get_transcription_job::builders::GetTranscriptionJobOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_transcription_job::builders::GetTranscriptionJobOutputBuilder {
+        crate::operation::get_transcription_job::builders::GetTranscriptionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTranscriptionJobOutput`](crate::operation::get_transcription_job::GetTranscriptionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTranscriptionJobOutputBuilder {
     pub(crate) transcription_job: ::std::option::Option<crate::types::TranscriptionJob>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetTranscriptionJobOutputBuilder {
         self
     }
     /// <p>Provides detailed information about the specified transcription job, including job status and, if applicable, failure reason.</p>
-    pub fn set_transcription_job(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptionJob>,
-    ) -> Self {
+    pub fn set_transcription_job(mut self, input: ::std::option::Option<crate::types::TranscriptionJob>) -> Self {
         self.transcription_job = input;
         self
     }

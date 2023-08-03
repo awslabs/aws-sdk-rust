@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartReportJobOutput`](crate::operation::start_report_job::StartReportJobOutput) with field(s):
     ///   - [`report_job_id(Option<String>)`](crate::operation::start_report_job::StartReportJobOutput::report_job_id): <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
     /// - On failure, responds with [`SdkError<StartReportJobError>`](crate::operation::start_report_job::StartReportJobError)
-    pub fn start_report_job(
-        &self,
-    ) -> crate::operation::start_report_job::builders::StartReportJobFluentBuilder {
-        crate::operation::start_report_job::builders::StartReportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_report_job(&self) -> crate::operation::start_report_job::builders::StartReportJobFluentBuilder {
+        crate::operation::start_report_job::builders::StartReportJobFluentBuilder::new(self.handle.clone())
     }
 }

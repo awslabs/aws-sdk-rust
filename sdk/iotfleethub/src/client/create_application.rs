@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`application_id(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::application_id): <p>The unique Id of the web application.</p>
     ///   - [`application_arn(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::application_arn): <p>The ARN of the web application.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::operation::create_application::CreateApplicationError)
-    pub fn create_application(
-        &self,
-    ) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
-        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_application(&self) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
+        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(self.handle.clone())
     }
 }

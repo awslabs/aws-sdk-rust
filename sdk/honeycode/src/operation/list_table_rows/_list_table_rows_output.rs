@@ -56,9 +56,7 @@ impl ListTableRowsOutput {
 
 /// A builder for [`ListTableRowsOutput`](crate::operation::list_table_rows::ListTableRowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableRowsOutputBuilder {
     pub(crate) column_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
@@ -80,10 +78,7 @@ impl ListTableRowsOutputBuilder {
         self
     }
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
-    pub fn set_column_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_column_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.column_ids = input;
         self
     }
@@ -103,10 +98,7 @@ impl ListTableRowsOutputBuilder {
         self
     }
     /// <p> The list of rows in the table. Note that this result is paginated, so this list contains a maximum of 100 rows. </p>
-    pub fn set_rows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
-    ) -> Self {
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>) -> Self {
         self.rows = input;
         self
     }
@@ -119,27 +111,19 @@ impl ListTableRowsOutputBuilder {
     /// To override the contents of this collection use [`set_row_ids_not_found`](Self::set_row_ids_not_found).
     ///
     /// <p> The list of row ids included in the request that were not found in the table. </p>
-    pub fn row_ids_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn row_ids_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.row_ids_not_found.unwrap_or_default();
         v.push(input.into());
         self.row_ids_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of row ids included in the request that were not found in the table. </p>
-    pub fn set_row_ids_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_row_ids_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.row_ids_not_found = input;
         self
     }
     /// <p> The list of row ids included in the request that were not found in the table. </p>
-    pub fn get_row_ids_not_found(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_row_ids_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.row_ids_not_found
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>

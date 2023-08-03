@@ -6,24 +6,18 @@
 pub struct InsufficientSensorData {
     /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
     #[doc(hidden)]
-    pub missing_complete_sensor_data:
-        ::std::option::Option<crate::types::MissingCompleteSensorData>,
+    pub missing_complete_sensor_data: ::std::option::Option<crate::types::MissingCompleteSensorData>,
     /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
     #[doc(hidden)]
-    pub sensors_with_short_date_range:
-        ::std::option::Option<crate::types::SensorsWithShortDateRange>,
+    pub sensors_with_short_date_range: ::std::option::Option<crate::types::SensorsWithShortDateRange>,
 }
 impl InsufficientSensorData {
     /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
-    pub fn missing_complete_sensor_data(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MissingCompleteSensorData> {
+    pub fn missing_complete_sensor_data(&self) -> ::std::option::Option<&crate::types::MissingCompleteSensorData> {
         self.missing_complete_sensor_data.as_ref()
     }
     /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
-    pub fn sensors_with_short_date_range(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SensorsWithShortDateRange> {
+    pub fn sensors_with_short_date_range(&self) -> ::std::option::Option<&crate::types::SensorsWithShortDateRange> {
         self.sensors_with_short_date_range.as_ref()
     }
 }
@@ -36,58 +30,38 @@ impl InsufficientSensorData {
 
 /// A builder for [`InsufficientSensorData`](crate::types::InsufficientSensorData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsufficientSensorDataBuilder {
-    pub(crate) missing_complete_sensor_data:
-        ::std::option::Option<crate::types::MissingCompleteSensorData>,
-    pub(crate) sensors_with_short_date_range:
-        ::std::option::Option<crate::types::SensorsWithShortDateRange>,
+    pub(crate) missing_complete_sensor_data: ::std::option::Option<crate::types::MissingCompleteSensorData>,
+    pub(crate) sensors_with_short_date_range: ::std::option::Option<crate::types::SensorsWithShortDateRange>,
 }
 impl InsufficientSensorDataBuilder {
     /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
-    pub fn missing_complete_sensor_data(
-        mut self,
-        input: crate::types::MissingCompleteSensorData,
-    ) -> Self {
+    pub fn missing_complete_sensor_data(mut self, input: crate::types::MissingCompleteSensorData) -> Self {
         self.missing_complete_sensor_data = ::std::option::Option::Some(input);
         self
     }
     /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
-    pub fn set_missing_complete_sensor_data(
-        mut self,
-        input: ::std::option::Option<crate::types::MissingCompleteSensorData>,
-    ) -> Self {
+    pub fn set_missing_complete_sensor_data(mut self, input: ::std::option::Option<crate::types::MissingCompleteSensorData>) -> Self {
         self.missing_complete_sensor_data = input;
         self
     }
     /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
-    pub fn get_missing_complete_sensor_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::MissingCompleteSensorData> {
+    pub fn get_missing_complete_sensor_data(&self) -> &::std::option::Option<crate::types::MissingCompleteSensorData> {
         &self.missing_complete_sensor_data
     }
     /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
-    pub fn sensors_with_short_date_range(
-        mut self,
-        input: crate::types::SensorsWithShortDateRange,
-    ) -> Self {
+    pub fn sensors_with_short_date_range(mut self, input: crate::types::SensorsWithShortDateRange) -> Self {
         self.sensors_with_short_date_range = ::std::option::Option::Some(input);
         self
     }
     /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
-    pub fn set_sensors_with_short_date_range(
-        mut self,
-        input: ::std::option::Option<crate::types::SensorsWithShortDateRange>,
-    ) -> Self {
+    pub fn set_sensors_with_short_date_range(mut self, input: ::std::option::Option<crate::types::SensorsWithShortDateRange>) -> Self {
         self.sensors_with_short_date_range = input;
         self
     }
     /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
-    pub fn get_sensors_with_short_date_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::SensorsWithShortDateRange> {
+    pub fn get_sensors_with_short_date_range(&self) -> &::std::option::Option<crate::types::SensorsWithShortDateRange> {
         &self.sensors_with_short_date_range
     }
     /// Consumes the builder and constructs a [`InsufficientSensorData`](crate::types::InsufficientSensorData).

@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`devices(Option<Vec<DeviceDescription>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>A list of devices.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::next_token): <p>The token to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
-    pub fn list_devices(
-        &self,
-    ) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {
+    pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {
         crate::operation::list_devices::builders::ListDevicesFluentBuilder::new(self.handle.clone())
     }
 }

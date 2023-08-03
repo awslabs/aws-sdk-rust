@@ -13,9 +13,7 @@ impl LandCoverSegmentationConfigInput {
 
 /// A builder for [`LandCoverSegmentationConfigInput`](crate::types::LandCoverSegmentationConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LandCoverSegmentationConfigInputBuilder {}
 impl LandCoverSegmentationConfigInputBuilder {
     /// Consumes the builder and constructs a [`LandCoverSegmentationConfigInput`](crate::types::LandCoverSegmentationConfigInput).

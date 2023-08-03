@@ -22,35 +22,26 @@ impl RejectAssignmentInput {
 }
 impl RejectAssignmentInput {
     /// Creates a new builder-style object to manufacture [`RejectAssignmentInput`](crate::operation::reject_assignment::RejectAssignmentInput).
-    pub fn builder() -> crate::operation::reject_assignment::builders::RejectAssignmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::reject_assignment::builders::RejectAssignmentInputBuilder {
         crate::operation::reject_assignment::builders::RejectAssignmentInputBuilder::default()
     }
 }
 
 /// A builder for [`RejectAssignmentInput`](crate::operation::reject_assignment::RejectAssignmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectAssignmentInputBuilder {
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
     pub(crate) requester_feedback: ::std::option::Option<::std::string::String>,
 }
 impl RejectAssignmentInputBuilder {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_id = input;
         self
     }
@@ -59,18 +50,12 @@ impl RejectAssignmentInputBuilder {
         &self.assignment_id
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
-    pub fn requester_feedback(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_feedback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_feedback = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
-    pub fn set_requester_feedback(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requester_feedback(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.requester_feedback = input;
         self
     }
@@ -81,10 +66,7 @@ impl RejectAssignmentInputBuilder {
     /// Consumes the builder and constructs a [`RejectAssignmentInput`](crate::operation::reject_assignment::RejectAssignmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_assignment::RejectAssignmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::reject_assignment::RejectAssignmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_assignment::RejectAssignmentInput {
             assignment_id: self.assignment_id,
             requester_feedback: self.requester_feedback,

@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`verified_access_trust_providers(Option<Vec<VerifiedAccessTrustProvider>>)`](crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersOutput::verified_access_trust_providers): <p>The IDs of the Verified Access trust providers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVerifiedAccessTrustProvidersError>`](crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersError)
-    pub fn describe_verified_access_trust_providers(&self) -> crate::operation::describe_verified_access_trust_providers::builders::DescribeVerifiedAccessTrustProvidersFluentBuilder{
-        crate::operation::describe_verified_access_trust_providers::builders::DescribeVerifiedAccessTrustProvidersFluentBuilder::new(self.handle.clone())
+    pub fn describe_verified_access_trust_providers(
+        &self,
+    ) -> crate::operation::describe_verified_access_trust_providers::builders::DescribeVerifiedAccessTrustProvidersFluentBuilder {
+        crate::operation::describe_verified_access_trust_providers::builders::DescribeVerifiedAccessTrustProvidersFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -35,9 +35,7 @@ impl GetClassifiersOutput {
 
 /// A builder for [`GetClassifiersOutput`](crate::operation::get_classifiers::GetClassifiersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClassifiersOutputBuilder {
     pub(crate) classifiers: ::std::option::Option<::std::vec::Vec<crate::types::Classifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetClassifiersOutputBuilder {
         self
     }
     /// <p>The requested list of classifier objects.</p>
-    pub fn set_classifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Classifier>>,
-    ) -> Self {
+    pub fn set_classifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Classifier>>) -> Self {
         self.classifiers = input;
         self
     }
     /// <p>The requested list of classifier objects.</p>
-    pub fn get_classifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Classifier>> {
+    pub fn get_classifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Classifier>> {
         &self.classifiers
     }
     /// <p>A continuation token.</p>

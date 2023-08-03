@@ -63,18 +63,14 @@ impl ::aws_http::request_id::RequestId for GetDataQualityRulesetOutput {
 }
 impl GetDataQualityRulesetOutput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetOutput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetOutputBuilder {
         crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataQualityRulesetOutput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataQualityRulesetOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -134,10 +130,7 @@ impl GetDataQualityRulesetOutputBuilder {
         self
     }
     /// <p>The name and database name of the target table.</p>
-    pub fn set_target_table(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityTargetTable>,
-    ) -> Self {
+    pub fn set_target_table(mut self, input: ::std::option::Option<crate::types::DataQualityTargetTable>) -> Self {
         self.target_table = input;
         self
     }
@@ -151,10 +144,7 @@ impl GetDataQualityRulesetOutputBuilder {
         self
     }
     /// <p>A timestamp. The time and date that this data quality ruleset was created.</p>
-    pub fn set_created_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_on = input;
         self
     }
@@ -168,10 +158,7 @@ impl GetDataQualityRulesetOutputBuilder {
         self
     }
     /// <p>A timestamp. The last point in time when this data quality ruleset was modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -180,18 +167,12 @@ impl GetDataQualityRulesetOutputBuilder {
         &self.last_modified_on
     }
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
-    pub fn recommendation_run_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
-    pub fn set_recommendation_run_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_run_id = input;
         self
     }

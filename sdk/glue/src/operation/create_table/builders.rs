@@ -10,10 +10,7 @@ impl CreateTableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_table::CreateTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_table::CreateTableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_table::CreateTableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_table();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateTableFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_table::CreateTable,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_table::CreateTable, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_table::CreateTableError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateTableFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_table::CreateTable,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_table::CreateTable, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_table::CreateTableError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl CreateTableFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -152,10 +134,7 @@ impl CreateTableFluentBuilder {
         self
     }
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
-    pub fn set_table_input(
-        mut self,
-        input: ::std::option::Option<crate::types::TableInput>,
-    ) -> Self {
+    pub fn set_table_input(mut self, input: ::std::option::Option<crate::types::TableInput>) -> Self {
         self.inner = self.inner.set_table_input(input);
         self
     }
@@ -173,32 +152,21 @@ impl CreateTableFluentBuilder {
         self
     }
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
-    pub fn set_partition_indexes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>>,
-    ) -> Self {
+    pub fn set_partition_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>>) -> Self {
         self.inner = self.inner.set_partition_indexes(input);
         self
     }
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
-    pub fn get_partition_indexes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>> {
+    pub fn get_partition_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>> {
         self.inner.get_partition_indexes()
     }
     /// <p>The ID of the transaction.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The ID of the transaction.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
@@ -212,17 +180,12 @@ impl CreateTableFluentBuilder {
         self
     }
     /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
-    pub fn set_open_table_format_input(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenTableFormatInput>,
-    ) -> Self {
+    pub fn set_open_table_format_input(mut self, input: ::std::option::Option<crate::types::OpenTableFormatInput>) -> Self {
         self.inner = self.inner.set_open_table_format_input(input);
         self
     }
     /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
-    pub fn get_open_table_format_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenTableFormatInput> {
+    pub fn get_open_table_format_input(&self) -> &::std::option::Option<crate::types::OpenTableFormatInput> {
         self.inner.get_open_table_format_input()
     }
 }

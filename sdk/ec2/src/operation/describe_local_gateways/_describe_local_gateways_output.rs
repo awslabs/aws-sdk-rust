@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeLocalGatewaysOutput {
 }
 impl DescribeLocalGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocalGatewaysOutput`](crate::operation::describe_local_gateways::DescribeLocalGatewaysOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysOutputBuilder {
         crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocalGatewaysOutput`](crate::operation::describe_local_gateways::DescribeLocalGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocalGatewaysOutputBuilder {
     pub(crate) local_gateways: ::std::option::Option<::std::vec::Vec<crate::types::LocalGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeLocalGatewaysOutputBuilder {
         self
     }
     /// <p>Information about the local gateways.</p>
-    pub fn set_local_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocalGateway>>,
-    ) -> Self {
+    pub fn set_local_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocalGateway>>) -> Self {
         self.local_gateways = input;
         self
     }
     /// <p>Information about the local gateways.</p>
-    pub fn get_local_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGateway>> {
+    pub fn get_local_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGateway>> {
         &self.local_gateways
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

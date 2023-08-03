@@ -22,18 +22,14 @@ impl ListBulkDeploymentsInput {
 }
 impl ListBulkDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`ListBulkDeploymentsInput`](crate::operation::list_bulk_deployments::ListBulkDeploymentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsInputBuilder {
-        crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsInputBuilder {
+        crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBulkDeploymentsInput`](crate::operation::list_bulk_deployments::ListBulkDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBulkDeploymentsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListBulkDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`ListBulkDeploymentsInput`](crate::operation::list_bulk_deployments::ListBulkDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bulk_deployments::ListBulkDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_bulk_deployments::ListBulkDeploymentsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_bulk_deployments::ListBulkDeploymentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_bulk_deployments::ListBulkDeploymentsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

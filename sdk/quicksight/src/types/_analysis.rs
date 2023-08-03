@@ -86,9 +86,7 @@ impl Analysis {
 
 /// A builder for [`Analysis`](crate::types::Analysis).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisBuilder {
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -150,10 +148,7 @@ impl AnalysisBuilder {
         self
     }
     /// <p>Status associated with the analysis.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -173,17 +168,12 @@ impl AnalysisBuilder {
         self
     }
     /// <p>Errors associated with the analysis.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Errors associated with the analysis.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>> {
         &self.errors
     }
     /// Appends an item to `data_set_arns`.
@@ -191,27 +181,19 @@ impl AnalysisBuilder {
     /// To override the contents of this collection use [`set_data_set_arns`](Self::set_data_set_arns).
     ///
     /// <p>The ARNs of the datasets of the analysis.</p>
-    pub fn data_set_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_set_arns.unwrap_or_default();
         v.push(input.into());
         self.data_set_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs of the datasets of the analysis.</p>
-    pub fn set_data_set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_set_arns = input;
         self
     }
     /// <p>The ARNs of the datasets of the analysis.</p>
-    pub fn get_data_set_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_set_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_set_arns
     }
     /// <p>The ARN of the theme of the analysis.</p>
@@ -234,10 +216,7 @@ impl AnalysisBuilder {
         self
     }
     /// <p>The time that the analysis was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -251,10 +230,7 @@ impl AnalysisBuilder {
         self
     }
     /// <p>The time that the analysis was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -274,10 +250,7 @@ impl AnalysisBuilder {
         self
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    pub fn set_sheets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
-    ) -> Self {
+    pub fn set_sheets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>) -> Self {
         self.sheets = input;
         self
     }

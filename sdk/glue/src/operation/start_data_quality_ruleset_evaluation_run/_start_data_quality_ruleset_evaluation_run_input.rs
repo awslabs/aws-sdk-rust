@@ -20,16 +20,13 @@ pub struct StartDataQualityRulesetEvaluationRunInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Additional run options you can specify for an evaluation run.</p>
     #[doc(hidden)]
-    pub additional_run_options:
-        ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
+    pub additional_run_options: ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
     /// <p>A list of ruleset names.</p>
     #[doc(hidden)]
     pub ruleset_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     #[doc(hidden)]
-    pub additional_data_sources: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-    >,
+    pub additional_data_sources: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataSource>>,
 }
 impl StartDataQualityRulesetEvaluationRunInput {
     /// <p>The data source (Glue table) associated with this run.</p>
@@ -53,9 +50,7 @@ impl StartDataQualityRulesetEvaluationRunInput {
         self.client_token.as_deref()
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn additional_run_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
+    pub fn additional_run_options(&self) -> ::std::option::Option<&crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
         self.additional_run_options.as_ref()
     }
     /// <p>A list of ruleset names.</p>
@@ -63,38 +58,29 @@ impl StartDataQualityRulesetEvaluationRunInput {
         self.ruleset_names.as_deref()
     }
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
-    pub fn additional_data_sources(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-    > {
+    pub fn additional_data_sources(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::DataSource>> {
         self.additional_data_sources.as_ref()
     }
 }
 impl StartDataQualityRulesetEvaluationRunInput {
     /// Creates a new builder-style object to manufacture [`StartDataQualityRulesetEvaluationRunInput`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput).
-    pub fn builder() -> crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunInputBuilder{
+    pub fn builder() -> crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunInputBuilder {
         crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDataQualityRulesetEvaluationRunInput`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDataQualityRulesetEvaluationRunInputBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_workers: ::std::option::Option<i32>,
     pub(crate) timeout: ::std::option::Option<i32>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_run_options:
-        ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
+    pub(crate) additional_run_options: ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
     pub(crate) ruleset_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) additional_data_sources: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-    >,
+    pub(crate) additional_data_sources: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataSource>>,
 }
 impl StartDataQualityRulesetEvaluationRunInputBuilder {
     /// <p>The data source (Glue table) associated with this run.</p>
@@ -103,10 +89,7 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
         self
     }
     /// <p>The data source (Glue table) associated with this run.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -171,25 +154,17 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
         &self.client_token
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn additional_run_options(
-        mut self,
-        input: crate::types::DataQualityEvaluationRunAdditionalRunOptions,
-    ) -> Self {
+    pub fn additional_run_options(mut self, input: crate::types::DataQualityEvaluationRunAdditionalRunOptions) -> Self {
         self.additional_run_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn set_additional_run_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
-    ) -> Self {
+    pub fn set_additional_run_options(mut self, input: ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>) -> Self {
         self.additional_run_options = input;
         self
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn get_additional_run_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
+    pub fn get_additional_run_options(&self) -> &::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
         &self.additional_run_options
     }
     /// Appends an item to `ruleset_names`.
@@ -197,27 +172,19 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
     /// To override the contents of this collection use [`set_ruleset_names`](Self::set_ruleset_names).
     ///
     /// <p>A list of ruleset names.</p>
-    pub fn ruleset_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ruleset_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ruleset_names.unwrap_or_default();
         v.push(input.into());
         self.ruleset_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of ruleset names.</p>
-    pub fn set_ruleset_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ruleset_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ruleset_names = input;
         self
     }
     /// <p>A list of ruleset names.</p>
-    pub fn get_ruleset_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ruleset_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ruleset_names
     }
     /// Adds a key-value pair to `additional_data_sources`.
@@ -225,11 +192,7 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
     /// To override the contents of this collection use [`set_additional_data_sources`](Self::set_additional_data_sources).
     ///
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
-    pub fn additional_data_sources(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::DataSource,
-    ) -> Self {
+    pub fn additional_data_sources(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::DataSource) -> Self {
         let mut hash_map = self.additional_data_sources.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.additional_data_sources = ::std::option::Option::Some(hash_map);
@@ -238,9 +201,7 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     pub fn set_additional_data_sources(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataSource>>,
     ) -> Self {
         self.additional_data_sources = input;
         self
@@ -248,32 +209,27 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     pub fn get_additional_data_sources(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataSource>> {
         &self.additional_data_sources
     }
     /// Consumes the builder and constructs a [`StartDataQualityRulesetEvaluationRunInput`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput {
-                data_source: self.data_source
-                ,
-                role: self.role
-                ,
-                number_of_workers: self.number_of_workers
-                ,
-                timeout: self.timeout
-                ,
-                client_token: self.client_token
-                ,
-                additional_run_options: self.additional_run_options
-                ,
-                ruleset_names: self.ruleset_names
-                ,
-                additional_data_sources: self.additional_data_sources
-                ,
-            }
+                data_source: self.data_source,
+                role: self.role,
+                number_of_workers: self.number_of_workers,
+                timeout: self.timeout,
+                client_token: self.client_token,
+                additional_run_options: self.additional_run_options,
+                ruleset_names: self.ruleset_names,
+                additional_data_sources: self.additional_data_sources,
+            },
         )
     }
 }

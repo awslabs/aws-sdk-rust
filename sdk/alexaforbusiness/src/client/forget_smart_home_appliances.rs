@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ForgetSmartHomeAppliancesOutput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput)
     /// - On failure, responds with [`SdkError<ForgetSmartHomeAppliancesError>`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn forget_smart_home_appliances(&self) -> crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder{
+    pub fn forget_smart_home_appliances(&self) -> crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder {
         crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder::new(self.handle.clone())
     }
 }

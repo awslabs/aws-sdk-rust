@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput) with field(s):
     ///   - [`connection(Option<Connection>)`](crate::operation::create_connection::CreateConnectionOutput::connection): <p>Information about the connection.</p>
     /// - On failure, responds with [`SdkError<CreateConnectionError>`](crate::operation::create_connection::CreateConnectionError)
-    pub fn create_connection(
-        &self,
-    ) -> crate::operation::create_connection::builders::CreateConnectionFluentBuilder {
-        crate::operation::create_connection::builders::CreateConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_connection(&self) -> crate::operation::create_connection::builders::CreateConnectionFluentBuilder {
+        crate::operation::create_connection::builders::CreateConnectionFluentBuilder::new(self.handle.clone())
     }
 }

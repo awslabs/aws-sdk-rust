@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ConfirmProductInstanceOutput {
 }
 impl ConfirmProductInstanceOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmProductInstanceOutput`](crate::operation::confirm_product_instance::ConfirmProductInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::confirm_product_instance::builders::ConfirmProductInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::confirm_product_instance::builders::ConfirmProductInstanceOutputBuilder {
         crate::operation::confirm_product_instance::builders::ConfirmProductInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmProductInstanceOutput`](crate::operation::confirm_product_instance::ConfirmProductInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmProductInstanceOutputBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#return: ::std::option::Option<bool>,

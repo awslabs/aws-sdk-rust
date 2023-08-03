@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeTargetHealthOutput`](crate::operation::describe_target_health::DescribeTargetHealthOutput) with field(s):
     ///   - [`target_health_descriptions(Option<Vec<TargetHealthDescription>>)`](crate::operation::describe_target_health::DescribeTargetHealthOutput::target_health_descriptions): <p>Information about the health of the targets.</p>
     /// - On failure, responds with [`SdkError<DescribeTargetHealthError>`](crate::operation::describe_target_health::DescribeTargetHealthError)
-    pub fn describe_target_health(
-        &self,
-    ) -> crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder {
-        crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_target_health(&self) -> crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder {
+        crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder::new(self.handle.clone())
     }
 }

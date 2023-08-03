@@ -30,9 +30,7 @@ impl HostedZoneConfig {
 
 /// A builder for [`HostedZoneConfig`](crate::types::HostedZoneConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostedZoneConfigBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) private_zone: ::std::option::Option<bool>,

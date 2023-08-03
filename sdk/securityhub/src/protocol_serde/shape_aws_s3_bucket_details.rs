@@ -17,22 +17,29 @@ pub fn ser_aws_s3_bucket_details(
     }
     if let Some(var_5) = &input.server_side_encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object
-            .key("ServerSideEncryptionConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_aws_s3_bucket_server_side_encryption_configuration::ser_aws_s3_bucket_server_side_encryption_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("ServerSideEncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_aws_s3_bucket_server_side_encryption_configuration::ser_aws_s3_bucket_server_side_encryption_configuration(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     if let Some(var_7) = &input.bucket_lifecycle_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("BucketLifecycleConfiguration").start_object();
-        crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_details::ser_aws_s3_bucket_bucket_lifecycle_configuration_details(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_details::ser_aws_s3_bucket_bucket_lifecycle_configuration_details(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.public_access_block_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("PublicAccessBlockConfiguration").start_object();
-        crate::protocol_serde::shape_aws_s3_account_public_access_block_details::ser_aws_s3_account_public_access_block_details(&mut object_10, var_9)?;
+        crate::protocol_serde::shape_aws_s3_account_public_access_block_details::ser_aws_s3_account_public_access_block_details(
+            &mut object_10,
+            var_9,
+        )?;
         object_10.finish();
     }
     if let Some(var_11) = &input.access_control_list {
@@ -59,7 +66,10 @@ pub fn ser_aws_s3_bucket_details(
     if let Some(var_18) = &input.bucket_versioning_configuration {
         #[allow(unused_mut)]
         let mut object_19 = object.key("BucketVersioningConfiguration").start_object();
-        crate::protocol_serde::shape_aws_s3_bucket_bucket_versioning_configuration::ser_aws_s3_bucket_bucket_versioning_configuration(&mut object_19, var_18)?;
+        crate::protocol_serde::shape_aws_s3_bucket_bucket_versioning_configuration::ser_aws_s3_bucket_bucket_versioning_configuration(
+            &mut object_19,
+            var_18,
+        )?;
         object_19.finish();
     }
     if let Some(var_20) = &input.object_lock_configuration {
@@ -73,17 +83,9 @@ pub fn ser_aws_s3_bucket_details(
 
 pub(crate) fn de_aws_s3_bucket_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsS3BucketDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsS3BucketDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -97,38 +99,30 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "OwnerId" => {
                                 builder = builder.set_owner_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "OwnerName" => {
                                 builder = builder.set_owner_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "OwnerAccountId" => {
                                 builder = builder.set_owner_account_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "CreatedAt" => {
                                 builder = builder.set_created_at(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "ServerSideEncryptionConfiguration" => {
@@ -148,21 +142,19 @@ where
                             }
                             "AccessControlList" => {
                                 builder = builder.set_access_control_list(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "BucketLoggingConfiguration" => {
                                 builder = builder.set_bucket_logging_configuration(
-                                    crate::protocol_serde::shape_aws_s3_bucket_logging_configuration::de_aws_s3_bucket_logging_configuration(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_logging_configuration::de_aws_s3_bucket_logging_configuration(tokens)?,
                                 );
                             }
                             "BucketWebsiteConfiguration" => {
                                 builder = builder.set_bucket_website_configuration(
-                                    crate::protocol_serde::shape_aws_s3_bucket_website_configuration::de_aws_s3_bucket_website_configuration(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_website_configuration::de_aws_s3_bucket_website_configuration(tokens)?,
                                 );
                             }
                             "BucketNotificationConfiguration" => {
@@ -177,27 +169,26 @@ where
                             }
                             "ObjectLockConfiguration" => {
                                 builder = builder.set_object_lock_configuration(
-                                    crate::protocol_serde::shape_aws_s3_bucket_object_lock_configuration::de_aws_s3_bucket_object_lock_configuration(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_object_lock_configuration::de_aws_s3_bucket_object_lock_configuration(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

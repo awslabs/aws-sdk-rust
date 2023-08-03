@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StartAccessLoggingOutput {
 }
 impl StartAccessLoggingOutput {
     /// Creates a new builder-style object to manufacture [`StartAccessLoggingOutput`](crate::operation::start_access_logging::StartAccessLoggingOutput).
-    pub fn builder(
-    ) -> crate::operation::start_access_logging::builders::StartAccessLoggingOutputBuilder {
+    pub fn builder() -> crate::operation::start_access_logging::builders::StartAccessLoggingOutputBuilder {
         crate::operation::start_access_logging::builders::StartAccessLoggingOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartAccessLoggingOutput`](crate::operation::start_access_logging::StartAccessLoggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAccessLoggingOutputBuilder {
     _request_id: Option<String>,
 }

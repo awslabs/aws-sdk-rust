@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGameSessionOutput`](crate::operation::create_game_session::CreateGameSessionOutput) with field(s):
     ///   - [`game_session(Option<GameSession>)`](crate::operation::create_game_session::CreateGameSessionOutput::game_session): <p>Object that describes the newly created game session record.</p>
     /// - On failure, responds with [`SdkError<CreateGameSessionError>`](crate::operation::create_game_session::CreateGameSessionError)
-    pub fn create_game_session(
-        &self,
-    ) -> crate::operation::create_game_session::builders::CreateGameSessionFluentBuilder {
-        crate::operation::create_game_session::builders::CreateGameSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_game_session(&self) -> crate::operation::create_game_session::builders::CreateGameSessionFluentBuilder {
+        crate::operation::create_game_session::builders::CreateGameSessionFluentBuilder::new(self.handle.clone())
     }
 }

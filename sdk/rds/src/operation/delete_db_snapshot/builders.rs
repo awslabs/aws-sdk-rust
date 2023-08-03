@@ -10,10 +10,7 @@ impl DeleteDbSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_db_snapshot::DeleteDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_snapshot::DeleteDBSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_snapshot::DeleteDBSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_db_snapshot();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteDBSnapshotFluentBuilder {
         }
     }
     /// Access the DeleteDBSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_db_snapshot::builders::DeleteDbSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_db_snapshot::builders::DeleteDbSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeleteDBSnapshotFluentBuilder {
             crate::operation::delete_db_snapshot::DeleteDBSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_snapshot::DeleteDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_snapshot::DeleteDBSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeleteDBSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeleteDBSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_snapshot::DeleteDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_snapshot::DeleteDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_snapshot::DeleteDBSnapshotError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeleteDBSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_snapshot::DeleteDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_snapshot::DeleteDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_snapshot::DeleteDBSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -118,27 +104,19 @@ impl DeleteDBSnapshotFluentBuilder {
             crate::operation::delete_db_snapshot::DeleteDBSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_snapshot::DeleteDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_snapshot::DeleteDBSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The DB snapshot identifier.</p>
     /// <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
-    pub fn db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_snapshot_identifier(input.into());
         self
     }
     /// <p>The DB snapshot identifier.</p>
     /// <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_snapshot_identifier(input);
         self
     }

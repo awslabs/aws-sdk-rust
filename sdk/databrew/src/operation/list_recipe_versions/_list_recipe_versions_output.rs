@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRecipeVersionsOutput {
 }
 impl ListRecipeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecipeVersionsOutput`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_recipe_versions::builders::ListRecipeVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_recipe_versions::builders::ListRecipeVersionsOutputBuilder {
         crate::operation::list_recipe_versions::builders::ListRecipeVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecipeVersionsOutput`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecipeVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) recipes: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>,
@@ -71,10 +68,7 @@ impl ListRecipeVersionsOutputBuilder {
         self
     }
     /// <p>A list of versions for the specified recipe.</p>
-    pub fn set_recipes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>,
-    ) -> Self {
+    pub fn set_recipes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>) -> Self {
         self.recipes = input;
         self
     }

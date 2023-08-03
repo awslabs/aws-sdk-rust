@@ -84,16 +84,14 @@ impl ::aws_http::request_id::RequestId for RestoreSnapshotFromRecycleBinOutput {
 }
 impl RestoreSnapshotFromRecycleBinOutput {
     /// Creates a new builder-style object to manufacture [`RestoreSnapshotFromRecycleBinOutput`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput).
-    pub fn builder() -> crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinOutputBuilder{
+    pub fn builder() -> crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinOutputBuilder {
         crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreSnapshotFromRecycleBinOutput`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreSnapshotFromRecycleBinOutputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
@@ -198,10 +196,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
         self
     }
     /// <p>The time stamp when the snapshot was initiated.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -261,10 +256,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreSnapshotFromRecycleBinOutput`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput
-    {
+    pub fn build(self) -> crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput {
         crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput {
             snapshot_id: self.snapshot_id,
             outpost_arn: self.outpost_arn,

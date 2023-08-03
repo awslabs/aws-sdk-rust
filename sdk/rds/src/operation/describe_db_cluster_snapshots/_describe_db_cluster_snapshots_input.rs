@@ -121,16 +121,14 @@ impl DescribeDbClusterSnapshotsInput {
 }
 impl DescribeDbClusterSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsInput`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput).
-    pub fn builder() -> crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder {
         crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterSnapshotsInput`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterSnapshotsInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -147,10 +145,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -159,10 +154,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -180,10 +172,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -193,10 +182,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = input;
         self
     }
@@ -206,9 +192,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn get_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_snapshot_identifier
     }
     /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
@@ -220,10 +204,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public DB cluster snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn snapshot_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -236,10 +217,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public DB cluster snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn set_snapshot_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_type = input;
         self
     }
@@ -281,10 +259,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <li> <p> <code>snapshot-type</code> - Accepts types of DB cluster snapshots.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -374,17 +349,15 @@ impl DescribeDbClusterSnapshotsInputBuilder {
         crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
-                snapshot_type: self.snapshot_type,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-                include_shared: self.include_shared.unwrap_or_default(),
-                include_public: self.include_public.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput {
+            db_cluster_identifier: self.db_cluster_identifier,
+            db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
+            snapshot_type: self.snapshot_type,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+            include_shared: self.include_shared.unwrap_or_default(),
+            include_public: self.include_public.unwrap_or_default(),
+        })
     }
 }

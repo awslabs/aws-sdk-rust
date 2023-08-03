@@ -16,7 +16,11 @@ impl super::Client {
     ///   - [`network_insights_access_scope_analyses(Option<Vec<NetworkInsightsAccessScopeAnalysis>>)`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput::network_insights_access_scope_analyses): <p>The Network Access Scope analyses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeNetworkInsightsAccessScopeAnalysesError>`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError)
-    pub fn describe_network_insights_access_scope_analyses(&self) -> crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder{
-        crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder::new(self.handle.clone())
+    pub fn describe_network_insights_access_scope_analyses(
+        &self,
+    ) -> crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
+        crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

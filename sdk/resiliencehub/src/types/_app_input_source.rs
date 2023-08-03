@@ -21,8 +21,7 @@ pub struct AppInputSource {
     pub resource_count: i32,
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
     #[doc(hidden)]
-    pub eks_source_cluster_namespace:
-        ::std::option::Option<crate::types::EksSourceClusterNamespace>,
+    pub eks_source_cluster_namespace: ::std::option::Option<crate::types::EksSourceClusterNamespace>,
 }
 impl AppInputSource {
     /// <p>The name of the input source.</p>
@@ -46,9 +45,7 @@ impl AppInputSource {
         self.resource_count
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
-    pub fn eks_source_cluster_namespace(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EksSourceClusterNamespace> {
+    pub fn eks_source_cluster_namespace(&self) -> ::std::option::Option<&crate::types::EksSourceClusterNamespace> {
         self.eks_source_cluster_namespace.as_ref()
     }
 }
@@ -61,17 +58,14 @@ impl AppInputSource {
 
 /// A builder for [`AppInputSource`](crate::types::AppInputSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppInputSourceBuilder {
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) import_type: ::std::option::Option<crate::types::ResourceMappingType>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) terraform_source: ::std::option::Option<crate::types::TerraformSource>,
     pub(crate) resource_count: ::std::option::Option<i32>,
-    pub(crate) eks_source_cluster_namespace:
-        ::std::option::Option<crate::types::EksSourceClusterNamespace>,
+    pub(crate) eks_source_cluster_namespace: ::std::option::Option<crate::types::EksSourceClusterNamespace>,
 }
 impl AppInputSourceBuilder {
     /// <p>The name of the input source.</p>
@@ -94,10 +88,7 @@ impl AppInputSourceBuilder {
         self
     }
     /// <p>The resource type of the input source.</p>
-    pub fn set_import_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceMappingType>,
-    ) -> Self {
+    pub fn set_import_type(mut self, input: ::std::option::Option<crate::types::ResourceMappingType>) -> Self {
         self.import_type = input;
         self
     }
@@ -125,10 +116,7 @@ impl AppInputSourceBuilder {
         self
     }
     /// <p>The name of the Terraform s3 state ﬁle.</p>
-    pub fn set_terraform_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TerraformSource>,
-    ) -> Self {
+    pub fn set_terraform_source(mut self, input: ::std::option::Option<crate::types::TerraformSource>) -> Self {
         self.terraform_source = input;
         self
     }
@@ -151,25 +139,17 @@ impl AppInputSourceBuilder {
         &self.resource_count
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
-    pub fn eks_source_cluster_namespace(
-        mut self,
-        input: crate::types::EksSourceClusterNamespace,
-    ) -> Self {
+    pub fn eks_source_cluster_namespace(mut self, input: crate::types::EksSourceClusterNamespace) -> Self {
         self.eks_source_cluster_namespace = ::std::option::Option::Some(input);
         self
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
-    pub fn set_eks_source_cluster_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::EksSourceClusterNamespace>,
-    ) -> Self {
+    pub fn set_eks_source_cluster_namespace(mut self, input: ::std::option::Option<crate::types::EksSourceClusterNamespace>) -> Self {
         self.eks_source_cluster_namespace = input;
         self
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
-    pub fn get_eks_source_cluster_namespace(
-        &self,
-    ) -> &::std::option::Option<crate::types::EksSourceClusterNamespace> {
+    pub fn get_eks_source_cluster_namespace(&self) -> &::std::option::Option<crate::types::EksSourceClusterNamespace> {
         &self.eks_source_cluster_namespace
     }
     /// Consumes the builder and constructs a [`AppInputSource`](crate::types::AppInputSource).

@@ -29,18 +29,14 @@ impl ListContactChannelsInput {
 }
 impl ListContactChannelsInput {
     /// Creates a new builder-style object to manufacture [`ListContactChannelsInput`](crate::operation::list_contact_channels::ListContactChannelsInput).
-    pub fn builder(
-    ) -> crate::operation::list_contact_channels::builders::ListContactChannelsInputBuilder {
-        crate::operation::list_contact_channels::builders::ListContactChannelsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_contact_channels::builders::ListContactChannelsInputBuilder {
+        crate::operation::list_contact_channels::builders::ListContactChannelsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListContactChannelsInput`](crate::operation::list_contact_channels::ListContactChannelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactChannelsInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListContactChannelsInputBuilder {
     /// Consumes the builder and constructs a [`ListContactChannelsInput`](crate::operation::list_contact_channels::ListContactChannelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_contact_channels::ListContactChannelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_contact_channels::ListContactChannelsInput {
-                contact_id: self.contact_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_contact_channels::ListContactChannelsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_contact_channels::ListContactChannelsInput {
+            contact_id: self.contact_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

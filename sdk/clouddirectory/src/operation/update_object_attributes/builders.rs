@@ -37,10 +37,7 @@ impl UpdateObjectAttributesFluentBuilder {
         }
     }
     /// Access the UpdateObjectAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_object_attributes::builders::UpdateObjectAttributesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_object_attributes::builders::UpdateObjectAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateObjectAttributesFluentBuilder {
             crate::operation::update_object_attributes::UpdateObjectAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_object_attributes::UpdateObjectAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_object_attributes::UpdateObjectAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateObjectAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateObjectAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_object_attributes::UpdateObjectAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_object_attributes::UpdateObjectAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_object_attributes::UpdateObjectAttributesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateObjectAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_object_attributes::UpdateObjectAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_object_attributes::UpdateObjectAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_object_attributes::UpdateObjectAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateObjectAttributesFluentBuilder {
             crate::operation::update_object_attributes::UpdateObjectAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_object_attributes::UpdateObjectAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_object_attributes::UpdateObjectAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -149,10 +129,7 @@ impl UpdateObjectAttributesFluentBuilder {
         self
     }
     /// <p>The reference that identifies the object.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }
@@ -170,17 +147,12 @@ impl UpdateObjectAttributesFluentBuilder {
         self
     }
     /// <p>The attributes update structure.</p>
-    pub fn set_attribute_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
-    ) -> Self {
+    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>) -> Self {
         self.inner = self.inner.set_attribute_updates(input);
         self
     }
     /// <p>The attributes update structure.</p>
-    pub fn get_attribute_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>> {
+    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>> {
         self.inner.get_attribute_updates()
     }
 }

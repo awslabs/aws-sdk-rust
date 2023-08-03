@@ -30,27 +30,19 @@ impl EnvironmentTemplateFilter {
 
 /// A builder for [`EnvironmentTemplateFilter`](crate::types::EnvironmentTemplateFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentTemplateFilterBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) major_version: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentTemplateFilterBuilder {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl EnvironmentTemplateFilterBuilder {
         &self.template_name
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.major_version = input;
         self
     }

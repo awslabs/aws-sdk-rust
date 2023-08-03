@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`document_versions(Option<Vec<DocumentVersionInfo>>)`](crate::operation::list_document_versions::ListDocumentVersionsOutput::document_versions): <p>The document versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_document_versions::ListDocumentVersionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<ListDocumentVersionsError>`](crate::operation::list_document_versions::ListDocumentVersionsError)
-    pub fn list_document_versions(
-        &self,
-    ) -> crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder {
-        crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_document_versions(&self) -> crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder {
+        crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::new(self.handle.clone())
     }
 }

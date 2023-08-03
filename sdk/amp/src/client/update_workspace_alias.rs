@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasFluentBuilder::set_client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     /// - On success, responds with [`UpdateWorkspaceAliasOutput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasOutput)
     /// - On failure, responds with [`SdkError<UpdateWorkspaceAliasError>`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasError)
-    pub fn update_workspace_alias(
-        &self,
-    ) -> crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasFluentBuilder {
-        crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workspace_alias(&self) -> crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasFluentBuilder {
+        crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl RegisterEcsClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_ecs_cluster::RegisterEcsClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_ecs_cluster::RegisterEcsClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_ecs_cluster::RegisterEcsClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_ecs_cluster();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl RegisterEcsClusterFluentBuilder {
         }
     }
     /// Access the RegisterEcsCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_ecs_cluster::builders::RegisterEcsClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_ecs_cluster::builders::RegisterEcsClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl RegisterEcsClusterFluentBuilder {
             crate::operation::register_ecs_cluster::RegisterEcsCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_ecs_cluster::RegisterEcsClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_ecs_cluster::RegisterEcsClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl RegisterEcsClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl RegisterEcsClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_ecs_cluster::RegisterEcsClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_ecs_cluster::RegisterEcsClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_ecs_cluster::RegisterEcsClusterError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl RegisterEcsClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_ecs_cluster::RegisterEcsClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_ecs_cluster::RegisterEcsClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_ecs_cluster::RegisterEcsClusterError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl RegisterEcsClusterFluentBuilder {
             crate::operation::register_ecs_cluster::RegisterEcsCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_ecs_cluster::RegisterEcsClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_ecs_cluster::RegisterEcsClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The cluster's ARN.</p>
-    pub fn ecs_cluster_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ecs_cluster_arn(input.into());
         self
     }
     /// <p>The cluster's ARN.</p>
-    pub fn set_ecs_cluster_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecs_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ecs_cluster_arn(input);
         self
     }

@@ -11,8 +11,7 @@ pub struct AnalyzeDocumentOutput {
     pub blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
     /// <p>Shows the results of the human in the loop evaluation.</p>
     #[doc(hidden)]
-    pub human_loop_activation_output:
-        ::std::option::Option<crate::types::HumanLoopActivationOutput>,
+    pub human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
     /// <p>The version of the model used to analyze the document.</p>
     #[doc(hidden)]
     pub analyze_document_model_version: ::std::option::Option<::std::string::String>,
@@ -28,9 +27,7 @@ impl AnalyzeDocumentOutput {
         self.blocks.as_deref()
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    pub fn human_loop_activation_output(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HumanLoopActivationOutput> {
+    pub fn human_loop_activation_output(&self) -> ::std::option::Option<&crate::types::HumanLoopActivationOutput> {
         self.human_loop_activation_output.as_ref()
     }
     /// <p>The version of the model used to analyze the document.</p>
@@ -52,14 +49,11 @@ impl AnalyzeDocumentOutput {
 
 /// A builder for [`AnalyzeDocumentOutput`](crate::operation::analyze_document::AnalyzeDocumentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyzeDocumentOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
-    pub(crate) human_loop_activation_output:
-        ::std::option::Option<crate::types::HumanLoopActivationOutput>,
+    pub(crate) human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
     pub(crate) analyze_document_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -70,10 +64,7 @@ impl AnalyzeDocumentOutputBuilder {
         self
     }
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
@@ -93,10 +84,7 @@ impl AnalyzeDocumentOutputBuilder {
         self
     }
     /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-    pub fn set_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
-    ) -> Self {
+    pub fn set_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>) -> Self {
         self.blocks = input;
         self
     }
@@ -105,47 +93,31 @@ impl AnalyzeDocumentOutputBuilder {
         &self.blocks
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    pub fn human_loop_activation_output(
-        mut self,
-        input: crate::types::HumanLoopActivationOutput,
-    ) -> Self {
+    pub fn human_loop_activation_output(mut self, input: crate::types::HumanLoopActivationOutput) -> Self {
         self.human_loop_activation_output = ::std::option::Option::Some(input);
         self
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    pub fn set_human_loop_activation_output(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
-    ) -> Self {
+    pub fn set_human_loop_activation_output(mut self, input: ::std::option::Option<crate::types::HumanLoopActivationOutput>) -> Self {
         self.human_loop_activation_output = input;
         self
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    pub fn get_human_loop_activation_output(
-        &self,
-    ) -> &::std::option::Option<crate::types::HumanLoopActivationOutput> {
+    pub fn get_human_loop_activation_output(&self) -> &::std::option::Option<crate::types::HumanLoopActivationOutput> {
         &self.human_loop_activation_output
     }
     /// <p>The version of the model used to analyze the document.</p>
-    pub fn analyze_document_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyze_document_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyze_document_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model used to analyze the document.</p>
-    pub fn set_analyze_document_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyze_document_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyze_document_model_version = input;
         self
     }
     /// <p>The version of the model used to analyze the document.</p>
-    pub fn get_analyze_document_model_version(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_analyze_document_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.analyze_document_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

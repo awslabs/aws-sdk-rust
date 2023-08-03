@@ -44,16 +44,14 @@ impl RevokeDbSecurityGroupIngressInput {
 }
 impl RevokeDbSecurityGroupIngressInput {
     /// Creates a new builder-style object to manufacture [`RevokeDbSecurityGroupIngressInput`](crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressInput).
-    pub fn builder() -> crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressInputBuilder{
+    pub fn builder() -> crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressInputBuilder {
         crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeDbSecurityGroupIngressInput`](crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeDbSecurityGroupIngressInputBuilder {
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cidrip: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct RevokeDbSecurityGroupIngressInputBuilder {
 }
 impl RevokeDbSecurityGroupIngressInputBuilder {
     /// <p>The name of the DB security group to revoke ingress from.</p>
-    pub fn db_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB security group to revoke ingress from.</p>
-    pub fn set_db_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_name = input;
         self
     }
@@ -97,18 +89,12 @@ impl RevokeDbSecurityGroupIngressInputBuilder {
         &self.cidrip
     }
     /// <p>The name of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn ec2_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn set_ec2_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_name = input;
         self
     }
@@ -117,18 +103,12 @@ impl RevokeDbSecurityGroupIngressInputBuilder {
         &self.ec2_security_group_name
     }
     /// <p>The id of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn ec2_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The id of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn set_ec2_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_id = input;
         self
     }
@@ -137,18 +117,12 @@ impl RevokeDbSecurityGroupIngressInputBuilder {
         &self.ec2_security_group_id
     }
     /// <p>The Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn ec2_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn set_ec2_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = input;
         self
     }
@@ -163,14 +137,12 @@ impl RevokeDbSecurityGroupIngressInputBuilder {
         crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressInput {
-                db_security_group_name: self.db_security_group_name,
-                cidrip: self.cidrip,
-                ec2_security_group_name: self.ec2_security_group_name,
-                ec2_security_group_id: self.ec2_security_group_id,
-                ec2_security_group_owner_id: self.ec2_security_group_owner_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressInput {
+            db_security_group_name: self.db_security_group_name,
+            cidrip: self.cidrip,
+            ec2_security_group_name: self.ec2_security_group_name,
+            ec2_security_group_id: self.ec2_security_group_id,
+            ec2_security_group_owner_id: self.ec2_security_group_owner_id,
+        })
     }
 }

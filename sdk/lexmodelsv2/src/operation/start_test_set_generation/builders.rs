@@ -26,8 +26,7 @@ impl StartTestSetGenerationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTestSetGenerationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::start_test_set_generation::builders::StartTestSetGenerationInputBuilder,
+    inner: crate::operation::start_test_set_generation::builders::StartTestSetGenerationInputBuilder,
 }
 impl StartTestSetGenerationFluentBuilder {
     /// Creates a new `StartTestSetGeneration`.
@@ -38,10 +37,7 @@ impl StartTestSetGenerationFluentBuilder {
         }
     }
     /// Access the StartTestSetGeneration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_test_set_generation::builders::StartTestSetGenerationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_test_set_generation::builders::StartTestSetGenerationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl StartTestSetGenerationFluentBuilder {
             crate::operation::start_test_set_generation::StartTestSetGeneration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_test_set_generation::StartTestSetGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_test_set_generation::StartTestSetGenerationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl StartTestSetGenerationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl StartTestSetGenerationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_test_set_generation::StartTestSetGenerationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_test_set_generation::StartTestSetGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_test_set_generation::StartTestSetGenerationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl StartTestSetGenerationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_test_set_generation::StartTestSetGenerationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_test_set_generation::StartTestSetGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_test_set_generation::StartTestSetGenerationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl StartTestSetGenerationFluentBuilder {
             crate::operation::start_test_set_generation::StartTestSetGeneration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_test_set_generation::StartTestSetGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_test_set_generation::StartTestSetGenerationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The test set name for the test set generation request.</p>
-    pub fn test_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.test_set_name(input.into());
         self
     }
     /// <p>The test set name for the test set generation request.</p>
-    pub fn set_test_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_test_set_name(input);
         self
     }
@@ -164,39 +143,26 @@ impl StartTestSetGenerationFluentBuilder {
         self
     }
     /// <p>The Amazon S3 storage location for the test set generation.</p>
-    pub fn set_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetStorageLocation>,
-    ) -> Self {
+    pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::TestSetStorageLocation>) -> Self {
         self.inner = self.inner.set_storage_location(input);
         self
     }
     /// <p>The Amazon S3 storage location for the test set generation.</p>
-    pub fn get_storage_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
+    pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
         self.inner.get_storage_location()
     }
     /// <p>The data source for the test set generation.</p>
-    pub fn generation_data_source(
-        mut self,
-        input: crate::types::TestSetGenerationDataSource,
-    ) -> Self {
+    pub fn generation_data_source(mut self, input: crate::types::TestSetGenerationDataSource) -> Self {
         self.inner = self.inner.generation_data_source(input);
         self
     }
     /// <p>The data source for the test set generation.</p>
-    pub fn set_generation_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetGenerationDataSource>,
-    ) -> Self {
+    pub fn set_generation_data_source(mut self, input: ::std::option::Option<crate::types::TestSetGenerationDataSource>) -> Self {
         self.inner = self.inner.set_generation_data_source(input);
         self
     }
     /// <p>The data source for the test set generation.</p>
-    pub fn get_generation_data_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestSetGenerationDataSource> {
+    pub fn get_generation_data_source(&self) -> &::std::option::Option<crate::types::TestSetGenerationDataSource> {
         self.inner.get_generation_data_source()
     }
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
@@ -218,30 +184,20 @@ impl StartTestSetGenerationFluentBuilder {
     /// To override the contents of this collection use [`set_test_set_tags`](Self::set_test_set_tags).
     ///
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn test_set_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.test_set_tags(k.into(), v.into());
         self
     }
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     pub fn set_test_set_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_test_set_tags(input);
         self
     }
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn get_test_set_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_test_set_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_test_set_tags()
     }
 }

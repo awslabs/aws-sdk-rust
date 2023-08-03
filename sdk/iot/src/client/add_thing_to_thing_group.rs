@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`override_dynamic_groups(bool)`](crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupFluentBuilder::override_dynamic_groups) / [`set_override_dynamic_groups(Option<bool>)`](crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupFluentBuilder::set_override_dynamic_groups): <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     /// - On success, responds with [`AddThingToThingGroupOutput`](crate::operation::add_thing_to_thing_group::AddThingToThingGroupOutput)
     /// - On failure, responds with [`SdkError<AddThingToThingGroupError>`](crate::operation::add_thing_to_thing_group::AddThingToThingGroupError)
-    pub fn add_thing_to_thing_group(
-        &self,
-    ) -> crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupFluentBuilder
-    {
-        crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_thing_to_thing_group(&self) -> crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupFluentBuilder {
+        crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupFluentBuilder::new(self.handle.clone())
     }
 }

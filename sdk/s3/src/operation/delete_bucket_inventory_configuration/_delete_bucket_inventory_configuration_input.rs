@@ -29,16 +29,14 @@ impl DeleteBucketInventoryConfigurationInput {
 }
 impl DeleteBucketInventoryConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketInventoryConfigurationInput`](crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationInput).
-    pub fn builder() -> crate::operation::delete_bucket_inventory_configuration::builders::DeleteBucketInventoryConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_bucket_inventory_configuration::builders::DeleteBucketInventoryConfigurationInputBuilder {
         crate::operation::delete_bucket_inventory_configuration::builders::DeleteBucketInventoryConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBucketInventoryConfigurationInput`](crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBucketInventoryConfigurationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl DeleteBucketInventoryConfigurationInputBuilder {
         &self.id
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -94,16 +86,18 @@ impl DeleteBucketInventoryConfigurationInputBuilder {
         &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`DeleteBucketInventoryConfigurationInput`](crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationInput {
-                bucket: self.bucket
-                ,
-                id: self.id
-                ,
-                expected_bucket_owner: self.expected_bucket_owner
-                ,
-            }
+                bucket: self.bucket,
+                id: self.id,
+                expected_bucket_owner: self.expected_bucket_owner,
+            },
         )
     }
 }

@@ -9,8 +9,7 @@ pub struct InstanceConfiguration {
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
 }
 impl InstanceConfiguration {
     /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
@@ -18,9 +17,7 @@ impl InstanceConfiguration {
         self.image.as_deref()
     }
     /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl InstanceConfiguration {
 
 /// A builder for [`InstanceConfiguration`](crate::types::InstanceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceConfigurationBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
-    pub(crate) block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
 }
 impl InstanceConfigurationBuilder {
     /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
@@ -61,27 +55,19 @@ impl InstanceConfigurationBuilder {
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
     /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
-    pub fn block_device_mappings(
-        mut self,
-        input: crate::types::InstanceBlockDeviceMapping,
-    ) -> Self {
+    pub fn block_device_mappings(mut self, input: crate::types::InstanceBlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
         self.block_device_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>) -> Self {
         self.block_device_mappings = input;
         self
     }
     /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// Consumes the builder and constructs a [`InstanceConfiguration`](crate::types::InstanceConfiguration).

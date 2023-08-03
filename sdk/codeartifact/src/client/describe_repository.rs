@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRepositoryOutput`](crate::operation::describe_repository::DescribeRepositoryOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::operation::describe_repository::DescribeRepositoryOutput::repository): <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
     /// - On failure, responds with [`SdkError<DescribeRepositoryError>`](crate::operation::describe_repository::DescribeRepositoryError)
-    pub fn describe_repository(
-        &self,
-    ) -> crate::operation::describe_repository::builders::DescribeRepositoryFluentBuilder {
-        crate::operation::describe_repository::builders::DescribeRepositoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_repository(&self) -> crate::operation::describe_repository::builders::DescribeRepositoryFluentBuilder {
+        crate::operation::describe_repository::builders::DescribeRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl UpdateExperienceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_experience::UpdateExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experience::UpdateExperienceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experience::UpdateExperienceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_experience();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateExperienceFluentBuilder {
         }
     }
     /// Access the UpdateExperience as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_experience::builders::UpdateExperienceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_experience::builders::UpdateExperienceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateExperienceFluentBuilder {
             crate::operation::update_experience::UpdateExperience,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experience::UpdateExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experience::UpdateExperienceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateExperienceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateExperienceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_experience::UpdateExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experience::UpdateExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experience::UpdateExperienceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateExperienceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_experience::UpdateExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experience::UpdateExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experience::UpdateExperienceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateExperienceFluentBuilder {
             crate::operation::update_experience::UpdateExperience,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experience::UpdateExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experience::UpdateExperienceError>,
     > {
         self.customize_middleware().await
     }
@@ -184,17 +168,12 @@ impl UpdateExperienceFluentBuilder {
         self
     }
     /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperienceConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ExperienceConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
         self.inner.get_configuration()
     }
     /// <p>A new description for your Amazon Kendra experience.</p>

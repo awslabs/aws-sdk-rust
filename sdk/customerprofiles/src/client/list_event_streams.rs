@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<EventStreamSummary>>)`](crate::operation::list_event_streams::ListEventStreamsOutput::items): <p>Contains summary information about an EventStream.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_streams::ListEventStreamsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListEventStreamsError>`](crate::operation::list_event_streams::ListEventStreamsError)
-    pub fn list_event_streams(
-        &self,
-    ) -> crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder {
-        crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_event_streams(&self) -> crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder {
+        crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::new(self.handle.clone())
     }
 }

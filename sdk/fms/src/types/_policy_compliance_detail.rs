@@ -24,9 +24,7 @@ pub struct PolicyComplianceDetail {
     pub expired_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
     #[doc(hidden)]
-    pub issue_info_map: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
-    >,
+    pub issue_info_map: ::std::option::Option<::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>>,
 }
 impl PolicyComplianceDetail {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
@@ -54,11 +52,7 @@ impl PolicyComplianceDetail {
         self.expired_at.as_ref()
     }
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
-    pub fn issue_info_map(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
-    > {
+    pub fn issue_info_map(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>> {
         self.issue_info_map.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl PolicyComplianceDetail {
 
 /// A builder for [`PolicyComplianceDetail`](crate::types::PolicyComplianceDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyComplianceDetailBuilder {
     pub(crate) policy_owner: ::std::option::Option<::std::string::String>,
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
@@ -81,9 +73,7 @@ pub struct PolicyComplianceDetailBuilder {
     pub(crate) violators: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceViolator>>,
     pub(crate) evaluation_limit_exceeded: ::std::option::Option<bool>,
     pub(crate) expired_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) issue_info_map: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
-    >,
+    pub(crate) issue_info_map: ::std::option::Option<::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>>,
 }
 impl PolicyComplianceDetailBuilder {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
@@ -115,18 +105,12 @@ impl PolicyComplianceDetailBuilder {
         &self.policy_id
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn member_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_member_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account = input;
         self
     }
@@ -146,17 +130,12 @@ impl PolicyComplianceDetailBuilder {
         self
     }
     /// <p>An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance with the security group policy.</p>
-    pub fn set_violators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceViolator>>,
-    ) -> Self {
+    pub fn set_violators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceViolator>>) -> Self {
         self.violators = input;
         self
     }
     /// <p>An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance with the security group policy.</p>
-    pub fn get_violators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceViolator>> {
+    pub fn get_violators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceViolator>> {
         &self.violators
     }
     /// <p>Indicates if over 100 resources are noncompliant with the Firewall Manager policy.</p>
@@ -179,10 +158,7 @@ impl PolicyComplianceDetailBuilder {
         self
     }
     /// <p>A timestamp that indicates when the returned information should be considered out of date.</p>
-    pub fn set_expired_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expired_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expired_at = input;
         self
     }
@@ -195,11 +171,7 @@ impl PolicyComplianceDetailBuilder {
     /// To override the contents of this collection use [`set_issue_info_map`](Self::set_issue_info_map).
     ///
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
-    pub fn issue_info_map(
-        mut self,
-        k: crate::types::DependentServiceName,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn issue_info_map(mut self, k: crate::types::DependentServiceName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.issue_info_map.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.issue_info_map = ::std::option::Option::Some(hash_map);
@@ -208,9 +180,7 @@ impl PolicyComplianceDetailBuilder {
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
     pub fn set_issue_info_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>>,
     ) -> Self {
         self.issue_info_map = input;
         self
@@ -218,9 +188,7 @@ impl PolicyComplianceDetailBuilder {
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
     pub fn get_issue_info_map(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>> {
         &self.issue_info_map
     }
     /// Consumes the builder and constructs a [`PolicyComplianceDetail`](crate::types::PolicyComplianceDetail).

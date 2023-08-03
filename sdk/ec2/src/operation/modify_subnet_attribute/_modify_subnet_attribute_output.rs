@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifySubnetAttributeOutput {
 }
 impl ModifySubnetAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifySubnetAttributeOutput`](crate::operation::modify_subnet_attribute::ModifySubnetAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeOutputBuilder {
         crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySubnetAttributeOutput`](crate::operation::modify_subnet_attribute::ModifySubnetAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySubnetAttributeOutputBuilder {
     _request_id: Option<String>,
 }

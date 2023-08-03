@@ -27,7 +27,7 @@ impl DescribeCachediScsiVolumesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCachediSCSIVolumesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediScsiVolumesInputBuilder,
+    inner: crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediScsiVolumesInputBuilder,
 }
 impl DescribeCachediSCSIVolumesFluentBuilder {
     /// Creates a new `DescribeCachediSCSIVolumes`.
@@ -38,7 +38,7 @@ impl DescribeCachediSCSIVolumesFluentBuilder {
         }
     }
     /// Access the DescribeCachediSCSIVolumes as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediScsiVolumesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediScsiVolumesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeCachediSCSIVolumesFluentBuilder {
             crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeCachediSCSIVolumesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeCachediSCSIVolumesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeCachediSCSIVolumesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumesError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeCachediSCSIVolumesFluentBuilder {
             crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumesError>,
     > {
         self.customize_middleware().await
     }
@@ -131,17 +120,12 @@ impl DescribeCachediSCSIVolumesFluentBuilder {
         self
     }
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
-    pub fn set_volume_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_volume_ar_ns(input);
         self
     }
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
-    pub fn get_volume_ar_ns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_volume_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_volume_ar_ns()
     }
 }

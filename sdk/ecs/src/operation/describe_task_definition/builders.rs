@@ -39,10 +39,7 @@ impl DescribeTaskDefinitionFluentBuilder {
         }
     }
     /// Access the DescribeTaskDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_task_definition::builders::DescribeTaskDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_task_definition::builders::DescribeTaskDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeTaskDefinitionFluentBuilder {
             crate::operation::describe_task_definition::DescribeTaskDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_definition::DescribeTaskDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_definition::DescribeTaskDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeTaskDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeTaskDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_task_definition::DescribeTaskDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_definition::DescribeTaskDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_definition::DescribeTaskDefinitionError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeTaskDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_task_definition::DescribeTaskDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_definition::DescribeTaskDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_definition::DescribeTaskDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl DescribeTaskDefinitionFluentBuilder {
             crate::operation::describe_task_definition::DescribeTaskDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_definition::DescribeTaskDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_definition::DescribeTaskDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
-    pub fn task_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_definition(input.into());
         self
     }
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_definition(input);
         self
     }
@@ -155,17 +135,12 @@ impl DescribeTaskDefinitionFluentBuilder {
         self
     }
     /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>>) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }
     /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>> {
         self.inner.get_include()
     }
 }

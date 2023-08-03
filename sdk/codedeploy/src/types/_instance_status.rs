@@ -44,13 +44,7 @@
 #[deprecated(note = "InstanceStatus is deprecated, use TargetStatus instead.")]
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -80,9 +74,7 @@ impl ::std::convert::From<&str> for InstanceStatus {
             "Skipped" => InstanceStatus::Skipped,
             "Succeeded" => InstanceStatus::Succeeded,
             "Unknown" => InstanceStatus::UnknownValue,
-            other => {
-                InstanceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => InstanceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -109,15 +101,7 @@ impl InstanceStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Failed",
-            "InProgress",
-            "Pending",
-            "Ready",
-            "Skipped",
-            "Succeeded",
-            "Unknown",
-        ]
+        &["Failed", "InProgress", "Pending", "Ready", "Skipped", "Succeeded", "Unknown"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceStatus {

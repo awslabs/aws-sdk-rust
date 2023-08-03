@@ -23,9 +23,7 @@ impl ArtifactConfigOutput {
 
 /// A builder for [`ArtifactConfigOutput`](crate::types::ArtifactConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactConfigOutputBuilder {
     pub(crate) s3_encryption: ::std::option::Option<crate::types::S3EncryptionConfig>,
 }
@@ -36,10 +34,7 @@ impl ArtifactConfigOutputBuilder {
         self
     }
     /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
-    pub fn set_s3_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::S3EncryptionConfig>,
-    ) -> Self {
+    pub fn set_s3_encryption(mut self, input: ::std::option::Option<crate::types::S3EncryptionConfig>) -> Self {
         self.s3_encryption = input;
         self
     }

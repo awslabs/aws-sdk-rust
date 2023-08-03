@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`lustre_response(Option<DeleteFileSystemLustreResponse>)`](crate::operation::delete_file_system::DeleteFileSystemOutput::lustre_response): <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
     ///   - [`open_zfs_response(Option<DeleteFileSystemOpenZfsResponse>)`](crate::operation::delete_file_system::DeleteFileSystemOutput::open_zfs_response): <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
     /// - On failure, responds with [`SdkError<DeleteFileSystemError>`](crate::operation::delete_file_system::DeleteFileSystemError)
-    pub fn delete_file_system(
-        &self,
-    ) -> crate::operation::delete_file_system::builders::DeleteFileSystemFluentBuilder {
-        crate::operation::delete_file_system::builders::DeleteFileSystemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_file_system(&self) -> crate::operation::delete_file_system::builders::DeleteFileSystemFluentBuilder {
+        crate::operation::delete_file_system::builders::DeleteFileSystemFluentBuilder::new(self.handle.clone())
     }
 }

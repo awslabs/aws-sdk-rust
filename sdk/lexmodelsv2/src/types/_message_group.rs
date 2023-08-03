@@ -30,9 +30,7 @@ impl MessageGroup {
 
 /// A builder for [`MessageGroup`](crate::types::MessageGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageGroupBuilder {
     pub(crate) message: ::std::option::Option<crate::types::Message>,
     pub(crate) variations: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
@@ -64,10 +62,7 @@ impl MessageGroupBuilder {
         self
     }
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-    pub fn set_variations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_variations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.variations = input;
         self
     }

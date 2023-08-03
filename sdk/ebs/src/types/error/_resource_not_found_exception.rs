@@ -56,9 +56,7 @@ impl ResourceNotFoundException {
 
 /// A builder for [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceNotFoundExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::ResourceNotFoundExceptionReason>,
@@ -85,17 +83,12 @@ impl ResourceNotFoundExceptionBuilder {
         self
     }
     /// <p>The reason for the exception.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceNotFoundExceptionReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ResourceNotFoundExceptionReason>) -> Self {
         self.reason = input;
         self
     }
     /// <p>The reason for the exception.</p>
-    pub fn get_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceNotFoundExceptionReason> {
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ResourceNotFoundExceptionReason> {
         &self.reason
     }
     /// Sets error metadata
@@ -105,10 +98,7 @@ impl ResourceNotFoundExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

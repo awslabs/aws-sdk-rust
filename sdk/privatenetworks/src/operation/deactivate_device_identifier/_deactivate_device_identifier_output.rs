@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeactivateDeviceIdentifierOutput {
 }
 impl DeactivateDeviceIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateDeviceIdentifierOutput`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput).
-    pub fn builder() -> crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierOutputBuilder{
+    pub fn builder() -> crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierOutputBuilder {
         crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeactivateDeviceIdentifierOutput`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeactivateDeviceIdentifierOutputBuilder {
     pub(crate) device_identifier: ::std::option::Option<crate::types::DeviceIdentifier>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DeactivateDeviceIdentifierOutputBuilder {
         self
     }
     /// <p>Information about the device identifier.</p>
-    pub fn set_device_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceIdentifier>,
-    ) -> Self {
+    pub fn set_device_identifier(mut self, input: ::std::option::Option<crate::types::DeviceIdentifier>) -> Self {
         self.device_identifier = input;
         self
     }
@@ -63,9 +58,7 @@ impl DeactivateDeviceIdentifierOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeactivateDeviceIdentifierOutput`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput {
+    pub fn build(self) -> crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput {
         crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput {
             device_identifier: self.device_identifier,
             _request_id: self._request_id,

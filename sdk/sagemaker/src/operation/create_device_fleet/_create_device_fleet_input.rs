@@ -52,17 +52,14 @@ impl CreateDeviceFleetInput {
 }
 impl CreateDeviceFleetInput {
     /// Creates a new builder-style object to manufacture [`CreateDeviceFleetInput`](crate::operation::create_device_fleet::CreateDeviceFleetInput).
-    pub fn builder(
-    ) -> crate::operation::create_device_fleet::builders::CreateDeviceFleetInputBuilder {
+    pub fn builder() -> crate::operation::create_device_fleet::builders::CreateDeviceFleetInputBuilder {
         crate::operation::create_device_fleet::builders::CreateDeviceFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeviceFleetInput`](crate::operation::create_device_fleet::CreateDeviceFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeviceFleetInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -73,18 +70,12 @@ pub struct CreateDeviceFleetInputBuilder {
 }
 impl CreateDeviceFleetInputBuilder {
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -126,10 +117,7 @@ impl CreateDeviceFleetInputBuilder {
         self
     }
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -149,10 +137,7 @@ impl CreateDeviceFleetInputBuilder {
         self
     }
     /// <p>Creates tags for the specified fleet.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -180,19 +165,14 @@ impl CreateDeviceFleetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeviceFleetInput`](crate::operation::create_device_fleet::CreateDeviceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_device_fleet::CreateDeviceFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_device_fleet::CreateDeviceFleetInput {
-                device_fleet_name: self.device_fleet_name,
-                role_arn: self.role_arn,
-                description: self.description,
-                output_config: self.output_config,
-                tags: self.tags,
-                enable_iot_role_alias: self.enable_iot_role_alias,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_device_fleet::CreateDeviceFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_device_fleet::CreateDeviceFleetInput {
+            device_fleet_name: self.device_fleet_name,
+            role_arn: self.role_arn,
+            description: self.description,
+            output_config: self.output_config,
+            tags: self.tags,
+            enable_iot_role_alias: self.enable_iot_role_alias,
+        })
     }
 }

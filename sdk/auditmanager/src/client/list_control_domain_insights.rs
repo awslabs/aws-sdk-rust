@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`control_domain_insights(Option<Vec<ControlDomainInsights>>)`](crate::operation::list_control_domain_insights::ListControlDomainInsightsOutput::control_domain_insights): <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_control_domain_insights::ListControlDomainInsightsOutput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListControlDomainInsightsError>`](crate::operation::list_control_domain_insights::ListControlDomainInsightsError)
-    pub fn list_control_domain_insights(&self) -> crate::operation::list_control_domain_insights::builders::ListControlDomainInsightsFluentBuilder{
+    pub fn list_control_domain_insights(&self) -> crate::operation::list_control_domain_insights::builders::ListControlDomainInsightsFluentBuilder {
         crate::operation::list_control_domain_insights::builders::ListControlDomainInsightsFluentBuilder::new(self.handle.clone())
     }
 }

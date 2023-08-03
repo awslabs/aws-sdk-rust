@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`status(Option<GrantStatus>)`](crate::operation::reject_grant::RejectGrantOutput::status): <p>Grant status.</p>
     ///   - [`version(Option<String>)`](crate::operation::reject_grant::RejectGrantOutput::version): <p>Grant version.</p>
     /// - On failure, responds with [`SdkError<RejectGrantError>`](crate::operation::reject_grant::RejectGrantError)
-    pub fn reject_grant(
-        &self,
-    ) -> crate::operation::reject_grant::builders::RejectGrantFluentBuilder {
+    pub fn reject_grant(&self) -> crate::operation::reject_grant::builders::RejectGrantFluentBuilder {
         crate::operation::reject_grant::builders::RejectGrantFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListObjectParentPathsOutput {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     #[doc(hidden)]
-    pub path_to_object_identifiers_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PathToObjectIdentifiers>>,
+    pub path_to_object_identifiers_list: ::std::option::Option<::std::vec::Vec<crate::types::PathToObjectIdentifiers>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListObjectParentPathsOutput {
 }
 impl ListObjectParentPathsOutput {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-    pub fn path_to_object_identifiers_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PathToObjectIdentifiers]> {
+    pub fn path_to_object_identifiers_list(&self) -> ::std::option::Option<&[crate::types::PathToObjectIdentifiers]> {
         self.path_to_object_identifiers_list.as_deref()
     }
     /// <p>The pagination token.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListObjectParentPathsOutput {
 }
 impl ListObjectParentPathsOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectParentPathsOutput`](crate::operation::list_object_parent_paths::ListObjectParentPathsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_object_parent_paths::builders::ListObjectParentPathsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_object_parent_paths::builders::ListObjectParentPathsOutputBuilder {
         crate::operation::list_object_parent_paths::builders::ListObjectParentPathsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListObjectParentPathsOutput`](crate::operation::list_object_parent_paths::ListObjectParentPathsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectParentPathsOutputBuilder {
-    pub(crate) path_to_object_identifiers_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PathToObjectIdentifiers>>,
+    pub(crate) path_to_object_identifiers_list: ::std::option::Option<::std::vec::Vec<crate::types::PathToObjectIdentifiers>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListObjectParentPathsOutputBuilder {
     /// To override the contents of this collection use [`set_path_to_object_identifiers_list`](Self::set_path_to_object_identifiers_list).
     ///
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-    pub fn path_to_object_identifiers_list(
-        mut self,
-        input: crate::types::PathToObjectIdentifiers,
-    ) -> Self {
+    pub fn path_to_object_identifiers_list(mut self, input: crate::types::PathToObjectIdentifiers) -> Self {
         let mut v = self.path_to_object_identifiers_list.unwrap_or_default();
         v.push(input);
         self.path_to_object_identifiers_list = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListObjectParentPathsOutputBuilder {
         self
     }
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-    pub fn get_path_to_object_identifiers_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PathToObjectIdentifiers>> {
+    pub fn get_path_to_object_identifiers_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PathToObjectIdentifiers>> {
         &self.path_to_object_identifiers_list
     }
     /// <p>The pagination token.</p>

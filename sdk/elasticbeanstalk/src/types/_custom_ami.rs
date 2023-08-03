@@ -30,27 +30,19 @@ impl CustomAmi {
 
 /// A builder for [`CustomAmi`](crate::types::CustomAmi).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomAmiBuilder {
     pub(crate) virtualization_type: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomAmiBuilder {
     /// <p>The type of virtualization used to create the custom AMI.</p>
-    pub fn virtualization_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtualization_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtualization_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of virtualization used to create the custom AMI.</p>
-    pub fn set_virtualization_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtualization_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtualization_type = input;
         self
     }

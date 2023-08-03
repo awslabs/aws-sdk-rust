@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`resource_set_identifier(Option<String>)`](crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput::resource_set_identifier): <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
     ///   - [`failed_items(Option<Vec<FailedItem>>)`](crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput::failed_items): <p>The resources that failed to disassociate from the resource set.</p>
     /// - On failure, responds with [`SdkError<BatchDisassociateResourceError>`](crate::operation::batch_disassociate_resource::BatchDisassociateResourceError)
-    pub fn batch_disassociate_resource(&self) -> crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceFluentBuilder{
+    pub fn batch_disassociate_resource(&self) -> crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceFluentBuilder {
         crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceFluentBuilder::new(self.handle.clone())
     }
 }

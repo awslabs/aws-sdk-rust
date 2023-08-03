@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`recovery_point_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointFluentBuilder::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointFluentBuilder::set_recovery_point_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
     /// - On success, responds with [`DisassociateRecoveryPointOutput`](crate::operation::disassociate_recovery_point::DisassociateRecoveryPointOutput)
     /// - On failure, responds with [`SdkError<DisassociateRecoveryPointError>`](crate::operation::disassociate_recovery_point::DisassociateRecoveryPointError)
-    pub fn disassociate_recovery_point(&self) -> crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointFluentBuilder{
+    pub fn disassociate_recovery_point(&self) -> crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointFluentBuilder {
         crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointFluentBuilder::new(self.handle.clone())
     }
 }

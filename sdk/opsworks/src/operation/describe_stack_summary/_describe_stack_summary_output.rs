@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeStackSummaryOutput {
 }
 impl DescribeStackSummaryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackSummaryOutput`](crate::operation::describe_stack_summary::DescribeStackSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_stack_summary::builders::DescribeStackSummaryOutputBuilder {
+    pub fn builder() -> crate::operation::describe_stack_summary::builders::DescribeStackSummaryOutputBuilder {
         crate::operation::describe_stack_summary::builders::DescribeStackSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackSummaryOutput`](crate::operation::describe_stack_summary::DescribeStackSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackSummaryOutputBuilder {
     pub(crate) stack_summary: ::std::option::Option<crate::types::StackSummary>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl DescribeStackSummaryOutputBuilder {
         self
     }
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
-    pub fn set_stack_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSummary>,
-    ) -> Self {
+    pub fn set_stack_summary(mut self, input: ::std::option::Option<crate::types::StackSummary>) -> Self {
         self.stack_summary = input;
         self
     }

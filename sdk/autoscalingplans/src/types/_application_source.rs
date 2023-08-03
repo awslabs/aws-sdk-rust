@@ -30,27 +30,19 @@ impl ApplicationSource {
 
 /// A builder for [`ApplicationSource`](crate::types::ApplicationSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationSourceBuilder {
     pub(crate) cloud_formation_stack_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
 }
 impl ApplicationSourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
-    pub fn cloud_formation_stack_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_formation_stack_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_formation_stack_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
-    pub fn set_cloud_formation_stack_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_formation_stack_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_formation_stack_arn = input;
         self
     }
@@ -70,17 +62,12 @@ impl ApplicationSourceBuilder {
         self
     }
     /// <p>A set of tags (up to 50).</p>
-    pub fn set_tag_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
-    ) -> Self {
+    pub fn set_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
         self.tag_filters = input;
         self
     }
     /// <p>A set of tags (up to 50).</p>
-    pub fn get_tag_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+    pub fn get_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
         &self.tag_filters
     }
     /// Consumes the builder and constructs a [`ApplicationSource`](crate::types::ApplicationSource).

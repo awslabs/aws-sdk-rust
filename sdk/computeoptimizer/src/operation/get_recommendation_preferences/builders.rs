@@ -28,7 +28,7 @@ impl GetRecommendationPreferencesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommendationPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesInputBuilder,
+    inner: crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesInputBuilder,
 }
 impl GetRecommendationPreferencesFluentBuilder {
     /// Creates a new `GetRecommendationPreferences`.
@@ -39,7 +39,7 @@ impl GetRecommendationPreferencesFluentBuilder {
         }
     }
     /// Access the GetRecommendationPreferences as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetRecommendationPreferencesFluentBuilder {
             crate::operation::get_recommendation_preferences::GetRecommendationPreferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetRecommendationPreferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetRecommendationPreferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetRecommendationPreferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError>,
     > {
         self.send_middleware().await
     }
@@ -116,16 +107,14 @@ impl GetRecommendationPreferencesFluentBuilder {
             crate::operation::get_recommendation_preferences::GetRecommendationPreferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_recommendation_preferences::paginator::GetRecommendationPreferencesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_recommendation_preferences::paginator::GetRecommendationPreferencesPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_recommendation_preferences::paginator::GetRecommendationPreferencesPaginator {
         crate::operation::get_recommendation_preferences::paginator::GetRecommendationPreferencesPaginator::new(self.handle, self.inner)
     }
     /// <p>The target resource type of the recommendation preference for which to return preferences.</p>
@@ -140,10 +129,7 @@ impl GetRecommendationPreferencesFluentBuilder {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

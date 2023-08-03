@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAssetModelOutput`](crate::operation::delete_asset_model::DeleteAssetModelOutput) with field(s):
     ///   - [`asset_model_status(Option<AssetModelStatus>)`](crate::operation::delete_asset_model::DeleteAssetModelOutput::asset_model_status): <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<DeleteAssetModelError>`](crate::operation::delete_asset_model::DeleteAssetModelError)
-    pub fn delete_asset_model(
-        &self,
-    ) -> crate::operation::delete_asset_model::builders::DeleteAssetModelFluentBuilder {
-        crate::operation::delete_asset_model::builders::DeleteAssetModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_asset_model(&self) -> crate::operation::delete_asset_model::builders::DeleteAssetModelFluentBuilder {
+        crate::operation::delete_asset_model::builders::DeleteAssetModelFluentBuilder::new(self.handle.clone())
     }
 }

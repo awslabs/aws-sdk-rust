@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAppliedSchemaArnsOutput {
 }
 impl ListAppliedSchemaArnsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppliedSchemaArnsOutput`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsOutputBuilder {
         crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppliedSchemaArnsOutput`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppliedSchemaArnsOutputBuilder {
     pub(crate) schema_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListAppliedSchemaArnsOutputBuilder {
         self
     }
     /// <p>The ARNs of schemas that are applied to the directory.</p>
-    pub fn set_schema_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_schema_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.schema_arns = input;
         self
     }
     /// <p>The ARNs of schemas that are applied to the directory.</p>
-    pub fn get_schema_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_schema_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.schema_arns
     }
     /// <p>The pagination token.</p>

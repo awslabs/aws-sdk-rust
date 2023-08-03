@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DeregisterGatewayInstanceOutput {
 }
 impl DeregisterGatewayInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterGatewayInstanceOutput`](crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput).
-    pub fn builder() -> crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceOutputBuilder {
         crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterGatewayInstanceOutput`](crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterGatewayInstanceOutputBuilder {
     pub(crate) gateway_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_state: ::std::option::Option<crate::types::InstanceState>,
@@ -45,18 +43,12 @@ pub struct DeregisterGatewayInstanceOutputBuilder {
 }
 impl DeregisterGatewayInstanceOutputBuilder {
     /// The Amazon Resource Name (ARN) of the instance.
-    pub fn gateway_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the instance.
-    pub fn set_gateway_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_instance_arn = input;
         self
     }
@@ -70,10 +62,7 @@ impl DeregisterGatewayInstanceOutputBuilder {
         self
     }
     /// The status of the instance.
-    pub fn set_instance_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceState>,
-    ) -> Self {
+    pub fn set_instance_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
         self.instance_state = input;
         self
     }
@@ -91,9 +80,7 @@ impl DeregisterGatewayInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterGatewayInstanceOutput`](crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput {
+    pub fn build(self) -> crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput {
         crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput {
             gateway_instance_arn: self.gateway_instance_arn,
             instance_state: self.instance_state,

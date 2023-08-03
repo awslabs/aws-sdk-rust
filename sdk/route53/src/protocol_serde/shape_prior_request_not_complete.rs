@@ -3,10 +3,7 @@
 pub fn de_prior_request_not_complete_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::PriorRequestNotCompleteBuilder,
-) -> Result<
-    crate::types::error::builders::PriorRequestNotCompleteBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::PriorRequestNotCompleteBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

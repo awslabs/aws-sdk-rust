@@ -35,9 +35,7 @@ impl ListDeploymentsOutput {
 
 /// A builder for [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) deployments: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>>,
@@ -70,17 +68,12 @@ impl ListDeploymentsOutputBuilder {
         self
     }
     /// <p>An array of deployment with summary data.</p>
-    pub fn set_deployments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>>,
-    ) -> Self {
+    pub fn set_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>>) -> Self {
         self.deployments = input;
         self
     }
     /// <p>An array of deployment with summary data.</p>
-    pub fn get_deployments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>> {
+    pub fn get_deployments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>> {
         &self.deployments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

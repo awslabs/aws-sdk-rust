@@ -65,9 +65,7 @@ impl InstanceStatus {
 
 /// A builder for [`InstanceStatus`](crate::types::InstanceStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceStatusBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct InstanceStatusBuilder {
 }
 impl InstanceStatusBuilder {
     /// <p>The Availability Zone of the instance.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the instance.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -124,17 +116,12 @@ impl InstanceStatusBuilder {
         self
     }
     /// <p>Any scheduled events associated with the instance.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>Any scheduled events associated with the instance.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusEvent>> {
         &self.events
     }
     /// <p>The ID of the instance.</p>
@@ -157,10 +144,7 @@ impl InstanceStatusBuilder {
         self
     }
     /// <p>The intended state of the instance. <code>DescribeInstanceStatus</code> requires that an instance be in the <code>running</code> state.</p>
-    pub fn set_instance_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceState>,
-    ) -> Self {
+    pub fn set_instance_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
         self.instance_state = input;
         self
     }
@@ -174,17 +158,12 @@ impl InstanceStatusBuilder {
         self
     }
     /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
-    pub fn set_instance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStatusSummary>,
-    ) -> Self {
+    pub fn set_instance_status(mut self, input: ::std::option::Option<crate::types::InstanceStatusSummary>) -> Self {
         self.instance_status = input;
         self
     }
     /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
-    pub fn get_instance_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStatusSummary> {
+    pub fn get_instance_status(&self) -> &::std::option::Option<crate::types::InstanceStatusSummary> {
         &self.instance_status
     }
     /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
@@ -193,10 +172,7 @@ impl InstanceStatusBuilder {
         self
     }
     /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
-    pub fn set_system_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStatusSummary>,
-    ) -> Self {
+    pub fn set_system_status(mut self, input: ::std::option::Option<crate::types::InstanceStatusSummary>) -> Self {
         self.system_status = input;
         self
     }

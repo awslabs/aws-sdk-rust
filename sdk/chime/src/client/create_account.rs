@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAccountOutput`](crate::operation::create_account::CreateAccountOutput) with field(s):
     ///   - [`account(Option<Account>)`](crate::operation::create_account::CreateAccountOutput::account): <p>The Amazon Chime account details.</p>
     /// - On failure, responds with [`SdkError<CreateAccountError>`](crate::operation::create_account::CreateAccountError)
-    pub fn create_account(
-        &self,
-    ) -> crate::operation::create_account::builders::CreateAccountFluentBuilder {
-        crate::operation::create_account::builders::CreateAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_account(&self) -> crate::operation::create_account::builders::CreateAccountFluentBuilder {
+        crate::operation::create_account::builders::CreateAccountFluentBuilder::new(self.handle.clone())
     }
 }

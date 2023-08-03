@@ -31,9 +31,7 @@ impl Point {
 
 /// A builder for [`Point`](crate::types::Point).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PointBuilder {
     pub(crate) x: ::std::option::Option<f32>,
     pub(crate) y: ::std::option::Option<f32>,

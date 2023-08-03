@@ -37,9 +37,7 @@ impl ListDeviceResourcesFluentBuilder {
         }
     }
     /// Access the ListDeviceResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListDeviceResourcesFluentBuilder {
             crate::operation::list_device_resources::ListDeviceResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_resources::ListDeviceResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_resources::ListDeviceResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListDeviceResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListDeviceResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_resources::ListDeviceResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_resources::ListDeviceResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_resources::ListDeviceResourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListDeviceResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_resources::ListDeviceResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_resources::ListDeviceResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_resources::ListDeviceResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListDeviceResourcesFluentBuilder {
             crate::operation::list_device_resources::ListDeviceResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_resources::ListDeviceResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_resources::ListDeviceResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator {
-        crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator {
+        crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the managed device that you are listing the resources of.</p>
-    pub fn managed_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.managed_device_id(input.into());
         self
     }
     /// <p>The ID of the managed device that you are listing the resources of.</p>
-    pub fn set_managed_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_managed_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_managed_device_id(input);
         self
     }

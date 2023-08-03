@@ -27,7 +27,7 @@ impl DescribeThingRegistrationTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeThingRegistrationTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskInputBuilder,
+    inner: crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskInputBuilder,
 }
 impl DescribeThingRegistrationTaskFluentBuilder {
     /// Creates a new `DescribeThingRegistrationTask`.
@@ -38,7 +38,7 @@ impl DescribeThingRegistrationTaskFluentBuilder {
         }
     }
     /// Access the DescribeThingRegistrationTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeThingRegistrationTaskFluentBuilder {
             crate::operation::describe_thing_registration_task::DescribeThingRegistrationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeThingRegistrationTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeThingRegistrationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeThingRegistrationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeThingRegistrationTaskFluentBuilder {
             crate::operation::describe_thing_registration_task::DescribeThingRegistrationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskError>,
     > {
         self.customize_middleware().await
     }

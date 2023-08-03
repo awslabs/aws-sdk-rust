@@ -9,156 +9,160 @@ pub fn de_create_cluster_subnet_group_http_error(
     crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled(
+        None => {
+            return Err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterSubnetGroupAlreadyExists" => crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::ClusterSubnetGroupAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ClusterSubnetGroupAlreadyExists" => {
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::ClusterSubnetGroupAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterSubnetGroupAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_subnet_group_already_exists_fault::de_cluster_subnet_group_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_cluster_subnet_group_already_exists_fault::de_cluster_subnet_group_already_exists_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ClusterSubnetGroupQuotaExceeded" => crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::ClusterSubnetGroupQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ClusterSubnetGroupQuotaExceeded" => {
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::ClusterSubnetGroupQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterSubnetGroupQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_subnet_group_quota_exceeded_fault::de_cluster_subnet_group_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_cluster_subnet_group_quota_exceeded_fault::de_cluster_subnet_group_quota_exceeded_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ClusterSubnetQuotaExceededFault" => crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::ClusterSubnetQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ClusterSubnetQuotaExceededFault" => {
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::ClusterSubnetQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterSubnetQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_subnet_quota_exceeded_fault::de_cluster_subnet_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_subnet_quota_exceeded_fault::de_cluster_subnet_quota_exceeded_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DependentServiceRequestThrottlingFault" => crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::DependentServiceRequestThrottlingFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DependentServiceRequestThrottlingFault" => {
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::DependentServiceRequestThrottlingFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DependentServiceRequestThrottlingFaultBuilder::default();
                     output = crate::protocol_serde::shape_dependent_service_request_throttling_fault::de_dependent_service_request_throttling_fault_xml_err(_response_body, output).map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidSubnet" => crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::InvalidSubnet({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(_response_body, output).map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
+                output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidTagFault" => crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::InvalidTagFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(_response_body, output).map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TagLimitExceededFault" => crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::TagLimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedOperation" => crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::UnauthorizedOperation({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(_response_body, output).map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::generic(generic)
+        _ => crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::generic(generic),
     })
 }
 
@@ -174,10 +178,9 @@ pub fn de_create_cluster_subnet_group_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_cluster_subnet_group::de_create_cluster_subnet_group(_response_body, output).map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_cluster_subnet_group::de_create_cluster_subnet_group(_response_body, output)
+            .map_err(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -186,10 +189,8 @@ pub fn de_create_cluster_subnet_group_http_response_with_props(
 pub fn de_create_cluster_subnet_group(
     inp: &[u8],
     mut builder: crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupOutputBuilder,
-) -> Result<
-    crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

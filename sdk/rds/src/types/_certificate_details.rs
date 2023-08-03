@@ -31,27 +31,19 @@ impl CertificateDetails {
 
 /// A builder for [`CertificateDetails`](crate::types::CertificateDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateDetailsBuilder {
     pub(crate) ca_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CertificateDetailsBuilder {
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
-    pub fn ca_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
-    pub fn set_ca_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_identifier = input;
         self
     }
@@ -65,10 +57,7 @@ impl CertificateDetailsBuilder {
         self
     }
     /// <p>The expiration date of the DB instance’s server certificate.</p>
-    pub fn set_valid_till(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_till(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_till = input;
         self
     }

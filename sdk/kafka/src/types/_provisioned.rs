@@ -40,21 +40,15 @@ pub struct Provisioned {
 }
 impl Provisioned {
     /// <p>Information about the brokers.</p>
-    pub fn broker_node_group_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BrokerNodeGroupInfo> {
+    pub fn broker_node_group_info(&self) -> ::std::option::Option<&crate::types::BrokerNodeGroupInfo> {
         self.broker_node_group_info.as_ref()
     }
     /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
-    pub fn current_broker_software_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BrokerSoftwareInfo> {
+    pub fn current_broker_software_info(&self) -> ::std::option::Option<&crate::types::BrokerSoftwareInfo> {
         self.current_broker_software_info.as_ref()
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn client_authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClientAuthentication> {
+    pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::ClientAuthentication> {
         self.client_authentication.as_ref()
     }
     /// <p>Includes all encryption-related information.</p>
@@ -99,13 +93,10 @@ impl Provisioned {
 
 /// A builder for [`Provisioned`](crate::types::Provisioned).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedBuilder {
     pub(crate) broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
-    pub(crate) current_broker_software_info:
-        ::std::option::Option<crate::types::BrokerSoftwareInfo>,
+    pub(crate) current_broker_software_info: ::std::option::Option<crate::types::BrokerSoftwareInfo>,
     pub(crate) client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     pub(crate) encryption_info: ::std::option::Option<crate::types::EncryptionInfo>,
     pub(crate) enhanced_monitoring: ::std::option::Option<crate::types::EnhancedMonitoring>,
@@ -123,17 +114,12 @@ impl ProvisionedBuilder {
         self
     }
     /// <p>Information about the brokers.</p>
-    pub fn set_broker_node_group_info(
-        mut self,
-        input: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
-    ) -> Self {
+    pub fn set_broker_node_group_info(mut self, input: ::std::option::Option<crate::types::BrokerNodeGroupInfo>) -> Self {
         self.broker_node_group_info = input;
         self
     }
     /// <p>Information about the brokers.</p>
-    pub fn get_broker_node_group_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
+    pub fn get_broker_node_group_info(&self) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
         &self.broker_node_group_info
     }
     /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
@@ -142,17 +128,12 @@ impl ProvisionedBuilder {
         self
     }
     /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
-    pub fn set_current_broker_software_info(
-        mut self,
-        input: ::std::option::Option<crate::types::BrokerSoftwareInfo>,
-    ) -> Self {
+    pub fn set_current_broker_software_info(mut self, input: ::std::option::Option<crate::types::BrokerSoftwareInfo>) -> Self {
         self.current_broker_software_info = input;
         self
     }
     /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
-    pub fn get_current_broker_software_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::BrokerSoftwareInfo> {
+    pub fn get_current_broker_software_info(&self) -> &::std::option::Option<crate::types::BrokerSoftwareInfo> {
         &self.current_broker_software_info
     }
     /// <p>Includes all client authentication information.</p>
@@ -161,17 +142,12 @@ impl ProvisionedBuilder {
         self
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn set_client_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAuthentication>,
-    ) -> Self {
+    pub fn set_client_authentication(mut self, input: ::std::option::Option<crate::types::ClientAuthentication>) -> Self {
         self.client_authentication = input;
         self
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn get_client_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+    pub fn get_client_authentication(&self) -> &::std::option::Option<crate::types::ClientAuthentication> {
         &self.client_authentication
     }
     /// <p>Includes all encryption-related information.</p>
@@ -180,10 +156,7 @@ impl ProvisionedBuilder {
         self
     }
     /// <p>Includes all encryption-related information.</p>
-    pub fn set_encryption_info(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionInfo>,
-    ) -> Self {
+    pub fn set_encryption_info(mut self, input: ::std::option::Option<crate::types::EncryptionInfo>) -> Self {
         self.encryption_info = input;
         self
     }
@@ -197,17 +170,12 @@ impl ProvisionedBuilder {
         self
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    pub fn set_enhanced_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::EnhancedMonitoring>,
-    ) -> Self {
+    pub fn set_enhanced_monitoring(mut self, input: ::std::option::Option<crate::types::EnhancedMonitoring>) -> Self {
         self.enhanced_monitoring = input;
         self
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    pub fn get_enhanced_monitoring(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+    pub fn get_enhanced_monitoring(&self) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
         &self.enhanced_monitoring
     }
     /// <p>The settings for open monitoring.</p>
@@ -216,10 +184,7 @@ impl ProvisionedBuilder {
         self
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn set_open_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenMonitoringInfo>,
-    ) -> Self {
+    pub fn set_open_monitoring(mut self, input: ::std::option::Option<crate::types::OpenMonitoringInfo>) -> Self {
         self.open_monitoring = input;
         self
     }
@@ -233,10 +198,7 @@ impl ProvisionedBuilder {
         self
     }
     /// <p>Log delivery information for the cluster.</p>
-    pub fn set_logging_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingInfo>,
-    ) -> Self {
+    pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.logging_info = input;
         self
     }
@@ -259,18 +221,12 @@ impl ProvisionedBuilder {
         &self.number_of_broker_nodes
     }
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
-    pub fn zookeeper_connect_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn zookeeper_connect_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zookeeper_connect_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
-    pub fn set_zookeeper_connect_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_zookeeper_connect_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zookeeper_connect_string = input;
         self
     }
@@ -279,25 +235,17 @@ impl ProvisionedBuilder {
         &self.zookeeper_connect_string
     }
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
-    pub fn zookeeper_connect_string_tls(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn zookeeper_connect_string_tls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zookeeper_connect_string_tls = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
-    pub fn set_zookeeper_connect_string_tls(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_zookeeper_connect_string_tls(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zookeeper_connect_string_tls = input;
         self
     }
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
-    pub fn get_zookeeper_connect_string_tls(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_zookeeper_connect_string_tls(&self) -> &::std::option::Option<::std::string::String> {
         &self.zookeeper_connect_string_tls
     }
     /// <p>This controls storage mode for supported storage tiers.</p>
@@ -306,10 +254,7 @@ impl ProvisionedBuilder {
         self
     }
     /// <p>This controls storage mode for supported storage tiers.</p>
-    pub fn set_storage_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageMode>,
-    ) -> Self {
+    pub fn set_storage_mode(mut self, input: ::std::option::Option<crate::types::StorageMode>) -> Self {
         self.storage_mode = input;
         self
     }

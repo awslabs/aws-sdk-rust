@@ -27,7 +27,7 @@ impl DeleteBlueGreenDeploymentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBlueGreenDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentInputBuilder,
+    inner: crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentInputBuilder,
 }
 impl DeleteBlueGreenDeploymentFluentBuilder {
     /// Creates a new `DeleteBlueGreenDeployment`.
@@ -38,7 +38,7 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
         }
     }
     /// Access the DeleteBlueGreenDeployment as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
             crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
             crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn blue_green_deployment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blue_green_deployment_identifier(input.into());
         self
     }
@@ -138,10 +124,7 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn set_blue_green_deployment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_blue_green_deployment_identifier(input);
         self
     }
@@ -150,9 +133,7 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn get_blue_green_deployment_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_blue_green_deployment_identifier()
     }
     /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>

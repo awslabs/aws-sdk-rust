@@ -43,13 +43,10 @@ impl ListMilestonesOutput {
 
 /// A builder for [`ListMilestonesOutput`](crate::operation::list_milestones::ListMilestonesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMilestonesOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
-    pub(crate) milestone_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>>,
+    pub(crate) milestone_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -80,17 +77,12 @@ impl ListMilestonesOutputBuilder {
         self
     }
     /// <p>A list of milestone summaries.</p>
-    pub fn set_milestone_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>>,
-    ) -> Self {
+    pub fn set_milestone_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>>) -> Self {
         self.milestone_summaries = input;
         self
     }
     /// <p>A list of milestone summaries.</p>
-    pub fn get_milestone_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>> {
+    pub fn get_milestone_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>> {
         &self.milestone_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

@@ -43,9 +43,7 @@ impl ListSuiteRunsInput {
 
 /// A builder for [`ListSuiteRunsInput`](crate::operation::list_suite_runs::ListSuiteRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSuiteRunsInputBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_definition_version: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListSuiteRunsInputBuilder {
 }
 impl ListSuiteRunsInputBuilder {
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_id = input;
         self
     }
@@ -74,18 +66,12 @@ impl ListSuiteRunsInputBuilder {
         &self.suite_definition_id
     }
     /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
-    pub fn suite_definition_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
-    pub fn set_suite_definition_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_version = input;
         self
     }
@@ -124,10 +110,7 @@ impl ListSuiteRunsInputBuilder {
     /// Consumes the builder and constructs a [`ListSuiteRunsInput`](crate::operation::list_suite_runs::ListSuiteRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_suite_runs::ListSuiteRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_suite_runs::ListSuiteRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_suite_runs::ListSuiteRunsInput {
             suite_definition_id: self.suite_definition_id,
             suite_definition_version: self.suite_definition_version,

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterPublisherOutput`](crate::operation::register_publisher::RegisterPublisherOutput) with field(s):
     ///   - [`publisher_id(Option<String>)`](crate::operation::register_publisher::RegisterPublisherOutput::publisher_id): <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
     /// - On failure, responds with [`SdkError<RegisterPublisherError>`](crate::operation::register_publisher::RegisterPublisherError)
-    pub fn register_publisher(
-        &self,
-    ) -> crate::operation::register_publisher::builders::RegisterPublisherFluentBuilder {
-        crate::operation::register_publisher::builders::RegisterPublisherFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_publisher(&self) -> crate::operation::register_publisher::builders::RegisterPublisherFluentBuilder {
+        crate::operation::register_publisher::builders::RegisterPublisherFluentBuilder::new(self.handle.clone())
     }
 }

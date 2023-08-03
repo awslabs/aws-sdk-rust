@@ -36,16 +36,14 @@ impl DescribeSharedDirectoriesInput {
 }
 impl DescribeSharedDirectoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSharedDirectoriesInput`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesInput).
-    pub fn builder() -> crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder{
+    pub fn builder() -> crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder {
         crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSharedDirectoriesInput`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSharedDirectoriesInputBuilder {
     pub(crate) owner_directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,18 +52,12 @@ pub struct DescribeSharedDirectoriesInputBuilder {
 }
 impl DescribeSharedDirectoriesInputBuilder {
     /// <p>Returns the identifier of the directory in the directory owner account. </p>
-    pub fn owner_directory_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the identifier of the directory in the directory owner account. </p>
-    pub fn set_owner_directory_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_directory_id = input;
         self
     }
@@ -78,27 +70,19 @@ impl DescribeSharedDirectoriesInputBuilder {
     /// To override the contents of this collection use [`set_shared_directory_ids`](Self::set_shared_directory_ids).
     ///
     /// <p>A list of identifiers of all shared directories in your account. </p>
-    pub fn shared_directory_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_directory_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.shared_directory_ids.unwrap_or_default();
         v.push(input.into());
         self.shared_directory_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of identifiers of all shared directories in your account. </p>
-    pub fn set_shared_directory_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_shared_directory_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.shared_directory_ids = input;
         self
     }
     /// <p>A list of identifiers of all shared directories in your account. </p>
-    pub fn get_shared_directory_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_shared_directory_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.shared_directory_ids
     }
     /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
@@ -136,13 +120,11 @@ impl DescribeSharedDirectoriesInputBuilder {
         crate::operation::describe_shared_directories::DescribeSharedDirectoriesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_shared_directories::DescribeSharedDirectoriesInput {
-                owner_directory_id: self.owner_directory_id,
-                shared_directory_ids: self.shared_directory_ids,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_shared_directories::DescribeSharedDirectoriesInput {
+            owner_directory_id: self.owner_directory_id,
+            shared_directory_ids: self.shared_directory_ids,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

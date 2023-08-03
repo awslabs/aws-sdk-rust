@@ -15,16 +15,14 @@ impl GetDataCatalogEncryptionSettingsInput {
 }
 impl GetDataCatalogEncryptionSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetDataCatalogEncryptionSettingsInput`](crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput).
-    pub fn builder() -> crate::operation::get_data_catalog_encryption_settings::builders::GetDataCatalogEncryptionSettingsInputBuilder{
+    pub fn builder() -> crate::operation::get_data_catalog_encryption_settings::builders::GetDataCatalogEncryptionSettingsInputBuilder {
         crate::operation::get_data_catalog_encryption_settings::builders::GetDataCatalogEncryptionSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataCatalogEncryptionSettingsInput`](crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataCatalogEncryptionSettingsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl GetDataCatalogEncryptionSettingsInputBuilder {
         &self.catalog_id
     }
     /// Consumes the builder and constructs a [`GetDataCatalogEncryptionSettingsInput`](crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput {
-                catalog_id: self.catalog_id
-                ,
-            }
+            crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput { catalog_id: self.catalog_id },
         )
     }
 }

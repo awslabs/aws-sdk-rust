@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PredefinedMetricPairType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for PredefinedMetricPairType {
             "ASGCPUUtilization" => PredefinedMetricPairType::AsgcpuUtilization,
             "ASGNetworkIn" => PredefinedMetricPairType::AsgNetworkIn,
             "ASGNetworkOut" => PredefinedMetricPairType::AsgNetworkOut,
-            other => PredefinedMetricPairType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PredefinedMetricPairType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl PredefinedMetricPairType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALBRequestCount",
-            "ASGCPUUtilization",
-            "ASGNetworkIn",
-            "ASGNetworkOut",
-        ]
+        &["ALBRequestCount", "ASGCPUUtilization", "ASGNetworkIn", "ASGNetworkOut"]
     }
 }
 impl ::std::convert::AsRef<str> for PredefinedMetricPairType {

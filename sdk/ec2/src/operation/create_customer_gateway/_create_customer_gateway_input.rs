@@ -69,25 +69,20 @@ impl CreateCustomerGatewayInput {
 }
 impl CreateCustomerGatewayInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomerGatewayInput`](crate::operation::create_customer_gateway::CreateCustomerGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::create_customer_gateway::builders::CreateCustomerGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_customer_gateway::builders::CreateCustomerGatewayInputBuilder {
         crate::operation::create_customer_gateway::builders::CreateCustomerGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomerGatewayInput`](crate::operation::create_customer_gateway::CreateCustomerGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomerGatewayInputBuilder {
     pub(crate) bgp_asn: ::std::option::Option<i32>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::GatewayType>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -125,18 +120,12 @@ impl CreateCustomerGatewayInputBuilder {
         &self.public_ip
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -170,17 +159,12 @@ impl CreateCustomerGatewayInputBuilder {
         self
     }
     /// <p>The tags to apply to the customer gateway.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the customer gateway.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A name for the customer gateway device.</p>
@@ -231,21 +215,17 @@ impl CreateCustomerGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomerGatewayInput`](crate::operation::create_customer_gateway::CreateCustomerGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_customer_gateway::CreateCustomerGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_customer_gateway::CreateCustomerGatewayInput {
-                bgp_asn: self.bgp_asn,
-                public_ip: self.public_ip,
-                certificate_arn: self.certificate_arn,
-                r#type: self.r#type,
-                tag_specifications: self.tag_specifications,
-                device_name: self.device_name,
-                ip_address: self.ip_address,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_customer_gateway::CreateCustomerGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_customer_gateway::CreateCustomerGatewayInput {
+            bgp_asn: self.bgp_asn,
+            public_ip: self.public_ip,
+            certificate_arn: self.certificate_arn,
+            r#type: self.r#type,
+            tag_specifications: self.tag_specifications,
+            device_name: self.device_name,
+            ip_address: self.ip_address,
+            dry_run: self.dry_run,
+        })
     }
 }

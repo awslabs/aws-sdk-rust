@@ -15,17 +15,14 @@ impl ImportAppCatalogInput {
 }
 impl ImportAppCatalogInput {
     /// Creates a new builder-style object to manufacture [`ImportAppCatalogInput`](crate::operation::import_app_catalog::ImportAppCatalogInput).
-    pub fn builder() -> crate::operation::import_app_catalog::builders::ImportAppCatalogInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_app_catalog::builders::ImportAppCatalogInputBuilder {
         crate::operation::import_app_catalog::builders::ImportAppCatalogInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportAppCatalogInput`](crate::operation::import_app_catalog::ImportAppCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAppCatalogInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl ImportAppCatalogInputBuilder {
     /// Consumes the builder and constructs a [`ImportAppCatalogInput`](crate::operation::import_app_catalog::ImportAppCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_app_catalog::ImportAppCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_app_catalog::ImportAppCatalogInput {
-                role_name: self.role_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_app_catalog::ImportAppCatalogInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::import_app_catalog::ImportAppCatalogInput { role_name: self.role_name })
     }
 }

@@ -12,10 +12,7 @@ pub fn ser_create_node_input(
     if let Some(var_3) = &input.node_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("NodeConfiguration").start_object();
-        crate::protocol_serde::shape_node_configuration::ser_node_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_node_configuration::ser_node_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.tags {

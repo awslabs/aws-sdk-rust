@@ -10,10 +10,7 @@ impl CreateConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_connection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateConnectionFluentBuilder {
         }
     }
     /// Access the CreateConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_connection::builders::CreateConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_connection::builders::CreateConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateConnectionFluentBuilder {
             crate::operation::create_connection::CreateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateConnectionFluentBuilder {
             crate::operation::create_connection::CreateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -160,41 +144,28 @@ impl CreateConnectionFluentBuilder {
     /// <p>The type of authorization to use for the connection.</p> <note>
     /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
     /// </note>
-    pub fn set_authorization_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
-    ) -> Self {
+    pub fn set_authorization_type(mut self, input: ::std::option::Option<crate::types::ConnectionAuthorizationType>) -> Self {
         self.inner = self.inner.set_authorization_type(input);
         self
     }
     /// <p>The type of authorization to use for the connection.</p> <note>
     /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
     /// </note>
-    pub fn get_authorization_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
+    pub fn get_authorization_type(&self) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
         self.inner.get_authorization_type()
     }
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
-    pub fn auth_parameters(
-        mut self,
-        input: crate::types::CreateConnectionAuthRequestParameters,
-    ) -> Self {
+    pub fn auth_parameters(mut self, input: crate::types::CreateConnectionAuthRequestParameters) -> Self {
         self.inner = self.inner.auth_parameters(input);
         self
     }
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
-    pub fn set_auth_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateConnectionAuthRequestParameters>,
-    ) -> Self {
+    pub fn set_auth_parameters(mut self, input: ::std::option::Option<crate::types::CreateConnectionAuthRequestParameters>) -> Self {
         self.inner = self.inner.set_auth_parameters(input);
         self
     }
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
-    pub fn get_auth_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateConnectionAuthRequestParameters> {
+    pub fn get_auth_parameters(&self) -> &::std::option::Option<crate::types::CreateConnectionAuthRequestParameters> {
         self.inner.get_auth_parameters()
     }
 }

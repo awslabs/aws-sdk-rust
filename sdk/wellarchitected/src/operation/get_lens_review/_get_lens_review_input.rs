@@ -45,9 +45,7 @@ impl GetLensReviewInput {
 
 /// A builder for [`GetLensReviewInput`](crate::operation::get_lens_review::GetLensReviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLensReviewInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
@@ -111,10 +109,7 @@ impl GetLensReviewInputBuilder {
     /// Consumes the builder and constructs a [`GetLensReviewInput`](crate::operation::get_lens_review::GetLensReviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lens_review::GetLensReviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_lens_review::GetLensReviewInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_lens_review::GetLensReviewInput {
             workload_id: self.workload_id,
             lens_alias: self.lens_alias,

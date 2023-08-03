@@ -84,23 +84,19 @@ impl ::aws_http::request_id::RequestId for DescribeFrameworkOutput {
 }
 impl DescribeFrameworkOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFrameworkOutput`](crate::operation::describe_framework::DescribeFrameworkOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_framework::builders::DescribeFrameworkOutputBuilder {
+    pub fn builder() -> crate::operation::describe_framework::builders::DescribeFrameworkOutputBuilder {
         crate::operation::describe_framework::builders::DescribeFrameworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFrameworkOutput`](crate::operation::describe_framework::DescribeFrameworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFrameworkOutputBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
     pub(crate) framework_arn: ::std::option::Option<::std::string::String>,
     pub(crate) framework_description: ::std::option::Option<::std::string::String>,
-    pub(crate) framework_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
+    pub(crate) framework_controls: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deployment_status: ::std::option::Option<::std::string::String>,
     pub(crate) framework_status: ::std::option::Option<::std::string::String>,
@@ -109,18 +105,12 @@ pub struct DescribeFrameworkOutputBuilder {
 }
 impl DescribeFrameworkOutputBuilder {
     /// <p>The unique name of a framework.</p>
-    pub fn framework_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of a framework.</p>
-    pub fn set_framework_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_name = input;
         self
     }
@@ -129,18 +119,12 @@ impl DescribeFrameworkOutputBuilder {
         &self.framework_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn framework_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn set_framework_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_arn = input;
         self
     }
@@ -149,18 +133,12 @@ impl DescribeFrameworkOutputBuilder {
         &self.framework_arn
     }
     /// <p>An optional description of the framework.</p>
-    pub fn framework_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional description of the framework.</p>
-    pub fn set_framework_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_description = input;
         self
     }
@@ -180,17 +158,12 @@ impl DescribeFrameworkOutputBuilder {
         self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn set_framework_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
-    ) -> Self {
+    pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>) -> Self {
         self.framework_controls = input;
         self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn get_framework_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
+    pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
         &self.framework_controls
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
@@ -199,10 +172,7 @@ impl DescribeFrameworkOutputBuilder {
         self
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -212,19 +182,13 @@ impl DescribeFrameworkOutputBuilder {
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
-    pub fn deployment_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_status = input;
         self
     }
@@ -240,10 +204,7 @@ impl DescribeFrameworkOutputBuilder {
     /// <li> <p> <code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p> </li>
     /// </ul>
-    pub fn framework_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_status = ::std::option::Option::Some(input.into());
         self
     }
@@ -254,10 +215,7 @@ impl DescribeFrameworkOutputBuilder {
     /// <li> <p> <code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p> </li>
     /// </ul>
-    pub fn set_framework_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_status = input;
         self
     }
@@ -272,18 +230,12 @@ impl DescribeFrameworkOutputBuilder {
         &self.framework_status
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }

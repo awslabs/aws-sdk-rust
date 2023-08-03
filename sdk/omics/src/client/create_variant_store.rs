@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_variant_store::CreateVariantStoreOutput::name): <p>The store's name.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_variant_store::CreateVariantStoreOutput::creation_time): <p>When the store was created.</p>
     /// - On failure, responds with [`SdkError<CreateVariantStoreError>`](crate::operation::create_variant_store::CreateVariantStoreError)
-    pub fn create_variant_store(
-        &self,
-    ) -> crate::operation::create_variant_store::builders::CreateVariantStoreFluentBuilder {
-        crate::operation::create_variant_store::builders::CreateVariantStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_variant_store(&self) -> crate::operation::create_variant_store::builders::CreateVariantStoreFluentBuilder {
+        crate::operation::create_variant_store::builders::CreateVariantStoreFluentBuilder::new(self.handle.clone())
     }
 }

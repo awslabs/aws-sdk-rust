@@ -36,9 +36,7 @@ impl ListSuitesOutput {
 
 /// A builder for [`ListSuitesOutput`](crate::operation::list_suites::ListSuitesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSuitesOutputBuilder {
     pub(crate) suites: ::std::option::Option<::std::vec::Vec<crate::types::Suite>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListSuitesOutputBuilder {
         self
     }
     /// <p>Information about the suites.</p>
-    pub fn set_suites(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Suite>>,
-    ) -> Self {
+    pub fn set_suites(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Suite>>) -> Self {
         self.suites = input;
         self
     }

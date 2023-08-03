@@ -22,18 +22,14 @@ impl UpdateResourceProfileInput {
 }
 impl UpdateResourceProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceProfileInput`](crate::operation::update_resource_profile::UpdateResourceProfileInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_profile::builders::UpdateResourceProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resource_profile::builders::UpdateResourceProfileInputBuilder {
         crate::operation::update_resource_profile::builders::UpdateResourceProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceProfileInput`](crate::operation::update_resource_profile::UpdateResourceProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceProfileInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sensitivity_score_override: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl UpdateResourceProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceProfileInput`](crate::operation::update_resource_profile::UpdateResourceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource_profile::UpdateResourceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resource_profile::UpdateResourceProfileInput {
-                resource_arn: self.resource_arn,
-                sensitivity_score_override: self.sensitivity_score_override,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_resource_profile::UpdateResourceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_resource_profile::UpdateResourceProfileInput {
+            resource_arn: self.resource_arn,
+            sensitivity_score_override: self.sensitivity_score_override,
+        })
     }
 }

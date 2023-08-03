@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`streaming_id(impl ::std::convert::Into<String>)`](crate::operation::stop_contact_streaming::builders::StopContactStreamingFluentBuilder::streaming_id) / [`set_streaming_id(Option<String>)`](crate::operation::stop_contact_streaming::builders::StopContactStreamingFluentBuilder::set_streaming_id): <p>The identifier of the streaming configuration enabled. </p>
     /// - On success, responds with [`StopContactStreamingOutput`](crate::operation::stop_contact_streaming::StopContactStreamingOutput)
     /// - On failure, responds with [`SdkError<StopContactStreamingError>`](crate::operation::stop_contact_streaming::StopContactStreamingError)
-    pub fn stop_contact_streaming(
-        &self,
-    ) -> crate::operation::stop_contact_streaming::builders::StopContactStreamingFluentBuilder {
-        crate::operation::stop_contact_streaming::builders::StopContactStreamingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_contact_streaming(&self) -> crate::operation::stop_contact_streaming::builders::StopContactStreamingFluentBuilder {
+        crate::operation::stop_contact_streaming::builders::StopContactStreamingFluentBuilder::new(self.handle.clone())
     }
 }

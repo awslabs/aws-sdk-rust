@@ -12,7 +12,10 @@ pub fn ser_list_resources_associated_to_custom_line_item_input(
     if let Some(var_3) = &input.filters {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Filters").start_object();
-        crate::protocol_serde::shape_list_resources_associated_to_custom_line_item_filter::ser_list_resources_associated_to_custom_line_item_filter(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_list_resources_associated_to_custom_line_item_filter::ser_list_resources_associated_to_custom_line_item_filter(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
     if let Some(var_5) = &input.max_results {

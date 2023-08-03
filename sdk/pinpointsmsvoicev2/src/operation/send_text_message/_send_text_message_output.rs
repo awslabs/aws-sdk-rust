@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for SendTextMessageOutput {
 }
 impl SendTextMessageOutput {
     /// Creates a new builder-style object to manufacture [`SendTextMessageOutput`](crate::operation::send_text_message::SendTextMessageOutput).
-    pub fn builder() -> crate::operation::send_text_message::builders::SendTextMessageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::send_text_message::builders::SendTextMessageOutputBuilder {
         crate::operation::send_text_message::builders::SendTextMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendTextMessageOutput`](crate::operation::send_text_message::SendTextMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendTextMessageOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

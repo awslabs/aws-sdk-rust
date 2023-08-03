@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetPartitionOutput {
 }
 impl BatchGetPartitionOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetPartitionOutput`](crate::operation::batch_get_partition::BatchGetPartitionOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_partition::builders::BatchGetPartitionOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_partition::builders::BatchGetPartitionOutputBuilder {
         crate::operation::batch_get_partition::builders::BatchGetPartitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetPartitionOutput`](crate::operation::batch_get_partition::BatchGetPartitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetPartitionOutputBuilder {
     pub(crate) partitions: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>,
-    pub(crate) unprocessed_keys:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
+    pub(crate) unprocessed_keys: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
     _request_id: Option<String>,
 }
 impl BatchGetPartitionOutputBuilder {
@@ -58,17 +54,12 @@ impl BatchGetPartitionOutputBuilder {
         self
     }
     /// <p>A list of the requested partitions.</p>
-    pub fn set_partitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>,
-    ) -> Self {
+    pub fn set_partitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>) -> Self {
         self.partitions = input;
         self
     }
     /// <p>A list of the requested partitions.</p>
-    pub fn get_partitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Partition>> {
+    pub fn get_partitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Partition>> {
         &self.partitions
     }
     /// Appends an item to `unprocessed_keys`.
@@ -83,17 +74,12 @@ impl BatchGetPartitionOutputBuilder {
         self
     }
     /// <p>A list of the partition values in the request for which partitions were not returned.</p>
-    pub fn set_unprocessed_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
-    ) -> Self {
+    pub fn set_unprocessed_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>) -> Self {
         self.unprocessed_keys = input;
         self
     }
     /// <p>A list of the partition values in the request for which partitions were not returned.</p>
-    pub fn get_unprocessed_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+    pub fn get_unprocessed_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
         &self.unprocessed_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -11,8 +11,7 @@ pub struct UpdateVoiceConnectorGroupInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
     #[doc(hidden)]
-    pub voice_connector_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
+    pub voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
 }
 impl UpdateVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
@@ -24,44 +23,33 @@ impl UpdateVoiceConnectorGroupInput {
         self.name.as_deref()
     }
     /// <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
-    pub fn voice_connector_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VoiceConnectorItem]> {
+    pub fn voice_connector_items(&self) -> ::std::option::Option<&[crate::types::VoiceConnectorItem]> {
         self.voice_connector_items.as_deref()
     }
 }
 impl UpdateVoiceConnectorGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceConnectorGroupInput`](crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupInput).
-    pub fn builder() -> crate::operation::update_voice_connector_group::builders::UpdateVoiceConnectorGroupInputBuilder{
+    pub fn builder() -> crate::operation::update_voice_connector_group::builders::UpdateVoiceConnectorGroupInputBuilder {
         crate::operation::update_voice_connector_group::builders::UpdateVoiceConnectorGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVoiceConnectorGroupInput`](crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVoiceConnectorGroupInputBuilder {
     pub(crate) voice_connector_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) voice_connector_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
+    pub(crate) voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
 }
 impl UpdateVoiceConnectorGroupInputBuilder {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
-    pub fn voice_connector_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector group ID.</p>
-    pub fn set_voice_connector_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_group_id = input;
         self
     }
@@ -95,17 +83,12 @@ impl UpdateVoiceConnectorGroupInputBuilder {
         self
     }
     /// <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
-    pub fn set_voice_connector_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
-    ) -> Self {
+    pub fn set_voice_connector_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>) -> Self {
         self.voice_connector_items = input;
         self
     }
     /// <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
-    pub fn get_voice_connector_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
+    pub fn get_voice_connector_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
         &self.voice_connector_items
     }
     /// Consumes the builder and constructs a [`UpdateVoiceConnectorGroupInput`](crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupInput).
@@ -115,12 +98,10 @@ impl UpdateVoiceConnectorGroupInputBuilder {
         crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupInput {
-                voice_connector_group_id: self.voice_connector_group_id,
-                name: self.name,
-                voice_connector_items: self.voice_connector_items,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupInput {
+            voice_connector_group_id: self.voice_connector_group_id,
+            name: self.name,
+            voice_connector_items: self.voice_connector_items,
+        })
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`stats(Option<ReportGroupTrendStats>)`](crate::operation::get_report_group_trend::GetReportGroupTrendOutput::stats): <p>Contains the accumulated trend data.</p>
     ///   - [`raw_data(Option<Vec<ReportWithRawData>>)`](crate::operation::get_report_group_trend::GetReportGroupTrendOutput::raw_data): <p>An array that contains the raw data for each report.</p>
     /// - On failure, responds with [`SdkError<GetReportGroupTrendError>`](crate::operation::get_report_group_trend::GetReportGroupTrendError)
-    pub fn get_report_group_trend(
-        &self,
-    ) -> crate::operation::get_report_group_trend::builders::GetReportGroupTrendFluentBuilder {
-        crate::operation::get_report_group_trend::builders::GetReportGroupTrendFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_report_group_trend(&self) -> crate::operation::get_report_group_trend::builders::GetReportGroupTrendFluentBuilder {
+        crate::operation::get_report_group_trend::builders::GetReportGroupTrendFluentBuilder::new(self.handle.clone())
     }
 }

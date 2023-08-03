@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`devices(Option<Vec<DeviceType>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>The devices returned in the list devices response.</p>
     ///   - [`pagination_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::pagination_token): <p>The pagination token for the list device response.</p>
     /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
-    pub fn list_devices(
-        &self,
-    ) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {
+    pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {
         crate::operation::list_devices::builders::ListDevicesFluentBuilder::new(self.handle.clone())
     }
 }

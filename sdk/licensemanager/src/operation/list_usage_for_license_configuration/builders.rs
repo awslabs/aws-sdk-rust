@@ -5,16 +5,16 @@ pub use crate::operation::list_usage_for_license_configuration::_list_usage_for_
 
 impl ListUsageForLicenseConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_usage_for_license_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListUsageForLicenseConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUsageForLicenseConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationInputBuilder,
+    inner: crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationInputBuilder,
 }
 impl ListUsageForLicenseConfigurationFluentBuilder {
     /// Creates a new `ListUsageForLicenseConfiguration`.
@@ -37,15 +37,20 @@ impl ListUsageForLicenseConfigurationFluentBuilder {
         }
     }
     /// Access the ListUsageForLicenseConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListUsageForLicenseConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl ListUsageForLicenseConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_configuration_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_configuration_arn(input);
         self
     }
@@ -162,10 +171,7 @@ impl ListUsageForLicenseConfigurationFluentBuilder {
     /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

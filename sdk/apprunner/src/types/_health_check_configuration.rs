@@ -74,9 +74,7 @@ impl HealthCheckConfiguration {
 
 /// A builder for [`HealthCheckConfiguration`](crate::types::HealthCheckConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HealthCheckConfigurationBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::HealthCheckProtocol>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl HealthCheckConfigurationBuilder {
     /// <p>The IP protocol that App Runner uses to perform health checks for your service.</p>
     /// <p>If you set <code>Protocol</code> to <code>HTTP</code>, App Runner sends health check requests to the HTTP path specified by <code>Path</code>.</p>
     /// <p>Default: <code>TCP</code> </p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::HealthCheckProtocol>) -> Self {
         self.protocol = input;
         self
     }

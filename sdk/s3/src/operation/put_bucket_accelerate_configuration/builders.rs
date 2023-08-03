@@ -5,16 +5,16 @@ pub use crate::operation::put_bucket_accelerate_configuration::_put_bucket_accel
 
 impl PutBucketAccelerateConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_bucket_accelerate_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -41,7 +41,7 @@ impl PutBucketAccelerateConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketAccelerateConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_bucket_accelerate_configuration::builders::PutBucketAccelerateConfigurationInputBuilder,
+    inner: crate::operation::put_bucket_accelerate_configuration::builders::PutBucketAccelerateConfigurationInputBuilder,
 }
 impl PutBucketAccelerateConfigurationFluentBuilder {
     /// Creates a new `PutBucketAccelerateConfiguration`.
@@ -52,15 +52,20 @@ impl PutBucketAccelerateConfigurationFluentBuilder {
         }
     }
     /// Access the PutBucketAccelerateConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_bucket_accelerate_configuration::builders::PutBucketAccelerateConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_bucket_accelerate_configuration::builders::PutBucketAccelerateConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -69,16 +74,17 @@ impl PutBucketAccelerateConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -96,17 +102,26 @@ impl PutBucketAccelerateConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the bucket for which the accelerate configuration is set.</p>
@@ -124,40 +139,26 @@ impl PutBucketAccelerateConfigurationFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>Container for setting the transfer acceleration state.</p>
-    pub fn accelerate_configuration(
-        mut self,
-        input: crate::types::AccelerateConfiguration,
-    ) -> Self {
+    pub fn accelerate_configuration(mut self, input: crate::types::AccelerateConfiguration) -> Self {
         self.inner = self.inner.accelerate_configuration(input);
         self
     }
     /// <p>Container for setting the transfer acceleration state.</p>
-    pub fn set_accelerate_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AccelerateConfiguration>,
-    ) -> Self {
+    pub fn set_accelerate_configuration(mut self, input: ::std::option::Option<crate::types::AccelerateConfiguration>) -> Self {
         self.inner = self.inner.set_accelerate_configuration(input);
         self
     }
     /// <p>Container for setting the transfer acceleration state.</p>
-    pub fn get_accelerate_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccelerateConfiguration> {
+    pub fn get_accelerate_configuration(&self) -> &::std::option::Option<crate::types::AccelerateConfiguration> {
         self.inner.get_accelerate_configuration()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
@@ -173,18 +174,13 @@ impl PutBucketAccelerateConfigurationFluentBuilder {
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         self.inner.get_checksum_algorithm()
     }
 }

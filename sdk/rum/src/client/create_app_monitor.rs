@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAppMonitorOutput`](crate::operation::create_app_monitor::CreateAppMonitorOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_app_monitor::CreateAppMonitorOutput::id): <p>The unique ID of the new app monitor.</p>
     /// - On failure, responds with [`SdkError<CreateAppMonitorError>`](crate::operation::create_app_monitor::CreateAppMonitorError)
-    pub fn create_app_monitor(
-        &self,
-    ) -> crate::operation::create_app_monitor::builders::CreateAppMonitorFluentBuilder {
-        crate::operation::create_app_monitor::builders::CreateAppMonitorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_app_monitor(&self) -> crate::operation::create_app_monitor::builders::CreateAppMonitorFluentBuilder {
+        crate::operation::create_app_monitor::builders::CreateAppMonitorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetServiceQuotaOutput`](crate::operation::get_service_quota::GetServiceQuotaOutput) with field(s):
     ///   - [`quota(Option<ServiceQuota>)`](crate::operation::get_service_quota::GetServiceQuotaOutput::quota): <p>Information about the quota.</p>
     /// - On failure, responds with [`SdkError<GetServiceQuotaError>`](crate::operation::get_service_quota::GetServiceQuotaError)
-    pub fn get_service_quota(
-        &self,
-    ) -> crate::operation::get_service_quota::builders::GetServiceQuotaFluentBuilder {
-        crate::operation::get_service_quota::builders::GetServiceQuotaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_service_quota(&self) -> crate::operation::get_service_quota::builders::GetServiceQuotaFluentBuilder {
+        crate::operation::get_service_quota::builders::GetServiceQuotaFluentBuilder::new(self.handle.clone())
     }
 }

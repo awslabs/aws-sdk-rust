@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`app_block_builders(Option<Vec<AppBlockBuilder>>)`](crate::operation::describe_app_block_builders::DescribeAppBlockBuildersOutput::app_block_builders): <p>The list that describes one or more app block builders.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_app_block_builders::DescribeAppBlockBuildersOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeAppBlockBuildersError>`](crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError)
-    pub fn describe_app_block_builders(&self) -> crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersFluentBuilder{
+    pub fn describe_app_block_builders(&self) -> crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersFluentBuilder {
         crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersFluentBuilder::new(self.handle.clone())
     }
 }

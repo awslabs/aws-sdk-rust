@@ -14,13 +14,8 @@ impl super::Client {
     ///   - [`channel_memberships(Option<Vec<ChannelMembershipSummary>>)`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput::channel_memberships): <p>The information for the requested channel memberships.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput::next_token): <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     /// - On failure, responds with [`SdkError<ListChannelMembershipsError>`](crate::operation::list_channel_memberships::ListChannelMembershipsError)
-    #[deprecated(
-        note = "Replaced by ListChannelMemberships in the Amazon Chime SDK Messaging Namespace"
-    )]
-    pub fn list_channel_memberships(
-        &self,
-    ) -> crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder
-    {
+    #[deprecated(note = "Replaced by ListChannelMemberships in the Amazon Chime SDK Messaging Namespace")]
+    pub fn list_channel_memberships(&self) -> crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder {
         crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::new(self.handle.clone())
     }
 }

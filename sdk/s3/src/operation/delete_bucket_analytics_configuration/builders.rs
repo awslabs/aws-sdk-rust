@@ -5,16 +5,16 @@ pub use crate::operation::delete_bucket_analytics_configuration::_delete_bucket_
 
 impl DeleteBucketAnalyticsConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_bucket_analytics_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -34,7 +34,7 @@ impl DeleteBucketAnalyticsConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBucketAnalyticsConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_bucket_analytics_configuration::builders::DeleteBucketAnalyticsConfigurationInputBuilder,
+    inner: crate::operation::delete_bucket_analytics_configuration::builders::DeleteBucketAnalyticsConfigurationInputBuilder,
 }
 impl DeleteBucketAnalyticsConfigurationFluentBuilder {
     /// Creates a new `DeleteBucketAnalyticsConfiguration`.
@@ -45,15 +45,20 @@ impl DeleteBucketAnalyticsConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteBucketAnalyticsConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_bucket_analytics_configuration::builders::DeleteBucketAnalyticsConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_bucket_analytics_configuration::builders::DeleteBucketAnalyticsConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -62,16 +67,17 @@ impl DeleteBucketAnalyticsConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -89,17 +95,26 @@ impl DeleteBucketAnalyticsConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the bucket from which an analytics configuration is deleted.</p>
@@ -131,18 +146,12 @@ impl DeleteBucketAnalyticsConfigurationFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }

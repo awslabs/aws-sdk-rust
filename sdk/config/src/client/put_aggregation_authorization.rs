@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`PutAggregationAuthorizationOutput`](crate::operation::put_aggregation_authorization::PutAggregationAuthorizationOutput) with field(s):
     ///   - [`aggregation_authorization(Option<AggregationAuthorization>)`](crate::operation::put_aggregation_authorization::PutAggregationAuthorizationOutput::aggregation_authorization): <p>Returns an AggregationAuthorization object. </p>
     /// - On failure, responds with [`SdkError<PutAggregationAuthorizationError>`](crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError)
-    pub fn put_aggregation_authorization(&self) -> crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationFluentBuilder{
+    pub fn put_aggregation_authorization(
+        &self,
+    ) -> crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationFluentBuilder {
         crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

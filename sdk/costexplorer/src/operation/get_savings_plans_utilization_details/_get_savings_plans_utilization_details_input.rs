@@ -88,21 +88,18 @@ impl GetSavingsPlansUtilizationDetailsInput {
 }
 impl GetSavingsPlansUtilizationDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationDetailsInput`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput).
-    pub fn builder() -> crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder{
+    pub fn builder() -> crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder {
         crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSavingsPlansUtilizationDetailsInput`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetailsInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,
-    pub(crate) data_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>,
+    pub(crate) data_type: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) sort_by: ::std::option::Option<crate::types::SortDefinition>,
@@ -114,10 +111,7 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
         self
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -175,17 +169,12 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
         self
     }
     /// <p>The data type.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>) -> Self {
         self.data_type = input;
         self
     }
     /// <p>The data type.</p>
-    pub fn get_data_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>> {
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>> {
         &self.data_type
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -244,10 +233,7 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
     /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDefinition>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
         self.sort_by = input;
         self
     }
@@ -267,22 +253,21 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
         &self.sort_by
     }
     /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationDetailsInput`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput {
-                time_period: self.time_period
-                ,
-                filter: self.filter
-                ,
-                data_type: self.data_type
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                sort_by: self.sort_by
-                ,
-            }
+                time_period: self.time_period,
+                filter: self.filter,
+                data_type: self.data_type,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                sort_by: self.sort_by,
+            },
         )
     }
 }

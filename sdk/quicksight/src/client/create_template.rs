@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::create_template::CreateTemplateOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::create_template::CreateTemplateOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<CreateTemplateError>`](crate::operation::create_template::CreateTemplateError)
-    pub fn create_template(
-        &self,
-    ) -> crate::operation::create_template::builders::CreateTemplateFluentBuilder {
-        crate::operation::create_template::builders::CreateTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_template(&self) -> crate::operation::create_template::builders::CreateTemplateFluentBuilder {
+        crate::operation::create_template::builders::CreateTemplateFluentBuilder::new(self.handle.clone())
     }
 }

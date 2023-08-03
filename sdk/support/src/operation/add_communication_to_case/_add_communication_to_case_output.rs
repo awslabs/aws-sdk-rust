@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for AddCommunicationToCaseOutput {
 }
 impl AddCommunicationToCaseOutput {
     /// Creates a new builder-style object to manufacture [`AddCommunicationToCaseOutput`](crate::operation::add_communication_to_case::AddCommunicationToCaseOutput).
-    pub fn builder(
-    ) -> crate::operation::add_communication_to_case::builders::AddCommunicationToCaseOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_communication_to_case::builders::AddCommunicationToCaseOutputBuilder {
         crate::operation::add_communication_to_case::builders::AddCommunicationToCaseOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddCommunicationToCaseOutput`](crate::operation::add_communication_to_case::AddCommunicationToCaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddCommunicationToCaseOutputBuilder {
     pub(crate) result: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -63,9 +59,7 @@ impl AddCommunicationToCaseOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddCommunicationToCaseOutput`](crate::operation::add_communication_to_case::AddCommunicationToCaseOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_communication_to_case::AddCommunicationToCaseOutput {
+    pub fn build(self) -> crate::operation::add_communication_to_case::AddCommunicationToCaseOutput {
         crate::operation::add_communication_to_case::AddCommunicationToCaseOutput {
             result: self.result.unwrap_or_default(),
             _request_id: self._request_id,

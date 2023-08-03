@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccountConfigurationOutput`](crate::operation::get_account_configuration::GetAccountConfigurationOutput) with field(s):
     ///   - [`expiry_events(Option<ExpiryEventsConfiguration>)`](crate::operation::get_account_configuration::GetAccountConfigurationOutput::expiry_events): <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<GetAccountConfigurationError>`](crate::operation::get_account_configuration::GetAccountConfigurationError)
-    pub fn get_account_configuration(
-        &self,
-    ) -> crate::operation::get_account_configuration::builders::GetAccountConfigurationFluentBuilder
-    {
+    pub fn get_account_configuration(&self) -> crate::operation::get_account_configuration::builders::GetAccountConfigurationFluentBuilder {
         crate::operation::get_account_configuration::builders::GetAccountConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

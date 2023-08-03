@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableAwsServiceAccessOutput {
 }
 impl DisableAwsServiceAccessOutput {
     /// Creates a new builder-style object to manufacture [`DisableAwsServiceAccessOutput`](crate::operation::disable_aws_service_access::DisableAwsServiceAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessOutputBuilder {
         crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableAwsServiceAccessOutput`](crate::operation::disable_aws_service_access::DisableAwsServiceAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableAwsServiceAccessOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisableAwsServiceAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableAwsServiceAccessOutput`](crate::operation::disable_aws_service_access::DisableAwsServiceAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_aws_service_access::DisableAwsServiceAccessOutput {
+    pub fn build(self) -> crate::operation::disable_aws_service_access::DisableAwsServiceAccessOutput {
         crate::operation::disable_aws_service_access::DisableAwsServiceAccessOutput {
             _request_id: self._request_id,
         }

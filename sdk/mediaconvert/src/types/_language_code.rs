@@ -228,13 +228,7 @@
 /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -819,9 +813,7 @@ impl ::std::convert::From<&str> for LanguageCode {
             "ZHA" => LanguageCode::Zha,
             "ZHO" => LanguageCode::Zho,
             "ZUL" => LanguageCode::Zul,
-            other => {
-                LanguageCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => LanguageCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1034,22 +1026,17 @@ impl LanguageCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AAR", "ABK", "AFR", "AKA", "AMH", "ARA", "ARG", "ASM", "AVA", "AVE", "AYM", "AZE",
-            "BAK", "BAM", "BEL", "BEN", "BIH", "BIS", "BOD", "BOS", "BRE", "BUL", "CAT", "CES",
-            "CHA", "CHE", "CHU", "CHV", "COR", "COS", "CRE", "CYM", "DAN", "DEU", "DIV", "DZO",
-            "ELL", "ENG", "ENM", "EPO", "EST", "EUS", "EWE", "FAO", "FAS", "FIJ", "FIN", "FRA",
-            "FRM", "FRY", "FUL", "GER", "GLA", "GLE", "GLG", "GLV", "GRN", "GUJ", "HAT", "HAU",
-            "HEB", "HER", "HIN", "HMO", "HRV", "HUN", "HYE", "IBO", "IDO", "III", "IKU", "ILE",
-            "INA", "IND", "IPK", "ISL", "ITA", "JAV", "JPN", "KAL", "KAN", "KAS", "KAT", "KAU",
-            "KAZ", "KHM", "KIK", "KIN", "KIR", "KOM", "KON", "KOR", "KUA", "KUR", "LAO", "LAT",
-            "LAV", "LIM", "LIN", "LIT", "LTZ", "LUB", "LUG", "MAH", "MAL", "MAR", "MKD", "MLG",
-            "MLT", "MON", "MRI", "MSA", "MYA", "NAU", "NAV", "NBL", "NDE", "NDO", "NEP", "NLD",
-            "NNO", "NOB", "NOR", "NYA", "OCI", "OJI", "ORI", "ORJ", "ORM", "OSS", "PAN", "PLI",
-            "POL", "POR", "PUS", "QAA", "QPC", "QUE", "ROH", "RON", "RUN", "RUS", "SAG", "SAN",
-            "SIN", "SLK", "SLV", "SME", "SMO", "SNA", "SND", "SOM", "SOT", "SPA", "SQI", "SRB",
-            "SRD", "SRP", "SSW", "SUN", "SWA", "SWE", "TAH", "TAM", "TAT", "TEL", "TGK", "TGL",
-            "THA", "TIR", "TNG", "TON", "TSN", "TSO", "TUK", "TUR", "TWI", "UIG", "UKR", "URD",
-            "UZB", "VEN", "VIE", "VOL", "WLN", "WOL", "XHO", "YID", "YOR", "ZHA", "ZHO", "ZUL",
+            "AAR", "ABK", "AFR", "AKA", "AMH", "ARA", "ARG", "ASM", "AVA", "AVE", "AYM", "AZE", "BAK", "BAM", "BEL", "BEN", "BIH", "BIS", "BOD",
+            "BOS", "BRE", "BUL", "CAT", "CES", "CHA", "CHE", "CHU", "CHV", "COR", "COS", "CRE", "CYM", "DAN", "DEU", "DIV", "DZO", "ELL", "ENG",
+            "ENM", "EPO", "EST", "EUS", "EWE", "FAO", "FAS", "FIJ", "FIN", "FRA", "FRM", "FRY", "FUL", "GER", "GLA", "GLE", "GLG", "GLV", "GRN",
+            "GUJ", "HAT", "HAU", "HEB", "HER", "HIN", "HMO", "HRV", "HUN", "HYE", "IBO", "IDO", "III", "IKU", "ILE", "INA", "IND", "IPK", "ISL",
+            "ITA", "JAV", "JPN", "KAL", "KAN", "KAS", "KAT", "KAU", "KAZ", "KHM", "KIK", "KIN", "KIR", "KOM", "KON", "KOR", "KUA", "KUR", "LAO",
+            "LAT", "LAV", "LIM", "LIN", "LIT", "LTZ", "LUB", "LUG", "MAH", "MAL", "MAR", "MKD", "MLG", "MLT", "MON", "MRI", "MSA", "MYA", "NAU",
+            "NAV", "NBL", "NDE", "NDO", "NEP", "NLD", "NNO", "NOB", "NOR", "NYA", "OCI", "OJI", "ORI", "ORJ", "ORM", "OSS", "PAN", "PLI", "POL",
+            "POR", "PUS", "QAA", "QPC", "QUE", "ROH", "RON", "RUN", "RUS", "SAG", "SAN", "SIN", "SLK", "SLV", "SME", "SMO", "SNA", "SND", "SOM",
+            "SOT", "SPA", "SQI", "SRB", "SRD", "SRP", "SSW", "SUN", "SWA", "SWE", "TAH", "TAM", "TAT", "TEL", "TGK", "TGL", "THA", "TIR", "TNG",
+            "TON", "TSN", "TSO", "TUK", "TUR", "TWI", "UIG", "UKR", "URD", "UZB", "VEN", "VIE", "VOL", "WLN", "WOL", "XHO", "YID", "YOR", "ZHA",
+            "ZHO", "ZUL",
         ]
     }
 }

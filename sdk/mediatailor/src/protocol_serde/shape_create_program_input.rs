@@ -21,10 +21,7 @@ pub fn ser_create_program_input(
     if let Some(var_6) = &input.schedule_configuration {
         #[allow(unused_mut)]
         let mut object_7 = object.key("ScheduleConfiguration").start_object();
-        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.source_location_name {

@@ -27,7 +27,7 @@ impl ListVolumeRecoveryPointsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListVolumeRecoveryPointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsInputBuilder,
+    inner: crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsInputBuilder,
 }
 impl ListVolumeRecoveryPointsFluentBuilder {
     /// Creates a new `ListVolumeRecoveryPoints`.
@@ -38,7 +38,7 @@ impl ListVolumeRecoveryPointsFluentBuilder {
         }
     }
     /// Access the ListVolumeRecoveryPoints as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListVolumeRecoveryPointsFluentBuilder {
             crate::operation::list_volume_recovery_points::ListVolumeRecoveryPoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListVolumeRecoveryPointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListVolumeRecoveryPointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListVolumeRecoveryPointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl ListVolumeRecoveryPointsFluentBuilder {
             crate::operation::list_volume_recovery_points::ListVolumeRecoveryPoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError>,
     > {
         self.customize_middleware().await
     }

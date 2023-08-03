@@ -74,9 +74,7 @@ impl CanSignal {
 
 /// A builder for [`CanSignal`](crate::types::CanSignal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CanSignalBuilder {
     pub(crate) message_id: ::std::option::Option<i32>,
     pub(crate) is_big_endian: ::std::option::Option<bool>,

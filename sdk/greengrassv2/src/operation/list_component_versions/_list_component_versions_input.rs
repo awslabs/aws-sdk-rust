@@ -29,18 +29,14 @@ impl ListComponentVersionsInput {
 }
 impl ListComponentVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListComponentVersionsInput`](crate::operation::list_component_versions::ListComponentVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_component_versions::builders::ListComponentVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_component_versions::builders::ListComponentVersionsInputBuilder {
         crate::operation::list_component_versions::builders::ListComponentVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentVersionsInput`](crate::operation::list_component_versions::ListComponentVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentVersionsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +88,12 @@ impl ListComponentVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentVersionsInput`](crate::operation::list_component_versions::ListComponentVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_component_versions::ListComponentVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_component_versions::ListComponentVersionsInput {
-                arn: self.arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_component_versions::ListComponentVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_component_versions::ListComponentVersionsInput {
+            arn: self.arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

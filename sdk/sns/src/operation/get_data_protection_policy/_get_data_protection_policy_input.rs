@@ -17,18 +17,14 @@ impl GetDataProtectionPolicyInput {
 }
 impl GetDataProtectionPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetDataProtectionPolicyInput`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyInputBuilder {
         crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataProtectionPolicyInput`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataProtectionPolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -57,10 +53,8 @@ impl GetDataProtectionPolicyInputBuilder {
         crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput {
-                resource_arn: self.resource_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput {
+            resource_arn: self.resource_arn,
+        })
     }
 }

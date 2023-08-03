@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateGroupQueryOutput {
 }
 impl UpdateGroupQueryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupQueryOutput`](crate::operation::update_group_query::UpdateGroupQueryOutput).
-    pub fn builder() -> crate::operation::update_group_query::builders::UpdateGroupQueryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_group_query::builders::UpdateGroupQueryOutputBuilder {
         crate::operation::update_group_query::builders::UpdateGroupQueryOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGroupQueryOutput`](crate::operation::update_group_query::UpdateGroupQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGroupQueryOutputBuilder {
     pub(crate) group_query: ::std::option::Option<crate::types::GroupQuery>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateGroupQueryOutputBuilder {
         self
     }
     /// <p>The updated resource query associated with the resource group after the update.</p>
-    pub fn set_group_query(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupQuery>,
-    ) -> Self {
+    pub fn set_group_query(mut self, input: ::std::option::Option<crate::types::GroupQuery>) -> Self {
         self.group_query = input;
         self
     }

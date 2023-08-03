@@ -30,9 +30,7 @@ impl LogTargetConfiguration {
 
 /// A builder for [`LogTargetConfiguration`](crate::types::LogTargetConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogTargetConfigurationBuilder {
     pub(crate) log_target: ::std::option::Option<crate::types::LogTarget>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,

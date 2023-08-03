@@ -51,9 +51,7 @@ impl Event {
 
 /// A builder for [`Event`](crate::types::Event).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EventName>,
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl EventBuilder {
         &self.name
     }
     /// <p>Unique identifier for the participant who triggered the event. This is assigned by IVS.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for the participant who triggered the event. This is assigned by IVS.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_id = input;
         self
     }
@@ -102,10 +94,7 @@ impl EventBuilder {
         self
     }
     /// <p>ISO 8601 timestamp (returned as a string) for when the event occurred.</p>
-    pub fn set_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_time = input;
         self
     }
@@ -114,18 +103,12 @@ impl EventBuilder {
         &self.event_time
     }
     /// <p>Unique identifier for the remote participant. For a subscribe event, this is the publisher. For a publish or join event, this is null. This is assigned by IVS.</p>
-    pub fn remote_participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for the remote participant. For a subscribe event, this is the publisher. For a publish or join event, this is null. This is assigned by IVS.</p>
-    pub fn set_remote_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_participant_id = input;
         self
     }
@@ -139,10 +122,7 @@ impl EventBuilder {
         self
     }
     /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::EventErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::EventErrorCode>) -> Self {
         self.error_code = input;
         self
     }

@@ -10,10 +10,7 @@ impl ListStackResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_stack_resources::ListStackResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_resources::ListStackResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_resources::ListStackResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_stack_resources();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListStackResourcesFluentBuilder {
         }
     }
     /// Access the ListStackResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_stack_resources::builders::ListStackResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_stack_resources::builders::ListStackResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListStackResourcesFluentBuilder {
             crate::operation::list_stack_resources::ListStackResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_resources::ListStackResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_resources::ListStackResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListStackResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListStackResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_resources::ListStackResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_resources::ListStackResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_resources::ListStackResourcesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListStackResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_resources::ListStackResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_resources::ListStackResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_resources::ListStackResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListStackResourcesFluentBuilder {
             crate::operation::list_stack_resources::ListStackResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_resources::ListStackResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_resources::ListStackResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator {
-        crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator {
+        crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>

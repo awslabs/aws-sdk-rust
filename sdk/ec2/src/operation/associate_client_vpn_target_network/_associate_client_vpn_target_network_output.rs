@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for AssociateClientVpnTargetNetworkOutput
 }
 impl AssociateClientVpnTargetNetworkOutput {
     /// Creates a new builder-style object to manufacture [`AssociateClientVpnTargetNetworkOutput`](crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput).
-    pub fn builder() -> crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkOutputBuilder{
+    pub fn builder() -> crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkOutputBuilder {
         crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateClientVpnTargetNetworkOutput`](crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateClientVpnTargetNetworkOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AssociationStatus>,
@@ -45,18 +43,12 @@ pub struct AssociateClientVpnTargetNetworkOutputBuilder {
 }
 impl AssociateClientVpnTargetNetworkOutputBuilder {
     /// <p>The unique ID of the target network association.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the target network association.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -70,10 +62,7 @@ impl AssociateClientVpnTargetNetworkOutputBuilder {
         self
     }
     /// <p>The current state of the target network association.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssociationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -91,15 +80,10 @@ impl AssociateClientVpnTargetNetworkOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateClientVpnTargetNetworkOutput`](crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput
-    {
+    pub fn build(self) -> crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput {
         crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput {
-            association_id: self.association_id
-            ,
-            status: self.status
-            ,
+            association_id: self.association_id,
+            status: self.status,
             _request_id: self._request_id,
         }
     }

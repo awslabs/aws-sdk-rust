@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`ticket_id(impl ::std::convert::Into<String>)`](crate::operation::stop_matchmaking::builders::StopMatchmakingFluentBuilder::ticket_id) / [`set_ticket_id(Option<String>)`](crate::operation::stop_matchmaking::builders::StopMatchmakingFluentBuilder::set_ticket_id): <p>A unique identifier for a matchmaking ticket.</p>
     /// - On success, responds with [`StopMatchmakingOutput`](crate::operation::stop_matchmaking::StopMatchmakingOutput)
     /// - On failure, responds with [`SdkError<StopMatchmakingError>`](crate::operation::stop_matchmaking::StopMatchmakingError)
-    pub fn stop_matchmaking(
-        &self,
-    ) -> crate::operation::stop_matchmaking::builders::StopMatchmakingFluentBuilder {
-        crate::operation::stop_matchmaking::builders::StopMatchmakingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_matchmaking(&self) -> crate::operation::stop_matchmaking::builders::StopMatchmakingFluentBuilder {
+        crate::operation::stop_matchmaking::builders::StopMatchmakingFluentBuilder::new(self.handle.clone())
     }
 }

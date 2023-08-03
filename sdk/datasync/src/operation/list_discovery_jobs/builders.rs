@@ -10,10 +10,7 @@ impl ListDiscoveryJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_discovery_jobs::ListDiscoveryJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovery_jobs::ListDiscoveryJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovery_jobs::ListDiscoveryJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_discovery_jobs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDiscoveryJobsFluentBuilder {
         }
     }
     /// Access the ListDiscoveryJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDiscoveryJobsFluentBuilder {
             crate::operation::list_discovery_jobs::ListDiscoveryJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovery_jobs::ListDiscoveryJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovery_jobs::ListDiscoveryJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDiscoveryJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDiscoveryJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_discovery_jobs::ListDiscoveryJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovery_jobs::ListDiscoveryJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovery_jobs::ListDiscoveryJobsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDiscoveryJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_discovery_jobs::ListDiscoveryJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovery_jobs::ListDiscoveryJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovery_jobs::ListDiscoveryJobsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListDiscoveryJobsFluentBuilder {
             crate::operation::list_discovery_jobs::ListDiscoveryJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovery_jobs::ListDiscoveryJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovery_jobs::ListDiscoveryJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_discovery_jobs::paginator::ListDiscoveryJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_discovery_jobs::paginator::ListDiscoveryJobsPaginator {
-        crate::operation::list_discovery_jobs::paginator::ListDiscoveryJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_discovery_jobs::paginator::ListDiscoveryJobsPaginator {
+        crate::operation::list_discovery_jobs::paginator::ListDiscoveryJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_system_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_system_arn(input);
         self
     }

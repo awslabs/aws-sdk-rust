@@ -37,10 +37,7 @@ impl UpdateResourcePositionFluentBuilder {
         }
     }
     /// Access the UpdateResourcePosition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resource_position::builders::UpdateResourcePositionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_resource_position::builders::UpdateResourcePositionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateResourcePositionFluentBuilder {
             crate::operation::update_resource_position::UpdateResourcePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_position::UpdateResourcePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_position::UpdateResourcePositionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateResourcePositionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateResourcePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_position::UpdateResourcePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_position::UpdateResourcePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_position::UpdateResourcePositionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateResourcePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_position::UpdateResourcePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_position::UpdateResourcePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_position::UpdateResourcePositionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateResourcePositionFluentBuilder {
             crate::operation::update_resource_position::UpdateResourcePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_position::UpdateResourcePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_position::UpdateResourcePositionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
@@ -149,10 +129,7 @@ impl UpdateResourcePositionFluentBuilder {
         self
     }
     /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -166,10 +143,7 @@ impl UpdateResourcePositionFluentBuilder {
         self
     }
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-    pub fn set_geo_json_payload(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_geo_json_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_geo_json_payload(input);
         self
     }

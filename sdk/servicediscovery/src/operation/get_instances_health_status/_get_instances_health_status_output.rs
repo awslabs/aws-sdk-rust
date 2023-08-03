@@ -5,9 +5,7 @@
 pub struct GetInstancesHealthStatusOutput {
     /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
     #[doc(hidden)]
-    pub status: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::HealthStatus>,
-    >,
+    pub status: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::HealthStatus>>,
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,11 +13,7 @@ pub struct GetInstancesHealthStatusOutput {
 }
 impl GetInstancesHealthStatusOutput {
     /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::HealthStatus>,
-    > {
+    pub fn status(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::HealthStatus>> {
         self.status.as_ref()
     }
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
@@ -34,20 +28,16 @@ impl ::aws_http::request_id::RequestId for GetInstancesHealthStatusOutput {
 }
 impl GetInstancesHealthStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetInstancesHealthStatusOutput`](crate::operation::get_instances_health_status::GetInstancesHealthStatusOutput).
-    pub fn builder() -> crate::operation::get_instances_health_status::builders::GetInstancesHealthStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_instances_health_status::builders::GetInstancesHealthStatusOutputBuilder {
         crate::operation::get_instances_health_status::builders::GetInstancesHealthStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstancesHealthStatusOutput`](crate::operation::get_instances_health_status::GetInstancesHealthStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstancesHealthStatusOutputBuilder {
-    pub(crate) status: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::HealthStatus>,
-    >,
+    pub(crate) status: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::HealthStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,11 +47,7 @@ impl GetInstancesHealthStatusOutputBuilder {
     /// To override the contents of this collection use [`set_status`](Self::set_status).
     ///
     /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
-    pub fn status(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::HealthStatus,
-    ) -> Self {
+    pub fn status(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::HealthStatus) -> Self {
         let mut hash_map = self.status.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.status = ::std::option::Option::Some(hash_map);
@@ -70,19 +56,13 @@ impl GetInstancesHealthStatusOutputBuilder {
     /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
     pub fn set_status(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::HealthStatus>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::HealthStatus>>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::HealthStatus>,
-    > {
+    pub fn get_status(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::HealthStatus>> {
         &self.status
     }
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
@@ -109,9 +89,7 @@ impl GetInstancesHealthStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetInstancesHealthStatusOutput`](crate::operation::get_instances_health_status::GetInstancesHealthStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_instances_health_status::GetInstancesHealthStatusOutput {
+    pub fn build(self) -> crate::operation::get_instances_health_status::GetInstancesHealthStatusOutput {
         crate::operation::get_instances_health_status::GetInstancesHealthStatusOutput {
             status: self.status,
             next_token: self.next_token,

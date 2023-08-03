@@ -30,9 +30,7 @@ impl ValidationWarning {
 
 /// A builder for [`ValidationWarning`](crate::types::ValidationWarning).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationWarningBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl ValidationWarningBuilder {
         self
     }
     /// <p>A description of the validation warning.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.warnings = input;
         self
     }

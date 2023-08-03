@@ -10,10 +10,7 @@ impl ListAliasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_aliases::ListAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_aliases::ListAliasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_aliases::ListAliasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_aliases();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl ListAliasesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_aliases::ListAliases,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_aliases::ListAliases, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_aliases::ListAliasesError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl ListAliasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,10 +99,7 @@ impl ListAliasesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_aliases::ListAliases,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_aliases::ListAliases, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_aliases::ListAliasesError>,
     > {
         self.customize_middleware().await
@@ -120,10 +108,7 @@ impl ListAliasesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_aliases::paginator::ListAliasesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_aliases::paginator::ListAliasesPaginator {
-        crate::operation::list_aliases::paginator::ListAliasesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_aliases::paginator::ListAliasesPaginator::new(self.handle, self.inner)
     }
     /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
@@ -141,10 +126,7 @@ impl ListAliasesFluentBuilder {
     /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
     /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
     /// </ul>
-    pub fn set_routing_strategy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingStrategyType>,
-    ) -> Self {
+    pub fn set_routing_strategy_type(mut self, input: ::std::option::Option<crate::types::RoutingStrategyType>) -> Self {
         self.inner = self.inner.set_routing_strategy_type(input);
         self
     }
@@ -154,9 +136,7 @@ impl ListAliasesFluentBuilder {
     /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
     /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
     /// </ul>
-    pub fn get_routing_strategy_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingStrategyType> {
+    pub fn get_routing_strategy_type(&self) -> &::std::option::Option<crate::types::RoutingStrategyType> {
         self.inner.get_routing_strategy_type()
     }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>

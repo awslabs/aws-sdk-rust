@@ -25,9 +25,7 @@ impl SchemaDefinition {
 
 /// A builder for [`SchemaDefinition`](crate::types::SchemaDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaDefinitionBuilder {
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
 }
@@ -46,10 +44,7 @@ impl SchemaDefinitionBuilder {
     }
     /// <p>Specifies one or more columns that store your data.</p>
     /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>) -> Self {
         self.columns = input;
         self
     }
@@ -60,8 +55,6 @@ impl SchemaDefinitionBuilder {
     }
     /// Consumes the builder and constructs a [`SchemaDefinition`](crate::types::SchemaDefinition).
     pub fn build(self) -> crate::types::SchemaDefinition {
-        crate::types::SchemaDefinition {
-            columns: self.columns,
-        }
+        crate::types::SchemaDefinition { columns: self.columns }
     }
 }

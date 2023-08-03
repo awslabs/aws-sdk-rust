@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`clusters(Option<Vec<ClusterInList>>)`](crate::operation::list_clusters::ListClustersOutput::clusters): <p>A list of Elastic DocumentDB cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::next_token): <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>  <p>If there is no more data in the responce, the nextToken will not be returned.</p>
     /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
-    pub fn list_clusters(
-        &self,
-    ) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
-        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_clusters(&self) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
+        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
     }
 }

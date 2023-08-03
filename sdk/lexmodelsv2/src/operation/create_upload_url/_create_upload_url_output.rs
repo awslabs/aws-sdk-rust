@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateUploadUrlOutput {
 }
 impl CreateUploadUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreateUploadUrlOutput`](crate::operation::create_upload_url::CreateUploadUrlOutput).
-    pub fn builder() -> crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder {
         crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUploadUrlOutput`](crate::operation::create_upload_url::CreateUploadUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUploadUrlOutputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_url: ::std::option::Option<::std::string::String>,

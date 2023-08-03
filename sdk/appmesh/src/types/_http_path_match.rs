@@ -30,9 +30,7 @@ impl HttpPathMatch {
 
 /// A builder for [`HttpPathMatch`](crate::types::HttpPathMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpPathMatchBuilder {
     pub(crate) exact: ::std::option::Option<::std::string::String>,
     pub(crate) regex: ::std::option::Option<::std::string::String>,

@@ -30,17 +30,14 @@ impl AssetBundleImportJobRefreshScheduleOverrideParameters {
 }
 impl AssetBundleImportJobRefreshScheduleOverrideParameters {
     /// Creates a new builder-style object to manufacture [`AssetBundleImportJobRefreshScheduleOverrideParameters`](crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters).
-    pub fn builder(
-    ) -> crate::types::builders::AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
+    pub fn builder() -> crate::types::builders::AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
         crate::types::builders::AssetBundleImportJobRefreshScheduleOverrideParametersBuilder::default()
     }
 }
 
 /// A builder for [`AssetBundleImportJobRefreshScheduleOverrideParameters`](crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_id: ::std::option::Option<::std::string::String>,
@@ -81,17 +78,12 @@ impl AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
         self
     }
     /// <p>An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code> is set to a time that takes place in the future.</p>
-    pub fn set_start_after_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_after_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_after_date_time = input;
         self
     }
     /// <p>An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code> is set to a time that takes place in the future.</p>
-    pub fn get_start_after_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_start_after_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_after_date_time
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobRefreshScheduleOverrideParameters`](crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters).

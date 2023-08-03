@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`execution_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::execution_id) / [`set_execution_id(Option<String>)`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::set_execution_id): <p>The unique identifier of the batch job execution.</p>
     /// - On success, responds with [`CancelBatchJobExecutionOutput`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionOutput)
     /// - On failure, responds with [`SdkError<CancelBatchJobExecutionError>`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionError)
-    pub fn cancel_batch_job_execution(
-        &self,
-    ) -> crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder
-    {
+    pub fn cancel_batch_job_execution(&self) -> crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder {
         crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::new(self.handle.clone())
     }
 }

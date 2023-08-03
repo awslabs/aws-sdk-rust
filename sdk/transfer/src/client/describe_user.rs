@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`server_id(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::server_id): <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     ///   - [`user(Option<DescribedUser>)`](crate::operation::describe_user::DescribeUserOutput::user): <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)
-    pub fn describe_user(
-        &self,
-    ) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
-        crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_user(&self) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
+        crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(self.handle.clone())
     }
 }

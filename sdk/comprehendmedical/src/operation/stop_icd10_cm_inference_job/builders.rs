@@ -26,7 +26,7 @@ impl StopIcd10CmInferenceJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopICD10CMInferenceJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobInputBuilder,
+    inner: crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobInputBuilder,
 }
 impl StopICD10CMInferenceJobFluentBuilder {
     /// Creates a new `StopICD10CMInferenceJob`.
@@ -37,10 +37,7 @@ impl StopICD10CMInferenceJobFluentBuilder {
         }
     }
     /// Access the StopICD10CMInferenceJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StopICD10CMInferenceJobFluentBuilder {
             crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StopICD10CMInferenceJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StopICD10CMInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StopICD10CMInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StopICD10CMInferenceJobFluentBuilder {
             crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError>,
     > {
         self.customize_middleware().await
     }

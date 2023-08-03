@@ -30,10 +30,7 @@ pub fn ser_add_storage_system_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

@@ -26,7 +26,7 @@ impl UpdateDomainEndpointOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainEndpointOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsInputBuilder,
+    inner: crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsInputBuilder,
 }
 impl UpdateDomainEndpointOptionsFluentBuilder {
     /// Creates a new `UpdateDomainEndpointOptions`.
@@ -37,7 +37,7 @@ impl UpdateDomainEndpointOptionsFluentBuilder {
         }
     }
     /// Access the UpdateDomainEndpointOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateDomainEndpointOptionsFluentBuilder {
             crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateDomainEndpointOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateDomainEndpointOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateDomainEndpointOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateDomainEndpointOptionsFluentBuilder {
             crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsError>,
     > {
         self.customize_middleware().await
     }
@@ -140,17 +129,12 @@ impl UpdateDomainEndpointOptionsFluentBuilder {
         self
     }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-    pub fn set_domain_endpoint_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainEndpointOptions>,
-    ) -> Self {
+    pub fn set_domain_endpoint_options(mut self, input: ::std::option::Option<crate::types::DomainEndpointOptions>) -> Self {
         self.inner = self.inner.set_domain_endpoint_options(input);
         self
     }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-    pub fn get_domain_endpoint_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainEndpointOptions> {
+    pub fn get_domain_endpoint_options(&self) -> &::std::option::Option<crate::types::DomainEndpointOptions> {
         self.inner.get_domain_endpoint_options()
     }
 }

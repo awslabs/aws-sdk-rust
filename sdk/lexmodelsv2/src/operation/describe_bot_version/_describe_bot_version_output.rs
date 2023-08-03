@@ -105,17 +105,14 @@ impl ::aws_http::request_id::RequestId for DescribeBotVersionOutput {
 }
 impl DescribeBotVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotVersionOutput`](crate::operation::describe_bot_version::DescribeBotVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_bot_version::builders::DescribeBotVersionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_bot_version::builders::DescribeBotVersionOutputBuilder {
         crate::operation::describe_bot_version::builders::DescribeBotVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBotVersionOutput`](crate::operation::describe_bot_version::DescribeBotVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBotVersionOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
@@ -127,8 +124,7 @@ pub struct DescribeBotVersionOutputBuilder {
     pub(crate) bot_status: ::std::option::Option<crate::types::BotStatus>,
     pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) parent_bot_networks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParentBotNetwork>>,
+    pub(crate) parent_bot_networks: ::std::option::Option<::std::vec::Vec<crate::types::ParentBotNetwork>>,
     pub(crate) bot_type: ::std::option::Option<crate::types::BotType>,
     pub(crate) bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
     _request_id: Option<String>,
@@ -210,10 +206,7 @@ impl DescribeBotVersionOutputBuilder {
         self
     }
     /// <p>Data privacy settings for the bot version.</p>
-    pub fn set_data_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::DataPrivacy>,
-    ) -> Self {
+    pub fn set_data_privacy(mut self, input: ::std::option::Option<crate::types::DataPrivacy>) -> Self {
         self.data_privacy = input;
         self
     }
@@ -254,27 +247,19 @@ impl DescribeBotVersionOutputBuilder {
     /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
     ///
     /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the version couldn't be built.</p>
-    pub fn failure_reasons(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
         v.push(input.into());
         self.failure_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the version couldn't be built.</p>
-    pub fn set_failure_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_reasons = input;
         self
     }
     /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the version couldn't be built.</p>
-    pub fn get_failure_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reasons
     }
     /// <p>A timestamp of the date and time that the bot version was created.</p>
@@ -283,10 +268,7 @@ impl DescribeBotVersionOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the bot version was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -306,17 +288,12 @@ impl DescribeBotVersionOutputBuilder {
         self
     }
     /// <p>A list of the networks to which the bot version you described belongs.</p>
-    pub fn set_parent_bot_networks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParentBotNetwork>>,
-    ) -> Self {
+    pub fn set_parent_bot_networks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParentBotNetwork>>) -> Self {
         self.parent_bot_networks = input;
         self
     }
     /// <p>A list of the networks to which the bot version you described belongs.</p>
-    pub fn get_parent_bot_networks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParentBotNetwork>> {
+    pub fn get_parent_bot_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParentBotNetwork>> {
         &self.parent_bot_networks
     }
     /// <p>The type of the bot in the version that was described.</p>
@@ -345,17 +322,12 @@ impl DescribeBotVersionOutputBuilder {
         self
     }
     /// <p>The members of bot network in the version that was described.</p>
-    pub fn set_bot_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
-    ) -> Self {
+    pub fn set_bot_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>) -> Self {
         self.bot_members = input;
         self
     }
     /// <p>The members of bot network in the version that was described.</p>
-    pub fn get_bot_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+    pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
         &self.bot_members
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

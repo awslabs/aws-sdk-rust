@@ -26,8 +26,7 @@ impl ListContactFlowModulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListContactFlowModulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesInputBuilder,
+    inner: crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesInputBuilder,
 }
 impl ListContactFlowModulesFluentBuilder {
     /// Creates a new `ListContactFlowModules`.
@@ -38,10 +37,7 @@ impl ListContactFlowModulesFluentBuilder {
         }
     }
     /// Access the ListContactFlowModules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListContactFlowModulesFluentBuilder {
             crate::operation::list_contact_flow_modules::ListContactFlowModules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_flow_modules::ListContactFlowModulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_flow_modules::ListContactFlowModulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListContactFlowModulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListContactFlowModulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_flow_modules::ListContactFlowModulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_flow_modules::ListContactFlowModulesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListContactFlowModulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_flow_modules::ListContactFlowModulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_flow_modules::ListContactFlowModulesError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl ListContactFlowModulesFluentBuilder {
             crate::operation::list_contact_flow_modules::ListContactFlowModules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_flow_modules::ListContactFlowModulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_flow_modules::ListContactFlowModulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator
-    {
-        crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator {
+        crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,25 +158,17 @@ impl ListContactFlowModulesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The state of the flow module.</p>
-    pub fn contact_flow_module_state(
-        mut self,
-        input: crate::types::ContactFlowModuleState,
-    ) -> Self {
+    pub fn contact_flow_module_state(mut self, input: crate::types::ContactFlowModuleState) -> Self {
         self.inner = self.inner.contact_flow_module_state(input);
         self
     }
     /// <p>The state of the flow module.</p>
-    pub fn set_contact_flow_module_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactFlowModuleState>,
-    ) -> Self {
+    pub fn set_contact_flow_module_state(mut self, input: ::std::option::Option<crate::types::ContactFlowModuleState>) -> Self {
         self.inner = self.inner.set_contact_flow_module_state(input);
         self
     }
     /// <p>The state of the flow module.</p>
-    pub fn get_contact_flow_module_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactFlowModuleState> {
+    pub fn get_contact_flow_module_state(&self) -> &::std::option::Option<crate::types::ContactFlowModuleState> {
         self.inner.get_contact_flow_module_state()
     }
 }

@@ -7,9 +7,7 @@ pub fn ser_modify_account_input(
         object.key("DedicatedTenancySupport").string(var_1.as_str());
     }
     if let Some(var_2) = &input.dedicated_tenancy_management_cidr_range {
-        object
-            .key("DedicatedTenancyManagementCidrRange")
-            .string(var_2.as_str());
+        object.key("DedicatedTenancyManagementCidrRange").string(var_2.as_str());
     }
     Ok(())
 }

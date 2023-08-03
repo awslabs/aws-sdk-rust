@@ -58,9 +58,7 @@ impl Alert {
 
 /// A builder for [`Alert`](crate::types::Alert).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlertBuilder {
     pub(crate) alert_code: ::std::option::Option<::std::string::String>,
     pub(crate) alert_message: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl AlertBuilder {
         &self.alert_code
     }
     /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
-    pub fn alert_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alert_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
-    pub fn set_alert_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alert_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alert_message = input;
         self
     }
@@ -110,10 +102,7 @@ impl AlertBuilder {
         self
     }
     /// <p>The timestamp when the alert was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -126,27 +115,19 @@ impl AlertBuilder {
     /// To override the contents of this collection use [`set_related_resource_arns`](Self::set_related_resource_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
-    pub fn related_resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.related_resource_arns.unwrap_or_default();
         v.push(input.into());
         self.related_resource_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
-    pub fn set_related_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_related_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.related_resource_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
-    pub fn get_related_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_related_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.related_resource_arns
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -169,10 +150,7 @@ impl AlertBuilder {
         self
     }
     /// <p>The category that MediaTailor assigns to the alert.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::AlertCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::AlertCategory>) -> Self {
         self.category = input;
         self
     }

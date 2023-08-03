@@ -94,9 +94,7 @@ impl GetDataViewOutput {
         self.data_view_arn.as_deref()
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn destination_type_params(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataViewDestinationTypeParams> {
+    pub fn destination_type_params(&self) -> ::std::option::Option<&crate::types::DataViewDestinationTypeParams> {
         self.destination_type_params.as_ref()
     }
     /// <p>The status of a Dataview creation.</p>
@@ -128,9 +126,7 @@ impl GetDataViewOutput {
 
 /// A builder for [`GetDataViewOutput`](crate::operation::get_data_view::GetDataViewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataViewOutputBuilder {
     pub(crate) auto_update: ::std::option::Option<bool>,
     pub(crate) partition_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -142,8 +138,7 @@ pub struct GetDataViewOutputBuilder {
     pub(crate) sort_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_view_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_type_params:
-        ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
+    pub(crate) destination_type_params: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
     pub(crate) status: ::std::option::Option<crate::types::DataViewStatus>,
     _request_id: Option<String>,
 }
@@ -167,27 +162,19 @@ impl GetDataViewOutputBuilder {
     /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
     ///
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_columns.unwrap_or_default();
         v.push(input.into());
         self.partition_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn set_partition_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_columns = input;
         self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn get_partition_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_columns
     }
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
@@ -224,10 +211,7 @@ impl GetDataViewOutputBuilder {
         self
     }
     /// <p>Information about an error that occurred for the Dataview.</p>
-    pub fn set_error_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DataViewErrorInfo>,
-    ) -> Self {
+    pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::DataViewErrorInfo>) -> Self {
         self.error_info = input;
         self
     }
@@ -275,17 +259,12 @@ impl GetDataViewOutputBuilder {
         self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn set_sort_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sort_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sort_columns = input;
         self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn get_sort_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sort_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sort_columns
     }
     /// <p>The unique identifier for the Dataview.</p>
@@ -303,18 +282,12 @@ impl GetDataViewOutputBuilder {
         &self.data_view_id
     }
     /// <p>The ARN identifier of the Dataview.</p>
-    pub fn data_view_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_view_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN identifier of the Dataview.</p>
-    pub fn set_data_view_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_view_arn = input;
         self
     }
@@ -323,25 +296,17 @@ impl GetDataViewOutputBuilder {
         &self.data_view_arn
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn destination_type_params(
-        mut self,
-        input: crate::types::DataViewDestinationTypeParams,
-    ) -> Self {
+    pub fn destination_type_params(mut self, input: crate::types::DataViewDestinationTypeParams) -> Self {
         self.destination_type_params = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn set_destination_type_params(
-        mut self,
-        input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
-    ) -> Self {
+    pub fn set_destination_type_params(mut self, input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>) -> Self {
         self.destination_type_params = input;
         self
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn get_destination_type_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
+    pub fn get_destination_type_params(&self) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
         &self.destination_type_params
     }
     /// <p>The status of a Dataview creation.</p>
@@ -370,10 +335,7 @@ impl GetDataViewOutputBuilder {
     /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
     /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataViewStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataViewStatus>) -> Self {
         self.status = input;
         self
     }

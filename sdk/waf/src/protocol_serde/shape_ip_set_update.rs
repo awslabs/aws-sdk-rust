@@ -9,10 +9,7 @@ pub fn ser_ip_set_update(
     if let Some(var_2) = &input.ip_set_descriptor {
         #[allow(unused_mut)]
         let mut object_3 = object.key("IPSetDescriptor").start_object();
-        crate::protocol_serde::shape_ip_set_descriptor::ser_ip_set_descriptor(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_ip_set_descriptor::ser_ip_set_descriptor(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

@@ -26,9 +26,7 @@ impl DeltaTimeSessionWindowConfiguration {
 
 /// A builder for [`DeltaTimeSessionWindowConfiguration`](crate::types::DeltaTimeSessionWindowConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeltaTimeSessionWindowConfigurationBuilder {
     pub(crate) timeout_in_minutes: ::std::option::Option<i32>,
 }

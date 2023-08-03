@@ -34,9 +34,7 @@ impl SizeConstraintSetUpdate {
 
 /// A builder for [`SizeConstraintSetUpdate`](crate::types::SizeConstraintSetUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SizeConstraintSetUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) size_constraint: ::std::option::Option<crate::types::SizeConstraint>,
@@ -62,10 +60,7 @@ impl SizeConstraintSetUpdateBuilder {
         self
     }
     /// <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-    pub fn set_size_constraint(
-        mut self,
-        input: ::std::option::Option<crate::types::SizeConstraint>,
-    ) -> Self {
+    pub fn set_size_constraint(mut self, input: ::std::option::Option<crate::types::SizeConstraint>) -> Self {
         self.size_constraint = input;
         self
     }

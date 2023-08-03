@@ -11,9 +11,7 @@ pub struct UpdateDomainEndpointOptionsOutput {
 }
 impl UpdateDomainEndpointOptionsOutput {
     /// <p>The newly-configured domain endpoint options.</p>
-    pub fn domain_endpoint_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DomainEndpointOptionsStatus> {
+    pub fn domain_endpoint_options(&self) -> ::std::option::Option<&crate::types::DomainEndpointOptionsStatus> {
         self.domain_endpoint_options.as_ref()
     }
 }
@@ -24,42 +22,31 @@ impl ::aws_http::request_id::RequestId for UpdateDomainEndpointOptionsOutput {
 }
 impl UpdateDomainEndpointOptionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainEndpointOptionsOutput`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsOutput).
-    pub fn builder() -> crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsOutputBuilder {
         crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainEndpointOptionsOutput`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainEndpointOptionsOutputBuilder {
-    pub(crate) domain_endpoint_options:
-        ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
+    pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
     _request_id: Option<String>,
 }
 impl UpdateDomainEndpointOptionsOutputBuilder {
     /// <p>The newly-configured domain endpoint options.</p>
-    pub fn domain_endpoint_options(
-        mut self,
-        input: crate::types::DomainEndpointOptionsStatus,
-    ) -> Self {
+    pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptionsStatus) -> Self {
         self.domain_endpoint_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The newly-configured domain endpoint options.</p>
-    pub fn set_domain_endpoint_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
-    ) -> Self {
+    pub fn set_domain_endpoint_options(mut self, input: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>) -> Self {
         self.domain_endpoint_options = input;
         self
     }
     /// <p>The newly-configured domain endpoint options.</p>
-    pub fn get_domain_endpoint_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainEndpointOptionsStatus> {
+    pub fn get_domain_endpoint_options(&self) -> &::std::option::Option<crate::types::DomainEndpointOptionsStatus> {
         &self.domain_endpoint_options
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +59,7 @@ impl UpdateDomainEndpointOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDomainEndpointOptionsOutput`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsOutput {
+    pub fn build(self) -> crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsOutput {
         crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsOutput {
             domain_endpoint_options: self.domain_endpoint_options,
             _request_id: self._request_id,

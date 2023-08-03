@@ -42,9 +42,7 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
 
 /// A builder for [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) generation_started_time: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ pub struct StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
 }
 impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for this specific recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -73,18 +65,12 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         &self.recommendation_id
     }
     /// <p>The start time of the recommendation generation.</p>
-    pub fn generation_started_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_started_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_started_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start time of the recommendation generation.</p>
-    pub fn set_generation_started_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_started_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_started_time = input;
         self
     }
@@ -93,18 +79,12 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         &self.generation_started_time
     }
     /// <p>The estimated time for when the recommendation generation will complete.</p>
-    pub fn estimated_completion_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_completion_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_completion_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated time for when the recommendation generation will complete.</p>
-    pub fn set_estimated_completion_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_completion_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_completion_time = input;
         self
     }
@@ -122,14 +102,13 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput).
-    pub fn build(self) -> crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput {
         crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput {
-            recommendation_id: self.recommendation_id
-            ,
-            generation_started_time: self.generation_started_time
-            ,
-            estimated_completion_time: self.estimated_completion_time
-            ,
+            recommendation_id: self.recommendation_id,
+            generation_started_time: self.generation_started_time,
+            estimated_completion_time: self.estimated_completion_time,
             _request_id: self._request_id,
         }
     }

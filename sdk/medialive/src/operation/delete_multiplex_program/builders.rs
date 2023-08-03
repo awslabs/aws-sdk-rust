@@ -37,10 +37,7 @@ impl DeleteMultiplexProgramFluentBuilder {
         }
     }
     /// Access the DeleteMultiplexProgram as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteMultiplexProgramFluentBuilder {
             crate::operation::delete_multiplex_program::DeleteMultiplexProgram,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_multiplex_program::DeleteMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_multiplex_program::DeleteMultiplexProgramError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteMultiplexProgramFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteMultiplexProgramFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_multiplex_program::DeleteMultiplexProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_multiplex_program::DeleteMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_multiplex_program::DeleteMultiplexProgramError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteMultiplexProgramFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_multiplex_program::DeleteMultiplexProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_multiplex_program::DeleteMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_multiplex_program::DeleteMultiplexProgramError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteMultiplexProgramFluentBuilder {
             crate::operation::delete_multiplex_program::DeleteMultiplexProgram,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_multiplex_program::DeleteMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_multiplex_program::DeleteMultiplexProgramError>,
     > {
         self.customize_middleware().await
     }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tag_keys(Vec<String>)`](crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultFluentBuilder::set_tag_keys): <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
     /// - On success, responds with [`RemoveTagsFromVaultOutput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsFromVaultError>`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError)
-    pub fn remove_tags_from_vault(
-        &self,
-    ) -> crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultFluentBuilder {
-        crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_tags_from_vault(&self) -> crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultFluentBuilder {
+        crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultFluentBuilder::new(self.handle.clone())
     }
 }

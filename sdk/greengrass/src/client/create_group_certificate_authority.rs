@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CreateGroupCertificateAuthorityOutput`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput) with field(s):
     ///   - [`group_certificate_authority_arn(Option<String>)`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput::group_certificate_authority_arn): The ARN of the group certificate authority.
     /// - On failure, responds with [`SdkError<CreateGroupCertificateAuthorityError>`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityError)
-    pub fn create_group_certificate_authority(&self) -> crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityFluentBuilder{
+    pub fn create_group_certificate_authority(
+        &self,
+    ) -> crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityFluentBuilder {
         crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityFluentBuilder::new(self.handle.clone())
     }
 }

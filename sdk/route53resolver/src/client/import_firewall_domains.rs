@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`status(Option<FirewallDomainListStatus>)`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput::status): <p>Status of the import request.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput::status_message): <p>Additional information about the status of the list, if available.</p>
     /// - On failure, responds with [`SdkError<ImportFirewallDomainsError>`](crate::operation::import_firewall_domains::ImportFirewallDomainsError)
-    pub fn import_firewall_domains(
-        &self,
-    ) -> crate::operation::import_firewall_domains::builders::ImportFirewallDomainsFluentBuilder
-    {
-        crate::operation::import_firewall_domains::builders::ImportFirewallDomainsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_firewall_domains(&self) -> crate::operation::import_firewall_domains::builders::ImportFirewallDomainsFluentBuilder {
+        crate::operation::import_firewall_domains::builders::ImportFirewallDomainsFluentBuilder::new(self.handle.clone())
     }
 }

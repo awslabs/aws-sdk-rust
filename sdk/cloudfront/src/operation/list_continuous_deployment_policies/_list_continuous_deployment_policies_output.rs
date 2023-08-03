@@ -5,15 +5,12 @@
 pub struct ListContinuousDeploymentPoliciesOutput {
     /// <p>A list of continuous deployment policies.</p>
     #[doc(hidden)]
-    pub continuous_deployment_policy_list:
-        ::std::option::Option<crate::types::ContinuousDeploymentPolicyList>,
+    pub continuous_deployment_policy_list: ::std::option::Option<crate::types::ContinuousDeploymentPolicyList>,
     _request_id: Option<String>,
 }
 impl ListContinuousDeploymentPoliciesOutput {
     /// <p>A list of continuous deployment policies.</p>
-    pub fn continuous_deployment_policy_list(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicyList> {
+    pub fn continuous_deployment_policy_list(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicyList> {
         self.continuous_deployment_policy_list.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for ListContinuousDeploymentPoliciesOutpu
 }
 impl ListContinuousDeploymentPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListContinuousDeploymentPoliciesOutput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput).
-    pub fn builder() -> crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesOutputBuilder{
+    pub fn builder() -> crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesOutputBuilder {
         crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListContinuousDeploymentPoliciesOutput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContinuousDeploymentPoliciesOutputBuilder {
-    pub(crate) continuous_deployment_policy_list:
-        ::std::option::Option<crate::types::ContinuousDeploymentPolicyList>,
+    pub(crate) continuous_deployment_policy_list: ::std::option::Option<crate::types::ContinuousDeploymentPolicyList>,
     _request_id: Option<String>,
 }
 impl ListContinuousDeploymentPoliciesOutputBuilder {
     /// <p>A list of continuous deployment policies.</p>
-    pub fn continuous_deployment_policy_list(
-        mut self,
-        input: crate::types::ContinuousDeploymentPolicyList,
-    ) -> Self {
+    pub fn continuous_deployment_policy_list(mut self, input: crate::types::ContinuousDeploymentPolicyList) -> Self {
         self.continuous_deployment_policy_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of continuous deployment policies.</p>
-    pub fn set_continuous_deployment_policy_list(
-        mut self,
-        input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyList>,
-    ) -> Self {
+    pub fn set_continuous_deployment_policy_list(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyList>) -> Self {
         self.continuous_deployment_policy_list = input;
         self
     }
     /// <p>A list of continuous deployment policies.</p>
-    pub fn get_continuous_deployment_policy_list(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyList> {
+    pub fn get_continuous_deployment_policy_list(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyList> {
         &self.continuous_deployment_policy_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,13 +58,9 @@ impl ListContinuousDeploymentPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListContinuousDeploymentPoliciesOutput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput
-    {
+    pub fn build(self) -> crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput {
         crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput {
-            continuous_deployment_policy_list: self.continuous_deployment_policy_list
-            ,
+            continuous_deployment_policy_list: self.continuous_deployment_policy_list,
             _request_id: self._request_id,
         }
     }

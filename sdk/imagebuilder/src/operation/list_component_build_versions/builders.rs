@@ -40,7 +40,7 @@ impl ListComponentBuildVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListComponentBuildVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder,
+    inner: crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder,
 }
 impl ListComponentBuildVersionsFluentBuilder {
     /// Creates a new `ListComponentBuildVersions`.
@@ -51,7 +51,7 @@ impl ListComponentBuildVersionsFluentBuilder {
         }
     }
     /// Access the ListComponentBuildVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +63,7 @@ impl ListComponentBuildVersionsFluentBuilder {
             crate::operation::list_component_build_versions::ListComponentBuildVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_build_versions::ListComponentBuildVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +73,7 @@ impl ListComponentBuildVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +82,7 @@ impl ListComponentBuildVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_build_versions::ListComponentBuildVersionsError>,
     > {
         let op = self
             .inner
@@ -112,9 +105,7 @@ impl ListComponentBuildVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_build_versions::ListComponentBuildVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -128,31 +119,23 @@ impl ListComponentBuildVersionsFluentBuilder {
             crate::operation::list_component_build_versions::ListComponentBuildVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_build_versions::ListComponentBuildVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator {
         crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
-    pub fn component_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_version_arn(input.into());
         self
     }
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
-    pub fn set_component_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_version_arn(input);
         self
     }

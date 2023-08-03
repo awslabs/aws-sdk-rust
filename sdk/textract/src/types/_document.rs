@@ -37,9 +37,7 @@ impl Document {
 
 /// A builder for [`Document`](crate::types::Document).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentBuilder {
     pub(crate) bytes: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,

@@ -22,9 +22,7 @@ impl StopStackInput {
 
 /// A builder for [`StopStackInput`](crate::operation::stop_stack::StopStackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopStackInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StopStackInputBuilder {
         &self.stack_id
     }
     /// Consumes the builder and constructs a [`StopStackInput`](crate::operation::stop_stack::StopStackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_stack::StopStackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_stack::StopStackInput {
-            stack_id: self.stack_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_stack::StopStackInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_stack::StopStackInput { stack_id: self.stack_id })
     }
 }

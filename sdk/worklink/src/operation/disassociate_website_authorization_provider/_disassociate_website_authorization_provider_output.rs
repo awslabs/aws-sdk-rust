@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DisassociateWebsiteAuthorizationProvi
 }
 impl DisassociateWebsiteAuthorizationProviderOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWebsiteAuthorizationProviderOutput`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderOutput).
-    pub fn builder() -> crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderOutputBuilder
+    {
         crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateWebsiteAuthorizationProviderOutput`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateWebsiteAuthorizationProviderOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DisassociateWebsiteAuthorizationProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateWebsiteAuthorizationProviderOutput`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderOutput).
-    pub fn build(self) -> crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderOutput{
+    pub fn build(self) -> crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderOutput {
         crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderOutput {
             _request_id: self._request_id,
         }

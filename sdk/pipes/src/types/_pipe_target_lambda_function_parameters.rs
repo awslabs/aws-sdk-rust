@@ -20,9 +20,7 @@ impl PipeTargetLambdaFunctionParameters {
     /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
     /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    pub fn invocation_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PipeTargetInvocationType> {
+    pub fn invocation_type(&self) -> ::std::option::Option<&crate::types::PipeTargetInvocationType> {
         self.invocation_type.as_ref()
     }
 }
@@ -35,9 +33,7 @@ impl PipeTargetLambdaFunctionParameters {
 
 /// A builder for [`PipeTargetLambdaFunctionParameters`](crate::types::PipeTargetLambdaFunctionParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipeTargetLambdaFunctionParametersBuilder {
     pub(crate) invocation_type: ::std::option::Option<crate::types::PipeTargetInvocationType>,
 }
@@ -58,10 +54,7 @@ impl PipeTargetLambdaFunctionParametersBuilder {
     /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
     /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    pub fn set_invocation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeTargetInvocationType>,
-    ) -> Self {
+    pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::PipeTargetInvocationType>) -> Self {
         self.invocation_type = input;
         self
     }
@@ -71,9 +64,7 @@ impl PipeTargetLambdaFunctionParametersBuilder {
     /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
     /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    pub fn get_invocation_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipeTargetInvocationType> {
+    pub fn get_invocation_type(&self) -> &::std::option::Option<crate::types::PipeTargetInvocationType> {
         &self.invocation_type
     }
     /// Consumes the builder and constructs a [`PipeTargetLambdaFunctionParameters`](crate::types::PipeTargetLambdaFunctionParameters).

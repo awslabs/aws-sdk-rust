@@ -64,17 +64,14 @@ impl GetRandomPasswordInput {
 }
 impl GetRandomPasswordInput {
     /// Creates a new builder-style object to manufacture [`GetRandomPasswordInput`](crate::operation::get_random_password::GetRandomPasswordInput).
-    pub fn builder(
-    ) -> crate::operation::get_random_password::builders::GetRandomPasswordInputBuilder {
+    pub fn builder() -> crate::operation::get_random_password::builders::GetRandomPasswordInputBuilder {
         crate::operation::get_random_password::builders::GetRandomPasswordInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRandomPasswordInput`](crate::operation::get_random_password::GetRandomPasswordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRandomPasswordInputBuilder {
     pub(crate) password_length: ::std::option::Option<i64>,
     pub(crate) exclude_characters: ::std::option::Option<::std::string::String>,
@@ -101,18 +98,12 @@ impl GetRandomPasswordInputBuilder {
         &self.password_length
     }
     /// <p>A string of the characters that you don't want in the password.</p>
-    pub fn exclude_characters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclude_characters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclude_characters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string of the characters that you don't want in the password.</p>
-    pub fn set_exclude_characters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclude_characters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclude_characters = input;
         self
     }
@@ -207,21 +198,16 @@ impl GetRandomPasswordInputBuilder {
     /// Consumes the builder and constructs a [`GetRandomPasswordInput`](crate::operation::get_random_password::GetRandomPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_random_password::GetRandomPasswordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_random_password::GetRandomPasswordInput {
-                password_length: self.password_length,
-                exclude_characters: self.exclude_characters,
-                exclude_numbers: self.exclude_numbers,
-                exclude_punctuation: self.exclude_punctuation,
-                exclude_uppercase: self.exclude_uppercase,
-                exclude_lowercase: self.exclude_lowercase,
-                include_space: self.include_space,
-                require_each_included_type: self.require_each_included_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_random_password::GetRandomPasswordInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_random_password::GetRandomPasswordInput {
+            password_length: self.password_length,
+            exclude_characters: self.exclude_characters,
+            exclude_numbers: self.exclude_numbers,
+            exclude_punctuation: self.exclude_punctuation,
+            exclude_uppercase: self.exclude_uppercase,
+            exclude_lowercase: self.exclude_lowercase,
+            include_space: self.include_space,
+            require_each_included_type: self.require_each_included_type,
+        })
     }
 }

@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`recommendation_templates(Option<Vec<RecommendationTemplate>>)`](crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput::recommendation_templates): <p>The recommendation templates for the Resilience Hub applications.</p>
     /// - On failure, responds with [`SdkError<ListRecommendationTemplatesError>`](crate::operation::list_recommendation_templates::ListRecommendationTemplatesError)
-    pub fn list_recommendation_templates(&self) -> crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesFluentBuilder{
+    pub fn list_recommendation_templates(
+        &self,
+    ) -> crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesFluentBuilder {
         crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

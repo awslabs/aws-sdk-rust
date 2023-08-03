@@ -12,10 +12,7 @@ pub fn ser_start_build_batch_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_project_source::ser_project_source(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_project_source::ser_project_source(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_start_build_batch_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_project_source_version::ser_project_source_version(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_project_source_version::ser_project_source_version(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -42,10 +36,7 @@ pub fn ser_start_build_batch_input(
     if let Some(var_11) = &input.artifacts_override {
         #[allow(unused_mut)]
         let mut object_12 = object.key("artifactsOverride").start_object();
-        crate::protocol_serde::shape_project_artifacts::ser_project_artifacts(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_project_artifacts::ser_project_artifacts(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.secondary_artifacts_override {
@@ -54,10 +45,7 @@ pub fn ser_start_build_batch_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_project_artifacts::ser_project_artifacts(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_project_artifacts::ser_project_artifacts(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -69,10 +57,7 @@ pub fn ser_start_build_batch_input(
             {
                 #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_environment_variable::ser_environment_variable(
-                    &mut object_20,
-                    item_19,
-                )?;
+                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_20, item_19)?;
                 object_20.finish();
             }
         }
@@ -99,10 +84,7 @@ pub fn ser_start_build_batch_input(
     if let Some(var_26) = &input.git_submodules_config_override {
         #[allow(unused_mut)]
         let mut object_27 = object.key("gitSubmodulesConfigOverride").start_object();
-        crate::protocol_serde::shape_git_submodules_config::ser_git_submodules_config(
-            &mut object_27,
-            var_26,
-        )?;
+        crate::protocol_serde::shape_git_submodules_config::ser_git_submodules_config(&mut object_27, var_26)?;
         object_27.finish();
     }
     if let Some(var_28) = &input.buildspec_override {
@@ -112,14 +94,10 @@ pub fn ser_start_build_batch_input(
         object.key("insecureSslOverride").boolean(*var_29);
     }
     if let Some(var_30) = &input.report_build_batch_status_override {
-        object
-            .key("reportBuildBatchStatusOverride")
-            .boolean(*var_30);
+        object.key("reportBuildBatchStatusOverride").boolean(*var_30);
     }
     if let Some(var_31) = &input.environment_type_override {
-        object
-            .key("environmentTypeOverride")
-            .string(var_31.as_str());
+        object.key("environmentTypeOverride").string(var_31.as_str());
     }
     if let Some(var_32) = &input.image_override {
         object.key("imageOverride").string(var_32.as_str());
@@ -169,24 +147,16 @@ pub fn ser_start_build_batch_input(
     if let Some(var_45) = &input.registry_credential_override {
         #[allow(unused_mut)]
         let mut object_46 = object.key("registryCredentialOverride").start_object();
-        crate::protocol_serde::shape_registry_credential::ser_registry_credential(
-            &mut object_46,
-            var_45,
-        )?;
+        crate::protocol_serde::shape_registry_credential::ser_registry_credential(&mut object_46, var_45)?;
         object_46.finish();
     }
     if let Some(var_47) = &input.image_pull_credentials_type_override {
-        object
-            .key("imagePullCredentialsTypeOverride")
-            .string(var_47.as_str());
+        object.key("imagePullCredentialsTypeOverride").string(var_47.as_str());
     }
     if let Some(var_48) = &input.build_batch_config_override {
         #[allow(unused_mut)]
         let mut object_49 = object.key("buildBatchConfigOverride").start_object();
-        crate::protocol_serde::shape_project_build_batch_config::ser_project_build_batch_config(
-            &mut object_49,
-            var_48,
-        )?;
+        crate::protocol_serde::shape_project_build_batch_config::ser_project_build_batch_config(&mut object_49, var_48)?;
         object_49.finish();
     }
     if let Some(var_50) = &input.debug_session_enabled {

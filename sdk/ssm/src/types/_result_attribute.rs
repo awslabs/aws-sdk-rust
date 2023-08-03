@@ -23,9 +23,7 @@ impl ResultAttribute {
 
 /// A builder for [`ResultAttribute`](crate::types::ResultAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultAttributeBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ResultAttributeBuilder {
     }
     /// Consumes the builder and constructs a [`ResultAttribute`](crate::types::ResultAttribute).
     pub fn build(self) -> crate::types::ResultAttribute {
-        crate::types::ResultAttribute {
-            type_name: self.type_name,
-        }
+        crate::types::ResultAttribute { type_name: self.type_name }
     }
 }

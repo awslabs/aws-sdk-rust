@@ -37,9 +37,7 @@ impl ModifySamlPropertiesFluentBuilder {
         }
     }
     /// Access the ModifySamlProperties as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ModifySamlPropertiesFluentBuilder {
             crate::operation::modify_saml_properties::ModifySamlProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_saml_properties::ModifySamlPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_saml_properties::ModifySamlPropertiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ModifySamlPropertiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ModifySamlPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_saml_properties::ModifySamlPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_saml_properties::ModifySamlPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_saml_properties::ModifySamlPropertiesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ModifySamlPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_saml_properties::ModifySamlPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_saml_properties::ModifySamlPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_saml_properties::ModifySamlPropertiesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ModifySamlPropertiesFluentBuilder {
             crate::operation::modify_saml_properties::ModifySamlProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_saml_properties::ModifySamlPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_saml_properties::ModifySamlPropertiesError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +129,7 @@ impl ModifySamlPropertiesFluentBuilder {
         self
     }
     /// <p>The properties for configuring SAML 2.0 authentication.</p>
-    pub fn set_saml_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlProperties>,
-    ) -> Self {
+    pub fn set_saml_properties(mut self, input: ::std::option::Option<crate::types::SamlProperties>) -> Self {
         self.inner = self.inner.set_saml_properties(input);
         self
     }
@@ -173,10 +157,7 @@ impl ModifySamlPropertiesFluentBuilder {
     /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
     /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
-    pub fn set_properties_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>,
-    ) -> Self {
+    pub fn set_properties_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>) -> Self {
         self.inner = self.inner.set_properties_to_delete(input);
         self
     }
@@ -186,9 +167,7 @@ impl ModifySamlPropertiesFluentBuilder {
     /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
     /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
-    pub fn get_properties_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>> {
+    pub fn get_properties_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>> {
         self.inner.get_properties_to_delete()
     }
 }

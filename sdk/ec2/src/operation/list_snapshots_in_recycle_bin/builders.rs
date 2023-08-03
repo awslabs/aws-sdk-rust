@@ -26,7 +26,7 @@ impl ListSnapshotsInRecycleBinInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSnapshotsInRecycleBinFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinInputBuilder,
+    inner: crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinInputBuilder,
 }
 impl ListSnapshotsInRecycleBinFluentBuilder {
     /// Creates a new `ListSnapshotsInRecycleBin`.
@@ -37,7 +37,7 @@ impl ListSnapshotsInRecycleBinFluentBuilder {
         }
     }
     /// Access the ListSnapshotsInRecycleBin as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSnapshotsInRecycleBinFluentBuilder {
             crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSnapshotsInRecycleBinFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSnapshotsInRecycleBinFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSnapshotsInRecycleBinFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListSnapshotsInRecycleBinFluentBuilder {
             crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_snapshots_in_recycle_bin::paginator::ListSnapshotsInRecycleBinPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_snapshots_in_recycle_bin::paginator::ListSnapshotsInRecycleBinPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_snapshots_in_recycle_bin::paginator::ListSnapshotsInRecycleBinPaginator {
         crate::operation::list_snapshots_in_recycle_bin::paginator::ListSnapshotsInRecycleBinPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -164,17 +153,12 @@ impl ListSnapshotsInRecycleBinFluentBuilder {
         self
     }
     /// <p>The IDs of the snapshots to list. Omit this parameter to list all of the snapshots that are in the Recycle Bin.</p>
-    pub fn set_snapshot_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_snapshot_ids(input);
         self
     }
     /// <p>The IDs of the snapshots to list. Omit this parameter to list all of the snapshots that are in the Recycle Bin.</p>
-    pub fn get_snapshot_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_snapshot_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

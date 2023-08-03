@@ -6,8 +6,7 @@
 pub struct H264ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
     #[doc(hidden)]
-    pub color_space_passthrough_settings:
-        ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
+    pub color_space_passthrough_settings: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
     /// Rec601 Settings
     #[doc(hidden)]
     pub rec601_settings: ::std::option::Option<crate::types::Rec601Settings>,
@@ -17,9 +16,7 @@ pub struct H264ColorSpaceSettings {
 }
 impl H264ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
-    pub fn color_space_passthrough_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ColorSpacePassthroughSettings> {
+    pub fn color_space_passthrough_settings(&self) -> ::std::option::Option<&crate::types::ColorSpacePassthroughSettings> {
         self.color_space_passthrough_settings.as_ref()
     }
     /// Rec601 Settings
@@ -40,36 +37,25 @@ impl H264ColorSpaceSettings {
 
 /// A builder for [`H264ColorSpaceSettings`](crate::types::H264ColorSpaceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct H264ColorSpaceSettingsBuilder {
-    pub(crate) color_space_passthrough_settings:
-        ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
+    pub(crate) color_space_passthrough_settings: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
     pub(crate) rec601_settings: ::std::option::Option<crate::types::Rec601Settings>,
     pub(crate) rec709_settings: ::std::option::Option<crate::types::Rec709Settings>,
 }
 impl H264ColorSpaceSettingsBuilder {
     /// Passthrough applies no color space conversion to the output
-    pub fn color_space_passthrough_settings(
-        mut self,
-        input: crate::types::ColorSpacePassthroughSettings,
-    ) -> Self {
+    pub fn color_space_passthrough_settings(mut self, input: crate::types::ColorSpacePassthroughSettings) -> Self {
         self.color_space_passthrough_settings = ::std::option::Option::Some(input);
         self
     }
     /// Passthrough applies no color space conversion to the output
-    pub fn set_color_space_passthrough_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
-    ) -> Self {
+    pub fn set_color_space_passthrough_settings(mut self, input: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>) -> Self {
         self.color_space_passthrough_settings = input;
         self
     }
     /// Passthrough applies no color space conversion to the output
-    pub fn get_color_space_passthrough_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ColorSpacePassthroughSettings> {
+    pub fn get_color_space_passthrough_settings(&self) -> &::std::option::Option<crate::types::ColorSpacePassthroughSettings> {
         &self.color_space_passthrough_settings
     }
     /// Rec601 Settings
@@ -78,10 +64,7 @@ impl H264ColorSpaceSettingsBuilder {
         self
     }
     /// Rec601 Settings
-    pub fn set_rec601_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Rec601Settings>,
-    ) -> Self {
+    pub fn set_rec601_settings(mut self, input: ::std::option::Option<crate::types::Rec601Settings>) -> Self {
         self.rec601_settings = input;
         self
     }
@@ -95,10 +78,7 @@ impl H264ColorSpaceSettingsBuilder {
         self
     }
     /// Rec709 Settings
-    pub fn set_rec709_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Rec709Settings>,
-    ) -> Self {
+    pub fn set_rec709_settings(mut self, input: ::std::option::Option<crate::types::Rec709Settings>) -> Self {
         self.rec709_settings = input;
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePreparedStatementOutput {
 }
 impl DeletePreparedStatementOutput {
     /// Creates a new builder-style object to manufacture [`DeletePreparedStatementOutput`](crate::operation::delete_prepared_statement::DeletePreparedStatementOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_prepared_statement::builders::DeletePreparedStatementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_prepared_statement::builders::DeletePreparedStatementOutputBuilder {
         crate::operation::delete_prepared_statement::builders::DeletePreparedStatementOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePreparedStatementOutput`](crate::operation::delete_prepared_statement::DeletePreparedStatementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePreparedStatementOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeletePreparedStatementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeletePreparedStatementOutput`](crate::operation::delete_prepared_statement::DeletePreparedStatementOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_prepared_statement::DeletePreparedStatementOutput {
+    pub fn build(self) -> crate::operation::delete_prepared_statement::DeletePreparedStatementOutput {
         crate::operation::delete_prepared_statement::DeletePreparedStatementOutput {
             _request_id: self._request_id,
         }

@@ -35,12 +35,9 @@ impl ListArtifactsOutput {
 
 /// A builder for [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListArtifactsOutputBuilder {
-    pub(crate) artifact_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>>,
+    pub(crate) artifact_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListArtifactsOutputBuilder {
         self
     }
     /// <p>A list of artifacts and their properties.</p>
-    pub fn set_artifact_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>>,
-    ) -> Self {
+    pub fn set_artifact_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>>) -> Self {
         self.artifact_summaries = input;
         self
     }
     /// <p>A list of artifacts and their properties.</p>
-    pub fn get_artifact_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>> {
+    pub fn get_artifact_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>> {
         &self.artifact_summaries
     }
     /// <p>A token for getting the next set of artifacts, if there are any.</p>

@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateHealthCheckOutput {
 }
 impl UpdateHealthCheckOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHealthCheckOutput`](crate::operation::update_health_check::UpdateHealthCheckOutput).
-    pub fn builder(
-    ) -> crate::operation::update_health_check::builders::UpdateHealthCheckOutputBuilder {
+    pub fn builder() -> crate::operation::update_health_check::builders::UpdateHealthCheckOutputBuilder {
         crate::operation::update_health_check::builders::UpdateHealthCheckOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHealthCheckOutput`](crate::operation::update_health_check::UpdateHealthCheckOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHealthCheckOutputBuilder {
     pub(crate) health_check: ::std::option::Option<crate::types::HealthCheck>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl UpdateHealthCheckOutputBuilder {
         self
     }
     /// <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
-    pub fn set_health_check(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheck>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::HealthCheck>) -> Self {
         self.health_check = input;
         self
     }

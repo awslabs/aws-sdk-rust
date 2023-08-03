@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::list_connections::ListConnectionsOutput::connections): <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connections::ListConnectionsOutput::next_token): <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
     /// - On failure, responds with [`SdkError<ListConnectionsError>`](crate::operation::list_connections::ListConnectionsError)
-    pub fn list_connections(
-        &self,
-    ) -> crate::operation::list_connections::builders::ListConnectionsFluentBuilder {
-        crate::operation::list_connections::builders::ListConnectionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_connections(&self) -> crate::operation::list_connections::builders::ListConnectionsFluentBuilder {
+        crate::operation::list_connections::builders::ListConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

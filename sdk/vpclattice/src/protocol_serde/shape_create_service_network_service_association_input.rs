@@ -10,9 +10,7 @@ pub fn ser_create_service_network_service_association_input(
         object.key("serviceIdentifier").string(var_2.as_str());
     }
     if let Some(var_3) = &input.service_network_identifier {
-        object
-            .key("serviceNetworkIdentifier")
-            .string(var_3.as_str());
+        object.key("serviceNetworkIdentifier").string(var_3.as_str());
     }
     if let Some(var_4) = &input.tags {
         #[allow(unused_mut)]

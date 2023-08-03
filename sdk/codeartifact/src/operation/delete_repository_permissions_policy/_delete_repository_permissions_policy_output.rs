@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteRepositoryPermissionsPolicyOutp
 }
 impl DeleteRepositoryPermissionsPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryPermissionsPolicyOutput`](crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput).
-    pub fn builder() -> crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyOutputBuilder {
         crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRepositoryPermissionsPolicyOutput`](crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRepositoryPermissionsPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DeleteRepositoryPermissionsPolicyOutputBuilder {
         self
     }
     /// <p> Information about the deleted policy after processing the request. </p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourcePolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ResourcePolicy>) -> Self {
         self.policy = input;
         self
     }
@@ -63,10 +58,9 @@ impl DeleteRepositoryPermissionsPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryPermissionsPolicyOutput`](crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput).
-    pub fn build(self) -> crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput{
+    pub fn build(self) -> crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput {
         crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput {
-            policy: self.policy
-            ,
+            policy: self.policy,
             _request_id: self._request_id,
         }
     }

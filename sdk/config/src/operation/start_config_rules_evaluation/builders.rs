@@ -38,7 +38,7 @@ impl StartConfigRulesEvaluationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartConfigRulesEvaluationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationInputBuilder,
+    inner: crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationInputBuilder,
 }
 impl StartConfigRulesEvaluationFluentBuilder {
     /// Creates a new `StartConfigRulesEvaluation`.
@@ -49,7 +49,7 @@ impl StartConfigRulesEvaluationFluentBuilder {
         }
     }
     /// Access the StartConfigRulesEvaluation as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +61,7 @@ impl StartConfigRulesEvaluationFluentBuilder {
             crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +71,7 @@ impl StartConfigRulesEvaluationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +80,7 @@ impl StartConfigRulesEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError>,
     > {
         let op = self
             .inner
@@ -110,9 +103,7 @@ impl StartConfigRulesEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +117,7 @@ impl StartConfigRulesEvaluationFluentBuilder {
             crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError>,
     > {
         self.customize_middleware().await
     }
@@ -137,25 +126,17 @@ impl StartConfigRulesEvaluationFluentBuilder {
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
     ///
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    pub fn config_rule_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_names(input.into());
         self
     }
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    pub fn set_config_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_config_rule_names(input);
         self
     }
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    pub fn get_config_rule_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_config_rule_names()
     }
 }

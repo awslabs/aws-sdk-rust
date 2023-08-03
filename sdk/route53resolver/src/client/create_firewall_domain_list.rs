@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFirewallDomainListOutput`](crate::operation::create_firewall_domain_list::CreateFirewallDomainListOutput) with field(s):
     ///   - [`firewall_domain_list(Option<FirewallDomainList>)`](crate::operation::create_firewall_domain_list::CreateFirewallDomainListOutput::firewall_domain_list): <p>The domain list that you just created.</p>
     /// - On failure, responds with [`SdkError<CreateFirewallDomainListError>`](crate::operation::create_firewall_domain_list::CreateFirewallDomainListError)
-    pub fn create_firewall_domain_list(&self) -> crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListFluentBuilder{
+    pub fn create_firewall_domain_list(&self) -> crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListFluentBuilder {
         crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListFluentBuilder::new(self.handle.clone())
     }
 }

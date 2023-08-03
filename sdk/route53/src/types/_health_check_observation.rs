@@ -37,9 +37,7 @@ impl HealthCheckObservation {
 
 /// A builder for [`HealthCheckObservation`](crate::types::HealthCheckObservation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HealthCheckObservationBuilder {
     pub(crate) region: ::std::option::Option<crate::types::HealthCheckRegion>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl HealthCheckObservationBuilder {
         self
     }
     /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
-    pub fn set_region(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckRegion>,
-    ) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<crate::types::HealthCheckRegion>) -> Self {
         self.region = input;
         self
     }
@@ -83,10 +78,7 @@ impl HealthCheckObservationBuilder {
         self
     }
     /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
-    pub fn set_status_report(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusReport>,
-    ) -> Self {
+    pub fn set_status_report(mut self, input: ::std::option::Option<crate::types::StatusReport>) -> Self {
         self.status_report = input;
         self
     }

@@ -26,7 +26,7 @@ impl UpdateSimulationApplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSimulationApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_simulation_application::builders::UpdateSimulationApplicationInputBuilder,
+    inner: crate::operation::update_simulation_application::builders::UpdateSimulationApplicationInputBuilder,
 }
 impl UpdateSimulationApplicationFluentBuilder {
     /// Creates a new `UpdateSimulationApplication`.
@@ -37,7 +37,7 @@ impl UpdateSimulationApplicationFluentBuilder {
         }
     }
     /// Access the UpdateSimulationApplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_simulation_application::builders::UpdateSimulationApplicationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_simulation_application::builders::UpdateSimulationApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateSimulationApplicationFluentBuilder {
             crate::operation::update_simulation_application::UpdateSimulationApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_simulation_application::UpdateSimulationApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_simulation_application::UpdateSimulationApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateSimulationApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateSimulationApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_simulation_application::UpdateSimulationApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_simulation_application::UpdateSimulationApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_simulation_application::UpdateSimulationApplicationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateSimulationApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_simulation_application::UpdateSimulationApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_simulation_application::UpdateSimulationApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_simulation_application::UpdateSimulationApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateSimulationApplicationFluentBuilder {
             crate::operation::update_simulation_application::UpdateSimulationApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_simulation_application::UpdateSimulationApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_simulation_application::UpdateSimulationApplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -144,39 +133,26 @@ impl UpdateSimulationApplicationFluentBuilder {
         self
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
         self.inner.get_sources()
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(
-        mut self,
-        input: crate::types::SimulationSoftwareSuite,
-    ) -> Self {
+    pub fn simulation_software_suite(mut self, input: crate::types::SimulationSoftwareSuite) -> Self {
         self.inner = self.inner.simulation_software_suite(input);
         self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn set_simulation_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
-    ) -> Self {
+    pub fn set_simulation_software_suite(mut self, input: ::std::option::Option<crate::types::SimulationSoftwareSuite>) -> Self {
         self.inner = self.inner.set_simulation_software_suite(input);
         self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn get_simulation_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
+    pub fn get_simulation_software_suite(&self) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
         self.inner.get_simulation_software_suite()
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
@@ -185,17 +161,12 @@ impl UpdateSimulationApplicationFluentBuilder {
         self
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.inner = self.inner.set_robot_software_suite(input);
         self
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    pub fn get_robot_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         self.inner.get_robot_software_suite()
     }
     /// <p>The rendering engine for the simulation application.</p>
@@ -204,10 +175,7 @@ impl UpdateSimulationApplicationFluentBuilder {
         self
     }
     /// <p>The rendering engine for the simulation application.</p>
-    pub fn set_rendering_engine(
-        mut self,
-        input: ::std::option::Option<crate::types::RenderingEngine>,
-    ) -> Self {
+    pub fn set_rendering_engine(mut self, input: ::std::option::Option<crate::types::RenderingEngine>) -> Self {
         self.inner = self.inner.set_rendering_engine(input);
         self
     }
@@ -216,18 +184,12 @@ impl UpdateSimulationApplicationFluentBuilder {
         self.inner.get_rendering_engine()
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn current_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_revision_id(input.into());
         self
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn set_current_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_revision_id(input);
         self
     }
@@ -241,10 +203,7 @@ impl UpdateSimulationApplicationFluentBuilder {
         self
     }
     /// <p>The object that contains the Docker image URI for your simulation application.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }

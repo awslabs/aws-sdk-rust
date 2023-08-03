@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListUsersByPermissionGroupOutput {
 }
 impl ListUsersByPermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersByPermissionGroupOutput`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput).
-    pub fn builder() -> crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupOutputBuilder{
+    pub fn builder() -> crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupOutputBuilder {
         crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUsersByPermissionGroupOutput`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsersByPermissionGroupOutputBuilder {
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::UserByPermissionGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListUsersByPermissionGroupOutputBuilder {
         self
     }
     /// <p>Lists details of all users in a specific permission group.</p>
-    pub fn set_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserByPermissionGroup>>,
-    ) -> Self {
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserByPermissionGroup>>) -> Self {
         self.users = input;
         self
     }
     /// <p>Lists details of all users in a specific permission group.</p>
-    pub fn get_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserByPermissionGroup>> {
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserByPermissionGroup>> {
         &self.users
     }
     /// <p>A token that indicates where a results page should begin.</p>
@@ -93,9 +86,7 @@ impl ListUsersByPermissionGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListUsersByPermissionGroupOutput`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput {
+    pub fn build(self) -> crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput {
         crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput {
             users: self.users,
             next_token: self.next_token,

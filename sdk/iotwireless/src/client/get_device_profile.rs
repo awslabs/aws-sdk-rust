@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`lo_ra_wan(Option<LoRaWanDeviceProfile>)`](crate::operation::get_device_profile::GetDeviceProfileOutput::lo_ra_wan): <p>Information about the device profile.</p>
     ///   - [`sidewalk(Option<SidewalkGetDeviceProfile>)`](crate::operation::get_device_profile::GetDeviceProfileOutput::sidewalk): <p>Information about the Sidewalk parameters in the device profile.</p>
     /// - On failure, responds with [`SdkError<GetDeviceProfileError>`](crate::operation::get_device_profile::GetDeviceProfileError)
-    pub fn get_device_profile(
-        &self,
-    ) -> crate::operation::get_device_profile::builders::GetDeviceProfileFluentBuilder {
-        crate::operation::get_device_profile::builders::GetDeviceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_device_profile(&self) -> crate::operation::get_device_profile::builders::GetDeviceProfileFluentBuilder {
+        crate::operation::get_device_profile::builders::GetDeviceProfileFluentBuilder::new(self.handle.clone())
     }
 }

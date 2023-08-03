@@ -38,16 +38,14 @@ impl BatchDeleteRumMetricDefinitionsInput {
 }
 impl BatchDeleteRumMetricDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteRumMetricDefinitionsInput`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsInput).
-    pub fn builder() -> crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder {
         crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteRumMetricDefinitionsInput`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteRumMetricDefinitionsInputBuilder {
     pub(crate) app_monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::MetricDestination>,
@@ -56,18 +54,12 @@ pub struct BatchDeleteRumMetricDefinitionsInputBuilder {
 }
 impl BatchDeleteRumMetricDefinitionsInputBuilder {
     /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
-    pub fn app_monitor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
-    pub fn set_app_monitor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_monitor_name = input;
         self
     }
@@ -81,10 +73,7 @@ impl BatchDeleteRumMetricDefinitionsInputBuilder {
         self
     }
     /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -94,19 +83,13 @@ impl BatchDeleteRumMetricDefinitionsInputBuilder {
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -120,27 +103,19 @@ impl BatchDeleteRumMetricDefinitionsInputBuilder {
     /// To override the contents of this collection use [`set_metric_definition_ids`](Self::set_metric_definition_ids).
     ///
     /// <p>An array of structures which define the metrics that you want to stop sending.</p>
-    pub fn metric_definition_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_definition_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_definition_ids.unwrap_or_default();
         v.push(input.into());
         self.metric_definition_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of structures which define the metrics that you want to stop sending.</p>
-    pub fn set_metric_definition_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_definition_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_definition_ids = input;
         self
     }
     /// <p>An array of structures which define the metrics that you want to stop sending.</p>
-    pub fn get_metric_definition_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_definition_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_definition_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteRumMetricDefinitionsInput`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsInput).
@@ -152,15 +127,11 @@ impl BatchDeleteRumMetricDefinitionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsInput {
-                app_monitor_name: self.app_monitor_name
-                ,
-                destination: self.destination
-                ,
-                destination_arn: self.destination_arn
-                ,
-                metric_definition_ids: self.metric_definition_ids
-                ,
-            }
+                app_monitor_name: self.app_monitor_name,
+                destination: self.destination,
+                destination_arn: self.destination_arn,
+                metric_definition_ids: self.metric_definition_ids,
+            },
         )
     }
 }

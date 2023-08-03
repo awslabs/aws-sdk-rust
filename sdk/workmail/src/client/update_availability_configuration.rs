@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`lambda_provider(LambdaAvailabilityProvider)`](crate::operation::update_availability_configuration::builders::UpdateAvailabilityConfigurationFluentBuilder::lambda_provider) / [`set_lambda_provider(Option<LambdaAvailabilityProvider>)`](crate::operation::update_availability_configuration::builders::UpdateAvailabilityConfigurationFluentBuilder::set_lambda_provider): <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
     /// - On success, responds with [`UpdateAvailabilityConfigurationOutput`](crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateAvailabilityConfigurationError>`](crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError)
-    pub fn update_availability_configuration(&self) -> crate::operation::update_availability_configuration::builders::UpdateAvailabilityConfigurationFluentBuilder{
+    pub fn update_availability_configuration(
+        &self,
+    ) -> crate::operation::update_availability_configuration::builders::UpdateAvailabilityConfigurationFluentBuilder {
         crate::operation::update_availability_configuration::builders::UpdateAvailabilityConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

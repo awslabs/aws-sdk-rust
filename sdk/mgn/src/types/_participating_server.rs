@@ -31,9 +31,7 @@ impl ParticipatingServer {
         self.launched_ec2_instance_id.as_deref()
     }
     /// <p>Participating server's Post Launch Actions Status.</p>
-    pub fn post_launch_actions_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PostLaunchActionsStatus> {
+    pub fn post_launch_actions_status(&self) -> ::std::option::Option<&crate::types::PostLaunchActionsStatus> {
         self.post_launch_actions_status.as_ref()
     }
 }
@@ -46,30 +44,21 @@ impl ParticipatingServer {
 
 /// A builder for [`ParticipatingServer`](crate::types::ParticipatingServer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParticipatingServerBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_status: ::std::option::Option<crate::types::LaunchStatus>,
     pub(crate) launched_ec2_instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) post_launch_actions_status:
-        ::std::option::Option<crate::types::PostLaunchActionsStatus>,
+    pub(crate) post_launch_actions_status: ::std::option::Option<crate::types::PostLaunchActionsStatus>,
 }
 impl ParticipatingServerBuilder {
     /// <p>Participating server Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Participating server Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -83,10 +72,7 @@ impl ParticipatingServerBuilder {
         self
     }
     /// <p>Participating server launch status.</p>
-    pub fn set_launch_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchStatus>,
-    ) -> Self {
+    pub fn set_launch_status(mut self, input: ::std::option::Option<crate::types::LaunchStatus>) -> Self {
         self.launch_status = input;
         self
     }
@@ -95,18 +81,12 @@ impl ParticipatingServerBuilder {
         &self.launch_status
     }
     /// <p>Participating server's launched ec2 instance ID.</p>
-    pub fn launched_ec2_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launched_ec2_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launched_ec2_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Participating server's launched ec2 instance ID.</p>
-    pub fn set_launched_ec2_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launched_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launched_ec2_instance_id = input;
         self
     }
@@ -115,25 +95,17 @@ impl ParticipatingServerBuilder {
         &self.launched_ec2_instance_id
     }
     /// <p>Participating server's Post Launch Actions Status.</p>
-    pub fn post_launch_actions_status(
-        mut self,
-        input: crate::types::PostLaunchActionsStatus,
-    ) -> Self {
+    pub fn post_launch_actions_status(mut self, input: crate::types::PostLaunchActionsStatus) -> Self {
         self.post_launch_actions_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Participating server's Post Launch Actions Status.</p>
-    pub fn set_post_launch_actions_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PostLaunchActionsStatus>,
-    ) -> Self {
+    pub fn set_post_launch_actions_status(mut self, input: ::std::option::Option<crate::types::PostLaunchActionsStatus>) -> Self {
         self.post_launch_actions_status = input;
         self
     }
     /// <p>Participating server's Post Launch Actions Status.</p>
-    pub fn get_post_launch_actions_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PostLaunchActionsStatus> {
+    pub fn get_post_launch_actions_status(&self) -> &::std::option::Option<crate::types::PostLaunchActionsStatus> {
         &self.post_launch_actions_status
     }
     /// Consumes the builder and constructs a [`ParticipatingServer`](crate::types::ParticipatingServer).

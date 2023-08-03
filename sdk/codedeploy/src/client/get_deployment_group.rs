@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDeploymentGroupOutput`](crate::operation::get_deployment_group::GetDeploymentGroupOutput) with field(s):
     ///   - [`deployment_group_info(Option<DeploymentGroupInfo>)`](crate::operation::get_deployment_group::GetDeploymentGroupOutput::deployment_group_info): <p>Information about the deployment group.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentGroupError>`](crate::operation::get_deployment_group::GetDeploymentGroupError)
-    pub fn get_deployment_group(
-        &self,
-    ) -> crate::operation::get_deployment_group::builders::GetDeploymentGroupFluentBuilder {
-        crate::operation::get_deployment_group::builders::GetDeploymentGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_deployment_group(&self) -> crate::operation::get_deployment_group::builders::GetDeploymentGroupFluentBuilder {
+        crate::operation::get_deployment_group::builders::GetDeploymentGroupFluentBuilder::new(self.handle.clone())
     }
 }

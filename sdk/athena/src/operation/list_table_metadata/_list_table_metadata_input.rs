@@ -43,17 +43,14 @@ impl ListTableMetadataInput {
 }
 impl ListTableMetadataInput {
     /// Creates a new builder-style object to manufacture [`ListTableMetadataInput`](crate::operation::list_table_metadata::ListTableMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::list_table_metadata::builders::ListTableMetadataInputBuilder {
+    pub fn builder() -> crate::operation::list_table_metadata::builders::ListTableMetadataInputBuilder {
         crate::operation::list_table_metadata::builders::ListTableMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTableMetadataInput`](crate::operation::list_table_metadata::ListTableMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableMetadataInputBuilder {
     pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +74,12 @@ impl ListTableMetadataInputBuilder {
         &self.catalog_name
     }
     /// <p>The name of the database for which table metadata should be returned.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database for which table metadata should be returned.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -141,18 +132,13 @@ impl ListTableMetadataInputBuilder {
     /// Consumes the builder and constructs a [`ListTableMetadataInput`](crate::operation::list_table_metadata::ListTableMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_table_metadata::ListTableMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_table_metadata::ListTableMetadataInput {
-                catalog_name: self.catalog_name,
-                database_name: self.database_name,
-                expression: self.expression,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_table_metadata::ListTableMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_table_metadata::ListTableMetadataInput {
+            catalog_name: self.catalog_name,
+            database_name: self.database_name,
+            expression: self.expression,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

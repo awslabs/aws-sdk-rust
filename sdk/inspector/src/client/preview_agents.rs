@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`agent_previews(Option<Vec<AgentPreview>>)`](crate::operation::preview_agents::PreviewAgentsOutput::agent_previews): <p>The resulting list of agents.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::preview_agents::PreviewAgentsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     /// - On failure, responds with [`SdkError<PreviewAgentsError>`](crate::operation::preview_agents::PreviewAgentsError)
-    pub fn preview_agents(
-        &self,
-    ) -> crate::operation::preview_agents::builders::PreviewAgentsFluentBuilder {
-        crate::operation::preview_agents::builders::PreviewAgentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn preview_agents(&self) -> crate::operation::preview_agents::builders::PreviewAgentsFluentBuilder {
+        crate::operation::preview_agents::builders::PreviewAgentsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,9 +51,7 @@ impl PreparedStatement {
 
 /// A builder for [`PreparedStatement`](crate::types::PreparedStatement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PreparedStatementBuilder {
     pub(crate) statement_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_statement: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct PreparedStatementBuilder {
 }
 impl PreparedStatementBuilder {
     /// <p>The name of the prepared statement.</p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the prepared statement.</p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_name = input;
         self
     }
@@ -83,18 +75,12 @@ impl PreparedStatementBuilder {
         &self.statement_name
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn query_statement(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_statement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn set_query_statement(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_statement = input;
         self
     }
@@ -103,18 +89,12 @@ impl PreparedStatementBuilder {
         &self.query_statement
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
-    pub fn work_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn work_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
-    pub fn set_work_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_work_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group_name = input;
         self
     }
@@ -142,10 +122,7 @@ impl PreparedStatementBuilder {
         self
     }
     /// <p>The last modified time of the prepared statement.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

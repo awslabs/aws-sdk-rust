@@ -37,18 +37,14 @@ impl UnsubscribeFromDatasetInput {
 }
 impl UnsubscribeFromDatasetInput {
     /// Creates a new builder-style object to manufacture [`UnsubscribeFromDatasetInput`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput).
-    pub fn builder(
-    ) -> crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetInputBuilder
-    {
+    pub fn builder() -> crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetInputBuilder {
         crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetInputBuilder::default()
     }
 }
 
 /// A builder for [`UnsubscribeFromDatasetInput`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsubscribeFromDatasetInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -57,18 +53,12 @@ pub struct UnsubscribeFromDatasetInputBuilder {
 }
 impl UnsubscribeFromDatasetInputBuilder {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -121,17 +111,13 @@ impl UnsubscribeFromDatasetInputBuilder {
     /// Consumes the builder and constructs a [`UnsubscribeFromDatasetInput`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                dataset_name: self.dataset_name,
-                device_id: self.device_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput {
+            identity_pool_id: self.identity_pool_id,
+            identity_id: self.identity_id,
+            dataset_name: self.dataset_name,
+            device_id: self.device_id,
+        })
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_vocabulary_filter::GetVocabularyFilterOutput::last_modified_time): <p>The date and time the specified custom vocabulary filter was last modified.</p>  <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     ///   - [`download_uri(Option<String>)`](crate::operation::get_vocabulary_filter::GetVocabularyFilterOutput::download_uri): <p>The Amazon S3 location where the custom vocabulary filter is stored; use this URI to view or download the custom vocabulary filter.</p>
     /// - On failure, responds with [`SdkError<GetVocabularyFilterError>`](crate::operation::get_vocabulary_filter::GetVocabularyFilterError)
-    pub fn get_vocabulary_filter(
-        &self,
-    ) -> crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterFluentBuilder {
-        crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_vocabulary_filter(&self) -> crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterFluentBuilder {
+        crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterFluentBuilder::new(self.handle.clone())
     }
 }

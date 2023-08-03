@@ -23,16 +23,14 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsBuilder {
     pub(crate) max: ::std::option::Option<i32>,
     pub(crate) min: ::std::option::Option<i32>,
@@ -67,9 +65,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsBuilder 
         &self.min
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
             max: self.max.unwrap_or_default(),
             min: self.min.unwrap_or_default(),

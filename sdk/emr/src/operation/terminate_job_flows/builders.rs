@@ -10,10 +10,7 @@ impl TerminateJobFlowsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_job_flows::TerminateJobFlowsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_job_flows::TerminateJobFlowsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.terminate_job_flows();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl TerminateJobFlowsFluentBuilder {
         }
     }
     /// Access the TerminateJobFlows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl TerminateJobFlowsFluentBuilder {
             crate::operation::terminate_job_flows::TerminateJobFlows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_job_flows::TerminateJobFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_job_flows::TerminateJobFlowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl TerminateJobFlowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl TerminateJobFlowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_job_flows::TerminateJobFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_job_flows::TerminateJobFlowsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl TerminateJobFlowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_job_flows::TerminateJobFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_job_flows::TerminateJobFlowsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl TerminateJobFlowsFluentBuilder {
             crate::operation::terminate_job_flows::TerminateJobFlows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_job_flows::TerminateJobFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_job_flows::TerminateJobFlowsError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +117,12 @@ impl TerminateJobFlowsFluentBuilder {
         self
     }
     /// <p>A list of job flows to be shut down.</p>
-    pub fn set_job_flow_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_flow_ids(input);
         self
     }
     /// <p>A list of job flows to be shut down.</p>
-    pub fn get_job_flow_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_job_flow_ids()
     }
 }

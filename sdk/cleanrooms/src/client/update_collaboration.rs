@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateCollaborationOutput`](crate::operation::update_collaboration::UpdateCollaborationOutput) with field(s):
     ///   - [`collaboration(Option<Collaboration>)`](crate::operation::update_collaboration::UpdateCollaborationOutput::collaboration): <p>The entire collaboration that has been updated.</p>
     /// - On failure, responds with [`SdkError<UpdateCollaborationError>`](crate::operation::update_collaboration::UpdateCollaborationError)
-    pub fn update_collaboration(
-        &self,
-    ) -> crate::operation::update_collaboration::builders::UpdateCollaborationFluentBuilder {
-        crate::operation::update_collaboration::builders::UpdateCollaborationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_collaboration(&self) -> crate::operation::update_collaboration::builders::UpdateCollaborationFluentBuilder {
+        crate::operation::update_collaboration::builders::UpdateCollaborationFluentBuilder::new(self.handle.clone())
     }
 }

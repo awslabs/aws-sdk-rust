@@ -10,10 +10,7 @@ impl UpdateApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_application();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateApplicationFluentBuilder {
         }
     }
     /// Access the UpdateApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateApplicationFluentBuilder {
             crate::operation::update_application::UpdateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateApplicationFluentBuilder {
             crate::operation::update_application::UpdateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +154,7 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>The icon S3 location of the application.</p>
-    pub fn set_icon_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_icon_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_icon_s3_location(input);
         self
     }
@@ -196,18 +177,12 @@ impl UpdateApplicationFluentBuilder {
         self.inner.get_launch_path()
     }
     /// <p>The working directory of the application.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.working_directory(input.into());
         self
     }
     /// <p>The working directory of the application.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_working_directory(input);
         self
     }
@@ -216,18 +191,12 @@ impl UpdateApplicationFluentBuilder {
         self.inner.get_working_directory()
     }
     /// <p>The launch parameters of the application.</p>
-    pub fn launch_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_parameters(input.into());
         self
     }
     /// <p>The launch parameters of the application.</p>
-    pub fn set_launch_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_parameters(input);
         self
     }
@@ -236,18 +205,12 @@ impl UpdateApplicationFluentBuilder {
         self.inner.get_launch_parameters()
     }
     /// <p>The ARN of the app block.</p>
-    pub fn app_block_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_block_arn(input.into());
         self
     }
     /// <p>The ARN of the app block.</p>
-    pub fn set_app_block_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_block_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_block_arn(input);
         self
     }
@@ -265,17 +228,12 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>The attributes to delete for an application.</p>
-    pub fn set_attributes_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>>,
-    ) -> Self {
+    pub fn set_attributes_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>>) -> Self {
         self.inner = self.inner.set_attributes_to_delete(input);
         self
     }
     /// <p>The attributes to delete for an application.</p>
-    pub fn get_attributes_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>> {
+    pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>> {
         self.inner.get_attributes_to_delete()
     }
 }

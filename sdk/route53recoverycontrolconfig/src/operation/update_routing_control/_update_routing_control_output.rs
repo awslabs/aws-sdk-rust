@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateRoutingControlOutput {
 }
 impl UpdateRoutingControlOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingControlOutput`](crate::operation::update_routing_control::UpdateRoutingControlOutput).
-    pub fn builder(
-    ) -> crate::operation::update_routing_control::builders::UpdateRoutingControlOutputBuilder {
+    pub fn builder() -> crate::operation::update_routing_control::builders::UpdateRoutingControlOutputBuilder {
         crate::operation::update_routing_control::builders::UpdateRoutingControlOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRoutingControlOutput`](crate::operation::update_routing_control::UpdateRoutingControlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlOutputBuilder {
     pub(crate) routing_control: ::std::option::Option<crate::types::RoutingControl>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateRoutingControlOutputBuilder {
         self
     }
     /// <p>The routing control that was updated.</p>
-    pub fn set_routing_control(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingControl>,
-    ) -> Self {
+    pub fn set_routing_control(mut self, input: ::std::option::Option<crate::types::RoutingControl>) -> Self {
         self.routing_control = input;
         self
     }

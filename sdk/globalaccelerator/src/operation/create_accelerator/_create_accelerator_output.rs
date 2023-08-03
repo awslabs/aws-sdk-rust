@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAcceleratorOutput {
 }
 impl CreateAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAcceleratorOutput`](crate::operation::create_accelerator::CreateAcceleratorOutput).
-    pub fn builder(
-    ) -> crate::operation::create_accelerator::builders::CreateAcceleratorOutputBuilder {
+    pub fn builder() -> crate::operation::create_accelerator::builders::CreateAcceleratorOutputBuilder {
         crate::operation::create_accelerator::builders::CreateAcceleratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAcceleratorOutput`](crate::operation::create_accelerator::CreateAcceleratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAcceleratorOutputBuilder {
     pub(crate) accelerator: ::std::option::Option<crate::types::Accelerator>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateAcceleratorOutputBuilder {
         self
     }
     /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
-    pub fn set_accelerator(
-        mut self,
-        input: ::std::option::Option<crate::types::Accelerator>,
-    ) -> Self {
+    pub fn set_accelerator(mut self, input: ::std::option::Option<crate::types::Accelerator>) -> Self {
         self.accelerator = input;
         self
     }

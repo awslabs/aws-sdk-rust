@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`gateway_id(impl ::std::convert::Into<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::gateway_id) / [`set_gateway_id(Option<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::set_gateway_id): <p>The ID of the gateway to delete.</p>
     /// - On success, responds with [`DeleteGatewayOutput`](crate::operation::delete_gateway::DeleteGatewayOutput)
     /// - On failure, responds with [`SdkError<DeleteGatewayError>`](crate::operation::delete_gateway::DeleteGatewayError)
-    pub fn delete_gateway(
-        &self,
-    ) -> crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder {
-        crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_gateway(&self) -> crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder {
+        crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::new(self.handle.clone())
     }
 }

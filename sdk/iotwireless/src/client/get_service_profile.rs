@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_service_profile::GetServiceProfileOutput::id): <p>The ID of the service profile.</p>
     ///   - [`lo_ra_wan(Option<LoRaWanGetServiceProfileInfo>)`](crate::operation::get_service_profile::GetServiceProfileOutput::lo_ra_wan): <p>Information about the service profile.</p>
     /// - On failure, responds with [`SdkError<GetServiceProfileError>`](crate::operation::get_service_profile::GetServiceProfileError)
-    pub fn get_service_profile(
-        &self,
-    ) -> crate::operation::get_service_profile::builders::GetServiceProfileFluentBuilder {
-        crate::operation::get_service_profile::builders::GetServiceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_service_profile(&self) -> crate::operation::get_service_profile::builders::GetServiceProfileFluentBuilder {
+        crate::operation::get_service_profile::builders::GetServiceProfileFluentBuilder::new(self.handle.clone())
     }
 }

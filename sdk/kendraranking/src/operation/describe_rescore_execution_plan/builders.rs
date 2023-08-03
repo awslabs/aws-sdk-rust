@@ -26,7 +26,7 @@ impl DescribeRescoreExecutionPlanInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRescoreExecutionPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanInputBuilder,
+    inner: crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanInputBuilder,
 }
 impl DescribeRescoreExecutionPlanFluentBuilder {
     /// Creates a new `DescribeRescoreExecutionPlan`.
@@ -37,7 +37,7 @@ impl DescribeRescoreExecutionPlanFluentBuilder {
         }
     }
     /// Access the DescribeRescoreExecutionPlan as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeRescoreExecutionPlanFluentBuilder {
             crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeRescoreExecutionPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeRescoreExecutionPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeRescoreExecutionPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeRescoreExecutionPlanFluentBuilder {
             crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanError>,
     > {
         self.customize_middleware().await
     }

@@ -10,10 +10,7 @@ impl CreateUserSettingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_user_settings::CreateUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_settings::CreateUserSettingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_settings::CreateUserSettingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_user_settings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateUserSettingsFluentBuilder {
         }
     }
     /// Access the CreateUserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_user_settings::builders::CreateUserSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_user_settings::builders::CreateUserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateUserSettingsFluentBuilder {
             crate::operation::create_user_settings::CreateUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_settings::CreateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_settings::CreateUserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateUserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_settings::CreateUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_settings::CreateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_settings::CreateUserSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_settings::CreateUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_settings::CreateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_settings::CreateUserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateUserSettingsFluentBuilder {
             crate::operation::create_user_settings::CreateUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_settings::CreateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_settings::CreateUserSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl CreateUserSettingsFluentBuilder {
         self
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
-    pub fn set_copy_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_copy_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.inner = self.inner.set_copy_allowed(input);
         self
     }
@@ -145,10 +126,7 @@ impl CreateUserSettingsFluentBuilder {
         self
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
-    pub fn set_paste_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_paste_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.inner = self.inner.set_paste_allowed(input);
         self
     }
@@ -162,10 +140,7 @@ impl CreateUserSettingsFluentBuilder {
         self
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
-    pub fn set_download_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_download_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.inner = self.inner.set_download_allowed(input);
         self
     }
@@ -179,10 +154,7 @@ impl CreateUserSettingsFluentBuilder {
         self
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
-    pub fn set_upload_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_upload_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.inner = self.inner.set_upload_allowed(input);
         self
     }
@@ -196,10 +168,7 @@ impl CreateUserSettingsFluentBuilder {
         self
     }
     /// <p>Specifies whether the user can print to the local device.</p>
-    pub fn set_print_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_print_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.inner = self.inner.set_print_allowed(input);
         self
     }
@@ -217,10 +186,7 @@ impl CreateUserSettingsFluentBuilder {
         self
     }
     /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -248,10 +214,7 @@ impl CreateUserSettingsFluentBuilder {
         self
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
-    pub fn set_idle_disconnect_timeout_in_minutes(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_idle_disconnect_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_disconnect_timeout_in_minutes(input);
         self
     }

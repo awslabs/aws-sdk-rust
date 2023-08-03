@@ -31,9 +31,7 @@ impl CancelTimerDecisionAttributes {
 
 /// A builder for [`CancelTimerDecisionAttributes`](crate::types::CancelTimerDecisionAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelTimerDecisionAttributesBuilder {
     pub(crate) timer_id: ::std::option::Option<::std::string::String>,
 }
@@ -54,8 +52,6 @@ impl CancelTimerDecisionAttributesBuilder {
     }
     /// Consumes the builder and constructs a [`CancelTimerDecisionAttributes`](crate::types::CancelTimerDecisionAttributes).
     pub fn build(self) -> crate::types::CancelTimerDecisionAttributes {
-        crate::types::CancelTimerDecisionAttributes {
-            timer_id: self.timer_id,
-        }
+        crate::types::CancelTimerDecisionAttributes { timer_id: self.timer_id }
     }
 }

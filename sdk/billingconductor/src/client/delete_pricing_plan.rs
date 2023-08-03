@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePricingPlanOutput`](crate::operation::delete_pricing_plan::DeletePricingPlanOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_pricing_plan::DeletePricingPlanOutput::arn): <p> The Amazon Resource Name (ARN) of the deleted pricing plan. </p>
     /// - On failure, responds with [`SdkError<DeletePricingPlanError>`](crate::operation::delete_pricing_plan::DeletePricingPlanError)
-    pub fn delete_pricing_plan(
-        &self,
-    ) -> crate::operation::delete_pricing_plan::builders::DeletePricingPlanFluentBuilder {
-        crate::operation::delete_pricing_plan::builders::DeletePricingPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_pricing_plan(&self) -> crate::operation::delete_pricing_plan::builders::DeletePricingPlanFluentBuilder {
+        crate::operation::delete_pricing_plan::builders::DeletePricingPlanFluentBuilder::new(self.handle.clone())
     }
 }

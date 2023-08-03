@@ -22,17 +22,14 @@ impl ModifyLunaClientInput {
 }
 impl ModifyLunaClientInput {
     /// Creates a new builder-style object to manufacture [`ModifyLunaClientInput`](crate::operation::modify_luna_client::ModifyLunaClientInput).
-    pub fn builder() -> crate::operation::modify_luna_client::builders::ModifyLunaClientInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_luna_client::builders::ModifyLunaClientInputBuilder {
         crate::operation::modify_luna_client::builders::ModifyLunaClientInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyLunaClientInput`](crate::operation::modify_luna_client::ModifyLunaClientInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyLunaClientInputBuilder {
     pub(crate) client_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl ModifyLunaClientInputBuilder {
     /// Consumes the builder and constructs a [`ModifyLunaClientInput`](crate::operation::modify_luna_client::ModifyLunaClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_luna_client::ModifyLunaClientInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_luna_client::ModifyLunaClientInput {
-                client_arn: self.client_arn,
-                certificate: self.certificate,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_luna_client::ModifyLunaClientInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::modify_luna_client::ModifyLunaClientInput {
+            client_arn: self.client_arn,
+            certificate: self.certificate,
+        })
     }
 }

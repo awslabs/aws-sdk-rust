@@ -42,13 +42,7 @@
 /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Ac3DynamicRangeCompressionLine {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for Ac3DynamicRangeCompressionLine {
             "MUSIC_STANDARD" => Ac3DynamicRangeCompressionLine::MusicStandard,
             "NONE" => Ac3DynamicRangeCompressionLine::None,
             "SPEECH" => Ac3DynamicRangeCompressionLine::Speech,
-            other => Ac3DynamicRangeCompressionLine::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => Ac3DynamicRangeCompressionLine::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl Ac3DynamicRangeCompressionLine {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FILM_LIGHT",
-            "FILM_STANDARD",
-            "MUSIC_LIGHT",
-            "MUSIC_STANDARD",
-            "NONE",
-            "SPEECH",
-        ]
+        &["FILM_LIGHT", "FILM_STANDARD", "MUSIC_LIGHT", "MUSIC_STANDARD", "NONE", "SPEECH"]
     }
 }
 impl ::std::convert::AsRef<str> for Ac3DynamicRangeCompressionLine {

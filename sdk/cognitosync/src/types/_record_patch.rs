@@ -38,9 +38,7 @@ impl RecordPatch {
         self.sync_count
     }
     /// The last modified date of the client device.
-    pub fn device_last_modified_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn device_last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
 }
@@ -53,9 +51,7 @@ impl RecordPatch {
 
 /// A builder for [`RecordPatch`](crate::types::RecordPatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordPatchBuilder {
     pub(crate) op: ::std::option::Option<crate::types::Operation>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -126,17 +122,12 @@ impl RecordPatchBuilder {
         self
     }
     /// The last modified date of the client device.
-    pub fn set_device_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_device_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.device_last_modified_date = input;
         self
     }
     /// The last modified date of the client device.
-    pub fn get_device_last_modified_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_device_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.device_last_modified_date
     }
     /// Consumes the builder and constructs a [`RecordPatch`](crate::types::RecordPatch).

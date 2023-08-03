@@ -26,7 +26,7 @@ impl DeleteAccountPasswordPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccountPasswordPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyInputBuilder,
+    inner: crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyInputBuilder,
 }
 impl DeleteAccountPasswordPolicyFluentBuilder {
     /// Creates a new `DeleteAccountPasswordPolicy`.
@@ -37,7 +37,7 @@ impl DeleteAccountPasswordPolicyFluentBuilder {
         }
     }
     /// Access the DeleteAccountPasswordPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteAccountPasswordPolicyFluentBuilder {
             crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteAccountPasswordPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteAccountPasswordPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteAccountPasswordPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteAccountPasswordPolicyFluentBuilder {
             crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError>,
     > {
         self.customize_middleware().await
     }

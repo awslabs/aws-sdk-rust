@@ -10,10 +10,7 @@ impl CreateDatasetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_dataset::CreateDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset::CreateDatasetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_dataset();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl CreateDatasetFluentBuilder {
         }
     }
     /// Access the CreateDataset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,10 +62,7 @@ impl CreateDatasetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -126,10 +118,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
-    pub fn set_dataset_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetSource>,
-    ) -> Self {
+    pub fn set_dataset_source(mut self, input: ::std::option::Option<crate::types::DatasetSource>) -> Self {
         self.inner = self.inner.set_dataset_source(input);
         self
     }
@@ -143,10 +132,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
-    pub fn set_dataset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetType>,
-    ) -> Self {
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.inner = self.inner.set_dataset_type(input);
         self
     }

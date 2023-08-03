@@ -37,9 +37,7 @@ impl ExportTaskSummary {
 
 /// A builder for [`ExportTaskSummary`](crate::types::ExportTaskSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportTaskSummaryBuilder {
     pub(crate) servers_count: ::std::option::Option<i64>,
     pub(crate) applications_count: ::std::option::Option<i64>,

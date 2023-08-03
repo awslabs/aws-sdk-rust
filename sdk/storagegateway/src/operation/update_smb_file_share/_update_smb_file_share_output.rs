@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for UpdateSmbFileShareOutput {
 }
 impl UpdateSmbFileShareOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareOutput`](crate::operation::update_smb_file_share::UpdateSmbFileShareOutput).
-    pub fn builder(
-    ) -> crate::operation::update_smb_file_share::builders::UpdateSmbFileShareOutputBuilder {
-        crate::operation::update_smb_file_share::builders::UpdateSmbFileShareOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_smb_file_share::builders::UpdateSmbFileShareOutputBuilder {
+        crate::operation::update_smb_file_share::builders::UpdateSmbFileShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSmbFileShareOutput`](crate::operation::update_smb_file_share::UpdateSmbFileShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSmbFileShareOutputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateSmbFileShareOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
-    pub fn file_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
-    pub fn set_file_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_arn = input;
         self
     }

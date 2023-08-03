@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExecutionRoleIdentityConfig {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ExecutionRoleIdentityConfig {
         match s {
             "DISABLED" => ExecutionRoleIdentityConfig::Disabled,
             "USER_PROFILE_NAME" => ExecutionRoleIdentityConfig::UserProfileName,
-            other => ExecutionRoleIdentityConfig::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExecutionRoleIdentityConfig::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

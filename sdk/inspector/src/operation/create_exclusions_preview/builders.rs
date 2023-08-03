@@ -26,8 +26,7 @@ impl CreateExclusionsPreviewInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExclusionsPreviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewInputBuilder,
+    inner: crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewInputBuilder,
 }
 impl CreateExclusionsPreviewFluentBuilder {
     /// Creates a new `CreateExclusionsPreview`.
@@ -38,10 +37,7 @@ impl CreateExclusionsPreviewFluentBuilder {
         }
     }
     /// Access the CreateExclusionsPreview as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateExclusionsPreviewFluentBuilder {
             crate::operation::create_exclusions_preview::CreateExclusionsPreview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_exclusions_preview::CreateExclusionsPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_exclusions_preview::CreateExclusionsPreviewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateExclusionsPreviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateExclusionsPreviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_exclusions_preview::CreateExclusionsPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_exclusions_preview::CreateExclusionsPreviewError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateExclusionsPreviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_exclusions_preview::CreateExclusionsPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_exclusions_preview::CreateExclusionsPreviewError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl CreateExclusionsPreviewFluentBuilder {
             crate::operation::create_exclusions_preview::CreateExclusionsPreview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_exclusions_preview::CreateExclusionsPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_exclusions_preview::CreateExclusionsPreviewError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
-    pub fn assessment_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_template_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
-    pub fn set_assessment_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_template_arn(input);
         self
     }

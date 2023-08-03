@@ -7,27 +7,19 @@ pub fn ser_export_key_material(
         crate::types::ExportKeyMaterial::Tr31KeyBlock(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_2.key("Tr31KeyBlock").start_object();
-            crate::protocol_serde::shape_export_tr31_key_block::ser_export_tr31_key_block(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_export_tr31_key_block::ser_export_tr31_key_block(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::ExportKeyMaterial::Tr34KeyBlock(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_2.key("Tr34KeyBlock").start_object();
-            crate::protocol_serde::shape_export_tr34_key_block::ser_export_tr34_key_block(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_export_tr34_key_block::ser_export_tr34_key_block(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::ExportKeyMaterial::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ExportKeyMaterial",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ExportKeyMaterial",
+            ))
         }
     }
     Ok(())

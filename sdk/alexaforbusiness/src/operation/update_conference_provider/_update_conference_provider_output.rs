@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateConferenceProviderOutput {
 }
 impl UpdateConferenceProviderOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConferenceProviderOutput`](crate::operation::update_conference_provider::UpdateConferenceProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::update_conference_provider::builders::UpdateConferenceProviderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_conference_provider::builders::UpdateConferenceProviderOutputBuilder {
         crate::operation::update_conference_provider::builders::UpdateConferenceProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConferenceProviderOutput`](crate::operation::update_conference_provider::UpdateConferenceProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConferenceProviderOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateConferenceProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateConferenceProviderOutput`](crate::operation::update_conference_provider::UpdateConferenceProviderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_conference_provider::UpdateConferenceProviderOutput {
+    pub fn build(self) -> crate::operation::update_conference_provider::UpdateConferenceProviderOutput {
         crate::operation::update_conference_provider::UpdateConferenceProviderOutput {
             _request_id: self._request_id,
         }

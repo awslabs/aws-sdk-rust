@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelCertificateTransferOutput {
 }
 impl CancelCertificateTransferOutput {
     /// Creates a new builder-style object to manufacture [`CancelCertificateTransferOutput`](crate::operation::cancel_certificate_transfer::CancelCertificateTransferOutput).
-    pub fn builder() -> crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferOutputBuilder {
         crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelCertificateTransferOutput`](crate::operation::cancel_certificate_transfer::CancelCertificateTransferOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelCertificateTransferOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CancelCertificateTransferOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelCertificateTransferOutput`](crate::operation::cancel_certificate_transfer::CancelCertificateTransferOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_certificate_transfer::CancelCertificateTransferOutput {
+    pub fn build(self) -> crate::operation::cancel_certificate_transfer::CancelCertificateTransferOutput {
         crate::operation::cancel_certificate_transfer::CancelCertificateTransferOutput {
             _request_id: self._request_id,
         }

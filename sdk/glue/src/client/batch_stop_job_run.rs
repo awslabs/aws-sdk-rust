@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`successful_submissions(Option<Vec<BatchStopJobRunSuccessfulSubmission>>)`](crate::operation::batch_stop_job_run::BatchStopJobRunOutput::successful_submissions): <p>A list of the JobRuns that were successfully submitted for stopping.</p>
     ///   - [`errors(Option<Vec<BatchStopJobRunError>>)`](crate::operation::batch_stop_job_run::BatchStopJobRunOutput::errors): <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
     /// - On failure, responds with [`SdkError<BatchStopJobRunError>`](crate::operation::batch_stop_job_run::BatchStopJobRunError)
-    pub fn batch_stop_job_run(
-        &self,
-    ) -> crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder {
-        crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_stop_job_run(&self) -> crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder {
+        crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder::new(self.handle.clone())
     }
 }

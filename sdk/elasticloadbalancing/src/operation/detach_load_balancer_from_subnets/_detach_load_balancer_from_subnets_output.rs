@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DetachLoadBalancerFromSubnetsOutput {
 }
 impl DetachLoadBalancerFromSubnetsOutput {
     /// Creates a new builder-style object to manufacture [`DetachLoadBalancerFromSubnetsOutput`](crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsOutput).
-    pub fn builder() -> crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsOutputBuilder{
+    pub fn builder() -> crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsOutputBuilder {
         crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachLoadBalancerFromSubnetsOutput`](crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachLoadBalancerFromSubnetsOutputBuilder {
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -49,10 +47,7 @@ impl DetachLoadBalancerFromSubnetsOutputBuilder {
         self
     }
     /// <p>The IDs of the remaining subnets for the load balancer.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }
@@ -70,10 +65,7 @@ impl DetachLoadBalancerFromSubnetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DetachLoadBalancerFromSubnetsOutput`](crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsOutput
-    {
+    pub fn build(self) -> crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsOutput {
         crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsOutput {
             subnets: self.subnets,
             _request_id: self._request_id,

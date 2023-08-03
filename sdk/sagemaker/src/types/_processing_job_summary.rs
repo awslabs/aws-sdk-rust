@@ -51,9 +51,7 @@ impl ProcessingJobSummary {
         self.last_modified_time.as_ref()
     }
     /// <p>The status of the processing job.</p>
-    pub fn processing_job_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProcessingJobStatus> {
+    pub fn processing_job_status(&self) -> ::std::option::Option<&crate::types::ProcessingJobStatus> {
         self.processing_job_status.as_ref()
     }
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
@@ -74,9 +72,7 @@ impl ProcessingJobSummary {
 
 /// A builder for [`ProcessingJobSummary`](crate::types::ProcessingJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessingJobSummaryBuilder {
     pub(crate) processing_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) processing_job_arn: ::std::option::Option<::std::string::String>,
@@ -89,18 +85,12 @@ pub struct ProcessingJobSummaryBuilder {
 }
 impl ProcessingJobSummaryBuilder {
     /// <p>The name of the processing job.</p>
-    pub fn processing_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the processing job.</p>
-    pub fn set_processing_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_processing_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.processing_job_name = input;
         self
     }
@@ -109,18 +99,12 @@ impl ProcessingJobSummaryBuilder {
         &self.processing_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job..</p>
-    pub fn processing_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn processing_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job..</p>
-    pub fn set_processing_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_processing_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.processing_job_arn = input;
         self
     }
@@ -134,10 +118,7 @@ impl ProcessingJobSummaryBuilder {
         self
     }
     /// <p>The time at which the processing job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -151,10 +132,7 @@ impl ProcessingJobSummaryBuilder {
         self
     }
     /// <p>The time at which the processing job completed.</p>
-    pub fn set_processing_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_processing_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.processing_end_time = input;
         self
     }
@@ -168,10 +146,7 @@ impl ProcessingJobSummaryBuilder {
         self
     }
     /// <p>A timestamp that indicates the last time the processing job was modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -185,32 +160,21 @@ impl ProcessingJobSummaryBuilder {
         self
     }
     /// <p>The status of the processing job.</p>
-    pub fn set_processing_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingJobStatus>,
-    ) -> Self {
+    pub fn set_processing_job_status(mut self, input: ::std::option::Option<crate::types::ProcessingJobStatus>) -> Self {
         self.processing_job_status = input;
         self
     }
     /// <p>The status of the processing job.</p>
-    pub fn get_processing_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingJobStatus> {
+    pub fn get_processing_job_status(&self) -> &::std::option::Option<crate::types::ProcessingJobStatus> {
         &self.processing_job_status
     }
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

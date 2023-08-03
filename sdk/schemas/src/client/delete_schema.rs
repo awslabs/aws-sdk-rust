@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`schema_name(impl ::std::convert::Into<String>)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::schema_name) / [`set_schema_name(Option<String>)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::set_schema_name): <p>The name of the schema.</p>
     /// - On success, responds with [`DeleteSchemaOutput`](crate::operation::delete_schema::DeleteSchemaOutput)
     /// - On failure, responds with [`SdkError<DeleteSchemaError>`](crate::operation::delete_schema::DeleteSchemaError)
-    pub fn delete_schema(
-        &self,
-    ) -> crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder {
-        crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_schema(&self) -> crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder {
+        crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl GetFaceLivenessSessionResultsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFaceLivenessSessionResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsInputBuilder,
+    inner: crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsInputBuilder,
 }
 impl GetFaceLivenessSessionResultsFluentBuilder {
     /// Creates a new `GetFaceLivenessSessionResults`.
@@ -37,7 +37,7 @@ impl GetFaceLivenessSessionResultsFluentBuilder {
         }
     }
     /// Access the GetFaceLivenessSessionResults as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetFaceLivenessSessionResultsFluentBuilder {
             crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetFaceLivenessSessionResultsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetFaceLivenessSessionResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetFaceLivenessSessionResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetFaceLivenessSessionResultsFluentBuilder {
             crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError>,
     > {
         self.customize_middleware().await
     }

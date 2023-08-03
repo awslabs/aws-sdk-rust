@@ -17,9 +17,7 @@ impl TableFieldLinkConfiguration {
         self.target.as_ref()
     }
     /// <p>The URL content (text, icon) for the table link configuration.</p>
-    pub fn content(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TableFieldLinkContentConfiguration> {
+    pub fn content(&self) -> ::std::option::Option<&crate::types::TableFieldLinkContentConfiguration> {
         self.content.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl TableFieldLinkConfiguration {
 
 /// A builder for [`TableFieldLinkConfiguration`](crate::types::TableFieldLinkConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableFieldLinkConfigurationBuilder {
     pub(crate) target: ::std::option::Option<crate::types::UrlTargetConfiguration>,
     pub(crate) content: ::std::option::Option<crate::types::TableFieldLinkContentConfiguration>,
@@ -46,10 +42,7 @@ impl TableFieldLinkConfigurationBuilder {
         self
     }
     /// <p>The URL target (new tab, new window, same tab) for the table link configuration.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::UrlTargetConfiguration>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::UrlTargetConfiguration>) -> Self {
         self.target = input;
         self
     }
@@ -63,17 +56,12 @@ impl TableFieldLinkConfigurationBuilder {
         self
     }
     /// <p>The URL content (text, icon) for the table link configuration.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::TableFieldLinkContentConfiguration>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::TableFieldLinkContentConfiguration>) -> Self {
         self.content = input;
         self
     }
     /// <p>The URL content (text, icon) for the table link configuration.</p>
-    pub fn get_content(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableFieldLinkContentConfiguration> {
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::TableFieldLinkContentConfiguration> {
         &self.content
     }
     /// Consumes the builder and constructs a [`TableFieldLinkConfiguration`](crate::types::TableFieldLinkConfiguration).

@@ -5,8 +5,7 @@
 pub struct DescribeVerifiedAccessEndpointsOutput {
     /// <p>The ID of the Verified Access endpoint.</p>
     #[doc(hidden)]
-    pub verified_access_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>>,
+    pub verified_access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeVerifiedAccessEndpointsOutput {
 }
 impl DescribeVerifiedAccessEndpointsOutput {
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VerifiedAccessEndpoint]> {
+    pub fn verified_access_endpoints(&self) -> ::std::option::Option<&[crate::types::VerifiedAccessEndpoint]> {
         self.verified_access_endpoints.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeVerifiedAccessEndpointsOutput
 }
 impl DescribeVerifiedAccessEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessEndpointsOutput`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput).
-    pub fn builder() -> crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsOutputBuilder {
         crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVerifiedAccessEndpointsOutput`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessEndpointsOutputBuilder {
-    pub(crate) verified_access_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>>,
+    pub(crate) verified_access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeVerifiedAccessEndpointsOutputBuilder {
     /// To override the contents of this collection use [`set_verified_access_endpoints`](Self::set_verified_access_endpoints).
     ///
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoints(
-        mut self,
-        input: crate::types::VerifiedAccessEndpoint,
-    ) -> Self {
+    pub fn verified_access_endpoints(mut self, input: crate::types::VerifiedAccessEndpoint) -> Self {
         let mut v = self.verified_access_endpoints.unwrap_or_default();
         v.push(input);
         self.verified_access_endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn set_verified_access_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>>,
-    ) -> Self {
+    pub fn set_verified_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>>) -> Self {
         self.verified_access_endpoints = input;
         self
     }
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn get_verified_access_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>> {
+    pub fn get_verified_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>> {
         &self.verified_access_endpoints
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,15 +86,10 @@ impl DescribeVerifiedAccessEndpointsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVerifiedAccessEndpointsOutput`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput {
         crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput {
-            verified_access_endpoints: self.verified_access_endpoints
-            ,
-            next_token: self.next_token
-            ,
+            verified_access_endpoints: self.verified_access_endpoints,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

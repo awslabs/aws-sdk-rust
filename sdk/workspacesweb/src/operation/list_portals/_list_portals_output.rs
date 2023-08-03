@@ -35,9 +35,7 @@ impl ListPortalsOutput {
 
 /// A builder for [`ListPortalsOutput`](crate::operation::list_portals::ListPortalsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPortalsOutputBuilder {
     pub(crate) portals: ::std::option::Option<::std::vec::Vec<crate::types::PortalSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListPortalsOutputBuilder {
         self
     }
     /// <p>The portals in the list.</p>
-    pub fn set_portals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortalSummary>>,
-    ) -> Self {
+    pub fn set_portals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortalSummary>>) -> Self {
         self.portals = input;
         self
     }
     /// <p>The portals in the list.</p>
-    pub fn get_portals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortalSummary>> {
+    pub fn get_portals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortalSummary>> {
         &self.portals
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>

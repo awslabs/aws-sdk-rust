@@ -40,9 +40,7 @@ pub struct GetSolFunctionInstanceOutput {
     pub metadata: ::std::option::Option<crate::types::GetSolFunctionInstanceMetadata>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolFunctionInstanceOutput {
@@ -79,9 +77,7 @@ impl GetSolFunctionInstanceOutput {
         self.vnfd_version.as_deref()
     }
     /// <p>Network function instantiation state.</p>
-    pub fn instantiation_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VnfInstantiationState> {
+    pub fn instantiation_state(&self) -> ::std::option::Option<&crate::types::VnfInstantiationState> {
         self.instantiation_state.as_ref()
     }
     /// <p>Information about the network function.</p>
@@ -95,11 +91,7 @@ impl GetSolFunctionInstanceOutput {
         self.metadata.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -129,9 +121,7 @@ impl ::aws_http::request_id::RequestId for GetSolFunctionInstanceOutput {
 }
 impl GetSolFunctionInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionInstanceOutput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder {
         crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::default()
     }
 }
@@ -151,9 +141,7 @@ pub struct GetSolFunctionInstanceOutputBuilder {
     pub(crate) instantiation_state: ::std::option::Option<crate::types::VnfInstantiationState>,
     pub(crate) instantiated_vnf_info: ::std::option::Option<crate::types::GetSolVnfInfo>,
     pub(crate) metadata: ::std::option::Option<crate::types::GetSolFunctionInstanceMetadata>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolFunctionInstanceOutputBuilder {
@@ -186,18 +174,12 @@ impl GetSolFunctionInstanceOutputBuilder {
         &self.arn
     }
     /// <p>Network instance ID.</p>
-    pub fn ns_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Network instance ID.</p>
-    pub fn set_ns_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ns_instance_id = input;
         self
     }
@@ -248,18 +230,12 @@ impl GetSolFunctionInstanceOutputBuilder {
         &self.vnf_provider
     }
     /// <p>Network function product name.</p>
-    pub fn vnf_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vnf_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Network function product name.</p>
-    pub fn set_vnf_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vnf_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_product_name = input;
         self
     }
@@ -287,17 +263,12 @@ impl GetSolFunctionInstanceOutputBuilder {
         self
     }
     /// <p>Network function instantiation state.</p>
-    pub fn set_instantiation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VnfInstantiationState>,
-    ) -> Self {
+    pub fn set_instantiation_state(mut self, input: ::std::option::Option<crate::types::VnfInstantiationState>) -> Self {
         self.instantiation_state = input;
         self
     }
     /// <p>Network function instantiation state.</p>
-    pub fn get_instantiation_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VnfInstantiationState> {
+    pub fn get_instantiation_state(&self) -> &::std::option::Option<crate::types::VnfInstantiationState> {
         &self.instantiation_state
     }
     /// <p>Information about the network function.</p>
@@ -308,10 +279,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>Information about the network function.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    pub fn set_instantiated_vnf_info(
-        mut self,
-        input: ::std::option::Option<crate::types::GetSolVnfInfo>,
-    ) -> Self {
+    pub fn set_instantiated_vnf_info(mut self, input: ::std::option::Option<crate::types::GetSolVnfInfo>) -> Self {
         self.instantiated_vnf_info = input;
         self
     }
@@ -328,18 +296,13 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>The metadata of a network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::GetSolFunctionInstanceMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::GetSolFunctionInstanceMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The metadata of a network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::GetSolFunctionInstanceMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::GetSolFunctionInstanceMetadata> {
         &self.metadata
     }
     /// Adds a key-value pair to `tags`.
@@ -347,32 +310,19 @@ impl GetSolFunctionInstanceOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -385,9 +335,7 @@ impl GetSolFunctionInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSolFunctionInstanceOutput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput {
+    pub fn build(self) -> crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput {
         crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput {
             id: self.id,
             arn: self.arn,

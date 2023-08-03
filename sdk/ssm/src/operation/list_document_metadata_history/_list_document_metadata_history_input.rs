@@ -43,16 +43,14 @@ impl ListDocumentMetadataHistoryInput {
 }
 impl ListDocumentMetadataHistoryInput {
     /// Creates a new builder-style object to manufacture [`ListDocumentMetadataHistoryInput`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput).
-    pub fn builder() -> crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder{
+    pub fn builder() -> crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder {
         crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDocumentMetadataHistoryInput`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDocumentMetadataHistoryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl ListDocumentMetadataHistoryInputBuilder {
         &self.name
     }
     /// <p>The version of the change template.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the change template.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -101,10 +93,7 @@ impl ListDocumentMetadataHistoryInputBuilder {
         self
     }
     /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadataEnum>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadataEnum>) -> Self {
         self.metadata = input;
         self
     }
@@ -147,14 +136,12 @@ impl ListDocumentMetadataHistoryInputBuilder {
         crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput {
-                name: self.name,
-                document_version: self.document_version,
-                metadata: self.metadata,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput {
+            name: self.name,
+            document_version: self.document_version,
+            metadata: self.metadata,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

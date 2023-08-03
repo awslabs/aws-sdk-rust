@@ -27,24 +27,17 @@ pub fn ser_update_server_input(
     if let Some(var_8) = &input.identity_provider_details {
         #[allow(unused_mut)]
         let mut object_9 = object.key("IdentityProviderDetails").start_object();
-        crate::protocol_serde::shape_identity_provider_details::ser_identity_provider_details(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_identity_provider_details::ser_identity_provider_details(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.logging_role {
         object.key("LoggingRole").string(var_10.as_str());
     }
     if let Some(var_11) = &input.post_authentication_login_banner {
-        object
-            .key("PostAuthenticationLoginBanner")
-            .string(var_11.as_str());
+        object.key("PostAuthenticationLoginBanner").string(var_11.as_str());
     }
     if let Some(var_12) = &input.pre_authentication_login_banner {
-        object
-            .key("PreAuthenticationLoginBanner")
-            .string(var_12.as_str());
+        object.key("PreAuthenticationLoginBanner").string(var_12.as_str());
     }
     if let Some(var_13) = &input.protocols {
         let mut array_14 = object.key("Protocols").start_array();
@@ -64,10 +57,7 @@ pub fn ser_update_server_input(
     if let Some(var_18) = &input.workflow_details {
         #[allow(unused_mut)]
         let mut object_19 = object.key("WorkflowDetails").start_object();
-        crate::protocol_serde::shape_workflow_details::ser_workflow_details(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_workflow_details::ser_workflow_details(&mut object_19, var_18)?;
         object_19.finish();
     }
     if let Some(var_20) = &input.structured_log_destinations {

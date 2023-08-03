@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`certificates(Option<Vec<Certificate>>)`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput::certificates): <p>Information about the certificates.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     /// - On failure, responds with [`SdkError<DescribeListenerCertificatesError>`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesError)
-    pub fn describe_listener_certificates(&self) -> crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesFluentBuilder{
+    pub fn describe_listener_certificates(
+        &self,
+    ) -> crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesFluentBuilder {
         crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

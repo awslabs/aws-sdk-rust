@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCorsPolicyOutput {
 }
 impl DeleteCorsPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCorsPolicyOutput`](crate::operation::delete_cors_policy::DeleteCorsPolicyOutput).
-    pub fn builder() -> crate::operation::delete_cors_policy::builders::DeleteCorsPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_cors_policy::builders::DeleteCorsPolicyOutputBuilder {
         crate::operation::delete_cors_policy::builders::DeleteCorsPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCorsPolicyOutput`](crate::operation::delete_cors_policy::DeleteCorsPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCorsPolicyOutputBuilder {
     _request_id: Option<String>,
 }

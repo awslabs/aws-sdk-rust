@@ -28,9 +28,7 @@ impl CreateOutpostOutput {
 
 /// A builder for [`CreateOutpostOutput`](crate::operation::create_outpost::CreateOutpostOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOutpostOutputBuilder {
     pub(crate) outpost: ::std::option::Option<crate::types::Outpost>,
     _request_id: Option<String>,

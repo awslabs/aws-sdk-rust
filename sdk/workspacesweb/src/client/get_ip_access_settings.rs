@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetIpAccessSettingsOutput`](crate::operation::get_ip_access_settings::GetIpAccessSettingsOutput) with field(s):
     ///   - [`ip_access_settings(Option<IpAccessSettings>)`](crate::operation::get_ip_access_settings::GetIpAccessSettingsOutput::ip_access_settings): <p>The IP access settings.</p>
     /// - On failure, responds with [`SdkError<GetIpAccessSettingsError>`](crate::operation::get_ip_access_settings::GetIpAccessSettingsError)
-    pub fn get_ip_access_settings(
-        &self,
-    ) -> crate::operation::get_ip_access_settings::builders::GetIpAccessSettingsFluentBuilder {
-        crate::operation::get_ip_access_settings::builders::GetIpAccessSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ip_access_settings(&self) -> crate::operation::get_ip_access_settings::builders::GetIpAccessSettingsFluentBuilder {
+        crate::operation::get_ip_access_settings::builders::GetIpAccessSettingsFluentBuilder::new(self.handle.clone())
     }
 }

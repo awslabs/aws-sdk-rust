@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`configuration(Option<Blob>)`](crate::operation::get_latest_configuration::GetLatestConfigurationOutput::configuration): <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
     ///   - [`version_label(Option<String>)`](crate::operation::get_latest_configuration::GetLatestConfigurationOutput::version_label): <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
     /// - On failure, responds with [`SdkError<GetLatestConfigurationError>`](crate::operation::get_latest_configuration::GetLatestConfigurationError)
-    pub fn get_latest_configuration(
-        &self,
-    ) -> crate::operation::get_latest_configuration::builders::GetLatestConfigurationFluentBuilder
-    {
+    pub fn get_latest_configuration(&self) -> crate::operation::get_latest_configuration::builders::GetLatestConfigurationFluentBuilder {
         crate::operation::get_latest_configuration::builders::GetLatestConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::get_schedule_group::GetScheduleGroupOutput::creation_date): <p>The time at which the schedule group was created.</p>
     ///   - [`last_modification_date(Option<DateTime>)`](crate::operation::get_schedule_group::GetScheduleGroupOutput::last_modification_date): <p>The time at which the schedule group was last modified.</p>
     /// - On failure, responds with [`SdkError<GetScheduleGroupError>`](crate::operation::get_schedule_group::GetScheduleGroupError)
-    pub fn get_schedule_group(
-        &self,
-    ) -> crate::operation::get_schedule_group::builders::GetScheduleGroupFluentBuilder {
-        crate::operation::get_schedule_group::builders::GetScheduleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_schedule_group(&self) -> crate::operation::get_schedule_group::builders::GetScheduleGroupFluentBuilder {
+        crate::operation::get_schedule_group::builders::GetScheduleGroupFluentBuilder::new(self.handle.clone())
     }
 }

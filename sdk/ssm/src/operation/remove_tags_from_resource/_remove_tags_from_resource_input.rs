@@ -49,18 +49,14 @@ impl RemoveTagsFromResourceInput {
 }
 impl RemoveTagsFromResourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceTypeForTagging>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -77,19 +73,14 @@ impl RemoveTagsFromResourceInputBuilder {
     /// <p>The type of resource from which you want to remove a tag.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTypeForTagging>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeForTagging>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The type of resource from which you want to remove a tag.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
         &self.resource_type
     }
     /// <p>The ID of the resource from which you want to remove tags. For example:</p>
@@ -142,10 +133,7 @@ impl RemoveTagsFromResourceInputBuilder {
         self
     }
     /// <p>Tag keys that you want to remove from the specified resource.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -160,12 +148,10 @@ impl RemoveTagsFromResourceInputBuilder {
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
-                resource_type: self.resource_type,
-                resource_id: self.resource_id,
-                tag_keys: self.tag_keys,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
+            resource_type: self.resource_type,
+            resource_id: self.resource_id,
+            tag_keys: self.tag_keys,
+        })
     }
 }

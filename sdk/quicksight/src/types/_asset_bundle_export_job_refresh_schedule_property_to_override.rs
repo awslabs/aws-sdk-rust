@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AssetBundleExportJobRefreshSchedulePropertyToOverride {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,12 +48,8 @@ pub enum AssetBundleExportJobRefreshSchedulePropertyToOverride {
 impl ::std::convert::From<&str> for AssetBundleExportJobRefreshSchedulePropertyToOverride {
     fn from(s: &str) -> Self {
         match s {
-            "StartAfterDateTime" => {
-                AssetBundleExportJobRefreshSchedulePropertyToOverride::StartAfterDateTime
-            }
-            other => AssetBundleExportJobRefreshSchedulePropertyToOverride::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "StartAfterDateTime" => AssetBundleExportJobRefreshSchedulePropertyToOverride::StartAfterDateTime,
+            other => AssetBundleExportJobRefreshSchedulePropertyToOverride::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -67,18 +57,14 @@ impl ::std::str::FromStr for AssetBundleExportJobRefreshSchedulePropertyToOverri
     type Err = ::std::convert::Infallible;
 
     fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AssetBundleExportJobRefreshSchedulePropertyToOverride::from(
-            s,
-        ))
+        ::std::result::Result::Ok(AssetBundleExportJobRefreshSchedulePropertyToOverride::from(s))
     }
 }
 impl AssetBundleExportJobRefreshSchedulePropertyToOverride {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            AssetBundleExportJobRefreshSchedulePropertyToOverride::StartAfterDateTime => {
-                "StartAfterDateTime"
-            }
+            AssetBundleExportJobRefreshSchedulePropertyToOverride::StartAfterDateTime => "StartAfterDateTime",
             AssetBundleExportJobRefreshSchedulePropertyToOverride::Unknown(value) => value.as_str(),
         }
     }

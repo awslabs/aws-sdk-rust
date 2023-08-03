@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for GetInlinePolicyForPermissionSetOutput
 }
 impl GetInlinePolicyForPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`GetInlinePolicyForPermissionSetOutput`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetOutput).
-    pub fn builder() -> crate::operation::get_inline_policy_for_permission_set::builders::GetInlinePolicyForPermissionSetOutputBuilder{
+    pub fn builder() -> crate::operation::get_inline_policy_for_permission_set::builders::GetInlinePolicyForPermissionSetOutputBuilder {
         crate::operation::get_inline_policy_for_permission_set::builders::GetInlinePolicyForPermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInlinePolicyForPermissionSetOutput`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInlinePolicyForPermissionSetOutputBuilder {
     pub(crate) inline_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetInlinePolicyForPermissionSetOutputBuilder {
     /// <p>The inline policy that is attached to the permission set.</p>
-    pub fn inline_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inline_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inline_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inline policy that is attached to the permission set.</p>
-    pub fn set_inline_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inline_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inline_policy = input;
         self
     }
@@ -66,13 +58,9 @@ impl GetInlinePolicyForPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetInlinePolicyForPermissionSetOutput`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetOutput
-    {
+    pub fn build(self) -> crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetOutput {
         crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetOutput {
-            inline_policy: self.inline_policy
-            ,
+            inline_policy: self.inline_policy,
             _request_id: self._request_id,
         }
     }

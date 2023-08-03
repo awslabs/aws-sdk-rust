@@ -27,10 +27,7 @@ pub fn ser_update_fuota_task_input(
     if let Some(var_6) = &input.lo_ra_wan {
         #[allow(unused_mut)]
         let mut object_7 = object.key("LoRaWAN").start_object();
-        crate::protocol_serde::shape_lo_ra_wan_fuota_task::ser_lo_ra_wan_fuota_task(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_lo_ra_wan_fuota_task::ser_lo_ra_wan_fuota_task(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.name {

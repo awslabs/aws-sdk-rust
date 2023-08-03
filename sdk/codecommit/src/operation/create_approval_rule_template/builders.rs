@@ -26,7 +26,7 @@ impl CreateApprovalRuleTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApprovalRuleTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateInputBuilder,
+    inner: crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateInputBuilder,
 }
 impl CreateApprovalRuleTemplateFluentBuilder {
     /// Creates a new `CreateApprovalRuleTemplate`.
@@ -37,7 +37,7 @@ impl CreateApprovalRuleTemplateFluentBuilder {
         }
     }
     /// Access the CreateApprovalRuleTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateApprovalRuleTemplateFluentBuilder {
             crate::operation::create_approval_rule_template::CreateApprovalRuleTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateApprovalRuleTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateApprovalRuleTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateApprovalRuleTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateApprovalRuleTemplateFluentBuilder {
             crate::operation::create_approval_rule_template::CreateApprovalRuleTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_template_name(input.into());
         self
     }
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
     }
@@ -152,10 +135,7 @@ impl CreateApprovalRuleTemplateFluentBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn approval_rule_template_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_template_content(input.into());
         self
     }
@@ -171,10 +151,7 @@ impl CreateApprovalRuleTemplateFluentBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn set_approval_rule_template_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_template_content(input);
         self
     }
@@ -190,31 +167,21 @@ impl CreateApprovalRuleTemplateFluentBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn get_approval_rule_template_content(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_approval_rule_template_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_approval_rule_template_content()
     }
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
-    pub fn approval_rule_template_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_template_description(input.into());
         self
     }
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
-    pub fn set_approval_rule_template_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_template_description(input);
         self
     }
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
-    pub fn get_approval_rule_template_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_approval_rule_template_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_approval_rule_template_description()
     }
 }

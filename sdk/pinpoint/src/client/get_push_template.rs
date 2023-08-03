@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetPushTemplateOutput`](crate::operation::get_push_template::GetPushTemplateOutput) with field(s):
     ///   - [`push_notification_template_response(Option<PushNotificationTemplateResponse>)`](crate::operation::get_push_template::GetPushTemplateOutput::push_notification_template_response): <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     /// - On failure, responds with [`SdkError<GetPushTemplateError>`](crate::operation::get_push_template::GetPushTemplateError)
-    pub fn get_push_template(
-        &self,
-    ) -> crate::operation::get_push_template::builders::GetPushTemplateFluentBuilder {
-        crate::operation::get_push_template::builders::GetPushTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_push_template(&self) -> crate::operation::get_push_template::builders::GetPushTemplateFluentBuilder {
+        crate::operation::get_push_template::builders::GetPushTemplateFluentBuilder::new(self.handle.clone())
     }
 }

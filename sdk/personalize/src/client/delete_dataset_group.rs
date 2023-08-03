@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`dataset_group_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder::set_dataset_group_arn): <p>The ARN of the dataset group to delete.</p>
     /// - On success, responds with [`DeleteDatasetGroupOutput`](crate::operation::delete_dataset_group::DeleteDatasetGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteDatasetGroupError>`](crate::operation::delete_dataset_group::DeleteDatasetGroupError)
-    pub fn delete_dataset_group(
-        &self,
-    ) -> crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder {
-        crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_dataset_group(&self) -> crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder {
+        crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder::new(self.handle.clone())
     }
 }

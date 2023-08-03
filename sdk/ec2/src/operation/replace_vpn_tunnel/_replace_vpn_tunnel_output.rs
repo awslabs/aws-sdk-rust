@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ReplaceVpnTunnelOutput {
 }
 impl ReplaceVpnTunnelOutput {
     /// Creates a new builder-style object to manufacture [`ReplaceVpnTunnelOutput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput).
-    pub fn builder() -> crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelOutputBuilder {
         crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReplaceVpnTunnelOutput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceVpnTunnelOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

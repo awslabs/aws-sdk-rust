@@ -10,10 +10,7 @@ impl RevokeIpRulesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::revoke_ip_rules::RevokeIpRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_ip_rules::RevokeIpRulesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_ip_rules::RevokeIpRulesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.revoke_ip_rules();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RevokeIpRulesFluentBuilder {
         }
     }
     /// Access the RevokeIpRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::revoke_ip_rules::builders::RevokeIpRulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::revoke_ip_rules::builders::RevokeIpRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl RevokeIpRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,10 +130,7 @@ impl RevokeIpRulesFluentBuilder {
         self
     }
     /// <p>The rules to remove from the group.</p>
-    pub fn set_user_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_rules(input);
         self
     }

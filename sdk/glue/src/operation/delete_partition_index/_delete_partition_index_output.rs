@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePartitionIndexOutput {
 }
 impl DeletePartitionIndexOutput {
     /// Creates a new builder-style object to manufacture [`DeletePartitionIndexOutput`](crate::operation::delete_partition_index::DeletePartitionIndexOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_partition_index::builders::DeletePartitionIndexOutputBuilder {
+    pub fn builder() -> crate::operation::delete_partition_index::builders::DeletePartitionIndexOutputBuilder {
         crate::operation::delete_partition_index::builders::DeletePartitionIndexOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePartitionIndexOutput`](crate::operation::delete_partition_index::DeletePartitionIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePartitionIndexOutputBuilder {
     _request_id: Option<String>,
 }

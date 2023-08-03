@@ -10,9 +10,7 @@ pub fn ser_aws_elasticsearch_domain_elasticsearch_cluster_config_details(
         );
     }
     if input.dedicated_master_enabled {
-        object
-            .key("DedicatedMasterEnabled")
-            .boolean(input.dedicated_master_enabled);
+        object.key("DedicatedMasterEnabled").boolean(input.dedicated_master_enabled);
     }
     if let Some(var_1) = &input.dedicated_master_type {
         object.key("DedicatedMasterType").string(var_1.as_str());
@@ -33,26 +31,16 @@ pub fn ser_aws_elasticsearch_domain_elasticsearch_cluster_config_details(
         object_4.finish();
     }
     if input.zone_awareness_enabled {
-        object
-            .key("ZoneAwarenessEnabled")
-            .boolean(input.zone_awareness_enabled);
+        object.key("ZoneAwarenessEnabled").boolean(input.zone_awareness_enabled);
     }
     Ok(())
 }
 
 pub(crate) fn de_aws_elasticsearch_domain_elasticsearch_cluster_config_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -62,81 +50,61 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DedicatedMasterCount" => {
-                                builder = builder.set_dedicated_master_count(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DedicatedMasterCount" => {
+                            builder = builder.set_dedicated_master_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "DedicatedMasterEnabled" => {
-                                builder = builder.set_dedicated_master_enabled(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "DedicatedMasterType" => {
-                                builder = builder.set_dedicated_master_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "DedicatedMasterEnabled" => {
+                            builder =
+                                builder.set_dedicated_master_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "DedicatedMasterType" => {
+                            builder = builder.set_dedicated_master_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "InstanceCount" => {
-                                builder = builder.set_instance_count(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "InstanceCount" => {
+                            builder = builder.set_instance_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "InstanceType" => {
-                                builder = builder.set_instance_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "InstanceType" => {
+                            builder = builder.set_instance_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ZoneAwarenessConfig" => {
-                                builder = builder.set_zone_awareness_config(
+                            );
+                        }
+                        "ZoneAwarenessConfig" => {
+                            builder = builder.set_zone_awareness_config(
                                     crate::protocol_serde::shape_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::de_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details(tokens)?
                                 );
-                            }
-                            "ZoneAwarenessEnabled" => {
-                                builder = builder.set_zone_awareness_enabled(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "ZoneAwarenessEnabled" => {
+                            builder = builder.set_zone_awareness_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

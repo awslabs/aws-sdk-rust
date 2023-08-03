@@ -26,7 +26,7 @@ impl DescribeImportSnapshotTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImportSnapshotTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksInputBuilder,
+    inner: crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksInputBuilder,
 }
 impl DescribeImportSnapshotTasksFluentBuilder {
     /// Creates a new `DescribeImportSnapshotTasks`.
@@ -37,7 +37,7 @@ impl DescribeImportSnapshotTasksFluentBuilder {
         }
     }
     /// Access the DescribeImportSnapshotTasks as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeImportSnapshotTasksFluentBuilder {
             crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeImportSnapshotTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeImportSnapshotTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeImportSnapshotTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeImportSnapshotTasksFluentBuilder {
             crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_import_snapshot_tasks::paginator::DescribeImportSnapshotTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_import_snapshot_tasks::paginator::DescribeImportSnapshotTasksPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_import_snapshot_tasks::paginator::DescribeImportSnapshotTasksPaginator {
         crate::operation::describe_import_snapshot_tasks::paginator::DescribeImportSnapshotTasksPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -150,10 +139,7 @@ impl DescribeImportSnapshotTasksFluentBuilder {
         self
     }
     /// <p>The filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -166,25 +152,17 @@ impl DescribeImportSnapshotTasksFluentBuilder {
     /// To override the contents of this collection use [`set_import_task_ids`](Self::set_import_task_ids).
     ///
     /// <p>A list of import snapshot task IDs.</p>
-    pub fn import_task_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.import_task_ids(input.into());
         self
     }
     /// <p>A list of import snapshot task IDs.</p>
-    pub fn set_import_task_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_import_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_import_task_ids(input);
         self
     }
     /// <p>A list of import snapshot task IDs.</p>
-    pub fn get_import_task_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_import_task_ids()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>

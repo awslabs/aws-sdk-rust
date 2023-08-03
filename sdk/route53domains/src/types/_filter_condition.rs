@@ -47,9 +47,7 @@ impl FilterCondition {
 
 /// A builder for [`FilterCondition`](crate::types::FilterCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterConditionBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ListDomainsAttributeName>,
     pub(crate) operator: ::std::option::Option<crate::types::Operator>,
@@ -62,10 +60,7 @@ impl FilterConditionBuilder {
         self
     }
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ListDomainsAttributeName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ListDomainsAttributeName>) -> Self {
         self.name = input;
         self
     }
@@ -114,10 +109,7 @@ impl FilterConditionBuilder {
         self
     }
     /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

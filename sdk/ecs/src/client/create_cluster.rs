@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateClusterOutput`](crate::operation::create_cluster::CreateClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::create_cluster::CreateClusterOutput::cluster): <p>The full description of your new cluster.</p>
     /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::operation::create_cluster::CreateClusterError)
-    pub fn create_cluster(
-        &self,
-    ) -> crate::operation::create_cluster::builders::CreateClusterFluentBuilder {
-        crate::operation::create_cluster::builders::CreateClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_cluster(&self) -> crate::operation::create_cluster::builders::CreateClusterFluentBuilder {
+        crate::operation::create_cluster::builders::CreateClusterFluentBuilder::new(self.handle.clone())
     }
 }

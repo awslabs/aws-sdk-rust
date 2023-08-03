@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`tag_option_details(Option<Vec<TagOptionDetail>>)`](crate::operation::list_tag_options::ListTagOptionsOutput::tag_option_details): <p>Information about the TagOptions.</p>
     ///   - [`page_token(Option<String>)`](crate::operation::list_tag_options::ListTagOptionsOutput::page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     /// - On failure, responds with [`SdkError<ListTagOptionsError>`](crate::operation::list_tag_options::ListTagOptionsError)
-    pub fn list_tag_options(
-        &self,
-    ) -> crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder {
-        crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tag_options(&self) -> crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder {
+        crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::new(self.handle.clone())
     }
 }

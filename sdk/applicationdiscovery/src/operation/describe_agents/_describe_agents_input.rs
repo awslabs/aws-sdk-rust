@@ -45,9 +45,7 @@ impl DescribeAgentsInput {
 
 /// A builder for [`DescribeAgentsInput`](crate::operation::describe_agents::DescribeAgentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAgentsInputBuilder {
     pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -67,10 +65,7 @@ impl DescribeAgentsInputBuilder {
         self
     }
     /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
-    pub fn set_agent_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_ids = input;
         self
     }
@@ -92,10 +87,7 @@ impl DescribeAgentsInputBuilder {
     }
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -135,10 +127,7 @@ impl DescribeAgentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAgentsInput`](crate::operation::describe_agents::DescribeAgentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_agents::DescribeAgentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_agents::DescribeAgentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_agents::DescribeAgentsInput {
             agent_ids: self.agent_ids,
             filters: self.filters,

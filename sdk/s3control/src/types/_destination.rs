@@ -52,17 +52,13 @@ impl Destination {
     /// <p>Specify this property only in a cross-account scenario (where the source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this property is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn access_control_translation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccessControlTranslation> {
+    pub fn access_control_translation(&self) -> ::std::option::Option<&crate::types::AccessControlTranslation> {
         self.access_control_translation.as_ref()
     }
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p> A container that specifies replication metrics-related settings. </p>
@@ -85,17 +81,13 @@ impl Destination {
 
 /// A builder for [`Destination`](crate::types::Destination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) replication_time: ::std::option::Option<crate::types::ReplicationTime>,
-    pub(crate) access_control_translation:
-        ::std::option::Option<crate::types::AccessControlTranslation>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) access_control_translation: ::std::option::Option<crate::types::AccessControlTranslation>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) metrics: ::std::option::Option<crate::types::Metrics>,
     pub(crate) storage_class: ::std::option::Option<crate::types::ReplicationStorageClass>,
 }
@@ -138,10 +130,7 @@ impl DestinationBuilder {
     /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn set_replication_time(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationTime>,
-    ) -> Self {
+    pub fn set_replication_time(mut self, input: ::std::option::Option<crate::types::ReplicationTime>) -> Self {
         self.replication_time = input;
         self
     }
@@ -154,57 +143,41 @@ impl DestinationBuilder {
     /// <p>Specify this property only in a cross-account scenario (where the source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this property is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn access_control_translation(
-        mut self,
-        input: crate::types::AccessControlTranslation,
-    ) -> Self {
+    pub fn access_control_translation(mut self, input: crate::types::AccessControlTranslation) -> Self {
         self.access_control_translation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify this property only in a cross-account scenario (where the source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this property is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn set_access_control_translation(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessControlTranslation>,
-    ) -> Self {
+    pub fn set_access_control_translation(mut self, input: ::std::option::Option<crate::types::AccessControlTranslation>) -> Self {
         self.access_control_translation = input;
         self
     }
     /// <p>Specify this property only in a cross-account scenario (where the source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this property is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn get_access_control_translation(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessControlTranslation> {
+    pub fn get_access_control_translation(&self) -> &::std::option::Option<crate::types::AccessControlTranslation> {
         &self.access_control_translation
     }
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// <p> A container that specifies replication metrics-related settings. </p>
@@ -231,19 +204,14 @@ impl DestinationBuilder {
     /// <p> The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas. </p> <note>
     /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts. </p>
     /// </note>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationStorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::ReplicationStorageClass>) -> Self {
         self.storage_class = input;
         self
     }
     /// <p> The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas. </p> <note>
     /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts. </p>
     /// </note>
-    pub fn get_storage_class(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationStorageClass> {
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::ReplicationStorageClass> {
         &self.storage_class
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).

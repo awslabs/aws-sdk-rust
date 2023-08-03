@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`cross_account_authorizations(Option<Vec<String>>)`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput::cross_account_authorizations): <p>A list of cross-account authorizations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On failure, responds with [`SdkError<ListCrossAccountAuthorizationsError>`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsError)
-    pub fn list_cross_account_authorizations(&self) -> crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder{
+    pub fn list_cross_account_authorizations(
+        &self,
+    ) -> crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder {
         crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder::new(self.handle.clone())
     }
 }

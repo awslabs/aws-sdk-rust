@@ -10,10 +10,7 @@ impl GetFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_findings::GetFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_findings::GetFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_findings();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetFindingsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_findings::GetFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_findings::GetFindings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl GetFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl GetFindingsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_findings::GetFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_findings::GetFindings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError>,
     > {
         self.customize_middleware().await
@@ -117,10 +105,7 @@ impl GetFindingsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_findings::paginator::GetFindingsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::get_findings::paginator::GetFindingsPaginator {
-        crate::operation::get_findings::paginator::GetFindingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::get_findings::paginator::GetFindingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
     /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
@@ -132,10 +117,7 @@ impl GetFindingsFluentBuilder {
     /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
     /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
     /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -155,17 +137,12 @@ impl GetFindingsFluentBuilder {
         self
     }
     /// <p>The finding attributes used to sort the list of returned findings.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
     /// <p>The finding attributes used to sort the list of returned findings.</p>
-    pub fn get_sort_criteria(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>> {
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>> {
         self.inner.get_sort_criteria()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>

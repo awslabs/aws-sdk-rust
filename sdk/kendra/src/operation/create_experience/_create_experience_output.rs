@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateExperienceOutput {
 }
 impl CreateExperienceOutput {
     /// Creates a new builder-style object to manufacture [`CreateExperienceOutput`](crate::operation::create_experience::CreateExperienceOutput).
-    pub fn builder() -> crate::operation::create_experience::builders::CreateExperienceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_experience::builders::CreateExperienceOutputBuilder {
         crate::operation::create_experience::builders::CreateExperienceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExperienceOutput`](crate::operation::create_experience::CreateExperienceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExperienceOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

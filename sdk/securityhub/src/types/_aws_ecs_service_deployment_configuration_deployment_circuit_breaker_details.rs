@@ -23,16 +23,14 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
 }
 impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder {
         crate::types::builders::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder {
     pub(crate) enable: ::std::option::Option<bool>,
     pub(crate) rollback: ::std::option::Option<bool>,
@@ -67,9 +65,7 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder 
         &self.rollback
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+    pub fn build(self) -> crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
         crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
             enable: self.enable.unwrap_or_default(),
             rollback: self.rollback.unwrap_or_default(),

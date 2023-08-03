@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateFirewallRuleGroupOutput`](crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput) with field(s):
     ///   - [`firewall_rule_group_association(Option<FirewallRuleGroupAssociation>)`](crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput::firewall_rule_group_association): <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
     /// - On failure, responds with [`SdkError<AssociateFirewallRuleGroupError>`](crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError)
-    pub fn associate_firewall_rule_group(&self) -> crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupFluentBuilder{
+    pub fn associate_firewall_rule_group(
+        &self,
+    ) -> crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupFluentBuilder {
         crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

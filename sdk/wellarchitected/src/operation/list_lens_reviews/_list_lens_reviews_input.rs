@@ -46,9 +46,7 @@ impl ListLensReviewsInput {
 
 /// A builder for [`ListLensReviewsInput`](crate::operation::list_lens_reviews::ListLensReviewsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLensReviewsInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_number: ::std::option::Option<i32>,
@@ -118,10 +116,7 @@ impl ListLensReviewsInputBuilder {
     /// Consumes the builder and constructs a [`ListLensReviewsInput`](crate::operation::list_lens_reviews::ListLensReviewsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lens_reviews::ListLensReviewsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_lens_reviews::ListLensReviewsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_lens_reviews::ListLensReviewsInput {
             workload_id: self.workload_id,
             milestone_number: self.milestone_number,

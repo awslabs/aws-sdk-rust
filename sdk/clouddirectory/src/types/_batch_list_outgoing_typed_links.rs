@@ -9,8 +9,7 @@ pub struct BatchListOutgoingTypedLinks {
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
     #[doc(hidden)]
-    pub filter_attribute_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
+    pub filter_attribute_ranges: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
     #[doc(hidden)]
     pub filter_typed_link: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
@@ -27,15 +26,11 @@ impl BatchListOutgoingTypedLinks {
         self.object_reference.as_ref()
     }
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    pub fn filter_attribute_ranges(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TypedLinkAttributeRange]> {
+    pub fn filter_attribute_ranges(&self) -> ::std::option::Option<&[crate::types::TypedLinkAttributeRange]> {
         self.filter_attribute_ranges.as_deref()
     }
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
-    pub fn filter_typed_link(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TypedLinkSchemaAndFacetName> {
+    pub fn filter_typed_link(&self) -> ::std::option::Option<&crate::types::TypedLinkSchemaAndFacetName> {
         self.filter_typed_link.as_ref()
     }
     /// <p>The pagination token.</p>
@@ -56,13 +51,10 @@ impl BatchListOutgoingTypedLinks {
 
 /// A builder for [`BatchListOutgoingTypedLinks`](crate::types::BatchListOutgoingTypedLinks).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListOutgoingTypedLinksBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
-    pub(crate) filter_attribute_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
+    pub(crate) filter_attribute_ranges: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
     pub(crate) filter_typed_link: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,10 +66,7 @@ impl BatchListOutgoingTypedLinksBuilder {
         self
     }
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }
@@ -97,17 +86,12 @@ impl BatchListOutgoingTypedLinksBuilder {
         self
     }
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    pub fn set_filter_attribute_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
-    ) -> Self {
+    pub fn set_filter_attribute_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>) -> Self {
         self.filter_attribute_ranges = input;
         self
     }
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    pub fn get_filter_attribute_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>> {
+    pub fn get_filter_attribute_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>> {
         &self.filter_attribute_ranges
     }
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
@@ -116,17 +100,12 @@ impl BatchListOutgoingTypedLinksBuilder {
         self
     }
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
-    pub fn set_filter_typed_link(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
-    ) -> Self {
+    pub fn set_filter_typed_link(mut self, input: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>) -> Self {
         self.filter_typed_link = input;
         self
     }
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
-    pub fn get_filter_typed_link(
-        &self,
-    ) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
+    pub fn get_filter_typed_link(&self) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
         &self.filter_typed_link
     }
     /// <p>The pagination token.</p>

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateApplicationPresignedUrlOutput`](crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlOutput) with field(s):
     ///   - [`authorized_url(Option<String>)`](crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlOutput::authorized_url): <p>The URL of the extension.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationPresignedUrlError>`](crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlError)
-    pub fn create_application_presigned_url(&self) -> crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlFluentBuilder{
+    pub fn create_application_presigned_url(
+        &self,
+    ) -> crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlFluentBuilder {
         crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlFluentBuilder::new(self.handle.clone())
     }
 }

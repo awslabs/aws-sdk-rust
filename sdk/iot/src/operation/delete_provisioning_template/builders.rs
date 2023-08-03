@@ -27,7 +27,7 @@ impl DeleteProvisioningTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProvisioningTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder,
+    inner: crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder,
 }
 impl DeleteProvisioningTemplateFluentBuilder {
     /// Creates a new `DeleteProvisioningTemplate`.
@@ -38,7 +38,7 @@ impl DeleteProvisioningTemplateFluentBuilder {
         }
     }
     /// Access the DeleteProvisioningTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteProvisioningTemplateFluentBuilder {
             crate::operation::delete_provisioning_template::DeleteProvisioningTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_provisioning_template::DeleteProvisioningTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_provisioning_template::DeleteProvisioningTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteProvisioningTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteProvisioningTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_provisioning_template::DeleteProvisioningTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_provisioning_template::DeleteProvisioningTemplateError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteProvisioningTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_provisioning_template::DeleteProvisioningTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_provisioning_template::DeleteProvisioningTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DeleteProvisioningTemplateFluentBuilder {
             crate::operation::delete_provisioning_template::DeleteProvisioningTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_provisioning_template::DeleteProvisioningTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_provisioning_template::DeleteProvisioningTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the fleet provision template to delete.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the fleet provision template to delete.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

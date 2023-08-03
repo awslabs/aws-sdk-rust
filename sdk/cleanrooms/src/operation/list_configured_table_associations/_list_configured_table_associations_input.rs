@@ -29,16 +29,14 @@ impl ListConfiguredTableAssociationsInput {
 }
 impl ListConfiguredTableAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListConfiguredTableAssociationsInput`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsInput).
-    pub fn builder() -> crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsInputBuilder {
         crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfiguredTableAssociationsInput`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfiguredTableAssociationsInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListConfiguredTableAssociationsInputBuilder {
 }
 impl ListConfiguredTableAssociationsInputBuilder {
     /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_identifier = input;
         self
     }
@@ -102,13 +94,10 @@ impl ListConfiguredTableAssociationsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsInput {
-                membership_identifier: self.membership_identifier
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                membership_identifier: self.membership_identifier,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

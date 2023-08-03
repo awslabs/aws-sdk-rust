@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeSecurityProfileOutput {
 }
 impl DescribeSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityProfileOutput`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileOutputBuilder {
         crate::operation::describe_security_profile::builders::DescribeSecurityProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSecurityProfileOutput`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityProfileOutputBuilder {
     pub(crate) security_profile: ::std::option::Option<crate::types::SecurityProfile>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeSecurityProfileOutputBuilder {
         self
     }
     /// <p>The security profile.</p>
-    pub fn set_security_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityProfile>,
-    ) -> Self {
+    pub fn set_security_profile(mut self, input: ::std::option::Option<crate::types::SecurityProfile>) -> Self {
         self.security_profile = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeSecurityProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSecurityProfileOutput`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_security_profile::DescribeSecurityProfileOutput {
+    pub fn build(self) -> crate::operation::describe_security_profile::DescribeSecurityProfileOutput {
         crate::operation::describe_security_profile::DescribeSecurityProfileOutput {
             security_profile: self.security_profile,
             _request_id: self._request_id,

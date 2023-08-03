@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDatabaseOutput`](crate::operation::describe_database::DescribeDatabaseOutput) with field(s):
     ///   - [`database(Option<Database>)`](crate::operation::describe_database::DescribeDatabaseOutput::database): <p>The name of the Timestream table.</p>
     /// - On failure, responds with [`SdkError<DescribeDatabaseError>`](crate::operation::describe_database::DescribeDatabaseError)
-    pub fn describe_database(
-        &self,
-    ) -> crate::operation::describe_database::builders::DescribeDatabaseFluentBuilder {
-        crate::operation::describe_database::builders::DescribeDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_database(&self) -> crate::operation::describe_database::builders::DescribeDatabaseFluentBuilder {
+        crate::operation::describe_database::builders::DescribeDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

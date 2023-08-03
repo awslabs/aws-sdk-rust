@@ -19,9 +19,7 @@ impl TagQueueOutput {
 
 /// A builder for [`TagQueueOutput`](crate::operation::tag_queue::TagQueueOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagQueueOutputBuilder {
     _request_id: Option<String>,
 }

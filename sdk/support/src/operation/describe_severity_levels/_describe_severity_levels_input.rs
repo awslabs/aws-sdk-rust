@@ -15,18 +15,14 @@ impl DescribeSeverityLevelsInput {
 }
 impl DescribeSeverityLevelsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSeverityLevelsInput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsInputBuilder {
         crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSeverityLevelsInput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSeverityLevelsInputBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DescribeSeverityLevelsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSeverityLevelsInput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_severity_levels::DescribeSeverityLevelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_severity_levels::DescribeSeverityLevelsInput {
-                language: self.language,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_severity_levels::DescribeSeverityLevelsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_severity_levels::DescribeSeverityLevelsInput { language: self.language })
     }
 }

@@ -37,10 +37,7 @@ impl CopyDBParameterGroupFluentBuilder {
         }
     }
     /// Access the CopyDBParameterGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::copy_db_parameter_group::builders::CopyDbParameterGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::copy_db_parameter_group::builders::CopyDbParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CopyDBParameterGroupFluentBuilder {
             crate::operation::copy_db_parameter_group::CopyDBParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_parameter_group::CopyDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_parameter_group::CopyDBParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CopyDBParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CopyDBParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_db_parameter_group::CopyDbParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_parameter_group::CopyDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_parameter_group::CopyDBParameterGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CopyDBParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_db_parameter_group::CopyDbParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_parameter_group::CopyDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_parameter_group::CopyDBParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CopyDBParameterGroupFluentBuilder {
             crate::operation::copy_db_parameter_group::CopyDBParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_parameter_group::CopyDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_parameter_group::CopyDBParameterGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -129,13 +115,8 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <li> <p>Must specify a valid DB parameter group.</p> </li>
     /// <li> <p>Must specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</p> </li>
     /// </ul>
-    pub fn source_db_parameter_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .source_db_parameter_group_identifier(input.into());
+    pub fn source_db_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_db_parameter_group_identifier(input.into());
         self
     }
     /// <p>The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
@@ -144,10 +125,7 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <li> <p>Must specify a valid DB parameter group.</p> </li>
     /// <li> <p>Must specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</p> </li>
     /// </ul>
-    pub fn set_source_db_parameter_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_parameter_group_identifier(input);
         self
     }
@@ -157,9 +135,7 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <li> <p>Must specify a valid DB parameter group.</p> </li>
     /// <li> <p>Must specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</p> </li>
     /// </ul>
-    pub fn get_source_db_parameter_group_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_parameter_group_identifier()
     }
     /// <p>The identifier for the copied DB parameter group.</p>
@@ -171,13 +147,8 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-parameter-group</code> </p>
-    pub fn target_db_parameter_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .target_db_parameter_group_identifier(input.into());
+    pub fn target_db_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_db_parameter_group_identifier(input.into());
         self
     }
     /// <p>The identifier for the copied DB parameter group.</p>
@@ -189,10 +160,7 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-parameter-group</code> </p>
-    pub fn set_target_db_parameter_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_parameter_group_identifier(input);
         self
     }
@@ -205,33 +173,21 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-parameter-group</code> </p>
-    pub fn get_target_db_parameter_group_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_parameter_group_identifier()
     }
     /// <p>A description for the copied DB parameter group.</p>
-    pub fn target_db_parameter_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .target_db_parameter_group_description(input.into());
+    pub fn target_db_parameter_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_db_parameter_group_description(input.into());
         self
     }
     /// <p>A description for the copied DB parameter group.</p>
-    pub fn set_target_db_parameter_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_parameter_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_parameter_group_description(input);
         self
     }
     /// <p>A description for the copied DB parameter group.</p>
-    pub fn get_target_db_parameter_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_parameter_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_parameter_group_description()
     }
     /// Appends an item to `Tags`.
@@ -244,10 +200,7 @@ impl CopyDBParameterGroupFluentBuilder {
         self
     }
     /// <p>The tags to be assigned to the copied DB parameter group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

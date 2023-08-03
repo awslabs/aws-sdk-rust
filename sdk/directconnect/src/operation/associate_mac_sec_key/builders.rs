@@ -10,10 +10,7 @@ impl AssociateMacSecKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_mac_sec_key::AssociateMacSecKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_mac_sec_key::AssociateMacSecKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_mac_sec_key::AssociateMacSecKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_mac_sec_key();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl AssociateMacSecKeyFluentBuilder {
         }
     }
     /// Access the AssociateMacSecKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl AssociateMacSecKeyFluentBuilder {
             crate::operation::associate_mac_sec_key::AssociateMacSecKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_mac_sec_key::AssociateMacSecKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_mac_sec_key::AssociateMacSecKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl AssociateMacSecKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl AssociateMacSecKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_mac_sec_key::AssociateMacSecKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_mac_sec_key::AssociateMacSecKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_mac_sec_key::AssociateMacSecKeyError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl AssociateMacSecKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_mac_sec_key::AssociateMacSecKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_mac_sec_key::AssociateMacSecKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_mac_sec_key::AssociateMacSecKeyError>,
     > {
         self.send_middleware().await
     }
@@ -118,27 +104,19 @@ impl AssociateMacSecKeyFluentBuilder {
             crate::operation::associate_mac_sec_key::AssociateMacSecKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_mac_sec_key::AssociateMacSecKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_mac_sec_key::AssociateMacSecKeyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }

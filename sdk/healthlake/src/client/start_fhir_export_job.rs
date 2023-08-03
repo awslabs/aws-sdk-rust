@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::start_fhir_export_job::StartFhirExportJobOutput::job_status): <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
     ///   - [`datastore_id(Option<String>)`](crate::operation::start_fhir_export_job::StartFhirExportJobOutput::datastore_id): <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     /// - On failure, responds with [`SdkError<StartFHIRExportJobError>`](crate::operation::start_fhir_export_job::StartFHIRExportJobError)
-    pub fn start_fhir_export_job(
-        &self,
-    ) -> crate::operation::start_fhir_export_job::builders::StartFHIRExportJobFluentBuilder {
-        crate::operation::start_fhir_export_job::builders::StartFHIRExportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_fhir_export_job(&self) -> crate::operation::start_fhir_export_job::builders::StartFHIRExportJobFluentBuilder {
+        crate::operation::start_fhir_export_job::builders::StartFHIRExportJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,9 +22,7 @@ pub struct SendNotificationActionDefinition {
 }
 impl SendNotificationActionDefinition {
     /// <p>Notification delivery method.</p>
-    pub fn delivery_method(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationDeliveryType> {
+    pub fn delivery_method(&self) -> ::std::option::Option<&crate::types::NotificationDeliveryType> {
         self.delivery_method.as_ref()
     }
     /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
@@ -53,9 +51,7 @@ impl SendNotificationActionDefinition {
 
 /// A builder for [`SendNotificationActionDefinition`](crate::types::SendNotificationActionDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendNotificationActionDefinitionBuilder {
     pub(crate) delivery_method: ::std::option::Option<crate::types::NotificationDeliveryType>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,
@@ -70,17 +66,12 @@ impl SendNotificationActionDefinitionBuilder {
         self
     }
     /// <p>Notification delivery method.</p>
-    pub fn set_delivery_method(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationDeliveryType>,
-    ) -> Self {
+    pub fn set_delivery_method(mut self, input: ::std::option::Option<crate::types::NotificationDeliveryType>) -> Self {
         self.delivery_method = input;
         self
     }
     /// <p>Notification delivery method.</p>
-    pub fn get_delivery_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationDeliveryType> {
+    pub fn get_delivery_method(&self) -> &::std::option::Option<crate::types::NotificationDeliveryType> {
         &self.delivery_method
     }
     /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
@@ -117,17 +108,12 @@ impl SendNotificationActionDefinitionBuilder {
         self
     }
     /// <p>Content type format.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::NotificationContentType>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>Content type format.</p>
-    pub fn get_content_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationContentType> {
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::NotificationContentType> {
         &self.content_type
     }
     /// <p>Notification recipient.</p>
@@ -136,10 +122,7 @@ impl SendNotificationActionDefinitionBuilder {
         self
     }
     /// <p>Notification recipient.</p>
-    pub fn set_recipient(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationRecipientType>,
-    ) -> Self {
+    pub fn set_recipient(mut self, input: ::std::option::Option<crate::types::NotificationRecipientType>) -> Self {
         self.recipient = input;
         self
     }

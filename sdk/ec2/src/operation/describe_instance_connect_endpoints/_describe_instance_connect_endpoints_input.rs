@@ -32,8 +32,7 @@ pub struct DescribeInstanceConnectEndpointsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
     #[doc(hidden)]
-    pub instance_connect_endpoint_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_connect_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeInstanceConnectEndpointsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -74,23 +73,20 @@ impl DescribeInstanceConnectEndpointsInput {
 }
 impl DescribeInstanceConnectEndpointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceConnectEndpointsInput`](crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsInput).
-    pub fn builder() -> crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsInputBuilder {
         crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceConnectEndpointsInput`](crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceConnectEndpointsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) instance_connect_endpoint_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_connect_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeInstanceConnectEndpointsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -177,10 +173,7 @@ impl DescribeInstanceConnectEndpointsInputBuilder {
     /// <li> <p> <code>tag-value</code> - The value of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific value, regardless of tag key.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -208,44 +201,36 @@ impl DescribeInstanceConnectEndpointsInputBuilder {
     /// To override the contents of this collection use [`set_instance_connect_endpoint_ids`](Self::set_instance_connect_endpoint_ids).
     ///
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
-    pub fn instance_connect_endpoint_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_connect_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_connect_endpoint_ids.unwrap_or_default();
         v.push(input.into());
         self.instance_connect_endpoint_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
-    pub fn set_instance_connect_endpoint_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_connect_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_connect_endpoint_ids = input;
         self
     }
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
-    pub fn get_instance_connect_endpoint_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_connect_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_connect_endpoint_ids
     }
     /// Consumes the builder and constructs a [`DescribeInstanceConnectEndpointsInput`](crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsInput {
-                dry_run: self.dry_run
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                filters: self.filters
-                ,
-                instance_connect_endpoint_ids: self.instance_connect_endpoint_ids
-                ,
-            }
+                dry_run: self.dry_run,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filters: self.filters,
+                instance_connect_endpoint_ids: self.instance_connect_endpoint_ids,
+            },
         )
     }
 }

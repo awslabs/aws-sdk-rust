@@ -40,10 +40,7 @@ impl DescribeWorkingStorageFluentBuilder {
         }
     }
     /// Access the DescribeWorkingStorage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_working_storage::builders::DescribeWorkingStorageInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_working_storage::builders::DescribeWorkingStorageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl DescribeWorkingStorageFluentBuilder {
             crate::operation::describe_working_storage::DescribeWorkingStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_working_storage::DescribeWorkingStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_working_storage::DescribeWorkingStorageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl DescribeWorkingStorageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl DescribeWorkingStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_working_storage::DescribeWorkingStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_working_storage::DescribeWorkingStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_working_storage::DescribeWorkingStorageError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl DescribeWorkingStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_working_storage::DescribeWorkingStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_working_storage::DescribeWorkingStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_working_storage::DescribeWorkingStorageError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl DescribeWorkingStorageFluentBuilder {
             crate::operation::describe_working_storage::DescribeWorkingStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_working_storage::DescribeWorkingStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_working_storage::DescribeWorkingStorageError>,
     > {
         self.customize_middleware().await
     }

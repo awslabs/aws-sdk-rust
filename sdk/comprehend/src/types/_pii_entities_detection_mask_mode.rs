@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PiiEntitiesDetectionMaskMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for PiiEntitiesDetectionMaskMode {
     fn from(s: &str) -> Self {
         match s {
             "MASK" => PiiEntitiesDetectionMaskMode::Mask,
-            "REPLACE_WITH_PII_ENTITY_TYPE" => {
-                PiiEntitiesDetectionMaskMode::ReplaceWithPiiEntityType
-            }
-            other => PiiEntitiesDetectionMaskMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "REPLACE_WITH_PII_ENTITY_TYPE" => PiiEntitiesDetectionMaskMode::ReplaceWithPiiEntityType,
+            other => PiiEntitiesDetectionMaskMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,9 +69,7 @@ impl PiiEntitiesDetectionMaskMode {
     pub fn as_str(&self) -> &str {
         match self {
             PiiEntitiesDetectionMaskMode::Mask => "MASK",
-            PiiEntitiesDetectionMaskMode::ReplaceWithPiiEntityType => {
-                "REPLACE_WITH_PII_ENTITY_TYPE"
-            }
+            PiiEntitiesDetectionMaskMode::ReplaceWithPiiEntityType => "REPLACE_WITH_PII_ENTITY_TYPE",
             PiiEntitiesDetectionMaskMode::Unknown(value) => value.as_str(),
         }
     }

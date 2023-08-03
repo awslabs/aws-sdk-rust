@@ -5,16 +5,16 @@ pub use crate::operation::update_firewall_encryption_configuration::_update_fire
 
 impl UpdateFirewallEncryptionConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_firewall_encryption_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateFirewallEncryptionConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFirewallEncryptionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder,
+    inner: crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder,
 }
 impl UpdateFirewallEncryptionConfigurationFluentBuilder {
     /// Creates a new `UpdateFirewallEncryptionConfiguration`.
@@ -37,15 +37,22 @@ impl UpdateFirewallEncryptionConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateFirewallEncryptionConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl UpdateFirewallEncryptionConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl UpdateFirewallEncryptionConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -129,18 +146,12 @@ impl UpdateFirewallEncryptionConfigurationFluentBuilder {
         self.inner.get_firewall_arn()
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }
@@ -149,25 +160,17 @@ impl UpdateFirewallEncryptionConfigurationFluentBuilder {
         self.inner.get_firewall_name()
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.inner = self.inner.encryption_configuration(input);
         self
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
     }
 }

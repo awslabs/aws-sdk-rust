@@ -38,10 +38,7 @@ impl RegisterCACertificateFluentBuilder {
         }
     }
     /// Access the RegisterCACertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_ca_certificate::builders::RegisterCaCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::register_ca_certificate::builders::RegisterCaCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl RegisterCACertificateFluentBuilder {
             crate::operation::register_ca_certificate::RegisterCACertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_ca_certificate::RegisterCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_ca_certificate::RegisterCACertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl RegisterCACertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl RegisterCACertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_ca_certificate::RegisterCaCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_ca_certificate::RegisterCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_ca_certificate::RegisterCACertificateError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl RegisterCACertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_ca_certificate::RegisterCaCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_ca_certificate::RegisterCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_ca_certificate::RegisterCACertificateError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl RegisterCACertificateFluentBuilder {
             crate::operation::register_ca_certificate::RegisterCACertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_ca_certificate::RegisterCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_ca_certificate::RegisterCACertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The CA certificate.</p>
-    pub fn ca_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ca_certificate(input.into());
         self
     }
     /// <p>The CA certificate.</p>
-    pub fn set_ca_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ca_certificate(input);
         self
     }
@@ -145,18 +125,12 @@ impl RegisterCACertificateFluentBuilder {
         self.inner.get_ca_certificate()
     }
     /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
-    pub fn verification_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verification_certificate(input.into());
         self
     }
     /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
-    pub fn set_verification_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_verification_certificate(input);
         self
     }
@@ -201,17 +175,12 @@ impl RegisterCACertificateFluentBuilder {
         self
     }
     /// <p>Information about the registration configuration.</p>
-    pub fn set_registration_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationConfig>,
-    ) -> Self {
+    pub fn set_registration_config(mut self, input: ::std::option::Option<crate::types::RegistrationConfig>) -> Self {
         self.inner = self.inner.set_registration_config(input);
         self
     }
     /// <p>Information about the registration configuration.</p>
-    pub fn get_registration_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationConfig> {
+    pub fn get_registration_config(&self) -> &::std::option::Option<crate::types::RegistrationConfig> {
         self.inner.get_registration_config()
     }
     /// Appends an item to `tags`.
@@ -232,10 +201,7 @@ impl RegisterCACertificateFluentBuilder {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -253,10 +219,7 @@ impl RegisterCACertificateFluentBuilder {
         self
     }
     /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
-    pub fn set_certificate_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateMode>,
-    ) -> Self {
+    pub fn set_certificate_mode(mut self, input: ::std::option::Option<crate::types::CertificateMode>) -> Self {
         self.inner = self.inner.set_certificate_mode(input);
         self
     }

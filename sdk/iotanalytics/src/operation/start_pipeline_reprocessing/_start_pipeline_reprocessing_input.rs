@@ -42,16 +42,14 @@ impl StartPipelineReprocessingInput {
 }
 impl StartPipelineReprocessingInput {
     /// Creates a new builder-style object to manufacture [`StartPipelineReprocessingInput`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput).
-    pub fn builder() -> crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingInputBuilder{
+    pub fn builder() -> crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingInputBuilder {
         crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingInputBuilder::default()
     }
 }
 
 /// A builder for [`StartPipelineReprocessingInput`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartPipelineReprocessingInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -60,18 +58,12 @@ pub struct StartPipelineReprocessingInputBuilder {
 }
 impl StartPipelineReprocessingInputBuilder {
     /// <p>The name of the pipeline on which to start reprocessing.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline on which to start reprocessing.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -87,10 +79,7 @@ impl StartPipelineReprocessingInputBuilder {
     }
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -107,10 +96,7 @@ impl StartPipelineReprocessingInputBuilder {
     }
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -127,10 +113,7 @@ impl StartPipelineReprocessingInputBuilder {
     }
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn set_channel_messages(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessages>,
-    ) -> Self {
+    pub fn set_channel_messages(mut self, input: ::std::option::Option<crate::types::ChannelMessages>) -> Self {
         self.channel_messages = input;
         self
     }
@@ -146,13 +129,11 @@ impl StartPipelineReprocessingInputBuilder {
         crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput {
-                pipeline_name: self.pipeline_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                channel_messages: self.channel_messages,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput {
+            pipeline_name: self.pipeline_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            channel_messages: self.channel_messages,
+        })
     }
 }

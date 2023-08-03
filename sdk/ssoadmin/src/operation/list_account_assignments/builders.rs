@@ -37,10 +37,7 @@ impl ListAccountAssignmentsFluentBuilder {
         }
     }
     /// Access the ListAccountAssignments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_account_assignments::builders::ListAccountAssignmentsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_account_assignments::builders::ListAccountAssignmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListAccountAssignmentsFluentBuilder {
             crate::operation::list_account_assignments::ListAccountAssignments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_assignments::ListAccountAssignmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignments::ListAccountAssignmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListAccountAssignmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListAccountAssignmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_assignments::ListAccountAssignmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_assignments::ListAccountAssignmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignments::ListAccountAssignmentsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListAccountAssignmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_assignments::ListAccountAssignmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_assignments::ListAccountAssignmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignments::ListAccountAssignmentsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListAccountAssignmentsFluentBuilder {
             crate::operation::list_account_assignments::ListAccountAssignments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_assignments::ListAccountAssignmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignments::ListAccountAssignmentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_account_assignments::paginator::ListAccountAssignmentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_account_assignments::paginator::ListAccountAssignmentsPaginator
-    {
-        crate::operation::list_account_assignments::paginator::ListAccountAssignmentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_account_assignments::paginator::ListAccountAssignmentsPaginator {
+        crate::operation::list_account_assignments::paginator::ListAccountAssignmentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,18 +144,12 @@ impl ListAccountAssignmentsFluentBuilder {
         self.inner.get_account_id()
     }
     /// <p>The ARN of the permission set from which to list assignments.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
     /// <p>The ARN of the permission set from which to list assignments.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }

@@ -23,9 +23,7 @@ impl ResultReuseInformation {
 
 /// A builder for [`ResultReuseInformation`](crate::types::ResultReuseInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultReuseInformationBuilder {
     pub(crate) reused_previous_result: ::std::option::Option<bool>,
 }

@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`ip_access_settings(Option<Vec<IpAccessSettingsSummary>>)`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput::ip_access_settings): <p>The IP access settings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<ListIpAccessSettingsError>`](crate::operation::list_ip_access_settings::ListIpAccessSettingsError)
-    pub fn list_ip_access_settings(
-        &self,
-    ) -> crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder
-    {
-        crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_ip_access_settings(&self) -> crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder {
+        crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder::new(self.handle.clone())
     }
 }

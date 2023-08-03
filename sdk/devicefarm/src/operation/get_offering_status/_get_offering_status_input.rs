@@ -16,17 +16,14 @@ impl GetOfferingStatusInput {
 }
 impl GetOfferingStatusInput {
     /// Creates a new builder-style object to manufacture [`GetOfferingStatusInput`](crate::operation::get_offering_status::GetOfferingStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_offering_status::builders::GetOfferingStatusInputBuilder {
+    pub fn builder() -> crate::operation::get_offering_status::builders::GetOfferingStatusInputBuilder {
         crate::operation::get_offering_status::builders::GetOfferingStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetOfferingStatusInput`](crate::operation::get_offering_status::GetOfferingStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOfferingStatusInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,7 @@ impl GetOfferingStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetOfferingStatusInput`](crate::operation::get_offering_status::GetOfferingStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_offering_status::GetOfferingStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_offering_status::GetOfferingStatusInput {
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_offering_status::GetOfferingStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_offering_status::GetOfferingStatusInput { next_token: self.next_token })
     }
 }

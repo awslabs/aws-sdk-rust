@@ -26,7 +26,7 @@ impl GetRecordingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecordingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder,
+    inner: crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder,
 }
 impl GetRecordingConfigurationFluentBuilder {
     /// Creates a new `GetRecordingConfiguration`.
@@ -37,7 +37,7 @@ impl GetRecordingConfigurationFluentBuilder {
         }
     }
     /// Access the GetRecordingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetRecordingConfigurationFluentBuilder {
             crate::operation::get_recording_configuration::GetRecordingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recording_configuration::GetRecordingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recording_configuration::GetRecordingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetRecordingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetRecordingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recording_configuration::GetRecordingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recording_configuration::GetRecordingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recording_configuration::GetRecordingConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetRecordingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recording_configuration::GetRecordingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recording_configuration::GetRecordingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recording_configuration::GetRecordingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetRecordingConfigurationFluentBuilder {
             crate::operation::get_recording_configuration::GetRecordingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recording_configuration::GetRecordingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recording_configuration::GetRecordingConfigurationError>,
     > {
         self.customize_middleware().await
     }

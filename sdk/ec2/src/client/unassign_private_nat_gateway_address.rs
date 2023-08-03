@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`nat_gateway_id(Option<String>)`](crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput::nat_gateway_id): <p>The ID of the NAT gateway.</p>
     ///   - [`nat_gateway_addresses(Option<Vec<NatGatewayAddress>>)`](crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput::nat_gateway_addresses): <p>Information about the NAT gateway IP addresses.</p>
     /// - On failure, responds with [`SdkError<UnassignPrivateNatGatewayAddressError>`](crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError)
-    pub fn unassign_private_nat_gateway_address(&self) -> crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressFluentBuilder{
+    pub fn unassign_private_nat_gateway_address(
+        &self,
+    ) -> crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressFluentBuilder {
         crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressFluentBuilder::new(self.handle.clone())
     }
 }

@@ -115,9 +115,7 @@ impl DescribeAutoPredictorOutput {
         self.encryption_config.as_ref()
     }
     /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
-    pub fn reference_predictor_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReferencePredictorSummary> {
+    pub fn reference_predictor_summary(&self) -> ::std::option::Option<&crate::types::ReferencePredictorSummary> {
         self.reference_predictor_summary.as_ref()
     }
     /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
@@ -166,9 +164,7 @@ impl DescribeAutoPredictorOutput {
         self.monitor_info.as_ref()
     }
     /// <p>The time boundary Forecast uses when aggregating data.</p>
-    pub fn time_alignment_boundary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimeAlignmentBoundary> {
+    pub fn time_alignment_boundary(&self) -> ::std::option::Option<&crate::types::TimeAlignmentBoundary> {
         self.time_alignment_boundary.as_ref()
     }
 }
@@ -179,18 +175,14 @@ impl ::aws_http::request_id::RequestId for DescribeAutoPredictorOutput {
 }
 impl DescribeAutoPredictorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoPredictorOutput`](crate::operation::describe_auto_predictor::DescribeAutoPredictorOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorOutputBuilder {
         crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutoPredictorOutput`](crate::operation::describe_auto_predictor::DescribeAutoPredictorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoPredictorOutputBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) predictor_name: ::std::option::Option<::std::string::String>,
@@ -198,12 +190,10 @@ pub struct DescribeAutoPredictorOutputBuilder {
     pub(crate) forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) forecast_frequency: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) dataset_import_job_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dataset_import_job_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_config: ::std::option::Option<crate::types::DataConfig>,
     pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
-    pub(crate) reference_predictor_summary:
-        ::std::option::Option<crate::types::ReferencePredictorSummary>,
+    pub(crate) reference_predictor_summary: ::std::option::Option<crate::types::ReferencePredictorSummary>,
     pub(crate) estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -217,18 +207,12 @@ pub struct DescribeAutoPredictorOutputBuilder {
 }
 impl DescribeAutoPredictorOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_arn = input;
         self
     }
@@ -237,18 +221,12 @@ impl DescribeAutoPredictorOutputBuilder {
         &self.predictor_arn
     }
     /// <p>The name of the predictor.</p>
-    pub fn predictor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the predictor.</p>
-    pub fn set_predictor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_name = input;
         self
     }
@@ -275,44 +253,30 @@ impl DescribeAutoPredictorOutputBuilder {
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
     ///
     /// <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
-    pub fn forecast_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_types.unwrap_or_default();
         v.push(input.into());
         self.forecast_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
-    pub fn set_forecast_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.forecast_types = input;
         self
     }
     /// <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
-    pub fn get_forecast_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.forecast_types
     }
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-    pub fn forecast_frequency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_frequency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-    pub fn set_forecast_frequency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_frequency = input;
         self
     }
@@ -326,27 +290,19 @@ impl DescribeAutoPredictorOutputBuilder {
     /// To override the contents of this collection use [`set_forecast_dimensions`](Self::set_forecast_dimensions).
     ///
     /// <p>An array of dimension (field) names that specify the attributes used to group your time series.</p>
-    pub fn forecast_dimensions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_dimensions.unwrap_or_default();
         v.push(input.into());
         self.forecast_dimensions = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of dimension (field) names that specify the attributes used to group your time series.</p>
-    pub fn set_forecast_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_forecast_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.forecast_dimensions = input;
         self
     }
     /// <p>An array of dimension (field) names that specify the attributes used to group your time series.</p>
-    pub fn get_forecast_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_forecast_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.forecast_dimensions
     }
     /// Appends an item to `dataset_import_job_arns`.
@@ -354,27 +310,19 @@ impl DescribeAutoPredictorOutputBuilder {
     /// To override the contents of this collection use [`set_dataset_import_job_arns`](Self::set_dataset_import_job_arns).
     ///
     /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
-    pub fn dataset_import_job_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dataset_import_job_arns.unwrap_or_default();
         v.push(input.into());
         self.dataset_import_job_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
-    pub fn set_dataset_import_job_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dataset_import_job_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dataset_import_job_arns = input;
         self
     }
     /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
-    pub fn get_dataset_import_job_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dataset_import_job_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dataset_import_job_arns
     }
     /// <p>The data configuration for your dataset group and any additional datasets.</p>
@@ -383,10 +331,7 @@ impl DescribeAutoPredictorOutputBuilder {
         self
     }
     /// <p>The data configuration for your dataset group and any additional datasets.</p>
-    pub fn set_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DataConfig>,
-    ) -> Self {
+    pub fn set_data_config(mut self, input: ::std::option::Option<crate::types::DataConfig>) -> Self {
         self.data_config = input;
         self
     }
@@ -400,10 +345,7 @@ impl DescribeAutoPredictorOutputBuilder {
         self
     }
     /// <p>An Key Management Service (KMS) key and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }
@@ -412,25 +354,17 @@ impl DescribeAutoPredictorOutputBuilder {
         &self.encryption_config
     }
     /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
-    pub fn reference_predictor_summary(
-        mut self,
-        input: crate::types::ReferencePredictorSummary,
-    ) -> Self {
+    pub fn reference_predictor_summary(mut self, input: crate::types::ReferencePredictorSummary) -> Self {
         self.reference_predictor_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
-    pub fn set_reference_predictor_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferencePredictorSummary>,
-    ) -> Self {
+    pub fn set_reference_predictor_summary(mut self, input: ::std::option::Option<crate::types::ReferencePredictorSummary>) -> Self {
         self.reference_predictor_summary = input;
         self
     }
     /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
-    pub fn get_reference_predictor_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReferencePredictorSummary> {
+    pub fn get_reference_predictor_summary(&self) -> &::std::option::Option<crate::types::ReferencePredictorSummary> {
         &self.reference_predictor_summary
     }
     /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
@@ -439,10 +373,7 @@ impl DescribeAutoPredictorOutputBuilder {
         self
     }
     /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
-    pub fn set_estimated_time_remaining_in_minutes(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_estimated_time_remaining_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_time_remaining_in_minutes = input;
         self
     }
@@ -502,10 +433,7 @@ impl DescribeAutoPredictorOutputBuilder {
         self
     }
     /// <p>The timestamp of the CreateAutoPredictor request.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -533,10 +461,7 @@ impl DescribeAutoPredictorOutputBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -548,9 +473,7 @@ impl DescribeAutoPredictorOutputBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -559,17 +482,12 @@ impl DescribeAutoPredictorOutputBuilder {
         self
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    pub fn set_optimization_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::OptimizationMetric>,
-    ) -> Self {
+    pub fn set_optimization_metric(mut self, input: ::std::option::Option<crate::types::OptimizationMetric>) -> Self {
         self.optimization_metric = input;
         self
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    pub fn get_optimization_metric(
-        &self,
-    ) -> &::std::option::Option<crate::types::OptimizationMetric> {
+    pub fn get_optimization_metric(&self) -> &::std::option::Option<crate::types::OptimizationMetric> {
         &self.optimization_metric
     }
     /// <p>Provides the status and ARN of the Predictor Explainability.</p>
@@ -578,17 +496,12 @@ impl DescribeAutoPredictorOutputBuilder {
         self
     }
     /// <p>Provides the status and ARN of the Predictor Explainability.</p>
-    pub fn set_explainability_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ExplainabilityInfo>,
-    ) -> Self {
+    pub fn set_explainability_info(mut self, input: ::std::option::Option<crate::types::ExplainabilityInfo>) -> Self {
         self.explainability_info = input;
         self
     }
     /// <p>Provides the status and ARN of the Predictor Explainability.</p>
-    pub fn get_explainability_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExplainabilityInfo> {
+    pub fn get_explainability_info(&self) -> &::std::option::Option<crate::types::ExplainabilityInfo> {
         &self.explainability_info
     }
     /// <p>A object with the Amazon Resource Name (ARN) and status of the monitor resource.</p>
@@ -597,10 +510,7 @@ impl DescribeAutoPredictorOutputBuilder {
         self
     }
     /// <p>A object with the Amazon Resource Name (ARN) and status of the monitor resource.</p>
-    pub fn set_monitor_info(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorInfo>,
-    ) -> Self {
+    pub fn set_monitor_info(mut self, input: ::std::option::Option<crate::types::MonitorInfo>) -> Self {
         self.monitor_info = input;
         self
     }
@@ -614,17 +524,12 @@ impl DescribeAutoPredictorOutputBuilder {
         self
     }
     /// <p>The time boundary Forecast uses when aggregating data.</p>
-    pub fn set_time_alignment_boundary(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeAlignmentBoundary>,
-    ) -> Self {
+    pub fn set_time_alignment_boundary(mut self, input: ::std::option::Option<crate::types::TimeAlignmentBoundary>) -> Self {
         self.time_alignment_boundary = input;
         self
     }
     /// <p>The time boundary Forecast uses when aggregating data.</p>
-    pub fn get_time_alignment_boundary(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeAlignmentBoundary> {
+    pub fn get_time_alignment_boundary(&self) -> &::std::option::Option<crate::types::TimeAlignmentBoundary> {
         &self.time_alignment_boundary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

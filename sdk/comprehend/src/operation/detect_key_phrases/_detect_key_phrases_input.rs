@@ -30,8 +30,7 @@ impl ::std::fmt::Debug for DetectKeyPhrasesInput {
 }
 impl DetectKeyPhrasesInput {
     /// Creates a new builder-style object to manufacture [`DetectKeyPhrasesInput`](crate::operation::detect_key_phrases::DetectKeyPhrasesInput).
-    pub fn builder() -> crate::operation::detect_key_phrases::builders::DetectKeyPhrasesInputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_key_phrases::builders::DetectKeyPhrasesInputBuilder {
         crate::operation::detect_key_phrases::builders::DetectKeyPhrasesInputBuilder::default()
     }
 }
@@ -64,10 +63,7 @@ impl DetectKeyPhrasesInputBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -78,16 +74,11 @@ impl DetectKeyPhrasesInputBuilder {
     /// Consumes the builder and constructs a [`DetectKeyPhrasesInput`](crate::operation::detect_key_phrases::DetectKeyPhrasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_key_phrases::DetectKeyPhrasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_key_phrases::DetectKeyPhrasesInput {
-                text: self.text,
-                language_code: self.language_code,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detect_key_phrases::DetectKeyPhrasesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::detect_key_phrases::DetectKeyPhrasesInput {
+            text: self.text,
+            language_code: self.language_code,
+        })
     }
 }
 impl ::std::fmt::Debug for DetectKeyPhrasesInputBuilder {

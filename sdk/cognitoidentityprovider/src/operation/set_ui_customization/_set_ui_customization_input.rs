@@ -46,8 +46,7 @@ impl ::std::fmt::Debug for SetUiCustomizationInput {
 }
 impl SetUiCustomizationInput {
     /// Creates a new builder-style object to manufacture [`SetUiCustomizationInput`](crate::operation::set_ui_customization::SetUiCustomizationInput).
-    pub fn builder(
-    ) -> crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder {
+    pub fn builder() -> crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder {
         crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder::default()
     }
 }
@@ -110,10 +109,7 @@ impl SetUiCustomizationInputBuilder {
         self
     }
     /// <p>The uploaded logo image for the UI customization.</p>
-    pub fn set_image_file(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_image_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.image_file = input;
         self
     }
@@ -124,18 +120,13 @@ impl SetUiCustomizationInputBuilder {
     /// Consumes the builder and constructs a [`SetUiCustomizationInput`](crate::operation::set_ui_customization::SetUiCustomizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_ui_customization::SetUiCustomizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_ui_customization::SetUiCustomizationInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-                css: self.css,
-                image_file: self.image_file,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_ui_customization::SetUiCustomizationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::set_ui_customization::SetUiCustomizationInput {
+            user_pool_id: self.user_pool_id,
+            client_id: self.client_id,
+            css: self.css,
+            image_file: self.image_file,
+        })
     }
 }
 impl ::std::fmt::Debug for SetUiCustomizationInputBuilder {

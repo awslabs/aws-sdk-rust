@@ -11,8 +11,7 @@ pub struct ListTranscriptionJobsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides a summary of information about each result.</p>
     #[doc(hidden)]
-    pub transcription_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TranscriptionJobSummary>>,
+    pub transcription_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TranscriptionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListTranscriptionJobsOutput {
@@ -25,9 +24,7 @@ impl ListTranscriptionJobsOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn transcription_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TranscriptionJobSummary]> {
+    pub fn transcription_job_summaries(&self) -> ::std::option::Option<&[crate::types::TranscriptionJobSummary]> {
         self.transcription_job_summaries.as_deref()
     }
 }
@@ -38,23 +35,18 @@ impl ::aws_http::request_id::RequestId for ListTranscriptionJobsOutput {
 }
 impl ListTranscriptionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListTranscriptionJobsOutput`](crate::operation::list_transcription_jobs::ListTranscriptionJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsOutputBuilder {
         crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTranscriptionJobsOutput`](crate::operation::list_transcription_jobs::ListTranscriptionJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTranscriptionJobsOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) transcription_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TranscriptionJobSummary>>,
+    pub(crate) transcription_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TranscriptionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListTranscriptionJobsOutputBuilder {
@@ -64,10 +56,7 @@ impl ListTranscriptionJobsOutputBuilder {
         self
     }
     /// <p>Lists all transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -94,27 +83,19 @@ impl ListTranscriptionJobsOutputBuilder {
     /// To override the contents of this collection use [`set_transcription_job_summaries`](Self::set_transcription_job_summaries).
     ///
     /// <p>Provides a summary of information about each result.</p>
-    pub fn transcription_job_summaries(
-        mut self,
-        input: crate::types::TranscriptionJobSummary,
-    ) -> Self {
+    pub fn transcription_job_summaries(mut self, input: crate::types::TranscriptionJobSummary) -> Self {
         let mut v = self.transcription_job_summaries.unwrap_or_default();
         v.push(input);
         self.transcription_job_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn set_transcription_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TranscriptionJobSummary>>,
-    ) -> Self {
+    pub fn set_transcription_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TranscriptionJobSummary>>) -> Self {
         self.transcription_job_summaries = input;
         self
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn get_transcription_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TranscriptionJobSummary>> {
+    pub fn get_transcription_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TranscriptionJobSummary>> {
         &self.transcription_job_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

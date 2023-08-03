@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`input(Input)`](crate::operation::add_application_input::builders::AddApplicationInputFluentBuilder::input) / [`set_input(Option<Input>)`](crate::operation::add_application_input::builders::AddApplicationInputFluentBuilder::set_input): <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.</p>
     /// - On success, responds with [`AddApplicationInputOutput`](crate::operation::add_application_input::AddApplicationInputOutput)
     /// - On failure, responds with [`SdkError<AddApplicationInputError>`](crate::operation::add_application_input::AddApplicationInputError)
-    pub fn add_application_input(
-        &self,
-    ) -> crate::operation::add_application_input::builders::AddApplicationInputFluentBuilder {
-        crate::operation::add_application_input::builders::AddApplicationInputFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_application_input(&self) -> crate::operation::add_application_input::builders::AddApplicationInputFluentBuilder {
+        crate::operation::add_application_input::builders::AddApplicationInputFluentBuilder::new(self.handle.clone())
     }
 }

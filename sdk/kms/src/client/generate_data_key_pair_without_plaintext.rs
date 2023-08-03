@@ -14,7 +14,11 @@ impl super::Client {
     ///   - [`key_id(Option<String>)`](crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextOutput::key_id): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
     ///   - [`key_pair_spec(Option<DataKeyPairSpec>)`](crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextOutput::key_pair_spec): <p>The type of data key pair that was generated.</p>
     /// - On failure, responds with [`SdkError<GenerateDataKeyPairWithoutPlaintextError>`](crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextError)
-    pub fn generate_data_key_pair_without_plaintext(&self) -> crate::operation::generate_data_key_pair_without_plaintext::builders::GenerateDataKeyPairWithoutPlaintextFluentBuilder{
-        crate::operation::generate_data_key_pair_without_plaintext::builders::GenerateDataKeyPairWithoutPlaintextFluentBuilder::new(self.handle.clone())
+    pub fn generate_data_key_pair_without_plaintext(
+        &self,
+    ) -> crate::operation::generate_data_key_pair_without_plaintext::builders::GenerateDataKeyPairWithoutPlaintextFluentBuilder {
+        crate::operation::generate_data_key_pair_without_plaintext::builders::GenerateDataKeyPairWithoutPlaintextFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

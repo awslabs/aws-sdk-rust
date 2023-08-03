@@ -22,36 +22,26 @@ impl DeregisterTransitGatewayInput {
 }
 impl DeregisterTransitGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeregisterTransitGatewayInput`](crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder {
         crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterTransitGatewayInput`](crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTransitGatewayInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterTransitGatewayInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -60,18 +50,12 @@ impl DeregisterTransitGatewayInputBuilder {
         &self.global_network_id
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    pub fn transit_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    pub fn set_transit_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_arn = input;
         self
     }
@@ -86,11 +70,9 @@ impl DeregisterTransitGatewayInputBuilder {
         crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput {
-                global_network_id: self.global_network_id,
-                transit_gateway_arn: self.transit_gateway_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput {
+            global_network_id: self.global_network_id,
+            transit_gateway_arn: self.transit_gateway_arn,
+        })
     }
 }

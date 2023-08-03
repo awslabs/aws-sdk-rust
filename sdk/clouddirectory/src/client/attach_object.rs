@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`AttachObjectOutput`](crate::operation::attach_object::AttachObjectOutput) with field(s):
     ///   - [`attached_object_identifier(Option<String>)`](crate::operation::attach_object::AttachObjectOutput::attached_object_identifier): <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
     /// - On failure, responds with [`SdkError<AttachObjectError>`](crate::operation::attach_object::AttachObjectError)
-    pub fn attach_object(
-        &self,
-    ) -> crate::operation::attach_object::builders::AttachObjectFluentBuilder {
-        crate::operation::attach_object::builders::AttachObjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_object(&self) -> crate::operation::attach_object::builders::AttachObjectFluentBuilder {
+        crate::operation::attach_object::builders::AttachObjectFluentBuilder::new(self.handle.clone())
     }
 }

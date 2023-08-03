@@ -30,17 +30,14 @@ impl TransferCertificateInput {
 }
 impl TransferCertificateInput {
     /// Creates a new builder-style object to manufacture [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder {
+    pub fn builder() -> crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder {
         crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransferCertificateInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_aws_account: ::std::option::Option<::std::string::String>,
@@ -48,18 +45,12 @@ pub struct TransferCertificateInputBuilder {
 }
 impl TransferCertificateInputBuilder {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -68,18 +59,12 @@ impl TransferCertificateInputBuilder {
         &self.certificate_id
     }
     /// <p>The Amazon Web Services account.</p>
-    pub fn target_aws_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_aws_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_aws_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account.</p>
-    pub fn set_target_aws_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_aws_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_aws_account = input;
         self
     }
@@ -88,18 +73,12 @@ impl TransferCertificateInputBuilder {
         &self.target_aws_account
     }
     /// <p>The transfer message.</p>
-    pub fn transfer_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transfer_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transfer message.</p>
-    pub fn set_transfer_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transfer_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transfer_message = input;
         self
     }
@@ -110,16 +89,12 @@ impl TransferCertificateInputBuilder {
     /// Consumes the builder and constructs a [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::transfer_certificate::TransferCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::transfer_certificate::TransferCertificateInput {
-                certificate_id: self.certificate_id,
-                target_aws_account: self.target_aws_account,
-                transfer_message: self.transfer_message,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::transfer_certificate::TransferCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::transfer_certificate::TransferCertificateInput {
+            certificate_id: self.certificate_id,
+            target_aws_account: self.target_aws_account,
+            transfer_message: self.transfer_message,
+        })
     }
 }

@@ -6,19 +6,13 @@ pub fn ser_replica_update(
     if let Some(var_1) = &input.create {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Create").start_object();
-        crate::protocol_serde::shape_create_replica_action::ser_create_replica_action(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_create_replica_action::ser_create_replica_action(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.delete {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Delete").start_object();
-        crate::protocol_serde::shape_delete_replica_action::ser_delete_replica_action(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_delete_replica_action::ser_delete_replica_action(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

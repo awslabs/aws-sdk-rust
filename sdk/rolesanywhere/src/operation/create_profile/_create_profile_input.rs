@@ -71,9 +71,7 @@ impl CreateProfileInput {
 
 /// A builder for [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProfileInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) require_instance_properties: ::std::option::Option<bool>,
@@ -114,18 +112,12 @@ impl CreateProfileInputBuilder {
         &self.require_instance_properties
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-    pub fn session_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-    pub fn set_session_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_policy = input;
         self
     }
@@ -145,10 +137,7 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub fn set_role_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.role_arns = input;
         self
     }
@@ -161,27 +150,19 @@ impl CreateProfileInputBuilder {
     /// To override the contents of this collection use [`set_managed_policy_arns`](Self::set_managed_policy_arns).
     ///
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn managed_policy_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_policy_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.managed_policy_arns.unwrap_or_default();
         v.push(input.into());
         self.managed_policy_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn set_managed_policy_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_managed_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.managed_policy_arns = input;
         self
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn get_managed_policy_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_managed_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.managed_policy_arns
     }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
@@ -224,10 +205,7 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The tags to attach to the profile.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -238,10 +216,7 @@ impl CreateProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_profile::CreateProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileInput {
             name: self.name,
             require_instance_properties: self.require_instance_properties,

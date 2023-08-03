@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConnectorCapability {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ConnectorCapability {
             "SMS_OPTIMIZED" => ConnectorCapability::SmsOptimized,
             "SNAPSHOT_BATCHING" => ConnectorCapability::SnapshotBatching,
             "VSPHERE" => ConnectorCapability::VSphere,
-            other => ConnectorCapability::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConnectorCapability::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ConnectorCapability {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "HYPERV-MANAGER",
-            "SCVMM",
-            "SMS_OPTIMIZED",
-            "SNAPSHOT_BATCHING",
-            "VSPHERE",
-        ]
+        &["HYPERV-MANAGER", "SCVMM", "SMS_OPTIMIZED", "SNAPSHOT_BATCHING", "VSPHERE"]
     }
 }
 impl ::std::convert::AsRef<str> for ConnectorCapability {

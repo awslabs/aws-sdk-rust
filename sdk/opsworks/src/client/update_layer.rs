@@ -22,9 +22,7 @@ impl super::Client {
     ///   - [`lifecycle_event_configuration(LifecycleEventConfiguration)`](crate::operation::update_layer::builders::UpdateLayerFluentBuilder::lifecycle_event_configuration) / [`set_lifecycle_event_configuration(Option<LifecycleEventConfiguration>)`](crate::operation::update_layer::builders::UpdateLayerFluentBuilder::set_lifecycle_event_configuration): <p></p>
     /// - On success, responds with [`UpdateLayerOutput`](crate::operation::update_layer::UpdateLayerOutput)
     /// - On failure, responds with [`SdkError<UpdateLayerError>`](crate::operation::update_layer::UpdateLayerError)
-    pub fn update_layer(
-        &self,
-    ) -> crate::operation::update_layer::builders::UpdateLayerFluentBuilder {
+    pub fn update_layer(&self) -> crate::operation::update_layer::builders::UpdateLayerFluentBuilder {
         crate::operation::update_layer::builders::UpdateLayerFluentBuilder::new(self.handle.clone())
     }
 }

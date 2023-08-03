@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum QueryTransactionEventType {
     /// A Bitcoin Vin transfer type
@@ -95,9 +89,7 @@ impl ::std::convert::From<&str> for QueryTransactionEventType {
             "ERC721_TRANSFER" => QueryTransactionEventType::Erc721Transfer,
             "ETH_TRANSFER" => QueryTransactionEventType::EthTransfer,
             "INTERNAL_ETH_TRANSFER" => QueryTransactionEventType::InternalEthTransfer,
-            other => QueryTransactionEventType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => QueryTransactionEventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ResetInstanceAttributeOutput {
 }
 impl ResetInstanceAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ResetInstanceAttributeOutput`](crate::operation::reset_instance_attribute::ResetInstanceAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeOutputBuilder {
         crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetInstanceAttributeOutput`](crate::operation::reset_instance_attribute::ResetInstanceAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetInstanceAttributeOutputBuilder {
     _request_id: Option<String>,
 }

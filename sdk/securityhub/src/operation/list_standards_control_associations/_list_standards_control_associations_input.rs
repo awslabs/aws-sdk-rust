@@ -29,16 +29,14 @@ impl ListStandardsControlAssociationsInput {
 }
 impl ListStandardsControlAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListStandardsControlAssociationsInput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput).
-    pub fn builder() -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsInputBuilder {
         crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStandardsControlAssociationsInput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStandardsControlAssociationsInputBuilder {
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListStandardsControlAssociationsInputBuilder {
 }
 impl ListStandardsControlAssociationsInputBuilder {
     /// <p> The identifier of the control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) that you want to determine the enablement status of in each enabled standard. </p>
-    pub fn security_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier of the control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) that you want to determine the enablement status of in each enabled standard. </p>
-    pub fn set_security_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
@@ -94,16 +86,18 @@ impl ListStandardsControlAssociationsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListStandardsControlAssociationsInput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput {
-                security_control_id: self.security_control_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                security_control_id: self.security_control_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

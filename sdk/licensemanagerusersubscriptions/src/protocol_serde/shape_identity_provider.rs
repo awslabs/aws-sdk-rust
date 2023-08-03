@@ -6,18 +6,14 @@ pub fn ser_identity_provider(
     match input {
         crate::types::IdentityProvider::ActiveDirectoryIdentityProvider(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_3
-                .key("ActiveDirectoryIdentityProvider")
-                .start_object();
+            let mut object_1 = object_3.key("ActiveDirectoryIdentityProvider").start_object();
             crate::protocol_serde::shape_active_directory_identity_provider::ser_active_directory_identity_provider(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::IdentityProvider::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "IdentityProvider",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "IdentityProvider",
+            ))
         }
     }
     Ok(())
@@ -25,17 +21,9 @@ pub fn ser_identity_provider(
 
 pub(crate) fn de_identity_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::IdentityProvider>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::IdentityProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -45,41 +33,37 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "ActiveDirectoryIdentityProvider" => {
-                                Some(crate::types::IdentityProvider::ActiveDirectoryIdentityProvider(
-                                    crate::protocol_serde::shape_active_directory_identity_provider::de_active_directory_identity_provider(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ActiveDirectoryIdentityProvider' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::IdentityProvider::Unknown)
-                                                                    }
-                        };
+                        "ActiveDirectoryIdentityProvider" => Some(crate::types::IdentityProvider::ActiveDirectoryIdentityProvider(
+                            crate::protocol_serde::shape_active_directory_identity_provider::de_active_directory_identity_provider(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'ActiveDirectoryIdentityProvider' cannot be null",
+                                    )
+                                })?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::IdentityProvider::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

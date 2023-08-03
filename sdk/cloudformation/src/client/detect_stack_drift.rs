@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DetectStackDriftOutput`](crate::operation::detect_stack_drift::DetectStackDriftOutput) with field(s):
     ///   - [`stack_drift_detection_id(Option<String>)`](crate::operation::detect_stack_drift::DetectStackDriftOutput::stack_drift_detection_id): <p>The ID of the drift detection results of this operation.</p>  <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
     /// - On failure, responds with [`SdkError<DetectStackDriftError>`](crate::operation::detect_stack_drift::DetectStackDriftError)
-    pub fn detect_stack_drift(
-        &self,
-    ) -> crate::operation::detect_stack_drift::builders::DetectStackDriftFluentBuilder {
-        crate::operation::detect_stack_drift::builders::DetectStackDriftFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_stack_drift(&self) -> crate::operation::detect_stack_drift::builders::DetectStackDriftFluentBuilder {
+        crate::operation::detect_stack_drift::builders::DetectStackDriftFluentBuilder::new(self.handle.clone())
     }
 }

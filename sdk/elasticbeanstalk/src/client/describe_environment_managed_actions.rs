@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeEnvironmentManagedActionsOutput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput) with field(s):
     ///   - [`managed_actions(Option<Vec<ManagedAction>>)`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput::managed_actions): <p>A list of upcoming and in-progress managed actions.</p>
     /// - On failure, responds with [`SdkError<DescribeEnvironmentManagedActionsError>`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsError)
-    pub fn describe_environment_managed_actions(&self) -> crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsFluentBuilder{
+    pub fn describe_environment_managed_actions(
+        &self,
+    ) -> crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsFluentBuilder {
         crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsFluentBuilder::new(self.handle.clone())
     }
 }

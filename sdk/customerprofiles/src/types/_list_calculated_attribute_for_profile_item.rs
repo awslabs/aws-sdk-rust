@@ -44,9 +44,7 @@ impl ListCalculatedAttributeForProfileItem {
 
 /// A builder for [`ListCalculatedAttributeForProfileItem`](crate::types::ListCalculatedAttributeForProfileItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCalculatedAttributeForProfileItemBuilder {
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct ListCalculatedAttributeForProfileItemBuilder {
 }
 impl ListCalculatedAttributeForProfileItemBuilder {
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn set_calculated_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculated_attribute_name = input;
         self
     }
@@ -89,18 +81,12 @@ impl ListCalculatedAttributeForProfileItemBuilder {
         &self.display_name
     }
     /// <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
-    pub fn is_data_partial(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn is_data_partial(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.is_data_partial = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
-    pub fn set_is_data_partial(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_is_data_partial(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.is_data_partial = input;
         self
     }

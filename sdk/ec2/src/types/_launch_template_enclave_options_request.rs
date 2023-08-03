@@ -23,9 +23,7 @@ impl LaunchTemplateEnclaveOptionsRequest {
 
 /// A builder for [`LaunchTemplateEnclaveOptionsRequest`](crate::types::LaunchTemplateEnclaveOptionsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateEnclaveOptionsRequestBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl LaunchTemplateEnclaveOptionsRequestBuilder {
     }
     /// Consumes the builder and constructs a [`LaunchTemplateEnclaveOptionsRequest`](crate::types::LaunchTemplateEnclaveOptionsRequest).
     pub fn build(self) -> crate::types::LaunchTemplateEnclaveOptionsRequest {
-        crate::types::LaunchTemplateEnclaveOptionsRequest {
-            enabled: self.enabled,
-        }
+        crate::types::LaunchTemplateEnclaveOptionsRequest { enabled: self.enabled }
     }
 }

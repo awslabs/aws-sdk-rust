@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeConnectionsOutput {
 }
 impl DescribeConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionsOutput`](crate::operation::describe_connections::DescribeConnectionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_connections::builders::DescribeConnectionsOutputBuilder {
-        crate::operation::describe_connections::builders::DescribeConnectionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_connections::builders::DescribeConnectionsOutputBuilder {
+        crate::operation::describe_connections::builders::DescribeConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionsOutput`](crate::operation::describe_connections::DescribeConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionsOutputBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl DescribeConnectionsOutputBuilder {
         self
     }
     /// <p>The connections.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>) -> Self {
         self.connections = input;
         self
     }
     /// <p>The connections.</p>
-    pub fn get_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
         &self.connections
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

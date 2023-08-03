@@ -122,9 +122,7 @@ impl RegexMatchTuple {
 
 /// A builder for [`RegexMatchTuple`](crate::types::RegexMatchTuple).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegexMatchTupleBuilder {
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     pub(crate) text_transformation: ::std::option::Option<crate::types::TextTransformation>,
@@ -137,10 +135,7 @@ impl RegexMatchTupleBuilder {
         self
     }
     /// <p>Specifies where in a web request to look for the <code>RegexPatternSet</code>.</p>
-    pub fn set_field_to_match(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldToMatch>,
-    ) -> Self {
+    pub fn set_field_to_match(mut self, input: ::std::option::Option<crate::types::FieldToMatch>) -> Self {
         self.field_to_match = input;
         self
     }
@@ -228,10 +223,7 @@ impl RegexMatchTupleBuilder {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn set_text_transformation(
-        mut self,
-        input: ::std::option::Option<crate::types::TextTransformation>,
-    ) -> Self {
+    pub fn set_text_transformation(mut self, input: ::std::option::Option<crate::types::TextTransformation>) -> Self {
         self.text_transformation = input;
         self
     }
@@ -273,26 +265,18 @@ impl RegexMatchTupleBuilder {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn get_text_transformation(
-        &self,
-    ) -> &::std::option::Option<crate::types::TextTransformation> {
+    pub fn get_text_transformation(&self) -> &::std::option::Option<crate::types::TextTransformation> {
         &self.text_transformation
     }
     /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p>
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regex_pattern_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_pattern_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p>
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn set_regex_pattern_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regex_pattern_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex_pattern_set_id = input;
         self
     }

@@ -78,8 +78,7 @@ pub struct ViewBuilder {
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
-    pub(crate) included_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
+    pub(crate) included_properties: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
     pub(crate) filters: ::std::option::Option<crate::types::SearchFilter>,
 }
 impl ViewBuilder {
@@ -117,10 +116,7 @@ impl ViewBuilder {
         self
     }
     /// <p>The date and time when this view was last modified.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -157,17 +153,12 @@ impl ViewBuilder {
         self
     }
     /// <p>A structure that contains additional information about the view.</p>
-    pub fn set_included_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
-    ) -> Self {
+    pub fn set_included_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>) -> Self {
         self.included_properties = input;
         self
     }
     /// <p>A structure that contains additional information about the view.</p>
-    pub fn get_included_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>> {
+    pub fn get_included_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>> {
         &self.included_properties
     }
     /// <p>An array of <code>SearchFilter</code> objects that specify which resources can be included in the results of queries made using this view.</p>

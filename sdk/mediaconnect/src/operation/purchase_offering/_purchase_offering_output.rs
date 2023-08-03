@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for PurchaseOfferingOutput {
 }
 impl PurchaseOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder {
         crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseOfferingOutputBuilder {
     pub(crate) reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl PurchaseOfferingOutputBuilder {
         self
     }
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
-    pub fn set_reservation(
-        mut self,
-        input: ::std::option::Option<crate::types::Reservation>,
-    ) -> Self {
+    pub fn set_reservation(mut self, input: ::std::option::Option<crate::types::Reservation>) -> Self {
         self.reservation = input;
         self
     }

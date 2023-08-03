@@ -33,9 +33,7 @@ impl ConfiguredTableAnalysisRule {
         self.configured_table_arn.as_deref()
     }
     /// <p>The policy that controls SQL query rules.</p>
-    pub fn policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRulePolicy> {
+    pub fn policy(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRulePolicy> {
         self.policy.as_ref()
     }
     /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
@@ -60,9 +58,7 @@ impl ConfiguredTableAnalysisRule {
 
 /// A builder for [`ConfiguredTableAnalysisRule`](crate::types::ConfiguredTableAnalysisRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfiguredTableAnalysisRuleBuilder {
     pub(crate) configured_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) configured_table_arn: ::std::option::Option<::std::string::String>,
@@ -73,18 +69,12 @@ pub struct ConfiguredTableAnalysisRuleBuilder {
 }
 impl ConfiguredTableAnalysisRuleBuilder {
     /// <p>The unique ID for the configured table.</p>
-    pub fn configured_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the configured table.</p>
-    pub fn set_configured_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_table_id = input;
         self
     }
@@ -93,18 +83,12 @@ impl ConfiguredTableAnalysisRuleBuilder {
         &self.configured_table_id
     }
     /// <p>The unique ARN for the configured table.</p>
-    pub fn configured_table_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN for the configured table.</p>
-    pub fn set_configured_table_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_table_arn = input;
         self
     }
@@ -118,17 +102,12 @@ impl ConfiguredTableAnalysisRuleBuilder {
         self
     }
     /// <p>The policy that controls SQL query rules.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>) -> Self {
         self.policy = input;
         self
     }
     /// <p>The policy that controls SQL query rules.</p>
-    pub fn get_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy> {
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy> {
         &self.policy
     }
     /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
@@ -137,17 +116,12 @@ impl ConfiguredTableAnalysisRuleBuilder {
         self
     }
     /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
-    pub fn get_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
         &self.r#type
     }
     /// <p>The time the configured table analysis rule was created.</p>
@@ -156,10 +130,7 @@ impl ConfiguredTableAnalysisRuleBuilder {
         self
     }
     /// <p>The time the configured table analysis rule was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -173,10 +144,7 @@ impl ConfiguredTableAnalysisRuleBuilder {
         self
     }
     /// <p>The time the configured table analysis rule was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

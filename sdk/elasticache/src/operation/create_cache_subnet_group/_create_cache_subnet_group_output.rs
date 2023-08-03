@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for CreateCacheSubnetGroupOutput {
 }
 impl CreateCacheSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateCacheSubnetGroupOutput`](crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_cache_subnet_group::builders::CreateCacheSubnetGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_cache_subnet_group::builders::CreateCacheSubnetGroupOutputBuilder {
         crate::operation::create_cache_subnet_group::builders::CreateCacheSubnetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCacheSubnetGroupOutput`](crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCacheSubnetGroupOutputBuilder {
     pub(crate) cache_subnet_group: ::std::option::Option<crate::types::CacheSubnetGroup>,
     _request_id: Option<String>,
@@ -60,10 +56,7 @@ impl CreateCacheSubnetGroupOutputBuilder {
     /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
     /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
-    pub fn set_cache_subnet_group(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheSubnetGroup>,
-    ) -> Self {
+    pub fn set_cache_subnet_group(mut self, input: ::std::option::Option<crate::types::CacheSubnetGroup>) -> Self {
         self.cache_subnet_group = input;
         self
     }
@@ -85,9 +78,7 @@ impl CreateCacheSubnetGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCacheSubnetGroupOutput`](crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupOutput {
+    pub fn build(self) -> crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupOutput {
         crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupOutput {
             cache_subnet_group: self.cache_subnet_group,
             _request_id: self._request_id,

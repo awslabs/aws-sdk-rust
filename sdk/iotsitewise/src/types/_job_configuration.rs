@@ -23,9 +23,7 @@ impl JobConfiguration {
 
 /// A builder for [`JobConfiguration`](crate::types::JobConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobConfigurationBuilder {
     pub(crate) file_format: ::std::option::Option<crate::types::FileFormat>,
 }
@@ -36,10 +34,7 @@ impl JobConfigurationBuilder {
         self
     }
     /// <p>The file format of the data in Amazon S3.</p>
-    pub fn set_file_format(
-        mut self,
-        input: ::std::option::Option<crate::types::FileFormat>,
-    ) -> Self {
+    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
         self.file_format = input;
         self
     }

@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`job_runs(Option<Vec<JobRun>>)`](crate::operation::get_job_runs::GetJobRunsOutput::job_runs): <p>A list of job-run metadata objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_job_runs::GetJobRunsOutput::next_token): <p>A continuation token, if not all requested job runs have been returned.</p>
     /// - On failure, responds with [`SdkError<GetJobRunsError>`](crate::operation::get_job_runs::GetJobRunsError)
-    pub fn get_job_runs(
-        &self,
-    ) -> crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder {
+    pub fn get_job_runs(&self) -> crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder {
         crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder::new(self.handle.clone())
     }
 }

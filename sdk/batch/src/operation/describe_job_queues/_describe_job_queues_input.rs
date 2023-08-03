@@ -34,17 +34,14 @@ impl DescribeJobQueuesInput {
 }
 impl DescribeJobQueuesInput {
     /// Creates a new builder-style object to manufacture [`DescribeJobQueuesInput`](crate::operation::describe_job_queues::DescribeJobQueuesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_job_queues::builders::DescribeJobQueuesInputBuilder {
+    pub fn builder() -> crate::operation::describe_job_queues::builders::DescribeJobQueuesInputBuilder {
         crate::operation::describe_job_queues::builders::DescribeJobQueuesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobQueuesInput`](crate::operation::describe_job_queues::DescribeJobQueuesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobQueuesInputBuilder {
     pub(crate) job_queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -63,10 +60,7 @@ impl DescribeJobQueuesInputBuilder {
         self
     }
     /// <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN) entries.</p>
-    pub fn set_job_queues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_queues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.job_queues = input;
         self
     }
@@ -111,16 +105,11 @@ impl DescribeJobQueuesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobQueuesInput`](crate::operation::describe_job_queues::DescribeJobQueuesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_queues::DescribeJobQueuesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_job_queues::DescribeJobQueuesInput {
-                job_queues: self.job_queues,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_job_queues::DescribeJobQueuesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_job_queues::DescribeJobQueuesInput {
+            job_queues: self.job_queues,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -53,9 +53,7 @@ impl SendMessageInput {
 
 /// A builder for [`SendMessageInput`](crate::operation::send_message::SendMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendMessageInputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -121,18 +119,12 @@ impl SendMessageInputBuilder {
         &self.client_token
     }
     /// <p>The authentication token associated with the connection.</p>
-    pub fn connection_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authentication token associated with the connection.</p>
-    pub fn set_connection_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_token = input;
         self
     }
@@ -141,12 +133,7 @@ impl SendMessageInputBuilder {
         &self.connection_token
     }
     /// Consumes the builder and constructs a [`SendMessageInput`](crate::operation::send_message::SendMessageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_message::SendMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_message::SendMessageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_message::SendMessageInput {
             content_type: self.content_type,
             content: self.content,

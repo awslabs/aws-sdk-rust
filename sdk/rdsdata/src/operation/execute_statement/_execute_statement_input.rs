@@ -104,17 +104,14 @@ impl ExecuteStatementInput {
 }
 impl ExecuteStatementInput {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
-    pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementInputBuilder
-    {
+    pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementInputBuilder {
         crate::operation::execute_statement::builders::ExecuteStatementInputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteStatementInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -224,36 +221,25 @@ impl ExecuteStatementInputBuilder {
     /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
         &self.parameters
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -302,10 +288,7 @@ impl ExecuteStatementInputBuilder {
         self
     }
     /// <p>Options that control how the result set is returned.</p>
-    pub fn set_result_set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ResultSetOptions>,
-    ) -> Self {
+    pub fn set_result_set_options(mut self, input: ::std::option::Option<crate::types::ResultSetOptions>) -> Self {
         self.result_set_options = input;
         self
     }
@@ -321,10 +304,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
     /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_format_records_as(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordsFormatType>,
-    ) -> Self {
+    pub fn set_format_records_as(mut self, input: ::std::option::Option<crate::types::RecordsFormatType>) -> Self {
         self.format_records_as = input;
         self
     }
@@ -336,10 +316,7 @@ impl ExecuteStatementInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_statement::ExecuteStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_statement::ExecuteStatementInput {
             resource_arn: self.resource_arn,
             secret_arn: self.secret_arn,

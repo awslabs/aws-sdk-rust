@@ -10,10 +10,7 @@ impl DescribeAccessInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_access::DescribeAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_access::DescribeAccessError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_access::DescribeAccessError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_access();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeAccessFluentBuilder {
         }
     }
     /// Access the DescribeAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_access::builders::DescribeAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_access::builders::DescribeAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

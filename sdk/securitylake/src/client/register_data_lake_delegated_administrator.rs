@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::register_data_lake_delegated_administrator::builders::RegisterDataLakeDelegatedAdministratorFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::register_data_lake_delegated_administrator::builders::RegisterDataLakeDelegatedAdministratorFluentBuilder::set_account_id): <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
     /// - On success, responds with [`RegisterDataLakeDelegatedAdministratorOutput`](crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorOutput)
     /// - On failure, responds with [`SdkError<RegisterDataLakeDelegatedAdministratorError>`](crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorError)
-    pub fn register_data_lake_delegated_administrator(&self) -> crate::operation::register_data_lake_delegated_administrator::builders::RegisterDataLakeDelegatedAdministratorFluentBuilder{
-        crate::operation::register_data_lake_delegated_administrator::builders::RegisterDataLakeDelegatedAdministratorFluentBuilder::new(self.handle.clone())
+    pub fn register_data_lake_delegated_administrator(
+        &self,
+    ) -> crate::operation::register_data_lake_delegated_administrator::builders::RegisterDataLakeDelegatedAdministratorFluentBuilder {
+        crate::operation::register_data_lake_delegated_administrator::builders::RegisterDataLakeDelegatedAdministratorFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

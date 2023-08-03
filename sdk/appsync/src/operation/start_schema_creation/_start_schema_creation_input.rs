@@ -22,18 +22,14 @@ impl StartSchemaCreationInput {
 }
 impl StartSchemaCreationInput {
     /// Creates a new builder-style object to manufacture [`StartSchemaCreationInput`](crate::operation::start_schema_creation::StartSchemaCreationInput).
-    pub fn builder(
-    ) -> crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder {
-        crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder {
+        crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartSchemaCreationInput`](crate::operation::start_schema_creation::StartSchemaCreationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSchemaCreationInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -59,10 +55,7 @@ impl StartSchemaCreationInputBuilder {
         self
     }
     /// <p>The schema definition, in GraphQL schema language format.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.definition = input;
         self
     }
@@ -73,15 +66,11 @@ impl StartSchemaCreationInputBuilder {
     /// Consumes the builder and constructs a [`StartSchemaCreationInput`](crate::operation::start_schema_creation::StartSchemaCreationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_schema_creation::StartSchemaCreationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_schema_creation::StartSchemaCreationInput {
-                api_id: self.api_id,
-                definition: self.definition,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_schema_creation::StartSchemaCreationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_schema_creation::StartSchemaCreationInput {
+            api_id: self.api_id,
+            definition: self.definition,
+        })
     }
 }

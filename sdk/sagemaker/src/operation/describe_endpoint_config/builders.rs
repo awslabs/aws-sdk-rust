@@ -37,10 +37,7 @@ impl DescribeEndpointConfigFluentBuilder {
         }
     }
     /// Access the DescribeEndpointConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeEndpointConfigFluentBuilder {
             crate::operation::describe_endpoint_config::DescribeEndpointConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_config::DescribeEndpointConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_config::DescribeEndpointConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeEndpointConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeEndpointConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_config::DescribeEndpointConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_config::DescribeEndpointConfigError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeEndpointConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_config::DescribeEndpointConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_config::DescribeEndpointConfigError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeEndpointConfigFluentBuilder {
             crate::operation::describe_endpoint_config::DescribeEndpointConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_config::DescribeEndpointConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_config::DescribeEndpointConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the endpoint configuration.</p>
-    pub fn endpoint_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_config_name(input.into());
         self
     }
     /// <p>The name of the endpoint configuration.</p>
-    pub fn set_endpoint_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_config_name(input);
         self
     }

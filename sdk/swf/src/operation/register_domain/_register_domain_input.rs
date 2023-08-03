@@ -51,14 +51,11 @@ impl RegisterDomainInput {
 
 /// A builder for [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterDomainInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) workflow_execution_retention_period_in_days:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) workflow_execution_retention_period_in_days: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl RegisterDomainInputBuilder {
@@ -96,30 +93,21 @@ impl RegisterDomainInputBuilder {
     /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
     /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
     /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn workflow_execution_retention_period_in_days(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.workflow_execution_retention_period_in_days =
-            ::std::option::Option::Some(input.into());
+    pub fn workflow_execution_retention_period_in_days(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workflow_execution_retention_period_in_days = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
     /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
     /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn set_workflow_execution_retention_period_in_days(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_execution_retention_period_in_days(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_execution_retention_period_in_days = input;
         self
     }
     /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
     /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
     /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn get_workflow_execution_retention_period_in_days(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_workflow_execution_retention_period_in_days(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_execution_retention_period_in_days
     }
     /// Appends an item to `tags`.
@@ -136,10 +124,7 @@ impl RegisterDomainInputBuilder {
     }
     /// <p>Tags to be added when registering a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.tags = input;
         self
     }
@@ -151,15 +136,11 @@ impl RegisterDomainInputBuilder {
     /// Consumes the builder and constructs a [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_domain::RegisterDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_domain::RegisterDomainInput {
             name: self.name,
             description: self.description,
-            workflow_execution_retention_period_in_days: self
-                .workflow_execution_retention_period_in_days,
+            workflow_execution_retention_period_in_days: self.workflow_execution_retention_period_in_days,
             tags: self.tags,
         })
     }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCarrierGatewayOutput`](crate::operation::create_carrier_gateway::CreateCarrierGatewayOutput) with field(s):
     ///   - [`carrier_gateway(Option<CarrierGateway>)`](crate::operation::create_carrier_gateway::CreateCarrierGatewayOutput::carrier_gateway): <p>Information about the carrier gateway.</p>
     /// - On failure, responds with [`SdkError<CreateCarrierGatewayError>`](crate::operation::create_carrier_gateway::CreateCarrierGatewayError)
-    pub fn create_carrier_gateway(
-        &self,
-    ) -> crate::operation::create_carrier_gateway::builders::CreateCarrierGatewayFluentBuilder {
-        crate::operation::create_carrier_gateway::builders::CreateCarrierGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_carrier_gateway(&self) -> crate::operation::create_carrier_gateway::builders::CreateCarrierGatewayFluentBuilder {
+        crate::operation::create_carrier_gateway::builders::CreateCarrierGatewayFluentBuilder::new(self.handle.clone())
     }
 }

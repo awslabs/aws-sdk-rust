@@ -24,9 +24,7 @@ impl ModelVariantConfig {
         self.variant_name.as_deref()
     }
     /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
-    pub fn infrastructure_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelInfrastructureConfig> {
+    pub fn infrastructure_config(&self) -> ::std::option::Option<&crate::types::ModelInfrastructureConfig> {
         self.infrastructure_config.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl ModelVariantConfig {
 
 /// A builder for [`ModelVariantConfig`](crate::types::ModelVariantConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelVariantConfigBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) variant_name: ::std::option::Option<::std::string::String>,
-    pub(crate) infrastructure_config:
-        ::std::option::Option<crate::types::ModelInfrastructureConfig>,
+    pub(crate) infrastructure_config: ::std::option::Option<crate::types::ModelInfrastructureConfig>,
 }
 impl ModelVariantConfigBuilder {
     /// <p>The name of the Amazon SageMaker Model entity.</p>
@@ -83,17 +78,12 @@ impl ModelVariantConfigBuilder {
         self
     }
     /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
-    pub fn set_infrastructure_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelInfrastructureConfig>,
-    ) -> Self {
+    pub fn set_infrastructure_config(mut self, input: ::std::option::Option<crate::types::ModelInfrastructureConfig>) -> Self {
         self.infrastructure_config = input;
         self
     }
     /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
-    pub fn get_infrastructure_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelInfrastructureConfig> {
+    pub fn get_infrastructure_config(&self) -> &::std::option::Option<crate::types::ModelInfrastructureConfig> {
         &self.infrastructure_config
     }
     /// Consumes the builder and constructs a [`ModelVariantConfig`](crate::types::ModelVariantConfig).

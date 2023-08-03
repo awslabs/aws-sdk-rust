@@ -29,20 +29,16 @@ impl ::aws_http::request_id::RequestId for ListMultipartUploadsOutput {
 }
 impl ListMultipartUploadsOutput {
     /// Creates a new builder-style object to manufacture [`ListMultipartUploadsOutput`](crate::operation::list_multipart_uploads::ListMultipartUploadsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsOutputBuilder {
+    pub fn builder() -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsOutputBuilder {
         crate::operation::list_multipart_uploads::builders::ListMultipartUploadsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMultipartUploadsOutput`](crate::operation::list_multipart_uploads::ListMultipartUploadsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultipartUploadsOutputBuilder {
-    pub(crate) uploads_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>>,
+    pub(crate) uploads_list: ::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +55,12 @@ impl ListMultipartUploadsOutputBuilder {
         self
     }
     /// <p>A list of in-progress multipart uploads.</p>
-    pub fn set_uploads_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>>,
-    ) -> Self {
+    pub fn set_uploads_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>>) -> Self {
         self.uploads_list = input;
         self
     }
     /// <p>A list of in-progress multipart uploads.</p>
-    pub fn get_uploads_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>> {
+    pub fn get_uploads_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>> {
         &self.uploads_list
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>

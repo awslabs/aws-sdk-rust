@@ -28,8 +28,7 @@ impl ListAssociatedResourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssociatedResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_associated_resources::builders::ListAssociatedResourcesInputBuilder,
+    inner: crate::operation::list_associated_resources::builders::ListAssociatedResourcesInputBuilder,
 }
 impl ListAssociatedResourcesFluentBuilder {
     /// Creates a new `ListAssociatedResources`.
@@ -40,10 +39,7 @@ impl ListAssociatedResourcesFluentBuilder {
         }
     }
     /// Access the ListAssociatedResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_associated_resources::builders::ListAssociatedResourcesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_associated_resources::builders::ListAssociatedResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl ListAssociatedResourcesFluentBuilder {
             crate::operation::list_associated_resources::ListAssociatedResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_resources::ListAssociatedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_resources::ListAssociatedResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl ListAssociatedResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl ListAssociatedResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associated_resources::ListAssociatedResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_resources::ListAssociatedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_resources::ListAssociatedResourcesError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl ListAssociatedResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associated_resources::ListAssociatedResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_resources::ListAssociatedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_resources::ListAssociatedResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -120,19 +107,14 @@ impl ListAssociatedResourcesFluentBuilder {
             crate::operation::list_associated_resources::ListAssociatedResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_resources::ListAssociatedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_resources::ListAssociatedResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_associated_resources::paginator::ListAssociatedResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_associated_resources::paginator::ListAssociatedResourcesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_associated_resources::paginator::ListAssociatedResourcesPaginator {
         crate::operation::list_associated_resources::paginator::ListAssociatedResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p> The name, ID, or ARN of the application. </p>

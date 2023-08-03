@@ -23,11 +23,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTargetGroupOutput`](crate::operation::create_target_group::CreateTargetGroupOutput) with field(s):
     ///   - [`target_groups(Option<Vec<TargetGroup>>)`](crate::operation::create_target_group::CreateTargetGroupOutput::target_groups): <p>Information about the target group.</p>
     /// - On failure, responds with [`SdkError<CreateTargetGroupError>`](crate::operation::create_target_group::CreateTargetGroupError)
-    pub fn create_target_group(
-        &self,
-    ) -> crate::operation::create_target_group::builders::CreateTargetGroupFluentBuilder {
-        crate::operation::create_target_group::builders::CreateTargetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_target_group(&self) -> crate::operation::create_target_group::builders::CreateTargetGroupFluentBuilder {
+        crate::operation::create_target_group::builders::CreateTargetGroupFluentBuilder::new(self.handle.clone())
     }
 }

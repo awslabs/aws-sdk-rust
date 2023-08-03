@@ -29,9 +29,7 @@ impl ListFrameworksInput {
 
 /// A builder for [`ListFrameworksInput`](crate::operation::list_frameworks::ListFrameworksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFrameworksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ListFrameworksInputBuilder {
     /// Consumes the builder and constructs a [`ListFrameworksInput`](crate::operation::list_frameworks::ListFrameworksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_frameworks::ListFrameworksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_frameworks::ListFrameworksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_frameworks::ListFrameworksInput {
             max_results: self.max_results,
             next_token: self.next_token,

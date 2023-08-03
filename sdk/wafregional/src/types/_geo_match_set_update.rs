@@ -34,9 +34,7 @@ impl GeoMatchSetUpdate {
 
 /// A builder for [`GeoMatchSetUpdate`](crate::types::GeoMatchSetUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeoMatchSetUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) geo_match_constraint: ::std::option::Option<crate::types::GeoMatchConstraint>,
@@ -62,17 +60,12 @@ impl GeoMatchSetUpdateBuilder {
         self
     }
     /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
-    pub fn set_geo_match_constraint(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoMatchConstraint>,
-    ) -> Self {
+    pub fn set_geo_match_constraint(mut self, input: ::std::option::Option<crate::types::GeoMatchConstraint>) -> Self {
         self.geo_match_constraint = input;
         self
     }
     /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
-    pub fn get_geo_match_constraint(
-        &self,
-    ) -> &::std::option::Option<crate::types::GeoMatchConstraint> {
+    pub fn get_geo_match_constraint(&self) -> &::std::option::Option<crate::types::GeoMatchConstraint> {
         &self.geo_match_constraint
     }
     /// Consumes the builder and constructs a [`GeoMatchSetUpdate`](crate::types::GeoMatchSetUpdate).

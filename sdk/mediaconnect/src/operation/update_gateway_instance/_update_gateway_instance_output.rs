@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateGatewayInstanceOutput {
 }
 impl UpdateGatewayInstanceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayInstanceOutput`](crate::operation::update_gateway_instance::UpdateGatewayInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceOutputBuilder {
         crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGatewayInstanceOutput`](crate::operation::update_gateway_instance::UpdateGatewayInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGatewayInstanceOutputBuilder {
     pub(crate) bridge_placement: ::std::option::Option<crate::types::BridgePlacement>,
     pub(crate) gateway_instance_arn: ::std::option::Option<::std::string::String>,
@@ -52,10 +48,7 @@ impl UpdateGatewayInstanceOutputBuilder {
         self
     }
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
-    pub fn set_bridge_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::BridgePlacement>,
-    ) -> Self {
+    pub fn set_bridge_placement(mut self, input: ::std::option::Option<crate::types::BridgePlacement>) -> Self {
         self.bridge_placement = input;
         self
     }
@@ -64,18 +57,12 @@ impl UpdateGatewayInstanceOutputBuilder {
         &self.bridge_placement
     }
     /// The Amazon Resource Name (ARN) of the instance.
-    pub fn gateway_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the instance.
-    pub fn set_gateway_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_instance_arn = input;
         self
     }

@@ -10,10 +10,7 @@ impl ListSpacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_spaces::ListSpacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_spaces::ListSpacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_spaces::ListSpacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_spaces();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListSpacesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_spaces::ListSpaces,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_spaces::ListSpaces, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_spaces::ListSpacesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListSpacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListSpacesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_spaces::ListSpaces,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_spaces::ListSpaces, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_spaces::ListSpacesError>,
     > {
         self.customize_middleware().await
@@ -175,18 +163,12 @@ impl ListSpacesFluentBuilder {
         self.inner.get_sort_by()
     }
     /// <p>A parameter to search for the Domain ID.</p>
-    pub fn domain_id_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_id_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id_equals(input.into());
         self
     }
     /// <p>A parameter to search for the Domain ID.</p>
-    pub fn set_domain_id_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_id_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id_equals(input);
         self
     }
@@ -195,18 +177,12 @@ impl ListSpacesFluentBuilder {
         self.inner.get_domain_id_equals()
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn space_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn space_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.space_name_contains(input.into());
         self
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn set_space_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_space_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_space_name_contains(input);
         self
     }

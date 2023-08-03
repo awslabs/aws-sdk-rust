@@ -29,7 +29,7 @@ impl UpdateSmbSecurityStrategyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSMBSecurityStrategyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurityStrategyInputBuilder,
+    inner: crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurityStrategyInputBuilder,
 }
 impl UpdateSMBSecurityStrategyFluentBuilder {
     /// Creates a new `UpdateSMBSecurityStrategy`.
@@ -40,7 +40,7 @@ impl UpdateSMBSecurityStrategyFluentBuilder {
         }
     }
     /// Access the UpdateSMBSecurityStrategy as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurityStrategyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurityStrategyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl UpdateSMBSecurityStrategyFluentBuilder {
             crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl UpdateSMBSecurityStrategyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl UpdateSMBSecurityStrategyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategyError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl UpdateSMBSecurityStrategyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl UpdateSMBSecurityStrategyFluentBuilder {
             crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategyError>,
     > {
         self.customize_middleware().await
     }
@@ -149,10 +138,7 @@ impl UpdateSMBSecurityStrategyFluentBuilder {
     /// <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
     /// <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
     /// <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
-    pub fn set_smb_security_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbSecurityStrategy>,
-    ) -> Self {
+    pub fn set_smb_security_strategy(mut self, input: ::std::option::Option<crate::types::SmbSecurityStrategy>) -> Self {
         self.inner = self.inner.set_smb_security_strategy(input);
         self
     }
@@ -160,9 +146,7 @@ impl UpdateSMBSecurityStrategyFluentBuilder {
     /// <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
     /// <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
     /// <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
-    pub fn get_smb_security_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmbSecurityStrategy> {
+    pub fn get_smb_security_strategy(&self) -> &::std::option::Option<crate::types::SmbSecurityStrategy> {
         self.inner.get_smb_security_strategy()
     }
 }

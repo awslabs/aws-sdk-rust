@@ -18,10 +18,7 @@ pub fn ser_create_location_nfs_input(
     if let Some(var_5) = &input.mount_options {
         #[allow(unused_mut)]
         let mut object_6 = object.key("MountOptions").start_object();
-        crate::protocol_serde::shape_nfs_mount_options::ser_nfs_mount_options(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_nfs_mount_options::ser_nfs_mount_options(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.tags {
@@ -30,10 +27,7 @@ pub fn ser_create_location_nfs_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

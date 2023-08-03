@@ -37,9 +37,7 @@ impl GetLinkAssociationsFluentBuilder {
         }
     }
     /// Access the GetLinkAssociations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_link_associations::builders::GetLinkAssociationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_link_associations::builders::GetLinkAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetLinkAssociationsFluentBuilder {
             crate::operation::get_link_associations::GetLinkAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_link_associations::GetLinkAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_link_associations::GetLinkAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetLinkAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetLinkAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_link_associations::GetLinkAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_link_associations::GetLinkAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_link_associations::GetLinkAssociationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetLinkAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_link_associations::GetLinkAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_link_associations::GetLinkAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_link_associations::GetLinkAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl GetLinkAssociationsFluentBuilder {
             crate::operation::get_link_associations::GetLinkAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_link_associations::GetLinkAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_link_associations::GetLinkAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_link_associations::paginator::GetLinkAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_link_associations::paginator::GetLinkAssociationsPaginator {
-        crate::operation::get_link_associations::paginator::GetLinkAssociationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_link_associations::paginator::GetLinkAssociationsPaginator {
+        crate::operation::get_link_associations::paginator::GetLinkAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }

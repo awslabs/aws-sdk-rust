@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateLabelingJobOutput {
 }
 impl CreateLabelingJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateLabelingJobOutput`](crate::operation::create_labeling_job::CreateLabelingJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_labeling_job::builders::CreateLabelingJobOutputBuilder {
+    pub fn builder() -> crate::operation::create_labeling_job::builders::CreateLabelingJobOutputBuilder {
         crate::operation::create_labeling_job::builders::CreateLabelingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLabelingJobOutput`](crate::operation::create_labeling_job::CreateLabelingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLabelingJobOutputBuilder {
     pub(crate) labeling_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLabelingJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the labeling job.</p>
-    pub fn labeling_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn labeling_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the labeling job.</p>
-    pub fn set_labeling_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_labeling_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.labeling_job_arn = input;
         self
     }

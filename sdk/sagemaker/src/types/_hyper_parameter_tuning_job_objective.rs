@@ -13,9 +13,7 @@ pub struct HyperParameterTuningJobObjective {
 }
 impl HyperParameterTuningJobObjective {
     /// <p>Whether to minimize or maximize the objective metric.</p>
-    pub fn r#type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobObjectiveType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobObjectiveType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the metric to use for the objective metric.</p>
@@ -32,9 +30,7 @@ impl HyperParameterTuningJobObjective {
 
 /// A builder for [`HyperParameterTuningJobObjective`](crate::types::HyperParameterTuningJobObjective).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobObjectiveBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
@@ -46,17 +42,12 @@ impl HyperParameterTuningJobObjectiveBuilder {
         self
     }
     /// <p>Whether to minimize or maximize the objective metric.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Whether to minimize or maximize the objective metric.</p>
-    pub fn get_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType> {
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType> {
         &self.r#type
     }
     /// <p>The name of the metric to use for the objective metric.</p>

@@ -10,10 +10,7 @@ impl GetGeneratedPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_generated_policy::GetGeneratedPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_generated_policy::GetGeneratedPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_generated_policy::GetGeneratedPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_generated_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetGeneratedPolicyFluentBuilder {
         }
     }
     /// Access the GetGeneratedPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_generated_policy::builders::GetGeneratedPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_generated_policy::builders::GetGeneratedPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetGeneratedPolicyFluentBuilder {
             crate::operation::get_generated_policy::GetGeneratedPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_generated_policy::GetGeneratedPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_generated_policy::GetGeneratedPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetGeneratedPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetGeneratedPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_generated_policy::GetGeneratedPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_generated_policy::GetGeneratedPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_generated_policy::GetGeneratedPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetGeneratedPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_generated_policy::GetGeneratedPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_generated_policy::GetGeneratedPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_generated_policy::GetGeneratedPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetGeneratedPolicyFluentBuilder {
             crate::operation::get_generated_policy::GetGeneratedPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_generated_policy::GetGeneratedPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_generated_policy::GetGeneratedPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -161,10 +145,7 @@ impl GetGeneratedPolicyFluentBuilder {
     }
     /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
-    pub fn set_include_service_level_template(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_service_level_template(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_service_level_template(input);
         self
     }

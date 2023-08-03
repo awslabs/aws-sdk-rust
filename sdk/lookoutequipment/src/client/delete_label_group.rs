@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`label_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_label_group::builders::DeleteLabelGroupFluentBuilder::label_group_name) / [`set_label_group_name(Option<String>)`](crate::operation::delete_label_group::builders::DeleteLabelGroupFluentBuilder::set_label_group_name): <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     /// - On success, responds with [`DeleteLabelGroupOutput`](crate::operation::delete_label_group::DeleteLabelGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteLabelGroupError>`](crate::operation::delete_label_group::DeleteLabelGroupError)
-    pub fn delete_label_group(
-        &self,
-    ) -> crate::operation::delete_label_group::builders::DeleteLabelGroupFluentBuilder {
-        crate::operation::delete_label_group::builders::DeleteLabelGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_label_group(&self) -> crate::operation::delete_label_group::builders::DeleteLabelGroupFluentBuilder {
+        crate::operation::delete_label_group::builders::DeleteLabelGroupFluentBuilder::new(self.handle.clone())
     }
 }

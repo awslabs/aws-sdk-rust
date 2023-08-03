@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`status(Option<ResourceResolutionStatusType>)`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput::status): <p>The status of the action.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput::error_message): <p>The returned error message for the request.</p>
     /// - On failure, responds with [`SdkError<DescribeAppVersionResourcesResolutionStatusError>`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError)
-    pub fn describe_app_version_resources_resolution_status(&self) -> crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusFluentBuilder{
-        crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusFluentBuilder::new(self.handle.clone())
+    pub fn describe_app_version_resources_resolution_status(
+        &self,
+    ) -> crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusFluentBuilder {
+        crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

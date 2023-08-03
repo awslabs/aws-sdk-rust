@@ -23,36 +23,26 @@ impl AddNotificationChannelsInput {
 }
 impl AddNotificationChannelsInput {
     /// Creates a new builder-style object to manufacture [`AddNotificationChannelsInput`](crate::operation::add_notification_channels::AddNotificationChannelsInput).
-    pub fn builder(
-    ) -> crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder
-    {
+    pub fn builder() -> crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder {
         crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder::default()
     }
 }
 
 /// A builder for [`AddNotificationChannelsInput`](crate::operation::add_notification_channels::AddNotificationChannelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddNotificationChannelsInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
 }
 impl AddNotificationChannelsInputBuilder {
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -72,10 +62,7 @@ impl AddNotificationChannelsInputBuilder {
         self
     }
     /// <p>One or 2 channels to report to when anomalies are detected.</p>
-    pub fn set_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
-    ) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>) -> Self {
         self.channels = input;
         self
     }
@@ -90,11 +77,9 @@ impl AddNotificationChannelsInputBuilder {
         crate::operation::add_notification_channels::AddNotificationChannelsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::add_notification_channels::AddNotificationChannelsInput {
-                profiling_group_name: self.profiling_group_name,
-                channels: self.channels,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::add_notification_channels::AddNotificationChannelsInput {
+            profiling_group_name: self.profiling_group_name,
+            channels: self.channels,
+        })
     }
 }

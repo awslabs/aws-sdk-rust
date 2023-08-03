@@ -37,9 +37,7 @@ impl ListScheduledActionsFluentBuilder {
         }
     }
     /// Access the ListScheduledActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_scheduled_actions::builders::ListScheduledActionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_scheduled_actions::builders::ListScheduledActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListScheduledActionsFluentBuilder {
             crate::operation::list_scheduled_actions::ListScheduledActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_actions::ListScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_actions::ListScheduledActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListScheduledActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListScheduledActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_scheduled_actions::ListScheduledActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_actions::ListScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_actions::ListScheduledActionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListScheduledActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_scheduled_actions::ListScheduledActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_actions::ListScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_actions::ListScheduledActionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListScheduledActionsFluentBuilder {
             crate::operation::list_scheduled_actions::ListScheduledActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_actions::ListScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_actions::ListScheduledActionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_scheduled_actions::paginator::ListScheduledActionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_scheduled_actions::paginator::ListScheduledActionsPaginator {
-        crate::operation::list_scheduled_actions::paginator::ListScheduledActionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_scheduled_actions::paginator::ListScheduledActionsPaginator {
+        crate::operation::list_scheduled_actions::paginator::ListScheduledActionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -10,10 +10,7 @@ impl GetBlueprintsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_blueprints::GetBlueprintsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_blueprints::GetBlueprintsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_blueprints();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetBlueprintsFluentBuilder {
         }
     }
     /// Access the GetBlueprints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_blueprints::builders::GetBlueprintsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_blueprints::builders::GetBlueprintsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl GetBlueprintsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -157,10 +149,7 @@ impl GetBlueprintsFluentBuilder {
     /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
     /// </important>
-    pub fn set_app_category(
-        mut self,
-        input: ::std::option::Option<crate::types::AppCategory>,
-    ) -> Self {
+    pub fn set_app_category(mut self, input: ::std::option::Option<crate::types::AppCategory>) -> Self {
         self.inner = self.inner.set_app_category(input);
         self
     }

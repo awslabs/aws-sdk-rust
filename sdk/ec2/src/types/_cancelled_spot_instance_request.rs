@@ -30,27 +30,19 @@ impl CancelledSpotInstanceRequest {
 
 /// A builder for [`CancelledSpotInstanceRequest`](crate::types::CancelledSpotInstanceRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelledSpotInstanceRequestBuilder {
     pub(crate) spot_instance_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CancelSpotInstanceRequestState>,
 }
 impl CancelledSpotInstanceRequestBuilder {
     /// <p>The ID of the Spot Instance request.</p>
-    pub fn spot_instance_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_instance_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_instance_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Spot Instance request.</p>
-    pub fn set_spot_instance_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_instance_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_instance_request_id = input;
         self
     }
@@ -64,17 +56,12 @@ impl CancelledSpotInstanceRequestBuilder {
         self
     }
     /// <p>The state of the Spot Instance request.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CancelSpotInstanceRequestState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CancelSpotInstanceRequestState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of the Spot Instance request.</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::CancelSpotInstanceRequestState> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CancelSpotInstanceRequestState> {
         &self.state
     }
     /// Consumes the builder and constructs a [`CancelledSpotInstanceRequest`](crate::types::CancelledSpotInstanceRequest).

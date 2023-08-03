@@ -37,9 +37,7 @@ impl ContainerProvider {
 
 /// A builder for [`ContainerProvider`](crate::types::ContainerProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerProviderBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ContainerProviderType>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ContainerProviderBuilder {
         self
     }
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerProviderType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContainerProviderType>) -> Self {
         self.r#type = input;
         self
     }

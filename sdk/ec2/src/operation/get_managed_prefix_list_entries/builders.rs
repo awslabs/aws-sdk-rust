@@ -26,7 +26,7 @@ impl GetManagedPrefixListEntriesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetManagedPrefixListEntriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesInputBuilder,
+    inner: crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesInputBuilder,
 }
 impl GetManagedPrefixListEntriesFluentBuilder {
     /// Creates a new `GetManagedPrefixListEntries`.
@@ -37,7 +37,7 @@ impl GetManagedPrefixListEntriesFluentBuilder {
         }
     }
     /// Access the GetManagedPrefixListEntries as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetManagedPrefixListEntriesFluentBuilder {
             crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetManagedPrefixListEntriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetManagedPrefixListEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetManagedPrefixListEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl GetManagedPrefixListEntriesFluentBuilder {
             crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_managed_prefix_list_entries::paginator::GetManagedPrefixListEntriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_managed_prefix_list_entries::paginator::GetManagedPrefixListEntriesPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_managed_prefix_list_entries::paginator::GetManagedPrefixListEntriesPaginator {
         crate::operation::get_managed_prefix_list_entries::paginator::GetManagedPrefixListEntriesPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -141,18 +130,12 @@ impl GetManagedPrefixListEntriesFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix_list_id(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix_list_id(input);
         self
     }

@@ -12,9 +12,7 @@ pub struct ModifyClusterInput {
 }
 impl ModifyClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
-    pub fn backup_retention_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BackupRetentionPolicy> {
+    pub fn backup_retention_policy(&self) -> ::std::option::Option<&crate::types::BackupRetentionPolicy> {
         self.backup_retention_policy.as_ref()
     }
     /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
@@ -31,9 +29,7 @@ impl ModifyClusterInput {
 
 /// A builder for [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterInputBuilder {
     pub(crate) backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
@@ -45,17 +41,12 @@ impl ModifyClusterInputBuilder {
         self
     }
     /// <p>A policy that defines how the service retains backups.</p>
-    pub fn set_backup_retention_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupRetentionPolicy>,
-    ) -> Self {
+    pub fn set_backup_retention_policy(mut self, input: ::std::option::Option<crate::types::BackupRetentionPolicy>) -> Self {
         self.backup_retention_policy = input;
         self
     }
     /// <p>A policy that defines how the service retains backups.</p>
-    pub fn get_backup_retention_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackupRetentionPolicy> {
+    pub fn get_backup_retention_policy(&self) -> &::std::option::Option<crate::types::BackupRetentionPolicy> {
         &self.backup_retention_policy
     }
     /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
@@ -75,10 +66,7 @@ impl ModifyClusterInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_cluster::ModifyClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_cluster::ModifyClusterInput {
             backup_retention_policy: self.backup_retention_policy,
             cluster_id: self.cluster_id,

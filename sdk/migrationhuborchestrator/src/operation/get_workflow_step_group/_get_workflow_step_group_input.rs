@@ -22,17 +22,14 @@ impl GetWorkflowStepGroupInput {
 }
 impl GetWorkflowStepGroupInput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowStepGroupInput`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput).
-    pub fn builder(
-    ) -> crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupInputBuilder {
+    pub fn builder() -> crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupInputBuilder {
         crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowStepGroupInput`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowStepGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl GetWorkflowStepGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkflowStepGroupInput`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput {
-                id: self.id,
-                workflow_id: self.workflow_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput {
+            id: self.id,
+            workflow_id: self.workflow_id,
+        })
     }
 }

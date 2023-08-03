@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`samples(Option<Vec<Sample>>)`](crate::operation::list_samples::ListSamplesOutput::samples): <p>Information about the samples.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_samples::ListSamplesOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListSamplesError>`](crate::operation::list_samples::ListSamplesError)
-    pub fn list_samples(
-        &self,
-    ) -> crate::operation::list_samples::builders::ListSamplesFluentBuilder {
+    pub fn list_samples(&self) -> crate::operation::list_samples::builders::ListSamplesFluentBuilder {
         crate::operation::list_samples::builders::ListSamplesFluentBuilder::new(self.handle.clone())
     }
 }

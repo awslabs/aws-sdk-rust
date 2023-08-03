@@ -30,9 +30,7 @@ impl SegmentGroupList {
 
 /// A builder for [`SegmentGroupList`](crate::types::SegmentGroupList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentGroupListBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>>,
     pub(crate) include: ::std::option::Option<crate::types::Include>,
@@ -50,17 +48,12 @@ impl SegmentGroupListBuilder {
         self
     }
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>> {
         &self.groups
     }
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>

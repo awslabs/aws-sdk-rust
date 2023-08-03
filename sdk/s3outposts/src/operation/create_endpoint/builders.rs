@@ -10,10 +10,7 @@ impl CreateEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_endpoint::CreateEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint::CreateEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint::CreateEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_endpoint();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl CreateEndpointFluentBuilder {
         }
     }
     /// Access the CreateEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,10 +64,7 @@ impl CreateEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -151,18 +143,12 @@ impl CreateEndpointFluentBuilder {
         self.inner.get_subnet_id()
     }
     /// <p>The ID of the security group to use with the endpoint.</p>
-    pub fn security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_id(input.into());
         self
     }
     /// <p>The ID of the security group to use with the endpoint.</p>
-    pub fn set_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_group_id(input);
         self
     }
@@ -180,10 +166,7 @@ impl CreateEndpointFluentBuilder {
     /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>
     /// <p> <code>Private</code> is the default access type value.</p>
     /// </note>
-    pub fn set_access_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointAccessType>,
-    ) -> Self {
+    pub fn set_access_type(mut self, input: ::std::option::Option<crate::types::EndpointAccessType>) -> Self {
         self.inner = self.inner.set_access_type(input);
         self
     }
@@ -194,18 +177,12 @@ impl CreateEndpointFluentBuilder {
         self.inner.get_access_type()
     }
     /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
-    pub fn customer_owned_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_owned_ipv4_pool(input.into());
         self
     }
     /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
-    pub fn set_customer_owned_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_owned_ipv4_pool(input);
         self
     }

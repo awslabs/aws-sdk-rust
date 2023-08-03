@@ -9,10 +9,7 @@ pub fn ser_update_app_input(
     if let Some(var_2) = &input.auto_branch_creation_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("autoBranchCreationConfig").start_object();
-        crate::protocol_serde::shape_auto_branch_creation_config::ser_auto_branch_creation_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_auto_branch_creation_config::ser_auto_branch_creation_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.auto_branch_creation_patterns {

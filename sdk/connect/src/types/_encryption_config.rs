@@ -36,9 +36,7 @@ impl EncryptionConfig {
 
 /// A builder for [`EncryptionConfig`](crate::types::EncryptionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionConfigBuilder {
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl EncryptionConfigBuilder {
         self
     }
     /// <p>The type of encryption.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
         self
     }

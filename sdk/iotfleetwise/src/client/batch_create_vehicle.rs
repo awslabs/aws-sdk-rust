@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`vehicles(Option<Vec<CreateVehicleResponseItem>>)`](crate::operation::batch_create_vehicle::BatchCreateVehicleOutput::vehicles): <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
     ///   - [`errors(Option<Vec<CreateVehicleError>>)`](crate::operation::batch_create_vehicle::BatchCreateVehicleOutput::errors): <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
     /// - On failure, responds with [`SdkError<BatchCreateVehicleError>`](crate::operation::batch_create_vehicle::BatchCreateVehicleError)
-    pub fn batch_create_vehicle(
-        &self,
-    ) -> crate::operation::batch_create_vehicle::builders::BatchCreateVehicleFluentBuilder {
-        crate::operation::batch_create_vehicle::builders::BatchCreateVehicleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_create_vehicle(&self) -> crate::operation::batch_create_vehicle::builders::BatchCreateVehicleFluentBuilder {
+        crate::operation::batch_create_vehicle::builders::BatchCreateVehicleFluentBuilder::new(self.handle.clone())
     }
 }

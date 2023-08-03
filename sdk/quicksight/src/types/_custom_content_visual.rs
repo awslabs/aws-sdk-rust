@@ -38,9 +38,7 @@ impl CustomContentVisual {
         self.subtitle.as_ref()
     }
     /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
-    pub fn chart_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomContentConfiguration> {
+    pub fn chart_configuration(&self) -> ::std::option::Option<&crate::types::CustomContentConfiguration> {
         self.chart_configuration.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
@@ -61,9 +59,7 @@ impl CustomContentVisual {
 
 /// A builder for [`CustomContentVisual`](crate::types::CustomContentVisual).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomContentVisualBuilder {
     pub(crate) visual_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
@@ -93,10 +89,7 @@ impl CustomContentVisualBuilder {
         self
     }
     /// <p>The title that is displayed on the visual.</p>
-    pub fn set_title(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
-    ) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<crate::types::VisualTitleLabelOptions>) -> Self {
         self.title = input;
         self
     }
@@ -110,10 +103,7 @@ impl CustomContentVisualBuilder {
         self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
-    pub fn set_subtitle(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
-    ) -> Self {
+    pub fn set_subtitle(mut self, input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>) -> Self {
         self.subtitle = input;
         self
     }
@@ -127,17 +117,12 @@ impl CustomContentVisualBuilder {
         self
     }
     /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
-    pub fn set_chart_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomContentConfiguration>,
-    ) -> Self {
+    pub fn set_chart_configuration(mut self, input: ::std::option::Option<crate::types::CustomContentConfiguration>) -> Self {
         self.chart_configuration = input;
         self
     }
     /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
-    pub fn get_chart_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomContentConfiguration> {
+    pub fn get_chart_configuration(&self) -> &::std::option::Option<crate::types::CustomContentConfiguration> {
         &self.chart_configuration
     }
     /// Appends an item to `actions`.
@@ -152,32 +137,21 @@ impl CustomContentVisualBuilder {
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
         &self.actions
     }
     /// <p>The dataset that is used to create the custom content visual. You can't create a visual without a dataset.</p>
-    pub fn data_set_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dataset that is used to create the custom content visual. You can't create a visual without a dataset.</p>
-    pub fn set_data_set_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_identifier = input;
         self
     }

@@ -37,9 +37,7 @@ impl StopReplicationTaskFluentBuilder {
         }
     }
     /// Access the StopReplicationTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_replication_task::builders::StopReplicationTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_replication_task::builders::StopReplicationTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StopReplicationTaskFluentBuilder {
             crate::operation::stop_replication_task::StopReplicationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication_task::StopReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication_task::StopReplicationTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StopReplicationTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StopReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_replication_task::StopReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication_task::StopReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication_task::StopReplicationTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StopReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_replication_task::StopReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication_task::StopReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication_task::StopReplicationTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl StopReplicationTaskFluentBuilder {
             crate::operation::stop_replication_task::StopReplicationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication_task::StopReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication_task::StopReplicationTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }

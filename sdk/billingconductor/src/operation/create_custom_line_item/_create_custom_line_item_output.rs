@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateCustomLineItemOutput {
 }
 impl CreateCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomLineItemOutput`](crate::operation::create_custom_line_item::CreateCustomLineItemOutput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_line_item::builders::CreateCustomLineItemOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_custom_line_item::builders::CreateCustomLineItemOutputBuilder {
         crate::operation::create_custom_line_item::builders::CreateCustomLineItemOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomLineItemOutput`](crate::operation::create_custom_line_item::CreateCustomLineItemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomLineItemOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

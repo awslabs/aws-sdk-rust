@@ -26,9 +26,7 @@ impl ValidationData {
 
 /// A builder for [`ValidationData`](crate::types::ValidationData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationDataBuilder {
     pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
 }
@@ -45,10 +43,7 @@ impl ValidationDataBuilder {
         self
     }
     /// <p>The assets that comprise the validation data. </p>
-    pub fn set_assets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
-    ) -> Self {
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>) -> Self {
         self.assets = input;
         self
     }
@@ -58,8 +53,6 @@ impl ValidationDataBuilder {
     }
     /// Consumes the builder and constructs a [`ValidationData`](crate::types::ValidationData).
     pub fn build(self) -> crate::types::ValidationData {
-        crate::types::ValidationData {
-            assets: self.assets,
-        }
+        crate::types::ValidationData { assets: self.assets }
     }
 }

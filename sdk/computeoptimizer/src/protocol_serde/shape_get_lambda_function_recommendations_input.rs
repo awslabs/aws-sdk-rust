@@ -27,7 +27,10 @@ pub fn ser_get_lambda_function_recommendations_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_lambda_function_recommendation_filter::ser_lambda_function_recommendation_filter(&mut object_10, item_9)?;
+                crate::protocol_serde::shape_lambda_function_recommendation_filter::ser_lambda_function_recommendation_filter(
+                    &mut object_10,
+                    item_9,
+                )?;
                 object_10.finish();
             }
         }

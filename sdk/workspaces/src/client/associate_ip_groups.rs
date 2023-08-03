@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`group_ids(Vec<String>)`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::group_ids) / [`set_group_ids(Option<Vec<String>>)`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::set_group_ids): <p>The identifiers of one or more IP access control groups.</p>
     /// - On success, responds with [`AssociateIpGroupsOutput`](crate::operation::associate_ip_groups::AssociateIpGroupsOutput)
     /// - On failure, responds with [`SdkError<AssociateIpGroupsError>`](crate::operation::associate_ip_groups::AssociateIpGroupsError)
-    pub fn associate_ip_groups(
-        &self,
-    ) -> crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder {
-        crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_ip_groups(&self) -> crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder {
+        crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::new(self.handle.clone())
     }
 }

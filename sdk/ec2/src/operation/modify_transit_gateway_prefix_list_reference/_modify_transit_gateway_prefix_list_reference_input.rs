@@ -43,16 +43,15 @@ impl ModifyTransitGatewayPrefixListReferenceInput {
 }
 impl ModifyTransitGatewayPrefixListReferenceInput {
     /// Creates a new builder-style object to manufacture [`ModifyTransitGatewayPrefixListReferenceInput`](crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput).
-    pub fn builder() -> crate::operation::modify_transit_gateway_prefix_list_reference::builders::ModifyTransitGatewayPrefixListReferenceInputBuilder{
+    pub fn builder() -> crate::operation::modify_transit_gateway_prefix_list_reference::builders::ModifyTransitGatewayPrefixListReferenceInputBuilder
+    {
         crate::operation::modify_transit_gateway_prefix_list_reference::builders::ModifyTransitGatewayPrefixListReferenceInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyTransitGatewayPrefixListReferenceInput`](crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyTransitGatewayPrefixListReferenceInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
@@ -62,40 +61,26 @@ pub struct ModifyTransitGatewayPrefixListReferenceInputBuilder {
 }
 impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn get_transit_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_id
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }
@@ -104,25 +89,17 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
         &self.prefix_list_id
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
-    pub fn get_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_attachment_id
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
@@ -154,20 +131,20 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayPrefixListReferenceInput`](crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput {
-                transit_gateway_route_table_id: self.transit_gateway_route_table_id
-                ,
-                prefix_list_id: self.prefix_list_id
-                ,
-                transit_gateway_attachment_id: self.transit_gateway_attachment_id
-                ,
-                blackhole: self.blackhole
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_route_table_id: self.transit_gateway_route_table_id,
+                prefix_list_id: self.prefix_list_id,
+                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
+                blackhole: self.blackhole,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

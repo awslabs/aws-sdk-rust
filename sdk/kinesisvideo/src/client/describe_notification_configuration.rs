@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeNotificationConfigurationOutput`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput) with field(s):
     ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput::notification_configuration): <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
     /// - On failure, responds with [`SdkError<DescribeNotificationConfigurationError>`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationError)
-    pub fn describe_notification_configuration(&self) -> crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationFluentBuilder{
+    pub fn describe_notification_configuration(
+        &self,
+    ) -> crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationFluentBuilder {
         crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

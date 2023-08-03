@@ -9,10 +9,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -39,10 +33,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -54,10 +45,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -105,10 +93,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_32,
-                    item_31,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_32, item_31)?;
                 object_32.finish();
             }
         }
@@ -120,10 +105,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_36 = array_34.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_36,
-                    item_35,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_36, item_35)?;
                 object_36.finish();
             }
         }
@@ -135,10 +117,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_40 = array_38.value().start_object();
-                crate::protocol_serde::shape_number_filter::ser_number_filter(
-                    &mut object_40,
-                    item_39,
-                )?;
+                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_40, item_39)?;
                 object_40.finish();
             }
         }
@@ -150,10 +129,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_44 = array_42.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_44,
-                    item_43,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_44, item_43)?;
                 object_44.finish();
             }
         }
@@ -165,10 +141,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_48 = array_46.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_48,
-                    item_47,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_48, item_47)?;
                 object_48.finish();
             }
         }
@@ -192,10 +165,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_56,
-                    item_55,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_56, item_55)?;
                 object_56.finish();
             }
         }
@@ -207,10 +177,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_60 = array_58.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_60,
-                    item_59,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_60, item_59)?;
                 object_60.finish();
             }
         }
@@ -222,10 +189,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_64 = array_62.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_64,
-                    item_63,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_64, item_63)?;
                 object_64.finish();
             }
         }
@@ -249,10 +213,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_72 = array_70.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_72,
-                    item_71,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_72, item_71)?;
                 object_72.finish();
             }
         }
@@ -264,10 +225,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_76 = array_74.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_76,
-                    item_75,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_76, item_75)?;
                 object_76.finish();
             }
         }
@@ -279,10 +237,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_80 = array_78.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_80,
-                    item_79,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_80, item_79)?;
                 object_80.finish();
             }
         }
@@ -294,10 +249,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_84 = array_82.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_84,
-                    item_83,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_84, item_83)?;
                 object_84.finish();
             }
         }
@@ -309,10 +261,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_88 = array_86.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_88,
-                    item_87,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_88, item_87)?;
                 object_88.finish();
             }
         }
@@ -324,10 +273,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_92 = array_90.value().start_object();
-                crate::protocol_serde::shape_port_range_filter::ser_port_range_filter(
-                    &mut object_92,
-                    item_91,
-                )?;
+                crate::protocol_serde::shape_port_range_filter::ser_port_range_filter(&mut object_92, item_91)?;
                 object_92.finish();
             }
         }
@@ -339,10 +285,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_96 = array_94.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_96,
-                    item_95,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_96, item_95)?;
                 object_96.finish();
             }
         }
@@ -354,10 +297,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_100 = array_98.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_100,
-                    item_99,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_100, item_99)?;
                 object_100.finish();
             }
         }
@@ -369,10 +309,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_104 = array_102.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_104,
-                    item_103,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_104, item_103)?;
                 object_104.finish();
             }
         }
@@ -384,10 +321,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_108 = array_106.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_108,
-                    item_107,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_108, item_107)?;
                 object_108.finish();
             }
         }
@@ -399,10 +333,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_112 = array_110.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_112,
-                    item_111,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_112, item_111)?;
                 object_112.finish();
             }
         }
@@ -414,10 +345,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_116 = array_114.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_116,
-                    item_115,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_116, item_115)?;
                 object_116.finish();
             }
         }
@@ -429,10 +357,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_120 = array_118.value().start_object();
-                crate::protocol_serde::shape_package_filter::ser_package_filter(
-                    &mut object_120,
-                    item_119,
-                )?;
+                crate::protocol_serde::shape_package_filter::ser_package_filter(&mut object_120, item_119)?;
                 object_120.finish();
             }
         }
@@ -444,10 +369,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_124 = array_122.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_124,
-                    item_123,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_124, item_123)?;
                 object_124.finish();
             }
         }
@@ -459,10 +381,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_128 = array_126.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_128,
-                    item_127,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_128, item_127)?;
                 object_128.finish();
             }
         }
@@ -474,10 +393,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_132 = array_130.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_132,
-                    item_131,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_132, item_131)?;
                 object_132.finish();
             }
         }
@@ -489,10 +405,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_136 = array_134.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_136,
-                    item_135,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_136, item_135)?;
                 object_136.finish();
             }
         }
@@ -504,10 +417,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_140 = array_138.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_140,
-                    item_139,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_140, item_139)?;
                 object_140.finish();
             }
         }
@@ -519,10 +429,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_144 = array_142.value().start_object();
-                crate::protocol_serde::shape_date_filter::ser_date_filter(
-                    &mut object_144,
-                    item_143,
-                )?;
+                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_144, item_143)?;
                 object_144.finish();
             }
         }
@@ -534,10 +441,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_148 = array_146.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_148,
-                    item_147,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_148, item_147)?;
                 object_148.finish();
             }
         }
@@ -549,10 +453,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_152 = array_150.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_152,
-                    item_151,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_152, item_151)?;
                 object_152.finish();
             }
         }
@@ -564,10 +465,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_156 = array_154.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_156,
-                    item_155,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_156, item_155)?;
                 object_156.finish();
             }
         }
@@ -579,10 +477,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_160 = array_158.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_160,
-                    item_159,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_160, item_159)?;
                 object_160.finish();
             }
         }
@@ -594,10 +489,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_164 = array_162.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_164,
-                    item_163,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_164, item_163)?;
                 object_164.finish();
             }
         }
@@ -609,10 +501,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_168 = array_166.value().start_object();
-                crate::protocol_serde::shape_number_filter::ser_number_filter(
-                    &mut object_168,
-                    item_167,
-                )?;
+                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_168, item_167)?;
                 object_168.finish();
             }
         }
@@ -623,17 +512,9 @@ pub fn ser_filter_criteria(
 
 pub(crate) fn de_filter_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::FilterCriteria>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::FilterCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -643,236 +524,166 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "findingArn" => {
-                                builder = builder.set_finding_arn(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "awsAccountId" => {
-                                builder = builder.set_aws_account_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "findingType" => {
-                                builder = builder.set_finding_type(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "severity" => {
-                                builder = builder.set_severity(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "firstObservedAt" => {
-                                builder = builder.set_first_observed_at(
-                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?
-                                );
-                            }
-                            "lastObservedAt" => {
-                                builder = builder.set_last_observed_at(
-                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?
-                                );
-                            }
-                            "updatedAt" => {
-                                builder = builder.set_updated_at(
-                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?
-                                );
-                            }
-                            "findingStatus" => {
-                                builder = builder.set_finding_status(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "title" => {
-                                builder = builder.set_title(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "inspectorScore" => {
-                                builder = builder.set_inspector_score(
-                                    crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?
-                                );
-                            }
-                            "resourceType" => {
-                                builder = builder.set_resource_type(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "resourceId" => {
-                                builder = builder.set_resource_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "resourceTags" => {
-                                builder = builder.set_resource_tags(
-                                    crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?
-                                );
-                            }
-                            "ec2InstanceImageId" => {
-                                builder = builder.set_ec2_instance_image_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ec2InstanceVpcId" => {
-                                builder = builder.set_ec2_instance_vpc_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ec2InstanceSubnetId" => {
-                                builder = builder.set_ec2_instance_subnet_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ecrImagePushedAt" => {
-                                builder = builder.set_ecr_image_pushed_at(
-                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?
-                                );
-                            }
-                            "ecrImageArchitecture" => {
-                                builder = builder.set_ecr_image_architecture(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ecrImageRegistry" => {
-                                builder = builder.set_ecr_image_registry(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ecrImageRepositoryName" => {
-                                builder = builder.set_ecr_image_repository_name(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ecrImageTags" => {
-                                builder = builder.set_ecr_image_tags(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ecrImageHash" => {
-                                builder = builder.set_ecr_image_hash(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "portRange" => {
-                                builder = builder.set_port_range(
-                                    crate::protocol_serde::shape_port_range_filter_list::de_port_range_filter_list(tokens)?
-                                );
-                            }
-                            "networkProtocol" => {
-                                builder = builder.set_network_protocol(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "componentId" => {
-                                builder = builder.set_component_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "componentType" => {
-                                builder = builder.set_component_type(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "vulnerabilityId" => {
-                                builder = builder.set_vulnerability_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "vulnerabilitySource" => {
-                                builder = builder.set_vulnerability_source(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "vendorSeverity" => {
-                                builder = builder.set_vendor_severity(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "vulnerablePackages" => {
-                                builder = builder.set_vulnerable_packages(
-                                    crate::protocol_serde::shape_package_filter_list::de_package_filter_list(tokens)?
-                                );
-                            }
-                            "relatedVulnerabilities" => {
-                                builder = builder.set_related_vulnerabilities(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "fixAvailable" => {
-                                builder = builder.set_fix_available(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "lambdaFunctionName" => {
-                                builder = builder.set_lambda_function_name(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "lambdaFunctionLayers" => {
-                                builder = builder.set_lambda_function_layers(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "lambdaFunctionRuntime" => {
-                                builder = builder.set_lambda_function_runtime(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "lambdaFunctionLastModifiedAt" => {
-                                builder = builder.set_lambda_function_last_modified_at(
-                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?
-                                );
-                            }
-                            "lambdaFunctionExecutionRoleArn" => {
-                                builder = builder.set_lambda_function_execution_role_arn(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "exploitAvailable" => {
-                                builder = builder.set_exploit_available(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "codeVulnerabilityDetectorName" => {
-                                builder = builder.set_code_vulnerability_detector_name(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "codeVulnerabilityDetectorTags" => {
-                                builder = builder.set_code_vulnerability_detector_tags(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "codeVulnerabilityFilePath" => {
-                                builder = builder.set_code_vulnerability_file_path(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "epssScore" => {
-                                builder = builder.set_epss_score(
-                                    crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "findingArn" => {
+                            builder = builder.set_finding_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
                         }
-                    }
+                        "awsAccountId" => {
+                            builder = builder.set_aws_account_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "findingType" => {
+                            builder = builder.set_finding_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "severity" => {
+                            builder = builder.set_severity(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "firstObservedAt" => {
+                            builder = builder.set_first_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "lastObservedAt" => {
+                            builder = builder.set_last_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "updatedAt" => {
+                            builder = builder.set_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "findingStatus" => {
+                            builder = builder.set_finding_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "title" => {
+                            builder = builder.set_title(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "inspectorScore" => {
+                            builder = builder.set_inspector_score(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?);
+                        }
+                        "resourceType" => {
+                            builder = builder.set_resource_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "resourceId" => {
+                            builder = builder.set_resource_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "resourceTags" => {
+                            builder = builder.set_resource_tags(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?);
+                        }
+                        "ec2InstanceImageId" => {
+                            builder =
+                                builder.set_ec2_instance_image_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ec2InstanceVpcId" => {
+                            builder =
+                                builder.set_ec2_instance_vpc_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ec2InstanceSubnetId" => {
+                            builder =
+                                builder.set_ec2_instance_subnet_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ecrImagePushedAt" => {
+                            builder = builder.set_ecr_image_pushed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "ecrImageArchitecture" => {
+                            builder =
+                                builder.set_ecr_image_architecture(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ecrImageRegistry" => {
+                            builder = builder.set_ecr_image_registry(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ecrImageRepositoryName" => {
+                            builder = builder
+                                .set_ecr_image_repository_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ecrImageTags" => {
+                            builder = builder.set_ecr_image_tags(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ecrImageHash" => {
+                            builder = builder.set_ecr_image_hash(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "portRange" => {
+                            builder = builder.set_port_range(crate::protocol_serde::shape_port_range_filter_list::de_port_range_filter_list(tokens)?);
+                        }
+                        "networkProtocol" => {
+                            builder = builder.set_network_protocol(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "componentId" => {
+                            builder = builder.set_component_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "componentType" => {
+                            builder = builder.set_component_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "vulnerabilityId" => {
+                            builder = builder.set_vulnerability_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "vulnerabilitySource" => {
+                            builder =
+                                builder.set_vulnerability_source(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "vendorSeverity" => {
+                            builder = builder.set_vendor_severity(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "vulnerablePackages" => {
+                            builder =
+                                builder.set_vulnerable_packages(crate::protocol_serde::shape_package_filter_list::de_package_filter_list(tokens)?);
+                        }
+                        "relatedVulnerabilities" => {
+                            builder =
+                                builder.set_related_vulnerabilities(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "fixAvailable" => {
+                            builder = builder.set_fix_available(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "lambdaFunctionName" => {
+                            builder =
+                                builder.set_lambda_function_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "lambdaFunctionLayers" => {
+                            builder =
+                                builder.set_lambda_function_layers(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "lambdaFunctionRuntime" => {
+                            builder =
+                                builder.set_lambda_function_runtime(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "lambdaFunctionLastModifiedAt" => {
+                            builder = builder
+                                .set_lambda_function_last_modified_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "lambdaFunctionExecutionRoleArn" => {
+                            builder = builder.set_lambda_function_execution_role_arn(
+                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?,
+                            );
+                        }
+                        "exploitAvailable" => {
+                            builder = builder.set_exploit_available(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "codeVulnerabilityDetectorName" => {
+                            builder = builder.set_code_vulnerability_detector_name(
+                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?,
+                            );
+                        }
+                        "codeVulnerabilityDetectorTags" => {
+                            builder = builder.set_code_vulnerability_detector_tags(
+                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?,
+                            );
+                        }
+                        "codeVulnerabilityFilePath" => {
+                            builder = builder
+                                .set_code_vulnerability_file_path(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "epssScore" => {
+                            builder = builder.set_epss_score(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

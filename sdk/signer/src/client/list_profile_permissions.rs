@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`permissions(Option<Vec<Permission>>)`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput::permissions): <p>List of permissions associated with the Signing Profile.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput::next_token): <p>String for specifying the next set of paginated results.</p>
     /// - On failure, responds with [`SdkError<ListProfilePermissionsError>`](crate::operation::list_profile_permissions::ListProfilePermissionsError)
-    pub fn list_profile_permissions(
-        &self,
-    ) -> crate::operation::list_profile_permissions::builders::ListProfilePermissionsFluentBuilder
-    {
+    pub fn list_profile_permissions(&self) -> crate::operation::list_profile_permissions::builders::ListProfilePermissionsFluentBuilder {
         crate::operation::list_profile_permissions::builders::ListProfilePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

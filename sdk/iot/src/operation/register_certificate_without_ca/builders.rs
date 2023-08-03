@@ -26,7 +26,7 @@ impl RegisterCertificateWithoutCaInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterCertificateWithoutCAFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder,
+    inner: crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder,
 }
 impl RegisterCertificateWithoutCAFluentBuilder {
     /// Creates a new `RegisterCertificateWithoutCA`.
@@ -37,7 +37,7 @@ impl RegisterCertificateWithoutCAFluentBuilder {
         }
     }
     /// Access the RegisterCertificateWithoutCA as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RegisterCertificateWithoutCAFluentBuilder {
             crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCA,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RegisterCertificateWithoutCAFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RegisterCertificateWithoutCAFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RegisterCertificateWithoutCAFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RegisterCertificateWithoutCAFluentBuilder {
             crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCA,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The certificate data, in PEM format.</p>
-    pub fn certificate_pem(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_pem(input.into());
         self
     }
     /// <p>The certificate data, in PEM format.</p>
-    pub fn set_certificate_pem(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_pem(input);
         self
     }
@@ -146,10 +129,7 @@ impl RegisterCertificateWithoutCAFluentBuilder {
         self
     }
     /// <p>The status of the register certificate request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

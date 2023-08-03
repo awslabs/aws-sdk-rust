@@ -44,9 +44,7 @@ impl ScheduledAutoTuneDetails {
 
 /// A builder for [`ScheduledAutoTuneDetails`](crate::types::ScheduledAutoTuneDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledAutoTuneDetailsBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) action_type: ::std::option::Option<crate::types::ScheduledAutoTuneActionType>,
@@ -74,17 +72,12 @@ impl ScheduledAutoTuneDetailsBuilder {
         self
     }
     /// <p>The type of Auto-Tune action.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledAutoTuneActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ScheduledAutoTuneActionType>) -> Self {
         self.action_type = input;
         self
     }
     /// <p>The type of Auto-Tune action.</p>
-    pub fn get_action_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledAutoTuneActionType> {
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ScheduledAutoTuneActionType> {
         &self.action_type
     }
     /// <p>A description of the Auto-Tune action.</p>
@@ -107,17 +100,12 @@ impl ScheduledAutoTuneDetailsBuilder {
         self
     }
     /// <p>The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledAutoTuneSeverityType>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ScheduledAutoTuneSeverityType>) -> Self {
         self.severity = input;
         self
     }
     /// <p>The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>.</p>
-    pub fn get_severity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledAutoTuneSeverityType> {
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::ScheduledAutoTuneSeverityType> {
         &self.severity
     }
     /// Consumes the builder and constructs a [`ScheduledAutoTuneDetails`](crate::types::ScheduledAutoTuneDetails).

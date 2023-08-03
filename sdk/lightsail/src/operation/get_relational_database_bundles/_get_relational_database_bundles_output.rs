@@ -32,19 +32,16 @@ impl ::aws_http::request_id::RequestId for GetRelationalDatabaseBundlesOutput {
 }
 impl GetRelationalDatabaseBundlesOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseBundlesOutput`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput).
-    pub fn builder() -> crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesOutputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesOutputBuilder {
         crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseBundlesOutput`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseBundlesOutputBuilder {
-    pub(crate) bundles:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBundle>>,
+    pub(crate) bundles: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBundle>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,36 +58,25 @@ impl GetRelationalDatabaseBundlesOutputBuilder {
         self
     }
     /// <p>An object describing the result of your get relational database bundles request.</p>
-    pub fn set_bundles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBundle>>,
-    ) -> Self {
+    pub fn set_bundles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBundle>>) -> Self {
         self.bundles = input;
         self
     }
     /// <p>An object describing the result of your get relational database bundles request.</p>
-    pub fn get_bundles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBundle>> {
+    pub fn get_bundles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBundle>> {
         &self.bundles
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -110,9 +96,7 @@ impl GetRelationalDatabaseBundlesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseBundlesOutput`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput {
+    pub fn build(self) -> crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput {
         crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput {
             bundles: self.bundles,
             next_page_token: self.next_page_token,

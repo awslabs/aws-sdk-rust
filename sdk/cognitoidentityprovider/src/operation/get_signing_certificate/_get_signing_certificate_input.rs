@@ -16,18 +16,14 @@ impl GetSigningCertificateInput {
 }
 impl GetSigningCertificateInput {
     /// Creates a new builder-style object to manufacture [`GetSigningCertificateInput`](crate::operation::get_signing_certificate::GetSigningCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::get_signing_certificate::builders::GetSigningCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_signing_certificate::builders::GetSigningCertificateInputBuilder {
         crate::operation::get_signing_certificate::builders::GetSigningCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSigningCertificateInput`](crate::operation::get_signing_certificate::GetSigningCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSigningCertificateInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +45,10 @@ impl GetSigningCertificateInputBuilder {
     /// Consumes the builder and constructs a [`GetSigningCertificateInput`](crate::operation::get_signing_certificate::GetSigningCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_signing_certificate::GetSigningCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_signing_certificate::GetSigningCertificateInput {
-                user_pool_id: self.user_pool_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_signing_certificate::GetSigningCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_signing_certificate::GetSigningCertificateInput {
+            user_pool_id: self.user_pool_id,
+        })
     }
 }

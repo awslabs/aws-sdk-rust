@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`trusts(Option<Vec<Trust>>)`](crate::operation::describe_trusts::DescribeTrustsOutput::trusts): <p>The list of Trust objects that were retrieved.</p>  <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_trusts::DescribeTrustsOutput::next_token): <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<DescribeTrustsError>`](crate::operation::describe_trusts::DescribeTrustsError)
-    pub fn describe_trusts(
-        &self,
-    ) -> crate::operation::describe_trusts::builders::DescribeTrustsFluentBuilder {
-        crate::operation::describe_trusts::builders::DescribeTrustsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_trusts(&self) -> crate::operation::describe_trusts::builders::DescribeTrustsFluentBuilder {
+        crate::operation::describe_trusts::builders::DescribeTrustsFluentBuilder::new(self.handle.clone())
     }
 }

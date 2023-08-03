@@ -114,9 +114,7 @@ impl Workgroup {
 
 /// A builder for [`Workgroup`](crate::types::Workgroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkgroupBuilder {
     pub(crate) workgroup_id: ::std::option::Option<::std::string::String>,
     pub(crate) workgroup_arn: ::std::option::Option<::std::string::String>,
@@ -124,8 +122,7 @@ pub struct WorkgroupBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) base_capacity: ::std::option::Option<i32>,
     pub(crate) enhanced_vpc_routing: ::std::option::Option<bool>,
-    pub(crate) config_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
+    pub(crate) config_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::WorkgroupStatus>,
@@ -150,18 +147,12 @@ impl WorkgroupBuilder {
         &self.workgroup_id
     }
     /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
-    pub fn workgroup_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
-    pub fn set_workgroup_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_arn = input;
         self
     }
@@ -170,18 +161,12 @@ impl WorkgroupBuilder {
         &self.workgroup_arn
     }
     /// <p>The name of the workgroup.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workgroup.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }
@@ -190,18 +175,12 @@ impl WorkgroupBuilder {
         &self.workgroup_name
     }
     /// <p>The namespace the workgroup is associated with.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace the workgroup is associated with.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -249,17 +228,12 @@ impl WorkgroupBuilder {
         self
     }
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    pub fn set_config_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
-    ) -> Self {
+    pub fn set_config_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>) -> Self {
         self.config_parameters = input;
         self
     }
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    pub fn get_config_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
+    pub fn get_config_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
         &self.config_parameters
     }
     /// Appends an item to `security_group_ids`.
@@ -267,27 +241,19 @@ impl WorkgroupBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `subnet_ids`.
@@ -302,10 +268,7 @@ impl WorkgroupBuilder {
         self
     }
     /// <p>An array of subnet IDs the workgroup is associated with.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -319,10 +282,7 @@ impl WorkgroupBuilder {
         self
     }
     /// <p>The status of the workgroup.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkgroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkgroupStatus>) -> Self {
         self.status = input;
         self
     }
@@ -364,10 +324,7 @@ impl WorkgroupBuilder {
         self
     }
     /// <p>The creation date of the workgroup.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

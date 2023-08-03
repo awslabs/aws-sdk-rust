@@ -12,9 +12,7 @@ pub fn ser_path_request_filter(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("SourcePortRange");
     if let Some(var_4) = &input.source_port_range {
-        crate::protocol_serde::shape_request_filter_port_range::ser_request_filter_port_range(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_request_filter_port_range::ser_request_filter_port_range(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("DestinationAddress");
@@ -24,9 +22,7 @@ pub fn ser_path_request_filter(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("DestinationPortRange");
     if let Some(var_8) = &input.destination_port_range {
-        crate::protocol_serde::shape_request_filter_port_range::ser_request_filter_port_range(
-            scope_7, var_8,
-        )?;
+        crate::protocol_serde::shape_request_filter_port_range::ser_request_filter_port_range(scope_7, var_8)?;
     }
     Ok(())
 }

@@ -24,8 +24,7 @@ pub struct S3BucketDetail {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
     #[doc(hidden)]
-    pub default_server_side_encryption:
-        ::std::option::Option<crate::types::DefaultServerSideEncryption>,
+    pub default_server_side_encryption: ::std::option::Option<crate::types::DefaultServerSideEncryption>,
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
     #[doc(hidden)]
     pub public_access: ::std::option::Option<crate::types::PublicAccess>,
@@ -56,9 +55,7 @@ impl S3BucketDetail {
         self.tags.as_deref()
     }
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
-    pub fn default_server_side_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultServerSideEncryption> {
+    pub fn default_server_side_encryption(&self) -> ::std::option::Option<&crate::types::DefaultServerSideEncryption> {
         self.default_server_side_encryption.as_ref()
     }
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
@@ -75,9 +72,7 @@ impl S3BucketDetail {
 
 /// A builder for [`S3BucketDetail`](crate::types::S3BucketDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3BucketDetailBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -85,8 +80,7 @@ pub struct S3BucketDetailBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) default_server_side_encryption:
-        ::std::option::Option<crate::types::DefaultServerSideEncryption>,
+    pub(crate) default_server_side_encryption: ::std::option::Option<crate::types::DefaultServerSideEncryption>,
     pub(crate) public_access: ::std::option::Option<crate::types::PublicAccess>,
 }
 impl S3BucketDetailBuilder {
@@ -138,10 +132,7 @@ impl S3BucketDetailBuilder {
         self
     }
     /// <p>The date and time the bucket was created at.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -175,10 +166,7 @@ impl S3BucketDetailBuilder {
         self
     }
     /// <p>All tags attached to the S3 bucket</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -187,25 +175,17 @@ impl S3BucketDetailBuilder {
         &self.tags
     }
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
-    pub fn default_server_side_encryption(
-        mut self,
-        input: crate::types::DefaultServerSideEncryption,
-    ) -> Self {
+    pub fn default_server_side_encryption(mut self, input: crate::types::DefaultServerSideEncryption) -> Self {
         self.default_server_side_encryption = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
-    pub fn set_default_server_side_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultServerSideEncryption>,
-    ) -> Self {
+    pub fn set_default_server_side_encryption(mut self, input: ::std::option::Option<crate::types::DefaultServerSideEncryption>) -> Self {
         self.default_server_side_encryption = input;
         self
     }
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
-    pub fn get_default_server_side_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultServerSideEncryption> {
+    pub fn get_default_server_side_encryption(&self) -> &::std::option::Option<crate::types::DefaultServerSideEncryption> {
         &self.default_server_side_encryption
     }
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
@@ -214,10 +194,7 @@ impl S3BucketDetailBuilder {
         self
     }
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
-    pub fn set_public_access(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicAccess>,
-    ) -> Self {
+    pub fn set_public_access(mut self, input: ::std::option::Option<crate::types::PublicAccess>) -> Self {
         self.public_access = input;
         self
     }

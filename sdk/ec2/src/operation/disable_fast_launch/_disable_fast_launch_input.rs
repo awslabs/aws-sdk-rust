@@ -29,17 +29,14 @@ impl DisableFastLaunchInput {
 }
 impl DisableFastLaunchInput {
     /// Creates a new builder-style object to manufacture [`DisableFastLaunchInput`](crate::operation::disable_fast_launch::DisableFastLaunchInput).
-    pub fn builder(
-    ) -> crate::operation::disable_fast_launch::builders::DisableFastLaunchInputBuilder {
+    pub fn builder() -> crate::operation::disable_fast_launch::builders::DisableFastLaunchInputBuilder {
         crate::operation::disable_fast_launch::builders::DisableFastLaunchInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableFastLaunchInput`](crate::operation::disable_fast_launch::DisableFastLaunchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableFastLaunchInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
@@ -91,16 +88,11 @@ impl DisableFastLaunchInputBuilder {
     /// Consumes the builder and constructs a [`DisableFastLaunchInput`](crate::operation::disable_fast_launch::DisableFastLaunchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_fast_launch::DisableFastLaunchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_fast_launch::DisableFastLaunchInput {
-                image_id: self.image_id,
-                force: self.force,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disable_fast_launch::DisableFastLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disable_fast_launch::DisableFastLaunchInput {
+            image_id: self.image_id,
+            force: self.force,
+            dry_run: self.dry_run,
+        })
     }
 }

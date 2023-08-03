@@ -34,9 +34,7 @@ impl ReplicationSpecification {
 
 /// A builder for [`ReplicationSpecification`](crate::types::ReplicationSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationSpecificationBuilder {
     pub(crate) replication_strategy: ::std::option::Option<crate::types::Rs>,
     pub(crate) region_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -48,10 +46,7 @@ impl ReplicationSpecificationBuilder {
         self
     }
     /// <p> The <code>replicationStrategy</code> of a keyspace, the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-    pub fn set_replication_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::Rs>,
-    ) -> Self {
+    pub fn set_replication_strategy(mut self, input: ::std::option::Option<crate::types::Rs>) -> Self {
         self.replication_strategy = input;
         self
     }
@@ -71,17 +66,12 @@ impl ReplicationSpecificationBuilder {
         self
     }
     /// <p> The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in. </p>
-    pub fn set_region_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_region_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.region_list = input;
         self
     }
     /// <p> The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in. </p>
-    pub fn get_region_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_region_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.region_list
     }
     /// Consumes the builder and constructs a [`ReplicationSpecification`](crate::types::ReplicationSpecification).

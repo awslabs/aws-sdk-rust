@@ -22,16 +22,14 @@ impl DisassociateLambdaFunctionInput {
 }
 impl DisassociateLambdaFunctionInput {
     /// Creates a new builder-style object to manufacture [`DisassociateLambdaFunctionInput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput).
-    pub fn builder() -> crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder {
         crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateLambdaFunctionInput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateLambdaFunctionInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl DisassociateLambdaFunctionInputBuilder {
         crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput {
-                instance_id: self.instance_id,
-                function_arn: self.function_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput {
+            instance_id: self.instance_id,
+            function_arn: self.function_arn,
+        })
     }
 }

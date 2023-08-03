@@ -27,8 +27,7 @@ pub struct ExecutionRecord {
     pub data_pull_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
     #[doc(hidden)]
-    pub metadata_catalog_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
+    pub metadata_catalog_details: ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
 }
 impl ExecutionRecord {
     /// <p> Specifies the identifier of the given flow run. </p>
@@ -60,9 +59,7 @@ impl ExecutionRecord {
         self.data_pull_end_time.as_ref()
     }
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn metadata_catalog_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetadataCatalogDetail]> {
+    pub fn metadata_catalog_details(&self) -> ::std::option::Option<&[crate::types::MetadataCatalogDetail]> {
         self.metadata_catalog_details.as_deref()
     }
 }
@@ -75,9 +72,7 @@ impl ExecutionRecord {
 
 /// A builder for [`ExecutionRecord`](crate::types::ExecutionRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionRecordBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
@@ -86,8 +81,7 @@ pub struct ExecutionRecordBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_pull_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_pull_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) metadata_catalog_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
+    pub(crate) metadata_catalog_details: ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
 }
 impl ExecutionRecordBuilder {
     /// <p> Specifies the identifier of the given flow run. </p>
@@ -110,10 +104,7 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
-    pub fn set_execution_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_execution_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.execution_status = input;
         self
     }
@@ -127,10 +118,7 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> Describes the result of the given flow run. </p>
-    pub fn set_execution_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionResult>,
-    ) -> Self {
+    pub fn set_execution_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
         self.execution_result = input;
         self
     }
@@ -144,10 +132,7 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> Specifies the start time of the flow run. </p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -161,10 +146,7 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> Specifies the time of the most recent update. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -178,10 +160,7 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
-    pub fn set_data_pull_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_pull_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.data_pull_start_time = input;
         self
     }
@@ -195,10 +174,7 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
-    pub fn set_data_pull_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_pull_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.data_pull_end_time = input;
         self
     }
@@ -218,17 +194,12 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn set_metadata_catalog_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
-    ) -> Self {
+    pub fn set_metadata_catalog_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>) -> Self {
         self.metadata_catalog_details = input;
         self
     }
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn get_metadata_catalog_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>> {
+    pub fn get_metadata_catalog_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>> {
         &self.metadata_catalog_details
     }
     /// Consumes the builder and constructs a [`ExecutionRecord`](crate::types::ExecutionRecord).

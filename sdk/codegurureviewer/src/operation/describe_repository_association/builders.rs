@@ -26,7 +26,7 @@ impl DescribeRepositoryAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRepositoryAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_repository_association::builders::DescribeRepositoryAssociationInputBuilder,
+    inner: crate::operation::describe_repository_association::builders::DescribeRepositoryAssociationInputBuilder,
 }
 impl DescribeRepositoryAssociationFluentBuilder {
     /// Creates a new `DescribeRepositoryAssociation`.
@@ -37,7 +37,7 @@ impl DescribeRepositoryAssociationFluentBuilder {
         }
     }
     /// Access the DescribeRepositoryAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_repository_association::builders::DescribeRepositoryAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_repository_association::builders::DescribeRepositoryAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeRepositoryAssociationFluentBuilder {
             crate::operation::describe_repository_association::DescribeRepositoryAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_repository_association::DescribeRepositoryAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_repository_association::DescribeRepositoryAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeRepositoryAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeRepositoryAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_repository_association::DescribeRepositoryAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_repository_association::DescribeRepositoryAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_repository_association::DescribeRepositoryAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeRepositoryAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_repository_association::DescribeRepositoryAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_repository_association::DescribeRepositoryAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_repository_association::DescribeRepositoryAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeRepositoryAssociationFluentBuilder {
             crate::operation::describe_repository_association::DescribeRepositoryAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_repository_association::DescribeRepositoryAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_repository_association::DescribeRepositoryAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn set_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_arn(input);
         self
     }

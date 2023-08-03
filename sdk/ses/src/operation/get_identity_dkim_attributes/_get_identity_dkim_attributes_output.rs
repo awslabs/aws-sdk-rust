@@ -6,18 +6,14 @@
 pub struct GetIdentityDkimAttributesOutput {
     /// <p>The DKIM attributes for an email address or a domain.</p>
     #[doc(hidden)]
-    pub dkim_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>,
-    >,
+    pub dkim_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>>,
     _request_id: Option<String>,
 }
 impl GetIdentityDkimAttributesOutput {
     /// <p>The DKIM attributes for an email address or a domain.</p>
     pub fn dkim_attributes(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>> {
         self.dkim_attributes.as_ref()
     }
 }
@@ -28,20 +24,16 @@ impl ::aws_http::request_id::RequestId for GetIdentityDkimAttributesOutput {
 }
 impl GetIdentityDkimAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentityDkimAttributesOutput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput).
-    pub fn builder() -> crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesOutputBuilder {
         crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityDkimAttributesOutput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesOutputBuilder {
-    pub(crate) dkim_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>,
-    >,
+    pub(crate) dkim_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>>,
     _request_id: Option<String>,
 }
 impl GetIdentityDkimAttributesOutputBuilder {
@@ -50,11 +42,7 @@ impl GetIdentityDkimAttributesOutputBuilder {
     /// To override the contents of this collection use [`set_dkim_attributes`](Self::set_dkim_attributes).
     ///
     /// <p>The DKIM attributes for an email address or a domain.</p>
-    pub fn dkim_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::IdentityDkimAttributes,
-    ) -> Self {
+    pub fn dkim_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::IdentityDkimAttributes) -> Self {
         let mut hash_map = self.dkim_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.dkim_attributes = ::std::option::Option::Some(hash_map);
@@ -63,12 +51,7 @@ impl GetIdentityDkimAttributesOutputBuilder {
     /// <p>The DKIM attributes for an email address or a domain.</p>
     pub fn set_dkim_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::IdentityDkimAttributes,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>>,
     ) -> Self {
         self.dkim_attributes = input;
         self
@@ -76,9 +59,7 @@ impl GetIdentityDkimAttributesOutputBuilder {
     /// <p>The DKIM attributes for an email address or a domain.</p>
     pub fn get_dkim_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>> {
         &self.dkim_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -91,9 +72,7 @@ impl GetIdentityDkimAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityDkimAttributesOutput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput {
+    pub fn build(self) -> crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput {
         crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput {
             dkim_attributes: self.dkim_attributes,
             _request_id: self._request_id,

@@ -23,25 +23,20 @@ impl UpdateJourneyStateInput {
         self.journey_id.as_deref()
     }
     /// <p>Changes the status of a journey.</p>
-    pub fn journey_state_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JourneyStateRequest> {
+    pub fn journey_state_request(&self) -> ::std::option::Option<&crate::types::JourneyStateRequest> {
         self.journey_state_request.as_ref()
     }
 }
 impl UpdateJourneyStateInput {
     /// Creates a new builder-style object to manufacture [`UpdateJourneyStateInput`](crate::operation::update_journey_state::UpdateJourneyStateInput).
-    pub fn builder(
-    ) -> crate::operation::update_journey_state::builders::UpdateJourneyStateInputBuilder {
+    pub fn builder() -> crate::operation::update_journey_state::builders::UpdateJourneyStateInputBuilder {
         crate::operation::update_journey_state::builders::UpdateJourneyStateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJourneyStateInput`](crate::operation::update_journey_state::UpdateJourneyStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJourneyStateInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) journey_id: ::std::option::Option<::std::string::String>,
@@ -49,18 +44,12 @@ pub struct UpdateJourneyStateInputBuilder {
 }
 impl UpdateJourneyStateInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -88,32 +77,22 @@ impl UpdateJourneyStateInputBuilder {
         self
     }
     /// <p>Changes the status of a journey.</p>
-    pub fn set_journey_state_request(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyStateRequest>,
-    ) -> Self {
+    pub fn set_journey_state_request(mut self, input: ::std::option::Option<crate::types::JourneyStateRequest>) -> Self {
         self.journey_state_request = input;
         self
     }
     /// <p>Changes the status of a journey.</p>
-    pub fn get_journey_state_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::JourneyStateRequest> {
+    pub fn get_journey_state_request(&self) -> &::std::option::Option<crate::types::JourneyStateRequest> {
         &self.journey_state_request
     }
     /// Consumes the builder and constructs a [`UpdateJourneyStateInput`](crate::operation::update_journey_state::UpdateJourneyStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_journey_state::UpdateJourneyStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_journey_state::UpdateJourneyStateInput {
-                application_id: self.application_id,
-                journey_id: self.journey_id,
-                journey_state_request: self.journey_state_request,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_journey_state::UpdateJourneyStateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_journey_state::UpdateJourneyStateInput {
+            application_id: self.application_id,
+            journey_id: self.journey_id,
+            journey_state_request: self.journey_state_request,
+        })
     }
 }

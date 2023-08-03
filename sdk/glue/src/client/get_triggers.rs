@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`triggers(Option<Vec<Trigger>>)`](crate::operation::get_triggers::GetTriggersOutput::triggers): <p>A list of triggers for the specified job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_triggers::GetTriggersOutput::next_token): <p>A continuation token, if not all the requested triggers have yet been returned.</p>
     /// - On failure, responds with [`SdkError<GetTriggersError>`](crate::operation::get_triggers::GetTriggersError)
-    pub fn get_triggers(
-        &self,
-    ) -> crate::operation::get_triggers::builders::GetTriggersFluentBuilder {
+    pub fn get_triggers(&self) -> crate::operation::get_triggers::builders::GetTriggersFluentBuilder {
         crate::operation::get_triggers::builders::GetTriggersFluentBuilder::new(self.handle.clone())
     }
 }

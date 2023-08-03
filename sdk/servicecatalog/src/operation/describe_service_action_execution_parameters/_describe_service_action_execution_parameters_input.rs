@@ -37,16 +37,15 @@ impl DescribeServiceActionExecutionParametersInput {
 }
 impl DescribeServiceActionExecutionParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceActionExecutionParametersInput`](crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersInput).
-    pub fn builder() -> crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersInputBuilder{
+    pub fn builder() -> crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersInputBuilder
+    {
         crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServiceActionExecutionParametersInput`](crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceActionExecutionParametersInputBuilder {
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_action_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +53,12 @@ pub struct DescribeServiceActionExecutionParametersInputBuilder {
 }
 impl DescribeServiceActionExecutionParametersInputBuilder {
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_id = input;
         self
     }
@@ -74,18 +67,12 @@ impl DescribeServiceActionExecutionParametersInputBuilder {
         &self.provisioned_product_id
     }
     /// <p>The self-service action identifier.</p>
-    pub fn service_action_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_action_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The self-service action identifier.</p>
-    pub fn set_service_action_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_action_id = input;
         self
     }
@@ -98,10 +85,7 @@ impl DescribeServiceActionExecutionParametersInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -110,10 +94,7 @@ impl DescribeServiceActionExecutionParametersInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -126,16 +107,18 @@ impl DescribeServiceActionExecutionParametersInputBuilder {
         &self.accept_language
     }
     /// Consumes the builder and constructs a [`DescribeServiceActionExecutionParametersInput`](crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersInput {
-                provisioned_product_id: self.provisioned_product_id
-                ,
-                service_action_id: self.service_action_id
-                ,
-                accept_language: self.accept_language
-                ,
-            }
+                provisioned_product_id: self.provisioned_product_id,
+                service_action_id: self.service_action_id,
+                accept_language: self.accept_language,
+            },
         )
     }
 }

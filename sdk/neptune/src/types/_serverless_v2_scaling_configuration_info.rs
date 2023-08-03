@@ -31,9 +31,7 @@ impl ServerlessV2ScalingConfigurationInfo {
 
 /// A builder for [`ServerlessV2ScalingConfigurationInfo`](crate::types::ServerlessV2ScalingConfigurationInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerlessV2ScalingConfigurationInfoBuilder {
     pub(crate) min_capacity: ::std::option::Option<f64>,
     pub(crate) max_capacity: ::std::option::Option<f64>,

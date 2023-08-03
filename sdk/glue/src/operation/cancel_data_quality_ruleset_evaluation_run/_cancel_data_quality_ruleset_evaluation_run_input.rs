@@ -15,16 +15,14 @@ impl CancelDataQualityRulesetEvaluationRunInput {
 }
 impl CancelDataQualityRulesetEvaluationRunInput {
     /// Creates a new builder-style object to manufacture [`CancelDataQualityRulesetEvaluationRunInput`](crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunInput).
-    pub fn builder() -> crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunInputBuilder{
+    pub fn builder() -> crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunInputBuilder {
         crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDataQualityRulesetEvaluationRunInput`](crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDataQualityRulesetEvaluationRunInputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl CancelDataQualityRulesetEvaluationRunInputBuilder {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`CancelDataQualityRulesetEvaluationRunInput`](crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunInput {
-                run_id: self.run_id
-                ,
-            }
+            crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunInput { run_id: self.run_id },
         )
     }
 }

@@ -43,9 +43,7 @@ impl UpdateStageInput {
 
 /// A builder for [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStageInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
@@ -110,12 +108,7 @@ impl UpdateStageInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_stage::UpdateStageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stage::UpdateStageInput {
             game_name: self.game_name,
             stage_name: self.stage_name,

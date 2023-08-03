@@ -10,9 +10,7 @@ pub struct CompromisedCredentialsActionsType {
 }
 impl CompromisedCredentialsActionsType {
     /// <p>The event action.</p>
-    pub fn event_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CompromisedCredentialsEventActionType> {
+    pub fn event_action(&self) -> ::std::option::Option<&crate::types::CompromisedCredentialsEventActionType> {
         self.event_action.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl CompromisedCredentialsActionsType {
 
 /// A builder for [`CompromisedCredentialsActionsType`](crate::types::CompromisedCredentialsActionsType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompromisedCredentialsActionsTypeBuilder {
-    pub(crate) event_action:
-        ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
+    pub(crate) event_action: ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
 }
 impl CompromisedCredentialsActionsTypeBuilder {
     /// <p>The event action.</p>
-    pub fn event_action(
-        mut self,
-        input: crate::types::CompromisedCredentialsEventActionType,
-    ) -> Self {
+    pub fn event_action(mut self, input: crate::types::CompromisedCredentialsEventActionType) -> Self {
         self.event_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The event action.</p>
-    pub fn set_event_action(
-        mut self,
-        input: ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
-    ) -> Self {
+    pub fn set_event_action(mut self, input: ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>) -> Self {
         self.event_action = input;
         self
     }
     /// <p>The event action.</p>
-    pub fn get_event_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::CompromisedCredentialsEventActionType> {
+    pub fn get_event_action(&self) -> &::std::option::Option<crate::types::CompromisedCredentialsEventActionType> {
         &self.event_action
     }
     /// Consumes the builder and constructs a [`CompromisedCredentialsActionsType`](crate::types::CompromisedCredentialsActionsType).

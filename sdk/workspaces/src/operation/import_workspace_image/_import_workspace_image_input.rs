@@ -39,9 +39,7 @@ impl ImportWorkspaceImageInput {
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    pub fn ingestion_process(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkspaceImageIngestionProcess> {
+    pub fn ingestion_process(&self) -> ::std::option::Option<&crate::types::WorkspaceImageIngestionProcess> {
         self.ingestion_process.as_ref()
     }
     /// <p>The name of the WorkSpace image.</p>
@@ -68,21 +66,17 @@ impl ImportWorkspaceImageInput {
 }
 impl ImportWorkspaceImageInput {
     /// Creates a new builder-style object to manufacture [`ImportWorkspaceImageInput`](crate::operation::import_workspace_image::ImportWorkspaceImageInput).
-    pub fn builder(
-    ) -> crate::operation::import_workspace_image::builders::ImportWorkspaceImageInputBuilder {
+    pub fn builder() -> crate::operation::import_workspace_image::builders::ImportWorkspaceImageInputBuilder {
         crate::operation::import_workspace_image::builders::ImportWorkspaceImageInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportWorkspaceImageInput`](crate::operation::import_workspace_image::ImportWorkspaceImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportWorkspaceImageInputBuilder {
     pub(crate) ec2_image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ingestion_process:
-        ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>,
+    pub(crate) ingestion_process: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>,
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -107,10 +101,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    pub fn ingestion_process(
-        mut self,
-        input: crate::types::WorkspaceImageIngestionProcess,
-    ) -> Self {
+    pub fn ingestion_process(mut self, input: crate::types::WorkspaceImageIngestionProcess) -> Self {
         self.ingestion_process = ::std::option::Option::Some(input);
         self
     }
@@ -118,10 +109,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    pub fn set_ingestion_process(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>,
-    ) -> Self {
+    pub fn set_ingestion_process(mut self, input: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>) -> Self {
         self.ingestion_process = input;
         self
     }
@@ -129,9 +117,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    pub fn get_ingestion_process(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkspaceImageIngestionProcess> {
+    pub fn get_ingestion_process(&self) -> &::std::option::Option<crate::types::WorkspaceImageIngestionProcess> {
         &self.ingestion_process
     }
     /// <p>The name of the WorkSpace image.</p>
@@ -149,18 +135,12 @@ impl ImportWorkspaceImageInputBuilder {
         &self.image_name
     }
     /// <p>The description of the WorkSpace image.</p>
-    pub fn image_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the WorkSpace image.</p>
-    pub fn set_image_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_description = input;
         self
     }
@@ -180,10 +160,7 @@ impl ImportWorkspaceImageInputBuilder {
         self
     }
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -213,10 +190,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.applications = input;
         self
     }
@@ -226,27 +200,21 @@ impl ImportWorkspaceImageInputBuilder {
     /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         &self.applications
     }
     /// Consumes the builder and constructs a [`ImportWorkspaceImageInput`](crate::operation::import_workspace_image::ImportWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_workspace_image::ImportWorkspaceImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_workspace_image::ImportWorkspaceImageInput {
-                ec2_image_id: self.ec2_image_id,
-                ingestion_process: self.ingestion_process,
-                image_name: self.image_name,
-                image_description: self.image_description,
-                tags: self.tags,
-                applications: self.applications,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_workspace_image::ImportWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::import_workspace_image::ImportWorkspaceImageInput {
+            ec2_image_id: self.ec2_image_id,
+            ingestion_process: self.ingestion_process,
+            image_name: self.image_name,
+            image_description: self.image_description,
+            tags: self.tags,
+            applications: self.applications,
+        })
     }
 }

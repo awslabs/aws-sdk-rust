@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteUsageLimitOutput`](crate::operation::delete_usage_limit::DeleteUsageLimitOutput) with field(s):
     ///   - [`usage_limit(Option<UsageLimit>)`](crate::operation::delete_usage_limit::DeleteUsageLimitOutput::usage_limit): <p>The deleted usage limit object.</p>
     /// - On failure, responds with [`SdkError<DeleteUsageLimitError>`](crate::operation::delete_usage_limit::DeleteUsageLimitError)
-    pub fn delete_usage_limit(
-        &self,
-    ) -> crate::operation::delete_usage_limit::builders::DeleteUsageLimitFluentBuilder {
-        crate::operation::delete_usage_limit::builders::DeleteUsageLimitFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_usage_limit(&self) -> crate::operation::delete_usage_limit::builders::DeleteUsageLimitFluentBuilder {
+        crate::operation::delete_usage_limit::builders::DeleteUsageLimitFluentBuilder::new(self.handle.clone())
     }
 }

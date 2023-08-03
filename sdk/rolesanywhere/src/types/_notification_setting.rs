@@ -48,9 +48,7 @@ impl NotificationSetting {
 
 /// A builder for [`NotificationSetting`](crate::types::NotificationSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationSettingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) event: ::std::option::Option<crate::types::NotificationEvent>,
@@ -78,10 +76,7 @@ impl NotificationSettingBuilder {
         self
     }
     /// <p>The event to which this notification setting is applied.</p>
-    pub fn set_event(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationEvent>,
-    ) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<crate::types::NotificationEvent>) -> Self {
         self.event = input;
         self
     }
@@ -113,10 +108,7 @@ impl NotificationSettingBuilder {
     /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
     /// </note>
-    pub fn set_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.channel = input;
         self
     }

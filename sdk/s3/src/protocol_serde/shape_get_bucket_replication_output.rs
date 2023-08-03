@@ -5,14 +5,15 @@ pub(crate) fn de_replication_configuration_payload(
     ::std::option::Option<crate::types::ReplicationConfiguration>,
     crate::operation::get_bucket_replication::GetBucketReplicationError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_bucket_replication_output::de_replication_configuration(body).map_err(crate::operation::get_bucket_replication::GetBucketReplicationError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_get_bucket_replication_output::de_replication_configuration(body)
+                .map_err(crate::operation::get_bucket_replication::GetBucketReplicationError::unhandled)
+        })
+        .transpose()
 }
 
-pub fn de_replication_configuration(
-    inp: &[u8],
-) -> Result<crate::types::ReplicationConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_replication_configuration(inp: &[u8]) -> Result<crate::types::ReplicationConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -23,7 +24,5 @@ pub fn de_replication_configuration(
             start_el
         )));
     }
-    crate::protocol_serde::shape_replication_configuration::de_replication_configuration(
-        &mut decoder,
-    )
+    crate::protocol_serde::shape_replication_configuration::de_replication_configuration(&mut decoder)
 }

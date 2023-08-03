@@ -57,18 +57,14 @@ impl ListPipelineExecutionsInput {
 }
 impl ListPipelineExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder {
         crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionsInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -80,18 +76,12 @@ pub struct ListPipelineExecutionsInputBuilder {
 }
 impl ListPipelineExecutionsInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -105,10 +95,7 @@ impl ListPipelineExecutionsInputBuilder {
         self
     }
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -122,10 +109,7 @@ impl ListPipelineExecutionsInputBuilder {
         self
     }
     /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -139,10 +123,7 @@ impl ListPipelineExecutionsInputBuilder {
         self
     }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortPipelineExecutionsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortPipelineExecutionsBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -195,20 +176,16 @@ impl ListPipelineExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pipeline_executions::ListPipelineExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_pipeline_executions::ListPipelineExecutionsInput {
-                pipeline_name: self.pipeline_name,
-                created_after: self.created_after,
-                created_before: self.created_before,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_pipeline_executions::ListPipelineExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_pipeline_executions::ListPipelineExecutionsInput {
+            pipeline_name: self.pipeline_name,
+            created_after: self.created_after,
+            created_before: self.created_before,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

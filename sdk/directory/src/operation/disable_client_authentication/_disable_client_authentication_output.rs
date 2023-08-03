@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableClientAuthenticationOutput {
 }
 impl DisableClientAuthenticationOutput {
     /// Creates a new builder-style object to manufacture [`DisableClientAuthenticationOutput`](crate::operation::disable_client_authentication::DisableClientAuthenticationOutput).
-    pub fn builder() -> crate::operation::disable_client_authentication::builders::DisableClientAuthenticationOutputBuilder{
+    pub fn builder() -> crate::operation::disable_client_authentication::builders::DisableClientAuthenticationOutputBuilder {
         crate::operation::disable_client_authentication::builders::DisableClientAuthenticationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableClientAuthenticationOutput`](crate::operation::disable_client_authentication::DisableClientAuthenticationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableClientAuthenticationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisableClientAuthenticationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableClientAuthenticationOutput`](crate::operation::disable_client_authentication::DisableClientAuthenticationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_client_authentication::DisableClientAuthenticationOutput {
+    pub fn build(self) -> crate::operation::disable_client_authentication::DisableClientAuthenticationOutput {
         crate::operation::disable_client_authentication::DisableClientAuthenticationOutput {
             _request_id: self._request_id,
         }

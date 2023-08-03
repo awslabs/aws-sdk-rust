@@ -17,9 +17,7 @@ impl DatasetContentDeliveryRule {
         self.entry_name.as_deref()
     }
     /// <p>The destination to which dataset contents are delivered.</p>
-    pub fn destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatasetContentDeliveryDestination> {
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::DatasetContentDeliveryDestination> {
         self.destination.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl DatasetContentDeliveryRule {
 
 /// A builder for [`DatasetContentDeliveryRule`](crate::types::DatasetContentDeliveryRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetContentDeliveryRuleBuilder {
     pub(crate) entry_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::DatasetContentDeliveryDestination>,
@@ -60,17 +56,12 @@ impl DatasetContentDeliveryRuleBuilder {
         self
     }
     /// <p>The destination to which dataset contents are delivered.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetContentDeliveryDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DatasetContentDeliveryDestination>) -> Self {
         self.destination = input;
         self
     }
     /// <p>The destination to which dataset contents are delivered.</p>
-    pub fn get_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatasetContentDeliveryDestination> {
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::DatasetContentDeliveryDestination> {
         &self.destination
     }
     /// Consumes the builder and constructs a [`DatasetContentDeliveryRule`](crate::types::DatasetContentDeliveryRule).

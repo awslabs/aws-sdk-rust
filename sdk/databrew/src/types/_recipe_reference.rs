@@ -30,9 +30,7 @@ impl RecipeReference {
 
 /// A builder for [`RecipeReference`](crate::types::RecipeReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipeReferenceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_version: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl RecipeReferenceBuilder {
         &self.name
     }
     /// <p>The identifier for the version for the recipe. </p>
-    pub fn recipe_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the version for the recipe. </p>
-    pub fn set_recipe_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_version = input;
         self
     }

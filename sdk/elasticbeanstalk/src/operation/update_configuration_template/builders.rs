@@ -32,7 +32,7 @@ impl UpdateConfigurationTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConfigurationTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateInputBuilder,
+    inner: crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateInputBuilder,
 }
 impl UpdateConfigurationTemplateFluentBuilder {
     /// Creates a new `UpdateConfigurationTemplate`.
@@ -43,7 +43,7 @@ impl UpdateConfigurationTemplateFluentBuilder {
         }
     }
     /// Access the UpdateConfigurationTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl UpdateConfigurationTemplateFluentBuilder {
             crate::operation::update_configuration_template::UpdateConfigurationTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configuration_template::UpdateConfigurationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configuration_template::UpdateConfigurationTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl UpdateConfigurationTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl UpdateConfigurationTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configuration_template::UpdateConfigurationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configuration_template::UpdateConfigurationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configuration_template::UpdateConfigurationTemplateError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl UpdateConfigurationTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configuration_template::UpdateConfigurationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configuration_template::UpdateConfigurationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configuration_template::UpdateConfigurationTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -120,27 +111,19 @@ impl UpdateConfigurationTemplateFluentBuilder {
             crate::operation::update_configuration_template::UpdateConfigurationTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configuration_template::UpdateConfigurationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configuration_template::UpdateConfigurationTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the application associated with the configuration template to update.</p>
     /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application associated with the configuration template to update.</p>
     /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -151,19 +134,13 @@ impl UpdateConfigurationTemplateFluentBuilder {
     }
     /// <p>The name of the configuration template to update.</p>
     /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the configuration template to update.</p>
     /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -196,17 +173,12 @@ impl UpdateConfigurationTemplateFluentBuilder {
         self
     }
     /// <p>A list of configuration option settings to update with the new specified option value.</p>
-    pub fn set_option_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
-    ) -> Self {
+    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
         self.inner = self.inner.set_option_settings(input);
         self
     }
     /// <p>A list of configuration option settings to update with the new specified option value.</p>
-    pub fn get_option_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
         self.inner.get_option_settings()
     }
     /// Appends an item to `OptionsToRemove`.
@@ -221,18 +193,13 @@ impl UpdateConfigurationTemplateFluentBuilder {
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
     /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
-    pub fn set_options_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
-    ) -> Self {
+    pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
         self.inner = self.inner.set_options_to_remove(input);
         self
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
     /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
-    pub fn get_options_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+    pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
         self.inner.get_options_to_remove()
     }
 }

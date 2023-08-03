@@ -26,7 +26,7 @@ impl ListTypedLinkFacetAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTypedLinkFacetAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder,
+    inner: crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder,
 }
 impl ListTypedLinkFacetAttributesFluentBuilder {
     /// Creates a new `ListTypedLinkFacetAttributes`.
@@ -37,7 +37,7 @@ impl ListTypedLinkFacetAttributesFluentBuilder {
         }
     }
     /// Access the ListTypedLinkFacetAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListTypedLinkFacetAttributesFluentBuilder {
             crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListTypedLinkFacetAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListTypedLinkFacetAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListTypedLinkFacetAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListTypedLinkFacetAttributesFluentBuilder {
             crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_typed_link_facet_attributes::paginator::ListTypedLinkFacetAttributesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_typed_link_facet_attributes::paginator::ListTypedLinkFacetAttributesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_typed_link_facet_attributes::paginator::ListTypedLinkFacetAttributesPaginator {
         crate::operation::list_typed_link_facet_attributes::paginator::ListTypedLinkFacetAttributesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>

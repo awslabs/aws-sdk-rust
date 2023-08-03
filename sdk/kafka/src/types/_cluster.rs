@@ -30,9 +30,7 @@ pub struct Cluster {
     pub state_info: ::std::option::Option<crate::types::StateInfo>,
     /// <p>Tags attached to the cluster.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about the provisioned cluster.</p>
     #[doc(hidden)]
     pub provisioned: ::std::option::Option<crate::types::Provisioned>,
@@ -74,11 +72,7 @@ impl Cluster {
         self.state_info.as_ref()
     }
     /// <p>Tags attached to the cluster.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Information about the provisioned cluster.</p>
@@ -99,9 +93,7 @@ impl Cluster {
 
 /// A builder for [`Cluster`](crate::types::Cluster).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterBuilder {
     pub(crate) active_operation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<crate::types::ClusterType>,
@@ -111,26 +103,18 @@ pub struct ClusterBuilder {
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ClusterState>,
     pub(crate) state_info: ::std::option::Option<crate::types::StateInfo>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) provisioned: ::std::option::Option<crate::types::Provisioned>,
     pub(crate) serverless: ::std::option::Option<crate::types::Serverless>,
 }
 impl ClusterBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
-    pub fn active_operation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_operation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
-    pub fn set_active_operation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_operation_arn = input;
         self
     }
@@ -144,10 +128,7 @@ impl ClusterBuilder {
         self
     }
     /// <p>Cluster Type.</p>
-    pub fn set_cluster_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterType>,
-    ) -> Self {
+    pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::ClusterType>) -> Self {
         self.cluster_type = input;
         self
     }
@@ -189,10 +170,7 @@ impl ClusterBuilder {
         self
     }
     /// <p>The time when the cluster was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -201,18 +179,12 @@ impl ClusterBuilder {
         &self.creation_time
     }
     /// <p>The current version of the MSK cluster.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the MSK cluster.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -253,32 +225,19 @@ impl ClusterBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags attached to the cluster.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags attached to the cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags attached to the cluster.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Information about the provisioned cluster.</p>
@@ -287,10 +246,7 @@ impl ClusterBuilder {
         self
     }
     /// <p>Information about the provisioned cluster.</p>
-    pub fn set_provisioned(
-        mut self,
-        input: ::std::option::Option<crate::types::Provisioned>,
-    ) -> Self {
+    pub fn set_provisioned(mut self, input: ::std::option::Option<crate::types::Provisioned>) -> Self {
         self.provisioned = input;
         self
     }
@@ -304,10 +260,7 @@ impl ClusterBuilder {
         self
     }
     /// <p>Information about the serverless cluster.</p>
-    pub fn set_serverless(
-        mut self,
-        input: ::std::option::Option<crate::types::Serverless>,
-    ) -> Self {
+    pub fn set_serverless(mut self, input: ::std::option::Option<crate::types::Serverless>) -> Self {
         self.serverless = input;
         self
     }

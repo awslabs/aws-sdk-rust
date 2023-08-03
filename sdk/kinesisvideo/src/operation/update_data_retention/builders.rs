@@ -45,9 +45,7 @@ impl UpdateDataRetentionFluentBuilder {
         }
     }
     /// Access the UpdateDataRetention as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_data_retention::builders::UpdateDataRetentionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_data_retention::builders::UpdateDataRetentionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +57,7 @@ impl UpdateDataRetentionFluentBuilder {
             crate::operation::update_data_retention::UpdateDataRetention,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_retention::UpdateDataRetentionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_retention::UpdateDataRetentionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +67,7 @@ impl UpdateDataRetentionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +76,7 @@ impl UpdateDataRetentionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_retention::UpdateDataRetentionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_retention::UpdateDataRetentionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_retention::UpdateDataRetentionError>,
     > {
         let op = self
             .inner
@@ -108,9 +99,7 @@ impl UpdateDataRetentionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_retention::UpdateDataRetentionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_retention::UpdateDataRetentionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_retention::UpdateDataRetentionError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +113,7 @@ impl UpdateDataRetentionFluentBuilder {
             crate::operation::update_data_retention::UpdateDataRetention,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_retention::UpdateDataRetentionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_retention::UpdateDataRetentionError>,
     > {
         self.customize_middleware().await
     }
@@ -159,18 +146,12 @@ impl UpdateDataRetentionFluentBuilder {
         self.inner.get_stream_arn()
     }
     /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }
@@ -184,17 +165,12 @@ impl UpdateDataRetentionFluentBuilder {
         self
     }
     /// <p>Indicates whether you want to increase or decrease the retention period.</p>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateDataRetentionOperation>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::UpdateDataRetentionOperation>) -> Self {
         self.inner = self.inner.set_operation(input);
         self
     }
     /// <p>Indicates whether you want to increase or decrease the retention period.</p>
-    pub fn get_operation(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateDataRetentionOperation> {
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::UpdateDataRetentionOperation> {
         self.inner.get_operation()
     }
     /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>

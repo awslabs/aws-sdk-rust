@@ -22,17 +22,14 @@ impl ListUserProfilesInput {
 }
 impl ListUserProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListUserProfilesInput`](crate::operation::list_user_profiles::ListUserProfilesInput).
-    pub fn builder() -> crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder {
         crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserProfilesInput`](crate::operation::list_user_profiles::ListUserProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserProfilesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListUserProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListUserProfilesInput`](crate::operation::list_user_profiles::ListUserProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_user_profiles::ListUserProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_user_profiles::ListUserProfilesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_user_profiles::ListUserProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_user_profiles::ListUserProfilesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

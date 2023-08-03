@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`PutConferencePreferenceOutput`](crate::operation::put_conference_preference::PutConferencePreferenceOutput)
     /// - On failure, responds with [`SdkError<PutConferencePreferenceError>`](crate::operation::put_conference_preference::PutConferencePreferenceError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn put_conference_preference(
-        &self,
-    ) -> crate::operation::put_conference_preference::builders::PutConferencePreferenceFluentBuilder
-    {
+    pub fn put_conference_preference(&self) -> crate::operation::put_conference_preference::builders::PutConferencePreferenceFluentBuilder {
         crate::operation::put_conference_preference::builders::PutConferencePreferenceFluentBuilder::new(self.handle.clone())
     }
 }

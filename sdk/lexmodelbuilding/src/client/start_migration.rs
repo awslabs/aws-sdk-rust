@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`migration_strategy(Option<MigrationStrategy>)`](crate::operation::start_migration::StartMigrationOutput::migration_strategy): <p>The strategy used to conduct the migration.</p>
     ///   - [`migration_timestamp(Option<DateTime>)`](crate::operation::start_migration::StartMigrationOutput::migration_timestamp): <p>The date and time that the migration started.</p>
     /// - On failure, responds with [`SdkError<StartMigrationError>`](crate::operation::start_migration::StartMigrationError)
-    pub fn start_migration(
-        &self,
-    ) -> crate::operation::start_migration::builders::StartMigrationFluentBuilder {
-        crate::operation::start_migration::builders::StartMigrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_migration(&self) -> crate::operation::start_migration::builders::StartMigrationFluentBuilder {
+        crate::operation::start_migration::builders::StartMigrationFluentBuilder::new(self.handle.clone())
     }
 }

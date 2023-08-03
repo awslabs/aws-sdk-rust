@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`stack_policy_url(impl ::std::convert::Into<String>)`](crate::operation::set_stack_policy::builders::SetStackPolicyFluentBuilder::stack_policy_url) / [`set_stack_policy_url(Option<String>)`](crate::operation::set_stack_policy::builders::SetStackPolicyFluentBuilder::set_stack_policy_url): <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon Web Services Region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
     /// - On success, responds with [`SetStackPolicyOutput`](crate::operation::set_stack_policy::SetStackPolicyOutput)
     /// - On failure, responds with [`SdkError<SetStackPolicyError>`](crate::operation::set_stack_policy::SetStackPolicyError)
-    pub fn set_stack_policy(
-        &self,
-    ) -> crate::operation::set_stack_policy::builders::SetStackPolicyFluentBuilder {
-        crate::operation::set_stack_policy::builders::SetStackPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_stack_policy(&self) -> crate::operation::set_stack_policy::builders::SetStackPolicyFluentBuilder {
+        crate::operation::set_stack_policy::builders::SetStackPolicyFluentBuilder::new(self.handle.clone())
     }
 }

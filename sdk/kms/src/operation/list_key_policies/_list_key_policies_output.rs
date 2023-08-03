@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for ListKeyPoliciesOutput {
 }
 impl ListKeyPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListKeyPoliciesOutput`](crate::operation::list_key_policies::ListKeyPoliciesOutput).
-    pub fn builder() -> crate::operation::list_key_policies::builders::ListKeyPoliciesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_key_policies::builders::ListKeyPoliciesOutputBuilder {
         crate::operation::list_key_policies::builders::ListKeyPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListKeyPoliciesOutput`](crate::operation::list_key_policies::ListKeyPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKeyPoliciesOutputBuilder {
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -65,17 +62,12 @@ impl ListKeyPoliciesOutputBuilder {
         self
     }
     /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>

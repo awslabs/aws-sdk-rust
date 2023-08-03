@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`identity_validation_expression(Option<String>)`](crate::operation::create_authorizer::CreateAuthorizerOutput::identity_validation_expression): <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
     ///   - [`authorizer_result_ttl_in_seconds(Option<i32>)`](crate::operation::create_authorizer::CreateAuthorizerOutput::authorizer_result_ttl_in_seconds): <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
     /// - On failure, responds with [`SdkError<CreateAuthorizerError>`](crate::operation::create_authorizer::CreateAuthorizerError)
-    pub fn create_authorizer(
-        &self,
-    ) -> crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder {
-        crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_authorizer(&self) -> crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder {
+        crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder::new(self.handle.clone())
     }
 }

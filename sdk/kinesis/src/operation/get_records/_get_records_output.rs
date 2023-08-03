@@ -50,9 +50,7 @@ impl GetRecordsOutput {
 
 /// A builder for [`GetRecordsOutput`](crate::operation::get_records::GetRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecordsOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     pub(crate) next_shard_iterator: ::std::option::Option<::std::string::String>,
@@ -73,10 +71,7 @@ impl GetRecordsOutputBuilder {
         self
     }
     /// <p>The data records retrieved from the shard.</p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
         self.records = input;
         self
     }
@@ -85,18 +80,12 @@ impl GetRecordsOutputBuilder {
         &self.records
     }
     /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
-    pub fn next_shard_iterator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_shard_iterator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
-    pub fn set_next_shard_iterator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_shard_iterator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_shard_iterator = input;
         self
     }
@@ -130,17 +119,12 @@ impl GetRecordsOutputBuilder {
         self
     }
     /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code> API's response only when the end of the current shard is reached.</p>
-    pub fn set_child_shards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChildShard>>,
-    ) -> Self {
+    pub fn set_child_shards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChildShard>>) -> Self {
         self.child_shards = input;
         self
     }
     /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code> API's response only when the end of the current shard is reached.</p>
-    pub fn get_child_shards(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChildShard>> {
+    pub fn get_child_shards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChildShard>> {
         &self.child_shards
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

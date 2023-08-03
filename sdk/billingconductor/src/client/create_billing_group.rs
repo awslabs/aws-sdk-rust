@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateBillingGroupOutput`](crate::operation::create_billing_group::CreateBillingGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_billing_group::CreateBillingGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the created billing group. </p>
     /// - On failure, responds with [`SdkError<CreateBillingGroupError>`](crate::operation::create_billing_group::CreateBillingGroupError)
-    pub fn create_billing_group(
-        &self,
-    ) -> crate::operation::create_billing_group::builders::CreateBillingGroupFluentBuilder {
-        crate::operation::create_billing_group::builders::CreateBillingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_billing_group(&self) -> crate::operation::create_billing_group::builders::CreateBillingGroupFluentBuilder {
+        crate::operation::create_billing_group::builders::CreateBillingGroupFluentBuilder::new(self.handle.clone())
     }
 }

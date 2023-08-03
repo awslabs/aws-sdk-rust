@@ -51,9 +51,7 @@ impl RootCause {
 
 /// A builder for [`RootCause`](crate::types::RootCause).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RootCauseBuilder {
     pub(crate) service: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl RootCauseBuilder {
         &self.region
     }
     /// <p>The member account value that's associated with the cost anomaly. </p>
-    pub fn linked_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn linked_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.linked_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The member account value that's associated with the cost anomaly. </p>
-    pub fn set_linked_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_linked_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.linked_account = input;
         self
     }
@@ -125,18 +117,12 @@ impl RootCauseBuilder {
         &self.usage_type
     }
     /// <p>The member account name value that's associated with the cost anomaly.</p>
-    pub fn linked_account_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn linked_account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.linked_account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The member account name value that's associated with the cost anomaly.</p>
-    pub fn set_linked_account_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_linked_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.linked_account_name = input;
         self
     }

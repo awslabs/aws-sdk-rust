@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`shared_directories(Option<Vec<SharedDirectory>>)`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput::shared_directories): <p>A list of all shared directories in your account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput::next_token): <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<DescribeSharedDirectoriesError>`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesError)
-    pub fn describe_shared_directories(&self) -> crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesFluentBuilder{
+    pub fn describe_shared_directories(&self) -> crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesFluentBuilder {
         crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesFluentBuilder::new(self.handle.clone())
     }
 }

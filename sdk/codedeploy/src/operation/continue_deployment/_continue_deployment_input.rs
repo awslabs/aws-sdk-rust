@@ -22,35 +22,26 @@ impl ContinueDeploymentInput {
 }
 impl ContinueDeploymentInput {
     /// Creates a new builder-style object to manufacture [`ContinueDeploymentInput`](crate::operation::continue_deployment::ContinueDeploymentInput).
-    pub fn builder(
-    ) -> crate::operation::continue_deployment::builders::ContinueDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::continue_deployment::builders::ContinueDeploymentInputBuilder {
         crate::operation::continue_deployment::builders::ContinueDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`ContinueDeploymentInput`](crate::operation::continue_deployment::ContinueDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinueDeploymentInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_wait_type: ::std::option::Option<crate::types::DeploymentWaitType>,
 }
 impl ContinueDeploymentInputBuilder {
     /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -64,31 +55,21 @@ impl ContinueDeploymentInputBuilder {
         self
     }
     /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
-    pub fn set_deployment_wait_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentWaitType>,
-    ) -> Self {
+    pub fn set_deployment_wait_type(mut self, input: ::std::option::Option<crate::types::DeploymentWaitType>) -> Self {
         self.deployment_wait_type = input;
         self
     }
     /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
-    pub fn get_deployment_wait_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentWaitType> {
+    pub fn get_deployment_wait_type(&self) -> &::std::option::Option<crate::types::DeploymentWaitType> {
         &self.deployment_wait_type
     }
     /// Consumes the builder and constructs a [`ContinueDeploymentInput`](crate::operation::continue_deployment::ContinueDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::continue_deployment::ContinueDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::continue_deployment::ContinueDeploymentInput {
-                deployment_id: self.deployment_id,
-                deployment_wait_type: self.deployment_wait_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::continue_deployment::ContinueDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::continue_deployment::ContinueDeploymentInput {
+            deployment_id: self.deployment_id,
+            deployment_wait_type: self.deployment_wait_type,
+        })
     }
 }

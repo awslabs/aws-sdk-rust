@@ -28,9 +28,7 @@ pub struct CreateTransformJobInput {
     pub batch_strategy: ::std::option::Option<crate::types::BatchStrategy>,
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
     #[doc(hidden)]
-    pub environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Describes the input source and the way the transform job consumes it.</p>
     #[doc(hidden)]
     pub transform_input: ::std::option::Option<crate::types::TransformInput>,
@@ -89,11 +87,7 @@ impl CreateTransformJobInput {
         self.batch_strategy.as_ref()
     }
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn environment(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>Describes the input source and the way the transform job consumes it.</p>
@@ -105,9 +99,7 @@ impl CreateTransformJobInput {
         self.transform_output.as_ref()
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
-    pub fn data_capture_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchDataCaptureConfig> {
+    pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::BatchDataCaptureConfig> {
         self.data_capture_config.as_ref()
     }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
@@ -134,17 +126,14 @@ impl CreateTransformJobInput {
 }
 impl CreateTransformJobInput {
     /// Creates a new builder-style object to manufacture [`CreateTransformJobInput`](crate::operation::create_transform_job::CreateTransformJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_transform_job::builders::CreateTransformJobInputBuilder {
+    pub fn builder() -> crate::operation::create_transform_job::builders::CreateTransformJobInputBuilder {
         crate::operation::create_transform_job::builders::CreateTransformJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransformJobInput`](crate::operation::create_transform_job::CreateTransformJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransformJobInputBuilder {
     pub(crate) transform_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
@@ -152,9 +141,7 @@ pub struct CreateTransformJobInputBuilder {
     pub(crate) model_client_config: ::std::option::Option<crate::types::ModelClientConfig>,
     pub(crate) max_payload_in_mb: ::std::option::Option<i32>,
     pub(crate) batch_strategy: ::std::option::Option<crate::types::BatchStrategy>,
-    pub(crate) environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) transform_input: ::std::option::Option<crate::types::TransformInput>,
     pub(crate) transform_output: ::std::option::Option<crate::types::TransformOutput>,
     pub(crate) data_capture_config: ::std::option::Option<crate::types::BatchDataCaptureConfig>,
@@ -165,18 +152,12 @@ pub struct CreateTransformJobInputBuilder {
 }
 impl CreateTransformJobInputBuilder {
     /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    pub fn transform_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    pub fn set_transform_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transform_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transform_job_name = input;
         self
     }
@@ -218,17 +199,12 @@ impl CreateTransformJobInputBuilder {
         self
     }
     /// <p>Configures the timeout and maximum number of retries for processing a transform job invocation.</p>
-    pub fn set_model_client_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelClientConfig>,
-    ) -> Self {
+    pub fn set_model_client_config(mut self, input: ::std::option::Option<crate::types::ModelClientConfig>) -> Self {
         self.model_client_config = input;
         self
     }
     /// <p>Configures the timeout and maximum number of retries for processing a transform job invocation.</p>
-    pub fn get_model_client_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelClientConfig> {
+    pub fn get_model_client_config(&self) -> &::std::option::Option<crate::types::ModelClientConfig> {
         &self.model_client_config
     }
     /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>
@@ -263,10 +239,7 @@ impl CreateTransformJobInputBuilder {
     /// <p>To enable the batch strategy, you must set the <code>SplitType</code> property to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
     /// <p>To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
     /// <p>To fit as many records in a mini-batch as can fit within the <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
-    pub fn set_batch_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchStrategy>,
-    ) -> Self {
+    pub fn set_batch_strategy(mut self, input: ::std::option::Option<crate::types::BatchStrategy>) -> Self {
         self.batch_strategy = input;
         self
     }
@@ -282,11 +255,7 @@ impl CreateTransformJobInputBuilder {
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn environment(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.environment = ::std::option::Option::Some(hash_map);
@@ -295,19 +264,13 @@ impl CreateTransformJobInputBuilder {
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
     pub fn set_environment(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.environment = input;
         self
     }
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// <p>Describes the input source and the way the transform job consumes it.</p>
@@ -316,10 +279,7 @@ impl CreateTransformJobInputBuilder {
         self
     }
     /// <p>Describes the input source and the way the transform job consumes it.</p>
-    pub fn set_transform_input(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformInput>,
-    ) -> Self {
+    pub fn set_transform_input(mut self, input: ::std::option::Option<crate::types::TransformInput>) -> Self {
         self.transform_input = input;
         self
     }
@@ -333,10 +293,7 @@ impl CreateTransformJobInputBuilder {
         self
     }
     /// <p>Describes the results of the transform job.</p>
-    pub fn set_transform_output(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformOutput>,
-    ) -> Self {
+    pub fn set_transform_output(mut self, input: ::std::option::Option<crate::types::TransformOutput>) -> Self {
         self.transform_output = input;
         self
     }
@@ -350,17 +307,12 @@ impl CreateTransformJobInputBuilder {
         self
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
-    pub fn set_data_capture_config(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchDataCaptureConfig>,
-    ) -> Self {
+    pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::BatchDataCaptureConfig>) -> Self {
         self.data_capture_config = input;
         self
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
-    pub fn get_data_capture_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchDataCaptureConfig> {
+    pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::BatchDataCaptureConfig> {
         &self.data_capture_config
     }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
@@ -369,17 +321,12 @@ impl CreateTransformJobInputBuilder {
         self
     }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
-    pub fn set_transform_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformResources>,
-    ) -> Self {
+    pub fn set_transform_resources(mut self, input: ::std::option::Option<crate::types::TransformResources>) -> Self {
         self.transform_resources = input;
         self
     }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
-    pub fn get_transform_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformResources> {
+    pub fn get_transform_resources(&self) -> &::std::option::Option<crate::types::TransformResources> {
         &self.transform_resources
     }
     /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
@@ -388,10 +335,7 @@ impl CreateTransformJobInputBuilder {
         self
     }
     /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
-    pub fn set_data_processing(
-        mut self,
-        input: ::std::option::Option<crate::types::DataProcessing>,
-    ) -> Self {
+    pub fn set_data_processing(mut self, input: ::std::option::Option<crate::types::DataProcessing>) -> Self {
         self.data_processing = input;
         self
     }
@@ -411,10 +355,7 @@ impl CreateTransformJobInputBuilder {
         self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -438,10 +379,7 @@ impl CreateTransformJobInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
-    pub fn set_experiment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentConfig>,
-    ) -> Self {
+    pub fn set_experiment_config(mut self, input: ::std::option::Option<crate::types::ExperimentConfig>) -> Self {
         self.experiment_config = input;
         self
     }
@@ -457,27 +395,22 @@ impl CreateTransformJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateTransformJobInput`](crate::operation::create_transform_job::CreateTransformJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_transform_job::CreateTransformJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_transform_job::CreateTransformJobInput {
-                transform_job_name: self.transform_job_name,
-                model_name: self.model_name,
-                max_concurrent_transforms: self.max_concurrent_transforms,
-                model_client_config: self.model_client_config,
-                max_payload_in_mb: self.max_payload_in_mb,
-                batch_strategy: self.batch_strategy,
-                environment: self.environment,
-                transform_input: self.transform_input,
-                transform_output: self.transform_output,
-                data_capture_config: self.data_capture_config,
-                transform_resources: self.transform_resources,
-                data_processing: self.data_processing,
-                tags: self.tags,
-                experiment_config: self.experiment_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_transform_job::CreateTransformJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_transform_job::CreateTransformJobInput {
+            transform_job_name: self.transform_job_name,
+            model_name: self.model_name,
+            max_concurrent_transforms: self.max_concurrent_transforms,
+            model_client_config: self.model_client_config,
+            max_payload_in_mb: self.max_payload_in_mb,
+            batch_strategy: self.batch_strategy,
+            environment: self.environment,
+            transform_input: self.transform_input,
+            transform_output: self.transform_output,
+            data_capture_config: self.data_capture_config,
+            transform_resources: self.transform_resources,
+            data_processing: self.data_processing,
+            tags: self.tags,
+            experiment_config: self.experiment_config,
+        })
     }
 }

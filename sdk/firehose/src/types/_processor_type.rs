@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProcessorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ProcessorType {
             "Lambda" => ProcessorType::Lambda,
             "MetadataExtraction" => ProcessorType::MetadataExtraction,
             "RecordDeAggregation" => ProcessorType::RecordDeAggregation,
-            other => {
-                ProcessorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ProcessorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ProcessorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AppendDelimiterToRecord",
-            "Lambda",
-            "MetadataExtraction",
-            "RecordDeAggregation",
-        ]
+        &["AppendDelimiterToRecord", "Lambda", "MetadataExtraction", "RecordDeAggregation"]
     }
 }
 impl ::std::convert::AsRef<str> for ProcessorType {

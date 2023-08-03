@@ -29,9 +29,7 @@ impl DescribeJobRunInput {
 
 /// A builder for [`DescribeJobRunInput`](crate::operation::describe_job_run::DescribeJobRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobRunInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeJobRunInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobRunInput`](crate::operation::describe_job_run::DescribeJobRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_run::DescribeJobRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_job_run::DescribeJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job_run::DescribeJobRunInput {
             name: self.name,
             run_id: self.run_id,

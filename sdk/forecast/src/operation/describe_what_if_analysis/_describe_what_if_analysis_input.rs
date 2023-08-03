@@ -15,35 +15,25 @@ impl DescribeWhatIfAnalysisInput {
 }
 impl DescribeWhatIfAnalysisInput {
     /// Creates a new builder-style object to manufacture [`DescribeWhatIfAnalysisInput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput).
-    pub fn builder(
-    ) -> crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisInputBuilder {
         crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWhatIfAnalysisInput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWhatIfAnalysisInputBuilder {
     pub(crate) what_if_analysis_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWhatIfAnalysisInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
-    pub fn what_if_analysis_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_analysis_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_analysis_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
-    pub fn set_what_if_analysis_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_analysis_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_analysis_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl DescribeWhatIfAnalysisInputBuilder {
         crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput {
-                what_if_analysis_arn: self.what_if_analysis_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput {
+            what_if_analysis_arn: self.what_if_analysis_arn,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl AppBundle {
 
 /// A builder for [`AppBundle`](crate::types::AppBundle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppBundleBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) customer_managed_key_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl AppBundleBuilder {
         &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
-    pub fn customer_managed_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_managed_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_managed_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
-    pub fn set_customer_managed_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_managed_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_managed_key_arn = input;
         self
     }

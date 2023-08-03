@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVirtualNodeOutput`](crate::operation::describe_virtual_node::DescribeVirtualNodeOutput) with field(s):
     ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::operation::describe_virtual_node::DescribeVirtualNodeOutput::virtual_node): <p>The full description of your virtual node.</p>
     /// - On failure, responds with [`SdkError<DescribeVirtualNodeError>`](crate::operation::describe_virtual_node::DescribeVirtualNodeError)
-    pub fn describe_virtual_node(
-        &self,
-    ) -> crate::operation::describe_virtual_node::builders::DescribeVirtualNodeFluentBuilder {
-        crate::operation::describe_virtual_node::builders::DescribeVirtualNodeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_virtual_node(&self) -> crate::operation::describe_virtual_node::builders::DescribeVirtualNodeFluentBuilder {
+        crate::operation::describe_virtual_node::builders::DescribeVirtualNodeFluentBuilder::new(self.handle.clone())
     }
 }

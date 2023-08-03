@@ -30,13 +30,10 @@ impl BatchGetAssetPropertyAggregatesSuccessEntry {
 
 /// A builder for [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::types::BatchGetAssetPropertyAggregatesSuccessEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesSuccessEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
-    pub(crate) aggregated_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>>,
+    pub(crate) aggregated_values: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>>,
 }
 impl BatchGetAssetPropertyAggregatesSuccessEntryBuilder {
     /// <p>The ID of the entry.</p>
@@ -65,17 +62,12 @@ impl BatchGetAssetPropertyAggregatesSuccessEntryBuilder {
         self
     }
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
-    pub fn set_aggregated_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>>,
-    ) -> Self {
+    pub fn set_aggregated_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>>) -> Self {
         self.aggregated_values = input;
         self
     }
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
-    pub fn get_aggregated_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>> {
+    pub fn get_aggregated_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>> {
         &self.aggregated_values
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::types::BatchGetAssetPropertyAggregatesSuccessEntry).

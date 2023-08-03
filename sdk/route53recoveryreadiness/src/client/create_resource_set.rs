@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`resources(Option<Vec<Resource>>)`](crate::operation::create_resource_set::CreateResourceSetOutput::resources): <p>A list of resource objects.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_resource_set::CreateResourceSetOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<CreateResourceSetError>`](crate::operation::create_resource_set::CreateResourceSetError)
-    pub fn create_resource_set(
-        &self,
-    ) -> crate::operation::create_resource_set::builders::CreateResourceSetFluentBuilder {
-        crate::operation::create_resource_set::builders::CreateResourceSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_resource_set(&self) -> crate::operation::create_resource_set::builders::CreateResourceSetFluentBuilder {
+        crate::operation::create_resource_set::builders::CreateResourceSetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -74,13 +74,10 @@ impl EntityDetectorConfiguration {
 
 /// A builder for [`EntityDetectorConfiguration`](crate::types::EntityDetectorConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityDetectorConfigurationBuilder {
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) allowed_statistics:
-        ::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>>,
+    pub(crate) allowed_statistics: ::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>>,
 }
 impl EntityDetectorConfigurationBuilder {
     /// Appends an item to `entity_types`.
@@ -139,10 +136,7 @@ impl EntityDetectorConfigurationBuilder {
     /// <li> <p>DATE</p> </li>
     /// </ul>
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-    pub fn set_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entity_types = input;
         self
     }
@@ -169,9 +163,7 @@ impl EntityDetectorConfigurationBuilder {
     /// <li> <p>DATE</p> </li>
     /// </ul>
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-    pub fn get_entity_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.entity_types
     }
     /// Appends an item to `allowed_statistics`.
@@ -186,17 +178,12 @@ impl EntityDetectorConfigurationBuilder {
         self
     }
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
-    pub fn set_allowed_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>>,
-    ) -> Self {
+    pub fn set_allowed_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>>) -> Self {
         self.allowed_statistics = input;
         self
     }
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
-    pub fn get_allowed_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>> {
+    pub fn get_allowed_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>> {
         &self.allowed_statistics
     }
     /// Consumes the builder and constructs a [`EntityDetectorConfiguration`](crate::types::EntityDetectorConfiguration).

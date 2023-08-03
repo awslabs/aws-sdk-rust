@@ -10,10 +10,7 @@ impl DeleteGrantInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_grant::DeleteGrantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_grant::DeleteGrantError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_grant::DeleteGrantError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_grant();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl DeleteGrantFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_grant::DeleteGrant,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_grant::DeleteGrant, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_grant::DeleteGrantError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl DeleteGrantFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl DeleteGrantFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_grant::DeleteGrant,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_grant::DeleteGrant, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_grant::DeleteGrantError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl DeleteGrantFluentBuilder {
         self.inner.get_grant_arn()
     }
     /// <p>The Status reason for the delete request.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_reason(input.into());
         self
     }
     /// <p>The Status reason for the delete request.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_reason(input);
         self
     }

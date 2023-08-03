@@ -54,17 +54,14 @@ impl CreateDbSnapshotInput {
 }
 impl CreateDbSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateDbSnapshotInput`](crate::operation::create_db_snapshot::CreateDbSnapshotInput).
-    pub fn builder() -> crate::operation::create_db_snapshot::builders::CreateDbSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_db_snapshot::builders::CreateDbSnapshotInputBuilder {
         crate::operation::create_db_snapshot::builders::CreateDbSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbSnapshotInput`](crate::operation::create_db_snapshot::CreateDbSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbSnapshotInputBuilder {
     pub(crate) db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -80,10 +77,7 @@ impl CreateDbSnapshotInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -96,10 +90,7 @@ impl CreateDbSnapshotInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_snapshot_identifier = input;
         self
     }
@@ -120,10 +111,7 @@ impl CreateDbSnapshotInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -132,10 +120,7 @@ impl CreateDbSnapshotInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -159,10 +144,7 @@ impl CreateDbSnapshotInputBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -173,16 +155,11 @@ impl CreateDbSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbSnapshotInput`](crate::operation::create_db_snapshot::CreateDbSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_snapshot::CreateDbSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_db_snapshot::CreateDbSnapshotInput {
-                db_snapshot_identifier: self.db_snapshot_identifier,
-                db_instance_identifier: self.db_instance_identifier,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_db_snapshot::CreateDbSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_db_snapshot::CreateDbSnapshotInput {
+            db_snapshot_identifier: self.db_snapshot_identifier,
+            db_instance_identifier: self.db_instance_identifier,
+            tags: self.tags,
+        })
     }
 }

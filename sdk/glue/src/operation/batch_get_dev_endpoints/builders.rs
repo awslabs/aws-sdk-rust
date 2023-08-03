@@ -37,10 +37,7 @@ impl BatchGetDevEndpointsFluentBuilder {
         }
     }
     /// Access the BatchGetDevEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchGetDevEndpointsFluentBuilder {
             crate::operation::batch_get_dev_endpoints::BatchGetDevEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchGetDevEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchGetDevEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchGetDevEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl BatchGetDevEndpointsFluentBuilder {
             crate::operation::batch_get_dev_endpoints::BatchGetDevEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +114,17 @@ impl BatchGetDevEndpointsFluentBuilder {
     /// To override the contents of this collection use [`set_dev_endpoint_names`](Self::set_dev_endpoint_names).
     ///
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    pub fn dev_endpoint_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dev_endpoint_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dev_endpoint_names(input.into());
         self
     }
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    pub fn set_dev_endpoint_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dev_endpoint_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dev_endpoint_names(input);
         self
     }
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    pub fn get_dev_endpoint_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dev_endpoint_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dev_endpoint_names()
     }
 }

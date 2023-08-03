@@ -4,14 +4,10 @@ pub fn ser_delete_tls_inspection_configuration_input(
     input: &crate::operation::delete_tls_inspection_configuration::DeleteTlsInspectionConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.tls_inspection_configuration_arn {
-        object
-            .key("TLSInspectionConfigurationArn")
-            .string(var_1.as_str());
+        object.key("TLSInspectionConfigurationArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.tls_inspection_configuration_name {
-        object
-            .key("TLSInspectionConfigurationName")
-            .string(var_2.as_str());
+        object.key("TLSInspectionConfigurationName").string(var_2.as_str());
     }
     Ok(())
 }

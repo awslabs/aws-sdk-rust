@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetLoginProfileOutput`](crate::operation::get_login_profile::GetLoginProfileOutput) with field(s):
     ///   - [`login_profile(Option<LoginProfile>)`](crate::operation::get_login_profile::GetLoginProfileOutput::login_profile): <p>A structure containing the user name and the profile creation date for the user.</p>
     /// - On failure, responds with [`SdkError<GetLoginProfileError>`](crate::operation::get_login_profile::GetLoginProfileError)
-    pub fn get_login_profile(
-        &self,
-    ) -> crate::operation::get_login_profile::builders::GetLoginProfileFluentBuilder {
-        crate::operation::get_login_profile::builders::GetLoginProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_login_profile(&self) -> crate::operation::get_login_profile::builders::GetLoginProfileFluentBuilder {
+        crate::operation::get_login_profile::builders::GetLoginProfileFluentBuilder::new(self.handle.clone())
     }
 }

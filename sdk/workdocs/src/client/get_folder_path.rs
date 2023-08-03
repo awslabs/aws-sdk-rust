@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetFolderPathOutput`](crate::operation::get_folder_path::GetFolderPathOutput) with field(s):
     ///   - [`path(Option<ResourcePath>)`](crate::operation::get_folder_path::GetFolderPathOutput::path): <p>The path information.</p>
     /// - On failure, responds with [`SdkError<GetFolderPathError>`](crate::operation::get_folder_path::GetFolderPathError)
-    pub fn get_folder_path(
-        &self,
-    ) -> crate::operation::get_folder_path::builders::GetFolderPathFluentBuilder {
-        crate::operation::get_folder_path::builders::GetFolderPathFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_folder_path(&self) -> crate::operation::get_folder_path::builders::GetFolderPathFluentBuilder {
+        crate::operation::get_folder_path::builders::GetFolderPathFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,16 +37,14 @@ impl DescribeEnvironmentManagedActionHistoryInput {
 }
 impl DescribeEnvironmentManagedActionHistoryInput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionHistoryInput`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput).
-    pub fn builder() -> crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryInputBuilder{
+    pub fn builder() -> crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryInputBuilder {
         crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentManagedActionHistoryInput`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionHistoryInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct DescribeEnvironmentManagedActionHistoryInputBuilder {
 }
 impl DescribeEnvironmentManagedActionHistoryInputBuilder {
     /// <p>The environment ID of the target environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment ID of the target environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -75,18 +67,12 @@ impl DescribeEnvironmentManagedActionHistoryInputBuilder {
         &self.environment_id
     }
     /// <p>The name of the target environment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target environment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -123,18 +109,19 @@ impl DescribeEnvironmentManagedActionHistoryInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentManagedActionHistoryInput`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput {
-                environment_id: self.environment_id
-                ,
-                environment_name: self.environment_name
-                ,
-                next_token: self.next_token
-                ,
-                max_items: self.max_items
-                ,
-            }
+                environment_id: self.environment_id,
+                environment_name: self.environment_name,
+                next_token: self.next_token,
+                max_items: self.max_items,
+            },
         )
     }
 }

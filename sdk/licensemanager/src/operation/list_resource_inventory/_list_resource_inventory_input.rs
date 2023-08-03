@@ -47,18 +47,14 @@ impl ListResourceInventoryInput {
 }
 impl ListResourceInventoryInput {
     /// Creates a new builder-style object to manufacture [`ListResourceInventoryInput`](crate::operation::list_resource_inventory::ListResourceInventoryInput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_inventory::builders::ListResourceInventoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_inventory::builders::ListResourceInventoryInputBuilder {
         crate::operation::list_resource_inventory::builders::ListResourceInventoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceInventoryInput`](crate::operation::list_resource_inventory::ListResourceInventoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceInventoryInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -123,10 +119,7 @@ impl ListResourceInventoryInputBuilder {
     /// <li> <p> <code>tag:
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -140,24 +133,18 @@ impl ListResourceInventoryInputBuilder {
     /// <li> <p> <code>tag:
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListResourceInventoryInput`](crate::operation::list_resource_inventory::ListResourceInventoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_inventory::ListResourceInventoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resource_inventory::ListResourceInventoryInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_resource_inventory::ListResourceInventoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_resource_inventory::ListResourceInventoryInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+        })
     }
 }

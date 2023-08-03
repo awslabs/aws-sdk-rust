@@ -11,20 +11,14 @@
 pub struct AdvancedOptionsStatus {
     /// <p> Specifies the status of advanced options for the specified Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AdvancedOptionsStatus {
     /// <p> Specifies the status of advanced options for the specified Elasticsearch domain.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.options.as_ref()
     }
     /// <p> Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.</p>
@@ -41,13 +35,9 @@ impl AdvancedOptionsStatus {
 
 /// A builder for [`AdvancedOptionsStatus`](crate::types::AdvancedOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdvancedOptionsStatusBuilder {
-    pub(crate) options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AdvancedOptionsStatusBuilder {
@@ -56,32 +46,19 @@ impl AdvancedOptionsStatusBuilder {
     /// To override the contents of this collection use [`set_options`](Self::set_options).
     ///
     /// <p> Specifies the status of advanced options for the specified Elasticsearch domain.</p>
-    pub fn options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> Specifies the status of advanced options for the specified Elasticsearch domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.options = input;
         self
     }
     /// <p> Specifies the status of advanced options for the specified Elasticsearch domain.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.options
     }
     /// <p> Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.</p>

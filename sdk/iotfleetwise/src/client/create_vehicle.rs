@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_vehicle::CreateVehicleOutput::arn): <p> The ARN of the created vehicle. </p>
     ///   - [`thing_arn(Option<String>)`](crate::operation::create_vehicle::CreateVehicleOutput::thing_arn): <p> The ARN of a created or validated Amazon Web Services IoT thing. </p>
     /// - On failure, responds with [`SdkError<CreateVehicleError>`](crate::operation::create_vehicle::CreateVehicleError)
-    pub fn create_vehicle(
-        &self,
-    ) -> crate::operation::create_vehicle::builders::CreateVehicleFluentBuilder {
-        crate::operation::create_vehicle::builders::CreateVehicleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_vehicle(&self) -> crate::operation::create_vehicle::builders::CreateVehicleFluentBuilder {
+        crate::operation::create_vehicle::builders::CreateVehicleFluentBuilder::new(self.handle.clone())
     }
 }

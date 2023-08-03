@@ -5,8 +5,7 @@
 pub struct ListSavingsPlansPurchaseRecommendationGenerationOutput {
     /// <p>The list of historical recommendation generations.</p>
     #[doc(hidden)]
-    pub generation_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>>,
+    pub generation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>>,
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSavingsPlansPurchaseRecommendationGenerationOutput {
 }
 impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
     /// <p>The list of historical recommendation generations.</p>
-    pub fn generation_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GenerationSummary]> {
+    pub fn generation_summary_list(&self) -> ::std::option::Option<&[crate::types::GenerationSummary]> {
         self.generation_summary_list.as_deref()
     }
     /// <p>The token to retrieve the next set of results.</p>
@@ -38,12 +35,9 @@ impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
 
 /// A builder for [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
-    pub(crate) generation_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>>,
+    pub(crate) generation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,32 +54,21 @@ impl ListSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         self
     }
     /// <p>The list of historical recommendation generations.</p>
-    pub fn set_generation_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>>,
-    ) -> Self {
+    pub fn set_generation_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>>) -> Self {
         self.generation_summary_list = input;
         self
     }
     /// <p>The list of historical recommendation generations.</p>
-    pub fn get_generation_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>> {
+    pub fn get_generation_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>> {
         &self.generation_summary_list
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -103,12 +86,12 @@ impl ListSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput).
-    pub fn build(self) -> crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput {
         crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput {
-            generation_summary_list: self.generation_summary_list
-            ,
-            next_page_token: self.next_page_token
-            ,
+            generation_summary_list: self.generation_summary_list,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }

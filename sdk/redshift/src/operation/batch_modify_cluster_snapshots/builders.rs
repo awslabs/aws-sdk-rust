@@ -26,7 +26,7 @@ impl BatchModifyClusterSnapshotsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchModifyClusterSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder,
+    inner: crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder,
 }
 impl BatchModifyClusterSnapshotsFluentBuilder {
     /// Creates a new `BatchModifyClusterSnapshots`.
@@ -37,7 +37,7 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
         }
     }
     /// Access the BatchModifyClusterSnapshots as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
             crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
             crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
     /// To override the contents of this collection use [`set_snapshot_identifier_list`](Self::set_snapshot_identifier_list).
     ///
     /// <p>A list of snapshot identifiers you want to modify.</p>
-    pub fn snapshot_identifier_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier_list(input.into());
         self
     }
     /// <p>A list of snapshot identifiers you want to modify.</p>
-    pub fn set_snapshot_identifier_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_snapshot_identifier_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_snapshot_identifier_list(input);
         self
     }
     /// <p>A list of snapshot identifiers you want to modify.</p>
-    pub fn get_snapshot_identifier_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_identifier_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_snapshot_identifier_list()
     }
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
@@ -156,10 +137,7 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_manual_snapshot_retention_period(input);
         self
     }

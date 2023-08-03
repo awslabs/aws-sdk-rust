@@ -12,8 +12,7 @@ pub struct ComponentProperty {
     pub binding_properties: ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
     /// <p>The information to bind the component property to data at runtime. Use this for collection components.</p>
     #[doc(hidden)]
-    pub collection_binding_properties:
-        ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
+    pub collection_binding_properties: ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
     /// <p>The default value to assign to the component property.</p>
     #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
@@ -22,9 +21,7 @@ pub struct ComponentProperty {
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The information to bind the component property to form data.</p>
     #[doc(hidden)]
-    pub bindings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>,
-    >,
+    pub bindings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>>,
     /// <p>An event that occurs in your app. Use this for workflow data binding.</p>
     #[doc(hidden)]
     pub event: ::std::option::Option<::std::string::String>,
@@ -59,15 +56,11 @@ impl ComponentProperty {
         self.value.as_deref()
     }
     /// <p>The information to bind the component property to data at runtime.</p>
-    pub fn binding_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComponentPropertyBindingProperties> {
+    pub fn binding_properties(&self) -> ::std::option::Option<&crate::types::ComponentPropertyBindingProperties> {
         self.binding_properties.as_ref()
     }
     /// <p>The information to bind the component property to data at runtime. Use this for collection components.</p>
-    pub fn collection_binding_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComponentPropertyBindingProperties> {
+    pub fn collection_binding_properties(&self) -> ::std::option::Option<&crate::types::ComponentPropertyBindingProperties> {
         self.collection_binding_properties.as_ref()
     }
     /// <p>The default value to assign to the component property.</p>
@@ -79,11 +72,7 @@ impl ComponentProperty {
         self.model.as_deref()
     }
     /// <p>The information to bind the component property to form data.</p>
-    pub fn bindings(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>,
-    > {
+    pub fn bindings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>> {
         self.bindings.as_ref()
     }
     /// <p>An event that occurs in your app. Use this for workflow data binding.</p>
@@ -132,20 +121,14 @@ impl ComponentProperty {
 
 /// A builder for [`ComponentProperty`](crate::types::ComponentProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentPropertyBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
-    pub(crate) binding_properties:
-        ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
-    pub(crate) collection_binding_properties:
-        ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
+    pub(crate) binding_properties: ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
+    pub(crate) collection_binding_properties: ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
     pub(crate) model: ::std::option::Option<::std::string::String>,
-    pub(crate) bindings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>,
-    >,
+    pub(crate) bindings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>>,
     pub(crate) event: ::std::option::Option<::std::string::String>,
     pub(crate) user_attribute: ::std::option::Option<::std::string::String>,
     pub(crate) concat: ::std::option::Option<::std::vec::Vec<crate::types::ComponentProperty>>,
@@ -172,62 +155,40 @@ impl ComponentPropertyBuilder {
         &self.value
     }
     /// <p>The information to bind the component property to data at runtime.</p>
-    pub fn binding_properties(
-        mut self,
-        input: crate::types::ComponentPropertyBindingProperties,
-    ) -> Self {
+    pub fn binding_properties(mut self, input: crate::types::ComponentPropertyBindingProperties) -> Self {
         self.binding_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The information to bind the component property to data at runtime.</p>
-    pub fn set_binding_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
-    ) -> Self {
+    pub fn set_binding_properties(mut self, input: ::std::option::Option<crate::types::ComponentPropertyBindingProperties>) -> Self {
         self.binding_properties = input;
         self
     }
     /// <p>The information to bind the component property to data at runtime.</p>
-    pub fn get_binding_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComponentPropertyBindingProperties> {
+    pub fn get_binding_properties(&self) -> &::std::option::Option<crate::types::ComponentPropertyBindingProperties> {
         &self.binding_properties
     }
     /// <p>The information to bind the component property to data at runtime. Use this for collection components.</p>
-    pub fn collection_binding_properties(
-        mut self,
-        input: crate::types::ComponentPropertyBindingProperties,
-    ) -> Self {
+    pub fn collection_binding_properties(mut self, input: crate::types::ComponentPropertyBindingProperties) -> Self {
         self.collection_binding_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The information to bind the component property to data at runtime. Use this for collection components.</p>
-    pub fn set_collection_binding_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
-    ) -> Self {
+    pub fn set_collection_binding_properties(mut self, input: ::std::option::Option<crate::types::ComponentPropertyBindingProperties>) -> Self {
         self.collection_binding_properties = input;
         self
     }
     /// <p>The information to bind the component property to data at runtime. Use this for collection components.</p>
-    pub fn get_collection_binding_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComponentPropertyBindingProperties> {
+    pub fn get_collection_binding_properties(&self) -> &::std::option::Option<crate::types::ComponentPropertyBindingProperties> {
         &self.collection_binding_properties
     }
     /// <p>The default value to assign to the component property.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value to assign to the component property.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
@@ -254,11 +215,7 @@ impl ComponentPropertyBuilder {
     /// To override the contents of this collection use [`set_bindings`](Self::set_bindings).
     ///
     /// <p>The information to bind the component property to form data.</p>
-    pub fn bindings(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::FormBindingElement,
-    ) -> Self {
+    pub fn bindings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FormBindingElement) -> Self {
         let mut hash_map = self.bindings.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.bindings = ::std::option::Option::Some(hash_map);
@@ -267,19 +224,13 @@ impl ComponentPropertyBuilder {
     /// <p>The information to bind the component property to form data.</p>
     pub fn set_bindings(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>>,
     ) -> Self {
         self.bindings = input;
         self
     }
     /// <p>The information to bind the component property to form data.</p>
-    pub fn get_bindings(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>,
-    > {
+    pub fn get_bindings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>> {
         &self.bindings
     }
     /// <p>An event that occurs in your app. Use this for workflow data binding.</p>
@@ -297,18 +248,12 @@ impl ComponentPropertyBuilder {
         &self.event
     }
     /// <p>An authenticated user attribute to use to assign a value to the component property.</p>
-    pub fn user_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An authenticated user attribute to use to assign a value to the component property.</p>
-    pub fn set_user_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_attribute = input;
         self
     }
@@ -328,17 +273,12 @@ impl ComponentPropertyBuilder {
         self
     }
     /// <p>A list of component properties to concatenate to create the value to assign to this component property.</p>
-    pub fn set_concat(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentProperty>>,
-    ) -> Self {
+    pub fn set_concat(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentProperty>>) -> Self {
         self.concat = input;
         self
     }
     /// <p>A list of component properties to concatenate to create the value to assign to this component property.</p>
-    pub fn get_concat(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentProperty>> {
+    pub fn get_concat(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentProperty>> {
         &self.concat
     }
     /// <p>The conditional expression to use to assign a value to the component property.</p>
@@ -347,17 +287,12 @@ impl ComponentPropertyBuilder {
         self
     }
     /// <p>The conditional expression to use to assign a value to the component property.</p>
-    pub fn set_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentConditionProperty>,
-    ) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::ComponentConditionProperty>) -> Self {
         self.condition = input;
         self
     }
     /// <p>The conditional expression to use to assign a value to the component property.</p>
-    pub fn get_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComponentConditionProperty> {
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::ComponentConditionProperty> {
         &self.condition
     }
     /// <p>Specifies whether the user configured the property in Amplify Studio after importing it.</p>
@@ -389,18 +324,12 @@ impl ComponentPropertyBuilder {
         &self.r#type
     }
     /// <p>The default value assigned to the property when the component is imported into an app.</p>
-    pub fn imported_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn imported_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.imported_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value assigned to the property when the component is imported into an app.</p>
-    pub fn set_imported_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_imported_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.imported_value = input;
         self
     }
@@ -409,18 +338,12 @@ impl ComponentPropertyBuilder {
         &self.imported_value
     }
     /// <p>The name of the component that is affected by an event.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component that is affected by an event.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }

@@ -15,33 +15,25 @@ impl GetModelPackageGroupPolicyInput {
 }
 impl GetModelPackageGroupPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetModelPackageGroupPolicyInput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput).
-    pub fn builder() -> crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyInputBuilder{
+    pub fn builder() -> crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyInputBuilder {
         crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetModelPackageGroupPolicyInput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetModelPackageGroupPolicyInputBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
 }
 impl GetModelPackageGroupPolicyInputBuilder {
     /// <p>The name of the model group for which to get the resource policy.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model group for which to get the resource policy.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetModelPackageGroupPolicyInputBuilder {
         crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput {
-                model_package_group_name: self.model_package_group_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput {
+            model_package_group_name: self.model_package_group_name,
+        })
     }
 }

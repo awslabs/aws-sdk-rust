@@ -35,9 +35,7 @@ impl ListHypervisorsOutput {
 
 /// A builder for [`ListHypervisorsOutput`](crate::operation::list_hypervisors::ListHypervisorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHypervisorsOutputBuilder {
     pub(crate) hypervisors: ::std::option::Option<::std::vec::Vec<crate::types::Hypervisor>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListHypervisorsOutputBuilder {
         self
     }
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn set_hypervisors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Hypervisor>>,
-    ) -> Self {
+    pub fn set_hypervisors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Hypervisor>>) -> Self {
         self.hypervisors = input;
         self
     }
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn get_hypervisors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Hypervisor>> {
+    pub fn get_hypervisors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Hypervisor>> {
         &self.hypervisors
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>

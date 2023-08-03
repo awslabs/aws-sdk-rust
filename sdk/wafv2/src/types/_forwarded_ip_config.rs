@@ -52,9 +52,7 @@ impl ForwardedIpConfig {
 
 /// A builder for [`ForwardedIpConfig`](crate::types::ForwardedIpConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForwardedIpConfigBuilder {
     pub(crate) header_name: ::std::option::Option<::std::string::String>,
     pub(crate) fallback_behavior: ::std::option::Option<crate::types::FallbackBehavior>,
@@ -100,10 +98,7 @@ impl ForwardedIpConfigBuilder {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    pub fn set_fallback_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::FallbackBehavior>,
-    ) -> Self {
+    pub fn set_fallback_behavior(mut self, input: ::std::option::Option<crate::types::FallbackBehavior>) -> Self {
         self.fallback_behavior = input;
         self
     }

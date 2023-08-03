@@ -27,7 +27,7 @@ impl StopThingRegistrationTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopThingRegistrationTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskInputBuilder,
+    inner: crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskInputBuilder,
 }
 impl StopThingRegistrationTaskFluentBuilder {
     /// Creates a new `StopThingRegistrationTask`.
@@ -38,7 +38,7 @@ impl StopThingRegistrationTaskFluentBuilder {
         }
     }
     /// Access the StopThingRegistrationTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl StopThingRegistrationTaskFluentBuilder {
             crate::operation::stop_thing_registration_task::StopThingRegistrationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl StopThingRegistrationTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl StopThingRegistrationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl StopThingRegistrationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl StopThingRegistrationTaskFluentBuilder {
             crate::operation::stop_thing_registration_task::StopThingRegistrationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError>,
     > {
         self.customize_middleware().await
     }

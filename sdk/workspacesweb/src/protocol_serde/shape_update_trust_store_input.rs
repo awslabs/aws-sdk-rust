@@ -7,9 +7,7 @@ pub fn ser_update_trust_store_input(
         let mut array_2 = object.key("certificatesToAdd").start_array();
         for item_3 in var_1 {
             {
-                array_2
-                    .value()
-                    .string_unchecked(&::aws_smithy_types::base64::encode(item_3));
+                array_2.value().string_unchecked(&::aws_smithy_types::base64::encode(item_3));
             }
         }
         array_2.finish();

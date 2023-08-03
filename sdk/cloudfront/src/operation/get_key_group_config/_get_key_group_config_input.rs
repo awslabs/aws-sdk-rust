@@ -15,17 +15,14 @@ impl GetKeyGroupConfigInput {
 }
 impl GetKeyGroupConfigInput {
     /// Creates a new builder-style object to manufacture [`GetKeyGroupConfigInput`](crate::operation::get_key_group_config::GetKeyGroupConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_key_group_config::builders::GetKeyGroupConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_key_group_config::builders::GetKeyGroupConfigInputBuilder {
         crate::operation::get_key_group_config::builders::GetKeyGroupConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetKeyGroupConfigInput`](crate::operation::get_key_group_config::GetKeyGroupConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyGroupConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetKeyGroupConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetKeyGroupConfigInput`](crate::operation::get_key_group_config::GetKeyGroupConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_key_group_config::GetKeyGroupConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_key_group_config::GetKeyGroupConfigInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_key_group_config::GetKeyGroupConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_key_group_config::GetKeyGroupConfigInput { id: self.id })
     }
 }

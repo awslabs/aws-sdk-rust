@@ -10,10 +10,7 @@ impl CancelAuditTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_audit_task::CancelAuditTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_audit_task::CancelAuditTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_audit_task::CancelAuditTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_audit_task();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CancelAuditTaskFluentBuilder {
         }
     }
     /// Access the CancelAuditTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_audit_task::builders::CancelAuditTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_audit_task::builders::CancelAuditTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CancelAuditTaskFluentBuilder {
             crate::operation::cancel_audit_task::CancelAuditTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_audit_task::CancelAuditTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_audit_task::CancelAuditTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CancelAuditTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CancelAuditTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_audit_task::CancelAuditTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_audit_task::CancelAuditTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_audit_task::CancelAuditTaskError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CancelAuditTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_audit_task::CancelAuditTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_audit_task::CancelAuditTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_audit_task::CancelAuditTaskError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CancelAuditTaskFluentBuilder {
             crate::operation::cancel_audit_task::CancelAuditTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_audit_task::CancelAuditTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_audit_task::CancelAuditTaskError>,
     > {
         self.customize_middleware().await
     }

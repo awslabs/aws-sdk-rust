@@ -7,27 +7,19 @@ pub fn ser_pin_verification_attributes(
         crate::types::PinVerificationAttributes::VisaPin(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_9.key("VisaPin").start_object();
-            crate::protocol_serde::shape_visa_pin_verification::ser_visa_pin_verification(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_visa_pin_verification::ser_visa_pin_verification(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::PinVerificationAttributes::Ibm3624Pin(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_9.key("Ibm3624Pin").start_object();
-            crate::protocol_serde::shape_ibm3624_pin_verification::ser_ibm3624_pin_verification(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_ibm3624_pin_verification::ser_ibm3624_pin_verification(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::PinVerificationAttributes::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "PinVerificationAttributes",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "PinVerificationAttributes",
+            ))
         }
     }
     Ok(())

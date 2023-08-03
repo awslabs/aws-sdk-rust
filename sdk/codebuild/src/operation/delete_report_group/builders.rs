@@ -10,10 +10,7 @@ impl DeleteReportGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_report_group::DeleteReportGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_report_group::DeleteReportGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_report_group::DeleteReportGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_report_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteReportGroupFluentBuilder {
         }
     }
     /// Access the DeleteReportGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_report_group::builders::DeleteReportGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_report_group::builders::DeleteReportGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteReportGroupFluentBuilder {
             crate::operation::delete_report_group::DeleteReportGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_report_group::DeleteReportGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_report_group::DeleteReportGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteReportGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteReportGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_report_group::DeleteReportGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_report_group::DeleteReportGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_report_group::DeleteReportGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteReportGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_report_group::DeleteReportGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_report_group::DeleteReportGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_report_group::DeleteReportGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteReportGroupFluentBuilder {
             crate::operation::delete_report_group::DeleteReportGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_report_group::DeleteReportGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_report_group::DeleteReportGroupError>,
     > {
         self.customize_middleware().await
     }

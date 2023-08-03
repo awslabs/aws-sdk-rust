@@ -17,12 +17,8 @@ pub struct SearchProvisionedProductsInput {
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
     #[doc(hidden)]
-    pub filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProvisionedProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub filters:
+        ::std::option::Option<::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
     #[doc(hidden)]
     pub sort_by: ::std::option::Option<::std::string::String>,
@@ -54,12 +50,8 @@ impl SearchProvisionedProductsInput {
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
     pub fn filters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::ProvisionedProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>
+    {
         self.filters.as_ref()
     }
     /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
@@ -81,25 +73,19 @@ impl SearchProvisionedProductsInput {
 }
 impl SearchProvisionedProductsInput {
     /// Creates a new builder-style object to manufacture [`SearchProvisionedProductsInput`](crate::operation::search_provisioned_products::SearchProvisionedProductsInput).
-    pub fn builder() -> crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder{
+    pub fn builder() -> crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder {
         crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchProvisionedProductsInput`](crate::operation::search_provisioned_products::SearchProvisionedProductsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchProvisionedProductsInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) access_level_filter: ::std::option::Option<crate::types::AccessLevelFilter>,
-    pub(crate) filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProvisionedProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub(crate) filters:
+        ::std::option::Option<::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) sort_by: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -111,10 +97,7 @@ impl SearchProvisionedProductsInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -123,10 +106,7 @@ impl SearchProvisionedProductsInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -144,17 +124,12 @@ impl SearchProvisionedProductsInputBuilder {
         self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn set_access_level_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessLevelFilter>,
-    ) -> Self {
+    pub fn set_access_level_filter(mut self, input: ::std::option::Option<crate::types::AccessLevelFilter>) -> Self {
         self.access_level_filter = input;
         self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn get_access_level_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessLevelFilter> {
+    pub fn get_access_level_filter(&self) -> &::std::option::Option<crate::types::AccessLevelFilter> {
         &self.access_level_filter
     }
     /// Adds a key-value pair to `filters`.
@@ -164,11 +139,7 @@ impl SearchProvisionedProductsInputBuilder {
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
-    pub fn filters(
-        mut self,
-        k: crate::types::ProvisionedProductViewFilterBy,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::ProvisionedProductViewFilterBy, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
         hash_map.insert(k, v);
         self.filters = ::std::option::Option::Some(hash_map);
@@ -180,10 +151,7 @@ impl SearchProvisionedProductsInputBuilder {
     pub fn set_filters(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ProvisionedProductViewFilterBy,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>,
         >,
     ) -> Self {
         self.filters = input;
@@ -194,12 +162,8 @@ impl SearchProvisionedProductsInputBuilder {
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
     pub fn get_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProvisionedProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>
+    {
         &self.filters
     }
     /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
@@ -265,16 +229,14 @@ impl SearchProvisionedProductsInputBuilder {
         crate::operation::search_provisioned_products::SearchProvisionedProductsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::search_provisioned_products::SearchProvisionedProductsInput {
-                accept_language: self.accept_language,
-                access_level_filter: self.access_level_filter,
-                filters: self.filters,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                page_size: self.page_size,
-                page_token: self.page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::search_provisioned_products::SearchProvisionedProductsInput {
+            accept_language: self.accept_language,
+            access_level_filter: self.access_level_filter,
+            filters: self.filters,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            page_size: self.page_size,
+            page_token: self.page_token,
+        })
     }
 }

@@ -15,17 +15,14 @@ impl DescribeAuditFindingInput {
 }
 impl DescribeAuditFindingInput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditFindingInput`](crate::operation::describe_audit_finding::DescribeAuditFindingInput).
-    pub fn builder(
-    ) -> crate::operation::describe_audit_finding::builders::DescribeAuditFindingInputBuilder {
+    pub fn builder() -> crate::operation::describe_audit_finding::builders::DescribeAuditFindingInputBuilder {
         crate::operation::describe_audit_finding::builders::DescribeAuditFindingInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAuditFindingInput`](crate::operation::describe_audit_finding::DescribeAuditFindingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAuditFindingInputBuilder {
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl DescribeAuditFindingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAuditFindingInput`](crate::operation::describe_audit_finding::DescribeAuditFindingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_audit_finding::DescribeAuditFindingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_audit_finding::DescribeAuditFindingInput {
-                finding_id: self.finding_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_audit_finding::DescribeAuditFindingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_audit_finding::DescribeAuditFindingInput { finding_id: self.finding_id })
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`resources(Option<Vec<Resource>>)`](crate::operation::list_resources::ListResourcesOutput::resources): <p>An array of resources associated with the project. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resources::ListResourcesOutput::next_token): <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::operation::list_resources::ListResourcesError)
-    pub fn list_resources(
-        &self,
-    ) -> crate::operation::list_resources::builders::ListResourcesFluentBuilder {
-        crate::operation::list_resources::builders::ListResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resources(&self) -> crate::operation::list_resources::builders::ListResourcesFluentBuilder {
+        crate::operation::list_resources::builders::ListResourcesFluentBuilder::new(self.handle.clone())
     }
 }

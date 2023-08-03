@@ -51,9 +51,7 @@ impl AutoScalingUpdate {
 
 /// A builder for [`AutoScalingUpdate`](crate::types::AutoScalingUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingUpdateBuilder {
     pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) mcu_count: ::std::option::Option<i32>,
@@ -110,10 +108,7 @@ impl AutoScalingUpdateBuilder {
         self
     }
     /// <p>The target sacle-in policy for the connector.</p>
-    pub fn set_scale_in_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ScaleInPolicyUpdate>,
-    ) -> Self {
+    pub fn set_scale_in_policy(mut self, input: ::std::option::Option<crate::types::ScaleInPolicyUpdate>) -> Self {
         self.scale_in_policy = input;
         self
     }
@@ -127,17 +122,12 @@ impl AutoScalingUpdateBuilder {
         self
     }
     /// <p>The target sacle-out policy for the connector.</p>
-    pub fn set_scale_out_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ScaleOutPolicyUpdate>,
-    ) -> Self {
+    pub fn set_scale_out_policy(mut self, input: ::std::option::Option<crate::types::ScaleOutPolicyUpdate>) -> Self {
         self.scale_out_policy = input;
         self
     }
     /// <p>The target sacle-out policy for the connector.</p>
-    pub fn get_scale_out_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScaleOutPolicyUpdate> {
+    pub fn get_scale_out_policy(&self) -> &::std::option::Option<crate::types::ScaleOutPolicyUpdate> {
         &self.scale_out_policy
     }
     /// Consumes the builder and constructs a [`AutoScalingUpdate`](crate::types::AutoScalingUpdate).

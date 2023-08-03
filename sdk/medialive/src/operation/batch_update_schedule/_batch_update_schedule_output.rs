@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for BatchUpdateScheduleOutput {
 }
 impl BatchUpdateScheduleOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateScheduleOutput`](crate::operation::batch_update_schedule::BatchUpdateScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_schedule::builders::BatchUpdateScheduleOutputBuilder {
-        crate::operation::batch_update_schedule::builders::BatchUpdateScheduleOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_update_schedule::builders::BatchUpdateScheduleOutputBuilder {
+        crate::operation::batch_update_schedule::builders::BatchUpdateScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateScheduleOutput`](crate::operation::batch_update_schedule::BatchUpdateScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateScheduleOutputBuilder {
     pub(crate) creates: ::std::option::Option<crate::types::BatchScheduleActionCreateResult>,
     pub(crate) deletes: ::std::option::Option<crate::types::BatchScheduleActionDeleteResult>,
@@ -53,17 +49,12 @@ impl BatchUpdateScheduleOutputBuilder {
         self
     }
     /// Schedule actions created in the schedule.
-    pub fn set_creates(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchScheduleActionCreateResult>,
-    ) -> Self {
+    pub fn set_creates(mut self, input: ::std::option::Option<crate::types::BatchScheduleActionCreateResult>) -> Self {
         self.creates = input;
         self
     }
     /// Schedule actions created in the schedule.
-    pub fn get_creates(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchScheduleActionCreateResult> {
+    pub fn get_creates(&self) -> &::std::option::Option<crate::types::BatchScheduleActionCreateResult> {
         &self.creates
     }
     /// Schedule actions deleted from the schedule.
@@ -72,17 +63,12 @@ impl BatchUpdateScheduleOutputBuilder {
         self
     }
     /// Schedule actions deleted from the schedule.
-    pub fn set_deletes(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchScheduleActionDeleteResult>,
-    ) -> Self {
+    pub fn set_deletes(mut self, input: ::std::option::Option<crate::types::BatchScheduleActionDeleteResult>) -> Self {
         self.deletes = input;
         self
     }
     /// Schedule actions deleted from the schedule.
-    pub fn get_deletes(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchScheduleActionDeleteResult> {
+    pub fn get_deletes(&self) -> &::std::option::Option<crate::types::BatchScheduleActionDeleteResult> {
         &self.deletes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

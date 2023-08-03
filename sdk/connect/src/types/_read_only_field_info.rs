@@ -23,9 +23,7 @@ impl ReadOnlyFieldInfo {
 
 /// A builder for [`ReadOnlyFieldInfo`](crate::types::ReadOnlyFieldInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadOnlyFieldInfoBuilder {
     pub(crate) id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
 }
@@ -36,10 +34,7 @@ impl ReadOnlyFieldInfoBuilder {
         self
     }
     /// <p>Identifier of the read-only field.</p>
-    pub fn set_id(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
-    ) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>) -> Self {
         self.id = input;
         self
     }

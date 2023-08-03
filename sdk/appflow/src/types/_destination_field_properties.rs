@@ -21,8 +21,7 @@ pub struct DestinationFieldProperties {
     pub is_defaulted_on_create: bool,
     /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
     #[doc(hidden)]
-    pub supported_write_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
+    pub supported_write_operations: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
 }
 impl DestinationFieldProperties {
     /// <p> Specifies if the destination field can be created by the current user. </p>
@@ -46,9 +45,7 @@ impl DestinationFieldProperties {
         self.is_defaulted_on_create
     }
     /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
-    pub fn supported_write_operations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WriteOperationType]> {
+    pub fn supported_write_operations(&self) -> ::std::option::Option<&[crate::types::WriteOperationType]> {
         self.supported_write_operations.as_deref()
     }
 }
@@ -61,17 +58,14 @@ impl DestinationFieldProperties {
 
 /// A builder for [`DestinationFieldProperties`](crate::types::DestinationFieldProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationFieldPropertiesBuilder {
     pub(crate) is_creatable: ::std::option::Option<bool>,
     pub(crate) is_nullable: ::std::option::Option<bool>,
     pub(crate) is_upsertable: ::std::option::Option<bool>,
     pub(crate) is_updatable: ::std::option::Option<bool>,
     pub(crate) is_defaulted_on_create: ::std::option::Option<bool>,
-    pub(crate) supported_write_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
+    pub(crate) supported_write_operations: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
 }
 impl DestinationFieldPropertiesBuilder {
     /// <p> Specifies if the destination field can be created by the current user. </p>
@@ -156,17 +150,12 @@ impl DestinationFieldPropertiesBuilder {
         self
     }
     /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
-    pub fn set_supported_write_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
-    ) -> Self {
+    pub fn set_supported_write_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>) -> Self {
         self.supported_write_operations = input;
         self
     }
     /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
-    pub fn get_supported_write_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>> {
+    pub fn get_supported_write_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>> {
         &self.supported_write_operations
     }
     /// Consumes the builder and constructs a [`DestinationFieldProperties`](crate::types::DestinationFieldProperties).

@@ -11,8 +11,7 @@ pub struct PutRecordBatchOutput {
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
     #[doc(hidden)]
-    pub request_responses:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
+    pub request_responses: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
     _request_id: Option<String>,
 }
 impl PutRecordBatchOutput {
@@ -25,9 +24,7 @@ impl PutRecordBatchOutput {
         self.encrypted
     }
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
-    pub fn request_responses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PutRecordBatchResponseEntry]> {
+    pub fn request_responses(&self) -> ::std::option::Option<&[crate::types::PutRecordBatchResponseEntry]> {
         self.request_responses.as_deref()
     }
 }
@@ -45,14 +42,11 @@ impl PutRecordBatchOutput {
 
 /// A builder for [`PutRecordBatchOutput`](crate::operation::put_record_batch::PutRecordBatchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordBatchOutputBuilder {
     pub(crate) failed_put_count: ::std::option::Option<i32>,
     pub(crate) encrypted: ::std::option::Option<bool>,
-    pub(crate) request_responses:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
+    pub(crate) request_responses: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
     _request_id: Option<String>,
 }
 impl PutRecordBatchOutputBuilder {
@@ -96,17 +90,12 @@ impl PutRecordBatchOutputBuilder {
         self
     }
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
-    pub fn set_request_responses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
-    ) -> Self {
+    pub fn set_request_responses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>) -> Self {
         self.request_responses = input;
         self
     }
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
-    pub fn get_request_responses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>> {
+    pub fn get_request_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>> {
         &self.request_responses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

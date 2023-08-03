@@ -29,16 +29,14 @@ impl ListDistributionConfigurationsInput {
 }
 impl ListDistributionConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionConfigurationsInput`](crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput).
-    pub fn builder() -> crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsInputBuilder {
         crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionConfigurationsInput`](crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionConfigurationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -57,10 +55,7 @@ impl ListDistributionConfigurationsInputBuilder {
         self
     }
     /// <p>You can filter on <code>name</code> to streamline results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -103,15 +98,10 @@ impl ListDistributionConfigurationsInputBuilder {
         crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput {
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

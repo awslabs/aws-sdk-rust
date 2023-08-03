@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeKeyOutput`](crate::operation::describe_key::DescribeKeyOutput) with field(s):
     ///   - [`key_metadata(Option<KeyMetadata>)`](crate::operation::describe_key::DescribeKeyOutput::key_metadata): <p>Metadata associated with the key.</p>
     /// - On failure, responds with [`SdkError<DescribeKeyError>`](crate::operation::describe_key::DescribeKeyError)
-    pub fn describe_key(
-        &self,
-    ) -> crate::operation::describe_key::builders::DescribeKeyFluentBuilder {
+    pub fn describe_key(&self) -> crate::operation::describe_key::builders::DescribeKeyFluentBuilder {
         crate::operation::describe_key::builders::DescribeKeyFluentBuilder::new(self.handle.clone())
     }
 }

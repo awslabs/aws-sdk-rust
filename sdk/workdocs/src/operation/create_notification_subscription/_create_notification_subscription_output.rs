@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateNotificationSubscriptionOutput 
 }
 impl CreateNotificationSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateNotificationSubscriptionOutput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput).
-    pub fn builder() -> crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionOutputBuilder {
         crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNotificationSubscriptionOutput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNotificationSubscriptionOutputBuilder {
     pub(crate) subscription: ::std::option::Option<crate::types::Subscription>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateNotificationSubscriptionOutputBuilder {
         self
     }
     /// <p>The subscription.</p>
-    pub fn set_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::Subscription>,
-    ) -> Self {
+    pub fn set_subscription(mut self, input: ::std::option::Option<crate::types::Subscription>) -> Self {
         self.subscription = input;
         self
     }
@@ -63,10 +58,7 @@ impl CreateNotificationSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateNotificationSubscriptionOutput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput
-    {
+    pub fn build(self) -> crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput {
         crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput {
             subscription: self.subscription,
             _request_id: self._request_id,

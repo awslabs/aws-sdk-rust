@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`url(impl ::std::convert::Into<String>)`](crate::operation::update_connect_client_add_in::builders::UpdateConnectClientAddInFluentBuilder::url) / [`set_url(Option<String>)`](crate::operation::update_connect_client_add_in::builders::UpdateConnectClientAddInFluentBuilder::set_url): <p>The endpoint URL of the Amazon Connect client add-in.</p>
     /// - On success, responds with [`UpdateConnectClientAddInOutput`](crate::operation::update_connect_client_add_in::UpdateConnectClientAddInOutput)
     /// - On failure, responds with [`SdkError<UpdateConnectClientAddInError>`](crate::operation::update_connect_client_add_in::UpdateConnectClientAddInError)
-    pub fn update_connect_client_add_in(&self) -> crate::operation::update_connect_client_add_in::builders::UpdateConnectClientAddInFluentBuilder{
+    pub fn update_connect_client_add_in(&self) -> crate::operation::update_connect_client_add_in::builders::UpdateConnectClientAddInFluentBuilder {
         crate::operation::update_connect_client_add_in::builders::UpdateConnectClientAddInFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl ConnectionHealth {
 
 /// A builder for [`ConnectionHealth`](crate::types::ConnectionHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionHealthBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ConnectionType>,
     pub(crate) status: ::std::option::Option<crate::types::ConnectionStatus>,
@@ -66,10 +64,7 @@ impl ConnectionHealthBuilder {
         self
     }
     /// <p>The connection status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -83,10 +78,7 @@ impl ConnectionHealthBuilder {
         self
     }
     /// <p>The time the status was last updated.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

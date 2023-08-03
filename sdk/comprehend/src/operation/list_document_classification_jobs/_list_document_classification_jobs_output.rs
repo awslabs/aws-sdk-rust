@@ -5,8 +5,7 @@
 pub struct ListDocumentClassificationJobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
     #[doc(hidden)]
-    pub document_classification_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassificationJobProperties>>,
+    pub document_classification_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassificationJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDocumentClassificationJobsOutput {
 }
 impl ListDocumentClassificationJobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn document_classification_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DocumentClassificationJobProperties]> {
+    pub fn document_classification_job_properties_list(&self) -> ::std::option::Option<&[crate::types::DocumentClassificationJobProperties]> {
         self.document_classification_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDocumentClassificationJobsOutput 
 }
 impl ListDocumentClassificationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentClassificationJobsOutput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput).
-    pub fn builder() -> crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsOutputBuilder {
         crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDocumentClassificationJobsOutput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDocumentClassificationJobsOutputBuilder {
-    pub(crate) document_classification_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassificationJobProperties>>,
+    pub(crate) document_classification_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassificationJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +47,8 @@ impl ListDocumentClassificationJobsOutputBuilder {
     /// To override the contents of this collection use [`set_document_classification_job_properties_list`](Self::set_document_classification_job_properties_list).
     ///
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn document_classification_job_properties_list(
-        mut self,
-        input: crate::types::DocumentClassificationJobProperties,
-    ) -> Self {
-        let mut v = self
-            .document_classification_job_properties_list
-            .unwrap_or_default();
+    pub fn document_classification_job_properties_list(mut self, input: crate::types::DocumentClassificationJobProperties) -> Self {
+        let mut v = self.document_classification_job_properties_list.unwrap_or_default();
         v.push(input);
         self.document_classification_job_properties_list = ::std::option::Option::Some(v);
         self
@@ -67,9 +56,7 @@ impl ListDocumentClassificationJobsOutputBuilder {
     /// <p>A list containing the properties of each job returned.</p>
     pub fn set_document_classification_job_properties_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DocumentClassificationJobProperties>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassificationJobProperties>>,
     ) -> Self {
         self.document_classification_job_properties_list = input;
         self
@@ -77,8 +64,7 @@ impl ListDocumentClassificationJobsOutputBuilder {
     /// <p>A list containing the properties of each job returned.</p>
     pub fn get_document_classification_job_properties_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentClassificationJobProperties>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentClassificationJobProperties>> {
         &self.document_classification_job_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -105,13 +91,9 @@ impl ListDocumentClassificationJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDocumentClassificationJobsOutput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput
-    {
+    pub fn build(self) -> crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput {
         crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput {
-            document_classification_job_properties_list: self
-                .document_classification_job_properties_list,
+            document_classification_job_properties_list: self.document_classification_job_properties_list,
             next_token: self.next_token,
             _request_id: self._request_id,
         }

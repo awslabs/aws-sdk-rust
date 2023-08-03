@@ -23,17 +23,14 @@ impl GetBasePathMappingInput {
 }
 impl GetBasePathMappingInput {
     /// Creates a new builder-style object to manufacture [`GetBasePathMappingInput`](crate::operation::get_base_path_mapping::GetBasePathMappingInput).
-    pub fn builder(
-    ) -> crate::operation::get_base_path_mapping::builders::GetBasePathMappingInputBuilder {
+    pub fn builder() -> crate::operation::get_base_path_mapping::builders::GetBasePathMappingInputBuilder {
         crate::operation::get_base_path_mapping::builders::GetBasePathMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBasePathMappingInput`](crate::operation::get_base_path_mapping::GetBasePathMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBasePathMappingInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) base_path: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,11 @@ impl GetBasePathMappingInputBuilder {
     /// Consumes the builder and constructs a [`GetBasePathMappingInput`](crate::operation::get_base_path_mapping::GetBasePathMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_base_path_mapping::GetBasePathMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_base_path_mapping::GetBasePathMappingInput {
-                domain_name: self.domain_name,
-                base_path: self.base_path,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_base_path_mapping::GetBasePathMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_base_path_mapping::GetBasePathMappingInput {
+            domain_name: self.domain_name,
+            base_path: self.base_path,
+        })
     }
 }

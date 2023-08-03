@@ -9,9 +9,7 @@ pub struct SavingsPlansUtilizationDetail {
     pub savings_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     #[doc(hidden)]
     pub utilization: ::std::option::Option<crate::types::SavingsPlansUtilization>,
@@ -28,11 +26,7 @@ impl SavingsPlansUtilizationDetail {
         self.savings_plan_arn.as_deref()
     }
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
@@ -44,9 +38,7 @@ impl SavingsPlansUtilizationDetail {
         self.savings.as_ref()
     }
     /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
-    pub fn amortized_commitment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SavingsPlansAmortizedCommitment> {
+    pub fn amortized_commitment(&self) -> ::std::option::Option<&crate::types::SavingsPlansAmortizedCommitment> {
         self.amortized_commitment.as_ref()
     }
 }
@@ -59,33 +51,22 @@ impl SavingsPlansUtilizationDetail {
 
 /// A builder for [`SavingsPlansUtilizationDetail`](crate::types::SavingsPlansUtilizationDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlansUtilizationDetailBuilder {
     pub(crate) savings_plan_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) utilization: ::std::option::Option<crate::types::SavingsPlansUtilization>,
     pub(crate) savings: ::std::option::Option<crate::types::SavingsPlansSavings>,
-    pub(crate) amortized_commitment:
-        ::std::option::Option<crate::types::SavingsPlansAmortizedCommitment>,
+    pub(crate) amortized_commitment: ::std::option::Option<crate::types::SavingsPlansAmortizedCommitment>,
 }
 impl SavingsPlansUtilizationDetailBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
-    pub fn savings_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn savings_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.savings_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
-    pub fn set_savings_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_savings_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.savings_plan_arn = input;
         self
     }
@@ -98,32 +79,19 @@ impl SavingsPlansUtilizationDetailBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
@@ -132,10 +100,7 @@ impl SavingsPlansUtilizationDetailBuilder {
         self
     }
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
-    pub fn set_utilization(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlansUtilization>,
-    ) -> Self {
+    pub fn set_utilization(mut self, input: ::std::option::Option<crate::types::SavingsPlansUtilization>) -> Self {
         self.utilization = input;
         self
     }
@@ -149,10 +114,7 @@ impl SavingsPlansUtilizationDetailBuilder {
         self
     }
     /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
-    pub fn set_savings(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlansSavings>,
-    ) -> Self {
+    pub fn set_savings(mut self, input: ::std::option::Option<crate::types::SavingsPlansSavings>) -> Self {
         self.savings = input;
         self
     }
@@ -161,25 +123,17 @@ impl SavingsPlansUtilizationDetailBuilder {
         &self.savings
     }
     /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
-    pub fn amortized_commitment(
-        mut self,
-        input: crate::types::SavingsPlansAmortizedCommitment,
-    ) -> Self {
+    pub fn amortized_commitment(mut self, input: crate::types::SavingsPlansAmortizedCommitment) -> Self {
         self.amortized_commitment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
-    pub fn set_amortized_commitment(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlansAmortizedCommitment>,
-    ) -> Self {
+    pub fn set_amortized_commitment(mut self, input: ::std::option::Option<crate::types::SavingsPlansAmortizedCommitment>) -> Self {
         self.amortized_commitment = input;
         self
     }
     /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
-    pub fn get_amortized_commitment(
-        &self,
-    ) -> &::std::option::Option<crate::types::SavingsPlansAmortizedCommitment> {
+    pub fn get_amortized_commitment(&self) -> &::std::option::Option<crate::types::SavingsPlansAmortizedCommitment> {
         &self.amortized_commitment
     }
     /// Consumes the builder and constructs a [`SavingsPlansUtilizationDetail`](crate::types::SavingsPlansUtilizationDetail).

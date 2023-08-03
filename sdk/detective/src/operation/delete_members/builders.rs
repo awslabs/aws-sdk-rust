@@ -10,10 +10,7 @@ impl DeleteMembersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_members::DeleteMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_members::DeleteMembersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_members::DeleteMembersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_members();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DeleteMembersFluentBuilder {
         }
     }
     /// Access the DeleteMembers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_members::builders::DeleteMembersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_members::builders::DeleteMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl DeleteMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -141,17 +133,12 @@ impl DeleteMembersFluentBuilder {
         self
     }
     /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

@@ -26,7 +26,7 @@ impl GetAssociatedIpv6PoolCidrsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssociatedIpv6PoolCidrsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder,
+    inner: crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder,
 }
 impl GetAssociatedIpv6PoolCidrsFluentBuilder {
     /// Creates a new `GetAssociatedIpv6PoolCidrs`.
@@ -37,7 +37,7 @@ impl GetAssociatedIpv6PoolCidrsFluentBuilder {
         }
     }
     /// Access the GetAssociatedIpv6PoolCidrs as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetAssociatedIpv6PoolCidrsFluentBuilder {
             crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetAssociatedIpv6PoolCidrsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetAssociatedIpv6PoolCidrsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetAssociatedIpv6PoolCidrsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl GetAssociatedIpv6PoolCidrsFluentBuilder {
             crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_associated_ipv6_pool_cidrs::paginator::GetAssociatedIpv6PoolCidrsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_associated_ipv6_pool_cidrs::paginator::GetAssociatedIpv6PoolCidrsPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_associated_ipv6_pool_cidrs::paginator::GetAssociatedIpv6PoolCidrsPaginator {
         crate::operation::get_associated_ipv6_pool_cidrs::paginator::GetAssociatedIpv6PoolCidrsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the IPv6 address pool.</p>

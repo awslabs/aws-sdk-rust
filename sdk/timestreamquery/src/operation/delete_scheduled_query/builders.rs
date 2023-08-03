@@ -37,9 +37,7 @@ impl DeleteScheduledQueryFluentBuilder {
         }
     }
     /// Access the DeleteScheduledQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteScheduledQueryFluentBuilder {
             crate::operation::delete_scheduled_query::DeleteScheduledQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_scheduled_query::DeleteScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_query::DeleteScheduledQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteScheduledQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteScheduledQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_scheduled_query::DeleteScheduledQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_scheduled_query::DeleteScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_query::DeleteScheduledQueryError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteScheduledQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_scheduled_query::DeleteScheduledQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_scheduled_query::DeleteScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_query::DeleteScheduledQueryError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteScheduledQueryFluentBuilder {
             crate::operation::delete_scheduled_query::DeleteScheduledQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_scheduled_query::DeleteScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_query::DeleteScheduledQueryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the scheduled query. </p>
-    pub fn scheduled_query_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_query_arn(input.into());
         self
     }
     /// <p>The ARN of the scheduled query. </p>
-    pub fn set_scheduled_query_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_query_arn(input);
         self
     }

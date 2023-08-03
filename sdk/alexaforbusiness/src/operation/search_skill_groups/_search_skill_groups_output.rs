@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for SearchSkillGroupsOutput {
 }
 impl SearchSkillGroupsOutput {
     /// Creates a new builder-style object to manufacture [`SearchSkillGroupsOutput`](crate::operation::search_skill_groups::SearchSkillGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::search_skill_groups::builders::SearchSkillGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::search_skill_groups::builders::SearchSkillGroupsOutputBuilder {
         crate::operation::search_skill_groups::builders::SearchSkillGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchSkillGroupsOutput`](crate::operation::search_skill_groups::SearchSkillGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSkillGroupsOutputBuilder {
     pub(crate) skill_groups: ::std::option::Option<::std::vec::Vec<crate::types::SkillGroupData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -65,17 +62,12 @@ impl SearchSkillGroupsOutputBuilder {
         self
     }
     /// <p>The skill groups that meet the filter criteria, in sort order.</p>
-    pub fn set_skill_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SkillGroupData>>,
-    ) -> Self {
+    pub fn set_skill_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SkillGroupData>>) -> Self {
         self.skill_groups = input;
         self
     }
     /// <p>The skill groups that meet the filter criteria, in sort order.</p>
-    pub fn get_skill_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SkillGroupData>> {
+    pub fn get_skill_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SkillGroupData>> {
         &self.skill_groups
     }
     /// <p>The token returned to indicate that there is more data available.</p>

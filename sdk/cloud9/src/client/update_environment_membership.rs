@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateEnvironmentMembershipOutput`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput) with field(s):
     ///   - [`membership(Option<EnvironmentMember>)`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput::membership): <p>Information about the environment member whose settings were changed.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentMembershipError>`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipError)
-    pub fn update_environment_membership(&self) -> crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipFluentBuilder{
+    pub fn update_environment_membership(
+        &self,
+    ) -> crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipFluentBuilder {
         crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipFluentBuilder::new(self.handle.clone())
     }
 }

@@ -18,10 +18,7 @@ pub fn ser_list_account_assignment_deletion_status_input(
     if let Some(var_4) = &input.filter {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Filter").start_object();
-        crate::protocol_serde::shape_operation_status_filter::ser_operation_status_filter(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_operation_status_filter::ser_operation_status_filter(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

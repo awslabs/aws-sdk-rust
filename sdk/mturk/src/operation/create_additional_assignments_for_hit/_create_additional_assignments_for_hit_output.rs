@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateAdditionalAssignmentsForHitOutp
 }
 impl CreateAdditionalAssignmentsForHitOutput {
     /// Creates a new builder-style object to manufacture [`CreateAdditionalAssignmentsForHitOutput`](crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput).
-    pub fn builder() -> crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitOutputBuilder{
+    pub fn builder() -> crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitOutputBuilder {
         crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAdditionalAssignmentsForHitOutput`](crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAdditionalAssignmentsForHitOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl CreateAdditionalAssignmentsForHitOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAdditionalAssignmentsForHitOutput`](crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput).
-    pub fn build(self) -> crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput{
+    pub fn build(self) -> crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput {
         crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput {
             _request_id: self._request_id,
         }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`jobs(Option<Vec<JobSummary>>)`](crate::operation::list_matching_jobs::ListMatchingJobsOutput::jobs): <p>A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_matching_jobs::ListMatchingJobsOutput::next_token): <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     /// - On failure, responds with [`SdkError<ListMatchingJobsError>`](crate::operation::list_matching_jobs::ListMatchingJobsError)
-    pub fn list_matching_jobs(
-        &self,
-    ) -> crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder {
-        crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_matching_jobs(&self) -> crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder {
+        crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::new(self.handle.clone())
     }
 }

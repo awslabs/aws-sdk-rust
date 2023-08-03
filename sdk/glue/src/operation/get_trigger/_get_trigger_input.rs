@@ -22,9 +22,7 @@ impl GetTriggerInput {
 
 /// A builder for [`GetTriggerInput`](crate::operation::get_trigger::GetTriggerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTriggerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetTriggerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetTriggerInput`](crate::operation::get_trigger::GetTriggerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_trigger::GetTriggerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_trigger::GetTriggerInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_trigger::GetTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_trigger::GetTriggerInput { name: self.name })
     }
 }

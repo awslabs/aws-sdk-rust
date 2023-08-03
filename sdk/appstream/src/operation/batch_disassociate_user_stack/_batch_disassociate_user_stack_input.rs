@@ -5,32 +5,26 @@
 pub struct BatchDisassociateUserStackInput {
     /// <p>The list of UserStackAssociation objects.</p>
     #[doc(hidden)]
-    pub user_stack_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>,
+    pub user_stack_associations: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>,
 }
 impl BatchDisassociateUserStackInput {
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn user_stack_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UserStackAssociation]> {
+    pub fn user_stack_associations(&self) -> ::std::option::Option<&[crate::types::UserStackAssociation]> {
         self.user_stack_associations.as_deref()
     }
 }
 impl BatchDisassociateUserStackInput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateUserStackInput`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackInput).
-    pub fn builder() -> crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackInputBuilder{
+    pub fn builder() -> crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackInputBuilder {
         crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDisassociateUserStackInput`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisassociateUserStackInputBuilder {
-    pub(crate) user_stack_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>,
+    pub(crate) user_stack_associations: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>,
 }
 impl BatchDisassociateUserStackInputBuilder {
     /// Appends an item to `user_stack_associations`.
@@ -45,17 +39,12 @@ impl BatchDisassociateUserStackInputBuilder {
         self
     }
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn set_user_stack_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>,
-    ) -> Self {
+    pub fn set_user_stack_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>) -> Self {
         self.user_stack_associations = input;
         self
     }
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn get_user_stack_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>> {
+    pub fn get_user_stack_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>> {
         &self.user_stack_associations
     }
     /// Consumes the builder and constructs a [`BatchDisassociateUserStackInput`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackInput).
@@ -65,10 +54,8 @@ impl BatchDisassociateUserStackInputBuilder {
         crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackInput {
-                user_stack_associations: self.user_stack_associations,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackInput {
+            user_stack_associations: self.user_stack_associations,
+        })
     }
 }

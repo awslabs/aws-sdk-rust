@@ -27,7 +27,7 @@ impl GetBotChannelAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBotChannelAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder,
+    inner: crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder,
 }
 impl GetBotChannelAssociationsFluentBuilder {
     /// Creates a new `GetBotChannelAssociations`.
@@ -38,7 +38,7 @@ impl GetBotChannelAssociationsFluentBuilder {
         }
     }
     /// Access the GetBotChannelAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetBotChannelAssociationsFluentBuilder {
             crate::operation::get_bot_channel_associations::GetBotChannelAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetBotChannelAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetBotChannelAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetBotChannelAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,19 +106,14 @@ impl GetBotChannelAssociationsFluentBuilder {
             crate::operation::get_bot_channel_associations::GetBotChannelAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_bot_channel_associations::paginator::GetBotChannelAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_bot_channel_associations::paginator::GetBotChannelAssociationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_bot_channel_associations::paginator::GetBotChannelAssociationsPaginator {
         crate::operation::get_bot_channel_associations::paginator::GetBotChannelAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the Amazon Lex bot in the association.</p>
@@ -187,18 +173,12 @@ impl GetBotChannelAssociationsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }

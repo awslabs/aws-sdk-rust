@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetMatchIdOutput`](crate::operation::get_match_id::GetMatchIdOutput) with field(s):
     ///   - [`match_id(Option<String>)`](crate::operation::get_match_id::GetMatchIdOutput::match_id): <p>The unique identifiers for this group of match records.</p>
     /// - On failure, responds with [`SdkError<GetMatchIdError>`](crate::operation::get_match_id::GetMatchIdError)
-    pub fn get_match_id(
-        &self,
-    ) -> crate::operation::get_match_id::builders::GetMatchIdFluentBuilder {
+    pub fn get_match_id(&self) -> crate::operation::get_match_id::builders::GetMatchIdFluentBuilder {
         crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::new(self.handle.clone())
     }
 }

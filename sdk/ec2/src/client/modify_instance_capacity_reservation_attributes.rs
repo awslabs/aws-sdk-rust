@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`ModifyInstanceCapacityReservationAttributesOutput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<ModifyInstanceCapacityReservationAttributesError>`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError)
-    pub fn modify_instance_capacity_reservation_attributes(&self) -> crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesFluentBuilder{
-        crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesFluentBuilder::new(self.handle.clone())
+    pub fn modify_instance_capacity_reservation_attributes(
+        &self,
+    ) -> crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesFluentBuilder {
+        crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -47,12 +47,9 @@ impl EnhancedMetrics {
 
 /// A builder for [`EnhancedMetrics`](crate::types::EnhancedMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnhancedMetricsBuilder {
-    pub(crate) shard_level_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
+    pub(crate) shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
 }
 impl EnhancedMetricsBuilder {
     /// Appends an item to `shard_level_metrics`.
@@ -91,10 +88,7 @@ impl EnhancedMetricsBuilder {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn set_shard_level_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
-    ) -> Self {
+    pub fn set_shard_level_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>) -> Self {
         self.shard_level_metrics = input;
         self
     }
@@ -111,9 +105,7 @@ impl EnhancedMetricsBuilder {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn get_shard_level_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+    pub fn get_shard_level_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
         &self.shard_level_metrics
     }
     /// Consumes the builder and constructs a [`EnhancedMetrics`](crate::types::EnhancedMetrics).

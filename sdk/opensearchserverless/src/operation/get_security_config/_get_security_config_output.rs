@@ -10,9 +10,7 @@ pub struct GetSecurityConfigOutput {
 }
 impl GetSecurityConfigOutput {
     /// <p>Details of the requested security configuration.</p>
-    pub fn security_config_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SecurityConfigDetail> {
+    pub fn security_config_detail(&self) -> ::std::option::Option<&crate::types::SecurityConfigDetail> {
         self.security_config_detail.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSecurityConfigOutput {
 }
 impl GetSecurityConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetSecurityConfigOutput`](crate::operation::get_security_config::GetSecurityConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_security_config::builders::GetSecurityConfigOutputBuilder {
+    pub fn builder() -> crate::operation::get_security_config::builders::GetSecurityConfigOutputBuilder {
         crate::operation::get_security_config::builders::GetSecurityConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSecurityConfigOutput`](crate::operation::get_security_config::GetSecurityConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSecurityConfigOutputBuilder {
     pub(crate) security_config_detail: ::std::option::Option<crate::types::SecurityConfigDetail>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl GetSecurityConfigOutputBuilder {
         self
     }
     /// <p>Details of the requested security configuration.</p>
-    pub fn set_security_config_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityConfigDetail>,
-    ) -> Self {
+    pub fn set_security_config_detail(mut self, input: ::std::option::Option<crate::types::SecurityConfigDetail>) -> Self {
         self.security_config_detail = input;
         self
     }
     /// <p>Details of the requested security configuration.</p>
-    pub fn get_security_config_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::SecurityConfigDetail> {
+    pub fn get_security_config_detail(&self) -> &::std::option::Option<crate::types::SecurityConfigDetail> {
         &self.security_config_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

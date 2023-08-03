@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateModelManifestOutput {
 }
 impl CreateModelManifestOutput {
     /// Creates a new builder-style object to manufacture [`CreateModelManifestOutput`](crate::operation::create_model_manifest::CreateModelManifestOutput).
-    pub fn builder(
-    ) -> crate::operation::create_model_manifest::builders::CreateModelManifestOutputBuilder {
-        crate::operation::create_model_manifest::builders::CreateModelManifestOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_model_manifest::builders::CreateModelManifestOutputBuilder {
+        crate::operation::create_model_manifest::builders::CreateModelManifestOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateModelManifestOutput`](crate::operation::create_model_manifest::CreateModelManifestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelManifestOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

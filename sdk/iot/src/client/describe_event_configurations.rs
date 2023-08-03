@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput::creation_date): <p>The creation date of the event configuration.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput::last_modified_date): <p>The date the event configurations were last modified.</p>
     /// - On failure, responds with [`SdkError<DescribeEventConfigurationsError>`](crate::operation::describe_event_configurations::DescribeEventConfigurationsError)
-    pub fn describe_event_configurations(&self) -> crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsFluentBuilder{
+    pub fn describe_event_configurations(
+        &self,
+    ) -> crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsFluentBuilder {
         crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

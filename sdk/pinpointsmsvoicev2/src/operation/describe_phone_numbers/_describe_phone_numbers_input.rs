@@ -36,17 +36,14 @@ impl DescribePhoneNumbersInput {
 }
 impl DescribePhoneNumbersInput {
     /// Creates a new builder-style object to manufacture [`DescribePhoneNumbersInput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersInputBuilder {
+    pub fn builder() -> crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersInputBuilder {
         crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePhoneNumbersInput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePhoneNumbersInputBuilder {
     pub(crate) phone_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>>,
@@ -59,27 +56,19 @@ impl DescribePhoneNumbersInputBuilder {
     /// To override the contents of this collection use [`set_phone_number_ids`](Self::set_phone_number_ids).
     ///
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn phone_number_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phone_number_ids.unwrap_or_default();
         v.push(input.into());
         self.phone_number_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn set_phone_number_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phone_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.phone_number_ids = input;
         self
     }
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn get_phone_number_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phone_number_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.phone_number_ids
     }
     /// Appends an item to `filters`.
@@ -94,17 +83,12 @@ impl DescribePhoneNumbersInputBuilder {
         self
     }
     /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>> {
         &self.filters
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -138,17 +122,13 @@ impl DescribePhoneNumbersInputBuilder {
     /// Consumes the builder and constructs a [`DescribePhoneNumbersInput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_phone_numbers::DescribePhoneNumbersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_phone_numbers::DescribePhoneNumbersInput {
-                phone_number_ids: self.phone_number_ids,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_phone_numbers::DescribePhoneNumbersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_phone_numbers::DescribePhoneNumbersInput {
+            phone_number_ids: self.phone_number_ids,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

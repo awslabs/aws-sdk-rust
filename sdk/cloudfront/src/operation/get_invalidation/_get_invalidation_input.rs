@@ -30,27 +30,19 @@ impl GetInvalidationInput {
 
 /// A builder for [`GetInvalidationInput`](crate::operation::get_invalidation::GetInvalidationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInvalidationInputBuilder {
     pub(crate) distribution_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl GetInvalidationInputBuilder {
     /// <p>The distribution's ID.</p>
-    pub fn distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The distribution's ID.</p>
-    pub fn set_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_id = input;
         self
     }
@@ -75,10 +67,7 @@ impl GetInvalidationInputBuilder {
     /// Consumes the builder and constructs a [`GetInvalidationInput`](crate::operation::get_invalidation::GetInvalidationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_invalidation::GetInvalidationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_invalidation::GetInvalidationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_invalidation::GetInvalidationInput {
             distribution_id: self.distribution_id,
             id: self.id,

@@ -12,8 +12,7 @@ pub struct SpotFleetLaunchSpecification {
     pub addressing_type: ::std::option::Option<::std::string::String>,
     /// <p>One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
     #[doc(hidden)]
@@ -40,8 +39,7 @@ pub struct SpotFleetLaunchSpecification {
     /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     #[doc(hidden)]
-    pub network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
+    pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     /// <p>The placement information.</p>
     #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::SpotPlacement>,
@@ -65,8 +63,7 @@ pub struct SpotFleetLaunchSpecification {
     pub weighted_capacity: ::std::option::Option<f64>,
     /// <p>The tags to apply during creation.</p>
     #[doc(hidden)]
-    pub tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>>,
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
@@ -83,9 +80,7 @@ impl SpotFleetLaunchSpecification {
         self.addressing_type.as_deref()
     }
     /// <p>One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
@@ -94,9 +89,7 @@ impl SpotFleetLaunchSpecification {
         self.ebs_optimized
     }
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IamInstanceProfileSpecification> {
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<&crate::types::IamInstanceProfileSpecification> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The ID of the AMI.</p>
@@ -122,9 +115,7 @@ impl SpotFleetLaunchSpecification {
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
     /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
-    pub fn network_interfaces(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
+    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
         self.network_interfaces.as_deref()
     }
     /// <p>The placement information.</p>
@@ -155,17 +146,13 @@ impl SpotFleetLaunchSpecification {
         self.weighted_capacity
     }
     /// <p>The tags to apply during creation.</p>
-    pub fn tag_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SpotFleetTagSpecification]> {
+    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::SpotFleetTagSpecification]> {
         self.tag_specifications.as_deref()
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    pub fn instance_requirements(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceRequirements> {
+    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirements> {
         self.instance_requirements.as_ref()
     }
 }
@@ -205,29 +192,24 @@ impl SpotFleetLaunchSpecification {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SpotFleetLaunchSpecificationBuilder {
-    pub(crate) security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) addressing_type: ::std::option::Option<::std::string::String>,
-    pub(crate) block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
-    pub(crate) iam_instance_profile:
-        ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
+    pub(crate) iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring: ::std::option::Option<crate::types::SpotFleetMonitoring>,
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     pub(crate) placement: ::std::option::Option<crate::types::SpotPlacement>,
     pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
     pub(crate) spot_price: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_data: ::std::option::Option<::std::string::String>,
     pub(crate) weighted_capacity: ::std::option::Option<f64>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
 }
 impl SpotFleetLaunchSpecificationBuilder {
@@ -243,32 +225,21 @@ impl SpotFleetLaunchSpecificationBuilder {
         self
     }
     /// <p>The security groups.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The security groups.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
         &self.security_groups
     }
     /// <p>Deprecated.</p>
-    pub fn addressing_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn addressing_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addressing_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Deprecated.</p>
-    pub fn set_addressing_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_addressing_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addressing_type = input;
         self
     }
@@ -288,17 +259,12 @@ impl SpotFleetLaunchSpecificationBuilder {
         self
     }
     /// <p>One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
         self.block_device_mappings = input;
         self
     }
     /// <p>One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
@@ -319,25 +285,17 @@ impl SpotFleetLaunchSpecificationBuilder {
         &self.ebs_optimized
     }
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: crate::types::IamInstanceProfileSpecification,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
         self.iam_instance_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
-    ) -> Self {
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>) -> Self {
         self.iam_instance_profile = input;
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn get_iam_instance_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
         &self.iam_instance_profile
     }
     /// <p>The ID of the AMI.</p>
@@ -360,10 +318,7 @@ impl SpotFleetLaunchSpecificationBuilder {
         self
     }
     /// <p>The instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -405,10 +360,7 @@ impl SpotFleetLaunchSpecificationBuilder {
         self
     }
     /// <p>Enable or disable monitoring for the instances.</p>
-    pub fn set_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotFleetMonitoring>,
-    ) -> Self {
+    pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::SpotFleetMonitoring>) -> Self {
         self.monitoring = input;
         self
     }
@@ -423,10 +375,7 @@ impl SpotFleetLaunchSpecificationBuilder {
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
     /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
-    pub fn network_interfaces(
-        mut self,
-        input: crate::types::InstanceNetworkInterfaceSpecification,
-    ) -> Self {
+    pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
         self.network_interfaces = ::std::option::Option::Some(v);
@@ -437,9 +386,7 @@ impl SpotFleetLaunchSpecificationBuilder {
     /// </note>
     pub fn set_network_interfaces(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     ) -> Self {
         self.network_interfaces = input;
         self
@@ -447,10 +394,7 @@ impl SpotFleetLaunchSpecificationBuilder {
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
     /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>
-    {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
         &self.network_interfaces
     }
     /// <p>The placement information.</p>
@@ -459,10 +403,7 @@ impl SpotFleetLaunchSpecificationBuilder {
         self
     }
     /// <p>The placement information.</p>
-    pub fn set_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotPlacement>,
-    ) -> Self {
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::SpotPlacement>) -> Self {
         self.placement = input;
         self
     }
@@ -561,17 +502,12 @@ impl SpotFleetLaunchSpecificationBuilder {
         self
     }
     /// <p>The tags to apply during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>> {
         &self.tag_specifications
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
@@ -584,19 +520,14 @@ impl SpotFleetLaunchSpecificationBuilder {
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    pub fn set_instance_requirements(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceRequirements>,
-    ) -> Self {
+    pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirements>) -> Self {
         self.instance_requirements = input;
         self
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    pub fn get_instance_requirements(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceRequirements> {
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirements> {
         &self.instance_requirements
     }
     /// Consumes the builder and constructs a [`SpotFleetLaunchSpecification`](crate::types::SpotFleetLaunchSpecification).

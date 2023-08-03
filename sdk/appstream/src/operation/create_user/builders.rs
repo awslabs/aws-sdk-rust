@@ -10,10 +10,7 @@ impl CreateUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_user::CreateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user::CreateUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_user();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_user::CreateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_user::CreateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_user::CreateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_user::CreateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
     > {
         self.customize_middleware().await
@@ -142,10 +130,7 @@ impl CreateUserFluentBuilder {
     /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
     /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
     /// </note>
-    pub fn set_message_action(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageAction>,
-    ) -> Self {
+    pub fn set_message_action(mut self, input: ::std::option::Option<crate::types::MessageAction>) -> Self {
         self.inner = self.inner.set_message_action(input);
         self
     }
@@ -189,17 +174,12 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>The authentication type for the user. You must specify USERPOOL. </p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
     /// <p>The authentication type for the user. You must specify USERPOOL. </p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         self.inner.get_authentication_type()
     }
 }

@@ -41,13 +41,7 @@
 /// Use Level to set the MPEG-2 level for the video output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mpeg2CodecLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for Mpeg2CodecLevel {
             "HIGH1440" => Mpeg2CodecLevel::High1440,
             "LOW" => Mpeg2CodecLevel::Low,
             "MAIN" => Mpeg2CodecLevel::Main,
-            other => {
-                Mpeg2CodecLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Mpeg2CodecLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

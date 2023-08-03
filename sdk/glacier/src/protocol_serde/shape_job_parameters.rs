@@ -33,10 +33,7 @@ pub fn ser_job_parameters(
     if let Some(var_10) = &input.select_parameters {
         #[allow(unused_mut)]
         let mut object_11 = object.key("SelectParameters").start_object();
-        crate::protocol_serde::shape_select_parameters::ser_select_parameters(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_select_parameters::ser_select_parameters(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.output_location {

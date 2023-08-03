@@ -26,11 +26,7 @@ impl super::Client {
     ///   - [`latest_device_job(Option<LatestDeviceJob>)`](crate::operation::describe_device::DescribeDeviceOutput::latest_device_job): <p>A device's latest job. Includes the target image version, and the job status.</p>
     ///   - [`device_aggregated_status(Option<DeviceAggregatedStatus>)`](crate::operation::describe_device::DescribeDeviceOutput::device_aggregated_status): <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::operation::describe_device::DescribeDeviceError)
-    pub fn describe_device(
-        &self,
-    ) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {
-        crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_device(&self) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {
+        crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::new(self.handle.clone())
     }
 }

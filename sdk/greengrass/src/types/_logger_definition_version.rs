@@ -23,9 +23,7 @@ impl LoggerDefinitionVersion {
 
 /// A builder for [`LoggerDefinitionVersion`](crate::types::LoggerDefinitionVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggerDefinitionVersionBuilder {
     pub(crate) loggers: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
 }
@@ -42,10 +40,7 @@ impl LoggerDefinitionVersionBuilder {
         self
     }
     /// A list of loggers.
-    pub fn set_loggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
-    ) -> Self {
+    pub fn set_loggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>) -> Self {
         self.loggers = input;
         self
     }
@@ -55,8 +50,6 @@ impl LoggerDefinitionVersionBuilder {
     }
     /// Consumes the builder and constructs a [`LoggerDefinitionVersion`](crate::types::LoggerDefinitionVersion).
     pub fn build(self) -> crate::types::LoggerDefinitionVersion {
-        crate::types::LoggerDefinitionVersion {
-            loggers: self.loggers,
-        }
+        crate::types::LoggerDefinitionVersion { loggers: self.loggers }
     }
 }

@@ -43,9 +43,7 @@ impl ListRunTasksInput {
 
 /// A builder for [`ListRunTasksInput`](crate::operation::list_run_tasks::ListRunTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRunTasksInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatus>,
@@ -82,18 +80,12 @@ impl ListRunTasksInputBuilder {
         &self.status
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn starting_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn set_starting_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_token = input;
         self
     }
@@ -118,10 +110,7 @@ impl ListRunTasksInputBuilder {
     /// Consumes the builder and constructs a [`ListRunTasksInput`](crate::operation::list_run_tasks::ListRunTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_run_tasks::ListRunTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_run_tasks::ListRunTasksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_run_tasks::ListRunTasksInput {
             id: self.id,
             status: self.status,

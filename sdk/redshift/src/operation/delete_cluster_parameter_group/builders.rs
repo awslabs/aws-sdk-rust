@@ -28,7 +28,7 @@ impl DeleteClusterParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupInputBuilder,
+    inner: crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupInputBuilder,
 }
 impl DeleteClusterParameterGroupFluentBuilder {
     /// Creates a new `DeleteClusterParameterGroup`.
@@ -39,7 +39,7 @@ impl DeleteClusterParameterGroupFluentBuilder {
         }
     }
     /// Access the DeleteClusterParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteClusterParameterGroupFluentBuilder {
             crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteClusterParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DeleteClusterParameterGroupFluentBuilder {
             crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +117,7 @@ impl DeleteClusterParameterGroupFluentBuilder {
     /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
     /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
     /// </ul>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
@@ -141,10 +127,7 @@ impl DeleteClusterParameterGroupFluentBuilder {
     /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
     /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
     /// </ul>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }

@@ -22,9 +22,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRouteOutput`](crate::operation::create_route::CreateRouteOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::create_route::CreateRouteOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<CreateRouteError>`](crate::operation::create_route::CreateRouteError)
-    pub fn create_route(
-        &self,
-    ) -> crate::operation::create_route::builders::CreateRouteFluentBuilder {
+    pub fn create_route(&self) -> crate::operation::create_route::builders::CreateRouteFluentBuilder {
         crate::operation::create_route::builders::CreateRouteFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,15 +22,11 @@ pub struct DatasetDefinition {
 }
 impl DatasetDefinition {
     /// <p>Configuration for Athena Dataset Definition input.</p>
-    pub fn athena_dataset_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AthenaDatasetDefinition> {
+    pub fn athena_dataset_definition(&self) -> ::std::option::Option<&crate::types::AthenaDatasetDefinition> {
         self.athena_dataset_definition.as_ref()
     }
     /// <p>Configuration for Redshift Dataset Definition input.</p>
-    pub fn redshift_dataset_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RedshiftDatasetDefinition> {
+    pub fn redshift_dataset_definition(&self) -> ::std::option::Option<&crate::types::RedshiftDatasetDefinition> {
         self.redshift_dataset_definition.as_ref()
     }
     /// <p>The local path where you want Amazon SageMaker to download the Dataset Definition inputs to run a processing job. <code>LocalPath</code> is an absolute path to the input data. This is a required parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
@@ -38,9 +34,7 @@ impl DatasetDefinition {
         self.local_path.as_deref()
     }
     /// <p>Whether the generated dataset is <code>FullyReplicated</code> or <code>ShardedByS3Key</code> (default).</p>
-    pub fn data_distribution_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataDistributionType> {
+    pub fn data_distribution_type(&self) -> ::std::option::Option<&crate::types::DataDistributionType> {
         self.data_distribution_type.as_ref()
     }
     /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> (default) mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
@@ -57,61 +51,41 @@ impl DatasetDefinition {
 
 /// A builder for [`DatasetDefinition`](crate::types::DatasetDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetDefinitionBuilder {
-    pub(crate) athena_dataset_definition:
-        ::std::option::Option<crate::types::AthenaDatasetDefinition>,
-    pub(crate) redshift_dataset_definition:
-        ::std::option::Option<crate::types::RedshiftDatasetDefinition>,
+    pub(crate) athena_dataset_definition: ::std::option::Option<crate::types::AthenaDatasetDefinition>,
+    pub(crate) redshift_dataset_definition: ::std::option::Option<crate::types::RedshiftDatasetDefinition>,
     pub(crate) local_path: ::std::option::Option<::std::string::String>,
     pub(crate) data_distribution_type: ::std::option::Option<crate::types::DataDistributionType>,
     pub(crate) input_mode: ::std::option::Option<crate::types::InputMode>,
 }
 impl DatasetDefinitionBuilder {
     /// <p>Configuration for Athena Dataset Definition input.</p>
-    pub fn athena_dataset_definition(
-        mut self,
-        input: crate::types::AthenaDatasetDefinition,
-    ) -> Self {
+    pub fn athena_dataset_definition(mut self, input: crate::types::AthenaDatasetDefinition) -> Self {
         self.athena_dataset_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for Athena Dataset Definition input.</p>
-    pub fn set_athena_dataset_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::AthenaDatasetDefinition>,
-    ) -> Self {
+    pub fn set_athena_dataset_definition(mut self, input: ::std::option::Option<crate::types::AthenaDatasetDefinition>) -> Self {
         self.athena_dataset_definition = input;
         self
     }
     /// <p>Configuration for Athena Dataset Definition input.</p>
-    pub fn get_athena_dataset_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::AthenaDatasetDefinition> {
+    pub fn get_athena_dataset_definition(&self) -> &::std::option::Option<crate::types::AthenaDatasetDefinition> {
         &self.athena_dataset_definition
     }
     /// <p>Configuration for Redshift Dataset Definition input.</p>
-    pub fn redshift_dataset_definition(
-        mut self,
-        input: crate::types::RedshiftDatasetDefinition,
-    ) -> Self {
+    pub fn redshift_dataset_definition(mut self, input: crate::types::RedshiftDatasetDefinition) -> Self {
         self.redshift_dataset_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for Redshift Dataset Definition input.</p>
-    pub fn set_redshift_dataset_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftDatasetDefinition>,
-    ) -> Self {
+    pub fn set_redshift_dataset_definition(mut self, input: ::std::option::Option<crate::types::RedshiftDatasetDefinition>) -> Self {
         self.redshift_dataset_definition = input;
         self
     }
     /// <p>Configuration for Redshift Dataset Definition input.</p>
-    pub fn get_redshift_dataset_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::RedshiftDatasetDefinition> {
+    pub fn get_redshift_dataset_definition(&self) -> &::std::option::Option<crate::types::RedshiftDatasetDefinition> {
         &self.redshift_dataset_definition
     }
     /// <p>The local path where you want Amazon SageMaker to download the Dataset Definition inputs to run a processing job. <code>LocalPath</code> is an absolute path to the input data. This is a required parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
@@ -134,17 +108,12 @@ impl DatasetDefinitionBuilder {
         self
     }
     /// <p>Whether the generated dataset is <code>FullyReplicated</code> or <code>ShardedByS3Key</code> (default).</p>
-    pub fn set_data_distribution_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataDistributionType>,
-    ) -> Self {
+    pub fn set_data_distribution_type(mut self, input: ::std::option::Option<crate::types::DataDistributionType>) -> Self {
         self.data_distribution_type = input;
         self
     }
     /// <p>Whether the generated dataset is <code>FullyReplicated</code> or <code>ShardedByS3Key</code> (default).</p>
-    pub fn get_data_distribution_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataDistributionType> {
+    pub fn get_data_distribution_type(&self) -> &::std::option::Option<crate::types::DataDistributionType> {
         &self.data_distribution_type
     }
     /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> (default) mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`advanced_options(Option<HashMap<String, String>>)`](crate::operation::upgrade_domain::UpgradeDomainOutput::advanced_options): <p>The advanced options configuration for the domain.</p>
     ///   - [`change_progress_details(Option<ChangeProgressDetails>)`](crate::operation::upgrade_domain::UpgradeDomainOutput::change_progress_details): <p>Container for information about a configuration change happening on a domain.</p>
     /// - On failure, responds with [`SdkError<UpgradeDomainError>`](crate::operation::upgrade_domain::UpgradeDomainError)
-    pub fn upgrade_domain(
-        &self,
-    ) -> crate::operation::upgrade_domain::builders::UpgradeDomainFluentBuilder {
-        crate::operation::upgrade_domain::builders::UpgradeDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn upgrade_domain(&self) -> crate::operation::upgrade_domain::builders::UpgradeDomainFluentBuilder {
+        crate::operation::upgrade_domain::builders::UpgradeDomainFluentBuilder::new(self.handle.clone())
     }
 }

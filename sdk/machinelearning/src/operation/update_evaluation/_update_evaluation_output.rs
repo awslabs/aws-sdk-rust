@@ -23,35 +23,26 @@ impl ::aws_http::request_id::RequestId for UpdateEvaluationOutput {
 }
 impl UpdateEvaluationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEvaluationOutput`](crate::operation::update_evaluation::UpdateEvaluationOutput).
-    pub fn builder() -> crate::operation::update_evaluation::builders::UpdateEvaluationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_evaluation::builders::UpdateEvaluationOutputBuilder {
         crate::operation::update_evaluation::builders::UpdateEvaluationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEvaluationOutput`](crate::operation::update_evaluation::UpdateEvaluationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEvaluationOutputBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateEvaluationOutputBuilder {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_id = input;
         self
     }

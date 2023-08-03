@@ -29,7 +29,7 @@ impl PutImageScanningConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutImageScanningConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationInputBuilder,
+    inner: crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationInputBuilder,
 }
 impl PutImageScanningConfigurationFluentBuilder {
     /// Creates a new `PutImageScanningConfiguration`.
@@ -40,7 +40,7 @@ impl PutImageScanningConfigurationFluentBuilder {
         }
     }
     /// Access the PutImageScanningConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl PutImageScanningConfigurationFluentBuilder {
             crate::operation::put_image_scanning_configuration::PutImageScanningConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl PutImageScanningConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl PutImageScanningConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl PutImageScanningConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl PutImageScanningConfigurationFluentBuilder {
             crate::operation::put_image_scanning_configuration::PutImageScanningConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +127,12 @@ impl PutImageScanningConfigurationFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -158,25 +141,17 @@ impl PutImageScanningConfigurationFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn image_scanning_configuration(
-        mut self,
-        input: crate::types::ImageScanningConfiguration,
-    ) -> Self {
+    pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.inner = self.inner.image_scanning_configuration(input);
         self
     }
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn set_image_scanning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    ) -> Self {
+    pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.inner = self.inner.set_image_scanning_configuration(input);
         self
     }
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn get_image_scanning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+    pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         self.inner.get_image_scanning_configuration()
     }
 }

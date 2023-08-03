@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeTableReplicaAutoScalingOutput`](crate::operation::describe_table_replica_auto_scaling::DescribeTableReplicaAutoScalingOutput) with field(s):
     ///   - [`table_auto_scaling_description(Option<TableAutoScalingDescription>)`](crate::operation::describe_table_replica_auto_scaling::DescribeTableReplicaAutoScalingOutput::table_auto_scaling_description): <p>Represents the auto scaling properties of the table.</p>
     /// - On failure, responds with [`SdkError<DescribeTableReplicaAutoScalingError>`](crate::operation::describe_table_replica_auto_scaling::DescribeTableReplicaAutoScalingError)
-    pub fn describe_table_replica_auto_scaling(&self) -> crate::operation::describe_table_replica_auto_scaling::builders::DescribeTableReplicaAutoScalingFluentBuilder{
+    pub fn describe_table_replica_auto_scaling(
+        &self,
+    ) -> crate::operation::describe_table_replica_auto_scaling::builders::DescribeTableReplicaAutoScalingFluentBuilder {
         crate::operation::describe_table_replica_auto_scaling::builders::DescribeTableReplicaAutoScalingFluentBuilder::new(self.handle.clone())
     }
 }

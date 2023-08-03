@@ -29,9 +29,7 @@ impl DeletePublicKeyInput {
 
 /// A builder for [`DeletePublicKeyInput`](crate::operation::delete_public_key::DeletePublicKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePublicKeyInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeletePublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeletePublicKeyInput`](crate::operation::delete_public_key::DeletePublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_public_key::DeletePublicKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_public_key::DeletePublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_public_key::DeletePublicKeyInput {
             id: self.id,
             if_match: self.if_match,

@@ -6,8 +6,7 @@
 pub struct AwsIamUserDetails {
     /// <p>A list of the managed policies that are attached to the user.</p>
     #[doc(hidden)]
-    pub attached_managed_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
+    pub attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
     /// <p>Indicates when the user was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
@@ -33,9 +32,7 @@ pub struct AwsIamUserDetails {
 }
 impl AwsIamUserDetails {
     /// <p>A list of the managed policies that are attached to the user.</p>
-    pub fn attached_managed_policies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsIamAttachedManagedPolicy]> {
+    pub fn attached_managed_policies(&self) -> ::std::option::Option<&[crate::types::AwsIamAttachedManagedPolicy]> {
         self.attached_managed_policies.as_deref()
     }
     /// <p>Indicates when the user was created.</p>
@@ -52,9 +49,7 @@ impl AwsIamUserDetails {
         self.path.as_deref()
     }
     /// <p>The permissions boundary for the user.</p>
-    pub fn permissions_boundary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsIamPermissionsBoundary> {
+    pub fn permissions_boundary(&self) -> ::std::option::Option<&crate::types::AwsIamPermissionsBoundary> {
         self.permissions_boundary.as_ref()
     }
     /// <p>The unique identifier for the user.</p>
@@ -79,20 +74,16 @@ impl AwsIamUserDetails {
 
 /// A builder for [`AwsIamUserDetails`](crate::types::AwsIamUserDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamUserDetailsBuilder {
-    pub(crate) attached_managed_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
+    pub(crate) attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
     pub(crate) create_date: ::std::option::Option<::std::string::String>,
     pub(crate) group_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) permissions_boundary: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
-    pub(crate) user_policy_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>>,
+    pub(crate) user_policy_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>>,
 }
 impl AwsIamUserDetailsBuilder {
     /// Appends an item to `attached_managed_policies`.
@@ -100,27 +91,19 @@ impl AwsIamUserDetailsBuilder {
     /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
     ///
     /// <p>A list of the managed policies that are attached to the user.</p>
-    pub fn attached_managed_policies(
-        mut self,
-        input: crate::types::AwsIamAttachedManagedPolicy,
-    ) -> Self {
+    pub fn attached_managed_policies(mut self, input: crate::types::AwsIamAttachedManagedPolicy) -> Self {
         let mut v = self.attached_managed_policies.unwrap_or_default();
         v.push(input);
         self.attached_managed_policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the managed policies that are attached to the user.</p>
-    pub fn set_attached_managed_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
-    ) -> Self {
+    pub fn set_attached_managed_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>) -> Self {
         self.attached_managed_policies = input;
         self
     }
     /// <p>A list of the managed policies that are attached to the user.</p>
-    pub fn get_attached_managed_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>> {
+    pub fn get_attached_managed_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>> {
         &self.attached_managed_policies
     }
     /// <p>Indicates when the user was created.</p>
@@ -152,10 +135,7 @@ impl AwsIamUserDetailsBuilder {
         self
     }
     /// <p>A list of IAM groups that the user belongs to.</p>
-    pub fn set_group_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_list = input;
         self
     }
@@ -183,17 +163,12 @@ impl AwsIamUserDetailsBuilder {
         self
     }
     /// <p>The permissions boundary for the user.</p>
-    pub fn set_permissions_boundary(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>,
-    ) -> Self {
+    pub fn set_permissions_boundary(mut self, input: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>) -> Self {
         self.permissions_boundary = input;
         self
     }
     /// <p>The permissions boundary for the user.</p>
-    pub fn get_permissions_boundary(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsIamPermissionsBoundary> {
+    pub fn get_permissions_boundary(&self) -> &::std::option::Option<crate::types::AwsIamPermissionsBoundary> {
         &self.permissions_boundary
     }
     /// <p>The unique identifier for the user.</p>
@@ -236,17 +211,12 @@ impl AwsIamUserDetailsBuilder {
         self
     }
     /// <p>The list of inline policies that are embedded in the user.</p>
-    pub fn set_user_policy_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>>,
-    ) -> Self {
+    pub fn set_user_policy_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>>) -> Self {
         self.user_policy_list = input;
         self
     }
     /// <p>The list of inline policies that are embedded in the user.</p>
-    pub fn get_user_policy_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>> {
+    pub fn get_user_policy_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>> {
         &self.user_policy_list
     }
     /// Consumes the builder and constructs a [`AwsIamUserDetails`](crate::types::AwsIamUserDetails).

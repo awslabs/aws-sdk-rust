@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetByteMatchSetOutput`](crate::operation::get_byte_match_set::GetByteMatchSetOutput) with field(s):
     ///   - [`byte_match_set(Option<ByteMatchSet>)`](crate::operation::get_byte_match_set::GetByteMatchSetOutput::byte_match_set): <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li>   <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetByteMatchSetError>`](crate::operation::get_byte_match_set::GetByteMatchSetError)
-    pub fn get_byte_match_set(
-        &self,
-    ) -> crate::operation::get_byte_match_set::builders::GetByteMatchSetFluentBuilder {
-        crate::operation::get_byte_match_set::builders::GetByteMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_byte_match_set(&self) -> crate::operation::get_byte_match_set::builders::GetByteMatchSetFluentBuilder {
+        crate::operation::get_byte_match_set::builders::GetByteMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -45,18 +45,14 @@ impl UpdateNetworkSettingsInput {
 }
 impl UpdateNetworkSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSettingsInput`](crate::operation::update_network_settings::UpdateNetworkSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_network_settings::builders::UpdateNetworkSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_network_settings::builders::UpdateNetworkSettingsInputBuilder {
         crate::operation::update_network_settings::builders::UpdateNetworkSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNetworkSettingsInput`](crate::operation::update_network_settings::UpdateNetworkSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNetworkSettingsInputBuilder {
     pub(crate) network_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -66,18 +62,12 @@ pub struct UpdateNetworkSettingsInputBuilder {
 }
 impl UpdateNetworkSettingsInputBuilder {
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn set_network_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_settings_arn = input;
         self
     }
@@ -111,10 +101,7 @@ impl UpdateNetworkSettingsInputBuilder {
         self
     }
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -127,27 +114,19 @@ impl UpdateNetworkSettingsInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
@@ -170,18 +149,14 @@ impl UpdateNetworkSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNetworkSettingsInput`](crate::operation::update_network_settings::UpdateNetworkSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_network_settings::UpdateNetworkSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_network_settings::UpdateNetworkSettingsInput {
-                network_settings_arn: self.network_settings_arn,
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_network_settings::UpdateNetworkSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_network_settings::UpdateNetworkSettingsInput {
+            network_settings_arn: self.network_settings_arn,
+            vpc_id: self.vpc_id,
+            subnet_ids: self.subnet_ids,
+            security_group_ids: self.security_group_ids,
+            client_token: self.client_token,
+        })
     }
 }

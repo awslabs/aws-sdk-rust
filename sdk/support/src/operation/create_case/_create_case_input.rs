@@ -84,9 +84,7 @@ impl CreateCaseInput {
 
 /// A builder for [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCaseInputBuilder {
     pub(crate) subject: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
@@ -131,10 +129,7 @@ impl CreateCaseInputBuilder {
     /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
     /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
     /// </note>
-    pub fn severity_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn severity_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.severity_code = ::std::option::Option::Some(input.into());
         self
     }
@@ -142,10 +137,7 @@ impl CreateCaseInputBuilder {
     /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
     /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
     /// </note>
-    pub fn set_severity_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_severity_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.severity_code = input;
         self
     }
@@ -157,18 +149,12 @@ impl CreateCaseInputBuilder {
         &self.severity_code
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn category_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn set_category_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category_code = input;
         self
     }
@@ -177,18 +163,12 @@ impl CreateCaseInputBuilder {
         &self.category_code
     }
     /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
-    pub fn communication_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn communication_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.communication_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
-    pub fn set_communication_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_communication_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.communication_body = input;
         self
     }
@@ -201,27 +181,19 @@ impl CreateCaseInputBuilder {
     /// To override the contents of this collection use [`set_cc_email_addresses`](Self::set_cc_email_addresses).
     ///
     /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
-    pub fn cc_email_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cc_email_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cc_email_addresses.unwrap_or_default();
         v.push(input.into());
         self.cc_email_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
-    pub fn set_cc_email_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cc_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cc_email_addresses = input;
         self
     }
     /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
-    pub fn get_cc_email_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cc_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cc_email_addresses
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
@@ -253,18 +225,12 @@ impl CreateCaseInputBuilder {
         &self.issue_type
     }
     /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
-    pub fn attachment_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
-    pub fn set_attachment_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_set_id = input;
         self
     }
@@ -273,12 +239,7 @@ impl CreateCaseInputBuilder {
         &self.attachment_set_id
     }
     /// Consumes the builder and constructs a [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_case::CreateCaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_case::CreateCaseInput {
             subject: self.subject,
             service_code: self.service_code,

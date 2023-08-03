@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_vod_source::DescribeVodSourceOutput::tags): <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     ///   - [`vod_source_name(Option<String>)`](crate::operation::describe_vod_source::DescribeVodSourceOutput::vod_source_name): <p>The name of the VOD source.</p>
     /// - On failure, responds with [`SdkError<DescribeVodSourceError>`](crate::operation::describe_vod_source::DescribeVodSourceError)
-    pub fn describe_vod_source(
-        &self,
-    ) -> crate::operation::describe_vod_source::builders::DescribeVodSourceFluentBuilder {
-        crate::operation::describe_vod_source::builders::DescribeVodSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_vod_source(&self) -> crate::operation::describe_vod_source::builders::DescribeVodSourceFluentBuilder {
+        crate::operation::describe_vod_source::builders::DescribeVodSourceFluentBuilder::new(self.handle.clone())
     }
 }

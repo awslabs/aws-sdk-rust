@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::set_reason): <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
     /// - On success, responds with [`DeleteWorkerBlockOutput`](crate::operation::delete_worker_block::DeleteWorkerBlockOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkerBlockError>`](crate::operation::delete_worker_block::DeleteWorkerBlockError)
-    pub fn delete_worker_block(
-        &self,
-    ) -> crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder {
-        crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_worker_block(&self) -> crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder {
+        crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::new(self.handle.clone())
     }
 }

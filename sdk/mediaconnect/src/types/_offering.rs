@@ -59,9 +59,7 @@ impl Offering {
         self.price_units.as_ref()
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
-    pub fn resource_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ResourceSpecification> {
         self.resource_specification.as_ref()
     }
 }
@@ -74,9 +72,7 @@ impl Offering {
 
 /// A builder for [`Offering`](crate::types::Offering).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OfferingBuilder {
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<i32>,
@@ -89,18 +85,12 @@ pub struct OfferingBuilder {
 }
 impl OfferingBuilder {
     /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -128,10 +118,7 @@ impl OfferingBuilder {
         self
     }
     /// The unit of measurement for the duration of the offering.
-    pub fn set_duration_units(
-        mut self,
-        input: ::std::option::Option<crate::types::DurationUnits>,
-    ) -> Self {
+    pub fn set_duration_units(mut self, input: ::std::option::Option<crate::types::DurationUnits>) -> Self {
         self.duration_units = input;
         self
     }
@@ -154,18 +141,12 @@ impl OfferingBuilder {
         &self.offering_arn
     }
     /// A description of the offering.
-    pub fn offering_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_description = ::std::option::Option::Some(input.into());
         self
     }
     /// A description of the offering.
-    pub fn set_offering_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_description = input;
         self
     }
@@ -174,18 +155,12 @@ impl OfferingBuilder {
         &self.offering_description
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
-    pub fn price_per_unit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn price_per_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.price_per_unit = ::std::option::Option::Some(input.into());
         self
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
-    pub fn set_price_per_unit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_price_per_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.price_per_unit = input;
         self
     }
@@ -199,10 +174,7 @@ impl OfferingBuilder {
         self
     }
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
-    pub fn set_price_units(
-        mut self,
-        input: ::std::option::Option<crate::types::PriceUnits>,
-    ) -> Self {
+    pub fn set_price_units(mut self, input: ::std::option::Option<crate::types::PriceUnits>) -> Self {
         self.price_units = input;
         self
     }
@@ -216,17 +188,12 @@ impl OfferingBuilder {
         self
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
-    pub fn set_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSpecification>,
-    ) -> Self {
+    pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ResourceSpecification>) -> Self {
         self.resource_specification = input;
         self
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
-    pub fn get_resource_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceSpecification> {
+    pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ResourceSpecification> {
         &self.resource_specification
     }
     /// Consumes the builder and constructs a [`Offering`](crate::types::Offering).

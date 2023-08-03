@@ -8,8 +8,7 @@ pub struct GetMobileDeviceAccessEffectOutput {
     pub effect: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
     /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
     #[doc(hidden)]
-    pub matched_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessMatchedRule>>,
+    pub matched_rules: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessMatchedRule>>,
     _request_id: Option<String>,
 }
 impl GetMobileDeviceAccessEffectOutput {
@@ -18,9 +17,7 @@ impl GetMobileDeviceAccessEffectOutput {
         self.effect.as_ref()
     }
     /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
-    pub fn matched_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MobileDeviceAccessMatchedRule]> {
+    pub fn matched_rules(&self) -> ::std::option::Option<&[crate::types::MobileDeviceAccessMatchedRule]> {
         self.matched_rules.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for GetMobileDeviceAccessEffectOutput {
 }
 impl GetMobileDeviceAccessEffectOutput {
     /// Creates a new builder-style object to manufacture [`GetMobileDeviceAccessEffectOutput`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput).
-    pub fn builder() -> crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectOutputBuilder{
+    pub fn builder() -> crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectOutputBuilder {
         crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMobileDeviceAccessEffectOutput`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMobileDeviceAccessEffectOutputBuilder {
     pub(crate) effect: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
-    pub(crate) matched_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessMatchedRule>>,
+    pub(crate) matched_rules: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessMatchedRule>>,
     _request_id: Option<String>,
 }
 impl GetMobileDeviceAccessEffectOutputBuilder {
@@ -54,10 +48,7 @@ impl GetMobileDeviceAccessEffectOutputBuilder {
         self
     }
     /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the WorkMail organization for the simulated user parameters.</p>
-    pub fn set_effect(
-        mut self,
-        input: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
-    ) -> Self {
+    pub fn set_effect(mut self, input: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>) -> Self {
         self.effect = input;
         self
     }
@@ -77,17 +68,12 @@ impl GetMobileDeviceAccessEffectOutputBuilder {
         self
     }
     /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
-    pub fn set_matched_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessMatchedRule>>,
-    ) -> Self {
+    pub fn set_matched_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessMatchedRule>>) -> Self {
         self.matched_rules = input;
         self
     }
     /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
-    pub fn get_matched_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessMatchedRule>> {
+    pub fn get_matched_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessMatchedRule>> {
         &self.matched_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,9 +86,7 @@ impl GetMobileDeviceAccessEffectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMobileDeviceAccessEffectOutput`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput {
+    pub fn build(self) -> crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput {
         crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput {
             effect: self.effect,
             matched_rules: self.matched_rules,

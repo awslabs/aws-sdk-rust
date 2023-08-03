@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`metadata_key(Option<String>)`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput::metadata_key): <p>The metadata key.</p>
     ///   - [`metadata_value(Option<String>)`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput::metadata_value): <p>The value of the metadata key.</p>
     /// - On failure, responds with [`SdkError<PutSchemaVersionMetadataError>`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataError)
-    pub fn put_schema_version_metadata(&self) -> crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataFluentBuilder{
+    pub fn put_schema_version_metadata(&self) -> crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataFluentBuilder {
         crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataFluentBuilder::new(self.handle.clone())
     }
 }

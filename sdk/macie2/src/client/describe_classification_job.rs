@@ -27,7 +27,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_classification_job::DescribeClassificationJobOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
     ///   - [`user_paused_details(Option<UserPausedDetails>)`](crate::operation::describe_classification_job::DescribeClassificationJobOutput::user_paused_details): <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
     /// - On failure, responds with [`SdkError<DescribeClassificationJobError>`](crate::operation::describe_classification_job::DescribeClassificationJobError)
-    pub fn describe_classification_job(&self) -> crate::operation::describe_classification_job::builders::DescribeClassificationJobFluentBuilder{
+    pub fn describe_classification_job(&self) -> crate::operation::describe_classification_job::builders::DescribeClassificationJobFluentBuilder {
         crate::operation::describe_classification_job::builders::DescribeClassificationJobFluentBuilder::new(self.handle.clone())
     }
 }

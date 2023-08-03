@@ -45,10 +45,7 @@ pub fn ser_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_search_principal_type::ser_search_principal_type(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_search_principal_type::ser_search_principal_type(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }

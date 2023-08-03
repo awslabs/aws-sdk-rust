@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`job_definitions(Option<Vec<JobDefinition>>)`](crate::operation::describe_job_definitions::DescribeJobDefinitionsOutput::job_definitions): <p>The list of job definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_job_definitions::DescribeJobDefinitionsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeJobDefinitionsError>`](crate::operation::describe_job_definitions::DescribeJobDefinitionsError)
-    pub fn describe_job_definitions(
-        &self,
-    ) -> crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsFluentBuilder
-    {
+    pub fn describe_job_definitions(&self) -> crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsFluentBuilder {
         crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

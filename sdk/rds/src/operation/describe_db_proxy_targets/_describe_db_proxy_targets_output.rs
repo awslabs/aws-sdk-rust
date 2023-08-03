@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeDbProxyTargetsOutput {
 }
 impl DescribeDbProxyTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetsOutput`](crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_proxy_targets::builders::DescribeDbProxyTargetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_db_proxy_targets::builders::DescribeDbProxyTargetsOutputBuilder {
         crate::operation::describe_db_proxy_targets::builders::DescribeDbProxyTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbProxyTargetsOutput`](crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbProxyTargetsOutputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeDbProxyTargetsOutputBuilder {
         self
     }
     /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>>) -> Self {
         self.targets = input;
         self
     }
     /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
-    pub fn get_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>> {
         &self.targets
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -95,9 +86,7 @@ impl DescribeDbProxyTargetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbProxyTargetsOutput`](crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput {
+    pub fn build(self) -> crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput {
         crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput {
             targets: self.targets,
             marker: self.marker,

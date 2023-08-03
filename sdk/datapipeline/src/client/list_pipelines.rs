@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::list_pipelines::ListPipelinesOutput::marker): <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
     ///   - [`has_more_results(bool)`](crate::operation::list_pipelines::ListPipelinesOutput::has_more_results): <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
-    pub fn list_pipelines(
-        &self,
-    ) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
-        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_pipelines(&self) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
+        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
     }
 }

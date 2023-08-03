@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEntityPersonasOutput {
 }
 impl ListEntityPersonasOutput {
     /// Creates a new builder-style object to manufacture [`ListEntityPersonasOutput`](crate::operation::list_entity_personas::ListEntityPersonasOutput).
-    pub fn builder(
-    ) -> crate::operation::list_entity_personas::builders::ListEntityPersonasOutputBuilder {
+    pub fn builder() -> crate::operation::list_entity_personas::builders::ListEntityPersonasOutputBuilder {
         crate::operation::list_entity_personas::builders::ListEntityPersonasOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntityPersonasOutput`](crate::operation::list_entity_personas::ListEntityPersonasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntityPersonasOutputBuilder {
     pub(crate) summary_items: ::std::option::Option<::std::vec::Vec<crate::types::PersonasSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListEntityPersonasOutputBuilder {
         self
     }
     /// <p>An array of summary information for one or more users or groups.</p>
-    pub fn set_summary_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PersonasSummary>>,
-    ) -> Self {
+    pub fn set_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PersonasSummary>>) -> Self {
         self.summary_items = input;
         self
     }
     /// <p>An array of summary information for one or more users or groups.</p>
-    pub fn get_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PersonasSummary>> {
+    pub fn get_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PersonasSummary>> {
         &self.summary_items
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>

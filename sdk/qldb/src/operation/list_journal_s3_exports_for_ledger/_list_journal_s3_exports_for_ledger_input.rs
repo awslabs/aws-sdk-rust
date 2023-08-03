@@ -29,16 +29,14 @@ impl ListJournalS3ExportsForLedgerInput {
 }
 impl ListJournalS3ExportsForLedgerInput {
     /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsForLedgerInput`](crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerInput).
-    pub fn builder() -> crate::operation::list_journal_s3_exports_for_ledger::builders::ListJournalS3ExportsForLedgerInputBuilder{
+    pub fn builder() -> crate::operation::list_journal_s3_exports_for_ledger::builders::ListJournalS3ExportsForLedgerInputBuilder {
         crate::operation::list_journal_s3_exports_for_ledger::builders::ListJournalS3ExportsForLedgerInputBuilder::default()
     }
 }
 
 /// A builder for [`ListJournalS3ExportsForLedgerInput`](crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJournalS3ExportsForLedgerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -94,15 +92,10 @@ impl ListJournalS3ExportsForLedgerInputBuilder {
         crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerInput {
-                name: self.name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerInput {
+            name: self.name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

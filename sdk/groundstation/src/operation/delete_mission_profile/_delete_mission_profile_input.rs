@@ -16,34 +16,25 @@ impl DeleteMissionProfileInput {
 }
 impl DeleteMissionProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteMissionProfileInput`](crate::operation::delete_mission_profile::DeleteMissionProfileInput).
-    pub fn builder(
-    ) -> crate::operation::delete_mission_profile::builders::DeleteMissionProfileInputBuilder {
+    pub fn builder() -> crate::operation::delete_mission_profile::builders::DeleteMissionProfileInputBuilder {
         crate::operation::delete_mission_profile::builders::DeleteMissionProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMissionProfileInput`](crate::operation::delete_mission_profile::DeleteMissionProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMissionProfileInputBuilder {
     pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMissionProfileInputBuilder {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn set_mission_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mission_profile_id = input;
         self
     }
@@ -54,14 +45,10 @@ impl DeleteMissionProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMissionProfileInput`](crate::operation::delete_mission_profile::DeleteMissionProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_mission_profile::DeleteMissionProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_mission_profile::DeleteMissionProfileInput {
-                mission_profile_id: self.mission_profile_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_mission_profile::DeleteMissionProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_mission_profile::DeleteMissionProfileInput {
+            mission_profile_id: self.mission_profile_id,
+        })
     }
 }

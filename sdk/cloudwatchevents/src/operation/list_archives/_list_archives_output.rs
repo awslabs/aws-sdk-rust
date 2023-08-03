@@ -35,9 +35,7 @@ impl ListArchivesOutput {
 
 /// A builder for [`ListArchivesOutput`](crate::operation::list_archives::ListArchivesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListArchivesOutputBuilder {
     pub(crate) archives: ::std::option::Option<::std::vec::Vec<crate::types::Archive>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListArchivesOutputBuilder {
         self
     }
     /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
-    pub fn set_archives(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Archive>>,
-    ) -> Self {
+    pub fn set_archives(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Archive>>) -> Self {
         self.archives = input;
         self
     }

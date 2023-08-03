@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`CreateLicenseConversionTaskForResourceOutput`](crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput) with field(s):
     ///   - [`license_conversion_task_id(Option<String>)`](crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput::license_conversion_task_id): <p>The ID of the created license type conversion task.</p>
     /// - On failure, responds with [`SdkError<CreateLicenseConversionTaskForResourceError>`](crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceError)
-    pub fn create_license_conversion_task_for_resource(&self) -> crate::operation::create_license_conversion_task_for_resource::builders::CreateLicenseConversionTaskForResourceFluentBuilder{
-        crate::operation::create_license_conversion_task_for_resource::builders::CreateLicenseConversionTaskForResourceFluentBuilder::new(self.handle.clone())
+    pub fn create_license_conversion_task_for_resource(
+        &self,
+    ) -> crate::operation::create_license_conversion_task_for_resource::builders::CreateLicenseConversionTaskForResourceFluentBuilder {
+        crate::operation::create_license_conversion_task_for_resource::builders::CreateLicenseConversionTaskForResourceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

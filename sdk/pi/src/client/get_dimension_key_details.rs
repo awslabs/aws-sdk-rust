@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetDimensionKeyDetailsOutput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput) with field(s):
     ///   - [`dimensions(Option<Vec<DimensionKeyDetail>>)`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput::dimensions): <p>The details for the requested dimensions.</p>
     /// - On failure, responds with [`SdkError<GetDimensionKeyDetailsError>`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError)
-    pub fn get_dimension_key_details(
-        &self,
-    ) -> crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsFluentBuilder
-    {
+    pub fn get_dimension_key_details(&self) -> crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsFluentBuilder {
         crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsFluentBuilder::new(self.handle.clone())
     }
 }

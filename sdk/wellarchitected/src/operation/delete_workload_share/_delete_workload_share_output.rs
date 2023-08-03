@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWorkloadShareOutput {
 }
 impl DeleteWorkloadShareOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkloadShareOutput`](crate::operation::delete_workload_share::DeleteWorkloadShareOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_workload_share::builders::DeleteWorkloadShareOutputBuilder {
-        crate::operation::delete_workload_share::builders::DeleteWorkloadShareOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_workload_share::builders::DeleteWorkloadShareOutputBuilder {
+        crate::operation::delete_workload_share::builders::DeleteWorkloadShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkloadShareOutput`](crate::operation::delete_workload_share::DeleteWorkloadShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkloadShareOutputBuilder {
     _request_id: Option<String>,
 }

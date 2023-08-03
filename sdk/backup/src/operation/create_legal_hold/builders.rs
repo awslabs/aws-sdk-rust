@@ -10,10 +10,7 @@ impl CreateLegalHoldInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_legal_hold::CreateLegalHoldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_legal_hold::CreateLegalHoldError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_legal_hold::CreateLegalHoldError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_legal_hold();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateLegalHoldFluentBuilder {
         }
     }
     /// Access the CreateLegalHold as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_legal_hold::builders::CreateLegalHoldInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_legal_hold::builders::CreateLegalHoldInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateLegalHoldFluentBuilder {
             crate::operation::create_legal_hold::CreateLegalHold,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_legal_hold::CreateLegalHoldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_legal_hold::CreateLegalHoldError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateLegalHoldFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateLegalHoldFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_legal_hold::CreateLegalHoldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_legal_hold::CreateLegalHoldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_legal_hold::CreateLegalHoldError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateLegalHoldFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_legal_hold::CreateLegalHoldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_legal_hold::CreateLegalHoldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_legal_hold::CreateLegalHoldError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateLegalHoldFluentBuilder {
             crate::operation::create_legal_hold::CreateLegalHold,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_legal_hold::CreateLegalHoldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_legal_hold::CreateLegalHoldError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl CreateLegalHoldFluentBuilder {
         self.inner.get_description()
     }
     /// <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
@@ -176,17 +154,12 @@ impl CreateLegalHoldFluentBuilder {
         self
     }
     /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
-    pub fn set_recovery_point_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::RecoveryPointSelection>,
-    ) -> Self {
+    pub fn set_recovery_point_selection(mut self, input: ::std::option::Option<crate::types::RecoveryPointSelection>) -> Self {
         self.inner = self.inner.set_recovery_point_selection(input);
         self
     }
     /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
-    pub fn get_recovery_point_selection(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecoveryPointSelection> {
+    pub fn get_recovery_point_selection(&self) -> &::std::option::Option<crate::types::RecoveryPointSelection> {
         self.inner.get_recovery_point_selection()
     }
     /// Adds a key-value pair to `Tags`.
@@ -194,30 +167,17 @@ impl CreateLegalHoldFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

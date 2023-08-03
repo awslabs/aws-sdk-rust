@@ -29,17 +29,14 @@ impl AssociateChannelFlowInput {
 }
 impl AssociateChannelFlowInput {
     /// Creates a new builder-style object to manufacture [`AssociateChannelFlowInput`](crate::operation::associate_channel_flow::AssociateChannelFlowInput).
-    pub fn builder(
-    ) -> crate::operation::associate_channel_flow::builders::AssociateChannelFlowInputBuilder {
+    pub fn builder() -> crate::operation::associate_channel_flow::builders::AssociateChannelFlowInputBuilder {
         crate::operation::associate_channel_flow::builders::AssociateChannelFlowInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateChannelFlowInput`](crate::operation::associate_channel_flow::AssociateChannelFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateChannelFlowInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_flow_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl AssociateChannelFlowInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_flow_arn = input;
         self
     }
@@ -97,16 +88,12 @@ impl AssociateChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`AssociateChannelFlowInput`](crate::operation::associate_channel_flow::AssociateChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_channel_flow::AssociateChannelFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_channel_flow::AssociateChannelFlowInput {
-                channel_arn: self.channel_arn,
-                channel_flow_arn: self.channel_flow_arn,
-                chime_bearer: self.chime_bearer,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_channel_flow::AssociateChannelFlowInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_channel_flow::AssociateChannelFlowInput {
+            channel_arn: self.channel_arn,
+            channel_flow_arn: self.channel_flow_arn,
+            chime_bearer: self.chime_bearer,
+        })
     }
 }

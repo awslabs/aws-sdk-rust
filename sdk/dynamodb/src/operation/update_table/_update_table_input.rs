@@ -6,8 +6,7 @@
 pub struct UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
     #[doc(hidden)]
-    pub attribute_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
+    pub attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
     /// <p>The name of the table to be updated.</p>
     #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
@@ -30,8 +29,7 @@ pub struct UpdateTableInput {
     /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     #[doc(hidden)]
-    pub global_secondary_index_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>>,
+    pub global_secondary_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>>,
     /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
     /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
@@ -44,8 +42,7 @@ pub struct UpdateTableInput {
     /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
     #[doc(hidden)]
-    pub replica_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
+    pub replica_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     #[doc(hidden)]
     pub table_class: ::std::option::Option<crate::types::TableClass>,
@@ -55,9 +52,7 @@ pub struct UpdateTableInput {
 }
 impl UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
-    pub fn attribute_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AttributeDefinition]> {
+    pub fn attribute_definitions(&self) -> ::std::option::Option<&[crate::types::AttributeDefinition]> {
         self.attribute_definitions.as_deref()
     }
     /// <p>The name of the table to be updated.</p>
@@ -73,9 +68,7 @@ impl UpdateTableInput {
         self.billing_mode.as_ref()
     }
     /// <p>The new provisioned throughput settings for the specified table or index.</p>
-    pub fn provisioned_throughput(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
+    pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
@@ -86,17 +79,13 @@ impl UpdateTableInput {
     /// </ul>
     /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    pub fn global_secondary_index_updates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GlobalSecondaryIndexUpdate]> {
+    pub fn global_secondary_index_updates(&self) -> ::std::option::Option<&[crate::types::GlobalSecondaryIndexUpdate]> {
         self.global_secondary_index_updates.as_deref()
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
     /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
-    pub fn stream_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamSpecification> {
+    pub fn stream_specification(&self) -> ::std::option::Option<&crate::types::StreamSpecification> {
         self.stream_specification.as_ref()
     }
     /// <p>The new server-side encryption settings for the specified table.</p>
@@ -106,9 +95,7 @@ impl UpdateTableInput {
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
     /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
-    pub fn replica_updates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationGroupUpdate]> {
+    pub fn replica_updates(&self) -> ::std::option::Option<&[crate::types::ReplicationGroupUpdate]> {
         self.replica_updates.as_deref()
     }
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
@@ -129,21 +116,16 @@ impl UpdateTableInput {
 
 /// A builder for [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTableInputBuilder {
-    pub(crate) attribute_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
+    pub(crate) attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
-    pub(crate) global_secondary_index_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>>,
+    pub(crate) global_secondary_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>>,
     pub(crate) stream_specification: ::std::option::Option<crate::types::StreamSpecification>,
     pub(crate) sse_specification: ::std::option::Option<crate::types::SseSpecification>,
-    pub(crate) replica_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
+    pub(crate) replica_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
     pub(crate) table_class: ::std::option::Option<crate::types::TableClass>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
 }
@@ -160,17 +142,12 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
-    pub fn set_attribute_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
-    ) -> Self {
+    pub fn set_attribute_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>) -> Self {
         self.attribute_definitions = input;
         self
     }
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
-    pub fn get_attribute_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>> {
+    pub fn get_attribute_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>> {
         &self.attribute_definitions
     }
     /// <p>The name of the table to be updated.</p>
@@ -201,10 +178,7 @@ impl UpdateTableInputBuilder {
     /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
-    pub fn set_billing_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingMode>,
-    ) -> Self {
+    pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
         self.billing_mode = input;
         self
     }
@@ -222,17 +196,12 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>The new provisioned throughput settings for the specified table or index.</p>
-    pub fn set_provisioned_throughput(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedThroughput>,
-    ) -> Self {
+    pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
         self.provisioned_throughput = input;
         self
     }
     /// <p>The new provisioned throughput settings for the specified table or index.</p>
-    pub fn get_provisioned_throughput(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+    pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         &self.provisioned_throughput
     }
     /// Appends an item to `global_secondary_index_updates`.
@@ -247,10 +216,7 @@ impl UpdateTableInputBuilder {
     /// </ul>
     /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    pub fn global_secondary_index_updates(
-        mut self,
-        input: crate::types::GlobalSecondaryIndexUpdate,
-    ) -> Self {
+    pub fn global_secondary_index_updates(mut self, input: crate::types::GlobalSecondaryIndexUpdate) -> Self {
         let mut v = self.global_secondary_index_updates.unwrap_or_default();
         v.push(input);
         self.global_secondary_index_updates = ::std::option::Option::Some(v);
@@ -279,9 +245,7 @@ impl UpdateTableInputBuilder {
     /// </ul>
     /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    pub fn get_global_secondary_index_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>> {
+    pub fn get_global_secondary_index_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>> {
         &self.global_secondary_index_updates
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
@@ -294,19 +258,14 @@ impl UpdateTableInputBuilder {
     /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
     /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
-    pub fn set_stream_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamSpecification>,
-    ) -> Self {
+    pub fn set_stream_specification(mut self, input: ::std::option::Option<crate::types::StreamSpecification>) -> Self {
         self.stream_specification = input;
         self
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
     /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
-    pub fn get_stream_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamSpecification> {
+    pub fn get_stream_specification(&self) -> &::std::option::Option<crate::types::StreamSpecification> {
         &self.stream_specification
     }
     /// <p>The new server-side encryption settings for the specified table.</p>
@@ -315,10 +274,7 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>The new server-side encryption settings for the specified table.</p>
-    pub fn set_sse_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::SseSpecification>,
-    ) -> Self {
+    pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::SseSpecification>) -> Self {
         self.sse_specification = input;
         self
     }
@@ -342,19 +298,14 @@ impl UpdateTableInputBuilder {
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
     /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
-    pub fn set_replica_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
-    ) -> Self {
+    pub fn set_replica_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>) -> Self {
         self.replica_updates = input;
         self
     }
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
     /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
-    pub fn get_replica_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>> {
+    pub fn get_replica_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>> {
         &self.replica_updates
     }
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
@@ -363,10 +314,7 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
-    pub fn set_table_class(
-        mut self,
-        input: ::std::option::Option<crate::types::TableClass>,
-    ) -> Self {
+    pub fn set_table_class(mut self, input: ::std::option::Option<crate::types::TableClass>) -> Self {
         self.table_class = input;
         self
     }
@@ -389,12 +337,7 @@ impl UpdateTableInputBuilder {
         &self.deletion_protection_enabled
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_table::UpdateTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
             attribute_definitions: self.attribute_definitions,
             table_name: self.table_name,

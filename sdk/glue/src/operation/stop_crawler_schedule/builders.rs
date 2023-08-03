@@ -37,9 +37,7 @@ impl StopCrawlerScheduleFluentBuilder {
         }
     }
     /// Access the StopCrawlerSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StopCrawlerScheduleFluentBuilder {
             crate::operation::stop_crawler_schedule::StopCrawlerSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_crawler_schedule::StopCrawlerScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_crawler_schedule::StopCrawlerScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StopCrawlerScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StopCrawlerScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_crawler_schedule::StopCrawlerScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_crawler_schedule::StopCrawlerScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_crawler_schedule::StopCrawlerScheduleError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StopCrawlerScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_crawler_schedule::StopCrawlerScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_crawler_schedule::StopCrawlerScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_crawler_schedule::StopCrawlerScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl StopCrawlerScheduleFluentBuilder {
             crate::operation::stop_crawler_schedule::StopCrawlerSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_crawler_schedule::StopCrawlerScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_crawler_schedule::StopCrawlerScheduleError>,
     > {
         self.customize_middleware().await
     }

@@ -37,10 +37,7 @@ impl ExecuteScheduledQueryFluentBuilder {
         }
     }
     /// Access the ExecuteScheduledQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ExecuteScheduledQueryFluentBuilder {
             crate::operation::execute_scheduled_query::ExecuteScheduledQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_scheduled_query::ExecuteScheduledQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ExecuteScheduledQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ExecuteScheduledQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_scheduled_query::ExecuteScheduledQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_scheduled_query::ExecuteScheduledQueryError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ExecuteScheduledQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_scheduled_query::ExecuteScheduledQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_scheduled_query::ExecuteScheduledQueryError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ExecuteScheduledQueryFluentBuilder {
             crate::operation::execute_scheduled_query::ExecuteScheduledQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_scheduled_query::ExecuteScheduledQueryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ARN of the scheduled query.</p>
-    pub fn scheduled_query_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_query_arn(input.into());
         self
     }
     /// <p>ARN of the scheduled query.</p>
-    pub fn set_scheduled_query_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_query_arn(input);
         self
     }
@@ -149,10 +129,7 @@ impl ExecuteScheduledQueryFluentBuilder {
         self
     }
     /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
-    pub fn set_invocation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_invocation_time(input);
         self
     }

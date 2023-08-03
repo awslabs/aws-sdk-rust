@@ -29,16 +29,14 @@ impl ListQualificationRequestsInput {
 }
 impl ListQualificationRequestsInput {
     /// Creates a new builder-style object to manufacture [`ListQualificationRequestsInput`](crate::operation::list_qualification_requests::ListQualificationRequestsInput).
-    pub fn builder() -> crate::operation::list_qualification_requests::builders::ListQualificationRequestsInputBuilder{
+    pub fn builder() -> crate::operation::list_qualification_requests::builders::ListQualificationRequestsInputBuilder {
         crate::operation::list_qualification_requests::builders::ListQualificationRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListQualificationRequestsInput`](crate::operation::list_qualification_requests::ListQualificationRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQualificationRequestsInputBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListQualificationRequestsInputBuilder {
 }
 impl ListQualificationRequestsInputBuilder {
     /// <p>The ID of the QualificationType.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the QualificationType.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_type_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListQualificationRequestsInputBuilder {
         crate::operation::list_qualification_requests::ListQualificationRequestsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_qualification_requests::ListQualificationRequestsInput {
-                qualification_type_id: self.qualification_type_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_qualification_requests::ListQualificationRequestsInput {
+            qualification_type_id: self.qualification_type_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

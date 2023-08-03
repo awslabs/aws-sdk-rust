@@ -15,10 +15,7 @@ pub fn ser_update_flow_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_destination_flow_config::ser_destination_flow_config(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_destination_flow_config::ser_destination_flow_config(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -30,19 +27,13 @@ pub fn ser_update_flow_input(
     if let Some(var_8) = &input.metadata_catalog_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("metadataCatalogConfig").start_object();
-        crate::protocol_serde::shape_metadata_catalog_config::ser_metadata_catalog_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_metadata_catalog_config::ser_metadata_catalog_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.source_flow_config {
         #[allow(unused_mut)]
         let mut object_11 = object.key("sourceFlowConfig").start_object();
-        crate::protocol_serde::shape_source_flow_config::ser_source_flow_config(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_source_flow_config::ser_source_flow_config(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.tasks {

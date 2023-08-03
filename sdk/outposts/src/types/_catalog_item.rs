@@ -24,8 +24,7 @@ pub struct CatalogItem {
     pub supported_uplink_gbps: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p> The supported storage options for the catalog item. </p>
     #[doc(hidden)]
-    pub supported_storage:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
+    pub supported_storage: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
 }
 impl CatalogItem {
     /// <p> The ID of the catalog item. </p>
@@ -53,9 +52,7 @@ impl CatalogItem {
         self.supported_uplink_gbps.as_deref()
     }
     /// <p> The supported storage options for the catalog item. </p>
-    pub fn supported_storage(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SupportedStorageEnum]> {
+    pub fn supported_storage(&self) -> ::std::option::Option<&[crate::types::SupportedStorageEnum]> {
         self.supported_storage.as_deref()
     }
 }
@@ -68,9 +65,7 @@ impl CatalogItem {
 
 /// A builder for [`CatalogItem`](crate::types::CatalogItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CatalogItemBuilder {
     pub(crate) catalog_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) item_status: ::std::option::Option<crate::types::CatalogItemStatus>,
@@ -78,23 +73,16 @@ pub struct CatalogItemBuilder {
     pub(crate) power_kva: ::std::option::Option<f32>,
     pub(crate) weight_lbs: ::std::option::Option<i32>,
     pub(crate) supported_uplink_gbps: ::std::option::Option<::std::vec::Vec<i32>>,
-    pub(crate) supported_storage:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
+    pub(crate) supported_storage: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
 }
 impl CatalogItemBuilder {
     /// <p> The ID of the catalog item. </p>
-    pub fn catalog_item_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn catalog_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the catalog item. </p>
-    pub fn set_catalog_item_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_catalog_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_item_id = input;
         self
     }
@@ -108,10 +96,7 @@ impl CatalogItemBuilder {
         self
     }
     /// <p> The status of a catalog item. </p>
-    pub fn set_item_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CatalogItemStatus>,
-    ) -> Self {
+    pub fn set_item_status(mut self, input: ::std::option::Option<crate::types::CatalogItemStatus>) -> Self {
         self.item_status = input;
         self
     }
@@ -131,17 +116,12 @@ impl CatalogItemBuilder {
         self
     }
     /// <p> Information about the EC2 capacity of an item. </p>
-    pub fn set_ec2_capacities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2Capacity>>,
-    ) -> Self {
+    pub fn set_ec2_capacities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2Capacity>>) -> Self {
         self.ec2_capacities = input;
         self
     }
     /// <p> Information about the EC2 capacity of an item. </p>
-    pub fn get_ec2_capacities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2Capacity>> {
+    pub fn get_ec2_capacities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2Capacity>> {
         &self.ec2_capacities
     }
     /// <p> Information about the power draw of an item. </p>
@@ -184,10 +164,7 @@ impl CatalogItemBuilder {
         self
     }
     /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
-    pub fn set_supported_uplink_gbps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_supported_uplink_gbps(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.supported_uplink_gbps = input;
         self
     }
@@ -207,17 +184,12 @@ impl CatalogItemBuilder {
         self
     }
     /// <p> The supported storage options for the catalog item. </p>
-    pub fn set_supported_storage(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
-    ) -> Self {
+    pub fn set_supported_storage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>) -> Self {
         self.supported_storage = input;
         self
     }
     /// <p> The supported storage options for the catalog item. </p>
-    pub fn get_supported_storage(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>> {
+    pub fn get_supported_storage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>> {
         &self.supported_storage
     }
     /// Consumes the builder and constructs a [`CatalogItem`](crate::types::CatalogItem).

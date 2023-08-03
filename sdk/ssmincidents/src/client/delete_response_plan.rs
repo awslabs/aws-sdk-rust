@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_response_plan::builders::DeleteResponsePlanFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_response_plan::builders::DeleteResponsePlanFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
     /// - On success, responds with [`DeleteResponsePlanOutput`](crate::operation::delete_response_plan::DeleteResponsePlanOutput)
     /// - On failure, responds with [`SdkError<DeleteResponsePlanError>`](crate::operation::delete_response_plan::DeleteResponsePlanError)
-    pub fn delete_response_plan(
-        &self,
-    ) -> crate::operation::delete_response_plan::builders::DeleteResponsePlanFluentBuilder {
-        crate::operation::delete_response_plan::builders::DeleteResponsePlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_response_plan(&self) -> crate::operation::delete_response_plan::builders::DeleteResponsePlanFluentBuilder {
+        crate::operation::delete_response_plan::builders::DeleteResponsePlanFluentBuilder::new(self.handle.clone())
     }
 }

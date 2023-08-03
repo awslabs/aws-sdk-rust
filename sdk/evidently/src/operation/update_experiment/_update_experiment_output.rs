@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateExperimentOutput {
 }
 impl UpdateExperimentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateExperimentOutput`](crate::operation::update_experiment::UpdateExperimentOutput).
-    pub fn builder() -> crate::operation::update_experiment::builders::UpdateExperimentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_experiment::builders::UpdateExperimentOutputBuilder {
         crate::operation::update_experiment::builders::UpdateExperimentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateExperimentOutput`](crate::operation::update_experiment::UpdateExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExperimentOutputBuilder {
     pub(crate) experiment: ::std::option::Option<crate::types::Experiment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateExperimentOutputBuilder {
         self
     }
     /// <p>A structure containing the configuration details of the experiment that was updated.</p>
-    pub fn set_experiment(
-        mut self,
-        input: ::std::option::Option<crate::types::Experiment>,
-    ) -> Self {
+    pub fn set_experiment(mut self, input: ::std::option::Option<crate::types::Experiment>) -> Self {
         self.experiment = input;
         self
     }

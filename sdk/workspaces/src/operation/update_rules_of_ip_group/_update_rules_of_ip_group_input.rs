@@ -22,18 +22,14 @@ impl UpdateRulesOfIpGroupInput {
 }
 impl UpdateRulesOfIpGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateRulesOfIpGroupInput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder {
         crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRulesOfIpGroupInput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRulesOfIpGroupInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
@@ -65,31 +61,22 @@ impl UpdateRulesOfIpGroupInputBuilder {
         self
     }
     /// <p>One or more rules.</p>
-    pub fn set_user_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
-    ) -> Self {
+    pub fn set_user_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>) -> Self {
         self.user_rules = input;
         self
     }
     /// <p>One or more rules.</p>
-    pub fn get_user_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+    pub fn get_user_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
         &self.user_rules
     }
     /// Consumes the builder and constructs a [`UpdateRulesOfIpGroupInput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput {
-                group_id: self.group_id,
-                user_rules: self.user_rules,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput {
+            group_id: self.group_id,
+            user_rules: self.user_rules,
+        })
     }
 }

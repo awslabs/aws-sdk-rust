@@ -39,9 +39,7 @@ impl DeletePolicyVersionFluentBuilder {
         }
     }
     /// Access the DeletePolicyVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_policy_version::builders::DeletePolicyVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_policy_version::builders::DeletePolicyVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DeletePolicyVersionFluentBuilder {
             crate::operation::delete_policy_version::DeletePolicyVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_policy_version::DeletePolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy_version::DeletePolicyVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DeletePolicyVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DeletePolicyVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_policy_version::DeletePolicyVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_policy_version::DeletePolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy_version::DeletePolicyVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DeletePolicyVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_policy_version::DeletePolicyVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_policy_version::DeletePolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy_version::DeletePolicyVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl DeletePolicyVersionFluentBuilder {
             crate::operation::delete_policy_version::DeletePolicyVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_policy_version::DeletePolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy_version::DeletePolicyVersionError>,
     > {
         self.customize_middleware().await
     }

@@ -53,9 +53,7 @@ pub fn ser_create_association_input(
         object.key("AssociationName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.automation_target_parameter_name {
-        object
-            .key("AutomationTargetParameterName")
-            .string(var_18.as_str());
+        object.key("AutomationTargetParameterName").string(var_18.as_str());
     }
     if let Some(var_19) = &input.max_errors {
         object.key("MaxErrors").string(var_19.as_str());
@@ -87,10 +85,7 @@ pub fn ser_create_association_input(
             {
                 #[allow(unused_mut)]
                 let mut object_30 = array_28.value().start_object();
-                crate::protocol_serde::shape_target_location::ser_target_location(
-                    &mut object_30,
-                    item_29,
-                )?;
+                crate::protocol_serde::shape_target_location::ser_target_location(&mut object_30, item_29)?;
                 object_30.finish();
             }
         }
@@ -139,10 +134,7 @@ pub fn ser_create_association_input(
     if let Some(var_44) = &input.alarm_configuration {
         #[allow(unused_mut)]
         let mut object_45 = object.key("AlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(
-            &mut object_45,
-            var_44,
-        )?;
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_45, var_44)?;
         object_45.finish();
     }
     Ok(())

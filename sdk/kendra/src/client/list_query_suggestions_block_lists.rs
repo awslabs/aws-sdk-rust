@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`block_list_summary_items(Option<Vec<QuerySuggestionsBlockListSummary>>)`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput::block_list_summary_items): <p>Summary items for a block list.</p>  <p>This includes summary items on the block list ID, block list name, when the block list was created, when the block list was last updated, and the count of block words/phrases in the block list.</p>  <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of block lists.</p>
     /// - On failure, responds with [`SdkError<ListQuerySuggestionsBlockListsError>`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError)
-    pub fn list_query_suggestions_block_lists(&self) -> crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder{
+    pub fn list_query_suggestions_block_lists(
+        &self,
+    ) -> crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder {
         crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder::new(self.handle.clone())
     }
 }

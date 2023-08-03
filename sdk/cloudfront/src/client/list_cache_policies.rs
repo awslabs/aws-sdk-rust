@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ListCachePoliciesOutput`](crate::operation::list_cache_policies::ListCachePoliciesOutput) with field(s):
     ///   - [`cache_policy_list(Option<CachePolicyList>)`](crate::operation::list_cache_policies::ListCachePoliciesOutput::cache_policy_list): <p>A list of cache policies.</p>
     /// - On failure, responds with [`SdkError<ListCachePoliciesError>`](crate::operation::list_cache_policies::ListCachePoliciesError)
-    pub fn list_cache_policies(
-        &self,
-    ) -> crate::operation::list_cache_policies::builders::ListCachePoliciesFluentBuilder {
-        crate::operation::list_cache_policies::builders::ListCachePoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_cache_policies(&self) -> crate::operation::list_cache_policies::builders::ListCachePoliciesFluentBuilder {
+        crate::operation::list_cache_policies::builders::ListCachePoliciesFluentBuilder::new(self.handle.clone())
     }
 }

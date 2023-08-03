@@ -58,9 +58,7 @@ impl EndpointLocation {
 
 /// A builder for [`EndpointLocation`](crate::types::EndpointLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointLocationBuilder {
     pub(crate) city: ::std::option::Option<::std::string::String>,
     pub(crate) country: ::std::option::Option<::std::string::String>,

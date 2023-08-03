@@ -17,9 +17,7 @@ pub struct ListMlTransformsInput {
     pub sort: ::std::option::Option<crate::types::TransformSortCriteria>,
     /// <p>Specifies to return only these tagged resources.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListMlTransformsInput {
     /// <p>A continuation token, if this is a continuation request.</p>
@@ -39,35 +37,26 @@ impl ListMlTransformsInput {
         self.sort.as_ref()
     }
     /// <p>Specifies to return only these tagged resources.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ListMlTransformsInput {
     /// Creates a new builder-style object to manufacture [`ListMlTransformsInput`](crate::operation::list_ml_transforms::ListMlTransformsInput).
-    pub fn builder() -> crate::operation::list_ml_transforms::builders::ListMlTransformsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_ml_transforms::builders::ListMlTransformsInputBuilder {
         crate::operation::list_ml_transforms::builders::ListMlTransformsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMlTransformsInput`](crate::operation::list_ml_transforms::ListMlTransformsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMlTransformsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filter: ::std::option::Option<crate::types::TransformFilterCriteria>,
     pub(crate) sort: ::std::option::Option<crate::types::TransformSortCriteria>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListMlTransformsInputBuilder {
     /// <p>A continuation token, if this is a continuation request.</p>
@@ -104,10 +93,7 @@ impl ListMlTransformsInputBuilder {
         self
     }
     /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TransformFilterCriteria>) -> Self {
         self.filter = input;
         self
     }
@@ -121,10 +107,7 @@ impl ListMlTransformsInputBuilder {
         self
     }
     /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformSortCriteria>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::TransformSortCriteria>) -> Self {
         self.sort = input;
         self
     }
@@ -137,49 +120,31 @@ impl ListMlTransformsInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Specifies to return only these tagged resources.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Specifies to return only these tagged resources.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Specifies to return only these tagged resources.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ListMlTransformsInput`](crate::operation::list_ml_transforms::ListMlTransformsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ml_transforms::ListMlTransformsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_ml_transforms::ListMlTransformsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filter: self.filter,
-                sort: self.sort,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_ml_transforms::ListMlTransformsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_ml_transforms::ListMlTransformsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filter: self.filter,
+            sort: self.sort,
+            tags: self.tags,
+        })
     }
 }

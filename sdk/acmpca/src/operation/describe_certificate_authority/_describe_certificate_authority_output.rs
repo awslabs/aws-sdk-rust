@@ -10,9 +10,7 @@ pub struct DescribeCertificateAuthorityOutput {
 }
 impl DescribeCertificateAuthorityOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
-    pub fn certificate_authority(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateAuthority> {
+    pub fn certificate_authority(&self) -> ::std::option::Option<&crate::types::CertificateAuthority> {
         self.certificate_authority.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeCertificateAuthorityOutput {
 }
 impl DescribeCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityOutput`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityOutputBuilder {
         crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCertificateAuthorityOutput`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificateAuthorityOutputBuilder {
     pub(crate) certificate_authority: ::std::option::Option<crate::types::CertificateAuthority>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DescribeCertificateAuthorityOutputBuilder {
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
-    pub fn set_certificate_authority(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateAuthority>,
-    ) -> Self {
+    pub fn set_certificate_authority(mut self, input: ::std::option::Option<crate::types::CertificateAuthority>) -> Self {
         self.certificate_authority = input;
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
-    pub fn get_certificate_authority(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateAuthority> {
+    pub fn get_certificate_authority(&self) -> &::std::option::Option<crate::types::CertificateAuthority> {
         &self.certificate_authority
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl DescribeCertificateAuthorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCertificateAuthorityOutput`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput {
+    pub fn build(self) -> crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput {
         crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput {
             certificate_authority: self.certificate_authority,
             _request_id: self._request_id,

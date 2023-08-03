@@ -10,10 +10,7 @@ impl SignOutUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::sign_out_user::SignOutUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sign_out_user::SignOutUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sign_out_user::SignOutUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.sign_out_user();
         fluent_builder.inner = self;
@@ -23,9 +20,7 @@ impl SignOutUserInputBuilder {
 /// Fluent builder constructing a request to `SignOutUser`.
 ///
 /// <p>Signs the user out from all of their devices. The user can sign in again if they have valid credentials.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SignOutUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -48,10 +43,7 @@ impl SignOutUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::sign_out_user::SignOutUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::sign_out_user::SignOutUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::sign_out_user::SignOutUserError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +54,7 @@ impl SignOutUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +96,7 @@ impl SignOutUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::sign_out_user::SignOutUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::sign_out_user::SignOutUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::sign_out_user::SignOutUserError>,
     > {
         self.customize_middleware().await

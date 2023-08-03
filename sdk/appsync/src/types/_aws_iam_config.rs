@@ -30,27 +30,19 @@ impl AwsIamConfig {
 
 /// A builder for [`AwsIamConfig`](crate::types::AwsIamConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamConfigBuilder {
     pub(crate) signing_region: ::std::option::Option<::std::string::String>,
     pub(crate) signing_service_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamConfigBuilder {
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
-    pub fn signing_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
-    pub fn set_signing_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signing_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_region = input;
         self
     }
@@ -59,18 +51,12 @@ impl AwsIamConfigBuilder {
         &self.signing_region
     }
     /// <p>The signing service name for IAM authorization.</p>
-    pub fn signing_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signing service name for IAM authorization.</p>
-    pub fn set_signing_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signing_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_service_name = input;
         self
     }

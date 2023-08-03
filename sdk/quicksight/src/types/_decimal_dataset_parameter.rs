@@ -31,9 +31,7 @@ impl DecimalDatasetParameter {
         self.value_type.as_ref()
     }
     /// <p>A list of default values for a given decimal parameter. This structure only accepts static values.</p>
-    pub fn default_values(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DecimalDatasetParameterDefaultValues> {
+    pub fn default_values(&self) -> ::std::option::Option<&crate::types::DecimalDatasetParameterDefaultValues> {
         self.default_values.as_ref()
     }
 }
@@ -46,15 +44,12 @@ impl DecimalDatasetParameter {
 
 /// A builder for [`DecimalDatasetParameter`](crate::types::DecimalDatasetParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecimalDatasetParameterBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
-    pub(crate) default_values:
-        ::std::option::Option<crate::types::DecimalDatasetParameterDefaultValues>,
+    pub(crate) default_values: ::std::option::Option<crate::types::DecimalDatasetParameterDefaultValues>,
 }
 impl DecimalDatasetParameterBuilder {
     /// <p>An identifier for the decimal parameter created in the dataset.</p>
@@ -91,39 +86,26 @@ impl DecimalDatasetParameterBuilder {
         self
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    pub fn set_value_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetParameterValueType>,
-    ) -> Self {
+    pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::DatasetParameterValueType>) -> Self {
         self.value_type = input;
         self
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    pub fn get_value_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatasetParameterValueType> {
+    pub fn get_value_type(&self) -> &::std::option::Option<crate::types::DatasetParameterValueType> {
         &self.value_type
     }
     /// <p>A list of default values for a given decimal parameter. This structure only accepts static values.</p>
-    pub fn default_values(
-        mut self,
-        input: crate::types::DecimalDatasetParameterDefaultValues,
-    ) -> Self {
+    pub fn default_values(mut self, input: crate::types::DecimalDatasetParameterDefaultValues) -> Self {
         self.default_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of default values for a given decimal parameter. This structure only accepts static values.</p>
-    pub fn set_default_values(
-        mut self,
-        input: ::std::option::Option<crate::types::DecimalDatasetParameterDefaultValues>,
-    ) -> Self {
+    pub fn set_default_values(mut self, input: ::std::option::Option<crate::types::DecimalDatasetParameterDefaultValues>) -> Self {
         self.default_values = input;
         self
     }
     /// <p>A list of default values for a given decimal parameter. This structure only accepts static values.</p>
-    pub fn get_default_values(
-        &self,
-    ) -> &::std::option::Option<crate::types::DecimalDatasetParameterDefaultValues> {
+    pub fn get_default_values(&self) -> &::std::option::Option<crate::types::DecimalDatasetParameterDefaultValues> {
         &self.default_values
     }
     /// Consumes the builder and constructs a [`DecimalDatasetParameter`](crate::types::DecimalDatasetParameter).

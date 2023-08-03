@@ -29,18 +29,14 @@ impl ListDatasetExportJobsInput {
 }
 impl ListDatasetExportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDatasetExportJobsInput`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsInputBuilder {
         crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetExportJobsInput`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetExportJobsInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListDatasetExportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasetExportJobsInput`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_dataset_export_jobs::ListDatasetExportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_dataset_export_jobs::ListDatasetExportJobsInput {
-                dataset_arn: self.dataset_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_dataset_export_jobs::ListDatasetExportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_dataset_export_jobs::ListDatasetExportJobsInput {
+            dataset_arn: self.dataset_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`low_latency_hls_manifests(Option<Vec<GetLowLatencyHlsManifestConfiguration>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::low_latency_hls_manifests): <p>A low-latency HLS manifest configuration.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
     /// - On failure, responds with [`SdkError<GetOriginEndpointError>`](crate::operation::get_origin_endpoint::GetOriginEndpointError)
-    pub fn get_origin_endpoint(
-        &self,
-    ) -> crate::operation::get_origin_endpoint::builders::GetOriginEndpointFluentBuilder {
-        crate::operation::get_origin_endpoint::builders::GetOriginEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_origin_endpoint(&self) -> crate::operation::get_origin_endpoint::builders::GetOriginEndpointFluentBuilder {
+        crate::operation::get_origin_endpoint::builders::GetOriginEndpointFluentBuilder::new(self.handle.clone())
     }
 }

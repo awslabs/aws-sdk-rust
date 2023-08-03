@@ -17,9 +17,7 @@ impl CapacityReservationOptions {
     /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>).</p>
     /// <p>If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
-    pub fn usage_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FleetCapacityReservationUsageStrategy> {
+    pub fn usage_strategy(&self) -> ::std::option::Option<&crate::types::FleetCapacityReservationUsageStrategy> {
         self.usage_strategy.as_ref()
     }
 }
@@ -32,40 +30,29 @@ impl CapacityReservationOptions {
 
 /// A builder for [`CapacityReservationOptions`](crate::types::CapacityReservationOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityReservationOptionsBuilder {
-    pub(crate) usage_strategy:
-        ::std::option::Option<crate::types::FleetCapacityReservationUsageStrategy>,
+    pub(crate) usage_strategy: ::std::option::Option<crate::types::FleetCapacityReservationUsageStrategy>,
 }
 impl CapacityReservationOptionsBuilder {
     /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>).</p>
     /// <p>If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
-    pub fn usage_strategy(
-        mut self,
-        input: crate::types::FleetCapacityReservationUsageStrategy,
-    ) -> Self {
+    pub fn usage_strategy(mut self, input: crate::types::FleetCapacityReservationUsageStrategy) -> Self {
         self.usage_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>).</p>
     /// <p>If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
-    pub fn set_usage_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetCapacityReservationUsageStrategy>,
-    ) -> Self {
+    pub fn set_usage_strategy(mut self, input: ::std::option::Option<crate::types::FleetCapacityReservationUsageStrategy>) -> Self {
         self.usage_strategy = input;
         self
     }
     /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>).</p>
     /// <p>If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
-    pub fn get_usage_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FleetCapacityReservationUsageStrategy> {
+    pub fn get_usage_strategy(&self) -> &::std::option::Option<crate::types::FleetCapacityReservationUsageStrategy> {
         &self.usage_strategy
     }
     /// Consumes the builder and constructs a [`CapacityReservationOptions`](crate::types::CapacityReservationOptions).

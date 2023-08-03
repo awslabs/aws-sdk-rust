@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`output_id(impl ::std::convert::Into<String>)`](crate::operation::delete_application_output::builders::DeleteApplicationOutputFluentBuilder::output_id) / [`set_output_id(Option<String>)`](crate::operation::delete_application_output::builders::DeleteApplicationOutputFluentBuilder::set_output_id): <p>The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific <code>OutputId</code>. </p>
     /// - On success, responds with [`DeleteApplicationOutputOutput`](crate::operation::delete_application_output::DeleteApplicationOutputOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationOutputError>`](crate::operation::delete_application_output::DeleteApplicationOutputError)
-    pub fn delete_application_output(
-        &self,
-    ) -> crate::operation::delete_application_output::builders::DeleteApplicationOutputFluentBuilder
-    {
+    pub fn delete_application_output(&self) -> crate::operation::delete_application_output::builders::DeleteApplicationOutputFluentBuilder {
         crate::operation::delete_application_output::builders::DeleteApplicationOutputFluentBuilder::new(self.handle.clone())
     }
 }

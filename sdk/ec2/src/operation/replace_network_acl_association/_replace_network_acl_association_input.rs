@@ -29,16 +29,14 @@ impl ReplaceNetworkAclAssociationInput {
 }
 impl ReplaceNetworkAclAssociationInput {
     /// Creates a new builder-style object to manufacture [`ReplaceNetworkAclAssociationInput`](crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput).
-    pub fn builder() -> crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationInputBuilder{
+    pub fn builder() -> crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationInputBuilder {
         crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`ReplaceNetworkAclAssociationInput`](crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceNetworkAclAssociationInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -46,18 +44,12 @@ pub struct ReplaceNetworkAclAssociationInputBuilder {
 }
 impl ReplaceNetworkAclAssociationInputBuilder {
     /// <p>The ID of the current association between the original network ACL and the subnet.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the current association between the original network ACL and the subnet.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -80,18 +72,12 @@ impl ReplaceNetworkAclAssociationInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the new network ACL to associate with the subnet.</p>
-    pub fn network_acl_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_acl_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the new network ACL to associate with the subnet.</p>
-    pub fn set_network_acl_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_acl_id = input;
         self
     }
@@ -106,12 +92,10 @@ impl ReplaceNetworkAclAssociationInputBuilder {
         crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput {
-                association_id: self.association_id,
-                dry_run: self.dry_run,
-                network_acl_id: self.network_acl_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput {
+            association_id: self.association_id,
+            dry_run: self.dry_run,
+            network_acl_id: self.network_acl_id,
+        })
     }
 }

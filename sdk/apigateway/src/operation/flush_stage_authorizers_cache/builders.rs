@@ -26,7 +26,7 @@ impl FlushStageAuthorizersCacheInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct FlushStageAuthorizersCacheFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheInputBuilder,
+    inner: crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheInputBuilder,
 }
 impl FlushStageAuthorizersCacheFluentBuilder {
     /// Creates a new `FlushStageAuthorizersCache`.
@@ -37,7 +37,7 @@ impl FlushStageAuthorizersCacheFluentBuilder {
         }
     }
     /// Access the FlushStageAuthorizersCache as a reference.
-    pub fn as_input(&self) -> &crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl FlushStageAuthorizersCacheFluentBuilder {
             crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl FlushStageAuthorizersCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl FlushStageAuthorizersCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl FlushStageAuthorizersCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl FlushStageAuthorizersCacheFluentBuilder {
             crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheError>,
     > {
         self.customize_middleware().await
     }

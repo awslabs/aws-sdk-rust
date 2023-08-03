@@ -65,9 +65,7 @@ impl VideoMetadata {
 
 /// A builder for [`VideoMetadata`](crate::types::VideoMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoMetadataBuilder {
     pub(crate) codec: ::std::option::Option<::std::string::String>,
     pub(crate) duration_millis: ::std::option::Option<i64>,
@@ -168,10 +166,7 @@ impl VideoMetadataBuilder {
         self
     }
     /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
-    pub fn set_color_range(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoColorRange>,
-    ) -> Self {
+    pub fn set_color_range(mut self, input: ::std::option::Option<crate::types::VideoColorRange>) -> Self {
         self.color_range = input;
         self
     }

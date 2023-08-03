@@ -10,10 +10,7 @@ impl PutAccountSettingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_account_setting::PutAccountSettingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_setting::PutAccountSettingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_setting::PutAccountSettingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_account_setting();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl PutAccountSettingFluentBuilder {
         }
     }
     /// Access the PutAccountSetting as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_account_setting::builders::PutAccountSettingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_account_setting::builders::PutAccountSettingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl PutAccountSettingFluentBuilder {
             crate::operation::put_account_setting::PutAccountSetting,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_setting::PutAccountSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_setting::PutAccountSettingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl PutAccountSettingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl PutAccountSettingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_setting::PutAccountSettingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_setting::PutAccountSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_setting::PutAccountSettingError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl PutAccountSettingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_setting::PutAccountSettingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_setting::PutAccountSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_setting::PutAccountSettingError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl PutAccountSettingFluentBuilder {
             crate::operation::put_account_setting::PutAccountSetting,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_setting::PutAccountSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_setting::PutAccountSettingError>,
     > {
         self.customize_middleware().await
     }
@@ -158,20 +142,14 @@ impl PutAccountSettingFluentBuilder {
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self
     }

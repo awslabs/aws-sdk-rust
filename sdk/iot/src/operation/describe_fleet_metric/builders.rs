@@ -38,9 +38,7 @@ impl DescribeFleetMetricFluentBuilder {
         }
     }
     /// Access the DescribeFleetMetric as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fleet_metric::builders::DescribeFleetMetricInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_metric::builders::DescribeFleetMetricInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeFleetMetricFluentBuilder {
             crate::operation::describe_fleet_metric::DescribeFleetMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_metric::DescribeFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_metric::DescribeFleetMetricError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeFleetMetricFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeFleetMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_metric::DescribeFleetMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_metric::DescribeFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_metric::DescribeFleetMetricError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeFleetMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_metric::DescribeFleetMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_metric::DescribeFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_metric::DescribeFleetMetricError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DescribeFleetMetricFluentBuilder {
             crate::operation::describe_fleet_metric::DescribeFleetMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_metric::DescribeFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_metric::DescribeFleetMetricError>,
     > {
         self.customize_middleware().await
     }

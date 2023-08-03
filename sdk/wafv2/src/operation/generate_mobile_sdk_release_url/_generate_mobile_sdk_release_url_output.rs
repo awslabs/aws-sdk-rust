@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GenerateMobileSdkReleaseUrlOutput {
 }
 impl GenerateMobileSdkReleaseUrlOutput {
     /// Creates a new builder-style object to manufacture [`GenerateMobileSdkReleaseUrlOutput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput).
-    pub fn builder() -> crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlOutputBuilder{
+    pub fn builder() -> crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlOutputBuilder {
         crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateMobileSdkReleaseUrlOutput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateMobileSdkReleaseUrlOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl GenerateMobileSdkReleaseUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateMobileSdkReleaseUrlOutput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput {
+    pub fn build(self) -> crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput {
         crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput {
             url: self.url,
             _request_id: self._request_id,

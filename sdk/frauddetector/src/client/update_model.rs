@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_model::builders::UpdateModelFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_model::builders::UpdateModelFluentBuilder::set_description): <p>The new model description.</p>
     /// - On success, responds with [`UpdateModelOutput`](crate::operation::update_model::UpdateModelOutput)
     /// - On failure, responds with [`SdkError<UpdateModelError>`](crate::operation::update_model::UpdateModelError)
-    pub fn update_model(
-        &self,
-    ) -> crate::operation::update_model::builders::UpdateModelFluentBuilder {
+    pub fn update_model(&self) -> crate::operation::update_model::builders::UpdateModelFluentBuilder {
         crate::operation::update_model::builders::UpdateModelFluentBuilder::new(self.handle.clone())
     }
 }

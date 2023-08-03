@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GenerateServiceLastAccessedDetailsOut
 }
 impl GenerateServiceLastAccessedDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GenerateServiceLastAccessedDetailsOutput`](crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput).
-    pub fn builder() -> crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsOutputBuilder{
+    pub fn builder() -> crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsOutputBuilder {
         crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateServiceLastAccessedDetailsOutput`](crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateServiceLastAccessedDetailsOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl GenerateServiceLastAccessedDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateServiceLastAccessedDetailsOutput`](crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput).
-    pub fn build(self) -> crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput{
+    pub fn build(self) -> crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput {
         crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput {
-            job_id: self.job_id
-            ,
+            job_id: self.job_id,
             _request_id: self._request_id,
         }
     }

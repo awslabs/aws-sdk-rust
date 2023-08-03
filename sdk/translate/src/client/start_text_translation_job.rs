@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::start_text_translation_job::StartTextTranslationJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::start_text_translation_job::StartTextTranslationJobOutput::job_status): <p>The status of the job. Possible values include:</p>  <ul>   <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>   <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li>   <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li>   <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li>   <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li>   <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>   <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<StartTextTranslationJobError>`](crate::operation::start_text_translation_job::StartTextTranslationJobError)
-    pub fn start_text_translation_job(
-        &self,
-    ) -> crate::operation::start_text_translation_job::builders::StartTextTranslationJobFluentBuilder
-    {
+    pub fn start_text_translation_job(&self) -> crate::operation::start_text_translation_job::builders::StartTextTranslationJobFluentBuilder {
         crate::operation::start_text_translation_job::builders::StartTextTranslationJobFluentBuilder::new(self.handle.clone())
     }
 }

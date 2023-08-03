@@ -31,9 +31,7 @@ impl DeleteFlowLogsInput {
 
 /// A builder for [`DeleteFlowLogsInput`](crate::operation::delete_flow_logs::DeleteFlowLogsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFlowLogsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) flow_log_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -67,27 +65,19 @@ impl DeleteFlowLogsInputBuilder {
     }
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn set_flow_log_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_flow_log_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.flow_log_ids = input;
         self
     }
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn get_flow_log_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_flow_log_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.flow_log_ids
     }
     /// Consumes the builder and constructs a [`DeleteFlowLogsInput`](crate::operation::delete_flow_logs::DeleteFlowLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_flow_logs::DeleteFlowLogsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_flow_logs::DeleteFlowLogsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_flow_logs::DeleteFlowLogsInput {
             dry_run: self.dry_run,
             flow_log_ids: self.flow_log_ids,

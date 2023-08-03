@@ -22,18 +22,14 @@ impl ListPackagingGroupsInput {
 }
 impl ListPackagingGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListPackagingGroupsInput`](crate::operation::list_packaging_groups::ListPackagingGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsInputBuilder {
-        crate::operation::list_packaging_groups::builders::ListPackagingGroupsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsInputBuilder {
+        crate::operation::list_packaging_groups::builders::ListPackagingGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackagingGroupsInput`](crate::operation::list_packaging_groups::ListPackagingGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackagingGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListPackagingGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListPackagingGroupsInput`](crate::operation::list_packaging_groups::ListPackagingGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_packaging_groups::ListPackagingGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_packaging_groups::ListPackagingGroupsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_packaging_groups::ListPackagingGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_packaging_groups::ListPackagingGroupsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

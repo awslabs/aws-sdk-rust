@@ -10,10 +10,7 @@ impl StartImageBuilderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_image_builder::StartImageBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_builder::StartImageBuilderError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_builder::StartImageBuilderError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_image_builder();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartImageBuilderFluentBuilder {
         }
     }
     /// Access the StartImageBuilder as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartImageBuilderFluentBuilder {
             crate::operation::start_image_builder::StartImageBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_builder::StartImageBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_builder::StartImageBuilderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartImageBuilderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartImageBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_image_builder::StartImageBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_builder::StartImageBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_builder::StartImageBuilderError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartImageBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_image_builder::StartImageBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_builder::StartImageBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_builder::StartImageBuilderError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartImageBuilderFluentBuilder {
             crate::operation::start_image_builder::StartImageBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_builder::StartImageBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_builder::StartImageBuilderError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl StartImageBuilderFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    pub fn appstream_agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.appstream_agent_version(input.into());
         self
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    pub fn set_appstream_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_appstream_agent_version(input);
         self
     }

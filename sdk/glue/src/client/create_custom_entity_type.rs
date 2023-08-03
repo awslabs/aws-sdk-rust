@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCustomEntityTypeOutput`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput::name): <p>The name of the custom pattern you created.</p>
     /// - On failure, responds with [`SdkError<CreateCustomEntityTypeError>`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeError)
-    pub fn create_custom_entity_type(
-        &self,
-    ) -> crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeFluentBuilder
-    {
+    pub fn create_custom_entity_type(&self) -> crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeFluentBuilder {
         crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeFluentBuilder::new(self.handle.clone())
     }
 }

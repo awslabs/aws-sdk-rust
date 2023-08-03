@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTeamMembersOutput {
 }
 impl ListTeamMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListTeamMembersOutput`](crate::operation::list_team_members::ListTeamMembersOutput).
-    pub fn builder() -> crate::operation::list_team_members::builders::ListTeamMembersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_team_members::builders::ListTeamMembersOutputBuilder {
         crate::operation::list_team_members::builders::ListTeamMembersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTeamMembersOutput`](crate::operation::list_team_members::ListTeamMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTeamMembersOutputBuilder {
     pub(crate) team_members: ::std::option::Option<::std::vec::Vec<crate::types::TeamMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListTeamMembersOutputBuilder {
         self
     }
     /// <p>A list of team member objects for the project.</p>
-    pub fn set_team_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TeamMember>>,
-    ) -> Self {
+    pub fn set_team_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TeamMember>>) -> Self {
         self.team_members = input;
         self
     }
     /// <p>A list of team member objects for the project.</p>
-    pub fn get_team_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TeamMember>> {
+    pub fn get_team_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TeamMember>> {
         &self.team_members
     }
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>

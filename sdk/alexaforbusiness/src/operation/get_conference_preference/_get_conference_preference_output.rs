@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetConferencePreferenceOutput {
 }
 impl GetConferencePreferenceOutput {
     /// Creates a new builder-style object to manufacture [`GetConferencePreferenceOutput`](crate::operation::get_conference_preference::GetConferencePreferenceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_conference_preference::builders::GetConferencePreferenceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_conference_preference::builders::GetConferencePreferenceOutputBuilder {
         crate::operation::get_conference_preference::builders::GetConferencePreferenceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConferencePreferenceOutput`](crate::operation::get_conference_preference::GetConferencePreferenceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConferencePreferenceOutputBuilder {
     pub(crate) preference: ::std::option::Option<crate::types::ConferencePreference>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetConferencePreferenceOutputBuilder {
         self
     }
     /// <p>The conference preference.</p>
-    pub fn set_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::ConferencePreference>,
-    ) -> Self {
+    pub fn set_preference(mut self, input: ::std::option::Option<crate::types::ConferencePreference>) -> Self {
         self.preference = input;
         self
     }
@@ -65,9 +58,7 @@ impl GetConferencePreferenceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetConferencePreferenceOutput`](crate::operation::get_conference_preference::GetConferencePreferenceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_conference_preference::GetConferencePreferenceOutput {
+    pub fn build(self) -> crate::operation::get_conference_preference::GetConferencePreferenceOutput {
         crate::operation::get_conference_preference::GetConferencePreferenceOutput {
             preference: self.preference,
             _request_id: self._request_id,

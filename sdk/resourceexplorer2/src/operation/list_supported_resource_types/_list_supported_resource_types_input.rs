@@ -26,16 +26,14 @@ impl ListSupportedResourceTypesInput {
 }
 impl ListSupportedResourceTypesInput {
     /// Creates a new builder-style object to manufacture [`ListSupportedResourceTypesInput`](crate::operation::list_supported_resource_types::ListSupportedResourceTypesInput).
-    pub fn builder() -> crate::operation::list_supported_resource_types::builders::ListSupportedResourceTypesInputBuilder{
+    pub fn builder() -> crate::operation::list_supported_resource_types::builders::ListSupportedResourceTypesInputBuilder {
         crate::operation::list_supported_resource_types::builders::ListSupportedResourceTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSupportedResourceTypesInput`](crate::operation::list_supported_resource_types::ListSupportedResourceTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSupportedResourceTypesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -82,11 +80,9 @@ impl ListSupportedResourceTypesInputBuilder {
         crate::operation::list_supported_resource_types::ListSupportedResourceTypesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_supported_resource_types::ListSupportedResourceTypesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_supported_resource_types::ListSupportedResourceTypesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

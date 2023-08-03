@@ -39,7 +39,7 @@ impl AssociateVpcWithHostedZoneInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateVPCWithHostedZoneFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneInputBuilder,
+    inner: crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneInputBuilder,
 }
 impl AssociateVPCWithHostedZoneFluentBuilder {
     /// Creates a new `AssociateVPCWithHostedZone`.
@@ -50,7 +50,7 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
         }
     }
     /// Access the AssociateVPCWithHostedZone as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +62,7 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
             crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZone,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +72,7 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +81,7 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError>,
     > {
         let op = self
             .inner
@@ -111,9 +104,7 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError>,
     > {
         self.send_middleware().await
     }
@@ -127,27 +118,19 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
             crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZone,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
     /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
     /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }

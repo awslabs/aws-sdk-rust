@@ -30,9 +30,7 @@ impl OpenSearchServiceDataSourceConfig {
 
 /// A builder for [`OpenSearchServiceDataSourceConfig`](crate::types::OpenSearchServiceDataSourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenSearchServiceDataSourceConfigBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,

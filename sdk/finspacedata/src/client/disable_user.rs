@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisableUserOutput`](crate::operation::disable_user::DisableUserOutput) with field(s):
     ///   - [`user_id(Option<String>)`](crate::operation::disable_user::DisableUserOutput::user_id): <p>The unique identifier for the disabled user account.</p>
     /// - On failure, responds with [`SdkError<DisableUserError>`](crate::operation::disable_user::DisableUserError)
-    pub fn disable_user(
-        &self,
-    ) -> crate::operation::disable_user::builders::DisableUserFluentBuilder {
+    pub fn disable_user(&self) -> crate::operation::disable_user::builders::DisableUserFluentBuilder {
         crate::operation::disable_user::builders::DisableUserFluentBuilder::new(self.handle.clone())
     }
 }

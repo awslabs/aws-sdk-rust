@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAccessPointPolicyForObjectLambdaOu
 }
 impl GetAccessPointPolicyForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaOutput`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput).
-    pub fn builder() -> crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaOutputBuilder{
+    pub fn builder() -> crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaOutputBuilder {
         crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessPointPolicyForObjectLambdaOutput`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPointPolicyForObjectLambdaOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl GetAccessPointPolicyForObjectLambdaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAccessPointPolicyForObjectLambdaOutput`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput).
-    pub fn build(self) -> crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput{
+    pub fn build(self) -> crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput {
         crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput {
-            policy: self.policy
-            ,
+            policy: self.policy,
             _request_id: self._request_id,
         }
     }

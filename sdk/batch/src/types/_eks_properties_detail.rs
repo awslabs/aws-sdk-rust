@@ -23,9 +23,7 @@ impl EksPropertiesDetail {
 
 /// A builder for [`EksPropertiesDetail`](crate::types::EksPropertiesDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksPropertiesDetailBuilder {
     pub(crate) pod_properties: ::std::option::Option<crate::types::EksPodPropertiesDetail>,
 }
@@ -36,17 +34,12 @@ impl EksPropertiesDetailBuilder {
         self
     }
     /// <p>The properties for the Kubernetes pod resources of a job.</p>
-    pub fn set_pod_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::EksPodPropertiesDetail>,
-    ) -> Self {
+    pub fn set_pod_properties(mut self, input: ::std::option::Option<crate::types::EksPodPropertiesDetail>) -> Self {
         self.pod_properties = input;
         self
     }
     /// <p>The properties for the Kubernetes pod resources of a job.</p>
-    pub fn get_pod_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::EksPodPropertiesDetail> {
+    pub fn get_pod_properties(&self) -> &::std::option::Option<crate::types::EksPodPropertiesDetail> {
         &self.pod_properties
     }
     /// Consumes the builder and constructs a [`EksPropertiesDetail`](crate::types::EksPropertiesDetail).

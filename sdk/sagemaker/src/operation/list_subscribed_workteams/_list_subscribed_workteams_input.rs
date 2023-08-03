@@ -29,18 +29,14 @@ impl ListSubscribedWorkteamsInput {
 }
 impl ListSubscribedWorkteamsInput {
     /// Creates a new builder-style object to manufacture [`ListSubscribedWorkteamsInput`](crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsInput).
-    pub fn builder(
-    ) -> crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsInputBuilder {
         crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSubscribedWorkteamsInput`](crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubscribedWorkteamsInputBuilder {
     pub(crate) name_contains: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct ListSubscribedWorkteamsInputBuilder {
 }
 impl ListSubscribedWorkteamsInputBuilder {
     /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -102,12 +92,10 @@ impl ListSubscribedWorkteamsInputBuilder {
         crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsInput {
-                name_contains: self.name_contains,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsInput {
+            name_contains: self.name_contains,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

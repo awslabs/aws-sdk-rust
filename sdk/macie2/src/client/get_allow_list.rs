@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_allow_list::GetAllowListOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_allow_list::GetAllowListOutput::updated_at): <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
     /// - On failure, responds with [`SdkError<GetAllowListError>`](crate::operation::get_allow_list::GetAllowListError)
-    pub fn get_allow_list(
-        &self,
-    ) -> crate::operation::get_allow_list::builders::GetAllowListFluentBuilder {
-        crate::operation::get_allow_list::builders::GetAllowListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_allow_list(&self) -> crate::operation::get_allow_list::builders::GetAllowListFluentBuilder {
+        crate::operation::get_allow_list::builders::GetAllowListFluentBuilder::new(self.handle.clone())
     }
 }

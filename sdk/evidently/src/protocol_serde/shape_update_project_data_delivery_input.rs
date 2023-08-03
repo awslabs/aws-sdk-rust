@@ -12,10 +12,7 @@ pub fn ser_update_project_data_delivery_input(
     if let Some(var_3) = &input.s3_destination {
         #[allow(unused_mut)]
         let mut object_4 = object.key("s3Destination").start_object();
-        crate::protocol_serde::shape_s3_destination_config::ser_s3_destination_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_s3_destination_config::ser_s3_destination_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

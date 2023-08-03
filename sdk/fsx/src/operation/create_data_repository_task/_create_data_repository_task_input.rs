@@ -65,18 +65,14 @@ impl CreateDataRepositoryTaskInput {
 }
 impl CreateDataRepositoryTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateDataRepositoryTaskInput`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput).
-    pub fn builder(
-    ) -> crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder {
         crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataRepositoryTaskInput`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryTaskInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DataRepositoryTaskType>,
     pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -93,10 +89,7 @@ impl CreateDataRepositoryTaskInputBuilder {
         self
     }
     /// <p>Specifies the type of data repository task to create.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryTaskType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskType>) -> Self {
         self.r#type = input;
         self
     }
@@ -124,10 +117,7 @@ impl CreateDataRepositoryTaskInputBuilder {
     /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
     /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
     /// </ul>
-    pub fn set_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.paths = input;
         self
     }
@@ -140,18 +130,12 @@ impl CreateDataRepositoryTaskInputBuilder {
         &self.paths
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -165,10 +149,7 @@ impl CreateDataRepositoryTaskInputBuilder {
         self
     }
     /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
-    pub fn set_report(
-        mut self,
-        input: ::std::option::Option<crate::types::CompletionReport>,
-    ) -> Self {
+    pub fn set_report(mut self, input: ::std::option::Option<crate::types::CompletionReport>) -> Self {
         self.report = input;
         self
     }
@@ -177,18 +158,12 @@ impl CreateDataRepositoryTaskInputBuilder {
         &self.report
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -208,10 +183,7 @@ impl CreateDataRepositoryTaskInputBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -240,16 +212,14 @@ impl CreateDataRepositoryTaskInputBuilder {
         crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput {
-                r#type: self.r#type,
-                paths: self.paths,
-                file_system_id: self.file_system_id,
-                report: self.report,
-                client_request_token: self.client_request_token,
-                tags: self.tags,
-                capacity_to_release: self.capacity_to_release,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput {
+            r#type: self.r#type,
+            paths: self.paths,
+            file_system_id: self.file_system_id,
+            report: self.report,
+            client_request_token: self.client_request_token,
+            tags: self.tags,
+            capacity_to_release: self.capacity_to_release,
+        })
     }
 }

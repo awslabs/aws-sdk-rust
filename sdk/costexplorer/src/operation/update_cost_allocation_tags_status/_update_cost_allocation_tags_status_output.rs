@@ -5,15 +5,12 @@
 pub struct UpdateCostAllocationTagsStatusOutput {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
     #[doc(hidden)]
-    pub errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>,
     _request_id: Option<String>,
 }
 impl UpdateCostAllocationTagsStatusOutput {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UpdateCostAllocationTagsStatusError]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::UpdateCostAllocationTagsStatusError]> {
         self.errors.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for UpdateCostAllocationTagsStatusOutput 
 }
 impl UpdateCostAllocationTagsStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusOutput`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput).
-    pub fn builder() -> crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusOutputBuilder{
+    pub fn builder() -> crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusOutputBuilder {
         crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCostAllocationTagsStatusOutput`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>,
     _request_id: Option<String>,
 }
 impl UpdateCostAllocationTagsStatusOutputBuilder {
@@ -52,20 +46,12 @@ impl UpdateCostAllocationTagsStatusOutputBuilder {
         self
     }
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>,
-        >,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>
-    {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -78,10 +64,7 @@ impl UpdateCostAllocationTagsStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusOutput`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput
-    {
+    pub fn build(self) -> crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput {
         crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput {
             errors: self.errors,
             _request_id: self._request_id,

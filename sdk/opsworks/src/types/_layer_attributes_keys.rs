@@ -61,13 +61,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LayerAttributesKeys {
     #[allow(missing_docs)] // documentation missing in model
@@ -151,9 +145,7 @@ impl ::std::convert::From<&str> for LayerAttributesKeys {
             "RailsStack" => LayerAttributesKeys::RailsStack,
             "RubyVersion" => LayerAttributesKeys::RubyVersion,
             "RubygemsVersion" => LayerAttributesKeys::RubygemsVersion,
-            other => LayerAttributesKeys::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LayerAttributesKeys::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

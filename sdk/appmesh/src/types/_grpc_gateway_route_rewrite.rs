@@ -23,9 +23,7 @@ impl GrpcGatewayRouteRewrite {
 
 /// A builder for [`GrpcGatewayRouteRewrite`](crate::types::GrpcGatewayRouteRewrite).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteRewriteBuilder {
     pub(crate) hostname: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
 }
@@ -36,23 +34,16 @@ impl GrpcGatewayRouteRewriteBuilder {
         self
     }
     /// <p>The host name of the gateway route to rewrite.</p>
-    pub fn set_hostname(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
-    ) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>) -> Self {
         self.hostname = input;
         self
     }
     /// <p>The host name of the gateway route to rewrite.</p>
-    pub fn get_hostname(
-        &self,
-    ) -> &::std::option::Option<crate::types::GatewayRouteHostnameRewrite> {
+    pub fn get_hostname(&self) -> &::std::option::Option<crate::types::GatewayRouteHostnameRewrite> {
         &self.hostname
     }
     /// Consumes the builder and constructs a [`GrpcGatewayRouteRewrite`](crate::types::GrpcGatewayRouteRewrite).
     pub fn build(self) -> crate::types::GrpcGatewayRouteRewrite {
-        crate::types::GrpcGatewayRouteRewrite {
-            hostname: self.hostname,
-        }
+        crate::types::GrpcGatewayRouteRewrite { hostname: self.hostname }
     }
 }

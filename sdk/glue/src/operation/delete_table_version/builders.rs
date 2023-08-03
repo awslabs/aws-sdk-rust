@@ -10,10 +10,7 @@ impl DeleteTableVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_table_version::DeleteTableVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_table_version::DeleteTableVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_table_version::DeleteTableVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_table_version();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteTableVersionFluentBuilder {
         }
     }
     /// Access the DeleteTableVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_table_version::builders::DeleteTableVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_table_version::builders::DeleteTableVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteTableVersionFluentBuilder {
             crate::operation::delete_table_version::DeleteTableVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_table_version::DeleteTableVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_table_version::DeleteTableVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteTableVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteTableVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_table_version::DeleteTableVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_table_version::DeleteTableVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_table_version::DeleteTableVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteTableVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_table_version::DeleteTableVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_table_version::DeleteTableVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_table_version::DeleteTableVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteTableVersionFluentBuilder {
             crate::operation::delete_table_version::DeleteTableVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_table_version::DeleteTableVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_table_version::DeleteTableVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteTableVersionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

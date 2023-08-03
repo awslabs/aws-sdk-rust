@@ -30,9 +30,7 @@ impl PlayerLatencyPolicy {
 
 /// A builder for [`PlayerLatencyPolicy`](crate::types::PlayerLatencyPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlayerLatencyPolicyBuilder {
     pub(crate) maximum_individual_player_latency_milliseconds: ::std::option::Option<i32>,
     pub(crate) policy_duration_seconds: ::std::option::Option<i32>,
@@ -44,17 +42,12 @@ impl PlayerLatencyPolicyBuilder {
         self
     }
     /// <p>The maximum latency value that is allowed for any player, in milliseconds. All policies must have a value set for this property.</p>
-    pub fn set_maximum_individual_player_latency_milliseconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_individual_player_latency_milliseconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_individual_player_latency_milliseconds = input;
         self
     }
     /// <p>The maximum latency value that is allowed for any player, in milliseconds. All policies must have a value set for this property.</p>
-    pub fn get_maximum_individual_player_latency_milliseconds(
-        &self,
-    ) -> &::std::option::Option<i32> {
+    pub fn get_maximum_individual_player_latency_milliseconds(&self) -> &::std::option::Option<i32> {
         &self.maximum_individual_player_latency_milliseconds
     }
     /// <p>The length of time, in seconds, that the policy is enforced while placing a new game session. A null value for this property means that the policy is enforced until the queue times out.</p>
@@ -74,8 +67,7 @@ impl PlayerLatencyPolicyBuilder {
     /// Consumes the builder and constructs a [`PlayerLatencyPolicy`](crate::types::PlayerLatencyPolicy).
     pub fn build(self) -> crate::types::PlayerLatencyPolicy {
         crate::types::PlayerLatencyPolicy {
-            maximum_individual_player_latency_milliseconds: self
-                .maximum_individual_player_latency_milliseconds,
+            maximum_individual_player_latency_milliseconds: self.maximum_individual_player_latency_milliseconds,
             policy_duration_seconds: self.policy_duration_seconds,
         }
     }

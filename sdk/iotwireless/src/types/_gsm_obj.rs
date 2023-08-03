@@ -72,9 +72,7 @@ impl GsmObj {
 
 /// A builder for [`GsmObj`](crate::types::GsmObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GsmObjBuilder {
     pub(crate) mcc: ::std::option::Option<i32>,
     pub(crate) mnc: ::std::option::Option<i32>,
@@ -148,10 +146,7 @@ impl GsmObjBuilder {
         self
     }
     /// <p>GSM local identification (local ID) information.</p>
-    pub fn set_gsm_local_id(
-        mut self,
-        input: ::std::option::Option<crate::types::GsmLocalId>,
-    ) -> Self {
+    pub fn set_gsm_local_id(mut self, input: ::std::option::Option<crate::types::GsmLocalId>) -> Self {
         self.gsm_local_id = input;
         self
     }
@@ -199,10 +194,7 @@ impl GsmObjBuilder {
         self
     }
     /// <p>GSM object for network measurement reports.</p>
-    pub fn set_gsm_nmr(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GsmNmrObj>>,
-    ) -> Self {
+    pub fn set_gsm_nmr(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GsmNmrObj>>) -> Self {
         self.gsm_nmr = input;
         self
     }

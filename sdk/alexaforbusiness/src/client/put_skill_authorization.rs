@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PutSkillAuthorizationOutput`](crate::operation::put_skill_authorization::PutSkillAuthorizationOutput)
     /// - On failure, responds with [`SdkError<PutSkillAuthorizationError>`](crate::operation::put_skill_authorization::PutSkillAuthorizationError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn put_skill_authorization(
-        &self,
-    ) -> crate::operation::put_skill_authorization::builders::PutSkillAuthorizationFluentBuilder
-    {
-        crate::operation::put_skill_authorization::builders::PutSkillAuthorizationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_skill_authorization(&self) -> crate::operation::put_skill_authorization::builders::PutSkillAuthorizationFluentBuilder {
+        crate::operation::put_skill_authorization::builders::PutSkillAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

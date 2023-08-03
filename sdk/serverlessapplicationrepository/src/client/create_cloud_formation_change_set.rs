@@ -22,7 +22,9 @@ impl super::Client {
     ///   - [`semantic_version(Option<String>)`](crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetOutput::semantic_version): <p>The semantic version of the application:</p> <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     ///   - [`stack_id(Option<String>)`](crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetOutput::stack_id): <p>The unique ID of the stack.</p>
     /// - On failure, responds with [`SdkError<CreateCloudFormationChangeSetError>`](crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetError)
-    pub fn create_cloud_formation_change_set(&self) -> crate::operation::create_cloud_formation_change_set::builders::CreateCloudFormationChangeSetFluentBuilder{
+    pub fn create_cloud_formation_change_set(
+        &self,
+    ) -> crate::operation::create_cloud_formation_change_set::builders::CreateCloudFormationChangeSetFluentBuilder {
         crate::operation::create_cloud_formation_change_set::builders::CreateCloudFormationChangeSetFluentBuilder::new(self.handle.clone())
     }
 }

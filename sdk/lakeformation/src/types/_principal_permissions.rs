@@ -30,9 +30,7 @@ impl PrincipalPermissions {
 
 /// A builder for [`PrincipalPermissions`](crate::types::PrincipalPermissions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrincipalPermissionsBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
@@ -44,10 +42,7 @@ impl PrincipalPermissionsBuilder {
         self
     }
     /// <p>The principal who is granted permissions.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakePrincipal>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
         self.principal = input;
         self
     }
@@ -67,17 +62,12 @@ impl PrincipalPermissionsBuilder {
         self
     }
     /// <p>The permissions that are granted to the principal.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The permissions that are granted to the principal.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`PrincipalPermissions`](crate::types::PrincipalPermissions).

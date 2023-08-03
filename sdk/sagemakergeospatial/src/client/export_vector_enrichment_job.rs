@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`export_status(Option<VectorEnrichmentJobExportStatus>)`](crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobOutput::export_status): <p>The status of the results the Vector Enrichment job being exported.</p>
     ///   - [`output_config(Option<ExportVectorEnrichmentJobOutputConfig>)`](crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobOutput::output_config): <p>Output location information for exporting Vector Enrichment Job results. </p>
     /// - On failure, responds with [`SdkError<ExportVectorEnrichmentJobError>`](crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError)
-    pub fn export_vector_enrichment_job(&self) -> crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobFluentBuilder{
+    pub fn export_vector_enrichment_job(&self) -> crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobFluentBuilder {
         crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobFluentBuilder::new(self.handle.clone())
     }
 }

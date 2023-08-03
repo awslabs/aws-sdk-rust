@@ -43,16 +43,14 @@ impl ListReportsForReportGroupInput {
 }
 impl ListReportsForReportGroupInput {
     /// Creates a new builder-style object to manufacture [`ListReportsForReportGroupInput`](crate::operation::list_reports_for_report_group::ListReportsForReportGroupInput).
-    pub fn builder() -> crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupInputBuilder{
+    pub fn builder() -> crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupInputBuilder {
         crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReportsForReportGroupInput`](crate::operation::list_reports_for_report_group::ListReportsForReportGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportsForReportGroupInputBuilder {
     pub(crate) report_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct ListReportsForReportGroupInputBuilder {
 }
 impl ListReportsForReportGroupInputBuilder {
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
-    pub fn report_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
-    pub fn set_report_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_group_arn = input;
         self
     }
@@ -101,10 +93,7 @@ impl ListReportsForReportGroupInputBuilder {
         self
     }
     /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
@@ -147,14 +136,12 @@ impl ListReportsForReportGroupInputBuilder {
         crate::operation::list_reports_for_report_group::ListReportsForReportGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_reports_for_report_group::ListReportsForReportGroupInput {
-                report_group_arn: self.report_group_arn,
-                next_token: self.next_token,
-                sort_order: self.sort_order,
-                max_results: self.max_results,
-                filter: self.filter,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_reports_for_report_group::ListReportsForReportGroupInput {
+            report_group_arn: self.report_group_arn,
+            next_token: self.next_token,
+            sort_order: self.sort_order,
+            max_results: self.max_results,
+            filter: self.filter,
+        })
     }
 }

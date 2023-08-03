@@ -58,9 +58,7 @@ impl Permission {
 
 /// A builder for [`Permission`](crate::types::Permission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PermissionBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -71,18 +69,12 @@ pub struct PermissionBuilder {
 }
 impl PermissionBuilder {
     /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
@@ -96,10 +88,7 @@ impl PermissionBuilder {
         self
     }
     /// <p>The time at which the permission was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -122,18 +111,12 @@ impl PermissionBuilder {
         &self.principal
     }
     /// <p>The ID of the account that assigned the permission.</p>
-    pub fn source_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the account that assigned the permission.</p>
-    pub fn set_source_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_account = input;
         self
     }
@@ -153,10 +136,7 @@ impl PermissionBuilder {
         self
     }
     /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>) -> Self {
         self.actions = input;
         self
     }

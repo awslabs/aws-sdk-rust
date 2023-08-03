@@ -41,39 +41,27 @@ impl WaterfallChartConfiguration {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a waterfall visual.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WaterfallChartSortConfiguration> {
+    pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::WaterfallChartSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The options that determine the presentation of a waterfall visual.</p>
-    pub fn waterfall_chart_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WaterfallChartOptions> {
+    pub fn waterfall_chart_options(&self) -> ::std::option::Option<&crate::types::WaterfallChartOptions> {
         self.waterfall_chart_options.as_ref()
     }
     /// <p>The options that determine the presentation of the category axis label.</p>
-    pub fn category_axis_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn category_axis_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.category_axis_label_options.as_ref()
     }
     /// <p>The options that determine the presentation of the category axis.</p>
-    pub fn category_axis_display_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn category_axis_display_options(&self) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
         self.category_axis_display_options.as_ref()
     }
     /// <p>The options that determine the presentation of the y-axis label.</p>
-    pub fn primary_y_axis_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn primary_y_axis_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.primary_y_axis_label_options.as_ref()
     }
     /// <p>The options that determine the presentation of the y-axis.</p>
-    pub fn primary_y_axis_display_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn primary_y_axis_display_options(&self) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
         self.primary_y_axis_display_options.as_ref()
     }
     /// <p>The legend configuration of a waterfall visual.</p>
@@ -98,22 +86,15 @@ impl WaterfallChartConfiguration {
 
 /// A builder for [`WaterfallChartConfiguration`](crate::types::WaterfallChartConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WaterfallChartConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::WaterfallChartFieldWells>,
-    pub(crate) sort_configuration:
-        ::std::option::Option<crate::types::WaterfallChartSortConfiguration>,
+    pub(crate) sort_configuration: ::std::option::Option<crate::types::WaterfallChartSortConfiguration>,
     pub(crate) waterfall_chart_options: ::std::option::Option<crate::types::WaterfallChartOptions>,
-    pub(crate) category_axis_label_options:
-        ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    pub(crate) category_axis_display_options:
-        ::std::option::Option<crate::types::AxisDisplayOptions>,
-    pub(crate) primary_y_axis_label_options:
-        ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    pub(crate) primary_y_axis_display_options:
-        ::std::option::Option<crate::types::AxisDisplayOptions>,
+    pub(crate) category_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) category_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
+    pub(crate) primary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) primary_y_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
     pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
@@ -125,39 +106,26 @@ impl WaterfallChartConfigurationBuilder {
         self
     }
     /// <p>The field well configuration of a waterfall visual.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::WaterfallChartFieldWells>,
-    ) -> Self {
+    pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::WaterfallChartFieldWells>) -> Self {
         self.field_wells = input;
         self
     }
     /// <p>The field well configuration of a waterfall visual.</p>
-    pub fn get_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::WaterfallChartFieldWells> {
+    pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::WaterfallChartFieldWells> {
         &self.field_wells
     }
     /// <p>The sort configuration of a waterfall visual.</p>
-    pub fn sort_configuration(
-        mut self,
-        input: crate::types::WaterfallChartSortConfiguration,
-    ) -> Self {
+    pub fn sort_configuration(mut self, input: crate::types::WaterfallChartSortConfiguration) -> Self {
         self.sort_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sort configuration of a waterfall visual.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::WaterfallChartSortConfiguration>,
-    ) -> Self {
+    pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::WaterfallChartSortConfiguration>) -> Self {
         self.sort_configuration = input;
         self
     }
     /// <p>The sort configuration of a waterfall visual.</p>
-    pub fn get_sort_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WaterfallChartSortConfiguration> {
+    pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::WaterfallChartSortConfiguration> {
         &self.sort_configuration
     }
     /// <p>The options that determine the presentation of a waterfall visual.</p>
@@ -166,105 +134,68 @@ impl WaterfallChartConfigurationBuilder {
         self
     }
     /// <p>The options that determine the presentation of a waterfall visual.</p>
-    pub fn set_waterfall_chart_options(
-        mut self,
-        input: ::std::option::Option<crate::types::WaterfallChartOptions>,
-    ) -> Self {
+    pub fn set_waterfall_chart_options(mut self, input: ::std::option::Option<crate::types::WaterfallChartOptions>) -> Self {
         self.waterfall_chart_options = input;
         self
     }
     /// <p>The options that determine the presentation of a waterfall visual.</p>
-    pub fn get_waterfall_chart_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::WaterfallChartOptions> {
+    pub fn get_waterfall_chart_options(&self) -> &::std::option::Option<crate::types::WaterfallChartOptions> {
         &self.waterfall_chart_options
     }
     /// <p>The options that determine the presentation of the category axis label.</p>
-    pub fn category_axis_label_options(
-        mut self,
-        input: crate::types::ChartAxisLabelOptions,
-    ) -> Self {
+    pub fn category_axis_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
         self.category_axis_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the presentation of the category axis label.</p>
-    pub fn set_category_axis_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_category_axis_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.category_axis_label_options = input;
         self
     }
     /// <p>The options that determine the presentation of the category axis label.</p>
-    pub fn get_category_axis_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_category_axis_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.category_axis_label_options
     }
     /// <p>The options that determine the presentation of the category axis.</p>
-    pub fn category_axis_display_options(
-        mut self,
-        input: crate::types::AxisDisplayOptions,
-    ) -> Self {
+    pub fn category_axis_display_options(mut self, input: crate::types::AxisDisplayOptions) -> Self {
         self.category_axis_display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the presentation of the category axis.</p>
-    pub fn set_category_axis_display_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
+    pub fn set_category_axis_display_options(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
         self.category_axis_display_options = input;
         self
     }
     /// <p>The options that determine the presentation of the category axis.</p>
-    pub fn get_category_axis_display_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
+    pub fn get_category_axis_display_options(&self) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
         &self.category_axis_display_options
     }
     /// <p>The options that determine the presentation of the y-axis label.</p>
-    pub fn primary_y_axis_label_options(
-        mut self,
-        input: crate::types::ChartAxisLabelOptions,
-    ) -> Self {
+    pub fn primary_y_axis_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
         self.primary_y_axis_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the presentation of the y-axis label.</p>
-    pub fn set_primary_y_axis_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_primary_y_axis_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.primary_y_axis_label_options = input;
         self
     }
     /// <p>The options that determine the presentation of the y-axis label.</p>
-    pub fn get_primary_y_axis_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_primary_y_axis_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.primary_y_axis_label_options
     }
     /// <p>The options that determine the presentation of the y-axis.</p>
-    pub fn primary_y_axis_display_options(
-        mut self,
-        input: crate::types::AxisDisplayOptions,
-    ) -> Self {
+    pub fn primary_y_axis_display_options(mut self, input: crate::types::AxisDisplayOptions) -> Self {
         self.primary_y_axis_display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the presentation of the y-axis.</p>
-    pub fn set_primary_y_axis_display_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
+    pub fn set_primary_y_axis_display_options(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
         self.primary_y_axis_display_options = input;
         self
     }
     /// <p>The options that determine the presentation of the y-axis.</p>
-    pub fn get_primary_y_axis_display_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
+    pub fn get_primary_y_axis_display_options(&self) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
         &self.primary_y_axis_display_options
     }
     /// <p>The legend configuration of a waterfall visual.</p>
@@ -287,10 +218,7 @@ impl WaterfallChartConfigurationBuilder {
         self
     }
     /// <p>The data label configuration of a waterfall visual.</p>
-    pub fn set_data_labels(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLabelOptions>,
-    ) -> Self {
+    pub fn set_data_labels(mut self, input: ::std::option::Option<crate::types::DataLabelOptions>) -> Self {
         self.data_labels = input;
         self
     }
@@ -304,10 +232,7 @@ impl WaterfallChartConfigurationBuilder {
         self
     }
     /// <p>The visual palette configuration of a waterfall visual.</p>
-    pub fn set_visual_palette(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualPalette>,
-    ) -> Self {
+    pub fn set_visual_palette(mut self, input: ::std::option::Option<crate::types::VisualPalette>) -> Self {
         self.visual_palette = input;
         self
     }

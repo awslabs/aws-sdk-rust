@@ -28,8 +28,7 @@ impl EvaluateMappingTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EvaluateMappingTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder,
+    inner: crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder,
 }
 impl EvaluateMappingTemplateFluentBuilder {
     /// Creates a new `EvaluateMappingTemplate`.
@@ -40,10 +39,7 @@ impl EvaluateMappingTemplateFluentBuilder {
         }
     }
     /// Access the EvaluateMappingTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl EvaluateMappingTemplateFluentBuilder {
             crate::operation::evaluate_mapping_template::EvaluateMappingTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_mapping_template::EvaluateMappingTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_mapping_template::EvaluateMappingTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl EvaluateMappingTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl EvaluateMappingTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::evaluate_mapping_template::EvaluateMappingTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_mapping_template::EvaluateMappingTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_mapping_template::EvaluateMappingTemplateError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl EvaluateMappingTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::evaluate_mapping_template::EvaluateMappingTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_mapping_template::EvaluateMappingTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_mapping_template::EvaluateMappingTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl EvaluateMappingTemplateFluentBuilder {
             crate::operation::evaluate_mapping_template::EvaluateMappingTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_mapping_template::EvaluateMappingTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_mapping_template::EvaluateMappingTemplateError>,
     > {
         self.customize_middleware().await
     }

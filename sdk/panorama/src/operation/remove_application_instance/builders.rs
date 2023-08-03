@@ -26,7 +26,7 @@ impl RemoveApplicationInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveApplicationInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_application_instance::builders::RemoveApplicationInstanceInputBuilder,
+    inner: crate::operation::remove_application_instance::builders::RemoveApplicationInstanceInputBuilder,
 }
 impl RemoveApplicationInstanceFluentBuilder {
     /// Creates a new `RemoveApplicationInstance`.
@@ -37,7 +37,7 @@ impl RemoveApplicationInstanceFluentBuilder {
         }
     }
     /// Access the RemoveApplicationInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_application_instance::builders::RemoveApplicationInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_application_instance::builders::RemoveApplicationInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RemoveApplicationInstanceFluentBuilder {
             crate::operation::remove_application_instance::RemoveApplicationInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_application_instance::RemoveApplicationInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RemoveApplicationInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RemoveApplicationInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_application_instance::RemoveApplicationInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_application_instance::RemoveApplicationInstanceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RemoveApplicationInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_application_instance::RemoveApplicationInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_application_instance::RemoveApplicationInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RemoveApplicationInstanceFluentBuilder {
             crate::operation::remove_application_instance::RemoveApplicationInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_application_instance::RemoveApplicationInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An application instance ID.</p>
-    pub fn application_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_instance_id(input.into());
         self
     }
     /// <p>An application instance ID.</p>
-    pub fn set_application_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_instance_id(input);
         self
     }

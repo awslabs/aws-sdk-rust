@@ -42,9 +42,7 @@ impl SearchFacesOutput {
 
 /// A builder for [`SearchFacesOutput`](crate::operation::search_faces::SearchFacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchFacesOutputBuilder {
     pub(crate) searched_face_id: ::std::option::Option<::std::string::String>,
     pub(crate) face_matches: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>,
@@ -53,18 +51,12 @@ pub struct SearchFacesOutputBuilder {
 }
 impl SearchFacesOutputBuilder {
     /// <p>ID of the face that was searched for matches in a collection.</p>
-    pub fn searched_face_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn searched_face_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.searched_face_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the face that was searched for matches in a collection.</p>
-    pub fn set_searched_face_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_searched_face_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.searched_face_id = input;
         self
     }
@@ -84,32 +76,21 @@ impl SearchFacesOutputBuilder {
         self
     }
     /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
-    pub fn set_face_matches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>,
-    ) -> Self {
+    pub fn set_face_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>) -> Self {
         self.face_matches = input;
         self
     }
     /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
-    pub fn get_face_matches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>> {
+    pub fn get_face_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>> {
         &self.face_matches
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn face_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn face_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.face_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn set_face_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_face_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.face_model_version = input;
         self
     }

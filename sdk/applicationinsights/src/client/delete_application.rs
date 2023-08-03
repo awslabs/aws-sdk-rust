@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`resource_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_resource_group_name): <p>The name of the resource group.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
-    pub fn delete_application(
-        &self,
-    ) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
-        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_application(&self) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
+        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(self.handle.clone())
     }
 }

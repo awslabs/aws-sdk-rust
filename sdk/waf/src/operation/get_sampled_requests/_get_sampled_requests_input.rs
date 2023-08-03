@@ -44,17 +44,14 @@ impl GetSampledRequestsInput {
 }
 impl GetSampledRequestsInput {
     /// Creates a new builder-style object to manufacture [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
-    pub fn builder(
-    ) -> crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder {
+    pub fn builder() -> crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder {
         crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSampledRequestsInputBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
@@ -108,10 +105,7 @@ impl GetSampledRequestsInputBuilder {
         self
     }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
-    pub fn set_time_window(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeWindow>,
-    ) -> Self {
+    pub fn set_time_window(mut self, input: ::std::option::Option<crate::types::TimeWindow>) -> Self {
         self.time_window = input;
         self
     }
@@ -136,17 +130,12 @@ impl GetSampledRequestsInputBuilder {
     /// Consumes the builder and constructs a [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sampled_requests::GetSampledRequestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sampled_requests::GetSampledRequestsInput {
-                web_acl_id: self.web_acl_id,
-                rule_id: self.rule_id,
-                time_window: self.time_window,
-                max_items: self.max_items.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_sampled_requests::GetSampledRequestsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_sampled_requests::GetSampledRequestsInput {
+            web_acl_id: self.web_acl_id,
+            rule_id: self.rule_id,
+            time_window: self.time_window,
+            max_items: self.max_items.unwrap_or_default(),
+        })
     }
 }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for IncreaseReplicationFactorOutput {
 }
 impl IncreaseReplicationFactorOutput {
     /// Creates a new builder-style object to manufacture [`IncreaseReplicationFactorOutput`](crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput).
-    pub fn builder() -> crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorOutputBuilder{
+    pub fn builder() -> crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorOutputBuilder {
         crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorOutputBuilder::default()
     }
 }
 
 /// A builder for [`IncreaseReplicationFactorOutput`](crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IncreaseReplicationFactorOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl IncreaseReplicationFactorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`IncreaseReplicationFactorOutput`](crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput {
+    pub fn build(self) -> crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput {
         crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput {
             cluster: self.cluster,
             _request_id: self._request_id,

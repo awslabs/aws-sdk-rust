@@ -10,10 +10,7 @@ impl AdvertiseByoipCidrInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.advertise_byoip_cidr();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl AdvertiseByoipCidrFluentBuilder {
         }
     }
     /// Access the AdvertiseByoipCidr as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::advertise_byoip_cidr::builders::AdvertiseByoipCidrInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::advertise_byoip_cidr::builders::AdvertiseByoipCidrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl AdvertiseByoipCidrFluentBuilder {
             crate::operation::advertise_byoip_cidr::AdvertiseByoipCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl AdvertiseByoipCidrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl AdvertiseByoipCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl AdvertiseByoipCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl AdvertiseByoipCidrFluentBuilder {
             crate::operation::advertise_byoip_cidr::AdvertiseByoipCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError>,
     > {
         self.customize_middleware().await
     }

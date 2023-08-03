@@ -36,9 +36,7 @@ impl ListS3ResourcesInput {
 
 /// A builder for [`ListS3ResourcesInput`](crate::operation::list_s3_resources::ListS3ResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListS3ResourcesInputBuilder {
     pub(crate) member_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListS3ResourcesInputBuilder {
 }
 impl ListS3ResourcesInputBuilder {
     /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListS3ResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListS3ResourcesInput`](crate::operation::list_s3_resources::ListS3ResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_s3_resources::ListS3ResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_s3_resources::ListS3ResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_s3_resources::ListS3ResourcesInput {
             member_account_id: self.member_account_id,
             next_token: self.next_token,

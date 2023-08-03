@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ExportJournalToS3Output`](crate::operation::export_journal_to_s3::ExportJournalToS3Output) with field(s):
     ///   - [`export_id(Option<String>)`](crate::operation::export_journal_to_s3::ExportJournalToS3Output::export_id): <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>  <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
     /// - On failure, responds with [`SdkError<ExportJournalToS3Error>`](crate::operation::export_journal_to_s3::ExportJournalToS3Error)
-    pub fn export_journal_to_s3(
-        &self,
-    ) -> crate::operation::export_journal_to_s3::builders::ExportJournalToS3FluentBuilder {
-        crate::operation::export_journal_to_s3::builders::ExportJournalToS3FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn export_journal_to_s3(&self) -> crate::operation::export_journal_to_s3::builders::ExportJournalToS3FluentBuilder {
+        crate::operation::export_journal_to_s3::builders::ExportJournalToS3FluentBuilder::new(self.handle.clone())
     }
 }

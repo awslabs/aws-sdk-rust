@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetTemplateSyncConfigOutput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigOutput) with field(s):
     ///   - [`template_sync_config(Option<TemplateSyncConfig>)`](crate::operation::get_template_sync_config::GetTemplateSyncConfigOutput::template_sync_config): <p>The template sync configuration detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<GetTemplateSyncConfigError>`](crate::operation::get_template_sync_config::GetTemplateSyncConfigError)
-    pub fn get_template_sync_config(
-        &self,
-    ) -> crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigFluentBuilder
-    {
+    pub fn get_template_sync_config(&self) -> crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigFluentBuilder {
         crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigFluentBuilder::new(self.handle.clone())
     }
 }

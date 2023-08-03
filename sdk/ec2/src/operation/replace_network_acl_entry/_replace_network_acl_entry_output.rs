@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ReplaceNetworkAclEntryOutput {
 }
 impl ReplaceNetworkAclEntryOutput {
     /// Creates a new builder-style object to manufacture [`ReplaceNetworkAclEntryOutput`](crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput).
-    pub fn builder(
-    ) -> crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryOutputBuilder {
         crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReplaceNetworkAclEntryOutput`](crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceNetworkAclEntryOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl ReplaceNetworkAclEntryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ReplaceNetworkAclEntryOutput`](crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput {
+    pub fn build(self) -> crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput {
         crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput {
             _request_id: self._request_id,
         }

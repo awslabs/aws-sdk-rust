@@ -30,9 +30,7 @@ impl StreamingDataPreviewOptions {
 
 /// A builder for [`StreamingDataPreviewOptions`](crate::types::StreamingDataPreviewOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamingDataPreviewOptionsBuilder {
     pub(crate) polling_time: ::std::option::Option<i64>,
     pub(crate) record_polling_limit: ::std::option::Option<i64>,

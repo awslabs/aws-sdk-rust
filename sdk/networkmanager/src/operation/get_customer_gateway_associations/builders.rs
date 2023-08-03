@@ -5,16 +5,16 @@ pub use crate::operation::get_customer_gateway_associations::_get_customer_gatew
 
 impl GetCustomerGatewayAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_customer_gateway_associations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetCustomerGatewayAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCustomerGatewayAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsInputBuilder,
+    inner: crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsInputBuilder,
 }
 impl GetCustomerGatewayAssociationsFluentBuilder {
     /// Creates a new `GetCustomerGatewayAssociations`.
@@ -37,15 +37,20 @@ impl GetCustomerGatewayAssociationsFluentBuilder {
         }
     }
     /// Access the GetCustomerGatewayAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetCustomerGatewayAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl GetCustomerGatewayAssociationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_customer_gateway_associations::paginator::GetCustomerGatewayAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_customer_gateway_associations::paginator::GetCustomerGatewayAssociationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_customer_gateway_associations::paginator::GetCustomerGatewayAssociationsPaginator {
         crate::operation::get_customer_gateway_associations::paginator::GetCustomerGatewayAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -125,25 +134,17 @@ impl GetCustomerGatewayAssociationsFluentBuilder {
     /// To override the contents of this collection use [`set_customer_gateway_arns`](Self::set_customer_gateway_arns).
     ///
     /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
-    pub fn customer_gateway_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_gateway_arns(input.into());
         self
     }
     /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
-    pub fn set_customer_gateway_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_customer_gateway_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_customer_gateway_arns(input);
         self
     }
     /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
-    pub fn get_customer_gateway_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_customer_gateway_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_customer_gateway_arns()
     }
     /// <p>The maximum number of results to return.</p>

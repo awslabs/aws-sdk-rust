@@ -5,8 +5,7 @@
 pub struct ListJournalKinesisStreamsForLedgerOutput {
     /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
     #[doc(hidden)]
-    pub streams:
-        ::std::option::Option<::std::vec::Vec<crate::types::JournalKinesisStreamDescription>>,
+    pub streams: ::std::option::Option<::std::vec::Vec<crate::types::JournalKinesisStreamDescription>>,
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>
     /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>
@@ -17,9 +16,7 @@ pub struct ListJournalKinesisStreamsForLedgerOutput {
 }
 impl ListJournalKinesisStreamsForLedgerOutput {
     /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
-    pub fn streams(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::JournalKinesisStreamDescription]> {
+    pub fn streams(&self) -> ::std::option::Option<&[crate::types::JournalKinesisStreamDescription]> {
         self.streams.as_deref()
     }
     /// <ul>
@@ -37,19 +34,16 @@ impl ::aws_http::request_id::RequestId for ListJournalKinesisStreamsForLedgerOut
 }
 impl ListJournalKinesisStreamsForLedgerOutput {
     /// Creates a new builder-style object to manufacture [`ListJournalKinesisStreamsForLedgerOutput`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput).
-    pub fn builder() -> crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerOutputBuilder{
+    pub fn builder() -> crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerOutputBuilder {
         crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListJournalKinesisStreamsForLedgerOutput`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJournalKinesisStreamsForLedgerOutputBuilder {
-    pub(crate) streams:
-        ::std::option::Option<::std::vec::Vec<crate::types::JournalKinesisStreamDescription>>,
+    pub(crate) streams: ::std::option::Option<::std::vec::Vec<crate::types::JournalKinesisStreamDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -66,20 +60,12 @@ impl ListJournalKinesisStreamsForLedgerOutputBuilder {
         self
     }
     /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
-    pub fn set_streams(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::JournalKinesisStreamDescription>,
-        >,
-    ) -> Self {
+    pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JournalKinesisStreamDescription>>) -> Self {
         self.streams = input;
         self
     }
     /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
-    pub fn get_streams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JournalKinesisStreamDescription>>
-    {
+    pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JournalKinesisStreamDescription>> {
         &self.streams
     }
     /// <ul>
@@ -115,12 +101,10 @@ impl ListJournalKinesisStreamsForLedgerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListJournalKinesisStreamsForLedgerOutput`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput).
-    pub fn build(self) -> crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput{
+    pub fn build(self) -> crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput {
         crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput {
-            streams: self.streams
-            ,
-            next_token: self.next_token
-            ,
+            streams: self.streams,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

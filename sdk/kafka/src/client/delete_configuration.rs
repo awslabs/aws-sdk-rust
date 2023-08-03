@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::delete_configuration::DeleteConfigurationOutput::arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     ///   - [`state(Option<ConfigurationState>)`](crate::operation::delete_configuration::DeleteConfigurationOutput::state): <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     /// - On failure, responds with [`SdkError<DeleteConfigurationError>`](crate::operation::delete_configuration::DeleteConfigurationError)
-    pub fn delete_configuration(
-        &self,
-    ) -> crate::operation::delete_configuration::builders::DeleteConfigurationFluentBuilder {
-        crate::operation::delete_configuration::builders::DeleteConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_configuration(&self) -> crate::operation::delete_configuration::builders::DeleteConfigurationFluentBuilder {
+        crate::operation::delete_configuration::builders::DeleteConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteConnectPeerOutput {
 }
 impl DeleteConnectPeerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectPeerOutput`](crate::operation::delete_connect_peer::DeleteConnectPeerOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_connect_peer::builders::DeleteConnectPeerOutputBuilder {
+    pub fn builder() -> crate::operation::delete_connect_peer::builders::DeleteConnectPeerOutputBuilder {
         crate::operation::delete_connect_peer::builders::DeleteConnectPeerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectPeerOutput`](crate::operation::delete_connect_peer::DeleteConnectPeerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectPeerOutputBuilder {
     pub(crate) connect_peer: ::std::option::Option<crate::types::ConnectPeer>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteConnectPeerOutputBuilder {
         self
     }
     /// <p>Information about the deleted Connect peer.</p>
-    pub fn set_connect_peer(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectPeer>,
-    ) -> Self {
+    pub fn set_connect_peer(mut self, input: ::std::option::Option<crate::types::ConnectPeer>) -> Self {
         self.connect_peer = input;
         self
     }

@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`proof(Option<ValueHolder>)`](crate::operation::get_revision::GetRevisionOutput::proof): <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
     ///   - [`revision(Option<ValueHolder>)`](crate::operation::get_revision::GetRevisionOutput::revision): <p>The document revision data object in Amazon Ion format.</p>
     /// - On failure, responds with [`SdkError<GetRevisionError>`](crate::operation::get_revision::GetRevisionError)
-    pub fn get_revision(
-        &self,
-    ) -> crate::operation::get_revision::builders::GetRevisionFluentBuilder {
+    pub fn get_revision(&self) -> crate::operation::get_revision::builders::GetRevisionFluentBuilder {
         crate::operation::get_revision::builders::GetRevisionFluentBuilder::new(self.handle.clone())
     }
 }

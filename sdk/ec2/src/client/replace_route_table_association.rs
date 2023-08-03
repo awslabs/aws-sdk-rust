@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`new_association_id(Option<String>)`](crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput::new_association_id): <p>The ID of the new association.</p>
     ///   - [`association_state(Option<RouteTableAssociationState>)`](crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput::association_state): <p>The state of the association.</p>
     /// - On failure, responds with [`SdkError<ReplaceRouteTableAssociationError>`](crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError)
-    pub fn replace_route_table_association(&self) -> crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationFluentBuilder{
+    pub fn replace_route_table_association(
+        &self,
+    ) -> crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationFluentBuilder {
         crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationFluentBuilder::new(self.handle.clone())
     }
 }

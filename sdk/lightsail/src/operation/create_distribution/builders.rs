@@ -10,10 +10,7 @@ impl CreateDistributionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_distribution::CreateDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution::CreateDistributionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_distribution();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateDistributionFluentBuilder {
         }
     }
     /// Access the CreateDistribution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateDistributionFluentBuilder {
             crate::operation::create_distribution::CreateDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution::CreateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateDistributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_distribution::CreateDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution::CreateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_distribution::CreateDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution::CreateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl CreateDistributionFluentBuilder {
             crate::operation::create_distribution::CreateDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution::CreateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name for the distribution.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_name(input.into());
         self
     }
     /// <p>The name for the distribution.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
     }
@@ -166,17 +144,12 @@ impl CreateDistributionFluentBuilder {
         self
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
-    pub fn set_default_cache_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheBehavior>,
-    ) -> Self {
+    pub fn set_default_cache_behavior(mut self, input: ::std::option::Option<crate::types::CacheBehavior>) -> Self {
         self.inner = self.inner.set_default_cache_behavior(input);
         self
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
-    pub fn get_default_cache_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::CacheBehavior> {
+    pub fn get_default_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
         self.inner.get_default_cache_behavior()
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
@@ -185,17 +158,12 @@ impl CreateDistributionFluentBuilder {
         self
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
-    pub fn set_cache_behavior_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheSettings>,
-    ) -> Self {
+    pub fn set_cache_behavior_settings(mut self, input: ::std::option::Option<crate::types::CacheSettings>) -> Self {
         self.inner = self.inner.set_cache_behavior_settings(input);
         self
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
-    pub fn get_cache_behavior_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::CacheSettings> {
+    pub fn get_cache_behavior_settings(&self) -> &::std::option::Option<crate::types::CacheSettings> {
         self.inner.get_cache_behavior_settings()
     }
     /// Appends an item to `cacheBehaviors`.
@@ -208,17 +176,12 @@ impl CreateDistributionFluentBuilder {
         self
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn set_cache_behaviors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
-    ) -> Self {
+    pub fn set_cache_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>) -> Self {
         self.inner = self.inner.set_cache_behaviors(input);
         self
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn get_cache_behaviors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
+    pub fn get_cache_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
         self.inner.get_cache_behaviors()
     }
     /// <p>The bundle ID to use for the distribution.</p>
@@ -251,10 +214,7 @@ impl CreateDistributionFluentBuilder {
     /// <p>The IP address type for the distribution.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
@@ -276,10 +236,7 @@ impl CreateDistributionFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the distribution during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

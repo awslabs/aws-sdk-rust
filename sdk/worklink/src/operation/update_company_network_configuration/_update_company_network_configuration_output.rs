@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateCompanyNetworkConfigurationOutp
 }
 impl UpdateCompanyNetworkConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCompanyNetworkConfigurationOutput`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput).
-    pub fn builder() -> crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationOutputBuilder {
         crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCompanyNetworkConfigurationOutput`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCompanyNetworkConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateCompanyNetworkConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCompanyNetworkConfigurationOutput`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput {
         crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput {
             _request_id: self._request_id,
         }

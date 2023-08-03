@@ -7,15 +7,16 @@ pub fn ser_evaluation_form_numeric_question_automation(
         crate::types::EvaluationFormNumericQuestionAutomation::PropertyValue(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_6.key("PropertyValue").start_object();
-            crate::protocol_serde::shape_numeric_question_property_value_automation::ser_numeric_question_property_value_automation(&mut object_1, inner)?;
+            crate::protocol_serde::shape_numeric_question_property_value_automation::ser_numeric_question_property_value_automation(
+                &mut object_1,
+                inner,
+            )?;
             object_1.finish();
         }
         crate::types::EvaluationFormNumericQuestionAutomation::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "EvaluationFormNumericQuestionAutomation",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "EvaluationFormNumericQuestionAutomation",
+            ))
         }
     }
     Ok(())
@@ -23,33 +24,24 @@ pub fn ser_evaluation_form_numeric_question_automation(
 
 pub(crate) fn de_evaluation_form_numeric_question_automation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::EvaluationFormNumericQuestionAutomation>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::EvaluationFormNumericQuestionAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
-        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => loop {
-            match tokens.next().transpose()? {
-                Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                    if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            loop {
+                match tokens.next().transpose()? {
+                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        if variant.is_some() {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                 "encountered mixed variants in union",
-                            ),
-                        );
-                    }
-                    variant = match key.to_unescaped()?.as_ref() {
+                            ));
+                        }
+                        variant = match key.to_unescaped()?.as_ref() {
                             "PropertyValue" => {
                                 Some(crate::types::EvaluationFormNumericQuestionAutomation::PropertyValue(
                                     crate::protocol_serde::shape_numeric_question_property_value_automation::de_numeric_question_property_value_automation(tokens)?
@@ -61,23 +53,20 @@ where
                                                                       Some(crate::types::EvaluationFormNumericQuestionAutomation::Unknown)
                                                                     }
                         };
-                }
-                other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    }
+                    other => {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {:?}",
                             other
-                        )),
-                    )
+                        )))
+                    }
                 }
             }
-        },
+        }
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

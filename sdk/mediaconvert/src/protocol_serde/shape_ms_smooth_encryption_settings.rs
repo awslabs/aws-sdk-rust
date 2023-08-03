@@ -6,10 +6,7 @@ pub fn ser_ms_smooth_encryption_settings(
     if let Some(var_1) = &input.speke_key_provider {
         #[allow(unused_mut)]
         let mut object_2 = object.key("spekeKeyProvider").start_object();
-        crate::protocol_serde::shape_speke_key_provider::ser_speke_key_provider(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_speke_key_provider::ser_speke_key_provider(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())
@@ -17,17 +14,9 @@ pub fn ser_ms_smooth_encryption_settings(
 
 pub(crate) fn de_ms_smooth_encryption_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::MsSmoothEncryptionSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::MsSmoothEncryptionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -37,31 +26,24 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "spekeKeyProvider" => {
-                                builder = builder.set_speke_key_provider(
-                                    crate::protocol_serde::shape_speke_key_provider::de_speke_key_provider(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "spekeKeyProvider" => {
+                            builder = builder.set_speke_key_provider(crate::protocol_serde::shape_speke_key_provider::de_speke_key_provider(tokens)?);
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

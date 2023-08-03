@@ -27,9 +27,7 @@ impl PutAutoScalingPolicyOutput {
         self.instance_group_id.as_deref()
     }
     /// <p>The automatic scaling policy definition.</p>
-    pub fn auto_scaling_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoScalingPolicyDescription> {
+    pub fn auto_scaling_policy(&self) -> ::std::option::Option<&crate::types::AutoScalingPolicyDescription> {
         self.auto_scaling_policy.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
@@ -44,23 +42,18 @@ impl ::aws_http::request_id::RequestId for PutAutoScalingPolicyOutput {
 }
 impl PutAutoScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutAutoScalingPolicyOutput`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyOutputBuilder {
         crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAutoScalingPolicyOutput`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAutoScalingPolicyOutputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) auto_scaling_policy:
-        ::std::option::Option<crate::types::AutoScalingPolicyDescription>,
+    pub(crate) auto_scaling_policy: ::std::option::Option<crate::types::AutoScalingPolicyDescription>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -80,18 +73,12 @@ impl PutAutoScalingPolicyOutputBuilder {
         &self.cluster_id
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    pub fn instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_group_id = input;
         self
     }
@@ -100,25 +87,17 @@ impl PutAutoScalingPolicyOutputBuilder {
         &self.instance_group_id
     }
     /// <p>The automatic scaling policy definition.</p>
-    pub fn auto_scaling_policy(
-        mut self,
-        input: crate::types::AutoScalingPolicyDescription,
-    ) -> Self {
+    pub fn auto_scaling_policy(mut self, input: crate::types::AutoScalingPolicyDescription) -> Self {
         self.auto_scaling_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The automatic scaling policy definition.</p>
-    pub fn set_auto_scaling_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingPolicyDescription>,
-    ) -> Self {
+    pub fn set_auto_scaling_policy(mut self, input: ::std::option::Option<crate::types::AutoScalingPolicyDescription>) -> Self {
         self.auto_scaling_policy = input;
         self
     }
     /// <p>The automatic scaling policy definition.</p>
-    pub fn get_auto_scaling_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingPolicyDescription> {
+    pub fn get_auto_scaling_policy(&self) -> &::std::option::Option<crate::types::AutoScalingPolicyDescription> {
         &self.auto_scaling_policy
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>

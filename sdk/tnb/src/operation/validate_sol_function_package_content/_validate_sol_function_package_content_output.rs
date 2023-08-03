@@ -45,9 +45,7 @@ impl ValidateSolFunctionPackageContentOutput {
         self.vnfd_version.as_deref()
     }
     /// <p>Function package metadata.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ValidateSolFunctionPackageContentMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ValidateSolFunctionPackageContentMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -58,24 +56,21 @@ impl ::aws_http::request_id::RequestId for ValidateSolFunctionPackageContentOutp
 }
 impl ValidateSolFunctionPackageContentOutput {
     /// Creates a new builder-style object to manufacture [`ValidateSolFunctionPackageContentOutput`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput).
-    pub fn builder() -> crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder{
+    pub fn builder() -> crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder {
         crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateSolFunctionPackageContentOutput`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateSolFunctionPackageContentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) vnfd_id: ::std::option::Option<::std::string::String>,
     pub(crate) vnf_product_name: ::std::option::Option<::std::string::String>,
     pub(crate) vnf_provider: ::std::option::Option<::std::string::String>,
     pub(crate) vnfd_version: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata:
-        ::std::option::Option<crate::types::ValidateSolFunctionPackageContentMetadata>,
+    pub(crate) metadata: ::std::option::Option<crate::types::ValidateSolFunctionPackageContentMetadata>,
     _request_id: Option<String>,
 }
 impl ValidateSolFunctionPackageContentOutputBuilder {
@@ -108,18 +103,12 @@ impl ValidateSolFunctionPackageContentOutputBuilder {
         &self.vnfd_id
     }
     /// <p>Network function product name.</p>
-    pub fn vnf_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vnf_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Network function product name.</p>
-    pub fn set_vnf_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vnf_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_product_name = input;
         self
     }
@@ -156,25 +145,17 @@ impl ValidateSolFunctionPackageContentOutputBuilder {
         &self.vnfd_version
     }
     /// <p>Function package metadata.</p>
-    pub fn metadata(
-        mut self,
-        input: crate::types::ValidateSolFunctionPackageContentMetadata,
-    ) -> Self {
+    pub fn metadata(mut self, input: crate::types::ValidateSolFunctionPackageContentMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Function package metadata.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidateSolFunctionPackageContentMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ValidateSolFunctionPackageContentMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Function package metadata.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ValidateSolFunctionPackageContentMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ValidateSolFunctionPackageContentMetadata> {
         &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -187,20 +168,14 @@ impl ValidateSolFunctionPackageContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidateSolFunctionPackageContentOutput`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput).
-    pub fn build(self) -> crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput{
+    pub fn build(self) -> crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput {
         crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput {
-            id: self.id
-            ,
-            vnfd_id: self.vnfd_id
-            ,
-            vnf_product_name: self.vnf_product_name
-            ,
-            vnf_provider: self.vnf_provider
-            ,
-            vnfd_version: self.vnfd_version
-            ,
-            metadata: self.metadata
-            ,
+            id: self.id,
+            vnfd_id: self.vnfd_id,
+            vnf_product_name: self.vnf_product_name,
+            vnf_provider: self.vnf_provider,
+            vnfd_version: self.vnfd_version,
+            metadata: self.metadata,
             _request_id: self._request_id,
         }
     }

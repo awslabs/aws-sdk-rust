@@ -30,9 +30,7 @@ impl GsmLocalId {
 
 /// A builder for [`GsmLocalId`](crate::types::GsmLocalId).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GsmLocalIdBuilder {
     pub(crate) bsic: ::std::option::Option<i32>,
     pub(crate) bcch: ::std::option::Option<i32>,

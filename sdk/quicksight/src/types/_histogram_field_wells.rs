@@ -6,14 +6,11 @@
 pub struct HistogramFieldWells {
     /// <p>The field well configuration of a histogram.</p>
     #[doc(hidden)]
-    pub histogram_aggregated_field_wells:
-        ::std::option::Option<crate::types::HistogramAggregatedFieldWells>,
+    pub histogram_aggregated_field_wells: ::std::option::Option<crate::types::HistogramAggregatedFieldWells>,
 }
 impl HistogramFieldWells {
     /// <p>The field well configuration of a histogram.</p>
-    pub fn histogram_aggregated_field_wells(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HistogramAggregatedFieldWells> {
+    pub fn histogram_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::HistogramAggregatedFieldWells> {
         self.histogram_aggregated_field_wells.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl HistogramFieldWells {
 
 /// A builder for [`HistogramFieldWells`](crate::types::HistogramFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HistogramFieldWellsBuilder {
-    pub(crate) histogram_aggregated_field_wells:
-        ::std::option::Option<crate::types::HistogramAggregatedFieldWells>,
+    pub(crate) histogram_aggregated_field_wells: ::std::option::Option<crate::types::HistogramAggregatedFieldWells>,
 }
 impl HistogramFieldWellsBuilder {
     /// <p>The field well configuration of a histogram.</p>
-    pub fn histogram_aggregated_field_wells(
-        mut self,
-        input: crate::types::HistogramAggregatedFieldWells,
-    ) -> Self {
+    pub fn histogram_aggregated_field_wells(mut self, input: crate::types::HistogramAggregatedFieldWells) -> Self {
         self.histogram_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field well configuration of a histogram.</p>
-    pub fn set_histogram_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::HistogramAggregatedFieldWells>,
-    ) -> Self {
+    pub fn set_histogram_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::HistogramAggregatedFieldWells>) -> Self {
         self.histogram_aggregated_field_wells = input;
         self
     }
     /// <p>The field well configuration of a histogram.</p>
-    pub fn get_histogram_aggregated_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::HistogramAggregatedFieldWells> {
+    pub fn get_histogram_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::HistogramAggregatedFieldWells> {
         &self.histogram_aggregated_field_wells
     }
     /// Consumes the builder and constructs a [`HistogramFieldWells`](crate::types::HistogramFieldWells).

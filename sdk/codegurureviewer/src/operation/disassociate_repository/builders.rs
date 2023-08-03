@@ -37,10 +37,7 @@ impl DisassociateRepositoryFluentBuilder {
         }
     }
     /// Access the DisassociateRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_repository::builders::DisassociateRepositoryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_repository::builders::DisassociateRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DisassociateRepositoryFluentBuilder {
             crate::operation::disassociate_repository::DisassociateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_repository::DisassociateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_repository::DisassociateRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DisassociateRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DisassociateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_repository::DisassociateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_repository::DisassociateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_repository::DisassociateRepositoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DisassociateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_repository::DisassociateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_repository::DisassociateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_repository::DisassociateRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DisassociateRepositoryFluentBuilder {
             crate::operation::disassociate_repository::DisassociateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_repository::DisassociateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_repository::DisassociateRepositoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn set_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_arn(input);
         self
     }

@@ -39,12 +39,10 @@ pub struct ExtendedS3DestinationUpdate {
     pub s3_backup_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
     #[doc(hidden)]
-    pub data_format_conversion_configuration:
-        ::std::option::Option<crate::types::DataFormatConversionConfiguration>,
+    pub data_format_conversion_configuration: ::std::option::Option<crate::types::DataFormatConversionConfiguration>,
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
     #[doc(hidden)]
-    pub dynamic_partitioning_configuration:
-        ::std::option::Option<crate::types::DynamicPartitioningConfiguration>,
+    pub dynamic_partitioning_configuration: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>,
 }
 impl ExtendedS3DestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -72,21 +70,15 @@ impl ExtendedS3DestinationUpdate {
         self.compression_format.as_ref()
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
@@ -98,15 +90,11 @@ impl ExtendedS3DestinationUpdate {
         self.s3_backup_update.as_ref()
     }
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
-    pub fn data_format_conversion_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataFormatConversionConfiguration> {
+    pub fn data_format_conversion_configuration(&self) -> ::std::option::Option<&crate::types::DataFormatConversionConfiguration> {
         self.data_format_conversion_configuration.as_ref()
     }
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
-    pub fn dynamic_partitioning_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DynamicPartitioningConfiguration> {
+    pub fn dynamic_partitioning_configuration(&self) -> ::std::option::Option<&crate::types::DynamicPartitioningConfiguration> {
         self.dynamic_partitioning_configuration.as_ref()
     }
 }
@@ -119,9 +107,7 @@ impl ExtendedS3DestinationUpdate {
 
 /// A builder for [`ExtendedS3DestinationUpdate`](crate::types::ExtendedS3DestinationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExtendedS3DestinationUpdateBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
@@ -129,18 +115,13 @@ pub struct ExtendedS3DestinationUpdateBuilder {
     pub(crate) error_output_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) buffering_hints: ::std::option::Option<crate::types::BufferingHints>,
     pub(crate) compression_format: ::std::option::Option<crate::types::CompressionFormat>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
-    pub(crate) cloud_watch_logging_options:
-        ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    pub(crate) processing_configuration:
-        ::std::option::Option<crate::types::ProcessingConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::S3BackupMode>,
     pub(crate) s3_backup_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
-    pub(crate) data_format_conversion_configuration:
-        ::std::option::Option<crate::types::DataFormatConversionConfiguration>,
-    pub(crate) dynamic_partitioning_configuration:
-        ::std::option::Option<crate::types::DynamicPartitioningConfiguration>,
+    pub(crate) data_format_conversion_configuration: ::std::option::Option<crate::types::DataFormatConversionConfiguration>,
+    pub(crate) dynamic_partitioning_configuration: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>,
 }
 impl ExtendedS3DestinationUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -186,18 +167,12 @@ impl ExtendedS3DestinationUpdateBuilder {
         &self.prefix
     }
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
-    pub fn error_output_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_output_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_output_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
-    pub fn set_error_output_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_output_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_output_prefix = input;
         self
     }
@@ -211,10 +186,7 @@ impl ExtendedS3DestinationUpdateBuilder {
         self
     }
     /// <p>The buffering option.</p>
-    pub fn set_buffering_hints(
-        mut self,
-        input: ::std::option::Option<crate::types::BufferingHints>,
-    ) -> Self {
+    pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::BufferingHints>) -> Self {
         self.buffering_hints = input;
         self
     }
@@ -228,83 +200,54 @@ impl ExtendedS3DestinationUpdateBuilder {
         self
     }
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>. </p>
-    pub fn set_compression_format(
-        mut self,
-        input: ::std::option::Option<crate::types::CompressionFormat>,
-    ) -> Self {
+    pub fn set_compression_format(mut self, input: ::std::option::Option<crate::types::CompressionFormat>) -> Self {
         self.compression_format = input;
         self
     }
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>. </p>
-    pub fn get_compression_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::CompressionFormat> {
+    pub fn get_compression_format(&self) -> &::std::option::Option<crate::types::CompressionFormat> {
         &self.compression_format
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptions,
-    ) -> Self {
+    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn set_cloud_watch_logging_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn get_cloud_watch_logging_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(
-        mut self,
-        input: crate::types::ProcessingConfiguration,
-    ) -> Self {
+    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data processing configuration.</p>
-    pub fn set_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
         self.processing_configuration = input;
         self
     }
     /// <p>The data processing configuration.</p>
-    pub fn get_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+    pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
     /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
@@ -313,10 +256,7 @@ impl ExtendedS3DestinationUpdateBuilder {
         self
     }
     /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
-    pub fn set_s3_backup_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::S3BackupMode>,
-    ) -> Self {
+    pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::S3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
@@ -330,61 +270,40 @@ impl ExtendedS3DestinationUpdateBuilder {
         self
     }
     /// <p>The Amazon S3 destination for backup.</p>
-    pub fn set_s3_backup_update(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationUpdate>,
-    ) -> Self {
+    pub fn set_s3_backup_update(mut self, input: ::std::option::Option<crate::types::S3DestinationUpdate>) -> Self {
         self.s3_backup_update = input;
         self
     }
     /// <p>The Amazon S3 destination for backup.</p>
-    pub fn get_s3_backup_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
+    pub fn get_s3_backup_update(&self) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
         &self.s3_backup_update
     }
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
-    pub fn data_format_conversion_configuration(
-        mut self,
-        input: crate::types::DataFormatConversionConfiguration,
-    ) -> Self {
+    pub fn data_format_conversion_configuration(mut self, input: crate::types::DataFormatConversionConfiguration) -> Self {
         self.data_format_conversion_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
-    pub fn set_data_format_conversion_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFormatConversionConfiguration>,
-    ) -> Self {
+    pub fn set_data_format_conversion_configuration(mut self, input: ::std::option::Option<crate::types::DataFormatConversionConfiguration>) -> Self {
         self.data_format_conversion_configuration = input;
         self
     }
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
-    pub fn get_data_format_conversion_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataFormatConversionConfiguration> {
+    pub fn get_data_format_conversion_configuration(&self) -> &::std::option::Option<crate::types::DataFormatConversionConfiguration> {
         &self.data_format_conversion_configuration
     }
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
-    pub fn dynamic_partitioning_configuration(
-        mut self,
-        input: crate::types::DynamicPartitioningConfiguration,
-    ) -> Self {
+    pub fn dynamic_partitioning_configuration(mut self, input: crate::types::DynamicPartitioningConfiguration) -> Self {
         self.dynamic_partitioning_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
-    pub fn set_dynamic_partitioning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>,
-    ) -> Self {
+    pub fn set_dynamic_partitioning_configuration(mut self, input: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>) -> Self {
         self.dynamic_partitioning_configuration = input;
         self
     }
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
-    pub fn get_dynamic_partitioning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DynamicPartitioningConfiguration> {
+    pub fn get_dynamic_partitioning_configuration(&self) -> &::std::option::Option<crate::types::DynamicPartitioningConfiguration> {
         &self.dynamic_partitioning_configuration
     }
     /// Consumes the builder and constructs a [`ExtendedS3DestinationUpdate`](crate::types::ExtendedS3DestinationUpdate).

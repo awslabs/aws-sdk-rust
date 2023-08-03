@@ -12,14 +12,11 @@ pub struct InferenceInputConfiguration {
     pub input_time_zone_offset: ::std::option::Option<::std::string::String>,
     /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
     #[doc(hidden)]
-    pub inference_input_name_configuration:
-        ::std::option::Option<crate::types::InferenceInputNameConfiguration>,
+    pub inference_input_name_configuration: ::std::option::Option<crate::types::InferenceInputNameConfiguration>,
 }
 impl InferenceInputConfiguration {
     /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
-    pub fn s3_input_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceS3InputConfiguration> {
+    pub fn s3_input_configuration(&self) -> ::std::option::Option<&crate::types::InferenceS3InputConfiguration> {
         self.s3_input_configuration.as_ref()
     }
     /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
@@ -27,9 +24,7 @@ impl InferenceInputConfiguration {
         self.input_time_zone_offset.as_deref()
     }
     /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
-    pub fn inference_input_name_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceInputNameConfiguration> {
+    pub fn inference_input_name_configuration(&self) -> ::std::option::Option<&crate::types::InferenceInputNameConfiguration> {
         self.inference_input_name_configuration.as_ref()
     }
 }
@@ -42,52 +37,34 @@ impl InferenceInputConfiguration {
 
 /// A builder for [`InferenceInputConfiguration`](crate::types::InferenceInputConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceInputConfigurationBuilder {
-    pub(crate) s3_input_configuration:
-        ::std::option::Option<crate::types::InferenceS3InputConfiguration>,
+    pub(crate) s3_input_configuration: ::std::option::Option<crate::types::InferenceS3InputConfiguration>,
     pub(crate) input_time_zone_offset: ::std::option::Option<::std::string::String>,
-    pub(crate) inference_input_name_configuration:
-        ::std::option::Option<crate::types::InferenceInputNameConfiguration>,
+    pub(crate) inference_input_name_configuration: ::std::option::Option<crate::types::InferenceInputNameConfiguration>,
 }
 impl InferenceInputConfigurationBuilder {
     /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
-    pub fn s3_input_configuration(
-        mut self,
-        input: crate::types::InferenceS3InputConfiguration,
-    ) -> Self {
+    pub fn s3_input_configuration(mut self, input: crate::types::InferenceS3InputConfiguration) -> Self {
         self.s3_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
-    pub fn set_s3_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceS3InputConfiguration>,
-    ) -> Self {
+    pub fn set_s3_input_configuration(mut self, input: ::std::option::Option<crate::types::InferenceS3InputConfiguration>) -> Self {
         self.s3_input_configuration = input;
         self
     }
     /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
-    pub fn get_s3_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceS3InputConfiguration> {
+    pub fn get_s3_input_configuration(&self) -> &::std::option::Option<crate::types::InferenceS3InputConfiguration> {
         &self.s3_input_configuration
     }
     /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
-    pub fn input_time_zone_offset(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_time_zone_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_time_zone_offset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
-    pub fn set_input_time_zone_offset(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_time_zone_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_time_zone_offset = input;
         self
     }
@@ -96,25 +73,17 @@ impl InferenceInputConfigurationBuilder {
         &self.input_time_zone_offset
     }
     /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
-    pub fn inference_input_name_configuration(
-        mut self,
-        input: crate::types::InferenceInputNameConfiguration,
-    ) -> Self {
+    pub fn inference_input_name_configuration(mut self, input: crate::types::InferenceInputNameConfiguration) -> Self {
         self.inference_input_name_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
-    pub fn set_inference_input_name_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceInputNameConfiguration>,
-    ) -> Self {
+    pub fn set_inference_input_name_configuration(mut self, input: ::std::option::Option<crate::types::InferenceInputNameConfiguration>) -> Self {
         self.inference_input_name_configuration = input;
         self
     }
     /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
-    pub fn get_inference_input_name_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceInputNameConfiguration> {
+    pub fn get_inference_input_name_configuration(&self) -> &::std::option::Option<crate::types::InferenceInputNameConfiguration> {
         &self.inference_input_name_configuration
     }
     /// Consumes the builder and constructs a [`InferenceInputConfiguration`](crate::types::InferenceInputConfiguration).

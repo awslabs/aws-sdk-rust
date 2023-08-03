@@ -15,18 +15,14 @@ impl DisassociateDrtLogBucketInput {
 }
 impl DisassociateDrtLogBucketInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDrtLogBucketInput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder {
         crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDrtLogBucketInput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDrtLogBucketInputBuilder {
     pub(crate) log_bucket: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DisassociateDrtLogBucketInputBuilder {
         crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput {
-                log_bucket: self.log_bucket,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput { log_bucket: self.log_bucket })
     }
 }

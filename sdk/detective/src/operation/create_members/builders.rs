@@ -10,10 +10,7 @@ impl CreateMembersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_members::CreateMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_members::CreateMembersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_members::CreateMembersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_members();
         fluent_builder.inner = self;
@@ -46,9 +43,7 @@ impl CreateMembersFluentBuilder {
         }
     }
     /// Access the CreateMembers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_members::builders::CreateMembersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_members::builders::CreateMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -70,10 +65,7 @@ impl CreateMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -178,10 +170,7 @@ impl CreateMembersFluentBuilder {
         self
     }
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>) -> Self {
         self.inner = self.inner.set_accounts(input);
         self
     }

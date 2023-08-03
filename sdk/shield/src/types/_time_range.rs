@@ -30,9 +30,7 @@ impl TimeRange {
 
 /// A builder for [`TimeRange`](crate::types::TimeRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeRangeBuilder {
     pub(crate) from_inclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) to_exclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl TimeRangeBuilder {
         self
     }
     /// <p>The start time, in Unix time in seconds. </p>
-    pub fn set_from_inclusive(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_from_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.from_inclusive = input;
         self
     }
@@ -61,10 +56,7 @@ impl TimeRangeBuilder {
         self
     }
     /// <p>The end time, in Unix time in seconds. </p>
-    pub fn set_to_exclusive(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_to_exclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.to_exclusive = input;
         self
     }

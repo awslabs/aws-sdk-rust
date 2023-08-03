@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`delete_lambda(bool)`](crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder::delete_lambda) / [`set_delete_lambda(bool)`](crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder::set_delete_lambda): <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>  <p>Type: Boolean</p>
     /// - On success, responds with [`DeleteCanaryOutput`](crate::operation::delete_canary::DeleteCanaryOutput)
     /// - On failure, responds with [`SdkError<DeleteCanaryError>`](crate::operation::delete_canary::DeleteCanaryError)
-    pub fn delete_canary(
-        &self,
-    ) -> crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder {
-        crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_canary(&self) -> crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder {
+        crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder::new(self.handle.clone())
     }
 }

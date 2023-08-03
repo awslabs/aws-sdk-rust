@@ -55,13 +55,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -109,41 +103,25 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "DELETION_PROTECTION_ENABLED" => ConflictExceptionReason::DeletionProtectionEnabled,
-            "DESTINATION_PHONE_NUMBER_NOT_VERIFIED" => {
-                ConflictExceptionReason::DestinationPhoneNumberNotVerified
-            }
-            "DESTINATION_PHONE_NUMBER_OPTED_OUT" => {
-                ConflictExceptionReason::DestinationPhoneNumberOptedOut
-            }
+            "DESTINATION_PHONE_NUMBER_NOT_VERIFIED" => ConflictExceptionReason::DestinationPhoneNumberNotVerified,
+            "DESTINATION_PHONE_NUMBER_OPTED_OUT" => ConflictExceptionReason::DestinationPhoneNumberOptedOut,
             "EVENT_DESTINATION_MISMATCH" => ConflictExceptionReason::EventDestinationMismatch,
             "KEYWORD_MISMATCH" => ConflictExceptionReason::KeywordMismatch,
             "LAST_PHONE_NUMBER" => ConflictExceptionReason::LastPhoneNumber,
             "MESSAGE_TYPE_MISMATCH" => ConflictExceptionReason::MessageTypeMismatch,
-            "NO_ORIGINATION_IDENTITIES_FOUND" => {
-                ConflictExceptionReason::NoOriginationIdentitiesFound
-            }
+            "NO_ORIGINATION_IDENTITIES_FOUND" => ConflictExceptionReason::NoOriginationIdentitiesFound,
             "OPT_OUT_LIST_MISMATCH" => ConflictExceptionReason::OptOutListMismatch,
-            "PHONE_NUMBER_ASSOCIATED_TO_POOL" => {
-                ConflictExceptionReason::PhoneNumberAssociatedToPool
-            }
-            "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL" => {
-                ConflictExceptionReason::PhoneNumberNotAssociatedToPool
-            }
-            "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION" => {
-                ConflictExceptionReason::PhoneNumberNotInRegistrationRegion
-            }
+            "PHONE_NUMBER_ASSOCIATED_TO_POOL" => ConflictExceptionReason::PhoneNumberAssociatedToPool,
+            "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL" => ConflictExceptionReason::PhoneNumberNotAssociatedToPool,
+            "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION" => ConflictExceptionReason::PhoneNumberNotInRegistrationRegion,
             "RESOURCE_ALREADY_EXISTS" => ConflictExceptionReason::ResourceAlreadyExists,
             "RESOURCE_DELETION_NOT_ALLOWED" => ConflictExceptionReason::ResourceDeletionNotAllowed,
-            "RESOURCE_MODIFICATION_NOT_ALLOWED" => {
-                ConflictExceptionReason::ResourceModificationNotAllowed
-            }
+            "RESOURCE_MODIFICATION_NOT_ALLOWED" => ConflictExceptionReason::ResourceModificationNotAllowed,
             "RESOURCE_NOT_ACTIVE" => ConflictExceptionReason::ResourceNotActive,
             "RESOURCE_NOT_EMPTY" => ConflictExceptionReason::ResourceNotEmpty,
             "SELF_MANAGED_OPT_OUTS_MISMATCH" => ConflictExceptionReason::SelfManagedOptOutsMismatch,
             "TWO_WAY_CONFIG_MISMATCH" => ConflictExceptionReason::TwoWayConfigMismatch,
-            other => ConflictExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConflictExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -159,34 +137,20 @@ impl ConflictExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             ConflictExceptionReason::DeletionProtectionEnabled => "DELETION_PROTECTION_ENABLED",
-            ConflictExceptionReason::DestinationPhoneNumberNotVerified => {
-                "DESTINATION_PHONE_NUMBER_NOT_VERIFIED"
-            }
-            ConflictExceptionReason::DestinationPhoneNumberOptedOut => {
-                "DESTINATION_PHONE_NUMBER_OPTED_OUT"
-            }
+            ConflictExceptionReason::DestinationPhoneNumberNotVerified => "DESTINATION_PHONE_NUMBER_NOT_VERIFIED",
+            ConflictExceptionReason::DestinationPhoneNumberOptedOut => "DESTINATION_PHONE_NUMBER_OPTED_OUT",
             ConflictExceptionReason::EventDestinationMismatch => "EVENT_DESTINATION_MISMATCH",
             ConflictExceptionReason::KeywordMismatch => "KEYWORD_MISMATCH",
             ConflictExceptionReason::LastPhoneNumber => "LAST_PHONE_NUMBER",
             ConflictExceptionReason::MessageTypeMismatch => "MESSAGE_TYPE_MISMATCH",
-            ConflictExceptionReason::NoOriginationIdentitiesFound => {
-                "NO_ORIGINATION_IDENTITIES_FOUND"
-            }
+            ConflictExceptionReason::NoOriginationIdentitiesFound => "NO_ORIGINATION_IDENTITIES_FOUND",
             ConflictExceptionReason::OptOutListMismatch => "OPT_OUT_LIST_MISMATCH",
-            ConflictExceptionReason::PhoneNumberAssociatedToPool => {
-                "PHONE_NUMBER_ASSOCIATED_TO_POOL"
-            }
-            ConflictExceptionReason::PhoneNumberNotAssociatedToPool => {
-                "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL"
-            }
-            ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => {
-                "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION"
-            }
+            ConflictExceptionReason::PhoneNumberAssociatedToPool => "PHONE_NUMBER_ASSOCIATED_TO_POOL",
+            ConflictExceptionReason::PhoneNumberNotAssociatedToPool => "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL",
+            ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION",
             ConflictExceptionReason::ResourceAlreadyExists => "RESOURCE_ALREADY_EXISTS",
             ConflictExceptionReason::ResourceDeletionNotAllowed => "RESOURCE_DELETION_NOT_ALLOWED",
-            ConflictExceptionReason::ResourceModificationNotAllowed => {
-                "RESOURCE_MODIFICATION_NOT_ALLOWED"
-            }
+            ConflictExceptionReason::ResourceModificationNotAllowed => "RESOURCE_MODIFICATION_NOT_ALLOWED",
             ConflictExceptionReason::ResourceNotActive => "RESOURCE_NOT_ACTIVE",
             ConflictExceptionReason::ResourceNotEmpty => "RESOURCE_NOT_EMPTY",
             ConflictExceptionReason::SelfManagedOptOutsMismatch => "SELF_MANAGED_OPT_OUTS_MISMATCH",

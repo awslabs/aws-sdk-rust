@@ -11,9 +11,7 @@ pub struct GetBucketReplicationOutput {
 }
 impl GetBucketReplicationOutput {
     /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
-    pub fn replication_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationConfiguration> {
+    pub fn replication_configuration(&self) -> ::std::option::Option<&crate::types::ReplicationConfiguration> {
         self.replication_configuration.as_ref()
     }
 }
@@ -29,44 +27,32 @@ impl ::aws_http::request_id::RequestId for GetBucketReplicationOutput {
 }
 impl GetBucketReplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketReplicationOutput`](crate::operation::get_bucket_replication::GetBucketReplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_replication::builders::GetBucketReplicationOutputBuilder {
+    pub fn builder() -> crate::operation::get_bucket_replication::builders::GetBucketReplicationOutputBuilder {
         crate::operation::get_bucket_replication::builders::GetBucketReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketReplicationOutput`](crate::operation::get_bucket_replication::GetBucketReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketReplicationOutputBuilder {
-    pub(crate) replication_configuration:
-        ::std::option::Option<crate::types::ReplicationConfiguration>,
+    pub(crate) replication_configuration: ::std::option::Option<crate::types::ReplicationConfiguration>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
 impl GetBucketReplicationOutputBuilder {
     /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
-    pub fn replication_configuration(
-        mut self,
-        input: crate::types::ReplicationConfiguration,
-    ) -> Self {
+    pub fn replication_configuration(mut self, input: crate::types::ReplicationConfiguration) -> Self {
         self.replication_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
-    pub fn set_replication_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfiguration>,
-    ) -> Self {
+    pub fn set_replication_configuration(mut self, input: ::std::option::Option<crate::types::ReplicationConfiguration>) -> Self {
         self.replication_configuration = input;
         self
     }
     /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
-    pub fn get_replication_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
+    pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
         &self.replication_configuration
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
@@ -74,10 +60,7 @@ impl GetBucketReplicationOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

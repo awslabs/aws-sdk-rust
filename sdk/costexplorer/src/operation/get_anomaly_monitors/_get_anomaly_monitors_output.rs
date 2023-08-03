@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for GetAnomalyMonitorsOutput {
 }
 impl GetAnomalyMonitorsOutput {
     /// Creates a new builder-style object to manufacture [`GetAnomalyMonitorsOutput`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsOutputBuilder {
+    pub fn builder() -> crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsOutputBuilder {
         crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAnomalyMonitorsOutput`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnomalyMonitorsOutputBuilder {
-    pub(crate) anomaly_monitors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnomalyMonitor>>,
+    pub(crate) anomaly_monitors: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyMonitor>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,32 +54,21 @@ impl GetAnomalyMonitorsOutputBuilder {
         self
     }
     /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
-    pub fn set_anomaly_monitors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyMonitor>>,
-    ) -> Self {
+    pub fn set_anomaly_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyMonitor>>) -> Self {
         self.anomaly_monitors = input;
         self
     }
     /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
-    pub fn get_anomaly_monitors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyMonitor>> {
+    pub fn get_anomaly_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyMonitor>> {
         &self.anomaly_monitors
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

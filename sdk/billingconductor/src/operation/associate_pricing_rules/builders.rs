@@ -37,10 +37,7 @@ impl AssociatePricingRulesFluentBuilder {
         }
     }
     /// Access the AssociatePricingRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_pricing_rules::builders::AssociatePricingRulesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_pricing_rules::builders::AssociatePricingRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AssociatePricingRulesFluentBuilder {
             crate::operation::associate_pricing_rules::AssociatePricingRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_pricing_rules::AssociatePricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_pricing_rules::AssociatePricingRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AssociatePricingRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AssociatePricingRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_pricing_rules::AssociatePricingRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_pricing_rules::AssociatePricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_pricing_rules::AssociatePricingRulesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AssociatePricingRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_pricing_rules::AssociatePricingRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_pricing_rules::AssociatePricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_pricing_rules::AssociatePricingRulesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl AssociatePricingRulesFluentBuilder {
             crate::operation::associate_pricing_rules::AssociatePricingRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_pricing_rules::AssociatePricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_pricing_rules::AssociatePricingRulesError>,
     > {
         self.customize_middleware().await
     }
@@ -142,25 +128,17 @@ impl AssociatePricingRulesFluentBuilder {
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
     ///
     /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
-    pub fn pricing_rule_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_rule_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pricing_rule_arns(input.into());
         self
     }
     /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
-    pub fn set_pricing_rule_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pricing_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pricing_rule_arns(input);
         self
     }
     /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
-    pub fn get_pricing_rule_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pricing_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_pricing_rule_arns()
     }
 }

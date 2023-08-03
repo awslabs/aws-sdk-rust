@@ -23,9 +23,7 @@ impl LogConfigurationForChannel {
 
 /// A builder for [`LogConfigurationForChannel`](crate::types::LogConfigurationForChannel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogConfigurationForChannelBuilder {
     pub(crate) log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
 }
@@ -42,10 +40,7 @@ impl LogConfigurationForChannelBuilder {
         self
     }
     /// <p>The log types.</p>
-    pub fn set_log_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
-    ) -> Self {
+    pub fn set_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>) -> Self {
         self.log_types = input;
         self
     }
@@ -55,8 +50,6 @@ impl LogConfigurationForChannelBuilder {
     }
     /// Consumes the builder and constructs a [`LogConfigurationForChannel`](crate::types::LogConfigurationForChannel).
     pub fn build(self) -> crate::types::LogConfigurationForChannel {
-        crate::types::LogConfigurationForChannel {
-            log_types: self.log_types,
-        }
+        crate::types::LogConfigurationForChannel { log_types: self.log_types }
     }
 }

@@ -47,16 +47,14 @@ impl PurchaseReservedCacheNodesOfferingInput {
 }
 impl PurchaseReservedCacheNodesOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedCacheNodesOfferingInput`](crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput).
-    pub fn builder() -> crate::operation::purchase_reserved_cache_nodes_offering::builders::PurchaseReservedCacheNodesOfferingInputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_cache_nodes_offering::builders::PurchaseReservedCacheNodesOfferingInputBuilder {
         crate::operation::purchase_reserved_cache_nodes_offering::builders::PurchaseReservedCacheNodesOfferingInputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseReservedCacheNodesOfferingInput`](crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseReservedCacheNodesOfferingInputBuilder {
     pub(crate) reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_cache_node_id: ::std::option::Option<::std::string::String>,
@@ -66,37 +64,26 @@ pub struct PurchaseReservedCacheNodesOfferingInputBuilder {
 impl PurchaseReservedCacheNodesOfferingInputBuilder {
     /// <p>The ID of the reserved cache node offering to purchase.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    pub fn reserved_cache_nodes_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_cache_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_cache_nodes_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the reserved cache node offering to purchase.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    pub fn set_reserved_cache_nodes_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_cache_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_cache_nodes_offering_id = input;
         self
     }
     /// <p>The ID of the reserved cache node offering to purchase.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    pub fn get_reserved_cache_nodes_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_cache_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_cache_nodes_offering_id
     }
     /// <p>A customer-specified identifier to track this reservation.</p> <note>
     /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>
     /// </note>
     /// <p>Example: myreservationID</p>
-    pub fn reserved_cache_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_cache_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_cache_node_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -104,10 +91,7 @@ impl PurchaseReservedCacheNodesOfferingInputBuilder {
     /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>
     /// </note>
     /// <p>Example: myreservationID</p>
-    pub fn set_reserved_cache_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_cache_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_cache_node_id = input;
         self
     }
@@ -147,10 +131,7 @@ impl PurchaseReservedCacheNodesOfferingInputBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -159,18 +140,19 @@ impl PurchaseReservedCacheNodesOfferingInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PurchaseReservedCacheNodesOfferingInput`](crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput {
-                reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id
-                ,
-                reserved_cache_node_id: self.reserved_cache_node_id
-                ,
-                cache_node_count: self.cache_node_count
-                ,
-                tags: self.tags
-                ,
-            }
+                reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id,
+                reserved_cache_node_id: self.reserved_cache_node_id,
+                cache_node_count: self.cache_node_count,
+                tags: self.tags,
+            },
         )
     }
 }

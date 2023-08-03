@@ -10,10 +10,7 @@ impl DeleteStreamKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_stream_key::DeleteStreamKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_stream_key::DeleteStreamKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_stream_key::DeleteStreamKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_stream_key();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteStreamKeyFluentBuilder {
         }
     }
     /// Access the DeleteStreamKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_stream_key::builders::DeleteStreamKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_stream_key::builders::DeleteStreamKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteStreamKeyFluentBuilder {
             crate::operation::delete_stream_key::DeleteStreamKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_stream_key::DeleteStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_stream_key::DeleteStreamKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteStreamKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteStreamKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_stream_key::DeleteStreamKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_stream_key::DeleteStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_stream_key::DeleteStreamKeyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteStreamKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_stream_key::DeleteStreamKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_stream_key::DeleteStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_stream_key::DeleteStreamKeyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteStreamKeyFluentBuilder {
             crate::operation::delete_stream_key::DeleteStreamKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_stream_key::DeleteStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_stream_key::DeleteStreamKeyError>,
     > {
         self.customize_middleware().await
     }

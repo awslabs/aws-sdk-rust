@@ -40,18 +40,14 @@ impl DeleteChannelMembershipInput {
 }
 impl DeleteChannelMembershipInput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelMembershipInput`](crate::operation::delete_channel_membership::DeleteChannelMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder {
         crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteChannelMembershipInput`](crate::operation::delete_channel_membership::DeleteChannelMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChannelMembershipInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,
@@ -104,20 +100,14 @@ impl DeleteChannelMembershipInputBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only for use by moderators.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only for use by moderators.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
@@ -134,13 +124,11 @@ impl DeleteChannelMembershipInputBuilder {
         crate::operation::delete_channel_membership::DeleteChannelMembershipInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_channel_membership::DeleteChannelMembershipInput {
-                channel_arn: self.channel_arn,
-                member_arn: self.member_arn,
-                chime_bearer: self.chime_bearer,
-                sub_channel_id: self.sub_channel_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_channel_membership::DeleteChannelMembershipInput {
+            channel_arn: self.channel_arn,
+            member_arn: self.member_arn,
+            chime_bearer: self.chime_bearer,
+            sub_channel_id: self.sub_channel_id,
+        })
     }
 }

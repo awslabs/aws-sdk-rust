@@ -71,18 +71,14 @@ impl DescribeNatGatewaysInput {
 }
 impl DescribeNatGatewaysInput {
     /// Creates a new builder-style object to manufacture [`DescribeNatGatewaysInput`](crate::operation::describe_nat_gateways::DescribeNatGatewaysInput).
-    pub fn builder(
-    ) -> crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysInputBuilder {
-        crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysInputBuilder {
+        crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNatGatewaysInput`](crate::operation::describe_nat_gateways::DescribeNatGatewaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNatGatewaysInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -145,10 +141,7 @@ impl DescribeNatGatewaysInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filter = input;
         self
     }
@@ -189,27 +182,19 @@ impl DescribeNatGatewaysInputBuilder {
     /// To override the contents of this collection use [`set_nat_gateway_ids`](Self::set_nat_gateway_ids).
     ///
     /// <p>The IDs of the NAT gateways.</p>
-    pub fn nat_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.nat_gateway_ids.unwrap_or_default();
         v.push(input.into());
         self.nat_gateway_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the NAT gateways.</p>
-    pub fn set_nat_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nat_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.nat_gateway_ids = input;
         self
     }
     /// <p>The IDs of the NAT gateways.</p>
-    pub fn get_nat_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nat_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.nat_gateway_ids
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -229,18 +214,14 @@ impl DescribeNatGatewaysInputBuilder {
     /// Consumes the builder and constructs a [`DescribeNatGatewaysInput`](crate::operation::describe_nat_gateways::DescribeNatGatewaysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_nat_gateways::DescribeNatGatewaysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_nat_gateways::DescribeNatGatewaysInput {
-                dry_run: self.dry_run,
-                filter: self.filter,
-                max_results: self.max_results,
-                nat_gateway_ids: self.nat_gateway_ids,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_nat_gateways::DescribeNatGatewaysInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_nat_gateways::DescribeNatGatewaysInput {
+            dry_run: self.dry_run,
+            filter: self.filter,
+            max_results: self.max_results,
+            nat_gateway_ids: self.nat_gateway_ids,
+            next_token: self.next_token,
+        })
     }
 }

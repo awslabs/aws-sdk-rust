@@ -47,9 +47,7 @@ impl S3StorageConfig {
 
 /// A builder for [`S3StorageConfig`](crate::types::S3StorageConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3StorageConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -100,18 +98,12 @@ impl S3StorageConfigBuilder {
         &self.kms_key_id
     }
     /// <p>The S3 path where offline records are written.</p>
-    pub fn resolved_output_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolved_output_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_output_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 path where offline records are written.</p>
-    pub fn set_resolved_output_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolved_output_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolved_output_s3_uri = input;
         self
     }

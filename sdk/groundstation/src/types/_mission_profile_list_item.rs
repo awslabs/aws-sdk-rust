@@ -44,9 +44,7 @@ impl MissionProfileListItem {
 
 /// A builder for [`MissionProfileListItem`](crate::types::MissionProfileListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MissionProfileListItemBuilder {
     pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) mission_profile_arn: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct MissionProfileListItemBuilder {
 }
 impl MissionProfileListItemBuilder {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn set_mission_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mission_profile_id = input;
         self
     }
@@ -75,18 +67,12 @@ impl MissionProfileListItemBuilder {
         &self.mission_profile_id
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn set_mission_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mission_profile_arn = input;
         self
     }

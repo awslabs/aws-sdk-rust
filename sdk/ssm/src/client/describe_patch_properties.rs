@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`properties(Option<Vec<HashMap<String, String>>>)`](crate::operation::describe_patch_properties::DescribePatchPropertiesOutput::properties): <p>A list of the properties for patches matching the filter request parameters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_patch_properties::DescribePatchPropertiesOutput::next_token): <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     /// - On failure, responds with [`SdkError<DescribePatchPropertiesError>`](crate::operation::describe_patch_properties::DescribePatchPropertiesError)
-    pub fn describe_patch_properties(
-        &self,
-    ) -> crate::operation::describe_patch_properties::builders::DescribePatchPropertiesFluentBuilder
-    {
+    pub fn describe_patch_properties(&self) -> crate::operation::describe_patch_properties::builders::DescribePatchPropertiesFluentBuilder {
         crate::operation::describe_patch_properties::builders::DescribePatchPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

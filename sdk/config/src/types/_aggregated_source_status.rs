@@ -50,9 +50,7 @@ impl AggregatedSourceStatus {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    pub fn last_update_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AggregatedSourceStatusType> {
+    pub fn last_update_status(&self) -> ::std::option::Option<&crate::types::AggregatedSourceStatusType> {
         self.last_update_status.as_ref()
     }
     /// <p>The time of the last update.</p>
@@ -77,9 +75,7 @@ impl AggregatedSourceStatus {
 
 /// A builder for [`AggregatedSourceStatus`](crate::types::AggregatedSourceStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedSourceStatusBuilder {
     pub(crate) source_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::AggregatedSourceType>,
@@ -110,10 +106,7 @@ impl AggregatedSourceStatusBuilder {
         self
     }
     /// <p>The source account or an organization.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregatedSourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::AggregatedSourceType>) -> Self {
         self.source_type = input;
         self
     }
@@ -151,10 +144,7 @@ impl AggregatedSourceStatusBuilder {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    pub fn set_last_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregatedSourceStatusType>,
-    ) -> Self {
+    pub fn set_last_update_status(mut self, input: ::std::option::Option<crate::types::AggregatedSourceStatusType>) -> Self {
         self.last_update_status = input;
         self
     }
@@ -164,9 +154,7 @@ impl AggregatedSourceStatusBuilder {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    pub fn get_last_update_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregatedSourceStatusType> {
+    pub fn get_last_update_status(&self) -> &::std::option::Option<crate::types::AggregatedSourceStatusType> {
         &self.last_update_status
     }
     /// <p>The time of the last update.</p>
@@ -175,10 +163,7 @@ impl AggregatedSourceStatusBuilder {
         self
     }
     /// <p>The time of the last update.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -187,18 +172,12 @@ impl AggregatedSourceStatusBuilder {
         &self.last_update_time
     }
     /// <p>The error code that Config returned when the source account aggregation last failed.</p>
-    pub fn last_error_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code that Config returned when the source account aggregation last failed.</p>
-    pub fn set_last_error_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_error_code = input;
         self
     }
@@ -207,18 +186,12 @@ impl AggregatedSourceStatusBuilder {
         &self.last_error_code
     }
     /// <p>The message indicating that the source account aggregation failed due to an error.</p>
-    pub fn last_error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message indicating that the source account aggregation failed due to an error.</p>
-    pub fn set_last_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_error_message = input;
         self
     }

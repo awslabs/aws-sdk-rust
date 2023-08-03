@@ -4,9 +4,7 @@ pub fn ser_execute_statement_input(
     input: &crate::operation::execute_statement::ExecuteStatementInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.continue_after_timeout {
-        object
-            .key("continueAfterTimeout")
-            .boolean(input.continue_after_timeout);
+        object.key("continueAfterTimeout").boolean(input.continue_after_timeout);
     }
     if let Some(var_1) = &input.database {
         object.key("database").string(var_1.as_str());
@@ -15,9 +13,7 @@ pub fn ser_execute_statement_input(
         object.key("formatRecordsAs").string(var_2.as_str());
     }
     if input.include_result_metadata {
-        object
-            .key("includeResultMetadata")
-            .boolean(input.include_result_metadata);
+        object.key("includeResultMetadata").boolean(input.include_result_metadata);
     }
     if let Some(var_3) = &input.parameters {
         let mut array_4 = object.key("parameters").start_array();
@@ -25,10 +21,7 @@ pub fn ser_execute_statement_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_sql_parameter::ser_sql_parameter(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_sql_parameter::ser_sql_parameter(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -40,10 +33,7 @@ pub fn ser_execute_statement_input(
     if let Some(var_8) = &input.result_set_options {
         #[allow(unused_mut)]
         let mut object_9 = object.key("resultSetOptions").start_object();
-        crate::protocol_serde::shape_result_set_options::ser_result_set_options(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_result_set_options::ser_result_set_options(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.schema {

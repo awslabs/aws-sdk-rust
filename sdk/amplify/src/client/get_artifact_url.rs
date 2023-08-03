@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`artifact_id(Option<String>)`](crate::operation::get_artifact_url::GetArtifactUrlOutput::artifact_id): <p> The unique ID for an artifact. </p>
     ///   - [`artifact_url(Option<String>)`](crate::operation::get_artifact_url::GetArtifactUrlOutput::artifact_url): <p> The presigned URL for the artifact. </p>
     /// - On failure, responds with [`SdkError<GetArtifactUrlError>`](crate::operation::get_artifact_url::GetArtifactUrlError)
-    pub fn get_artifact_url(
-        &self,
-    ) -> crate::operation::get_artifact_url::builders::GetArtifactUrlFluentBuilder {
-        crate::operation::get_artifact_url::builders::GetArtifactUrlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_artifact_url(&self) -> crate::operation::get_artifact_url::builders::GetArtifactUrlFluentBuilder {
+        crate::operation::get_artifact_url::builders::GetArtifactUrlFluentBuilder::new(self.handle.clone())
     }
 }

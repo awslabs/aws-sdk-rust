@@ -23,17 +23,14 @@ impl ListBootstrapActionsInput {
 }
 impl ListBootstrapActionsInput {
     /// Creates a new builder-style object to manufacture [`ListBootstrapActionsInput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder {
+    pub fn builder() -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder {
         crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBootstrapActionsInput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBootstrapActionsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,11 @@ impl ListBootstrapActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListBootstrapActionsInput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bootstrap_actions::ListBootstrapActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_bootstrap_actions::ListBootstrapActionsInput {
-                cluster_id: self.cluster_id,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_bootstrap_actions::ListBootstrapActionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_bootstrap_actions::ListBootstrapActionsInput {
+            cluster_id: self.cluster_id,
+            marker: self.marker,
+        })
     }
 }

@@ -50,10 +50,7 @@ impl TopicSingularFilterConstantBuilder {
         self
     }
     /// <p>The type of the singular filter constant. Valid values for this structure are <code>SINGULAR</code>.</p>
-    pub fn set_constant_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConstantType>,
-    ) -> Self {
+    pub fn set_constant_type(mut self, input: ::std::option::Option<crate::types::ConstantType>) -> Self {
         self.constant_type = input;
         self
     }
@@ -62,18 +59,12 @@ impl TopicSingularFilterConstantBuilder {
         &self.constant_type
     }
     /// <p>The value of the singular filter constant.</p>
-    pub fn singular_constant(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn singular_constant(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.singular_constant = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the singular filter constant.</p>
-    pub fn set_singular_constant(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_singular_constant(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.singular_constant = input;
         self
     }

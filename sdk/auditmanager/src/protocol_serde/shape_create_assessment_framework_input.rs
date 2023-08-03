@@ -12,7 +12,10 @@ pub fn ser_create_assessment_framework_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_create_assessment_framework_control_set::ser_create_assessment_framework_control_set(&mut object_5, item_4)?;
+                crate::protocol_serde::shape_create_assessment_framework_control_set::ser_create_assessment_framework_control_set(
+                    &mut object_5,
+                    item_4,
+                )?;
                 object_5.finish();
             }
         }

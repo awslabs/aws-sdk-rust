@@ -23,9 +23,7 @@ impl GoogleAnalyticsMetadata {
 
 /// A builder for [`GoogleAnalyticsMetadata`](crate::types::GoogleAnalyticsMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GoogleAnalyticsMetadataBuilder {
     pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,27 +33,19 @@ impl GoogleAnalyticsMetadataBuilder {
     /// To override the contents of this collection use [`set_o_auth_scopes`](Self::set_o_auth_scopes).
     ///
     /// <p> The desired authorization scope for the Google Analytics account. </p>
-    pub fn o_auth_scopes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn o_auth_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.o_auth_scopes.unwrap_or_default();
         v.push(input.into());
         self.o_auth_scopes = ::std::option::Option::Some(v);
         self
     }
     /// <p> The desired authorization scope for the Google Analytics account. </p>
-    pub fn set_o_auth_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.o_auth_scopes = input;
         self
     }
     /// <p> The desired authorization scope for the Google Analytics account. </p>
-    pub fn get_o_auth_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.o_auth_scopes
     }
     /// Consumes the builder and constructs a [`GoogleAnalyticsMetadata`](crate::types::GoogleAnalyticsMetadata).

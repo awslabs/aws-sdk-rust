@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`resource_arn(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::resource_arn): <p>The Amazon Resource Name (ARN) for the ruleset.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::tags): <p>Metadata tags that have been applied to the ruleset.</p>
     /// - On failure, responds with [`SdkError<DescribeRulesetError>`](crate::operation::describe_ruleset::DescribeRulesetError)
-    pub fn describe_ruleset(
-        &self,
-    ) -> crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder {
-        crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ruleset(&self) -> crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder {
+        crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::new(self.handle.clone())
     }
 }

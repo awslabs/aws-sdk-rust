@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateTrafficPolicyCommentOutput {
 }
 impl UpdateTrafficPolicyCommentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyCommentOutput`](crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentOutput).
-    pub fn builder() -> crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentOutputBuilder{
+    pub fn builder() -> crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentOutputBuilder {
         crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrafficPolicyCommentOutput`](crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrafficPolicyCommentOutputBuilder {
     pub(crate) traffic_policy: ::std::option::Option<crate::types::TrafficPolicy>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl UpdateTrafficPolicyCommentOutputBuilder {
         self
     }
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
-    pub fn set_traffic_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficPolicy>,
-    ) -> Self {
+    pub fn set_traffic_policy(mut self, input: ::std::option::Option<crate::types::TrafficPolicy>) -> Self {
         self.traffic_policy = input;
         self
     }
@@ -64,9 +59,7 @@ impl UpdateTrafficPolicyCommentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTrafficPolicyCommentOutput`](crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentOutput {
+    pub fn build(self) -> crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentOutput {
         crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentOutput {
             traffic_policy: self.traffic_policy,
             _request_id: self._request_id,

@@ -58,9 +58,7 @@ impl Key {
         self.key_check_value.as_deref()
     }
     /// <p>The algorithm used for calculating key check value (KCV) for DES and AES keys. For a DES key, Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For an AES key, Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KeyCheckValueAlgorithm> {
+    pub fn key_check_value_algorithm(&self) -> ::std::option::Option<&crate::types::KeyCheckValueAlgorithm> {
         self.key_check_value_algorithm.as_ref()
     }
     /// <p>Specifies whether the key is enabled. </p>
@@ -109,15 +107,12 @@ impl Key {
 
 /// A builder for [`Key`](crate::types::Key).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     pub(crate) key_check_value: ::std::option::Option<::std::string::String>,
-    pub(crate) key_check_value_algorithm:
-        ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
+    pub(crate) key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) exportable: ::std::option::Option<bool>,
     pub(crate) key_state: ::std::option::Option<crate::types::KeyState>,
@@ -149,10 +144,7 @@ impl KeyBuilder {
         self
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
-    pub fn set_key_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAttributes>,
-    ) -> Self {
+    pub fn set_key_attributes(mut self, input: ::std::option::Option<crate::types::KeyAttributes>) -> Self {
         self.key_attributes = input;
         self
     }
@@ -161,18 +153,12 @@ impl KeyBuilder {
         &self.key_attributes
     }
     /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn key_check_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_check_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn set_key_check_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_check_value = input;
         self
     }
@@ -181,25 +167,17 @@ impl KeyBuilder {
         &self.key_check_value
     }
     /// <p>The algorithm used for calculating key check value (KCV) for DES and AES keys. For a DES key, Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For an AES key, Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(
-        mut self,
-        input: crate::types::KeyCheckValueAlgorithm,
-    ) -> Self {
+    pub fn key_check_value_algorithm(mut self, input: crate::types::KeyCheckValueAlgorithm) -> Self {
         self.key_check_value_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>The algorithm used for calculating key check value (KCV) for DES and AES keys. For a DES key, Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For an AES key, Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn set_key_check_value_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
-    ) -> Self {
+    pub fn set_key_check_value_algorithm(mut self, input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>) -> Self {
         self.key_check_value_algorithm = input;
         self
     }
     /// <p>The algorithm used for calculating key check value (KCV) for DES and AES keys. For a DES key, Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For an AES key, Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn get_key_check_value_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
+    pub fn get_key_check_value_algorithm(&self) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
         &self.key_check_value_algorithm
     }
     /// <p>Specifies whether the key is enabled. </p>
@@ -264,10 +242,7 @@ impl KeyBuilder {
         self
     }
     /// <p>The date and time when the key was created.</p>
-    pub fn set_create_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_timestamp = input;
         self
     }
@@ -281,17 +256,12 @@ impl KeyBuilder {
         self
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will start using the key material for cryptographic operations.</p>
-    pub fn set_usage_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_usage_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.usage_start_timestamp = input;
         self
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will start using the key material for cryptographic operations.</p>
-    pub fn get_usage_start_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_usage_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.usage_start_timestamp
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will stop using the key material for cryptographic operations.</p>
@@ -300,10 +270,7 @@ impl KeyBuilder {
         self
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will stop using the key material for cryptographic operations.</p>
-    pub fn set_usage_stop_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_usage_stop_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.usage_stop_timestamp = input;
         self
     }
@@ -317,17 +284,12 @@ impl KeyBuilder {
         self
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when <code>KeyState</code> is <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
-    pub fn set_delete_pending_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_delete_pending_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delete_pending_timestamp = input;
         self
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when <code>KeyState</code> is <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
-    pub fn get_delete_pending_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_delete_pending_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.delete_pending_timestamp
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when when the <code>KeyState</code> is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography key is deleted.</p>
@@ -336,10 +298,7 @@ impl KeyBuilder {
         self
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when when the <code>KeyState</code> is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography key is deleted.</p>
-    pub fn set_delete_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_delete_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delete_timestamp = input;
         self
     }

@@ -23,9 +23,7 @@ impl DeviceConfig {
 
 /// A builder for [`DeviceConfig`](crate::types::DeviceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceConfigBuilder {
     pub(crate) device: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DeviceConfigBuilder {
     }
     /// Consumes the builder and constructs a [`DeviceConfig`](crate::types::DeviceConfig).
     pub fn build(self) -> crate::types::DeviceConfig {
-        crate::types::DeviceConfig {
-            device: self.device,
-        }
+        crate::types::DeviceConfig { device: self.device }
     }
 }

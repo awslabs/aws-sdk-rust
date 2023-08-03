@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeJobTemplateOutput {
 }
 impl DescribeJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobTemplateOutput`](crate::operation::describe_job_template::DescribeJobTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder {
-        crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder {
+        crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobTemplateOutput`](crate::operation::describe_job_template::DescribeJobTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobTemplateOutputBuilder {
     pub(crate) job_template: ::std::option::Option<crate::types::JobTemplate>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeJobTemplateOutputBuilder {
         self
     }
     /// <p>This output displays information about the specified job template.</p>
-    pub fn set_job_template(
-        mut self,
-        input: ::std::option::Option<crate::types::JobTemplate>,
-    ) -> Self {
+    pub fn set_job_template(mut self, input: ::std::option::Option<crate::types::JobTemplate>) -> Self {
         self.job_template = input;
         self
     }

@@ -55,8 +55,7 @@ pub struct CreateReplicationGroupInput {
     /// <p>A list of node group (shard) configuration options. Each node group (shard) configuration has the following members: <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and <code>Slots</code>.</p>
     /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter because you must specify the slots for each node group.</p>
     #[doc(hidden)]
-    pub node_group_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>>,
+    pub node_group_configuration: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>>,
     /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
     /// <ul>
@@ -196,8 +195,7 @@ pub struct CreateReplicationGroupInput {
     pub user_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the destination, format and type of the logs.</p>
     #[doc(hidden)]
-    pub log_delivery_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
+    pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
     #[doc(hidden)]
     pub data_tiering_enabled: ::std::option::Option<bool>,
@@ -278,9 +276,7 @@ impl CreateReplicationGroupInput {
     }
     /// <p>A list of node group (shard) configuration options. Each node group (shard) configuration has the following members: <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and <code>Slots</code>.</p>
     /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter because you must specify the slots for each node group.</p>
-    pub fn node_group_configuration(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NodeGroupConfiguration]> {
+    pub fn node_group_configuration(&self) -> ::std::option::Option<&[crate::types::NodeGroupConfiguration]> {
         self.node_group_configuration.as_deref()
     }
     /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -442,9 +438,7 @@ impl CreateReplicationGroupInput {
         self.user_group_ids.as_deref()
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn log_delivery_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LogDeliveryConfigurationRequest]> {
+    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::LogDeliveryConfigurationRequest]> {
         self.log_delivery_configurations.as_deref()
     }
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
@@ -463,9 +457,7 @@ impl CreateReplicationGroupInput {
     /// <p>When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can modify the value to <code>required</code> to allow encrypted connections only.</p>
     /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.</p>
     /// <p>This process will not trigger the replacement of the replication group.</p>
-    pub fn transit_encryption_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitEncryptionMode> {
+    pub fn transit_encryption_mode(&self) -> ::std::option::Option<&crate::types::TransitEncryptionMode> {
         self.transit_encryption_mode.as_ref()
     }
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
@@ -475,18 +467,14 @@ impl CreateReplicationGroupInput {
 }
 impl CreateReplicationGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationGroupInput`](crate::operation::create_replication_group::CreateReplicationGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_replication_group::builders::CreateReplicationGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_replication_group::builders::CreateReplicationGroupInputBuilder {
         crate::operation::create_replication_group::builders::CreateReplicationGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplicationGroupInput`](crate::operation::create_replication_group::CreateReplicationGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicationGroupInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group_description: ::std::option::Option<::std::string::String>,
@@ -495,19 +483,16 @@ pub struct CreateReplicationGroupInputBuilder {
     pub(crate) automatic_failover_enabled: ::std::option::Option<bool>,
     pub(crate) multi_az_enabled: ::std::option::Option<bool>,
     pub(crate) num_cache_clusters: ::std::option::Option<i32>,
-    pub(crate) preferred_cache_cluster_a_zs:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) preferred_cache_cluster_a_zs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) num_node_groups: ::std::option::Option<i32>,
     pub(crate) replicas_per_node_group: ::std::option::Option<i32>,
-    pub(crate) node_group_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>>,
+    pub(crate) node_group_configuration: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>>,
     pub(crate) cache_node_type: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) cache_security_group_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cache_security_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) snapshot_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -523,8 +508,7 @@ pub struct CreateReplicationGroupInputBuilder {
     pub(crate) at_rest_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) log_delivery_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
+    pub(crate) log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
     pub(crate) data_tiering_enabled: ::std::option::Option<bool>,
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
@@ -539,10 +523,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -553,10 +534,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_id = input;
         self
     }
@@ -571,40 +549,26 @@ impl CreateReplicationGroupInputBuilder {
         &self.replication_group_id
     }
     /// <p>A user-created description for the replication group.</p>
-    pub fn replication_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-created description for the replication group.</p>
-    pub fn set_replication_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_description = input;
         self
     }
     /// <p>A user-created description for the replication group.</p>
-    pub fn get_replication_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_group_description
     }
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_id = input;
         self
     }
@@ -614,19 +578,13 @@ impl CreateReplicationGroupInputBuilder {
     }
     /// <p>The identifier of the cluster that serves as the primary for this replication group. This cluster must already exist and have a status of <code>available</code>.</p>
     /// <p>This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or <code>ReplicasPerNodeGroup</code> is specified.</p>
-    pub fn primary_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster that serves as the primary for this replication group. This cluster must already exist and have a status of <code>available</code>.</p>
     /// <p>This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or <code>ReplicasPerNodeGroup</code> is specified.</p>
-    pub fn set_primary_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_cluster_id = input;
         self
     }
@@ -702,10 +660,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn preferred_cache_cluster_a_zs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_cache_cluster_a_zs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.preferred_cache_cluster_a_zs.unwrap_or_default();
         v.push(input.into());
         self.preferred_cache_cluster_a_zs = ::std::option::Option::Some(v);
@@ -717,10 +672,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn set_preferred_cache_cluster_a_zs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_preferred_cache_cluster_a_zs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.preferred_cache_cluster_a_zs = input;
         self
     }
@@ -730,9 +682,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn get_preferred_cache_cluster_a_zs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_preferred_cache_cluster_a_zs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.preferred_cache_cluster_a_zs
     }
     /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
@@ -780,18 +730,13 @@ impl CreateReplicationGroupInputBuilder {
     }
     /// <p>A list of node group (shard) configuration options. Each node group (shard) configuration has the following members: <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and <code>Slots</code>.</p>
     /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter because you must specify the slots for each node group.</p>
-    pub fn set_node_group_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>>,
-    ) -> Self {
+    pub fn set_node_group_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>>) -> Self {
         self.node_group_configuration = input;
         self
     }
     /// <p>A list of node group (shard) configuration options. Each node group (shard) configuration has the following members: <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and <code>Slots</code>.</p>
     /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter because you must specify the slots for each node group.</p>
-    pub fn get_node_group_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>> {
+    pub fn get_node_group_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>> {
         &self.node_group_configuration
     }
     /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -823,10 +768,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    pub fn cache_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_node_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -859,10 +801,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    pub fn set_cache_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_node_type = input;
         self
     }
@@ -914,19 +853,13 @@ impl CreateReplicationGroupInputBuilder {
     }
     /// <p>The version number of the cache engine to be used for the clusters in this replication group. To view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
     /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or replication group and create it anew with the earlier engine version. </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the cache engine to be used for the clusters in this replication group. To view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
     /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or replication group and create it anew with the earlier engine version. </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -941,10 +874,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <li> <p>To create a Redis (cluster mode disabled) replication group, use <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li>
     /// <li> <p>To create a Redis (cluster mode enabled) replication group, use <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p> </li>
     /// </ul>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -954,10 +884,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <li> <p>To create a Redis (cluster mode disabled) replication group, use <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li>
     /// <li> <p>To create a Redis (cluster mode enabled) replication group, use <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p> </li>
     /// </ul>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_name = input;
         self
     }
@@ -973,20 +900,14 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The name of the cache subnet group to be used for the replication group.</p> <important>
     /// <p>If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
     /// </important>
-    pub fn cache_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache subnet group to be used for the replication group.</p> <important>
     /// <p>If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
     /// </important>
-    pub fn set_cache_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_subnet_group_name = input;
         self
     }
@@ -1001,27 +922,19 @@ impl CreateReplicationGroupInputBuilder {
     /// To override the contents of this collection use [`set_cache_security_group_names`](Self::set_cache_security_group_names).
     ///
     /// <p>A list of cache security group names to associate with this replication group.</p>
-    pub fn cache_security_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_security_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cache_security_group_names.unwrap_or_default();
         v.push(input.into());
         self.cache_security_group_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cache security group names to associate with this replication group.</p>
-    pub fn set_cache_security_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cache_security_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cache_security_group_names = input;
         self
     }
     /// <p>A list of cache security group names to associate with this replication group.</p>
-    pub fn get_cache_security_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cache_security_group_names
     }
     /// Appends an item to `security_group_ids`.
@@ -1030,10 +943,7 @@ impl CreateReplicationGroupInputBuilder {
     ///
     /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
     /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
@@ -1041,18 +951,13 @@ impl CreateReplicationGroupInputBuilder {
     }
     /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
     /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
     /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `tags`.
@@ -1067,10 +972,7 @@ impl CreateReplicationGroupInputBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -1084,10 +986,7 @@ impl CreateReplicationGroupInputBuilder {
     ///
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot contain any commas. The new replication group will have the number of node groups (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
-    pub fn snapshot_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_arns.unwrap_or_default();
         v.push(input.into());
         self.snapshot_arns = ::std::option::Option::Some(v);
@@ -1095,33 +994,22 @@ impl CreateReplicationGroupInputBuilder {
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot contain any commas. The new replication group will have the number of node groups (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
-    pub fn set_snapshot_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_snapshot_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.snapshot_arns = input;
         self
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot contain any commas. The new replication group will have the number of node groups (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
-    pub fn get_snapshot_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.snapshot_arns
     }
     /// <p>The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to <code>restoring</code> while the new replication group is being created.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to <code>restoring</code> while the new replication group is being created.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -1142,10 +1030,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -1162,10 +1047,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -1182,9 +1064,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>The port number on which each member of the replication group accepts connections.</p>
@@ -1204,20 +1084,14 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
     /// </note>
-    pub fn notification_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
     /// </note>
-    pub fn set_notification_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_topic_arn = input;
         self
     }
@@ -1261,20 +1135,14 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
-    pub fn snapshot_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
-    pub fn set_snapshot_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_window = input;
         self
     }
@@ -1402,27 +1270,19 @@ impl CreateReplicationGroupInputBuilder {
     /// To override the contents of this collection use [`set_user_group_ids`](Self::set_user_group_ids).
     ///
     /// <p>The user group to associate with the replication group.</p>
-    pub fn user_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_group_ids.unwrap_or_default();
         v.push(input.into());
         self.user_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The user group to associate with the replication group.</p>
-    pub fn set_user_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_group_ids = input;
         self
     }
     /// <p>The user group to associate with the replication group.</p>
-    pub fn get_user_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_group_ids
     }
     /// Appends an item to `log_delivery_configurations`.
@@ -1430,10 +1290,7 @@ impl CreateReplicationGroupInputBuilder {
     /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
     ///
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn log_delivery_configurations(
-        mut self,
-        input: crate::types::LogDeliveryConfigurationRequest,
-    ) -> Self {
+    pub fn log_delivery_configurations(mut self, input: crate::types::LogDeliveryConfigurationRequest) -> Self {
         let mut v = self.log_delivery_configurations.unwrap_or_default();
         v.push(input);
         self.log_delivery_configurations = ::std::option::Option::Some(v);
@@ -1442,18 +1299,13 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>Specifies the destination, format and type of the logs.</p>
     pub fn set_log_delivery_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
     ) -> Self {
         self.log_delivery_configurations = input;
         self
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn get_log_delivery_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>
-    {
+    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>> {
         &self.log_delivery_configurations
     }
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
@@ -1476,10 +1328,7 @@ impl CreateReplicationGroupInputBuilder {
         self
     }
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn set_network_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkType>,
-    ) -> Self {
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
         self.network_type = input;
         self
     }
@@ -1493,10 +1342,7 @@ impl CreateReplicationGroupInputBuilder {
         self
     }
     /// <p>The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn set_ip_discovery(
-        mut self,
-        input: ::std::option::Option<crate::types::IpDiscovery>,
-    ) -> Self {
+    pub fn set_ip_discovery(mut self, input: ::std::option::Option<crate::types::IpDiscovery>) -> Self {
         self.ip_discovery = input;
         self
     }
@@ -1516,10 +1362,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can modify the value to <code>required</code> to allow encrypted connections only.</p>
     /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.</p>
     /// <p>This process will not trigger the replacement of the replication group.</p>
-    pub fn set_transit_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitEncryptionMode>,
-    ) -> Self {
+    pub fn set_transit_encryption_mode(mut self, input: ::std::option::Option<crate::types::TransitEncryptionMode>) -> Self {
         self.transit_encryption_mode = input;
         self
     }
@@ -1527,9 +1370,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can modify the value to <code>required</code> to allow encrypted connections only.</p>
     /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.</p>
     /// <p>This process will not trigger the replacement of the replication group.</p>
-    pub fn get_transit_encryption_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
+    pub fn get_transit_encryption_mode(&self) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
         &self.transit_encryption_mode
     }
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
@@ -1538,10 +1379,7 @@ impl CreateReplicationGroupInputBuilder {
         self
     }
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
-    pub fn set_cluster_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterMode>,
-    ) -> Self {
+    pub fn set_cluster_mode(mut self, input: ::std::option::Option<crate::types::ClusterMode>) -> Self {
         self.cluster_mode = input;
         self
     }
@@ -1552,51 +1390,47 @@ impl CreateReplicationGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateReplicationGroupInput`](crate::operation::create_replication_group::CreateReplicationGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_replication_group::CreateReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_replication_group::CreateReplicationGroupInput {
-                replication_group_id: self.replication_group_id,
-                replication_group_description: self.replication_group_description,
-                global_replication_group_id: self.global_replication_group_id,
-                primary_cluster_id: self.primary_cluster_id,
-                automatic_failover_enabled: self.automatic_failover_enabled,
-                multi_az_enabled: self.multi_az_enabled,
-                num_cache_clusters: self.num_cache_clusters,
-                preferred_cache_cluster_a_zs: self.preferred_cache_cluster_a_zs,
-                num_node_groups: self.num_node_groups,
-                replicas_per_node_group: self.replicas_per_node_group,
-                node_group_configuration: self.node_group_configuration,
-                cache_node_type: self.cache_node_type,
-                engine: self.engine,
-                engine_version: self.engine_version,
-                cache_parameter_group_name: self.cache_parameter_group_name,
-                cache_subnet_group_name: self.cache_subnet_group_name,
-                cache_security_group_names: self.cache_security_group_names,
-                security_group_ids: self.security_group_ids,
-                tags: self.tags,
-                snapshot_arns: self.snapshot_arns,
-                snapshot_name: self.snapshot_name,
-                preferred_maintenance_window: self.preferred_maintenance_window,
-                port: self.port,
-                notification_topic_arn: self.notification_topic_arn,
-                auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-                snapshot_retention_limit: self.snapshot_retention_limit,
-                snapshot_window: self.snapshot_window,
-                auth_token: self.auth_token,
-                transit_encryption_enabled: self.transit_encryption_enabled,
-                at_rest_encryption_enabled: self.at_rest_encryption_enabled,
-                kms_key_id: self.kms_key_id,
-                user_group_ids: self.user_group_ids,
-                log_delivery_configurations: self.log_delivery_configurations,
-                data_tiering_enabled: self.data_tiering_enabled,
-                network_type: self.network_type,
-                ip_discovery: self.ip_discovery,
-                transit_encryption_mode: self.transit_encryption_mode,
-                cluster_mode: self.cluster_mode,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_replication_group::CreateReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_replication_group::CreateReplicationGroupInput {
+            replication_group_id: self.replication_group_id,
+            replication_group_description: self.replication_group_description,
+            global_replication_group_id: self.global_replication_group_id,
+            primary_cluster_id: self.primary_cluster_id,
+            automatic_failover_enabled: self.automatic_failover_enabled,
+            multi_az_enabled: self.multi_az_enabled,
+            num_cache_clusters: self.num_cache_clusters,
+            preferred_cache_cluster_a_zs: self.preferred_cache_cluster_a_zs,
+            num_node_groups: self.num_node_groups,
+            replicas_per_node_group: self.replicas_per_node_group,
+            node_group_configuration: self.node_group_configuration,
+            cache_node_type: self.cache_node_type,
+            engine: self.engine,
+            engine_version: self.engine_version,
+            cache_parameter_group_name: self.cache_parameter_group_name,
+            cache_subnet_group_name: self.cache_subnet_group_name,
+            cache_security_group_names: self.cache_security_group_names,
+            security_group_ids: self.security_group_ids,
+            tags: self.tags,
+            snapshot_arns: self.snapshot_arns,
+            snapshot_name: self.snapshot_name,
+            preferred_maintenance_window: self.preferred_maintenance_window,
+            port: self.port,
+            notification_topic_arn: self.notification_topic_arn,
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
+            snapshot_retention_limit: self.snapshot_retention_limit,
+            snapshot_window: self.snapshot_window,
+            auth_token: self.auth_token,
+            transit_encryption_enabled: self.transit_encryption_enabled,
+            at_rest_encryption_enabled: self.at_rest_encryption_enabled,
+            kms_key_id: self.kms_key_id,
+            user_group_ids: self.user_group_ids,
+            log_delivery_configurations: self.log_delivery_configurations,
+            data_tiering_enabled: self.data_tiering_enabled,
+            network_type: self.network_type,
+            ip_discovery: self.ip_discovery,
+            transit_encryption_mode: self.transit_encryption_mode,
+            cluster_mode: self.cluster_mode,
+        })
     }
 }

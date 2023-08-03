@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`managed_job_templates(Option<Vec<ManagedJobTemplateSummary>>)`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput::managed_job_templates): <p>A list of managed job templates that are returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput::next_token): <p>The token to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListManagedJobTemplatesError>`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesError)
-    pub fn list_managed_job_templates(
-        &self,
-    ) -> crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder
-    {
+    pub fn list_managed_job_templates(&self) -> crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder {
         crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

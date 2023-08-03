@@ -66,9 +66,7 @@ impl TargetedSentimentMention {
 
 /// A builder for [`TargetedSentimentMention`](crate::types::TargetedSentimentMention).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetedSentimentMentionBuilder {
     pub(crate) score: ::std::option::Option<f32>,
     pub(crate) group_score: ::std::option::Option<f32>,
@@ -127,10 +125,7 @@ impl TargetedSentimentMentionBuilder {
         self
     }
     /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetedSentimentEntityType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TargetedSentimentEntityType>) -> Self {
         self.r#type = input;
         self
     }
@@ -144,10 +139,7 @@ impl TargetedSentimentMentionBuilder {
         self
     }
     /// <p>Contains the sentiment and sentiment score for the mention.</p>
-    pub fn set_mention_sentiment(
-        mut self,
-        input: ::std::option::Option<crate::types::MentionSentiment>,
-    ) -> Self {
+    pub fn set_mention_sentiment(mut self, input: ::std::option::Option<crate::types::MentionSentiment>) -> Self {
         self.mention_sentiment = input;
         self
     }

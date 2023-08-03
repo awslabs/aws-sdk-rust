@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`capacity_reservation_groups(Option<Vec<CapacityReservationGroup>>)`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput::capacity_reservation_groups): <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
     /// - On failure, responds with [`SdkError<GetGroupsForCapacityReservationError>`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationError)
-    pub fn get_groups_for_capacity_reservation(&self) -> crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationFluentBuilder{
+    pub fn get_groups_for_capacity_reservation(
+        &self,
+    ) -> crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationFluentBuilder {
         crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationFluentBuilder::new(self.handle.clone())
     }
 }

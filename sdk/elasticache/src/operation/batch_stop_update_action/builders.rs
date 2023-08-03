@@ -37,10 +37,7 @@ impl BatchStopUpdateActionFluentBuilder {
         }
     }
     /// Access the BatchStopUpdateAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchStopUpdateActionFluentBuilder {
             crate::operation::batch_stop_update_action::BatchStopUpdateAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_stop_update_action::BatchStopUpdateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_stop_update_action::BatchStopUpdateActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchStopUpdateActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchStopUpdateActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_stop_update_action::BatchStopUpdateActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_stop_update_action::BatchStopUpdateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_stop_update_action::BatchStopUpdateActionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchStopUpdateActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_stop_update_action::BatchStopUpdateActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_stop_update_action::BatchStopUpdateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_stop_update_action::BatchStopUpdateActionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl BatchStopUpdateActionFluentBuilder {
             crate::operation::batch_stop_update_action::BatchStopUpdateAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_stop_update_action::BatchStopUpdateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_stop_update_action::BatchStopUpdateActionError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +114,17 @@ impl BatchStopUpdateActionFluentBuilder {
     /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
     ///
     /// <p>The replication group IDs</p>
-    pub fn replication_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_ids(input.into());
         self
     }
     /// <p>The replication group IDs</p>
-    pub fn set_replication_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_replication_group_ids(input);
         self
     }
     /// <p>The replication group IDs</p>
-    pub fn get_replication_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_replication_group_ids()
     }
     /// Appends an item to `CacheClusterIds`.
@@ -154,40 +132,26 @@ impl BatchStopUpdateActionFluentBuilder {
     /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
     ///
     /// <p>The cache cluster IDs</p>
-    pub fn cache_cluster_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_cluster_ids(input.into());
         self
     }
     /// <p>The cache cluster IDs</p>
-    pub fn set_cache_cluster_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cache_cluster_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cache_cluster_ids(input);
         self
     }
     /// <p>The cache cluster IDs</p>
-    pub fn get_cache_cluster_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_cluster_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cache_cluster_ids()
     }
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_update_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_update_name(input.into());
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_update_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_update_name(input);
         self
     }

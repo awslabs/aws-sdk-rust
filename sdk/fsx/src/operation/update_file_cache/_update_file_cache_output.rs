@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateFileCacheOutput {
 }
 impl UpdateFileCacheOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFileCacheOutput`](crate::operation::update_file_cache::UpdateFileCacheOutput).
-    pub fn builder() -> crate::operation::update_file_cache::builders::UpdateFileCacheOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_file_cache::builders::UpdateFileCacheOutputBuilder {
         crate::operation::update_file_cache::builders::UpdateFileCacheOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFileCacheOutput`](crate::operation::update_file_cache::UpdateFileCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFileCacheOutputBuilder {
     pub(crate) file_cache: ::std::option::Option<crate::types::FileCache>,
     _request_id: Option<String>,

@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput::creation_time): <p>Describes when the replication configuration was created.</p>
     ///   - [`destinations(Option<Vec<Destination>>)`](crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput::destinations): <p>An array of destination objects. Only one destination object is supported.</p>
     /// - On failure, responds with [`SdkError<CreateReplicationConfigurationError>`](crate::operation::create_replication_configuration::CreateReplicationConfigurationError)
-    pub fn create_replication_configuration(&self) -> crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationFluentBuilder{
+    pub fn create_replication_configuration(
+        &self,
+    ) -> crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationFluentBuilder {
         crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

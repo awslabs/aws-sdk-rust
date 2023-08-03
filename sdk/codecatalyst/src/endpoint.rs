@@ -14,8 +14,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://test.codecatalyst.global.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://test.codecatalyst.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -28,13 +27,10 @@ mod test {
     #[test]
     fn test_2() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .build()
-            .expect("invalid params");
+        let params = crate::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://codecatalyst.global.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://codecatalyst.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -47,14 +43,10 @@ mod test {
     #[test]
     fn test_3() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .build()
-            .expect("invalid params");
+        let params = crate::endpoint::Params::builder().use_fips(true).build().expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://codecatalyst-fips.global.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://codecatalyst-fips.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -73,8 +65,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://codecatalyst.global.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://codecatalyst.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -94,8 +85,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://codecatalyst-fips.global.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://codecatalyst-fips.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -114,8 +104,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://codecatalyst.global.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://codecatalyst.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -135,8 +124,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://codecatalyst-fips.global.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://codecatalyst-fips.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -155,8 +143,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://codecatalyst.global.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://codecatalyst.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -176,8 +163,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://codecatalyst-fips.global.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://codecatalyst-fips.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -233,19 +219,13 @@ impl DefaultResolver {
 impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params> for DefaultResolver {
     fn resolve_endpoint(&self, params: &Params) -> ::aws_smithy_http::endpoint::Result {
         let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
-        crate::endpoint::internals::resolve_endpoint(
-            params,
-            &mut diagnostic_collector,
-            &self.partition_resolver,
-        )
-        .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))
+        crate::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)
+            .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))
     }
 }
 
 /// Builder for [`Params`]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParamsBuilder {
     use_fips: ::std::option::Option<bool>,
     region: ::std::option::Option<::std::string::String>,
@@ -253,9 +233,7 @@ pub struct ParamsBuilder {
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
+    pub fn build(self) -> ::std::result::Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::endpoint::Params {
@@ -326,9 +304,7 @@ pub struct InvalidParams {
 impl InvalidParams {
     #[allow(dead_code)]
     fn missing(field: &'static str) -> Self {
-        Self {
-            field: field.into(),
-        }
+        Self { field: field.into() }
     }
 }
 

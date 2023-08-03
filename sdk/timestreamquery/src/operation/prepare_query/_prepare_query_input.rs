@@ -72,12 +72,7 @@ impl PrepareQueryInputBuilder {
         &self.validate_only
     }
     /// Consumes the builder and constructs a [`PrepareQueryInput`](crate::operation::prepare_query::PrepareQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::prepare_query::PrepareQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::prepare_query::PrepareQueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::prepare_query::PrepareQueryInput {
             query_string: self.query_string,
             validate_only: self.validate_only,

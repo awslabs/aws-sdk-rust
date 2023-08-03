@@ -23,9 +23,7 @@ impl RemovePrefixListEntry {
 
 /// A builder for [`RemovePrefixListEntry`](crate::types::RemovePrefixListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemovePrefixListEntryBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
 }

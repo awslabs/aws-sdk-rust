@@ -37,9 +37,7 @@ impl CaptionLanguageMapping {
 
 /// A builder for [`CaptionLanguageMapping`](crate::types::CaptionLanguageMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptionLanguageMappingBuilder {
     pub(crate) caption_channel: ::std::option::Option<i32>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl CaptionLanguageMappingBuilder {
         &self.caption_channel
     }
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_code = input;
         self
     }
@@ -81,18 +73,12 @@ impl CaptionLanguageMappingBuilder {
         &self.language_code
     }
     /// Textual description of language
-    pub fn language_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_description = ::std::option::Option::Some(input.into());
         self
     }
     /// Textual description of language
-    pub fn set_language_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_description = input;
         self
     }

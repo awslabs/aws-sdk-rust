@@ -59,9 +59,7 @@ impl Certificate {
         self.r#type.as_ref()
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn client_cert_auth_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClientCertAuthSettings> {
+    pub fn client_cert_auth_settings(&self) -> ::std::option::Option<&crate::types::ClientCertAuthSettings> {
         self.client_cert_auth_settings.as_ref()
     }
 }
@@ -74,9 +72,7 @@ impl Certificate {
 
 /// A builder for [`Certificate`](crate::types::Certificate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CertificateState>,
@@ -85,23 +81,16 @@ pub struct CertificateBuilder {
     pub(crate) registered_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) expiry_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) r#type: ::std::option::Option<crate::types::CertificateType>,
-    pub(crate) client_cert_auth_settings:
-        ::std::option::Option<crate::types::ClientCertAuthSettings>,
+    pub(crate) client_cert_auth_settings: ::std::option::Option<crate::types::ClientCertAuthSettings>,
 }
 impl CertificateBuilder {
     /// <p>The identifier of the certificate.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the certificate.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -115,10 +104,7 @@ impl CertificateBuilder {
         self
     }
     /// <p>The state of the certificate.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CertificateState>) -> Self {
         self.state = input;
         self
     }
@@ -160,10 +146,7 @@ impl CertificateBuilder {
         self
     }
     /// <p>The date and time that the certificate was registered.</p>
-    pub fn set_registered_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_registered_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.registered_date_time = input;
         self
     }
@@ -177,10 +160,7 @@ impl CertificateBuilder {
         self
     }
     /// <p>The date and time when the certificate will expire.</p>
-    pub fn set_expiry_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_date_time = input;
         self
     }
@@ -203,25 +183,17 @@ impl CertificateBuilder {
         &self.r#type
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn client_cert_auth_settings(
-        mut self,
-        input: crate::types::ClientCertAuthSettings,
-    ) -> Self {
+    pub fn client_cert_auth_settings(mut self, input: crate::types::ClientCertAuthSettings) -> Self {
         self.client_cert_auth_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn set_client_cert_auth_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientCertAuthSettings>,
-    ) -> Self {
+    pub fn set_client_cert_auth_settings(mut self, input: ::std::option::Option<crate::types::ClientCertAuthSettings>) -> Self {
         self.client_cert_auth_settings = input;
         self
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn get_client_cert_auth_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientCertAuthSettings> {
+    pub fn get_client_cert_auth_settings(&self) -> &::std::option::Option<crate::types::ClientCertAuthSettings> {
         &self.client_cert_auth_settings
     }
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).

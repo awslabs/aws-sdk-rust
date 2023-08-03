@@ -21,8 +21,7 @@ pub struct Region {
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     #[doc(hidden)]
-    pub relational_database_availability_zones:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub relational_database_availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
 }
 impl Region {
     /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
@@ -46,9 +45,7 @@ impl Region {
         self.availability_zones.as_deref()
     }
     /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn relational_database_availability_zones(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
+    pub fn relational_database_availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
         self.relational_database_availability_zones.as_deref()
     }
 }
@@ -61,33 +58,23 @@ impl Region {
 
 /// A builder for [`Region`](crate::types::Region).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionBuilder {
     pub(crate) continent_code: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<crate::types::RegionName>,
-    pub(crate) availability_zones:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
-    pub(crate) relational_database_availability_zones:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub(crate) relational_database_availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
 }
 impl RegionBuilder {
     /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
-    pub fn continent_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continent_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
-    pub fn set_continent_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continent_code = input;
         self
     }
@@ -149,17 +136,12 @@ impl RegionBuilder {
         self
     }
     /// <p>The Availability Zones. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>The Availability Zones. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
         &self.availability_zones
     }
     /// Appends an item to `relational_database_availability_zones`.
@@ -167,13 +149,8 @@ impl RegionBuilder {
     /// To override the contents of this collection use [`set_relational_database_availability_zones`](Self::set_relational_database_availability_zones).
     ///
     /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn relational_database_availability_zones(
-        mut self,
-        input: crate::types::AvailabilityZone,
-    ) -> Self {
-        let mut v = self
-            .relational_database_availability_zones
-            .unwrap_or_default();
+    pub fn relational_database_availability_zones(mut self, input: crate::types::AvailabilityZone) -> Self {
+        let mut v = self.relational_database_availability_zones.unwrap_or_default();
         v.push(input);
         self.relational_database_availability_zones = ::std::option::Option::Some(v);
         self
@@ -187,9 +164,7 @@ impl RegionBuilder {
         self
     }
     /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn get_relational_database_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+    pub fn get_relational_database_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
         &self.relational_database_availability_zones
     }
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).

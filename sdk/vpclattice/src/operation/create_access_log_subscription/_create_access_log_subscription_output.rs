@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for CreateAccessLogSubscriptionOutput {
 }
 impl CreateAccessLogSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessLogSubscriptionOutput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput).
-    pub fn builder() -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionOutputBuilder {
         crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessLogSubscriptionOutput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessLogSubscriptionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -125,18 +123,12 @@ impl CreateAccessLogSubscriptionOutputBuilder {
         &self.resource_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the log destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the log destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -154,9 +146,7 @@ impl CreateAccessLogSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAccessLogSubscriptionOutput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput {
+    pub fn build(self) -> crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput {
         crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput {
             id: self.id,
             arn: self.arn,

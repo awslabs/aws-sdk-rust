@@ -36,9 +36,7 @@ pub struct DomainEntry {
     /// </note>
     #[deprecated]
     #[doc(hidden)]
-    pub options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DomainEntry {
     /// <p>The ID of the domain recordset entry.</p>
@@ -77,11 +75,7 @@ impl DomainEntry {
     /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.options.as_ref()
     }
 }
@@ -94,18 +88,14 @@ impl DomainEntry {
 
 /// A builder for [`DomainEntry`](crate::types::DomainEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainEntryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) is_alias: ::std::option::Option<bool>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DomainEntryBuilder {
     /// <p>The ID of the domain recordset entry.</p>
@@ -222,11 +212,7 @@ impl DomainEntryBuilder {
     /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
-    pub fn options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.options = ::std::option::Option::Some(hash_map);
@@ -236,12 +222,7 @@ impl DomainEntryBuilder {
     /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.options = input;
         self
     }
@@ -249,11 +230,7 @@ impl DomainEntryBuilder {
     /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`DomainEntry`](crate::types::DomainEntry).

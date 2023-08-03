@@ -58,9 +58,7 @@ impl CloudwatchMetricAction {
 
 /// A builder for [`CloudwatchMetricAction`](crate::types::CloudwatchMetricAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudwatchMetricActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metric_namespace: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl CloudwatchMetricActionBuilder {
         &self.role_arn
     }
     /// <p>The CloudWatch metric namespace name.</p>
-    pub fn metric_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CloudWatch metric namespace name.</p>
-    pub fn set_metric_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_namespace = input;
         self
     }
@@ -147,18 +139,12 @@ impl CloudwatchMetricActionBuilder {
         &self.metric_unit
     }
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
-    pub fn metric_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
-    pub fn set_metric_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_timestamp = input;
         self
     }

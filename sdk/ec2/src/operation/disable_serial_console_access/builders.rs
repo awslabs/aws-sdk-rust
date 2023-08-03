@@ -26,7 +26,7 @@ impl DisableSerialConsoleAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableSerialConsoleAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessInputBuilder,
+    inner: crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessInputBuilder,
 }
 impl DisableSerialConsoleAccessFluentBuilder {
     /// Creates a new `DisableSerialConsoleAccess`.
@@ -37,7 +37,7 @@ impl DisableSerialConsoleAccessFluentBuilder {
         }
     }
     /// Access the DisableSerialConsoleAccess as a reference.
-    pub fn as_input(&self) -> &crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisableSerialConsoleAccessFluentBuilder {
             crate::operation::disable_serial_console_access::DisableSerialConsoleAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisableSerialConsoleAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisableSerialConsoleAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisableSerialConsoleAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisableSerialConsoleAccessFluentBuilder {
             crate::operation::disable_serial_console_access::DisableSerialConsoleAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError>,
     > {
         self.customize_middleware().await
     }

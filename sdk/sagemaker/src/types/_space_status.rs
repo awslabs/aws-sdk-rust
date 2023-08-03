@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SpaceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -106,15 +100,7 @@ impl SpaceStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Delete_Failed",
-            "Deleting",
-            "Failed",
-            "InService",
-            "Pending",
-            "Update_Failed",
-            "Updating",
-        ]
+        &["Delete_Failed", "Deleting", "Failed", "InService", "Pending", "Update_Failed", "Updating"]
     }
 }
 impl ::std::convert::AsRef<str> for SpaceStatus {

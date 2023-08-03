@@ -37,10 +37,7 @@ impl GetReferenceImportJobFluentBuilder {
         }
     }
     /// Access the GetReferenceImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_reference_import_job::builders::GetReferenceImportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_reference_import_job::builders::GetReferenceImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetReferenceImportJobFluentBuilder {
             crate::operation::get_reference_import_job::GetReferenceImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reference_import_job::GetReferenceImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reference_import_job::GetReferenceImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetReferenceImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetReferenceImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reference_import_job::GetReferenceImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reference_import_job::GetReferenceImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reference_import_job::GetReferenceImportJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetReferenceImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reference_import_job::GetReferenceImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reference_import_job::GetReferenceImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reference_import_job::GetReferenceImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetReferenceImportJobFluentBuilder {
             crate::operation::get_reference_import_job::GetReferenceImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reference_import_job::GetReferenceImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reference_import_job::GetReferenceImportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl GetReferenceImportJobFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_store_id(input.into());
         self
     }
     /// <p>The job's reference store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_store_id(input);
         self
     }

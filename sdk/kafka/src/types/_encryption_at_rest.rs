@@ -23,26 +23,18 @@ impl EncryptionAtRest {
 
 /// A builder for [`EncryptionAtRest`](crate::types::EncryptionAtRest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionAtRestBuilder {
     pub(crate) data_volume_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionAtRestBuilder {
     /// <p>The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
-    pub fn data_volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
-    pub fn set_data_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_volume_kms_key_id = input;
         self
     }

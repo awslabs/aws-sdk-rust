@@ -10,10 +10,7 @@ impl GetIdInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_id::GetIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_id::GetIdError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_id::GetIdError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_id();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetIdFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_id::GetId,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_id::GetId, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_id::GetIdError>,
     > {
         let handle = self.handle.clone();
@@ -60,20 +54,14 @@ impl GetIdFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_id::GetIdOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_id::GetIdError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_id::GetIdOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_id::GetIdError>> {
         let op = self
             .inner
             .build()
@@ -93,10 +81,7 @@ impl GetIdFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_id::GetIdOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_id::GetIdError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_id::GetIdOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_id::GetIdError>> {
         self.send_middleware().await
     }
 
@@ -105,10 +90,7 @@ impl GetIdFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_id::GetId,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_id::GetId, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_id::GetIdError>,
     > {
         self.customize_middleware().await
@@ -128,18 +110,12 @@ impl GetIdFluentBuilder {
         self.inner.get_account_id()
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
@@ -164,11 +140,7 @@ impl GetIdFluentBuilder {
     /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
     /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    pub fn logins(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logins(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logins(k.into(), v.into());
         self
     }
@@ -185,12 +157,7 @@ impl GetIdFluentBuilder {
     /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
     /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    pub fn set_logins(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_logins(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_logins(input);
         self
     }
@@ -207,11 +174,7 @@ impl GetIdFluentBuilder {
     /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
     /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    pub fn get_logins(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_logins()
     }
 }

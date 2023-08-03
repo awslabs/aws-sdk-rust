@@ -15,34 +15,25 @@ impl DeleteCorsPolicyInput {
 }
 impl DeleteCorsPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteCorsPolicyInput`](crate::operation::delete_cors_policy::DeleteCorsPolicyInput).
-    pub fn builder() -> crate::operation::delete_cors_policy::builders::DeleteCorsPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_cors_policy::builders::DeleteCorsPolicyInputBuilder {
         crate::operation::delete_cors_policy::builders::DeleteCorsPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCorsPolicyInput`](crate::operation::delete_cors_policy::DeleteCorsPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCorsPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCorsPolicyInputBuilder {
     /// <p>The name of the container to remove the policy from.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container to remove the policy from.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteCorsPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCorsPolicyInput`](crate::operation::delete_cors_policy::DeleteCorsPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cors_policy::DeleteCorsPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_cors_policy::DeleteCorsPolicyInput {
-                container_name: self.container_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_cors_policy::DeleteCorsPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_cors_policy::DeleteCorsPolicyInput {
+            container_name: self.container_name,
+        })
     }
 }

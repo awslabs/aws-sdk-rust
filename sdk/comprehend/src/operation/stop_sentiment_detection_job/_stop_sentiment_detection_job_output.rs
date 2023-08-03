@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for StopSentimentDetectionJobOutput {
 }
 impl StopSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopSentimentDetectionJobOutput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput).
-    pub fn builder() -> crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobOutputBuilder {
         crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopSentimentDetectionJobOutput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSentimentDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -82,9 +80,7 @@ impl StopSentimentDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopSentimentDetectionJobOutput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput {
+    pub fn build(self) -> crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput {
         crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput {
             job_id: self.job_id,
             job_status: self.job_status,

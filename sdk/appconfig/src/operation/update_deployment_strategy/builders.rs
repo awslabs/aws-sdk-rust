@@ -26,7 +26,7 @@ impl UpdateDeploymentStrategyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDeploymentStrategyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyInputBuilder,
+    inner: crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyInputBuilder,
 }
 impl UpdateDeploymentStrategyFluentBuilder {
     /// Creates a new `UpdateDeploymentStrategy`.
@@ -37,10 +37,7 @@ impl UpdateDeploymentStrategyFluentBuilder {
         }
     }
     /// Access the UpdateDeploymentStrategy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateDeploymentStrategyFluentBuilder {
             crate::operation::update_deployment_strategy::UpdateDeploymentStrategy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateDeploymentStrategyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateDeploymentStrategyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateDeploymentStrategyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateDeploymentStrategyFluentBuilder {
             crate::operation::update_deployment_strategy::UpdateDeploymentStrategy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The deployment strategy ID.</p>
-    pub fn deployment_strategy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_strategy_id(input.into());
         self
     }
     /// <p>The deployment strategy ID.</p>
-    pub fn set_deployment_strategy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_strategy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_strategy_id(input);
         self
     }
@@ -217,10 +197,7 @@ impl UpdateDeploymentStrategyFluentBuilder {
     /// <p> <code>2*(2^1)</code> </p>
     /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
-    pub fn set_growth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GrowthType>,
-    ) -> Self {
+    pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
         self.inner = self.inner.set_growth_type(input);
         self
     }

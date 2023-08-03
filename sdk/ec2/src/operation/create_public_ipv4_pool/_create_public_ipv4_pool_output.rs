@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePublicIpv4PoolOutput {
 }
 impl CreatePublicIpv4PoolOutput {
     /// Creates a new builder-style object to manufacture [`CreatePublicIpv4PoolOutput`](crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolOutput).
-    pub fn builder(
-    ) -> crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolOutputBuilder {
         crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePublicIpv4PoolOutput`](crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePublicIpv4PoolOutputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

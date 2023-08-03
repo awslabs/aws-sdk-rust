@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`devices(Option<Vec<DeviceType>>)`](crate::operation::admin_list_devices::AdminListDevicesOutput::devices): <p>The devices in the list of devices response.</p>
     ///   - [`pagination_token(Option<String>)`](crate::operation::admin_list_devices::AdminListDevicesOutput::pagination_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<AdminListDevicesError>`](crate::operation::admin_list_devices::AdminListDevicesError)
-    pub fn admin_list_devices(
-        &self,
-    ) -> crate::operation::admin_list_devices::builders::AdminListDevicesFluentBuilder {
-        crate::operation::admin_list_devices::builders::AdminListDevicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_list_devices(&self) -> crate::operation::admin_list_devices::builders::AdminListDevicesFluentBuilder {
+        crate::operation::admin_list_devices::builders::AdminListDevicesFluentBuilder::new(self.handle.clone())
     }
 }

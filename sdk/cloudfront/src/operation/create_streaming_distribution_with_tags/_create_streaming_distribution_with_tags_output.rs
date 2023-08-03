@@ -17,9 +17,7 @@ pub struct CreateStreamingDistributionWithTagsOutput {
 }
 impl CreateStreamingDistributionWithTagsOutput {
     /// <p>The streaming distribution's information.</p>
-    pub fn streaming_distribution(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingDistribution> {
+    pub fn streaming_distribution(&self) -> ::std::option::Option<&crate::types::StreamingDistribution> {
         self.streaming_distribution.as_ref()
     }
     /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
@@ -38,16 +36,14 @@ impl ::aws_http::request_id::RequestId for CreateStreamingDistributionWithTagsOu
 }
 impl CreateStreamingDistributionWithTagsOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingDistributionWithTagsOutput`](crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput).
-    pub fn builder() -> crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsOutputBuilder{
+    pub fn builder() -> crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsOutputBuilder {
         crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStreamingDistributionWithTagsOutput`](crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamingDistributionWithTagsOutputBuilder {
     pub(crate) streaming_distribution: ::std::option::Option<crate::types::StreamingDistribution>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -61,17 +57,12 @@ impl CreateStreamingDistributionWithTagsOutputBuilder {
         self
     }
     /// <p>The streaming distribution's information.</p>
-    pub fn set_streaming_distribution(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingDistribution>,
-    ) -> Self {
+    pub fn set_streaming_distribution(mut self, input: ::std::option::Option<crate::types::StreamingDistribution>) -> Self {
         self.streaming_distribution = input;
         self
     }
     /// <p>The streaming distribution's information.</p>
-    pub fn get_streaming_distribution(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingDistribution> {
+    pub fn get_streaming_distribution(&self) -> &::std::option::Option<crate::types::StreamingDistribution> {
         &self.streaming_distribution
     }
     /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
@@ -112,14 +103,11 @@ impl CreateStreamingDistributionWithTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateStreamingDistributionWithTagsOutput`](crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput).
-    pub fn build(self) -> crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput{
+    pub fn build(self) -> crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput {
         crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput {
-            streaming_distribution: self.streaming_distribution
-            ,
-            location: self.location
-            ,
-            e_tag: self.e_tag
-            ,
+            streaming_distribution: self.streaming_distribution,
+            location: self.location,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }

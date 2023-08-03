@@ -29,17 +29,14 @@ impl DescribeDeploymentsInput {
 }
 impl DescribeDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDeploymentsInput`](crate::operation::describe_deployments::DescribeDeploymentsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_deployments::builders::DescribeDeploymentsInputBuilder {
+    pub fn builder() -> crate::operation::describe_deployments::builders::DescribeDeploymentsInputBuilder {
         crate::operation::describe_deployments::builders::DescribeDeploymentsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDeploymentsInput`](crate::operation::describe_deployments::DescribeDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeploymentsInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
@@ -79,42 +76,30 @@ impl DescribeDeploymentsInputBuilder {
     /// To override the contents of this collection use [`set_deployment_ids`](Self::set_deployment_ids).
     ///
     /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
-    pub fn deployment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deployment_ids.unwrap_or_default();
         v.push(input.into());
         self.deployment_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
-    pub fn set_deployment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_deployment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.deployment_ids = input;
         self
     }
     /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
-    pub fn get_deployment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deployment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.deployment_ids
     }
     /// Consumes the builder and constructs a [`DescribeDeploymentsInput`](crate::operation::describe_deployments::DescribeDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_deployments::DescribeDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_deployments::DescribeDeploymentsInput {
-                stack_id: self.stack_id,
-                app_id: self.app_id,
-                deployment_ids: self.deployment_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_deployments::DescribeDeploymentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_deployments::DescribeDeploymentsInput {
+            stack_id: self.stack_id,
+            app_id: self.app_id,
+            deployment_ids: self.deployment_ids,
+        })
     }
 }

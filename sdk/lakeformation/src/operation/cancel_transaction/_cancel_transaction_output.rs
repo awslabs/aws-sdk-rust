@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelTransactionOutput {
 }
 impl CancelTransactionOutput {
     /// Creates a new builder-style object to manufacture [`CancelTransactionOutput`](crate::operation::cancel_transaction::CancelTransactionOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_transaction::builders::CancelTransactionOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_transaction::builders::CancelTransactionOutputBuilder {
         crate::operation::cancel_transaction::builders::CancelTransactionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelTransactionOutput`](crate::operation::cancel_transaction::CancelTransactionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelTransactionOutputBuilder {
     _request_id: Option<String>,
 }

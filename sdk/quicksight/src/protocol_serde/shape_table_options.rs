@@ -21,10 +21,7 @@ pub fn ser_table_options(
     if let Some(var_6) = &input.row_alternate_color_options {
         #[allow(unused_mut)]
         let mut object_7 = object.key("RowAlternateColorOptions").start_object();
-        crate::protocol_serde::shape_row_alternate_color_options::ser_row_alternate_color_options(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_row_alternate_color_options::ser_row_alternate_color_options(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())
@@ -32,17 +29,9 @@ pub fn ser_table_options(
 
 pub(crate) fn de_table_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::TableOptions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::TableOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,54 +41,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Orientation" => {
-                                builder = builder.set_orientation(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::TableOrientation::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Orientation" => {
+                            builder = builder.set_orientation(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TableOrientation::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "HeaderStyle" => {
-                                builder = builder.set_header_style(
-                                    crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?
-                                );
-                            }
-                            "CellStyle" => {
-                                builder = builder.set_cell_style(
-                                    crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?
-                                );
-                            }
-                            "RowAlternateColorOptions" => {
-                                builder = builder.set_row_alternate_color_options(
-                                    crate::protocol_serde::shape_row_alternate_color_options::de_row_alternate_color_options(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "HeaderStyle" => {
+                            builder = builder.set_header_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "CellStyle" => {
+                            builder = builder.set_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "RowAlternateColorOptions" => {
+                            builder = builder.set_row_alternate_color_options(
+                                crate::protocol_serde::shape_row_alternate_color_options::de_row_alternate_color_options(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -38,17 +38,13 @@ pub fn ser_scaling_instruction(
     }
     if let Some(var_10) = &input.predefined_load_metric_specification {
         #[allow(unused_mut)]
-        let mut object_11 = object
-            .key("PredefinedLoadMetricSpecification")
-            .start_object();
+        let mut object_11 = object.key("PredefinedLoadMetricSpecification").start_object();
         crate::protocol_serde::shape_predefined_load_metric_specification::ser_predefined_load_metric_specification(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.customized_load_metric_specification {
         #[allow(unused_mut)]
-        let mut object_13 = object
-            .key("CustomizedLoadMetricSpecification")
-            .start_object();
+        let mut object_13 = object.key("CustomizedLoadMetricSpecification").start_object();
         crate::protocol_serde::shape_customized_load_metric_specification::ser_customized_load_metric_specification(&mut object_13, var_12)?;
         object_13.finish();
     }
@@ -59,9 +55,7 @@ pub fn ser_scaling_instruction(
         );
     }
     if let Some(var_15) = &input.predictive_scaling_max_capacity_behavior {
-        object
-            .key("PredictiveScalingMaxCapacityBehavior")
-            .string(var_15.as_str());
+        object.key("PredictiveScalingMaxCapacityBehavior").string(var_15.as_str());
     }
     if let Some(var_16) = &input.predictive_scaling_max_capacity_buffer {
         object.key("PredictiveScalingMaxCapacityBuffer").number(
@@ -73,9 +67,7 @@ pub fn ser_scaling_instruction(
         object.key("PredictiveScalingMode").string(var_17.as_str());
     }
     if let Some(var_18) = &input.scaling_policy_update_behavior {
-        object
-            .key("ScalingPolicyUpdateBehavior")
-            .string(var_18.as_str());
+        object.key("ScalingPolicyUpdateBehavior").string(var_18.as_str());
     }
     if let Some(var_19) = &input.disable_dynamic_scaling {
         object.key("DisableDynamicScaling").boolean(*var_19);
@@ -85,17 +77,9 @@ pub fn ser_scaling_instruction(
 
 pub(crate) fn de_scaling_instruction<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ScalingInstruction>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ScalingInstruction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -105,156 +89,112 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ServiceNamespace" => {
-                                builder = builder.set_service_namespace(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ServiceNamespace::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ServiceNamespace" => {
+                            builder = builder.set_service_namespace(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ServiceNamespace::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "ResourceId" => {
-                                builder = builder.set_resource_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "ResourceId" => {
+                            builder = builder.set_resource_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ScalableDimension" => {
-                                builder = builder.set_scalable_dimension(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ScalableDimension::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "MinCapacity" => {
-                                builder = builder.set_min_capacity(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "MaxCapacity" => {
-                                builder = builder.set_max_capacity(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "TargetTrackingConfigurations" => {
-                                builder = builder.set_target_tracking_configurations(
-                                    crate::protocol_serde::shape_target_tracking_configurations::de_target_tracking_configurations(tokens)?
-                                );
-                            }
-                            "PredefinedLoadMetricSpecification" => {
-                                builder = builder.set_predefined_load_metric_specification(
-                                    crate::protocol_serde::shape_predefined_load_metric_specification::de_predefined_load_metric_specification(tokens)?
-                                );
-                            }
-                            "CustomizedLoadMetricSpecification" => {
-                                builder = builder.set_customized_load_metric_specification(
-                                    crate::protocol_serde::shape_customized_load_metric_specification::de_customized_load_metric_specification(tokens)?
-                                );
-                            }
-                            "ScheduledActionBufferTime" => {
-                                builder = builder.set_scheduled_action_buffer_time(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "PredictiveScalingMaxCapacityBehavior" => {
-                                builder = builder.set_predictive_scaling_max_capacity_behavior(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            crate::types::PredictiveScalingMaxCapacityBehavior::from(u.as_ref())
-                                        )
-                                    ).transpose()?
-                                );
-                            }
-                            "PredictiveScalingMaxCapacityBuffer" => {
-                                builder = builder.set_predictive_scaling_max_capacity_buffer(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "PredictiveScalingMode" => {
-                                builder = builder.set_predictive_scaling_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::PredictiveScalingMode::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "ScalingPolicyUpdateBehavior" => {
-                                builder = builder.set_scaling_policy_update_behavior(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ScalingPolicyUpdateBehavior::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "DisableDynamicScaling" => {
-                                builder = builder.set_disable_dynamic_scaling(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "ScalableDimension" => {
+                            builder = builder.set_scalable_dimension(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ScalableDimension::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "MinCapacity" => {
+                            builder = builder.set_min_capacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "MaxCapacity" => {
+                            builder = builder.set_max_capacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "TargetTrackingConfigurations" => {
+                            builder = builder.set_target_tracking_configurations(
+                                crate::protocol_serde::shape_target_tracking_configurations::de_target_tracking_configurations(tokens)?,
+                            );
+                        }
+                        "PredefinedLoadMetricSpecification" => {
+                            builder = builder.set_predefined_load_metric_specification(
+                                crate::protocol_serde::shape_predefined_load_metric_specification::de_predefined_load_metric_specification(tokens)?,
+                            );
+                        }
+                        "CustomizedLoadMetricSpecification" => {
+                            builder = builder.set_customized_load_metric_specification(
+                                crate::protocol_serde::shape_customized_load_metric_specification::de_customized_load_metric_specification(tokens)?,
+                            );
+                        }
+                        "ScheduledActionBufferTime" => {
+                            builder = builder.set_scheduled_action_buffer_time(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "PredictiveScalingMaxCapacityBehavior" => {
+                            builder = builder.set_predictive_scaling_max_capacity_behavior(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::PredictiveScalingMaxCapacityBehavior::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "PredictiveScalingMaxCapacityBuffer" => {
+                            builder = builder.set_predictive_scaling_max_capacity_buffer(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "PredictiveScalingMode" => {
+                            builder = builder.set_predictive_scaling_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PredictiveScalingMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ScalingPolicyUpdateBehavior" => {
+                            builder = builder.set_scaling_policy_update_behavior(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ScalingPolicyUpdateBehavior::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DisableDynamicScaling" => {
+                            builder = builder.set_disable_dynamic_scaling(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

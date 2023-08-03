@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ImportWorkspaceImageOutput`](crate::operation::import_workspace_image::ImportWorkspaceImageOutput) with field(s):
     ///   - [`image_id(Option<String>)`](crate::operation::import_workspace_image::ImportWorkspaceImageOutput::image_id): <p>The identifier of the WorkSpace image.</p>
     /// - On failure, responds with [`SdkError<ImportWorkspaceImageError>`](crate::operation::import_workspace_image::ImportWorkspaceImageError)
-    pub fn import_workspace_image(
-        &self,
-    ) -> crate::operation::import_workspace_image::builders::ImportWorkspaceImageFluentBuilder {
-        crate::operation::import_workspace_image::builders::ImportWorkspaceImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_workspace_image(&self) -> crate::operation::import_workspace_image::builders::ImportWorkspaceImageFluentBuilder {
+        crate::operation::import_workspace_image::builders::ImportWorkspaceImageFluentBuilder::new(self.handle.clone())
     }
 }

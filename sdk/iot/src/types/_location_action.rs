@@ -58,9 +58,7 @@ impl LocationAction {
 
 /// A builder for [`LocationAction`](crate::types::LocationAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocationActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl LocationActionBuilder {
         self
     }
     /// <p>The time that the location data was sampled. The default value is the time the MQTT message was processed.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationTimestamp>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::LocationTimestamp>) -> Self {
         self.timestamp = input;
         self
     }

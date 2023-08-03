@@ -26,7 +26,7 @@ impl GetSubscriptionAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSubscriptionAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_subscription_attributes::builders::GetSubscriptionAttributesInputBuilder,
+    inner: crate::operation::get_subscription_attributes::builders::GetSubscriptionAttributesInputBuilder,
 }
 impl GetSubscriptionAttributesFluentBuilder {
     /// Creates a new `GetSubscriptionAttributes`.
@@ -37,7 +37,7 @@ impl GetSubscriptionAttributesFluentBuilder {
         }
     }
     /// Access the GetSubscriptionAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_subscription_attributes::builders::GetSubscriptionAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_subscription_attributes::builders::GetSubscriptionAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetSubscriptionAttributesFluentBuilder {
             crate::operation::get_subscription_attributes::GetSubscriptionAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_attributes::GetSubscriptionAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_attributes::GetSubscriptionAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetSubscriptionAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetSubscriptionAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subscription_attributes::GetSubscriptionAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_attributes::GetSubscriptionAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_attributes::GetSubscriptionAttributesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetSubscriptionAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subscription_attributes::GetSubscriptionAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_attributes::GetSubscriptionAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_attributes::GetSubscriptionAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetSubscriptionAttributesFluentBuilder {
             crate::operation::get_subscription_attributes::GetSubscriptionAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_attributes::GetSubscriptionAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_attributes::GetSubscriptionAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the subscription whose properties you want to get.</p>
-    pub fn subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_arn(input.into());
         self
     }
     /// <p>The ARN of the subscription whose properties you want to get.</p>
-    pub fn set_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_arn(input);
         self
     }

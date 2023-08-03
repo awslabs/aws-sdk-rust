@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DeleteTransitGatewayRouteTableAnnouncementOutput`](crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementOutput) with field(s):
     ///   - [`transit_gateway_route_table_announcement(Option<TransitGatewayRouteTableAnnouncement>)`](crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementOutput::transit_gateway_route_table_announcement): <p>Provides details about a deleted transit gateway route table.</p>
     /// - On failure, responds with [`SdkError<DeleteTransitGatewayRouteTableAnnouncementError>`](crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementError)
-    pub fn delete_transit_gateway_route_table_announcement(&self) -> crate::operation::delete_transit_gateway_route_table_announcement::builders::DeleteTransitGatewayRouteTableAnnouncementFluentBuilder{
-        crate::operation::delete_transit_gateway_route_table_announcement::builders::DeleteTransitGatewayRouteTableAnnouncementFluentBuilder::new(self.handle.clone())
+    pub fn delete_transit_gateway_route_table_announcement(
+        &self,
+    ) -> crate::operation::delete_transit_gateway_route_table_announcement::builders::DeleteTransitGatewayRouteTableAnnouncementFluentBuilder {
+        crate::operation::delete_transit_gateway_route_table_announcement::builders::DeleteTransitGatewayRouteTableAnnouncementFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

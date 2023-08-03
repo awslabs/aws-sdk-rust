@@ -37,9 +37,7 @@ impl Recipe {
 
 /// A builder for [`Recipe`](crate::types::Recipe).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl RecipeBuilder {
         self
     }
     /// <p>The nodes that are inputs to the recipe node, identified by id.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -89,10 +84,7 @@ impl RecipeBuilder {
         self
     }
     /// <p>A reference to the DataBrew recipe used by the node.</p>
-    pub fn set_recipe_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::RecipeReference>,
-    ) -> Self {
+    pub fn set_recipe_reference(mut self, input: ::std::option::Option<crate::types::RecipeReference>) -> Self {
         self.recipe_reference = input;
         self
     }

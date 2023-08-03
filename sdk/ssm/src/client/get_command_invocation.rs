@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`standard_error_url(Option<String>)`](crate::operation::get_command_invocation::GetCommandInvocationOutput::standard_error_url): <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
     ///   - [`cloud_watch_output_config(Option<CloudWatchOutputConfig>)`](crate::operation::get_command_invocation::GetCommandInvocationOutput::cloud_watch_output_config): <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
     /// - On failure, responds with [`SdkError<GetCommandInvocationError>`](crate::operation::get_command_invocation::GetCommandInvocationError)
-    pub fn get_command_invocation(
-        &self,
-    ) -> crate::operation::get_command_invocation::builders::GetCommandInvocationFluentBuilder {
-        crate::operation::get_command_invocation::builders::GetCommandInvocationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_command_invocation(&self) -> crate::operation::get_command_invocation::builders::GetCommandInvocationFluentBuilder {
+        crate::operation::get_command_invocation::builders::GetCommandInvocationFluentBuilder::new(self.handle.clone())
     }
 }

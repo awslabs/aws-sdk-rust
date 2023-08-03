@@ -15,22 +15,14 @@ pub struct TimeSeriesTransformations {
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
     #[doc(hidden)]
     pub filling: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
     >,
     /// <p>A key value pair defining the aggregation method for a column, where the key is the column name and the value is the aggregation method.</p>
     /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p> <note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
     #[doc(hidden)]
-    pub aggregation: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::AggregationTransformationValue,
-        >,
-    >,
+    pub aggregation: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>>,
 }
 impl TimeSeriesTransformations {
     /// <p>A key value pair defining the filling method for a column, where the key is the column name and the value is an object which defines the filling logic. You can specify multiple filling methods for a single column.</p>
@@ -45,10 +37,7 @@ impl TimeSeriesTransformations {
     pub fn filling(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>,
-        >,
+        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
     > {
         self.filling.as_ref()
     }
@@ -58,12 +47,7 @@ impl TimeSeriesTransformations {
     /// </note>
     pub fn aggregation(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::AggregationTransformationValue,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>> {
         self.aggregation.as_ref()
     }
 }
@@ -76,22 +60,12 @@ impl TimeSeriesTransformations {
 
 /// A builder for [`TimeSeriesTransformations`](crate::types::TimeSeriesTransformations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeSeriesTransformationsBuilder {
     pub(crate) filling: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
     >,
-    pub(crate) aggregation: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::AggregationTransformationValue,
-        >,
-    >,
+    pub(crate) aggregation: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>>,
 }
 impl TimeSeriesTransformationsBuilder {
     /// Adds a key-value pair to `filling`.
@@ -129,10 +103,7 @@ impl TimeSeriesTransformationsBuilder {
     pub fn set_filling(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
         >,
     ) -> Self {
         self.filling = input;
@@ -150,10 +121,7 @@ impl TimeSeriesTransformationsBuilder {
     pub fn get_filling(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
     > {
         &self.filling
     }
@@ -165,11 +133,7 @@ impl TimeSeriesTransformationsBuilder {
     /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p> <note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
-    pub fn aggregation(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::AggregationTransformationValue,
-    ) -> Self {
+    pub fn aggregation(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AggregationTransformationValue) -> Self {
         let mut hash_map = self.aggregation.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.aggregation = ::std::option::Option::Some(hash_map);
@@ -181,12 +145,7 @@ impl TimeSeriesTransformationsBuilder {
     /// </note>
     pub fn set_aggregation(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::AggregationTransformationValue,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>>,
     ) -> Self {
         self.aggregation = input;
         self
@@ -197,12 +156,7 @@ impl TimeSeriesTransformationsBuilder {
     /// </note>
     pub fn get_aggregation(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::AggregationTransformationValue,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>> {
         &self.aggregation
     }
     /// Consumes the builder and constructs a [`TimeSeriesTransformations`](crate::types::TimeSeriesTransformations).

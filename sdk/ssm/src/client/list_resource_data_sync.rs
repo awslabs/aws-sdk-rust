@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`resource_data_sync_items(Option<Vec<ResourceDataSyncItem>>)`](crate::operation::list_resource_data_sync::ListResourceDataSyncOutput::resource_data_sync_items): <p>A list of your current resource data sync configurations and their statuses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_data_sync::ListResourceDataSyncOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListResourceDataSyncError>`](crate::operation::list_resource_data_sync::ListResourceDataSyncError)
-    pub fn list_resource_data_sync(
-        &self,
-    ) -> crate::operation::list_resource_data_sync::builders::ListResourceDataSyncFluentBuilder
-    {
-        crate::operation::list_resource_data_sync::builders::ListResourceDataSyncFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resource_data_sync(&self) -> crate::operation::list_resource_data_sync::builders::ListResourceDataSyncFluentBuilder {
+        crate::operation::list_resource_data_sync::builders::ListResourceDataSyncFluentBuilder::new(self.handle.clone())
     }
 }

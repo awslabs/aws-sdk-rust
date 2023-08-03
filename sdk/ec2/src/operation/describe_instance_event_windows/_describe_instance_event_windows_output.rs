@@ -5,8 +5,7 @@
 pub struct DescribeInstanceEventWindowsOutput {
     /// <p>Information about the event windows.</p>
     #[doc(hidden)]
-    pub instance_event_windows:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindow>>,
+    pub instance_event_windows: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindow>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeInstanceEventWindowsOutput {
 }
 impl DescribeInstanceEventWindowsOutput {
     /// <p>Information about the event windows.</p>
-    pub fn instance_event_windows(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceEventWindow]> {
+    pub fn instance_event_windows(&self) -> ::std::option::Option<&[crate::types::InstanceEventWindow]> {
         self.instance_event_windows.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeInstanceEventWindowsOutput {
 }
 impl DescribeInstanceEventWindowsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceEventWindowsOutput`](crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput).
-    pub fn builder() -> crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsOutputBuilder {
         crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceEventWindowsOutput`](crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceEventWindowsOutputBuilder {
-    pub(crate) instance_event_windows:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindow>>,
+    pub(crate) instance_event_windows: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindow>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeInstanceEventWindowsOutputBuilder {
         self
     }
     /// <p>Information about the event windows.</p>
-    pub fn set_instance_event_windows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindow>>,
-    ) -> Self {
+    pub fn set_instance_event_windows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindow>>) -> Self {
         self.instance_event_windows = input;
         self
     }
     /// <p>Information about the event windows.</p>
-    pub fn get_instance_event_windows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindow>> {
+    pub fn get_instance_event_windows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindow>> {
         &self.instance_event_windows
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
@@ -97,9 +86,7 @@ impl DescribeInstanceEventWindowsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInstanceEventWindowsOutput`](crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput {
+    pub fn build(self) -> crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput {
         crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput {
             instance_event_windows: self.instance_event_windows,
             next_token: self.next_token,

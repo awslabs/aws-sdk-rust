@@ -29,16 +29,14 @@ impl CreateCapacityReservationInput {
 }
 impl CreateCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`CreateCapacityReservationInput`](crate::operation::create_capacity_reservation::CreateCapacityReservationInput).
-    pub fn builder() -> crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder{
+    pub fn builder() -> crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder {
         crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCapacityReservationInput`](crate::operation::create_capacity_reservation::CreateCapacityReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationInputBuilder {
     pub(crate) target_dpus: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl CreateCapacityReservationInputBuilder {
         self
     }
     /// <p>The tags for the capacity reservation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -103,12 +98,10 @@ impl CreateCapacityReservationInputBuilder {
         crate::operation::create_capacity_reservation::CreateCapacityReservationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_capacity_reservation::CreateCapacityReservationInput {
-                target_dpus: self.target_dpus,
-                name: self.name,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_capacity_reservation::CreateCapacityReservationInput {
+            target_dpus: self.target_dpus,
+            name: self.name,
+            tags: self.tags,
+        })
     }
 }

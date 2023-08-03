@@ -22,17 +22,14 @@ impl DeleteEventStreamInput {
 }
 impl DeleteEventStreamInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventStreamInput`](crate::operation::delete_event_stream::DeleteEventStreamInput).
-    pub fn builder(
-    ) -> crate::operation::delete_event_stream::builders::DeleteEventStreamInputBuilder {
+    pub fn builder() -> crate::operation::delete_event_stream::builders::DeleteEventStreamInputBuilder {
         crate::operation::delete_event_stream::builders::DeleteEventStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventStreamInput`](crate::operation::delete_event_stream::DeleteEventStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventStreamInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_stream_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DeleteEventStreamInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the event stream</p>
-    pub fn event_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event stream</p>
-    pub fn set_event_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_stream_name = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteEventStreamInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventStreamInput`](crate::operation::delete_event_stream::DeleteEventStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_event_stream::DeleteEventStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_event_stream::DeleteEventStreamInput {
-                domain_name: self.domain_name,
-                event_stream_name: self.event_stream_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_event_stream::DeleteEventStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_event_stream::DeleteEventStreamInput {
+            domain_name: self.domain_name,
+            event_stream_name: self.event_stream_name,
+        })
     }
 }

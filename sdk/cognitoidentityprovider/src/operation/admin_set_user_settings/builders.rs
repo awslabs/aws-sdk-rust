@@ -37,10 +37,7 @@ impl AdminSetUserSettingsFluentBuilder {
         }
     }
     /// Access the AdminSetUserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::admin_set_user_settings::builders::AdminSetUserSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::admin_set_user_settings::builders::AdminSetUserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AdminSetUserSettingsFluentBuilder {
             crate::operation::admin_set_user_settings::AdminSetUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_settings::AdminSetUserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AdminSetUserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AdminSetUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_settings::AdminSetUserSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AdminSetUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_settings::AdminSetUserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl AdminSetUserSettingsFluentBuilder {
             crate::operation::admin_set_user_settings::AdminSetUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_settings::AdminSetUserSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -161,17 +147,12 @@ impl AdminSetUserSettingsFluentBuilder {
         self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn set_mfa_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
-    ) -> Self {
+    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
         self.inner = self.inner.set_mfa_options(input);
         self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn get_mfa_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
         self.inner.get_mfa_options()
     }
 }

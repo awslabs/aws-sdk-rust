@@ -66,9 +66,7 @@ impl S3ReportExportConfig {
 
 /// A builder for [`S3ReportExportConfig`](crate::types::S3ReportExportConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ReportExportConfigBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_owner: ::std::option::Option<::std::string::String>,
@@ -134,10 +132,7 @@ impl S3ReportExportConfigBuilder {
     /// <li> <p> <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified. </p> </li>
     /// <li> <p> <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket. </p> </li>
     /// </ul>
-    pub fn set_packaging(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportPackagingType>,
-    ) -> Self {
+    pub fn set_packaging(mut self, input: ::std::option::Option<crate::types::ReportPackagingType>) -> Self {
         self.packaging = input;
         self
     }
@@ -150,18 +145,12 @@ impl S3ReportExportConfigBuilder {
         &self.packaging
     }
     /// <p> The encryption key for the report's encrypted raw data. </p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The encryption key for the report's encrypted raw data. </p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }

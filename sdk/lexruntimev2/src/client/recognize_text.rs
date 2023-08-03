@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`session_id(Option<String>)`](crate::operation::recognize_text::RecognizeTextOutput::session_id): <p>The identifier of the session in use.</p>
     ///   - [`recognized_bot_member(Option<RecognizedBotMember>)`](crate::operation::recognize_text::RecognizeTextOutput::recognized_bot_member): <p>The bot member that recognized the text.</p>
     /// - On failure, responds with [`SdkError<RecognizeTextError>`](crate::operation::recognize_text::RecognizeTextError)
-    pub fn recognize_text(
-        &self,
-    ) -> crate::operation::recognize_text::builders::RecognizeTextFluentBuilder {
-        crate::operation::recognize_text::builders::RecognizeTextFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn recognize_text(&self) -> crate::operation::recognize_text::builders::RecognizeTextFluentBuilder {
+        crate::operation::recognize_text::builders::RecognizeTextFluentBuilder::new(self.handle.clone())
     }
 }

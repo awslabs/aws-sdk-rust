@@ -18,7 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRemoteAccessSessionOutput`](crate::operation::create_remote_access_session::CreateRemoteAccessSessionOutput) with field(s):
     ///   - [`remote_access_session(Option<RemoteAccessSession>)`](crate::operation::create_remote_access_session::CreateRemoteAccessSessionOutput::remote_access_session): <p>A container that describes the remote access session when the request to create a remote access session is sent.</p>
     /// - On failure, responds with [`SdkError<CreateRemoteAccessSessionError>`](crate::operation::create_remote_access_session::CreateRemoteAccessSessionError)
-    pub fn create_remote_access_session(&self) -> crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionFluentBuilder{
+    pub fn create_remote_access_session(&self) -> crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionFluentBuilder {
         crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionFluentBuilder::new(self.handle.clone())
     }
 }

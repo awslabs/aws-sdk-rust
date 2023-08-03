@@ -22,17 +22,14 @@ impl DeleteClientBrandingInput {
 }
 impl DeleteClientBrandingInput {
     /// Creates a new builder-style object to manufacture [`DeleteClientBrandingInput`](crate::operation::delete_client_branding::DeleteClientBrandingInput).
-    pub fn builder(
-    ) -> crate::operation::delete_client_branding::builders::DeleteClientBrandingInputBuilder {
+    pub fn builder() -> crate::operation::delete_client_branding::builders::DeleteClientBrandingInputBuilder {
         crate::operation::delete_client_branding::builders::DeleteClientBrandingInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClientBrandingInput`](crate::operation::delete_client_branding::DeleteClientBrandingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClientBrandingInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>>,
@@ -64,31 +61,22 @@ impl DeleteClientBrandingInputBuilder {
         self
     }
     /// <p>The device type for which you want to delete client branding.</p>
-    pub fn set_platforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>>,
-    ) -> Self {
+    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>>) -> Self {
         self.platforms = input;
         self
     }
     /// <p>The device type for which you want to delete client branding.</p>
-    pub fn get_platforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>> {
+    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>> {
         &self.platforms
     }
     /// Consumes the builder and constructs a [`DeleteClientBrandingInput`](crate::operation::delete_client_branding::DeleteClientBrandingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_client_branding::DeleteClientBrandingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_client_branding::DeleteClientBrandingInput {
-                resource_id: self.resource_id,
-                platforms: self.platforms,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_client_branding::DeleteClientBrandingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_client_branding::DeleteClientBrandingInput {
+            resource_id: self.resource_id,
+            platforms: self.platforms,
+        })
     }
 }

@@ -63,9 +63,7 @@ impl InstancePatchStateFilter {
 
 /// A builder for [`InstancePatchStateFilter`](crate::types::InstancePatchStateFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstancePatchStateFilterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -128,10 +126,7 @@ impl InstancePatchStateFilterBuilder {
         self
     }
     /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -145,10 +140,7 @@ impl InstancePatchStateFilterBuilder {
         self
     }
     /// <p>The type of comparison that should be performed for the value.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstancePatchStateOperatorType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::InstancePatchStateOperatorType>) -> Self {
         self.r#type = input;
         self
     }

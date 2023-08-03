@@ -26,8 +26,7 @@ impl ListExperimentTemplatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListExperimentTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_experiment_templates::builders::ListExperimentTemplatesInputBuilder,
+    inner: crate::operation::list_experiment_templates::builders::ListExperimentTemplatesInputBuilder,
 }
 impl ListExperimentTemplatesFluentBuilder {
     /// Creates a new `ListExperimentTemplates`.
@@ -38,10 +37,7 @@ impl ListExperimentTemplatesFluentBuilder {
         }
     }
     /// Access the ListExperimentTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_experiment_templates::builders::ListExperimentTemplatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_experiment_templates::builders::ListExperimentTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListExperimentTemplatesFluentBuilder {
             crate::operation::list_experiment_templates::ListExperimentTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experiment_templates::ListExperimentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experiment_templates::ListExperimentTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListExperimentTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListExperimentTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_experiment_templates::ListExperimentTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experiment_templates::ListExperimentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experiment_templates::ListExperimentTemplatesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListExperimentTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_experiment_templates::ListExperimentTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experiment_templates::ListExperimentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experiment_templates::ListExperimentTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListExperimentTemplatesFluentBuilder {
             crate::operation::list_experiment_templates::ListExperimentTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experiment_templates::ListExperimentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experiment_templates::ListExperimentTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_experiment_templates::paginator::ListExperimentTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_experiment_templates::paginator::ListExperimentTemplatesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_experiment_templates::paginator::ListExperimentTemplatesPaginator {
         crate::operation::list_experiment_templates::paginator::ListExperimentTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>

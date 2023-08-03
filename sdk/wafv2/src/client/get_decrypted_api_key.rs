@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`token_domains(Option<Vec<String>>)`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyOutput::token_domains): <p>The token domains that are defined in this API key. </p>
     ///   - [`creation_timestamp(Option<DateTime>)`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyOutput::creation_timestamp): <p>The date and time that the key was created. </p>
     /// - On failure, responds with [`SdkError<GetDecryptedAPIKeyError>`](crate::operation::get_decrypted_api_key::GetDecryptedAPIKeyError)
-    pub fn get_decrypted_api_key(
-        &self,
-    ) -> crate::operation::get_decrypted_api_key::builders::GetDecryptedAPIKeyFluentBuilder {
-        crate::operation::get_decrypted_api_key::builders::GetDecryptedAPIKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_decrypted_api_key(&self) -> crate::operation::get_decrypted_api_key::builders::GetDecryptedAPIKeyFluentBuilder {
+        crate::operation::get_decrypted_api_key::builders::GetDecryptedAPIKeyFluentBuilder::new(self.handle.clone())
     }
 }

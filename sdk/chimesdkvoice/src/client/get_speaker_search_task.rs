@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetSpeakerSearchTaskOutput`](crate::operation::get_speaker_search_task::GetSpeakerSearchTaskOutput) with field(s):
     ///   - [`speaker_search_task(Option<SpeakerSearchTask>)`](crate::operation::get_speaker_search_task::GetSpeakerSearchTaskOutput::speaker_search_task): <p>The details of the speaker search task.</p>
     /// - On failure, responds with [`SdkError<GetSpeakerSearchTaskError>`](crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError)
-    pub fn get_speaker_search_task(
-        &self,
-    ) -> crate::operation::get_speaker_search_task::builders::GetSpeakerSearchTaskFluentBuilder
-    {
-        crate::operation::get_speaker_search_task::builders::GetSpeakerSearchTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_speaker_search_task(&self) -> crate::operation::get_speaker_search_task::builders::GetSpeakerSearchTaskFluentBuilder {
+        crate::operation::get_speaker_search_task::builders::GetSpeakerSearchTaskFluentBuilder::new(self.handle.clone())
     }
 }

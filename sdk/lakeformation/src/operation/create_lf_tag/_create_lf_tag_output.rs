@@ -19,9 +19,7 @@ impl CreateLfTagOutput {
 
 /// A builder for [`CreateLfTagOutput`](crate::operation::create_lf_tag::CreateLfTagOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLfTagOutputBuilder {
     _request_id: Option<String>,
 }

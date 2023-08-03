@@ -15,16 +15,14 @@ impl GetAppReplicationConfigurationInput {
 }
 impl GetAppReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetAppReplicationConfigurationInput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput).
-    pub fn builder() -> crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationInputBuilder {
         crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppReplicationConfigurationInput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppReplicationConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,6 @@ impl GetAppReplicationConfigurationInputBuilder {
         crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput {
-                app_id: self.app_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput { app_id: self.app_id })
     }
 }

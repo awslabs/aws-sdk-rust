@@ -53,9 +53,7 @@ impl CreateRoleAliasInput {
 
 /// A builder for [`CreateRoleAliasInput`](crate::operation::create_role_alias::CreateRoleAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoleAliasInputBuilder {
     pub(crate) role_alias: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -128,10 +126,7 @@ impl CreateRoleAliasInputBuilder {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -146,10 +141,7 @@ impl CreateRoleAliasInputBuilder {
     /// Consumes the builder and constructs a [`CreateRoleAliasInput`](crate::operation::create_role_alias::CreateRoleAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_role_alias::CreateRoleAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_role_alias::CreateRoleAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_role_alias::CreateRoleAliasInput {
             role_alias: self.role_alias,
             role_arn: self.role_arn,

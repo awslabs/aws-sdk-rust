@@ -9,81 +9,81 @@ pub fn de_check_if_phone_number_is_opted_out_http_error(
     crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationError" => crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::AuthorizationErrorException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AuthorizationError" => {
+            crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::AuthorizationErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AuthorizationErrorExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(_response_body, output).map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(_response_body, output)
+                            .map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InternalError" => crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::InternalErrorException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(_response_body, output).map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidParameter" => crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::InvalidParameterException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(_response_body, output).map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "Throttled" => crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::ThrottledException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottledExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_xml_err(_response_body, output).map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottledExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::generic(generic)
+        _ => crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::generic(generic),
     })
 }
 
@@ -99,16 +99,21 @@ pub fn de_check_if_phone_number_is_opted_out_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder::default();
-        output = crate::protocol_serde::shape_check_if_phone_number_is_opted_out::de_check_if_phone_number_is_opted_out(_response_body, output).map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_check_if_phone_number_is_opted_out::de_check_if_phone_number_is_opted_out(_response_body, output)
+            .map_err(crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_check_if_phone_number_is_opted_out(inp: &[u8], mut builder: crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder) -> Result<crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_check_if_phone_number_is_opted_out(
+    inp: &[u8],
+    mut builder: crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder,
+) -> Result<
+    crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

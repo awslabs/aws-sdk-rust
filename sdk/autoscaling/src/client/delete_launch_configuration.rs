@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`launch_configuration_name(impl ::std::convert::Into<String>)`](crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationFluentBuilder::launch_configuration_name) / [`set_launch_configuration_name(Option<String>)`](crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationFluentBuilder::set_launch_configuration_name): <p>The name of the launch configuration.</p>
     /// - On success, responds with [`DeleteLaunchConfigurationOutput`](crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteLaunchConfigurationError>`](crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError)
-    pub fn delete_launch_configuration(&self) -> crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationFluentBuilder{
+    pub fn delete_launch_configuration(&self) -> crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationFluentBuilder {
         crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

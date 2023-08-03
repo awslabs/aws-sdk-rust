@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UsageLimitFeatureType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for UsageLimitFeatureType {
             "concurrency-scaling" => UsageLimitFeatureType::ConcurrencyScaling,
             "cross-region-datasharing" => UsageLimitFeatureType::CrossRegionDatasharing,
             "spectrum" => UsageLimitFeatureType::Spectrum,
-            other => UsageLimitFeatureType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UsageLimitFeatureType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl UsageLimitFeatureType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "concurrency-scaling",
-            "cross-region-datasharing",
-            "spectrum",
-        ]
+        &["concurrency-scaling", "cross-region-datasharing", "spectrum"]
     }
 }
 impl ::std::convert::AsRef<str> for UsageLimitFeatureType {

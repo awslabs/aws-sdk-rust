@@ -7,15 +7,16 @@ pub fn ser_configured_table_analysis_rule_policy(
         crate::types::ConfiguredTableAnalysisRulePolicy::V1(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_2.key("v1").start_object();
-            crate::protocol_serde::shape_configured_table_analysis_rule_policy_v1::ser_configured_table_analysis_rule_policy_v1(&mut object_1, inner)?;
+            crate::protocol_serde::shape_configured_table_analysis_rule_policy_v1::ser_configured_table_analysis_rule_policy_v1(
+                &mut object_1,
+                inner,
+            )?;
             object_1.finish();
         }
         crate::types::ConfiguredTableAnalysisRulePolicy::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ConfiguredTableAnalysisRulePolicy",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ConfiguredTableAnalysisRulePolicy",
+            ))
         }
     }
     Ok(())
@@ -23,17 +24,9 @@ pub fn ser_configured_table_analysis_rule_policy(
 
 pub(crate) fn de_configured_table_analysis_rule_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ConfiguredTableAnalysisRulePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -43,41 +36,35 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "v1" => {
-                                Some(crate::types::ConfiguredTableAnalysisRulePolicy::V1(
-                                    crate::protocol_serde::shape_configured_table_analysis_rule_policy_v1::de_configured_table_analysis_rule_policy_v1(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'v1' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::ConfiguredTableAnalysisRulePolicy::Unknown)
-                                                                    }
-                        };
+                        "v1" => Some(crate::types::ConfiguredTableAnalysisRulePolicy::V1(
+                            crate::protocol_serde::shape_configured_table_analysis_rule_policy_v1::de_configured_table_analysis_rule_policy_v1(
+                                tokens,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'v1' cannot be null"))?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::ConfiguredTableAnalysisRulePolicy::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

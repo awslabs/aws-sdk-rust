@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAssessmentStatusOutput`](crate::operation::update_assessment_status::UpdateAssessmentStatusOutput) with field(s):
     ///   - [`assessment(Option<Assessment>)`](crate::operation::update_assessment_status::UpdateAssessmentStatusOutput::assessment): <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
     /// - On failure, responds with [`SdkError<UpdateAssessmentStatusError>`](crate::operation::update_assessment_status::UpdateAssessmentStatusError)
-    pub fn update_assessment_status(
-        &self,
-    ) -> crate::operation::update_assessment_status::builders::UpdateAssessmentStatusFluentBuilder
-    {
+    pub fn update_assessment_status(&self) -> crate::operation::update_assessment_status::builders::UpdateAssessmentStatusFluentBuilder {
         crate::operation::update_assessment_status::builders::UpdateAssessmentStatusFluentBuilder::new(self.handle.clone())
     }
 }

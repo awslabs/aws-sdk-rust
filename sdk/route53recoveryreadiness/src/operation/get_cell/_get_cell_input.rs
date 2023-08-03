@@ -22,9 +22,7 @@ impl GetCellInput {
 
 /// A builder for [`GetCellInput`](crate::operation::get_cell::GetCellInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCellInputBuilder {
     pub(crate) cell_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetCellInputBuilder {
         &self.cell_name
     }
     /// Consumes the builder and constructs a [`GetCellInput`](crate::operation::get_cell::GetCellInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cell::GetCellInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_cell::GetCellInput {
-            cell_name: self.cell_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cell::GetCellInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_cell::GetCellInput { cell_name: self.cell_name })
     }
 }

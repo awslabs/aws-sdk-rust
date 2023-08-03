@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ConfigureHealthCheckOutput`](crate::operation::configure_health_check::ConfigureHealthCheckOutput) with field(s):
     ///   - [`health_check(Option<HealthCheck>)`](crate::operation::configure_health_check::ConfigureHealthCheckOutput::health_check): <p>The updated health check.</p>
     /// - On failure, responds with [`SdkError<ConfigureHealthCheckError>`](crate::operation::configure_health_check::ConfigureHealthCheckError)
-    pub fn configure_health_check(
-        &self,
-    ) -> crate::operation::configure_health_check::builders::ConfigureHealthCheckFluentBuilder {
-        crate::operation::configure_health_check::builders::ConfigureHealthCheckFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn configure_health_check(&self) -> crate::operation::configure_health_check::builders::ConfigureHealthCheckFluentBuilder {
+        crate::operation::configure_health_check::builders::ConfigureHealthCheckFluentBuilder::new(self.handle.clone())
     }
 }

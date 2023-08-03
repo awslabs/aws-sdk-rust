@@ -9,8 +9,7 @@ pub struct DescribeReservedInstancesModificationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Reserved Instance modification information.</p>
     #[doc(hidden)]
-    pub reserved_instances_modifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>>,
+    pub reserved_instances_modifications: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesModificationsOutput {
@@ -19,9 +18,7 @@ impl DescribeReservedInstancesModificationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The Reserved Instance modification information.</p>
-    pub fn reserved_instances_modifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedInstancesModification]> {
+    pub fn reserved_instances_modifications(&self) -> ::std::option::Option<&[crate::types::ReservedInstancesModification]> {
         self.reserved_instances_modifications.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReservedInstancesModification
 }
 impl DescribeReservedInstancesModificationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesModificationsOutput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput).
-    pub fn builder() -> crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsOutputBuilder {
         crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedInstancesModificationsOutput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesModificationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_instances_modifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>>,
+    pub(crate) reserved_instances_modifications: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesModificationsOutputBuilder {
@@ -68,10 +62,7 @@ impl DescribeReservedInstancesModificationsOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_instances_modifications`](Self::set_reserved_instances_modifications).
     ///
     /// <p>The Reserved Instance modification information.</p>
-    pub fn reserved_instances_modifications(
-        mut self,
-        input: crate::types::ReservedInstancesModification,
-    ) -> Self {
+    pub fn reserved_instances_modifications(mut self, input: crate::types::ReservedInstancesModification) -> Self {
         let mut v = self.reserved_instances_modifications.unwrap_or_default();
         v.push(input);
         self.reserved_instances_modifications = ::std::option::Option::Some(v);
@@ -86,9 +77,7 @@ impl DescribeReservedInstancesModificationsOutputBuilder {
         self
     }
     /// <p>The Reserved Instance modification information.</p>
-    pub fn get_reserved_instances_modifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>> {
+    pub fn get_reserved_instances_modifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>> {
         &self.reserved_instances_modifications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,12 +90,10 @@ impl DescribeReservedInstancesModificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesModificationsOutput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput).
-    pub fn build(self) -> crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput{
+    pub fn build(self) -> crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput {
         crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput {
-            next_token: self.next_token
-            ,
-            reserved_instances_modifications: self.reserved_instances_modifications
-            ,
+            next_token: self.next_token,
+            reserved_instances_modifications: self.reserved_instances_modifications,
             _request_id: self._request_id,
         }
     }

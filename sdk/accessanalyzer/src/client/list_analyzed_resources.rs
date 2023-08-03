@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`analyzed_resources(Option<Vec<AnalyzedResourceSummary>>)`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput::analyzed_resources): <p>A list of resources that were analyzed.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ListAnalyzedResourcesError>`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesError)
-    pub fn list_analyzed_resources(
-        &self,
-    ) -> crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder
-    {
-        crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_analyzed_resources(&self) -> crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder {
+        crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::new(self.handle.clone())
     }
 }

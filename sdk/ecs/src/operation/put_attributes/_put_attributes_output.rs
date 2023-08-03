@@ -28,9 +28,7 @@ impl PutAttributesOutput {
 
 /// A builder for [`PutAttributesOutput`](crate::operation::put_attributes::PutAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl PutAttributesOutputBuilder {
         self
     }
     /// <p>The attributes applied to your resource.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes applied to your resource.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

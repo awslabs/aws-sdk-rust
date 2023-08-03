@@ -37,9 +37,7 @@ impl ListInventoryEntriesFluentBuilder {
         }
     }
     /// Access the ListInventoryEntries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_inventory_entries::builders::ListInventoryEntriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_inventory_entries::builders::ListInventoryEntriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListInventoryEntriesFluentBuilder {
             crate::operation::list_inventory_entries::ListInventoryEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inventory_entries::ListInventoryEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inventory_entries::ListInventoryEntriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListInventoryEntriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListInventoryEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_inventory_entries::ListInventoryEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inventory_entries::ListInventoryEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inventory_entries::ListInventoryEntriesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListInventoryEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_inventory_entries::ListInventoryEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inventory_entries::ListInventoryEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inventory_entries::ListInventoryEntriesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ListInventoryEntriesFluentBuilder {
             crate::operation::list_inventory_entries::ListInventoryEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inventory_entries::ListInventoryEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inventory_entries::ListInventoryEntriesError>,
     > {
         self.customize_middleware().await
     }
@@ -160,17 +147,12 @@ impl ListInventoryEntriesFluentBuilder {
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
         self.inner.get_filters()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>

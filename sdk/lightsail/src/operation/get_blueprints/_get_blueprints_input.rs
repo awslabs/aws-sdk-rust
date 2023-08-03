@@ -42,9 +42,7 @@ impl GetBlueprintsInput {
 
 /// A builder for [`GetBlueprintsInput`](crate::operation::get_blueprints::GetBlueprintsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBlueprintsInputBuilder {
     pub(crate) include_inactive: ::std::option::Option<bool>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
@@ -92,10 +90,7 @@ impl GetBlueprintsInputBuilder {
     /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
     /// </important>
-    pub fn set_app_category(
-        mut self,
-        input: ::std::option::Option<crate::types::AppCategory>,
-    ) -> Self {
+    pub fn set_app_category(mut self, input: ::std::option::Option<crate::types::AppCategory>) -> Self {
         self.app_category = input;
         self
     }
@@ -108,10 +103,7 @@ impl GetBlueprintsInputBuilder {
     /// Consumes the builder and constructs a [`GetBlueprintsInput`](crate::operation::get_blueprints::GetBlueprintsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_blueprints::GetBlueprintsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_blueprints::GetBlueprintsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_blueprints::GetBlueprintsInput {
             include_inactive: self.include_inactive,
             page_token: self.page_token,

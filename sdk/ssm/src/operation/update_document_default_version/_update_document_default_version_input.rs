@@ -22,16 +22,14 @@ impl UpdateDocumentDefaultVersionInput {
 }
 impl UpdateDocumentDefaultVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentDefaultVersionInput`](crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput).
-    pub fn builder() -> crate::operation::update_document_default_version::builders::UpdateDocumentDefaultVersionInputBuilder{
+    pub fn builder() -> crate::operation::update_document_default_version::builders::UpdateDocumentDefaultVersionInputBuilder {
         crate::operation::update_document_default_version::builders::UpdateDocumentDefaultVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDocumentDefaultVersionInput`](crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDocumentDefaultVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl UpdateDocumentDefaultVersionInputBuilder {
         &self.name
     }
     /// <p>The version of a custom document that you want to set as the default version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of a custom document that you want to set as the default version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -78,11 +70,9 @@ impl UpdateDocumentDefaultVersionInputBuilder {
         crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput {
-                name: self.name,
-                document_version: self.document_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput {
+            name: self.name,
+            document_version: self.document_version,
+        })
     }
 }

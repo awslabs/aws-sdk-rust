@@ -37,9 +37,7 @@ impl PutEncryptionConfigFluentBuilder {
         }
     }
     /// Access the PutEncryptionConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_encryption_config::builders::PutEncryptionConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_encryption_config::builders::PutEncryptionConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl PutEncryptionConfigFluentBuilder {
             crate::operation::put_encryption_config::PutEncryptionConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_encryption_config::PutEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_encryption_config::PutEncryptionConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl PutEncryptionConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl PutEncryptionConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_encryption_config::PutEncryptionConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_encryption_config::PutEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_encryption_config::PutEncryptionConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl PutEncryptionConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_encryption_config::PutEncryptionConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_encryption_config::PutEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_encryption_config::PutEncryptionConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl PutEncryptionConfigFluentBuilder {
             crate::operation::put_encryption_config::PutEncryptionConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_encryption_config::PutEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_encryption_config::PutEncryptionConfigError>,
     > {
         self.customize_middleware().await
     }

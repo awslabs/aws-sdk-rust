@@ -26,7 +26,7 @@ impl DisconnectRecoveryInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisconnectRecoveryInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceInputBuilder,
+    inner: crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceInputBuilder,
 }
 impl DisconnectRecoveryInstanceFluentBuilder {
     /// Creates a new `DisconnectRecoveryInstance`.
@@ -37,7 +37,7 @@ impl DisconnectRecoveryInstanceFluentBuilder {
         }
     }
     /// Access the DisconnectRecoveryInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisconnectRecoveryInstanceFluentBuilder {
             crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisconnectRecoveryInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisconnectRecoveryInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisconnectRecoveryInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DisconnectRecoveryInstanceFluentBuilder {
             crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Recovery Instance to disconnect.</p>
-    pub fn recovery_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_instance_id(input.into());
         self
     }
     /// <p>The ID of the Recovery Instance to disconnect.</p>
-    pub fn set_recovery_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recovery_instance_id(input);
         self
     }

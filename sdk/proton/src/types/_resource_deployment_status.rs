@@ -39,13 +39,7 @@
 /// The state that a PR-based deployment can be updated to.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for ResourceDeploymentStatus {
             "FAILED" => ResourceDeploymentStatus::Failed,
             "IN_PROGRESS" => ResourceDeploymentStatus::InProgress,
             "SUCCEEDED" => ResourceDeploymentStatus::Succeeded,
-            other => ResourceDeploymentStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceDeploymentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

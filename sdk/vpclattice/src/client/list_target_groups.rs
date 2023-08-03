@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<TargetGroupSummary>>)`](crate::operation::list_target_groups::ListTargetGroupsOutput::items): <p>Information about the target groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_target_groups::ListTargetGroupsOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListTargetGroupsError>`](crate::operation::list_target_groups::ListTargetGroupsError)
-    pub fn list_target_groups(
-        &self,
-    ) -> crate::operation::list_target_groups::builders::ListTargetGroupsFluentBuilder {
-        crate::operation::list_target_groups::builders::ListTargetGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_target_groups(&self) -> crate::operation::list_target_groups::builders::ListTargetGroupsFluentBuilder {
+        crate::operation::list_target_groups::builders::ListTargetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

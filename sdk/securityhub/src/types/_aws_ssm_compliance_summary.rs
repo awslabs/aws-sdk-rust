@@ -168,9 +168,7 @@ impl AwsSsmComplianceSummary {
 
 /// A builder for [`AwsSsmComplianceSummary`](crate::types::AwsSsmComplianceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsSsmComplianceSummaryBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) compliant_critical_count: ::std::option::Option<i32>,
@@ -264,18 +262,12 @@ impl AwsSsmComplianceSummaryBuilder {
         &self.compliant_medium_count
     }
     /// <p>The type of execution that was used determine compliance.</p>
-    pub fn execution_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of execution that was used determine compliance.</p>
-    pub fn set_execution_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_type = input;
         self
     }
@@ -317,10 +309,7 @@ impl AwsSsmComplianceSummaryBuilder {
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
-    pub fn set_non_compliant_informational_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_non_compliant_informational_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.non_compliant_informational_count = input;
         self
     }
@@ -385,18 +374,12 @@ impl AwsSsmComplianceSummaryBuilder {
         &self.compliant_low_count
     }
     /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
-    pub fn compliance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_type = input;
         self
     }
@@ -405,18 +388,12 @@ impl AwsSsmComplianceSummaryBuilder {
         &self.compliance_type
     }
     /// <p>The identifier of the patch baseline. The patch baseline lists the patches that are approved for installation.</p>
-    pub fn patch_baseline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_baseline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_baseline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the patch baseline. The patch baseline lists the patches that are approved for installation.</p>
-    pub fn set_patch_baseline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.patch_baseline_id = input;
         self
     }
@@ -433,10 +410,7 @@ impl AwsSsmComplianceSummaryBuilder {
     /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
     /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
-    pub fn overall_severity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn overall_severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.overall_severity = ::std::option::Option::Some(input.into());
         self
     }
@@ -449,10 +423,7 @@ impl AwsSsmComplianceSummaryBuilder {
     /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
     /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
-    pub fn set_overall_severity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_overall_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.overall_severity = input;
         self
     }
@@ -488,10 +459,7 @@ impl AwsSsmComplianceSummaryBuilder {
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
-    pub fn set_non_compliant_unspecified_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_non_compliant_unspecified_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.non_compliant_unspecified_count = input;
         self
     }
@@ -523,9 +491,7 @@ impl AwsSsmComplianceSummaryBuilder {
             execution_type: self.execution_type,
             non_compliant_critical_count: self.non_compliant_critical_count.unwrap_or_default(),
             compliant_informational_count: self.compliant_informational_count.unwrap_or_default(),
-            non_compliant_informational_count: self
-                .non_compliant_informational_count
-                .unwrap_or_default(),
+            non_compliant_informational_count: self.non_compliant_informational_count.unwrap_or_default(),
             compliant_unspecified_count: self.compliant_unspecified_count.unwrap_or_default(),
             non_compliant_low_count: self.non_compliant_low_count.unwrap_or_default(),
             non_compliant_high_count: self.non_compliant_high_count.unwrap_or_default(),
@@ -534,9 +500,7 @@ impl AwsSsmComplianceSummaryBuilder {
             patch_baseline_id: self.patch_baseline_id,
             overall_severity: self.overall_severity,
             non_compliant_medium_count: self.non_compliant_medium_count.unwrap_or_default(),
-            non_compliant_unspecified_count: self
-                .non_compliant_unspecified_count
-                .unwrap_or_default(),
+            non_compliant_unspecified_count: self.non_compliant_unspecified_count.unwrap_or_default(),
             patch_group: self.patch_group,
         }
     }

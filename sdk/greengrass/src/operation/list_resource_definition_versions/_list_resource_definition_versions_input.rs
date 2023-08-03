@@ -29,16 +29,14 @@ impl ListResourceDefinitionVersionsInput {
 }
 impl ListResourceDefinitionVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListResourceDefinitionVersionsInput`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsInput).
-    pub fn builder() -> crate::operation::list_resource_definition_versions::builders::ListResourceDefinitionVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_resource_definition_versions::builders::ListResourceDefinitionVersionsInputBuilder {
         crate::operation::list_resource_definition_versions::builders::ListResourceDefinitionVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceDefinitionVersionsInput`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceDefinitionVersionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl ListResourceDefinitionVersionsInputBuilder {
         &self.next_token
     }
     /// The ID of the resource definition.
-    pub fn resource_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the resource definition.
-    pub fn set_resource_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_definition_id = input;
         self
     }
@@ -100,15 +92,10 @@ impl ListResourceDefinitionVersionsInputBuilder {
         crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                resource_definition_id: self.resource_definition_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            resource_definition_id: self.resource_definition_id,
+        })
     }
 }

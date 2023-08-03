@@ -16,33 +16,25 @@ impl DeleteReplicationInstanceInput {
 }
 impl DeleteReplicationInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationInstanceInput`](crate::operation::delete_replication_instance::DeleteReplicationInstanceInput).
-    pub fn builder() -> crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceInputBuilder{
+    pub fn builder() -> crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceInputBuilder {
         crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReplicationInstanceInput`](crate::operation::delete_replication_instance::DeleteReplicationInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReplicationInstanceInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReplicationInstanceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_arn = input;
         self
     }
@@ -57,10 +49,8 @@ impl DeleteReplicationInstanceInputBuilder {
         crate::operation::delete_replication_instance::DeleteReplicationInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_replication_instance::DeleteReplicationInstanceInput {
-                replication_instance_arn: self.replication_instance_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_replication_instance::DeleteReplicationInstanceInput {
+            replication_instance_arn: self.replication_instance_arn,
+        })
     }
 }

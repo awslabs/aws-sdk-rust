@@ -10,10 +10,7 @@ impl CreateSnapshotsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_snapshots::CreateSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshots::CreateSnapshotsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshots::CreateSnapshotsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_snapshots();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateSnapshotsFluentBuilder {
         }
     }
     /// Access the CreateSnapshots as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_snapshots::builders::CreateSnapshotsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_snapshots::builders::CreateSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateSnapshotsFluentBuilder {
             crate::operation::create_snapshots::CreateSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshots::CreateSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshots::CreateSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_snapshots::CreateSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshots::CreateSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshots::CreateSnapshotsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_snapshots::CreateSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshots::CreateSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshots::CreateSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CreateSnapshotsFluentBuilder {
             crate::operation::create_snapshots::CreateSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshots::CreateSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshots::CreateSnapshotsError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +128,12 @@ impl CreateSnapshotsFluentBuilder {
         self
     }
     /// <p>The instance to specify which volumes should be included in the snapshots.</p>
-    pub fn set_instance_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceSpecification>,
-    ) -> Self {
+    pub fn set_instance_specification(mut self, input: ::std::option::Option<crate::types::InstanceSpecification>) -> Self {
         self.inner = self.inner.set_instance_specification(input);
         self
     }
     /// <p>The instance to specify which volumes should be included in the snapshots.</p>
-    pub fn get_instance_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceSpecification> {
+    pub fn get_instance_specification(&self) -> &::std::option::Option<crate::types::InstanceSpecification> {
         self.inner.get_instance_specification()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
@@ -199,17 +178,12 @@ impl CreateSnapshotsFluentBuilder {
         self
     }
     /// <p>Tags to apply to every snapshot specified by the instance.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>Tags to apply to every snapshot specified by the instance.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -232,17 +206,12 @@ impl CreateSnapshotsFluentBuilder {
         self
     }
     /// <p>Copies the tags from the specified volume to corresponding snapshot.</p>
-    pub fn set_copy_tags_from_source(
-        mut self,
-        input: ::std::option::Option<crate::types::CopyTagsFromSource>,
-    ) -> Self {
+    pub fn set_copy_tags_from_source(mut self, input: ::std::option::Option<crate::types::CopyTagsFromSource>) -> Self {
         self.inner = self.inner.set_copy_tags_from_source(input);
         self
     }
     /// <p>Copies the tags from the specified volume to corresponding snapshot.</p>
-    pub fn get_copy_tags_from_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::CopyTagsFromSource> {
+    pub fn get_copy_tags_from_source(&self) -> &::std::option::Option<crate::types::CopyTagsFromSource> {
         self.inner.get_copy_tags_from_source()
     }
 }

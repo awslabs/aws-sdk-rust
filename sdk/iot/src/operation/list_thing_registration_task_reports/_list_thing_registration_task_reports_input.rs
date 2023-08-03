@@ -36,16 +36,14 @@ impl ListThingRegistrationTaskReportsInput {
 }
 impl ListThingRegistrationTaskReportsInput {
     /// Creates a new builder-style object to manufacture [`ListThingRegistrationTaskReportsInput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput).
-    pub fn builder() -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder{
+    pub fn builder() -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder {
         crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingRegistrationTaskReportsInput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingRegistrationTaskReportsInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) report_type: ::std::option::Option<crate::types::ReportType>,
@@ -73,10 +71,7 @@ impl ListThingRegistrationTaskReportsInputBuilder {
         self
     }
     /// <p>The type of task report.</p>
-    pub fn set_report_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportType>,
-    ) -> Self {
+    pub fn set_report_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
         self.report_type = input;
         self
     }
@@ -113,18 +108,19 @@ impl ListThingRegistrationTaskReportsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListThingRegistrationTaskReportsInput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput {
-                task_id: self.task_id
-                ,
-                report_type: self.report_type
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                task_id: self.task_id,
+                report_type: self.report_type,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

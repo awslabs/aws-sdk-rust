@@ -10,10 +10,7 @@ impl CreateVpcEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_vpc_endpoint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateVpcEndpointFluentBuilder {
         }
     }
     /// Access the CreateVpcEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateVpcEndpointFluentBuilder {
             crate::operation::create_vpc_endpoint::CreateVpcEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateVpcEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateVpcEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateVpcEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateVpcEndpointFluentBuilder {
             crate::operation::create_vpc_endpoint::CreateVpcEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +144,7 @@ impl CreateVpcEndpointFluentBuilder {
         self
     }
     /// <p>The ID of one or more subnets from which you'll access OpenSearch Serverless.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -176,25 +157,17 @@ impl CreateVpcEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>

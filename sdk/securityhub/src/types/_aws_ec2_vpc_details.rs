@@ -6,12 +6,10 @@
 pub struct AwsEc2VpcDetails {
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
     #[doc(hidden)]
-    pub cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>,
+    pub cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>,
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
     #[doc(hidden)]
-    pub ipv6_cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
+    pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
     #[doc(hidden)]
     pub dhcp_options_id: ::std::option::Option<::std::string::String>,
@@ -21,15 +19,11 @@ pub struct AwsEc2VpcDetails {
 }
 impl AwsEc2VpcDetails {
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub fn cidr_block_association_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CidrBlockAssociation]> {
+    pub fn cidr_block_association_set(&self) -> ::std::option::Option<&[crate::types::CidrBlockAssociation]> {
         self.cidr_block_association_set.as_deref()
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    pub fn ipv6_cidr_block_association_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Ipv6CidrBlockAssociation]> {
+    pub fn ipv6_cidr_block_association_set(&self) -> ::std::option::Option<&[crate::types::Ipv6CidrBlockAssociation]> {
         self.ipv6_cidr_block_association_set.as_deref()
     }
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
@@ -50,14 +44,10 @@ impl AwsEc2VpcDetails {
 
 /// A builder for [`AwsEc2VpcDetails`](crate::types::AwsEc2VpcDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2VpcDetailsBuilder {
-    pub(crate) cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>,
-    pub(crate) ipv6_cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
+    pub(crate) cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>,
+    pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
     pub(crate) dhcp_options_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
 }
@@ -74,17 +64,12 @@ impl AwsEc2VpcDetailsBuilder {
         self
     }
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub fn set_cidr_block_association_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>,
-    ) -> Self {
+    pub fn set_cidr_block_association_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>) -> Self {
         self.cidr_block_association_set = input;
         self
     }
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub fn get_cidr_block_association_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>> {
+    pub fn get_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>> {
         &self.cidr_block_association_set
     }
     /// Appends an item to `ipv6_cidr_block_association_set`.
@@ -92,10 +77,7 @@ impl AwsEc2VpcDetailsBuilder {
     /// To override the contents of this collection use [`set_ipv6_cidr_block_association_set`](Self::set_ipv6_cidr_block_association_set).
     ///
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    pub fn ipv6_cidr_block_association_set(
-        mut self,
-        input: crate::types::Ipv6CidrBlockAssociation,
-    ) -> Self {
+    pub fn ipv6_cidr_block_association_set(mut self, input: crate::types::Ipv6CidrBlockAssociation) -> Self {
         let mut v = self.ipv6_cidr_block_association_set.unwrap_or_default();
         v.push(input);
         self.ipv6_cidr_block_association_set = ::std::option::Option::Some(v);
@@ -110,24 +92,16 @@ impl AwsEc2VpcDetailsBuilder {
         self
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    pub fn get_ipv6_cidr_block_association_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>> {
+    pub fn get_ipv6_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>> {
         &self.ipv6_cidr_block_association_set
     }
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
-    pub fn dhcp_options_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dhcp_options_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dhcp_options_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
-    pub fn set_dhcp_options_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dhcp_options_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dhcp_options_id = input;
         self
     }

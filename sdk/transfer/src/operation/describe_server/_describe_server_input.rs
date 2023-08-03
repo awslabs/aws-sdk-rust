@@ -22,9 +22,7 @@ impl DescribeServerInput {
 
 /// A builder for [`DescribeServerInput`](crate::operation::describe_server::DescribeServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServerInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeServerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServerInput`](crate::operation::describe_server::DescribeServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_server::DescribeServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_server::DescribeServerInput {
-            server_id: self.server_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_server::DescribeServerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_server::DescribeServerInput { server_id: self.server_id })
     }
 }

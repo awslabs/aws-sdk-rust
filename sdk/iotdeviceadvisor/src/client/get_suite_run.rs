@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`error_reason(Option<String>)`](crate::operation::get_suite_run::GetSuiteRunOutput::error_reason): <p>Error reason for any test suite run failure.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_suite_run::GetSuiteRunOutput::tags): <p>The tags attached to the suite run.</p>
     /// - On failure, responds with [`SdkError<GetSuiteRunError>`](crate::operation::get_suite_run::GetSuiteRunError)
-    pub fn get_suite_run(
-        &self,
-    ) -> crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder {
-        crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_suite_run(&self) -> crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder {
+        crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl CreateDefaultSubnetInput {
 }
 impl CreateDefaultSubnetInput {
     /// Creates a new builder-style object to manufacture [`CreateDefaultSubnetInput`](crate::operation::create_default_subnet::CreateDefaultSubnetInput).
-    pub fn builder(
-    ) -> crate::operation::create_default_subnet::builders::CreateDefaultSubnetInputBuilder {
-        crate::operation::create_default_subnet::builders::CreateDefaultSubnetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_default_subnet::builders::CreateDefaultSubnetInputBuilder {
+        crate::operation::create_default_subnet::builders::CreateDefaultSubnetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDefaultSubnetInput`](crate::operation::create_default_subnet::CreateDefaultSubnetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDefaultSubnetInputBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -48,18 +44,12 @@ pub struct CreateDefaultSubnetInputBuilder {
 }
 impl CreateDefaultSubnetInputBuilder {
     /// <p>The Availability Zone in which to create the default subnet.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which to create the default subnet.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -98,16 +88,12 @@ impl CreateDefaultSubnetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDefaultSubnetInput`](crate::operation::create_default_subnet::CreateDefaultSubnetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_default_subnet::CreateDefaultSubnetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_default_subnet::CreateDefaultSubnetInput {
-                availability_zone: self.availability_zone,
-                dry_run: self.dry_run,
-                ipv6_native: self.ipv6_native,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_default_subnet::CreateDefaultSubnetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_default_subnet::CreateDefaultSubnetInput {
+            availability_zone: self.availability_zone,
+            dry_run: self.dry_run,
+            ipv6_native: self.ipv6_native,
+        })
     }
 }

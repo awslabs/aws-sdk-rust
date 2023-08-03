@@ -26,7 +26,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAcceptedPortfolioSharesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesInputBuilder,
+    inner: crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesInputBuilder,
 }
 impl ListAcceptedPortfolioSharesFluentBuilder {
     /// Creates a new `ListAcceptedPortfolioShares`.
@@ -37,7 +37,7 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
         }
     }
     /// Access the ListAcceptedPortfolioShares as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
             crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
             crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_accepted_portfolio_shares::paginator::ListAcceptedPortfolioSharesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_accepted_portfolio_shares::paginator::ListAcceptedPortfolioSharesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_accepted_portfolio_shares::paginator::ListAcceptedPortfolioSharesPaginator {
         crate::operation::list_accepted_portfolio_shares::paginator::ListAcceptedPortfolioSharesPaginator::new(self.handle, self.inner)
     }
     /// <p>The language code.</p>
@@ -131,10 +120,7 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -143,10 +129,7 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -202,10 +185,7 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
     /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
     /// </ul>
-    pub fn set_portfolio_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PortfolioShareType>,
-    ) -> Self {
+    pub fn set_portfolio_share_type(mut self, input: ::std::option::Option<crate::types::PortfolioShareType>) -> Self {
         self.inner = self.inner.set_portfolio_share_type(input);
         self
     }
@@ -215,9 +195,7 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
     /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
     /// </ul>
-    pub fn get_portfolio_share_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PortfolioShareType> {
+    pub fn get_portfolio_share_type(&self) -> &::std::option::Option<crate::types::PortfolioShareType> {
         self.inner.get_portfolio_share_type()
     }
 }

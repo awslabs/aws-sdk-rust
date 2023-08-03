@@ -16,9 +16,7 @@ pub fn ser_list_pending_invitation_resources_input(
         object.key("resourceRegionScope").string(var_3.as_str());
     }
     if let Some(var_4) = &input.resource_share_invitation_arn {
-        object
-            .key("resourceShareInvitationArn")
-            .string(var_4.as_str());
+        object.key("resourceShareInvitationArn").string(var_4.as_str());
     }
     Ok(())
 }

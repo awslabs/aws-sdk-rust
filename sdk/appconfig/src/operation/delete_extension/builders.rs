@@ -10,10 +10,7 @@ impl DeleteExtensionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_extension::DeleteExtensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_extension::DeleteExtensionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_extension::DeleteExtensionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_extension();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteExtensionFluentBuilder {
         }
     }
     /// Access the DeleteExtension as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_extension::builders::DeleteExtensionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_extension::builders::DeleteExtensionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteExtensionFluentBuilder {
             crate::operation::delete_extension::DeleteExtension,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_extension::DeleteExtensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_extension::DeleteExtensionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteExtensionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteExtensionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_extension::DeleteExtensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_extension::DeleteExtensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_extension::DeleteExtensionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteExtensionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_extension::DeleteExtensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_extension::DeleteExtensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_extension::DeleteExtensionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteExtensionFluentBuilder {
             crate::operation::delete_extension::DeleteExtension,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_extension::DeleteExtensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_extension::DeleteExtensionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
-    pub fn extension_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.extension_identifier(input.into());
         self
     }
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
-    pub fn set_extension_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_extension_identifier(input);
         self
     }

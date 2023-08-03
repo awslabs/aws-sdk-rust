@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for GetCalculatedAttributeForProfileOutpu
 }
 impl GetCalculatedAttributeForProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetCalculatedAttributeForProfileOutput`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput).
-    pub fn builder() -> crate::operation::get_calculated_attribute_for_profile::builders::GetCalculatedAttributeForProfileOutputBuilder{
+    pub fn builder() -> crate::operation::get_calculated_attribute_for_profile::builders::GetCalculatedAttributeForProfileOutputBuilder {
         crate::operation::get_calculated_attribute_for_profile::builders::GetCalculatedAttributeForProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCalculatedAttributeForProfileOutput`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCalculatedAttributeForProfileOutputBuilder {
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct GetCalculatedAttributeForProfileOutputBuilder {
 }
 impl GetCalculatedAttributeForProfileOutputBuilder {
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn set_calculated_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculated_attribute_name = input;
         self
     }
@@ -95,18 +87,12 @@ impl GetCalculatedAttributeForProfileOutputBuilder {
         &self.display_name
     }
     /// <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
-    pub fn is_data_partial(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn is_data_partial(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.is_data_partial = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
-    pub fn set_is_data_partial(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_is_data_partial(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.is_data_partial = input;
         self
     }
@@ -138,16 +124,12 @@ impl GetCalculatedAttributeForProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCalculatedAttributeForProfileOutput`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput).
-    pub fn build(self) -> crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput{
+    pub fn build(self) -> crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput {
         crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput {
-            calculated_attribute_name: self.calculated_attribute_name
-            ,
-            display_name: self.display_name
-            ,
-            is_data_partial: self.is_data_partial
-            ,
-            value: self.value
-            ,
+            calculated_attribute_name: self.calculated_attribute_name,
+            display_name: self.display_name,
+            is_data_partial: self.is_data_partial,
+            value: self.value,
             _request_id: self._request_id,
         }
     }

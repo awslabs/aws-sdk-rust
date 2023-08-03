@@ -38,18 +38,14 @@ impl ListOnPremisesInstancesInput {
 }
 impl ListOnPremisesInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListOnPremisesInstancesInput`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder {
         crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOnPremisesInstancesInput`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOnPremisesInstancesInputBuilder {
     pub(crate) registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
@@ -70,10 +66,7 @@ impl ListOnPremisesInstancesInputBuilder {
     /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
     /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
-    pub fn set_registration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.registration_status = input;
         self
     }
@@ -82,9 +75,7 @@ impl ListOnPremisesInstancesInputBuilder {
     /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
     /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
-    pub fn get_registration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+    pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         &self.registration_status
     }
     /// Appends an item to `tag_filters`.
@@ -99,17 +90,12 @@ impl ListOnPremisesInstancesInputBuilder {
         self
     }
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
-    pub fn set_tag_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
-    ) -> Self {
+    pub fn set_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
         self.tag_filters = input;
         self
     }
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
-    pub fn get_tag_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+    pub fn get_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
         &self.tag_filters
     }
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
@@ -133,12 +119,10 @@ impl ListOnPremisesInstancesInputBuilder {
         crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput {
-                registration_status: self.registration_status,
-                tag_filters: self.tag_filters,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput {
+            registration_status: self.registration_status,
+            tag_filters: self.tag_filters,
+            next_token: self.next_token,
+        })
     }
 }

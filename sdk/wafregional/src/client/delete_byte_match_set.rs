@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteByteMatchSetOutput`](crate::operation::delete_byte_match_set::DeleteByteMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::delete_byte_match_set::DeleteByteMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteByteMatchSetError>`](crate::operation::delete_byte_match_set::DeleteByteMatchSetError)
-    pub fn delete_byte_match_set(
-        &self,
-    ) -> crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetFluentBuilder {
-        crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_byte_match_set(&self) -> crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetFluentBuilder {
+        crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

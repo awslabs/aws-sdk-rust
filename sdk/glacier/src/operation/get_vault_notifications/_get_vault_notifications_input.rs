@@ -23,18 +23,14 @@ impl GetVaultNotificationsInput {
 }
 impl GetVaultNotificationsInput {
     /// Creates a new builder-style object to manufacture [`GetVaultNotificationsInput`](crate::operation::get_vault_notifications::GetVaultNotificationsInput).
-    pub fn builder(
-    ) -> crate::operation::get_vault_notifications::builders::GetVaultNotificationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_vault_notifications::builders::GetVaultNotificationsInputBuilder {
         crate::operation::get_vault_notifications::builders::GetVaultNotificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVaultNotificationsInput`](crate::operation::get_vault_notifications::GetVaultNotificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVaultNotificationsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -71,15 +67,11 @@ impl GetVaultNotificationsInputBuilder {
     /// Consumes the builder and constructs a [`GetVaultNotificationsInput`](crate::operation::get_vault_notifications::GetVaultNotificationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_vault_notifications::GetVaultNotificationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_vault_notifications::GetVaultNotificationsInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_vault_notifications::GetVaultNotificationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_vault_notifications::GetVaultNotificationsInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+        })
     }
 }

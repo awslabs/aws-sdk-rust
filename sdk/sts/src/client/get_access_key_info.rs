@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccessKeyInfoOutput`](crate::operation::get_access_key_info::GetAccessKeyInfoOutput) with field(s):
     ///   - [`account(Option<String>)`](crate::operation::get_access_key_info::GetAccessKeyInfoOutput::account): <p>The number used to identify the Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<GetAccessKeyInfoError>`](crate::operation::get_access_key_info::GetAccessKeyInfoError)
-    pub fn get_access_key_info(
-        &self,
-    ) -> crate::operation::get_access_key_info::builders::GetAccessKeyInfoFluentBuilder {
-        crate::operation::get_access_key_info::builders::GetAccessKeyInfoFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_access_key_info(&self) -> crate::operation::get_access_key_info::builders::GetAccessKeyInfoFluentBuilder {
+        crate::operation::get_access_key_info::builders::GetAccessKeyInfoFluentBuilder::new(self.handle.clone())
     }
 }

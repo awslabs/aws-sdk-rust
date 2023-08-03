@@ -65,18 +65,12 @@ impl DetectAnomaliesInputBuilder {
         &self.project_name
     }
     /// <p>The version of the model that you want to use.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model that you want to use.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -90,10 +84,7 @@ impl DetectAnomaliesInputBuilder {
         self
     }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
@@ -118,10 +109,7 @@ impl DetectAnomaliesInputBuilder {
     /// Consumes the builder and constructs a [`DetectAnomaliesInput`](crate::operation::detect_anomalies::DetectAnomaliesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_anomalies::DetectAnomaliesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::detect_anomalies::DetectAnomaliesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_anomalies::DetectAnomaliesInput {
             project_name: self.project_name,
             model_version: self.model_version,

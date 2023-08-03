@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_run_group::CreateRunGroupOutput::id): <p>The group's ID.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_run_group::CreateRunGroupOutput::tags): <p>Tags for the run group.</p>
     /// - On failure, responds with [`SdkError<CreateRunGroupError>`](crate::operation::create_run_group::CreateRunGroupError)
-    pub fn create_run_group(
-        &self,
-    ) -> crate::operation::create_run_group::builders::CreateRunGroupFluentBuilder {
-        crate::operation::create_run_group::builders::CreateRunGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_run_group(&self) -> crate::operation::create_run_group::builders::CreateRunGroupFluentBuilder {
+        crate::operation::create_run_group::builders::CreateRunGroupFluentBuilder::new(self.handle.clone())
     }
 }

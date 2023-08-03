@@ -9,76 +9,67 @@ pub fn de_delete_db_subnet_group_http_error(
     crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DBSubnetGroupNotFoundFault" => crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::DbSubnetGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbSubnetGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_subnet_group_not_found_fault::de_db_subnet_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbSubnetGroupNotFoundFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_db_subnet_group_not_found_fault::de_db_subnet_group_not_found_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidDBSubnetGroupStateFault" => crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::InvalidDbSubnetGroupStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDbSubnetGroupStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_subnet_group_state_fault::de_invalid_db_subnet_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbSubnetGroupStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_db_subnet_group_state_fault::de_invalid_db_subnet_group_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidDBSubnetStateFault" => crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::InvalidDbSubnetStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDbSubnetStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_subnet_state_fault::de_invalid_db_subnet_state_fault_xml_err(_response_body, output).map_err(crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbSubnetStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_db_subnet_state_fault::de_invalid_db_subnet_state_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::generic(generic)
+        _ => crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError::generic(generic),
     })
 }
 
@@ -94,9 +85,7 @@ pub fn de_delete_db_subnet_group_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_db_subnet_group::builders::DeleteDbSubnetGroupOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWorkGroupOutput {
 }
 impl DeleteWorkGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkGroupOutput`](crate::operation::delete_work_group::DeleteWorkGroupOutput).
-    pub fn builder() -> crate::operation::delete_work_group::builders::DeleteWorkGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_work_group::builders::DeleteWorkGroupOutputBuilder {
         crate::operation::delete_work_group::builders::DeleteWorkGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkGroupOutput`](crate::operation::delete_work_group::DeleteWorkGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkGroupOutputBuilder {
     _request_id: Option<String>,
 }

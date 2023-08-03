@@ -9,10 +9,7 @@ pub fn ser_create_nfs_file_share_input(
     if let Some(var_2) = &input.nfs_file_share_defaults {
         #[allow(unused_mut)]
         let mut object_3 = object.key("NFSFileShareDefaults").start_object();
-        crate::protocol_serde::shape_nfs_file_share_defaults::ser_nfs_file_share_defaults(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_nfs_file_share_defaults::ser_nfs_file_share_defaults(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.gateway_arn {
@@ -75,10 +72,7 @@ pub fn ser_create_nfs_file_share_input(
     if let Some(var_23) = &input.cache_attributes {
         #[allow(unused_mut)]
         let mut object_24 = object.key("CacheAttributes").start_object();
-        crate::protocol_serde::shape_cache_attributes::ser_cache_attributes(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_cache_attributes::ser_cache_attributes(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.notification_policy {

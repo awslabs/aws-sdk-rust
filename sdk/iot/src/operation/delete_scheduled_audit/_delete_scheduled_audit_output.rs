@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteScheduledAuditOutput {
 }
 impl DeleteScheduledAuditOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduledAuditOutput`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditOutputBuilder {
+    pub fn builder() -> crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditOutputBuilder {
         crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteScheduledAuditOutput`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScheduledAuditOutputBuilder {
     _request_id: Option<String>,
 }

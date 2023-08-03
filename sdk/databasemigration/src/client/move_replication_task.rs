@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`MoveReplicationTaskOutput`](crate::operation::move_replication_task::MoveReplicationTaskOutput) with field(s):
     ///   - [`replication_task(Option<ReplicationTask>)`](crate::operation::move_replication_task::MoveReplicationTaskOutput::replication_task): <p>The replication task that was moved.</p>
     /// - On failure, responds with [`SdkError<MoveReplicationTaskError>`](crate::operation::move_replication_task::MoveReplicationTaskError)
-    pub fn move_replication_task(
-        &self,
-    ) -> crate::operation::move_replication_task::builders::MoveReplicationTaskFluentBuilder {
-        crate::operation::move_replication_task::builders::MoveReplicationTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn move_replication_task(&self) -> crate::operation::move_replication_task::builders::MoveReplicationTaskFluentBuilder {
+        crate::operation::move_replication_task::builders::MoveReplicationTaskFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`BeginTransactionOutput`](crate::operation::begin_transaction::BeginTransactionOutput) with field(s):
     ///   - [`transaction_id(Option<String>)`](crate::operation::begin_transaction::BeginTransactionOutput::transaction_id): <p>The transaction ID of the transaction started by the call.</p>
     /// - On failure, responds with [`SdkError<BeginTransactionError>`](crate::operation::begin_transaction::BeginTransactionError)
-    pub fn begin_transaction(
-        &self,
-    ) -> crate::operation::begin_transaction::builders::BeginTransactionFluentBuilder {
-        crate::operation::begin_transaction::builders::BeginTransactionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn begin_transaction(&self) -> crate::operation::begin_transaction::builders::BeginTransactionFluentBuilder {
+        crate::operation::begin_transaction::builders::BeginTransactionFluentBuilder::new(self.handle.clone())
     }
 }

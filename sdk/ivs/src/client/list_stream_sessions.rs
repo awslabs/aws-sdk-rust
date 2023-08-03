@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`stream_sessions(Option<Vec<StreamSessionSummary>>)`](crate::operation::list_stream_sessions::ListStreamSessionsOutput::stream_sessions): <p>List of stream sessions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stream_sessions::ListStreamSessionsOutput::next_token): <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListStreamSessionsError>`](crate::operation::list_stream_sessions::ListStreamSessionsError)
-    pub fn list_stream_sessions(
-        &self,
-    ) -> crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder {
-        crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_stream_sessions(&self) -> crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder {
+        crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::new(self.handle.clone())
     }
 }

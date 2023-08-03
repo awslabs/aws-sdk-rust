@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ConfirmDeviceOutput`](crate::operation::confirm_device::ConfirmDeviceOutput) with field(s):
     ///   - [`user_confirmation_necessary(bool)`](crate::operation::confirm_device::ConfirmDeviceOutput::user_confirmation_necessary): <p>Indicates whether the user confirmation must confirm the device response.</p>
     /// - On failure, responds with [`SdkError<ConfirmDeviceError>`](crate::operation::confirm_device::ConfirmDeviceError)
-    pub fn confirm_device(
-        &self,
-    ) -> crate::operation::confirm_device::builders::ConfirmDeviceFluentBuilder {
-        crate::operation::confirm_device::builders::ConfirmDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn confirm_device(&self) -> crate::operation::confirm_device::builders::ConfirmDeviceFluentBuilder {
+        crate::operation::confirm_device::builders::ConfirmDeviceFluentBuilder::new(self.handle.clone())
     }
 }

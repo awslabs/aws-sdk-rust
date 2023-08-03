@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutContactPolicyOutput {
 }
 impl PutContactPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutContactPolicyOutput`](crate::operation::put_contact_policy::PutContactPolicyOutput).
-    pub fn builder() -> crate::operation::put_contact_policy::builders::PutContactPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_contact_policy::builders::PutContactPolicyOutputBuilder {
         crate::operation::put_contact_policy::builders::PutContactPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutContactPolicyOutput`](crate::operation::put_contact_policy::PutContactPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutContactPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`public_key(Option<Blob>)`](crate::operation::get_parameters_for_import::GetParametersForImportOutput::public_key): <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
     ///   - [`parameters_valid_to(Option<DateTime>)`](crate::operation::get_parameters_for_import::GetParametersForImportOutput::parameters_valid_to): <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
     /// - On failure, responds with [`SdkError<GetParametersForImportError>`](crate::operation::get_parameters_for_import::GetParametersForImportError)
-    pub fn get_parameters_for_import(
-        &self,
-    ) -> crate::operation::get_parameters_for_import::builders::GetParametersForImportFluentBuilder
-    {
+    pub fn get_parameters_for_import(&self) -> crate::operation::get_parameters_for_import::builders::GetParametersForImportFluentBuilder {
         crate::operation::get_parameters_for_import::builders::GetParametersForImportFluentBuilder::new(self.handle.clone())
     }
 }

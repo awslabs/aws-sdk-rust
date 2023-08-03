@@ -77,16 +77,14 @@ impl DescribeDbInstanceAutomatedBackupsInput {
 }
 impl DescribeDbInstanceAutomatedBackupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbInstanceAutomatedBackupsInput`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsInput).
-    pub fn builder() -> crate::operation::describe_db_instance_automated_backups::builders::DescribeDbInstanceAutomatedBackupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_instance_automated_backups::builders::DescribeDbInstanceAutomatedBackupsInputBuilder {
         crate::operation::describe_db_instance_automated_backups::builders::DescribeDbInstanceAutomatedBackupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbInstanceAutomatedBackupsInput`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbInstanceAutomatedBackupsInputBuilder {
     pub(crate) dbi_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ pub struct DescribeDbInstanceAutomatedBackupsInputBuilder {
 }
 impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <p>The resource ID of the DB instance that is the source of the automated backup. This parameter isn't case-sensitive.</p>
-    pub fn dbi_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dbi_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dbi_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource ID of the DB instance that is the source of the automated backup. This parameter isn't case-sensitive.</p>
-    pub fn set_dbi_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dbi_resource_id = input;
         self
     }
@@ -117,18 +109,12 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
         &self.dbi_resource_id
     }
     /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter isn't case-sensitive.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter isn't case-sensitive.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -172,10 +158,7 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -225,46 +208,37 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn db_instance_automated_backups_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_automated_backups_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_automated_backups_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn set_db_instance_automated_backups_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_automated_backups_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_automated_backups_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn get_db_instance_automated_backups_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_instance_automated_backups_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_automated_backups_arn
     }
     /// Consumes the builder and constructs a [`DescribeDbInstanceAutomatedBackupsInput`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsInput {
-                dbi_resource_id: self.dbi_resource_id
-                ,
-                db_instance_identifier: self.db_instance_identifier
-                ,
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-                db_instance_automated_backups_arn: self.db_instance_automated_backups_arn
-                ,
-            }
+                dbi_resource_id: self.dbi_resource_id,
+                db_instance_identifier: self.db_instance_identifier,
+                filters: self.filters,
+                max_records: self.max_records,
+                marker: self.marker,
+                db_instance_automated_backups_arn: self.db_instance_automated_backups_arn,
+            },
         )
     }
 }

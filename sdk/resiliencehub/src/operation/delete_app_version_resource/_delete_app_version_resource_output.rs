@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteAppVersionResourceOutput {
 }
 impl DeleteAppVersionResourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppVersionResourceOutput`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput).
-    pub fn builder() -> crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceOutputBuilder{
+    pub fn builder() -> crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceOutputBuilder {
         crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppVersionResourceOutput`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppVersionResourceOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl DeleteAppVersionResourceOutputBuilder {
         self
     }
     /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier.</p>
-    pub fn set_physical_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::PhysicalResource>,
-    ) -> Self {
+    pub fn set_physical_resource(mut self, input: ::std::option::Option<crate::types::PhysicalResource>) -> Self {
         self.physical_resource = input;
         self
     }
@@ -107,9 +102,7 @@ impl DeleteAppVersionResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAppVersionResourceOutput`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput {
+    pub fn build(self) -> crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput {
         crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput {
             app_arn: self.app_arn,
             app_version: self.app_version,

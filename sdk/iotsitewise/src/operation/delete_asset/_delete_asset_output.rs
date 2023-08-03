@@ -28,9 +28,7 @@ impl DeleteAssetOutput {
 
 /// A builder for [`DeleteAssetOutput`](crate::operation::delete_asset::DeleteAssetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssetOutputBuilder {
     pub(crate) asset_status: ::std::option::Option<crate::types::AssetStatus>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DeleteAssetOutputBuilder {
         self
     }
     /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
-    pub fn set_asset_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetStatus>,
-    ) -> Self {
+    pub fn set_asset_status(mut self, input: ::std::option::Option<crate::types::AssetStatus>) -> Self {
         self.asset_status = input;
         self
     }

@@ -28,9 +28,7 @@ impl CreateVpcOutput {
 
 /// A builder for [`CreateVpcOutput`](crate::operation::create_vpc::CreateVpcOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcOutputBuilder {
     pub(crate) vpc: ::std::option::Option<crate::types::Vpc>,
     _request_id: Option<String>,

@@ -32,9 +32,7 @@ impl ImportTaskFilter {
 
 /// A builder for [`ImportTaskFilter`](crate::types::ImportTaskFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportTaskFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ImportTaskFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,10 +44,7 @@ impl ImportTaskFilterBuilder {
         self
     }
     /// <p>The name, status, or import task ID for a specific import task.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportTaskFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ImportTaskFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -69,10 +64,7 @@ impl ImportTaskFilterBuilder {
         self
     }
     /// <p>An array of strings that you can provide to match against a specific name, status, or import task ID to filter the results for your import task queries.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

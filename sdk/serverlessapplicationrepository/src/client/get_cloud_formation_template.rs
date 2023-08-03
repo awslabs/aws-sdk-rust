@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`template_id(Option<String>)`](crate::operation::get_cloud_formation_template::GetCloudFormationTemplateOutput::template_id): <p>The UUID returned by CreateCloudFormationTemplate.</p> <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
     ///   - [`template_url(Option<String>)`](crate::operation::get_cloud_formation_template::GetCloudFormationTemplateOutput::template_url): <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
     /// - On failure, responds with [`SdkError<GetCloudFormationTemplateError>`](crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError)
-    pub fn get_cloud_formation_template(&self) -> crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateFluentBuilder{
+    pub fn get_cloud_formation_template(&self) -> crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateFluentBuilder {
         crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateFluentBuilder::new(self.handle.clone())
     }
 }

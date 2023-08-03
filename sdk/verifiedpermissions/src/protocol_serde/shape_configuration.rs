@@ -11,11 +11,7 @@ pub fn ser_configuration(
             object_1.finish();
         }
         crate::types::Configuration::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "Configuration",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Configuration"))
         }
     }
     Ok(())

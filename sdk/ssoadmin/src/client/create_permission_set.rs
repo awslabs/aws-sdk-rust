@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePermissionSetOutput`](crate::operation::create_permission_set::CreatePermissionSetOutput) with field(s):
     ///   - [`permission_set(Option<PermissionSet>)`](crate::operation::create_permission_set::CreatePermissionSetOutput::permission_set): <p>Defines the level of access on an AWS account.</p>
     /// - On failure, responds with [`SdkError<CreatePermissionSetError>`](crate::operation::create_permission_set::CreatePermissionSetError)
-    pub fn create_permission_set(
-        &self,
-    ) -> crate::operation::create_permission_set::builders::CreatePermissionSetFluentBuilder {
-        crate::operation::create_permission_set::builders::CreatePermissionSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_permission_set(&self) -> crate::operation::create_permission_set::builders::CreatePermissionSetFluentBuilder {
+        crate::operation::create_permission_set::builders::CreatePermissionSetFluentBuilder::new(self.handle.clone())
     }
 }

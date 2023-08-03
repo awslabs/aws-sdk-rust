@@ -36,9 +36,7 @@ impl GetApiMappingsInput {
 
 /// A builder for [`GetApiMappingsInput`](crate::operation::get_api_mappings::GetApiMappingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiMappingsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl GetApiMappingsInputBuilder {
     /// Consumes the builder and constructs a [`GetApiMappingsInput`](crate::operation::get_api_mappings::GetApiMappingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_api_mappings::GetApiMappingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_api_mappings::GetApiMappingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_api_mappings::GetApiMappingsInput {
             domain_name: self.domain_name,
             max_results: self.max_results,

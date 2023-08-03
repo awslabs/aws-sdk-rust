@@ -30,9 +30,7 @@ impl ExportSummary {
 
 /// A builder for [`ExportSummary`](crate::types::ExportSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportSummaryBuilder {
     pub(crate) export_arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,
@@ -58,10 +56,7 @@ impl ExportSummaryBuilder {
         self
     }
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub fn set_export_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportStatus>,
-    ) -> Self {
+    pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
         self.export_status = input;
         self
     }

@@ -44,9 +44,7 @@ impl DbInstanceStatusInfo {
 
 /// A builder for [`DbInstanceStatusInfo`](crate::types::DbInstanceStatusInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbInstanceStatusInfoBuilder {
     pub(crate) status_type: ::std::option::Option<::std::string::String>,
     pub(crate) normal: ::std::option::Option<bool>,

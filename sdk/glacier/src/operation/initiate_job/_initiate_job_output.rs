@@ -43,9 +43,7 @@ impl InitiateJobOutput {
 
 /// A builder for [`InitiateJobOutput`](crate::operation::initiate_job::InitiateJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateJobOutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl InitiateJobOutputBuilder {
         &self.job_id
     }
     /// <p>The path to the location of where the select results are stored.</p>
-    pub fn job_output_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the location of where the select results are stored.</p>
-    pub fn set_job_output_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_output_path = input;
         self
     }

@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`event_data_store(impl ::std::convert::Into<String>)`](crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
     /// - On success, responds with [`DeleteEventDataStoreOutput`](crate::operation::delete_event_data_store::DeleteEventDataStoreOutput)
     /// - On failure, responds with [`SdkError<DeleteEventDataStoreError>`](crate::operation::delete_event_data_store::DeleteEventDataStoreError)
-    pub fn delete_event_data_store(
-        &self,
-    ) -> crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder
-    {
-        crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_event_data_store(&self) -> crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder {
+        crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder::new(self.handle.clone())
     }
 }

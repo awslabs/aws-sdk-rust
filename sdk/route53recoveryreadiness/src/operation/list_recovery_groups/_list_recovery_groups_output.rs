@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListRecoveryGroupsOutput {
 }
 impl ListRecoveryGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryGroupsOutput`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_recovery_groups::builders::ListRecoveryGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_recovery_groups::builders::ListRecoveryGroupsOutputBuilder {
         crate::operation::list_recovery_groups::builders::ListRecoveryGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecoveryGroupsOutput`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecoveryGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recovery_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecoveryGroupOutput>>,
+    pub(crate) recovery_groups: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryGroupOutput>>,
     _request_id: Option<String>,
 }
 impl ListRecoveryGroupsOutputBuilder {
@@ -72,17 +68,12 @@ impl ListRecoveryGroupsOutputBuilder {
         self
     }
     /// <p>A list of recovery groups.</p>
-    pub fn set_recovery_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryGroupOutput>>,
-    ) -> Self {
+    pub fn set_recovery_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryGroupOutput>>) -> Self {
         self.recovery_groups = input;
         self
     }
     /// <p>A list of recovery groups.</p>
-    pub fn get_recovery_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryGroupOutput>> {
+    pub fn get_recovery_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryGroupOutput>> {
         &self.recovery_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

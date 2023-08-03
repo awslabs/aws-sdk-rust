@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateServicePrimaryTaskSetOutput {
 }
 impl UpdateServicePrimaryTaskSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServicePrimaryTaskSetOutput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput).
-    pub fn builder() -> crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetOutputBuilder{
+    pub fn builder() -> crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetOutputBuilder {
         crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServicePrimaryTaskSetOutput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServicePrimaryTaskSetOutputBuilder {
     pub(crate) task_set: ::std::option::Option<crate::types::TaskSet>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl UpdateServicePrimaryTaskSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateServicePrimaryTaskSetOutput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput {
+    pub fn build(self) -> crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput {
         crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput {
             task_set: self.task_set,
             _request_id: self._request_id,

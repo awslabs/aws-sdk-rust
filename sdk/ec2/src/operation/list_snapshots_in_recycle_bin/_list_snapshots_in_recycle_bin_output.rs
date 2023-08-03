@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSnapshotsInRecycleBinOutput {
 }
 impl ListSnapshotsInRecycleBinOutput {
     /// Creates a new builder-style object to manufacture [`ListSnapshotsInRecycleBinOutput`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput).
-    pub fn builder() -> crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinOutputBuilder{
+    pub fn builder() -> crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinOutputBuilder {
         crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSnapshotsInRecycleBinOutput`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSnapshotsInRecycleBinOutputBuilder {
-    pub(crate) snapshots:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotRecycleBinInfo>>,
+    pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotRecycleBinInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListSnapshotsInRecycleBinOutputBuilder {
         self
     }
     /// <p>Information about the snapshots.</p>
-    pub fn set_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotRecycleBinInfo>>,
-    ) -> Self {
+    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotRecycleBinInfo>>) -> Self {
         self.snapshots = input;
         self
     }
     /// <p>Information about the snapshots.</p>
-    pub fn get_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotRecycleBinInfo>> {
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotRecycleBinInfo>> {
         &self.snapshots
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -94,9 +86,7 @@ impl ListSnapshotsInRecycleBinOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSnapshotsInRecycleBinOutput`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput {
+    pub fn build(self) -> crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput {
         crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput {
             snapshots: self.snapshots,
             next_token: self.next_token,

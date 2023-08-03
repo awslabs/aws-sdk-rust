@@ -22,16 +22,14 @@ impl DescribePublishingDestinationInput {
 }
 impl DescribePublishingDestinationInput {
     /// Creates a new builder-style object to manufacture [`DescribePublishingDestinationInput`](crate::operation::describe_publishing_destination::DescribePublishingDestinationInput).
-    pub fn builder() -> crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationInputBuilder{
+    pub fn builder() -> crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationInputBuilder {
         crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePublishingDestinationInput`](crate::operation::describe_publishing_destination::DescribePublishingDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePublishingDestinationInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DescribePublishingDestinationInputBuilder {
         &self.detector_id
     }
     /// <p>The ID of the publishing destination to retrieve.</p>
-    pub fn destination_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the publishing destination to retrieve.</p>
-    pub fn set_destination_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DescribePublishingDestinationInputBuilder {
         crate::operation::describe_publishing_destination::DescribePublishingDestinationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_publishing_destination::DescribePublishingDestinationInput {
-                detector_id: self.detector_id,
-                destination_id: self.destination_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_publishing_destination::DescribePublishingDestinationInput {
+            detector_id: self.detector_id,
+            destination_id: self.destination_id,
+        })
     }
 }

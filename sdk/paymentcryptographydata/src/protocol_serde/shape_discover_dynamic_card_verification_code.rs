@@ -10,9 +10,7 @@ pub fn ser_discover_dynamic_card_verification_code(
         object.key("UnpredictableNumber").string(var_2.as_str());
     }
     if let Some(var_3) = &input.application_transaction_counter {
-        object
-            .key("ApplicationTransactionCounter")
-            .string(var_3.as_str());
+        object.key("ApplicationTransactionCounter").string(var_3.as_str());
     }
     Ok(())
 }

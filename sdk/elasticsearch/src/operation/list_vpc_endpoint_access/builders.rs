@@ -37,10 +37,7 @@ impl ListVpcEndpointAccessFluentBuilder {
         }
     }
     /// Access the ListVpcEndpointAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListVpcEndpointAccessFluentBuilder {
             crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListVpcEndpointAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListVpcEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListVpcEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ListVpcEndpointAccessFluentBuilder {
             crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError>,
     > {
         self.customize_middleware().await
     }

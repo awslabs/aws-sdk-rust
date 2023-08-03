@@ -78,17 +78,14 @@ impl CreateFleetMetricInput {
 }
 impl CreateFleetMetricInput {
     /// Creates a new builder-style object to manufacture [`CreateFleetMetricInput`](crate::operation::create_fleet_metric::CreateFleetMetricInput).
-    pub fn builder(
-    ) -> crate::operation::create_fleet_metric::builders::CreateFleetMetricInputBuilder {
+    pub fn builder() -> crate::operation::create_fleet_metric::builders::CreateFleetMetricInputBuilder {
         crate::operation::create_fleet_metric::builders::CreateFleetMetricInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFleetMetricInput`](crate::operation::create_fleet_metric::CreateFleetMetricInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFleetMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
@@ -136,10 +133,7 @@ impl CreateFleetMetricInputBuilder {
         self
     }
     /// <p>The type of the aggregation query.</p>
-    pub fn set_aggregation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationType>,
-    ) -> Self {
+    pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
         self.aggregation_type = input;
         self
     }
@@ -162,18 +156,12 @@ impl CreateFleetMetricInputBuilder {
         &self.period
     }
     /// <p>The field to aggregate.</p>
-    pub fn aggregation_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field to aggregate.</p>
-    pub fn set_aggregation_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregation_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aggregation_field = input;
         self
     }
@@ -196,18 +184,12 @@ impl CreateFleetMetricInputBuilder {
         &self.description
     }
     /// <p>The query version.</p>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query version.</p>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_version = input;
         self
     }
@@ -255,10 +237,7 @@ impl CreateFleetMetricInputBuilder {
         self
     }
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -269,23 +248,18 @@ impl CreateFleetMetricInputBuilder {
     /// Consumes the builder and constructs a [`CreateFleetMetricInput`](crate::operation::create_fleet_metric::CreateFleetMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_fleet_metric::CreateFleetMetricInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_fleet_metric::CreateFleetMetricInput {
-                metric_name: self.metric_name,
-                query_string: self.query_string,
-                aggregation_type: self.aggregation_type,
-                period: self.period,
-                aggregation_field: self.aggregation_field,
-                description: self.description,
-                query_version: self.query_version,
-                index_name: self.index_name,
-                unit: self.unit,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_fleet_metric::CreateFleetMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_fleet_metric::CreateFleetMetricInput {
+            metric_name: self.metric_name,
+            query_string: self.query_string,
+            aggregation_type: self.aggregation_type,
+            period: self.period,
+            aggregation_field: self.aggregation_field,
+            description: self.description,
+            query_version: self.query_version,
+            index_name: self.index_name,
+            unit: self.unit,
+            tags: self.tags,
+        })
     }
 }

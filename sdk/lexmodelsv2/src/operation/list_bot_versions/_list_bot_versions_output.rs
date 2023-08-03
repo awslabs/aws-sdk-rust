@@ -8,8 +8,7 @@ pub struct ListBotVersionsOutput {
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     #[doc(hidden)]
-    pub bot_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotVersionSummary>>,
+    pub bot_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotVersionSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ListBotVersionsOutput {
         self.bot_id.as_deref()
     }
     /// <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn bot_version_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BotVersionSummary]> {
+    pub fn bot_version_summaries(&self) -> ::std::option::Option<&[crate::types::BotVersionSummary]> {
         self.bot_version_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
@@ -38,21 +35,17 @@ impl ::aws_http::request_id::RequestId for ListBotVersionsOutput {
 }
 impl ListBotVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListBotVersionsOutput`](crate::operation::list_bot_versions::ListBotVersionsOutput).
-    pub fn builder() -> crate::operation::list_bot_versions::builders::ListBotVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_bot_versions::builders::ListBotVersionsOutputBuilder {
         crate::operation::list_bot_versions::builders::ListBotVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBotVersionsOutput`](crate::operation::list_bot_versions::ListBotVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotVersionsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotVersionSummary>>,
+    pub(crate) bot_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -83,17 +76,12 @@ impl ListBotVersionsOutputBuilder {
         self
     }
     /// <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_bot_version_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotVersionSummary>>,
-    ) -> Self {
+    pub fn set_bot_version_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotVersionSummary>>) -> Self {
         self.bot_version_summaries = input;
         self
     }
     /// <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_bot_version_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotVersionSummary>> {
+    pub fn get_bot_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotVersionSummary>> {
         &self.bot_version_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>

@@ -30,9 +30,7 @@ impl Span {
 
 /// A builder for [`Span`](crate::types::Span).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpanBuilder {
     pub(crate) start: ::std::option::Option<crate::types::Position>,
     pub(crate) end: ::std::option::Option<crate::types::Position>,

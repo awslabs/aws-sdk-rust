@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`tasks(Option<Vec<DetectMitigationActionsTaskSummary>>)`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksOutput::tasks): <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksOutput::next_token): <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     /// - On failure, responds with [`SdkError<ListDetectMitigationActionsTasksError>`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksError)
-    pub fn list_detect_mitigation_actions_tasks(&self) -> crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksFluentBuilder{
+    pub fn list_detect_mitigation_actions_tasks(
+        &self,
+    ) -> crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksFluentBuilder {
         crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksFluentBuilder::new(self.handle.clone())
     }
 }

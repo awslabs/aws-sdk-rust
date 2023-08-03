@@ -58,9 +58,7 @@ impl GatewayRouteData {
 
 /// A builder for [`GatewayRouteData`](crate::types::GatewayRouteData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewayRouteDataBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_route_name: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl GatewayRouteDataBuilder {
         &self.mesh_name
     }
     /// <p>The name of the gateway route.</p>
-    pub fn gateway_route_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_route_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the gateway route.</p>
-    pub fn set_gateway_route_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_route_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_route_name = input;
         self
     }
@@ -105,18 +97,12 @@ impl GatewayRouteDataBuilder {
         &self.gateway_route_name
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_gateway_name = input;
         self
     }
@@ -130,10 +116,7 @@ impl GatewayRouteDataBuilder {
         self
     }
     /// <p>The specifications of the gateway route.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::GatewayRouteSpec>) -> Self {
         self.spec = input;
         self
     }
@@ -147,10 +130,7 @@ impl GatewayRouteDataBuilder {
         self
     }
     /// <p>An object that represents metadata for a resource.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
         self.metadata = input;
         self
     }
@@ -164,10 +144,7 @@ impl GatewayRouteDataBuilder {
         self
     }
     /// <p>The status of the gateway route.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::GatewayRouteStatus>) -> Self {
         self.status = input;
         self
     }

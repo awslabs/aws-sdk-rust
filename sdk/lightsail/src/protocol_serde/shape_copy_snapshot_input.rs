@@ -13,9 +13,7 @@ pub fn ser_copy_snapshot_input(
         object.key("restoreDate").string(var_3.as_str());
     }
     if let Some(var_4) = &input.use_latest_restorable_auto_snapshot {
-        object
-            .key("useLatestRestorableAutoSnapshot")
-            .boolean(*var_4);
+        object.key("useLatestRestorableAutoSnapshot").boolean(*var_4);
     }
     if let Some(var_5) = &input.target_snapshot_name {
         object.key("targetSnapshotName").string(var_5.as_str());

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelAuditTaskOutput {
 }
 impl CancelAuditTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelAuditTaskOutput`](crate::operation::cancel_audit_task::CancelAuditTaskOutput).
-    pub fn builder() -> crate::operation::cancel_audit_task::builders::CancelAuditTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_audit_task::builders::CancelAuditTaskOutputBuilder {
         crate::operation::cancel_audit_task::builders::CancelAuditTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelAuditTaskOutput`](crate::operation::cancel_audit_task::CancelAuditTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelAuditTaskOutputBuilder {
     _request_id: Option<String>,
 }

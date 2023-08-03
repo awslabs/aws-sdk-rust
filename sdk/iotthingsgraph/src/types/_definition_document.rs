@@ -30,9 +30,7 @@ impl DefinitionDocument {
 
 /// A builder for [`DefinitionDocument`](crate::types::DefinitionDocument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefinitionDocumentBuilder {
     pub(crate) language: ::std::option::Option<crate::types::DefinitionLanguage>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl DefinitionDocumentBuilder {
         self
     }
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
-    pub fn set_language(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionLanguage>,
-    ) -> Self {
+    pub fn set_language(mut self, input: ::std::option::Option<crate::types::DefinitionLanguage>) -> Self {
         self.language = input;
         self
     }

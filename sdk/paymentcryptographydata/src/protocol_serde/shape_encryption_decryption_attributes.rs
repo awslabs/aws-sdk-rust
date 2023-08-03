@@ -23,11 +23,9 @@ pub fn ser_encryption_decryption_attributes(
             object_3.finish();
         }
         crate::types::EncryptionDecryptionAttributes::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "EncryptionDecryptionAttributes",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "EncryptionDecryptionAttributes",
+            ))
         }
     }
     Ok(())

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::delete_data_source::DeleteDataSourceOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteDataSourceError>`](crate::operation::delete_data_source::DeleteDataSourceError)
-    pub fn delete_data_source(
-        &self,
-    ) -> crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder {
-        crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_data_source(&self) -> crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder {
+        crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

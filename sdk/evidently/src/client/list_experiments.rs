@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`experiments(Option<Vec<Experiment>>)`](crate::operation::list_experiments::ListExperimentsOutput::experiments): <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_experiments::ListExperimentsOutput::next_token): <p>The token to use in a subsequent <code>ListExperiments</code> operation to return the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListExperimentsError>`](crate::operation::list_experiments::ListExperimentsError)
-    pub fn list_experiments(
-        &self,
-    ) -> crate::operation::list_experiments::builders::ListExperimentsFluentBuilder {
-        crate::operation::list_experiments::builders::ListExperimentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_experiments(&self) -> crate::operation::list_experiments::builders::ListExperimentsFluentBuilder {
+        crate::operation::list_experiments::builders::ListExperimentsFluentBuilder::new(self.handle.clone())
     }
 }

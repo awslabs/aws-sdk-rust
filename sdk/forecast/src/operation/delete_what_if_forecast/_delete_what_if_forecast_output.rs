@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWhatIfForecastOutput {
 }
 impl DeleteWhatIfForecastOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWhatIfForecastOutput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastOutputBuilder {
         crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWhatIfForecastOutput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWhatIfForecastOutputBuilder {
     _request_id: Option<String>,
 }

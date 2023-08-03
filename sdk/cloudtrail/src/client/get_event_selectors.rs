@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`event_selectors(Option<Vec<EventSelector>>)`](crate::operation::get_event_selectors::GetEventSelectorsOutput::event_selectors): <p>The event selectors that are configured for the trail.</p>
     ///   - [`advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::operation::get_event_selectors::GetEventSelectorsOutput::advanced_event_selectors): <p> The advanced event selectors that are configured for the trail. </p>
     /// - On failure, responds with [`SdkError<GetEventSelectorsError>`](crate::operation::get_event_selectors::GetEventSelectorsError)
-    pub fn get_event_selectors(
-        &self,
-    ) -> crate::operation::get_event_selectors::builders::GetEventSelectorsFluentBuilder {
-        crate::operation::get_event_selectors::builders::GetEventSelectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_event_selectors(&self) -> crate::operation::get_event_selectors::builders::GetEventSelectorsFluentBuilder {
+        crate::operation::get_event_selectors::builders::GetEventSelectorsFluentBuilder::new(self.handle.clone())
     }
 }

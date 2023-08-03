@@ -50,16 +50,14 @@ impl ::aws_http::request_id::RequestId for DescribeNetworkInterfaceAttributeOutp
 }
 impl DescribeNetworkInterfaceAttributeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInterfaceAttributeOutput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput).
-    pub fn builder() -> crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeOutputBuilder{
+    pub fn builder() -> crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeOutputBuilder {
         crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInterfaceAttributeOutput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfaceAttributeOutputBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::NetworkInterfaceAttachment>,
     pub(crate) description: ::std::option::Option<crate::types::AttributeValue>,
@@ -75,17 +73,12 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
         self
     }
     /// <p>The attachment (if any) of the network interface.</p>
-    pub fn set_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceAttachment>,
-    ) -> Self {
+    pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceAttachment>) -> Self {
         self.attachment = input;
         self
     }
     /// <p>The attachment (if any) of the network interface.</p>
-    pub fn get_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInterfaceAttachment> {
+    pub fn get_attachment(&self) -> &::std::option::Option<crate::types::NetworkInterfaceAttachment> {
         &self.attachment
     }
     /// <p>The description of the network interface.</p>
@@ -94,10 +87,7 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
         self
     }
     /// <p>The description of the network interface.</p>
-    pub fn set_description(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeValue>,
-    ) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.description = input;
         self
     }
@@ -117,32 +107,21 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
         self
     }
     /// <p>The security groups associated with the network interface.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>The security groups associated with the network interface.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
         &self.groups
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -156,17 +135,12 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
         self
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
-    pub fn set_source_dest_check(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_source_dest_check(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.source_dest_check = input;
         self
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
-    pub fn get_source_dest_check(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_source_dest_check(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.source_dest_check
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -179,18 +153,13 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInterfaceAttributeOutput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput).
-    pub fn build(self) -> crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput{
+    pub fn build(self) -> crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput {
         crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput {
-            attachment: self.attachment
-            ,
-            description: self.description
-            ,
-            groups: self.groups
-            ,
-            network_interface_id: self.network_interface_id
-            ,
-            source_dest_check: self.source_dest_check
-            ,
+            attachment: self.attachment,
+            description: self.description,
+            groups: self.groups,
+            network_interface_id: self.network_interface_id,
+            source_dest_check: self.source_dest_check,
             _request_id: self._request_id,
         }
     }

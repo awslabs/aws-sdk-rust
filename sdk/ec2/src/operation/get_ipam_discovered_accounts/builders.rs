@@ -26,7 +26,7 @@ impl GetIpamDiscoveredAccountsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIpamDiscoveredAccountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder,
+    inner: crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder,
 }
 impl GetIpamDiscoveredAccountsFluentBuilder {
     /// Creates a new `GetIpamDiscoveredAccounts`.
@@ -37,7 +37,7 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         }
     }
     /// Access the GetIpamDiscoveredAccounts as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
             crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
             crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_discovered_accounts::paginator::GetIpamDiscoveredAccountsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_ipam_discovered_accounts::paginator::GetIpamDiscoveredAccountsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_ipam_discovered_accounts::paginator::GetIpamDiscoveredAccountsPaginator {
         crate::operation::get_ipam_discovered_accounts::paginator::GetIpamDiscoveredAccountsPaginator::new(self.handle, self.inner)
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -144,18 +130,12 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>A resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_resource_discovery_id(input.into());
         self
     }
     /// <p>A resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_resource_discovery_id(input);
         self
     }
@@ -164,18 +144,12 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self.inner.get_ipam_resource_discovery_id()
     }
     /// <p>The Amazon Web Services Region that the account information is returned from.</p>
-    pub fn discovery_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.discovery_region(input.into());
         self
     }
     /// <p>The Amazon Web Services Region that the account information is returned from.</p>
-    pub fn set_discovery_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_discovery_region(input);
         self
     }
@@ -193,10 +167,7 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self
     }
     /// <p>Discovered account filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

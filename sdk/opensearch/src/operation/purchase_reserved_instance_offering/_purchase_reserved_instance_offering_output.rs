@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for PurchaseReservedInstanceOfferingOutpu
 }
 impl PurchaseReservedInstanceOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedInstanceOfferingOutput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingOutputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingOutputBuilder {
         crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseReservedInstanceOfferingOutput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseReservedInstanceOfferingOutputBuilder {
     pub(crate) reserved_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) reservation_name: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct PurchaseReservedInstanceOfferingOutputBuilder {
 }
 impl PurchaseReservedInstanceOfferingOutputBuilder {
     /// <p>The ID of the Reserved Instance offering that was purchased.</p>
-    pub fn reserved_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance offering that was purchased.</p>
-    pub fn set_reserved_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_instance_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl PurchaseReservedInstanceOfferingOutputBuilder {
         &self.reserved_instance_id
     }
     /// <p>The customer-specified identifier used to track this reservation.</p>
-    pub fn reservation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-specified identifier used to track this reservation.</p>
-    pub fn set_reservation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_name = input;
         self
     }
@@ -95,15 +81,10 @@ impl PurchaseReservedInstanceOfferingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PurchaseReservedInstanceOfferingOutput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingOutput
-    {
+    pub fn build(self) -> crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingOutput {
         crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingOutput {
-            reserved_instance_id: self.reserved_instance_id
-            ,
-            reservation_name: self.reservation_name
-            ,
+            reserved_instance_id: self.reserved_instance_id,
+            reservation_name: self.reservation_name,
             _request_id: self._request_id,
         }
     }

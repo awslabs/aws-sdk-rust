@@ -141,10 +141,7 @@ impl EnvironmentTemplateBuilder {
         self
     }
     /// <p>The time when the environment template was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -158,10 +155,7 @@ impl EnvironmentTemplateBuilder {
         self
     }
     /// <p>The time when the environment template was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_at = input;
         self
     }
@@ -198,18 +192,12 @@ impl EnvironmentTemplateBuilder {
         &self.description
     }
     /// <p>The ID of the recommended version of the environment template.</p>
-    pub fn recommended_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommended_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the recommended version of the environment template.</p>
-    pub fn set_recommended_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommended_version = input;
         self
     }
@@ -218,18 +206,12 @@ impl EnvironmentTemplateBuilder {
         &self.recommended_version
     }
     /// <p>The customer provided encryption key for the environment template.</p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer provided encryption key for the environment template.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }
@@ -243,10 +225,7 @@ impl EnvironmentTemplateBuilder {
         self
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-    pub fn set_provisioning(
-        mut self,
-        input: ::std::option::Option<crate::types::Provisioning>,
-    ) -> Self {
+    pub fn set_provisioning(mut self, input: ::std::option::Option<crate::types::Provisioning>) -> Self {
         self.provisioning = input;
         self
     }

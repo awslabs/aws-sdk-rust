@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteThingShadowOutput {
 }
 impl DeleteThingShadowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteThingShadowOutput`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowOutputBuilder {
+    pub fn builder() -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowOutputBuilder {
         crate::operation::delete_thing_shadow::builders::DeleteThingShadowOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteThingShadowOutput`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThingShadowOutputBuilder {
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

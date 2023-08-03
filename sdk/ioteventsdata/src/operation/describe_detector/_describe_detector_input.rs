@@ -22,35 +22,26 @@ impl DescribeDetectorInput {
 }
 impl DescribeDetectorInput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorInput`](crate::operation::describe_detector::DescribeDetectorInput).
-    pub fn builder() -> crate::operation::describe_detector::builders::DescribeDetectorInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_detector::builders::DescribeDetectorInputBuilder {
         crate::operation::describe_detector::builders::DescribeDetectorInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDetectorInput`](crate::operation::describe_detector::DescribeDetectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDetectorInputBuilder {
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_value: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDetectorInputBuilder {
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_model_name = input;
         self
     }
@@ -75,10 +66,7 @@ impl DescribeDetectorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDetectorInput`](crate::operation::describe_detector::DescribeDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_detector::DescribeDetectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_detector::DescribeDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_detector::DescribeDetectorInput {
             detector_model_name: self.detector_model_name,
             key_value: self.key_value,

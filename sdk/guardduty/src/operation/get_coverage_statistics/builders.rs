@@ -37,10 +37,7 @@ impl GetCoverageStatisticsFluentBuilder {
         }
     }
     /// Access the GetCoverageStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetCoverageStatisticsFluentBuilder {
             crate::operation::get_coverage_statistics::GetCoverageStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_coverage_statistics::GetCoverageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_coverage_statistics::GetCoverageStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetCoverageStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetCoverageStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_coverage_statistics::GetCoverageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_coverage_statistics::GetCoverageStatisticsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetCoverageStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_coverage_statistics::GetCoverageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_coverage_statistics::GetCoverageStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetCoverageStatisticsFluentBuilder {
             crate::operation::get_coverage_statistics::GetCoverageStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_coverage_statistics::GetCoverageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_coverage_statistics::GetCoverageStatisticsError>,
     > {
         self.customize_middleware().await
     }
@@ -143,17 +129,12 @@ impl GetCoverageStatisticsFluentBuilder {
         self
     }
     /// <p>Represents the criteria used to filter the coverage statistics</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
     /// <p>Represents the criteria used to filter the coverage statistics</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
         self.inner.get_filter_criteria()
     }
     /// Appends an item to `StatisticsType`.
@@ -166,17 +147,12 @@ impl GetCoverageStatisticsFluentBuilder {
         self
     }
     /// <p>Represents the statistics type used to aggregate the coverage details.</p>
-    pub fn set_statistics_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>,
-    ) -> Self {
+    pub fn set_statistics_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>) -> Self {
         self.inner = self.inner.set_statistics_type(input);
         self
     }
     /// <p>Represents the statistics type used to aggregate the coverage details.</p>
-    pub fn get_statistics_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>> {
+    pub fn get_statistics_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>> {
         self.inner.get_statistics_type()
     }
 }

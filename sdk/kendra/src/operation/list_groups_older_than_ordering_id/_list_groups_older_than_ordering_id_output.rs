@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListGroupsOlderThanOrderingIdOutput {
 }
 impl ListGroupsOlderThanOrderingIdOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupsOlderThanOrderingIdOutput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput).
-    pub fn builder() -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdOutputBuilder{
+    pub fn builder() -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdOutputBuilder {
         crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupsOlderThanOrderingIdOutput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupsOlderThanOrderingIdOutputBuilder {
     pub(crate) groups_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListGroupsOlderThanOrderingIdOutputBuilder {
         self
     }
     /// <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    pub fn set_groups_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
-    ) -> Self {
+    pub fn set_groups_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>) -> Self {
         self.groups_summaries = input;
         self
     }
     /// <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    pub fn get_groups_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
+    pub fn get_groups_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
         &self.groups_summaries
     }
     /// <p> If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
@@ -93,10 +86,7 @@ impl ListGroupsOlderThanOrderingIdOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListGroupsOlderThanOrderingIdOutput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput
-    {
+    pub fn build(self) -> crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput {
         crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput {
             groups_summaries: self.groups_summaries,
             next_token: self.next_token,

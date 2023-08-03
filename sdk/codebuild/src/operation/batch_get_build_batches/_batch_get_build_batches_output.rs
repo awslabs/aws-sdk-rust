@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetBuildBatchesOutput {
 }
 impl BatchGetBuildBatchesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetBuildBatchesOutput`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesOutputBuilder {
         crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetBuildBatchesOutput`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetBuildBatchesOutputBuilder {
     pub(crate) build_batches: ::std::option::Option<::std::vec::Vec<crate::types::BuildBatch>>,
-    pub(crate) build_batches_not_found:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) build_batches_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetBuildBatchesOutputBuilder {
@@ -59,17 +54,12 @@ impl BatchGetBuildBatchesOutputBuilder {
         self
     }
     /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
-    pub fn set_build_batches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BuildBatch>>,
-    ) -> Self {
+    pub fn set_build_batches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuildBatch>>) -> Self {
         self.build_batches = input;
         self
     }
     /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
-    pub fn get_build_batches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildBatch>> {
+    pub fn get_build_batches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildBatch>> {
         &self.build_batches
     }
     /// Appends an item to `build_batches_not_found`.
@@ -77,27 +67,19 @@ impl BatchGetBuildBatchesOutputBuilder {
     /// To override the contents of this collection use [`set_build_batches_not_found`](Self::set_build_batches_not_found).
     ///
     /// <p>An array that contains the identifiers of any batch builds that are not found.</p>
-    pub fn build_batches_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn build_batches_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.build_batches_not_found.unwrap_or_default();
         v.push(input.into());
         self.build_batches_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array that contains the identifiers of any batch builds that are not found.</p>
-    pub fn set_build_batches_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_build_batches_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.build_batches_not_found = input;
         self
     }
     /// <p>An array that contains the identifiers of any batch builds that are not found.</p>
-    pub fn get_build_batches_not_found(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_build_batches_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.build_batches_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

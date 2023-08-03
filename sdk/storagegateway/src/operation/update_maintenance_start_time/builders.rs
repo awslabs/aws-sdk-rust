@@ -26,7 +26,7 @@ impl UpdateMaintenanceStartTimeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMaintenanceStartTimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeInputBuilder,
+    inner: crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeInputBuilder,
 }
 impl UpdateMaintenanceStartTimeFluentBuilder {
     /// Creates a new `UpdateMaintenanceStartTime`.
@@ -37,7 +37,7 @@ impl UpdateMaintenanceStartTimeFluentBuilder {
         }
     }
     /// Access the UpdateMaintenanceStartTime as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateMaintenanceStartTimeFluentBuilder {
             crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTime,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateMaintenanceStartTimeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateMaintenanceStartTimeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateMaintenanceStartTimeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateMaintenanceStartTimeFluentBuilder {
             crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTime,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeError>,
     > {
         self.customize_middleware().await
     }

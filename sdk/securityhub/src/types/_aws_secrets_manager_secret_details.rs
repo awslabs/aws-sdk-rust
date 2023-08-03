@@ -31,9 +31,7 @@ pub struct AwsSecretsManagerSecretDetails {
 }
 impl AwsSecretsManagerSecretDetails {
     /// <p>Defines the rotation schedule for the secret.</p>
-    pub fn rotation_rules(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsSecretsManagerSecretRotationRules> {
+    pub fn rotation_rules(&self) -> ::std::option::Option<&crate::types::AwsSecretsManagerSecretRotationRules> {
         self.rotation_rules.as_ref()
     }
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
@@ -74,12 +72,9 @@ impl AwsSecretsManagerSecretDetails {
 
 /// A builder for [`AwsSecretsManagerSecretDetails`](crate::types::AwsSecretsManagerSecretDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsSecretsManagerSecretDetailsBuilder {
-    pub(crate) rotation_rules:
-        ::std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>,
+    pub(crate) rotation_rules: ::std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>,
     pub(crate) rotation_occurred_within_frequency: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) rotation_enabled: ::std::option::Option<bool>,
@@ -90,25 +85,17 @@ pub struct AwsSecretsManagerSecretDetailsBuilder {
 }
 impl AwsSecretsManagerSecretDetailsBuilder {
     /// <p>Defines the rotation schedule for the secret.</p>
-    pub fn rotation_rules(
-        mut self,
-        input: crate::types::AwsSecretsManagerSecretRotationRules,
-    ) -> Self {
+    pub fn rotation_rules(mut self, input: crate::types::AwsSecretsManagerSecretRotationRules) -> Self {
         self.rotation_rules = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the rotation schedule for the secret.</p>
-    pub fn set_rotation_rules(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>,
-    ) -> Self {
+    pub fn set_rotation_rules(mut self, input: ::std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>) -> Self {
         self.rotation_rules = input;
         self
     }
     /// <p>Defines the rotation schedule for the secret.</p>
-    pub fn get_rotation_rules(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules> {
+    pub fn get_rotation_rules(&self) -> &::std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules> {
         &self.rotation_rules
     }
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
@@ -117,10 +104,7 @@ impl AwsSecretsManagerSecretDetailsBuilder {
         self
     }
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
-    pub fn set_rotation_occurred_within_frequency(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_rotation_occurred_within_frequency(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rotation_occurred_within_frequency = input;
         self
     }
@@ -157,18 +141,12 @@ impl AwsSecretsManagerSecretDetailsBuilder {
         &self.rotation_enabled
     }
     /// <p>The ARN of the Lambda function that rotates the secret.</p>
-    pub fn rotation_lambda_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rotation_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Lambda function that rotates the secret.</p>
-    pub fn set_rotation_lambda_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rotation_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rotation_lambda_arn = input;
         self
     }
@@ -222,9 +200,7 @@ impl AwsSecretsManagerSecretDetailsBuilder {
     pub fn build(self) -> crate::types::AwsSecretsManagerSecretDetails {
         crate::types::AwsSecretsManagerSecretDetails {
             rotation_rules: self.rotation_rules,
-            rotation_occurred_within_frequency: self
-                .rotation_occurred_within_frequency
-                .unwrap_or_default(),
+            rotation_occurred_within_frequency: self.rotation_occurred_within_frequency.unwrap_or_default(),
             kms_key_id: self.kms_key_id,
             rotation_enabled: self.rotation_enabled.unwrap_or_default(),
             rotation_lambda_arn: self.rotation_lambda_arn,

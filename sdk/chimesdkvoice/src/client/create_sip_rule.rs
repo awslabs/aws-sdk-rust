@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSipRuleOutput`](crate::operation::create_sip_rule::CreateSipRuleOutput) with field(s):
     ///   - [`sip_rule(Option<SipRule>)`](crate::operation::create_sip_rule::CreateSipRuleOutput::sip_rule): <p>The SIP rule information, including the rule ID, triggers, and target applications.</p>
     /// - On failure, responds with [`SdkError<CreateSipRuleError>`](crate::operation::create_sip_rule::CreateSipRuleError)
-    pub fn create_sip_rule(
-        &self,
-    ) -> crate::operation::create_sip_rule::builders::CreateSipRuleFluentBuilder {
-        crate::operation::create_sip_rule::builders::CreateSipRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_sip_rule(&self) -> crate::operation::create_sip_rule::builders::CreateSipRuleFluentBuilder {
+        crate::operation::create_sip_rule::builders::CreateSipRuleFluentBuilder::new(self.handle.clone())
     }
 }

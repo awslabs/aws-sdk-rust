@@ -10,10 +10,7 @@ impl CreateDomainNameInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_domain_name::CreateDomainNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_name::CreateDomainNameError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain_name::CreateDomainNameError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_domain_name();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDomainNameFluentBuilder {
         }
     }
     /// Access the CreateDomainName as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_domain_name::builders::CreateDomainNameInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_domain_name::builders::CreateDomainNameInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDomainNameFluentBuilder {
             crate::operation::create_domain_name::CreateDomainName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_name::CreateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain_name::CreateDomainNameError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDomainNameFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDomainNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_domain_name::CreateDomainNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_name::CreateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain_name::CreateDomainNameError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDomainNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_domain_name::CreateDomainNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_name::CreateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain_name::CreateDomainNameError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateDomainNameFluentBuilder {
             crate::operation::create_domain_name::CreateDomainName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_name::CreateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain_name::CreateDomainNameError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl CreateDomainNameFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }

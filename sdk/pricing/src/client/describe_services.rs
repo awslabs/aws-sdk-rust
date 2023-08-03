@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`format_version(Option<String>)`](crate::operation::describe_services::DescribeServicesOutput::format_version): <p>The format version of the response. For example, <code>aws_v1</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_services::DescribeServicesOutput::next_token): <p>The pagination token for the next set of retrievable results.</p>
     /// - On failure, responds with [`SdkError<DescribeServicesError>`](crate::operation::describe_services::DescribeServicesError)
-    pub fn describe_services(
-        &self,
-    ) -> crate::operation::describe_services::builders::DescribeServicesFluentBuilder {
-        crate::operation::describe_services::builders::DescribeServicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_services(&self) -> crate::operation::describe_services::builders::DescribeServicesFluentBuilder {
+        crate::operation::describe_services::builders::DescribeServicesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_studio_components::ListStudioComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`studio_components(Option<Vec<StudioComponent>>)`](crate::operation::list_studio_components::ListStudioComponentsOutput::studio_components): <p>A collection of studio components.</p>
     /// - On failure, responds with [`SdkError<ListStudioComponentsError>`](crate::operation::list_studio_components::ListStudioComponentsError)
-    pub fn list_studio_components(
-        &self,
-    ) -> crate::operation::list_studio_components::builders::ListStudioComponentsFluentBuilder {
-        crate::operation::list_studio_components::builders::ListStudioComponentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_studio_components(&self) -> crate::operation::list_studio_components::builders::ListStudioComponentsFluentBuilder {
+        crate::operation::list_studio_components::builders::ListStudioComponentsFluentBuilder::new(self.handle.clone())
     }
 }

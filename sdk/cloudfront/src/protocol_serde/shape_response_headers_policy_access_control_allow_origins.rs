@@ -24,10 +24,7 @@ pub fn ser_response_headers_policy_access_control_allow_origins(
 
 pub fn de_response_headers_policy_access_control_allow_origins(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ResponseHeadersPolicyAccessControlAllowOrigins,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyAccessControlAllowOrigins::builder();
     while let Some(mut tag) = decoder.next_tag() {

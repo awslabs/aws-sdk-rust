@@ -30,9 +30,7 @@ impl DocumentReviewCommentSource {
 
 /// A builder for [`DocumentReviewCommentSource`](crate::types::DocumentReviewCommentSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentReviewCommentSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DocumentReviewCommentType>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl DocumentReviewCommentSourceBuilder {
         self
     }
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentReviewCommentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentReviewCommentType>) -> Self {
         self.r#type = input;
         self
     }

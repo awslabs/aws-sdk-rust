@@ -46,32 +46,23 @@ pub struct MemberDetail {
     #[doc(hidden)]
     pub updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The data volume in bytes per day for the member account.</p>
-    #[deprecated(
-        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-    )]
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     #[doc(hidden)]
     pub volume_usage_in_bytes: ::std::option::Option<i64>,
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    #[deprecated(
-        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-    )]
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     #[doc(hidden)]
     pub volume_usage_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
     /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
-    #[deprecated(
-        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-    )]
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     #[doc(hidden)]
     pub percent_of_graph_utilization: ::std::option::Option<f64>,
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    #[deprecated(
-        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-    )]
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     #[doc(hidden)]
-    pub percent_of_graph_utilization_updated_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub percent_of_graph_utilization_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of behavior graph membership.</p>
     /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
     /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
@@ -79,20 +70,12 @@ pub struct MemberDetail {
     pub invitation_type: ::std::option::Option<crate::types::InvitationType>,
     /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
     #[doc(hidden)]
-    pub volume_usage_by_datasource_package: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageUsageInfo,
-        >,
-    >,
+    pub volume_usage_by_datasource_package:
+        ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageUsageInfo>>,
     /// <p>The state of a data source package for the behavior graph.</p>
     #[doc(hidden)]
-    pub datasource_package_ingest_states: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestState,
-        >,
-    >,
+    pub datasource_package_ingest_states:
+        ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestState>>,
 }
 impl MemberDetail {
     /// <p>The Amazon Web Services account identifier for the member account.</p>
@@ -152,9 +135,7 @@ impl MemberDetail {
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-    pub fn volume_usage_updated_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn volume_usage_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.volume_usage_updated_time.as_ref()
     }
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
@@ -166,9 +147,7 @@ impl MemberDetail {
     }
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-    pub fn percent_of_graph_utilization_updated_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn percent_of_graph_utilization_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.percent_of_graph_utilization_updated_time.as_ref()
     }
     /// <p>The type of behavior graph membership.</p>
@@ -180,23 +159,13 @@ impl MemberDetail {
     /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
     pub fn volume_usage_by_datasource_package(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageUsageInfo,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageUsageInfo>> {
         self.volume_usage_by_datasource_package.as_ref()
     }
     /// <p>The state of a data source package for the behavior graph.</p>
     pub fn datasource_package_ingest_states(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestState,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestState>> {
         self.datasource_package_ingest_states.as_ref()
     }
 }
@@ -209,9 +178,7 @@ impl MemberDetail {
 
 /// A builder for [`MemberDetail`](crate::types::MemberDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberDetailBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
@@ -225,21 +192,12 @@ pub struct MemberDetailBuilder {
     pub(crate) volume_usage_in_bytes: ::std::option::Option<i64>,
     pub(crate) volume_usage_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) percent_of_graph_utilization: ::std::option::Option<f64>,
-    pub(crate) percent_of_graph_utilization_updated_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) percent_of_graph_utilization_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) invitation_type: ::std::option::Option<crate::types::InvitationType>,
-    pub(crate) volume_usage_by_datasource_package: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageUsageInfo,
-        >,
-    >,
-    pub(crate) datasource_package_ingest_states: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestState,
-        >,
-    >,
+    pub(crate) volume_usage_by_datasource_package:
+        ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageUsageInfo>>,
+    pub(crate) datasource_package_ingest_states:
+        ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestState>>,
 }
 impl MemberDetailBuilder {
     /// <p>The Amazon Web Services account identifier for the member account.</p>
@@ -257,18 +215,12 @@ impl MemberDetailBuilder {
         &self.account_id
     }
     /// <p>The Amazon Web Services account root user email address for the member account.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account root user email address for the member account.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -308,18 +260,12 @@ impl MemberDetailBuilder {
         &self.master_id
     }
     /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
-    pub fn administrator_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn administrator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administrator_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
-    pub fn set_administrator_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_administrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.administrator_id = input;
         self
     }
@@ -381,10 +327,7 @@ impl MemberDetailBuilder {
     /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
     /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
     /// </ul>
-    pub fn set_disabled_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberDisabledReason>,
-    ) -> Self {
+    pub fn set_disabled_reason(mut self, input: ::std::option::Option<crate::types::MemberDisabledReason>) -> Self {
         self.disabled_reason = input;
         self
     }
@@ -394,9 +337,7 @@ impl MemberDetailBuilder {
     /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
     /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
     /// </ul>
-    pub fn get_disabled_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::MemberDisabledReason> {
+    pub fn get_disabled_reason(&self) -> &::std::option::Option<crate::types::MemberDisabledReason> {
         &self.disabled_reason
     }
     /// <p>For invited accounts, the date and time that Detective sent the invitation to the account. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
@@ -405,10 +346,7 @@ impl MemberDetailBuilder {
         self
     }
     /// <p>For invited accounts, the date and time that Detective sent the invitation to the account. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn set_invited_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invited_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invited_time = input;
         self
     }
@@ -422,10 +360,7 @@ impl MemberDetailBuilder {
         self
     }
     /// <p>The date and time that the member account was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn set_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_time = input;
         self
     }
@@ -458,18 +393,13 @@ impl MemberDetailBuilder {
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-    pub fn set_volume_usage_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_volume_usage_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.volume_usage_updated_time = input;
         self
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-    pub fn get_volume_usage_updated_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_volume_usage_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.volume_usage_updated_time
     }
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
@@ -497,27 +427,19 @@ impl MemberDetailBuilder {
     }
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-    pub fn percent_of_graph_utilization_updated_time(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn percent_of_graph_utilization_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.percent_of_graph_utilization_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-    pub fn set_percent_of_graph_utilization_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_percent_of_graph_utilization_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.percent_of_graph_utilization_updated_time = input;
         self
     }
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-    pub fn get_percent_of_graph_utilization_updated_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_percent_of_graph_utilization_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.percent_of_graph_utilization_updated_time
     }
     /// <p>The type of behavior graph membership.</p>
@@ -530,10 +452,7 @@ impl MemberDetailBuilder {
     /// <p>The type of behavior graph membership.</p>
     /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
     /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
-    pub fn set_invitation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InvitationType>,
-    ) -> Self {
+    pub fn set_invitation_type(mut self, input: ::std::option::Option<crate::types::InvitationType>) -> Self {
         self.invitation_type = input;
         self
     }
@@ -548,11 +467,7 @@ impl MemberDetailBuilder {
     /// To override the contents of this collection use [`set_volume_usage_by_datasource_package`](Self::set_volume_usage_by_datasource_package).
     ///
     /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
-    pub fn volume_usage_by_datasource_package(
-        mut self,
-        k: crate::types::DatasourcePackage,
-        v: crate::types::DatasourcePackageUsageInfo,
-    ) -> Self {
+    pub fn volume_usage_by_datasource_package(mut self, k: crate::types::DatasourcePackage, v: crate::types::DatasourcePackageUsageInfo) -> Self {
         let mut hash_map = self.volume_usage_by_datasource_package.unwrap_or_default();
         hash_map.insert(k, v);
         self.volume_usage_by_datasource_package = ::std::option::Option::Some(hash_map);
@@ -561,12 +476,7 @@ impl MemberDetailBuilder {
     /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
     pub fn set_volume_usage_by_datasource_package(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackage,
-                crate::types::DatasourcePackageUsageInfo,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageUsageInfo>>,
     ) -> Self {
         self.volume_usage_by_datasource_package = input;
         self
@@ -574,12 +484,7 @@ impl MemberDetailBuilder {
     /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
     pub fn get_volume_usage_by_datasource_package(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageUsageInfo,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageUsageInfo>> {
         &self.volume_usage_by_datasource_package
     }
     /// Adds a key-value pair to `datasource_package_ingest_states`.
@@ -587,11 +492,7 @@ impl MemberDetailBuilder {
     /// To override the contents of this collection use [`set_datasource_package_ingest_states`](Self::set_datasource_package_ingest_states).
     ///
     /// <p>The state of a data source package for the behavior graph.</p>
-    pub fn datasource_package_ingest_states(
-        mut self,
-        k: crate::types::DatasourcePackage,
-        v: crate::types::DatasourcePackageIngestState,
-    ) -> Self {
+    pub fn datasource_package_ingest_states(mut self, k: crate::types::DatasourcePackage, v: crate::types::DatasourcePackageIngestState) -> Self {
         let mut hash_map = self.datasource_package_ingest_states.unwrap_or_default();
         hash_map.insert(k, v);
         self.datasource_package_ingest_states = ::std::option::Option::Some(hash_map);
@@ -600,12 +501,7 @@ impl MemberDetailBuilder {
     /// <p>The state of a data source package for the behavior graph.</p>
     pub fn set_datasource_package_ingest_states(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackage,
-                crate::types::DatasourcePackageIngestState,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestState>>,
     ) -> Self {
         self.datasource_package_ingest_states = input;
         self
@@ -613,12 +509,7 @@ impl MemberDetailBuilder {
     /// <p>The state of a data source package for the behavior graph.</p>
     pub fn get_datasource_package_ingest_states(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestState,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestState>> {
         &self.datasource_package_ingest_states
     }
     /// Consumes the builder and constructs a [`MemberDetail`](crate::types::MemberDetail).
@@ -636,8 +527,7 @@ impl MemberDetailBuilder {
             volume_usage_in_bytes: self.volume_usage_in_bytes,
             volume_usage_updated_time: self.volume_usage_updated_time,
             percent_of_graph_utilization: self.percent_of_graph_utilization,
-            percent_of_graph_utilization_updated_time: self
-                .percent_of_graph_utilization_updated_time,
+            percent_of_graph_utilization_updated_time: self.percent_of_graph_utilization_updated_time,
             invitation_type: self.invitation_type,
             volume_usage_by_datasource_package: self.volume_usage_by_datasource_package,
             datasource_package_ingest_states: self.datasource_package_ingest_states,

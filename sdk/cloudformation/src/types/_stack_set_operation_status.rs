@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StackSetOperationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for StackSetOperationStatus {
             "STOPPED" => StackSetOperationStatus::Stopped,
             "STOPPING" => StackSetOperationStatus::Stopping,
             "SUCCEEDED" => StackSetOperationStatus::Succeeded,
-            other => StackSetOperationStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StackSetOperationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl StackSetOperationStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED",
-            "QUEUED",
-            "RUNNING",
-            "STOPPED",
-            "STOPPING",
-            "SUCCEEDED",
-        ]
+        &["FAILED", "QUEUED", "RUNNING", "STOPPED", "STOPPING", "SUCCEEDED"]
     }
 }
 impl ::std::convert::AsRef<str> for StackSetOperationStatus {

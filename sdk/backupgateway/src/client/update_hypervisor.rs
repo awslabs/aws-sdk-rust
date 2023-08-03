@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateHypervisorOutput`](crate::operation::update_hypervisor::UpdateHypervisorOutput) with field(s):
     ///   - [`hypervisor_arn(Option<String>)`](crate::operation::update_hypervisor::UpdateHypervisorOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateHypervisorError>`](crate::operation::update_hypervisor::UpdateHypervisorError)
-    pub fn update_hypervisor(
-        &self,
-    ) -> crate::operation::update_hypervisor::builders::UpdateHypervisorFluentBuilder {
-        crate::operation::update_hypervisor::builders::UpdateHypervisorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_hypervisor(&self) -> crate::operation::update_hypervisor::builders::UpdateHypervisorFluentBuilder {
+        crate::operation::update_hypervisor::builders::UpdateHypervisorFluentBuilder::new(self.handle.clone())
     }
 }

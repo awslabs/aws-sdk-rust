@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListBulkImportJobsOutput {
 }
 impl ListBulkImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListBulkImportJobsOutput`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder {
-        crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder {
+        crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBulkImportJobsOutput`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBulkImportJobsOutputBuilder {
     pub(crate) job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListBulkImportJobsOutputBuilder {
         self
     }
     /// <p>One or more job summaries to list.</p>
-    pub fn set_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
-    ) -> Self {
+    pub fn set_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>) -> Self {
         self.job_summaries = input;
         self
     }
     /// <p>One or more job summaries to list.</p>
-    pub fn get_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
+    pub fn get_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
         &self.job_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

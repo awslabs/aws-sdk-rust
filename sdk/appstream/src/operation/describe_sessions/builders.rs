@@ -10,10 +10,7 @@ impl DescribeSessionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_sessions::DescribeSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sessions::DescribeSessionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_sessions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeSessionsFluentBuilder {
         }
     }
     /// Access the DescribeSessions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeSessionsFluentBuilder {
             crate::operation::describe_sessions::DescribeSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sessions::DescribeSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_sessions::DescribeSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sessions::DescribeSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_sessions::DescribeSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sessions::DescribeSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeSessionsFluentBuilder {
             crate::operation::describe_sessions::DescribeSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sessions::DescribeSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError>,
     > {
         self.customize_middleware().await
     }
@@ -198,17 +182,12 @@ impl DescribeSessionsFluentBuilder {
         self
     }
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         self.inner.get_authentication_type()
     }
 }

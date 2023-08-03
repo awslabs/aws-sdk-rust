@@ -37,9 +37,7 @@ impl GetDiscoveredSchemaFluentBuilder {
         }
     }
     /// Access the GetDiscoveredSchema as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetDiscoveredSchemaFluentBuilder {
             crate::operation::get_discovered_schema::GetDiscoveredSchema,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovered_schema::GetDiscoveredSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_discovered_schema::GetDiscoveredSchemaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetDiscoveredSchemaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetDiscoveredSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_discovered_schema::GetDiscoveredSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovered_schema::GetDiscoveredSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_discovered_schema::GetDiscoveredSchemaError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetDiscoveredSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_discovered_schema::GetDiscoveredSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovered_schema::GetDiscoveredSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_discovered_schema::GetDiscoveredSchemaError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetDiscoveredSchemaFluentBuilder {
             crate::operation::get_discovered_schema::GetDiscoveredSchema,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovered_schema::GetDiscoveredSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_discovered_schema::GetDiscoveredSchemaError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +119,7 @@ impl GetDiscoveredSchemaFluentBuilder {
         self
     }
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_events(input);
         self
     }

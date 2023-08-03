@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetKmsEncryptionKeyOutput {
 }
 impl GetKmsEncryptionKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetKmsEncryptionKeyOutput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyOutputBuilder {
+    pub fn builder() -> crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyOutputBuilder {
         crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetKmsEncryptionKeyOutput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKmsEncryptionKeyOutputBuilder {
     pub(crate) kms_key: ::std::option::Option<crate::types::KmsKey>,
     _request_id: Option<String>,

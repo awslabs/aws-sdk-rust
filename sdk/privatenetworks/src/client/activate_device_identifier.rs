@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`device_identifier(Option<DeviceIdentifier>)`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierOutput::device_identifier): <p>Information about the device identifier.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierOutput::tags): <p> The tags on the device identifier. </p>
     /// - On failure, responds with [`SdkError<ActivateDeviceIdentifierError>`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierError)
-    pub fn activate_device_identifier(
-        &self,
-    ) -> crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierFluentBuilder
-    {
+    pub fn activate_device_identifier(&self) -> crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierFluentBuilder {
         crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierFluentBuilder::new(self.handle.clone())
     }
 }

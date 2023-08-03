@@ -45,9 +45,7 @@ impl ImportClientBrandingFluentBuilder {
         }
     }
     /// Access the ImportClientBranding as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_client_branding::builders::ImportClientBrandingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_client_branding::builders::ImportClientBrandingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +57,7 @@ impl ImportClientBrandingFluentBuilder {
             crate::operation::import_client_branding::ImportClientBranding,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_client_branding::ImportClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_client_branding::ImportClientBrandingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +67,7 @@ impl ImportClientBrandingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +76,7 @@ impl ImportClientBrandingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_client_branding::ImportClientBrandingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_client_branding::ImportClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_client_branding::ImportClientBrandingError>,
     > {
         let op = self
             .inner
@@ -108,9 +99,7 @@ impl ImportClientBrandingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_client_branding::ImportClientBrandingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_client_branding::ImportClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_client_branding::ImportClientBrandingError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +113,7 @@ impl ImportClientBrandingFluentBuilder {
             crate::operation::import_client_branding::ImportClientBranding,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_client_branding::ImportClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_client_branding::ImportClientBrandingError>,
     > {
         self.customize_middleware().await
     }
@@ -145,135 +132,87 @@ impl ImportClientBrandingFluentBuilder {
         self.inner.get_resource_id()
     }
     /// <p>The branding information to import for Windows devices.</p>
-    pub fn device_type_windows(
-        mut self,
-        input: crate::types::DefaultImportClientBrandingAttributes,
-    ) -> Self {
+    pub fn device_type_windows(mut self, input: crate::types::DefaultImportClientBrandingAttributes) -> Self {
         self.inner = self.inner.device_type_windows(input);
         self
     }
     /// <p>The branding information to import for Windows devices.</p>
-    pub fn set_device_type_windows(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>,
-    ) -> Self {
+    pub fn set_device_type_windows(mut self, input: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>) -> Self {
         self.inner = self.inner.set_device_type_windows(input);
         self
     }
     /// <p>The branding information to import for Windows devices.</p>
-    pub fn get_device_type_windows(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
+    pub fn get_device_type_windows(&self) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
         self.inner.get_device_type_windows()
     }
     /// <p>The branding information to import for macOS devices.</p>
-    pub fn device_type_osx(
-        mut self,
-        input: crate::types::DefaultImportClientBrandingAttributes,
-    ) -> Self {
+    pub fn device_type_osx(mut self, input: crate::types::DefaultImportClientBrandingAttributes) -> Self {
         self.inner = self.inner.device_type_osx(input);
         self
     }
     /// <p>The branding information to import for macOS devices.</p>
-    pub fn set_device_type_osx(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>,
-    ) -> Self {
+    pub fn set_device_type_osx(mut self, input: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>) -> Self {
         self.inner = self.inner.set_device_type_osx(input);
         self
     }
     /// <p>The branding information to import for macOS devices.</p>
-    pub fn get_device_type_osx(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
+    pub fn get_device_type_osx(&self) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
         self.inner.get_device_type_osx()
     }
     /// <p>The branding information to import for Android devices.</p>
-    pub fn device_type_android(
-        mut self,
-        input: crate::types::DefaultImportClientBrandingAttributes,
-    ) -> Self {
+    pub fn device_type_android(mut self, input: crate::types::DefaultImportClientBrandingAttributes) -> Self {
         self.inner = self.inner.device_type_android(input);
         self
     }
     /// <p>The branding information to import for Android devices.</p>
-    pub fn set_device_type_android(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>,
-    ) -> Self {
+    pub fn set_device_type_android(mut self, input: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>) -> Self {
         self.inner = self.inner.set_device_type_android(input);
         self
     }
     /// <p>The branding information to import for Android devices.</p>
-    pub fn get_device_type_android(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
+    pub fn get_device_type_android(&self) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
         self.inner.get_device_type_android()
     }
     /// <p>The branding information to import for iOS devices.</p>
-    pub fn device_type_ios(
-        mut self,
-        input: crate::types::IosImportClientBrandingAttributes,
-    ) -> Self {
+    pub fn device_type_ios(mut self, input: crate::types::IosImportClientBrandingAttributes) -> Self {
         self.inner = self.inner.device_type_ios(input);
         self
     }
     /// <p>The branding information to import for iOS devices.</p>
-    pub fn set_device_type_ios(
-        mut self,
-        input: ::std::option::Option<crate::types::IosImportClientBrandingAttributes>,
-    ) -> Self {
+    pub fn set_device_type_ios(mut self, input: ::std::option::Option<crate::types::IosImportClientBrandingAttributes>) -> Self {
         self.inner = self.inner.set_device_type_ios(input);
         self
     }
     /// <p>The branding information to import for iOS devices.</p>
-    pub fn get_device_type_ios(
-        &self,
-    ) -> &::std::option::Option<crate::types::IosImportClientBrandingAttributes> {
+    pub fn get_device_type_ios(&self) -> &::std::option::Option<crate::types::IosImportClientBrandingAttributes> {
         self.inner.get_device_type_ios()
     }
     /// <p>The branding information to import for Linux devices.</p>
-    pub fn device_type_linux(
-        mut self,
-        input: crate::types::DefaultImportClientBrandingAttributes,
-    ) -> Self {
+    pub fn device_type_linux(mut self, input: crate::types::DefaultImportClientBrandingAttributes) -> Self {
         self.inner = self.inner.device_type_linux(input);
         self
     }
     /// <p>The branding information to import for Linux devices.</p>
-    pub fn set_device_type_linux(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>,
-    ) -> Self {
+    pub fn set_device_type_linux(mut self, input: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>) -> Self {
         self.inner = self.inner.set_device_type_linux(input);
         self
     }
     /// <p>The branding information to import for Linux devices.</p>
-    pub fn get_device_type_linux(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
+    pub fn get_device_type_linux(&self) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
         self.inner.get_device_type_linux()
     }
     /// <p>The branding information to import for web access.</p>
-    pub fn device_type_web(
-        mut self,
-        input: crate::types::DefaultImportClientBrandingAttributes,
-    ) -> Self {
+    pub fn device_type_web(mut self, input: crate::types::DefaultImportClientBrandingAttributes) -> Self {
         self.inner = self.inner.device_type_web(input);
         self
     }
     /// <p>The branding information to import for web access.</p>
-    pub fn set_device_type_web(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>,
-    ) -> Self {
+    pub fn set_device_type_web(mut self, input: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>) -> Self {
         self.inner = self.inner.set_device_type_web(input);
         self
     }
     /// <p>The branding information to import for web access.</p>
-    pub fn get_device_type_web(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
+    pub fn get_device_type_web(&self) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
         self.inner.get_device_type_web()
     }
 }

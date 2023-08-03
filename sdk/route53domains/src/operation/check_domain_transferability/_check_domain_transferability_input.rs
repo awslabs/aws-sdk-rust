@@ -45,7 +45,7 @@ impl ::std::fmt::Debug for CheckDomainTransferabilityInput {
 }
 impl CheckDomainTransferabilityInput {
     /// Creates a new builder-style object to manufacture [`CheckDomainTransferabilityInput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityInput).
-    pub fn builder() -> crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder{
+    pub fn builder() -> crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder {
         crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder::default()
     }
 }
@@ -114,12 +114,10 @@ impl CheckDomainTransferabilityInputBuilder {
         crate::operation::check_domain_transferability::CheckDomainTransferabilityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::check_domain_transferability::CheckDomainTransferabilityInput {
-                domain_name: self.domain_name,
-                auth_code: self.auth_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::check_domain_transferability::CheckDomainTransferabilityInput {
+            domain_name: self.domain_name,
+            auth_code: self.auth_code,
+        })
     }
 }
 impl ::std::fmt::Debug for CheckDomainTransferabilityInputBuilder {

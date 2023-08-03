@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateContactFromAddressBookOutput`](crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput)
     /// - On failure, responds with [`SdkError<DisassociateContactFromAddressBookError>`](crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn disassociate_contact_from_address_book(&self) -> crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookFluentBuilder{
+    pub fn disassociate_contact_from_address_book(
+        &self,
+    ) -> crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookFluentBuilder {
         crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookFluentBuilder::new(self.handle.clone())
     }
 }

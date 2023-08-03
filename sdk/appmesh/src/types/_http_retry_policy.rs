@@ -56,15 +56,12 @@ impl HttpRetryPolicy {
 
 /// A builder for [`HttpRetryPolicy`](crate::types::HttpRetryPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpRetryPolicyBuilder {
     pub(crate) per_retry_timeout: ::std::option::Option<crate::types::Duration>,
     pub(crate) max_retries: ::std::option::Option<i64>,
     pub(crate) http_retry_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tcp_retry_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
+    pub(crate) tcp_retry_events: ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
 }
 impl HttpRetryPolicyBuilder {
     /// <p>The timeout for each retry attempt.</p>
@@ -73,10 +70,7 @@ impl HttpRetryPolicyBuilder {
         self
     }
     /// <p>The timeout for each retry attempt.</p>
-    pub fn set_per_retry_timeout(
-        mut self,
-        input: ::std::option::Option<crate::types::Duration>,
-    ) -> Self {
+    pub fn set_per_retry_timeout(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
         self.per_retry_timeout = input;
         self
     }
@@ -109,10 +103,7 @@ impl HttpRetryPolicyBuilder {
     /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
     /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
-    pub fn http_retry_events(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_retry_events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.http_retry_events.unwrap_or_default();
         v.push(input.into());
         self.http_retry_events = ::std::option::Option::Some(v);
@@ -125,10 +116,7 @@ impl HttpRetryPolicyBuilder {
     /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
     /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
-    pub fn set_http_retry_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_http_retry_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.http_retry_events = input;
         self
     }
@@ -139,9 +127,7 @@ impl HttpRetryPolicyBuilder {
     /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
     /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
-    pub fn get_http_retry_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_http_retry_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.http_retry_events
     }
     /// Appends an item to `tcp_retry_events`.
@@ -156,17 +142,12 @@ impl HttpRetryPolicyBuilder {
         self
     }
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-    pub fn set_tcp_retry_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
-    ) -> Self {
+    pub fn set_tcp_retry_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>) -> Self {
         self.tcp_retry_events = input;
         self
     }
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-    pub fn get_tcp_retry_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>> {
+    pub fn get_tcp_retry_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>> {
         &self.tcp_retry_events
     }
     /// Consumes the builder and constructs a [`HttpRetryPolicy`](crate::types::HttpRetryPolicy).

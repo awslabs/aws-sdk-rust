@@ -50,9 +50,7 @@ impl UpdateAlertInput {
 
 /// A builder for [`UpdateAlertInput`](crate::operation::update_alert::UpdateAlertInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAlertInputBuilder {
     pub(crate) alert_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alert_description: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl UpdateAlertInputBuilder {
         &self.alert_arn
     }
     /// <p>A description of the alert.</p>
-    pub fn alert_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alert_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the alert.</p>
-    pub fn set_alert_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alert_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alert_description = input;
         self
     }
@@ -129,10 +121,7 @@ impl UpdateAlertInputBuilder {
         self
     }
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
-    pub fn set_alert_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::AlertFilters>,
-    ) -> Self {
+    pub fn set_alert_filters(mut self, input: ::std::option::Option<crate::types::AlertFilters>) -> Self {
         self.alert_filters = input;
         self
     }
@@ -141,12 +130,7 @@ impl UpdateAlertInputBuilder {
         &self.alert_filters
     }
     /// Consumes the builder and constructs a [`UpdateAlertInput`](crate::operation::update_alert::UpdateAlertInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_alert::UpdateAlertInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_alert::UpdateAlertInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_alert::UpdateAlertInput {
             alert_arn: self.alert_arn,
             alert_description: self.alert_description,

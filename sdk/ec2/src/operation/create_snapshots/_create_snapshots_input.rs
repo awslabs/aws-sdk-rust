@@ -34,9 +34,7 @@ impl CreateSnapshotsInput {
         self.description.as_deref()
     }
     /// <p>The instance to specify which volumes should be included in the snapshots.</p>
-    pub fn instance_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceSpecification> {
+    pub fn instance_specification(&self) -> ::std::option::Option<&crate::types::InstanceSpecification> {
         self.instance_specification.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
@@ -58,9 +56,7 @@ impl CreateSnapshotsInput {
         self.dry_run
     }
     /// <p>Copies the tags from the specified volume to corresponding snapshot.</p>
-    pub fn copy_tags_from_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CopyTagsFromSource> {
+    pub fn copy_tags_from_source(&self) -> ::std::option::Option<&crate::types::CopyTagsFromSource> {
         self.copy_tags_from_source.as_ref()
     }
 }
@@ -73,15 +69,12 @@ impl CreateSnapshotsInput {
 
 /// A builder for [`CreateSnapshotsInput`](crate::operation::create_snapshots::CreateSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotsInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) instance_specification: ::std::option::Option<crate::types::InstanceSpecification>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) copy_tags_from_source: ::std::option::Option<crate::types::CopyTagsFromSource>,
 }
@@ -106,17 +99,12 @@ impl CreateSnapshotsInputBuilder {
         self
     }
     /// <p>The instance to specify which volumes should be included in the snapshots.</p>
-    pub fn set_instance_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceSpecification>,
-    ) -> Self {
+    pub fn set_instance_specification(mut self, input: ::std::option::Option<crate::types::InstanceSpecification>) -> Self {
         self.instance_specification = input;
         self
     }
     /// <p>The instance to specify which volumes should be included in the snapshots.</p>
-    pub fn get_instance_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceSpecification> {
+    pub fn get_instance_specification(&self) -> &::std::option::Option<crate::types::InstanceSpecification> {
         &self.instance_specification
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
@@ -163,17 +151,12 @@ impl CreateSnapshotsInputBuilder {
         self
     }
     /// <p>Tags to apply to every snapshot specified by the instance.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>Tags to apply to every snapshot specified by the instance.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -196,26 +179,18 @@ impl CreateSnapshotsInputBuilder {
         self
     }
     /// <p>Copies the tags from the specified volume to corresponding snapshot.</p>
-    pub fn set_copy_tags_from_source(
-        mut self,
-        input: ::std::option::Option<crate::types::CopyTagsFromSource>,
-    ) -> Self {
+    pub fn set_copy_tags_from_source(mut self, input: ::std::option::Option<crate::types::CopyTagsFromSource>) -> Self {
         self.copy_tags_from_source = input;
         self
     }
     /// <p>Copies the tags from the specified volume to corresponding snapshot.</p>
-    pub fn get_copy_tags_from_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::CopyTagsFromSource> {
+    pub fn get_copy_tags_from_source(&self) -> &::std::option::Option<crate::types::CopyTagsFromSource> {
         &self.copy_tags_from_source
     }
     /// Consumes the builder and constructs a [`CreateSnapshotsInput`](crate::operation::create_snapshots::CreateSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_snapshots::CreateSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_snapshots::CreateSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_snapshots::CreateSnapshotsInput {
             description: self.description,
             instance_specification: self.instance_specification,

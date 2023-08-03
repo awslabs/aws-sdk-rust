@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`resource_inventory_list(Option<Vec<ResourceInventory>>)`](crate::operation::list_resource_inventory::ListResourceInventoryOutput::resource_inventory_list): <p>Information about the resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_inventory::ListResourceInventoryOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListResourceInventoryError>`](crate::operation::list_resource_inventory::ListResourceInventoryError)
-    pub fn list_resource_inventory(
-        &self,
-    ) -> crate::operation::list_resource_inventory::builders::ListResourceInventoryFluentBuilder
-    {
-        crate::operation::list_resource_inventory::builders::ListResourceInventoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resource_inventory(&self) -> crate::operation::list_resource_inventory::builders::ListResourceInventoryFluentBuilder {
+        crate::operation::list_resource_inventory::builders::ListResourceInventoryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteServerCatalogOutput {
 }
 impl DeleteServerCatalogOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServerCatalogOutput`](crate::operation::delete_server_catalog::DeleteServerCatalogOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_server_catalog::builders::DeleteServerCatalogOutputBuilder {
-        crate::operation::delete_server_catalog::builders::DeleteServerCatalogOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_server_catalog::builders::DeleteServerCatalogOutputBuilder {
+        crate::operation::delete_server_catalog::builders::DeleteServerCatalogOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServerCatalogOutput`](crate::operation::delete_server_catalog::DeleteServerCatalogOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServerCatalogOutputBuilder {
     _request_id: Option<String>,
 }

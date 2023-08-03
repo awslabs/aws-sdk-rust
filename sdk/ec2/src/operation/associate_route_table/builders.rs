@@ -38,9 +38,7 @@ impl AssociateRouteTableFluentBuilder {
         }
     }
     /// Access the AssociateRouteTable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_route_table::builders::AssociateRouteTableInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_route_table::builders::AssociateRouteTableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl AssociateRouteTableFluentBuilder {
             crate::operation::associate_route_table::AssociateRouteTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_route_table::AssociateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_route_table::AssociateRouteTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl AssociateRouteTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl AssociateRouteTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_route_table::AssociateRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_route_table::AssociateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_route_table::AssociateRouteTableError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl AssociateRouteTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_route_table::AssociateRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_route_table::AssociateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_route_table::AssociateRouteTableError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl AssociateRouteTableFluentBuilder {
             crate::operation::associate_route_table::AssociateRouteTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_route_table::AssociateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_route_table::AssociateRouteTableError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +125,12 @@ impl AssociateRouteTableFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_id(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_table_id(input);
         self
     }

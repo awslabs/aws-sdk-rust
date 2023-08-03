@@ -33,18 +33,14 @@ impl ListDevicePositionsInput {
 }
 impl ListDevicePositionsInput {
     /// Creates a new builder-style object to manufacture [`ListDevicePositionsInput`](crate::operation::list_device_positions::ListDevicePositionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_device_positions::builders::ListDevicePositionsInputBuilder {
-        crate::operation::list_device_positions::builders::ListDevicePositionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_device_positions::builders::ListDevicePositionsInputBuilder {
+        crate::operation::list_device_positions::builders::ListDevicePositionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevicePositionsInput`](crate::operation::list_device_positions::ListDevicePositionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevicePositionsInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -102,16 +98,12 @@ impl ListDevicePositionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDevicePositionsInput`](crate::operation::list_device_positions::ListDevicePositionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_device_positions::ListDevicePositionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_device_positions::ListDevicePositionsInput {
-                tracker_name: self.tracker_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_device_positions::ListDevicePositionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_device_positions::ListDevicePositionsInput {
+            tracker_name: self.tracker_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

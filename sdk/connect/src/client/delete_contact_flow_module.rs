@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`contact_flow_module_id(impl ::std::convert::Into<String>)`](crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleFluentBuilder::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleFluentBuilder::set_contact_flow_module_id): <p>The identifier of the flow module.</p>
     /// - On success, responds with [`DeleteContactFlowModuleOutput`](crate::operation::delete_contact_flow_module::DeleteContactFlowModuleOutput)
     /// - On failure, responds with [`SdkError<DeleteContactFlowModuleError>`](crate::operation::delete_contact_flow_module::DeleteContactFlowModuleError)
-    pub fn delete_contact_flow_module(
-        &self,
-    ) -> crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleFluentBuilder
-    {
+    pub fn delete_contact_flow_module(&self) -> crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleFluentBuilder {
         crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleFluentBuilder::new(self.handle.clone())
     }
 }

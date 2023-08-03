@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput::location): <p>The fully qualified URI of the new distribution resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput::e_tag): <p>The current version of the distribution created.</p>
     /// - On failure, responds with [`SdkError<CreateDistributionWithTagsError>`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError)
-    pub fn create_distribution_with_tags(&self) -> crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsFluentBuilder{
+    pub fn create_distribution_with_tags(
+        &self,
+    ) -> crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsFluentBuilder {
         crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsFluentBuilder::new(self.handle.clone())
     }
 }

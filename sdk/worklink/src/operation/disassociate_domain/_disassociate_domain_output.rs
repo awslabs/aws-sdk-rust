@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateDomainOutput {
 }
 impl DisassociateDomainOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDomainOutput`](crate::operation::disassociate_domain::DisassociateDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_domain::builders::DisassociateDomainOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_domain::builders::DisassociateDomainOutputBuilder {
         crate::operation::disassociate_domain::builders::DisassociateDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDomainOutput`](crate::operation::disassociate_domain::DisassociateDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDomainOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DeploySystemInstanceOutput {
 }
 impl DeploySystemInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeploySystemInstanceOutput`](crate::operation::deploy_system_instance::DeploySystemInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::deploy_system_instance::builders::DeploySystemInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::deploy_system_instance::builders::DeploySystemInstanceOutputBuilder {
         crate::operation::deploy_system_instance::builders::DeploySystemInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeploySystemInstanceOutput`](crate::operation::deploy_system_instance::DeploySystemInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploySystemInstanceOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     pub(crate) greengrass_deployment_id: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl DeploySystemInstanceOutputBuilder {
         self
     }
     /// <p>An object that contains summary information about a system instance that was deployed. </p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemInstanceSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SystemInstanceSummary>) -> Self {
         self.summary = input;
         self
     }
@@ -63,18 +57,12 @@ impl DeploySystemInstanceOutputBuilder {
         &self.summary
     }
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
-    pub fn greengrass_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn greengrass_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.greengrass_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
-    pub fn set_greengrass_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_greengrass_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.greengrass_deployment_id = input;
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::associate_app_block_builder_app_block::_associate_app_
 
 impl AssociateAppBlockBuilderAppBlockInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_app_block_builder_app_block();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl AssociateAppBlockBuilderAppBlockInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateAppBlockBuilderAppBlockFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockInputBuilder,
+    inner: crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockInputBuilder,
 }
 impl AssociateAppBlockBuilderAppBlockFluentBuilder {
     /// Creates a new `AssociateAppBlockBuilderAppBlock`.
@@ -37,15 +37,20 @@ impl AssociateAppBlockBuilderAppBlockFluentBuilder {
         }
     }
     /// Access the AssociateAppBlockBuilderAppBlock as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlock, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlock,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl AssociateAppBlockBuilderAppBlockFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl AssociateAppBlockBuilderAppBlockFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlock, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlock,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the app block.</p>
-    pub fn app_block_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_block_arn(input.into());
         self
     }
     /// <p>The ARN of the app block.</p>
-    pub fn set_app_block_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_block_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_block_arn(input);
         self
     }
@@ -115,18 +124,12 @@ impl AssociateAppBlockBuilderAppBlockFluentBuilder {
         self.inner.get_app_block_arn()
     }
     /// <p>The name of the app block builder.</p>
-    pub fn app_block_builder_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_builder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_block_builder_name(input.into());
         self
     }
     /// <p>The name of the app block builder.</p>
-    pub fn set_app_block_builder_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_block_builder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_block_builder_name(input);
         self
     }

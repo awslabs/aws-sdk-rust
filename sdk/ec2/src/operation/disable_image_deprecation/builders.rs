@@ -27,8 +27,7 @@ impl DisableImageDeprecationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableImageDeprecationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::disable_image_deprecation::builders::DisableImageDeprecationInputBuilder,
+    inner: crate::operation::disable_image_deprecation::builders::DisableImageDeprecationInputBuilder,
 }
 impl DisableImageDeprecationFluentBuilder {
     /// Creates a new `DisableImageDeprecation`.
@@ -39,10 +38,7 @@ impl DisableImageDeprecationFluentBuilder {
         }
     }
     /// Access the DisableImageDeprecation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_image_deprecation::builders::DisableImageDeprecationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disable_image_deprecation::builders::DisableImageDeprecationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DisableImageDeprecationFluentBuilder {
             crate::operation::disable_image_deprecation::DisableImageDeprecation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_image_deprecation::DisableImageDeprecationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_image_deprecation::DisableImageDeprecationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DisableImageDeprecationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DisableImageDeprecationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_image_deprecation::DisableImageDeprecationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_image_deprecation::DisableImageDeprecationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_image_deprecation::DisableImageDeprecationError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DisableImageDeprecationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_image_deprecation::DisableImageDeprecationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_image_deprecation::DisableImageDeprecationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_image_deprecation::DisableImageDeprecationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DisableImageDeprecationFluentBuilder {
             crate::operation::disable_image_deprecation::DisableImageDeprecation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_image_deprecation::DisableImageDeprecationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_image_deprecation::DisableImageDeprecationError>,
     > {
         self.customize_middleware().await
     }

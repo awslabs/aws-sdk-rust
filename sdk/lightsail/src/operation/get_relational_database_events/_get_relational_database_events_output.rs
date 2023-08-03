@@ -5,8 +5,7 @@
 pub struct GetRelationalDatabaseEventsOutput {
     /// <p>An object describing the result of your get relational database events request.</p>
     #[doc(hidden)]
-    pub relational_database_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseEvent>>,
+    pub relational_database_events: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseEvent>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -16,9 +15,7 @@ pub struct GetRelationalDatabaseEventsOutput {
 }
 impl GetRelationalDatabaseEventsOutput {
     /// <p>An object describing the result of your get relational database events request.</p>
-    pub fn relational_database_events(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RelationalDatabaseEvent]> {
+    pub fn relational_database_events(&self) -> ::std::option::Option<&[crate::types::RelationalDatabaseEvent]> {
         self.relational_database_events.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -35,19 +32,16 @@ impl ::aws_http::request_id::RequestId for GetRelationalDatabaseEventsOutput {
 }
 impl GetRelationalDatabaseEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseEventsOutput`](crate::operation::get_relational_database_events::GetRelationalDatabaseEventsOutput).
-    pub fn builder() -> crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsOutputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsOutputBuilder {
         crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseEventsOutput`](crate::operation::get_relational_database_events::GetRelationalDatabaseEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseEventsOutputBuilder {
-    pub(crate) relational_database_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseEvent>>,
+    pub(crate) relational_database_events: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseEvent>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,46 +51,32 @@ impl GetRelationalDatabaseEventsOutputBuilder {
     /// To override the contents of this collection use [`set_relational_database_events`](Self::set_relational_database_events).
     ///
     /// <p>An object describing the result of your get relational database events request.</p>
-    pub fn relational_database_events(
-        mut self,
-        input: crate::types::RelationalDatabaseEvent,
-    ) -> Self {
+    pub fn relational_database_events(mut self, input: crate::types::RelationalDatabaseEvent) -> Self {
         let mut v = self.relational_database_events.unwrap_or_default();
         v.push(input);
         self.relational_database_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object describing the result of your get relational database events request.</p>
-    pub fn set_relational_database_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseEvent>>,
-    ) -> Self {
+    pub fn set_relational_database_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseEvent>>) -> Self {
         self.relational_database_events = input;
         self
     }
     /// <p>An object describing the result of your get relational database events request.</p>
-    pub fn get_relational_database_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseEvent>> {
+    pub fn get_relational_database_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseEvent>> {
         &self.relational_database_events
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -116,9 +96,7 @@ impl GetRelationalDatabaseEventsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseEventsOutput`](crate::operation::get_relational_database_events::GetRelationalDatabaseEventsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_relational_database_events::GetRelationalDatabaseEventsOutput {
+    pub fn build(self) -> crate::operation::get_relational_database_events::GetRelationalDatabaseEventsOutput {
         crate::operation::get_relational_database_events::GetRelationalDatabaseEventsOutput {
             relational_database_events: self.relational_database_events,
             next_page_token: self.next_page_token,

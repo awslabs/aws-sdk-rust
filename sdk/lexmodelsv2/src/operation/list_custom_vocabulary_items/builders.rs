@@ -26,7 +26,7 @@ impl ListCustomVocabularyItemsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomVocabularyItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder,
+    inner: crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder,
 }
 impl ListCustomVocabularyItemsFluentBuilder {
     /// Creates a new `ListCustomVocabularyItems`.
@@ -37,7 +37,7 @@ impl ListCustomVocabularyItemsFluentBuilder {
         }
     }
     /// Access the ListCustomVocabularyItems as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCustomVocabularyItemsFluentBuilder {
             crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCustomVocabularyItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCustomVocabularyItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCustomVocabularyItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListCustomVocabularyItemsFluentBuilder {
             crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator {
         crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>

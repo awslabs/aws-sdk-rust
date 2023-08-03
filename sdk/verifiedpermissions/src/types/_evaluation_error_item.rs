@@ -24,26 +24,18 @@ impl EvaluationErrorItem {
 
 /// A builder for [`EvaluationErrorItem`](crate::types::EvaluationErrorItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationErrorItemBuilder {
     pub(crate) error_description: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationErrorItemBuilder {
     /// <p>The error description.</p>
-    pub fn error_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error description.</p>
-    pub fn set_error_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_description = input;
         self
     }

@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateDeliveryStreamOutput {
 }
 impl CreateDeliveryStreamOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeliveryStreamOutput`](crate::operation::create_delivery_stream::CreateDeliveryStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::create_delivery_stream::builders::CreateDeliveryStreamOutputBuilder {
+    pub fn builder() -> crate::operation::create_delivery_stream::builders::CreateDeliveryStreamOutputBuilder {
         crate::operation::create_delivery_stream::builders::CreateDeliveryStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeliveryStreamOutput`](crate::operation::create_delivery_stream::CreateDeliveryStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeliveryStreamOutputBuilder {
     pub(crate) delivery_stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDeliveryStreamOutputBuilder {
     /// <p>The ARN of the delivery stream.</p>
-    pub fn delivery_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the delivery stream.</p>
-    pub fn set_delivery_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream_arn = input;
         self
     }

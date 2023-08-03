@@ -26,7 +26,7 @@ impl GetTypedLinkFacetInformationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTypedLinkFacetInformationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationInputBuilder,
+    inner: crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationInputBuilder,
 }
 impl GetTypedLinkFacetInformationFluentBuilder {
     /// Creates a new `GetTypedLinkFacetInformation`.
@@ -37,7 +37,7 @@ impl GetTypedLinkFacetInformationFluentBuilder {
         }
     }
     /// Access the GetTypedLinkFacetInformation as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetTypedLinkFacetInformationFluentBuilder {
             crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetTypedLinkFacetInformationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetTypedLinkFacetInformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetTypedLinkFacetInformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetTypedLinkFacetInformationFluentBuilder {
             crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationError>,
     > {
         self.customize_middleware().await
     }

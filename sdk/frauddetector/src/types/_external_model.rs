@@ -46,21 +46,15 @@ impl ExternalModel {
         self.invoke_model_endpoint_role_arn.as_deref()
     }
     /// <p>The input configuration.</p>
-    pub fn input_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelInputConfiguration> {
+    pub fn input_configuration(&self) -> ::std::option::Option<&crate::types::ModelInputConfiguration> {
         self.input_configuration.as_ref()
     }
     /// <p>The output configuration.</p>
-    pub fn output_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelOutputConfiguration> {
+    pub fn output_configuration(&self) -> ::std::option::Option<&crate::types::ModelOutputConfiguration> {
         self.output_configuration.as_ref()
     }
     /// <p>The Amazon Fraud Detector status for the external model endpoint</p>
-    pub fn model_endpoint_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelEndpointStatus> {
+    pub fn model_endpoint_status(&self) -> ::std::option::Option<&crate::types::ModelEndpointStatus> {
         self.model_endpoint_status.as_ref()
     }
     /// <p>Timestamp of when the model was last updated.</p>
@@ -85,9 +79,7 @@ impl ExternalModel {
 
 /// A builder for [`ExternalModel`](crate::types::ExternalModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExternalModelBuilder {
     pub(crate) model_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) model_source: ::std::option::Option<crate::types::ModelSource>,
@@ -101,18 +93,12 @@ pub struct ExternalModelBuilder {
 }
 impl ExternalModelBuilder {
     /// <p>The Amazon SageMaker model endpoints.</p>
-    pub fn model_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon SageMaker model endpoints.</p>
-    pub fn set_model_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_endpoint = input;
         self
     }
@@ -126,10 +112,7 @@ impl ExternalModelBuilder {
         self
     }
     /// <p>The source of the model.</p>
-    pub fn set_model_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelSource>,
-    ) -> Self {
+    pub fn set_model_source(mut self, input: ::std::option::Option<crate::types::ModelSource>) -> Self {
         self.model_source = input;
         self
     }
@@ -138,25 +121,17 @@ impl ExternalModelBuilder {
         &self.model_source
     }
     /// <p>The role used to invoke the model. </p>
-    pub fn invoke_model_endpoint_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invoke_model_endpoint_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invoke_model_endpoint_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The role used to invoke the model. </p>
-    pub fn set_invoke_model_endpoint_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invoke_model_endpoint_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invoke_model_endpoint_role_arn = input;
         self
     }
     /// <p>The role used to invoke the model. </p>
-    pub fn get_invoke_model_endpoint_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_invoke_model_endpoint_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.invoke_model_endpoint_role_arn
     }
     /// <p>The input configuration.</p>
@@ -165,17 +140,12 @@ impl ExternalModelBuilder {
         self
     }
     /// <p>The input configuration.</p>
-    pub fn set_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelInputConfiguration>,
-    ) -> Self {
+    pub fn set_input_configuration(mut self, input: ::std::option::Option<crate::types::ModelInputConfiguration>) -> Self {
         self.input_configuration = input;
         self
     }
     /// <p>The input configuration.</p>
-    pub fn get_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelInputConfiguration> {
+    pub fn get_input_configuration(&self) -> &::std::option::Option<crate::types::ModelInputConfiguration> {
         &self.input_configuration
     }
     /// <p>The output configuration.</p>
@@ -184,17 +154,12 @@ impl ExternalModelBuilder {
         self
     }
     /// <p>The output configuration.</p>
-    pub fn set_output_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelOutputConfiguration>,
-    ) -> Self {
+    pub fn set_output_configuration(mut self, input: ::std::option::Option<crate::types::ModelOutputConfiguration>) -> Self {
         self.output_configuration = input;
         self
     }
     /// <p>The output configuration.</p>
-    pub fn get_output_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelOutputConfiguration> {
+    pub fn get_output_configuration(&self) -> &::std::option::Option<crate::types::ModelOutputConfiguration> {
         &self.output_configuration
     }
     /// <p>The Amazon Fraud Detector status for the external model endpoint</p>
@@ -203,32 +168,21 @@ impl ExternalModelBuilder {
         self
     }
     /// <p>The Amazon Fraud Detector status for the external model endpoint</p>
-    pub fn set_model_endpoint_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelEndpointStatus>,
-    ) -> Self {
+    pub fn set_model_endpoint_status(mut self, input: ::std::option::Option<crate::types::ModelEndpointStatus>) -> Self {
         self.model_endpoint_status = input;
         self
     }
     /// <p>The Amazon Fraud Detector status for the external model endpoint</p>
-    pub fn get_model_endpoint_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelEndpointStatus> {
+    pub fn get_model_endpoint_status(&self) -> &::std::option::Option<crate::types::ModelEndpointStatus> {
         &self.model_endpoint_status
     }
     /// <p>Timestamp of when the model was last updated.</p>
-    pub fn last_updated_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of when the model was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_time = input;
         self
     }

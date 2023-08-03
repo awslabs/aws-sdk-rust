@@ -5,8 +5,7 @@
 pub struct GetManagedPrefixListAssociationsOutput {
     /// <p>Information about the associations.</p>
     #[doc(hidden)]
-    pub prefix_list_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>>,
+    pub prefix_list_associations: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetManagedPrefixListAssociationsOutput {
 }
 impl GetManagedPrefixListAssociationsOutput {
     /// <p>Information about the associations.</p>
-    pub fn prefix_list_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PrefixListAssociation]> {
+    pub fn prefix_list_associations(&self) -> ::std::option::Option<&[crate::types::PrefixListAssociation]> {
         self.prefix_list_associations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetManagedPrefixListAssociationsOutpu
 }
 impl GetManagedPrefixListAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetManagedPrefixListAssociationsOutput`](crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsOutput).
-    pub fn builder() -> crate::operation::get_managed_prefix_list_associations::builders::GetManagedPrefixListAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_managed_prefix_list_associations::builders::GetManagedPrefixListAssociationsOutputBuilder {
         crate::operation::get_managed_prefix_list_associations::builders::GetManagedPrefixListAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetManagedPrefixListAssociationsOutput`](crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetManagedPrefixListAssociationsOutputBuilder {
-    pub(crate) prefix_list_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>>,
+    pub(crate) prefix_list_associations: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetManagedPrefixListAssociationsOutputBuilder {
         self
     }
     /// <p>Information about the associations.</p>
-    pub fn set_prefix_list_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>>,
-    ) -> Self {
+    pub fn set_prefix_list_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>>) -> Self {
         self.prefix_list_associations = input;
         self
     }
     /// <p>Information about the associations.</p>
-    pub fn get_prefix_list_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>> {
+    pub fn get_prefix_list_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>> {
         &self.prefix_list_associations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,12 +86,10 @@ impl GetManagedPrefixListAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetManagedPrefixListAssociationsOutput`](crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsOutput).
-    pub fn build(self) -> crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsOutput{
+    pub fn build(self) -> crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsOutput {
         crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsOutput {
-            prefix_list_associations: self.prefix_list_associations
-            ,
-            next_token: self.next_token
-            ,
+            prefix_list_associations: self.prefix_list_associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

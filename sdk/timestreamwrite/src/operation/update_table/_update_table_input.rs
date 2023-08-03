@@ -14,8 +14,7 @@ pub struct UpdateTableInput {
     pub retention_properties: ::std::option::Option<crate::types::RetentionProperties>,
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     #[doc(hidden)]
-    pub magnetic_store_write_properties:
-        ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
+    pub magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
     /// <p> The schema of the table. </p>
     #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
@@ -30,15 +29,11 @@ impl UpdateTableInput {
         self.table_name.as_deref()
     }
     /// <p>The retention duration of the memory store and the magnetic store.</p>
-    pub fn retention_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetentionProperties> {
+    pub fn retention_properties(&self) -> ::std::option::Option<&crate::types::RetentionProperties> {
         self.retention_properties.as_ref()
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn magnetic_store_write_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MagneticStoreWriteProperties> {
+    pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<&crate::types::MagneticStoreWriteProperties> {
         self.magnetic_store_write_properties.as_ref()
     }
     /// <p> The schema of the table. </p>
@@ -55,31 +50,22 @@ impl UpdateTableInput {
 
 /// A builder for [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTableInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) retention_properties: ::std::option::Option<crate::types::RetentionProperties>,
-    pub(crate) magnetic_store_write_properties:
-        ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
+    pub(crate) magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
     pub(crate) schema: ::std::option::Option<crate::types::Schema>,
 }
 impl UpdateTableInputBuilder {
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Timestream database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -107,39 +93,26 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>The retention duration of the memory store and the magnetic store.</p>
-    pub fn set_retention_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionProperties>,
-    ) -> Self {
+    pub fn set_retention_properties(mut self, input: ::std::option::Option<crate::types::RetentionProperties>) -> Self {
         self.retention_properties = input;
         self
     }
     /// <p>The retention duration of the memory store and the magnetic store.</p>
-    pub fn get_retention_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionProperties> {
+    pub fn get_retention_properties(&self) -> &::std::option::Option<crate::types::RetentionProperties> {
         &self.retention_properties
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn magnetic_store_write_properties(
-        mut self,
-        input: crate::types::MagneticStoreWriteProperties,
-    ) -> Self {
+    pub fn magnetic_store_write_properties(mut self, input: crate::types::MagneticStoreWriteProperties) -> Self {
         self.magnetic_store_write_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn set_magnetic_store_write_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
-    ) -> Self {
+    pub fn set_magnetic_store_write_properties(mut self, input: ::std::option::Option<crate::types::MagneticStoreWriteProperties>) -> Self {
         self.magnetic_store_write_properties = input;
         self
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn get_magnetic_store_write_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
+    pub fn get_magnetic_store_write_properties(&self) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
         &self.magnetic_store_write_properties
     }
     /// <p> The schema of the table. </p>
@@ -157,12 +130,7 @@ impl UpdateTableInputBuilder {
         &self.schema
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_table::UpdateTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
             database_name: self.database_name,
             table_name: self.table_name,

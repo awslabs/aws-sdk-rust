@@ -34,9 +34,7 @@ impl CaptionDescription {
         self.custom_language_code.as_deref()
     }
     /// Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds to one output captions track. Depending on your output captions format, one tab might correspond to a set of output captions tracks. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
-    pub fn destination_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CaptionDestinationSettings> {
+    pub fn destination_settings(&self) -> ::std::option::Option<&crate::types::CaptionDestinationSettings> {
         self.destination_settings.as_ref()
     }
     /// Specify the language of this captions output track. For most captions output formats, the encoder puts this language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information to choose the font language for rendering the captions text.
@@ -57,14 +55,11 @@ impl CaptionDescription {
 
 /// A builder for [`CaptionDescription`](crate::types::CaptionDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptionDescriptionBuilder {
     pub(crate) caption_selector_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_language_code: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_settings:
-        ::std::option::Option<crate::types::CaptionDestinationSettings>,
+    pub(crate) destination_settings: ::std::option::Option<crate::types::CaptionDestinationSettings>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) language_description: ::std::option::Option<::std::string::String>,
 }
@@ -72,20 +67,14 @@ impl CaptionDescriptionBuilder {
     /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <n>
     /// ", which denotes that the Nth Caption Selector will be used from each input.
     /// </n>
-    pub fn caption_selector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caption_selector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caption_selector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <n>
     /// ", which denotes that the Nth Caption Selector will be used from each input.
     /// </n>
-    pub fn set_caption_selector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caption_selector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caption_selector_name = input;
         self
     }
@@ -96,18 +85,12 @@ impl CaptionDescriptionBuilder {
         &self.caption_selector_name
     }
     /// Specify the language for this captions output track. For most captions output formats, the encoder puts this language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information when automatically selecting the font script for rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
-    pub fn custom_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// Specify the language for this captions output track. For most captions output formats, the encoder puts this language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information when automatically selecting the font script for rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
-    pub fn set_custom_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_language_code = input;
         self
     }
@@ -121,17 +104,12 @@ impl CaptionDescriptionBuilder {
         self
     }
     /// Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds to one output captions track. Depending on your output captions format, one tab might correspond to a set of output captions tracks. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
-    pub fn set_destination_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptionDestinationSettings>,
-    ) -> Self {
+    pub fn set_destination_settings(mut self, input: ::std::option::Option<crate::types::CaptionDestinationSettings>) -> Self {
         self.destination_settings = input;
         self
     }
     /// Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds to one output captions track. Depending on your output captions format, one tab might correspond to a set of output captions tracks. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
-    pub fn get_destination_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::CaptionDestinationSettings> {
+    pub fn get_destination_settings(&self) -> &::std::option::Option<crate::types::CaptionDestinationSettings> {
         &self.destination_settings
     }
     /// Specify the language of this captions output track. For most captions output formats, the encoder puts this language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information to choose the font language for rendering the captions text.
@@ -140,10 +118,7 @@ impl CaptionDescriptionBuilder {
         self
     }
     /// Specify the language of this captions output track. For most captions output formats, the encoder puts this language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information to choose the font language for rendering the captions text.
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -152,18 +127,12 @@ impl CaptionDescriptionBuilder {
         &self.language_code
     }
     /// Specify a label for this set of output captions. For example, "English", "Director commentary", or "track_2". For streaming outputs, MediaConvert passes this information into destination manifests for display on the end-viewer's player device. For outputs in other output groups, the service ignores this setting.
-    pub fn language_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_description = ::std::option::Option::Some(input.into());
         self
     }
     /// Specify a label for this set of output captions. For example, "English", "Director commentary", or "track_2". For streaming outputs, MediaConvert passes this information into destination manifests for display on the end-viewer's player device. For outputs in other output groups, the service ignores this setting.
-    pub fn set_language_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_description = input;
         self
     }

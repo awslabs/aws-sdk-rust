@@ -71,9 +71,7 @@ impl CreateWorkerInput {
 
 /// A builder for [`CreateWorkerInput`](crate::operation::create_worker::CreateWorkerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkerInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -128,40 +126,26 @@ impl CreateWorkerInputBuilder {
         &self.fleet
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    pub fn additional_transient_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_transient_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_transient_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    pub fn set_additional_transient_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_transient_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_transient_properties = input;
         self
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    pub fn get_additional_transient_properties(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_additional_transient_properties(&self) -> &::std::option::Option<::std::string::String> {
         &self.additional_transient_properties
     }
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    pub fn additional_fixed_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_fixed_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_fixed_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    pub fn set_additional_fixed_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_fixed_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_fixed_properties = input;
         self
     }
@@ -175,10 +159,7 @@ impl CreateWorkerInputBuilder {
         self
     }
     /// Properties of the worker that are provided by the vendor FMS.
-    pub fn set_vendor_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::VendorProperties>,
-    ) -> Self {
+    pub fn set_vendor_properties(mut self, input: ::std::option::Option<crate::types::VendorProperties>) -> Self {
         self.vendor_properties = input;
         self
     }
@@ -192,10 +173,7 @@ impl CreateWorkerInputBuilder {
         self
     }
     /// Supported coordinates for worker position.
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionCoordinates>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::PositionCoordinates>) -> Self {
         self.position = input;
         self
     }
@@ -209,10 +187,7 @@ impl CreateWorkerInputBuilder {
         self
     }
     /// Worker orientation measured in units clockwise from north.
-    pub fn set_orientation(
-        mut self,
-        input: ::std::option::Option<crate::types::Orientation>,
-    ) -> Self {
+    pub fn set_orientation(mut self, input: ::std::option::Option<crate::types::Orientation>) -> Self {
         self.orientation = input;
         self
     }
@@ -221,12 +196,7 @@ impl CreateWorkerInputBuilder {
         &self.orientation
     }
     /// Consumes the builder and constructs a [`CreateWorkerInput`](crate::operation::create_worker::CreateWorkerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_worker::CreateWorkerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_worker::CreateWorkerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_worker::CreateWorkerInput {
             client_token: self.client_token,
             name: self.name,

@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchDeleteGeofenceOutput {
 }
 impl BatchDeleteGeofenceOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceOutput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceOutputBuilder {
-        crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceOutputBuilder {
+        crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteGeofenceOutput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteGeofenceOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteGeofenceError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteGeofenceError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteGeofenceOutputBuilder {
@@ -51,17 +46,12 @@ impl BatchDeleteGeofenceOutputBuilder {
         self
     }
     /// <p>Contains error details for each geofence that failed to delete.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteGeofenceError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteGeofenceError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Contains error details for each geofence that failed to delete.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteGeofenceError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteGeofenceError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

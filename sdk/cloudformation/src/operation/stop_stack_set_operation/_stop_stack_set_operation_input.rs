@@ -39,18 +39,14 @@ impl StopStackSetOperationInput {
 }
 impl StopStackSetOperationInput {
     /// Creates a new builder-style object to manufacture [`StopStackSetOperationInput`](crate::operation::stop_stack_set_operation::StopStackSetOperationInput).
-    pub fn builder(
-    ) -> crate::operation::stop_stack_set_operation::builders::StopStackSetOperationInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_stack_set_operation::builders::StopStackSetOperationInputBuilder {
         crate::operation::stop_stack_set_operation::builders::StopStackSetOperationInputBuilder::default()
     }
 }
 
 /// A builder for [`StopStackSetOperationInput`](crate::operation::stop_stack_set_operation::StopStackSetOperationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopStackSetOperationInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
@@ -58,18 +54,12 @@ pub struct StopStackSetOperationInputBuilder {
 }
 impl StopStackSetOperationInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -123,16 +113,12 @@ impl StopStackSetOperationInputBuilder {
     /// Consumes the builder and constructs a [`StopStackSetOperationInput`](crate::operation::stop_stack_set_operation::StopStackSetOperationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_stack_set_operation::StopStackSetOperationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_stack_set_operation::StopStackSetOperationInput {
-                stack_set_name: self.stack_set_name,
-                operation_id: self.operation_id,
-                call_as: self.call_as,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_stack_set_operation::StopStackSetOperationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_stack_set_operation::StopStackSetOperationInput {
+            stack_set_name: self.stack_set_name,
+            operation_id: self.operation_id,
+            call_as: self.call_as,
+        })
     }
 }

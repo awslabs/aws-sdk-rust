@@ -98,9 +98,7 @@ impl GetTargetGroupOutput {
 
 /// A builder for [`GetTargetGroupOutput`](crate::operation::get_target_group::GetTargetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTargetGroupOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -178,10 +176,7 @@ impl GetTargetGroupOutputBuilder {
         self
     }
     /// <p>The target group configuration.</p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupConfig>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<crate::types::TargetGroupConfig>) -> Self {
         self.config = input;
         self
     }
@@ -195,10 +190,7 @@ impl GetTargetGroupOutputBuilder {
         self
     }
     /// <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -212,10 +204,7 @@ impl GetTargetGroupOutputBuilder {
         self
     }
     /// <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -229,10 +218,7 @@ impl GetTargetGroupOutputBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetGroupStatus>) -> Self {
         self.status = input;
         self
     }
@@ -252,32 +238,21 @@ impl GetTargetGroupOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the service.</p>
-    pub fn set_service_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.service_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the service.</p>
-    pub fn get_service_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_arns
     }
     /// <p>The failure message.</p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure message.</p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }

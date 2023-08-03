@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`test_grid_projects(Option<Vec<TestGridProject>>)`](crate::operation::list_test_grid_projects::ListTestGridProjectsOutput::test_grid_projects): <p>The list of TestGridProjects, based on a <code>ListTestGridProjectsRequest</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_grid_projects::ListTestGridProjectsOutput::next_token): <p>Used for pagination. Pass into <code>ListTestGridProjects</code> to get more results in a paginated request.</p>
     /// - On failure, responds with [`SdkError<ListTestGridProjectsError>`](crate::operation::list_test_grid_projects::ListTestGridProjectsError)
-    pub fn list_test_grid_projects(
-        &self,
-    ) -> crate::operation::list_test_grid_projects::builders::ListTestGridProjectsFluentBuilder
-    {
-        crate::operation::list_test_grid_projects::builders::ListTestGridProjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_test_grid_projects(&self) -> crate::operation::list_test_grid_projects::builders::ListTestGridProjectsFluentBuilder {
+        crate::operation::list_test_grid_projects::builders::ListTestGridProjectsFluentBuilder::new(self.handle.clone())
     }
 }

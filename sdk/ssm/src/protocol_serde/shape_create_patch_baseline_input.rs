@@ -12,10 +12,7 @@ pub fn ser_create_patch_baseline_input(
     if let Some(var_3) = &input.global_filters {
         #[allow(unused_mut)]
         let mut object_4 = object.key("GlobalFilters").start_object();
-        crate::protocol_serde::shape_patch_filter_group::ser_patch_filter_group(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_patch_filter_group::ser_patch_filter_group(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.approval_rules {
@@ -34,14 +31,10 @@ pub fn ser_create_patch_baseline_input(
         array_8.finish();
     }
     if let Some(var_10) = &input.approved_patches_compliance_level {
-        object
-            .key("ApprovedPatchesComplianceLevel")
-            .string(var_10.as_str());
+        object.key("ApprovedPatchesComplianceLevel").string(var_10.as_str());
     }
     if let Some(var_11) = &input.approved_patches_enable_non_security {
-        object
-            .key("ApprovedPatchesEnableNonSecurity")
-            .boolean(*var_11);
+        object.key("ApprovedPatchesEnableNonSecurity").boolean(*var_11);
     }
     if let Some(var_12) = &input.rejected_patches {
         let mut array_13 = object.key("RejectedPatches").start_array();
@@ -64,10 +57,7 @@ pub fn ser_create_patch_baseline_input(
             {
                 #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_patch_source::ser_patch_source(
-                    &mut object_20,
-                    item_19,
-                )?;
+                crate::protocol_serde::shape_patch_source::ser_patch_source(&mut object_20, item_19)?;
                 object_20.finish();
             }
         }

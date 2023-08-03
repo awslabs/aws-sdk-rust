@@ -10,10 +10,7 @@ impl DeleteAttachmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_attachment::DeleteAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_attachment::DeleteAttachmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_attachment::DeleteAttachmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_attachment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteAttachmentFluentBuilder {
         }
     }
     /// Access the DeleteAttachment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_attachment::builders::DeleteAttachmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_attachment::builders::DeleteAttachmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteAttachmentFluentBuilder {
             crate::operation::delete_attachment::DeleteAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_attachment::DeleteAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_attachment::DeleteAttachmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteAttachmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_attachment::DeleteAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_attachment::DeleteAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_attachment::DeleteAttachmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_attachment::DeleteAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_attachment::DeleteAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_attachment::DeleteAttachmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteAttachmentFluentBuilder {
             crate::operation::delete_attachment::DeleteAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_attachment::DeleteAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_attachment::DeleteAttachmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the attachment to delete.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_id(input.into());
         self
     }
     /// <p>The ID of the attachment to delete.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_id(input);
         self
     }

@@ -58,17 +58,14 @@ impl OriginAccessControlList {
 
 /// A builder for [`OriginAccessControlList`](crate::types::OriginAccessControlList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginAccessControlListBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::OriginAccessControlSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::OriginAccessControlSummary>>,
 }
 impl OriginAccessControlListBuilder {
     /// <p>The value of the <code>Marker</code> field that was provided in the request.</p>
@@ -153,17 +150,12 @@ impl OriginAccessControlListBuilder {
         self
     }
     /// <p>Contains the origin access controls in the list.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OriginAccessControlSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OriginAccessControlSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Contains the origin access controls in the list.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginAccessControlSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginAccessControlSummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`OriginAccessControlList`](crate::types::OriginAccessControlList).

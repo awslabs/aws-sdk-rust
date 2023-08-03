@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeCacheClustersOutput {
 }
 impl DescribeCacheClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheClustersOutput`](crate::operation::describe_cache_clusters::DescribeCacheClustersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_cache_clusters::builders::DescribeCacheClustersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cache_clusters::builders::DescribeCacheClustersOutputBuilder {
         crate::operation::describe_cache_clusters::builders::DescribeCacheClustersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCacheClustersOutput`](crate::operation::describe_cache_clusters::DescribeCacheClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheClustersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cache_clusters: ::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>>,
@@ -73,17 +69,12 @@ impl DescribeCacheClustersOutputBuilder {
         self
     }
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-    pub fn set_cache_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>>,
-    ) -> Self {
+    pub fn set_cache_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>>) -> Self {
         self.cache_clusters = input;
         self
     }
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-    pub fn get_cache_clusters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>> {
+    pub fn get_cache_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>> {
         &self.cache_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

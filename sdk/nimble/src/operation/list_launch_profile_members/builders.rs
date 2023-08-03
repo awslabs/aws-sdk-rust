@@ -26,7 +26,7 @@ impl ListLaunchProfileMembersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLaunchProfileMembersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersInputBuilder,
+    inner: crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersInputBuilder,
 }
 impl ListLaunchProfileMembersFluentBuilder {
     /// Creates a new `ListLaunchProfileMembers`.
@@ -37,7 +37,7 @@ impl ListLaunchProfileMembersFluentBuilder {
         }
     }
     /// Access the ListLaunchProfileMembers as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListLaunchProfileMembersFluentBuilder {
             crate::operation::list_launch_profile_members::ListLaunchProfileMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_launch_profile_members::ListLaunchProfileMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_launch_profile_members::ListLaunchProfileMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListLaunchProfileMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListLaunchProfileMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_launch_profile_members::ListLaunchProfileMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_launch_profile_members::ListLaunchProfileMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_launch_profile_members::ListLaunchProfileMembersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListLaunchProfileMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_launch_profile_members::ListLaunchProfileMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_launch_profile_members::ListLaunchProfileMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_launch_profile_members::ListLaunchProfileMembersError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl ListLaunchProfileMembersFluentBuilder {
             crate::operation::list_launch_profile_members::ListLaunchProfileMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_launch_profile_members::ListLaunchProfileMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_launch_profile_members::ListLaunchProfileMembersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_launch_profile_members::paginator::ListLaunchProfileMembersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_launch_profile_members::paginator::ListLaunchProfileMembersPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_launch_profile_members::paginator::ListLaunchProfileMembersPaginator {
         crate::operation::list_launch_profile_members::paginator::ListLaunchProfileMembersPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_profile_id(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_profile_id(input);
         self
     }

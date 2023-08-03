@@ -37,9 +37,7 @@ impl ModifyDBSubnetGroupFluentBuilder {
         }
     }
     /// Access the ModifyDBSubnetGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ModifyDBSubnetGroupFluentBuilder {
             crate::operation::modify_db_subnet_group::ModifyDBSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ModifyDBSubnetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ModifyDBSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ModifyDBSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,29 +105,21 @@ impl ModifyDBSubnetGroupFluentBuilder {
             crate::operation::modify_db_subnet_group::ModifyDBSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
     /// <p>Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
     }
     /// <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
     /// <p>Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
@@ -149,18 +130,12 @@ impl ModifyDBSubnetGroupFluentBuilder {
         self.inner.get_db_subnet_group_name()
     }
     /// <p>The description for the subnet group.</p>
-    pub fn db_subnet_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_description(input.into());
         self
     }
     /// <p>The description for the subnet group.</p>
-    pub fn set_db_subnet_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_subnet_group_description(input);
         self
     }
@@ -178,10 +153,7 @@ impl ModifyDBSubnetGroupFluentBuilder {
         self
     }
     /// <p>The Amazon EC2 subnet IDs for the subnet group.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }

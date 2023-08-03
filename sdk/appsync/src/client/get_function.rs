@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetFunctionOutput`](crate::operation::get_function::GetFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::operation::get_function::GetFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<GetFunctionError>`](crate::operation::get_function::GetFunctionError)
-    pub fn get_function(
-        &self,
-    ) -> crate::operation::get_function::builders::GetFunctionFluentBuilder {
+    pub fn get_function(&self) -> crate::operation::get_function::builders::GetFunctionFluentBuilder {
         crate::operation::get_function::builders::GetFunctionFluentBuilder::new(self.handle.clone())
     }
 }

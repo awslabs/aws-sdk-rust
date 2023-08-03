@@ -12,8 +12,7 @@ pub struct AgentInfo {
     pub host_name: ::std::option::Option<::std::string::String>,
     /// <p>Network details about the host where the agent or collector resides.</p>
     #[doc(hidden)]
-    pub agent_network_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AgentNetworkInfo>>,
+    pub agent_network_info_list: ::std::option::Option<::std::vec::Vec<crate::types::AgentNetworkInfo>>,
     /// <p>The ID of the connector.</p>
     #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
@@ -46,9 +45,7 @@ impl AgentInfo {
         self.host_name.as_deref()
     }
     /// <p>Network details about the host where the agent or collector resides.</p>
-    pub fn agent_network_info_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AgentNetworkInfo]> {
+    pub fn agent_network_info_list(&self) -> ::std::option::Option<&[crate::types::AgentNetworkInfo]> {
         self.agent_network_info_list.as_deref()
     }
     /// <p>The ID of the connector.</p>
@@ -89,14 +86,11 @@ impl AgentInfo {
 
 /// A builder for [`AgentInfo`](crate::types::AgentInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentInfoBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) host_name: ::std::option::Option<::std::string::String>,
-    pub(crate) agent_network_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AgentNetworkInfo>>,
+    pub(crate) agent_network_info_list: ::std::option::Option<::std::vec::Vec<crate::types::AgentNetworkInfo>>,
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) health: ::std::option::Option<crate::types::AgentStatus>,
@@ -146,17 +140,12 @@ impl AgentInfoBuilder {
         self
     }
     /// <p>Network details about the host where the agent or collector resides.</p>
-    pub fn set_agent_network_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentNetworkInfo>>,
-    ) -> Self {
+    pub fn set_agent_network_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentNetworkInfo>>) -> Self {
         self.agent_network_info_list = input;
         self
     }
     /// <p>Network details about the host where the agent or collector resides.</p>
-    pub fn get_agent_network_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentNetworkInfo>> {
+    pub fn get_agent_network_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentNetworkInfo>> {
         &self.agent_network_info_list
     }
     /// <p>The ID of the connector.</p>
@@ -202,18 +191,12 @@ impl AgentInfoBuilder {
         &self.health
     }
     /// <p>Time since agent health was reported.</p>
-    pub fn last_health_ping_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_health_ping_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_health_ping_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Time since agent health was reported.</p>
-    pub fn set_last_health_ping_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_health_ping_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_health_ping_time = input;
         self
     }
@@ -222,18 +205,12 @@ impl AgentInfoBuilder {
         &self.last_health_ping_time
     }
     /// <p>Status of the collection process for an agent.</p>
-    pub fn collection_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Status of the collection process for an agent.</p>
-    pub fn set_collection_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_status = input;
         self
     }
@@ -256,18 +233,12 @@ impl AgentInfoBuilder {
         &self.agent_type
     }
     /// <p>Agent's first registration timestamp in UTC.</p>
-    pub fn registered_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Agent's first registration timestamp in UTC.</p>
-    pub fn set_registered_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_time = input;
         self
     }

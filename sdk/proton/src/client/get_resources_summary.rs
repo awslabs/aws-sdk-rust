@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetResourcesSummaryOutput`](crate::operation::get_resources_summary::GetResourcesSummaryOutput) with field(s):
     ///   - [`counts(Option<CountsSummary>)`](crate::operation::get_resources_summary::GetResourcesSummaryOutput::counts): <p>Summary counts of each Proton resource type.</p>
     /// - On failure, responds with [`SdkError<GetResourcesSummaryError>`](crate::operation::get_resources_summary::GetResourcesSummaryError)
-    pub fn get_resources_summary(
-        &self,
-    ) -> crate::operation::get_resources_summary::builders::GetResourcesSummaryFluentBuilder {
-        crate::operation::get_resources_summary::builders::GetResourcesSummaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resources_summary(&self) -> crate::operation::get_resources_summary::builders::GetResourcesSummaryFluentBuilder {
+        crate::operation::get_resources_summary::builders::GetResourcesSummaryFluentBuilder::new(self.handle.clone())
     }
 }

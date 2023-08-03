@@ -10,10 +10,7 @@ impl PutRetentionPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_retention_policy::PutRetentionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_retention_policy::PutRetentionPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_retention_policy::PutRetentionPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_retention_policy();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl PutRetentionPolicyFluentBuilder {
         }
     }
     /// Access the PutRetentionPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_retention_policy::builders::PutRetentionPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_retention_policy::builders::PutRetentionPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl PutRetentionPolicyFluentBuilder {
             crate::operation::put_retention_policy::PutRetentionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_retention_policy::PutRetentionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_retention_policy::PutRetentionPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl PutRetentionPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl PutRetentionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_retention_policy::PutRetentionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_retention_policy::PutRetentionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_retention_policy::PutRetentionPolicyError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl PutRetentionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_retention_policy::PutRetentionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_retention_policy::PutRetentionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_retention_policy::PutRetentionPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl PutRetentionPolicyFluentBuilder {
             crate::operation::put_retention_policy::PutRetentionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_retention_policy::PutRetentionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_retention_policy::PutRetentionPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }

@@ -51,9 +51,7 @@ impl VpcIpv6CidrBlockAssociation {
 
 /// A builder for [`VpcIpv6CidrBlockAssociation`](crate::types::VpcIpv6CidrBlockAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcIpv6CidrBlockAssociationBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_cidr_block: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct VpcIpv6CidrBlockAssociationBuilder {
 }
 impl VpcIpv6CidrBlockAssociationBuilder {
     /// <p>The association ID for the IPv6 CIDR block.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID for the IPv6 CIDR block.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -83,18 +75,12 @@ impl VpcIpv6CidrBlockAssociationBuilder {
         &self.association_id
     }
     /// <p>The IPv6 CIDR block.</p>
-    pub fn ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR block.</p>
-    pub fn set_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_cidr_block = input;
         self
     }
@@ -108,32 +94,21 @@ impl VpcIpv6CidrBlockAssociationBuilder {
         self
     }
     /// <p>Information about the state of the CIDR block.</p>
-    pub fn set_ipv6_cidr_block_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcCidrBlockState>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block_state(mut self, input: ::std::option::Option<crate::types::VpcCidrBlockState>) -> Self {
         self.ipv6_cidr_block_state = input;
         self
     }
     /// <p>Information about the state of the CIDR block.</p>
-    pub fn get_ipv6_cidr_block_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcCidrBlockState> {
+    pub fn get_ipv6_cidr_block_state(&self) -> &::std::option::Option<crate::types::VpcCidrBlockState> {
         &self.ipv6_cidr_block_state
     }
     /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.</p>
-    pub fn network_border_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_border_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.</p>
-    pub fn set_network_border_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_border_group = input;
         self
     }

@@ -8,8 +8,7 @@ pub struct ListCreatedArtifactsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
     #[doc(hidden)]
-    pub created_artifact_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>>,
+    pub created_artifact_list: ::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>>,
     _request_id: Option<String>,
 }
 impl ListCreatedArtifactsOutput {
@@ -29,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListCreatedArtifactsOutput {
 }
 impl ListCreatedArtifactsOutput {
     /// Creates a new builder-style object to manufacture [`ListCreatedArtifactsOutput`](crate::operation::list_created_artifacts::ListCreatedArtifactsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_created_artifacts::builders::ListCreatedArtifactsOutputBuilder {
+    pub fn builder() -> crate::operation::list_created_artifacts::builders::ListCreatedArtifactsOutputBuilder {
         crate::operation::list_created_artifacts::builders::ListCreatedArtifactsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCreatedArtifactsOutput`](crate::operation::list_created_artifacts::ListCreatedArtifactsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCreatedArtifactsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) created_artifact_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>>,
+    pub(crate) created_artifact_list: ::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>>,
     _request_id: Option<String>,
 }
 impl ListCreatedArtifactsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListCreatedArtifactsOutputBuilder {
         self
     }
     /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
-    pub fn set_created_artifact_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>>,
-    ) -> Self {
+    pub fn set_created_artifact_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>>) -> Self {
         self.created_artifact_list = input;
         self
     }
     /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
-    pub fn get_created_artifact_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>> {
+    pub fn get_created_artifact_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>> {
         &self.created_artifact_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

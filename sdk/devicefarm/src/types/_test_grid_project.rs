@@ -51,9 +51,7 @@ impl TestGridProject {
 
 /// A builder for [`TestGridProject`](crate::types::TestGridProject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestGridProjectBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl TestGridProjectBuilder {
         self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridVpcConfig>,
-    ) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::TestGridVpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
@@ -127,10 +122,7 @@ impl TestGridProjectBuilder {
         self
     }
     /// <p>When the project was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }

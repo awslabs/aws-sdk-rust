@@ -10,10 +10,7 @@ impl CreateTrustAnchorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_trust_anchor::CreateTrustAnchorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust_anchor::CreateTrustAnchorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust_anchor::CreateTrustAnchorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_trust_anchor();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateTrustAnchorFluentBuilder {
         }
     }
     /// Access the CreateTrustAnchor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_trust_anchor::builders::CreateTrustAnchorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_trust_anchor::builders::CreateTrustAnchorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateTrustAnchorFluentBuilder {
             crate::operation::create_trust_anchor::CreateTrustAnchor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust_anchor::CreateTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust_anchor::CreateTrustAnchorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateTrustAnchorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateTrustAnchorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_trust_anchor::CreateTrustAnchorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust_anchor::CreateTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust_anchor::CreateTrustAnchorError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateTrustAnchorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_trust_anchor::CreateTrustAnchorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust_anchor::CreateTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust_anchor::CreateTrustAnchorError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateTrustAnchorFluentBuilder {
             crate::operation::create_trust_anchor::CreateTrustAnchor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust_anchor::CreateTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust_anchor::CreateTrustAnchorError>,
     > {
         self.customize_middleware().await
     }
@@ -175,10 +159,7 @@ impl CreateTrustAnchorFluentBuilder {
         self
     }
     /// <p>The tags to attach to the trust anchor.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -196,17 +177,12 @@ impl CreateTrustAnchorFluentBuilder {
         self
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub fn set_notification_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>,
-    ) -> Self {
+    pub fn set_notification_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>) -> Self {
         self.inner = self.inner.set_notification_settings(input);
         self
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub fn get_notification_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>> {
+    pub fn get_notification_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>> {
         self.inner.get_notification_settings()
     }
 }

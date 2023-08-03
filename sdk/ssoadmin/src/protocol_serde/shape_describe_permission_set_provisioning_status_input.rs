@@ -7,9 +7,7 @@ pub fn ser_describe_permission_set_provisioning_status_input(
         object.key("InstanceArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.provision_permission_set_request_id {
-        object
-            .key("ProvisionPermissionSetRequestId")
-            .string(var_2.as_str());
+        object.key("ProvisionPermissionSetRequestId").string(var_2.as_str());
     }
     Ok(())
 }

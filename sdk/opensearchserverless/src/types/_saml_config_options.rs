@@ -44,9 +44,7 @@ impl SamlConfigOptions {
 
 /// A builder for [`SamlConfigOptions`](crate::types::SamlConfigOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SamlConfigOptionsBuilder {
     pub(crate) metadata: ::std::option::Option<::std::string::String>,
     pub(crate) user_attribute: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl SamlConfigOptionsBuilder {
         &self.metadata
     }
     /// <p>A user attribute for this SAML integration.</p>
-    pub fn user_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user attribute for this SAML integration.</p>
-    pub fn set_user_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_attribute = input;
         self
     }
@@ -89,18 +81,12 @@ impl SamlConfigOptionsBuilder {
         &self.user_attribute
     }
     /// <p>The group attribute for this SAML integration.</p>
-    pub fn group_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group attribute for this SAML integration.</p>
-    pub fn set_group_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_attribute = input;
         self
     }

@@ -10,10 +10,7 @@ impl GetFileUploadUrlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_file_upload_url::GetFileUploadUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_file_upload_url::GetFileUploadURLError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_file_upload_url::GetFileUploadURLError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_file_upload_url();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetFileUploadURLFluentBuilder {
         }
     }
     /// Access the GetFileUploadURL as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_file_upload_url::builders::GetFileUploadUrlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_file_upload_url::builders::GetFileUploadUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetFileUploadURLFluentBuilder {
             crate::operation::get_file_upload_url::GetFileUploadURL,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_file_upload_url::GetFileUploadURLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_file_upload_url::GetFileUploadURLError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetFileUploadURLFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetFileUploadURLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_file_upload_url::GetFileUploadUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_file_upload_url::GetFileUploadURLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_file_upload_url::GetFileUploadURLError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetFileUploadURLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_file_upload_url::GetFileUploadUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_file_upload_url::GetFileUploadURLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_file_upload_url::GetFileUploadURLError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetFileUploadURLFluentBuilder {
             crate::operation::get_file_upload_url::GetFileUploadURL,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_file_upload_url::GetFileUploadURLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_file_upload_url::GetFileUploadURLError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assignment_id(input.into());
         self
     }
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assignment_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl GetFileUploadURLFluentBuilder {
         self.inner.get_assignment_id()
     }
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
-    pub fn question_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.question_identifier(input.into());
         self
     }
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
-    pub fn set_question_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_question_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_question_identifier(input);
         self
     }

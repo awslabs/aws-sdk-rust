@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListManagedDataIdentifiersOutput {
 }
 impl ListManagedDataIdentifiersOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedDataIdentifiersOutput`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput).
-    pub fn builder() -> crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersOutputBuilder{
+    pub fn builder() -> crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersOutputBuilder {
         crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedDataIdentifiersOutput`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedDataIdentifiersOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedDataIdentifierSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ManagedDataIdentifierSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListManagedDataIdentifiersOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each managed data identifier.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedDataIdentifierSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedDataIdentifierSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>An array of objects, one for each managed data identifier.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedDataIdentifierSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedDataIdentifierSummary>> {
         &self.items
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -94,9 +86,7 @@ impl ListManagedDataIdentifiersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListManagedDataIdentifiersOutput`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput {
+    pub fn build(self) -> crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput {
         crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput {
             items: self.items,
             next_token: self.next_token,

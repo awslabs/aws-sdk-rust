@@ -35,9 +35,7 @@ impl ListExperimentsOutput {
 
 /// A builder for [`ListExperimentsOutput`](crate::operation::list_experiments::ListExperimentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExperimentsOutputBuilder {
     pub(crate) experiments: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListExperimentsOutputBuilder {
         self
     }
     /// <p>The experiments.</p>
-    pub fn set_experiments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>>,
-    ) -> Self {
+    pub fn set_experiments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>>) -> Self {
         self.experiments = input;
         self
     }
     /// <p>The experiments.</p>
-    pub fn get_experiments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>> {
+    pub fn get_experiments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>> {
         &self.experiments
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

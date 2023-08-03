@@ -22,9 +22,7 @@ impl StartFleetInput {
 
 /// A builder for [`StartFleetInput`](crate::operation::start_fleet::StartFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFleetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StartFleetInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartFleetInput`](crate::operation::start_fleet::StartFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_fleet::StartFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_fleet::StartFleetInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_fleet::StartFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_fleet::StartFleetInput { name: self.name })
     }
 }

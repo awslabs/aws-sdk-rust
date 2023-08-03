@@ -30,9 +30,7 @@ impl PriceWithCurrency {
 
 /// A builder for [`PriceWithCurrency`](crate::types::PriceWithCurrency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PriceWithCurrencyBuilder {
     pub(crate) price: ::std::option::Option<f64>,
     pub(crate) currency: ::std::option::Option<::std::string::String>,

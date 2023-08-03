@@ -26,7 +26,7 @@ impl EnableClientAuthenticationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableClientAuthenticationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::enable_client_authentication::builders::EnableClientAuthenticationInputBuilder,
+    inner: crate::operation::enable_client_authentication::builders::EnableClientAuthenticationInputBuilder,
 }
 impl EnableClientAuthenticationFluentBuilder {
     /// Creates a new `EnableClientAuthentication`.
@@ -37,7 +37,7 @@ impl EnableClientAuthenticationFluentBuilder {
         }
     }
     /// Access the EnableClientAuthentication as a reference.
-    pub fn as_input(&self) -> &crate::operation::enable_client_authentication::builders::EnableClientAuthenticationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::enable_client_authentication::builders::EnableClientAuthenticationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl EnableClientAuthenticationFluentBuilder {
             crate::operation::enable_client_authentication::EnableClientAuthentication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_client_authentication::EnableClientAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_client_authentication::EnableClientAuthenticationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl EnableClientAuthenticationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl EnableClientAuthenticationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_client_authentication::EnableClientAuthenticationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_client_authentication::EnableClientAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_client_authentication::EnableClientAuthenticationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl EnableClientAuthenticationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_client_authentication::EnableClientAuthenticationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_client_authentication::EnableClientAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_client_authentication::EnableClientAuthenticationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl EnableClientAuthenticationFluentBuilder {
             crate::operation::enable_client_authentication::EnableClientAuthentication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_client_authentication::EnableClientAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_client_authentication::EnableClientAuthenticationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl EnableClientAuthenticationFluentBuilder {
         self
     }
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAuthenticationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

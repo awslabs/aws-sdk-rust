@@ -11,8 +11,7 @@ pub struct ListMedicalTranscriptionJobsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides a summary of information about each result.</p>
     #[doc(hidden)]
-    pub medical_transcription_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>>,
+    pub medical_transcription_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListMedicalTranscriptionJobsOutput {
@@ -25,9 +24,7 @@ impl ListMedicalTranscriptionJobsOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn medical_transcription_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MedicalTranscriptionJobSummary]> {
+    pub fn medical_transcription_job_summaries(&self) -> ::std::option::Option<&[crate::types::MedicalTranscriptionJobSummary]> {
         self.medical_transcription_job_summaries.as_deref()
     }
 }
@@ -38,21 +35,18 @@ impl ::aws_http::request_id::RequestId for ListMedicalTranscriptionJobsOutput {
 }
 impl ListMedicalTranscriptionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListMedicalTranscriptionJobsOutput`](crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput).
-    pub fn builder() -> crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsOutputBuilder {
         crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMedicalTranscriptionJobsOutput`](crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMedicalTranscriptionJobsOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) medical_transcription_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>>,
+    pub(crate) medical_transcription_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListMedicalTranscriptionJobsOutputBuilder {
@@ -62,10 +56,7 @@ impl ListMedicalTranscriptionJobsOutputBuilder {
         self
     }
     /// <p>Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -92,10 +83,7 @@ impl ListMedicalTranscriptionJobsOutputBuilder {
     /// To override the contents of this collection use [`set_medical_transcription_job_summaries`](Self::set_medical_transcription_job_summaries).
     ///
     /// <p>Provides a summary of information about each result.</p>
-    pub fn medical_transcription_job_summaries(
-        mut self,
-        input: crate::types::MedicalTranscriptionJobSummary,
-    ) -> Self {
+    pub fn medical_transcription_job_summaries(mut self, input: crate::types::MedicalTranscriptionJobSummary) -> Self {
         let mut v = self.medical_transcription_job_summaries.unwrap_or_default();
         v.push(input);
         self.medical_transcription_job_summaries = ::std::option::Option::Some(v);
@@ -110,9 +98,7 @@ impl ListMedicalTranscriptionJobsOutputBuilder {
         self
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn get_medical_transcription_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>> {
+    pub fn get_medical_transcription_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>> {
         &self.medical_transcription_job_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -125,9 +111,7 @@ impl ListMedicalTranscriptionJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMedicalTranscriptionJobsOutput`](crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput {
+    pub fn build(self) -> crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput {
         crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput {
             status: self.status,
             next_token: self.next_token,

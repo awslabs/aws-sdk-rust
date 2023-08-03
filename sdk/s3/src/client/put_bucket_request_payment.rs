@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::put_bucket_request_payment::builders::PutBucketRequestPaymentFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::put_bucket_request_payment::builders::PutBucketRequestPaymentFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`PutBucketRequestPaymentOutput`](crate::operation::put_bucket_request_payment::PutBucketRequestPaymentOutput)
     /// - On failure, responds with [`SdkError<PutBucketRequestPaymentError>`](crate::operation::put_bucket_request_payment::PutBucketRequestPaymentError)
-    pub fn put_bucket_request_payment(
-        &self,
-    ) -> crate::operation::put_bucket_request_payment::builders::PutBucketRequestPaymentFluentBuilder
-    {
+    pub fn put_bucket_request_payment(&self) -> crate::operation::put_bucket_request_payment::builders::PutBucketRequestPaymentFluentBuilder {
         crate::operation::put_bucket_request_payment::builders::PutBucketRequestPaymentFluentBuilder::new(self.handle.clone())
     }
 }

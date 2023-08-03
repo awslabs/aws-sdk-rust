@@ -49,13 +49,10 @@ impl SearchFoldersOutput {
 
 /// A builder for [`SearchFoldersOutput`](crate::operation::search_folders::SearchFoldersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchFoldersOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
-    pub(crate) folder_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FolderSummary>>,
+    pub(crate) folder_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FolderSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -87,17 +84,12 @@ impl SearchFoldersOutputBuilder {
         self
     }
     /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
-    pub fn set_folder_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FolderSummary>>,
-    ) -> Self {
+    pub fn set_folder_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FolderSummary>>) -> Self {
         self.folder_summary_list = input;
         self
     }
     /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
-    pub fn get_folder_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderSummary>> {
+    pub fn get_folder_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderSummary>> {
         &self.folder_summary_list
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

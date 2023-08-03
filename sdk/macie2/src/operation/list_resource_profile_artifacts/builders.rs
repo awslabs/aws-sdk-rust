@@ -26,7 +26,7 @@ impl ListResourceProfileArtifactsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceProfileArtifactsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsInputBuilder,
+    inner: crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsInputBuilder,
 }
 impl ListResourceProfileArtifactsFluentBuilder {
     /// Creates a new `ListResourceProfileArtifacts`.
@@ -37,7 +37,7 @@ impl ListResourceProfileArtifactsFluentBuilder {
         }
     }
     /// Access the ListResourceProfileArtifacts as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListResourceProfileArtifactsFluentBuilder {
             crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifacts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListResourceProfileArtifactsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListResourceProfileArtifactsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListResourceProfileArtifactsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListResourceProfileArtifactsFluentBuilder {
             crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifacts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resource_profile_artifacts::paginator::ListResourceProfileArtifactsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_resource_profile_artifacts::paginator::ListResourceProfileArtifactsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_resource_profile_artifacts::paginator::ListResourceProfileArtifactsPaginator {
         crate::operation::list_resource_profile_artifacts::paginator::ListResourceProfileArtifactsPaginator::new(self.handle, self.inner)
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>

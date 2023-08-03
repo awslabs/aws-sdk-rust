@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`deployment_arn(Option<String>)`](crate::operation::create_deployment::CreateDeploymentOutput::deployment_arn): The ARN of the deployment.
     ///   - [`deployment_id(Option<String>)`](crate::operation::create_deployment::CreateDeploymentOutput::deployment_id): The ID of the deployment.
     /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::operation::create_deployment::CreateDeploymentError)
-    pub fn create_deployment(
-        &self,
-    ) -> crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder {
-        crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_deployment(&self) -> crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder {
+        crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

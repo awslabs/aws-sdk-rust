@@ -58,16 +58,14 @@ impl GetProvisionedProductOutputsInput {
 }
 impl GetProvisionedProductOutputsInput {
     /// Creates a new builder-style object to manufacture [`GetProvisionedProductOutputsInput`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput).
-    pub fn builder() -> crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsInputBuilder{
+    pub fn builder() -> crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsInputBuilder {
         crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetProvisionedProductOutputsInput`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProvisionedProductOutputsInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,
@@ -82,10 +80,7 @@ impl GetProvisionedProductOutputsInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -94,10 +89,7 @@ impl GetProvisionedProductOutputsInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -110,18 +102,12 @@ impl GetProvisionedProductOutputsInputBuilder {
         &self.accept_language
     }
     /// <p>The identifier of the provisioned product that you want the outputs from.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioned product that you want the outputs from.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_id = input;
         self
     }
@@ -130,18 +116,12 @@ impl GetProvisionedProductOutputsInputBuilder {
         &self.provisioned_product_id
     }
     /// <p>The name of the provisioned product that you want the outputs from.</p>
-    pub fn provisioned_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioned product that you want the outputs from.</p>
-    pub fn set_provisioned_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_name = input;
         self
     }
@@ -161,17 +141,12 @@ impl GetProvisionedProductOutputsInputBuilder {
         self
     }
     /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
-    pub fn set_output_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_output_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.output_keys = input;
         self
     }
     /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
-    pub fn get_output_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_output_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.output_keys
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -209,15 +184,13 @@ impl GetProvisionedProductOutputsInputBuilder {
         crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput {
-                accept_language: self.accept_language,
-                provisioned_product_id: self.provisioned_product_id,
-                provisioned_product_name: self.provisioned_product_name,
-                output_keys: self.output_keys,
-                page_size: self.page_size,
-                page_token: self.page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput {
+            accept_language: self.accept_language,
+            provisioned_product_id: self.provisioned_product_id,
+            provisioned_product_name: self.provisioned_product_name,
+            output_keys: self.output_keys,
+            page_size: self.page_size,
+            page_token: self.page_token,
+        })
     }
 }

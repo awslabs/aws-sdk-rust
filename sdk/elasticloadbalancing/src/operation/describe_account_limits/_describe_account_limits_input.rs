@@ -22,18 +22,14 @@ impl DescribeAccountLimitsInput {
 }
 impl DescribeAccountLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder {
         crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountLimitsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl DescribeAccountLimitsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_account_limits::DescribeAccountLimitsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_account_limits::DescribeAccountLimitsInput {
-                marker: self.marker,
-                page_size: self.page_size,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_account_limits::DescribeAccountLimitsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_account_limits::DescribeAccountLimitsInput {
+            marker: self.marker,
+            page_size: self.page_size,
+        })
     }
 }

@@ -79,9 +79,7 @@ impl CodegenGenericDataRelationshipType {
 
 /// A builder for [`CodegenGenericDataRelationshipType`](crate::types::CodegenGenericDataRelationshipType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodegenGenericDataRelationshipTypeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GenericDataRelationshipType>,
     pub(crate) related_model_name: ::std::option::Option<::std::string::String>,
@@ -100,10 +98,7 @@ impl CodegenGenericDataRelationshipTypeBuilder {
         self
     }
     /// <p>The data relationship type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GenericDataRelationshipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::GenericDataRelationshipType>) -> Self {
         self.r#type = input;
         self
     }
@@ -112,18 +107,12 @@ impl CodegenGenericDataRelationshipTypeBuilder {
         &self.r#type
     }
     /// <p>The name of the related model in the data relationship.</p>
-    pub fn related_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the related model in the data relationship.</p>
-    pub fn set_related_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_related_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_model_name = input;
         self
     }
@@ -136,27 +125,19 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     /// To override the contents of this collection use [`set_related_model_fields`](Self::set_related_model_fields).
     ///
     /// <p>The related model fields in the data relationship.</p>
-    pub fn related_model_fields(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_model_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.related_model_fields.unwrap_or_default();
         v.push(input.into());
         self.related_model_fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>The related model fields in the data relationship.</p>
-    pub fn set_related_model_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_related_model_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.related_model_fields = input;
         self
     }
     /// <p>The related model fields in the data relationship.</p>
-    pub fn get_related_model_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_related_model_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.related_model_fields
     }
     /// <p>Specifies whether the relationship can unlink the associated model.</p>
@@ -174,18 +155,12 @@ impl CodegenGenericDataRelationshipTypeBuilder {
         &self.can_unlink_associated_model
     }
     /// <p>The name of the related join field in the data relationship.</p>
-    pub fn related_join_field_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_join_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_join_field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the related join field in the data relationship.</p>
-    pub fn set_related_join_field_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_related_join_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_join_field_name = input;
         self
     }
@@ -194,18 +169,12 @@ impl CodegenGenericDataRelationshipTypeBuilder {
         &self.related_join_field_name
     }
     /// <p>The name of the related join table in the data relationship.</p>
-    pub fn related_join_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_join_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_join_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the related join table in the data relationship.</p>
-    pub fn set_related_join_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_related_join_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_join_table_name = input;
         self
     }
@@ -214,25 +183,17 @@ impl CodegenGenericDataRelationshipTypeBuilder {
         &self.related_join_table_name
     }
     /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
-    pub fn belongs_to_field_on_related_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn belongs_to_field_on_related_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.belongs_to_field_on_related_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
-    pub fn set_belongs_to_field_on_related_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_belongs_to_field_on_related_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.belongs_to_field_on_related_model = input;
         self
     }
     /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
-    pub fn get_belongs_to_field_on_related_model(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_belongs_to_field_on_related_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.belongs_to_field_on_related_model
     }
     /// Appends an item to `associated_fields`.
@@ -240,27 +201,19 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     /// To override the contents of this collection use [`set_associated_fields`](Self::set_associated_fields).
     ///
     /// <p>The associated fields of the data relationship.</p>
-    pub fn associated_fields(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_fields.unwrap_or_default();
         v.push(input.into());
         self.associated_fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>The associated fields of the data relationship.</p>
-    pub fn set_associated_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_associated_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.associated_fields = input;
         self
     }
     /// <p>The associated fields of the data relationship.</p>
-    pub fn get_associated_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_associated_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.associated_fields
     }
     /// <p>Specifies whether the <code>@index</code> directive is supported for a <code>hasMany</code> data relationship.</p>

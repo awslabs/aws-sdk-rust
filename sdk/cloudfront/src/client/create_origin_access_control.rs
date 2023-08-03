@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput::location): <p>The URL of the origin access control.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
     /// - On failure, responds with [`SdkError<CreateOriginAccessControlError>`](crate::operation::create_origin_access_control::CreateOriginAccessControlError)
-    pub fn create_origin_access_control(&self) -> crate::operation::create_origin_access_control::builders::CreateOriginAccessControlFluentBuilder{
+    pub fn create_origin_access_control(&self) -> crate::operation::create_origin_access_control::builders::CreateOriginAccessControlFluentBuilder {
         crate::operation::create_origin_access_control::builders::CreateOriginAccessControlFluentBuilder::new(self.handle.clone())
     }
 }

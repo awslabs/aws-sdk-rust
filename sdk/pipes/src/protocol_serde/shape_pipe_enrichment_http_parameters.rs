@@ -37,62 +37,46 @@ pub fn ser_pipe_enrichment_http_parameters(
 
 pub(crate) fn de_pipe_enrichment_http_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::PipeEnrichmentHttpParameters>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::PipeEnrichmentHttpParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::PipeEnrichmentHttpParametersBuilder::default();
+            let mut builder = crate::types::builders::PipeEnrichmentHttpParametersBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "PathParameterValues" => {
-                                builder = builder.set_path_parameter_values(
-                                    crate::protocol_serde::shape_path_parameter_list::de_path_parameter_list(tokens)?
-                                );
-                            }
-                            "HeaderParameters" => {
-                                builder = builder.set_header_parameters(
-                                    crate::protocol_serde::shape_header_parameters_map::de_header_parameters_map(tokens)?
-                                );
-                            }
-                            "QueryStringParameters" => {
-                                builder = builder.set_query_string_parameters(
-                                    crate::protocol_serde::shape_query_string_parameters_map::de_query_string_parameters_map(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "PathParameterValues" => {
+                            builder =
+                                builder.set_path_parameter_values(crate::protocol_serde::shape_path_parameter_list::de_path_parameter_list(tokens)?);
                         }
-                    }
+                        "HeaderParameters" => {
+                            builder =
+                                builder.set_header_parameters(crate::protocol_serde::shape_header_parameters_map::de_header_parameters_map(tokens)?);
+                        }
+                        "QueryStringParameters" => {
+                            builder = builder.set_query_string_parameters(
+                                crate::protocol_serde::shape_query_string_parameters_map::de_query_string_parameters_map(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

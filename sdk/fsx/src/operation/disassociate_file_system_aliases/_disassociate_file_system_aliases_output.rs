@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DisassociateFileSystemAliasesOutput {
 }
 impl DisassociateFileSystemAliasesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFileSystemAliasesOutput`](crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput).
-    pub fn builder() -> crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesOutputBuilder {
         crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateFileSystemAliasesOutput`](crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateFileSystemAliasesOutputBuilder {
     pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     _request_id: Option<String>,
@@ -49,10 +47,7 @@ impl DisassociateFileSystemAliasesOutputBuilder {
         self
     }
     /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
-    ) -> Self {
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>) -> Self {
         self.aliases = input;
         self
     }
@@ -70,10 +65,7 @@ impl DisassociateFileSystemAliasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateFileSystemAliasesOutput`](crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput {
         crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput {
             aliases: self.aliases,
             _request_id: self._request_id,

@@ -30,9 +30,7 @@ impl CachePolicySummary {
 
 /// A builder for [`CachePolicySummary`](crate::types::CachePolicySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CachePolicySummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CachePolicyType>,
     pub(crate) cache_policy: ::std::option::Option<crate::types::CachePolicy>,
@@ -58,10 +56,7 @@ impl CachePolicySummaryBuilder {
         self
     }
     /// <p>The cache policy.</p>
-    pub fn set_cache_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicy>,
-    ) -> Self {
+    pub fn set_cache_policy(mut self, input: ::std::option::Option<crate::types::CachePolicy>) -> Self {
         self.cache_policy = input;
         self
     }

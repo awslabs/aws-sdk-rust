@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetHealthCheckOutput`](crate::operation::get_health_check::GetHealthCheckOutput) with field(s):
     ///   - [`health_check(Option<HealthCheck>)`](crate::operation::get_health_check::GetHealthCheckOutput::health_check): <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<GetHealthCheckError>`](crate::operation::get_health_check::GetHealthCheckError)
-    pub fn get_health_check(
-        &self,
-    ) -> crate::operation::get_health_check::builders::GetHealthCheckFluentBuilder {
-        crate::operation::get_health_check::builders::GetHealthCheckFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_health_check(&self) -> crate::operation::get_health_check::builders::GetHealthCheckFluentBuilder {
+        crate::operation::get_health_check::builders::GetHealthCheckFluentBuilder::new(self.handle.clone())
     }
 }

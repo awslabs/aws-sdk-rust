@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetHealthCheckCountOutput {
 }
 impl GetHealthCheckCountOutput {
     /// Creates a new builder-style object to manufacture [`GetHealthCheckCountOutput`](crate::operation::get_health_check_count::GetHealthCheckCountOutput).
-    pub fn builder(
-    ) -> crate::operation::get_health_check_count::builders::GetHealthCheckCountOutputBuilder {
+    pub fn builder() -> crate::operation::get_health_check_count::builders::GetHealthCheckCountOutputBuilder {
         crate::operation::get_health_check_count::builders::GetHealthCheckCountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetHealthCheckCountOutput`](crate::operation::get_health_check_count::GetHealthCheckCountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHealthCheckCountOutputBuilder {
     pub(crate) health_check_count: ::std::option::Option<i64>,
     _request_id: Option<String>,

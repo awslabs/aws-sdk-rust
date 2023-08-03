@@ -44,14 +44,11 @@ impl GrpcGatewayRouteMatch {
 
 /// A builder for [`GrpcGatewayRouteMatch`](crate::types::GrpcGatewayRouteMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteMatchBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>,
-    pub(crate) metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
+    pub(crate) metadata: ::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
     pub(crate) port: ::std::option::Option<i32>,
 }
 impl GrpcGatewayRouteMatchBuilder {
@@ -75,10 +72,7 @@ impl GrpcGatewayRouteMatchBuilder {
         self
     }
     /// <p>The gateway route host name to be matched on.</p>
-    pub fn set_hostname(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>,
-    ) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>) -> Self {
         self.hostname = input;
         self
     }
@@ -98,17 +92,12 @@ impl GrpcGatewayRouteMatchBuilder {
         self
     }
     /// <p>The gateway route metadata to be matched on.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The gateway route metadata to be matched on.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>> {
         &self.metadata
     }
     /// <p>The port number to match from the request.</p>

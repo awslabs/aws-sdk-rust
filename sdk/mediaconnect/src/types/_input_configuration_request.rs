@@ -30,9 +30,7 @@ impl InputConfigurationRequest {
 
 /// A builder for [`InputConfigurationRequest`](crate::types::InputConfigurationRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputConfigurationRequestBuilder {
     pub(crate) input_port: ::std::option::Option<i32>,
     pub(crate) interface: ::std::option::Option<crate::types::InterfaceRequest>,
@@ -58,10 +56,7 @@ impl InputConfigurationRequestBuilder {
         self
     }
     /// The VPC interface that you want to use for the incoming media stream.
-    pub fn set_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::InterfaceRequest>,
-    ) -> Self {
+    pub fn set_interface(mut self, input: ::std::option::Option<crate::types::InterfaceRequest>) -> Self {
         self.interface = input;
         self
     }

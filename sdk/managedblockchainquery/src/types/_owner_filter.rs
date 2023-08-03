@@ -23,9 +23,7 @@ impl OwnerFilter {
 
 /// A builder for [`OwnerFilter`](crate::types::OwnerFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OwnerFilterBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl OwnerFilterBuilder {
     }
     /// Consumes the builder and constructs a [`OwnerFilter`](crate::types::OwnerFilter).
     pub fn build(self) -> crate::types::OwnerFilter {
-        crate::types::OwnerFilter {
-            address: self.address,
-        }
+        crate::types::OwnerFilter { address: self.address }
     }
 }

@@ -26,16 +26,14 @@ impl RespondActivityTaskCanceledInput {
 }
 impl RespondActivityTaskCanceledInput {
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskCanceledInput`](crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledInput).
-    pub fn builder() -> crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledInputBuilder{
+    pub fn builder() -> crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledInputBuilder {
         crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledInputBuilder::default()
     }
 }
 
 /// A builder for [`RespondActivityTaskCanceledInput`](crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RespondActivityTaskCanceledInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
@@ -82,11 +80,9 @@ impl RespondActivityTaskCanceledInputBuilder {
         crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledInput {
-                task_token: self.task_token,
-                details: self.details,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledInput {
+            task_token: self.task_token,
+            details: self.details,
+        })
     }
 }

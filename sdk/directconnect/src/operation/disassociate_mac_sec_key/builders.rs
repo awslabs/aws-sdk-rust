@@ -37,10 +37,7 @@ impl DisassociateMacSecKeyFluentBuilder {
         }
     }
     /// Access the DisassociateMacSecKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DisassociateMacSecKeyFluentBuilder {
             crate::operation::disassociate_mac_sec_key::DisassociateMacSecKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DisassociateMacSecKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DisassociateMacSecKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DisassociateMacSecKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +105,19 @@ impl DisassociateMacSecKeyFluentBuilder {
             crate::operation::disassociate_mac_sec_key::DisassociateMacSecKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }

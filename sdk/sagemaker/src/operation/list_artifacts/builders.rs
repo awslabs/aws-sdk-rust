@@ -10,10 +10,7 @@ impl ListArtifactsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_artifacts::ListArtifactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_artifacts::ListArtifactsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_artifacts::ListArtifactsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_artifacts();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListArtifactsFluentBuilder {
         }
     }
     /// Access the ListArtifacts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_artifacts::builders::ListArtifactsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_artifacts::builders::ListArtifactsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListArtifactsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListArtifactsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_artifacts::paginator::ListArtifactsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_artifacts::paginator::ListArtifactsPaginator {
-        crate::operation::list_artifacts::paginator::ListArtifactsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_artifacts::paginator::ListArtifactsPaginator {
+        crate::operation::list_artifacts::paginator::ListArtifactsPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that returns only artifacts with the specified source URI.</p>
     pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,18 +127,12 @@ impl ListArtifactsFluentBuilder {
         self.inner.get_source_uri()
     }
     /// <p>A filter that returns only artifacts of the specified type.</p>
-    pub fn artifact_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.artifact_type(input.into());
         self
     }
     /// <p>A filter that returns only artifacts of the specified type.</p>
-    pub fn set_artifact_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_artifact_type(input);
         self
     }
@@ -165,10 +146,7 @@ impl ListArtifactsFluentBuilder {
         self
     }
     /// <p>A filter that returns only artifacts created on or after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -182,10 +160,7 @@ impl ListArtifactsFluentBuilder {
         self
     }
     /// <p>A filter that returns only artifacts created on or before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -199,10 +174,7 @@ impl ListArtifactsFluentBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortArtifactsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortArtifactsBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

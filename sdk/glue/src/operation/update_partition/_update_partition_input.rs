@@ -52,9 +52,7 @@ impl UpdatePartitionInput {
 
 /// A builder for [`UpdatePartitionInput`](crate::operation::update_partition::UpdatePartitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePartitionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ impl UpdatePartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -116,27 +108,19 @@ impl UpdatePartitionInputBuilder {
     /// To override the contents of this collection use [`set_partition_value_list`](Self::set_partition_value_list).
     ///
     /// <p>List of partition key values that define the partition to update.</p>
-    pub fn partition_value_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_value_list.unwrap_or_default();
         v.push(input.into());
         self.partition_value_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of partition key values that define the partition to update.</p>
-    pub fn set_partition_value_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_value_list = input;
         self
     }
     /// <p>List of partition key values that define the partition to update.</p>
-    pub fn get_partition_value_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_value_list
     }
     /// <p>The new partition object to update the partition to.</p>
@@ -147,10 +131,7 @@ impl UpdatePartitionInputBuilder {
     }
     /// <p>The new partition object to update the partition to.</p>
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
-    pub fn set_partition_input(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionInput>,
-    ) -> Self {
+    pub fn set_partition_input(mut self, input: ::std::option::Option<crate::types::PartitionInput>) -> Self {
         self.partition_input = input;
         self
     }
@@ -162,10 +143,7 @@ impl UpdatePartitionInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePartitionInput`](crate::operation::update_partition::UpdatePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_partition::UpdatePartitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_partition::UpdatePartitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_partition::UpdatePartitionInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

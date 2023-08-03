@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDevicePoolOutput`](crate::operation::get_device_pool::GetDevicePoolOutput) with field(s):
     ///   - [`device_pool(Option<DevicePool>)`](crate::operation::get_device_pool::GetDevicePoolOutput::device_pool): <p>An object that contains information about the requested device pool.</p>
     /// - On failure, responds with [`SdkError<GetDevicePoolError>`](crate::operation::get_device_pool::GetDevicePoolError)
-    pub fn get_device_pool(
-        &self,
-    ) -> crate::operation::get_device_pool::builders::GetDevicePoolFluentBuilder {
-        crate::operation::get_device_pool::builders::GetDevicePoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_device_pool(&self) -> crate::operation::get_device_pool::builders::GetDevicePoolFluentBuilder {
+        crate::operation::get_device_pool::builders::GetDevicePoolFluentBuilder::new(self.handle.clone())
     }
 }

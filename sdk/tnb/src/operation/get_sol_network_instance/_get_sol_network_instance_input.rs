@@ -15,35 +15,25 @@ impl GetSolNetworkInstanceInput {
 }
 impl GetSolNetworkInstanceInput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkInstanceInput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceInputBuilder {
         crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolNetworkInstanceInput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolNetworkInstanceInputBuilder {
     pub(crate) ns_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSolNetworkInstanceInputBuilder {
     /// <p>ID of the network instance.</p>
-    pub fn ns_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the network instance.</p>
-    pub fn set_ns_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ns_instance_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetSolNetworkInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetSolNetworkInstanceInput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput {
-                ns_instance_id: self.ns_instance_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput {
+            ns_instance_id: self.ns_instance_id,
+        })
     }
 }

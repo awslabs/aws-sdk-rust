@@ -26,7 +26,7 @@ impl DisableClientAuthenticationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableClientAuthenticationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disable_client_authentication::builders::DisableClientAuthenticationInputBuilder,
+    inner: crate::operation::disable_client_authentication::builders::DisableClientAuthenticationInputBuilder,
 }
 impl DisableClientAuthenticationFluentBuilder {
     /// Creates a new `DisableClientAuthentication`.
@@ -37,7 +37,7 @@ impl DisableClientAuthenticationFluentBuilder {
         }
     }
     /// Access the DisableClientAuthentication as a reference.
-    pub fn as_input(&self) -> &crate::operation::disable_client_authentication::builders::DisableClientAuthenticationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disable_client_authentication::builders::DisableClientAuthenticationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisableClientAuthenticationFluentBuilder {
             crate::operation::disable_client_authentication::DisableClientAuthentication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_client_authentication::DisableClientAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_client_authentication::DisableClientAuthenticationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisableClientAuthenticationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisableClientAuthenticationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_client_authentication::DisableClientAuthenticationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_client_authentication::DisableClientAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_client_authentication::DisableClientAuthenticationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisableClientAuthenticationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_client_authentication::DisableClientAuthenticationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_client_authentication::DisableClientAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_client_authentication::DisableClientAuthenticationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisableClientAuthenticationFluentBuilder {
             crate::operation::disable_client_authentication::DisableClientAuthentication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_client_authentication::DisableClientAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_client_authentication::DisableClientAuthenticationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl DisableClientAuthenticationFluentBuilder {
         self
     }
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAuthenticationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

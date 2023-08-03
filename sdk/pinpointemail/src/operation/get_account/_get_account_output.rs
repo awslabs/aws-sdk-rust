@@ -71,9 +71,7 @@ impl GetAccountOutput {
 
 /// A builder for [`GetAccountOutput`](crate::operation::get_account::GetAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountOutputBuilder {
     pub(crate) send_quota: ::std::option::Option<crate::types::SendQuota>,
     pub(crate) sending_enabled: ::std::option::Option<bool>,
@@ -117,10 +115,7 @@ impl GetAccountOutputBuilder {
         self
     }
     /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
-    pub fn set_dedicated_ip_auto_warmup_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_dedicated_ip_auto_warmup_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dedicated_ip_auto_warmup_enabled = input;
         self
     }
@@ -134,10 +129,7 @@ impl GetAccountOutputBuilder {
     /// <li> <p> <code>PROBATION</code> – We've identified some issues with your Amazon Pinpoint account. We're placing your account under review while you work on correcting these issues.</p> </li>
     /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
     /// </ul>
-    pub fn enforcement_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn enforcement_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enforcement_status = ::std::option::Option::Some(input.into());
         self
     }
@@ -147,10 +139,7 @@ impl GetAccountOutputBuilder {
     /// <li> <p> <code>PROBATION</code> – We've identified some issues with your Amazon Pinpoint account. We're placing your account under review while you work on correcting these issues.</p> </li>
     /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
     /// </ul>
-    pub fn set_enforcement_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_enforcement_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.enforcement_status = input;
         self
     }
@@ -197,9 +186,7 @@ impl GetAccountOutputBuilder {
         crate::operation::get_account::GetAccountOutput {
             send_quota: self.send_quota,
             sending_enabled: self.sending_enabled.unwrap_or_default(),
-            dedicated_ip_auto_warmup_enabled: self
-                .dedicated_ip_auto_warmup_enabled
-                .unwrap_or_default(),
+            dedicated_ip_auto_warmup_enabled: self.dedicated_ip_auto_warmup_enabled.unwrap_or_default(),
             enforcement_status: self.enforcement_status,
             production_access_enabled: self.production_access_enabled.unwrap_or_default(),
             _request_id: self._request_id,

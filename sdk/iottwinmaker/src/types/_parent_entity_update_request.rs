@@ -30,9 +30,7 @@ impl ParentEntityUpdateRequest {
 
 /// A builder for [`ParentEntityUpdateRequest`](crate::types::ParentEntityUpdateRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParentEntityUpdateRequestBuilder {
     pub(crate) update_type: ::std::option::Option<crate::types::ParentEntityUpdateType>,
     pub(crate) parent_entity_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ParentEntityUpdateRequestBuilder {
         self
     }
     /// <p>The type of the update.</p>
-    pub fn set_update_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ParentEntityUpdateType>,
-    ) -> Self {
+    pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::ParentEntityUpdateType>) -> Self {
         self.update_type = input;
         self
     }
@@ -56,18 +51,12 @@ impl ParentEntityUpdateRequestBuilder {
         &self.update_type
     }
     /// <p>The ID of the parent entity.</p>
-    pub fn parent_entity_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_entity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the parent entity.</p>
-    pub fn set_parent_entity_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_entity_id = input;
         self
     }

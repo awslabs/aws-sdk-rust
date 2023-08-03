@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for StartChatContactOutput {
 }
 impl StartChatContactOutput {
     /// Creates a new builder-style object to manufacture [`StartChatContactOutput`](crate::operation::start_chat_contact::StartChatContactOutput).
-    pub fn builder() -> crate::operation::start_chat_contact::builders::StartChatContactOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_chat_contact::builders::StartChatContactOutputBuilder {
         crate::operation::start_chat_contact::builders::StartChatContactOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartChatContactOutput`](crate::operation::start_chat_contact::StartChatContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartChatContactOutputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +73,12 @@ impl StartChatContactOutputBuilder {
         &self.contact_id
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_id = input;
         self
     }
@@ -96,18 +87,12 @@ impl StartChatContactOutputBuilder {
         &self.participant_id
     }
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
-    pub fn participant_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
-    pub fn set_participant_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_token = input;
         self
     }
@@ -116,18 +101,12 @@ impl StartChatContactOutputBuilder {
         &self.participant_token
     }
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
-    pub fn continued_from_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continued_from_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continued_from_contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
-    pub fn set_continued_from_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continued_from_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continued_from_contact_id = input;
         self
     }

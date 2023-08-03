@@ -5,8 +5,7 @@
 pub struct DescribeConfigurationAggregatorsInput {
     /// <p>The name of the configuration aggregators.</p>
     #[doc(hidden)]
-    pub configuration_aggregator_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub configuration_aggregator_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -16,9 +15,7 @@ pub struct DescribeConfigurationAggregatorsInput {
 }
 impl DescribeConfigurationAggregatorsInput {
     /// <p>The name of the configuration aggregators.</p>
-    pub fn configuration_aggregator_names(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn configuration_aggregator_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.configuration_aggregator_names.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -32,19 +29,16 @@ impl DescribeConfigurationAggregatorsInput {
 }
 impl DescribeConfigurationAggregatorsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationAggregatorsInput`](crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsInput).
-    pub fn builder() -> crate::operation::describe_configuration_aggregators::builders::DescribeConfigurationAggregatorsInputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_aggregators::builders::DescribeConfigurationAggregatorsInputBuilder {
         crate::operation::describe_configuration_aggregators::builders::DescribeConfigurationAggregatorsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationAggregatorsInput`](crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorsInputBuilder {
-    pub(crate) configuration_aggregator_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) configuration_aggregator_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
@@ -54,27 +48,19 @@ impl DescribeConfigurationAggregatorsInputBuilder {
     /// To override the contents of this collection use [`set_configuration_aggregator_names`](Self::set_configuration_aggregator_names).
     ///
     /// <p>The name of the configuration aggregators.</p>
-    pub fn configuration_aggregator_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_aggregator_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_aggregator_names.unwrap_or_default();
         v.push(input.into());
         self.configuration_aggregator_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name of the configuration aggregators.</p>
-    pub fn set_configuration_aggregator_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configuration_aggregator_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.configuration_aggregator_names = input;
         self
     }
     /// <p>The name of the configuration aggregators.</p>
-    pub fn get_configuration_aggregator_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_aggregator_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.configuration_aggregator_names
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -114,13 +100,10 @@ impl DescribeConfigurationAggregatorsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsInput {
-                configuration_aggregator_names: self.configuration_aggregator_names
-                ,
-                next_token: self.next_token
-                ,
-                limit: self.limit
-                ,
-            }
+                configuration_aggregator_names: self.configuration_aggregator_names,
+                next_token: self.next_token,
+                limit: self.limit,
+            },
         )
     }
 }

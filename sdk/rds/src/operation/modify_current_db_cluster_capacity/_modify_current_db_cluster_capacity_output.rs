@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for ModifyCurrentDbClusterCapacityOutput 
 }
 impl ModifyCurrentDbClusterCapacityOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCurrentDbClusterCapacityOutput`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput).
-    pub fn builder() -> crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityOutputBuilder{
+    pub fn builder() -> crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityOutputBuilder {
         crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyCurrentDbClusterCapacityOutput`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyCurrentDbClusterCapacityOutputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) pending_capacity: ::std::option::Option<i32>,
@@ -69,18 +67,12 @@ pub struct ModifyCurrentDbClusterCapacityOutputBuilder {
 }
 impl ModifyCurrentDbClusterCapacityOutputBuilder {
     /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -131,18 +123,12 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
         &self.seconds_before_timeout
     }
     /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    pub fn timeout_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timeout_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timeout_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    pub fn set_timeout_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timeout_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timeout_action = input;
         self
     }
@@ -160,10 +146,7 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyCurrentDbClusterCapacityOutput`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput
-    {
+    pub fn build(self) -> crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput {
         crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput {
             db_cluster_identifier: self.db_cluster_identifier,
             pending_capacity: self.pending_capacity,

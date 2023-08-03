@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::status_message): <p>A description about the VPC link status.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<GetVpcLinkError>`](crate::operation::get_vpc_link::GetVpcLinkError)
-    pub fn get_vpc_link(
-        &self,
-    ) -> crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder {
+    pub fn get_vpc_link(&self) -> crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder {
         crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::new(self.handle.clone())
     }
 }

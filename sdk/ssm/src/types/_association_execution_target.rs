@@ -79,9 +79,7 @@ impl AssociationExecutionTarget {
 
 /// A builder for [`AssociationExecutionTarget`](crate::types::AssociationExecutionTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociationExecutionTargetBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_version: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct AssociationExecutionTargetBuilder {
 }
 impl AssociationExecutionTargetBuilder {
     /// <p>The association ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -115,18 +107,12 @@ impl AssociationExecutionTargetBuilder {
         &self.association_id
     }
     /// <p>The association version.</p>
-    pub fn association_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association version.</p>
-    pub fn set_association_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_version = input;
         self
     }
@@ -163,18 +149,12 @@ impl AssociationExecutionTargetBuilder {
         &self.resource_id
     }
     /// <p>The resource type, for example, EC2.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type, for example, EC2.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -197,18 +177,12 @@ impl AssociationExecutionTargetBuilder {
         &self.status
     }
     /// <p>Detailed information about the execution status.</p>
-    pub fn detailed_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detailed_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Detailed information about the execution status.</p>
-    pub fn set_detailed_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detailed_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detailed_status = input;
         self
     }
@@ -222,10 +196,7 @@ impl AssociationExecutionTargetBuilder {
         self
     }
     /// <p>The date of the last execution.</p>
-    pub fn set_last_execution_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_execution_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_execution_date = input;
         self
     }
@@ -239,10 +210,7 @@ impl AssociationExecutionTargetBuilder {
         self
     }
     /// <p>The location where the association details are saved.</p>
-    pub fn set_output_source(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputSource>,
-    ) -> Self {
+    pub fn set_output_source(mut self, input: ::std::option::Option<crate::types::OutputSource>) -> Self {
         self.output_source = input;
         self
     }

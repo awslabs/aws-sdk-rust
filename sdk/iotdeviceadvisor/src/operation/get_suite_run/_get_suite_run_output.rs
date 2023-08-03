@@ -35,9 +35,7 @@ pub struct GetSuiteRunOutput {
     pub error_reason: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the suite run.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSuiteRunOutput {
@@ -58,9 +56,7 @@ impl GetSuiteRunOutput {
         self.suite_run_arn.as_deref()
     }
     /// <p>Suite run configuration for the test suite run.</p>
-    pub fn suite_run_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SuiteRunConfiguration> {
+    pub fn suite_run_configuration(&self) -> ::std::option::Option<&crate::types::SuiteRunConfiguration> {
         self.suite_run_configuration.as_ref()
     }
     /// <p>Test results for the test suite run.</p>
@@ -84,11 +80,7 @@ impl GetSuiteRunOutput {
         self.error_reason.as_deref()
     }
     /// <p>The tags attached to the suite run.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -106,9 +98,7 @@ impl GetSuiteRunOutput {
 
 /// A builder for [`GetSuiteRunOutput`](crate::operation::get_suite_run::GetSuiteRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSuiteRunOutputBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_definition_version: ::std::option::Option<::std::string::String>,
@@ -120,25 +110,17 @@ pub struct GetSuiteRunOutputBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::SuiteRunStatus>,
     pub(crate) error_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSuiteRunOutputBuilder {
     /// <p>Suite definition ID for the test suite run.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite definition ID for the test suite run.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_id = input;
         self
     }
@@ -147,18 +129,12 @@ impl GetSuiteRunOutputBuilder {
         &self.suite_definition_id
     }
     /// <p>Suite definition version for the test suite run.</p>
-    pub fn suite_definition_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite definition version for the test suite run.</p>
-    pub fn set_suite_definition_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_version = input;
         self
     }
@@ -181,18 +157,12 @@ impl GetSuiteRunOutputBuilder {
         &self.suite_run_id
     }
     /// <p>The ARN of the suite run.</p>
-    pub fn suite_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the suite run.</p>
-    pub fn set_suite_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_run_arn = input;
         self
     }
@@ -206,17 +176,12 @@ impl GetSuiteRunOutputBuilder {
         self
     }
     /// <p>Suite run configuration for the test suite run.</p>
-    pub fn set_suite_run_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SuiteRunConfiguration>,
-    ) -> Self {
+    pub fn set_suite_run_configuration(mut self, input: ::std::option::Option<crate::types::SuiteRunConfiguration>) -> Self {
         self.suite_run_configuration = input;
         self
     }
     /// <p>Suite run configuration for the test suite run.</p>
-    pub fn get_suite_run_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SuiteRunConfiguration> {
+    pub fn get_suite_run_configuration(&self) -> &::std::option::Option<crate::types::SuiteRunConfiguration> {
         &self.suite_run_configuration
     }
     /// <p>Test results for the test suite run.</p>
@@ -225,10 +190,7 @@ impl GetSuiteRunOutputBuilder {
         self
     }
     /// <p>Test results for the test suite run.</p>
-    pub fn set_test_result(
-        mut self,
-        input: ::std::option::Option<crate::types::TestResult>,
-    ) -> Self {
+    pub fn set_test_result(mut self, input: ::std::option::Option<crate::types::TestResult>) -> Self {
         self.test_result = input;
         self
     }
@@ -242,10 +204,7 @@ impl GetSuiteRunOutputBuilder {
         self
     }
     /// <p>Date (in Unix epoch time) when the test suite run started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -259,10 +218,7 @@ impl GetSuiteRunOutputBuilder {
         self
     }
     /// <p>Date (in Unix epoch time) when the test suite run ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -276,10 +232,7 @@ impl GetSuiteRunOutputBuilder {
         self
     }
     /// <p>Status for the test suite run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SuiteRunStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SuiteRunStatus>) -> Self {
         self.status = input;
         self
     }
@@ -306,32 +259,19 @@ impl GetSuiteRunOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags attached to the suite run.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags attached to the suite run.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags attached to the suite run.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

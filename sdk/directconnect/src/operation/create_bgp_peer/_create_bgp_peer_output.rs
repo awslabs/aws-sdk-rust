@@ -28,9 +28,7 @@ impl CreateBgpPeerOutput {
 
 /// A builder for [`CreateBgpPeerOutput`](crate::operation::create_bgp_peer::CreateBgpPeerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBgpPeerOutputBuilder {
     pub(crate) virtual_interface: ::std::option::Option<crate::types::VirtualInterface>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateBgpPeerOutputBuilder {
         self
     }
     /// <p>The virtual interface.</p>
-    pub fn set_virtual_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualInterface>,
-    ) -> Self {
+    pub fn set_virtual_interface(mut self, input: ::std::option::Option<crate::types::VirtualInterface>) -> Self {
         self.virtual_interface = input;
         self
     }

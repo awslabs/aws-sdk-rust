@@ -16,33 +16,25 @@ impl StartReplicationTaskAssessmentInput {
 }
 impl StartReplicationTaskAssessmentInput {
     /// Creates a new builder-style object to manufacture [`StartReplicationTaskAssessmentInput`](crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentInput).
-    pub fn builder() -> crate::operation::start_replication_task_assessment::builders::StartReplicationTaskAssessmentInputBuilder{
+    pub fn builder() -> crate::operation::start_replication_task_assessment::builders::StartReplicationTaskAssessmentInputBuilder {
         crate::operation::start_replication_task_assessment::builders::StartReplicationTaskAssessmentInputBuilder::default()
     }
 }
 
 /// A builder for [`StartReplicationTaskAssessmentInput`](crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartReplicationTaskAssessmentInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
@@ -57,11 +49,8 @@ impl StartReplicationTaskAssessmentInputBuilder {
         crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentInput {
-                replication_task_arn: self.replication_task_arn
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentInput {
+            replication_task_arn: self.replication_task_arn,
+        })
     }
 }

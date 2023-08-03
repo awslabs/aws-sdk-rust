@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateBatchLoadTaskOutput`](crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput::task_id): <p>The ID of the batch load task.</p>
     /// - On failure, responds with [`SdkError<CreateBatchLoadTaskError>`](crate::operation::create_batch_load_task::CreateBatchLoadTaskError)
-    pub fn create_batch_load_task(
-        &self,
-    ) -> crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskFluentBuilder {
-        crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_batch_load_task(&self) -> crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskFluentBuilder {
+        crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskFluentBuilder::new(self.handle.clone())
     }
 }

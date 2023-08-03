@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateMultiplexProgramOutput {
 }
 impl CreateMultiplexProgramOutput {
     /// Creates a new builder-style object to manufacture [`CreateMultiplexProgramOutput`](crate::operation::create_multiplex_program::CreateMultiplexProgramOutput).
-    pub fn builder(
-    ) -> crate::operation::create_multiplex_program::builders::CreateMultiplexProgramOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_multiplex_program::builders::CreateMultiplexProgramOutputBuilder {
         crate::operation::create_multiplex_program::builders::CreateMultiplexProgramOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMultiplexProgramOutput`](crate::operation::create_multiplex_program::CreateMultiplexProgramOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMultiplexProgramOutputBuilder {
     pub(crate) multiplex_program: ::std::option::Option<crate::types::MultiplexProgram>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl CreateMultiplexProgramOutputBuilder {
         self
     }
     /// The newly created multiplex program.
-    pub fn set_multiplex_program(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexProgram>,
-    ) -> Self {
+    pub fn set_multiplex_program(mut self, input: ::std::option::Option<crate::types::MultiplexProgram>) -> Self {
         self.multiplex_program = input;
         self
     }

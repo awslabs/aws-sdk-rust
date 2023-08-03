@@ -28,7 +28,7 @@ impl MergeDeveloperIdentitiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct MergeDeveloperIdentitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesInputBuilder,
+    inner: crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesInputBuilder,
 }
 impl MergeDeveloperIdentitiesFluentBuilder {
     /// Creates a new `MergeDeveloperIdentities`.
@@ -39,10 +39,7 @@ impl MergeDeveloperIdentitiesFluentBuilder {
         }
     }
     /// Access the MergeDeveloperIdentities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl MergeDeveloperIdentitiesFluentBuilder {
             crate::operation::merge_developer_identities::MergeDeveloperIdentities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::merge_developer_identities::MergeDeveloperIdentitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::merge_developer_identities::MergeDeveloperIdentitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl MergeDeveloperIdentitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl MergeDeveloperIdentitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::merge_developer_identities::MergeDeveloperIdentitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::merge_developer_identities::MergeDeveloperIdentitiesError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl MergeDeveloperIdentitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::merge_developer_identities::MergeDeveloperIdentitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::merge_developer_identities::MergeDeveloperIdentitiesError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl MergeDeveloperIdentitiesFluentBuilder {
             crate::operation::merge_developer_identities::MergeDeveloperIdentities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::merge_developer_identities::MergeDeveloperIdentitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::merge_developer_identities::MergeDeveloperIdentitiesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    pub fn source_user_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_user_identifier(input.into());
         self
     }
     /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    pub fn set_source_user_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_user_identifier(input);
         self
     }
@@ -146,18 +126,12 @@ impl MergeDeveloperIdentitiesFluentBuilder {
         self.inner.get_source_user_identifier()
     }
     /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    pub fn destination_user_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_user_identifier(input.into());
         self
     }
     /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    pub fn set_destination_user_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_user_identifier(input);
         self
     }
@@ -166,18 +140,12 @@ impl MergeDeveloperIdentitiesFluentBuilder {
         self.inner.get_destination_user_identifier()
     }
     /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
-    pub fn developer_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn developer_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.developer_provider_name(input.into());
         self
     }
     /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
-    pub fn set_developer_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_developer_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_developer_provider_name(input);
         self
     }
@@ -186,18 +154,12 @@ impl MergeDeveloperIdentitiesFluentBuilder {
         self.inner.get_developer_provider_name()
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }

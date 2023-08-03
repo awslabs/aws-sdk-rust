@@ -48,13 +48,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DetailsAttributes {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,9 +63,7 @@ impl ::std::convert::From<&str> for DetailsAttributes {
         match s {
             "Algorithm" => DetailsAttributes::Algorithm,
             "PredictiveModelType" => DetailsAttributes::PredictiveModelType,
-            other => {
-                DetailsAttributes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DetailsAttributes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

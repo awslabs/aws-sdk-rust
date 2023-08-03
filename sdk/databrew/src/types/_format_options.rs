@@ -37,9 +37,7 @@ impl FormatOptions {
 
 /// A builder for [`FormatOptions`](crate::types::FormatOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FormatOptionsBuilder {
     pub(crate) json: ::std::option::Option<crate::types::JsonOptions>,
     pub(crate) excel: ::std::option::Option<crate::types::ExcelOptions>,

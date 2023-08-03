@@ -50,16 +50,14 @@ impl GetLifecyclePolicyPreviewInput {
 }
 impl GetLifecyclePolicyPreviewInput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyPreviewInput`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewInput).
-    pub fn builder() -> crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewInputBuilder{
+    pub fn builder() -> crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewInputBuilder {
         crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLifecyclePolicyPreviewInput`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyPreviewInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl GetLifecyclePolicyPreviewInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -115,17 +107,12 @@ impl GetLifecyclePolicyPreviewInputBuilder {
         self
     }
     /// <p>The list of imageIDs to be included.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
         self.image_ids = input;
         self
     }
     /// <p>The list of imageIDs to be included.</p>
-    pub fn get_image_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
         &self.image_ids
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
@@ -162,10 +149,7 @@ impl GetLifecyclePolicyPreviewInputBuilder {
         self
     }
     /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecyclePolicyPreviewFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyPreviewFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -180,15 +164,13 @@ impl GetLifecyclePolicyPreviewInputBuilder {
         crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                image_ids: self.image_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filter: self.filter,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            image_ids: self.image_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filter: self.filter,
+        })
     }
 }

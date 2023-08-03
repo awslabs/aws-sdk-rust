@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`network_insights_paths(Option<Vec<NetworkInsightsPath>>)`](crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput::network_insights_paths): <p>Information about the paths.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeNetworkInsightsPathsError>`](crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError)
-    pub fn describe_network_insights_paths(&self) -> crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsFluentBuilder{
+    pub fn describe_network_insights_paths(
+        &self,
+    ) -> crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsFluentBuilder {
         crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsFluentBuilder::new(self.handle.clone())
     }
 }

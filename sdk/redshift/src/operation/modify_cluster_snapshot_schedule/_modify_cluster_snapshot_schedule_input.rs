@@ -29,16 +29,14 @@ impl ModifyClusterSnapshotScheduleInput {
 }
 impl ModifyClusterSnapshotScheduleInput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterSnapshotScheduleInput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput).
-    pub fn builder() -> crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleInputBuilder{
+    pub fn builder() -> crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleInputBuilder {
         crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClusterSnapshotScheduleInput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterSnapshotScheduleInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ModifyClusterSnapshotScheduleInputBuilder {
 }
 impl ModifyClusterSnapshotScheduleInputBuilder {
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -66,18 +58,12 @@ impl ModifyClusterSnapshotScheduleInputBuilder {
         &self.cluster_identifier
     }
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
-    pub fn schedule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
-    pub fn set_schedule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_identifier = input;
         self
     }
@@ -106,15 +92,10 @@ impl ModifyClusterSnapshotScheduleInputBuilder {
         crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput {
-                cluster_identifier: self.cluster_identifier
-                ,
-                schedule_identifier: self.schedule_identifier
-                ,
-                disassociate_schedule: self.disassociate_schedule
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput {
+            cluster_identifier: self.cluster_identifier,
+            schedule_identifier: self.schedule_identifier,
+            disassociate_schedule: self.disassociate_schedule,
+        })
     }
 }

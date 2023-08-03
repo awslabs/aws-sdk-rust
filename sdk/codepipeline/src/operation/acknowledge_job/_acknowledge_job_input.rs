@@ -30,9 +30,7 @@ impl AcknowledgeJobInput {
 
 /// A builder for [`AcknowledgeJobInput`](crate::operation::acknowledge_job::AcknowledgeJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcknowledgeJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) nonce: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl AcknowledgeJobInputBuilder {
     /// Consumes the builder and constructs a [`AcknowledgeJobInput`](crate::operation::acknowledge_job::AcknowledgeJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::acknowledge_job::AcknowledgeJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::acknowledge_job::AcknowledgeJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::acknowledge_job::AcknowledgeJobInput {
             job_id: self.job_id,
             nonce: self.nonce,

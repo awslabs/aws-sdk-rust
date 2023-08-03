@@ -36,9 +36,7 @@ impl ListFiltersInput {
 
 /// A builder for [`ListFiltersInput`](crate::operation::list_filters::ListFiltersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFiltersInputBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListFiltersInputBuilder {
 }
 impl ListFiltersInputBuilder {
     /// <p>The ARN of the dataset group that contains the filters.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset group that contains the filters.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -94,12 +86,7 @@ impl ListFiltersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFiltersInput`](crate::operation::list_filters::ListFiltersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_filters::ListFiltersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_filters::ListFiltersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_filters::ListFiltersInput {
             dataset_group_arn: self.dataset_group_arn,
             next_token: self.next_token,

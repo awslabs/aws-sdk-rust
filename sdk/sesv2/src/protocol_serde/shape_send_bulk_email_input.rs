@@ -9,10 +9,7 @@ pub fn ser_send_bulk_email_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_bulk_email_entry::ser_bulk_email_entry(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_bulk_email_entry::ser_bulk_email_entry(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_send_bulk_email_input(
     if let Some(var_6) = &input.default_content {
         #[allow(unused_mut)]
         let mut object_7 = object.key("DefaultContent").start_object();
-        crate::protocol_serde::shape_bulk_email_content::ser_bulk_email_content(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_bulk_email_content::ser_bulk_email_content(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.default_email_tags {
@@ -43,22 +37,16 @@ pub fn ser_send_bulk_email_input(
         array_9.finish();
     }
     if let Some(var_12) = &input.feedback_forwarding_email_address {
-        object
-            .key("FeedbackForwardingEmailAddress")
-            .string(var_12.as_str());
+        object.key("FeedbackForwardingEmailAddress").string(var_12.as_str());
     }
     if let Some(var_13) = &input.feedback_forwarding_email_address_identity_arn {
-        object
-            .key("FeedbackForwardingEmailAddressIdentityArn")
-            .string(var_13.as_str());
+        object.key("FeedbackForwardingEmailAddressIdentityArn").string(var_13.as_str());
     }
     if let Some(var_14) = &input.from_email_address {
         object.key("FromEmailAddress").string(var_14.as_str());
     }
     if let Some(var_15) = &input.from_email_address_identity_arn {
-        object
-            .key("FromEmailAddressIdentityArn")
-            .string(var_15.as_str());
+        object.key("FromEmailAddressIdentityArn").string(var_15.as_str());
     }
     if let Some(var_16) = &input.reply_to_addresses {
         let mut array_17 = object.key("ReplyToAddresses").start_array();

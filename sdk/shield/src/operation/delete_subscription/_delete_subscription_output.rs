@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteSubscriptionOutput {
 }
 impl DeleteSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriptionOutput`](crate::operation::delete_subscription::DeleteSubscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_subscription::builders::DeleteSubscriptionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_subscription::builders::DeleteSubscriptionOutputBuilder {
         crate::operation::delete_subscription::builders::DeleteSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSubscriptionOutput`](crate::operation::delete_subscription::DeleteSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`report_definition(ReportDefinition)`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::report_definition) / [`set_report_definition(Option<ReportDefinition>)`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::set_report_definition): <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     /// - On success, responds with [`PutReportDefinitionOutput`](crate::operation::put_report_definition::PutReportDefinitionOutput)
     /// - On failure, responds with [`SdkError<PutReportDefinitionError>`](crate::operation::put_report_definition::PutReportDefinitionError)
-    pub fn put_report_definition(
-        &self,
-    ) -> crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder {
-        crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_report_definition(&self) -> crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder {
+        crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

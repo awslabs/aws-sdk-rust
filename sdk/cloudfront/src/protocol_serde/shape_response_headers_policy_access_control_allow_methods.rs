@@ -24,10 +24,7 @@ pub fn ser_response_headers_policy_access_control_allow_methods(
 
 pub fn de_response_headers_policy_access_control_allow_methods(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ResponseHeadersPolicyAccessControlAllowMethods,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ResponseHeadersPolicyAccessControlAllowMethods, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyAccessControlAllowMethods::builder();
     while let Some(mut tag) = decoder.next_tag() {

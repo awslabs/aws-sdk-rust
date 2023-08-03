@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteGlobalClusterOutput`](crate::operation::delete_global_cluster::DeleteGlobalClusterOutput) with field(s):
     ///   - [`global_cluster(Option<GlobalCluster>)`](crate::operation::delete_global_cluster::DeleteGlobalClusterOutput::global_cluster): <p>A data type representing an Amazon DocumentDB global cluster.</p>
     /// - On failure, responds with [`SdkError<DeleteGlobalClusterError>`](crate::operation::delete_global_cluster::DeleteGlobalClusterError)
-    pub fn delete_global_cluster(
-        &self,
-    ) -> crate::operation::delete_global_cluster::builders::DeleteGlobalClusterFluentBuilder {
-        crate::operation::delete_global_cluster::builders::DeleteGlobalClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_global_cluster(&self) -> crate::operation::delete_global_cluster::builders::DeleteGlobalClusterFluentBuilder {
+        crate::operation::delete_global_cluster::builders::DeleteGlobalClusterFluentBuilder::new(self.handle.clone())
     }
 }

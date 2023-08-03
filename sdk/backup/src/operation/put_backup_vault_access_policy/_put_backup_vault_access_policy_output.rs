@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutBackupVaultAccessPolicyOutput {
 }
 impl PutBackupVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutBackupVaultAccessPolicyOutput`](crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput).
-    pub fn builder() -> crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyOutputBuilder {
         crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutBackupVaultAccessPolicyOutput`](crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBackupVaultAccessPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl PutBackupVaultAccessPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutBackupVaultAccessPolicyOutput`](crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput {
+    pub fn build(self) -> crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput {
         crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput {
             _request_id: self._request_id,
         }

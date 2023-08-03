@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDocumentVersionOutput {
 }
 impl DeleteDocumentVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentVersionOutput`](crate::operation::delete_document_version::DeleteDocumentVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_document_version::builders::DeleteDocumentVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_document_version::builders::DeleteDocumentVersionOutputBuilder {
         crate::operation::delete_document_version::builders::DeleteDocumentVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDocumentVersionOutput`](crate::operation::delete_document_version::DeleteDocumentVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDocumentVersionOutputBuilder {
     _request_id: Option<String>,
 }

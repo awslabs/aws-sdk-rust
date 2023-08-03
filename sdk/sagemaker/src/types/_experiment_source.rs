@@ -30,9 +30,7 @@ impl ExperimentSource {
 
 /// A builder for [`ExperimentSource`](crate::types::ExperimentSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentSourceBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<::std::string::String>,

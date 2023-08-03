@@ -29,16 +29,14 @@ impl ModifyVpnTunnelCertificateInput {
 }
 impl ModifyVpnTunnelCertificateInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpnTunnelCertificateInput`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateInput).
-    pub fn builder() -> crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateInputBuilder{
+    pub fn builder() -> crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateInputBuilder {
         crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpnTunnelCertificateInput`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpnTunnelCertificateInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_tunnel_outside_ip_address: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ModifyVpnTunnelCertificateInputBuilder {
 }
 impl ModifyVpnTunnelCertificateInputBuilder {
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_id = input;
         self
     }
@@ -66,25 +58,17 @@ impl ModifyVpnTunnelCertificateInputBuilder {
         &self.vpn_connection_id
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_tunnel_outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_tunnel_outside_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn set_vpn_tunnel_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_tunnel_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_tunnel_outside_ip_address = input;
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn get_vpn_tunnel_outside_ip_address(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_vpn_tunnel_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpn_tunnel_outside_ip_address
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -108,12 +92,10 @@ impl ModifyVpnTunnelCertificateInputBuilder {
         crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateInput {
-                vpn_connection_id: self.vpn_connection_id,
-                vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateInput {
+            vpn_connection_id: self.vpn_connection_id,
+            vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address,
+            dry_run: self.dry_run,
+        })
     }
 }

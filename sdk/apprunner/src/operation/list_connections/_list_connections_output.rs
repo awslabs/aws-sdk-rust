@@ -5,8 +5,7 @@
 pub struct ListConnectionsOutput {
     /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     #[doc(hidden)]
-    pub connection_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectionSummary>>,
+    pub connection_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListConnectionsOutput {
 }
 impl ListConnectionsOutput {
     /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn connection_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConnectionSummary]> {
+    pub fn connection_summary_list(&self) -> ::std::option::Option<&[crate::types::ConnectionSummary]> {
         self.connection_summary_list.as_deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
@@ -38,12 +35,9 @@ impl ListConnectionsOutput {
 
 /// A builder for [`ListConnectionsOutput`](crate::operation::list_connections::ListConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectionsOutputBuilder {
-    pub(crate) connection_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectionSummary>>,
+    pub(crate) connection_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListConnectionsOutputBuilder {
         self
     }
     /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn set_connection_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionSummary>>,
-    ) -> Self {
+    pub fn set_connection_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionSummary>>) -> Self {
         self.connection_summary_list = input;
         self
     }
     /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn get_connection_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionSummary>> {
+    pub fn get_connection_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionSummary>> {
         &self.connection_summary_list
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>

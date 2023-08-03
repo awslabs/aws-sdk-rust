@@ -5,15 +5,12 @@
 pub struct GetApplicationComponentStrategiesOutput {
     /// <p> A list of application component strategy recommendations. </p>
     #[doc(hidden)]
-    pub application_component_strategies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
+    pub application_component_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
     _request_id: Option<String>,
 }
 impl GetApplicationComponentStrategiesOutput {
     /// <p> A list of application component strategy recommendations. </p>
-    pub fn application_component_strategies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationComponentStrategy]> {
+    pub fn application_component_strategies(&self) -> ::std::option::Option<&[crate::types::ApplicationComponentStrategy]> {
         self.application_component_strategies.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for GetApplicationComponentStrategiesOutp
 }
 impl GetApplicationComponentStrategiesOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationComponentStrategiesOutput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput).
-    pub fn builder() -> crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesOutputBuilder{
+    pub fn builder() -> crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesOutputBuilder {
         crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetApplicationComponentStrategiesOutput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationComponentStrategiesOutputBuilder {
-    pub(crate) application_component_strategies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
+    pub(crate) application_component_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
     _request_id: Option<String>,
 }
 impl GetApplicationComponentStrategiesOutputBuilder {
@@ -45,10 +39,7 @@ impl GetApplicationComponentStrategiesOutputBuilder {
     /// To override the contents of this collection use [`set_application_component_strategies`](Self::set_application_component_strategies).
     ///
     /// <p> A list of application component strategy recommendations. </p>
-    pub fn application_component_strategies(
-        mut self,
-        input: crate::types::ApplicationComponentStrategy,
-    ) -> Self {
+    pub fn application_component_strategies(mut self, input: crate::types::ApplicationComponentStrategy) -> Self {
         let mut v = self.application_component_strategies.unwrap_or_default();
         v.push(input);
         self.application_component_strategies = ::std::option::Option::Some(v);
@@ -63,9 +54,7 @@ impl GetApplicationComponentStrategiesOutputBuilder {
         self
     }
     /// <p> A list of application component strategy recommendations. </p>
-    pub fn get_application_component_strategies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>> {
+    pub fn get_application_component_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>> {
         &self.application_component_strategies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -78,10 +67,9 @@ impl GetApplicationComponentStrategiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetApplicationComponentStrategiesOutput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput).
-    pub fn build(self) -> crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput{
+    pub fn build(self) -> crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput {
         crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput {
-            application_component_strategies: self.application_component_strategies
-            ,
+            application_component_strategies: self.application_component_strategies,
             _request_id: self._request_id,
         }
     }

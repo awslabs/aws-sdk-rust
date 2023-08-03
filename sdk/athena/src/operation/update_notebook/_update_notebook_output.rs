@@ -19,9 +19,7 @@ impl UpdateNotebookOutput {
 
 /// A builder for [`UpdateNotebookOutput`](crate::operation::update_notebook::UpdateNotebookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNotebookOutputBuilder {
     _request_id: Option<String>,
 }

@@ -23,15 +23,11 @@ pub struct RouteAnalysisCompletion {
     pub reason_code: ::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode>,
     /// <p>Additional information about the path. Available only if a connection is not found.</p>
     #[doc(hidden)]
-    pub reason_context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub reason_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RouteAnalysisCompletion {
     /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
-    pub fn result_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RouteAnalysisCompletionResultCode> {
+    pub fn result_code(&self) -> ::std::option::Option<&crate::types::RouteAnalysisCompletionResultCode> {
         self.result_code.as_ref()
     }
     /// <p>The reason code. Available only if a connection is not found.</p>
@@ -46,17 +42,11 @@ impl RouteAnalysisCompletion {
     /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
     /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
-    pub fn reason_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RouteAnalysisCompletionReasonCode> {
+    pub fn reason_code(&self) -> ::std::option::Option<&crate::types::RouteAnalysisCompletionReasonCode> {
         self.reason_code.as_ref()
     }
     /// <p>Additional information about the path. Available only if a connection is not found.</p>
-    pub fn reason_context(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn reason_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.reason_context.as_ref()
     }
 }
@@ -69,15 +59,11 @@ impl RouteAnalysisCompletion {
 
 /// A builder for [`RouteAnalysisCompletion`](crate::types::RouteAnalysisCompletion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteAnalysisCompletionBuilder {
     pub(crate) result_code: ::std::option::Option<crate::types::RouteAnalysisCompletionResultCode>,
     pub(crate) reason_code: ::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode>,
-    pub(crate) reason_context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) reason_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RouteAnalysisCompletionBuilder {
     /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
@@ -86,17 +72,12 @@ impl RouteAnalysisCompletionBuilder {
         self
     }
     /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
-    pub fn set_result_code(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteAnalysisCompletionResultCode>,
-    ) -> Self {
+    pub fn set_result_code(mut self, input: ::std::option::Option<crate::types::RouteAnalysisCompletionResultCode>) -> Self {
         self.result_code = input;
         self
     }
     /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
-    pub fn get_result_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteAnalysisCompletionResultCode> {
+    pub fn get_result_code(&self) -> &::std::option::Option<crate::types::RouteAnalysisCompletionResultCode> {
         &self.result_code
     }
     /// <p>The reason code. Available only if a connection is not found.</p>
@@ -127,10 +108,7 @@ impl RouteAnalysisCompletionBuilder {
     /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
     /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
-    pub fn set_reason_code(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode>,
-    ) -> Self {
+    pub fn set_reason_code(mut self, input: ::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode>) -> Self {
         self.reason_code = input;
         self
     }
@@ -146,9 +124,7 @@ impl RouteAnalysisCompletionBuilder {
     /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
     /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
-    pub fn get_reason_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode> {
+    pub fn get_reason_code(&self) -> &::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode> {
         &self.reason_code
     }
     /// Adds a key-value pair to `reason_context`.
@@ -169,19 +145,13 @@ impl RouteAnalysisCompletionBuilder {
     /// <p>Additional information about the path. Available only if a connection is not found.</p>
     pub fn set_reason_context(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.reason_context = input;
         self
     }
     /// <p>Additional information about the path. Available only if a connection is not found.</p>
-    pub fn get_reason_context(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_reason_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.reason_context
     }
     /// Consumes the builder and constructs a [`RouteAnalysisCompletion`](crate::types::RouteAnalysisCompletion).

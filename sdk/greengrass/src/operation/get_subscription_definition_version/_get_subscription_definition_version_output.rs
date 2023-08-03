@@ -33,9 +33,7 @@ impl GetSubscriptionDefinitionVersionOutput {
         self.creation_timestamp.as_deref()
     }
     /// Information about the subscription definition version.
-    pub fn definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SubscriptionDefinitionVersion> {
+    pub fn definition(&self) -> ::std::option::Option<&crate::types::SubscriptionDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the subscription definition version.
@@ -58,16 +56,14 @@ impl ::aws_http::request_id::RequestId for GetSubscriptionDefinitionVersionOutpu
 }
 impl GetSubscriptionDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionDefinitionVersionOutput`](crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionOutput).
-    pub fn builder() -> crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionOutputBuilder{
+    pub fn builder() -> crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionOutputBuilder {
         crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSubscriptionDefinitionVersionOutput`](crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubscriptionDefinitionVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -93,18 +89,12 @@ impl GetSubscriptionDefinitionVersionOutputBuilder {
         &self.arn
     }
     /// The time, in milliseconds since the epoch, when the subscription definition version was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the subscription definition version was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -118,17 +108,12 @@ impl GetSubscriptionDefinitionVersionOutputBuilder {
         self
     }
     /// Information about the subscription definition version.
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionDefinitionVersion>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::SubscriptionDefinitionVersion>) -> Self {
         self.definition = input;
         self
     }
     /// Information about the subscription definition version.
-    pub fn get_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubscriptionDefinitionVersion> {
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::SubscriptionDefinitionVersion> {
         &self.definition
     }
     /// The ID of the subscription definition version.
@@ -183,23 +168,14 @@ impl GetSubscriptionDefinitionVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSubscriptionDefinitionVersionOutput`](crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionOutput
-    {
+    pub fn build(self) -> crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionOutput {
         crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionOutput {
-            arn: self.arn
-            ,
-            creation_timestamp: self.creation_timestamp
-            ,
-            definition: self.definition
-            ,
-            id: self.id
-            ,
-            next_token: self.next_token
-            ,
-            version: self.version
-            ,
+            arn: self.arn,
+            creation_timestamp: self.creation_timestamp,
+            definition: self.definition,
+            id: self.id,
+            next_token: self.next_token,
+            version: self.version,
             _request_id: self._request_id,
         }
     }

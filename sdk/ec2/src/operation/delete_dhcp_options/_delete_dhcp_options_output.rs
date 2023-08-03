@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDhcpOptionsOutput {
 }
 impl DeleteDhcpOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDhcpOptionsOutput`](crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsOutputBuilder {
+    pub fn builder() -> crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsOutputBuilder {
         crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDhcpOptionsOutput`](crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDhcpOptionsOutputBuilder {
     _request_id: Option<String>,
 }

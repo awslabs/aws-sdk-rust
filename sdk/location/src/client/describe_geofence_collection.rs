@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`create_time(Option<DateTime>)`](crate::operation::describe_geofence_collection::DescribeGeofenceCollectionOutput::create_time): <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     ///   - [`update_time(Option<DateTime>)`](crate::operation::describe_geofence_collection::DescribeGeofenceCollectionOutput::update_time): <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     /// - On failure, responds with [`SdkError<DescribeGeofenceCollectionError>`](crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError)
-    pub fn describe_geofence_collection(&self) -> crate::operation::describe_geofence_collection::builders::DescribeGeofenceCollectionFluentBuilder{
+    pub fn describe_geofence_collection(&self) -> crate::operation::describe_geofence_collection::builders::DescribeGeofenceCollectionFluentBuilder {
         crate::operation::describe_geofence_collection::builders::DescribeGeofenceCollectionFluentBuilder::new(self.handle.clone())
     }
 }

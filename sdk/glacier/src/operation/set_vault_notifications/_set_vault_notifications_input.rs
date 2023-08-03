@@ -24,31 +24,24 @@ impl SetVaultNotificationsInput {
         self.vault_name.as_deref()
     }
     /// <p>Provides options for specifying notification configuration.</p>
-    pub fn vault_notification_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VaultNotificationConfig> {
+    pub fn vault_notification_config(&self) -> ::std::option::Option<&crate::types::VaultNotificationConfig> {
         self.vault_notification_config.as_ref()
     }
 }
 impl SetVaultNotificationsInput {
     /// Creates a new builder-style object to manufacture [`SetVaultNotificationsInput`](crate::operation::set_vault_notifications::SetVaultNotificationsInput).
-    pub fn builder(
-    ) -> crate::operation::set_vault_notifications::builders::SetVaultNotificationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_vault_notifications::builders::SetVaultNotificationsInputBuilder {
         crate::operation::set_vault_notifications::builders::SetVaultNotificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`SetVaultNotificationsInput`](crate::operation::set_vault_notifications::SetVaultNotificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetVaultNotificationsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
-    pub(crate) vault_notification_config:
-        ::std::option::Option<crate::types::VaultNotificationConfig>,
+    pub(crate) vault_notification_config: ::std::option::Option<crate::types::VaultNotificationConfig>,
 }
 impl SetVaultNotificationsInputBuilder {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -80,40 +73,28 @@ impl SetVaultNotificationsInputBuilder {
         &self.vault_name
     }
     /// <p>Provides options for specifying notification configuration.</p>
-    pub fn vault_notification_config(
-        mut self,
-        input: crate::types::VaultNotificationConfig,
-    ) -> Self {
+    pub fn vault_notification_config(mut self, input: crate::types::VaultNotificationConfig) -> Self {
         self.vault_notification_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides options for specifying notification configuration.</p>
-    pub fn set_vault_notification_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VaultNotificationConfig>,
-    ) -> Self {
+    pub fn set_vault_notification_config(mut self, input: ::std::option::Option<crate::types::VaultNotificationConfig>) -> Self {
         self.vault_notification_config = input;
         self
     }
     /// <p>Provides options for specifying notification configuration.</p>
-    pub fn get_vault_notification_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VaultNotificationConfig> {
+    pub fn get_vault_notification_config(&self) -> &::std::option::Option<crate::types::VaultNotificationConfig> {
         &self.vault_notification_config
     }
     /// Consumes the builder and constructs a [`SetVaultNotificationsInput`](crate::operation::set_vault_notifications::SetVaultNotificationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_vault_notifications::SetVaultNotificationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_vault_notifications::SetVaultNotificationsInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-                vault_notification_config: self.vault_notification_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_vault_notifications::SetVaultNotificationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_vault_notifications::SetVaultNotificationsInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+            vault_notification_config: self.vault_notification_config,
+        })
     }
 }

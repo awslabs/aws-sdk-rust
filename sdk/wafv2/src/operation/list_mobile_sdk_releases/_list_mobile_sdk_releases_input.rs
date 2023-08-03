@@ -29,18 +29,14 @@ impl ListMobileSdkReleasesInput {
 }
 impl ListMobileSdkReleasesInput {
     /// Creates a new builder-style object to manufacture [`ListMobileSdkReleasesInput`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput).
-    pub fn builder(
-    ) -> crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesInputBuilder {
         crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMobileSdkReleasesInput`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMobileSdkReleasesInputBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListMobileSdkReleasesInputBuilder {
     /// Consumes the builder and constructs a [`ListMobileSdkReleasesInput`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput {
-                platform: self.platform,
-                next_marker: self.next_marker,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput {
+            platform: self.platform,
+            next_marker: self.next_marker,
+            limit: self.limit,
+        })
     }
 }

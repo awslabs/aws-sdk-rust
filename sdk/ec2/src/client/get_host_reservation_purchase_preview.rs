@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`total_hourly_price(Option<String>)`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput::total_hourly_price): <p>The potential total hourly price of the reservation per hour.</p>
     ///   - [`total_upfront_price(Option<String>)`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput::total_upfront_price): <p>The potential total upfront price. This is billed immediately.</p>
     /// - On failure, responds with [`SdkError<GetHostReservationPurchasePreviewError>`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError)
-    pub fn get_host_reservation_purchase_preview(&self) -> crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewFluentBuilder{
+    pub fn get_host_reservation_purchase_preview(
+        &self,
+    ) -> crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewFluentBuilder {
         crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewFluentBuilder::new(self.handle.clone())
     }
 }

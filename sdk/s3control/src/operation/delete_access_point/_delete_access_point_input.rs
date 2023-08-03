@@ -46,17 +46,14 @@ impl DeleteAccessPointInput {
 }
 impl DeleteAccessPointInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointInput`](crate::operation::delete_access_point::DeleteAccessPointInput).
-    pub fn builder(
-    ) -> crate::operation::delete_access_point::builders::DeleteAccessPointInputBuilder {
+    pub fn builder() -> crate::operation::delete_access_point::builders::DeleteAccessPointInputBuilder {
         crate::operation::delete_access_point::builders::DeleteAccessPointInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessPointInput`](crate::operation::delete_access_point::DeleteAccessPointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessPointInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -129,15 +126,10 @@ impl DeleteAccessPointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessPointInput`](crate::operation::delete_access_point::DeleteAccessPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_access_point::DeleteAccessPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_access_point::DeleteAccessPointInput {
-                account_id: self.account_id,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_access_point::DeleteAccessPointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_access_point::DeleteAccessPointInput {
+            account_id: self.account_id,
+            name: self.name,
+        })
     }
 }

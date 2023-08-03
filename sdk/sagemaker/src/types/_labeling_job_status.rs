@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LabelingJobStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for LabelingJobStatus {
             "Initializing" => LabelingJobStatus::Initializing,
             "Stopped" => LabelingJobStatus::Stopped,
             "Stopping" => LabelingJobStatus::Stopping,
-            other => {
-                LabelingJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => LabelingJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl LabelingJobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Completed",
-            "Failed",
-            "InProgress",
-            "Initializing",
-            "Stopped",
-            "Stopping",
-        ]
+        &["Completed", "Failed", "InProgress", "Initializing", "Stopped", "Stopping"]
     }
 }
 impl ::std::convert::AsRef<str> for LabelingJobStatus {

@@ -5,16 +5,16 @@ pub use crate::operation::list_package_version_dependencies::_list_package_versi
 
 impl ListPackageVersionDependenciesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_package_version_dependencies();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListPackageVersionDependenciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPackageVersionDependenciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesInputBuilder,
+    inner: crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesInputBuilder,
 }
 impl ListPackageVersionDependenciesFluentBuilder {
     /// Creates a new `ListPackageVersionDependencies`.
@@ -37,15 +37,20 @@ impl ListPackageVersionDependenciesFluentBuilder {
         }
     }
     /// Access the ListPackageVersionDependencies as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_package_version_dependencies::ListPackageVersionDependencies, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_package_version_dependencies::ListPackageVersionDependencies,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListPackageVersionDependenciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl ListPackageVersionDependenciesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_package_version_dependencies::ListPackageVersionDependencies, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_package_version_dependencies::ListPackageVersionDependencies,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
@@ -197,18 +212,12 @@ impl ListPackageVersionDependenciesFluentBuilder {
         self.inner.get_package()
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_version(input.into());
         self
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_version(input);
         self
     }

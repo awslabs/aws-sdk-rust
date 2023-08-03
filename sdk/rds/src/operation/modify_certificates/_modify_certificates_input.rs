@@ -24,17 +24,14 @@ impl ModifyCertificatesInput {
 }
 impl ModifyCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ModifyCertificatesInput`](crate::operation::modify_certificates::ModifyCertificatesInput).
-    pub fn builder(
-    ) -> crate::operation::modify_certificates::builders::ModifyCertificatesInputBuilder {
+    pub fn builder() -> crate::operation::modify_certificates::builders::ModifyCertificatesInputBuilder {
         crate::operation::modify_certificates::builders::ModifyCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyCertificatesInput`](crate::operation::modify_certificates::ModifyCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyCertificatesInputBuilder {
     pub(crate) certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) remove_customer_override: ::std::option::Option<bool>,
@@ -42,19 +39,13 @@ pub struct ModifyCertificatesInputBuilder {
 impl ModifyCertificatesInputBuilder {
     /// <p>The new default certificate identifier to override the current one with.</p>
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
-    pub fn certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new default certificate identifier to override the current one with.</p>
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
-    pub fn set_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_identifier = input;
         self
     }
@@ -80,15 +71,10 @@ impl ModifyCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`ModifyCertificatesInput`](crate::operation::modify_certificates::ModifyCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_certificates::ModifyCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_certificates::ModifyCertificatesInput {
-                certificate_identifier: self.certificate_identifier,
-                remove_customer_override: self.remove_customer_override,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_certificates::ModifyCertificatesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::modify_certificates::ModifyCertificatesInput {
+            certificate_identifier: self.certificate_identifier,
+            remove_customer_override: self.remove_customer_override,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl CreateRelatedItemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_related_item::CreateRelatedItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_related_item::CreateRelatedItemError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_related_item::CreateRelatedItemError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_related_item();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateRelatedItemFluentBuilder {
         }
     }
     /// Access the CreateRelatedItem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_related_item::builders::CreateRelatedItemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_related_item::builders::CreateRelatedItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateRelatedItemFluentBuilder {
             crate::operation::create_related_item::CreateRelatedItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_related_item::CreateRelatedItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_related_item::CreateRelatedItemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateRelatedItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateRelatedItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_related_item::CreateRelatedItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_related_item::CreateRelatedItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_related_item::CreateRelatedItemError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateRelatedItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_related_item::CreateRelatedItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_related_item::CreateRelatedItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_related_item::CreateRelatedItemError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CreateRelatedItemFluentBuilder {
             crate::operation::create_related_item::CreateRelatedItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_related_item::CreateRelatedItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_related_item::CreateRelatedItemError>,
     > {
         self.customize_middleware().await
     }
@@ -172,10 +156,7 @@ impl CreateRelatedItemFluentBuilder {
         self
     }
     /// <p>The content of a related item to be created.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::RelatedItemInputContent>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::RelatedItemInputContent>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }

@@ -26,7 +26,7 @@ impl UpdateFeaturedResultsSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFeaturedResultsSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder,
+    inner: crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder,
 }
 impl UpdateFeaturedResultsSetFluentBuilder {
     /// Creates a new `UpdateFeaturedResultsSet`.
@@ -37,7 +37,7 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         }
     }
     /// Access the UpdateFeaturedResultsSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateFeaturedResultsSetFluentBuilder {
             crate::operation::update_featured_results_set::UpdateFeaturedResultsSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateFeaturedResultsSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateFeaturedResultsSetFluentBuilder {
             crate::operation::update_featured_results_set::UpdateFeaturedResultsSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         self.inner.get_index_id()
     }
     /// <p>The identifier of the set of featured results that you want to update.</p>
-    pub fn featured_results_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn featured_results_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.featured_results_set_id(input.into());
         self
     }
     /// <p>The identifier of the set of featured results that you want to update.</p>
-    pub fn set_featured_results_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_featured_results_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_featured_results_set_id(input);
         self
     }
@@ -155,18 +138,12 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         self.inner.get_featured_results_set_id()
     }
     /// <p>A new name for the set of featured results.</p>
-    pub fn featured_results_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn featured_results_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.featured_results_set_name(input.into());
         self
     }
     /// <p>A new name for the set of featured results.</p>
-    pub fn set_featured_results_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_featured_results_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_featured_results_set_name(input);
         self
     }
@@ -194,10 +171,7 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         self
     }
     /// <p>You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code>. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FeaturedResultsSetStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeaturedResultsSetStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -215,17 +189,12 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         self
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn set_query_texts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_query_texts(input);
         self
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn get_query_texts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_query_texts()
     }
     /// Appends an item to `FeaturedDocuments`.
@@ -238,17 +207,12 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         self
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn set_featured_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>,
-    ) -> Self {
+    pub fn set_featured_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>) -> Self {
         self.inner = self.inner.set_featured_documents(input);
         self
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn get_featured_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>> {
+    pub fn get_featured_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>> {
         self.inner.get_featured_documents()
     }
 }

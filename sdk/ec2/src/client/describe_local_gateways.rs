@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`local_gateways(Option<Vec<LocalGateway>>)`](crate::operation::describe_local_gateways::DescribeLocalGatewaysOutput::local_gateways): <p>Information about the local gateways.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_local_gateways::DescribeLocalGatewaysOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeLocalGatewaysError>`](crate::operation::describe_local_gateways::DescribeLocalGatewaysError)
-    pub fn describe_local_gateways(
-        &self,
-    ) -> crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysFluentBuilder
-    {
-        crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_local_gateways(&self) -> crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysFluentBuilder {
+        crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

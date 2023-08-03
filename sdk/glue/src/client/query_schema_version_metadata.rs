@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`schema_version_id(Option<String>)`](crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput::schema_version_id): <p>The unique version ID of the schema version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     /// - On failure, responds with [`SdkError<QuerySchemaVersionMetadataError>`](crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError)
-    pub fn query_schema_version_metadata(&self) -> crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataFluentBuilder{
+    pub fn query_schema_version_metadata(
+        &self,
+    ) -> crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataFluentBuilder {
         crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataFluentBuilder::new(self.handle.clone())
     }
 }

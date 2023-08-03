@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEventTopicsOutput`](crate::operation::describe_event_topics::DescribeEventTopicsOutput) with field(s):
     ///   - [`event_topics(Option<Vec<EventTopic>>)`](crate::operation::describe_event_topics::DescribeEventTopicsOutput::event_topics): <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
     /// - On failure, responds with [`SdkError<DescribeEventTopicsError>`](crate::operation::describe_event_topics::DescribeEventTopicsError)
-    pub fn describe_event_topics(
-        &self,
-    ) -> crate::operation::describe_event_topics::builders::DescribeEventTopicsFluentBuilder {
-        crate::operation::describe_event_topics::builders::DescribeEventTopicsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_event_topics(&self) -> crate::operation::describe_event_topics::builders::DescribeEventTopicsFluentBuilder {
+        crate::operation::describe_event_topics::builders::DescribeEventTopicsFluentBuilder::new(self.handle.clone())
     }
 }

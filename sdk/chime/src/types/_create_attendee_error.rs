@@ -54,18 +54,12 @@ pub struct CreateAttendeeErrorBuilder {
 }
 impl CreateAttendeeErrorBuilder {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    pub fn external_user_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    pub fn set_external_user_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_user_id = input;
         self
     }
@@ -88,18 +82,12 @@ impl CreateAttendeeErrorBuilder {
         &self.error_code
     }
     /// <p>The error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

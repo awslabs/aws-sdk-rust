@@ -27,7 +27,7 @@ impl SetResourceAccessForBucketInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetResourceAccessForBucketFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder,
+    inner: crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder,
 }
 impl SetResourceAccessForBucketFluentBuilder {
     /// Creates a new `SetResourceAccessForBucket`.
@@ -38,7 +38,7 @@ impl SetResourceAccessForBucketFluentBuilder {
         }
     }
     /// Access the SetResourceAccessForBucket as a reference.
-    pub fn as_input(&self) -> &crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl SetResourceAccessForBucketFluentBuilder {
             crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucket,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl SetResourceAccessForBucketFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl SetResourceAccessForBucketFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl SetResourceAccessForBucketFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl SetResourceAccessForBucketFluentBuilder {
             crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucket,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }
@@ -171,10 +154,7 @@ impl SetResourceAccessForBucketFluentBuilder {
     /// <li> <p> <code>allow</code> - Allows access to the bucket and its objects.</p> </li>
     /// <li> <p> <code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p> </li>
     /// </ul>
-    pub fn set_access(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceBucketAccess>,
-    ) -> Self {
+    pub fn set_access(mut self, input: ::std::option::Option<crate::types::ResourceBucketAccess>) -> Self {
         self.inner = self.inner.set_access(input);
         self
     }

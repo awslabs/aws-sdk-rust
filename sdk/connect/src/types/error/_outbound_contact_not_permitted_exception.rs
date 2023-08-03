@@ -27,17 +27,13 @@ impl ::std::fmt::Display for OutboundContactNotPermittedException {
     }
 }
 impl ::std::error::Error for OutboundContactNotPermittedException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::OutboundContactNotPermittedException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::OutboundContactNotPermittedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for OutboundContactNotPermittedException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for OutboundContactNotPermittedException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -51,9 +47,7 @@ impl OutboundContactNotPermittedException {
 
 /// A builder for [`OutboundContactNotPermittedException`](crate::types::error::OutboundContactNotPermittedException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutboundContactNotPermittedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -80,10 +74,7 @@ impl OutboundContactNotPermittedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

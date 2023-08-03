@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelDeploymentOutput`](crate::operation::cancel_deployment::CancelDeploymentOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::cancel_deployment::CancelDeploymentOutput::message): <p>A message that communicates if the cancel was successful.</p>
     /// - On failure, responds with [`SdkError<CancelDeploymentError>`](crate::operation::cancel_deployment::CancelDeploymentError)
-    pub fn cancel_deployment(
-        &self,
-    ) -> crate::operation::cancel_deployment::builders::CancelDeploymentFluentBuilder {
-        crate::operation::cancel_deployment::builders::CancelDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_deployment(&self) -> crate::operation::cancel_deployment::builders::CancelDeploymentFluentBuilder {
+        crate::operation::cancel_deployment::builders::CancelDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

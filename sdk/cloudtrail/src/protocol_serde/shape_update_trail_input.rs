@@ -25,9 +25,7 @@ pub fn ser_update_trail_input(
         object.key("EnableLogFileValidation").boolean(*var_7);
     }
     if let Some(var_8) = &input.cloud_watch_logs_log_group_arn {
-        object
-            .key("CloudWatchLogsLogGroupArn")
-            .string(var_8.as_str());
+        object.key("CloudWatchLogsLogGroupArn").string(var_8.as_str());
     }
     if let Some(var_9) = &input.cloud_watch_logs_role_arn {
         object.key("CloudWatchLogsRoleArn").string(var_9.as_str());

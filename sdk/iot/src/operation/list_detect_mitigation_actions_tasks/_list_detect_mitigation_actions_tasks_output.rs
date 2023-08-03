@@ -5,8 +5,7 @@
 pub struct ListDetectMitigationActionsTasksOutput {
     /// <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
     #[doc(hidden)]
-    pub tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectMitigationActionsTaskSummary>>,
+    pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::DetectMitigationActionsTaskSummary>>,
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDetectMitigationActionsTasksOutput {
 }
 impl ListDetectMitigationActionsTasksOutput {
     /// <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
-    pub fn tasks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DetectMitigationActionsTaskSummary]> {
+    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::DetectMitigationActionsTaskSummary]> {
         self.tasks.as_deref()
     }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDetectMitigationActionsTasksOutpu
 }
 impl ListDetectMitigationActionsTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListDetectMitigationActionsTasksOutput`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksOutput).
-    pub fn builder() -> crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksOutputBuilder{
+    pub fn builder() -> crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksOutputBuilder {
         crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDetectMitigationActionsTasksOutput`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDetectMitigationActionsTasksOutputBuilder {
-    pub(crate) tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectMitigationActionsTaskSummary>>,
+    pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::DetectMitigationActionsTaskSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl ListDetectMitigationActionsTasksOutputBuilder {
         self
     }
     /// <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DetectMitigationActionsTaskSummary>,
-        >,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectMitigationActionsTaskSummary>>) -> Self {
         self.tasks = input;
         self
     }
     /// <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
-    pub fn get_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectMitigationActionsTaskSummary>>
-    {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectMitigationActionsTaskSummary>> {
         &self.tasks
     }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
@@ -100,12 +86,10 @@ impl ListDetectMitigationActionsTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDetectMitigationActionsTasksOutput`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksOutput).
-    pub fn build(self) -> crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksOutput{
+    pub fn build(self) -> crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksOutput {
         crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksOutput {
-            tasks: self.tasks
-            ,
-            next_token: self.next_token
-            ,
+            tasks: self.tasks,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

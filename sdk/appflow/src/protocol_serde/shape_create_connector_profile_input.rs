@@ -15,10 +15,7 @@ pub fn ser_create_connector_profile_input(
     if let Some(var_4) = &input.connector_profile_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("connectorProfileConfig").start_object();
-        crate::protocol_serde::shape_connector_profile_config::ser_connector_profile_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_connector_profile_config::ser_connector_profile_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.connector_profile_name {

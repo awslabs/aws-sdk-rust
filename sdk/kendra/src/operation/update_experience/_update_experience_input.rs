@@ -50,17 +50,14 @@ impl UpdateExperienceInput {
 }
 impl UpdateExperienceInput {
     /// Creates a new builder-style object to manufacture [`UpdateExperienceInput`](crate::operation::update_experience::UpdateExperienceInput).
-    pub fn builder() -> crate::operation::update_experience::builders::UpdateExperienceInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_experience::builders::UpdateExperienceInputBuilder {
         crate::operation::update_experience::builders::UpdateExperienceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateExperienceInput`](crate::operation::update_experience::UpdateExperienceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExperienceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -132,17 +129,12 @@ impl UpdateExperienceInputBuilder {
         self
     }
     /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperienceConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ExperienceConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
         &self.configuration
     }
     /// <p>A new description for your Amazon Kendra experience.</p>
@@ -162,10 +154,7 @@ impl UpdateExperienceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateExperienceInput`](crate::operation::update_experience::UpdateExperienceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_experience::UpdateExperienceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_experience::UpdateExperienceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_experience::UpdateExperienceInput {
             id: self.id,
             name: self.name,

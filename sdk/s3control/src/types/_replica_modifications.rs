@@ -26,9 +26,7 @@ impl ReplicaModifications {
 
 /// A builder for [`ReplicaModifications`](crate::types::ReplicaModifications).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicaModificationsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ReplicaModificationsStatus>,
 }
@@ -39,10 +37,7 @@ impl ReplicaModificationsBuilder {
         self
     }
     /// <p>Specifies whether S3 on Outposts replicates modifications to object metadata on replicas.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicaModificationsStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplicaModificationsStatus>) -> Self {
         self.status = input;
         self
     }
@@ -52,8 +47,6 @@ impl ReplicaModificationsBuilder {
     }
     /// Consumes the builder and constructs a [`ReplicaModifications`](crate::types::ReplicaModifications).
     pub fn build(self) -> crate::types::ReplicaModifications {
-        crate::types::ReplicaModifications {
-            status: self.status,
-        }
+        crate::types::ReplicaModifications { status: self.status }
     }
 }

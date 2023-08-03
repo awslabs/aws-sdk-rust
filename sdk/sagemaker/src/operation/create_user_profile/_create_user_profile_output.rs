@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateUserProfileOutput {
 }
 impl CreateUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserProfileOutput`](crate::operation::create_user_profile::CreateUserProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_user_profile::builders::CreateUserProfileOutputBuilder {
+    pub fn builder() -> crate::operation::create_user_profile::builders::CreateUserProfileOutputBuilder {
         crate::operation::create_user_profile::builders::CreateUserProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserProfileOutput`](crate::operation::create_user_profile::CreateUserProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserProfileOutputBuilder {
     pub(crate) user_profile_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateUserProfileOutputBuilder {
     /// <p>The user profile Amazon Resource Name (ARN).</p>
-    pub fn user_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user profile Amazon Resource Name (ARN).</p>
-    pub fn set_user_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_arn = input;
         self
     }

@@ -10,10 +10,7 @@ impl GetDataLakeSourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_lake_sources::GetDataLakeSourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_lake_sources::GetDataLakeSourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_data_lake_sources();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDataLakeSourcesFluentBuilder {
         }
     }
     /// Access the GetDataLakeSources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetDataLakeSourcesFluentBuilder {
             crate::operation::get_data_lake_sources::GetDataLakeSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_lake_sources::GetDataLakeSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_lake_sources::GetDataLakeSourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetDataLakeSourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetDataLakeSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_lake_sources::GetDataLakeSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_lake_sources::GetDataLakeSourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetDataLakeSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_lake_sources::GetDataLakeSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_lake_sources::GetDataLakeSourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetDataLakeSourcesFluentBuilder {
             crate::operation::get_data_lake_sources::GetDataLakeSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_lake_sources::GetDataLakeSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_lake_sources::GetDataLakeSourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_data_lake_sources::paginator::GetDataLakeSourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_data_lake_sources::paginator::GetDataLakeSourcesPaginator {
-        crate::operation::get_data_lake_sources::paginator::GetDataLakeSourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_data_lake_sources::paginator::GetDataLakeSourcesPaginator {
+        crate::operation::get_data_lake_sources::paginator::GetDataLakeSourcesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `accounts`.
     ///
@@ -143,10 +122,7 @@ impl GetDataLakeSourcesFluentBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_accounts(input);
         self
     }

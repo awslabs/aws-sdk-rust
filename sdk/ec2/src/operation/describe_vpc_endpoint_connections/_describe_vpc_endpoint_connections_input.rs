@@ -50,16 +50,14 @@ impl DescribeVpcEndpointConnectionsInput {
 }
 impl DescribeVpcEndpointConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointConnectionsInput`](crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsInput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_connections::builders::DescribeVpcEndpointConnectionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_connections::builders::DescribeVpcEndpointConnectionsInputBuilder {
         crate::operation::describe_vpc_endpoint_connections::builders::DescribeVpcEndpointConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcEndpointConnectionsInput`](crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointConnectionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -107,10 +105,7 @@ impl DescribeVpcEndpointConnectionsInputBuilder {
     /// <li> <p> <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the endpoint.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -160,17 +155,11 @@ impl DescribeVpcEndpointConnectionsInputBuilder {
         crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsInput {
-                dry_run: self.dry_run
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsInput {
+            dry_run: self.dry_run,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

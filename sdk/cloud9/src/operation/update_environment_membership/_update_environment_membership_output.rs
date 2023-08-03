@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateEnvironmentMembershipOutput {
 }
 impl UpdateEnvironmentMembershipOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentMembershipOutput`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput).
-    pub fn builder() -> crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipOutputBuilder{
+    pub fn builder() -> crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipOutputBuilder {
         crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEnvironmentMembershipOutput`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentMembershipOutputBuilder {
     pub(crate) membership: ::std::option::Option<crate::types::EnvironmentMember>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateEnvironmentMembershipOutputBuilder {
         self
     }
     /// <p>Information about the environment member whose settings were changed.</p>
-    pub fn set_membership(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentMember>,
-    ) -> Self {
+    pub fn set_membership(mut self, input: ::std::option::Option<crate::types::EnvironmentMember>) -> Self {
         self.membership = input;
         self
     }
@@ -63,9 +58,7 @@ impl UpdateEnvironmentMembershipOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentMembershipOutput`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput {
+    pub fn build(self) -> crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput {
         crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput {
             membership: self.membership,
             _request_id: self._request_id,

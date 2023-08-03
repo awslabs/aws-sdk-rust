@@ -26,7 +26,7 @@ impl BatchGetCustomDataIdentifiersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetCustomDataIdentifiersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder,
+    inner: crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder,
 }
 impl BatchGetCustomDataIdentifiersFluentBuilder {
     /// Creates a new `BatchGetCustomDataIdentifiers`.
@@ -37,7 +37,7 @@ impl BatchGetCustomDataIdentifiersFluentBuilder {
         }
     }
     /// Access the BatchGetCustomDataIdentifiers as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchGetCustomDataIdentifiersFluentBuilder {
             crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchGetCustomDataIdentifiersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchGetCustomDataIdentifiersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchGetCustomDataIdentifiersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchGetCustomDataIdentifiersFluentBuilder {
             crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +119,7 @@ impl BatchGetCustomDataIdentifiersFluentBuilder {
         self
     }
     /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ids(input);
         self
     }

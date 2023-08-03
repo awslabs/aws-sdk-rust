@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeDirectoryConfigsOutput {
 }
 impl DescribeDirectoryConfigsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectoryConfigsOutput`](crate::operation::describe_directory_configs::DescribeDirectoryConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsOutputBuilder {
         crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDirectoryConfigsOutput`](crate::operation::describe_directory_configs::DescribeDirectoryConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectoryConfigsOutputBuilder {
-    pub(crate) directory_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DirectoryConfig>>,
+    pub(crate) directory_configs: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeDirectoryConfigsOutputBuilder {
         self
     }
     /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
-    pub fn set_directory_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryConfig>>,
-    ) -> Self {
+    pub fn set_directory_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryConfig>>) -> Self {
         self.directory_configs = input;
         self
     }
     /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
-    pub fn get_directory_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectoryConfig>> {
+    pub fn get_directory_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectoryConfig>> {
         &self.directory_configs
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -96,9 +86,7 @@ impl DescribeDirectoryConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDirectoryConfigsOutput`](crate::operation::describe_directory_configs::DescribeDirectoryConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_directory_configs::DescribeDirectoryConfigsOutput {
+    pub fn build(self) -> crate::operation::describe_directory_configs::DescribeDirectoryConfigsOutput {
         crate::operation::describe_directory_configs::DescribeDirectoryConfigsOutput {
             directory_configs: self.directory_configs,
             next_token: self.next_token,

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutRoomSkillParameterOutput {
 }
 impl PutRoomSkillParameterOutput {
     /// Creates a new builder-style object to manufacture [`PutRoomSkillParameterOutput`](crate::operation::put_room_skill_parameter::PutRoomSkillParameterOutput).
-    pub fn builder(
-    ) -> crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterOutputBuilder {
         crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRoomSkillParameterOutput`](crate::operation::put_room_skill_parameter::PutRoomSkillParameterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRoomSkillParameterOutputBuilder {
     _request_id: Option<String>,
 }

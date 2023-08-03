@@ -4,64 +4,49 @@ pub fn de_send_message_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::send_message::SendMessageOutput,
-    crate::operation::send_message::SendMessageError,
-> {
+) -> std::result::Result<crate::operation::send_message::SendMessageOutput, crate::operation::send_message::SendMessageError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::send_message::SendMessageError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::send_message::SendMessageError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::send_message::SendMessageError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::send_message::SendMessageError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidMessageContents" => {
-            crate::operation::send_message::SendMessageError::InvalidMessageContents({
+        "InvalidMessageContents" => crate::operation::send_message::SendMessageError::InvalidMessageContents({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidMessageContentsBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_message_contents::de_invalid_message_contents_xml_err(_response_body, output).map_err(crate::operation::send_message::SendMessageError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "AWS.SimpleQueueService.UnsupportedOperation" => {
-            crate::operation::send_message::SendMessageError::UnsupportedOperation({
+                let mut output = crate::types::error::builders::InvalidMessageContentsBuilder::default();
+                output = crate::protocol_serde::shape_invalid_message_contents::de_invalid_message_contents_xml_err(_response_body, output)
+                    .map_err(crate::operation::send_message::SendMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "AWS.SimpleQueueService.UnsupportedOperation" => crate::operation::send_message::SendMessageError::UnsupportedOperation({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::UnsupportedOperationBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(_response_body, output).map_err(crate::operation::send_message::SendMessageError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(_response_body, output)
+                    .map_err(crate::operation::send_message::SendMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::send_message::SendMessageError::generic(generic),
     })
 }
@@ -71,19 +56,13 @@ pub fn de_send_message_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::send_message::SendMessageOutput,
-    crate::operation::send_message::SendMessageError,
-> {
+) -> std::result::Result<crate::operation::send_message::SendMessageOutput, crate::operation::send_message::SendMessageError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::send_message::builders::SendMessageOutputBuilder::default();
+        let mut output = crate::operation::send_message::builders::SendMessageOutputBuilder::default();
         output = crate::protocol_serde::shape_send_message::de_send_message(_response_body, output)
             .map_err(crate::operation::send_message::SendMessageError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -92,10 +71,7 @@ pub fn de_send_message_http_response_with_props(
 pub fn de_send_message(
     inp: &[u8],
     mut builder: crate::operation::send_message::builders::SendMessageOutputBuilder,
-) -> Result<
-    crate::operation::send_message::builders::SendMessageOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::send_message::builders::SendMessageOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -187,9 +163,7 @@ pub fn de_send_message(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected SendMessageResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected SendMessageResult tag"));
     };
     Ok(builder)
 }

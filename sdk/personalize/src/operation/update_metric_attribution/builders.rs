@@ -26,8 +26,7 @@ impl UpdateMetricAttributionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMetricAttributionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_metric_attribution::builders::UpdateMetricAttributionInputBuilder,
+    inner: crate::operation::update_metric_attribution::builders::UpdateMetricAttributionInputBuilder,
 }
 impl UpdateMetricAttributionFluentBuilder {
     /// Creates a new `UpdateMetricAttribution`.
@@ -38,10 +37,7 @@ impl UpdateMetricAttributionFluentBuilder {
         }
     }
     /// Access the UpdateMetricAttribution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_metric_attribution::builders::UpdateMetricAttributionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_metric_attribution::builders::UpdateMetricAttributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateMetricAttributionFluentBuilder {
             crate::operation::update_metric_attribution::UpdateMetricAttribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_metric_attribution::UpdateMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_metric_attribution::UpdateMetricAttributionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateMetricAttributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateMetricAttributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_metric_attribution::UpdateMetricAttributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_metric_attribution::UpdateMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_metric_attribution::UpdateMetricAttributionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateMetricAttributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_metric_attribution::UpdateMetricAttributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_metric_attribution::UpdateMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_metric_attribution::UpdateMetricAttributionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateMetricAttributionFluentBuilder {
             crate::operation::update_metric_attribution::UpdateMetricAttribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_metric_attribution::UpdateMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_metric_attribution::UpdateMetricAttributionError>,
     > {
         self.customize_middleware().await
     }
@@ -134,17 +119,12 @@ impl UpdateMetricAttributionFluentBuilder {
         self
     }
     /// <p>Add new metric attributes to the metric attribution.</p>
-    pub fn set_add_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>,
-    ) -> Self {
+    pub fn set_add_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>) -> Self {
         self.inner = self.inner.set_add_metrics(input);
         self
     }
     /// <p>Add new metric attributes to the metric attribution.</p>
-    pub fn get_add_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
+    pub fn get_add_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
         self.inner.get_add_metrics()
     }
     /// Appends an item to `removeMetrics`.
@@ -152,25 +132,17 @@ impl UpdateMetricAttributionFluentBuilder {
     /// To override the contents of this collection use [`set_remove_metrics`](Self::set_remove_metrics).
     ///
     /// <p>Remove metric attributes from the metric attribution.</p>
-    pub fn remove_metrics(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remove_metrics(input.into());
         self
     }
     /// <p>Remove metric attributes from the metric attribution.</p>
-    pub fn set_remove_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_metrics(input);
         self
     }
     /// <p>Remove metric attributes from the metric attribution.</p>
-    pub fn get_remove_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_metrics()
     }
     /// <p>An output config for the metric attribution.</p>
@@ -179,32 +151,21 @@ impl UpdateMetricAttributionFluentBuilder {
         self
     }
     /// <p>An output config for the metric attribution.</p>
-    pub fn set_metrics_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricAttributionOutput>,
-    ) -> Self {
+    pub fn set_metrics_output_config(mut self, input: ::std::option::Option<crate::types::MetricAttributionOutput>) -> Self {
         self.inner = self.inner.set_metrics_output_config(input);
         self
     }
     /// <p>An output config for the metric attribution.</p>
-    pub fn get_metrics_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricAttributionOutput> {
+    pub fn get_metrics_output_config(&self) -> &::std::option::Option<crate::types::MetricAttributionOutput> {
         self.inner.get_metrics_output_config()
     }
     /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
-    pub fn metric_attribution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_attribution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_attribution_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
-    pub fn set_metric_attribution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_attribution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_attribution_arn(input);
         self
     }

@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`target_ids(Option<Vec<String>>)`](crate::operation::list_deployment_targets::ListDeploymentTargetsOutput::target_ids): <p> The unique IDs of deployment targets. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployment_targets::ListDeploymentTargetsOutput::next_token): <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     /// - On failure, responds with [`SdkError<ListDeploymentTargetsError>`](crate::operation::list_deployment_targets::ListDeploymentTargetsError)
-    pub fn list_deployment_targets(
-        &self,
-    ) -> crate::operation::list_deployment_targets::builders::ListDeploymentTargetsFluentBuilder
-    {
-        crate::operation::list_deployment_targets::builders::ListDeploymentTargetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_deployment_targets(&self) -> crate::operation::list_deployment_targets::builders::ListDeploymentTargetsFluentBuilder {
+        crate::operation::list_deployment_targets::builders::ListDeploymentTargetsFluentBuilder::new(self.handle.clone())
     }
 }

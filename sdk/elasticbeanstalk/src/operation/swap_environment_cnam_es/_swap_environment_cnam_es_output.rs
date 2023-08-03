@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SwapEnvironmentCnamEsOutput {
 }
 impl SwapEnvironmentCnamEsOutput {
     /// Creates a new builder-style object to manufacture [`SwapEnvironmentCnamEsOutput`](crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput).
-    pub fn builder(
-    ) -> crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsOutputBuilder {
         crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SwapEnvironmentCnamEsOutput`](crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SwapEnvironmentCnamEsOutputBuilder {
     _request_id: Option<String>,
 }

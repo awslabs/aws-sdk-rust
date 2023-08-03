@@ -37,9 +37,7 @@ impl ObjectTypeField {
 
 /// A builder for [`ObjectTypeField`](crate::types::ObjectTypeField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObjectTypeFieldBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl ObjectTypeFieldBuilder {
         self
     }
     /// <p>The content type of the field. Used for determining equality when searching.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::FieldContentType>) -> Self {
         self.content_type = input;
         self
     }

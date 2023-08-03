@@ -37,9 +37,7 @@ impl DisassociateResourceFluentBuilder {
         }
     }
     /// Access the DisassociateResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DisassociateResourceFluentBuilder {
             crate::operation::disassociate_resource::DisassociateResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resource::DisassociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resource::DisassociateResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DisassociateResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DisassociateResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resource::DisassociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resource::DisassociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resource::DisassociateResourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DisassociateResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resource::DisassociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resource::DisassociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resource::DisassociateResourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DisassociateResourceFluentBuilder {
             crate::operation::disassociate_resource::DisassociateResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resource::DisassociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resource::DisassociateResourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_identifier(input.into());
         self
     }
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn set_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_identifier(input);
         self
     }

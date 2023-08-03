@@ -22,16 +22,14 @@ impl UpdateSubscriptionDefinitionInput {
 }
 impl UpdateSubscriptionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionDefinitionInput`](crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput).
-    pub fn builder() -> crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionInputBuilder {
         crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSubscriptionDefinitionInput`](crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSubscriptionDefinitionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_definition_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl UpdateSubscriptionDefinitionInputBuilder {
         &self.name
     }
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the subscription definition.
-    pub fn set_subscription_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_definition_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl UpdateSubscriptionDefinitionInputBuilder {
         crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput {
-                name: self.name,
-                subscription_definition_id: self.subscription_definition_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput {
+            name: self.name,
+            subscription_definition_id: self.subscription_definition_id,
+        })
     }
 }

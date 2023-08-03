@@ -10,10 +10,7 @@ impl CreateApiKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_api_key::CreateApiKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_api_key::CreateAPIKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_api_key::CreateAPIKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_api_key();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateAPIKeyFluentBuilder {
         }
     }
     /// Access the CreateAPIKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_api_key::builders::CreateApiKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_api_key::builders::CreateApiKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl CreateAPIKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -152,29 +144,21 @@ impl CreateAPIKeyFluentBuilder {
     /// <p>The client application domains that you want to use this API key for. </p>
     /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    pub fn token_domains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token_domains(input.into());
         self
     }
     /// <p>The client application domains that you want to use this API key for. </p>
     /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    pub fn set_token_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_token_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_token_domains(input);
         self
     }
     /// <p>The client application domains that you want to use this API key for. </p>
     /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    pub fn get_token_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_token_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_token_domains()
     }
 }

@@ -39,9 +39,7 @@ impl Interpretation {
 
 /// A builder for [`Interpretation`](crate::types::Interpretation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InterpretationBuilder {
     pub(crate) nlu_confidence: ::std::option::Option<crate::types::ConfidenceScore>,
     pub(crate) sentiment_response: ::std::option::Option<crate::types::SentimentResponse>,
@@ -54,10 +52,7 @@ impl InterpretationBuilder {
         self
     }
     /// <p>Determines the threshold where Amazon Lex V2 will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
-    pub fn set_nlu_confidence(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfidenceScore>,
-    ) -> Self {
+    pub fn set_nlu_confidence(mut self, input: ::std::option::Option<crate::types::ConfidenceScore>) -> Self {
         self.nlu_confidence = input;
         self
     }
@@ -73,18 +68,13 @@ impl InterpretationBuilder {
     }
     /// <p>The sentiment expressed in an utterance. </p>
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
-    pub fn set_sentiment_response(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentResponse>,
-    ) -> Self {
+    pub fn set_sentiment_response(mut self, input: ::std::option::Option<crate::types::SentimentResponse>) -> Self {
         self.sentiment_response = input;
         self
     }
     /// <p>The sentiment expressed in an utterance. </p>
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
-    pub fn get_sentiment_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::SentimentResponse> {
+    pub fn get_sentiment_response(&self) -> &::std::option::Option<crate::types::SentimentResponse> {
         &self.sentiment_response
     }
     /// <p>A list of intents that might satisfy the user's utterance. The intents are ordered by the confidence score.</p>

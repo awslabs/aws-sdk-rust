@@ -26,13 +26,11 @@ impl CreateMeetingWithAttendeesInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeetingWithAttendees.html">CreateMeetingWithAttendees</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by CreateMeetingWithAttendees in the Amazon Chime SDK Meetings Namespace"
-)]
+#[deprecated(note = "Replaced by CreateMeetingWithAttendees in the Amazon Chime SDK Meetings Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMeetingWithAttendeesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder,
+    inner: crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder,
 }
 impl CreateMeetingWithAttendeesFluentBuilder {
     /// Creates a new `CreateMeetingWithAttendees`.
@@ -43,7 +41,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         }
     }
     /// Access the CreateMeetingWithAttendees as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
             crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendees,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl CreateMeetingWithAttendeesFluentBuilder {
             crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendees,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -147,18 +128,12 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>The external meeting ID.</p>
-    pub fn external_meeting_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_meeting_id(input.into());
         self
     }
     /// <p>The external meeting ID.</p>
-    pub fn set_external_meeting_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_meeting_id(input);
         self
     }
@@ -167,18 +142,12 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self.inner.get_external_meeting_id()
     }
     /// <p>Reserved.</p>
-    pub fn meeting_host_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn meeting_host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.meeting_host_id(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_meeting_host_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_meeting_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_meeting_host_id(input);
         self
     }
@@ -213,10 +182,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -225,25 +191,17 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (us-east-1).</p>
-    pub fn notifications_configuration(
-        mut self,
-        input: crate::types::MeetingNotificationConfiguration,
-    ) -> Self {
+    pub fn notifications_configuration(mut self, input: crate::types::MeetingNotificationConfiguration) -> Self {
         self.inner = self.inner.notifications_configuration(input);
         self
     }
     /// <p>The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (us-east-1).</p>
-    pub fn set_notifications_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notifications_configuration(mut self, input: ::std::option::Option<crate::types::MeetingNotificationConfiguration>) -> Self {
         self.inner = self.inner.set_notifications_configuration(input);
         self
     }
     /// <p>The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (us-east-1).</p>
-    pub fn get_notifications_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MeetingNotificationConfiguration> {
+    pub fn get_notifications_configuration(&self) -> &::std::option::Option<crate::types::MeetingNotificationConfiguration> {
         self.inner.get_notifications_configuration()
     }
     /// Appends an item to `Attendees`.
@@ -256,17 +214,12 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn set_attendees(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
-    ) -> Self {
+    pub fn set_attendees(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>) -> Self {
         self.inner = self.inner.set_attendees(input);
         self
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn get_attendees(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
+    pub fn get_attendees(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
         self.inner.get_attendees()
     }
 }

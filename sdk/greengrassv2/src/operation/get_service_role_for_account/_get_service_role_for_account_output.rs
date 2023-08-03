@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetServiceRoleForAccountOutput {
 }
 impl GetServiceRoleForAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceRoleForAccountOutput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput).
-    pub fn builder() -> crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountOutputBuilder{
+    pub fn builder() -> crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountOutputBuilder {
         crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceRoleForAccountOutput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceRoleForAccountOutputBuilder {
     pub(crate) associated_at: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct GetServiceRoleForAccountOutputBuilder {
 }
 impl GetServiceRoleForAccountOutputBuilder {
     /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
-    pub fn associated_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
-    pub fn set_associated_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_at = input;
         self
     }
@@ -88,9 +80,7 @@ impl GetServiceRoleForAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetServiceRoleForAccountOutput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput {
+    pub fn build(self) -> crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput {
         crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput {
             associated_at: self.associated_at,
             role_arn: self.role_arn,

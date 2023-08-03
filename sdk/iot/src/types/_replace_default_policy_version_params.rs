@@ -23,9 +23,7 @@ impl ReplaceDefaultPolicyVersionParams {
 
 /// A builder for [`ReplaceDefaultPolicyVersionParams`](crate::types::ReplaceDefaultPolicyVersionParams).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceDefaultPolicyVersionParamsBuilder {
     pub(crate) template_name: ::std::option::Option<crate::types::PolicyTemplateName>,
 }
@@ -36,10 +34,7 @@ impl ReplaceDefaultPolicyVersionParamsBuilder {
         self
     }
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyTemplateName>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<crate::types::PolicyTemplateName>) -> Self {
         self.template_name = input;
         self
     }

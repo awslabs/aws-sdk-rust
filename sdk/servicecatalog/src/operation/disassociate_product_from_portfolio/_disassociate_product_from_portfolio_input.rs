@@ -37,16 +37,14 @@ impl DisassociateProductFromPortfolioInput {
 }
 impl DisassociateProductFromPortfolioInput {
     /// Creates a new builder-style object to manufacture [`DisassociateProductFromPortfolioInput`](crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput).
-    pub fn builder() -> crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioInputBuilder {
         crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateProductFromPortfolioInput`](crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateProductFromPortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl DisassociateProductFromPortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -70,10 +65,7 @@ impl DisassociateProductFromPortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -114,16 +106,18 @@ impl DisassociateProductFromPortfolioInputBuilder {
         &self.portfolio_id
     }
     /// Consumes the builder and constructs a [`DisassociateProductFromPortfolioInput`](crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput {
-                accept_language: self.accept_language
-                ,
-                product_id: self.product_id
-                ,
-                portfolio_id: self.portfolio_id
-                ,
-            }
+                accept_language: self.accept_language,
+                product_id: self.product_id,
+                portfolio_id: self.portfolio_id,
+            },
         )
     }
 }

@@ -43,20 +43,16 @@ impl GetUsageStatisticsInput {
 }
 impl GetUsageStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder {
+    pub fn builder() -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder {
         crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsageStatisticsInputBuilder {
-    pub(crate) filter_by:
-        ::std::option::Option<::std::vec::Vec<crate::types::UsageStatisticsFilter>>,
+    pub(crate) filter_by: ::std::option::Option<::std::vec::Vec<crate::types::UsageStatisticsFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::UsageStatisticsSortBy>,
@@ -75,17 +71,12 @@ impl GetUsageStatisticsInputBuilder {
         self
     }
     /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-    pub fn set_filter_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageStatisticsFilter>>,
-    ) -> Self {
+    pub fn set_filter_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageStatisticsFilter>>) -> Self {
         self.filter_by = input;
         self
     }
     /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-    pub fn get_filter_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageStatisticsFilter>> {
+    pub fn get_filter_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageStatisticsFilter>> {
         &self.filter_by
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
@@ -122,10 +113,7 @@ impl GetUsageStatisticsInputBuilder {
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageStatisticsSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::UsageStatisticsSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -150,18 +138,13 @@ impl GetUsageStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage_statistics::GetUsageStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_usage_statistics::GetUsageStatisticsInput {
-                filter_by: self.filter_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                time_range: self.time_range,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_usage_statistics::GetUsageStatisticsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_usage_statistics::GetUsageStatisticsInput {
+            filter_by: self.filter_by,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            sort_by: self.sort_by,
+            time_range: self.time_range,
+        })
     }
 }

@@ -26,8 +26,7 @@ impl ListResourceDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_resource_definitions::builders::ListResourceDefinitionsInputBuilder,
+    inner: crate::operation::list_resource_definitions::builders::ListResourceDefinitionsInputBuilder,
 }
 impl ListResourceDefinitionsFluentBuilder {
     /// Creates a new `ListResourceDefinitions`.
@@ -38,10 +37,7 @@ impl ListResourceDefinitionsFluentBuilder {
         }
     }
     /// Access the ListResourceDefinitions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resource_definitions::builders::ListResourceDefinitionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_resource_definitions::builders::ListResourceDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListResourceDefinitionsFluentBuilder {
             crate::operation::list_resource_definitions::ListResourceDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_definitions::ListResourceDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_definitions::ListResourceDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListResourceDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListResourceDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_definitions::ListResourceDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_definitions::ListResourceDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_definitions::ListResourceDefinitionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListResourceDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_definitions::ListResourceDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_definitions::ListResourceDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_definitions::ListResourceDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ListResourceDefinitionsFluentBuilder {
             crate::operation::list_resource_definitions::ListResourceDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_definitions::ListResourceDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_definitions::ListResourceDefinitionsError>,
     > {
         self.customize_middleware().await
     }

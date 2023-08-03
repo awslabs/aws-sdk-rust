@@ -43,18 +43,14 @@ impl CreateOrganizationalUnitInput {
 }
 impl CreateOrganizationalUnitInput {
     /// Creates a new builder-style object to manufacture [`CreateOrganizationalUnitInput`](crate::operation::create_organizational_unit::CreateOrganizationalUnitInput).
-    pub fn builder(
-    ) -> crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder {
         crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOrganizationalUnitInput`](crate::operation::create_organizational_unit::CreateOrganizationalUnitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOrganizationalUnitInputBuilder {
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -120,10 +116,7 @@ impl CreateOrganizationalUnitInputBuilder {
     /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -140,12 +133,10 @@ impl CreateOrganizationalUnitInputBuilder {
         crate::operation::create_organizational_unit::CreateOrganizationalUnitInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_organizational_unit::CreateOrganizationalUnitInput {
-                parent_id: self.parent_id,
-                name: self.name,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_organizational_unit::CreateOrganizationalUnitInput {
+            parent_id: self.parent_id,
+            name: self.name,
+            tags: self.tags,
+        })
     }
 }

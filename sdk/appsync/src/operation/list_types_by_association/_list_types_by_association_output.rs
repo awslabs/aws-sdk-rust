@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTypesByAssociationOutput {
 }
 impl ListTypesByAssociationOutput {
     /// Creates a new builder-style object to manufacture [`ListTypesByAssociationOutput`](crate::operation::list_types_by_association::ListTypesByAssociationOutput).
-    pub fn builder(
-    ) -> crate::operation::list_types_by_association::builders::ListTypesByAssociationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_types_by_association::builders::ListTypesByAssociationOutputBuilder {
         crate::operation::list_types_by_association::builders::ListTypesByAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTypesByAssociationOutput`](crate::operation::list_types_by_association::ListTypesByAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypesByAssociationOutputBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::Type>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListTypesByAssociationOutputBuilder {
         self
     }
     /// <p>The <code>Type</code> objects.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Type>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Type>>) -> Self {
         self.types = input;
         self
     }
@@ -93,9 +86,7 @@ impl ListTypesByAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTypesByAssociationOutput`](crate::operation::list_types_by_association::ListTypesByAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_types_by_association::ListTypesByAssociationOutput {
+    pub fn build(self) -> crate::operation::list_types_by_association::ListTypesByAssociationOutput {
         crate::operation::list_types_by_association::ListTypesByAssociationOutput {
             types: self.types,
             next_token: self.next_token,

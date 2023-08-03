@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for ReorderReceiptRuleSetOutput {
 }
 impl ReorderReceiptRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`ReorderReceiptRuleSetOutput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetOutput).
-    pub fn builder(
-    ) -> crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetOutputBuilder {
         crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReorderReceiptRuleSetOutput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReorderReceiptRuleSetOutputBuilder {
     _request_id: Option<String>,
 }

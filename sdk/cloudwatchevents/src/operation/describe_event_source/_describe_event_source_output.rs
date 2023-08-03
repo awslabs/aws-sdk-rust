@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for DescribeEventSourceOutput {
 }
 impl DescribeEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSourceOutput`](crate::operation::describe_event_source::DescribeEventSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_source::builders::DescribeEventSourceOutputBuilder {
-        crate::operation::describe_event_source::builders::DescribeEventSourceOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_event_source::builders::DescribeEventSourceOutputBuilder {
+        crate::operation::describe_event_source::builders::DescribeEventSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventSourceOutput`](crate::operation::describe_event_source::DescribeEventSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventSourceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
@@ -112,10 +108,7 @@ impl DescribeEventSourceOutputBuilder {
         self
     }
     /// <p>The date and time that the event source was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -129,10 +122,7 @@ impl DescribeEventSourceOutputBuilder {
         self
     }
     /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
-    pub fn set_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_time = input;
         self
     }
@@ -160,10 +150,7 @@ impl DescribeEventSourceOutputBuilder {
         self
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourceState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EventSourceState>) -> Self {
         self.state = input;
         self
     }

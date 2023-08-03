@@ -6,10 +6,7 @@ pub fn ser_start_dashboard_snapshot_job_input(
     if let Some(var_1) = &input.snapshot_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SnapshotConfiguration").start_object();
-        crate::protocol_serde::shape_snapshot_configuration::ser_snapshot_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_snapshot_configuration::ser_snapshot_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.snapshot_job_id {
@@ -18,10 +15,7 @@ pub fn ser_start_dashboard_snapshot_job_input(
     if let Some(var_4) = &input.user_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("UserConfiguration").start_object();
-        crate::protocol_serde::shape_snapshot_user_configuration::ser_snapshot_user_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_snapshot_user_configuration::ser_snapshot_user_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

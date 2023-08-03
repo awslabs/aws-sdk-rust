@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteProvisionedProductPlanOutput {
 }
 impl DeleteProvisionedProductPlanOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisionedProductPlanOutput`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanOutput).
-    pub fn builder() -> crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanOutputBuilder{
+    pub fn builder() -> crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanOutputBuilder {
         crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProvisionedProductPlanOutput`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProvisionedProductPlanOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteProvisionedProductPlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteProvisionedProductPlanOutput`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanOutput {
+    pub fn build(self) -> crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanOutput {
         crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanOutput {
             _request_id: self._request_id,
         }

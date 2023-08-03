@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RecrawlBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for RecrawlBehavior {
             "CRAWL_EVENT_MODE" => RecrawlBehavior::CrawlEventMode,
             "CRAWL_EVERYTHING" => RecrawlBehavior::CrawlEverything,
             "CRAWL_NEW_FOLDERS_ONLY" => RecrawlBehavior::CrawlNewFoldersOnly,
-            other => {
-                RecrawlBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => RecrawlBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl RecrawlBehavior {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CRAWL_EVENT_MODE",
-            "CRAWL_EVERYTHING",
-            "CRAWL_NEW_FOLDERS_ONLY",
-        ]
+        &["CRAWL_EVENT_MODE", "CRAWL_EVERYTHING", "CRAWL_NEW_FOLDERS_ONLY"]
     }
 }
 impl ::std::convert::AsRef<str> for RecrawlBehavior {

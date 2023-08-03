@@ -51,9 +51,7 @@ impl AssetCompositeModel {
 
 /// A builder for [`AssetCompositeModel`](crate::types::AssetCompositeModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetCompositeModelBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -116,17 +114,12 @@ impl AssetCompositeModelBuilder {
         self
     }
     /// <p>The asset properties that this composite model defines.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>) -> Self {
         self.properties = input;
         self
     }
     /// <p>The asset properties that this composite model defines.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>> {
         &self.properties
     }
     /// <p> The ID of the asset composite model. </p>

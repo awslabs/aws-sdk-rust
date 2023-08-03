@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeVirtualGatewaysOutput {
 }
 impl DescribeVirtualGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysOutput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysOutputBuilder {
         crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVirtualGatewaysOutput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVirtualGatewaysOutputBuilder {
-    pub(crate) virtual_gateways:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualGateway>>,
+    pub(crate) virtual_gateways: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGateway>>,
     _request_id: Option<String>,
 }
 impl DescribeVirtualGatewaysOutputBuilder {
@@ -51,17 +46,12 @@ impl DescribeVirtualGatewaysOutputBuilder {
         self
     }
     /// <p>The virtual private gateways.</p>
-    pub fn set_virtual_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGateway>>,
-    ) -> Self {
+    pub fn set_virtual_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGateway>>) -> Self {
         self.virtual_gateways = input;
         self
     }
     /// <p>The virtual private gateways.</p>
-    pub fn get_virtual_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualGateway>> {
+    pub fn get_virtual_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualGateway>> {
         &self.virtual_gateways
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +64,7 @@ impl DescribeVirtualGatewaysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVirtualGatewaysOutput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysOutput {
+    pub fn build(self) -> crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysOutput {
         crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysOutput {
             virtual_gateways: self.virtual_gateways,
             _request_id: self._request_id,

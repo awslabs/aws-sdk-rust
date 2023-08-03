@@ -63,18 +63,12 @@ pub struct IpAccessSettingsSummaryBuilder {
 }
 impl IpAccessSettingsSummaryBuilder {
     /// <p>The ARN of IP access settings.</p>
-    pub fn ip_access_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of IP access settings.</p>
-    pub fn set_ip_access_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_access_settings_arn = input;
         self
     }
@@ -116,10 +110,7 @@ impl IpAccessSettingsSummaryBuilder {
         self
     }
     /// <p>The creation date timestamp of the IP access settings.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

@@ -18,9 +18,7 @@ pub struct ListDevicePositionsResponseEntry {
     pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
     #[doc(hidden)]
-    pub position_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub position_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListDevicePositionsResponseEntry {
     /// <p>The ID of the device for this position.</p>
@@ -40,11 +38,7 @@ impl ListDevicePositionsResponseEntry {
         self.accuracy.as_ref()
     }
     /// <p>The properties associated with the position.</p>
-    pub fn position_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn position_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.position_properties.as_ref()
     }
 }
@@ -74,9 +68,7 @@ pub struct ListDevicePositionsResponseEntryBuilder {
     pub(crate) sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
-    pub(crate) position_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) position_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListDevicePositionsResponseEntryBuilder {
     /// <p>The ID of the device for this position.</p>
@@ -99,10 +91,7 @@ impl ListDevicePositionsResponseEntryBuilder {
         self
     }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn set_sample_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.sample_time = input;
         self
     }
@@ -136,10 +125,7 @@ impl ListDevicePositionsResponseEntryBuilder {
         self
     }
     /// <p>The accuracy of the device position.</p>
-    pub fn set_accuracy(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionalAccuracy>,
-    ) -> Self {
+    pub fn set_accuracy(mut self, input: ::std::option::Option<crate::types::PositionalAccuracy>) -> Self {
         self.accuracy = input;
         self
     }
@@ -165,19 +151,13 @@ impl ListDevicePositionsResponseEntryBuilder {
     /// <p>The properties associated with the position.</p>
     pub fn set_position_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.position_properties = input;
         self
     }
     /// <p>The properties associated with the position.</p>
-    pub fn get_position_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_position_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.position_properties
     }
     /// Consumes the builder and constructs a [`ListDevicePositionsResponseEntry`](crate::types::ListDevicePositionsResponseEntry).

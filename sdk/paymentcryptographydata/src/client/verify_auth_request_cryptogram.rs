@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`key_check_value(Option<String>)`](crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput::key_check_value): <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
     ///   - [`auth_response_value(Option<String>)`](crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput::auth_response_value): <p>The result for ARQC verification or ARPC generation within Amazon Web Services Payment Cryptography.</p>
     /// - On failure, responds with [`SdkError<VerifyAuthRequestCryptogramError>`](crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError)
-    pub fn verify_auth_request_cryptogram(&self) -> crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramFluentBuilder{
+    pub fn verify_auth_request_cryptogram(
+        &self,
+    ) -> crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramFluentBuilder {
         crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramFluentBuilder::new(self.handle.clone())
     }
 }

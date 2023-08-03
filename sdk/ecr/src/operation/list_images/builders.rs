@@ -10,10 +10,7 @@ impl ListImagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_images::ListImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_images::ListImagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_images();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListImagesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_images::ListImages,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_images::ListImages, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListImagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListImagesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_images::ListImages,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_images::ListImages, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError>,
     > {
         self.customize_middleware().await
@@ -134,18 +122,12 @@ impl ListImagesFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The repository with image IDs to be listed.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The repository with image IDs to be listed.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -193,10 +175,7 @@ impl ListImagesFluentBuilder {
         self
     }
     /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListImagesFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListImagesFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

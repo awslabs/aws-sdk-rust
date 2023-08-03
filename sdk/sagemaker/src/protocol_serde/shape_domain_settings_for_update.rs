@@ -5,16 +5,15 @@ pub fn ser_domain_settings_for_update(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.r_studio_server_pro_domain_settings_for_update {
         #[allow(unused_mut)]
-        let mut object_2 = object
-            .key("RStudioServerProDomainSettingsForUpdate")
-            .start_object();
-        crate::protocol_serde::shape_r_studio_server_pro_domain_settings_for_update::ser_r_studio_server_pro_domain_settings_for_update(&mut object_2, var_1)?;
+        let mut object_2 = object.key("RStudioServerProDomainSettingsForUpdate").start_object();
+        crate::protocol_serde::shape_r_studio_server_pro_domain_settings_for_update::ser_r_studio_server_pro_domain_settings_for_update(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.execution_role_identity_config {
-        object
-            .key("ExecutionRoleIdentityConfig")
-            .string(var_3.as_str());
+        object.key("ExecutionRoleIdentityConfig").string(var_3.as_str());
     }
     if let Some(var_4) = &input.security_group_ids {
         let mut array_5 = object.key("SecurityGroupIds").start_array();

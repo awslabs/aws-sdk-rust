@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`max_results(Option<i32>)`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput::max_results): <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     /// - On failure, responds with [`SdkError<DescribeBrokerEngineTypesError>`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesError)
-    pub fn describe_broker_engine_types(&self) -> crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesFluentBuilder{
+    pub fn describe_broker_engine_types(&self) -> crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesFluentBuilder {
         crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesFluentBuilder::new(self.handle.clone())
     }
 }

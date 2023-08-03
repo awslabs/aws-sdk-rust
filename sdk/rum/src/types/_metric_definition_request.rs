@@ -87,9 +87,7 @@ pub struct MetricDefinitionRequest {
     /// </ul>
     /// <p> For both extended metrics and custom metrics, all dimensions listed in this field must also be included in <code>EventPattern</code>.</p>
     #[doc(hidden)]
-    pub dimension_keys: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub dimension_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The pattern that defines the metric, specified as a JSON object. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
     /// <p>When you define extended metrics, the metric definition is not valid if <code>EventPattern</code> is omitted.</p>
     /// <p>Example event patterns:</p>
@@ -145,11 +143,7 @@ impl MetricDefinitionRequest {
     /// <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
     /// </ul>
     /// <p> For both extended metrics and custom metrics, all dimensions listed in this field must also be included in <code>EventPattern</code>.</p>
-    pub fn dimension_keys(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn dimension_keys(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.dimension_keys.as_ref()
     }
     /// <p>The pattern that defines the metric, specified as a JSON object. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
@@ -179,16 +173,12 @@ impl MetricDefinitionRequest {
 
 /// A builder for [`MetricDefinitionRequest`](crate::types::MetricDefinitionRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDefinitionRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value_key: ::std::option::Option<::std::string::String>,
     pub(crate) unit_label: ::std::option::Option<::std::string::String>,
-    pub(crate) dimension_keys: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) dimension_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) event_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
@@ -318,9 +308,7 @@ impl MetricDefinitionRequestBuilder {
     /// <p> For both extended metrics and custom metrics, all dimensions listed in this field must also be included in <code>EventPattern</code>.</p>
     pub fn set_dimension_keys(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.dimension_keys = input;
         self
@@ -336,11 +324,7 @@ impl MetricDefinitionRequestBuilder {
     /// <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
     /// </ul>
     /// <p> For both extended metrics and custom metrics, all dimensions listed in this field must also be included in <code>EventPattern</code>.</p>
-    pub fn get_dimension_keys(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_dimension_keys(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.dimension_keys
     }
     /// <p>The pattern that defines the metric, specified as a JSON object. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
@@ -352,10 +336,7 @@ impl MetricDefinitionRequestBuilder {
     /// <li> <p> <code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code> </p> </li>
     /// </ul>
     /// <p>If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
-    pub fn event_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_pattern = ::std::option::Option::Some(input.into());
         self
     }
@@ -368,10 +349,7 @@ impl MetricDefinitionRequestBuilder {
     /// <li> <p> <code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code> </p> </li>
     /// </ul>
     /// <p>If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
-    pub fn set_event_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_pattern = input;
         self
     }

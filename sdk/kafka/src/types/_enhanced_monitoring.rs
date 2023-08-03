@@ -40,13 +40,7 @@
 /// <p>Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of these levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EnhancedMonitoring {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for EnhancedMonitoring {
             "PER_BROKER" => EnhancedMonitoring::PerBroker,
             "PER_TOPIC_PER_BROKER" => EnhancedMonitoring::PerTopicPerBroker,
             "PER_TOPIC_PER_PARTITION" => EnhancedMonitoring::PerTopicPerPartition,
-            other => EnhancedMonitoring::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EnhancedMonitoring::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl EnhancedMonitoring {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEFAULT",
-            "PER_BROKER",
-            "PER_TOPIC_PER_BROKER",
-            "PER_TOPIC_PER_PARTITION",
-        ]
+        &["DEFAULT", "PER_BROKER", "PER_TOPIC_PER_BROKER", "PER_TOPIC_PER_PARTITION"]
     }
 }
 impl ::std::convert::AsRef<str> for EnhancedMonitoring {

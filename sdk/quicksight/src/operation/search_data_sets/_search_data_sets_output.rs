@@ -49,12 +49,9 @@ impl SearchDataSetsOutput {
 
 /// A builder for [`SearchDataSetsOutput`](crate::operation::search_data_sets::SearchDataSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDataSetsOutputBuilder {
-    pub(crate) data_set_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>>,
+    pub(crate) data_set_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -73,17 +70,12 @@ impl SearchDataSetsOutputBuilder {
         self
     }
     /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
-    pub fn set_data_set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>>,
-    ) -> Self {
+    pub fn set_data_set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>>) -> Self {
         self.data_set_summaries = input;
         self
     }
     /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
-    pub fn get_data_set_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>> {
+    pub fn get_data_set_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>> {
         &self.data_set_summaries
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>

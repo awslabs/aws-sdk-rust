@@ -23,9 +23,7 @@ impl UpdateFreeTierConfig {
 
 /// A builder for [`UpdateFreeTierConfig`](crate::types::UpdateFreeTierConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFreeTierConfigBuilder {
     pub(crate) activated: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl UpdateFreeTierConfigBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateFreeTierConfig`](crate::types::UpdateFreeTierConfig).
     pub fn build(self) -> crate::types::UpdateFreeTierConfig {
-        crate::types::UpdateFreeTierConfig {
-            activated: self.activated,
-        }
+        crate::types::UpdateFreeTierConfig { activated: self.activated }
     }
 }

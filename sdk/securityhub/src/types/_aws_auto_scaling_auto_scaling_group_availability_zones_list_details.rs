@@ -16,18 +16,14 @@ impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
 }
 impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
     /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder {
         crate::types::builders::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
@@ -48,8 +44,6 @@ impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
-        crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
-            value: self.value,
-        }
+        crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails { value: self.value }
     }
 }

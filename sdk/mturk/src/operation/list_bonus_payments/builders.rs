@@ -10,10 +10,7 @@ impl ListBonusPaymentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_bonus_payments::ListBonusPaymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bonus_payments::ListBonusPaymentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bonus_payments::ListBonusPaymentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_bonus_payments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListBonusPaymentsFluentBuilder {
         }
     }
     /// Access the ListBonusPayments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_bonus_payments::builders::ListBonusPaymentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_bonus_payments::builders::ListBonusPaymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListBonusPaymentsFluentBuilder {
             crate::operation::list_bonus_payments::ListBonusPayments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bonus_payments::ListBonusPaymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bonus_payments::ListBonusPaymentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListBonusPaymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListBonusPaymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bonus_payments::ListBonusPaymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bonus_payments::ListBonusPaymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bonus_payments::ListBonusPaymentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListBonusPaymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bonus_payments::ListBonusPaymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bonus_payments::ListBonusPaymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bonus_payments::ListBonusPaymentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListBonusPaymentsFluentBuilder {
             crate::operation::list_bonus_payments::ListBonusPayments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bonus_payments::ListBonusPaymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bonus_payments::ListBonusPaymentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_bonus_payments::paginator::ListBonusPaymentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_bonus_payments::paginator::ListBonusPaymentsPaginator {
-        crate::operation::list_bonus_payments::paginator::ListBonusPaymentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_bonus_payments::paginator::ListBonusPaymentsPaginator {
+        crate::operation::list_bonus_payments::paginator::ListBonusPaymentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl ListBonusPaymentsFluentBuilder {
         self.inner.get_hit_id()
     }
     /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assignment_id(input.into());
         self
     }
     /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assignment_id(input);
         self
     }

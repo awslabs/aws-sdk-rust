@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`total_un_assigned_shards(Option<String>)`](crate::operation::describe_domain_health::DescribeDomainHealthOutput::total_un_assigned_shards): <p>The total number of primary and replica shards not allocated to any of the nodes for the cluster.</p>
     ///   - [`environment_information(Option<Vec<EnvironmentInfo>>)`](crate::operation::describe_domain_health::DescribeDomainHealthOutput::environment_information): <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
     /// - On failure, responds with [`SdkError<DescribeDomainHealthError>`](crate::operation::describe_domain_health::DescribeDomainHealthError)
-    pub fn describe_domain_health(
-        &self,
-    ) -> crate::operation::describe_domain_health::builders::DescribeDomainHealthFluentBuilder {
-        crate::operation::describe_domain_health::builders::DescribeDomainHealthFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_domain_health(&self) -> crate::operation::describe_domain_health::builders::DescribeDomainHealthFluentBuilder {
+        crate::operation::describe_domain_health::builders::DescribeDomainHealthFluentBuilder::new(self.handle.clone())
     }
 }

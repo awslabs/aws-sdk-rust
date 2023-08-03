@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDefaultBranchOutput {
 }
 impl UpdateDefaultBranchOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDefaultBranchOutput`](crate::operation::update_default_branch::UpdateDefaultBranchOutput).
-    pub fn builder(
-    ) -> crate::operation::update_default_branch::builders::UpdateDefaultBranchOutputBuilder {
-        crate::operation::update_default_branch::builders::UpdateDefaultBranchOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_default_branch::builders::UpdateDefaultBranchOutputBuilder {
+        crate::operation::update_default_branch::builders::UpdateDefaultBranchOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDefaultBranchOutput`](crate::operation::update_default_branch::UpdateDefaultBranchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDefaultBranchOutputBuilder {
     _request_id: Option<String>,
 }

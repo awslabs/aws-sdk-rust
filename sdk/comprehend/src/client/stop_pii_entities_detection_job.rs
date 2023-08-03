@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobOutput::job_id): <p>The identifier of the PII entities detection job to stop.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobOutput::job_status): <p>The status of the PII entities detection job.</p>
     /// - On failure, responds with [`SdkError<StopPiiEntitiesDetectionJobError>`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobError)
-    pub fn stop_pii_entities_detection_job(&self) -> crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobFluentBuilder{
+    pub fn stop_pii_entities_detection_job(
+        &self,
+    ) -> crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobFluentBuilder {
         crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

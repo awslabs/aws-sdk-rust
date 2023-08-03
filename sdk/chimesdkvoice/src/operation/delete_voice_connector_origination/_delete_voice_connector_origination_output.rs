@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVoiceConnectorOriginationOutput
 }
 impl DeleteVoiceConnectorOriginationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorOriginationOutput`](crate::operation::delete_voice_connector_origination::DeleteVoiceConnectorOriginationOutput).
-    pub fn builder() -> crate::operation::delete_voice_connector_origination::builders::DeleteVoiceConnectorOriginationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_voice_connector_origination::builders::DeleteVoiceConnectorOriginationOutputBuilder {
         crate::operation::delete_voice_connector_origination::builders::DeleteVoiceConnectorOriginationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceConnectorOriginationOutput`](crate::operation::delete_voice_connector_origination::DeleteVoiceConnectorOriginationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorOriginationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteVoiceConnectorOriginationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorOriginationOutput`](crate::operation::delete_voice_connector_origination::DeleteVoiceConnectorOriginationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_voice_connector_origination::DeleteVoiceConnectorOriginationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_voice_connector_origination::DeleteVoiceConnectorOriginationOutput {
         crate::operation::delete_voice_connector_origination::DeleteVoiceConnectorOriginationOutput {
             _request_id: self._request_id,
         }

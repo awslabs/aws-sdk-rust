@@ -9,9 +9,7 @@ pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
     #[doc(hidden)]
-    pub ebs: ::std::option::Option<
-        crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
-    >,
+    pub ebs: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails>,
     /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
     /// <p>If <code>NoDevice</code> is <code>true</code>, then you cannot specify <code>Ebs</code>.&gt;</p>
     #[doc(hidden)]
@@ -27,11 +25,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
         self.device_name.as_deref()
     }
     /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
-    pub fn ebs(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
-    > {
+    pub fn ebs(&self) -> ::std::option::Option<&crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails> {
         self.ebs.as_ref()
     }
     /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
@@ -47,23 +41,17 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
 }
 impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
     /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
         crate::types::builders::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
-    pub(crate) ebs: ::std::option::Option<
-        crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
-    >,
+    pub(crate) ebs: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails>,
     pub(crate) no_device: ::std::option::Option<bool>,
     pub(crate) virtual_name: ::std::option::Option<::std::string::String>,
 }
@@ -83,29 +71,17 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
         &self.device_name
     }
     /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
-    pub fn ebs(
-        mut self,
-        input: crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
-    ) -> Self {
+    pub fn ebs(mut self, input: crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails) -> Self {
         self.ebs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
-    pub fn set_ebs(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
-        >,
-    ) -> Self {
+    pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails>) -> Self {
         self.ebs = input;
         self
     }
     /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
-    pub fn get_ebs(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
-    > {
+    pub fn get_ebs(&self) -> &::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails> {
         &self.ebs
     }
     /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
@@ -143,9 +119,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
         &self.virtual_name
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
+    pub fn build(self) -> crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
         crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
             device_name: self.device_name,
             ebs: self.ebs,

@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateProvisioningTemplateOutput {
 }
 impl CreateProvisioningTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateProvisioningTemplateOutput`](crate::operation::create_provisioning_template::CreateProvisioningTemplateOutput).
-    pub fn builder() -> crate::operation::create_provisioning_template::builders::CreateProvisioningTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::create_provisioning_template::builders::CreateProvisioningTemplateOutputBuilder {
         crate::operation::create_provisioning_template::builders::CreateProvisioningTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProvisioningTemplateOutput`](crate::operation::create_provisioning_template::CreateProvisioningTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProvisioningTemplateOutputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -67,18 +65,12 @@ impl CreateProvisioningTemplateOutputBuilder {
         &self.template_arn
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -110,9 +102,7 @@ impl CreateProvisioningTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateProvisioningTemplateOutput`](crate::operation::create_provisioning_template::CreateProvisioningTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_provisioning_template::CreateProvisioningTemplateOutput {
+    pub fn build(self) -> crate::operation::create_provisioning_template::CreateProvisioningTemplateOutput {
         crate::operation::create_provisioning_template::CreateProvisioningTemplateOutput {
             template_arn: self.template_arn,
             template_name: self.template_name,

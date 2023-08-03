@@ -55,9 +55,7 @@ impl UpdateSlackChannelConfigurationOutput {
         self.notify_on_resolve_case
     }
     /// <p>The case severity for a support case that you want to receive notifications.</p>
-    pub fn notify_on_case_severity(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationSeverityLevel> {
+    pub fn notify_on_case_severity(&self) -> ::std::option::Option<&crate::types::NotificationSeverityLevel> {
         self.notify_on_case_severity.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
@@ -72,16 +70,14 @@ impl ::aws_http::request_id::RequestId for UpdateSlackChannelConfigurationOutput
 }
 impl UpdateSlackChannelConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSlackChannelConfigurationOutput`](crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput).
-    pub fn builder() -> crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationOutputBuilder {
         crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSlackChannelConfigurationOutput`](crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationOutputBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
@@ -89,8 +85,7 @@ pub struct UpdateSlackChannelConfigurationOutputBuilder {
     pub(crate) notify_on_create_or_reopen_case: ::std::option::Option<bool>,
     pub(crate) notify_on_add_correspondence_to_case: ::std::option::Option<bool>,
     pub(crate) notify_on_resolve_case: ::std::option::Option<bool>,
-    pub(crate) notify_on_case_severity:
-        ::std::option::Option<crate::types::NotificationSeverityLevel>,
+    pub(crate) notify_on_case_severity: ::std::option::Option<crate::types::NotificationSeverityLevel>,
     pub(crate) channel_role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -143,10 +138,7 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
         self
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
-    pub fn set_notify_on_create_or_reopen_case(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_notify_on_create_or_reopen_case(mut self, input: ::std::option::Option<bool>) -> Self {
         self.notify_on_create_or_reopen_case = input;
         self
     }
@@ -160,10 +152,7 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
         self
     }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
-    pub fn set_notify_on_add_correspondence_to_case(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_notify_on_add_correspondence_to_case(mut self, input: ::std::option::Option<bool>) -> Self {
         self.notify_on_add_correspondence_to_case = input;
         self
     }
@@ -186,40 +175,26 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
         &self.notify_on_resolve_case
     }
     /// <p>The case severity for a support case that you want to receive notifications.</p>
-    pub fn notify_on_case_severity(
-        mut self,
-        input: crate::types::NotificationSeverityLevel,
-    ) -> Self {
+    pub fn notify_on_case_severity(mut self, input: crate::types::NotificationSeverityLevel) -> Self {
         self.notify_on_case_severity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The case severity for a support case that you want to receive notifications.</p>
-    pub fn set_notify_on_case_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationSeverityLevel>,
-    ) -> Self {
+    pub fn set_notify_on_case_severity(mut self, input: ::std::option::Option<crate::types::NotificationSeverityLevel>) -> Self {
         self.notify_on_case_severity = input;
         self
     }
     /// <p>The case severity for a support case that you want to receive notifications.</p>
-    pub fn get_notify_on_case_severity(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationSeverityLevel> {
+    pub fn get_notify_on_case_severity(&self) -> &::std::option::Option<crate::types::NotificationSeverityLevel> {
         &self.notify_on_case_severity
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn channel_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn set_channel_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_role_arn = input;
         self
     }
@@ -237,27 +212,16 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSlackChannelConfigurationOutput`](crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput {
         crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput {
-            team_id: self.team_id
-            ,
-            channel_id: self.channel_id
-            ,
-            channel_name: self.channel_name
-            ,
-            notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case
-            ,
-            notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case
-            ,
-            notify_on_resolve_case: self.notify_on_resolve_case
-            ,
-            notify_on_case_severity: self.notify_on_case_severity
-            ,
-            channel_role_arn: self.channel_role_arn
-            ,
+            team_id: self.team_id,
+            channel_id: self.channel_id,
+            channel_name: self.channel_name,
+            notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case,
+            notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case,
+            notify_on_resolve_case: self.notify_on_resolve_case,
+            notify_on_case_severity: self.notify_on_case_severity,
+            channel_role_arn: self.channel_role_arn,
             _request_id: self._request_id,
         }
     }

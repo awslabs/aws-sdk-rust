@@ -37,9 +37,7 @@ impl SourceSchema {
 
 /// A builder for [`SourceSchema`](crate::types::SourceSchema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceSchemaBuilder {
     pub(crate) record_format: ::std::option::Option<crate::types::RecordFormat>,
     pub(crate) record_encoding: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl SourceSchemaBuilder {
         self
     }
     /// <p>Specifies the format of the records on the streaming source.</p>
-    pub fn set_record_format(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordFormat>,
-    ) -> Self {
+    pub fn set_record_format(mut self, input: ::std::option::Option<crate::types::RecordFormat>) -> Self {
         self.record_format = input;
         self
     }
@@ -64,18 +59,12 @@ impl SourceSchemaBuilder {
         &self.record_format
     }
     /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
-    pub fn record_encoding(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_encoding = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
-    pub fn set_record_encoding(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_encoding = input;
         self
     }
@@ -95,17 +84,12 @@ impl SourceSchemaBuilder {
         self
     }
     /// <p>A list of <code>RecordColumn</code> objects.</p>
-    pub fn set_record_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>,
-    ) -> Self {
+    pub fn set_record_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>) -> Self {
         self.record_columns = input;
         self
     }
     /// <p>A list of <code>RecordColumn</code> objects.</p>
-    pub fn get_record_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>> {
+    pub fn get_record_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>> {
         &self.record_columns
     }
     /// Consumes the builder and constructs a [`SourceSchema`](crate::types::SourceSchema).

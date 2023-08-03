@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`state(WorkGroupState)`](crate::operation::update_work_group::builders::UpdateWorkGroupFluentBuilder::state) / [`set_state(Option<WorkGroupState>)`](crate::operation::update_work_group::builders::UpdateWorkGroupFluentBuilder::set_state): <p>The workgroup state that will be updated for the given workgroup.</p>
     /// - On success, responds with [`UpdateWorkGroupOutput`](crate::operation::update_work_group::UpdateWorkGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateWorkGroupError>`](crate::operation::update_work_group::UpdateWorkGroupError)
-    pub fn update_work_group(
-        &self,
-    ) -> crate::operation::update_work_group::builders::UpdateWorkGroupFluentBuilder {
-        crate::operation::update_work_group::builders::UpdateWorkGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_work_group(&self) -> crate::operation::update_work_group::builders::UpdateWorkGroupFluentBuilder {
+        crate::operation::update_work_group::builders::UpdateWorkGroupFluentBuilder::new(self.handle.clone())
     }
 }

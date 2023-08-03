@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteObservabilityConfigurationOutput`](crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationOutput) with field(s):
     ///   - [`observability_configuration(Option<ObservabilityConfiguration>)`](crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationOutput::observability_configuration): <p>A description of the App Runner observability configuration that this request just deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteObservabilityConfigurationError>`](crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationError)
-    pub fn delete_observability_configuration(&self) -> crate::operation::delete_observability_configuration::builders::DeleteObservabilityConfigurationFluentBuilder{
+    pub fn delete_observability_configuration(
+        &self,
+    ) -> crate::operation::delete_observability_configuration::builders::DeleteObservabilityConfigurationFluentBuilder {
         crate::operation::delete_observability_configuration::builders::DeleteObservabilityConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

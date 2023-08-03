@@ -30,18 +30,14 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
 }
 impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder {
-        crate::types::builders::AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder::default(
-        )
+    pub fn builder() -> crate::types::builders::AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder {
+        crate::types::builders::AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder {
     pub(crate) base: ::std::option::Option<i32>,
     pub(crate) capacity_provider: ::std::option::Option<::std::string::String>,
@@ -63,18 +59,12 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder {
         &self.base
     }
     /// <p>The name of the capacity provider.</p>
-    pub fn capacity_provider(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the capacity provider.</p>
-    pub fn set_capacity_provider(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_provider = input;
         self
     }

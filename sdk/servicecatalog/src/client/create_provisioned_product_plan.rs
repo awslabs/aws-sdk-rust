@@ -21,7 +21,9 @@ impl super::Client {
     ///   - [`provisioned_product_name(Option<String>)`](crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput::provisioned_product_name): <p>The user-friendly name of the provisioned product.</p>
     ///   - [`provisioning_artifact_id(Option<String>)`](crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput::provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
     /// - On failure, responds with [`SdkError<CreateProvisionedProductPlanError>`](crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanError)
-    pub fn create_provisioned_product_plan(&self) -> crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanFluentBuilder{
+    pub fn create_provisioned_product_plan(
+        &self,
+    ) -> crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanFluentBuilder {
         crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanFluentBuilder::new(self.handle.clone())
     }
 }

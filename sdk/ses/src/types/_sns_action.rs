@@ -34,9 +34,7 @@ impl SnsAction {
 
 /// A builder for [`SnsAction`](crate::types::SnsAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnsActionBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encoding: ::std::option::Option<crate::types::SnsActionEncoding>,
@@ -62,10 +60,7 @@ impl SnsActionBuilder {
         self
     }
     /// <p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is UTF-8.</p>
-    pub fn set_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::SnsActionEncoding>,
-    ) -> Self {
+    pub fn set_encoding(mut self, input: ::std::option::Option<crate::types::SnsActionEncoding>) -> Self {
         self.encoding = input;
         self
     }

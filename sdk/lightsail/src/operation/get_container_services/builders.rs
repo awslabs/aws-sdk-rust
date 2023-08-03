@@ -37,9 +37,7 @@ impl GetContainerServicesFluentBuilder {
         }
     }
     /// Access the GetContainerServices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_container_services::builders::GetContainerServicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_container_services::builders::GetContainerServicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetContainerServicesFluentBuilder {
             crate::operation::get_container_services::GetContainerServices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_services::GetContainerServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_services::GetContainerServicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetContainerServicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetContainerServicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_services::GetContainerServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_services::GetContainerServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_services::GetContainerServicesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetContainerServicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_services::GetContainerServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_services::GetContainerServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_services::GetContainerServicesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetContainerServicesFluentBuilder {
             crate::operation::get_container_services::GetContainerServices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_services::GetContainerServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_services::GetContainerServicesError>,
     > {
         self.customize_middleware().await
     }

@@ -30,9 +30,7 @@ impl ContinuousParameterRangeSpecification {
 
 /// A builder for [`ContinuousParameterRangeSpecification`](crate::types::ContinuousParameterRangeSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinuousParameterRangeSpecificationBuilder {
     pub(crate) min_value: ::std::option::Option<::std::string::String>,
     pub(crate) max_value: ::std::option::Option<::std::string::String>,

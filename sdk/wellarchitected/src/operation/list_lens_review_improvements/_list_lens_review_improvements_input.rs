@@ -68,16 +68,14 @@ impl ListLensReviewImprovementsInput {
 }
 impl ListLensReviewImprovementsInput {
     /// Creates a new builder-style object to manufacture [`ListLensReviewImprovementsInput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput).
-    pub fn builder() -> crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsInputBuilder{
+    pub fn builder() -> crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsInputBuilder {
         crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLensReviewImprovementsInput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLensReviewImprovementsInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
@@ -193,10 +191,7 @@ impl ListLensReviewImprovementsInputBuilder {
         self
     }
     /// <p>The priority of the question.</p>
-    pub fn set_question_priority(
-        mut self,
-        input: ::std::option::Option<crate::types::QuestionPriority>,
-    ) -> Self {
+    pub fn set_question_priority(mut self, input: ::std::option::Option<crate::types::QuestionPriority>) -> Self {
         self.question_priority = input;
         self
     }
@@ -211,16 +206,14 @@ impl ListLensReviewImprovementsInputBuilder {
         crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput {
-                workload_id: self.workload_id,
-                lens_alias: self.lens_alias,
-                pillar_id: self.pillar_id,
-                milestone_number: self.milestone_number,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                question_priority: self.question_priority,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput {
+            workload_id: self.workload_id,
+            lens_alias: self.lens_alias,
+            pillar_id: self.pillar_id,
+            milestone_number: self.milestone_number,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            question_priority: self.question_priority,
+        })
     }
 }

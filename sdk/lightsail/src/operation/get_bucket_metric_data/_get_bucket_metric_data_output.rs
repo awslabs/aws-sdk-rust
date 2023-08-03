@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetBucketMetricDataOutput {
 }
 impl GetBucketMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketMetricDataOutput`](crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataOutputBuilder {
+    pub fn builder() -> crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataOutputBuilder {
         crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketMetricDataOutput`](crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketMetricDataOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<crate::types::BucketMetricName>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,
@@ -51,10 +48,7 @@ impl GetBucketMetricDataOutputBuilder {
         self
     }
     /// <p>The name of the metric returned.</p>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketMetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::BucketMetricName>) -> Self {
         self.metric_name = input;
         self
     }
@@ -74,17 +68,12 @@ impl GetBucketMetricDataOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn set_metric_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,
-    ) -> Self {
+    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>) -> Self {
         self.metric_data = input;
         self
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn get_metric_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>> {
+    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>> {
         &self.metric_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -5,8 +5,7 @@
 pub struct ListActionExecutionsOutput {
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
     #[doc(hidden)]
-    pub action_execution_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>,
+    pub action_execution_details: ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListActionExecutionsOutput {
 }
 impl ListActionExecutionsOutput {
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
-    pub fn action_execution_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ActionExecutionDetail]> {
+    pub fn action_execution_details(&self) -> ::std::option::Option<&[crate::types::ActionExecutionDetail]> {
         self.action_execution_details.as_deref()
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListActionExecutionsOutput {
 }
 impl ListActionExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListActionExecutionsOutput`](crate::operation::list_action_executions::ListActionExecutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_action_executions::builders::ListActionExecutionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_action_executions::builders::ListActionExecutionsOutputBuilder {
         crate::operation::list_action_executions::builders::ListActionExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListActionExecutionsOutput`](crate::operation::list_action_executions::ListActionExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActionExecutionsOutputBuilder {
-    pub(crate) action_execution_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>,
+    pub(crate) action_execution_details: ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListActionExecutionsOutputBuilder {
         self
     }
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
-    pub fn set_action_execution_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>,
-    ) -> Self {
+    pub fn set_action_execution_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>) -> Self {
         self.action_execution_details = input;
         self
     }
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
-    pub fn get_action_execution_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>> {
+    pub fn get_action_execution_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>> {
         &self.action_execution_details
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>

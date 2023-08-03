@@ -27,16 +27,14 @@ impl ::aws_http::request_id::RequestId for GetBucketLifecycleConfigurationOutput
 }
 impl GetBucketLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketLifecycleConfigurationOutput`](crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput).
-    pub fn builder() -> crate::operation::get_bucket_lifecycle_configuration::builders::GetBucketLifecycleConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_bucket_lifecycle_configuration::builders::GetBucketLifecycleConfigurationOutputBuilder {
         crate::operation::get_bucket_lifecycle_configuration::builders::GetBucketLifecycleConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketLifecycleConfigurationOutput`](crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketLifecycleConfigurationOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
     _extended_request_id: Option<String>,
@@ -55,17 +53,12 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
         self
     }
     /// <p>Container for a lifecycle rule.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>Container for a lifecycle rule.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
         &self.rules
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
@@ -73,10 +66,7 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }
@@ -90,13 +80,9 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBucketLifecycleConfigurationOutput`](crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput {
         crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput {
-            rules: self.rules
-            ,
+            rules: self.rules,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }

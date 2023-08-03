@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`timestamp(Option<String>)`](crate::operation::get_position::GetPositionOutput::timestamp): <p>The timestamp at which the device's position was determined.</p>
     /// - On failure, responds with [`SdkError<GetPositionError>`](crate::operation::get_position::GetPositionError)
     #[deprecated(note = "This operation is no longer supported.")]
-    pub fn get_position(
-        &self,
-    ) -> crate::operation::get_position::builders::GetPositionFluentBuilder {
+    pub fn get_position(&self) -> crate::operation::get_position::builders::GetPositionFluentBuilder {
         crate::operation::get_position::builders::GetPositionFluentBuilder::new(self.handle.clone())
     }
 }

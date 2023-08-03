@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeJobRunOutput`](crate::operation::describe_job_run::DescribeJobRunOutput) with field(s):
     ///   - [`job_run(Option<JobRun>)`](crate::operation::describe_job_run::DescribeJobRunOutput::job_run): <p>The output displays information about a job run.</p>
     /// - On failure, responds with [`SdkError<DescribeJobRunError>`](crate::operation::describe_job_run::DescribeJobRunError)
-    pub fn describe_job_run(
-        &self,
-    ) -> crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder {
-        crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_job_run(&self) -> crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder {
+        crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::new(self.handle.clone())
     }
 }

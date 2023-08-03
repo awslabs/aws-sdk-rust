@@ -6,29 +6,21 @@
 pub struct GetHealthCheckCountInput {}
 impl GetHealthCheckCountInput {
     /// Creates a new builder-style object to manufacture [`GetHealthCheckCountInput`](crate::operation::get_health_check_count::GetHealthCheckCountInput).
-    pub fn builder(
-    ) -> crate::operation::get_health_check_count::builders::GetHealthCheckCountInputBuilder {
-        crate::operation::get_health_check_count::builders::GetHealthCheckCountInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_health_check_count::builders::GetHealthCheckCountInputBuilder {
+        crate::operation::get_health_check_count::builders::GetHealthCheckCountInputBuilder::default()
     }
 }
 
 /// A builder for [`GetHealthCheckCountInput`](crate::operation::get_health_check_count::GetHealthCheckCountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHealthCheckCountInputBuilder {}
 impl GetHealthCheckCountInputBuilder {
     /// Consumes the builder and constructs a [`GetHealthCheckCountInput`](crate::operation::get_health_check_count::GetHealthCheckCountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_health_check_count::GetHealthCheckCountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_health_check_count::GetHealthCheckCountInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::get_health_check_count::GetHealthCheckCountInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_health_check_count::GetHealthCheckCountInput {})
     }
 }

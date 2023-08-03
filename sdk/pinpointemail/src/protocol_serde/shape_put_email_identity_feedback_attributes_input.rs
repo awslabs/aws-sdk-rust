@@ -4,9 +4,7 @@ pub fn ser_put_email_identity_feedback_attributes_input(
     input: &crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.email_forwarding_enabled {
-        object
-            .key("EmailForwardingEnabled")
-            .boolean(input.email_forwarding_enabled);
+        object.key("EmailForwardingEnabled").boolean(input.email_forwarding_enabled);
     }
     Ok(())
 }

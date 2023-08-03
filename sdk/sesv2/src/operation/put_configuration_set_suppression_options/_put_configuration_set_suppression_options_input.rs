@@ -13,8 +13,7 @@ pub struct PutConfigurationSetSuppressionOptionsInput {
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub suppressed_reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl PutConfigurationSetSuppressionOptionsInput {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
@@ -26,43 +25,32 @@ impl PutConfigurationSetSuppressionOptionsInput {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn suppressed_reasons(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SuppressionListReason]> {
+    pub fn suppressed_reasons(&self) -> ::std::option::Option<&[crate::types::SuppressionListReason]> {
         self.suppressed_reasons.as_deref()
     }
 }
 impl PutConfigurationSetSuppressionOptionsInput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetSuppressionOptionsInput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput).
-    pub fn builder() -> crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsInputBuilder{
+    pub fn builder() -> crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsInputBuilder {
         crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutConfigurationSetSuppressionOptionsInput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigurationSetSuppressionOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
-    pub(crate) suppressed_reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub(crate) suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl PutConfigurationSetSuppressionOptionsInputBuilder {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -90,10 +78,7 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn set_suppressed_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
-    ) -> Self {
+    pub fn set_suppressed_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>) -> Self {
         self.suppressed_reasons = input;
         self
     }
@@ -102,20 +87,21 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn get_suppressed_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
+    pub fn get_suppressed_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
         &self.suppressed_reasons
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetSuppressionOptionsInput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput {
-                configuration_set_name: self.configuration_set_name
-                ,
-                suppressed_reasons: self.suppressed_reasons
-                ,
-            }
+                configuration_set_name: self.configuration_set_name,
+                suppressed_reasons: self.suppressed_reasons,
+            },
         )
     }
 }

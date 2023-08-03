@@ -23,9 +23,7 @@ impl CidrBlock {
 
 /// A builder for [`CidrBlock`](crate::types::CidrBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CidrBlockBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl CidrBlockBuilder {
     }
     /// Consumes the builder and constructs a [`CidrBlock`](crate::types::CidrBlock).
     pub fn build(self) -> crate::types::CidrBlock {
-        crate::types::CidrBlock {
-            cidr_block: self.cidr_block,
-        }
+        crate::types::CidrBlock { cidr_block: self.cidr_block }
     }
 }

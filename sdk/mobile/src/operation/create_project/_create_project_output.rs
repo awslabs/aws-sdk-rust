@@ -29,9 +29,7 @@ impl CreateProjectOutput {
 
 /// A builder for [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProjectOutputBuilder {
     pub(crate) details: ::std::option::Option<crate::types::ProjectDetails>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl CreateProjectOutputBuilder {
         self
     }
     /// <p> Detailed information about the created AWS Mobile Hub project. </p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectDetails>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::ProjectDetails>) -> Self {
         self.details = input;
         self
     }

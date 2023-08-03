@@ -22,16 +22,14 @@ impl GetIdentityProviderByIdentifierInput {
 }
 impl GetIdentityProviderByIdentifierInput {
     /// Creates a new builder-style object to manufacture [`GetIdentityProviderByIdentifierInput`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierInput).
-    pub fn builder() -> crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierInputBuilder{
+    pub fn builder() -> crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierInputBuilder {
         crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityProviderByIdentifierInput`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityProviderByIdentifierInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) idp_identifier: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl GetIdentityProviderByIdentifierInputBuilder {
         &self.user_pool_id
     }
     /// <p>The IdP identifier.</p>
-    pub fn idp_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idp_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idp_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IdP identifier.</p>
-    pub fn set_idp_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idp_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idp_identifier = input;
         self
     }
@@ -80,11 +72,9 @@ impl GetIdentityProviderByIdentifierInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierInput {
-                user_pool_id: self.user_pool_id
-                ,
-                idp_identifier: self.idp_identifier
-                ,
-            }
+                user_pool_id: self.user_pool_id,
+                idp_identifier: self.idp_identifier,
+            },
         )
     }
 }

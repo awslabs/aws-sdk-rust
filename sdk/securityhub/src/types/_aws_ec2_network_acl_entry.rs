@@ -72,9 +72,7 @@ impl AwsEc2NetworkAclEntry {
 
 /// A builder for [`AwsEc2NetworkAclEntry`](crate::types::AwsEc2NetworkAclEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkAclEntryBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) egress: ::std::option::Option<bool>,
@@ -120,10 +118,7 @@ impl AwsEc2NetworkAclEntryBuilder {
         self
     }
     /// <p>The Internet Control Message Protocol (ICMP) type and code for which to deny or allow access.</p>
-    pub fn set_icmp_type_code(
-        mut self,
-        input: ::std::option::Option<crate::types::IcmpTypeCode>,
-    ) -> Self {
+    pub fn set_icmp_type_code(mut self, input: ::std::option::Option<crate::types::IcmpTypeCode>) -> Self {
         self.icmp_type_code = input;
         self
     }
@@ -132,18 +127,12 @@ impl AwsEc2NetworkAclEntryBuilder {
         &self.icmp_type_code
     }
     /// <p>The IPV6 network range for which to deny or allow access.</p>
-    pub fn ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPV6 network range for which to deny or allow access.</p>
-    pub fn set_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_cidr_block = input;
         self
     }
@@ -157,10 +146,7 @@ impl AwsEc2NetworkAclEntryBuilder {
         self
     }
     /// <p>For TCP or UDP protocols, the range of ports that the rule applies to.</p>
-    pub fn set_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::PortRangeFromTo>,
-    ) -> Self {
+    pub fn set_port_range(mut self, input: ::std::option::Option<crate::types::PortRangeFromTo>) -> Self {
         self.port_range = input;
         self
     }

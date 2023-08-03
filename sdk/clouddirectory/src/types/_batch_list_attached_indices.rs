@@ -37,9 +37,7 @@ impl BatchListAttachedIndices {
 
 /// A builder for [`BatchListAttachedIndices`](crate::types::BatchListAttachedIndices).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListAttachedIndicesBuilder {
     pub(crate) target_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl BatchListAttachedIndicesBuilder {
         self
     }
     /// <p>A reference to the object that has indices attached.</p>
-    pub fn set_target_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_target_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.target_reference = input;
         self
     }

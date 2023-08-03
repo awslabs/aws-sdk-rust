@@ -26,7 +26,7 @@ impl UpdateDataSourcePermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataSourcePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsInputBuilder,
+    inner: crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsInputBuilder,
 }
 impl UpdateDataSourcePermissionsFluentBuilder {
     /// Creates a new `UpdateDataSourcePermissions`.
@@ -37,7 +37,7 @@ impl UpdateDataSourcePermissionsFluentBuilder {
         }
     }
     /// Access the UpdateDataSourcePermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateDataSourcePermissionsFluentBuilder {
             crate::operation::update_data_source_permissions::UpdateDataSourcePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateDataSourcePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateDataSourcePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateDataSourcePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateDataSourcePermissionsFluentBuilder {
             crate::operation::update_data_source_permissions::UpdateDataSourcePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl UpdateDataSourcePermissionsFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
@@ -170,17 +147,12 @@ impl UpdateDataSourcePermissionsFluentBuilder {
         self
     }
     /// <p>A list of resource permissions that you want to grant on the data source.</p>
-    pub fn set_grant_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
     /// <p>A list of resource permissions that you want to grant on the data source.</p>
-    pub fn get_grant_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_grant_permissions()
     }
     /// Appends an item to `RevokePermissions`.
@@ -193,17 +165,12 @@ impl UpdateDataSourcePermissionsFluentBuilder {
         self
     }
     /// <p>A list of resource permissions that you want to revoke on the data source.</p>
-    pub fn set_revoke_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
     }
     /// <p>A list of resource permissions that you want to revoke on the data source.</p>
-    pub fn get_revoke_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_revoke_permissions()
     }
 }

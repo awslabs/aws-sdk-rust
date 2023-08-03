@@ -10,10 +10,7 @@ impl CreateGrantInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_grant::CreateGrantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_grant::CreateGrantError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_grant::CreateGrantError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_grant();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateGrantFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_grant::CreateGrant,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_grant::CreateGrant, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_grant::CreateGrantError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateGrantFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateGrantFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_grant::CreateGrant,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_grant::CreateGrant, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_grant::CreateGrantError>,
     > {
         self.customize_middleware().await
@@ -182,10 +170,7 @@ impl CreateGrantFluentBuilder {
     /// <ul>
     /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
     /// </ul>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_principals(input);
         self
     }
@@ -226,17 +211,12 @@ impl CreateGrantFluentBuilder {
         self
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn set_allowed_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
-    ) -> Self {
+    pub fn set_allowed_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>) -> Self {
         self.inner = self.inner.set_allowed_operations(input);
         self
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn get_allowed_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
+    pub fn get_allowed_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
         self.inner.get_allowed_operations()
     }
 }

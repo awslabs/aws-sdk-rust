@@ -59,13 +59,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StackStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -140,9 +134,7 @@ impl ::std::convert::From<&str> for StackStatus {
             "UPDATE_FAILED" => StackStatus::UpdateFailed,
             "UPDATE_IN_PROGRESS" => StackStatus::UpdateInProgress,
             "UPDATE_ROLLBACK_COMPLETE" => StackStatus::UpdateRollbackComplete,
-            "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" => {
-                StackStatus::UpdateRollbackCompleteCleanupInProgress
-            }
+            "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" => StackStatus::UpdateRollbackCompleteCleanupInProgress,
             "UPDATE_ROLLBACK_FAILED" => StackStatus::UpdateRollbackFailed,
             "UPDATE_ROLLBACK_IN_PROGRESS" => StackStatus::UpdateRollbackInProgress,
             other => StackStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -180,9 +172,7 @@ impl StackStatus {
             StackStatus::UpdateFailed => "UPDATE_FAILED",
             StackStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
             StackStatus::UpdateRollbackComplete => "UPDATE_ROLLBACK_COMPLETE",
-            StackStatus::UpdateRollbackCompleteCleanupInProgress => {
-                "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"
-            }
+            StackStatus::UpdateRollbackCompleteCleanupInProgress => "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS",
             StackStatus::UpdateRollbackFailed => "UPDATE_ROLLBACK_FAILED",
             StackStatus::UpdateRollbackInProgress => "UPDATE_ROLLBACK_IN_PROGRESS",
             StackStatus::Unknown(value) => value.as_str(),

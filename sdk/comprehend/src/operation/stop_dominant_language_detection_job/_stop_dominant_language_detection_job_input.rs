@@ -15,16 +15,14 @@ impl StopDominantLanguageDetectionJobInput {
 }
 impl StopDominantLanguageDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopDominantLanguageDetectionJobInput`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput).
-    pub fn builder() -> crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobInputBuilder {
         crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopDominantLanguageDetectionJobInput`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDominantLanguageDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl StopDominantLanguageDetectionJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`StopDominantLanguageDetectionJobInput`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput {
-                job_id: self.job_id
-                ,
-            }
+            crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput { job_id: self.job_id },
         )
     }
 }

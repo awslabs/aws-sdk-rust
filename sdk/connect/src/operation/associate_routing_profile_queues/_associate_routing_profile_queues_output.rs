@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateRoutingProfileQueuesOutput {
 }
 impl AssociateRoutingProfileQueuesOutput {
     /// Creates a new builder-style object to manufacture [`AssociateRoutingProfileQueuesOutput`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput).
-    pub fn builder() -> crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesOutputBuilder{
+    pub fn builder() -> crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesOutputBuilder {
         crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateRoutingProfileQueuesOutput`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateRoutingProfileQueuesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AssociateRoutingProfileQueuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateRoutingProfileQueuesOutput`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput
-    {
+    pub fn build(self) -> crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput {
         crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput {
             _request_id: self._request_id,
         }

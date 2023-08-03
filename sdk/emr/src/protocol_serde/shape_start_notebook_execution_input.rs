@@ -18,19 +18,14 @@ pub fn ser_start_notebook_execution_input(
     if let Some(var_5) = &input.execution_engine {
         #[allow(unused_mut)]
         let mut object_6 = object.key("ExecutionEngine").start_object();
-        crate::protocol_serde::shape_execution_engine_config::ser_execution_engine_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_execution_engine_config::ser_execution_engine_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.service_role {
         object.key("ServiceRole").string(var_7.as_str());
     }
     if let Some(var_8) = &input.notebook_instance_security_group_id {
-        object
-            .key("NotebookInstanceSecurityGroupId")
-            .string(var_8.as_str());
+        object.key("NotebookInstanceSecurityGroupId").string(var_8.as_str());
     }
     if let Some(var_9) = &input.tags {
         let mut array_10 = object.key("Tags").start_array();

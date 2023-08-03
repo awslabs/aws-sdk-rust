@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`authorized_columns(Option<Vec<String>>)`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput::authorized_columns): <p>A list of column names that the user has been granted access to.</p>
     ///   - [`is_registered_with_lake_formation(bool)`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput::is_registered_with_lake_formation): <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     /// - On failure, responds with [`SdkError<GetUnfilteredPartitionMetadataError>`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataError)
-    pub fn get_unfiltered_partition_metadata(&self) -> crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataFluentBuilder{
+    pub fn get_unfiltered_partition_metadata(
+        &self,
+    ) -> crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataFluentBuilder {
         crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataFluentBuilder::new(self.handle.clone())
     }
 }

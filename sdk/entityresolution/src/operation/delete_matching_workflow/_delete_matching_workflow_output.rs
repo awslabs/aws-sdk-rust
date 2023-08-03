@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteMatchingWorkflowOutput {
 }
 impl DeleteMatchingWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMatchingWorkflowOutput`](crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowOutputBuilder {
         crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMatchingWorkflowOutput`](crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMatchingWorkflowOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

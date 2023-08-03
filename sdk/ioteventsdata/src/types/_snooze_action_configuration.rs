@@ -30,9 +30,7 @@ impl SnoozeActionConfiguration {
 
 /// A builder for [`SnoozeActionConfiguration`](crate::types::SnoozeActionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnoozeActionConfigurationBuilder {
     pub(crate) snooze_duration: ::std::option::Option<i32>,
     pub(crate) note: ::std::option::Option<::std::string::String>,

@@ -21,7 +21,9 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::tags): <p>The application instance's tags.</p>
     ///   - [`runtime_context_states(Option<Vec<ReportedRuntimeContextState>>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::runtime_context_states): <p>The application instance's state.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationInstanceError>`](crate::operation::describe_application_instance::DescribeApplicationInstanceError)
-    pub fn describe_application_instance(&self) -> crate::operation::describe_application_instance::builders::DescribeApplicationInstanceFluentBuilder{
+    pub fn describe_application_instance(
+        &self,
+    ) -> crate::operation::describe_application_instance::builders::DescribeApplicationInstanceFluentBuilder {
         crate::operation::describe_application_instance::builders::DescribeApplicationInstanceFluentBuilder::new(self.handle.clone())
     }
 }

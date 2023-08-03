@@ -26,7 +26,7 @@ impl ListSimulationJobBatchesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSimulationJobBatchesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesInputBuilder,
+    inner: crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesInputBuilder,
 }
 impl ListSimulationJobBatchesFluentBuilder {
     /// Creates a new `ListSimulationJobBatches`.
@@ -37,7 +37,7 @@ impl ListSimulationJobBatchesFluentBuilder {
         }
     }
     /// Access the ListSimulationJobBatches as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSimulationJobBatchesFluentBuilder {
             crate::operation::list_simulation_job_batches::ListSimulationJobBatches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSimulationJobBatchesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSimulationJobBatchesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSimulationJobBatchesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListSimulationJobBatchesFluentBuilder {
             crate::operation::list_simulation_job_batches::ListSimulationJobBatches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_simulation_job_batches::paginator::ListSimulationJobBatchesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_simulation_job_batches::paginator::ListSimulationJobBatchesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_simulation_job_batches::paginator::ListSimulationJobBatchesPaginator {
         crate::operation::list_simulation_job_batches::paginator::ListSimulationJobBatchesPaginator::new(self.handle, self.inner)
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
@@ -167,10 +153,7 @@ impl ListSimulationJobBatchesFluentBuilder {
         self
     }
     /// <p>Optional filters to limit results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

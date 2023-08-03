@@ -29,16 +29,14 @@ impl ListAccessControlConfigurationsInput {
 }
 impl ListAccessControlConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListAccessControlConfigurationsInput`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsInput).
-    pub fn builder() -> crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsInputBuilder {
         crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessControlConfigurationsInput`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessControlConfigurationsInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,13 +94,10 @@ impl ListAccessControlConfigurationsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_access_control_configurations::ListAccessControlConfigurationsInput {
-                index_id: self.index_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                index_id: self.index_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

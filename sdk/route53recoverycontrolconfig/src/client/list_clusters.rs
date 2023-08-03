@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`clusters(Option<Vec<Cluster>>)`](crate::operation::list_clusters::ListClustersOutput::clusters): <p>An array of the clusters in an account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
-    pub fn list_clusters(
-        &self,
-    ) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
-        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_clusters(&self) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
+        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
     }
 }

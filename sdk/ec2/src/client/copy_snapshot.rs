@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`snapshot_id(Option<String>)`](crate::operation::copy_snapshot::CopySnapshotOutput::snapshot_id): <p>The ID of the new snapshot.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::copy_snapshot::CopySnapshotOutput::tags): <p>Any tags applied to the new snapshot.</p>
     /// - On failure, responds with [`SdkError<CopySnapshotError>`](crate::operation::copy_snapshot::CopySnapshotError)
-    pub fn copy_snapshot(
-        &self,
-    ) -> crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder {
-        crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_snapshot(&self) -> crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder {
+        crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::new(self.handle.clone())
     }
 }

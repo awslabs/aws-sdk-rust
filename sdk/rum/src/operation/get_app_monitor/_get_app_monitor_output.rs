@@ -28,9 +28,7 @@ impl GetAppMonitorOutput {
 
 /// A builder for [`GetAppMonitorOutput`](crate::operation::get_app_monitor::GetAppMonitorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppMonitorOutputBuilder {
     pub(crate) app_monitor: ::std::option::Option<crate::types::AppMonitor>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetAppMonitorOutputBuilder {
         self
     }
     /// <p>A structure containing all the configuration information for the app monitor.</p>
-    pub fn set_app_monitor(
-        mut self,
-        input: ::std::option::Option<crate::types::AppMonitor>,
-    ) -> Self {
+    pub fn set_app_monitor(mut self, input: ::std::option::Option<crate::types::AppMonitor>) -> Self {
         self.app_monitor = input;
         self
     }

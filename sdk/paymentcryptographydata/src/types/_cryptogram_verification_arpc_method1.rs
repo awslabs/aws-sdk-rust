@@ -23,26 +23,18 @@ impl CryptogramVerificationArpcMethod1 {
 
 /// A builder for [`CryptogramVerificationArpcMethod1`](crate::types::CryptogramVerificationArpcMethod1).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CryptogramVerificationArpcMethod1Builder {
     pub(crate) auth_response_code: ::std::option::Option<::std::string::String>,
 }
 impl CryptogramVerificationArpcMethod1Builder {
     /// <p>The auth code used to calculate APRC after ARQC verification is successful. This is the same auth code used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn auth_response_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auth_response_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_response_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The auth code used to calculate APRC after ARQC verification is successful. This is the same auth code used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn set_auth_response_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auth_response_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_response_code = input;
         self
     }

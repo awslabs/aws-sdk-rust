@@ -44,9 +44,7 @@ impl FunctionSummary {
 
 /// A builder for [`FunctionSummary`](crate::types::FunctionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl FunctionSummaryBuilder {
         self
     }
     /// <p>Contains configuration information about a CloudFront function.</p>
-    pub fn set_function_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionConfig>,
-    ) -> Self {
+    pub fn set_function_config(mut self, input: ::std::option::Option<crate::types::FunctionConfig>) -> Self {
         self.function_config = input;
         self
     }
@@ -105,10 +100,7 @@ impl FunctionSummaryBuilder {
         self
     }
     /// <p>Contains metadata about a CloudFront function.</p>
-    pub fn set_function_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionMetadata>,
-    ) -> Self {
+    pub fn set_function_metadata(mut self, input: ::std::option::Option<crate::types::FunctionMetadata>) -> Self {
         self.function_metadata = input;
         self
     }

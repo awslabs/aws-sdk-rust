@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_dimension::CreateDimensionOutput::name): <p>A unique identifier for the dimension.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_dimension::CreateDimensionOutput::arn): <p>The Amazon Resource Name (ARN) of the created dimension.</p>
     /// - On failure, responds with [`SdkError<CreateDimensionError>`](crate::operation::create_dimension::CreateDimensionError)
-    pub fn create_dimension(
-        &self,
-    ) -> crate::operation::create_dimension::builders::CreateDimensionFluentBuilder {
-        crate::operation::create_dimension::builders::CreateDimensionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dimension(&self) -> crate::operation::create_dimension::builders::CreateDimensionFluentBuilder {
+        crate::operation::create_dimension::builders::CreateDimensionFluentBuilder::new(self.handle.clone())
     }
 }

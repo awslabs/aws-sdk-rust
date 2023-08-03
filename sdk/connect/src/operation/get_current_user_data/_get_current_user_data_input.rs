@@ -54,17 +54,14 @@ impl GetCurrentUserDataInput {
 }
 impl GetCurrentUserDataInput {
     /// Creates a new builder-style object to manufacture [`GetCurrentUserDataInput`](crate::operation::get_current_user_data::GetCurrentUserDataInput).
-    pub fn builder(
-    ) -> crate::operation::get_current_user_data::builders::GetCurrentUserDataInputBuilder {
+    pub fn builder() -> crate::operation::get_current_user_data::builders::GetCurrentUserDataInputBuilder {
         crate::operation::get_current_user_data::builders::GetCurrentUserDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCurrentUserDataInput`](crate::operation::get_current_user_data::GetCurrentUserDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCurrentUserDataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::UserDataFilters>,
@@ -110,10 +107,7 @@ impl GetCurrentUserDataInputBuilder {
     /// </ul>
     /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDataFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::UserDataFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -161,17 +155,13 @@ impl GetCurrentUserDataInputBuilder {
     /// Consumes the builder and constructs a [`GetCurrentUserDataInput`](crate::operation::get_current_user_data::GetCurrentUserDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_current_user_data::GetCurrentUserDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_current_user_data::GetCurrentUserDataInput {
-                instance_id: self.instance_id,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_current_user_data::GetCurrentUserDataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_current_user_data::GetCurrentUserDataInput {
+            instance_id: self.instance_id,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

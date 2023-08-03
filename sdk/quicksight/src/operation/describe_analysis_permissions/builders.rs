@@ -26,7 +26,7 @@ impl DescribeAnalysisPermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAnalysisPermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsInputBuilder,
+    inner: crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsInputBuilder,
 }
 impl DescribeAnalysisPermissionsFluentBuilder {
     /// Creates a new `DescribeAnalysisPermissions`.
@@ -37,7 +37,7 @@ impl DescribeAnalysisPermissionsFluentBuilder {
         }
     }
     /// Access the DescribeAnalysisPermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAnalysisPermissionsFluentBuilder {
             crate::operation::describe_analysis_permissions::DescribeAnalysisPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAnalysisPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAnalysisPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAnalysisPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeAnalysisPermissionsFluentBuilder {
             crate::operation::describe_analysis_permissions::DescribeAnalysisPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::set_name): <p>The name of the data source.</p>
     /// - On success, responds with [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput)
     /// - On failure, responds with [`SdkError<DeleteDataSourceError>`](crate::operation::delete_data_source::DeleteDataSourceError)
-    pub fn delete_data_source(
-        &self,
-    ) -> crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder {
-        crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_data_source(&self) -> crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder {
+        crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

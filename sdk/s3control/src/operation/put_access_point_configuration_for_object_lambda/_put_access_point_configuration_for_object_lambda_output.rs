@@ -12,16 +12,16 @@ impl ::aws_http::request_id::RequestId for PutAccessPointConfigurationForObjectL
 }
 impl PutAccessPointConfigurationForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput).
-    pub fn builder() -> crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaOutputBuilder{
-        crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaOutputBuilder {
+        crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccessPointConfigurationForObjectLambdaOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +36,7 @@ impl PutAccessPointConfigurationForObjectLambdaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput).
-    pub fn build(self) -> crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput{
+    pub fn build(self) -> crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput {
         crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput {
             _request_id: self._request_id,
         }

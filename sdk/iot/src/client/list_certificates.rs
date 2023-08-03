@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`certificates(Option<Vec<Certificate>>)`](crate::operation::list_certificates::ListCertificatesOutput::certificates): <p>The descriptions of the certificates.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_certificates::ListCertificatesOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
-    pub fn list_certificates(
-        &self,
-    ) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {
-        crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_certificates(&self) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {
+        crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

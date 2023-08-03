@@ -29,9 +29,7 @@ impl UpdateDatasetOutput {
 
 /// A builder for [`UpdateDatasetOutput`](crate::operation::update_dataset::UpdateDatasetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasetOutputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

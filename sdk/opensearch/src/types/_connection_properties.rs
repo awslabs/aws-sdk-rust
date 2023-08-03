@@ -12,8 +12,7 @@ pub struct ConnectionProperties {
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The connection properties for cross cluster search.</p>
     #[doc(hidden)]
-    pub cross_cluster_search:
-        ::std::option::Option<crate::types::CrossClusterSearchConnectionProperties>,
+    pub cross_cluster_search: ::std::option::Option<crate::types::CrossClusterSearchConnectionProperties>,
 }
 impl ConnectionProperties {
     /// <important>
@@ -24,9 +23,7 @@ impl ConnectionProperties {
         self.endpoint.as_deref()
     }
     /// <p>The connection properties for cross cluster search.</p>
-    pub fn cross_cluster_search(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CrossClusterSearchConnectionProperties> {
+    pub fn cross_cluster_search(&self) -> ::std::option::Option<&crate::types::CrossClusterSearchConnectionProperties> {
         self.cross_cluster_search.as_ref()
     }
 }
@@ -39,13 +36,10 @@ impl ConnectionProperties {
 
 /// A builder for [`ConnectionProperties`](crate::types::ConnectionProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionPropertiesBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
-    pub(crate) cross_cluster_search:
-        ::std::option::Option<crate::types::CrossClusterSearchConnectionProperties>,
+    pub(crate) cross_cluster_search: ::std::option::Option<crate::types::CrossClusterSearchConnectionProperties>,
 }
 impl ConnectionPropertiesBuilder {
     /// <important>
@@ -72,25 +66,17 @@ impl ConnectionPropertiesBuilder {
         &self.endpoint
     }
     /// <p>The connection properties for cross cluster search.</p>
-    pub fn cross_cluster_search(
-        mut self,
-        input: crate::types::CrossClusterSearchConnectionProperties,
-    ) -> Self {
+    pub fn cross_cluster_search(mut self, input: crate::types::CrossClusterSearchConnectionProperties) -> Self {
         self.cross_cluster_search = ::std::option::Option::Some(input);
         self
     }
     /// <p>The connection properties for cross cluster search.</p>
-    pub fn set_cross_cluster_search(
-        mut self,
-        input: ::std::option::Option<crate::types::CrossClusterSearchConnectionProperties>,
-    ) -> Self {
+    pub fn set_cross_cluster_search(mut self, input: ::std::option::Option<crate::types::CrossClusterSearchConnectionProperties>) -> Self {
         self.cross_cluster_search = input;
         self
     }
     /// <p>The connection properties for cross cluster search.</p>
-    pub fn get_cross_cluster_search(
-        &self,
-    ) -> &::std::option::Option<crate::types::CrossClusterSearchConnectionProperties> {
+    pub fn get_cross_cluster_search(&self) -> &::std::option::Option<crate::types::CrossClusterSearchConnectionProperties> {
         &self.cross_cluster_search
     }
     /// Consumes the builder and constructs a [`ConnectionProperties`](crate::types::ConnectionProperties).

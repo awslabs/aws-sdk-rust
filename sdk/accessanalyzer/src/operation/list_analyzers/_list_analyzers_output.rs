@@ -36,9 +36,7 @@ impl ListAnalyzersOutput {
 
 /// A builder for [`ListAnalyzersOutput`](crate::operation::list_analyzers::ListAnalyzersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnalyzersOutputBuilder {
     pub(crate) analyzers: ::std::option::Option<::std::vec::Vec<crate::types::AnalyzerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListAnalyzersOutputBuilder {
         self
     }
     /// <p>The analyzers retrieved.</p>
-    pub fn set_analyzers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyzerSummary>>,
-    ) -> Self {
+    pub fn set_analyzers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyzerSummary>>) -> Self {
         self.analyzers = input;
         self
     }
     /// <p>The analyzers retrieved.</p>
-    pub fn get_analyzers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyzerSummary>> {
+    pub fn get_analyzers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyzerSummary>> {
         &self.analyzers
     }
     /// <p>A token used for pagination of results returned.</p>

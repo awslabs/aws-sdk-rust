@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`rendered_content(Option<String>)`](crate::operation::render_ui_template::RenderUiTemplateOutput::rendered_content): <p>A Liquid template that renders the HTML for the worker UI.</p>
     ///   - [`errors(Option<Vec<RenderingError>>)`](crate::operation::render_ui_template::RenderUiTemplateOutput::errors): <p>A list of one or more <code>RenderingError</code> objects if any were encountered while rendering the template. If there were no errors, the list is empty.</p>
     /// - On failure, responds with [`SdkError<RenderUiTemplateError>`](crate::operation::render_ui_template::RenderUiTemplateError)
-    pub fn render_ui_template(
-        &self,
-    ) -> crate::operation::render_ui_template::builders::RenderUiTemplateFluentBuilder {
-        crate::operation::render_ui_template::builders::RenderUiTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn render_ui_template(&self) -> crate::operation::render_ui_template::builders::RenderUiTemplateFluentBuilder {
+        crate::operation::render_ui_template::builders::RenderUiTemplateFluentBuilder::new(self.handle.clone())
     }
 }

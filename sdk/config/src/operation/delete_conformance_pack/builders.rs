@@ -38,10 +38,7 @@ impl DeleteConformancePackFluentBuilder {
         }
     }
     /// Access the DeleteConformancePack as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteConformancePackFluentBuilder {
             crate::operation::delete_conformance_pack::DeleteConformancePack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_conformance_pack::DeleteConformancePackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_conformance_pack::DeleteConformancePackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteConformancePackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteConformancePackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_conformance_pack::DeleteConformancePackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_conformance_pack::DeleteConformancePackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_conformance_pack::DeleteConformancePackError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteConformancePackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_conformance_pack::DeleteConformancePackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_conformance_pack::DeleteConformancePackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_conformance_pack::DeleteConformancePackError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DeleteConformancePackFluentBuilder {
             crate::operation::delete_conformance_pack::DeleteConformancePack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_conformance_pack::DeleteConformancePackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_conformance_pack::DeleteConformancePackError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Name of the conformance pack you want to delete.</p>
-    pub fn conformance_pack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conformance_pack_name(input.into());
         self
     }
     /// <p>Name of the conformance pack you want to delete.</p>
-    pub fn set_conformance_pack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conformance_pack_name(input);
         self
     }

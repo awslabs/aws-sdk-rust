@@ -35,9 +35,7 @@ impl BatchGetViewOutput {
 
 /// A builder for [`BatchGetViewOutput`](crate::operation::batch_get_view::BatchGetViewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetViewOutputBuilder {
     pub(crate) views: ::std::option::Option<::std::vec::Vec<crate::types::View>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>>,
@@ -56,10 +54,7 @@ impl BatchGetViewOutputBuilder {
         self
     }
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
-    pub fn set_views(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::View>>,
-    ) -> Self {
+    pub fn set_views(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::View>>) -> Self {
         self.views = input;
         self
     }
@@ -79,17 +74,12 @@ impl BatchGetViewOutputBuilder {
         self
     }
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

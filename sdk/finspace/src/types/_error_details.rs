@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ErrorDetails {
     #[allow(missing_docs)] // documentation missing in model
@@ -82,12 +76,8 @@ impl ::std::convert::From<&str> for ErrorDetails {
             "One or more inputs to this request were not found." => ErrorDetails::ResourceNotFound,
             "Service limits have been exceeded." => ErrorDetails::ServiceQuotaExceeded,
             "The inputs to this request are invalid." => ErrorDetails::Validation,
-            "The system temporarily lacks sufficient resources to process the request." => {
-                ErrorDetails::Throttling
-            }
-            other => {
-                ErrorDetails::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "The system temporarily lacks sufficient resources to process the request." => ErrorDetails::Throttling,
+            other => ErrorDetails::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -109,9 +99,7 @@ impl ErrorDetails {
             ErrorDetails::ResourceNotFound => "One or more inputs to this request were not found.",
             ErrorDetails::ServiceQuotaExceeded => "Service limits have been exceeded.",
             ErrorDetails::Validation => "The inputs to this request are invalid.",
-            ErrorDetails::Throttling => {
-                "The system temporarily lacks sufficient resources to process the request."
-            }
+            ErrorDetails::Throttling => "The system temporarily lacks sufficient resources to process the request.",
             ErrorDetails::Unknown(value) => value.as_str(),
         }
     }

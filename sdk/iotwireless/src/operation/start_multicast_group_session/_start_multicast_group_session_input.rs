@@ -22,16 +22,14 @@ impl StartMulticastGroupSessionInput {
 }
 impl StartMulticastGroupSessionInput {
     /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionInput`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput).
-    pub fn builder() -> crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionInputBuilder{
+    pub fn builder() -> crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionInputBuilder {
         crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMulticastGroupSessionInput`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMulticastGroupSessionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
@@ -57,10 +55,7 @@ impl StartMulticastGroupSessionInputBuilder {
         self
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanMulticastSession>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -75,11 +70,9 @@ impl StartMulticastGroupSessionInputBuilder {
         crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput {
-                id: self.id,
-                lo_ra_wan: self.lo_ra_wan,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput {
+            id: self.id,
+            lo_ra_wan: self.lo_ra_wan,
+        })
     }
 }

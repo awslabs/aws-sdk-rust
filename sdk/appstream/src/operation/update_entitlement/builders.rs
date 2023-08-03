@@ -10,10 +10,7 @@ impl UpdateEntitlementInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_entitlement::UpdateEntitlementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_entitlement::UpdateEntitlementError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_entitlement::UpdateEntitlementError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_entitlement();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateEntitlementFluentBuilder {
         }
     }
     /// Access the UpdateEntitlement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_entitlement::builders::UpdateEntitlementInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_entitlement::builders::UpdateEntitlementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateEntitlementFluentBuilder {
             crate::operation::update_entitlement::UpdateEntitlement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_entitlement::UpdateEntitlementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_entitlement::UpdateEntitlementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateEntitlementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateEntitlementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_entitlement::UpdateEntitlementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_entitlement::UpdateEntitlementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_entitlement::UpdateEntitlementError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateEntitlementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_entitlement::UpdateEntitlementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_entitlement::UpdateEntitlementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_entitlement::UpdateEntitlementError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateEntitlementFluentBuilder {
             crate::operation::update_entitlement::UpdateEntitlement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_entitlement::UpdateEntitlementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_entitlement::UpdateEntitlementError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +154,7 @@ impl UpdateEntitlementFluentBuilder {
         self
     }
     /// <p>Specifies whether all or only selected apps are entitled.</p>
-    pub fn set_app_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::AppVisibility>,
-    ) -> Self {
+    pub fn set_app_visibility(mut self, input: ::std::option::Option<crate::types::AppVisibility>) -> Self {
         self.inner = self.inner.set_app_visibility(input);
         self
     }
@@ -191,17 +172,12 @@ impl UpdateEntitlementFluentBuilder {
         self
     }
     /// <p>The attributes of the entitlement.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>The attributes of the entitlement.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>> {
         self.inner.get_attributes()
     }
 }

@@ -38,10 +38,7 @@ impl SearchSystemInstancesFluentBuilder {
         }
     }
     /// Access the SearchSystemInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_system_instances::builders::SearchSystemInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::search_system_instances::builders::SearchSystemInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl SearchSystemInstancesFluentBuilder {
             crate::operation::search_system_instances::SearchSystemInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_system_instances::SearchSystemInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_system_instances::SearchSystemInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl SearchSystemInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl SearchSystemInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_system_instances::SearchSystemInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_system_instances::SearchSystemInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_system_instances::SearchSystemInstancesError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl SearchSystemInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_system_instances::SearchSystemInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_system_instances::SearchSystemInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_system_instances::SearchSystemInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl SearchSystemInstancesFluentBuilder {
             crate::operation::search_system_instances::SearchSystemInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_system_instances::SearchSystemInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_system_instances::SearchSystemInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_system_instances::paginator::SearchSystemInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_system_instances::paginator::SearchSystemInstancesPaginator {
-        crate::operation::search_system_instances::paginator::SearchSystemInstancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_system_instances::paginator::SearchSystemInstancesPaginator {
+        crate::operation::search_system_instances::paginator::SearchSystemInstancesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `filters`.
     ///
@@ -147,18 +128,13 @@ impl SearchSystemInstancesFluentBuilder {
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>> {
         self.inner.get_filters()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>

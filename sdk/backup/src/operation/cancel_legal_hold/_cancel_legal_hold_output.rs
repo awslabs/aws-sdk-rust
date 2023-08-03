@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelLegalHoldOutput {
 }
 impl CancelLegalHoldOutput {
     /// Creates a new builder-style object to manufacture [`CancelLegalHoldOutput`](crate::operation::cancel_legal_hold::CancelLegalHoldOutput).
-    pub fn builder() -> crate::operation::cancel_legal_hold::builders::CancelLegalHoldOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_legal_hold::builders::CancelLegalHoldOutputBuilder {
         crate::operation::cancel_legal_hold::builders::CancelLegalHoldOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelLegalHoldOutput`](crate::operation::cancel_legal_hold::CancelLegalHoldOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelLegalHoldOutputBuilder {
     _request_id: Option<String>,
 }

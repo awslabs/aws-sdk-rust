@@ -45,18 +45,14 @@ impl GetExecutionHistoryInput {
 }
 impl GetExecutionHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetExecutionHistoryInput`](crate::operation::get_execution_history::GetExecutionHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::get_execution_history::builders::GetExecutionHistoryInputBuilder {
-        crate::operation::get_execution_history::builders::GetExecutionHistoryInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_execution_history::builders::GetExecutionHistoryInputBuilder {
+        crate::operation::get_execution_history::builders::GetExecutionHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetExecutionHistoryInput`](crate::operation::get_execution_history::GetExecutionHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExecutionHistoryInputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -66,18 +62,12 @@ pub struct GetExecutionHistoryInputBuilder {
 }
 impl GetExecutionHistoryInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the execution.</p>
-    pub fn execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution.</p>
-    pub fn set_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_arn = input;
         self
     }
@@ -147,18 +137,14 @@ impl GetExecutionHistoryInputBuilder {
     /// Consumes the builder and constructs a [`GetExecutionHistoryInput`](crate::operation::get_execution_history::GetExecutionHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_execution_history::GetExecutionHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_execution_history::GetExecutionHistoryInput {
-                execution_arn: self.execution_arn,
-                max_results: self.max_results,
-                reverse_order: self.reverse_order,
-                next_token: self.next_token,
-                include_execution_data: self.include_execution_data,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_execution_history::GetExecutionHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_execution_history::GetExecutionHistoryInput {
+            execution_arn: self.execution_arn,
+            max_results: self.max_results,
+            reverse_order: self.reverse_order,
+            next_token: self.next_token,
+            include_execution_data: self.include_execution_data,
+        })
     }
 }

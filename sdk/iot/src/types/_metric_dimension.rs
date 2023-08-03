@@ -30,27 +30,19 @@ impl MetricDimension {
 
 /// A builder for [`MetricDimension`](crate::types::MetricDimension).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDimensionBuilder {
     pub(crate) dimension_name: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::DimensionValueOperator>,
 }
 impl MetricDimensionBuilder {
     /// <p>A unique identifier for the dimension.</p>
-    pub fn dimension_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the dimension.</p>
-    pub fn set_dimension_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_name = input;
         self
     }
@@ -64,10 +56,7 @@ impl MetricDimensionBuilder {
         self
     }
     /// <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted. For example, for dimension type TOPIC_FILTER, the <code>IN</code> operator, a message will be counted only if its topic matches one of the topic filters. With <code>NOT_IN</code> operator, a message will be counted only if it doesn't match any of the topic filters. The operator is optional: if it's not provided (is <code>null</code>), it will be interpreted as <code>IN</code>.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionValueOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::DimensionValueOperator>) -> Self {
         self.operator = input;
         self
     }

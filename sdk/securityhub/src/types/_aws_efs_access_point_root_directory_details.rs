@@ -6,18 +6,14 @@
 pub struct AwsEfsAccessPointRootDirectoryDetails {
     /// <p>Specifies the POSIX IDs and permissions to apply to the access point's root directory. </p>
     #[doc(hidden)]
-    pub creation_info:
-        ::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
+    pub creation_info: ::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
     /// <p>Specifies the path on the Amazon EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide <code>CreationInfo</code>. </p>
     #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
 }
 impl AwsEfsAccessPointRootDirectoryDetails {
     /// <p>Specifies the POSIX IDs and permissions to apply to the access point's root directory. </p>
-    pub fn creation_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>
-    {
+    pub fn creation_info(&self) -> ::std::option::Option<&crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails> {
         self.creation_info.as_ref()
     }
     /// <p>Specifies the path on the Amazon EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide <code>CreationInfo</code>. </p>
@@ -34,38 +30,24 @@ impl AwsEfsAccessPointRootDirectoryDetails {
 
 /// A builder for [`AwsEfsAccessPointRootDirectoryDetails`](crate::types::AwsEfsAccessPointRootDirectoryDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEfsAccessPointRootDirectoryDetailsBuilder {
-    pub(crate) creation_info:
-        ::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
+    pub(crate) creation_info: ::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
 }
 impl AwsEfsAccessPointRootDirectoryDetailsBuilder {
     /// <p>Specifies the POSIX IDs and permissions to apply to the access point's root directory. </p>
-    pub fn creation_info(
-        mut self,
-        input: crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails,
-    ) -> Self {
+    pub fn creation_info(mut self, input: crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails) -> Self {
         self.creation_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the POSIX IDs and permissions to apply to the access point's root directory. </p>
-    pub fn set_creation_info(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails,
-        >,
-    ) -> Self {
+    pub fn set_creation_info(mut self, input: ::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>) -> Self {
         self.creation_info = input;
         self
     }
     /// <p>Specifies the POSIX IDs and permissions to apply to the access point's root directory. </p>
-    pub fn get_creation_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>
-    {
+    pub fn get_creation_info(&self) -> &::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails> {
         &self.creation_info
     }
     /// <p>Specifies the path on the Amazon EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide <code>CreationInfo</code>. </p>

@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`certificate_description(Option<CaCertificateDescription>)`](crate::operation::describe_ca_certificate::DescribeCaCertificateOutput::certificate_description): <p>The CA certificate description.</p>
     ///   - [`registration_config(Option<RegistrationConfig>)`](crate::operation::describe_ca_certificate::DescribeCaCertificateOutput::registration_config): <p>Information about the registration configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeCACertificateError>`](crate::operation::describe_ca_certificate::DescribeCACertificateError)
-    pub fn describe_ca_certificate(
-        &self,
-    ) -> crate::operation::describe_ca_certificate::builders::DescribeCACertificateFluentBuilder
-    {
-        crate::operation::describe_ca_certificate::builders::DescribeCACertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ca_certificate(&self) -> crate::operation::describe_ca_certificate::builders::DescribeCACertificateFluentBuilder {
+        crate::operation::describe_ca_certificate::builders::DescribeCACertificateFluentBuilder::new(self.handle.clone())
     }
 }

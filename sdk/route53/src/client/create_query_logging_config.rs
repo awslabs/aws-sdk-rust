@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`query_logging_config(Option<QueryLoggingConfig>)`](crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput::query_logging_config): <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput::location): <p>The unique URL representing the new query logging configuration.</p>
     /// - On failure, responds with [`SdkError<CreateQueryLoggingConfigError>`](crate::operation::create_query_logging_config::CreateQueryLoggingConfigError)
-    pub fn create_query_logging_config(&self) -> crate::operation::create_query_logging_config::builders::CreateQueryLoggingConfigFluentBuilder{
+    pub fn create_query_logging_config(&self) -> crate::operation::create_query_logging_config::builders::CreateQueryLoggingConfigFluentBuilder {
         crate::operation::create_query_logging_config::builders::CreateQueryLoggingConfigFluentBuilder::new(self.handle.clone())
     }
 }

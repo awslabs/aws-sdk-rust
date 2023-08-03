@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for StopDominantLanguageDetectionJobOutpu
 }
 impl StopDominantLanguageDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopDominantLanguageDetectionJobOutput`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobOutput).
-    pub fn builder() -> crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobOutputBuilder {
         crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopDominantLanguageDetectionJobOutput`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDominantLanguageDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -82,12 +80,10 @@ impl StopDominantLanguageDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopDominantLanguageDetectionJobOutput`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobOutput).
-    pub fn build(self) -> crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobOutput{
+    pub fn build(self) -> crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobOutput {
         crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobOutput {
-            job_id: self.job_id
-            ,
-            job_status: self.job_status
-            ,
+            job_id: self.job_id,
+            job_status: self.job_status,
             _request_id: self._request_id,
         }
     }

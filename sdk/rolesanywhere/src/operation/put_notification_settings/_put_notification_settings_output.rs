@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for PutNotificationSettingsOutput {
 }
 impl PutNotificationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`PutNotificationSettingsOutput`](crate::operation::put_notification_settings::PutNotificationSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::put_notification_settings::builders::PutNotificationSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_notification_settings::builders::PutNotificationSettingsOutputBuilder {
         crate::operation::put_notification_settings::builders::PutNotificationSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutNotificationSettingsOutput`](crate::operation::put_notification_settings::PutNotificationSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutNotificationSettingsOutputBuilder {
     pub(crate) trust_anchor: ::std::option::Option<crate::types::TrustAnchorDetail>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl PutNotificationSettingsOutputBuilder {
         self
     }
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn set_trust_anchor(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustAnchorDetail>,
-    ) -> Self {
+    pub fn set_trust_anchor(mut self, input: ::std::option::Option<crate::types::TrustAnchorDetail>) -> Self {
         self.trust_anchor = input;
         self
     }
@@ -65,9 +58,7 @@ impl PutNotificationSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutNotificationSettingsOutput`](crate::operation::put_notification_settings::PutNotificationSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_notification_settings::PutNotificationSettingsOutput {
+    pub fn build(self) -> crate::operation::put_notification_settings::PutNotificationSettingsOutput {
         crate::operation::put_notification_settings::PutNotificationSettingsOutput {
             trust_anchor: self.trust_anchor,
             _request_id: self._request_id,

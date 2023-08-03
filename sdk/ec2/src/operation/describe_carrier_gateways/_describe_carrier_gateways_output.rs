@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeCarrierGatewaysOutput {
 }
 impl DescribeCarrierGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCarrierGatewaysOutput`](crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_carrier_gateways::builders::DescribeCarrierGatewaysOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_carrier_gateways::builders::DescribeCarrierGatewaysOutputBuilder {
         crate::operation::describe_carrier_gateways::builders::DescribeCarrierGatewaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCarrierGatewaysOutput`](crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCarrierGatewaysOutputBuilder {
-    pub(crate) carrier_gateways:
-        ::std::option::Option<::std::vec::Vec<crate::types::CarrierGateway>>,
+    pub(crate) carrier_gateways: ::std::option::Option<::std::vec::Vec<crate::types::CarrierGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeCarrierGatewaysOutputBuilder {
         self
     }
     /// <p>Information about the carrier gateway.</p>
-    pub fn set_carrier_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CarrierGateway>>,
-    ) -> Self {
+    pub fn set_carrier_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CarrierGateway>>) -> Self {
         self.carrier_gateways = input;
         self
     }
     /// <p>Information about the carrier gateway.</p>
-    pub fn get_carrier_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CarrierGateway>> {
+    pub fn get_carrier_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CarrierGateway>> {
         &self.carrier_gateways
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -96,9 +86,7 @@ impl DescribeCarrierGatewaysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCarrierGatewaysOutput`](crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysOutput {
+    pub fn build(self) -> crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysOutput {
         crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysOutput {
             carrier_gateways: self.carrier_gateways,
             next_token: self.next_token,

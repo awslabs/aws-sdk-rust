@@ -22,9 +22,7 @@ impl ResumeServiceInput {
 
 /// A builder for [`ResumeServiceInput`](crate::operation::resume_service::ResumeServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeServiceInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl ResumeServiceInputBuilder {
     /// Consumes the builder and constructs a [`ResumeServiceInput`](crate::operation::resume_service::ResumeServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resume_service::ResumeServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::resume_service::ResumeServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_service::ResumeServiceInput {
             service_arn: self.service_arn,
         })

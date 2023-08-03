@@ -8,8 +8,7 @@ pub struct PutFeedbackInput {
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>Feedback for an anomalous metric.</p>
     #[doc(hidden)]
-    pub anomaly_group_time_series_feedback:
-        ::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
+    pub anomaly_group_time_series_feedback: ::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
 }
 impl PutFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -17,9 +16,7 @@ impl PutFeedbackInput {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn anomaly_group_time_series_feedback(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnomalyGroupTimeSeriesFeedback> {
+    pub fn anomaly_group_time_series_feedback(&self) -> ::std::option::Option<&crate::types::AnomalyGroupTimeSeriesFeedback> {
         self.anomaly_group_time_series_feedback.as_ref()
     }
 }
@@ -32,28 +29,19 @@ impl PutFeedbackInput {
 
 /// A builder for [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFeedbackInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) anomaly_group_time_series_feedback:
-        ::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
+    pub(crate) anomaly_group_time_series_feedback: ::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
 }
 impl PutFeedbackInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -62,34 +50,21 @@ impl PutFeedbackInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn anomaly_group_time_series_feedback(
-        mut self,
-        input: crate::types::AnomalyGroupTimeSeriesFeedback,
-    ) -> Self {
+    pub fn anomaly_group_time_series_feedback(mut self, input: crate::types::AnomalyGroupTimeSeriesFeedback) -> Self {
         self.anomaly_group_time_series_feedback = ::std::option::Option::Some(input);
         self
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn set_anomaly_group_time_series_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
-    ) -> Self {
+    pub fn set_anomaly_group_time_series_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>) -> Self {
         self.anomaly_group_time_series_feedback = input;
         self
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn get_anomaly_group_time_series_feedback(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback> {
+    pub fn get_anomaly_group_time_series_feedback(&self) -> &::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback> {
         &self.anomaly_group_time_series_feedback
     }
     /// Consumes the builder and constructs a [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_feedback::PutFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_feedback::PutFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_feedback::PutFeedbackInput {
             anomaly_detector_arn: self.anomaly_detector_arn,
             anomaly_group_time_series_feedback: self.anomaly_group_time_series_feedback,

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput::marker): <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request. </p>
     ///   - [`reserved_node_offerings(Option<Vec<ReservedNodeOffering>>)`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput::reserved_node_offerings): <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
     /// - On failure, responds with [`SdkError<GetReservedNodeExchangeOfferingsError>`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError)
-    pub fn get_reserved_node_exchange_offerings(&self) -> crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsFluentBuilder{
+    pub fn get_reserved_node_exchange_offerings(
+        &self,
+    ) -> crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsFluentBuilder {
         crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

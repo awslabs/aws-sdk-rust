@@ -26,17 +26,14 @@ impl CreateReceiptRuleSetInput {
 }
 impl CreateReceiptRuleSetInput {
     /// Creates a new builder-style object to manufacture [`CreateReceiptRuleSetInput`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetInputBuilder {
+    pub fn builder() -> crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetInputBuilder {
         crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReceiptRuleSetInput`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReceiptRuleSetInputBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl CreateReceiptRuleSetInputBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -60,10 +54,7 @@ impl CreateReceiptRuleSetInputBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_name = input;
         self
     }
@@ -79,14 +70,10 @@ impl CreateReceiptRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateReceiptRuleSetInput`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput {
-                rule_set_name: self.rule_set_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput {
+            rule_set_name: self.rule_set_name,
+        })
     }
 }

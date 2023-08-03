@@ -41,10 +41,7 @@ impl ReorderReceiptRuleSetFluentBuilder {
         }
     }
     /// Access the ReorderReceiptRuleSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl ReorderReceiptRuleSetFluentBuilder {
             crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl ReorderReceiptRuleSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl ReorderReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl ReorderReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +109,17 @@ impl ReorderReceiptRuleSetFluentBuilder {
             crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the receipt rule set to reorder.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_name(input.into());
         self
     }
     /// <p>The name of the receipt rule set to reorder.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }
@@ -157,10 +137,7 @@ impl ReorderReceiptRuleSetFluentBuilder {
         self
     }
     /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
-    pub fn set_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_rule_names(input);
         self
     }

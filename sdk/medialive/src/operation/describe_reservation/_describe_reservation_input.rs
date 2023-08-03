@@ -16,34 +16,25 @@ impl DescribeReservationInput {
 }
 impl DescribeReservationInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_reservation::builders::DescribeReservationInputBuilder {
+    pub fn builder() -> crate::operation::describe_reservation::builders::DescribeReservationInputBuilder {
         crate::operation::describe_reservation::builders::DescribeReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservationInputBuilder {
     pub(crate) reservation_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservationInputBuilder {
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_id = input;
         self
     }
@@ -54,14 +45,10 @@ impl DescribeReservationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_reservation::DescribeReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_reservation::DescribeReservationInput {
-                reservation_id: self.reservation_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_reservation::DescribeReservationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_reservation::DescribeReservationInput {
+            reservation_id: self.reservation_id,
+        })
     }
 }

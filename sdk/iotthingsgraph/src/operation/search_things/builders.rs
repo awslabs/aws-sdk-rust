@@ -10,10 +10,7 @@ impl SearchThingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_things::SearchThingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_things::SearchThingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_things::SearchThingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_things();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl SearchThingsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_things::SearchThings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_things::SearchThings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_things::SearchThingsError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl SearchThingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl SearchThingsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_things::SearchThings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_things::SearchThings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_things::SearchThingsError>,
     > {
         self.customize_middleware().await
@@ -118,13 +106,8 @@ impl SearchThingsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_things::paginator::SearchThingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_things::paginator::SearchThingsPaginator {
-        crate::operation::search_things::paginator::SearchThingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_things::paginator::SearchThingsPaginator {
+        crate::operation::search_things::paginator::SearchThingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>

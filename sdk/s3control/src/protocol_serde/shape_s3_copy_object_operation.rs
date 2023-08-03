@@ -28,18 +28,11 @@ pub fn ser_s3_copy_object_operation(
     }
     if let Some(var_6) = &input.modified_since_constraint {
         let mut inner_writer = scope.start_el("ModifiedSinceConstraint").finish();
-        inner_writer.data(
-            var_6
-                .fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
-                .as_ref(),
-        );
+        inner_writer.data(var_6.fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref());
     }
     if let Some(var_7) = &input.new_object_metadata {
         let inner_writer = scope.start_el("NewObjectMetadata");
-        crate::protocol_serde::shape_s3_object_metadata::ser_s3_object_metadata(
-            var_7,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_s3_object_metadata::ser_s3_object_metadata(var_7, inner_writer)?
     }
     if let Some(var_8) = &input.new_object_tagging {
         let mut inner_writer = scope.start_el("NewObjectTagging").finish();
@@ -56,8 +49,7 @@ pub fn ser_s3_copy_object_operation(
     }
     if input.requester_pays {
         let mut inner_writer = scope.start_el("RequesterPays").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.requester_pays).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.requester_pays).encode());
     }
     if let Some(var_11) = &input.storage_class {
         let mut inner_writer = scope.start_el("StorageClass").finish();
@@ -65,11 +57,7 @@ pub fn ser_s3_copy_object_operation(
     }
     if let Some(var_12) = &input.un_modified_since_constraint {
         let mut inner_writer = scope.start_el("UnModifiedSinceConstraint").finish();
-        inner_writer.data(
-            var_12
-                .fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
-                .as_ref(),
-        );
+        inner_writer.data(var_12.fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref());
     }
     if let Some(var_13) = &input.sse_aws_kms_key_id {
         let mut inner_writer = scope.start_el("SSEAwsKmsKeyId").finish();
@@ -89,16 +77,11 @@ pub fn ser_s3_copy_object_operation(
     }
     if let Some(var_17) = &input.object_lock_retain_until_date {
         let mut inner_writer = scope.start_el("ObjectLockRetainUntilDate").finish();
-        inner_writer.data(
-            var_17
-                .fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
-                .as_ref(),
-        );
+        inner_writer.data(var_17.fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref());
     }
     if input.bucket_key_enabled {
         let mut inner_writer = scope.start_el("BucketKeyEnabled").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled).encode());
     }
     if let Some(var_18) = &input.checksum_algorithm {
         let mut inner_writer = scope.start_el("ChecksumAlgorithm").finish();

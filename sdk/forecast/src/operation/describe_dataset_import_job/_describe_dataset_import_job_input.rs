@@ -15,35 +15,25 @@ impl DescribeDatasetImportJobInput {
 }
 impl DescribeDatasetImportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetImportJobInput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobInputBuilder {
         crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatasetImportJobInput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetImportJobInputBuilder {
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatasetImportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn dataset_import_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_import_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn set_dataset_import_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_import_job_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl DescribeDatasetImportJobInputBuilder {
         crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput {
-                dataset_import_job_arn: self.dataset_import_job_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput {
+            dataset_import_job_arn: self.dataset_import_job_arn,
+        })
     }
 }

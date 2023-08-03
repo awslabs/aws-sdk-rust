@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`configuration_ids(Vec<String>)`](crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder::configuration_ids) / [`set_configuration_ids(Option<Vec<String>>)`](crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder::set_configuration_ids): <p>Configuration ID of an application to be deleted.</p>
     /// - On success, responds with [`DeleteApplicationsOutput`](crate::operation::delete_applications::DeleteApplicationsOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationsError>`](crate::operation::delete_applications::DeleteApplicationsError)
-    pub fn delete_applications(
-        &self,
-    ) -> crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder {
-        crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_applications(&self) -> crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder {
+        crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

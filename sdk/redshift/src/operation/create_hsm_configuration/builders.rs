@@ -38,10 +38,7 @@ impl CreateHsmConfigurationFluentBuilder {
         }
     }
     /// Access the CreateHsmConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateHsmConfigurationFluentBuilder {
             crate::operation::create_hsm_configuration::CreateHsmConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm_configuration::CreateHsmConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateHsmConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateHsmConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm_configuration::CreateHsmConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateHsmConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm_configuration::CreateHsmConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,32 +106,22 @@ impl CreateHsmConfigurationFluentBuilder {
             crate::operation::create_hsm_configuration::CreateHsmConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm_configuration::CreateHsmConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
-    pub fn hsm_configuration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_configuration_identifier(input.into());
         self
     }
     /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
-    pub fn set_hsm_configuration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_configuration_identifier(input);
         self
     }
     /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
-    pub fn get_hsm_configuration_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hsm_configuration_identifier()
     }
     /// <p>A text description of the HSM configuration to be created.</p>
@@ -161,18 +139,12 @@ impl CreateHsmConfigurationFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-    pub fn hsm_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_ip_address(input.into());
         self
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-    pub fn set_hsm_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_ip_address(input);
         self
     }
@@ -181,18 +153,12 @@ impl CreateHsmConfigurationFluentBuilder {
         self.inner.get_hsm_ip_address()
     }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    pub fn hsm_partition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_partition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_partition_name(input.into());
         self
     }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    pub fn set_hsm_partition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_partition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_partition_name(input);
         self
     }
@@ -201,18 +167,12 @@ impl CreateHsmConfigurationFluentBuilder {
         self.inner.get_hsm_partition_name()
     }
     /// <p>The password required to access the HSM partition.</p>
-    pub fn hsm_partition_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_partition_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_partition_password(input.into());
         self
     }
     /// <p>The password required to access the HSM partition.</p>
-    pub fn set_hsm_partition_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_partition_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_partition_password(input);
         self
     }
@@ -221,25 +181,17 @@ impl CreateHsmConfigurationFluentBuilder {
         self.inner.get_hsm_partition_password()
     }
     /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
-    pub fn hsm_server_public_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_server_public_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_server_public_certificate(input.into());
         self
     }
     /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
-    pub fn set_hsm_server_public_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_server_public_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_server_public_certificate(input);
         self
     }
     /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
-    pub fn get_hsm_server_public_certificate(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_server_public_certificate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hsm_server_public_certificate()
     }
     /// Appends an item to `Tags`.
@@ -252,10 +204,7 @@ impl CreateHsmConfigurationFluentBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

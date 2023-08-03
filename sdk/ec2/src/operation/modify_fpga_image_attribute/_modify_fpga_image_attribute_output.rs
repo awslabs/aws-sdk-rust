@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyFpgaImageAttributeOutput {
 }
 impl ModifyFpgaImageAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyFpgaImageAttributeOutput`](crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput).
-    pub fn builder() -> crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeOutputBuilder{
+    pub fn builder() -> crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeOutputBuilder {
         crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyFpgaImageAttributeOutput`](crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyFpgaImageAttributeOutputBuilder {
     pub(crate) fpga_image_attribute: ::std::option::Option<crate::types::FpgaImageAttribute>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl ModifyFpgaImageAttributeOutputBuilder {
         self
     }
     /// <p>Information about the attribute.</p>
-    pub fn set_fpga_image_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::FpgaImageAttribute>,
-    ) -> Self {
+    pub fn set_fpga_image_attribute(mut self, input: ::std::option::Option<crate::types::FpgaImageAttribute>) -> Self {
         self.fpga_image_attribute = input;
         self
     }
     /// <p>Information about the attribute.</p>
-    pub fn get_fpga_image_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::FpgaImageAttribute> {
+    pub fn get_fpga_image_attribute(&self) -> &::std::option::Option<crate::types::FpgaImageAttribute> {
         &self.fpga_image_attribute
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl ModifyFpgaImageAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyFpgaImageAttributeOutput`](crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput {
+    pub fn build(self) -> crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput {
         crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput {
             fpga_image_attribute: self.fpga_image_attribute,
             _request_id: self._request_id,

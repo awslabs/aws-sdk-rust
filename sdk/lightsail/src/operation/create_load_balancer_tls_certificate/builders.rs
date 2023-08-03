@@ -5,16 +5,16 @@ pub use crate::operation::create_load_balancer_tls_certificate::_create_load_bal
 
 impl CreateLoadBalancerTlsCertificateInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_load_balancer_tls_certificate();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl CreateLoadBalancerTlsCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerTlsCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder,
+    inner: crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder,
 }
 impl CreateLoadBalancerTlsCertificateFluentBuilder {
     /// Creates a new `CreateLoadBalancerTlsCertificate`.
@@ -39,15 +39,20 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
         }
     }
     /// Access the CreateLoadBalancerTlsCertificate as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,32 +89,35 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -118,19 +127,13 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
     }
     /// <p>The SSL/TLS certificate name.</p>
     /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load balancer can have up to 2 certificates associated with it at one time. There is also an overall limit to the number of certificates that can be issue in a 365-day period. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_name(input.into());
         self
     }
     /// <p>The SSL/TLS certificate name.</p>
     /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load balancer can have up to 2 certificates associated with it at one time. There is also an overall limit to the number of certificates that can be issue in a 365-day period. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
     }
@@ -140,18 +143,12 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
         self.inner.get_certificate_name()
     }
     /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
-    pub fn certificate_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_domain_name(input.into());
         self
     }
     /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
-    pub fn set_certificate_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_domain_name(input);
         self
     }
@@ -164,25 +161,17 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
     /// To override the contents of this collection use [`set_certificate_alternative_names`](Self::set_certificate_alternative_names).
     ///
     /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
-    pub fn certificate_alternative_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_alternative_names(input.into());
         self
     }
     /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
-    pub fn set_certificate_alternative_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificate_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_certificate_alternative_names(input);
         self
     }
     /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
-    pub fn get_certificate_alternative_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_certificate_alternative_names()
     }
     /// Appends an item to `tags`.
@@ -197,10 +186,7 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

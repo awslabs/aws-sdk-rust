@@ -33,7 +33,7 @@ impl DeleteProgressUpdateStreamInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProgressUpdateStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamInputBuilder,
+    inner: crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamInputBuilder,
 }
 impl DeleteProgressUpdateStreamFluentBuilder {
     /// Creates a new `DeleteProgressUpdateStream`.
@@ -44,7 +44,7 @@ impl DeleteProgressUpdateStreamFluentBuilder {
         }
     }
     /// Access the DeleteProgressUpdateStream as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl DeleteProgressUpdateStreamFluentBuilder {
             crate::operation::delete_progress_update_stream::DeleteProgressUpdateStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl DeleteProgressUpdateStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl DeleteProgressUpdateStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl DeleteProgressUpdateStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +112,17 @@ impl DeleteProgressUpdateStreamFluentBuilder {
             crate::operation::delete_progress_update_stream::DeleteProgressUpdateStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    pub fn progress_update_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream_name(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_progress_update_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream_name(input);
         self
     }

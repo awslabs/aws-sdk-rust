@@ -15,17 +15,14 @@ impl GetRawMessageContentInput {
 }
 impl GetRawMessageContentInput {
     /// Creates a new builder-style object to manufacture [`GetRawMessageContentInput`](crate::operation::get_raw_message_content::GetRawMessageContentInput).
-    pub fn builder(
-    ) -> crate::operation::get_raw_message_content::builders::GetRawMessageContentInputBuilder {
+    pub fn builder() -> crate::operation::get_raw_message_content::builders::GetRawMessageContentInputBuilder {
         crate::operation::get_raw_message_content::builders::GetRawMessageContentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRawMessageContentInput`](crate::operation::get_raw_message_content::GetRawMessageContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRawMessageContentInputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl GetRawMessageContentInputBuilder {
     /// Consumes the builder and constructs a [`GetRawMessageContentInput`](crate::operation::get_raw_message_content::GetRawMessageContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_raw_message_content::GetRawMessageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_raw_message_content::GetRawMessageContentInput {
-                message_id: self.message_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_raw_message_content::GetRawMessageContentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_raw_message_content::GetRawMessageContentInput { message_id: self.message_id })
     }
 }

@@ -30,18 +30,14 @@ impl CreateTrafficPolicyInput {
 }
 impl CreateTrafficPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyInput`](crate::operation::create_traffic_policy::CreateTrafficPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::create_traffic_policy::builders::CreateTrafficPolicyInputBuilder {
-        crate::operation::create_traffic_policy::builders::CreateTrafficPolicyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_traffic_policy::builders::CreateTrafficPolicyInputBuilder {
+        crate::operation::create_traffic_policy::builders::CreateTrafficPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTrafficPolicyInput`](crate::operation::create_traffic_policy::CreateTrafficPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTrafficPolicyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document: ::std::option::Option<::std::string::String>,
@@ -93,16 +89,12 @@ impl CreateTrafficPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateTrafficPolicyInput`](crate::operation::create_traffic_policy::CreateTrafficPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_traffic_policy::CreateTrafficPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_traffic_policy::CreateTrafficPolicyInput {
-                name: self.name,
-                document: self.document,
-                comment: self.comment,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_traffic_policy::CreateTrafficPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_traffic_policy::CreateTrafficPolicyInput {
+            name: self.name,
+            document: self.document,
+            comment: self.comment,
+        })
     }
 }

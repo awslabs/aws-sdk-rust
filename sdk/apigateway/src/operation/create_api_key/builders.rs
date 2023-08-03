@@ -10,10 +10,7 @@ impl CreateApiKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_api_key::CreateApiKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_api_key::CreateApiKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_api_key::CreateApiKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_api_key();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateApiKeyFluentBuilder {
         }
     }
     /// Access the CreateApiKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_api_key::builders::CreateApiKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_api_key::builders::CreateApiKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateApiKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -194,17 +186,12 @@ impl CreateApiKeyFluentBuilder {
         self
     }
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
-    pub fn set_stage_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>,
-    ) -> Self {
+    pub fn set_stage_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>) -> Self {
         self.inner = self.inner.set_stage_keys(input);
         self
     }
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
-    pub fn get_stage_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StageKey>> {
+    pub fn get_stage_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageKey>> {
         self.inner.get_stage_keys()
     }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
@@ -226,30 +213,17 @@ impl CreateApiKeyFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

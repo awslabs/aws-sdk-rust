@@ -6,12 +6,7 @@ pub(crate) fn de_search_related_items_response_item_list<'a, I>(
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -24,18 +19,14 @@ where
                         break;
                     }
                     _ => {
-                        items.push(
-                            crate::protocol_serde::shape_search_related_items_response_item::de_search_related_items_response_item(tokens)?
-                        );
+                        items.push(crate::protocol_serde::shape_search_related_items_response_item::de_search_related_items_response_item(tokens)?);
                     }
                 }
             }
             Ok(Some(items))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start array or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start array or null",
+        )),
     }
 }

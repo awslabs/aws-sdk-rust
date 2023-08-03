@@ -73,9 +73,7 @@ impl Device {
         self.device_status_info.as_ref()
     }
     /// <p>Detailed information about a device's network profile.</p>
-    pub fn network_profile_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeviceNetworkProfileInfo> {
+    pub fn network_profile_info(&self) -> ::std::option::Option<&crate::types::DeviceNetworkProfileInfo> {
         self.network_profile_info.as_ref()
     }
 }
@@ -88,9 +86,7 @@ impl Device {
 
 /// A builder for [`Device`](crate::types::Device).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_serial_number: ::std::option::Option<::std::string::String>,
@@ -119,18 +115,12 @@ impl DeviceBuilder {
         &self.device_arn
     }
     /// <p>The serial number of a device.</p>
-    pub fn device_serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number of a device.</p>
-    pub fn set_device_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_serial_number = input;
         self
     }
@@ -167,18 +157,12 @@ impl DeviceBuilder {
         &self.device_name
     }
     /// <p>The software version of a device.</p>
-    pub fn software_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn software_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.software_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The software version of a device.</p>
-    pub fn set_software_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_software_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.software_version = input;
         self
     }
@@ -220,10 +204,7 @@ impl DeviceBuilder {
         self
     }
     /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
-    pub fn set_device_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStatus>,
-    ) -> Self {
+    pub fn set_device_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
         self.device_status = input;
         self
     }
@@ -237,10 +218,7 @@ impl DeviceBuilder {
         self
     }
     /// <p>Detailed information about a device's status.</p>
-    pub fn set_device_status_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStatusInfo>,
-    ) -> Self {
+    pub fn set_device_status_info(mut self, input: ::std::option::Option<crate::types::DeviceStatusInfo>) -> Self {
         self.device_status_info = input;
         self
     }
@@ -254,17 +232,12 @@ impl DeviceBuilder {
         self
     }
     /// <p>Detailed information about a device's network profile.</p>
-    pub fn set_network_profile_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceNetworkProfileInfo>,
-    ) -> Self {
+    pub fn set_network_profile_info(mut self, input: ::std::option::Option<crate::types::DeviceNetworkProfileInfo>) -> Self {
         self.network_profile_info = input;
         self
     }
     /// <p>Detailed information about a device's network profile.</p>
-    pub fn get_network_profile_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceNetworkProfileInfo> {
+    pub fn get_network_profile_info(&self) -> &::std::option::Option<crate::types::DeviceNetworkProfileInfo> {
         &self.network_profile_info
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).

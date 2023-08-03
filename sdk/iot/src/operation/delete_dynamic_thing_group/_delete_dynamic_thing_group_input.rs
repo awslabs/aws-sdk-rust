@@ -22,36 +22,26 @@ impl DeleteDynamicThingGroupInput {
 }
 impl DeleteDynamicThingGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteDynamicThingGroupInput`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupInputBuilder {
         crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDynamicThingGroupInput`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDynamicThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) expected_version: ::std::option::Option<i64>,
 }
 impl DeleteDynamicThingGroupInputBuilder {
     /// <p>The name of the dynamic thing group to delete.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dynamic thing group to delete.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_name = input;
         self
     }
@@ -80,11 +70,9 @@ impl DeleteDynamicThingGroupInputBuilder {
         crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput {
-                thing_group_name: self.thing_group_name,
-                expected_version: self.expected_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput {
+            thing_group_name: self.thing_group_name,
+            expected_version: self.expected_version,
+        })
     }
 }

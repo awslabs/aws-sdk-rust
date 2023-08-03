@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for DisassociateServiceRoleFromAccountOut
 }
 impl DisassociateServiceRoleFromAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateServiceRoleFromAccountOutput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput).
-    pub fn builder() -> crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountOutputBuilder {
         crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateServiceRoleFromAccountOutput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateServiceRoleFromAccountOutputBuilder {
     pub(crate) disassociated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DisassociateServiceRoleFromAccountOutputBuilder {
     /// The time when the service role was disassociated from the account.
-    pub fn disassociated_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disassociated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disassociated_at = ::std::option::Option::Some(input.into());
         self
     }
     /// The time when the service role was disassociated from the account.
-    pub fn set_disassociated_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disassociated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disassociated_at = input;
         self
     }
@@ -66,10 +58,9 @@ impl DisassociateServiceRoleFromAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateServiceRoleFromAccountOutput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput).
-    pub fn build(self) -> crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput{
+    pub fn build(self) -> crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput {
         crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput {
-            disassociated_at: self.disassociated_at
-            ,
+            disassociated_at: self.disassociated_at,
             _request_id: self._request_id,
         }
     }

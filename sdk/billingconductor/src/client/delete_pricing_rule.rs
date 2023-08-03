@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePricingRuleOutput`](crate::operation::delete_pricing_rule::DeletePricingRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_pricing_rule::DeletePricingRuleOutput::arn): <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
     /// - On failure, responds with [`SdkError<DeletePricingRuleError>`](crate::operation::delete_pricing_rule::DeletePricingRuleError)
-    pub fn delete_pricing_rule(
-        &self,
-    ) -> crate::operation::delete_pricing_rule::builders::DeletePricingRuleFluentBuilder {
-        crate::operation::delete_pricing_rule::builders::DeletePricingRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_pricing_rule(&self) -> crate::operation::delete_pricing_rule::builders::DeletePricingRuleFluentBuilder {
+        crate::operation::delete_pricing_rule::builders::DeletePricingRuleFluentBuilder::new(self.handle.clone())
     }
 }

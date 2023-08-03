@@ -25,7 +25,7 @@ impl super::Client {
     ///   - [`user_data(Option<AttributeValue>)`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput::user_data): <p>The user data.</p>
     ///   - [`disable_api_stop(Option<AttributeBooleanValue>)`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput::disable_api_stop): <p>To enable the instance for Amazon Web Services Stop Protection, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceAttributeError>`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeError)
-    pub fn describe_instance_attribute(&self) -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeFluentBuilder{
+    pub fn describe_instance_attribute(&self) -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeFluentBuilder {
         crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeFluentBuilder::new(self.handle.clone())
     }
 }

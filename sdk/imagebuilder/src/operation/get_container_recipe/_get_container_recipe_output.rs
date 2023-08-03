@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetContainerRecipeOutput {
 }
 impl GetContainerRecipeOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerRecipeOutput`](crate::operation::get_container_recipe::GetContainerRecipeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_container_recipe::builders::GetContainerRecipeOutputBuilder {
+    pub fn builder() -> crate::operation::get_container_recipe::builders::GetContainerRecipeOutputBuilder {
         crate::operation::get_container_recipe::builders::GetContainerRecipeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerRecipeOutput`](crate::operation::get_container_recipe::GetContainerRecipeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerRecipeOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) container_recipe: ::std::option::Option<crate::types::ContainerRecipe>,
@@ -65,10 +62,7 @@ impl GetContainerRecipeOutputBuilder {
         self
     }
     /// <p>The container recipe object that is returned.</p>
-    pub fn set_container_recipe(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerRecipe>,
-    ) -> Self {
+    pub fn set_container_recipe(mut self, input: ::std::option::Option<crate::types::ContainerRecipe>) -> Self {
         self.container_recipe = input;
         self
     }

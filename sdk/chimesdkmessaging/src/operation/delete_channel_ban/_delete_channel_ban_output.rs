@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteChannelBanOutput {
 }
 impl DeleteChannelBanOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelBanOutput`](crate::operation::delete_channel_ban::DeleteChannelBanOutput).
-    pub fn builder() -> crate::operation::delete_channel_ban::builders::DeleteChannelBanOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_channel_ban::builders::DeleteChannelBanOutputBuilder {
         crate::operation::delete_channel_ban::builders::DeleteChannelBanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteChannelBanOutput`](crate::operation::delete_channel_ban::DeleteChannelBanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChannelBanOutputBuilder {
     _request_id: Option<String>,
 }

@@ -38,8 +38,7 @@ pub struct PutSlotTypeInput {
     pub parent_slot_type_signature: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
     #[doc(hidden)]
-    pub slot_type_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
+    pub slot_type_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
 }
 impl PutSlotTypeInput {
     /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
@@ -70,9 +69,7 @@ impl PutSlotTypeInput {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn value_selection_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SlotValueSelectionStrategy> {
+    pub fn value_selection_strategy(&self) -> ::std::option::Option<&crate::types::SlotValueSelectionStrategy> {
         self.value_selection_strategy.as_ref()
     }
     /// <p>When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
@@ -85,9 +82,7 @@ impl PutSlotTypeInput {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub fn slot_type_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SlotTypeConfiguration]> {
+    pub fn slot_type_configurations(&self) -> ::std::option::Option<&[crate::types::SlotTypeConfiguration]> {
         self.slot_type_configurations.as_deref()
     }
 }
@@ -100,21 +95,16 @@ impl PutSlotTypeInput {
 
 /// A builder for [`PutSlotTypeInput`](crate::operation::put_slot_type::PutSlotTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSlotTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) enumeration_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>,
+    pub(crate) enumeration_values: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
-    pub(crate) value_selection_strategy:
-        ::std::option::Option<crate::types::SlotValueSelectionStrategy>,
+    pub(crate) value_selection_strategy: ::std::option::Option<crate::types::SlotValueSelectionStrategy>,
     pub(crate) create_version: ::std::option::Option<bool>,
     pub(crate) parent_slot_type_signature: ::std::option::Option<::std::string::String>,
-    pub(crate) slot_type_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
+    pub(crate) slot_type_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
 }
 impl PutSlotTypeInputBuilder {
     /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
@@ -167,19 +157,14 @@ impl PutSlotTypeInputBuilder {
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
-    pub fn set_enumeration_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>,
-    ) -> Self {
+    pub fn set_enumeration_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>) -> Self {
         self.enumeration_values = input;
         self
     }
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
-    pub fn get_enumeration_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>> {
+    pub fn get_enumeration_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>> {
         &self.enumeration_values
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
@@ -208,10 +193,7 @@ impl PutSlotTypeInputBuilder {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn value_selection_strategy(
-        mut self,
-        input: crate::types::SlotValueSelectionStrategy,
-    ) -> Self {
+    pub fn value_selection_strategy(mut self, input: crate::types::SlotValueSelectionStrategy) -> Self {
         self.value_selection_strategy = ::std::option::Option::Some(input);
         self
     }
@@ -221,10 +203,7 @@ impl PutSlotTypeInputBuilder {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn set_value_selection_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotValueSelectionStrategy>,
-    ) -> Self {
+    pub fn set_value_selection_strategy(mut self, input: ::std::option::Option<crate::types::SlotValueSelectionStrategy>) -> Self {
         self.value_selection_strategy = input;
         self
     }
@@ -234,9 +213,7 @@ impl PutSlotTypeInputBuilder {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn get_value_selection_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotValueSelectionStrategy> {
+    pub fn get_value_selection_strategy(&self) -> &::std::option::Option<crate::types::SlotValueSelectionStrategy> {
         &self.value_selection_strategy
     }
     /// <p>When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
@@ -255,19 +232,13 @@ impl PutSlotTypeInputBuilder {
     }
     /// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-    pub fn parent_slot_type_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_slot_type_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_slot_type_signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-    pub fn set_parent_slot_type_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_slot_type_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_slot_type_signature = input;
         self
     }
@@ -288,26 +259,16 @@ impl PutSlotTypeInputBuilder {
         self
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub fn set_slot_type_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
-    ) -> Self {
+    pub fn set_slot_type_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>) -> Self {
         self.slot_type_configurations = input;
         self
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub fn get_slot_type_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>> {
+    pub fn get_slot_type_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>> {
         &self.slot_type_configurations
     }
     /// Consumes the builder and constructs a [`PutSlotTypeInput`](crate::operation::put_slot_type::PutSlotTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_slot_type::PutSlotTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_slot_type::PutSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_slot_type::PutSlotTypeInput {
             name: self.name,
             description: self.description,

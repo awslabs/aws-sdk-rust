@@ -12,9 +12,7 @@ pub struct SerDeInfo {
     pub serialization_library: ::std::option::Option<::std::string::String>,
     /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SerDeInfo {
     /// <p>Name of the SerDe.</p>
@@ -26,11 +24,7 @@ impl SerDeInfo {
         self.serialization_library.as_deref()
     }
     /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl SerDeInfo {
 
 /// A builder for [`SerDeInfo`](crate::types::SerDeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SerDeInfoBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) serialization_library: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SerDeInfoBuilder {
     /// <p>Name of the SerDe.</p>
@@ -69,18 +59,12 @@ impl SerDeInfoBuilder {
         &self.name
     }
     /// <p>Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
-    pub fn serialization_library(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serialization_library(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serialization_library = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
-    pub fn set_serialization_library(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serialization_library(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serialization_library = input;
         self
     }
@@ -93,32 +77,19 @@ impl SerDeInfoBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`SerDeInfo`](crate::types::SerDeInfo).

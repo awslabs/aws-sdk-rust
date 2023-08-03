@@ -42,9 +42,7 @@ impl CreateVoiceConnectorFluentBuilder {
         }
     }
     /// Access the CreateVoiceConnector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl CreateVoiceConnectorFluentBuilder {
             crate::operation::create_voice_connector::CreateVoiceConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_connector::CreateVoiceConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_connector::CreateVoiceConnectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl CreateVoiceConnectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl CreateVoiceConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_voice_connector::CreateVoiceConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_connector::CreateVoiceConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_connector::CreateVoiceConnectorError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl CreateVoiceConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_voice_connector::CreateVoiceConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_connector::CreateVoiceConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_connector::CreateVoiceConnectorError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +110,7 @@ impl CreateVoiceConnectorFluentBuilder {
             crate::operation::create_voice_connector::CreateVoiceConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_connector::CreateVoiceConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_connector::CreateVoiceConnectorError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +134,7 @@ impl CreateVoiceConnectorFluentBuilder {
         self
     }
     /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
-    pub fn set_aws_region(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>,
-    ) -> Self {
+    pub fn set_aws_region(mut self, input: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>) -> Self {
         self.inner = self.inner.set_aws_region(input);
         self
     }

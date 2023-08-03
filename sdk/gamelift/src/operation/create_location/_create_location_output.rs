@@ -28,9 +28,7 @@ impl CreateLocationOutput {
 
 /// A builder for [`CreateLocationOutput`](crate::operation::create_location::CreateLocationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationOutputBuilder {
     pub(crate) location: ::std::option::Option<crate::types::LocationModel>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateLocationOutputBuilder {
         self
     }
     /// <p>The details of the custom location you created.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationModel>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::LocationModel>) -> Self {
         self.location = input;
         self
     }

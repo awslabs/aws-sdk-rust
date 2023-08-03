@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`items(Option<Vec<LaunchConfigurationTemplate>>)`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput::items): <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput::next_token): <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
     /// - On failure, responds with [`SdkError<DescribeLaunchConfigurationTemplatesError>`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesError)
-    pub fn describe_launch_configuration_templates(&self) -> crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder{
-        crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::new(self.handle.clone())
+    pub fn describe_launch_configuration_templates(
+        &self,
+    ) -> crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder {
+        crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

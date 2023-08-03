@@ -87,9 +87,7 @@ impl ProposalSummary {
 
 /// A builder for [`ProposalSummary`](crate::types::ProposalSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProposalSummaryBuilder {
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -130,18 +128,12 @@ impl ProposalSummaryBuilder {
         &self.description
     }
     /// <p> The unique identifier of the member that created the proposal. </p>
-    pub fn proposed_by_member_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proposed_by_member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposed_by_member_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of the member that created the proposal. </p>
-    pub fn set_proposed_by_member_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proposed_by_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proposed_by_member_id = input;
         self
     }
@@ -150,18 +142,12 @@ impl ProposalSummaryBuilder {
         &self.proposed_by_member_id
     }
     /// <p> The name of the member that created the proposal. </p>
-    pub fn proposed_by_member_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proposed_by_member_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposed_by_member_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the member that created the proposal. </p>
-    pub fn set_proposed_by_member_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proposed_by_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proposed_by_member_name = input;
         self
     }
@@ -189,10 +175,7 @@ impl ProposalSummaryBuilder {
     /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
     /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProposalStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProposalStatus>) -> Self {
         self.status = input;
         self
     }
@@ -213,10 +196,7 @@ impl ProposalSummaryBuilder {
         self
     }
     /// <p> The date and time that the proposal was created. </p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -230,10 +210,7 @@ impl ProposalSummaryBuilder {
         self
     }
     /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_date = input;
         self
     }

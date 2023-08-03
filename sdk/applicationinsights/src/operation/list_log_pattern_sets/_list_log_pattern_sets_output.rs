@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for ListLogPatternSetsOutput {
 }
 impl ListLogPatternSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListLogPatternSetsOutput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsOutputBuilder {
-        crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsOutputBuilder {
+        crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLogPatternSetsOutput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogPatternSetsOutputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_pattern_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -55,18 +51,12 @@ pub struct ListLogPatternSetsOutputBuilder {
 }
 impl ListLogPatternSetsOutputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -79,27 +69,19 @@ impl ListLogPatternSetsOutputBuilder {
     /// To override the contents of this collection use [`set_log_pattern_sets`](Self::set_log_pattern_sets).
     ///
     /// <p>The list of log pattern sets.</p>
-    pub fn log_pattern_sets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_pattern_sets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_pattern_sets.unwrap_or_default();
         v.push(input.into());
         self.log_pattern_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of log pattern sets.</p>
-    pub fn set_log_pattern_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_pattern_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_pattern_sets = input;
         self
     }
     /// <p>The list of log pattern sets.</p>
-    pub fn get_log_pattern_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_pattern_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_pattern_sets
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>

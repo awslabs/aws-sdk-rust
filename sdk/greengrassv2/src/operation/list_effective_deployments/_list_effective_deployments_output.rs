@@ -5,8 +5,7 @@
 pub struct ListEffectiveDeploymentsOutput {
     /// <p>A list that summarizes each deployment on the core device.</p>
     #[doc(hidden)]
-    pub effective_deployments:
-        ::std::option::Option<::std::vec::Vec<crate::types::EffectiveDeployment>>,
+    pub effective_deployments: ::std::option::Option<::std::vec::Vec<crate::types::EffectiveDeployment>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEffectiveDeploymentsOutput {
 }
 impl ListEffectiveDeploymentsOutput {
     /// <p>A list that summarizes each deployment on the core device.</p>
-    pub fn effective_deployments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EffectiveDeployment]> {
+    pub fn effective_deployments(&self) -> ::std::option::Option<&[crate::types::EffectiveDeployment]> {
         self.effective_deployments.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEffectiveDeploymentsOutput {
 }
 impl ListEffectiveDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEffectiveDeploymentsOutput`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsOutputBuilder {
         crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEffectiveDeploymentsOutput`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEffectiveDeploymentsOutputBuilder {
-    pub(crate) effective_deployments:
-        ::std::option::Option<::std::vec::Vec<crate::types::EffectiveDeployment>>,
+    pub(crate) effective_deployments: ::std::option::Option<::std::vec::Vec<crate::types::EffectiveDeployment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListEffectiveDeploymentsOutputBuilder {
         self
     }
     /// <p>A list that summarizes each deployment on the core device.</p>
-    pub fn set_effective_deployments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EffectiveDeployment>>,
-    ) -> Self {
+    pub fn set_effective_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EffectiveDeployment>>) -> Self {
         self.effective_deployments = input;
         self
     }
     /// <p>A list that summarizes each deployment on the core device.</p>
-    pub fn get_effective_deployments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EffectiveDeployment>> {
+    pub fn get_effective_deployments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EffectiveDeployment>> {
         &self.effective_deployments
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -99,9 +86,7 @@ impl ListEffectiveDeploymentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEffectiveDeploymentsOutput`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput {
+    pub fn build(self) -> crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput {
         crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput {
             effective_deployments: self.effective_deployments,
             next_token: self.next_token,

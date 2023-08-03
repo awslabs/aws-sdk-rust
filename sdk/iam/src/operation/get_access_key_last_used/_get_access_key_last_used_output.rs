@@ -31,18 +31,14 @@ impl ::aws_http::request_id::RequestId for GetAccessKeyLastUsedOutput {
 }
 impl GetAccessKeyLastUsedOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessKeyLastUsedOutput`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedOutput).
-    pub fn builder(
-    ) -> crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedOutputBuilder {
         crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessKeyLastUsedOutput`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessKeyLastUsedOutputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) access_key_last_used: ::std::option::Option<crate::types::AccessKeyLastUsed>,
@@ -72,17 +68,12 @@ impl GetAccessKeyLastUsedOutputBuilder {
         self
     }
     /// <p>Contains information about the last time the access key was used.</p>
-    pub fn set_access_key_last_used(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessKeyLastUsed>,
-    ) -> Self {
+    pub fn set_access_key_last_used(mut self, input: ::std::option::Option<crate::types::AccessKeyLastUsed>) -> Self {
         self.access_key_last_used = input;
         self
     }
     /// <p>Contains information about the last time the access key was used.</p>
-    pub fn get_access_key_last_used(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessKeyLastUsed> {
+    pub fn get_access_key_last_used(&self) -> &::std::option::Option<crate::types::AccessKeyLastUsed> {
         &self.access_key_last_used
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

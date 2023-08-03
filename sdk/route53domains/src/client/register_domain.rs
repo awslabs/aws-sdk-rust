@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterDomainOutput`](crate::operation::register_domain::RegisterDomainOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::register_domain::RegisterDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<RegisterDomainError>`](crate::operation::register_domain::RegisterDomainError)
-    pub fn register_domain(
-        &self,
-    ) -> crate::operation::register_domain::builders::RegisterDomainFluentBuilder {
-        crate::operation::register_domain::builders::RegisterDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_domain(&self) -> crate::operation::register_domain::builders::RegisterDomainFluentBuilder {
+        crate::operation::register_domain::builders::RegisterDomainFluentBuilder::new(self.handle.clone())
     }
 }

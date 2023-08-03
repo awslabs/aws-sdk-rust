@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetRegexPatternSetOutput {
 }
 impl GetRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`GetRegexPatternSetOutput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetOutput).
-    pub fn builder(
-    ) -> crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetOutputBuilder {
-        crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetOutputBuilder {
+        crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegexPatternSetOutput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegexPatternSetOutputBuilder {
     pub(crate) regex_pattern_set: ::std::option::Option<crate::types::RegexPatternSet>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,
@@ -52,10 +48,7 @@ impl GetRegexPatternSetOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_regex_pattern_set(
-        mut self,
-        input: ::std::option::Option<crate::types::RegexPatternSet>,
-    ) -> Self {
+    pub fn set_regex_pattern_set(mut self, input: ::std::option::Option<crate::types::RegexPatternSet>) -> Self {
         self.regex_pattern_set = input;
         self
     }

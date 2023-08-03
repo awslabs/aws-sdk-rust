@@ -26,7 +26,7 @@ impl UpdateSmbFileShareVisibilityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSMBFileShareVisibilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder,
+    inner: crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder,
 }
 impl UpdateSMBFileShareVisibilityFluentBuilder {
     /// Creates a new `UpdateSMBFileShareVisibility`.
@@ -37,7 +37,7 @@ impl UpdateSMBFileShareVisibilityFluentBuilder {
         }
     }
     /// Access the UpdateSMBFileShareVisibility as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateSMBFileShareVisibilityFluentBuilder {
             crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibility,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateSMBFileShareVisibilityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateSMBFileShareVisibilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateSMBFileShareVisibilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateSMBFileShareVisibilityFluentBuilder {
             crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibility,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError>,
     > {
         self.customize_middleware().await
     }

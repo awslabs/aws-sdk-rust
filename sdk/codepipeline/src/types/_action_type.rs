@@ -12,8 +12,7 @@ pub struct ActionType {
     pub settings: ::std::option::Option<crate::types::ActionTypeSettings>,
     /// <p>The configuration properties for the action type.</p>
     #[doc(hidden)]
-    pub action_configuration_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
+    pub action_configuration_properties: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
     #[doc(hidden)]
     pub input_artifact_details: ::std::option::Option<crate::types::ArtifactDetails>,
@@ -31,9 +30,7 @@ impl ActionType {
         self.settings.as_ref()
     }
     /// <p>The configuration properties for the action type.</p>
-    pub fn action_configuration_properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ActionConfigurationProperty]> {
+    pub fn action_configuration_properties(&self) -> ::std::option::Option<&[crate::types::ActionConfigurationProperty]> {
         self.action_configuration_properties.as_deref()
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
@@ -54,14 +51,11 @@ impl ActionType {
 
 /// A builder for [`ActionType`](crate::types::ActionType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionTypeBuilder {
     pub(crate) id: ::std::option::Option<crate::types::ActionTypeId>,
     pub(crate) settings: ::std::option::Option<crate::types::ActionTypeSettings>,
-    pub(crate) action_configuration_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
+    pub(crate) action_configuration_properties: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
     pub(crate) input_artifact_details: ::std::option::Option<crate::types::ArtifactDetails>,
     pub(crate) output_artifact_details: ::std::option::Option<crate::types::ArtifactDetails>,
 }
@@ -86,10 +80,7 @@ impl ActionTypeBuilder {
         self
     }
     /// <p>The settings for the action type.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::ActionTypeSettings>) -> Self {
         self.settings = input;
         self
     }
@@ -102,10 +93,7 @@ impl ActionTypeBuilder {
     /// To override the contents of this collection use [`set_action_configuration_properties`](Self::set_action_configuration_properties).
     ///
     /// <p>The configuration properties for the action type.</p>
-    pub fn action_configuration_properties(
-        mut self,
-        input: crate::types::ActionConfigurationProperty,
-    ) -> Self {
+    pub fn action_configuration_properties(mut self, input: crate::types::ActionConfigurationProperty) -> Self {
         let mut v = self.action_configuration_properties.unwrap_or_default();
         v.push(input);
         self.action_configuration_properties = ::std::option::Option::Some(v);
@@ -120,9 +108,7 @@ impl ActionTypeBuilder {
         self
     }
     /// <p>The configuration properties for the action type.</p>
-    pub fn get_action_configuration_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>> {
+    pub fn get_action_configuration_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>> {
         &self.action_configuration_properties
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
@@ -131,17 +117,12 @@ impl ActionTypeBuilder {
         self
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-    pub fn set_input_artifact_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactDetails>,
-    ) -> Self {
+    pub fn set_input_artifact_details(mut self, input: ::std::option::Option<crate::types::ArtifactDetails>) -> Self {
         self.input_artifact_details = input;
         self
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-    pub fn get_input_artifact_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ArtifactDetails> {
+    pub fn get_input_artifact_details(&self) -> &::std::option::Option<crate::types::ArtifactDetails> {
         &self.input_artifact_details
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
@@ -150,17 +131,12 @@ impl ActionTypeBuilder {
         self
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-    pub fn set_output_artifact_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactDetails>,
-    ) -> Self {
+    pub fn set_output_artifact_details(mut self, input: ::std::option::Option<crate::types::ArtifactDetails>) -> Self {
         self.output_artifact_details = input;
         self
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-    pub fn get_output_artifact_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ArtifactDetails> {
+    pub fn get_output_artifact_details(&self) -> &::std::option::Option<crate::types::ArtifactDetails> {
         &self.output_artifact_details
     }
     /// Consumes the builder and constructs a [`ActionType`](crate::types::ActionType).

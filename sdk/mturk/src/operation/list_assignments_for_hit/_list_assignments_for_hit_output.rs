@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for ListAssignmentsForHitOutput {
 }
 impl ListAssignmentsForHitOutput {
     /// Creates a new builder-style object to manufacture [`ListAssignmentsForHitOutput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput).
-    pub fn builder(
-    ) -> crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitOutputBuilder {
         crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssignmentsForHitOutput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssignmentsForHitOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) num_results: ::std::option::Option<i32>,
@@ -94,17 +90,12 @@ impl ListAssignmentsForHitOutputBuilder {
         self
     }
     /// <p> The collection of Assignment data structures returned by this call.</p>
-    pub fn set_assignments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Assignment>>,
-    ) -> Self {
+    pub fn set_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Assignment>>) -> Self {
         self.assignments = input;
         self
     }
     /// <p> The collection of Assignment data structures returned by this call.</p>
-    pub fn get_assignments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Assignment>> {
+    pub fn get_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Assignment>> {
         &self.assignments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

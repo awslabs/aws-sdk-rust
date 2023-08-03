@@ -10,10 +10,7 @@ impl UpdateSlotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_slot::UpdateSlotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_slot::UpdateSlotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_slot::UpdateSlotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_slot();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateSlotFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_slot::UpdateSlot,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_slot::UpdateSlot, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_slot::UpdateSlotError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateSlotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateSlotFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_slot::UpdateSlot,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_slot::UpdateSlot, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_slot::UpdateSlotError>,
     > {
         self.customize_middleware().await
@@ -169,25 +157,17 @@ impl UpdateSlotFluentBuilder {
         self.inner.get_slot_type_id()
     }
     /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
-    pub fn value_elicitation_setting(
-        mut self,
-        input: crate::types::SlotValueElicitationSetting,
-    ) -> Self {
+    pub fn value_elicitation_setting(mut self, input: crate::types::SlotValueElicitationSetting) -> Self {
         self.inner = self.inner.value_elicitation_setting(input);
         self
     }
     /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
-    pub fn set_value_elicitation_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotValueElicitationSetting>,
-    ) -> Self {
+    pub fn set_value_elicitation_setting(mut self, input: ::std::option::Option<crate::types::SlotValueElicitationSetting>) -> Self {
         self.inner = self.inner.set_value_elicitation_setting(input);
         self
     }
     /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
-    pub fn get_value_elicitation_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
+    pub fn get_value_elicitation_setting(&self) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
         self.inner.get_value_elicitation_setting()
     }
     /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
@@ -196,17 +176,12 @@ impl UpdateSlotFluentBuilder {
         self
     }
     /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
-    pub fn set_obfuscation_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::ObfuscationSetting>,
-    ) -> Self {
+    pub fn set_obfuscation_setting(mut self, input: ::std::option::Option<crate::types::ObfuscationSetting>) -> Self {
         self.inner = self.inner.set_obfuscation_setting(input);
         self
     }
     /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
-    pub fn get_obfuscation_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObfuscationSetting> {
+    pub fn get_obfuscation_setting(&self) -> &::std::option::Option<crate::types::ObfuscationSetting> {
         self.inner.get_obfuscation_setting()
     }
     /// <p>The unique identifier of the bot that contains the slot.</p>
@@ -273,18 +248,13 @@ impl UpdateSlotFluentBuilder {
     }
     /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn set_multiple_values_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::MultipleValuesSetting>,
-    ) -> Self {
+    pub fn set_multiple_values_setting(mut self, input: ::std::option::Option<crate::types::MultipleValuesSetting>) -> Self {
         self.inner = self.inner.set_multiple_values_setting(input);
         self
     }
     /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn get_multiple_values_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultipleValuesSetting> {
+    pub fn get_multiple_values_setting(&self) -> &::std::option::Option<crate::types::MultipleValuesSetting> {
         self.inner.get_multiple_values_setting()
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
@@ -293,10 +263,7 @@ impl UpdateSlotFluentBuilder {
         self
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn set_sub_slot_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::SubSlotSetting>,
-    ) -> Self {
+    pub fn set_sub_slot_setting(mut self, input: ::std::option::Option<crate::types::SubSlotSetting>) -> Self {
         self.inner = self.inner.set_sub_slot_setting(input);
         self
     }

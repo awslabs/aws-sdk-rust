@@ -30,27 +30,19 @@ impl DiskMap {
 
 /// A builder for [`DiskMap`](crate::types::DiskMap).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiskMapBuilder {
     pub(crate) original_disk_path: ::std::option::Option<::std::string::String>,
     pub(crate) new_disk_name: ::std::option::Option<::std::string::String>,
 }
 impl DiskMapBuilder {
     /// <p>The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).</p>
-    pub fn original_disk_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn original_disk_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_disk_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).</p>
-    pub fn set_original_disk_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_original_disk_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_disk_path = input;
         self
     }
@@ -59,18 +51,12 @@ impl DiskMapBuilder {
         &self.original_disk_path
     }
     /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
-    pub fn new_disk_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_disk_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
-    pub fn set_new_disk_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_disk_name = input;
         self
     }

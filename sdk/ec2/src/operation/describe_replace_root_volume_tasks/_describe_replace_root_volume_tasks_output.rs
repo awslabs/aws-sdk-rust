@@ -5,8 +5,7 @@
 pub struct DescribeReplaceRootVolumeTasksOutput {
     /// <p>Information about the root volume replacement task.</p>
     #[doc(hidden)]
-    pub replace_root_volume_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplaceRootVolumeTask>>,
+    pub replace_root_volume_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ReplaceRootVolumeTask>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeReplaceRootVolumeTasksOutput {
 }
 impl DescribeReplaceRootVolumeTasksOutput {
     /// <p>Information about the root volume replacement task.</p>
-    pub fn replace_root_volume_tasks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplaceRootVolumeTask]> {
+    pub fn replace_root_volume_tasks(&self) -> ::std::option::Option<&[crate::types::ReplaceRootVolumeTask]> {
         self.replace_root_volume_tasks.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeReplaceRootVolumeTasksOutput 
 }
 impl DescribeReplaceRootVolumeTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplaceRootVolumeTasksOutput`](crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput).
-    pub fn builder() -> crate::operation::describe_replace_root_volume_tasks::builders::DescribeReplaceRootVolumeTasksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_replace_root_volume_tasks::builders::DescribeReplaceRootVolumeTasksOutputBuilder {
         crate::operation::describe_replace_root_volume_tasks::builders::DescribeReplaceRootVolumeTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplaceRootVolumeTasksOutput`](crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplaceRootVolumeTasksOutputBuilder {
-    pub(crate) replace_root_volume_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplaceRootVolumeTask>>,
+    pub(crate) replace_root_volume_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ReplaceRootVolumeTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeReplaceRootVolumeTasksOutputBuilder {
         self
     }
     /// <p>Information about the root volume replacement task.</p>
-    pub fn set_replace_root_volume_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplaceRootVolumeTask>>,
-    ) -> Self {
+    pub fn set_replace_root_volume_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplaceRootVolumeTask>>) -> Self {
         self.replace_root_volume_tasks = input;
         self
     }
     /// <p>Information about the root volume replacement task.</p>
-    pub fn get_replace_root_volume_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplaceRootVolumeTask>> {
+    pub fn get_replace_root_volume_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplaceRootVolumeTask>> {
         &self.replace_root_volume_tasks
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -97,10 +86,7 @@ impl DescribeReplaceRootVolumeTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplaceRootVolumeTasksOutput`](crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput
-    {
+    pub fn build(self) -> crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput {
         crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput {
             replace_root_volume_tasks: self.replace_root_volume_tasks,
             next_token: self.next_token,

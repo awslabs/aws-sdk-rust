@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`scheduling_policies(Option<Vec<SchedulingPolicyListingDetail>>)`](crate::operation::list_scheduling_policies::ListSchedulingPoliciesOutput::scheduling_policies): <p>A list of scheduling policies that match the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_scheduling_policies::ListSchedulingPoliciesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListSchedulingPoliciesError>`](crate::operation::list_scheduling_policies::ListSchedulingPoliciesError)
-    pub fn list_scheduling_policies(
-        &self,
-    ) -> crate::operation::list_scheduling_policies::builders::ListSchedulingPoliciesFluentBuilder
-    {
+    pub fn list_scheduling_policies(&self) -> crate::operation::list_scheduling_policies::builders::ListSchedulingPoliciesFluentBuilder {
         crate::operation::list_scheduling_policies::builders::ListSchedulingPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

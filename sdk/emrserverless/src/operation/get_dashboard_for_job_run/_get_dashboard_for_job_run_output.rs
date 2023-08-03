@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDashboardForJobRunOutput {
 }
 impl GetDashboardForJobRunOutput {
     /// Creates a new builder-style object to manufacture [`GetDashboardForJobRunOutput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunOutput).
-    pub fn builder(
-    ) -> crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunOutputBuilder {
         crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDashboardForJobRunOutput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDashboardForJobRunOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

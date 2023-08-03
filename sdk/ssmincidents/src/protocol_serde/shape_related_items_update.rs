@@ -13,18 +13,13 @@ pub fn ser_related_items_update(
         crate::types::RelatedItemsUpdate::ItemToRemove(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_4.key("itemToRemove").start_object();
-            crate::protocol_serde::shape_item_identifier::ser_item_identifier(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_item_identifier::ser_item_identifier(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::RelatedItemsUpdate::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "RelatedItemsUpdate",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "RelatedItemsUpdate",
+            ))
         }
     }
     Ok(())

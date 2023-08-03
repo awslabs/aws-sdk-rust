@@ -30,9 +30,7 @@ impl BotSortBy {
 
 /// A builder for [`BotSortBy`](crate::types::BotSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::BotSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,10 +42,7 @@ impl BotSortByBuilder {
         self
     }
     /// <p>The attribute to use to sort the list of bots.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::BotSortAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::BotSortAttribute>) -> Self {
         self.attribute = input;
         self
     }

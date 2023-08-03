@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`public_project_alias(Option<String>)`](crate::operation::update_project_visibility::UpdateProjectVisibilityOutput::public_project_alias): <p>Contains the project identifier used with the public build APIs. </p>
     ///   - [`project_visibility(Option<ProjectVisibilityType>)`](crate::operation::update_project_visibility::UpdateProjectVisibilityOutput::project_visibility): <p>Specifies the visibility of the project's builds. Possible values are:</p>  <dl>   <dt>   PUBLIC_READ  </dt>   <dd>    <p>The project builds are visible to the public.</p>   </dd>   <dt>   PRIVATE  </dt>   <dd>    <p>The project builds are not visible to the public.</p>   </dd>  </dl>
     /// - On failure, responds with [`SdkError<UpdateProjectVisibilityError>`](crate::operation::update_project_visibility::UpdateProjectVisibilityError)
-    pub fn update_project_visibility(
-        &self,
-    ) -> crate::operation::update_project_visibility::builders::UpdateProjectVisibilityFluentBuilder
-    {
+    pub fn update_project_visibility(&self) -> crate::operation::update_project_visibility::builders::UpdateProjectVisibilityFluentBuilder {
         crate::operation::update_project_visibility::builders::UpdateProjectVisibilityFluentBuilder::new(self.handle.clone())
     }
 }

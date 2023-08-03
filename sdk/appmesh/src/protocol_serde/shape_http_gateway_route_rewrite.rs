@@ -26,17 +26,9 @@ pub fn ser_http_gateway_route_rewrite(
 
 pub(crate) fn de_http_gateway_route_rewrite<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HttpGatewayRouteRewrite>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HttpGatewayRouteRewrite>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -46,41 +38,35 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "prefix" => {
-                                builder = builder.set_prefix(
-                                    crate::protocol_serde::shape_http_gateway_route_prefix_rewrite::de_http_gateway_route_prefix_rewrite(tokens)?
-                                );
-                            }
-                            "path" => {
-                                builder = builder.set_path(
-                                    crate::protocol_serde::shape_http_gateway_route_path_rewrite::de_http_gateway_route_path_rewrite(tokens)?
-                                );
-                            }
-                            "hostname" => {
-                                builder = builder.set_hostname(
-                                    crate::protocol_serde::shape_gateway_route_hostname_rewrite::de_gateway_route_hostname_rewrite(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "prefix" => {
+                            builder = builder.set_prefix(
+                                crate::protocol_serde::shape_http_gateway_route_prefix_rewrite::de_http_gateway_route_prefix_rewrite(tokens)?,
+                            );
                         }
-                    }
+                        "path" => {
+                            builder = builder
+                                .set_path(crate::protocol_serde::shape_http_gateway_route_path_rewrite::de_http_gateway_route_path_rewrite(tokens)?);
+                        }
+                        "hostname" => {
+                            builder = builder.set_hostname(
+                                crate::protocol_serde::shape_gateway_route_hostname_rewrite::de_gateway_route_hostname_rewrite(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

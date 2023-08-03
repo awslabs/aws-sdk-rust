@@ -10,10 +10,7 @@ impl UpdateRecommenderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_recommender::UpdateRecommenderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recommender::UpdateRecommenderError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recommender::UpdateRecommenderError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_recommender();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateRecommenderFluentBuilder {
         }
     }
     /// Access the UpdateRecommender as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_recommender::builders::UpdateRecommenderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_recommender::builders::UpdateRecommenderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateRecommenderFluentBuilder {
             crate::operation::update_recommender::UpdateRecommender,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recommender::UpdateRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recommender::UpdateRecommenderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateRecommenderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateRecommenderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recommender::UpdateRecommenderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recommender::UpdateRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recommender::UpdateRecommenderError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateRecommenderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recommender::UpdateRecommenderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recommender::UpdateRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recommender::UpdateRecommenderError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateRecommenderFluentBuilder {
             crate::operation::update_recommender::UpdateRecommender,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recommender::UpdateRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recommender::UpdateRecommenderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
-    pub fn recommender_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommender_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
-    pub fn set_recommender_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommender_arn(input);
         self
     }
@@ -148,17 +126,12 @@ impl UpdateRecommenderFluentBuilder {
         self
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn set_recommender_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommenderConfig>,
-    ) -> Self {
+    pub fn set_recommender_config(mut self, input: ::std::option::Option<crate::types::RecommenderConfig>) -> Self {
         self.inner = self.inner.set_recommender_config(input);
         self
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn get_recommender_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommenderConfig> {
+    pub fn get_recommender_config(&self) -> &::std::option::Option<crate::types::RecommenderConfig> {
         self.inner.get_recommender_config()
     }
 }

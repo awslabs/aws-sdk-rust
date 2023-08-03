@@ -22,26 +22,18 @@ impl GetCoreNetworkInput {
 
 /// A builder for [`GetCoreNetworkInput`](crate::operation::get_core_network::GetCoreNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoreNetworkInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCoreNetworkInputBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetCoreNetworkInputBuilder {
     /// Consumes the builder and constructs a [`GetCoreNetworkInput`](crate::operation::get_core_network::GetCoreNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_core_network::GetCoreNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_core_network::GetCoreNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_core_network::GetCoreNetworkInput {
             core_network_id: self.core_network_id,
         })

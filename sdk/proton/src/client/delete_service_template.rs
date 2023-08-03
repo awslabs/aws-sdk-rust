@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteServiceTemplateOutput`](crate::operation::delete_service_template::DeleteServiceTemplateOutput) with field(s):
     ///   - [`service_template(Option<ServiceTemplate>)`](crate::operation::delete_service_template::DeleteServiceTemplateOutput::service_template): <p>The detailed data of the service template being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceTemplateError>`](crate::operation::delete_service_template::DeleteServiceTemplateError)
-    pub fn delete_service_template(
-        &self,
-    ) -> crate::operation::delete_service_template::builders::DeleteServiceTemplateFluentBuilder
-    {
-        crate::operation::delete_service_template::builders::DeleteServiceTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_service_template(&self) -> crate::operation::delete_service_template::builders::DeleteServiceTemplateFluentBuilder {
+        crate::operation::delete_service_template::builders::DeleteServiceTemplateFluentBuilder::new(self.handle.clone())
     }
 }

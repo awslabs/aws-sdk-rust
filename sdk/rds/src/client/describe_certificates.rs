@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`certificates(Option<Vec<Certificate>>)`](crate::operation::describe_certificates::DescribeCertificatesOutput::certificates): <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_certificates::DescribeCertificatesOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     /// - On failure, responds with [`SdkError<DescribeCertificatesError>`](crate::operation::describe_certificates::DescribeCertificatesError)
-    pub fn describe_certificates(
-        &self,
-    ) -> crate::operation::describe_certificates::builders::DescribeCertificatesFluentBuilder {
-        crate::operation::describe_certificates::builders::DescribeCertificatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_certificates(&self) -> crate::operation::describe_certificates::builders::DescribeCertificatesFluentBuilder {
+        crate::operation::describe_certificates::builders::DescribeCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

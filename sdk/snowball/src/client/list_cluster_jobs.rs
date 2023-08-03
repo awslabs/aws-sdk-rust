@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`job_list_entries(Option<Vec<JobListEntry>>)`](crate::operation::list_cluster_jobs::ListClusterJobsOutput::job_list_entries): <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cluster_jobs::ListClusterJobsOutput::next_token): <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.</p>
     /// - On failure, responds with [`SdkError<ListClusterJobsError>`](crate::operation::list_cluster_jobs::ListClusterJobsError)
-    pub fn list_cluster_jobs(
-        &self,
-    ) -> crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder {
-        crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_cluster_jobs(&self) -> crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder {
+        crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::new(self.handle.clone())
     }
 }

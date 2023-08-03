@@ -8,12 +8,10 @@ pub struct GetAggregateConformancePackComplianceSummaryInput {
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
     #[doc(hidden)]
-    pub filters:
-        ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>,
+    pub filters: ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>,
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub group_by_key:
-        ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>,
+    pub group_by_key: ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>,
     /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
@@ -27,17 +25,11 @@ impl GetAggregateConformancePackComplianceSummaryInput {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AggregateConformancePackComplianceSummaryFilters>
-    {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::AggregateConformancePackComplianceSummaryFilters> {
         self.filters.as_ref()
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn group_by_key(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AggregateConformancePackComplianceSummaryGroupKey>
-    {
+    pub fn group_by_key(&self) -> ::std::option::Option<&crate::types::AggregateConformancePackComplianceSummaryGroupKey> {
         self.group_by_key.as_ref()
     }
     /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
@@ -51,96 +43,63 @@ impl GetAggregateConformancePackComplianceSummaryInput {
 }
 impl GetAggregateConformancePackComplianceSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetAggregateConformancePackComplianceSummaryInput`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput).
-    pub fn builder() -> crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryInputBuilder {
         crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAggregateConformancePackComplianceSummaryInput`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAggregateConformancePackComplianceSummaryInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>,
-    pub(crate) group_by_key:
-        ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>,
+    pub(crate) filters: ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>,
+    pub(crate) group_by_key: ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetAggregateConformancePackComplianceSummaryInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_aggregator_name = input;
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn get_configuration_aggregator_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_aggregator_name
     }
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
-    pub fn filters(
-        mut self,
-        input: crate::types::AggregateConformancePackComplianceSummaryFilters,
-    ) -> Self {
+    pub fn filters(mut self, input: crate::types::AggregateConformancePackComplianceSummaryFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AggregateConformancePackComplianceSummaryFilters,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>
-    {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters> {
         &self.filters
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn group_by_key(
-        mut self,
-        input: crate::types::AggregateConformancePackComplianceSummaryGroupKey,
-    ) -> Self {
+    pub fn group_by_key(mut self, input: crate::types::AggregateConformancePackComplianceSummaryGroupKey) -> Self {
         self.group_by_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn set_group_by_key(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AggregateConformancePackComplianceSummaryGroupKey,
-        >,
-    ) -> Self {
+    pub fn set_group_by_key(mut self, input: ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>) -> Self {
         self.group_by_key = input;
         self
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn get_group_by_key(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>
-    {
+    pub fn get_group_by_key(&self) -> &::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey> {
         &self.group_by_key
     }
     /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
@@ -172,20 +131,20 @@ impl GetAggregateConformancePackComplianceSummaryInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetAggregateConformancePackComplianceSummaryInput`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput {
-                configuration_aggregator_name: self.configuration_aggregator_name
-                ,
-                filters: self.filters
-                ,
-                group_by_key: self.group_by_key
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                configuration_aggregator_name: self.configuration_aggregator_name,
+                filters: self.filters,
+                group_by_key: self.group_by_key,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }

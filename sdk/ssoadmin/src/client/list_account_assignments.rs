@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`account_assignments(Option<Vec<AccountAssignment>>)`](crate::operation::list_account_assignments::ListAccountAssignmentsOutput::account_assignments): <p>The list of assignments that match the input AWS account and permission set.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_assignments::ListAccountAssignmentsOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListAccountAssignmentsError>`](crate::operation::list_account_assignments::ListAccountAssignmentsError)
-    pub fn list_account_assignments(
-        &self,
-    ) -> crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder
-    {
+    pub fn list_account_assignments(&self) -> crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder {
         crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::new(self.handle.clone())
     }
 }

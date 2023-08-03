@@ -5,7 +5,10 @@ pub(crate) fn de_application_settings_resource_payload(
     ::std::option::Option<crate::types::ApplicationSettingsResource>,
     crate::operation::get_application_settings::GetApplicationSettingsError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_application_settings_resource::de_application_settings_resource_payload(body).map_err(crate::operation::get_application_settings::GetApplicationSettingsError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_application_settings_resource::de_application_settings_resource_payload(body)
+                .map_err(crate::operation::get_application_settings::GetApplicationSettingsError::unhandled)
+        })
+        .transpose()
 }

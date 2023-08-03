@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ImportAppCatalogOutput {
 }
 impl ImportAppCatalogOutput {
     /// Creates a new builder-style object to manufacture [`ImportAppCatalogOutput`](crate::operation::import_app_catalog::ImportAppCatalogOutput).
-    pub fn builder() -> crate::operation::import_app_catalog::builders::ImportAppCatalogOutputBuilder
-    {
+    pub fn builder() -> crate::operation::import_app_catalog::builders::ImportAppCatalogOutputBuilder {
         crate::operation::import_app_catalog::builders::ImportAppCatalogOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportAppCatalogOutput`](crate::operation::import_app_catalog::ImportAppCatalogOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAppCatalogOutputBuilder {
     _request_id: Option<String>,
 }

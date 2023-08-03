@@ -10,9 +10,7 @@ pub struct ChallengeConfig {
 }
 impl ChallengeConfig {
     /// <p>Determines how long a challenge timestamp in the token remains valid after the client successfully responds to a challenge. </p>
-    pub fn immunity_time_property(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImmunityTimeProperty> {
+    pub fn immunity_time_property(&self) -> ::std::option::Option<&crate::types::ImmunityTimeProperty> {
         self.immunity_time_property.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl ChallengeConfig {
 
 /// A builder for [`ChallengeConfig`](crate::types::ChallengeConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChallengeConfigBuilder {
     pub(crate) immunity_time_property: ::std::option::Option<crate::types::ImmunityTimeProperty>,
 }
@@ -38,17 +34,12 @@ impl ChallengeConfigBuilder {
         self
     }
     /// <p>Determines how long a challenge timestamp in the token remains valid after the client successfully responds to a challenge. </p>
-    pub fn set_immunity_time_property(
-        mut self,
-        input: ::std::option::Option<crate::types::ImmunityTimeProperty>,
-    ) -> Self {
+    pub fn set_immunity_time_property(mut self, input: ::std::option::Option<crate::types::ImmunityTimeProperty>) -> Self {
         self.immunity_time_property = input;
         self
     }
     /// <p>Determines how long a challenge timestamp in the token remains valid after the client successfully responds to a challenge. </p>
-    pub fn get_immunity_time_property(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImmunityTimeProperty> {
+    pub fn get_immunity_time_property(&self) -> &::std::option::Option<crate::types::ImmunityTimeProperty> {
         &self.immunity_time_property
     }
     /// Consumes the builder and constructs a [`ChallengeConfig`](crate::types::ChallengeConfig).

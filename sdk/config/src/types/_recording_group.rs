@@ -82,9 +82,7 @@ impl RecordingGroup {
     }
     /// <p>An object that specifies how Config excludes resource types from being recorded by the configuration recorder.</p>
     /// <p>To use this option, you must set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p>
-    pub fn exclusion_by_resource_types(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExclusionByResourceTypes> {
+    pub fn exclusion_by_resource_types(&self) -> ::std::option::Option<&crate::types::ExclusionByResourceTypes> {
         self.exclusion_by_resource_types.as_ref()
     }
     /// <p>An object that specifies the recording strategy for the configuration recorder.</p>
@@ -114,15 +112,12 @@ impl RecordingGroup {
 
 /// A builder for [`RecordingGroup`](crate::types::RecordingGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordingGroupBuilder {
     pub(crate) all_supported: ::std::option::Option<bool>,
     pub(crate) include_global_resource_types: ::std::option::Option<bool>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
-    pub(crate) exclusion_by_resource_types:
-        ::std::option::Option<crate::types::ExclusionByResourceTypes>,
+    pub(crate) exclusion_by_resource_types: ::std::option::Option<crate::types::ExclusionByResourceTypes>,
     pub(crate) recording_strategy: ::std::option::Option<crate::types::RecordingStrategy>,
 }
 impl RecordingGroupBuilder {
@@ -199,10 +194,7 @@ impl RecordingGroupBuilder {
     /// <p> <b>Region Availability</b> </p>
     /// <p>Before specifying a resource type for Config to track, check <a href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web Services Region where you set up Config. If a resource type is supported by Config in at least one Region, you can enable the recording of that resource type in all Regions supported by Config, even if the specified resource type is not supported in the Amazon Web Services Region where you set up Config.</p>
     /// </note>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>) -> Self {
         self.resource_types = input;
         self
     }
@@ -213,34 +205,24 @@ impl RecordingGroupBuilder {
     /// <p> <b>Region Availability</b> </p>
     /// <p>Before specifying a resource type for Config to track, check <a href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web Services Region where you set up Config. If a resource type is supported by Config in at least one Region, you can enable the recording of that resource type in all Regions supported by Config, even if the specified resource type is not supported in the Amazon Web Services Region where you set up Config.</p>
     /// </note>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
         &self.resource_types
     }
     /// <p>An object that specifies how Config excludes resource types from being recorded by the configuration recorder.</p>
     /// <p>To use this option, you must set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p>
-    pub fn exclusion_by_resource_types(
-        mut self,
-        input: crate::types::ExclusionByResourceTypes,
-    ) -> Self {
+    pub fn exclusion_by_resource_types(mut self, input: crate::types::ExclusionByResourceTypes) -> Self {
         self.exclusion_by_resource_types = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that specifies how Config excludes resource types from being recorded by the configuration recorder.</p>
     /// <p>To use this option, you must set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p>
-    pub fn set_exclusion_by_resource_types(
-        mut self,
-        input: ::std::option::Option<crate::types::ExclusionByResourceTypes>,
-    ) -> Self {
+    pub fn set_exclusion_by_resource_types(mut self, input: ::std::option::Option<crate::types::ExclusionByResourceTypes>) -> Self {
         self.exclusion_by_resource_types = input;
         self
     }
     /// <p>An object that specifies how Config excludes resource types from being recorded by the configuration recorder.</p>
     /// <p>To use this option, you must set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p>
-    pub fn get_exclusion_by_resource_types(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExclusionByResourceTypes> {
+    pub fn get_exclusion_by_resource_types(&self) -> &::std::option::Option<crate::types::ExclusionByResourceTypes> {
         &self.exclusion_by_resource_types
     }
     /// <p>An object that specifies the recording strategy for the configuration recorder.</p>
@@ -275,10 +257,7 @@ impl RecordingGroupBuilder {
     /// <p>For example, even if you set <code>includeGlobalResourceTypes</code> to false, global resource types will still be automatically recorded in this option unless those resource types are specifically listed as exemptions in the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.</p>
     /// <p>By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds support for a new resource type in the Region where you set up the configuration recorder, including global resource types, Config starts recording resources of that type automatically.</p>
     /// </note>
-    pub fn set_recording_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordingStrategy>,
-    ) -> Self {
+    pub fn set_recording_strategy(mut self, input: ::std::option::Option<crate::types::RecordingStrategy>) -> Self {
         self.recording_strategy = input;
         self
     }
@@ -296,9 +275,7 @@ impl RecordingGroupBuilder {
     /// <p>For example, even if you set <code>includeGlobalResourceTypes</code> to false, global resource types will still be automatically recorded in this option unless those resource types are specifically listed as exemptions in the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.</p>
     /// <p>By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds support for a new resource type in the Region where you set up the configuration recorder, including global resource types, Config starts recording resources of that type automatically.</p>
     /// </note>
-    pub fn get_recording_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecordingStrategy> {
+    pub fn get_recording_strategy(&self) -> &::std::option::Option<crate::types::RecordingStrategy> {
         &self.recording_strategy
     }
     /// Consumes the builder and constructs a [`RecordingGroup`](crate::types::RecordingGroup).

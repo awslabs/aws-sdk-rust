@@ -10,9 +10,7 @@ pub struct MetricMonitorConfig {
 }
 impl MetricMonitorConfig {
     /// <p>A structure that defines the metric.</p>
-    pub fn metric_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MetricDefinitionConfig> {
+    pub fn metric_definition(&self) -> ::std::option::Option<&crate::types::MetricDefinitionConfig> {
         self.metric_definition.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl MetricMonitorConfig {
 
 /// A builder for [`MetricMonitorConfig`](crate::types::MetricMonitorConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricMonitorConfigBuilder {
     pub(crate) metric_definition: ::std::option::Option<crate::types::MetricDefinitionConfig>,
 }
@@ -38,17 +34,12 @@ impl MetricMonitorConfigBuilder {
         self
     }
     /// <p>A structure that defines the metric.</p>
-    pub fn set_metric_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDefinitionConfig>,
-    ) -> Self {
+    pub fn set_metric_definition(mut self, input: ::std::option::Option<crate::types::MetricDefinitionConfig>) -> Self {
         self.metric_definition = input;
         self
     }
     /// <p>A structure that defines the metric.</p>
-    pub fn get_metric_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricDefinitionConfig> {
+    pub fn get_metric_definition(&self) -> &::std::option::Option<crate::types::MetricDefinitionConfig> {
         &self.metric_definition
     }
     /// Consumes the builder and constructs a [`MetricMonitorConfig`](crate::types::MetricMonitorConfig).

@@ -6,14 +6,11 @@
 pub struct DatastoreIotSiteWiseMultiLayerStorage {
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
     #[doc(hidden)]
-    pub customer_managed_s3_storage:
-        ::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage>,
+    pub customer_managed_s3_storage: ::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage>,
 }
 impl DatastoreIotSiteWiseMultiLayerStorage {
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
-    pub fn customer_managed_s3_storage(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage> {
+    pub fn customer_managed_s3_storage(&self) -> ::std::option::Option<&crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage> {
         self.customer_managed_s3_storage.as_ref()
     }
 }
@@ -26,19 +23,13 @@ impl DatastoreIotSiteWiseMultiLayerStorage {
 
 /// A builder for [`DatastoreIotSiteWiseMultiLayerStorage`](crate::types::DatastoreIotSiteWiseMultiLayerStorage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatastoreIotSiteWiseMultiLayerStorageBuilder {
-    pub(crate) customer_managed_s3_storage:
-        ::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage>,
+    pub(crate) customer_managed_s3_storage: ::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage>,
 }
 impl DatastoreIotSiteWiseMultiLayerStorageBuilder {
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
-    pub fn customer_managed_s3_storage(
-        mut self,
-        input: crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage,
-    ) -> Self {
+    pub fn customer_managed_s3_storage(mut self, input: crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage) -> Self {
         self.customer_managed_s3_storage = ::std::option::Option::Some(input);
         self
     }
@@ -51,9 +42,7 @@ impl DatastoreIotSiteWiseMultiLayerStorageBuilder {
         self
     }
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
-    pub fn get_customer_managed_s3_storage(
-        &self,
-    ) -> &::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage> {
+    pub fn get_customer_managed_s3_storage(&self) -> &::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage> {
         &self.customer_managed_s3_storage
     }
     /// Consumes the builder and constructs a [`DatastoreIotSiteWiseMultiLayerStorage`](crate::types::DatastoreIotSiteWiseMultiLayerStorage).

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPhoneNumberOrderOutput {
 }
 impl GetPhoneNumberOrderOutput {
     /// Creates a new builder-style object to manufacture [`GetPhoneNumberOrderOutput`](crate::operation::get_phone_number_order::GetPhoneNumberOrderOutput).
-    pub fn builder(
-    ) -> crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderOutputBuilder {
+    pub fn builder() -> crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderOutputBuilder {
         crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPhoneNumberOrderOutput`](crate::operation::get_phone_number_order::GetPhoneNumberOrderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPhoneNumberOrderOutputBuilder {
     pub(crate) phone_number_order: ::std::option::Option<crate::types::PhoneNumberOrder>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetPhoneNumberOrderOutputBuilder {
         self
     }
     /// <p>The phone number order details.</p>
-    pub fn set_phone_number_order(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberOrder>,
-    ) -> Self {
+    pub fn set_phone_number_order(mut self, input: ::std::option::Option<crate::types::PhoneNumberOrder>) -> Self {
         self.phone_number_order = input;
         self
     }

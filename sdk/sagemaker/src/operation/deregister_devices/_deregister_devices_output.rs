@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterDevicesOutput {
 }
 impl DeregisterDevicesOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterDevicesOutput`](crate::operation::deregister_devices::DeregisterDevicesOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_devices::builders::DeregisterDevicesOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_devices::builders::DeregisterDevicesOutputBuilder {
         crate::operation::deregister_devices::builders::DeregisterDevicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterDevicesOutput`](crate::operation::deregister_devices::DeregisterDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterDevicesOutputBuilder {
     _request_id: Option<String>,
 }

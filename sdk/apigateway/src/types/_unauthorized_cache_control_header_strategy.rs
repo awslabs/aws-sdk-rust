@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UnauthorizedCacheControlHeaderStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -61,15 +55,9 @@ impl ::std::convert::From<&str> for UnauthorizedCacheControlHeaderStrategy {
     fn from(s: &str) -> Self {
         match s {
             "FAIL_WITH_403" => UnauthorizedCacheControlHeaderStrategy::FailWith403,
-            "SUCCEED_WITHOUT_RESPONSE_HEADER" => {
-                UnauthorizedCacheControlHeaderStrategy::SucceedWithoutResponseHeader
-            }
-            "SUCCEED_WITH_RESPONSE_HEADER" => {
-                UnauthorizedCacheControlHeaderStrategy::SucceedWithResponseHeader
-            }
-            other => UnauthorizedCacheControlHeaderStrategy::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "SUCCEED_WITHOUT_RESPONSE_HEADER" => UnauthorizedCacheControlHeaderStrategy::SucceedWithoutResponseHeader,
+            "SUCCEED_WITH_RESPONSE_HEADER" => UnauthorizedCacheControlHeaderStrategy::SucceedWithResponseHeader,
+            other => UnauthorizedCacheControlHeaderStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -85,22 +73,14 @@ impl UnauthorizedCacheControlHeaderStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             UnauthorizedCacheControlHeaderStrategy::FailWith403 => "FAIL_WITH_403",
-            UnauthorizedCacheControlHeaderStrategy::SucceedWithoutResponseHeader => {
-                "SUCCEED_WITHOUT_RESPONSE_HEADER"
-            }
-            UnauthorizedCacheControlHeaderStrategy::SucceedWithResponseHeader => {
-                "SUCCEED_WITH_RESPONSE_HEADER"
-            }
+            UnauthorizedCacheControlHeaderStrategy::SucceedWithoutResponseHeader => "SUCCEED_WITHOUT_RESPONSE_HEADER",
+            UnauthorizedCacheControlHeaderStrategy::SucceedWithResponseHeader => "SUCCEED_WITH_RESPONSE_HEADER",
             UnauthorizedCacheControlHeaderStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAIL_WITH_403",
-            "SUCCEED_WITHOUT_RESPONSE_HEADER",
-            "SUCCEED_WITH_RESPONSE_HEADER",
-        ]
+        &["FAIL_WITH_403", "SUCCEED_WITHOUT_RESPONSE_HEADER", "SUCCEED_WITH_RESPONSE_HEADER"]
     }
 }
 impl ::std::convert::AsRef<str> for UnauthorizedCacheControlHeaderStrategy {

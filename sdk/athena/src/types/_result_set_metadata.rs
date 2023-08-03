@@ -23,9 +23,7 @@ impl ResultSetMetadata {
 
 /// A builder for [`ResultSetMetadata`](crate::types::ResultSetMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultSetMetadataBuilder {
     pub(crate) column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
 }
@@ -42,17 +40,12 @@ impl ResultSetMetadataBuilder {
         self
     }
     /// <p>Information about the columns returned in a query result metadata.</p>
-    pub fn set_column_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
-    ) -> Self {
+    pub fn set_column_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>) -> Self {
         self.column_info = input;
         self
     }
     /// <p>Information about the columns returned in a query result metadata.</p>
-    pub fn get_column_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>> {
+    pub fn get_column_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>> {
         &self.column_info
     }
     /// Consumes the builder and constructs a [`ResultSetMetadata`](crate::types::ResultSetMetadata).

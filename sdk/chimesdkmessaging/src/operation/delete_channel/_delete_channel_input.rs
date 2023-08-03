@@ -29,9 +29,7 @@ impl DeleteChannelInput {
 
 /// A builder for [`DeleteChannelInput`](crate::operation::delete_channel::DeleteChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChannelInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) chime_bearer: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelInput`](crate::operation::delete_channel::DeleteChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_channel::DeleteChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_channel::DeleteChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_channel::DeleteChannelInput {
             channel_arn: self.channel_arn,
             chime_bearer: self.chime_bearer,

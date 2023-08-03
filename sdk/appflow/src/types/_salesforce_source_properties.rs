@@ -77,9 +77,7 @@ impl SalesforceSourceProperties {
     /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.</p>
     /// </dd>
     /// </dl>
-    pub fn data_transfer_api(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SalesforceDataTransferApi> {
+    pub fn data_transfer_api(&self) -> ::std::option::Option<&crate::types::SalesforceDataTransferApi> {
         self.data_transfer_api.as_ref()
     }
 }
@@ -92,9 +90,7 @@ impl SalesforceSourceProperties {
 
 /// A builder for [`SalesforceSourceProperties`](crate::types::SalesforceSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SalesforceSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
     pub(crate) enable_dynamic_field_update: ::std::option::Option<bool>,
@@ -196,10 +192,7 @@ impl SalesforceSourcePropertiesBuilder {
     /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.</p>
     /// </dd>
     /// </dl>
-    pub fn set_data_transfer_api(
-        mut self,
-        input: ::std::option::Option<crate::types::SalesforceDataTransferApi>,
-    ) -> Self {
+    pub fn set_data_transfer_api(mut self, input: ::std::option::Option<crate::types::SalesforceDataTransferApi>) -> Self {
         self.data_transfer_api = input;
         self
     }
@@ -227,9 +220,7 @@ impl SalesforceSourcePropertiesBuilder {
     /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.</p>
     /// </dd>
     /// </dl>
-    pub fn get_data_transfer_api(
-        &self,
-    ) -> &::std::option::Option<crate::types::SalesforceDataTransferApi> {
+    pub fn get_data_transfer_api(&self) -> &::std::option::Option<crate::types::SalesforceDataTransferApi> {
         &self.data_transfer_api
     }
     /// Consumes the builder and constructs a [`SalesforceSourceProperties`](crate::types::SalesforceSourceProperties).

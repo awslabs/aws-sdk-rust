@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::start_job_run::StartJobRunOutput::arn): <p>This output lists the ARN of job run.</p>
     ///   - [`virtual_cluster_id(Option<String>)`](crate::operation::start_job_run::StartJobRunOutput::virtual_cluster_id): <p>This output displays the virtual cluster ID for which the job run was submitted.</p>
     /// - On failure, responds with [`SdkError<StartJobRunError>`](crate::operation::start_job_run::StartJobRunError)
-    pub fn start_job_run(
-        &self,
-    ) -> crate::operation::start_job_run::builders::StartJobRunFluentBuilder {
-        crate::operation::start_job_run::builders::StartJobRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_job_run(&self) -> crate::operation::start_job_run::builders::StartJobRunFluentBuilder {
+        crate::operation::start_job_run::builders::StartJobRunFluentBuilder::new(self.handle.clone())
     }
 }

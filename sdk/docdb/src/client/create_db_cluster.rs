@@ -26,11 +26,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDbClusterOutput`](crate::operation::create_db_cluster::CreateDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::create_db_cluster::CreateDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
     /// - On failure, responds with [`SdkError<CreateDBClusterError>`](crate::operation::create_db_cluster::CreateDBClusterError)
-    pub fn create_db_cluster(
-        &self,
-    ) -> crate::operation::create_db_cluster::builders::CreateDBClusterFluentBuilder {
-        crate::operation::create_db_cluster::builders::CreateDBClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_db_cluster(&self) -> crate::operation::create_db_cluster::builders::CreateDBClusterFluentBuilder {
+        crate::operation::create_db_cluster::builders::CreateDBClusterFluentBuilder::new(self.handle.clone())
     }
 }

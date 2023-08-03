@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateDrtLogBucketOutput {
 }
 impl DisassociateDrtLogBucketOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDrtLogBucketOutput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput).
-    pub fn builder() -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketOutputBuilder {
         crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDrtLogBucketOutput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDrtLogBucketOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateDrtLogBucketOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateDrtLogBucketOutput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput {
+    pub fn build(self) -> crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput {
         crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput {
             _request_id: self._request_id,
         }

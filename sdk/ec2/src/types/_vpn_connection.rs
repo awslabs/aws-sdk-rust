@@ -92,9 +92,7 @@ impl VpnConnection {
         self.core_network_attachment_arn.as_deref()
     }
     /// <p>The current state of the gateway association.</p>
-    pub fn gateway_association_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GatewayAssociationState> {
+    pub fn gateway_association_state(&self) -> ::std::option::Option<&crate::types::GatewayAssociationState> {
         self.gateway_association_state.as_ref()
     }
     /// <p>The VPN connection options.</p>
@@ -117,10 +115,7 @@ impl VpnConnection {
 impl ::std::fmt::Debug for VpnConnection {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VpnConnection");
-        formatter.field(
-            "customer_gateway_configuration",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("customer_gateway_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_gateway_id", &self.customer_gateway_id);
         formatter.field("category", &self.category);
         formatter.field("state", &self.state);
@@ -129,10 +124,7 @@ impl ::std::fmt::Debug for VpnConnection {
         formatter.field("vpn_gateway_id", &self.vpn_gateway_id);
         formatter.field("transit_gateway_id", &self.transit_gateway_id);
         formatter.field("core_network_arn", &self.core_network_arn);
-        formatter.field(
-            "core_network_attachment_arn",
-            &self.core_network_attachment_arn,
-        );
+        formatter.field("core_network_attachment_arn", &self.core_network_attachment_arn);
         formatter.field("gateway_association_state", &self.gateway_association_state);
         formatter.field("options", &self.options);
         formatter.field("routes", &self.routes);
@@ -162,8 +154,7 @@ pub struct VpnConnectionBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_attachment_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) gateway_association_state:
-        ::std::option::Option<crate::types::GatewayAssociationState>,
+    pub(crate) gateway_association_state: ::std::option::Option<crate::types::GatewayAssociationState>,
     pub(crate) options: ::std::option::Option<crate::types::VpnConnectionOptions>,
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::VpnStaticRoute>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -171,40 +162,26 @@ pub struct VpnConnectionBuilder {
 }
 impl VpnConnectionBuilder {
     /// <p>The configuration information for the VPN connection's customer gateway (in the native XML format). This element is always present in the <code>CreateVpnConnection</code> response; however, it's present in the <code>DescribeVpnConnections</code> response only if the VPN connection is in the <code>pending</code> or <code>available</code> state.</p>
-    pub fn customer_gateway_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration information for the VPN connection's customer gateway (in the native XML format). This element is always present in the <code>CreateVpnConnection</code> response; however, it's present in the <code>DescribeVpnConnections</code> response only if the VPN connection is in the <code>pending</code> or <code>available</code> state.</p>
-    pub fn set_customer_gateway_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_gateway_configuration = input;
         self
     }
     /// <p>The configuration information for the VPN connection's customer gateway (in the native XML format). This element is always present in the <code>CreateVpnConnection</code> response; however, it's present in the <code>DescribeVpnConnections</code> response only if the VPN connection is in the <code>pending</code> or <code>available</code> state.</p>
-    pub fn get_customer_gateway_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_customer_gateway_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_gateway_configuration
     }
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
-    pub fn customer_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
-    pub fn set_customer_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_gateway_id = input;
         self
     }
@@ -255,18 +232,12 @@ impl VpnConnectionBuilder {
         &self.r#type
     }
     /// <p>The ID of the VPN connection.</p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPN connection.</p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_id = input;
         self
     }
@@ -275,18 +246,12 @@ impl VpnConnectionBuilder {
         &self.vpn_connection_id
     }
     /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
-    pub fn vpn_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
-    pub fn set_vpn_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_gateway_id = input;
         self
     }
@@ -295,18 +260,12 @@ impl VpnConnectionBuilder {
         &self.vpn_gateway_id
     }
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -315,18 +274,12 @@ impl VpnConnectionBuilder {
         &self.transit_gateway_id
     }
     /// <p>The ARN of the core network.</p>
-    pub fn core_network_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the core network.</p>
-    pub fn set_core_network_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_arn = input;
         self
     }
@@ -335,18 +288,12 @@ impl VpnConnectionBuilder {
         &self.core_network_arn
     }
     /// <p>The ARN of the core network attachment.</p>
-    pub fn core_network_attachment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_attachment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_attachment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the core network attachment.</p>
-    pub fn set_core_network_attachment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_attachment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_attachment_arn = input;
         self
     }
@@ -355,25 +302,17 @@ impl VpnConnectionBuilder {
         &self.core_network_attachment_arn
     }
     /// <p>The current state of the gateway association.</p>
-    pub fn gateway_association_state(
-        mut self,
-        input: crate::types::GatewayAssociationState,
-    ) -> Self {
+    pub fn gateway_association_state(mut self, input: crate::types::GatewayAssociationState) -> Self {
         self.gateway_association_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the gateway association.</p>
-    pub fn set_gateway_association_state(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayAssociationState>,
-    ) -> Self {
+    pub fn set_gateway_association_state(mut self, input: ::std::option::Option<crate::types::GatewayAssociationState>) -> Self {
         self.gateway_association_state = input;
         self
     }
     /// <p>The current state of the gateway association.</p>
-    pub fn get_gateway_association_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::GatewayAssociationState> {
+    pub fn get_gateway_association_state(&self) -> &::std::option::Option<crate::types::GatewayAssociationState> {
         &self.gateway_association_state
     }
     /// <p>The VPN connection options.</p>
@@ -382,10 +321,7 @@ impl VpnConnectionBuilder {
         self
     }
     /// <p>The VPN connection options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VpnConnectionOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpnConnectionOptions>) -> Self {
         self.options = input;
         self
     }
@@ -405,17 +341,12 @@ impl VpnConnectionBuilder {
         self
     }
     /// <p>The static routes associated with the VPN connection.</p>
-    pub fn set_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpnStaticRoute>>,
-    ) -> Self {
+    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpnStaticRoute>>) -> Self {
         self.routes = input;
         self
     }
     /// <p>The static routes associated with the VPN connection.</p>
-    pub fn get_routes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnStaticRoute>> {
+    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnStaticRoute>> {
         &self.routes
     }
     /// Appends an item to `tags`.
@@ -430,10 +361,7 @@ impl VpnConnectionBuilder {
         self
     }
     /// <p>Any tags assigned to the VPN connection.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -453,17 +381,12 @@ impl VpnConnectionBuilder {
         self
     }
     /// <p>Information about the VPN tunnel.</p>
-    pub fn set_vgw_telemetry(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VgwTelemetry>>,
-    ) -> Self {
+    pub fn set_vgw_telemetry(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VgwTelemetry>>) -> Self {
         self.vgw_telemetry = input;
         self
     }
     /// <p>Information about the VPN tunnel.</p>
-    pub fn get_vgw_telemetry(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VgwTelemetry>> {
+    pub fn get_vgw_telemetry(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VgwTelemetry>> {
         &self.vgw_telemetry
     }
     /// Consumes the builder and constructs a [`VpnConnection`](crate::types::VpnConnection).
@@ -490,10 +413,7 @@ impl VpnConnectionBuilder {
 impl ::std::fmt::Debug for VpnConnectionBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VpnConnectionBuilder");
-        formatter.field(
-            "customer_gateway_configuration",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("customer_gateway_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_gateway_id", &self.customer_gateway_id);
         formatter.field("category", &self.category);
         formatter.field("state", &self.state);
@@ -502,10 +422,7 @@ impl ::std::fmt::Debug for VpnConnectionBuilder {
         formatter.field("vpn_gateway_id", &self.vpn_gateway_id);
         formatter.field("transit_gateway_id", &self.transit_gateway_id);
         formatter.field("core_network_arn", &self.core_network_arn);
-        formatter.field(
-            "core_network_attachment_arn",
-            &self.core_network_attachment_arn,
-        );
+        formatter.field("core_network_attachment_arn", &self.core_network_attachment_arn);
         formatter.field("gateway_association_state", &self.gateway_association_state);
         formatter.field("options", &self.options);
         formatter.field("routes", &self.routes);

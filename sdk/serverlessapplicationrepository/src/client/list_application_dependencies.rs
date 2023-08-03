@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`dependencies(Option<Vec<ApplicationDependencySummary>>)`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput::dependencies): <p>An array of application summaries nested in the application.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput::next_token): <p>The token to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListApplicationDependenciesError>`](crate::operation::list_application_dependencies::ListApplicationDependenciesError)
-    pub fn list_application_dependencies(&self) -> crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder{
+    pub fn list_application_dependencies(
+        &self,
+    ) -> crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder {
         crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::new(self.handle.clone())
     }
 }

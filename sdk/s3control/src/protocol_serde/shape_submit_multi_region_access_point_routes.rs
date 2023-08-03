@@ -2,8 +2,7 @@
 pub fn ser_submit_multi_region_access_point_routes_headers(
     input: &crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_submit_multi_region_access_point_routes_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "account_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-account-id", header_value);
@@ -25,8 +21,7 @@ pub fn ser_submit_multi_region_access_point_routes_headers(
 
 pub fn ser_submit_multi_region_access_point_routes_op_input(
     input: &crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -34,28 +29,44 @@ pub fn ser_submit_multi_region_access_point_routes_op_input(
         let mut root = writer
             .start_el("SubmitMultiRegionAccessPointRoutesRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::protocol_serde::shape_submit_multi_region_access_point_routes_input::ser_submit_multi_region_access_point_routes_input_input(input, root)?
+        crate::protocol_serde::shape_submit_multi_region_access_point_routes_input::ser_submit_multi_region_access_point_routes_input_input(
+            input, root,
+        )?
     }
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_submit_multi_region_access_point_routes_http_error(_response_status: u16, _response_headers: &::http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput, crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>{
+pub fn de_submit_multi_region_access_point_routes_http_error(
+    _response_status: u16,
+    _response_headers: &::http::header::HeaderMap,
+    _response_body: &[u8],
+) -> std::result::Result<
+    crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
+    crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
+> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_submit_multi_region_access_point_routes_http_response_with_props(_response_status: u16, _response_headers: &::http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput, crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>{
+pub fn de_submit_multi_region_access_point_routes_http_response_with_props(
+    _response_status: u16,
+    _response_headers: &::http::header::HeaderMap,
+    _response_body: &[u8],
+) -> std::result::Result<
+    crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
+    crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output =
+            crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`StopEntitiesDetectionV2JobOutput`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobOutput::job_id): <p>The identifier of the medical entities detection job that was stopped.</p>
     /// - On failure, responds with [`SdkError<StopEntitiesDetectionV2JobError>`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError)
-    pub fn stop_entities_detection_v2_job(&self) -> crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobFluentBuilder{
+    pub fn stop_entities_detection_v2_job(
+        &self,
+    ) -> crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobFluentBuilder {
         crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobFluentBuilder::new(self.handle.clone())
     }
 }

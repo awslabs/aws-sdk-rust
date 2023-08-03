@@ -11,8 +11,7 @@ pub fn ser_server_side_encryption_rule(
     }
     if input.bucket_key_enabled {
         let mut inner_writer = scope.start_el("BucketKeyEnabled").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled).encode());
     }
     scope.finish();
     Ok(())

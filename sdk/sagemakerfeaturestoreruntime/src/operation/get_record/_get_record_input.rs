@@ -30,9 +30,7 @@ impl GetRecordInput {
         self.feature_names.as_deref()
     }
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>GetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>GetRecord</code> will return null.</p>
-    pub fn expiration_time_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExpirationTimeResponse> {
+    pub fn expiration_time_response(&self) -> ::std::option::Option<&crate::types::ExpirationTimeResponse> {
         self.expiration_time_response.as_ref()
     }
 }
@@ -45,30 +43,21 @@ impl GetRecordInput {
 
 /// A builder for [`GetRecordInput`](crate::operation::get_record::GetRecordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecordInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
     pub(crate) feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) expiration_time_response:
-        ::std::option::Option<crate::types::ExpirationTimeResponse>,
+    pub(crate) expiration_time_response: ::std::option::Option<crate::types::ExpirationTimeResponse>,
 }
 impl GetRecordInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group from which you want to retrieve a record.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group from which you want to retrieve a record.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
@@ -77,25 +66,17 @@ impl GetRecordInputBuilder {
         &self.feature_group_name
     }
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-    pub fn record_identifier_value_as_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-    pub fn set_record_identifier_value_as_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_identifier_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = input;
         self
     }
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-    pub fn get_record_identifier_value_as_string(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_record_identifier_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_identifier_value_as_string
     }
     /// Appends an item to `feature_names`.
@@ -103,27 +84,19 @@ impl GetRecordInputBuilder {
     /// To override the contents of this collection use [`set_feature_names`](Self::set_feature_names).
     ///
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn feature_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.feature_names.unwrap_or_default();
         v.push(input.into());
         self.feature_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn set_feature_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_feature_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.feature_names = input;
         self
     }
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn get_feature_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_feature_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.feature_names
     }
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>GetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>GetRecord</code> will return null.</p>
@@ -132,26 +105,16 @@ impl GetRecordInputBuilder {
         self
     }
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>GetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>GetRecord</code> will return null.</p>
-    pub fn set_expiration_time_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationTimeResponse>,
-    ) -> Self {
+    pub fn set_expiration_time_response(mut self, input: ::std::option::Option<crate::types::ExpirationTimeResponse>) -> Self {
         self.expiration_time_response = input;
         self
     }
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>GetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>GetRecord</code> will return null.</p>
-    pub fn get_expiration_time_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationTimeResponse> {
+    pub fn get_expiration_time_response(&self) -> &::std::option::Option<crate::types::ExpirationTimeResponse> {
         &self.expiration_time_response
     }
     /// Consumes the builder and constructs a [`GetRecordInput`](crate::operation::get_record::GetRecordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_record::GetRecordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_record::GetRecordInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_record::GetRecordInput {
             feature_group_name: self.feature_group_name,
             record_identifier_value_as_string: self.record_identifier_value_as_string,

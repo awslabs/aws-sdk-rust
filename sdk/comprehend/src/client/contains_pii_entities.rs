@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ContainsPiiEntitiesOutput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput) with field(s):
     ///   - [`labels(Option<Vec<EntityLabel>>)`](crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput::labels): <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
     /// - On failure, responds with [`SdkError<ContainsPiiEntitiesError>`](crate::operation::contains_pii_entities::ContainsPiiEntitiesError)
-    pub fn contains_pii_entities(
-        &self,
-    ) -> crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder {
-        crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn contains_pii_entities(&self) -> crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder {
+        crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

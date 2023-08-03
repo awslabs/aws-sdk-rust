@@ -10,10 +10,7 @@ impl ReleaseHostsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::release_hosts::ReleaseHostsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::release_hosts::ReleaseHostsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_hosts::ReleaseHostsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.release_hosts();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl ReleaseHostsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::release_hosts::ReleaseHosts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::release_hosts::ReleaseHosts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::release_hosts::ReleaseHostsError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl ReleaseHostsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl ReleaseHostsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::release_hosts::ReleaseHosts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::release_hosts::ReleaseHosts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::release_hosts::ReleaseHostsError>,
     > {
         self.customize_middleware().await
@@ -124,10 +112,7 @@ impl ReleaseHostsFluentBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts to release.</p>
-    pub fn set_host_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_host_ids(input);
         self
     }

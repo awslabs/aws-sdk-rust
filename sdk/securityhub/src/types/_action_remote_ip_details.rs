@@ -51,9 +51,7 @@ impl ActionRemoteIpDetails {
 
 /// A builder for [`ActionRemoteIpDetails`](crate::types::ActionRemoteIpDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionRemoteIpDetailsBuilder {
     pub(crate) ip_address_v4: ::std::option::Option<::std::string::String>,
     pub(crate) organization: ::std::option::Option<crate::types::IpOrganizationDetails>,
@@ -63,18 +61,12 @@ pub struct ActionRemoteIpDetailsBuilder {
 }
 impl ActionRemoteIpDetailsBuilder {
     /// <p>The IP address.</p>
-    pub fn ip_address_v4(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_address_v4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address_v4 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address.</p>
-    pub fn set_ip_address_v4(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_address_v4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address_v4 = input;
         self
     }
@@ -88,10 +80,7 @@ impl ActionRemoteIpDetailsBuilder {
         self
     }
     /// <p>The internet service provider (ISP) organization associated with the remote IP address.</p>
-    pub fn set_organization(
-        mut self,
-        input: ::std::option::Option<crate::types::IpOrganizationDetails>,
-    ) -> Self {
+    pub fn set_organization(mut self, input: ::std::option::Option<crate::types::IpOrganizationDetails>) -> Self {
         self.organization = input;
         self
     }
@@ -133,10 +122,7 @@ impl ActionRemoteIpDetailsBuilder {
         self
     }
     /// <p>The coordinates of the location of the remote IP address.</p>
-    pub fn set_geo_location(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoLocation>,
-    ) -> Self {
+    pub fn set_geo_location(mut self, input: ::std::option::Option<crate::types::GeoLocation>) -> Self {
         self.geo_location = input;
         self
     }

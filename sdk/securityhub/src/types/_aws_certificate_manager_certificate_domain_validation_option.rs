@@ -13,8 +13,7 @@ pub struct AwsCertificateManagerCertificateDomainValidationOption {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The CNAME record that is added to the DNS database for domain validation.</p>
     #[doc(hidden)]
-    pub resource_record:
-        ::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord>,
+    pub resource_record: ::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord>,
     /// <p>The domain name that Certificate Manager uses to send domain validation emails.</p>
     #[doc(hidden)]
     pub validation_domain: ::std::option::Option<::std::string::String>,
@@ -34,9 +33,7 @@ impl AwsCertificateManagerCertificateDomainValidationOption {
         self.domain_name.as_deref()
     }
     /// <p>The CNAME record that is added to the DNS database for domain validation.</p>
-    pub fn resource_record(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsCertificateManagerCertificateResourceRecord> {
+    pub fn resource_record(&self) -> ::std::option::Option<&crate::types::AwsCertificateManagerCertificateResourceRecord> {
         self.resource_record.as_ref()
     }
     /// <p>The domain name that Certificate Manager uses to send domain validation emails.</p>
@@ -58,21 +55,17 @@ impl AwsCertificateManagerCertificateDomainValidationOption {
 }
 impl AwsCertificateManagerCertificateDomainValidationOption {
     /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateDomainValidationOption`](crate::types::AwsCertificateManagerCertificateDomainValidationOption).
-    pub fn builder(
-    ) -> crate::types::builders::AwsCertificateManagerCertificateDomainValidationOptionBuilder {
+    pub fn builder() -> crate::types::builders::AwsCertificateManagerCertificateDomainValidationOptionBuilder {
         crate::types::builders::AwsCertificateManagerCertificateDomainValidationOptionBuilder::default()
     }
 }
 
 /// A builder for [`AwsCertificateManagerCertificateDomainValidationOption`](crate::types::AwsCertificateManagerCertificateDomainValidationOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateDomainValidationOptionBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_record:
-        ::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord>,
+    pub(crate) resource_record: ::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord>,
     pub(crate) validation_domain: ::std::option::Option<::std::string::String>,
     pub(crate) validation_emails: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) validation_method: ::std::option::Option<::std::string::String>,
@@ -94,40 +87,26 @@ impl AwsCertificateManagerCertificateDomainValidationOptionBuilder {
         &self.domain_name
     }
     /// <p>The CNAME record that is added to the DNS database for domain validation.</p>
-    pub fn resource_record(
-        mut self,
-        input: crate::types::AwsCertificateManagerCertificateResourceRecord,
-    ) -> Self {
+    pub fn resource_record(mut self, input: crate::types::AwsCertificateManagerCertificateResourceRecord) -> Self {
         self.resource_record = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CNAME record that is added to the DNS database for domain validation.</p>
-    pub fn set_resource_record(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord>,
-    ) -> Self {
+    pub fn set_resource_record(mut self, input: ::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord>) -> Self {
         self.resource_record = input;
         self
     }
     /// <p>The CNAME record that is added to the DNS database for domain validation.</p>
-    pub fn get_resource_record(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord> {
+    pub fn get_resource_record(&self) -> &::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord> {
         &self.resource_record
     }
     /// <p>The domain name that Certificate Manager uses to send domain validation emails.</p>
-    pub fn validation_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name that Certificate Manager uses to send domain validation emails.</p>
-    pub fn set_validation_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_domain = input;
         self
     }
@@ -140,42 +119,28 @@ impl AwsCertificateManagerCertificateDomainValidationOptionBuilder {
     /// To override the contents of this collection use [`set_validation_emails`](Self::set_validation_emails).
     ///
     /// <p>A list of email addresses that Certificate Manager uses to send domain validation emails.</p>
-    pub fn validation_emails(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_emails(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.validation_emails.unwrap_or_default();
         v.push(input.into());
         self.validation_emails = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of email addresses that Certificate Manager uses to send domain validation emails.</p>
-    pub fn set_validation_emails(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_validation_emails(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.validation_emails = input;
         self
     }
     /// <p>A list of email addresses that Certificate Manager uses to send domain validation emails.</p>
-    pub fn get_validation_emails(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_validation_emails(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.validation_emails
     }
     /// <p>The method used to validate the domain name.</p>
-    pub fn validation_method(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The method used to validate the domain name.</p>
-    pub fn set_validation_method(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_method = input;
         self
     }
@@ -184,18 +149,12 @@ impl AwsCertificateManagerCertificateDomainValidationOptionBuilder {
         &self.validation_method
     }
     /// <p>The validation status of the domain name.</p>
-    pub fn validation_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The validation status of the domain name.</p>
-    pub fn set_validation_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_status = input;
         self
     }

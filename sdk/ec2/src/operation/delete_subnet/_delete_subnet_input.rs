@@ -29,9 +29,7 @@ impl DeleteSubnetInput {
 
 /// A builder for [`DeleteSubnetInput`](crate::operation::delete_subnet::DeleteSubnetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubnetInputBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -66,12 +64,7 @@ impl DeleteSubnetInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteSubnetInput`](crate::operation::delete_subnet::DeleteSubnetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_subnet::DeleteSubnetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_subnet::DeleteSubnetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_subnet::DeleteSubnetInput {
             subnet_id: self.subnet_id,
             dry_run: self.dry_run,

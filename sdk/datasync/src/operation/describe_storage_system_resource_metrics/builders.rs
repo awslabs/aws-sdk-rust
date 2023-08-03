@@ -5,16 +5,16 @@ pub use crate::operation::describe_storage_system_resource_metrics::_describe_st
 
 impl DescribeStorageSystemResourceMetricsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_storage_system_resource_metrics();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemResourceMetricsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsInputBuilder,
+    inner: crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsInputBuilder,
 }
 impl DescribeStorageSystemResourceMetricsFluentBuilder {
     /// Creates a new `DescribeStorageSystemResourceMetrics`.
@@ -37,15 +37,22 @@ impl DescribeStorageSystemResourceMetricsFluentBuilder {
         }
     }
     /// Access the DescribeStorageSystemResourceMetrics as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetrics, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetrics,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl DescribeStorageSystemResourceMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +89,46 @@ impl DescribeStorageSystemResourceMetricsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetrics, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetrics,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_storage_system_resource_metrics::paginator::DescribeStorageSystemResourceMetricsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_storage_system_resource_metrics::paginator::DescribeStorageSystemResourceMetricsPaginator{
-        crate::operation::describe_storage_system_resource_metrics::paginator::DescribeStorageSystemResourceMetricsPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_storage_system_resource_metrics::paginator::DescribeStorageSystemResourceMetricsPaginator {
+        crate::operation::describe_storage_system_resource_metrics::paginator::DescribeStorageSystemResourceMetricsPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.discovery_job_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_discovery_job_arn(input);
         self
     }
@@ -126,10 +142,7 @@ impl DescribeStorageSystemResourceMetricsFluentBuilder {
         self
     }
     /// <p>Specifies the kind of storage system resource that you want information about.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::DiscoveryResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -157,10 +170,7 @@ impl DescribeStorageSystemResourceMetricsFluentBuilder {
         self
     }
     /// <p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>EndTime</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -174,10 +184,7 @@ impl DescribeStorageSystemResourceMetricsFluentBuilder {
         self
     }
     /// <p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>StartTime</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

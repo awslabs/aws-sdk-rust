@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`resource_config(Option<GetBackendStorageResourceConfig>)`](crate::operation::get_backend_storage::GetBackendStorageOutput::resource_config): <p>The resource configuration for the backend storage resource.</p>
     ///   - [`resource_name(Option<String>)`](crate::operation::get_backend_storage::GetBackendStorageOutput::resource_name): <p>The name of the storage resource.</p>
     /// - On failure, responds with [`SdkError<GetBackendStorageError>`](crate::operation::get_backend_storage::GetBackendStorageError)
-    pub fn get_backend_storage(
-        &self,
-    ) -> crate::operation::get_backend_storage::builders::GetBackendStorageFluentBuilder {
-        crate::operation::get_backend_storage::builders::GetBackendStorageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_backend_storage(&self) -> crate::operation::get_backend_storage::builders::GetBackendStorageFluentBuilder {
+        crate::operation::get_backend_storage::builders::GetBackendStorageFluentBuilder::new(self.handle.clone())
     }
 }

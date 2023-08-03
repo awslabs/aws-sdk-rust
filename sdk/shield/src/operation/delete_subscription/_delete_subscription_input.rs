@@ -6,26 +6,20 @@
 pub struct DeleteSubscriptionInput {}
 impl DeleteSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriptionInput`](crate::operation::delete_subscription::DeleteSubscriptionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_subscription::builders::DeleteSubscriptionInputBuilder {
+    pub fn builder() -> crate::operation::delete_subscription::builders::DeleteSubscriptionInputBuilder {
         crate::operation::delete_subscription::builders::DeleteSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSubscriptionInput`](crate::operation::delete_subscription::DeleteSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubscriptionInputBuilder {}
 impl DeleteSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSubscriptionInput`](crate::operation::delete_subscription::DeleteSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_subscription::DeleteSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_subscription::DeleteSubscriptionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_subscription::DeleteSubscriptionInput {})
     }
 }

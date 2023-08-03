@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::tags): <p>Key-value pairs associated with the attribute group.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::created_by): <p>The service principal that created the attribute group.</p>
     /// - On failure, responds with [`SdkError<GetAttributeGroupError>`](crate::operation::get_attribute_group::GetAttributeGroupError)
-    pub fn get_attribute_group(
-        &self,
-    ) -> crate::operation::get_attribute_group::builders::GetAttributeGroupFluentBuilder {
-        crate::operation::get_attribute_group::builders::GetAttributeGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_attribute_group(&self) -> crate::operation::get_attribute_group::builders::GetAttributeGroupFluentBuilder {
+        crate::operation::get_attribute_group::builders::GetAttributeGroupFluentBuilder::new(self.handle.clone())
     }
 }

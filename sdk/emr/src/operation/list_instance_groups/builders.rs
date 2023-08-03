@@ -10,10 +10,7 @@ impl ListInstanceGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_instance_groups::ListInstanceGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_groups::ListInstanceGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_groups::ListInstanceGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_instance_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListInstanceGroupsFluentBuilder {
         }
     }
     /// Access the ListInstanceGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_instance_groups::builders::ListInstanceGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_instance_groups::builders::ListInstanceGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListInstanceGroupsFluentBuilder {
             crate::operation::list_instance_groups::ListInstanceGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_groups::ListInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_groups::ListInstanceGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListInstanceGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListInstanceGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_groups::ListInstanceGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_groups::ListInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_groups::ListInstanceGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListInstanceGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_groups::ListInstanceGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_groups::ListInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_groups::ListInstanceGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListInstanceGroupsFluentBuilder {
             crate::operation::list_instance_groups::ListInstanceGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_groups::ListInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_groups::ListInstanceGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator {
-        crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator {
+        crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the cluster for which to list the instance groups.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

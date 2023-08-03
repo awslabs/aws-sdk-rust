@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_access_point_policy::builders::PutAccessPointPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_access_point_policy::builders::PutAccessPointPolicyFluentBuilder::set_policy): <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// - On success, responds with [`PutAccessPointPolicyOutput`](crate::operation::put_access_point_policy::PutAccessPointPolicyOutput)
     /// - On failure, responds with [`SdkError<PutAccessPointPolicyError>`](crate::operation::put_access_point_policy::PutAccessPointPolicyError)
-    pub fn put_access_point_policy(
-        &self,
-    ) -> crate::operation::put_access_point_policy::builders::PutAccessPointPolicyFluentBuilder
-    {
-        crate::operation::put_access_point_policy::builders::PutAccessPointPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_access_point_policy(&self) -> crate::operation::put_access_point_policy::builders::PutAccessPointPolicyFluentBuilder {
+        crate::operation::put_access_point_policy::builders::PutAccessPointPolicyFluentBuilder::new(self.handle.clone())
     }
 }

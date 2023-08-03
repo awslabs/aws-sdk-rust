@@ -100,9 +100,7 @@ impl DatasetExportJob {
 
 /// A builder for [`DatasetExportJob`](crate::types::DatasetExportJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetExportJobBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_export_job_arn: ::std::option::Option<::std::string::String>,
@@ -131,18 +129,12 @@ impl DatasetExportJobBuilder {
         &self.job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-    pub fn dataset_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_export_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-    pub fn set_dataset_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_export_job_arn = input;
         self
     }
@@ -170,10 +162,7 @@ impl DatasetExportJobBuilder {
         self
     }
     /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
-    pub fn set_ingestion_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionMode>,
-    ) -> Self {
+    pub fn set_ingestion_mode(mut self, input: ::std::option::Option<crate::types::IngestionMode>) -> Self {
         self.ingestion_mode = input;
         self
     }
@@ -229,10 +218,7 @@ impl DatasetExportJobBuilder {
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
-    pub fn set_job_output(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetExportJobOutput>,
-    ) -> Self {
+    pub fn set_job_output(mut self, input: ::std::option::Option<crate::types::DatasetExportJobOutput>) -> Self {
         self.job_output = input;
         self
     }
@@ -247,10 +233,7 @@ impl DatasetExportJobBuilder {
         self
     }
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -264,32 +247,21 @@ impl DatasetExportJobBuilder {
         self
     }
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>If a dataset export job fails, provides the reason why.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a dataset export job fails, provides the reason why.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

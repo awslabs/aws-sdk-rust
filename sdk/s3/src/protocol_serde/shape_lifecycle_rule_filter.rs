@@ -61,9 +61,7 @@ pub fn de_lifecycle_rule_filter(
             _unknown => base = Some(crate::types::LifecycleRuleFilter::Unknown),
         }
     }
-    base.ok_or_else(|| {
-        ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing")
-    })
+    base.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing"))
 }
 
 pub fn ser_lifecycle_rule_filter(
@@ -93,11 +91,9 @@ pub fn ser_lifecycle_rule_filter(
             crate::protocol_serde::shape_lifecycle_rule_and_operator::ser_lifecycle_rule_and_operator(inner, inner_writer)?
         }
         crate::types::LifecycleRuleFilter::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "LifecycleRuleFilter",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "LifecycleRuleFilter",
+            ))
         }
     }
     Ok(())

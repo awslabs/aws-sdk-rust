@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`file_systems(Option<Vec<FileSystem>>)`](crate::operation::describe_file_systems::DescribeFileSystemsOutput::file_systems): <p>An array of file system descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_file_systems::DescribeFileSystemsOutput::next_token): <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions. </p>
     /// - On failure, responds with [`SdkError<DescribeFileSystemsError>`](crate::operation::describe_file_systems::DescribeFileSystemsError)
-    pub fn describe_file_systems(
-        &self,
-    ) -> crate::operation::describe_file_systems::builders::DescribeFileSystemsFluentBuilder {
-        crate::operation::describe_file_systems::builders::DescribeFileSystemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_file_systems(&self) -> crate::operation::describe_file_systems::builders::DescribeFileSystemsFluentBuilder {
+        crate::operation::describe_file_systems::builders::DescribeFileSystemsFluentBuilder::new(self.handle.clone())
     }
 }

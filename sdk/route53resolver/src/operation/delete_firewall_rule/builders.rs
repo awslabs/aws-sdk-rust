@@ -10,10 +10,7 @@ impl DeleteFirewallRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_rule::DeleteFirewallRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_rule::DeleteFirewallRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_firewall_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteFirewallRuleFluentBuilder {
         }
     }
     /// Access the DeleteFirewallRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteFirewallRuleFluentBuilder {
             crate::operation::delete_firewall_rule::DeleteFirewallRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_rule::DeleteFirewallRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_rule::DeleteFirewallRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteFirewallRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteFirewallRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_rule::DeleteFirewallRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_rule::DeleteFirewallRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteFirewallRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_rule::DeleteFirewallRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_rule::DeleteFirewallRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteFirewallRuleFluentBuilder {
             crate::operation::delete_firewall_rule::DeleteFirewallRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_rule::DeleteFirewallRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_rule::DeleteFirewallRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
-    pub fn firewall_rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_id(input.into());
         self
     }
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
-    pub fn set_firewall_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl DeleteFirewallRuleFluentBuilder {
         self.inner.get_firewall_rule_group_id()
     }
     /// <p>The ID of the domain list that's used in the rule. </p>
-    pub fn firewall_domain_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_domain_list_id(input.into());
         self
     }
     /// <p>The ID of the domain list that's used in the rule. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }

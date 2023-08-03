@@ -43,9 +43,7 @@ impl ListDetectorsInput {
 
 /// A builder for [`ListDetectorsInput`](crate::operation::list_detectors::ListDetectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDetectorsInputBuilder {
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) state_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListDetectorsInputBuilder {
 }
 impl ListDetectorsInputBuilder {
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_model_name = input;
         self
     }
@@ -118,10 +110,7 @@ impl ListDetectorsInputBuilder {
     /// Consumes the builder and constructs a [`ListDetectorsInput`](crate::operation::list_detectors::ListDetectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_detectors::ListDetectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_detectors::ListDetectorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_detectors::ListDetectorsInput {
             detector_model_name: self.detector_model_name,
             state_name: self.state_name,

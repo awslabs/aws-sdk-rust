@@ -77,18 +77,12 @@ impl ComponentStateBuilder {
         &self.service_name
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_instance_name = input;
         self
     }
@@ -111,18 +105,12 @@ impl ComponentStateBuilder {
         &self.service_spec
     }
     /// <p>The template file used.</p>
-    pub fn template_file(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The template file used.</p>
-    pub fn set_template_file(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_file = input;
         self
     }

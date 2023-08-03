@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetServiceSyncConfigOutput {
 }
 impl GetServiceSyncConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceSyncConfigOutput`](crate::operation::get_service_sync_config::GetServiceSyncConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_service_sync_config::builders::GetServiceSyncConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_service_sync_config::builders::GetServiceSyncConfigOutputBuilder {
         crate::operation::get_service_sync_config::builders::GetServiceSyncConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceSyncConfigOutput`](crate::operation::get_service_sync_config::GetServiceSyncConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceSyncConfigOutputBuilder {
     pub(crate) service_sync_config: ::std::option::Option<crate::types::ServiceSyncConfig>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetServiceSyncConfigOutputBuilder {
         self
     }
     /// <p>The detailed data of the requested service sync configuration.</p>
-    pub fn set_service_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceSyncConfig>,
-    ) -> Self {
+    pub fn set_service_sync_config(mut self, input: ::std::option::Option<crate::types::ServiceSyncConfig>) -> Self {
         self.service_sync_config = input;
         self
     }
     /// <p>The detailed data of the requested service sync configuration.</p>
-    pub fn get_service_sync_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceSyncConfig> {
+    pub fn get_service_sync_config(&self) -> &::std::option::Option<crate::types::ServiceSyncConfig> {
         &self.service_sync_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

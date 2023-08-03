@@ -22,18 +22,14 @@ impl DeleteAnnotationStoreInput {
 }
 impl DeleteAnnotationStoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteAnnotationStoreInput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreInput).
-    pub fn builder(
-    ) -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreInputBuilder {
         crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAnnotationStoreInput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnnotationStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
@@ -70,15 +66,11 @@ impl DeleteAnnotationStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnnotationStoreInput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_annotation_store::DeleteAnnotationStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_annotation_store::DeleteAnnotationStoreInput {
-                name: self.name,
-                force: self.force,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_annotation_store::DeleteAnnotationStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_annotation_store::DeleteAnnotationStoreInput {
+            name: self.name,
+            force: self.force,
+        })
     }
 }

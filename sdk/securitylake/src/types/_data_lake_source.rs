@@ -106,15 +106,12 @@ impl DataLakeSource {
 
 /// A builder for [`DataLakeSource`](crate::types::DataLakeSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeSourceBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_classes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) source_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>>,
+    pub(crate) source_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>>,
 }
 impl DataLakeSourceBuilder {
     /// <p>The ID of the Security Lake account for which logs are collected.</p>
@@ -181,10 +178,7 @@ impl DataLakeSourceBuilder {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn event_classes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_classes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_classes.unwrap_or_default();
         v.push(input.into());
         self.event_classes = ::std::option::Option::Some(v);
@@ -222,10 +216,7 @@ impl DataLakeSourceBuilder {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn set_event_classes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_classes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_classes = input;
         self
     }
@@ -261,9 +252,7 @@ impl DataLakeSourceBuilder {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn get_event_classes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_classes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_classes
     }
     /// Appends an item to `source_statuses`.
@@ -278,17 +267,12 @@ impl DataLakeSourceBuilder {
         self
     }
     /// <p>The log status for the Security Lake account.</p>
-    pub fn set_source_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>>,
-    ) -> Self {
+    pub fn set_source_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>>) -> Self {
         self.source_statuses = input;
         self
     }
     /// <p>The log status for the Security Lake account.</p>
-    pub fn get_source_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>> {
+    pub fn get_source_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>> {
         &self.source_statuses
     }
     /// Consumes the builder and constructs a [`DataLakeSource`](crate::types::DataLakeSource).

@@ -100,9 +100,7 @@ impl LabelingJobSummary {
 
 /// A builder for [`LabelingJobSummary`](crate::types::LabelingJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelingJobSummaryBuilder {
     pub(crate) labeling_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) labeling_job_arn: ::std::option::Option<::std::string::String>,
@@ -119,18 +117,12 @@ pub struct LabelingJobSummaryBuilder {
 }
 impl LabelingJobSummaryBuilder {
     /// <p>The name of the labeling job.</p>
-    pub fn labeling_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn labeling_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the labeling job.</p>
-    pub fn set_labeling_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_labeling_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.labeling_job_name = input;
         self
     }
@@ -139,18 +131,12 @@ impl LabelingJobSummaryBuilder {
         &self.labeling_job_name
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the labeling job when it was created.</p>
-    pub fn labeling_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn labeling_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the labeling job when it was created.</p>
-    pub fn set_labeling_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_labeling_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.labeling_job_arn = input;
         self
     }
@@ -164,10 +150,7 @@ impl LabelingJobSummaryBuilder {
         self
     }
     /// <p>The date and time that the job was created (timestamp).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -181,10 +164,7 @@ impl LabelingJobSummaryBuilder {
         self
     }
     /// <p>The date and time that the job was last modified (timestamp).</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -198,17 +178,12 @@ impl LabelingJobSummaryBuilder {
         self
     }
     /// <p>The current status of the labeling job. </p>
-    pub fn set_labeling_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobStatus>,
-    ) -> Self {
+    pub fn set_labeling_job_status(mut self, input: ::std::option::Option<crate::types::LabelingJobStatus>) -> Self {
         self.labeling_job_status = input;
         self
     }
     /// <p>The current status of the labeling job. </p>
-    pub fn get_labeling_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelingJobStatus> {
+    pub fn get_labeling_job_status(&self) -> &::std::option::Option<crate::types::LabelingJobStatus> {
         &self.labeling_job_status
     }
     /// <p>Counts showing the progress of the labeling job.</p>
@@ -217,10 +192,7 @@ impl LabelingJobSummaryBuilder {
         self
     }
     /// <p>Counts showing the progress of the labeling job.</p>
-    pub fn set_label_counters(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelCounters>,
-    ) -> Self {
+    pub fn set_label_counters(mut self, input: ::std::option::Option<crate::types::LabelCounters>) -> Self {
         self.label_counters = input;
         self
     }
@@ -243,18 +215,12 @@ impl LabelingJobSummaryBuilder {
         &self.workteam_arn
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function. The function is run before each data object is sent to a worker.</p>
-    pub fn pre_human_task_lambda_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_human_task_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_human_task_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function. The function is run before each data object is sent to a worker.</p>
-    pub fn set_pre_human_task_lambda_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_human_task_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_human_task_lambda_arn = input;
         self
     }
@@ -263,40 +229,26 @@ impl LabelingJobSummaryBuilder {
         &self.pre_human_task_lambda_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers into a label for a data object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation Consolidation</a>.</p>
-    pub fn annotation_consolidation_lambda_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn annotation_consolidation_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.annotation_consolidation_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers into a label for a data object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation Consolidation</a>.</p>
-    pub fn set_annotation_consolidation_lambda_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_annotation_consolidation_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.annotation_consolidation_lambda_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers into a label for a data object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation Consolidation</a>.</p>
-    pub fn get_annotation_consolidation_lambda_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_annotation_consolidation_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.annotation_consolidation_lambda_arn
     }
     /// <p>If the <code>LabelingJobStatus</code> field is <code>Failed</code>, this field contains a description of the error.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the <code>LabelingJobStatus</code> field is <code>Failed</code>, this field contains a description of the error.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -310,17 +262,12 @@ impl LabelingJobSummaryBuilder {
         self
     }
     /// <p>The location of the output produced by the labeling job.</p>
-    pub fn set_labeling_job_output(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobOutput>,
-    ) -> Self {
+    pub fn set_labeling_job_output(mut self, input: ::std::option::Option<crate::types::LabelingJobOutput>) -> Self {
         self.labeling_job_output = input;
         self
     }
     /// <p>The location of the output produced by the labeling job.</p>
-    pub fn get_labeling_job_output(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelingJobOutput> {
+    pub fn get_labeling_job_output(&self) -> &::std::option::Option<crate::types::LabelingJobOutput> {
         &self.labeling_job_output
     }
     /// <p>Input configuration for the labeling job.</p>
@@ -329,10 +276,7 @@ impl LabelingJobSummaryBuilder {
         self
     }
     /// <p>Input configuration for the labeling job.</p>
-    pub fn set_input_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobInputConfig>,
-    ) -> Self {
+    pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::LabelingJobInputConfig>) -> Self {
         self.input_config = input;
         self
     }

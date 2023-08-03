@@ -35,12 +35,9 @@ impl ListBrokersOutput {
 
 /// A builder for [`ListBrokersOutput`](crate::operation::list_brokers::ListBrokersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBrokersOutputBuilder {
-    pub(crate) broker_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BrokerSummary>>,
+    pub(crate) broker_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BrokerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListBrokersOutputBuilder {
         self
     }
     /// <p>A list of information about all brokers.</p>
-    pub fn set_broker_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerSummary>>,
-    ) -> Self {
+    pub fn set_broker_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerSummary>>) -> Self {
         self.broker_summaries = input;
         self
     }
     /// <p>A list of information about all brokers.</p>
-    pub fn get_broker_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerSummary>> {
+    pub fn get_broker_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerSummary>> {
         &self.broker_summaries
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>

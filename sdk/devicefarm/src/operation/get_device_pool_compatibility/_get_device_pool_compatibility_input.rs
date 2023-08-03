@@ -86,16 +86,14 @@ impl GetDevicePoolCompatibilityInput {
 }
 impl GetDevicePoolCompatibilityInput {
     /// Creates a new builder-style object to manufacture [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
-    pub fn builder() -> crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder{
+    pub fn builder() -> crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder {
         crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevicePoolCompatibilityInputBuilder {
     pub(crate) device_pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
@@ -105,18 +103,12 @@ pub struct GetDevicePoolCompatibilityInputBuilder {
 }
 impl GetDevicePoolCompatibilityInputBuilder {
     /// <p>The device pool's ARN.</p>
-    pub fn device_pool_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_pool_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device pool's ARN.</p>
-    pub fn set_device_pool_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_pool_arn = input;
         self
     }
@@ -235,17 +227,12 @@ impl GetDevicePoolCompatibilityInputBuilder {
         self
     }
     /// <p>An object that contains information about the settings for a run.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleRunConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>An object that contains information about the settings for a run.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
@@ -255,14 +242,12 @@ impl GetDevicePoolCompatibilityInputBuilder {
         crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput {
-                device_pool_arn: self.device_pool_arn,
-                app_arn: self.app_arn,
-                test_type: self.test_type,
-                test: self.test,
-                configuration: self.configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput {
+            device_pool_arn: self.device_pool_arn,
+            app_arn: self.app_arn,
+            test_type: self.test_type,
+            test: self.test,
+            configuration: self.configuration,
+        })
     }
 }

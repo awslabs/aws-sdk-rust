@@ -44,9 +44,7 @@ impl ThemeConfiguration {
 
 /// A builder for [`ThemeConfiguration`](crate::types::ThemeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThemeConfigurationBuilder {
     pub(crate) data_color_palette: ::std::option::Option<crate::types::DataColorPalette>,
     pub(crate) ui_color_palette: ::std::option::Option<crate::types::UiColorPalette>,
@@ -60,10 +58,7 @@ impl ThemeConfigurationBuilder {
         self
     }
     /// <p>Color properties that apply to chart data colors.</p>
-    pub fn set_data_color_palette(
-        mut self,
-        input: ::std::option::Option<crate::types::DataColorPalette>,
-    ) -> Self {
+    pub fn set_data_color_palette(mut self, input: ::std::option::Option<crate::types::DataColorPalette>) -> Self {
         self.data_color_palette = input;
         self
     }
@@ -77,10 +72,7 @@ impl ThemeConfigurationBuilder {
         self
     }
     /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
-    pub fn set_ui_color_palette(
-        mut self,
-        input: ::std::option::Option<crate::types::UiColorPalette>,
-    ) -> Self {
+    pub fn set_ui_color_palette(mut self, input: ::std::option::Option<crate::types::UiColorPalette>) -> Self {
         self.ui_color_palette = input;
         self
     }
@@ -108,10 +100,7 @@ impl ThemeConfigurationBuilder {
         self
     }
     /// <p>Determines the typography options.</p>
-    pub fn set_typography(
-        mut self,
-        input: ::std::option::Option<crate::types::Typography>,
-    ) -> Self {
+    pub fn set_typography(mut self, input: ::std::option::Option<crate::types::Typography>) -> Self {
         self.typography = input;
         self
     }

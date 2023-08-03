@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaOutput) with field(s):
     ///   - [`policy_status(Option<PolicyStatus>)`](crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaOutput::policy_status): <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
     /// - On failure, responds with [`SdkError<GetAccessPointPolicyStatusForObjectLambdaError>`](crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaError)
-    pub fn get_access_point_policy_status_for_object_lambda(&self) -> crate::operation::get_access_point_policy_status_for_object_lambda::builders::GetAccessPointPolicyStatusForObjectLambdaFluentBuilder{
-        crate::operation::get_access_point_policy_status_for_object_lambda::builders::GetAccessPointPolicyStatusForObjectLambdaFluentBuilder::new(self.handle.clone())
+    pub fn get_access_point_policy_status_for_object_lambda(
+        &self,
+    ) -> crate::operation::get_access_point_policy_status_for_object_lambda::builders::GetAccessPointPolicyStatusForObjectLambdaFluentBuilder {
+        crate::operation::get_access_point_policy_status_for_object_lambda::builders::GetAccessPointPolicyStatusForObjectLambdaFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

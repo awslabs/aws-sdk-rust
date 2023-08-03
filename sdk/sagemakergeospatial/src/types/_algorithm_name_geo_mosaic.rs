@@ -50,13 +50,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AlgorithmNameGeoMosaic {
     /// AVERAGE
@@ -107,9 +101,7 @@ impl ::std::convert::From<&str> for AlgorithmNameGeoMosaic {
             "Q3" => AlgorithmNameGeoMosaic::Q3,
             "RMS" => AlgorithmNameGeoMosaic::Rms,
             "SUM" => AlgorithmNameGeoMosaic::Sum,
-            other => AlgorithmNameGeoMosaic::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AlgorithmNameGeoMosaic::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

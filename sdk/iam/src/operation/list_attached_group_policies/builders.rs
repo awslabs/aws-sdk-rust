@@ -28,7 +28,7 @@ impl ListAttachedGroupPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAttachedGroupPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_attached_group_policies::builders::ListAttachedGroupPoliciesInputBuilder,
+    inner: crate::operation::list_attached_group_policies::builders::ListAttachedGroupPoliciesInputBuilder,
 }
 impl ListAttachedGroupPoliciesFluentBuilder {
     /// Creates a new `ListAttachedGroupPolicies`.
@@ -39,7 +39,7 @@ impl ListAttachedGroupPoliciesFluentBuilder {
         }
     }
     /// Access the ListAttachedGroupPolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_attached_group_policies::builders::ListAttachedGroupPoliciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_attached_group_policies::builders::ListAttachedGroupPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ListAttachedGroupPoliciesFluentBuilder {
             crate::operation::list_attached_group_policies::ListAttachedGroupPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ListAttachedGroupPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ListAttachedGroupPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ListAttachedGroupPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl ListAttachedGroupPoliciesFluentBuilder {
             crate::operation::list_attached_group_policies::ListAttachedGroupPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_attached_group_policies::paginator::ListAttachedGroupPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_attached_group_policies::paginator::ListAttachedGroupPoliciesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_attached_group_policies::paginator::ListAttachedGroupPoliciesPaginator {
         crate::operation::list_attached_group_policies::paginator::ListAttachedGroupPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name (friendly name, not ARN) of the group to list attached policies for.</p>

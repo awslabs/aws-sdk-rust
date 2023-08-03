@@ -30,7 +30,7 @@ impl SetActiveReceiptRuleSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetActiveReceiptRuleSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetInputBuilder,
+    inner: crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetInputBuilder,
 }
 impl SetActiveReceiptRuleSetFluentBuilder {
     /// Creates a new `SetActiveReceiptRuleSet`.
@@ -41,10 +41,7 @@ impl SetActiveReceiptRuleSetFluentBuilder {
         }
     }
     /// Access the SetActiveReceiptRuleSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl SetActiveReceiptRuleSetFluentBuilder {
             crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl SetActiveReceiptRuleSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl SetActiveReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl SetActiveReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +109,17 @@ impl SetActiveReceiptRuleSetFluentBuilder {
             crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_name(input.into());
         self
     }
     /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }

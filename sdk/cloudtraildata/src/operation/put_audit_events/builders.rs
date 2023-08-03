@@ -10,10 +10,7 @@ impl PutAuditEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_audit_events::PutAuditEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_audit_events::PutAuditEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_audit_events();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutAuditEventsFluentBuilder {
         }
     }
     /// Access the PutAuditEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_audit_events::builders::PutAuditEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_audit_events::builders::PutAuditEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutAuditEventsFluentBuilder {
             crate::operation::put_audit_events::PutAuditEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_audit_events::PutAuditEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutAuditEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutAuditEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_audit_events::PutAuditEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_audit_events::PutAuditEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutAuditEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_audit_events::PutAuditEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_audit_events::PutAuditEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutAuditEventsFluentBuilder {
             crate::operation::put_audit_events::PutAuditEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_audit_events::PutAuditEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl PutAuditEventsFluentBuilder {
         self
     }
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    pub fn set_audit_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>>,
-    ) -> Self {
+    pub fn set_audit_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>>) -> Self {
         self.inner = self.inner.set_audit_events(input);
         self
     }
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    pub fn get_audit_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>> {
+    pub fn get_audit_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>> {
         self.inner.get_audit_events()
     }
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>

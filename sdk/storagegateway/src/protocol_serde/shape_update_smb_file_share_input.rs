@@ -72,10 +72,7 @@ pub fn ser_update_smb_file_share_input(
     if let Some(var_23) = &input.cache_attributes {
         #[allow(unused_mut)]
         let mut object_24 = object.key("CacheAttributes").start_object();
-        crate::protocol_serde::shape_cache_attributes::ser_cache_attributes(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_cache_attributes::ser_cache_attributes(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.notification_policy {

@@ -34,9 +34,7 @@ impl CachingConfig {
 
 /// A builder for [`CachingConfig`](crate::types::CachingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CachingConfigBuilder {
     pub(crate) ttl: ::std::option::Option<i64>,
     pub(crate) caching_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,18 +71,13 @@ impl CachingConfigBuilder {
     }
     /// <p>The caching keys for a resolver that has caching activated.</p>
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
-    pub fn set_caching_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_caching_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.caching_keys = input;
         self
     }
     /// <p>The caching keys for a resolver that has caching activated.</p>
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
-    pub fn get_caching_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_caching_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.caching_keys
     }
     /// Consumes the builder and constructs a [`CachingConfig`](crate::types::CachingConfig).

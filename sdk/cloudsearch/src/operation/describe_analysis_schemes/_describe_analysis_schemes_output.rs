@@ -6,8 +6,7 @@
 pub struct DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
     #[doc(hidden)]
-    pub analysis_schemes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
+    pub analysis_schemes: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeAnalysisSchemesOutput {
@@ -23,21 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeAnalysisSchemesOutput {
 }
 impl DescribeAnalysisSchemesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder {
         crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesOutputBuilder {
-    pub(crate) analysis_schemes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
+    pub(crate) analysis_schemes: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeAnalysisSchemesOutputBuilder {
@@ -53,17 +47,12 @@ impl DescribeAnalysisSchemesOutputBuilder {
         self
     }
     /// <p>The analysis scheme descriptions.</p>
-    pub fn set_analysis_schemes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
-    ) -> Self {
+    pub fn set_analysis_schemes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>) -> Self {
         self.analysis_schemes = input;
         self
     }
     /// <p>The analysis scheme descriptions.</p>
-    pub fn get_analysis_schemes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>> {
+    pub fn get_analysis_schemes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>> {
         &self.analysis_schemes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -76,9 +65,7 @@ impl DescribeAnalysisSchemesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
+    pub fn build(self) -> crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
         crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
             analysis_schemes: self.analysis_schemes,
             _request_id: self._request_id,

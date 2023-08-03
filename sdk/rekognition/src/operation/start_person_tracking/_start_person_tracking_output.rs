@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartPersonTrackingOutput {
 }
 impl StartPersonTrackingOutput {
     /// Creates a new builder-style object to manufacture [`StartPersonTrackingOutput`](crate::operation::start_person_tracking::StartPersonTrackingOutput).
-    pub fn builder(
-    ) -> crate::operation::start_person_tracking::builders::StartPersonTrackingOutputBuilder {
-        crate::operation::start_person_tracking::builders::StartPersonTrackingOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_person_tracking::builders::StartPersonTrackingOutputBuilder {
+        crate::operation::start_person_tracking::builders::StartPersonTrackingOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartPersonTrackingOutput`](crate::operation::start_person_tracking::StartPersonTrackingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartPersonTrackingOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

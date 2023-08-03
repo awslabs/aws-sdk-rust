@@ -44,7 +44,7 @@ impl ::std::fmt::Debug for PublishStateMachineVersionInput {
 }
 impl PublishStateMachineVersionInput {
     /// Creates a new builder-style object to manufacture [`PublishStateMachineVersionInput`](crate::operation::publish_state_machine_version::PublishStateMachineVersionInput).
-    pub fn builder() -> crate::operation::publish_state_machine_version::builders::PublishStateMachineVersionInputBuilder{
+    pub fn builder() -> crate::operation::publish_state_machine_version::builders::PublishStateMachineVersionInputBuilder {
         crate::operation::publish_state_machine_version::builders::PublishStateMachineVersionInputBuilder::default()
     }
 }
@@ -59,18 +59,12 @@ pub struct PublishStateMachineVersionInputBuilder {
 }
 impl PublishStateMachineVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_arn = input;
         self
     }
@@ -122,13 +116,11 @@ impl PublishStateMachineVersionInputBuilder {
         crate::operation::publish_state_machine_version::PublishStateMachineVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::publish_state_machine_version::PublishStateMachineVersionInput {
-                state_machine_arn: self.state_machine_arn,
-                revision_id: self.revision_id,
-                description: self.description,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::publish_state_machine_version::PublishStateMachineVersionInput {
+            state_machine_arn: self.state_machine_arn,
+            revision_id: self.revision_id,
+            description: self.description,
+        })
     }
 }
 impl ::std::fmt::Debug for PublishStateMachineVersionInputBuilder {

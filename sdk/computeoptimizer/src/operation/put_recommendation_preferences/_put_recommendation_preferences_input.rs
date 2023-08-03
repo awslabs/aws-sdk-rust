@@ -19,16 +19,14 @@ pub struct PutRecommendationPreferencesInput {
     /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     #[doc(hidden)]
-    pub enhanced_infrastructure_metrics:
-        ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
+    pub enhanced_infrastructure_metrics: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
     /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
     /// <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
     #[doc(hidden)]
-    pub inferred_workload_types:
-        ::std::option::Option<crate::types::InferredWorkloadTypesPreference>,
+    pub inferred_workload_types: ::std::option::Option<crate::types::InferredWorkloadTypesPreference>,
     /// <p>The provider of the external metrics recommendation preference to create or update.</p>
     /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
@@ -54,9 +52,7 @@ impl PutRecommendationPreferencesInput {
     /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
     /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn enhanced_infrastructure_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnhancedInfrastructureMetrics> {
+    pub fn enhanced_infrastructure_metrics(&self) -> ::std::option::Option<&crate::types::EnhancedInfrastructureMetrics> {
         self.enhanced_infrastructure_metrics.as_ref()
     }
     /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
@@ -64,42 +60,33 @@ impl PutRecommendationPreferencesInput {
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn inferred_workload_types(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferredWorkloadTypesPreference> {
+    pub fn inferred_workload_types(&self) -> ::std::option::Option<&crate::types::InferredWorkloadTypesPreference> {
         self.inferred_workload_types.as_ref()
     }
     /// <p>The provider of the external metrics recommendation preference to create or update.</p>
     /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn external_metrics_preference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExternalMetricsPreference> {
+    pub fn external_metrics_preference(&self) -> ::std::option::Option<&crate::types::ExternalMetricsPreference> {
         self.external_metrics_preference.as_ref()
     }
 }
 impl PutRecommendationPreferencesInput {
     /// Creates a new builder-style object to manufacture [`PutRecommendationPreferencesInput`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput).
-    pub fn builder() -> crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesInputBuilder{
+    pub fn builder() -> crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesInputBuilder {
         crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesInputBuilder::default()
     }
 }
 
 /// A builder for [`PutRecommendationPreferencesInput`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecommendationPreferencesInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
-    pub(crate) enhanced_infrastructure_metrics:
-        ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
-    pub(crate) inferred_workload_types:
-        ::std::option::Option<crate::types::InferredWorkloadTypesPreference>,
-    pub(crate) external_metrics_preference:
-        ::std::option::Option<crate::types::ExternalMetricsPreference>,
+    pub(crate) enhanced_infrastructure_metrics: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
+    pub(crate) inferred_workload_types: ::std::option::Option<crate::types::InferredWorkloadTypesPreference>,
+    pub(crate) external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
 }
 impl PutRecommendationPreferencesInputBuilder {
     /// <p>The target resource type of the recommendation preference to create.</p>
@@ -114,10 +101,7 @@ impl PutRecommendationPreferencesInputBuilder {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -154,29 +138,21 @@ impl PutRecommendationPreferencesInputBuilder {
     /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
     /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn enhanced_infrastructure_metrics(
-        mut self,
-        input: crate::types::EnhancedInfrastructureMetrics,
-    ) -> Self {
+    pub fn enhanced_infrastructure_metrics(mut self, input: crate::types::EnhancedInfrastructureMetrics) -> Self {
         self.enhanced_infrastructure_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
     /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_enhanced_infrastructure_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
-    ) -> Self {
+    pub fn set_enhanced_infrastructure_metrics(mut self, input: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>) -> Self {
         self.enhanced_infrastructure_metrics = input;
         self
     }
     /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
     /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_enhanced_infrastructure_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnhancedInfrastructureMetrics> {
+    pub fn get_enhanced_infrastructure_metrics(&self) -> &::std::option::Option<crate::types::EnhancedInfrastructureMetrics> {
         &self.enhanced_infrastructure_metrics
     }
     /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
@@ -184,10 +160,7 @@ impl PutRecommendationPreferencesInputBuilder {
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn inferred_workload_types(
-        mut self,
-        input: crate::types::InferredWorkloadTypesPreference,
-    ) -> Self {
+    pub fn inferred_workload_types(mut self, input: crate::types::InferredWorkloadTypesPreference) -> Self {
         self.inferred_workload_types = ::std::option::Option::Some(input);
         self
     }
@@ -196,10 +169,7 @@ impl PutRecommendationPreferencesInputBuilder {
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_inferred_workload_types(
-        mut self,
-        input: ::std::option::Option<crate::types::InferredWorkloadTypesPreference>,
-    ) -> Self {
+    pub fn set_inferred_workload_types(mut self, input: ::std::option::Option<crate::types::InferredWorkloadTypesPreference>) -> Self {
         self.inferred_workload_types = input;
         self
     }
@@ -208,19 +178,14 @@ impl PutRecommendationPreferencesInputBuilder {
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_inferred_workload_types(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferredWorkloadTypesPreference> {
+    pub fn get_inferred_workload_types(&self) -> &::std::option::Option<crate::types::InferredWorkloadTypesPreference> {
         &self.inferred_workload_types
     }
     /// <p>The provider of the external metrics recommendation preference to create or update.</p>
     /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn external_metrics_preference(
-        mut self,
-        input: crate::types::ExternalMetricsPreference,
-    ) -> Self {
+    pub fn external_metrics_preference(mut self, input: crate::types::ExternalMetricsPreference) -> Self {
         self.external_metrics_preference = ::std::option::Option::Some(input);
         self
     }
@@ -228,10 +193,7 @@ impl PutRecommendationPreferencesInputBuilder {
     /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_external_metrics_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalMetricsPreference>,
-    ) -> Self {
+    pub fn set_external_metrics_preference(mut self, input: ::std::option::Option<crate::types::ExternalMetricsPreference>) -> Self {
         self.external_metrics_preference = input;
         self
     }
@@ -239,9 +201,7 @@ impl PutRecommendationPreferencesInputBuilder {
     /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_external_metrics_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
+    pub fn get_external_metrics_preference(&self) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
         &self.external_metrics_preference
     }
     /// Consumes the builder and constructs a [`PutRecommendationPreferencesInput`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput).
@@ -251,14 +211,12 @@ impl PutRecommendationPreferencesInputBuilder {
         crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput {
-                resource_type: self.resource_type,
-                scope: self.scope,
-                enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
-                inferred_workload_types: self.inferred_workload_types,
-                external_metrics_preference: self.external_metrics_preference,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput {
+            resource_type: self.resource_type,
+            scope: self.scope,
+            enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
+            inferred_workload_types: self.inferred_workload_types,
+            external_metrics_preference: self.external_metrics_preference,
+        })
     }
 }

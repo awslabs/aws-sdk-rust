@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateProfilingGroupOutput`](crate::operation::update_profiling_group::UpdateProfilingGroupOutput) with field(s):
     ///   - [`profiling_group(Option<ProfilingGroupDescription>)`](crate::operation::update_profiling_group::UpdateProfilingGroupOutput::profiling_group): <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
     /// - On failure, responds with [`SdkError<UpdateProfilingGroupError>`](crate::operation::update_profiling_group::UpdateProfilingGroupError)
-    pub fn update_profiling_group(
-        &self,
-    ) -> crate::operation::update_profiling_group::builders::UpdateProfilingGroupFluentBuilder {
-        crate::operation::update_profiling_group::builders::UpdateProfilingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_profiling_group(&self) -> crate::operation::update_profiling_group::builders::UpdateProfilingGroupFluentBuilder {
+        crate::operation::update_profiling_group::builders::UpdateProfilingGroupFluentBuilder::new(self.handle.clone())
     }
 }

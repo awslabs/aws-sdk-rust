@@ -19,10 +19,7 @@ impl super::Client {
     ///   - [`inference_experiments(Option<Vec<InferenceExperimentSummary>>)`](crate::operation::list_inference_experiments::ListInferenceExperimentsOutput::inference_experiments): <p>List of inference experiments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_inference_experiments::ListInferenceExperimentsOutput::next_token): <p>The token to use when calling the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListInferenceExperimentsError>`](crate::operation::list_inference_experiments::ListInferenceExperimentsError)
-    pub fn list_inference_experiments(
-        &self,
-    ) -> crate::operation::list_inference_experiments::builders::ListInferenceExperimentsFluentBuilder
-    {
+    pub fn list_inference_experiments(&self) -> crate::operation::list_inference_experiments::builders::ListInferenceExperimentsFluentBuilder {
         crate::operation::list_inference_experiments::builders::ListInferenceExperimentsFluentBuilder::new(self.handle.clone())
     }
 }

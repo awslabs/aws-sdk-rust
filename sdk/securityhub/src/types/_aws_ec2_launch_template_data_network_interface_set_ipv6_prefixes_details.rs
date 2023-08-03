@@ -16,18 +16,14 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder {
     pub(crate) ipv6_prefix: ::std::option::Option<::std::string::String>,
 }
@@ -47,9 +43,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder {
         &self.ipv6_prefix
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
         crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
             ipv6_prefix: self.ipv6_prefix,
         }

@@ -23,9 +23,7 @@ impl TargetGroup {
 
 /// A builder for [`TargetGroup`](crate::types::TargetGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetGroupBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

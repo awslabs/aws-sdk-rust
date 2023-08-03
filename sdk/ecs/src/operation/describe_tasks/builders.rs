@@ -10,10 +10,7 @@ impl DescribeTasksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_tasks::DescribeTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tasks::DescribeTasksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_tasks::DescribeTasksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_tasks();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeTasksFluentBuilder {
         }
     }
     /// Access the DescribeTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_tasks::builders::DescribeTasksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_tasks::builders::DescribeTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -139,10 +131,7 @@ impl DescribeTasksFluentBuilder {
         self
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tasks(input);
         self
     }
@@ -160,10 +149,7 @@ impl DescribeTasksFluentBuilder {
         self
     }
     /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskField>>) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }

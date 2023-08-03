@@ -10,10 +10,7 @@ impl CreateUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_user::CreateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user::CreateUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_user();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_user::CreateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_user::CreateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_user::CreateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_user::CreateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
     > {
         self.customize_middleware().await
@@ -132,32 +120,21 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-    pub fn set_authentication_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationMode>,
-    ) -> Self {
+    pub fn set_authentication_mode(mut self, input: ::std::option::Option<crate::types::AuthenticationMode>) -> Self {
         self.inner = self.inner.set_authentication_mode(input);
         self
     }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-    pub fn get_authentication_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+    pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
         self.inner.get_authentication_mode()
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_string(input.into());
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn set_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_string(input);
         self
     }
@@ -175,10 +152,7 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

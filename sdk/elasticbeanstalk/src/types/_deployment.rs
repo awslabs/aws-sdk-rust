@@ -56,9 +56,7 @@ impl Deployment {
 
 /// A builder for [`Deployment`](crate::types::Deployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentBuilder {
     pub(crate) version_label: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_id: ::std::option::Option<i64>,
@@ -67,18 +65,12 @@ pub struct DeploymentBuilder {
 }
 impl DeploymentBuilder {
     /// <p>The version label of the application version in the deployment.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version label of the application version in the deployment.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -137,10 +129,7 @@ impl DeploymentBuilder {
     }
     /// <p>For in-progress deployments, the time that the deployment started.</p>
     /// <p>For completed deployments, the time that the deployment ended.</p>
-    pub fn set_deployment_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deployment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deployment_time = input;
         self
     }

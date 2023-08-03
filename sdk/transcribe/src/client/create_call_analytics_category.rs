@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateCallAnalyticsCategoryOutput`](crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput) with field(s):
     ///   - [`category_properties(Option<CategoryProperties>)`](crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput::category_properties): <p>Provides you with the properties of your new category, including its associated rules.</p>
     /// - On failure, responds with [`SdkError<CreateCallAnalyticsCategoryError>`](crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError)
-    pub fn create_call_analytics_category(&self) -> crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryFluentBuilder{
+    pub fn create_call_analytics_category(
+        &self,
+    ) -> crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryFluentBuilder {
         crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryFluentBuilder::new(self.handle.clone())
     }
 }

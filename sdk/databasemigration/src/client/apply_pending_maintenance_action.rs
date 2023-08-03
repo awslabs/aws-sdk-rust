@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ApplyPendingMaintenanceActionOutput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput) with field(s):
     ///   - [`resource_pending_maintenance_actions(Option<ResourcePendingMaintenanceActions>)`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput::resource_pending_maintenance_actions): <p>The DMS resource that the pending maintenance action will be applied to.</p>
     /// - On failure, responds with [`SdkError<ApplyPendingMaintenanceActionError>`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError)
-    pub fn apply_pending_maintenance_action(&self) -> crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionFluentBuilder{
+    pub fn apply_pending_maintenance_action(
+        &self,
+    ) -> crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionFluentBuilder {
         crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionFluentBuilder::new(self.handle.clone())
     }
 }

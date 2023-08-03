@@ -10,10 +10,7 @@ impl CreateModelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_model::CreateModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model::CreateModelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_model();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateModelFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_model::CreateModel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_model::CreateModel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateModelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CreateModelFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_model::CreateModel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_model::CreateModel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
     > {
         self.customize_middleware().await
@@ -148,10 +136,7 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p>The data schema for the ML model being created. </p>
-    pub fn set_dataset_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetSchema>,
-    ) -> Self {
+    pub fn set_dataset_schema(mut self, input: ::std::option::Option<crate::types::DatasetSchema>) -> Self {
         self.inner = self.inner.set_dataset_schema(input);
         self
     }
@@ -160,25 +145,17 @@ impl CreateModelFluentBuilder {
         self.inner.get_dataset_schema()
     }
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-    pub fn labels_input_configuration(
-        mut self,
-        input: crate::types::LabelsInputConfiguration,
-    ) -> Self {
+    pub fn labels_input_configuration(mut self, input: crate::types::LabelsInputConfiguration) -> Self {
         self.inner = self.inner.labels_input_configuration(input);
         self
     }
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-    pub fn set_labels_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelsInputConfiguration>,
-    ) -> Self {
+    pub fn set_labels_input_configuration(mut self, input: ::std::option::Option<crate::types::LabelsInputConfiguration>) -> Self {
         self.inner = self.inner.set_labels_input_configuration(input);
         self
     }
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-    pub fn get_labels_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
+    pub fn get_labels_input_configuration(&self) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
         self.inner.get_labels_input_configuration()
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
@@ -201,17 +178,12 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
-    pub fn set_training_data_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_training_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_training_data_start_time(input);
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
-    pub fn get_training_data_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_training_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_training_data_start_time()
     }
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
@@ -220,17 +192,12 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
-    pub fn set_training_data_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_training_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_training_data_end_time(input);
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
-    pub fn get_training_data_end_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_training_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_training_data_end_time()
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
@@ -239,17 +206,12 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
-    pub fn set_evaluation_data_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_evaluation_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_evaluation_data_start_time(input);
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
-    pub fn get_evaluation_data_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_evaluation_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_evaluation_data_start_time()
     }
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
@@ -258,17 +220,12 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
-    pub fn set_evaluation_data_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_evaluation_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_evaluation_data_end_time(input);
         self
     }
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
-    pub fn get_evaluation_data_end_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_evaluation_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_evaluation_data_end_time()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
@@ -287,42 +244,28 @@ impl CreateModelFluentBuilder {
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn data_pre_processing_configuration(
-        mut self,
-        input: crate::types::DataPreProcessingConfiguration,
-    ) -> Self {
+    pub fn data_pre_processing_configuration(mut self, input: crate::types::DataPreProcessingConfiguration) -> Self {
         self.inner = self.inner.data_pre_processing_configuration(input);
         self
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn set_data_pre_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataPreProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_data_pre_processing_configuration(mut self, input: ::std::option::Option<crate::types::DataPreProcessingConfiguration>) -> Self {
         self.inner = self.inner.set_data_pre_processing_configuration(input);
         self
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn get_data_pre_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataPreProcessingConfiguration> {
+    pub fn get_data_pre_processing_configuration(&self) -> &::std::option::Option<crate::types::DataPreProcessingConfiguration> {
         self.inner.get_data_pre_processing_configuration()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_side_kms_key_id(input.into());
         self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-    pub fn set_server_side_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_side_kms_key_id(input);
         self
     }
@@ -340,10 +283,7 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p> Any tags associated with the ML model being created. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -352,18 +292,12 @@ impl CreateModelFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-    pub fn off_condition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn off_condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.off_condition(input.into());
         self
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-    pub fn set_off_condition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_off_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_off_condition(input);
         self
     }

@@ -29,9 +29,7 @@ impl LockRuleInput {
 
 /// A builder for [`LockRuleInput`](crate::operation::lock_rule::LockRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LockRuleInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) lock_configuration: ::std::option::Option<crate::types::LockConfiguration>,
@@ -57,26 +55,16 @@ impl LockRuleInputBuilder {
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn set_lock_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LockConfiguration>,
-    ) -> Self {
+    pub fn set_lock_configuration(mut self, input: ::std::option::Option<crate::types::LockConfiguration>) -> Self {
         self.lock_configuration = input;
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn get_lock_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LockConfiguration> {
+    pub fn get_lock_configuration(&self) -> &::std::option::Option<crate::types::LockConfiguration> {
         &self.lock_configuration
     }
     /// Consumes the builder and constructs a [`LockRuleInput`](crate::operation::lock_rule::LockRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::lock_rule::LockRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::lock_rule::LockRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::lock_rule::LockRuleInput {
             identifier: self.identifier,
             lock_configuration: self.lock_configuration,

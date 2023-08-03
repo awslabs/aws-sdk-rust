@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEvaluationOutput`](crate::operation::update_evaluation::UpdateEvaluationOutput) with field(s):
     ///   - [`evaluation_id(Option<String>)`](crate::operation::update_evaluation::UpdateEvaluationOutput::evaluation_id): <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
     /// - On failure, responds with [`SdkError<UpdateEvaluationError>`](crate::operation::update_evaluation::UpdateEvaluationError)
-    pub fn update_evaluation(
-        &self,
-    ) -> crate::operation::update_evaluation::builders::UpdateEvaluationFluentBuilder {
-        crate::operation::update_evaluation::builders::UpdateEvaluationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_evaluation(&self) -> crate::operation::update_evaluation::builders::UpdateEvaluationFluentBuilder {
+        crate::operation::update_evaluation::builders::UpdateEvaluationFluentBuilder::new(self.handle.clone())
     }
 }

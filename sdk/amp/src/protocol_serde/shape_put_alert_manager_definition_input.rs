@@ -7,9 +7,7 @@ pub fn ser_put_alert_manager_definition_input(
         object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.data {
-        object
-            .key("data")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("data").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     Ok(())
 }

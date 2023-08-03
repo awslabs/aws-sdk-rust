@@ -30,9 +30,7 @@ impl DomainEndpointOptions {
 
 /// A builder for [`DomainEndpointOptions`](crate::types::DomainEndpointOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainEndpointOptionsBuilder {
     pub(crate) enforce_https: ::std::option::Option<bool>,
     pub(crate) tls_security_policy: ::std::option::Option<crate::types::TlsSecurityPolicy>,
@@ -58,17 +56,12 @@ impl DomainEndpointOptionsBuilder {
         self
     }
     /// <p>The minimum required TLS version</p>
-    pub fn set_tls_security_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::TlsSecurityPolicy>,
-    ) -> Self {
+    pub fn set_tls_security_policy(mut self, input: ::std::option::Option<crate::types::TlsSecurityPolicy>) -> Self {
         self.tls_security_policy = input;
         self
     }
     /// <p>The minimum required TLS version</p>
-    pub fn get_tls_security_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::TlsSecurityPolicy> {
+    pub fn get_tls_security_policy(&self) -> &::std::option::Option<crate::types::TlsSecurityPolicy> {
         &self.tls_security_policy
     }
     /// Consumes the builder and constructs a [`DomainEndpointOptions`](crate::types::DomainEndpointOptions).

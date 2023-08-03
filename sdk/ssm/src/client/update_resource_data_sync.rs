@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`sync_source(ResourceDataSyncSource)`](crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncFluentBuilder::sync_source) / [`set_sync_source(Option<ResourceDataSyncSource>)`](crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncFluentBuilder::set_sync_source): <p>Specify information about the data sources to synchronize.</p>
     /// - On success, responds with [`UpdateResourceDataSyncOutput`](crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput)
     /// - On failure, responds with [`SdkError<UpdateResourceDataSyncError>`](crate::operation::update_resource_data_sync::UpdateResourceDataSyncError)
-    pub fn update_resource_data_sync(
-        &self,
-    ) -> crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncFluentBuilder
-    {
+    pub fn update_resource_data_sync(&self) -> crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncFluentBuilder {
         crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncFluentBuilder::new(self.handle.clone())
     }
 }

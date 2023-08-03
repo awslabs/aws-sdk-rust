@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for SendTestEventNotificationOutput {
 }
 impl SendTestEventNotificationOutput {
     /// Creates a new builder-style object to manufacture [`SendTestEventNotificationOutput`](crate::operation::send_test_event_notification::SendTestEventNotificationOutput).
-    pub fn builder() -> crate::operation::send_test_event_notification::builders::SendTestEventNotificationOutputBuilder{
+    pub fn builder() -> crate::operation::send_test_event_notification::builders::SendTestEventNotificationOutputBuilder {
         crate::operation::send_test_event_notification::builders::SendTestEventNotificationOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendTestEventNotificationOutput`](crate::operation::send_test_event_notification::SendTestEventNotificationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendTestEventNotificationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl SendTestEventNotificationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendTestEventNotificationOutput`](crate::operation::send_test_event_notification::SendTestEventNotificationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::send_test_event_notification::SendTestEventNotificationOutput {
+    pub fn build(self) -> crate::operation::send_test_event_notification::SendTestEventNotificationOutput {
         crate::operation::send_test_event_notification::SendTestEventNotificationOutput {
             _request_id: self._request_id,
         }

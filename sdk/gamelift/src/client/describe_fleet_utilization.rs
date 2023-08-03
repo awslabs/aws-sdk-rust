@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`fleet_utilization(Option<Vec<FleetUtilization>>)`](crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput::fleet_utilization): <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetUtilizationError>`](crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError)
-    pub fn describe_fleet_utilization(
-        &self,
-    ) -> crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationFluentBuilder
-    {
+    pub fn describe_fleet_utilization(&self) -> crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationFluentBuilder {
         crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationFluentBuilder::new(self.handle.clone())
     }
 }

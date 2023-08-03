@@ -18,10 +18,7 @@ pub fn ser_eks_pod_properties(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_eks_container::ser_eks_container(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_eks_container::ser_eks_container(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -50,17 +47,9 @@ pub fn ser_eks_pod_properties(
 
 pub(crate) fn de_eks_pod_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::EksPodProperties>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::EksPodProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -70,69 +59,47 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "serviceAccountName" => {
                             builder = builder.set_service_account_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "hostNetwork" => {
-                            builder = builder.set_host_network(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_host_network(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "dnsPolicy" => {
                             builder = builder.set_dns_policy(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "containers" => {
-                            builder = builder.set_containers(
-                                crate::protocol_serde::shape_eks_containers::de_eks_containers(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_containers(crate::protocol_serde::shape_eks_containers::de_eks_containers(tokens)?);
                         }
                         "volumes" => {
-                            builder = builder.set_volumes(
-                                crate::protocol_serde::shape_eks_volumes::de_eks_volumes(tokens)?,
-                            );
+                            builder = builder.set_volumes(crate::protocol_serde::shape_eks_volumes::de_eks_volumes(tokens)?);
                         }
                         "metadata" => {
-                            builder = builder.set_metadata(
-                                crate::protocol_serde::shape_eks_metadata::de_eks_metadata(tokens)?,
-                            );
+                            builder = builder.set_metadata(crate::protocol_serde::shape_eks_metadata::de_eks_metadata(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

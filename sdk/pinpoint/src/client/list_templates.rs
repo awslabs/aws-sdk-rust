@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput) with field(s):
     ///   - [`templates_response(Option<TemplatesResponse>)`](crate::operation::list_templates::ListTemplatesOutput::templates_response): <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
     /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
-    pub fn list_templates(
-        &self,
-    ) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
-        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_templates(&self) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
+        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

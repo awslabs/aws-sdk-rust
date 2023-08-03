@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeWatchlistOutput {
 }
 impl DescribeWatchlistOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWatchlistOutput`](crate::operation::describe_watchlist::DescribeWatchlistOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_watchlist::builders::DescribeWatchlistOutputBuilder {
+    pub fn builder() -> crate::operation::describe_watchlist::builders::DescribeWatchlistOutputBuilder {
         crate::operation::describe_watchlist::builders::DescribeWatchlistOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWatchlistOutput`](crate::operation::describe_watchlist::DescribeWatchlistOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWatchlistOutputBuilder {
     pub(crate) watchlist: ::std::option::Option<crate::types::Watchlist>,
     _request_id: Option<String>,

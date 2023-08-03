@@ -37,10 +37,7 @@ impl ListRegexPatternSetsFluentBuilder {
         }
     }
     /// Access the ListRegexPatternSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListRegexPatternSetsFluentBuilder {
             crate::operation::list_regex_pattern_sets::ListRegexPatternSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListRegexPatternSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListRegexPatternSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListRegexPatternSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ListRegexPatternSetsFluentBuilder {
             crate::operation::list_regex_pattern_sets::ListRegexPatternSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError>,
     > {
         self.customize_middleware().await
     }

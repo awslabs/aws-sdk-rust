@@ -9,10 +9,10 @@ impl super::Client {
     ///   - [`subnet_ids(Option<Vec<String>>)`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput::subnet_ids): <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
     ///   - [`security_group_ids(Option<Vec<String>>)`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput::security_group_ids): <p>The security groups associated with access to the provided subnets.</p>
     /// - On failure, responds with [`SdkError<DescribeCompanyNetworkConfigurationError>`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_company_network_configuration(&self) -> crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder{
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn describe_company_network_configuration(
+        &self,
+    ) -> crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder {
         crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

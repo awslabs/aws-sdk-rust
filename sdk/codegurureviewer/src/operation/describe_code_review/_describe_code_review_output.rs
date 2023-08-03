@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeCodeReviewOutput {
 }
 impl DescribeCodeReviewOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeReviewOutput`](crate::operation::describe_code_review::DescribeCodeReviewOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_code_review::builders::DescribeCodeReviewOutputBuilder {
+    pub fn builder() -> crate::operation::describe_code_review::builders::DescribeCodeReviewOutputBuilder {
         crate::operation::describe_code_review::builders::DescribeCodeReviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCodeReviewOutput`](crate::operation::describe_code_review::DescribeCodeReviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCodeReviewOutputBuilder {
     pub(crate) code_review: ::std::option::Option<crate::types::CodeReview>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeCodeReviewOutputBuilder {
         self
     }
     /// <p>Information about the code review.</p>
-    pub fn set_code_review(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeReview>,
-    ) -> Self {
+    pub fn set_code_review(mut self, input: ::std::option::Option<crate::types::CodeReview>) -> Self {
         self.code_review = input;
         self
     }

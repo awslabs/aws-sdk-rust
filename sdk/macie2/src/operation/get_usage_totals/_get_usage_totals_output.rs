@@ -35,9 +35,7 @@ impl GetUsageTotalsOutput {
 
 /// A builder for [`GetUsageTotalsOutput`](crate::operation::get_usage_totals::GetUsageTotalsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsageTotalsOutputBuilder {
     pub(crate) time_range: ::std::option::Option<crate::types::TimeRange>,
     pub(crate) usage_totals: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,
@@ -70,17 +68,12 @@ impl GetUsageTotalsOutputBuilder {
         self
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-    pub fn set_usage_totals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,
-    ) -> Self {
+    pub fn set_usage_totals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>) -> Self {
         self.usage_totals = input;
         self
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-    pub fn get_usage_totals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>> {
+    pub fn get_usage_totals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>> {
         &self.usage_totals
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -41,10 +41,7 @@ impl CreateSlotTypeVersionFluentBuilder {
         }
     }
     /// Access the CreateSlotTypeVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl CreateSlotTypeVersionFluentBuilder {
             crate::operation::create_slot_type_version::CreateSlotTypeVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_slot_type_version::CreateSlotTypeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_slot_type_version::CreateSlotTypeVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl CreateSlotTypeVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl CreateSlotTypeVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_slot_type_version::CreateSlotTypeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_slot_type_version::CreateSlotTypeVersionError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl CreateSlotTypeVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_slot_type_version::CreateSlotTypeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_slot_type_version::CreateSlotTypeVersionError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl CreateSlotTypeVersionFluentBuilder {
             crate::operation::create_slot_type_version::CreateSlotTypeVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_slot_type_version::CreateSlotTypeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_slot_type_version::CreateSlotTypeVersionError>,
     > {
         self.customize_middleware().await
     }

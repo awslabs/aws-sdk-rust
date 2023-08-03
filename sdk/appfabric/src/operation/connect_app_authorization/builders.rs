@@ -26,8 +26,7 @@ impl ConnectAppAuthorizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConnectAppAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationInputBuilder,
+    inner: crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationInputBuilder,
 }
 impl ConnectAppAuthorizationFluentBuilder {
     /// Creates a new `ConnectAppAuthorization`.
@@ -38,10 +37,7 @@ impl ConnectAppAuthorizationFluentBuilder {
         }
     }
     /// Access the ConnectAppAuthorization as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ConnectAppAuthorizationFluentBuilder {
             crate::operation::connect_app_authorization::ConnectAppAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_app_authorization::ConnectAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_app_authorization::ConnectAppAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ConnectAppAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ConnectAppAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_app_authorization::ConnectAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_app_authorization::ConnectAppAuthorizationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ConnectAppAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_app_authorization::ConnectAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_app_authorization::ConnectAppAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl ConnectAppAuthorizationFluentBuilder {
             crate::operation::connect_app_authorization::ConnectAppAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_app_authorization::ConnectAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_app_authorization::ConnectAppAuthorizationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
@@ -145,25 +124,17 @@ impl ConnectAppAuthorizationFluentBuilder {
         self.inner.get_app_bundle_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn app_authorization_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_authorization_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_authorization_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn set_app_authorization_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_authorization_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_authorization_identifier(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn get_app_authorization_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_app_authorization_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_authorization_identifier()
     }
     /// <p>Contains OAuth2 authorization information.</p>
@@ -174,10 +145,7 @@ impl ConnectAppAuthorizationFluentBuilder {
     }
     /// <p>Contains OAuth2 authorization information.</p>
     /// <p>This is required if the app authorization for the request is configured with an OAuth2 (<code>oauth2</code>) authorization type.</p>
-    pub fn set_auth_request(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthRequest>,
-    ) -> Self {
+    pub fn set_auth_request(mut self, input: ::std::option::Option<crate::types::AuthRequest>) -> Self {
         self.inner = self.inner.set_auth_request(input);
         self
     }

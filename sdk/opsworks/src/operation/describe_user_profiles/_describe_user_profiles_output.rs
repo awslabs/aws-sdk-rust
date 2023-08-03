@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeUserProfilesOutput {
 }
 impl DescribeUserProfilesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserProfilesOutput`](crate::operation::describe_user_profiles::DescribeUserProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_user_profiles::builders::DescribeUserProfilesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_user_profiles::builders::DescribeUserProfilesOutputBuilder {
         crate::operation::describe_user_profiles::builders::DescribeUserProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserProfilesOutput`](crate::operation::describe_user_profiles::DescribeUserProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserProfilesOutputBuilder {
     pub(crate) user_profiles: ::std::option::Option<::std::vec::Vec<crate::types::UserProfile>>,
     _request_id: Option<String>,
@@ -50,17 +47,12 @@ impl DescribeUserProfilesOutputBuilder {
         self
     }
     /// <p>A <code>Users</code> object that describes the specified users.</p>
-    pub fn set_user_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserProfile>>,
-    ) -> Self {
+    pub fn set_user_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserProfile>>) -> Self {
         self.user_profiles = input;
         self
     }
     /// <p>A <code>Users</code> object that describes the specified users.</p>
-    pub fn get_user_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserProfile>> {
+    pub fn get_user_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserProfile>> {
         &self.user_profiles
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -17,9 +17,7 @@ impl MultiplexVideoSettings {
         self.constant_bitrate
     }
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
-    pub fn statmux_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiplexStatmuxVideoSettings> {
+    pub fn statmux_settings(&self) -> ::std::option::Option<&crate::types::MultiplexStatmuxVideoSettings> {
         self.statmux_settings.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl MultiplexVideoSettings {
 
 /// A builder for [`MultiplexVideoSettings`](crate::types::MultiplexVideoSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiplexVideoSettingsBuilder {
     pub(crate) constant_bitrate: ::std::option::Option<i32>,
     pub(crate) statmux_settings: ::std::option::Option<crate::types::MultiplexStatmuxVideoSettings>,
@@ -60,17 +56,12 @@ impl MultiplexVideoSettingsBuilder {
         self
     }
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
-    pub fn set_statmux_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexStatmuxVideoSettings>,
-    ) -> Self {
+    pub fn set_statmux_settings(mut self, input: ::std::option::Option<crate::types::MultiplexStatmuxVideoSettings>) -> Self {
         self.statmux_settings = input;
         self
     }
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
-    pub fn get_statmux_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexStatmuxVideoSettings> {
+    pub fn get_statmux_settings(&self) -> &::std::option::Option<crate::types::MultiplexStatmuxVideoSettings> {
         &self.statmux_settings
     }
     /// Consumes the builder and constructs a [`MultiplexVideoSettings`](crate::types::MultiplexVideoSettings).

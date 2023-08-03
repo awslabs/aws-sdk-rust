@@ -23,9 +23,7 @@ impl StaticValue {
 
 /// A builder for [`StaticValue`](crate::types::StaticValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StaticValueBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl StaticValueBuilder {
         self
     }
     /// <p>A list of values. For example, the ARN of the assumed role. </p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -55,8 +50,6 @@ impl StaticValueBuilder {
     }
     /// Consumes the builder and constructs a [`StaticValue`](crate::types::StaticValue).
     pub fn build(self) -> crate::types::StaticValue {
-        crate::types::StaticValue {
-            values: self.values,
-        }
+        crate::types::StaticValue { values: self.values }
     }
 }

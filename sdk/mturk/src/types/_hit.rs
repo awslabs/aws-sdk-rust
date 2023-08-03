@@ -54,8 +54,7 @@ pub struct Hit {
     pub requester_annotation: ::std::option::Option<::std::string::String>,
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
     #[doc(hidden)]
-    pub qualification_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
+    pub qualification_requirements: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
     #[doc(hidden)]
     pub hit_review_status: ::std::option::Option<crate::types::HitReviewStatus>,
@@ -135,9 +134,7 @@ impl Hit {
         self.requester_annotation.as_deref()
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::QualificationRequirement]> {
+    pub fn qualification_requirements(&self) -> ::std::option::Option<&[crate::types::QualificationRequirement]> {
         self.qualification_requirements.as_deref()
     }
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
@@ -166,9 +163,7 @@ impl Hit {
 
 /// A builder for [`Hit`](crate::types::Hit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HitBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) hit_type_id: ::std::option::Option<::std::string::String>,
@@ -186,8 +181,7 @@ pub struct HitBuilder {
     pub(crate) expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) assignment_duration_in_seconds: ::std::option::Option<i64>,
     pub(crate) requester_annotation: ::std::option::Option<::std::string::String>,
-    pub(crate) qualification_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
+    pub(crate) qualification_requirements: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
     pub(crate) hit_review_status: ::std::option::Option<crate::types::HitReviewStatus>,
     pub(crate) number_of_assignments_pending: ::std::option::Option<i32>,
     pub(crate) number_of_assignments_available: ::std::option::Option<i32>,
@@ -237,18 +231,12 @@ impl HitBuilder {
         &self.hit_group_id
     }
     /// <p> The ID of the HIT Layout of this HIT.</p>
-    pub fn hit_layout_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hit_layout_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_layout_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the HIT Layout of this HIT.</p>
-    pub fn set_hit_layout_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hit_layout_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hit_layout_id = input;
         self
     }
@@ -262,10 +250,7 @@ impl HitBuilder {
         self
     }
     /// <p> The date and time the HIT was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -391,10 +376,7 @@ impl HitBuilder {
         self
     }
     /// <p>The date and time the HIT expires.</p>
-    pub fn set_expiration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration = input;
         self
     }
@@ -417,18 +399,12 @@ impl HitBuilder {
         &self.assignment_duration_in_seconds
     }
     /// <p> An arbitrary data field the Requester who created the HIT can use. This field is visible only to the creator of the HIT.</p>
-    pub fn requester_annotation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_annotation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_annotation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An arbitrary data field the Requester who created the HIT can use. This field is visible only to the creator of the HIT.</p>
-    pub fn set_requester_annotation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requester_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.requester_annotation = input;
         self
     }
@@ -441,27 +417,19 @@ impl HitBuilder {
     /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
     ///
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(
-        mut self,
-        input: crate::types::QualificationRequirement,
-    ) -> Self {
+    pub fn qualification_requirements(mut self, input: crate::types::QualificationRequirement) -> Self {
         let mut v = self.qualification_requirements.unwrap_or_default();
         v.push(input);
         self.qualification_requirements = ::std::option::Option::Some(v);
         self
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn set_qualification_requirements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
-    ) -> Self {
+    pub fn set_qualification_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>) -> Self {
         self.qualification_requirements = input;
         self
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn get_qualification_requirements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>> {
+    pub fn get_qualification_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>> {
         &self.qualification_requirements
     }
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
@@ -470,10 +438,7 @@ impl HitBuilder {
         self
     }
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
-    pub fn set_hit_review_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HitReviewStatus>,
-    ) -> Self {
+    pub fn set_hit_review_status(mut self, input: ::std::option::Option<crate::types::HitReviewStatus>) -> Self {
         self.hit_review_status = input;
         self
     }
@@ -501,10 +466,7 @@ impl HitBuilder {
         self
     }
     /// <p> The number of assignments for this HIT that are available for Workers to accept.</p>
-    pub fn set_number_of_assignments_available(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_number_of_assignments_available(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_assignments_available = input;
         self
     }
@@ -518,10 +480,7 @@ impl HitBuilder {
         self
     }
     /// <p> The number of assignments for this HIT that have been approved or rejected.</p>
-    pub fn set_number_of_assignments_completed(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_number_of_assignments_completed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_assignments_completed = input;
         self
     }

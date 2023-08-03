@@ -26,7 +26,7 @@ impl AssociateDiscoveredResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDiscoveredResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder,
+    inner: crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder,
 }
 impl AssociateDiscoveredResourceFluentBuilder {
     /// Creates a new `AssociateDiscoveredResource`.
@@ -37,7 +37,7 @@ impl AssociateDiscoveredResourceFluentBuilder {
         }
     }
     /// Access the AssociateDiscoveredResource as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateDiscoveredResourceFluentBuilder {
             crate::operation::associate_discovered_resource::AssociateDiscoveredResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_discovered_resource::AssociateDiscoveredResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_discovered_resource::AssociateDiscoveredResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateDiscoveredResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateDiscoveredResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_discovered_resource::AssociateDiscoveredResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_discovered_resource::AssociateDiscoveredResourceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateDiscoveredResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_discovered_resource::AssociateDiscoveredResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_discovered_resource::AssociateDiscoveredResourceError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl AssociateDiscoveredResourceFluentBuilder {
             crate::operation::associate_discovered_resource::AssociateDiscoveredResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_discovered_resource::AssociateDiscoveredResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_discovered_resource::AssociateDiscoveredResourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
@@ -141,18 +124,12 @@ impl AssociateDiscoveredResourceFluentBuilder {
         self.inner.get_progress_update_stream()
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }
@@ -166,17 +143,12 @@ impl AssociateDiscoveredResourceFluentBuilder {
         self
     }
     /// <p>Object representing a Resource.</p>
-    pub fn set_discovered_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveredResource>,
-    ) -> Self {
+    pub fn set_discovered_resource(mut self, input: ::std::option::Option<crate::types::DiscoveredResource>) -> Self {
         self.inner = self.inner.set_discovered_resource(input);
         self
     }
     /// <p>Object representing a Resource.</p>
-    pub fn get_discovered_resource(
-        &self,
-    ) -> &::std::option::Option<crate::types::DiscoveredResource> {
+    pub fn get_discovered_resource(&self) -> &::std::option::Option<crate::types::DiscoveredResource> {
         self.inner.get_discovered_resource()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`successful(Option<Vec<Target>>)`](crate::operation::register_targets::RegisterTargetsOutput::successful): <p>The targets that were successfully registered.</p>
     ///   - [`unsuccessful(Option<Vec<TargetFailure>>)`](crate::operation::register_targets::RegisterTargetsOutput::unsuccessful): <p>The targets that were not registered.</p>
     /// - On failure, responds with [`SdkError<RegisterTargetsError>`](crate::operation::register_targets::RegisterTargetsError)
-    pub fn register_targets(
-        &self,
-    ) -> crate::operation::register_targets::builders::RegisterTargetsFluentBuilder {
-        crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_targets(&self) -> crate::operation::register_targets::builders::RegisterTargetsFluentBuilder {
+        crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::new(self.handle.clone())
     }
 }

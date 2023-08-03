@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociatePrincipalWithPortfolioOutput
 }
 impl AssociatePrincipalWithPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePrincipalWithPortfolioOutput`](crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput).
-    pub fn builder() -> crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioOutputBuilder{
+    pub fn builder() -> crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioOutputBuilder {
         crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociatePrincipalWithPortfolioOutput`](crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatePrincipalWithPortfolioOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AssociatePrincipalWithPortfolioOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociatePrincipalWithPortfolioOutput`](crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput
-    {
+    pub fn build(self) -> crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput {
         crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput {
             _request_id: self._request_id,
         }

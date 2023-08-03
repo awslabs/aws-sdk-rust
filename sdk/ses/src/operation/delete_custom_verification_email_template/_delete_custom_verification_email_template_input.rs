@@ -16,33 +16,25 @@ impl DeleteCustomVerificationEmailTemplateInput {
 }
 impl DeleteCustomVerificationEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomVerificationEmailTemplateInput`](crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateInput).
-    pub fn builder() -> crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateInputBuilder{
+    pub fn builder() -> crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateInputBuilder {
         crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomVerificationEmailTemplateInput`](crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomVerificationEmailTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomVerificationEmailTemplateInputBuilder {
     /// <p>The name of the custom verification email template that you want to delete.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom verification email template that you want to delete.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -51,12 +43,16 @@ impl DeleteCustomVerificationEmailTemplateInputBuilder {
         &self.template_name
     }
     /// Consumes the builder and constructs a [`DeleteCustomVerificationEmailTemplateInput`](crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateInput {
-                template_name: self.template_name
-                ,
-            }
+                template_name: self.template_name,
+            },
         )
     }
 }

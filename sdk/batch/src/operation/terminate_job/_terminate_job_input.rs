@@ -30,9 +30,7 @@ impl TerminateJobInput {
 
 /// A builder for [`TerminateJobInput`](crate::operation::terminate_job::TerminateJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -67,12 +65,7 @@ impl TerminateJobInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`TerminateJobInput`](crate::operation::terminate_job::TerminateJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_job::TerminateJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_job::TerminateJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_job::TerminateJobInput {
             job_id: self.job_id,
             reason: self.reason,

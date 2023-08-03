@@ -36,37 +36,28 @@ impl DescribeMaintenanceWindowExecutionTasksInput {
 }
 impl DescribeMaintenanceWindowExecutionTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowExecutionTasksInput`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksInput).
-    pub fn builder() -> crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksInputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksInputBuilder {
         crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowExecutionTasksInput`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionTasksInputBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionTasksInputBuilder {
     /// <p>The ID of the maintenance window execution whose task executions should be retrieved.</p>
-    pub fn window_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution whose task executions should be retrieved.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_execution_id = input;
         self
     }
@@ -86,17 +77,12 @@ impl DescribeMaintenanceWindowExecutionTasksInputBuilder {
         self
     }
     /// <p>Optional filters used to scope down the returned tasks. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Optional filters used to scope down the returned tasks. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -128,18 +114,19 @@ impl DescribeMaintenanceWindowExecutionTasksInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowExecutionTasksInput`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksInput {
-                window_execution_id: self.window_execution_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                window_execution_id: self.window_execution_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

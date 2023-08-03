@@ -31,18 +31,14 @@ impl ListAssessmentTargetsInput {
 }
 impl ListAssessmentTargetsInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentTargetsInput`](crate::operation::list_assessment_targets::ListAssessmentTargetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_targets::builders::ListAssessmentTargetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_targets::builders::ListAssessmentTargetsInputBuilder {
         crate::operation::list_assessment_targets::builders::ListAssessmentTargetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentTargetsInput`](crate::operation::list_assessment_targets::ListAssessmentTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentTargetsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::AssessmentTargetFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +53,7 @@ impl ListAssessmentTargetsInputBuilder {
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentTargetFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::AssessmentTargetFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -100,16 +93,12 @@ impl ListAssessmentTargetsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssessmentTargetsInput`](crate::operation::list_assessment_targets::ListAssessmentTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_assessment_targets::ListAssessmentTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_assessment_targets::ListAssessmentTargetsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_assessment_targets::ListAssessmentTargetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_assessment_targets::ListAssessmentTargetsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

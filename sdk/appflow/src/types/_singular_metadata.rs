@@ -13,9 +13,7 @@ impl SingularMetadata {
 
 /// A builder for [`SingularMetadata`](crate::types::SingularMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SingularMetadataBuilder {}
 impl SingularMetadataBuilder {
     /// Consumes the builder and constructs a [`SingularMetadata`](crate::types::SingularMetadata).

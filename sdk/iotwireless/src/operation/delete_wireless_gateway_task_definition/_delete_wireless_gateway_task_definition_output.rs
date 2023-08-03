@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWirelessGatewayTaskDefinitionOu
 }
 impl DeleteWirelessGatewayTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionOutput).
-    pub fn builder() -> crate::operation::delete_wireless_gateway_task_definition::builders::DeleteWirelessGatewayTaskDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_wireless_gateway_task_definition::builders::DeleteWirelessGatewayTaskDefinitionOutputBuilder {
         crate::operation::delete_wireless_gateway_task_definition::builders::DeleteWirelessGatewayTaskDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWirelessGatewayTaskDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteWirelessGatewayTaskDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionOutput).
-    pub fn build(self) -> crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionOutput{
+    pub fn build(self) -> crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionOutput {
         crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionOutput {
             _request_id: self._request_id,
         }

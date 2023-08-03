@@ -10,10 +10,7 @@ impl DeleteFeatureGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_feature_group::DeleteFeatureGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_feature_group::DeleteFeatureGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_feature_group::DeleteFeatureGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_feature_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteFeatureGroupFluentBuilder {
         }
     }
     /// Access the DeleteFeatureGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_feature_group::builders::DeleteFeatureGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_feature_group::builders::DeleteFeatureGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteFeatureGroupFluentBuilder {
             crate::operation::delete_feature_group::DeleteFeatureGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_feature_group::DeleteFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_feature_group::DeleteFeatureGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteFeatureGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteFeatureGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_feature_group::DeleteFeatureGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_feature_group::DeleteFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_feature_group::DeleteFeatureGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteFeatureGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_feature_group::DeleteFeatureGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_feature_group::DeleteFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_feature_group::DeleteFeatureGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteFeatureGroupFluentBuilder {
             crate::operation::delete_feature_group::DeleteFeatureGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_feature_group::DeleteFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_feature_group::DeleteFeatureGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }

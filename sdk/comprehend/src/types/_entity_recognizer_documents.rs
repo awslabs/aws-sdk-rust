@@ -37,9 +37,7 @@ impl EntityRecognizerDocuments {
 
 /// A builder for [`EntityRecognizerDocuments`](crate::types::EntityRecognizerDocuments).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityRecognizerDocumentsBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) test_s3_uri: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl EntityRecognizerDocumentsBuilder {
         self
     }
     /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
-    pub fn set_input_format(
-        mut self,
-        input: ::std::option::Option<crate::types::InputFormat>,
-    ) -> Self {
+    pub fn set_input_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
         self.input_format = input;
         self
     }

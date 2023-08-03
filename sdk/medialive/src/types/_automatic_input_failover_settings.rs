@@ -9,8 +9,7 @@ pub struct AutomaticInputFailoverSettings {
     pub error_clear_time_msec: ::std::option::Option<i32>,
     /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
     #[doc(hidden)]
-    pub failover_conditions:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>,
+    pub failover_conditions: ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>,
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
     #[doc(hidden)]
     pub input_preference: ::std::option::Option<crate::types::InputPreference>,
@@ -45,13 +44,10 @@ impl AutomaticInputFailoverSettings {
 
 /// A builder for [`AutomaticInputFailoverSettings`](crate::types::AutomaticInputFailoverSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomaticInputFailoverSettingsBuilder {
     pub(crate) error_clear_time_msec: ::std::option::Option<i32>,
-    pub(crate) failover_conditions:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>,
+    pub(crate) failover_conditions: ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>,
     pub(crate) input_preference: ::std::option::Option<crate::types::InputPreference>,
     pub(crate) secondary_input_id: ::std::option::Option<::std::string::String>,
 }
@@ -82,17 +78,12 @@ impl AutomaticInputFailoverSettingsBuilder {
         self
     }
     /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
-    pub fn set_failover_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>,
-    ) -> Self {
+    pub fn set_failover_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>) -> Self {
         self.failover_conditions = input;
         self
     }
     /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
-    pub fn get_failover_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>> {
+    pub fn get_failover_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>> {
         &self.failover_conditions
     }
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
@@ -101,10 +92,7 @@ impl AutomaticInputFailoverSettingsBuilder {
         self
     }
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
-    pub fn set_input_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::InputPreference>,
-    ) -> Self {
+    pub fn set_input_preference(mut self, input: ::std::option::Option<crate::types::InputPreference>) -> Self {
         self.input_preference = input;
         self
     }
@@ -113,18 +101,12 @@ impl AutomaticInputFailoverSettingsBuilder {
         &self.input_preference
     }
     /// The input ID of the secondary input in the automatic input failover pair.
-    pub fn secondary_input_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secondary_input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secondary_input_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The input ID of the secondary input in the automatic input failover pair.
-    pub fn set_secondary_input_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secondary_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secondary_input_id = input;
         self
     }

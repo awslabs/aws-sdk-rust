@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput::next_marker): <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`sql_injection_match_sets(Option<Vec<SqlInjectionMatchSetSummary>>)`](crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput::sql_injection_match_sets): <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListSqlInjectionMatchSetsError>`](crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError)
-    pub fn list_sql_injection_match_sets(&self) -> crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsFluentBuilder{
+    pub fn list_sql_injection_match_sets(&self) -> crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsFluentBuilder {
         crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsFluentBuilder::new(self.handle.clone())
     }
 }

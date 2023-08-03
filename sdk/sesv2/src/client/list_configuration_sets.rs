@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`configuration_sets(Option<Vec<String>>)`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput::configuration_sets): <p>An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput::next_token): <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<ListConfigurationSetsError>`](crate::operation::list_configuration_sets::ListConfigurationSetsError)
-    pub fn list_configuration_sets(
-        &self,
-    ) -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder
-    {
-        crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_configuration_sets(&self) -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder {
+        crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::new(self.handle.clone())
     }
 }

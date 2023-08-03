@@ -29,17 +29,14 @@ impl GetRouteResponseInput {
 }
 impl GetRouteResponseInput {
     /// Creates a new builder-style object to manufacture [`GetRouteResponseInput`](crate::operation::get_route_response::GetRouteResponseInput).
-    pub fn builder() -> crate::operation::get_route_response::builders::GetRouteResponseInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_route_response::builders::GetRouteResponseInputBuilder {
         crate::operation::get_route_response::builders::GetRouteResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRouteResponseInput`](crate::operation::get_route_response::GetRouteResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRouteResponseInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_id: ::std::option::Option<::std::string::String>,
@@ -75,18 +72,12 @@ impl GetRouteResponseInputBuilder {
         &self.route_id
     }
     /// <p>The route response ID.</p>
-    pub fn route_response_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_response_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route response ID.</p>
-    pub fn set_route_response_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_response_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl GetRouteResponseInputBuilder {
     /// Consumes the builder and constructs a [`GetRouteResponseInput`](crate::operation::get_route_response::GetRouteResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_route_response::GetRouteResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_route_response::GetRouteResponseInput {
-                api_id: self.api_id,
-                route_id: self.route_id,
-                route_response_id: self.route_response_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_route_response::GetRouteResponseInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_route_response::GetRouteResponseInput {
+            api_id: self.api_id,
+            route_id: self.route_id,
+            route_response_id: self.route_response_id,
+        })
     }
 }

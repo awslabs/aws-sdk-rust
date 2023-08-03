@@ -23,9 +23,7 @@ impl Entity {
 
 /// A builder for [`Entity`](crate::types::Entity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
 }

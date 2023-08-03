@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`action_type(Option<ActionType>)`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput::action_type): <p>The type of managed action.</p>
     ///   - [`status(Option<String>)`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput::status): <p>The status of the managed action.</p>
     /// - On failure, responds with [`SdkError<ApplyEnvironmentManagedActionError>`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError)
-    pub fn apply_environment_managed_action(&self) -> crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionFluentBuilder{
+    pub fn apply_environment_managed_action(
+        &self,
+    ) -> crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionFluentBuilder {
         crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionFluentBuilder::new(self.handle.clone())
     }
 }

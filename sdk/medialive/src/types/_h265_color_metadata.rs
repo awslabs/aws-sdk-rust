@@ -38,13 +38,7 @@
 /// H265 Color Metadata
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H265ColorMetadata {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H265ColorMetadata {
         match s {
             "IGNORE" => H265ColorMetadata::Ignore,
             "INSERT" => H265ColorMetadata::Insert,
-            other => {
-                H265ColorMetadata::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => H265ColorMetadata::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

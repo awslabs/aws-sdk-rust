@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`facet(TypedLinkFacet)`](crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder::facet) / [`set_facet(Option<TypedLinkFacet>)`](crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder::set_facet): <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     /// - On success, responds with [`CreateTypedLinkFacetOutput`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetOutput)
     /// - On failure, responds with [`SdkError<CreateTypedLinkFacetError>`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetError)
-    pub fn create_typed_link_facet(
-        &self,
-    ) -> crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder
-    {
-        crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_typed_link_facet(&self) -> crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder {
+        crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder::new(self.handle.clone())
     }
 }

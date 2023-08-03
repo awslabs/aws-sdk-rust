@@ -5,8 +5,7 @@
 pub struct ListApplicationDependenciesOutput {
     /// <p>An array of application summaries nested in the application.</p>
     #[doc(hidden)]
-    pub dependencies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDependencySummary>>,
+    pub dependencies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDependencySummary>>,
     /// <p>The token to request the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListApplicationDependenciesOutput {
 }
 impl ListApplicationDependenciesOutput {
     /// <p>An array of application summaries nested in the application.</p>
-    pub fn dependencies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationDependencySummary]> {
+    pub fn dependencies(&self) -> ::std::option::Option<&[crate::types::ApplicationDependencySummary]> {
         self.dependencies.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListApplicationDependenciesOutput {
 }
 impl ListApplicationDependenciesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationDependenciesOutput`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput).
-    pub fn builder() -> crate::operation::list_application_dependencies::builders::ListApplicationDependenciesOutputBuilder{
+    pub fn builder() -> crate::operation::list_application_dependencies::builders::ListApplicationDependenciesOutputBuilder {
         crate::operation::list_application_dependencies::builders::ListApplicationDependenciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationDependenciesOutput`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationDependenciesOutputBuilder {
-    pub(crate) dependencies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDependencySummary>>,
+    pub(crate) dependencies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDependencySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListApplicationDependenciesOutputBuilder {
         self
     }
     /// <p>An array of application summaries nested in the application.</p>
-    pub fn set_dependencies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDependencySummary>>,
-    ) -> Self {
+    pub fn set_dependencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDependencySummary>>) -> Self {
         self.dependencies = input;
         self
     }
     /// <p>An array of application summaries nested in the application.</p>
-    pub fn get_dependencies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationDependencySummary>> {
+    pub fn get_dependencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationDependencySummary>> {
         &self.dependencies
     }
     /// <p>The token to request the next page of results.</p>
@@ -97,9 +86,7 @@ impl ListApplicationDependenciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationDependenciesOutput`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_application_dependencies::ListApplicationDependenciesOutput {
+    pub fn build(self) -> crate::operation::list_application_dependencies::ListApplicationDependenciesOutput {
         crate::operation::list_application_dependencies::ListApplicationDependenciesOutput {
             dependencies: self.dependencies,
             next_token: self.next_token,

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteIpamPoolOutput`](crate::operation::delete_ipam_pool::DeleteIpamPoolOutput) with field(s):
     ///   - [`ipam_pool(Option<IpamPool>)`](crate::operation::delete_ipam_pool::DeleteIpamPoolOutput::ipam_pool): <p>Information about the results of the deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteIpamPoolError>`](crate::operation::delete_ipam_pool::DeleteIpamPoolError)
-    pub fn delete_ipam_pool(
-        &self,
-    ) -> crate::operation::delete_ipam_pool::builders::DeleteIpamPoolFluentBuilder {
-        crate::operation::delete_ipam_pool::builders::DeleteIpamPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ipam_pool(&self) -> crate::operation::delete_ipam_pool::builders::DeleteIpamPoolFluentBuilder {
+        crate::operation::delete_ipam_pool::builders::DeleteIpamPoolFluentBuilder::new(self.handle.clone())
     }
 }

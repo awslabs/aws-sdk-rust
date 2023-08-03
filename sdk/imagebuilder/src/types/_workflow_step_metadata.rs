@@ -60,9 +60,7 @@ impl WorkflowStepMetadata {
         self.status.as_ref()
     }
     /// <p>Reports on the rollback status of the step, if applicable.</p>
-    pub fn rollback_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkflowStepExecutionRollbackStatus> {
+    pub fn rollback_status(&self) -> ::std::option::Option<&crate::types::WorkflowStepExecutionRollbackStatus> {
         self.rollback_status.as_ref()
     }
     /// <p>Detailed output message that the workflow step provides at runtime.</p>
@@ -95,17 +93,14 @@ impl WorkflowStepMetadata {
 
 /// A builder for [`WorkflowStepMetadata`](crate::types::WorkflowStepMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowStepMetadataBuilder {
     pub(crate) step_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>,
-    pub(crate) rollback_status:
-        ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>,
+    pub(crate) rollback_status: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::string::String>,
@@ -114,18 +109,12 @@ pub struct WorkflowStepMetadataBuilder {
 }
 impl WorkflowStepMetadataBuilder {
     /// <p>A unique identifier for the workflow step, assigned at runtime.</p>
-    pub fn step_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the workflow step, assigned at runtime.</p>
-    pub fn set_step_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_execution_id = input;
         self
     }
@@ -181,10 +170,7 @@ impl WorkflowStepMetadataBuilder {
         self
     }
     /// <p>Runtime status for the workflow step.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -193,25 +179,17 @@ impl WorkflowStepMetadataBuilder {
         &self.status
     }
     /// <p>Reports on the rollback status of the step, if applicable.</p>
-    pub fn rollback_status(
-        mut self,
-        input: crate::types::WorkflowStepExecutionRollbackStatus,
-    ) -> Self {
+    pub fn rollback_status(mut self, input: crate::types::WorkflowStepExecutionRollbackStatus) -> Self {
         self.rollback_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reports on the rollback status of the step, if applicable.</p>
-    pub fn set_rollback_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>,
-    ) -> Self {
+    pub fn set_rollback_status(mut self, input: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>) -> Self {
         self.rollback_status = input;
         self
     }
     /// <p>Reports on the rollback status of the step, if applicable.</p>
-    pub fn get_rollback_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus> {
+    pub fn get_rollback_status(&self) -> &::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus> {
         &self.rollback_status
     }
     /// <p>Detailed output message that the workflow step provides at runtime.</p>

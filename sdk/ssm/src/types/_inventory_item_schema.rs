@@ -44,14 +44,11 @@ impl InventoryItemSchema {
 
 /// A builder for [`InventoryItemSchema`](crate::types::InventoryItemSchema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryItemSchemaBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl InventoryItemSchemaBuilder {
@@ -95,17 +92,12 @@ impl InventoryItemSchemaBuilder {
         self
     }
     /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>> {
         &self.attributes
     }
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>

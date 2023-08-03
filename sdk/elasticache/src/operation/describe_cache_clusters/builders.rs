@@ -42,10 +42,7 @@ impl DescribeCacheClustersFluentBuilder {
         }
     }
     /// Access the DescribeCacheClusters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_cache_clusters::builders::DescribeCacheClustersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_cache_clusters::builders::DescribeCacheClustersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl DescribeCacheClustersFluentBuilder {
             crate::operation::describe_cache_clusters::DescribeCacheClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_clusters::DescribeCacheClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_clusters::DescribeCacheClustersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl DescribeCacheClustersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl DescribeCacheClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cache_clusters::DescribeCacheClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_clusters::DescribeCacheClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_clusters::DescribeCacheClustersError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl DescribeCacheClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cache_clusters::DescribeCacheClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_clusters::DescribeCacheClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_clusters::DescribeCacheClustersError>,
     > {
         self.send_middleware().await
     }
@@ -122,36 +110,23 @@ impl DescribeCacheClustersFluentBuilder {
             crate::operation::describe_cache_clusters::DescribeCacheClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_clusters::DescribeCacheClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_clusters::DescribeCacheClustersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator {
-        crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator {
+        crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator::new(self.handle, self.inner)
     }
     /// <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_cluster_id(input.into());
         self
     }
     /// <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_cluster_id(input);
         self
     }
@@ -209,26 +184,16 @@ impl DescribeCacheClustersFluentBuilder {
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.</p>
     pub fn show_cache_clusters_not_in_replication_groups(mut self, input: bool) -> Self {
-        self.inner = self
-            .inner
-            .show_cache_clusters_not_in_replication_groups(input);
+        self.inner = self.inner.show_cache_clusters_not_in_replication_groups(input);
         self
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.</p>
-    pub fn set_show_cache_clusters_not_in_replication_groups(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_show_cache_clusters_not_in_replication_groups(input);
+    pub fn set_show_cache_clusters_not_in_replication_groups(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_show_cache_clusters_not_in_replication_groups(input);
         self
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.</p>
-    pub fn get_show_cache_clusters_not_in_replication_groups(
-        &self,
-    ) -> &::std::option::Option<bool> {
-        self.inner
-            .get_show_cache_clusters_not_in_replication_groups()
+    pub fn get_show_cache_clusters_not_in_replication_groups(&self) -> &::std::option::Option<bool> {
+        self.inner.get_show_cache_clusters_not_in_replication_groups()
     }
 }

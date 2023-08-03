@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRoleAliasOutput {
 }
 impl DeleteRoleAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRoleAliasOutput`](crate::operation::delete_role_alias::DeleteRoleAliasOutput).
-    pub fn builder() -> crate::operation::delete_role_alias::builders::DeleteRoleAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_role_alias::builders::DeleteRoleAliasOutputBuilder {
         crate::operation::delete_role_alias::builders::DeleteRoleAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRoleAliasOutput`](crate::operation::delete_role_alias::DeleteRoleAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoleAliasOutputBuilder {
     _request_id: Option<String>,
 }

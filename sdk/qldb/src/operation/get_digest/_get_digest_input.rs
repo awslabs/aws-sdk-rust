@@ -22,9 +22,7 @@ impl GetDigestInput {
 
 /// A builder for [`GetDigestInput`](crate::operation::get_digest::GetDigestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDigestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetDigestInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetDigestInput`](crate::operation::get_digest::GetDigestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_digest::GetDigestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_digest::GetDigestInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_digest::GetDigestInput { name: self.name })
     }
 }

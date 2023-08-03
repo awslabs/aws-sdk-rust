@@ -10,10 +10,7 @@ impl UpdateAuthorizerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_authorizer::UpdateAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_authorizer::UpdateAuthorizerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_authorizer::UpdateAuthorizerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_authorizer();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateAuthorizerFluentBuilder {
         }
     }
     /// Access the UpdateAuthorizer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateAuthorizerFluentBuilder {
             crate::operation::update_authorizer::UpdateAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_authorizer::UpdateAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_authorizer::UpdateAuthorizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateAuthorizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_authorizer::UpdateAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_authorizer::UpdateAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_authorizer::UpdateAuthorizerError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_authorizer::UpdateAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_authorizer::UpdateAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_authorizer::UpdateAuthorizerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl UpdateAuthorizerFluentBuilder {
             crate::operation::update_authorizer::UpdateAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_authorizer::UpdateAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_authorizer::UpdateAuthorizerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorizer_name(input.into());
         self
     }
     /// <p>The authorizer name.</p>
-    pub fn set_authorizer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorizer_name(input);
         self
     }
@@ -144,18 +122,12 @@ impl UpdateAuthorizerFluentBuilder {
         self.inner.get_authorizer_name()
     }
     /// <p>The ARN of the authorizer's Lambda function.</p>
-    pub fn authorizer_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorizer_function_arn(input.into());
         self
     }
     /// <p>The ARN of the authorizer's Lambda function.</p>
-    pub fn set_authorizer_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorizer_function_arn(input);
         self
     }
@@ -164,18 +136,12 @@ impl UpdateAuthorizerFluentBuilder {
         self.inner.get_authorizer_function_arn()
     }
     /// <p>The key used to extract the token from the HTTP headers. </p>
-    pub fn token_key_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token_key_name(input.into());
         self
     }
     /// <p>The key used to extract the token from the HTTP headers. </p>
-    pub fn set_token_key_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_token_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token_key_name(input);
         self
     }
@@ -199,19 +165,13 @@ impl UpdateAuthorizerFluentBuilder {
     /// <p>The public keys used to verify the token signature.</p>
     pub fn set_token_signing_public_keys(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_token_signing_public_keys(input);
         self
     }
     /// <p>The public keys used to verify the token signature.</p>
-    pub fn get_token_signing_public_keys(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_token_signing_public_keys(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_token_signing_public_keys()
     }
     /// <p>The status of the update authorizer request.</p>
@@ -220,10 +180,7 @@ impl UpdateAuthorizerFluentBuilder {
         self
     }
     /// <p>The status of the update authorizer request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizerStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AuthorizerStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

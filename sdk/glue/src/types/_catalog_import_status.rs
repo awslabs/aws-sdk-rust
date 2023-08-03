@@ -37,9 +37,7 @@ impl CatalogImportStatus {
 
 /// A builder for [`CatalogImportStatus`](crate::types::CatalogImportStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CatalogImportStatusBuilder {
     pub(crate) import_completed: ::std::option::Option<bool>,
     pub(crate) import_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,10 +64,7 @@ impl CatalogImportStatusBuilder {
         self
     }
     /// <p>The time that the migration was started.</p>
-    pub fn set_import_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_import_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.import_time = input;
         self
     }

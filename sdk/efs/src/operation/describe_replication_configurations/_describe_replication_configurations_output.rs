@@ -5,8 +5,7 @@
 pub struct DescribeReplicationConfigurationsOutput {
     /// <p>The collection of replication configurations that is returned.</p>
     #[doc(hidden)]
-    pub replications:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationDescription>>,
+    pub replications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationDescription>>,
     /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeReplicationConfigurationsOutput {
 }
 impl DescribeReplicationConfigurationsOutput {
     /// <p>The collection of replication configurations that is returned.</p>
-    pub fn replications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationConfigurationDescription]> {
+    pub fn replications(&self) -> ::std::option::Option<&[crate::types::ReplicationConfigurationDescription]> {
         self.replications.as_deref()
     }
     /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationConfigurationsOutp
 }
 impl DescribeReplicationConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationsOutput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput).
-    pub fn builder() -> crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsOutputBuilder {
         crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationConfigurationsOutput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationsOutputBuilder {
-    pub(crate) replications:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationDescription>>,
+    pub(crate) replications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,30 +47,19 @@ impl DescribeReplicationConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_replications`](Self::set_replications).
     ///
     /// <p>The collection of replication configurations that is returned.</p>
-    pub fn replications(
-        mut self,
-        input: crate::types::ReplicationConfigurationDescription,
-    ) -> Self {
+    pub fn replications(mut self, input: crate::types::ReplicationConfigurationDescription) -> Self {
         let mut v = self.replications.unwrap_or_default();
         v.push(input);
         self.replications = ::std::option::Option::Some(v);
         self
     }
     /// <p>The collection of replication configurations that is returned.</p>
-    pub fn set_replications(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ReplicationConfigurationDescription>,
-        >,
-    ) -> Self {
+    pub fn set_replications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationDescription>>) -> Self {
         self.replications = input;
         self
     }
     /// <p>The collection of replication configurations that is returned.</p>
-    pub fn get_replications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationDescription>>
-    {
+    pub fn get_replications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationDescription>> {
         &self.replications
     }
     /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
@@ -103,12 +86,10 @@ impl DescribeReplicationConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationConfigurationsOutput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput).
-    pub fn build(self) -> crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput{
+    pub fn build(self) -> crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput {
         crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput {
-            replications: self.replications
-            ,
-            next_token: self.next_token
-            ,
+            replications: self.replications,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

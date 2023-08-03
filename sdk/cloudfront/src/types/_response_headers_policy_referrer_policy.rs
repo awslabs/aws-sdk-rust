@@ -53,9 +53,7 @@ impl ResponseHeadersPolicyReferrerPolicy {
 
 /// A builder for [`ResponseHeadersPolicyReferrerPolicy`](crate::types::ResponseHeadersPolicyReferrerPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyReferrerPolicyBuilder {
     pub(crate) r#override: ::std::option::Option<bool>,
     pub(crate) referrer_policy: ::std::option::Option<crate::types::ReferrerPolicyList>,
@@ -103,10 +101,7 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
     /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
-    pub fn set_referrer_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferrerPolicyList>,
-    ) -> Self {
+    pub fn set_referrer_policy(mut self, input: ::std::option::Option<crate::types::ReferrerPolicyList>) -> Self {
         self.referrer_policy = input;
         self
     }

@@ -49,9 +49,7 @@ impl DeregisterTypeInput {
 
 /// A builder for [`DeregisterTypeInput`](crate::operation::deregister_type::DeregisterTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTypeInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RegistryType>,
@@ -127,10 +125,7 @@ impl DeregisterTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterTypeInput`](crate::operation::deregister_type::DeregisterTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_type::DeregisterTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::deregister_type::DeregisterTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_type::DeregisterTypeInput {
             arn: self.arn,
             r#type: self.r#type,

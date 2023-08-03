@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`server_id(Option<String>)`](crate::operation::describe_access::DescribeAccessOutput::server_id): <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     ///   - [`access(Option<DescribedAccess>)`](crate::operation::describe_access::DescribeAccessOutput::access): <p>The external identifier of the server that the access is attached to.</p>
     /// - On failure, responds with [`SdkError<DescribeAccessError>`](crate::operation::describe_access::DescribeAccessError)
-    pub fn describe_access(
-        &self,
-    ) -> crate::operation::describe_access::builders::DescribeAccessFluentBuilder {
-        crate::operation::describe_access::builders::DescribeAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_access(&self) -> crate::operation::describe_access::builders::DescribeAccessFluentBuilder {
+        crate::operation::describe_access::builders::DescribeAccessFluentBuilder::new(self.handle.clone())
     }
 }

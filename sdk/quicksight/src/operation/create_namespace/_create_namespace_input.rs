@@ -43,9 +43,7 @@ impl CreateNamespaceInput {
 
 /// A builder for [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNamespaceInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct CreateNamespaceInputBuilder {
 }
 impl CreateNamespaceInputBuilder {
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -93,10 +85,7 @@ impl CreateNamespaceInputBuilder {
         self
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-    pub fn set_identity_store(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityStore>,
-    ) -> Self {
+    pub fn set_identity_store(mut self, input: ::std::option::Option<crate::types::IdentityStore>) -> Self {
         self.identity_store = input;
         self
     }
@@ -116,10 +105,7 @@ impl CreateNamespaceInputBuilder {
         self
     }
     /// <p>The tags that you want to associate with the namespace that you're creating.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -130,10 +116,7 @@ impl CreateNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_namespace::CreateNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_namespace::CreateNamespaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_namespace::CreateNamespaceInput {
             aws_account_id: self.aws_account_id,
             namespace: self.namespace,

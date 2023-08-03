@@ -23,9 +23,7 @@ impl PipelinePauseStateSettings {
 
 /// A builder for [`PipelinePauseStateSettings`](crate::types::PipelinePauseStateSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelinePauseStateSettingsBuilder {
     pub(crate) pipeline_id: ::std::option::Option<crate::types::PipelineId>,
 }
@@ -36,10 +34,7 @@ impl PipelinePauseStateSettingsBuilder {
         self
     }
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-    pub fn set_pipeline_id(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineId>,
-    ) -> Self {
+    pub fn set_pipeline_id(mut self, input: ::std::option::Option<crate::types::PipelineId>) -> Self {
         self.pipeline_id = input;
         self
     }

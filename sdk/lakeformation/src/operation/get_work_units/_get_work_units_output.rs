@@ -43,14 +43,11 @@ impl GetWorkUnitsOutput {
 
 /// A builder for [`GetWorkUnitsOutput`](crate::operation::get_work_units::GetWorkUnitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkUnitsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
-    pub(crate) work_unit_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>>,
+    pub(crate) work_unit_ranges: ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>>,
     _request_id: Option<String>,
 }
 impl GetWorkUnitsOutputBuilder {
@@ -94,17 +91,12 @@ impl GetWorkUnitsOutputBuilder {
         self
     }
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-    pub fn set_work_unit_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>>,
-    ) -> Self {
+    pub fn set_work_unit_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>>) -> Self {
         self.work_unit_ranges = input;
         self
     }
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-    pub fn get_work_unit_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>> {
+    pub fn get_work_unit_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>> {
         &self.work_unit_ranges
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

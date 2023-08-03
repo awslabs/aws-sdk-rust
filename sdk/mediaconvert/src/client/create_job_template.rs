@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput) with field(s):
     ///   - [`job_template(Option<JobTemplate>)`](crate::operation::create_job_template::CreateJobTemplateOutput::job_template): A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     /// - On failure, responds with [`SdkError<CreateJobTemplateError>`](crate::operation::create_job_template::CreateJobTemplateError)
-    pub fn create_job_template(
-        &self,
-    ) -> crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder {
-        crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_job_template(&self) -> crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder {
+        crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder::new(self.handle.clone())
     }
 }

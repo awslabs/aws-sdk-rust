@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`contact_flow_modules_summary_list(Option<Vec<ContactFlowModuleSummary>>)`](crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput::contact_flow_modules_summary_list): <p>Information about the flow module.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListContactFlowModulesError>`](crate::operation::list_contact_flow_modules::ListContactFlowModulesError)
-    pub fn list_contact_flow_modules(
-        &self,
-    ) -> crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesFluentBuilder
-    {
+    pub fn list_contact_flow_modules(&self) -> crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesFluentBuilder {
         crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesFluentBuilder::new(self.handle.clone())
     }
 }

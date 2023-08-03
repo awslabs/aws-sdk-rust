@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteInternetGatewayOutput {
 }
 impl DeleteInternetGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInternetGatewayOutput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayOutputBuilder {
         crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInternetGatewayOutput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInternetGatewayOutputBuilder {
     _request_id: Option<String>,
 }

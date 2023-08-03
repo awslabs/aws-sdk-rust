@@ -13,9 +13,7 @@ pub struct NetworkInterfacePermissionState {
 }
 impl NetworkInterfacePermissionState {
     /// <p>The state of the permission.</p>
-    pub fn state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInterfacePermissionStateCode> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::NetworkInterfacePermissionStateCode> {
         self.state.as_ref()
     }
     /// <p>A status message, if applicable.</p>
@@ -32,9 +30,7 @@ impl NetworkInterfacePermissionState {
 
 /// A builder for [`NetworkInterfacePermissionState`](crate::types::NetworkInterfacePermissionState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInterfacePermissionStateBuilder {
     pub(crate) state: ::std::option::Option<crate::types::NetworkInterfacePermissionStateCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -46,32 +42,21 @@ impl NetworkInterfacePermissionStateBuilder {
         self
     }
     /// <p>The state of the permission.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfacePermissionStateCode>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::NetworkInterfacePermissionStateCode>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of the permission.</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInterfacePermissionStateCode> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::NetworkInterfacePermissionStateCode> {
         &self.state
     }
     /// <p>A status message, if applicable.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A status message, if applicable.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

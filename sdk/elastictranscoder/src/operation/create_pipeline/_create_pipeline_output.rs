@@ -38,9 +38,7 @@ impl CreatePipelineOutput {
 
 /// A builder for [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePipelineOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
@@ -75,10 +73,7 @@ impl CreatePipelineOutputBuilder {
     }
     /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>) -> Self {
         self.warnings = input;
         self
     }

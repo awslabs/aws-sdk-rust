@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`features(Vec<DetectorFeatureConfiguration>)`](crate::operation::update_detector::builders::UpdateDetectorFluentBuilder::features) / [`set_features(Option<Vec<DetectorFeatureConfiguration>>)`](crate::operation::update_detector::builders::UpdateDetectorFluentBuilder::set_features): <p>Provides the features that will be updated for the detector.</p>
     /// - On success, responds with [`UpdateDetectorOutput`](crate::operation::update_detector::UpdateDetectorOutput)
     /// - On failure, responds with [`SdkError<UpdateDetectorError>`](crate::operation::update_detector::UpdateDetectorError)
-    pub fn update_detector(
-        &self,
-    ) -> crate::operation::update_detector::builders::UpdateDetectorFluentBuilder {
-        crate::operation::update_detector::builders::UpdateDetectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_detector(&self) -> crate::operation::update_detector::builders::UpdateDetectorFluentBuilder {
+        crate::operation::update_detector::builders::UpdateDetectorFluentBuilder::new(self.handle.clone())
     }
 }

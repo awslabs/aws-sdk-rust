@@ -26,7 +26,7 @@ impl UpdateInferenceExperimentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInferenceExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentInputBuilder,
+    inner: crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentInputBuilder,
 }
 impl UpdateInferenceExperimentFluentBuilder {
     /// Creates a new `UpdateInferenceExperiment`.
@@ -37,7 +37,7 @@ impl UpdateInferenceExperimentFluentBuilder {
         }
     }
     /// Access the UpdateInferenceExperiment as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateInferenceExperimentFluentBuilder {
             crate::operation::update_inference_experiment::UpdateInferenceExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_inference_experiment::UpdateInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_inference_experiment::UpdateInferenceExperimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateInferenceExperimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateInferenceExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_inference_experiment::UpdateInferenceExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_inference_experiment::UpdateInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_inference_experiment::UpdateInferenceExperimentError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateInferenceExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_inference_experiment::UpdateInferenceExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_inference_experiment::UpdateInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_inference_experiment::UpdateInferenceExperimentError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateInferenceExperimentFluentBuilder {
             crate::operation::update_inference_experiment::UpdateInferenceExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_inference_experiment::UpdateInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_inference_experiment::UpdateInferenceExperimentError>,
     > {
         self.customize_middleware().await
     }
@@ -140,17 +129,12 @@ impl UpdateInferenceExperimentFluentBuilder {
         self
     }
     /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentSchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::InferenceExperimentSchedule>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
     }
     /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
-    pub fn get_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
         self.inner.get_schedule()
     }
     /// <p>The description of the inference experiment.</p>
@@ -177,39 +161,26 @@ impl UpdateInferenceExperimentFluentBuilder {
         self
     }
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
-    pub fn set_model_variants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
-    ) -> Self {
+    pub fn set_model_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>) -> Self {
         self.inner = self.inner.set_model_variants(input);
         self
     }
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
-    pub fn get_model_variants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
+    pub fn get_model_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
         self.inner.get_model_variants()
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
-    pub fn data_storage_config(
-        mut self,
-        input: crate::types::InferenceExperimentDataStorageConfig,
-    ) -> Self {
+    pub fn data_storage_config(mut self, input: crate::types::InferenceExperimentDataStorageConfig) -> Self {
         self.inner = self.inner.data_storage_config(input);
         self
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
-    pub fn set_data_storage_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
-    ) -> Self {
+    pub fn set_data_storage_config(mut self, input: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>) -> Self {
         self.inner = self.inner.set_data_storage_config(input);
         self
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
-    pub fn get_data_storage_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceExperimentDataStorageConfig> {
+    pub fn get_data_storage_config(&self) -> &::std::option::Option<crate::types::InferenceExperimentDataStorageConfig> {
         self.inner.get_data_storage_config()
     }
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
@@ -218,10 +189,7 @@ impl UpdateInferenceExperimentFluentBuilder {
         self
     }
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
-    pub fn set_shadow_mode_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ShadowModeConfig>,
-    ) -> Self {
+    pub fn set_shadow_mode_config(mut self, input: ::std::option::Option<crate::types::ShadowModeConfig>) -> Self {
         self.inner = self.inner.set_shadow_mode_config(input);
         self
     }

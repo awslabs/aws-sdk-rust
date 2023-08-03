@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDetectorModelOutput`](crate::operation::describe_detector_model::DescribeDetectorModelOutput) with field(s):
     ///   - [`detector_model(Option<DetectorModel>)`](crate::operation::describe_detector_model::DescribeDetectorModelOutput::detector_model): <p>Information about the detector model.</p>
     /// - On failure, responds with [`SdkError<DescribeDetectorModelError>`](crate::operation::describe_detector_model::DescribeDetectorModelError)
-    pub fn describe_detector_model(
-        &self,
-    ) -> crate::operation::describe_detector_model::builders::DescribeDetectorModelFluentBuilder
-    {
-        crate::operation::describe_detector_model::builders::DescribeDetectorModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_detector_model(&self) -> crate::operation::describe_detector_model::builders::DescribeDetectorModelFluentBuilder {
+        crate::operation::describe_detector_model::builders::DescribeDetectorModelFluentBuilder::new(self.handle.clone())
     }
 }

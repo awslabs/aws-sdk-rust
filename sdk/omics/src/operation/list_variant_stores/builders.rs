@@ -10,10 +10,7 @@ impl ListVariantStoresInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_variant_stores::ListVariantStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_variant_stores::ListVariantStoresError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_variant_stores::ListVariantStoresError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_variant_stores();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListVariantStoresFluentBuilder {
         }
     }
     /// Access the ListVariantStores as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_variant_stores::builders::ListVariantStoresInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_variant_stores::builders::ListVariantStoresInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListVariantStoresFluentBuilder {
             crate::operation::list_variant_stores::ListVariantStores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_variant_stores::ListVariantStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_variant_stores::ListVariantStoresError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListVariantStoresFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListVariantStoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_variant_stores::ListVariantStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_variant_stores::ListVariantStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_variant_stores::ListVariantStoresError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListVariantStoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_variant_stores::ListVariantStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_variant_stores::ListVariantStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_variant_stores::ListVariantStoresError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListVariantStoresFluentBuilder {
             crate::operation::list_variant_stores::ListVariantStores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_variant_stores::ListVariantStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_variant_stores::ListVariantStoresError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_variant_stores::paginator::ListVariantStoresPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_variant_stores::paginator::ListVariantStoresPaginator {
-        crate::operation::list_variant_stores::paginator::ListVariantStoresPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_variant_stores::paginator::ListVariantStoresPaginator {
+        crate::operation::list_variant_stores::paginator::ListVariantStoresPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of stores to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -157,10 +136,7 @@ impl ListVariantStoresFluentBuilder {
         self
     }
     /// <p>A list of store IDs.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ids(input);
         self
     }
@@ -188,10 +164,7 @@ impl ListVariantStoresFluentBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListVariantStoresFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListVariantStoresFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StreamProcessorStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for StreamProcessorStatus {
             "STOPPED" => StreamProcessorStatus::Stopped,
             "STOPPING" => StreamProcessorStatus::Stopping,
             "UPDATING" => StreamProcessorStatus::Updating,
-            other => StreamProcessorStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StreamProcessorStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,9 +95,7 @@ impl StreamProcessorStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "RUNNING", "STARTING", "STOPPED", "STOPPING", "UPDATING",
-        ]
+        &["FAILED", "RUNNING", "STARTING", "STOPPED", "STOPPING", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for StreamProcessorStatus {

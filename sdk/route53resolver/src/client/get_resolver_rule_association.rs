@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetResolverRuleAssociationOutput`](crate::operation::get_resolver_rule_association::GetResolverRuleAssociationOutput) with field(s):
     ///   - [`resolver_rule_association(Option<ResolverRuleAssociation>)`](crate::operation::get_resolver_rule_association::GetResolverRuleAssociationOutput::resolver_rule_association): <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
     /// - On failure, responds with [`SdkError<GetResolverRuleAssociationError>`](crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError)
-    pub fn get_resolver_rule_association(&self) -> crate::operation::get_resolver_rule_association::builders::GetResolverRuleAssociationFluentBuilder{
+    pub fn get_resolver_rule_association(
+        &self,
+    ) -> crate::operation::get_resolver_rule_association::builders::GetResolverRuleAssociationFluentBuilder {
         crate::operation::get_resolver_rule_association::builders::GetResolverRuleAssociationFluentBuilder::new(self.handle.clone())
     }
 }

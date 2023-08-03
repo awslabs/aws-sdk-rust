@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`audio_stream(ByteStream)`](crate::operation::recognize_utterance::RecognizeUtteranceOutput::audio_stream): <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
     ///   - [`recognized_bot_member(Option<String>)`](crate::operation::recognize_utterance::RecognizeUtteranceOutput::recognized_bot_member): <p>The bot member that recognized the utterance.</p>
     /// - On failure, responds with [`SdkError<RecognizeUtteranceError>`](crate::operation::recognize_utterance::RecognizeUtteranceError)
-    pub fn recognize_utterance(
-        &self,
-    ) -> crate::operation::recognize_utterance::builders::RecognizeUtteranceFluentBuilder {
-        crate::operation::recognize_utterance::builders::RecognizeUtteranceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn recognize_utterance(&self) -> crate::operation::recognize_utterance::builders::RecognizeUtteranceFluentBuilder {
+        crate::operation::recognize_utterance::builders::RecognizeUtteranceFluentBuilder::new(self.handle.clone())
     }
 }

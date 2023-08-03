@@ -37,10 +37,7 @@ impl DescribeVcenterClientsFluentBuilder {
         }
     }
     /// Access the DescribeVcenterClients as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeVcenterClientsFluentBuilder {
             crate::operation::describe_vcenter_clients::DescribeVcenterClients,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vcenter_clients::DescribeVcenterClientsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vcenter_clients::DescribeVcenterClientsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeVcenterClientsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeVcenterClientsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vcenter_clients::DescribeVcenterClientsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vcenter_clients::DescribeVcenterClientsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeVcenterClientsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vcenter_clients::DescribeVcenterClientsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vcenter_clients::DescribeVcenterClientsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl DescribeVcenterClientsFluentBuilder {
             crate::operation::describe_vcenter_clients::DescribeVcenterClients,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vcenter_clients::DescribeVcenterClientsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vcenter_clients::DescribeVcenterClientsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator
-    {
-        crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator {
+        crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator::new(self.handle, self.inner)
     }
     /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
     pub fn max_results(mut self, input: i32) -> Self {

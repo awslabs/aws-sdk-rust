@@ -5,16 +5,16 @@ pub use crate::operation::list_resources_associated_to_custom_line_item::_list_r
 
 impl ListResourcesAssociatedToCustomLineItemInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_resources_associated_to_custom_line_item();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListResourcesAssociatedToCustomLineItemInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemInputBuilder,
+    inner: crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemInputBuilder,
 }
 impl ListResourcesAssociatedToCustomLineItemFluentBuilder {
     /// Creates a new `ListResourcesAssociatedToCustomLineItem`.
@@ -37,15 +37,24 @@ impl ListResourcesAssociatedToCustomLineItemFluentBuilder {
         }
     }
     /// Access the ListResourcesAssociatedToCustomLineItem as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItem, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItem,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl ListResourcesAssociatedToCustomLineItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +93,50 @@ impl ListResourcesAssociatedToCustomLineItemFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItem, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItem,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resources_associated_to_custom_line_item::paginator::ListResourcesAssociatedToCustomLineItemPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_resources_associated_to_custom_line_item::paginator::ListResourcesAssociatedToCustomLineItemPaginator{
-        crate::operation::list_resources_associated_to_custom_line_item::paginator::ListResourcesAssociatedToCustomLineItemPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_resources_associated_to_custom_line_item::paginator::ListResourcesAssociatedToCustomLineItemPaginator {
+        crate::operation::list_resources_associated_to_custom_line_item::paginator::ListResourcesAssociatedToCustomLineItemPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p> The billing period for which the resource associations will be listed. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
     /// <p> The billing period for which the resource associations will be listed. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
@@ -163,25 +187,17 @@ impl ListResourcesAssociatedToCustomLineItemFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-    pub fn filters(
-        mut self,
-        input: crate::types::ListResourcesAssociatedToCustomLineItemFilter,
-    ) -> Self {
+    pub fn filters(mut self, input: crate::types::ListResourcesAssociatedToCustomLineItemFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter> {
         self.inner.get_filters()
     }
 }

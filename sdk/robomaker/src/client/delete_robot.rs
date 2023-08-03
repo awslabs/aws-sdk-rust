@@ -9,9 +9,7 @@ impl super::Client {
     #[deprecated(
         note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     )]
-    pub fn delete_robot(
-        &self,
-    ) -> crate::operation::delete_robot::builders::DeleteRobotFluentBuilder {
+    pub fn delete_robot(&self) -> crate::operation::delete_robot::builders::DeleteRobotFluentBuilder {
         crate::operation::delete_robot::builders::DeleteRobotFluentBuilder::new(self.handle.clone())
     }
 }

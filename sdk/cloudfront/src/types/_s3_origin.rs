@@ -38,9 +38,7 @@ impl S3Origin {
 
 /// A builder for [`S3Origin`](crate::types::S3Origin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3OriginBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) origin_access_identity: ::std::option::Option<::std::string::String>,
@@ -65,10 +63,7 @@ impl S3OriginBuilder {
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_access_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_access_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_access_identity = ::std::option::Option::Some(input.into());
         self
     }
@@ -77,10 +72,7 @@ impl S3OriginBuilder {
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_origin_access_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_access_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_access_identity = input;
         self
     }

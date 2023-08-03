@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLaunchOutput`](crate::operation::create_launch::CreateLaunchOutput) with field(s):
     ///   - [`launch(Option<Launch>)`](crate::operation::create_launch::CreateLaunchOutput::launch): <p>A structure that contains the configuration of the launch that was created.</p>
     /// - On failure, responds with [`SdkError<CreateLaunchError>`](crate::operation::create_launch::CreateLaunchError)
-    pub fn create_launch(
-        &self,
-    ) -> crate::operation::create_launch::builders::CreateLaunchFluentBuilder {
-        crate::operation::create_launch::builders::CreateLaunchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_launch(&self) -> crate::operation::create_launch::builders::CreateLaunchFluentBuilder {
+        crate::operation::create_launch::builders::CreateLaunchFluentBuilder::new(self.handle.clone())
     }
 }

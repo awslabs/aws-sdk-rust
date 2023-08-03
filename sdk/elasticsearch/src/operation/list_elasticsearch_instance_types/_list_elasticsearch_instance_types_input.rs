@@ -37,16 +37,14 @@ impl ListElasticsearchInstanceTypesInput {
 }
 impl ListElasticsearchInstanceTypesInput {
     /// Creates a new builder-style object to manufacture [`ListElasticsearchInstanceTypesInput`](crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput).
-    pub fn builder() -> crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesInputBuilder{
+    pub fn builder() -> crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesInputBuilder {
         crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListElasticsearchInstanceTypesInput`](crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListElasticsearchInstanceTypesInputBuilder {
     pub(crate) elasticsearch_version: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct ListElasticsearchInstanceTypesInputBuilder {
 }
 impl ListElasticsearchInstanceTypesInputBuilder {
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
-    pub fn elasticsearch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elasticsearch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elasticsearch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
-    pub fn set_elasticsearch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elasticsearch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elasticsearch_version = input;
         self
     }
@@ -123,17 +115,11 @@ impl ListElasticsearchInstanceTypesInputBuilder {
         crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput {
-                elasticsearch_version: self.elasticsearch_version
-                ,
-                domain_name: self.domain_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput {
+            elasticsearch_version: self.elasticsearch_version,
+            domain_name: self.domain_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::set_id): Identifier representing a Campaign
     /// - On success, responds with [`DeleteCampaignOutput`](crate::operation::delete_campaign::DeleteCampaignOutput)
     /// - On failure, responds with [`SdkError<DeleteCampaignError>`](crate::operation::delete_campaign::DeleteCampaignError)
-    pub fn delete_campaign(
-        &self,
-    ) -> crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder {
-        crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_campaign(&self) -> crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder {
+        crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::new(self.handle.clone())
     }
 }

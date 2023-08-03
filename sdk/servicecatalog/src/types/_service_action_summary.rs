@@ -31,9 +31,7 @@ impl ServiceActionSummary {
         self.description.as_deref()
     }
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    pub fn definition_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceActionDefinitionType> {
+    pub fn definition_type(&self) -> ::std::option::Option<&crate::types::ServiceActionDefinitionType> {
         self.definition_type.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl ServiceActionSummary {
 
 /// A builder for [`ServiceActionSummary`](crate::types::ServiceActionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceActionSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -104,17 +100,12 @@ impl ServiceActionSummaryBuilder {
         self
     }
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    pub fn set_definition_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceActionDefinitionType>,
-    ) -> Self {
+    pub fn set_definition_type(mut self, input: ::std::option::Option<crate::types::ServiceActionDefinitionType>) -> Self {
         self.definition_type = input;
         self
     }
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    pub fn get_definition_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceActionDefinitionType> {
+    pub fn get_definition_type(&self) -> &::std::option::Option<crate::types::ServiceActionDefinitionType> {
         &self.definition_type
     }
     /// Consumes the builder and constructs a [`ServiceActionSummary`](crate::types::ServiceActionSummary).

@@ -10,10 +10,7 @@ impl ListWorkflowsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_workflows::ListWorkflowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflows::ListWorkflowsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflows::ListWorkflowsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_workflows();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListWorkflowsFluentBuilder {
         }
     }
     /// Access the ListWorkflows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_workflows::builders::ListWorkflowsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_workflows::builders::ListWorkflowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListWorkflowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -134,10 +126,7 @@ impl ListWorkflowsFluentBuilder {
         self
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.inner = self.inner.set_workflow_type(input);
         self
     }
@@ -165,10 +154,7 @@ impl ListWorkflowsFluentBuilder {
         self
     }
     /// <p>Retrieve workflows started after timestamp.</p>
-    pub fn set_query_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_query_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_query_start_date(input);
         self
     }
@@ -182,10 +168,7 @@ impl ListWorkflowsFluentBuilder {
         self
     }
     /// <p>Retrieve workflows ended after timestamp.</p>
-    pub fn set_query_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_query_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_query_end_date(input);
         self
     }

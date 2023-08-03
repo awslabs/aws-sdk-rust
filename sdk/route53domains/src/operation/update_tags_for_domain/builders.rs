@@ -38,9 +38,7 @@ impl UpdateTagsForDomainFluentBuilder {
         }
     }
     /// Access the UpdateTagsForDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl UpdateTagsForDomainFluentBuilder {
             crate::operation::update_tags_for_domain::UpdateTagsForDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_tags_for_domain::UpdateTagsForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_tags_for_domain::UpdateTagsForDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl UpdateTagsForDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl UpdateTagsForDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_tags_for_domain::UpdateTagsForDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_tags_for_domain::UpdateTagsForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_tags_for_domain::UpdateTagsForDomainError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl UpdateTagsForDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_tags_for_domain::UpdateTagsForDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_tags_for_domain::UpdateTagsForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_tags_for_domain::UpdateTagsForDomainError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl UpdateTagsForDomainFluentBuilder {
             crate::operation::update_tags_for_domain::UpdateTagsForDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_tags_for_domain::UpdateTagsForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_tags_for_domain::UpdateTagsForDomainError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +134,7 @@ impl UpdateTagsForDomainFluentBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
-    pub fn set_tags_to_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags_to_update(input);
         self
     }

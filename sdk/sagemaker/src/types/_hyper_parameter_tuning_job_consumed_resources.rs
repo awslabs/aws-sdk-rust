@@ -23,9 +23,7 @@ impl HyperParameterTuningJobConsumedResources {
 
 /// A builder for [`HyperParameterTuningJobConsumedResources`](crate::types::HyperParameterTuningJobConsumedResources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobConsumedResourcesBuilder {
     pub(crate) runtime_in_seconds: ::std::option::Option<i32>,
 }

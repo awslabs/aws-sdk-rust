@@ -29,18 +29,14 @@ impl SendAlexaOfferToMasterInput {
 }
 impl SendAlexaOfferToMasterInput {
     /// Creates a new builder-style object to manufacture [`SendAlexaOfferToMasterInput`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput).
-    pub fn builder(
-    ) -> crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder
-    {
+    pub fn builder() -> crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder {
         crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder::default()
     }
 }
 
 /// A builder for [`SendAlexaOfferToMasterInput`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendAlexaOfferToMasterInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sender_client_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl SendAlexaOfferToMasterInputBuilder {
         &self.channel_arn
     }
     /// <p>The unique identifier for the sender client.</p>
-    pub fn sender_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sender_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the sender client.</p>
-    pub fn set_sender_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sender_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_client_id = input;
         self
     }
@@ -82,18 +72,12 @@ impl SendAlexaOfferToMasterInputBuilder {
         &self.sender_client_id
     }
     /// <p>The base64-encoded SDP offer content.</p>
-    pub fn message_payload(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn message_payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_payload = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base64-encoded SDP offer content.</p>
-    pub fn set_message_payload(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_message_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_payload = input;
         self
     }
@@ -108,12 +92,10 @@ impl SendAlexaOfferToMasterInputBuilder {
         crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput {
-                channel_arn: self.channel_arn,
-                sender_client_id: self.sender_client_id,
-                message_payload: self.message_payload,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput {
+            channel_arn: self.channel_arn,
+            sender_client_id: self.sender_client_id,
+            message_payload: self.message_payload,
+        })
     }
 }

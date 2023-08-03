@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`type_name(Option<String>)`](crate::operation::get_resource::GetResourceOutput::type_name): <p>The name of the resource type.</p>
     ///   - [`resource_description(Option<ResourceDescription>)`](crate::operation::get_resource::GetResourceOutput::resource_description): <p>Represents information about a provisioned resource.</p>
     /// - On failure, responds with [`SdkError<GetResourceError>`](crate::operation::get_resource::GetResourceError)
-    pub fn get_resource(
-        &self,
-    ) -> crate::operation::get_resource::builders::GetResourceFluentBuilder {
+    pub fn get_resource(&self) -> crate::operation::get_resource::builders::GetResourceFluentBuilder {
         crate::operation::get_resource::builders::GetResourceFluentBuilder::new(self.handle.clone())
     }
 }

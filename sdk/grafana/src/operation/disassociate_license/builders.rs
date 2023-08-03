@@ -10,10 +10,7 @@ impl DisassociateLicenseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_license::DisassociateLicenseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_license::DisassociateLicenseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_license::DisassociateLicenseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disassociate_license();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DisassociateLicenseFluentBuilder {
         }
     }
     /// Access the DisassociateLicense as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_license::builders::DisassociateLicenseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_license::builders::DisassociateLicenseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DisassociateLicenseFluentBuilder {
             crate::operation::disassociate_license::DisassociateLicense,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_license::DisassociateLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_license::DisassociateLicenseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DisassociateLicenseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DisassociateLicenseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_license::DisassociateLicenseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_license::DisassociateLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_license::DisassociateLicenseError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DisassociateLicenseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_license::DisassociateLicenseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_license::DisassociateLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_license::DisassociateLicenseError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DisassociateLicenseFluentBuilder {
             crate::operation::disassociate_license::DisassociateLicense,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_license::DisassociateLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_license::DisassociateLicenseError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl DisassociateLicenseFluentBuilder {
         self
     }
     /// <p>The type of license to remove from the workspace.</p>
-    pub fn set_license_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseType>,
-    ) -> Self {
+    pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
         self.inner = self.inner.set_license_type(input);
         self
     }

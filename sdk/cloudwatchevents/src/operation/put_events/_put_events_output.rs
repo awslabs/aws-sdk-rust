@@ -35,9 +35,7 @@ impl PutEventsOutput {
 
 /// A builder for [`PutEventsOutput`](crate::operation::put_events::PutEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEventsOutputBuilder {
     pub(crate) failed_entry_count: ::std::option::Option<i32>,
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>>,
@@ -70,17 +68,12 @@ impl PutEventsOutputBuilder {
         self
     }
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>> {
         &self.entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

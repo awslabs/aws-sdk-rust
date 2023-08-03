@@ -20,9 +20,7 @@ impl LabelingJobDataSource {
         self.s3_data_source.as_ref()
     }
     /// <p>An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send Data to a Streaming Labeling Job</a>. </p>
-    pub fn sns_data_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LabelingJobSnsDataSource> {
+    pub fn sns_data_source(&self) -> ::std::option::Option<&crate::types::LabelingJobSnsDataSource> {
         self.sns_data_source.as_ref()
     }
 }
@@ -35,9 +33,7 @@ impl LabelingJobDataSource {
 
 /// A builder for [`LabelingJobDataSource`](crate::types::LabelingJobDataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelingJobDataSourceBuilder {
     pub(crate) s3_data_source: ::std::option::Option<crate::types::LabelingJobS3DataSource>,
     pub(crate) sns_data_source: ::std::option::Option<crate::types::LabelingJobSnsDataSource>,
@@ -49,17 +45,12 @@ impl LabelingJobDataSourceBuilder {
         self
     }
     /// <p>The Amazon S3 location of the input data objects.</p>
-    pub fn set_s3_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobS3DataSource>,
-    ) -> Self {
+    pub fn set_s3_data_source(mut self, input: ::std::option::Option<crate::types::LabelingJobS3DataSource>) -> Self {
         self.s3_data_source = input;
         self
     }
     /// <p>The Amazon S3 location of the input data objects.</p>
-    pub fn get_s3_data_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelingJobS3DataSource> {
+    pub fn get_s3_data_source(&self) -> &::std::option::Option<crate::types::LabelingJobS3DataSource> {
         &self.s3_data_source
     }
     /// <p>An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send Data to a Streaming Labeling Job</a>. </p>
@@ -68,17 +59,12 @@ impl LabelingJobDataSourceBuilder {
         self
     }
     /// <p>An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send Data to a Streaming Labeling Job</a>. </p>
-    pub fn set_sns_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobSnsDataSource>,
-    ) -> Self {
+    pub fn set_sns_data_source(mut self, input: ::std::option::Option<crate::types::LabelingJobSnsDataSource>) -> Self {
         self.sns_data_source = input;
         self
     }
     /// <p>An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send Data to a Streaming Labeling Job</a>. </p>
-    pub fn get_sns_data_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelingJobSnsDataSource> {
+    pub fn get_sns_data_source(&self) -> &::std::option::Option<crate::types::LabelingJobSnsDataSource> {
         &self.sns_data_source
     }
     /// Consumes the builder and constructs a [`LabelingJobDataSource`](crate::types::LabelingJobDataSource).

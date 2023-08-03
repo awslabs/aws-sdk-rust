@@ -34,7 +34,9 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput::tags): <p>The tags associated with the virtual interface.</p>
     ///   - [`site_link_enabled(Option<bool>)`](crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput::site_link_enabled): <p>Indicates whether SiteLink is enabled.</p>
     /// - On failure, responds with [`SdkError<AllocatePublicVirtualInterfaceError>`](crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError)
-    pub fn allocate_public_virtual_interface(&self) -> crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceFluentBuilder{
+    pub fn allocate_public_virtual_interface(
+        &self,
+    ) -> crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceFluentBuilder {
         crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceFluentBuilder::new(self.handle.clone())
     }
 }

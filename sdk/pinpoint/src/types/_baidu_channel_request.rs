@@ -37,9 +37,7 @@ impl BaiduChannelRequest {
 
 /// A builder for [`BaiduChannelRequest`](crate::types::BaiduChannelRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BaiduChannelRequestBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

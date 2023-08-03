@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CopyProjectVersionOutput {
 }
 impl CopyProjectVersionOutput {
     /// Creates a new builder-style object to manufacture [`CopyProjectVersionOutput`](crate::operation::copy_project_version::CopyProjectVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::copy_project_version::builders::CopyProjectVersionOutputBuilder {
+    pub fn builder() -> crate::operation::copy_project_version::builders::CopyProjectVersionOutputBuilder {
         crate::operation::copy_project_version::builders::CopyProjectVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CopyProjectVersionOutput`](crate::operation::copy_project_version::CopyProjectVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyProjectVersionOutputBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CopyProjectVersionOutputBuilder {
     /// <p>The ARN of the copied model version in the destination project. </p>
-    pub fn project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the copied model version in the destination project. </p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_version_arn = input;
         self
     }

@@ -36,17 +36,14 @@ impl ListTemplateVersionsInput {
 }
 impl ListTemplateVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListTemplateVersionsInput`](crate::operation::list_template_versions::ListTemplateVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_template_versions::builders::ListTemplateVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_template_versions::builders::ListTemplateVersionsInputBuilder {
         crate::operation::list_template_versions::builders::ListTemplateVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTemplateVersionsInput`](crate::operation::list_template_versions::ListTemplateVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplateVersionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct ListTemplateVersionsInputBuilder {
 }
 impl ListTemplateVersionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -119,17 +110,13 @@ impl ListTemplateVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplateVersionsInput`](crate::operation::list_template_versions::ListTemplateVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_template_versions::ListTemplateVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_template_versions::ListTemplateVersionsInput {
-                aws_account_id: self.aws_account_id,
-                template_id: self.template_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_template_versions::ListTemplateVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_template_versions::ListTemplateVersionsInput {
+            aws_account_id: self.aws_account_id,
+            template_id: self.template_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

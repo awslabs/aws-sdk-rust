@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateFeaturedResultsSetOutput {
 }
 impl UpdateFeaturedResultsSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFeaturedResultsSetOutput`](crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput).
-    pub fn builder() -> crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetOutputBuilder{
+    pub fn builder() -> crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetOutputBuilder {
         crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFeaturedResultsSetOutput`](crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFeaturedResultsSetOutputBuilder {
     pub(crate) featured_results_set: ::std::option::Option<crate::types::FeaturedResultsSet>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl UpdateFeaturedResultsSetOutputBuilder {
         self
     }
     /// <p>Information on the set of featured results. This includes the identifier of the featured results set, whether the featured results set is active or inactive, when the featured results set was last updated, and more.</p>
-    pub fn set_featured_results_set(
-        mut self,
-        input: ::std::option::Option<crate::types::FeaturedResultsSet>,
-    ) -> Self {
+    pub fn set_featured_results_set(mut self, input: ::std::option::Option<crate::types::FeaturedResultsSet>) -> Self {
         self.featured_results_set = input;
         self
     }
     /// <p>Information on the set of featured results. This includes the identifier of the featured results set, whether the featured results set is active or inactive, when the featured results set was last updated, and more.</p>
-    pub fn get_featured_results_set(
-        &self,
-    ) -> &::std::option::Option<crate::types::FeaturedResultsSet> {
+    pub fn get_featured_results_set(&self) -> &::std::option::Option<crate::types::FeaturedResultsSet> {
         &self.featured_results_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl UpdateFeaturedResultsSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFeaturedResultsSetOutput`](crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput {
+    pub fn build(self) -> crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput {
         crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput {
             featured_results_set: self.featured_results_set,
             _request_id: self._request_id,

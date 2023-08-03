@@ -149,9 +149,7 @@ impl Lag {
         self.jumbo_frame_capable
     }
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> ::std::option::Option<&crate::types::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the LAG.</p>
@@ -185,9 +183,7 @@ impl Lag {
 
 /// A builder for [`Lag`](crate::types::Lag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LagBuilder {
     pub(crate) connections_bandwidth: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_connections: ::std::option::Option<i32>,
@@ -213,18 +209,12 @@ pub struct LagBuilder {
 }
 impl LagBuilder {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn connections_bandwidth(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connections_bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connections_bandwidth = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn set_connections_bandwidth(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connections_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connections_bandwidth = input;
         self
     }
@@ -261,18 +251,12 @@ impl LagBuilder {
         &self.lag_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -392,18 +376,12 @@ impl LagBuilder {
         &self.aws_device
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    pub fn aws_device_v2(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_device_v2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_device_v2 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    pub fn set_aws_device_v2(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_device_v2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_device_v2 = input;
         self
     }
@@ -412,18 +390,12 @@ impl LagBuilder {
         &self.aws_device_v2
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_logical_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_logical_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn set_aws_logical_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_logical_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_logical_device_id = input;
         self
     }
@@ -443,17 +415,12 @@ impl LagBuilder {
         self
     }
     /// <p>The connections bundled by the LAG.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>) -> Self {
         self.connections = input;
         self
     }
     /// <p>The connections bundled by the LAG.</p>
-    pub fn get_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
         &self.connections
     }
     /// <p>Indicates whether the LAG can host other connections.</p>
@@ -490,17 +457,12 @@ impl LagBuilder {
         self
     }
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn set_has_logical_redundancy(
-        mut self,
-        input: ::std::option::Option<crate::types::HasLogicalRedundancy>,
-    ) -> Self {
+    pub fn set_has_logical_redundancy(mut self, input: ::std::option::Option<crate::types::HasLogicalRedundancy>) -> Self {
         self.has_logical_redundancy = input;
         self
     }
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn get_has_logical_redundancy(
-        &self,
-    ) -> &::std::option::Option<crate::types::HasLogicalRedundancy> {
+    pub fn get_has_logical_redundancy(&self) -> &::std::option::Option<crate::types::HasLogicalRedundancy> {
         &self.has_logical_redundancy
     }
     /// Appends an item to `tags`.
@@ -515,10 +477,7 @@ impl LagBuilder {
         self
     }
     /// <p>The tags associated with the LAG.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -527,18 +486,12 @@ impl LagBuilder {
         &self.tags
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -562,19 +515,13 @@ impl LagBuilder {
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_mode = input;
         self
     }
@@ -595,17 +542,12 @@ impl LagBuilder {
         self
     }
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    pub fn set_mac_sec_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
-    ) -> Self {
+    pub fn set_mac_sec_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>) -> Self {
         self.mac_sec_keys = input;
         self
     }
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    pub fn get_mac_sec_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
+    pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
         &self.mac_sec_keys
     }
     /// Consumes the builder and constructs a [`Lag`](crate::types::Lag).

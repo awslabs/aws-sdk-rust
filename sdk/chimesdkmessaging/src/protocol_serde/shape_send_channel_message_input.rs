@@ -19,10 +19,7 @@ pub fn ser_send_channel_message_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = object_5.key(key_6.as_str()).start_object();
-                crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(
-                    &mut object_8,
-                    value_7,
-                )?;
+                crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(&mut object_8, value_7)?;
                 object_8.finish();
             }
         }

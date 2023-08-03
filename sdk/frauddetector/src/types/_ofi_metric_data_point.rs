@@ -44,9 +44,7 @@ impl OfiMetricDataPoint {
 
 /// A builder for [`OfiMetricDataPoint`](crate::types::OfiMetricDataPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OfiMetricDataPointBuilder {
     pub(crate) fpr: ::std::option::Option<f32>,
     pub(crate) precision: ::std::option::Option<f32>,

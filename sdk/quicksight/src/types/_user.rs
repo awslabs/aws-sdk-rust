@@ -115,9 +115,7 @@ impl User {
 
 /// A builder for [`User`](crate::types::User).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
@@ -127,8 +125,7 @@ pub struct UserBuilder {
     pub(crate) active: ::std::option::Option<bool>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
     pub(crate) custom_permissions_name: ::std::option::Option<::std::string::String>,
-    pub(crate) external_login_federation_provider_type:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) external_login_federation_provider_type: ::std::option::Option<::std::string::String>,
     pub(crate) external_login_federation_provider_url: ::std::option::Option<::std::string::String>,
     pub(crate) external_login_id: ::std::option::Option<::std::string::String>,
 }
@@ -216,10 +213,7 @@ impl UserBuilder {
         self
     }
     /// <p>The type of identity authentication used by the user.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -256,18 +250,12 @@ impl UserBuilder {
         &self.principal_id
     }
     /// <p>The custom permissions profile associated with this user.</p>
-    pub fn custom_permissions_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_permissions_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_permissions_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom permissions profile associated with this user.</p>
-    pub fn set_custom_permissions_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_permissions_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_permissions_name = input;
         self
     }
@@ -280,10 +268,7 @@ impl UserBuilder {
     /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li>
     /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li>
     /// </ul>
-    pub fn external_login_federation_provider_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_login_federation_provider_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_login_federation_provider_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -292,10 +277,7 @@ impl UserBuilder {
     /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li>
     /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li>
     /// </ul>
-    pub fn set_external_login_federation_provider_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_login_federation_provider_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_login_federation_provider_type = input;
         self
     }
@@ -304,46 +286,30 @@ impl UserBuilder {
     /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li>
     /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li>
     /// </ul>
-    pub fn get_external_login_federation_provider_type(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_external_login_federation_provider_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_login_federation_provider_type
     }
     /// <p>The URL of the external login provider.</p>
-    pub fn external_login_federation_provider_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_login_federation_provider_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_login_federation_provider_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the external login provider.</p>
-    pub fn set_external_login_federation_provider_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_login_federation_provider_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_login_federation_provider_url = input;
         self
     }
     /// <p>The URL of the external login provider.</p>
-    pub fn get_external_login_federation_provider_url(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_external_login_federation_provider_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_login_federation_provider_url
     }
     /// <p>The identity ID for the user in the external login provider.</p>
-    pub fn external_login_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_login_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_login_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identity ID for the user in the external login provider.</p>
-    pub fn set_external_login_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_login_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_login_id = input;
         self
     }

@@ -38,13 +38,7 @@
 /// Smooth Group Certificate Mode
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SmoothGroupCertificateMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SmoothGroupCertificateMode {
         match s {
             "SELF_SIGNED" => SmoothGroupCertificateMode::SelfSigned,
             "VERIFY_AUTHENTICITY" => SmoothGroupCertificateMode::VerifyAuthenticity,
-            other => SmoothGroupCertificateMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SmoothGroupCertificateMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

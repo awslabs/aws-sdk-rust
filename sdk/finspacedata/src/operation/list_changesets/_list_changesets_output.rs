@@ -36,9 +36,7 @@ impl ListChangesetsOutput {
 
 /// A builder for [`ListChangesetsOutput`](crate::operation::list_changesets::ListChangesetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChangesetsOutputBuilder {
     pub(crate) changesets: ::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListChangesetsOutputBuilder {
         self
     }
     /// <p>List of Changesets found.</p>
-    pub fn set_changesets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>>,
-    ) -> Self {
+    pub fn set_changesets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>>) -> Self {
         self.changesets = input;
         self
     }
     /// <p>List of Changesets found.</p>
-    pub fn get_changesets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>> {
+    pub fn get_changesets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>> {
         &self.changesets
     }
     /// <p>A token that indicates where a results page should begin.</p>

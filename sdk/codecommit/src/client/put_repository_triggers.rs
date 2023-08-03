@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutRepositoryTriggersOutput`](crate::operation::put_repository_triggers::PutRepositoryTriggersOutput) with field(s):
     ///   - [`configuration_id(Option<String>)`](crate::operation::put_repository_triggers::PutRepositoryTriggersOutput::configuration_id): <p>The system-generated unique ID for the create or update operation.</p>
     /// - On failure, responds with [`SdkError<PutRepositoryTriggersError>`](crate::operation::put_repository_triggers::PutRepositoryTriggersError)
-    pub fn put_repository_triggers(
-        &self,
-    ) -> crate::operation::put_repository_triggers::builders::PutRepositoryTriggersFluentBuilder
-    {
-        crate::operation::put_repository_triggers::builders::PutRepositoryTriggersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_repository_triggers(&self) -> crate::operation::put_repository_triggers::builders::PutRepositoryTriggersFluentBuilder {
+        crate::operation::put_repository_triggers::builders::PutRepositoryTriggersFluentBuilder::new(self.handle.clone())
     }
 }

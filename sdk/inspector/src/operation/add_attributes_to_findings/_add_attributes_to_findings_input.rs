@@ -22,18 +22,14 @@ impl AddAttributesToFindingsInput {
 }
 impl AddAttributesToFindingsInput {
     /// Creates a new builder-style object to manufacture [`AddAttributesToFindingsInput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput).
-    pub fn builder(
-    ) -> crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder {
         crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`AddAttributesToFindingsInput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddAttributesToFindingsInputBuilder {
     pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
@@ -51,17 +47,12 @@ impl AddAttributesToFindingsInputBuilder {
         self
     }
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn set_finding_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.finding_arns = input;
         self
     }
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn get_finding_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.finding_arns
     }
     /// Appends an item to `attributes`.
@@ -76,17 +67,12 @@ impl AddAttributesToFindingsInputBuilder {
         self
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`AddAttributesToFindingsInput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput).
@@ -96,11 +82,9 @@ impl AddAttributesToFindingsInputBuilder {
         crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput {
-                finding_arns: self.finding_arns,
-                attributes: self.attributes,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput {
+            finding_arns: self.finding_arns,
+            attributes: self.attributes,
+        })
     }
 }

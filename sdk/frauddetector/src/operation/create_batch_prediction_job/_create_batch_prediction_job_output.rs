@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateBatchPredictionJobOutput {
 }
 impl CreateBatchPredictionJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateBatchPredictionJobOutput`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput).
-    pub fn builder() -> crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobOutputBuilder{
+    pub fn builder() -> crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobOutputBuilder {
         crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBatchPredictionJobOutput`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBatchPredictionJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CreateBatchPredictionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateBatchPredictionJobOutput`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput {
+    pub fn build(self) -> crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput {
         crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput {
             _request_id: self._request_id,
         }

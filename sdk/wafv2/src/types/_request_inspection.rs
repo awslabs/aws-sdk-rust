@@ -59,9 +59,7 @@ impl RequestInspection {
 
 /// A builder for [`RequestInspection`](crate::types::RequestInspection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestInspectionBuilder {
     pub(crate) payload_type: ::std::option::Option<crate::types::PayloadType>,
     pub(crate) username_field: ::std::option::Option<crate::types::UsernameField>,
@@ -74,10 +72,7 @@ impl RequestInspectionBuilder {
         self
     }
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
-    pub fn set_payload_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PayloadType>,
-    ) -> Self {
+    pub fn set_payload_type(mut self, input: ::std::option::Option<crate::types::PayloadType>) -> Self {
         self.payload_type = input;
         self
     }
@@ -101,10 +96,7 @@ impl RequestInspectionBuilder {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>. </p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code> </p> </li>
     /// </ul>
-    pub fn set_username_field(
-        mut self,
-        input: ::std::option::Option<crate::types::UsernameField>,
-    ) -> Self {
+    pub fn set_username_field(mut self, input: ::std::option::Option<crate::types::UsernameField>) -> Self {
         self.username_field = input;
         self
     }
@@ -133,10 +125,7 @@ impl RequestInspectionBuilder {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p> </li>
     /// </ul>
-    pub fn set_password_field(
-        mut self,
-        input: ::std::option::Option<crate::types::PasswordField>,
-    ) -> Self {
+    pub fn set_password_field(mut self, input: ::std::option::Option<crate::types::PasswordField>) -> Self {
         self.password_field = input;
         self
     }

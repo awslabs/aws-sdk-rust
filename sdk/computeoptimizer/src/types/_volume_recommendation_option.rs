@@ -50,9 +50,7 @@ impl VolumeRecommendationOption {
 
 /// A builder for [`VolumeRecommendationOption`](crate::types::VolumeRecommendationOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeRecommendationOptionBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::VolumeConfiguration>,
     pub(crate) performance_risk: ::std::option::Option<f64>,
@@ -66,10 +64,7 @@ impl VolumeRecommendationOptionBuilder {
         self
     }
     /// <p>An array of objects that describe a volume configuration.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::VolumeConfiguration>) -> Self {
         self.configuration = input;
         self
     }
@@ -120,17 +115,12 @@ impl VolumeRecommendationOptionBuilder {
         self
     }
     /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn set_savings_opportunity(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsOpportunity>,
-    ) -> Self {
+    pub fn set_savings_opportunity(mut self, input: ::std::option::Option<crate::types::SavingsOpportunity>) -> Self {
         self.savings_opportunity = input;
         self
     }
     /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn get_savings_opportunity(
-        &self,
-    ) -> &::std::option::Option<crate::types::SavingsOpportunity> {
+    pub fn get_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
         &self.savings_opportunity
     }
     /// Consumes the builder and constructs a [`VolumeRecommendationOption`](crate::types::VolumeRecommendationOption).

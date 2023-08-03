@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomRoutingListenerOutput {
 }
 impl DeleteCustomRoutingListenerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingListenerOutput`](crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerOutput).
-    pub fn builder() -> crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerOutputBuilder{
+    pub fn builder() -> crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerOutputBuilder {
         crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomRoutingListenerOutput`](crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomRoutingListenerOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteCustomRoutingListenerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCustomRoutingListenerOutput`](crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerOutput {
+    pub fn build(self) -> crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerOutput {
         crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerOutput {
             _request_id: self._request_id,
         }

@@ -12,10 +12,7 @@ pub fn ser_worker_log_delivery(
     if let Some(var_3) = &input.firehose {
         #[allow(unused_mut)]
         let mut object_4 = object.key("firehose").start_object();
-        crate::protocol_serde::shape_firehose_log_delivery::ser_firehose_log_delivery(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_firehose_log_delivery::ser_firehose_log_delivery(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.s3 {

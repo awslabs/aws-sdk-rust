@@ -12,14 +12,10 @@ pub struct ExperimentAction {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the action.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The targets for the action.</p>
     #[doc(hidden)]
-    pub targets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the action that must be completed before this action starts.</p>
     #[doc(hidden)]
     pub start_after: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -43,19 +39,11 @@ impl ExperimentAction {
         self.description.as_deref()
     }
     /// <p>The parameters for the action.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The targets for the action.</p>
-    pub fn targets(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn targets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.targets.as_ref()
     }
     /// <p>The name of the action that must be completed before this action starts.</p>
@@ -84,18 +72,12 @@ impl ExperimentAction {
 
 /// A builder for [`ExperimentAction`](crate::types::ExperimentAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentActionBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) targets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) start_after: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::ExperimentActionState>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -135,32 +117,19 @@ impl ExperimentActionBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameters for the action.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The parameters for the action.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The parameters for the action.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Adds a key-value pair to `targets`.
@@ -168,32 +137,19 @@ impl ExperimentActionBuilder {
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
     /// <p>The targets for the action.</p>
-    pub fn targets(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn targets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.targets.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.targets = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The targets for the action.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.targets = input;
         self
     }
     /// <p>The targets for the action.</p>
-    pub fn get_targets(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.targets
     }
     /// Appends an item to `start_after`.
@@ -208,17 +164,12 @@ impl ExperimentActionBuilder {
         self
     }
     /// <p>The name of the action that must be completed before this action starts.</p>
-    pub fn set_start_after(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_start_after(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.start_after = input;
         self
     }
     /// <p>The name of the action that must be completed before this action starts.</p>
-    pub fn get_start_after(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_start_after(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.start_after
     }
     /// <p>The state of the action.</p>
@@ -227,10 +178,7 @@ impl ExperimentActionBuilder {
         self
     }
     /// <p>The state of the action.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentActionState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ExperimentActionState>) -> Self {
         self.state = input;
         self
     }
@@ -244,10 +192,7 @@ impl ExperimentActionBuilder {
         self
     }
     /// <p>The time that the action started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -261,10 +206,7 @@ impl ExperimentActionBuilder {
         self
     }
     /// <p>The time that the action ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }

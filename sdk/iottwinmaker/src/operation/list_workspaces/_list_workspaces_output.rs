@@ -35,12 +35,9 @@ impl ListWorkspacesOutput {
 
 /// A builder for [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkspacesOutputBuilder {
-    pub(crate) workspace_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
+    pub(crate) workspace_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListWorkspacesOutputBuilder {
         self
     }
     /// <p>A list of objects that contain information about the workspaces.</p>
-    pub fn set_workspace_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
-    ) -> Self {
+    pub fn set_workspace_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>) -> Self {
         self.workspace_summaries = input;
         self
     }
     /// <p>A list of objects that contain information about the workspaces.</p>
-    pub fn get_workspace_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>> {
+    pub fn get_workspace_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>> {
         &self.workspace_summaries
     }
     /// <p>The string that specifies the next page of results.</p>

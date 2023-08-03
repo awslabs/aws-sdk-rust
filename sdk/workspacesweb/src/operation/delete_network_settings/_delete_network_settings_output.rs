@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteNetworkSettingsOutput {
 }
 impl DeleteNetworkSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkSettingsOutput`](crate::operation::delete_network_settings::DeleteNetworkSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_network_settings::builders::DeleteNetworkSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_network_settings::builders::DeleteNetworkSettingsOutputBuilder {
         crate::operation::delete_network_settings::builders::DeleteNetworkSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkSettingsOutput`](crate::operation::delete_network_settings::DeleteNetworkSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkSettingsOutputBuilder {
     _request_id: Option<String>,
 }

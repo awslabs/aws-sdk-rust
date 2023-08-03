@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartDocumentTextDetectionOutput {
 }
 impl StartDocumentTextDetectionOutput {
     /// Creates a new builder-style object to manufacture [`StartDocumentTextDetectionOutput`](crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput).
-    pub fn builder() -> crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionOutputBuilder{
+    pub fn builder() -> crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionOutputBuilder {
         crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDocumentTextDetectionOutput`](crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDocumentTextDetectionOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StartDocumentTextDetectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDocumentTextDetectionOutput`](crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput {
+    pub fn build(self) -> crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput {
         crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput {
             job_id: self.job_id,
             _request_id: self._request_id,

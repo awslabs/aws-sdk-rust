@@ -44,13 +44,7 @@
 /// Specify the color of the captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DvbSubtitleFontColor {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for DvbSubtitleFontColor {
             "RED" => DvbSubtitleFontColor::Red,
             "WHITE" => DvbSubtitleFontColor::White,
             "YELLOW" => DvbSubtitleFontColor::Yellow,
-            other => DvbSubtitleFontColor::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DvbSubtitleFontColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -113,9 +105,7 @@ impl DvbSubtitleFontColor {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTO", "BLACK", "BLUE", "GREEN", "HEX", "RED", "WHITE", "YELLOW",
-        ]
+        &["AUTO", "BLACK", "BLUE", "GREEN", "HEX", "RED", "WHITE", "YELLOW"]
     }
 }
 impl ::std::convert::AsRef<str> for DvbSubtitleFontColor {

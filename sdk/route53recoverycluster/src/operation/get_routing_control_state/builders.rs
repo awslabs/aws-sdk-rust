@@ -34,8 +34,7 @@ impl GetRoutingControlStateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRoutingControlStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_routing_control_state::builders::GetRoutingControlStateInputBuilder,
+    inner: crate::operation::get_routing_control_state::builders::GetRoutingControlStateInputBuilder,
 }
 impl GetRoutingControlStateFluentBuilder {
     /// Creates a new `GetRoutingControlState`.
@@ -46,10 +45,7 @@ impl GetRoutingControlStateFluentBuilder {
         }
     }
     /// Access the GetRoutingControlState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_routing_control_state::builders::GetRoutingControlStateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_routing_control_state::builders::GetRoutingControlStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +57,7 @@ impl GetRoutingControlStateFluentBuilder {
             crate::operation::get_routing_control_state::GetRoutingControlState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_routing_control_state::GetRoutingControlStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_routing_control_state::GetRoutingControlStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +67,7 @@ impl GetRoutingControlStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +76,7 @@ impl GetRoutingControlStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_routing_control_state::GetRoutingControlStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_routing_control_state::GetRoutingControlStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_routing_control_state::GetRoutingControlStateError>,
     > {
         let op = self
             .inner
@@ -110,9 +99,7 @@ impl GetRoutingControlStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_routing_control_state::GetRoutingControlStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_routing_control_state::GetRoutingControlStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_routing_control_state::GetRoutingControlStateError>,
     > {
         self.send_middleware().await
     }
@@ -126,25 +113,17 @@ impl GetRoutingControlStateFluentBuilder {
             crate::operation::get_routing_control_state::GetRoutingControlState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_routing_control_state::GetRoutingControlStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_routing_control_state::GetRoutingControlStateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_control_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_control_arn(input);
         self
     }

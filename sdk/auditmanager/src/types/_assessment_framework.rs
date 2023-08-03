@@ -44,15 +44,12 @@ impl AssessmentFramework {
 
 /// A builder for [`AssessmentFramework`](crate::types::AssessmentFramework).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentFrameworkBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<crate::types::FrameworkMetadata>,
-    pub(crate) control_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>>,
+    pub(crate) control_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>>,
 }
 impl AssessmentFrameworkBuilder {
     /// <p> The unique identifier for the framework. </p>
@@ -89,10 +86,7 @@ impl AssessmentFrameworkBuilder {
         self
     }
     /// <p> The metadata of a framework, such as the name, ID, or description. </p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::FrameworkMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::FrameworkMetadata>) -> Self {
         self.metadata = input;
         self
     }
@@ -112,17 +106,12 @@ impl AssessmentFrameworkBuilder {
         self
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn set_control_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>>,
-    ) -> Self {
+    pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>>) -> Self {
         self.control_sets = input;
         self
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn get_control_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>> {
+    pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>> {
         &self.control_sets
     }
     /// Consumes the builder and constructs a [`AssessmentFramework`](crate::types::AssessmentFramework).

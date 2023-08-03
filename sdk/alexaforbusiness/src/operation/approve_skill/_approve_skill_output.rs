@@ -19,9 +19,7 @@ impl ApproveSkillOutput {
 
 /// A builder for [`ApproveSkillOutput`](crate::operation::approve_skill::ApproveSkillOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApproveSkillOutputBuilder {
     _request_id: Option<String>,
 }

@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteGitHubAccountTokenOutput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput) with field(s):
     ///   - [`token_name(Option<String>)`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput::token_name): <p>The name of the GitHub account connection that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteGitHubAccountTokenError>`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError)
-    pub fn delete_git_hub_account_token(&self) -> crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenFluentBuilder{
+    pub fn delete_git_hub_account_token(&self) -> crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenFluentBuilder {
         crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenFluentBuilder::new(self.handle.clone())
     }
 }

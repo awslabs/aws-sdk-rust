@@ -29,18 +29,14 @@ impl ListFeaturedResultsSetsInput {
 }
 impl ListFeaturedResultsSetsInput {
     /// Creates a new builder-style object to manufacture [`ListFeaturedResultsSetsInput`](crate::operation::list_featured_results_sets::ListFeaturedResultsSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_featured_results_sets::builders::ListFeaturedResultsSetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_featured_results_sets::builders::ListFeaturedResultsSetsInputBuilder {
         crate::operation::list_featured_results_sets::builders::ListFeaturedResultsSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFeaturedResultsSetsInput`](crate::operation::list_featured_results_sets::ListFeaturedResultsSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFeaturedResultsSetsInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl ListFeaturedResultsSetsInputBuilder {
         crate::operation::list_featured_results_sets::ListFeaturedResultsSetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_featured_results_sets::ListFeaturedResultsSetsInput {
-                index_id: self.index_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_featured_results_sets::ListFeaturedResultsSetsInput {
+            index_id: self.index_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

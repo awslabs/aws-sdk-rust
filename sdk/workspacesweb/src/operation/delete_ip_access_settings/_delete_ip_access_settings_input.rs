@@ -15,35 +15,25 @@ impl DeleteIpAccessSettingsInput {
 }
 impl DeleteIpAccessSettingsInput {
     /// Creates a new builder-style object to manufacture [`DeleteIpAccessSettingsInput`](crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsInputBuilder {
         crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIpAccessSettingsInput`](crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIpAccessSettingsInputBuilder {
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIpAccessSettingsInputBuilder {
     /// <p>The ARN of the IP access settings.</p>
-    pub fn ip_access_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn set_ip_access_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_access_settings_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteIpAccessSettingsInputBuilder {
         crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsInput {
-                ip_access_settings_arn: self.ip_access_settings_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsInput {
+            ip_access_settings_arn: self.ip_access_settings_arn,
+        })
     }
 }

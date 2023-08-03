@@ -22,9 +22,7 @@ impl DescribeTunnelInput {
 
 /// A builder for [`DescribeTunnelInput`](crate::operation::describe_tunnel::DescribeTunnelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTunnelInputBuilder {
     pub(crate) tunnel_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeTunnelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTunnelInput`](crate::operation::describe_tunnel::DescribeTunnelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tunnel::DescribeTunnelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_tunnel::DescribeTunnelInput {
-            tunnel_id: self.tunnel_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_tunnel::DescribeTunnelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_tunnel::DescribeTunnelInput { tunnel_id: self.tunnel_id })
     }
 }

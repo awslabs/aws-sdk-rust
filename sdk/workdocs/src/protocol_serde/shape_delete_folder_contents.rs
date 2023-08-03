@@ -2,8 +2,7 @@
 pub fn ser_delete_folder_contents_headers(
     input: &crate::operation::delete_folder_contents::DeleteFolderContentsInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.authentication_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_delete_folder_contents_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "authentication_token",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("Authentication", header_value);
@@ -33,140 +29,133 @@ pub fn de_delete_folder_contents_http_error(
     crate::operation::delete_folder_contents::DeleteFolderContentsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingOperationException" => crate::operation::delete_folder_contents::DeleteFolderContentsError::ConflictingOperationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output).map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "EntityNotExistsException" => crate::operation::delete_folder_contents::DeleteFolderContentsError::EntityNotExistsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::EntityNotExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(_response_body, output).map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EntityNotExistsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "FailedDependencyException" => crate::operation::delete_folder_contents::DeleteFolderContentsError::FailedDependencyException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::FailedDependencyExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_failed_dependency_exception::de_failed_dependency_exception_json_err(_response_body, output).map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FailedDependencyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_failed_dependency_exception::de_failed_dependency_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ProhibitedStateException" => crate::operation::delete_folder_contents::DeleteFolderContentsError::ProhibitedStateException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ProhibitedStateExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_prohibited_state_exception::de_prohibited_state_exception_json_err(_response_body, output).map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ProhibitedStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_prohibited_state_exception::de_prohibited_state_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::delete_folder_contents::DeleteFolderContentsError::ServiceUnavailableException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedOperationException" => crate::operation::delete_folder_contents::DeleteFolderContentsError::UnauthorizedOperationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(_response_body, output).map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "UnauthorizedResourceAccessException" => crate::operation::delete_folder_contents::DeleteFolderContentsError::UnauthorizedResourceAccessException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "UnauthorizedResourceAccessException" => {
+            crate::operation::delete_folder_contents::DeleteFolderContentsError::UnauthorizedResourceAccessException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedResourceAccessExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(_response_body, output).map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_folder_contents::DeleteFolderContentsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::delete_folder_contents::DeleteFolderContentsError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::delete_folder_contents::DeleteFolderContentsError::generic(generic),
     })
 }
 
@@ -182,9 +171,7 @@ pub fn de_delete_folder_contents_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_folder_contents::builders::DeleteFolderContentsOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -10,10 +10,7 @@ impl PurchaseOfferingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::purchase_offering::PurchaseOfferingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_offering::PurchaseOfferingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_offering::PurchaseOfferingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.purchase_offering();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PurchaseOfferingFluentBuilder {
         }
     }
     /// Access the PurchaseOffering as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PurchaseOfferingFluentBuilder {
             crate::operation::purchase_offering::PurchaseOffering,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_offering::PurchaseOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_offering::PurchaseOfferingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PurchaseOfferingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PurchaseOfferingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_offering::PurchaseOfferingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_offering::PurchaseOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_offering::PurchaseOfferingError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PurchaseOfferingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_offering::PurchaseOfferingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_offering::PurchaseOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_offering::PurchaseOfferingError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PurchaseOfferingFluentBuilder {
             crate::operation::purchase_offering::PurchaseOffering,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_offering::PurchaseOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_offering::PurchaseOfferingError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl PurchaseOfferingFluentBuilder {
         self.inner.get_offering_arn()
     }
     /// The name that you want to use for the reservation.
-    pub fn reservation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reservation_name(input.into());
         self
     }
     /// The name that you want to use for the reservation.
-    pub fn set_reservation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reservation_name(input);
         self
     }

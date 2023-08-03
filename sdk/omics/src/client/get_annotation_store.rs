@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::status_message): <p>A status message.</p>
     ///   - [`store_size_bytes(Option<i64>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_size_bytes): <p>The store's size in bytes.</p>
     /// - On failure, responds with [`SdkError<GetAnnotationStoreError>`](crate::operation::get_annotation_store::GetAnnotationStoreError)
-    pub fn get_annotation_store(
-        &self,
-    ) -> crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder {
-        crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_annotation_store(&self) -> crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder {
+        crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::new(self.handle.clone())
     }
 }

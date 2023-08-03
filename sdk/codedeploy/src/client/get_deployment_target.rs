@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDeploymentTargetOutput`](crate::operation::get_deployment_target::GetDeploymentTargetOutput) with field(s):
     ///   - [`deployment_target(Option<DeploymentTarget>)`](crate::operation::get_deployment_target::GetDeploymentTargetOutput::deployment_target): <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
     /// - On failure, responds with [`SdkError<GetDeploymentTargetError>`](crate::operation::get_deployment_target::GetDeploymentTargetError)
-    pub fn get_deployment_target(
-        &self,
-    ) -> crate::operation::get_deployment_target::builders::GetDeploymentTargetFluentBuilder {
-        crate::operation::get_deployment_target::builders::GetDeploymentTargetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_deployment_target(&self) -> crate::operation::get_deployment_target::builders::GetDeploymentTargetFluentBuilder {
+        crate::operation::get_deployment_target::builders::GetDeploymentTargetFluentBuilder::new(self.handle.clone())
     }
 }

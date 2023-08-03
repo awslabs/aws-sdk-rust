@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDiscoveredSchemaOutput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaOutput) with field(s):
     ///   - [`content(Option<String>)`](crate::operation::get_discovered_schema::GetDiscoveredSchemaOutput::content): <p>The source of the schema definition.</p>
     /// - On failure, responds with [`SdkError<GetDiscoveredSchemaError>`](crate::operation::get_discovered_schema::GetDiscoveredSchemaError)
-    pub fn get_discovered_schema(
-        &self,
-    ) -> crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder {
-        crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_discovered_schema(&self) -> crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder {
+        crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder::new(self.handle.clone())
     }
 }

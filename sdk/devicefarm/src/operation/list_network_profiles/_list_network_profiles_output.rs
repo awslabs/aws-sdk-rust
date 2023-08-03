@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListNetworkProfilesOutput {
 }
 impl ListNetworkProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworkProfilesOutput`](crate::operation::list_network_profiles::ListNetworkProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_network_profiles::builders::ListNetworkProfilesOutputBuilder {
-        crate::operation::list_network_profiles::builders::ListNetworkProfilesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_network_profiles::builders::ListNetworkProfilesOutputBuilder {
+        crate::operation::list_network_profiles::builders::ListNetworkProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNetworkProfilesOutput`](crate::operation::list_network_profiles::ListNetworkProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworkProfilesOutputBuilder {
-    pub(crate) network_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfile>>,
+    pub(crate) network_profiles: ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListNetworkProfilesOutputBuilder {
         self
     }
     /// <p>A list of the available network profiles.</p>
-    pub fn set_network_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfile>>,
-    ) -> Self {
+    pub fn set_network_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfile>>) -> Self {
         self.network_profiles = input;
         self
     }
     /// <p>A list of the available network profiles.</p>
-    pub fn get_network_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkProfile>> {
+    pub fn get_network_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkProfile>> {
         &self.network_profiles
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>

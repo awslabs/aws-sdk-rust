@@ -23,9 +23,7 @@ impl ListStreamsInput {
         self.next_token.as_deref()
     }
     /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
-    pub fn stream_name_condition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamNameCondition> {
+    pub fn stream_name_condition(&self) -> ::std::option::Option<&crate::types::StreamNameCondition> {
         self.stream_name_condition.as_ref()
     }
 }
@@ -38,9 +36,7 @@ impl ListStreamsInput {
 
 /// A builder for [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -81,26 +77,16 @@ impl ListStreamsInputBuilder {
         self
     }
     /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
-    pub fn set_stream_name_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamNameCondition>,
-    ) -> Self {
+    pub fn set_stream_name_condition(mut self, input: ::std::option::Option<crate::types::StreamNameCondition>) -> Self {
         self.stream_name_condition = input;
         self
     }
     /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
-    pub fn get_stream_name_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamNameCondition> {
+    pub fn get_stream_name_condition(&self) -> &::std::option::Option<crate::types::StreamNameCondition> {
         &self.stream_name_condition
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_streams::ListStreamsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -21,7 +21,9 @@ impl super::Client {
     ///   - [`interpolated_asset_property_values(Option<Vec<InterpolatedAssetPropertyValue>>)`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput::interpolated_asset_property_values): <p>The requested interpolated values.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<GetInterpolatedAssetPropertyValuesError>`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError)
-    pub fn get_interpolated_asset_property_values(&self) -> crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesFluentBuilder{
+    pub fn get_interpolated_asset_property_values(
+        &self,
+    ) -> crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesFluentBuilder {
         crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesFluentBuilder::new(self.handle.clone())
     }
 }

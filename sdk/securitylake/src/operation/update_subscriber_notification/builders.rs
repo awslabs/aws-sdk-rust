@@ -26,7 +26,7 @@ impl UpdateSubscriberNotificationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSubscriberNotificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_subscriber_notification::builders::UpdateSubscriberNotificationInputBuilder,
+    inner: crate::operation::update_subscriber_notification::builders::UpdateSubscriberNotificationInputBuilder,
 }
 impl UpdateSubscriberNotificationFluentBuilder {
     /// Creates a new `UpdateSubscriberNotification`.
@@ -37,7 +37,7 @@ impl UpdateSubscriberNotificationFluentBuilder {
         }
     }
     /// Access the UpdateSubscriberNotification as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_subscriber_notification::builders::UpdateSubscriberNotificationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_subscriber_notification::builders::UpdateSubscriberNotificationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateSubscriberNotificationFluentBuilder {
             crate::operation::update_subscriber_notification::UpdateSubscriberNotification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber_notification::UpdateSubscriberNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subscriber_notification::UpdateSubscriberNotificationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateSubscriberNotificationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateSubscriberNotificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_subscriber_notification::UpdateSubscriberNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber_notification::UpdateSubscriberNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subscriber_notification::UpdateSubscriberNotificationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateSubscriberNotificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_subscriber_notification::UpdateSubscriberNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber_notification::UpdateSubscriberNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subscriber_notification::UpdateSubscriberNotificationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateSubscriberNotificationFluentBuilder {
             crate::operation::update_subscriber_notification::UpdateSubscriberNotification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber_notification::UpdateSubscriberNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subscriber_notification::UpdateSubscriberNotificationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The subscription ID for which the subscription notification is specified.</p>
-    pub fn subscriber_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscriber_id(input.into());
         self
     }
     /// <p>The subscription ID for which the subscription notification is specified.</p>
-    pub fn set_subscriber_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscriber_id(input);
         self
     }
@@ -146,17 +129,12 @@ impl UpdateSubscriberNotificationFluentBuilder {
         self
     }
     /// <p>The configuration for subscriber notification.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>The configuration for subscriber notification.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         self.inner.get_configuration()
     }
 }

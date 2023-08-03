@@ -30,9 +30,7 @@ impl ElicitationCodeHookInvocationSetting {
 
 /// A builder for [`ElicitationCodeHookInvocationSetting`](crate::types::ElicitationCodeHookInvocationSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElicitationCodeHookInvocationSettingBuilder {
     pub(crate) enable_code_hook_invocation: ::std::option::Option<bool>,
     pub(crate) invocation_label: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl ElicitationCodeHookInvocationSettingBuilder {
         &self.enable_code_hook_invocation
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    pub fn invocation_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invocation_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invocation_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    pub fn set_invocation_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invocation_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invocation_label = input;
         self
     }

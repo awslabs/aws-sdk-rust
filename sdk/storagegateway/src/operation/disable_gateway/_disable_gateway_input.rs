@@ -23,9 +23,7 @@ impl DisableGatewayInput {
 
 /// A builder for [`DisableGatewayInput`](crate::operation::disable_gateway::DisableGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableGatewayInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +45,7 @@ impl DisableGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DisableGatewayInput`](crate::operation::disable_gateway::DisableGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_gateway::DisableGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::disable_gateway::DisableGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_gateway::DisableGatewayInput {
             gateway_arn: self.gateway_arn,
         })

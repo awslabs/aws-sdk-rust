@@ -9,8 +9,7 @@ pub struct ListResolverDnssecConfigsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub resolver_dnssec_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>>,
+    pub resolver_dnssec_configs: ::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>>,
     _request_id: Option<String>,
 }
 impl ListResolverDnssecConfigsOutput {
@@ -20,9 +19,7 @@ impl ListResolverDnssecConfigsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
-    pub fn resolver_dnssec_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResolverDnssecConfig]> {
+    pub fn resolver_dnssec_configs(&self) -> ::std::option::Option<&[crate::types::ResolverDnssecConfig]> {
         self.resolver_dnssec_configs.as_deref()
     }
 }
@@ -33,20 +30,17 @@ impl ::aws_http::request_id::RequestId for ListResolverDnssecConfigsOutput {
 }
 impl ListResolverDnssecConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverDnssecConfigsOutput`](crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsOutput).
-    pub fn builder() -> crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsOutputBuilder{
+    pub fn builder() -> crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsOutputBuilder {
         crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverDnssecConfigsOutput`](crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverDnssecConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) resolver_dnssec_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>>,
+    pub(crate) resolver_dnssec_configs: ::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>>,
     _request_id: Option<String>,
 }
 impl ListResolverDnssecConfigsOutputBuilder {
@@ -79,17 +73,12 @@ impl ListResolverDnssecConfigsOutputBuilder {
         self
     }
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
-    pub fn set_resolver_dnssec_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>>,
-    ) -> Self {
+    pub fn set_resolver_dnssec_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>>) -> Self {
         self.resolver_dnssec_configs = input;
         self
     }
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
-    pub fn get_resolver_dnssec_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>> {
+    pub fn get_resolver_dnssec_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>> {
         &self.resolver_dnssec_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +91,7 @@ impl ListResolverDnssecConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResolverDnssecConfigsOutput`](crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsOutput {
+    pub fn build(self) -> crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsOutput {
         crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsOutput {
             next_token: self.next_token,
             resolver_dnssec_configs: self.resolver_dnssec_configs,

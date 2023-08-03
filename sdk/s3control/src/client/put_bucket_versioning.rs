@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`versioning_configuration(VersioningConfiguration)`](crate::operation::put_bucket_versioning::builders::PutBucketVersioningFluentBuilder::versioning_configuration) / [`set_versioning_configuration(Option<VersioningConfiguration>)`](crate::operation::put_bucket_versioning::builders::PutBucketVersioningFluentBuilder::set_versioning_configuration): <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
     /// - On success, responds with [`PutBucketVersioningOutput`](crate::operation::put_bucket_versioning::PutBucketVersioningOutput)
     /// - On failure, responds with [`SdkError<PutBucketVersioningError>`](crate::operation::put_bucket_versioning::PutBucketVersioningError)
-    pub fn put_bucket_versioning(
-        &self,
-    ) -> crate::operation::put_bucket_versioning::builders::PutBucketVersioningFluentBuilder {
-        crate::operation::put_bucket_versioning::builders::PutBucketVersioningFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_bucket_versioning(&self) -> crate::operation::put_bucket_versioning::builders::PutBucketVersioningFluentBuilder {
+        crate::operation::put_bucket_versioning::builders::PutBucketVersioningFluentBuilder::new(self.handle.clone())
     }
 }

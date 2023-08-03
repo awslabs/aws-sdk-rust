@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`flow_definition_summaries(Option<Vec<FlowDefinitionSummary>>)`](crate::operation::list_flow_definitions::ListFlowDefinitionsOutput::flow_definition_summaries): <p>An array of objects describing the flow definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_flow_definitions::ListFlowDefinitionsOutput::next_token): <p>A token to resume pagination.</p>
     /// - On failure, responds with [`SdkError<ListFlowDefinitionsError>`](crate::operation::list_flow_definitions::ListFlowDefinitionsError)
-    pub fn list_flow_definitions(
-        &self,
-    ) -> crate::operation::list_flow_definitions::builders::ListFlowDefinitionsFluentBuilder {
-        crate::operation::list_flow_definitions::builders::ListFlowDefinitionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_flow_definitions(&self) -> crate::operation::list_flow_definitions::builders::ListFlowDefinitionsFluentBuilder {
+        crate::operation::list_flow_definitions::builders::ListFlowDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

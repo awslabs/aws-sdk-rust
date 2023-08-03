@@ -30,18 +30,14 @@ impl UpdateWorkloadShareInput {
 }
 impl UpdateWorkloadShareInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkloadShareInput`](crate::operation::update_workload_share::UpdateWorkloadShareInput).
-    pub fn builder(
-    ) -> crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder {
-        crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder {
+        crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkloadShareInput`](crate::operation::update_workload_share::UpdateWorkloadShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkloadShareInputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
@@ -82,10 +78,7 @@ impl UpdateWorkloadShareInputBuilder {
         self
     }
     /// <p>Permission granted on a share request.</p>
-    pub fn set_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionType>,
-    ) -> Self {
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
         self.permission_type = input;
         self
     }
@@ -96,16 +89,12 @@ impl UpdateWorkloadShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkloadShareInput`](crate::operation::update_workload_share::UpdateWorkloadShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workload_share::UpdateWorkloadShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_workload_share::UpdateWorkloadShareInput {
-                share_id: self.share_id,
-                workload_id: self.workload_id,
-                permission_type: self.permission_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_workload_share::UpdateWorkloadShareInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_workload_share::UpdateWorkloadShareInput {
+            share_id: self.share_id,
+            workload_id: self.workload_id,
+            permission_type: self.permission_type,
+        })
     }
 }

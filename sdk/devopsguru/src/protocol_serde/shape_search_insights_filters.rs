@@ -24,19 +24,13 @@ pub fn ser_search_insights_filters(
     if let Some(var_7) = &input.resource_collection {
         #[allow(unused_mut)]
         let mut object_8 = object.key("ResourceCollection").start_object();
-        crate::protocol_serde::shape_resource_collection::ser_resource_collection(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_resource_collection::ser_resource_collection(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.service_collection {
         #[allow(unused_mut)]
         let mut object_10 = object.key("ServiceCollection").start_object();
-        crate::protocol_serde::shape_service_collection::ser_service_collection(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_service_collection::ser_service_collection(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

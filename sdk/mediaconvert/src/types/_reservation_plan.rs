@@ -58,9 +58,7 @@ impl ReservationPlan {
 
 /// A builder for [`ReservationPlan`](crate::types::ReservationPlan).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationPlanBuilder {
     pub(crate) commitment: ::std::option::Option<crate::types::Commitment>,
     pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -76,10 +74,7 @@ impl ReservationPlanBuilder {
         self
     }
     /// The length of the term of your reserved queue pricing plan commitment.
-    pub fn set_commitment(
-        mut self,
-        input: ::std::option::Option<crate::types::Commitment>,
-    ) -> Self {
+    pub fn set_commitment(mut self, input: ::std::option::Option<crate::types::Commitment>) -> Self {
         self.commitment = input;
         self
     }
@@ -93,10 +88,7 @@ impl ReservationPlanBuilder {
         self
     }
     /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
-    pub fn set_expires_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires_at = input;
         self
     }
@@ -110,10 +102,7 @@ impl ReservationPlanBuilder {
         self
     }
     /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
-    pub fn set_purchased_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_purchased_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.purchased_at = input;
         self
     }
@@ -127,10 +116,7 @@ impl ReservationPlanBuilder {
         self
     }
     /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
-    pub fn set_renewal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RenewalType>,
-    ) -> Self {
+    pub fn set_renewal_type(mut self, input: ::std::option::Option<crate::types::RenewalType>) -> Self {
         self.renewal_type = input;
         self
     }
@@ -158,10 +144,7 @@ impl ReservationPlanBuilder {
         self
     }
     /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationPlanStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReservationPlanStatus>) -> Self {
         self.status = input;
         self
     }

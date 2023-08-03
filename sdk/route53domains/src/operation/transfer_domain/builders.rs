@@ -10,10 +10,7 @@ impl TransferDomainInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::transfer_domain::TransferDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transfer_domain::TransferDomainError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain::TransferDomainError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.transfer_domain();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl TransferDomainFluentBuilder {
         }
     }
     /// Access the TransferDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::transfer_domain::builders::TransferDomainInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::transfer_domain::builders::TransferDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -71,10 +66,7 @@ impl TransferDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -160,18 +152,12 @@ impl TransferDomainFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>Reserved for future use.</p>
-    pub fn idn_lang_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idn_lang_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idn_lang_code(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_idn_lang_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idn_lang_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idn_lang_code(input);
         self
     }
@@ -206,17 +192,12 @@ impl TransferDomainFluentBuilder {
         self
     }
     /// <p>Contains details for the host and glue IP addresses.</p>
-    pub fn set_nameservers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
-    ) -> Self {
+    pub fn set_nameservers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>) -> Self {
         self.inner = self.inner.set_nameservers(input);
         self
     }
     /// <p>Contains details for the host and glue IP addresses.</p>
-    pub fn get_nameservers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
+    pub fn get_nameservers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
         self.inner.get_nameservers()
     }
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
@@ -256,10 +237,7 @@ impl TransferDomainFluentBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_admin_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_admin_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.inner = self.inner.set_admin_contact(input);
         self
     }
@@ -273,10 +251,7 @@ impl TransferDomainFluentBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_registrant_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_registrant_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.inner = self.inner.set_registrant_contact(input);
         self
     }
@@ -290,10 +265,7 @@ impl TransferDomainFluentBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_tech_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_tech_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.inner = self.inner.set_tech_contact(input);
         self
     }
@@ -342,10 +314,7 @@ impl TransferDomainFluentBuilder {
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    pub fn set_privacy_protect_registrant_contact(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_privacy_protect_registrant_contact(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_privacy_protect_registrant_contact(input);
         self
     }

@@ -51,9 +51,7 @@ impl ClusterSnapshotInList {
 
 /// A builder for [`ClusterSnapshotInList`](crate::types::ClusterSnapshotInList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterSnapshotInListBuilder {
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct ClusterSnapshotInListBuilder {
 }
 impl ClusterSnapshotInListBuilder {
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -125,18 +117,12 @@ impl ClusterSnapshotInListBuilder {
         &self.status
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    pub fn snapshot_creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    pub fn set_snapshot_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_creation_time = input;
         self
     }

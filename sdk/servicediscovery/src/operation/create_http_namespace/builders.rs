@@ -38,9 +38,7 @@ impl CreateHttpNamespaceFluentBuilder {
         }
     }
     /// Access the CreateHttpNamespace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_http_namespace::builders::CreateHttpNamespaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_http_namespace::builders::CreateHttpNamespaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl CreateHttpNamespaceFluentBuilder {
             crate::operation::create_http_namespace::CreateHttpNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_http_namespace::CreateHttpNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_http_namespace::CreateHttpNamespaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl CreateHttpNamespaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl CreateHttpNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_http_namespace::CreateHttpNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_http_namespace::CreateHttpNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_http_namespace::CreateHttpNamespaceError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl CreateHttpNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_http_namespace::CreateHttpNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_http_namespace::CreateHttpNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_http_namespace::CreateHttpNamespaceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl CreateHttpNamespaceFluentBuilder {
             crate::operation::create_http_namespace::CreateHttpNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_http_namespace::CreateHttpNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_http_namespace::CreateHttpNamespaceError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +125,12 @@ impl CreateHttpNamespaceFluentBuilder {
         self.inner.get_name()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -181,10 +162,7 @@ impl CreateHttpNamespaceFluentBuilder {
         self
     }
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

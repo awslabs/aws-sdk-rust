@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RestoreDomainAccessOutput {
 }
 impl RestoreDomainAccessOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDomainAccessOutput`](crate::operation::restore_domain_access::RestoreDomainAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::restore_domain_access::builders::RestoreDomainAccessOutputBuilder {
-        crate::operation::restore_domain_access::builders::RestoreDomainAccessOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::restore_domain_access::builders::RestoreDomainAccessOutputBuilder {
+        crate::operation::restore_domain_access::builders::RestoreDomainAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreDomainAccessOutput`](crate::operation::restore_domain_access::RestoreDomainAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDomainAccessOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`packages(Option<Vec<PackageSummary>>)`](crate::operation::list_packages::ListPackagesOutput::packages): <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_packages::ListPackagesOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListPackagesError>`](crate::operation::list_packages::ListPackagesError)
-    pub fn list_packages(
-        &self,
-    ) -> crate::operation::list_packages::builders::ListPackagesFluentBuilder {
-        crate::operation::list_packages::builders::ListPackagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_packages(&self) -> crate::operation::list_packages::builders::ListPackagesFluentBuilder {
+        crate::operation::list_packages::builders::ListPackagesFluentBuilder::new(self.handle.clone())
     }
 }

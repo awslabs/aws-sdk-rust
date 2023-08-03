@@ -10,10 +10,7 @@ impl ListFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_findings::ListFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings::ListFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings::ListFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_findings();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListFindingsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_findings::ListFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_findings::ListFindings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_findings::ListFindingsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListFindingsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_findings::ListFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_findings::ListFindings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_findings::ListFindingsError>,
     > {
         self.customize_middleware().await
@@ -115,38 +103,25 @@ impl ListFindingsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_findings::paginator::ListFindingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_findings::paginator::ListFindingsPaginator {
-        crate::operation::list_findings::paginator::ListFindingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_findings::paginator::ListFindingsPaginator {
+        crate::operation::list_findings::paginator::ListFindingsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `assessmentRunArns`.
     ///
     /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
     ///
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    pub fn assessment_run_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_run_arns(input.into());
         self
     }
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    pub fn set_assessment_run_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_run_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_assessment_run_arns(input);
         self
     }
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    pub fn get_assessment_run_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_run_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_assessment_run_arns()
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>

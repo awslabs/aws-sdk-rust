@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_core_definition_version::GetCoreDefinitionVersionOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     ///   - [`version(Option<String>)`](crate::operation::get_core_definition_version::GetCoreDefinitionVersionOutput::version): The version of the core definition version.
     /// - On failure, responds with [`SdkError<GetCoreDefinitionVersionError>`](crate::operation::get_core_definition_version::GetCoreDefinitionVersionError)
-    pub fn get_core_definition_version(&self) -> crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionFluentBuilder{
+    pub fn get_core_definition_version(&self) -> crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionFluentBuilder {
         crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateDecoderManifestOutput {
 }
 impl UpdateDecoderManifestOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDecoderManifestOutput`](crate::operation::update_decoder_manifest::UpdateDecoderManifestOutput).
-    pub fn builder(
-    ) -> crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestOutputBuilder {
         crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDecoderManifestOutput`](crate::operation::update_decoder_manifest::UpdateDecoderManifestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDecoderManifestOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

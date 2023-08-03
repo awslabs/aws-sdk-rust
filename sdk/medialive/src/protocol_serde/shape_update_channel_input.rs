@@ -6,10 +6,7 @@ pub fn ser_update_channel_input(
     if let Some(var_1) = &input.cdi_input_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("cdiInputSpecification").start_object();
-        crate::protocol_serde::shape_cdi_input_specification::ser_cdi_input_specification(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_cdi_input_specification::ser_cdi_input_specification(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.destinations {
@@ -18,10 +15,7 @@ pub fn ser_update_channel_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_output_destination::ser_output_destination(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_output_destination::ser_output_destination(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -39,10 +33,7 @@ pub fn ser_update_channel_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_input_attachment::ser_input_attachment(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_input_attachment::ser_input_attachment(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -51,10 +42,7 @@ pub fn ser_update_channel_input(
     if let Some(var_13) = &input.input_specification {
         #[allow(unused_mut)]
         let mut object_14 = object.key("inputSpecification").start_object();
-        crate::protocol_serde::shape_input_specification::ser_input_specification(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_input_specification::ser_input_specification(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.log_level {
@@ -63,10 +51,7 @@ pub fn ser_update_channel_input(
     if let Some(var_16) = &input.maintenance {
         #[allow(unused_mut)]
         let mut object_17 = object.key("maintenance").start_object();
-        crate::protocol_serde::shape_maintenance_update_settings::ser_maintenance_update_settings(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_maintenance_update_settings::ser_maintenance_update_settings(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.name {

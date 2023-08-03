@@ -79,8 +79,7 @@ pub struct DeploymentInfo {
     pub instance_termination_wait_time_started: bool,
     /// <p>Information about blue/green deployment options for this deployment.</p>
     #[doc(hidden)]
-    pub blue_green_deployment_configuration:
-        ::std::option::Option<crate::types::BlueGreenDeploymentConfiguration>,
+    pub blue_green_deployment_configuration: ::std::option::Option<crate::types::BlueGreenDeploymentConfiguration>,
     /// <p>Information about the load balancer used in the deployment.</p>
     #[doc(hidden)]
     pub load_balancer_info: ::std::option::Option<crate::types::LoadBalancerInfo>,
@@ -183,9 +182,7 @@ impl DeploymentInfo {
         self.ignore_application_stop_failures
     }
     /// <p>Information about the automatic rollback configuration associated with the deployment.</p>
-    pub fn auto_rollback_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoRollbackConfiguration> {
+    pub fn auto_rollback_configuration(&self) -> ::std::option::Option<&crate::types::AutoRollbackConfiguration> {
         self.auto_rollback_configuration.as_ref()
     }
     /// <p>Indicates whether only instances that are not running the latest application revision are to be deployed to.</p>
@@ -209,9 +206,7 @@ impl DeploymentInfo {
         self.instance_termination_wait_time_started
     }
     /// <p>Information about blue/green deployment options for this deployment.</p>
-    pub fn blue_green_deployment_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BlueGreenDeploymentConfiguration> {
+    pub fn blue_green_deployment_configuration(&self) -> ::std::option::Option<&crate::types::BlueGreenDeploymentConfiguration> {
         self.blue_green_deployment_configuration.as_ref()
     }
     /// <p>Information about the load balancer used in the deployment.</p>
@@ -248,9 +243,7 @@ impl DeploymentInfo {
         self.related_deployments.as_ref()
     }
     /// <p>Information about alarms associated with a deployment or deployment group.</p>
-    pub fn override_alarm_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
+    pub fn override_alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
         self.override_alarm_configuration.as_ref()
     }
 }
@@ -263,9 +256,7 @@ impl DeploymentInfo {
 
 /// A builder for [`DeploymentInfo`](crate::types::DeploymentInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentInfoBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_group_name: ::std::option::Option<::std::string::String>,
@@ -282,40 +273,30 @@ pub struct DeploymentInfoBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creator: ::std::option::Option<crate::types::DeploymentCreator>,
     pub(crate) ignore_application_stop_failures: ::std::option::Option<bool>,
-    pub(crate) auto_rollback_configuration:
-        ::std::option::Option<crate::types::AutoRollbackConfiguration>,
+    pub(crate) auto_rollback_configuration: ::std::option::Option<crate::types::AutoRollbackConfiguration>,
     pub(crate) update_outdated_instances_only: ::std::option::Option<bool>,
     pub(crate) rollback_info: ::std::option::Option<crate::types::RollbackInfo>,
     pub(crate) deployment_style: ::std::option::Option<crate::types::DeploymentStyle>,
     pub(crate) target_instances: ::std::option::Option<crate::types::TargetInstances>,
     pub(crate) instance_termination_wait_time_started: ::std::option::Option<bool>,
-    pub(crate) blue_green_deployment_configuration:
-        ::std::option::Option<crate::types::BlueGreenDeploymentConfiguration>,
+    pub(crate) blue_green_deployment_configuration: ::std::option::Option<crate::types::BlueGreenDeploymentConfiguration>,
     pub(crate) load_balancer_info: ::std::option::Option<crate::types::LoadBalancerInfo>,
     pub(crate) additional_deployment_status_info: ::std::option::Option<::std::string::String>,
     pub(crate) file_exists_behavior: ::std::option::Option<crate::types::FileExistsBehavior>,
-    pub(crate) deployment_status_messages:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) deployment_status_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
     pub(crate) related_deployments: ::std::option::Option<crate::types::RelatedDeployments>,
-    pub(crate) override_alarm_configuration:
-        ::std::option::Option<crate::types::AlarmConfiguration>,
+    pub(crate) override_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl DeploymentInfoBuilder {
     /// <p>The application name.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application name.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -324,18 +305,12 @@ impl DeploymentInfoBuilder {
         &self.application_name
     }
     /// <p> The deployment group name. </p>
-    pub fn deployment_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The deployment group name. </p>
-    pub fn set_deployment_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_group_name = input;
         self
     }
@@ -344,18 +319,12 @@ impl DeploymentInfoBuilder {
         &self.deployment_group_name
     }
     /// <p> The deployment configuration name. </p>
-    pub fn deployment_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The deployment configuration name. </p>
-    pub fn set_deployment_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_config_name = input;
         self
     }
@@ -364,18 +333,12 @@ impl DeploymentInfoBuilder {
         &self.deployment_config_name
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -389,10 +352,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Information about the application revision that was deployed to the deployment group before the most recent successful deployment.</p>
-    pub fn set_previous_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::RevisionLocation>,
-    ) -> Self {
+    pub fn set_previous_revision(mut self, input: ::std::option::Option<crate::types::RevisionLocation>) -> Self {
         self.previous_revision = input;
         self
     }
@@ -406,10 +366,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Information about the location of stored application artifacts and the service from which to retrieve them.</p>
-    pub fn set_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::RevisionLocation>,
-    ) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<crate::types::RevisionLocation>) -> Self {
         self.revision = input;
         self
     }
@@ -423,10 +380,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>The current state of the deployment as a whole.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -440,10 +394,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Information about any error associated with this deployment.</p>
-    pub fn set_error_information(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorInformation>,
-    ) -> Self {
+    pub fn set_error_information(mut self, input: ::std::option::Option<crate::types::ErrorInformation>) -> Self {
         self.error_information = input;
         self
     }
@@ -457,10 +408,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>A timestamp that indicates when the deployment was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -476,10 +424,7 @@ impl DeploymentInfoBuilder {
     }
     /// <p>A timestamp that indicates when the deployment was deployed to the deployment group.</p>
     /// <p>In some cases, the reported value of the start time might be later than the complete time. This is due to differences in the clock settings of backend servers that participate in the deployment process.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -494,10 +439,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>A timestamp that indicates when the deployment was complete.</p>
-    pub fn set_complete_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_complete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.complete_time = input;
         self
     }
@@ -511,17 +453,12 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>A summary of the deployment status of the instances in the deployment.</p>
-    pub fn set_deployment_overview(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentOverview>,
-    ) -> Self {
+    pub fn set_deployment_overview(mut self, input: ::std::option::Option<crate::types::DeploymentOverview>) -> Self {
         self.deployment_overview = input;
         self
     }
     /// <p>A summary of the deployment status of the instances in the deployment.</p>
-    pub fn get_deployment_overview(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentOverview> {
+    pub fn get_deployment_overview(&self) -> &::std::option::Option<crate::types::DeploymentOverview> {
         &self.deployment_overview
     }
     /// <p>A comment about the deployment.</p>
@@ -556,10 +493,7 @@ impl DeploymentInfoBuilder {
     /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
     /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
     /// </ul>
-    pub fn set_creator(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentCreator>,
-    ) -> Self {
+    pub fn set_creator(mut self, input: ::std::option::Option<crate::types::DeploymentCreator>) -> Self {
         self.creator = input;
         self
     }
@@ -585,10 +519,7 @@ impl DeploymentInfoBuilder {
     /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
     /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
     /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
-    pub fn set_ignore_application_stop_failures(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_ignore_application_stop_failures(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_application_stop_failures = input;
         self
     }
@@ -600,25 +531,17 @@ impl DeploymentInfoBuilder {
         &self.ignore_application_stop_failures
     }
     /// <p>Information about the automatic rollback configuration associated with the deployment.</p>
-    pub fn auto_rollback_configuration(
-        mut self,
-        input: crate::types::AutoRollbackConfiguration,
-    ) -> Self {
+    pub fn auto_rollback_configuration(mut self, input: crate::types::AutoRollbackConfiguration) -> Self {
         self.auto_rollback_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the automatic rollback configuration associated with the deployment.</p>
-    pub fn set_auto_rollback_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoRollbackConfiguration>,
-    ) -> Self {
+    pub fn set_auto_rollback_configuration(mut self, input: ::std::option::Option<crate::types::AutoRollbackConfiguration>) -> Self {
         self.auto_rollback_configuration = input;
         self
     }
     /// <p>Information about the automatic rollback configuration associated with the deployment.</p>
-    pub fn get_auto_rollback_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoRollbackConfiguration> {
+    pub fn get_auto_rollback_configuration(&self) -> &::std::option::Option<crate::types::AutoRollbackConfiguration> {
         &self.auto_rollback_configuration
     }
     /// <p>Indicates whether only instances that are not running the latest application revision are to be deployed to.</p>
@@ -627,10 +550,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Indicates whether only instances that are not running the latest application revision are to be deployed to.</p>
-    pub fn set_update_outdated_instances_only(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_update_outdated_instances_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.update_outdated_instances_only = input;
         self
     }
@@ -644,10 +564,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Information about a deployment rollback.</p>
-    pub fn set_rollback_info(
-        mut self,
-        input: ::std::option::Option<crate::types::RollbackInfo>,
-    ) -> Self {
+    pub fn set_rollback_info(mut self, input: ::std::option::Option<crate::types::RollbackInfo>) -> Self {
         self.rollback_info = input;
         self
     }
@@ -661,10 +578,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
-    pub fn set_deployment_style(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStyle>,
-    ) -> Self {
+    pub fn set_deployment_style(mut self, input: ::std::option::Option<crate::types::DeploymentStyle>) -> Self {
         self.deployment_style = input;
         self
     }
@@ -678,10 +592,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
-    pub fn set_target_instances(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetInstances>,
-    ) -> Self {
+    pub fn set_target_instances(mut self, input: ::std::option::Option<crate::types::TargetInstances>) -> Self {
         self.target_instances = input;
         self
     }
@@ -695,10 +606,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Indicates whether the wait period set for the termination of instances in the original environment has started. Status is 'false' if the KEEP_ALIVE option is specified. Otherwise, 'true' as soon as the termination wait period starts.</p>
-    pub fn set_instance_termination_wait_time_started(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_instance_termination_wait_time_started(mut self, input: ::std::option::Option<bool>) -> Self {
         self.instance_termination_wait_time_started = input;
         self
     }
@@ -707,25 +615,17 @@ impl DeploymentInfoBuilder {
         &self.instance_termination_wait_time_started
     }
     /// <p>Information about blue/green deployment options for this deployment.</p>
-    pub fn blue_green_deployment_configuration(
-        mut self,
-        input: crate::types::BlueGreenDeploymentConfiguration,
-    ) -> Self {
+    pub fn blue_green_deployment_configuration(mut self, input: crate::types::BlueGreenDeploymentConfiguration) -> Self {
         self.blue_green_deployment_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about blue/green deployment options for this deployment.</p>
-    pub fn set_blue_green_deployment_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BlueGreenDeploymentConfiguration>,
-    ) -> Self {
+    pub fn set_blue_green_deployment_configuration(mut self, input: ::std::option::Option<crate::types::BlueGreenDeploymentConfiguration>) -> Self {
         self.blue_green_deployment_configuration = input;
         self
     }
     /// <p>Information about blue/green deployment options for this deployment.</p>
-    pub fn get_blue_green_deployment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlueGreenDeploymentConfiguration> {
+    pub fn get_blue_green_deployment_configuration(&self) -> &::std::option::Option<crate::types::BlueGreenDeploymentConfiguration> {
         &self.blue_green_deployment_configuration
     }
     /// <p>Information about the load balancer used in the deployment.</p>
@@ -734,10 +634,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Information about the load balancer used in the deployment.</p>
-    pub fn set_load_balancer_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerInfo>,
-    ) -> Self {
+    pub fn set_load_balancer_info(mut self, input: ::std::option::Option<crate::types::LoadBalancerInfo>) -> Self {
         self.load_balancer_info = input;
         self
     }
@@ -746,25 +643,17 @@ impl DeploymentInfoBuilder {
         &self.load_balancer_info
     }
     /// <p>Provides information about the results of a deployment, such as whether instances in the original environment in a blue/green deployment were not terminated.</p>
-    pub fn additional_deployment_status_info(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_deployment_status_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_deployment_status_info = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides information about the results of a deployment, such as whether instances in the original environment in a blue/green deployment were not terminated.</p>
-    pub fn set_additional_deployment_status_info(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_deployment_status_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_deployment_status_info = input;
         self
     }
     /// <p>Provides information about the results of a deployment, such as whether instances in the original environment in a blue/green deployment were not terminated.</p>
-    pub fn get_additional_deployment_status_info(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_additional_deployment_status_info(&self) -> &::std::option::Option<::std::string::String> {
         &self.additional_deployment_status_info
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
@@ -783,10 +672,7 @@ impl DeploymentInfoBuilder {
     /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
     /// <li> <p> <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
-    pub fn set_file_exists_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::FileExistsBehavior>,
-    ) -> Self {
+    pub fn set_file_exists_behavior(mut self, input: ::std::option::Option<crate::types::FileExistsBehavior>) -> Self {
         self.file_exists_behavior = input;
         self
     }
@@ -796,9 +682,7 @@ impl DeploymentInfoBuilder {
     /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
     /// <li> <p> <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
-    pub fn get_file_exists_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileExistsBehavior> {
+    pub fn get_file_exists_behavior(&self) -> &::std::option::Option<crate::types::FileExistsBehavior> {
         &self.file_exists_behavior
     }
     /// Appends an item to `deployment_status_messages`.
@@ -806,27 +690,19 @@ impl DeploymentInfoBuilder {
     /// To override the contents of this collection use [`set_deployment_status_messages`](Self::set_deployment_status_messages).
     ///
     /// <p>Messages that contain information about the status of a deployment.</p>
-    pub fn deployment_status_messages(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_status_messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deployment_status_messages.unwrap_or_default();
         v.push(input.into());
         self.deployment_status_messages = ::std::option::Option::Some(v);
         self
     }
     /// <p>Messages that contain information about the status of a deployment.</p>
-    pub fn set_deployment_status_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_deployment_status_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.deployment_status_messages = input;
         self
     }
     /// <p>Messages that contain information about the status of a deployment.</p>
-    pub fn get_deployment_status_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deployment_status_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.deployment_status_messages
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
@@ -835,10 +711,7 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    pub fn set_compute_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputePlatform>,
-    ) -> Self {
+    pub fn set_compute_platform(mut self, input: ::std::option::Option<crate::types::ComputePlatform>) -> Self {
         self.compute_platform = input;
         self
     }
@@ -866,17 +739,12 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Information about deployments related to the specified deployment.</p>
-    pub fn set_related_deployments(
-        mut self,
-        input: ::std::option::Option<crate::types::RelatedDeployments>,
-    ) -> Self {
+    pub fn set_related_deployments(mut self, input: ::std::option::Option<crate::types::RelatedDeployments>) -> Self {
         self.related_deployments = input;
         self
     }
     /// <p>Information about deployments related to the specified deployment.</p>
-    pub fn get_related_deployments(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelatedDeployments> {
+    pub fn get_related_deployments(&self) -> &::std::option::Option<crate::types::RelatedDeployments> {
         &self.related_deployments
     }
     /// <p>Information about alarms associated with a deployment or deployment group.</p>
@@ -885,17 +753,12 @@ impl DeploymentInfoBuilder {
         self
     }
     /// <p>Information about alarms associated with a deployment or deployment group.</p>
-    pub fn set_override_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_override_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.override_alarm_configuration = input;
         self
     }
     /// <p>Information about alarms associated with a deployment or deployment group.</p>
-    pub fn get_override_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_override_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.override_alarm_configuration
     }
     /// Consumes the builder and constructs a [`DeploymentInfo`](crate::types::DeploymentInfo).
@@ -915,17 +778,13 @@ impl DeploymentInfoBuilder {
             deployment_overview: self.deployment_overview,
             description: self.description,
             creator: self.creator,
-            ignore_application_stop_failures: self
-                .ignore_application_stop_failures
-                .unwrap_or_default(),
+            ignore_application_stop_failures: self.ignore_application_stop_failures.unwrap_or_default(),
             auto_rollback_configuration: self.auto_rollback_configuration,
             update_outdated_instances_only: self.update_outdated_instances_only.unwrap_or_default(),
             rollback_info: self.rollback_info,
             deployment_style: self.deployment_style,
             target_instances: self.target_instances,
-            instance_termination_wait_time_started: self
-                .instance_termination_wait_time_started
-                .unwrap_or_default(),
+            instance_termination_wait_time_started: self.instance_termination_wait_time_started.unwrap_or_default(),
             blue_green_deployment_configuration: self.blue_green_deployment_configuration,
             load_balancer_info: self.load_balancer_info,
             additional_deployment_status_info: self.additional_deployment_status_info,

@@ -10,10 +10,7 @@ impl CreatePipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_pipeline::CreatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pipeline::CreatePipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_pipeline();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreatePipelineFluentBuilder {
         }
     }
     /// Access the CreatePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_pipeline::builders::CreatePipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_pipeline::builders::CreatePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreatePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl CreatePipelineFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -148,19 +134,14 @@ impl CreatePipelineFluentBuilder {
     /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
     /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
     /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
-    pub fn set_pipeline_activities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>,
-    ) -> Self {
+    pub fn set_pipeline_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>) -> Self {
         self.inner = self.inner.set_pipeline_activities(input);
         self
     }
     /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
     /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
     /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
-    pub fn get_pipeline_activities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>> {
+    pub fn get_pipeline_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>> {
         self.inner.get_pipeline_activities()
     }
     /// Appends an item to `tags`.
@@ -173,10 +154,7 @@ impl CreatePipelineFluentBuilder {
         self
     }
     /// <p>Metadata which can be used to manage the pipeline.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

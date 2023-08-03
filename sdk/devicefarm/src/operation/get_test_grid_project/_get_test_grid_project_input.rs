@@ -15,17 +15,14 @@ impl GetTestGridProjectInput {
 }
 impl GetTestGridProjectInput {
     /// Creates a new builder-style object to manufacture [`GetTestGridProjectInput`](crate::operation::get_test_grid_project::GetTestGridProjectInput).
-    pub fn builder(
-    ) -> crate::operation::get_test_grid_project::builders::GetTestGridProjectInputBuilder {
+    pub fn builder() -> crate::operation::get_test_grid_project::builders::GetTestGridProjectInputBuilder {
         crate::operation::get_test_grid_project::builders::GetTestGridProjectInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTestGridProjectInput`](crate::operation::get_test_grid_project::GetTestGridProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTestGridProjectInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl GetTestGridProjectInputBuilder {
     /// Consumes the builder and constructs a [`GetTestGridProjectInput`](crate::operation::get_test_grid_project::GetTestGridProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_test_grid_project::GetTestGridProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_test_grid_project::GetTestGridProjectInput {
-                project_arn: self.project_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_test_grid_project::GetTestGridProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_test_grid_project::GetTestGridProjectInput {
+            project_arn: self.project_arn,
+        })
     }
 }

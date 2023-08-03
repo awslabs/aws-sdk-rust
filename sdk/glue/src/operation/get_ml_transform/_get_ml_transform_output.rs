@@ -150,9 +150,7 @@ impl GetMlTransformOutput {
         self.max_retries
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn transform_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransformEncryption> {
+    pub fn transform_encryption(&self) -> ::std::option::Option<&crate::types::TransformEncryption> {
         self.transform_encryption.as_ref()
     }
 }
@@ -170,9 +168,7 @@ impl GetMlTransformOutput {
 
 /// A builder for [`GetMlTransformOutput`](crate::operation::get_ml_transform::GetMlTransformOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMlTransformOutputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -244,10 +240,7 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The last known status of the transform (to indicate whether it can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TransformStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -261,10 +254,7 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The date and time when the transform was created.</p>
-    pub fn set_created_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_on = input;
         self
     }
@@ -278,10 +268,7 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The date and time when the transform was last modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -301,17 +288,12 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn set_input_record_tables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueTable>>,
-    ) -> Self {
+    pub fn set_input_record_tables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueTable>>) -> Self {
         self.input_record_tables = input;
         self
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn get_input_record_tables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueTable>> {
+    pub fn get_input_record_tables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueTable>> {
         &self.input_record_tables
     }
     /// <p>The configuration parameters that are specific to the algorithm used.</p>
@@ -320,10 +302,7 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The configuration parameters that are specific to the algorithm used.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformParameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::TransformParameters>) -> Self {
         self.parameters = input;
         self
     }
@@ -337,17 +316,12 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The latest evaluation metrics.</p>
-    pub fn set_evaluation_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationMetrics>,
-    ) -> Self {
+    pub fn set_evaluation_metrics(mut self, input: ::std::option::Option<crate::types::EvaluationMetrics>) -> Self {
         self.evaluation_metrics = input;
         self
     }
     /// <p>The latest evaluation metrics.</p>
-    pub fn get_evaluation_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationMetrics> {
+    pub fn get_evaluation_metrics(&self) -> &::std::option::Option<crate::types::EvaluationMetrics> {
         &self.evaluation_metrics
     }
     /// <p>The number of labels available for this transform.</p>
@@ -378,18 +352,13 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The <code>Map
     /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
-    pub fn set_schema(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>,
-    ) -> Self {
+    pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>) -> Self {
         self.schema = input;
         self
     }
     /// <p>The <code>Map
     /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
-    pub fn get_schema(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>> {
+    pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>> {
         &self.schema
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
@@ -453,10 +422,7 @@ impl GetMlTransformOutputBuilder {
     /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
     /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
-    pub fn set_worker_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerType>,
-    ) -> Self {
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
     }
@@ -517,17 +483,12 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn set_transform_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformEncryption>,
-    ) -> Self {
+    pub fn set_transform_encryption(mut self, input: ::std::option::Option<crate::types::TransformEncryption>) -> Self {
         self.transform_encryption = input;
         self
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn get_transform_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformEncryption> {
+    pub fn get_transform_encryption(&self) -> &::std::option::Option<crate::types::TransformEncryption> {
         &self.transform_encryption
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

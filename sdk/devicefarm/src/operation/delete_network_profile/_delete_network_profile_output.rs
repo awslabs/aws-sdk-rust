@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteNetworkProfileOutput {
 }
 impl DeleteNetworkProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkProfileOutput`](crate::operation::delete_network_profile::DeleteNetworkProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_network_profile::builders::DeleteNetworkProfileOutputBuilder {
+    pub fn builder() -> crate::operation::delete_network_profile::builders::DeleteNetworkProfileOutputBuilder {
         crate::operation::delete_network_profile::builders::DeleteNetworkProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkProfileOutput`](crate::operation::delete_network_profile::DeleteNetworkProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkProfileOutputBuilder {
     _request_id: Option<String>,
 }

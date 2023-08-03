@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VectorEnrichmentJobErrorType {
     /// CLIENT_ERROR
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for VectorEnrichmentJobErrorType {
         match s {
             "CLIENT_ERROR" => VectorEnrichmentJobErrorType::ClientError,
             "SERVER_ERROR" => VectorEnrichmentJobErrorType::ServerError,
-            other => VectorEnrichmentJobErrorType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VectorEnrichmentJobErrorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

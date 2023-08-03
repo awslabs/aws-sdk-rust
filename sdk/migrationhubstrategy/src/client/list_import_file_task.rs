@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`task_infos(Option<Vec<ImportFileTaskInformation>>)`](crate::operation::list_import_file_task::ListImportFileTaskOutput::task_infos): <p> Lists information about the files you import.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_import_file_task::ListImportFileTaskOutput::next_token): <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListImportFileTaskError>`](crate::operation::list_import_file_task::ListImportFileTaskError)
-    pub fn list_import_file_task(
-        &self,
-    ) -> crate::operation::list_import_file_task::builders::ListImportFileTaskFluentBuilder {
-        crate::operation::list_import_file_task::builders::ListImportFileTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_import_file_task(&self) -> crate::operation::list_import_file_task::builders::ListImportFileTaskFluentBuilder {
+        crate::operation::list_import_file_task::builders::ListImportFileTaskFluentBuilder::new(self.handle.clone())
     }
 }

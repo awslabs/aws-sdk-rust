@@ -10,10 +10,7 @@ pub fn ser_put_storage_lens_configuration_tagging_input_input(
         for list_item_2 in var_1 {
             {
                 let inner_writer = inner_writer.start_el("Tag");
-                crate::protocol_serde::shape_storage_lens_tag::ser_storage_lens_tag(
-                    list_item_2,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_storage_lens_tag::ser_storage_lens_tag(list_item_2, inner_writer)?
             }
         }
     }

@@ -40,9 +40,7 @@ impl PredictOutput {
 
 /// A builder for [`PredictOutput`](crate::operation::predict::PredictOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictOutputBuilder {
     pub(crate) prediction: ::std::option::Option<crate::types::Prediction>,
     _request_id: Option<String>,
@@ -66,10 +64,7 @@ impl PredictOutputBuilder {
     /// <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li>
     /// <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li>
     /// </ul>
-    pub fn set_prediction(
-        mut self,
-        input: ::std::option::Option<crate::types::Prediction>,
-    ) -> Self {
+    pub fn set_prediction(mut self, input: ::std::option::Option<crate::types::Prediction>) -> Self {
         self.prediction = input;
         self
     }

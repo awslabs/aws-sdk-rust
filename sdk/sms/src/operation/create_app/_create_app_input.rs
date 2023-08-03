@@ -57,9 +57,7 @@ impl CreateAppInput {
 
 /// A builder for [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -137,17 +135,12 @@ impl CreateAppInputBuilder {
         self
     }
     /// <p>The server groups to include in the application.</p>
-    pub fn set_server_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>,
-    ) -> Self {
+    pub fn set_server_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>) -> Self {
         self.server_groups = input;
         self
     }
     /// <p>The server groups to include in the application.</p>
-    pub fn get_server_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
+    pub fn get_server_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
         &self.server_groups
     }
     /// Appends an item to `tags`.
@@ -162,10 +155,7 @@ impl CreateAppInputBuilder {
         self
     }
     /// <p>The tags to be associated with the application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -174,12 +164,7 @@ impl CreateAppInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_app::CreateAppInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app::CreateAppInput {
             name: self.name,
             description: self.description,

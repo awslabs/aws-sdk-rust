@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UserType {
     #[allow(missing_docs)] // documentation missing in model
@@ -96,13 +90,7 @@ impl UserType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADMIN",
-            "MINIMALUSER",
-            "POWERUSER",
-            "USER",
-            "WORKSPACESUSER",
-        ]
+        &["ADMIN", "MINIMALUSER", "POWERUSER", "USER", "WORKSPACESUSER"]
     }
 }
 impl ::std::convert::AsRef<str> for UserType {

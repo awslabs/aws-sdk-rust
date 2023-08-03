@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`environment_id(Option<String>)`](crate::operation::create_kx_user::CreateKxUserOutput::environment_id): <p>A unique identifier for the kdb environment.</p>
     ///   - [`iam_role(Option<String>)`](crate::operation::create_kx_user::CreateKxUserOutput::iam_role): <p>The IAM role ARN that will be associated with the user.</p>
     /// - On failure, responds with [`SdkError<CreateKxUserError>`](crate::operation::create_kx_user::CreateKxUserError)
-    pub fn create_kx_user(
-        &self,
-    ) -> crate::operation::create_kx_user::builders::CreateKxUserFluentBuilder {
-        crate::operation::create_kx_user::builders::CreateKxUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_kx_user(&self) -> crate::operation::create_kx_user::builders::CreateKxUserFluentBuilder {
+        crate::operation::create_kx_user::builders::CreateKxUserFluentBuilder::new(self.handle.clone())
     }
 }

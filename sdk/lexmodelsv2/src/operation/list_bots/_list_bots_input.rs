@@ -45,9 +45,7 @@ impl ListBotsInput {
 
 /// A builder for [`ListBotsInput`](crate::operation::list_bots::ListBotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::BotSortBy>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::BotFilter>>,
@@ -81,10 +79,7 @@ impl ListBotsInputBuilder {
         self
     }
     /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -124,12 +119,7 @@ impl ListBotsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBotsInput`](crate::operation::list_bots::ListBotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bots::ListBotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bots::ListBotsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bots::ListBotsInput {
             sort_by: self.sort_by,
             filters: self.filters,

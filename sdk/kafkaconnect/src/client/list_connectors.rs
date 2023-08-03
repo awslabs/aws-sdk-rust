@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`connectors(Option<Vec<ConnectorSummary>>)`](crate::operation::list_connectors::ListConnectorsOutput::connectors): <p>An array of connector descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connectors::ListConnectorsOutput::next_token): <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where it left off.</p>
     /// - On failure, responds with [`SdkError<ListConnectorsError>`](crate::operation::list_connectors::ListConnectorsError)
-    pub fn list_connectors(
-        &self,
-    ) -> crate::operation::list_connectors::builders::ListConnectorsFluentBuilder {
-        crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_connectors(&self) -> crate::operation::list_connectors::builders::ListConnectorsFluentBuilder {
+        crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::new(self.handle.clone())
     }
 }

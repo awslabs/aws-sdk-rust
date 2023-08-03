@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_web_ac_ls::ListWebAcLsOutput::next_marker): <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`web_ac_ls(Option<Vec<WebAclSummary>>)`](crate::operation::list_web_ac_ls::ListWebAcLsOutput::web_ac_ls): <p>An array of <code>WebACLSummary</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListWebACLsError>`](crate::operation::list_web_ac_ls::ListWebACLsError)
-    pub fn list_web_ac_ls(
-        &self,
-    ) -> crate::operation::list_web_ac_ls::builders::ListWebACLsFluentBuilder {
-        crate::operation::list_web_ac_ls::builders::ListWebACLsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_web_ac_ls(&self) -> crate::operation::list_web_ac_ls::builders::ListWebACLsFluentBuilder {
+        crate::operation::list_web_ac_ls::builders::ListWebACLsFluentBuilder::new(self.handle.clone())
     }
 }

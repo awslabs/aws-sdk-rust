@@ -18,16 +18,12 @@ pub struct ExplainabilityConfig {
 impl ExplainabilityConfig {
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
-    pub fn time_series_granularity(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimeSeriesGranularity> {
+    pub fn time_series_granularity(&self) -> ::std::option::Option<&crate::types::TimeSeriesGranularity> {
         self.time_series_granularity.as_ref()
     }
     /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
-    pub fn time_point_granularity(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimePointGranularity> {
+    pub fn time_point_granularity(&self) -> ::std::option::Option<&crate::types::TimePointGranularity> {
         self.time_point_granularity.as_ref()
     }
 }
@@ -40,9 +36,7 @@ impl ExplainabilityConfig {
 
 /// A builder for [`ExplainabilityConfig`](crate::types::ExplainabilityConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExplainabilityConfigBuilder {
     pub(crate) time_series_granularity: ::std::option::Option<crate::types::TimeSeriesGranularity>,
     pub(crate) time_point_granularity: ::std::option::Option<crate::types::TimePointGranularity>,
@@ -56,18 +50,13 @@ impl ExplainabilityConfigBuilder {
     }
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
-    pub fn set_time_series_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeSeriesGranularity>,
-    ) -> Self {
+    pub fn set_time_series_granularity(mut self, input: ::std::option::Option<crate::types::TimeSeriesGranularity>) -> Self {
         self.time_series_granularity = input;
         self
     }
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
-    pub fn get_time_series_granularity(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeSeriesGranularity> {
+    pub fn get_time_series_granularity(&self) -> &::std::option::Option<crate::types::TimeSeriesGranularity> {
         &self.time_series_granularity
     }
     /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
@@ -78,18 +67,13 @@ impl ExplainabilityConfigBuilder {
     }
     /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
-    pub fn set_time_point_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TimePointGranularity>,
-    ) -> Self {
+    pub fn set_time_point_granularity(mut self, input: ::std::option::Option<crate::types::TimePointGranularity>) -> Self {
         self.time_point_granularity = input;
         self
     }
     /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
-    pub fn get_time_point_granularity(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimePointGranularity> {
+    pub fn get_time_point_granularity(&self) -> &::std::option::Option<crate::types::TimePointGranularity> {
         &self.time_point_granularity
     }
     /// Consumes the builder and constructs a [`ExplainabilityConfig`](crate::types::ExplainabilityConfig).

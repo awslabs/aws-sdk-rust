@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`sending_enabled(bool)`](crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesFluentBuilder::sending_enabled) / [`set_sending_enabled(bool)`](crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesFluentBuilder::set_sending_enabled): <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>   <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>  </note>
     /// - On success, responds with [`PutAccountSendingAttributesOutput`](crate::operation::put_account_sending_attributes::PutAccountSendingAttributesOutput)
     /// - On failure, responds with [`SdkError<PutAccountSendingAttributesError>`](crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError)
-    pub fn put_account_sending_attributes(&self) -> crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesFluentBuilder{
+    pub fn put_account_sending_attributes(
+        &self,
+    ) -> crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesFluentBuilder {
         crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesFluentBuilder::new(self.handle.clone())
     }
 }

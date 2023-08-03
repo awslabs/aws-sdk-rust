@@ -31,9 +31,7 @@ impl CompleteWorkflowExecutionDecisionAttributes {
 
 /// A builder for [`CompleteWorkflowExecutionDecisionAttributes`](crate::types::CompleteWorkflowExecutionDecisionAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteWorkflowExecutionDecisionAttributesBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
 }
@@ -54,8 +52,6 @@ impl CompleteWorkflowExecutionDecisionAttributesBuilder {
     }
     /// Consumes the builder and constructs a [`CompleteWorkflowExecutionDecisionAttributes`](crate::types::CompleteWorkflowExecutionDecisionAttributes).
     pub fn build(self) -> crate::types::CompleteWorkflowExecutionDecisionAttributes {
-        crate::types::CompleteWorkflowExecutionDecisionAttributes {
-            result: self.result,
-        }
+        crate::types::CompleteWorkflowExecutionDecisionAttributes { result: self.result }
     }
 }

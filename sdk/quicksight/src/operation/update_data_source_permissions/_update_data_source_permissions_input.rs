@@ -14,8 +14,7 @@ pub struct UpdateDataSourcePermissionsInput {
     pub grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>A list of resource permissions that you want to revoke on the data source.</p>
     #[doc(hidden)]
-    pub revoke_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateDataSourcePermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
@@ -37,38 +36,28 @@ impl UpdateDataSourcePermissionsInput {
 }
 impl UpdateDataSourcePermissionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourcePermissionsInput`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsInput).
-    pub fn builder() -> crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsInputBuilder{
+    pub fn builder() -> crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsInputBuilder {
         crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataSourcePermissionsInput`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataSourcePermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
-    pub(crate) grant_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    pub(crate) revoke_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateDataSourcePermissionsInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -77,18 +66,12 @@ impl UpdateDataSourcePermissionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -108,17 +91,12 @@ impl UpdateDataSourcePermissionsInputBuilder {
         self
     }
     /// <p>A list of resource permissions that you want to grant on the data source.</p>
-    pub fn set_grant_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.grant_permissions = input;
         self
     }
     /// <p>A list of resource permissions that you want to grant on the data source.</p>
-    pub fn get_grant_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.grant_permissions
     }
     /// Appends an item to `revoke_permissions`.
@@ -133,17 +111,12 @@ impl UpdateDataSourcePermissionsInputBuilder {
         self
     }
     /// <p>A list of resource permissions that you want to revoke on the data source.</p>
-    pub fn set_revoke_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.revoke_permissions = input;
         self
     }
     /// <p>A list of resource permissions that you want to revoke on the data source.</p>
-    pub fn get_revoke_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.revoke_permissions
     }
     /// Consumes the builder and constructs a [`UpdateDataSourcePermissionsInput`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsInput).
@@ -153,13 +126,11 @@ impl UpdateDataSourcePermissionsInputBuilder {
         crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsInput {
-                aws_account_id: self.aws_account_id,
-                data_source_id: self.data_source_id,
-                grant_permissions: self.grant_permissions,
-                revoke_permissions: self.revoke_permissions,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsInput {
+            aws_account_id: self.aws_account_id,
+            data_source_id: self.data_source_id,
+            grant_permissions: self.grant_permissions,
+            revoke_permissions: self.revoke_permissions,
+        })
     }
 }

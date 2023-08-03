@@ -10,10 +10,7 @@ impl BatchGetBlueprintsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_blueprints::BatchGetBlueprintsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_blueprints::BatchGetBlueprintsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_blueprints();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetBlueprintsFluentBuilder {
         }
     }
     /// Access the BatchGetBlueprints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetBlueprintsFluentBuilder {
             crate::operation::batch_get_blueprints::BatchGetBlueprints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_blueprints::BatchGetBlueprintsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_blueprints::BatchGetBlueprintsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetBlueprintsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetBlueprintsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_blueprints::BatchGetBlueprintsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_blueprints::BatchGetBlueprintsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetBlueprintsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_blueprints::BatchGetBlueprintsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_blueprints::BatchGetBlueprintsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetBlueprintsFluentBuilder {
             crate::operation::batch_get_blueprints::BatchGetBlueprints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_blueprints::BatchGetBlueprintsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_blueprints::BatchGetBlueprintsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl BatchGetBlueprintsFluentBuilder {
         self
     }
     /// <p>A list of blueprint names.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

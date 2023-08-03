@@ -10,10 +10,7 @@ impl LogoutInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::logout::LogoutOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::logout::LogoutError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::logout::LogoutError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.logout();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl LogoutFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::logout::Logout,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::logout::Logout, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::logout::LogoutError>,
     > {
         let handle = self.handle.clone();
@@ -62,20 +56,15 @@ impl LogoutFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::logout::LogoutOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::logout::LogoutError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::logout::LogoutOutput, ::aws_smithy_http::result::SdkError<crate::operation::logout::LogoutError>>
+    {
         let op = self
             .inner
             .build()
@@ -95,10 +84,8 @@ impl LogoutFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::logout::LogoutOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::logout::LogoutError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::logout::LogoutOutput, ::aws_smithy_http::result::SdkError<crate::operation::logout::LogoutError>>
+    {
         self.send_middleware().await
     }
 
@@ -107,10 +94,7 @@ impl LogoutFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::logout::Logout,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::logout::Logout, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::logout::LogoutError>,
     > {
         self.customize_middleware().await

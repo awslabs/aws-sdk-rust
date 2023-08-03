@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for GetFirewallRuleGroupPolicyOutput {
 }
 impl GetFirewallRuleGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupPolicyOutput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput).
-    pub fn builder() -> crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyOutputBuilder {
         crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFirewallRuleGroupPolicyOutput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupPolicyOutputBuilder {
     pub(crate) firewall_rule_group_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFirewallRuleGroupPolicyOutputBuilder {
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
-    pub fn firewall_rule_group_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
-    pub fn set_firewall_rule_group_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_policy = input;
         self
     }
@@ -66,9 +58,7 @@ impl GetFirewallRuleGroupPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupPolicyOutput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput {
+    pub fn build(self) -> crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput {
         crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput {
             firewall_rule_group_policy: self.firewall_rule_group_policy,
             _request_id: self._request_id,

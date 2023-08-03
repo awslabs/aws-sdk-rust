@@ -40,9 +40,7 @@ impl UpdateUserAttributesFluentBuilder {
         }
     }
     /// Access the UpdateUserAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_user_attributes::builders::UpdateUserAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_user_attributes::builders::UpdateUserAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl UpdateUserAttributesFluentBuilder {
             crate::operation::update_user_attributes::UpdateUserAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_attributes::UpdateUserAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_attributes::UpdateUserAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl UpdateUserAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl UpdateUserAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_attributes::UpdateUserAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_attributes::UpdateUserAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_attributes::UpdateUserAttributesError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl UpdateUserAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_attributes::UpdateUserAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_attributes::UpdateUserAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_attributes::UpdateUserAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl UpdateUserAttributesFluentBuilder {
             crate::operation::update_user_attributes::UpdateUserAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_attributes::UpdateUserAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_attributes::UpdateUserAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -139,19 +126,14 @@ impl UpdateUserAttributesFluentBuilder {
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
-    pub fn set_user_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
-    ) -> Self {
+    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
         self.inner = self.inner.set_user_attributes(input);
         self
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
-    pub fn get_user_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
         self.inner.get_user_attributes()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
@@ -202,9 +184,7 @@ impl UpdateUserAttributesFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
@@ -219,11 +199,7 @@ impl UpdateUserAttributesFluentBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
 }

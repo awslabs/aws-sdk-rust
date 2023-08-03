@@ -9,8 +9,7 @@ pub struct AwsRdsDbSubnetGroupSubnet {
     pub subnet_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Availability Zone for a subnet in the subnet group.</p>
     #[doc(hidden)]
-    pub subnet_availability_zone:
-        ::std::option::Option<crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone>,
+    pub subnet_availability_zone: ::std::option::Option<crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone>,
     /// <p>The status of a subnet in the subnet group.</p>
     #[doc(hidden)]
     pub subnet_status: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl AwsRdsDbSubnetGroupSubnet {
         self.subnet_identifier.as_deref()
     }
     /// <p>Information about the Availability Zone for a subnet in the subnet group.</p>
-    pub fn subnet_availability_zone(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone> {
+    pub fn subnet_availability_zone(&self) -> ::std::option::Option<&crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone> {
         self.subnet_availability_zone.as_ref()
     }
     /// <p>The status of a subnet in the subnet group.</p>
@@ -40,29 +37,20 @@ impl AwsRdsDbSubnetGroupSubnet {
 
 /// A builder for [`AwsRdsDbSubnetGroupSubnet`](crate::types::AwsRdsDbSubnetGroupSubnet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbSubnetGroupSubnetBuilder {
     pub(crate) subnet_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_availability_zone:
-        ::std::option::Option<crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone>,
+    pub(crate) subnet_availability_zone: ::std::option::Option<crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone>,
     pub(crate) subnet_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSubnetGroupSubnetBuilder {
     /// <p>The identifier of a subnet in the subnet group.</p>
-    pub fn subnet_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a subnet in the subnet group.</p>
-    pub fn set_subnet_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_identifier = input;
         self
     }
@@ -71,40 +59,26 @@ impl AwsRdsDbSubnetGroupSubnetBuilder {
         &self.subnet_identifier
     }
     /// <p>Information about the Availability Zone for a subnet in the subnet group.</p>
-    pub fn subnet_availability_zone(
-        mut self,
-        input: crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone,
-    ) -> Self {
+    pub fn subnet_availability_zone(mut self, input: crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone) -> Self {
         self.subnet_availability_zone = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the Availability Zone for a subnet in the subnet group.</p>
-    pub fn set_subnet_availability_zone(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone>,
-    ) -> Self {
+    pub fn set_subnet_availability_zone(mut self, input: ::std::option::Option<crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone>) -> Self {
         self.subnet_availability_zone = input;
         self
     }
     /// <p>Information about the Availability Zone for a subnet in the subnet group.</p>
-    pub fn get_subnet_availability_zone(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone> {
+    pub fn get_subnet_availability_zone(&self) -> &::std::option::Option<crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone> {
         &self.subnet_availability_zone
     }
     /// <p>The status of a subnet in the subnet group.</p>
-    pub fn subnet_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of a subnet in the subnet group.</p>
-    pub fn set_subnet_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_status = input;
         self
     }

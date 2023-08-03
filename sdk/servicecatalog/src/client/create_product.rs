@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::operation::create_product::CreateProductOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact. </p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_product::CreateProductOutput::tags): <p>Information about the tags associated with the product.</p>
     /// - On failure, responds with [`SdkError<CreateProductError>`](crate::operation::create_product::CreateProductError)
-    pub fn create_product(
-        &self,
-    ) -> crate::operation::create_product::builders::CreateProductFluentBuilder {
-        crate::operation::create_product::builders::CreateProductFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_product(&self) -> crate::operation::create_product::builders::CreateProductFluentBuilder {
+        crate::operation::create_product::builders::CreateProductFluentBuilder::new(self.handle.clone())
     }
 }

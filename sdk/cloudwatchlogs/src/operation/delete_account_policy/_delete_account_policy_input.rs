@@ -22,18 +22,14 @@ impl DeleteAccountPolicyInput {
 }
 impl DeleteAccountPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountPolicyInput`](crate::operation::delete_account_policy::DeleteAccountPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_account_policy::builders::DeleteAccountPolicyInputBuilder {
-        crate::operation::delete_account_policy::builders::DeleteAccountPolicyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_account_policy::builders::DeleteAccountPolicyInputBuilder {
+        crate::operation::delete_account_policy::builders::DeleteAccountPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountPolicyInput`](crate::operation::delete_account_policy::DeleteAccountPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountPolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
@@ -59,10 +55,7 @@ impl DeleteAccountPolicyInputBuilder {
         self
     }
     /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
@@ -73,15 +66,11 @@ impl DeleteAccountPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccountPolicyInput`](crate::operation::delete_account_policy::DeleteAccountPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_account_policy::DeleteAccountPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_account_policy::DeleteAccountPolicyInput {
-                policy_name: self.policy_name,
-                policy_type: self.policy_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_account_policy::DeleteAccountPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_account_policy::DeleteAccountPolicyInput {
+            policy_name: self.policy_name,
+            policy_type: self.policy_type,
+        })
     }
 }

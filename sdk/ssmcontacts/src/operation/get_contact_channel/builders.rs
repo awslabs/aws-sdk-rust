@@ -10,10 +10,7 @@ impl GetContactChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_contact_channel::GetContactChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_channel::GetContactChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_channel::GetContactChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_contact_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetContactChannelFluentBuilder {
         }
     }
     /// Access the GetContactChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_contact_channel::builders::GetContactChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_contact_channel::builders::GetContactChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetContactChannelFluentBuilder {
             crate::operation::get_contact_channel::GetContactChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_channel::GetContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_channel::GetContactChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetContactChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetContactChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_contact_channel::GetContactChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_channel::GetContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_channel::GetContactChannelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetContactChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_contact_channel::GetContactChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_channel::GetContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_channel::GetContactChannelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetContactChannelFluentBuilder {
             crate::operation::get_contact_channel::GetContactChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_channel::GetContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_channel::GetContactChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
-    pub fn contact_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_channel_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
-    pub fn set_contact_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_channel_id(input);
         self
     }

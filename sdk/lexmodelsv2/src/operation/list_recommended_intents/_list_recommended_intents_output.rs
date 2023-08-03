@@ -17,8 +17,7 @@ pub struct ListRecommendedIntentsOutput {
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
     #[doc(hidden)]
-    pub summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>,
+    pub summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -57,25 +56,20 @@ impl ::aws_http::request_id::RequestId for ListRecommendedIntentsOutput {
 }
 impl ListRecommendedIntentsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendedIntentsOutput`](crate::operation::list_recommended_intents::ListRecommendedIntentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_recommended_intents::builders::ListRecommendedIntentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_recommended_intents::builders::ListRecommendedIntentsOutputBuilder {
         crate::operation::list_recommended_intents::builders::ListRecommendedIntentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecommendedIntentsOutput`](crate::operation::list_recommended_intents::ListRecommendedIntentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendedIntentsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_recommendation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>,
+    pub(crate) summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -123,18 +117,12 @@ impl ListRecommendedIntentsOutputBuilder {
         &self.locale_id
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intent.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intent.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_recommendation_id = input;
         self
     }
@@ -154,17 +142,12 @@ impl ListRecommendedIntentsOutputBuilder {
         self
     }
     /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn set_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>,
-    ) -> Self {
+    pub fn set_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>) -> Self {
         self.summary_list = input;
         self
     }
     /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn get_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>> {
+    pub fn get_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>> {
         &self.summary_list
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>

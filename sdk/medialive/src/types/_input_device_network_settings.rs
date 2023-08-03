@@ -51,9 +51,7 @@ impl InputDeviceNetworkSettings {
 
 /// A builder for [`InputDeviceNetworkSettings`](crate::types::InputDeviceNetworkSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDeviceNetworkSettingsBuilder {
     pub(crate) dns_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) gateway: ::std::option::Option<::std::string::String>,
@@ -67,27 +65,19 @@ impl InputDeviceNetworkSettingsBuilder {
     /// To override the contents of this collection use [`set_dns_addresses`](Self::set_dns_addresses).
     ///
     /// The DNS addresses of the input device.
-    pub fn dns_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dns_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_addresses.unwrap_or_default();
         v.push(input.into());
         self.dns_addresses = ::std::option::Option::Some(v);
         self
     }
     /// The DNS addresses of the input device.
-    pub fn set_dns_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_addresses = input;
         self
     }
     /// The DNS addresses of the input device.
-    pub fn get_dns_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_addresses
     }
     /// The network gateway IP address.
@@ -124,10 +114,7 @@ impl InputDeviceNetworkSettingsBuilder {
         self
     }
     /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
-    pub fn set_ip_scheme(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceIpScheme>,
-    ) -> Self {
+    pub fn set_ip_scheme(mut self, input: ::std::option::Option<crate::types::InputDeviceIpScheme>) -> Self {
         self.ip_scheme = input;
         self
     }

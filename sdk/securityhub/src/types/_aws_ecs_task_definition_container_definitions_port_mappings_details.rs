@@ -30,18 +30,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
     pub(crate) container_port: ::std::option::Option<i32>,
     pub(crate) host_port: ::std::option::Option<i32>,
@@ -91,9 +87,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
         &self.protocol
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
             container_port: self.container_port.unwrap_or_default(),
             host_port: self.host_port.unwrap_or_default(),

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_connection::CreateConnectionOutput::creation_time): <p>A time stamp for the time that the connection was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::create_connection::CreateConnectionOutput::last_modified_time): <p>A time stamp for the time that the connection was last updated.</p>
     /// - On failure, responds with [`SdkError<CreateConnectionError>`](crate::operation::create_connection::CreateConnectionError)
-    pub fn create_connection(
-        &self,
-    ) -> crate::operation::create_connection::builders::CreateConnectionFluentBuilder {
-        crate::operation::create_connection::builders::CreateConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_connection(&self) -> crate::operation::create_connection::builders::CreateConnectionFluentBuilder {
+        crate::operation::create_connection::builders::CreateConnectionFluentBuilder::new(self.handle.clone())
     }
 }

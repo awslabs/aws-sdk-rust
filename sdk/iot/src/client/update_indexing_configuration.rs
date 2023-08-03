@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`thing_group_indexing_configuration(ThingGroupIndexingConfiguration)`](crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationFluentBuilder::thing_group_indexing_configuration) / [`set_thing_group_indexing_configuration(Option<ThingGroupIndexingConfiguration>)`](crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationFluentBuilder::set_thing_group_indexing_configuration): <p>Thing group indexing configuration.</p>
     /// - On success, responds with [`UpdateIndexingConfigurationOutput`](crate::operation::update_indexing_configuration::UpdateIndexingConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateIndexingConfigurationError>`](crate::operation::update_indexing_configuration::UpdateIndexingConfigurationError)
-    pub fn update_indexing_configuration(&self) -> crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationFluentBuilder{
+    pub fn update_indexing_configuration(
+        &self,
+    ) -> crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationFluentBuilder {
         crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

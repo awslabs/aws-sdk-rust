@@ -7,10 +7,7 @@ pub fn ser_service_discovery(
         crate::types::ServiceDiscovery::Dns(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_2.key("dns").start_object();
-            crate::protocol_serde::shape_dns_service_discovery::ser_dns_service_discovery(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_dns_service_discovery::ser_dns_service_discovery(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::ServiceDiscovery::AwsCloudMap(inner) => {
@@ -20,11 +17,9 @@ pub fn ser_service_discovery(
             object_2.finish();
         }
         crate::types::ServiceDiscovery::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ServiceDiscovery",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ServiceDiscovery",
+            ))
         }
     }
     Ok(())
@@ -32,17 +27,9 @@ pub fn ser_service_discovery(
 
 pub(crate) fn de_service_discovery<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ServiceDiscovery>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ServiceDiscovery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -52,47 +39,38 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "dns" => {
-                                Some(crate::types::ServiceDiscovery::Dns(
-                                    crate::protocol_serde::shape_dns_service_discovery::de_dns_service_discovery(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dns' cannot be null"))?
-                                ))
-                            }
-                            "awsCloudMap" => {
-                                Some(crate::types::ServiceDiscovery::AwsCloudMap(
-                                    crate::protocol_serde::shape_aws_cloud_map_service_discovery::de_aws_cloud_map_service_discovery(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsCloudMap' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::ServiceDiscovery::Unknown)
-                                                                    }
-                        };
+                        "dns" => Some(crate::types::ServiceDiscovery::Dns(
+                            crate::protocol_serde::shape_dns_service_discovery::de_dns_service_discovery(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dns' cannot be null"))?,
+                        )),
+                        "awsCloudMap" => Some(crate::types::ServiceDiscovery::AwsCloudMap(
+                            crate::protocol_serde::shape_aws_cloud_map_service_discovery::de_aws_cloud_map_service_discovery(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsCloudMap' cannot be null"),
+                            )?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::ServiceDiscovery::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

@@ -43,9 +43,7 @@ impl RedactChannelMessageFluentBuilder {
         }
     }
     /// Access the RedactChannelMessage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::redact_channel_message::builders::RedactChannelMessageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::redact_channel_message::builders::RedactChannelMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl RedactChannelMessageFluentBuilder {
             crate::operation::redact_channel_message::RedactChannelMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::redact_channel_message::RedactChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::redact_channel_message::RedactChannelMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl RedactChannelMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl RedactChannelMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::redact_channel_message::RedactChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::redact_channel_message::RedactChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::redact_channel_message::RedactChannelMessageError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl RedactChannelMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::redact_channel_message::RedactChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::redact_channel_message::RedactChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::redact_channel_message::RedactChannelMessageError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +111,7 @@ impl RedactChannelMessageFluentBuilder {
             crate::operation::redact_channel_message::RedactChannelMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::redact_channel_message::RedactChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::redact_channel_message::RedactChannelMessageError>,
     > {
         self.customize_middleware().await
     }

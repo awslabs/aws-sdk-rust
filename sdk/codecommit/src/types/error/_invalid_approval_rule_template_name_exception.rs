@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InvalidApprovalRuleTemplateNameException {
     }
 }
 impl ::std::error::Error for InvalidApprovalRuleTemplateNameException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidApprovalRuleTemplateNameException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidApprovalRuleTemplateNameException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidApprovalRuleTemplateNameException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidApprovalRuleTemplateNameException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidApprovalRuleTemplateNameException {
     /// Creates a new builder-style object to manufacture [`InvalidApprovalRuleTemplateNameException`](crate::types::error::InvalidApprovalRuleTemplateNameException).
-    pub fn builder(
-    ) -> crate::types::error::builders::InvalidApprovalRuleTemplateNameExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::InvalidApprovalRuleTemplateNameExceptionBuilder {
         crate::types::error::builders::InvalidApprovalRuleTemplateNameExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidApprovalRuleTemplateNameException`](crate::types::error::InvalidApprovalRuleTemplateNameException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidApprovalRuleTemplateNameExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidApprovalRuleTemplateNameExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

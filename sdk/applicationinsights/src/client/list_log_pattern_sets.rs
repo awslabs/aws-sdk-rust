@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`log_pattern_sets(Option<Vec<String>>)`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput::log_pattern_sets): <p>The list of log pattern sets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput::next_token): <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<ListLogPatternSetsError>`](crate::operation::list_log_pattern_sets::ListLogPatternSetsError)
-    pub fn list_log_pattern_sets(
-        &self,
-    ) -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder {
-        crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_log_pattern_sets(&self) -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder {
+        crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::new(self.handle.clone())
     }
 }

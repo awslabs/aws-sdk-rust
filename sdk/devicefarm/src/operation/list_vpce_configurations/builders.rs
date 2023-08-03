@@ -37,10 +37,7 @@ impl ListVPCEConfigurationsFluentBuilder {
         }
     }
     /// Access the ListVPCEConfigurations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_vpce_configurations::builders::ListVpceConfigurationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_vpce_configurations::builders::ListVpceConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListVPCEConfigurationsFluentBuilder {
             crate::operation::list_vpce_configurations::ListVPCEConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpce_configurations::ListVPCEConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpce_configurations::ListVPCEConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListVPCEConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListVPCEConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpce_configurations::ListVPCEConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpce_configurations::ListVPCEConfigurationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListVPCEConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpce_configurations::ListVPCEConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpce_configurations::ListVPCEConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ListVPCEConfigurationsFluentBuilder {
             crate::operation::list_vpce_configurations::ListVPCEConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpce_configurations::ListVPCEConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpce_configurations::ListVPCEConfigurationsError>,
     > {
         self.customize_middleware().await
     }

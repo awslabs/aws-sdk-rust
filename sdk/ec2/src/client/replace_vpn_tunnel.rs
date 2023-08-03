@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ReplaceVpnTunnelOutput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput::return): <p>Confirmation of replace tunnel operation.</p>
     /// - On failure, responds with [`SdkError<ReplaceVpnTunnelError>`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError)
-    pub fn replace_vpn_tunnel(
-        &self,
-    ) -> crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelFluentBuilder {
-        crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn replace_vpn_tunnel(&self) -> crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelFluentBuilder {
+        crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelFluentBuilder::new(self.handle.clone())
     }
 }

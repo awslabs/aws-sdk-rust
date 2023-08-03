@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`batch_job_executions(Option<Vec<BatchJobExecutionSummary>>)`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput::batch_job_executions): <p>Returns a list of batch job executions for an application.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all batch job executions.</p>
     /// - On failure, responds with [`SdkError<ListBatchJobExecutionsError>`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsError)
-    pub fn list_batch_job_executions(
-        &self,
-    ) -> crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder
-    {
+    pub fn list_batch_job_executions(&self) -> crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder {
         crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

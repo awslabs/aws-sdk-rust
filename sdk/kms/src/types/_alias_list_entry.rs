@@ -51,9 +51,7 @@ impl AliasListEntry {
 
 /// A builder for [`AliasListEntry`](crate::types::AliasListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AliasListEntryBuilder {
     pub(crate) alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) alias_arn: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl AliasListEntryBuilder {
         &self.alias_arn
     }
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
-    pub fn target_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
-    pub fn set_target_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_key_id = input;
         self
     }
@@ -116,10 +108,7 @@ impl AliasListEntryBuilder {
         self
     }
     /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -133,10 +122,7 @@ impl AliasListEntryBuilder {
         self
     }
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }

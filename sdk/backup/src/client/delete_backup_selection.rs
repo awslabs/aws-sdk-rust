@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`selection_id(impl ::std::convert::Into<String>)`](crate::operation::delete_backup_selection::builders::DeleteBackupSelectionFluentBuilder::selection_id) / [`set_selection_id(Option<String>)`](crate::operation::delete_backup_selection::builders::DeleteBackupSelectionFluentBuilder::set_selection_id): <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     /// - On success, responds with [`DeleteBackupSelectionOutput`](crate::operation::delete_backup_selection::DeleteBackupSelectionOutput)
     /// - On failure, responds with [`SdkError<DeleteBackupSelectionError>`](crate::operation::delete_backup_selection::DeleteBackupSelectionError)
-    pub fn delete_backup_selection(
-        &self,
-    ) -> crate::operation::delete_backup_selection::builders::DeleteBackupSelectionFluentBuilder
-    {
-        crate::operation::delete_backup_selection::builders::DeleteBackupSelectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_backup_selection(&self) -> crate::operation::delete_backup_selection::builders::DeleteBackupSelectionFluentBuilder {
+        crate::operation::delete_backup_selection::builders::DeleteBackupSelectionFluentBuilder::new(self.handle.clone())
     }
 }

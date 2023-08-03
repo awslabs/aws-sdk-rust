@@ -22,17 +22,14 @@ impl UpdateSmbLocalGroupsInput {
 }
 impl UpdateSmbLocalGroupsInput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbLocalGroupsInput`](crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsInputBuilder {
+    pub fn builder() -> crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsInputBuilder {
         crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSmbLocalGroupsInput`](crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSmbLocalGroupsInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) smb_local_groups: ::std::option::Option<crate::types::SmbLocalGroups>,
@@ -58,10 +55,7 @@ impl UpdateSmbLocalGroupsInputBuilder {
         self
     }
     /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
-    pub fn set_smb_local_groups(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbLocalGroups>,
-    ) -> Self {
+    pub fn set_smb_local_groups(mut self, input: ::std::option::Option<crate::types::SmbLocalGroups>) -> Self {
         self.smb_local_groups = input;
         self
     }
@@ -72,15 +66,11 @@ impl UpdateSmbLocalGroupsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSmbLocalGroupsInput`](crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput {
-                gateway_arn: self.gateway_arn,
-                smb_local_groups: self.smb_local_groups,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput {
+            gateway_arn: self.gateway_arn,
+            smb_local_groups: self.smb_local_groups,
+        })
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DisableHostedZoneDnssecOutput`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput) with field(s):
     ///   - [`change_info(Option<ChangeInfo>)`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
     /// - On failure, responds with [`SdkError<DisableHostedZoneDNSSECError>`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError)
-    pub fn disable_hosted_zone_dnssec(
-        &self,
-    ) -> crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDNSSECFluentBuilder
-    {
+    pub fn disable_hosted_zone_dnssec(&self) -> crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDNSSECFluentBuilder {
         crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDNSSECFluentBuilder::new(self.handle.clone())
     }
 }

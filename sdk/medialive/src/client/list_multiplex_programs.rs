@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`multiplex_programs(Option<Vec<MultiplexProgramSummary>>)`](crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput::multiplex_programs): List of multiplex programs.
     ///   - [`next_token(Option<String>)`](crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput::next_token): Token for the next ListMultiplexProgram request.
     /// - On failure, responds with [`SdkError<ListMultiplexProgramsError>`](crate::operation::list_multiplex_programs::ListMultiplexProgramsError)
-    pub fn list_multiplex_programs(
-        &self,
-    ) -> crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder
-    {
-        crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_multiplex_programs(&self) -> crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder {
+        crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::new(self.handle.clone())
     }
 }

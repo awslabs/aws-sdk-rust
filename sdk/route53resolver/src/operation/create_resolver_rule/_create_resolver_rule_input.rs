@@ -65,17 +65,14 @@ impl CreateResolverRuleInput {
 }
 impl CreateResolverRuleInput {
     /// Creates a new builder-style object to manufacture [`CreateResolverRuleInput`](crate::operation::create_resolver_rule::CreateResolverRuleInput).
-    pub fn builder(
-    ) -> crate::operation::create_resolver_rule::builders::CreateResolverRuleInputBuilder {
+    pub fn builder() -> crate::operation::create_resolver_rule::builders::CreateResolverRuleInputBuilder {
         crate::operation::create_resolver_rule::builders::CreateResolverRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResolverRuleInput`](crate::operation::create_resolver_rule::CreateResolverRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResolverRuleInputBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -87,18 +84,12 @@ pub struct CreateResolverRuleInputBuilder {
 }
 impl CreateResolverRuleInputBuilder {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -132,10 +123,7 @@ impl CreateResolverRuleInputBuilder {
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
-    pub fn set_rule_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleTypeOption>,
-    ) -> Self {
+    pub fn set_rule_type(mut self, input: ::std::option::Option<crate::types::RuleTypeOption>) -> Self {
         self.rule_type = input;
         self
     }
@@ -174,33 +162,22 @@ impl CreateResolverRuleInputBuilder {
     }
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
     /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
-    pub fn set_target_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
-    ) -> Self {
+    pub fn set_target_ips(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>) -> Self {
         self.target_ips = input;
         self
     }
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
     /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
-    pub fn get_target_ips(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
+    pub fn get_target_ips(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
         &self.target_ips
     }
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_endpoint_id = input;
         self
     }
@@ -220,10 +197,7 @@ impl CreateResolverRuleInputBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -234,20 +208,15 @@ impl CreateResolverRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateResolverRuleInput`](crate::operation::create_resolver_rule::CreateResolverRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_resolver_rule::CreateResolverRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_resolver_rule::CreateResolverRuleInput {
-                creator_request_id: self.creator_request_id,
-                name: self.name,
-                rule_type: self.rule_type,
-                domain_name: self.domain_name,
-                target_ips: self.target_ips,
-                resolver_endpoint_id: self.resolver_endpoint_id,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_resolver_rule::CreateResolverRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_resolver_rule::CreateResolverRuleInput {
+            creator_request_id: self.creator_request_id,
+            name: self.name,
+            rule_type: self.rule_type,
+            domain_name: self.domain_name,
+            target_ips: self.target_ips,
+            resolver_endpoint_id: self.resolver_endpoint_id,
+            tags: self.tags,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl CreateThingGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_thing_group::CreateThingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing_group::CreateThingGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing_group::CreateThingGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_thing_group();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateThingGroupFluentBuilder {
         }
     }
     /// Access the CreateThingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_thing_group::builders::CreateThingGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_thing_group::builders::CreateThingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateThingGroupFluentBuilder {
             crate::operation::create_thing_group::CreateThingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing_group::CreateThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing_group::CreateThingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateThingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateThingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_thing_group::CreateThingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing_group::CreateThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing_group::CreateThingGroupError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateThingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_thing_group::CreateThingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing_group::CreateThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing_group::CreateThingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl CreateThingGroupFluentBuilder {
             crate::operation::create_thing_group::CreateThingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing_group::CreateThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing_group::CreateThingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The thing group name to create.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_group_name(input.into());
         self
     }
     /// <p>The thing group name to create.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_group_name(input);
         self
     }
@@ -146,18 +124,12 @@ impl CreateThingGroupFluentBuilder {
         self.inner.get_thing_group_name()
     }
     /// <p>The name of the parent thing group.</p>
-    pub fn parent_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_group_name(input.into());
         self
     }
     /// <p>The name of the parent thing group.</p>
-    pub fn set_parent_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_group_name(input);
         self
     }
@@ -171,17 +143,12 @@ impl CreateThingGroupFluentBuilder {
         self
     }
     /// <p>The thing group properties.</p>
-    pub fn set_thing_group_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ThingGroupProperties>,
-    ) -> Self {
+    pub fn set_thing_group_properties(mut self, input: ::std::option::Option<crate::types::ThingGroupProperties>) -> Self {
         self.inner = self.inner.set_thing_group_properties(input);
         self
     }
     /// <p>The thing group properties.</p>
-    pub fn get_thing_group_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThingGroupProperties> {
+    pub fn get_thing_group_properties(&self) -> &::std::option::Option<crate::types::ThingGroupProperties> {
         self.inner.get_thing_group_properties()
     }
     /// Appends an item to `tags`.
@@ -194,10 +161,7 @@ impl CreateThingGroupFluentBuilder {
         self
     }
     /// <p>Metadata which can be used to manage the thing group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

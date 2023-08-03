@@ -33,10 +33,7 @@ pub fn ser_update_rule_group_input(
     if let Some(var_10) = &input.encryption_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.source_metadata {

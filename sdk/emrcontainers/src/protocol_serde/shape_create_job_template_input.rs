@@ -9,10 +9,7 @@ pub fn ser_create_job_template_input(
     if let Some(var_2) = &input.job_template_data {
         #[allow(unused_mut)]
         let mut object_3 = object.key("jobTemplateData").start_object();
-        crate::protocol_serde::shape_job_template_data::ser_job_template_data(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_job_template_data::ser_job_template_data(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.kms_key_arn {

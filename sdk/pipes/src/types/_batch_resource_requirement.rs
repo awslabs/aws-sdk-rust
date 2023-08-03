@@ -344,9 +344,7 @@ impl BatchResourceRequirement {
 
 /// A builder for [`BatchResourceRequirement`](crate::types::BatchResourceRequirement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchResourceRequirementBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::BatchResourceRequirementType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -358,10 +356,7 @@ impl BatchResourceRequirementBuilder {
         self
     }
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchResourceRequirementType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::BatchResourceRequirementType>) -> Self {
         self.r#type = input;
         self
     }

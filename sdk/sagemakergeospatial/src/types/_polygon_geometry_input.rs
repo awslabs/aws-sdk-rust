@@ -23,12 +23,9 @@ impl PolygonGeometryInput {
 
 /// A builder for [`PolygonGeometryInput`](crate::types::PolygonGeometryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolygonGeometryInputBuilder {
-    pub(crate) coordinates:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
+    pub(crate) coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
 }
 impl PolygonGeometryInputBuilder {
     /// Appends an item to `coordinates`.
@@ -43,17 +40,12 @@ impl PolygonGeometryInputBuilder {
         self
     }
     /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
-    pub fn set_coordinates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
-    ) -> Self {
+    pub fn set_coordinates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>) -> Self {
         self.coordinates = input;
         self
     }
     /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
-    pub fn get_coordinates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>> {
+    pub fn get_coordinates(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>> {
         &self.coordinates
     }
     /// Consumes the builder and constructs a [`PolygonGeometryInput`](crate::types::PolygonGeometryInput).

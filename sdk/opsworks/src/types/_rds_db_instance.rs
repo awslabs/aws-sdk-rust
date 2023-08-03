@@ -79,9 +79,7 @@ impl RdsDbInstance {
 
 /// A builder for [`RdsDbInstance`](crate::types::RdsDbInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsDbInstanceBuilder {
     pub(crate) rds_db_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct RdsDbInstanceBuilder {
 }
 impl RdsDbInstanceBuilder {
     /// <p>The instance's ARN.</p>
-    pub fn rds_db_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rds_db_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance's ARN.</p>
-    pub fn set_rds_db_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rds_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rds_db_instance_arn = input;
         self
     }
@@ -115,18 +107,12 @@ impl RdsDbInstanceBuilder {
         &self.rds_db_instance_arn
     }
     /// <p>The DB instance identifier.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB instance identifier.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }

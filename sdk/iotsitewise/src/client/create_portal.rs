@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`portal_status(Option<PortalStatus>)`](crate::operation::create_portal::CreatePortalOutput::portal_status): <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     ///   - [`sso_application_id(Option<String>)`](crate::operation::create_portal::CreatePortalOutput::sso_application_id): <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
     /// - On failure, responds with [`SdkError<CreatePortalError>`](crate::operation::create_portal::CreatePortalError)
-    pub fn create_portal(
-        &self,
-    ) -> crate::operation::create_portal::builders::CreatePortalFluentBuilder {
-        crate::operation::create_portal::builders::CreatePortalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_portal(&self) -> crate::operation::create_portal::builders::CreatePortalFluentBuilder {
+        crate::operation::create_portal::builders::CreatePortalFluentBuilder::new(self.handle.clone())
     }
 }

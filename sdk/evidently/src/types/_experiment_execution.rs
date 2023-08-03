@@ -30,9 +30,7 @@ impl ExperimentExecution {
 
 /// A builder for [`ExperimentExecution`](crate::types::ExperimentExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentExecutionBuilder {
     pub(crate) started_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl ExperimentExecutionBuilder {
         self
     }
     /// <p>The date and time that the experiment started.</p>
-    pub fn set_started_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_time = input;
         self
     }
@@ -61,10 +56,7 @@ impl ExperimentExecutionBuilder {
         self
     }
     /// <p>The date and time that the experiment ended.</p>
-    pub fn set_ended_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ended_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_time = input;
         self
     }

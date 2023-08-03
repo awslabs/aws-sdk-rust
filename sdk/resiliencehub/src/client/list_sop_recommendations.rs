@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_sop_recommendations::ListSopRecommendationsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`sop_recommendations(Option<Vec<SopRecommendation>>)`](crate::operation::list_sop_recommendations::ListSopRecommendationsOutput::sop_recommendations): <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
     /// - On failure, responds with [`SdkError<ListSopRecommendationsError>`](crate::operation::list_sop_recommendations::ListSopRecommendationsError)
-    pub fn list_sop_recommendations(
-        &self,
-    ) -> crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder
-    {
+    pub fn list_sop_recommendations(&self) -> crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder {
         crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

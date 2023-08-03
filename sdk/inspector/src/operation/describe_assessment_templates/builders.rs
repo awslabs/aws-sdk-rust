@@ -26,7 +26,7 @@ impl DescribeAssessmentTemplatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAssessmentTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesInputBuilder,
+    inner: crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesInputBuilder,
 }
 impl DescribeAssessmentTemplatesFluentBuilder {
     /// Creates a new `DescribeAssessmentTemplates`.
@@ -37,7 +37,7 @@ impl DescribeAssessmentTemplatesFluentBuilder {
         }
     }
     /// Access the DescribeAssessmentTemplates as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAssessmentTemplatesFluentBuilder {
             crate::operation::describe_assessment_templates::DescribeAssessmentTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAssessmentTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAssessmentTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAssessmentTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeAssessmentTemplatesFluentBuilder {
             crate::operation::describe_assessment_templates::DescribeAssessmentTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl DescribeAssessmentTemplatesFluentBuilder {
     /// To override the contents of this collection use [`set_assessment_template_arns`](Self::set_assessment_template_arns).
     ///
     #[allow(missing_docs)] // documentation missing in model
-    pub fn assessment_template_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_template_arns(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_assessment_template_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_assessment_template_arns(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_assessment_template_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_assessment_template_arns()
     }
 }

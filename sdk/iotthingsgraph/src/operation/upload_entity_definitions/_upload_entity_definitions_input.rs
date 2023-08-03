@@ -29,18 +29,14 @@ impl UploadEntityDefinitionsInput {
 }
 impl UploadEntityDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`UploadEntityDefinitionsInput`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput).
-    pub fn builder(
-    ) -> crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder {
         crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`UploadEntityDefinitionsInput`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadEntityDefinitionsInputBuilder {
     pub(crate) document: ::std::option::Option<crate::types::DefinitionDocument>,
     pub(crate) sync_with_public_namespace: ::std::option::Option<bool>,
@@ -53,10 +49,7 @@ impl UploadEntityDefinitionsInputBuilder {
         self
     }
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
-    pub fn set_document(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_document(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.document = input;
         self
     }
@@ -99,12 +92,10 @@ impl UploadEntityDefinitionsInputBuilder {
         crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput {
-                document: self.document,
-                sync_with_public_namespace: self.sync_with_public_namespace.unwrap_or_default(),
-                deprecate_existing_entities: self.deprecate_existing_entities.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput {
+            document: self.document,
+            sync_with_public_namespace: self.sync_with_public_namespace.unwrap_or_default(),
+            deprecate_existing_entities: self.deprecate_existing_entities.unwrap_or_default(),
+        })
     }
 }

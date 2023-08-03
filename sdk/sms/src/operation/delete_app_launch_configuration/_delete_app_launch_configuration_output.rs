@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAppLaunchConfigurationOutput {
 }
 impl DeleteAppLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppLaunchConfigurationOutput`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationOutputBuilder {
         crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppLaunchConfigurationOutput`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppLaunchConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteAppLaunchConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAppLaunchConfigurationOutput`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationOutput {
         crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationOutput {
             _request_id: self._request_id,
         }

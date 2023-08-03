@@ -63,9 +63,7 @@ impl RevisionLocation {
 
 /// A builder for [`RevisionLocation`](crate::types::RevisionLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevisionLocationBuilder {
     pub(crate) revision_type: ::std::option::Option<crate::types::RevisionLocationType>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
@@ -92,10 +90,7 @@ impl RevisionLocationBuilder {
     /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
     /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
     /// </ul>
-    pub fn set_revision_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RevisionLocationType>,
-    ) -> Self {
+    pub fn set_revision_type(mut self, input: ::std::option::Option<crate::types::RevisionLocationType>) -> Self {
         self.revision_type = input;
         self
     }
@@ -115,10 +110,7 @@ impl RevisionLocationBuilder {
         self
     }
     /// <p>Information about the location of a revision stored in Amazon S3. </p>
-    pub fn set_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.s3_location = input;
         self
     }
@@ -132,10 +124,7 @@ impl RevisionLocationBuilder {
         self
     }
     /// <p>Information about the location of application artifacts stored in GitHub.</p>
-    pub fn set_git_hub_location(
-        mut self,
-        input: ::std::option::Option<crate::types::GitHubLocation>,
-    ) -> Self {
+    pub fn set_git_hub_location(mut self, input: ::std::option::Option<crate::types::GitHubLocation>) -> Self {
         self.git_hub_location = input;
         self
     }
@@ -163,10 +152,7 @@ impl RevisionLocationBuilder {
         self
     }
     /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
-    pub fn set_app_spec_content(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSpecContent>,
-    ) -> Self {
+    pub fn set_app_spec_content(mut self, input: ::std::option::Option<crate::types::AppSpecContent>) -> Self {
         self.app_spec_content = input;
         self
     }

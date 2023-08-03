@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`db_security_groups(Option<Vec<DbSecurityGroup>>)`](crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput::db_security_groups): <p>A list of <code>DBSecurityGroup</code> instances.</p>
     /// - On failure, responds with [`SdkError<DescribeDBSecurityGroupsError>`](crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError)
-    pub fn describe_db_security_groups(&self) -> crate::operation::describe_db_security_groups::builders::DescribeDBSecurityGroupsFluentBuilder{
+    pub fn describe_db_security_groups(&self) -> crate::operation::describe_db_security_groups::builders::DescribeDBSecurityGroupsFluentBuilder {
         crate::operation::describe_db_security_groups::builders::DescribeDBSecurityGroupsFluentBuilder::new(self.handle.clone())
     }
 }

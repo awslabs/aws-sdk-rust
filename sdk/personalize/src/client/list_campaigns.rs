@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`campaigns(Option<Vec<CampaignSummary>>)`](crate::operation::list_campaigns::ListCampaignsOutput::campaigns): <p>A list of the campaigns.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_campaigns::ListCampaignsOutput::next_token): <p>A token for getting the next set of campaigns (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListCampaignsError>`](crate::operation::list_campaigns::ListCampaignsError)
-    pub fn list_campaigns(
-        &self,
-    ) -> crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder {
-        crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_campaigns(&self) -> crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder {
+        crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::new(self.handle.clone())
     }
 }

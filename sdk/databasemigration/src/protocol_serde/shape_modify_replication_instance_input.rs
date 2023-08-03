@@ -13,14 +13,10 @@ pub fn ser_modify_replication_instance_input(
         );
     }
     if input.apply_immediately {
-        object
-            .key("ApplyImmediately")
-            .boolean(input.apply_immediately);
+        object.key("ApplyImmediately").boolean(input.apply_immediately);
     }
     if let Some(var_3) = &input.replication_instance_class {
-        object
-            .key("ReplicationInstanceClass")
-            .string(var_3.as_str());
+        object.key("ReplicationInstanceClass").string(var_3.as_str());
     }
     if let Some(var_4) = &input.vpc_security_group_ids {
         let mut array_5 = object.key("VpcSecurityGroupIds").start_array();
@@ -32,9 +28,7 @@ pub fn ser_modify_replication_instance_input(
         array_5.finish();
     }
     if let Some(var_7) = &input.preferred_maintenance_window {
-        object
-            .key("PreferredMaintenanceWindow")
-            .string(var_7.as_str());
+        object.key("PreferredMaintenanceWindow").string(var_7.as_str());
     }
     if let Some(var_8) = &input.multi_az {
         object.key("MultiAZ").boolean(*var_8);
@@ -43,17 +37,13 @@ pub fn ser_modify_replication_instance_input(
         object.key("EngineVersion").string(var_9.as_str());
     }
     if input.allow_major_version_upgrade {
-        object
-            .key("AllowMajorVersionUpgrade")
-            .boolean(input.allow_major_version_upgrade);
+        object.key("AllowMajorVersionUpgrade").boolean(input.allow_major_version_upgrade);
     }
     if let Some(var_10) = &input.auto_minor_version_upgrade {
         object.key("AutoMinorVersionUpgrade").boolean(*var_10);
     }
     if let Some(var_11) = &input.replication_instance_identifier {
-        object
-            .key("ReplicationInstanceIdentifier")
-            .string(var_11.as_str());
+        object.key("ReplicationInstanceIdentifier").string(var_11.as_str());
     }
     if let Some(var_12) = &input.network_type {
         object.key("NetworkType").string(var_12.as_str());

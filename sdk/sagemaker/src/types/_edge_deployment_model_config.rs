@@ -30,9 +30,7 @@ impl EdgeDeploymentModelConfig {
 
 /// A builder for [`EdgeDeploymentModelConfig`](crate::types::EdgeDeploymentModelConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgeDeploymentModelConfigBuilder {
     pub(crate) model_handle: ::std::option::Option<::std::string::String>,
     pub(crate) edge_packaging_job_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl EdgeDeploymentModelConfigBuilder {
         &self.model_handle
     }
     /// <p>The edge packaging job associated with this deployment.</p>
-    pub fn edge_packaging_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The edge packaging job associated with this deployment.</p>
-    pub fn set_edge_packaging_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_packaging_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_packaging_job_name = input;
         self
     }

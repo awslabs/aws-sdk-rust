@@ -6,8 +6,7 @@
 pub struct H265ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
     #[doc(hidden)]
-    pub color_space_passthrough_settings:
-        ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
+    pub color_space_passthrough_settings: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
     /// Dolby Vision81 Settings
     #[doc(hidden)]
     pub dolby_vision81_settings: ::std::option::Option<crate::types::DolbyVision81Settings>,
@@ -23,15 +22,11 @@ pub struct H265ColorSpaceSettings {
 }
 impl H265ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
-    pub fn color_space_passthrough_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ColorSpacePassthroughSettings> {
+    pub fn color_space_passthrough_settings(&self) -> ::std::option::Option<&crate::types::ColorSpacePassthroughSettings> {
         self.color_space_passthrough_settings.as_ref()
     }
     /// Dolby Vision81 Settings
-    pub fn dolby_vision81_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DolbyVision81Settings> {
+    pub fn dolby_vision81_settings(&self) -> ::std::option::Option<&crate::types::DolbyVision81Settings> {
         self.dolby_vision81_settings.as_ref()
     }
     /// Hdr10 Settings
@@ -56,12 +51,9 @@ impl H265ColorSpaceSettings {
 
 /// A builder for [`H265ColorSpaceSettings`](crate::types::H265ColorSpaceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct H265ColorSpaceSettingsBuilder {
-    pub(crate) color_space_passthrough_settings:
-        ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
+    pub(crate) color_space_passthrough_settings: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
     pub(crate) dolby_vision81_settings: ::std::option::Option<crate::types::DolbyVision81Settings>,
     pub(crate) hdr10_settings: ::std::option::Option<crate::types::Hdr10Settings>,
     pub(crate) rec601_settings: ::std::option::Option<crate::types::Rec601Settings>,
@@ -69,25 +61,17 @@ pub struct H265ColorSpaceSettingsBuilder {
 }
 impl H265ColorSpaceSettingsBuilder {
     /// Passthrough applies no color space conversion to the output
-    pub fn color_space_passthrough_settings(
-        mut self,
-        input: crate::types::ColorSpacePassthroughSettings,
-    ) -> Self {
+    pub fn color_space_passthrough_settings(mut self, input: crate::types::ColorSpacePassthroughSettings) -> Self {
         self.color_space_passthrough_settings = ::std::option::Option::Some(input);
         self
     }
     /// Passthrough applies no color space conversion to the output
-    pub fn set_color_space_passthrough_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
-    ) -> Self {
+    pub fn set_color_space_passthrough_settings(mut self, input: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>) -> Self {
         self.color_space_passthrough_settings = input;
         self
     }
     /// Passthrough applies no color space conversion to the output
-    pub fn get_color_space_passthrough_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ColorSpacePassthroughSettings> {
+    pub fn get_color_space_passthrough_settings(&self) -> &::std::option::Option<crate::types::ColorSpacePassthroughSettings> {
         &self.color_space_passthrough_settings
     }
     /// Dolby Vision81 Settings
@@ -96,17 +80,12 @@ impl H265ColorSpaceSettingsBuilder {
         self
     }
     /// Dolby Vision81 Settings
-    pub fn set_dolby_vision81_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DolbyVision81Settings>,
-    ) -> Self {
+    pub fn set_dolby_vision81_settings(mut self, input: ::std::option::Option<crate::types::DolbyVision81Settings>) -> Self {
         self.dolby_vision81_settings = input;
         self
     }
     /// Dolby Vision81 Settings
-    pub fn get_dolby_vision81_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DolbyVision81Settings> {
+    pub fn get_dolby_vision81_settings(&self) -> &::std::option::Option<crate::types::DolbyVision81Settings> {
         &self.dolby_vision81_settings
     }
     /// Hdr10 Settings
@@ -115,10 +94,7 @@ impl H265ColorSpaceSettingsBuilder {
         self
     }
     /// Hdr10 Settings
-    pub fn set_hdr10_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Hdr10Settings>,
-    ) -> Self {
+    pub fn set_hdr10_settings(mut self, input: ::std::option::Option<crate::types::Hdr10Settings>) -> Self {
         self.hdr10_settings = input;
         self
     }
@@ -132,10 +108,7 @@ impl H265ColorSpaceSettingsBuilder {
         self
     }
     /// Rec601 Settings
-    pub fn set_rec601_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Rec601Settings>,
-    ) -> Self {
+    pub fn set_rec601_settings(mut self, input: ::std::option::Option<crate::types::Rec601Settings>) -> Self {
         self.rec601_settings = input;
         self
     }
@@ -149,10 +122,7 @@ impl H265ColorSpaceSettingsBuilder {
         self
     }
     /// Rec709 Settings
-    pub fn set_rec709_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Rec709Settings>,
-    ) -> Self {
+    pub fn set_rec709_settings(mut self, input: ::std::option::Option<crate::types::Rec709Settings>) -> Self {
         self.rec709_settings = input;
         self
     }

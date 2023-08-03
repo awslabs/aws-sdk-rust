@@ -48,9 +48,7 @@ impl RegistryAlias {
 
 /// A builder for [`RegistryAlias`](crate::types::RegistryAlias).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistryAliasBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RegistryAliasStatus>,
@@ -78,10 +76,7 @@ impl RegistryAliasBuilder {
         self
     }
     /// <p>The status of the registry alias.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryAliasStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistryAliasStatus>) -> Self {
         self.status = input;
         self
     }

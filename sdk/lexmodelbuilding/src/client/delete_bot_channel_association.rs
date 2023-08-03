@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`bot_alias(impl ::std::convert::Into<String>)`](crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationFluentBuilder::bot_alias) / [`set_bot_alias(Option<String>)`](crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationFluentBuilder::set_bot_alias): <p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p>
     /// - On success, responds with [`DeleteBotChannelAssociationOutput`](crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationOutput)
     /// - On failure, responds with [`SdkError<DeleteBotChannelAssociationError>`](crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError)
-    pub fn delete_bot_channel_association(&self) -> crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationFluentBuilder{
+    pub fn delete_bot_channel_association(
+        &self,
+    ) -> crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationFluentBuilder {
         crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListBotLocalesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_bot_locales::ListBotLocalesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bot_locales::ListBotLocalesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bot_locales::ListBotLocalesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_bot_locales();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListBotLocalesFluentBuilder {
         }
     }
     /// Access the ListBotLocales as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_bot_locales::builders::ListBotLocalesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_bot_locales::builders::ListBotLocalesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListBotLocalesFluentBuilder {
             crate::operation::list_bot_locales::ListBotLocales,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bot_locales::ListBotLocalesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bot_locales::ListBotLocalesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListBotLocalesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListBotLocalesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bot_locales::ListBotLocalesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bot_locales::ListBotLocalesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bot_locales::ListBotLocalesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListBotLocalesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bot_locales::ListBotLocalesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bot_locales::ListBotLocalesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bot_locales::ListBotLocalesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListBotLocalesFluentBuilder {
             crate::operation::list_bot_locales::ListBotLocales,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bot_locales::ListBotLocalesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bot_locales::ListBotLocalesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_bot_locales::paginator::ListBotLocalesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_bot_locales::paginator::ListBotLocalesPaginator {
-        crate::operation::list_bot_locales::paginator::ListBotLocalesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_bot_locales::paginator::ListBotLocalesPaginator {
+        crate::operation::list_bot_locales::paginator::ListBotLocalesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the bot to list locales for.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,10 +146,7 @@ impl ListBotLocalesFluentBuilder {
         self
     }
     /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::BotLocaleSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::BotLocaleSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -188,17 +164,12 @@ impl ListBotLocalesFluentBuilder {
         self
     }
     /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotLocaleFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotLocaleFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>

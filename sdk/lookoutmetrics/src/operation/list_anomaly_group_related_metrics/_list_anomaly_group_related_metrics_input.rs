@@ -29,9 +29,7 @@ impl ListAnomalyGroupRelatedMetricsInput {
         self.anomaly_group_id.as_deref()
     }
     /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
-    pub fn relationship_type_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RelationshipType> {
+    pub fn relationship_type_filter(&self) -> ::std::option::Option<&crate::types::RelationshipType> {
         self.relationship_type_filter.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -45,16 +43,14 @@ impl ListAnomalyGroupRelatedMetricsInput {
 }
 impl ListAnomalyGroupRelatedMetricsInput {
     /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsInput`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsInput).
-    pub fn builder() -> crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsInputBuilder{
+    pub fn builder() -> crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsInputBuilder {
         crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnomalyGroupRelatedMetricsInput`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupRelatedMetricsInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct ListAnomalyGroupRelatedMetricsInputBuilder {
 }
 impl ListAnomalyGroupRelatedMetricsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -84,18 +74,12 @@ impl ListAnomalyGroupRelatedMetricsInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_group_id = input;
         self
     }
@@ -109,17 +93,12 @@ impl ListAnomalyGroupRelatedMetricsInputBuilder {
         self
     }
     /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
-    pub fn set_relationship_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationshipType>,
-    ) -> Self {
+    pub fn set_relationship_type_filter(mut self, input: ::std::option::Option<crate::types::RelationshipType>) -> Self {
         self.relationship_type_filter = input;
         self
     }
     /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
-    pub fn get_relationship_type_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelationshipType> {
+    pub fn get_relationship_type_filter(&self) -> &::std::option::Option<crate::types::RelationshipType> {
         &self.relationship_type_filter
     }
     /// <p>The maximum number of results to return.</p>
@@ -159,17 +138,12 @@ impl ListAnomalyGroupRelatedMetricsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsInput {
-                anomaly_detector_arn: self.anomaly_detector_arn
-                ,
-                anomaly_group_id: self.anomaly_group_id
-                ,
-                relationship_type_filter: self.relationship_type_filter
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                anomaly_detector_arn: self.anomaly_detector_arn,
+                anomaly_group_id: self.anomaly_group_id,
+                relationship_type_filter: self.relationship_type_filter,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

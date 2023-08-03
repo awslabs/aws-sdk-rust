@@ -15,9 +15,7 @@ pub struct Ec2InstanceAggregationResponse {
     pub operating_system: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the instance.</p>
     #[doc(hidden)]
-    pub instance_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub instance_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -42,11 +40,7 @@ impl Ec2InstanceAggregationResponse {
         self.operating_system.as_deref()
     }
     /// <p>The tags attached to the instance.</p>
-    pub fn instance_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn instance_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.instance_tags.as_ref()
     }
     /// <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
@@ -71,16 +65,12 @@ impl Ec2InstanceAggregationResponse {
 
 /// A builder for [`Ec2InstanceAggregationResponse`](crate::types::Ec2InstanceAggregationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2InstanceAggregationResponseBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) ami: ::std::option::Option<::std::string::String>,
     pub(crate) operating_system: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) instance_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     pub(crate) network_findings: ::std::option::Option<i64>,
@@ -115,18 +105,12 @@ impl Ec2InstanceAggregationResponseBuilder {
         &self.ami
     }
     /// <p>The operating system of the Amazon EC2 instance.</p>
-    pub fn operating_system(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operating_system(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operating_system = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system of the Amazon EC2 instance.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operating_system = input;
         self
     }
@@ -139,11 +123,7 @@ impl Ec2InstanceAggregationResponseBuilder {
     /// To override the contents of this collection use [`set_instance_tags`](Self::set_instance_tags).
     ///
     /// <p>The tags attached to the instance.</p>
-    pub fn instance_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.instance_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.instance_tags = ::std::option::Option::Some(hash_map);
@@ -152,19 +132,13 @@ impl Ec2InstanceAggregationResponseBuilder {
     /// <p>The tags attached to the instance.</p>
     pub fn set_instance_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.instance_tags = input;
         self
     }
     /// <p>The tags attached to the instance.</p>
-    pub fn get_instance_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_instance_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.instance_tags
     }
     /// <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
@@ -187,10 +161,7 @@ impl Ec2InstanceAggregationResponseBuilder {
         self
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
         self.severity_counts = input;
         self
     }

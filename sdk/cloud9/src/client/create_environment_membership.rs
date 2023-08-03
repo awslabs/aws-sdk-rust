@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateEnvironmentMembershipOutput`](crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput) with field(s):
     ///   - [`membership(Option<EnvironmentMember>)`](crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput::membership): <p>Information about the environment member that was added.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentMembershipError>`](crate::operation::create_environment_membership::CreateEnvironmentMembershipError)
-    pub fn create_environment_membership(&self) -> crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipFluentBuilder{
+    pub fn create_environment_membership(
+        &self,
+    ) -> crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipFluentBuilder {
         crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,18 +36,14 @@ impl UpdateTestGridProjectInput {
 }
 impl UpdateTestGridProjectInput {
     /// Creates a new builder-style object to manufacture [`UpdateTestGridProjectInput`](crate::operation::update_test_grid_project::UpdateTestGridProjectInput).
-    pub fn builder(
-    ) -> crate::operation::update_test_grid_project::builders::UpdateTestGridProjectInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_test_grid_project::builders::UpdateTestGridProjectInputBuilder {
         crate::operation::update_test_grid_project::builders::UpdateTestGridProjectInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTestGridProjectInput`](crate::operation::update_test_grid_project::UpdateTestGridProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTestGridProjectInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -103,10 +99,7 @@ impl UpdateTestGridProjectInputBuilder {
         self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridVpcConfig>,
-    ) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::TestGridVpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
@@ -117,17 +110,13 @@ impl UpdateTestGridProjectInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTestGridProjectInput`](crate::operation::update_test_grid_project::UpdateTestGridProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_test_grid_project::UpdateTestGridProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_test_grid_project::UpdateTestGridProjectInput {
-                project_arn: self.project_arn,
-                name: self.name,
-                description: self.description,
-                vpc_config: self.vpc_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_test_grid_project::UpdateTestGridProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_test_grid_project::UpdateTestGridProjectInput {
+            project_arn: self.project_arn,
+            name: self.name,
+            description: self.description,
+            vpc_config: self.vpc_config,
+        })
     }
 }

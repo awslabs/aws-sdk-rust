@@ -26,8 +26,7 @@ impl RemoveAutoScalingPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveAutoScalingPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyInputBuilder,
+    inner: crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyInputBuilder,
 }
 impl RemoveAutoScalingPolicyFluentBuilder {
     /// Creates a new `RemoveAutoScalingPolicy`.
@@ -38,10 +37,7 @@ impl RemoveAutoScalingPolicyFluentBuilder {
         }
     }
     /// Access the RemoveAutoScalingPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl RemoveAutoScalingPolicyFluentBuilder {
             crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl RemoveAutoScalingPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl RemoveAutoScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl RemoveAutoScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl RemoveAutoScalingPolicyFluentBuilder {
             crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl RemoveAutoScalingPolicyFluentBuilder {
         self.inner.get_cluster_id()
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    pub fn instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_group_id(input.into());
         self
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_group_id(input);
         self
     }

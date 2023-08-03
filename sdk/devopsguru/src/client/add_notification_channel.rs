@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`AddNotificationChannelOutput`](crate::operation::add_notification_channel::AddNotificationChannelOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::add_notification_channel::AddNotificationChannelOutput::id): <p> The ID of the added notification channel. </p>
     /// - On failure, responds with [`SdkError<AddNotificationChannelError>`](crate::operation::add_notification_channel::AddNotificationChannelError)
-    pub fn add_notification_channel(
-        &self,
-    ) -> crate::operation::add_notification_channel::builders::AddNotificationChannelFluentBuilder
-    {
+    pub fn add_notification_channel(&self) -> crate::operation::add_notification_channel::builders::AddNotificationChannelFluentBuilder {
         crate::operation::add_notification_channel::builders::AddNotificationChannelFluentBuilder::new(self.handle.clone())
     }
 }

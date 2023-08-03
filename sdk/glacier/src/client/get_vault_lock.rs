@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`expiration_date(Option<String>)`](crate::operation::get_vault_lock::GetVaultLockOutput::expiration_date): <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
     ///   - [`creation_date(Option<String>)`](crate::operation::get_vault_lock::GetVaultLockOutput::creation_date): <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
     /// - On failure, responds with [`SdkError<GetVaultLockError>`](crate::operation::get_vault_lock::GetVaultLockError)
-    pub fn get_vault_lock(
-        &self,
-    ) -> crate::operation::get_vault_lock::builders::GetVaultLockFluentBuilder {
-        crate::operation::get_vault_lock::builders::GetVaultLockFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_vault_lock(&self) -> crate::operation::get_vault_lock::builders::GetVaultLockFluentBuilder {
+        crate::operation::get_vault_lock::builders::GetVaultLockFluentBuilder::new(self.handle.clone())
     }
 }

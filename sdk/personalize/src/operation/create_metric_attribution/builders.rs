@@ -26,8 +26,7 @@ impl CreateMetricAttributionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMetricAttributionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_metric_attribution::builders::CreateMetricAttributionInputBuilder,
+    inner: crate::operation::create_metric_attribution::builders::CreateMetricAttributionInputBuilder,
 }
 impl CreateMetricAttributionFluentBuilder {
     /// Creates a new `CreateMetricAttribution`.
@@ -38,10 +37,7 @@ impl CreateMetricAttributionFluentBuilder {
         }
     }
     /// Access the CreateMetricAttribution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_metric_attribution::builders::CreateMetricAttributionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_metric_attribution::builders::CreateMetricAttributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateMetricAttributionFluentBuilder {
             crate::operation::create_metric_attribution::CreateMetricAttribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_metric_attribution::CreateMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_metric_attribution::CreateMetricAttributionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateMetricAttributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateMetricAttributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_metric_attribution::CreateMetricAttributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_metric_attribution::CreateMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_metric_attribution::CreateMetricAttributionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateMetricAttributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_metric_attribution::CreateMetricAttributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_metric_attribution::CreateMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_metric_attribution::CreateMetricAttributionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateMetricAttributionFluentBuilder {
             crate::operation::create_metric_attribution::CreateMetricAttribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_metric_attribution::CreateMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_metric_attribution::CreateMetricAttributionError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl CreateMetricAttributionFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }
@@ -168,17 +147,12 @@ impl CreateMetricAttributionFluentBuilder {
         self
     }
     /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
     }
     /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
         self.inner.get_metrics()
     }
     /// <p>The output configuration details for the metric attribution.</p>
@@ -187,17 +161,12 @@ impl CreateMetricAttributionFluentBuilder {
         self
     }
     /// <p>The output configuration details for the metric attribution.</p>
-    pub fn set_metrics_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricAttributionOutput>,
-    ) -> Self {
+    pub fn set_metrics_output_config(mut self, input: ::std::option::Option<crate::types::MetricAttributionOutput>) -> Self {
         self.inner = self.inner.set_metrics_output_config(input);
         self
     }
     /// <p>The output configuration details for the metric attribution.</p>
-    pub fn get_metrics_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricAttributionOutput> {
+    pub fn get_metrics_output_config(&self) -> &::std::option::Option<crate::types::MetricAttributionOutput> {
         self.inner.get_metrics_output_config()
     }
 }

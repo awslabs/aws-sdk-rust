@@ -30,9 +30,7 @@ impl StartRecommendationsRequestEntry {
 
 /// A builder for [`StartRecommendationsRequestEntry`](crate::types::StartRecommendationsRequestEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRecommendationsRequestEntryBuilder {
     pub(crate) database_id: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<crate::types::RecommendationSettings>,
@@ -58,10 +56,7 @@ impl StartRecommendationsRequestEntryBuilder {
         self
     }
     /// <p>The required target engine settings.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::RecommendationSettings>) -> Self {
         self.settings = input;
         self
     }

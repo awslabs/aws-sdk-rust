@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`finding_ids(Option<Vec<String>>)`](crate::operation::list_findings::ListFindingsOutput::finding_ids): <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_findings::ListFindingsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::operation::list_findings::ListFindingsError)
-    pub fn list_findings(
-        &self,
-    ) -> crate::operation::list_findings::builders::ListFindingsFluentBuilder {
-        crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_findings(&self) -> crate::operation::list_findings::builders::ListFindingsFluentBuilder {
+        crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(self.handle.clone())
     }
 }

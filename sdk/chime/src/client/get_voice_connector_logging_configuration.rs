@@ -7,10 +7,12 @@ impl super::Client {
     /// - On success, responds with [`GetVoiceConnectorLoggingConfigurationOutput`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput) with field(s):
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput::logging_configuration): <p>The logging configuration details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorLoggingConfigurationError>`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationError)
-    #[deprecated(
-        note = "Replaced by GetVoiceConnectorLoggingConfiguration in the Amazon Chime SDK Voice Namespace"
-    )]
-    pub fn get_voice_connector_logging_configuration(&self) -> crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationFluentBuilder{
-        crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationFluentBuilder::new(self.handle.clone())
+    #[deprecated(note = "Replaced by GetVoiceConnectorLoggingConfiguration in the Amazon Chime SDK Voice Namespace")]
+    pub fn get_voice_connector_logging_configuration(
+        &self,
+    ) -> crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationFluentBuilder {
+        crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for GetScheduleGroupOutput {
 }
 impl GetScheduleGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetScheduleGroupOutput`](crate::operation::get_schedule_group::GetScheduleGroupOutput).
-    pub fn builder() -> crate::operation::get_schedule_group::builders::GetScheduleGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schedule_group::builders::GetScheduleGroupOutputBuilder {
         crate::operation::get_schedule_group::builders::GetScheduleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetScheduleGroupOutput`](crate::operation::get_schedule_group::GetScheduleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetScheduleGroupOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -103,10 +100,7 @@ impl GetScheduleGroupOutputBuilder {
         self
     }
     /// <p>Specifies the state of the schedule group.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleGroupState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduleGroupState>) -> Self {
         self.state = input;
         self
     }
@@ -120,10 +114,7 @@ impl GetScheduleGroupOutputBuilder {
         self
     }
     /// <p>The time at which the schedule group was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -137,17 +128,12 @@ impl GetScheduleGroupOutputBuilder {
         self
     }
     /// <p>The time at which the schedule group was last modified.</p>
-    pub fn set_last_modification_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_date = input;
         self
     }
     /// <p>The time at which the schedule group was last modified.</p>
-    pub fn get_last_modification_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

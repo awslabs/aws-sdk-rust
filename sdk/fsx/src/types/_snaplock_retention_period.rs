@@ -37,9 +37,7 @@ impl SnaplockRetentionPeriod {
 
 /// A builder for [`SnaplockRetentionPeriod`](crate::types::SnaplockRetentionPeriod).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnaplockRetentionPeriodBuilder {
     pub(crate) default_retention: ::std::option::Option<crate::types::RetentionPeriod>,
     pub(crate) minimum_retention: ::std::option::Option<crate::types::RetentionPeriod>,
@@ -52,10 +50,7 @@ impl SnaplockRetentionPeriodBuilder {
         self
     }
     /// <p>The retention period assigned to a write once, read many (WORM) file by default if an explicit retention period is not set for an FSx for ONTAP SnapLock volume. The default retention period must be greater than or equal to the minimum retention period and less than or equal to the maximum retention period. </p>
-    pub fn set_default_retention(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_default_retention(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.default_retention = input;
         self
     }
@@ -69,10 +64,7 @@ impl SnaplockRetentionPeriodBuilder {
         self
     }
     /// <p>The shortest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. </p>
-    pub fn set_minimum_retention(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_minimum_retention(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.minimum_retention = input;
         self
     }
@@ -86,10 +78,7 @@ impl SnaplockRetentionPeriodBuilder {
         self
     }
     /// <p>The longest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. </p>
-    pub fn set_maximum_retention(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_maximum_retention(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.maximum_retention = input;
         self
     }

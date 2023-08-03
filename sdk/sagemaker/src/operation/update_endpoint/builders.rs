@@ -10,10 +10,7 @@ impl UpdateEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_endpoint::UpdateEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint::UpdateEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_endpoint();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl UpdateEndpointFluentBuilder {
         }
     }
     /// Access the UpdateEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl UpdateEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -119,18 +111,12 @@ impl UpdateEndpointFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the endpoint whose configuration you want to update.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>The name of the endpoint whose configuration you want to update.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
@@ -139,18 +125,12 @@ impl UpdateEndpointFluentBuilder {
         self.inner.get_endpoint_name()
     }
     /// <p>The name of the new endpoint configuration.</p>
-    pub fn endpoint_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_config_name(input.into());
         self
     }
     /// <p>The name of the new endpoint configuration.</p>
-    pub fn set_endpoint_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_config_name(input);
         self
     }
@@ -177,25 +157,17 @@ impl UpdateEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_exclude_retained_variant_properties`](Self::set_exclude_retained_variant_properties).
     ///
     /// <p>When you are updating endpoint resources with <code>RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no variant properties are overridden. </p>
-    pub fn exclude_retained_variant_properties(
-        mut self,
-        input: crate::types::VariantProperty,
-    ) -> Self {
+    pub fn exclude_retained_variant_properties(mut self, input: crate::types::VariantProperty) -> Self {
         self.inner = self.inner.exclude_retained_variant_properties(input);
         self
     }
     /// <p>When you are updating endpoint resources with <code>RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no variant properties are overridden. </p>
-    pub fn set_exclude_retained_variant_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VariantProperty>>,
-    ) -> Self {
+    pub fn set_exclude_retained_variant_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VariantProperty>>) -> Self {
         self.inner = self.inner.set_exclude_retained_variant_properties(input);
         self
     }
     /// <p>When you are updating endpoint resources with <code>RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no variant properties are overridden. </p>
-    pub fn get_exclude_retained_variant_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariantProperty>> {
+    pub fn get_exclude_retained_variant_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariantProperty>> {
         self.inner.get_exclude_retained_variant_properties()
     }
     /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
@@ -204,10 +176,7 @@ impl UpdateEndpointFluentBuilder {
         self
     }
     /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
-    pub fn set_deployment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentConfig>,
-    ) -> Self {
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
         self.inner = self.inner.set_deployment_config(input);
         self
     }

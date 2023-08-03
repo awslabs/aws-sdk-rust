@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`description(Option<SystemInstanceDescription>)`](crate::operation::get_system_instance::GetSystemInstanceOutput::description): <p>An object that describes the system instance.</p>
     /// - On failure, responds with [`SdkError<GetSystemInstanceError>`](crate::operation::get_system_instance::GetSystemInstanceError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn get_system_instance(
-        &self,
-    ) -> crate::operation::get_system_instance::builders::GetSystemInstanceFluentBuilder {
-        crate::operation::get_system_instance::builders::GetSystemInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_system_instance(&self) -> crate::operation::get_system_instance::builders::GetSystemInstanceFluentBuilder {
+        crate::operation::get_system_instance::builders::GetSystemInstanceFluentBuilder::new(self.handle.clone())
     }
 }

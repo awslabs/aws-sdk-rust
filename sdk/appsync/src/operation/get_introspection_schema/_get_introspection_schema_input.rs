@@ -29,18 +29,14 @@ impl GetIntrospectionSchemaInput {
 }
 impl GetIntrospectionSchemaInput {
     /// Creates a new builder-style object to manufacture [`GetIntrospectionSchemaInput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaInput).
-    pub fn builder(
-    ) -> crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaInputBuilder {
         crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIntrospectionSchemaInput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIntrospectionSchemaInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::OutputType>,
@@ -92,16 +88,12 @@ impl GetIntrospectionSchemaInputBuilder {
     /// Consumes the builder and constructs a [`GetIntrospectionSchemaInput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_introspection_schema::GetIntrospectionSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_introspection_schema::GetIntrospectionSchemaInput {
-                api_id: self.api_id,
-                format: self.format,
-                include_directives: self.include_directives,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_introspection_schema::GetIntrospectionSchemaInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_introspection_schema::GetIntrospectionSchemaInput {
+            api_id: self.api_id,
+            format: self.format,
+            include_directives: self.include_directives,
+        })
     }
 }

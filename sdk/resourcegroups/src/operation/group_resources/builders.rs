@@ -10,10 +10,7 @@ impl GroupResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::group_resources::GroupResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::group_resources::GroupResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::group_resources::GroupResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.group_resources();
         fluent_builder.inner = self;
@@ -49,9 +46,7 @@ impl GroupResourcesFluentBuilder {
         }
     }
     /// Access the GroupResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::group_resources::builders::GroupResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::group_resources::builders::GroupResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -73,10 +68,7 @@ impl GroupResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -145,25 +137,17 @@ impl GroupResourcesFluentBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>The list of ARNs of the resources to be added to the group. </p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
     /// <p>The list of ARNs of the resources to be added to the group. </p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
     /// <p>The list of ARNs of the resources to be added to the group. </p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }
 }

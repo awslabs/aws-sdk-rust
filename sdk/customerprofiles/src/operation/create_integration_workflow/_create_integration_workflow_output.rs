@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateIntegrationWorkflowOutput {
 }
 impl CreateIntegrationWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`CreateIntegrationWorkflowOutput`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput).
-    pub fn builder() -> crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowOutputBuilder{
+    pub fn builder() -> crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowOutputBuilder {
         crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateIntegrationWorkflowOutput`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIntegrationWorkflowOutputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl CreateIntegrationWorkflowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateIntegrationWorkflowOutput`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput {
+    pub fn build(self) -> crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput {
         crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput {
             workflow_id: self.workflow_id,
             message: self.message,

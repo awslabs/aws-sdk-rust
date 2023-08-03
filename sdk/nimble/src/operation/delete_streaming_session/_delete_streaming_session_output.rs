@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteStreamingSessionOutput {
 }
 impl DeleteStreamingSessionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamingSessionOutput`](crate::operation::delete_streaming_session::DeleteStreamingSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_streaming_session::builders::DeleteStreamingSessionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_streaming_session::builders::DeleteStreamingSessionOutputBuilder {
         crate::operation::delete_streaming_session::builders::DeleteStreamingSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStreamingSessionOutput`](crate::operation::delete_streaming_session::DeleteStreamingSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStreamingSessionOutputBuilder {
     pub(crate) session: ::std::option::Option<crate::types::StreamingSession>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteStreamingSessionOutputBuilder {
         self
     }
     /// <p>The session.</p>
-    pub fn set_session(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingSession>,
-    ) -> Self {
+    pub fn set_session(mut self, input: ::std::option::Option<crate::types::StreamingSession>) -> Self {
         self.session = input;
         self
     }

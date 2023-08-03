@@ -22,34 +22,27 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
 }
 impl DisassociateAwsAccountFromPartnerAccountInput {
     /// Creates a new builder-style object to manufacture [`DisassociateAwsAccountFromPartnerAccountInput`](crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountInput).
-    pub fn builder() -> crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountInputBuilder
+    {
         crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateAwsAccountFromPartnerAccountInput`](crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateAwsAccountFromPartnerAccountInputBuilder {
     pub(crate) partner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) partner_type: ::std::option::Option<crate::types::PartnerType>,
 }
 impl DisassociateAwsAccountFromPartnerAccountInputBuilder {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
-    pub fn partner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The partner account ID to disassociate from the AWS account.</p>
-    pub fn set_partner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_account_id = input;
         self
     }
@@ -63,10 +56,7 @@ impl DisassociateAwsAccountFromPartnerAccountInputBuilder {
         self
     }
     /// <p>The partner type.</p>
-    pub fn set_partner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PartnerType>,
-    ) -> Self {
+    pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::PartnerType>) -> Self {
         self.partner_type = input;
         self
     }
@@ -75,14 +65,17 @@ impl DisassociateAwsAccountFromPartnerAccountInputBuilder {
         &self.partner_type
     }
     /// Consumes the builder and constructs a [`DisassociateAwsAccountFromPartnerAccountInput`](crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountInput {
-                partner_account_id: self.partner_account_id
-                ,
-                partner_type: self.partner_type
-                ,
-            }
+                partner_account_id: self.partner_account_id,
+                partner_type: self.partner_type,
+            },
         )
     }
 }

@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`network_settings_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_network_settings::builders::DeleteNetworkSettingsFluentBuilder::network_settings_arn) / [`set_network_settings_arn(Option<String>)`](crate::operation::delete_network_settings::builders::DeleteNetworkSettingsFluentBuilder::set_network_settings_arn): <p>The ARN of the network settings.</p>
     /// - On success, responds with [`DeleteNetworkSettingsOutput`](crate::operation::delete_network_settings::DeleteNetworkSettingsOutput)
     /// - On failure, responds with [`SdkError<DeleteNetworkSettingsError>`](crate::operation::delete_network_settings::DeleteNetworkSettingsError)
-    pub fn delete_network_settings(
-        &self,
-    ) -> crate::operation::delete_network_settings::builders::DeleteNetworkSettingsFluentBuilder
-    {
-        crate::operation::delete_network_settings::builders::DeleteNetworkSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_network_settings(&self) -> crate::operation::delete_network_settings::builders::DeleteNetworkSettingsFluentBuilder {
+        crate::operation::delete_network_settings::builders::DeleteNetworkSettingsFluentBuilder::new(self.handle.clone())
     }
 }

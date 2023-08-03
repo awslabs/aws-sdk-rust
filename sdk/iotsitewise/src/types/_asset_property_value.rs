@@ -37,9 +37,7 @@ impl AssetPropertyValue {
 
 /// A builder for [`AssetPropertyValue`](crate::types::AssetPropertyValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetPropertyValueBuilder {
     pub(crate) value: ::std::option::Option<crate::types::Variant>,
     pub(crate) timestamp: ::std::option::Option<crate::types::TimeInNanos>,
@@ -66,10 +64,7 @@ impl AssetPropertyValueBuilder {
         self
     }
     /// <p>The timestamp of the asset property value.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeInNanos>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::TimeInNanos>) -> Self {
         self.timestamp = input;
         self
     }

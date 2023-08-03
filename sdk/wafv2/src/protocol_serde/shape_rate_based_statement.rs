@@ -21,10 +21,7 @@ pub fn ser_rate_based_statement(
     if let Some(var_4) = &input.forwarded_ip_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ForwardedIPConfig").start_object();
-        crate::protocol_serde::shape_forwarded_ip_config::ser_forwarded_ip_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_forwarded_ip_config::ser_forwarded_ip_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.custom_keys {
@@ -44,17 +41,9 @@ pub fn ser_rate_based_statement(
 
 pub(crate) fn de_rate_based_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RateBasedStatement>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RateBasedStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,66 +53,50 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Limit" => {
-                                builder = builder.set_limit(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Limit" => {
+                            builder = builder.set_limit(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "AggregateKeyType" => {
-                                builder = builder.set_aggregate_key_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "AggregateKeyType" => {
+                            builder = builder.set_aggregate_key_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::RateBasedStatementAggregateKeyType::from(
-                                                u.as_ref(),
-                                            )
-                                        })
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::RateBasedStatementAggregateKeyType::from(u.as_ref()))
                                     })
                                     .transpose()?,
-                                );
-                            }
-                            "ScopeDownStatement" => {
-                                builder = builder.set_scope_down_statement(
-                                    crate::protocol_serde::shape_statement::de_statement(tokens)?
-                                        .map(Box::new),
-                                );
-                            }
-                            "ForwardedIPConfig" => {
-                                builder = builder.set_forwarded_ip_config(
-                                    crate::protocol_serde::shape_forwarded_ip_config::de_forwarded_ip_config(tokens)?
-                                );
-                            }
-                            "CustomKeys" => {
-                                builder = builder.set_custom_keys(
-                                    crate::protocol_serde::shape_rate_based_statement_custom_keys::de_rate_based_statement_custom_keys(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "ScopeDownStatement" => {
+                            builder = builder.set_scope_down_statement(crate::protocol_serde::shape_statement::de_statement(tokens)?.map(Box::new));
+                        }
+                        "ForwardedIPConfig" => {
+                            builder =
+                                builder.set_forwarded_ip_config(crate::protocol_serde::shape_forwarded_ip_config::de_forwarded_ip_config(tokens)?);
+                        }
+                        "CustomKeys" => {
+                            builder = builder.set_custom_keys(
+                                crate::protocol_serde::shape_rate_based_statement_custom_keys::de_rate_based_statement_custom_keys(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -13,9 +13,7 @@ impl TableWildcard {
 
 /// A builder for [`TableWildcard`](crate::types::TableWildcard).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableWildcardBuilder {}
 impl TableWildcardBuilder {
     /// Consumes the builder and constructs a [`TableWildcard`](crate::types::TableWildcard).

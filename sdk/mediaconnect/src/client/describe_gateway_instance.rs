@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeGatewayInstanceOutput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput) with field(s):
     ///   - [`gateway_instance(Option<GatewayInstance>)`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput::gateway_instance): The settings for an instance in a gateway.
     /// - On failure, responds with [`SdkError<DescribeGatewayInstanceError>`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceError)
-    pub fn describe_gateway_instance(
-        &self,
-    ) -> crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceFluentBuilder
-    {
+    pub fn describe_gateway_instance(&self) -> crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceFluentBuilder {
         crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceFluentBuilder::new(self.handle.clone())
     }
 }

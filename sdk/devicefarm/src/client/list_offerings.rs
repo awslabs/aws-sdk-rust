@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`offerings(Option<Vec<Offering>>)`](crate::operation::list_offerings::ListOfferingsOutput::offerings): <p>A value that represents the list offering results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_offerings::ListOfferingsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListOfferingsError>`](crate::operation::list_offerings::ListOfferingsError)
-    pub fn list_offerings(
-        &self,
-    ) -> crate::operation::list_offerings::builders::ListOfferingsFluentBuilder {
-        crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_offerings(&self) -> crate::operation::list_offerings::builders::ListOfferingsFluentBuilder {
+        crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

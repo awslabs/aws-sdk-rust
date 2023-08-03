@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`storage_virtual_machines(Option<Vec<StorageVirtualMachine>>)`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput::storage_virtual_machines): <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     /// - On failure, responds with [`SdkError<DescribeStorageVirtualMachinesError>`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesError)
-    pub fn describe_storage_virtual_machines(&self) -> crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder{
+    pub fn describe_storage_virtual_machines(
+        &self,
+    ) -> crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder {
         crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::new(self.handle.clone())
     }
 }

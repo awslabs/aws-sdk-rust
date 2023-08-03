@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameFluentBuilder::set_description): <p>The description of the flow.</p>
     /// - On success, responds with [`UpdateContactFlowNameOutput`](crate::operation::update_contact_flow_name::UpdateContactFlowNameOutput)
     /// - On failure, responds with [`SdkError<UpdateContactFlowNameError>`](crate::operation::update_contact_flow_name::UpdateContactFlowNameError)
-    pub fn update_contact_flow_name(
-        &self,
-    ) -> crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameFluentBuilder
-    {
+    pub fn update_contact_flow_name(&self) -> crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameFluentBuilder {
         crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameFluentBuilder::new(self.handle.clone())
     }
 }

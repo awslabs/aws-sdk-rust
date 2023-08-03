@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeVpcPeeringConnectionsOutput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput) with field(s):
     ///   - [`vpc_peering_connections(Option<Vec<VpcPeeringConnection>>)`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput::vpc_peering_connections): <p>A collection of VPC peering connection records that match the request.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcPeeringConnectionsError>`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError)
-    pub fn describe_vpc_peering_connections(&self) -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsFluentBuilder{
+    pub fn describe_vpc_peering_connections(
+        &self,
+    ) -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsFluentBuilder {
         crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

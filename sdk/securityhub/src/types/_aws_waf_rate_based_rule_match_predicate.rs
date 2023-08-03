@@ -57,9 +57,7 @@ impl AwsWafRateBasedRuleMatchPredicate {
 
 /// A builder for [`AwsWafRateBasedRuleMatchPredicate`](crate::types::AwsWafRateBasedRuleMatchPredicate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRateBasedRuleMatchPredicateBuilder {
     pub(crate) data_id: ::std::option::Option<::std::string::String>,
     pub(crate) negated: ::std::option::Option<bool>,

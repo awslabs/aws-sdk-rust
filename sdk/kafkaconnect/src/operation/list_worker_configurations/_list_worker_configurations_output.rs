@@ -8,8 +8,7 @@ pub struct ListWorkerConfigurationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of worker configuration descriptions.</p>
     #[doc(hidden)]
-    pub worker_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>>,
+    pub worker_configurations: ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkerConfigurationsOutput {
@@ -18,9 +17,7 @@ impl ListWorkerConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of worker configuration descriptions.</p>
-    pub fn worker_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WorkerConfigurationSummary]> {
+    pub fn worker_configurations(&self) -> ::std::option::Option<&[crate::types::WorkerConfigurationSummary]> {
         self.worker_configurations.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListWorkerConfigurationsOutput {
 }
 impl ListWorkerConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkerConfigurationsOutput`](crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsOutputBuilder {
         crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkerConfigurationsOutput`](crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkerConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) worker_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>>,
+    pub(crate) worker_configurations: ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkerConfigurationsOutputBuilder {
@@ -69,27 +61,19 @@ impl ListWorkerConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_worker_configurations`](Self::set_worker_configurations).
     ///
     /// <p>An array of worker configuration descriptions.</p>
-    pub fn worker_configurations(
-        mut self,
-        input: crate::types::WorkerConfigurationSummary,
-    ) -> Self {
+    pub fn worker_configurations(mut self, input: crate::types::WorkerConfigurationSummary) -> Self {
         let mut v = self.worker_configurations.unwrap_or_default();
         v.push(input);
         self.worker_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of worker configuration descriptions.</p>
-    pub fn set_worker_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>>,
-    ) -> Self {
+    pub fn set_worker_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>>) -> Self {
         self.worker_configurations = input;
         self
     }
     /// <p>An array of worker configuration descriptions.</p>
-    pub fn get_worker_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>> {
+    pub fn get_worker_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>> {
         &self.worker_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +86,7 @@ impl ListWorkerConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkerConfigurationsOutput`](crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput {
         crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput {
             next_token: self.next_token,
             worker_configurations: self.worker_configurations,

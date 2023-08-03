@@ -39,10 +39,7 @@ impl GetHealthCheckStatusFluentBuilder {
         }
     }
     /// Access the GetHealthCheckStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_health_check_status::builders::GetHealthCheckStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_health_check_status::builders::GetHealthCheckStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl GetHealthCheckStatusFluentBuilder {
             crate::operation::get_health_check_status::GetHealthCheckStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_health_check_status::GetHealthCheckStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_status::GetHealthCheckStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl GetHealthCheckStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl GetHealthCheckStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_health_check_status::GetHealthCheckStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_health_check_status::GetHealthCheckStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_status::GetHealthCheckStatusError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl GetHealthCheckStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_health_check_status::GetHealthCheckStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_health_check_status::GetHealthCheckStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_status::GetHealthCheckStatusError>,
     > {
         self.send_middleware().await
     }
@@ -119,29 +107,21 @@ impl GetHealthCheckStatusFluentBuilder {
             crate::operation::get_health_check_status::GetHealthCheckStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_health_check_status::GetHealthCheckStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_status::GetHealthCheckStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the health check that you want the current status for. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
     /// <p>If you want to check the status of a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckStatus</code> to get the status of a calculated health check.</p>
     /// </note>
-    pub fn health_check_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_id(input.into());
         self
     }
     /// <p>The ID for the health check that you want the current status for. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
     /// <p>If you want to check the status of a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckStatus</code> to get the status of a calculated health check.</p>
     /// </note>
-    pub fn set_health_check_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_id(input);
         self
     }

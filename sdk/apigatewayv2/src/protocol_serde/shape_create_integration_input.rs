@@ -74,9 +74,7 @@ pub fn ser_create_integration_input(
         object_21.finish();
     }
     if let Some(var_27) = &input.template_selection_expression {
-        object
-            .key("templateSelectionExpression")
-            .string(var_27.as_str());
+        object.key("templateSelectionExpression").string(var_27.as_str());
     }
     if let Some(var_28) = &input.timeout_in_millis {
         object.key("timeoutInMillis").number(
@@ -87,10 +85,7 @@ pub fn ser_create_integration_input(
     if let Some(var_29) = &input.tls_config {
         #[allow(unused_mut)]
         let mut object_30 = object.key("tlsConfig").start_object();
-        crate::protocol_serde::shape_tls_config_input::ser_tls_config_input(
-            &mut object_30,
-            var_29,
-        )?;
+        crate::protocol_serde::shape_tls_config_input::ser_tls_config_input(&mut object_30, var_29)?;
         object_30.finish();
     }
     Ok(())

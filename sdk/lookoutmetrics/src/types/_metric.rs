@@ -20,9 +20,7 @@ impl Metric {
         self.metric_name.as_deref()
     }
     /// <p>The function with which the metric is calculated.</p>
-    pub fn aggregation_function(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AggregationFunction> {
+    pub fn aggregation_function(&self) -> ::std::option::Option<&crate::types::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
     /// <p>The namespace for the metric.</p>
@@ -39,9 +37,7 @@ impl Metric {
 
 /// A builder for [`Metric`](crate::types::Metric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
@@ -68,17 +64,12 @@ impl MetricBuilder {
         self
     }
     /// <p>The function with which the metric is calculated.</p>
-    pub fn set_aggregation_function(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationFunction>,
-    ) -> Self {
+    pub fn set_aggregation_function(mut self, input: ::std::option::Option<crate::types::AggregationFunction>) -> Self {
         self.aggregation_function = input;
         self
     }
     /// <p>The function with which the metric is calculated.</p>
-    pub fn get_aggregation_function(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregationFunction> {
+    pub fn get_aggregation_function(&self) -> &::std::option::Option<crate::types::AggregationFunction> {
         &self.aggregation_function
     }
     /// <p>The namespace for the metric.</p>

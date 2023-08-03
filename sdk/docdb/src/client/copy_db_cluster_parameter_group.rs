@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CopyDbClusterParameterGroupOutput`](crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupOutput) with field(s):
     ///   - [`db_cluster_parameter_group(Option<DbClusterParameterGroup>)`](crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupOutput::db_cluster_parameter_group): <p>Detailed information about a cluster parameter group. </p>
     /// - On failure, responds with [`SdkError<CopyDBClusterParameterGroupError>`](crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError)
-    pub fn copy_db_cluster_parameter_group(&self) -> crate::operation::copy_db_cluster_parameter_group::builders::CopyDBClusterParameterGroupFluentBuilder{
+    pub fn copy_db_cluster_parameter_group(
+        &self,
+    ) -> crate::operation::copy_db_cluster_parameter_group::builders::CopyDBClusterParameterGroupFluentBuilder {
         crate::operation::copy_db_cluster_parameter_group::builders::CopyDBClusterParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

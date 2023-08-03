@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`volume_arn(Option<String>)`](crate::operation::create_snapshot::CreateSnapshotOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
     ///   - [`snapshot_id(Option<String>)`](crate::operation::create_snapshot::CreateSnapshotOutput::snapshot_id): <p>The snapshot ID that is used to refer to the snapshot in future operations such as describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or creating a volume from a snapshot (<code>CreateStorediSCSIVolume</code>).</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::operation::create_snapshot::CreateSnapshotError)
-    pub fn create_snapshot(
-        &self,
-    ) -> crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder {
-        crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_snapshot(&self) -> crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder {
+        crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

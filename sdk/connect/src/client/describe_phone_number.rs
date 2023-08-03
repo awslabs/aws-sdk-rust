@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePhoneNumberOutput`](crate::operation::describe_phone_number::DescribePhoneNumberOutput) with field(s):
     ///   - [`claimed_phone_number_summary(Option<ClaimedPhoneNumberSummary>)`](crate::operation::describe_phone_number::DescribePhoneNumberOutput::claimed_phone_number_summary): <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
     /// - On failure, responds with [`SdkError<DescribePhoneNumberError>`](crate::operation::describe_phone_number::DescribePhoneNumberError)
-    pub fn describe_phone_number(
-        &self,
-    ) -> crate::operation::describe_phone_number::builders::DescribePhoneNumberFluentBuilder {
-        crate::operation::describe_phone_number::builders::DescribePhoneNumberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_phone_number(&self) -> crate::operation::describe_phone_number::builders::DescribePhoneNumberFluentBuilder {
+        crate::operation::describe_phone_number::builders::DescribePhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

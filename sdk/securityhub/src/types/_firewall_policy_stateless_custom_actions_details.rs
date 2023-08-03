@@ -13,9 +13,7 @@ pub struct FirewallPolicyStatelessCustomActionsDetails {
 }
 impl FirewallPolicyStatelessCustomActionsDetails {
     /// <p>The definition of the custom action.</p>
-    pub fn action_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StatelessCustomActionDefinition> {
+    pub fn action_definition(&self) -> ::std::option::Option<&crate::types::StatelessCustomActionDefinition> {
         self.action_definition.as_ref()
     }
     /// <p>The name of the custom action.</p>
@@ -32,35 +30,24 @@ impl FirewallPolicyStatelessCustomActionsDetails {
 
 /// A builder for [`FirewallPolicyStatelessCustomActionsDetails`](crate::types::FirewallPolicyStatelessCustomActionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirewallPolicyStatelessCustomActionsDetailsBuilder {
-    pub(crate) action_definition:
-        ::std::option::Option<crate::types::StatelessCustomActionDefinition>,
+    pub(crate) action_definition: ::std::option::Option<crate::types::StatelessCustomActionDefinition>,
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
 }
 impl FirewallPolicyStatelessCustomActionsDetailsBuilder {
     /// <p>The definition of the custom action.</p>
-    pub fn action_definition(
-        mut self,
-        input: crate::types::StatelessCustomActionDefinition,
-    ) -> Self {
+    pub fn action_definition(mut self, input: crate::types::StatelessCustomActionDefinition) -> Self {
         self.action_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The definition of the custom action.</p>
-    pub fn set_action_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::StatelessCustomActionDefinition>,
-    ) -> Self {
+    pub fn set_action_definition(mut self, input: ::std::option::Option<crate::types::StatelessCustomActionDefinition>) -> Self {
         self.action_definition = input;
         self
     }
     /// <p>The definition of the custom action.</p>
-    pub fn get_action_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::StatelessCustomActionDefinition> {
+    pub fn get_action_definition(&self) -> &::std::option::Option<crate::types::StatelessCustomActionDefinition> {
         &self.action_definition
     }
     /// <p>The name of the custom action.</p>

@@ -36,9 +36,7 @@ impl ListFunctionsInput {
 
 /// A builder for [`ListFunctionsInput`](crate::operation::list_functions::ListFunctionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionsInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl ListFunctionsInputBuilder {
     /// Consumes the builder and constructs a [`ListFunctionsInput`](crate::operation::list_functions::ListFunctionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_functions::ListFunctionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_functions::ListFunctionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_functions::ListFunctionsInput {
             api_id: self.api_id,
             next_token: self.next_token,

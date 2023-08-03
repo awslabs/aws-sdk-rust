@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateNotebookInstanceOutput {
 }
 impl CreateNotebookInstanceOutput {
     /// Creates a new builder-style object to manufacture [`CreateNotebookInstanceOutput`](crate::operation::create_notebook_instance::CreateNotebookInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::create_notebook_instance::builders::CreateNotebookInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_notebook_instance::builders::CreateNotebookInstanceOutputBuilder {
         crate::operation::create_notebook_instance::builders::CreateNotebookInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNotebookInstanceOutput`](crate::operation::create_notebook_instance::CreateNotebookInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNotebookInstanceOutputBuilder {
     pub(crate) notebook_instance_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateNotebookInstanceOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
-    pub fn notebook_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
-    pub fn set_notebook_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_arn = input;
         self
     }

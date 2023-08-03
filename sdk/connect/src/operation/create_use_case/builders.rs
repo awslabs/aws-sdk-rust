@@ -10,10 +10,7 @@ impl CreateUseCaseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_use_case::CreateUseCaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_use_case::CreateUseCaseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_use_case::CreateUseCaseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_use_case();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateUseCaseFluentBuilder {
         }
     }
     /// Access the CreateUseCase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_use_case::builders::CreateUseCaseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_use_case::builders::CreateUseCaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateUseCaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl CreateUseCaseFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn integration_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_association_id(input.into());
         self
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn set_integration_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_association_id(input);
         self
     }
@@ -154,10 +140,7 @@ impl CreateUseCaseFluentBuilder {
         self
     }
     /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
-    pub fn set_use_case_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UseCaseType>,
-    ) -> Self {
+    pub fn set_use_case_type(mut self, input: ::std::option::Option<crate::types::UseCaseType>) -> Self {
         self.inner = self.inner.set_use_case_type(input);
         self
     }
@@ -170,30 +153,17 @@ impl CreateUseCaseFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

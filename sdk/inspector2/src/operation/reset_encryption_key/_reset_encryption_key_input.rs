@@ -22,17 +22,14 @@ impl ResetEncryptionKeyInput {
 }
 impl ResetEncryptionKeyInput {
     /// Creates a new builder-style object to manufacture [`ResetEncryptionKeyInput`](crate::operation::reset_encryption_key::ResetEncryptionKeyInput).
-    pub fn builder(
-    ) -> crate::operation::reset_encryption_key::builders::ResetEncryptionKeyInputBuilder {
+    pub fn builder() -> crate::operation::reset_encryption_key::builders::ResetEncryptionKeyInputBuilder {
         crate::operation::reset_encryption_key::builders::ResetEncryptionKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetEncryptionKeyInput`](crate::operation::reset_encryption_key::ResetEncryptionKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetEncryptionKeyInputBuilder {
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -58,10 +55,7 @@ impl ResetEncryptionKeyInputBuilder {
         self
     }
     /// <p>The resource type the key encrypts.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -72,15 +66,10 @@ impl ResetEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`ResetEncryptionKeyInput`](crate::operation::reset_encryption_key::ResetEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_encryption_key::ResetEncryptionKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_encryption_key::ResetEncryptionKeyInput {
-                scan_type: self.scan_type,
-                resource_type: self.resource_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reset_encryption_key::ResetEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::reset_encryption_key::ResetEncryptionKeyInput {
+            scan_type: self.scan_type,
+            resource_type: self.resource_type,
+        })
     }
 }

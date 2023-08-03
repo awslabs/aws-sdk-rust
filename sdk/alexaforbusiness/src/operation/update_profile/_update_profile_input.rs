@@ -44,8 +44,7 @@ pub struct UpdateProfileInput {
     pub data_retention_opt_in: ::std::option::Option<bool>,
     /// <p>The updated meeting room settings of a room profile.</p>
     #[doc(hidden)]
-    pub meeting_room_configuration:
-        ::std::option::Option<crate::types::UpdateMeetingRoomConfiguration>,
+    pub meeting_room_configuration: ::std::option::Option<crate::types::UpdateMeetingRoomConfiguration>,
 }
 impl UpdateProfileInput {
     /// <p>The ARN of the room profile to update. Required.</p>
@@ -101,9 +100,7 @@ impl UpdateProfileInput {
         self.data_retention_opt_in
     }
     /// <p>The updated meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateMeetingRoomConfiguration> {
+    pub fn meeting_room_configuration(&self) -> ::std::option::Option<&crate::types::UpdateMeetingRoomConfiguration> {
         self.meeting_room_configuration.as_ref()
     }
 }
@@ -116,9 +113,7 @@ impl UpdateProfileInput {
 
 /// A builder for [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProfileInputBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
@@ -133,8 +128,7 @@ pub struct UpdateProfileInputBuilder {
     pub(crate) max_volume_limit: ::std::option::Option<i32>,
     pub(crate) pstn_enabled: ::std::option::Option<bool>,
     pub(crate) data_retention_opt_in: ::std::option::Option<bool>,
-    pub(crate) meeting_room_configuration:
-        ::std::option::Option<crate::types::UpdateMeetingRoomConfiguration>,
+    pub(crate) meeting_room_configuration: ::std::option::Option<crate::types::UpdateMeetingRoomConfiguration>,
 }
 impl UpdateProfileInputBuilder {
     /// <p>The ARN of the room profile to update. Required.</p>
@@ -213,10 +207,7 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>The updated distance unit for the room profile.</p>
-    pub fn set_distance_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::DistanceUnit>,
-    ) -> Self {
+    pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.distance_unit = input;
         self
     }
@@ -230,10 +221,7 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>The updated temperature unit for the room profile.</p>
-    pub fn set_temperature_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::TemperatureUnit>,
-    ) -> Self {
+    pub fn set_temperature_unit(mut self, input: ::std::option::Option<crate::types::TemperatureUnit>) -> Self {
         self.temperature_unit = input;
         self
     }
@@ -326,34 +314,23 @@ impl UpdateProfileInputBuilder {
         &self.data_retention_opt_in
     }
     /// <p>The updated meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(
-        mut self,
-        input: crate::types::UpdateMeetingRoomConfiguration,
-    ) -> Self {
+    pub fn meeting_room_configuration(mut self, input: crate::types::UpdateMeetingRoomConfiguration) -> Self {
         self.meeting_room_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The updated meeting room settings of a room profile.</p>
-    pub fn set_meeting_room_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateMeetingRoomConfiguration>,
-    ) -> Self {
+    pub fn set_meeting_room_configuration(mut self, input: ::std::option::Option<crate::types::UpdateMeetingRoomConfiguration>) -> Self {
         self.meeting_room_configuration = input;
         self
     }
     /// <p>The updated meeting room settings of a room profile.</p>
-    pub fn get_meeting_room_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateMeetingRoomConfiguration> {
+    pub fn get_meeting_room_configuration(&self) -> &::std::option::Option<crate::types::UpdateMeetingRoomConfiguration> {
         &self.meeting_room_configuration
     }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_profile::UpdateProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_profile::UpdateProfileInput {
             profile_arn: self.profile_arn,
             profile_name: self.profile_name,

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`signal_decoders(Option<Vec<SignalDecoder>>)`](crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsOutput::signal_decoders): <p> Information about a list of signals to decode. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsOutput::next_token): <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListDecoderManifestSignalsError>`](crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsError)
-    pub fn list_decoder_manifest_signals(&self) -> crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsFluentBuilder{
+    pub fn list_decoder_manifest_signals(
+        &self,
+    ) -> crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsFluentBuilder {
         crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsFluentBuilder::new(self.handle.clone())
     }
 }

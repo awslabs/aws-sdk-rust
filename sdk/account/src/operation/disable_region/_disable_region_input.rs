@@ -35,9 +35,7 @@ impl DisableRegionInput {
 
 /// A builder for [`DisableRegionInput`](crate::operation::disable_region::DisableRegionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableRegionInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
@@ -83,10 +81,7 @@ impl DisableRegionInputBuilder {
     /// Consumes the builder and constructs a [`DisableRegionInput`](crate::operation::disable_region::DisableRegionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_region::DisableRegionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::disable_region::DisableRegionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_region::DisableRegionInput {
             account_id: self.account_id,
             region_name: self.region_name,

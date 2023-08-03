@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutInventoryOutput`](crate::operation::put_inventory::PutInventoryOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::put_inventory::PutInventoryOutput::message): <p>Information about the request.</p>
     /// - On failure, responds with [`SdkError<PutInventoryError>`](crate::operation::put_inventory::PutInventoryError)
-    pub fn put_inventory(
-        &self,
-    ) -> crate::operation::put_inventory::builders::PutInventoryFluentBuilder {
-        crate::operation::put_inventory::builders::PutInventoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_inventory(&self) -> crate::operation::put_inventory::builders::PutInventoryFluentBuilder {
+        crate::operation::put_inventory::builders::PutInventoryFluentBuilder::new(self.handle.clone())
     }
 }

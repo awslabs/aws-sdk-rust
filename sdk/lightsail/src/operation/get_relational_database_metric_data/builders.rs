@@ -5,16 +5,16 @@ pub use crate::operation::get_relational_database_metric_data::_get_relational_d
 
 impl GetRelationalDatabaseMetricDataInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_relational_database_metric_data();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseMetricDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_relational_database_metric_data::builders::GetRelationalDatabaseMetricDataInputBuilder,
+    inner: crate::operation::get_relational_database_metric_data::builders::GetRelationalDatabaseMetricDataInputBuilder,
 }
 impl GetRelationalDatabaseMetricDataFluentBuilder {
     /// Creates a new `GetRelationalDatabaseMetricData`.
@@ -38,15 +38,20 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
         }
     }
     /// Access the GetRelationalDatabaseMetricData as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_relational_database_metric_data::builders::GetRelationalDatabaseMetricDataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_relational_database_metric_data::builders::GetRelationalDatabaseMetricDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricData, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricData,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +88,35 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricData, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricData,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of your database from which to get metric data.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
     /// <p>The name of your database from which to get metric data.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
@@ -139,10 +148,7 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
     /// <li> <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
     /// <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
     /// </ul>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationalDatabaseMetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::RelationalDatabaseMetricName>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
@@ -156,9 +162,7 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
     /// <li> <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
     /// <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
     /// </ul>
-    pub fn get_metric_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelationalDatabaseMetricName> {
+    pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::RelationalDatabaseMetricName> {
         self.inner.get_metric_name()
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
@@ -194,10 +198,7 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -226,10 +227,7 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
     /// </ul>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -282,10 +280,7 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
         self.inner = self.inner.set_statistics(input);
         self
     }
@@ -298,9 +293,7 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn get_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
         self.inner.get_statistics()
     }
 }

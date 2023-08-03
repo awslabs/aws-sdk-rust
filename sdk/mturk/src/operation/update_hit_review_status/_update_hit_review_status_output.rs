@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateHitReviewStatusOutput {
 }
 impl UpdateHitReviewStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHitReviewStatusOutput`](crate::operation::update_hit_review_status::UpdateHitReviewStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::update_hit_review_status::builders::UpdateHitReviewStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_hit_review_status::builders::UpdateHitReviewStatusOutputBuilder {
         crate::operation::update_hit_review_status::builders::UpdateHitReviewStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHitReviewStatusOutput`](crate::operation::update_hit_review_status::UpdateHitReviewStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHitReviewStatusOutputBuilder {
     _request_id: Option<String>,
 }

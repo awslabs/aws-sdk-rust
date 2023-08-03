@@ -29,16 +29,14 @@ impl DescribeInventoryDeletionsInput {
 }
 impl DescribeInventoryDeletionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInventoryDeletionsInput`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput).
-    pub fn builder() -> crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder {
         crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInventoryDeletionsInput`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInventoryDeletionsInputBuilder {
     pub(crate) deletion_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl DescribeInventoryDeletionsInputBuilder {
         crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput {
-                deletion_id: self.deletion_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput {
+            deletion_id: self.deletion_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

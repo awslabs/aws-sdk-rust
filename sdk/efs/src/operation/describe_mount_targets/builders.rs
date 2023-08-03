@@ -38,9 +38,7 @@ impl DescribeMountTargetsFluentBuilder {
         }
     }
     /// Access the DescribeMountTargets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_mount_targets::builders::DescribeMountTargetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_mount_targets::builders::DescribeMountTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeMountTargetsFluentBuilder {
             crate::operation::describe_mount_targets::DescribeMountTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mount_targets::DescribeMountTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_targets::DescribeMountTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeMountTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeMountTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_mount_targets::DescribeMountTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mount_targets::DescribeMountTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_targets::DescribeMountTargetsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeMountTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_mount_targets::DescribeMountTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mount_targets::DescribeMountTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_targets::DescribeMountTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DescribeMountTargetsFluentBuilder {
             crate::operation::describe_mount_targets::DescribeMountTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mount_targets::DescribeMountTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_targets::DescribeMountTargetsError>,
     > {
         self.customize_middleware().await
     }
@@ -152,18 +139,12 @@ impl DescribeMountTargetsFluentBuilder {
         self.inner.get_marker()
     }
     /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -172,18 +153,12 @@ impl DescribeMountTargetsFluentBuilder {
         self.inner.get_file_system_id()
     }
     /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
-    pub fn mount_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mount_target_id(input.into());
         self
     }
     /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
-    pub fn set_mount_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mount_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mount_target_id(input);
         self
     }
@@ -192,18 +167,12 @@ impl DescribeMountTargetsFluentBuilder {
         self.inner.get_mount_target_id()
     }
     /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
-    pub fn access_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_point_id(input.into());
         self
     }
     /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
-    pub fn set_access_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_point_id(input);
         self
     }

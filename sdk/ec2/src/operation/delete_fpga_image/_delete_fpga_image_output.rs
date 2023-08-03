@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteFpgaImageOutput {
 }
 impl DeleteFpgaImageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFpgaImageOutput`](crate::operation::delete_fpga_image::DeleteFpgaImageOutput).
-    pub fn builder() -> crate::operation::delete_fpga_image::builders::DeleteFpgaImageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_fpga_image::builders::DeleteFpgaImageOutputBuilder {
         crate::operation::delete_fpga_image::builders::DeleteFpgaImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFpgaImageOutput`](crate::operation::delete_fpga_image::DeleteFpgaImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFpgaImageOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

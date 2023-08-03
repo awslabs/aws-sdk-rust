@@ -11,8 +11,7 @@ pub struct AddApplicationVpcConfigurationOutput {
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The parameters of the new VPC configuration.</p>
     #[doc(hidden)]
-    pub vpc_configuration_description:
-        ::std::option::Option<crate::types::VpcConfigurationDescription>,
+    pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
     _request_id: Option<String>,
 }
 impl AddApplicationVpcConfigurationOutput {
@@ -25,9 +24,7 @@ impl AddApplicationVpcConfigurationOutput {
         self.application_version_id
     }
     /// <p>The parameters of the new VPC configuration.</p>
-    pub fn vpc_configuration_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
+    pub fn vpc_configuration_description(&self) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
     }
 }
@@ -38,37 +35,28 @@ impl ::aws_http::request_id::RequestId for AddApplicationVpcConfigurationOutput 
 }
 impl AddApplicationVpcConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationOutput`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput).
-    pub fn builder() -> crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationOutputBuilder {
         crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationVpcConfigurationOutput`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationVpcConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
-    pub(crate) vpc_configuration_description:
-        ::std::option::Option<crate::types::VpcConfigurationDescription>,
+    pub(crate) vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
     _request_id: Option<String>,
 }
 impl AddApplicationVpcConfigurationOutputBuilder {
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -91,25 +79,17 @@ impl AddApplicationVpcConfigurationOutputBuilder {
         &self.application_version_id
     }
     /// <p>The parameters of the new VPC configuration.</p>
-    pub fn vpc_configuration_description(
-        mut self,
-        input: crate::types::VpcConfigurationDescription,
-    ) -> Self {
+    pub fn vpc_configuration_description(mut self, input: crate::types::VpcConfigurationDescription) -> Self {
         self.vpc_configuration_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters of the new VPC configuration.</p>
-    pub fn set_vpc_configuration_description(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfigurationDescription>,
-    ) -> Self {
+    pub fn set_vpc_configuration_description(mut self, input: ::std::option::Option<crate::types::VpcConfigurationDescription>) -> Self {
         self.vpc_configuration_description = input;
         self
     }
     /// <p>The parameters of the new VPC configuration.</p>
-    pub fn get_vpc_configuration_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
+    pub fn get_vpc_configuration_description(&self) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
         &self.vpc_configuration_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -122,10 +102,7 @@ impl AddApplicationVpcConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddApplicationVpcConfigurationOutput`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput {
         crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput {
             application_arn: self.application_arn,
             application_version_id: self.application_version_id,

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateSlackChannelConfigurationOutput
 }
 impl CreateSlackChannelConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateSlackChannelConfigurationOutput`](crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput).
-    pub fn builder() -> crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationOutputBuilder {
         crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSlackChannelConfigurationOutput`](crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSlackChannelConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl CreateSlackChannelConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSlackChannelConfigurationOutput`](crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput {
         crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput {
             _request_id: self._request_id,
         }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteGcmChannelOutput`](crate::operation::delete_gcm_channel::DeleteGcmChannelOutput) with field(s):
     ///   - [`gcm_channel_response(Option<GcmChannelResponse>)`](crate::operation::delete_gcm_channel::DeleteGcmChannelOutput::gcm_channel_response): <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     /// - On failure, responds with [`SdkError<DeleteGcmChannelError>`](crate::operation::delete_gcm_channel::DeleteGcmChannelError)
-    pub fn delete_gcm_channel(
-        &self,
-    ) -> crate::operation::delete_gcm_channel::builders::DeleteGcmChannelFluentBuilder {
-        crate::operation::delete_gcm_channel::builders::DeleteGcmChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_gcm_channel(&self) -> crate::operation::delete_gcm_channel::builders::DeleteGcmChannelFluentBuilder {
+        crate::operation::delete_gcm_channel::builders::DeleteGcmChannelFluentBuilder::new(self.handle.clone())
     }
 }

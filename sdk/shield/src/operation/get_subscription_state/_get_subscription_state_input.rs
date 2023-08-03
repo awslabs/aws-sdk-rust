@@ -5,28 +5,21 @@
 pub struct GetSubscriptionStateInput {}
 impl GetSubscriptionStateInput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionStateInput`](crate::operation::get_subscription_state::GetSubscriptionStateInput).
-    pub fn builder(
-    ) -> crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder {
+    pub fn builder() -> crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder {
         crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSubscriptionStateInput`](crate::operation::get_subscription_state::GetSubscriptionStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubscriptionStateInputBuilder {}
 impl GetSubscriptionStateInputBuilder {
     /// Consumes the builder and constructs a [`GetSubscriptionStateInput`](crate::operation::get_subscription_state::GetSubscriptionStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_subscription_state::GetSubscriptionStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_subscription_state::GetSubscriptionStateInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::get_subscription_state::GetSubscriptionStateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_subscription_state::GetSubscriptionStateInput {})
     }
 }

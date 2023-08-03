@@ -91,9 +91,7 @@ impl GetMlTaskRunOutput {
 
 /// A builder for [`GetMlTaskRunOutput`](crate::operation::get_ml_task_run::GetMlTaskRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMlTaskRunOutputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
@@ -142,10 +140,7 @@ impl GetMlTaskRunOutputBuilder {
         self
     }
     /// <p>The status for this task run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -154,18 +149,12 @@ impl GetMlTaskRunOutputBuilder {
         &self.status
     }
     /// <p>The names of the log groups that are associated with the task run.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The names of the log groups that are associated with the task run.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -179,10 +168,7 @@ impl GetMlTaskRunOutputBuilder {
         self
     }
     /// <p>The list of properties that are associated with the task run.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskRunProperties>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<crate::types::TaskRunProperties>) -> Self {
         self.properties = input;
         self
     }
@@ -210,10 +196,7 @@ impl GetMlTaskRunOutputBuilder {
         self
     }
     /// <p>The date and time when this task run started.</p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_on = input;
         self
     }
@@ -227,10 +210,7 @@ impl GetMlTaskRunOutputBuilder {
         self
     }
     /// <p>The date and time when this task run was last modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -244,10 +224,7 @@ impl GetMlTaskRunOutputBuilder {
         self
     }
     /// <p>The date and time when this task run was completed.</p>
-    pub fn set_completed_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_on = input;
         self
     }

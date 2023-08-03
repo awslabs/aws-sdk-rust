@@ -58,9 +58,7 @@ impl TunnelSummary {
 
 /// A builder for [`TunnelSummary`](crate::types::TunnelSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TunnelSummaryBuilder {
     pub(crate) tunnel_id: ::std::option::Option<::std::string::String>,
     pub(crate) tunnel_arn: ::std::option::Option<::std::string::String>,
@@ -132,10 +130,7 @@ impl TunnelSummaryBuilder {
         self
     }
     /// <p>The time the tunnel was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -149,10 +144,7 @@ impl TunnelSummaryBuilder {
         self
     }
     /// <p>The time the tunnel was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for DeleteNetworkInsightsPathOutput {
 }
 impl DeleteNetworkInsightsPathOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsPathOutput`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput).
-    pub fn builder() -> crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathOutputBuilder{
+    pub fn builder() -> crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathOutputBuilder {
         crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkInsightsPathOutput`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkInsightsPathOutputBuilder {
     pub(crate) network_insights_path_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteNetworkInsightsPathOutputBuilder {
     /// <p>The ID of the path.</p>
-    pub fn network_insights_path_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_path_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the path.</p>
-    pub fn set_network_insights_path_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_path_id = input;
         self
     }
@@ -66,9 +58,7 @@ impl DeleteNetworkInsightsPathOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteNetworkInsightsPathOutput`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput {
+    pub fn build(self) -> crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput {
         crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput {
             network_insights_path_id: self.network_insights_path_id,
             _request_id: self._request_id,

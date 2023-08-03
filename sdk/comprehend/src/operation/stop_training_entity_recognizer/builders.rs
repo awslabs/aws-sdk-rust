@@ -27,7 +27,7 @@ impl StopTrainingEntityRecognizerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopTrainingEntityRecognizerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerInputBuilder,
+    inner: crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerInputBuilder,
 }
 impl StopTrainingEntityRecognizerFluentBuilder {
     /// Creates a new `StopTrainingEntityRecognizer`.
@@ -38,7 +38,7 @@ impl StopTrainingEntityRecognizerFluentBuilder {
         }
     }
     /// Access the StopTrainingEntityRecognizer as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl StopTrainingEntityRecognizerFluentBuilder {
             crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl StopTrainingEntityRecognizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl StopTrainingEntityRecognizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl StopTrainingEntityRecognizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl StopTrainingEntityRecognizerFluentBuilder {
             crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
-    pub fn entity_recognizer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_recognizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_recognizer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
-    pub fn set_entity_recognizer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_recognizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_recognizer_arn(input);
         self
     }

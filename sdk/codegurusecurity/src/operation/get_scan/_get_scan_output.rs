@@ -77,9 +77,7 @@ impl GetScanOutput {
 
 /// A builder for [`GetScanOutput`](crate::operation::get_scan::GetScanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetScanOutputBuilder {
     pub(crate) scan_name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -140,10 +138,7 @@ impl GetScanOutputBuilder {
         self
     }
     /// <p>The time the scan was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -157,10 +152,7 @@ impl GetScanOutputBuilder {
         self
     }
     /// <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
-    pub fn set_analysis_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisType>,
-    ) -> Self {
+    pub fn set_analysis_type(mut self, input: ::std::option::Option<crate::types::AnalysisType>) -> Self {
         self.analysis_type = input;
         self
     }
@@ -174,10 +166,7 @@ impl GetScanOutputBuilder {
         self
     }
     /// <p>The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -200,18 +189,12 @@ impl GetScanOutputBuilder {
         &self.number_of_revisions
     }
     /// <p>The ARN for the scan name.</p>
-    pub fn scan_name_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scan_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the scan name.</p>
-    pub fn set_scan_name_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scan_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scan_name_arn = input;
         self
     }

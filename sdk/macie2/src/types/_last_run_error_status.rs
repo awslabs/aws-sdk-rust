@@ -31,9 +31,7 @@ impl LastRunErrorStatus {
 
 /// A builder for [`LastRunErrorStatus`](crate::types::LastRunErrorStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LastRunErrorStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::LastRunErrorStatusCode>,
 }
@@ -52,10 +50,7 @@ impl LastRunErrorStatusBuilder {
     /// <li><p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
     /// <li><p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
     /// </ul>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LastRunErrorStatusCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::LastRunErrorStatusCode>) -> Self {
         self.code = input;
         self
     }

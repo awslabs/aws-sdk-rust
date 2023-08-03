@@ -111,9 +111,7 @@ impl Blueprint {
 
 /// A builder for [`Blueprint`](crate::types::Blueprint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlueprintBuilder {
     pub(crate) blueprint_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -290,10 +288,7 @@ impl BlueprintBuilder {
         self
     }
     /// <p>The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::InstancePlatform>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::InstancePlatform>) -> Self {
         self.platform = input;
         self
     }
@@ -311,10 +306,7 @@ impl BlueprintBuilder {
     /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn set_app_category(
-        mut self,
-        input: ::std::option::Option<crate::types::AppCategory>,
-    ) -> Self {
+    pub fn set_app_category(mut self, input: ::std::option::Option<crate::types::AppCategory>) -> Self {
         self.app_category = input;
         self
     }

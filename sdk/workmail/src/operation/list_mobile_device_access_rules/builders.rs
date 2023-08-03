@@ -26,7 +26,7 @@ impl ListMobileDeviceAccessRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMobileDeviceAccessRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesInputBuilder,
+    inner: crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesInputBuilder,
 }
 impl ListMobileDeviceAccessRulesFluentBuilder {
     /// Creates a new `ListMobileDeviceAccessRules`.
@@ -37,7 +37,7 @@ impl ListMobileDeviceAccessRulesFluentBuilder {
         }
     }
     /// Access the ListMobileDeviceAccessRules as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListMobileDeviceAccessRulesFluentBuilder {
             crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListMobileDeviceAccessRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListMobileDeviceAccessRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListMobileDeviceAccessRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ListMobileDeviceAccessRulesFluentBuilder {
             crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The WorkMail organization for which to list the rules.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization for which to list the rules.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeWorkspaceAuthenticationOutput`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationOutput) with field(s):
     ///   - [`authentication(Option<AuthenticationDescription>)`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationOutput::authentication): <p>A structure containing information about the authentication methods used in the workspace.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceAuthenticationError>`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationError)
-    pub fn describe_workspace_authentication(&self) -> crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationFluentBuilder{
+    pub fn describe_workspace_authentication(
+        &self,
+    ) -> crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationFluentBuilder {
         crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationFluentBuilder::new(self.handle.clone())
     }
 }

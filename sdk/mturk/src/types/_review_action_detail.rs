@@ -72,9 +72,7 @@ impl ReviewActionDetail {
 
 /// A builder for [`ReviewActionDetail`](crate::types::ReviewActionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReviewActionDetailBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
@@ -148,10 +146,7 @@ impl ReviewActionDetailBuilder {
         self
     }
     /// <p> The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or CANCELLED. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewActionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReviewActionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -165,10 +160,7 @@ impl ReviewActionDetailBuilder {
         self
     }
     /// <p> The date when the action was completed.</p>
-    pub fn set_complete_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_complete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.complete_time = input;
         self
     }

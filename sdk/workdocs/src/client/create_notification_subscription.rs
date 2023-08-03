@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateNotificationSubscriptionOutput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput) with field(s):
     ///   - [`subscription(Option<Subscription>)`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput::subscription): <p>The subscription.</p>
     /// - On failure, responds with [`SdkError<CreateNotificationSubscriptionError>`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionError)
-    pub fn create_notification_subscription(&self) -> crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionFluentBuilder{
+    pub fn create_notification_subscription(
+        &self,
+    ) -> crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionFluentBuilder {
         crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

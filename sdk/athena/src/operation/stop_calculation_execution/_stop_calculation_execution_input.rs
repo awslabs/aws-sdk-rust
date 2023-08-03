@@ -15,35 +15,25 @@ impl StopCalculationExecutionInput {
 }
 impl StopCalculationExecutionInput {
     /// Creates a new builder-style object to manufacture [`StopCalculationExecutionInput`](crate::operation::stop_calculation_execution::StopCalculationExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder {
         crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopCalculationExecutionInput`](crate::operation::stop_calculation_execution::StopCalculationExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopCalculationExecutionInputBuilder {
     pub(crate) calculation_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl StopCalculationExecutionInputBuilder {
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn set_calculation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculation_execution_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl StopCalculationExecutionInputBuilder {
         crate::operation::stop_calculation_execution::StopCalculationExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_calculation_execution::StopCalculationExecutionInput {
-                calculation_execution_id: self.calculation_execution_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_calculation_execution::StopCalculationExecutionInput {
+            calculation_execution_id: self.calculation_execution_id,
+        })
     }
 }

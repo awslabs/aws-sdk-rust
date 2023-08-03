@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`current_pricing_plan(Option<PricingPlan>)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::current_pricing_plan): <p>Update the current pricing plan.</p>
     ///   - [`pending_pricing_plan(Option<PricingPlan>)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::pending_pricing_plan): <p>Update the pending pricing plan.</p>
     /// - On failure, responds with [`SdkError<UpdatePricingPlanError>`](crate::operation::update_pricing_plan::UpdatePricingPlanError)
-    pub fn update_pricing_plan(
-        &self,
-    ) -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder {
-        crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_pricing_plan(&self) -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder {
+        crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::new(self.handle.clone())
     }
 }

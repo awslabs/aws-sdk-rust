@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTargetResourceTypeOutput {
 }
 impl GetTargetResourceTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetTargetResourceTypeOutput`](crate::operation::get_target_resource_type::GetTargetResourceTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_target_resource_type::builders::GetTargetResourceTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_target_resource_type::builders::GetTargetResourceTypeOutputBuilder {
         crate::operation::get_target_resource_type::builders::GetTargetResourceTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTargetResourceTypeOutput`](crate::operation::get_target_resource_type::GetTargetResourceTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTargetResourceTypeOutputBuilder {
     pub(crate) target_resource_type: ::std::option::Option<crate::types::TargetResourceType>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetTargetResourceTypeOutputBuilder {
         self
     }
     /// <p>Information about the resource type.</p>
-    pub fn set_target_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetResourceType>,
-    ) -> Self {
+    pub fn set_target_resource_type(mut self, input: ::std::option::Option<crate::types::TargetResourceType>) -> Self {
         self.target_resource_type = input;
         self
     }
     /// <p>Information about the resource type.</p>
-    pub fn get_target_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetResourceType> {
+    pub fn get_target_resource_type(&self) -> &::std::option::Option<crate::types::TargetResourceType> {
         &self.target_resource_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

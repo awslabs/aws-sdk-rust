@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`warmup_percentage(i32)`](crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesFluentBuilder::warmup_percentage) / [`set_warmup_percentage(Option<i32>)`](crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesFluentBuilder::set_warmup_percentage): <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
     /// - On success, responds with [`PutDedicatedIpWarmupAttributesOutput`](crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesOutput)
     /// - On failure, responds with [`SdkError<PutDedicatedIpWarmupAttributesError>`](crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesError)
-    pub fn put_dedicated_ip_warmup_attributes(&self) -> crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesFluentBuilder{
+    pub fn put_dedicated_ip_warmup_attributes(
+        &self,
+    ) -> crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesFluentBuilder {
         crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesFluentBuilder::new(self.handle.clone())
     }
 }

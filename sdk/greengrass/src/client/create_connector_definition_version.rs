@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
     ///   - [`version(Option<String>)`](crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionOutput::version): The ID of the version.
     /// - On failure, responds with [`SdkError<CreateConnectorDefinitionVersionError>`](crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionError)
-    pub fn create_connector_definition_version(&self) -> crate::operation::create_connector_definition_version::builders::CreateConnectorDefinitionVersionFluentBuilder{
+    pub fn create_connector_definition_version(
+        &self,
+    ) -> crate::operation::create_connector_definition_version::builders::CreateConnectorDefinitionVersionFluentBuilder {
         crate::operation::create_connector_definition_version::builders::CreateConnectorDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

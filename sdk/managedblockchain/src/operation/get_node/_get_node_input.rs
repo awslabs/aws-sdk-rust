@@ -38,9 +38,7 @@ impl GetNodeInput {
 
 /// A builder for [`GetNodeInput`](crate::operation::get_node::GetNodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNodeInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
@@ -93,12 +91,7 @@ impl GetNodeInputBuilder {
         &self.node_id
     }
     /// Consumes the builder and constructs a [`GetNodeInput`](crate::operation::get_node::GetNodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_node::GetNodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_node::GetNodeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_node::GetNodeInput {
             network_id: self.network_id,
             member_id: self.member_id,

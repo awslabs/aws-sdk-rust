@@ -77,17 +77,14 @@ impl ListPlatformBranchesInput {
 }
 impl ListPlatformBranchesInput {
     /// Creates a new builder-style object to manufacture [`ListPlatformBranchesInput`](crate::operation::list_platform_branches::ListPlatformBranchesInput).
-    pub fn builder(
-    ) -> crate::operation::list_platform_branches::builders::ListPlatformBranchesInputBuilder {
+    pub fn builder() -> crate::operation::list_platform_branches::builders::ListPlatformBranchesInputBuilder {
         crate::operation::list_platform_branches::builders::ListPlatformBranchesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPlatformBranchesInput`](crate::operation::list_platform_branches::ListPlatformBranchesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlatformBranchesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -152,10 +149,7 @@ impl ListPlatformBranchesInputBuilder {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -183,9 +177,7 @@ impl ListPlatformBranchesInputBuilder {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>> {
         &self.filters
     }
     /// <p>The maximum number of platform branch values returned in one call.</p>
@@ -222,16 +214,12 @@ impl ListPlatformBranchesInputBuilder {
     /// Consumes the builder and constructs a [`ListPlatformBranchesInput`](crate::operation::list_platform_branches::ListPlatformBranchesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_platform_branches::ListPlatformBranchesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_platform_branches::ListPlatformBranchesInput {
-                filters: self.filters,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_platform_branches::ListPlatformBranchesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_platform_branches::ListPlatformBranchesInput {
+            filters: self.filters,
+            max_records: self.max_records,
+            next_token: self.next_token,
+        })
     }
 }

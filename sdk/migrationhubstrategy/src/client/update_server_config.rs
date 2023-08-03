@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`strategy_option(StrategyOption)`](crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder::strategy_option) / [`set_strategy_option(Option<StrategyOption>)`](crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder::set_strategy_option): <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     /// - On success, responds with [`UpdateServerConfigOutput`](crate::operation::update_server_config::UpdateServerConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateServerConfigError>`](crate::operation::update_server_config::UpdateServerConfigError)
-    pub fn update_server_config(
-        &self,
-    ) -> crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder {
-        crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_server_config(&self) -> crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder {
+        crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,18 +43,14 @@ impl ListParticipantEventsInput {
 }
 impl ListParticipantEventsInput {
     /// Creates a new builder-style object to manufacture [`ListParticipantEventsInput`](crate::operation::list_participant_events::ListParticipantEventsInput).
-    pub fn builder(
-    ) -> crate::operation::list_participant_events::builders::ListParticipantEventsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_participant_events::builders::ListParticipantEventsInputBuilder {
         crate::operation::list_participant_events::builders::ListParticipantEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListParticipantEventsInput`](crate::operation::list_participant_events::ListParticipantEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListParticipantEventsInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -92,18 +88,12 @@ impl ListParticipantEventsInputBuilder {
         &self.session_id
     }
     /// <p>Unique identifier for this participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for this participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_id = input;
         self
     }
@@ -142,18 +132,14 @@ impl ListParticipantEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListParticipantEventsInput`](crate::operation::list_participant_events::ListParticipantEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_participant_events::ListParticipantEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_participant_events::ListParticipantEventsInput {
-                stage_arn: self.stage_arn,
-                session_id: self.session_id,
-                participant_id: self.participant_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_participant_events::ListParticipantEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_participant_events::ListParticipantEventsInput {
+            stage_arn: self.stage_arn,
+            session_id: self.session_id,
+            participant_id: self.participant_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

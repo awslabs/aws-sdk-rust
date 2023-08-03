@@ -37,9 +37,7 @@ impl JobDetails {
 
 /// A builder for [`JobDetails`](crate::types::JobDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<crate::types::JobData>,

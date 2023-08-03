@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for GetServiceGraphOutput {
 }
 impl GetServiceGraphOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceGraphOutput`](crate::operation::get_service_graph::GetServiceGraphOutput).
-    pub fn builder() -> crate::operation::get_service_graph::builders::GetServiceGraphOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_service_graph::builders::GetServiceGraphOutputBuilder {
         crate::operation::get_service_graph::builders::GetServiceGraphOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceGraphOutput`](crate::operation::get_service_graph::GetServiceGraphOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceGraphOutputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -75,10 +72,7 @@ impl GetServiceGraphOutputBuilder {
         self
     }
     /// <p>The start of the time frame for which the graph was generated.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -92,10 +86,7 @@ impl GetServiceGraphOutputBuilder {
         self
     }
     /// <p>The end of the time frame for which the graph was generated.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -115,10 +106,7 @@ impl GetServiceGraphOutputBuilder {
         self
     }
     /// <p>The services that have processed a traced request during the specified time frame.</p>
-    pub fn set_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
-    ) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>) -> Self {
         self.services = input;
         self
     }

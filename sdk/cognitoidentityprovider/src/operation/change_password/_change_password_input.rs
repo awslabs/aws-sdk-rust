@@ -54,18 +54,12 @@ pub struct ChangePasswordInputBuilder {
 }
 impl ChangePasswordInputBuilder {
     /// <p>The old password.</p>
-    pub fn previous_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn previous_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.previous_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The old password.</p>
-    pub fn set_previous_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_previous_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.previous_password = input;
         self
     }
@@ -74,18 +68,12 @@ impl ChangePasswordInputBuilder {
         &self.previous_password
     }
     /// <p>The new password.</p>
-    pub fn proposed_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proposed_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposed_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new password.</p>
-    pub fn set_proposed_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proposed_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proposed_password = input;
         self
     }
@@ -110,10 +98,7 @@ impl ChangePasswordInputBuilder {
     /// Consumes the builder and constructs a [`ChangePasswordInput`](crate::operation::change_password::ChangePasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::change_password::ChangePasswordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::change_password::ChangePasswordInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::change_password::ChangePasswordInput {
             previous_password: self.previous_password,
             proposed_password: self.proposed_password,

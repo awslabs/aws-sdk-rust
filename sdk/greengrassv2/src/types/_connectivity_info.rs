@@ -44,9 +44,7 @@ impl ConnectivityInfo {
 
 /// A builder for [`ConnectivityInfo`](crate::types::ConnectivityInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectivityInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) host_address: ::std::option::Option<::std::string::String>,

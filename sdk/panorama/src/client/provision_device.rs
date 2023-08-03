@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`certificates(Option<Blob>)`](crate::operation::provision_device::ProvisionDeviceOutput::certificates): <p>The device's configuration bundle.</p>
     ///   - [`iot_thing_name(Option<String>)`](crate::operation::provision_device::ProvisionDeviceOutput::iot_thing_name): <p>The device's IoT thing name.</p>
     /// - On failure, responds with [`SdkError<ProvisionDeviceError>`](crate::operation::provision_device::ProvisionDeviceError)
-    pub fn provision_device(
-        &self,
-    ) -> crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder {
-        crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn provision_device(&self) -> crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder {
+        crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::new(self.handle.clone())
     }
 }

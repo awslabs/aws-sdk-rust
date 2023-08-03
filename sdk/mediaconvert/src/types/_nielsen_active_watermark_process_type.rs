@@ -39,13 +39,7 @@
 /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NielsenActiveWatermarkProcessType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for NielsenActiveWatermarkProcessType {
             "CBET" => NielsenActiveWatermarkProcessType::Cbet,
             "NAES2_AND_NW" => NielsenActiveWatermarkProcessType::Naes2AndNw,
             "NAES2_AND_NW_AND_CBET" => NielsenActiveWatermarkProcessType::Naes2AndNwAndCbet,
-            other => NielsenActiveWatermarkProcessType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => NielsenActiveWatermarkProcessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

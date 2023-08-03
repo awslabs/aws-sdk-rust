@@ -5,23 +5,23 @@
 pub struct GetClassificationExportConfigurationInput {}
 impl GetClassificationExportConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetClassificationExportConfigurationInput`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationInput).
-    pub fn builder() -> crate::operation::get_classification_export_configuration::builders::GetClassificationExportConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_classification_export_configuration::builders::GetClassificationExportConfigurationInputBuilder {
         crate::operation::get_classification_export_configuration::builders::GetClassificationExportConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetClassificationExportConfigurationInput`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClassificationExportConfigurationInputBuilder {}
 impl GetClassificationExportConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetClassificationExportConfigurationInput`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationInput {})
     }
 }

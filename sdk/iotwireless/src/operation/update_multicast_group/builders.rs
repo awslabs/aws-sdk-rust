@@ -37,9 +37,7 @@ impl UpdateMulticastGroupFluentBuilder {
         }
     }
     /// Access the UpdateMulticastGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_multicast_group::builders::UpdateMulticastGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_multicast_group::builders::UpdateMulticastGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateMulticastGroupFluentBuilder {
             crate::operation::update_multicast_group::UpdateMulticastGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_multicast_group::UpdateMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_multicast_group::UpdateMulticastGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateMulticastGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateMulticastGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_multicast_group::UpdateMulticastGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_multicast_group::UpdateMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_multicast_group::UpdateMulticastGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateMulticastGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_multicast_group::UpdateMulticastGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_multicast_group::UpdateMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_multicast_group::UpdateMulticastGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateMulticastGroupFluentBuilder {
             crate::operation::update_multicast_group::UpdateMulticastGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_multicast_group::UpdateMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_multicast_group::UpdateMulticastGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +157,7 @@ impl UpdateMulticastGroupFluentBuilder {
         self
     }
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanMulticast>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanMulticast>) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }

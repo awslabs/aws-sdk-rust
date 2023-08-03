@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`configuration_set_name(impl ::std::convert::Into<String>)`](crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsFluentBuilder::set_configuration_set_name): <p>The name of the configuration set from which you want to delete the tracking options.</p>
     /// - On success, responds with [`DeleteConfigurationSetTrackingOptionsOutput`](crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsOutput)
     /// - On failure, responds with [`SdkError<DeleteConfigurationSetTrackingOptionsError>`](crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsError)
-    pub fn delete_configuration_set_tracking_options(&self) -> crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsFluentBuilder{
-        crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsFluentBuilder::new(self.handle.clone())
+    pub fn delete_configuration_set_tracking_options(
+        &self,
+    ) -> crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsFluentBuilder {
+        crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

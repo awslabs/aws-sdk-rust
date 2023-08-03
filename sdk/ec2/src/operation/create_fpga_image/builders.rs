@@ -10,10 +10,7 @@ impl CreateFpgaImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_fpga_image::CreateFpgaImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fpga_image::CreateFpgaImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fpga_image::CreateFpgaImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_fpga_image();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateFpgaImageFluentBuilder {
         }
     }
     /// Access the CreateFpgaImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_fpga_image::builders::CreateFpgaImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_fpga_image::builders::CreateFpgaImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateFpgaImageFluentBuilder {
             crate::operation::create_fpga_image::CreateFpgaImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fpga_image::CreateFpgaImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fpga_image::CreateFpgaImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateFpgaImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateFpgaImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fpga_image::CreateFpgaImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fpga_image::CreateFpgaImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fpga_image::CreateFpgaImageError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateFpgaImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fpga_image::CreateFpgaImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fpga_image::CreateFpgaImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fpga_image::CreateFpgaImageError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CreateFpgaImageFluentBuilder {
             crate::operation::create_fpga_image::CreateFpgaImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fpga_image::CreateFpgaImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fpga_image::CreateFpgaImageError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +128,12 @@ impl CreateFpgaImageFluentBuilder {
         self
     }
     /// <p>The location of the encrypted design checkpoint in Amazon S3. The input must be a tarball.</p>
-    pub fn set_input_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLocation>,
-    ) -> Self {
+    pub fn set_input_storage_location(mut self, input: ::std::option::Option<crate::types::StorageLocation>) -> Self {
         self.inner = self.inner.set_input_storage_location(input);
         self
     }
     /// <p>The location of the encrypted design checkpoint in Amazon S3. The input must be a tarball.</p>
-    pub fn get_input_storage_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageLocation> {
+    pub fn get_input_storage_location(&self) -> &::std::option::Option<crate::types::StorageLocation> {
         self.inner.get_input_storage_location()
     }
     /// <p>The location in Amazon S3 for the output logs.</p>
@@ -163,17 +142,12 @@ impl CreateFpgaImageFluentBuilder {
         self
     }
     /// <p>The location in Amazon S3 for the output logs.</p>
-    pub fn set_logs_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLocation>,
-    ) -> Self {
+    pub fn set_logs_storage_location(mut self, input: ::std::option::Option<crate::types::StorageLocation>) -> Self {
         self.inner = self.inner.set_logs_storage_location(input);
         self
     }
     /// <p>The location in Amazon S3 for the output logs.</p>
-    pub fn get_logs_storage_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageLocation> {
+    pub fn get_logs_storage_location(&self) -> &::std::option::Option<crate::types::StorageLocation> {
         self.inner.get_logs_storage_location()
     }
     /// <p>A description for the AFI.</p>
@@ -228,17 +202,12 @@ impl CreateFpgaImageFluentBuilder {
         self
     }
     /// <p>The tags to apply to the FPGA image during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the FPGA image during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

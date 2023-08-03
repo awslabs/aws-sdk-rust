@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`number_of_records_failed(Option<i32>)`](crate::operation::get_import_file_task::GetImportFileTaskOutput::number_of_records_failed): <p> The number of records that failed to be imported. </p>
     ///   - [`import_name(Option<String>)`](crate::operation::get_import_file_task::GetImportFileTaskOutput::import_name): <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
     /// - On failure, responds with [`SdkError<GetImportFileTaskError>`](crate::operation::get_import_file_task::GetImportFileTaskError)
-    pub fn get_import_file_task(
-        &self,
-    ) -> crate::operation::get_import_file_task::builders::GetImportFileTaskFluentBuilder {
-        crate::operation::get_import_file_task::builders::GetImportFileTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_import_file_task(&self) -> crate::operation::get_import_file_task::builders::GetImportFileTaskFluentBuilder {
+        crate::operation::get_import_file_task::builders::GetImportFileTaskFluentBuilder::new(self.handle.clone())
     }
 }

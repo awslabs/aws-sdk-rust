@@ -12,8 +12,7 @@ pub struct TextAreaControlDisplayOptions {
     pub placeholder_options: ::std::option::Option<crate::types::TextControlPlaceholderOptions>,
     /// <p>The configuration of info icon label options.</p>
     #[doc(hidden)]
-    pub info_icon_label_options:
-        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    pub info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl TextAreaControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -21,15 +20,11 @@ impl TextAreaControlDisplayOptions {
         self.title_options.as_ref()
     }
     /// <p>The configuration of the placeholder options in a text area control.</p>
-    pub fn placeholder_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TextControlPlaceholderOptions> {
+    pub fn placeholder_options(&self) -> ::std::option::Option<&crate::types::TextControlPlaceholderOptions> {
         self.placeholder_options.as_ref()
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn info_icon_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
+    pub fn info_icon_label_options(&self) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
         self.info_icon_label_options.as_ref()
     }
 }
@@ -42,15 +37,11 @@ impl TextAreaControlDisplayOptions {
 
 /// A builder for [`TextAreaControlDisplayOptions`](crate::types::TextAreaControlDisplayOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextAreaControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
-    pub(crate) placeholder_options:
-        ::std::option::Option<crate::types::TextControlPlaceholderOptions>,
-    pub(crate) info_icon_label_options:
-        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    pub(crate) placeholder_options: ::std::option::Option<crate::types::TextControlPlaceholderOptions>,
+    pub(crate) info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl TextAreaControlDisplayOptionsBuilder {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -59,10 +50,7 @@ impl TextAreaControlDisplayOptionsBuilder {
         self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn set_title_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelOptions>,
-    ) -> Self {
+    pub fn set_title_options(mut self, input: ::std::option::Option<crate::types::LabelOptions>) -> Self {
         self.title_options = input;
         self
     }
@@ -71,47 +59,31 @@ impl TextAreaControlDisplayOptionsBuilder {
         &self.title_options
     }
     /// <p>The configuration of the placeholder options in a text area control.</p>
-    pub fn placeholder_options(
-        mut self,
-        input: crate::types::TextControlPlaceholderOptions,
-    ) -> Self {
+    pub fn placeholder_options(mut self, input: crate::types::TextControlPlaceholderOptions) -> Self {
         self.placeholder_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the placeholder options in a text area control.</p>
-    pub fn set_placeholder_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TextControlPlaceholderOptions>,
-    ) -> Self {
+    pub fn set_placeholder_options(mut self, input: ::std::option::Option<crate::types::TextControlPlaceholderOptions>) -> Self {
         self.placeholder_options = input;
         self
     }
     /// <p>The configuration of the placeholder options in a text area control.</p>
-    pub fn get_placeholder_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::TextControlPlaceholderOptions> {
+    pub fn get_placeholder_options(&self) -> &::std::option::Option<crate::types::TextControlPlaceholderOptions> {
         &self.placeholder_options
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn info_icon_label_options(
-        mut self,
-        input: crate::types::SheetControlInfoIconLabelOptions,
-    ) -> Self {
+    pub fn info_icon_label_options(mut self, input: crate::types::SheetControlInfoIconLabelOptions) -> Self {
         self.info_icon_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn set_info_icon_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
-    ) -> Self {
+    pub fn set_info_icon_label_options(mut self, input: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>) -> Self {
         self.info_icon_label_options = input;
         self
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn get_info_icon_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SheetControlInfoIconLabelOptions> {
+    pub fn get_info_icon_label_options(&self) -> &::std::option::Option<crate::types::SheetControlInfoIconLabelOptions> {
         &self.info_icon_label_options
     }
     /// Consumes the builder and constructs a [`TextAreaControlDisplayOptions`](crate::types::TextAreaControlDisplayOptions).

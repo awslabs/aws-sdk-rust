@@ -22,9 +22,7 @@ impl GetRoomInput {
 
 /// A builder for [`GetRoomInput`](crate::operation::get_room::GetRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRoomInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetRoomInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetRoomInput`](crate::operation::get_room::GetRoomInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_room::GetRoomInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_room::GetRoomInput {
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_room::GetRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_room::GetRoomInput { identifier: self.identifier })
     }
 }

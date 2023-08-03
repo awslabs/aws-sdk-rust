@@ -10,10 +10,7 @@ impl GetCostForecastInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_cost_forecast::GetCostForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_forecast::GetCostForecastError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_forecast::GetCostForecastError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_cost_forecast();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetCostForecastFluentBuilder {
         }
     }
     /// Access the GetCostForecast as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_cost_forecast::builders::GetCostForecastInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_cost_forecast::builders::GetCostForecastInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetCostForecastFluentBuilder {
             crate::operation::get_cost_forecast::GetCostForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_forecast::GetCostForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_forecast::GetCostForecastError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetCostForecastFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetCostForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cost_forecast::GetCostForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_forecast::GetCostForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_forecast::GetCostForecastError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetCostForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cost_forecast::GetCostForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_forecast::GetCostForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_forecast::GetCostForecastError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetCostForecastFluentBuilder {
             crate::operation::get_cost_forecast::GetCostForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_forecast::GetCostForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_forecast::GetCostForecastError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl GetCostForecastFluentBuilder {
         self
     }
     /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -185,10 +166,7 @@ impl GetCostForecastFluentBuilder {
     }
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
     }

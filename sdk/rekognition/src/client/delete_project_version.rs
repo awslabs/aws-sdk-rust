@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteProjectVersionOutput`](crate::operation::delete_project_version::DeleteProjectVersionOutput) with field(s):
     ///   - [`status(Option<ProjectVersionStatus>)`](crate::operation::delete_project_version::DeleteProjectVersionOutput::status): <p>The status of the deletion operation.</p>
     /// - On failure, responds with [`SdkError<DeleteProjectVersionError>`](crate::operation::delete_project_version::DeleteProjectVersionError)
-    pub fn delete_project_version(
-        &self,
-    ) -> crate::operation::delete_project_version::builders::DeleteProjectVersionFluentBuilder {
-        crate::operation::delete_project_version::builders::DeleteProjectVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_project_version(&self) -> crate::operation::delete_project_version::builders::DeleteProjectVersionFluentBuilder {
+        crate::operation::delete_project_version::builders::DeleteProjectVersionFluentBuilder::new(self.handle.clone())
     }
 }

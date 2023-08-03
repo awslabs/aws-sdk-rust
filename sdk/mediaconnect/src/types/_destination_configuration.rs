@@ -44,9 +44,7 @@ impl DestinationConfiguration {
 
 /// A builder for [`DestinationConfiguration`](crate::types::DestinationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationConfigurationBuilder {
     pub(crate) destination_ip: ::std::option::Option<::std::string::String>,
     pub(crate) destination_port: ::std::option::Option<i32>,
@@ -55,18 +53,12 @@ pub struct DestinationConfigurationBuilder {
 }
 impl DestinationConfigurationBuilder {
     /// The IP address where contents of the media stream will be sent.
-    pub fn destination_ip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// The IP address where contents of the media stream will be sent.
-    pub fn set_destination_ip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_ip = input;
         self
     }

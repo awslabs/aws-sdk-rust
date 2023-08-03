@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`policy_names(Vec<String>)`](crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerFluentBuilder::policy_names) / [`set_policy_names(Option<Vec<String>>)`](crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerFluentBuilder::set_policy_names): <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
     /// - On success, responds with [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerOutput)
     /// - On failure, responds with [`SdkError<SetLoadBalancerPoliciesForBackendServerError>`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError)
-    pub fn set_load_balancer_policies_for_backend_server(&self) -> crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerFluentBuilder{
-        crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerFluentBuilder::new(self.handle.clone())
+    pub fn set_load_balancer_policies_for_backend_server(
+        &self,
+    ) -> crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerFluentBuilder {
+        crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

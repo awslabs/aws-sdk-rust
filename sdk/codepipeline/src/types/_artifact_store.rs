@@ -39,9 +39,7 @@ impl ArtifactStore {
 
 /// A builder for [`ArtifactStore`](crate::types::ArtifactStore).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactStoreBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ArtifactStoreType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -54,10 +52,7 @@ impl ArtifactStoreBuilder {
         self
     }
     /// <p>The type of the artifact store, such as S3.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactStoreType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactStoreType>) -> Self {
         self.r#type = input;
         self
     }
@@ -85,10 +80,7 @@ impl ArtifactStoreBuilder {
         self
     }
     /// <p>The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management Service key. If this is undefined, the default key for Amazon S3 is used.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
         self.encryption_key = input;
         self
     }

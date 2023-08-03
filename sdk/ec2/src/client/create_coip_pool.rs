@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCoipPoolOutput`](crate::operation::create_coip_pool::CreateCoipPoolOutput) with field(s):
     ///   - [`coip_pool(Option<CoipPool>)`](crate::operation::create_coip_pool::CreateCoipPoolOutput::coip_pool): <p>Information about the CoIP address pool.</p>
     /// - On failure, responds with [`SdkError<CreateCoipPoolError>`](crate::operation::create_coip_pool::CreateCoipPoolError)
-    pub fn create_coip_pool(
-        &self,
-    ) -> crate::operation::create_coip_pool::builders::CreateCoipPoolFluentBuilder {
-        crate::operation::create_coip_pool::builders::CreateCoipPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_coip_pool(&self) -> crate::operation::create_coip_pool::builders::CreateCoipPoolFluentBuilder {
+        crate::operation::create_coip_pool::builders::CreateCoipPoolFluentBuilder::new(self.handle.clone())
     }
 }

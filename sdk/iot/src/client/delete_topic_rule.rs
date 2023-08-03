@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`rule_name(impl ::std::convert::Into<String>)`](crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder::set_rule_name): <p>The name of the rule.</p>
     /// - On success, responds with [`DeleteTopicRuleOutput`](crate::operation::delete_topic_rule::DeleteTopicRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteTopicRuleError>`](crate::operation::delete_topic_rule::DeleteTopicRuleError)
-    pub fn delete_topic_rule(
-        &self,
-    ) -> crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder {
-        crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_topic_rule(&self) -> crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder {
+        crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder::new(self.handle.clone())
     }
 }

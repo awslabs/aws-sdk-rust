@@ -58,9 +58,7 @@ impl TrialSummary {
 
 /// A builder for [`TrialSummary`](crate::types::TrialSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrialSummaryBuilder {
     pub(crate) trial_arn: ::std::option::Option<::std::string::String>,
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl TrialSummaryBuilder {
         self
     }
     /// <p>The source of the trial.</p>
-    pub fn set_trial_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TrialSource>,
-    ) -> Self {
+    pub fn set_trial_source(mut self, input: ::std::option::Option<crate::types::TrialSource>) -> Self {
         self.trial_source = input;
         self
     }
@@ -135,10 +130,7 @@ impl TrialSummaryBuilder {
         self
     }
     /// <p>When the trial was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -152,10 +144,7 @@ impl TrialSummaryBuilder {
         self
     }
     /// <p>When the trial was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AwsManagedHumanLoopRequestSource {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,15 +51,9 @@ pub enum AwsManagedHumanLoopRequestSource {
 impl ::std::convert::From<&str> for AwsManagedHumanLoopRequestSource {
     fn from(s: &str) -> Self {
         match s {
-            "AWS/Rekognition/DetectModerationLabels/Image/V3" => {
-                AwsManagedHumanLoopRequestSource::RekognitionDetectModerationLabelsImageV3
-            }
-            "AWS/Textract/AnalyzeDocument/Forms/V1" => {
-                AwsManagedHumanLoopRequestSource::TextractAnalyzeDocumentFormsV1
-            }
-            other => AwsManagedHumanLoopRequestSource::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "AWS/Rekognition/DetectModerationLabels/Image/V3" => AwsManagedHumanLoopRequestSource::RekognitionDetectModerationLabelsImageV3,
+            "AWS/Textract/AnalyzeDocument/Forms/V1" => AwsManagedHumanLoopRequestSource::TextractAnalyzeDocumentFormsV1,
+            other => AwsManagedHumanLoopRequestSource::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -80,21 +68,14 @@ impl AwsManagedHumanLoopRequestSource {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            AwsManagedHumanLoopRequestSource::RekognitionDetectModerationLabelsImageV3 => {
-                "AWS/Rekognition/DetectModerationLabels/Image/V3"
-            }
-            AwsManagedHumanLoopRequestSource::TextractAnalyzeDocumentFormsV1 => {
-                "AWS/Textract/AnalyzeDocument/Forms/V1"
-            }
+            AwsManagedHumanLoopRequestSource::RekognitionDetectModerationLabelsImageV3 => "AWS/Rekognition/DetectModerationLabels/Image/V3",
+            AwsManagedHumanLoopRequestSource::TextractAnalyzeDocumentFormsV1 => "AWS/Textract/AnalyzeDocument/Forms/V1",
             AwsManagedHumanLoopRequestSource::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS/Rekognition/DetectModerationLabels/Image/V3",
-            "AWS/Textract/AnalyzeDocument/Forms/V1",
-        ]
+        &["AWS/Rekognition/DetectModerationLabels/Image/V3", "AWS/Textract/AnalyzeDocument/Forms/V1"]
     }
 }
 impl ::std::convert::AsRef<str> for AwsManagedHumanLoopRequestSource {

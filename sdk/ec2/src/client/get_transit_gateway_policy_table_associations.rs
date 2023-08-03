@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`associations(Option<Vec<TransitGatewayPolicyTableAssociation>>)`](crate::operation::get_transit_gateway_policy_table_associations::GetTransitGatewayPolicyTableAssociationsOutput::associations): <p>Returns details about the transit gateway policy table association.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transit_gateway_policy_table_associations::GetTransitGatewayPolicyTableAssociationsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetTransitGatewayPolicyTableAssociationsError>`](crate::operation::get_transit_gateway_policy_table_associations::GetTransitGatewayPolicyTableAssociationsError)
-    pub fn get_transit_gateway_policy_table_associations(&self) -> crate::operation::get_transit_gateway_policy_table_associations::builders::GetTransitGatewayPolicyTableAssociationsFluentBuilder{
-        crate::operation::get_transit_gateway_policy_table_associations::builders::GetTransitGatewayPolicyTableAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn get_transit_gateway_policy_table_associations(
+        &self,
+    ) -> crate::operation::get_transit_gateway_policy_table_associations::builders::GetTransitGatewayPolicyTableAssociationsFluentBuilder {
+        crate::operation::get_transit_gateway_policy_table_associations::builders::GetTransitGatewayPolicyTableAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

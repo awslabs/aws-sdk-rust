@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`profile_summaries(Option<Vec<ProfileSummary>>)`](crate::operation::list_profiles::ListProfilesOutput::profile_summaries): <p>Profile summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profiles::ListProfilesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListProfilesError>`](crate::operation::list_profiles::ListProfilesError)
-    pub fn list_profiles(
-        &self,
-    ) -> crate::operation::list_profiles::builders::ListProfilesFluentBuilder {
-        crate::operation::list_profiles::builders::ListProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_profiles(&self) -> crate::operation::list_profiles::builders::ListProfilesFluentBuilder {
+        crate::operation::list_profiles::builders::ListProfilesFluentBuilder::new(self.handle.clone())
     }
 }

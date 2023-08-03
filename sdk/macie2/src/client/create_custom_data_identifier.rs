@@ -15,7 +15,9 @@ impl super::Client {
     /// - On success, responds with [`CreateCustomDataIdentifierOutput`](crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput) with field(s):
     ///   - [`custom_data_identifier_id(Option<String>)`](crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput::custom_data_identifier_id): <p>The unique identifier for the custom data identifier that was created.</p>
     /// - On failure, responds with [`SdkError<CreateCustomDataIdentifierError>`](crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError)
-    pub fn create_custom_data_identifier(&self) -> crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierFluentBuilder{
+    pub fn create_custom_data_identifier(
+        &self,
+    ) -> crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierFluentBuilder {
         crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`attachment_set_id(Option<String>)`](crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput::attachment_set_id): <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
     ///   - [`expiry_time(Option<String>)`](crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput::expiry_time): <p>The time and date when the attachment set expires.</p>
     /// - On failure, responds with [`SdkError<AddAttachmentsToSetError>`](crate::operation::add_attachments_to_set::AddAttachmentsToSetError)
-    pub fn add_attachments_to_set(
-        &self,
-    ) -> crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetFluentBuilder {
-        crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_attachments_to_set(&self) -> crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetFluentBuilder {
+        crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetFluentBuilder::new(self.handle.clone())
     }
 }

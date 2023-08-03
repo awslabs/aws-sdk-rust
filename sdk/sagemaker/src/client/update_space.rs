@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSpaceOutput`](crate::operation::update_space::UpdateSpaceOutput) with field(s):
     ///   - [`space_arn(Option<String>)`](crate::operation::update_space::UpdateSpaceOutput::space_arn): <p>The space's Amazon Resource Name (ARN).</p>
     /// - On failure, responds with [`SdkError<UpdateSpaceError>`](crate::operation::update_space::UpdateSpaceError)
-    pub fn update_space(
-        &self,
-    ) -> crate::operation::update_space::builders::UpdateSpaceFluentBuilder {
+    pub fn update_space(&self) -> crate::operation::update_space::builders::UpdateSpaceFluentBuilder {
         crate::operation::update_space::builders::UpdateSpaceFluentBuilder::new(self.handle.clone())
     }
 }

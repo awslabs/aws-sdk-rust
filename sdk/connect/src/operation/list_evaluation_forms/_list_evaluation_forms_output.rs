@@ -5,8 +5,7 @@
 pub struct ListEvaluationFormsOutput {
     /// <p>Provides details about a list of evaluation forms belonging to an instance.</p>
     #[doc(hidden)]
-    pub evaluation_form_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>>,
+    pub evaluation_form_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEvaluationFormsOutput {
 }
 impl ListEvaluationFormsOutput {
     /// <p>Provides details about a list of evaluation forms belonging to an instance.</p>
-    pub fn evaluation_form_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EvaluationFormSummary]> {
+    pub fn evaluation_form_summary_list(&self) -> ::std::option::Option<&[crate::types::EvaluationFormSummary]> {
         self.evaluation_form_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEvaluationFormsOutput {
 }
 impl ListEvaluationFormsOutput {
     /// Creates a new builder-style object to manufacture [`ListEvaluationFormsOutput`](crate::operation::list_evaluation_forms::ListEvaluationFormsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsOutputBuilder {
-        crate::operation::list_evaluation_forms::builders::ListEvaluationFormsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsOutputBuilder {
+        crate::operation::list_evaluation_forms::builders::ListEvaluationFormsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEvaluationFormsOutput`](crate::operation::list_evaluation_forms::ListEvaluationFormsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEvaluationFormsOutputBuilder {
-    pub(crate) evaluation_form_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>>,
+    pub(crate) evaluation_form_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListEvaluationFormsOutputBuilder {
     /// To override the contents of this collection use [`set_evaluation_form_summary_list`](Self::set_evaluation_form_summary_list).
     ///
     /// <p>Provides details about a list of evaluation forms belonging to an instance.</p>
-    pub fn evaluation_form_summary_list(
-        mut self,
-        input: crate::types::EvaluationFormSummary,
-    ) -> Self {
+    pub fn evaluation_form_summary_list(mut self, input: crate::types::EvaluationFormSummary) -> Self {
         let mut v = self.evaluation_form_summary_list.unwrap_or_default();
         v.push(input);
         self.evaluation_form_summary_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides details about a list of evaluation forms belonging to an instance.</p>
-    pub fn set_evaluation_form_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>>,
-    ) -> Self {
+    pub fn set_evaluation_form_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>>) -> Self {
         self.evaluation_form_summary_list = input;
         self
     }
     /// <p>Provides details about a list of evaluation forms belonging to an instance.</p>
-    pub fn get_evaluation_form_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>> {
+    pub fn get_evaluation_form_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>> {
         &self.evaluation_form_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

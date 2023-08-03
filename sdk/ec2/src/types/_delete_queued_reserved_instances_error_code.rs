@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeleteQueuedReservedInstancesErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,16 +54,10 @@ pub enum DeleteQueuedReservedInstancesErrorCode {
 impl ::std::convert::From<&str> for DeleteQueuedReservedInstancesErrorCode {
     fn from(s: &str) -> Self {
         match s {
-            "reserved-instances-id-invalid" => {
-                DeleteQueuedReservedInstancesErrorCode::ReservedInstancesIdInvalid
-            }
-            "reserved-instances-not-in-queued-state" => {
-                DeleteQueuedReservedInstancesErrorCode::ReservedInstancesNotInQueuedState
-            }
+            "reserved-instances-id-invalid" => DeleteQueuedReservedInstancesErrorCode::ReservedInstancesIdInvalid,
+            "reserved-instances-not-in-queued-state" => DeleteQueuedReservedInstancesErrorCode::ReservedInstancesNotInQueuedState,
             "unexpected-error" => DeleteQueuedReservedInstancesErrorCode::UnexpectedError,
-            other => DeleteQueuedReservedInstancesErrorCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DeleteQueuedReservedInstancesErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -84,12 +72,8 @@ impl DeleteQueuedReservedInstancesErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            DeleteQueuedReservedInstancesErrorCode::ReservedInstancesIdInvalid => {
-                "reserved-instances-id-invalid"
-            }
-            DeleteQueuedReservedInstancesErrorCode::ReservedInstancesNotInQueuedState => {
-                "reserved-instances-not-in-queued-state"
-            }
+            DeleteQueuedReservedInstancesErrorCode::ReservedInstancesIdInvalid => "reserved-instances-id-invalid",
+            DeleteQueuedReservedInstancesErrorCode::ReservedInstancesNotInQueuedState => "reserved-instances-not-in-queued-state",
             DeleteQueuedReservedInstancesErrorCode::UnexpectedError => "unexpected-error",
             DeleteQueuedReservedInstancesErrorCode::Unknown(value) => value.as_str(),
         }

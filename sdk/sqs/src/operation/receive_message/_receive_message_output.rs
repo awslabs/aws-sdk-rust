@@ -29,9 +29,7 @@ impl ReceiveMessageOutput {
 
 /// A builder for [`ReceiveMessageOutput`](crate::operation::receive_message::ReceiveMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReceiveMessageOutputBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     _request_id: Option<String>,
@@ -49,10 +47,7 @@ impl ReceiveMessageOutputBuilder {
         self
     }
     /// <p>A list of messages.</p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.messages = input;
         self
     }

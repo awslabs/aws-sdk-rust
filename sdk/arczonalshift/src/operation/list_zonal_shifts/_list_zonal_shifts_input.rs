@@ -48,9 +48,7 @@ impl ListZonalShiftsInput {
 
 /// A builder for [`ListZonalShiftsInput`](crate::operation::list_zonal_shifts::ListZonalShiftsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListZonalShiftsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ZonalShiftStatus>,
@@ -89,10 +87,7 @@ impl ListZonalShiftsInputBuilder {
     /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ZonalShiftStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ZonalShiftStatus>) -> Self {
         self.status = input;
         self
     }
@@ -123,10 +118,7 @@ impl ListZonalShiftsInputBuilder {
     /// Consumes the builder and constructs a [`ListZonalShiftsInput`](crate::operation::list_zonal_shifts::ListZonalShiftsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_zonal_shifts::ListZonalShiftsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_zonal_shifts::ListZonalShiftsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_zonal_shifts::ListZonalShiftsInput {
             next_token: self.next_token,
             status: self.status,

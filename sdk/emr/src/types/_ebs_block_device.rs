@@ -13,9 +13,7 @@ pub struct EbsBlockDevice {
 }
 impl EbsBlockDevice {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
-    pub fn volume_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VolumeSpecification> {
+    pub fn volume_specification(&self) -> ::std::option::Option<&crate::types::VolumeSpecification> {
         self.volume_specification.as_ref()
     }
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
@@ -32,9 +30,7 @@ impl EbsBlockDevice {
 
 /// A builder for [`EbsBlockDevice`](crate::types::EbsBlockDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsBlockDeviceBuilder {
     pub(crate) volume_specification: ::std::option::Option<crate::types::VolumeSpecification>,
     pub(crate) device: ::std::option::Option<::std::string::String>,
@@ -46,17 +42,12 @@ impl EbsBlockDeviceBuilder {
         self
     }
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
-    pub fn set_volume_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeSpecification>,
-    ) -> Self {
+    pub fn set_volume_specification(mut self, input: ::std::option::Option<crate::types::VolumeSpecification>) -> Self {
         self.volume_specification = input;
         self
     }
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
-    pub fn get_volume_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::VolumeSpecification> {
+    pub fn get_volume_specification(&self) -> &::std::option::Option<crate::types::VolumeSpecification> {
         &self.volume_specification
     }
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>

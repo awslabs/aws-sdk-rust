@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEmailTemplateOutput`](crate::operation::update_email_template::UpdateEmailTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::update_email_template::UpdateEmailTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateEmailTemplateError>`](crate::operation::update_email_template::UpdateEmailTemplateError)
-    pub fn update_email_template(
-        &self,
-    ) -> crate::operation::update_email_template::builders::UpdateEmailTemplateFluentBuilder {
-        crate::operation::update_email_template::builders::UpdateEmailTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_email_template(&self) -> crate::operation::update_email_template::builders::UpdateEmailTemplateFluentBuilder {
+        crate::operation::update_email_template::builders::UpdateEmailTemplateFluentBuilder::new(self.handle.clone())
     }
 }

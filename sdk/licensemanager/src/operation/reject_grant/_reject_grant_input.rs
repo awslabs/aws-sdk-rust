@@ -22,9 +22,7 @@ impl RejectGrantInput {
 
 /// A builder for [`RejectGrantInput`](crate::operation::reject_grant::RejectGrantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectGrantInputBuilder {
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl RejectGrantInputBuilder {
         &self.grant_arn
     }
     /// Consumes the builder and constructs a [`RejectGrantInput`](crate::operation::reject_grant::RejectGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_grant::RejectGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reject_grant::RejectGrantInput {
-            grant_arn: self.grant_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_grant::RejectGrantInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::reject_grant::RejectGrantInput { grant_arn: self.grant_arn })
     }
 }

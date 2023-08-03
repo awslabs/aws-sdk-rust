@@ -37,10 +37,7 @@ impl DescribeFHIRExportJobFluentBuilder {
         }
     }
     /// Access the DescribeFHIRExportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeFHIRExportJobFluentBuilder {
             crate::operation::describe_fhir_export_job::DescribeFHIRExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeFHIRExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeFHIRExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeFHIRExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeFHIRExportJobFluentBuilder {
             crate::operation::describe_fhir_export_job::DescribeFHIRExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError>,
     > {
         self.customize_middleware().await
     }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDeviceInstanceOutput {
 }
 impl GetDeviceInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceInstanceOutput`](crate::operation::get_device_instance::GetDeviceInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_device_instance::builders::GetDeviceInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::get_device_instance::builders::GetDeviceInstanceOutputBuilder {
         crate::operation::get_device_instance::builders::GetDeviceInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeviceInstanceOutput`](crate::operation::get_device_instance::GetDeviceInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceInstanceOutputBuilder {
     pub(crate) device_instance: ::std::option::Option<crate::types::DeviceInstance>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetDeviceInstanceOutputBuilder {
         self
     }
     /// <p>An object that contains information about your device instance.</p>
-    pub fn set_device_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceInstance>,
-    ) -> Self {
+    pub fn set_device_instance(mut self, input: ::std::option::Option<crate::types::DeviceInstance>) -> Self {
         self.device_instance = input;
         self
     }

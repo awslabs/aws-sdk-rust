@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAwsDefaultServiceQuotasOutput {
 }
 impl ListAwsDefaultServiceQuotasOutput {
     /// Creates a new builder-style object to manufacture [`ListAwsDefaultServiceQuotasOutput`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput).
-    pub fn builder() -> crate::operation::list_aws_default_service_quotas::builders::ListAwsDefaultServiceQuotasOutputBuilder{
+    pub fn builder() -> crate::operation::list_aws_default_service_quotas::builders::ListAwsDefaultServiceQuotasOutputBuilder {
         crate::operation::list_aws_default_service_quotas::builders::ListAwsDefaultServiceQuotasOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAwsDefaultServiceQuotasOutput`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAwsDefaultServiceQuotasOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) quotas: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>,
@@ -70,17 +68,12 @@ impl ListAwsDefaultServiceQuotasOutputBuilder {
         self
     }
     /// <p>Information about the quotas.</p>
-    pub fn set_quotas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>,
-    ) -> Self {
+    pub fn set_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>) -> Self {
         self.quotas = input;
         self
     }
     /// <p>Information about the quotas.</p>
-    pub fn get_quotas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>> {
+    pub fn get_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>> {
         &self.quotas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,9 +86,7 @@ impl ListAwsDefaultServiceQuotasOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAwsDefaultServiceQuotasOutput`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput {
+    pub fn build(self) -> crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput {
         crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput {
             next_token: self.next_token,
             quotas: self.quotas,

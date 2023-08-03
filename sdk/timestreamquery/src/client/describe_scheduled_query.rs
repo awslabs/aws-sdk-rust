@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeScheduledQueryOutput`](crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput) with field(s):
     ///   - [`scheduled_query(Option<ScheduledQueryDescription>)`](crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput::scheduled_query): <p>The scheduled query.</p>
     /// - On failure, responds with [`SdkError<DescribeScheduledQueryError>`](crate::operation::describe_scheduled_query::DescribeScheduledQueryError)
-    pub fn describe_scheduled_query(
-        &self,
-    ) -> crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryFluentBuilder
-    {
+    pub fn describe_scheduled_query(&self) -> crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryFluentBuilder {
         crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,7 +29,7 @@ impl RespondDecisionTaskCompletedInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RespondDecisionTaskCompletedFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedInputBuilder,
+    inner: crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedInputBuilder,
 }
 impl RespondDecisionTaskCompletedFluentBuilder {
     /// Creates a new `RespondDecisionTaskCompleted`.
@@ -40,7 +40,7 @@ impl RespondDecisionTaskCompletedFluentBuilder {
         }
     }
     /// Access the RespondDecisionTaskCompleted as a reference.
-    pub fn as_input(&self) -> &crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl RespondDecisionTaskCompletedFluentBuilder {
             crate::operation::respond_decision_task_completed::RespondDecisionTaskCompleted,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl RespondDecisionTaskCompletedFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl RespondDecisionTaskCompletedFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl RespondDecisionTaskCompletedFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl RespondDecisionTaskCompletedFluentBuilder {
             crate::operation::respond_decision_task_completed::RespondDecisionTaskCompleted,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError>,
     > {
         self.customize_middleware().await
     }
@@ -153,10 +142,7 @@ impl RespondDecisionTaskCompletedFluentBuilder {
         self
     }
     /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
-    pub fn set_decisions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Decision>>,
-    ) -> Self {
+    pub fn set_decisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Decision>>) -> Self {
         self.inner = self.inner.set_decisions(input);
         self
     }
@@ -165,18 +151,12 @@ impl RespondDecisionTaskCompletedFluentBuilder {
         self.inner.get_decisions()
     }
     /// <p>User defined context to add to workflow execution.</p>
-    pub fn execution_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_context(input.into());
         self
     }
     /// <p>User defined context to add to workflow execution.</p>
-    pub fn set_execution_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_context(input);
         self
     }

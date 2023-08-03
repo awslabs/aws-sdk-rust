@@ -44,9 +44,7 @@ impl TransferringInputDeviceSummary {
 
 /// A builder for [`TransferringInputDeviceSummary`](crate::types::TransferringInputDeviceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransferringInputDeviceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -83,18 +81,12 @@ impl TransferringInputDeviceSummaryBuilder {
         &self.message
     }
     /// The AWS account ID for the recipient of the input device transfer.
-    pub fn target_customer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_customer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The AWS account ID for the recipient of the input device transfer.
-    pub fn set_target_customer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_customer_id = input;
         self
     }
@@ -108,17 +100,12 @@ impl TransferringInputDeviceSummaryBuilder {
         self
     }
     /// The type (direction) of the input device transfer.
-    pub fn set_transfer_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceTransferType>,
-    ) -> Self {
+    pub fn set_transfer_type(mut self, input: ::std::option::Option<crate::types::InputDeviceTransferType>) -> Self {
         self.transfer_type = input;
         self
     }
     /// The type (direction) of the input device transfer.
-    pub fn get_transfer_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceTransferType> {
+    pub fn get_transfer_type(&self) -> &::std::option::Option<crate::types::InputDeviceTransferType> {
         &self.transfer_type
     }
     /// Consumes the builder and constructs a [`TransferringInputDeviceSummary`](crate::types::TransferringInputDeviceSummary).

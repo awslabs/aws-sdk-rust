@@ -29,27 +29,19 @@ impl PutBackupPolicyInput {
 
 /// A builder for [`PutBackupPolicyInput`](crate::operation::put_backup_policy::PutBackupPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBackupPolicyInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_policy: ::std::option::Option<crate::types::BackupPolicy>,
 }
 impl PutBackupPolicyInputBuilder {
     /// <p>Specifies which EFS file system to update the backup policy for.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies which EFS file system to update the backup policy for.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -63,10 +55,7 @@ impl PutBackupPolicyInputBuilder {
         self
     }
     /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
-    pub fn set_backup_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupPolicy>,
-    ) -> Self {
+    pub fn set_backup_policy(mut self, input: ::std::option::Option<crate::types::BackupPolicy>) -> Self {
         self.backup_policy = input;
         self
     }
@@ -77,10 +66,7 @@ impl PutBackupPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutBackupPolicyInput`](crate::operation::put_backup_policy::PutBackupPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_backup_policy::PutBackupPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_backup_policy::PutBackupPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_backup_policy::PutBackupPolicyInput {
             file_system_id: self.file_system_id,
             backup_policy: self.backup_policy,

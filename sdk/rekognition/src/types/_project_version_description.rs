@@ -121,9 +121,7 @@ impl ProjectVersionDescription {
 
 /// A builder for [`ProjectVersionDescription`](crate::types::ProjectVersionDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectVersionDescriptionBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -143,18 +141,12 @@ pub struct ProjectVersionDescriptionBuilder {
 }
 impl ProjectVersionDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model version. </p>
-    pub fn project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model version. </p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_version_arn = input;
         self
     }
@@ -168,10 +160,7 @@ impl ProjectVersionDescriptionBuilder {
         self
     }
     /// <p>The Unix datetime for the date and time that training started.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -199,10 +188,7 @@ impl ProjectVersionDescriptionBuilder {
         self
     }
     /// <p>The current status of the model version.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProjectVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -211,18 +197,12 @@ impl ProjectVersionDescriptionBuilder {
         &self.status
     }
     /// <p>A descriptive message for an error or warning that occurred.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A descriptive message for an error or warning that occurred.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -236,10 +216,7 @@ impl ProjectVersionDescriptionBuilder {
         self
     }
     /// <p>The duration, in seconds, that you were billed for a successful training of the model version. This value is only returned if the model version has been successfully trained.</p>
-    pub fn set_billable_training_time_in_seconds(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_billable_training_time_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.billable_training_time_in_seconds = input;
         self
     }
@@ -253,17 +230,12 @@ impl ProjectVersionDescriptionBuilder {
         self
     }
     /// <p>The Unix date and time that training of the model ended.</p>
-    pub fn set_training_end_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_training_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.training_end_timestamp = input;
         self
     }
     /// <p>The Unix date and time that training of the model ended.</p>
-    pub fn get_training_end_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_training_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.training_end_timestamp
     }
     /// <p>The location where training results are saved.</p>
@@ -272,10 +244,7 @@ impl ProjectVersionDescriptionBuilder {
         self
     }
     /// <p>The location where training results are saved.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -289,17 +258,12 @@ impl ProjectVersionDescriptionBuilder {
         self
     }
     /// <p>Contains information about the training results.</p>
-    pub fn set_training_data_result(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingDataResult>,
-    ) -> Self {
+    pub fn set_training_data_result(mut self, input: ::std::option::Option<crate::types::TrainingDataResult>) -> Self {
         self.training_data_result = input;
         self
     }
     /// <p>Contains information about the training results.</p>
-    pub fn get_training_data_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingDataResult> {
+    pub fn get_training_data_result(&self) -> &::std::option::Option<crate::types::TrainingDataResult> {
         &self.training_data_result
     }
     /// <p>Contains information about the testing results.</p>
@@ -308,17 +272,12 @@ impl ProjectVersionDescriptionBuilder {
         self
     }
     /// <p>Contains information about the testing results.</p>
-    pub fn set_testing_data_result(
-        mut self,
-        input: ::std::option::Option<crate::types::TestingDataResult>,
-    ) -> Self {
+    pub fn set_testing_data_result(mut self, input: ::std::option::Option<crate::types::TestingDataResult>) -> Self {
         self.testing_data_result = input;
         self
     }
     /// <p>Contains information about the testing results.</p>
-    pub fn get_testing_data_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestingDataResult> {
+    pub fn get_testing_data_result(&self) -> &::std::option::Option<crate::types::TestingDataResult> {
         &self.testing_data_result
     }
     /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
@@ -327,10 +286,7 @@ impl ProjectVersionDescriptionBuilder {
         self
     }
     /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
-    pub fn set_evaluation_result(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationResult>,
-    ) -> Self {
+    pub fn set_evaluation_result(mut self, input: ::std::option::Option<crate::types::EvaluationResult>) -> Self {
         self.evaluation_result = input;
         self
     }
@@ -344,17 +300,12 @@ impl ProjectVersionDescriptionBuilder {
         self
     }
     /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
-    pub fn set_manifest_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::GroundTruthManifest>,
-    ) -> Self {
+    pub fn set_manifest_summary(mut self, input: ::std::option::Option<crate::types::GroundTruthManifest>) -> Self {
         self.manifest_summary = input;
         self
     }
     /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
-    pub fn get_manifest_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::GroundTruthManifest> {
+    pub fn get_manifest_summary(&self) -> &::std::option::Option<crate::types::GroundTruthManifest> {
         &self.manifest_summary
     }
     /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
@@ -386,18 +337,12 @@ impl ProjectVersionDescriptionBuilder {
         &self.max_inference_units
     }
     /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
-    pub fn source_project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
-    pub fn set_source_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_project_version_arn = input;
         self
     }

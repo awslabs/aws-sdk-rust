@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListNetworkSitesOutput {
 }
 impl ListNetworkSitesOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworkSitesOutput`](crate::operation::list_network_sites::ListNetworkSitesOutput).
-    pub fn builder() -> crate::operation::list_network_sites::builders::ListNetworkSitesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_network_sites::builders::ListNetworkSitesOutputBuilder {
         crate::operation::list_network_sites::builders::ListNetworkSitesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNetworkSitesOutput`](crate::operation::list_network_sites::ListNetworkSitesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworkSitesOutputBuilder {
     pub(crate) network_sites: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSite>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListNetworkSitesOutputBuilder {
         self
     }
     /// <p>Information about the network sites.</p>
-    pub fn set_network_sites(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSite>>,
-    ) -> Self {
+    pub fn set_network_sites(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSite>>) -> Self {
         self.network_sites = input;
         self
     }
     /// <p>Information about the network sites.</p>
-    pub fn get_network_sites(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkSite>> {
+    pub fn get_network_sites(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkSite>> {
         &self.network_sites
     }
     /// <p>The token for the next page of results.</p>

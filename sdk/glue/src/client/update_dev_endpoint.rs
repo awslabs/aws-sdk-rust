@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`add_arguments(HashMap<String, String>)`](crate::operation::update_dev_endpoint::builders::UpdateDevEndpointFluentBuilder::add_arguments) / [`set_add_arguments(Option<HashMap<String, String>>)`](crate::operation::update_dev_endpoint::builders::UpdateDevEndpointFluentBuilder::set_add_arguments): <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>  <p>Valid arguments are:</p>  <ul>   <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>  </ul>  <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     /// - On success, responds with [`UpdateDevEndpointOutput`](crate::operation::update_dev_endpoint::UpdateDevEndpointOutput)
     /// - On failure, responds with [`SdkError<UpdateDevEndpointError>`](crate::operation::update_dev_endpoint::UpdateDevEndpointError)
-    pub fn update_dev_endpoint(
-        &self,
-    ) -> crate::operation::update_dev_endpoint::builders::UpdateDevEndpointFluentBuilder {
-        crate::operation::update_dev_endpoint::builders::UpdateDevEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dev_endpoint(&self) -> crate::operation::update_dev_endpoint::builders::UpdateDevEndpointFluentBuilder {
+        crate::operation::update_dev_endpoint::builders::UpdateDevEndpointFluentBuilder::new(self.handle.clone())
     }
 }

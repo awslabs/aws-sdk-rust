@@ -38,9 +38,7 @@ impl GetPriceListFileUrlFluentBuilder {
         }
     }
     /// Access the GetPriceListFileUrl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetPriceListFileUrlFluentBuilder {
             crate::operation::get_price_list_file_url::GetPriceListFileUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_price_list_file_url::GetPriceListFileUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_price_list_file_url::GetPriceListFileUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetPriceListFileUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetPriceListFileUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_price_list_file_url::GetPriceListFileUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_price_list_file_url::GetPriceListFileUrlError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetPriceListFileUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_price_list_file_url::GetPriceListFileUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_price_list_file_url::GetPriceListFileUrlError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl GetPriceListFileUrlFluentBuilder {
             crate::operation::get_price_list_file_url::GetPriceListFileUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_price_list_file_url::GetPriceListFileUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_price_list_file_url::GetPriceListFileUrlError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceLists</code> </a> response. </p>
-    pub fn price_list_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn price_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.price_list_arn(input.into());
         self
     }
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceLists</code> </a> response. </p>
-    pub fn set_price_list_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_price_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_price_list_arn(input);
         self
     }

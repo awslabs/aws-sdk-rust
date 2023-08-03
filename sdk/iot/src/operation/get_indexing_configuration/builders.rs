@@ -27,7 +27,7 @@ impl GetIndexingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIndexingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_indexing_configuration::builders::GetIndexingConfigurationInputBuilder,
+    inner: crate::operation::get_indexing_configuration::builders::GetIndexingConfigurationInputBuilder,
 }
 impl GetIndexingConfigurationFluentBuilder {
     /// Creates a new `GetIndexingConfiguration`.
@@ -38,10 +38,7 @@ impl GetIndexingConfigurationFluentBuilder {
         }
     }
     /// Access the GetIndexingConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_indexing_configuration::builders::GetIndexingConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_indexing_configuration::builders::GetIndexingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetIndexingConfigurationFluentBuilder {
             crate::operation::get_indexing_configuration::GetIndexingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_indexing_configuration::GetIndexingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_indexing_configuration::GetIndexingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetIndexingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetIndexingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_indexing_configuration::GetIndexingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_indexing_configuration::GetIndexingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_indexing_configuration::GetIndexingConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetIndexingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_indexing_configuration::GetIndexingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_indexing_configuration::GetIndexingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_indexing_configuration::GetIndexingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl GetIndexingConfigurationFluentBuilder {
             crate::operation::get_indexing_configuration::GetIndexingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_indexing_configuration::GetIndexingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_indexing_configuration::GetIndexingConfigurationError>,
     > {
         self.customize_middleware().await
     }

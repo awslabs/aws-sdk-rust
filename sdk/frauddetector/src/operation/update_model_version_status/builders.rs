@@ -32,7 +32,7 @@ impl UpdateModelVersionStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateModelVersionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_model_version_status::builders::UpdateModelVersionStatusInputBuilder,
+    inner: crate::operation::update_model_version_status::builders::UpdateModelVersionStatusInputBuilder,
 }
 impl UpdateModelVersionStatusFluentBuilder {
     /// Creates a new `UpdateModelVersionStatus`.
@@ -43,7 +43,7 @@ impl UpdateModelVersionStatusFluentBuilder {
         }
     }
     /// Access the UpdateModelVersionStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_model_version_status::builders::UpdateModelVersionStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_model_version_status::builders::UpdateModelVersionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl UpdateModelVersionStatusFluentBuilder {
             crate::operation::update_model_version_status::UpdateModelVersionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_version_status::UpdateModelVersionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_version_status::UpdateModelVersionStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl UpdateModelVersionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl UpdateModelVersionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_model_version_status::UpdateModelVersionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_version_status::UpdateModelVersionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_version_status::UpdateModelVersionStatusError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl UpdateModelVersionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_model_version_status::UpdateModelVersionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_version_status::UpdateModelVersionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_version_status::UpdateModelVersionStatusError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +111,7 @@ impl UpdateModelVersionStatusFluentBuilder {
             crate::operation::update_model_version_status::UpdateModelVersionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_version_status::UpdateModelVersionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_version_status::UpdateModelVersionStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +135,7 @@ impl UpdateModelVersionStatusFluentBuilder {
         self
     }
     /// <p>The model type.</p>
-    pub fn set_model_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
     }
@@ -158,18 +144,12 @@ impl UpdateModelVersionStatusFluentBuilder {
         self.inner.get_model_type()
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_version_number(input.into());
         self
     }
     /// <p>The model version number.</p>
-    pub fn set_model_version_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_version_number(input);
         self
     }
@@ -183,10 +163,7 @@ impl UpdateModelVersionStatusFluentBuilder {
         self
     }
     /// <p>The model version status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelVersionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

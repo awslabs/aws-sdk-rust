@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`transit_gateway_vpc_attachments(Option<Vec<TransitGatewayVpcAttachment>>)`](crate::operation::describe_transit_gateway_vpc_attachments::DescribeTransitGatewayVpcAttachmentsOutput::transit_gateway_vpc_attachments): <p>Information about the VPC attachments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateway_vpc_attachments::DescribeTransitGatewayVpcAttachmentsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTransitGatewayVpcAttachmentsError>`](crate::operation::describe_transit_gateway_vpc_attachments::DescribeTransitGatewayVpcAttachmentsError)
-    pub fn describe_transit_gateway_vpc_attachments(&self) -> crate::operation::describe_transit_gateway_vpc_attachments::builders::DescribeTransitGatewayVpcAttachmentsFluentBuilder{
-        crate::operation::describe_transit_gateway_vpc_attachments::builders::DescribeTransitGatewayVpcAttachmentsFluentBuilder::new(self.handle.clone())
+    pub fn describe_transit_gateway_vpc_attachments(
+        &self,
+    ) -> crate::operation::describe_transit_gateway_vpc_attachments::builders::DescribeTransitGatewayVpcAttachmentsFluentBuilder {
+        crate::operation::describe_transit_gateway_vpc_attachments::builders::DescribeTransitGatewayVpcAttachmentsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

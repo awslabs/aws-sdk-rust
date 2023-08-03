@@ -11,15 +11,13 @@ pub struct DiscoverInputSchemaInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
     #[doc(hidden)]
-    pub input_starting_position_configuration:
-        ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
+    pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
     /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
     #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
     #[doc(hidden)]
-    pub input_processing_configuration:
-        ::std::option::Option<crate::types::InputProcessingConfiguration>,
+    pub input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
 }
 impl DiscoverInputSchemaInput {
     /// <p>Amazon Resource Name (ARN) of the streaming source.</p>
@@ -31,9 +29,7 @@ impl DiscoverInputSchemaInput {
         self.role_arn.as_deref()
     }
     /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
-    pub fn input_starting_position_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputStartingPositionConfiguration> {
+    pub fn input_starting_position_configuration(&self) -> ::std::option::Option<&crate::types::InputStartingPositionConfiguration> {
         self.input_starting_position_configuration.as_ref()
     }
     /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
@@ -41,34 +37,26 @@ impl DiscoverInputSchemaInput {
         self.s3_configuration.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
-    pub fn input_processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputProcessingConfiguration> {
+    pub fn input_processing_configuration(&self) -> ::std::option::Option<&crate::types::InputProcessingConfiguration> {
         self.input_processing_configuration.as_ref()
     }
 }
 impl DiscoverInputSchemaInput {
     /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaInput`](crate::operation::discover_input_schema::DiscoverInputSchemaInput).
-    pub fn builder(
-    ) -> crate::operation::discover_input_schema::builders::DiscoverInputSchemaInputBuilder {
-        crate::operation::discover_input_schema::builders::DiscoverInputSchemaInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::discover_input_schema::builders::DiscoverInputSchemaInputBuilder {
+        crate::operation::discover_input_schema::builders::DiscoverInputSchemaInputBuilder::default()
     }
 }
 
 /// A builder for [`DiscoverInputSchemaInput`](crate::operation::discover_input_schema::DiscoverInputSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiscoverInputSchemaInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) input_starting_position_configuration:
-        ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
+    pub(crate) input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
-    pub(crate) input_processing_configuration:
-        ::std::option::Option<crate::types::InputProcessingConfiguration>,
+    pub(crate) input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
 }
 impl DiscoverInputSchemaInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the streaming source.</p>
@@ -100,10 +88,7 @@ impl DiscoverInputSchemaInputBuilder {
         &self.role_arn
     }
     /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
-    pub fn input_starting_position_configuration(
-        mut self,
-        input: crate::types::InputStartingPositionConfiguration,
-    ) -> Self {
+    pub fn input_starting_position_configuration(mut self, input: crate::types::InputStartingPositionConfiguration) -> Self {
         self.input_starting_position_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -116,9 +101,7 @@ impl DiscoverInputSchemaInputBuilder {
         self
     }
     /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
-    pub fn get_input_starting_position_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
+    pub fn get_input_starting_position_configuration(&self) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
         &self.input_starting_position_configuration
     }
     /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
@@ -127,10 +110,7 @@ impl DiscoverInputSchemaInputBuilder {
         self
     }
     /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
-    pub fn set_s3_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Configuration>,
-    ) -> Self {
+    pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3Configuration>) -> Self {
         self.s3_configuration = input;
         self
     }
@@ -139,42 +119,30 @@ impl DiscoverInputSchemaInputBuilder {
         &self.s3_configuration
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
-    pub fn input_processing_configuration(
-        mut self,
-        input: crate::types::InputProcessingConfiguration,
-    ) -> Self {
+    pub fn input_processing_configuration(mut self, input: crate::types::InputProcessingConfiguration) -> Self {
         self.input_processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
-    pub fn set_input_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InputProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_input_processing_configuration(mut self, input: ::std::option::Option<crate::types::InputProcessingConfiguration>) -> Self {
         self.input_processing_configuration = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
-    pub fn get_input_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
+    pub fn get_input_processing_configuration(&self) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
         &self.input_processing_configuration
     }
     /// Consumes the builder and constructs a [`DiscoverInputSchemaInput`](crate::operation::discover_input_schema::DiscoverInputSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::discover_input_schema::DiscoverInputSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::discover_input_schema::DiscoverInputSchemaInput {
-                resource_arn: self.resource_arn,
-                role_arn: self.role_arn,
-                input_starting_position_configuration: self.input_starting_position_configuration,
-                s3_configuration: self.s3_configuration,
-                input_processing_configuration: self.input_processing_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::discover_input_schema::DiscoverInputSchemaInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::discover_input_schema::DiscoverInputSchemaInput {
+            resource_arn: self.resource_arn,
+            role_arn: self.role_arn,
+            input_starting_position_configuration: self.input_starting_position_configuration,
+            s3_configuration: self.s3_configuration,
+            input_processing_configuration: self.input_processing_configuration,
+        })
     }
 }

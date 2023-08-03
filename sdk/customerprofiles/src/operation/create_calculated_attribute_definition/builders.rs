@@ -5,16 +5,16 @@ pub use crate::operation::create_calculated_attribute_definition::_create_calcul
 
 impl CreateCalculatedAttributeDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_calculated_attribute_definition();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCalculatedAttributeDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_calculated_attribute_definition::builders::CreateCalculatedAttributeDefinitionInputBuilder,
+    inner: crate::operation::create_calculated_attribute_definition::builders::CreateCalculatedAttributeDefinitionInputBuilder,
 }
 impl CreateCalculatedAttributeDefinitionFluentBuilder {
     /// Creates a new `CreateCalculatedAttributeDefinition`.
@@ -37,15 +37,20 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
         }
     }
     /// Access the CreateCalculatedAttributeDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_calculated_attribute_definition::builders::CreateCalculatedAttributeDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_calculated_attribute_definition::builders::CreateCalculatedAttributeDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinition,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinition,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The unique name of the domain.</p>
@@ -109,18 +124,12 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculated_attribute_name(input.into());
         self
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn set_calculated_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calculated_attribute_name(input);
         self
     }
@@ -162,10 +171,7 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
         self
     }
     /// <p>Mathematical expression and a list of attribute items specified in that expression.</p>
-    pub fn set_attribute_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeDetails>,
-    ) -> Self {
+    pub fn set_attribute_details(mut self, input: ::std::option::Option<crate::types::AttributeDetails>) -> Self {
         self.inner = self.inner.set_attribute_details(input);
         self
     }
@@ -179,10 +185,7 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
         self
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
-    pub fn set_conditions(
-        mut self,
-        input: ::std::option::Option<crate::types::Conditions>,
-    ) -> Self {
+    pub fn set_conditions(mut self, input: ::std::option::Option<crate::types::Conditions>) -> Self {
         self.inner = self.inner.set_conditions(input);
         self
     }
@@ -209,30 +212,17 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

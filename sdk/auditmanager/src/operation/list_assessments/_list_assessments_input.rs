@@ -36,9 +36,7 @@ impl ListAssessmentsInput {
 
 /// A builder for [`ListAssessmentsInput`](crate::operation::list_assessments::ListAssessmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AssessmentStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl ListAssessmentsInputBuilder {
         self
     }
     /// <p> The current status of the assessment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -93,10 +88,7 @@ impl ListAssessmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssessmentsInput`](crate::operation::list_assessments::ListAssessmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_assessments::ListAssessmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_assessments::ListAssessmentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_assessments::ListAssessmentsInput {
             status: self.status,
             next_token: self.next_token,

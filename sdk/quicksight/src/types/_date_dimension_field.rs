@@ -60,9 +60,7 @@ impl DateDimensionField {
         self.hierarchy_id.as_deref()
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DateTimeFormatConfiguration> {
+    pub fn format_configuration(&self) -> ::std::option::Option<&crate::types::DateTimeFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -75,16 +73,13 @@ impl DateDimensionField {
 
 /// A builder for [`DateDimensionField`](crate::types::DateDimensionField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateDimensionFieldBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) date_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,
-    pub(crate) format_configuration:
-        ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
+    pub(crate) format_configuration: ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
 }
 impl DateDimensionFieldBuilder {
     /// <p>The custom field ID.</p>
@@ -107,10 +102,7 @@ impl DateDimensionFieldBuilder {
         self
     }
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.column = input;
         self
     }
@@ -146,10 +138,7 @@ impl DateDimensionFieldBuilder {
     /// <li> <p> <code>SECOND</code> </p> </li>
     /// <li> <p> <code>MILLISECOND</code> </p> </li>
     /// </ul>
-    pub fn set_date_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
+    pub fn set_date_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
         self.date_granularity = input;
         self
     }
@@ -183,25 +172,17 @@ impl DateDimensionFieldBuilder {
         &self.hierarchy_id
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(
-        mut self,
-        input: crate::types::DateTimeFormatConfiguration,
-    ) -> Self {
+    pub fn format_configuration(mut self, input: crate::types::DateTimeFormatConfiguration) -> Self {
         self.format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format configuration of the field.</p>
-    pub fn set_format_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
-    ) -> Self {
+    pub fn set_format_configuration(mut self, input: ::std::option::Option<crate::types::DateTimeFormatConfiguration>) -> Self {
         self.format_configuration = input;
         self
     }
     /// <p>The format configuration of the field.</p>
-    pub fn get_format_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DateTimeFormatConfiguration> {
+    pub fn get_format_configuration(&self) -> &::std::option::Option<crate::types::DateTimeFormatConfiguration> {
         &self.format_configuration
     }
     /// Consumes the builder and constructs a [`DateDimensionField`](crate::types::DateDimensionField).

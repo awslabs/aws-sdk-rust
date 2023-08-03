@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`attendee_id(impl ::std::convert::Into<String>)`](crate::operation::delete_attendee::builders::DeleteAttendeeFluentBuilder::attendee_id) / [`set_attendee_id(Option<String>)`](crate::operation::delete_attendee::builders::DeleteAttendeeFluentBuilder::set_attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
     /// - On success, responds with [`DeleteAttendeeOutput`](crate::operation::delete_attendee::DeleteAttendeeOutput)
     /// - On failure, responds with [`SdkError<DeleteAttendeeError>`](crate::operation::delete_attendee::DeleteAttendeeError)
-    pub fn delete_attendee(
-        &self,
-    ) -> crate::operation::delete_attendee::builders::DeleteAttendeeFluentBuilder {
-        crate::operation::delete_attendee::builders::DeleteAttendeeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_attendee(&self) -> crate::operation::delete_attendee::builders::DeleteAttendeeFluentBuilder {
+        crate::operation::delete_attendee::builders::DeleteAttendeeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,7 +22,7 @@ impl super::Client {
     ///   - [`execution_role_arn(Option<String>)`](crate::operation::start_earth_observation_job::StartEarthObservationJobOutput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::start_earth_observation_job::StartEarthObservationJobOutput::tags): <p>Each tag consists of a key and a value.</p>
     /// - On failure, responds with [`SdkError<StartEarthObservationJobError>`](crate::operation::start_earth_observation_job::StartEarthObservationJobError)
-    pub fn start_earth_observation_job(&self) -> crate::operation::start_earth_observation_job::builders::StartEarthObservationJobFluentBuilder{
+    pub fn start_earth_observation_job(&self) -> crate::operation::start_earth_observation_job::builders::StartEarthObservationJobFluentBuilder {
         crate::operation::start_earth_observation_job::builders::StartEarthObservationJobFluentBuilder::new(self.handle.clone())
     }
 }

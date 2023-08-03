@@ -17,8 +17,7 @@ pub struct UpdateAssessmentInput {
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
     #[doc(hidden)]
-    pub assessment_reports_destination:
-        ::std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p> The list of roles for the assessment. </p>
     #[doc(hidden)]
     pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
@@ -41,9 +40,7 @@ impl UpdateAssessmentInput {
         self.scope.as_ref()
     }
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
-    pub fn assessment_reports_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
+    pub fn assessment_reports_destination(&self) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
         self.assessment_reports_destination.as_ref()
     }
     /// <p> The list of roles for the assessment. </p>
@@ -53,40 +50,30 @@ impl UpdateAssessmentInput {
 }
 impl UpdateAssessmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateAssessmentInput`](crate::operation::update_assessment::UpdateAssessmentInput).
-    pub fn builder() -> crate::operation::update_assessment::builders::UpdateAssessmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_assessment::builders::UpdateAssessmentInputBuilder {
         crate::operation::update_assessment::builders::UpdateAssessmentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssessmentInput`](crate::operation::update_assessment::UpdateAssessmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_name: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_description: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
-    pub(crate) assessment_reports_destination:
-        ::std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub(crate) assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
 }
 impl UpdateAssessmentInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -95,18 +82,12 @@ impl UpdateAssessmentInputBuilder {
         &self.assessment_id
     }
     /// <p> The name of the assessment to be updated. </p>
-    pub fn assessment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the assessment to be updated. </p>
-    pub fn set_assessment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_name = input;
         self
     }
@@ -115,18 +96,12 @@ impl UpdateAssessmentInputBuilder {
         &self.assessment_name
     }
     /// <p> The description of the assessment. </p>
-    pub fn assessment_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description of the assessment. </p>
-    pub fn set_assessment_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_description = input;
         self
     }
@@ -149,25 +124,17 @@ impl UpdateAssessmentInputBuilder {
         &self.scope
     }
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
-    pub fn assessment_reports_destination(
-        mut self,
-        input: crate::types::AssessmentReportsDestination,
-    ) -> Self {
+    pub fn assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.assessment_reports_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
-    pub fn set_assessment_reports_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentReportsDestination>,
-    ) -> Self {
+    pub fn set_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
         self.assessment_reports_destination = input;
         self
     }
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
-    pub fn get_assessment_reports_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+    pub fn get_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
         &self.assessment_reports_destination
     }
     /// Appends an item to `roles`.
@@ -182,10 +149,7 @@ impl UpdateAssessmentInputBuilder {
         self
     }
     /// <p> The list of roles for the assessment. </p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.roles = input;
         self
     }
@@ -196,10 +160,7 @@ impl UpdateAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssessmentInput`](crate::operation::update_assessment::UpdateAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_assessment::UpdateAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_assessment::UpdateAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_assessment::UpdateAssessmentInput {
             assessment_id: self.assessment_id,
             assessment_name: self.assessment_name,

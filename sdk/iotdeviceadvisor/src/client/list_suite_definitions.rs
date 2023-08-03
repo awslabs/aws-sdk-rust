@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`suite_definition_information_list(Option<Vec<SuiteDefinitionInformation>>)`](crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput::suite_definition_information_list): <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput::next_token): <p>A token used to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListSuiteDefinitionsError>`](crate::operation::list_suite_definitions::ListSuiteDefinitionsError)
-    pub fn list_suite_definitions(
-        &self,
-    ) -> crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsFluentBuilder {
-        crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_suite_definitions(&self) -> crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsFluentBuilder {
+        crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

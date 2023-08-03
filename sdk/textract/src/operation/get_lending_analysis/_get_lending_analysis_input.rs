@@ -29,17 +29,14 @@ impl GetLendingAnalysisInput {
 }
 impl GetLendingAnalysisInput {
     /// Creates a new builder-style object to manufacture [`GetLendingAnalysisInput`](crate::operation::get_lending_analysis::GetLendingAnalysisInput).
-    pub fn builder(
-    ) -> crate::operation::get_lending_analysis::builders::GetLendingAnalysisInputBuilder {
+    pub fn builder() -> crate::operation::get_lending_analysis::builders::GetLendingAnalysisInputBuilder {
         crate::operation::get_lending_analysis::builders::GetLendingAnalysisInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLendingAnalysisInput`](crate::operation::get_lending_analysis::GetLendingAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLendingAnalysisInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,11 @@ impl GetLendingAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`GetLendingAnalysisInput`](crate::operation::get_lending_analysis::GetLendingAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lending_analysis::GetLendingAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_lending_analysis::GetLendingAnalysisInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_lending_analysis::GetLendingAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_lending_analysis::GetLendingAnalysisInput {
+            job_id: self.job_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

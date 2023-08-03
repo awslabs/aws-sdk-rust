@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`order_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_order::builders::CancelOrderFluentBuilder::order_id) / [`set_order_id(Option<String>)`](crate::operation::cancel_order::builders::CancelOrderFluentBuilder::set_order_id): <p> The ID of the order. </p>
     /// - On success, responds with [`CancelOrderOutput`](crate::operation::cancel_order::CancelOrderOutput)
     /// - On failure, responds with [`SdkError<CancelOrderError>`](crate::operation::cancel_order::CancelOrderError)
-    pub fn cancel_order(
-        &self,
-    ) -> crate::operation::cancel_order::builders::CancelOrderFluentBuilder {
+    pub fn cancel_order(&self) -> crate::operation::cancel_order::builders::CancelOrderFluentBuilder {
         crate::operation::cancel_order::builders::CancelOrderFluentBuilder::new(self.handle.clone())
     }
 }

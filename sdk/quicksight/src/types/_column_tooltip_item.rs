@@ -44,9 +44,7 @@ impl ColumnTooltipItem {
 
 /// A builder for [`ColumnTooltipItem`](crate::types::ColumnTooltipItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnTooltipItemBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl ColumnTooltipItemBuilder {
         self
     }
     /// <p>The target column of the tooltip item.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.column = input;
         self
     }
@@ -91,10 +86,7 @@ impl ColumnTooltipItemBuilder {
         self
     }
     /// <p>The visibility of the tooltip item.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -108,10 +100,7 @@ impl ColumnTooltipItemBuilder {
         self
     }
     /// <p>The aggregation function of the column tooltip item.</p>
-    pub fn set_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationFunction>,
-    ) -> Self {
+    pub fn set_aggregation(mut self, input: ::std::option::Option<crate::types::AggregationFunction>) -> Self {
         self.aggregation = input;
         self
     }

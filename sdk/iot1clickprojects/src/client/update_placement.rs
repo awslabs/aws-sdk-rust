@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`attributes(HashMap<String, String>)`](crate::operation::update_placement::builders::UpdatePlacementFluentBuilder::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::operation::update_placement::builders::UpdatePlacementFluentBuilder::set_attributes): <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
     /// - On success, responds with [`UpdatePlacementOutput`](crate::operation::update_placement::UpdatePlacementOutput)
     /// - On failure, responds with [`SdkError<UpdatePlacementError>`](crate::operation::update_placement::UpdatePlacementError)
-    pub fn update_placement(
-        &self,
-    ) -> crate::operation::update_placement::builders::UpdatePlacementFluentBuilder {
-        crate::operation::update_placement::builders::UpdatePlacementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_placement(&self) -> crate::operation::update_placement::builders::UpdatePlacementFluentBuilder {
+        crate::operation::update_placement::builders::UpdatePlacementFluentBuilder::new(self.handle.clone())
     }
 }

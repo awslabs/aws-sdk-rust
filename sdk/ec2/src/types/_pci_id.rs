@@ -44,9 +44,7 @@ impl PciId {
 
 /// A builder for [`PciId`](crate::types::PciId).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PciIdBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) vendor_id: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ impl PciIdBuilder {
         &self.subsystem_id
     }
     /// <p>The ID of the vendor for the subsystem.</p>
-    pub fn subsystem_vendor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subsystem_vendor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subsystem_vendor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the vendor for the subsystem.</p>
-    pub fn set_subsystem_vendor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subsystem_vendor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subsystem_vendor_id = input;
         self
     }

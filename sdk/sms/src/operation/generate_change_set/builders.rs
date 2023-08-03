@@ -10,10 +10,7 @@ impl GenerateChangeSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::generate_change_set::GenerateChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_change_set::GenerateChangeSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_change_set::GenerateChangeSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.generate_change_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GenerateChangeSetFluentBuilder {
         }
     }
     /// Access the GenerateChangeSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GenerateChangeSetFluentBuilder {
             crate::operation::generate_change_set::GenerateChangeSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_change_set::GenerateChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_change_set::GenerateChangeSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GenerateChangeSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GenerateChangeSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_change_set::GenerateChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_change_set::GenerateChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_change_set::GenerateChangeSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GenerateChangeSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_change_set::GenerateChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_change_set::GenerateChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_change_set::GenerateChangeSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GenerateChangeSetFluentBuilder {
             crate::operation::generate_change_set::GenerateChangeSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_change_set::GenerateChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_change_set::GenerateChangeSetError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl GenerateChangeSetFluentBuilder {
         self
     }
     /// <p>The format for the change set.</p>
-    pub fn set_changeset_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
+    pub fn set_changeset_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.inner = self.inner.set_changeset_format(input);
         self
     }

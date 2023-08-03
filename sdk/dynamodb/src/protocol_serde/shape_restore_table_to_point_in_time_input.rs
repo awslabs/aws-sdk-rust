@@ -29,10 +29,7 @@ pub fn ser_restore_table_to_point_in_time_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_global_secondary_index::ser_global_secondary_index(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_global_secondary_index::ser_global_secondary_index(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }
@@ -44,10 +41,7 @@ pub fn ser_restore_table_to_point_in_time_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_local_secondary_index::ser_local_secondary_index(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_local_secondary_index::ser_local_secondary_index(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }
@@ -56,19 +50,13 @@ pub fn ser_restore_table_to_point_in_time_input(
     if let Some(var_15) = &input.provisioned_throughput_override {
         #[allow(unused_mut)]
         let mut object_16 = object.key("ProvisionedThroughputOverride").start_object();
-        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.sse_specification_override {
         #[allow(unused_mut)]
         let mut object_18 = object.key("SSESpecificationOverride").start_object();
-        crate::protocol_serde::shape_sse_specification::ser_sse_specification(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_18, var_17)?;
         object_18.finish();
     }
     Ok(())

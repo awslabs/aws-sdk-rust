@@ -41,21 +41,16 @@ impl ::aws_http::request_id::RequestId for GetConsolidatedReportOutput {
 }
 impl GetConsolidatedReportOutput {
     /// Creates a new builder-style object to manufacture [`GetConsolidatedReportOutput`](crate::operation::get_consolidated_report::GetConsolidatedReportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_consolidated_report::builders::GetConsolidatedReportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_consolidated_report::builders::GetConsolidatedReportOutputBuilder {
         crate::operation::get_consolidated_report::builders::GetConsolidatedReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConsolidatedReportOutput`](crate::operation::get_consolidated_report::GetConsolidatedReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConsolidatedReportOutputBuilder {
-    pub(crate) metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConsolidatedReportMetric>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::ConsolidatedReportMetric>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) base64_string: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -75,18 +70,13 @@ impl GetConsolidatedReportOutputBuilder {
     }
     /// <p>The metrics that make up the consolidated report.</p>
     /// <p>Only returned when <code>JSON</code> format is requested.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConsolidatedReportMetric>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConsolidatedReportMetric>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>The metrics that make up the consolidated report.</p>
     /// <p>Only returned when <code>JSON</code> format is requested.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsolidatedReportMetric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsolidatedReportMetric>> {
         &self.metrics
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -106,20 +96,14 @@ impl GetConsolidatedReportOutputBuilder {
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
     /// <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
-    pub fn base64_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base64_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base64_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
     /// <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
-    pub fn set_base64_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_base64_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base64_string = input;
         self
     }

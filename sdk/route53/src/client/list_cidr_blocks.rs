@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_cidr_blocks::ListCidrBlocksOutput::next_token): <p>An opaque pagination token to indicate where the service is to begin enumerating results. </p>  <p>If no value is provided, the listing of results starts from the beginning.</p>
     ///   - [`cidr_blocks(Option<Vec<CidrBlockSummary>>)`](crate::operation::list_cidr_blocks::ListCidrBlocksOutput::cidr_blocks): <p>A complex type that contains information about the CIDR blocks.</p>
     /// - On failure, responds with [`SdkError<ListCidrBlocksError>`](crate::operation::list_cidr_blocks::ListCidrBlocksError)
-    pub fn list_cidr_blocks(
-        &self,
-    ) -> crate::operation::list_cidr_blocks::builders::ListCidrBlocksFluentBuilder {
-        crate::operation::list_cidr_blocks::builders::ListCidrBlocksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_cidr_blocks(&self) -> crate::operation::list_cidr_blocks::builders::ListCidrBlocksFluentBuilder {
+        crate::operation::list_cidr_blocks::builders::ListCidrBlocksFluentBuilder::new(self.handle.clone())
     }
 }

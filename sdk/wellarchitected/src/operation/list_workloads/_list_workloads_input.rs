@@ -37,9 +37,7 @@ impl ListWorkloadsInput {
 
 /// A builder for [`ListWorkloadsInput`](crate::operation::list_workloads::ListWorkloadsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkloadsInputBuilder {
     pub(crate) workload_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct ListWorkloadsInputBuilder {
 }
 impl ListWorkloadsInputBuilder {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn workload_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workload_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn set_workload_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workload_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_name_prefix = input;
         self
     }
@@ -97,10 +89,7 @@ impl ListWorkloadsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkloadsInput`](crate::operation::list_workloads::ListWorkloadsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workloads::ListWorkloadsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_workloads::ListWorkloadsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workloads::ListWorkloadsInput {
             workload_name_prefix: self.workload_name_prefix,
             next_token: self.next_token,

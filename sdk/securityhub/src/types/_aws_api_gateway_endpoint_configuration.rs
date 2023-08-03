@@ -25,9 +25,7 @@ impl AwsApiGatewayEndpointConfiguration {
 
 /// A builder for [`AwsApiGatewayEndpointConfiguration`](crate::types::AwsApiGatewayEndpointConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiGatewayEndpointConfigurationBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -46,10 +44,7 @@ impl AwsApiGatewayEndpointConfigurationBuilder {
     }
     /// <p>A list of endpoint types for the REST API.</p>
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
         self
     }

@@ -36,17 +36,14 @@ impl ListTargetsByRuleInput {
 }
 impl ListTargetsByRuleInput {
     /// Creates a new builder-style object to manufacture [`ListTargetsByRuleInput`](crate::operation::list_targets_by_rule::ListTargetsByRuleInput).
-    pub fn builder(
-    ) -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleInputBuilder {
+    pub fn builder() -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleInputBuilder {
         crate::operation::list_targets_by_rule::builders::ListTargetsByRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetsByRuleInput`](crate::operation::list_targets_by_rule::ListTargetsByRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsByRuleInputBuilder {
     pub(crate) rule: ::std::option::Option<::std::string::String>,
     pub(crate) event_bus_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl ListTargetsByRuleInputBuilder {
         &self.rule
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_bus_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn set_event_bus_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_bus_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bus_name = input;
         self
     }
@@ -119,17 +110,12 @@ impl ListTargetsByRuleInputBuilder {
     /// Consumes the builder and constructs a [`ListTargetsByRuleInput`](crate::operation::list_targets_by_rule::ListTargetsByRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_targets_by_rule::ListTargetsByRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_targets_by_rule::ListTargetsByRuleInput {
-                rule: self.rule,
-                event_bus_name: self.event_bus_name,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_targets_by_rule::ListTargetsByRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_targets_by_rule::ListTargetsByRuleInput {
+            rule: self.rule,
+            event_bus_name: self.event_bus_name,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

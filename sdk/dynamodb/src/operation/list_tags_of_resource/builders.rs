@@ -10,10 +10,7 @@ impl ListTagsOfResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_tags_of_resource::ListTagsOfResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_of_resource::ListTagsOfResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_of_resource::ListTagsOfResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_tags_of_resource();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListTagsOfResourceFluentBuilder {
         }
     }
     /// Access the ListTagsOfResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_tags_of_resource::builders::ListTagsOfResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_tags_of_resource::builders::ListTagsOfResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListTagsOfResourceFluentBuilder {
             crate::operation::list_tags_of_resource::ListTagsOfResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_of_resource::ListTagsOfResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_of_resource::ListTagsOfResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListTagsOfResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListTagsOfResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_of_resource::ListTagsOfResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_of_resource::ListTagsOfResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_of_resource::ListTagsOfResourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListTagsOfResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_of_resource::ListTagsOfResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_of_resource::ListTagsOfResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_of_resource::ListTagsOfResourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl ListTagsOfResourceFluentBuilder {
             crate::operation::list_tags_of_resource::ListTagsOfResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_of_resource::ListTagsOfResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_of_resource::ListTagsOfResourceError>,
     > {
         self.customize_middleware().await
     }

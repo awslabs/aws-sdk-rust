@@ -22,16 +22,14 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
 }
 impl DeleteAccessPointPolicyForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaInput`](crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput).
-    pub fn builder() -> crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaInputBuilder{
+    pub fn builder() -> crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaInputBuilder {
         crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessPointPolicyForObjectLambdaInput`](crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessPointPolicyForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DeleteAccessPointPolicyForObjectLambdaInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteAccessPointPolicyForObjectLambdaInput`](crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-            }
+                account_id: self.account_id,
+                name: self.name,
+            },
         )
     }
 }

@@ -26,7 +26,7 @@ impl AssociateIamInstanceProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateIamInstanceProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileInputBuilder,
+    inner: crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileInputBuilder,
 }
 impl AssociateIamInstanceProfileFluentBuilder {
     /// Creates a new `AssociateIamInstanceProfile`.
@@ -37,7 +37,7 @@ impl AssociateIamInstanceProfileFluentBuilder {
         }
     }
     /// Access the AssociateIamInstanceProfile as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateIamInstanceProfileFluentBuilder {
             crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateIamInstanceProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateIamInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateIamInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl AssociateIamInstanceProfileFluentBuilder {
             crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: crate::types::IamInstanceProfileSpecification,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
         self.inner = self.inner.iam_instance_profile(input);
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
-    ) -> Self {
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>) -> Self {
         self.inner = self.inner.set_iam_instance_profile(input);
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn get_iam_instance_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
         self.inner.get_iam_instance_profile()
     }
     /// <p>The ID of the instance.</p>

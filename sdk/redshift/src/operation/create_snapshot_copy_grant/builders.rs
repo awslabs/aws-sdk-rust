@@ -27,8 +27,7 @@ impl CreateSnapshotCopyGrantInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSnapshotCopyGrantFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder,
+    inner: crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder,
 }
 impl CreateSnapshotCopyGrantFluentBuilder {
     /// Creates a new `CreateSnapshotCopyGrant`.
@@ -39,10 +38,7 @@ impl CreateSnapshotCopyGrantFluentBuilder {
         }
     }
     /// Access the CreateSnapshotCopyGrant as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl CreateSnapshotCopyGrantFluentBuilder {
             crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrant,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl CreateSnapshotCopyGrantFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl CreateSnapshotCopyGrantFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl CreateSnapshotCopyGrantFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl CreateSnapshotCopyGrantFluentBuilder {
             crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrant,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +119,7 @@ impl CreateSnapshotCopyGrantFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn snapshot_copy_grant_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_copy_grant_name(input.into());
         self
     }
@@ -150,10 +132,7 @@ impl CreateSnapshotCopyGrantFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn set_snapshot_copy_grant_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_copy_grant_name(input);
         self
     }
@@ -193,10 +172,7 @@ impl CreateSnapshotCopyGrantFluentBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

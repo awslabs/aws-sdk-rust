@@ -35,21 +35,17 @@ impl ::aws_http::request_id::RequestId for ListImagePackagesOutput {
 }
 impl ListImagePackagesOutput {
     /// Creates a new builder-style object to manufacture [`ListImagePackagesOutput`](crate::operation::list_image_packages::ListImagePackagesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_image_packages::builders::ListImagePackagesOutputBuilder {
+    pub fn builder() -> crate::operation::list_image_packages::builders::ListImagePackagesOutputBuilder {
         crate::operation::list_image_packages::builders::ListImagePackagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImagePackagesOutput`](crate::operation::list_image_packages::ListImagePackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagePackagesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) image_package_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImagePackage>>,
+    pub(crate) image_package_list: ::std::option::Option<::std::vec::Vec<crate::types::ImagePackage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -80,17 +76,12 @@ impl ListImagePackagesOutputBuilder {
         self
     }
     /// <p>The list of Image Packages returned in the response.</p>
-    pub fn set_image_package_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImagePackage>>,
-    ) -> Self {
+    pub fn set_image_package_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImagePackage>>) -> Self {
         self.image_package_list = input;
         self
     }
     /// <p>The list of Image Packages returned in the response.</p>
-    pub fn get_image_package_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImagePackage>> {
+    pub fn get_image_package_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImagePackage>> {
         &self.image_package_list
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>

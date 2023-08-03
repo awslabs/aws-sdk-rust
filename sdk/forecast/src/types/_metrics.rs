@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metrics {
     /// <p>The root-mean-square error (RMSE).</p>
-    #[deprecated(
-        note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE"
-    )]
+    #[deprecated(note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE")]
     #[doc(hidden)]
     pub rmse: ::std::option::Option<f64>,
     /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
     #[doc(hidden)]
-    pub weighted_quantile_losses:
-        ::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>>,
+    pub weighted_quantile_losses: ::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>>,
     /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
     #[doc(hidden)]
     pub error_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ErrorMetric>>,
@@ -23,16 +20,12 @@ pub struct Metrics {
 }
 impl Metrics {
     /// <p>The root-mean-square error (RMSE).</p>
-    #[deprecated(
-        note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE"
-    )]
+    #[deprecated(note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE")]
     pub fn rmse(&self) -> ::std::option::Option<f64> {
         self.rmse
     }
     /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
-    pub fn weighted_quantile_losses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WeightedQuantileLoss]> {
+    pub fn weighted_quantile_losses(&self) -> ::std::option::Option<&[crate::types::WeightedQuantileLoss]> {
         self.weighted_quantile_losses.as_deref()
     }
     /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
@@ -53,37 +46,28 @@ impl Metrics {
 
 /// A builder for [`Metrics`](crate::types::Metrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricsBuilder {
     pub(crate) rmse: ::std::option::Option<f64>,
-    pub(crate) weighted_quantile_losses:
-        ::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>>,
+    pub(crate) weighted_quantile_losses: ::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>>,
     pub(crate) error_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ErrorMetric>>,
     pub(crate) average_weighted_quantile_loss: ::std::option::Option<f64>,
 }
 impl MetricsBuilder {
     /// <p>The root-mean-square error (RMSE).</p>
-    #[deprecated(
-        note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE"
-    )]
+    #[deprecated(note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE")]
     pub fn rmse(mut self, input: f64) -> Self {
         self.rmse = ::std::option::Option::Some(input);
         self
     }
     /// <p>The root-mean-square error (RMSE).</p>
-    #[deprecated(
-        note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE"
-    )]
+    #[deprecated(note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE")]
     pub fn set_rmse(mut self, input: ::std::option::Option<f64>) -> Self {
         self.rmse = input;
         self
     }
     /// <p>The root-mean-square error (RMSE).</p>
-    #[deprecated(
-        note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE"
-    )]
+    #[deprecated(note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE")]
     pub fn get_rmse(&self) -> &::std::option::Option<f64> {
         &self.rmse
     }
@@ -99,17 +83,12 @@ impl MetricsBuilder {
         self
     }
     /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
-    pub fn set_weighted_quantile_losses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>>,
-    ) -> Self {
+    pub fn set_weighted_quantile_losses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>>) -> Self {
         self.weighted_quantile_losses = input;
         self
     }
     /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
-    pub fn get_weighted_quantile_losses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>> {
+    pub fn get_weighted_quantile_losses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>> {
         &self.weighted_quantile_losses
     }
     /// Appends an item to `error_metrics`.
@@ -124,17 +103,12 @@ impl MetricsBuilder {
         self
     }
     /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
-    pub fn set_error_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorMetric>>,
-    ) -> Self {
+    pub fn set_error_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorMetric>>) -> Self {
         self.error_metrics = input;
         self
     }
     /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
-    pub fn get_error_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorMetric>> {
+    pub fn get_error_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorMetric>> {
         &self.error_metrics
     }
     /// <p>The average value of all weighted quantile losses.</p>

@@ -30,9 +30,7 @@ impl UpdateParam {
 
 /// A builder for [`UpdateParam`](crate::types::UpdateParam).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateParamBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::UpdateParamType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

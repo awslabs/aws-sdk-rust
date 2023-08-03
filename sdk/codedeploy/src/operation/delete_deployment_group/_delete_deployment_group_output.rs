@@ -6,8 +6,7 @@
 pub struct DeleteDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
     #[doc(hidden)]
-    pub hooks_not_cleaned_up:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
+    pub hooks_not_cleaned_up: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     _request_id: Option<String>,
 }
 impl DeleteDeploymentGroupOutput {
@@ -23,21 +22,16 @@ impl ::aws_http::request_id::RequestId for DeleteDeploymentGroupOutput {
 }
 impl DeleteDeploymentGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentGroupOutput`](crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupOutputBuilder {
         crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeploymentGroupOutput`](crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeploymentGroupOutputBuilder {
-    pub(crate) hooks_not_cleaned_up:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
+    pub(crate) hooks_not_cleaned_up: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     _request_id: Option<String>,
 }
 impl DeleteDeploymentGroupOutputBuilder {
@@ -53,17 +47,12 @@ impl DeleteDeploymentGroupOutputBuilder {
         self
     }
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-    pub fn set_hooks_not_cleaned_up(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
-    ) -> Self {
+    pub fn set_hooks_not_cleaned_up(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>) -> Self {
         self.hooks_not_cleaned_up = input;
         self
     }
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-    pub fn get_hooks_not_cleaned_up(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
+    pub fn get_hooks_not_cleaned_up(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
         &self.hooks_not_cleaned_up
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

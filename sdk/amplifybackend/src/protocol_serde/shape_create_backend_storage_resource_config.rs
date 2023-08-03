@@ -9,10 +9,7 @@ pub fn ser_create_backend_storage_resource_config(
     if let Some(var_2) = &input.permissions {
         #[allow(unused_mut)]
         let mut object_3 = object.key("permissions").start_object();
-        crate::protocol_serde::shape_backend_storage_permissions::ser_backend_storage_permissions(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_backend_storage_permissions::ser_backend_storage_permissions(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.service_name {

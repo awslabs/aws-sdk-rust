@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAttachmentOutput`](crate::operation::delete_attachment::DeleteAttachmentOutput) with field(s):
     ///   - [`attachment(Option<Attachment>)`](crate::operation::delete_attachment::DeleteAttachmentOutput::attachment): <p>Information about the deleted attachment.</p>
     /// - On failure, responds with [`SdkError<DeleteAttachmentError>`](crate::operation::delete_attachment::DeleteAttachmentError)
-    pub fn delete_attachment(
-        &self,
-    ) -> crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder {
-        crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_attachment(&self) -> crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder {
+        crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

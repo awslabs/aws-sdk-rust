@@ -38,9 +38,7 @@ pub fn ser_apns_message(
         object.key("MediaUrl").string(var_11.as_str());
     }
     if let Some(var_12) = &input.preferred_authentication_method {
-        object
-            .key("PreferredAuthenticationMethod")
-            .string(var_12.as_str());
+        object.key("PreferredAuthenticationMethod").string(var_12.as_str());
     }
     if let Some(var_13) = &input.priority {
         object.key("Priority").string(var_13.as_str());

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for AttachTypedLinkOutput {
 }
 impl AttachTypedLinkOutput {
     /// Creates a new builder-style object to manufacture [`AttachTypedLinkOutput`](crate::operation::attach_typed_link::AttachTypedLinkOutput).
-    pub fn builder() -> crate::operation::attach_typed_link::builders::AttachTypedLinkOutputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_typed_link::builders::AttachTypedLinkOutputBuilder {
         crate::operation::attach_typed_link::builders::AttachTypedLinkOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachTypedLinkOutput`](crate::operation::attach_typed_link::AttachTypedLinkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachTypedLinkOutputBuilder {
     pub(crate) typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl AttachTypedLinkOutputBuilder {
         self
     }
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn set_typed_link_specifier(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedLinkSpecifier>,
-    ) -> Self {
+    pub fn set_typed_link_specifier(mut self, input: ::std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
         self.typed_link_specifier = input;
         self
     }
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn get_typed_link_specifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+    pub fn get_typed_link_specifier(&self) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
         &self.typed_link_specifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

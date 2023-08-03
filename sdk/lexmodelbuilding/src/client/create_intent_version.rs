@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`input_contexts(Option<Vec<InputContext>>)`](crate::operation::create_intent_version::CreateIntentVersionOutput::input_contexts): <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
     ///   - [`output_contexts(Option<Vec<OutputContext>>)`](crate::operation::create_intent_version::CreateIntentVersionOutput::output_contexts): <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
     /// - On failure, responds with [`SdkError<CreateIntentVersionError>`](crate::operation::create_intent_version::CreateIntentVersionError)
-    pub fn create_intent_version(
-        &self,
-    ) -> crate::operation::create_intent_version::builders::CreateIntentVersionFluentBuilder {
-        crate::operation::create_intent_version::builders::CreateIntentVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_intent_version(&self) -> crate::operation::create_intent_version::builders::CreateIntentVersionFluentBuilder {
+        crate::operation::create_intent_version::builders::CreateIntentVersionFluentBuilder::new(self.handle.clone())
     }
 }

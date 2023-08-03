@@ -41,17 +41,14 @@ impl ::aws_http::request_id::RequestId for CreateFleetLocationsOutput {
 }
 impl CreateFleetLocationsOutput {
     /// Creates a new builder-style object to manufacture [`CreateFleetLocationsOutput`](crate::operation::create_fleet_locations::CreateFleetLocationsOutput).
-    pub fn builder(
-    ) -> crate::operation::create_fleet_locations::builders::CreateFleetLocationsOutputBuilder {
+    pub fn builder() -> crate::operation::create_fleet_locations::builders::CreateFleetLocationsOutputBuilder {
         crate::operation::create_fleet_locations::builders::CreateFleetLocationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFleetLocationsOutput`](crate::operation::create_fleet_locations::CreateFleetLocationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFleetLocationsOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
@@ -108,17 +105,12 @@ impl CreateFleetLocationsOutputBuilder {
         self
     }
     /// <p>The remote locations that are being added to the fleet, and the life-cycle status of each location. For new locations, the status is set to <code>NEW</code>. During location creation, Amazon GameLift updates each location's status as instances are deployed there and prepared for game hosting. This list does not include the fleet home Region or any remote locations that were already added to the fleet.</p>
-    pub fn set_location_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>,
-    ) -> Self {
+    pub fn set_location_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>) -> Self {
         self.location_states = input;
         self
     }
     /// <p>The remote locations that are being added to the fleet, and the life-cycle status of each location. For new locations, the status is set to <code>NEW</code>. During location creation, Amazon GameLift updates each location's status as instances are deployed there and prepared for game hosting. This list does not include the fleet home Region or any remote locations that were already added to the fleet.</p>
-    pub fn get_location_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationState>> {
+    pub fn get_location_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationState>> {
         &self.location_states
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

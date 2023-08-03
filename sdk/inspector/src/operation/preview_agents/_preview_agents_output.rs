@@ -35,9 +35,7 @@ impl PreviewAgentsOutput {
 
 /// A builder for [`PreviewAgentsOutput`](crate::operation::preview_agents::PreviewAgentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PreviewAgentsOutputBuilder {
     pub(crate) agent_previews: ::std::option::Option<::std::vec::Vec<crate::types::AgentPreview>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl PreviewAgentsOutputBuilder {
         self
     }
     /// <p>The resulting list of agents.</p>
-    pub fn set_agent_previews(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentPreview>>,
-    ) -> Self {
+    pub fn set_agent_previews(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentPreview>>) -> Self {
         self.agent_previews = input;
         self
     }
     /// <p>The resulting list of agents.</p>
-    pub fn get_agent_previews(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentPreview>> {
+    pub fn get_agent_previews(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentPreview>> {
         &self.agent_previews
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>

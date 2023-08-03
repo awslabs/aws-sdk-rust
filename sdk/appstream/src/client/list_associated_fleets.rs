@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`names(Option<Vec<String>>)`](crate::operation::list_associated_fleets::ListAssociatedFleetsOutput::names): <p>The name of the fleet.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_fleets::ListAssociatedFleetsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListAssociatedFleetsError>`](crate::operation::list_associated_fleets::ListAssociatedFleetsError)
-    pub fn list_associated_fleets(
-        &self,
-    ) -> crate::operation::list_associated_fleets::builders::ListAssociatedFleetsFluentBuilder {
-        crate::operation::list_associated_fleets::builders::ListAssociatedFleetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_associated_fleets(&self) -> crate::operation::list_associated_fleets::builders::ListAssociatedFleetsFluentBuilder {
+        crate::operation::list_associated_fleets::builders::ListAssociatedFleetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DescribeFirewallInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_firewall::DescribeFirewallOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_firewall::DescribeFirewallError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_firewall::DescribeFirewallError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_firewall();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeFirewallFluentBuilder {
         }
     }
     /// Access the DescribeFirewall as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_firewall::builders::DescribeFirewallInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_firewall::builders::DescribeFirewallInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeFirewallFluentBuilder {
             crate::operation::describe_firewall::DescribeFirewall,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_firewall::DescribeFirewallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_firewall::DescribeFirewallError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeFirewallFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeFirewallFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_firewall::DescribeFirewallOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_firewall::DescribeFirewallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_firewall::DescribeFirewallError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeFirewallFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_firewall::DescribeFirewallOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_firewall::DescribeFirewallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_firewall::DescribeFirewallError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl DescribeFirewallFluentBuilder {
             crate::operation::describe_firewall::DescribeFirewall,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_firewall::DescribeFirewallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_firewall::DescribeFirewallError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }

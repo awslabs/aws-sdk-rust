@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DetachTrafficSourcesOutput {
 }
 impl DetachTrafficSourcesOutput {
     /// Creates a new builder-style object to manufacture [`DetachTrafficSourcesOutput`](crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesOutputBuilder {
+    pub fn builder() -> crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesOutputBuilder {
         crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachTrafficSourcesOutput`](crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachTrafficSourcesOutputBuilder {
     _request_id: Option<String>,
 }

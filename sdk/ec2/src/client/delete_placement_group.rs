@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_placement_group::builders::DeletePlacementGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::delete_placement_group::builders::DeletePlacementGroupFluentBuilder::set_group_name): <p>The name of the placement group.</p>
     /// - On success, responds with [`DeletePlacementGroupOutput`](crate::operation::delete_placement_group::DeletePlacementGroupOutput)
     /// - On failure, responds with [`SdkError<DeletePlacementGroupError>`](crate::operation::delete_placement_group::DeletePlacementGroupError)
-    pub fn delete_placement_group(
-        &self,
-    ) -> crate::operation::delete_placement_group::builders::DeletePlacementGroupFluentBuilder {
-        crate::operation::delete_placement_group::builders::DeletePlacementGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_placement_group(&self) -> crate::operation::delete_placement_group::builders::DeletePlacementGroupFluentBuilder {
+        crate::operation::delete_placement_group::builders::DeletePlacementGroupFluentBuilder::new(self.handle.clone())
     }
 }

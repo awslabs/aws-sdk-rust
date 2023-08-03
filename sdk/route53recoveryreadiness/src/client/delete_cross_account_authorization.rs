@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`cross_account_authorization(impl ::std::convert::Into<String>)`](crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationFluentBuilder::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationFluentBuilder::set_cross_account_authorization): <p>The cross-account authorization.</p>
     /// - On success, responds with [`DeleteCrossAccountAuthorizationOutput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput)
     /// - On failure, responds with [`SdkError<DeleteCrossAccountAuthorizationError>`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError)
-    pub fn delete_cross_account_authorization(&self) -> crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationFluentBuilder{
+    pub fn delete_cross_account_authorization(
+        &self,
+    ) -> crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationFluentBuilder {
         crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

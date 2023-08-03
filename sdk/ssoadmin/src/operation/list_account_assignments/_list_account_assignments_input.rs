@@ -43,18 +43,14 @@ impl ListAccountAssignmentsInput {
 }
 impl ListAccountAssignmentsInput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentsInput`](crate::operation::list_account_assignments::ListAccountAssignmentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_account_assignments::builders::ListAccountAssignmentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_assignments::builders::ListAccountAssignmentsInputBuilder {
         crate::operation::list_account_assignments::builders::ListAccountAssignmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountAssignmentsInput`](crate::operation::list_account_assignments::ListAccountAssignmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAssignmentsInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -92,18 +88,12 @@ impl ListAccountAssignmentsInputBuilder {
         &self.account_id
     }
     /// <p>The ARN of the permission set from which to list assignments.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the permission set from which to list assignments.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -142,18 +132,14 @@ impl ListAccountAssignmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListAccountAssignmentsInput`](crate::operation::list_account_assignments::ListAccountAssignmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_account_assignments::ListAccountAssignmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_account_assignments::ListAccountAssignmentsInput {
-                instance_arn: self.instance_arn,
-                account_id: self.account_id,
-                permission_set_arn: self.permission_set_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_account_assignments::ListAccountAssignmentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_account_assignments::ListAccountAssignmentsInput {
+            instance_arn: self.instance_arn,
+            account_id: self.account_id,
+            permission_set_arn: self.permission_set_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

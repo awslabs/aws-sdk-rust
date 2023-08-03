@@ -22,26 +22,18 @@ impl GetTagKeysInput {
 
 /// A builder for [`GetTagKeysInput`](crate::operation::get_tag_keys::GetTagKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTagKeysInputBuilder {
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl GetTagKeysInputBuilder {
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }
@@ -50,12 +42,7 @@ impl GetTagKeysInputBuilder {
         &self.pagination_token
     }
     /// Consumes the builder and constructs a [`GetTagKeysInput`](crate::operation::get_tag_keys::GetTagKeysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_tag_keys::GetTagKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tag_keys::GetTagKeysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tag_keys::GetTagKeysInput {
             pagination_token: self.pagination_token,
         })

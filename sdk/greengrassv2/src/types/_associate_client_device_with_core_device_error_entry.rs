@@ -30,17 +30,14 @@ impl AssociateClientDeviceWithCoreDeviceErrorEntry {
 }
 impl AssociateClientDeviceWithCoreDeviceErrorEntry {
     /// Creates a new builder-style object to manufacture [`AssociateClientDeviceWithCoreDeviceErrorEntry`](crate::types::AssociateClientDeviceWithCoreDeviceErrorEntry).
-    pub fn builder() -> crate::types::builders::AssociateClientDeviceWithCoreDeviceErrorEntryBuilder
-    {
+    pub fn builder() -> crate::types::builders::AssociateClientDeviceWithCoreDeviceErrorEntryBuilder {
         crate::types::builders::AssociateClientDeviceWithCoreDeviceErrorEntryBuilder::default()
     }
 }
 
 /// A builder for [`AssociateClientDeviceWithCoreDeviceErrorEntry`](crate::types::AssociateClientDeviceWithCoreDeviceErrorEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateClientDeviceWithCoreDeviceErrorEntryBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

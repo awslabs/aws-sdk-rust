@@ -36,19 +36,14 @@ pub fn ser_update_launch_configuration_input(
     if let Some(var_11) = &input.post_launch_actions {
         #[allow(unused_mut)]
         let mut object_12 = object.key("postLaunchActions").start_object();
-        crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.source_server_id {
         object.key("sourceServerID").string(var_13.as_str());
     }
     if let Some(var_14) = &input.target_instance_type_right_sizing_method {
-        object
-            .key("targetInstanceTypeRightSizingMethod")
-            .string(var_14.as_str());
+        object.key("targetInstanceTypeRightSizingMethod").string(var_14.as_str());
     }
     Ok(())
 }

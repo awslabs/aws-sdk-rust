@@ -10,10 +10,7 @@ impl DeleteNatGatewayInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_nat_gateway::DeleteNatGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_nat_gateway::DeleteNatGatewayError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_nat_gateway::DeleteNatGatewayError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_nat_gateway();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteNatGatewayFluentBuilder {
         }
     }
     /// Access the DeleteNatGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_nat_gateway::builders::DeleteNatGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_nat_gateway::builders::DeleteNatGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteNatGatewayFluentBuilder {
             crate::operation::delete_nat_gateway::DeleteNatGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_nat_gateway::DeleteNatGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_nat_gateway::DeleteNatGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteNatGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteNatGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_nat_gateway::DeleteNatGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_nat_gateway::DeleteNatGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_nat_gateway::DeleteNatGatewayError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteNatGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_nat_gateway::DeleteNatGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_nat_gateway::DeleteNatGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_nat_gateway::DeleteNatGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteNatGatewayFluentBuilder {
             crate::operation::delete_nat_gateway::DeleteNatGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_nat_gateway::DeleteNatGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_nat_gateway::DeleteNatGatewayError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteNatGatewayFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_id(input.into());
         self
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nat_gateway_id(input);
         self
     }

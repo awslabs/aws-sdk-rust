@@ -23,34 +23,26 @@ impl ::aws_http::request_id::RequestId for CreateDataSourceFromRedshiftOutput {
 }
 impl CreateDataSourceFromRedshiftOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRedshiftOutput`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput).
-    pub fn builder() -> crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftOutputBuilder{
+    pub fn builder() -> crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftOutputBuilder {
         crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataSourceFromRedshiftOutput`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataSourceFromRedshiftOutputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDataSourceFromRedshiftOutputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -68,10 +60,7 @@ impl CreateDataSourceFromRedshiftOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDataSourceFromRedshiftOutput`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput
-    {
+    pub fn build(self) -> crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput {
         crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput {
             data_source_id: self.data_source_id,
             _request_id: self._request_id,

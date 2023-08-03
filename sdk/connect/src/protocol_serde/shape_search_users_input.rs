@@ -18,19 +18,13 @@ pub fn ser_search_users_input(
     if let Some(var_4) = &input.search_criteria {
         #[allow(unused_mut)]
         let mut object_5 = object.key("SearchCriteria").start_object();
-        crate::protocol_serde::shape_user_search_criteria::ser_user_search_criteria(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_user_search_criteria::ser_user_search_criteria(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.search_filter {
         #[allow(unused_mut)]
         let mut object_7 = object.key("SearchFilter").start_object();
-        crate::protocol_serde::shape_user_search_filter::ser_user_search_filter(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_user_search_filter::ser_user_search_filter(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

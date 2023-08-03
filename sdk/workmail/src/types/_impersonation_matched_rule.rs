@@ -30,27 +30,19 @@ impl ImpersonationMatchedRule {
 
 /// A builder for [`ImpersonationMatchedRule`](crate::types::ImpersonationMatchedRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImpersonationMatchedRuleBuilder {
     pub(crate) impersonation_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl ImpersonationMatchedRuleBuilder {
     /// <p>The ID of the rule that matched the input</p>
-    pub fn impersonation_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn impersonation_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the rule that matched the input</p>
-    pub fn set_impersonation_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_impersonation_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.impersonation_rule_id = input;
         self
     }

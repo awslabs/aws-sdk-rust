@@ -5,15 +5,12 @@
 pub struct UpdateConfiguredTableAssociationOutput {
     /// <p>The entire updated configured table association.</p>
     #[doc(hidden)]
-    pub configured_table_association:
-        ::std::option::Option<crate::types::ConfiguredTableAssociation>,
+    pub configured_table_association: ::std::option::Option<crate::types::ConfiguredTableAssociation>,
     _request_id: Option<String>,
 }
 impl UpdateConfiguredTableAssociationOutput {
     /// <p>The entire updated configured table association.</p>
-    pub fn configured_table_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfiguredTableAssociation> {
+    pub fn configured_table_association(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAssociation> {
         self.configured_table_association.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for UpdateConfiguredTableAssociationOutpu
 }
 impl UpdateConfiguredTableAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfiguredTableAssociationOutput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationOutput).
-    pub fn builder() -> crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationOutputBuilder {
         crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfiguredTableAssociationOutput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfiguredTableAssociationOutputBuilder {
-    pub(crate) configured_table_association:
-        ::std::option::Option<crate::types::ConfiguredTableAssociation>,
+    pub(crate) configured_table_association: ::std::option::Option<crate::types::ConfiguredTableAssociation>,
     _request_id: Option<String>,
 }
 impl UpdateConfiguredTableAssociationOutputBuilder {
     /// <p>The entire updated configured table association.</p>
-    pub fn configured_table_association(
-        mut self,
-        input: crate::types::ConfiguredTableAssociation,
-    ) -> Self {
+    pub fn configured_table_association(mut self, input: crate::types::ConfiguredTableAssociation) -> Self {
         self.configured_table_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>The entire updated configured table association.</p>
-    pub fn set_configured_table_association(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfiguredTableAssociation>,
-    ) -> Self {
+    pub fn set_configured_table_association(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAssociation>) -> Self {
         self.configured_table_association = input;
         self
     }
     /// <p>The entire updated configured table association.</p>
-    pub fn get_configured_table_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfiguredTableAssociation> {
+    pub fn get_configured_table_association(&self) -> &::std::option::Option<crate::types::ConfiguredTableAssociation> {
         &self.configured_table_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,13 +58,9 @@ impl UpdateConfiguredTableAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableAssociationOutput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationOutput
-    {
+    pub fn build(self) -> crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationOutput {
         crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationOutput {
-            configured_table_association: self.configured_table_association
-            ,
+            configured_table_association: self.configured_table_association,
             _request_id: self._request_id,
         }
     }

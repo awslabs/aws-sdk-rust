@@ -15,34 +15,25 @@ impl GetAccuracyMetricsInput {
 }
 impl GetAccuracyMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetAccuracyMetricsInput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput).
-    pub fn builder(
-    ) -> crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsInputBuilder {
+    pub fn builder() -> crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsInputBuilder {
         crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccuracyMetricsInput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccuracyMetricsInputBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAccuracyMetricsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetAccuracyMetricsInputBuilder {
     /// Consumes the builder and constructs a [`GetAccuracyMetricsInput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput {
-                predictor_arn: self.predictor_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput {
+            predictor_arn: self.predictor_arn,
+        })
     }
 }

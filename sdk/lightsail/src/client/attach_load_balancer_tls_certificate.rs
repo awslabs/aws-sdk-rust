@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AttachLoadBalancerTlsCertificateOutput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>  <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
     /// - On failure, responds with [`SdkError<AttachLoadBalancerTlsCertificateError>`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError)
-    pub fn attach_load_balancer_tls_certificate(&self) -> crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateFluentBuilder{
+    pub fn attach_load_balancer_tls_certificate(
+        &self,
+    ) -> crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateFluentBuilder {
         crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -58,9 +58,7 @@ impl RelationalDatabaseBlueprint {
 
 /// A builder for [`RelationalDatabaseBlueprint`](crate::types::RelationalDatabaseBlueprint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelationalDatabaseBlueprintBuilder {
     pub(crate) blueprint_id: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<crate::types::RelationalDatabaseEngine>,
@@ -90,10 +88,7 @@ impl RelationalDatabaseBlueprintBuilder {
         self
     }
     /// <p>The database software of the database blueprint (for example, <code>MySQL</code>).</p>
-    pub fn set_engine(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationalDatabaseEngine>,
-    ) -> Self {
+    pub fn set_engine(mut self, input: ::std::option::Option<crate::types::RelationalDatabaseEngine>) -> Self {
         self.engine = input;
         self
     }
@@ -102,18 +97,12 @@ impl RelationalDatabaseBlueprintBuilder {
         &self.engine
     }
     /// <p>The database engine version for the database blueprint (for example, <code>5.7.23</code>).</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine version for the database blueprint (for example, <code>5.7.23</code>).</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -122,18 +111,12 @@ impl RelationalDatabaseBlueprintBuilder {
         &self.engine_version
     }
     /// <p>The description of the database engine for the database blueprint.</p>
-    pub fn engine_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the database engine for the database blueprint.</p>
-    pub fn set_engine_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_description = input;
         self
     }
@@ -142,18 +125,12 @@ impl RelationalDatabaseBlueprintBuilder {
         &self.engine_description
     }
     /// <p>The description of the database engine version for the database blueprint.</p>
-    pub fn engine_version_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the database engine version for the database blueprint.</p>
-    pub fn set_engine_version_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version_description = input;
         self
     }

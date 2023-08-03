@@ -22,9 +22,7 @@ impl ResolveCaseInput {
 
 /// A builder for [`ResolveCaseInput`](crate::operation::resolve_case::ResolveCaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolveCaseInputBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl ResolveCaseInputBuilder {
         &self.case_id
     }
     /// Consumes the builder and constructs a [`ResolveCaseInput`](crate::operation::resolve_case::ResolveCaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::resolve_case::ResolveCaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::resolve_case::ResolveCaseInput {
-            case_id: self.case_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::resolve_case::ResolveCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::resolve_case::ResolveCaseInput { case_id: self.case_id })
     }
 }

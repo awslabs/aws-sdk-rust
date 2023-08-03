@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateStackInstancesOutput {
 }
 impl UpdateStackInstancesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStackInstancesOutput`](crate::operation::update_stack_instances::UpdateStackInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::update_stack_instances::builders::UpdateStackInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::update_stack_instances::builders::UpdateStackInstancesOutputBuilder {
         crate::operation::update_stack_instances::builders::UpdateStackInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStackInstancesOutput`](crate::operation::update_stack_instances::UpdateStackInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStackInstancesOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

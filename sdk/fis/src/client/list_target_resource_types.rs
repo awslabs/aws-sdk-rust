@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`target_resource_types(Option<Vec<TargetResourceTypeSummary>>)`](crate::operation::list_target_resource_types::ListTargetResourceTypesOutput::target_resource_types): <p>The target resource types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_target_resource_types::ListTargetResourceTypesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListTargetResourceTypesError>`](crate::operation::list_target_resource_types::ListTargetResourceTypesError)
-    pub fn list_target_resource_types(
-        &self,
-    ) -> crate::operation::list_target_resource_types::builders::ListTargetResourceTypesFluentBuilder
-    {
+    pub fn list_target_resource_types(&self) -> crate::operation::list_target_resource_types::builders::ListTargetResourceTypesFluentBuilder {
         crate::operation::list_target_resource_types::builders::ListTargetResourceTypesFluentBuilder::new(self.handle.clone())
     }
 }

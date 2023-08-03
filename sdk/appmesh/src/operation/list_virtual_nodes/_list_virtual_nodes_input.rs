@@ -36,17 +36,14 @@ impl ListVirtualNodesInput {
 }
 impl ListVirtualNodesInput {
     /// Creates a new builder-style object to manufacture [`ListVirtualNodesInput`](crate::operation::list_virtual_nodes::ListVirtualNodesInput).
-    pub fn builder() -> crate::operation::list_virtual_nodes::builders::ListVirtualNodesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_virtual_nodes::builders::ListVirtualNodesInputBuilder {
         crate::operation::list_virtual_nodes::builders::ListVirtualNodesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualNodesInput`](crate::operation::list_virtual_nodes::ListVirtualNodesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualNodesInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -113,17 +110,12 @@ impl ListVirtualNodesInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualNodesInput`](crate::operation::list_virtual_nodes::ListVirtualNodesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_virtual_nodes::ListVirtualNodesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_virtual_nodes::ListVirtualNodesInput {
-                mesh_name: self.mesh_name,
-                next_token: self.next_token,
-                limit: self.limit,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_virtual_nodes::ListVirtualNodesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_virtual_nodes::ListVirtualNodesInput {
+            mesh_name: self.mesh_name,
+            next_token: self.next_token,
+            limit: self.limit,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

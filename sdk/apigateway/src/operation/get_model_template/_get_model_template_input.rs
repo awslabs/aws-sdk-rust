@@ -23,17 +23,14 @@ impl GetModelTemplateInput {
 }
 impl GetModelTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetModelTemplateInput`](crate::operation::get_model_template::GetModelTemplateInput).
-    pub fn builder() -> crate::operation::get_model_template::builders::GetModelTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_model_template::builders::GetModelTemplateInputBuilder {
         crate::operation::get_model_template::builders::GetModelTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetModelTemplateInput`](crate::operation::get_model_template::GetModelTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetModelTemplateInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,10 @@ impl GetModelTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetModelTemplateInput`](crate::operation::get_model_template::GetModelTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_model_template::GetModelTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_model_template::GetModelTemplateInput {
-                rest_api_id: self.rest_api_id,
-                model_name: self.model_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_model_template::GetModelTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_model_template::GetModelTemplateInput {
+            rest_api_id: self.rest_api_id,
+            model_name: self.model_name,
+        })
     }
 }

@@ -12,25 +12,20 @@ pub struct CreateAssetModelInput {
     /// <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
-    pub asset_model_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    pub asset_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
     /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
-    pub asset_model_hierarchies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchyDefinition>>,
+    pub asset_model_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchyDefinition>>,
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
     #[doc(hidden)]
-    pub asset_model_composite_models:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>>,
+    pub asset_model_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAssetModelInput {
     /// <p>A unique, friendly name for the asset model.</p>
@@ -43,22 +38,16 @@ impl CreateAssetModelInput {
     }
     /// <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_model_properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetModelPropertyDefinition]> {
+    pub fn asset_model_properties(&self) -> ::std::option::Option<&[crate::types::AssetModelPropertyDefinition]> {
         self.asset_model_properties.as_deref()
     }
     /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_model_hierarchies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetModelHierarchyDefinition]> {
+    pub fn asset_model_hierarchies(&self) -> ::std::option::Option<&[crate::types::AssetModelHierarchyDefinition]> {
         self.asset_model_hierarchies.as_deref()
     }
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
-    pub fn asset_model_composite_models(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetModelCompositeModelDefinition]> {
+    pub fn asset_model_composite_models(&self) -> ::std::option::Option<&[crate::types::AssetModelCompositeModelDefinition]> {
         self.asset_model_composite_models.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -66,55 +55,37 @@ impl CreateAssetModelInput {
         self.client_token.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateAssetModelInput {
     /// Creates a new builder-style object to manufacture [`CreateAssetModelInput`](crate::operation::create_asset_model::CreateAssetModelInput).
-    pub fn builder() -> crate::operation::create_asset_model::builders::CreateAssetModelInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_asset_model::builders::CreateAssetModelInputBuilder {
         crate::operation::create_asset_model::builders::CreateAssetModelInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAssetModelInput`](crate::operation::create_asset_model::CreateAssetModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssetModelInputBuilder {
     pub(crate) asset_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_description: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_model_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
-    pub(crate) asset_model_hierarchies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchyDefinition>>,
-    pub(crate) asset_model_composite_models:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>>,
+    pub(crate) asset_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    pub(crate) asset_model_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchyDefinition>>,
+    pub(crate) asset_model_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAssetModelInputBuilder {
     /// <p>A unique, friendly name for the asset model.</p>
-    pub fn asset_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, friendly name for the asset model.</p>
-    pub fn set_asset_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_name = input;
         self
     }
@@ -123,18 +94,12 @@ impl CreateAssetModelInputBuilder {
         &self.asset_model_name
     }
     /// <p>A description for the asset model.</p>
-    pub fn asset_model_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the asset model.</p>
-    pub fn set_asset_model_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_description = input;
         self
     }
@@ -148,10 +113,7 @@ impl CreateAssetModelInputBuilder {
     ///
     /// <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_model_properties(
-        mut self,
-        input: crate::types::AssetModelPropertyDefinition,
-    ) -> Self {
+    pub fn asset_model_properties(mut self, input: crate::types::AssetModelPropertyDefinition) -> Self {
         let mut v = self.asset_model_properties.unwrap_or_default();
         v.push(input);
         self.asset_model_properties = ::std::option::Option::Some(v);
@@ -159,18 +121,13 @@ impl CreateAssetModelInputBuilder {
     }
     /// <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_asset_model_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
-    ) -> Self {
+    pub fn set_asset_model_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>) -> Self {
         self.asset_model_properties = input;
         self
     }
     /// <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_asset_model_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>> {
+    pub fn get_asset_model_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>> {
         &self.asset_model_properties
     }
     /// Appends an item to `asset_model_hierarchies`.
@@ -179,10 +136,7 @@ impl CreateAssetModelInputBuilder {
     ///
     /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_model_hierarchies(
-        mut self,
-        input: crate::types::AssetModelHierarchyDefinition,
-    ) -> Self {
+    pub fn asset_model_hierarchies(mut self, input: crate::types::AssetModelHierarchyDefinition) -> Self {
         let mut v = self.asset_model_hierarchies.unwrap_or_default();
         v.push(input);
         self.asset_model_hierarchies = ::std::option::Option::Some(v);
@@ -190,18 +144,13 @@ impl CreateAssetModelInputBuilder {
     }
     /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_asset_model_hierarchies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchyDefinition>>,
-    ) -> Self {
+    pub fn set_asset_model_hierarchies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchyDefinition>>) -> Self {
         self.asset_model_hierarchies = input;
         self
     }
     /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_asset_model_hierarchies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchyDefinition>> {
+    pub fn get_asset_model_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchyDefinition>> {
         &self.asset_model_hierarchies
     }
     /// Appends an item to `asset_model_composite_models`.
@@ -209,10 +158,7 @@ impl CreateAssetModelInputBuilder {
     /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
     ///
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
-    pub fn asset_model_composite_models(
-        mut self,
-        input: crate::types::AssetModelCompositeModelDefinition,
-    ) -> Self {
+    pub fn asset_model_composite_models(mut self, input: crate::types::AssetModelCompositeModelDefinition) -> Self {
         let mut v = self.asset_model_composite_models.unwrap_or_default();
         v.push(input);
         self.asset_model_composite_models = ::std::option::Option::Some(v);
@@ -221,18 +167,13 @@ impl CreateAssetModelInputBuilder {
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
     pub fn set_asset_model_composite_models(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>>,
     ) -> Self {
         self.asset_model_composite_models = input;
         self
     }
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
-    pub fn get_asset_model_composite_models(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>>
-    {
+    pub fn get_asset_model_composite_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>> {
         &self.asset_model_composite_models
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -254,51 +195,33 @@ impl CreateAssetModelInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAssetModelInput`](crate::operation::create_asset_model::CreateAssetModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_asset_model::CreateAssetModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_asset_model::CreateAssetModelInput {
-                asset_model_name: self.asset_model_name,
-                asset_model_description: self.asset_model_description,
-                asset_model_properties: self.asset_model_properties,
-                asset_model_hierarchies: self.asset_model_hierarchies,
-                asset_model_composite_models: self.asset_model_composite_models,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_asset_model::CreateAssetModelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_asset_model::CreateAssetModelInput {
+            asset_model_name: self.asset_model_name,
+            asset_model_description: self.asset_model_description,
+            asset_model_properties: self.asset_model_properties,
+            asset_model_hierarchies: self.asset_model_hierarchies,
+            asset_model_composite_models: self.asset_model_composite_models,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

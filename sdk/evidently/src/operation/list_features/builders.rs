@@ -10,10 +10,7 @@ impl ListFeaturesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_features::ListFeaturesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_features::ListFeaturesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_features::ListFeaturesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_features();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListFeaturesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_features::ListFeatures,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_features::ListFeatures, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_features::ListFeaturesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListFeaturesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListFeaturesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_features::ListFeatures,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_features::ListFeatures, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_features::ListFeaturesError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListFeaturesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_features::paginator::ListFeaturesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_features::paginator::ListFeaturesPaginator {
-        crate::operation::list_features::paginator::ListFeaturesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_features::paginator::ListFeaturesPaginator {
+        crate::operation::list_features::paginator::ListFeaturesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name or ARN of the project to return the feature list from.</p>
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

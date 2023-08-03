@@ -45,9 +45,7 @@ impl Record {
         self.last_modified_by.as_deref()
     }
     /// The last modified date of the client device.
-    pub fn device_last_modified_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn device_last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
 }
@@ -60,9 +58,7 @@ impl Record {
 
 /// A builder for [`Record`](crate::types::Record).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -120,10 +116,7 @@ impl RecordBuilder {
         self
     }
     /// The date on which the record was last modified.
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -132,18 +125,12 @@ impl RecordBuilder {
         &self.last_modified_date
     }
     /// The user/device that made the last change to this record.
-    pub fn last_modified_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// The user/device that made the last change to this record.
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -157,17 +144,12 @@ impl RecordBuilder {
         self
     }
     /// The last modified date of the client device.
-    pub fn set_device_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_device_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.device_last_modified_date = input;
         self
     }
     /// The last modified date of the client device.
-    pub fn get_device_last_modified_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_device_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.device_last_modified_date
     }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).

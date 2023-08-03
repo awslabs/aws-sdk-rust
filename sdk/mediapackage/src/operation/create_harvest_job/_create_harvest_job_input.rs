@@ -44,17 +44,14 @@ impl CreateHarvestJobInput {
 }
 impl CreateHarvestJobInput {
     /// Creates a new builder-style object to manufacture [`CreateHarvestJobInput`](crate::operation::create_harvest_job::CreateHarvestJobInput).
-    pub fn builder() -> crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder {
         crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHarvestJobInput`](crate::operation::create_harvest_job::CreateHarvestJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHarvestJobInputBuilder {
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -92,18 +89,12 @@ impl CreateHarvestJobInputBuilder {
         &self.id
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn origin_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn set_origin_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_endpoint_id = input;
         self
     }
@@ -117,10 +108,7 @@ impl CreateHarvestJobInputBuilder {
         self
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.s3_destination = input;
         self
     }
@@ -145,18 +133,13 @@ impl CreateHarvestJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateHarvestJobInput`](crate::operation::create_harvest_job::CreateHarvestJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_harvest_job::CreateHarvestJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_harvest_job::CreateHarvestJobInput {
-                end_time: self.end_time,
-                id: self.id,
-                origin_endpoint_id: self.origin_endpoint_id,
-                s3_destination: self.s3_destination,
-                start_time: self.start_time,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_harvest_job::CreateHarvestJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_harvest_job::CreateHarvestJobInput {
+            end_time: self.end_time,
+            id: self.id,
+            origin_endpoint_id: self.origin_endpoint_id,
+            s3_destination: self.s3_destination,
+            start_time: self.start_time,
+        })
     }
 }

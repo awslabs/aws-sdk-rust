@@ -16,17 +16,14 @@ impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
 }
 impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
     /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
         crate::types::builders::AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
@@ -47,8 +44,6 @@ impl AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails {
-        crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails {
-            r#type: self.r#type,
-        }
+        crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails { r#type: self.r#type }
     }
 }

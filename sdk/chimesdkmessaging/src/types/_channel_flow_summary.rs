@@ -54,18 +54,12 @@ pub struct ChannelFlowSummaryBuilder {
 }
 impl ChannelFlowSummaryBuilder {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_flow_arn = input;
         self
     }
@@ -99,17 +93,12 @@ impl ChannelFlowSummaryBuilder {
         self
     }
     /// <p>Information about the processor Lambda functions.</p>
-    pub fn set_processors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
-    ) -> Self {
+    pub fn set_processors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>) -> Self {
         self.processors = input;
         self
     }
     /// <p>Information about the processor Lambda functions.</p>
-    pub fn get_processors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+    pub fn get_processors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
         &self.processors
     }
     /// Consumes the builder and constructs a [`ChannelFlowSummary`](crate::types::ChannelFlowSummary).

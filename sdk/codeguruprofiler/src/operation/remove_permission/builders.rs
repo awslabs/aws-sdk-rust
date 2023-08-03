@@ -10,10 +10,7 @@ impl RemovePermissionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::remove_permission::RemovePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_permission::RemovePermissionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.remove_permission();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RemovePermissionFluentBuilder {
         }
     }
     /// Access the RemovePermission as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_permission::builders::RemovePermissionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::remove_permission::builders::RemovePermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RemovePermissionFluentBuilder {
             crate::operation::remove_permission::RemovePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_permission::RemovePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RemovePermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RemovePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_permission::RemovePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_permission::RemovePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RemovePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_permission::RemovePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_permission::RemovePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl RemovePermissionFluentBuilder {
             crate::operation::remove_permission::RemovePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_permission::RemovePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p>The name of the profiling group.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -148,10 +126,7 @@ impl RemovePermissionFluentBuilder {
         self
     }
     /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub fn set_action_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionGroup>,
-    ) -> Self {
+    pub fn set_action_group(mut self, input: ::std::option::Option<crate::types::ActionGroup>) -> Self {
         self.inner = self.inner.set_action_group(input);
         self
     }

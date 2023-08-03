@@ -32,9 +32,7 @@ impl EncryptionConfiguration {
 
 /// A builder for [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionConfigurationBuilder {
     pub(crate) encryption_option: ::std::option::Option<crate::types::EncryptionOption>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
@@ -48,10 +46,7 @@ impl EncryptionConfigurationBuilder {
     }
     /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE_S3</code>), server-side encryption with KMS-managed keys (<code>SSE_KMS</code>), or client-side encryption with KMS-managed keys (<code>CSE_KMS</code>) is used.</p>
     /// <p>If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for encryption is used. It specifies whether query results must be encrypted, for all queries that run in this workgroup. </p>
-    pub fn set_encryption_option(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionOption>,
-    ) -> Self {
+    pub fn set_encryption_option(mut self, input: ::std::option::Option<crate::types::EncryptionOption>) -> Self {
         self.encryption_option = input;
         self
     }

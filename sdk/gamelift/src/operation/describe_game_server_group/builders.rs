@@ -30,8 +30,7 @@ impl DescribeGameServerGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGameServerGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_game_server_group::builders::DescribeGameServerGroupInputBuilder,
+    inner: crate::operation::describe_game_server_group::builders::DescribeGameServerGroupInputBuilder,
 }
 impl DescribeGameServerGroupFluentBuilder {
     /// Creates a new `DescribeGameServerGroup`.
@@ -42,10 +41,7 @@ impl DescribeGameServerGroupFluentBuilder {
         }
     }
     /// Access the DescribeGameServerGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_game_server_group::builders::DescribeGameServerGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_game_server_group::builders::DescribeGameServerGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl DescribeGameServerGroupFluentBuilder {
             crate::operation::describe_game_server_group::DescribeGameServerGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server_group::DescribeGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server_group::DescribeGameServerGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl DescribeGameServerGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl DescribeGameServerGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_server_group::DescribeGameServerGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server_group::DescribeGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server_group::DescribeGameServerGroupError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl DescribeGameServerGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_server_group::DescribeGameServerGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server_group::DescribeGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server_group::DescribeGameServerGroupError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +109,17 @@ impl DescribeGameServerGroupFluentBuilder {
             crate::operation::describe_game_server_group::DescribeGameServerGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server_group::DescribeGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server_group::DescribeGameServerGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }

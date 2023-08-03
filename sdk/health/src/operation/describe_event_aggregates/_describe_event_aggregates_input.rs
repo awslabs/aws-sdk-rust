@@ -36,18 +36,14 @@ impl DescribeEventAggregatesInput {
 }
 impl DescribeEventAggregatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventAggregatesInput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesInputBuilder {
         crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventAggregatesInput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventAggregatesInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EventFilter>,
     pub(crate) aggregate_field: ::std::option::Option<crate::types::EventAggregateField>,
@@ -75,10 +71,7 @@ impl DescribeEventAggregatesInputBuilder {
         self
     }
     /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
-    pub fn set_aggregate_field(
-        mut self,
-        input: ::std::option::Option<crate::types::EventAggregateField>,
-    ) -> Self {
+    pub fn set_aggregate_field(mut self, input: ::std::option::Option<crate::types::EventAggregateField>) -> Self {
         self.aggregate_field = input;
         self
     }
@@ -121,13 +114,11 @@ impl DescribeEventAggregatesInputBuilder {
         crate::operation::describe_event_aggregates::DescribeEventAggregatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_event_aggregates::DescribeEventAggregatesInput {
-                filter: self.filter,
-                aggregate_field: self.aggregate_field,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_event_aggregates::DescribeEventAggregatesInput {
+            filter: self.filter,
+            aggregate_field: self.aggregate_field,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

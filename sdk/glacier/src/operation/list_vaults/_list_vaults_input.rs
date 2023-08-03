@@ -37,9 +37,7 @@ impl ListVaultsInput {
 
 /// A builder for [`ListVaultsInput`](crate::operation::list_vaults::ListVaultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVaultsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -89,12 +87,7 @@ impl ListVaultsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListVaultsInput`](crate::operation::list_vaults::ListVaultsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vaults::ListVaultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_vaults::ListVaultsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_vaults::ListVaultsInput {
             account_id: self.account_id,
             marker: self.marker,

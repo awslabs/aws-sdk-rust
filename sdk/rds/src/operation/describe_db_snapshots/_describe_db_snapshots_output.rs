@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeDbSnapshotsOutput {
 }
 impl DescribeDbSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotsOutput`](crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsOutputBuilder {
-        crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsOutputBuilder {
+        crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbSnapshotsOutput`](crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbSnapshotsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>>,
@@ -73,17 +69,12 @@ impl DescribeDbSnapshotsOutputBuilder {
         self
     }
     /// <p>A list of <code>DBSnapshot</code> instances.</p>
-    pub fn set_db_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>>,
-    ) -> Self {
+    pub fn set_db_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>>) -> Self {
         self.db_snapshots = input;
         self
     }
     /// <p>A list of <code>DBSnapshot</code> instances.</p>
-    pub fn get_db_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>> {
+    pub fn get_db_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>> {
         &self.db_snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

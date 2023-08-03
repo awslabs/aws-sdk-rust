@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`flywheel_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder::flywheel_arn) / [`set_flywheel_arn(Option<String>)`](crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder::set_flywheel_arn): <p>The Amazon Resource Number (ARN) of the flywheel to delete.</p>
     /// - On success, responds with [`DeleteFlywheelOutput`](crate::operation::delete_flywheel::DeleteFlywheelOutput)
     /// - On failure, responds with [`SdkError<DeleteFlywheelError>`](crate::operation::delete_flywheel::DeleteFlywheelError)
-    pub fn delete_flywheel(
-        &self,
-    ) -> crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder {
-        crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_flywheel(&self) -> crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder {
+        crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder::new(self.handle.clone())
     }
 }

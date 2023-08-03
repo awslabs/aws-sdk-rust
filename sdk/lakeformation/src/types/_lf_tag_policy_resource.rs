@@ -37,9 +37,7 @@ impl LfTagPolicyResource {
 
 /// A builder for [`LfTagPolicyResource`](crate::types::LfTagPolicyResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LfTagPolicyResourceBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -66,10 +64,7 @@ impl LfTagPolicyResourceBuilder {
         self
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -89,10 +84,7 @@ impl LfTagPolicyResourceBuilder {
         self
     }
     /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
-    pub fn set_expression(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
-    ) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>) -> Self {
         self.expression = input;
         self
     }

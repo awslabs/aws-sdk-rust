@@ -10,9 +10,7 @@ pub struct DescribeWorkspaceAuthenticationOutput {
 }
 impl DescribeWorkspaceAuthenticationOutput {
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    pub fn authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticationDescription> {
+    pub fn authentication(&self) -> ::std::option::Option<&crate::types::AuthenticationDescription> {
         self.authentication.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorkspaceAuthenticationOutput
 }
 impl DescribeWorkspaceAuthenticationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceAuthenticationOutput`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationOutput).
-    pub fn builder() -> crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationOutputBuilder {
         crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceAuthenticationOutput`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceAuthenticationOutputBuilder {
     pub(crate) authentication: ::std::option::Option<crate::types::AuthenticationDescription>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DescribeWorkspaceAuthenticationOutputBuilder {
         self
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    pub fn set_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationDescription>,
-    ) -> Self {
+    pub fn set_authentication(mut self, input: ::std::option::Option<crate::types::AuthenticationDescription>) -> Self {
         self.authentication = input;
         self
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    pub fn get_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationDescription> {
+    pub fn get_authentication(&self) -> &::std::option::Option<crate::types::AuthenticationDescription> {
         &self.authentication
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,10 +58,7 @@ impl DescribeWorkspaceAuthenticationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceAuthenticationOutput`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationOutput
-    {
+    pub fn build(self) -> crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationOutput {
         crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationOutput {
             authentication: self.authentication,
             _request_id: self._request_id,

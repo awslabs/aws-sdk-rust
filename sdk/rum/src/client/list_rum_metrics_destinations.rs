@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`destinations(Option<Vec<MetricDestinationSummary>>)`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsOutput::destinations): <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsOutput::next_token): <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListRumMetricsDestinationsError>`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsError)
-    pub fn list_rum_metrics_destinations(&self) -> crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsFluentBuilder{
+    pub fn list_rum_metrics_destinations(
+        &self,
+    ) -> crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsFluentBuilder {
         crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsFluentBuilder::new(self.handle.clone())
     }
 }

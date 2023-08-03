@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`suppress_indefinitely(Option<bool>)`](crate::operation::describe_audit_suppression::DescribeAuditSuppressionOutput::suppress_indefinitely): <p> Indicates whether a suppression should exist indefinitely or not. </p>
     ///   - [`description(Option<String>)`](crate::operation::describe_audit_suppression::DescribeAuditSuppressionOutput::description): <p> The description of the audit suppression. </p>
     /// - On failure, responds with [`SdkError<DescribeAuditSuppressionError>`](crate::operation::describe_audit_suppression::DescribeAuditSuppressionError)
-    pub fn describe_audit_suppression(
-        &self,
-    ) -> crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionFluentBuilder
-    {
+    pub fn describe_audit_suppression(&self) -> crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionFluentBuilder {
         crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionFluentBuilder::new(self.handle.clone())
     }
 }

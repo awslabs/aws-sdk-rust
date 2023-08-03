@@ -28,16 +28,15 @@ impl ::aws_http::request_id::RequestId for ListAccountsForProvisionedPermissionS
 }
 impl ListAccountsForProvisionedPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountsForProvisionedPermissionSetOutput`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput).
-    pub fn builder() -> crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetOutputBuilder{
+    pub fn builder() -> crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetOutputBuilder
+    {
         crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountsForProvisionedPermissionSetOutput`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountsForProvisionedPermissionSetOutputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +55,12 @@ impl ListAccountsForProvisionedPermissionSetOutputBuilder {
         self
     }
     /// <p>The list of AWS <code>AccountIds</code>.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The list of AWS <code>AccountIds</code>.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -93,12 +87,10 @@ impl ListAccountsForProvisionedPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccountsForProvisionedPermissionSetOutput`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput).
-    pub fn build(self) -> crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput{
+    pub fn build(self) -> crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput {
         crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput {
-            account_ids: self.account_ids
-            ,
-            next_token: self.next_token
-            ,
+            account_ids: self.account_ids,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

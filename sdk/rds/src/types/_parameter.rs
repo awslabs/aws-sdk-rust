@@ -94,9 +94,7 @@ impl Parameter {
 
 /// A builder for [`Parameter`](crate::types::Parameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
@@ -108,23 +106,16 @@ pub struct ParameterBuilder {
     pub(crate) is_modifiable: ::std::option::Option<bool>,
     pub(crate) minimum_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) apply_method: ::std::option::Option<crate::types::ApplyMethod>,
-    pub(crate) supported_engine_modes:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ParameterBuilder {
     /// <p>Specifies the name of the parameter.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the parameter.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
@@ -133,18 +124,12 @@ impl ParameterBuilder {
         &self.parameter_name
     }
     /// <p>Specifies the value of the parameter.</p>
-    pub fn parameter_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the value of the parameter.</p>
-    pub fn set_parameter_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_value = input;
         self
     }
@@ -209,18 +194,12 @@ impl ParameterBuilder {
         &self.data_type
     }
     /// <p>Specifies the valid range of values for the parameter.</p>
-    pub fn allowed_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the valid range of values for the parameter.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_values = input;
         self
     }
@@ -243,18 +222,12 @@ impl ParameterBuilder {
         &self.is_modifiable
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_engine_version = input;
         self
     }
@@ -268,10 +241,7 @@ impl ParameterBuilder {
         self
     }
     /// <p>Indicates when to apply parameter updates.</p>
-    pub fn set_apply_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplyMethod>,
-    ) -> Self {
+    pub fn set_apply_method(mut self, input: ::std::option::Option<crate::types::ApplyMethod>) -> Self {
         self.apply_method = input;
         self
     }
@@ -284,27 +254,19 @@ impl ParameterBuilder {
     /// To override the contents of this collection use [`set_supported_engine_modes`](Self::set_supported_engine_modes).
     ///
     /// <p>The valid DB engine modes.</p>
-    pub fn supported_engine_modes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_engine_modes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_engine_modes.unwrap_or_default();
         v.push(input.into());
         self.supported_engine_modes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The valid DB engine modes.</p>
-    pub fn set_supported_engine_modes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_engine_modes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_engine_modes = input;
         self
     }
     /// <p>The valid DB engine modes.</p>
-    pub fn get_supported_engine_modes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_engine_modes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_engine_modes
     }
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).

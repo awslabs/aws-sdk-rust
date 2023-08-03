@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteDbInstanceAutomatedBackupOutput`](crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupOutput) with field(s):
     ///   - [`db_instance_automated_backup(Option<DbInstanceAutomatedBackup>)`](crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupOutput::db_instance_automated_backup): <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     /// - On failure, responds with [`SdkError<DeleteDBInstanceAutomatedBackupError>`](crate::operation::delete_db_instance_automated_backup::DeleteDBInstanceAutomatedBackupError)
-    pub fn delete_db_instance_automated_backup(&self) -> crate::operation::delete_db_instance_automated_backup::builders::DeleteDBInstanceAutomatedBackupFluentBuilder{
+    pub fn delete_db_instance_automated_backup(
+        &self,
+    ) -> crate::operation::delete_db_instance_automated_backup::builders::DeleteDBInstanceAutomatedBackupFluentBuilder {
         crate::operation::delete_db_instance_automated_backup::builders::DeleteDBInstanceAutomatedBackupFluentBuilder::new(self.handle.clone())
     }
 }

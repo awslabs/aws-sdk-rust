@@ -45,9 +45,7 @@ impl AnalyzeDocumentInput {
 
 /// A builder for [`AnalyzeDocumentInput`](crate::operation::analyze_document::AnalyzeDocumentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyzeDocumentInputBuilder {
     pub(crate) document: ::std::option::Option<crate::types::Document>,
     pub(crate) feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
@@ -84,17 +82,12 @@ impl AnalyzeDocumentInputBuilder {
         self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn set_feature_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
-    ) -> Self {
+    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
         self.feature_types = input;
         self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn get_feature_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
         &self.feature_types
     }
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
@@ -103,10 +96,7 @@ impl AnalyzeDocumentInputBuilder {
         self
     }
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
-    pub fn set_human_loop_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopConfig>,
-    ) -> Self {
+    pub fn set_human_loop_config(mut self, input: ::std::option::Option<crate::types::HumanLoopConfig>) -> Self {
         self.human_loop_config = input;
         self
     }
@@ -120,10 +110,7 @@ impl AnalyzeDocumentInputBuilder {
         self
     }
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
-    pub fn set_queries_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QueriesConfig>,
-    ) -> Self {
+    pub fn set_queries_config(mut self, input: ::std::option::Option<crate::types::QueriesConfig>) -> Self {
         self.queries_config = input;
         self
     }
@@ -134,10 +121,7 @@ impl AnalyzeDocumentInputBuilder {
     /// Consumes the builder and constructs a [`AnalyzeDocumentInput`](crate::operation::analyze_document::AnalyzeDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::analyze_document::AnalyzeDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::analyze_document::AnalyzeDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::analyze_document::AnalyzeDocumentInput {
             document: self.document,
             feature_types: self.feature_types,

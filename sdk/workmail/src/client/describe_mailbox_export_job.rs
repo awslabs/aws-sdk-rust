@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`start_time(Option<DateTime>)`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput::start_time): <p>The mailbox export job start timestamp.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput::end_time): <p>The mailbox export job end timestamp.</p>
     /// - On failure, responds with [`SdkError<DescribeMailboxExportJobError>`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError)
-    pub fn describe_mailbox_export_job(&self) -> crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobFluentBuilder{
+    pub fn describe_mailbox_export_job(&self) -> crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobFluentBuilder {
         crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobFluentBuilder::new(self.handle.clone())
     }
 }

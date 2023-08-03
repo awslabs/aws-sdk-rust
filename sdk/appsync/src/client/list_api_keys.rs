@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`api_keys(Option<Vec<ApiKey>>)`](crate::operation::list_api_keys::ListApiKeysOutput::api_keys): <p>The <code>ApiKey</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_api_keys::ListApiKeysOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListApiKeysError>`](crate::operation::list_api_keys::ListApiKeysError)
-    pub fn list_api_keys(
-        &self,
-    ) -> crate::operation::list_api_keys::builders::ListApiKeysFluentBuilder {
-        crate::operation::list_api_keys::builders::ListApiKeysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_api_keys(&self) -> crate::operation::list_api_keys::builders::ListApiKeysFluentBuilder {
+        crate::operation::list_api_keys::builders::ListApiKeysFluentBuilder::new(self.handle.clone())
     }
 }

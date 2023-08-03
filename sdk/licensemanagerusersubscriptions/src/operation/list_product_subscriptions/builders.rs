@@ -26,7 +26,7 @@ impl ListProductSubscriptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProductSubscriptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder,
+    inner: crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder,
 }
 impl ListProductSubscriptionsFluentBuilder {
     /// Creates a new `ListProductSubscriptions`.
@@ -37,10 +37,7 @@ impl ListProductSubscriptionsFluentBuilder {
         }
     }
     /// Access the ListProductSubscriptions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListProductSubscriptionsFluentBuilder {
             crate::operation::list_product_subscriptions::ListProductSubscriptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_product_subscriptions::ListProductSubscriptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListProductSubscriptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListProductSubscriptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_product_subscriptions::ListProductSubscriptionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListProductSubscriptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_product_subscriptions::ListProductSubscriptionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl ListProductSubscriptionsFluentBuilder {
             crate::operation::list_product_subscriptions::ListProductSubscriptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_product_subscriptions::ListProductSubscriptionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_product_subscriptions::paginator::ListProductSubscriptionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_product_subscriptions::paginator::ListProductSubscriptionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_product_subscriptions::paginator::ListProductSubscriptionsPaginator {
         crate::operation::list_product_subscriptions::paginator::ListProductSubscriptionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the user-based subscription product.</p>
@@ -152,10 +135,7 @@ impl ListProductSubscriptionsFluentBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }
@@ -187,10 +167,7 @@ impl ListProductSubscriptionsFluentBuilder {
         self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

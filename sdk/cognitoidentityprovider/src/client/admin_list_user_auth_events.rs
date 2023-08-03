@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`auth_events(Option<Vec<AuthEventType>>)`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput::auth_events): <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput::next_token): <p>A pagination token.</p>
     /// - On failure, responds with [`SdkError<AdminListUserAuthEventsError>`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError)
-    pub fn admin_list_user_auth_events(
-        &self,
-    ) -> crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder
-    {
+    pub fn admin_list_user_auth_events(&self) -> crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder {
         crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::new(self.handle.clone())
     }
 }

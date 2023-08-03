@@ -39,13 +39,7 @@
 /// Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DolbyVisionLevel6Mode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DolbyVisionLevel6Mode {
             "PASSTHROUGH" => DolbyVisionLevel6Mode::Passthrough,
             "RECALCULATE" => DolbyVisionLevel6Mode::Recalculate,
             "SPECIFY" => DolbyVisionLevel6Mode::Specify,
-            other => DolbyVisionLevel6Mode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DolbyVisionLevel6Mode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

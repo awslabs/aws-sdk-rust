@@ -51,9 +51,7 @@ impl GetDocumentAnalysisFluentBuilder {
         }
     }
     /// Access the GetDocumentAnalysis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_document_analysis::builders::GetDocumentAnalysisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_document_analysis::builders::GetDocumentAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +63,7 @@ impl GetDocumentAnalysisFluentBuilder {
             crate::operation::get_document_analysis::GetDocumentAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_document_analysis::GetDocumentAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_document_analysis::GetDocumentAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +73,7 @@ impl GetDocumentAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +82,7 @@ impl GetDocumentAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_document_analysis::GetDocumentAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_document_analysis::GetDocumentAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_document_analysis::GetDocumentAnalysisError>,
     > {
         let op = self
             .inner
@@ -114,9 +105,7 @@ impl GetDocumentAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_document_analysis::GetDocumentAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_document_analysis::GetDocumentAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_document_analysis::GetDocumentAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +119,7 @@ impl GetDocumentAnalysisFluentBuilder {
             crate::operation::get_document_analysis::GetDocumentAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_document_analysis::GetDocumentAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_document_analysis::GetDocumentAnalysisError>,
     > {
         self.customize_middleware().await
     }

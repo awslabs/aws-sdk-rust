@@ -36,18 +36,14 @@ impl UpdateOutpostResolverInput {
 }
 impl UpdateOutpostResolverInput {
     /// Creates a new builder-style object to manufacture [`UpdateOutpostResolverInput`](crate::operation::update_outpost_resolver::UpdateOutpostResolverInput).
-    pub fn builder(
-    ) -> crate::operation::update_outpost_resolver::builders::UpdateOutpostResolverInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_outpost_resolver::builders::UpdateOutpostResolverInputBuilder {
         crate::operation::update_outpost_resolver::builders::UpdateOutpostResolverInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOutpostResolverInput`](crate::operation::update_outpost_resolver::UpdateOutpostResolverInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOutpostResolverInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -98,18 +94,12 @@ impl UpdateOutpostResolverInputBuilder {
         &self.instance_count
     }
     /// <p> Amazon EC2 instance type. </p>
-    pub fn preferred_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Amazon EC2 instance type. </p>
-    pub fn set_preferred_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_instance_type = input;
         self
     }
@@ -120,17 +110,13 @@ impl UpdateOutpostResolverInputBuilder {
     /// Consumes the builder and constructs a [`UpdateOutpostResolverInput`](crate::operation::update_outpost_resolver::UpdateOutpostResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_outpost_resolver::UpdateOutpostResolverInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_outpost_resolver::UpdateOutpostResolverInput {
-                id: self.id,
-                name: self.name,
-                instance_count: self.instance_count,
-                preferred_instance_type: self.preferred_instance_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_outpost_resolver::UpdateOutpostResolverInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_outpost_resolver::UpdateOutpostResolverInput {
+            id: self.id,
+            name: self.name,
+            instance_count: self.instance_count,
+            preferred_instance_type: self.preferred_instance_type,
+        })
     }
 }

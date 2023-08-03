@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`at_blockchain_instant(Option<BlockchainInstant>)`](crate::operation::get_token_balance::GetTokenBalanceOutput::at_blockchain_instant): <p>The container for time.</p>
     ///   - [`last_updated_time(Option<BlockchainInstant>)`](crate::operation::get_token_balance::GetTokenBalanceOutput::last_updated_time): <p>The container for time.</p>
     /// - On failure, responds with [`SdkError<GetTokenBalanceError>`](crate::operation::get_token_balance::GetTokenBalanceError)
-    pub fn get_token_balance(
-        &self,
-    ) -> crate::operation::get_token_balance::builders::GetTokenBalanceFluentBuilder {
-        crate::operation::get_token_balance::builders::GetTokenBalanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_token_balance(&self) -> crate::operation::get_token_balance::builders::GetTokenBalanceFluentBuilder {
+        crate::operation::get_token_balance::builders::GetTokenBalanceFluentBuilder::new(self.handle.clone())
     }
 }

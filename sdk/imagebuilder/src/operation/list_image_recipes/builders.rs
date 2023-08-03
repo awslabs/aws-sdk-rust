@@ -10,10 +10,7 @@ impl ListImageRecipesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_image_recipes::ListImageRecipesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_recipes::ListImageRecipesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_recipes::ListImageRecipesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_image_recipes();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListImageRecipesFluentBuilder {
         }
     }
     /// Access the ListImageRecipes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_image_recipes::builders::ListImageRecipesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_image_recipes::builders::ListImageRecipesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListImageRecipesFluentBuilder {
             crate::operation::list_image_recipes::ListImageRecipes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_recipes::ListImageRecipesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_recipes::ListImageRecipesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListImageRecipesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListImageRecipesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_image_recipes::ListImageRecipesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_recipes::ListImageRecipesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_recipes::ListImageRecipesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListImageRecipesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_image_recipes::ListImageRecipesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_recipes::ListImageRecipesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_recipes::ListImageRecipesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListImageRecipesFluentBuilder {
             crate::operation::list_image_recipes::ListImageRecipes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_recipes::ListImageRecipesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_recipes::ListImageRecipesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator {
-        crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator {
+        crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator::new(self.handle, self.inner)
     }
     /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
@@ -167,10 +146,7 @@ impl ListImageRecipesFluentBuilder {
     /// <li> <p> <code>parentImage</code> </p> </li>
     /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

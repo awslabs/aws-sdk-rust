@@ -26,7 +26,7 @@ impl DescribeAvailablePatchesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAvailablePatchesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_available_patches::builders::DescribeAvailablePatchesInputBuilder,
+    inner: crate::operation::describe_available_patches::builders::DescribeAvailablePatchesInputBuilder,
 }
 impl DescribeAvailablePatchesFluentBuilder {
     /// Creates a new `DescribeAvailablePatches`.
@@ -37,10 +37,7 @@ impl DescribeAvailablePatchesFluentBuilder {
         }
     }
     /// Access the DescribeAvailablePatches as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_available_patches::builders::DescribeAvailablePatchesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_available_patches::builders::DescribeAvailablePatchesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeAvailablePatchesFluentBuilder {
             crate::operation::describe_available_patches::DescribeAvailablePatches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_available_patches::DescribeAvailablePatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_available_patches::DescribeAvailablePatchesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeAvailablePatchesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeAvailablePatchesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_available_patches::DescribeAvailablePatchesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_available_patches::DescribeAvailablePatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_available_patches::DescribeAvailablePatchesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeAvailablePatchesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_available_patches::DescribeAvailablePatchesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_available_patches::DescribeAvailablePatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_available_patches::DescribeAvailablePatchesError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl DescribeAvailablePatchesFluentBuilder {
             crate::operation::describe_available_patches::DescribeAvailablePatches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_available_patches::DescribeAvailablePatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_available_patches::DescribeAvailablePatchesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_available_patches::paginator::DescribeAvailablePatchesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_available_patches::paginator::DescribeAvailablePatchesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_available_patches::paginator::DescribeAvailablePatchesPaginator {
         crate::operation::describe_available_patches::paginator::DescribeAvailablePatchesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -202,10 +185,7 @@ impl DescribeAvailablePatchesFluentBuilder {
     /// <li> <p> <b> <code>CVE_ID</code> </b> </p> <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> </p> </li>
     /// <li> <p> <b> <code>BUGZILLA_ID</code> </b> </p> <p>Sample values: <code>1463241</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -240,9 +220,7 @@ impl DescribeAvailablePatchesFluentBuilder {
     /// <li> <p> <b> <code>CVE_ID</code> </b> </p> <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> </p> </li>
     /// <li> <p> <b> <code>BUGZILLA_ID</code> </b> </p> <p>Sample values: <code>1463241</code> </p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of patches to return (per page).</p>

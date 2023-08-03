@@ -15,18 +15,14 @@ impl DeleteBatchPredictionJobInput {
 }
 impl DeleteBatchPredictionJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionJobInput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput).
-    pub fn builder(
-    ) -> crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobInputBuilder {
         crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBatchPredictionJobInput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBatchPredictionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteBatchPredictionJobInputBuilder {
         crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput { job_id: self.job_id })
     }
 }

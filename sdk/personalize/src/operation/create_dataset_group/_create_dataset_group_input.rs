@@ -43,17 +43,14 @@ impl CreateDatasetGroupInput {
 }
 impl CreateDatasetGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetGroupInput`](crate::operation::create_dataset_group::CreateDatasetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_dataset_group::builders::CreateDatasetGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_dataset_group::builders::CreateDatasetGroupInputBuilder {
         crate::operation::create_dataset_group::builders::CreateDatasetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDatasetGroupInput`](crate::operation::create_dataset_group::CreateDatasetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatasetGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -130,10 +127,7 @@ impl CreateDatasetGroupInputBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -144,18 +138,13 @@ impl CreateDatasetGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetGroupInput`](crate::operation::create_dataset_group::CreateDatasetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dataset_group::CreateDatasetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_dataset_group::CreateDatasetGroupInput {
-                name: self.name,
-                role_arn: self.role_arn,
-                kms_key_arn: self.kms_key_arn,
-                domain: self.domain,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_dataset_group::CreateDatasetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_dataset_group::CreateDatasetGroupInput {
+            name: self.name,
+            role_arn: self.role_arn,
+            kms_key_arn: self.kms_key_arn,
+            domain: self.domain,
+            tags: self.tags,
+        })
     }
 }

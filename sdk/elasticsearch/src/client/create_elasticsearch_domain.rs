@@ -22,7 +22,7 @@ impl super::Client {
     /// - On success, responds with [`CreateElasticsearchDomainOutput`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput) with field(s):
     ///   - [`domain_status(Option<ElasticsearchDomainStatus>)`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput::domain_status): <p>The status of the newly created Elasticsearch domain. </p>
     /// - On failure, responds with [`SdkError<CreateElasticsearchDomainError>`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainError)
-    pub fn create_elasticsearch_domain(&self) -> crate::operation::create_elasticsearch_domain::builders::CreateElasticsearchDomainFluentBuilder{
+    pub fn create_elasticsearch_domain(&self) -> crate::operation::create_elasticsearch_domain::builders::CreateElasticsearchDomainFluentBuilder {
         crate::operation::create_elasticsearch_domain::builders::CreateElasticsearchDomainFluentBuilder::new(self.handle.clone())
     }
 }

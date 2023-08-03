@@ -10,10 +10,7 @@ impl UpdateTestSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_test_set::UpdateTestSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_test_set::UpdateTestSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_test_set::UpdateTestSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_test_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateTestSetFluentBuilder {
         }
     }
     /// Access the UpdateTestSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_test_set::builders::UpdateTestSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_test_set::builders::UpdateTestSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateTestSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl UpdateTestSetFluentBuilder {
         self.inner.get_test_set_id()
     }
     /// <p>The new test set name.</p>
-    pub fn test_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.test_set_name(input.into());
         self
     }
     /// <p>The new test set name.</p>
-    pub fn set_test_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_test_set_name(input);
         self
     }

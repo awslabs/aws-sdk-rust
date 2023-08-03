@@ -10,10 +10,7 @@ impl DeleteLiveSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_live_source::DeleteLiveSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_live_source::DeleteLiveSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_live_source::DeleteLiveSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_live_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteLiveSourceFluentBuilder {
         }
     }
     /// Access the DeleteLiveSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_live_source::builders::DeleteLiveSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_live_source::builders::DeleteLiveSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteLiveSourceFluentBuilder {
             crate::operation::delete_live_source::DeleteLiveSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_live_source::DeleteLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_live_source::DeleteLiveSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteLiveSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteLiveSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_live_source::DeleteLiveSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_live_source::DeleteLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_live_source::DeleteLiveSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteLiveSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_live_source::DeleteLiveSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_live_source::DeleteLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_live_source::DeleteLiveSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteLiveSourceFluentBuilder {
             crate::operation::delete_live_source::DeleteLiveSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_live_source::DeleteLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_live_source::DeleteLiveSourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.live_source_name(input.into());
         self
     }
     /// <p>The name of the live source.</p>
-    pub fn set_live_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_live_source_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl DeleteLiveSourceFluentBuilder {
         self.inner.get_live_source_name()
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }

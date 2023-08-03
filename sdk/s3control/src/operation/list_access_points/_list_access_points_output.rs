@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAccessPointsOutput {
 }
 impl ListAccessPointsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPointsOutput`](crate::operation::list_access_points::ListAccessPointsOutput).
-    pub fn builder() -> crate::operation::list_access_points::builders::ListAccessPointsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_access_points::builders::ListAccessPointsOutputBuilder {
         crate::operation::list_access_points::builders::ListAccessPointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPointsOutput`](crate::operation::list_access_points::ListAccessPointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPointsOutputBuilder {
     pub(crate) access_point_list: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListAccessPointsOutputBuilder {
         self
     }
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
-    pub fn set_access_point_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
-    ) -> Self {
+    pub fn set_access_point_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>) -> Self {
         self.access_point_list = input;
         self
     }
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
-    pub fn get_access_point_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>> {
+    pub fn get_access_point_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>> {
         &self.access_point_list
     }
     /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>

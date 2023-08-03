@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetPipelineExecutionOutput {
 }
 impl GetPipelineExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetPipelineExecutionOutput`](crate::operation::get_pipeline_execution::GetPipelineExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_pipeline_execution::builders::GetPipelineExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::get_pipeline_execution::builders::GetPipelineExecutionOutputBuilder {
         crate::operation::get_pipeline_execution::builders::GetPipelineExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPipelineExecutionOutput`](crate::operation::get_pipeline_execution::GetPipelineExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPipelineExecutionOutputBuilder {
     pub(crate) pipeline_execution: ::std::option::Option<crate::types::PipelineExecution>,
     _request_id: Option<String>,
@@ -44,17 +41,12 @@ impl GetPipelineExecutionOutputBuilder {
         self
     }
     /// <p>Represents information about the execution of a pipeline.</p>
-    pub fn set_pipeline_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineExecution>,
-    ) -> Self {
+    pub fn set_pipeline_execution(mut self, input: ::std::option::Option<crate::types::PipelineExecution>) -> Self {
         self.pipeline_execution = input;
         self
     }
     /// <p>Represents information about the execution of a pipeline.</p>
-    pub fn get_pipeline_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipelineExecution> {
+    pub fn get_pipeline_execution(&self) -> &::std::option::Option<crate::types::PipelineExecution> {
         &self.pipeline_execution
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

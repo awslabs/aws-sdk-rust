@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for AttachNetworkInterfaceOutput {
 }
 impl AttachNetworkInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`AttachNetworkInterfaceOutput`](crate::operation::attach_network_interface::AttachNetworkInterfaceOutput).
-    pub fn builder(
-    ) -> crate::operation::attach_network_interface::builders::AttachNetworkInterfaceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_network_interface::builders::AttachNetworkInterfaceOutputBuilder {
         crate::operation::attach_network_interface::builders::AttachNetworkInterfaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachNetworkInterfaceOutput`](crate::operation::attach_network_interface::AttachNetworkInterfaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachNetworkInterfaceOutputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_card_index: ::std::option::Option<i32>,
@@ -48,18 +44,12 @@ pub struct AttachNetworkInterfaceOutputBuilder {
 }
 impl AttachNetworkInterfaceOutputBuilder {
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }

@@ -39,13 +39,7 @@
 /// <p>The status of a request to retrieve occurrences of sensitive data reported by a finding. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RevealRequestStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for RevealRequestStatus {
             "ERROR" => RevealRequestStatus::Error,
             "PROCESSING" => RevealRequestStatus::Processing,
             "SUCCESS" => RevealRequestStatus::Success,
-            other => RevealRequestStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RevealRequestStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

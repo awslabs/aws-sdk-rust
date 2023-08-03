@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`confirmation_token(impl ::std::convert::Into<String>)`](crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationFluentBuilder::confirmation_token) / [`set_confirmation_token(Option<String>)`](crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationFluentBuilder::set_confirmation_token): <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
     /// - On success, responds with [`ConfirmTopicRuleDestinationOutput`](crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput)
     /// - On failure, responds with [`SdkError<ConfirmTopicRuleDestinationError>`](crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError)
-    pub fn confirm_topic_rule_destination(&self) -> crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationFluentBuilder{
+    pub fn confirm_topic_rule_destination(
+        &self,
+    ) -> crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationFluentBuilder {
         crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationFluentBuilder::new(self.handle.clone())
     }
 }

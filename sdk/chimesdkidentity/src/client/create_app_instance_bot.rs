@@ -12,12 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAppInstanceBotOutput`](crate::operation::create_app_instance_bot::CreateAppInstanceBotOutput) with field(s):
     ///   - [`app_instance_bot_arn(Option<String>)`](crate::operation::create_app_instance_bot::CreateAppInstanceBotOutput::app_instance_bot_arn): <p>The ARN of the <code>AppinstanceBot</code>.</p>
     /// - On failure, responds with [`SdkError<CreateAppInstanceBotError>`](crate::operation::create_app_instance_bot::CreateAppInstanceBotError)
-    pub fn create_app_instance_bot(
-        &self,
-    ) -> crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotFluentBuilder
-    {
-        crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_app_instance_bot(&self) -> crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotFluentBuilder {
+        crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotFluentBuilder::new(self.handle.clone())
     }
 }

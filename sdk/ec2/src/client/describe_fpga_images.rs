@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`fpga_images(Option<Vec<FpgaImage>>)`](crate::operation::describe_fpga_images::DescribeFpgaImagesOutput::fpga_images): <p>Information about the FPGA images.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fpga_images::DescribeFpgaImagesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeFpgaImagesError>`](crate::operation::describe_fpga_images::DescribeFpgaImagesError)
-    pub fn describe_fpga_images(
-        &self,
-    ) -> crate::operation::describe_fpga_images::builders::DescribeFpgaImagesFluentBuilder {
-        crate::operation::describe_fpga_images::builders::DescribeFpgaImagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_fpga_images(&self) -> crate::operation::describe_fpga_images::builders::DescribeFpgaImagesFluentBuilder {
+        crate::operation::describe_fpga_images::builders::DescribeFpgaImagesFluentBuilder::new(self.handle.clone())
     }
 }

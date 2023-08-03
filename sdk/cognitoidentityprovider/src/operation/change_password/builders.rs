@@ -10,10 +10,7 @@ impl ChangePasswordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::change_password::ChangePasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_password::ChangePasswordError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_password::ChangePasswordError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.change_password();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ChangePasswordFluentBuilder {
         }
     }
     /// Access the ChangePassword as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::change_password::builders::ChangePasswordInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::change_password::builders::ChangePasswordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ChangePasswordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl ChangePasswordFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The old password.</p>
-    pub fn previous_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn previous_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.previous_password(input.into());
         self
     }
     /// <p>The old password.</p>
-    pub fn set_previous_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_previous_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_previous_password(input);
         self
     }
@@ -135,18 +121,12 @@ impl ChangePasswordFluentBuilder {
         self.inner.get_previous_password()
     }
     /// <p>The new password.</p>
-    pub fn proposed_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proposed_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.proposed_password(input.into());
         self
     }
     /// <p>The new password.</p>
-    pub fn set_proposed_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proposed_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_proposed_password(input);
         self
     }

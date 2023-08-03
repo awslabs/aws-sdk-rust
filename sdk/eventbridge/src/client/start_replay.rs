@@ -15,9 +15,7 @@ impl super::Client {
     ///   - [`state_reason(Option<String>)`](crate::operation::start_replay::StartReplayOutput::state_reason): <p>The reason that the replay is in the state.</p>
     ///   - [`replay_start_time(Option<DateTime>)`](crate::operation::start_replay::StartReplayOutput::replay_start_time): <p>The time at which the replay started.</p>
     /// - On failure, responds with [`SdkError<StartReplayError>`](crate::operation::start_replay::StartReplayError)
-    pub fn start_replay(
-        &self,
-    ) -> crate::operation::start_replay::builders::StartReplayFluentBuilder {
+    pub fn start_replay(&self) -> crate::operation::start_replay::builders::StartReplayFluentBuilder {
         crate::operation::start_replay::builders::StartReplayFluentBuilder::new(self.handle.clone())
     }
 }

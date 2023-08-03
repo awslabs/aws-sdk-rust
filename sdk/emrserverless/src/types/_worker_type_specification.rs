@@ -23,9 +23,7 @@ impl WorkerTypeSpecification {
 
 /// A builder for [`WorkerTypeSpecification`](crate::types::WorkerTypeSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkerTypeSpecificationBuilder {
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
 }
@@ -36,17 +34,12 @@ impl WorkerTypeSpecificationBuilder {
         self
     }
     /// <p>The image configuration for a worker type.</p>
-    pub fn set_image_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageConfiguration>,
-    ) -> Self {
+    pub fn set_image_configuration(mut self, input: ::std::option::Option<crate::types::ImageConfiguration>) -> Self {
         self.image_configuration = input;
         self
     }
     /// <p>The image configuration for a worker type.</p>
-    pub fn get_image_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageConfiguration> {
+    pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfiguration> {
         &self.image_configuration
     }
     /// Consumes the builder and constructs a [`WorkerTypeSpecification`](crate::types::WorkerTypeSpecification).

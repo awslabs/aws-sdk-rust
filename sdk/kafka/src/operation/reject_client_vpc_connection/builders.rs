@@ -26,7 +26,7 @@ impl RejectClientVpcConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RejectClientVpcConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder,
+    inner: crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder,
 }
 impl RejectClientVpcConnectionFluentBuilder {
     /// Creates a new `RejectClientVpcConnection`.
@@ -37,7 +37,7 @@ impl RejectClientVpcConnectionFluentBuilder {
         }
     }
     /// Access the RejectClientVpcConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RejectClientVpcConnectionFluentBuilder {
             crate::operation::reject_client_vpc_connection::RejectClientVpcConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RejectClientVpcConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RejectClientVpcConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RejectClientVpcConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RejectClientVpcConnectionFluentBuilder {
             crate::operation::reject_client_vpc_connection::RejectClientVpcConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl RejectClientVpcConnectionFluentBuilder {
         self.inner.get_cluster_arn()
     }
     /// <p>The VPC connection ARN.</p>
-    pub fn vpc_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_connection_arn(input.into());
         self
     }
     /// <p>The VPC connection ARN.</p>
-    pub fn set_vpc_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_connection_arn(input);
         self
     }

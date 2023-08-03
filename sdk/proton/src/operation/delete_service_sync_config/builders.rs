@@ -26,8 +26,7 @@ impl DeleteServiceSyncConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceSyncConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder,
+    inner: crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder,
 }
 impl DeleteServiceSyncConfigFluentBuilder {
     /// Creates a new `DeleteServiceSyncConfig`.
@@ -38,10 +37,7 @@ impl DeleteServiceSyncConfigFluentBuilder {
         }
     }
     /// Access the DeleteServiceSyncConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteServiceSyncConfigFluentBuilder {
             crate::operation::delete_service_sync_config::DeleteServiceSyncConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteServiceSyncConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteServiceSyncConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteServiceSyncConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteServiceSyncConfigFluentBuilder {
             crate::operation::delete_service_sync_config::DeleteServiceSyncConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError>,
     > {
         self.customize_middleware().await
     }

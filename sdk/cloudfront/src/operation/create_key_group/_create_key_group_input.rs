@@ -22,9 +22,7 @@ impl CreateKeyGroupInput {
 
 /// A builder for [`CreateKeyGroupInput`](crate::operation::create_key_group::CreateKeyGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKeyGroupInputBuilder {
     pub(crate) key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
 }
@@ -35,10 +33,7 @@ impl CreateKeyGroupInputBuilder {
         self
     }
     /// <p>A key group configuration.</p>
-    pub fn set_key_group_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyGroupConfig>,
-    ) -> Self {
+    pub fn set_key_group_config(mut self, input: ::std::option::Option<crate::types::KeyGroupConfig>) -> Self {
         self.key_group_config = input;
         self
     }
@@ -49,10 +44,7 @@ impl CreateKeyGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateKeyGroupInput`](crate::operation::create_key_group::CreateKeyGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_key_group::CreateKeyGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_key_group::CreateKeyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key_group::CreateKeyGroupInput {
             key_group_config: self.key_group_config,
         })

@@ -41,22 +41,17 @@ impl AcceptAddressTransferInput {
 }
 impl AcceptAddressTransferInput {
     /// Creates a new builder-style object to manufacture [`AcceptAddressTransferInput`](crate::operation::accept_address_transfer::AcceptAddressTransferInput).
-    pub fn builder(
-    ) -> crate::operation::accept_address_transfer::builders::AcceptAddressTransferInputBuilder
-    {
+    pub fn builder() -> crate::operation::accept_address_transfer::builders::AcceptAddressTransferInputBuilder {
         crate::operation::accept_address_transfer::builders::AcceptAddressTransferInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptAddressTransferInput`](crate::operation::accept_address_transfer::AcceptAddressTransferInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptAddressTransferInputBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl AcceptAddressTransferInputBuilder {
@@ -98,10 +93,7 @@ impl AcceptAddressTransferInputBuilder {
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
@@ -112,9 +104,7 @@ impl AcceptAddressTransferInputBuilder {
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -134,16 +124,12 @@ impl AcceptAddressTransferInputBuilder {
     /// Consumes the builder and constructs a [`AcceptAddressTransferInput`](crate::operation::accept_address_transfer::AcceptAddressTransferInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_address_transfer::AcceptAddressTransferInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::accept_address_transfer::AcceptAddressTransferInput {
-                address: self.address,
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::accept_address_transfer::AcceptAddressTransferInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::accept_address_transfer::AcceptAddressTransferInput {
+            address: self.address,
+            tag_specifications: self.tag_specifications,
+            dry_run: self.dry_run,
+        })
     }
 }

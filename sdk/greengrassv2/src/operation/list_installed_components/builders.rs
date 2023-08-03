@@ -36,8 +36,7 @@ impl ListInstalledComponentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInstalledComponentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder,
+    inner: crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder,
 }
 impl ListInstalledComponentsFluentBuilder {
     /// Creates a new `ListInstalledComponents`.
@@ -48,10 +47,7 @@ impl ListInstalledComponentsFluentBuilder {
         }
     }
     /// Access the ListInstalledComponents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +59,7 @@ impl ListInstalledComponentsFluentBuilder {
             crate::operation::list_installed_components::ListInstalledComponents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_installed_components::ListInstalledComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_installed_components::ListInstalledComponentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +69,7 @@ impl ListInstalledComponentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +78,7 @@ impl ListInstalledComponentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_installed_components::ListInstalledComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_installed_components::ListInstalledComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_installed_components::ListInstalledComponentsError>,
     > {
         let op = self
             .inner
@@ -112,9 +101,7 @@ impl ListInstalledComponentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_installed_components::ListInstalledComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_installed_components::ListInstalledComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_installed_components::ListInstalledComponentsError>,
     > {
         self.send_middleware().await
     }
@@ -128,34 +115,23 @@ impl ListInstalledComponentsFluentBuilder {
             crate::operation::list_installed_components::ListInstalledComponents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_installed_components::ListInstalledComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_installed_components::ListInstalledComponentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_installed_components::paginator::ListInstalledComponentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_installed_components::paginator::ListInstalledComponentsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_installed_components::paginator::ListInstalledComponentsPaginator {
         crate::operation::list_installed_components::paginator::ListInstalledComponentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_device_thing_name(input.into());
         self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn set_core_device_thing_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_device_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_device_thing_name(input);
         self
     }
@@ -197,10 +173,7 @@ impl ListInstalledComponentsFluentBuilder {
     /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
     /// </ul>
     /// <p>Default: <code>ROOT</code> </p>
-    pub fn topology_filter(
-        mut self,
-        input: crate::types::InstalledComponentTopologyFilter,
-    ) -> Self {
+    pub fn topology_filter(mut self, input: crate::types::InstalledComponentTopologyFilter) -> Self {
         self.inner = self.inner.topology_filter(input);
         self
     }
@@ -210,10 +183,7 @@ impl ListInstalledComponentsFluentBuilder {
     /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
     /// </ul>
     /// <p>Default: <code>ROOT</code> </p>
-    pub fn set_topology_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::InstalledComponentTopologyFilter>,
-    ) -> Self {
+    pub fn set_topology_filter(mut self, input: ::std::option::Option<crate::types::InstalledComponentTopologyFilter>) -> Self {
         self.inner = self.inner.set_topology_filter(input);
         self
     }
@@ -223,9 +193,7 @@ impl ListInstalledComponentsFluentBuilder {
     /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
     /// </ul>
     /// <p>Default: <code>ROOT</code> </p>
-    pub fn get_topology_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstalledComponentTopologyFilter> {
+    pub fn get_topology_filter(&self) -> &::std::option::Option<crate::types::InstalledComponentTopologyFilter> {
         self.inner.get_topology_filter()
     }
 }

@@ -11,9 +11,7 @@ pub struct CreateBrowserSettingsInput {
     pub customer_managed_key: ::std::option::Option<::std::string::String>,
     /// <p>Additional encryption context of the browser settings.</p>
     #[doc(hidden)]
-    pub additional_encryption_context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
     #[doc(hidden)]
     pub browser_policy: ::std::option::Option<::std::string::String>,
@@ -32,11 +30,7 @@ impl CreateBrowserSettingsInput {
         self.customer_managed_key.as_deref()
     }
     /// <p>Additional encryption context of the browser settings.</p>
-    pub fn additional_encryption_context(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn additional_encryption_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_encryption_context.as_ref()
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
@@ -54,10 +48,7 @@ impl ::std::fmt::Debug for CreateBrowserSettingsInput {
         let mut formatter = f.debug_struct("CreateBrowserSettingsInput");
         formatter.field("tags", &self.tags);
         formatter.field("customer_managed_key", &self.customer_managed_key);
-        formatter.field(
-            "additional_encryption_context",
-            &self.additional_encryption_context,
-        );
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -65,9 +56,7 @@ impl ::std::fmt::Debug for CreateBrowserSettingsInput {
 }
 impl CreateBrowserSettingsInput {
     /// Creates a new builder-style object to manufacture [`CreateBrowserSettingsInput`](crate::operation::create_browser_settings::CreateBrowserSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::create_browser_settings::builders::CreateBrowserSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_browser_settings::builders::CreateBrowserSettingsInputBuilder {
         crate::operation::create_browser_settings::builders::CreateBrowserSettingsInputBuilder::default()
     }
 }
@@ -78,9 +67,7 @@ impl CreateBrowserSettingsInput {
 pub struct CreateBrowserSettingsInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) customer_managed_key: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_encryption_context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) browser_policy: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -97,10 +84,7 @@ impl CreateBrowserSettingsInputBuilder {
         self
     }
     /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -109,18 +93,12 @@ impl CreateBrowserSettingsInputBuilder {
         &self.tags
     }
     /// <p>The custom managed key of the browser settings.</p>
-    pub fn customer_managed_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_managed_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_managed_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom managed key of the browser settings.</p>
-    pub fn set_customer_managed_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_managed_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_managed_key = input;
         self
     }
@@ -146,9 +124,7 @@ impl CreateBrowserSettingsInputBuilder {
     /// <p>Additional encryption context of the browser settings.</p>
     pub fn set_additional_encryption_context(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.additional_encryption_context = input;
         self
@@ -156,24 +132,16 @@ impl CreateBrowserSettingsInputBuilder {
     /// <p>Additional encryption context of the browser settings.</p>
     pub fn get_additional_encryption_context(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_encryption_context
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
-    pub fn browser_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn browser_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
-    pub fn set_browser_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_browser_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.browser_policy = input;
         self
     }
@@ -201,19 +169,15 @@ impl CreateBrowserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`CreateBrowserSettingsInput`](crate::operation::create_browser_settings::CreateBrowserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_browser_settings::CreateBrowserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_browser_settings::CreateBrowserSettingsInput {
-                tags: self.tags,
-                customer_managed_key: self.customer_managed_key,
-                additional_encryption_context: self.additional_encryption_context,
-                browser_policy: self.browser_policy,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_browser_settings::CreateBrowserSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_browser_settings::CreateBrowserSettingsInput {
+            tags: self.tags,
+            customer_managed_key: self.customer_managed_key,
+            additional_encryption_context: self.additional_encryption_context,
+            browser_policy: self.browser_policy,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateBrowserSettingsInputBuilder {
@@ -221,10 +185,7 @@ impl ::std::fmt::Debug for CreateBrowserSettingsInputBuilder {
         let mut formatter = f.debug_struct("CreateBrowserSettingsInputBuilder");
         formatter.field("tags", &self.tags);
         formatter.field("customer_managed_key", &self.customer_managed_key);
-        formatter.field(
-            "additional_encryption_context",
-            &self.additional_encryption_context,
-        );
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.finish()

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`device_remembered_status(DeviceRememberedStatusType)`](crate::operation::admin_update_device_status::builders::AdminUpdateDeviceStatusFluentBuilder::device_remembered_status) / [`set_device_remembered_status(Option<DeviceRememberedStatusType>)`](crate::operation::admin_update_device_status::builders::AdminUpdateDeviceStatusFluentBuilder::set_device_remembered_status): <p>The status indicating whether a device has been remembered or not.</p>
     /// - On success, responds with [`AdminUpdateDeviceStatusOutput`](crate::operation::admin_update_device_status::AdminUpdateDeviceStatusOutput)
     /// - On failure, responds with [`SdkError<AdminUpdateDeviceStatusError>`](crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError)
-    pub fn admin_update_device_status(
-        &self,
-    ) -> crate::operation::admin_update_device_status::builders::AdminUpdateDeviceStatusFluentBuilder
-    {
+    pub fn admin_update_device_status(&self) -> crate::operation::admin_update_device_status::builders::AdminUpdateDeviceStatusFluentBuilder {
         crate::operation::admin_update_device_status::builders::AdminUpdateDeviceStatusFluentBuilder::new(self.handle.clone())
     }
 }

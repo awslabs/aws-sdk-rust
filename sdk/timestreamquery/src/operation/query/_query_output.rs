@@ -56,9 +56,7 @@ impl QueryOutput {
 
 /// A builder for [`QueryOutput`](crate::operation::query::QueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -108,10 +106,7 @@ impl QueryOutputBuilder {
         self
     }
     /// <p> The result set rows returned by the query. </p>
-    pub fn set_rows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
-    ) -> Self {
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Row>>) -> Self {
         self.rows = input;
         self
     }
@@ -131,17 +126,12 @@ impl QueryOutputBuilder {
         self
     }
     /// <p> The column data types of the returned result set. </p>
-    pub fn set_column_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
-    ) -> Self {
+    pub fn set_column_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>) -> Self {
         self.column_info = input;
         self
     }
     /// <p> The column data types of the returned result set. </p>
-    pub fn get_column_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>> {
+    pub fn get_column_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>> {
         &self.column_info
     }
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
@@ -150,10 +140,7 @@ impl QueryOutputBuilder {
         self
     }
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
-    pub fn set_query_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStatus>,
-    ) -> Self {
+    pub fn set_query_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
         self.query_status = input;
         self
     }

@@ -10,10 +10,7 @@ impl ListGeoLocationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_geo_locations::ListGeoLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geo_locations::ListGeoLocationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geo_locations::ListGeoLocationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_geo_locations();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ListGeoLocationsFluentBuilder {
         }
     }
     /// Access the ListGeoLocations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_geo_locations::builders::ListGeoLocationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_geo_locations::builders::ListGeoLocationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl ListGeoLocationsFluentBuilder {
             crate::operation::list_geo_locations::ListGeoLocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geo_locations::ListGeoLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geo_locations::ListGeoLocationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl ListGeoLocationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl ListGeoLocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_geo_locations::ListGeoLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geo_locations::ListGeoLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geo_locations::ListGeoLocationsError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl ListGeoLocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_geo_locations::ListGeoLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geo_locations::ListGeoLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geo_locations::ListGeoLocationsError>,
     > {
         self.send_middleware().await
     }
@@ -119,27 +105,19 @@ impl ListGeoLocationsFluentBuilder {
             crate::operation::list_geo_locations::ListGeoLocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geo_locations::ListGeoLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geo_locations::ListGeoLocationsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The code for the continent with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p>
     /// <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.</p>
-    pub fn start_continent_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_continent_code(input.into());
         self
     }
     /// <p>The code for the continent with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p>
     /// <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.</p>
-    pub fn set_start_continent_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_continent_code(input);
         self
     }
@@ -149,18 +127,12 @@ impl ListGeoLocationsFluentBuilder {
         self.inner.get_start_continent_code()
     }
     /// <p>The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value in <code>startcountrycode</code> to return the next page of results.</p>
-    pub fn start_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_country_code(input.into());
         self
     }
     /// <p>The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value in <code>startcountrycode</code> to return the next page of results.</p>
-    pub fn set_start_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_country_code(input);
         self
     }
@@ -170,19 +142,13 @@ impl ListGeoLocationsFluentBuilder {
     }
     /// <p>The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.</p>
     /// <p>To list subdivisions (U.S. states), you must include both <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
-    pub fn start_subdivision_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_subdivision_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_subdivision_code(input.into());
         self
     }
     /// <p>The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.</p>
     /// <p>To list subdivisions (U.S. states), you must include both <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
-    pub fn set_start_subdivision_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_subdivision_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_subdivision_code(input);
         self
     }

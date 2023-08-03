@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`max_contacts(i32)`](crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsFluentBuilder::max_contacts) / [`set_max_contacts(Option<i32>)`](crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsFluentBuilder::set_max_contacts): <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
     /// - On success, responds with [`UpdateQueueMaxContactsOutput`](crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput)
     /// - On failure, responds with [`SdkError<UpdateQueueMaxContactsError>`](crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsError)
-    pub fn update_queue_max_contacts(
-        &self,
-    ) -> crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsFluentBuilder
-    {
+    pub fn update_queue_max_contacts(&self) -> crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsFluentBuilder {
         crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsFluentBuilder::new(self.handle.clone())
     }
 }

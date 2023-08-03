@@ -29,28 +29,19 @@ impl BatchWriteInput {
 
 /// A builder for [`BatchWriteInput`](crate::operation::batch_write::BatchWriteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchWriteInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>>,
 }
 impl BatchWriteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -70,26 +61,16 @@ impl BatchWriteInputBuilder {
         self
     }
     /// <p>A list of operations that are part of the batch.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>A list of operations that are part of the batch.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>> {
         &self.operations
     }
     /// Consumes the builder and constructs a [`BatchWriteInput`](crate::operation::batch_write::BatchWriteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_write::BatchWriteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_write::BatchWriteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_write::BatchWriteInput {
             directory_arn: self.directory_arn,
             operations: self.operations,

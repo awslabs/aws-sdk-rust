@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`type_info(Option<ActivityTypeInfo>)`](crate::operation::describe_activity_type::DescribeActivityTypeOutput::type_info): <p>General information about the activity type.</p>  <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>  <ul>   <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>   <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>  </ul>
     ///   - [`configuration(Option<ActivityTypeConfiguration>)`](crate::operation::describe_activity_type::DescribeActivityTypeOutput::configuration): <p>The configuration settings registered with the activity type.</p>
     /// - On failure, responds with [`SdkError<DescribeActivityTypeError>`](crate::operation::describe_activity_type::DescribeActivityTypeError)
-    pub fn describe_activity_type(
-        &self,
-    ) -> crate::operation::describe_activity_type::builders::DescribeActivityTypeFluentBuilder {
-        crate::operation::describe_activity_type::builders::DescribeActivityTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_activity_type(&self) -> crate::operation::describe_activity_type::builders::DescribeActivityTypeFluentBuilder {
+        crate::operation::describe_activity_type::builders::DescribeActivityTypeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListWorkflowTypesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_workflow_types::ListWorkflowTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_types::ListWorkflowTypesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_types::ListWorkflowTypesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_workflow_types();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl ListWorkflowTypesFluentBuilder {
         }
     }
     /// Access the ListWorkflowTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_workflow_types::builders::ListWorkflowTypesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_workflow_types::builders::ListWorkflowTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl ListWorkflowTypesFluentBuilder {
             crate::operation::list_workflow_types::ListWorkflowTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_types::ListWorkflowTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_types::ListWorkflowTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl ListWorkflowTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl ListWorkflowTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_workflow_types::ListWorkflowTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_types::ListWorkflowTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_types::ListWorkflowTypesError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl ListWorkflowTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_workflow_types::ListWorkflowTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_types::ListWorkflowTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_types::ListWorkflowTypesError>,
     > {
         self.send_middleware().await
     }
@@ -124,22 +110,15 @@ impl ListWorkflowTypesFluentBuilder {
             crate::operation::list_workflow_types::ListWorkflowTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_types::ListWorkflowTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_types::ListWorkflowTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator {
-        crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator {
+        crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the domain in which the workflow types have been registered.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,34 +154,23 @@ impl ListWorkflowTypesFluentBuilder {
         self
     }
     /// <p>Specifies the registration status of the workflow types to list.</p>
-    pub fn set_registration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.inner = self.inner.set_registration_status(input);
         self
     }
     /// <p>Specifies the registration status of the workflow types to list.</p>
-    pub fn get_registration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+    pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         self.inner.get_registration_status()
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

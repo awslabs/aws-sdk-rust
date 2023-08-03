@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateHumanTaskUiOutput`](crate::operation::create_human_task_ui::CreateHumanTaskUiOutput) with field(s):
     ///   - [`human_task_ui_arn(Option<String>)`](crate::operation::create_human_task_ui::CreateHumanTaskUiOutput::human_task_ui_arn): <p>The Amazon Resource Name (ARN) of the human review workflow user interface you create.</p>
     /// - On failure, responds with [`SdkError<CreateHumanTaskUiError>`](crate::operation::create_human_task_ui::CreateHumanTaskUiError)
-    pub fn create_human_task_ui(
-        &self,
-    ) -> crate::operation::create_human_task_ui::builders::CreateHumanTaskUiFluentBuilder {
-        crate::operation::create_human_task_ui::builders::CreateHumanTaskUiFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_human_task_ui(&self) -> crate::operation::create_human_task_ui::builders::CreateHumanTaskUiFluentBuilder {
+        crate::operation::create_human_task_ui::builders::CreateHumanTaskUiFluentBuilder::new(self.handle.clone())
     }
 }

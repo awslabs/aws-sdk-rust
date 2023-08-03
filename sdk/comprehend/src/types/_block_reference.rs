@@ -44,9 +44,7 @@ impl BlockReference {
 
 /// A builder for [`BlockReference`](crate::types::BlockReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlockReferenceBuilder {
     pub(crate) block_id: ::std::option::Option<::std::string::String>,
     pub(crate) begin_offset: ::std::option::Option<i32>,
@@ -108,17 +106,12 @@ impl BlockReferenceBuilder {
         self
     }
     /// <p>List of child blocks within this block.</p>
-    pub fn set_child_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChildBlock>>,
-    ) -> Self {
+    pub fn set_child_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChildBlock>>) -> Self {
         self.child_blocks = input;
         self
     }
     /// <p>List of child blocks within this block.</p>
-    pub fn get_child_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChildBlock>> {
+    pub fn get_child_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChildBlock>> {
         &self.child_blocks
     }
     /// Consumes the builder and constructs a [`BlockReference`](crate::types::BlockReference).

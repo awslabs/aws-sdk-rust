@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`filters(Option<Vec<FilterSummary>>)`](crate::operation::list_filters::ListFiltersOutput::filters): <p>A list of returned filters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_filters::ListFiltersOutput::next_token): <p>A token for getting the next set of filters (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListFiltersError>`](crate::operation::list_filters::ListFiltersError)
-    pub fn list_filters(
-        &self,
-    ) -> crate::operation::list_filters::builders::ListFiltersFluentBuilder {
+    pub fn list_filters(&self) -> crate::operation::list_filters::builders::ListFiltersFluentBuilder {
         crate::operation::list_filters::builders::ListFiltersFluentBuilder::new(self.handle.clone())
     }
 }

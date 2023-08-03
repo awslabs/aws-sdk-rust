@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEventStreamOutput`](crate::operation::delete_event_stream::DeleteEventStreamOutput) with field(s):
     ///   - [`event_stream(Option<EventStream>)`](crate::operation::delete_event_stream::DeleteEventStreamOutput::event_stream): <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     /// - On failure, responds with [`SdkError<DeleteEventStreamError>`](crate::operation::delete_event_stream::DeleteEventStreamError)
-    pub fn delete_event_stream(
-        &self,
-    ) -> crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder {
-        crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_event_stream(&self) -> crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder {
+        crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder::new(self.handle.clone())
     }
 }

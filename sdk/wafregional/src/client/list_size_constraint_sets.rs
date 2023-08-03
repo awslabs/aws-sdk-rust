@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput::next_marker): <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`size_constraint_sets(Option<Vec<SizeConstraintSetSummary>>)`](crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput::size_constraint_sets): <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListSizeConstraintSetsError>`](crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError)
-    pub fn list_size_constraint_sets(
-        &self,
-    ) -> crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsFluentBuilder
-    {
+    pub fn list_size_constraint_sets(&self) -> crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsFluentBuilder {
         crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsFluentBuilder::new(self.handle.clone())
     }
 }

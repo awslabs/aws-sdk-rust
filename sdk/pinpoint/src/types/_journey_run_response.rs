@@ -44,9 +44,7 @@ impl JourneyRunResponse {
 
 /// A builder for [`JourneyRunResponse`](crate::types::JourneyRunResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JourneyRunResponseBuilder {
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,
     pub(crate) last_update_time: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct JourneyRunResponseBuilder {
 }
 impl JourneyRunResponseBuilder {
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
-    pub fn creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
@@ -75,18 +67,12 @@ impl JourneyRunResponseBuilder {
         &self.creation_time
     }
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
-    pub fn last_update_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_update_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_update_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -114,10 +100,7 @@ impl JourneyRunResponseBuilder {
         self
     }
     /// <p>The current status of the journey run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyRunStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JourneyRunStatus>) -> Self {
         self.status = input;
         self
     }

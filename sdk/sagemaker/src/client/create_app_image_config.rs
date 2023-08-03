@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAppImageConfigOutput`](crate::operation::create_app_image_config::CreateAppImageConfigOutput) with field(s):
     ///   - [`app_image_config_arn(Option<String>)`](crate::operation::create_app_image_config::CreateAppImageConfigOutput::app_image_config_arn): <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
     /// - On failure, responds with [`SdkError<CreateAppImageConfigError>`](crate::operation::create_app_image_config::CreateAppImageConfigError)
-    pub fn create_app_image_config(
-        &self,
-    ) -> crate::operation::create_app_image_config::builders::CreateAppImageConfigFluentBuilder
-    {
-        crate::operation::create_app_image_config::builders::CreateAppImageConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_app_image_config(&self) -> crate::operation::create_app_image_config::builders::CreateAppImageConfigFluentBuilder {
+        crate::operation::create_app_image_config::builders::CreateAppImageConfigFluentBuilder::new(self.handle.clone())
     }
 }

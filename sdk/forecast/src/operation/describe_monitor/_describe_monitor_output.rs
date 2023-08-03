@@ -98,9 +98,7 @@ impl DescribeMonitorOutput {
 
 /// A builder for [`DescribeMonitorOutput`](crate::operation::describe_monitor::DescribeMonitorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMonitorOutputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
@@ -178,10 +176,7 @@ impl DescribeMonitorOutputBuilder {
         self
     }
     /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
-    pub fn set_last_evaluation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_evaluation_time = input;
         self
     }
@@ -190,18 +185,12 @@ impl DescribeMonitorOutputBuilder {
         &self.last_evaluation_time
     }
     /// <p>The state of the monitor's latest evaluation.</p>
-    pub fn last_evaluation_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_evaluation_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_evaluation_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the monitor's latest evaluation.</p>
-    pub fn set_last_evaluation_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_evaluation_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_evaluation_state = input;
         self
     }
@@ -243,10 +232,7 @@ impl DescribeMonitorOutputBuilder {
         self
     }
     /// <p>The timestamp for when the monitor resource was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -260,17 +246,12 @@ impl DescribeMonitorOutputBuilder {
         self
     }
     /// <p>The timestamp of the latest modification to the monitor.</p>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
     /// <p>The timestamp of the latest modification to the monitor.</p>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
@@ -279,17 +260,12 @@ impl DescribeMonitorOutputBuilder {
         self
     }
     /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
-    pub fn set_estimated_evaluation_time_remaining_in_minutes(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_estimated_evaluation_time_remaining_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_evaluation_time_remaining_in_minutes = input;
         self
     }
     /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
-    pub fn get_estimated_evaluation_time_remaining_in_minutes(
-        &self,
-    ) -> &::std::option::Option<i64> {
+    pub fn get_estimated_evaluation_time_remaining_in_minutes(&self) -> &::std::option::Option<i64> {
         &self.estimated_evaluation_time_remaining_in_minutes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -314,8 +290,7 @@ impl DescribeMonitorOutputBuilder {
             message: self.message,
             creation_time: self.creation_time,
             last_modification_time: self.last_modification_time,
-            estimated_evaluation_time_remaining_in_minutes: self
-                .estimated_evaluation_time_remaining_in_minutes,
+            estimated_evaluation_time_remaining_in_minutes: self.estimated_evaluation_time_remaining_in_minutes,
             _request_id: self._request_id,
         }
     }

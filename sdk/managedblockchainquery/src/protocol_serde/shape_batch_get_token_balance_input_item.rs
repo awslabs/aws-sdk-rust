@@ -18,10 +18,7 @@ pub fn ser_batch_get_token_balance_input_item(
     if let Some(var_5) = &input.at_blockchain_instant {
         #[allow(unused_mut)]
         let mut object_6 = object.key("atBlockchainInstant").start_object();
-        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

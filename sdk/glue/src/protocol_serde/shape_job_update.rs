@@ -15,10 +15,7 @@ pub fn ser_job_update(
     if let Some(var_4) = &input.execution_property {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ExecutionProperty").start_object();
-        crate::protocol_serde::shape_execution_property::ser_execution_property(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_execution_property::ser_execution_property(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.command {
@@ -50,10 +47,7 @@ pub fn ser_job_update(
     if let Some(var_16) = &input.connections {
         #[allow(unused_mut)]
         let mut object_17 = object.key("Connections").start_object();
-        crate::protocol_serde::shape_connections_list::ser_connections_list(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_connections_list::ser_connections_list(&mut object_17, var_16)?;
         object_17.finish();
     }
     if input.max_retries != 0 {
@@ -95,10 +89,7 @@ pub fn ser_job_update(
     if let Some(var_23) = &input.notification_property {
         #[allow(unused_mut)]
         let mut object_24 = object.key("NotificationProperty").start_object();
-        crate::protocol_serde::shape_notification_property::ser_notification_property(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_notification_property::ser_notification_property(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.glue_version {
@@ -123,10 +114,7 @@ pub fn ser_job_update(
     if let Some(var_32) = &input.source_control_details {
         #[allow(unused_mut)]
         let mut object_33 = object.key("SourceControlDetails").start_object();
-        crate::protocol_serde::shape_source_control_details::ser_source_control_details(
-            &mut object_33,
-            var_32,
-        )?;
+        crate::protocol_serde::shape_source_control_details::ser_source_control_details(&mut object_33, var_32)?;
         object_33.finish();
     }
     Ok(())

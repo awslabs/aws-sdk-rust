@@ -63,17 +63,14 @@ impl ::aws_http::request_id::RequestId for GetWirelessGatewayOutput {
 }
 impl GetWirelessGatewayOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayOutput`](crate::operation::get_wireless_gateway::GetWirelessGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::get_wireless_gateway::builders::GetWirelessGatewayOutputBuilder {
+    pub fn builder() -> crate::operation::get_wireless_gateway::builders::GetWirelessGatewayOutputBuilder {
         crate::operation::get_wireless_gateway::builders::GetWirelessGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayOutput`](crate::operation::get_wireless_gateway::GetWirelessGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -133,10 +130,7 @@ impl GetWirelessGatewayOutputBuilder {
         self
     }
     /// <p>Information about the wireless gateway.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanGateway>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanGateway>) -> Self {
         self.lo_ra_wan = input;
         self
     }

@@ -10,10 +10,7 @@ impl DeleteSafetyRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_safety_rule::DeleteSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_safety_rule::DeleteSafetyRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_safety_rule::DeleteSafetyRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_safety_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteSafetyRuleFluentBuilder {
         }
     }
     /// Access the DeleteSafetyRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_safety_rule::builders::DeleteSafetyRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_safety_rule::builders::DeleteSafetyRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteSafetyRuleFluentBuilder {
             crate::operation::delete_safety_rule::DeleteSafetyRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_safety_rule::DeleteSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_safety_rule::DeleteSafetyRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteSafetyRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteSafetyRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_safety_rule::DeleteSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_safety_rule::DeleteSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_safety_rule::DeleteSafetyRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteSafetyRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_safety_rule::DeleteSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_safety_rule::DeleteSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_safety_rule::DeleteSafetyRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteSafetyRuleFluentBuilder {
             crate::operation::delete_safety_rule::DeleteSafetyRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_safety_rule::DeleteSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_safety_rule::DeleteSafetyRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the safety rule.</p>
-    pub fn safety_rule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn safety_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.safety_rule_arn(input.into());
         self
     }
     /// <p>The ARN of the safety rule.</p>
-    pub fn set_safety_rule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_safety_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_safety_rule_arn(input);
         self
     }

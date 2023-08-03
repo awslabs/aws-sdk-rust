@@ -29,27 +29,19 @@ impl EnableAddOnInput {
 
 /// A builder for [`EnableAddOnInput`](crate::operation::enable_add_on::EnableAddOnInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAddOnInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) add_on_request: ::std::option::Option<crate::types::AddOnRequest>,
 }
 impl EnableAddOnInputBuilder {
     /// <p>The name of the source resource for which to enable or modify the add-on.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source resource for which to enable or modify the add-on.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -63,10 +55,7 @@ impl EnableAddOnInputBuilder {
         self
     }
     /// <p>An array of strings representing the add-on to enable or modify.</p>
-    pub fn set_add_on_request(
-        mut self,
-        input: ::std::option::Option<crate::types::AddOnRequest>,
-    ) -> Self {
+    pub fn set_add_on_request(mut self, input: ::std::option::Option<crate::types::AddOnRequest>) -> Self {
         self.add_on_request = input;
         self
     }
@@ -75,12 +64,7 @@ impl EnableAddOnInputBuilder {
         &self.add_on_request
     }
     /// Consumes the builder and constructs a [`EnableAddOnInput`](crate::operation::enable_add_on::EnableAddOnInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_add_on::EnableAddOnInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_add_on::EnableAddOnInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_add_on::EnableAddOnInput {
             resource_name: self.resource_name,
             add_on_request: self.add_on_request,

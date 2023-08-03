@@ -10,10 +10,7 @@ impl ListPullRequestsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_pull_requests::ListPullRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pull_requests::ListPullRequestsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pull_requests::ListPullRequestsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_pull_requests();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListPullRequestsFluentBuilder {
         }
     }
     /// Access the ListPullRequests as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_pull_requests::builders::ListPullRequestsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_pull_requests::builders::ListPullRequestsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListPullRequestsFluentBuilder {
             crate::operation::list_pull_requests::ListPullRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pull_requests::ListPullRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pull_requests::ListPullRequestsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListPullRequestsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListPullRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pull_requests::ListPullRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pull_requests::ListPullRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pull_requests::ListPullRequestsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListPullRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pull_requests::ListPullRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pull_requests::ListPullRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pull_requests::ListPullRequestsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListPullRequestsFluentBuilder {
             crate::operation::list_pull_requests::ListPullRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pull_requests::ListPullRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pull_requests::ListPullRequestsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator {
-        crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator {
+        crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the repository for which you want to list pull requests.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository for which you want to list pull requests.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -173,17 +146,12 @@ impl ListPullRequestsFluentBuilder {
         self
     }
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
-    pub fn set_pull_request_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequestStatusEnum>,
-    ) -> Self {
+    pub fn set_pull_request_status(mut self, input: ::std::option::Option<crate::types::PullRequestStatusEnum>) -> Self {
         self.inner = self.inner.set_pull_request_status(input);
         self
     }
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
-    pub fn get_pull_request_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
+    pub fn get_pull_request_status(&self) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
         self.inner.get_pull_request_status()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>

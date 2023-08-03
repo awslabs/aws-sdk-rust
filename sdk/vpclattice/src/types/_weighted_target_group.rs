@@ -30,27 +30,19 @@ impl WeightedTargetGroup {
 
 /// A builder for [`WeightedTargetGroup`](crate::types::WeightedTargetGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WeightedTargetGroupBuilder {
     pub(crate) target_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,
 }
 impl WeightedTargetGroupBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_identifier = input;
         self
     }

@@ -23,9 +23,7 @@ impl CodeSource {
 
 /// A builder for [`CodeSource`](crate::types::CodeSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeSourceBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::S3Location>,
 }

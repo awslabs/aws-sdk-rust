@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteComponentTypeOutput`](crate::operation::delete_component_type::DeleteComponentTypeOutput) with field(s):
     ///   - [`state(Option<State>)`](crate::operation::delete_component_type::DeleteComponentTypeOutput::state): <p>The current state of the component type to be deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteComponentTypeError>`](crate::operation::delete_component_type::DeleteComponentTypeError)
-    pub fn delete_component_type(
-        &self,
-    ) -> crate::operation::delete_component_type::builders::DeleteComponentTypeFluentBuilder {
-        crate::operation::delete_component_type::builders::DeleteComponentTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_component_type(&self) -> crate::operation::delete_component_type::builders::DeleteComponentTypeFluentBuilder {
+        crate::operation::delete_component_type::builders::DeleteComponentTypeFluentBuilder::new(self.handle.clone())
     }
 }

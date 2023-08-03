@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`parameters(Option<Vec<Parameter>>)`](crate::operation::describe_db_parameters::DescribeDbParametersOutput::parameters): <p>A list of <code>Parameter</code> values.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_parameters::DescribeDbParametersOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeDBParametersError>`](crate::operation::describe_db_parameters::DescribeDBParametersError)
-    pub fn describe_db_parameters(
-        &self,
-    ) -> crate::operation::describe_db_parameters::builders::DescribeDBParametersFluentBuilder {
-        crate::operation::describe_db_parameters::builders::DescribeDBParametersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_db_parameters(&self) -> crate::operation::describe_db_parameters::builders::DescribeDBParametersFluentBuilder {
+        crate::operation::describe_db_parameters::builders::DescribeDBParametersFluentBuilder::new(self.handle.clone())
     }
 }

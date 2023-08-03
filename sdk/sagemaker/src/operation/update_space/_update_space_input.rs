@@ -36,9 +36,7 @@ impl UpdateSpaceInput {
 
 /// A builder for [`UpdateSpaceInput`](crate::operation::update_space::UpdateSpaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSpaceInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl UpdateSpaceInputBuilder {
         self
     }
     /// <p>A collection of space settings.</p>
-    pub fn set_space_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SpaceSettings>,
-    ) -> Self {
+    pub fn set_space_settings(mut self, input: ::std::option::Option<crate::types::SpaceSettings>) -> Self {
         self.space_settings = input;
         self
     }
@@ -91,12 +86,7 @@ impl UpdateSpaceInputBuilder {
         &self.space_settings
     }
     /// Consumes the builder and constructs a [`UpdateSpaceInput`](crate::operation::update_space::UpdateSpaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_space::UpdateSpaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_space::UpdateSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_space::UpdateSpaceInput {
             domain_id: self.domain_id,
             space_name: self.space_name,

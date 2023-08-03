@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`sip_rule(Option<SipRule>)`](crate::operation::get_sip_rule::GetSipRuleOutput::sip_rule): <p>The SIP rule details.</p>
     /// - On failure, responds with [`SdkError<GetSipRuleError>`](crate::operation::get_sip_rule::GetSipRuleError)
     #[deprecated(note = "Replaced by GetSipRule in the Amazon Chime SDK Voice Namespace")]
-    pub fn get_sip_rule(
-        &self,
-    ) -> crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder {
+    pub fn get_sip_rule(&self) -> crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder {
         crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder::new(self.handle.clone())
     }
 }

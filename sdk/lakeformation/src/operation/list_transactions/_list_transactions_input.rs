@@ -36,17 +36,14 @@ impl ListTransactionsInput {
 }
 impl ListTransactionsInput {
     /// Creates a new builder-style object to manufacture [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
-    pub fn builder() -> crate::operation::list_transactions::builders::ListTransactionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_transactions::builders::ListTransactionsInputBuilder {
         crate::operation::list_transactions::builders::ListTransactionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransactionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) status_filter: ::std::option::Option<crate::types::TransactionStatusFilter>,
@@ -74,17 +71,12 @@ impl ListTransactionsInputBuilder {
         self
     }
     /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TransactionStatusFilter>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::TransactionStatusFilter>) -> Self {
         self.status_filter = input;
         self
     }
     /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
-    pub fn get_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransactionStatusFilter> {
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::TransactionStatusFilter> {
         &self.status_filter
     }
     /// <p>The maximum number of transactions to return in a single call.</p>
@@ -118,10 +110,7 @@ impl ListTransactionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_transactions::ListTransactionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_transactions::ListTransactionsInput {
             catalog_id: self.catalog_id,
             status_filter: self.status_filter,

@@ -30,9 +30,7 @@ impl Stage {
 
 /// A builder for [`Stage`](crate::types::Stage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StageBuilder {
     pub(crate) duration_in_minutes: ::std::option::Option<i32>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
@@ -64,10 +62,7 @@ impl StageBuilder {
         self
     }
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_world_template::CreateWorldTemplateOutput::name): <p>The name of the world template.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_world_template::CreateWorldTemplateOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     /// - On failure, responds with [`SdkError<CreateWorldTemplateError>`](crate::operation::create_world_template::CreateWorldTemplateError)
-    pub fn create_world_template(
-        &self,
-    ) -> crate::operation::create_world_template::builders::CreateWorldTemplateFluentBuilder {
-        crate::operation::create_world_template::builders::CreateWorldTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_world_template(&self) -> crate::operation::create_world_template::builders::CreateWorldTemplateFluentBuilder {
+        crate::operation::create_world_template::builders::CreateWorldTemplateFluentBuilder::new(self.handle.clone())
     }
 }

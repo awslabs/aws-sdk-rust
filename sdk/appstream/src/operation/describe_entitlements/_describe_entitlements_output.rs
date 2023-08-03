@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeEntitlementsOutput {
 }
 impl DescribeEntitlementsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntitlementsOutput`](crate::operation::describe_entitlements::DescribeEntitlementsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_entitlements::builders::DescribeEntitlementsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_entitlements::builders::DescribeEntitlementsOutputBuilder {
         crate::operation::describe_entitlements::builders::DescribeEntitlementsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEntitlementsOutput`](crate::operation::describe_entitlements::DescribeEntitlementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntitlementsOutputBuilder {
     pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeEntitlementsOutputBuilder {
         self
     }
     /// <p>The entitlements.</p>
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>) -> Self {
         self.entitlements = input;
         self
     }
     /// <p>The entitlements.</p>
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
         &self.entitlements
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>

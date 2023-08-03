@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`field_id(Option<String>)`](crate::operation::create_field::CreateFieldOutput::field_id): <p>The unique identifier of a field.</p>
     ///   - [`field_arn(Option<String>)`](crate::operation::create_field::CreateFieldOutput::field_arn): <p>The Amazon Resource Name (ARN) of the field.</p>
     /// - On failure, responds with [`SdkError<CreateFieldError>`](crate::operation::create_field::CreateFieldError)
-    pub fn create_field(
-        &self,
-    ) -> crate::operation::create_field::builders::CreateFieldFluentBuilder {
+    pub fn create_field(&self) -> crate::operation::create_field::builders::CreateFieldFluentBuilder {
         crate::operation::create_field::builders::CreateFieldFluentBuilder::new(self.handle.clone())
     }
 }

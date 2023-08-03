@@ -5,8 +5,7 @@
 pub struct DescribeModelVersionsOutput {
     /// <p>The model version details.</p>
     #[doc(hidden)]
-    pub model_version_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionDetail>>,
+    pub model_version_details: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionDetail>>,
     /// <p>The next token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeModelVersionsOutput {
 }
 impl DescribeModelVersionsOutput {
     /// <p>The model version details.</p>
-    pub fn model_version_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ModelVersionDetail]> {
+    pub fn model_version_details(&self) -> ::std::option::Option<&[crate::types::ModelVersionDetail]> {
         self.model_version_details.as_deref()
     }
     /// <p>The next token.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeModelVersionsOutput {
 }
 impl DescribeModelVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelVersionsOutput`](crate::operation::describe_model_versions::DescribeModelVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_model_versions::builders::DescribeModelVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_model_versions::builders::DescribeModelVersionsOutputBuilder {
         crate::operation::describe_model_versions::builders::DescribeModelVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelVersionsOutput`](crate::operation::describe_model_versions::DescribeModelVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelVersionsOutputBuilder {
-    pub(crate) model_version_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionDetail>>,
+    pub(crate) model_version_details: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl DescribeModelVersionsOutputBuilder {
         self
     }
     /// <p>The model version details.</p>
-    pub fn set_model_version_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionDetail>>,
-    ) -> Self {
+    pub fn set_model_version_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionDetail>>) -> Self {
         self.model_version_details = input;
         self
     }
     /// <p>The model version details.</p>
-    pub fn get_model_version_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersionDetail>> {
+    pub fn get_model_version_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersionDetail>> {
         &self.model_version_details
     }
     /// <p>The next token.</p>

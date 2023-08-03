@@ -36,9 +36,7 @@ impl ListAppsOutput {
 
 /// A builder for [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppsOutputBuilder {
     pub(crate) apps: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListAppsOutputBuilder {
         self
     }
     /// <p> A list of Amplify apps. </p>
-    pub fn set_apps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
-    ) -> Self {
+    pub fn set_apps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::App>>) -> Self {
         self.apps = input;
         self
     }

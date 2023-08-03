@@ -9,10 +9,7 @@ pub fn ser_completed_multipart_upload(
         for list_item_2 in var_1 {
             {
                 let inner_writer = scope.start_el("Part");
-                crate::protocol_serde::shape_completed_part::ser_completed_part(
-                    list_item_2,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_completed_part::ser_completed_part(list_item_2, inner_writer)?
             }
         }
     }

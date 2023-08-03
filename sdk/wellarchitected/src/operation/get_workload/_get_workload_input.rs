@@ -23,9 +23,7 @@ impl GetWorkloadInput {
 
 /// A builder for [`GetWorkloadInput`](crate::operation::get_workload::GetWorkloadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkloadInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl GetWorkloadInputBuilder {
         &self.workload_id
     }
     /// Consumes the builder and constructs a [`GetWorkloadInput`](crate::operation::get_workload::GetWorkloadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workload::GetWorkloadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workload::GetWorkloadInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workload::GetWorkloadInput {
             workload_id: self.workload_id,
         })

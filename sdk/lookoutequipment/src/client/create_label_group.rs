@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`label_group_name(Option<String>)`](crate::operation::create_label_group::CreateLabelGroupOutput::label_group_name): <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     ///   - [`label_group_arn(Option<String>)`](crate::operation::create_label_group::CreateLabelGroupOutput::label_group_arn): <p> The ARN of the label group that you have created. </p>
     /// - On failure, responds with [`SdkError<CreateLabelGroupError>`](crate::operation::create_label_group::CreateLabelGroupError)
-    pub fn create_label_group(
-        &self,
-    ) -> crate::operation::create_label_group::builders::CreateLabelGroupFluentBuilder {
-        crate::operation::create_label_group::builders::CreateLabelGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_label_group(&self) -> crate::operation::create_label_group::builders::CreateLabelGroupFluentBuilder {
+        crate::operation::create_label_group::builders::CreateLabelGroupFluentBuilder::new(self.handle.clone())
     }
 }

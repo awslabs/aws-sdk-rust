@@ -10,10 +10,7 @@ impl UpdateThingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_thing::UpdateThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing::UpdateThingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing::UpdateThingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_thing();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl UpdateThingFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_thing::UpdateThing,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_thing::UpdateThing, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_thing::UpdateThingError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl UpdateThingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl UpdateThingFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_thing::UpdateThing,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_thing::UpdateThing, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_thing::UpdateThingError>,
     > {
         self.customize_middleware().await
@@ -131,18 +119,12 @@ impl UpdateThingFluentBuilder {
         self.inner.get_thing_name()
     }
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_type_name(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_type_name(input);
         self
     }
@@ -160,10 +142,7 @@ impl UpdateThingFluentBuilder {
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
     /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
-    pub fn set_attribute_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributePayload>,
-    ) -> Self {
+    pub fn set_attribute_payload(mut self, input: ::std::option::Option<crate::types::AttributePayload>) -> Self {
         self.inner = self.inner.set_attribute_payload(input);
         self
     }

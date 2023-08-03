@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterAccountOutput`](crate::operation::register_account::RegisterAccountOutput) with field(s):
     ///   - [`status(Option<AccountStatus>)`](crate::operation::register_account::RegisterAccountOutput::status): <p> The status of the account registration request. </p>
     /// - On failure, responds with [`SdkError<RegisterAccountError>`](crate::operation::register_account::RegisterAccountError)
-    pub fn register_account(
-        &self,
-    ) -> crate::operation::register_account::builders::RegisterAccountFluentBuilder {
-        crate::operation::register_account::builders::RegisterAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_account(&self) -> crate::operation::register_account::builders::RegisterAccountFluentBuilder {
+        crate::operation::register_account::builders::RegisterAccountFluentBuilder::new(self.handle.clone())
     }
 }

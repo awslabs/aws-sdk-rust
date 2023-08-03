@@ -79,9 +79,7 @@ impl EndpointAuthorization {
 
 /// A builder for [`EndpointAuthorization`](crate::types::EndpointAuthorization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointAuthorizationBuilder {
     pub(crate) grantor: ::std::option::Option<::std::string::String>,
     pub(crate) grantee: ::std::option::Option<::std::string::String>,
@@ -123,18 +121,12 @@ impl EndpointAuthorizationBuilder {
         &self.grantee
     }
     /// <p>The cluster identifier.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -148,10 +140,7 @@ impl EndpointAuthorizationBuilder {
         self
     }
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub fn set_authorize_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_authorize_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.authorize_time = input;
         self
     }
@@ -160,18 +149,12 @@ impl EndpointAuthorizationBuilder {
         &self.authorize_time
     }
     /// <p>The status of the cluster.</p>
-    pub fn cluster_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the cluster.</p>
-    pub fn set_cluster_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_status = input;
         self
     }
@@ -185,10 +168,7 @@ impl EndpointAuthorizationBuilder {
         self
     }
     /// <p>The status of the authorization action.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AuthorizationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -215,27 +195,19 @@ impl EndpointAuthorizationBuilder {
     /// To override the contents of this collection use [`set_allowed_vp_cs`](Self::set_allowed_vp_cs).
     ///
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn allowed_vp_cs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_vp_cs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_vp_cs.unwrap_or_default();
         v.push(input.into());
         self.allowed_vp_cs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn set_allowed_vp_cs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_vp_cs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_vp_cs = input;
         self
     }
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn get_allowed_vp_cs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_vp_cs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_vp_cs
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>

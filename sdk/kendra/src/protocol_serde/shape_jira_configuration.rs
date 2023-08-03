@@ -137,17 +137,9 @@ pub fn ser_jira_configuration(
 
 pub(crate) fn de_jira_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::JiraConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::JiraConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -157,112 +149,104 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
-                        "JiraAccountUrl" => {
-                            builder = builder.set_jira_account_url(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "SecretArn" => {
-                            builder = builder.set_secret_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "UseChangeLog" => {
-                            builder = builder.set_use_change_log(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
-                        }
-                        "Project" => {
-                            builder = builder.set_project(
-                                crate::protocol_serde::shape_project::de_project(tokens)?,
-                            );
-                        }
-                        "IssueType" => {
-                            builder = builder.set_issue_type(
-                                crate::protocol_serde::shape_issue_type::de_issue_type(tokens)?,
-                            );
-                        }
-                        "Status" => {
-                            builder = builder.set_status(
-                                crate::protocol_serde::shape_jira_status::de_jira_status(tokens)?,
-                            );
-                        }
-                        "IssueSubEntityFilter" => {
-                            builder = builder.set_issue_sub_entity_filter(
-                                    crate::protocol_serde::shape_issue_sub_entity_filter::de_issue_sub_entity_filter(tokens)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "JiraAccountUrl" => {
+                                builder = builder.set_jira_account_url(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
-                        }
-                        "AttachmentFieldMappings" => {
-                            builder = builder.set_attachment_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
+                            }
+                            "SecretArn" => {
+                                builder = builder.set_secret_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
-                        }
-                        "CommentFieldMappings" => {
-                            builder = builder.set_comment_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
+                            }
+                            "UseChangeLog" => {
+                                builder = builder.set_use_change_log(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "Project" => {
+                                builder = builder.set_project(crate::protocol_serde::shape_project::de_project(tokens)?);
+                            }
+                            "IssueType" => {
+                                builder = builder.set_issue_type(crate::protocol_serde::shape_issue_type::de_issue_type(tokens)?);
+                            }
+                            "Status" => {
+                                builder = builder.set_status(crate::protocol_serde::shape_jira_status::de_jira_status(tokens)?);
+                            }
+                            "IssueSubEntityFilter" => {
+                                builder = builder.set_issue_sub_entity_filter(
+                                    crate::protocol_serde::shape_issue_sub_entity_filter::de_issue_sub_entity_filter(tokens)?,
                                 );
-                        }
-                        "IssueFieldMappings" => {
-                            builder = builder.set_issue_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
+                            }
+                            "AttachmentFieldMappings" => {
+                                builder = builder.set_attachment_field_mappings(
+                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                        tokens,
+                                    )?,
                                 );
-                        }
-                        "ProjectFieldMappings" => {
-                            builder = builder.set_project_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
+                            }
+                            "CommentFieldMappings" => {
+                                builder = builder.set_comment_field_mappings(
+                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                        tokens,
+                                    )?,
                                 );
-                        }
-                        "WorkLogFieldMappings" => {
-                            builder = builder.set_work_log_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
+                            }
+                            "IssueFieldMappings" => {
+                                builder = builder.set_issue_field_mappings(
+                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                        tokens,
+                                    )?,
                                 );
-                        }
-                        "InclusionPatterns" => {
-                            builder = builder.set_inclusion_patterns(
+                            }
+                            "ProjectFieldMappings" => {
+                                builder = builder.set_project_field_mappings(
+                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "WorkLogFieldMappings" => {
+                                builder = builder.set_work_log_field_mappings(
+                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "InclusionPatterns" => {
+                                builder = builder.set_inclusion_patterns(
                                     crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
                                 );
-                        }
-                        "ExclusionPatterns" => {
-                            builder = builder.set_exclusion_patterns(
+                            }
+                            "ExclusionPatterns" => {
+                                builder = builder.set_exclusion_patterns(
                                     crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
                                 );
-                        }
-                        "VpcConfiguration" => {
-                            builder = builder.set_vpc_configuration(
-                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?
+                            }
+                            "VpcConfiguration" => {
+                                builder = builder.set_vpc_configuration(
+                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?,
                                 );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

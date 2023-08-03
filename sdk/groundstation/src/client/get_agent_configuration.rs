@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`agent_id(Option<String>)`](crate::operation::get_agent_configuration::GetAgentConfigurationOutput::agent_id): <p>UUID of agent.</p>
     ///   - [`tasking_document(Option<String>)`](crate::operation::get_agent_configuration::GetAgentConfigurationOutput::tasking_document): <p>Tasking document for agent.</p>
     /// - On failure, responds with [`SdkError<GetAgentConfigurationError>`](crate::operation::get_agent_configuration::GetAgentConfigurationError)
-    pub fn get_agent_configuration(
-        &self,
-    ) -> crate::operation::get_agent_configuration::builders::GetAgentConfigurationFluentBuilder
-    {
-        crate::operation::get_agent_configuration::builders::GetAgentConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_agent_configuration(&self) -> crate::operation::get_agent_configuration::builders::GetAgentConfigurationFluentBuilder {
+        crate::operation::get_agent_configuration::builders::GetAgentConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

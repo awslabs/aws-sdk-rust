@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteDomainPermissionsPolicyOutput`](crate::operation::delete_domain_permissions_policy::DeleteDomainPermissionsPolicyOutput) with field(s):
     ///   - [`policy(Option<ResourcePolicy>)`](crate::operation::delete_domain_permissions_policy::DeleteDomainPermissionsPolicyOutput::policy): <p> Information about the deleted resource policy after processing the request. </p>
     /// - On failure, responds with [`SdkError<DeleteDomainPermissionsPolicyError>`](crate::operation::delete_domain_permissions_policy::DeleteDomainPermissionsPolicyError)
-    pub fn delete_domain_permissions_policy(&self) -> crate::operation::delete_domain_permissions_policy::builders::DeleteDomainPermissionsPolicyFluentBuilder{
+    pub fn delete_domain_permissions_policy(
+        &self,
+    ) -> crate::operation::delete_domain_permissions_policy::builders::DeleteDomainPermissionsPolicyFluentBuilder {
         crate::operation::delete_domain_permissions_policy::builders::DeleteDomainPermissionsPolicyFluentBuilder::new(self.handle.clone())
     }
 }

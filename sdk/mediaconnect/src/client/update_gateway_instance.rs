@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`bridge_placement(Option<BridgePlacement>)`](crate::operation::update_gateway_instance::UpdateGatewayInstanceOutput::bridge_placement): The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
     ///   - [`gateway_instance_arn(Option<String>)`](crate::operation::update_gateway_instance::UpdateGatewayInstanceOutput::gateway_instance_arn): The Amazon Resource Name (ARN) of the instance.
     /// - On failure, responds with [`SdkError<UpdateGatewayInstanceError>`](crate::operation::update_gateway_instance::UpdateGatewayInstanceError)
-    pub fn update_gateway_instance(
-        &self,
-    ) -> crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceFluentBuilder
-    {
-        crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_gateway_instance(&self) -> crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceFluentBuilder {
+        crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceFluentBuilder::new(self.handle.clone())
     }
 }

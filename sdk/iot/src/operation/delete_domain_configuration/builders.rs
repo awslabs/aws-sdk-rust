@@ -27,7 +27,7 @@ impl DeleteDomainConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDomainConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationInputBuilder,
+    inner: crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationInputBuilder,
 }
 impl DeleteDomainConfigurationFluentBuilder {
     /// Creates a new `DeleteDomainConfiguration`.
@@ -38,7 +38,7 @@ impl DeleteDomainConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteDomainConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteDomainConfigurationFluentBuilder {
             crate::operation::delete_domain_configuration::DeleteDomainConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_domain_configuration::DeleteDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_domain_configuration::DeleteDomainConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteDomainConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteDomainConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_domain_configuration::DeleteDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_domain_configuration::DeleteDomainConfigurationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteDomainConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_domain_configuration::DeleteDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_domain_configuration::DeleteDomainConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DeleteDomainConfigurationFluentBuilder {
             crate::operation::delete_domain_configuration::DeleteDomainConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_domain_configuration::DeleteDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_domain_configuration::DeleteDomainConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the domain configuration to be deleted.</p>
-    pub fn domain_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_configuration_name(input.into());
         self
     }
     /// <p>The name of the domain configuration to be deleted.</p>
-    pub fn set_domain_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_configuration_name(input);
         self
     }

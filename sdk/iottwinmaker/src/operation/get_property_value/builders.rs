@@ -10,10 +10,7 @@ impl GetPropertyValueInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_property_value::GetPropertyValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value::GetPropertyValueError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_property_value::GetPropertyValueError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_property_value();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetPropertyValueFluentBuilder {
         }
     }
     /// Access the GetPropertyValue as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_property_value::builders::GetPropertyValueInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_property_value::builders::GetPropertyValueInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetPropertyValueFluentBuilder {
             crate::operation::get_property_value::GetPropertyValue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value::GetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_property_value::GetPropertyValueError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetPropertyValueFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetPropertyValueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_property_value::GetPropertyValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value::GetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_property_value::GetPropertyValueError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetPropertyValueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_property_value::GetPropertyValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value::GetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_property_value::GetPropertyValueError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +103,23 @@ impl GetPropertyValueFluentBuilder {
             crate::operation::get_property_value::GetPropertyValue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value::GetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_property_value::GetPropertyValueError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_property_value::paginator::GetPropertyValuePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_property_value::paginator::GetPropertyValuePaginator {
-        crate::operation::get_property_value::paginator::GetPropertyValuePaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_property_value::paginator::GetPropertyValuePaginator {
+        crate::operation::get_property_value::paginator::GetPropertyValuePaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the component whose property values the operation returns.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_name(input.into());
         self
     }
     /// <p>The name of the component whose property values the operation returns.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
     }
@@ -155,18 +128,12 @@ impl GetPropertyValueFluentBuilder {
         self.inner.get_component_name()
     }
     /// <p>The ID of the component type whose property values the operation returns.</p>
-    pub fn component_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_type_id(input.into());
         self
     }
     /// <p>The ID of the component type whose property values the operation returns.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_type_id(input);
         self
     }
@@ -193,25 +160,17 @@ impl GetPropertyValueFluentBuilder {
     /// To override the contents of this collection use [`set_selected_properties`](Self::set_selected_properties).
     ///
     /// <p>The properties whose values the operation returns.</p>
-    pub fn selected_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.selected_properties(input.into());
         self
     }
     /// <p>The properties whose values the operation returns.</p>
-    pub fn set_selected_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_selected_properties(input);
         self
     }
     /// <p>The properties whose values the operation returns.</p>
-    pub fn get_selected_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_selected_properties()
     }
     /// <p>The ID of the workspace whose values the operation returns.</p>
@@ -260,18 +219,12 @@ impl GetPropertyValueFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The property group name.</p>
-    pub fn property_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_group_name(input.into());
         self
     }
     /// <p>The property group name.</p>
-    pub fn set_property_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_property_group_name(input);
         self
     }
@@ -285,17 +238,12 @@ impl GetPropertyValueFluentBuilder {
         self
     }
     /// <p>The tabular conditions.</p>
-    pub fn set_tabular_conditions(
-        mut self,
-        input: ::std::option::Option<crate::types::TabularConditions>,
-    ) -> Self {
+    pub fn set_tabular_conditions(mut self, input: ::std::option::Option<crate::types::TabularConditions>) -> Self {
         self.inner = self.inner.set_tabular_conditions(input);
         self
     }
     /// <p>The tabular conditions.</p>
-    pub fn get_tabular_conditions(
-        &self,
-    ) -> &::std::option::Option<crate::types::TabularConditions> {
+    pub fn get_tabular_conditions(&self) -> &::std::option::Option<crate::types::TabularConditions> {
         self.inner.get_tabular_conditions()
     }
 }

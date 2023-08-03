@@ -23,9 +23,7 @@ impl LoRaWanListDevice {
 
 /// A builder for [`LoRaWanListDevice`](crate::types::LoRaWanListDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanListDeviceBuilder {
     pub(crate) dev_eui: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl LoRaWanListDeviceBuilder {
     }
     /// Consumes the builder and constructs a [`LoRaWanListDevice`](crate::types::LoRaWanListDevice).
     pub fn build(self) -> crate::types::LoRaWanListDevice {
-        crate::types::LoRaWanListDevice {
-            dev_eui: self.dev_eui,
-        }
+        crate::types::LoRaWanListDevice { dev_eui: self.dev_eui }
     }
 }

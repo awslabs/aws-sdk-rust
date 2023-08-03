@@ -10,10 +10,7 @@ impl StartChangeSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_change_set::StartChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_change_set::StartChangeSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_change_set::StartChangeSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_change_set();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl StartChangeSetFluentBuilder {
         }
     }
     /// Access the StartChangeSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_change_set::builders::StartChangeSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_change_set::builders::StartChangeSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl StartChangeSetFluentBuilder {
             crate::operation::start_change_set::StartChangeSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_change_set::StartChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_change_set::StartChangeSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl StartChangeSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl StartChangeSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_change_set::StartChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_change_set::StartChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_change_set::StartChangeSetError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl StartChangeSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_change_set::StartChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_change_set::StartChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_change_set::StartChangeSetError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl StartChangeSetFluentBuilder {
             crate::operation::start_change_set::StartChangeSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_change_set::StartChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_change_set::StartChangeSetError>,
     > {
         self.customize_middleware().await
     }
@@ -148,10 +132,7 @@ impl StartChangeSetFluentBuilder {
         self
     }
     /// <p>Array of <code>change</code> object.</p>
-    pub fn set_change_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
-    ) -> Self {
+    pub fn set_change_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Change>>) -> Self {
         self.inner = self.inner.set_change_set(input);
         self
     }
@@ -160,18 +141,12 @@ impl StartChangeSetFluentBuilder {
         self.inner.get_change_set()
     }
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_set_name(input.into());
         self
     }
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_set_name(input);
         self
     }
@@ -180,18 +155,12 @@ impl StartChangeSetFluentBuilder {
         self.inner.get_change_set_name()
     }
     /// <p>A unique token to identify the request to ensure idempotency.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique token to identify the request to ensure idempotency.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -209,17 +178,12 @@ impl StartChangeSetFluentBuilder {
         self
     }
     /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
-    pub fn set_change_set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_change_set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_change_set_tags(input);
         self
     }
     /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
-    pub fn get_change_set_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_change_set_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_change_set_tags()
     }
 }

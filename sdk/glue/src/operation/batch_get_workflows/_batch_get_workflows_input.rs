@@ -22,17 +22,14 @@ impl BatchGetWorkflowsInput {
 }
 impl BatchGetWorkflowsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetWorkflowsInput`](crate::operation::batch_get_workflows::BatchGetWorkflowsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder {
         crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetWorkflowsInput`](crate::operation::batch_get_workflows::BatchGetWorkflowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetWorkflowsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include_graph: ::std::option::Option<bool>,
@@ -50,10 +47,7 @@ impl BatchGetWorkflowsInputBuilder {
         self
     }
     /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -78,15 +72,10 @@ impl BatchGetWorkflowsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetWorkflowsInput`](crate::operation::batch_get_workflows::BatchGetWorkflowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_workflows::BatchGetWorkflowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_workflows::BatchGetWorkflowsInput {
-                names: self.names,
-                include_graph: self.include_graph,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_workflows::BatchGetWorkflowsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_workflows::BatchGetWorkflowsInput {
+            names: self.names,
+            include_graph: self.include_graph,
+        })
     }
 }

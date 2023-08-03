@@ -7,7 +7,10 @@ impl super::Client {
     ///   - [`enabled(bool)`](crate::operation::update_configuration_set_reputation_metrics_enabled::builders::UpdateConfigurationSetReputationMetricsEnabledFluentBuilder::enabled) / [`set_enabled(bool)`](crate::operation::update_configuration_set_reputation_metrics_enabled::builders::UpdateConfigurationSetReputationMetricsEnabledFluentBuilder::set_enabled): <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     /// - On success, responds with [`UpdateConfigurationSetReputationMetricsEnabledOutput`](crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledOutput)
     /// - On failure, responds with [`SdkError<UpdateConfigurationSetReputationMetricsEnabledError>`](crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledError)
-    pub fn update_configuration_set_reputation_metrics_enabled(&self) -> crate::operation::update_configuration_set_reputation_metrics_enabled::builders::UpdateConfigurationSetReputationMetricsEnabledFluentBuilder{
+    pub fn update_configuration_set_reputation_metrics_enabled(
+        &self,
+    ) -> crate::operation::update_configuration_set_reputation_metrics_enabled::builders::UpdateConfigurationSetReputationMetricsEnabledFluentBuilder
+    {
         crate::operation::update_configuration_set_reputation_metrics_enabled::builders::UpdateConfigurationSetReputationMetricsEnabledFluentBuilder::new(self.handle.clone())
     }
 }

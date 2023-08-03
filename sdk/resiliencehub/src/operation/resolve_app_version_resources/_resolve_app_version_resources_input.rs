@@ -22,16 +22,14 @@ impl ResolveAppVersionResourcesInput {
 }
 impl ResolveAppVersionResourcesInput {
     /// Creates a new builder-style object to manufacture [`ResolveAppVersionResourcesInput`](crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput).
-    pub fn builder() -> crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesInputBuilder{
+    pub fn builder() -> crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesInputBuilder {
         crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ResolveAppVersionResourcesInput`](crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolveAppVersionResourcesInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl ResolveAppVersionResourcesInputBuilder {
         crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput {
+            app_arn: self.app_arn,
+            app_version: self.app_version,
+        })
     }
 }

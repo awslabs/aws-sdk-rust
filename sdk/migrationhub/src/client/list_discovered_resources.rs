@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput::next_token): <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     ///   - [`discovered_resource_list(Option<Vec<DiscoveredResource>>)`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput::discovered_resource_list): <p>Returned list of discovered resources associated with the given MigrationTask.</p>
     /// - On failure, responds with [`SdkError<ListDiscoveredResourcesError>`](crate::operation::list_discovered_resources::ListDiscoveredResourcesError)
-    pub fn list_discovered_resources(
-        &self,
-    ) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesFluentBuilder
-    {
+    pub fn list_discovered_resources(&self) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesFluentBuilder {
         crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesFluentBuilder::new(self.handle.clone())
     }
 }

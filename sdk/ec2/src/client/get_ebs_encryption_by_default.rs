@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetEbsEncryptionByDefaultOutput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput) with field(s):
     ///   - [`ebs_encryption_by_default(Option<bool>)`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput::ebs_encryption_by_default): <p>Indicates whether encryption by default is enabled.</p>
     /// - On failure, responds with [`SdkError<GetEbsEncryptionByDefaultError>`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultError)
-    pub fn get_ebs_encryption_by_default(&self) -> crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultFluentBuilder{
+    pub fn get_ebs_encryption_by_default(&self) -> crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultFluentBuilder {
         crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultFluentBuilder::new(self.handle.clone())
     }
 }

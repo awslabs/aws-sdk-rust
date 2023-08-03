@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`flow_logs(Option<Vec<FlowLog>>)`](crate::operation::describe_flow_logs::DescribeFlowLogsOutput::flow_logs): <p>Information about the flow logs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_flow_logs::DescribeFlowLogsOutput::next_token): <p>The token to request the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeFlowLogsError>`](crate::operation::describe_flow_logs::DescribeFlowLogsError)
-    pub fn describe_flow_logs(
-        &self,
-    ) -> crate::operation::describe_flow_logs::builders::DescribeFlowLogsFluentBuilder {
-        crate::operation::describe_flow_logs::builders::DescribeFlowLogsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_flow_logs(&self) -> crate::operation::describe_flow_logs::builders::DescribeFlowLogsFluentBuilder {
+        crate::operation::describe_flow_logs::builders::DescribeFlowLogsFluentBuilder::new(self.handle.clone())
     }
 }

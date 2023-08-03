@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TestMetricFilterOutput`](crate::operation::test_metric_filter::TestMetricFilterOutput) with field(s):
     ///   - [`matches(Option<Vec<MetricFilterMatchRecord>>)`](crate::operation::test_metric_filter::TestMetricFilterOutput::matches): <p>The matched events.</p>
     /// - On failure, responds with [`SdkError<TestMetricFilterError>`](crate::operation::test_metric_filter::TestMetricFilterError)
-    pub fn test_metric_filter(
-        &self,
-    ) -> crate::operation::test_metric_filter::builders::TestMetricFilterFluentBuilder {
-        crate::operation::test_metric_filter::builders::TestMetricFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_metric_filter(&self) -> crate::operation::test_metric_filter::builders::TestMetricFilterFluentBuilder {
+        crate::operation::test_metric_filter::builders::TestMetricFilterFluentBuilder::new(self.handle.clone())
     }
 }

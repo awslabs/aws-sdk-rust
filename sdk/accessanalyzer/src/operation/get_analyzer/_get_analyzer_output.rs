@@ -29,9 +29,7 @@ impl GetAnalyzerOutput {
 
 /// A builder for [`GetAnalyzerOutput`](crate::operation::get_analyzer::GetAnalyzerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnalyzerOutputBuilder {
     pub(crate) analyzer: ::std::option::Option<crate::types::AnalyzerSummary>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl GetAnalyzerOutputBuilder {
         self
     }
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
-    pub fn set_analyzer(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyzerSummary>,
-    ) -> Self {
+    pub fn set_analyzer(mut self, input: ::std::option::Option<crate::types::AnalyzerSummary>) -> Self {
         self.analyzer = input;
         self
     }

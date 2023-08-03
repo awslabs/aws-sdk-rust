@@ -23,9 +23,7 @@ impl Monitoring {
 
 /// A builder for [`Monitoring`](crate::types::Monitoring).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringBuilder {
     pub(crate) state: ::std::option::Option<crate::types::MonitoringState>,
 }
@@ -36,10 +34,7 @@ impl MonitoringBuilder {
         self
     }
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::MonitoringState>) -> Self {
         self.state = input;
         self
     }

@@ -5,8 +5,7 @@
 pub struct ListDatasetLabelsOutput {
     /// <p> A list of the labels in the dataset. </p>
     #[doc(hidden)]
-    pub dataset_label_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>>,
+    pub dataset_label_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDatasetLabelsOutput {
 }
 impl ListDatasetLabelsOutput {
     /// <p> A list of the labels in the dataset. </p>
-    pub fn dataset_label_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DatasetLabelDescription]> {
+    pub fn dataset_label_descriptions(&self) -> ::std::option::Option<&[crate::types::DatasetLabelDescription]> {
         self.dataset_label_descriptions.as_deref()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDatasetLabelsOutput {
 }
 impl ListDatasetLabelsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetLabelsOutput`](crate::operation::list_dataset_labels::ListDatasetLabelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_labels::builders::ListDatasetLabelsOutputBuilder {
+    pub fn builder() -> crate::operation::list_dataset_labels::builders::ListDatasetLabelsOutputBuilder {
         crate::operation::list_dataset_labels::builders::ListDatasetLabelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetLabelsOutput`](crate::operation::list_dataset_labels::ListDatasetLabelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetLabelsOutputBuilder {
-    pub(crate) dataset_label_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>>,
+    pub(crate) dataset_label_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListDatasetLabelsOutputBuilder {
     /// To override the contents of this collection use [`set_dataset_label_descriptions`](Self::set_dataset_label_descriptions).
     ///
     /// <p> A list of the labels in the dataset. </p>
-    pub fn dataset_label_descriptions(
-        mut self,
-        input: crate::types::DatasetLabelDescription,
-    ) -> Self {
+    pub fn dataset_label_descriptions(mut self, input: crate::types::DatasetLabelDescription) -> Self {
         let mut v = self.dataset_label_descriptions.unwrap_or_default();
         v.push(input);
         self.dataset_label_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of the labels in the dataset. </p>
-    pub fn set_dataset_label_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>>,
-    ) -> Self {
+    pub fn set_dataset_label_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>>) -> Self {
         self.dataset_label_descriptions = input;
         self
     }
     /// <p> A list of the labels in the dataset. </p>
-    pub fn get_dataset_label_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>> {
+    pub fn get_dataset_label_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>> {
         &self.dataset_label_descriptions
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>

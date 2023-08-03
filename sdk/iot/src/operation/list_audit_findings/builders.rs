@@ -10,10 +10,7 @@ impl ListAuditFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_audit_findings::ListAuditFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_findings::ListAuditFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_findings::ListAuditFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_audit_findings();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListAuditFindingsFluentBuilder {
         }
     }
     /// Access the ListAuditFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_audit_findings::builders::ListAuditFindingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_audit_findings::builders::ListAuditFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListAuditFindingsFluentBuilder {
             crate::operation::list_audit_findings::ListAuditFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_findings::ListAuditFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_findings::ListAuditFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListAuditFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListAuditFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_audit_findings::ListAuditFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_findings::ListAuditFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_findings::ListAuditFindingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListAuditFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_audit_findings::ListAuditFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_findings::ListAuditFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_findings::ListAuditFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListAuditFindingsFluentBuilder {
             crate::operation::list_audit_findings::ListAuditFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_findings::ListAuditFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_findings::ListAuditFindingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_audit_findings::paginator::ListAuditFindingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_audit_findings::paginator::ListAuditFindingsPaginator {
-        crate::operation::list_audit_findings::paginator::ListAuditFindingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_audit_findings::paginator::ListAuditFindingsPaginator {
+        crate::operation::list_audit_findings::paginator::ListAuditFindingsPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,17 +147,12 @@ impl ListAuditFindingsFluentBuilder {
         self
     }
     /// <p>Information identifying the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
     /// <p>Information identifying the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         self.inner.get_resource_identifier()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -215,10 +189,7 @@ impl ListAuditFindingsFluentBuilder {
         self
     }
     /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -232,10 +203,7 @@ impl ListAuditFindingsFluentBuilder {
         self
     }
     /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

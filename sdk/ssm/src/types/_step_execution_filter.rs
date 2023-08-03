@@ -30,9 +30,7 @@ impl StepExecutionFilter {
 
 /// A builder for [`StepExecutionFilter`](crate::types::StepExecutionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepExecutionFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::StepExecutionFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl StepExecutionFilterBuilder {
         self
     }
     /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::StepExecutionFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::StepExecutionFilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -67,10 +62,7 @@ impl StepExecutionFilterBuilder {
         self
     }
     /// <p>The values of the filter key.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`topics_detection_job_properties_list(Option<Vec<TopicsDetectionJobProperties>>)`](crate::operation::list_topics_detection_jobs::ListTopicsDetectionJobsOutput::topics_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_topics_detection_jobs::ListTopicsDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListTopicsDetectionJobsError>`](crate::operation::list_topics_detection_jobs::ListTopicsDetectionJobsError)
-    pub fn list_topics_detection_jobs(
-        &self,
-    ) -> crate::operation::list_topics_detection_jobs::builders::ListTopicsDetectionJobsFluentBuilder
-    {
+    pub fn list_topics_detection_jobs(&self) -> crate::operation::list_topics_detection_jobs::builders::ListTopicsDetectionJobsFluentBuilder {
         crate::operation::list_topics_detection_jobs::builders::ListTopicsDetectionJobsFluentBuilder::new(self.handle.clone())
     }
 }

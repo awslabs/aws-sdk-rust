@@ -26,7 +26,7 @@ impl DescribeContactFlowModuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeContactFlowModuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_contact_flow_module::builders::DescribeContactFlowModuleInputBuilder,
+    inner: crate::operation::describe_contact_flow_module::builders::DescribeContactFlowModuleInputBuilder,
 }
 impl DescribeContactFlowModuleFluentBuilder {
     /// Creates a new `DescribeContactFlowModule`.
@@ -37,7 +37,7 @@ impl DescribeContactFlowModuleFluentBuilder {
         }
     }
     /// Access the DescribeContactFlowModule as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_contact_flow_module::builders::DescribeContactFlowModuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_contact_flow_module::builders::DescribeContactFlowModuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeContactFlowModuleFluentBuilder {
             crate::operation::describe_contact_flow_module::DescribeContactFlowModule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact_flow_module::DescribeContactFlowModuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contact_flow_module::DescribeContactFlowModuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeContactFlowModuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeContactFlowModuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_contact_flow_module::DescribeContactFlowModuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact_flow_module::DescribeContactFlowModuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contact_flow_module::DescribeContactFlowModuleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeContactFlowModuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_contact_flow_module::DescribeContactFlowModuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact_flow_module::DescribeContactFlowModuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contact_flow_module::DescribeContactFlowModuleError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeContactFlowModuleFluentBuilder {
             crate::operation::describe_contact_flow_module::DescribeContactFlowModule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact_flow_module::DescribeContactFlowModuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contact_flow_module::DescribeContactFlowModuleError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DescribeContactFlowModuleFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the flow module.</p>
-    pub fn contact_flow_module_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_module_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_flow_module_id(input.into());
         self
     }
     /// <p>The identifier of the flow module.</p>
-    pub fn set_contact_flow_module_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_module_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_flow_module_id(input);
         self
     }

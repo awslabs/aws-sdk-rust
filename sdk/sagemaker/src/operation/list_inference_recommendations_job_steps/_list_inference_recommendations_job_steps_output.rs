@@ -5,8 +5,7 @@
 pub struct ListInferenceRecommendationsJobStepsOutput {
     /// <p>A list of all subtask details in Inference Recommender.</p>
     #[doc(hidden)]
-    pub steps:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
+    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
     /// <p>A token that you can specify in your next request to return more results from the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListInferenceRecommendationsJobStepsO
 }
 impl ListInferenceRecommendationsJobStepsOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobStepsOutput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput).
-    pub fn builder() -> crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsOutputBuilder{
+    pub fn builder() -> crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsOutputBuilder {
         crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceRecommendationsJobStepsOutput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobStepsOutputBuilder {
-    pub(crate) steps:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,20 +54,12 @@ impl ListInferenceRecommendationsJobStepsOutputBuilder {
         self
     }
     /// <p>A list of all subtask details in Inference Recommender.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InferenceRecommendationsJobStep>,
-        >,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>) -> Self {
         self.steps = input;
         self
     }
     /// <p>A list of all subtask details in Inference Recommender.</p>
-    pub fn get_steps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>
-    {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJobStep>> {
         &self.steps
     }
     /// <p>A token that you can specify in your next request to return more results from the list.</p>
@@ -98,12 +86,10 @@ impl ListInferenceRecommendationsJobStepsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobStepsOutput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput).
-    pub fn build(self) -> crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput{
+    pub fn build(self) -> crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput {
         crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput {
-            steps: self.steps
-            ,
-            next_token: self.next_token
-            ,
+            steps: self.steps,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

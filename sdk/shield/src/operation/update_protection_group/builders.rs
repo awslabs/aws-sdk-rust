@@ -37,10 +37,7 @@ impl UpdateProtectionGroupFluentBuilder {
         }
     }
     /// Access the UpdateProtectionGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_protection_group::builders::UpdateProtectionGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_protection_group::builders::UpdateProtectionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateProtectionGroupFluentBuilder {
             crate::operation::update_protection_group::UpdateProtectionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_protection_group::UpdateProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_protection_group::UpdateProtectionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateProtectionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateProtectionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_protection_group::UpdateProtectionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_protection_group::UpdateProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_protection_group::UpdateProtectionGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateProtectionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_protection_group::UpdateProtectionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_protection_group::UpdateProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_protection_group::UpdateProtectionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateProtectionGroupFluentBuilder {
             crate::operation::update_protection_group::UpdateProtectionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_protection_group::UpdateProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_protection_group::UpdateProtectionGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protection_group_id(input.into());
         self
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn set_protection_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protection_group_id(input);
         self
     }
@@ -159,10 +139,7 @@ impl UpdateProtectionGroupFluentBuilder {
     /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
-    pub fn set_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionGroupAggregation>,
-    ) -> Self {
+    pub fn set_aggregation(mut self, input: ::std::option::Option<crate::types::ProtectionGroupAggregation>) -> Self {
         self.inner = self.inner.set_aggregation(input);
         self
     }
@@ -172,9 +149,7 @@ impl UpdateProtectionGroupFluentBuilder {
     /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
-    pub fn get_aggregation(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectionGroupAggregation> {
+    pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::ProtectionGroupAggregation> {
         self.inner.get_aggregation()
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
@@ -183,10 +158,7 @@ impl UpdateProtectionGroupFluentBuilder {
         self
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
-    pub fn set_pattern(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionGroupPattern>,
-    ) -> Self {
+    pub fn set_pattern(mut self, input: ::std::option::Option<crate::types::ProtectionGroupPattern>) -> Self {
         self.inner = self.inner.set_pattern(input);
         self
     }
@@ -200,10 +172,7 @@ impl UpdateProtectionGroupFluentBuilder {
         self
     }
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ProtectedResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -221,10 +190,7 @@ impl UpdateProtectionGroupFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_members(input);
         self
     }

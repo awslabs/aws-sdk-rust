@@ -59,9 +59,7 @@ impl SentimentFilter {
 
 /// A builder for [`SentimentFilter`](crate::types::SentimentFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SentimentFilterBuilder {
     pub(crate) sentiments: ::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>>,
     pub(crate) absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
@@ -82,17 +80,12 @@ impl SentimentFilterBuilder {
         self
     }
     /// <p>Specify the sentiments that you want to flag.</p>
-    pub fn set_sentiments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>>,
-    ) -> Self {
+    pub fn set_sentiments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>>) -> Self {
         self.sentiments = input;
         self
     }
     /// <p>Specify the sentiments that you want to flag.</p>
-    pub fn get_sentiments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>> {
+    pub fn get_sentiments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>> {
         &self.sentiments
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
@@ -101,17 +94,12 @@ impl SentimentFilterBuilder {
         self
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
-    pub fn set_absolute_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::AbsoluteTimeRange>,
-    ) -> Self {
+    pub fn set_absolute_time_range(mut self, input: ::std::option::Option<crate::types::AbsoluteTimeRange>) -> Self {
         self.absolute_time_range = input;
         self
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
-    pub fn get_absolute_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::AbsoluteTimeRange> {
+    pub fn get_absolute_time_range(&self) -> &::std::option::Option<crate::types::AbsoluteTimeRange> {
         &self.absolute_time_range
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
@@ -120,17 +108,12 @@ impl SentimentFilterBuilder {
         self
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
-    pub fn set_relative_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::RelativeTimeRange>,
-    ) -> Self {
+    pub fn set_relative_time_range(mut self, input: ::std::option::Option<crate::types::RelativeTimeRange>) -> Self {
         self.relative_time_range = input;
         self
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
-    pub fn get_relative_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelativeTimeRange> {
+    pub fn get_relative_time_range(&self) -> &::std::option::Option<crate::types::RelativeTimeRange> {
         &self.relative_time_range
     }
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
@@ -139,10 +122,7 @@ impl SentimentFilterBuilder {
         self
     }
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
-    pub fn set_participant_role(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantRole>,
-    ) -> Self {
+    pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
         self.participant_role = input;
         self
     }

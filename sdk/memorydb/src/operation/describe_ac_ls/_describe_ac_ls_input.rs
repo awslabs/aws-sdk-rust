@@ -36,9 +36,7 @@ impl DescribeAcLsInput {
 
 /// A builder for [`DescribeAcLsInput`](crate::operation::describe_ac_ls::DescribeAcLsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcLsInputBuilder {
     pub(crate) acl_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -90,10 +88,7 @@ impl DescribeAcLsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAcLsInput`](crate::operation::describe_ac_ls::DescribeAcLsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ac_ls::DescribeAcLsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_ac_ls::DescribeAcLsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ac_ls::DescribeAcLsInput {
             acl_name: self.acl_name,
             max_results: self.max_results,

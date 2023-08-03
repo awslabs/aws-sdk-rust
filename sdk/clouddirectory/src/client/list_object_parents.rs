@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_object_parents::ListObjectParentsOutput::next_token): <p>The pagination token.</p>
     ///   - [`parent_links(Option<Vec<ObjectIdentifierAndLinkNameTuple>>)`](crate::operation::list_object_parents::ListObjectParentsOutput::parent_links): <p>Returns a list of parent reference and LinkName Tuples.</p>
     /// - On failure, responds with [`SdkError<ListObjectParentsError>`](crate::operation::list_object_parents::ListObjectParentsError)
-    pub fn list_object_parents(
-        &self,
-    ) -> crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder {
-        crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_object_parents(&self) -> crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder {
+        crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::new(self.handle.clone())
     }
 }

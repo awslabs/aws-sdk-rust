@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`user_defined_functions(Option<Vec<UserDefinedFunction>>)`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput::user_defined_functions): <p>A list of requested function definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput::next_token): <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
     /// - On failure, responds with [`SdkError<GetUserDefinedFunctionsError>`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError)
-    pub fn get_user_defined_functions(
-        &self,
-    ) -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder
-    {
+    pub fn get_user_defined_functions(&self) -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder {
         crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::new(self.handle.clone())
     }
 }

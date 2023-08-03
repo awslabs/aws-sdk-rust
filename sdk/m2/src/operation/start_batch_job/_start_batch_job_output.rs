@@ -28,9 +28,7 @@ impl StartBatchJobOutput {
 
 /// A builder for [`StartBatchJobOutput`](crate::operation::start_batch_job::StartBatchJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBatchJobOutputBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

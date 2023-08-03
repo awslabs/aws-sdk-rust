@@ -17,17 +17,14 @@ impl GetLoadBalancersInput {
 }
 impl GetLoadBalancersInput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancersInput`](crate::operation::get_load_balancers::GetLoadBalancersInput).
-    pub fn builder() -> crate::operation::get_load_balancers::builders::GetLoadBalancersInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_load_balancers::builders::GetLoadBalancersInputBuilder {
         crate::operation::get_load_balancers::builders::GetLoadBalancersInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoadBalancersInput`](crate::operation::get_load_balancers::GetLoadBalancersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoadBalancersInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
@@ -52,14 +49,7 @@ impl GetLoadBalancersInputBuilder {
     /// Consumes the builder and constructs a [`GetLoadBalancersInput`](crate::operation::get_load_balancers::GetLoadBalancersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_load_balancers::GetLoadBalancersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_load_balancers::GetLoadBalancersInput {
-                page_token: self.page_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_load_balancers::GetLoadBalancersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_load_balancers::GetLoadBalancersInput { page_token: self.page_token })
     }
 }

@@ -26,7 +26,7 @@ impl GetBackupPlanFromTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBackupPlanFromTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateInputBuilder,
+    inner: crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateInputBuilder,
 }
 impl GetBackupPlanFromTemplateFluentBuilder {
     /// Creates a new `GetBackupPlanFromTemplate`.
@@ -37,7 +37,7 @@ impl GetBackupPlanFromTemplateFluentBuilder {
         }
     }
     /// Access the GetBackupPlanFromTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetBackupPlanFromTemplateFluentBuilder {
             crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetBackupPlanFromTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetBackupPlanFromTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetBackupPlanFromTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetBackupPlanFromTemplateFluentBuilder {
             crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Uniquely identifies a stored backup plan template.</p>
-    pub fn backup_plan_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_plan_template_id(input.into());
         self
     }
     /// <p>Uniquely identifies a stored backup plan template.</p>
-    pub fn set_backup_plan_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_plan_template_id(input);
         self
     }

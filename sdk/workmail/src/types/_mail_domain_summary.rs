@@ -30,9 +30,7 @@ impl MailDomainSummary {
 
 /// A builder for [`MailDomainSummary`](crate::types::MailDomainSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MailDomainSummaryBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) default_domain: ::std::option::Option<bool>,

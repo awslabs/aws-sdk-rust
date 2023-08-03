@@ -35,9 +35,7 @@ impl ListVersionsOutput {
 
 /// A builder for [`ListVersionsOutput`](crate::operation::list_versions::ListVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) grafana_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,27 +61,19 @@ impl ListVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_grafana_versions`](Self::set_grafana_versions).
     ///
     /// <p>The Grafana versions available to create. If a workspace ID is included in the request, the Grafana versions to which this workspace can be upgraded.</p>
-    pub fn grafana_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grafana_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.grafana_versions.unwrap_or_default();
         v.push(input.into());
         self.grafana_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Grafana versions available to create. If a workspace ID is included in the request, the Grafana versions to which this workspace can be upgraded.</p>
-    pub fn set_grafana_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_grafana_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.grafana_versions = input;
         self
     }
     /// <p>The Grafana versions available to create. If a workspace ID is included in the request, the Grafana versions to which this workspace can be upgraded.</p>
-    pub fn get_grafana_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_grafana_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.grafana_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

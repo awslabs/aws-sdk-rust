@@ -35,9 +35,7 @@ impl ListBotsOutput {
 
 /// A builder for [`ListBotsOutput`](crate::operation::list_bots::ListBotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotsOutputBuilder {
     pub(crate) lex_bots: ::std::option::Option<::std::vec::Vec<crate::types::LexBotConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListBotsOutputBuilder {
         self
     }
     /// <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
-    pub fn set_lex_bots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LexBotConfig>>,
-    ) -> Self {
+    pub fn set_lex_bots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LexBotConfig>>) -> Self {
         self.lex_bots = input;
         self
     }
     /// <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
-    pub fn get_lex_bots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LexBotConfig>> {
+    pub fn get_lex_bots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LexBotConfig>> {
         &self.lex_bots
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

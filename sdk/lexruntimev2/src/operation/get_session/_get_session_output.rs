@@ -53,14 +53,11 @@ impl GetSessionOutput {
 
 /// A builder for [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSessionOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    pub(crate) interpretations:
-        ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
+    pub(crate) interpretations: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
     pub(crate) session_state: ::std::option::Option<crate::types::SessionState>,
     _request_id: Option<String>,
 }
@@ -91,10 +88,7 @@ impl GetSessionOutputBuilder {
         self
     }
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.messages = input;
         self
     }
@@ -116,18 +110,13 @@ impl GetSessionOutputBuilder {
     }
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub fn set_interpretations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
-    ) -> Self {
+    pub fn set_interpretations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>) -> Self {
         self.interpretations = input;
         self
     }
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub fn get_interpretations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Interpretation>> {
+    pub fn get_interpretations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Interpretation>> {
         &self.interpretations
     }
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
@@ -138,10 +127,7 @@ impl GetSessionOutputBuilder {
     }
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
-    pub fn set_session_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionState>,
-    ) -> Self {
+    pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.session_state = input;
         self
     }

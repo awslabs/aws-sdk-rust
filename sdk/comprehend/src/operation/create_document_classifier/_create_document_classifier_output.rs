@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateDocumentClassifierOutput {
 }
 impl CreateDocumentClassifierOutput {
     /// Creates a new builder-style object to manufacture [`CreateDocumentClassifierOutput`](crate::operation::create_document_classifier::CreateDocumentClassifierOutput).
-    pub fn builder(
-    ) -> crate::operation::create_document_classifier::builders::CreateDocumentClassifierOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_document_classifier::builders::CreateDocumentClassifierOutputBuilder {
         crate::operation::create_document_classifier::builders::CreateDocumentClassifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDocumentClassifierOutput`](crate::operation::create_document_classifier::CreateDocumentClassifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDocumentClassifierOutputBuilder {
     pub(crate) document_classifier_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDocumentClassifierOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-    pub fn document_classifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_classifier_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-    pub fn set_document_classifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_classifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_classifier_arn = input;
         self
     }
@@ -68,9 +58,7 @@ impl CreateDocumentClassifierOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDocumentClassifierOutput`](crate::operation::create_document_classifier::CreateDocumentClassifierOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_document_classifier::CreateDocumentClassifierOutput {
+    pub fn build(self) -> crate::operation::create_document_classifier::CreateDocumentClassifierOutput {
         crate::operation::create_document_classifier::CreateDocumentClassifierOutput {
             document_classifier_arn: self.document_classifier_arn,
             _request_id: self._request_id,

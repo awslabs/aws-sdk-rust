@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteReceiptFilterOutput {
 }
 impl DeleteReceiptFilterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReceiptFilterOutput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterOutputBuilder {
-        crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterOutputBuilder {
+        crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReceiptFilterOutput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReceiptFilterOutputBuilder {
     _request_id: Option<String>,
 }

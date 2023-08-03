@@ -37,9 +37,7 @@ impl ResourceError {
 
 /// A builder for [`ResourceError`](crate::types::ResourceError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceErrorBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::FleetErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ResourceErrorBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::FleetErrorCode>) -> Self {
         self.error_code = input;
         self
     }
@@ -64,18 +59,12 @@ impl ResourceErrorBuilder {
         &self.error_code
     }
     /// <p>The error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -89,10 +78,7 @@ impl ResourceErrorBuilder {
         self
     }
     /// <p>The time the error occurred.</p>
-    pub fn set_error_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_error_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.error_timestamp = input;
         self
     }

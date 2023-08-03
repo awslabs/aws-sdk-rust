@@ -26,7 +26,7 @@ impl GetOriginAccessControlConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOriginAccessControlConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigInputBuilder,
+    inner: crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigInputBuilder,
 }
 impl GetOriginAccessControlConfigFluentBuilder {
     /// Creates a new `GetOriginAccessControlConfig`.
@@ -37,7 +37,7 @@ impl GetOriginAccessControlConfigFluentBuilder {
         }
     }
     /// Access the GetOriginAccessControlConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetOriginAccessControlConfigFluentBuilder {
             crate::operation::get_origin_access_control_config::GetOriginAccessControlConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetOriginAccessControlConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetOriginAccessControlConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetOriginAccessControlConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetOriginAccessControlConfigFluentBuilder {
             crate::operation::get_origin_access_control_config::GetOriginAccessControlConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError>,
     > {
         self.customize_middleware().await
     }

@@ -22,8 +22,7 @@ pub struct PendingModifiedValues {
     pub auth_token_status: ::std::option::Option<crate::types::AuthTokenUpdateStatus>,
     /// <p>The log delivery configurations being modified </p>
     #[doc(hidden)]
-    pub log_delivery_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
+    pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     #[doc(hidden)]
     pub transit_encryption_enabled: ::std::option::Option<bool>,
@@ -54,9 +53,7 @@ impl PendingModifiedValues {
         self.auth_token_status.as_ref()
     }
     /// <p>The log delivery configurations being modified </p>
-    pub fn log_delivery_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PendingLogDeliveryConfiguration]> {
+    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::PendingLogDeliveryConfiguration]> {
         self.log_delivery_configurations.as_deref()
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
@@ -64,9 +61,7 @@ impl PendingModifiedValues {
         self.transit_encryption_enabled
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
-    pub fn transit_encryption_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitEncryptionMode> {
+    pub fn transit_encryption_mode(&self) -> ::std::option::Option<&crate::types::TransitEncryptionMode> {
         self.transit_encryption_mode.as_ref()
     }
 }
@@ -79,18 +74,14 @@ impl PendingModifiedValues {
 
 /// A builder for [`PendingModifiedValues`](crate::types::PendingModifiedValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingModifiedValuesBuilder {
     pub(crate) num_cache_nodes: ::std::option::Option<i32>,
-    pub(crate) cache_node_ids_to_remove:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cache_node_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) cache_node_type: ::std::option::Option<::std::string::String>,
     pub(crate) auth_token_status: ::std::option::Option<crate::types::AuthTokenUpdateStatus>,
-    pub(crate) log_delivery_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
+    pub(crate) log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
     pub(crate) transit_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
 }
@@ -117,42 +108,28 @@ impl PendingModifiedValuesBuilder {
     /// To override the contents of this collection use [`set_cache_node_ids_to_remove`](Self::set_cache_node_ids_to_remove).
     ///
     /// <p>A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
-    pub fn cache_node_ids_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cache_node_ids_to_remove.unwrap_or_default();
         v.push(input.into());
         self.cache_node_ids_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
-    pub fn set_cache_node_ids_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cache_node_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cache_node_ids_to_remove = input;
         self
     }
     /// <p>A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
-    pub fn get_cache_node_ids_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_node_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cache_node_ids_to_remove
     }
     /// <p>The new cache engine version that the cluster runs.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new cache engine version that the cluster runs.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -161,18 +138,12 @@ impl PendingModifiedValuesBuilder {
         &self.engine_version
     }
     /// <p>The cache node type that this cluster or replication group is scaled to.</p>
-    pub fn cache_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cache node type that this cluster or replication group is scaled to.</p>
-    pub fn set_cache_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_node_type = input;
         self
     }
@@ -186,17 +157,12 @@ impl PendingModifiedValuesBuilder {
         self
     }
     /// <p>The auth token status</p>
-    pub fn set_auth_token_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthTokenUpdateStatus>,
-    ) -> Self {
+    pub fn set_auth_token_status(mut self, input: ::std::option::Option<crate::types::AuthTokenUpdateStatus>) -> Self {
         self.auth_token_status = input;
         self
     }
     /// <p>The auth token status</p>
-    pub fn get_auth_token_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthTokenUpdateStatus> {
+    pub fn get_auth_token_status(&self) -> &::std::option::Option<crate::types::AuthTokenUpdateStatus> {
         &self.auth_token_status
     }
     /// Appends an item to `log_delivery_configurations`.
@@ -204,10 +170,7 @@ impl PendingModifiedValuesBuilder {
     /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
     ///
     /// <p>The log delivery configurations being modified </p>
-    pub fn log_delivery_configurations(
-        mut self,
-        input: crate::types::PendingLogDeliveryConfiguration,
-    ) -> Self {
+    pub fn log_delivery_configurations(mut self, input: crate::types::PendingLogDeliveryConfiguration) -> Self {
         let mut v = self.log_delivery_configurations.unwrap_or_default();
         v.push(input);
         self.log_delivery_configurations = ::std::option::Option::Some(v);
@@ -216,18 +179,13 @@ impl PendingModifiedValuesBuilder {
     /// <p>The log delivery configurations being modified </p>
     pub fn set_log_delivery_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
     ) -> Self {
         self.log_delivery_configurations = input;
         self
     }
     /// <p>The log delivery configurations being modified </p>
-    pub fn get_log_delivery_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>
-    {
+    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>> {
         &self.log_delivery_configurations
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
@@ -250,17 +208,12 @@ impl PendingModifiedValuesBuilder {
         self
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
-    pub fn set_transit_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitEncryptionMode>,
-    ) -> Self {
+    pub fn set_transit_encryption_mode(mut self, input: ::std::option::Option<crate::types::TransitEncryptionMode>) -> Self {
         self.transit_encryption_mode = input;
         self
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
-    pub fn get_transit_encryption_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
+    pub fn get_transit_encryption_mode(&self) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
         &self.transit_encryption_mode
     }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).

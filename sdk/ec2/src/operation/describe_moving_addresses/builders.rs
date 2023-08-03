@@ -29,8 +29,7 @@ impl DescribeMovingAddressesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMovingAddressesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder,
+    inner: crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder,
 }
 impl DescribeMovingAddressesFluentBuilder {
     /// Creates a new `DescribeMovingAddresses`.
@@ -41,10 +40,7 @@ impl DescribeMovingAddressesFluentBuilder {
         }
     }
     /// Access the DescribeMovingAddresses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl DescribeMovingAddressesFluentBuilder {
             crate::operation::describe_moving_addresses::DescribeMovingAddresses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_moving_addresses::DescribeMovingAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_moving_addresses::DescribeMovingAddressesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl DescribeMovingAddressesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl DescribeMovingAddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_moving_addresses::DescribeMovingAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_moving_addresses::DescribeMovingAddressesError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl DescribeMovingAddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_moving_addresses::DescribeMovingAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_moving_addresses::DescribeMovingAddressesError>,
     > {
         self.send_middleware().await
     }
@@ -121,19 +108,14 @@ impl DescribeMovingAddressesFluentBuilder {
             crate::operation::describe_moving_addresses::DescribeMovingAddresses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_moving_addresses::DescribeMovingAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_moving_addresses::DescribeMovingAddressesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator {
         crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -152,10 +134,7 @@ impl DescribeMovingAddressesFluentBuilder {
     /// <ul>
     /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -221,10 +200,7 @@ impl DescribeMovingAddressesFluentBuilder {
         self
     }
     /// <p>One or more Elastic IP addresses.</p>
-    pub fn set_public_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_public_ips(input);
         self
     }

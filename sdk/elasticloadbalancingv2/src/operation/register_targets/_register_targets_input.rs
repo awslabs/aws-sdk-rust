@@ -29,27 +29,19 @@ impl RegisterTargetsInput {
 
 /// A builder for [`RegisterTargetsInput`](crate::operation::register_targets::RegisterTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterTargetsInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>>,
 }
 impl RegisterTargetsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_arn = input;
         self
     }
@@ -69,26 +61,18 @@ impl RegisterTargetsInputBuilder {
         self
     }
     /// <p>The targets.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>>) -> Self {
         self.targets = input;
         self
     }
     /// <p>The targets.</p>
-    pub fn get_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>> {
         &self.targets
     }
     /// Consumes the builder and constructs a [`RegisterTargetsInput`](crate::operation::register_targets::RegisterTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_targets::RegisterTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_targets::RegisterTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_targets::RegisterTargetsInput {
             target_group_arn: self.target_group_arn,
             targets: self.targets,

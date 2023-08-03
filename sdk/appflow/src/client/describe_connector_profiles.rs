@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`connector_profile_details(Option<Vec<ConnectorProfile>>)`](crate::operation::describe_connector_profiles::DescribeConnectorProfilesOutput::connector_profile_details): <p> Returns information about the connector profiles associated with the flow. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_connector_profiles::DescribeConnectorProfilesOutput::next_token): <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
     /// - On failure, responds with [`SdkError<DescribeConnectorProfilesError>`](crate::operation::describe_connector_profiles::DescribeConnectorProfilesError)
-    pub fn describe_connector_profiles(&self) -> crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesFluentBuilder{
+    pub fn describe_connector_profiles(&self) -> crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesFluentBuilder {
         crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesFluentBuilder::new(self.handle.clone())
     }
 }

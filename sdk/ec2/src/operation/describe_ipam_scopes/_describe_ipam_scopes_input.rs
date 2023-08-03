@@ -43,17 +43,14 @@ impl DescribeIpamScopesInput {
 }
 impl DescribeIpamScopesInput {
     /// Creates a new builder-style object to manufacture [`DescribeIpamScopesInput`](crate::operation::describe_ipam_scopes::DescribeIpamScopesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesInputBuilder {
+    pub fn builder() -> crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesInputBuilder {
         crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpamScopesInput`](crate::operation::describe_ipam_scopes::DescribeIpamScopesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamScopesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -88,10 +85,7 @@ impl DescribeIpamScopesInputBuilder {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -132,44 +126,31 @@ impl DescribeIpamScopesInputBuilder {
     /// To override the contents of this collection use [`set_ipam_scope_ids`](Self::set_ipam_scope_ids).
     ///
     /// <p>The IDs of the scopes you want information on.</p>
-    pub fn ipam_scope_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipam_scope_ids.unwrap_or_default();
         v.push(input.into());
         self.ipam_scope_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the scopes you want information on.</p>
-    pub fn set_ipam_scope_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipam_scope_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipam_scope_ids = input;
         self
     }
     /// <p>The IDs of the scopes you want information on.</p>
-    pub fn get_ipam_scope_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipam_scope_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipam_scope_ids
     }
     /// Consumes the builder and constructs a [`DescribeIpamScopesInput`](crate::operation::describe_ipam_scopes::DescribeIpamScopesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ipam_scopes::DescribeIpamScopesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ipam_scopes::DescribeIpamScopesInput {
-                dry_run: self.dry_run,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                ipam_scope_ids: self.ipam_scope_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ipam_scopes::DescribeIpamScopesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_ipam_scopes::DescribeIpamScopesInput {
+            dry_run: self.dry_run,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            ipam_scope_ids: self.ipam_scope_ids,
+        })
     }
 }

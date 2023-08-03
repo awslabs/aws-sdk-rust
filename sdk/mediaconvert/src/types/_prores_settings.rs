@@ -15,8 +15,7 @@ pub struct ProresSettings {
     pub framerate_control: ::std::option::Option<crate::types::ProresFramerateControl>,
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     #[doc(hidden)]
-    pub framerate_conversion_algorithm:
-        ::std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
+    pub framerate_conversion_algorithm: ::std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
     pub framerate_denominator: ::std::option::Option<i32>,
@@ -37,8 +36,7 @@ pub struct ProresSettings {
     pub par_numerator: ::std::option::Option<i32>,
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
     #[doc(hidden)]
-    pub scan_type_conversion_mode:
-        ::std::option::Option<crate::types::ProresScanTypeConversionMode>,
+    pub scan_type_conversion_mode: ::std::option::Option<crate::types::ProresScanTypeConversionMode>,
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     #[doc(hidden)]
     pub slow_pal: ::std::option::Option<crate::types::ProresSlowPal>,
@@ -56,15 +54,11 @@ impl ProresSettings {
         self.codec_profile.as_ref()
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
-    pub fn framerate_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProresFramerateControl> {
+    pub fn framerate_control(&self) -> ::std::option::Option<&crate::types::ProresFramerateControl> {
         self.framerate_control.as_ref()
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn framerate_conversion_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProresFramerateConversionAlgorithm> {
+    pub fn framerate_conversion_algorithm(&self) -> ::std::option::Option<&crate::types::ProresFramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
@@ -92,9 +86,7 @@ impl ProresSettings {
         self.par_numerator
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
-    pub fn scan_type_conversion_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProresScanTypeConversionMode> {
+    pub fn scan_type_conversion_mode(&self) -> ::std::option::Option<&crate::types::ProresScanTypeConversionMode> {
         self.scan_type_conversion_mode.as_ref()
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
@@ -115,23 +107,19 @@ impl ProresSettings {
 
 /// A builder for [`ProresSettings`](crate::types::ProresSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProresSettingsBuilder {
     pub(crate) chroma_sampling: ::std::option::Option<crate::types::ProresChromaSampling>,
     pub(crate) codec_profile: ::std::option::Option<crate::types::ProresCodecProfile>,
     pub(crate) framerate_control: ::std::option::Option<crate::types::ProresFramerateControl>,
-    pub(crate) framerate_conversion_algorithm:
-        ::std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
+    pub(crate) framerate_conversion_algorithm: ::std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
     pub(crate) framerate_denominator: ::std::option::Option<i32>,
     pub(crate) framerate_numerator: ::std::option::Option<i32>,
     pub(crate) interlace_mode: ::std::option::Option<crate::types::ProresInterlaceMode>,
     pub(crate) par_control: ::std::option::Option<crate::types::ProresParControl>,
     pub(crate) par_denominator: ::std::option::Option<i32>,
     pub(crate) par_numerator: ::std::option::Option<i32>,
-    pub(crate) scan_type_conversion_mode:
-        ::std::option::Option<crate::types::ProresScanTypeConversionMode>,
+    pub(crate) scan_type_conversion_mode: ::std::option::Option<crate::types::ProresScanTypeConversionMode>,
     pub(crate) slow_pal: ::std::option::Option<crate::types::ProresSlowPal>,
     pub(crate) telecine: ::std::option::Option<crate::types::ProresTelecine>,
 }
@@ -142,17 +130,12 @@ impl ProresSettingsBuilder {
         self
     }
     /// This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling. Related Settings: For Apple ProRes outputs with 4:4:4 chroma sampling: Choose Preserve 4:4:4 sampling. Use when your input has 4:4:4 chroma sampling and your output codec Profile is Apple ProRes 4444 or 4444 XQ. Note that when you choose Preserve 4:4:4 sampling, you cannot include any of the following Preprocessors: Dolby Vision, HDR10+, or Noise reducer.
-    pub fn set_chroma_sampling(
-        mut self,
-        input: ::std::option::Option<crate::types::ProresChromaSampling>,
-    ) -> Self {
+    pub fn set_chroma_sampling(mut self, input: ::std::option::Option<crate::types::ProresChromaSampling>) -> Self {
         self.chroma_sampling = input;
         self
     }
     /// This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling. Related Settings: For Apple ProRes outputs with 4:4:4 chroma sampling: Choose Preserve 4:4:4 sampling. Use when your input has 4:4:4 chroma sampling and your output codec Profile is Apple ProRes 4444 or 4444 XQ. Note that when you choose Preserve 4:4:4 sampling, you cannot include any of the following Preprocessors: Dolby Vision, HDR10+, or Noise reducer.
-    pub fn get_chroma_sampling(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProresChromaSampling> {
+    pub fn get_chroma_sampling(&self) -> &::std::option::Option<crate::types::ProresChromaSampling> {
         &self.chroma_sampling
     }
     /// Use Profile to specify the type of Apple ProRes codec to use for this output.
@@ -161,10 +144,7 @@ impl ProresSettingsBuilder {
         self
     }
     /// Use Profile to specify the type of Apple ProRes codec to use for this output.
-    pub fn set_codec_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::ProresCodecProfile>,
-    ) -> Self {
+    pub fn set_codec_profile(mut self, input: ::std::option::Option<crate::types::ProresCodecProfile>) -> Self {
         self.codec_profile = input;
         self
     }
@@ -178,39 +158,26 @@ impl ProresSettingsBuilder {
         self
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
-    pub fn set_framerate_control(
-        mut self,
-        input: ::std::option::Option<crate::types::ProresFramerateControl>,
-    ) -> Self {
+    pub fn set_framerate_control(mut self, input: ::std::option::Option<crate::types::ProresFramerateControl>) -> Self {
         self.framerate_control = input;
         self
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
-    pub fn get_framerate_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProresFramerateControl> {
+    pub fn get_framerate_control(&self) -> &::std::option::Option<crate::types::ProresFramerateControl> {
         &self.framerate_control
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn framerate_conversion_algorithm(
-        mut self,
-        input: crate::types::ProresFramerateConversionAlgorithm,
-    ) -> Self {
+    pub fn framerate_conversion_algorithm(mut self, input: crate::types::ProresFramerateConversionAlgorithm) -> Self {
         self.framerate_conversion_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn set_framerate_conversion_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
-    ) -> Self {
+    pub fn set_framerate_conversion_algorithm(mut self, input: ::std::option::Option<crate::types::ProresFramerateConversionAlgorithm>) -> Self {
         self.framerate_conversion_algorithm = input;
         self
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn get_framerate_conversion_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProresFramerateConversionAlgorithm> {
+    pub fn get_framerate_conversion_algorithm(&self) -> &::std::option::Option<crate::types::ProresFramerateConversionAlgorithm> {
         &self.framerate_conversion_algorithm
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
@@ -247,10 +214,7 @@ impl ProresSettingsBuilder {
         self
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
-    pub fn set_interlace_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ProresInterlaceMode>,
-    ) -> Self {
+    pub fn set_interlace_mode(mut self, input: ::std::option::Option<crate::types::ProresInterlaceMode>) -> Self {
         self.interlace_mode = input;
         self
     }
@@ -264,10 +228,7 @@ impl ProresSettingsBuilder {
         self
     }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
-    pub fn set_par_control(
-        mut self,
-        input: ::std::option::Option<crate::types::ProresParControl>,
-    ) -> Self {
+    pub fn set_par_control(mut self, input: ::std::option::Option<crate::types::ProresParControl>) -> Self {
         self.par_control = input;
         self
     }
@@ -304,25 +265,17 @@ impl ProresSettingsBuilder {
         &self.par_numerator
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
-    pub fn scan_type_conversion_mode(
-        mut self,
-        input: crate::types::ProresScanTypeConversionMode,
-    ) -> Self {
+    pub fn scan_type_conversion_mode(mut self, input: crate::types::ProresScanTypeConversionMode) -> Self {
         self.scan_type_conversion_mode = ::std::option::Option::Some(input);
         self
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
-    pub fn set_scan_type_conversion_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ProresScanTypeConversionMode>,
-    ) -> Self {
+    pub fn set_scan_type_conversion_mode(mut self, input: ::std::option::Option<crate::types::ProresScanTypeConversionMode>) -> Self {
         self.scan_type_conversion_mode = input;
         self
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
-    pub fn get_scan_type_conversion_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProresScanTypeConversionMode> {
+    pub fn get_scan_type_conversion_mode(&self) -> &::std::option::Option<crate::types::ProresScanTypeConversionMode> {
         &self.scan_type_conversion_mode
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
@@ -331,10 +284,7 @@ impl ProresSettingsBuilder {
         self
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
-    pub fn set_slow_pal(
-        mut self,
-        input: ::std::option::Option<crate::types::ProresSlowPal>,
-    ) -> Self {
+    pub fn set_slow_pal(mut self, input: ::std::option::Option<crate::types::ProresSlowPal>) -> Self {
         self.slow_pal = input;
         self
     }
@@ -348,10 +298,7 @@ impl ProresSettingsBuilder {
         self
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
-    pub fn set_telecine(
-        mut self,
-        input: ::std::option::Option<crate::types::ProresTelecine>,
-    ) -> Self {
+    pub fn set_telecine(mut self, input: ::std::option::Option<crate::types::ProresTelecine>) -> Self {
         self.telecine = input;
         self
     }

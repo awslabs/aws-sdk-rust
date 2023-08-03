@@ -37,10 +37,7 @@ impl CreatePlatformVersionFluentBuilder {
         }
     }
     /// Access the CreatePlatformVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_platform_version::builders::CreatePlatformVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_platform_version::builders::CreatePlatformVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreatePlatformVersionFluentBuilder {
             crate::operation::create_platform_version::CreatePlatformVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_version::CreatePlatformVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_version::CreatePlatformVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreatePlatformVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreatePlatformVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_platform_version::CreatePlatformVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_version::CreatePlatformVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_version::CreatePlatformVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreatePlatformVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_platform_version::CreatePlatformVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_version::CreatePlatformVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_version::CreatePlatformVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreatePlatformVersionFluentBuilder {
             crate::operation::create_platform_version::CreatePlatformVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_version::CreatePlatformVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_version::CreatePlatformVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of your custom platform.</p>
-    pub fn platform_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_name(input.into());
         self
     }
     /// <p>The name of your custom platform.</p>
-    pub fn set_platform_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_name(input);
         self
     }
@@ -144,18 +124,12 @@ impl CreatePlatformVersionFluentBuilder {
         self.inner.get_platform_name()
     }
     /// <p>The number, such as 1.0.2, for the new platform version.</p>
-    pub fn platform_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_version(input.into());
         self
     }
     /// <p>The number, such as 1.0.2, for the new platform version.</p>
-    pub fn set_platform_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_version(input);
         self
     }
@@ -169,32 +143,21 @@ impl CreatePlatformVersionFluentBuilder {
         self
     }
     /// <p>The location of the platform definition archive in Amazon S3.</p>
-    pub fn set_platform_definition_bundle(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_platform_definition_bundle(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_platform_definition_bundle(input);
         self
     }
     /// <p>The location of the platform definition archive in Amazon S3.</p>
-    pub fn get_platform_definition_bundle(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3Location> {
+    pub fn get_platform_definition_bundle(&self) -> &::std::option::Option<crate::types::S3Location> {
         self.inner.get_platform_definition_bundle()
     }
     /// <p>The name of the builder environment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the builder environment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -212,17 +175,12 @@ impl CreatePlatformVersionFluentBuilder {
         self
     }
     /// <p>The configuration option settings to apply to the builder environment.</p>
-    pub fn set_option_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
-    ) -> Self {
+    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
         self.inner = self.inner.set_option_settings(input);
         self
     }
     /// <p>The configuration option settings to apply to the builder environment.</p>
-    pub fn get_option_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
         self.inner.get_option_settings()
     }
     /// Appends an item to `Tags`.
@@ -237,10 +195,7 @@ impl CreatePlatformVersionFluentBuilder {
     }
     /// <p>Specifies the tags applied to the new platform version.</p>
     /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

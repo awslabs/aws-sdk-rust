@@ -22,17 +22,14 @@ impl ListRepositoriesInput {
 }
 impl ListRepositoriesInput {
     /// Creates a new builder-style object to manufacture [`ListRepositoriesInput`](crate::operation::list_repositories::ListRepositoriesInput).
-    pub fn builder() -> crate::operation::list_repositories::builders::ListRepositoriesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_repositories::builders::ListRepositoriesInputBuilder {
         crate::operation::list_repositories::builders::ListRepositoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositoriesInput`](crate::operation::list_repositories::ListRepositoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositoriesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,10 +66,7 @@ impl ListRepositoriesInputBuilder {
     /// Consumes the builder and constructs a [`ListRepositoriesInput`](crate::operation::list_repositories::ListRepositoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_repositories::ListRepositoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_repositories::ListRepositoriesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_repositories::ListRepositoriesInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -29,9 +29,7 @@ impl ListHostsInput {
 
 /// A builder for [`ListHostsInput`](crate::operation::list_hosts::ListHostsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHostsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl ListHostsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListHostsInput`](crate::operation::list_hosts::ListHostsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_hosts::ListHostsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hosts::ListHostsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_hosts::ListHostsInput {
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,

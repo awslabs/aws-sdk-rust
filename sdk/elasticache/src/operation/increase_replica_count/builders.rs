@@ -37,9 +37,7 @@ impl IncreaseReplicaCountFluentBuilder {
         }
     }
     /// Access the IncreaseReplicaCount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::increase_replica_count::builders::IncreaseReplicaCountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::increase_replica_count::builders::IncreaseReplicaCountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl IncreaseReplicaCountFluentBuilder {
             crate::operation::increase_replica_count::IncreaseReplicaCount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_replica_count::IncreaseReplicaCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_replica_count::IncreaseReplicaCountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl IncreaseReplicaCountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl IncreaseReplicaCountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::increase_replica_count::IncreaseReplicaCountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_replica_count::IncreaseReplicaCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_replica_count::IncreaseReplicaCountError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl IncreaseReplicaCountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::increase_replica_count::IncreaseReplicaCountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_replica_count::IncreaseReplicaCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_replica_count::IncreaseReplicaCountError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl IncreaseReplicaCountFluentBuilder {
             crate::operation::increase_replica_count::IncreaseReplicaCount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_replica_count::IncreaseReplicaCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_replica_count::IncreaseReplicaCountError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The id of the replication group to which you want to add replica nodes.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
         self
     }
     /// <p>The id of the replication group to which you want to add replica nodes.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
@@ -166,17 +147,12 @@ impl IncreaseReplicaCountFluentBuilder {
         self
     }
     /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-    pub fn set_replica_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
-    ) -> Self {
+    pub fn set_replica_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>) -> Self {
         self.inner = self.inner.set_replica_configuration(input);
         self
     }
     /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-    pub fn get_replica_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
+    pub fn get_replica_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
         self.inner.get_replica_configuration()
     }
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>

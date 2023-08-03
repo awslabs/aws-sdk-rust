@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`cache_subnet_groups(Option<Vec<CacheSubnetGroup>>)`](crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput::cache_subnet_groups): <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
     /// - On failure, responds with [`SdkError<DescribeCacheSubnetGroupsError>`](crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError)
-    pub fn describe_cache_subnet_groups(&self) -> crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsFluentBuilder{
+    pub fn describe_cache_subnet_groups(&self) -> crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsFluentBuilder {
         crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

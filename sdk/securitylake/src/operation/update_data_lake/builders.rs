@@ -10,10 +10,7 @@ impl UpdateDataLakeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_data_lake::UpdateDataLakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_lake::UpdateDataLakeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_lake::UpdateDataLakeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_data_lake();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDataLakeFluentBuilder {
         }
     }
     /// Access the UpdateDataLake as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_data_lake::builders::UpdateDataLakeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_data_lake::builders::UpdateDataLakeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateDataLakeFluentBuilder {
             crate::operation::update_data_lake::UpdateDataLake,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_lake::UpdateDataLakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_lake::UpdateDataLakeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateDataLakeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateDataLakeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_lake::UpdateDataLakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_lake::UpdateDataLakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_lake::UpdateDataLakeError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateDataLakeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_lake::UpdateDataLakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_lake::UpdateDataLakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_lake::UpdateDataLakeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateDataLakeFluentBuilder {
             crate::operation::update_data_lake::UpdateDataLake,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_lake::UpdateDataLakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_lake::UpdateDataLakeError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl UpdateDataLakeFluentBuilder {
         self
     }
     /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeConfiguration>>,
-    ) -> Self {
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeConfiguration>>) -> Self {
         self.inner = self.inner.set_configurations(input);
         self
     }
     /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeConfiguration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeConfiguration>> {
         self.inner.get_configurations()
     }
 }

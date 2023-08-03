@@ -36,16 +36,14 @@ impl ListReadSetActivationJobsInput {
 }
 impl ListReadSetActivationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListReadSetActivationJobsInput`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput).
-    pub fn builder() -> crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder {
         crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReadSetActivationJobsInput`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReadSetActivationJobsInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -54,18 +52,12 @@ pub struct ListReadSetActivationJobsInputBuilder {
 }
 impl ListReadSetActivationJobsInputBuilder {
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -107,10 +99,7 @@ impl ListReadSetActivationJobsInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivateReadSetFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ActivateReadSetFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -125,13 +114,11 @@ impl ListReadSetActivationJobsInputBuilder {
         crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput {
-                sequence_store_id: self.sequence_store_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filter: self.filter,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput {
+            sequence_store_id: self.sequence_store_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filter: self.filter,
+        })
     }
 }

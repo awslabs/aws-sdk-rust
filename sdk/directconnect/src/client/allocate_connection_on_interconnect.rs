@@ -33,7 +33,9 @@ impl super::Client {
     ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     /// - On failure, responds with [`SdkError<AllocateConnectionOnInterconnectError>`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError)
     #[deprecated]
-    pub fn allocate_connection_on_interconnect(&self) -> crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectFluentBuilder{
+    pub fn allocate_connection_on_interconnect(
+        &self,
+    ) -> crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectFluentBuilder {
         crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectFluentBuilder::new(self.handle.clone())
     }
 }

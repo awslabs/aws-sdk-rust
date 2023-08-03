@@ -29,16 +29,14 @@ impl DeregisterTargetFromMaintenanceWindowInput {
 }
 impl DeregisterTargetFromMaintenanceWindowInput {
     /// Creates a new builder-style object to manufacture [`DeregisterTargetFromMaintenanceWindowInput`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowInput).
-    pub fn builder() -> crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowInputBuilder{
+    pub fn builder() -> crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowInputBuilder {
         crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterTargetFromMaintenanceWindowInput`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTargetFromMaintenanceWindowInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) window_target_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl DeregisterTargetFromMaintenanceWindowInputBuilder {
         &self.window_id
     }
     /// <p>The ID of the target definition to remove.</p>
-    pub fn window_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the target definition to remove.</p>
-    pub fn set_window_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_target_id = input;
         self
     }
@@ -94,16 +86,18 @@ impl DeregisterTargetFromMaintenanceWindowInputBuilder {
         &self.safe
     }
     /// Consumes the builder and constructs a [`DeregisterTargetFromMaintenanceWindowInput`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowInput {
-                window_id: self.window_id
-                ,
-                window_target_id: self.window_target_id
-                ,
-                safe: self.safe
-                ,
-            }
+                window_id: self.window_id,
+                window_target_id: self.window_target_id,
+                safe: self.safe,
+            },
         )
     }
 }

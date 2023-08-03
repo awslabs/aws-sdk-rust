@@ -15,35 +15,25 @@ impl GetRoutingControlStateInput {
 }
 impl GetRoutingControlStateInput {
     /// Creates a new builder-style object to manufacture [`GetRoutingControlStateInput`](crate::operation::get_routing_control_state::GetRoutingControlStateInput).
-    pub fn builder(
-    ) -> crate::operation::get_routing_control_state::builders::GetRoutingControlStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_routing_control_state::builders::GetRoutingControlStateInputBuilder {
         crate::operation::get_routing_control_state::builders::GetRoutingControlStateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRoutingControlStateInput`](crate::operation::get_routing_control_state::GetRoutingControlStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRoutingControlStateInputBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetRoutingControlStateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_control_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl GetRoutingControlStateInputBuilder {
         crate::operation::get_routing_control_state::GetRoutingControlStateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_routing_control_state::GetRoutingControlStateInput {
-                routing_control_arn: self.routing_control_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_routing_control_state::GetRoutingControlStateInput {
+            routing_control_arn: self.routing_control_arn,
+        })
     }
 }

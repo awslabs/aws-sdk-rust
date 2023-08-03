@@ -15,34 +15,25 @@ impl DeleteImageRecipeInput {
 }
 impl DeleteImageRecipeInput {
     /// Creates a new builder-style object to manufacture [`DeleteImageRecipeInput`](crate::operation::delete_image_recipe::DeleteImageRecipeInput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_recipe::builders::DeleteImageRecipeInputBuilder {
+    pub fn builder() -> crate::operation::delete_image_recipe::builders::DeleteImageRecipeInputBuilder {
         crate::operation::delete_image_recipe::builders::DeleteImageRecipeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImageRecipeInput`](crate::operation::delete_image_recipe::DeleteImageRecipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImageRecipeInputBuilder {
     pub(crate) image_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImageRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
-    pub fn image_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
-    pub fn set_image_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_recipe_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteImageRecipeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteImageRecipeInput`](crate::operation::delete_image_recipe::DeleteImageRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_image_recipe::DeleteImageRecipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_image_recipe::DeleteImageRecipeInput {
-                image_recipe_arn: self.image_recipe_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_image_recipe::DeleteImageRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_image_recipe::DeleteImageRecipeInput {
+            image_recipe_arn: self.image_recipe_arn,
+        })
     }
 }

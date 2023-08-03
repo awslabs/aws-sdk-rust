@@ -22,18 +22,14 @@ impl ListFindingsFiltersInput {
 }
 impl ListFindingsFiltersInput {
     /// Creates a new builder-style object to manufacture [`ListFindingsFiltersInput`](crate::operation::list_findings_filters::ListFindingsFiltersInput).
-    pub fn builder(
-    ) -> crate::operation::list_findings_filters::builders::ListFindingsFiltersInputBuilder {
-        crate::operation::list_findings_filters::builders::ListFindingsFiltersInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_findings_filters::builders::ListFindingsFiltersInputBuilder {
+        crate::operation::list_findings_filters::builders::ListFindingsFiltersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFindingsFiltersInput`](crate::operation::list_findings_filters::ListFindingsFiltersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsFiltersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListFindingsFiltersInputBuilder {
     /// Consumes the builder and constructs a [`ListFindingsFiltersInput`](crate::operation::list_findings_filters::ListFindingsFiltersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_findings_filters::ListFindingsFiltersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_findings_filters::ListFindingsFiltersInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_findings_filters::ListFindingsFiltersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_findings_filters::ListFindingsFiltersInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

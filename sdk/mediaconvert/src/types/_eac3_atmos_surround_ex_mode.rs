@@ -39,13 +39,7 @@
 /// Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3AtmosSurroundExMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for Eac3AtmosSurroundExMode {
             "DISABLED" => Eac3AtmosSurroundExMode::Disabled,
             "ENABLED" => Eac3AtmosSurroundExMode::Enabled,
             "NOT_INDICATED" => Eac3AtmosSurroundExMode::NotIndicated,
-            other => Eac3AtmosSurroundExMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Eac3AtmosSurroundExMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

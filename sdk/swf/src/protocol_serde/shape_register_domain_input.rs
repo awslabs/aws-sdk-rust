@@ -10,9 +10,7 @@ pub fn ser_register_domain_input(
         object.key("description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.workflow_execution_retention_period_in_days {
-        object
-            .key("workflowExecutionRetentionPeriodInDays")
-            .string(var_3.as_str());
+        object.key("workflowExecutionRetentionPeriodInDays").string(var_3.as_str());
     }
     if let Some(var_4) = &input.tags {
         let mut array_5 = object.key("tags").start_array();

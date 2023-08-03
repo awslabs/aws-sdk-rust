@@ -26,7 +26,7 @@ impl DescribeReservedDbInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedDBInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_reserved_db_instances::builders::DescribeReservedDbInstancesInputBuilder,
+    inner: crate::operation::describe_reserved_db_instances::builders::DescribeReservedDbInstancesInputBuilder,
 }
 impl DescribeReservedDBInstancesFluentBuilder {
     /// Creates a new `DescribeReservedDBInstances`.
@@ -37,7 +37,7 @@ impl DescribeReservedDBInstancesFluentBuilder {
         }
     }
     /// Access the DescribeReservedDBInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_reserved_db_instances::builders::DescribeReservedDbInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_db_instances::builders::DescribeReservedDbInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeReservedDBInstancesFluentBuilder {
             crate::operation::describe_reserved_db_instances::DescribeReservedDBInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeReservedDBInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeReservedDBInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeReservedDBInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl DescribeReservedDBInstancesFluentBuilder {
             crate::operation::describe_reserved_db_instances::DescribeReservedDBInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_db_instances::paginator::DescribeReservedDbInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_reserved_db_instances::paginator::DescribeReservedDbInstancesPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_reserved_db_instances::paginator::DescribeReservedDbInstancesPaginator {
         crate::operation::describe_reserved_db_instances::paginator::DescribeReservedDbInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</p>
-    pub fn reserved_db_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_db_instance_id(input.into());
         self
     }
     /// <p>The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</p>
-    pub fn set_reserved_db_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_db_instance_id(input);
         self
     }
@@ -147,40 +130,26 @@ impl DescribeReservedDBInstancesFluentBuilder {
         self.inner.get_reserved_db_instance_id()
     }
     /// <p>The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.</p>
-    pub fn reserved_db_instances_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instances_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_db_instances_offering_id(input.into());
         self
     }
     /// <p>The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.</p>
-    pub fn set_reserved_db_instances_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instances_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_db_instances_offering_id(input);
         self
     }
     /// <p>The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.</p>
-    pub fn get_reserved_db_instances_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_db_instances_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reserved_db_instances_offering_id()
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only those reservations matching the specified DB instances class.</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_class(input.into());
         self
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only those reservations matching the specified DB instances class.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_class(input);
         self
     }
@@ -206,18 +175,12 @@ impl DescribeReservedDBInstancesFluentBuilder {
         self.inner.get_duration()
     }
     /// <p>The product description filter value. Specify this parameter to show only those reservations matching the specified product description.</p>
-    pub fn product_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_description(input.into());
         self
     }
     /// <p>The product description filter value. Specify this parameter to show only those reservations matching the specified product description.</p>
-    pub fn set_product_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_description(input);
         self
     }
@@ -227,19 +190,13 @@ impl DescribeReservedDBInstancesFluentBuilder {
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_type(input.into());
         self
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_type(input);
         self
     }
@@ -292,10 +249,7 @@ impl DescribeReservedDBInstancesFluentBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

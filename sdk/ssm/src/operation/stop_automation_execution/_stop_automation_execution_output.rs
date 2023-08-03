@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopAutomationExecutionOutput {
 }
 impl StopAutomationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopAutomationExecutionOutput`](crate::operation::stop_automation_execution::StopAutomationExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_automation_execution::builders::StopAutomationExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_automation_execution::builders::StopAutomationExecutionOutputBuilder {
         crate::operation::stop_automation_execution::builders::StopAutomationExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopAutomationExecutionOutput`](crate::operation::stop_automation_execution::StopAutomationExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopAutomationExecutionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl StopAutomationExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopAutomationExecutionOutput`](crate::operation::stop_automation_execution::StopAutomationExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_automation_execution::StopAutomationExecutionOutput {
+    pub fn build(self) -> crate::operation::stop_automation_execution::StopAutomationExecutionOutput {
         crate::operation::stop_automation_execution::StopAutomationExecutionOutput {
             _request_id: self._request_id,
         }

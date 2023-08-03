@@ -10,10 +10,7 @@ impl GetUsageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_usage::GetUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage::GetUsageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_usage();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetUsageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_usage::GetUsage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_usage::GetUsage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetUsageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetUsageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_usage::GetUsage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_usage::GetUsage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError>,
     > {
         self.customize_middleware().await
@@ -119,18 +107,12 @@ impl GetUsageFluentBuilder {
         crate::operation::get_usage::paginator::GetUsagePaginator::new(self.handle, self.inner)
     }
     /// <p>The Id of the usage plan associated with the usage data.</p>
-    pub fn usage_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_plan_id(input.into());
         self
     }
     /// <p>The Id of the usage plan associated with the usage data.</p>
-    pub fn set_usage_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_plan_id(input);
         self
     }

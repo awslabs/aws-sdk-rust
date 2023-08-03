@@ -27,7 +27,7 @@ impl GetCloudFormationStackRecordsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCloudFormationStackRecordsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsInputBuilder,
+    inner: crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsInputBuilder,
 }
 impl GetCloudFormationStackRecordsFluentBuilder {
     /// Creates a new `GetCloudFormationStackRecords`.
@@ -38,7 +38,7 @@ impl GetCloudFormationStackRecordsFluentBuilder {
         }
     }
     /// Access the GetCloudFormationStackRecords as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetCloudFormationStackRecordsFluentBuilder {
             crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetCloudFormationStackRecordsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetCloudFormationStackRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetCloudFormationStackRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetCloudFormationStackRecordsFluentBuilder {
             crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError>,
     > {
         self.customize_middleware().await
     }

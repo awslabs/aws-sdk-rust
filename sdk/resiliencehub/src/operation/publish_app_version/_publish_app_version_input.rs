@@ -15,17 +15,14 @@ impl PublishAppVersionInput {
 }
 impl PublishAppVersionInput {
     /// Creates a new builder-style object to manufacture [`PublishAppVersionInput`](crate::operation::publish_app_version::PublishAppVersionInput).
-    pub fn builder(
-    ) -> crate::operation::publish_app_version::builders::PublishAppVersionInputBuilder {
+    pub fn builder() -> crate::operation::publish_app_version::builders::PublishAppVersionInputBuilder {
         crate::operation::publish_app_version::builders::PublishAppVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`PublishAppVersionInput`](crate::operation::publish_app_version::PublishAppVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishAppVersionInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl PublishAppVersionInputBuilder {
     /// Consumes the builder and constructs a [`PublishAppVersionInput`](crate::operation::publish_app_version::PublishAppVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::publish_app_version::PublishAppVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::publish_app_version::PublishAppVersionInput {
-                app_arn: self.app_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::publish_app_version::PublishAppVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::publish_app_version::PublishAppVersionInput { app_arn: self.app_arn })
     }
 }

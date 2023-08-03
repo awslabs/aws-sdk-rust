@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAssociatedRoute53HealthChecksOutp
 }
 impl ListAssociatedRoute53HealthChecksOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedRoute53HealthChecksOutput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput).
-    pub fn builder() -> crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksOutputBuilder{
+    pub fn builder() -> crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksOutputBuilder {
         crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedRoute53HealthChecksOutput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedRoute53HealthChecksOutputBuilder {
     pub(crate) health_check_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,27 +47,19 @@ impl ListAssociatedRoute53HealthChecksOutputBuilder {
     /// To override the contents of this collection use [`set_health_check_ids`](Self::set_health_check_ids).
     ///
     /// <p>Identifiers for the health checks.</p>
-    pub fn health_check_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.health_check_ids.unwrap_or_default();
         v.push(input.into());
         self.health_check_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Identifiers for the health checks.</p>
-    pub fn set_health_check_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_health_check_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.health_check_ids = input;
         self
     }
     /// <p>Identifiers for the health checks.</p>
-    pub fn get_health_check_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_health_check_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.health_check_ids
     }
     /// <p>Next token for listing health checks.</p>
@@ -96,12 +86,10 @@ impl ListAssociatedRoute53HealthChecksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssociatedRoute53HealthChecksOutput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput).
-    pub fn build(self) -> crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput{
+    pub fn build(self) -> crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput {
         crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput {
-            health_check_ids: self.health_check_ids
-            ,
-            next_token: self.next_token
-            ,
+            health_check_ids: self.health_check_ids,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

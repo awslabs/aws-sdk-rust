@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`status(Option<Status>)`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusOutput::status): <p>The enrollment status of the account.</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusOutput::status_reason): <p>The reason for the enrollment status of the account. For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
     /// - On failure, responds with [`SdkError<UpdateEnrollmentStatusError>`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusError)
-    pub fn update_enrollment_status(
-        &self,
-    ) -> crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusFluentBuilder
-    {
+    pub fn update_enrollment_status(&self) -> crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusFluentBuilder {
         crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusFluentBuilder::new(self.handle.clone())
     }
 }

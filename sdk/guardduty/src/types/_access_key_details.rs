@@ -44,9 +44,7 @@ impl AccessKeyDetails {
 
 /// A builder for [`AccessKeyDetails`](crate::types::AccessKeyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessKeyDetailsBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct AccessKeyDetailsBuilder {
 }
 impl AccessKeyDetailsBuilder {
     /// <p>The access key ID of the user.</p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access key ID of the user.</p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_key_id = input;
         self
     }

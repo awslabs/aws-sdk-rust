@@ -30,9 +30,7 @@ impl AwsApiGatewayAccessLogSettings {
 
 /// A builder for [`AwsApiGatewayAccessLogSettings`](crate::types::AwsApiGatewayAccessLogSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiGatewayAccessLogSettingsBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl AwsApiGatewayAccessLogSettingsBuilder {
         &self.format
     }
     /// <p>The ARN of the CloudWatch Logs log group that receives the access logs.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the CloudWatch Logs log group that receives the access logs.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }

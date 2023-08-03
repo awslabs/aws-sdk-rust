@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`granularity(impl ::std::convert::Into<String>)`](crate::operation::enable_metrics_collection::builders::EnableMetricsCollectionFluentBuilder::granularity) / [`set_granularity(Option<String>)`](crate::operation::enable_metrics_collection::builders::EnableMetricsCollectionFluentBuilder::set_granularity): <p>The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is <code>1Minute</code>.</p>
     /// - On success, responds with [`EnableMetricsCollectionOutput`](crate::operation::enable_metrics_collection::EnableMetricsCollectionOutput)
     /// - On failure, responds with [`SdkError<EnableMetricsCollectionError>`](crate::operation::enable_metrics_collection::EnableMetricsCollectionError)
-    pub fn enable_metrics_collection(
-        &self,
-    ) -> crate::operation::enable_metrics_collection::builders::EnableMetricsCollectionFluentBuilder
-    {
+    pub fn enable_metrics_collection(&self) -> crate::operation::enable_metrics_collection::builders::EnableMetricsCollectionFluentBuilder {
         crate::operation::enable_metrics_collection::builders::EnableMetricsCollectionFluentBuilder::new(self.handle.clone())
     }
 }

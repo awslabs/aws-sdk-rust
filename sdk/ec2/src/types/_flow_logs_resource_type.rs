@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FlowLogsResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for FlowLogsResourceType {
             "TransitGateway" => FlowLogsResourceType::TransitGateway,
             "TransitGatewayAttachment" => FlowLogsResourceType::TransitGatewayAttachment,
             "VPC" => FlowLogsResourceType::Vpc,
-            other => FlowLogsResourceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => FlowLogsResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl FlowLogsResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "NetworkInterface",
-            "Subnet",
-            "TransitGateway",
-            "TransitGatewayAttachment",
-            "VPC",
-        ]
+        &["NetworkInterface", "Subnet", "TransitGateway", "TransitGatewayAttachment", "VPC"]
     }
 }
 impl ::std::convert::AsRef<str> for FlowLogsResourceType {

@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`percent_enabled(i32)`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput::percent_enabled): <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
     ///   - [`playback_configuration_name(Option<String>)`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput::playback_configuration_name): <p>The name of the playback configuration.</p>
     /// - On failure, responds with [`SdkError<ConfigureLogsForPlaybackConfigurationError>`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError)
-    pub fn configure_logs_for_playback_configuration(&self) -> crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationFluentBuilder{
-        crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn configure_logs_for_playback_configuration(
+        &self,
+    ) -> crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationFluentBuilder {
+        crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

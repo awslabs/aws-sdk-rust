@@ -13,9 +13,7 @@ pub struct AccountTakeoverRiskConfigurationType {
 }
 impl AccountTakeoverRiskConfigurationType {
     /// <p>The notify configuration used to construct email notifications.</p>
-    pub fn notify_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotifyConfigurationType> {
+    pub fn notify_configuration(&self) -> ::std::option::Option<&crate::types::NotifyConfigurationType> {
         self.notify_configuration.as_ref()
     }
     /// <p>Account takeover risk configuration actions.</p>
@@ -32,9 +30,7 @@ impl AccountTakeoverRiskConfigurationType {
 
 /// A builder for [`AccountTakeoverRiskConfigurationType`](crate::types::AccountTakeoverRiskConfigurationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountTakeoverRiskConfigurationTypeBuilder {
     pub(crate) notify_configuration: ::std::option::Option<crate::types::NotifyConfigurationType>,
     pub(crate) actions: ::std::option::Option<crate::types::AccountTakeoverActionsType>,
@@ -46,17 +42,12 @@ impl AccountTakeoverRiskConfigurationTypeBuilder {
         self
     }
     /// <p>The notify configuration used to construct email notifications.</p>
-    pub fn set_notify_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotifyConfigurationType>,
-    ) -> Self {
+    pub fn set_notify_configuration(mut self, input: ::std::option::Option<crate::types::NotifyConfigurationType>) -> Self {
         self.notify_configuration = input;
         self
     }
     /// <p>The notify configuration used to construct email notifications.</p>
-    pub fn get_notify_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotifyConfigurationType> {
+    pub fn get_notify_configuration(&self) -> &::std::option::Option<crate::types::NotifyConfigurationType> {
         &self.notify_configuration
     }
     /// <p>Account takeover risk configuration actions.</p>
@@ -65,10 +56,7 @@ impl AccountTakeoverRiskConfigurationTypeBuilder {
         self
     }
     /// <p>Account takeover risk configuration actions.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountTakeoverActionsType>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<crate::types::AccountTakeoverActionsType>) -> Self {
         self.actions = input;
         self
     }

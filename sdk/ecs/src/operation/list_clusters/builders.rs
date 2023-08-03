@@ -10,10 +10,7 @@ impl ListClustersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_clusters::ListClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_clusters::ListClustersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_clusters::ListClustersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_clusters();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListClustersFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_clusters::ListClusters,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_clusters::ListClusters, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_clusters::ListClustersError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListClustersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListClustersFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_clusters::ListClusters,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_clusters::ListClusters, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_clusters::ListClustersError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListClustersFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_clusters::paginator::ListClustersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_clusters::paginator::ListClustersPaginator {
-        crate::operation::list_clusters::paginator::ListClustersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_clusters::paginator::ListClustersPaginator {
+        crate::operation::list_clusters::paginator::ListClustersPaginator::new(self.handle, self.inner)
     }
     /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>

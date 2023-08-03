@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`EnableEbsEncryptionByDefaultOutput`](crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultOutput) with field(s):
     ///   - [`ebs_encryption_by_default(Option<bool>)`](crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultOutput::ebs_encryption_by_default): <p>The updated status of encryption by default.</p>
     /// - On failure, responds with [`SdkError<EnableEbsEncryptionByDefaultError>`](crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultError)
-    pub fn enable_ebs_encryption_by_default(&self) -> crate::operation::enable_ebs_encryption_by_default::builders::EnableEbsEncryptionByDefaultFluentBuilder{
+    pub fn enable_ebs_encryption_by_default(
+        &self,
+    ) -> crate::operation::enable_ebs_encryption_by_default::builders::EnableEbsEncryptionByDefaultFluentBuilder {
         crate::operation::enable_ebs_encryption_by_default::builders::EnableEbsEncryptionByDefaultFluentBuilder::new(self.handle.clone())
     }
 }

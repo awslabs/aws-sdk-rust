@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetServiceSettingOutput`](crate::operation::get_service_setting::GetServiceSettingOutput) with field(s):
     ///   - [`service_setting(Option<ServiceSetting>)`](crate::operation::get_service_setting::GetServiceSettingOutput::service_setting): <p>The query result of the current service setting.</p>
     /// - On failure, responds with [`SdkError<GetServiceSettingError>`](crate::operation::get_service_setting::GetServiceSettingError)
-    pub fn get_service_setting(
-        &self,
-    ) -> crate::operation::get_service_setting::builders::GetServiceSettingFluentBuilder {
-        crate::operation::get_service_setting::builders::GetServiceSettingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_service_setting(&self) -> crate::operation::get_service_setting::builders::GetServiceSettingFluentBuilder {
+        crate::operation::get_service_setting::builders::GetServiceSettingFluentBuilder::new(self.handle.clone())
     }
 }

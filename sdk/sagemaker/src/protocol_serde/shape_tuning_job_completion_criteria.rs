@@ -18,10 +18,7 @@ pub fn ser_tuning_job_completion_criteria(
     if let Some(var_4) = &input.convergence_detected {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ConvergenceDetected").start_object();
-        crate::protocol_serde::shape_convergence_detected::ser_convergence_detected(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_convergence_detected::ser_convergence_detected(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())
@@ -29,17 +26,9 @@ pub fn ser_tuning_job_completion_criteria(
 
 pub(crate) fn de_tuning_job_completion_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::TuningJobCompletionCriteria>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::TuningJobCompletionCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,44 +38,35 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "TargetObjectiveMetricValue" => {
-                                builder = builder.set_target_objective_metric_value(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f32_lossy()),
-                                );
-                            }
-                            "BestObjectiveNotImproving" => {
-                                builder = builder.set_best_objective_not_improving(
-                                    crate::protocol_serde::shape_best_objective_not_improving::de_best_objective_not_improving(tokens)?
-                                );
-                            }
-                            "ConvergenceDetected" => {
-                                builder = builder.set_convergence_detected(
-                                    crate::protocol_serde::shape_convergence_detected::de_convergence_detected(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "TargetObjectiveMetricValue" => {
+                            builder = builder.set_target_objective_metric_value(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
+                            );
                         }
-                    }
+                        "BestObjectiveNotImproving" => {
+                            builder = builder.set_best_objective_not_improving(
+                                crate::protocol_serde::shape_best_objective_not_improving::de_best_objective_not_improving(tokens)?,
+                            );
+                        }
+                        "ConvergenceDetected" => {
+                            builder =
+                                builder.set_convergence_detected(crate::protocol_serde::shape_convergence_detected::de_convergence_detected(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

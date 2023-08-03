@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CheckSchemaVersionValidityOutput {
 }
 impl CheckSchemaVersionValidityOutput {
     /// Creates a new builder-style object to manufacture [`CheckSchemaVersionValidityOutput`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput).
-    pub fn builder() -> crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityOutputBuilder{
+    pub fn builder() -> crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityOutputBuilder {
         crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityOutputBuilder::default()
     }
 }
 
 /// A builder for [`CheckSchemaVersionValidityOutput`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckSchemaVersionValidityOutputBuilder {
     pub(crate) valid: ::std::option::Option<bool>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl CheckSchemaVersionValidityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CheckSchemaVersionValidityOutput`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput {
+    pub fn build(self) -> crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput {
         crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput {
             valid: self.valid.unwrap_or_default(),
             error: self.error,

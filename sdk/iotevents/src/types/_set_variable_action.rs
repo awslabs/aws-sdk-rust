@@ -30,27 +30,19 @@ impl SetVariableAction {
 
 /// A builder for [`SetVariableAction`](crate::types::SetVariableAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetVariableActionBuilder {
     pub(crate) variable_name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl SetVariableActionBuilder {
     /// <p>The name of the variable.</p>
-    pub fn variable_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variable_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variable_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the variable.</p>
-    pub fn set_variable_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_variable_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variable_name = input;
         self
     }

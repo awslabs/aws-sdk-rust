@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetExternalModelsOutput {
 }
 impl GetExternalModelsOutput {
     /// Creates a new builder-style object to manufacture [`GetExternalModelsOutput`](crate::operation::get_external_models::GetExternalModelsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_external_models::builders::GetExternalModelsOutputBuilder {
+    pub fn builder() -> crate::operation::get_external_models::builders::GetExternalModelsOutputBuilder {
         crate::operation::get_external_models::builders::GetExternalModelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetExternalModelsOutput`](crate::operation::get_external_models::GetExternalModelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExternalModelsOutputBuilder {
     pub(crate) external_models: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetExternalModelsOutputBuilder {
         self
     }
     /// <p>Gets the Amazon SageMaker models.</p>
-    pub fn set_external_models(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModel>>,
-    ) -> Self {
+    pub fn set_external_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModel>>) -> Self {
         self.external_models = input;
         self
     }
     /// <p>Gets the Amazon SageMaker models.</p>
-    pub fn get_external_models(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalModel>> {
+    pub fn get_external_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalModel>> {
         &self.external_models
     }
     /// <p>The next page token to be used in subsequent requests.</p>

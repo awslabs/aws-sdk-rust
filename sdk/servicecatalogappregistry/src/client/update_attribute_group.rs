@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAttributeGroupOutput`](crate::operation::update_attribute_group::UpdateAttributeGroupOutput) with field(s):
     ///   - [`attribute_group(Option<AttributeGroup>)`](crate::operation::update_attribute_group::UpdateAttributeGroupOutput::attribute_group): <p>The updated information of the attribute group.</p>
     /// - On failure, responds with [`SdkError<UpdateAttributeGroupError>`](crate::operation::update_attribute_group::UpdateAttributeGroupError)
-    pub fn update_attribute_group(
-        &self,
-    ) -> crate::operation::update_attribute_group::builders::UpdateAttributeGroupFluentBuilder {
-        crate::operation::update_attribute_group::builders::UpdateAttributeGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_attribute_group(&self) -> crate::operation::update_attribute_group::builders::UpdateAttributeGroupFluentBuilder {
+        crate::operation::update_attribute_group::builders::UpdateAttributeGroupFluentBuilder::new(self.handle.clone())
     }
 }

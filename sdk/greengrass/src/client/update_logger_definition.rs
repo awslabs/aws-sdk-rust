@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionFluentBuilder::set_name): The name of the definition.
     /// - On success, responds with [`UpdateLoggerDefinitionOutput`](crate::operation::update_logger_definition::UpdateLoggerDefinitionOutput)
     /// - On failure, responds with [`SdkError<UpdateLoggerDefinitionError>`](crate::operation::update_logger_definition::UpdateLoggerDefinitionError)
-    pub fn update_logger_definition(
-        &self,
-    ) -> crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionFluentBuilder
-    {
+    pub fn update_logger_definition(&self) -> crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionFluentBuilder {
         crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

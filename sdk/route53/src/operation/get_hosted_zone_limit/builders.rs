@@ -10,10 +10,7 @@ impl GetHostedZoneLimitInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_hosted_zone_limit();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetHostedZoneLimitFluentBuilder {
         }
     }
     /// Access the GetHostedZoneLimit as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_hosted_zone_limit::builders::GetHostedZoneLimitInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_hosted_zone_limit::builders::GetHostedZoneLimitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetHostedZoneLimitFluentBuilder {
             crate::operation::get_hosted_zone_limit::GetHostedZoneLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetHostedZoneLimitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetHostedZoneLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetHostedZoneLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl GetHostedZoneLimitFluentBuilder {
             crate::operation::get_hosted_zone_limit::GetHostedZoneLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError>,
     > {
         self.customize_middleware().await
     }
@@ -137,10 +121,7 @@ impl GetHostedZoneLimitFluentBuilder {
     /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
     /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HostedZoneLimitType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::HostedZoneLimitType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -153,18 +134,12 @@ impl GetHostedZoneLimitFluentBuilder {
         self.inner.get_type()
     }
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }

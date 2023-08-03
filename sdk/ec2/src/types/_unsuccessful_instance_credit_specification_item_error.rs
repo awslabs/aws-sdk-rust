@@ -13,10 +13,7 @@ pub struct UnsuccessfulInstanceCreditSpecificationItemError {
 }
 impl UnsuccessfulInstanceCreditSpecificationItemError {
     /// <p>The error code.</p>
-    pub fn code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>
-    {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode> {
         self.code.as_ref()
     }
     /// <p>The applicable error message.</p>
@@ -26,46 +23,31 @@ impl UnsuccessfulInstanceCreditSpecificationItemError {
 }
 impl UnsuccessfulInstanceCreditSpecificationItemError {
     /// Creates a new builder-style object to manufacture [`UnsuccessfulInstanceCreditSpecificationItemError`](crate::types::UnsuccessfulInstanceCreditSpecificationItemError).
-    pub fn builder(
-    ) -> crate::types::builders::UnsuccessfulInstanceCreditSpecificationItemErrorBuilder {
+    pub fn builder() -> crate::types::builders::UnsuccessfulInstanceCreditSpecificationItemErrorBuilder {
         crate::types::builders::UnsuccessfulInstanceCreditSpecificationItemErrorBuilder::default()
     }
 }
 
 /// A builder for [`UnsuccessfulInstanceCreditSpecificationItemError`](crate::types::UnsuccessfulInstanceCreditSpecificationItemError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsuccessfulInstanceCreditSpecificationItemErrorBuilder {
-    pub(crate) code:
-        ::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>,
+    pub(crate) code: ::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl UnsuccessfulInstanceCreditSpecificationItemErrorBuilder {
     /// <p>The error code.</p>
-    pub fn code(
-        mut self,
-        input: crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode,
-    ) -> Self {
+    pub fn code(mut self, input: crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode,
-        >,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>) -> Self {
         self.code = input;
         self
     }
     /// <p>The error code.</p>
-    pub fn get_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>
-    {
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode> {
         &self.code
     }
     /// <p>The applicable error message.</p>

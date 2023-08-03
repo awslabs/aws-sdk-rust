@@ -60,13 +60,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -124,16 +118,10 @@ impl ::std::convert::From<&str> for ScanStatusReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => ScanStatusReason::AccessDenied,
-            "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED" => {
-                ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded
-            }
-            "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED" => {
-                ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded
-            }
+            "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded,
+            "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded,
             "DEEP_INSPECTION_NO_INVENTORY" => ScanStatusReason::DeepInspectionNoInventory,
-            "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED" => {
-                ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded
-            }
+            "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded,
             "EC2_INSTANCE_STOPPED" => ScanStatusReason::Ec2InstanceStopped,
             "EXCLUDED_BY_TAG" => ScanStatusReason::ExcludedByTag,
             "IMAGE_SIZE_EXCEEDED" => ScanStatusReason::ImageSizeExceeded,
@@ -153,9 +141,7 @@ impl ::std::convert::From<&str> for ScanStatusReason {
             "UNSUPPORTED_MEDIA_TYPE" => ScanStatusReason::UnsupportedMediaType,
             "UNSUPPORTED_OS" => ScanStatusReason::UnsupportedOs,
             "UNSUPPORTED_RUNTIME" => ScanStatusReason::UnsupportedRuntime,
-            other => {
-                ScanStatusReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ScanStatusReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -171,16 +157,10 @@ impl ScanStatusReason {
     pub fn as_str(&self) -> &str {
         match self {
             ScanStatusReason::AccessDenied => "ACCESS_DENIED",
-            ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => {
-                "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED"
-            }
-            ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => {
-                "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED"
-            }
+            ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
+            ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED",
             ScanStatusReason::DeepInspectionNoInventory => "DEEP_INSPECTION_NO_INVENTORY",
-            ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => {
-                "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED"
-            }
+            ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED",
             ScanStatusReason::Ec2InstanceStopped => "EC2_INSTANCE_STOPPED",
             ScanStatusReason::ExcludedByTag => "EXCLUDED_BY_TAG",
             ScanStatusReason::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",

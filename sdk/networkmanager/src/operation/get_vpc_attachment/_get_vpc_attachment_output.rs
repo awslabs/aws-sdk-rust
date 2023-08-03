@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVpcAttachmentOutput {
 }
 impl GetVpcAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`GetVpcAttachmentOutput`](crate::operation::get_vpc_attachment::GetVpcAttachmentOutput).
-    pub fn builder() -> crate::operation::get_vpc_attachment::builders::GetVpcAttachmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_vpc_attachment::builders::GetVpcAttachmentOutputBuilder {
         crate::operation::get_vpc_attachment::builders::GetVpcAttachmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVpcAttachmentOutput`](crate::operation::get_vpc_attachment::GetVpcAttachmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVpcAttachmentOutputBuilder {
     pub(crate) vpc_attachment: ::std::option::Option<crate::types::VpcAttachment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetVpcAttachmentOutputBuilder {
         self
     }
     /// <p>Returns details about a VPC attachment.</p>
-    pub fn set_vpc_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcAttachment>,
-    ) -> Self {
+    pub fn set_vpc_attachment(mut self, input: ::std::option::Option<crate::types::VpcAttachment>) -> Self {
         self.vpc_attachment = input;
         self
     }

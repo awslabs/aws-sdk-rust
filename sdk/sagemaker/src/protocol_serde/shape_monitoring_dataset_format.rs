@@ -26,17 +26,9 @@ pub fn ser_monitoring_dataset_format(
 
 pub(crate) fn de_monitoring_dataset_format<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::MonitoringDatasetFormat>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::MonitoringDatasetFormat>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -46,41 +38,34 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Csv" => {
-                                builder = builder.set_csv(
-                                    crate::protocol_serde::shape_monitoring_csv_dataset_format::de_monitoring_csv_dataset_format(tokens)?
-                                );
-                            }
-                            "Json" => {
-                                builder = builder.set_json(
-                                    crate::protocol_serde::shape_monitoring_json_dataset_format::de_monitoring_json_dataset_format(tokens)?
-                                );
-                            }
-                            "Parquet" => {
-                                builder = builder.set_parquet(
-                                    crate::protocol_serde::shape_monitoring_parquet_dataset_format::de_monitoring_parquet_dataset_format(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Csv" => {
+                            builder = builder
+                                .set_csv(crate::protocol_serde::shape_monitoring_csv_dataset_format::de_monitoring_csv_dataset_format(tokens)?);
                         }
-                    }
+                        "Json" => {
+                            builder = builder
+                                .set_json(crate::protocol_serde::shape_monitoring_json_dataset_format::de_monitoring_json_dataset_format(tokens)?);
+                        }
+                        "Parquet" => {
+                            builder = builder.set_parquet(
+                                crate::protocol_serde::shape_monitoring_parquet_dataset_format::de_monitoring_parquet_dataset_format(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

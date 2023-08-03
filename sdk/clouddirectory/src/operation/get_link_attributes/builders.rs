@@ -10,10 +10,7 @@ impl GetLinkAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_link_attributes::GetLinkAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_link_attributes::GetLinkAttributesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_link_attributes::GetLinkAttributesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_link_attributes();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetLinkAttributesFluentBuilder {
         }
     }
     /// Access the GetLinkAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_link_attributes::builders::GetLinkAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_link_attributes::builders::GetLinkAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetLinkAttributesFluentBuilder {
             crate::operation::get_link_attributes::GetLinkAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_link_attributes::GetLinkAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_link_attributes::GetLinkAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetLinkAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetLinkAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_link_attributes::GetLinkAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_link_attributes::GetLinkAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_link_attributes::GetLinkAttributesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetLinkAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_link_attributes::GetLinkAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_link_attributes::GetLinkAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_link_attributes::GetLinkAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetLinkAttributesFluentBuilder {
             crate::operation::get_link_attributes::GetLinkAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_link_attributes::GetLinkAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_link_attributes::GetLinkAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -148,17 +126,12 @@ impl GetLinkAttributesFluentBuilder {
         self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn set_typed_link_specifier(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedLinkSpecifier>,
-    ) -> Self {
+    pub fn set_typed_link_specifier(mut self, input: ::std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
         self.inner = self.inner.set_typed_link_specifier(input);
         self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn get_typed_link_specifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+    pub fn get_typed_link_specifier(&self) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
         self.inner.get_typed_link_specifier()
     }
     /// Appends an item to `AttributeNames`.
@@ -166,25 +139,17 @@ impl GetLinkAttributesFluentBuilder {
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
     ///
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_names(input.into());
         self
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn set_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_attribute_names(input);
         self
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn get_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_attribute_names()
     }
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
@@ -193,10 +158,7 @@ impl GetLinkAttributesFluentBuilder {
         self
     }
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }

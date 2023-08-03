@@ -15,9 +15,7 @@ impl super::Client {
     ///   - [`state(Option<RouteState>)`](crate::operation::update_route::UpdateRouteOutput::state): <p> The current state of the route. </p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::update_route::UpdateRouteOutput::last_updated_time): <p> A timestamp that indicates when the route was last updated. </p>
     /// - On failure, responds with [`SdkError<UpdateRouteError>`](crate::operation::update_route::UpdateRouteError)
-    pub fn update_route(
-        &self,
-    ) -> crate::operation::update_route::builders::UpdateRouteFluentBuilder {
+    pub fn update_route(&self) -> crate::operation::update_route::builders::UpdateRouteFluentBuilder {
         crate::operation::update_route::builders::UpdateRouteFluentBuilder::new(self.handle.clone())
     }
 }

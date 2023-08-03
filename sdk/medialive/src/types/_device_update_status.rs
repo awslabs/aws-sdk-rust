@@ -39,13 +39,7 @@
 /// The status of software on the input device.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeviceUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DeviceUpdateStatus {
             "NOT_UP_TO_DATE" => DeviceUpdateStatus::NotUpToDate,
             "UPDATING" => DeviceUpdateStatus::Updating,
             "UP_TO_DATE" => DeviceUpdateStatus::UpToDate,
-            other => DeviceUpdateStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeviceUpdateStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

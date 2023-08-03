@@ -10,10 +10,7 @@ impl PutScalingPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_scaling_policy();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl PutScalingPolicyFluentBuilder {
         }
     }
     /// Access the PutScalingPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl PutScalingPolicyFluentBuilder {
             crate::operation::put_scaling_policy::PutScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl PutScalingPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl PutScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl PutScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl PutScalingPolicyFluentBuilder {
             crate::operation::put_scaling_policy::PutScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -151,10 +135,7 @@ impl PutScalingPolicyFluentBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.inner = self.inner.set_service_namespace(input);
         self
     }
@@ -285,10 +266,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
         self
     }
@@ -316,9 +294,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         self.inner.get_scalable_dimension()
     }
     /// <p>The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
@@ -335,10 +311,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p> <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p>
     /// <p> <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }
@@ -352,38 +325,25 @@ impl PutScalingPolicyFluentBuilder {
     }
     /// <p>A step scaling policy.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.</p>
-    pub fn step_scaling_policy_configuration(
-        mut self,
-        input: crate::types::StepScalingPolicyConfiguration,
-    ) -> Self {
+    pub fn step_scaling_policy_configuration(mut self, input: crate::types::StepScalingPolicyConfiguration) -> Self {
         self.inner = self.inner.step_scaling_policy_configuration(input);
         self
     }
     /// <p>A step scaling policy.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.</p>
-    pub fn set_step_scaling_policy_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
-    ) -> Self {
+    pub fn set_step_scaling_policy_configuration(mut self, input: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>) -> Self {
         self.inner = self.inner.set_step_scaling_policy_configuration(input);
         self
     }
     /// <p>A step scaling policy.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.</p>
-    pub fn get_step_scaling_policy_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StepScalingPolicyConfiguration> {
+    pub fn get_step_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::StepScalingPolicyConfiguration> {
         self.inner.get_step_scaling_policy_configuration()
     }
     /// <p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
-    pub fn target_tracking_scaling_policy_configuration(
-        mut self,
-        input: crate::types::TargetTrackingScalingPolicyConfiguration,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .target_tracking_scaling_policy_configuration(input);
+    pub fn target_tracking_scaling_policy_configuration(mut self, input: crate::types::TargetTrackingScalingPolicyConfiguration) -> Self {
+        self.inner = self.inner.target_tracking_scaling_policy_configuration(input);
         self
     }
     /// <p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
@@ -392,17 +352,12 @@ impl PutScalingPolicyFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_target_tracking_scaling_policy_configuration(input);
+        self.inner = self.inner.set_target_tracking_scaling_policy_configuration(input);
         self
     }
     /// <p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
-    pub fn get_target_tracking_scaling_policy_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration> {
-        self.inner
-            .get_target_tracking_scaling_policy_configuration()
+    pub fn get_target_tracking_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration> {
+        self.inner.get_target_tracking_scaling_policy_configuration()
     }
 }

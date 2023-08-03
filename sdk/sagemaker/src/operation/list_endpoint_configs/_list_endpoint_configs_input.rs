@@ -57,18 +57,14 @@ impl ListEndpointConfigsInput {
 }
 impl ListEndpointConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListEndpointConfigsInput`](crate::operation::list_endpoint_configs::ListEndpointConfigsInput).
-    pub fn builder(
-    ) -> crate::operation::list_endpoint_configs::builders::ListEndpointConfigsInputBuilder {
-        crate::operation::list_endpoint_configs::builders::ListEndpointConfigsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_endpoint_configs::builders::ListEndpointConfigsInputBuilder {
+        crate::operation::list_endpoint_configs::builders::ListEndpointConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEndpointConfigsInput`](crate::operation::list_endpoint_configs::ListEndpointConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEndpointConfigsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::EndpointConfigSortKey>,
     pub(crate) sort_order: ::std::option::Option<crate::types::OrderKey>,
@@ -85,10 +81,7 @@ impl ListEndpointConfigsInputBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointConfigSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::EndpointConfigSortKey>) -> Self {
         self.sort_by = input;
         self
     }
@@ -139,18 +132,12 @@ impl ListEndpointConfigsInputBuilder {
         &self.max_results
     }
     /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -164,10 +151,7 @@ impl ListEndpointConfigsInputBuilder {
         self
     }
     /// <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -181,10 +165,7 @@ impl ListEndpointConfigsInputBuilder {
         self
     }
     /// <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -195,20 +176,16 @@ impl ListEndpointConfigsInputBuilder {
     /// Consumes the builder and constructs a [`ListEndpointConfigsInput`](crate::operation::list_endpoint_configs::ListEndpointConfigsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_endpoint_configs::ListEndpointConfigsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_endpoint_configs::ListEndpointConfigsInput {
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                name_contains: self.name_contains,
-                creation_time_before: self.creation_time_before,
-                creation_time_after: self.creation_time_after,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_endpoint_configs::ListEndpointConfigsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_endpoint_configs::ListEndpointConfigsInput {
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            name_contains: self.name_contains,
+            creation_time_before: self.creation_time_before,
+            creation_time_after: self.creation_time_after,
+        })
     }
 }

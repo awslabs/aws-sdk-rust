@@ -28,34 +28,27 @@ impl ::std::fmt::Display for TooManyRemoveHeadersInResponseHeadersPolicy {
     }
 }
 impl ::std::error::Error for TooManyRemoveHeadersInResponseHeadersPolicy {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyRemoveHeadersInResponseHeadersPolicy
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyRemoveHeadersInResponseHeadersPolicy {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyRemoveHeadersInResponseHeadersPolicy
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRemoveHeadersInResponseHeadersPolicy {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyRemoveHeadersInResponseHeadersPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyRemoveHeadersInResponseHeadersPolicy`](crate::types::error::TooManyRemoveHeadersInResponseHeadersPolicy).
-    pub fn builder(
-    ) -> crate::types::error::builders::TooManyRemoveHeadersInResponseHeadersPolicyBuilder {
+    pub fn builder() -> crate::types::error::builders::TooManyRemoveHeadersInResponseHeadersPolicyBuilder {
         crate::types::error::builders::TooManyRemoveHeadersInResponseHeadersPolicyBuilder::default()
     }
 }
 
 /// A builder for [`TooManyRemoveHeadersInResponseHeadersPolicy`](crate::types::error::TooManyRemoveHeadersInResponseHeadersPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyRemoveHeadersInResponseHeadersPolicyBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +75,7 @@ impl TooManyRemoveHeadersInResponseHeadersPolicyBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

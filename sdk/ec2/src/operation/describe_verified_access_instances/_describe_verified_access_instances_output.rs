@@ -5,8 +5,7 @@
 pub struct DescribeVerifiedAccessInstancesOutput {
     /// <p>The IDs of the Verified Access instances.</p>
     #[doc(hidden)]
-    pub verified_access_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>>,
+    pub verified_access_instances: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeVerifiedAccessInstancesOutput {
 }
 impl DescribeVerifiedAccessInstancesOutput {
     /// <p>The IDs of the Verified Access instances.</p>
-    pub fn verified_access_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VerifiedAccessInstance]> {
+    pub fn verified_access_instances(&self) -> ::std::option::Option<&[crate::types::VerifiedAccessInstance]> {
         self.verified_access_instances.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeVerifiedAccessInstancesOutput
 }
 impl DescribeVerifiedAccessInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessInstancesOutput`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput).
-    pub fn builder() -> crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesOutputBuilder {
         crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVerifiedAccessInstancesOutput`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessInstancesOutputBuilder {
-    pub(crate) verified_access_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>>,
+    pub(crate) verified_access_instances: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeVerifiedAccessInstancesOutputBuilder {
     /// To override the contents of this collection use [`set_verified_access_instances`](Self::set_verified_access_instances).
     ///
     /// <p>The IDs of the Verified Access instances.</p>
-    pub fn verified_access_instances(
-        mut self,
-        input: crate::types::VerifiedAccessInstance,
-    ) -> Self {
+    pub fn verified_access_instances(mut self, input: crate::types::VerifiedAccessInstance) -> Self {
         let mut v = self.verified_access_instances.unwrap_or_default();
         v.push(input);
         self.verified_access_instances = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Verified Access instances.</p>
-    pub fn set_verified_access_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>>,
-    ) -> Self {
+    pub fn set_verified_access_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>>) -> Self {
         self.verified_access_instances = input;
         self
     }
     /// <p>The IDs of the Verified Access instances.</p>
-    pub fn get_verified_access_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>> {
+    pub fn get_verified_access_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>> {
         &self.verified_access_instances
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,15 +86,10 @@ impl DescribeVerifiedAccessInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVerifiedAccessInstancesOutput`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput {
         crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput {
-            verified_access_instances: self.verified_access_instances
-            ,
-            next_token: self.next_token
-            ,
+            verified_access_instances: self.verified_access_instances,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

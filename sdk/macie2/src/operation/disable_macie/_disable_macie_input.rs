@@ -12,18 +12,11 @@ impl DisableMacieInput {
 
 /// A builder for [`DisableMacieInput`](crate::operation::disable_macie::DisableMacieInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableMacieInputBuilder {}
 impl DisableMacieInputBuilder {
     /// Consumes the builder and constructs a [`DisableMacieInput`](crate::operation::disable_macie::DisableMacieInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_macie::DisableMacieInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_macie::DisableMacieInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_macie::DisableMacieInput {})
     }
 }

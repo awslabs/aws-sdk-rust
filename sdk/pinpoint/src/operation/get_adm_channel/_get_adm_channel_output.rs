@@ -28,9 +28,7 @@ impl GetAdmChannelOutput {
 
 /// A builder for [`GetAdmChannelOutput`](crate::operation::get_adm_channel::GetAdmChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAdmChannelOutputBuilder {
     pub(crate) adm_channel_response: ::std::option::Option<crate::types::AdmChannelResponse>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl GetAdmChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn set_adm_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::AdmChannelResponse>,
-    ) -> Self {
+    pub fn set_adm_channel_response(mut self, input: ::std::option::Option<crate::types::AdmChannelResponse>) -> Self {
         self.adm_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn get_adm_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdmChannelResponse> {
+    pub fn get_adm_channel_response(&self) -> &::std::option::Option<crate::types::AdmChannelResponse> {
         &self.adm_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`revision_id(impl ::std::convert::Into<String>)`](crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionFluentBuilder::set_revision_id): <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     /// - On success, responds with [`RemoveLayerVersionPermissionOutput`](crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionOutput)
     /// - On failure, responds with [`SdkError<RemoveLayerVersionPermissionError>`](crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError)
-    pub fn remove_layer_version_permission(&self) -> crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionFluentBuilder{
+    pub fn remove_layer_version_permission(
+        &self,
+    ) -> crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionFluentBuilder {
         crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,9 +31,7 @@ impl TargetGrant {
 
 /// A builder for [`TargetGrant`](crate::types::TargetGrant).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetGrantBuilder {
     pub(crate) grantee: ::std::option::Option<crate::types::Grantee>,
     pub(crate) permission: ::std::option::Option<crate::types::BucketLogsPermission>,
@@ -59,10 +57,7 @@ impl TargetGrantBuilder {
         self
     }
     /// <p>Logging permissions assigned to the grantee for the bucket.</p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketLogsPermission>,
-    ) -> Self {
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::BucketLogsPermission>) -> Self {
         self.permission = input;
         self
     }

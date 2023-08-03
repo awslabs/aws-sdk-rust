@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetQualificationTypeOutput`](crate::operation::get_qualification_type::GetQualificationTypeOutput) with field(s):
     ///   - [`qualification_type(Option<QualificationType>)`](crate::operation::get_qualification_type::GetQualificationTypeOutput::qualification_type): <p> The returned Qualification Type</p>
     /// - On failure, responds with [`SdkError<GetQualificationTypeError>`](crate::operation::get_qualification_type::GetQualificationTypeError)
-    pub fn get_qualification_type(
-        &self,
-    ) -> crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder {
-        crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_qualification_type(&self) -> crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder {
+        crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder::new(self.handle.clone())
     }
 }

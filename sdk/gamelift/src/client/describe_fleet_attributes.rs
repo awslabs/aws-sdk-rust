@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`fleet_attributes(Option<Vec<FleetAttributes>>)`](crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput::fleet_attributes): <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetAttributesError>`](crate::operation::describe_fleet_attributes::DescribeFleetAttributesError)
-    pub fn describe_fleet_attributes(
-        &self,
-    ) -> crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesFluentBuilder
-    {
+    pub fn describe_fleet_attributes(&self) -> crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesFluentBuilder {
         crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesFluentBuilder::new(self.handle.clone())
     }
 }

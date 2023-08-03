@@ -10,10 +10,7 @@ impl CreateCanaryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_canary::CreateCanaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_canary::CreateCanaryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_canary::CreateCanaryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_canary();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl CreateCanaryFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_canary::CreateCanary,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_canary::CreateCanary, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_canary::CreateCanaryError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl CreateCanaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl CreateCanaryFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_canary::CreateCanary,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_canary::CreateCanary, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_canary::CreateCanaryError>,
     > {
         self.customize_middleware().await
@@ -147,18 +135,12 @@ impl CreateCanaryFluentBuilder {
         self.inner.get_code()
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
-    pub fn artifact_s3_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.artifact_s3_location(input.into());
         self
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
-    pub fn set_artifact_s3_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_artifact_s3_location(input);
         self
     }
@@ -176,10 +158,7 @@ impl CreateCanaryFluentBuilder {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
     /// </ul>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
@@ -193,10 +172,7 @@ impl CreateCanaryFluentBuilder {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
     /// </ul>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -219,10 +195,7 @@ impl CreateCanaryFluentBuilder {
         self
     }
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::CanaryScheduleInput>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::CanaryScheduleInput>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
     }
@@ -240,10 +213,7 @@ impl CreateCanaryFluentBuilder {
     /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
-    pub fn set_run_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CanaryRunConfigInput>,
-    ) -> Self {
+    pub fn set_run_config(mut self, input: ::std::option::Option<crate::types::CanaryRunConfigInput>) -> Self {
         self.inner = self.inner.set_run_config(input);
         self
     }
@@ -259,10 +229,7 @@ impl CreateCanaryFluentBuilder {
         self
     }
     /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
-    pub fn set_success_retention_period_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_success_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_success_retention_period_in_days(input);
         self
     }
@@ -276,10 +243,7 @@ impl CreateCanaryFluentBuilder {
         self
     }
     /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
-    pub fn set_failure_retention_period_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_failure_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_failure_retention_period_in_days(input);
         self
     }
@@ -288,18 +252,12 @@ impl CreateCanaryFluentBuilder {
         self.inner.get_failure_retention_period_in_days()
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn runtime_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.runtime_version(input.into());
         self
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn set_runtime_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_runtime_version(input);
         self
     }
@@ -313,10 +271,7 @@ impl CreateCanaryFluentBuilder {
         self
     }
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfigInput>,
-    ) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigInput>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
     }
@@ -330,32 +285,19 @@ impl CreateCanaryFluentBuilder {
     ///
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
@@ -364,10 +306,7 @@ impl CreateCanaryFluentBuilder {
         self
     }
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
-    pub fn set_artifact_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactConfigInput>,
-    ) -> Self {
+    pub fn set_artifact_config(mut self, input: ::std::option::Option<crate::types::ArtifactConfigInput>) -> Self {
         self.inner = self.inner.set_artifact_config(input);
         self
     }

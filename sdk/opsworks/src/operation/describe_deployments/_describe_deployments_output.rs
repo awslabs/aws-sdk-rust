@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeDeploymentsOutput {
 }
 impl DescribeDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeploymentsOutput`](crate::operation::describe_deployments::DescribeDeploymentsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_deployments::builders::DescribeDeploymentsOutputBuilder {
-        crate::operation::describe_deployments::builders::DescribeDeploymentsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_deployments::builders::DescribeDeploymentsOutputBuilder {
+        crate::operation::describe_deployments::builders::DescribeDeploymentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDeploymentsOutput`](crate::operation::describe_deployments::DescribeDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeploymentsOutputBuilder {
     pub(crate) deployments: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl DescribeDeploymentsOutputBuilder {
         self
     }
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    pub fn set_deployments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
-    ) -> Self {
+    pub fn set_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>) -> Self {
         self.deployments = input;
         self
     }
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    pub fn get_deployments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Deployment>> {
+    pub fn get_deployments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Deployment>> {
         &self.deployments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

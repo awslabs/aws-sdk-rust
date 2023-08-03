@@ -16,12 +16,7 @@ impl super::Client {
     ///   - [`disable_lni_at_device_index(AttributeBooleanValue)`](crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeFluentBuilder::disable_lni_at_device_index) / [`set_disable_lni_at_device_index(Option<AttributeBooleanValue>)`](crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeFluentBuilder::set_disable_lni_at_device_index): <p> Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled. </p>
     /// - On success, responds with [`ModifySubnetAttributeOutput`](crate::operation::modify_subnet_attribute::ModifySubnetAttributeOutput)
     /// - On failure, responds with [`SdkError<ModifySubnetAttributeError>`](crate::operation::modify_subnet_attribute::ModifySubnetAttributeError)
-    pub fn modify_subnet_attribute(
-        &self,
-    ) -> crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeFluentBuilder
-    {
-        crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_subnet_attribute(&self) -> crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeFluentBuilder {
+        crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeFluentBuilder::new(self.handle.clone())
     }
 }

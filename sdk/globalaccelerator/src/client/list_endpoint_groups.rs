@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`endpoint_groups(Option<Vec<EndpointGroup>>)`](crate::operation::list_endpoint_groups::ListEndpointGroupsOutput::endpoint_groups): <p>The list of the endpoint groups associated with a listener.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoint_groups::ListEndpointGroupsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListEndpointGroupsError>`](crate::operation::list_endpoint_groups::ListEndpointGroupsError)
-    pub fn list_endpoint_groups(
-        &self,
-    ) -> crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder {
-        crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_endpoint_groups(&self) -> crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder {
+        crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::new(self.handle.clone())
     }
 }

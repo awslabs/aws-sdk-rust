@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`pipelines(Option<Vec<PipelineSummary>>)`](crate::operation::list_pipelines::ListPipelinesOutput::pipelines): <p>The list of pipelines.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipelines::ListPipelinesOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
     /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
-    pub fn list_pipelines(
-        &self,
-    ) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
-        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_pipelines(&self) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
+        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
     }
 }

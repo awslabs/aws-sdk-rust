@@ -15,18 +15,14 @@ impl DisableDomainAutoRenewInput {
 }
 impl DisableDomainAutoRenewInput {
     /// Creates a new builder-style object to manufacture [`DisableDomainAutoRenewInput`](crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput).
-    pub fn builder(
-    ) -> crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewInputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewInputBuilder {
         crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableDomainAutoRenewInput`](crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableDomainAutoRenewInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl DisableDomainAutoRenewInputBuilder {
         crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput {
-                domain_name: self.domain_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput {
+            domain_name: self.domain_name,
+        })
     }
 }

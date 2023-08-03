@@ -5,16 +5,16 @@ pub use crate::operation::get_relational_database_log_events::_get_relational_da
 
 impl GetRelationalDatabaseLogEventsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_relational_database_log_events();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsInputBuilder,
+    inner: crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsInputBuilder,
 }
 impl GetRelationalDatabaseLogEventsFluentBuilder {
     /// Creates a new `GetRelationalDatabaseLogEvents`.
@@ -37,15 +37,20 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
         }
     }
     /// Access the GetRelationalDatabaseLogEvents as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEvents, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEvents,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEvents, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEvents,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of your database for which to get log events.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
     /// <p>The name of your database for which to get log events.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
@@ -116,19 +125,13 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     }
     /// <p>The name of the log stream.</p>
     /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
-    pub fn log_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_stream_name(input.into());
         self
     }
     /// <p>The name of the log stream.</p>
     /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
-    pub fn set_log_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_stream_name(input);
         self
     }
@@ -153,10 +156,7 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -185,10 +185,7 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
     /// </ul>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

@@ -22,9 +22,7 @@ impl CreateResourceDataSyncInput {
         self.sync_name.as_deref()
     }
     /// <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
-    pub fn s3_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceDataSyncS3Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::ResourceDataSyncS3Destination> {
         self.s3_destination.as_ref()
     }
     /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
@@ -38,18 +36,14 @@ impl CreateResourceDataSyncInput {
 }
 impl CreateResourceDataSyncInput {
     /// Creates a new builder-style object to manufacture [`CreateResourceDataSyncInput`](crate::operation::create_resource_data_sync::CreateResourceDataSyncInput).
-    pub fn builder(
-    ) -> crate::operation::create_resource_data_sync::builders::CreateResourceDataSyncInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_resource_data_sync::builders::CreateResourceDataSyncInputBuilder {
         crate::operation::create_resource_data_sync::builders::CreateResourceDataSyncInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResourceDataSyncInput`](crate::operation::create_resource_data_sync::CreateResourceDataSyncInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResourceDataSyncInputBuilder {
     pub(crate) sync_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::ResourceDataSyncS3Destination>,
@@ -77,17 +71,12 @@ impl CreateResourceDataSyncInputBuilder {
         self
     }
     /// <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataSyncS3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncS3Destination>) -> Self {
         self.s3_destination = input;
         self
     }
     /// <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
-    pub fn get_s3_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceDataSyncS3Destination> {
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::ResourceDataSyncS3Destination> {
         &self.s3_destination
     }
     /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
@@ -110,10 +99,7 @@ impl CreateResourceDataSyncInputBuilder {
         self
     }
     /// <p>Specify information about the data sources to synchronize. This parameter is required if the <code>SyncType</code> value is SyncFromSource.</p>
-    pub fn set_sync_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataSyncSource>,
-    ) -> Self {
+    pub fn set_sync_source(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncSource>) -> Self {
         self.sync_source = input;
         self
     }
@@ -128,13 +114,11 @@ impl CreateResourceDataSyncInputBuilder {
         crate::operation::create_resource_data_sync::CreateResourceDataSyncInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_resource_data_sync::CreateResourceDataSyncInput {
-                sync_name: self.sync_name,
-                s3_destination: self.s3_destination,
-                sync_type: self.sync_type,
-                sync_source: self.sync_source,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_resource_data_sync::CreateResourceDataSyncInput {
+            sync_name: self.sync_name,
+            s3_destination: self.s3_destination,
+            sync_type: self.sync_type,
+            sync_source: self.sync_source,
+        })
     }
 }

@@ -31,9 +31,7 @@ impl ListProtectionsInput {
         self.max_results
     }
     /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
-    pub fn inclusion_filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InclusionProtectionFilters> {
+    pub fn inclusion_filters(&self) -> ::std::option::Option<&crate::types::InclusionProtectionFilters> {
         self.inclusion_filters.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl ListProtectionsInput {
 
 /// A builder for [`ListProtectionsInput`](crate::operation::list_protections::ListProtectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtectionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -101,26 +97,18 @@ impl ListProtectionsInputBuilder {
         self
     }
     /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
-    pub fn set_inclusion_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::InclusionProtectionFilters>,
-    ) -> Self {
+    pub fn set_inclusion_filters(mut self, input: ::std::option::Option<crate::types::InclusionProtectionFilters>) -> Self {
         self.inclusion_filters = input;
         self
     }
     /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
-    pub fn get_inclusion_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::InclusionProtectionFilters> {
+    pub fn get_inclusion_filters(&self) -> &::std::option::Option<crate::types::InclusionProtectionFilters> {
         &self.inclusion_filters
     }
     /// Consumes the builder and constructs a [`ListProtectionsInput`](crate::operation::list_protections::ListProtectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_protections::ListProtectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_protections::ListProtectionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_protections::ListProtectionsInput {
             next_token: self.next_token,
             max_results: self.max_results,

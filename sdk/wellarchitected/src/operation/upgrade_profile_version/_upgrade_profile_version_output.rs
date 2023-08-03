@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpgradeProfileVersionOutput {
 }
 impl UpgradeProfileVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpgradeProfileVersionOutput`](crate::operation::upgrade_profile_version::UpgradeProfileVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::upgrade_profile_version::builders::UpgradeProfileVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::upgrade_profile_version::builders::UpgradeProfileVersionOutputBuilder {
         crate::operation::upgrade_profile_version::builders::UpgradeProfileVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpgradeProfileVersionOutput`](crate::operation::upgrade_profile_version::UpgradeProfileVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeProfileVersionOutputBuilder {
     _request_id: Option<String>,
 }

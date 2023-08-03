@@ -12,11 +12,7 @@ impl super::Client {
     #[deprecated(
         note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     )]
-    pub fn register_robot(
-        &self,
-    ) -> crate::operation::register_robot::builders::RegisterRobotFluentBuilder {
-        crate::operation::register_robot::builders::RegisterRobotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_robot(&self) -> crate::operation::register_robot::builders::RegisterRobotFluentBuilder {
+        crate::operation::register_robot::builders::RegisterRobotFluentBuilder::new(self.handle.clone())
     }
 }

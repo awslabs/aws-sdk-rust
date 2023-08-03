@@ -75,9 +75,7 @@ impl ChangeSetHook {
         self.type_configuration_version_id.as_deref()
     }
     /// <p>Specifies details about the target that the hook will run against.</p>
-    pub fn target_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChangeSetHookTargetDetails> {
+    pub fn target_details(&self) -> ::std::option::Option<&crate::types::ChangeSetHookTargetDetails> {
         self.target_details.as_ref()
     }
 }
@@ -90,9 +88,7 @@ impl ChangeSetHook {
 
 /// A builder for [`ChangeSetHook`](crate::types::ChangeSetHook).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeSetHookBuilder {
     pub(crate) invocation_point: ::std::option::Option<crate::types::HookInvocationPoint>,
     pub(crate) failure_mode: ::std::option::Option<crate::types::HookFailureMode>,
@@ -108,17 +104,12 @@ impl ChangeSetHookBuilder {
         self
     }
     /// <p>Specifies the points in provisioning logic where a hook is invoked.</p>
-    pub fn set_invocation_point(
-        mut self,
-        input: ::std::option::Option<crate::types::HookInvocationPoint>,
-    ) -> Self {
+    pub fn set_invocation_point(mut self, input: ::std::option::Option<crate::types::HookInvocationPoint>) -> Self {
         self.invocation_point = input;
         self
     }
     /// <p>Specifies the points in provisioning logic where a hook is invoked.</p>
-    pub fn get_invocation_point(
-        &self,
-    ) -> &::std::option::Option<crate::types::HookInvocationPoint> {
+    pub fn get_invocation_point(&self) -> &::std::option::Option<crate::types::HookInvocationPoint> {
         &self.invocation_point
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
@@ -135,10 +126,7 @@ impl ChangeSetHookBuilder {
     /// <li> <p> <code>FAIL</code> Stops provisioning resources.</p> </li>
     /// <li> <p> <code>WARN</code> Allows provisioning to continue with a warning message.</p> </li>
     /// </ul>
-    pub fn set_failure_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::HookFailureMode>,
-    ) -> Self {
+    pub fn set_failure_mode(mut self, input: ::std::option::Option<crate::types::HookFailureMode>) -> Self {
         self.failure_mode = input;
         self
     }
@@ -198,18 +186,12 @@ impl ChangeSetHookBuilder {
         &self.type_name
     }
     /// <p>The version ID of the type specified.</p>
-    pub fn type_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version ID of the type specified.</p>
-    pub fn set_type_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_version_id = input;
         self
     }
@@ -218,25 +200,17 @@ impl ChangeSetHookBuilder {
         &self.type_version_id
     }
     /// <p>The version ID of the type configuration.</p>
-    pub fn type_configuration_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_configuration_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_configuration_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version ID of the type configuration.</p>
-    pub fn set_type_configuration_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_configuration_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_configuration_version_id = input;
         self
     }
     /// <p>The version ID of the type configuration.</p>
-    pub fn get_type_configuration_version_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_type_configuration_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_configuration_version_id
     }
     /// <p>Specifies details about the target that the hook will run against.</p>
@@ -245,17 +219,12 @@ impl ChangeSetHookBuilder {
         self
     }
     /// <p>Specifies details about the target that the hook will run against.</p>
-    pub fn set_target_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeSetHookTargetDetails>,
-    ) -> Self {
+    pub fn set_target_details(mut self, input: ::std::option::Option<crate::types::ChangeSetHookTargetDetails>) -> Self {
         self.target_details = input;
         self
     }
     /// <p>Specifies details about the target that the hook will run against.</p>
-    pub fn get_target_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChangeSetHookTargetDetails> {
+    pub fn get_target_details(&self) -> &::std::option::Option<crate::types::ChangeSetHookTargetDetails> {
         &self.target_details
     }
     /// Consumes the builder and constructs a [`ChangeSetHook`](crate::types::ChangeSetHook).

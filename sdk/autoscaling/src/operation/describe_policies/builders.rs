@@ -10,10 +10,7 @@ impl DescribePoliciesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_policies::DescribePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_policies::DescribePoliciesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_policies::DescribePoliciesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_policies();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribePoliciesFluentBuilder {
         }
     }
     /// Access the DescribePolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_policies::builders::DescribePoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_policies::builders::DescribePoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribePoliciesFluentBuilder {
             crate::operation::describe_policies::DescribePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_policies::DescribePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_policies::DescribePoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribePoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_policies::DescribePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_policies::DescribePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_policies::DescribePoliciesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_policies::DescribePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_policies::DescribePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_policies::DescribePoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl DescribePoliciesFluentBuilder {
             crate::operation::describe_policies::DescribePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_policies::DescribePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_policies::DescribePoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_policies::paginator::DescribePoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_policies::paginator::DescribePoliciesPaginator {
-        crate::operation::describe_policies::paginator::DescribePoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_policies::paginator::DescribePoliciesPaginator {
+        crate::operation::describe_policies::paginator::DescribePoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -165,18 +138,13 @@ impl DescribePoliciesFluentBuilder {
     }
     /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_names(input);
         self
     }
     /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_policy_names()
     }
     /// Appends an item to `PolicyTypes`.
@@ -189,17 +157,12 @@ impl DescribePoliciesFluentBuilder {
         self
     }
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    pub fn set_policy_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_types(input);
         self
     }
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    pub fn get_policy_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_policy_types()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>

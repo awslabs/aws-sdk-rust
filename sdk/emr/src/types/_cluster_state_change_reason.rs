@@ -30,9 +30,7 @@ impl ClusterStateChangeReason {
 
 /// A builder for [`ClusterStateChangeReason`](crate::types::ClusterStateChangeReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ClusterStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ClusterStateChangeReasonBuilder {
         self
     }
     /// <p>The programmatic code for the state change reason.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterStateChangeReasonCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::ClusterStateChangeReasonCode>) -> Self {
         self.code = input;
         self
     }

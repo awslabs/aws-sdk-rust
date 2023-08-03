@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for StopReplicationTaskOutput {
 }
 impl StopReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`StopReplicationTaskOutput`](crate::operation::stop_replication_task::StopReplicationTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_replication_task::builders::StopReplicationTaskOutputBuilder {
-        crate::operation::stop_replication_task::builders::StopReplicationTaskOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::stop_replication_task::builders::StopReplicationTaskOutputBuilder {
+        crate::operation::stop_replication_task::builders::StopReplicationTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopReplicationTaskOutput`](crate::operation::stop_replication_task::StopReplicationTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopReplicationTaskOutputBuilder {
     pub(crate) replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl StopReplicationTaskOutputBuilder {
         self
     }
     /// <p>The replication task stopped.</p>
-    pub fn set_replication_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationTask>,
-    ) -> Self {
+    pub fn set_replication_task(mut self, input: ::std::option::Option<crate::types::ReplicationTask>) -> Self {
         self.replication_task = input;
         self
     }

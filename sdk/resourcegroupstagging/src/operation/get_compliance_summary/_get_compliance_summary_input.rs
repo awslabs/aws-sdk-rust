@@ -71,17 +71,14 @@ impl GetComplianceSummaryInput {
 }
 impl GetComplianceSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetComplianceSummaryInput`](crate::operation::get_compliance_summary::GetComplianceSummaryInput).
-    pub fn builder(
-    ) -> crate::operation::get_compliance_summary::builders::GetComplianceSummaryInputBuilder {
+    pub fn builder() -> crate::operation::get_compliance_summary::builders::GetComplianceSummaryInputBuilder {
         crate::operation::get_compliance_summary::builders::GetComplianceSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetComplianceSummaryInput`](crate::operation::get_compliance_summary::GetComplianceSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComplianceSummaryInputBuilder {
     pub(crate) target_id_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) region_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -97,27 +94,19 @@ impl GetComplianceSummaryInputBuilder {
     /// To override the contents of this collection use [`set_target_id_filters`](Self::set_target_id_filters).
     ///
     /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
-    pub fn target_id_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_id_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_id_filters.unwrap_or_default();
         v.push(input.into());
         self.target_id_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
-    pub fn set_target_id_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_id_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_id_filters = input;
         self
     }
     /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
-    pub fn get_target_id_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_id_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_id_filters
     }
     /// Appends an item to `region_filters`.
@@ -125,27 +114,19 @@ impl GetComplianceSummaryInputBuilder {
     /// To override the contents of this collection use [`set_region_filters`](Self::set_region_filters).
     ///
     /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
-    pub fn region_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn region_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.region_filters.unwrap_or_default();
         v.push(input.into());
         self.region_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
-    pub fn set_region_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_region_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.region_filters = input;
         self
     }
     /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
-    pub fn get_region_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_region_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.region_filters
     }
     /// Appends an item to `resource_type_filters`.
@@ -160,10 +141,7 @@ impl GetComplianceSummaryInputBuilder {
     /// <li> <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
     /// </ul>
     /// <p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. </p>
-    pub fn resource_type_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_type_filters.unwrap_or_default();
         v.push(input.into());
         self.resource_type_filters = ::std::option::Option::Some(v);
@@ -177,10 +155,7 @@ impl GetComplianceSummaryInputBuilder {
     /// <li> <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
     /// </ul>
     /// <p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. </p>
-    pub fn set_resource_type_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_type_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_type_filters = input;
         self
     }
@@ -192,9 +167,7 @@ impl GetComplianceSummaryInputBuilder {
     /// <li> <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
     /// </ul>
     /// <p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. </p>
-    pub fn get_resource_type_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_type_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_type_filters
     }
     /// Appends an item to `tag_key_filters`.
@@ -202,27 +175,19 @@ impl GetComplianceSummaryInputBuilder {
     /// To override the contents of this collection use [`set_tag_key_filters`](Self::set_tag_key_filters).
     ///
     /// <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
-    pub fn tag_key_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_key_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_key_filters.unwrap_or_default();
         v.push(input.into());
         self.tag_key_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
-    pub fn set_tag_key_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_key_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_key_filters = input;
         self
     }
     /// <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
-    pub fn get_tag_key_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_key_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_key_filters
     }
     /// Appends an item to `group_by`.
@@ -237,17 +202,12 @@ impl GetComplianceSummaryInputBuilder {
         self
     }
     /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupByAttribute>>,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupByAttribute>>) -> Self {
         self.group_by = input;
         self
     }
     /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupByAttribute>> {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupByAttribute>> {
         &self.group_by
     }
     /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
@@ -265,18 +225,12 @@ impl GetComplianceSummaryInputBuilder {
         &self.max_results
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }
@@ -287,20 +241,16 @@ impl GetComplianceSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetComplianceSummaryInput`](crate::operation::get_compliance_summary::GetComplianceSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compliance_summary::GetComplianceSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_compliance_summary::GetComplianceSummaryInput {
-                target_id_filters: self.target_id_filters,
-                region_filters: self.region_filters,
-                resource_type_filters: self.resource_type_filters,
-                tag_key_filters: self.tag_key_filters,
-                group_by: self.group_by,
-                max_results: self.max_results,
-                pagination_token: self.pagination_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_compliance_summary::GetComplianceSummaryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_compliance_summary::GetComplianceSummaryInput {
+            target_id_filters: self.target_id_filters,
+            region_filters: self.region_filters,
+            resource_type_filters: self.resource_type_filters,
+            tag_key_filters: self.tag_key_filters,
+            group_by: self.group_by,
+            max_results: self.max_results,
+            pagination_token: self.pagination_token,
+        })
     }
 }

@@ -23,9 +23,7 @@ impl GetSuiteInput {
 
 /// A builder for [`GetSuiteInput`](crate::operation::get_suite::GetSuiteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSuiteInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl GetSuiteInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetSuiteInput`](crate::operation::get_suite::GetSuiteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_suite::GetSuiteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_suite::GetSuiteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_suite::GetSuiteInput { arn: self.arn })
     }
 }

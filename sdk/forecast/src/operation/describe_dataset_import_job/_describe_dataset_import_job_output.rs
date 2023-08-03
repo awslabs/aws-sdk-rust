@@ -37,9 +37,7 @@ pub struct DescribeDatasetImportJobOutput {
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>Statistical information about each field in the input data.</p>
     #[doc(hidden)]
-    pub field_statistics: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Statistics>,
-    >,
+    pub field_statistics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Statistics>>,
     /// <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
     #[doc(hidden)]
     pub data_size: ::std::option::Option<f64>,
@@ -119,11 +117,7 @@ impl DescribeDatasetImportJobOutput {
         self.estimated_time_remaining_in_minutes
     }
     /// <p>Statistical information about each field in the input data.</p>
-    pub fn field_statistics(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Statistics>,
-    > {
+    pub fn field_statistics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Statistics>> {
         self.field_statistics.as_ref()
     }
     /// <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
@@ -175,16 +169,14 @@ impl ::aws_http::request_id::RequestId for DescribeDatasetImportJobOutput {
 }
 impl DescribeDatasetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
-    pub fn builder() -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobOutputBuilder {
         crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetImportJobOutputBuilder {
     pub(crate) dataset_import_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
@@ -195,9 +187,7 @@ pub struct DescribeDatasetImportJobOutputBuilder {
     pub(crate) geolocation_format: ::std::option::Option<::std::string::String>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
-    pub(crate) field_statistics: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Statistics>,
-    >,
+    pub(crate) field_statistics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Statistics>>,
     pub(crate) data_size: ::std::option::Option<f64>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -209,18 +199,12 @@ pub struct DescribeDatasetImportJobOutputBuilder {
 }
 impl DescribeDatasetImportJobOutputBuilder {
     /// <p>The name of the dataset import job.</p>
-    pub fn dataset_import_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_import_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset import job.</p>
-    pub fn set_dataset_import_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_import_job_name = input;
         self
     }
@@ -229,18 +213,12 @@ impl DescribeDatasetImportJobOutputBuilder {
         &self.dataset_import_job_name
     }
     /// <p>The ARN of the dataset import job.</p>
-    pub fn dataset_import_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_import_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset import job.</p>
-    pub fn set_dataset_import_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_import_job_arn = input;
         self
     }
@@ -267,10 +245,7 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
     /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
-    pub fn timestamp_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timestamp_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp_format = ::std::option::Option::Some(input.into());
         self
     }
@@ -279,10 +254,7 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
     /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
-    pub fn set_timestamp_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp_format = input;
         self
     }
@@ -323,18 +295,12 @@ impl DescribeDatasetImportJobOutputBuilder {
         &self.use_geolocation_for_time_zone
     }
     /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
-    pub fn geolocation_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn geolocation_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geolocation_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
-    pub fn set_geolocation_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_geolocation_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.geolocation_format = input;
         self
     }
@@ -350,10 +316,7 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -368,10 +331,7 @@ impl DescribeDatasetImportJobOutputBuilder {
         self
     }
     /// <p>The estimated time remaining in minutes for the dataset import job to complete.</p>
-    pub fn set_estimated_time_remaining_in_minutes(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_estimated_time_remaining_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_time_remaining_in_minutes = input;
         self
     }
@@ -384,11 +344,7 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// To override the contents of this collection use [`set_field_statistics`](Self::set_field_statistics).
     ///
     /// <p>Statistical information about each field in the input data.</p>
-    pub fn field_statistics(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Statistics,
-    ) -> Self {
+    pub fn field_statistics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Statistics) -> Self {
         let mut hash_map = self.field_statistics.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.field_statistics = ::std::option::Option::Some(hash_map);
@@ -397,19 +353,13 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// <p>Statistical information about each field in the input data.</p>
     pub fn set_field_statistics(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Statistics>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Statistics>>,
     ) -> Self {
         self.field_statistics = input;
         self
     }
     /// <p>Statistical information about each field in the input data.</p>
-    pub fn get_field_statistics(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Statistics>,
-    > {
+    pub fn get_field_statistics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Statistics>> {
         &self.field_statistics
     }
     /// <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
@@ -478,10 +428,7 @@ impl DescribeDatasetImportJobOutputBuilder {
         self
     }
     /// <p>When the dataset import job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -509,10 +456,7 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -524,9 +468,7 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// <p>The format of the imported data, CSV or PARQUET.</p>
@@ -549,10 +491,7 @@ impl DescribeDatasetImportJobOutputBuilder {
         self
     }
     /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
-    pub fn set_import_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportMode>,
-    ) -> Self {
+    pub fn set_import_mode(mut self, input: ::std::option::Option<crate::types::ImportMode>) -> Self {
         self.import_mode = input;
         self
     }
@@ -570,9 +509,7 @@ impl DescribeDatasetImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
+    pub fn build(self) -> crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
         crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
             dataset_import_job_name: self.dataset_import_job_name,
             dataset_import_job_arn: self.dataset_import_job_arn,

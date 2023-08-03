@@ -10,10 +10,7 @@ impl CreateJourneyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_journey::CreateJourneyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_journey::CreateJourneyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_journey::CreateJourneyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_journey();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateJourneyFluentBuilder {
         }
     }
     /// Access the CreateJourney as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_journey::builders::CreateJourneyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_journey::builders::CreateJourneyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateJourneyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl CreateJourneyFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -140,17 +126,12 @@ impl CreateJourneyFluentBuilder {
         self
     }
     /// <p>Specifies the configuration and other settings for a journey.</p>
-    pub fn set_write_journey_request(
-        mut self,
-        input: ::std::option::Option<crate::types::WriteJourneyRequest>,
-    ) -> Self {
+    pub fn set_write_journey_request(mut self, input: ::std::option::Option<crate::types::WriteJourneyRequest>) -> Self {
         self.inner = self.inner.set_write_journey_request(input);
         self
     }
     /// <p>Specifies the configuration and other settings for a journey.</p>
-    pub fn get_write_journey_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::WriteJourneyRequest> {
+    pub fn get_write_journey_request(&self) -> &::std::option::Option<crate::types::WriteJourneyRequest> {
         self.inner.get_write_journey_request()
     }
 }

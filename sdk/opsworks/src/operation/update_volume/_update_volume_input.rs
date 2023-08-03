@@ -36,9 +36,7 @@ impl UpdateVolumeInput {
 
 /// A builder for [`UpdateVolumeInput`](crate::operation::update_volume::UpdateVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVolumeInputBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl UpdateVolumeInputBuilder {
         &self.mount_point
     }
     /// Consumes the builder and constructs a [`UpdateVolumeInput`](crate::operation::update_volume::UpdateVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_volume::UpdateVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_volume::UpdateVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_volume::UpdateVolumeInput {
             volume_id: self.volume_id,
             name: self.name,

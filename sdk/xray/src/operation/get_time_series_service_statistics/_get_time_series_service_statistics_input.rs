@@ -64,16 +64,14 @@ impl GetTimeSeriesServiceStatisticsInput {
 }
 impl GetTimeSeriesServiceStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetTimeSeriesServiceStatisticsInput`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsInput).
-    pub fn builder() -> crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsInputBuilder{
+    pub fn builder() -> crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsInputBuilder {
         crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTimeSeriesServiceStatisticsInput`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTimeSeriesServiceStatisticsInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -91,10 +89,7 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
         self
     }
     /// <p>The start of the time frame for which to aggregate statistics.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -108,10 +103,7 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
         self
     }
     /// <p>The end of the time frame for which to aggregate statistics.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -148,18 +140,12 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
         &self.group_arn
     }
     /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
-    pub fn entity_selector_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_selector_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_selector_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
-    pub fn set_entity_selector_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_selector_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_selector_expression = input;
         self
     }
@@ -218,23 +204,15 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsInput {
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-                group_name: self.group_name
-                ,
-                group_arn: self.group_arn
-                ,
-                entity_selector_expression: self.entity_selector_expression
-                ,
-                period: self.period
-                ,
-                forecast_statistics: self.forecast_statistics
-                ,
-                next_token: self.next_token
-                ,
-            }
+                start_time: self.start_time,
+                end_time: self.end_time,
+                group_name: self.group_name,
+                group_arn: self.group_arn,
+                entity_selector_expression: self.entity_selector_expression,
+                period: self.period,
+                forecast_statistics: self.forecast_statistics,
+                next_token: self.next_token,
+            },
         )
     }
 }

@@ -38,9 +38,7 @@ impl ConfigureAccessPointFluentBuilder {
         }
     }
     /// Access the ConfigureAccessPoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::configure_access_point::builders::ConfigureAccessPointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::configure_access_point::builders::ConfigureAccessPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ConfigureAccessPointFluentBuilder {
             crate::operation::configure_access_point::ConfigureAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_access_point::ConfigureAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_access_point::ConfigureAccessPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ConfigureAccessPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ConfigureAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::configure_access_point::ConfigureAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_access_point::ConfigureAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_access_point::ConfigureAccessPointError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ConfigureAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::configure_access_point::ConfigureAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_access_point::ConfigureAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_access_point::ConfigureAccessPointError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl ConfigureAccessPointFluentBuilder {
             crate::operation::configure_access_point::ConfigureAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_access_point::ConfigureAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_access_point::ConfigureAccessPointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_point_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn set_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_point_arn(input);
         self
     }
@@ -186,18 +167,12 @@ impl ConfigureAccessPointFluentBuilder {
         self.inner.get_cpi_user_id()
     }
     /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
-    pub fn cpi_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cpi_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cpi_user_password(input.into());
         self
     }
     /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
-    pub fn set_cpi_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cpi_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cpi_user_password(input);
         self
     }
@@ -206,18 +181,12 @@ impl ConfigureAccessPointFluentBuilder {
         self.inner.get_cpi_user_password()
     }
     /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
-    pub fn cpi_secret_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cpi_secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cpi_secret_key(input.into());
         self
     }
     /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
-    pub fn set_cpi_secret_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cpi_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cpi_secret_key(input);
         self
     }

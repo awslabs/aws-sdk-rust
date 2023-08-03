@@ -22,36 +22,26 @@ impl DeleteClientVpnEndpointInput {
 }
 impl DeleteClientVpnEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteClientVpnEndpointInput`](crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointInputBuilder {
         crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClientVpnEndpointInput`](crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClientVpnEndpointInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteClientVpnEndpointInputBuilder {
     /// <p>The ID of the Client VPN to be deleted.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN to be deleted.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DeleteClientVpnEndpointInputBuilder {
         crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointInput {
+            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+            dry_run: self.dry_run,
+        })
     }
 }

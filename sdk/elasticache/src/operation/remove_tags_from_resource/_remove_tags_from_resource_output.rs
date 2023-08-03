@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for RemoveTagsFromResourceOutput {
 }
 impl RemoveTagsFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceOutputBuilder {
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
@@ -51,10 +47,7 @@ impl RemoveTagsFromResourceOutputBuilder {
         self
     }
     /// <p>A list of tags as key-value pairs.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
@@ -72,9 +65,7 @@ impl RemoveTagsFromResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput {
+    pub fn build(self) -> crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput {
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput {
             tag_list: self.tag_list,
             _request_id: self._request_id,

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAssessmentOutput {
 }
 impl UpdateAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssessmentOutput`](crate::operation::update_assessment::UpdateAssessmentOutput).
-    pub fn builder() -> crate::operation::update_assessment::builders::UpdateAssessmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_assessment::builders::UpdateAssessmentOutputBuilder {
         crate::operation::update_assessment::builders::UpdateAssessmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssessmentOutput`](crate::operation::update_assessment::UpdateAssessmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssessmentOutputBuilder {
     pub(crate) assessment: ::std::option::Option<crate::types::Assessment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateAssessmentOutputBuilder {
         self
     }
     /// <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
-    pub fn set_assessment(
-        mut self,
-        input: ::std::option::Option<crate::types::Assessment>,
-    ) -> Self {
+    pub fn set_assessment(mut self, input: ::std::option::Option<crate::types::Assessment>) -> Self {
         self.assessment = input;
         self
     }

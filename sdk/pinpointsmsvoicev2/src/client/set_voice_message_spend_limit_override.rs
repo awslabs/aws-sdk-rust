@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`SetVoiceMessageSpendLimitOverrideOutput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput) with field(s):
     ///   - [`monthly_limit(Option<i64>)`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput::monthly_limit): <p>The current monthly limit to enforce on sending voice messages.</p>
     /// - On failure, responds with [`SdkError<SetVoiceMessageSpendLimitOverrideError>`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError)
-    pub fn set_voice_message_spend_limit_override(&self) -> crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideFluentBuilder{
+    pub fn set_voice_message_spend_limit_override(
+        &self,
+    ) -> crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideFluentBuilder {
         crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideFluentBuilder::new(self.handle.clone())
     }
 }

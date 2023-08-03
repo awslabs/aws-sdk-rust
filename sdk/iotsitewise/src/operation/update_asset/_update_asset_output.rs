@@ -28,9 +28,7 @@ impl UpdateAssetOutput {
 
 /// A builder for [`UpdateAssetOutput`](crate::operation::update_asset::UpdateAssetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssetOutputBuilder {
     pub(crate) asset_status: ::std::option::Option<crate::types::AssetStatus>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateAssetOutputBuilder {
         self
     }
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn set_asset_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetStatus>,
-    ) -> Self {
+    pub fn set_asset_status(mut self, input: ::std::option::Option<crate::types::AssetStatus>) -> Self {
         self.asset_status = input;
         self
     }

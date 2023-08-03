@@ -22,9 +22,7 @@ impl GetPackageInput {
 
 /// A builder for [`GetPackageInput`](crate::operation::get_package::GetPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPackageInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetPackageInputBuilder {
         &self.package_name
     }
     /// Consumes the builder and constructs a [`GetPackageInput`](crate::operation::get_package::GetPackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_package::GetPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_package::GetPackageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_package::GetPackageInput {
             package_name: self.package_name,
         })

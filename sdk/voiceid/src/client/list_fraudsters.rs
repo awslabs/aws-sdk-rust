@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`fraudster_summaries(Option<Vec<FraudsterSummary>>)`](crate::operation::list_fraudsters::ListFraudstersOutput::fraudster_summaries): <p>A list that contains details about each fraudster in the Amazon Web Services account. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fraudsters::ListFraudstersOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     /// - On failure, responds with [`SdkError<ListFraudstersError>`](crate::operation::list_fraudsters::ListFraudstersError)
-    pub fn list_fraudsters(
-        &self,
-    ) -> crate::operation::list_fraudsters::builders::ListFraudstersFluentBuilder {
-        crate::operation::list_fraudsters::builders::ListFraudstersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_fraudsters(&self) -> crate::operation::list_fraudsters::builders::ListFraudstersFluentBuilder {
+        crate::operation::list_fraudsters::builders::ListFraudstersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`studio_id(impl ::std::convert::Into<String>)`](crate::operation::delete_studio::builders::DeleteStudioFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::delete_studio::builders::DeleteStudioFluentBuilder::set_studio_id): <p>The ID of the Amazon EMR Studio.</p>
     /// - On success, responds with [`DeleteStudioOutput`](crate::operation::delete_studio::DeleteStudioOutput)
     /// - On failure, responds with [`SdkError<DeleteStudioError>`](crate::operation::delete_studio::DeleteStudioError)
-    pub fn delete_studio(
-        &self,
-    ) -> crate::operation::delete_studio::builders::DeleteStudioFluentBuilder {
-        crate::operation::delete_studio::builders::DeleteStudioFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_studio(&self) -> crate::operation::delete_studio::builders::DeleteStudioFluentBuilder {
+        crate::operation::delete_studio::builders::DeleteStudioFluentBuilder::new(self.handle.clone())
     }
 }

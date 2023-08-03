@@ -26,11 +26,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::update_task_template::UpdateTaskTemplateOutput::last_modified_time): <p>The timestamp when the task template was last modified.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::update_task_template::UpdateTaskTemplateOutput::created_time): <p>The timestamp when the task template was created.</p>
     /// - On failure, responds with [`SdkError<UpdateTaskTemplateError>`](crate::operation::update_task_template::UpdateTaskTemplateError)
-    pub fn update_task_template(
-        &self,
-    ) -> crate::operation::update_task_template::builders::UpdateTaskTemplateFluentBuilder {
-        crate::operation::update_task_template::builders::UpdateTaskTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_task_template(&self) -> crate::operation::update_task_template::builders::UpdateTaskTemplateFluentBuilder {
+        crate::operation::update_task_template::builders::UpdateTaskTemplateFluentBuilder::new(self.handle.clone())
     }
 }

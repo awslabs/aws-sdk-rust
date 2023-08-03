@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateRegionSettingsOutput {
 }
 impl UpdateRegionSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRegionSettingsOutput`](crate::operation::update_region_settings::UpdateRegionSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_region_settings::builders::UpdateRegionSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::update_region_settings::builders::UpdateRegionSettingsOutputBuilder {
         crate::operation::update_region_settings::builders::UpdateRegionSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRegionSettingsOutput`](crate::operation::update_region_settings::UpdateRegionSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRegionSettingsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for SetReceiptRulePositionOutput {
 }
 impl SetReceiptRulePositionOutput {
     /// Creates a new builder-style object to manufacture [`SetReceiptRulePositionOutput`](crate::operation::set_receipt_rule_position::SetReceiptRulePositionOutput).
-    pub fn builder(
-    ) -> crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionOutputBuilder {
         crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetReceiptRulePositionOutput`](crate::operation::set_receipt_rule_position::SetReceiptRulePositionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetReceiptRulePositionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -39,9 +35,7 @@ impl SetReceiptRulePositionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetReceiptRulePositionOutput`](crate::operation::set_receipt_rule_position::SetReceiptRulePositionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_receipt_rule_position::SetReceiptRulePositionOutput {
+    pub fn build(self) -> crate::operation::set_receipt_rule_position::SetReceiptRulePositionOutput {
         crate::operation::set_receipt_rule_position::SetReceiptRulePositionOutput {
             _request_id: self._request_id,
         }

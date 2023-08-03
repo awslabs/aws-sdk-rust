@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteTableOutput`](crate::operation::batch_delete_table::BatchDeleteTableOutput) with field(s):
     ///   - [`errors(Option<Vec<TableError>>)`](crate::operation::batch_delete_table::BatchDeleteTableOutput::errors): <p>A list of errors encountered in attempting to delete the specified tables.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteTableError>`](crate::operation::batch_delete_table::BatchDeleteTableError)
-    pub fn batch_delete_table(
-        &self,
-    ) -> crate::operation::batch_delete_table::builders::BatchDeleteTableFluentBuilder {
-        crate::operation::batch_delete_table::builders::BatchDeleteTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_table(&self) -> crate::operation::batch_delete_table::builders::BatchDeleteTableFluentBuilder {
+        crate::operation::batch_delete_table::builders::BatchDeleteTableFluentBuilder::new(self.handle.clone())
     }
 }

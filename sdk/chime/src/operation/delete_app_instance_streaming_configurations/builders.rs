@@ -5,16 +5,16 @@ pub use crate::operation::delete_app_instance_streaming_configurations::_delete_
 
 impl DeleteAppInstanceStreamingConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_app_instance_streaming_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,13 +26,11 @@ impl DeleteAppInstanceStreamingConfigurationsInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceStreamingConfigurations.html">DeleteAppInstanceStreamingConfigurations</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by DeleteAppInstanceStreamingConfigurations in the Amazon Chime SDK Messaging Namespace"
-)]
+#[deprecated(note = "Replaced by DeleteAppInstanceStreamingConfigurations in the Amazon Chime SDK Messaging Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAppInstanceStreamingConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_app_instance_streaming_configurations::builders::DeleteAppInstanceStreamingConfigurationsInputBuilder,
+    inner: crate::operation::delete_app_instance_streaming_configurations::builders::DeleteAppInstanceStreamingConfigurationsInputBuilder,
 }
 impl DeleteAppInstanceStreamingConfigurationsFluentBuilder {
     /// Creates a new `DeleteAppInstanceStreamingConfigurations`.
@@ -43,15 +41,24 @@ impl DeleteAppInstanceStreamingConfigurationsFluentBuilder {
         }
     }
     /// Access the DeleteAppInstanceStreamingConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_app_instance_streaming_configurations::builders::DeleteAppInstanceStreamingConfigurationsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_app_instance_streaming_configurations::builders::DeleteAppInstanceStreamingConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -60,16 +67,19 @@ impl DeleteAppInstanceStreamingConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -87,32 +97,39 @@ impl DeleteAppInstanceStreamingConfigurationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the streaming configurations being deleted.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the streaming configurations being deleted.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }

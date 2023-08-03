@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`app_block_builder_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_app_block_builder_app_block::builders::DisassociateAppBlockBuilderAppBlockFluentBuilder::app_block_builder_name) / [`set_app_block_builder_name(Option<String>)`](crate::operation::disassociate_app_block_builder_app_block::builders::DisassociateAppBlockBuilderAppBlockFluentBuilder::set_app_block_builder_name): <p>The name of the app block builder.</p>
     /// - On success, responds with [`DisassociateAppBlockBuilderAppBlockOutput`](crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockOutput)
     /// - On failure, responds with [`SdkError<DisassociateAppBlockBuilderAppBlockError>`](crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError)
-    pub fn disassociate_app_block_builder_app_block(&self) -> crate::operation::disassociate_app_block_builder_app_block::builders::DisassociateAppBlockBuilderAppBlockFluentBuilder{
-        crate::operation::disassociate_app_block_builder_app_block::builders::DisassociateAppBlockBuilderAppBlockFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_app_block_builder_app_block(
+        &self,
+    ) -> crate::operation::disassociate_app_block_builder_app_block::builders::DisassociateAppBlockBuilderAppBlockFluentBuilder {
+        crate::operation::disassociate_app_block_builder_app_block::builders::DisassociateAppBlockBuilderAppBlockFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

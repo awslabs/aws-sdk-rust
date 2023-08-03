@@ -24,9 +24,7 @@ impl AnalyticsConfiguration {
         self.filter.as_ref()
     }
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
-    pub fn storage_class_analysis(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StorageClassAnalysis> {
+    pub fn storage_class_analysis(&self) -> ::std::option::Option<&crate::types::StorageClassAnalysis> {
         self.storage_class_analysis.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl AnalyticsConfiguration {
 
 /// A builder for [`AnalyticsConfiguration`](crate::types::AnalyticsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsConfigurationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::AnalyticsFilter>,
@@ -68,10 +64,7 @@ impl AnalyticsConfigurationBuilder {
         self
     }
     /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::AnalyticsFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -85,17 +78,12 @@ impl AnalyticsConfigurationBuilder {
         self
     }
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
-    pub fn set_storage_class_analysis(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageClassAnalysis>,
-    ) -> Self {
+    pub fn set_storage_class_analysis(mut self, input: ::std::option::Option<crate::types::StorageClassAnalysis>) -> Self {
         self.storage_class_analysis = input;
         self
     }
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
-    pub fn get_storage_class_analysis(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageClassAnalysis> {
+    pub fn get_storage_class_analysis(&self) -> &::std::option::Option<crate::types::StorageClassAnalysis> {
         &self.storage_class_analysis
     }
     /// Consumes the builder and constructs a [`AnalyticsConfiguration`](crate::types::AnalyticsConfiguration).

@@ -10,10 +10,7 @@ impl StartFhirExportJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_fhir_export_job::StartFhirExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fhir_export_job::StartFHIRExportJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fhir_export_job::StartFHIRExportJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_fhir_export_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartFHIRExportJobFluentBuilder {
         }
     }
     /// Access the StartFHIRExportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_fhir_export_job::builders::StartFhirExportJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_fhir_export_job::builders::StartFhirExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartFHIRExportJobFluentBuilder {
             crate::operation::start_fhir_export_job::StartFHIRExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fhir_export_job::StartFHIRExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fhir_export_job::StartFHIRExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartFHIRExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartFHIRExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_fhir_export_job::StartFhirExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fhir_export_job::StartFHIRExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fhir_export_job::StartFHIRExportJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartFHIRExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_fhir_export_job::StartFhirExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fhir_export_job::StartFHIRExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fhir_export_job::StartFHIRExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartFHIRExportJobFluentBuilder {
             crate::operation::start_fhir_export_job::StartFHIRExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fhir_export_job::StartFHIRExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fhir_export_job::StartFHIRExportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl StartFHIRExportJobFluentBuilder {
         self
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -168,18 +149,12 @@ impl StartFHIRExportJobFluentBuilder {
         self.inner.get_datastore_id()
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }

@@ -100,9 +100,7 @@ impl Hdr10Metadata {
 
 /// A builder for [`Hdr10Metadata`](crate::types::Hdr10Metadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Hdr10MetadataBuilder {
     pub(crate) blue_primary_x: ::std::option::Option<i32>,
     pub(crate) blue_primary_y: ::std::option::Option<i32>,

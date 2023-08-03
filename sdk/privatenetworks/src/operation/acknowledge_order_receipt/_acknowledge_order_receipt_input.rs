@@ -15,18 +15,14 @@ impl AcknowledgeOrderReceiptInput {
 }
 impl AcknowledgeOrderReceiptInput {
     /// Creates a new builder-style object to manufacture [`AcknowledgeOrderReceiptInput`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput).
-    pub fn builder(
-    ) -> crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptInputBuilder
-    {
+    pub fn builder() -> crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptInputBuilder {
         crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptInputBuilder::default()
     }
 }
 
 /// A builder for [`AcknowledgeOrderReceiptInput`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcknowledgeOrderReceiptInputBuilder {
     pub(crate) order_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl AcknowledgeOrderReceiptInputBuilder {
         crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput {
-                order_arn: self.order_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput { order_arn: self.order_arn })
     }
 }

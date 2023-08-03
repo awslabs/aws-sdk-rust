@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetEventsConfigurationOutput`](crate::operation::get_events_configuration::GetEventsConfigurationOutput) with field(s):
     ///   - [`events_configuration(Option<EventsConfiguration>)`](crate::operation::get_events_configuration::GetEventsConfigurationOutput::events_configuration): <p>The events configuration details.</p>
     /// - On failure, responds with [`SdkError<GetEventsConfigurationError>`](crate::operation::get_events_configuration::GetEventsConfigurationError)
-    pub fn get_events_configuration(
-        &self,
-    ) -> crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder
-    {
+    pub fn get_events_configuration(&self) -> crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder {
         crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

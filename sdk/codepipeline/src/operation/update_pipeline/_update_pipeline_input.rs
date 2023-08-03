@@ -23,9 +23,7 @@ impl UpdatePipelineInput {
 
 /// A builder for [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipelineInputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
 }
@@ -36,10 +34,7 @@ impl UpdatePipelineInputBuilder {
         self
     }
     /// <p>The name of the pipeline to be updated.</p>
-    pub fn set_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineDeclaration>,
-    ) -> Self {
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
         self.pipeline = input;
         self
     }
@@ -50,12 +45,7 @@ impl UpdatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pipeline::UpdatePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_pipeline::UpdatePipelineInput {
-            pipeline: self.pipeline,
-        })
+    ) -> ::std::result::Result<crate::operation::update_pipeline::UpdatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_pipeline::UpdatePipelineInput { pipeline: self.pipeline })
     }
 }

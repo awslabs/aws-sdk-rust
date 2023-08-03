@@ -18,10 +18,7 @@ pub fn ser_create_task_set_input(
     if let Some(var_5) = &input.network_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("networkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.load_balancers {
@@ -30,10 +27,7 @@ pub fn ser_create_task_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_load_balancer::ser_load_balancer(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_load_balancer::ser_load_balancer(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }
@@ -45,10 +39,7 @@ pub fn ser_create_task_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_service_registry::ser_service_registry(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_service_registry::ser_service_registry(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }

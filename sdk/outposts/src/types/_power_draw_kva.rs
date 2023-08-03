@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PowerDrawKva {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for PowerDrawKva {
             "POWER_15_KVA" => PowerDrawKva::Power15Kva,
             "POWER_30_KVA" => PowerDrawKva::Power30Kva,
             "POWER_5_KVA" => PowerDrawKva::Power5Kva,
-            other => {
-                PowerDrawKva::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => PowerDrawKva::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl PowerDrawKva {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "POWER_10_KVA",
-            "POWER_15_KVA",
-            "POWER_30_KVA",
-            "POWER_5_KVA",
-        ]
+        &["POWER_10_KVA", "POWER_15_KVA", "POWER_30_KVA", "POWER_5_KVA"]
     }
 }
 impl ::std::convert::AsRef<str> for PowerDrawKva {

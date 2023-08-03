@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::update_dashboard::UpdateDashboardOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::update_dashboard::UpdateDashboardOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<UpdateDashboardError>`](crate::operation::update_dashboard::UpdateDashboardError)
-    pub fn update_dashboard(
-        &self,
-    ) -> crate::operation::update_dashboard::builders::UpdateDashboardFluentBuilder {
-        crate::operation::update_dashboard::builders::UpdateDashboardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dashboard(&self) -> crate::operation::update_dashboard::builders::UpdateDashboardFluentBuilder {
+        crate::operation::update_dashboard::builders::UpdateDashboardFluentBuilder::new(self.handle.clone())
     }
 }

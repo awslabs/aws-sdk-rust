@@ -27,8 +27,7 @@ pub struct CreateNetworkInterfaceInput {
     /// <p>The private IPv4 addresses.</p>
     /// <p>You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
     #[doc(hidden)]
-    pub private_ip_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
+    pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface. When you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet's IPv4 CIDR range. You can't specify this option and specify more than one private IP address using <code>privateIpAddresses</code>.</p>
     /// <p>You can't specify a count of private IPv4 addresses if you've specified one of the following: specific private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
     #[doc(hidden)]
@@ -36,8 +35,7 @@ pub struct CreateNetworkInterfaceInput {
     /// <p>The IPv4 prefixes assigned to the network interface.</p>
     /// <p>You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.</p>
     #[doc(hidden)]
-    pub ipv4_prefixes:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
+    pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
     /// <p>You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.</p>
     #[doc(hidden)]
@@ -45,8 +43,7 @@ pub struct CreateNetworkInterfaceInput {
     /// <p>The IPv6 prefixes assigned to the network interface.</p>
     /// <p>You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
     #[doc(hidden)]
-    pub ipv6_prefixes:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
+    pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
     /// <p>You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
     #[doc(hidden)]
@@ -95,9 +92,7 @@ impl CreateNetworkInterfaceInput {
     }
     /// <p>The private IPv4 addresses.</p>
     /// <p>You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
-    pub fn private_ip_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PrivateIpAddressSpecification]> {
+    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::PrivateIpAddressSpecification]> {
         self.private_ip_addresses.as_deref()
     }
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface. When you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet's IPv4 CIDR range. You can't specify this option and specify more than one private IP address using <code>privateIpAddresses</code>.</p>
@@ -107,9 +102,7 @@ impl CreateNetworkInterfaceInput {
     }
     /// <p>The IPv4 prefixes assigned to the network interface.</p>
     /// <p>You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.</p>
-    pub fn ipv4_prefixes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Ipv4PrefixSpecificationRequest]> {
+    pub fn ipv4_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv4PrefixSpecificationRequest]> {
         self.ipv4_prefixes.as_deref()
     }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
@@ -119,9 +112,7 @@ impl CreateNetworkInterfaceInput {
     }
     /// <p>The IPv6 prefixes assigned to the network interface.</p>
     /// <p>You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
-    pub fn ipv6_prefixes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Ipv6PrefixSpecificationRequest]> {
+    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv6PrefixSpecificationRequest]> {
         self.ipv6_prefixes.as_deref()
     }
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
@@ -131,9 +122,7 @@ impl CreateNetworkInterfaceInput {
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
     /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
-    pub fn interface_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInterfaceCreationType> {
+    pub fn interface_type(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceCreationType> {
         self.interface_type.as_ref()
     }
     /// <p>The ID of the subnet to associate with the network interface.</p>
@@ -151,39 +140,30 @@ impl CreateNetworkInterfaceInput {
 }
 impl CreateNetworkInterfaceInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInterfaceInput`](crate::operation::create_network_interface::CreateNetworkInterfaceInput).
-    pub fn builder(
-    ) -> crate::operation::create_network_interface::builders::CreateNetworkInterfaceInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_network_interface::builders::CreateNetworkInterfaceInputBuilder {
         crate::operation::create_network_interface::builders::CreateNetworkInterfaceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkInterfaceInput`](crate::operation::create_network_interface::CreateNetworkInterfaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkInterfaceInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ipv6_address_count: ::std::option::Option<i32>,
-    pub(crate) ipv6_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) private_ip_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
+    pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
     pub(crate) secondary_private_ip_address_count: ::std::option::Option<i32>,
-    pub(crate) ipv4_prefixes:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
+    pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
     pub(crate) ipv4_prefix_count: ::std::option::Option<i32>,
-    pub(crate) ipv6_prefixes:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
+    pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     pub(crate) ipv6_prefix_count: ::std::option::Option<i32>,
     pub(crate) interface_type: ::std::option::Option<crate::types::NetworkInterfaceCreationType>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateNetworkInterfaceInputBuilder {
@@ -227,10 +207,7 @@ impl CreateNetworkInterfaceInputBuilder {
         self
     }
     /// <p>The IDs of one or more security groups.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -272,33 +249,22 @@ impl CreateNetworkInterfaceInputBuilder {
     }
     /// <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p>
     /// <p>You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.</p>
-    pub fn set_ipv6_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>,
-    ) -> Self {
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>) -> Self {
         self.ipv6_addresses = input;
         self
     }
     /// <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p>
     /// <p>You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.</p>
-    pub fn get_ipv6_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>> {
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>> {
         &self.ipv6_addresses
     }
     /// <p>The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as primary).</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as primary).</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
@@ -312,10 +278,7 @@ impl CreateNetworkInterfaceInputBuilder {
     ///
     /// <p>The private IPv4 addresses.</p>
     /// <p>You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
-    pub fn private_ip_addresses(
-        mut self,
-        input: crate::types::PrivateIpAddressSpecification,
-    ) -> Self {
+    pub fn private_ip_addresses(mut self, input: crate::types::PrivateIpAddressSpecification) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
         v.push(input);
         self.private_ip_addresses = ::std::option::Option::Some(v);
@@ -323,18 +286,13 @@ impl CreateNetworkInterfaceInputBuilder {
     }
     /// <p>The private IPv4 addresses.</p>
     /// <p>You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
-    pub fn set_private_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
-    ) -> Self {
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>) -> Self {
         self.private_ip_addresses = input;
         self
     }
     /// <p>The private IPv4 addresses.</p>
     /// <p>You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
-    pub fn get_private_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>> {
         &self.private_ip_addresses
     }
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface. When you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet's IPv4 CIDR range. You can't specify this option and specify more than one private IP address using <code>privateIpAddresses</code>.</p>
@@ -345,10 +303,7 @@ impl CreateNetworkInterfaceInputBuilder {
     }
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface. When you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet's IPv4 CIDR range. You can't specify this option and specify more than one private IP address using <code>privateIpAddresses</code>.</p>
     /// <p>You can't specify a count of private IPv4 addresses if you've specified one of the following: specific private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
-    pub fn set_secondary_private_ip_address_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_secondary_private_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.secondary_private_ip_address_count = input;
         self
     }
@@ -371,18 +326,13 @@ impl CreateNetworkInterfaceInputBuilder {
     }
     /// <p>The IPv4 prefixes assigned to the network interface.</p>
     /// <p>You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.</p>
-    pub fn set_ipv4_prefixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
-    ) -> Self {
+    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>) -> Self {
         self.ipv4_prefixes = input;
         self
     }
     /// <p>The IPv4 prefixes assigned to the network interface.</p>
     /// <p>You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.</p>
-    pub fn get_ipv4_prefixes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>> {
+    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>> {
         &self.ipv4_prefixes
     }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
@@ -416,18 +366,13 @@ impl CreateNetworkInterfaceInputBuilder {
     }
     /// <p>The IPv6 prefixes assigned to the network interface.</p>
     /// <p>You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
-    pub fn set_ipv6_prefixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
-    ) -> Self {
+    pub fn set_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>) -> Self {
         self.ipv6_prefixes = input;
         self
     }
     /// <p>The IPv6 prefixes assigned to the network interface.</p>
     /// <p>You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
-    pub fn get_ipv6_prefixes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>> {
+    pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>> {
         &self.ipv6_prefixes
     }
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
@@ -455,18 +400,13 @@ impl CreateNetworkInterfaceInputBuilder {
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
     /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
-    pub fn set_interface_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceCreationType>,
-    ) -> Self {
+    pub fn set_interface_type(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceCreationType>) -> Self {
         self.interface_type = input;
         self
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
     /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
-    pub fn get_interface_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInterfaceCreationType> {
+    pub fn get_interface_type(&self) -> &::std::option::Option<crate::types::NetworkInterfaceCreationType> {
         &self.interface_type
     }
     /// <p>The ID of the subnet to associate with the network interface.</p>
@@ -495,17 +435,12 @@ impl CreateNetworkInterfaceInputBuilder {
         self
     }
     /// <p>The tags to apply to the new network interface.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the new network interface.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -525,29 +460,25 @@ impl CreateNetworkInterfaceInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkInterfaceInput`](crate::operation::create_network_interface::CreateNetworkInterfaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_network_interface::CreateNetworkInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_network_interface::CreateNetworkInterfaceInput {
-                description: self.description,
-                dry_run: self.dry_run,
-                groups: self.groups,
-                ipv6_address_count: self.ipv6_address_count,
-                ipv6_addresses: self.ipv6_addresses,
-                private_ip_address: self.private_ip_address,
-                private_ip_addresses: self.private_ip_addresses,
-                secondary_private_ip_address_count: self.secondary_private_ip_address_count,
-                ipv4_prefixes: self.ipv4_prefixes,
-                ipv4_prefix_count: self.ipv4_prefix_count,
-                ipv6_prefixes: self.ipv6_prefixes,
-                ipv6_prefix_count: self.ipv6_prefix_count,
-                interface_type: self.interface_type,
-                subnet_id: self.subnet_id,
-                tag_specifications: self.tag_specifications,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_network_interface::CreateNetworkInterfaceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_network_interface::CreateNetworkInterfaceInput {
+            description: self.description,
+            dry_run: self.dry_run,
+            groups: self.groups,
+            ipv6_address_count: self.ipv6_address_count,
+            ipv6_addresses: self.ipv6_addresses,
+            private_ip_address: self.private_ip_address,
+            private_ip_addresses: self.private_ip_addresses,
+            secondary_private_ip_address_count: self.secondary_private_ip_address_count,
+            ipv4_prefixes: self.ipv4_prefixes,
+            ipv4_prefix_count: self.ipv4_prefix_count,
+            ipv6_prefixes: self.ipv6_prefixes,
+            ipv6_prefix_count: self.ipv6_prefix_count,
+            interface_type: self.interface_type,
+            subnet_id: self.subnet_id,
+            tag_specifications: self.tag_specifications,
+            client_token: self.client_token,
+        })
     }
 }

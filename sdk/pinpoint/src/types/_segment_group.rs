@@ -46,13 +46,10 @@ impl SegmentGroup {
 
 /// A builder for [`SegmentGroup`](crate::types::SegmentGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentGroupBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDimensions>>,
-    pub(crate) source_segments:
-        ::std::option::Option<::std::vec::Vec<crate::types::SegmentReference>>,
+    pub(crate) source_segments: ::std::option::Option<::std::vec::Vec<crate::types::SegmentReference>>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
 }
@@ -69,17 +66,12 @@ impl SegmentGroupBuilder {
         self
     }
     /// <p>An array that defines the dimensions for the segment.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDimensions>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDimensions>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>An array that defines the dimensions for the segment.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDimensions>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDimensions>> {
         &self.dimensions
     }
     /// Appends an item to `source_segments`.
@@ -96,18 +88,13 @@ impl SegmentGroupBuilder {
     }
     /// <p>The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters the base segment by using the dimensions that you specify.</p>
     /// <p>You can specify more than one dimensional segment or only one imported segment. If you specify an imported segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported segment without any filters applied to it.</p>
-    pub fn set_source_segments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentReference>>,
-    ) -> Self {
+    pub fn set_source_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentReference>>) -> Self {
         self.source_segments = input;
         self
     }
     /// <p>The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters the base segment by using the dimensions that you specify.</p>
     /// <p>You can specify more than one dimensional segment or only one imported segment. If you specify an imported segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported segment without any filters applied to it.</p>
-    pub fn get_source_segments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentReference>> {
+    pub fn get_source_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentReference>> {
         &self.source_segments
     }
     /// <p>Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments for the segment, whether the resulting segment is based on all, any, or none of the base segments.</p>
@@ -116,10 +103,7 @@ impl SegmentGroupBuilder {
         self
     }
     /// <p>Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments for the segment, whether the resulting segment is based on all, any, or none of the base segments.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }

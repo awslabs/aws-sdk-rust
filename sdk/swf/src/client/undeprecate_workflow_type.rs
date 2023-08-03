@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`workflow_type(WorkflowType)`](crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeFluentBuilder::workflow_type) / [`set_workflow_type(Option<WorkflowType>)`](crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeFluentBuilder::set_workflow_type): <p>The name of the domain of the deprecated workflow type.</p>
     /// - On success, responds with [`UndeprecateWorkflowTypeOutput`](crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput)
     /// - On failure, responds with [`SdkError<UndeprecateWorkflowTypeError>`](crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeError)
-    pub fn undeprecate_workflow_type(
-        &self,
-    ) -> crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeFluentBuilder
-    {
+    pub fn undeprecate_workflow_type(&self) -> crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeFluentBuilder {
         crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeFluentBuilder::new(self.handle.clone())
     }
 }

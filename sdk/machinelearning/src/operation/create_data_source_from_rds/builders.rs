@@ -28,7 +28,7 @@ impl CreateDataSourceFromRdsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataSourceFromRDSFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRdsInputBuilder,
+    inner: crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRdsInputBuilder,
 }
 impl CreateDataSourceFromRDSFluentBuilder {
     /// Creates a new `CreateDataSourceFromRDS`.
@@ -39,10 +39,7 @@ impl CreateDataSourceFromRDSFluentBuilder {
         }
     }
     /// Access the CreateDataSourceFromRDS as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRdsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRdsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl CreateDataSourceFromRDSFluentBuilder {
             crate::operation::create_data_source_from_rds::CreateDataSourceFromRDS,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source_from_rds::CreateDataSourceFromRDSError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source_from_rds::CreateDataSourceFromRDSError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl CreateDataSourceFromRDSFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl CreateDataSourceFromRDSFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source_from_rds::CreateDataSourceFromRDSError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source_from_rds::CreateDataSourceFromRDSError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl CreateDataSourceFromRDSFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source_from_rds::CreateDataSourceFromRDSError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source_from_rds::CreateDataSourceFromRDSError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl CreateDataSourceFromRDSFluentBuilder {
             crate::operation::create_data_source_from_rds::CreateDataSourceFromRDS,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source_from_rds::CreateDataSourceFromRDSError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source_from_rds::CreateDataSourceFromRDSError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
@@ -146,18 +126,12 @@ impl CreateDataSourceFromRDSFluentBuilder {
         self.inner.get_data_source_id()
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    pub fn data_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_name(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    pub fn set_data_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_name(input);
         self
     }

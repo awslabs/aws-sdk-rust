@@ -10,10 +10,7 @@ impl CreateParallelDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_parallel_data::CreateParallelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_parallel_data::CreateParallelDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_parallel_data::CreateParallelDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_parallel_data();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateParallelDataFluentBuilder {
         }
     }
     /// Access the CreateParallelData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_parallel_data::builders::CreateParallelDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_parallel_data::builders::CreateParallelDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateParallelDataFluentBuilder {
             crate::operation::create_parallel_data::CreateParallelData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_parallel_data::CreateParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_parallel_data::CreateParallelDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateParallelDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateParallelDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_parallel_data::CreateParallelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_parallel_data::CreateParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_parallel_data::CreateParallelDataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateParallelDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_parallel_data::CreateParallelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_parallel_data::CreateParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_parallel_data::CreateParallelDataError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateParallelDataFluentBuilder {
             crate::operation::create_parallel_data::CreateParallelData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_parallel_data::CreateParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_parallel_data::CreateParallelDataError>,
     > {
         self.customize_middleware().await
     }
@@ -156,17 +140,12 @@ impl CreateParallelDataFluentBuilder {
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn set_parallel_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataConfig>,
-    ) -> Self {
+    pub fn set_parallel_data_config(mut self, input: ::std::option::Option<crate::types::ParallelDataConfig>) -> Self {
         self.inner = self.inner.set_parallel_data_config(input);
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn get_parallel_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelDataConfig> {
+    pub fn get_parallel_data_config(&self) -> &::std::option::Option<crate::types::ParallelDataConfig> {
         self.inner.get_parallel_data_config()
     }
     /// <p>The encryption key used to encrypt this object.</p>
@@ -175,10 +154,7 @@ impl CreateParallelDataFluentBuilder {
         self
     }
     /// <p>The encryption key used to encrypt this object.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
@@ -210,10 +186,7 @@ impl CreateParallelDataFluentBuilder {
         self
     }
     /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

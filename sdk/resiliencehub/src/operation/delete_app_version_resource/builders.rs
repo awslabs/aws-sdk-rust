@@ -32,7 +32,7 @@ impl DeleteAppVersionResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAppVersionResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceInputBuilder,
+    inner: crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceInputBuilder,
 }
 impl DeleteAppVersionResourceFluentBuilder {
     /// Creates a new `DeleteAppVersionResource`.
@@ -43,7 +43,7 @@ impl DeleteAppVersionResourceFluentBuilder {
         }
     }
     /// Access the DeleteAppVersionResource as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl DeleteAppVersionResourceFluentBuilder {
             crate::operation::delete_app_version_resource::DeleteAppVersionResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_version_resource::DeleteAppVersionResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl DeleteAppVersionResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl DeleteAppVersionResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_version_resource::DeleteAppVersionResourceError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl DeleteAppVersionResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_version_resource::DeleteAppVersionResourceError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +111,7 @@ impl DeleteAppVersionResourceFluentBuilder {
             crate::operation::delete_app_version_resource::DeleteAppVersionResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_version_resource::DeleteAppVersionResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -141,18 +130,12 @@ impl DeleteAppVersionResourceFluentBuilder {
         self.inner.get_app_arn()
     }
     /// <p>The name of the resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }
@@ -166,32 +149,21 @@ impl DeleteAppVersionResourceFluentBuilder {
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<crate::types::LogicalResourceId>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<crate::types::LogicalResourceId>) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn get_logical_resource_id(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogicalResourceId> {
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<crate::types::LogicalResourceId> {
         self.inner.get_logical_resource_id()
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.physical_resource_id(input.into());
         self
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_physical_resource_id(input);
         self
     }
@@ -214,18 +186,12 @@ impl DeleteAppVersionResourceFluentBuilder {
         self.inner.get_aws_region()
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

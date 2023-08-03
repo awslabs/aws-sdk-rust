@@ -39,16 +39,14 @@ impl SetResourceAccessForBucketInput {
 }
 impl SetResourceAccessForBucketInput {
     /// Creates a new builder-style object to manufacture [`SetResourceAccessForBucketInput`](crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketInput).
-    pub fn builder() -> crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder{
+    pub fn builder() -> crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder {
         crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder::default()
     }
 }
 
 /// A builder for [`SetResourceAccessForBucketInput`](crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetResourceAccessForBucketInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct SetResourceAccessForBucketInputBuilder {
 }
 impl SetResourceAccessForBucketInputBuilder {
     /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -105,10 +97,7 @@ impl SetResourceAccessForBucketInputBuilder {
     /// <li> <p> <code>allow</code> - Allows access to the bucket and its objects.</p> </li>
     /// <li> <p> <code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p> </li>
     /// </ul>
-    pub fn set_access(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceBucketAccess>,
-    ) -> Self {
+    pub fn set_access(mut self, input: ::std::option::Option<crate::types::ResourceBucketAccess>) -> Self {
         self.access = input;
         self
     }
@@ -128,12 +117,10 @@ impl SetResourceAccessForBucketInputBuilder {
         crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketInput {
-                resource_name: self.resource_name,
-                bucket_name: self.bucket_name,
-                access: self.access,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketInput {
+            resource_name: self.resource_name,
+            bucket_name: self.bucket_name,
+            access: self.access,
+        })
     }
 }

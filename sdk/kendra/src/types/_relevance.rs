@@ -23,8 +23,7 @@ pub struct Relevance {
     /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher. </p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
     #[doc(hidden)]
-    pub value_importance_map:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub value_importance_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl Relevance {
     /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.</p>
@@ -49,9 +48,7 @@ impl Relevance {
     }
     /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher. </p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
-    pub fn value_importance_map(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn value_importance_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.value_importance_map.as_ref()
     }
 }
@@ -64,16 +61,13 @@ impl Relevance {
 
 /// A builder for [`Relevance`](crate::types::Relevance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelevanceBuilder {
     pub(crate) freshness: ::std::option::Option<bool>,
     pub(crate) importance: ::std::option::Option<i32>,
     pub(crate) duration: ::std::option::Option<::std::string::String>,
     pub(crate) rank_order: ::std::option::Option<crate::types::Order>,
-    pub(crate) value_importance_map:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub(crate) value_importance_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl RelevanceBuilder {
     /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.</p>
@@ -150,11 +144,7 @@ impl RelevanceBuilder {
     ///
     /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher. </p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
-    pub fn value_importance_map(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: i32,
-    ) -> Self {
+    pub fn value_importance_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.value_importance_map.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.value_importance_map = ::std::option::Option::Some(hash_map);
@@ -162,18 +152,13 @@ impl RelevanceBuilder {
     }
     /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher. </p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
-    pub fn set_value_importance_map(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
-    ) -> Self {
+    pub fn set_value_importance_map(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
         self.value_importance_map = input;
         self
     }
     /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher. </p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
-    pub fn get_value_importance_map(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn get_value_importance_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
         &self.value_importance_map
     }
     /// Consumes the builder and constructs a [`Relevance`](crate::types::Relevance).

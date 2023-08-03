@@ -21,9 +21,7 @@ pub struct RuleGroupsNamespaceSummary {
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The tags of this rule groups namespace.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RuleGroupsNamespaceSummary {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
@@ -47,11 +45,7 @@ impl RuleGroupsNamespaceSummary {
         self.modified_at.as_ref()
     }
     /// The tags of this rule groups namespace.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -64,18 +58,14 @@ impl RuleGroupsNamespaceSummary {
 
 /// A builder for [`RuleGroupsNamespaceSummary`](crate::types::RuleGroupsNamespaceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupsNamespaceSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RuleGroupsNamespaceSummaryBuilder {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
@@ -112,10 +102,7 @@ impl RuleGroupsNamespaceSummaryBuilder {
         self
     }
     /// The status of rule groups namespace.
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -129,10 +116,7 @@ impl RuleGroupsNamespaceSummaryBuilder {
         self
     }
     /// The time when the rule groups namespace was created.
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -146,10 +130,7 @@ impl RuleGroupsNamespaceSummaryBuilder {
         self
     }
     /// The time when the rule groups namespace was modified.
-    pub fn set_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_at = input;
         self
     }
@@ -162,32 +143,19 @@ impl RuleGroupsNamespaceSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// The tags of this rule groups namespace.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// The tags of this rule groups namespace.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// The tags of this rule groups namespace.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RuleGroupsNamespaceSummary`](crate::types::RuleGroupsNamespaceSummary).

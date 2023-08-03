@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`action(ResponseAction)`](crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseFluentBuilder::action) / [`set_action(Option<ResponseAction>)`](crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseFluentBuilder::set_action): <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     /// - On success, responds with [`UpdateApplicationLayerAutomaticResponseOutput`](crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseOutput)
     /// - On failure, responds with [`SdkError<UpdateApplicationLayerAutomaticResponseError>`](crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError)
-    pub fn update_application_layer_automatic_response(&self) -> crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseFluentBuilder{
-        crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseFluentBuilder::new(self.handle.clone())
+    pub fn update_application_layer_automatic_response(
+        &self,
+    ) -> crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseFluentBuilder {
+        crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

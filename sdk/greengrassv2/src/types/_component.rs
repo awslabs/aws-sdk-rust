@@ -37,9 +37,7 @@ impl Component {
 
 /// A builder for [`Component`](crate::types::Component).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ComponentBuilder {
         &self.arn
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -86,17 +78,12 @@ impl ComponentBuilder {
         self
     }
     /// <p>The latest version of the component and its details.</p>
-    pub fn set_latest_version(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentLatestVersion>,
-    ) -> Self {
+    pub fn set_latest_version(mut self, input: ::std::option::Option<crate::types::ComponentLatestVersion>) -> Self {
         self.latest_version = input;
         self
     }
     /// <p>The latest version of the component and its details.</p>
-    pub fn get_latest_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComponentLatestVersion> {
+    pub fn get_latest_version(&self) -> &::std::option::Option<crate::types::ComponentLatestVersion> {
         &self.latest_version
     }
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).

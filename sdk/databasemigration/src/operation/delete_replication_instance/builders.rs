@@ -29,7 +29,7 @@ impl DeleteReplicationInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReplicationInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceInputBuilder,
+    inner: crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceInputBuilder,
 }
 impl DeleteReplicationInstanceFluentBuilder {
     /// Creates a new `DeleteReplicationInstance`.
@@ -40,7 +40,7 @@ impl DeleteReplicationInstanceFluentBuilder {
         }
     }
     /// Access the DeleteReplicationInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DeleteReplicationInstanceFluentBuilder {
             crate::operation::delete_replication_instance::DeleteReplicationInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_instance::DeleteReplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_instance::DeleteReplicationInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DeleteReplicationInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DeleteReplicationInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_instance::DeleteReplicationInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_instance::DeleteReplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_instance::DeleteReplicationInstanceError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DeleteReplicationInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_instance::DeleteReplicationInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_instance::DeleteReplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_instance::DeleteReplicationInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +108,17 @@ impl DeleteReplicationInstanceFluentBuilder {
             crate::operation::delete_replication_instance::DeleteReplicationInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_instance::DeleteReplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_instance::DeleteReplicationInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_instance_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
     }

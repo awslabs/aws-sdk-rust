@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`assistant_id(impl ::std::convert::Into<String>)`](crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationFluentBuilder::assistant_id) / [`set_assistant_id(Option<String>)`](crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationFluentBuilder::set_assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`DeleteAssistantAssociationOutput`](crate::operation::delete_assistant_association::DeleteAssistantAssociationOutput)
     /// - On failure, responds with [`SdkError<DeleteAssistantAssociationError>`](crate::operation::delete_assistant_association::DeleteAssistantAssociationError)
-    pub fn delete_assistant_association(&self) -> crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationFluentBuilder{
+    pub fn delete_assistant_association(&self) -> crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationFluentBuilder {
         crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationFluentBuilder::new(self.handle.clone())
     }
 }

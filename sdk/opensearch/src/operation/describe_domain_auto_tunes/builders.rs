@@ -26,8 +26,7 @@ impl DescribeDomainAutoTunesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDomainAutoTunesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder,
+    inner: crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder,
 }
 impl DescribeDomainAutoTunesFluentBuilder {
     /// Creates a new `DescribeDomainAutoTunes`.
@@ -38,10 +37,7 @@ impl DescribeDomainAutoTunesFluentBuilder {
         }
     }
     /// Access the DescribeDomainAutoTunes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeDomainAutoTunesFluentBuilder {
             crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeDomainAutoTunesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeDomainAutoTunesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeDomainAutoTunesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl DescribeDomainAutoTunesFluentBuilder {
             crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_domain_auto_tunes::paginator::DescribeDomainAutoTunesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_domain_auto_tunes::paginator::DescribeDomainAutoTunesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_domain_auto_tunes::paginator::DescribeDomainAutoTunesPaginator {
         crate::operation::describe_domain_auto_tunes::paginator::DescribeDomainAutoTunesPaginator::new(self.handle, self.inner)
     }
     /// <p>Name of the domain that you want Auto-Tune details about.</p>

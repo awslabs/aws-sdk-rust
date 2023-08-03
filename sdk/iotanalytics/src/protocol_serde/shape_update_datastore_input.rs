@@ -6,19 +6,13 @@ pub fn ser_update_datastore_input(
     if let Some(var_1) = &input.datastore_storage {
         #[allow(unused_mut)]
         let mut object_2 = object.key("datastoreStorage").start_object();
-        crate::protocol_serde::shape_datastore_storage::ser_datastore_storage(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_datastore_storage::ser_datastore_storage(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.file_format_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("fileFormatConfiguration").start_object();
-        crate::protocol_serde::shape_file_format_configuration::ser_file_format_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_file_format_configuration::ser_file_format_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.retention_period {

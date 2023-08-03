@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::disassociate_address::builders::DisassociateAddressFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::disassociate_address::builders::DisassociateAddressFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DisassociateAddressOutput`](crate::operation::disassociate_address::DisassociateAddressOutput)
     /// - On failure, responds with [`SdkError<DisassociateAddressError>`](crate::operation::disassociate_address::DisassociateAddressError)
-    pub fn disassociate_address(
-        &self,
-    ) -> crate::operation::disassociate_address::builders::DisassociateAddressFluentBuilder {
-        crate::operation::disassociate_address::builders::DisassociateAddressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_address(&self) -> crate::operation::disassociate_address::builders::DisassociateAddressFluentBuilder {
+        crate::operation::disassociate_address::builders::DisassociateAddressFluentBuilder::new(self.handle.clone())
     }
 }

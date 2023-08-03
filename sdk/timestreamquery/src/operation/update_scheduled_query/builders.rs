@@ -37,9 +37,7 @@ impl UpdateScheduledQueryFluentBuilder {
         }
     }
     /// Access the UpdateScheduledQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_scheduled_query::builders::UpdateScheduledQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_scheduled_query::builders::UpdateScheduledQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateScheduledQueryFluentBuilder {
             crate::operation::update_scheduled_query::UpdateScheduledQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_query::UpdateScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_query::UpdateScheduledQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateScheduledQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateScheduledQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scheduled_query::UpdateScheduledQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_query::UpdateScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_query::UpdateScheduledQueryError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateScheduledQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scheduled_query::UpdateScheduledQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_query::UpdateScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_query::UpdateScheduledQueryError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateScheduledQueryFluentBuilder {
             crate::operation::update_scheduled_query::UpdateScheduledQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_query::UpdateScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_query::UpdateScheduledQueryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ARN of the scheuled query.</p>
-    pub fn scheduled_query_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_query_arn(input.into());
         self
     }
     /// <p>ARN of the scheuled query.</p>
-    pub fn set_scheduled_query_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_query_arn(input);
         self
     }
@@ -148,10 +129,7 @@ impl UpdateScheduledQueryFluentBuilder {
         self
     }
     /// <p>State of the scheduled query. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledQueryState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }

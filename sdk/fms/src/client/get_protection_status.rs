@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`data(Option<String>)`](crate::operation::get_protection_status::GetProtectionStatusOutput::data): <p>Details about the attack, including the following:</p>  <ul>   <li> <p>Attack type</p> </li>   <li> <p>Account ID</p> </li>   <li> <p>ARN of the resource attacked</p> </li>   <li> <p>Start time of the attack</p> </li>   <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>  </ul>  <p>The details are in JSON format. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_protection_status::GetProtectionStatusOutput::next_token): <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>  <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
     /// - On failure, responds with [`SdkError<GetProtectionStatusError>`](crate::operation::get_protection_status::GetProtectionStatusError)
-    pub fn get_protection_status(
-        &self,
-    ) -> crate::operation::get_protection_status::builders::GetProtectionStatusFluentBuilder {
-        crate::operation::get_protection_status::builders::GetProtectionStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_protection_status(&self) -> crate::operation::get_protection_status::builders::GetProtectionStatusFluentBuilder {
+        crate::operation::get_protection_status::builders::GetProtectionStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStateMachineAliasOutput {
 }
 impl DeleteStateMachineAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStateMachineAliasOutput`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_state_machine_alias::builders::DeleteStateMachineAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_state_machine_alias::builders::DeleteStateMachineAliasOutputBuilder {
         crate::operation::delete_state_machine_alias::builders::DeleteStateMachineAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStateMachineAliasOutput`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStateMachineAliasOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteStateMachineAliasOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteStateMachineAliasOutput`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput {
+    pub fn build(self) -> crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput {
         crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput {
             _request_id: self._request_id,
         }

@@ -30,9 +30,7 @@ impl RecoveryInstanceDataReplicationError {
 
 /// A builder for [`RecoveryInstanceDataReplicationError`](crate::types::RecoveryInstanceDataReplicationError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationErrorBuilder {
     pub(crate) error: ::std::option::Option<crate::types::FailbackReplicationError>,
     pub(crate) raw_error: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl RecoveryInstanceDataReplicationErrorBuilder {
         self
     }
     /// <p>Error in data replication.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::FailbackReplicationError>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::FailbackReplicationError>) -> Self {
         self.error = input;
         self
     }

@@ -27,7 +27,7 @@ impl GetContactReachabilityStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetContactReachabilityStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusInputBuilder,
+    inner: crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusInputBuilder,
 }
 impl GetContactReachabilityStatusFluentBuilder {
     /// Creates a new `GetContactReachabilityStatus`.
@@ -38,7 +38,7 @@ impl GetContactReachabilityStatusFluentBuilder {
         }
     }
     /// Access the GetContactReachabilityStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetContactReachabilityStatusFluentBuilder {
             crate::operation::get_contact_reachability_status::GetContactReachabilityStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_reachability_status::GetContactReachabilityStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_reachability_status::GetContactReachabilityStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetContactReachabilityStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetContactReachabilityStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_contact_reachability_status::GetContactReachabilityStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_reachability_status::GetContactReachabilityStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_reachability_status::GetContactReachabilityStatusError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetContactReachabilityStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_contact_reachability_status::GetContactReachabilityStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_reachability_status::GetContactReachabilityStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_reachability_status::GetContactReachabilityStatusError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetContactReachabilityStatusFluentBuilder {
             crate::operation::get_contact_reachability_status::GetContactReachabilityStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_reachability_status::GetContactReachabilityStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_reachability_status::GetContactReachabilityStatusError>,
     > {
         self.customize_middleware().await
     }

@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSchemaMappingsOutput {
 }
 impl ListSchemaMappingsOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemaMappingsOutput`](crate::operation::list_schema_mappings::ListSchemaMappingsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_schema_mappings::builders::ListSchemaMappingsOutputBuilder {
+    pub fn builder() -> crate::operation::list_schema_mappings::builders::ListSchemaMappingsOutputBuilder {
         crate::operation::list_schema_mappings::builders::ListSchemaMappingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSchemaMappingsOutput`](crate::operation::list_schema_mappings::ListSchemaMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemaMappingsOutputBuilder {
-    pub(crate) schema_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaMappingSummary>>,
+    pub(crate) schema_list: ::std::option::Option<::std::vec::Vec<crate::types::SchemaMappingSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListSchemaMappingsOutputBuilder {
         self
     }
     /// <p>A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.</p>
-    pub fn set_schema_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaMappingSummary>>,
-    ) -> Self {
+    pub fn set_schema_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaMappingSummary>>) -> Self {
         self.schema_list = input;
         self
     }
     /// <p>A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.</p>
-    pub fn get_schema_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaMappingSummary>> {
+    pub fn get_schema_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaMappingSummary>> {
         &self.schema_list
     }
     /// <p>The pagination token from the previous <code>ListDomains</code> API call.</p>

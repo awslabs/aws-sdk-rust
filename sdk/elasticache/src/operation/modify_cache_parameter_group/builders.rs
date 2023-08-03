@@ -26,7 +26,7 @@ impl ModifyCacheParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCacheParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupInputBuilder,
+    inner: crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupInputBuilder,
 }
 impl ModifyCacheParameterGroupFluentBuilder {
     /// Creates a new `ModifyCacheParameterGroup`.
@@ -37,7 +37,7 @@ impl ModifyCacheParameterGroupFluentBuilder {
         }
     }
     /// Access the ModifyCacheParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyCacheParameterGroupFluentBuilder {
             crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyCacheParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyCacheParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyCacheParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyCacheParameterGroupFluentBuilder {
             crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the cache parameter group to modify.</p>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_parameter_group_name(input.into());
         self
     }
     /// <p>The name of the cache parameter group to modify.</p>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_parameter_group_name(input);
         self
     }
@@ -150,17 +133,12 @@ impl ModifyCacheParameterGroupFluentBuilder {
         self
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
-    pub fn set_parameter_name_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
-    ) -> Self {
+    pub fn set_parameter_name_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>) -> Self {
         self.inner = self.inner.set_parameter_name_values(input);
         self
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
-    pub fn get_parameter_name_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
+    pub fn get_parameter_name_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
         self.inner.get_parameter_name_values()
     }
 }

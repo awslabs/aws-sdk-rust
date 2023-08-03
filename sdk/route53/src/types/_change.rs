@@ -44,9 +44,7 @@ impl Change {
 
 /// A builder for [`Change`](crate::types::Change).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) resource_record_set: ::std::option::Option<crate::types::ResourceRecordSet>,
@@ -93,17 +91,12 @@ impl ChangeBuilder {
         self
     }
     /// <p>Information about the resource record set to create, delete, or update.</p>
-    pub fn set_resource_record_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRecordSet>,
-    ) -> Self {
+    pub fn set_resource_record_set(mut self, input: ::std::option::Option<crate::types::ResourceRecordSet>) -> Self {
         self.resource_record_set = input;
         self
     }
     /// <p>Information about the resource record set to create, delete, or update.</p>
-    pub fn get_resource_record_set(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceRecordSet> {
+    pub fn get_resource_record_set(&self) -> &::std::option::Option<crate::types::ResourceRecordSet> {
         &self.resource_record_set
     }
     /// Consumes the builder and constructs a [`Change`](crate::types::Change).

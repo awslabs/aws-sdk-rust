@@ -15,18 +15,14 @@ impl AssociateCertificateInput {
 }
 impl AssociateCertificateInput {
     /// Creates a new builder-style object to manufacture [`AssociateCertificateInput`](crate::operation::associate_certificate::AssociateCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::associate_certificate::builders::AssociateCertificateInputBuilder {
-        crate::operation::associate_certificate::builders::AssociateCertificateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::associate_certificate::builders::AssociateCertificateInputBuilder {
+        crate::operation::associate_certificate::builders::AssociateCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateCertificateInput`](crate::operation::associate_certificate::AssociateCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateCertificateInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl AssociateCertificateInputBuilder {
     /// Consumes the builder and constructs a [`AssociateCertificateInput`](crate::operation::associate_certificate::AssociateCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_certificate::AssociateCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_certificate::AssociateCertificateInput { arn: self.arn },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_certificate::AssociateCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_certificate::AssociateCertificateInput { arn: self.arn })
     }
 }

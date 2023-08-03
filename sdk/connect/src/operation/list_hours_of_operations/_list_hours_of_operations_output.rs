@@ -5,8 +5,7 @@
 pub struct ListHoursOfOperationsOutput {
     /// <p>Information about the hours of operation.</p>
     #[doc(hidden)]
-    pub hours_of_operation_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSummary>>,
+    pub hours_of_operation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListHoursOfOperationsOutput {
 }
 impl ListHoursOfOperationsOutput {
     /// <p>Information about the hours of operation.</p>
-    pub fn hours_of_operation_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HoursOfOperationSummary]> {
+    pub fn hours_of_operation_summary_list(&self) -> ::std::option::Option<&[crate::types::HoursOfOperationSummary]> {
         self.hours_of_operation_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListHoursOfOperationsOutput {
 }
 impl ListHoursOfOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListHoursOfOperationsOutput`](crate::operation::list_hours_of_operations::ListHoursOfOperationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_hours_of_operations::builders::ListHoursOfOperationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_hours_of_operations::builders::ListHoursOfOperationsOutputBuilder {
         crate::operation::list_hours_of_operations::builders::ListHoursOfOperationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHoursOfOperationsOutput`](crate::operation::list_hours_of_operations::ListHoursOfOperationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHoursOfOperationsOutputBuilder {
-    pub(crate) hours_of_operation_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSummary>>,
+    pub(crate) hours_of_operation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListHoursOfOperationsOutputBuilder {
     /// To override the contents of this collection use [`set_hours_of_operation_summary_list`](Self::set_hours_of_operation_summary_list).
     ///
     /// <p>Information about the hours of operation.</p>
-    pub fn hours_of_operation_summary_list(
-        mut self,
-        input: crate::types::HoursOfOperationSummary,
-    ) -> Self {
+    pub fn hours_of_operation_summary_list(mut self, input: crate::types::HoursOfOperationSummary) -> Self {
         let mut v = self.hours_of_operation_summary_list.unwrap_or_default();
         v.push(input);
         self.hours_of_operation_summary_list = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListHoursOfOperationsOutputBuilder {
         self
     }
     /// <p>Information about the hours of operation.</p>
-    pub fn get_hours_of_operation_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSummary>> {
+    pub fn get_hours_of_operation_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSummary>> {
         &self.hours_of_operation_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

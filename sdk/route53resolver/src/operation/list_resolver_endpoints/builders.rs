@@ -37,10 +37,7 @@ impl ListResolverEndpointsFluentBuilder {
         }
     }
     /// Access the ListResolverEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListResolverEndpointsFluentBuilder {
             crate::operation::list_resolver_endpoints::ListResolverEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_endpoints::ListResolverEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_endpoints::ListResolverEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListResolverEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListResolverEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolver_endpoints::ListResolverEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_endpoints::ListResolverEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_endpoints::ListResolverEndpointsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListResolverEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolver_endpoints::ListResolverEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_endpoints::ListResolverEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_endpoints::ListResolverEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListResolverEndpointsFluentBuilder {
             crate::operation::list_resolver_endpoints::ListResolverEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_endpoints::ListResolverEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_endpoints::ListResolverEndpointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_endpoints::paginator::ListResolverEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resolver_endpoints::paginator::ListResolverEndpointsPaginator {
-        crate::operation::list_resolver_endpoints::paginator::ListResolverEndpointsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_resolver_endpoints::paginator::ListResolverEndpointsPaginator {
+        crate::operation::list_resolver_endpoints::paginator::ListResolverEndpointsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -179,10 +160,7 @@ impl ListResolverEndpointsFluentBuilder {
     /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

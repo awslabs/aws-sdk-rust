@@ -22,9 +22,7 @@ pub enum ParticipantTimerValue {
 impl ParticipantTimerValue {
     /// Tries to convert the enum instance into [`ParticipantTimerAction`](crate::types::ParticipantTimerValue::ParticipantTimerAction), extracting the inner [`ParticipantTimerAction`](crate::types::ParticipantTimerAction).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_participant_timer_action(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ParticipantTimerAction, &Self> {
+    pub fn as_participant_timer_action(&self) -> ::std::result::Result<&crate::types::ParticipantTimerAction, &Self> {
         if let ParticipantTimerValue::ParticipantTimerAction(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

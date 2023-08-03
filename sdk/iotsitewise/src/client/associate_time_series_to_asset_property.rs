@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`AssociateTimeSeriesToAssetPropertyOutput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput)
     /// - On failure, responds with [`SdkError<AssociateTimeSeriesToAssetPropertyError>`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError)
-    pub fn associate_time_series_to_asset_property(&self) -> crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyFluentBuilder{
+    pub fn associate_time_series_to_asset_property(
+        &self,
+    ) -> crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyFluentBuilder {
         crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyFluentBuilder::new(self.handle.clone())
     }
 }

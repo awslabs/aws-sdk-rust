@@ -41,9 +41,7 @@ impl DynamoDbTarget {
 
 /// A builder for [`DynamoDbTarget`](crate::types::DynamoDbTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynamoDbTargetBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) scan_all: ::std::option::Option<bool>,

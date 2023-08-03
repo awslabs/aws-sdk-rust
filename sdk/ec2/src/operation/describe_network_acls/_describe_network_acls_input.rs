@@ -99,18 +99,14 @@ impl DescribeNetworkAclsInput {
 }
 impl DescribeNetworkAclsInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkAclsInput`](crate::operation::describe_network_acls::DescribeNetworkAclsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_network_acls::builders::DescribeNetworkAclsInputBuilder {
-        crate::operation::describe_network_acls::builders::DescribeNetworkAclsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_network_acls::builders::DescribeNetworkAclsInputBuilder {
+        crate::operation::describe_network_acls::builders::DescribeNetworkAclsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkAclsInput`](crate::operation::describe_network_acls::DescribeNetworkAclsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkAclsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -185,10 +181,7 @@ impl DescribeNetworkAclsInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC for the network ACL.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -243,10 +236,7 @@ impl DescribeNetworkAclsInputBuilder {
     ///
     /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
-    pub fn network_acl_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_acl_ids.unwrap_or_default();
         v.push(input.into());
         self.network_acl_ids = ::std::option::Option::Some(v);
@@ -254,18 +244,13 @@ impl DescribeNetworkAclsInputBuilder {
     }
     /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
-    pub fn set_network_acl_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_acl_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_acl_ids = input;
         self
     }
     /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
-    pub fn get_network_acl_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_acl_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_acl_ids
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -299,18 +284,14 @@ impl DescribeNetworkAclsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeNetworkAclsInput`](crate::operation::describe_network_acls::DescribeNetworkAclsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_network_acls::DescribeNetworkAclsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_network_acls::DescribeNetworkAclsInput {
-                filters: self.filters,
-                dry_run: self.dry_run,
-                network_acl_ids: self.network_acl_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_network_acls::DescribeNetworkAclsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_network_acls::DescribeNetworkAclsInput {
+            filters: self.filters,
+            dry_run: self.dry_run,
+            network_acl_ids: self.network_acl_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

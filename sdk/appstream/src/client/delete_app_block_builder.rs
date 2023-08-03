@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_app_block_builder::builders::DeleteAppBlockBuilderFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_app_block_builder::builders::DeleteAppBlockBuilderFluentBuilder::set_name): <p>The name of the app block builder.</p>
     /// - On success, responds with [`DeleteAppBlockBuilderOutput`](crate::operation::delete_app_block_builder::DeleteAppBlockBuilderOutput)
     /// - On failure, responds with [`SdkError<DeleteAppBlockBuilderError>`](crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError)
-    pub fn delete_app_block_builder(
-        &self,
-    ) -> crate::operation::delete_app_block_builder::builders::DeleteAppBlockBuilderFluentBuilder
-    {
+    pub fn delete_app_block_builder(&self) -> crate::operation::delete_app_block_builder::builders::DeleteAppBlockBuilderFluentBuilder {
         crate::operation::delete_app_block_builder::builders::DeleteAppBlockBuilderFluentBuilder::new(self.handle.clone())
     }
 }

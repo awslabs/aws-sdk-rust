@@ -23,26 +23,18 @@ impl AdjustmentType {
 
 /// A builder for [`AdjustmentType`](crate::types::AdjustmentType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdjustmentTypeBuilder {
     pub(crate) adjustment_type: ::std::option::Option<::std::string::String>,
 }
 impl AdjustmentTypeBuilder {
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    pub fn adjustment_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn adjustment_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adjustment_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    pub fn set_adjustment_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_adjustment_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.adjustment_type = input;
         self
     }

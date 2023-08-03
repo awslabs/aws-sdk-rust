@@ -58,32 +58,23 @@ impl NodeGroup {
 
 /// A builder for [`NodeGroup`](crate::types::NodeGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeGroupBuilder {
     pub(crate) node_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) primary_endpoint: ::std::option::Option<crate::types::Endpoint>,
     pub(crate) reader_endpoint: ::std::option::Option<crate::types::Endpoint>,
     pub(crate) slots: ::std::option::Option<::std::string::String>,
-    pub(crate) node_group_members:
-        ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMember>>,
+    pub(crate) node_group_members: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMember>>,
 }
 impl NodeGroupBuilder {
     /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for a node group. </p>
-    pub fn node_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for a node group. </p>
-    pub fn set_node_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_group_id = input;
         self
     }
@@ -111,10 +102,7 @@ impl NodeGroupBuilder {
         self
     }
     /// <p>The endpoint of the primary node in this node group (shard).</p>
-    pub fn set_primary_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::Endpoint>,
-    ) -> Self {
+    pub fn set_primary_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.primary_endpoint = input;
         self
     }
@@ -128,10 +116,7 @@ impl NodeGroupBuilder {
         self
     }
     /// <p>The endpoint of the replica nodes in this node group (shard).</p>
-    pub fn set_reader_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::Endpoint>,
-    ) -> Self {
+    pub fn set_reader_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.reader_endpoint = input;
         self
     }
@@ -165,17 +150,12 @@ impl NodeGroupBuilder {
         self
     }
     /// <p>A list containing information about individual nodes within the node group (shard).</p>
-    pub fn set_node_group_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMember>>,
-    ) -> Self {
+    pub fn set_node_group_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMember>>) -> Self {
         self.node_group_members = input;
         self
     }
     /// <p>A list containing information about individual nodes within the node group (shard).</p>
-    pub fn get_node_group_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMember>> {
+    pub fn get_node_group_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMember>> {
         &self.node_group_members
     }
     /// Consumes the builder and constructs a [`NodeGroup`](crate::types::NodeGroup).

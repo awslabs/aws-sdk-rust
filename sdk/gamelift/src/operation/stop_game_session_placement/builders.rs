@@ -26,7 +26,7 @@ impl StopGameSessionPlacementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopGameSessionPlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder,
+    inner: crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder,
 }
 impl StopGameSessionPlacementFluentBuilder {
     /// Creates a new `StopGameSessionPlacement`.
@@ -37,7 +37,7 @@ impl StopGameSessionPlacementFluentBuilder {
         }
     }
     /// Access the StopGameSessionPlacement as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StopGameSessionPlacementFluentBuilder {
             crate::operation::stop_game_session_placement::StopGameSessionPlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_game_session_placement::StopGameSessionPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_game_session_placement::StopGameSessionPlacementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StopGameSessionPlacementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StopGameSessionPlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_game_session_placement::StopGameSessionPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_game_session_placement::StopGameSessionPlacementError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StopGameSessionPlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_game_session_placement::StopGameSessionPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_game_session_placement::StopGameSessionPlacementError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StopGameSessionPlacementFluentBuilder {
             crate::operation::stop_game_session_placement::StopGameSessionPlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_game_session_placement::StopGameSessionPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_game_session_placement::StopGameSessionPlacementError>,
     > {
         self.customize_middleware().await
     }

@@ -22,18 +22,14 @@ impl ListServiceProfilesInput {
 }
 impl ListServiceProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListServiceProfilesInput`](crate::operation::list_service_profiles::ListServiceProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_service_profiles::builders::ListServiceProfilesInputBuilder {
-        crate::operation::list_service_profiles::builders::ListServiceProfilesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_service_profiles::builders::ListServiceProfilesInputBuilder {
+        crate::operation::list_service_profiles::builders::ListServiceProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceProfilesInput`](crate::operation::list_service_profiles::ListServiceProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceProfilesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListServiceProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListServiceProfilesInput`](crate::operation::list_service_profiles::ListServiceProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_service_profiles::ListServiceProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_service_profiles::ListServiceProfilesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_service_profiles::ListServiceProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_service_profiles::ListServiceProfilesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

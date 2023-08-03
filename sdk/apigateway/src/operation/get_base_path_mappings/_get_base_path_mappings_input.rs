@@ -30,18 +30,14 @@ impl GetBasePathMappingsInput {
 }
 impl GetBasePathMappingsInput {
     /// Creates a new builder-style object to manufacture [`GetBasePathMappingsInput`](crate::operation::get_base_path_mappings::GetBasePathMappingsInput).
-    pub fn builder(
-    ) -> crate::operation::get_base_path_mappings::builders::GetBasePathMappingsInputBuilder {
-        crate::operation::get_base_path_mappings::builders::GetBasePathMappingsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_base_path_mappings::builders::GetBasePathMappingsInputBuilder {
+        crate::operation::get_base_path_mappings::builders::GetBasePathMappingsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBasePathMappingsInput`](crate::operation::get_base_path_mappings::GetBasePathMappingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBasePathMappingsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -93,16 +89,12 @@ impl GetBasePathMappingsInputBuilder {
     /// Consumes the builder and constructs a [`GetBasePathMappingsInput`](crate::operation::get_base_path_mappings::GetBasePathMappingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_base_path_mappings::GetBasePathMappingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_base_path_mappings::GetBasePathMappingsInput {
-                domain_name: self.domain_name,
-                position: self.position,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_base_path_mappings::GetBasePathMappingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_base_path_mappings::GetBasePathMappingsInput {
+            domain_name: self.domain_name,
+            position: self.position,
+            limit: self.limit,
+        })
     }
 }

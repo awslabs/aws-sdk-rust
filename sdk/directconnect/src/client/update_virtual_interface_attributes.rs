@@ -35,7 +35,9 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput::tags): <p>The tags associated with the virtual interface.</p>
     ///   - [`site_link_enabled(Option<bool>)`](crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput::site_link_enabled): <p>Indicates whether SiteLink is enabled.</p>
     /// - On failure, responds with [`SdkError<UpdateVirtualInterfaceAttributesError>`](crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError)
-    pub fn update_virtual_interface_attributes(&self) -> crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesFluentBuilder{
+    pub fn update_virtual_interface_attributes(
+        &self,
+    ) -> crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesFluentBuilder {
         crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesFluentBuilder::new(self.handle.clone())
     }
 }

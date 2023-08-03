@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`updated_latest_patch_version(impl ::std::convert::Into<String>)`](crate::operation::deregister_package_version::builders::DeregisterPackageVersionFluentBuilder::updated_latest_patch_version) / [`set_updated_latest_patch_version(Option<String>)`](crate::operation::deregister_package_version::builders::DeregisterPackageVersionFluentBuilder::set_updated_latest_patch_version): <p>If the version was marked latest, the new version to maker as latest.</p>
     /// - On success, responds with [`DeregisterPackageVersionOutput`](crate::operation::deregister_package_version::DeregisterPackageVersionOutput)
     /// - On failure, responds with [`SdkError<DeregisterPackageVersionError>`](crate::operation::deregister_package_version::DeregisterPackageVersionError)
-    pub fn deregister_package_version(
-        &self,
-    ) -> crate::operation::deregister_package_version::builders::DeregisterPackageVersionFluentBuilder
-    {
+    pub fn deregister_package_version(&self) -> crate::operation::deregister_package_version::builders::DeregisterPackageVersionFluentBuilder {
         crate::operation::deregister_package_version::builders::DeregisterPackageVersionFluentBuilder::new(self.handle.clone())
     }
 }

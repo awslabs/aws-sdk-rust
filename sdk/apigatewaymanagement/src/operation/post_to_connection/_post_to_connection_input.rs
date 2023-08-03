@@ -22,17 +22,14 @@ impl PostToConnectionInput {
 }
 impl PostToConnectionInput {
     /// Creates a new builder-style object to manufacture [`PostToConnectionInput`](crate::operation::post_to_connection::PostToConnectionInput).
-    pub fn builder() -> crate::operation::post_to_connection::builders::PostToConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::post_to_connection::builders::PostToConnectionInputBuilder {
         crate::operation::post_to_connection::builders::PostToConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`PostToConnectionInput`](crate::operation::post_to_connection::PostToConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostToConnectionInputBuilder {
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl PostToConnectionInputBuilder {
         &self.data
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl PostToConnectionInputBuilder {
     /// Consumes the builder and constructs a [`PostToConnectionInput`](crate::operation::post_to_connection::PostToConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::post_to_connection::PostToConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::post_to_connection::PostToConnectionInput {
-                data: self.data,
-                connection_id: self.connection_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::post_to_connection::PostToConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::post_to_connection::PostToConnectionInput {
+            data: self.data,
+            connection_id: self.connection_id,
+        })
     }
 }

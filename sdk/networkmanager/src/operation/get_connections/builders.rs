@@ -10,10 +10,7 @@ impl GetConnectionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_connections::GetConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connections::GetConnectionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connections::GetConnectionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_connections();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetConnectionsFluentBuilder {
         }
     }
     /// Access the GetConnections as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_connections::builders::GetConnectionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_connections::builders::GetConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl GetConnectionsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_connections::paginator::GetConnectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_connections::paginator::GetConnectionsPaginator {
-        crate::operation::get_connections::paginator::GetConnectionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_connections::paginator::GetConnectionsPaginator {
+        crate::operation::get_connections::paginator::GetConnectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -150,25 +131,17 @@ impl GetConnectionsFluentBuilder {
     /// To override the contents of this collection use [`set_connection_ids`](Self::set_connection_ids).
     ///
     /// <p>One or more connection IDs.</p>
-    pub fn connection_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_ids(input.into());
         self
     }
     /// <p>One or more connection IDs.</p>
-    pub fn set_connection_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connection_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_connection_ids(input);
         self
     }
     /// <p>One or more connection IDs.</p>
-    pub fn get_connection_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connection_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_connection_ids()
     }
     /// <p>The ID of the device.</p>

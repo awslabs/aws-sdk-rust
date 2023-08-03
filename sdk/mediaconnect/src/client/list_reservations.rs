@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_reservations::ListReservationsOutput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
     ///   - [`reservations(Option<Vec<Reservation>>)`](crate::operation::list_reservations::ListReservationsOutput::reservations): A list of all reservations that have been purchased by this account in the current AWS Region.
     /// - On failure, responds with [`SdkError<ListReservationsError>`](crate::operation::list_reservations::ListReservationsError)
-    pub fn list_reservations(
-        &self,
-    ) -> crate::operation::list_reservations::builders::ListReservationsFluentBuilder {
-        crate::operation::list_reservations::builders::ListReservationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_reservations(&self) -> crate::operation::list_reservations::builders::ListReservationsFluentBuilder {
+        crate::operation::list_reservations::builders::ListReservationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateSchedulingPolicyOutput {
 }
 impl CreateSchedulingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateSchedulingPolicyOutput`](crate::operation::create_scheduling_policy::CreateSchedulingPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyOutputBuilder {
         crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSchedulingPolicyOutput`](crate::operation::create_scheduling_policy::CreateSchedulingPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSchedulingPolicyOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

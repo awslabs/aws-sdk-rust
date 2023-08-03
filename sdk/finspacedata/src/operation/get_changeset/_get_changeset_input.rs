@@ -30,9 +30,7 @@ impl GetChangesetInput {
 
 /// A builder for [`GetChangesetInput`](crate::operation::get_changeset::GetChangesetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChangesetInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
@@ -67,12 +65,7 @@ impl GetChangesetInputBuilder {
         &self.changeset_id
     }
     /// Consumes the builder and constructs a [`GetChangesetInput`](crate::operation::get_changeset::GetChangesetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_changeset::GetChangesetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_changeset::GetChangesetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_changeset::GetChangesetInput {
             dataset_id: self.dataset_id,
             changeset_id: self.changeset_id,

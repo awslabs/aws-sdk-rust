@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteLoadBalancerTlsCertificateOutput`](crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteLoadBalancerTlsCertificateError>`](crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError)
-    pub fn delete_load_balancer_tls_certificate(&self) -> crate::operation::delete_load_balancer_tls_certificate::builders::DeleteLoadBalancerTlsCertificateFluentBuilder{
+    pub fn delete_load_balancer_tls_certificate(
+        &self,
+    ) -> crate::operation::delete_load_balancer_tls_certificate::builders::DeleteLoadBalancerTlsCertificateFluentBuilder {
         crate::operation::delete_load_balancer_tls_certificate::builders::DeleteLoadBalancerTlsCertificateFluentBuilder::new(self.handle.clone())
     }
 }

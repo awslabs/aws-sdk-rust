@@ -26,7 +26,7 @@ impl PutHypervisorPropertyMappingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutHypervisorPropertyMappingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder,
+    inner: crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder,
 }
 impl PutHypervisorPropertyMappingsFluentBuilder {
     /// Creates a new `PutHypervisorPropertyMappings`.
@@ -37,7 +37,7 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
         }
     }
     /// Access the PutHypervisorPropertyMappings as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
             crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
             crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hypervisor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hypervisor_arn(input);
         self
     }
@@ -145,25 +128,17 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
     /// To override the contents of this collection use [`set_vmware_to_aws_tag_mappings`](Self::set_vmware_to_aws_tag_mappings).
     ///
     /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn vmware_to_aws_tag_mappings(
-        mut self,
-        input: crate::types::VmwareToAwsTagMapping,
-    ) -> Self {
+    pub fn vmware_to_aws_tag_mappings(mut self, input: crate::types::VmwareToAwsTagMapping) -> Self {
         self.inner = self.inner.vmware_to_aws_tag_mappings(input);
         self
     }
     /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn set_vmware_to_aws_tag_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
-    ) -> Self {
+    pub fn set_vmware_to_aws_tag_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>) -> Self {
         self.inner = self.inner.set_vmware_to_aws_tag_mappings(input);
         self
     }
     /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn get_vmware_to_aws_tag_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>> {
+    pub fn get_vmware_to_aws_tag_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>> {
         self.inner.get_vmware_to_aws_tag_mappings()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>

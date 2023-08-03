@@ -10,9 +10,7 @@ pub struct GetLoggingConfigurationOutput {
 }
 impl GetLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetLoggingConfigurationOutput {
 }
 impl GetLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationOutput`](crate::operation::get_logging_configuration::GetLoggingConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_logging_configuration::builders::GetLoggingConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_logging_configuration::builders::GetLoggingConfigurationOutputBuilder {
         crate::operation::get_logging_configuration::builders::GetLoggingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoggingConfigurationOutput`](crate::operation::get_logging_configuration::GetLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoggingConfigurationOutputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetLoggingConfigurationOutputBuilder {
         self
     }
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,9 +58,7 @@ impl GetLoggingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLoggingConfigurationOutput`](crate::operation::get_logging_configuration::GetLoggingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_logging_configuration::GetLoggingConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_logging_configuration::GetLoggingConfigurationOutput {
         crate::operation::get_logging_configuration::GetLoggingConfigurationOutput {
             logging_configuration: self.logging_configuration,
             _request_id: self._request_id,

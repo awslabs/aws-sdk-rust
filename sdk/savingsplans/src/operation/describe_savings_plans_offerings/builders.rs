@@ -26,7 +26,7 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_savings_plans_offerings::builders::DescribeSavingsPlansOfferingsInputBuilder,
+    inner: crate::operation::describe_savings_plans_offerings::builders::DescribeSavingsPlansOfferingsInputBuilder,
 }
 impl DescribeSavingsPlansOfferingsFluentBuilder {
     /// Creates a new `DescribeSavingsPlansOfferings`.
@@ -37,7 +37,7 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         }
     }
     /// Access the DescribeSavingsPlansOfferings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_savings_plans_offerings::builders::DescribeSavingsPlansOfferingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_savings_plans_offerings::builders::DescribeSavingsPlansOfferingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
             crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
             crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +119,12 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self
     }
     /// <p>The IDs of the offerings.</p>
-    pub fn set_offering_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_offering_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_offering_ids(input);
         self
     }
     /// <p>The IDs of the offerings.</p>
-    pub fn get_offering_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_offering_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_offering_ids()
     }
     /// Appends an item to `paymentOptions`.
@@ -153,17 +137,12 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self
     }
     /// <p>The payment options.</p>
-    pub fn set_payment_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
-    ) -> Self {
+    pub fn set_payment_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>>) -> Self {
         self.inner = self.inner.set_payment_options(input);
         self
     }
     /// <p>The payment options.</p>
-    pub fn get_payment_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>> {
+    pub fn get_payment_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>> {
         self.inner.get_payment_options()
     }
     /// <p>The product type.</p>
@@ -172,10 +151,7 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self
     }
     /// <p>The product type.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanProductType>,
-    ) -> Self {
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::SavingsPlanProductType>) -> Self {
         self.inner = self.inner.set_product_type(input);
         self
     }
@@ -193,17 +169,12 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self
     }
     /// <p>The plan type.</p>
-    pub fn set_plan_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>>,
-    ) -> Self {
+    pub fn set_plan_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>>) -> Self {
         self.inner = self.inner.set_plan_types(input);
         self
     }
     /// <p>The plan type.</p>
-    pub fn get_plan_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>> {
+    pub fn get_plan_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>> {
         self.inner.get_plan_types()
     }
     /// Appends an item to `durations`.
@@ -234,17 +205,12 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self
     }
     /// <p>The currencies.</p>
-    pub fn set_currencies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CurrencyCode>>,
-    ) -> Self {
+    pub fn set_currencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrencyCode>>) -> Self {
         self.inner = self.inner.set_currencies(input);
         self
     }
     /// <p>The currencies.</p>
-    pub fn get_currencies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrencyCode>> {
+    pub fn get_currencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrencyCode>> {
         self.inner.get_currencies()
     }
     /// Appends an item to `descriptions`.
@@ -257,17 +223,12 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self
     }
     /// <p>The descriptions.</p>
-    pub fn set_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_descriptions(input);
         self
     }
     /// <p>The descriptions.</p>
-    pub fn get_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_descriptions()
     }
     /// Appends an item to `serviceCodes`.
@@ -275,25 +236,17 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
     /// To override the contents of this collection use [`set_service_codes`](Self::set_service_codes).
     ///
     /// <p>The services.</p>
-    pub fn service_codes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_codes(input.into());
         self
     }
     /// <p>The services.</p>
-    pub fn set_service_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_service_codes(input);
         self
     }
     /// <p>The services.</p>
-    pub fn get_service_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_service_codes()
     }
     /// Appends an item to `usageTypes`.
@@ -306,17 +259,12 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn set_usage_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_usage_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_usage_types(input);
         self
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn get_usage_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_usage_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_usage_types()
     }
     /// Appends an item to `operations`.
@@ -329,10 +277,7 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_operations(input);
         self
     }
@@ -350,20 +295,12 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
         self
     }
     /// <p>The filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::SavingsPlanOfferingFilterElement>,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingFilterElement>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filters.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingFilterElement>>
-    {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingFilterElement>> {
         self.inner.get_filters()
     }
     /// <p>The token for the next page of results.</p>

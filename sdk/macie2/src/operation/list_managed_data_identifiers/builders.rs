@@ -26,7 +26,7 @@ impl ListManagedDataIdentifiersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListManagedDataIdentifiersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersInputBuilder,
+    inner: crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersInputBuilder,
 }
 impl ListManagedDataIdentifiersFluentBuilder {
     /// Creates a new `ListManagedDataIdentifiers`.
@@ -37,7 +37,7 @@ impl ListManagedDataIdentifiersFluentBuilder {
         }
     }
     /// Access the ListManagedDataIdentifiers as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListManagedDataIdentifiersFluentBuilder {
             crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListManagedDataIdentifiersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListManagedDataIdentifiersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListManagedDataIdentifiersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListManagedDataIdentifiersFluentBuilder {
             crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_managed_data_identifiers::paginator::ListManagedDataIdentifiersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_managed_data_identifiers::paginator::ListManagedDataIdentifiersPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_managed_data_identifiers::paginator::ListManagedDataIdentifiersPaginator {
         crate::operation::list_managed_data_identifiers::paginator::ListManagedDataIdentifiersPaginator::new(self.handle, self.inner)
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>

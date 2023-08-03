@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`stream_arn(impl ::std::convert::Into<String>)`](crate::operation::start_stream_encryption::builders::StartStreamEncryptionFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::start_stream_encryption::builders::StartStreamEncryptionFluentBuilder::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`StartStreamEncryptionOutput`](crate::operation::start_stream_encryption::StartStreamEncryptionOutput)
     /// - On failure, responds with [`SdkError<StartStreamEncryptionError>`](crate::operation::start_stream_encryption::StartStreamEncryptionError)
-    pub fn start_stream_encryption(
-        &self,
-    ) -> crate::operation::start_stream_encryption::builders::StartStreamEncryptionFluentBuilder
-    {
-        crate::operation::start_stream_encryption::builders::StartStreamEncryptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_stream_encryption(&self) -> crate::operation::start_stream_encryption::builders::StartStreamEncryptionFluentBuilder {
+        crate::operation::start_stream_encryption::builders::StartStreamEncryptionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,10 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`reserved_elasticsearch_instance_offerings(Option<Vec<ReservedElasticsearchInstanceOffering>>)`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput::reserved_elasticsearch_instance_offerings): <p>List of reserved Elasticsearch instance offerings</p>
     /// - On failure, responds with [`SdkError<DescribeReservedElasticsearchInstanceOfferingsError>`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsError)
-    pub fn describe_reserved_elasticsearch_instance_offerings(&self) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder{
+    pub fn describe_reserved_elasticsearch_instance_offerings(
+        &self,
+    ) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder
+    {
         crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

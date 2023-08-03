@@ -24,34 +24,26 @@ impl GetRelationalDatabaseParametersInput {
 }
 impl GetRelationalDatabaseParametersInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseParametersInput`](crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersInput).
-    pub fn builder() -> crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersInputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersInputBuilder {
         crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseParametersInput`](crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseParametersInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetRelationalDatabaseParametersInputBuilder {
     /// <p>The name of your database for which to get parameters.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your database for which to get parameters.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -85,11 +77,9 @@ impl GetRelationalDatabaseParametersInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersInput {
-                relational_database_name: self.relational_database_name
-                ,
-                page_token: self.page_token
-                ,
-            }
+                relational_database_name: self.relational_database_name,
+                page_token: self.page_token,
+            },
         )
     }
 }

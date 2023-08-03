@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEndpointAccessOutput`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput) with field(s):
     ///   - [`endpoint(Option<EndpointAccess>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::endpoint): <p>The deleted VPC endpoint.</p>
     /// - On failure, responds with [`SdkError<DeleteEndpointAccessError>`](crate::operation::delete_endpoint_access::DeleteEndpointAccessError)
-    pub fn delete_endpoint_access(
-        &self,
-    ) -> crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder {
-        crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_endpoint_access(&self) -> crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder {
+        crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`events(Option<Vec<Event>>)`](crate::operation::list_participant_events::ListParticipantEventsOutput::events): <p>List of the matching events.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_participant_events::ListParticipantEventsOutput::next_token): <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set. </p>
     /// - On failure, responds with [`SdkError<ListParticipantEventsError>`](crate::operation::list_participant_events::ListParticipantEventsError)
-    pub fn list_participant_events(
-        &self,
-    ) -> crate::operation::list_participant_events::builders::ListParticipantEventsFluentBuilder
-    {
-        crate::operation::list_participant_events::builders::ListParticipantEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_participant_events(&self) -> crate::operation::list_participant_events::builders::ListParticipantEventsFluentBuilder {
+        crate::operation::list_participant_events::builders::ListParticipantEventsFluentBuilder::new(self.handle.clone())
     }
 }

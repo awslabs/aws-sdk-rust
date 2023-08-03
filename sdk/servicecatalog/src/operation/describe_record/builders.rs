@@ -10,10 +10,7 @@ impl DescribeRecordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_record::DescribeRecordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_record::DescribeRecordError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_record::DescribeRecordError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_record();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeRecordFluentBuilder {
         }
     }
     /// Access the DescribeRecord as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_record::builders::DescribeRecordInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_record::builders::DescribeRecordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl DescribeRecordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -122,10 +114,7 @@ impl DescribeRecordFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -134,10 +123,7 @@ impl DescribeRecordFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

@@ -15,33 +15,25 @@ impl DisassociateIamInstanceProfileInput {
 }
 impl DisassociateIamInstanceProfileInput {
     /// Creates a new builder-style object to manufacture [`DisassociateIamInstanceProfileInput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput).
-    pub fn builder() -> crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileInputBuilder {
         crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateIamInstanceProfileInput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateIamInstanceProfileInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateIamInstanceProfileInputBuilder {
     /// <p>The ID of the IAM instance profile association.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the IAM instance profile association.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -56,11 +48,8 @@ impl DisassociateIamInstanceProfileInputBuilder {
         crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput {
-                association_id: self.association_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput {
+            association_id: self.association_id,
+        })
     }
 }

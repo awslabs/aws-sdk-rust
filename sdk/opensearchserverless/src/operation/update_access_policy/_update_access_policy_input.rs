@@ -50,17 +50,14 @@ impl UpdateAccessPolicyInput {
 }
 impl UpdateAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
+    pub fn builder() -> crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
         crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccessPolicyInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -76,10 +73,7 @@ impl UpdateAccessPolicyInputBuilder {
         self
     }
     /// <p>The type of policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -102,18 +96,12 @@ impl UpdateAccessPolicyInputBuilder {
         &self.name
     }
     /// <p>The version of the policy being updated.</p>
-    pub fn policy_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the policy being updated.</p>
-    pub fn set_policy_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_version = input;
         self
     }
@@ -166,19 +154,14 @@ impl UpdateAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_access_policy::UpdateAccessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_access_policy::UpdateAccessPolicyInput {
-                r#type: self.r#type,
-                name: self.name,
-                policy_version: self.policy_version,
-                description: self.description,
-                policy: self.policy,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_access_policy::UpdateAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_access_policy::UpdateAccessPolicyInput {
+            r#type: self.r#type,
+            name: self.name,
+            policy_version: self.policy_version,
+            description: self.description,
+            policy: self.policy,
+            client_token: self.client_token,
+        })
     }
 }

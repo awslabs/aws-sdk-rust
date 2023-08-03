@@ -50,9 +50,7 @@ impl DescribeStacksInput {
 
 /// A builder for [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStacksInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -119,10 +117,7 @@ impl DescribeStacksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stacks::DescribeStacksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_stacks::DescribeStacksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_stacks::DescribeStacksInput {
             stack_name: self.stack_name,
             next_token: self.next_token,

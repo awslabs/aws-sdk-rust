@@ -37,9 +37,7 @@ impl UpdateApiDestinationFluentBuilder {
         }
     }
     /// Access the UpdateApiDestination as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_api_destination::builders::UpdateApiDestinationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_api_destination::builders::UpdateApiDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateApiDestinationFluentBuilder {
             crate::operation::update_api_destination::UpdateApiDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_destination::UpdateApiDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_api_destination::UpdateApiDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateApiDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateApiDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_api_destination::UpdateApiDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_destination::UpdateApiDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_api_destination::UpdateApiDestinationError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateApiDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_api_destination::UpdateApiDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_destination::UpdateApiDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_api_destination::UpdateApiDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateApiDestinationFluentBuilder {
             crate::operation::update_api_destination::UpdateApiDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_destination::UpdateApiDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_api_destination::UpdateApiDestinationError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +138,12 @@ impl UpdateApiDestinationFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The ARN of the connection to use for the API destination.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_arn(input.into());
         self
     }
     /// <p>The ARN of the connection to use for the API destination.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_arn(input);
         self
     }
@@ -171,18 +152,12 @@ impl UpdateApiDestinationFluentBuilder {
         self.inner.get_connection_arn()
     }
     /// <p>The URL to the endpoint to use for the API destination.</p>
-    pub fn invocation_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invocation_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.invocation_endpoint(input.into());
         self
     }
     /// <p>The URL to the endpoint to use for the API destination.</p>
-    pub fn set_invocation_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invocation_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_invocation_endpoint(input);
         self
     }
@@ -196,17 +171,12 @@ impl UpdateApiDestinationFluentBuilder {
         self
     }
     /// <p>The method to use for the API destination.</p>
-    pub fn set_http_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiDestinationHttpMethod>,
-    ) -> Self {
+    pub fn set_http_method(mut self, input: ::std::option::Option<crate::types::ApiDestinationHttpMethod>) -> Self {
         self.inner = self.inner.set_http_method(input);
         self
     }
     /// <p>The method to use for the API destination.</p>
-    pub fn get_http_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApiDestinationHttpMethod> {
+    pub fn get_http_method(&self) -> &::std::option::Option<crate::types::ApiDestinationHttpMethod> {
         self.inner.get_http_method()
     }
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
@@ -215,10 +185,7 @@ impl UpdateApiDestinationFluentBuilder {
         self
     }
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
-    pub fn set_invocation_rate_limit_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_invocation_rate_limit_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_invocation_rate_limit_per_second(input);
         self
     }

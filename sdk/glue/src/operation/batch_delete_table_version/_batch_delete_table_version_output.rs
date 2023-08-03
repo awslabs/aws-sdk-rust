@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchDeleteTableVersionOutput {
 }
 impl BatchDeleteTableVersionOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteTableVersionOutput`](crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionOutputBuilder {
         crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteTableVersionOutput`](crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteTableVersionOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl BatchDeleteTableVersionOutputBuilder {
         self
     }
     /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +64,7 @@ impl BatchDeleteTableVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDeleteTableVersionOutput`](crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput {
+    pub fn build(self) -> crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput {
         crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput {
             errors: self.errors,
             _request_id: self._request_id,

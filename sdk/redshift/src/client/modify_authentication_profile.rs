@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`authentication_profile_name(Option<String>)`](crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput::authentication_profile_name): <p>The name of the authentication profile that was replaced.</p>
     ///   - [`authentication_profile_content(Option<String>)`](crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput::authentication_profile_content): <p>The updated content of the authentication profile in JSON format.</p>
     /// - On failure, responds with [`SdkError<ModifyAuthenticationProfileError>`](crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError)
-    pub fn modify_authentication_profile(&self) -> crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileFluentBuilder{
+    pub fn modify_authentication_profile(
+        &self,
+    ) -> crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileFluentBuilder {
         crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileFluentBuilder::new(self.handle.clone())
     }
 }

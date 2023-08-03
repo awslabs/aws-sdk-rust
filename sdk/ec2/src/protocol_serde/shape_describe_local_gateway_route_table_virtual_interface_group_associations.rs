@@ -14,9 +14,7 @@ pub fn de_describe_local_gateway_route_table_virtual_interface_group_association
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::builders::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutputBuilder::default();
         output = crate::protocol_serde::shape_describe_local_gateway_route_table_virtual_interface_group_associations::de_describe_local_gateway_route_table_virtual_interface_group_associations(_response_body, output).map_err(crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -29,10 +27,11 @@ pub fn de_describe_local_gateway_route_table_virtual_interface_group_association
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el
-        .matches("DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse"))
-    {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!("invalid root, expected DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse got {:?}", start_el)));
+    if !(start_el.matches("DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse")) {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "invalid root, expected DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse got {:?}",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

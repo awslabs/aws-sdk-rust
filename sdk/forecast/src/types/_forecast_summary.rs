@@ -109,9 +109,7 @@ impl ForecastSummary {
 
 /// A builder for [`ForecastSummary`](crate::types::ForecastSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForecastSummaryBuilder {
     pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_name: ::std::option::Option<::std::string::String>,
@@ -139,18 +137,12 @@ impl ForecastSummaryBuilder {
         &self.forecast_arn
     }
     /// <p>The name of the forecast.</p>
-    pub fn forecast_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the forecast.</p>
-    pub fn set_forecast_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_name = input;
         self
     }
@@ -159,18 +151,12 @@ impl ForecastSummaryBuilder {
         &self.forecast_name
     }
     /// <p>The ARN of the predictor used to generate the forecast.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the predictor used to generate the forecast.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_arn = input;
         self
     }
@@ -193,18 +179,12 @@ impl ForecastSummaryBuilder {
         &self.created_using_auto_predictor
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train the predictor.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train the predictor.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -270,10 +250,7 @@ impl ForecastSummaryBuilder {
         self
     }
     /// <p>When the forecast creation task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -301,10 +278,7 @@ impl ForecastSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -316,9 +290,7 @@ impl ForecastSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`ForecastSummary`](crate::types::ForecastSummary).

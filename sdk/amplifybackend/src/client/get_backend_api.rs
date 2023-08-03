@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`resource_config(Option<BackendApiResourceConfig>)`](crate::operation::get_backend_api::GetBackendApiOutput::resource_config): <p>The resource configuration for this response object.</p>
     ///   - [`resource_name(Option<String>)`](crate::operation::get_backend_api::GetBackendApiOutput::resource_name): <p>The name of this resource.</p>
     /// - On failure, responds with [`SdkError<GetBackendAPIError>`](crate::operation::get_backend_api::GetBackendAPIError)
-    pub fn get_backend_api(
-        &self,
-    ) -> crate::operation::get_backend_api::builders::GetBackendAPIFluentBuilder {
-        crate::operation::get_backend_api::builders::GetBackendAPIFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_backend_api(&self) -> crate::operation::get_backend_api::builders::GetBackendAPIFluentBuilder {
+        crate::operation::get_backend_api::builders::GetBackendAPIFluentBuilder::new(self.handle.clone())
     }
 }

@@ -20,7 +20,7 @@ impl super::Client {
     ///   - [`encryption_setting(Option<EncryptionSetting>)`](crate::operation::describe_bot_recommendation::DescribeBotRecommendationOutput::encryption_setting): <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     ///   - [`bot_recommendation_results(Option<BotRecommendationResults>)`](crate::operation::describe_bot_recommendation::DescribeBotRecommendationOutput::bot_recommendation_results): <p>The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.</p>
     /// - On failure, responds with [`SdkError<DescribeBotRecommendationError>`](crate::operation::describe_bot_recommendation::DescribeBotRecommendationError)
-    pub fn describe_bot_recommendation(&self) -> crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationFluentBuilder{
+    pub fn describe_bot_recommendation(&self) -> crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationFluentBuilder {
         crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationFluentBuilder::new(self.handle.clone())
     }
 }

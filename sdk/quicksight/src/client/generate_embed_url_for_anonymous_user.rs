@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`anonymous_user_arn(Option<String>)`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput::anonymous_user_arn): <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
     /// - On failure, responds with [`SdkError<GenerateEmbedUrlForAnonymousUserError>`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserError)
-    pub fn generate_embed_url_for_anonymous_user(&self) -> crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserFluentBuilder{
+    pub fn generate_embed_url_for_anonymous_user(
+        &self,
+    ) -> crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserFluentBuilder {
         crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserFluentBuilder::new(self.handle.clone())
     }
 }

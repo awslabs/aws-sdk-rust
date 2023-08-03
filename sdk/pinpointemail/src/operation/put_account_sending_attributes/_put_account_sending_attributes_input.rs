@@ -20,16 +20,14 @@ impl PutAccountSendingAttributesInput {
 }
 impl PutAccountSendingAttributesInput {
     /// Creates a new builder-style object to manufacture [`PutAccountSendingAttributesInput`](crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput).
-    pub fn builder() -> crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesInputBuilder{
+    pub fn builder() -> crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesInputBuilder {
         crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountSendingAttributesInput`](crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountSendingAttributesInputBuilder {
     pub(crate) sending_enabled: ::std::option::Option<bool>,
 }
@@ -61,10 +59,8 @@ impl PutAccountSendingAttributesInputBuilder {
         crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput {
-                sending_enabled: self.sending_enabled.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput {
+            sending_enabled: self.sending_enabled.unwrap_or_default(),
+        })
     }
 }

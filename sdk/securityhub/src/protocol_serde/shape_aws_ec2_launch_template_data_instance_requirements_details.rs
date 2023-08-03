@@ -112,26 +112,18 @@ pub fn ser_aws_ec2_launch_template_data_instance_requirements_details(
         object_36.finish();
     }
     if input.on_demand_max_price_percentage_over_lowest_price != 0 {
-        object
-            .key("OnDemandMaxPricePercentageOverLowestPrice")
-            .number(
-                #[allow(clippy::useless_conversion)]
-                ::aws_smithy_types::Number::NegInt(
-                    (input.on_demand_max_price_percentage_over_lowest_price).into(),
-                ),
-            );
+        object.key("OnDemandMaxPricePercentageOverLowestPrice").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.on_demand_max_price_percentage_over_lowest_price).into()),
+        );
     }
     if input.require_hibernate_support {
-        object
-            .key("RequireHibernateSupport")
-            .boolean(input.require_hibernate_support);
+        object.key("RequireHibernateSupport").boolean(input.require_hibernate_support);
     }
     if input.spot_max_price_percentage_over_lowest_price != 0 {
         object.key("SpotMaxPricePercentageOverLowestPrice").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt(
-                (input.spot_max_price_percentage_over_lowest_price).into(),
-            ),
+            ::aws_smithy_types::Number::NegInt((input.spot_max_price_percentage_over_lowest_price).into()),
         );
     }
     if let Some(var_37) = &input.total_local_storage_gb {
@@ -151,17 +143,9 @@ pub fn ser_aws_ec2_launch_template_data_instance_requirements_details(
 
 pub(crate) fn de_aws_ec2_launch_template_data_instance_requirements_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -171,154 +155,128 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AcceleratorCount" => {
-                                builder = builder.set_accelerator_count(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AcceleratorCount" => {
+                            builder = builder.set_accelerator_count(
                                     crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_accelerator_count_details::de_aws_ec2_launch_template_data_instance_requirements_accelerator_count_details(tokens)?
                                 );
-                            }
-                            "AcceleratorManufacturers" => {
-                                builder = builder.set_accelerator_manufacturers(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
-                            }
-                            "AcceleratorNames" => {
-                                builder = builder.set_accelerator_names(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
-                            }
-                            "AcceleratorTotalMemoryMiB" => {
-                                builder = builder.set_accelerator_total_memory_mi_b(
+                        }
+                        "AcceleratorManufacturers" => {
+                            builder = builder
+                                .set_accelerator_manufacturers(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                        }
+                        "AcceleratorNames" => {
+                            builder =
+                                builder.set_accelerator_names(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                        }
+                        "AcceleratorTotalMemoryMiB" => {
+                            builder = builder.set_accelerator_total_memory_mi_b(
                                     crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details::de_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details(tokens)?
                                 );
-                            }
-                            "AcceleratorTypes" => {
-                                builder = builder.set_accelerator_types(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
-                            }
-                            "BareMetal" => {
-                                builder = builder.set_bare_metal(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "AcceleratorTypes" => {
+                            builder =
+                                builder.set_accelerator_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                        }
+                        "BareMetal" => {
+                            builder = builder.set_bare_metal(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "BaselineEbsBandwidthMbps" => {
-                                builder = builder.set_baseline_ebs_bandwidth_mbps(
+                            );
+                        }
+                        "BaselineEbsBandwidthMbps" => {
+                            builder = builder.set_baseline_ebs_bandwidth_mbps(
                                     crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details::de_aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details(tokens)?
                                 );
-                            }
-                            "BurstablePerformance" => {
-                                builder = builder.set_burstable_performance(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "BurstablePerformance" => {
+                            builder = builder.set_burstable_performance(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "CpuManufacturers" => {
-                                builder = builder.set_cpu_manufacturers(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
-                            }
-                            "ExcludedInstanceTypes" => {
-                                builder = builder.set_excluded_instance_types(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
-                            }
-                            "InstanceGenerations" => {
-                                builder = builder.set_instance_generations(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
-                            }
-                            "LocalStorage" => {
-                                builder = builder.set_local_storage(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "CpuManufacturers" => {
+                            builder =
+                                builder.set_cpu_manufacturers(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                        }
+                        "ExcludedInstanceTypes" => {
+                            builder = builder
+                                .set_excluded_instance_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                        }
+                        "InstanceGenerations" => {
+                            builder = builder
+                                .set_instance_generations(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                        }
+                        "LocalStorage" => {
+                            builder = builder.set_local_storage(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "LocalStorageTypes" => {
-                                builder = builder.set_local_storage_types(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
-                            }
-                            "MemoryGiBPerVCpu" => {
-                                builder = builder.set_memory_gi_b_per_v_cpu(
+                            );
+                        }
+                        "LocalStorageTypes" => {
+                            builder = builder
+                                .set_local_storage_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                        }
+                        "MemoryGiBPerVCpu" => {
+                            builder = builder.set_memory_gi_b_per_v_cpu(
                                     crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details::de_aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details(tokens)?
                                 );
-                            }
-                            "MemoryMiB" => {
-                                builder = builder.set_memory_mi_b(
+                        }
+                        "MemoryMiB" => {
+                            builder = builder.set_memory_mi_b(
                                     crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details::de_aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details(tokens)?
                                 );
-                            }
-                            "NetworkInterfaceCount" => {
-                                builder = builder.set_network_interface_count(
+                        }
+                        "NetworkInterfaceCount" => {
+                            builder = builder.set_network_interface_count(
                                     crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_network_interface_count_details::de_aws_ec2_launch_template_data_instance_requirements_network_interface_count_details(tokens)?
                                 );
-                            }
-                            "OnDemandMaxPricePercentageOverLowestPrice" => {
-                                builder = builder
-                                    .set_on_demand_max_price_percentage_over_lowest_price(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "OnDemandMaxPricePercentageOverLowestPrice" => {
+                            builder = builder.set_on_demand_max_price_percentage_over_lowest_price(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "RequireHibernateSupport" => {
-                                builder = builder.set_require_hibernate_support(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "SpotMaxPricePercentageOverLowestPrice" => {
-                                builder = builder.set_spot_max_price_percentage_over_lowest_price(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "RequireHibernateSupport" => {
+                            builder =
+                                builder.set_require_hibernate_support(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "SpotMaxPricePercentageOverLowestPrice" => {
+                            builder = builder.set_spot_max_price_percentage_over_lowest_price(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "TotalLocalStorageGB" => {
-                                builder = builder.set_total_local_storage_gb(
+                            );
+                        }
+                        "TotalLocalStorageGB" => {
+                            builder = builder.set_total_local_storage_gb(
                                     crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::de_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details(tokens)?
                                 );
-                            }
-                            "VCpuCount" => {
-                                builder = builder.set_v_cpu_count(
+                        }
+                        "VCpuCount" => {
+                            builder = builder.set_v_cpu_count(
                                     crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::de_aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

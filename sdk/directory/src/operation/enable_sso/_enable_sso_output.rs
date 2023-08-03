@@ -20,9 +20,7 @@ impl EnableSsoOutput {
 
 /// A builder for [`EnableSsoOutput`](crate::operation::enable_sso::EnableSsoOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableSsoOutputBuilder {
     _request_id: Option<String>,
 }

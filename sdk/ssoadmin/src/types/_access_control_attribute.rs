@@ -30,9 +30,7 @@ impl AccessControlAttribute {
 
 /// A builder for [`AccessControlAttribute`](crate::types::AccessControlAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessControlAttributeBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::AccessControlAttributeValue>,
@@ -58,10 +56,7 @@ impl AccessControlAttributeBuilder {
         self
     }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessControlAttributeValue>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::AccessControlAttributeValue>) -> Self {
         self.value = input;
         self
     }

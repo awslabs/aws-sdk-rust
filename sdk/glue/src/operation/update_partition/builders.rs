@@ -10,10 +10,7 @@ impl UpdatePartitionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_partition::UpdatePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partition::UpdatePartitionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partition::UpdatePartitionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_partition();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdatePartitionFluentBuilder {
         }
     }
     /// Access the UpdatePartition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_partition::builders::UpdatePartitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_partition::builders::UpdatePartitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdatePartitionFluentBuilder {
             crate::operation::update_partition::UpdatePartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partition::UpdatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partition::UpdatePartitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdatePartitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdatePartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_partition::UpdatePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partition::UpdatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partition::UpdatePartitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdatePartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_partition::UpdatePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partition::UpdatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partition::UpdatePartitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdatePartitionFluentBuilder {
             crate::operation::update_partition::UpdatePartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partition::UpdatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partition::UpdatePartitionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdatePartitionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -175,25 +153,17 @@ impl UpdatePartitionFluentBuilder {
     /// To override the contents of this collection use [`set_partition_value_list`](Self::set_partition_value_list).
     ///
     /// <p>List of partition key values that define the partition to update.</p>
-    pub fn partition_value_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partition_value_list(input.into());
         self
     }
     /// <p>List of partition key values that define the partition to update.</p>
-    pub fn set_partition_value_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_partition_value_list(input);
         self
     }
     /// <p>List of partition key values that define the partition to update.</p>
-    pub fn get_partition_value_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_partition_value_list()
     }
     /// <p>The new partition object to update the partition to.</p>
@@ -204,10 +174,7 @@ impl UpdatePartitionFluentBuilder {
     }
     /// <p>The new partition object to update the partition to.</p>
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
-    pub fn set_partition_input(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionInput>,
-    ) -> Self {
+    pub fn set_partition_input(mut self, input: ::std::option::Option<crate::types::PartitionInput>) -> Self {
         self.inner = self.inner.set_partition_input(input);
         self
     }

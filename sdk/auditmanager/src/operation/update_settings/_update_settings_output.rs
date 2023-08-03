@@ -28,9 +28,7 @@ impl UpdateSettingsOutput {
 
 /// A builder for [`UpdateSettingsOutput`](crate::operation::update_settings::UpdateSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSettingsOutputBuilder {
     pub(crate) settings: ::std::option::Option<crate::types::Settings>,
     _request_id: Option<String>,

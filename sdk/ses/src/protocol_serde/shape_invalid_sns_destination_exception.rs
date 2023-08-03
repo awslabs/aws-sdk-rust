@@ -3,10 +3,7 @@
 pub fn de_invalid_sns_destination_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidSnsDestinationExceptionBuilder,
-) -> Result<
-    crate::types::error::builders::InvalidSnsDestinationExceptionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::InvalidSnsDestinationExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

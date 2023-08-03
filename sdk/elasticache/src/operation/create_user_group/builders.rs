@@ -10,10 +10,7 @@ impl CreateUserGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_user_group::CreateUserGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_group::CreateUserGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_group::CreateUserGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_user_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateUserGroupFluentBuilder {
         }
     }
     /// Access the CreateUserGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_user_group::builders::CreateUserGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_user_group::builders::CreateUserGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateUserGroupFluentBuilder {
             crate::operation::create_user_group::CreateUserGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_group::CreateUserGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_group::CreateUserGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateUserGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateUserGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_group::CreateUserGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_group::CreateUserGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_group::CreateUserGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateUserGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_group::CreateUserGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_group::CreateUserGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_group::CreateUserGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateUserGroupFluentBuilder {
             crate::operation::create_user_group::CreateUserGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_group::CreateUserGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_group::CreateUserGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_group_id(input.into());
         self
     }
     /// <p>The ID of the user group.</p>
-    pub fn set_user_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_group_id(input);
         self
     }
@@ -166,10 +144,7 @@ impl CreateUserGroupFluentBuilder {
         self
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn set_user_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_ids(input);
         self
     }
@@ -187,10 +162,7 @@ impl CreateUserGroupFluentBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

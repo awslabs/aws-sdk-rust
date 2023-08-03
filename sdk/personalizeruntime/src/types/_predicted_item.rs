@@ -38,9 +38,7 @@ impl PredictedItem {
 
 /// A builder for [`PredictedItem`](crate::types::PredictedItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictedItemBuilder {
     pub(crate) item_id: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<f64>,
@@ -76,18 +74,12 @@ impl PredictedItemBuilder {
         &self.score
     }
     /// <p>The name of the promotion that included the predicted item.</p>
-    pub fn promotion_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn promotion_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.promotion_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the promotion that included the predicted item.</p>
-    pub fn set_promotion_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_promotion_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.promotion_name = input;
         self
     }

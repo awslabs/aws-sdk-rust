@@ -30,9 +30,7 @@ impl RiskExceptionConfigurationType {
 
 /// A builder for [`RiskExceptionConfigurationType`](crate::types::RiskExceptionConfigurationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RiskExceptionConfigurationTypeBuilder {
     pub(crate) blocked_ip_range_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) skipped_ip_range_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -43,27 +41,19 @@ impl RiskExceptionConfigurationTypeBuilder {
     /// To override the contents of this collection use [`set_blocked_ip_range_list`](Self::set_blocked_ip_range_list).
     ///
     /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
-    pub fn blocked_ip_range_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blocked_ip_range_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blocked_ip_range_list.unwrap_or_default();
         v.push(input.into());
         self.blocked_ip_range_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
-    pub fn set_blocked_ip_range_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_blocked_ip_range_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.blocked_ip_range_list = input;
         self
     }
     /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
-    pub fn get_blocked_ip_range_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_blocked_ip_range_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.blocked_ip_range_list
     }
     /// Appends an item to `skipped_ip_range_list`.
@@ -71,27 +61,19 @@ impl RiskExceptionConfigurationTypeBuilder {
     /// To override the contents of this collection use [`set_skipped_ip_range_list`](Self::set_skipped_ip_range_list).
     ///
     /// <p>Risk detection isn't performed on the IP addresses in this range list. The IP range is in CIDR notation.</p>
-    pub fn skipped_ip_range_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skipped_ip_range_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.skipped_ip_range_list.unwrap_or_default();
         v.push(input.into());
         self.skipped_ip_range_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Risk detection isn't performed on the IP addresses in this range list. The IP range is in CIDR notation.</p>
-    pub fn set_skipped_ip_range_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_skipped_ip_range_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.skipped_ip_range_list = input;
         self
     }
     /// <p>Risk detection isn't performed on the IP addresses in this range list. The IP range is in CIDR notation.</p>
-    pub fn get_skipped_ip_range_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_skipped_ip_range_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.skipped_ip_range_list
     }
     /// Consumes the builder and constructs a [`RiskExceptionConfigurationType`](crate::types::RiskExceptionConfigurationType).

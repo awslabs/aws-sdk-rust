@@ -30,9 +30,7 @@ impl GroupQuery {
 
 /// A builder for [`GroupQuery`](crate::types::GroupQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupQueryBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_query: ::std::option::Option<crate::types::ResourceQuery>,
@@ -58,10 +56,7 @@ impl GroupQueryBuilder {
         self
     }
     /// <p>The resource query that determines which Amazon Web Services resources are members of the associated resource group.</p>
-    pub fn set_resource_query(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceQuery>,
-    ) -> Self {
+    pub fn set_resource_query(mut self, input: ::std::option::Option<crate::types::ResourceQuery>) -> Self {
         self.resource_query = input;
         self
     }

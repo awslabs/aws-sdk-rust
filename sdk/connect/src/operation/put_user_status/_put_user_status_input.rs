@@ -36,9 +36,7 @@ impl PutUserStatusInput {
 
 /// A builder for [`PutUserStatusInput`](crate::operation::put_user_status::PutUserStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutUserStatusInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl PutUserStatusInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn agent_status_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_status_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_status_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn set_agent_status_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_status_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_status_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl PutUserStatusInputBuilder {
     /// Consumes the builder and constructs a [`PutUserStatusInput`](crate::operation::put_user_status::PutUserStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_user_status::PutUserStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_user_status::PutUserStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_user_status::PutUserStatusInput {
             user_id: self.user_id,
             instance_id: self.instance_id,

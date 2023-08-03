@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`e164_phone_numbers(Option<Vec<String>>)`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput::e164_phone_numbers): <p>Confines a search to just the phone numbers in the E.164 format.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput::next_token): <p>The token used to return the next page of results.</p>
     /// - On failure, responds with [`SdkError<SearchAvailablePhoneNumbersError>`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError)
-    pub fn search_available_phone_numbers(&self) -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder{
+    pub fn search_available_phone_numbers(
+        &self,
+    ) -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder {
         crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::new(self.handle.clone())
     }
 }

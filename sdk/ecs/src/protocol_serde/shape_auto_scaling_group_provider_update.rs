@@ -10,9 +10,7 @@ pub fn ser_auto_scaling_group_provider_update(
         object_2.finish();
     }
     if let Some(var_3) = &input.managed_termination_protection {
-        object
-            .key("managedTerminationProtection")
-            .string(var_3.as_str());
+        object.key("managedTerminationProtection").string(var_3.as_str());
     }
     Ok(())
 }

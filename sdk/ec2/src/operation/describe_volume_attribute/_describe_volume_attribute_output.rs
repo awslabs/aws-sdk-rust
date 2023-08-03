@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeVolumeAttributeOutput {
 }
 impl DescribeVolumeAttributeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumeAttributeOutput`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeOutputBuilder {
         crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVolumeAttributeOutput`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumeAttributeOutputBuilder {
     pub(crate) auto_enable_io: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
@@ -60,17 +56,12 @@ impl DescribeVolumeAttributeOutputBuilder {
         self
     }
     /// <p>The state of <code>autoEnableIO</code> attribute.</p>
-    pub fn set_auto_enable_io(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_auto_enable_io(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.auto_enable_io = input;
         self
     }
     /// <p>The state of <code>autoEnableIO</code> attribute.</p>
-    pub fn get_auto_enable_io(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_auto_enable_io(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.auto_enable_io
     }
     /// Appends an item to `product_codes`.
@@ -85,17 +76,12 @@ impl DescribeVolumeAttributeOutputBuilder {
         self
     }
     /// <p>A list of product codes.</p>
-    pub fn set_product_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
-    ) -> Self {
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
         self.product_codes = input;
         self
     }
     /// <p>A list of product codes.</p>
-    pub fn get_product_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
         &self.product_codes
     }
     /// <p>The ID of the volume.</p>
@@ -122,9 +108,7 @@ impl DescribeVolumeAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVolumeAttributeOutput`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput {
+    pub fn build(self) -> crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput {
         crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput {
             auto_enable_io: self.auto_enable_io,
             product_codes: self.product_codes,

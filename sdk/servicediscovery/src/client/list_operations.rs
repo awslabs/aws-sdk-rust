@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`operations(Option<Vec<OperationSummary>>)`](crate::operation::list_operations::ListOperationsOutput::operations): <p>Summary information about the operations that match the specified criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_operations::ListOperationsOutput::next_token): <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>   <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>  </note>
     /// - On failure, responds with [`SdkError<ListOperationsError>`](crate::operation::list_operations::ListOperationsError)
-    pub fn list_operations(
-        &self,
-    ) -> crate::operation::list_operations::builders::ListOperationsFluentBuilder {
-        crate::operation::list_operations::builders::ListOperationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_operations(&self) -> crate::operation::list_operations::builders::ListOperationsFluentBuilder {
+        crate::operation::list_operations::builders::ListOperationsFluentBuilder::new(self.handle.clone())
     }
 }

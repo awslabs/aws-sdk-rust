@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`client_properties(ClientProperties)`](crate::operation::modify_client_properties::builders::ModifyClientPropertiesFluentBuilder::client_properties) / [`set_client_properties(Option<ClientProperties>)`](crate::operation::modify_client_properties::builders::ModifyClientPropertiesFluentBuilder::set_client_properties): <p>Information about the Amazon WorkSpaces client.</p>
     /// - On success, responds with [`ModifyClientPropertiesOutput`](crate::operation::modify_client_properties::ModifyClientPropertiesOutput)
     /// - On failure, responds with [`SdkError<ModifyClientPropertiesError>`](crate::operation::modify_client_properties::ModifyClientPropertiesError)
-    pub fn modify_client_properties(
-        &self,
-    ) -> crate::operation::modify_client_properties::builders::ModifyClientPropertiesFluentBuilder
-    {
+    pub fn modify_client_properties(&self) -> crate::operation::modify_client_properties::builders::ModifyClientPropertiesFluentBuilder {
         crate::operation::modify_client_properties::builders::ModifyClientPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

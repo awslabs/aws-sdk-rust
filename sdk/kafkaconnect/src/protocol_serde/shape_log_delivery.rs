@@ -6,10 +6,7 @@ pub fn ser_log_delivery(
     if let Some(var_1) = &input.worker_log_delivery {
         #[allow(unused_mut)]
         let mut object_2 = object.key("workerLogDelivery").start_object();
-        crate::protocol_serde::shape_worker_log_delivery::ser_worker_log_delivery(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_worker_log_delivery::ser_worker_log_delivery(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

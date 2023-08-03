@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`policy_name(Option<String>)`](crate::operation::get_role_policy::GetRolePolicyOutput::policy_name): <p>The name of the policy.</p>
     ///   - [`policy_document(Option<String>)`](crate::operation::get_role_policy::GetRolePolicyOutput::policy_document): <p>The policy document.</p>  <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
     /// - On failure, responds with [`SdkError<GetRolePolicyError>`](crate::operation::get_role_policy::GetRolePolicyError)
-    pub fn get_role_policy(
-        &self,
-    ) -> crate::operation::get_role_policy::builders::GetRolePolicyFluentBuilder {
-        crate::operation::get_role_policy::builders::GetRolePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_role_policy(&self) -> crate::operation::get_role_policy::builders::GetRolePolicyFluentBuilder {
+        crate::operation::get_role_policy::builders::GetRolePolicyFluentBuilder::new(self.handle.clone())
     }
 }

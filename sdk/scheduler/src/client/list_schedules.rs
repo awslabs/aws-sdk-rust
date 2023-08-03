@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_schedules::ListSchedulesOutput::next_token): <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     ///   - [`schedules(Option<Vec<ScheduleSummary>>)`](crate::operation::list_schedules::ListSchedulesOutput::schedules): <p>The schedules that match the specified criteria.</p>
     /// - On failure, responds with [`SdkError<ListSchedulesError>`](crate::operation::list_schedules::ListSchedulesError)
-    pub fn list_schedules(
-        &self,
-    ) -> crate::operation::list_schedules::builders::ListSchedulesFluentBuilder {
-        crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_schedules(&self) -> crate::operation::list_schedules::builders::ListSchedulesFluentBuilder {
+        crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::new(self.handle.clone())
     }
 }

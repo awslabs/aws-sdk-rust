@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`StartImportFileTaskOutput`](crate::operation::start_import_file_task::StartImportFileTaskOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::start_import_file_task::StartImportFileTaskOutput::id): <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
     /// - On failure, responds with [`SdkError<StartImportFileTaskError>`](crate::operation::start_import_file_task::StartImportFileTaskError)
-    pub fn start_import_file_task(
-        &self,
-    ) -> crate::operation::start_import_file_task::builders::StartImportFileTaskFluentBuilder {
-        crate::operation::start_import_file_task::builders::StartImportFileTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_import_file_task(&self) -> crate::operation::start_import_file_task::builders::StartImportFileTaskFluentBuilder {
+        crate::operation::start_import_file_task::builders::StartImportFileTaskFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`grants(Option<Vec<Grant>>)`](crate::operation::get_object_acl::GetObjectAclOutput::grants): <p>A list of grants.</p>
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::get_object_acl::GetObjectAclOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<GetObjectAclError>`](crate::operation::get_object_acl::GetObjectAclError)
-    pub fn get_object_acl(
-        &self,
-    ) -> crate::operation::get_object_acl::builders::GetObjectAclFluentBuilder {
-        crate::operation::get_object_acl::builders::GetObjectAclFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_object_acl(&self) -> crate::operation::get_object_acl::builders::GetObjectAclFluentBuilder {
+        crate::operation::get_object_acl::builders::GetObjectAclFluentBuilder::new(self.handle.clone())
     }
 }

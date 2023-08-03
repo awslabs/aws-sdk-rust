@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DeleteVoiceConnectorStreamingConfigur
 }
 impl DeleteVoiceConnectorStreamingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorStreamingConfigurationOutput`](crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_voice_connector_streaming_configuration::builders::DeleteVoiceConnectorStreamingConfigurationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::delete_voice_connector_streaming_configuration::builders::DeleteVoiceConnectorStreamingConfigurationOutputBuilder {
         crate::operation::delete_voice_connector_streaming_configuration::builders::DeleteVoiceConnectorStreamingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceConnectorStreamingConfigurationOutput`](crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorStreamingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DeleteVoiceConnectorStreamingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorStreamingConfigurationOutput`](crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationOutput {
         crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationOutput {
             _request_id: self._request_id,
         }

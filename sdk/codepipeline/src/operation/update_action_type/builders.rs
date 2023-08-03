@@ -10,10 +10,7 @@ impl UpdateActionTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_action_type::UpdateActionTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_action_type::UpdateActionTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_action_type::UpdateActionTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_action_type();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateActionTypeFluentBuilder {
         }
     }
     /// Access the UpdateActionType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_action_type::builders::UpdateActionTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_action_type::builders::UpdateActionTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateActionTypeFluentBuilder {
             crate::operation::update_action_type::UpdateActionType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_action_type::UpdateActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_action_type::UpdateActionTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateActionTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateActionTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_action_type::UpdateActionTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_action_type::UpdateActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_action_type::UpdateActionTypeError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateActionTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_action_type::UpdateActionTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_action_type::UpdateActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_action_type::UpdateActionTypeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateActionTypeFluentBuilder {
             crate::operation::update_action_type::UpdateActionType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_action_type::UpdateActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_action_type::UpdateActionTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl UpdateActionTypeFluentBuilder {
         self
     }
     /// <p>The action type definition for the action type to be updated.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeDeclaration>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionTypeDeclaration>) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
     }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetInAppTemplateOutput`](crate::operation::get_in_app_template::GetInAppTemplateOutput) with field(s):
     ///   - [`in_app_template_response(Option<InAppTemplateResponse>)`](crate::operation::get_in_app_template::GetInAppTemplateOutput::in_app_template_response): <p>In-App Template Response.</p>
     /// - On failure, responds with [`SdkError<GetInAppTemplateError>`](crate::operation::get_in_app_template::GetInAppTemplateError)
-    pub fn get_in_app_template(
-        &self,
-    ) -> crate::operation::get_in_app_template::builders::GetInAppTemplateFluentBuilder {
-        crate::operation::get_in_app_template::builders::GetInAppTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_in_app_template(&self) -> crate::operation::get_in_app_template::builders::GetInAppTemplateFluentBuilder {
+        crate::operation::get_in_app_template::builders::GetInAppTemplateFluentBuilder::new(self.handle.clone())
     }
 }

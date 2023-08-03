@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreatePartnerEventSourceOutput {
 }
 impl CreatePartnerEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreatePartnerEventSourceOutput`](crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput).
-    pub fn builder() -> crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceOutputBuilder{
+    pub fn builder() -> crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceOutputBuilder {
         crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePartnerEventSourceOutput`](crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePartnerEventSourceOutputBuilder {
     pub(crate) event_source_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePartnerEventSourceOutputBuilder {
     /// <p>The ARN of the partner event source.</p>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the partner event source.</p>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source_arn = input;
         self
     }
@@ -66,9 +58,7 @@ impl CreatePartnerEventSourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePartnerEventSourceOutput`](crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput {
+    pub fn build(self) -> crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput {
         crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput {
             event_source_arn: self.event_source_arn,
             _request_id: self._request_id,

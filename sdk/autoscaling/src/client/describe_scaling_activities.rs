@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`activities(Option<Vec<Activity>>)`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput::activities): <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeScalingActivitiesError>`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesError)
-    pub fn describe_scaling_activities(&self) -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesFluentBuilder{
+    pub fn describe_scaling_activities(&self) -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesFluentBuilder {
         crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,8 +6,7 @@
 pub struct ListTrafficPolicyInstancesOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
     #[doc(hidden)]
-    pub traffic_policy_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>>,
+    pub traffic_policy_instances: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     #[doc(hidden)]
     pub hosted_zone_id_marker: ::std::option::Option<::std::string::String>,
@@ -27,9 +26,7 @@ pub struct ListTrafficPolicyInstancesOutput {
 }
 impl ListTrafficPolicyInstancesOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
-    pub fn traffic_policy_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficPolicyInstance]> {
+    pub fn traffic_policy_instances(&self) -> ::std::option::Option<&[crate::types::TrafficPolicyInstance]> {
         self.traffic_policy_instances.as_deref()
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
@@ -41,9 +38,7 @@ impl ListTrafficPolicyInstancesOutput {
         self.traffic_policy_instance_name_marker.as_deref()
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
-    pub fn traffic_policy_instance_type_marker(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RrType> {
+    pub fn traffic_policy_instance_type_marker(&self) -> ::std::option::Option<&crate::types::RrType> {
         self.traffic_policy_instance_type_marker.as_ref()
     }
     /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.</p>
@@ -62,19 +57,16 @@ impl ::aws_http::request_id::RequestId for ListTrafficPolicyInstancesOutput {
 }
 impl ListTrafficPolicyInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesOutput`](crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput).
-    pub fn builder() -> crate::operation::list_traffic_policy_instances::builders::ListTrafficPolicyInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::list_traffic_policy_instances::builders::ListTrafficPolicyInstancesOutputBuilder {
         crate::operation::list_traffic_policy_instances::builders::ListTrafficPolicyInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrafficPolicyInstancesOutput`](crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesOutputBuilder {
-    pub(crate) traffic_policy_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>>,
+    pub(crate) traffic_policy_instances: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>>,
     pub(crate) hosted_zone_id_marker: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_instance_name_marker: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_instance_type_marker: ::std::option::Option<crate::types::RrType>,
@@ -95,32 +87,21 @@ impl ListTrafficPolicyInstancesOutputBuilder {
         self
     }
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
-    pub fn set_traffic_policy_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>>,
-    ) -> Self {
+    pub fn set_traffic_policy_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>>) -> Self {
         self.traffic_policy_instances = input;
         self
     }
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
-    pub fn get_traffic_policy_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>> {
+    pub fn get_traffic_policy_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>> {
         &self.traffic_policy_instances
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
-    pub fn hosted_zone_id_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
-    pub fn set_hosted_zone_id_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id_marker = input;
         self
     }
@@ -129,25 +110,17 @@ impl ListTrafficPolicyInstancesOutputBuilder {
         &self.hosted_zone_id_marker
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
-    pub fn traffic_policy_instance_name_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_instance_name_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_instance_name_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
-    pub fn set_traffic_policy_instance_name_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_instance_name_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_policy_instance_name_marker = input;
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
-    pub fn get_traffic_policy_instance_name_marker(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_traffic_policy_instance_name_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.traffic_policy_instance_name_marker
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
@@ -156,17 +129,12 @@ impl ListTrafficPolicyInstancesOutputBuilder {
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
-    pub fn set_traffic_policy_instance_type_marker(
-        mut self,
-        input: ::std::option::Option<crate::types::RrType>,
-    ) -> Self {
+    pub fn set_traffic_policy_instance_type_marker(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
         self.traffic_policy_instance_type_marker = input;
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
-    pub fn get_traffic_policy_instance_type_marker(
-        &self,
-    ) -> &::std::option::Option<crate::types::RrType> {
+    pub fn get_traffic_policy_instance_type_marker(&self) -> &::std::option::Option<crate::types::RrType> {
         &self.traffic_policy_instance_type_marker
     }
     /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.</p>
@@ -207,9 +175,7 @@ impl ListTrafficPolicyInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTrafficPolicyInstancesOutput`](crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput {
+    pub fn build(self) -> crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput {
         crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput {
             traffic_policy_instances: self.traffic_policy_instances,
             hosted_zone_id_marker: self.hosted_zone_id_marker,

@@ -26,7 +26,7 @@ impl DeleteRemoteAccessSessionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRemoteAccessSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionInputBuilder,
+    inner: crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionInputBuilder,
 }
 impl DeleteRemoteAccessSessionFluentBuilder {
     /// Creates a new `DeleteRemoteAccessSession`.
@@ -37,7 +37,7 @@ impl DeleteRemoteAccessSessionFluentBuilder {
         }
     }
     /// Access the DeleteRemoteAccessSession as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteRemoteAccessSessionFluentBuilder {
             crate::operation::delete_remote_access_session::DeleteRemoteAccessSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteRemoteAccessSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteRemoteAccessSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteRemoteAccessSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteRemoteAccessSessionFluentBuilder {
             crate::operation::delete_remote_access_session::DeleteRemoteAccessSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionError>,
     > {
         self.customize_middleware().await
     }

@@ -39,9 +39,7 @@ impl UntagDeliveryStreamFluentBuilder {
         }
     }
     /// Access the UntagDeliveryStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl UntagDeliveryStreamFluentBuilder {
             crate::operation::untag_delivery_stream::UntagDeliveryStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_delivery_stream::UntagDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_delivery_stream::UntagDeliveryStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl UntagDeliveryStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl UntagDeliveryStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_delivery_stream::UntagDeliveryStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_delivery_stream::UntagDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_delivery_stream::UntagDeliveryStreamError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl UntagDeliveryStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_delivery_stream::UntagDeliveryStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_delivery_stream::UntagDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_delivery_stream::UntagDeliveryStreamError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl UntagDeliveryStreamFluentBuilder {
             crate::operation::untag_delivery_stream::UntagDeliveryStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_delivery_stream::UntagDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_delivery_stream::UntagDeliveryStreamError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
@@ -154,10 +135,7 @@ impl UntagDeliveryStreamFluentBuilder {
         self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }

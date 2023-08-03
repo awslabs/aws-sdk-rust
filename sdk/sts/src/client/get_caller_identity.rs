@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`account(Option<String>)`](crate::operation::get_caller_identity::GetCallerIdentityOutput::account): <p>The Amazon Web Services account ID number of the account that owns or contains the calling entity.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_caller_identity::GetCallerIdentityOutput::arn): <p>The Amazon Web Services ARN associated with the calling entity.</p>
     /// - On failure, responds with [`SdkError<GetCallerIdentityError>`](crate::operation::get_caller_identity::GetCallerIdentityError)
-    pub fn get_caller_identity(
-        &self,
-    ) -> crate::operation::get_caller_identity::builders::GetCallerIdentityFluentBuilder {
-        crate::operation::get_caller_identity::builders::GetCallerIdentityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_caller_identity(&self) -> crate::operation::get_caller_identity::builders::GetCallerIdentityFluentBuilder {
+        crate::operation::get_caller_identity::builders::GetCallerIdentityFluentBuilder::new(self.handle.clone())
     }
 }

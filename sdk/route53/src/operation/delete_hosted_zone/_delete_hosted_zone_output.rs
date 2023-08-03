@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteHostedZoneOutput {
 }
 impl DeleteHostedZoneOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHostedZoneOutput`](crate::operation::delete_hosted_zone::DeleteHostedZoneOutput).
-    pub fn builder() -> crate::operation::delete_hosted_zone::builders::DeleteHostedZoneOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_hosted_zone::builders::DeleteHostedZoneOutputBuilder {
         crate::operation::delete_hosted_zone::builders::DeleteHostedZoneOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHostedZoneOutput`](crate::operation::delete_hosted_zone::DeleteHostedZoneOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHostedZoneOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl DeleteHostedZoneOutputBuilder {
         self
     }
     /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
         self.change_info = input;
         self
     }

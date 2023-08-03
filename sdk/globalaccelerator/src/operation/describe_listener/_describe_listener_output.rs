@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeListenerOutput {
 }
 impl DescribeListenerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeListenerOutput`](crate::operation::describe_listener::DescribeListenerOutput).
-    pub fn builder() -> crate::operation::describe_listener::builders::DescribeListenerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_listener::builders::DescribeListenerOutputBuilder {
         crate::operation::describe_listener::builders::DescribeListenerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeListenerOutput`](crate::operation::describe_listener::DescribeListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenerOutputBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::Listener>,
     _request_id: Option<String>,

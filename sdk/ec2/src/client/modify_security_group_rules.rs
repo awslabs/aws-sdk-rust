@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ModifySecurityGroupRulesOutput`](crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     /// - On failure, responds with [`SdkError<ModifySecurityGroupRulesError>`](crate::operation::modify_security_group_rules::ModifySecurityGroupRulesError)
-    pub fn modify_security_group_rules(&self) -> crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesFluentBuilder{
+    pub fn modify_security_group_rules(&self) -> crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesFluentBuilder {
         crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesFluentBuilder::new(self.handle.clone())
     }
 }

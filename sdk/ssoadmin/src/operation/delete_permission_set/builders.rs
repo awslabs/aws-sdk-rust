@@ -37,9 +37,7 @@ impl DeletePermissionSetFluentBuilder {
         }
     }
     /// Access the DeletePermissionSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_permission_set::builders::DeletePermissionSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_permission_set::builders::DeletePermissionSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeletePermissionSetFluentBuilder {
             crate::operation::delete_permission_set::DeletePermissionSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_set::DeletePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_set::DeletePermissionSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeletePermissionSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeletePermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permission_set::DeletePermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_set::DeletePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_set::DeletePermissionSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeletePermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permission_set::DeletePermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_set::DeletePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_set::DeletePermissionSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeletePermissionSetFluentBuilder {
             crate::operation::delete_permission_set::DeletePermissionSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_set::DeletePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_set::DeletePermissionSetError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DeletePermissionSetFluentBuilder {
         self.inner.get_instance_arn()
     }
     /// <p>The ARN of the permission set that should be deleted.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
     /// <p>The ARN of the permission set that should be deleted.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }

@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListReadSetExportJobsOutput {
 }
 impl ListReadSetExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListReadSetExportJobsOutput`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsOutputBuilder {
         crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReadSetExportJobsOutput`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReadSetExportJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) export_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetJobDetail>>,
+    pub(crate) export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetJobDetail>>,
     _request_id: Option<String>,
 }
 impl ListReadSetExportJobsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListReadSetExportJobsOutputBuilder {
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn set_export_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetJobDetail>>,
-    ) -> Self {
+    pub fn set_export_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetJobDetail>>) -> Self {
         self.export_jobs = input;
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn get_export_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetJobDetail>> {
+    pub fn get_export_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetJobDetail>> {
         &self.export_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -30,27 +30,19 @@ impl TaskExecutionListEntry {
 
 /// A builder for [`TaskExecutionListEntry`](crate::types::TaskExecutionListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskExecutionListEntryBuilder {
     pub(crate) task_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskExecutionStatus>,
 }
 impl TaskExecutionListEntryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
-    pub fn task_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
-    pub fn set_task_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_execution_arn = input;
         self
     }
@@ -64,10 +56,7 @@ impl TaskExecutionListEntryBuilder {
         self
     }
     /// <p>The status of a task execution.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskExecutionStatus>) -> Self {
         self.status = input;
         self
     }

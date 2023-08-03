@@ -10,10 +10,7 @@ impl CreateConstraintInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_constraint::CreateConstraintOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_constraint::CreateConstraintError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_constraint::CreateConstraintError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_constraint();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateConstraintFluentBuilder {
         }
     }
     /// Access the CreateConstraint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_constraint::builders::CreateConstraintInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_constraint::builders::CreateConstraintInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateConstraintFluentBuilder {
             crate::operation::create_constraint::CreateConstraint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_constraint::CreateConstraintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_constraint::CreateConstraintError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateConstraintFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateConstraintFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_constraint::CreateConstraintOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_constraint::CreateConstraintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_constraint::CreateConstraintError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateConstraintFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_constraint::CreateConstraintOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_constraint::CreateConstraintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_constraint::CreateConstraintError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateConstraintFluentBuilder {
             crate::operation::create_constraint::CreateConstraint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_constraint::CreateConstraintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_constraint::CreateConstraintError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl CreateConstraintFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -140,10 +121,7 @@ impl CreateConstraintFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -391,18 +369,12 @@ impl CreateConstraintFluentBuilder {
         self.inner.get_description()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

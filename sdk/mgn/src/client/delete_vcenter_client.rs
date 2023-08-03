@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`vcenter_client_id(impl ::std::convert::Into<String>)`](crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder::vcenter_client_id) / [`set_vcenter_client_id(Option<String>)`](crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder::set_vcenter_client_id): <p>ID of resource to be deleted.</p>
     /// - On success, responds with [`DeleteVcenterClientOutput`](crate::operation::delete_vcenter_client::DeleteVcenterClientOutput)
     /// - On failure, responds with [`SdkError<DeleteVcenterClientError>`](crate::operation::delete_vcenter_client::DeleteVcenterClientError)
-    pub fn delete_vcenter_client(
-        &self,
-    ) -> crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder {
-        crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_vcenter_client(&self) -> crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder {
+        crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder::new(self.handle.clone())
     }
 }

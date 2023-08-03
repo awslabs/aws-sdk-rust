@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput::creation_date_time): <p>The date and time that the custom vocabulary was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput::last_updated_date_time): <p>The date and time that the custom vocabulary was last updated.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomVocabularyMetadataError>`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError)
-    pub fn describe_custom_vocabulary_metadata(&self) -> crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataFluentBuilder{
+    pub fn describe_custom_vocabulary_metadata(
+        &self,
+    ) -> crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataFluentBuilder {
         crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataFluentBuilder::new(self.handle.clone())
     }
 }

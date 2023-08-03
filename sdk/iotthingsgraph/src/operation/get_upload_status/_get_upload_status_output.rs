@@ -63,17 +63,14 @@ impl ::aws_http::request_id::RequestId for GetUploadStatusOutput {
 }
 impl GetUploadStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetUploadStatusOutput`](crate::operation::get_upload_status::GetUploadStatusOutput).
-    pub fn builder() -> crate::operation::get_upload_status::builders::GetUploadStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_upload_status::builders::GetUploadStatusOutputBuilder {
         crate::operation::get_upload_status::builders::GetUploadStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUploadStatusOutput`](crate::operation::get_upload_status::GetUploadStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUploadStatusOutputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_status: ::std::option::Option<crate::types::UploadStatus>,
@@ -105,10 +102,7 @@ impl GetUploadStatusOutputBuilder {
         self
     }
     /// <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
-    pub fn set_upload_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UploadStatus>,
-    ) -> Self {
+    pub fn set_upload_status(mut self, input: ::std::option::Option<crate::types::UploadStatus>) -> Self {
         self.upload_status = input;
         self
     }
@@ -117,18 +111,12 @@ impl GetUploadStatusOutputBuilder {
         &self.upload_status
     }
     /// <p>The ARN of the upload.</p>
-    pub fn namespace_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the upload.</p>
-    pub fn set_namespace_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_arn = input;
         self
     }
@@ -137,18 +125,12 @@ impl GetUploadStatusOutputBuilder {
         &self.namespace_arn
     }
     /// <p>The name of the upload's namespace.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the upload's namespace.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -175,27 +157,19 @@ impl GetUploadStatusOutputBuilder {
     /// To override the contents of this collection use [`set_failure_reason`](Self::set_failure_reason).
     ///
     /// <p>The reason for an upload failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reason.unwrap_or_default();
         v.push(input.into());
         self.failure_reason = ::std::option::Option::Some(v);
         self
     }
     /// <p>The reason for an upload failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_reason = input;
         self
     }
     /// <p>The reason for an upload failure.</p>
-    pub fn get_failure_reason(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reason
     }
     /// <p>The date at which the upload was created.</p>
@@ -204,10 +178,7 @@ impl GetUploadStatusOutputBuilder {
         self
     }
     /// <p>The date at which the upload was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }

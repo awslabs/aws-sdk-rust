@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateXssMatchSetOutput {
 }
 impl UpdateXssMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateXssMatchSetOutput`](crate::operation::update_xss_match_set::UpdateXssMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::update_xss_match_set::builders::UpdateXssMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::update_xss_match_set::builders::UpdateXssMatchSetOutputBuilder {
         crate::operation::update_xss_match_set::builders::UpdateXssMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateXssMatchSetOutput`](crate::operation::update_xss_match_set::UpdateXssMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateXssMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

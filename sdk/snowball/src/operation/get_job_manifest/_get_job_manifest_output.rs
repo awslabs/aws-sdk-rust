@@ -28,9 +28,7 @@ impl GetJobManifestOutput {
 
 /// A builder for [`GetJobManifestOutput`](crate::operation::get_job_manifest::GetJobManifestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobManifestOutputBuilder {
     pub(crate) manifest_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

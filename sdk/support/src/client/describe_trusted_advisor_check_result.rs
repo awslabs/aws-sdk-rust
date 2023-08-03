@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeTrustedAdvisorCheckResultOutput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput) with field(s):
     ///   - [`result(Option<TrustedAdvisorCheckResult>)`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput::result): <p>The detailed results of the Trusted Advisor check.</p>
     /// - On failure, responds with [`SdkError<DescribeTrustedAdvisorCheckResultError>`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultError)
-    pub fn describe_trusted_advisor_check_result(&self) -> crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultFluentBuilder{
+    pub fn describe_trusted_advisor_check_result(
+        &self,
+    ) -> crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultFluentBuilder {
         crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultFluentBuilder::new(self.handle.clone())
     }
 }

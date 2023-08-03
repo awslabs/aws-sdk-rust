@@ -51,9 +51,7 @@ impl UploadSettings {
 
 /// A builder for [`UploadSettings`](crate::types::UploadSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadSettingsBuilder {
     pub(crate) format: ::std::option::Option<crate::types::FileFormat>,
     pub(crate) start_from_row: ::std::option::Option<i32>,
@@ -110,10 +108,7 @@ impl UploadSettingsBuilder {
         self
     }
     /// <p>Text qualifier.</p>
-    pub fn set_text_qualifier(
-        mut self,
-        input: ::std::option::Option<crate::types::TextQualifier>,
-    ) -> Self {
+    pub fn set_text_qualifier(mut self, input: ::std::option::Option<crate::types::TextQualifier>) -> Self {
         self.text_qualifier = input;
         self
     }

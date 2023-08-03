@@ -10,10 +10,7 @@ impl EnablePolicyTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_policy_type::EnablePolicyTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_policy_type::EnablePolicyTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_policy_type::EnablePolicyTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_policy_type();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl EnablePolicyTypeFluentBuilder {
         }
     }
     /// Access the EnablePolicyType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_policy_type::builders::EnablePolicyTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_policy_type::builders::EnablePolicyTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl EnablePolicyTypeFluentBuilder {
             crate::operation::enable_policy_type::EnablePolicyType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_policy_type::EnablePolicyTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_policy_type::EnablePolicyTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl EnablePolicyTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl EnablePolicyTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_policy_type::EnablePolicyTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_policy_type::EnablePolicyTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_policy_type::EnablePolicyTypeError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl EnablePolicyTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_policy_type::EnablePolicyTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_policy_type::EnablePolicyTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_policy_type::EnablePolicyTypeError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl EnablePolicyTypeFluentBuilder {
             crate::operation::enable_policy_type::EnablePolicyType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_policy_type::EnablePolicyTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_policy_type::EnablePolicyTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +144,7 @@ impl EnablePolicyTypeFluentBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }

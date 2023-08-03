@@ -22,18 +22,14 @@ impl DeprecateActivityTypeInput {
 }
 impl DeprecateActivityTypeInput {
     /// Creates a new builder-style object to manufacture [`DeprecateActivityTypeInput`](crate::operation::deprecate_activity_type::DeprecateActivityTypeInput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeInputBuilder {
         crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeprecateActivityTypeInput`](crate::operation::deprecate_activity_type::DeprecateActivityTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateActivityTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,
@@ -59,10 +55,7 @@ impl DeprecateActivityTypeInputBuilder {
         self
     }
     /// <p>The activity type to deprecate.</p>
-    pub fn set_activity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityType>,
-    ) -> Self {
+    pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
         self.activity_type = input;
         self
     }
@@ -73,15 +66,11 @@ impl DeprecateActivityTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeprecateActivityTypeInput`](crate::operation::deprecate_activity_type::DeprecateActivityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deprecate_activity_type::DeprecateActivityTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deprecate_activity_type::DeprecateActivityTypeInput {
-                domain: self.domain,
-                activity_type: self.activity_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deprecate_activity_type::DeprecateActivityTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::deprecate_activity_type::DeprecateActivityTypeInput {
+            domain: self.domain,
+            activity_type: self.activity_type,
+        })
     }
 }

@@ -37,10 +37,7 @@ impl ListDatasetImportJobsFluentBuilder {
         }
     }
     /// Access the ListDatasetImportJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListDatasetImportJobsFluentBuilder {
             crate::operation::list_dataset_import_jobs::ListDatasetImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListDatasetImportJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListDatasetImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListDatasetImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListDatasetImportJobsFluentBuilder {
             crate::operation::list_dataset_import_jobs::ListDatasetImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator {
-        crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator {
+        crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

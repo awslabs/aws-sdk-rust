@@ -36,24 +36,19 @@ impl ListAssignmentsForHitInput {
 }
 impl ListAssignmentsForHitInput {
     /// Creates a new builder-style object to manufacture [`ListAssignmentsForHitInput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput).
-    pub fn builder(
-    ) -> crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder {
         crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssignmentsForHitInput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssignmentsForHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) assignment_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>>,
+    pub(crate) assignment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>>,
 }
 impl ListAssignmentsForHitInputBuilder {
     /// <p>The ID of the HIT.</p>
@@ -110,33 +105,24 @@ impl ListAssignmentsForHitInputBuilder {
         self
     }
     /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
-    pub fn set_assignment_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>>,
-    ) -> Self {
+    pub fn set_assignment_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>>) -> Self {
         self.assignment_statuses = input;
         self
     }
     /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
-    pub fn get_assignment_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>> {
+    pub fn get_assignment_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>> {
         &self.assignment_statuses
     }
     /// Consumes the builder and constructs a [`ListAssignmentsForHitInput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput {
-                hit_id: self.hit_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                assignment_statuses: self.assignment_statuses,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput {
+            hit_id: self.hit_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            assignment_statuses: self.assignment_statuses,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl Country {
 
 /// A builder for [`Country`](crate::types::Country).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CountryBuilder {
     pub(crate) country_code: ::std::option::Option<::std::string::String>,
     pub(crate) country_name: ::std::option::Option<::std::string::String>,

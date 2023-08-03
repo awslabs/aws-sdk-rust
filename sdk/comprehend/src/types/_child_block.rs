@@ -37,9 +37,7 @@ impl ChildBlock {
 
 /// A builder for [`ChildBlock`](crate::types::ChildBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChildBlockBuilder {
     pub(crate) child_block_id: ::std::option::Option<::std::string::String>,
     pub(crate) begin_offset: ::std::option::Option<i32>,
@@ -47,18 +45,12 @@ pub struct ChildBlockBuilder {
 }
 impl ChildBlockBuilder {
     /// <p>Unique identifier for the child block.</p>
-    pub fn child_block_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn child_block_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_block_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for the child block.</p>
-    pub fn set_child_block_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_child_block_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.child_block_id = input;
         self
     }

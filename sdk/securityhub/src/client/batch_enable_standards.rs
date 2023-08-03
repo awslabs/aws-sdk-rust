@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchEnableStandardsOutput`](crate::operation::batch_enable_standards::BatchEnableStandardsOutput) with field(s):
     ///   - [`standards_subscriptions(Option<Vec<StandardsSubscription>>)`](crate::operation::batch_enable_standards::BatchEnableStandardsOutput::standards_subscriptions): <p>The details of the standards subscriptions that were enabled.</p>
     /// - On failure, responds with [`SdkError<BatchEnableStandardsError>`](crate::operation::batch_enable_standards::BatchEnableStandardsError)
-    pub fn batch_enable_standards(
-        &self,
-    ) -> crate::operation::batch_enable_standards::builders::BatchEnableStandardsFluentBuilder {
-        crate::operation::batch_enable_standards::builders::BatchEnableStandardsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_enable_standards(&self) -> crate::operation::batch_enable_standards::builders::BatchEnableStandardsFluentBuilder {
+        crate::operation::batch_enable_standards::builders::BatchEnableStandardsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetServerStrategiesOutput`](crate::operation::get_server_strategies::GetServerStrategiesOutput) with field(s):
     ///   - [`server_strategies(Option<Vec<ServerStrategy>>)`](crate::operation::get_server_strategies::GetServerStrategiesOutput::server_strategies): <p> A list of strategy recommendations for the server. </p>
     /// - On failure, responds with [`SdkError<GetServerStrategiesError>`](crate::operation::get_server_strategies::GetServerStrategiesError)
-    pub fn get_server_strategies(
-        &self,
-    ) -> crate::operation::get_server_strategies::builders::GetServerStrategiesFluentBuilder {
-        crate::operation::get_server_strategies::builders::GetServerStrategiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_server_strategies(&self) -> crate::operation::get_server_strategies::builders::GetServerStrategiesFluentBuilder {
+        crate::operation::get_server_strategies::builders::GetServerStrategiesFluentBuilder::new(self.handle.clone())
     }
 }

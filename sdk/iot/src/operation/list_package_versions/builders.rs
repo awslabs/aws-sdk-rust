@@ -38,9 +38,7 @@ impl ListPackageVersionsFluentBuilder {
         }
     }
     /// Access the ListPackageVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_package_versions::builders::ListPackageVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_package_versions::builders::ListPackageVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListPackageVersionsFluentBuilder {
             crate::operation::list_package_versions::ListPackageVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_versions::ListPackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_versions::ListPackageVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListPackageVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListPackageVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_package_versions::ListPackageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_versions::ListPackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_versions::ListPackageVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListPackageVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_package_versions::ListPackageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_versions::ListPackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_versions::ListPackageVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListPackageVersionsFluentBuilder {
             crate::operation::list_package_versions::ListPackageVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_versions::ListPackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_versions::ListPackageVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_package_versions::paginator::ListPackageVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_package_versions::paginator::ListPackageVersionsPaginator {
-        crate::operation::list_package_versions::paginator::ListPackageVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_package_versions::paginator::ListPackageVersionsPaginator {
+        crate::operation::list_package_versions::paginator::ListPackageVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the target package.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,10 +136,7 @@ impl ListPackageVersionsFluentBuilder {
         self
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

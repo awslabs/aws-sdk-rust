@@ -65,33 +65,24 @@ impl EcsTarget {
 
 /// A builder for [`EcsTarget`](crate::types::EcsTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsTargetBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) lifecycle_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
+    pub(crate) lifecycle_events: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
     pub(crate) status: ::std::option::Option<crate::types::TargetStatus>,
     pub(crate) task_sets_info: ::std::option::Option<::std::vec::Vec<crate::types::EcsTaskSet>>,
 }
 impl EcsTargetBuilder {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -133,10 +124,7 @@ impl EcsTargetBuilder {
         self
     }
     /// <p> The date and time when the target Amazon ECS application was updated by a deployment. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -156,17 +144,12 @@ impl EcsTargetBuilder {
         self
     }
     /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
-    pub fn set_lifecycle_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
-    ) -> Self {
+    pub fn set_lifecycle_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>) -> Self {
         self.lifecycle_events = input;
         self
     }
     /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
-    pub fn get_lifecycle_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>> {
+    pub fn get_lifecycle_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>> {
         &self.lifecycle_events
     }
     /// <p> The status an Amazon ECS deployment's target ECS application. </p>
@@ -195,17 +178,12 @@ impl EcsTargetBuilder {
         self
     }
     /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
-    pub fn set_task_sets_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsTaskSet>>,
-    ) -> Self {
+    pub fn set_task_sets_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsTaskSet>>) -> Self {
         self.task_sets_info = input;
         self
     }
     /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
-    pub fn get_task_sets_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsTaskSet>> {
+    pub fn get_task_sets_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsTaskSet>> {
         &self.task_sets_info
     }
     /// Consumes the builder and constructs a [`EcsTarget`](crate::types::EcsTarget).

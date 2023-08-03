@@ -32,9 +32,7 @@ impl TimestreamTimestamp {
 
 /// A builder for [`TimestreamTimestamp`](crate::types::TimestreamTimestamp).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimestreamTimestampBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,

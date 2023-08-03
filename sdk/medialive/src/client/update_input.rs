@@ -14,9 +14,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateInputOutput`](crate::operation::update_input::UpdateInputOutput) with field(s):
     ///   - [`input(Option<Input>)`](crate::operation::update_input::UpdateInputOutput::input): Placeholder documentation for Input
     /// - On failure, responds with [`SdkError<UpdateInputError>`](crate::operation::update_input::UpdateInputError)
-    pub fn update_input(
-        &self,
-    ) -> crate::operation::update_input::builders::UpdateInputFluentBuilder {
+    pub fn update_input(&self) -> crate::operation::update_input::builders::UpdateInputFluentBuilder {
         crate::operation::update_input::builders::UpdateInputFluentBuilder::new(self.handle.clone())
     }
 }

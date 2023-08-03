@@ -64,9 +64,7 @@ impl GetDifferencesInput {
 
 /// A builder for [`GetDifferencesInput`](crate::operation::get_differences::GetDifferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDifferencesInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) before_commit_specifier: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ pub struct GetDifferencesInputBuilder {
 }
 impl GetDifferencesInputBuilder {
     /// <p>The name of the repository where you want to get differences.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where you want to get differences.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -98,18 +90,12 @@ impl GetDifferencesInputBuilder {
         &self.repository_name
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
-    pub fn before_commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_commit_specifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
-    pub fn set_before_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_commit_specifier = input;
         self
     }
@@ -118,18 +104,12 @@ impl GetDifferencesInputBuilder {
         &self.before_commit_specifier
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
-    pub fn after_commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_specifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
-    pub fn set_after_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_commit_specifier = input;
         self
     }
@@ -196,10 +176,7 @@ impl GetDifferencesInputBuilder {
     /// Consumes the builder and constructs a [`GetDifferencesInput`](crate::operation::get_differences::GetDifferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_differences::GetDifferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_differences::GetDifferencesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_differences::GetDifferencesInput {
             repository_name: self.repository_name,
             before_commit_specifier: self.before_commit_specifier,

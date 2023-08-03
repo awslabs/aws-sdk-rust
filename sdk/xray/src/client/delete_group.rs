@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`group_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group_arn) / [`set_group_arn(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group_arn): <p>The ARN of the group that was generated on creation.</p>
     /// - On success, responds with [`DeleteGroupOutput`](crate::operation::delete_group::DeleteGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::operation::delete_group::DeleteGroupError)
-    pub fn delete_group(
-        &self,
-    ) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {
+    pub fn delete_group(&self) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {
         crate::operation::delete_group::builders::DeleteGroupFluentBuilder::new(self.handle.clone())
     }
 }

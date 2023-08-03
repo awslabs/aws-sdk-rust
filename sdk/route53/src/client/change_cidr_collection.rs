@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ChangeCidrCollectionOutput`](crate::operation::change_cidr_collection::ChangeCidrCollectionOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::change_cidr_collection::ChangeCidrCollectionOutput::id): <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
     /// - On failure, responds with [`SdkError<ChangeCidrCollectionError>`](crate::operation::change_cidr_collection::ChangeCidrCollectionError)
-    pub fn change_cidr_collection(
-        &self,
-    ) -> crate::operation::change_cidr_collection::builders::ChangeCidrCollectionFluentBuilder {
-        crate::operation::change_cidr_collection::builders::ChangeCidrCollectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn change_cidr_collection(&self) -> crate::operation::change_cidr_collection::builders::ChangeCidrCollectionFluentBuilder {
+        crate::operation::change_cidr_collection::builders::ChangeCidrCollectionFluentBuilder::new(self.handle.clone())
     }
 }

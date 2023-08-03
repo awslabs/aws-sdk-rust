@@ -43,18 +43,14 @@ impl ListCostAllocationTagsInput {
 }
 impl ListCostAllocationTagsInput {
     /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsInput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput).
-    pub fn builder(
-    ) -> crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder {
         crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCostAllocationTagsInput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCostAllocationTagsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -69,10 +65,7 @@ impl ListCostAllocationTagsInputBuilder {
         self
     }
     /// <p>The status of cost allocation tag keys that are returned for this request. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CostAllocationTagStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CostAllocationTagStatus>) -> Self {
         self.status = input;
         self
     }
@@ -92,10 +85,7 @@ impl ListCostAllocationTagsInputBuilder {
         self
     }
     /// <p>The list of cost allocation tag keys that are returned for this request. </p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -109,10 +99,7 @@ impl ListCostAllocationTagsInputBuilder {
         self
     }
     /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CostAllocationTagType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CostAllocationTagType>) -> Self {
         self.r#type = input;
         self
     }
@@ -155,14 +142,12 @@ impl ListCostAllocationTagsInputBuilder {
         crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput {
-                status: self.status,
-                tag_keys: self.tag_keys,
-                r#type: self.r#type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput {
+            status: self.status,
+            tag_keys: self.tag_keys,
+            r#type: self.r#type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

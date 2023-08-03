@@ -30,9 +30,7 @@ impl RSessionAppSettings {
 
 /// A builder for [`RSessionAppSettings`](crate::types::RSessionAppSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RSessionAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     pub(crate) custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
@@ -44,10 +42,7 @@ impl RSessionAppSettingsBuilder {
         self
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    pub fn set_default_resource_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSpec>,
-    ) -> Self {
+    pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.default_resource_spec = input;
         self
     }
@@ -67,17 +62,12 @@ impl RSessionAppSettingsBuilder {
         self
     }
     /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
-    pub fn set_custom_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
-    ) -> Self {
+    pub fn set_custom_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>) -> Self {
         self.custom_images = input;
         self
     }
     /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
-    pub fn get_custom_images(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomImage>> {
+    pub fn get_custom_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomImage>> {
         &self.custom_images
     }
     /// Consumes the builder and constructs a [`RSessionAppSettings`](crate::types::RSessionAppSettings).

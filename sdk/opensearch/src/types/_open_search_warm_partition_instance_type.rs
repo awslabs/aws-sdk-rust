@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OpenSearchWarmPartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -61,15 +55,9 @@ impl ::std::convert::From<&str> for OpenSearchWarmPartitionInstanceType {
     fn from(s: &str) -> Self {
         match s {
             "ultrawarm1.large.search" => OpenSearchWarmPartitionInstanceType::Ultrawarm1LargeSearch,
-            "ultrawarm1.medium.search" => {
-                OpenSearchWarmPartitionInstanceType::Ultrawarm1MediumSearch
-            }
-            "ultrawarm1.xlarge.search" => {
-                OpenSearchWarmPartitionInstanceType::Ultrawarm1XlargeSearch
-            }
-            other => OpenSearchWarmPartitionInstanceType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "ultrawarm1.medium.search" => OpenSearchWarmPartitionInstanceType::Ultrawarm1MediumSearch,
+            "ultrawarm1.xlarge.search" => OpenSearchWarmPartitionInstanceType::Ultrawarm1XlargeSearch,
+            other => OpenSearchWarmPartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -85,22 +73,14 @@ impl OpenSearchWarmPartitionInstanceType {
     pub fn as_str(&self) -> &str {
         match self {
             OpenSearchWarmPartitionInstanceType::Ultrawarm1LargeSearch => "ultrawarm1.large.search",
-            OpenSearchWarmPartitionInstanceType::Ultrawarm1MediumSearch => {
-                "ultrawarm1.medium.search"
-            }
-            OpenSearchWarmPartitionInstanceType::Ultrawarm1XlargeSearch => {
-                "ultrawarm1.xlarge.search"
-            }
+            OpenSearchWarmPartitionInstanceType::Ultrawarm1MediumSearch => "ultrawarm1.medium.search",
+            OpenSearchWarmPartitionInstanceType::Ultrawarm1XlargeSearch => "ultrawarm1.xlarge.search",
             OpenSearchWarmPartitionInstanceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ultrawarm1.large.search",
-            "ultrawarm1.medium.search",
-            "ultrawarm1.xlarge.search",
-        ]
+        &["ultrawarm1.large.search", "ultrawarm1.medium.search", "ultrawarm1.xlarge.search"]
     }
 }
 impl ::std::convert::AsRef<str> for OpenSearchWarmPartitionInstanceType {

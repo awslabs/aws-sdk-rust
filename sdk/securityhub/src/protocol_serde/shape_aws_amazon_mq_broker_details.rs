@@ -7,9 +7,7 @@ pub fn ser_aws_amazon_mq_broker_details(
         object.key("AuthenticationStrategy").string(var_1.as_str());
     }
     if input.auto_minor_version_upgrade {
-        object
-            .key("AutoMinorVersionUpgrade")
-            .boolean(input.auto_minor_version_upgrade);
+        object.key("AutoMinorVersionUpgrade").boolean(input.auto_minor_version_upgrade);
     }
     if let Some(var_2) = &input.broker_arn {
         object.key("BrokerArn").string(var_2.as_str());
@@ -23,7 +21,10 @@ pub fn ser_aws_amazon_mq_broker_details(
     if let Some(var_5) = &input.encryption_options {
         #[allow(unused_mut)]
         let mut object_6 = object.key("EncryptionOptions").start_object();
-        crate::protocol_serde::shape_aws_amazon_mq_broker_encryption_options_details::ser_aws_amazon_mq_broker_encryption_options_details(&mut object_6, var_5)?;
+        crate::protocol_serde::shape_aws_amazon_mq_broker_encryption_options_details::ser_aws_amazon_mq_broker_encryption_options_details(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     if let Some(var_7) = &input.engine_type {
@@ -41,7 +42,10 @@ pub fn ser_aws_amazon_mq_broker_details(
     if let Some(var_11) = &input.ldap_server_metadata {
         #[allow(unused_mut)]
         let mut object_12 = object.key("LdapServerMetadata").start_object();
-        crate::protocol_serde::shape_aws_amazon_mq_broker_ldap_server_metadata_details::ser_aws_amazon_mq_broker_ldap_server_metadata_details(&mut object_12, var_11)?;
+        crate::protocol_serde::shape_aws_amazon_mq_broker_ldap_server_metadata_details::ser_aws_amazon_mq_broker_ldap_server_metadata_details(
+            &mut object_12,
+            var_11,
+        )?;
         object_12.finish();
     }
     if let Some(var_13) = &input.logs {
@@ -57,9 +61,7 @@ pub fn ser_aws_amazon_mq_broker_details(
         object_16.finish();
     }
     if input.publicly_accessible {
-        object
-            .key("PubliclyAccessible")
-            .boolean(input.publicly_accessible);
+        object.key("PubliclyAccessible").boolean(input.publicly_accessible);
     }
     if let Some(var_17) = &input.security_groups {
         let mut array_18 = object.key("SecurityGroups").start_array();
@@ -99,17 +101,9 @@ pub fn ser_aws_amazon_mq_broker_details(
 
 pub(crate) fn de_aws_amazon_mq_broker_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsAmazonMqBrokerDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsAmazonMqBrokerDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -119,51 +113,37 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AuthenticationStrategy" => {
                             builder = builder.set_authentication_strategy(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "AutoMinorVersionUpgrade" => {
-                            builder = builder.set_auto_minor_version_upgrade(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder =
+                                builder.set_auto_minor_version_upgrade(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "BrokerArn" => {
                             builder = builder.set_broker_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "BrokerName" => {
                             builder = builder.set_broker_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "DeploymentMode" => {
                             builder = builder.set_deployment_mode(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "EncryptionOptions" => {
@@ -173,38 +153,30 @@ where
                         }
                         "EngineType" => {
                             builder = builder.set_engine_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "EngineVersion" => {
                             builder = builder.set_engine_version(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "HostInstanceType" => {
                             builder = builder.set_host_instance_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "BrokerId" => {
                             builder = builder.set_broker_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "LdapServerMetadata" => {
@@ -214,8 +186,8 @@ where
                         }
                         "Logs" => {
                             builder = builder.set_logs(
-                                    crate::protocol_serde::shape_aws_amazon_mq_broker_logs_details::de_aws_amazon_mq_broker_logs_details(tokens)?
-                                );
+                                crate::protocol_serde::shape_aws_amazon_mq_broker_logs_details::de_aws_amazon_mq_broker_logs_details(tokens)?,
+                            );
                         }
                         "MaintenanceWindowStartTime" => {
                             builder = builder.set_maintenance_window_start_time(
@@ -223,53 +195,39 @@ where
                                 );
                         }
                         "PubliclyAccessible" => {
-                            builder = builder.set_publicly_accessible(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_publicly_accessible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "SecurityGroups" => {
-                            builder = builder.set_security_groups(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
+                            builder = builder.set_security_groups(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
                         }
                         "StorageType" => {
                             builder = builder.set_storage_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "SubnetIds" => {
-                            builder = builder.set_subnet_ids(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
                         }
                         "Users" => {
-                            builder = builder.set_users(
-                                    crate::protocol_serde::shape_aws_amazon_mq_broker_users_list::de_aws_amazon_mq_broker_users_list(tokens)?
-                                );
+                            builder = builder
+                                .set_users(crate::protocol_serde::shape_aws_amazon_mq_broker_users_list::de_aws_amazon_mq_broker_users_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

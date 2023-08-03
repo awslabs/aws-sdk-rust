@@ -23,29 +23,24 @@ impl UpdateNotificationConfigurationInput {
         self.stream_arn.as_deref()
     }
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
 impl UpdateNotificationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationConfigurationInput`](crate::operation::update_notification_configuration::UpdateNotificationConfigurationInput).
-    pub fn builder() -> crate::operation::update_notification_configuration::builders::UpdateNotificationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_notification_configuration::builders::UpdateNotificationConfigurationInputBuilder {
         crate::operation::update_notification_configuration::builders::UpdateNotificationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNotificationConfigurationInput`](crate::operation::update_notification_configuration::UpdateNotificationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNotificationConfigurationInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_configuration:
-        ::std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
 impl UpdateNotificationConfigurationInputBuilder {
     /// <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
@@ -77,25 +72,17 @@ impl UpdateNotificationConfigurationInputBuilder {
         &self.stream_arn
     }
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn notification_configuration(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn set_notification_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.notification_configuration = input;
         self
     }
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn get_notification_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     /// Consumes the builder and constructs a [`UpdateNotificationConfigurationInput`](crate::operation::update_notification_configuration::UpdateNotificationConfigurationInput).
@@ -107,13 +94,10 @@ impl UpdateNotificationConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_notification_configuration::UpdateNotificationConfigurationInput {
-                stream_name: self.stream_name
-                ,
-                stream_arn: self.stream_arn
-                ,
-                notification_configuration: self.notification_configuration
-                ,
-            }
+                stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
+                notification_configuration: self.notification_configuration,
+            },
         )
     }
 }

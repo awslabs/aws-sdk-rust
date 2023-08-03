@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`portal_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_portal::builders::DeletePortalFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::delete_portal::builders::DeletePortalFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
     /// - On success, responds with [`DeletePortalOutput`](crate::operation::delete_portal::DeletePortalOutput)
     /// - On failure, responds with [`SdkError<DeletePortalError>`](crate::operation::delete_portal::DeletePortalError)
-    pub fn delete_portal(
-        &self,
-    ) -> crate::operation::delete_portal::builders::DeletePortalFluentBuilder {
-        crate::operation::delete_portal::builders::DeletePortalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_portal(&self) -> crate::operation::delete_portal::builders::DeletePortalFluentBuilder {
+        crate::operation::delete_portal::builders::DeletePortalFluentBuilder::new(self.handle.clone())
     }
 }

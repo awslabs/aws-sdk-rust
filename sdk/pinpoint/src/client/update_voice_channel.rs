@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVoiceChannelOutput`](crate::operation::update_voice_channel::UpdateVoiceChannelOutput) with field(s):
     ///   - [`voice_channel_response(Option<VoiceChannelResponse>)`](crate::operation::update_voice_channel::UpdateVoiceChannelOutput::voice_channel_response): <p>Provides information about the status and settings of the voice channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateVoiceChannelError>`](crate::operation::update_voice_channel::UpdateVoiceChannelError)
-    pub fn update_voice_channel(
-        &self,
-    ) -> crate::operation::update_voice_channel::builders::UpdateVoiceChannelFluentBuilder {
-        crate::operation::update_voice_channel::builders::UpdateVoiceChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_voice_channel(&self) -> crate::operation::update_voice_channel::builders::UpdateVoiceChannelFluentBuilder {
+        crate::operation::update_voice_channel::builders::UpdateVoiceChannelFluentBuilder::new(self.handle.clone())
     }
 }

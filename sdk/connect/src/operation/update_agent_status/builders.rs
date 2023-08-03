@@ -10,10 +10,7 @@ impl UpdateAgentStatusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_agent_status::UpdateAgentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agent_status::UpdateAgentStatusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_agent_status::UpdateAgentStatusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_agent_status();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateAgentStatusFluentBuilder {
         }
     }
     /// Access the UpdateAgentStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateAgentStatusFluentBuilder {
             crate::operation::update_agent_status::UpdateAgentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agent_status::UpdateAgentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_agent_status::UpdateAgentStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateAgentStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateAgentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_agent_status::UpdateAgentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agent_status::UpdateAgentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_agent_status::UpdateAgentStatusError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateAgentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_agent_status::UpdateAgentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agent_status::UpdateAgentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_agent_status::UpdateAgentStatusError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl UpdateAgentStatusFluentBuilder {
             crate::operation::update_agent_status::UpdateAgentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agent_status::UpdateAgentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_agent_status::UpdateAgentStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +122,12 @@ impl UpdateAgentStatusFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn agent_status_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_status_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_status_id(input.into());
         self
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn set_agent_status_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_status_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_status_id(input);
         self
     }
@@ -191,10 +169,7 @@ impl UpdateAgentStatusFluentBuilder {
         self
     }
     /// <p>The state of the agent status.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentStatusState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AgentStatusState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }

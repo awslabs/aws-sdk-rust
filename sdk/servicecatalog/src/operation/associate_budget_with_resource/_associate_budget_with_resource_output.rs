@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateBudgetWithResourceOutput {
 }
 impl AssociateBudgetWithResourceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateBudgetWithResourceOutput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput).
-    pub fn builder() -> crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceOutputBuilder{
+    pub fn builder() -> crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceOutputBuilder {
         crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateBudgetWithResourceOutput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateBudgetWithResourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AssociateBudgetWithResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateBudgetWithResourceOutput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput {
+    pub fn build(self) -> crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput {
         crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput {
             _request_id: self._request_id,
         }

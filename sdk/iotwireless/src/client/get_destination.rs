@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_destination::GetDestinationOutput::description): <p>The description of the resource.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::get_destination::GetDestinationOutput::role_arn): <p>The ARN of the IAM Role that authorizes the destination.</p>
     /// - On failure, responds with [`SdkError<GetDestinationError>`](crate::operation::get_destination::GetDestinationError)
-    pub fn get_destination(
-        &self,
-    ) -> crate::operation::get_destination::builders::GetDestinationFluentBuilder {
-        crate::operation::get_destination::builders::GetDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_destination(&self) -> crate::operation::get_destination::builders::GetDestinationFluentBuilder {
+        crate::operation::get_destination::builders::GetDestinationFluentBuilder::new(self.handle.clone())
     }
 }

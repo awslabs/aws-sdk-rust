@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`instances(Option<Vec<Instance>>)`](crate::operation::get_instances::GetInstancesOutput::instances): <p>An array of key-value pairs containing information about your instances.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_instances::GetInstancesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetInstancesError>`](crate::operation::get_instances::GetInstancesError)
-    pub fn get_instances(
-        &self,
-    ) -> crate::operation::get_instances::builders::GetInstancesFluentBuilder {
-        crate::operation::get_instances::builders::GetInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_instances(&self) -> crate::operation::get_instances::builders::GetInstancesFluentBuilder {
+        crate::operation::get_instances::builders::GetInstancesFluentBuilder::new(self.handle.clone())
     }
 }

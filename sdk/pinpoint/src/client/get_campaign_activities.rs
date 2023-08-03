@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetCampaignActivitiesOutput`](crate::operation::get_campaign_activities::GetCampaignActivitiesOutput) with field(s):
     ///   - [`activities_response(Option<ActivitiesResponse>)`](crate::operation::get_campaign_activities::GetCampaignActivitiesOutput::activities_response): <p>Provides information about the activities that were performed by a campaign.</p>
     /// - On failure, responds with [`SdkError<GetCampaignActivitiesError>`](crate::operation::get_campaign_activities::GetCampaignActivitiesError)
-    pub fn get_campaign_activities(
-        &self,
-    ) -> crate::operation::get_campaign_activities::builders::GetCampaignActivitiesFluentBuilder
-    {
-        crate::operation::get_campaign_activities::builders::GetCampaignActivitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_campaign_activities(&self) -> crate::operation::get_campaign_activities::builders::GetCampaignActivitiesFluentBuilder {
+        crate::operation::get_campaign_activities::builders::GetCampaignActivitiesFluentBuilder::new(self.handle.clone())
     }
 }

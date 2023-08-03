@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::list_theme_versions::ListThemeVersionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_theme_versions::ListThemeVersionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<ListThemeVersionsError>`](crate::operation::list_theme_versions::ListThemeVersionsError)
-    pub fn list_theme_versions(
-        &self,
-    ) -> crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder {
-        crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_theme_versions(&self) -> crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder {
+        crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::new(self.handle.clone())
     }
 }

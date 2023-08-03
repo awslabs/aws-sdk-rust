@@ -5,16 +5,16 @@ pub use crate::operation::describe_network_interface_permissions::_describe_netw
 
 impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_network_interface_permissions();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfacePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder,
+    inner: crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder,
 }
 impl DescribeNetworkInterfacePermissionsFluentBuilder {
     /// Creates a new `DescribeNetworkInterfacePermissions`.
@@ -37,15 +37,20 @@ impl DescribeNetworkInterfacePermissionsFluentBuilder {
         }
     }
     /// Access the DescribeNetworkInterfacePermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeNetworkInterfacePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,49 +87,53 @@ impl DescribeNetworkInterfacePermissionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator{
-        crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(self) -> crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator {
+        crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// Appends an item to `NetworkInterfacePermissionIds`.
     ///
     /// To override the contents of this collection use [`set_network_interface_permission_ids`](Self::set_network_interface_permission_ids).
     ///
     /// <p>The network interface permission IDs.</p>
-    pub fn network_interface_permission_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_permission_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_permission_ids(input.into());
         self
     }
     /// <p>The network interface permission IDs.</p>
-    pub fn set_network_interface_permission_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interface_permission_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_network_interface_permission_ids(input);
         self
     }
     /// <p>The network interface permission IDs.</p>
-    pub fn get_network_interface_permission_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_permission_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_network_interface_permission_ids()
     }
     /// Appends an item to `Filters`.
@@ -150,10 +160,7 @@ impl DescribeNetworkInterfacePermissionsFluentBuilder {
     /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li>
     /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

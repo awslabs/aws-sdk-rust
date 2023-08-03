@@ -60,18 +60,14 @@ impl ::aws_http::request_id::RequestId for GetProtectionStatusOutput {
 }
 impl GetProtectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetProtectionStatusOutput`](crate::operation::get_protection_status::GetProtectionStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_protection_status::builders::GetProtectionStatusOutputBuilder {
-        crate::operation::get_protection_status::builders::GetProtectionStatusOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_protection_status::builders::GetProtectionStatusOutputBuilder {
+        crate::operation::get_protection_status::builders::GetProtectionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetProtectionStatusOutput`](crate::operation::get_protection_status::GetProtectionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProtectionStatusOutputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_type: ::std::option::Option<crate::types::SecurityServiceType>,
@@ -81,18 +77,12 @@ pub struct GetProtectionStatusOutputBuilder {
 }
 impl GetProtectionStatusOutputBuilder {
     /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
-    pub fn admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
-    pub fn set_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account_id = input;
         self
     }
@@ -106,10 +96,7 @@ impl GetProtectionStatusOutputBuilder {
         self
     }
     /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::SecurityServiceType>) -> Self {
         self.service_type = input;
         self
     }

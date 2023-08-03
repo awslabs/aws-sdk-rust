@@ -43,16 +43,14 @@ impl ListGroupsOlderThanOrderingIdInput {
 }
 impl ListGroupsOlderThanOrderingIdInput {
     /// Creates a new builder-style object to manufacture [`ListGroupsOlderThanOrderingIdInput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput).
-    pub fn builder() -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdInputBuilder{
+    pub fn builder() -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdInputBuilder {
         crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupsOlderThanOrderingIdInput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupsOlderThanOrderingIdInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -144,19 +136,12 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
         crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput {
-                index_id: self.index_id
-                ,
-                data_source_id: self.data_source_id
-                ,
-                ordering_id: self.ordering_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput {
+            index_id: self.index_id,
+            data_source_id: self.data_source_id,
+            ordering_id: self.ordering_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -36,16 +36,14 @@ impl DescribeApplicationFleetAssociationsInput {
 }
 impl DescribeApplicationFleetAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationFleetAssociationsInput`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput).
-    pub fn builder() -> crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsInputBuilder {
         crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationFleetAssociationsInput`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationFleetAssociationsInputBuilder {
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl DescribeApplicationFleetAssociationsInputBuilder {
         &self.fleet_name
     }
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -116,18 +108,19 @@ impl DescribeApplicationFleetAssociationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeApplicationFleetAssociationsInput`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput {
-                fleet_name: self.fleet_name
-                ,
-                application_arn: self.application_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                fleet_name: self.fleet_name,
+                application_arn: self.application_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

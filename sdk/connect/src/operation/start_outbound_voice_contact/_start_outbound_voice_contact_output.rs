@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartOutboundVoiceContactOutput {
 }
 impl StartOutboundVoiceContactOutput {
     /// Creates a new builder-style object to manufacture [`StartOutboundVoiceContactOutput`](crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput).
-    pub fn builder() -> crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactOutputBuilder{
+    pub fn builder() -> crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactOutputBuilder {
         crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartOutboundVoiceContactOutput`](crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartOutboundVoiceContactOutputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StartOutboundVoiceContactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartOutboundVoiceContactOutput`](crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput {
+    pub fn build(self) -> crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput {
         crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput {
             contact_id: self.contact_id,
             _request_id: self._request_id,

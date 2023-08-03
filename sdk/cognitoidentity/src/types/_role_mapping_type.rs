@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RoleMappingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for RoleMappingType {
         match s {
             "Rules" => RoleMappingType::Rules,
             "Token" => RoleMappingType::Token,
-            other => {
-                RoleMappingType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => RoleMappingType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

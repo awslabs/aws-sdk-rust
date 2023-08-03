@@ -15,16 +15,14 @@ impl DeleteAppReplicationConfigurationInput {
 }
 impl DeleteAppReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppReplicationConfigurationInput`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput).
-    pub fn builder() -> crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationInputBuilder {
         crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppReplicationConfigurationInput`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppReplicationConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DeleteAppReplicationConfigurationInputBuilder {
         &self.app_id
     }
     /// Consumes the builder and constructs a [`DeleteAppReplicationConfigurationInput`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput {
-                app_id: self.app_id
-                ,
-            }
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput { app_id: self.app_id },
         )
     }
 }

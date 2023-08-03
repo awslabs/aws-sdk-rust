@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteApplicationVersionOutput {
 }
 impl DeleteApplicationVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationVersionOutput`](crate::operation::delete_application_version::DeleteApplicationVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_application_version::builders::DeleteApplicationVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_application_version::builders::DeleteApplicationVersionOutputBuilder {
         crate::operation::delete_application_version::builders::DeleteApplicationVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationVersionOutput`](crate::operation::delete_application_version::DeleteApplicationVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationVersionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteApplicationVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationVersionOutput`](crate::operation::delete_application_version::DeleteApplicationVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_application_version::DeleteApplicationVersionOutput {
+    pub fn build(self) -> crate::operation::delete_application_version::DeleteApplicationVersionOutput {
         crate::operation::delete_application_version::DeleteApplicationVersionOutput {
             _request_id: self._request_id,
         }

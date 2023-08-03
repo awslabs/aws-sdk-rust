@@ -43,9 +43,7 @@ impl DescribeBackupsInput {
 
 /// A builder for [`DescribeBackupsInput`](crate::operation::describe_backups::DescribeBackupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBackupsInputBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl DescribeBackupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBackupsInput`](crate::operation::describe_backups::DescribeBackupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_backups::DescribeBackupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_backups::DescribeBackupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_backups::DescribeBackupsInput {
             backup_id: self.backup_id,
             server_name: self.server_name,

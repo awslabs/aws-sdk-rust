@@ -58,9 +58,7 @@ impl DetectedCsvFormatDescriptor {
 
 /// A builder for [`DetectedCsvFormatDescriptor`](crate::types::DetectedCsvFormatDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectedCsvFormatDescriptorBuilder {
     pub(crate) file_compression: ::std::option::Option<crate::types::DetectedField>,
     pub(crate) charset: ::std::option::Option<crate::types::DetectedField>,
@@ -76,10 +74,7 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>The format's file compression.</p>
-    pub fn set_file_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedField>,
-    ) -> Self {
+    pub fn set_file_compression(mut self, input: ::std::option::Option<crate::types::DetectedField>) -> Self {
         self.file_compression = input;
         self
     }
@@ -93,10 +88,7 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>The format's charset.</p>
-    pub fn set_charset(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedField>,
-    ) -> Self {
+    pub fn set_charset(mut self, input: ::std::option::Option<crate::types::DetectedField>) -> Self {
         self.charset = input;
         self
     }
@@ -110,10 +102,7 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>Whether the format includes a header.</p>
-    pub fn set_contains_header(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedField>,
-    ) -> Self {
+    pub fn set_contains_header(mut self, input: ::std::option::Option<crate::types::DetectedField>) -> Self {
         self.contains_header = input;
         self
     }
@@ -127,10 +116,7 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>The format's delimiter.</p>
-    pub fn set_delimiter(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedField>,
-    ) -> Self {
+    pub fn set_delimiter(mut self, input: ::std::option::Option<crate::types::DetectedField>) -> Self {
         self.delimiter = input;
         self
     }
@@ -144,10 +130,7 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>The format's header list.</p>
-    pub fn set_header_list(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedField>,
-    ) -> Self {
+    pub fn set_header_list(mut self, input: ::std::option::Option<crate::types::DetectedField>) -> Self {
         self.header_list = input;
         self
     }
@@ -161,10 +144,7 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>The format's quote symbol.</p>
-    pub fn set_quote_symbol(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedField>,
-    ) -> Self {
+    pub fn set_quote_symbol(mut self, input: ::std::option::Option<crate::types::DetectedField>) -> Self {
         self.quote_symbol = input;
         self
     }

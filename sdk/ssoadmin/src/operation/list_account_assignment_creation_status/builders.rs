@@ -5,16 +5,16 @@ pub use crate::operation::list_account_assignment_creation_status::_list_account
 
 impl ListAccountAssignmentCreationStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_account_assignment_creation_status();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListAccountAssignmentCreationStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccountAssignmentCreationStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusInputBuilder,
+    inner: crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusInputBuilder,
 }
 impl ListAccountAssignmentCreationStatusFluentBuilder {
     /// Creates a new `ListAccountAssignmentCreationStatus`.
@@ -37,15 +37,20 @@ impl ListAccountAssignmentCreationStatusFluentBuilder {
         }
     }
     /// Access the ListAccountAssignmentCreationStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListAccountAssignmentCreationStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,24 +87,38 @@ impl ListAccountAssignmentCreationStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator{
-        crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator {
+        crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,10 +168,7 @@ impl ListAccountAssignmentCreationStatusFluentBuilder {
         self
     }
     /// <p>Filters results based on the passed attribute value.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationStatusFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::OperationStatusFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

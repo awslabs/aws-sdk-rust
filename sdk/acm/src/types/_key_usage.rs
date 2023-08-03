@@ -23,9 +23,7 @@ impl KeyUsage {
 
 /// A builder for [`KeyUsage`](crate::types::KeyUsage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyUsageBuilder {
     pub(crate) name: ::std::option::Option<crate::types::KeyUsageName>,
 }

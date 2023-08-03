@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterInstanceOutput`](crate::operation::register_instance::RegisterInstanceOutput) with field(s):
     ///   - [`instance_id(Option<String>)`](crate::operation::register_instance::RegisterInstanceOutput::instance_id): <p>The registered instance's AWS OpsWorks Stacks ID.</p>
     /// - On failure, responds with [`SdkError<RegisterInstanceError>`](crate::operation::register_instance::RegisterInstanceError)
-    pub fn register_instance(
-        &self,
-    ) -> crate::operation::register_instance::builders::RegisterInstanceFluentBuilder {
-        crate::operation::register_instance::builders::RegisterInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_instance(&self) -> crate::operation::register_instance::builders::RegisterInstanceFluentBuilder {
+        crate::operation::register_instance::builders::RegisterInstanceFluentBuilder::new(self.handle.clone())
     }
 }

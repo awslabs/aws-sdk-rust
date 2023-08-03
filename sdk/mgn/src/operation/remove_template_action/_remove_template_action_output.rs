@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveTemplateActionOutput {
 }
 impl RemoveTemplateActionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTemplateActionOutput`](crate::operation::remove_template_action::RemoveTemplateActionOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_template_action::builders::RemoveTemplateActionOutputBuilder {
+    pub fn builder() -> crate::operation::remove_template_action::builders::RemoveTemplateActionOutputBuilder {
         crate::operation::remove_template_action::builders::RemoveTemplateActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTemplateActionOutput`](crate::operation::remove_template_action::RemoveTemplateActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTemplateActionOutputBuilder {
     _request_id: Option<String>,
 }

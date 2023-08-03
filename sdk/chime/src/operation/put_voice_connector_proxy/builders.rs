@@ -30,8 +30,7 @@ impl PutVoiceConnectorProxyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorProxyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyInputBuilder,
+    inner: crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyInputBuilder,
 }
 impl PutVoiceConnectorProxyFluentBuilder {
     /// Creates a new `PutVoiceConnectorProxy`.
@@ -42,10 +41,7 @@ impl PutVoiceConnectorProxyFluentBuilder {
         }
     }
     /// Access the PutVoiceConnectorProxy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl PutVoiceConnectorProxyFluentBuilder {
             crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl PutVoiceConnectorProxyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl PutVoiceConnectorProxyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl PutVoiceConnectorProxyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +109,17 @@ impl PutVoiceConnectorProxyFluentBuilder {
             crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
@@ -167,40 +146,26 @@ impl PutVoiceConnectorProxyFluentBuilder {
     /// To override the contents of this collection use [`set_phone_number_pool_countries`](Self::set_phone_number_pool_countries).
     ///
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn phone_number_pool_countries(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_pool_countries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number_pool_countries(input.into());
         self
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn set_phone_number_pool_countries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phone_number_pool_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_phone_number_pool_countries(input);
         self
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn get_phone_number_pool_countries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phone_number_pool_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_phone_number_pool_countries()
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
-    pub fn fall_back_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fall_back_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fall_back_phone_number(input.into());
         self
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
-    pub fn set_fall_back_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fall_back_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fall_back_phone_number(input);
         self
     }

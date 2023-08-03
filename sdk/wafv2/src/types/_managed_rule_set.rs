@@ -22,9 +22,7 @@ pub struct ManagedRuleSet {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The versions of this managed rule set that are available for use by customers. </p>
     #[doc(hidden)]
-    pub published_versions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>,
-    >,
+    pub published_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>>,
     /// <p>The version that you would like your customers to use.</p>
     #[doc(hidden)]
     pub recommended_version: ::std::option::Option<::std::string::String>,
@@ -61,9 +59,7 @@ impl ManagedRuleSet {
     /// <p>The versions of this managed rule set that are available for use by customers. </p>
     pub fn published_versions(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>> {
         self.published_versions.as_ref()
     }
     /// <p>The version that you would like your customers to use.</p>
@@ -92,17 +88,13 @@ impl ManagedRuleSet {
 
 /// A builder for [`ManagedRuleSet`](crate::types::ManagedRuleSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedRuleSetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) published_versions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>,
-    >,
+    pub(crate) published_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>>,
     pub(crate) recommended_version: ::std::option::Option<::std::string::String>,
     pub(crate) label_namespace: ::std::option::Option<::std::string::String>,
 }
@@ -171,11 +163,7 @@ impl ManagedRuleSetBuilder {
     /// To override the contents of this collection use [`set_published_versions`](Self::set_published_versions).
     ///
     /// <p>The versions of this managed rule set that are available for use by customers. </p>
-    pub fn published_versions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ManagedRuleSetVersion,
-    ) -> Self {
+    pub fn published_versions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ManagedRuleSetVersion) -> Self {
         let mut hash_map = self.published_versions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.published_versions = ::std::option::Option::Some(hash_map);
@@ -184,9 +172,7 @@ impl ManagedRuleSetBuilder {
     /// <p>The versions of this managed rule set that are available for use by customers. </p>
     pub fn set_published_versions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>>,
     ) -> Self {
         self.published_versions = input;
         self
@@ -194,24 +180,16 @@ impl ManagedRuleSetBuilder {
     /// <p>The versions of this managed rule set that are available for use by customers. </p>
     pub fn get_published_versions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>> {
         &self.published_versions
     }
     /// <p>The version that you would like your customers to use.</p>
-    pub fn recommended_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommended_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version that you would like your customers to use.</p>
-    pub fn set_recommended_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommended_version = input;
         self
     }
@@ -228,10 +206,7 @@ impl ManagedRuleSetBuilder {
     /// </vendor></code>:</p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
-    pub fn label_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_namespace = ::std::option::Option::Some(input.into());
         self
     }
@@ -244,10 +219,7 @@ impl ManagedRuleSetBuilder {
     /// </vendor></code>:</p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
-    pub fn set_label_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_namespace = input;
         self
     }

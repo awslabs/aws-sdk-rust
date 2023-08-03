@@ -30,9 +30,7 @@ impl PushSync {
 
 /// A builder for [`PushSync`](crate::types::PushSync).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PushSyncBuilder {
     pub(crate) application_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -43,27 +41,19 @@ impl PushSyncBuilder {
     /// To override the contents of this collection use [`set_application_arns`](Self::set_application_arns).
     ///
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    pub fn application_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_arns.unwrap_or_default();
         v.push(input.into());
         self.application_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    pub fn set_application_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_application_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.application_arns = input;
         self
     }
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    pub fn get_application_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.application_arns
     }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>

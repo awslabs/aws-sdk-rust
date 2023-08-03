@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`auto_enable_standards(AutoEnableStandards)`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::auto_enable_standards) / [`set_auto_enable_standards(Option<AutoEnableStandards>)`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::set_auto_enable_standards): <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>  <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>  <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
     /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError)
-    pub fn update_organization_configuration(&self) -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder{
+    pub fn update_organization_configuration(
+        &self,
+    ) -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder {
         crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

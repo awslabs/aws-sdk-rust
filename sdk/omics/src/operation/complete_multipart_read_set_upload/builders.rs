@@ -5,16 +5,16 @@ pub use crate::operation::complete_multipart_read_set_upload::_complete_multipar
 
 impl CompleteMultipartReadSetUploadInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.complete_multipart_read_set_upload();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CompleteMultipartReadSetUploadInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CompleteMultipartReadSetUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadInputBuilder,
+    inner: crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadInputBuilder,
 }
 impl CompleteMultipartReadSetUploadFluentBuilder {
     /// Creates a new `CompleteMultipartReadSetUpload`.
@@ -37,15 +37,20 @@ impl CompleteMultipartReadSetUploadFluentBuilder {
         }
     }
     /// Access the CompleteMultipartReadSetUpload as a reference.
-    pub fn as_input(&self) -> &crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUpload, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUpload,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CompleteMultipartReadSetUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput, ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl CompleteMultipartReadSetUploadFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput, ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUpload, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUpload,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>,
+    > {
         self.customize_middleware().await
     }
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
@@ -138,20 +147,12 @@ impl CompleteMultipartReadSetUploadFluentBuilder {
         self
     }
     /// <p> The individual uploads or parts of a multipart upload. </p>
-    pub fn set_parts(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>,
-        >,
-    ) -> Self {
+    pub fn set_parts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>) -> Self {
         self.inner = self.inner.set_parts(input);
         self
     }
     /// <p> The individual uploads or parts of a multipart upload. </p>
-    pub fn get_parts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>
-    {
+    pub fn get_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>> {
         self.inner.get_parts()
     }
 }

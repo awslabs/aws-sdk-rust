@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLabelingJobOutput`](crate::operation::create_labeling_job::CreateLabelingJobOutput) with field(s):
     ///   - [`labeling_job_arn(Option<String>)`](crate::operation::create_labeling_job::CreateLabelingJobOutput::labeling_job_arn): <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the labeling job.</p>
     /// - On failure, responds with [`SdkError<CreateLabelingJobError>`](crate::operation::create_labeling_job::CreateLabelingJobError)
-    pub fn create_labeling_job(
-        &self,
-    ) -> crate::operation::create_labeling_job::builders::CreateLabelingJobFluentBuilder {
-        crate::operation::create_labeling_job::builders::CreateLabelingJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_labeling_job(&self) -> crate::operation::create_labeling_job::builders::CreateLabelingJobFluentBuilder {
+        crate::operation::create_labeling_job::builders::CreateLabelingJobFluentBuilder::new(self.handle.clone())
     }
 }

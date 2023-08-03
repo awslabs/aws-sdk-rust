@@ -44,9 +44,7 @@ impl TransitionState {
 
 /// A builder for [`TransitionState`](crate::types::TransitionState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitionStateBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) last_changed_by: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl TransitionStateBuilder {
         &self.enabled
     }
     /// <p>The ID of the user who last changed the transition state.</p>
-    pub fn last_changed_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_changed_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_changed_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user who last changed the transition state.</p>
-    pub fn set_last_changed_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_changed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_changed_by = input;
         self
     }
@@ -94,10 +86,7 @@ impl TransitionStateBuilder {
         self
     }
     /// <p>The timestamp when the transition state was last changed.</p>
-    pub fn set_last_changed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_changed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_changed_at = input;
         self
     }
@@ -106,18 +95,12 @@ impl TransitionStateBuilder {
         &self.last_changed_at
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    pub fn disabled_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disabled_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disabled_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    pub fn set_disabled_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disabled_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disabled_reason = input;
         self
     }

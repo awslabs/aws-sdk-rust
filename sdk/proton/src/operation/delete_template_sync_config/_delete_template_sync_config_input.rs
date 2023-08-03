@@ -22,36 +22,26 @@ impl DeleteTemplateSyncConfigInput {
 }
 impl DeleteTemplateSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteTemplateSyncConfigInput`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigInput).
-    pub fn builder(
-    ) -> crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigInputBuilder {
         crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTemplateSyncConfigInput`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTemplateSyncConfigInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_type: ::std::option::Option<crate::types::TemplateType>,
 }
 impl DeleteTemplateSyncConfigInputBuilder {
     /// <p>The template name.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The template name.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -65,10 +55,7 @@ impl DeleteTemplateSyncConfigInputBuilder {
         self
     }
     /// <p>The template type.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateType>,
-    ) -> Self {
+    pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
         self.template_type = input;
         self
     }
@@ -83,11 +70,9 @@ impl DeleteTemplateSyncConfigInputBuilder {
         crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigInput {
-                template_name: self.template_name,
-                template_type: self.template_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigInput {
+            template_name: self.template_name,
+            template_type: self.template_type,
+        })
     }
 }

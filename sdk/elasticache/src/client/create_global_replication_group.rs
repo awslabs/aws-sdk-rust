@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateGlobalReplicationGroupOutput`](crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput) with field(s):
     ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<CreateGlobalReplicationGroupError>`](crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError)
-    pub fn create_global_replication_group(&self) -> crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupFluentBuilder{
+    pub fn create_global_replication_group(
+        &self,
+    ) -> crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupFluentBuilder {
         crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupFluentBuilder::new(self.handle.clone())
     }
 }

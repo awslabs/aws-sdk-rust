@@ -26,8 +26,7 @@ impl ListBatchInferenceJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBatchInferenceJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsInputBuilder,
+    inner: crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsInputBuilder,
 }
 impl ListBatchInferenceJobsFluentBuilder {
     /// Creates a new `ListBatchInferenceJobs`.
@@ -38,10 +37,7 @@ impl ListBatchInferenceJobsFluentBuilder {
         }
     }
     /// Access the ListBatchInferenceJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListBatchInferenceJobsFluentBuilder {
             crate::operation::list_batch_inference_jobs::ListBatchInferenceJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListBatchInferenceJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListBatchInferenceJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListBatchInferenceJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError>,
     > {
         self.send_middleware().await
     }
@@ -118,37 +105,23 @@ impl ListBatchInferenceJobsFluentBuilder {
             crate::operation::list_batch_inference_jobs::ListBatchInferenceJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator
-    {
-        crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator {
+        crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.solution_version_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_version_arn(input);
         self
     }

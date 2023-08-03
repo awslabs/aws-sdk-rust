@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateImportJobOutput`](crate::operation::create_import_job::CreateImportJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::create_import_job::CreateImportJobOutput::job_id): <p>A string that represents the import job ID.</p>
     /// - On failure, responds with [`SdkError<CreateImportJobError>`](crate::operation::create_import_job::CreateImportJobError)
-    pub fn create_import_job(
-        &self,
-    ) -> crate::operation::create_import_job::builders::CreateImportJobFluentBuilder {
-        crate::operation::create_import_job::builders::CreateImportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_import_job(&self) -> crate::operation::create_import_job::builders::CreateImportJobFluentBuilder {
+        crate::operation::create_import_job::builders::CreateImportJobFluentBuilder::new(self.handle.clone())
     }
 }

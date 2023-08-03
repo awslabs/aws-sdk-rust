@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateMemberToGroupOutput {
 }
 impl AssociateMemberToGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateMemberToGroupOutput`](crate::operation::associate_member_to_group::AssociateMemberToGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_member_to_group::builders::AssociateMemberToGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_member_to_group::builders::AssociateMemberToGroupOutputBuilder {
         crate::operation::associate_member_to_group::builders::AssociateMemberToGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateMemberToGroupOutput`](crate::operation::associate_member_to_group::AssociateMemberToGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateMemberToGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl AssociateMemberToGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateMemberToGroupOutput`](crate::operation::associate_member_to_group::AssociateMemberToGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_member_to_group::AssociateMemberToGroupOutput {
+    pub fn build(self) -> crate::operation::associate_member_to_group::AssociateMemberToGroupOutput {
         crate::operation::associate_member_to_group::AssociateMemberToGroupOutput {
             _request_id: self._request_id,
         }

@@ -51,9 +51,7 @@ impl HttpsNotificationConfiguration {
 
 /// A builder for [`HttpsNotificationConfiguration`](crate::types::HttpsNotificationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpsNotificationConfigurationBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_api_key_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl HttpsNotificationConfigurationBuilder {
         &self.endpoint
     }
     /// <p>The key name for the notification subscription.</p>
-    pub fn authorization_api_key_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_api_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_api_key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key name for the notification subscription.</p>
-    pub fn set_authorization_api_key_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorization_api_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_api_key_name = input;
         self
     }
@@ -97,18 +89,12 @@ impl HttpsNotificationConfigurationBuilder {
         &self.authorization_api_key_name
     }
     /// <p>The key value for the notification subscription.</p>
-    pub fn authorization_api_key_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_api_key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_api_key_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key value for the notification subscription.</p>
-    pub fn set_authorization_api_key_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorization_api_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_api_key_value = input;
         self
     }
@@ -122,10 +108,7 @@ impl HttpsNotificationConfigurationBuilder {
         self
     }
     /// <p>The HTTPS method used for the notification subscription.</p>
-    pub fn set_http_method(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpMethod>,
-    ) -> Self {
+    pub fn set_http_method(mut self, input: ::std::option::Option<crate::types::HttpMethod>) -> Self {
         self.http_method = input;
         self
     }
@@ -134,18 +117,12 @@ impl HttpsNotificationConfigurationBuilder {
         &self.http_method
     }
     /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the <i>Amazon Security Lake User Guide</i>.</p>
-    pub fn target_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the <i>Amazon Security Lake User Guide</i>.</p>
-    pub fn set_target_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_role_arn = input;
         self
     }

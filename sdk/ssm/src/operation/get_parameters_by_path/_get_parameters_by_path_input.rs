@@ -16,8 +16,7 @@ pub struct GetParametersByPathInput {
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub parameter_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>,
+    pub parameter_filters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>,
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
     #[doc(hidden)]
     pub with_decryption: ::std::option::Option<bool>,
@@ -43,9 +42,7 @@ impl GetParametersByPathInput {
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
-    pub fn parameter_filters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ParameterStringFilter]> {
+    pub fn parameter_filters(&self) -> ::std::option::Option<&[crate::types::ParameterStringFilter]> {
         self.parameter_filters.as_deref()
     }
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
@@ -63,23 +60,18 @@ impl GetParametersByPathInput {
 }
 impl GetParametersByPathInput {
     /// Creates a new builder-style object to manufacture [`GetParametersByPathInput`](crate::operation::get_parameters_by_path::GetParametersByPathInput).
-    pub fn builder(
-    ) -> crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder {
-        crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder {
+        crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder::default()
     }
 }
 
 /// A builder for [`GetParametersByPathInput`](crate::operation::get_parameters_by_path::GetParametersByPathInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetParametersByPathInputBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) recursive: ::std::option::Option<bool>,
-    pub(crate) parameter_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>,
+    pub(crate) parameter_filters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>,
     pub(crate) with_decryption: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -137,10 +129,7 @@ impl GetParametersByPathInputBuilder {
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
-    pub fn set_parameter_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>,
-    ) -> Self {
+    pub fn set_parameter_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>) -> Self {
         self.parameter_filters = input;
         self
     }
@@ -148,9 +137,7 @@ impl GetParametersByPathInputBuilder {
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
-    pub fn get_parameter_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>> {
+    pub fn get_parameter_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>> {
         &self.parameter_filters
     }
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
@@ -198,19 +185,15 @@ impl GetParametersByPathInputBuilder {
     /// Consumes the builder and constructs a [`GetParametersByPathInput`](crate::operation::get_parameters_by_path::GetParametersByPathInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_parameters_by_path::GetParametersByPathInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_parameters_by_path::GetParametersByPathInput {
-                path: self.path,
-                recursive: self.recursive,
-                parameter_filters: self.parameter_filters,
-                with_decryption: self.with_decryption,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_parameters_by_path::GetParametersByPathInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_parameters_by_path::GetParametersByPathInput {
+            path: self.path,
+            recursive: self.recursive,
+            parameter_filters: self.parameter_filters,
+            with_decryption: self.with_decryption,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

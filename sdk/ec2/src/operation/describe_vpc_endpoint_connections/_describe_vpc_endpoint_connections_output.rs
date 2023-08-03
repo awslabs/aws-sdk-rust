@@ -5,8 +5,7 @@
 pub struct DescribeVpcEndpointConnectionsOutput {
     /// <p>Information about the VPC endpoint connections.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointConnection>>,
+    pub vpc_endpoint_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointConnection>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeVpcEndpointConnectionsOutput {
 }
 impl DescribeVpcEndpointConnectionsOutput {
     /// <p>Information about the VPC endpoint connections.</p>
-    pub fn vpc_endpoint_connections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcEndpointConnection]> {
+    pub fn vpc_endpoint_connections(&self) -> ::std::option::Option<&[crate::types::VpcEndpointConnection]> {
         self.vpc_endpoint_connections.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeVpcEndpointConnectionsOutput 
 }
 impl DescribeVpcEndpointConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointConnectionsOutput`](crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsOutput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_connections::builders::DescribeVpcEndpointConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_connections::builders::DescribeVpcEndpointConnectionsOutputBuilder {
         crate::operation::describe_vpc_endpoint_connections::builders::DescribeVpcEndpointConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcEndpointConnectionsOutput`](crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointConnectionsOutputBuilder {
-    pub(crate) vpc_endpoint_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointConnection>>,
+    pub(crate) vpc_endpoint_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointConnection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeVpcEndpointConnectionsOutputBuilder {
         self
     }
     /// <p>Information about the VPC endpoint connections.</p>
-    pub fn set_vpc_endpoint_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointConnection>>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointConnection>>) -> Self {
         self.vpc_endpoint_connections = input;
         self
     }
     /// <p>Information about the VPC endpoint connections.</p>
-    pub fn get_vpc_endpoint_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointConnection>> {
+    pub fn get_vpc_endpoint_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointConnection>> {
         &self.vpc_endpoint_connections
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,10 +86,7 @@ impl DescribeVpcEndpointConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointConnectionsOutput`](crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsOutput {
         crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsOutput {
             vpc_endpoint_connections: self.vpc_endpoint_connections,
             next_token: self.next_token,

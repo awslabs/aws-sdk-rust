@@ -36,15 +36,11 @@ impl UpdateLocationAzureBlobInput {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
-    pub fn authentication_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AzureBlobAuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AzureBlobAuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
-    pub fn sas_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AzureBlobSasConfiguration> {
+    pub fn sas_configuration(&self) -> ::std::option::Option<&crate::types::AzureBlobSasConfiguration> {
         self.sas_configuration.as_ref()
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
@@ -63,23 +59,18 @@ impl UpdateLocationAzureBlobInput {
 }
 impl UpdateLocationAzureBlobInput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationAzureBlobInput`](crate::operation::update_location_azure_blob::UpdateLocationAzureBlobInput).
-    pub fn builder(
-    ) -> crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobInputBuilder {
         crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLocationAzureBlobInput`](crate::operation::update_location_azure_blob::UpdateLocationAzureBlobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLocationAzureBlobInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
-    pub(crate) authentication_type:
-        ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
+    pub(crate) authentication_type: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
     pub(crate) sas_configuration: ::std::option::Option<crate::types::AzureBlobSasConfiguration>,
     pub(crate) blob_type: ::std::option::Option<crate::types::AzureBlobType>,
     pub(crate) access_tier: ::std::option::Option<crate::types::AzureAccessTier>,
@@ -120,17 +111,12 @@ impl UpdateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AzureBlobAuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
         &self.authentication_type
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
@@ -139,17 +125,12 @@ impl UpdateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
-    pub fn set_sas_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureBlobSasConfiguration>,
-    ) -> Self {
+    pub fn set_sas_configuration(mut self, input: ::std::option::Option<crate::types::AzureBlobSasConfiguration>) -> Self {
         self.sas_configuration = input;
         self
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
-    pub fn get_sas_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AzureBlobSasConfiguration> {
+    pub fn get_sas_configuration(&self) -> &::std::option::Option<crate::types::AzureBlobSasConfiguration> {
         &self.sas_configuration
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
@@ -158,10 +139,7 @@ impl UpdateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
-    pub fn set_blob_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureBlobType>,
-    ) -> Self {
+    pub fn set_blob_type(mut self, input: ::std::option::Option<crate::types::AzureBlobType>) -> Self {
         self.blob_type = input;
         self
     }
@@ -175,10 +153,7 @@ impl UpdateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies the access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
-    pub fn set_access_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureAccessTier>,
-    ) -> Self {
+    pub fn set_access_tier(mut self, input: ::std::option::Option<crate::types::AzureAccessTier>) -> Self {
         self.access_tier = input;
         self
     }
@@ -200,10 +175,7 @@ impl UpdateLocationAzureBlobInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
     /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -219,16 +191,14 @@ impl UpdateLocationAzureBlobInputBuilder {
         crate::operation::update_location_azure_blob::UpdateLocationAzureBlobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobInput {
-                location_arn: self.location_arn,
-                subdirectory: self.subdirectory,
-                authentication_type: self.authentication_type,
-                sas_configuration: self.sas_configuration,
-                blob_type: self.blob_type,
-                access_tier: self.access_tier,
-                agent_arns: self.agent_arns,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_location_azure_blob::UpdateLocationAzureBlobInput {
+            location_arn: self.location_arn,
+            subdirectory: self.subdirectory,
+            authentication_type: self.authentication_type,
+            sas_configuration: self.sas_configuration,
+            blob_type: self.blob_type,
+            access_tier: self.access_tier,
+            agent_arns: self.agent_arns,
+        })
     }
 }

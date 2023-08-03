@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetCelebrityInfoOutput {
 }
 impl GetCelebrityInfoOutput {
     /// Creates a new builder-style object to manufacture [`GetCelebrityInfoOutput`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput).
-    pub fn builder() -> crate::operation::get_celebrity_info::builders::GetCelebrityInfoOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_celebrity_info::builders::GetCelebrityInfoOutputBuilder {
         crate::operation::get_celebrity_info::builders::GetCelebrityInfoOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCelebrityInfoOutput`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCelebrityInfoOutputBuilder {
     pub(crate) urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -65,10 +62,7 @@ impl GetCelebrityInfoOutputBuilder {
         self
     }
     /// <p>An array of URLs pointing to additional celebrity information. </p>
-    pub fn set_urls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.urls = input;
         self
     }
@@ -96,10 +90,7 @@ impl GetCelebrityInfoOutputBuilder {
         self
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
-    pub fn set_known_gender(
-        mut self,
-        input: ::std::option::Option<crate::types::KnownGender>,
-    ) -> Self {
+    pub fn set_known_gender(mut self, input: ::std::option::Option<crate::types::KnownGender>) -> Self {
         self.known_gender = input;
         self
     }

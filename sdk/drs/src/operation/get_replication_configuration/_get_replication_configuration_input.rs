@@ -15,33 +15,25 @@ impl GetReplicationConfigurationInput {
 }
 impl GetReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetReplicationConfigurationInput`](crate::operation::get_replication_configuration::GetReplicationConfigurationInput).
-    pub fn builder() -> crate::operation::get_replication_configuration::builders::GetReplicationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_replication_configuration::builders::GetReplicationConfigurationInputBuilder {
         crate::operation::get_replication_configuration::builders::GetReplicationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReplicationConfigurationInput`](crate::operation::get_replication_configuration::GetReplicationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReplicationConfigurationInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl GetReplicationConfigurationInputBuilder {
     /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetReplicationConfigurationInputBuilder {
         crate::operation::get_replication_configuration::GetReplicationConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_replication_configuration::GetReplicationConfigurationInput {
-                source_server_id: self.source_server_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_replication_configuration::GetReplicationConfigurationInput {
+            source_server_id: self.source_server_id,
+        })
     }
 }

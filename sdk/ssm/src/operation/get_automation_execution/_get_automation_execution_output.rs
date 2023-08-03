@@ -10,9 +10,7 @@ pub struct GetAutomationExecutionOutput {
 }
 impl GetAutomationExecutionOutput {
     /// <p>Detailed information about the current state of an automation execution.</p>
-    pub fn automation_execution(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutomationExecution> {
+    pub fn automation_execution(&self) -> ::std::option::Option<&crate::types::AutomationExecution> {
         self.automation_execution.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAutomationExecutionOutput {
 }
 impl GetAutomationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetAutomationExecutionOutput`](crate::operation::get_automation_execution::GetAutomationExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_automation_execution::builders::GetAutomationExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_automation_execution::builders::GetAutomationExecutionOutputBuilder {
         crate::operation::get_automation_execution::builders::GetAutomationExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAutomationExecutionOutput`](crate::operation::get_automation_execution::GetAutomationExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAutomationExecutionOutputBuilder {
     pub(crate) automation_execution: ::std::option::Option<crate::types::AutomationExecution>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetAutomationExecutionOutputBuilder {
         self
     }
     /// <p>Detailed information about the current state of an automation execution.</p>
-    pub fn set_automation_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomationExecution>,
-    ) -> Self {
+    pub fn set_automation_execution(mut self, input: ::std::option::Option<crate::types::AutomationExecution>) -> Self {
         self.automation_execution = input;
         self
     }
     /// <p>Detailed information about the current state of an automation execution.</p>
-    pub fn get_automation_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutomationExecution> {
+    pub fn get_automation_execution(&self) -> &::std::option::Option<crate::types::AutomationExecution> {
         &self.automation_execution
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

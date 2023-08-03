@@ -5,9 +5,7 @@
 pub struct DescribeMaintenanceWindowExecutionTasksOutput {
     /// <p>Information about the task executions.</p>
     #[doc(hidden)]
-    pub window_execution_task_identities: ::std::option::Option<
-        ::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskIdentity>,
-    >,
+    pub window_execution_task_identities: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +13,7 @@ pub struct DescribeMaintenanceWindowExecutionTasksOutput {
 }
 impl DescribeMaintenanceWindowExecutionTasksOutput {
     /// <p>Information about the task executions.</p>
-    pub fn window_execution_task_identities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MaintenanceWindowExecutionTaskIdentity]> {
+    pub fn window_execution_task_identities(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindowExecutionTaskIdentity]> {
         self.window_execution_task_identities.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -32,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeMaintenanceWindowExecutionTas
 }
 impl DescribeMaintenanceWindowExecutionTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput).
-    pub fn builder() -> crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksOutputBuilder
+    {
         crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionTasksOutputBuilder {
-    pub(crate) window_execution_task_identities: ::std::option::Option<
-        ::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskIdentity>,
-    >,
+    pub(crate) window_execution_task_identities: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskIdentity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +48,7 @@ impl DescribeMaintenanceWindowExecutionTasksOutputBuilder {
     /// To override the contents of this collection use [`set_window_execution_task_identities`](Self::set_window_execution_task_identities).
     ///
     /// <p>Information about the task executions.</p>
-    pub fn window_execution_task_identities(
-        mut self,
-        input: crate::types::MaintenanceWindowExecutionTaskIdentity,
-    ) -> Self {
+    pub fn window_execution_task_identities(mut self, input: crate::types::MaintenanceWindowExecutionTaskIdentity) -> Self {
         let mut v = self.window_execution_task_identities.unwrap_or_default();
         v.push(input);
         self.window_execution_task_identities = ::std::option::Option::Some(v);
@@ -67,9 +57,7 @@ impl DescribeMaintenanceWindowExecutionTasksOutputBuilder {
     /// <p>Information about the task executions.</p>
     pub fn set_window_execution_task_identities(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskIdentity>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskIdentity>>,
     ) -> Self {
         self.window_execution_task_identities = input;
         self
@@ -77,8 +65,7 @@ impl DescribeMaintenanceWindowExecutionTasksOutputBuilder {
     /// <p>Information about the task executions.</p>
     pub fn get_window_execution_task_identities(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskIdentity>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskIdentity>> {
         &self.window_execution_task_identities
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -105,12 +92,10 @@ impl DescribeMaintenanceWindowExecutionTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput).
-    pub fn build(self) -> crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput{
+    pub fn build(self) -> crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput {
         crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput {
-            window_execution_task_identities: self.window_execution_task_identities
-            ,
-            next_token: self.next_token
-            ,
+            window_execution_task_identities: self.window_execution_task_identities,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

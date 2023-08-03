@@ -77,9 +77,7 @@ impl GetWorkflowOutput {
 
 /// A builder for [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowOutputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -112,10 +110,7 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -138,18 +133,12 @@ impl GetWorkflowOutputBuilder {
         &self.status
     }
     /// <p>Workflow error messages during execution (if any).</p>
-    pub fn error_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Workflow error messages during execution (if any).</p>
-    pub fn set_error_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_description = input;
         self
     }
@@ -163,10 +152,7 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>The timestamp that represents when workflow execution started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -180,10 +166,7 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>The timestamp that represents when workflow execution last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -197,10 +180,7 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>Attributes provided for workflow execution.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowAttributes>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::WorkflowAttributes>) -> Self {
         self.attributes = input;
         self
     }
@@ -214,10 +194,7 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>Workflow specific execution metrics.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowMetrics>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::WorkflowMetrics>) -> Self {
         self.metrics = input;
         self
     }

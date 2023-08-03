@@ -37,16 +37,14 @@ impl DescribeSpotFleetInstancesInput {
 }
 impl DescribeSpotFleetInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotFleetInstancesInput`](crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesInput).
-    pub fn builder() -> crate::operation::describe_spot_fleet_instances::builders::DescribeSpotFleetInstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_spot_fleet_instances::builders::DescribeSpotFleetInstancesInputBuilder {
         crate::operation::describe_spot_fleet_instances::builders::DescribeSpotFleetInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpotFleetInstancesInput`](crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotFleetInstancesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -97,18 +95,12 @@ impl DescribeSpotFleetInstancesInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_fleet_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_fleet_request_id = input;
         self
     }
@@ -123,13 +115,11 @@ impl DescribeSpotFleetInstancesInputBuilder {
         crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesInput {
-                dry_run: self.dry_run,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                spot_fleet_request_id: self.spot_fleet_request_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesInput {
+            dry_run: self.dry_run,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            spot_fleet_request_id: self.spot_fleet_request_id,
+        })
     }
 }

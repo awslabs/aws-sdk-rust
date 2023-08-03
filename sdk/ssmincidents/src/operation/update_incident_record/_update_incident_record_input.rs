@@ -35,8 +35,7 @@ pub struct UpdateIncidentRecordInput {
     /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     #[doc(hidden)]
-    pub notification_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
+    pub notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
 }
 impl UpdateIncidentRecordInput {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
@@ -77,25 +76,20 @@ impl UpdateIncidentRecordInput {
     }
     /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
-    pub fn notification_targets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotificationTargetItem]> {
+    pub fn notification_targets(&self) -> ::std::option::Option<&[crate::types::NotificationTargetItem]> {
         self.notification_targets.as_deref()
     }
 }
 impl UpdateIncidentRecordInput {
     /// Creates a new builder-style object to manufacture [`UpdateIncidentRecordInput`](crate::operation::update_incident_record::UpdateIncidentRecordInput).
-    pub fn builder(
-    ) -> crate::operation::update_incident_record::builders::UpdateIncidentRecordInputBuilder {
+    pub fn builder() -> crate::operation::update_incident_record::builders::UpdateIncidentRecordInputBuilder {
         crate::operation::update_incident_record::builders::UpdateIncidentRecordInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIncidentRecordInput`](crate::operation::update_incident_record::UpdateIncidentRecordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIncidentRecordInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -104,8 +98,7 @@ pub struct UpdateIncidentRecordInputBuilder {
     pub(crate) impact: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::IncidentRecordStatus>,
     pub(crate) chat_channel: ::std::option::Option<crate::types::ChatChannel>,
-    pub(crate) notification_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
+    pub(crate) notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
 }
 impl UpdateIncidentRecordInputBuilder {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
@@ -208,10 +201,7 @@ impl UpdateIncidentRecordInputBuilder {
         self
     }
     /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IncidentRecordStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IncidentRecordStatus>) -> Self {
         self.status = input;
         self
     }
@@ -225,10 +215,7 @@ impl UpdateIncidentRecordInputBuilder {
         self
     }
     /// <p>The Chatbot chat channel where responders can collaborate.</p>
-    pub fn set_chat_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ChatChannel>,
-    ) -> Self {
+    pub fn set_chat_channel(mut self, input: ::std::option::Option<crate::types::ChatChannel>) -> Self {
         self.chat_channel = input;
         self
     }
@@ -250,38 +237,29 @@ impl UpdateIncidentRecordInputBuilder {
     }
     /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
-    pub fn set_notification_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
-    ) -> Self {
+    pub fn set_notification_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>) -> Self {
         self.notification_targets = input;
         self
     }
     /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
-    pub fn get_notification_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
+    pub fn get_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
         &self.notification_targets
     }
     /// Consumes the builder and constructs a [`UpdateIncidentRecordInput`](crate::operation::update_incident_record::UpdateIncidentRecordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_incident_record::UpdateIncidentRecordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_incident_record::UpdateIncidentRecordInput {
-                client_token: self.client_token,
-                arn: self.arn,
-                title: self.title,
-                summary: self.summary,
-                impact: self.impact,
-                status: self.status,
-                chat_channel: self.chat_channel,
-                notification_targets: self.notification_targets,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_incident_record::UpdateIncidentRecordInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_incident_record::UpdateIncidentRecordInput {
+            client_token: self.client_token,
+            arn: self.arn,
+            title: self.title,
+            summary: self.summary,
+            impact: self.impact,
+            status: self.status,
+            chat_channel: self.chat_channel,
+            notification_targets: self.notification_targets,
+        })
     }
 }

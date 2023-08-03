@@ -50,9 +50,7 @@ impl UpdateIpSetInput {
 
 /// A builder for [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIpSetInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_set_id: ::std::option::Option<::std::string::String>,
@@ -132,12 +130,7 @@ impl UpdateIpSetInputBuilder {
         &self.activate
     }
     /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ip_set::UpdateIpSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ip_set::UpdateIpSetInput {
             detector_id: self.detector_id,
             ip_set_id: self.ip_set_id,

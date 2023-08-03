@@ -17,9 +17,7 @@ pub struct CreateTrafficDistributionGroupInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateTrafficDistributionGroupInput {
     /// <p>The name for the traffic distribution group. </p>
@@ -39,34 +37,26 @@ impl CreateTrafficDistributionGroupInput {
         self.client_token.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateTrafficDistributionGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficDistributionGroupInput`](crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupInput).
-    pub fn builder() -> crate::operation::create_traffic_distribution_group::builders::CreateTrafficDistributionGroupInputBuilder{
+    pub fn builder() -> crate::operation::create_traffic_distribution_group::builders::CreateTrafficDistributionGroupInputBuilder {
         crate::operation::create_traffic_distribution_group::builders::CreateTrafficDistributionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTrafficDistributionGroupInput`](crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTrafficDistributionGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateTrafficDistributionGroupInputBuilder {
     /// <p>The name for the traffic distribution group. </p>
@@ -130,32 +120,19 @@ impl CreateTrafficDistributionGroupInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTrafficDistributionGroupInput`](crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupInput).
@@ -165,19 +142,12 @@ impl CreateTrafficDistributionGroupInputBuilder {
         crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                instance_id: self.instance_id
-                ,
-                client_token: self.client_token
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupInput {
+            name: self.name,
+            description: self.description,
+            instance_id: self.instance_id,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

@@ -26,7 +26,7 @@ impl DescribeClusterDbRevisionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClusterDbRevisionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsInputBuilder,
+    inner: crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsInputBuilder,
 }
 impl DescribeClusterDbRevisionsFluentBuilder {
     /// Creates a new `DescribeClusterDbRevisions`.
@@ -37,7 +37,7 @@ impl DescribeClusterDbRevisionsFluentBuilder {
         }
     }
     /// Access the DescribeClusterDbRevisions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeClusterDbRevisionsFluentBuilder {
             crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeClusterDbRevisionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeClusterDbRevisionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeClusterDbRevisionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl DescribeClusterDbRevisionsFluentBuilder {
             crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_db_revisions::paginator::DescribeClusterDbRevisionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_cluster_db_revisions::paginator::DescribeClusterDbRevisionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_cluster_db_revisions::paginator::DescribeClusterDbRevisionsPaginator {
         crate::operation::describe_cluster_db_revisions::paginator::DescribeClusterDbRevisionsPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }

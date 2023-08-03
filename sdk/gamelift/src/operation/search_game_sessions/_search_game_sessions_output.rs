@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for SearchGameSessionsOutput {
 }
 impl SearchGameSessionsOutput {
     /// Creates a new builder-style object to manufacture [`SearchGameSessionsOutput`](crate::operation::search_game_sessions::SearchGameSessionsOutput).
-    pub fn builder(
-    ) -> crate::operation::search_game_sessions::builders::SearchGameSessionsOutputBuilder {
+    pub fn builder() -> crate::operation::search_game_sessions::builders::SearchGameSessionsOutputBuilder {
         crate::operation::search_game_sessions::builders::SearchGameSessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchGameSessionsOutput`](crate::operation::search_game_sessions::SearchGameSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchGameSessionsOutputBuilder {
     pub(crate) game_sessions: ::std::option::Option<::std::vec::Vec<crate::types::GameSession>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl SearchGameSessionsOutputBuilder {
         self
     }
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
-    pub fn set_game_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameSession>>,
-    ) -> Self {
+    pub fn set_game_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameSession>>) -> Self {
         self.game_sessions = input;
         self
     }
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
-    pub fn get_game_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSession>> {
+    pub fn get_game_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSession>> {
         &self.game_sessions
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>

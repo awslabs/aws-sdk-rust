@@ -26,7 +26,7 @@ impl DescribeRxNormInferenceJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRxNormInferenceJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobInputBuilder,
+    inner: crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobInputBuilder,
 }
 impl DescribeRxNormInferenceJobFluentBuilder {
     /// Creates a new `DescribeRxNormInferenceJob`.
@@ -37,7 +37,7 @@ impl DescribeRxNormInferenceJobFluentBuilder {
         }
     }
     /// Access the DescribeRxNormInferenceJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeRxNormInferenceJobFluentBuilder {
             crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeRxNormInferenceJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeRxNormInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeRxNormInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeRxNormInferenceJobFluentBuilder {
             crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError>,
     > {
         self.customize_middleware().await
     }

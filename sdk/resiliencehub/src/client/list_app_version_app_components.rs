@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`app_components(Option<Vec<AppComponent>>)`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput::app_components): <p>Defines an Application Component.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAppVersionAppComponentsError>`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError)
-    pub fn list_app_version_app_components(&self) -> crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsFluentBuilder{
+    pub fn list_app_version_app_components(
+        &self,
+    ) -> crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsFluentBuilder {
         crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsFluentBuilder::new(self.handle.clone())
     }
 }

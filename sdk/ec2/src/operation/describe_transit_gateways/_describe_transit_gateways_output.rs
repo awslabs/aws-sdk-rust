@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeTransitGatewaysOutput {
 }
 impl DescribeTransitGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewaysOutput`](crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysOutputBuilder {
         crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewaysOutput`](crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewaysOutputBuilder {
-    pub(crate) transit_gateways:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGateway>>,
+    pub(crate) transit_gateways: ::std::option::Option<::std::vec::Vec<crate::types::TransitGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeTransitGatewaysOutputBuilder {
         self
     }
     /// <p>Information about the transit gateways.</p>
-    pub fn set_transit_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGateway>>,
-    ) -> Self {
+    pub fn set_transit_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGateway>>) -> Self {
         self.transit_gateways = input;
         self
     }
     /// <p>Information about the transit gateways.</p>
-    pub fn get_transit_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGateway>> {
+    pub fn get_transit_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGateway>> {
         &self.transit_gateways
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -96,9 +86,7 @@ impl DescribeTransitGatewaysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewaysOutput`](crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput {
+    pub fn build(self) -> crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput {
         crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput {
             transit_gateways: self.transit_gateways,
             next_token: self.next_token,

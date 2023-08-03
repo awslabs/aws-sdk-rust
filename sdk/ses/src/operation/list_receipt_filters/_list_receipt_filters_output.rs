@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ListReceiptFiltersOutput {
 }
 impl ListReceiptFiltersOutput {
     /// Creates a new builder-style object to manufacture [`ListReceiptFiltersOutput`](crate::operation::list_receipt_filters::ListReceiptFiltersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_receipt_filters::builders::ListReceiptFiltersOutputBuilder {
+    pub fn builder() -> crate::operation::list_receipt_filters::builders::ListReceiptFiltersOutputBuilder {
         crate::operation::list_receipt_filters::builders::ListReceiptFiltersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReceiptFiltersOutput`](crate::operation::list_receipt_filters::ListReceiptFiltersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReceiptFiltersOutputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>>,
     _request_id: Option<String>,
@@ -50,17 +47,12 @@ impl ListReceiptFiltersOutputBuilder {
         self
     }
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>> {
         &self.filters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`InitiateDeviceClaimOutput`](crate::operation::initiate_device_claim::InitiateDeviceClaimOutput) with field(s):
     ///   - [`state(Option<String>)`](crate::operation::initiate_device_claim::InitiateDeviceClaimOutput::state): <p>The device's final claim state.</p>
     /// - On failure, responds with [`SdkError<InitiateDeviceClaimError>`](crate::operation::initiate_device_claim::InitiateDeviceClaimError)
-    pub fn initiate_device_claim(
-        &self,
-    ) -> crate::operation::initiate_device_claim::builders::InitiateDeviceClaimFluentBuilder {
-        crate::operation::initiate_device_claim::builders::InitiateDeviceClaimFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn initiate_device_claim(&self) -> crate::operation::initiate_device_claim::builders::InitiateDeviceClaimFluentBuilder {
+        crate::operation::initiate_device_claim::builders::InitiateDeviceClaimFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for SendDataToMulticastGroupOutput {
 }
 impl SendDataToMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupOutput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput).
-    pub fn builder() -> crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupOutputBuilder{
+    pub fn builder() -> crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupOutputBuilder {
         crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendDataToMulticastGroupOutput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendDataToMulticastGroupOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl SendDataToMulticastGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendDataToMulticastGroupOutput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput {
+    pub fn build(self) -> crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput {
         crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput {
             message_id: self.message_id,
             _request_id: self._request_id,

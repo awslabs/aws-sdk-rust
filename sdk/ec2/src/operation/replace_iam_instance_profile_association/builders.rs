@@ -5,16 +5,16 @@ pub use crate::operation::replace_iam_instance_profile_association::_replace_iam
 
 impl ReplaceIamInstanceProfileAssociationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.replace_iam_instance_profile_association();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ReplaceIamInstanceProfileAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReplaceIamInstanceProfileAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationInputBuilder,
+    inner: crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationInputBuilder,
 }
 impl ReplaceIamInstanceProfileAssociationFluentBuilder {
     /// Creates a new `ReplaceIamInstanceProfileAssociation`.
@@ -38,15 +38,22 @@ impl ReplaceIamInstanceProfileAssociationFluentBuilder {
         }
     }
     /// Access the ReplaceIamInstanceProfileAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +62,17 @@ impl ReplaceIamInstanceProfileAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,54 +90,49 @@ impl ReplaceIamInstanceProfileAssociationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: crate::types::IamInstanceProfileSpecification,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
         self.inner = self.inner.iam_instance_profile(input);
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
-    ) -> Self {
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>) -> Self {
         self.inner = self.inner.set_iam_instance_profile(input);
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn get_iam_instance_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
         self.inner.get_iam_instance_profile()
     }
     /// <p>The ID of the existing IAM instance profile association.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The ID of the existing IAM instance profile association.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }

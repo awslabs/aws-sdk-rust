@@ -10,10 +10,7 @@ impl StartBlueprintRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_blueprint_run::StartBlueprintRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_blueprint_run::StartBlueprintRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_blueprint_run::StartBlueprintRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_blueprint_run();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartBlueprintRunFluentBuilder {
         }
     }
     /// Access the StartBlueprintRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_blueprint_run::builders::StartBlueprintRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_blueprint_run::builders::StartBlueprintRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartBlueprintRunFluentBuilder {
             crate::operation::start_blueprint_run::StartBlueprintRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_blueprint_run::StartBlueprintRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_blueprint_run::StartBlueprintRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartBlueprintRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartBlueprintRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_blueprint_run::StartBlueprintRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_blueprint_run::StartBlueprintRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_blueprint_run::StartBlueprintRunError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartBlueprintRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_blueprint_run::StartBlueprintRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_blueprint_run::StartBlueprintRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_blueprint_run::StartBlueprintRunError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartBlueprintRunFluentBuilder {
             crate::operation::start_blueprint_run::StartBlueprintRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_blueprint_run::StartBlueprintRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_blueprint_run::StartBlueprintRunError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blueprint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blueprint_name(input.into());
         self
     }
     /// <p>The name of the blueprint.</p>
-    pub fn set_blueprint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_blueprint_name(input);
         self
     }

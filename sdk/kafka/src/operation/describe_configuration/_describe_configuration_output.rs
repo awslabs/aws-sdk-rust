@@ -63,18 +63,14 @@ impl ::aws_http::request_id::RequestId for DescribeConfigurationOutput {
 }
 impl DescribeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationOutput`](crate::operation::describe_configuration::DescribeConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_configuration::builders::DescribeConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_configuration::builders::DescribeConfigurationOutputBuilder {
         crate::operation::describe_configuration::builders::DescribeConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationOutput`](crate::operation::describe_configuration::DescribeConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -106,10 +102,7 @@ impl DescribeConfigurationOutputBuilder {
         self
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -136,27 +129,19 @@ impl DescribeConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_kafka_versions`](Self::set_kafka_versions).
     ///
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn kafka_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kafka_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.kafka_versions.unwrap_or_default();
         v.push(input.into());
         self.kafka_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn set_kafka_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_kafka_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.kafka_versions = input;
         self
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn get_kafka_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_kafka_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.kafka_versions
     }
     /// <p>Latest revision of the configuration.</p>
@@ -165,17 +150,12 @@ impl DescribeConfigurationOutputBuilder {
         self
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn set_latest_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationRevision>,
-    ) -> Self {
+    pub fn set_latest_revision(mut self, input: ::std::option::Option<crate::types::ConfigurationRevision>) -> Self {
         self.latest_revision = input;
         self
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn get_latest_revision(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationRevision> {
+    pub fn get_latest_revision(&self) -> &::std::option::Option<crate::types::ConfigurationRevision> {
         &self.latest_revision
     }
     /// <p>The name of the configuration.</p>
@@ -198,10 +178,7 @@ impl DescribeConfigurationOutputBuilder {
         self
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConfigurationState>) -> Self {
         self.state = input;
         self
     }

@@ -15,33 +15,25 @@ impl GetRelationalDatabaseLogStreamsInput {
 }
 impl GetRelationalDatabaseLogStreamsInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogStreamsInput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput).
-    pub fn builder() -> crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsInputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsInputBuilder {
         crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseLogStreamsInput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogStreamsInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRelationalDatabaseLogStreamsInputBuilder {
     /// <p>The name of your database for which to get log streams.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your database for which to get log streams.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -58,9 +50,8 @@ impl GetRelationalDatabaseLogStreamsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput {
-                relational_database_name: self.relational_database_name
-                ,
-            }
+                relational_database_name: self.relational_database_name,
+            },
         )
     }
 }

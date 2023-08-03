@@ -64,9 +64,7 @@ impl ListAppsInput {
 
 /// A builder for [`ListAppsInput`](crate::operation::list_apps::ListAppsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -134,18 +132,12 @@ impl ListAppsInputBuilder {
         &self.sort_by
     }
     /// <p>A parameter to search for the domain ID.</p>
-    pub fn domain_id_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_id_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id_equals = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A parameter to search for the domain ID.</p>
-    pub fn set_domain_id_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_id_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id_equals = input;
         self
     }
@@ -154,18 +146,12 @@ impl ListAppsInputBuilder {
         &self.domain_id_equals
     }
     /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
-    pub fn user_profile_name_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name_equals = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
-    pub fn set_user_profile_name_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_name_equals = input;
         self
     }
@@ -174,18 +160,12 @@ impl ListAppsInputBuilder {
         &self.user_profile_name_equals
     }
     /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
-    pub fn space_name_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn space_name_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name_equals = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
-    pub fn set_space_name_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_space_name_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.space_name_equals = input;
         self
     }
@@ -194,12 +174,7 @@ impl ListAppsInputBuilder {
         &self.space_name_equals
     }
     /// Consumes the builder and constructs a [`ListAppsInput`](crate::operation::list_apps::ListAppsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_apps::ListAppsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_apps::ListAppsInput {
             next_token: self.next_token,
             max_results: self.max_results,

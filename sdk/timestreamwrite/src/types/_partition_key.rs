@@ -24,9 +24,7 @@ impl PartitionKey {
         self.name.as_deref()
     }
     /// <p> The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified). </p>
-    pub fn enforcement_in_record(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PartitionKeyEnforcementLevel> {
+    pub fn enforcement_in_record(&self) -> ::std::option::Option<&crate::types::PartitionKeyEnforcementLevel> {
         self.enforcement_in_record.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl PartitionKey {
 
 /// A builder for [`PartitionKey`](crate::types::PartitionKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartitionKeyBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PartitionKeyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) enforcement_in_record:
-        ::std::option::Option<crate::types::PartitionKeyEnforcementLevel>,
+    pub(crate) enforcement_in_record: ::std::option::Option<crate::types::PartitionKeyEnforcementLevel>,
 }
 impl PartitionKeyBuilder {
     /// <p> The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key). </p>
@@ -55,10 +50,7 @@ impl PartitionKeyBuilder {
         self
     }
     /// <p> The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key). </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionKeyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PartitionKeyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -81,25 +73,17 @@ impl PartitionKeyBuilder {
         &self.name
     }
     /// <p> The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified). </p>
-    pub fn enforcement_in_record(
-        mut self,
-        input: crate::types::PartitionKeyEnforcementLevel,
-    ) -> Self {
+    pub fn enforcement_in_record(mut self, input: crate::types::PartitionKeyEnforcementLevel) -> Self {
         self.enforcement_in_record = ::std::option::Option::Some(input);
         self
     }
     /// <p> The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified). </p>
-    pub fn set_enforcement_in_record(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionKeyEnforcementLevel>,
-    ) -> Self {
+    pub fn set_enforcement_in_record(mut self, input: ::std::option::Option<crate::types::PartitionKeyEnforcementLevel>) -> Self {
         self.enforcement_in_record = input;
         self
     }
     /// <p> The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified). </p>
-    pub fn get_enforcement_in_record(
-        &self,
-    ) -> &::std::option::Option<crate::types::PartitionKeyEnforcementLevel> {
+    pub fn get_enforcement_in_record(&self) -> &::std::option::Option<crate::types::PartitionKeyEnforcementLevel> {
         &self.enforcement_in_record
     }
     /// Consumes the builder and constructs a [`PartitionKey`](crate::types::PartitionKey).

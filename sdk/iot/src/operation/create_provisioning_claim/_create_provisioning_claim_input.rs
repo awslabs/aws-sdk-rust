@@ -15,35 +15,25 @@ impl CreateProvisioningClaimInput {
 }
 impl CreateProvisioningClaimInput {
     /// Creates a new builder-style object to manufacture [`CreateProvisioningClaimInput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimInput).
-    pub fn builder(
-    ) -> crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimInputBuilder {
         crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProvisioningClaimInput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProvisioningClaimInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateProvisioningClaimInputBuilder {
     /// <p>The name of the provisioning template to use.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioning template to use.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl CreateProvisioningClaimInputBuilder {
         crate::operation::create_provisioning_claim::CreateProvisioningClaimInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_provisioning_claim::CreateProvisioningClaimInput {
-                template_name: self.template_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_provisioning_claim::CreateProvisioningClaimInput {
+            template_name: self.template_name,
+        })
     }
 }

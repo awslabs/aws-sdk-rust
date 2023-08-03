@@ -127,9 +127,7 @@ impl ConfigurationOptionDescription {
 
 /// A builder for [`ConfigurationOptionDescription`](crate::types::ConfigurationOptionDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationOptionDescriptionBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -173,18 +171,12 @@ impl ConfigurationOptionDescriptionBuilder {
         &self.name
     }
     /// <p>The default value for this configuration option.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value for this configuration option.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
@@ -198,10 +190,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
     /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
     /// </ul>
-    pub fn change_severity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_severity = ::std::option::Option::Some(input.into());
         self
     }
@@ -211,10 +200,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
     /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
     /// </ul>
-    pub fn set_change_severity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_severity = input;
         self
     }
@@ -277,10 +263,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
     /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
     /// </ul>
-    pub fn set_value_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationOptionValueType>,
-    ) -> Self {
+    pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::ConfigurationOptionValueType>) -> Self {
         self.value_type = input;
         self
     }
@@ -291,9 +274,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
     /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
     /// </ul>
-    pub fn get_value_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationOptionValueType> {
+    pub fn get_value_type(&self) -> &::std::option::Option<crate::types::ConfigurationOptionValueType> {
         &self.value_type
     }
     /// Appends an item to `value_options`.
@@ -301,27 +282,19 @@ impl ConfigurationOptionDescriptionBuilder {
     /// To override the contents of this collection use [`set_value_options`](Self::set_value_options).
     ///
     /// <p>If specified, values for the configuration option are selected from this list.</p>
-    pub fn value_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn value_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value_options.unwrap_or_default();
         v.push(input.into());
         self.value_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>If specified, values for the configuration option are selected from this list.</p>
-    pub fn set_value_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_value_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.value_options = input;
         self
     }
     /// <p>If specified, values for the configuration option are selected from this list.</p>
-    pub fn get_value_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_value_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.value_options
     }
     /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
@@ -372,10 +345,7 @@ impl ConfigurationOptionDescriptionBuilder {
         self
     }
     /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
-    pub fn set_regex(
-        mut self,
-        input: ::std::option::Option<crate::types::OptionRestrictionRegex>,
-    ) -> Self {
+    pub fn set_regex(mut self, input: ::std::option::Option<crate::types::OptionRestrictionRegex>) -> Self {
         self.regex = input;
         self
     }

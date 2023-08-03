@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`instance_statuses(Option<Vec<InstanceStatus>>)`](crate::operation::describe_instance_status::DescribeInstanceStatusOutput::instance_statuses): <p>Information about the status of the instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_status::DescribeInstanceStatusOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceStatusError>`](crate::operation::describe_instance_status::DescribeInstanceStatusError)
-    pub fn describe_instance_status(
-        &self,
-    ) -> crate::operation::describe_instance_status::builders::DescribeInstanceStatusFluentBuilder
-    {
+    pub fn describe_instance_status(&self) -> crate::operation::describe_instance_status::builders::DescribeInstanceStatusFluentBuilder {
         crate::operation::describe_instance_status::builders::DescribeInstanceStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePortfolioShareOutput`](crate::operation::create_portfolio_share::CreatePortfolioShareOutput) with field(s):
     ///   - [`portfolio_share_token(Option<String>)`](crate::operation::create_portfolio_share::CreatePortfolioShareOutput::portfolio_share_token): <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
     /// - On failure, responds with [`SdkError<CreatePortfolioShareError>`](crate::operation::create_portfolio_share::CreatePortfolioShareError)
-    pub fn create_portfolio_share(
-        &self,
-    ) -> crate::operation::create_portfolio_share::builders::CreatePortfolioShareFluentBuilder {
-        crate::operation::create_portfolio_share::builders::CreatePortfolioShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_portfolio_share(&self) -> crate::operation::create_portfolio_share::builders::CreatePortfolioShareFluentBuilder {
+        crate::operation::create_portfolio_share::builders::CreatePortfolioShareFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl DeleteNetworkInsightsAnalysisInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteNetworkInsightsAnalysisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisInputBuilder,
+    inner: crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisInputBuilder,
 }
 impl DeleteNetworkInsightsAnalysisFluentBuilder {
     /// Creates a new `DeleteNetworkInsightsAnalysis`.
@@ -37,7 +37,7 @@ impl DeleteNetworkInsightsAnalysisFluentBuilder {
         }
     }
     /// Access the DeleteNetworkInsightsAnalysis as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteNetworkInsightsAnalysisFluentBuilder {
             crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteNetworkInsightsAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteNetworkInsightsAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteNetworkInsightsAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteNetworkInsightsAnalysisFluentBuilder {
             crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisError>,
     > {
         self.customize_middleware().await
     }
@@ -135,25 +124,17 @@ impl DeleteNetworkInsightsAnalysisFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the network insights analysis.</p>
-    pub fn network_insights_analysis_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_insights_analysis_id(input.into());
         self
     }
     /// <p>The ID of the network insights analysis.</p>
-    pub fn set_network_insights_analysis_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_insights_analysis_id(input);
         self
     }
     /// <p>The ID of the network insights analysis.</p>
-    pub fn get_network_insights_analysis_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_insights_analysis_id()
     }
 }

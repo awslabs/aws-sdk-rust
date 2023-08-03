@@ -31,9 +31,7 @@ pub fn ser_start_transcription_job_input(
         object.key("OutputKey").string(var_8.as_str());
     }
     if let Some(var_9) = &input.output_encryption_kms_key_id {
-        object
-            .key("OutputEncryptionKMSKeyId")
-            .string(var_9.as_str());
+        object.key("OutputEncryptionKMSKeyId").string(var_9.as_str());
     }
     if let Some(var_10) = &input.kms_encryption_context {
         #[allow(unused_mut)]
@@ -60,19 +58,13 @@ pub fn ser_start_transcription_job_input(
     if let Some(var_18) = &input.job_execution_settings {
         #[allow(unused_mut)]
         let mut object_19 = object.key("JobExecutionSettings").start_object();
-        crate::protocol_serde::shape_job_execution_settings::ser_job_execution_settings(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_job_execution_settings::ser_job_execution_settings(&mut object_19, var_18)?;
         object_19.finish();
     }
     if let Some(var_20) = &input.content_redaction {
         #[allow(unused_mut)]
         let mut object_21 = object.key("ContentRedaction").start_object();
-        crate::protocol_serde::shape_content_redaction::ser_content_redaction(
-            &mut object_21,
-            var_20,
-        )?;
+        crate::protocol_serde::shape_content_redaction::ser_content_redaction(&mut object_21, var_20)?;
         object_21.finish();
     }
     if let Some(var_22) = &input.identify_language {
@@ -115,10 +107,7 @@ pub fn ser_start_transcription_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_37 = object_34.key(key_35.as_str()).start_object();
-                crate::protocol_serde::shape_language_id_settings::ser_language_id_settings(
-                    &mut object_37,
-                    value_36,
-                )?;
+                crate::protocol_serde::shape_language_id_settings::ser_language_id_settings(&mut object_37, value_36)?;
                 object_37.finish();
             }
         }

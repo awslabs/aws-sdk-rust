@@ -37,10 +37,7 @@ impl BatchDeleteConnectionFluentBuilder {
         }
     }
     /// Access the BatchDeleteConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_connection::builders::BatchDeleteConnectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_connection::builders::BatchDeleteConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchDeleteConnectionFluentBuilder {
             crate::operation::batch_delete_connection::BatchDeleteConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_connection::BatchDeleteConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_connection::BatchDeleteConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchDeleteConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchDeleteConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_connection::BatchDeleteConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_connection::BatchDeleteConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_connection::BatchDeleteConnectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchDeleteConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_connection::BatchDeleteConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_connection::BatchDeleteConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_connection::BatchDeleteConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl BatchDeleteConnectionFluentBuilder {
             crate::operation::batch_delete_connection::BatchDeleteConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_connection::BatchDeleteConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_connection::BatchDeleteConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -142,25 +128,17 @@ impl BatchDeleteConnectionFluentBuilder {
     /// To override the contents of this collection use [`set_connection_name_list`](Self::set_connection_name_list).
     ///
     /// <p>A list of names of the connections to delete.</p>
-    pub fn connection_name_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_name_list(input.into());
         self
     }
     /// <p>A list of names of the connections to delete.</p>
-    pub fn set_connection_name_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connection_name_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_connection_name_list(input);
         self
     }
     /// <p>A list of names of the connections to delete.</p>
-    pub fn get_connection_name_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connection_name_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_connection_name_list()
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeReservationOutput`](crate::operation::describe_reservation::DescribeReservationOutput) with field(s):
     ///   - [`reservation(Option<Reservation>)`](crate::operation::describe_reservation::DescribeReservationOutput::reservation): A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     /// - On failure, responds with [`SdkError<DescribeReservationError>`](crate::operation::describe_reservation::DescribeReservationError)
-    pub fn describe_reservation(
-        &self,
-    ) -> crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder {
-        crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_reservation(&self) -> crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder {
+        crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::new(self.handle.clone())
     }
 }

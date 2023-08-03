@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::operation::update_origin_access_control::UpdateOriginAccessControlOutput::origin_access_control): <p>The origin access control after it has been updated.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_origin_access_control::UpdateOriginAccessControlOutput::e_tag): <p>The new version of the origin access control after it has been updated.</p>
     /// - On failure, responds with [`SdkError<UpdateOriginAccessControlError>`](crate::operation::update_origin_access_control::UpdateOriginAccessControlError)
-    pub fn update_origin_access_control(&self) -> crate::operation::update_origin_access_control::builders::UpdateOriginAccessControlFluentBuilder{
+    pub fn update_origin_access_control(&self) -> crate::operation::update_origin_access_control::builders::UpdateOriginAccessControlFluentBuilder {
         crate::operation::update_origin_access_control::builders::UpdateOriginAccessControlFluentBuilder::new(self.handle.clone())
     }
 }

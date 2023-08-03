@@ -72,9 +72,7 @@ impl GeneralName {
 
 /// A builder for [`GeneralName`](crate::types::GeneralName).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeneralNameBuilder {
     pub(crate) other_name: ::std::option::Option<crate::types::OtherName>,
     pub(crate) rfc822_name: ::std::option::Option<::std::string::String>,
@@ -134,10 +132,7 @@ impl GeneralNameBuilder {
         self
     }
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
-    pub fn set_directory_name(
-        mut self,
-        input: ::std::option::Option<crate::types::Asn1Subject>,
-    ) -> Self {
+    pub fn set_directory_name(mut self, input: ::std::option::Option<crate::types::Asn1Subject>) -> Self {
         self.directory_name = input;
         self
     }
@@ -151,10 +146,7 @@ impl GeneralNameBuilder {
         self
     }
     /// <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.</p>
-    pub fn set_edi_party_name(
-        mut self,
-        input: ::std::option::Option<crate::types::EdiPartyName>,
-    ) -> Self {
+    pub fn set_edi_party_name(mut self, input: ::std::option::Option<crate::types::EdiPartyName>) -> Self {
         self.edi_party_name = input;
         self
     }
@@ -163,18 +155,12 @@ impl GeneralNameBuilder {
         &self.edi_party_name
     }
     /// <p>Represents <code>GeneralName</code> as a URI.</p>
-    pub fn uniform_resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn uniform_resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uniform_resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents <code>GeneralName</code> as a URI.</p>
-    pub fn set_uniform_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_uniform_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uniform_resource_identifier = input;
         self
     }
@@ -197,18 +183,12 @@ impl GeneralNameBuilder {
         &self.ip_address
     }
     /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
-    pub fn registered_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
-    pub fn set_registered_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_id = input;
         self
     }

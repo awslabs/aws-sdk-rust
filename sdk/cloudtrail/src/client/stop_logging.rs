@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_logging::builders::StopLoggingFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_logging::builders::StopLoggingFluentBuilder::set_name): <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// - On success, responds with [`StopLoggingOutput`](crate::operation::stop_logging::StopLoggingOutput)
     /// - On failure, responds with [`SdkError<StopLoggingError>`](crate::operation::stop_logging::StopLoggingError)
-    pub fn stop_logging(
-        &self,
-    ) -> crate::operation::stop_logging::builders::StopLoggingFluentBuilder {
+    pub fn stop_logging(&self) -> crate::operation::stop_logging::builders::StopLoggingFluentBuilder {
         crate::operation::stop_logging::builders::StopLoggingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl TrainingMetricsV2 {
 
 /// A builder for [`TrainingMetricsV2`](crate::types::TrainingMetricsV2).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingMetricsV2Builder {
     pub(crate) ofi: ::std::option::Option<crate::types::OfiTrainingMetricsValue>,
     pub(crate) tfi: ::std::option::Option<crate::types::TfiTrainingMetricsValue>,
@@ -52,10 +50,7 @@ impl TrainingMetricsV2Builder {
         self
     }
     /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
-    pub fn set_ofi(
-        mut self,
-        input: ::std::option::Option<crate::types::OfiTrainingMetricsValue>,
-    ) -> Self {
+    pub fn set_ofi(mut self, input: ::std::option::Option<crate::types::OfiTrainingMetricsValue>) -> Self {
         self.ofi = input;
         self
     }
@@ -69,10 +64,7 @@ impl TrainingMetricsV2Builder {
         self
     }
     /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
-    pub fn set_tfi(
-        mut self,
-        input: ::std::option::Option<crate::types::TfiTrainingMetricsValue>,
-    ) -> Self {
+    pub fn set_tfi(mut self, input: ::std::option::Option<crate::types::TfiTrainingMetricsValue>) -> Self {
         self.tfi = input;
         self
     }
@@ -86,10 +78,7 @@ impl TrainingMetricsV2Builder {
         self
     }
     /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
-    pub fn set_ati(
-        mut self,
-        input: ::std::option::Option<crate::types::AtiTrainingMetricsValue>,
-    ) -> Self {
+    pub fn set_ati(mut self, input: ::std::option::Option<crate::types::AtiTrainingMetricsValue>) -> Self {
         self.ati = input;
         self
     }

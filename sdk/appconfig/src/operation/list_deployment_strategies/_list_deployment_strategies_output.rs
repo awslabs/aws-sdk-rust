@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDeploymentStrategiesOutput {
 }
 impl ListDeploymentStrategiesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentStrategiesOutput`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesOutputBuilder {
         crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentStrategiesOutput`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentStrategiesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStrategy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListDeploymentStrategiesOutputBuilder {
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStrategy>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStrategy>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStrategy>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStrategy>> {
         &self.items
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -95,9 +86,7 @@ impl ListDeploymentStrategiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDeploymentStrategiesOutput`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput {
+    pub fn build(self) -> crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput {
         crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput {
             items: self.items,
             next_token: self.next_token,

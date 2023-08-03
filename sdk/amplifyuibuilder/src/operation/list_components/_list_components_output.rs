@@ -35,9 +35,7 @@ impl ListComponentsOutput {
 
 /// A builder for [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentsOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListComponentsOutputBuilder {
         self
     }
     /// <p>The list of components for the Amplify app.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>The list of components for the Amplify app.</p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
         &self.entities
     }
     /// <p>The pagination token that's included if more results are available.</p>

@@ -37,9 +37,7 @@ impl PosixUser {
 
 /// A builder for [`PosixUser`](crate::types::PosixUser).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PosixUserBuilder {
     pub(crate) uid: ::std::option::Option<i64>,
     pub(crate) gid: ::std::option::Option<i64>,
@@ -86,10 +84,7 @@ impl PosixUserBuilder {
         self
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-    pub fn set_secondary_gids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i64>>,
-    ) -> Self {
+    pub fn set_secondary_gids(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
         self.secondary_gids = input;
         self
     }

@@ -12,8 +12,7 @@ pub struct AccessScopePathRequest {
     pub destination: ::std::option::Option<crate::types::PathStatementRequest>,
     /// <p>The through resources.</p>
     #[doc(hidden)]
-    pub through_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
+    pub through_resources: ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
 }
 impl AccessScopePathRequest {
     /// <p>The source.</p>
@@ -25,9 +24,7 @@ impl AccessScopePathRequest {
         self.destination.as_ref()
     }
     /// <p>The through resources.</p>
-    pub fn through_resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ThroughResourcesStatementRequest]> {
+    pub fn through_resources(&self) -> ::std::option::Option<&[crate::types::ThroughResourcesStatementRequest]> {
         self.through_resources.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl AccessScopePathRequest {
 
 /// A builder for [`AccessScopePathRequest`](crate::types::AccessScopePathRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessScopePathRequestBuilder {
     pub(crate) source: ::std::option::Option<crate::types::PathStatementRequest>,
     pub(crate) destination: ::std::option::Option<crate::types::PathStatementRequest>,
-    pub(crate) through_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
+    pub(crate) through_resources: ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
 }
 impl AccessScopePathRequestBuilder {
     /// <p>The source.</p>
@@ -56,10 +50,7 @@ impl AccessScopePathRequestBuilder {
         self
     }
     /// <p>The source.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::PathStatementRequest>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::PathStatementRequest>) -> Self {
         self.source = input;
         self
     }
@@ -73,10 +64,7 @@ impl AccessScopePathRequestBuilder {
         self
     }
     /// <p>The destination.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::PathStatementRequest>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::PathStatementRequest>) -> Self {
         self.destination = input;
         self
     }
@@ -89,30 +77,19 @@ impl AccessScopePathRequestBuilder {
     /// To override the contents of this collection use [`set_through_resources`](Self::set_through_resources).
     ///
     /// <p>The through resources.</p>
-    pub fn through_resources(
-        mut self,
-        input: crate::types::ThroughResourcesStatementRequest,
-    ) -> Self {
+    pub fn through_resources(mut self, input: crate::types::ThroughResourcesStatementRequest) -> Self {
         let mut v = self.through_resources.unwrap_or_default();
         v.push(input);
         self.through_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>The through resources.</p>
-    pub fn set_through_resources(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>,
-        >,
-    ) -> Self {
+    pub fn set_through_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>) -> Self {
         self.through_resources = input;
         self
     }
     /// <p>The through resources.</p>
-    pub fn get_through_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>
-    {
+    pub fn get_through_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>> {
         &self.through_resources
     }
     /// Consumes the builder and constructs a [`AccessScopePathRequest`](crate::types::AccessScopePathRequest).

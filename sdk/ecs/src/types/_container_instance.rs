@@ -153,9 +153,7 @@ impl ContainerInstance {
         self.tags.as_deref()
     }
     /// <p>An object representing the health status of the container instance.</p>
-    pub fn health_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContainerInstanceHealthStatus> {
+    pub fn health_status(&self) -> ::std::option::Option<&crate::types::ContainerInstanceHealthStatus> {
         self.health_status.as_ref()
     }
 }
@@ -168,9 +166,7 @@ impl ContainerInstance {
 
 /// A builder for [`ContainerInstance`](crate::types::ContainerInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerInstanceBuilder {
     pub(crate) container_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
@@ -193,18 +189,12 @@ pub struct ContainerInstanceBuilder {
 }
 impl ContainerInstanceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn container_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn set_container_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_instance_arn = input;
         self
     }
@@ -213,18 +203,12 @@ impl ContainerInstanceBuilder {
         &self.container_instance_arn
     }
     /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For external instances, this value is the Amazon Web Services Systems Manager managed instance ID.</p>
-    pub fn ec2_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For external instances, this value is the Amazon Web Services Systems Manager managed instance ID.</p>
-    pub fn set_ec2_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_instance_id = input;
         self
     }
@@ -233,18 +217,12 @@ impl ContainerInstanceBuilder {
         &self.ec2_instance_id
     }
     /// <p>The capacity provider that's associated with the container instance.</p>
-    pub fn capacity_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The capacity provider that's associated with the container instance.</p>
-    pub fn set_capacity_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_provider_name = input;
         self
     }
@@ -272,10 +250,7 @@ impl ContainerInstanceBuilder {
         self
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
-    pub fn set_version_info(
-        mut self,
-        input: ::std::option::Option<crate::types::VersionInfo>,
-    ) -> Self {
+    pub fn set_version_info(mut self, input: ::std::option::Option<crate::types::VersionInfo>) -> Self {
         self.version_info = input;
         self
     }
@@ -295,17 +270,12 @@ impl ContainerInstanceBuilder {
         self
     }
     /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available for new tasks.</p>
-    pub fn set_remaining_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_remaining_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.remaining_resources = input;
         self
     }
     /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available for new tasks.</p>
-    pub fn get_remaining_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_remaining_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.remaining_resources
     }
     /// Appends an item to `registered_resources`.
@@ -320,17 +290,12 @@ impl ContainerInstanceBuilder {
         self
     }
     /// <p>For CPU and memory resource types, this parameter describes the amount of each resource that was available on the container instance when the container agent registered it with Amazon ECS. This value represents the total amount of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.</p>
-    pub fn set_registered_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_registered_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.registered_resources = input;
         self
     }
     /// <p>For CPU and memory resource types, this parameter describes the amount of each resource that was available on the container instance when the container agent registered it with Amazon ECS. This value represents the total amount of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.</p>
-    pub fn get_registered_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_registered_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.registered_resources
     }
     /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
@@ -354,18 +319,12 @@ impl ContainerInstanceBuilder {
         &self.status
     }
     /// <p>The reason that the container instance reached its current status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that the container instance reached its current status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -421,17 +380,12 @@ impl ContainerInstanceBuilder {
         self
     }
     /// <p>The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.</p>
-    pub fn set_agent_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentUpdateStatus>,
-    ) -> Self {
+    pub fn set_agent_update_status(mut self, input: ::std::option::Option<crate::types::AgentUpdateStatus>) -> Self {
         self.agent_update_status = input;
         self
     }
     /// <p>The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.</p>
-    pub fn get_agent_update_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AgentUpdateStatus> {
+    pub fn get_agent_update_status(&self) -> &::std::option::Option<crate::types::AgentUpdateStatus> {
         &self.agent_update_status
     }
     /// Appends an item to `attributes`.
@@ -446,17 +400,12 @@ impl ContainerInstanceBuilder {
         self
     }
     /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// <p>The Unix timestamp for the time when the container instance was registered.</p>
@@ -465,10 +414,7 @@ impl ContainerInstanceBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the container instance was registered.</p>
-    pub fn set_registered_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_registered_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.registered_at = input;
         self
     }
@@ -488,17 +434,12 @@ impl ContainerInstanceBuilder {
         self
     }
     /// <p>The resources attached to a container instance, such as an elastic network interface.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>) -> Self {
         self.attachments = input;
         self
     }
     /// <p>The resources attached to a container instance, such as an elastic network interface.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
         &self.attachments
     }
     /// Appends an item to `tags`.
@@ -533,10 +474,7 @@ impl ContainerInstanceBuilder {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -560,17 +498,12 @@ impl ContainerInstanceBuilder {
         self
     }
     /// <p>An object representing the health status of the container instance.</p>
-    pub fn set_health_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerInstanceHealthStatus>,
-    ) -> Self {
+    pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::ContainerInstanceHealthStatus>) -> Self {
         self.health_status = input;
         self
     }
     /// <p>An object representing the health status of the container instance.</p>
-    pub fn get_health_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerInstanceHealthStatus> {
+    pub fn get_health_status(&self) -> &::std::option::Option<crate::types::ContainerInstanceHealthStatus> {
         &self.health_status
     }
     /// Consumes the builder and constructs a [`ContainerInstance`](crate::types::ContainerInstance).

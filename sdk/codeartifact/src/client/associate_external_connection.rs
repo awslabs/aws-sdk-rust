@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateExternalConnectionOutput`](crate::operation::associate_external_connection::AssociateExternalConnectionOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::operation::associate_external_connection::AssociateExternalConnectionOutput::repository): <p> Information about the connected repository after processing the request. </p>
     /// - On failure, responds with [`SdkError<AssociateExternalConnectionError>`](crate::operation::associate_external_connection::AssociateExternalConnectionError)
-    pub fn associate_external_connection(&self) -> crate::operation::associate_external_connection::builders::AssociateExternalConnectionFluentBuilder{
+    pub fn associate_external_connection(
+        &self,
+    ) -> crate::operation::associate_external_connection::builders::AssociateExternalConnectionFluentBuilder {
         crate::operation::associate_external_connection::builders::AssociateExternalConnectionFluentBuilder::new(self.handle.clone())
     }
 }

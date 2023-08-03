@@ -63,9 +63,7 @@ impl BadRequestException {
 
 /// A builder for [`BadRequestException`](crate::types::error::BadRequestException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BadRequestExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::BadRequestReason>,
@@ -93,10 +91,7 @@ impl BadRequestExceptionBuilder {
         self
     }
     /// <p>Provides context for the cause of the bad request. The only supported value is <code>CODE_ERROR</code>.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::BadRequestReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::BadRequestReason>) -> Self {
         self.reason = input;
         self
     }
@@ -110,10 +105,7 @@ impl BadRequestExceptionBuilder {
         self
     }
     /// <p>Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>, the detail will contain a list of code errors.</p>
-    pub fn set_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::BadRequestDetail>,
-    ) -> Self {
+    pub fn set_detail(mut self, input: ::std::option::Option<crate::types::BadRequestDetail>) -> Self {
         self.detail = input;
         self
     }
@@ -128,10 +120,7 @@ impl BadRequestExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

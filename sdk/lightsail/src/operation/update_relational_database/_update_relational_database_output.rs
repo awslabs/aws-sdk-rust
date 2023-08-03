@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateRelationalDatabaseOutput {
 }
 impl UpdateRelationalDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseOutput`](crate::operation::update_relational_database::UpdateRelationalDatabaseOutput).
-    pub fn builder(
-    ) -> crate::operation::update_relational_database::builders::UpdateRelationalDatabaseOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_relational_database::builders::UpdateRelationalDatabaseOutputBuilder {
         crate::operation::update_relational_database::builders::UpdateRelationalDatabaseOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRelationalDatabaseOutput`](crate::operation::update_relational_database::UpdateRelationalDatabaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRelationalDatabaseOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl UpdateRelationalDatabaseOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
         &self.operations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +64,7 @@ impl UpdateRelationalDatabaseOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRelationalDatabaseOutput`](crate::operation::update_relational_database::UpdateRelationalDatabaseOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_relational_database::UpdateRelationalDatabaseOutput {
+    pub fn build(self) -> crate::operation::update_relational_database::UpdateRelationalDatabaseOutput {
         crate::operation::update_relational_database::UpdateRelationalDatabaseOutput {
             operations: self.operations,
             _request_id: self._request_id,

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_instance::CreateInstanceOutput::id): <p>The identifier for the instance.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_instance::CreateInstanceOutput::arn): <p>The Amazon Resource Name (ARN) of the instance.</p>
     /// - On failure, responds with [`SdkError<CreateInstanceError>`](crate::operation::create_instance::CreateInstanceError)
-    pub fn create_instance(
-        &self,
-    ) -> crate::operation::create_instance::builders::CreateInstanceFluentBuilder {
-        crate::operation::create_instance::builders::CreateInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_instance(&self) -> crate::operation::create_instance::builders::CreateInstanceFluentBuilder {
+        crate::operation::create_instance::builders::CreateInstanceFluentBuilder::new(self.handle.clone())
     }
 }

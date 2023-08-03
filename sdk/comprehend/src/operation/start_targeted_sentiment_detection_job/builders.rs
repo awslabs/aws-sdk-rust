@@ -5,16 +5,16 @@ pub use crate::operation::start_targeted_sentiment_detection_job::_start_targete
 
 impl StartTargetedSentimentDetectionJobInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.start_targeted_sentiment_detection_job();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl StartTargetedSentimentDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTargetedSentimentDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobInputBuilder,
+    inner: crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobInputBuilder,
 }
 impl StartTargetedSentimentDetectionJobFluentBuilder {
     /// Creates a new `StartTargetedSentimentDetectionJob`.
@@ -37,15 +37,20 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
         }
     }
     /// Access the StartTargetedSentimentDetectionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJob,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJob,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
@@ -100,10 +115,7 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
         self
     }
     /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -117,10 +129,7 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
         self
     }
     /// <p>Specifies where to send the output files. </p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -129,18 +138,12 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
         self.inner.get_output_data_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -168,10 +171,7 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -180,18 +180,12 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
         self.inner.get_language_code()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -204,10 +198,7 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_kms_key_id(input.into());
         self
     }
@@ -216,10 +207,7 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_kms_key_id(input);
         self
     }
@@ -255,10 +243,7 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
         self
     }
     /// <p>Tags to associate with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

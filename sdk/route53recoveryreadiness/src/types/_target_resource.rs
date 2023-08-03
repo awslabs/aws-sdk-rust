@@ -30,9 +30,7 @@ impl TargetResource {
 
 /// A builder for [`TargetResource`](crate::types::TargetResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetResourceBuilder {
     pub(crate) nlb_resource: ::std::option::Option<crate::types::NlbResource>,
     pub(crate) r53_resource: ::std::option::Option<crate::types::R53ResourceRecord>,
@@ -44,10 +42,7 @@ impl TargetResourceBuilder {
         self
     }
     /// <p>The Network Load Balancer Resource.</p>
-    pub fn set_nlb_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::NlbResource>,
-    ) -> Self {
+    pub fn set_nlb_resource(mut self, input: ::std::option::Option<crate::types::NlbResource>) -> Self {
         self.nlb_resource = input;
         self
     }
@@ -61,10 +56,7 @@ impl TargetResourceBuilder {
         self
     }
     /// <p>The Route 53 resource.</p>
-    pub fn set_r53_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::R53ResourceRecord>,
-    ) -> Self {
+    pub fn set_r53_resource(mut self, input: ::std::option::Option<crate::types::R53ResourceRecord>) -> Self {
         self.r53_resource = input;
         self
     }

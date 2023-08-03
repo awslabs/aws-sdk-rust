@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConnectClientAddInOutput {
 }
 impl DeleteConnectClientAddInOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectClientAddInOutput`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput).
-    pub fn builder() -> crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInOutputBuilder{
+    pub fn builder() -> crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInOutputBuilder {
         crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectClientAddInOutput`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectClientAddInOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteConnectClientAddInOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConnectClientAddInOutput`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput {
+    pub fn build(self) -> crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput {
         crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput {
             _request_id: self._request_id,
         }

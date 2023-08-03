@@ -29,9 +29,7 @@ impl ListPullRequestsInput {
         self.author_arn.as_deref()
     }
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
-    pub fn pull_request_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PullRequestStatusEnum> {
+    pub fn pull_request_status(&self) -> ::std::option::Option<&crate::types::PullRequestStatusEnum> {
         self.pull_request_status.as_ref()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
@@ -45,17 +43,14 @@ impl ListPullRequestsInput {
 }
 impl ListPullRequestsInput {
     /// Creates a new builder-style object to manufacture [`ListPullRequestsInput`](crate::operation::list_pull_requests::ListPullRequestsInput).
-    pub fn builder() -> crate::operation::list_pull_requests::builders::ListPullRequestsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pull_requests::builders::ListPullRequestsInputBuilder {
         crate::operation::list_pull_requests::builders::ListPullRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPullRequestsInput`](crate::operation::list_pull_requests::ListPullRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPullRequestsInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) author_arn: ::std::option::Option<::std::string::String>,
@@ -65,18 +60,12 @@ pub struct ListPullRequestsInputBuilder {
 }
 impl ListPullRequestsInputBuilder {
     /// <p>The name of the repository for which you want to list pull requests.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository for which you want to list pull requests.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -104,17 +93,12 @@ impl ListPullRequestsInputBuilder {
         self
     }
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
-    pub fn set_pull_request_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequestStatusEnum>,
-    ) -> Self {
+    pub fn set_pull_request_status(mut self, input: ::std::option::Option<crate::types::PullRequestStatusEnum>) -> Self {
         self.pull_request_status = input;
         self
     }
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
-    pub fn get_pull_request_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
+    pub fn get_pull_request_status(&self) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
         &self.pull_request_status
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
@@ -148,18 +132,13 @@ impl ListPullRequestsInputBuilder {
     /// Consumes the builder and constructs a [`ListPullRequestsInput`](crate::operation::list_pull_requests::ListPullRequestsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pull_requests::ListPullRequestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_pull_requests::ListPullRequestsInput {
-                repository_name: self.repository_name,
-                author_arn: self.author_arn,
-                pull_request_status: self.pull_request_status,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_pull_requests::ListPullRequestsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_pull_requests::ListPullRequestsInput {
+            repository_name: self.repository_name,
+            author_arn: self.author_arn,
+            pull_request_status: self.pull_request_status,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

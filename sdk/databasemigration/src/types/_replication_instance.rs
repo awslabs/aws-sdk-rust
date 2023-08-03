@@ -44,8 +44,7 @@ pub struct ReplicationInstance {
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The VPC security group for the instance.</p>
     #[doc(hidden)]
-    pub vpc_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>The Availability Zone for the instance.</p>
     #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -57,8 +56,7 @@ pub struct ReplicationInstance {
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The pending modification values.</p>
     #[doc(hidden)]
-    pub pending_modified_values:
-        ::std::option::Option<crate::types::ReplicationPendingModifiedValues>,
+    pub pending_modified_values: ::std::option::Option<crate::types::ReplicationPendingModifiedValues>,
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     #[doc(hidden)]
     pub multi_az: bool,
@@ -88,16 +86,13 @@ pub struct ReplicationInstance {
     pub replication_instance_private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>One or more public IP addresses for the replication instance.</p>
     #[doc(hidden)]
-    pub replication_instance_public_ip_addresses:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_instance_public_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more private IP addresses for the replication instance.</p>
     #[doc(hidden)]
-    pub replication_instance_private_ip_addresses:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_instance_private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more IPv6 addresses for the replication instance.</p>
     #[doc(hidden)]
-    pub replication_instance_ipv6_addresses:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_instance_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     #[doc(hidden)]
     pub publicly_accessible: bool,
@@ -159,9 +154,7 @@ impl ReplicationInstance {
         self.instance_create_time.as_ref()
     }
     /// <p>The VPC security group for the instance.</p>
-    pub fn vpc_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
+    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
         self.vpc_security_groups.as_deref()
     }
     /// <p>The Availability Zone for the instance.</p>
@@ -169,9 +162,7 @@ impl ReplicationInstance {
         self.availability_zone.as_deref()
     }
     /// <p>The subnet group for the replication instance.</p>
-    pub fn replication_subnet_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationSubnetGroup> {
+    pub fn replication_subnet_group(&self) -> ::std::option::Option<&crate::types::ReplicationSubnetGroup> {
         self.replication_subnet_group.as_ref()
     }
     /// <p>The maintenance window times for the replication instance. Any pending upgrades to the replication instance are performed during this time.</p>
@@ -179,9 +170,7 @@ impl ReplicationInstance {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The pending modification values.</p>
-    pub fn pending_modified_values(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationPendingModifiedValues> {
+    pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::ReplicationPendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
@@ -219,21 +208,15 @@ impl ReplicationInstance {
         self.replication_instance_private_ip_address.as_deref()
     }
     /// <p>One or more public IP addresses for the replication instance.</p>
-    pub fn replication_instance_public_ip_addresses(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn replication_instance_public_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.replication_instance_public_ip_addresses.as_deref()
     }
     /// <p>One or more private IP addresses for the replication instance.</p>
-    pub fn replication_instance_private_ip_addresses(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn replication_instance_private_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.replication_instance_private_ip_addresses.as_deref()
     }
     /// <p>One or more IPv6 addresses for the replication instance.</p>
-    pub fn replication_instance_ipv6_addresses(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn replication_instance_ipv6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.replication_instance_ipv6_addresses.as_deref()
     }
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
@@ -266,37 +249,28 @@ impl ReplicationInstance {
 
 /// A builder for [`ReplicationInstance`](crate::types::ReplicationInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationInstanceBuilder {
     pub(crate) replication_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) replication_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) replication_instance_status: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) vpc_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_subnet_group:
-        ::std::option::Option<crate::types::ReplicationSubnetGroup>,
+    pub(crate) replication_subnet_group: ::std::option::Option<crate::types::ReplicationSubnetGroup>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
-    pub(crate) pending_modified_values:
-        ::std::option::Option<crate::types::ReplicationPendingModifiedValues>,
+    pub(crate) pending_modified_values: ::std::option::Option<crate::types::ReplicationPendingModifiedValues>,
     pub(crate) multi_az: ::std::option::Option<bool>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_instance_public_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_instance_private_ip_address:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) replication_instance_public_ip_addresses:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) replication_instance_private_ip_addresses:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) replication_instance_ipv6_addresses:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_instance_private_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_instance_public_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_instance_private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_instance_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) secondary_availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) free_until: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -312,10 +286,7 @@ impl ReplicationInstanceBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code> </p>
-    pub fn replication_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -327,10 +298,7 @@ impl ReplicationInstanceBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code> </p>
-    pub fn set_replication_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_identifier = input;
         self
     }
@@ -342,26 +310,18 @@ impl ReplicationInstanceBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code> </p>
-    pub fn get_replication_instance_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_identifier
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. It is a required parameter, although a default value is pre-selected in the DMS console.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
-    pub fn replication_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. It is a required parameter, although a default value is pre-selected in the DMS console.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
-    pub fn set_replication_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_class = input;
         self
     }
@@ -386,10 +346,7 @@ impl ReplicationInstanceBuilder {
     /// <li> <p> <code>"incompatible-network"</code> </p> </li>
     /// <li> <p> <code>"maintenance"</code> </p> </li>
     /// </ul>
-    pub fn replication_instance_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_status = ::std::option::Option::Some(input.into());
         self
     }
@@ -409,10 +366,7 @@ impl ReplicationInstanceBuilder {
     /// <li> <p> <code>"incompatible-network"</code> </p> </li>
     /// <li> <p> <code>"maintenance"</code> </p> </li>
     /// </ul>
-    pub fn set_replication_instance_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_status = input;
         self
     }
@@ -455,10 +409,7 @@ impl ReplicationInstanceBuilder {
         self
     }
     /// <p>The time the replication instance was created.</p>
-    pub fn set_instance_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_instance_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.instance_create_time = input;
         self
     }
@@ -478,32 +429,21 @@ impl ReplicationInstanceBuilder {
         self
     }
     /// <p>The VPC security group for the instance.</p>
-    pub fn set_vpc_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
-    ) -> Self {
+    pub fn set_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>) -> Self {
         self.vpc_security_groups = input;
         self
     }
     /// <p>The VPC security group for the instance.</p>
-    pub fn get_vpc_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
+    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
         &self.vpc_security_groups
     }
     /// <p>The Availability Zone for the instance.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the instance.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -517,61 +457,40 @@ impl ReplicationInstanceBuilder {
         self
     }
     /// <p>The subnet group for the replication instance.</p>
-    pub fn set_replication_subnet_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationSubnetGroup>,
-    ) -> Self {
+    pub fn set_replication_subnet_group(mut self, input: ::std::option::Option<crate::types::ReplicationSubnetGroup>) -> Self {
         self.replication_subnet_group = input;
         self
     }
     /// <p>The subnet group for the replication instance.</p>
-    pub fn get_replication_subnet_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationSubnetGroup> {
+    pub fn get_replication_subnet_group(&self) -> &::std::option::Option<crate::types::ReplicationSubnetGroup> {
         &self.replication_subnet_group
     }
     /// <p>The maintenance window times for the replication instance. Any pending upgrades to the replication instance are performed during this time.</p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maintenance window times for the replication instance. Any pending upgrades to the replication instance are performed during this time.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
     /// <p>The maintenance window times for the replication instance. Any pending upgrades to the replication instance are performed during this time.</p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>The pending modification values.</p>
-    pub fn pending_modified_values(
-        mut self,
-        input: crate::types::ReplicationPendingModifiedValues,
-    ) -> Self {
+    pub fn pending_modified_values(mut self, input: crate::types::ReplicationPendingModifiedValues) -> Self {
         self.pending_modified_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>The pending modification values.</p>
-    pub fn set_pending_modified_values(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationPendingModifiedValues>,
-    ) -> Self {
+    pub fn set_pending_modified_values(mut self, input: ::std::option::Option<crate::types::ReplicationPendingModifiedValues>) -> Self {
         self.pending_modified_values = input;
         self
     }
     /// <p>The pending modification values.</p>
-    pub fn get_pending_modified_values(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationPendingModifiedValues> {
+    pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::ReplicationPendingModifiedValues> {
         &self.pending_modified_values
     }
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
@@ -591,20 +510,14 @@ impl ReplicationInstanceBuilder {
     /// <p>The engine version number of the replication instance.</p>
     /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The engine version number of the replication instance.</p>
     /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -649,18 +562,12 @@ impl ReplicationInstanceBuilder {
         &self.kms_key_id
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_arn = input;
         self
     }
@@ -670,52 +577,36 @@ impl ReplicationInstanceBuilder {
     }
     /// <p>The public IP address of the replication instance.</p>
     #[deprecated]
-    pub fn replication_instance_public_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_public_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_public_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public IP address of the replication instance.</p>
     #[deprecated]
-    pub fn set_replication_instance_public_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_public_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_public_ip_address = input;
         self
     }
     /// <p>The public IP address of the replication instance.</p>
     #[deprecated]
-    pub fn get_replication_instance_public_ip_address(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_instance_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_public_ip_address
     }
     /// <p>The private IP address of the replication instance.</p>
     #[deprecated]
-    pub fn replication_instance_private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IP address of the replication instance.</p>
     #[deprecated]
-    pub fn set_replication_instance_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_private_ip_address = input;
         self
     }
     /// <p>The private IP address of the replication instance.</p>
     #[deprecated]
-    pub fn get_replication_instance_private_ip_address(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_instance_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_private_ip_address
     }
     /// Appends an item to `replication_instance_public_ip_addresses`.
@@ -723,29 +614,19 @@ impl ReplicationInstanceBuilder {
     /// To override the contents of this collection use [`set_replication_instance_public_ip_addresses`](Self::set_replication_instance_public_ip_addresses).
     ///
     /// <p>One or more public IP addresses for the replication instance.</p>
-    pub fn replication_instance_public_ip_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .replication_instance_public_ip_addresses
-            .unwrap_or_default();
+    pub fn replication_instance_public_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replication_instance_public_ip_addresses.unwrap_or_default();
         v.push(input.into());
         self.replication_instance_public_ip_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more public IP addresses for the replication instance.</p>
-    pub fn set_replication_instance_public_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_instance_public_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_instance_public_ip_addresses = input;
         self
     }
     /// <p>One or more public IP addresses for the replication instance.</p>
-    pub fn get_replication_instance_public_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_instance_public_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_instance_public_ip_addresses
     }
     /// Appends an item to `replication_instance_private_ip_addresses`.
@@ -753,29 +634,19 @@ impl ReplicationInstanceBuilder {
     /// To override the contents of this collection use [`set_replication_instance_private_ip_addresses`](Self::set_replication_instance_private_ip_addresses).
     ///
     /// <p>One or more private IP addresses for the replication instance.</p>
-    pub fn replication_instance_private_ip_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .replication_instance_private_ip_addresses
-            .unwrap_or_default();
+    pub fn replication_instance_private_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replication_instance_private_ip_addresses.unwrap_or_default();
         v.push(input.into());
         self.replication_instance_private_ip_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more private IP addresses for the replication instance.</p>
-    pub fn set_replication_instance_private_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_instance_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_instance_private_ip_addresses = input;
         self
     }
     /// <p>One or more private IP addresses for the replication instance.</p>
-    pub fn get_replication_instance_private_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_instance_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_instance_private_ip_addresses
     }
     /// Appends an item to `replication_instance_ipv6_addresses`.
@@ -783,27 +654,19 @@ impl ReplicationInstanceBuilder {
     /// To override the contents of this collection use [`set_replication_instance_ipv6_addresses`](Self::set_replication_instance_ipv6_addresses).
     ///
     /// <p>One or more IPv6 addresses for the replication instance.</p>
-    pub fn replication_instance_ipv6_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_instance_ipv6_addresses.unwrap_or_default();
         v.push(input.into());
         self.replication_instance_ipv6_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more IPv6 addresses for the replication instance.</p>
-    pub fn set_replication_instance_ipv6_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_instance_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_instance_ipv6_addresses = input;
         self
     }
     /// <p>One or more IPv6 addresses for the replication instance.</p>
-    pub fn get_replication_instance_ipv6_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_instance_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_instance_ipv6_addresses
     }
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
@@ -821,18 +684,12 @@ impl ReplicationInstanceBuilder {
         &self.publicly_accessible
     }
     /// <p>The Availability Zone of the standby replication instance in a Multi-AZ deployment.</p>
-    pub fn secondary_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secondary_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secondary_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the standby replication instance in a Multi-AZ deployment.</p>
-    pub fn set_secondary_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secondary_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secondary_availability_zone = input;
         self
     }
@@ -846,10 +703,7 @@ impl ReplicationInstanceBuilder {
         self
     }
     /// <p> The expiration date of the free replication instance that is part of the Free DMS program. </p>
-    pub fn set_free_until(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_free_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.free_until = input;
         self
     }
@@ -858,18 +712,12 @@ impl ReplicationInstanceBuilder {
         &self.free_until
     }
     /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
-    pub fn dns_name_servers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dns_name_servers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_name_servers = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
-    pub fn set_dns_name_servers(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dns_name_servers(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name_servers = input;
         self
     }
@@ -912,8 +760,7 @@ impl ReplicationInstanceBuilder {
             replication_instance_public_ip_address: self.replication_instance_public_ip_address,
             replication_instance_private_ip_address: self.replication_instance_private_ip_address,
             replication_instance_public_ip_addresses: self.replication_instance_public_ip_addresses,
-            replication_instance_private_ip_addresses: self
-                .replication_instance_private_ip_addresses,
+            replication_instance_private_ip_addresses: self.replication_instance_private_ip_addresses,
             replication_instance_ipv6_addresses: self.replication_instance_ipv6_addresses,
             publicly_accessible: self.publicly_accessible.unwrap_or_default(),
             secondary_availability_zone: self.secondary_availability_zone,

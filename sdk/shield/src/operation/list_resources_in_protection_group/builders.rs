@@ -5,16 +5,16 @@ pub use crate::operation::list_resources_in_protection_group::_list_resources_in
 
 impl ListResourcesInProtectionGroupInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_resources_in_protection_group();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListResourcesInProtectionGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourcesInProtectionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupInputBuilder,
+    inner: crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupInputBuilder,
 }
 impl ListResourcesInProtectionGroupFluentBuilder {
     /// Creates a new `ListResourcesInProtectionGroup`.
@@ -37,15 +37,20 @@ impl ListResourcesInProtectionGroupFluentBuilder {
         }
     }
     /// Access the ListResourcesInProtectionGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroup,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListResourcesInProtectionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl ListResourcesInProtectionGroupFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroup,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resources_in_protection_group::paginator::ListResourcesInProtectionGroupPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_resources_in_protection_group::paginator::ListResourcesInProtectionGroupPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_resources_in_protection_group::paginator::ListResourcesInProtectionGroupPaginator {
         crate::operation::list_resources_in_protection_group::paginator::ListResourcesInProtectionGroupPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protection_group_id(input.into());
         self
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn set_protection_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protection_group_id(input);
         self
     }

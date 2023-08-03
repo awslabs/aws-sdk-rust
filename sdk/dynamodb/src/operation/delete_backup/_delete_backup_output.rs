@@ -28,9 +28,7 @@ impl DeleteBackupOutput {
 
 /// A builder for [`DeleteBackupOutput`](crate::operation::delete_backup::DeleteBackupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackupOutputBuilder {
     pub(crate) backup_description: ::std::option::Option<crate::types::BackupDescription>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DeleteBackupOutputBuilder {
         self
     }
     /// <p>Contains the description of the backup created for the table.</p>
-    pub fn set_backup_description(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupDescription>,
-    ) -> Self {
+    pub fn set_backup_description(mut self, input: ::std::option::Option<crate::types::BackupDescription>) -> Self {
         self.backup_description = input;
         self
     }
     /// <p>Contains the description of the backup created for the table.</p>
-    pub fn get_backup_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackupDescription> {
+    pub fn get_backup_description(&self) -> &::std::option::Option<crate::types::BackupDescription> {
         &self.backup_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

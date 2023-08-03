@@ -44,9 +44,7 @@ impl PathFilter {
 
 /// A builder for [`PathFilter`](crate::types::PathFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PathFilterBuilder {
     pub(crate) source_address: ::std::option::Option<::std::string::String>,
     pub(crate) source_port_range: ::std::option::Option<crate::types::FilterPortRange>,
@@ -55,18 +53,12 @@ pub struct PathFilterBuilder {
 }
 impl PathFilterBuilder {
     /// <p>The source IPv4 address.</p>
-    pub fn source_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source IPv4 address.</p>
-    pub fn set_source_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_address = input;
         self
     }
@@ -80,10 +72,7 @@ impl PathFilterBuilder {
         self
     }
     /// <p>The source port range.</p>
-    pub fn set_source_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterPortRange>,
-    ) -> Self {
+    pub fn set_source_port_range(mut self, input: ::std::option::Option<crate::types::FilterPortRange>) -> Self {
         self.source_port_range = input;
         self
     }
@@ -92,18 +81,12 @@ impl PathFilterBuilder {
         &self.source_port_range
     }
     /// <p>The destination IPv4 address.</p>
-    pub fn destination_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination IPv4 address.</p>
-    pub fn set_destination_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_address = input;
         self
     }
@@ -117,17 +100,12 @@ impl PathFilterBuilder {
         self
     }
     /// <p>The destination port range.</p>
-    pub fn set_destination_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterPortRange>,
-    ) -> Self {
+    pub fn set_destination_port_range(mut self, input: ::std::option::Option<crate::types::FilterPortRange>) -> Self {
         self.destination_port_range = input;
         self
     }
     /// <p>The destination port range.</p>
-    pub fn get_destination_port_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterPortRange> {
+    pub fn get_destination_port_range(&self) -> &::std::option::Option<crate::types::FilterPortRange> {
         &self.destination_port_range
     }
     /// Consumes the builder and constructs a [`PathFilter`](crate::types::PathFilter).

@@ -10,10 +10,7 @@ impl AssociateResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_resource::AssociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource::AssociateResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource::AssociateResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_resource();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl AssociateResourceFluentBuilder {
         }
     }
     /// Access the AssociateResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_resource::builders::AssociateResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_resource::builders::AssociateResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl AssociateResourceFluentBuilder {
             crate::operation::associate_resource::AssociateResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource::AssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource::AssociateResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl AssociateResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl AssociateResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_resource::AssociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource::AssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource::AssociateResourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl AssociateResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_resource::AssociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource::AssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource::AssociateResourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl AssociateResourceFluentBuilder {
             crate::operation::associate_resource::AssociateResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource::AssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource::AssociateResourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_identifier(input.into());
         self
     }
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn set_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_identifier(input);
         self
     }

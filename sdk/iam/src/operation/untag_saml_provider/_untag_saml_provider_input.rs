@@ -24,17 +24,14 @@ impl UntagSamlProviderInput {
 }
 impl UntagSamlProviderInput {
     /// Creates a new builder-style object to manufacture [`UntagSamlProviderInput`](crate::operation::untag_saml_provider::UntagSamlProviderInput).
-    pub fn builder(
-    ) -> crate::operation::untag_saml_provider::builders::UntagSamlProviderInputBuilder {
+    pub fn builder() -> crate::operation::untag_saml_provider::builders::UntagSamlProviderInputBuilder {
         crate::operation::untag_saml_provider::builders::UntagSamlProviderInputBuilder::default()
     }
 }
 
 /// A builder for [`UntagSamlProviderInput`](crate::operation::untag_saml_provider::UntagSamlProviderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagSamlProviderInputBuilder {
     pub(crate) saml_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -42,19 +39,13 @@ pub struct UntagSamlProviderInputBuilder {
 impl UntagSamlProviderInputBuilder {
     /// <p>The ARN of the SAML identity provider in IAM from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn saml_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SAML identity provider in IAM from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_saml_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.saml_provider_arn = input;
         self
     }
@@ -75,10 +66,7 @@ impl UntagSamlProviderInputBuilder {
         self
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified SAML identity provider.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -89,15 +77,10 @@ impl UntagSamlProviderInputBuilder {
     /// Consumes the builder and constructs a [`UntagSamlProviderInput`](crate::operation::untag_saml_provider::UntagSamlProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_saml_provider::UntagSamlProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::untag_saml_provider::UntagSamlProviderInput {
-                saml_provider_arn: self.saml_provider_arn,
-                tag_keys: self.tag_keys,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::untag_saml_provider::UntagSamlProviderInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::untag_saml_provider::UntagSamlProviderInput {
+            saml_provider_arn: self.saml_provider_arn,
+            tag_keys: self.tag_keys,
+        })
     }
 }

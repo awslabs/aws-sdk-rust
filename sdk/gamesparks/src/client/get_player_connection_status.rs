@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetPlayerConnectionStatusOutput`](crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput) with field(s):
     ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput::connections): <p>The list of connection ids, one for each connection in use by the player.</p>
     /// - On failure, responds with [`SdkError<GetPlayerConnectionStatusError>`](crate::operation::get_player_connection_status::GetPlayerConnectionStatusError)
-    pub fn get_player_connection_status(&self) -> crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusFluentBuilder{
+    pub fn get_player_connection_status(&self) -> crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusFluentBuilder {
         crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl UpdateApnsVoipSandboxChannelInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApnsVoipSandboxChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_apns_voip_sandbox_channel::builders::UpdateApnsVoipSandboxChannelInputBuilder,
+    inner: crate::operation::update_apns_voip_sandbox_channel::builders::UpdateApnsVoipSandboxChannelInputBuilder,
 }
 impl UpdateApnsVoipSandboxChannelFluentBuilder {
     /// Creates a new `UpdateApnsVoipSandboxChannel`.
@@ -37,7 +37,7 @@ impl UpdateApnsVoipSandboxChannelFluentBuilder {
         }
     }
     /// Access the UpdateApnsVoipSandboxChannel as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_apns_voip_sandbox_channel::builders::UpdateApnsVoipSandboxChannelInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_apns_voip_sandbox_channel::builders::UpdateApnsVoipSandboxChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateApnsVoipSandboxChannelFluentBuilder {
             crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateApnsVoipSandboxChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateApnsVoipSandboxChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateApnsVoipSandboxChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError>,
     > {
         self.send_middleware().await
     }
@@ -114,47 +105,31 @@ impl UpdateApnsVoipSandboxChannelFluentBuilder {
             crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn apns_voip_sandbox_channel_request(
-        mut self,
-        input: crate::types::ApnsVoipSandboxChannelRequest,
-    ) -> Self {
+    pub fn apns_voip_sandbox_channel_request(mut self, input: crate::types::ApnsVoipSandboxChannelRequest) -> Self {
         self.inner = self.inner.apns_voip_sandbox_channel_request(input);
         self
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn set_apns_voip_sandbox_channel_request(
-        mut self,
-        input: ::std::option::Option<crate::types::ApnsVoipSandboxChannelRequest>,
-    ) -> Self {
+    pub fn set_apns_voip_sandbox_channel_request(mut self, input: ::std::option::Option<crate::types::ApnsVoipSandboxChannelRequest>) -> Self {
         self.inner = self.inner.set_apns_voip_sandbox_channel_request(input);
         self
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn get_apns_voip_sandbox_channel_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApnsVoipSandboxChannelRequest> {
+    pub fn get_apns_voip_sandbox_channel_request(&self) -> &::std::option::Option<crate::types::ApnsVoipSandboxChannelRequest> {
         self.inner.get_apns_voip_sandbox_channel_request()
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

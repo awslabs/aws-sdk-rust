@@ -35,9 +35,7 @@ impl ListTablesOutput {
 
 /// A builder for [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTablesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) tables: ::std::option::Option<::std::vec::Vec<crate::types::TableSummary>>,
@@ -70,17 +68,12 @@ impl ListTablesOutputBuilder {
         self
     }
     /// <p>A list of tables.</p>
-    pub fn set_tables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableSummary>>,
-    ) -> Self {
+    pub fn set_tables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableSummary>>) -> Self {
         self.tables = input;
         self
     }
     /// <p>A list of tables.</p>
-    pub fn get_tables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableSummary>> {
+    pub fn get_tables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableSummary>> {
         &self.tables
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -37,9 +37,7 @@ impl UpdateGlobalSettingsFluentBuilder {
         }
     }
     /// Access the UpdateGlobalSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateGlobalSettingsFluentBuilder {
             crate::operation::update_global_settings::UpdateGlobalSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateGlobalSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateGlobalSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_settings::UpdateGlobalSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateGlobalSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_settings::UpdateGlobalSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,54 +105,36 @@ impl UpdateGlobalSettingsFluentBuilder {
             crate::operation::update_global_settings::UpdateGlobalSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The status of organization sharing settings.</p>
-    pub fn organization_sharing_status(
-        mut self,
-        input: crate::types::OrganizationSharingStatus,
-    ) -> Self {
+    pub fn organization_sharing_status(mut self, input: crate::types::OrganizationSharingStatus) -> Self {
         self.inner = self.inner.organization_sharing_status(input);
         self
     }
     /// <p>The status of organization sharing settings.</p>
-    pub fn set_organization_sharing_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationSharingStatus>,
-    ) -> Self {
+    pub fn set_organization_sharing_status(mut self, input: ::std::option::Option<crate::types::OrganizationSharingStatus>) -> Self {
         self.inner = self.inner.set_organization_sharing_status(input);
         self
     }
     /// <p>The status of organization sharing settings.</p>
-    pub fn get_organization_sharing_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationSharingStatus> {
+    pub fn get_organization_sharing_status(&self) -> &::std::option::Option<crate::types::OrganizationSharingStatus> {
         self.inner.get_organization_sharing_status()
     }
     /// <p>The status of discovery support settings.</p>
-    pub fn discovery_integration_status(
-        mut self,
-        input: crate::types::DiscoveryIntegrationStatus,
-    ) -> Self {
+    pub fn discovery_integration_status(mut self, input: crate::types::DiscoveryIntegrationStatus) -> Self {
         self.inner = self.inner.discovery_integration_status(input);
         self
     }
     /// <p>The status of discovery support settings.</p>
-    pub fn set_discovery_integration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,
-    ) -> Self {
+    pub fn set_discovery_integration_status(mut self, input: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>) -> Self {
         self.inner = self.inner.set_discovery_integration_status(input);
         self
     }
     /// <p>The status of discovery support settings.</p>
-    pub fn get_discovery_integration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DiscoveryIntegrationStatus> {
+    pub fn get_discovery_integration_status(&self) -> &::std::option::Option<crate::types::DiscoveryIntegrationStatus> {
         self.inner.get_discovery_integration_status()
     }
 }

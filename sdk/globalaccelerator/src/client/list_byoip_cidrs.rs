@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`byoip_cidrs(Option<Vec<ByoipCidr>>)`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput::byoip_cidrs): <p>Information about your address ranges.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListByoipCidrsError>`](crate::operation::list_byoip_cidrs::ListByoipCidrsError)
-    pub fn list_byoip_cidrs(
-        &self,
-    ) -> crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder {
-        crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_byoip_cidrs(&self) -> crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder {
+        crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::new(self.handle.clone())
     }
 }

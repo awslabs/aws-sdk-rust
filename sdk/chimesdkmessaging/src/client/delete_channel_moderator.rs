@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`chime_bearer(impl ::std::convert::Into<String>)`](crate::operation::delete_channel_moderator::builders::DeleteChannelModeratorFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::delete_channel_moderator::builders::DeleteChannelModeratorFluentBuilder::set_chime_bearer): <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     /// - On success, responds with [`DeleteChannelModeratorOutput`](crate::operation::delete_channel_moderator::DeleteChannelModeratorOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelModeratorError>`](crate::operation::delete_channel_moderator::DeleteChannelModeratorError)
-    pub fn delete_channel_moderator(
-        &self,
-    ) -> crate::operation::delete_channel_moderator::builders::DeleteChannelModeratorFluentBuilder
-    {
+    pub fn delete_channel_moderator(&self) -> crate::operation::delete_channel_moderator::builders::DeleteChannelModeratorFluentBuilder {
         crate::operation::delete_channel_moderator::builders::DeleteChannelModeratorFluentBuilder::new(self.handle.clone())
     }
 }

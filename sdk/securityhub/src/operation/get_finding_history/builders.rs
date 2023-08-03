@@ -10,10 +10,7 @@ impl GetFindingHistoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_finding_history::GetFindingHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_history::GetFindingHistoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_history::GetFindingHistoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_finding_history();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetFindingHistoryFluentBuilder {
         }
     }
     /// Access the GetFindingHistory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_finding_history::builders::GetFindingHistoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_finding_history::builders::GetFindingHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetFindingHistoryFluentBuilder {
             crate::operation::get_finding_history::GetFindingHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_history::GetFindingHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_history::GetFindingHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetFindingHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetFindingHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_finding_history::GetFindingHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_history::GetFindingHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_history::GetFindingHistoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetFindingHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_finding_history::GetFindingHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_history::GetFindingHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_history::GetFindingHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetFindingHistoryFluentBuilder {
             crate::operation::get_finding_history::GetFindingHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_history::GetFindingHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_history::GetFindingHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_finding_history::paginator::GetFindingHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_finding_history::paginator::GetFindingHistoryPaginator {
-        crate::operation::get_finding_history::paginator::GetFindingHistoryPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_finding_history::paginator::GetFindingHistoryPaginator {
+        crate::operation::get_finding_history::paginator::GetFindingHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>Identifies which finding to get the finding history for.</p>
     pub fn finding_identifier(mut self, input: crate::types::AwsSecurityFindingIdentifier) -> Self {
@@ -139,17 +118,12 @@ impl GetFindingHistoryFluentBuilder {
         self
     }
     /// <p>Identifies which finding to get the finding history for.</p>
-    pub fn set_finding_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
-    ) -> Self {
+    pub fn set_finding_identifier(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>) -> Self {
         self.inner = self.inner.set_finding_identifier(input);
         self
     }
     /// <p>Identifies which finding to get the finding history for.</p>
-    pub fn get_finding_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsSecurityFindingIdentifier> {
+    pub fn get_finding_identifier(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingIdentifier> {
         self.inner.get_finding_identifier()
     }
     /// <p> An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
@@ -160,10 +134,7 @@ impl GetFindingHistoryFluentBuilder {
     }
     /// <p> An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     /// <p>If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding history for the specified time period. If you provide a value for <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns finding history from the <code>StartTime</code> to the time at which the API is called. If you provide a value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub returns finding history from the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a> timestamp of the finding to the <code>EndTime</code>. If you provide neither <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding history from the CreatedAt timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is limited to 100 results, and the maximum time period is limited to 90 days. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -180,10 +151,7 @@ impl GetFindingHistoryFluentBuilder {
     }
     /// <p> An ISO 8601-formatted timestamp that indicates the end time of the requested finding history. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     /// <p>If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding history for the specified time period. If you provide a value for <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns finding history from the <code>StartTime</code> to the time at which the API is called. If you provide a value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub returns finding history from the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a> timestamp of the finding to the <code>EndTime</code>. If you provide neither <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding history from the CreatedAt timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is limited to 100 results, and the maximum time period is limited to 90 days.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

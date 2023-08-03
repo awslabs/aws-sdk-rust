@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for RestoreSnapshotTierOutput {
 }
 impl RestoreSnapshotTierOutput {
     /// Creates a new builder-style object to manufacture [`RestoreSnapshotTierOutput`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput).
-    pub fn builder(
-    ) -> crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierOutputBuilder {
-        crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierOutputBuilder {
+        crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreSnapshotTierOutput`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreSnapshotTierOutputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) restore_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -82,10 +78,7 @@ impl RestoreSnapshotTierOutputBuilder {
         self
     }
     /// <p>The date and time when the snapshot restore process started.</p>
-    pub fn set_restore_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_restore_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restore_start_time = input;
         self
     }

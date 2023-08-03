@@ -29,17 +29,14 @@ impl RetryWorkflowStepInput {
 }
 impl RetryWorkflowStepInput {
     /// Creates a new builder-style object to manufacture [`RetryWorkflowStepInput`](crate::operation::retry_workflow_step::RetryWorkflowStepInput).
-    pub fn builder(
-    ) -> crate::operation::retry_workflow_step::builders::RetryWorkflowStepInputBuilder {
+    pub fn builder() -> crate::operation::retry_workflow_step::builders::RetryWorkflowStepInputBuilder {
         crate::operation::retry_workflow_step::builders::RetryWorkflowStepInputBuilder::default()
     }
 }
 
 /// A builder for [`RetryWorkflowStepInput`](crate::operation::retry_workflow_step::RetryWorkflowStepInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetryWorkflowStepInputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_group_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl RetryWorkflowStepInputBuilder {
         &self.workflow_id
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_group_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl RetryWorkflowStepInputBuilder {
     /// Consumes the builder and constructs a [`RetryWorkflowStepInput`](crate::operation::retry_workflow_step::RetryWorkflowStepInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::retry_workflow_step::RetryWorkflowStepInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::retry_workflow_step::RetryWorkflowStepInput {
-                workflow_id: self.workflow_id,
-                step_group_id: self.step_group_id,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::retry_workflow_step::RetryWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::retry_workflow_step::RetryWorkflowStepInput {
+            workflow_id: self.workflow_id,
+            step_group_id: self.step_group_id,
+            id: self.id,
+        })
     }
 }

@@ -12,10 +12,7 @@ pub fn ser_set_user_settings_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_mfa_option_type::ser_mfa_option_type(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_mfa_option_type::ser_mfa_option_type(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

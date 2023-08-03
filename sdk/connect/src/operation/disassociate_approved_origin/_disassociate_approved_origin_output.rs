@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateApprovedOriginOutput {
 }
 impl DisassociateApprovedOriginOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateApprovedOriginOutput`](crate::operation::disassociate_approved_origin::DisassociateApprovedOriginOutput).
-    pub fn builder() -> crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginOutputBuilder {
         crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateApprovedOriginOutput`](crate::operation::disassociate_approved_origin::DisassociateApprovedOriginOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateApprovedOriginOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateApprovedOriginOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateApprovedOriginOutput`](crate::operation::disassociate_approved_origin::DisassociateApprovedOriginOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_approved_origin::DisassociateApprovedOriginOutput {
+    pub fn build(self) -> crate::operation::disassociate_approved_origin::DisassociateApprovedOriginOutput {
         crate::operation::disassociate_approved_origin::DisassociateApprovedOriginOutput {
             _request_id: self._request_id,
         }

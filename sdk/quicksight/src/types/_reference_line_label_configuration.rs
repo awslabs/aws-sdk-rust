@@ -6,12 +6,10 @@
 pub struct ReferenceLineLabelConfiguration {
     /// <p>The value label configuration of the label in a reference line.</p>
     #[doc(hidden)]
-    pub value_label_configuration:
-        ::std::option::Option<crate::types::ReferenceLineValueLabelConfiguration>,
+    pub value_label_configuration: ::std::option::Option<crate::types::ReferenceLineValueLabelConfiguration>,
     /// <p>The custom label configuration of the label in a reference line.</p>
     #[doc(hidden)]
-    pub custom_label_configuration:
-        ::std::option::Option<crate::types::ReferenceLineCustomLabelConfiguration>,
+    pub custom_label_configuration: ::std::option::Option<crate::types::ReferenceLineCustomLabelConfiguration>,
     /// <p>The font configuration of the label in a reference line.</p>
     #[doc(hidden)]
     pub font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
@@ -25,8 +23,7 @@ pub struct ReferenceLineLabelConfiguration {
     /// <li> <p> <code>RIGHT</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub horizontal_position:
-        ::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition>,
+    pub horizontal_position: ::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition>,
     /// <p>The vertical position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>ABOVE</code> </p> </li>
@@ -37,15 +34,11 @@ pub struct ReferenceLineLabelConfiguration {
 }
 impl ReferenceLineLabelConfiguration {
     /// <p>The value label configuration of the label in a reference line.</p>
-    pub fn value_label_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReferenceLineValueLabelConfiguration> {
+    pub fn value_label_configuration(&self) -> ::std::option::Option<&crate::types::ReferenceLineValueLabelConfiguration> {
         self.value_label_configuration.as_ref()
     }
     /// <p>The custom label configuration of the label in a reference line.</p>
-    pub fn custom_label_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReferenceLineCustomLabelConfiguration> {
+    pub fn custom_label_configuration(&self) -> ::std::option::Option<&crate::types::ReferenceLineCustomLabelConfiguration> {
         self.custom_label_configuration.as_ref()
     }
     /// <p>The font configuration of the label in a reference line.</p>
@@ -62,9 +55,7 @@ impl ReferenceLineLabelConfiguration {
     /// <li> <p> <code>CENTER</code> </p> </li>
     /// <li> <p> <code>RIGHT</code> </p> </li>
     /// </ul>
-    pub fn horizontal_position(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReferenceLineLabelHorizontalPosition> {
+    pub fn horizontal_position(&self) -> ::std::option::Option<&crate::types::ReferenceLineLabelHorizontalPosition> {
         self.horizontal_position.as_ref()
     }
     /// <p>The vertical position configuration of the label in a reference line. Choose one of the following options:</p>
@@ -72,9 +63,7 @@ impl ReferenceLineLabelConfiguration {
     /// <li> <p> <code>ABOVE</code> </p> </li>
     /// <li> <p> <code>BELOW</code> </p> </li>
     /// </ul>
-    pub fn vertical_position(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReferenceLineLabelVerticalPosition> {
+    pub fn vertical_position(&self) -> ::std::option::Option<&crate::types::ReferenceLineLabelVerticalPosition> {
         self.vertical_position.as_ref()
     }
 }
@@ -87,64 +76,42 @@ impl ReferenceLineLabelConfiguration {
 
 /// A builder for [`ReferenceLineLabelConfiguration`](crate::types::ReferenceLineLabelConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReferenceLineLabelConfigurationBuilder {
-    pub(crate) value_label_configuration:
-        ::std::option::Option<crate::types::ReferenceLineValueLabelConfiguration>,
-    pub(crate) custom_label_configuration:
-        ::std::option::Option<crate::types::ReferenceLineCustomLabelConfiguration>,
+    pub(crate) value_label_configuration: ::std::option::Option<crate::types::ReferenceLineValueLabelConfiguration>,
+    pub(crate) custom_label_configuration: ::std::option::Option<crate::types::ReferenceLineCustomLabelConfiguration>,
     pub(crate) font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     pub(crate) font_color: ::std::option::Option<::std::string::String>,
-    pub(crate) horizontal_position:
-        ::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition>,
-    pub(crate) vertical_position:
-        ::std::option::Option<crate::types::ReferenceLineLabelVerticalPosition>,
+    pub(crate) horizontal_position: ::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition>,
+    pub(crate) vertical_position: ::std::option::Option<crate::types::ReferenceLineLabelVerticalPosition>,
 }
 impl ReferenceLineLabelConfigurationBuilder {
     /// <p>The value label configuration of the label in a reference line.</p>
-    pub fn value_label_configuration(
-        mut self,
-        input: crate::types::ReferenceLineValueLabelConfiguration,
-    ) -> Self {
+    pub fn value_label_configuration(mut self, input: crate::types::ReferenceLineValueLabelConfiguration) -> Self {
         self.value_label_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value label configuration of the label in a reference line.</p>
-    pub fn set_value_label_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceLineValueLabelConfiguration>,
-    ) -> Self {
+    pub fn set_value_label_configuration(mut self, input: ::std::option::Option<crate::types::ReferenceLineValueLabelConfiguration>) -> Self {
         self.value_label_configuration = input;
         self
     }
     /// <p>The value label configuration of the label in a reference line.</p>
-    pub fn get_value_label_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReferenceLineValueLabelConfiguration> {
+    pub fn get_value_label_configuration(&self) -> &::std::option::Option<crate::types::ReferenceLineValueLabelConfiguration> {
         &self.value_label_configuration
     }
     /// <p>The custom label configuration of the label in a reference line.</p>
-    pub fn custom_label_configuration(
-        mut self,
-        input: crate::types::ReferenceLineCustomLabelConfiguration,
-    ) -> Self {
+    pub fn custom_label_configuration(mut self, input: crate::types::ReferenceLineCustomLabelConfiguration) -> Self {
         self.custom_label_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The custom label configuration of the label in a reference line.</p>
-    pub fn set_custom_label_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceLineCustomLabelConfiguration>,
-    ) -> Self {
+    pub fn set_custom_label_configuration(mut self, input: ::std::option::Option<crate::types::ReferenceLineCustomLabelConfiguration>) -> Self {
         self.custom_label_configuration = input;
         self
     }
     /// <p>The custom label configuration of the label in a reference line.</p>
-    pub fn get_custom_label_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReferenceLineCustomLabelConfiguration> {
+    pub fn get_custom_label_configuration(&self) -> &::std::option::Option<crate::types::ReferenceLineCustomLabelConfiguration> {
         &self.custom_label_configuration
     }
     /// <p>The font configuration of the label in a reference line.</p>
@@ -153,17 +120,12 @@ impl ReferenceLineLabelConfigurationBuilder {
         self
     }
     /// <p>The font configuration of the label in a reference line.</p>
-    pub fn set_font_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FontConfiguration>,
-    ) -> Self {
+    pub fn set_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
         self.font_configuration = input;
         self
     }
     /// <p>The font configuration of the label in a reference line.</p>
-    pub fn get_font_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FontConfiguration> {
+    pub fn get_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
         &self.font_configuration
     }
     /// <p>The font color configuration of the label in a reference line.</p>
@@ -186,10 +148,7 @@ impl ReferenceLineLabelConfigurationBuilder {
     /// <li> <p> <code>CENTER</code> </p> </li>
     /// <li> <p> <code>RIGHT</code> </p> </li>
     /// </ul>
-    pub fn horizontal_position(
-        mut self,
-        input: crate::types::ReferenceLineLabelHorizontalPosition,
-    ) -> Self {
+    pub fn horizontal_position(mut self, input: crate::types::ReferenceLineLabelHorizontalPosition) -> Self {
         self.horizontal_position = ::std::option::Option::Some(input);
         self
     }
@@ -199,10 +158,7 @@ impl ReferenceLineLabelConfigurationBuilder {
     /// <li> <p> <code>CENTER</code> </p> </li>
     /// <li> <p> <code>RIGHT</code> </p> </li>
     /// </ul>
-    pub fn set_horizontal_position(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition>,
-    ) -> Self {
+    pub fn set_horizontal_position(mut self, input: ::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition>) -> Self {
         self.horizontal_position = input;
         self
     }
@@ -212,9 +168,7 @@ impl ReferenceLineLabelConfigurationBuilder {
     /// <li> <p> <code>CENTER</code> </p> </li>
     /// <li> <p> <code>RIGHT</code> </p> </li>
     /// </ul>
-    pub fn get_horizontal_position(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition> {
+    pub fn get_horizontal_position(&self) -> &::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition> {
         &self.horizontal_position
     }
     /// <p>The vertical position configuration of the label in a reference line. Choose one of the following options:</p>
@@ -222,10 +176,7 @@ impl ReferenceLineLabelConfigurationBuilder {
     /// <li> <p> <code>ABOVE</code> </p> </li>
     /// <li> <p> <code>BELOW</code> </p> </li>
     /// </ul>
-    pub fn vertical_position(
-        mut self,
-        input: crate::types::ReferenceLineLabelVerticalPosition,
-    ) -> Self {
+    pub fn vertical_position(mut self, input: crate::types::ReferenceLineLabelVerticalPosition) -> Self {
         self.vertical_position = ::std::option::Option::Some(input);
         self
     }
@@ -234,10 +185,7 @@ impl ReferenceLineLabelConfigurationBuilder {
     /// <li> <p> <code>ABOVE</code> </p> </li>
     /// <li> <p> <code>BELOW</code> </p> </li>
     /// </ul>
-    pub fn set_vertical_position(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceLineLabelVerticalPosition>,
-    ) -> Self {
+    pub fn set_vertical_position(mut self, input: ::std::option::Option<crate::types::ReferenceLineLabelVerticalPosition>) -> Self {
         self.vertical_position = input;
         self
     }
@@ -246,9 +194,7 @@ impl ReferenceLineLabelConfigurationBuilder {
     /// <li> <p> <code>ABOVE</code> </p> </li>
     /// <li> <p> <code>BELOW</code> </p> </li>
     /// </ul>
-    pub fn get_vertical_position(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReferenceLineLabelVerticalPosition> {
+    pub fn get_vertical_position(&self) -> &::std::option::Option<crate::types::ReferenceLineLabelVerticalPosition> {
         &self.vertical_position
     }
     /// Consumes the builder and constructs a [`ReferenceLineLabelConfiguration`](crate::types::ReferenceLineLabelConfiguration).

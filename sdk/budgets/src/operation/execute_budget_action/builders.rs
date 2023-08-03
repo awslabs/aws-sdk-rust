@@ -37,9 +37,7 @@ impl ExecuteBudgetActionFluentBuilder {
         }
     }
     /// Access the ExecuteBudgetAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::execute_budget_action::builders::ExecuteBudgetActionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::execute_budget_action::builders::ExecuteBudgetActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ExecuteBudgetActionFluentBuilder {
             crate::operation::execute_budget_action::ExecuteBudgetAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_budget_action::ExecuteBudgetActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_budget_action::ExecuteBudgetActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ExecuteBudgetActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ExecuteBudgetActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_budget_action::ExecuteBudgetActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_budget_action::ExecuteBudgetActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_budget_action::ExecuteBudgetActionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ExecuteBudgetActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_budget_action::ExecuteBudgetActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_budget_action::ExecuteBudgetActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_budget_action::ExecuteBudgetActionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ExecuteBudgetActionFluentBuilder {
             crate::operation::execute_budget_action::ExecuteBudgetAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_budget_action::ExecuteBudgetActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_budget_action::ExecuteBudgetActionError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +157,7 @@ impl ExecuteBudgetActionFluentBuilder {
         self
     }
     /// <p> The type of execution. </p>
-    pub fn set_execution_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionType>,
-    ) -> Self {
+    pub fn set_execution_type(mut self, input: ::std::option::Option<crate::types::ExecutionType>) -> Self {
         self.inner = self.inner.set_execution_type(input);
         self
     }

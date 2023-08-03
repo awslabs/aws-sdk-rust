@@ -5,16 +5,16 @@ pub use crate::operation::describe_network_insights_access_scope_analyses::_desc
 
 impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_network_insights_access_scope_analyses();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder,
+    inner: crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder,
 }
 impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
     /// Creates a new `DescribeNetworkInsightsAccessScopeAnalyses`.
@@ -37,15 +37,24 @@ impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
         }
     }
     /// Access the DescribeNetworkInsightsAccessScopeAnalyses as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalyses, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalyses,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,75 +93,73 @@ impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalyses, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalyses,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_network_insights_access_scope_analyses::paginator::DescribeNetworkInsightsAccessScopeAnalysesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_network_insights_access_scope_analyses::paginator::DescribeNetworkInsightsAccessScopeAnalysesPaginator{
-        crate::operation::describe_network_insights_access_scope_analyses::paginator::DescribeNetworkInsightsAccessScopeAnalysesPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_network_insights_access_scope_analyses::paginator::DescribeNetworkInsightsAccessScopeAnalysesPaginator {
+        crate::operation::describe_network_insights_access_scope_analyses::paginator::DescribeNetworkInsightsAccessScopeAnalysesPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// Appends an item to `NetworkInsightsAccessScopeAnalysisIds`.
     ///
     /// To override the contents of this collection use [`set_network_insights_access_scope_analysis_ids`](Self::set_network_insights_access_scope_analysis_ids).
     ///
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub fn network_insights_access_scope_analysis_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .network_insights_access_scope_analysis_ids(input.into());
+    pub fn network_insights_access_scope_analysis_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.network_insights_access_scope_analysis_ids(input.into());
         self
     }
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub fn set_network_insights_access_scope_analysis_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_network_insights_access_scope_analysis_ids(input);
+    pub fn set_network_insights_access_scope_analysis_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_network_insights_access_scope_analysis_ids(input);
         self
     }
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub fn get_network_insights_access_scope_analysis_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_insights_access_scope_analysis_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_network_insights_access_scope_analysis_ids()
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_insights_access_scope_id(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn set_network_insights_access_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_insights_access_scope_id(input);
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn get_network_insights_access_scope_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_access_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_insights_access_scope_id()
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
@@ -158,17 +168,12 @@ impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
         self
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
-    pub fn set_analysis_start_time_begin(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_analysis_start_time_begin(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_analysis_start_time_begin(input);
         self
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
-    pub fn get_analysis_start_time_begin(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_analysis_start_time_begin(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_analysis_start_time_begin()
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
@@ -177,17 +182,12 @@ impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
         self
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
-    pub fn set_analysis_start_time_end(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_analysis_start_time_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_analysis_start_time_end(input);
         self
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
-    pub fn get_analysis_start_time_end(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_analysis_start_time_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_analysis_start_time_end()
     }
     /// Appends an item to `Filters`.
@@ -200,10 +200,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
         self
     }
     /// <p>There are no supported filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

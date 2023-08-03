@@ -18,9 +18,7 @@ pub struct CreateServiceNetworkInput {
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
     /// <p>The tags for the service network.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateServiceNetworkInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -40,34 +38,25 @@ impl CreateServiceNetworkInput {
         self.auth_type.as_ref()
     }
     /// <p>The tags for the service network.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateServiceNetworkInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
-    pub fn builder(
-    ) -> crate::operation::create_service_network::builders::CreateServiceNetworkInputBuilder {
+    pub fn builder() -> crate::operation::create_service_network::builders::CreateServiceNetworkInputBuilder {
         crate::operation::create_service_network::builders::CreateServiceNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceNetworkInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateServiceNetworkInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -129,48 +118,31 @@ impl CreateServiceNetworkInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the service network.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags for the service network.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags for the service network.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service_network::CreateServiceNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_service_network::CreateServiceNetworkInput {
-                client_token: self.client_token,
-                name: self.name,
-                auth_type: self.auth_type,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_service_network::CreateServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_service_network::CreateServiceNetworkInput {
+            client_token: self.client_token,
+            name: self.name,
+            auth_type: self.auth_type,
+            tags: self.tags,
+        })
     }
 }

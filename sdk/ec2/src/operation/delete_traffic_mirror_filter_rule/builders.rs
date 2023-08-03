@@ -26,7 +26,7 @@ impl DeleteTrafficMirrorFilterRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTrafficMirrorFilterRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleInputBuilder,
+    inner: crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleInputBuilder,
 }
 impl DeleteTrafficMirrorFilterRuleFluentBuilder {
     /// Creates a new `DeleteTrafficMirrorFilterRule`.
@@ -37,7 +37,7 @@ impl DeleteTrafficMirrorFilterRuleFluentBuilder {
         }
     }
     /// Access the DeleteTrafficMirrorFilterRule as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteTrafficMirrorFilterRuleFluentBuilder {
             crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteTrafficMirrorFilterRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteTrafficMirrorFilterRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteTrafficMirrorFilterRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl DeleteTrafficMirrorFilterRuleFluentBuilder {
             crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Traffic Mirror rule.</p>
-    pub fn traffic_mirror_filter_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_mirror_filter_rule_id(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror rule.</p>
-    pub fn set_traffic_mirror_filter_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_mirror_filter_rule_id(input);
         self
     }
     /// <p>The ID of the Traffic Mirror rule.</p>
-    pub fn get_traffic_mirror_filter_rule_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_traffic_mirror_filter_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_traffic_mirror_filter_rule_id()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

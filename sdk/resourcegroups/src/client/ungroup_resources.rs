@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`failed(Option<Vec<FailedResource>>)`](crate::operation::ungroup_resources::UngroupResourcesOutput::failed): <p>A list of any resources that failed to be removed from the group by this operation.</p>
     ///   - [`pending(Option<Vec<PendingResource>>)`](crate::operation::ungroup_resources::UngroupResourcesOutput::pending): <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
     /// - On failure, responds with [`SdkError<UngroupResourcesError>`](crate::operation::ungroup_resources::UngroupResourcesError)
-    pub fn ungroup_resources(
-        &self,
-    ) -> crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder {
-        crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn ungroup_resources(&self) -> crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder {
+        crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder::new(self.handle.clone())
     }
 }

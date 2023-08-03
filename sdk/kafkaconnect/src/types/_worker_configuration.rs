@@ -30,9 +30,7 @@ impl WorkerConfiguration {
 
 /// A builder for [`WorkerConfiguration`](crate::types::WorkerConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkerConfigurationBuilder {
     pub(crate) revision: ::std::option::Option<i64>,
     pub(crate) worker_configuration_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl WorkerConfigurationBuilder {
         &self.revision
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-    pub fn worker_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn worker_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-    pub fn set_worker_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_worker_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_configuration_arn = input;
         self
     }

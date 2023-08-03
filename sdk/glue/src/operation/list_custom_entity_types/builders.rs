@@ -37,10 +37,7 @@ impl ListCustomEntityTypesFluentBuilder {
         }
     }
     /// Access the ListCustomEntityTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListCustomEntityTypesFluentBuilder {
             crate::operation::list_custom_entity_types::ListCustomEntityTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_entity_types::ListCustomEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_entity_types::ListCustomEntityTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListCustomEntityTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListCustomEntityTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_entity_types::ListCustomEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_entity_types::ListCustomEntityTypesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListCustomEntityTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_entity_types::ListCustomEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_entity_types::ListCustomEntityTypesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListCustomEntityTypesFluentBuilder {
             crate::operation::list_custom_entity_types::ListCustomEntityTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_entity_types::ListCustomEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_entity_types::ListCustomEntityTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_custom_entity_types::paginator::ListCustomEntityTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_custom_entity_types::paginator::ListCustomEntityTypesPaginator {
-        crate::operation::list_custom_entity_types::paginator::ListCustomEntityTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_custom_entity_types::paginator::ListCustomEntityTypesPaginator {
+        crate::operation::list_custom_entity_types::paginator::ListCustomEntityTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>A paginated token to offset the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,30 +148,17 @@ impl ListCustomEntityTypesFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pair tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of key-value pair tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key-value pair tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

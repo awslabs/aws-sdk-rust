@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteGroupOutput`](crate::operation::delete_group::DeleteGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::operation::delete_group::DeleteGroupOutput::group): <p>A full description of the deleted resource group.</p>
     /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::operation::delete_group::DeleteGroupError)
-    pub fn delete_group(
-        &self,
-    ) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {
+    pub fn delete_group(&self) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {
         crate::operation::delete_group::builders::DeleteGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,35 +15,25 @@ impl DeleteDocumentClassifierInput {
 }
 impl DeleteDocumentClassifierInput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentClassifierInput`](crate::operation::delete_document_classifier::DeleteDocumentClassifierInput).
-    pub fn builder(
-    ) -> crate::operation::delete_document_classifier::builders::DeleteDocumentClassifierInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_document_classifier::builders::DeleteDocumentClassifierInputBuilder {
         crate::operation::delete_document_classifier::builders::DeleteDocumentClassifierInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDocumentClassifierInput`](crate::operation::delete_document_classifier::DeleteDocumentClassifierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDocumentClassifierInputBuilder {
     pub(crate) document_classifier_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDocumentClassifierInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-    pub fn document_classifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_classifier_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-    pub fn set_document_classifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_classifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_classifier_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteDocumentClassifierInputBuilder {
         crate::operation::delete_document_classifier::DeleteDocumentClassifierInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_document_classifier::DeleteDocumentClassifierInput {
-                document_classifier_arn: self.document_classifier_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_document_classifier::DeleteDocumentClassifierInput {
+            document_classifier_arn: self.document_classifier_arn,
+        })
     }
 }

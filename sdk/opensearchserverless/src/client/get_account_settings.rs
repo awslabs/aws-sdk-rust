@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccountSettingsOutput`](crate::operation::get_account_settings::GetAccountSettingsOutput) with field(s):
     ///   - [`account_settings_detail(Option<AccountSettingsDetail>)`](crate::operation::get_account_settings::GetAccountSettingsOutput::account_settings_detail): <p>OpenSearch Serverless-related details for the current account.</p>
     /// - On failure, responds with [`SdkError<GetAccountSettingsError>`](crate::operation::get_account_settings::GetAccountSettingsError)
-    pub fn get_account_settings(
-        &self,
-    ) -> crate::operation::get_account_settings::builders::GetAccountSettingsFluentBuilder {
-        crate::operation::get_account_settings::builders::GetAccountSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_account_settings(&self) -> crate::operation::get_account_settings::builders::GetAccountSettingsFluentBuilder {
+        crate::operation::get_account_settings::builders::GetAccountSettingsFluentBuilder::new(self.handle.clone())
     }
 }

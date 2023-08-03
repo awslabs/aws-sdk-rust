@@ -39,10 +39,7 @@ pub fn ser_update_data_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_dataset_parameter::ser_dataset_parameter(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_dataset_parameter::ser_dataset_parameter(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }
@@ -55,10 +52,7 @@ pub fn ser_update_data_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_19 = object_16.key(key_17.as_str()).start_object();
-                crate::protocol_serde::shape_field_folder::ser_field_folder(
-                    &mut object_19,
-                    value_18,
-                )?;
+                crate::protocol_serde::shape_field_folder::ser_field_folder(&mut object_19, value_18)?;
                 object_19.finish();
             }
         }
@@ -74,10 +68,7 @@ pub fn ser_update_data_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_25 = object_22.key(key_23.as_str()).start_object();
-                crate::protocol_serde::shape_logical_table::ser_logical_table(
-                    &mut object_25,
-                    value_24,
-                )?;
+                crate::protocol_serde::shape_logical_table::ser_logical_table(&mut object_25, value_24)?;
                 object_25.finish();
             }
         }
@@ -93,10 +84,7 @@ pub fn ser_update_data_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_31 = object_28.key(key_29.as_str()).start_object();
-                crate::protocol_serde::shape_physical_table::ser_physical_table(
-                    &mut object_31,
-                    value_30,
-                )?;
+                crate::protocol_serde::shape_physical_table::ser_physical_table(&mut object_31, value_30)?;
                 object_31.finish();
             }
         }
@@ -110,9 +98,7 @@ pub fn ser_update_data_set_input(
     }
     if let Some(var_34) = &input.row_level_permission_tag_configuration {
         #[allow(unused_mut)]
-        let mut object_35 = object
-            .key("RowLevelPermissionTagConfiguration")
-            .start_object();
+        let mut object_35 = object.key("RowLevelPermissionTagConfiguration").start_object();
         crate::protocol_serde::shape_row_level_permission_tag_configuration::ser_row_level_permission_tag_configuration(&mut object_35, var_34)?;
         object_35.finish();
     }

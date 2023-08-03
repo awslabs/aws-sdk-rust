@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`metric_name(Option<InstanceMetricName>)`](crate::operation::get_instance_metric_data::GetInstanceMetricDataOutput::metric_name): <p>The name of the metric returned.</p>
     ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::operation::get_instance_metric_data::GetInstanceMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
     /// - On failure, responds with [`SdkError<GetInstanceMetricDataError>`](crate::operation::get_instance_metric_data::GetInstanceMetricDataError)
-    pub fn get_instance_metric_data(
-        &self,
-    ) -> crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataFluentBuilder
-    {
+    pub fn get_instance_metric_data(&self) -> crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataFluentBuilder {
         crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

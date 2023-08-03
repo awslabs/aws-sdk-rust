@@ -30,9 +30,7 @@ impl Region {
 
 /// A builder for [`Region`](crate::types::Region).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) region_opt_status: ::std::option::Option<crate::types::RegionOptStatus>,
@@ -58,10 +56,7 @@ impl RegionBuilder {
         self
     }
     /// <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
-    pub fn set_region_opt_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionOptStatus>,
-    ) -> Self {
+    pub fn set_region_opt_status(mut self, input: ::std::option::Option<crate::types::RegionOptStatus>) -> Self {
         self.region_opt_status = input;
         self
     }

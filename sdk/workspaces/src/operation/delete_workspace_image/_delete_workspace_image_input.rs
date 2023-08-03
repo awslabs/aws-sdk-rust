@@ -15,17 +15,14 @@ impl DeleteWorkspaceImageInput {
 }
 impl DeleteWorkspaceImageInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceImageInput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageInput).
-    pub fn builder(
-    ) -> crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageInputBuilder {
+    pub fn builder() -> crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageInputBuilder {
         crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkspaceImageInput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceImageInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl DeleteWorkspaceImageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkspaceImageInput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_workspace_image::DeleteWorkspaceImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_workspace_image::DeleteWorkspaceImageInput {
-                image_id: self.image_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_workspace_image::DeleteWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_workspace_image::DeleteWorkspaceImageInput { image_id: self.image_id })
     }
 }

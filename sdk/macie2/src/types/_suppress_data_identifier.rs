@@ -30,9 +30,7 @@ impl SuppressDataIdentifier {
 
 /// A builder for [`SuppressDataIdentifier`](crate::types::SuppressDataIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuppressDataIdentifierBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DataIdentifierType>,
@@ -58,10 +56,7 @@ impl SuppressDataIdentifierBuilder {
         self
     }
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataIdentifierType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataIdentifierType>) -> Self {
         self.r#type = input;
         self
     }

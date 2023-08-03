@@ -26,8 +26,7 @@ impl CreateDbClusterEndpointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDBClusterEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointInputBuilder,
+    inner: crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointInputBuilder,
 }
 impl CreateDBClusterEndpointFluentBuilder {
     /// Creates a new `CreateDBClusterEndpoint`.
@@ -38,10 +37,7 @@ impl CreateDBClusterEndpointFluentBuilder {
         }
     }
     /// Access the CreateDBClusterEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateDBClusterEndpointFluentBuilder {
             crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateDBClusterEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateDBClusterEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateDBClusterEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl CreateDBClusterEndpointFluentBuilder {
             crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -145,40 +124,26 @@ impl CreateDBClusterEndpointFluentBuilder {
         self.inner.get_db_cluster_identifier()
     }
     /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_endpoint_identifier(input.into());
         self
     }
     /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_endpoint_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
         self
     }
     /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn get_db_cluster_endpoint_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_endpoint_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_endpoint_identifier()
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn endpoint_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_type(input.into());
         self
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_type(input);
         self
     }
@@ -191,25 +156,17 @@ impl CreateDBClusterEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_static_members`](Self::set_static_members).
     ///
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn static_members(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn static_members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.static_members(input.into());
         self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn set_static_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_static_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_static_members(input);
         self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn get_static_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_static_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_static_members()
     }
     /// Appends an item to `ExcludedMembers`.
@@ -217,25 +174,17 @@ impl CreateDBClusterEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
     ///
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn excluded_members(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn excluded_members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.excluded_members(input.into());
         self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn set_excluded_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_excluded_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_excluded_members(input);
         self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn get_excluded_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_excluded_members()
     }
     /// Appends an item to `Tags`.
@@ -248,10 +197,7 @@ impl CreateDBClusterEndpointFluentBuilder {
         self
     }
     /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

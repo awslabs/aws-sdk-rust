@@ -10,10 +10,7 @@ impl ActivateTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::activate_type::ActivateTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_type::ActivateTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_type::ActivateTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.activate_type();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ActivateTypeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::activate_type::ActivateType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::activate_type::ActivateType, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::activate_type::ActivateTypeError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ActivateTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ActivateTypeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::activate_type::ActivateType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::activate_type::ActivateType, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::activate_type::ActivateTypeError>,
     > {
         self.customize_middleware().await
@@ -132,19 +120,13 @@ impl ActivateTypeFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the public extension.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
-    pub fn public_type_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_type_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_type_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the public extension.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
-    pub fn set_public_type_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_type_arn(input);
         self
     }
@@ -189,19 +171,13 @@ impl ActivateTypeFluentBuilder {
     }
     /// <p>An alias to assign to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     /// <p>An extension alias must be unique within a given account and Region. You can activate the same public resource multiple times in the same account and Region, using different type name aliases.</p>
-    pub fn type_name_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_name_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_name_alias(input.into());
         self
     }
     /// <p>An alias to assign to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     /// <p>An extension alias must be unique within a given account and Region. You can activate the same public resource multiple times in the same account and Region, using different type name aliases.</p>
-    pub fn set_type_name_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_name_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_name_alias(input);
         self
     }
@@ -233,10 +209,7 @@ impl ActivateTypeFluentBuilder {
         self
     }
     /// <p>Contains logging configuration information for an extension.</p>
-    pub fn set_logging_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfig>,
-    ) -> Self {
+    pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::LoggingConfig>) -> Self {
         self.inner = self.inner.set_logging_config(input);
         self
     }
@@ -245,18 +218,12 @@ impl ActivateTypeFluentBuilder {
         self.inner.get_logging_config()
     }
     /// <p>The name of the IAM execution role to use to activate the extension.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The name of the IAM execution role to use to activate the extension.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -278,10 +245,7 @@ impl ActivateTypeFluentBuilder {
     /// <li> <p> <code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p> </li>
     /// <li> <p> <code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p> </li>
     /// </ul>
-    pub fn set_version_bump(
-        mut self,
-        input: ::std::option::Option<crate::types::VersionBump>,
-    ) -> Self {
+    pub fn set_version_bump(mut self, input: ::std::option::Option<crate::types::VersionBump>) -> Self {
         self.inner = self.inner.set_version_bump(input);
         self
     }

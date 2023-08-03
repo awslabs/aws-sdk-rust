@@ -15,10 +15,7 @@ pub fn ser_create_participant_input(
     if let Some(var_4) = &input.participant_details {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ParticipantDetails").start_object();
-        crate::protocol_serde::shape_participant_details_to_add::ser_participant_details_to_add(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_participant_details_to_add::ser_participant_details_to_add(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

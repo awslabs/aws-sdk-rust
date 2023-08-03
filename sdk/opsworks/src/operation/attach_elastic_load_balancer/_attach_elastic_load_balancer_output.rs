@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachElasticLoadBalancerOutput {
 }
 impl AttachElasticLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`AttachElasticLoadBalancerOutput`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput).
-    pub fn builder() -> crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerOutputBuilder{
+    pub fn builder() -> crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerOutputBuilder {
         crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachElasticLoadBalancerOutput`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachElasticLoadBalancerOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AttachElasticLoadBalancerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AttachElasticLoadBalancerOutput`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput {
+    pub fn build(self) -> crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput {
         crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput {
             _request_id: self._request_id,
         }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_arn(impl ::std::convert::Into<String>)`](crate::operation::detach_group_policy::builders::DetachGroupPolicyFluentBuilder::policy_arn) / [`set_policy_arn(Option<String>)`](crate::operation::detach_group_policy::builders::DetachGroupPolicyFluentBuilder::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// - On success, responds with [`DetachGroupPolicyOutput`](crate::operation::detach_group_policy::DetachGroupPolicyOutput)
     /// - On failure, responds with [`SdkError<DetachGroupPolicyError>`](crate::operation::detach_group_policy::DetachGroupPolicyError)
-    pub fn detach_group_policy(
-        &self,
-    ) -> crate::operation::detach_group_policy::builders::DetachGroupPolicyFluentBuilder {
-        crate::operation::detach_group_policy::builders::DetachGroupPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_group_policy(&self) -> crate::operation::detach_group_policy::builders::DetachGroupPolicyFluentBuilder {
+        crate::operation::detach_group_policy::builders::DetachGroupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

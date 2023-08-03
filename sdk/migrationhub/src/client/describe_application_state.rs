@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`application_status(Option<ApplicationStatus>)`](crate::operation::describe_application_state::DescribeApplicationStateOutput::application_status): <p>Status of the application - Not Started, In-Progress, Complete.</p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::describe_application_state::DescribeApplicationStateOutput::last_updated_time): <p>The timestamp when the application status was last updated.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationStateError>`](crate::operation::describe_application_state::DescribeApplicationStateError)
-    pub fn describe_application_state(
-        &self,
-    ) -> crate::operation::describe_application_state::builders::DescribeApplicationStateFluentBuilder
-    {
+    pub fn describe_application_state(&self) -> crate::operation::describe_application_state::builders::DescribeApplicationStateFluentBuilder {
         crate::operation::describe_application_state::builders::DescribeApplicationStateFluentBuilder::new(self.handle.clone())
     }
 }

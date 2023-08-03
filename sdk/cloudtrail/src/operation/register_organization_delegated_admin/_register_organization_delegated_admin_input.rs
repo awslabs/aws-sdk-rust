@@ -16,33 +16,25 @@ impl RegisterOrganizationDelegatedAdminInput {
 }
 impl RegisterOrganizationDelegatedAdminInput {
     /// Creates a new builder-style object to manufacture [`RegisterOrganizationDelegatedAdminInput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput).
-    pub fn builder() -> crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminInputBuilder{
+    pub fn builder() -> crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminInputBuilder {
         crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterOrganizationDelegatedAdminInput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterOrganizationDelegatedAdminInputBuilder {
     pub(crate) member_account_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisterOrganizationDelegatedAdminInputBuilder {
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account_id = input;
         self
     }
@@ -51,12 +43,16 @@ impl RegisterOrganizationDelegatedAdminInputBuilder {
         &self.member_account_id
     }
     /// Consumes the builder and constructs a [`RegisterOrganizationDelegatedAdminInput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput {
-                member_account_id: self.member_account_id
-                ,
-            }
+                member_account_id: self.member_account_id,
+            },
         )
     }
 }

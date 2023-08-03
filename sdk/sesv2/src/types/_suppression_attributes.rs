@@ -10,8 +10,7 @@ pub struct SuppressionAttributes {
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub suppressed_reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl SuppressionAttributes {
     /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
@@ -19,9 +18,7 @@ impl SuppressionAttributes {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn suppressed_reasons(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SuppressionListReason]> {
+    pub fn suppressed_reasons(&self) -> ::std::option::Option<&[crate::types::SuppressionListReason]> {
         self.suppressed_reasons.as_deref()
     }
 }
@@ -34,12 +31,9 @@ impl SuppressionAttributes {
 
 /// A builder for [`SuppressionAttributes`](crate::types::SuppressionAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuppressionAttributesBuilder {
-    pub(crate) suppressed_reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub(crate) suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl SuppressionAttributesBuilder {
     /// Appends an item to `suppressed_reasons`.
@@ -62,10 +56,7 @@ impl SuppressionAttributesBuilder {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn set_suppressed_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
-    ) -> Self {
+    pub fn set_suppressed_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>) -> Self {
         self.suppressed_reasons = input;
         self
     }
@@ -74,9 +65,7 @@ impl SuppressionAttributesBuilder {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn get_suppressed_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
+    pub fn get_suppressed_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
         &self.suppressed_reasons
     }
     /// Consumes the builder and constructs a [`SuppressionAttributes`](crate::types::SuppressionAttributes).

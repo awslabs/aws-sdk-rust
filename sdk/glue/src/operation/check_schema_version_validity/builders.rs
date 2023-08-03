@@ -26,7 +26,7 @@ impl CheckSchemaVersionValidityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CheckSchemaVersionValidityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityInputBuilder,
+    inner: crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityInputBuilder,
 }
 impl CheckSchemaVersionValidityFluentBuilder {
     /// Creates a new `CheckSchemaVersionValidity`.
@@ -37,7 +37,7 @@ impl CheckSchemaVersionValidityFluentBuilder {
         }
     }
     /// Access the CheckSchemaVersionValidity as a reference.
-    pub fn as_input(&self) -> &crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CheckSchemaVersionValidityFluentBuilder {
             crate::operation::check_schema_version_validity::CheckSchemaVersionValidity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_schema_version_validity::CheckSchemaVersionValidityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_schema_version_validity::CheckSchemaVersionValidityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CheckSchemaVersionValidityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CheckSchemaVersionValidityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_schema_version_validity::CheckSchemaVersionValidityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_schema_version_validity::CheckSchemaVersionValidityError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CheckSchemaVersionValidityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_schema_version_validity::CheckSchemaVersionValidityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_schema_version_validity::CheckSchemaVersionValidityError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CheckSchemaVersionValidityFluentBuilder {
             crate::operation::check_schema_version_validity::CheckSchemaVersionValidity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_schema_version_validity::CheckSchemaVersionValidityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_schema_version_validity::CheckSchemaVersionValidityError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl CheckSchemaVersionValidityFluentBuilder {
         self
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFormat>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
         self.inner = self.inner.set_data_format(input);
         self
     }
@@ -138,18 +124,12 @@ impl CheckSchemaVersionValidityFluentBuilder {
         self.inner.get_data_format()
     }
     /// <p>The definition of the schema that has to be validated.</p>
-    pub fn schema_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_definition(input.into());
         self
     }
     /// <p>The definition of the schema that has to be validated.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
     }

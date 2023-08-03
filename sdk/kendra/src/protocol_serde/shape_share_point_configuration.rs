@@ -19,9 +19,7 @@ pub fn ser_share_point_configuration(
         object.key("SecretArn").string(var_5.as_str());
     }
     if input.crawl_attachments {
-        object
-            .key("CrawlAttachments")
-            .boolean(input.crawl_attachments);
+        object.key("CrawlAttachments").boolean(input.crawl_attachments);
     }
     if input.use_change_log {
         object.key("UseChangeLog").boolean(input.use_change_log);
@@ -66,9 +64,7 @@ pub fn ser_share_point_configuration(
         object.key("DocumentTitleFieldName").string(var_18.as_str());
     }
     if input.disable_local_groups {
-        object
-            .key("DisableLocalGroups")
-            .boolean(input.disable_local_groups);
+        object.key("DisableLocalGroups").boolean(input.disable_local_groups);
     }
     if let Some(var_19) = &input.ssl_certificate_s3_path {
         #[allow(unused_mut)]
@@ -82,10 +78,7 @@ pub fn ser_share_point_configuration(
     if let Some(var_22) = &input.proxy_configuration {
         #[allow(unused_mut)]
         let mut object_23 = object.key("ProxyConfiguration").start_object();
-        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(
-            &mut object_23,
-            var_22,
-        )?;
+        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_23, var_22)?;
         object_23.finish();
     }
     Ok(())
@@ -93,17 +86,9 @@ pub fn ser_share_point_configuration(
 
 pub(crate) fn de_share_point_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SharePointConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SharePointConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -117,44 +102,26 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "SharePointVersion" => {
                                 builder = builder.set_share_point_version(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::SharePointVersion::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::SharePointVersion::from(u.as_ref())))
+                                        .transpose()?,
                                 );
                             }
                             "Urls" => {
-                                builder = builder.set_urls(
-                                    crate::protocol_serde::shape_share_point_url_list::de_share_point_url_list(tokens)?
-                                );
+                                builder = builder.set_urls(crate::protocol_serde::shape_share_point_url_list::de_share_point_url_list(tokens)?);
                             }
                             "SecretArn" => {
                                 builder = builder.set_secret_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "CrawlAttachments" => {
-                                builder = builder.set_crawl_attachments(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
+                                builder = builder.set_crawl_attachments(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             "UseChangeLog" => {
-                                builder = builder.set_use_change_log(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
+                                builder = builder.set_use_change_log(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             "InclusionPatterns" => {
                                 builder = builder.set_inclusion_patterns(
@@ -168,73 +135,59 @@ where
                             }
                             "VpcConfiguration" => {
                                 builder = builder.set_vpc_configuration(
-                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?
+                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?,
                                 );
                             }
                             "FieldMappings" => {
                                 builder = builder.set_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
+                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "DocumentTitleFieldName" => {
                                 builder = builder.set_document_title_field_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "DisableLocalGroups" => {
-                                builder = builder.set_disable_local_groups(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
+                                builder =
+                                    builder.set_disable_local_groups(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             "SslCertificateS3Path" => {
-                                builder = builder.set_ssl_certificate_s3_path(
-                                    crate::protocol_serde::shape_s3_path::de_s3_path(tokens)?,
-                                );
+                                builder = builder.set_ssl_certificate_s3_path(crate::protocol_serde::shape_s3_path::de_s3_path(tokens)?);
                             }
                             "AuthenticationType" => {
                                 builder = builder.set_authentication_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::SharePointOnlineAuthenticationType::from(
-                                                u.as_ref(),
-                                            )
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::SharePointOnlineAuthenticationType::from(u.as_ref()))
                                         })
-                                    })
-                                    .transpose()?,
+                                        .transpose()?,
                                 );
                             }
                             "ProxyConfiguration" => {
-                                builder = builder.set_proxy_configuration(
-                                    crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens)?
-                                );
+                                builder = builder
+                                    .set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens)?);
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

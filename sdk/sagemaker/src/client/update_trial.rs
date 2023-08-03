@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTrialOutput`](crate::operation::update_trial::UpdateTrialOutput) with field(s):
     ///   - [`trial_arn(Option<String>)`](crate::operation::update_trial::UpdateTrialOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
     /// - On failure, responds with [`SdkError<UpdateTrialError>`](crate::operation::update_trial::UpdateTrialError)
-    pub fn update_trial(
-        &self,
-    ) -> crate::operation::update_trial::builders::UpdateTrialFluentBuilder {
+    pub fn update_trial(&self) -> crate::operation::update_trial::builders::UpdateTrialFluentBuilder {
         crate::operation::update_trial::builders::UpdateTrialFluentBuilder::new(self.handle.clone())
     }
 }

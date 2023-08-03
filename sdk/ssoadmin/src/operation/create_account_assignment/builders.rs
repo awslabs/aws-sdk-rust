@@ -32,8 +32,7 @@ impl CreateAccountAssignmentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAccountAssignmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_account_assignment::builders::CreateAccountAssignmentInputBuilder,
+    inner: crate::operation::create_account_assignment::builders::CreateAccountAssignmentInputBuilder,
 }
 impl CreateAccountAssignmentFluentBuilder {
     /// Creates a new `CreateAccountAssignment`.
@@ -44,10 +43,7 @@ impl CreateAccountAssignmentFluentBuilder {
         }
     }
     /// Access the CreateAccountAssignment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_account_assignment::builders::CreateAccountAssignmentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_account_assignment::builders::CreateAccountAssignmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +55,7 @@ impl CreateAccountAssignmentFluentBuilder {
             crate::operation::create_account_assignment::CreateAccountAssignment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_assignment::CreateAccountAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_assignment::CreateAccountAssignmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +65,7 @@ impl CreateAccountAssignmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +74,7 @@ impl CreateAccountAssignmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_account_assignment::CreateAccountAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_assignment::CreateAccountAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_assignment::CreateAccountAssignmentError>,
     > {
         let op = self
             .inner
@@ -108,9 +97,7 @@ impl CreateAccountAssignmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_account_assignment::CreateAccountAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_assignment::CreateAccountAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_assignment::CreateAccountAssignmentError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +111,7 @@ impl CreateAccountAssignmentFluentBuilder {
             crate::operation::create_account_assignment::CreateAccountAssignment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_assignment::CreateAccountAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_assignment::CreateAccountAssignmentError>,
     > {
         self.customize_middleware().await
     }
@@ -164,10 +149,7 @@ impl CreateAccountAssignmentFluentBuilder {
         self
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
         self.inner = self.inner.set_target_type(input);
         self
     }
@@ -176,18 +158,12 @@ impl CreateAccountAssignmentFluentBuilder {
         self.inner.get_target_type()
     }
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
@@ -201,10 +177,7 @@ impl CreateAccountAssignmentFluentBuilder {
         self
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn set_principal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
+    pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.inner = self.inner.set_principal_type(input);
         self
     }

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::disable_stage_transition::builders::DisableStageTransitionFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::disable_stage_transition::builders::DisableStageTransitionFluentBuilder::set_reason): <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
     /// - On success, responds with [`DisableStageTransitionOutput`](crate::operation::disable_stage_transition::DisableStageTransitionOutput)
     /// - On failure, responds with [`SdkError<DisableStageTransitionError>`](crate::operation::disable_stage_transition::DisableStageTransitionError)
-    pub fn disable_stage_transition(
-        &self,
-    ) -> crate::operation::disable_stage_transition::builders::DisableStageTransitionFluentBuilder
-    {
+    pub fn disable_stage_transition(&self) -> crate::operation::disable_stage_transition::builders::DisableStageTransitionFluentBuilder {
         crate::operation::disable_stage_transition::builders::DisableStageTransitionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,13 +38,7 @@
 /// Eac3 Passthrough Control
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3PassthroughControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Eac3PassthroughControl {
         match s {
             "NO_PASSTHROUGH" => Eac3PassthroughControl::NoPassthrough,
             "WHEN_POSSIBLE" => Eac3PassthroughControl::WhenPossible,
-            other => Eac3PassthroughControl::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Eac3PassthroughControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

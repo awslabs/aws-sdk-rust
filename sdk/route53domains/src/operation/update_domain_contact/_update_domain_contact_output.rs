@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateDomainContactOutput {
 }
 impl UpdateDomainContactOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainContactOutput`](crate::operation::update_domain_contact::UpdateDomainContactOutput).
-    pub fn builder(
-    ) -> crate::operation::update_domain_contact::builders::UpdateDomainContactOutputBuilder {
-        crate::operation::update_domain_contact::builders::UpdateDomainContactOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_domain_contact::builders::UpdateDomainContactOutputBuilder {
+        crate::operation::update_domain_contact::builders::UpdateDomainContactOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainContactOutput`](crate::operation::update_domain_contact::UpdateDomainContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainContactOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -5,8 +5,7 @@
 pub struct DescribeNetworkInsightsAnalysesOutput {
     /// <p>Information about the network insights analyses.</p>
     #[doc(hidden)]
-    pub network_insights_analyses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAnalysis>>,
+    pub network_insights_analyses: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAnalysis>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeNetworkInsightsAnalysesOutput {
 }
 impl DescribeNetworkInsightsAnalysesOutput {
     /// <p>Information about the network insights analyses.</p>
-    pub fn network_insights_analyses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetworkInsightsAnalysis]> {
+    pub fn network_insights_analyses(&self) -> ::std::option::Option<&[crate::types::NetworkInsightsAnalysis]> {
         self.network_insights_analyses.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeNetworkInsightsAnalysesOutput
 }
 impl DescribeNetworkInsightsAnalysesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAnalysesOutput`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput).
-    pub fn builder() -> crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesOutputBuilder {
         crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInsightsAnalysesOutput`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAnalysesOutputBuilder {
-    pub(crate) network_insights_analyses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAnalysis>>,
+    pub(crate) network_insights_analyses: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAnalysis>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeNetworkInsightsAnalysesOutputBuilder {
     /// To override the contents of this collection use [`set_network_insights_analyses`](Self::set_network_insights_analyses).
     ///
     /// <p>Information about the network insights analyses.</p>
-    pub fn network_insights_analyses(
-        mut self,
-        input: crate::types::NetworkInsightsAnalysis,
-    ) -> Self {
+    pub fn network_insights_analyses(mut self, input: crate::types::NetworkInsightsAnalysis) -> Self {
         let mut v = self.network_insights_analyses.unwrap_or_default();
         v.push(input);
         self.network_insights_analyses = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the network insights analyses.</p>
-    pub fn set_network_insights_analyses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAnalysis>>,
-    ) -> Self {
+    pub fn set_network_insights_analyses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAnalysis>>) -> Self {
         self.network_insights_analyses = input;
         self
     }
     /// <p>Information about the network insights analyses.</p>
-    pub fn get_network_insights_analyses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAnalysis>> {
+    pub fn get_network_insights_analyses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAnalysis>> {
         &self.network_insights_analyses
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,15 +86,10 @@ impl DescribeNetworkInsightsAnalysesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInsightsAnalysesOutput`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput {
         crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput {
-            network_insights_analyses: self.network_insights_analyses
-            ,
-            next_token: self.next_token
-            ,
+            network_insights_analyses: self.network_insights_analyses,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

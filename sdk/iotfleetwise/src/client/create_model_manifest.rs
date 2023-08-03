@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_model_manifest::CreateModelManifestOutput::name): <p> The name of the created vehicle model.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_model_manifest::CreateModelManifestOutput::arn): <p> The ARN of the created vehicle model.</p>
     /// - On failure, responds with [`SdkError<CreateModelManifestError>`](crate::operation::create_model_manifest::CreateModelManifestError)
-    pub fn create_model_manifest(
-        &self,
-    ) -> crate::operation::create_model_manifest::builders::CreateModelManifestFluentBuilder {
-        crate::operation::create_model_manifest::builders::CreateModelManifestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_model_manifest(&self) -> crate::operation::create_model_manifest::builders::CreateModelManifestFluentBuilder {
+        crate::operation::create_model_manifest::builders::CreateModelManifestFluentBuilder::new(self.handle.clone())
     }
 }

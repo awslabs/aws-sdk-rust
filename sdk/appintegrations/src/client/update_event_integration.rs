@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::set_description): <p>The description of the event inegration.</p>
     /// - On success, responds with [`UpdateEventIntegrationOutput`](crate::operation::update_event_integration::UpdateEventIntegrationOutput)
     /// - On failure, responds with [`SdkError<UpdateEventIntegrationError>`](crate::operation::update_event_integration::UpdateEventIntegrationError)
-    pub fn update_event_integration(
-        &self,
-    ) -> crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder
-    {
+    pub fn update_event_integration(&self) -> crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder {
         crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

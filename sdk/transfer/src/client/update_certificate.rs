@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateCertificateOutput`](crate::operation::update_certificate::UpdateCertificateOutput) with field(s):
     ///   - [`certificate_id(Option<String>)`](crate::operation::update_certificate::UpdateCertificateOutput::certificate_id): <p>Returns the identifier of the certificate object that you are updating.</p>
     /// - On failure, responds with [`SdkError<UpdateCertificateError>`](crate::operation::update_certificate::UpdateCertificateError)
-    pub fn update_certificate(
-        &self,
-    ) -> crate::operation::update_certificate::builders::UpdateCertificateFluentBuilder {
-        crate::operation::update_certificate::builders::UpdateCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_certificate(&self) -> crate::operation::update_certificate::builders::UpdateCertificateFluentBuilder {
+        crate::operation::update_certificate::builders::UpdateCertificateFluentBuilder::new(self.handle.clone())
     }
 }

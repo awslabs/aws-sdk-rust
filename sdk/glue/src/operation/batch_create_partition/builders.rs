@@ -37,9 +37,7 @@ impl BatchCreatePartitionFluentBuilder {
         }
     }
     /// Access the BatchCreatePartition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_create_partition::builders::BatchCreatePartitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_create_partition::builders::BatchCreatePartitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl BatchCreatePartitionFluentBuilder {
             crate::operation::batch_create_partition::BatchCreatePartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_partition::BatchCreatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_partition::BatchCreatePartitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl BatchCreatePartitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl BatchCreatePartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_partition::BatchCreatePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_partition::BatchCreatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_partition::BatchCreatePartitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl BatchCreatePartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_partition::BatchCreatePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_partition::BatchCreatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_partition::BatchCreatePartitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl BatchCreatePartitionFluentBuilder {
             crate::operation::batch_create_partition::BatchCreatePartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_partition::BatchCreatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_partition::BatchCreatePartitionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl BatchCreatePartitionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -180,17 +161,12 @@ impl BatchCreatePartitionFluentBuilder {
         self
     }
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
-    pub fn set_partition_input_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>>,
-    ) -> Self {
+    pub fn set_partition_input_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>>) -> Self {
         self.inner = self.inner.set_partition_input_list(input);
         self
     }
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
-    pub fn get_partition_input_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>> {
+    pub fn get_partition_input_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>> {
         self.inner.get_partition_input_list()
     }
 }

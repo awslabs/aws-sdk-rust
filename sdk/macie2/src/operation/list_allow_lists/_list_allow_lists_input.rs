@@ -29,9 +29,7 @@ impl ListAllowListsInput {
 
 /// A builder for [`ListAllowListsInput`](crate::operation::list_allow_lists::ListAllowListsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAllowListsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ListAllowListsInputBuilder {
     /// Consumes the builder and constructs a [`ListAllowListsInput`](crate::operation::list_allow_lists::ListAllowListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_allow_lists::ListAllowListsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_allow_lists::ListAllowListsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_allow_lists::ListAllowListsInput {
             max_results: self.max_results,
             next_token: self.next_token,

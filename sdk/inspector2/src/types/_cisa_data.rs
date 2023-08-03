@@ -37,9 +37,7 @@ impl CisaData {
 
 /// A builder for [`CisaData`](crate::types::CisaData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CisaDataBuilder {
     pub(crate) date_added: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) date_due: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,10 +50,7 @@ impl CisaDataBuilder {
         self
     }
     /// <p>The date and time CISA added this vulnerability to their catalogue.</p>
-    pub fn set_date_added(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_added(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_added = input;
         self
     }
@@ -69,10 +64,7 @@ impl CisaDataBuilder {
         self
     }
     /// <p>The date and time CISA expects a fix to have been provided vulnerability.</p>
-    pub fn set_date_due(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_due(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_due = input;
         self
     }

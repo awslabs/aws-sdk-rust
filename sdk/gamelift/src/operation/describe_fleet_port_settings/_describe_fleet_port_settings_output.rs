@@ -55,21 +55,18 @@ impl ::aws_http::request_id::RequestId for DescribeFleetPortSettingsOutput {
 }
 impl DescribeFleetPortSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetPortSettingsOutput`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput).
-    pub fn builder() -> crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsOutputBuilder {
         crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetPortSettingsOutput`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetPortSettingsOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) inbound_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
+    pub(crate) inbound_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     pub(crate) update_status: ::std::option::Option<crate::types::LocationUpdateStatus>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -124,17 +121,12 @@ impl DescribeFleetPortSettingsOutputBuilder {
         self
     }
     /// <p>The port settings for the requested fleet ID.</p>
-    pub fn set_inbound_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
+    pub fn set_inbound_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.inbound_permissions = input;
         self
     }
     /// <p>The port settings for the requested fleet ID.</p>
-    pub fn get_inbound_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_inbound_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.inbound_permissions
     }
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
@@ -143,10 +135,7 @@ impl DescribeFleetPortSettingsOutputBuilder {
         self
     }
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-    pub fn set_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationUpdateStatus>,
-    ) -> Self {
+    pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::LocationUpdateStatus>) -> Self {
         self.update_status = input;
         self
     }
@@ -178,9 +167,7 @@ impl DescribeFleetPortSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetPortSettingsOutput`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput {
+    pub fn build(self) -> crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput {
         crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput {
             fleet_id: self.fleet_id,
             fleet_arn: self.fleet_arn,

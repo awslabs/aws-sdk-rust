@@ -33,18 +33,14 @@ impl ListServerCertificatesInput {
 }
 impl ListServerCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ListServerCertificatesInput`](crate::operation::list_server_certificates::ListServerCertificatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_server_certificates::builders::ListServerCertificatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_server_certificates::builders::ListServerCertificatesInputBuilder {
         crate::operation::list_server_certificates::builders::ListServerCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServerCertificatesInput`](crate::operation::list_server_certificates::ListServerCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServerCertificatesInputBuilder {
     pub(crate) path_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -102,16 +98,12 @@ impl ListServerCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`ListServerCertificatesInput`](crate::operation::list_server_certificates::ListServerCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_server_certificates::ListServerCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_server_certificates::ListServerCertificatesInput {
-                path_prefix: self.path_prefix,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_server_certificates::ListServerCertificatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_server_certificates::ListServerCertificatesInput {
+            path_prefix: self.path_prefix,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

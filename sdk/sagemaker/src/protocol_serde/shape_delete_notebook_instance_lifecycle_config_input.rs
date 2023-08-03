@@ -4,9 +4,7 @@ pub fn ser_delete_notebook_instance_lifecycle_config_input(
     input: &crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.notebook_instance_lifecycle_config_name {
-        object
-            .key("NotebookInstanceLifecycleConfigName")
-            .string(var_1.as_str());
+        object.key("NotebookInstanceLifecycleConfigName").string(var_1.as_str());
     }
     Ok(())
 }

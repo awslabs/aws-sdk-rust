@@ -40,14 +40,11 @@ impl CreateChannelMembershipInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelMembership.html">CreateChannelMembership</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by CreateChannelMembership in the Amazon Chime SDK Messaging Namespace"
-)]
+#[deprecated(note = "Replaced by CreateChannelMembership in the Amazon Chime SDK Messaging Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateChannelMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder,
+    inner: crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder,
 }
 impl CreateChannelMembershipFluentBuilder {
     /// Creates a new `CreateChannelMembership`.
@@ -58,10 +55,7 @@ impl CreateChannelMembershipFluentBuilder {
         }
     }
     /// Access the CreateChannelMembership as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +67,7 @@ impl CreateChannelMembershipFluentBuilder {
             crate::operation::create_channel_membership::CreateChannelMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_membership::CreateChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_membership::CreateChannelMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -85,10 +77,7 @@ impl CreateChannelMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -97,9 +86,7 @@ impl CreateChannelMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_channel_membership::CreateChannelMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_membership::CreateChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_membership::CreateChannelMembershipError>,
     > {
         let op = self
             .inner
@@ -122,9 +109,7 @@ impl CreateChannelMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_channel_membership::CreateChannelMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_membership::CreateChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_membership::CreateChannelMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -138,9 +123,7 @@ impl CreateChannelMembershipFluentBuilder {
             crate::operation::create_channel_membership::CreateChannelMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_membership::CreateChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_membership::CreateChannelMembershipError>,
     > {
         self.customize_middleware().await
     }
@@ -178,10 +161,7 @@ impl CreateChannelMembershipFluentBuilder {
         self
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

@@ -37,9 +37,7 @@ impl CastColumnTypeOperation {
 
 /// A builder for [`CastColumnTypeOperation`](crate::types::CastColumnTypeOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CastColumnTypeOperationBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_column_type: ::std::option::Option<crate::types::ColumnDataType>,
@@ -66,10 +64,7 @@ impl CastColumnTypeOperationBuilder {
         self
     }
     /// <p>New column data type.</p>
-    pub fn set_new_column_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnDataType>,
-    ) -> Self {
+    pub fn set_new_column_type(mut self, input: ::std::option::Option<crate::types::ColumnDataType>) -> Self {
         self.new_column_type = input;
         self
     }

@@ -35,9 +35,7 @@ pub fn ser_action(
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("RedirectConfig");
     if let Some(var_12) = &input.redirect_config {
-        crate::protocol_serde::shape_redirect_action_config::ser_redirect_action_config(
-            scope_11, var_12,
-        )?;
+        crate::protocol_serde::shape_redirect_action_config::ser_redirect_action_config(scope_11, var_12)?;
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("FixedResponseConfig");
@@ -47,16 +45,12 @@ pub fn ser_action(
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("ForwardConfig");
     if let Some(var_16) = &input.forward_config {
-        crate::protocol_serde::shape_forward_action_config::ser_forward_action_config(
-            scope_15, var_16,
-        )?;
+        crate::protocol_serde::shape_forward_action_config::ser_forward_action_config(scope_15, var_16)?;
     }
     Ok(())
 }
 
-pub fn de_action(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Action, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_action(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Action, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Action::builder();
     while let Some(mut tag) = decoder.next_tag() {

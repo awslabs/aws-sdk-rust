@@ -98,9 +98,7 @@ impl Environment {
     /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
     /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
     /// </ul>
-    pub fn managed_credentials_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ManagedCredentialsStatus> {
+    pub fn managed_credentials_status(&self) -> ::std::option::Option<&crate::types::ManagedCredentialsStatus> {
         self.managed_credentials_status.as_ref()
     }
 }
@@ -115,10 +113,7 @@ impl ::std::fmt::Debug for Environment {
         formatter.field("arn", &self.arn);
         formatter.field("owner_arn", &self.owner_arn);
         formatter.field("lifecycle", &self.lifecycle);
-        formatter.field(
-            "managed_credentials_status",
-            &self.managed_credentials_status,
-        );
+        formatter.field("managed_credentials_status", &self.managed_credentials_status);
         formatter.finish()
     }
 }
@@ -141,8 +136,7 @@ pub struct EnvironmentBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::EnvironmentLifecycle>,
-    pub(crate) managed_credentials_status:
-        ::std::option::Option<crate::types::ManagedCredentialsStatus>,
+    pub(crate) managed_credentials_status: ::std::option::Option<crate::types::ManagedCredentialsStatus>,
 }
 impl EnvironmentBuilder {
     /// <p>The ID of the environment.</p>
@@ -219,10 +213,7 @@ impl EnvironmentBuilder {
         self
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionType>,
-    ) -> Self {
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
         self.connection_type = input;
         self
     }
@@ -264,10 +255,7 @@ impl EnvironmentBuilder {
         self
     }
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::EnvironmentLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -288,10 +276,7 @@ impl EnvironmentBuilder {
     /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
     /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
     /// </ul>
-    pub fn managed_credentials_status(
-        mut self,
-        input: crate::types::ManagedCredentialsStatus,
-    ) -> Self {
+    pub fn managed_credentials_status(mut self, input: crate::types::ManagedCredentialsStatus) -> Self {
         self.managed_credentials_status = ::std::option::Option::Some(input);
         self
     }
@@ -308,10 +293,7 @@ impl EnvironmentBuilder {
     /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
     /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
     /// </ul>
-    pub fn set_managed_credentials_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedCredentialsStatus>,
-    ) -> Self {
+    pub fn set_managed_credentials_status(mut self, input: ::std::option::Option<crate::types::ManagedCredentialsStatus>) -> Self {
         self.managed_credentials_status = input;
         self
     }
@@ -328,9 +310,7 @@ impl EnvironmentBuilder {
     /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
     /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
     /// </ul>
-    pub fn get_managed_credentials_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ManagedCredentialsStatus> {
+    pub fn get_managed_credentials_status(&self) -> &::std::option::Option<crate::types::ManagedCredentialsStatus> {
         &self.managed_credentials_status
     }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
@@ -359,10 +339,7 @@ impl ::std::fmt::Debug for EnvironmentBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("owner_arn", &self.owner_arn);
         formatter.field("lifecycle", &self.lifecycle);
-        formatter.field(
-            "managed_credentials_status",
-            &self.managed_credentials_status,
-        );
+        formatter.field("managed_credentials_status", &self.managed_credentials_status);
         formatter.finish()
     }
 }

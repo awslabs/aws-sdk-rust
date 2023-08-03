@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayRouteTableOutput`](crate::operation::create_transit_gateway_route_table::CreateTransitGatewayRouteTableOutput) with field(s):
     ///   - [`transit_gateway_route_table(Option<TransitGatewayRouteTable>)`](crate::operation::create_transit_gateway_route_table::CreateTransitGatewayRouteTableOutput::transit_gateway_route_table): <p>Information about the transit gateway route table.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayRouteTableError>`](crate::operation::create_transit_gateway_route_table::CreateTransitGatewayRouteTableError)
-    pub fn create_transit_gateway_route_table(&self) -> crate::operation::create_transit_gateway_route_table::builders::CreateTransitGatewayRouteTableFluentBuilder{
+    pub fn create_transit_gateway_route_table(
+        &self,
+    ) -> crate::operation::create_transit_gateway_route_table::builders::CreateTransitGatewayRouteTableFluentBuilder {
         crate::operation::create_transit_gateway_route_table::builders::CreateTransitGatewayRouteTableFluentBuilder::new(self.handle.clone())
     }
 }

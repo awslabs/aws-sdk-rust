@@ -52,9 +52,7 @@ impl MasterUserSecret {
 
 /// A builder for [`MasterUserSecret`](crate::types::MasterUserSecret).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MasterUserSecretBuilder {
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_status: ::std::option::Option<::std::string::String>,
@@ -83,10 +81,7 @@ impl MasterUserSecretBuilder {
     /// <li> <p> <code>rotating</code> - The secret is being rotated.</p> </li>
     /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
     /// </ul>
-    pub fn secret_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_status = ::std::option::Option::Some(input.into());
         self
     }
@@ -98,10 +93,7 @@ impl MasterUserSecretBuilder {
     /// <li> <p> <code>rotating</code> - The secret is being rotated.</p> </li>
     /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
     /// </ul>
-    pub fn set_secret_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_status = input;
         self
     }

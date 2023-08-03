@@ -14,8 +14,7 @@ pub struct ListResolverQueryLogConfigsOutput {
     pub total_filtered_count: i32,
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
     #[doc(hidden)]
-    pub resolver_query_log_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfig>>,
+    pub resolver_query_log_configs: ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfig>>,
     _request_id: Option<String>,
 }
 impl ListResolverQueryLogConfigsOutput {
@@ -32,9 +31,7 @@ impl ListResolverQueryLogConfigsOutput {
         self.total_filtered_count
     }
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn resolver_query_log_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResolverQueryLogConfig]> {
+    pub fn resolver_query_log_configs(&self) -> ::std::option::Option<&[crate::types::ResolverQueryLogConfig]> {
         self.resolver_query_log_configs.as_deref()
     }
 }
@@ -45,22 +42,19 @@ impl ::aws_http::request_id::RequestId for ListResolverQueryLogConfigsOutput {
 }
 impl ListResolverQueryLogConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigsOutput`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput).
-    pub fn builder() -> crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsOutputBuilder{
+    pub fn builder() -> crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsOutputBuilder {
         crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverQueryLogConfigsOutput`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverQueryLogConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) total_count: ::std::option::Option<i32>,
     pub(crate) total_filtered_count: ::std::option::Option<i32>,
-    pub(crate) resolver_query_log_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfig>>,
+    pub(crate) resolver_query_log_configs: ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfig>>,
     _request_id: Option<String>,
 }
 impl ListResolverQueryLogConfigsOutputBuilder {
@@ -111,27 +105,19 @@ impl ListResolverQueryLogConfigsOutputBuilder {
     /// To override the contents of this collection use [`set_resolver_query_log_configs`](Self::set_resolver_query_log_configs).
     ///
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn resolver_query_log_configs(
-        mut self,
-        input: crate::types::ResolverQueryLogConfig,
-    ) -> Self {
+    pub fn resolver_query_log_configs(mut self, input: crate::types::ResolverQueryLogConfig) -> Self {
         let mut v = self.resolver_query_log_configs.unwrap_or_default();
         v.push(input);
         self.resolver_query_log_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn set_resolver_query_log_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfig>>,
-    ) -> Self {
+    pub fn set_resolver_query_log_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfig>>) -> Self {
         self.resolver_query_log_configs = input;
         self
     }
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn get_resolver_query_log_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfig>> {
+    pub fn get_resolver_query_log_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfig>> {
         &self.resolver_query_log_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -144,9 +130,7 @@ impl ListResolverQueryLogConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResolverQueryLogConfigsOutput`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput {
+    pub fn build(self) -> crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput {
         crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput {
             next_token: self.next_token,
             total_count: self.total_count.unwrap_or_default(),

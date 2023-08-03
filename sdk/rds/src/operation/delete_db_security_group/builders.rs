@@ -40,10 +40,7 @@ impl DeleteDBSecurityGroupFluentBuilder {
         }
     }
     /// Access the DeleteDBSecurityGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_db_security_group::builders::DeleteDbSecurityGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_db_security_group::builders::DeleteDbSecurityGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl DeleteDBSecurityGroupFluentBuilder {
             crate::operation::delete_db_security_group::DeleteDBSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_security_group::DeleteDBSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_security_group::DeleteDBSecurityGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl DeleteDBSecurityGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl DeleteDBSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_security_group::DeleteDbSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_security_group::DeleteDBSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_security_group::DeleteDBSecurityGroupError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl DeleteDBSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_security_group::DeleteDbSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_security_group::DeleteDBSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_security_group::DeleteDBSecurityGroupError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl DeleteDBSecurityGroupFluentBuilder {
             crate::operation::delete_db_security_group::DeleteDBSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_security_group::DeleteDBSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_security_group::DeleteDBSecurityGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -136,10 +122,7 @@ impl DeleteDBSecurityGroupFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
-    pub fn db_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_security_group_name(input.into());
         self
     }
@@ -153,10 +136,7 @@ impl DeleteDBSecurityGroupFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
-    pub fn set_db_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_security_group_name(input);
         self
     }

@@ -38,13 +38,7 @@
 /// A preference indicating a choice to use 63bit/32bit IDs for all applicable resources.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceIdType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ResourceIdType {
         match s {
             "LONG_ID" => ResourceIdType::LongId,
             "SHORT_ID" => ResourceIdType::ShortId,
-            other => {
-                ResourceIdType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceIdType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

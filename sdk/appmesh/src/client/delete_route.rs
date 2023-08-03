@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteRouteOutput`](crate::operation::delete_route::DeleteRouteOutput) with field(s):
     ///   - [`route(Option<RouteData>)`](crate::operation::delete_route::DeleteRouteOutput::route): <p>The route that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteRouteError>`](crate::operation::delete_route::DeleteRouteError)
-    pub fn delete_route(
-        &self,
-    ) -> crate::operation::delete_route::builders::DeleteRouteFluentBuilder {
+    pub fn delete_route(&self) -> crate::operation::delete_route::builders::DeleteRouteFluentBuilder {
         crate::operation::delete_route::builders::DeleteRouteFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`pipeline_id(impl ::std::convert::Into<String>)`](crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder::set_pipeline_id): <p>The ID of the pipeline.</p>
     /// - On success, responds with [`DeletePipelineOutput`](crate::operation::delete_pipeline::DeletePipelineOutput)
     /// - On failure, responds with [`SdkError<DeletePipelineError>`](crate::operation::delete_pipeline::DeletePipelineError)
-    pub fn delete_pipeline(
-        &self,
-    ) -> crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder {
-        crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_pipeline(&self) -> crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder {
+        crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder::new(self.handle.clone())
     }
 }

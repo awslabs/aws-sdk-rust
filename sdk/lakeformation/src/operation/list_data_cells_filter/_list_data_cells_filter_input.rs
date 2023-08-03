@@ -29,18 +29,14 @@ impl ListDataCellsFilterInput {
 }
 impl ListDataCellsFilterInput {
     /// Creates a new builder-style object to manufacture [`ListDataCellsFilterInput`](crate::operation::list_data_cells_filter::ListDataCellsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::list_data_cells_filter::builders::ListDataCellsFilterInputBuilder {
-        crate::operation::list_data_cells_filter::builders::ListDataCellsFilterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_data_cells_filter::builders::ListDataCellsFilterInputBuilder {
+        crate::operation::list_data_cells_filter::builders::ListDataCellsFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataCellsFilterInput`](crate::operation::list_data_cells_filter::ListDataCellsFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataCellsFilterInputBuilder {
     pub(crate) table: ::std::option::Option<crate::types::TableResource>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListDataCellsFilterInputBuilder {
     /// Consumes the builder and constructs a [`ListDataCellsFilterInput`](crate::operation::list_data_cells_filter::ListDataCellsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_cells_filter::ListDataCellsFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_data_cells_filter::ListDataCellsFilterInput {
-                table: self.table,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_data_cells_filter::ListDataCellsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_data_cells_filter::ListDataCellsFilterInput {
+            table: self.table,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

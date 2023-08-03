@@ -5,8 +5,7 @@
 pub struct ListEndpointsOutput {
     /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
     #[doc(hidden)]
-    pub endpoint_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>>,
+    pub endpoint_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEndpointsOutput {
 }
 impl ListEndpointsOutput {
     /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
-    pub fn endpoint_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EndpointProperties]> {
+    pub fn endpoint_properties_list(&self) -> ::std::option::Option<&[crate::types::EndpointProperties]> {
         self.endpoint_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -38,12 +35,9 @@ impl ListEndpointsOutput {
 
 /// A builder for [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEndpointsOutputBuilder {
-    pub(crate) endpoint_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>>,
+    pub(crate) endpoint_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListEndpointsOutputBuilder {
         self
     }
     /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
-    pub fn set_endpoint_properties_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>>,
-    ) -> Self {
+    pub fn set_endpoint_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>>) -> Self {
         self.endpoint_properties_list = input;
         self
     }
     /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
-    pub fn get_endpoint_properties_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>> {
+    pub fn get_endpoint_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>> {
         &self.endpoint_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>

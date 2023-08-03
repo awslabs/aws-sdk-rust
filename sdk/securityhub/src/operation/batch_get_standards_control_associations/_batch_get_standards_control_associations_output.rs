@@ -5,26 +5,19 @@
 pub struct BatchGetStandardsControlAssociationsOutput {
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard. </p>
     #[doc(hidden)]
-    pub standards_control_association_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>,
+    pub standards_control_association_details: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>,
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned. </p>
     #[doc(hidden)]
-    pub unprocessed_associations: ::std::option::Option<
-        ::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>,
-    >,
+    pub unprocessed_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>>,
     _request_id: Option<String>,
 }
 impl BatchGetStandardsControlAssociationsOutput {
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard. </p>
-    pub fn standards_control_association_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StandardsControlAssociationDetail]> {
+    pub fn standards_control_association_details(&self) -> ::std::option::Option<&[crate::types::StandardsControlAssociationDetail]> {
         self.standards_control_association_details.as_deref()
     }
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned. </p>
-    pub fn unprocessed_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedStandardsControlAssociation]> {
+    pub fn unprocessed_associations(&self) -> ::std::option::Option<&[crate::types::UnprocessedStandardsControlAssociation]> {
         self.unprocessed_associations.as_deref()
     }
 }
@@ -35,22 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetStandardsControlAssociationsO
 }
 impl BatchGetStandardsControlAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetStandardsControlAssociationsOutput`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput).
-    pub fn builder() -> crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsOutputBuilder {
         crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetStandardsControlAssociationsOutput`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetStandardsControlAssociationsOutputBuilder {
-    pub(crate) standards_control_association_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>,
-    pub(crate) unprocessed_associations: ::std::option::Option<
-        ::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>,
-    >,
+    pub(crate) standards_control_association_details: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>,
+    pub(crate) unprocessed_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>>,
     _request_id: Option<String>,
 }
 impl BatchGetStandardsControlAssociationsOutputBuilder {
@@ -59,13 +47,8 @@ impl BatchGetStandardsControlAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_standards_control_association_details`](Self::set_standards_control_association_details).
     ///
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard. </p>
-    pub fn standards_control_association_details(
-        mut self,
-        input: crate::types::StandardsControlAssociationDetail,
-    ) -> Self {
-        let mut v = self
-            .standards_control_association_details
-            .unwrap_or_default();
+    pub fn standards_control_association_details(mut self, input: crate::types::StandardsControlAssociationDetail) -> Self {
+        let mut v = self.standards_control_association_details.unwrap_or_default();
         v.push(input);
         self.standards_control_association_details = ::std::option::Option::Some(v);
         self
@@ -73,9 +56,7 @@ impl BatchGetStandardsControlAssociationsOutputBuilder {
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard. </p>
     pub fn set_standards_control_association_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StandardsControlAssociationDetail>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>,
     ) -> Self {
         self.standards_control_association_details = input;
         self
@@ -83,8 +64,7 @@ impl BatchGetStandardsControlAssociationsOutputBuilder {
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard. </p>
     pub fn get_standards_control_association_details(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>> {
         &self.standards_control_association_details
     }
     /// Appends an item to `unprocessed_associations`.
@@ -92,10 +72,7 @@ impl BatchGetStandardsControlAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_associations`](Self::set_unprocessed_associations).
     ///
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned. </p>
-    pub fn unprocessed_associations(
-        mut self,
-        input: crate::types::UnprocessedStandardsControlAssociation,
-    ) -> Self {
+    pub fn unprocessed_associations(mut self, input: crate::types::UnprocessedStandardsControlAssociation) -> Self {
         let mut v = self.unprocessed_associations.unwrap_or_default();
         v.push(input);
         self.unprocessed_associations = ::std::option::Option::Some(v);
@@ -104,18 +81,13 @@ impl BatchGetStandardsControlAssociationsOutputBuilder {
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned. </p>
     pub fn set_unprocessed_associations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>>,
     ) -> Self {
         self.unprocessed_associations = input;
         self
     }
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned. </p>
-    pub fn get_unprocessed_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>>
-    {
+    pub fn get_unprocessed_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>> {
         &self.unprocessed_associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -128,12 +100,10 @@ impl BatchGetStandardsControlAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetStandardsControlAssociationsOutput`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput).
-    pub fn build(self) -> crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput{
+    pub fn build(self) -> crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput {
         crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput {
-            standards_control_association_details: self.standards_control_association_details
-            ,
-            unprocessed_associations: self.unprocessed_associations
-            ,
+            standards_control_association_details: self.standards_control_association_details,
+            unprocessed_associations: self.unprocessed_associations,
             _request_id: self._request_id,
         }
     }

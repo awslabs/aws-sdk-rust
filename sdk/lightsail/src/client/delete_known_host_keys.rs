@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteKnownHostKeysOutput`](crate::operation::delete_known_host_keys::DeleteKnownHostKeysOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_known_host_keys::DeleteKnownHostKeysOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteKnownHostKeysError>`](crate::operation::delete_known_host_keys::DeleteKnownHostKeysError)
-    pub fn delete_known_host_keys(
-        &self,
-    ) -> crate::operation::delete_known_host_keys::builders::DeleteKnownHostKeysFluentBuilder {
-        crate::operation::delete_known_host_keys::builders::DeleteKnownHostKeysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_known_host_keys(&self) -> crate::operation::delete_known_host_keys::builders::DeleteKnownHostKeysFluentBuilder {
+        crate::operation::delete_known_host_keys::builders::DeleteKnownHostKeysFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,16 +22,14 @@ impl ListDocumentClassifierSummariesInput {
 }
 impl ListDocumentClassifierSummariesInput {
     /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesInput`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesInput).
-    pub fn builder() -> crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesInputBuilder{
+    pub fn builder() -> crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesInputBuilder {
         crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDocumentClassifierSummariesInput`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDocumentClassifierSummariesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,11 +72,9 @@ impl ListDocumentClassifierSummariesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

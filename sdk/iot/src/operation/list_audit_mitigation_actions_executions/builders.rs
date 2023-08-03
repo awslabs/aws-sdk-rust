@@ -5,16 +5,16 @@ pub use crate::operation::list_audit_mitigation_actions_executions::_list_audit_
 
 impl ListAuditMitigationActionsExecutionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_audit_mitigation_actions_executions();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAuditMitigationActionsExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsInputBuilder,
+    inner: crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsInputBuilder,
 }
 impl ListAuditMitigationActionsExecutionsFluentBuilder {
     /// Creates a new `ListAuditMitigationActionsExecutions`.
@@ -38,15 +38,22 @@ impl ListAuditMitigationActionsExecutionsFluentBuilder {
         }
     }
     /// Access the ListAuditMitigationActionsExecutions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +62,17 @@ impl ListAuditMitigationActionsExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,24 +90,38 @@ impl ListAuditMitigationActionsExecutionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_audit_mitigation_actions_executions::paginator::ListAuditMitigationActionsExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_audit_mitigation_actions_executions::paginator::ListAuditMitigationActionsExecutionsPaginator{
-        crate::operation::list_audit_mitigation_actions_executions::paginator::ListAuditMitigationActionsExecutionsPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_audit_mitigation_actions_executions::paginator::ListAuditMitigationActionsExecutionsPaginator {
+        crate::operation::list_audit_mitigation_actions_executions::paginator::ListAuditMitigationActionsExecutionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,25 +138,17 @@ impl ListAuditMitigationActionsExecutionsFluentBuilder {
         self.inner.get_task_id()
     }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
-    pub fn action_status(
-        mut self,
-        input: crate::types::AuditMitigationActionsExecutionStatus,
-    ) -> Self {
+    pub fn action_status(mut self, input: crate::types::AuditMitigationActionsExecutionStatus) -> Self {
         self.inner = self.inner.action_status(input);
         self
     }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
-    pub fn set_action_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>,
-    ) -> Self {
+    pub fn set_action_status(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>) -> Self {
         self.inner = self.inner.set_action_status(input);
         self
     }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
-    pub fn get_action_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus> {
+    pub fn get_action_status(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus> {
         self.inner.get_action_status()
     }
     /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>

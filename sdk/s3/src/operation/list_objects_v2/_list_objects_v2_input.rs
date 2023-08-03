@@ -37,8 +37,7 @@ pub struct ListObjectsV2Input {
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
     #[doc(hidden)]
-    pub optional_object_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>,
+    pub optional_object_attributes: ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>,
 }
 impl ListObjectsV2Input {
     /// <p>Bucket name to list. </p>
@@ -84,9 +83,7 @@ impl ListObjectsV2Input {
         self.expected_bucket_owner.as_deref()
     }
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
-    pub fn optional_object_attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OptionalObjectAttributes]> {
+    pub fn optional_object_attributes(&self) -> ::std::option::Option<&[crate::types::OptionalObjectAttributes]> {
         self.optional_object_attributes.as_deref()
     }
 }
@@ -99,9 +96,7 @@ impl ListObjectsV2Input {
 
 /// A builder for [`ListObjectsV2Input`](crate::operation::list_objects_v2::ListObjectsV2Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectsV2InputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
@@ -113,8 +108,7 @@ pub struct ListObjectsV2InputBuilder {
     pub(crate) start_after: ::std::option::Option<::std::string::String>,
     pub(crate) request_payer: ::std::option::Option<crate::types::RequestPayer>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
-    pub(crate) optional_object_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>,
+    pub(crate) optional_object_attributes: ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>,
 }
 impl ListObjectsV2InputBuilder {
     /// <p>Bucket name to list. </p>
@@ -157,10 +151,7 @@ impl ListObjectsV2InputBuilder {
         self
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-    pub fn set_encoding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncodingType>,
-    ) -> Self {
+    pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
         self.encoding_type = input;
         self
     }
@@ -197,18 +188,12 @@ impl ListObjectsV2InputBuilder {
         &self.prefix
     }
     /// <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key.</p>
-    pub fn continuation_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continuation_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key.</p>
-    pub fn set_continuation_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continuation_token = input;
         self
     }
@@ -250,10 +235,7 @@ impl ListObjectsV2InputBuilder {
         self
     }
     /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p>
-    pub fn set_request_payer(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestPayer>,
-    ) -> Self {
+    pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.request_payer = input;
         self
     }
@@ -262,18 +244,12 @@ impl ListObjectsV2InputBuilder {
         &self.request_payer
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -286,36 +262,25 @@ impl ListObjectsV2InputBuilder {
     /// To override the contents of this collection use [`set_optional_object_attributes`](Self::set_optional_object_attributes).
     ///
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
-    pub fn optional_object_attributes(
-        mut self,
-        input: crate::types::OptionalObjectAttributes,
-    ) -> Self {
+    pub fn optional_object_attributes(mut self, input: crate::types::OptionalObjectAttributes) -> Self {
         let mut v = self.optional_object_attributes.unwrap_or_default();
         v.push(input);
         self.optional_object_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
-    pub fn set_optional_object_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>,
-    ) -> Self {
+    pub fn set_optional_object_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>) -> Self {
         self.optional_object_attributes = input;
         self
     }
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
-    pub fn get_optional_object_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>> {
+    pub fn get_optional_object_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>> {
         &self.optional_object_attributes
     }
     /// Consumes the builder and constructs a [`ListObjectsV2Input`](crate::operation::list_objects_v2::ListObjectsV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_objects_v2::ListObjectsV2Input,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_objects_v2::ListObjectsV2Input, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_objects_v2::ListObjectsV2Input {
             bucket: self.bucket,
             delimiter: self.delimiter,

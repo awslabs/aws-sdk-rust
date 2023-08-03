@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`last_modified_on(Option<DateTime>)`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetOutput::last_modified_on): <p>A timestamp. The last point in time when this data quality ruleset was modified.</p>
     ///   - [`recommendation_run_id(Option<String>)`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetOutput::recommendation_run_id): <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
     /// - On failure, responds with [`SdkError<GetDataQualityRulesetError>`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetError)
-    pub fn get_data_quality_ruleset(
-        &self,
-    ) -> crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetFluentBuilder
-    {
+    pub fn get_data_quality_ruleset(&self) -> crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetFluentBuilder {
         crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetFluentBuilder::new(self.handle.clone())
     }
 }

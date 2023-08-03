@@ -27,7 +27,7 @@ impl ResetDbClusterParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetDBClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupInputBuilder,
+    inner: crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupInputBuilder,
 }
 impl ResetDBClusterParameterGroupFluentBuilder {
     /// Creates a new `ResetDBClusterParameterGroup`.
@@ -38,7 +38,7 @@ impl ResetDBClusterParameterGroupFluentBuilder {
         }
     }
     /// Access the ResetDBClusterParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ResetDBClusterParameterGroupFluentBuilder {
             crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ResetDBClusterParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ResetDBClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroupError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ResetDBClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -115,32 +106,22 @@ impl ResetDBClusterParameterGroupFluentBuilder {
             crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the cluster parameter group to reset.</p>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
         self
     }
     /// <p>The name of the cluster parameter group to reset.</p>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
     /// <p>The name of the cluster parameter group to reset.</p>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
     }
     /// <p>A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
@@ -167,17 +148,12 @@ impl ResetDBClusterParameterGroupFluentBuilder {
         self
     }
     /// <p>A list of parameter names in the cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>A list of parameter names in the cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
 }

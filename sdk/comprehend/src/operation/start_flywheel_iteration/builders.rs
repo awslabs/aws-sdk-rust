@@ -37,10 +37,7 @@ impl StartFlywheelIterationFluentBuilder {
         }
     }
     /// Access the StartFlywheelIteration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartFlywheelIterationFluentBuilder {
             crate::operation::start_flywheel_iteration::StartFlywheelIteration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_flywheel_iteration::StartFlywheelIterationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_flywheel_iteration::StartFlywheelIterationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartFlywheelIterationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartFlywheelIterationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_flywheel_iteration::StartFlywheelIterationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_flywheel_iteration::StartFlywheelIterationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_flywheel_iteration::StartFlywheelIterationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartFlywheelIterationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_flywheel_iteration::StartFlywheelIterationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_flywheel_iteration::StartFlywheelIterationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_flywheel_iteration::StartFlywheelIterationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartFlywheelIterationFluentBuilder {
             crate::operation::start_flywheel_iteration::StartFlywheelIteration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_flywheel_iteration::StartFlywheelIterationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_flywheel_iteration::StartFlywheelIterationError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl StartFlywheelIterationFluentBuilder {
         self.inner.get_flywheel_arn()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

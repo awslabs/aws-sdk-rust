@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`vehicle_summaries(Option<Vec<VehicleSummary>>)`](crate::operation::list_vehicles::ListVehiclesOutput::vehicle_summaries): <p> A list of vehicles and information about them. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vehicles::ListVehiclesOutput::next_token): <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListVehiclesError>`](crate::operation::list_vehicles::ListVehiclesError)
-    pub fn list_vehicles(
-        &self,
-    ) -> crate::operation::list_vehicles::builders::ListVehiclesFluentBuilder {
-        crate::operation::list_vehicles::builders::ListVehiclesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_vehicles(&self) -> crate::operation::list_vehicles::builders::ListVehiclesFluentBuilder {
+        crate::operation::list_vehicles::builders::ListVehiclesFluentBuilder::new(self.handle.clone())
     }
 }

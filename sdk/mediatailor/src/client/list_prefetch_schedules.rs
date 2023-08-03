@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<PrefetchSchedule>>)`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesOutput::items): <p>Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListPrefetchSchedulesError>`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesError)
-    pub fn list_prefetch_schedules(
-        &self,
-    ) -> crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesFluentBuilder
-    {
-        crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_prefetch_schedules(&self) -> crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesFluentBuilder {
+        crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesFluentBuilder::new(self.handle.clone())
     }
 }

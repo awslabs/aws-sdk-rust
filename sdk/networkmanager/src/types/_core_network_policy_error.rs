@@ -37,9 +37,7 @@ impl CoreNetworkPolicyError {
 
 /// A builder for [`CoreNetworkPolicyError`](crate::types::CoreNetworkPolicyError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkPolicyErrorBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -15,8 +15,7 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
                             ::aws_smithy_http::operation::Response
                         >
     >{
-        let mut fluent_builder =
-            client.create_local_gateway_route_table_virtual_interface_group_association();
+        let mut fluent_builder = client.create_local_gateway_route_table_virtual_interface_group_association();
         fluent_builder.inner = self;
         fluent_builder.send().await
     }
@@ -55,10 +54,7 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -96,51 +92,31 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
         self.customize_middleware().await
     }
     /// <p> The ID of the local gateway route table. </p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_gateway_route_table_id(input.into());
         self
     }
     /// <p> The ID of the local gateway route table. </p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_gateway_route_table_id(input);
         self
     }
     /// <p> The ID of the local gateway route table. </p>
-    pub fn get_local_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_local_gateway_route_table_id()
     }
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
-    pub fn local_gateway_virtual_interface_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .local_gateway_virtual_interface_group_id(input.into());
+    pub fn local_gateway_virtual_interface_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.local_gateway_virtual_interface_group_id(input.into());
         self
     }
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
-    pub fn set_local_gateway_virtual_interface_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_local_gateway_virtual_interface_group_id(input);
+    pub fn set_local_gateway_virtual_interface_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_local_gateway_virtual_interface_group_id(input);
         self
     }
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
-    pub fn get_local_gateway_virtual_interface_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_virtual_interface_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_local_gateway_virtual_interface_group_id()
     }
     /// Appends an item to `TagSpecifications`.
@@ -153,17 +129,12 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
         self
     }
     /// <p> The tags assigned to the local gateway route table virtual interface group association. </p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p> The tags assigned to the local gateway route table virtual interface group association. </p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

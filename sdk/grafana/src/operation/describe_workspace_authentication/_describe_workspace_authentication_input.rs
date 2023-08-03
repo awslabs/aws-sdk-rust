@@ -15,16 +15,14 @@ impl DescribeWorkspaceAuthenticationInput {
 }
 impl DescribeWorkspaceAuthenticationInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceAuthenticationInput`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationInput).
-    pub fn builder() -> crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationInputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationInputBuilder {
         crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceAuthenticationInput`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceAuthenticationInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,9 +50,8 @@ impl DescribeWorkspaceAuthenticationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationInput {
-                workspace_id: self.workspace_id
-                ,
-            }
+                workspace_id: self.workspace_id,
+            },
         )
     }
 }

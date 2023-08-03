@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`flow_arn(Option<String>)`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput::flow_arn): The ARN of the flow that you added media streams to.
     ///   - [`media_streams(Option<Vec<MediaStream>>)`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput::media_streams): The media streams that you added to the flow.
     /// - On failure, responds with [`SdkError<AddFlowMediaStreamsError>`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsError)
-    pub fn add_flow_media_streams(
-        &self,
-    ) -> crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsFluentBuilder {
-        crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_flow_media_streams(&self) -> crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsFluentBuilder {
+        crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsFluentBuilder::new(self.handle.clone())
     }
 }

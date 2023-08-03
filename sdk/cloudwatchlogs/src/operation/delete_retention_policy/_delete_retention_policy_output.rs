@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRetentionPolicyOutput {
 }
 impl DeleteRetentionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRetentionPolicyOutput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyOutputBuilder {
         crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRetentionPolicyOutput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRetentionPolicyOutputBuilder {
     _request_id: Option<String>,
 }

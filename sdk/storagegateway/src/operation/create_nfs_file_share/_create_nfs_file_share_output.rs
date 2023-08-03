@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for CreateNfsFileShareOutput {
 }
 impl CreateNfsFileShareOutput {
     /// Creates a new builder-style object to manufacture [`CreateNfsFileShareOutput`](crate::operation::create_nfs_file_share::CreateNfsFileShareOutput).
-    pub fn builder(
-    ) -> crate::operation::create_nfs_file_share::builders::CreateNfsFileShareOutputBuilder {
-        crate::operation::create_nfs_file_share::builders::CreateNfsFileShareOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_nfs_file_share::builders::CreateNfsFileShareOutputBuilder {
+        crate::operation::create_nfs_file_share::builders::CreateNfsFileShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNfsFileShareOutput`](crate::operation::create_nfs_file_share::CreateNfsFileShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNfsFileShareOutputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateNfsFileShareOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
-    pub fn file_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
-    pub fn set_file_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_arn = input;
         self
     }

@@ -58,9 +58,7 @@ pub struct InstanceSummary {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl InstanceSummary {
     /// <p>The ID for an instance that you created by using a specified service.</p>
@@ -117,11 +115,7 @@ impl InstanceSummary {
     /// <p>For an <code>SRV</code> record, the value that Route&nbsp;53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route&nbsp;53 sends requests to.</p>
     /// </dd>
     /// </dl>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -134,14 +128,10 @@ impl InstanceSummary {
 
 /// A builder for [`InstanceSummary`](crate::types::InstanceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl InstanceSummaryBuilder {
     /// <p>The ID for an instance that you created by using a specified service.</p>
@@ -212,11 +202,7 @@ impl InstanceSummaryBuilder {
     /// <p>For an <code>SRV</code> record, the value that Route&nbsp;53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route&nbsp;53 sends requests to.</p>
     /// </dd>
     /// </dl>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -272,12 +258,7 @@ impl InstanceSummaryBuilder {
     /// <p>For an <code>SRV</code> record, the value that Route&nbsp;53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route&nbsp;53 sends requests to.</p>
     /// </dd>
     /// </dl>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
@@ -331,11 +312,7 @@ impl InstanceSummaryBuilder {
     /// <p>For an <code>SRV</code> record, the value that Route&nbsp;53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route&nbsp;53 sends requests to.</p>
     /// </dd>
     /// </dl>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`InstanceSummary`](crate::types::InstanceSummary).

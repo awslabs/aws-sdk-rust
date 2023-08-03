@@ -43,9 +43,7 @@ impl AddProfileKeyInput {
 
 /// A builder for [`AddProfileKeyInput`](crate::operation::add_profile_key::AddProfileKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddProfileKeyInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
@@ -93,10 +91,7 @@ impl AddProfileKeyInputBuilder {
         self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -121,10 +116,7 @@ impl AddProfileKeyInputBuilder {
     /// Consumes the builder and constructs a [`AddProfileKeyInput`](crate::operation::add_profile_key::AddProfileKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_profile_key::AddProfileKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::add_profile_key::AddProfileKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_profile_key::AddProfileKeyInput {
             profile_id: self.profile_id,
             key_name: self.key_name,

@@ -18,8 +18,7 @@ pub struct FieldConfig {
     pub input_type: ::std::option::Option<crate::types::FieldInputConfig>,
     /// <p>The validations to perform on the value in the field.</p>
     #[doc(hidden)]
-    pub validations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>>,
+    pub validations: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>>,
 }
 impl FieldConfig {
     /// <p>The label for the field.</p>
@@ -39,9 +38,7 @@ impl FieldConfig {
         self.input_type.as_ref()
     }
     /// <p>The validations to perform on the value in the field.</p>
-    pub fn validations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FieldValidationConfiguration]> {
+    pub fn validations(&self) -> ::std::option::Option<&[crate::types::FieldValidationConfiguration]> {
         self.validations.as_deref()
     }
 }
@@ -54,16 +51,13 @@ impl FieldConfig {
 
 /// A builder for [`FieldConfig`](crate::types::FieldConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldConfigBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<crate::types::FieldPosition>,
     pub(crate) excluded: ::std::option::Option<bool>,
     pub(crate) input_type: ::std::option::Option<crate::types::FieldInputConfig>,
-    pub(crate) validations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>>,
+    pub(crate) validations: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>>,
 }
 impl FieldConfigBuilder {
     /// <p>The label for the field.</p>
@@ -86,10 +80,7 @@ impl FieldConfigBuilder {
         self
     }
     /// <p>Specifies the field position.</p>
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldPosition>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::FieldPosition>) -> Self {
         self.position = input;
         self
     }
@@ -117,10 +108,7 @@ impl FieldConfigBuilder {
         self
     }
     /// <p>Describes the configuration for the default input value to display for a field.</p>
-    pub fn set_input_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldInputConfig>,
-    ) -> Self {
+    pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::FieldInputConfig>) -> Self {
         self.input_type = input;
         self
     }
@@ -140,17 +128,12 @@ impl FieldConfigBuilder {
         self
     }
     /// <p>The validations to perform on the value in the field.</p>
-    pub fn set_validations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>>,
-    ) -> Self {
+    pub fn set_validations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>>) -> Self {
         self.validations = input;
         self
     }
     /// <p>The validations to perform on the value in the field.</p>
-    pub fn get_validations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>> {
+    pub fn get_validations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>> {
         &self.validations
     }
     /// Consumes the builder and constructs a [`FieldConfig`](crate::types::FieldConfig).

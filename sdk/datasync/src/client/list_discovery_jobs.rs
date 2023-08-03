@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`discovery_jobs(Option<Vec<DiscoveryJobListEntry>>)`](crate::operation::list_discovery_jobs::ListDiscoveryJobsOutput::discovery_jobs): <p>The discovery jobs that you've run.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_discovery_jobs::ListDiscoveryJobsOutput::next_token): <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     /// - On failure, responds with [`SdkError<ListDiscoveryJobsError>`](crate::operation::list_discovery_jobs::ListDiscoveryJobsError)
-    pub fn list_discovery_jobs(
-        &self,
-    ) -> crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsFluentBuilder {
-        crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_discovery_jobs(&self) -> crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsFluentBuilder {
+        crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl UpdateQuickConnectConfigInput {
 }
 impl UpdateQuickConnectConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateQuickConnectConfigInput`](crate::operation::update_quick_connect_config::UpdateQuickConnectConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_quick_connect_config::builders::UpdateQuickConnectConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_quick_connect_config::builders::UpdateQuickConnectConfigInputBuilder {
         crate::operation::update_quick_connect_config::builders::UpdateQuickConnectConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQuickConnectConfigInput`](crate::operation::update_quick_connect_config::UpdateQuickConnectConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQuickConnectConfigInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) quick_connect_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl UpdateQuickConnectConfigInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn quick_connect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quick_connect_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn set_quick_connect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quick_connect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quick_connect_id = input;
         self
     }
@@ -87,17 +77,12 @@ impl UpdateQuickConnectConfigInputBuilder {
         self
     }
     /// <p>Information about the configuration settings for the quick connect.</p>
-    pub fn set_quick_connect_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnectConfig>,
-    ) -> Self {
+    pub fn set_quick_connect_config(mut self, input: ::std::option::Option<crate::types::QuickConnectConfig>) -> Self {
         self.quick_connect_config = input;
         self
     }
     /// <p>Information about the configuration settings for the quick connect.</p>
-    pub fn get_quick_connect_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::QuickConnectConfig> {
+    pub fn get_quick_connect_config(&self) -> &::std::option::Option<crate::types::QuickConnectConfig> {
         &self.quick_connect_config
     }
     /// Consumes the builder and constructs a [`UpdateQuickConnectConfigInput`](crate::operation::update_quick_connect_config::UpdateQuickConnectConfigInput).
@@ -107,12 +92,10 @@ impl UpdateQuickConnectConfigInputBuilder {
         crate::operation::update_quick_connect_config::UpdateQuickConnectConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_quick_connect_config::UpdateQuickConnectConfigInput {
-                instance_id: self.instance_id,
-                quick_connect_id: self.quick_connect_id,
-                quick_connect_config: self.quick_connect_config,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_quick_connect_config::UpdateQuickConnectConfigInput {
+            instance_id: self.instance_id,
+            quick_connect_id: self.quick_connect_id,
+            quick_connect_config: self.quick_connect_config,
+        })
     }
 }

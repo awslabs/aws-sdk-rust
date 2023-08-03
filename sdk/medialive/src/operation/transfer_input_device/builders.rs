@@ -37,9 +37,7 @@ impl TransferInputDeviceFluentBuilder {
         }
     }
     /// Access the TransferInputDevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::transfer_input_device::builders::TransferInputDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::transfer_input_device::builders::TransferInputDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl TransferInputDeviceFluentBuilder {
             crate::operation::transfer_input_device::TransferInputDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transfer_input_device::TransferInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_input_device::TransferInputDeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl TransferInputDeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl TransferInputDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::transfer_input_device::TransferInputDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transfer_input_device::TransferInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_input_device::TransferInputDeviceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl TransferInputDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::transfer_input_device::TransferInputDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transfer_input_device::TransferInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_input_device::TransferInputDeviceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl TransferInputDeviceFluentBuilder {
             crate::operation::transfer_input_device::TransferInputDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transfer_input_device::TransferInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_input_device::TransferInputDeviceError>,
     > {
         self.customize_middleware().await
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_device_id(input.into());
         self
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
     }
@@ -143,18 +124,12 @@ impl TransferInputDeviceFluentBuilder {
         self.inner.get_input_device_id()
     }
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
-    pub fn target_customer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_customer_id(input.into());
         self
     }
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
-    pub fn set_target_customer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_customer_id(input);
         self
     }
@@ -163,18 +138,12 @@ impl TransferInputDeviceFluentBuilder {
         self.inner.get_target_customer_id()
     }
     /// The target AWS region to transfer the device.
-    pub fn target_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_region(input.into());
         self
     }
     /// The target AWS region to transfer the device.
-    pub fn set_target_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_region(input);
         self
     }
@@ -183,18 +152,12 @@ impl TransferInputDeviceFluentBuilder {
         self.inner.get_target_region()
     }
     /// An optional message for the recipient. Maximum 280 characters.
-    pub fn transfer_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transfer_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transfer_message(input.into());
         self
     }
     /// An optional message for the recipient. Maximum 280 characters.
-    pub fn set_transfer_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transfer_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transfer_message(input);
         self
     }

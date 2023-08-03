@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateMaintenanceStartTimeOutput`](crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<UpdateMaintenanceStartTimeError>`](crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeError)
-    pub fn update_maintenance_start_time(&self) -> crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeFluentBuilder{
+    pub fn update_maintenance_start_time(
+        &self,
+    ) -> crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeFluentBuilder {
         crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeFluentBuilder::new(self.handle.clone())
     }
 }

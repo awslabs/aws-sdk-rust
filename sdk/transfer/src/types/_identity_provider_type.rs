@@ -52,13 +52,7 @@
 /// for the <code>IdentityProviderDetails</code> data type.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IdentityProviderType {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for IdentityProviderType {
             "AWS_DIRECTORY_SERVICE" => IdentityProviderType::AwsDirectoryService,
             "AWS_LAMBDA" => IdentityProviderType::AwsLambda,
             "SERVICE_MANAGED" => IdentityProviderType::ServiceManaged,
-            other => IdentityProviderType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => IdentityProviderType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -105,12 +97,7 @@ impl IdentityProviderType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "API_GATEWAY",
-            "AWS_DIRECTORY_SERVICE",
-            "AWS_LAMBDA",
-            "SERVICE_MANAGED",
-        ]
+        &["API_GATEWAY", "AWS_DIRECTORY_SERVICE", "AWS_LAMBDA", "SERVICE_MANAGED"]
     }
 }
 impl ::std::convert::AsRef<str> for IdentityProviderType {

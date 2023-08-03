@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListSubscriptionsOutput {
 }
 impl ListSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscriptionsOutput`](crate::operation::list_subscriptions::ListSubscriptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder {
         crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSubscriptionsOutput`](crate::operation::list_subscriptions::ListSubscriptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubscriptionsOutputBuilder {
     pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl ListSubscriptionsOutputBuilder {
         self
     }
     /// <p>A list of subscriptions.</p>
-    pub fn set_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
-    ) -> Self {
+    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
         self.subscriptions = input;
         self
     }
     /// <p>A list of subscriptions.</p>
-    pub fn get_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
         &self.subscriptions
     }
     /// <p>Token to pass along to the next <code>ListSubscriptions</code> request. This element is returned if there are more subscriptions to retrieve.</p>

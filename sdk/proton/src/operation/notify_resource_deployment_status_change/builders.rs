@@ -5,16 +5,16 @@ pub use crate::operation::notify_resource_deployment_status_change::_notify_reso
 
 impl NotifyResourceDeploymentStatusChangeInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.notify_resource_deployment_status_change();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyResourceDeploymentStatusChangeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder,
+    inner: crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder,
 }
 impl NotifyResourceDeploymentStatusChangeFluentBuilder {
     /// Creates a new `NotifyResourceDeploymentStatusChange`.
@@ -38,15 +38,22 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
         }
     }
     /// Access the NotifyResourceDeploymentStatusChange as a reference.
-    pub fn as_input(&self) -> &crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChange, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChange,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +62,17 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput, ::aws_smithy_http::result::SdkError<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +90,26 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput, ::aws_smithy_http::result::SdkError<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChange, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChange,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
@@ -115,10 +132,7 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
         self
     }
     /// <p>The status of your provisioned resource.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDeploymentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceDeploymentStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -136,10 +150,7 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
         self
     }
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
@@ -148,18 +159,12 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
         self.inner.get_outputs()
     }
     /// <p>The deployment ID for your provisioned resource.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p>The deployment ID for your provisioned resource.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
@@ -168,18 +173,12 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
         self.inner.get_deployment_id()
     }
     /// <p>The deployment status message for your provisioned resource.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_message(input.into());
         self
     }
     /// <p>The deployment status message for your provisioned resource.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_message(input);
         self
     }

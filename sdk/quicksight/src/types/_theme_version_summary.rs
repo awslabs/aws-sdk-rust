@@ -51,9 +51,7 @@ impl ThemeVersionSummary {
 
 /// A builder for [`ThemeVersionSummary`](crate::types::ThemeVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThemeVersionSummaryBuilder {
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl ThemeVersionSummaryBuilder {
         self
     }
     /// <p>The date and time that this theme version was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -127,10 +122,7 @@ impl ThemeVersionSummaryBuilder {
         self
     }
     /// <p>The status of the theme version.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }

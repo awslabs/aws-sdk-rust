@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateIdentityProviderOutput`](crate::operation::update_identity_provider::UpdateIdentityProviderOutput) with field(s):
     ///   - [`identity_provider(Option<IdentityProvider>)`](crate::operation::update_identity_provider::UpdateIdentityProviderOutput::identity_provider): <p>The identity provider.</p>
     /// - On failure, responds with [`SdkError<UpdateIdentityProviderError>`](crate::operation::update_identity_provider::UpdateIdentityProviderError)
-    pub fn update_identity_provider(
-        &self,
-    ) -> crate::operation::update_identity_provider::builders::UpdateIdentityProviderFluentBuilder
-    {
+    pub fn update_identity_provider(&self) -> crate::operation::update_identity_provider::builders::UpdateIdentityProviderFluentBuilder {
         crate::operation::update_identity_provider::builders::UpdateIdentityProviderFluentBuilder::new(self.handle.clone())
     }
 }

@@ -17,9 +17,7 @@ impl Capacity {
         self.auto_scaling.as_ref()
     }
     /// <p>Details about a fixed capacity allocated to a connector.</p>
-    pub fn provisioned_capacity(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisionedCapacity> {
+    pub fn provisioned_capacity(&self) -> ::std::option::Option<&crate::types::ProvisionedCapacity> {
         self.provisioned_capacity.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl Capacity {
 
 /// A builder for [`Capacity`](crate::types::Capacity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityBuilder {
     pub(crate) auto_scaling: ::std::option::Option<crate::types::AutoScaling>,
     pub(crate) provisioned_capacity: ::std::option::Option<crate::types::ProvisionedCapacity>,
@@ -46,10 +42,7 @@ impl CapacityBuilder {
         self
     }
     /// <p>Information about the auto scaling parameters for the connector.</p>
-    pub fn set_auto_scaling(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScaling>,
-    ) -> Self {
+    pub fn set_auto_scaling(mut self, input: ::std::option::Option<crate::types::AutoScaling>) -> Self {
         self.auto_scaling = input;
         self
     }
@@ -63,17 +56,12 @@ impl CapacityBuilder {
         self
     }
     /// <p>Details about a fixed capacity allocated to a connector.</p>
-    pub fn set_provisioned_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedCapacity>,
-    ) -> Self {
+    pub fn set_provisioned_capacity(mut self, input: ::std::option::Option<crate::types::ProvisionedCapacity>) -> Self {
         self.provisioned_capacity = input;
         self
     }
     /// <p>Details about a fixed capacity allocated to a connector.</p>
-    pub fn get_provisioned_capacity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedCapacity> {
+    pub fn get_provisioned_capacity(&self) -> &::std::option::Option<crate::types::ProvisionedCapacity> {
         &self.provisioned_capacity
     }
     /// Consumes the builder and constructs a [`Capacity`](crate::types::Capacity).

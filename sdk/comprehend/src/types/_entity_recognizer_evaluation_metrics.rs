@@ -37,9 +37,7 @@ impl EntityRecognizerEvaluationMetrics {
 
 /// A builder for [`EntityRecognizerEvaluationMetrics`](crate::types::EntityRecognizerEvaluationMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityRecognizerEvaluationMetricsBuilder {
     pub(crate) precision: ::std::option::Option<f64>,
     pub(crate) recall: ::std::option::Option<f64>,

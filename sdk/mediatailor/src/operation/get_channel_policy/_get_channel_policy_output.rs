@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetChannelPolicyOutput {
 }
 impl GetChannelPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetChannelPolicyOutput`](crate::operation::get_channel_policy::GetChannelPolicyOutput).
-    pub fn builder() -> crate::operation::get_channel_policy::builders::GetChannelPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_channel_policy::builders::GetChannelPolicyOutputBuilder {
         crate::operation::get_channel_policy::builders::GetChannelPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetChannelPolicyOutput`](crate::operation::get_channel_policy::GetChannelPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -37,9 +37,7 @@ impl FileSizes {
 
 /// A builder for [`FileSizes`](crate::types::FileSizes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileSizesBuilder {
     pub(crate) source: ::std::option::Option<i64>,
     pub(crate) destination: ::std::option::Option<i64>,

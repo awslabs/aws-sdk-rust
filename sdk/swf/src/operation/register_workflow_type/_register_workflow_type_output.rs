@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterWorkflowTypeOutput {
 }
 impl RegisterWorkflowTypeOutput {
     /// Creates a new builder-style object to manufacture [`RegisterWorkflowTypeOutput`](crate::operation::register_workflow_type::RegisterWorkflowTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::register_workflow_type::builders::RegisterWorkflowTypeOutputBuilder {
+    pub fn builder() -> crate::operation::register_workflow_type::builders::RegisterWorkflowTypeOutputBuilder {
         crate::operation::register_workflow_type::builders::RegisterWorkflowTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterWorkflowTypeOutput`](crate::operation::register_workflow_type::RegisterWorkflowTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterWorkflowTypeOutputBuilder {
     _request_id: Option<String>,
 }

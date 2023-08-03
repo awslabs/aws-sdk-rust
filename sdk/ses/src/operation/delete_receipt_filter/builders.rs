@@ -39,9 +39,7 @@ impl DeleteReceiptFilterFluentBuilder {
         }
     }
     /// Access the DeleteReceiptFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DeleteReceiptFilterFluentBuilder {
             crate::operation::delete_receipt_filter::DeleteReceiptFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_receipt_filter::DeleteReceiptFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_receipt_filter::DeleteReceiptFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DeleteReceiptFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DeleteReceiptFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_receipt_filter::DeleteReceiptFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_receipt_filter::DeleteReceiptFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_receipt_filter::DeleteReceiptFilterError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DeleteReceiptFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_receipt_filter::DeleteReceiptFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_receipt_filter::DeleteReceiptFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_receipt_filter::DeleteReceiptFilterError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl DeleteReceiptFilterFluentBuilder {
             crate::operation::delete_receipt_filter::DeleteReceiptFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_receipt_filter::DeleteReceiptFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_receipt_filter::DeleteReceiptFilterError>,
     > {
         self.customize_middleware().await
     }

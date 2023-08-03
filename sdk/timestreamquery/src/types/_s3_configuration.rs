@@ -37,9 +37,7 @@ impl S3Configuration {
 
 /// A builder for [`S3Configuration`](crate::types::S3Configuration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ConfigurationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_key_prefix: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl S3ConfigurationBuilder {
         &self.bucket_name
     }
     /// <p> Prefix for the error report key. Timestream by default adds the following prefix to the error report path. </p>
-    pub fn object_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Prefix for the error report key. Timestream by default adds the following prefix to the error report path. </p>
-    pub fn set_object_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key_prefix = input;
         self
     }
@@ -86,17 +78,12 @@ impl S3ConfigurationBuilder {
         self
     }
     /// <p> Encryption at rest options for the error reports. If no encryption option is specified, Timestream will choose SSE_S3 as default. </p>
-    pub fn set_encryption_option(
-        mut self,
-        input: ::std::option::Option<crate::types::S3EncryptionOption>,
-    ) -> Self {
+    pub fn set_encryption_option(mut self, input: ::std::option::Option<crate::types::S3EncryptionOption>) -> Self {
         self.encryption_option = input;
         self
     }
     /// <p> Encryption at rest options for the error reports. If no encryption option is specified, Timestream will choose SSE_S3 as default. </p>
-    pub fn get_encryption_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3EncryptionOption> {
+    pub fn get_encryption_option(&self) -> &::std::option::Option<crate::types::S3EncryptionOption> {
         &self.encryption_option
     }
     /// Consumes the builder and constructs a [`S3Configuration`](crate::types::S3Configuration).

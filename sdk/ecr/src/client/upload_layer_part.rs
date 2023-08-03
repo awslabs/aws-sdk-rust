@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`upload_id(Option<String>)`](crate::operation::upload_layer_part::UploadLayerPartOutput::upload_id): <p>The upload ID associated with the request.</p>
     ///   - [`last_byte_received(Option<i64>)`](crate::operation::upload_layer_part::UploadLayerPartOutput::last_byte_received): <p>The integer value of the last byte received in the request.</p>
     /// - On failure, responds with [`SdkError<UploadLayerPartError>`](crate::operation::upload_layer_part::UploadLayerPartError)
-    pub fn upload_layer_part(
-        &self,
-    ) -> crate::operation::upload_layer_part::builders::UploadLayerPartFluentBuilder {
-        crate::operation::upload_layer_part::builders::UploadLayerPartFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn upload_layer_part(&self) -> crate::operation::upload_layer_part::builders::UploadLayerPartFluentBuilder {
+        crate::operation::upload_layer_part::builders::UploadLayerPartFluentBuilder::new(self.handle.clone())
     }
 }

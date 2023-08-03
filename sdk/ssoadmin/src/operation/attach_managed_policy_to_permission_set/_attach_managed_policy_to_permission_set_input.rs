@@ -29,16 +29,14 @@ impl AttachManagedPolicyToPermissionSetInput {
 }
 impl AttachManagedPolicyToPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`AttachManagedPolicyToPermissionSetInput`](crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetInput).
-    pub fn builder() -> crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetInputBuilder{
+    pub fn builder() -> crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetInputBuilder {
         crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachManagedPolicyToPermissionSetInput`](crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachManagedPolicyToPermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl AttachManagedPolicyToPermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -80,18 +72,12 @@ impl AttachManagedPolicyToPermissionSetInputBuilder {
         &self.permission_set_arn
     }
     /// <p>The AWS managed policy ARN to be attached to a permission set.</p>
-    pub fn managed_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS managed policy ARN to be attached to a permission set.</p>
-    pub fn set_managed_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_managed_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_policy_arn = input;
         self
     }
@@ -100,16 +86,18 @@ impl AttachManagedPolicyToPermissionSetInputBuilder {
         &self.managed_policy_arn
     }
     /// Consumes the builder and constructs a [`AttachManagedPolicyToPermissionSetInput`](crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetInput {
-                instance_arn: self.instance_arn
-                ,
-                permission_set_arn: self.permission_set_arn
-                ,
-                managed_policy_arn: self.managed_policy_arn
-                ,
-            }
+                instance_arn: self.instance_arn,
+                permission_set_arn: self.permission_set_arn,
+                managed_policy_arn: self.managed_policy_arn,
+            },
         )
     }
 }

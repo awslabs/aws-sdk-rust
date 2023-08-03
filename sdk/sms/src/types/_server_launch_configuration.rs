@@ -100,9 +100,7 @@ impl ServerLaunchConfiguration {
 
 /// A builder for [`ServerLaunchConfiguration`](crate::types::ServerLaunchConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerLaunchConfigurationBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
     pub(crate) logical_id: ::std::option::Option<::std::string::String>,
@@ -175,18 +173,12 @@ impl ServerLaunchConfigurationBuilder {
         &self.subnet
     }
     /// <p>The ID of the security group that applies to the launched server.</p>
-    pub fn security_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the security group that applies to the launched server.</p>
-    pub fn set_security_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_group = input;
         self
     }
@@ -223,18 +215,12 @@ impl ServerLaunchConfigurationBuilder {
         &self.user_data
     }
     /// <p>The instance type to use when launching the server.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type to use when launching the server.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -257,18 +243,12 @@ impl ServerLaunchConfigurationBuilder {
         &self.associate_public_ip_address
     }
     /// <p>The name of the IAM instance profile.</p>
-    pub fn iam_instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_instance_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IAM instance profile.</p>
-    pub fn set_iam_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_instance_profile_name = input;
         self
     }
@@ -282,10 +262,7 @@ impl ServerLaunchConfigurationBuilder {
         self
     }
     /// <p>Location of an Amazon S3 object.</p>
-    pub fn set_configure_script(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_configure_script(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.configure_script = input;
         self
     }
@@ -299,10 +276,7 @@ impl ServerLaunchConfigurationBuilder {
         self
     }
     /// <p>The type of configuration script.</p>
-    pub fn set_configure_script_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScriptType>,
-    ) -> Self {
+    pub fn set_configure_script_type(mut self, input: ::std::option::Option<crate::types::ScriptType>) -> Self {
         self.configure_script_type = input;
         self
     }

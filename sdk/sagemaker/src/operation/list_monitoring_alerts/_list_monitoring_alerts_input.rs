@@ -29,17 +29,14 @@ impl ListMonitoringAlertsInput {
 }
 impl ListMonitoringAlertsInput {
     /// Creates a new builder-style object to manufacture [`ListMonitoringAlertsInput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput).
-    pub fn builder(
-    ) -> crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsInputBuilder {
+    pub fn builder() -> crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsInputBuilder {
         crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMonitoringAlertsInput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoringAlertsInputBuilder {
     pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct ListMonitoringAlertsInputBuilder {
 }
 impl ListMonitoringAlertsInputBuilder {
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a monitoring schedule.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_schedule_name = input;
         self
     }
@@ -97,16 +88,12 @@ impl ListMonitoringAlertsInputBuilder {
     /// Consumes the builder and constructs a [`ListMonitoringAlertsInput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput {
-                monitoring_schedule_name: self.monitoring_schedule_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput {
+            monitoring_schedule_name: self.monitoring_schedule_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

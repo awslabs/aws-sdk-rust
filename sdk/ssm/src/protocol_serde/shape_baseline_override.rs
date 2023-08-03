@@ -9,10 +9,7 @@ pub fn ser_baseline_override(
     if let Some(var_2) = &input.global_filters {
         #[allow(unused_mut)]
         let mut object_3 = object.key("GlobalFilters").start_object();
-        crate::protocol_serde::shape_patch_filter_group::ser_patch_filter_group(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_patch_filter_group::ser_patch_filter_group(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.approval_rules {
@@ -31,9 +28,7 @@ pub fn ser_baseline_override(
         array_7.finish();
     }
     if let Some(var_9) = &input.approved_patches_compliance_level {
-        object
-            .key("ApprovedPatchesComplianceLevel")
-            .string(var_9.as_str());
+        object.key("ApprovedPatchesComplianceLevel").string(var_9.as_str());
     }
     if let Some(var_10) = &input.rejected_patches {
         let mut array_11 = object.key("RejectedPatches").start_array();
@@ -58,10 +53,7 @@ pub fn ser_baseline_override(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_patch_source::ser_patch_source(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_patch_source::ser_patch_source(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }

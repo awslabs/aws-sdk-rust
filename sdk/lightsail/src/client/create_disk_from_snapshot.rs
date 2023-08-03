@@ -15,10 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDiskFromSnapshotOutput`](crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateDiskFromSnapshotError>`](crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError)
-    pub fn create_disk_from_snapshot(
-        &self,
-    ) -> crate::operation::create_disk_from_snapshot::builders::CreateDiskFromSnapshotFluentBuilder
-    {
+    pub fn create_disk_from_snapshot(&self) -> crate::operation::create_disk_from_snapshot::builders::CreateDiskFromSnapshotFluentBuilder {
         crate::operation::create_disk_from_snapshot::builders::CreateDiskFromSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

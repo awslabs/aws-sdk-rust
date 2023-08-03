@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`action_type(Option<ActionType>)`](crate::operation::create_custom_action_type::CreateCustomActionTypeOutput::action_type): <p>Returns information about the details of an action type.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_custom_action_type::CreateCustomActionTypeOutput::tags): <p>Specifies the tags applied to the custom action.</p>
     /// - On failure, responds with [`SdkError<CreateCustomActionTypeError>`](crate::operation::create_custom_action_type::CreateCustomActionTypeError)
-    pub fn create_custom_action_type(
-        &self,
-    ) -> crate::operation::create_custom_action_type::builders::CreateCustomActionTypeFluentBuilder
-    {
+    pub fn create_custom_action_type(&self) -> crate::operation::create_custom_action_type::builders::CreateCustomActionTypeFluentBuilder {
         crate::operation::create_custom_action_type::builders::CreateCustomActionTypeFluentBuilder::new(self.handle.clone())
     }
 }

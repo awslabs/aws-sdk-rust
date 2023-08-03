@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for UpdateSuiteDefinitionOutput {
 }
 impl UpdateSuiteDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSuiteDefinitionOutput`](crate::operation::update_suite_definition::UpdateSuiteDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionOutputBuilder {
         crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSuiteDefinitionOutput`](crate::operation::update_suite_definition::UpdateSuiteDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSuiteDefinitionOutputBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_definition_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +75,12 @@ pub struct UpdateSuiteDefinitionOutputBuilder {
 }
 impl UpdateSuiteDefinitionOutputBuilder {
     /// <p>Suite definition ID of the updated test suite.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite definition ID of the updated test suite.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_id = input;
         self
     }
@@ -99,18 +89,12 @@ impl UpdateSuiteDefinitionOutputBuilder {
         &self.suite_definition_id
     }
     /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
-    pub fn suite_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
-    pub fn set_suite_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_arn = input;
         self
     }
@@ -119,18 +103,12 @@ impl UpdateSuiteDefinitionOutputBuilder {
         &self.suite_definition_arn
     }
     /// <p>Updates the suite definition name. This is a required parameter.</p>
-    pub fn suite_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Updates the suite definition name. This is a required parameter.</p>
-    pub fn set_suite_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_name = input;
         self
     }
@@ -139,18 +117,12 @@ impl UpdateSuiteDefinitionOutputBuilder {
         &self.suite_definition_name
     }
     /// <p>Suite definition version of the updated test suite.</p>
-    pub fn suite_definition_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite definition version of the updated test suite.</p>
-    pub fn set_suite_definition_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_version = input;
         self
     }
@@ -164,10 +136,7 @@ impl UpdateSuiteDefinitionOutputBuilder {
         self
     }
     /// <p>Timestamp of when the test suite was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -181,10 +150,7 @@ impl UpdateSuiteDefinitionOutputBuilder {
         self
     }
     /// <p>Timestamp of when the test suite was updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

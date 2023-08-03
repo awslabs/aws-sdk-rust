@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`account_limits(Option<Vec<AccountLimit>>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::account_limits): <p>An array of AccountLimit objects that show the current spend limits.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountLimitsError>`](crate::operation::describe_account_limits::DescribeAccountLimitsError)
-    pub fn describe_account_limits(
-        &self,
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder
-    {
-        crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_account_limits(&self) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder {
+        crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::new(self.handle.clone())
     }
 }

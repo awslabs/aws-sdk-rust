@@ -10,10 +10,7 @@ impl CreateFileSystemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_file_system::CreateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system::CreateFileSystemError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system::CreateFileSystemError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_file_system();
         fluent_builder.inner = self;
@@ -51,9 +48,7 @@ impl CreateFileSystemFluentBuilder {
         }
     }
     /// Access the CreateFileSystem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_file_system::builders::CreateFileSystemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_file_system::builders::CreateFileSystemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +60,7 @@ impl CreateFileSystemFluentBuilder {
             crate::operation::create_file_system::CreateFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system::CreateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system::CreateFileSystemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +70,7 @@ impl CreateFileSystemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +79,7 @@ impl CreateFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_file_system::CreateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system::CreateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system::CreateFileSystemError>,
     > {
         let op = self
             .inner
@@ -114,9 +102,7 @@ impl CreateFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_file_system::CreateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system::CreateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system::CreateFileSystemError>,
     > {
         self.send_middleware().await
     }
@@ -130,25 +116,17 @@ impl CreateFileSystemFluentBuilder {
             crate::operation::create_file_system::CreateFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system::CreateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system::CreateFileSystemError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -162,10 +140,7 @@ impl CreateFileSystemFluentBuilder {
         self
     }
     /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
-    pub fn set_file_system_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSystemType>,
-    ) -> Self {
+    pub fn set_file_system_type(mut self, input: ::std::option::Option<crate::types::FileSystemType>) -> Self {
         self.inner = self.inner.set_file_system_type(input);
         self
     }
@@ -242,10 +217,7 @@ impl CreateFileSystemFluentBuilder {
     /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types. </p> </li>
     /// </ul>
     /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
-    pub fn set_storage_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageType>,
-    ) -> Self {
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
@@ -270,10 +242,7 @@ impl CreateFileSystemFluentBuilder {
     }
     /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html"> Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.</p>
     /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre deployment types, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -287,25 +256,17 @@ impl CreateFileSystemFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for file system access. This list isn't returned in later requests to describe the file system.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for file system access. This list isn't returned in later requests to describe the file system.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for file system access. This list isn't returned in later requests to describe the file system.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `Tags`.
@@ -318,10 +279,7 @@ impl CreateFileSystemFluentBuilder {
         self
     }
     /// <p>The tags to apply to the file system that's being created. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -365,25 +323,17 @@ impl CreateFileSystemFluentBuilder {
         self.inner.get_kms_key_id()
     }
     /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
-    pub fn windows_configuration(
-        mut self,
-        input: crate::types::CreateFileSystemWindowsConfiguration,
-    ) -> Self {
+    pub fn windows_configuration(mut self, input: crate::types::CreateFileSystemWindowsConfiguration) -> Self {
         self.inner = self.inner.windows_configuration(input);
         self
     }
     /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
-    pub fn set_windows_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration>,
-    ) -> Self {
+    pub fn set_windows_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration>) -> Self {
         self.inner = self.inner.set_windows_configuration(input);
         self
     }
     /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
-    pub fn get_windows_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration> {
+    pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration> {
         self.inner.get_windows_configuration()
     }
     /// <p>The Lustre configuration for the file system being created.</p> <note>
@@ -395,10 +345,7 @@ impl CreateFileSystemFluentBuilder {
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
-    pub fn lustre_configuration(
-        mut self,
-        input: crate::types::CreateFileSystemLustreConfiguration,
-    ) -> Self {
+    pub fn lustre_configuration(mut self, input: crate::types::CreateFileSystemLustreConfiguration) -> Self {
         self.inner = self.inner.lustre_configuration(input);
         self
     }
@@ -411,10 +358,7 @@ impl CreateFileSystemFluentBuilder {
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
-    pub fn set_lustre_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>,
-    ) -> Self {
+    pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>) -> Self {
         self.inner = self.inner.set_lustre_configuration(input);
         self
     }
@@ -427,31 +371,21 @@ impl CreateFileSystemFluentBuilder {
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
-    pub fn get_lustre_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateFileSystemLustreConfiguration> {
+    pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemLustreConfiguration> {
         self.inner.get_lustre_configuration()
     }
     /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
-    pub fn ontap_configuration(
-        mut self,
-        input: crate::types::CreateFileSystemOntapConfiguration,
-    ) -> Self {
+    pub fn ontap_configuration(mut self, input: crate::types::CreateFileSystemOntapConfiguration) -> Self {
         self.inner = self.inner.ontap_configuration(input);
         self
     }
     /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
-    pub fn set_ontap_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFileSystemOntapConfiguration>,
-    ) -> Self {
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemOntapConfiguration>) -> Self {
         self.inner = self.inner.set_ontap_configuration(input);
         self
     }
     /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
-    pub fn get_ontap_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateFileSystemOntapConfiguration> {
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemOntapConfiguration> {
         self.inner.get_ontap_configuration()
     }
     /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
@@ -462,10 +396,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    pub fn file_system_type_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_type_version(input.into());
         self
     }
@@ -477,10 +408,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    pub fn set_file_system_type_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_type_version(input);
         self
     }
@@ -496,25 +424,17 @@ impl CreateFileSystemFluentBuilder {
         self.inner.get_file_system_type_version()
     }
     /// <p>The OpenZFS configuration for the file system that's being created.</p>
-    pub fn open_zfs_configuration(
-        mut self,
-        input: crate::types::CreateFileSystemOpenZfsConfiguration,
-    ) -> Self {
+    pub fn open_zfs_configuration(mut self, input: crate::types::CreateFileSystemOpenZfsConfiguration) -> Self {
         self.inner = self.inner.open_zfs_configuration(input);
         self
     }
     /// <p>The OpenZFS configuration for the file system that's being created.</p>
-    pub fn set_open_zfs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>,
-    ) -> Self {
+    pub fn set_open_zfs_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
     }
     /// <p>The OpenZFS configuration for the file system that's being created.</p>
-    pub fn get_open_zfs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration> {
+    pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration> {
         self.inner.get_open_zfs_configuration()
     }
 }

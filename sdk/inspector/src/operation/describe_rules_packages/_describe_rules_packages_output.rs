@@ -8,9 +8,7 @@ pub struct DescribeRulesPackagesOutput {
     pub rules_packages: ::std::option::Option<::std::vec::Vec<crate::types::RulesPackage>>,
     /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
     #[doc(hidden)]
-    pub failed_items: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeRulesPackagesOutput {
@@ -19,11 +17,7 @@ impl DescribeRulesPackagesOutput {
         self.rules_packages.as_deref()
     }
     /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn failed_items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
         self.failed_items.as_ref()
     }
 }
@@ -34,23 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeRulesPackagesOutput {
 }
 impl DescribeRulesPackagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRulesPackagesOutput`](crate::operation::describe_rules_packages::DescribeRulesPackagesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_rules_packages::builders::DescribeRulesPackagesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_rules_packages::builders::DescribeRulesPackagesOutputBuilder {
         crate::operation::describe_rules_packages::builders::DescribeRulesPackagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRulesPackagesOutput`](crate::operation::describe_rules_packages::DescribeRulesPackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRulesPackagesOutputBuilder {
     pub(crate) rules_packages: ::std::option::Option<::std::vec::Vec<crate::types::RulesPackage>>,
-    pub(crate) failed_items: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeRulesPackagesOutputBuilder {
@@ -66,17 +54,12 @@ impl DescribeRulesPackagesOutputBuilder {
         self
     }
     /// <p>Information about the rules package.</p>
-    pub fn set_rules_packages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RulesPackage>>,
-    ) -> Self {
+    pub fn set_rules_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RulesPackage>>) -> Self {
         self.rules_packages = input;
         self
     }
     /// <p>Information about the rules package.</p>
-    pub fn get_rules_packages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RulesPackage>> {
+    pub fn get_rules_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RulesPackage>> {
         &self.rules_packages
     }
     /// Adds a key-value pair to `failed_items`.
@@ -84,11 +67,7 @@ impl DescribeRulesPackagesOutputBuilder {
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
     ///
     /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::FailedItemDetails,
-    ) -> Self {
+    pub fn failed_items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FailedItemDetails) -> Self {
         let mut hash_map = self.failed_items.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.failed_items = ::std::option::Option::Some(hash_map);
@@ -97,19 +76,13 @@ impl DescribeRulesPackagesOutputBuilder {
     /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
     pub fn set_failed_items(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     ) -> Self {
         self.failed_items = input;
         self
     }
     /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn get_failed_items(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
         &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

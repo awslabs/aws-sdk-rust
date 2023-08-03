@@ -42,13 +42,10 @@ impl ListApiKeysOutput {
 
 /// A builder for [`ListApiKeysOutput`](crate::operation::list_api_keys::ListApiKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApiKeysOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) api_key_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>>,
+    pub(crate) api_key_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>>,
     pub(crate) application_integration_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -79,32 +76,21 @@ impl ListApiKeysOutputBuilder {
         self
     }
     /// <p>The array of key summaries. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn set_api_key_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>>,
-    ) -> Self {
+    pub fn set_api_key_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>>) -> Self {
         self.api_key_summaries = input;
         self
     }
     /// <p>The array of key summaries. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn get_api_key_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>> {
+    pub fn get_api_key_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>> {
         &self.api_key_summaries
     }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
-    pub fn application_integration_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_integration_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_integration_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
-    pub fn set_application_integration_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_integration_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_integration_url = input;
         self
     }

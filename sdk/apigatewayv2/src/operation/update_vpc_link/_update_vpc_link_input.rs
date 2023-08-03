@@ -30,9 +30,7 @@ impl UpdateVpcLinkInput {
 
 /// A builder for [`UpdateVpcLinkInput`](crate::operation::update_vpc_link::UpdateVpcLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVpcLinkInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_link_id: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl UpdateVpcLinkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcLinkInput`](crate::operation::update_vpc_link::UpdateVpcLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_vpc_link::UpdateVpcLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_vpc_link::UpdateVpcLinkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_vpc_link::UpdateVpcLinkInput {
             name: self.name,
             vpc_link_id: self.vpc_link_id,

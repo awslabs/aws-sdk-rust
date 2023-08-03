@@ -23,17 +23,14 @@ impl ::aws_http::request_id::RequestId for IssueCertificateOutput {
 }
 impl IssueCertificateOutput {
     /// Creates a new builder-style object to manufacture [`IssueCertificateOutput`](crate::operation::issue_certificate::IssueCertificateOutput).
-    pub fn builder() -> crate::operation::issue_certificate::builders::IssueCertificateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::issue_certificate::builders::IssueCertificateOutputBuilder {
         crate::operation::issue_certificate::builders::IssueCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`IssueCertificateOutput`](crate::operation::issue_certificate::IssueCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IssueCertificateOutputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -41,19 +38,13 @@ pub struct IssueCertificateOutputBuilder {
 impl IssueCertificateOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }

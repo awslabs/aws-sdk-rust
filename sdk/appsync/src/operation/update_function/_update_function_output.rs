@@ -10,9 +10,7 @@ pub struct UpdateFunctionOutput {
 }
 impl UpdateFunctionOutput {
     /// <p>The <code>Function</code> object.</p>
-    pub fn function_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FunctionConfiguration> {
+    pub fn function_configuration(&self) -> ::std::option::Option<&crate::types::FunctionConfiguration> {
         self.function_configuration.as_ref()
     }
 }
@@ -30,9 +28,7 @@ impl UpdateFunctionOutput {
 
 /// A builder for [`UpdateFunctionOutput`](crate::operation::update_function::UpdateFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFunctionOutputBuilder {
     pub(crate) function_configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateFunctionOutputBuilder {
         self
     }
     /// <p>The <code>Function</code> object.</p>
-    pub fn set_function_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionConfiguration>,
-    ) -> Self {
+    pub fn set_function_configuration(mut self, input: ::std::option::Option<crate::types::FunctionConfiguration>) -> Self {
         self.function_configuration = input;
         self
     }
     /// <p>The <code>Function</code> object.</p>
-    pub fn get_function_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunctionConfiguration> {
+    pub fn get_function_configuration(&self) -> &::std::option::Option<crate::types::FunctionConfiguration> {
         &self.function_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

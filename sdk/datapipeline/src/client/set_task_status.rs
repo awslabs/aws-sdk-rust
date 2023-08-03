@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`error_stack_trace(impl ::std::convert::Into<String>)`](crate::operation::set_task_status::builders::SetTaskStatusFluentBuilder::error_stack_trace) / [`set_error_stack_trace(Option<String>)`](crate::operation::set_task_status::builders::SetTaskStatusFluentBuilder::set_error_stack_trace): <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     /// - On success, responds with [`SetTaskStatusOutput`](crate::operation::set_task_status::SetTaskStatusOutput)
     /// - On failure, responds with [`SdkError<SetTaskStatusError>`](crate::operation::set_task_status::SetTaskStatusError)
-    pub fn set_task_status(
-        &self,
-    ) -> crate::operation::set_task_status::builders::SetTaskStatusFluentBuilder {
-        crate::operation::set_task_status::builders::SetTaskStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_task_status(&self) -> crate::operation::set_task_status::builders::SetTaskStatusFluentBuilder {
+        crate::operation::set_task_status::builders::SetTaskStatusFluentBuilder::new(self.handle.clone())
     }
 }

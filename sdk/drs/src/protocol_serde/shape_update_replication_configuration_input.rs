@@ -22,9 +22,7 @@ pub fn ser_update_replication_configuration_input(
         object.key("dataPlaneRouting").string(var_4.as_str());
     }
     if let Some(var_5) = &input.default_large_staging_disk_type {
-        object
-            .key("defaultLargeStagingDiskType")
-            .string(var_5.as_str());
+        object.key("defaultLargeStagingDiskType").string(var_5.as_str());
     }
     if let Some(var_6) = &input.ebs_encryption {
         object.key("ebsEncryption").string(var_6.as_str());
@@ -41,10 +39,7 @@ pub fn ser_update_replication_configuration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -56,21 +51,20 @@ pub fn ser_update_replication_configuration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_replication_configuration_replicated_disk::ser_replication_configuration_replicated_disk(&mut object_16, item_15)?;
+                crate::protocol_serde::shape_replication_configuration_replicated_disk::ser_replication_configuration_replicated_disk(
+                    &mut object_16,
+                    item_15,
+                )?;
                 object_16.finish();
             }
         }
         array_14.finish();
     }
     if let Some(var_17) = &input.replication_server_instance_type {
-        object
-            .key("replicationServerInstanceType")
-            .string(var_17.as_str());
+        object.key("replicationServerInstanceType").string(var_17.as_str());
     }
     if let Some(var_18) = &input.replication_servers_security_groups_i_ds {
-        let mut array_19 = object
-            .key("replicationServersSecurityGroupsIDs")
-            .start_array();
+        let mut array_19 = object.key("replicationServersSecurityGroupsIDs").start_array();
         for item_20 in var_18 {
             {
                 array_19.value().string(item_20.as_str());

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ConfigureAgentOutput`](crate::operation::configure_agent::ConfigureAgentOutput) with field(s):
     ///   - [`configuration(Option<AgentConfiguration>)`](crate::operation::configure_agent::ConfigureAgentOutput::configuration): <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
     /// - On failure, responds with [`SdkError<ConfigureAgentError>`](crate::operation::configure_agent::ConfigureAgentError)
-    pub fn configure_agent(
-        &self,
-    ) -> crate::operation::configure_agent::builders::ConfigureAgentFluentBuilder {
-        crate::operation::configure_agent::builders::ConfigureAgentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn configure_agent(&self) -> crate::operation::configure_agent::builders::ConfigureAgentFluentBuilder {
+        crate::operation::configure_agent::builders::ConfigureAgentFluentBuilder::new(self.handle.clone())
     }
 }

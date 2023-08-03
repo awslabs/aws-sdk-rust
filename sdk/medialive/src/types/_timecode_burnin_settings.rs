@@ -37,9 +37,7 @@ impl TimecodeBurninSettings {
 
 /// A builder for [`TimecodeBurninSettings`](crate::types::TimecodeBurninSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimecodeBurninSettingsBuilder {
     pub(crate) font_size: ::std::option::Option<crate::types::TimecodeBurninFontSize>,
     pub(crate) position: ::std::option::Option<crate::types::TimecodeBurninPosition>,
@@ -52,10 +50,7 @@ impl TimecodeBurninSettingsBuilder {
         self
     }
     /// Choose a timecode burn-in font size
-    pub fn set_font_size(
-        mut self,
-        input: ::std::option::Option<crate::types::TimecodeBurninFontSize>,
-    ) -> Self {
+    pub fn set_font_size(mut self, input: ::std::option::Option<crate::types::TimecodeBurninFontSize>) -> Self {
         self.font_size = input;
         self
     }
@@ -69,10 +64,7 @@ impl TimecodeBurninSettingsBuilder {
         self
     }
     /// Choose a timecode burn-in output position
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::TimecodeBurninPosition>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::TimecodeBurninPosition>) -> Self {
         self.position = input;
         self
     }

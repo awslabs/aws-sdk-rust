@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`email(impl ::std::convert::Into<String>)`](crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressFluentBuilder::email) / [`set_email(Option<String>)`](crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressFluentBuilder::set_email): <p>The value of the email to be updated as primary.</p>
     /// - On success, responds with [`UpdatePrimaryEmailAddressOutput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressOutput)
     /// - On failure, responds with [`SdkError<UpdatePrimaryEmailAddressError>`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError)
-    pub fn update_primary_email_address(&self) -> crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressFluentBuilder{
+    pub fn update_primary_email_address(&self) -> crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressFluentBuilder {
         crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressFluentBuilder::new(self.handle.clone())
     }
 }

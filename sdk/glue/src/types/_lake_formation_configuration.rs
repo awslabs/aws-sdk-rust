@@ -30,9 +30,7 @@ impl LakeFormationConfiguration {
 
 /// A builder for [`LakeFormationConfiguration`](crate::types::LakeFormationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LakeFormationConfigurationBuilder {
     pub(crate) use_lake_formation_credentials: ::std::option::Option<bool>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl LakeFormationConfigurationBuilder {
         self
     }
     /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
-    pub fn set_use_lake_formation_credentials(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_use_lake_formation_credentials(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_lake_formation_credentials = input;
         self
     }

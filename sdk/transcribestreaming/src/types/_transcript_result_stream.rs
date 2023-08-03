@@ -20,9 +20,7 @@ impl TranscriptResultStream {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`TranscriptEvent`](crate::types::TranscriptResultStream::TranscriptEvent), extracting the inner [`TranscriptEvent`](crate::types::TranscriptEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_transcript_event(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TranscriptEvent, &Self> {
+    pub fn as_transcript_event(&self) -> ::std::result::Result<&crate::types::TranscriptEvent, &Self> {
         if let TranscriptResultStream::TranscriptEvent(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

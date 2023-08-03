@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetRelationalDatabaseOutput`](crate::operation::get_relational_database::GetRelationalDatabaseOutput) with field(s):
     ///   - [`relational_database(Option<RelationalDatabase>)`](crate::operation::get_relational_database::GetRelationalDatabaseOutput::relational_database): <p>An object describing the specified database.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseError>`](crate::operation::get_relational_database::GetRelationalDatabaseError)
-    pub fn get_relational_database(
-        &self,
-    ) -> crate::operation::get_relational_database::builders::GetRelationalDatabaseFluentBuilder
-    {
-        crate::operation::get_relational_database::builders::GetRelationalDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_relational_database(&self) -> crate::operation::get_relational_database::builders::GetRelationalDatabaseFluentBuilder {
+        crate::operation::get_relational_database::builders::GetRelationalDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

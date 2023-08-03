@@ -128,13 +128,7 @@
 /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CloudWatchLogsEncoding {
     #[allow(missing_docs)] // documentation missing in model
@@ -419,9 +413,7 @@ impl ::std::convert::From<&str> for CloudWatchLogsEncoding {
             "utf_7" => CloudWatchLogsEncoding::Utf7,
             "utf_8" => CloudWatchLogsEncoding::Utf8,
             "utf_8_sig" => CloudWatchLogsEncoding::Utf8Sig,
-            other => CloudWatchLogsEncoding::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CloudWatchLogsEncoding::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

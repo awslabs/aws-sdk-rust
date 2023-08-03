@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`PutPackageOriginConfigurationOutput`](crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationOutput) with field(s):
     ///   - [`origin_configuration(Option<PackageOriginConfiguration>)`](crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationOutput::origin_configuration): <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that describes the origin configuration set for the package. It contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that describes how new versions of the package can be introduced to the repository.</p>
     /// - On failure, responds with [`SdkError<PutPackageOriginConfigurationError>`](crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError)
-    pub fn put_package_origin_configuration(&self) -> crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationFluentBuilder{
+    pub fn put_package_origin_configuration(
+        &self,
+    ) -> crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationFluentBuilder {
         crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

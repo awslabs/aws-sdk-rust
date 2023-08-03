@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListRoutingControlsOutput {
 }
 impl ListRoutingControlsOutput {
     /// Creates a new builder-style object to manufacture [`ListRoutingControlsOutput`](crate::operation::list_routing_controls::ListRoutingControlsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder {
-        crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder {
+        crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRoutingControlsOutput`](crate::operation::list_routing_controls::ListRoutingControlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoutingControlsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) routing_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>>,
+    pub(crate) routing_controls: ::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>>,
     _request_id: Option<String>,
 }
 impl ListRoutingControlsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListRoutingControlsOutputBuilder {
         self
     }
     /// <p>An array of routing controls.</p>
-    pub fn set_routing_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>>,
-    ) -> Self {
+    pub fn set_routing_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>>) -> Self {
         self.routing_controls = input;
         self
     }
     /// <p>An array of routing controls.</p>
-    pub fn get_routing_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>> {
+    pub fn get_routing_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>> {
         &self.routing_controls
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

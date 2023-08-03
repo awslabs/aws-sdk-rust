@@ -15,35 +15,25 @@ impl StartMonitoringScheduleInput {
 }
 impl StartMonitoringScheduleInput {
     /// Creates a new builder-style object to manufacture [`StartMonitoringScheduleInput`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleInputBuilder {
         crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMonitoringScheduleInput`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMonitoringScheduleInputBuilder {
     pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
 }
 impl StartMonitoringScheduleInputBuilder {
     /// <p>The name of the schedule to start.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the schedule to start.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_schedule_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl StartMonitoringScheduleInputBuilder {
         crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput {
-                monitoring_schedule_name: self.monitoring_schedule_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput {
+            monitoring_schedule_name: self.monitoring_schedule_name,
+        })
     }
 }

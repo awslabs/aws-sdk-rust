@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput::next_token): <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     ///   - [`vocabularies(Option<Vec<VocabularyInfo>>)`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput::vocabularies): <p>Provides information about the custom medical vocabularies that match the criteria specified in your request.</p>
     /// - On failure, responds with [`SdkError<ListMedicalVocabulariesError>`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError)
-    pub fn list_medical_vocabularies(
-        &self,
-    ) -> crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder
-    {
+    pub fn list_medical_vocabularies(&self) -> crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder {
         crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::new(self.handle.clone())
     }
 }

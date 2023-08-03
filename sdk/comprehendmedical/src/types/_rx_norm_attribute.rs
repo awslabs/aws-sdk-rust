@@ -72,9 +72,7 @@ impl RxNormAttribute {
 
 /// A builder for [`RxNormAttribute`](crate::types::RxNormAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RxNormAttributeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RxNormAttributeType>,
     pub(crate) score: ::std::option::Option<f32>,
@@ -92,10 +90,7 @@ impl RxNormAttributeBuilder {
         self
     }
     /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RxNormAttributeType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RxNormAttributeType>) -> Self {
         self.r#type = input;
         self
     }
@@ -199,10 +194,7 @@ impl RxNormAttributeBuilder {
         self
     }
     /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
-    pub fn set_traits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>,
-    ) -> Self {
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>) -> Self {
         self.traits = input;
         self
     }

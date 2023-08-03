@@ -23,17 +23,14 @@ impl VerifiedAccessLogCloudWatchLogsDestinationOptions {
 }
 impl VerifiedAccessLogCloudWatchLogsDestinationOptions {
     /// Creates a new builder-style object to manufacture [`VerifiedAccessLogCloudWatchLogsDestinationOptions`](crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions).
-    pub fn builder(
-    ) -> crate::types::builders::VerifiedAccessLogCloudWatchLogsDestinationOptionsBuilder {
+    pub fn builder() -> crate::types::builders::VerifiedAccessLogCloudWatchLogsDestinationOptionsBuilder {
         crate::types::builders::VerifiedAccessLogCloudWatchLogsDestinationOptionsBuilder::default()
     }
 }
 
 /// A builder for [`VerifiedAccessLogCloudWatchLogsDestinationOptions`](crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogCloudWatchLogsDestinationOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_group: ::std::option::Option<::std::string::String>,

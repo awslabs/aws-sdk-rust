@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`alarm_recommendations(Option<Vec<AlarmRecommendation>>)`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput::alarm_recommendations): <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAlarmRecommendationsError>`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsError)
-    pub fn list_alarm_recommendations(
-        &self,
-    ) -> crate::operation::list_alarm_recommendations::builders::ListAlarmRecommendationsFluentBuilder
-    {
+    pub fn list_alarm_recommendations(&self) -> crate::operation::list_alarm_recommendations::builders::ListAlarmRecommendationsFluentBuilder {
         crate::operation::list_alarm_recommendations::builders::ListAlarmRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

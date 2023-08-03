@@ -10,10 +10,7 @@ impl GetMlTaskRunsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_ml_task_runs::GetMlTaskRunsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ml_task_runs::GetMLTaskRunsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ml_task_runs::GetMLTaskRunsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_ml_task_runs();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetMLTaskRunsFluentBuilder {
         }
     }
     /// Access the GetMLTaskRuns as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ml_task_runs::builders::GetMlTaskRunsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_ml_task_runs::builders::GetMlTaskRunsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl GetMLTaskRunsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl GetMLTaskRunsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_ml_task_runs::paginator::GetMlTaskRunsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_ml_task_runs::paginator::GetMlTaskRunsPaginator {
-        crate::operation::get_ml_task_runs::paginator::GetMlTaskRunsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_ml_task_runs::paginator::GetMlTaskRunsPaginator {
+        crate::operation::get_ml_task_runs::paginator::GetMlTaskRunsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,10 +161,7 @@ impl GetMLTaskRunsFluentBuilder {
         self
     }
     /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskRunFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TaskRunFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -191,10 +175,7 @@ impl GetMLTaskRunsFluentBuilder {
         self
     }
     /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskRunSortCriteria>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::TaskRunSortCriteria>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }

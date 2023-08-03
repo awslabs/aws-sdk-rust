@@ -37,9 +37,7 @@ impl TopicDetails {
 
 /// A builder for [`TopicDetails`](crate::types::TopicDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -86,17 +84,12 @@ impl TopicDetailsBuilder {
         self
     }
     /// <p>The data sets that the topic is associated with.</p>
-    pub fn set_data_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
-    ) -> Self {
+    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>) -> Self {
         self.data_sets = input;
         self
     }
     /// <p>The data sets that the topic is associated with.</p>
-    pub fn get_data_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>> {
+    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>> {
         &self.data_sets
     }
     /// Consumes the builder and constructs a [`TopicDetails`](crate::types::TopicDetails).

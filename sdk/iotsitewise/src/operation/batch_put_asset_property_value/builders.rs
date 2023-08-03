@@ -35,7 +35,7 @@ impl BatchPutAssetPropertyValueInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder,
+    inner: crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder,
 }
 impl BatchPutAssetPropertyValueFluentBuilder {
     /// Creates a new `BatchPutAssetPropertyValue`.
@@ -46,7 +46,7 @@ impl BatchPutAssetPropertyValueFluentBuilder {
         }
     }
     /// Access the BatchPutAssetPropertyValue as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +58,7 @@ impl BatchPutAssetPropertyValueFluentBuilder {
             crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +68,7 @@ impl BatchPutAssetPropertyValueFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +77,7 @@ impl BatchPutAssetPropertyValueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError>,
     > {
         let op = self
             .inner
@@ -107,9 +100,7 @@ impl BatchPutAssetPropertyValueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +114,7 @@ impl BatchPutAssetPropertyValueFluentBuilder {
             crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError>,
     > {
         self.customize_middleware().await
     }
@@ -139,17 +128,12 @@ impl BatchPutAssetPropertyValueFluentBuilder {
         self
     }
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
         self.inner.get_entries()
     }
 }

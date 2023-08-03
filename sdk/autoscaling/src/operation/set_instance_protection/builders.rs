@@ -39,10 +39,7 @@ impl SetInstanceProtectionFluentBuilder {
         }
     }
     /// Access the SetInstanceProtection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl SetInstanceProtectionFluentBuilder {
             crate::operation::set_instance_protection::SetInstanceProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_instance_protection::SetInstanceProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_instance_protection::SetInstanceProtectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl SetInstanceProtectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl SetInstanceProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_instance_protection::SetInstanceProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_instance_protection::SetInstanceProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_instance_protection::SetInstanceProtectionError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl SetInstanceProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_instance_protection::SetInstanceProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_instance_protection::SetInstanceProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_instance_protection::SetInstanceProtectionError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl SetInstanceProtectionFluentBuilder {
             crate::operation::set_instance_protection::SetInstanceProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_instance_protection::SetInstanceProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_instance_protection::SetInstanceProtectionError>,
     > {
         self.customize_middleware().await
     }
@@ -135,32 +121,21 @@ impl SetInstanceProtectionFluentBuilder {
         self
     }
     /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }

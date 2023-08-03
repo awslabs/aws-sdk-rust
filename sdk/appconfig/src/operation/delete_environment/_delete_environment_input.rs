@@ -22,35 +22,26 @@ impl DeleteEnvironmentInput {
 }
 impl DeleteEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder {
         crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEnvironmentInputBuilder {
     /// <p>The application ID that includes the environment that you want to delete.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID that includes the environment that you want to delete.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -59,18 +50,12 @@ impl DeleteEnvironmentInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the environment that you want to delete.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment that you want to delete.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -81,15 +66,10 @@ impl DeleteEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_environment::DeleteEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_environment::DeleteEnvironmentInput {
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_environment::DeleteEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_environment::DeleteEnvironmentInput {
+            application_id: self.application_id,
+            environment_id: self.environment_id,
+        })
     }
 }

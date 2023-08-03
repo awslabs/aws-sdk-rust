@@ -9,8 +9,7 @@ pub struct ListProfilingGroupsOutput {
     pub profiling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
     #[doc(hidden)]
-    pub profiling_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfilingGroupDescription>>,
+    pub profiling_groups: ::std::option::Option<::std::vec::Vec<crate::types::ProfilingGroupDescription>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,9 +21,7 @@ impl ListProfilingGroupsOutput {
         self.profiling_group_names.as_deref()
     }
     /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
-    pub fn profiling_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProfilingGroupDescription]> {
+    pub fn profiling_groups(&self) -> ::std::option::Option<&[crate::types::ProfilingGroupDescription]> {
         self.profiling_groups.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
@@ -39,22 +36,17 @@ impl ::aws_http::request_id::RequestId for ListProfilingGroupsOutput {
 }
 impl ListProfilingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListProfilingGroupsOutput`](crate::operation::list_profiling_groups::ListProfilingGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder {
-        crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder {
+        crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfilingGroupsOutput`](crate::operation::list_profiling_groups::ListProfilingGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfilingGroupsOutputBuilder {
     pub(crate) profiling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) profiling_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfilingGroupDescription>>,
+    pub(crate) profiling_groups: ::std::option::Option<::std::vec::Vec<crate::types::ProfilingGroupDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,27 +56,19 @@ impl ListProfilingGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_profiling_group_names`](Self::set_profiling_group_names).
     ///
     /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
-    pub fn profiling_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.profiling_group_names.unwrap_or_default();
         v.push(input.into());
         self.profiling_group_names = ::std::option::Option::Some(v);
         self
     }
     /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
-    pub fn set_profiling_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_profiling_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.profiling_group_names = input;
         self
     }
     /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
-    pub fn get_profiling_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profiling_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.profiling_group_names
     }
     /// Appends an item to `profiling_groups`.
@@ -99,17 +83,12 @@ impl ListProfilingGroupsOutputBuilder {
         self
     }
     /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
-    pub fn set_profiling_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfilingGroupDescription>>,
-    ) -> Self {
+    pub fn set_profiling_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfilingGroupDescription>>) -> Self {
         self.profiling_groups = input;
         self
     }
     /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
-    pub fn get_profiling_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfilingGroupDescription>> {
+    pub fn get_profiling_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfilingGroupDescription>> {
         &self.profiling_groups
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>

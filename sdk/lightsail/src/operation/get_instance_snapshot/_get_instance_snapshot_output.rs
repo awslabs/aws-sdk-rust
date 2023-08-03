@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetInstanceSnapshotOutput {
 }
 impl GetInstanceSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotOutput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotOutputBuilder {
-        crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotOutputBuilder {
+        crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceSnapshotOutput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceSnapshotOutputBuilder {
     pub(crate) instance_snapshot: ::std::option::Option<crate::types::InstanceSnapshot>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetInstanceSnapshotOutputBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
-    pub fn set_instance_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceSnapshot>,
-    ) -> Self {
+    pub fn set_instance_snapshot(mut self, input: ::std::option::Option<crate::types::InstanceSnapshot>) -> Self {
         self.instance_snapshot = input;
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`dataset_groups(Option<Vec<DatasetGroupSummary>>)`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput::dataset_groups): <p>The list of your dataset groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput::next_token): <p>A token for getting the next set of dataset groups (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListDatasetGroupsError>`](crate::operation::list_dataset_groups::ListDatasetGroupsError)
-    pub fn list_dataset_groups(
-        &self,
-    ) -> crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder {
-        crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dataset_groups(&self) -> crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder {
+        crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

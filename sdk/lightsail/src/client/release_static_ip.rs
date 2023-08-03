@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ReleaseStaticIpOutput`](crate::operation::release_static_ip::ReleaseStaticIpOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::release_static_ip::ReleaseStaticIpOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<ReleaseStaticIpError>`](crate::operation::release_static_ip::ReleaseStaticIpError)
-    pub fn release_static_ip(
-        &self,
-    ) -> crate::operation::release_static_ip::builders::ReleaseStaticIpFluentBuilder {
-        crate::operation::release_static_ip::builders::ReleaseStaticIpFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn release_static_ip(&self) -> crate::operation::release_static_ip::builders::ReleaseStaticIpFluentBuilder {
+        crate::operation::release_static_ip::builders::ReleaseStaticIpFluentBuilder::new(self.handle.clone())
     }
 }

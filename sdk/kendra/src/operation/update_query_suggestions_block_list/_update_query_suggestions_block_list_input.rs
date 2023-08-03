@@ -54,16 +54,14 @@ impl UpdateQuerySuggestionsBlockListInput {
 }
 impl UpdateQuerySuggestionsBlockListInput {
     /// Creates a new builder-style object to manufacture [`UpdateQuerySuggestionsBlockListInput`](crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListInput).
-    pub fn builder() -> crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder{
+    pub fn builder() -> crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder {
         crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQuerySuggestionsBlockListInput`](crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQuerySuggestionsBlockListInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -139,10 +137,7 @@ impl UpdateQuerySuggestionsBlockListInputBuilder {
     /// <p>The S3 path where your block list text file sits in S3.</p>
     /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
     /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
-    pub fn set_source_s3_path(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Path>,
-    ) -> Self {
+    pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
         self.source_s3_path = input;
         self
     }
@@ -175,19 +170,13 @@ impl UpdateQuerySuggestionsBlockListInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListInput {
-                index_id: self.index_id
-                ,
-                id: self.id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                source_s3_path: self.source_s3_path
-                ,
-                role_arn: self.role_arn
-                ,
-            }
+                index_id: self.index_id,
+                id: self.id,
+                name: self.name,
+                description: self.description,
+                source_s3_path: self.source_s3_path,
+                role_arn: self.role_arn,
+            },
         )
     }
 }

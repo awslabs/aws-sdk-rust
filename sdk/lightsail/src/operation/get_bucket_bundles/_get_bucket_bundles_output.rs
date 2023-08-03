@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetBucketBundlesOutput {
 }
 impl GetBucketBundlesOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketBundlesOutput`](crate::operation::get_bucket_bundles::GetBucketBundlesOutput).
-    pub fn builder() -> crate::operation::get_bucket_bundles::builders::GetBucketBundlesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bucket_bundles::builders::GetBucketBundlesOutputBuilder {
         crate::operation::get_bucket_bundles::builders::GetBucketBundlesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketBundlesOutput`](crate::operation::get_bucket_bundles::GetBucketBundlesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketBundlesOutputBuilder {
     pub(crate) bundles: ::std::option::Option<::std::vec::Vec<crate::types::BucketBundle>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl GetBucketBundlesOutputBuilder {
         self
     }
     /// <p>An object that describes bucket bundles.</p>
-    pub fn set_bundles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BucketBundle>>,
-    ) -> Self {
+    pub fn set_bundles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BucketBundle>>) -> Self {
         self.bundles = input;
         self
     }
     /// <p>An object that describes bucket bundles.</p>
-    pub fn get_bundles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BucketBundle>> {
+    pub fn get_bundles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BucketBundle>> {
         &self.bundles
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

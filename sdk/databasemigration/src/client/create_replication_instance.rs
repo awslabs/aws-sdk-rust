@@ -22,7 +22,7 @@ impl super::Client {
     /// - On success, responds with [`CreateReplicationInstanceOutput`](crate::operation::create_replication_instance::CreateReplicationInstanceOutput) with field(s):
     ///   - [`replication_instance(Option<ReplicationInstance>)`](crate::operation::create_replication_instance::CreateReplicationInstanceOutput::replication_instance): <p>The replication instance that was created.</p>
     /// - On failure, responds with [`SdkError<CreateReplicationInstanceError>`](crate::operation::create_replication_instance::CreateReplicationInstanceError)
-    pub fn create_replication_instance(&self) -> crate::operation::create_replication_instance::builders::CreateReplicationInstanceFluentBuilder{
+    pub fn create_replication_instance(&self) -> crate::operation::create_replication_instance::builders::CreateReplicationInstanceFluentBuilder {
         crate::operation::create_replication_instance::builders::CreateReplicationInstanceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,35 +15,25 @@ impl DeleteNotebookInstanceInput {
 }
 impl DeleteNotebookInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteNotebookInstanceInput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceInputBuilder {
         crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotebookInstanceInput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotebookInstanceInputBuilder {
     pub(crate) notebook_instance_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNotebookInstanceInputBuilder {
     /// <p>The name of the SageMaker notebook instance to delete.</p>
-    pub fn notebook_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SageMaker notebook instance to delete.</p>
-    pub fn set_notebook_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteNotebookInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNotebookInstanceInput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput {
-                notebook_instance_name: self.notebook_instance_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput {
+            notebook_instance_name: self.notebook_instance_name,
+        })
     }
 }

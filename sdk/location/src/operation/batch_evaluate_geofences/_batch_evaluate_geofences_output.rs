@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchEvaluateGeofencesOutput {
 }
 impl BatchEvaluateGeofencesOutput {
     /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesOutput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesOutputBuilder {
         crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchEvaluateGeofencesOutput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>>,
     _request_id: Option<String>,
 }
 impl BatchEvaluateGeofencesOutputBuilder {
@@ -51,17 +46,12 @@ impl BatchEvaluateGeofencesOutputBuilder {
         self
     }
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

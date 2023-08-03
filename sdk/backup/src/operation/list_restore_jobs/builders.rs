@@ -10,10 +10,7 @@ impl ListRestoreJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_restore_jobs::ListRestoreJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_restore_jobs::ListRestoreJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_restore_jobs::ListRestoreJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_restore_jobs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListRestoreJobsFluentBuilder {
         }
     }
     /// Access the ListRestoreJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_restore_jobs::builders::ListRestoreJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_restore_jobs::builders::ListRestoreJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListRestoreJobsFluentBuilder {
             crate::operation::list_restore_jobs::ListRestoreJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_restore_jobs::ListRestoreJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_restore_jobs::ListRestoreJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListRestoreJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListRestoreJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_restore_jobs::ListRestoreJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_restore_jobs::ListRestoreJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_restore_jobs::ListRestoreJobsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListRestoreJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_restore_jobs::ListRestoreJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_restore_jobs::ListRestoreJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_restore_jobs::ListRestoreJobsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListRestoreJobsFluentBuilder {
             crate::operation::list_restore_jobs::ListRestoreJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_restore_jobs::ListRestoreJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_restore_jobs::ListRestoreJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_restore_jobs::paginator::ListRestoreJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_restore_jobs::paginator::ListRestoreJobsPaginator {
-        crate::operation::list_restore_jobs::paginator::ListRestoreJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_restore_jobs::paginator::ListRestoreJobsPaginator {
+        crate::operation::list_restore_jobs::paginator::ListRestoreJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,18 +141,12 @@ impl ListRestoreJobsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
-    pub fn by_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_account_id(input.into());
         self
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
-    pub fn set_by_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_account_id(input);
         self
     }
@@ -187,10 +160,7 @@ impl ListRestoreJobsFluentBuilder {
         self
     }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
-    pub fn set_by_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_created_before(input);
         self
     }
@@ -204,10 +174,7 @@ impl ListRestoreJobsFluentBuilder {
         self
     }
     /// <p>Returns only restore jobs that were created after the specified date.</p>
-    pub fn set_by_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_created_after(input);
         self
     }
@@ -221,10 +188,7 @@ impl ListRestoreJobsFluentBuilder {
         self
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
-    pub fn set_by_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RestoreJobStatus>,
-    ) -> Self {
+    pub fn set_by_status(mut self, input: ::std::option::Option<crate::types::RestoreJobStatus>) -> Self {
         self.inner = self.inner.set_by_status(input);
         self
     }
@@ -238,10 +202,7 @@ impl ListRestoreJobsFluentBuilder {
         self
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_complete_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_complete_before(input);
         self
     }
@@ -255,10 +216,7 @@ impl ListRestoreJobsFluentBuilder {
         self
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_complete_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_complete_after(input);
         self
     }

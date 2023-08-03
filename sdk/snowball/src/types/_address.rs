@@ -121,9 +121,7 @@ impl Address {
 
 /// A builder for [`Address`](crate::types::Address).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddressBuilder {
     pub(crate) address_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -241,18 +239,12 @@ impl AddressBuilder {
         &self.city
     }
     /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
-    pub fn state_or_province(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_or_province(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_or_province = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
-    pub fn set_state_or_province(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_or_province(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_or_province = input;
         self
     }
@@ -261,18 +253,12 @@ impl AddressBuilder {
         &self.state_or_province
     }
     /// <p>This field is no longer used and the value is ignored.</p>
-    pub fn prefecture_or_district(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefecture_or_district(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefecture_or_district = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This field is no longer used and the value is ignored.</p>
-    pub fn set_prefecture_or_district(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefecture_or_district(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefecture_or_district = input;
         self
     }

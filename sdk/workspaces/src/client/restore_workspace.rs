@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder::set_workspace_id): <p>The identifier of the WorkSpace.</p>
     /// - On success, responds with [`RestoreWorkspaceOutput`](crate::operation::restore_workspace::RestoreWorkspaceOutput)
     /// - On failure, responds with [`SdkError<RestoreWorkspaceError>`](crate::operation::restore_workspace::RestoreWorkspaceError)
-    pub fn restore_workspace(
-        &self,
-    ) -> crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder {
-        crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restore_workspace(&self) -> crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder {
+        crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

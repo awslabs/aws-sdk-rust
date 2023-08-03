@@ -7,9 +7,7 @@ pub fn ser_remove_template_action_input(
         object.key("actionID").string(var_1.as_str());
     }
     if let Some(var_2) = &input.launch_configuration_template_id {
-        object
-            .key("launchConfigurationTemplateID")
-            .string(var_2.as_str());
+        object.key("launchConfigurationTemplateID").string(var_2.as_str());
     }
     Ok(())
 }

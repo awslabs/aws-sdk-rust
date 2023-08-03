@@ -37,9 +37,7 @@ impl TableBorderOptions {
 
 /// A builder for [`TableBorderOptions`](crate::types::TableBorderOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableBorderOptionsBuilder {
     pub(crate) color: ::std::option::Option<::std::string::String>,
     pub(crate) thickness: ::std::option::Option<i32>,
@@ -80,10 +78,7 @@ impl TableBorderOptionsBuilder {
         self
     }
     /// <p>The style (none, solid) of a table border.</p>
-    pub fn set_style(
-        mut self,
-        input: ::std::option::Option<crate::types::TableBorderStyle>,
-    ) -> Self {
+    pub fn set_style(mut self, input: ::std::option::Option<crate::types::TableBorderStyle>) -> Self {
         self.style = input;
         self
     }

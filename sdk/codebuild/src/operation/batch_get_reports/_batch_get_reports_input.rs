@@ -22,9 +22,7 @@ impl BatchGetReportsInput {
 
 /// A builder for [`BatchGetReportsInput`](crate::operation::batch_get_reports::BatchGetReportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetReportsInputBuilder {
     pub(crate) report_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,26 +39,18 @@ impl BatchGetReportsInputBuilder {
         self
     }
     /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
-    pub fn set_report_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_report_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.report_arns = input;
         self
     }
     /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
-    pub fn get_report_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_report_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.report_arns
     }
     /// Consumes the builder and constructs a [`BatchGetReportsInput`](crate::operation::batch_get_reports::BatchGetReportsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_reports::BatchGetReportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::batch_get_reports::BatchGetReportsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_reports::BatchGetReportsInput {
             report_arns: self.report_arns,
         })

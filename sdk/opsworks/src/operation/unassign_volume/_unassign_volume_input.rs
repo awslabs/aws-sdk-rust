@@ -22,9 +22,7 @@ impl UnassignVolumeInput {
 
 /// A builder for [`UnassignVolumeInput`](crate::operation::unassign_volume::UnassignVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnassignVolumeInputBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl UnassignVolumeInputBuilder {
     /// Consumes the builder and constructs a [`UnassignVolumeInput`](crate::operation::unassign_volume::UnassignVolumeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::unassign_volume::UnassignVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::unassign_volume::UnassignVolumeInput {
-            volume_id: self.volume_id,
-        })
+    ) -> ::std::result::Result<crate::operation::unassign_volume::UnassignVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::unassign_volume::UnassignVolumeInput { volume_id: self.volume_id })
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetTimelineEventOutput`](crate::operation::get_timeline_event::GetTimelineEventOutput) with field(s):
     ///   - [`event(Option<TimelineEvent>)`](crate::operation::get_timeline_event::GetTimelineEventOutput::event): <p>Details about the timeline event.</p>
     /// - On failure, responds with [`SdkError<GetTimelineEventError>`](crate::operation::get_timeline_event::GetTimelineEventError)
-    pub fn get_timeline_event(
-        &self,
-    ) -> crate::operation::get_timeline_event::builders::GetTimelineEventFluentBuilder {
-        crate::operation::get_timeline_event::builders::GetTimelineEventFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_timeline_event(&self) -> crate::operation::get_timeline_event::builders::GetTimelineEventFluentBuilder {
+        crate::operation::get_timeline_event::builders::GetTimelineEventFluentBuilder::new(self.handle.clone())
     }
 }

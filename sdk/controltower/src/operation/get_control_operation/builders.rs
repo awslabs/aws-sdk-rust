@@ -37,9 +37,7 @@ impl GetControlOperationFluentBuilder {
         }
     }
     /// Access the GetControlOperation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_control_operation::builders::GetControlOperationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_control_operation::builders::GetControlOperationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetControlOperationFluentBuilder {
             crate::operation::get_control_operation::GetControlOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_control_operation::GetControlOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_control_operation::GetControlOperationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetControlOperationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetControlOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_control_operation::GetControlOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_control_operation::GetControlOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_control_operation::GetControlOperationError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetControlOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_control_operation::GetControlOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_control_operation::GetControlOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_control_operation::GetControlOperationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetControlOperationFluentBuilder {
             crate::operation::get_control_operation::GetControlOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_control_operation::GetControlOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_control_operation::GetControlOperationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn operation_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_identifier(input.into());
         self
     }
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn set_operation_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_identifier(input);
         self
     }

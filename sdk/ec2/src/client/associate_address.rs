@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateAddressOutput`](crate::operation::associate_address::AssociateAddressOutput) with field(s):
     ///   - [`association_id(Option<String>)`](crate::operation::associate_address::AssociateAddressOutput::association_id): <p>The ID that represents the association of the Elastic IP address with an instance.</p>
     /// - On failure, responds with [`SdkError<AssociateAddressError>`](crate::operation::associate_address::AssociateAddressError)
-    pub fn associate_address(
-        &self,
-    ) -> crate::operation::associate_address::builders::AssociateAddressFluentBuilder {
-        crate::operation::associate_address::builders::AssociateAddressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_address(&self) -> crate::operation::associate_address::builders::AssociateAddressFluentBuilder {
+        crate::operation::associate_address::builders::AssociateAddressFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl CreateWebLoginTokenFluentBuilder {
         }
     }
     /// Access the CreateWebLoginToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateWebLoginTokenFluentBuilder {
             crate::operation::create_web_login_token::CreateWebLoginToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_web_login_token::CreateWebLoginTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_web_login_token::CreateWebLoginTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateWebLoginTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateWebLoginTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_web_login_token::CreateWebLoginTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_web_login_token::CreateWebLoginTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_web_login_token::CreateWebLoginTokenError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateWebLoginTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_web_login_token::CreateWebLoginTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_web_login_token::CreateWebLoginTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_web_login_token::CreateWebLoginTokenError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateWebLoginTokenFluentBuilder {
             crate::operation::create_web_login_token::CreateWebLoginToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_web_login_token::CreateWebLoginTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_web_login_token::CreateWebLoginTokenError>,
     > {
         self.customize_middleware().await
     }

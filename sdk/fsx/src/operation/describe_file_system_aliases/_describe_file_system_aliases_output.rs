@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeFileSystemAliasesOutput {
 }
 impl DescribeFileSystemAliasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemAliasesOutput`](crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesOutput).
-    pub fn builder() -> crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesOutputBuilder {
         crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFileSystemAliasesOutput`](crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFileSystemAliasesOutputBuilder {
     pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl DescribeFileSystemAliasesOutputBuilder {
         self
     }
     /// <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
-    ) -> Self {
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>) -> Self {
         self.aliases = input;
         self
     }
@@ -92,9 +87,7 @@ impl DescribeFileSystemAliasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFileSystemAliasesOutput`](crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesOutput {
+    pub fn build(self) -> crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesOutput {
         crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesOutput {
             aliases: self.aliases,
             next_token: self.next_token,

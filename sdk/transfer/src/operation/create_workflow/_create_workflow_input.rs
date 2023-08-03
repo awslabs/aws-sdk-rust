@@ -69,14 +69,11 @@ impl CreateWorkflowInput {
 
 /// A builder for [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkflowInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    pub(crate) on_exception_steps:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
+    pub(crate) on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateWorkflowInputBuilder {
@@ -128,10 +125,7 @@ impl CreateWorkflowInputBuilder {
     /// <p> Currently, copying and tagging are supported only on S3. </p>
     /// </note>
     /// <p> For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path. </p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
         self.steps = input;
         self
     }
@@ -166,19 +160,14 @@ impl CreateWorkflowInputBuilder {
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
     /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
-    pub fn set_on_exception_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    ) -> Self {
+    pub fn set_on_exception_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
         self.on_exception_steps = input;
         self
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
     /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
-    pub fn get_on_exception_steps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+    pub fn get_on_exception_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
         &self.on_exception_steps
     }
     /// Appends an item to `tags`.
@@ -193,10 +182,7 @@ impl CreateWorkflowInputBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -207,10 +193,7 @@ impl CreateWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workflow::CreateWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workflow::CreateWorkflowInput {
             description: self.description,
             steps: self.steps,

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateBusinessReportScheduleOutput {
 }
 impl CreateBusinessReportScheduleOutput {
     /// Creates a new builder-style object to manufacture [`CreateBusinessReportScheduleOutput`](crate::operation::create_business_report_schedule::CreateBusinessReportScheduleOutput).
-    pub fn builder() -> crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleOutputBuilder {
         crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBusinessReportScheduleOutput`](crate::operation::create_business_report_schedule::CreateBusinessReportScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBusinessReportScheduleOutputBuilder {
     pub(crate) schedule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CreateBusinessReportScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateBusinessReportScheduleOutput`](crate::operation::create_business_report_schedule::CreateBusinessReportScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_business_report_schedule::CreateBusinessReportScheduleOutput {
+    pub fn build(self) -> crate::operation::create_business_report_schedule::CreateBusinessReportScheduleOutput {
         crate::operation::create_business_report_schedule::CreateBusinessReportScheduleOutput {
             schedule_arn: self.schedule_arn,
             _request_id: self._request_id,

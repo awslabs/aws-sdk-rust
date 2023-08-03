@@ -6,17 +6,11 @@
 pub struct ActionConfiguration {
     /// <p>The configuration data for the action.</p>
     #[doc(hidden)]
-    pub configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActionConfiguration {
     /// <p>The configuration data for the action.</p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.configuration.as_ref()
     }
 }
@@ -29,13 +23,9 @@ impl ActionConfiguration {
 
 /// A builder for [`ActionConfiguration`](crate::types::ActionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionConfigurationBuilder {
-    pub(crate) configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActionConfigurationBuilder {
     /// Adds a key-value pair to `configuration`.
@@ -43,11 +33,7 @@ impl ActionConfigurationBuilder {
     /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
     ///
     /// <p>The configuration data for the action.</p>
-    pub fn configuration(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.configuration.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.configuration = ::std::option::Option::Some(hash_map);
@@ -56,19 +42,13 @@ impl ActionConfigurationBuilder {
     /// <p>The configuration data for the action.</p>
     pub fn set_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The configuration data for the action.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`ActionConfiguration`](crate::types::ActionConfiguration).

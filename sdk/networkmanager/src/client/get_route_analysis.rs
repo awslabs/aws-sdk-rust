@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetRouteAnalysisOutput`](crate::operation::get_route_analysis::GetRouteAnalysisOutput) with field(s):
     ///   - [`route_analysis(Option<RouteAnalysis>)`](crate::operation::get_route_analysis::GetRouteAnalysisOutput::route_analysis): <p>The route analysis.</p>
     /// - On failure, responds with [`SdkError<GetRouteAnalysisError>`](crate::operation::get_route_analysis::GetRouteAnalysisError)
-    pub fn get_route_analysis(
-        &self,
-    ) -> crate::operation::get_route_analysis::builders::GetRouteAnalysisFluentBuilder {
-        crate::operation::get_route_analysis::builders::GetRouteAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_route_analysis(&self) -> crate::operation::get_route_analysis::builders::GetRouteAnalysisFluentBuilder {
+        crate::operation::get_route_analysis::builders::GetRouteAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

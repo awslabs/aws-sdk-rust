@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateProtectionGroupOutput {
 }
 impl CreateProtectionGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateProtectionGroupOutput`](crate::operation::create_protection_group::CreateProtectionGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_protection_group::builders::CreateProtectionGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_protection_group::builders::CreateProtectionGroupOutputBuilder {
         crate::operation::create_protection_group::builders::CreateProtectionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProtectionGroupOutput`](crate::operation::create_protection_group::CreateProtectionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProtectionGroupOutputBuilder {
     _request_id: Option<String>,
 }

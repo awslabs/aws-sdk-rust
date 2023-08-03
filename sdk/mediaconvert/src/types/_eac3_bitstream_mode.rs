@@ -41,13 +41,7 @@
 /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3BitstreamMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for Eac3BitstreamMode {
             "EMERGENCY" => Eac3BitstreamMode::Emergency,
             "HEARING_IMPAIRED" => Eac3BitstreamMode::HearingImpaired,
             "VISUALLY_IMPAIRED" => Eac3BitstreamMode::VisuallyImpaired,
-            other => {
-                Eac3BitstreamMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Eac3BitstreamMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl Eac3BitstreamMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMMENTARY",
-            "COMPLETE_MAIN",
-            "EMERGENCY",
-            "HEARING_IMPAIRED",
-            "VISUALLY_IMPAIRED",
-        ]
+        &["COMMENTARY", "COMPLETE_MAIN", "EMERGENCY", "HEARING_IMPAIRED", "VISUALLY_IMPAIRED"]
     }
 }
 impl ::std::convert::AsRef<str> for Eac3BitstreamMode {

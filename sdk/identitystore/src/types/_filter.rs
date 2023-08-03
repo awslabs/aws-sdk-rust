@@ -45,18 +45,12 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
-    pub fn attribute_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
-    pub fn set_attribute_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_path = input;
         self
     }
@@ -65,18 +59,12 @@ impl FilterBuilder {
         &self.attribute_path
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
-    pub fn attribute_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
-    pub fn set_attribute_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_value = input;
         self
     }

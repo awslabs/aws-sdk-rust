@@ -26,7 +26,7 @@ impl ListVoiceConnectorGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListVoiceConnectorGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsInputBuilder,
+    inner: crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsInputBuilder,
 }
 impl ListVoiceConnectorGroupsFluentBuilder {
     /// Creates a new `ListVoiceConnectorGroups`.
@@ -37,7 +37,7 @@ impl ListVoiceConnectorGroupsFluentBuilder {
         }
     }
     /// Access the ListVoiceConnectorGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListVoiceConnectorGroupsFluentBuilder {
             crate::operation::list_voice_connector_groups::ListVoiceConnectorGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListVoiceConnectorGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListVoiceConnectorGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListVoiceConnectorGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListVoiceConnectorGroupsFluentBuilder {
             crate::operation::list_voice_connector_groups::ListVoiceConnectorGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_voice_connector_groups::paginator::ListVoiceConnectorGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_voice_connector_groups::paginator::ListVoiceConnectorGroupsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_voice_connector_groups::paginator::ListVoiceConnectorGroupsPaginator {
         crate::operation::list_voice_connector_groups::paginator::ListVoiceConnectorGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token used to return the next page of results.</p>

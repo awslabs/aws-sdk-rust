@@ -37,10 +37,7 @@ impl ListResourceInventoryFluentBuilder {
         }
     }
     /// Access the ListResourceInventory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resource_inventory::builders::ListResourceInventoryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_resource_inventory::builders::ListResourceInventoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListResourceInventoryFluentBuilder {
             crate::operation::list_resource_inventory::ListResourceInventory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_inventory::ListResourceInventoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_inventory::ListResourceInventoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListResourceInventoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListResourceInventoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_inventory::ListResourceInventoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_inventory::ListResourceInventoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_inventory::ListResourceInventoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListResourceInventoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_inventory::ListResourceInventoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_inventory::ListResourceInventoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_inventory::ListResourceInventoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ListResourceInventoryFluentBuilder {
             crate::operation::list_resource_inventory::ListResourceInventory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_inventory::ListResourceInventoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_inventory::ListResourceInventoryError>,
     > {
         self.customize_middleware().await
     }
@@ -179,10 +165,7 @@ impl ListResourceInventoryFluentBuilder {
     /// <li> <p> <code>tag:
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -196,9 +179,7 @@ impl ListResourceInventoryFluentBuilder {
     /// <li> <p> <code>tag:
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
         self.inner.get_filters()
     }
 }

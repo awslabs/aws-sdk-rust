@@ -56,9 +56,7 @@ impl CoreNetworkPolicyException {
 
 /// A builder for [`CoreNetworkPolicyException`](crate::types::error::CoreNetworkPolicyException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkPolicyExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
@@ -91,17 +89,12 @@ impl CoreNetworkPolicyExceptionBuilder {
         self
     }
     /// <p>Describes a core network policy exception.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Describes a core network policy exception.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>> {
         &self.errors
     }
     /// Sets error metadata
@@ -111,10 +104,7 @@ impl CoreNetworkPolicyExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

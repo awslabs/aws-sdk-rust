@@ -5,8 +5,7 @@
 pub struct DescribeNetworkInsightsAccessScopeAnalysesInput {
     /// <p>The IDs of the Network Access Scope analyses.</p>
     #[doc(hidden)]
-    pub network_insights_access_scope_analysis_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub network_insights_access_scope_analysis_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Network Access Scope.</p>
     #[doc(hidden)]
     pub network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
@@ -31,9 +30,7 @@ pub struct DescribeNetworkInsightsAccessScopeAnalysesInput {
 }
 impl DescribeNetworkInsightsAccessScopeAnalysesInput {
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub fn network_insights_access_scope_analysis_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn network_insights_access_scope_analysis_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.network_insights_access_scope_analysis_ids.as_deref()
     }
     /// <p>The ID of the Network Access Scope.</p>
@@ -41,9 +38,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInput {
         self.network_insights_access_scope_id.as_deref()
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
-    pub fn analysis_start_time_begin(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn analysis_start_time_begin(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.analysis_start_time_begin.as_ref()
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
@@ -69,19 +64,17 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInput {
 }
 impl DescribeNetworkInsightsAccessScopeAnalysesInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAccessScopeAnalysesInput`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput).
-    pub fn builder() -> crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInsightsAccessScopeAnalysesInput`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
-    pub(crate) network_insights_access_scope_analysis_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_insights_access_scope_analysis_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_start_time_begin: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) analysis_start_time_end: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -96,51 +89,33 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     /// To override the contents of this collection use [`set_network_insights_access_scope_analysis_ids`](Self::set_network_insights_access_scope_analysis_ids).
     ///
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub fn network_insights_access_scope_analysis_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .network_insights_access_scope_analysis_ids
-            .unwrap_or_default();
+    pub fn network_insights_access_scope_analysis_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.network_insights_access_scope_analysis_ids.unwrap_or_default();
         v.push(input.into());
         self.network_insights_access_scope_analysis_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub fn set_network_insights_access_scope_analysis_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_analysis_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_insights_access_scope_analysis_ids = input;
         self
     }
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub fn get_network_insights_access_scope_analysis_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_insights_access_scope_analysis_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_insights_access_scope_analysis_ids
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_access_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn set_network_insights_access_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_access_scope_id = input;
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn get_network_insights_access_scope_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_access_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_insights_access_scope_id
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
@@ -149,17 +124,12 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         self
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
-    pub fn set_analysis_start_time_begin(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_analysis_start_time_begin(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.analysis_start_time_begin = input;
         self
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
-    pub fn get_analysis_start_time_begin(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_analysis_start_time_begin(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.analysis_start_time_begin
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
@@ -168,17 +138,12 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         self
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
-    pub fn set_analysis_start_time_end(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_analysis_start_time_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.analysis_start_time_end = input;
         self
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
-    pub fn get_analysis_start_time_end(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_analysis_start_time_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.analysis_start_time_end
     }
     /// Appends an item to `filters`.
@@ -193,10 +158,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         self
     }
     /// <p>There are no supported filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -247,26 +209,23 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInsightsAccessScopeAnalysesInput`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput {
-                network_insights_access_scope_analysis_ids: self.network_insights_access_scope_analysis_ids
-                ,
-                network_insights_access_scope_id: self.network_insights_access_scope_id
-                ,
-                analysis_start_time_begin: self.analysis_start_time_begin
-                ,
-                analysis_start_time_end: self.analysis_start_time_end
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                dry_run: self.dry_run
-                ,
-                next_token: self.next_token
-                ,
-            }
+                network_insights_access_scope_analysis_ids: self.network_insights_access_scope_analysis_ids,
+                network_insights_access_scope_id: self.network_insights_access_scope_id,
+                analysis_start_time_begin: self.analysis_start_time_begin,
+                analysis_start_time_end: self.analysis_start_time_end,
+                filters: self.filters,
+                max_results: self.max_results,
+                dry_run: self.dry_run,
+                next_token: self.next_token,
+            },
         )
     }
 }

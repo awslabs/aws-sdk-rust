@@ -45,10 +45,7 @@ pub fn ser_get_ec2_instance_recommendations_input(
     if let Some(var_13) = &input.recommendation_preferences {
         #[allow(unused_mut)]
         let mut object_14 = object.key("recommendationPreferences").start_object();
-        crate::protocol_serde::shape_recommendation_preferences::ser_recommendation_preferences(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_recommendation_preferences::ser_recommendation_preferences(&mut object_14, var_13)?;
         object_14.finish();
     }
     Ok(())

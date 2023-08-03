@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`app_instance_users(Option<Vec<AppInstanceUserSummary>>)`](crate::operation::list_app_instance_users::ListAppInstanceUsersOutput::app_instance_users): <p>The information for each requested <code>AppInstanceUser</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_instance_users::ListAppInstanceUsersOutput::next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
     /// - On failure, responds with [`SdkError<ListAppInstanceUsersError>`](crate::operation::list_app_instance_users::ListAppInstanceUsersError)
-    pub fn list_app_instance_users(
-        &self,
-    ) -> crate::operation::list_app_instance_users::builders::ListAppInstanceUsersFluentBuilder
-    {
-        crate::operation::list_app_instance_users::builders::ListAppInstanceUsersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_app_instance_users(&self) -> crate::operation::list_app_instance_users::builders::ListAppInstanceUsersFluentBuilder {
+        crate::operation::list_app_instance_users::builders::ListAppInstanceUsersFluentBuilder::new(self.handle.clone())
     }
 }

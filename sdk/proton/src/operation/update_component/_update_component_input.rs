@@ -60,9 +60,7 @@ impl UpdateComponentInput {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
-    pub fn deployment_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComponentDeploymentUpdateType> {
+    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::ComponentDeploymentUpdateType> {
         self.deployment_type.as_ref()
     }
     /// <p>An optional customer-provided description of the component.</p>
@@ -171,10 +169,7 @@ impl UpdateComponentInputBuilder {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentDeploymentUpdateType>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::ComponentDeploymentUpdateType>) -> Self {
         self.deployment_type = input;
         self
     }
@@ -191,9 +186,7 @@ impl UpdateComponentInputBuilder {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
-    pub fn get_deployment_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComponentDeploymentUpdateType> {
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::ComponentDeploymentUpdateType> {
         &self.deployment_type
     }
     /// <p>An optional customer-provided description of the component.</p>
@@ -225,18 +218,12 @@ impl UpdateComponentInputBuilder {
         &self.service_name
     }
     /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_instance_name = input;
         self
     }
@@ -261,20 +248,14 @@ impl UpdateComponentInputBuilder {
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    pub fn template_file(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    pub fn set_template_file(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_file = input;
         self
     }
@@ -301,10 +282,7 @@ impl UpdateComponentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateComponentInput`](crate::operation::update_component::UpdateComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_component::UpdateComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_component::UpdateComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_component::UpdateComponentInput {
             name: self.name,
             deployment_type: self.deployment_type,

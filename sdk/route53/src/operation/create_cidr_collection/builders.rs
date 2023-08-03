@@ -37,9 +37,7 @@ impl CreateCidrCollectionFluentBuilder {
         }
     }
     /// Access the CreateCidrCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateCidrCollectionFluentBuilder {
             crate::operation::create_cidr_collection::CreateCidrCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cidr_collection::CreateCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cidr_collection::CreateCidrCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateCidrCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateCidrCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cidr_collection::CreateCidrCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cidr_collection::CreateCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cidr_collection::CreateCidrCollectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateCidrCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cidr_collection::CreateCidrCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cidr_collection::CreateCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cidr_collection::CreateCidrCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateCidrCollectionFluentBuilder {
             crate::operation::create_cidr_collection::CreateCidrCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cidr_collection::CreateCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cidr_collection::CreateCidrCollectionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl CreateCidrCollectionFluentBuilder {
         self.inner.get_name()
     }
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.caller_reference(input.into());
         self
     }
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_caller_reference(input);
         self
     }

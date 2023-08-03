@@ -13,16 +13,15 @@ impl ::aws_http::request_id::RequestId for SetIdentityHeadersInNotificationsEnab
 }
 impl SetIdentityHeadersInNotificationsEnabledOutput {
     /// Creates a new builder-style object to manufacture [`SetIdentityHeadersInNotificationsEnabledOutput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput).
-    pub fn builder() -> crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledOutputBuilder {
         crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityHeadersInNotificationsEnabledOutput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityHeadersInNotificationsEnabledOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +36,7 @@ impl SetIdentityHeadersInNotificationsEnabledOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetIdentityHeadersInNotificationsEnabledOutput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput).
-    pub fn build(self) -> crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput{
+    pub fn build(self) -> crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput {
         crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput {
             _request_id: self._request_id,
         }

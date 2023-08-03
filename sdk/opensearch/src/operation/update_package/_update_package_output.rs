@@ -29,9 +29,7 @@ impl UpdatePackageOutput {
 
 /// A builder for [`UpdatePackageOutput`](crate::operation::update_package::UpdatePackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePackageOutputBuilder {
     pub(crate) package_details: ::std::option::Option<crate::types::PackageDetails>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl UpdatePackageOutputBuilder {
         self
     }
     /// <p>Information about a package.</p>
-    pub fn set_package_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageDetails>,
-    ) -> Self {
+    pub fn set_package_details(mut self, input: ::std::option::Option<crate::types::PackageDetails>) -> Self {
         self.package_details = input;
         self
     }

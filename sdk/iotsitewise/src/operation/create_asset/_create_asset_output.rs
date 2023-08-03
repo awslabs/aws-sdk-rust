@@ -44,9 +44,7 @@ impl CreateAssetOutput {
 
 /// A builder for [`CreateAssetOutput`](crate::operation::create_asset::CreateAssetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssetOutputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_arn: ::std::option::Option<::std::string::String>,
@@ -91,10 +89,7 @@ impl CreateAssetOutputBuilder {
         self
     }
     /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn set_asset_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetStatus>,
-    ) -> Self {
+    pub fn set_asset_status(mut self, input: ::std::option::Option<crate::types::AssetStatus>) -> Self {
         self.asset_status = input;
         self
     }

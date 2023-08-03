@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for GetLifecyclePolicyOutput {
 }
 impl GetLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyOutput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyOutputBuilder {
         crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLifecyclePolicyOutput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyOutputBuilder {
     pub(crate) lifecycle_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetLifecyclePolicyOutputBuilder {
     /// <p>The object lifecycle policy that is assigned to the container.</p>
-    pub fn lifecycle_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object lifecycle policy that is assigned to the container.</p>
-    pub fn set_lifecycle_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_policy = input;
         self
     }

@@ -50,9 +50,7 @@ impl CreateRuleInput {
 
 /// A builder for [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRuleInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
@@ -87,17 +85,12 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>The conditions.</p>
-    pub fn set_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
-    ) -> Self {
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>) -> Self {
         self.conditions = input;
         self
     }
     /// <p>The conditions.</p>
-    pub fn get_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
         &self.conditions
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
@@ -126,10 +119,7 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>The actions.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
@@ -149,10 +139,7 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>The tags to assign to the rule.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -161,12 +148,7 @@ impl CreateRuleInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_rule::CreateRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
             listener_arn: self.listener_arn,
             conditions: self.conditions,

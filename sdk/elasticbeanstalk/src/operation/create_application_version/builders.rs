@@ -32,7 +32,7 @@ impl CreateApplicationVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder,
+    inner: crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder,
 }
 impl CreateApplicationVersionFluentBuilder {
     /// Creates a new `CreateApplicationVersion`.
@@ -43,10 +43,7 @@ impl CreateApplicationVersionFluentBuilder {
         }
     }
     /// Access the CreateApplicationVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +55,7 @@ impl CreateApplicationVersionFluentBuilder {
             crate::operation::create_application_version::CreateApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application_version::CreateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application_version::CreateApplicationVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +65,7 @@ impl CreateApplicationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +74,7 @@ impl CreateApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application_version::CreateApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application_version::CreateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application_version::CreateApplicationVersionError>,
     > {
         let op = self
             .inner
@@ -107,9 +97,7 @@ impl CreateApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application_version::CreateApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application_version::CreateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application_version::CreateApplicationVersionError>,
     > {
         self.send_middleware().await
     }
@@ -123,25 +111,17 @@ impl CreateApplicationVersionFluentBuilder {
             crate::operation::create_application_version::CreateApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application_version::CreateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application_version::CreateApplicationVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -151,19 +131,13 @@ impl CreateApplicationVersionFluentBuilder {
     }
     /// <p>A label identifying this version.</p>
     /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_label(input.into());
         self
     }
     /// <p>A label identifying this version.</p>
     /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
     }
@@ -192,17 +166,12 @@ impl CreateApplicationVersionFluentBuilder {
         self
     }
     /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
-    pub fn set_source_build_information(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceBuildInformation>,
-    ) -> Self {
+    pub fn set_source_build_information(mut self, input: ::std::option::Option<crate::types::SourceBuildInformation>) -> Self {
         self.inner = self.inner.set_source_build_information(input);
         self
     }
     /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
-    pub fn get_source_build_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceBuildInformation> {
+    pub fn get_source_build_information(&self) -> &::std::option::Option<crate::types::SourceBuildInformation> {
         self.inner.get_source_build_information()
     }
     /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
@@ -217,10 +186,7 @@ impl CreateApplicationVersionFluentBuilder {
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
     /// </note>
     /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
-    pub fn set_source_bundle(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_source_bundle(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_source_bundle(input);
         self
     }
@@ -237,17 +203,12 @@ impl CreateApplicationVersionFluentBuilder {
         self
     }
     /// <p>Settings for an AWS CodeBuild build.</p>
-    pub fn set_build_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildConfiguration>,
-    ) -> Self {
+    pub fn set_build_configuration(mut self, input: ::std::option::Option<crate::types::BuildConfiguration>) -> Self {
         self.inner = self.inner.set_build_configuration(input);
         self
     }
     /// <p>Settings for an AWS CodeBuild build.</p>
-    pub fn get_build_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::BuildConfiguration> {
+    pub fn get_build_configuration(&self) -> &::std::option::Option<crate::types::BuildConfiguration> {
         self.inner.get_build_configuration()
     }
     /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't already exist.</p>
@@ -299,10 +260,7 @@ impl CreateApplicationVersionFluentBuilder {
     }
     /// <p>Specifies the tags applied to the application version.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the application version don't inherit the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -36,9 +36,7 @@ impl RegisterClientInput {
 
 /// A builder for [`RegisterClientInput`](crate::operation::register_client::RegisterClientInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterClientInputBuilder {
     pub(crate) client_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_type: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl RegisterClientInputBuilder {
         self
     }
     /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
-    pub fn set_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scopes = input;
         self
     }
@@ -99,10 +94,7 @@ impl RegisterClientInputBuilder {
     /// Consumes the builder and constructs a [`RegisterClientInput`](crate::operation::register_client::RegisterClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_client::RegisterClientInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_client::RegisterClientInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_client::RegisterClientInput {
             client_name: self.client_name,
             client_type: self.client_type,

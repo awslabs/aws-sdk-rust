@@ -26,7 +26,7 @@ impl DeregisterDbProxyTargetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterDBProxyTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsInputBuilder,
+    inner: crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsInputBuilder,
 }
 impl DeregisterDBProxyTargetsFluentBuilder {
     /// Creates a new `DeregisterDBProxyTargets`.
@@ -37,7 +37,7 @@ impl DeregisterDBProxyTargetsFluentBuilder {
         }
     }
     /// Access the DeregisterDBProxyTargets as a reference.
-    pub fn as_input(&self) -> &crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeregisterDBProxyTargetsFluentBuilder {
             crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeregisterDBProxyTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeregisterDBProxyTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargetsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeregisterDBProxyTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeregisterDBProxyTargetsFluentBuilder {
             crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargetsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());
         self
     }
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl DeregisterDBProxyTargetsFluentBuilder {
         self.inner.get_db_proxy_name()
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-    pub fn target_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_name(input.into());
         self
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-    pub fn set_target_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_group_name(input);
         self
     }
@@ -165,25 +142,17 @@ impl DeregisterDBProxyTargetsFluentBuilder {
     /// To override the contents of this collection use [`set_db_instance_identifiers`](Self::set_db_instance_identifiers).
     ///
     /// <p>One or more DB instance identifiers.</p>
-    pub fn db_instance_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifiers(input.into());
         self
     }
     /// <p>One or more DB instance identifiers.</p>
-    pub fn set_db_instance_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_db_instance_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_db_instance_identifiers(input);
         self
     }
     /// <p>One or more DB instance identifiers.</p>
-    pub fn get_db_instance_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_db_instance_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_db_instance_identifiers()
     }
     /// Appends an item to `DBClusterIdentifiers`.
@@ -191,25 +160,17 @@ impl DeregisterDBProxyTargetsFluentBuilder {
     /// To override the contents of this collection use [`set_db_cluster_identifiers`](Self::set_db_cluster_identifiers).
     ///
     /// <p>One or more DB cluster identifiers.</p>
-    pub fn db_cluster_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifiers(input.into());
         self
     }
     /// <p>One or more DB cluster identifiers.</p>
-    pub fn set_db_cluster_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_db_cluster_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_db_cluster_identifiers(input);
         self
     }
     /// <p>One or more DB cluster identifiers.</p>
-    pub fn get_db_cluster_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_db_cluster_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_db_cluster_identifiers()
     }
 }

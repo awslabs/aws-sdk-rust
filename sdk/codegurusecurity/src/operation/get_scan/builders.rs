@@ -10,10 +10,7 @@ impl GetScanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_scan::GetScanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_scan::GetScanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_scan::GetScanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_scan();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetScanFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_scan::GetScan,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_scan::GetScan, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_scan::GetScanError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,15 @@ impl GetScanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_scan::GetScanOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_scan::GetScanError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_scan::GetScanOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_scan::GetScanError>>
+    {
         let op = self
             .inner
             .build()
@@ -92,10 +81,8 @@ impl GetScanFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_scan::GetScanOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_scan::GetScanError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_scan::GetScanOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_scan::GetScanError>>
+    {
         self.send_middleware().await
     }
 
@@ -104,10 +91,7 @@ impl GetScanFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_scan::GetScan,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_scan::GetScan, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_scan::GetScanError>,
     > {
         self.customize_middleware().await

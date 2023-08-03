@@ -22,35 +22,26 @@ impl GetUserEndpointsInput {
 }
 impl GetUserEndpointsInput {
     /// Creates a new builder-style object to manufacture [`GetUserEndpointsInput`](crate::operation::get_user_endpoints::GetUserEndpointsInput).
-    pub fn builder() -> crate::operation::get_user_endpoints::builders::GetUserEndpointsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_user_endpoints::builders::GetUserEndpointsInputBuilder {
         crate::operation::get_user_endpoints::builders::GetUserEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUserEndpointsInput`](crate::operation::get_user_endpoints::GetUserEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserEndpointsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUserEndpointsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl GetUserEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`GetUserEndpointsInput`](crate::operation::get_user_endpoints::GetUserEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_user_endpoints::GetUserEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_user_endpoints::GetUserEndpointsInput {
-                application_id: self.application_id,
-                user_id: self.user_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_user_endpoints::GetUserEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_user_endpoints::GetUserEndpointsInput {
+            application_id: self.application_id,
+            user_id: self.user_id,
+        })
     }
 }

@@ -23,9 +23,7 @@ impl LogConfiguration {
 
 /// A builder for [`LogConfiguration`](crate::types::LogConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl LogConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`LogConfiguration`](crate::types::LogConfiguration).
     pub fn build(self) -> crate::types::LogConfiguration {
-        crate::types::LogConfiguration {
-            enabled: self.enabled,
-        }
+        crate::types::LogConfiguration { enabled: self.enabled }
     }
 }

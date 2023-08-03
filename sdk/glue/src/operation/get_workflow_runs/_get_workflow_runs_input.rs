@@ -43,9 +43,7 @@ impl GetWorkflowRunsInput {
 
 /// A builder for [`GetWorkflowRunsInput`](crate::operation::get_workflow_runs::GetWorkflowRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowRunsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) include_graph: ::std::option::Option<bool>,
@@ -112,10 +110,7 @@ impl GetWorkflowRunsInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkflowRunsInput`](crate::operation::get_workflow_runs::GetWorkflowRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workflow_runs::GetWorkflowRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_workflow_runs::GetWorkflowRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workflow_runs::GetWorkflowRunsInput {
             name: self.name,
             include_graph: self.include_graph,

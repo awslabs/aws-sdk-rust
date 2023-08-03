@@ -17,9 +17,7 @@ impl GetDistributionConfigurationOutput {
         self.request_id.as_deref()
     }
     /// <p>The distribution configuration object.</p>
-    pub fn distribution_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DistributionConfiguration> {
+    pub fn distribution_configuration(&self) -> ::std::option::Option<&crate::types::DistributionConfiguration> {
         self.distribution_configuration.as_ref()
     }
 }
@@ -30,20 +28,17 @@ impl ::aws_http::request_id::RequestId for GetDistributionConfigurationOutput {
 }
 impl GetDistributionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionConfigurationOutput`](crate::operation::get_distribution_configuration::GetDistributionConfigurationOutput).
-    pub fn builder() -> crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationOutputBuilder {
         crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDistributionConfigurationOutput`](crate::operation::get_distribution_configuration::GetDistributionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionConfigurationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) distribution_configuration:
-        ::std::option::Option<crate::types::DistributionConfiguration>,
+    pub(crate) distribution_configuration: ::std::option::Option<crate::types::DistributionConfiguration>,
     _request_id: Option<String>,
 }
 impl GetDistributionConfigurationOutputBuilder {
@@ -62,25 +57,17 @@ impl GetDistributionConfigurationOutputBuilder {
         &self.request_id
     }
     /// <p>The distribution configuration object.</p>
-    pub fn distribution_configuration(
-        mut self,
-        input: crate::types::DistributionConfiguration,
-    ) -> Self {
+    pub fn distribution_configuration(mut self, input: crate::types::DistributionConfiguration) -> Self {
         self.distribution_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The distribution configuration object.</p>
-    pub fn set_distribution_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionConfiguration>,
-    ) -> Self {
+    pub fn set_distribution_configuration(mut self, input: ::std::option::Option<crate::types::DistributionConfiguration>) -> Self {
         self.distribution_configuration = input;
         self
     }
     /// <p>The distribution configuration object.</p>
-    pub fn get_distribution_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DistributionConfiguration> {
+    pub fn get_distribution_configuration(&self) -> &::std::option::Option<crate::types::DistributionConfiguration> {
         &self.distribution_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,9 +80,7 @@ impl GetDistributionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDistributionConfigurationOutput`](crate::operation::get_distribution_configuration::GetDistributionConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_distribution_configuration::GetDistributionConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_distribution_configuration::GetDistributionConfigurationOutput {
         crate::operation::get_distribution_configuration::GetDistributionConfigurationOutput {
             request_id: self.request_id,
             distribution_configuration: self.distribution_configuration,

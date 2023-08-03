@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ListTagsForResourcesOutput`](crate::operation::list_tags_for_resources::ListTagsForResourcesOutput) with field(s):
     ///   - [`resource_tag_sets(Option<Vec<ResourceTagSet>>)`](crate::operation::list_tags_for_resources::ListTagsForResourcesOutput::resource_tag_sets): <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourcesError>`](crate::operation::list_tags_for_resources::ListTagsForResourcesError)
-    pub fn list_tags_for_resources(
-        &self,
-    ) -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesFluentBuilder
-    {
-        crate::operation::list_tags_for_resources::builders::ListTagsForResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tags_for_resources(&self) -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesFluentBuilder {
+        crate::operation::list_tags_for_resources::builders::ListTagsForResourcesFluentBuilder::new(self.handle.clone())
     }
 }

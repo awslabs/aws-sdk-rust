@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateGatewayGroupOutput {
 }
 impl UpdateGatewayGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayGroupOutput`](crate::operation::update_gateway_group::UpdateGatewayGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_gateway_group::builders::UpdateGatewayGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_gateway_group::builders::UpdateGatewayGroupOutputBuilder {
         crate::operation::update_gateway_group::builders::UpdateGatewayGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGatewayGroupOutput`](crate::operation::update_gateway_group::UpdateGatewayGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGatewayGroupOutputBuilder {
     _request_id: Option<String>,
 }

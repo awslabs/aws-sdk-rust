@@ -26,8 +26,7 @@ pub struct GetWorkflowStepOutput {
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>The custom script to run tests on source or target environments.</p>
     #[doc(hidden)]
-    pub workflow_step_automation_configuration:
-        ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
+    pub workflow_step_automation_configuration: ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
     /// <p>The servers on which a step will be run.</p>
     #[doc(hidden)]
     pub step_target: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -99,9 +98,7 @@ impl GetWorkflowStepOutput {
         self.owner.as_ref()
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn workflow_step_automation_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkflowStepAutomationConfiguration> {
+    pub fn workflow_step_automation_configuration(&self) -> ::std::option::Option<&crate::types::WorkflowStepAutomationConfiguration> {
         self.workflow_step_automation_configuration.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
@@ -164,17 +161,14 @@ impl ::aws_http::request_id::RequestId for GetWorkflowStepOutput {
 }
 impl GetWorkflowStepOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowStepOutput`](crate::operation::get_workflow_step::GetWorkflowStepOutput).
-    pub fn builder() -> crate::operation::get_workflow_step::builders::GetWorkflowStepOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_workflow_step::builders::GetWorkflowStepOutputBuilder {
         crate::operation::get_workflow_step::builders::GetWorkflowStepOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowStepOutput`](crate::operation::get_workflow_step::GetWorkflowStepOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowStepOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) step_group_id: ::std::option::Option<::std::string::String>,
@@ -183,8 +177,7 @@ pub struct GetWorkflowStepOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) step_action_type: ::std::option::Option<crate::types::StepActionType>,
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
-    pub(crate) workflow_step_automation_configuration:
-        ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
+    pub(crate) workflow_step_automation_configuration: ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
     pub(crate) step_target: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>,
     pub(crate) previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -216,18 +209,12 @@ impl GetWorkflowStepOutputBuilder {
         &self.name
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_group_id = input;
         self
     }
@@ -283,10 +270,7 @@ impl GetWorkflowStepOutputBuilder {
         self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn set_step_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StepActionType>,
-    ) -> Self {
+    pub fn set_step_action_type(mut self, input: ::std::option::Option<crate::types::StepActionType>) -> Self {
         self.step_action_type = input;
         self
     }
@@ -309,10 +293,7 @@ impl GetWorkflowStepOutputBuilder {
         &self.owner
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn workflow_step_automation_configuration(
-        mut self,
-        input: crate::types::WorkflowStepAutomationConfiguration,
-    ) -> Self {
+    pub fn workflow_step_automation_configuration(mut self, input: crate::types::WorkflowStepAutomationConfiguration) -> Self {
         self.workflow_step_automation_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -325,9 +306,7 @@ impl GetWorkflowStepOutputBuilder {
         self
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn get_workflow_step_automation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowStepAutomationConfiguration> {
+    pub fn get_workflow_step_automation_configuration(&self) -> &::std::option::Option<crate::types::WorkflowStepAutomationConfiguration> {
         &self.workflow_step_automation_configuration
     }
     /// Appends an item to `step_target`.
@@ -342,17 +321,12 @@ impl GetWorkflowStepOutputBuilder {
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn set_step_target(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_step_target(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.step_target = input;
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn get_step_target(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_step_target(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.step_target
     }
     /// Appends an item to `outputs`.
@@ -367,17 +341,12 @@ impl GetWorkflowStepOutputBuilder {
         self
     }
     /// <p>The outputs of the step.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>) -> Self {
         self.outputs = input;
         self
     }
     /// <p>The outputs of the step.</p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>> {
         &self.outputs
     }
     /// Appends an item to `previous`.
@@ -392,10 +361,7 @@ impl GetWorkflowStepOutputBuilder {
         self
     }
     /// <p>The previous step.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.previous = input;
         self
     }
@@ -415,10 +381,7 @@ impl GetWorkflowStepOutputBuilder {
         self
     }
     /// <p>The next step.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.next = input;
         self
     }
@@ -441,18 +404,12 @@ impl GetWorkflowStepOutputBuilder {
         &self.status
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -461,18 +418,12 @@ impl GetWorkflowStepOutputBuilder {
         &self.status_message
     }
     /// <p>The output location of the script.</p>
-    pub fn script_output_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn script_output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_output_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The output location of the script.</p>
-    pub fn set_script_output_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_script_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_output_location = input;
         self
     }
@@ -486,10 +437,7 @@ impl GetWorkflowStepOutputBuilder {
         self
     }
     /// <p>The time at which the step was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -503,10 +451,7 @@ impl GetWorkflowStepOutputBuilder {
         self
     }
     /// <p>The time at which the workflow was last started.</p>
-    pub fn set_last_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_start_time = input;
         self
     }
@@ -520,10 +465,7 @@ impl GetWorkflowStepOutputBuilder {
         self
     }
     /// <p>The time at which the step ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }

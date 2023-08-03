@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`behavior_on_mx_failure(BehaviorOnMxFailure)`](crate::operation::put_email_identity_mail_from_attributes::builders::PutEmailIdentityMailFromAttributesFluentBuilder::behavior_on_mx_failure) / [`set_behavior_on_mx_failure(Option<BehaviorOnMxFailure>)`](crate::operation::put_email_identity_mail_from_attributes::builders::PutEmailIdentityMailFromAttributesFluentBuilder::set_behavior_on_mx_failure): <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>  <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     /// - On success, responds with [`PutEmailIdentityMailFromAttributesOutput`](crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesOutput)
     /// - On failure, responds with [`SdkError<PutEmailIdentityMailFromAttributesError>`](crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesError)
-    pub fn put_email_identity_mail_from_attributes(&self) -> crate::operation::put_email_identity_mail_from_attributes::builders::PutEmailIdentityMailFromAttributesFluentBuilder{
+    pub fn put_email_identity_mail_from_attributes(
+        &self,
+    ) -> crate::operation::put_email_identity_mail_from_attributes::builders::PutEmailIdentityMailFromAttributesFluentBuilder {
         crate::operation::put_email_identity_mail_from_attributes::builders::PutEmailIdentityMailFromAttributesFluentBuilder::new(self.handle.clone())
     }
 }

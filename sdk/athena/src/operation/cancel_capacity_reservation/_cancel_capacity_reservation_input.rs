@@ -15,16 +15,14 @@ impl CancelCapacityReservationInput {
 }
 impl CancelCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`CancelCapacityReservationInput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput).
-    pub fn builder() -> crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationInputBuilder{
+    pub fn builder() -> crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationInputBuilder {
         crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelCapacityReservationInput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelCapacityReservationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl CancelCapacityReservationInputBuilder {
         crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput { name: self.name })
     }
 }

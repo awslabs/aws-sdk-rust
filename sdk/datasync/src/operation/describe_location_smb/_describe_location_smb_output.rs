@@ -64,18 +64,14 @@ impl ::aws_http::request_id::RequestId for DescribeLocationSmbOutput {
 }
 impl DescribeLocationSmbOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationSmbOutput`](crate::operation::describe_location_smb::DescribeLocationSmbOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_location_smb::builders::DescribeLocationSmbOutputBuilder {
-        crate::operation::describe_location_smb::builders::DescribeLocationSmbOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_location_smb::builders::DescribeLocationSmbOutputBuilder {
+        crate::operation::describe_location_smb::builders::DescribeLocationSmbOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationSmbOutput`](crate::operation::describe_location_smb::DescribeLocationSmbOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationSmbOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
@@ -127,10 +123,7 @@ impl DescribeLocationSmbOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -172,10 +165,7 @@ impl DescribeLocationSmbOutputBuilder {
         self
     }
     /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
         self.mount_options = input;
         self
     }
@@ -189,10 +179,7 @@ impl DescribeLocationSmbOutputBuilder {
         self
     }
     /// <p>The time that the SMB location was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

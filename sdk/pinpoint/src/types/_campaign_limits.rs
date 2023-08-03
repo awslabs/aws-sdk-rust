@@ -51,9 +51,7 @@ impl CampaignLimits {
 
 /// A builder for [`CampaignLimits`](crate::types::CampaignLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CampaignLimitsBuilder {
     pub(crate) daily: ::std::option::Option<i32>,
     pub(crate) maximum_duration: ::std::option::Option<i32>,

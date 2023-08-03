@@ -30,9 +30,7 @@ impl NamespaceError {
 
 /// A builder for [`NamespaceError`](crate::types::NamespaceError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NamespaceErrorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NamespaceErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl NamespaceErrorBuilder {
         self
     }
     /// <p>The error type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NamespaceErrorType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NamespaceErrorType>) -> Self {
         self.r#type = input;
         self
     }

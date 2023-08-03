@@ -24,8 +24,7 @@ pub struct DirectConnectGateway {
     /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub direct_connect_gateway_state:
-        ::std::option::Option<crate::types::DirectConnectGatewayState>,
+    pub direct_connect_gateway_state: ::std::option::Option<crate::types::DirectConnectGatewayState>,
     /// <p>The error message if the state of an object failed to advance.</p>
     #[doc(hidden)]
     pub state_change_error: ::std::option::Option<::std::string::String>,
@@ -54,9 +53,7 @@ impl DirectConnectGateway {
     /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
     /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
-    pub fn direct_connect_gateway_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectConnectGatewayState> {
+    pub fn direct_connect_gateway_state(&self) -> ::std::option::Option<&crate::types::DirectConnectGatewayState> {
         self.direct_connect_gateway_state.as_ref()
     }
     /// <p>The error message if the state of an object failed to advance.</p>
@@ -73,32 +70,23 @@ impl DirectConnectGateway {
 
 /// A builder for [`DirectConnectGateway`](crate::types::DirectConnectGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectConnectGatewayBuilder {
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) amazon_side_asn: ::std::option::Option<i64>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
-    pub(crate) direct_connect_gateway_state:
-        ::std::option::Option<crate::types::DirectConnectGatewayState>,
+    pub(crate) direct_connect_gateway_state: ::std::option::Option<crate::types::DirectConnectGatewayState>,
     pub(crate) state_change_error: ::std::option::Option<::std::string::String>,
 }
 impl DirectConnectGatewayBuilder {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = input;
         self
     }
@@ -107,18 +95,12 @@ impl DirectConnectGatewayBuilder {
         &self.direct_connect_gateway_id
     }
     /// <p>The name of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_name = input;
         self
     }
@@ -141,18 +123,12 @@ impl DirectConnectGatewayBuilder {
         &self.amazon_side_asn
     }
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -167,10 +143,7 @@ impl DirectConnectGatewayBuilder {
     /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
     /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
-    pub fn direct_connect_gateway_state(
-        mut self,
-        input: crate::types::DirectConnectGatewayState,
-    ) -> Self {
+    pub fn direct_connect_gateway_state(mut self, input: crate::types::DirectConnectGatewayState) -> Self {
         self.direct_connect_gateway_state = ::std::option::Option::Some(input);
         self
     }
@@ -181,10 +154,7 @@ impl DirectConnectGatewayBuilder {
     /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
     /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
-    pub fn set_direct_connect_gateway_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectConnectGatewayState>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_state(mut self, input: ::std::option::Option<crate::types::DirectConnectGatewayState>) -> Self {
         self.direct_connect_gateway_state = input;
         self
     }
@@ -195,24 +165,16 @@ impl DirectConnectGatewayBuilder {
     /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
     /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
-    pub fn get_direct_connect_gateway_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectConnectGatewayState> {
+    pub fn get_direct_connect_gateway_state(&self) -> &::std::option::Option<crate::types::DirectConnectGatewayState> {
         &self.direct_connect_gateway_state
     }
     /// <p>The error message if the state of an object failed to advance.</p>
-    pub fn state_change_error(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_change_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_change_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message if the state of an object failed to advance.</p>
-    pub fn set_state_change_error(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_change_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_change_error = input;
         self
     }

@@ -55,9 +55,7 @@ impl VideoPreprocessor {
         self.noise_reducer.as_ref()
     }
     /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
-    pub fn partner_watermarking(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PartnerWatermarking> {
+    pub fn partner_watermarking(&self) -> ::std::option::Option<&crate::types::PartnerWatermarking> {
         self.partner_watermarking.as_ref()
     }
     /// Settings for burning the output timecode and specified prefix into the output.
@@ -74,9 +72,7 @@ impl VideoPreprocessor {
 
 /// A builder for [`VideoPreprocessor`](crate::types::VideoPreprocessor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoPreprocessorBuilder {
     pub(crate) color_corrector: ::std::option::Option<crate::types::ColorCorrector>,
     pub(crate) deinterlacer: ::std::option::Option<crate::types::Deinterlacer>,
@@ -94,10 +90,7 @@ impl VideoPreprocessorBuilder {
         self
     }
     /// Use these settings to convert the color space or to modify properties such as hue and contrast for this output. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
-    pub fn set_color_corrector(
-        mut self,
-        input: ::std::option::Option<crate::types::ColorCorrector>,
-    ) -> Self {
+    pub fn set_color_corrector(mut self, input: ::std::option::Option<crate::types::ColorCorrector>) -> Self {
         self.color_corrector = input;
         self
     }
@@ -111,10 +104,7 @@ impl VideoPreprocessorBuilder {
         self
     }
     /// Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
-    pub fn set_deinterlacer(
-        mut self,
-        input: ::std::option::Option<crate::types::Deinterlacer>,
-    ) -> Self {
+    pub fn set_deinterlacer(mut self, input: ::std::option::Option<crate::types::Deinterlacer>) -> Self {
         self.deinterlacer = input;
         self
     }
@@ -128,10 +118,7 @@ impl VideoPreprocessorBuilder {
         self
     }
     /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
-    pub fn set_dolby_vision(
-        mut self,
-        input: ::std::option::Option<crate::types::DolbyVision>,
-    ) -> Self {
+    pub fn set_dolby_vision(mut self, input: ::std::option::Option<crate::types::DolbyVision>) -> Self {
         self.dolby_vision = input;
         self
     }
@@ -159,10 +146,7 @@ impl VideoPreprocessorBuilder {
         self
     }
     /// Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
-    pub fn set_image_inserter(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageInserter>,
-    ) -> Self {
+    pub fn set_image_inserter(mut self, input: ::std::option::Option<crate::types::ImageInserter>) -> Self {
         self.image_inserter = input;
         self
     }
@@ -176,10 +160,7 @@ impl VideoPreprocessorBuilder {
         self
     }
     /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
-    pub fn set_noise_reducer(
-        mut self,
-        input: ::std::option::Option<crate::types::NoiseReducer>,
-    ) -> Self {
+    pub fn set_noise_reducer(mut self, input: ::std::option::Option<crate::types::NoiseReducer>) -> Self {
         self.noise_reducer = input;
         self
     }
@@ -193,17 +174,12 @@ impl VideoPreprocessorBuilder {
         self
     }
     /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
-    pub fn set_partner_watermarking(
-        mut self,
-        input: ::std::option::Option<crate::types::PartnerWatermarking>,
-    ) -> Self {
+    pub fn set_partner_watermarking(mut self, input: ::std::option::Option<crate::types::PartnerWatermarking>) -> Self {
         self.partner_watermarking = input;
         self
     }
     /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
-    pub fn get_partner_watermarking(
-        &self,
-    ) -> &::std::option::Option<crate::types::PartnerWatermarking> {
+    pub fn get_partner_watermarking(&self) -> &::std::option::Option<crate::types::PartnerWatermarking> {
         &self.partner_watermarking
     }
     /// Settings for burning the output timecode and specified prefix into the output.
@@ -212,10 +188,7 @@ impl VideoPreprocessorBuilder {
         self
     }
     /// Settings for burning the output timecode and specified prefix into the output.
-    pub fn set_timecode_burnin(
-        mut self,
-        input: ::std::option::Option<crate::types::TimecodeBurnin>,
-    ) -> Self {
+    pub fn set_timecode_burnin(mut self, input: ::std::option::Option<crate::types::TimecodeBurnin>) -> Self {
         self.timecode_burnin = input;
         self
     }

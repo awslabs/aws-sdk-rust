@@ -37,9 +37,7 @@ impl CreatePackagingGroupFluentBuilder {
         }
     }
     /// Access the CreatePackagingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_packaging_group::builders::CreatePackagingGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_packaging_group::builders::CreatePackagingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreatePackagingGroupFluentBuilder {
             crate::operation::create_packaging_group::CreatePackagingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_packaging_group::CreatePackagingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_packaging_group::CreatePackagingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreatePackagingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreatePackagingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_packaging_group::CreatePackagingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_packaging_group::CreatePackagingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_packaging_group::CreatePackagingGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreatePackagingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_packaging_group::CreatePackagingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_packaging_group::CreatePackagingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_packaging_group::CreatePackagingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreatePackagingGroupFluentBuilder {
             crate::operation::create_packaging_group::CreatePackagingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_packaging_group::CreatePackagingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_packaging_group::CreatePackagingGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl CreatePackagingGroupFluentBuilder {
         self
     }
     /// CDN Authorization credentials
-    pub fn set_authorization(
-        mut self,
-        input: ::std::option::Option<crate::types::Authorization>,
-    ) -> Self {
+    pub fn set_authorization(mut self, input: ::std::option::Option<crate::types::Authorization>) -> Self {
         self.inner = self.inner.set_authorization(input);
         self
     }
@@ -145,10 +129,7 @@ impl CreatePackagingGroupFluentBuilder {
         self
     }
     /// Configure egress access logging.
-    pub fn set_egress_access_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::EgressAccessLogs>,
-    ) -> Self {
+    pub fn set_egress_access_logs(mut self, input: ::std::option::Option<crate::types::EgressAccessLogs>) -> Self {
         self.inner = self.inner.set_egress_access_logs(input);
         self
     }
@@ -175,30 +156,17 @@ impl CreatePackagingGroupFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of tags associated with a resource
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// A collection of tags associated with a resource
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

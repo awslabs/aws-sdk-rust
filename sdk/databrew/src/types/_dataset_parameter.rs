@@ -51,9 +51,7 @@ impl DatasetParameter {
 
 /// A builder for [`DatasetParameter`](crate::types::DatasetParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ParameterType>,
@@ -96,10 +94,7 @@ impl DatasetParameterBuilder {
         self
     }
     /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
-    pub fn set_datetime_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DatetimeOptions>,
-    ) -> Self {
+    pub fn set_datetime_options(mut self, input: ::std::option::Option<crate::types::DatetimeOptions>) -> Self {
         self.datetime_options = input;
         self
     }
@@ -127,10 +122,7 @@ impl DatasetParameterBuilder {
         self
     }
     /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterExpression>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::FilterExpression>) -> Self {
         self.filter = input;
         self
     }

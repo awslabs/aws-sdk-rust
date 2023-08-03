@@ -28,7 +28,7 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SwitchoverBlueGreenDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentInputBuilder,
+    inner: crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentInputBuilder,
 }
 impl SwitchoverBlueGreenDeploymentFluentBuilder {
     /// Creates a new `SwitchoverBlueGreenDeployment`.
@@ -39,7 +39,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
         }
     }
     /// Access the SwitchoverBlueGreenDeployment as a reference.
-    pub fn as_input(&self) -> &crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
             crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
             crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +116,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn blue_green_deployment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blue_green_deployment_identifier(input.into());
         self
     }
@@ -139,10 +125,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn set_blue_green_deployment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_blue_green_deployment_identifier(input);
         self
     }
@@ -151,9 +134,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn get_blue_green_deployment_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_blue_green_deployment_identifier()
     }
     /// <p>The amount of time, in seconds, for the switchover to complete.</p>

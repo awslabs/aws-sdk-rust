@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`pipeline_details(Option<Vec<MultiplexProgramPipelineDetail>>)`](crate::operation::describe_multiplex_program::DescribeMultiplexProgramOutput::pipeline_details): Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
     ///   - [`program_name(Option<String>)`](crate::operation::describe_multiplex_program::DescribeMultiplexProgramOutput::program_name): The name of the multiplex program.
     /// - On failure, responds with [`SdkError<DescribeMultiplexProgramError>`](crate::operation::describe_multiplex_program::DescribeMultiplexProgramError)
-    pub fn describe_multiplex_program(
-        &self,
-    ) -> crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramFluentBuilder
-    {
+    pub fn describe_multiplex_program(&self) -> crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramFluentBuilder {
         crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramFluentBuilder::new(self.handle.clone())
     }
 }

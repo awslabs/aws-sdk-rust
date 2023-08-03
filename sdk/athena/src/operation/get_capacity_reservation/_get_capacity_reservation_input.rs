@@ -15,18 +15,14 @@ impl GetCapacityReservationInput {
 }
 impl GetCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`GetCapacityReservationInput`](crate::operation::get_capacity_reservation::GetCapacityReservationInput).
-    pub fn builder(
-    ) -> crate::operation::get_capacity_reservation::builders::GetCapacityReservationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_capacity_reservation::builders::GetCapacityReservationInputBuilder {
         crate::operation::get_capacity_reservation::builders::GetCapacityReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCapacityReservationInput`](crate::operation::get_capacity_reservation::GetCapacityReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCapacityReservationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetCapacityReservationInputBuilder {
     /// Consumes the builder and constructs a [`GetCapacityReservationInput`](crate::operation::get_capacity_reservation::GetCapacityReservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_capacity_reservation::GetCapacityReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_capacity_reservation::GetCapacityReservationInput {
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_capacity_reservation::GetCapacityReservationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_capacity_reservation::GetCapacityReservationInput { name: self.name })
     }
 }

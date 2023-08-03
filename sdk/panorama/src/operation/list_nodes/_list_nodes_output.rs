@@ -35,9 +35,7 @@ impl ListNodesOutput {
 
 /// A builder for [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNodesOutputBuilder {
     pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListNodesOutputBuilder {
         self
     }
     /// <p>A list of nodes.</p>
-    pub fn set_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.nodes = input;
         self
     }

@@ -22,16 +22,14 @@ impl DescribeAcceleratorOfferingsInput {
 }
 impl DescribeAcceleratorOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorOfferingsInput`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput).
-    pub fn builder() -> crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsInputBuilder {
         crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAcceleratorOfferingsInput`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorOfferingsInputBuilder {
     pub(crate) location_type: ::std::option::Option<crate::types::LocationType>,
     pub(crate) accelerator_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -43,10 +41,7 @@ impl DescribeAcceleratorOfferingsInputBuilder {
         self
     }
     /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
-    pub fn set_location_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationType>,
-    ) -> Self {
+    pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.location_type = input;
         self
     }
@@ -59,27 +54,19 @@ impl DescribeAcceleratorOfferingsInputBuilder {
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
     ///
     /// <p> The list of accelerator types to describe. </p>
-    pub fn accelerator_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accelerator_types.unwrap_or_default();
         v.push(input.into());
         self.accelerator_types = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of accelerator types to describe. </p>
-    pub fn set_accelerator_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accelerator_types = input;
         self
     }
     /// <p> The list of accelerator types to describe. </p>
-    pub fn get_accelerator_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accelerator_types
     }
     /// Consumes the builder and constructs a [`DescribeAcceleratorOfferingsInput`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput).
@@ -89,11 +76,9 @@ impl DescribeAcceleratorOfferingsInputBuilder {
         crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput {
-                location_type: self.location_type,
-                accelerator_types: self.accelerator_types,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput {
+            location_type: self.location_type,
+            accelerator_types: self.accelerator_types,
+        })
     }
 }

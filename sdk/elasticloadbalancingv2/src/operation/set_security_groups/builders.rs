@@ -10,10 +10,7 @@ impl SetSecurityGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_security_groups::SetSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_security_groups::SetSecurityGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_security_groups::SetSecurityGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_security_groups();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SetSecurityGroupsFluentBuilder {
         }
     }
     /// Access the SetSecurityGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_security_groups::builders::SetSecurityGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_security_groups::builders::SetSecurityGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl SetSecurityGroupsFluentBuilder {
             crate::operation::set_security_groups::SetSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_security_groups::SetSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_security_groups::SetSecurityGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl SetSecurityGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl SetSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_security_groups::SetSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_security_groups::SetSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_security_groups::SetSecurityGroupsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl SetSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_security_groups::SetSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_security_groups::SetSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_security_groups::SetSecurityGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl SetSecurityGroupsFluentBuilder {
             crate::operation::set_security_groups::SetSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_security_groups::SetSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_security_groups::SetSecurityGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
@@ -148,25 +126,17 @@ impl SetSecurityGroupsFluentBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the security groups.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
 }

@@ -57,14 +57,11 @@ impl FindingProviderFields {
 
 /// A builder for [`FindingProviderFields`](crate::types::FindingProviderFields).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingProviderFieldsBuilder {
     pub(crate) confidence: ::std::option::Option<i32>,
     pub(crate) criticality: ::std::option::Option<i32>,
-    pub(crate) related_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
+    pub(crate) related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
     pub(crate) severity: ::std::option::Option<crate::types::FindingProviderSeverity>,
     pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -115,17 +112,12 @@ impl FindingProviderFieldsBuilder {
         self
     }
     /// <p>A list of findings that are related to the current finding.</p>
-    pub fn set_related_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
-    ) -> Self {
+    pub fn set_related_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>) -> Self {
         self.related_findings = input;
         self
     }
     /// <p>A list of findings that are related to the current finding.</p>
-    pub fn get_related_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
+    pub fn get_related_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
         &self.related_findings
     }
     /// <p>The severity of a finding.</p>
@@ -134,10 +126,7 @@ impl FindingProviderFieldsBuilder {
         self
     }
     /// <p>The severity of a finding.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingProviderSeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::FindingProviderSeverity>) -> Self {
         self.severity = input;
         self
     }
@@ -159,10 +148,7 @@ impl FindingProviderFieldsBuilder {
     }
     /// <p>One or more finding types in the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
         self
     }

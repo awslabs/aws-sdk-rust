@@ -22,9 +22,7 @@ impl RejectSkillInput {
 
 /// A builder for [`RejectSkillInput`](crate::operation::reject_skill::RejectSkillInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectSkillInputBuilder {
     pub(crate) skill_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl RejectSkillInputBuilder {
         &self.skill_id
     }
     /// Consumes the builder and constructs a [`RejectSkillInput`](crate::operation::reject_skill::RejectSkillInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_skill::RejectSkillInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reject_skill::RejectSkillInput {
-            skill_id: self.skill_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_skill::RejectSkillInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::reject_skill::RejectSkillInput { skill_id: self.skill_id })
     }
 }

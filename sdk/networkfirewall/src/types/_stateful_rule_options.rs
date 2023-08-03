@@ -23,9 +23,7 @@ impl StatefulRuleOptions {
 
 /// A builder for [`StatefulRuleOptions`](crate::types::StatefulRuleOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatefulRuleOptionsBuilder {
     pub(crate) rule_order: ::std::option::Option<crate::types::RuleOrder>,
 }
@@ -46,8 +44,6 @@ impl StatefulRuleOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`StatefulRuleOptions`](crate::types::StatefulRuleOptions).
     pub fn build(self) -> crate::types::StatefulRuleOptions {
-        crate::types::StatefulRuleOptions {
-            rule_order: self.rule_order,
-        }
+        crate::types::StatefulRuleOptions { rule_order: self.rule_order }
     }
 }

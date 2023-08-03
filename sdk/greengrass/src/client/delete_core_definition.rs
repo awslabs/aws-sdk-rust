@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`core_definition_id(impl ::std::convert::Into<String>)`](crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder::core_definition_id) / [`set_core_definition_id(Option<String>)`](crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder::set_core_definition_id): The ID of the core definition.
     /// - On success, responds with [`DeleteCoreDefinitionOutput`](crate::operation::delete_core_definition::DeleteCoreDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteCoreDefinitionError>`](crate::operation::delete_core_definition::DeleteCoreDefinitionError)
-    pub fn delete_core_definition(
-        &self,
-    ) -> crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder {
-        crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_core_definition(&self) -> crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder {
+        crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

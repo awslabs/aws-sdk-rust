@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAlternateContactOutput {
 }
 impl GetAlternateContactOutput {
     /// Creates a new builder-style object to manufacture [`GetAlternateContactOutput`](crate::operation::get_alternate_contact::GetAlternateContactOutput).
-    pub fn builder(
-    ) -> crate::operation::get_alternate_contact::builders::GetAlternateContactOutputBuilder {
-        crate::operation::get_alternate_contact::builders::GetAlternateContactOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_alternate_contact::builders::GetAlternateContactOutputBuilder {
+        crate::operation::get_alternate_contact::builders::GetAlternateContactOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAlternateContactOutput`](crate::operation::get_alternate_contact::GetAlternateContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAlternateContactOutputBuilder {
     pub(crate) alternate_contact: ::std::option::Option<crate::types::AlternateContact>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetAlternateContactOutputBuilder {
         self
     }
     /// <p>A structure that contains the details for the specified alternate contact.</p>
-    pub fn set_alternate_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::AlternateContact>,
-    ) -> Self {
+    pub fn set_alternate_contact(mut self, input: ::std::option::Option<crate::types::AlternateContact>) -> Self {
         self.alternate_contact = input;
         self
     }

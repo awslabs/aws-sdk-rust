@@ -26,7 +26,7 @@ impl DeleteRouteRequestParameterInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRouteRequestParameterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterInputBuilder,
+    inner: crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterInputBuilder,
 }
 impl DeleteRouteRequestParameterFluentBuilder {
     /// Creates a new `DeleteRouteRequestParameter`.
@@ -37,7 +37,7 @@ impl DeleteRouteRequestParameterFluentBuilder {
         }
     }
     /// Access the DeleteRouteRequestParameter as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteRouteRequestParameterFluentBuilder {
             crate::operation::delete_route_request_parameter::DeleteRouteRequestParameter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteRouteRequestParameterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteRouteRequestParameterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteRouteRequestParameterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteRouteRequestParameterFluentBuilder {
             crate::operation::delete_route_request_parameter::DeleteRouteRequestParameter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DeleteRouteRequestParameterFluentBuilder {
         self.inner.get_api_id()
     }
     /// <p>The route request parameter key.</p>
-    pub fn request_parameter_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_parameter_key(input.into());
         self
     }
     /// <p>The route request parameter key.</p>
-    pub fn set_request_parameter_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_parameter_key(input);
         self
     }

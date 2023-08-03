@@ -22,16 +22,14 @@ impl BatchUpdateDevicePositionInput {
 }
 impl BatchUpdateDevicePositionInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionInput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput).
-    pub fn builder() -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder{
+    pub fn builder() -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder {
         crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateDevicePositionInput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) updates: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
@@ -63,17 +61,12 @@ impl BatchUpdateDevicePositionInputBuilder {
         self
     }
     /// <p>Contains the position update details for each device, up to 10 devices.</p>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>) -> Self {
         self.updates = input;
         self
     }
     /// <p>Contains the position update details for each device, up to 10 devices.</p>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
         &self.updates
     }
     /// Consumes the builder and constructs a [`BatchUpdateDevicePositionInput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput).
@@ -83,11 +76,9 @@ impl BatchUpdateDevicePositionInputBuilder {
         crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput {
-                tracker_name: self.tracker_name,
-                updates: self.updates,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput {
+            tracker_name: self.tracker_name,
+            updates: self.updates,
+        })
     }
 }

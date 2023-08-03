@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdatePortfolioShareOutput {
 }
 impl UpdatePortfolioShareOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePortfolioShareOutput`](crate::operation::update_portfolio_share::UpdatePortfolioShareOutput).
-    pub fn builder(
-    ) -> crate::operation::update_portfolio_share::builders::UpdatePortfolioShareOutputBuilder {
+    pub fn builder() -> crate::operation::update_portfolio_share::builders::UpdatePortfolioShareOutputBuilder {
         crate::operation::update_portfolio_share::builders::UpdatePortfolioShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePortfolioShareOutput`](crate::operation::update_portfolio_share::UpdatePortfolioShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePortfolioShareOutputBuilder {
     pub(crate) portfolio_share_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ShareStatus>,
@@ -46,18 +43,12 @@ pub struct UpdatePortfolioShareOutputBuilder {
 }
 impl UpdatePortfolioShareOutputBuilder {
     /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
-    pub fn portfolio_share_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portfolio_share_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_share_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
-    pub fn set_portfolio_share_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portfolio_share_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portfolio_share_token = input;
         self
     }

@@ -38,10 +38,7 @@ impl GetConferenceProviderFluentBuilder {
         }
     }
     /// Access the GetConferenceProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_conference_provider::builders::GetConferenceProviderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_conference_provider::builders::GetConferenceProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetConferenceProviderFluentBuilder {
             crate::operation::get_conference_provider::GetConferenceProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_conference_provider::GetConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_conference_provider::GetConferenceProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetConferenceProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetConferenceProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_conference_provider::GetConferenceProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_conference_provider::GetConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_conference_provider::GetConferenceProviderError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetConferenceProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_conference_provider::GetConferenceProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_conference_provider::GetConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_conference_provider::GetConferenceProviderError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl GetConferenceProviderFluentBuilder {
             crate::operation::get_conference_provider::GetConferenceProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_conference_provider::GetConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_conference_provider::GetConferenceProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the newly created conference provider.</p>
-    pub fn conference_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conference_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conference_provider_arn(input.into());
         self
     }
     /// <p>The ARN of the newly created conference provider.</p>
-    pub fn set_conference_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conference_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conference_provider_arn(input);
         self
     }

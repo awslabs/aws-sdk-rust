@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`summaries(Option<Vec<BehaviorModelTrainingSummary>>)`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesOutput::summaries): <p> A list of all ML Detect behaviors and their model status for a given Security Profile. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesOutput::next_token): <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     /// - On failure, responds with [`SdkError<GetBehaviorModelTrainingSummariesError>`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesError)
-    pub fn get_behavior_model_training_summaries(&self) -> crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder{
+    pub fn get_behavior_model_training_summaries(
+        &self,
+    ) -> crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder {
         crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder::new(self.handle.clone())
     }
 }

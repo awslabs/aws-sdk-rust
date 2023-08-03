@@ -38,10 +38,7 @@ impl CreateSecurityProfileFluentBuilder {
         }
     }
     /// Access the CreateSecurityProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateSecurityProfileFluentBuilder {
             crate::operation::create_security_profile::CreateSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_profile::CreateSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_profile::CreateSecurityProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateSecurityProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_profile::CreateSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_profile::CreateSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_profile::CreateSecurityProfileError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_profile::CreateSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_profile::CreateSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_profile::CreateSecurityProfileError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl CreateSecurityProfileFluentBuilder {
             crate::operation::create_security_profile::CreateSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_profile::CreateSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_profile::CreateSecurityProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name you are giving to the security profile.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_name(input.into());
         self
     }
     /// <p>The name you are giving to the security profile.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
@@ -145,25 +125,17 @@ impl CreateSecurityProfileFluentBuilder {
         self.inner.get_security_profile_name()
     }
     /// <p>A description of the security profile.</p>
-    pub fn security_profile_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_description(input.into());
         self
     }
     /// <p>A description of the security profile.</p>
-    pub fn set_security_profile_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_description(input);
         self
     }
     /// <p>A description of the security profile.</p>
-    pub fn get_security_profile_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_security_profile_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_security_profile_description()
     }
     /// Appends an item to `behaviors`.
@@ -176,10 +148,7 @@ impl CreateSecurityProfileFluentBuilder {
         self
     }
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    pub fn set_behaviors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>,
-    ) -> Self {
+    pub fn set_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>) -> Self {
         self.inner = self.inner.set_behaviors(input);
         self
     }
@@ -192,30 +161,20 @@ impl CreateSecurityProfileFluentBuilder {
     /// To override the contents of this collection use [`set_alert_targets`](Self::set_alert_targets).
     ///
     /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
-    pub fn alert_targets(
-        mut self,
-        k: crate::types::AlertTargetType,
-        v: crate::types::AlertTarget,
-    ) -> Self {
+    pub fn alert_targets(mut self, k: crate::types::AlertTargetType, v: crate::types::AlertTarget) -> Self {
         self.inner = self.inner.alert_targets(k, v);
         self
     }
     /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
     pub fn set_alert_targets(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>>,
     ) -> Self {
         self.inner = self.inner.set_alert_targets(input);
         self
     }
     /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
-    pub fn get_alert_targets(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
-    > {
+    pub fn get_alert_targets(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>> {
         self.inner.get_alert_targets()
     }
     /// Appends an item to `additionalMetricsToRetain`.
@@ -225,29 +184,21 @@ impl CreateSecurityProfileFluentBuilder {
     /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    pub fn additional_metrics_to_retain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_metrics_to_retain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_metrics_to_retain(input.into());
         self
     }
     /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    pub fn set_additional_metrics_to_retain(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_metrics_to_retain(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_additional_metrics_to_retain(input);
         self
     }
     /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    pub fn get_additional_metrics_to_retain(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_metrics_to_retain(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_metrics_to_retain()
     }
     /// Appends an item to `additionalMetricsToRetainV2`.
@@ -260,17 +211,12 @@ impl CreateSecurityProfileFluentBuilder {
         self
     }
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    pub fn set_additional_metrics_to_retain_v2(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>>,
-    ) -> Self {
+    pub fn set_additional_metrics_to_retain_v2(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>>) -> Self {
         self.inner = self.inner.set_additional_metrics_to_retain_v2(input);
         self
     }
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    pub fn get_additional_metrics_to_retain_v2(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>> {
+    pub fn get_additional_metrics_to_retain_v2(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>> {
         self.inner.get_additional_metrics_to_retain_v2()
     }
     /// Appends an item to `tags`.
@@ -283,10 +229,7 @@ impl CreateSecurityProfileFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the security profile.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

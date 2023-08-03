@@ -29,9 +29,7 @@ impl ConfirmDeviceOutput {
 
 /// A builder for [`ConfirmDeviceOutput`](crate::operation::confirm_device::ConfirmDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmDeviceOutputBuilder {
     pub(crate) user_confirmation_necessary: ::std::option::Option<bool>,
     _request_id: Option<String>,

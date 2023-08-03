@@ -6,17 +6,14 @@
 pub struct SnapshotFile {
     /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>
     #[doc(hidden)]
-    pub sheet_selections:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>>,
+    pub sheet_selections: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>>,
     /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>
     #[doc(hidden)]
     pub format_type: ::std::option::Option<crate::types::SnapshotFileFormatType>,
 }
 impl SnapshotFile {
     /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>
-    pub fn sheet_selections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SnapshotFileSheetSelection]> {
+    pub fn sheet_selections(&self) -> ::std::option::Option<&[crate::types::SnapshotFileSheetSelection]> {
         self.sheet_selections.as_deref()
     }
     /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>
@@ -33,12 +30,9 @@ impl SnapshotFile {
 
 /// A builder for [`SnapshotFile`](crate::types::SnapshotFile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotFileBuilder {
-    pub(crate) sheet_selections:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>>,
+    pub(crate) sheet_selections: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>>,
     pub(crate) format_type: ::std::option::Option<crate::types::SnapshotFileFormatType>,
 }
 impl SnapshotFileBuilder {
@@ -54,17 +48,12 @@ impl SnapshotFileBuilder {
         self
     }
     /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>
-    pub fn set_sheet_selections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>>,
-    ) -> Self {
+    pub fn set_sheet_selections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>>) -> Self {
         self.sheet_selections = input;
         self
     }
     /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>
-    pub fn get_sheet_selections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>> {
+    pub fn get_sheet_selections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>> {
         &self.sheet_selections
     }
     /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>
@@ -73,10 +62,7 @@ impl SnapshotFileBuilder {
         self
     }
     /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>
-    pub fn set_format_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotFileFormatType>,
-    ) -> Self {
+    pub fn set_format_type(mut self, input: ::std::option::Option<crate::types::SnapshotFileFormatType>) -> Self {
         self.format_type = input;
         self
     }

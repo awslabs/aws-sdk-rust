@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartSpeechSynthesisTaskOutput {
 }
 impl StartSpeechSynthesisTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartSpeechSynthesisTaskOutput`](crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput).
-    pub fn builder() -> crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskOutputBuilder{
+    pub fn builder() -> crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskOutputBuilder {
         crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartSpeechSynthesisTaskOutput`](crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSpeechSynthesisTaskOutputBuilder {
     pub(crate) synthesis_task: ::std::option::Option<crate::types::SynthesisTask>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StartSpeechSynthesisTaskOutputBuilder {
         self
     }
     /// <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
-    pub fn set_synthesis_task(
-        mut self,
-        input: ::std::option::Option<crate::types::SynthesisTask>,
-    ) -> Self {
+    pub fn set_synthesis_task(mut self, input: ::std::option::Option<crate::types::SynthesisTask>) -> Self {
         self.synthesis_task = input;
         self
     }
@@ -63,9 +58,7 @@ impl StartSpeechSynthesisTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartSpeechSynthesisTaskOutput`](crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput {
+    pub fn build(self) -> crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput {
         crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput {
             synthesis_task: self.synthesis_task,
             _request_id: self._request_id,

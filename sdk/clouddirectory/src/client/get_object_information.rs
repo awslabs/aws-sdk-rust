@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`schema_facets(Option<Vec<SchemaFacet>>)`](crate::operation::get_object_information::GetObjectInformationOutput::schema_facets): <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
     ///   - [`object_identifier(Option<String>)`](crate::operation::get_object_information::GetObjectInformationOutput::object_identifier): <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     /// - On failure, responds with [`SdkError<GetObjectInformationError>`](crate::operation::get_object_information::GetObjectInformationError)
-    pub fn get_object_information(
-        &self,
-    ) -> crate::operation::get_object_information::builders::GetObjectInformationFluentBuilder {
-        crate::operation::get_object_information::builders::GetObjectInformationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_object_information(&self) -> crate::operation::get_object_information::builders::GetObjectInformationFluentBuilder {
+        crate::operation::get_object_information::builders::GetObjectInformationFluentBuilder::new(self.handle.clone())
     }
 }

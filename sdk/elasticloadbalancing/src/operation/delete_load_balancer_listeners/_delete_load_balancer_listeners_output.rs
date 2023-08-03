@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteLoadBalancerListenersOutput {
 }
 impl DeleteLoadBalancerListenersOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerListenersOutput`](crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput).
-    pub fn builder() -> crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersOutputBuilder{
+    pub fn builder() -> crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersOutputBuilder {
         crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLoadBalancerListenersOutput`](crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerListenersOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl DeleteLoadBalancerListenersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteLoadBalancerListenersOutput`](crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput {
+    pub fn build(self) -> crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput {
         crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput {
             _request_id: self._request_id,
         }

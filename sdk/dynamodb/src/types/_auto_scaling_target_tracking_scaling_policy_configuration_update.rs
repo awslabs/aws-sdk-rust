@@ -37,18 +37,14 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
 }
 impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     /// Creates a new builder-style object to manufacture [`AutoScalingTargetTrackingScalingPolicyConfigurationUpdate`](crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate).
-    pub fn builder(
-    ) -> crate::types::builders::AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder
-    {
+    pub fn builder() -> crate::types::builders::AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder {
         crate::types::builders::AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder::default()
     }
 }
 
 /// A builder for [`AutoScalingTargetTrackingScalingPolicyConfigurationUpdate`](crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder {
     pub(crate) disable_scale_in: ::std::option::Option<bool>,
     pub(crate) scale_in_cooldown: ::std::option::Option<i32>,

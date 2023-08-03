@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateIpSetOutput`](crate::operation::create_ip_set::CreateIpSetOutput) with field(s):
     ///   - [`summary(Option<IpSetSummary>)`](crate::operation::create_ip_set::CreateIpSetOutput::summary): <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
     /// - On failure, responds with [`SdkError<CreateIPSetError>`](crate::operation::create_ip_set::CreateIPSetError)
-    pub fn create_ip_set(
-        &self,
-    ) -> crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder {
-        crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ip_set(&self) -> crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder {
+        crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder::new(self.handle.clone())
     }
 }

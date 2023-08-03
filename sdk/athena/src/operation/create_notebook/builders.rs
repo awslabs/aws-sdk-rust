@@ -10,10 +10,7 @@ impl CreateNotebookInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_notebook::CreateNotebookOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_notebook::CreateNotebookError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_notebook::CreateNotebookError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_notebook();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateNotebookFluentBuilder {
         }
     }
     /// Access the CreateNotebook as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_notebook::builders::CreateNotebookInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_notebook::builders::CreateNotebookInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateNotebookFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -145,20 +137,14 @@ impl CreateNotebookFluentBuilder {
     /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

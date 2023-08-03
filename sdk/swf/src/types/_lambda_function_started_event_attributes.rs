@@ -23,9 +23,7 @@ impl LambdaFunctionStartedEventAttributes {
 
 /// A builder for [`LambdaFunctionStartedEventAttributes`](crate::types::LambdaFunctionStartedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionStartedEventAttributesBuilder {
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,
 }

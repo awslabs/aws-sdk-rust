@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateResolverRuleOutput`](crate::operation::update_resolver_rule::UpdateResolverRuleOutput) with field(s):
     ///   - [`resolver_rule(Option<ResolverRule>)`](crate::operation::update_resolver_rule::UpdateResolverRuleOutput::resolver_rule): <p>The response to an <code>UpdateResolverRule</code> request.</p>
     /// - On failure, responds with [`SdkError<UpdateResolverRuleError>`](crate::operation::update_resolver_rule::UpdateResolverRuleError)
-    pub fn update_resolver_rule(
-        &self,
-    ) -> crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder {
-        crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_resolver_rule(&self) -> crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder {
+        crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder::new(self.handle.clone())
     }
 }

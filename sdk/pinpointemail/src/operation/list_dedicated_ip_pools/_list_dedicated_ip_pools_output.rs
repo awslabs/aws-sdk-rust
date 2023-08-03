@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for ListDedicatedIpPoolsOutput {
 }
 impl ListDedicatedIpPoolsOutput {
     /// Creates a new builder-style object to manufacture [`ListDedicatedIpPoolsOutput`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsOutputBuilder {
         crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDedicatedIpPoolsOutput`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDedicatedIpPoolsOutputBuilder {
     pub(crate) dedicated_ip_pools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,27 +48,19 @@ impl ListDedicatedIpPoolsOutputBuilder {
     /// To override the contents of this collection use [`set_dedicated_ip_pools`](Self::set_dedicated_ip_pools).
     ///
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
-    pub fn dedicated_ip_pools(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dedicated_ip_pools(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dedicated_ip_pools.unwrap_or_default();
         v.push(input.into());
         self.dedicated_ip_pools = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
-    pub fn set_dedicated_ip_pools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dedicated_ip_pools(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dedicated_ip_pools = input;
         self
     }
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
-    pub fn get_dedicated_ip_pools(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dedicated_ip_pools(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dedicated_ip_pools
     }
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>

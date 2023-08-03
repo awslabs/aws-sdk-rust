@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_rotations::ListRotationsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     ///   - [`rotations(Option<Vec<Rotation>>)`](crate::operation::list_rotations::ListRotationsOutput::rotations): <p>Information about rotations that meet the filter criteria.</p>
     /// - On failure, responds with [`SdkError<ListRotationsError>`](crate::operation::list_rotations::ListRotationsError)
-    pub fn list_rotations(
-        &self,
-    ) -> crate::operation::list_rotations::builders::ListRotationsFluentBuilder {
-        crate::operation::list_rotations::builders::ListRotationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_rotations(&self) -> crate::operation::list_rotations::builders::ListRotationsFluentBuilder {
+        crate::operation::list_rotations::builders::ListRotationsFluentBuilder::new(self.handle.clone())
     }
 }

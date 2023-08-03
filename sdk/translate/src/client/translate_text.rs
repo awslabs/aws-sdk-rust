@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`applied_terminologies(Option<Vec<AppliedTerminology>>)`](crate::operation::translate_text::TranslateTextOutput::applied_terminologies): <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
     ///   - [`applied_settings(Option<TranslationSettings>)`](crate::operation::translate_text::TranslateTextOutput::applied_settings): <p>Optional settings that modify the translation output.</p>
     /// - On failure, responds with [`SdkError<TranslateTextError>`](crate::operation::translate_text::TranslateTextError)
-    pub fn translate_text(
-        &self,
-    ) -> crate::operation::translate_text::builders::TranslateTextFluentBuilder {
-        crate::operation::translate_text::builders::TranslateTextFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn translate_text(&self) -> crate::operation::translate_text::builders::TranslateTextFluentBuilder {
+        crate::operation::translate_text::builders::TranslateTextFluentBuilder::new(self.handle.clone())
     }
 }

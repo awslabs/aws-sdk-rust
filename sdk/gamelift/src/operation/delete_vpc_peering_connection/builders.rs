@@ -29,7 +29,7 @@ impl DeleteVpcPeeringConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVpcPeeringConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder,
+    inner: crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder,
 }
 impl DeleteVpcPeeringConnectionFluentBuilder {
     /// Creates a new `DeleteVpcPeeringConnection`.
@@ -40,7 +40,7 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
         }
     }
     /// Access the DeleteVpcPeeringConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
             crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
             crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +127,12 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
         self.inner.get_fleet_id()
     }
     /// <p>A unique identifier for a VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_peering_connection_id(input.into());
         self
     }
     /// <p>A unique identifier for a VPC peering connection.</p>
-    pub fn set_vpc_peering_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_peering_connection_id(input);
         self
     }

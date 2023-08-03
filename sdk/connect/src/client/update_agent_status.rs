@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`reset_order_number(bool)`](crate::operation::update_agent_status::builders::UpdateAgentStatusFluentBuilder::reset_order_number) / [`set_reset_order_number(Option<bool>)`](crate::operation::update_agent_status::builders::UpdateAgentStatusFluentBuilder::set_reset_order_number): <p>A number indicating the reset order of the agent status.</p>
     /// - On success, responds with [`UpdateAgentStatusOutput`](crate::operation::update_agent_status::UpdateAgentStatusOutput)
     /// - On failure, responds with [`SdkError<UpdateAgentStatusError>`](crate::operation::update_agent_status::UpdateAgentStatusError)
-    pub fn update_agent_status(
-        &self,
-    ) -> crate::operation::update_agent_status::builders::UpdateAgentStatusFluentBuilder {
-        crate::operation::update_agent_status::builders::UpdateAgentStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_agent_status(&self) -> crate::operation::update_agent_status::builders::UpdateAgentStatusFluentBuilder {
+        crate::operation::update_agent_status::builders::UpdateAgentStatusFluentBuilder::new(self.handle.clone())
     }
 }

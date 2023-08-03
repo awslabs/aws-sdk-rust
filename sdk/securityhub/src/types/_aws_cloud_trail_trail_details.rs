@@ -121,9 +121,7 @@ impl AwsCloudTrailTrailDetails {
 
 /// A builder for [`AwsCloudTrailTrailDetails`](crate::types::AwsCloudTrailTrailDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudTrailTrailDetailsBuilder {
     pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
@@ -143,40 +141,26 @@ pub struct AwsCloudTrailTrailDetailsBuilder {
 }
 impl AwsCloudTrailTrailDetailsBuilder {
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
-    pub fn cloud_watch_logs_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_logs_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
-    pub fn set_cloud_watch_logs_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = input;
         self
     }
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
-    pub fn get_cloud_watch_logs_log_group_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logs_log_group_arn
     }
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
-    pub fn cloud_watch_logs_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_logs_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
-    pub fn set_cloud_watch_logs_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = input;
         self
     }
@@ -297,18 +281,12 @@ impl AwsCloudTrailTrailDetailsBuilder {
         &self.name
     }
     /// <p>The name of the S3 bucket where the log files are published.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket where the log files are published.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -317,18 +295,12 @@ impl AwsCloudTrailTrailDetailsBuilder {
         &self.s3_bucket_name
     }
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_prefix = input;
         self
     }
@@ -337,18 +309,12 @@ impl AwsCloudTrailTrailDetailsBuilder {
         &self.s3_key_prefix
     }
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -357,18 +323,12 @@ impl AwsCloudTrailTrailDetailsBuilder {
         &self.sns_topic_arn
     }
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn sns_topic_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn set_sns_topic_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_name = input;
         self
     }

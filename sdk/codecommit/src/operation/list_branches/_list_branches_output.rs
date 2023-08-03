@@ -36,9 +36,7 @@ impl ListBranchesOutput {
 
 /// A builder for [`ListBranchesOutput`](crate::operation::list_branches::ListBranchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBranchesOutputBuilder {
     pub(crate) branches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListBranchesOutputBuilder {
         self
     }
     /// <p>The list of branch names.</p>
-    pub fn set_branches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_branches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.branches = input;
         self
     }

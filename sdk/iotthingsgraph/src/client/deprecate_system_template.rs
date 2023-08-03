@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeprecateSystemTemplateOutput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput)
     /// - On failure, responds with [`SdkError<DeprecateSystemTemplateError>`](crate::operation::deprecate_system_template::DeprecateSystemTemplateError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn deprecate_system_template(
-        &self,
-    ) -> crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateFluentBuilder
-    {
+    pub fn deprecate_system_template(&self) -> crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateFluentBuilder {
         crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateFluentBuilder::new(self.handle.clone())
     }
 }

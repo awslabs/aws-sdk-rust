@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`reactive_insights(Option<Vec<ReactiveInsightSummary>>)`](crate::operation::search_insights::SearchInsightsOutput::reactive_insights): <p> The returned reactive insights. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_insights::SearchInsightsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<SearchInsightsError>`](crate::operation::search_insights::SearchInsightsError)
-    pub fn search_insights(
-        &self,
-    ) -> crate::operation::search_insights::builders::SearchInsightsFluentBuilder {
-        crate::operation::search_insights::builders::SearchInsightsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_insights(&self) -> crate::operation::search_insights::builders::SearchInsightsFluentBuilder {
+        crate::operation::search_insights::builders::SearchInsightsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateBatchImportJobOutput {
 }
 impl CreateBatchImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateBatchImportJobOutput`](crate::operation::create_batch_import_job::CreateBatchImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_batch_import_job::builders::CreateBatchImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_batch_import_job::builders::CreateBatchImportJobOutputBuilder {
         crate::operation::create_batch_import_job::builders::CreateBatchImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBatchImportJobOutput`](crate::operation::create_batch_import_job::CreateBatchImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBatchImportJobOutputBuilder {
     _request_id: Option<String>,
 }

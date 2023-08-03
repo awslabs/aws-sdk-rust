@@ -37,9 +37,7 @@ impl DeleteIncidentRecordFluentBuilder {
         }
     }
     /// Access the DeleteIncidentRecord as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_incident_record::builders::DeleteIncidentRecordInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_incident_record::builders::DeleteIncidentRecordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteIncidentRecordFluentBuilder {
             crate::operation::delete_incident_record::DeleteIncidentRecord,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_incident_record::DeleteIncidentRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_incident_record::DeleteIncidentRecordError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteIncidentRecordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteIncidentRecordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_incident_record::DeleteIncidentRecordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_incident_record::DeleteIncidentRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_incident_record::DeleteIncidentRecordError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteIncidentRecordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_incident_record::DeleteIncidentRecordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_incident_record::DeleteIncidentRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_incident_record::DeleteIncidentRecordError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteIncidentRecordFluentBuilder {
             crate::operation::delete_incident_record::DeleteIncidentRecord,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_incident_record::DeleteIncidentRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_incident_record::DeleteIncidentRecordError>,
     > {
         self.customize_middleware().await
     }

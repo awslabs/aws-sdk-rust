@@ -10,10 +10,7 @@ impl ListFileSharesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_file_shares::ListFileSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_file_shares::ListFileSharesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_file_shares::ListFileSharesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_file_shares();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListFileSharesFluentBuilder {
         }
     }
     /// Access the ListFileShares as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_file_shares::builders::ListFileSharesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_file_shares::builders::ListFileSharesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListFileSharesFluentBuilder {
             crate::operation::list_file_shares::ListFileShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_file_shares::ListFileSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_file_shares::ListFileSharesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListFileSharesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListFileSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_file_shares::ListFileSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_file_shares::ListFileSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_file_shares::ListFileSharesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListFileSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_file_shares::ListFileSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_file_shares::ListFileSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_file_shares::ListFileSharesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListFileSharesFluentBuilder {
             crate::operation::list_file_shares::ListFileShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_file_shares::ListFileSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_file_shares::ListFileSharesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_file_shares::paginator::ListFileSharesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_file_shares::paginator::ListFileSharesPaginator {
-        crate::operation::list_file_shares::paginator::ListFileSharesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_file_shares::paginator::ListFileSharesPaginator {
+        crate::operation::list_file_shares::paginator::ListFileSharesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present, all file shares under your account are listed.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -25,18 +25,14 @@ impl GetWebAclForResourceInput {
 }
 impl GetWebAclForResourceInput {
     /// Creates a new builder-style object to manufacture [`GetWebAclForResourceInput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput).
-    pub fn builder(
-    ) -> crate::operation::get_web_acl_for_resource::builders::GetWebAclForResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_web_acl_for_resource::builders::GetWebAclForResourceInputBuilder {
         crate::operation::get_web_acl_for_resource::builders::GetWebAclForResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWebAclForResourceInput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWebAclForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -73,14 +69,10 @@ impl GetWebAclForResourceInputBuilder {
     /// Consumes the builder and constructs a [`GetWebAclForResourceInput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput {
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput {
+            resource_arn: self.resource_arn,
+        })
     }
 }

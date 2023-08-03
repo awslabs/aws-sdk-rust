@@ -36,17 +36,14 @@ impl ListPricingPlansInput {
 }
 impl ListPricingPlansInput {
     /// Creates a new builder-style object to manufacture [`ListPricingPlansInput`](crate::operation::list_pricing_plans::ListPricingPlansInput).
-    pub fn builder() -> crate::operation::list_pricing_plans::builders::ListPricingPlansInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pricing_plans::builders::ListPricingPlansInputBuilder {
         crate::operation::list_pricing_plans::builders::ListPricingPlansInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPricingPlansInput`](crate::operation::list_pricing_plans::ListPricingPlansInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricingPlansInputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::ListPricingPlansFilter>,
@@ -55,18 +52,12 @@ pub struct ListPricingPlansInputBuilder {
 }
 impl ListPricingPlansInputBuilder {
     /// <p>The preferred billing period to get pricing plan. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The preferred billing period to get pricing plan. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
@@ -80,10 +71,7 @@ impl ListPricingPlansInputBuilder {
         self
     }
     /// <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListPricingPlansFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListPricingPlansFilter>) -> Self {
         self.filters = input;
         self
     }
@@ -122,17 +110,12 @@ impl ListPricingPlansInputBuilder {
     /// Consumes the builder and constructs a [`ListPricingPlansInput`](crate::operation::list_pricing_plans::ListPricingPlansInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pricing_plans::ListPricingPlansInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_pricing_plans::ListPricingPlansInput {
-                billing_period: self.billing_period,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_pricing_plans::ListPricingPlansInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_pricing_plans::ListPricingPlansInput {
+            billing_period: self.billing_period,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

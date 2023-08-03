@@ -23,61 +23,48 @@ pub fn ser_hyper_parameter_tuning_job_warm_start_config(
 
 pub(crate) fn de_hyper_parameter_tuning_job_warm_start_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HyperParameterTuningJobWarmStartConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::HyperParameterTuningJobWarmStartConfigBuilder::default();
+            let mut builder = crate::types::builders::HyperParameterTuningJobWarmStartConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ParentHyperParameterTuningJobs" => {
-                                builder = builder.set_parent_hyper_parameter_tuning_jobs(
-                                    crate::protocol_serde::shape_parent_hyper_parameter_tuning_jobs::de_parent_hyper_parameter_tuning_jobs(tokens)?
-                                );
-                            }
-                            "WarmStartType" => {
-                                builder = builder.set_warm_start_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            crate::types::HyperParameterTuningJobWarmStartType::from(u.as_ref())
-                                        )
-                                    ).transpose()?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ParentHyperParameterTuningJobs" => {
+                            builder = builder.set_parent_hyper_parameter_tuning_jobs(
+                                crate::protocol_serde::shape_parent_hyper_parameter_tuning_jobs::de_parent_hyper_parameter_tuning_jobs(tokens)?,
+                            );
                         }
-                    }
+                        "WarmStartType" => {
+                            builder = builder.set_warm_start_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::HyperParameterTuningJobWarmStartType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

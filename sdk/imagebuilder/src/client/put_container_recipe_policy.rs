@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::put_container_recipe_policy::PutContainerRecipePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`container_recipe_arn(Option<String>)`](crate::operation::put_container_recipe_policy::PutContainerRecipePolicyOutput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe that this policy was applied to.</p>
     /// - On failure, responds with [`SdkError<PutContainerRecipePolicyError>`](crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError)
-    pub fn put_container_recipe_policy(&self) -> crate::operation::put_container_recipe_policy::builders::PutContainerRecipePolicyFluentBuilder{
+    pub fn put_container_recipe_policy(&self) -> crate::operation::put_container_recipe_policy::builders::PutContainerRecipePolicyFluentBuilder {
         crate::operation::put_container_recipe_policy::builders::PutContainerRecipePolicyFluentBuilder::new(self.handle.clone())
     }
 }

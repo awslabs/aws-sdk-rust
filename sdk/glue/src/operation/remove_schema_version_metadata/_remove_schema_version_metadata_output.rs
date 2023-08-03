@@ -70,16 +70,14 @@ impl ::aws_http::request_id::RequestId for RemoveSchemaVersionMetadataOutput {
 }
 impl RemoveSchemaVersionMetadataOutput {
     /// Creates a new builder-style object to manufacture [`RemoveSchemaVersionMetadataOutput`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput).
-    pub fn builder() -> crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataOutputBuilder {
         crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveSchemaVersionMetadataOutput`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveSchemaVersionMetadataOutputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
@@ -121,18 +119,12 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
         &self.schema_name
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -169,18 +161,12 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
         &self.version_number
     }
     /// <p>The version ID for the schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version ID for the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version_id = input;
         self
     }
@@ -203,18 +189,12 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
         &self.metadata_key
     }
     /// <p>The value of the metadata key.</p>
-    pub fn metadata_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the metadata key.</p>
-    pub fn set_metadata_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_value = input;
         self
     }
@@ -232,9 +212,7 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveSchemaVersionMetadataOutput`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput {
+    pub fn build(self) -> crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput {
         crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput {
             schema_arn: self.schema_arn,
             schema_name: self.schema_name,

@@ -55,9 +55,7 @@ impl AwsDynamoDbTableProvisionedThroughput {
 
 /// A builder for [`AwsDynamoDbTableProvisionedThroughput`](crate::types::AwsDynamoDbTableProvisionedThroughput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableProvisionedThroughputBuilder {
     pub(crate) last_decrease_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) last_increase_date_time: ::std::option::Option<::std::string::String>,
@@ -68,19 +66,13 @@ pub struct AwsDynamoDbTableProvisionedThroughputBuilder {
 impl AwsDynamoDbTableProvisionedThroughputBuilder {
     /// <p>Indicates when the provisioned throughput was last decreased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_decrease_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_decrease_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_decrease_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the provisioned throughput was last decreased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_last_decrease_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_decrease_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_decrease_date_time = input;
         self
     }
@@ -91,19 +83,13 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
     }
     /// <p>Indicates when the provisioned throughput was last increased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_increase_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_increase_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_increase_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the provisioned throughput was last increased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_last_increase_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_increase_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_increase_date_time = input;
         self
     }

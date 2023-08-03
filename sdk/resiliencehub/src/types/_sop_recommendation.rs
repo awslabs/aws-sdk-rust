@@ -72,9 +72,7 @@ impl SopRecommendation {
 
 /// A builder for [`SopRecommendation`](crate::types::SopRecommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SopRecommendationBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::SopServiceType>,
     pub(crate) app_component_name: ::std::option::Option<::std::string::String>,
@@ -92,10 +90,7 @@ impl SopRecommendationBuilder {
         self
     }
     /// <p>The service type.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SopServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::SopServiceType>) -> Self {
         self.service_type = input;
         self
     }
@@ -104,18 +99,12 @@ impl SopRecommendationBuilder {
         &self.service_type
     }
     /// <p>The name of the Application Component.</p>
-    pub fn app_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Application Component.</p>
-    pub fn set_app_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_component_name = input;
         self
     }
@@ -138,18 +127,12 @@ impl SopRecommendationBuilder {
         &self.description
     }
     /// <p>Identifier for the SOP recommendation.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier for the SOP recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -183,17 +166,12 @@ impl SopRecommendationBuilder {
         self
     }
     /// <p>The recommendation items.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The recommendation items.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>> {
         &self.items
     }
     /// <p>The reference identifier for the SOP recommendation.</p>

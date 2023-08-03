@@ -9,14 +9,10 @@ pub struct PipeEnrichmentHttpParameters {
     pub path_parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     #[doc(hidden)]
-    pub header_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub header_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     #[doc(hidden)]
-    pub query_string_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub query_string_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PipeEnrichmentHttpParameters {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
@@ -24,19 +20,11 @@ impl PipeEnrichmentHttpParameters {
         self.path_parameter_values.as_deref()
     }
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-    pub fn header_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn header_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.header_parameters.as_ref()
     }
     /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-    pub fn query_string_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn query_string_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.query_string_parameters.as_ref()
     }
 }
@@ -49,17 +37,11 @@ impl PipeEnrichmentHttpParameters {
 
 /// A builder for [`PipeEnrichmentHttpParameters`](crate::types::PipeEnrichmentHttpParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipeEnrichmentHttpParametersBuilder {
     pub(crate) path_parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) header_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) query_string_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) header_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) query_string_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PipeEnrichmentHttpParametersBuilder {
     /// Appends an item to `path_parameter_values`.
@@ -67,27 +49,19 @@ impl PipeEnrichmentHttpParametersBuilder {
     /// To override the contents of this collection use [`set_path_parameter_values`](Self::set_path_parameter_values).
     ///
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
-    pub fn path_parameter_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn path_parameter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.path_parameter_values.unwrap_or_default();
         v.push(input.into());
         self.path_parameter_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
-    pub fn set_path_parameter_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_path_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.path_parameter_values = input;
         self
     }
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
-    pub fn get_path_parameter_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_path_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.path_parameter_values
     }
     /// Adds a key-value pair to `header_parameters`.
@@ -108,19 +82,13 @@ impl PipeEnrichmentHttpParametersBuilder {
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     pub fn set_header_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.header_parameters = input;
         self
     }
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-    pub fn get_header_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_header_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.header_parameters
     }
     /// Adds a key-value pair to `query_string_parameters`.
@@ -141,19 +109,13 @@ impl PipeEnrichmentHttpParametersBuilder {
     /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     pub fn set_query_string_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.query_string_parameters = input;
         self
     }
     /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-    pub fn get_query_string_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_query_string_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.query_string_parameters
     }
     /// Consumes the builder and constructs a [`PipeEnrichmentHttpParameters`](crate::types::PipeEnrichmentHttpParameters).

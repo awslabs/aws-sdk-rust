@@ -28,9 +28,7 @@ impl DescribeSpeakerOutput {
 
 /// A builder for [`DescribeSpeakerOutput`](crate::operation::describe_speaker::DescribeSpeakerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpeakerOutputBuilder {
     pub(crate) speaker: ::std::option::Option<crate::types::Speaker>,
     _request_id: Option<String>,

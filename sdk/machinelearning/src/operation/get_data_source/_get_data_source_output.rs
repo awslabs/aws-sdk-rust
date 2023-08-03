@@ -178,9 +178,7 @@ impl GetDataSourceOutput {
 
 /// A builder for [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataSourceOutputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_location_s3: ::std::option::Option<::std::string::String>,
@@ -206,18 +204,12 @@ pub struct GetDataSourceOutputBuilder {
 }
 impl GetDataSourceOutputBuilder {
     /// <p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -226,18 +218,12 @@ impl GetDataSourceOutputBuilder {
         &self.data_source_id
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn data_location_s3(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_location_s3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_location_s3 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn set_data_location_s3(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_location_s3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_location_s3 = input;
         self
     }
@@ -246,18 +232,12 @@ impl GetDataSourceOutputBuilder {
         &self.data_location_s3
     }
     /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code> was created.</p>
-    pub fn data_rearrangement(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_rearrangement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_rearrangement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code> was created.</p>
-    pub fn set_data_rearrangement(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_rearrangement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_rearrangement = input;
         self
     }
@@ -266,18 +246,12 @@ impl GetDataSourceOutputBuilder {
         &self.data_rearrangement
     }
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn created_by_iam_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_by_iam_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by_iam_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn set_created_by_iam_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_created_by_iam_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by_iam_user = input;
         self
     }
@@ -291,10 +265,7 @@ impl GetDataSourceOutputBuilder {
         self
     }
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -308,10 +279,7 @@ impl GetDataSourceOutputBuilder {
         self
     }
     /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -430,10 +398,7 @@ impl GetDataSourceOutputBuilder {
         self
     }
     /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
-    pub fn set_redshift_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftMetadata>,
-    ) -> Self {
+    pub fn set_redshift_metadata(mut self, input: ::std::option::Option<crate::types::RedshiftMetadata>) -> Self {
         self.redshift_metadata = input;
         self
     }
@@ -447,10 +412,7 @@ impl GetDataSourceOutputBuilder {
         self
     }
     /// <p>The datasource details that are specific to Amazon RDS.</p>
-    pub fn set_rds_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::RdsMetadata>,
-    ) -> Self {
+    pub fn set_rds_metadata(mut self, input: ::std::option::Option<crate::types::RdsMetadata>) -> Self {
         self.rds_metadata = input;
         self
     }
@@ -506,10 +468,7 @@ impl GetDataSourceOutputBuilder {
         self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn set_finished_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_finished_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.finished_at = input;
         self
     }
@@ -523,10 +482,7 @@ impl GetDataSourceOutputBuilder {
         self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -536,19 +492,13 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
     /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
-    pub fn data_source_schema(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
     /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
-    pub fn set_data_source_schema(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_schema = input;
         self
     }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMembershipOutput {
 }
 impl DeleteMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMembershipOutput`](crate::operation::delete_membership::DeleteMembershipOutput).
-    pub fn builder() -> crate::operation::delete_membership::builders::DeleteMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_membership::builders::DeleteMembershipOutputBuilder {
         crate::operation::delete_membership::builders::DeleteMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMembershipOutput`](crate::operation::delete_membership::DeleteMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMembershipOutputBuilder {
     _request_id: Option<String>,
 }

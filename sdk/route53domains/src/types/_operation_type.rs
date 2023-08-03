@@ -54,13 +54,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -123,9 +117,7 @@ impl ::std::convert::From<&str> for OperationType {
             "TRANSFER_OUT_DOMAIN" => OperationType::TransferOutDomain,
             "UPDATE_DOMAIN_CONTACT" => OperationType::UpdateDomainContact,
             "UPDATE_NAMESERVER" => OperationType::UpdateNameserver,
-            other => {
-                OperationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => OperationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

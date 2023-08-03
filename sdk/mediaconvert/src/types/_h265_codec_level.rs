@@ -50,13 +50,7 @@
 /// H.265 Level.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H265CodecLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -107,9 +101,7 @@ impl ::std::convert::From<&str> for H265CodecLevel {
             "LEVEL_6" => H265CodecLevel::Level6,
             "LEVEL_6_1" => H265CodecLevel::Level61,
             "LEVEL_6_2" => H265CodecLevel::Level62,
-            other => {
-                H265CodecLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => H265CodecLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

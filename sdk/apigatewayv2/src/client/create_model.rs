@@ -15,9 +15,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_model::CreateModelOutput::name): <p>The name of the model. Must be alphanumeric.</p>
     ///   - [`schema(Option<String>)`](crate::operation::create_model::CreateModelOutput::schema): <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     /// - On failure, responds with [`SdkError<CreateModelError>`](crate::operation::create_model::CreateModelError)
-    pub fn create_model(
-        &self,
-    ) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
+    pub fn create_model(&self) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
         crate::operation::create_model::builders::CreateModelFluentBuilder::new(self.handle.clone())
     }
 }

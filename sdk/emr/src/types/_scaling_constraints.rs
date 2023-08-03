@@ -30,9 +30,7 @@ impl ScalingConstraints {
 
 /// A builder for [`ScalingConstraints`](crate::types::ScalingConstraints).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingConstraintsBuilder {
     pub(crate) min_capacity: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,

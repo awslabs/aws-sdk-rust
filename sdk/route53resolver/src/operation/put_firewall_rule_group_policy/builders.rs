@@ -26,7 +26,7 @@ impl PutFirewallRuleGroupPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutFirewallRuleGroupPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyInputBuilder,
+    inner: crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyInputBuilder,
 }
 impl PutFirewallRuleGroupPolicyFluentBuilder {
     /// Creates a new `PutFirewallRuleGroupPolicy`.
@@ -37,7 +37,7 @@ impl PutFirewallRuleGroupPolicyFluentBuilder {
         }
     }
     /// Access the PutFirewallRuleGroupPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutFirewallRuleGroupPolicyFluentBuilder {
             crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutFirewallRuleGroupPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutFirewallRuleGroupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutFirewallRuleGroupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl PutFirewallRuleGroupPolicyFluentBuilder {
             crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl PutFirewallRuleGroupPolicyFluentBuilder {
         self.inner.get_arn()
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
-    pub fn firewall_rule_group_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_policy(input.into());
         self
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
-    pub fn set_firewall_rule_group_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_policy(input);
         self
     }

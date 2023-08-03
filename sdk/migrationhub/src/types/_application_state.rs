@@ -37,9 +37,7 @@ impl ApplicationState {
 
 /// A builder for [`ApplicationState`](crate::types::ApplicationState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationStateBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_status: ::std::option::Option<crate::types::ApplicationStatus>,
@@ -47,18 +45,12 @@ pub struct ApplicationStateBuilder {
 }
 impl ApplicationStateBuilder {
     /// <p>The configurationId from the Application Discovery Service that uniquely identifies an application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configurationId from the Application Discovery Service that uniquely identifies an application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -72,17 +64,12 @@ impl ApplicationStateBuilder {
         self
     }
     /// <p>The current status of an application.</p>
-    pub fn set_application_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationStatus>,
-    ) -> Self {
+    pub fn set_application_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
         self.application_status = input;
         self
     }
     /// <p>The current status of an application.</p>
-    pub fn get_application_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationStatus> {
+    pub fn get_application_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
         &self.application_status
     }
     /// <p>The timestamp when the application status was last updated.</p>
@@ -91,10 +78,7 @@ impl ApplicationStateBuilder {
         self
     }
     /// <p>The timestamp when the application status was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

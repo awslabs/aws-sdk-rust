@@ -35,9 +35,7 @@ impl StopFlowOutput {
 
 /// A builder for [`StopFlowOutput`](crate::operation::stop_flow::StopFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopFlowOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_status: ::std::option::Option<crate::types::FlowStatus>,
@@ -64,10 +62,7 @@ impl StopFlowOutputBuilder {
         self
     }
     /// <p> Indicates the current status of the flow. </p>
-    pub fn set_flow_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowStatus>,
-    ) -> Self {
+    pub fn set_flow_status(mut self, input: ::std::option::Option<crate::types::FlowStatus>) -> Self {
         self.flow_status = input;
         self
     }

@@ -61,17 +61,14 @@ impl ListChangedBlocksInput {
 }
 impl ListChangedBlocksInput {
     /// Creates a new builder-style object to manufacture [`ListChangedBlocksInput`](crate::operation::list_changed_blocks::ListChangedBlocksInput).
-    pub fn builder(
-    ) -> crate::operation::list_changed_blocks::builders::ListChangedBlocksInputBuilder {
+    pub fn builder() -> crate::operation::list_changed_blocks::builders::ListChangedBlocksInputBuilder {
         crate::operation::list_changed_blocks::builders::ListChangedBlocksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListChangedBlocksInput`](crate::operation::list_changed_blocks::ListChangedBlocksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChangedBlocksInputBuilder {
     pub(crate) first_snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) second_snapshot_id: ::std::option::Option<::std::string::String>,
@@ -83,20 +80,14 @@ impl ListChangedBlocksInputBuilder {
     /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
-    pub fn first_snapshot_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn first_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
-    pub fn set_first_snapshot_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_first_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_snapshot_id = input;
         self
     }
@@ -109,20 +100,14 @@ impl ListChangedBlocksInputBuilder {
     /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
-    pub fn second_snapshot_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn second_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.second_snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
-    pub fn set_second_snapshot_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_second_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.second_snapshot_id = input;
         self
     }
@@ -192,18 +177,13 @@ impl ListChangedBlocksInputBuilder {
     /// Consumes the builder and constructs a [`ListChangedBlocksInput`](crate::operation::list_changed_blocks::ListChangedBlocksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_changed_blocks::ListChangedBlocksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_changed_blocks::ListChangedBlocksInput {
-                first_snapshot_id: self.first_snapshot_id,
-                second_snapshot_id: self.second_snapshot_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                starting_block_index: self.starting_block_index,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_changed_blocks::ListChangedBlocksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_changed_blocks::ListChangedBlocksInput {
+            first_snapshot_id: self.first_snapshot_id,
+            second_snapshot_id: self.second_snapshot_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            starting_block_index: self.starting_block_index,
+        })
     }
 }

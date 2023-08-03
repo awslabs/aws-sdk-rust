@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`key_pair(Option<KeyPair>)`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput::key_pair): <p>The provisioning claim key pair.</p>
     ///   - [`expiration(Option<DateTime>)`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput::expiration): <p>The provisioning claim expiration time.</p>
     /// - On failure, responds with [`SdkError<CreateProvisioningClaimError>`](crate::operation::create_provisioning_claim::CreateProvisioningClaimError)
-    pub fn create_provisioning_claim(
-        &self,
-    ) -> crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimFluentBuilder
-    {
+    pub fn create_provisioning_claim(&self) -> crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimFluentBuilder {
         crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimFluentBuilder::new(self.handle.clone())
     }
 }

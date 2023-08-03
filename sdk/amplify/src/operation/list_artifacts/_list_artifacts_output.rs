@@ -36,9 +36,7 @@ impl ListArtifactsOutput {
 
 /// A builder for [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListArtifactsOutputBuilder {
     pub(crate) artifacts: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListArtifactsOutputBuilder {
         self
     }
     /// <p> A list of artifacts. </p>
-    pub fn set_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>,
-    ) -> Self {
+    pub fn set_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>) -> Self {
         self.artifacts = input;
         self
     }

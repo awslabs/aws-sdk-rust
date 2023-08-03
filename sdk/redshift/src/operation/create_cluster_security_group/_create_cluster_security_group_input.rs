@@ -44,16 +44,14 @@ impl CreateClusterSecurityGroupInput {
 }
 impl CreateClusterSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterSecurityGroupInput`](crate::operation::create_cluster_security_group::CreateClusterSecurityGroupInput).
-    pub fn builder() -> crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupInputBuilder{
+    pub fn builder() -> crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupInputBuilder {
         crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClusterSecurityGroupInput`](crate::operation::create_cluster_security_group::CreateClusterSecurityGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterSecurityGroupInputBuilder {
     pub(crate) cluster_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl CreateClusterSecurityGroupInputBuilder {
     /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesecuritygroup</code> </p>
-    pub fn cluster_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -83,10 +78,7 @@ impl CreateClusterSecurityGroupInputBuilder {
     /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesecuritygroup</code> </p>
-    pub fn set_cluster_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_security_group_name = input;
         self
     }
@@ -127,10 +119,7 @@ impl CreateClusterSecurityGroupInputBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -145,12 +134,10 @@ impl CreateClusterSecurityGroupInputBuilder {
         crate::operation::create_cluster_security_group::CreateClusterSecurityGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupInput {
-                cluster_security_group_name: self.cluster_security_group_name,
-                description: self.description,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupInput {
+            cluster_security_group_name: self.cluster_security_group_name,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }

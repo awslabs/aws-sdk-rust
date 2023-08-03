@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`GetNetworkInsightsAccessScopeContentOutput`](crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentOutput) with field(s):
     ///   - [`network_insights_access_scope_content(Option<NetworkInsightsAccessScopeContent>)`](crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentOutput::network_insights_access_scope_content): <p>The Network Access Scope content.</p>
     /// - On failure, responds with [`SdkError<GetNetworkInsightsAccessScopeContentError>`](crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentError)
-    pub fn get_network_insights_access_scope_content(&self) -> crate::operation::get_network_insights_access_scope_content::builders::GetNetworkInsightsAccessScopeContentFluentBuilder{
-        crate::operation::get_network_insights_access_scope_content::builders::GetNetworkInsightsAccessScopeContentFluentBuilder::new(self.handle.clone())
+    pub fn get_network_insights_access_scope_content(
+        &self,
+    ) -> crate::operation::get_network_insights_access_scope_content::builders::GetNetworkInsightsAccessScopeContentFluentBuilder {
+        crate::operation::get_network_insights_access_scope_content::builders::GetNetworkInsightsAccessScopeContentFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

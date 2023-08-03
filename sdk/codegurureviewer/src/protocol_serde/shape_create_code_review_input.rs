@@ -10,9 +10,7 @@ pub fn ser_create_code_review_input(
         object.key("Name").string(var_2.as_str());
     }
     if let Some(var_3) = &input.repository_association_arn {
-        object
-            .key("RepositoryAssociationArn")
-            .string(var_3.as_str());
+        object.key("RepositoryAssociationArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.r#type {
         #[allow(unused_mut)]

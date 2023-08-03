@@ -43,9 +43,7 @@ impl GetJourneyRunsInput {
 
 /// A builder for [`GetJourneyRunsInput`](crate::operation::get_journey_runs::GetJourneyRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJourneyRunsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) journey_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct GetJourneyRunsInputBuilder {
 }
 impl GetJourneyRunsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -118,10 +110,7 @@ impl GetJourneyRunsInputBuilder {
     /// Consumes the builder and constructs a [`GetJourneyRunsInput`](crate::operation::get_journey_runs::GetJourneyRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_journey_runs::GetJourneyRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_journey_runs::GetJourneyRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_journey_runs::GetJourneyRunsInput {
             application_id: self.application_id,
             journey_id: self.journey_id,

@@ -29,9 +29,7 @@ impl DescribeFaqInput {
 
 /// A builder for [`DescribeFaqInput`](crate::operation::describe_faq::DescribeFaqInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFaqInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl DescribeFaqInputBuilder {
         &self.index_id
     }
     /// Consumes the builder and constructs a [`DescribeFaqInput`](crate::operation::describe_faq::DescribeFaqInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_faq::DescribeFaqInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_faq::DescribeFaqInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_faq::DescribeFaqInput {
             id: self.id,
             index_id: self.index_id,

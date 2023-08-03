@@ -37,9 +37,7 @@ impl RemixSettings {
 
 /// A builder for [`RemixSettings`](crate::types::RemixSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemixSettingsBuilder {
     pub(crate) channel_mapping: ::std::option::Option<crate::types::ChannelMapping>,
     pub(crate) channels_in: ::std::option::Option<i32>,
@@ -52,10 +50,7 @@ impl RemixSettingsBuilder {
         self
     }
     /// Channel mapping contains the group of fields that hold the remixing value for each channel, in dB. Specify remix values to indicate how much of the content from your input audio channel you want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel. Use one instance of this array for each output channel. In the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
-    pub fn set_channel_mapping(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMapping>,
-    ) -> Self {
+    pub fn set_channel_mapping(mut self, input: ::std::option::Option<crate::types::ChannelMapping>) -> Self {
         self.channel_mapping = input;
         self
     }

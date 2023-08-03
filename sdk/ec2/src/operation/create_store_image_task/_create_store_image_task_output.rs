@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateStoreImageTaskOutput {
 }
 impl CreateStoreImageTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateStoreImageTaskOutput`](crate::operation::create_store_image_task::CreateStoreImageTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::create_store_image_task::builders::CreateStoreImageTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_store_image_task::builders::CreateStoreImageTaskOutputBuilder {
         crate::operation::create_store_image_task::builders::CreateStoreImageTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStoreImageTaskOutput`](crate::operation::create_store_image_task::CreateStoreImageTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStoreImageTaskOutputBuilder {
     pub(crate) object_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

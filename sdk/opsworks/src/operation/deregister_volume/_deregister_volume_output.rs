@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterVolumeOutput {
 }
 impl DeregisterVolumeOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterVolumeOutput`](crate::operation::deregister_volume::DeregisterVolumeOutput).
-    pub fn builder() -> crate::operation::deregister_volume::builders::DeregisterVolumeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_volume::builders::DeregisterVolumeOutputBuilder {
         crate::operation::deregister_volume::builders::DeregisterVolumeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterVolumeOutput`](crate::operation::deregister_volume::DeregisterVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterVolumeOutputBuilder {
     _request_id: Option<String>,
 }

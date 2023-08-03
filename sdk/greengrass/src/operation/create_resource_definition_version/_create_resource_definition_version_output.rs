@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateResourceDefinitionVersionOutput
 }
 impl CreateResourceDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourceDefinitionVersionOutput`](crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput).
-    pub fn builder() -> crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionOutputBuilder {
         crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResourceDefinitionVersionOutput`](crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResourceDefinitionVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl CreateResourceDefinitionVersionOutputBuilder {
         &self.arn
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -132,19 +124,12 @@ impl CreateResourceDefinitionVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateResourceDefinitionVersionOutput`](crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput
-    {
+    pub fn build(self) -> crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput {
         crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput {
-            arn: self.arn
-            ,
-            creation_timestamp: self.creation_timestamp
-            ,
-            id: self.id
-            ,
-            version: self.version
-            ,
+            arn: self.arn,
+            creation_timestamp: self.creation_timestamp,
+            id: self.id,
+            version: self.version,
             _request_id: self._request_id,
         }
     }

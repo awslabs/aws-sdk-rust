@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`candidates(Option<Vec<AutoMlCandidate>>)`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput::candidates): <p>Summaries about the <code>AutoMLCandidates</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListCandidatesForAutoMLJobError>`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError)
-    pub fn list_candidates_for_auto_ml_job(&self) -> crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder{
+    pub fn list_candidates_for_auto_ml_job(
+        &self,
+    ) -> crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder {
         crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::new(self.handle.clone())
     }
 }

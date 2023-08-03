@@ -10,10 +10,7 @@ impl ListTableRowsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_table_rows::ListTableRowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_rows::ListTableRowsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_rows::ListTableRowsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_table_rows();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTableRowsFluentBuilder {
         }
     }
     /// Access the ListTableRows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_table_rows::builders::ListTableRowsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_table_rows::builders::ListTableRowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListTableRowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListTableRowsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_table_rows::paginator::ListTableRowsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_table_rows::paginator::ListTableRowsPaginator {
-        crate::operation::list_table_rows::paginator::ListTableRowsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_table_rows::paginator::ListTableRowsPaginator {
+        crate::operation::list_table_rows::paginator::ListTableRowsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -169,10 +156,7 @@ impl ListTableRowsFluentBuilder {
         self
     }
     /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
-    pub fn set_row_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_row_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_row_ids(input);
         self
     }

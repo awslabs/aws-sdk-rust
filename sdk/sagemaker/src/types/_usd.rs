@@ -37,9 +37,7 @@ impl Usd {
 
 /// A builder for [`Usd`](crate::types::Usd).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsdBuilder {
     pub(crate) dollars: ::std::option::Option<i32>,
     pub(crate) cents: ::std::option::Option<i32>,

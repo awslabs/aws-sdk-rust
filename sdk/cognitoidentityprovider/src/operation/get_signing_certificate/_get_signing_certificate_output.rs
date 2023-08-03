@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetSigningCertificateOutput {
 }
 impl GetSigningCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetSigningCertificateOutput`](crate::operation::get_signing_certificate::GetSigningCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_signing_certificate::builders::GetSigningCertificateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_signing_certificate::builders::GetSigningCertificateOutputBuilder {
         crate::operation::get_signing_certificate::builders::GetSigningCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSigningCertificateOutput`](crate::operation::get_signing_certificate::GetSigningCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSigningCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

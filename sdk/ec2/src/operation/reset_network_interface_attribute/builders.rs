@@ -5,16 +5,16 @@ pub use crate::operation::reset_network_interface_attribute::_reset_network_inte
 
 impl ResetNetworkInterfaceAttributeInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.reset_network_interface_attribute();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ResetNetworkInterfaceAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetNetworkInterfaceAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeInputBuilder,
+    inner: crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeInputBuilder,
 }
 impl ResetNetworkInterfaceAttributeFluentBuilder {
     /// Creates a new `ResetNetworkInterfaceAttribute`.
@@ -37,15 +37,20 @@ impl ResetNetworkInterfaceAttributeFluentBuilder {
         }
     }
     /// Access the ResetNetworkInterfaceAttribute as a reference.
-    pub fn as_input(&self) -> &crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttribute,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ResetNetworkInterfaceAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl ResetNetworkInterfaceAttributeFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttribute,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -109,18 +124,12 @@ impl ResetNetworkInterfaceAttributeFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -129,18 +138,12 @@ impl ResetNetworkInterfaceAttributeFluentBuilder {
         self.inner.get_network_interface_id()
     }
     /// <p>The source/destination checking attribute. Resets the value to <code>true</code>.</p>
-    pub fn source_dest_check(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_dest_check(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_dest_check(input.into());
         self
     }
     /// <p>The source/destination checking attribute. Resets the value to <code>true</code>.</p>
-    pub fn set_source_dest_check(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_dest_check(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_dest_check(input);
         self
     }

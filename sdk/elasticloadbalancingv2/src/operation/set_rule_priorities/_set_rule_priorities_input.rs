@@ -15,20 +15,16 @@ impl SetRulePrioritiesInput {
 }
 impl SetRulePrioritiesInput {
     /// Creates a new builder-style object to manufacture [`SetRulePrioritiesInput`](crate::operation::set_rule_priorities::SetRulePrioritiesInput).
-    pub fn builder(
-    ) -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder {
+    pub fn builder() -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder {
         crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder::default()
     }
 }
 
 /// A builder for [`SetRulePrioritiesInput`](crate::operation::set_rule_priorities::SetRulePrioritiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetRulePrioritiesInputBuilder {
-    pub(crate) rule_priorities:
-        ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
+    pub(crate) rule_priorities: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
 }
 impl SetRulePrioritiesInputBuilder {
     /// Appends an item to `rule_priorities`.
@@ -43,30 +39,20 @@ impl SetRulePrioritiesInputBuilder {
         self
     }
     /// <p>The rule priorities.</p>
-    pub fn set_rule_priorities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
-    ) -> Self {
+    pub fn set_rule_priorities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>) -> Self {
         self.rule_priorities = input;
         self
     }
     /// <p>The rule priorities.</p>
-    pub fn get_rule_priorities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>> {
+    pub fn get_rule_priorities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>> {
         &self.rule_priorities
     }
     /// Consumes the builder and constructs a [`SetRulePrioritiesInput`](crate::operation::set_rule_priorities::SetRulePrioritiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_rule_priorities::SetRulePrioritiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_rule_priorities::SetRulePrioritiesInput {
-                rule_priorities: self.rule_priorities,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_rule_priorities::SetRulePrioritiesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::set_rule_priorities::SetRulePrioritiesInput {
+            rule_priorities: self.rule_priorities,
+        })
     }
 }

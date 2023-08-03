@@ -63,9 +63,7 @@ impl BatchWriteException {
 
 /// A builder for [`BatchWriteException`](crate::types::error::BatchWriteException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchWriteExceptionBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<crate::types::BatchWriteExceptionType>,
@@ -93,10 +91,7 @@ impl BatchWriteExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchWriteExceptionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::BatchWriteExceptionType>) -> Self {
         self.r#type = input;
         self
     }
@@ -125,10 +120,7 @@ impl BatchWriteExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

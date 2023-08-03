@@ -15,7 +15,10 @@ pub fn ser_deployment_policies(
     if let Some(var_4) = &input.configuration_validation_policy {
         #[allow(unused_mut)]
         let mut object_5 = object.key("configurationValidationPolicy").start_object();
-        crate::protocol_serde::shape_deployment_configuration_validation_policy::ser_deployment_configuration_validation_policy(&mut object_5, var_4)?;
+        crate::protocol_serde::shape_deployment_configuration_validation_policy::ser_deployment_configuration_validation_policy(
+            &mut object_5,
+            var_4,
+        )?;
         object_5.finish();
     }
     Ok(())
@@ -23,17 +26,9 @@ pub fn ser_deployment_policies(
 
 pub(crate) fn de_deployment_policies<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::DeploymentPolicies>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::DeploymentPolicies>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -43,51 +38,38 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "failureHandlingPolicy" => {
-                                builder = builder.set_failure_handling_policy(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::DeploymentFailureHandlingPolicy::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "failureHandlingPolicy" => {
+                            builder = builder.set_failure_handling_policy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DeploymentFailureHandlingPolicy::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "componentUpdatePolicy" => {
-                                builder = builder.set_component_update_policy(
-                                    crate::protocol_serde::shape_deployment_component_update_policy::de_deployment_component_update_policy(tokens)?
-                                );
-                            }
-                            "configurationValidationPolicy" => {
-                                builder = builder.set_configuration_validation_policy(
+                            );
+                        }
+                        "componentUpdatePolicy" => {
+                            builder = builder.set_component_update_policy(
+                                crate::protocol_serde::shape_deployment_component_update_policy::de_deployment_component_update_policy(tokens)?,
+                            );
+                        }
+                        "configurationValidationPolicy" => {
+                            builder = builder.set_configuration_validation_policy(
                                     crate::protocol_serde::shape_deployment_configuration_validation_policy::de_deployment_configuration_validation_policy(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

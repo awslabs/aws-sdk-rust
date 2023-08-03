@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeBatchPredictionsOutput {
 }
 impl DescribeBatchPredictionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBatchPredictionsOutput`](crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsOutputBuilder {
         crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBatchPredictionsOutput`](crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBatchPredictionsOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl DescribeBatchPredictionsOutputBuilder {
         self
     }
     /// <p>A list of <code>BatchPrediction</code> objects that meet the search criteria. </p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>>) -> Self {
         self.results = input;
         self
     }
     /// <p>A list of <code>BatchPrediction</code> objects that meet the search criteria. </p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>> {
         &self.results
     }
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
@@ -96,9 +87,7 @@ impl DescribeBatchPredictionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBatchPredictionsOutput`](crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput {
+    pub fn build(self) -> crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput {
         crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput {
             results: self.results,
             next_token: self.next_token,

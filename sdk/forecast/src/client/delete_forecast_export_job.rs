@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`forecast_export_job_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder::forecast_export_job_arn) / [`set_forecast_export_job_arn(Option<String>)`](crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder::set_forecast_export_job_arn): <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
     /// - On success, responds with [`DeleteForecastExportJobOutput`](crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput)
     /// - On failure, responds with [`SdkError<DeleteForecastExportJobError>`](crate::operation::delete_forecast_export_job::DeleteForecastExportJobError)
-    pub fn delete_forecast_export_job(
-        &self,
-    ) -> crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder
-    {
+    pub fn delete_forecast_export_job(&self) -> crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder {
         crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,16 +31,14 @@ impl ListDecoderManifestNetworkInterfacesInput {
 }
 impl ListDecoderManifestNetworkInterfacesInput {
     /// Creates a new builder-style object to manufacture [`ListDecoderManifestNetworkInterfacesInput`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesInput).
-    pub fn builder() -> crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesInputBuilder{
+    pub fn builder() -> crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesInputBuilder {
         crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDecoderManifestNetworkInterfacesInput`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDecoderManifestNetworkInterfacesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -93,16 +91,18 @@ impl ListDecoderManifestNetworkInterfacesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDecoderManifestNetworkInterfacesInput`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesInput {
-                name: self.name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                name: self.name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

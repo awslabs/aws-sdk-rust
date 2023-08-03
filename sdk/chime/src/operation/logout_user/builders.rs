@@ -10,10 +10,7 @@ impl LogoutUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::logout_user::LogoutUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::logout_user::LogoutUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::logout_user::LogoutUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.logout_user();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl LogoutUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::logout_user::LogoutUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::logout_user::LogoutUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::logout_user::LogoutUserError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl LogoutUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl LogoutUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::logout_user::LogoutUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::logout_user::LogoutUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::logout_user::LogoutUserError>,
     > {
         self.customize_middleware().await

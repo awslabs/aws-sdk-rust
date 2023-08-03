@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_profiles::ListServiceProfilesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`service_profile_list(Option<Vec<ServiceProfile>>)`](crate::operation::list_service_profiles::ListServiceProfilesOutput::service_profile_list): <p>The list of service profiles.</p>
     /// - On failure, responds with [`SdkError<ListServiceProfilesError>`](crate::operation::list_service_profiles::ListServiceProfilesError)
-    pub fn list_service_profiles(
-        &self,
-    ) -> crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder {
-        crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_service_profiles(&self) -> crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder {
+        crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder::new(self.handle.clone())
     }
 }

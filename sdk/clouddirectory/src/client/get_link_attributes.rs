@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetLinkAttributesOutput`](crate::operation::get_link_attributes::GetLinkAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<AttributeKeyAndValue>>)`](crate::operation::get_link_attributes::GetLinkAttributesOutput::attributes): <p>The attributes that are associated with the typed link.</p>
     /// - On failure, responds with [`SdkError<GetLinkAttributesError>`](crate::operation::get_link_attributes::GetLinkAttributesError)
-    pub fn get_link_attributes(
-        &self,
-    ) -> crate::operation::get_link_attributes::builders::GetLinkAttributesFluentBuilder {
-        crate::operation::get_link_attributes::builders::GetLinkAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_link_attributes(&self) -> crate::operation::get_link_attributes::builders::GetLinkAttributesFluentBuilder {
+        crate::operation::get_link_attributes::builders::GetLinkAttributesFluentBuilder::new(self.handle.clone())
     }
 }

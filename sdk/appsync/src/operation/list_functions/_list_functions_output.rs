@@ -35,12 +35,9 @@ impl ListFunctionsOutput {
 
 /// A builder for [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionsOutputBuilder {
-    pub(crate) functions:
-        ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
+    pub(crate) functions: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListFunctionsOutputBuilder {
         self
     }
     /// <p>A list of <code>Function</code> objects.</p>
-    pub fn set_functions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
-    ) -> Self {
+    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>) -> Self {
         self.functions = input;
         self
     }
     /// <p>A list of <code>Function</code> objects.</p>
-    pub fn get_functions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>> {
+    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>> {
         &self.functions
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>

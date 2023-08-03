@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeUserHierarchyGroupOutput {
 }
 impl DescribeUserHierarchyGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserHierarchyGroupOutput`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupOutput).
-    pub fn builder() -> crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupOutputBuilder{
+    pub fn builder() -> crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupOutputBuilder {
         crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserHierarchyGroupOutput`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserHierarchyGroupOutputBuilder {
     pub(crate) hierarchy_group: ::std::option::Option<crate::types::HierarchyGroup>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeUserHierarchyGroupOutputBuilder {
         self
     }
     /// <p>Information about the hierarchy group.</p>
-    pub fn set_hierarchy_group(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyGroup>,
-    ) -> Self {
+    pub fn set_hierarchy_group(mut self, input: ::std::option::Option<crate::types::HierarchyGroup>) -> Self {
         self.hierarchy_group = input;
         self
     }
@@ -63,9 +58,7 @@ impl DescribeUserHierarchyGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeUserHierarchyGroupOutput`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupOutput {
+    pub fn build(self) -> crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupOutput {
         crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupOutput {
             hierarchy_group: self.hierarchy_group,
             _request_id: self._request_id,

@@ -32,7 +32,7 @@ impl DeleteVpcIngressConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVpcIngressConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionInputBuilder,
+    inner: crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionInputBuilder,
 }
 impl DeleteVpcIngressConnectionFluentBuilder {
     /// Creates a new `DeleteVpcIngressConnection`.
@@ -43,7 +43,7 @@ impl DeleteVpcIngressConnectionFluentBuilder {
         }
     }
     /// Access the DeleteVpcIngressConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl DeleteVpcIngressConnectionFluentBuilder {
             crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl DeleteVpcIngressConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl DeleteVpcIngressConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl DeleteVpcIngressConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +111,17 @@ impl DeleteVpcIngressConnectionFluentBuilder {
             crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
-    pub fn vpc_ingress_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_ingress_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_ingress_connection_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
-    pub fn set_vpc_ingress_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_ingress_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_ingress_connection_arn(input);
         self
     }

@@ -8,9 +8,7 @@ pub struct DescribeResourceGroupsOutput {
     pub resource_groups: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroup>>,
     /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
     #[doc(hidden)]
-    pub failed_items: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeResourceGroupsOutput {
@@ -19,11 +17,7 @@ impl DescribeResourceGroupsOutput {
         self.resource_groups.as_deref()
     }
     /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn failed_items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
         self.failed_items.as_ref()
     }
 }
@@ -34,23 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeResourceGroupsOutput {
 }
 impl DescribeResourceGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceGroupsOutput`](crate::operation::describe_resource_groups::DescribeResourceGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder {
         crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResourceGroupsOutput`](crate::operation::describe_resource_groups::DescribeResourceGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourceGroupsOutputBuilder {
     pub(crate) resource_groups: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroup>>,
-    pub(crate) failed_items: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeResourceGroupsOutputBuilder {
@@ -66,17 +54,12 @@ impl DescribeResourceGroupsOutputBuilder {
         self
     }
     /// <p>Information about a resource group.</p>
-    pub fn set_resource_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroup>>,
-    ) -> Self {
+    pub fn set_resource_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroup>>) -> Self {
         self.resource_groups = input;
         self
     }
     /// <p>Information about a resource group.</p>
-    pub fn get_resource_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroup>> {
+    pub fn get_resource_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroup>> {
         &self.resource_groups
     }
     /// Adds a key-value pair to `failed_items`.
@@ -84,11 +67,7 @@ impl DescribeResourceGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
     ///
     /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::FailedItemDetails,
-    ) -> Self {
+    pub fn failed_items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FailedItemDetails) -> Self {
         let mut hash_map = self.failed_items.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.failed_items = ::std::option::Option::Some(hash_map);
@@ -97,19 +76,13 @@ impl DescribeResourceGroupsOutputBuilder {
     /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
     pub fn set_failed_items(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     ) -> Self {
         self.failed_items = input;
         self
     }
     /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn get_failed_items(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
         &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

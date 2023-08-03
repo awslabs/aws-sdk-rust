@@ -35,9 +35,7 @@ impl ListResolversOutput {
 
 /// A builder for [`ListResolversOutput`](crate::operation::list_resolvers::ListResolversOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolversOutputBuilder {
     pub(crate) resolvers: ::std::option::Option<::std::vec::Vec<crate::types::Resolver>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListResolversOutputBuilder {
         self
     }
     /// <p>The <code>Resolver</code> objects.</p>
-    pub fn set_resolvers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resolver>>,
-    ) -> Self {
+    pub fn set_resolvers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resolver>>) -> Self {
         self.resolvers = input;
         self
     }

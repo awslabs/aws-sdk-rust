@@ -15,35 +15,25 @@ impl DeleteGeofenceCollectionInput {
 }
 impl DeleteGeofenceCollectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteGeofenceCollectionInput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionInputBuilder {
         crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGeofenceCollectionInput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGeofenceCollectionInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGeofenceCollectionInputBuilder {
     /// <p>The name of the geofence collection to be deleted.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the geofence collection to be deleted.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteGeofenceCollectionInputBuilder {
         crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput {
-                collection_name: self.collection_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput {
+            collection_name: self.collection_name,
+        })
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`partner_event_source_accounts(Option<Vec<PartnerEventSourceAccount>>)`](crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsOutput::partner_event_source_accounts): <p>The list of partner event sources returned by the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsOutput::next_token): <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListPartnerEventSourceAccountsError>`](crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsError)
-    pub fn list_partner_event_source_accounts(&self) -> crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsFluentBuilder{
+    pub fn list_partner_event_source_accounts(
+        &self,
+    ) -> crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsFluentBuilder {
         crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,19 +51,16 @@ impl DescribeClientVpnEndpointsInput {
 }
 impl DescribeClientVpnEndpointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeClientVpnEndpointsInput`](crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsInput).
-    pub fn builder() -> crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsInputBuilder{
+    pub fn builder() -> crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsInputBuilder {
         crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientVpnEndpointsInput`](crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientVpnEndpointsInputBuilder {
-    pub(crate) client_vpn_endpoint_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) client_vpn_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -75,27 +72,19 @@ impl DescribeClientVpnEndpointsInputBuilder {
     /// To override the contents of this collection use [`set_client_vpn_endpoint_ids`](Self::set_client_vpn_endpoint_ids).
     ///
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_vpn_endpoint_ids.unwrap_or_default();
         v.push(input.into());
         self.client_vpn_endpoint_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.client_vpn_endpoint_ids = input;
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn get_client_vpn_endpoint_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_vpn_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.client_vpn_endpoint_ids
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p>
@@ -146,10 +135,7 @@ impl DescribeClientVpnEndpointsInputBuilder {
     /// <li> <p> <code>endpoint-id</code> - The ID of the Client VPN endpoint.</p> </li>
     /// <li> <p> <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -182,14 +168,12 @@ impl DescribeClientVpnEndpointsInputBuilder {
         crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsInput {
-                client_vpn_endpoint_ids: self.client_vpn_endpoint_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsInput {
+            client_vpn_endpoint_ids: self.client_vpn_endpoint_ids,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+            dry_run: self.dry_run,
+        })
     }
 }

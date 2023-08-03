@@ -39,9 +39,7 @@ impl CloneReceiptRuleSetFluentBuilder {
         }
     }
     /// Access the CloneReceiptRuleSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CloneReceiptRuleSetFluentBuilder {
             crate::operation::clone_receipt_rule_set::CloneReceiptRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CloneReceiptRuleSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CloneReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CloneReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CloneReceiptRuleSetFluentBuilder {
             crate::operation::clone_receipt_rule_set::CloneReceiptRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +117,7 @@ impl CloneReceiptRuleSetFluentBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_name(input.into());
         self
     }
@@ -143,10 +127,7 @@ impl CloneReceiptRuleSetFluentBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }
@@ -160,18 +141,12 @@ impl CloneReceiptRuleSetFluentBuilder {
         self.inner.get_rule_set_name()
     }
     /// <p>The name of the rule set to clone.</p>
-    pub fn original_rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn original_rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.original_rule_set_name(input.into());
         self
     }
     /// <p>The name of the rule set to clone.</p>
-    pub fn set_original_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_original_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_original_rule_set_name(input);
         self
     }

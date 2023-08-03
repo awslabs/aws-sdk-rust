@@ -43,17 +43,14 @@ impl UpdateZonalShiftInput {
 }
 impl UpdateZonalShiftInput {
     /// Creates a new builder-style object to manufacture [`UpdateZonalShiftInput`](crate::operation::update_zonal_shift::UpdateZonalShiftInput).
-    pub fn builder() -> crate::operation::update_zonal_shift::builders::UpdateZonalShiftInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_zonal_shift::builders::UpdateZonalShiftInputBuilder {
         crate::operation::update_zonal_shift::builders::UpdateZonalShiftInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateZonalShiftInput`](crate::operation::update_zonal_shift::UpdateZonalShiftInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateZonalShiftInputBuilder {
     pub(crate) zonal_shift_id: ::std::option::Option<::std::string::String>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ pub struct UpdateZonalShiftInputBuilder {
 }
 impl UpdateZonalShiftInputBuilder {
     /// <p>The identifier of a zonal shift.</p>
-    pub fn zonal_shift_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn zonal_shift_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zonal_shift_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a zonal shift.</p>
-    pub fn set_zonal_shift_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_zonal_shift_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zonal_shift_id = input;
         self
     }
@@ -132,16 +123,11 @@ impl UpdateZonalShiftInputBuilder {
     /// Consumes the builder and constructs a [`UpdateZonalShiftInput`](crate::operation::update_zonal_shift::UpdateZonalShiftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_zonal_shift::UpdateZonalShiftInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_zonal_shift::UpdateZonalShiftInput {
-                zonal_shift_id: self.zonal_shift_id,
-                comment: self.comment,
-                expires_in: self.expires_in,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_zonal_shift::UpdateZonalShiftInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_zonal_shift::UpdateZonalShiftInput {
+            zonal_shift_id: self.zonal_shift_id,
+            comment: self.comment,
+            expires_in: self.expires_in,
+        })
     }
 }

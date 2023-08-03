@@ -10,9 +10,7 @@ pub struct GetVoiceToneAnalysisTaskOutput {
 }
 impl GetVoiceToneAnalysisTaskOutput {
     /// <p>The details of the voice tone analysis task.</p>
-    pub fn voice_tone_analysis_task(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VoiceToneAnalysisTask> {
+    pub fn voice_tone_analysis_task(&self) -> ::std::option::Option<&crate::types::VoiceToneAnalysisTask> {
         self.voice_tone_analysis_task.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVoiceToneAnalysisTaskOutput {
 }
 impl GetVoiceToneAnalysisTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceToneAnalysisTaskOutput`](crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskOutput).
-    pub fn builder() -> crate::operation::get_voice_tone_analysis_task::builders::GetVoiceToneAnalysisTaskOutputBuilder{
+    pub fn builder() -> crate::operation::get_voice_tone_analysis_task::builders::GetVoiceToneAnalysisTaskOutputBuilder {
         crate::operation::get_voice_tone_analysis_task::builders::GetVoiceToneAnalysisTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceToneAnalysisTaskOutput`](crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceToneAnalysisTaskOutputBuilder {
     pub(crate) voice_tone_analysis_task: ::std::option::Option<crate::types::VoiceToneAnalysisTask>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetVoiceToneAnalysisTaskOutputBuilder {
         self
     }
     /// <p>The details of the voice tone analysis task.</p>
-    pub fn set_voice_tone_analysis_task(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceToneAnalysisTask>,
-    ) -> Self {
+    pub fn set_voice_tone_analysis_task(mut self, input: ::std::option::Option<crate::types::VoiceToneAnalysisTask>) -> Self {
         self.voice_tone_analysis_task = input;
         self
     }
     /// <p>The details of the voice tone analysis task.</p>
-    pub fn get_voice_tone_analysis_task(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceToneAnalysisTask> {
+    pub fn get_voice_tone_analysis_task(&self) -> &::std::option::Option<crate::types::VoiceToneAnalysisTask> {
         &self.voice_tone_analysis_task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl GetVoiceToneAnalysisTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVoiceToneAnalysisTaskOutput`](crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskOutput {
+    pub fn build(self) -> crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskOutput {
         crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskOutput {
             voice_tone_analysis_task: self.voice_tone_analysis_task,
             _request_id: self._request_id,

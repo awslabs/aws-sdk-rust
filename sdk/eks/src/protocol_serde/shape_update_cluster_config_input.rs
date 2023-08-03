@@ -15,10 +15,7 @@ pub fn ser_update_cluster_config_input(
     if let Some(var_4) = &input.resources_vpc_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("resourcesVpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`valid(bool)`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput::valid): <p>True if the behaviors were valid.</p>
     ///   - [`validation_errors(Option<Vec<ValidationError>>)`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput::validation_errors): <p>The list of any errors found in the behaviors.</p>
     /// - On failure, responds with [`SdkError<ValidateSecurityProfileBehaviorsError>`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsError)
-    pub fn validate_security_profile_behaviors(&self) -> crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsFluentBuilder{
+    pub fn validate_security_profile_behaviors(
+        &self,
+    ) -> crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsFluentBuilder {
         crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsFluentBuilder::new(self.handle.clone())
     }
 }

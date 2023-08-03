@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeVocabularyOutput {
 }
 impl DescribeVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVocabularyOutput`](crate::operation::describe_vocabulary::DescribeVocabularyOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vocabulary::builders::DescribeVocabularyOutputBuilder {
+    pub fn builder() -> crate::operation::describe_vocabulary::builders::DescribeVocabularyOutputBuilder {
         crate::operation::describe_vocabulary::builders::DescribeVocabularyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVocabularyOutput`](crate::operation::describe_vocabulary::DescribeVocabularyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVocabularyOutputBuilder {
     pub(crate) vocabulary: ::std::option::Option<crate::types::Vocabulary>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeVocabularyOutputBuilder {
         self
     }
     /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
-    pub fn set_vocabulary(
-        mut self,
-        input: ::std::option::Option<crate::types::Vocabulary>,
-    ) -> Self {
+    pub fn set_vocabulary(mut self, input: ::std::option::Option<crate::types::Vocabulary>) -> Self {
         self.vocabulary = input;
         self
     }

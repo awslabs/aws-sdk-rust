@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for GetDataEndpointOutput {
 }
 impl GetDataEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetDataEndpointOutput`](crate::operation::get_data_endpoint::GetDataEndpointOutput).
-    pub fn builder() -> crate::operation::get_data_endpoint::builders::GetDataEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_endpoint::builders::GetDataEndpointOutputBuilder {
         crate::operation::get_data_endpoint::builders::GetDataEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataEndpointOutput`](crate::operation::get_data_endpoint::GetDataEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataEndpointOutputBuilder {
     pub(crate) data_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDataEndpointOutputBuilder {
     /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
-    pub fn data_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
-    pub fn set_data_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_endpoint = input;
         self
     }

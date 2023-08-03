@@ -11,9 +11,7 @@ pub struct GetRecoveryPointRestoreMetadataOutput {
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These values vary depending on the service that is being restored.</p>
     #[doc(hidden)]
-    pub restore_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub restore_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRecoveryPointRestoreMetadataOutput {
@@ -26,11 +24,7 @@ impl GetRecoveryPointRestoreMetadataOutput {
         self.recovery_point_arn.as_deref()
     }
     /// <p>The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These values vary depending on the service that is being restored.</p>
-    pub fn restore_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn restore_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.restore_metadata.as_ref()
     }
 }
@@ -51,7 +45,7 @@ impl ::aws_http::request_id::RequestId for GetRecoveryPointRestoreMetadataOutput
 }
 impl GetRecoveryPointRestoreMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryPointRestoreMetadataOutput`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput).
-    pub fn builder() -> crate::operation::get_recovery_point_restore_metadata::builders::GetRecoveryPointRestoreMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::get_recovery_point_restore_metadata::builders::GetRecoveryPointRestoreMetadataOutputBuilder {
         crate::operation::get_recovery_point_restore_metadata::builders::GetRecoveryPointRestoreMetadataOutputBuilder::default()
     }
 }
@@ -62,25 +56,17 @@ impl GetRecoveryPointRestoreMetadataOutput {
 pub struct GetRecoveryPointRestoreMetadataOutputBuilder {
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) restore_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) restore_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRecoveryPointRestoreMetadataOutputBuilder {
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn backup_vault_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn set_backup_vault_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_arn = input;
         self
     }
@@ -89,18 +75,12 @@ impl GetRecoveryPointRestoreMetadataOutputBuilder {
         &self.backup_vault_arn
     }
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn set_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_point_arn = input;
         self
     }
@@ -126,19 +106,13 @@ impl GetRecoveryPointRestoreMetadataOutputBuilder {
     /// <p>The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These values vary depending on the service that is being restored.</p>
     pub fn set_restore_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.restore_metadata = input;
         self
     }
     /// <p>The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These values vary depending on the service that is being restored.</p>
-    pub fn get_restore_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_restore_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.restore_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -151,17 +125,11 @@ impl GetRecoveryPointRestoreMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRecoveryPointRestoreMetadataOutput`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput
-    {
+    pub fn build(self) -> crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput {
         crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput {
-            backup_vault_arn: self.backup_vault_arn
-            ,
-            recovery_point_arn: self.recovery_point_arn
-            ,
-            restore_metadata: self.restore_metadata
-            ,
+            backup_vault_arn: self.backup_vault_arn,
+            recovery_point_arn: self.recovery_point_arn,
+            restore_metadata: self.restore_metadata,
             _request_id: self._request_id,
         }
     }

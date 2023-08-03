@@ -29,18 +29,14 @@ impl DescribeGlobalNetworksInput {
 }
 impl DescribeGlobalNetworksInput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalNetworksInput`](crate::operation::describe_global_networks::DescribeGlobalNetworksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_global_networks::builders::DescribeGlobalNetworksInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_global_networks::builders::DescribeGlobalNetworksInputBuilder {
         crate::operation::describe_global_networks::builders::DescribeGlobalNetworksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGlobalNetworksInput`](crate::operation::describe_global_networks::DescribeGlobalNetworksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGlobalNetworksInputBuilder {
     pub(crate) global_network_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,27 +48,19 @@ impl DescribeGlobalNetworksInputBuilder {
     /// To override the contents of this collection use [`set_global_network_ids`](Self::set_global_network_ids).
     ///
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-    pub fn global_network_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.global_network_ids.unwrap_or_default();
         v.push(input.into());
         self.global_network_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-    pub fn set_global_network_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_global_network_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.global_network_ids = input;
         self
     }
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-    pub fn get_global_network_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_global_network_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.global_network_ids
     }
     /// <p>The maximum number of results to return.</p>
@@ -106,16 +94,12 @@ impl DescribeGlobalNetworksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGlobalNetworksInput`](crate::operation::describe_global_networks::DescribeGlobalNetworksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_global_networks::DescribeGlobalNetworksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_global_networks::DescribeGlobalNetworksInput {
-                global_network_ids: self.global_network_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_global_networks::DescribeGlobalNetworksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_global_networks::DescribeGlobalNetworksInput {
+            global_network_ids: self.global_network_ids,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

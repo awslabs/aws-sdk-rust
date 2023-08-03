@@ -37,9 +37,7 @@ impl CreateRoutingProfileFluentBuilder {
         }
     }
     /// Access the CreateRoutingProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_routing_profile::builders::CreateRoutingProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_routing_profile::builders::CreateRoutingProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateRoutingProfileFluentBuilder {
             crate::operation::create_routing_profile::CreateRoutingProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_routing_profile::CreateRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_routing_profile::CreateRoutingProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateRoutingProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateRoutingProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_routing_profile::CreateRoutingProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_routing_profile::CreateRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_routing_profile::CreateRoutingProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateRoutingProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_routing_profile::CreateRoutingProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_routing_profile::CreateRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_routing_profile::CreateRoutingProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateRoutingProfileFluentBuilder {
             crate::operation::create_routing_profile::CreateRoutingProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_routing_profile::CreateRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_routing_profile::CreateRoutingProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -165,18 +152,12 @@ impl CreateRoutingProfileFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The default outbound queue for the routing profile.</p>
-    pub fn default_outbound_queue_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_outbound_queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_outbound_queue_id(input.into());
         self
     }
     /// <p>The default outbound queue for the routing profile.</p>
-    pub fn set_default_outbound_queue_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_outbound_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_outbound_queue_id(input);
         self
     }
@@ -196,18 +177,13 @@ impl CreateRoutingProfileFluentBuilder {
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
-    pub fn set_queue_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
-    ) -> Self {
+    pub fn set_queue_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>) -> Self {
         self.inner = self.inner.set_queue_configs(input);
         self
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
-    pub fn get_queue_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
+    pub fn get_queue_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
         self.inner.get_queue_configs()
     }
     /// Appends an item to `MediaConcurrencies`.
@@ -220,17 +196,12 @@ impl CreateRoutingProfileFluentBuilder {
         self
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn set_media_concurrencies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
-    ) -> Self {
+    pub fn set_media_concurrencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>) -> Self {
         self.inner = self.inner.set_media_concurrencies(input);
         self
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn get_media_concurrencies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
+    pub fn get_media_concurrencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
         self.inner.get_media_concurrencies()
     }
     /// Adds a key-value pair to `Tags`.
@@ -238,30 +209,17 @@ impl CreateRoutingProfileFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

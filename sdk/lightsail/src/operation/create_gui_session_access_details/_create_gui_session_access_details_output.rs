@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for CreateGuiSessionAccessDetailsOutput {
 }
 impl CreateGuiSessionAccessDetailsOutput {
     /// Creates a new builder-style object to manufacture [`CreateGuiSessionAccessDetailsOutput`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput).
-    pub fn builder() -> crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsOutputBuilder{
+    pub fn builder() -> crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsOutputBuilder {
         crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGuiSessionAccessDetailsOutput`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGuiSessionAccessDetailsOutputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
@@ -69,18 +67,12 @@ pub struct CreateGuiSessionAccessDetailsOutputBuilder {
 }
 impl CreateGuiSessionAccessDetailsOutputBuilder {
     /// <p>The resource name.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource name.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -117,18 +109,12 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
         &self.percentage_complete
     }
     /// <p>The reason the operation failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason the operation failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -148,10 +134,7 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
         self
     }
     /// <p>Returns information about the specified NICE DCV GUI session.</p>
-    pub fn set_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
-    ) -> Self {
+    pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Session>>) -> Self {
         self.sessions = input;
         self
     }
@@ -169,10 +152,7 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateGuiSessionAccessDetailsOutput`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput
-    {
+    pub fn build(self) -> crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput {
         crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput {
             resource_name: self.resource_name,
             status: self.status,

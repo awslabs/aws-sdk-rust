@@ -15,35 +15,25 @@ impl DescribeNotebookInstanceInput {
 }
 impl DescribeNotebookInstanceInput {
     /// Creates a new builder-style object to manufacture [`DescribeNotebookInstanceInput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceInputBuilder {
         crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotebookInstanceInput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotebookInstanceInputBuilder {
     pub(crate) notebook_instance_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNotebookInstanceInputBuilder {
     /// <p>The name of the notebook instance that you want information about.</p>
-    pub fn notebook_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the notebook instance that you want information about.</p>
-    pub fn set_notebook_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl DescribeNotebookInstanceInputBuilder {
         crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput {
-                notebook_instance_name: self.notebook_instance_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput {
+            notebook_instance_name: self.notebook_instance_name,
+        })
     }
 }

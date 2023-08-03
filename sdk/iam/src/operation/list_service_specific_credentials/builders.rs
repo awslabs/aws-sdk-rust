@@ -5,16 +5,16 @@ pub use crate::operation::list_service_specific_credentials::_list_service_speci
 
 impl ListServiceSpecificCredentialsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_service_specific_credentials();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListServiceSpecificCredentialsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceSpecificCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsInputBuilder,
+    inner: crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsInputBuilder,
 }
 impl ListServiceSpecificCredentialsFluentBuilder {
     /// Creates a new `ListServiceSpecificCredentials`.
@@ -37,15 +37,20 @@ impl ListServiceSpecificCredentialsFluentBuilder {
         }
     }
     /// Access the ListServiceSpecificCredentials as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentials, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_service_specific_credentials::ListServiceSpecificCredentials,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListServiceSpecificCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl ListServiceSpecificCredentialsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentials, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_service_specific_credentials::ListServiceSpecificCredentials,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the user whose service-specific credentials you want information about. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>

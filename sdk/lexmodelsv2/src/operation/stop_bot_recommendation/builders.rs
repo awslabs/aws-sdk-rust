@@ -37,10 +37,7 @@ impl StopBotRecommendationFluentBuilder {
         }
     }
     /// Access the StopBotRecommendation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_bot_recommendation::builders::StopBotRecommendationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_bot_recommendation::builders::StopBotRecommendationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StopBotRecommendationFluentBuilder {
             crate::operation::stop_bot_recommendation::StopBotRecommendation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_bot_recommendation::StopBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_bot_recommendation::StopBotRecommendationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StopBotRecommendationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StopBotRecommendationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_bot_recommendation::StopBotRecommendationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_bot_recommendation::StopBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_bot_recommendation::StopBotRecommendationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StopBotRecommendationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_bot_recommendation::StopBotRecommendationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_bot_recommendation::StopBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_bot_recommendation::StopBotRecommendationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StopBotRecommendationFluentBuilder {
             crate::operation::stop_bot_recommendation::StopBotRecommendation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_bot_recommendation::StopBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_bot_recommendation::StopBotRecommendationError>,
     > {
         self.customize_middleware().await
     }
@@ -166,18 +152,12 @@ impl StopBotRecommendationFluentBuilder {
         self.inner.get_locale_id()
     }
     /// <p>The unique identifier of the bot recommendation to be stopped.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_recommendation_id(input.into());
         self
     }
     /// <p>The unique identifier of the bot recommendation to be stopped.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_recommendation_id(input);
         self
     }

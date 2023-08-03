@@ -15,16 +15,16 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
 }
 impl DeleteDirectConnectGatewayAssociationProposalInput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput).
-    pub fn builder() -> crate::operation::delete_direct_connect_gateway_association_proposal::builders::DeleteDirectConnectGatewayAssociationProposalInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::delete_direct_connect_gateway_association_proposal::builders::DeleteDirectConnectGatewayAssociationProposalInputBuilder
+    {
         crate::operation::delete_direct_connect_gateway_association_proposal::builders::DeleteDirectConnectGatewayAssociationProposalInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationProposalInputBuilder {
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +44,16 @@ impl DeleteDirectConnectGatewayAssociationProposalInputBuilder {
         &self.proposal_id
     }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput {
-                proposal_id: self.proposal_id
-                ,
-            }
+                proposal_id: self.proposal_id,
+            },
         )
     }
 }

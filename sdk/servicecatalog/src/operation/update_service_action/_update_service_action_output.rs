@@ -10,9 +10,7 @@ pub struct UpdateServiceActionOutput {
 }
 impl UpdateServiceActionOutput {
     /// <p>Detailed information about the self-service action.</p>
-    pub fn service_action_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceActionDetail> {
+    pub fn service_action_detail(&self) -> ::std::option::Option<&crate::types::ServiceActionDetail> {
         self.service_action_detail.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateServiceActionOutput {
 }
 impl UpdateServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceActionOutput`](crate::operation::update_service_action::UpdateServiceActionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_service_action::builders::UpdateServiceActionOutputBuilder {
-        crate::operation::update_service_action::builders::UpdateServiceActionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_service_action::builders::UpdateServiceActionOutputBuilder {
+        crate::operation::update_service_action::builders::UpdateServiceActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceActionOutput`](crate::operation::update_service_action::UpdateServiceActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceActionOutputBuilder {
     pub(crate) service_action_detail: ::std::option::Option<crate::types::ServiceActionDetail>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl UpdateServiceActionOutputBuilder {
         self
     }
     /// <p>Detailed information about the self-service action.</p>
-    pub fn set_service_action_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceActionDetail>,
-    ) -> Self {
+    pub fn set_service_action_detail(mut self, input: ::std::option::Option<crate::types::ServiceActionDetail>) -> Self {
         self.service_action_detail = input;
         self
     }
     /// <p>Detailed information about the self-service action.</p>
-    pub fn get_service_action_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceActionDetail> {
+    pub fn get_service_action_detail(&self) -> &::std::option::Option<crate::types::ServiceActionDetail> {
         &self.service_action_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

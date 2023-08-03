@@ -26,7 +26,7 @@ impl CreateLoggerDefinitionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLoggerDefinitionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionInputBuilder,
+    inner: crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionInputBuilder,
 }
 impl CreateLoggerDefinitionVersionFluentBuilder {
     /// Creates a new `CreateLoggerDefinitionVersion`.
@@ -37,7 +37,7 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
         }
     }
     /// Access the CreateLoggerDefinitionVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
             crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
             crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -141,18 +124,12 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
         self.inner.get_amzn_client_token()
     }
     /// The ID of the logger definition.
-    pub fn logger_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logger_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logger_definition_id(input.into());
         self
     }
     /// The ID of the logger definition.
-    pub fn set_logger_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logger_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logger_definition_id(input);
         self
     }
@@ -170,10 +147,7 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
         self
     }
     /// A list of loggers.
-    pub fn set_loggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
-    ) -> Self {
+    pub fn set_loggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>) -> Self {
         self.inner = self.inner.set_loggers(input);
         self
     }

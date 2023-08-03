@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListManagedInsightRulesOutput {
 }
 impl ListManagedInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedInsightRulesOutput`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder {
         crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedInsightRulesOutput`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedInsightRulesOutputBuilder {
-    pub(crate) managed_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleDescription>>,
+    pub(crate) managed_rules: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListManagedInsightRulesOutputBuilder {
         self
     }
     /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
-    pub fn set_managed_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleDescription>>,
-    ) -> Self {
+    pub fn set_managed_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleDescription>>) -> Self {
         self.managed_rules = input;
         self
     }
     /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
-    pub fn get_managed_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleDescription>> {
+    pub fn get_managed_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleDescription>> {
         &self.managed_rules
     }
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
@@ -96,9 +86,7 @@ impl ListManagedInsightRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListManagedInsightRulesOutput`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput {
+    pub fn build(self) -> crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput {
         crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput {
             managed_rules: self.managed_rules,
             next_token: self.next_token,

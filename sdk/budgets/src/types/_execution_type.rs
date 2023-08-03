@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExecutionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ExecutionType {
             "RESET_BUDGET_ACTION" => ExecutionType::ResetBudgetAction,
             "RETRY_BUDGET_ACTION" => ExecutionType::RetryBudgetAction,
             "REVERSE_BUDGET_ACTION" => ExecutionType::ReverseBudgetAction,
-            other => {
-                ExecutionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExecutionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RebootCacheClusterOutput`](crate::operation::reboot_cache_cluster::RebootCacheClusterOutput) with field(s):
     ///   - [`cache_cluster(Option<CacheCluster>)`](crate::operation::reboot_cache_cluster::RebootCacheClusterOutput::cache_cluster): <p>Contains all of the attributes of a specific cluster.</p>
     /// - On failure, responds with [`SdkError<RebootCacheClusterError>`](crate::operation::reboot_cache_cluster::RebootCacheClusterError)
-    pub fn reboot_cache_cluster(
-        &self,
-    ) -> crate::operation::reboot_cache_cluster::builders::RebootCacheClusterFluentBuilder {
-        crate::operation::reboot_cache_cluster::builders::RebootCacheClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reboot_cache_cluster(&self) -> crate::operation::reboot_cache_cluster::builders::RebootCacheClusterFluentBuilder {
+        crate::operation::reboot_cache_cluster::builders::RebootCacheClusterFluentBuilder::new(self.handle.clone())
     }
 }

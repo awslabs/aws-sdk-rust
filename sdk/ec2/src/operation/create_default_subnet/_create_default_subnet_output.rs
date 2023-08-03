@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDefaultSubnetOutput {
 }
 impl CreateDefaultSubnetOutput {
     /// Creates a new builder-style object to manufacture [`CreateDefaultSubnetOutput`](crate::operation::create_default_subnet::CreateDefaultSubnetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder {
-        crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder {
+        crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDefaultSubnetOutput`](crate::operation::create_default_subnet::CreateDefaultSubnetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDefaultSubnetOutputBuilder {
     pub(crate) subnet: ::std::option::Option<crate::types::Subnet>,
     _request_id: Option<String>,

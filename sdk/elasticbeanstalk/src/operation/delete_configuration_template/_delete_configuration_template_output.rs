@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConfigurationTemplateOutput {
 }
 impl DeleteConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationTemplateOutput`](crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput).
-    pub fn builder() -> crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateOutputBuilder {
         crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfigurationTemplateOutput`](crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigurationTemplateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteConfigurationTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationTemplateOutput`](crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput {
+    pub fn build(self) -> crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput {
         crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput {
             _request_id: self._request_id,
         }

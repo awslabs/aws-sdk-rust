@@ -21,9 +21,7 @@ pub enum VirtualServiceProvider {
 impl VirtualServiceProvider {
     /// Tries to convert the enum instance into [`VirtualNode`](crate::types::VirtualServiceProvider::VirtualNode), extracting the inner [`VirtualNodeServiceProvider`](crate::types::VirtualNodeServiceProvider).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_virtual_node(
-        &self,
-    ) -> ::std::result::Result<&crate::types::VirtualNodeServiceProvider, &Self> {
+    pub fn as_virtual_node(&self) -> ::std::result::Result<&crate::types::VirtualNodeServiceProvider, &Self> {
         if let VirtualServiceProvider::VirtualNode(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -36,9 +34,7 @@ impl VirtualServiceProvider {
     }
     /// Tries to convert the enum instance into [`VirtualRouter`](crate::types::VirtualServiceProvider::VirtualRouter), extracting the inner [`VirtualRouterServiceProvider`](crate::types::VirtualRouterServiceProvider).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_virtual_router(
-        &self,
-    ) -> ::std::result::Result<&crate::types::VirtualRouterServiceProvider, &Self> {
+    pub fn as_virtual_router(&self) -> ::std::result::Result<&crate::types::VirtualRouterServiceProvider, &Self> {
         if let VirtualServiceProvider::VirtualRouter(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

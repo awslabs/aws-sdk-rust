@@ -37,9 +37,7 @@ impl ResultData {
 
 /// A builder for [`ResultData`](crate::types::ResultData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultDataBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
     pub(crate) document: ::std::option::Option<crate::types::Document>,

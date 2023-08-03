@@ -28,7 +28,7 @@ impl PutRetentionConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRetentionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_retention_configuration::builders::PutRetentionConfigurationInputBuilder,
+    inner: crate::operation::put_retention_configuration::builders::PutRetentionConfigurationInputBuilder,
 }
 impl PutRetentionConfigurationFluentBuilder {
     /// Creates a new `PutRetentionConfiguration`.
@@ -39,7 +39,7 @@ impl PutRetentionConfigurationFluentBuilder {
         }
     }
     /// Access the PutRetentionConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_retention_configuration::builders::PutRetentionConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_retention_configuration::builders::PutRetentionConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl PutRetentionConfigurationFluentBuilder {
             crate::operation::put_retention_configuration::PutRetentionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_retention_configuration::PutRetentionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_retention_configuration::PutRetentionConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl PutRetentionConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl PutRetentionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_retention_configuration::PutRetentionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_retention_configuration::PutRetentionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_retention_configuration::PutRetentionConfigurationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl PutRetentionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_retention_configuration::PutRetentionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_retention_configuration::PutRetentionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_retention_configuration::PutRetentionConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl PutRetentionConfigurationFluentBuilder {
             crate::operation::put_retention_configuration::PutRetentionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_retention_configuration::PutRetentionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_retention_configuration::PutRetentionConfigurationError>,
     > {
         self.customize_middleware().await
     }

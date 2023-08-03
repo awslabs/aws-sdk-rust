@@ -20,9 +20,7 @@ pub struct ContainerServiceDeployment {
     pub state: ::std::option::Option<crate::types::ContainerServiceDeploymentState>,
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     #[doc(hidden)]
-    pub containers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
-    >,
+    pub containers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     /// <p>An object that describes the endpoint of the deployment.</p>
     #[doc(hidden)]
     pub public_endpoint: ::std::option::Option<crate::types::ContainerServiceEndpoint>,
@@ -47,17 +45,11 @@ impl ContainerServiceDeployment {
         self.state.as_ref()
     }
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
-    pub fn containers(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Container>,
-    > {
+    pub fn containers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Container>> {
         self.containers.as_ref()
     }
     /// <p>An object that describes the endpoint of the deployment.</p>
-    pub fn public_endpoint(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContainerServiceEndpoint> {
+    pub fn public_endpoint(&self) -> ::std::option::Option<&crate::types::ContainerServiceEndpoint> {
         self.public_endpoint.as_ref()
     }
     /// <p>The timestamp when the deployment was created.</p>
@@ -74,15 +66,11 @@ impl ContainerServiceDeployment {
 
 /// A builder for [`ContainerServiceDeployment`](crate::types::ContainerServiceDeployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerServiceDeploymentBuilder {
     pub(crate) version: ::std::option::Option<i32>,
     pub(crate) state: ::std::option::Option<crate::types::ContainerServiceDeploymentState>,
-    pub(crate) containers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
-    >,
+    pub(crate) containers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     pub(crate) public_endpoint: ::std::option::Option<crate::types::ContainerServiceEndpoint>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -121,10 +109,7 @@ impl ContainerServiceDeploymentBuilder {
     /// <li> <p> <code>Inactive</code> - The deployment was previously successfully created, but it is not currently running on the container service.</p> </li>
     /// <li> <p> <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events for the containers in the deployment to try to determine the reason for the failure.</p> </li>
     /// </ul>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServiceDeploymentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ContainerServiceDeploymentState>) -> Self {
         self.state = input;
         self
     }
@@ -136,9 +121,7 @@ impl ContainerServiceDeploymentBuilder {
     /// <li> <p> <code>Inactive</code> - The deployment was previously successfully created, but it is not currently running on the container service.</p> </li>
     /// <li> <p> <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events for the containers in the deployment to try to determine the reason for the failure.</p> </li>
     /// </ul>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerServiceDeploymentState> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ContainerServiceDeploymentState> {
         &self.state
     }
     /// Adds a key-value pair to `containers`.
@@ -146,11 +129,7 @@ impl ContainerServiceDeploymentBuilder {
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
     ///
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
-    pub fn containers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Container,
-    ) -> Self {
+    pub fn containers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Container) -> Self {
         let mut hash_map = self.containers.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.containers = ::std::option::Option::Some(hash_map);
@@ -159,19 +138,13 @@ impl ContainerServiceDeploymentBuilder {
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     pub fn set_containers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Container>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     ) -> Self {
         self.containers = input;
         self
     }
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
-    > {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>> {
         &self.containers
     }
     /// <p>An object that describes the endpoint of the deployment.</p>
@@ -180,17 +153,12 @@ impl ContainerServiceDeploymentBuilder {
         self
     }
     /// <p>An object that describes the endpoint of the deployment.</p>
-    pub fn set_public_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServiceEndpoint>,
-    ) -> Self {
+    pub fn set_public_endpoint(mut self, input: ::std::option::Option<crate::types::ContainerServiceEndpoint>) -> Self {
         self.public_endpoint = input;
         self
     }
     /// <p>An object that describes the endpoint of the deployment.</p>
-    pub fn get_public_endpoint(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerServiceEndpoint> {
+    pub fn get_public_endpoint(&self) -> &::std::option::Option<crate::types::ContainerServiceEndpoint> {
         &self.public_endpoint
     }
     /// <p>The timestamp when the deployment was created.</p>
@@ -199,10 +167,7 @@ impl ContainerServiceDeploymentBuilder {
         self
     }
     /// <p>The timestamp when the deployment was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

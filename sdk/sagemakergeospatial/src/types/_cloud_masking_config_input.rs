@@ -13,9 +13,7 @@ impl CloudMaskingConfigInput {
 
 /// A builder for [`CloudMaskingConfigInput`](crate::types::CloudMaskingConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudMaskingConfigInputBuilder {}
 impl CloudMaskingConfigInputBuilder {
     /// Consumes the builder and constructs a [`CloudMaskingConfigInput`](crate::types::CloudMaskingConfigInput).

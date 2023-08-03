@@ -9,8 +9,7 @@ pub struct AttributeAggregationFunction {
     /// <li> <p> <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by the dimension fields.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub simple_attribute_aggregation:
-        ::std::option::Option<crate::types::SimpleAttributeAggregationFunction>,
+    pub simple_attribute_aggregation: ::std::option::Option<crate::types::SimpleAttributeAggregationFunction>,
     /// <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are multiple values for the field used by the aggregation, the value for this property will be returned instead. Defaults to '*'.</p>
     #[doc(hidden)]
     pub value_for_multiple_values: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ impl AttributeAggregationFunction {
     /// <ul>
     /// <li> <p> <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by the dimension fields.</p> </li>
     /// </ul>
-    pub fn simple_attribute_aggregation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SimpleAttributeAggregationFunction> {
+    pub fn simple_attribute_aggregation(&self) -> ::std::option::Option<&crate::types::SimpleAttributeAggregationFunction> {
         self.simple_attribute_aggregation.as_ref()
     }
     /// <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are multiple values for the field used by the aggregation, the value for this property will be returned instead. Defaults to '*'.</p>
@@ -39,12 +36,9 @@ impl AttributeAggregationFunction {
 
 /// A builder for [`AttributeAggregationFunction`](crate::types::AttributeAggregationFunction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeAggregationFunctionBuilder {
-    pub(crate) simple_attribute_aggregation:
-        ::std::option::Option<crate::types::SimpleAttributeAggregationFunction>,
+    pub(crate) simple_attribute_aggregation: ::std::option::Option<crate::types::SimpleAttributeAggregationFunction>,
     pub(crate) value_for_multiple_values: ::std::option::Option<::std::string::String>,
 }
 impl AttributeAggregationFunctionBuilder {
@@ -52,10 +46,7 @@ impl AttributeAggregationFunctionBuilder {
     /// <ul>
     /// <li> <p> <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by the dimension fields.</p> </li>
     /// </ul>
-    pub fn simple_attribute_aggregation(
-        mut self,
-        input: crate::types::SimpleAttributeAggregationFunction,
-    ) -> Self {
+    pub fn simple_attribute_aggregation(mut self, input: crate::types::SimpleAttributeAggregationFunction) -> Self {
         self.simple_attribute_aggregation = ::std::option::Option::Some(input);
         self
     }
@@ -63,10 +54,7 @@ impl AttributeAggregationFunctionBuilder {
     /// <ul>
     /// <li> <p> <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by the dimension fields.</p> </li>
     /// </ul>
-    pub fn set_simple_attribute_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::SimpleAttributeAggregationFunction>,
-    ) -> Self {
+    pub fn set_simple_attribute_aggregation(mut self, input: ::std::option::Option<crate::types::SimpleAttributeAggregationFunction>) -> Self {
         self.simple_attribute_aggregation = input;
         self
     }
@@ -74,24 +62,16 @@ impl AttributeAggregationFunctionBuilder {
     /// <ul>
     /// <li> <p> <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by the dimension fields.</p> </li>
     /// </ul>
-    pub fn get_simple_attribute_aggregation(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimpleAttributeAggregationFunction> {
+    pub fn get_simple_attribute_aggregation(&self) -> &::std::option::Option<crate::types::SimpleAttributeAggregationFunction> {
         &self.simple_attribute_aggregation
     }
     /// <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are multiple values for the field used by the aggregation, the value for this property will be returned instead. Defaults to '*'.</p>
-    pub fn value_for_multiple_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn value_for_multiple_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value_for_multiple_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are multiple values for the field used by the aggregation, the value for this property will be returned instead. Defaults to '*'.</p>
-    pub fn set_value_for_multiple_values(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_value_for_multiple_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_for_multiple_values = input;
         self
     }

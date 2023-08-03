@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`clusters(Option<Vec<Cluster>>)`](crate::operation::describe_clusters::DescribeClustersOutput::clusters): <p>The list of clusters.</p>
     ///   - [`failures(Option<Vec<Failure>>)`](crate::operation::describe_clusters::DescribeClustersOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<DescribeClustersError>`](crate::operation::describe_clusters::DescribeClustersError)
-    pub fn describe_clusters(
-        &self,
-    ) -> crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder {
-        crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_clusters(&self) -> crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder {
+        crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,8 +12,7 @@ pub struct UnsuccessfulFaceDeletion {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason why the deletion was unsuccessful. </p>
     #[doc(hidden)]
-    pub reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletionReason>>,
+    pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletionReason>>,
 }
 impl UnsuccessfulFaceDeletion {
     /// <p> A unique identifier assigned to the face.</p>
@@ -25,9 +24,7 @@ impl UnsuccessfulFaceDeletion {
         self.user_id.as_deref()
     }
     /// <p>The reason why the deletion was unsuccessful. </p>
-    pub fn reasons(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceDeletionReason]> {
+    pub fn reasons(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceDeletionReason]> {
         self.reasons.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl UnsuccessfulFaceDeletion {
 
 /// A builder for [`UnsuccessfulFaceDeletion`](crate::types::UnsuccessfulFaceDeletion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsuccessfulFaceDeletionBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletionReason>>,
+    pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletionReason>>,
 }
 impl UnsuccessfulFaceDeletionBuilder {
     /// <p> A unique identifier assigned to the face.</p>
@@ -90,17 +84,12 @@ impl UnsuccessfulFaceDeletionBuilder {
         self
     }
     /// <p>The reason why the deletion was unsuccessful. </p>
-    pub fn set_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletionReason>>,
-    ) -> Self {
+    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletionReason>>) -> Self {
         self.reasons = input;
         self
     }
     /// <p>The reason why the deletion was unsuccessful. </p>
-    pub fn get_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletionReason>> {
+    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletionReason>> {
         &self.reasons
     }
     /// Consumes the builder and constructs a [`UnsuccessfulFaceDeletion`](crate::types::UnsuccessfulFaceDeletion).

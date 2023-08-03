@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput) with field(s):
     ///   - [`service_quota_increase_request_in_template(Option<ServiceQuotaIncreaseRequestInTemplate>)`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput::service_quota_increase_request_in_template): <p>Information about the quota increase request.</p>
     /// - On failure, responds with [`SdkError<PutServiceQuotaIncreaseRequestIntoTemplateError>`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError)
-    pub fn put_service_quota_increase_request_into_template(&self) -> crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateFluentBuilder{
-        crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateFluentBuilder::new(self.handle.clone())
+    pub fn put_service_quota_increase_request_into_template(
+        &self,
+    ) -> crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateFluentBuilder {
+        crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

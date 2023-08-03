@@ -33,10 +33,7 @@ pub fn ser_detect_labels_input(
     if let Some(var_8) = &input.settings {
         #[allow(unused_mut)]
         let mut object_9 = object.key("Settings").start_object();
-        crate::protocol_serde::shape_detect_labels_settings::ser_detect_labels_settings(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_detect_labels_settings::ser_detect_labels_settings(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

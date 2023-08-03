@@ -23,9 +23,7 @@ impl AnswerMachineDetectionConfig {
 
 /// A builder for [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfigBuilder {
     pub(crate) enable_answer_machine_detection: ::std::option::Option<bool>,
 }
@@ -36,10 +34,7 @@ impl AnswerMachineDetectionConfigBuilder {
         self
     }
     /// Enable or disable answering machine detection
-    pub fn set_enable_answer_machine_detection(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_answer_machine_detection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_answer_machine_detection = input;
         self
     }

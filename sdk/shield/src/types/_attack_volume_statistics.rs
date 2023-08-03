@@ -23,9 +23,7 @@ impl AttackVolumeStatistics {
 
 /// A builder for [`AttackVolumeStatistics`](crate::types::AttackVolumeStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttackVolumeStatisticsBuilder {
     pub(crate) max: ::std::option::Option<f64>,
 }

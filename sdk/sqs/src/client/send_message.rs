@@ -17,9 +17,7 @@ impl super::Client {
     ///   - [`message_id(Option<String>)`](crate::operation::send_message::SendMessageOutput::message_id): <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
     ///   - [`sequence_number(Option<String>)`](crate::operation::send_message::SendMessageOutput::sequence_number): <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>  <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>  <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     /// - On failure, responds with [`SdkError<SendMessageError>`](crate::operation::send_message::SendMessageError)
-    pub fn send_message(
-        &self,
-    ) -> crate::operation::send_message::builders::SendMessageFluentBuilder {
+    pub fn send_message(&self) -> crate::operation::send_message::builders::SendMessageFluentBuilder {
         crate::operation::send_message::builders::SendMessageFluentBuilder::new(self.handle.clone())
     }
 }

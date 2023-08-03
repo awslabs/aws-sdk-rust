@@ -26,7 +26,7 @@ impl GetPlaybackConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPlaybackConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder,
+    inner: crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder,
 }
 impl GetPlaybackConfigurationFluentBuilder {
     /// Creates a new `GetPlaybackConfiguration`.
@@ -37,10 +37,7 @@ impl GetPlaybackConfigurationFluentBuilder {
         }
     }
     /// Access the GetPlaybackConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetPlaybackConfigurationFluentBuilder {
             crate::operation::get_playback_configuration::GetPlaybackConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_playback_configuration::GetPlaybackConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_playback_configuration::GetPlaybackConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetPlaybackConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetPlaybackConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_playback_configuration::GetPlaybackConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_playback_configuration::GetPlaybackConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetPlaybackConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_playback_configuration::GetPlaybackConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_playback_configuration::GetPlaybackConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetPlaybackConfigurationFluentBuilder {
             crate::operation::get_playback_configuration::GetPlaybackConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_playback_configuration::GetPlaybackConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_playback_configuration::GetPlaybackConfigurationError>,
     > {
         self.customize_middleware().await
     }

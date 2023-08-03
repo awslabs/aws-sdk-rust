@@ -29,17 +29,14 @@ impl PutClusterPolicyInput {
 }
 impl PutClusterPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutClusterPolicyInput`](crate::operation::put_cluster_policy::PutClusterPolicyInput).
-    pub fn builder() -> crate::operation::put_cluster_policy::builders::PutClusterPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_cluster_policy::builders::PutClusterPolicyInputBuilder {
         crate::operation::put_cluster_policy::builders::PutClusterPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutClusterPolicyInput`](crate::operation::put_cluster_policy::PutClusterPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutClusterPolicyInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl PutClusterPolicyInputBuilder {
         &self.cluster_arn
     }
     /// <p>The policy version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -97,16 +88,11 @@ impl PutClusterPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutClusterPolicyInput`](crate::operation::put_cluster_policy::PutClusterPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_cluster_policy::PutClusterPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_cluster_policy::PutClusterPolicyInput {
-                cluster_arn: self.cluster_arn,
-                current_version: self.current_version,
-                policy: self.policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_cluster_policy::PutClusterPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_cluster_policy::PutClusterPolicyInput {
+            cluster_arn: self.cluster_arn,
+            current_version: self.current_version,
+            policy: self.policy,
+        })
     }
 }

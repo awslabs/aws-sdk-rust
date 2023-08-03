@@ -36,9 +36,7 @@ impl CreateSnapshotOutput {
 
 /// A builder for [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotOutputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,

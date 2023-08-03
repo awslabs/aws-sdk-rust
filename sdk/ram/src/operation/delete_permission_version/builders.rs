@@ -27,8 +27,7 @@ impl DeletePermissionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePermissionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_permission_version::builders::DeletePermissionVersionInputBuilder,
+    inner: crate::operation::delete_permission_version::builders::DeletePermissionVersionInputBuilder,
 }
 impl DeletePermissionVersionFluentBuilder {
     /// Creates a new `DeletePermissionVersion`.
@@ -39,10 +38,7 @@ impl DeletePermissionVersionFluentBuilder {
         }
     }
     /// Access the DeletePermissionVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_permission_version::builders::DeletePermissionVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_permission_version::builders::DeletePermissionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DeletePermissionVersionFluentBuilder {
             crate::operation::delete_permission_version::DeletePermissionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_version::DeletePermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_version::DeletePermissionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DeletePermissionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DeletePermissionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permission_version::DeletePermissionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_version::DeletePermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_version::DeletePermissionVersionError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DeletePermissionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permission_version::DeletePermissionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_version::DeletePermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_version::DeletePermissionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl DeletePermissionVersionFluentBuilder {
             crate::operation::delete_permission_version::DeletePermissionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission_version::DeletePermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission_version::DeletePermissionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_arn(input);
         self
     }

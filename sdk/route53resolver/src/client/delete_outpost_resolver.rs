@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteOutpostResolverOutput`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverOutput) with field(s):
     ///   - [`outpost_resolver(Option<OutpostResolver>)`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverOutput::outpost_resolver): <p>Information about the <code>DeleteOutpostResolver</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteOutpostResolverError>`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverError)
-    pub fn delete_outpost_resolver(
-        &self,
-    ) -> crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverFluentBuilder
-    {
-        crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_outpost_resolver(&self) -> crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverFluentBuilder {
+        crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverFluentBuilder::new(self.handle.clone())
     }
 }

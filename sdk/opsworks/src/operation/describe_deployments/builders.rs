@@ -10,10 +10,7 @@ impl DescribeDeploymentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_deployments::DescribeDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_deployments::DescribeDeploymentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_deployments::DescribeDeploymentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_deployments();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeDeploymentsFluentBuilder {
         }
     }
     /// Access the DescribeDeployments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_deployments::builders::DescribeDeploymentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_deployments::builders::DescribeDeploymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DescribeDeploymentsFluentBuilder {
             crate::operation::describe_deployments::DescribeDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_deployments::DescribeDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_deployments::DescribeDeploymentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DescribeDeploymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DescribeDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_deployments::DescribeDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_deployments::DescribeDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_deployments::DescribeDeploymentsError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DescribeDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_deployments::DescribeDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_deployments::DescribeDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_deployments::DescribeDeploymentsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DescribeDeploymentsFluentBuilder {
             crate::operation::describe_deployments::DescribeDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_deployments::DescribeDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_deployments::DescribeDeploymentsError>,
     > {
         self.customize_middleware().await
     }
@@ -158,25 +142,17 @@ impl DescribeDeploymentsFluentBuilder {
     /// To override the contents of this collection use [`set_deployment_ids`](Self::set_deployment_ids).
     ///
     /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
-    pub fn deployment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_ids(input.into());
         self
     }
     /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
-    pub fn set_deployment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_deployment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_deployment_ids(input);
         self
     }
     /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
-    pub fn get_deployment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deployment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_deployment_ids()
     }
 }

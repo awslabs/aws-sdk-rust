@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::start_cost_estimation::builders::StartCostEstimationFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::start_cost_estimation::builders::StartCostEstimationFluentBuilder::set_client_token): <p>The idempotency token used to identify each cost estimate request.</p>
     /// - On success, responds with [`StartCostEstimationOutput`](crate::operation::start_cost_estimation::StartCostEstimationOutput)
     /// - On failure, responds with [`SdkError<StartCostEstimationError>`](crate::operation::start_cost_estimation::StartCostEstimationError)
-    pub fn start_cost_estimation(
-        &self,
-    ) -> crate::operation::start_cost_estimation::builders::StartCostEstimationFluentBuilder {
-        crate::operation::start_cost_estimation::builders::StartCostEstimationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_cost_estimation(&self) -> crate::operation::start_cost_estimation::builders::StartCostEstimationFluentBuilder {
+        crate::operation::start_cost_estimation::builders::StartCostEstimationFluentBuilder::new(self.handle.clone())
     }
 }

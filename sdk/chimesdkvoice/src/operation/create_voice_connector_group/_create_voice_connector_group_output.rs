@@ -10,9 +10,7 @@ pub struct CreateVoiceConnectorGroupOutput {
 }
 impl CreateVoiceConnectorGroupOutput {
     /// <p>The details of the Voice Connector group.</p>
-    pub fn voice_connector_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VoiceConnectorGroup> {
+    pub fn voice_connector_group(&self) -> ::std::option::Option<&crate::types::VoiceConnectorGroup> {
         self.voice_connector_group.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateVoiceConnectorGroupOutput {
 }
 impl CreateVoiceConnectorGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceConnectorGroupOutput`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput).
-    pub fn builder() -> crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupOutputBuilder{
+    pub fn builder() -> crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupOutputBuilder {
         crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVoiceConnectorGroupOutput`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVoiceConnectorGroupOutputBuilder {
     pub(crate) voice_connector_group: ::std::option::Option<crate::types::VoiceConnectorGroup>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateVoiceConnectorGroupOutputBuilder {
         self
     }
     /// <p>The details of the Voice Connector group.</p>
-    pub fn set_voice_connector_group(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceConnectorGroup>,
-    ) -> Self {
+    pub fn set_voice_connector_group(mut self, input: ::std::option::Option<crate::types::VoiceConnectorGroup>) -> Self {
         self.voice_connector_group = input;
         self
     }
     /// <p>The details of the Voice Connector group.</p>
-    pub fn get_voice_connector_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceConnectorGroup> {
+    pub fn get_voice_connector_group(&self) -> &::std::option::Option<crate::types::VoiceConnectorGroup> {
         &self.voice_connector_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateVoiceConnectorGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateVoiceConnectorGroupOutput`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput {
+    pub fn build(self) -> crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput {
         crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput {
             voice_connector_group: self.voice_connector_group,
             _request_id: self._request_id,

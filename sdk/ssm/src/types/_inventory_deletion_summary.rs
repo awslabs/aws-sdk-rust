@@ -12,8 +12,7 @@ pub struct InventoryDeletionSummary {
     pub remaining_count: i32,
     /// <p>A list of counts and versions for deleted items.</p>
     #[doc(hidden)]
-    pub summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
+    pub summary_items: ::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
 }
 impl InventoryDeletionSummary {
     /// <p>The total number of items to delete. This count doesn't change during the delete operation.</p>
@@ -25,9 +24,7 @@ impl InventoryDeletionSummary {
         self.remaining_count
     }
     /// <p>A list of counts and versions for deleted items.</p>
-    pub fn summary_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InventoryDeletionSummaryItem]> {
+    pub fn summary_items(&self) -> ::std::option::Option<&[crate::types::InventoryDeletionSummaryItem]> {
         self.summary_items.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl InventoryDeletionSummary {
 
 /// A builder for [`InventoryDeletionSummary`](crate::types::InventoryDeletionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryDeletionSummaryBuilder {
     pub(crate) total_count: ::std::option::Option<i32>,
     pub(crate) remaining_count: ::std::option::Option<i32>,
-    pub(crate) summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
+    pub(crate) summary_items: ::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
 }
 impl InventoryDeletionSummaryBuilder {
     /// <p>The total number of items to delete. This count doesn't change during the delete operation.</p>
@@ -90,17 +84,12 @@ impl InventoryDeletionSummaryBuilder {
         self
     }
     /// <p>A list of counts and versions for deleted items.</p>
-    pub fn set_summary_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
-    ) -> Self {
+    pub fn set_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>) -> Self {
         self.summary_items = input;
         self
     }
     /// <p>A list of counts and versions for deleted items.</p>
-    pub fn get_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionSummaryItem>> {
+    pub fn get_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionSummaryItem>> {
         &self.summary_items
     }
     /// Consumes the builder and constructs a [`InventoryDeletionSummary`](crate::types::InventoryDeletionSummary).

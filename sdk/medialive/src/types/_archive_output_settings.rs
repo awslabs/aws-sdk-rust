@@ -16,9 +16,7 @@ pub struct ArchiveOutputSettings {
 }
 impl ArchiveOutputSettings {
     /// Settings specific to the container type of the file.
-    pub fn container_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ArchiveContainerSettings> {
+    pub fn container_settings(&self) -> ::std::option::Option<&crate::types::ArchiveContainerSettings> {
         self.container_settings.as_ref()
     }
     /// Output file extension. If excluded, this will be auto-selected from the container type.
@@ -39,9 +37,7 @@ impl ArchiveOutputSettings {
 
 /// A builder for [`ArchiveOutputSettings`](crate::types::ArchiveOutputSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArchiveOutputSettingsBuilder {
     pub(crate) container_settings: ::std::option::Option<crate::types::ArchiveContainerSettings>,
     pub(crate) extension: ::std::option::Option<::std::string::String>,
@@ -54,17 +50,12 @@ impl ArchiveOutputSettingsBuilder {
         self
     }
     /// Settings specific to the container type of the file.
-    pub fn set_container_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ArchiveContainerSettings>,
-    ) -> Self {
+    pub fn set_container_settings(mut self, input: ::std::option::Option<crate::types::ArchiveContainerSettings>) -> Self {
         self.container_settings = input;
         self
     }
     /// Settings specific to the container type of the file.
-    pub fn get_container_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ArchiveContainerSettings> {
+    pub fn get_container_settings(&self) -> &::std::option::Option<crate::types::ArchiveContainerSettings> {
         &self.container_settings
     }
     /// Output file extension. If excluded, this will be auto-selected from the container type.
@@ -82,18 +73,12 @@ impl ArchiveOutputSettingsBuilder {
         &self.extension
     }
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
-    pub fn name_modifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_modifier = ::std::option::Option::Some(input.into());
         self
     }
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
-    pub fn set_name_modifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_modifier = input;
         self
     }

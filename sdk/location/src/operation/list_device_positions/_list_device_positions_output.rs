@@ -5,8 +5,7 @@
 pub struct ListDevicePositionsOutput {
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
     #[doc(hidden)]
-    pub entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDevicePositionsOutput {
 }
 impl ListDevicePositionsOutput {
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
-    pub fn entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListDevicePositionsResponseEntry]> {
+    pub fn entries(&self) -> ::std::option::Option<&[crate::types::ListDevicePositionsResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDevicePositionsOutput {
 }
 impl ListDevicePositionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevicePositionsOutput`](crate::operation::list_device_positions::ListDevicePositionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_device_positions::builders::ListDevicePositionsOutputBuilder {
-        crate::operation::list_device_positions::builders::ListDevicePositionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_device_positions::builders::ListDevicePositionsOutputBuilder {
+        crate::operation::list_device_positions::builders::ListDevicePositionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevicePositionsOutput`](crate::operation::list_device_positions::ListDevicePositionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevicePositionsOutputBuilder {
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,20 +54,12 @@ impl ListDevicePositionsOutputBuilder {
         self
     }
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>,
-        >,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>
-    {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>> {
         &self.entries
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>

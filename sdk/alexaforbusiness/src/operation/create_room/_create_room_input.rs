@@ -57,9 +57,7 @@ impl CreateRoomInput {
 
 /// A builder for [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoomInputBuilder {
     pub(crate) room_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -112,18 +110,12 @@ impl CreateRoomInputBuilder {
         &self.profile_arn
     }
     /// <p>The calendar ARN for the room.</p>
-    pub fn provider_calendar_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_calendar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_calendar_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The calendar ARN for the room.</p>
-    pub fn set_provider_calendar_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_calendar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_calendar_id = input;
         self
     }
@@ -132,18 +124,12 @@ impl CreateRoomInputBuilder {
         &self.provider_calendar_id
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -163,10 +149,7 @@ impl CreateRoomInputBuilder {
         self
     }
     /// <p>The tags for the room.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -175,12 +158,7 @@ impl CreateRoomInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_room::CreateRoomInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_room::CreateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_room::CreateRoomInput {
             room_name: self.room_name,
             description: self.description,

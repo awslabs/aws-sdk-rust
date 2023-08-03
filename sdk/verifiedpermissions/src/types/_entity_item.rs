@@ -11,9 +11,7 @@ pub struct EntityItem {
     pub identifier: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>A list of attributes for the entity.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>The parents in the hierarchy that contains the entity.</p>
     #[doc(hidden)]
     pub parents: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>,
@@ -24,11 +22,7 @@ impl EntityItem {
         self.identifier.as_ref()
     }
     /// <p>A list of attributes for the entity.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         self.attributes.as_ref()
     }
     /// <p>The parents in the hierarchy that contains the entity.</p>
@@ -45,14 +39,10 @@ impl EntityItem {
 
 /// A builder for [`EntityItem`](crate::types::EntityItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityItemBuilder {
     pub(crate) identifier: ::std::option::Option<crate::types::EntityIdentifier>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     pub(crate) parents: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>,
 }
 impl EntityItemBuilder {
@@ -62,10 +52,7 @@ impl EntityItemBuilder {
         self
     }
     /// <p>The identifier of the entity.</p>
-    pub fn set_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.identifier = input;
         self
     }
@@ -78,11 +65,7 @@ impl EntityItemBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>A list of attributes for the entity.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::AttributeValue,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -91,19 +74,13 @@ impl EntityItemBuilder {
     /// <p>A list of attributes for the entity.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     ) -> Self {
         self.attributes = input;
         self
     }
     /// <p>A list of attributes for the entity.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         &self.attributes
     }
     /// Appends an item to `parents`.
@@ -118,17 +95,12 @@ impl EntityItemBuilder {
         self
     }
     /// <p>The parents in the hierarchy that contains the entity.</p>
-    pub fn set_parents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>,
-    ) -> Self {
+    pub fn set_parents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>) -> Self {
         self.parents = input;
         self
     }
     /// <p>The parents in the hierarchy that contains the entity.</p>
-    pub fn get_parents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>> {
+    pub fn get_parents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>> {
         &self.parents
     }
     /// Consumes the builder and constructs a [`EntityItem`](crate::types::EntityItem).

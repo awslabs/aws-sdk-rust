@@ -23,9 +23,7 @@ impl InputVideoGenerator {
 
 /// A builder for [`InputVideoGenerator`](crate::types::InputVideoGenerator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputVideoGeneratorBuilder {
     pub(crate) duration: ::std::option::Option<i32>,
 }
@@ -46,8 +44,6 @@ impl InputVideoGeneratorBuilder {
     }
     /// Consumes the builder and constructs a [`InputVideoGenerator`](crate::types::InputVideoGenerator).
     pub fn build(self) -> crate::types::InputVideoGenerator {
-        crate::types::InputVideoGenerator {
-            duration: self.duration,
-        }
+        crate::types::InputVideoGenerator { duration: self.duration }
     }
 }

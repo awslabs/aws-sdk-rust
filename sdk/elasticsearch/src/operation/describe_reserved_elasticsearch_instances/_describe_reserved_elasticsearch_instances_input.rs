@@ -30,16 +30,14 @@ impl DescribeReservedElasticsearchInstancesInput {
 }
 impl DescribeReservedElasticsearchInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstancesInput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesInput).
-    pub fn builder() -> crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesInputBuilder {
         crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedElasticsearchInstancesInput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstancesInputBuilder {
     pub(crate) reserved_elasticsearch_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -47,25 +45,17 @@ pub struct DescribeReservedElasticsearchInstancesInputBuilder {
 }
 impl DescribeReservedElasticsearchInstancesInputBuilder {
     /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.</p>
-    pub fn reserved_elasticsearch_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_elasticsearch_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_elasticsearch_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.</p>
-    pub fn set_reserved_elasticsearch_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_elasticsearch_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_elasticsearch_instance_id = input;
         self
     }
     /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.</p>
-    pub fn get_reserved_elasticsearch_instance_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_elasticsearch_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_elasticsearch_instance_id
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -97,16 +87,18 @@ impl DescribeReservedElasticsearchInstancesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstancesInput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesInput {
-                reserved_elasticsearch_instance_id: self.reserved_elasticsearch_instance_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                reserved_elasticsearch_instance_id: self.reserved_elasticsearch_instance_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

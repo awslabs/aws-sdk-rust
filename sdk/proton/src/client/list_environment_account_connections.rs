@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`environment_account_connections(Option<Vec<EnvironmentAccountConnectionSummary>>)`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput::environment_account_connections): <p>An array of environment account connections with details that's returned by Proton. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput::next_token): <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentAccountConnectionsError>`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError)
-    pub fn list_environment_account_connections(&self) -> crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsFluentBuilder{
+    pub fn list_environment_account_connections(
+        &self,
+    ) -> crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsFluentBuilder {
         crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

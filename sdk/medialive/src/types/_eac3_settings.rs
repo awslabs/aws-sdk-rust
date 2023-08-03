@@ -67,9 +67,7 @@ pub struct Eac3Settings {
 }
 impl Eac3Settings {
     /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
-    pub fn attenuation_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3AttenuationControl> {
+    pub fn attenuation_control(&self) -> ::std::option::Option<&crate::types::Eac3AttenuationControl> {
         self.attenuation_control.as_ref()
     }
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
@@ -129,9 +127,7 @@ impl Eac3Settings {
         self.metadata_control.as_ref()
     }
     /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
-    pub fn passthrough_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3PassthroughControl> {
+    pub fn passthrough_control(&self) -> ::std::option::Option<&crate::types::Eac3PassthroughControl> {
         self.passthrough_control.as_ref()
     }
     /// When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.
@@ -160,9 +156,7 @@ impl Eac3Settings {
 
 /// A builder for [`Eac3Settings`](crate::types::Eac3Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Eac3SettingsBuilder {
     pub(crate) attenuation_control: ::std::option::Option<crate::types::Eac3AttenuationControl>,
     pub(crate) bitrate: ::std::option::Option<f64>,
@@ -192,17 +186,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
-    pub fn set_attenuation_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AttenuationControl>,
-    ) -> Self {
+    pub fn set_attenuation_control(mut self, input: ::std::option::Option<crate::types::Eac3AttenuationControl>) -> Self {
         self.attenuation_control = input;
         self
     }
     /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
-    pub fn get_attenuation_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AttenuationControl> {
+    pub fn get_attenuation_control(&self) -> &::std::option::Option<crate::types::Eac3AttenuationControl> {
         &self.attenuation_control
     }
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
@@ -225,10 +214,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
-    pub fn set_bitstream_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3BitstreamMode>,
-    ) -> Self {
+    pub fn set_bitstream_mode(mut self, input: ::std::option::Option<crate::types::Eac3BitstreamMode>) -> Self {
         self.bitstream_mode = input;
         self
     }
@@ -242,10 +228,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Dolby Digital Plus coding mode. Determines number of channels.
-    pub fn set_coding_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3CodingMode>,
-    ) -> Self {
+    pub fn set_coding_mode(mut self, input: ::std::option::Option<crate::types::Eac3CodingMode>) -> Self {
         self.coding_mode = input;
         self
     }
@@ -259,10 +242,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to enabled, activates a DC highpass filter for all input channels.
-    pub fn set_dc_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3DcFilter>,
-    ) -> Self {
+    pub fn set_dc_filter(mut self, input: ::std::option::Option<crate::types::Eac3DcFilter>) -> Self {
         self.dc_filter = input;
         self
     }
@@ -318,10 +298,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When encoding 3/2 audio, setting to lfe enables the LFE channel
-    pub fn set_lfe_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3LfeControl>,
-    ) -> Self {
+    pub fn set_lfe_control(mut self, input: ::std::option::Option<crate::types::Eac3LfeControl>) -> Self {
         self.lfe_control = input;
         self
     }
@@ -335,10 +312,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with codingMode32 coding mode.
-    pub fn set_lfe_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3LfeFilter>,
-    ) -> Self {
+    pub fn set_lfe_filter(mut self, input: ::std::option::Option<crate::types::Eac3LfeFilter>) -> Self {
         self.lfe_filter = input;
         self
     }
@@ -408,17 +382,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    pub fn set_metadata_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3MetadataControl>,
-    ) -> Self {
+    pub fn set_metadata_control(mut self, input: ::std::option::Option<crate::types::Eac3MetadataControl>) -> Self {
         self.metadata_control = input;
         self
     }
     /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    pub fn get_metadata_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3MetadataControl> {
+    pub fn get_metadata_control(&self) -> &::std::option::Option<crate::types::Eac3MetadataControl> {
         &self.metadata_control
     }
     /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
@@ -427,17 +396,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
-    pub fn set_passthrough_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3PassthroughControl>,
-    ) -> Self {
+    pub fn set_passthrough_control(mut self, input: ::std::option::Option<crate::types::Eac3PassthroughControl>) -> Self {
         self.passthrough_control = input;
         self
     }
     /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
-    pub fn get_passthrough_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3PassthroughControl> {
+    pub fn get_passthrough_control(&self) -> &::std::option::Option<crate::types::Eac3PassthroughControl> {
         &self.passthrough_control
     }
     /// When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.
@@ -446,10 +410,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.
-    pub fn set_phase_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3PhaseControl>,
-    ) -> Self {
+    pub fn set_phase_control(mut self, input: ::std::option::Option<crate::types::Eac3PhaseControl>) -> Self {
         self.phase_control = input;
         self
     }
@@ -463,10 +424,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Stereo downmix preference. Only used for 3/2 coding mode.
-    pub fn set_stereo_downmix(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3StereoDownmix>,
-    ) -> Self {
+    pub fn set_stereo_downmix(mut self, input: ::std::option::Option<crate::types::Eac3StereoDownmix>) -> Self {
         self.stereo_downmix = input;
         self
     }
@@ -480,10 +438,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
-    pub fn set_surround_ex_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3SurroundExMode>,
-    ) -> Self {
+    pub fn set_surround_ex_mode(mut self, input: ::std::option::Option<crate::types::Eac3SurroundExMode>) -> Self {
         self.surround_ex_mode = input;
         self
     }
@@ -497,10 +452,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
-    pub fn set_surround_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3SurroundMode>,
-    ) -> Self {
+    pub fn set_surround_mode(mut self, input: ::std::option::Option<crate::types::Eac3SurroundMode>) -> Self {
         self.surround_mode = input;
         self
     }

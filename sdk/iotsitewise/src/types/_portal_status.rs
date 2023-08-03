@@ -30,9 +30,7 @@ impl PortalStatus {
 
 /// A builder for [`PortalStatus`](crate::types::PortalStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortalStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::PortalState>,
     pub(crate) error: ::std::option::Option<crate::types::MonitorErrorDetails>,
@@ -58,10 +56,7 @@ impl PortalStatusBuilder {
         self
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorErrorDetails>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::MonitorErrorDetails>) -> Self {
         self.error = input;
         self
     }

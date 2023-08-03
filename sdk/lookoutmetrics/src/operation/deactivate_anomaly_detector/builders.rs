@@ -26,7 +26,7 @@ impl DeactivateAnomalyDetectorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeactivateAnomalyDetectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deactivate_anomaly_detector::builders::DeactivateAnomalyDetectorInputBuilder,
+    inner: crate::operation::deactivate_anomaly_detector::builders::DeactivateAnomalyDetectorInputBuilder,
 }
 impl DeactivateAnomalyDetectorFluentBuilder {
     /// Creates a new `DeactivateAnomalyDetector`.
@@ -37,7 +37,7 @@ impl DeactivateAnomalyDetectorFluentBuilder {
         }
     }
     /// Access the DeactivateAnomalyDetector as a reference.
-    pub fn as_input(&self) -> &crate::operation::deactivate_anomaly_detector::builders::DeactivateAnomalyDetectorInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deactivate_anomaly_detector::builders::DeactivateAnomalyDetectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeactivateAnomalyDetectorFluentBuilder {
             crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeactivateAnomalyDetectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeactivateAnomalyDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeactivateAnomalyDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeactivateAnomalyDetectorFluentBuilder {
             crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }

@@ -15,34 +15,25 @@ impl StopBulkDeploymentInput {
 }
 impl StopBulkDeploymentInput {
     /// Creates a new builder-style object to manufacture [`StopBulkDeploymentInput`](crate::operation::stop_bulk_deployment::StopBulkDeploymentInput).
-    pub fn builder(
-    ) -> crate::operation::stop_bulk_deployment::builders::StopBulkDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::stop_bulk_deployment::builders::StopBulkDeploymentInputBuilder {
         crate::operation::stop_bulk_deployment::builders::StopBulkDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`StopBulkDeploymentInput`](crate::operation::stop_bulk_deployment::StopBulkDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopBulkDeploymentInputBuilder {
     pub(crate) bulk_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl StopBulkDeploymentInputBuilder {
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the bulk deployment.
-    pub fn set_bulk_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bulk_deployment_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl StopBulkDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`StopBulkDeploymentInput`](crate::operation::stop_bulk_deployment::StopBulkDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_bulk_deployment::StopBulkDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_bulk_deployment::StopBulkDeploymentInput {
-                bulk_deployment_id: self.bulk_deployment_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_bulk_deployment::StopBulkDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_bulk_deployment::StopBulkDeploymentInput {
+            bulk_deployment_id: self.bulk_deployment_id,
+        })
     }
 }

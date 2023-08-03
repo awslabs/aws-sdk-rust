@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateRepositoryDescriptionOutput {
 }
 impl UpdateRepositoryDescriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRepositoryDescriptionOutput`](crate::operation::update_repository_description::UpdateRepositoryDescriptionOutput).
-    pub fn builder() -> crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionOutputBuilder{
+    pub fn builder() -> crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionOutputBuilder {
         crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRepositoryDescriptionOutput`](crate::operation::update_repository_description::UpdateRepositoryDescriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRepositoryDescriptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateRepositoryDescriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRepositoryDescriptionOutput`](crate::operation::update_repository_description::UpdateRepositoryDescriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_repository_description::UpdateRepositoryDescriptionOutput {
+    pub fn build(self) -> crate::operation::update_repository_description::UpdateRepositoryDescriptionOutput {
         crate::operation::update_repository_description::UpdateRepositoryDescriptionOutput {
             _request_id: self._request_id,
         }

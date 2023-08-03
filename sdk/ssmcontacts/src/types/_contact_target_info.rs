@@ -30,9 +30,7 @@ impl ContactTargetInfo {
 
 /// A builder for [`ContactTargetInfo`](crate::types::ContactTargetInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactTargetInfoBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_essential: ::std::option::Option<bool>,

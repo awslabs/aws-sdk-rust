@@ -10,10 +10,7 @@ impl UpdateLoginProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_login_profile::UpdateLoginProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_login_profile::UpdateLoginProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_login_profile::UpdateLoginProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_login_profile();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateLoginProfileFluentBuilder {
         }
     }
     /// Access the UpdateLoginProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_login_profile::builders::UpdateLoginProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_login_profile::builders::UpdateLoginProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateLoginProfileFluentBuilder {
             crate::operation::update_login_profile::UpdateLoginProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_login_profile::UpdateLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_login_profile::UpdateLoginProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateLoginProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateLoginProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_login_profile::UpdateLoginProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_login_profile::UpdateLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_login_profile::UpdateLoginProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateLoginProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_login_profile::UpdateLoginProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_login_profile::UpdateLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_login_profile::UpdateLoginProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl UpdateLoginProfileFluentBuilder {
             crate::operation::update_login_profile::UpdateLoginProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_login_profile::UpdateLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_login_profile::UpdateLoginProfileError>,
     > {
         self.customize_middleware().await
     }

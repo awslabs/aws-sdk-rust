@@ -15,17 +15,14 @@ impl GetChangeTokenStatusInput {
 }
 impl GetChangeTokenStatusInput {
     /// Creates a new builder-style object to manufacture [`GetChangeTokenStatusInput`](crate::operation::get_change_token_status::GetChangeTokenStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_change_token_status::builders::GetChangeTokenStatusInputBuilder {
+    pub fn builder() -> crate::operation::get_change_token_status::builders::GetChangeTokenStatusInputBuilder {
         crate::operation::get_change_token_status::builders::GetChangeTokenStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetChangeTokenStatusInput`](crate::operation::get_change_token_status::GetChangeTokenStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChangeTokenStatusInputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl GetChangeTokenStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetChangeTokenStatusInput`](crate::operation::get_change_token_status::GetChangeTokenStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_change_token_status::GetChangeTokenStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_change_token_status::GetChangeTokenStatusInput {
-                change_token: self.change_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_change_token_status::GetChangeTokenStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_change_token_status::GetChangeTokenStatusInput {
+            change_token: self.change_token,
+        })
     }
 }

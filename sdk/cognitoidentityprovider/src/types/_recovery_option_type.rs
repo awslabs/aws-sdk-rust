@@ -30,9 +30,7 @@ impl RecoveryOptionType {
 
 /// A builder for [`RecoveryOptionType`](crate::types::RecoveryOptionType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecoveryOptionTypeBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<crate::types::RecoveryOptionNameType>,
@@ -58,10 +56,7 @@ impl RecoveryOptionTypeBuilder {
         self
     }
     /// <p>The recovery method for a user.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::RecoveryOptionNameType>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::RecoveryOptionNameType>) -> Self {
         self.name = input;
         self
     }

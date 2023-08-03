@@ -24,9 +24,7 @@ impl UpdateLoggingConfigurationOutput {
         self.firewall_name.as_deref()
     }
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
@@ -37,16 +35,14 @@ impl ::aws_http::request_id::RequestId for UpdateLoggingConfigurationOutput {
 }
 impl UpdateLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationOutput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput).
-    pub fn builder() -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationOutputBuilder {
         crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLoggingConfigurationOutput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationOutputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +65,12 @@ impl UpdateLoggingConfigurationOutputBuilder {
         &self.firewall_arn
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -94,17 +84,12 @@ impl UpdateLoggingConfigurationOutputBuilder {
         self
     }
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -117,9 +102,7 @@ impl UpdateLoggingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLoggingConfigurationOutput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput {
         crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput {
             firewall_arn: self.firewall_arn,
             firewall_name: self.firewall_name,

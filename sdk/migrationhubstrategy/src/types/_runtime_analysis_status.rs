@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RuntimeAnalysisStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for RuntimeAnalysisStatus {
             "ANALYSIS_STARTED" => RuntimeAnalysisStatus::AnalysisStarted,
             "ANALYSIS_SUCCESS" => RuntimeAnalysisStatus::AnalysisSuccess,
             "ANALYSIS_TO_BE_SCHEDULED" => RuntimeAnalysisStatus::AnalysisToBeScheduled,
-            other => RuntimeAnalysisStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RuntimeAnalysisStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl RuntimeAnalysisStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANALYSIS_FAILED",
-            "ANALYSIS_STARTED",
-            "ANALYSIS_SUCCESS",
-            "ANALYSIS_TO_BE_SCHEDULED",
-        ]
+        &["ANALYSIS_FAILED", "ANALYSIS_STARTED", "ANALYSIS_SUCCESS", "ANALYSIS_TO_BE_SCHEDULED"]
     }
 }
 impl ::std::convert::AsRef<str> for RuntimeAnalysisStatus {

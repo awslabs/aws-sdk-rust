@@ -22,34 +22,26 @@ impl DeletePullThroughCacheRuleInput {
 }
 impl DeletePullThroughCacheRuleInput {
     /// Creates a new builder-style object to manufacture [`DeletePullThroughCacheRuleInput`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput).
-    pub fn builder() -> crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder{
+    pub fn builder() -> crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder {
         crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePullThroughCacheRuleInput`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePullThroughCacheRuleInputBuilder {
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePullThroughCacheRuleInputBuilder {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
-    pub fn ecr_repository_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecr_repository_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
-    pub fn set_ecr_repository_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecr_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ecr_repository_prefix = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeletePullThroughCacheRuleInputBuilder {
         crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput {
-                ecr_repository_prefix: self.ecr_repository_prefix,
-                registry_id: self.registry_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput {
+            ecr_repository_prefix: self.ecr_repository_prefix,
+            registry_id: self.registry_id,
+        })
     }
 }

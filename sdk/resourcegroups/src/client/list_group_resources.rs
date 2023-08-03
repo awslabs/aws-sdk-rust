@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_group_resources::ListGroupResourcesOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     ///   - [`query_errors(Option<Vec<QueryError>>)`](crate::operation::list_group_resources::ListGroupResourcesOutput::query_errors): <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
     /// - On failure, responds with [`SdkError<ListGroupResourcesError>`](crate::operation::list_group_resources::ListGroupResourcesError)
-    pub fn list_group_resources(
-        &self,
-    ) -> crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder {
-        crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_group_resources(&self) -> crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder {
+        crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::new(self.handle.clone())
     }
 }

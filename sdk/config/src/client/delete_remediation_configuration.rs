@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`resource_type(impl ::std::convert::Into<String>)`](crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationFluentBuilder::resource_type) / [`set_resource_type(Option<String>)`](crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationFluentBuilder::set_resource_type): <p>The type of a resource.</p>
     /// - On success, responds with [`DeleteRemediationConfigurationOutput`](crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteRemediationConfigurationError>`](crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError)
-    pub fn delete_remediation_configuration(&self) -> crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationFluentBuilder{
+    pub fn delete_remediation_configuration(
+        &self,
+    ) -> crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationFluentBuilder {
         crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

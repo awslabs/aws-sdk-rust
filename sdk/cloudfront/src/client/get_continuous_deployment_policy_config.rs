@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`continuous_deployment_policy_config(Option<ContinuousDeploymentPolicyConfig>)`](crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigOutput::continuous_deployment_policy_config): <p>Contains the configuration for a continuous deployment policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
     /// - On failure, responds with [`SdkError<GetContinuousDeploymentPolicyConfigError>`](crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError)
-    pub fn get_continuous_deployment_policy_config(&self) -> crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigFluentBuilder{
-        crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigFluentBuilder::new(self.handle.clone())
+    pub fn get_continuous_deployment_policy_config(
+        &self,
+    ) -> crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigFluentBuilder {
+        crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

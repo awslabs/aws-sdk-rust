@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`association_id(Option<String>)`](crate::operation::associate_route_table::AssociateRouteTableOutput::association_id): <p>The route table association ID. This ID is required for disassociating the route table.</p>
     ///   - [`association_state(Option<RouteTableAssociationState>)`](crate::operation::associate_route_table::AssociateRouteTableOutput::association_state): <p>The state of the association.</p>
     /// - On failure, responds with [`SdkError<AssociateRouteTableError>`](crate::operation::associate_route_table::AssociateRouteTableError)
-    pub fn associate_route_table(
-        &self,
-    ) -> crate::operation::associate_route_table::builders::AssociateRouteTableFluentBuilder {
-        crate::operation::associate_route_table::builders::AssociateRouteTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_route_table(&self) -> crate::operation::associate_route_table::builders::AssociateRouteTableFluentBuilder {
+        crate::operation::associate_route_table::builders::AssociateRouteTableFluentBuilder::new(self.handle.clone())
     }
 }

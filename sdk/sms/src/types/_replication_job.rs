@@ -96,9 +96,7 @@ impl ReplicationJob {
         self.run_once
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn next_replication_run_start_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn next_replication_run_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.next_replication_run_start_time.as_ref()
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
@@ -158,9 +156,7 @@ impl ReplicationJob {
 
 /// A builder for [`ReplicationJob`](crate::types::ReplicationJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationJobBuilder {
     pub(crate) replication_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
@@ -179,23 +175,16 @@ pub struct ReplicationJobBuilder {
     pub(crate) number_of_recent_amis_to_keep: ::std::option::Option<i32>,
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_run_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>>,
+    pub(crate) replication_run_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>>,
 }
 impl ReplicationJobBuilder {
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_job_id = input;
         self
     }
@@ -223,10 +212,7 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>The type of server.</p>
-    pub fn set_server_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerType>,
-    ) -> Self {
+    pub fn set_server_type(mut self, input: ::std::option::Option<crate::types::ServerType>) -> Self {
         self.server_type = input;
         self
     }
@@ -254,17 +240,12 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>The seed replication time.</p>
-    pub fn set_seed_replication_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_seed_replication_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.seed_replication_time = input;
         self
     }
     /// <p>The seed replication time.</p>
-    pub fn get_seed_replication_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_seed_replication_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.seed_replication_time
     }
     /// <p>The time between consecutive replication runs, in hours.</p>
@@ -301,17 +282,12 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn set_next_replication_run_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_next_replication_run_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.next_replication_run_start_time = input;
         self
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn get_next_replication_run_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_next_replication_run_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.next_replication_run_start_time
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
@@ -320,10 +296,7 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    pub fn set_license_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseType>,
-    ) -> Self {
+    pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
         self.license_type = input;
         self
     }
@@ -346,18 +319,12 @@ impl ReplicationJobBuilder {
         &self.role_name
     }
     /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
-    pub fn latest_ami_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_ami_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
-    pub fn set_latest_ami_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_ami_id = input;
         self
     }
@@ -371,10 +338,7 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>The state of the replication job.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationJobState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReplicationJobState>) -> Self {
         self.state = input;
         self
     }
@@ -383,18 +347,12 @@ impl ReplicationJobBuilder {
         &self.state
     }
     /// <p>The description of the current status of the replication job.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the current status of the replication job.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -491,17 +449,12 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>Information about the replication runs.</p>
-    pub fn set_replication_run_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>>,
-    ) -> Self {
+    pub fn set_replication_run_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>>) -> Self {
         self.replication_run_list = input;
         self
     }
     /// <p>Information about the replication runs.</p>
-    pub fn get_replication_run_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>> {
+    pub fn get_replication_run_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>> {
         &self.replication_run_list
     }
     /// Consumes the builder and constructs a [`ReplicationJob`](crate::types::ReplicationJob).

@@ -38,13 +38,7 @@
 /// M2ts Audio Stream Type
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsAudioStreamType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsAudioStreamType {
         match s {
             "ATSC" => M2tsAudioStreamType::Atsc,
             "DVB" => M2tsAudioStreamType::Dvb,
-            other => M2tsAudioStreamType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => M2tsAudioStreamType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

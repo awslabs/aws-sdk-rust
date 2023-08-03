@@ -26,8 +26,7 @@ impl ListTestRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTestRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_test_recommendations::builders::ListTestRecommendationsInputBuilder,
+    inner: crate::operation::list_test_recommendations::builders::ListTestRecommendationsInputBuilder,
 }
 impl ListTestRecommendationsFluentBuilder {
     /// Creates a new `ListTestRecommendations`.
@@ -38,10 +37,7 @@ impl ListTestRecommendationsFluentBuilder {
         }
     }
     /// Access the ListTestRecommendations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_test_recommendations::builders::ListTestRecommendationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_test_recommendations::builders::ListTestRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListTestRecommendationsFluentBuilder {
             crate::operation::list_test_recommendations::ListTestRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_recommendations::ListTestRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_recommendations::ListTestRecommendationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListTestRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListTestRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_recommendations::ListTestRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_recommendations::ListTestRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_recommendations::ListTestRecommendationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListTestRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_recommendations::ListTestRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_recommendations::ListTestRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_recommendations::ListTestRecommendationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListTestRecommendationsFluentBuilder {
             crate::operation::list_test_recommendations::ListTestRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_recommendations::ListTestRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_recommendations::ListTestRecommendationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_test_recommendations::paginator::ListTestRecommendationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_test_recommendations::paginator::ListTestRecommendationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_test_recommendations::paginator::ListTestRecommendationsPaginator {
         crate::operation::list_test_recommendations::paginator::ListTestRecommendationsPaginator::new(self.handle, self.inner)
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -162,18 +144,12 @@ impl ListTestRecommendationsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_arn(input);
         self
     }

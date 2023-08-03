@@ -15,35 +15,25 @@ impl DeleteAssessmentTargetInput {
 }
 impl DeleteAssessmentTargetInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentTargetInput`](crate::operation::delete_assessment_target::DeleteAssessmentTargetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_assessment_target::builders::DeleteAssessmentTargetInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_assessment_target::builders::DeleteAssessmentTargetInputBuilder {
         crate::operation::delete_assessment_target::builders::DeleteAssessmentTargetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssessmentTargetInput`](crate::operation::delete_assessment_target::DeleteAssessmentTargetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssessmentTargetInputBuilder {
     pub(crate) assessment_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssessmentTargetInputBuilder {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
-    pub fn assessment_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
-    pub fn set_assessment_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_target_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteAssessmentTargetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssessmentTargetInput`](crate::operation::delete_assessment_target::DeleteAssessmentTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_assessment_target::DeleteAssessmentTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_assessment_target::DeleteAssessmentTargetInput {
-                assessment_target_arn: self.assessment_target_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_assessment_target::DeleteAssessmentTargetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_assessment_target::DeleteAssessmentTargetInput {
+            assessment_target_arn: self.assessment_target_arn,
+        })
     }
 }

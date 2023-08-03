@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAccessLogSubscriptionsOutput {
 }
 impl ListAccessLogSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessLogSubscriptionsOutput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput).
-    pub fn builder() -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsOutputBuilder {
         crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessLogSubscriptionsOutput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessLogSubscriptionsOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListAccessLogSubscriptionsOutputBuilder {
         self
     }
     /// <p>The access log subscriptions.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The access log subscriptions.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>> {
         &self.items
     }
     /// <p>A pagination token for the next page of results.</p>
@@ -94,9 +86,7 @@ impl ListAccessLogSubscriptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessLogSubscriptionsOutput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput {
+    pub fn build(self) -> crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput {
         crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput {
             items: self.items,
             next_token: self.next_token,

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RollbackStackOutput`](crate::operation::rollback_stack::RollbackStackOutput) with field(s):
     ///   - [`stack_id(Option<String>)`](crate::operation::rollback_stack::RollbackStackOutput::stack_id): <p>Unique identifier of the stack.</p>
     /// - On failure, responds with [`SdkError<RollbackStackError>`](crate::operation::rollback_stack::RollbackStackError)
-    pub fn rollback_stack(
-        &self,
-    ) -> crate::operation::rollback_stack::builders::RollbackStackFluentBuilder {
-        crate::operation::rollback_stack::builders::RollbackStackFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn rollback_stack(&self) -> crate::operation::rollback_stack::builders::RollbackStackFluentBuilder {
+        crate::operation::rollback_stack::builders::RollbackStackFluentBuilder::new(self.handle.clone())
     }
 }

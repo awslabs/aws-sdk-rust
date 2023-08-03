@@ -37,9 +37,7 @@ impl DeleteResourceConfigFluentBuilder {
         }
     }
     /// Access the DeleteResourceConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_resource_config::builders::DeleteResourceConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_resource_config::builders::DeleteResourceConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteResourceConfigFluentBuilder {
             crate::operation::delete_resource_config::DeleteResourceConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_config::DeleteResourceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_config::DeleteResourceConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteResourceConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteResourceConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_config::DeleteResourceConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_config::DeleteResourceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_config::DeleteResourceConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteResourceConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_config::DeleteResourceConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_config::DeleteResourceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_config::DeleteResourceConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteResourceConfigFluentBuilder {
             crate::operation::delete_resource_config::DeleteResourceConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_config::DeleteResourceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_config::DeleteResourceConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The type of the resource.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

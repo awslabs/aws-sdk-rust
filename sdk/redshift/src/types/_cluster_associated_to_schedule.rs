@@ -17,9 +17,7 @@ impl ClusterAssociatedToSchedule {
         self.cluster_identifier.as_deref()
     }
     /// <p></p>
-    pub fn schedule_association_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduleState> {
+    pub fn schedule_association_state(&self) -> ::std::option::Option<&crate::types::ScheduleState> {
         self.schedule_association_state.as_ref()
     }
 }
@@ -32,27 +30,19 @@ impl ClusterAssociatedToSchedule {
 
 /// A builder for [`ClusterAssociatedToSchedule`](crate::types::ClusterAssociatedToSchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterAssociatedToScheduleBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_association_state: ::std::option::Option<crate::types::ScheduleState>,
 }
 impl ClusterAssociatedToScheduleBuilder {
     /// <p></p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -66,17 +56,12 @@ impl ClusterAssociatedToScheduleBuilder {
         self
     }
     /// <p></p>
-    pub fn set_schedule_association_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleState>,
-    ) -> Self {
+    pub fn set_schedule_association_state(mut self, input: ::std::option::Option<crate::types::ScheduleState>) -> Self {
         self.schedule_association_state = input;
         self
     }
     /// <p></p>
-    pub fn get_schedule_association_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleState> {
+    pub fn get_schedule_association_state(&self) -> &::std::option::Option<crate::types::ScheduleState> {
         &self.schedule_association_state
     }
     /// Consumes the builder and constructs a [`ClusterAssociatedToSchedule`](crate::types::ClusterAssociatedToSchedule).

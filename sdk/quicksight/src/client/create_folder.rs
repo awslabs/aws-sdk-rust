@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`folder_id(Option<String>)`](crate::operation::create_folder::CreateFolderOutput::folder_id): <p>The folder ID for the newly created folder.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::create_folder::CreateFolderOutput::request_id): <p>The request ID for the newly created folder.</p>
     /// - On failure, responds with [`SdkError<CreateFolderError>`](crate::operation::create_folder::CreateFolderError)
-    pub fn create_folder(
-        &self,
-    ) -> crate::operation::create_folder::builders::CreateFolderFluentBuilder {
-        crate::operation::create_folder::builders::CreateFolderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_folder(&self) -> crate::operation::create_folder::builders::CreateFolderFluentBuilder {
+        crate::operation::create_folder::builders::CreateFolderFluentBuilder::new(self.handle.clone())
     }
 }

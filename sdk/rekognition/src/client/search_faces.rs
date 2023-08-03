@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`face_matches(Option<Vec<FaceMatch>>)`](crate::operation::search_faces::SearchFacesOutput::face_matches): <p>An array of faces that matched the input face, along with the confidence in the match.</p>
     ///   - [`face_model_version(Option<String>)`](crate::operation::search_faces::SearchFacesOutput::face_model_version): <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     /// - On failure, responds with [`SdkError<SearchFacesError>`](crate::operation::search_faces::SearchFacesError)
-    pub fn search_faces(
-        &self,
-    ) -> crate::operation::search_faces::builders::SearchFacesFluentBuilder {
+    pub fn search_faces(&self) -> crate::operation::search_faces::builders::SearchFacesFluentBuilder {
         crate::operation::search_faces::builders::SearchFacesFluentBuilder::new(self.handle.clone())
     }
 }

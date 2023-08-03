@@ -5,8 +5,7 @@
 pub struct ListBillingGroupsOutput {
     /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
     #[doc(hidden)]
-    pub billing_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>>,
+    pub billing_groups: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>>,
     /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListBillingGroupsOutput {
 }
 impl ListBillingGroupsOutput {
     /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
-    pub fn billing_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BillingGroupListElement]> {
+    pub fn billing_groups(&self) -> ::std::option::Option<&[crate::types::BillingGroupListElement]> {
         self.billing_groups.as_deref()
     }
     /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListBillingGroupsOutput {
 }
 impl ListBillingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListBillingGroupsOutput`](crate::operation::list_billing_groups::ListBillingGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_billing_groups::builders::ListBillingGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_billing_groups::builders::ListBillingGroupsOutputBuilder {
         crate::operation::list_billing_groups::builders::ListBillingGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBillingGroupsOutput`](crate::operation::list_billing_groups::ListBillingGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBillingGroupsOutputBuilder {
-    pub(crate) billing_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>>,
+    pub(crate) billing_groups: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListBillingGroupsOutputBuilder {
         self
     }
     /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
-    pub fn set_billing_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>>,
-    ) -> Self {
+    pub fn set_billing_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>>) -> Self {
         self.billing_groups = input;
         self
     }
     /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
-    pub fn get_billing_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>> {
+    pub fn get_billing_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>> {
         &self.billing_groups
     }
     /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>

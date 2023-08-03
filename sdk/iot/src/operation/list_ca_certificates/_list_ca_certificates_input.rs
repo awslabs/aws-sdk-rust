@@ -37,17 +37,14 @@ impl ListCaCertificatesInput {
 }
 impl ListCaCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ListCaCertificatesInput`](crate::operation::list_ca_certificates::ListCaCertificatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_ca_certificates::builders::ListCaCertificatesInputBuilder {
+    pub fn builder() -> crate::operation::list_ca_certificates::builders::ListCaCertificatesInputBuilder {
         crate::operation::list_ca_certificates::builders::ListCaCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCaCertificatesInput`](crate::operation::list_ca_certificates::ListCaCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCaCertificatesInputBuilder {
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -98,18 +95,12 @@ impl ListCaCertificatesInputBuilder {
         &self.ascending_order
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -120,17 +111,12 @@ impl ListCaCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`ListCaCertificatesInput`](crate::operation::list_ca_certificates::ListCaCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ca_certificates::ListCaCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_ca_certificates::ListCaCertificatesInput {
-                page_size: self.page_size,
-                marker: self.marker,
-                ascending_order: self.ascending_order,
-                template_name: self.template_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_ca_certificates::ListCaCertificatesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_ca_certificates::ListCaCertificatesInput {
+            page_size: self.page_size,
+            marker: self.marker,
+            ascending_order: self.ascending_order,
+            template_name: self.template_name,
+        })
     }
 }

@@ -22,16 +22,14 @@ impl CreateReturnShippingLabelInput {
 }
 impl CreateReturnShippingLabelInput {
     /// Creates a new builder-style object to manufacture [`CreateReturnShippingLabelInput`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput).
-    pub fn builder() -> crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder{
+    pub fn builder() -> crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder {
         crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReturnShippingLabelInput`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReturnShippingLabelInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) shipping_option: ::std::option::Option<crate::types::ShippingOption>,
@@ -57,10 +55,7 @@ impl CreateReturnShippingLabelInputBuilder {
         self
     }
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    pub fn set_shipping_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ShippingOption>,
-    ) -> Self {
+    pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.shipping_option = input;
         self
     }
@@ -75,11 +70,9 @@ impl CreateReturnShippingLabelInputBuilder {
         crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput {
-                job_id: self.job_id,
-                shipping_option: self.shipping_option,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput {
+            job_id: self.job_id,
+            shipping_option: self.shipping_option,
+        })
     }
 }

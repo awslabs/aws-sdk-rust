@@ -48,9 +48,7 @@ impl ChannelInfo {
         self.creation_time.as_ref()
     }
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn single_master_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SingleMasterConfiguration> {
+    pub fn single_master_configuration(&self) -> ::std::option::Option<&crate::types::SingleMasterConfiguration> {
         self.single_master_configuration.as_ref()
     }
     /// <p>The current version of the signaling channel.</p>
@@ -67,17 +65,14 @@ impl ChannelInfo {
 
 /// A builder for [`ChannelInfo`](crate::types::ChannelInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelInfoBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_type: ::std::option::Option<crate::types::ChannelType>,
     pub(crate) channel_status: ::std::option::Option<crate::types::Status>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) single_master_configuration:
-        ::std::option::Option<crate::types::SingleMasterConfiguration>,
+    pub(crate) single_master_configuration: ::std::option::Option<crate::types::SingleMasterConfiguration>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl ChannelInfoBuilder {
@@ -115,10 +110,7 @@ impl ChannelInfoBuilder {
         self
     }
     /// <p>The type of the signaling channel.</p>
-    pub fn set_channel_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelType>,
-    ) -> Self {
+    pub fn set_channel_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
         self.channel_type = input;
         self
     }
@@ -132,10 +124,7 @@ impl ChannelInfoBuilder {
         self
     }
     /// <p>Current status of the signaling channel.</p>
-    pub fn set_channel_status(
-        mut self,
-        input: ::std::option::Option<crate::types::Status>,
-    ) -> Self {
+    pub fn set_channel_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.channel_status = input;
         self
     }
@@ -149,10 +138,7 @@ impl ChannelInfoBuilder {
         self
     }
     /// <p>The time at which the signaling channel was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -161,25 +147,17 @@ impl ChannelInfoBuilder {
         &self.creation_time
     }
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn single_master_configuration(
-        mut self,
-        input: crate::types::SingleMasterConfiguration,
-    ) -> Self {
+    pub fn single_master_configuration(mut self, input: crate::types::SingleMasterConfiguration) -> Self {
         self.single_master_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn set_single_master_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleMasterConfiguration>,
-    ) -> Self {
+    pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
         self.single_master_configuration = input;
         self
     }
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn get_single_master_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
+    pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
         &self.single_master_configuration
     }
     /// <p>The current version of the signaling channel.</p>

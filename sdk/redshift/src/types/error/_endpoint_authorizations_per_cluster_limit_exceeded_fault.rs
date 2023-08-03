@@ -27,35 +27,27 @@ impl ::std::fmt::Display for EndpointAuthorizationsPerClusterLimitExceededFault 
     }
 }
 impl ::std::error::Error for EndpointAuthorizationsPerClusterLimitExceededFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::EndpointAuthorizationsPerClusterLimitExceededFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::EndpointAuthorizationsPerClusterLimitExceededFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for EndpointAuthorizationsPerClusterLimitExceededFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for EndpointAuthorizationsPerClusterLimitExceededFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl EndpointAuthorizationsPerClusterLimitExceededFault {
     /// Creates a new builder-style object to manufacture [`EndpointAuthorizationsPerClusterLimitExceededFault`](crate::types::error::EndpointAuthorizationsPerClusterLimitExceededFault).
-    pub fn builder(
-    ) -> crate::types::error::builders::EndpointAuthorizationsPerClusterLimitExceededFaultBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::EndpointAuthorizationsPerClusterLimitExceededFaultBuilder {
         crate::types::error::builders::EndpointAuthorizationsPerClusterLimitExceededFaultBuilder::default()
     }
 }
 
 /// A builder for [`EndpointAuthorizationsPerClusterLimitExceededFault`](crate::types::error::EndpointAuthorizationsPerClusterLimitExceededFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointAuthorizationsPerClusterLimitExceededFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +74,7 @@ impl EndpointAuthorizationsPerClusterLimitExceededFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

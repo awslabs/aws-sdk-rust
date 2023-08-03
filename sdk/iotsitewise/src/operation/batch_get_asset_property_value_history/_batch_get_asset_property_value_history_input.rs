@@ -5,9 +5,7 @@
 pub struct BatchGetAssetPropertyValueHistoryInput {
     /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
     #[doc(hidden)]
-    pub entries: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>,
-    >,
+    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>>,
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +19,7 @@ pub struct BatchGetAssetPropertyValueHistoryInput {
 }
 impl BatchGetAssetPropertyValueHistoryInput {
     /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchGetAssetPropertyValueHistoryEntry]> {
+    pub fn entries(&self) -> ::std::option::Option<&[crate::types::BatchGetAssetPropertyValueHistoryEntry]> {
         self.entries.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -41,20 +37,16 @@ impl BatchGetAssetPropertyValueHistoryInput {
 }
 impl BatchGetAssetPropertyValueHistoryInput {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryInput`](crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryInput).
-    pub fn builder() -> crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryInputBuilder {
         crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetAssetPropertyValueHistoryInput`](crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryInputBuilder {
-    pub(crate) entries: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>,
-    >,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -71,20 +63,12 @@ impl BatchGetAssetPropertyValueHistoryInputBuilder {
         self
     }
     /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>,
-        >,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>>
-    {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>> {
         &self.entries
     }
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -128,16 +112,18 @@ impl BatchGetAssetPropertyValueHistoryInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryInput`](crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryInput {
-                entries: self.entries
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                entries: self.entries,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

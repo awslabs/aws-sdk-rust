@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`project_id(Option<String>)`](crate::operation::create_project::CreateProjectOutput::project_id): <p>The ID of the project.</p>
     ///   - [`project_arn(Option<String>)`](crate::operation::create_project::CreateProjectOutput::project_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::operation::create_project::CreateProjectError)
-    pub fn create_project(
-        &self,
-    ) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
-        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_project(&self) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
+        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(self.handle.clone())
     }
 }

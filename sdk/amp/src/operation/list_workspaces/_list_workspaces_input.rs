@@ -37,9 +37,7 @@ impl ListWorkspacesInput {
 
 /// A builder for [`ListWorkspacesInput`](crate::operation::list_workspaces::ListWorkspacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkspacesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -91,10 +89,7 @@ impl ListWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkspacesInput`](crate::operation::list_workspaces::ListWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workspaces::ListWorkspacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_workspaces::ListWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workspaces::ListWorkspacesInput {
             next_token: self.next_token,
             alias: self.alias,

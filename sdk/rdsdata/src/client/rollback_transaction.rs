@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RollbackTransactionOutput`](crate::operation::rollback_transaction::RollbackTransactionOutput) with field(s):
     ///   - [`transaction_status(Option<String>)`](crate::operation::rollback_transaction::RollbackTransactionOutput::transaction_status): <p>The status of the rollback operation.</p>
     /// - On failure, responds with [`SdkError<RollbackTransactionError>`](crate::operation::rollback_transaction::RollbackTransactionError)
-    pub fn rollback_transaction(
-        &self,
-    ) -> crate::operation::rollback_transaction::builders::RollbackTransactionFluentBuilder {
-        crate::operation::rollback_transaction::builders::RollbackTransactionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn rollback_transaction(&self) -> crate::operation::rollback_transaction::builders::RollbackTransactionFluentBuilder {
+        crate::operation::rollback_transaction::builders::RollbackTransactionFluentBuilder::new(self.handle.clone())
     }
 }

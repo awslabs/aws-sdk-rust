@@ -22,9 +22,7 @@ impl DescribeStudioInput {
 
 /// A builder for [`DescribeStudioInput`](crate::operation::describe_studio::DescribeStudioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStudioInputBuilder {
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeStudioInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStudioInput`](crate::operation::describe_studio::DescribeStudioInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_studio::DescribeStudioInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_studio::DescribeStudioInput {
-            studio_id: self.studio_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_studio::DescribeStudioInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_studio::DescribeStudioInput { studio_id: self.studio_id })
     }
 }

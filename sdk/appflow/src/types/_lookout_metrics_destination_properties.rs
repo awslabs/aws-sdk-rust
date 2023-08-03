@@ -13,9 +13,7 @@ impl LookoutMetricsDestinationProperties {
 
 /// A builder for [`LookoutMetricsDestinationProperties`](crate::types::LookoutMetricsDestinationProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LookoutMetricsDestinationPropertiesBuilder {}
 impl LookoutMetricsDestinationPropertiesBuilder {
     /// Consumes the builder and constructs a [`LookoutMetricsDestinationProperties`](crate::types::LookoutMetricsDestinationProperties).

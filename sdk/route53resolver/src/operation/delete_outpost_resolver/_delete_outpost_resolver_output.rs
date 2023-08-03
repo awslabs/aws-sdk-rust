@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteOutpostResolverOutput {
 }
 impl DeleteOutpostResolverOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOutpostResolverOutput`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverOutputBuilder {
         crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOutpostResolverOutput`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOutpostResolverOutputBuilder {
     pub(crate) outpost_resolver: ::std::option::Option<crate::types::OutpostResolver>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteOutpostResolverOutputBuilder {
         self
     }
     /// <p>Information about the <code>DeleteOutpostResolver</code> request, including the status of the request.</p>
-    pub fn set_outpost_resolver(
-        mut self,
-        input: ::std::option::Option<crate::types::OutpostResolver>,
-    ) -> Self {
+    pub fn set_outpost_resolver(mut self, input: ::std::option::Option<crate::types::OutpostResolver>) -> Self {
         self.outpost_resolver = input;
         self
     }

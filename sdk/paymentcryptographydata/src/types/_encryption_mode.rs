@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EncryptionMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for EncryptionMode {
             "CFB8" => EncryptionMode::Cfb8,
             "ECB" => EncryptionMode::Ecb,
             "OFB" => EncryptionMode::Ofb,
-            other => {
-                EncryptionMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EncryptionMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -113,9 +105,7 @@ impl EncryptionMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CBC", "CFB", "CFB1", "CFB128", "CFB64", "CFB8", "ECB", "OFB",
-        ]
+        &["CBC", "CFB", "CFB1", "CFB128", "CFB64", "CFB8", "ECB", "OFB"]
     }
 }
 impl ::std::convert::AsRef<str> for EncryptionMode {

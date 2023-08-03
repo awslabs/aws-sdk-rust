@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActivationOverrideBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum ActivationOverrideBehavior {
 impl ::std::convert::From<&str> for ActivationOverrideBehavior {
     fn from(s: &str) -> Self {
         match s {
-            "ALL_GRANTS_PERMITTED_BY_ISSUER" => {
-                ActivationOverrideBehavior::AllGrantsPermittedByIssuer
-            }
+            "ALL_GRANTS_PERMITTED_BY_ISSUER" => ActivationOverrideBehavior::AllGrantsPermittedByIssuer,
             "DISTRIBUTED_GRANTS_ONLY" => ActivationOverrideBehavior::DistributedGrantsOnly,
-            other => ActivationOverrideBehavior::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ActivationOverrideBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,9 +68,7 @@ impl ActivationOverrideBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ActivationOverrideBehavior::AllGrantsPermittedByIssuer => {
-                "ALL_GRANTS_PERMITTED_BY_ISSUER"
-            }
+            ActivationOverrideBehavior::AllGrantsPermittedByIssuer => "ALL_GRANTS_PERMITTED_BY_ISSUER",
             ActivationOverrideBehavior::DistributedGrantsOnly => "DISTRIBUTED_GRANTS_ONLY",
             ActivationOverrideBehavior::Unknown(value) => value.as_str(),
         }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`date_created(Option<DateTime>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::date_created): <p>The date when the impersonation role was created.</p>
     ///   - [`date_modified(Option<DateTime>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::date_modified): <p>The date when the impersonation role was last modified.</p>
     /// - On failure, responds with [`SdkError<GetImpersonationRoleError>`](crate::operation::get_impersonation_role::GetImpersonationRoleError)
-    pub fn get_impersonation_role(
-        &self,
-    ) -> crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder {
-        crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_impersonation_role(&self) -> crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder {
+        crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder::new(self.handle.clone())
     }
 }

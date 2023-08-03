@@ -74,9 +74,7 @@ impl TestTypeInput {
 
 /// A builder for [`TestTypeInput`](crate::operation::test_type::TestTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestTypeInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ThirdPartyType>,
@@ -164,10 +162,7 @@ impl TestTypeInputBuilder {
     /// <li> <p> <code>PutObject</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn log_delivery_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_delivery_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_delivery_bucket = ::std::option::Option::Some(input.into());
         self
     }
@@ -179,10 +174,7 @@ impl TestTypeInputBuilder {
     /// <li> <p> <code>PutObject</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn set_log_delivery_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_delivery_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_delivery_bucket = input;
         self
     }
@@ -198,12 +190,7 @@ impl TestTypeInputBuilder {
         &self.log_delivery_bucket
     }
     /// Consumes the builder and constructs a [`TestTypeInput`](crate::operation::test_type::TestTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_type::TestTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_type::TestTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_type::TestTypeInput {
             arn: self.arn,
             r#type: self.r#type,

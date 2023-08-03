@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`rules_packages(Option<Vec<RulesPackage>>)`](crate::operation::describe_rules_packages::DescribeRulesPackagesOutput::rules_packages): <p>Information about the rules package.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::describe_rules_packages::DescribeRulesPackagesOutput::failed_items): <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<DescribeRulesPackagesError>`](crate::operation::describe_rules_packages::DescribeRulesPackagesError)
-    pub fn describe_rules_packages(
-        &self,
-    ) -> crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder
-    {
-        crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_rules_packages(&self) -> crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder {
+        crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder::new(self.handle.clone())
     }
 }

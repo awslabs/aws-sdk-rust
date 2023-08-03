@@ -37,9 +37,7 @@ impl SourceCredentialsInfo {
 
 /// A builder for [`SourceCredentialsInfo`](crate::types::SourceCredentialsInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceCredentialsInfoBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) server_type: ::std::option::Option<crate::types::ServerType>,
@@ -66,10 +64,7 @@ impl SourceCredentialsInfoBuilder {
         self
     }
     /// <p> The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET. </p>
-    pub fn set_server_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerType>,
-    ) -> Self {
+    pub fn set_server_type(mut self, input: ::std::option::Option<crate::types::ServerType>) -> Self {
         self.server_type = input;
         self
     }

@@ -37,10 +37,7 @@ impl UpdateDocumentMetadataFluentBuilder {
         }
     }
     /// Access the UpdateDocumentMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_document_metadata::builders::UpdateDocumentMetadataInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_document_metadata::builders::UpdateDocumentMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateDocumentMetadataFluentBuilder {
             crate::operation::update_document_metadata::UpdateDocumentMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_document_metadata::UpdateDocumentMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_document_metadata::UpdateDocumentMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateDocumentMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateDocumentMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_document_metadata::UpdateDocumentMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_document_metadata::UpdateDocumentMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_document_metadata::UpdateDocumentMetadataError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateDocumentMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_document_metadata::UpdateDocumentMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_document_metadata::UpdateDocumentMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_document_metadata::UpdateDocumentMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateDocumentMetadataFluentBuilder {
             crate::operation::update_document_metadata::UpdateDocumentMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_document_metadata::UpdateDocumentMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_document_metadata::UpdateDocumentMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl UpdateDocumentMetadataFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The version of a change template in which to update approval metadata.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
     /// <p>The version of a change template in which to update approval metadata.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
     }
@@ -163,10 +143,7 @@ impl UpdateDocumentMetadataFluentBuilder {
         self
     }
     /// <p>The change template review details to update.</p>
-    pub fn set_document_reviews(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentReviews>,
-    ) -> Self {
+    pub fn set_document_reviews(mut self, input: ::std::option::Option<crate::types::DocumentReviews>) -> Self {
         self.inner = self.inner.set_document_reviews(input);
         self
     }

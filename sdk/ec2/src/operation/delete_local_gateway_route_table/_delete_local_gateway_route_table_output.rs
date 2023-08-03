@@ -10,9 +10,7 @@ pub struct DeleteLocalGatewayRouteTableOutput {
 }
 impl DeleteLocalGatewayRouteTableOutput {
     /// <p>Information about the local gateway route table.</p>
-    pub fn local_gateway_route_table(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LocalGatewayRouteTable> {
+    pub fn local_gateway_route_table(&self) -> ::std::option::Option<&crate::types::LocalGatewayRouteTable> {
         self.local_gateway_route_table.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteLocalGatewayRouteTableOutput {
 }
 impl DeleteLocalGatewayRouteTableOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteTableOutput`](crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableOutput).
-    pub fn builder() -> crate::operation::delete_local_gateway_route_table::builders::DeleteLocalGatewayRouteTableOutputBuilder{
+    pub fn builder() -> crate::operation::delete_local_gateway_route_table::builders::DeleteLocalGatewayRouteTableOutputBuilder {
         crate::operation::delete_local_gateway_route_table::builders::DeleteLocalGatewayRouteTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLocalGatewayRouteTableOutput`](crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableOutputBuilder {
-    pub(crate) local_gateway_route_table:
-        ::std::option::Option<crate::types::LocalGatewayRouteTable>,
+    pub(crate) local_gateway_route_table: ::std::option::Option<crate::types::LocalGatewayRouteTable>,
     _request_id: Option<String>,
 }
 impl DeleteLocalGatewayRouteTableOutputBuilder {
     /// <p>Information about the local gateway route table.</p>
-    pub fn local_gateway_route_table(
-        mut self,
-        input: crate::types::LocalGatewayRouteTable,
-    ) -> Self {
+    pub fn local_gateway_route_table(mut self, input: crate::types::LocalGatewayRouteTable) -> Self {
         self.local_gateway_route_table = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the local gateway route table.</p>
-    pub fn set_local_gateway_route_table(
-        mut self,
-        input: ::std::option::Option<crate::types::LocalGatewayRouteTable>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table(mut self, input: ::std::option::Option<crate::types::LocalGatewayRouteTable>) -> Self {
         self.local_gateway_route_table = input;
         self
     }
     /// <p>Information about the local gateway route table.</p>
-    pub fn get_local_gateway_route_table(
-        &self,
-    ) -> &::std::option::Option<crate::types::LocalGatewayRouteTable> {
+    pub fn get_local_gateway_route_table(&self) -> &::std::option::Option<crate::types::LocalGatewayRouteTable> {
         &self.local_gateway_route_table
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +58,7 @@ impl DeleteLocalGatewayRouteTableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteTableOutput`](crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableOutput
-    {
+    pub fn build(self) -> crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableOutput {
         crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableOutput {
             local_gateway_route_table: self.local_gateway_route_table,
             _request_id: self._request_id,

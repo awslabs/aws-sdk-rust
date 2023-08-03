@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RefreshInterval {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for RefreshInterval {
             "MINUTE30" => RefreshInterval::Minute30,
             "MONTHLY" => RefreshInterval::Monthly,
             "WEEKLY" => RefreshInterval::Weekly,
-            other => {
-                RefreshInterval::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => RefreshInterval::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,9 +95,7 @@ impl RefreshInterval {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DAILY", "HOURLY", "MINUTE15", "MINUTE30", "MONTHLY", "WEEKLY",
-        ]
+        &["DAILY", "HOURLY", "MINUTE15", "MINUTE30", "MONTHLY", "WEEKLY"]
     }
 }
 impl ::std::convert::AsRef<str> for RefreshInterval {

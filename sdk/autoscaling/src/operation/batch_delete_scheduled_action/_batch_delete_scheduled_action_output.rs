@@ -5,16 +5,12 @@
 pub struct BatchDeleteScheduledActionOutput {
     /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
     #[doc(hidden)]
-    pub failed_scheduled_actions: ::std::option::Option<
-        ::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>,
-    >,
+    pub failed_scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteScheduledActionOutput {
     /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
-    pub fn failed_scheduled_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FailedScheduledUpdateGroupActionRequest]> {
+    pub fn failed_scheduled_actions(&self) -> ::std::option::Option<&[crate::types::FailedScheduledUpdateGroupActionRequest]> {
         self.failed_scheduled_actions.as_deref()
     }
 }
@@ -25,20 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchDeleteScheduledActionOutput {
 }
 impl BatchDeleteScheduledActionOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteScheduledActionOutput`](crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput).
-    pub fn builder() -> crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionOutputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionOutputBuilder {
         crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteScheduledActionOutput`](crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteScheduledActionOutputBuilder {
-    pub(crate) failed_scheduled_actions: ::std::option::Option<
-        ::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>,
-    >,
+    pub(crate) failed_scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteScheduledActionOutputBuilder {
@@ -47,10 +39,7 @@ impl BatchDeleteScheduledActionOutputBuilder {
     /// To override the contents of this collection use [`set_failed_scheduled_actions`](Self::set_failed_scheduled_actions).
     ///
     /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
-    pub fn failed_scheduled_actions(
-        mut self,
-        input: crate::types::FailedScheduledUpdateGroupActionRequest,
-    ) -> Self {
+    pub fn failed_scheduled_actions(mut self, input: crate::types::FailedScheduledUpdateGroupActionRequest) -> Self {
         let mut v = self.failed_scheduled_actions.unwrap_or_default();
         v.push(input);
         self.failed_scheduled_actions = ::std::option::Option::Some(v);
@@ -59,19 +48,13 @@ impl BatchDeleteScheduledActionOutputBuilder {
     /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
     pub fn set_failed_scheduled_actions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>,
     ) -> Self {
         self.failed_scheduled_actions = input;
         self
     }
     /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
-    pub fn get_failed_scheduled_actions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>,
-    > {
+    pub fn get_failed_scheduled_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>> {
         &self.failed_scheduled_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -84,9 +67,7 @@ impl BatchDeleteScheduledActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDeleteScheduledActionOutput`](crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput {
+    pub fn build(self) -> crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput {
         crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput {
             failed_scheduled_actions: self.failed_scheduled_actions,
             _request_id: self._request_id,

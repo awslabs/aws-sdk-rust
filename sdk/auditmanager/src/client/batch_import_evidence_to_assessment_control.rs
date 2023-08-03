@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`BatchImportEvidenceToAssessmentControlOutput`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchImportEvidenceToAssessmentControlError>>)`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput::errors): <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     /// - On failure, responds with [`SdkError<BatchImportEvidenceToAssessmentControlError>`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError)
-    pub fn batch_import_evidence_to_assessment_control(&self) -> crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlFluentBuilder{
-        crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlFluentBuilder::new(self.handle.clone())
+    pub fn batch_import_evidence_to_assessment_control(
+        &self,
+    ) -> crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlFluentBuilder {
+        crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

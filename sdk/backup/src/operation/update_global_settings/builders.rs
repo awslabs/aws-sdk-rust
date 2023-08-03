@@ -37,9 +37,7 @@ impl UpdateGlobalSettingsFluentBuilder {
         }
     }
     /// Access the UpdateGlobalSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateGlobalSettingsFluentBuilder {
             crate::operation::update_global_settings::UpdateGlobalSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateGlobalSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateGlobalSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_settings::UpdateGlobalSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateGlobalSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_settings::UpdateGlobalSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateGlobalSettingsFluentBuilder {
             crate::operation::update_global_settings::UpdateGlobalSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -138,19 +125,13 @@ impl UpdateGlobalSettingsFluentBuilder {
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
     pub fn set_global_settings(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_global_settings(input);
         self
     }
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
-    pub fn get_global_settings(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_global_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_global_settings()
     }
 }

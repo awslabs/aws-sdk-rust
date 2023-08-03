@@ -22,9 +22,7 @@ impl DeleteSlotTypeInput {
 
 /// A builder for [`DeleteSlotTypeInput`](crate::operation::delete_slot_type::DeleteSlotTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSlotTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteSlotTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSlotTypeInput`](crate::operation::delete_slot_type::DeleteSlotTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_slot_type::DeleteSlotTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_slot_type::DeleteSlotTypeInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_slot_type::DeleteSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_slot_type::DeleteSlotTypeInput { name: self.name })
     }
 }

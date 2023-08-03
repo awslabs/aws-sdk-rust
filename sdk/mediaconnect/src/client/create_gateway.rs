@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGatewayOutput`](crate::operation::create_gateway::CreateGatewayOutput) with field(s):
     ///   - [`gateway(Option<Gateway>)`](crate::operation::create_gateway::CreateGatewayOutput::gateway): The settings for a gateway, including its networks.
     /// - On failure, responds with [`SdkError<CreateGatewayError>`](crate::operation::create_gateway::CreateGatewayError)
-    pub fn create_gateway(
-        &self,
-    ) -> crate::operation::create_gateway::builders::CreateGatewayFluentBuilder {
-        crate::operation::create_gateway::builders::CreateGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_gateway(&self) -> crate::operation::create_gateway::builders::CreateGatewayFluentBuilder {
+        crate::operation::create_gateway::builders::CreateGatewayFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,18 +5,12 @@
 pub struct GetDevicesInPlacementOutput {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
     #[doc(hidden)]
-    pub devices: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub devices: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDevicesInPlacementOutput {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub fn devices(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn devices(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.devices.as_ref()
     }
 }
@@ -27,22 +21,16 @@ impl ::aws_http::request_id::RequestId for GetDevicesInPlacementOutput {
 }
 impl GetDevicesInPlacementOutput {
     /// Creates a new builder-style object to manufacture [`GetDevicesInPlacementOutput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput).
-    pub fn builder(
-    ) -> crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementOutputBuilder {
         crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDevicesInPlacementOutput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevicesInPlacementOutputBuilder {
-    pub(crate) devices: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) devices: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDevicesInPlacementOutputBuilder {
@@ -51,32 +39,19 @@ impl GetDevicesInPlacementOutputBuilder {
     /// To override the contents of this collection use [`set_devices`](Self::set_devices).
     ///
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub fn devices(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn devices(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.devices.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.devices = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.devices = input;
         self
     }
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub fn get_devices(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_devices(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.devices
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

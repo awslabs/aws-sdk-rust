@@ -26,7 +26,7 @@ impl DescribeConnectionAliasesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConnectionAliasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder,
+    inner: crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder,
 }
 impl DescribeConnectionAliasesFluentBuilder {
     /// Creates a new `DescribeConnectionAliases`.
@@ -37,7 +37,7 @@ impl DescribeConnectionAliasesFluentBuilder {
         }
     }
     /// Access the DescribeConnectionAliases as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeConnectionAliasesFluentBuilder {
             crate::operation::describe_connection_aliases::DescribeConnectionAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connection_aliases::DescribeConnectionAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connection_aliases::DescribeConnectionAliasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeConnectionAliasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeConnectionAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connection_aliases::DescribeConnectionAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connection_aliases::DescribeConnectionAliasesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeConnectionAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connection_aliases::DescribeConnectionAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connection_aliases::DescribeConnectionAliasesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeConnectionAliasesFluentBuilder {
             crate::operation::describe_connection_aliases::DescribeConnectionAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connection_aliases::DescribeConnectionAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connection_aliases::DescribeConnectionAliasesError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +119,7 @@ impl DescribeConnectionAliasesFluentBuilder {
         self
     }
     /// <p>The identifiers of the connection aliases to describe.</p>
-    pub fn set_alias_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alias_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_alias_ids(input);
         self
     }

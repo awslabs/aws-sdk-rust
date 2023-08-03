@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`verified_author_url(Option<String>)`](crate::operation::update_application::UpdateApplicationOutput::verified_author_url): <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
     ///   - [`version(Option<Version>)`](crate::operation::update_application::UpdateApplicationOutput::version): <p>Version information about the application.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::operation::update_application::UpdateApplicationError)
-    pub fn update_application(
-        &self,
-    ) -> crate::operation::update_application::builders::UpdateApplicationFluentBuilder {
-        crate::operation::update_application::builders::UpdateApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_application(&self) -> crate::operation::update_application::builders::UpdateApplicationFluentBuilder {
+        crate::operation::update_application::builders::UpdateApplicationFluentBuilder::new(self.handle.clone())
     }
 }

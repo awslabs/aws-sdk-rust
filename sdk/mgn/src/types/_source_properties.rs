@@ -39,9 +39,7 @@ impl SourceProperties {
         self.recommended_instance_type.as_deref()
     }
     /// <p>Source server identification hints.</p>
-    pub fn identification_hints(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentificationHints> {
+    pub fn identification_hints(&self) -> ::std::option::Option<&crate::types::IdentificationHints> {
         self.identification_hints.as_ref()
     }
     /// <p>Source server network interfaces.</p>
@@ -74,15 +72,12 @@ impl SourceProperties {
 
 /// A builder for [`SourceProperties`](crate::types::SourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourcePropertiesBuilder {
     pub(crate) last_updated_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) recommended_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) identification_hints: ::std::option::Option<crate::types::IdentificationHints>,
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     pub(crate) cpus: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
     pub(crate) ram_bytes: ::std::option::Option<i64>,
@@ -90,18 +85,12 @@ pub struct SourcePropertiesBuilder {
 }
 impl SourcePropertiesBuilder {
     /// <p>Source server last update date and time.</p>
-    pub fn last_updated_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server last update date and time.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_date_time = input;
         self
     }
@@ -110,18 +99,12 @@ impl SourcePropertiesBuilder {
         &self.last_updated_date_time
     }
     /// <p>Source server recommended instance type.</p>
-    pub fn recommended_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommended_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server recommended instance type.</p>
-    pub fn set_recommended_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommended_instance_type = input;
         self
     }
@@ -135,17 +118,12 @@ impl SourcePropertiesBuilder {
         self
     }
     /// <p>Source server identification hints.</p>
-    pub fn set_identification_hints(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentificationHints>,
-    ) -> Self {
+    pub fn set_identification_hints(mut self, input: ::std::option::Option<crate::types::IdentificationHints>) -> Self {
         self.identification_hints = input;
         self
     }
     /// <p>Source server identification hints.</p>
-    pub fn get_identification_hints(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentificationHints> {
+    pub fn get_identification_hints(&self) -> &::std::option::Option<crate::types::IdentificationHints> {
         &self.identification_hints
     }
     /// Appends an item to `network_interfaces`.
@@ -160,17 +138,12 @@ impl SourcePropertiesBuilder {
         self
     }
     /// <p>Source server network interfaces.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p>Source server network interfaces.</p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }
     /// Appends an item to `disks`.
@@ -185,10 +158,7 @@ impl SourcePropertiesBuilder {
         self
     }
     /// <p>Source Server disks.</p>
-    pub fn set_disks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
-    ) -> Self {
+    pub fn set_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>) -> Self {
         self.disks = input;
         self
     }
@@ -208,10 +178,7 @@ impl SourcePropertiesBuilder {
         self
     }
     /// <p>Source Server CPUs.</p>
-    pub fn set_cpus(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
-    ) -> Self {
+    pub fn set_cpus(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>) -> Self {
         self.cpus = input;
         self
     }

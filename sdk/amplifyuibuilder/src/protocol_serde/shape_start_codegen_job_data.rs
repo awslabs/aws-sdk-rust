@@ -6,10 +6,7 @@ pub fn ser_start_codegen_job_data(
     if let Some(var_1) = &input.render_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("renderConfig").start_object();
-        crate::protocol_serde::shape_codegen_job_render_config::ser_codegen_job_render_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_codegen_job_render_config::ser_codegen_job_render_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.generic_data_schema {
@@ -24,10 +21,7 @@ pub fn ser_start_codegen_job_data(
     if let Some(var_6) = &input.features {
         #[allow(unused_mut)]
         let mut object_7 = object.key("features").start_object();
-        crate::protocol_serde::shape_codegen_feature_flags::ser_codegen_feature_flags(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_codegen_feature_flags::ser_codegen_feature_flags(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.tags {

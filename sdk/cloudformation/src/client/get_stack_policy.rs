@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetStackPolicyOutput`](crate::operation::get_stack_policy::GetStackPolicyOutput) with field(s):
     ///   - [`stack_policy_body(Option<String>)`](crate::operation::get_stack_policy::GetStackPolicyOutput::stack_policy_body): <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the CloudFormation User Guide.)</p>
     /// - On failure, responds with [`SdkError<GetStackPolicyError>`](crate::operation::get_stack_policy::GetStackPolicyError)
-    pub fn get_stack_policy(
-        &self,
-    ) -> crate::operation::get_stack_policy::builders::GetStackPolicyFluentBuilder {
-        crate::operation::get_stack_policy::builders::GetStackPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_stack_policy(&self) -> crate::operation::get_stack_policy::builders::GetStackPolicyFluentBuilder {
+        crate::operation::get_stack_policy::builders::GetStackPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -19,9 +19,7 @@ pub fn ser_create_channel_input(
         object.key("preset").string(var_3.as_str());
     }
     if let Some(var_4) = &input.recording_configuration_arn {
-        object
-            .key("recordingConfigurationArn")
-            .string(var_4.as_str());
+        object.key("recordingConfigurationArn").string(var_4.as_str());
     }
     if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]

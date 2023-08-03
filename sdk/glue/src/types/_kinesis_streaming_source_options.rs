@@ -165,9 +165,7 @@ impl KinesisStreamingSourceOptions {
 
 /// A builder for [`KinesisStreamingSourceOptions`](crate::types::KinesisStreamingSourceOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisStreamingSourceOptionsBuilder {
     pub(crate) endpoint_url: ::std::option::Option<::std::string::String>,
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
@@ -221,18 +219,12 @@ impl KinesisStreamingSourceOptionsBuilder {
         &self.stream_name
     }
     /// <p>An optional classification.</p>
-    pub fn classification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional classification.</p>
-    pub fn set_classification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.classification = input;
         self
     }
@@ -262,10 +254,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.</p>
     /// <p>Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue version 4.0 or later.</p>
-    pub fn set_starting_position(
-        mut self,
-        input: ::std::option::Option<crate::types::StartingPosition>,
-    ) -> Self {
+    pub fn set_starting_position(mut self, input: ::std::option::Option<crate::types::StartingPosition>) -> Self {
         self.starting_position = input;
         self
     }
@@ -443,18 +432,12 @@ impl KinesisStreamingSourceOptionsBuilder {
         &self.role_arn
     }
     /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
-    pub fn role_session_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn role_session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_session_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
-    pub fn set_role_session_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_role_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_session_name = input;
         self
     }
@@ -463,18 +446,12 @@ impl KinesisStreamingSourceOptionsBuilder {
         &self.role_session_name
     }
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn add_record_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_record_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.add_record_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn set_add_record_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_add_record_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.add_record_timestamp = input;
         self
     }
@@ -483,18 +460,12 @@ impl KinesisStreamingSourceOptionsBuilder {
         &self.add_record_timestamp
     }
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn emit_consumer_lag_metrics(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn emit_consumer_lag_metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.emit_consumer_lag_metrics = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn set_emit_consumer_lag_metrics(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_emit_consumer_lag_metrics(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.emit_consumer_lag_metrics = input;
         self
     }
@@ -508,10 +479,7 @@ impl KinesisStreamingSourceOptionsBuilder {
         self
     }
     /// <p>The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
-    pub fn set_starting_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_starting_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.starting_timestamp = input;
         self
     }

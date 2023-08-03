@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`branches(Option<Vec<String>>)`](crate::operation::list_branches::ListBranchesOutput::branches): <p>The list of branch names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_branches::ListBranchesOutput::next_token): <p>An enumeration token that returns the batch of the results.</p>
     /// - On failure, responds with [`SdkError<ListBranchesError>`](crate::operation::list_branches::ListBranchesError)
-    pub fn list_branches(
-        &self,
-    ) -> crate::operation::list_branches::builders::ListBranchesFluentBuilder {
-        crate::operation::list_branches::builders::ListBranchesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_branches(&self) -> crate::operation::list_branches::builders::ListBranchesFluentBuilder {
+        crate::operation::list_branches::builders::ListBranchesFluentBuilder::new(self.handle.clone())
     }
 }

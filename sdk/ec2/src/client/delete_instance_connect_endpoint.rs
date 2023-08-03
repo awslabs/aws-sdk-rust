@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteInstanceConnectEndpointOutput`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointOutput) with field(s):
     ///   - [`instance_connect_endpoint(Option<Ec2InstanceConnectEndpoint>)`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointOutput::instance_connect_endpoint): <p>Information about the EC2 Instance Connect Endpoint.</p>
     /// - On failure, responds with [`SdkError<DeleteInstanceConnectEndpointError>`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointError)
-    pub fn delete_instance_connect_endpoint(&self) -> crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointFluentBuilder{
+    pub fn delete_instance_connect_endpoint(
+        &self,
+    ) -> crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointFluentBuilder {
         crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointFluentBuilder::new(self.handle.clone())
     }
 }

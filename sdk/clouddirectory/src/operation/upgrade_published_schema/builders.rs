@@ -37,10 +37,7 @@ impl UpgradePublishedSchemaFluentBuilder {
         }
     }
     /// Access the UpgradePublishedSchema as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpgradePublishedSchemaFluentBuilder {
             crate::operation::upgrade_published_schema::UpgradePublishedSchema,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_published_schema::UpgradePublishedSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_published_schema::UpgradePublishedSchemaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpgradePublishedSchemaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpgradePublishedSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_published_schema::UpgradePublishedSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_published_schema::UpgradePublishedSchemaError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpgradePublishedSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_published_schema::UpgradePublishedSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_published_schema::UpgradePublishedSchemaError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpgradePublishedSchemaFluentBuilder {
             crate::operation::upgrade_published_schema::UpgradePublishedSchema,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_published_schema::UpgradePublishedSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_published_schema::UpgradePublishedSchemaError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
-    pub fn development_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn development_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.development_schema_arn(input.into());
         self
     }
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
-    pub fn set_development_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_development_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_development_schema_arn(input);
         self
     }
@@ -144,18 +124,12 @@ impl UpgradePublishedSchemaFluentBuilder {
         self.inner.get_development_schema_arn()
     }
     /// <p>The ARN of the published schema to be upgraded.</p>
-    pub fn published_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn published_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.published_schema_arn(input.into());
         self
     }
     /// <p>The ARN of the published schema to be upgraded.</p>
-    pub fn set_published_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_published_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_published_schema_arn(input);
         self
     }
@@ -164,18 +138,12 @@ impl UpgradePublishedSchemaFluentBuilder {
         self.inner.get_published_schema_arn()
     }
     /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.minor_version(input.into());
         self
     }
     /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_minor_version(input);
         self
     }

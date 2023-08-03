@@ -6,10 +6,7 @@ pub fn ser_create_profile_job_input(
     if let Some(var_1) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Configuration").start_object();
-        crate::protocol_serde::shape_profile_configuration::ser_profile_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_profile_configuration::ser_profile_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.dataset_name {

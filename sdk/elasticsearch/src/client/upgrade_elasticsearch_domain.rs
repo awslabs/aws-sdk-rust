@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`perform_check_only(Option<bool>)`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput::perform_check_only): <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     ///   - [`change_progress_details(Option<ChangeProgressDetails>)`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput::change_progress_details): <p>Specifies change details of the domain configuration change.</p>
     /// - On failure, responds with [`SdkError<UpgradeElasticsearchDomainError>`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainError)
-    pub fn upgrade_elasticsearch_domain(&self) -> crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainFluentBuilder{
+    pub fn upgrade_elasticsearch_domain(&self) -> crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainFluentBuilder {
         crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainFluentBuilder::new(self.handle.clone())
     }
 }

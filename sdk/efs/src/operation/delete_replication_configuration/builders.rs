@@ -26,7 +26,7 @@ impl DeleteReplicationConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReplicationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationInputBuilder,
+    inner: crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationInputBuilder,
 }
 impl DeleteReplicationConfigurationFluentBuilder {
     /// Creates a new `DeleteReplicationConfiguration`.
@@ -37,7 +37,7 @@ impl DeleteReplicationConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteReplicationConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteReplicationConfigurationFluentBuilder {
             crate::operation::delete_replication_configuration::DeleteReplicationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteReplicationConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteReplicationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_configuration::DeleteReplicationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteReplicationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_configuration::DeleteReplicationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteReplicationConfigurationFluentBuilder {
             crate::operation::delete_replication_configuration::DeleteReplicationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the source file system in the replication configuration.</p>
-    pub fn source_file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_file_system_id(input.into());
         self
     }
     /// <p>The ID of the source file system in the replication configuration.</p>
-    pub fn set_source_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_file_system_id(input);
         self
     }

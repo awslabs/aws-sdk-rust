@@ -25,9 +25,7 @@ impl RdsDbClusterSnapshotAttributeValue {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AccountIds`](crate::types::RdsDbClusterSnapshotAttributeValue::AccountIds), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_account_ids(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+    pub fn as_account_ids(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
         if let RdsDbClusterSnapshotAttributeValue::AccountIds(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetInstancePortStatesOutput`](crate::operation::get_instance_port_states::GetInstancePortStatesOutput) with field(s):
     ///   - [`port_states(Option<Vec<InstancePortState>>)`](crate::operation::get_instance_port_states::GetInstancePortStatesOutput::port_states): <p>An array of objects that describe the firewall port states for the specified instance.</p>
     /// - On failure, responds with [`SdkError<GetInstancePortStatesError>`](crate::operation::get_instance_port_states::GetInstancePortStatesError)
-    pub fn get_instance_port_states(
-        &self,
-    ) -> crate::operation::get_instance_port_states::builders::GetInstancePortStatesFluentBuilder
-    {
+    pub fn get_instance_port_states(&self) -> crate::operation::get_instance_port_states::builders::GetInstancePortStatesFluentBuilder {
         crate::operation::get_instance_port_states::builders::GetInstancePortStatesFluentBuilder::new(self.handle.clone())
     }
 }

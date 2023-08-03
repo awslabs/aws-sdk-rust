@@ -23,8 +23,7 @@ pub struct ElasticsearchDestinationConfiguration {
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to facilitate the expiration of old data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the Amazon ES Destination</a>. The default value is&nbsp;<code>OneDay</code>.</p>
     #[doc(hidden)]
-    pub index_rotation_period:
-        ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
+    pub index_rotation_period: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
     /// <p>The buffering options. If no value is specified, the default values for <code>ElasticsearchBufferingHints</code> are used.</p>
     #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::ElasticsearchBufferingHints>,
@@ -72,15 +71,11 @@ impl ElasticsearchDestinationConfiguration {
         self.type_name.as_deref()
     }
     /// <p>The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to facilitate the expiration of old data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the Amazon ES Destination</a>. The default value is&nbsp;<code>OneDay</code>.</p>
-    pub fn index_rotation_period(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ElasticsearchIndexRotationPeriod> {
+    pub fn index_rotation_period(&self) -> ::std::option::Option<&crate::types::ElasticsearchIndexRotationPeriod> {
         self.index_rotation_period.as_ref()
     }
     /// <p>The buffering options. If no value is specified, the default values for <code>ElasticsearchBufferingHints</code> are used.</p>
-    pub fn buffering_hints(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ElasticsearchBufferingHints> {
+    pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::ElasticsearchBufferingHints> {
         self.buffering_hints.as_ref()
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5 minutes).</p>
@@ -89,27 +84,19 @@ impl ElasticsearchDestinationConfiguration {
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
     /// <p>You can't change this backup mode after you create the delivery stream. </p>
-    pub fn s3_backup_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ElasticsearchS3BackupMode> {
+    pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::ElasticsearchS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>The configuration for the backup Amazon S3 location.</p>
-    pub fn s3_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
@@ -126,25 +113,20 @@ impl ElasticsearchDestinationConfiguration {
 
 /// A builder for [`ElasticsearchDestinationConfiguration`](crate::types::ElasticsearchDestinationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticsearchDestinationConfigurationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) index_rotation_period:
-        ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
+    pub(crate) index_rotation_period: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
     pub(crate) buffering_hints: ::std::option::Option<crate::types::ElasticsearchBufferingHints>,
     pub(crate) retry_options: ::std::option::Option<crate::types::ElasticsearchRetryOptions>,
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::ElasticsearchS3BackupMode>,
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
-    pub(crate) processing_configuration:
-        ::std::option::Option<crate::types::ProcessingConfiguration>,
-    pub(crate) cloud_watch_logging_options:
-        ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
+    pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
 }
 impl ElasticsearchDestinationConfigurationBuilder {
@@ -180,18 +162,12 @@ impl ElasticsearchDestinationConfigurationBuilder {
         &self.domain_arn
     }
     /// <p>The endpoint to use when communicating with the cluster. Specify either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field.</p>
-    pub fn cluster_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint to use when communicating with the cluster. Specify either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field.</p>
-    pub fn set_cluster_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_endpoint = input;
         self
     }
@@ -231,25 +207,17 @@ impl ElasticsearchDestinationConfigurationBuilder {
         &self.type_name
     }
     /// <p>The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to facilitate the expiration of old data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the Amazon ES Destination</a>. The default value is&nbsp;<code>OneDay</code>.</p>
-    pub fn index_rotation_period(
-        mut self,
-        input: crate::types::ElasticsearchIndexRotationPeriod,
-    ) -> Self {
+    pub fn index_rotation_period(mut self, input: crate::types::ElasticsearchIndexRotationPeriod) -> Self {
         self.index_rotation_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to facilitate the expiration of old data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the Amazon ES Destination</a>. The default value is&nbsp;<code>OneDay</code>.</p>
-    pub fn set_index_rotation_period(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
-    ) -> Self {
+    pub fn set_index_rotation_period(mut self, input: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>) -> Self {
         self.index_rotation_period = input;
         self
     }
     /// <p>The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to facilitate the expiration of old data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the Amazon ES Destination</a>. The default value is&nbsp;<code>OneDay</code>.</p>
-    pub fn get_index_rotation_period(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod> {
+    pub fn get_index_rotation_period(&self) -> &::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod> {
         &self.index_rotation_period
     }
     /// <p>The buffering options. If no value is specified, the default values for <code>ElasticsearchBufferingHints</code> are used.</p>
@@ -258,17 +226,12 @@ impl ElasticsearchDestinationConfigurationBuilder {
         self
     }
     /// <p>The buffering options. If no value is specified, the default values for <code>ElasticsearchBufferingHints</code> are used.</p>
-    pub fn set_buffering_hints(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchBufferingHints>,
-    ) -> Self {
+    pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::ElasticsearchBufferingHints>) -> Self {
         self.buffering_hints = input;
         self
     }
     /// <p>The buffering options. If no value is specified, the default values for <code>ElasticsearchBufferingHints</code> are used.</p>
-    pub fn get_buffering_hints(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchBufferingHints> {
+    pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::ElasticsearchBufferingHints> {
         &self.buffering_hints
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5 minutes).</p>
@@ -277,17 +240,12 @@ impl ElasticsearchDestinationConfigurationBuilder {
         self
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5 minutes).</p>
-    pub fn set_retry_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchRetryOptions>,
-    ) -> Self {
+    pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::ElasticsearchRetryOptions>) -> Self {
         self.retry_options = input;
         self
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5 minutes).</p>
-    pub fn get_retry_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchRetryOptions> {
+    pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::ElasticsearchRetryOptions> {
         &self.retry_options
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
@@ -298,18 +256,13 @@ impl ElasticsearchDestinationConfigurationBuilder {
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
     /// <p>You can't change this backup mode after you create the delivery stream. </p>
-    pub fn set_s3_backup_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchS3BackupMode>,
-    ) -> Self {
+    pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::ElasticsearchS3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
     /// <p>You can't change this backup mode after you create the delivery stream. </p>
-    pub fn get_s3_backup_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchS3BackupMode> {
+    pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::ElasticsearchS3BackupMode> {
         &self.s3_backup_mode
     }
     /// <p>The configuration for the backup Amazon S3 location.</p>
@@ -318,61 +271,40 @@ impl ElasticsearchDestinationConfigurationBuilder {
         self
     }
     /// <p>The configuration for the backup Amazon S3 location.</p>
-    pub fn set_s3_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
         self.s3_configuration = input;
         self
     }
     /// <p>The configuration for the backup Amazon S3 location.</p>
-    pub fn get_s3_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
+    pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
         &self.s3_configuration
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(
-        mut self,
-        input: crate::types::ProcessingConfiguration,
-    ) -> Self {
+    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data processing configuration.</p>
-    pub fn set_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
         self.processing_configuration = input;
         self
     }
     /// <p>The data processing configuration.</p>
-    pub fn get_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+    pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptions,
-    ) -> Self {
+    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn set_cloud_watch_logging_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn get_cloud_watch_logging_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
@@ -381,10 +313,7 @@ impl ElasticsearchDestinationConfigurationBuilder {
         self
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }

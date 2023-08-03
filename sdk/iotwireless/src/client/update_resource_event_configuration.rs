@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`message_delivery_status(MessageDeliveryStatusEventConfiguration)`](crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationFluentBuilder::message_delivery_status) / [`set_message_delivery_status(Option<MessageDeliveryStatusEventConfiguration>)`](crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationFluentBuilder::set_message_delivery_status): <p>Event configuration for the message delivery status event.</p>
     /// - On success, responds with [`UpdateResourceEventConfigurationOutput`](crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateResourceEventConfigurationError>`](crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError)
-    pub fn update_resource_event_configuration(&self) -> crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationFluentBuilder{
+    pub fn update_resource_event_configuration(
+        &self,
+    ) -> crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationFluentBuilder {
         crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

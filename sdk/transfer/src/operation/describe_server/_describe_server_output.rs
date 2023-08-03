@@ -28,9 +28,7 @@ impl DescribeServerOutput {
 
 /// A builder for [`DescribeServerOutput`](crate::operation::describe_server::DescribeServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServerOutputBuilder {
     pub(crate) server: ::std::option::Option<crate::types::DescribedServer>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeServerOutputBuilder {
         self
     }
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
-    pub fn set_server(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribedServer>,
-    ) -> Self {
+    pub fn set_server(mut self, input: ::std::option::Option<crate::types::DescribedServer>) -> Self {
         self.server = input;
         self
     }

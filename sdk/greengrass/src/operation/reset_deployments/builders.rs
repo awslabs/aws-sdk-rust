@@ -10,10 +10,7 @@ impl ResetDeploymentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reset_deployments::ResetDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_deployments::ResetDeploymentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_deployments::ResetDeploymentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reset_deployments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ResetDeploymentsFluentBuilder {
         }
     }
     /// Access the ResetDeployments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ResetDeploymentsFluentBuilder {
             crate::operation::reset_deployments::ResetDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_deployments::ResetDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_deployments::ResetDeploymentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ResetDeploymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ResetDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_deployments::ResetDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_deployments::ResetDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_deployments::ResetDeploymentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ResetDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_deployments::ResetDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_deployments::ResetDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_deployments::ResetDeploymentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ResetDeploymentsFluentBuilder {
             crate::operation::reset_deployments::ResetDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_deployments::ResetDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_deployments::ResetDeploymentsError>,
     > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }

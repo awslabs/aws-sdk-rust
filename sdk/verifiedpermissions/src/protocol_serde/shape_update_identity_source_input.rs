@@ -12,10 +12,7 @@ pub fn ser_update_identity_source_input(
     if let Some(var_3) = &input.update_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("updateConfiguration").start_object();
-        crate::protocol_serde::shape_update_configuration::ser_update_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_update_configuration::ser_update_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.principal_entity_type {

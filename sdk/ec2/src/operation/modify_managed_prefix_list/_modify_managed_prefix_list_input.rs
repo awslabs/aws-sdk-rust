@@ -59,27 +59,21 @@ impl ModifyManagedPrefixListInput {
 }
 impl ModifyManagedPrefixListInput {
     /// Creates a new builder-style object to manufacture [`ModifyManagedPrefixListInput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput).
-    pub fn builder(
-    ) -> crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder {
         crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyManagedPrefixListInput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyManagedPrefixListInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<i64>,
     pub(crate) prefix_list_name: ::std::option::Option<::std::string::String>,
-    pub(crate) add_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
-    pub(crate) remove_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>>,
+    pub(crate) add_entries: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
+    pub(crate) remove_entries: ::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>>,
     pub(crate) max_entries: ::std::option::Option<i32>,
 }
 impl ModifyManagedPrefixListInputBuilder {
@@ -98,18 +92,12 @@ impl ModifyManagedPrefixListInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }
@@ -132,18 +120,12 @@ impl ModifyManagedPrefixListInputBuilder {
         &self.current_version
     }
     /// <p>A name for the prefix list.</p>
-    pub fn prefix_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the prefix list.</p>
-    pub fn set_prefix_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_name = input;
         self
     }
@@ -163,17 +145,12 @@ impl ModifyManagedPrefixListInputBuilder {
         self
     }
     /// <p>One or more entries to add to the prefix list.</p>
-    pub fn set_add_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
-    ) -> Self {
+    pub fn set_add_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>) -> Self {
         self.add_entries = input;
         self
     }
     /// <p>One or more entries to add to the prefix list.</p>
-    pub fn get_add_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>> {
+    pub fn get_add_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>> {
         &self.add_entries
     }
     /// Appends an item to `remove_entries`.
@@ -188,17 +165,12 @@ impl ModifyManagedPrefixListInputBuilder {
         self
     }
     /// <p>One or more entries to remove from the prefix list.</p>
-    pub fn set_remove_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>>,
-    ) -> Self {
+    pub fn set_remove_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>>) -> Self {
         self.remove_entries = input;
         self
     }
     /// <p>One or more entries to remove from the prefix list.</p>
-    pub fn get_remove_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>> {
+    pub fn get_remove_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>> {
         &self.remove_entries
     }
     /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
@@ -225,16 +197,14 @@ impl ModifyManagedPrefixListInputBuilder {
         crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput {
-                dry_run: self.dry_run,
-                prefix_list_id: self.prefix_list_id,
-                current_version: self.current_version,
-                prefix_list_name: self.prefix_list_name,
-                add_entries: self.add_entries,
-                remove_entries: self.remove_entries,
-                max_entries: self.max_entries,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput {
+            dry_run: self.dry_run,
+            prefix_list_id: self.prefix_list_id,
+            current_version: self.current_version,
+            prefix_list_name: self.prefix_list_name,
+            add_entries: self.add_entries,
+            remove_entries: self.remove_entries,
+            max_entries: self.max_entries,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl GetContactListInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_contact_list::GetContactListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_list::GetContactListError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_list::GetContactListError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_contact_list();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetContactListFluentBuilder {
         }
     }
     /// Access the GetContactList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_contact_list::builders::GetContactListInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_contact_list::builders::GetContactListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetContactListFluentBuilder {
             crate::operation::get_contact_list::GetContactList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_list::GetContactListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_list::GetContactListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetContactListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetContactListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_contact_list::GetContactListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_list::GetContactListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_list::GetContactListError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetContactListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_contact_list::GetContactListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_list::GetContactListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_list::GetContactListError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetContactListFluentBuilder {
             crate::operation::get_contact_list::GetContactList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_list::GetContactListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_list::GetContactListError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_list_name(input.into());
         self
     }
     /// <p>The name of the contact list.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_list_name(input);
         self
     }

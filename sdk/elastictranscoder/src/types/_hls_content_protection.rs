@@ -68,9 +68,7 @@ impl HlsContentProtection {
 
 /// A builder for [`HlsContentProtection`](crate::types::HlsContentProtection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsContentProtectionBuilder {
     pub(crate) method: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -136,19 +134,13 @@ impl HlsContentProtectionBuilder {
     }
     /// <p>If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes before being base64-encoded.</p>
-    pub fn initialization_vector(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initialization_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initialization_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes before being base64-encoded.</p>
-    pub fn set_initialization_vector(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initialization_vector = input;
         self
     }
@@ -158,18 +150,12 @@ impl HlsContentProtectionBuilder {
         &self.initialization_vector
     }
     /// <p>The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path, and is referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.</p>
-    pub fn license_acquisition_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_acquisition_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_acquisition_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path, and is referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.</p>
-    pub fn set_license_acquisition_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_acquisition_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_acquisition_url = input;
         self
     }
@@ -178,18 +164,12 @@ impl HlsContentProtectionBuilder {
         &self.license_acquisition_url
     }
     /// <p>Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you choose <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder writes your data key into the same bucket as the associated playlist.</p>
-    pub fn key_storage_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_storage_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_storage_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you choose <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder writes your data key into the same bucket as the associated playlist.</p>
-    pub fn set_key_storage_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_storage_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_storage_policy = input;
         self
     }

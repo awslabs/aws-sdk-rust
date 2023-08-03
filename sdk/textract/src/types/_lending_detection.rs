@@ -44,9 +44,7 @@ impl LendingDetection {
 
 /// A builder for [`LendingDetection`](crate::types::LendingDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LendingDetectionBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) selection_status: ::std::option::Option<crate::types::SelectionStatus>,
@@ -74,10 +72,7 @@ impl LendingDetectionBuilder {
         self
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
-    pub fn set_selection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectionStatus>,
-    ) -> Self {
+    pub fn set_selection_status(mut self, input: ::std::option::Option<crate::types::SelectionStatus>) -> Self {
         self.selection_status = input;
         self
     }

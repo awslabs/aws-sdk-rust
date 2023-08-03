@@ -23,9 +23,7 @@ impl HttpEndpointRetryOptions {
 
 /// A builder for [`HttpEndpointRetryOptions`](crate::types::HttpEndpointRetryOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpEndpointRetryOptionsBuilder {
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
 }

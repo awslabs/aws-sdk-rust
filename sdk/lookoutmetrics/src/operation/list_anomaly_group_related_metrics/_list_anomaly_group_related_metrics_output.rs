@@ -5,8 +5,7 @@
 pub struct ListAnomalyGroupRelatedMetricsOutput {
     /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
     #[doc(hidden)]
-    pub inter_metric_impact_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::InterMetricImpactDetails>>,
+    pub inter_metric_impact_list: ::std::option::Option<::std::vec::Vec<crate::types::InterMetricImpactDetails>>,
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAnomalyGroupRelatedMetricsOutput {
 }
 impl ListAnomalyGroupRelatedMetricsOutput {
     /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
-    pub fn inter_metric_impact_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InterMetricImpactDetails]> {
+    pub fn inter_metric_impact_list(&self) -> ::std::option::Option<&[crate::types::InterMetricImpactDetails]> {
         self.inter_metric_impact_list.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAnomalyGroupRelatedMetricsOutput 
 }
 impl ListAnomalyGroupRelatedMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsOutput`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput).
-    pub fn builder() -> crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsOutputBuilder{
+    pub fn builder() -> crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsOutputBuilder {
         crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnomalyGroupRelatedMetricsOutput`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupRelatedMetricsOutputBuilder {
-    pub(crate) inter_metric_impact_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::InterMetricImpactDetails>>,
+    pub(crate) inter_metric_impact_list: ::std::option::Option<::std::vec::Vec<crate::types::InterMetricImpactDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListAnomalyGroupRelatedMetricsOutputBuilder {
     /// To override the contents of this collection use [`set_inter_metric_impact_list`](Self::set_inter_metric_impact_list).
     ///
     /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
-    pub fn inter_metric_impact_list(
-        mut self,
-        input: crate::types::InterMetricImpactDetails,
-    ) -> Self {
+    pub fn inter_metric_impact_list(mut self, input: crate::types::InterMetricImpactDetails) -> Self {
         let mut v = self.inter_metric_impact_list.unwrap_or_default();
         v.push(input);
         self.inter_metric_impact_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
-    pub fn set_inter_metric_impact_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InterMetricImpactDetails>>,
-    ) -> Self {
+    pub fn set_inter_metric_impact_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InterMetricImpactDetails>>) -> Self {
         self.inter_metric_impact_list = input;
         self
     }
     /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
-    pub fn get_inter_metric_impact_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InterMetricImpactDetails>> {
+    pub fn get_inter_metric_impact_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InterMetricImpactDetails>> {
         &self.inter_metric_impact_list
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -100,10 +86,7 @@ impl ListAnomalyGroupRelatedMetricsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAnomalyGroupRelatedMetricsOutput`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput
-    {
+    pub fn build(self) -> crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput {
         crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput {
             inter_metric_impact_list: self.inter_metric_impact_list,
             next_token: self.next_token,

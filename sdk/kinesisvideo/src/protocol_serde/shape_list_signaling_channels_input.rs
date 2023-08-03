@@ -6,10 +6,7 @@ pub fn ser_list_signaling_channels_input(
     if let Some(var_1) = &input.channel_name_condition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ChannelNameCondition").start_object();
-        crate::protocol_serde::shape_channel_name_condition::ser_channel_name_condition(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_channel_name_condition::ser_channel_name_condition(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.max_results {

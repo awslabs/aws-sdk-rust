@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_vocabulary::GetVocabularyOutput::failure_reason): <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     ///   - [`download_uri(Option<String>)`](crate::operation::get_vocabulary::GetVocabularyOutput::download_uri): <p>The S3 location where the custom vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     /// - On failure, responds with [`SdkError<GetVocabularyError>`](crate::operation::get_vocabulary::GetVocabularyError)
-    pub fn get_vocabulary(
-        &self,
-    ) -> crate::operation::get_vocabulary::builders::GetVocabularyFluentBuilder {
-        crate::operation::get_vocabulary::builders::GetVocabularyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_vocabulary(&self) -> crate::operation::get_vocabulary::builders::GetVocabularyFluentBuilder {
+        crate::operation::get_vocabulary::builders::GetVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

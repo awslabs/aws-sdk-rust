@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteDataRepositoryAssociationOutput
 }
 impl DeleteDataRepositoryAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataRepositoryAssociationOutput`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput).
-    pub fn builder() -> crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationOutputBuilder {
         crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataRepositoryAssociationOutput`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataRepositoryAssociationOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
@@ -53,18 +51,12 @@ pub struct DeleteDataRepositoryAssociationOutputBuilder {
 }
 impl DeleteDataRepositoryAssociationOutputBuilder {
     /// <p>The ID of the data repository association being deleted.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the data repository association being deleted.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -78,10 +70,7 @@ impl DeleteDataRepositoryAssociationOutputBuilder {
         self
     }
     /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::DataRepositoryLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -113,17 +102,11 @@ impl DeleteDataRepositoryAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDataRepositoryAssociationOutput`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput {
         crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput {
-            association_id: self.association_id
-            ,
-            lifecycle: self.lifecycle
-            ,
-            delete_data_in_file_system: self.delete_data_in_file_system
-            ,
+            association_id: self.association_id,
+            lifecycle: self.lifecycle,
+            delete_data_in_file_system: self.delete_data_in_file_system,
             _request_id: self._request_id,
         }
     }

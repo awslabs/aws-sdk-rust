@@ -49,9 +49,7 @@ impl CreateTokenOutput {
 
 /// A builder for [`CreateTokenOutput`](crate::operation::create_token::CreateTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTokenOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) challenge_code: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl CreateTokenOutputBuilder {
         &self.app_id
     }
     /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
-    pub fn challenge_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn challenge_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.challenge_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
-    pub fn set_challenge_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_challenge_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.challenge_code = input;
         self
     }

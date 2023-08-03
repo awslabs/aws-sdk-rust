@@ -22,16 +22,14 @@ impl DeleteInlinePolicyFromPermissionSetInput {
 }
 impl DeleteInlinePolicyFromPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteInlinePolicyFromPermissionSetInput`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput).
-    pub fn builder() -> crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetInputBuilder{
+    pub fn builder() -> crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetInputBuilder {
         crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInlinePolicyFromPermissionSetInput`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInlinePolicyFromPermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteInlinePolicyFromPermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the permission set that will be used to remove access.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the permission set that will be used to remove access.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -72,14 +64,17 @@ impl DeleteInlinePolicyFromPermissionSetInputBuilder {
         &self.permission_set_arn
     }
     /// Consumes the builder and constructs a [`DeleteInlinePolicyFromPermissionSetInput`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput {
-                instance_arn: self.instance_arn
-                ,
-                permission_set_arn: self.permission_set_arn
-                ,
-            }
+                instance_arn: self.instance_arn,
+                permission_set_arn: self.permission_set_arn,
+            },
         )
     }
 }

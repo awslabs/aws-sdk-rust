@@ -30,27 +30,19 @@ impl PendingModifiedServiceUpdate {
 
 /// A builder for [`PendingModifiedServiceUpdate`](crate::types::PendingModifiedServiceUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingModifiedServiceUpdateBuilder {
     pub(crate) service_update_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
 }
 impl PendingModifiedServiceUpdateBuilder {
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_update_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_update_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_update_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_update_name = input;
         self
     }
@@ -64,10 +56,7 @@ impl PendingModifiedServiceUpdateBuilder {
         self
     }
     /// <p>The status of the service update</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceUpdateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceUpdateStatus>) -> Self {
         self.status = input;
         self
     }

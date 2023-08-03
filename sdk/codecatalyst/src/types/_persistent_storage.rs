@@ -27,9 +27,7 @@ impl PersistentStorage {
 
 /// A builder for [`PersistentStorage`](crate::types::PersistentStorage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PersistentStorageBuilder {
     pub(crate) size_in_gi_b: ::std::option::Option<i32>,
 }

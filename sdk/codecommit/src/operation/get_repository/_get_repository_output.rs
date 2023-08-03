@@ -29,9 +29,7 @@ impl GetRepositoryOutput {
 
 /// A builder for [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRepositoryOutputBuilder {
     pub(crate) repository_metadata: ::std::option::Option<crate::types::RepositoryMetadata>,
     _request_id: Option<String>,
@@ -43,17 +41,12 @@ impl GetRepositoryOutputBuilder {
         self
     }
     /// <p>Information about the repository.</p>
-    pub fn set_repository_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryMetadata>,
-    ) -> Self {
+    pub fn set_repository_metadata(mut self, input: ::std::option::Option<crate::types::RepositoryMetadata>) -> Self {
         self.repository_metadata = input;
         self
     }
     /// <p>Information about the repository.</p>
-    pub fn get_repository_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryMetadata> {
+    pub fn get_repository_metadata(&self) -> &::std::option::Option<crate::types::RepositoryMetadata> {
         &self.repository_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

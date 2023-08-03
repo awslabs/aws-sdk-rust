@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`replication_configs(Option<Vec<ReplicationConfig>>)`](crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput::replication_configs): <p>Returned configuration parameters that describe each provisioned DMS Serverless replication.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationConfigsError>`](crate::operation::describe_replication_configs::DescribeReplicationConfigsError)
-    pub fn describe_replication_configs(&self) -> crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsFluentBuilder{
+    pub fn describe_replication_configs(&self) -> crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsFluentBuilder {
         crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsFluentBuilder::new(self.handle.clone())
     }
 }

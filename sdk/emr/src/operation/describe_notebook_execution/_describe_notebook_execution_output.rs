@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeNotebookExecutionOutput {
 }
 impl DescribeNotebookExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotebookExecutionOutput`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput).
-    pub fn builder() -> crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionOutputBuilder {
         crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotebookExecutionOutput`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotebookExecutionOutputBuilder {
     pub(crate) notebook_execution: ::std::option::Option<crate::types::NotebookExecution>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DescribeNotebookExecutionOutputBuilder {
         self
     }
     /// <p>Properties of the notebook execution.</p>
-    pub fn set_notebook_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookExecution>,
-    ) -> Self {
+    pub fn set_notebook_execution(mut self, input: ::std::option::Option<crate::types::NotebookExecution>) -> Self {
         self.notebook_execution = input;
         self
     }
     /// <p>Properties of the notebook execution.</p>
-    pub fn get_notebook_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotebookExecution> {
+    pub fn get_notebook_execution(&self) -> &::std::option::Option<crate::types::NotebookExecution> {
         &self.notebook_execution
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl DescribeNotebookExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNotebookExecutionOutput`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput {
+    pub fn build(self) -> crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput {
         crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput {
             notebook_execution: self.notebook_execution,
             _request_id: self._request_id,

@@ -15,16 +15,14 @@ impl DescribeAuditStreamConfigurationInput {
 }
 impl DescribeAuditStreamConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditStreamConfigurationInput`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationInput).
-    pub fn builder() -> crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationInputBuilder {
         crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAuditStreamConfigurationInput`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAuditStreamConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DescribeAuditStreamConfigurationInputBuilder {
         &self.fleet_arn
     }
     /// Consumes the builder and constructs a [`DescribeAuditStreamConfigurationInput`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationInput {
-                fleet_arn: self.fleet_arn
-                ,
-            }
+            crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationInput { fleet_arn: self.fleet_arn },
         )
     }
 }

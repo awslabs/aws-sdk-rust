@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`multicast_group_id(impl ::std::convert::Into<String>)`](crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskFluentBuilder::multicast_group_id) / [`set_multicast_group_id(Option<String>)`](crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskFluentBuilder::set_multicast_group_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskOutput)
     /// - On failure, responds with [`SdkError<AssociateMulticastGroupWithFuotaTaskError>`](crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskError)
-    pub fn associate_multicast_group_with_fuota_task(&self) -> crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskFluentBuilder{
-        crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskFluentBuilder::new(self.handle.clone())
+    pub fn associate_multicast_group_with_fuota_task(
+        &self,
+    ) -> crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskFluentBuilder {
+        crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRoomMembershipOutput`](crate::operation::create_room_membership::CreateRoomMembershipOutput) with field(s):
     ///   - [`room_membership(Option<RoomMembership>)`](crate::operation::create_room_membership::CreateRoomMembershipOutput::room_membership): <p>The room membership details.</p>
     /// - On failure, responds with [`SdkError<CreateRoomMembershipError>`](crate::operation::create_room_membership::CreateRoomMembershipError)
-    pub fn create_room_membership(
-        &self,
-    ) -> crate::operation::create_room_membership::builders::CreateRoomMembershipFluentBuilder {
-        crate::operation::create_room_membership::builders::CreateRoomMembershipFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_room_membership(&self) -> crate::operation::create_room_membership::builders::CreateRoomMembershipFluentBuilder {
+        crate::operation::create_room_membership::builders::CreateRoomMembershipFluentBuilder::new(self.handle.clone())
     }
 }

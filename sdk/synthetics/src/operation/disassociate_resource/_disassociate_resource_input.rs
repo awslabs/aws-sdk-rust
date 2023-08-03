@@ -22,36 +22,26 @@ impl DisassociateResourceInput {
 }
 impl DisassociateResourceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder {
-        crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder {
+        crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateResourceInputBuilder {
     pub(crate) group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateResourceInputBuilder {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn set_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_identifier = input;
         self
     }
@@ -76,15 +66,11 @@ impl DisassociateResourceInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_resource::DisassociateResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_resource::DisassociateResourceInput {
-                group_identifier: self.group_identifier,
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_resource::DisassociateResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_resource::DisassociateResourceInput {
+            group_identifier: self.group_identifier,
+            resource_arn: self.resource_arn,
+        })
     }
 }

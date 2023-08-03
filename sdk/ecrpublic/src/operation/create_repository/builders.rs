@@ -10,10 +10,7 @@ impl CreateRepositoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_repository();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateRepositoryFluentBuilder {
         }
     }
     /// Access the CreateRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateRepositoryFluentBuilder {
             crate::operation::create_repository::CreateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateRepositoryFluentBuilder {
             crate::operation::create_repository::CreateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the repository into a category (for example <code>project-a/nginx-web-app</code>).</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the repository into a category (for example <code>project-a/nginx-web-app</code>).</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -148,17 +126,12 @@ impl CreateRepositoryFluentBuilder {
         self
     }
     /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn set_catalog_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryCatalogDataInput>,
-    ) -> Self {
+    pub fn set_catalog_data(mut self, input: ::std::option::Option<crate::types::RepositoryCatalogDataInput>) -> Self {
         self.inner = self.inner.set_catalog_data(input);
         self
     }
     /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn get_catalog_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryCatalogDataInput> {
+    pub fn get_catalog_data(&self) -> &::std::option::Option<crate::types::RepositoryCatalogDataInput> {
         self.inner.get_catalog_data()
     }
     /// Appends an item to `tags`.
@@ -171,10 +144,7 @@ impl CreateRepositoryFluentBuilder {
         self
     }
     /// <p>The metadata that you apply to each repository to help categorize and organize your repositories. Each tag consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -35,9 +35,7 @@ impl GetTablesOutput {
 
 /// A builder for [`GetTablesOutput`](crate::operation::get_tables::GetTablesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTablesOutputBuilder {
     pub(crate) table_list: ::std::option::Option<::std::vec::Vec<crate::types::Table>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetTablesOutputBuilder {
         self
     }
     /// <p>A list of the requested <code>Table</code> objects.</p>
-    pub fn set_table_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Table>>,
-    ) -> Self {
+    pub fn set_table_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Table>>) -> Self {
         self.table_list = input;
         self
     }

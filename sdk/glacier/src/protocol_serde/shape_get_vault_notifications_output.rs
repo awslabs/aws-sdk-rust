@@ -5,7 +5,10 @@ pub(crate) fn de_vault_notification_config_payload(
     ::std::option::Option<crate::types::VaultNotificationConfig>,
     crate::operation::get_vault_notifications::GetVaultNotificationsError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_vault_notification_config::de_vault_notification_config_payload(body).map_err(crate::operation::get_vault_notifications::GetVaultNotificationsError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_vault_notification_config::de_vault_notification_config_payload(body)
+                .map_err(crate::operation::get_vault_notifications::GetVaultNotificationsError::unhandled)
+        })
+        .transpose()
 }

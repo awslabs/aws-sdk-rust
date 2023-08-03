@@ -25,9 +25,7 @@ impl DescribePullRequestEventsInput {
         self.pull_request_id.as_deref()
     }
     /// <p>Optional. The pull request event type about which you want to return information.</p>
-    pub fn pull_request_event_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PullRequestEventType> {
+    pub fn pull_request_event_type(&self) -> ::std::option::Option<&crate::types::PullRequestEventType> {
         self.pull_request_event_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
@@ -45,16 +43,14 @@ impl DescribePullRequestEventsInput {
 }
 impl DescribePullRequestEventsInput {
     /// Creates a new builder-style object to manufacture [`DescribePullRequestEventsInput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsInput).
-    pub fn builder() -> crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder{
+    pub fn builder() -> crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder {
         crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePullRequestEventsInput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePullRequestEventsInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) pull_request_event_type: ::std::option::Option<crate::types::PullRequestEventType>,
@@ -64,18 +60,12 @@ pub struct DescribePullRequestEventsInputBuilder {
 }
 impl DescribePullRequestEventsInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -89,17 +79,12 @@ impl DescribePullRequestEventsInputBuilder {
         self
     }
     /// <p>Optional. The pull request event type about which you want to return information.</p>
-    pub fn set_pull_request_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequestEventType>,
-    ) -> Self {
+    pub fn set_pull_request_event_type(mut self, input: ::std::option::Option<crate::types::PullRequestEventType>) -> Self {
         self.pull_request_event_type = input;
         self
     }
     /// <p>Optional. The pull request event type about which you want to return information.</p>
-    pub fn get_pull_request_event_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PullRequestEventType> {
+    pub fn get_pull_request_event_type(&self) -> &::std::option::Option<crate::types::PullRequestEventType> {
         &self.pull_request_event_type
     }
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
@@ -151,14 +136,12 @@ impl DescribePullRequestEventsInputBuilder {
         crate::operation::describe_pull_request_events::DescribePullRequestEventsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_pull_request_events::DescribePullRequestEventsInput {
-                pull_request_id: self.pull_request_id,
-                pull_request_event_type: self.pull_request_event_type,
-                actor_arn: self.actor_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_pull_request_events::DescribePullRequestEventsInput {
+            pull_request_id: self.pull_request_id,
+            pull_request_event_type: self.pull_request_event_type,
+            actor_arn: self.actor_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

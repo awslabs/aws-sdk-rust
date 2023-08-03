@@ -6,10 +6,7 @@ pub fn ser_create_face_liveness_session_request_settings(
     if let Some(var_1) = &input.output_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("OutputConfig").start_object();
-        crate::protocol_serde::shape_liveness_output_config::ser_liveness_output_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_liveness_output_config::ser_liveness_output_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.audit_images_limit {

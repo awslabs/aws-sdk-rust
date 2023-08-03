@@ -5,16 +5,16 @@ pub use crate::operation::batch_create_custom_vocabulary_item::_batch_create_cus
 
 impl BatchCreateCustomVocabularyItemInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_create_custom_vocabulary_item();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl BatchCreateCustomVocabularyItemInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateCustomVocabularyItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_create_custom_vocabulary_item::builders::BatchCreateCustomVocabularyItemInputBuilder,
+    inner: crate::operation::batch_create_custom_vocabulary_item::builders::BatchCreateCustomVocabularyItemInputBuilder,
 }
 impl BatchCreateCustomVocabularyItemFluentBuilder {
     /// Creates a new `BatchCreateCustomVocabularyItem`.
@@ -37,15 +37,20 @@ impl BatchCreateCustomVocabularyItemFluentBuilder {
         }
     }
     /// Access the BatchCreateCustomVocabularyItem as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_create_custom_vocabulary_item::builders::BatchCreateCustomVocabularyItemInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_create_custom_vocabulary_item::builders::BatchCreateCustomVocabularyItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItem, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItem,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl BatchCreateCustomVocabularyItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl BatchCreateCustomVocabularyItemFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItem, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItem,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
@@ -141,25 +156,17 @@ impl BatchCreateCustomVocabularyItemFluentBuilder {
     /// To override the contents of this collection use [`set_custom_vocabulary_item_list`](Self::set_custom_vocabulary_item_list).
     ///
     /// <p>A list of new custom vocabulary items. Each entry must contain a phrase and can optionally contain a displayAs and/or a weight.</p>
-    pub fn custom_vocabulary_item_list(
-        mut self,
-        input: crate::types::NewCustomVocabularyItem,
-    ) -> Self {
+    pub fn custom_vocabulary_item_list(mut self, input: crate::types::NewCustomVocabularyItem) -> Self {
         self.inner = self.inner.custom_vocabulary_item_list(input);
         self
     }
     /// <p>A list of new custom vocabulary items. Each entry must contain a phrase and can optionally contain a displayAs and/or a weight.</p>
-    pub fn set_custom_vocabulary_item_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NewCustomVocabularyItem>>,
-    ) -> Self {
+    pub fn set_custom_vocabulary_item_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NewCustomVocabularyItem>>) -> Self {
         self.inner = self.inner.set_custom_vocabulary_item_list(input);
         self
     }
     /// <p>A list of new custom vocabulary items. Each entry must contain a phrase and can optionally contain a displayAs and/or a weight.</p>
-    pub fn get_custom_vocabulary_item_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NewCustomVocabularyItem>> {
+    pub fn get_custom_vocabulary_item_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NewCustomVocabularyItem>> {
         self.inner.get_custom_vocabulary_item_list()
     }
 }

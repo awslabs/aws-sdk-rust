@@ -41,10 +41,7 @@ impl ListServerCertificatesFluentBuilder {
         }
     }
     /// Access the ListServerCertificates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_server_certificates::builders::ListServerCertificatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_server_certificates::builders::ListServerCertificatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl ListServerCertificatesFluentBuilder {
             crate::operation::list_server_certificates::ListServerCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_server_certificates::ListServerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_server_certificates::ListServerCertificatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl ListServerCertificatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl ListServerCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_server_certificates::ListServerCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_server_certificates::ListServerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_server_certificates::ListServerCertificatesError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl ListServerCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_server_certificates::ListServerCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_server_certificates::ListServerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_server_certificates::ListServerCertificatesError>,
     > {
         self.send_middleware().await
     }
@@ -121,23 +109,15 @@ impl ListServerCertificatesFluentBuilder {
             crate::operation::list_server_certificates::ListServerCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_server_certificates::ListServerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_server_certificates::ListServerCertificatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_server_certificates::paginator::ListServerCertificatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_server_certificates::paginator::ListServerCertificatesPaginator
-    {
-        crate::operation::list_server_certificates::paginator::ListServerCertificatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_server_certificates::paginator::ListServerCertificatesPaginator {
+        crate::operation::list_server_certificates::paginator::ListServerCertificatesPaginator::new(self.handle, self.inner)
     }
     /// <p> The path prefix for filtering the results. For example: <code>/company/servercerts</code> would get all server certificates for which the path starts with <code>/company/servercerts</code>.</p>
     /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all server certificates. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>

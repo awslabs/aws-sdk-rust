@@ -49,13 +49,7 @@
 /// contacting Amazon Web Services Support.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ServiceLimit {
     #[allow(missing_docs)] // documentation missing in model
@@ -86,9 +80,7 @@ impl ::std::convert::From<&str> for ServiceLimit {
         match s {
             "FILE_CACHE_COUNT" => ServiceLimit::FileCacheCount,
             "FILE_SYSTEM_COUNT" => ServiceLimit::FileSystemCount,
-            "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM" => {
-                ServiceLimit::StorageVirtualMachinesPerFileSystem
-            }
+            "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM" => ServiceLimit::StorageVirtualMachinesPerFileSystem,
             "TOTAL_IN_PROGRESS_COPY_BACKUPS" => ServiceLimit::TotalInProgressCopyBackups,
             "TOTAL_SSD_IOPS" => ServiceLimit::TotalSsdIops,
             "TOTAL_STORAGE" => ServiceLimit::TotalStorage,
@@ -96,9 +88,7 @@ impl ::std::convert::From<&str> for ServiceLimit {
             "TOTAL_USER_INITIATED_BACKUPS" => ServiceLimit::TotalUserInitiatedBackups,
             "TOTAL_USER_TAGS" => ServiceLimit::TotalUserTags,
             "VOLUMES_PER_FILE_SYSTEM" => ServiceLimit::VolumesPerFileSystem,
-            other => {
-                ServiceLimit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ServiceLimit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -115,9 +105,7 @@ impl ServiceLimit {
         match self {
             ServiceLimit::FileCacheCount => "FILE_CACHE_COUNT",
             ServiceLimit::FileSystemCount => "FILE_SYSTEM_COUNT",
-            ServiceLimit::StorageVirtualMachinesPerFileSystem => {
-                "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM"
-            }
+            ServiceLimit::StorageVirtualMachinesPerFileSystem => "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM",
             ServiceLimit::TotalInProgressCopyBackups => "TOTAL_IN_PROGRESS_COPY_BACKUPS",
             ServiceLimit::TotalSsdIops => "TOTAL_SSD_IOPS",
             ServiceLimit::TotalStorage => "TOTAL_STORAGE",

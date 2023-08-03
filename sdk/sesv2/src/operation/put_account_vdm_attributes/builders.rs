@@ -27,8 +27,7 @@ impl PutAccountVdmAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAccountVdmAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesInputBuilder,
+    inner: crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesInputBuilder,
 }
 impl PutAccountVdmAttributesFluentBuilder {
     /// Creates a new `PutAccountVdmAttributes`.
@@ -39,10 +38,7 @@ impl PutAccountVdmAttributesFluentBuilder {
         }
     }
     /// Access the PutAccountVdmAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl PutAccountVdmAttributesFluentBuilder {
             crate::operation::put_account_vdm_attributes::PutAccountVdmAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl PutAccountVdmAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl PutAccountVdmAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl PutAccountVdmAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl PutAccountVdmAttributesFluentBuilder {
             crate::operation::put_account_vdm_attributes::PutAccountVdmAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +116,7 @@ impl PutAccountVdmAttributesFluentBuilder {
         self
     }
     /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
-    pub fn set_vdm_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::VdmAttributes>,
-    ) -> Self {
+    pub fn set_vdm_attributes(mut self, input: ::std::option::Option<crate::types::VdmAttributes>) -> Self {
         self.inner = self.inner.set_vdm_attributes(input);
         self
     }

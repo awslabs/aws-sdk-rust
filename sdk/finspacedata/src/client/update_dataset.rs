@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDatasetOutput`](crate::operation::update_dataset::UpdateDatasetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::operation::update_dataset::UpdateDatasetOutput::dataset_id): <p>The unique identifier for updated Dataset.</p>
     /// - On failure, responds with [`SdkError<UpdateDatasetError>`](crate::operation::update_dataset::UpdateDatasetError)
-    pub fn update_dataset(
-        &self,
-    ) -> crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder {
-        crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dataset(&self) -> crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder {
+        crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::new(self.handle.clone())
     }
 }

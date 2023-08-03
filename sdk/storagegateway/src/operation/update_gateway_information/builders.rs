@@ -28,7 +28,7 @@ impl UpdateGatewayInformationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGatewayInformationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder,
+    inner: crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder,
 }
 impl UpdateGatewayInformationFluentBuilder {
     /// Creates a new `UpdateGatewayInformation`.
@@ -39,10 +39,7 @@ impl UpdateGatewayInformationFluentBuilder {
         }
     }
     /// Access the UpdateGatewayInformation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl UpdateGatewayInformationFluentBuilder {
             crate::operation::update_gateway_information::UpdateGatewayInformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_information::UpdateGatewayInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_information::UpdateGatewayInformationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl UpdateGatewayInformationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl UpdateGatewayInformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_information::UpdateGatewayInformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_information::UpdateGatewayInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_information::UpdateGatewayInformationError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl UpdateGatewayInformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_information::UpdateGatewayInformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_information::UpdateGatewayInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_information::UpdateGatewayInformationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl UpdateGatewayInformationFluentBuilder {
             crate::operation::update_gateway_information::UpdateGatewayInformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_information::UpdateGatewayInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_information::UpdateGatewayInformationError>,
     > {
         self.customize_middleware().await
     }
@@ -154,18 +140,12 @@ impl UpdateGatewayInformationFluentBuilder {
         self.inner.get_gateway_name()
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
-    pub fn gateway_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_timezone(input.into());
         self
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
-    pub fn set_gateway_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_timezone(input);
         self
     }
@@ -175,19 +155,13 @@ impl UpdateGatewayInformationFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_log_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cloud_watch_log_group_arn(input);
         self
     }
@@ -202,10 +176,7 @@ impl UpdateGatewayInformationFluentBuilder {
         self
     }
     /// <p>Specifies the size of the gateway's metadata cache.</p>
-    pub fn set_gateway_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayCapacity>,
-    ) -> Self {
+    pub fn set_gateway_capacity(mut self, input: ::std::option::Option<crate::types::GatewayCapacity>) -> Self {
         self.inner = self.inner.set_gateway_capacity(input);
         self
     }

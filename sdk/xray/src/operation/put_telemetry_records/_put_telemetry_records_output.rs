@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutTelemetryRecordsOutput {
 }
 impl PutTelemetryRecordsOutput {
     /// Creates a new builder-style object to manufacture [`PutTelemetryRecordsOutput`](crate::operation::put_telemetry_records::PutTelemetryRecordsOutput).
-    pub fn builder(
-    ) -> crate::operation::put_telemetry_records::builders::PutTelemetryRecordsOutputBuilder {
-        crate::operation::put_telemetry_records::builders::PutTelemetryRecordsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_telemetry_records::builders::PutTelemetryRecordsOutputBuilder {
+        crate::operation::put_telemetry_records::builders::PutTelemetryRecordsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutTelemetryRecordsOutput`](crate::operation::put_telemetry_records::PutTelemetryRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutTelemetryRecordsOutputBuilder {
     _request_id: Option<String>,
 }

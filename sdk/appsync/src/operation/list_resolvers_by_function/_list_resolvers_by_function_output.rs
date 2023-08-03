@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListResolversByFunctionOutput {
 }
 impl ListResolversByFunctionOutput {
     /// Creates a new builder-style object to manufacture [`ListResolversByFunctionOutput`](crate::operation::list_resolvers_by_function::ListResolversByFunctionOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionOutputBuilder {
         crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolversByFunctionOutput`](crate::operation::list_resolvers_by_function::ListResolversByFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolversByFunctionOutputBuilder {
     pub(crate) resolvers: ::std::option::Option<::std::vec::Vec<crate::types::Resolver>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListResolversByFunctionOutputBuilder {
         self
     }
     /// <p>The list of resolvers.</p>
-    pub fn set_resolvers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resolver>>,
-    ) -> Self {
+    pub fn set_resolvers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resolver>>) -> Self {
         self.resolvers = input;
         self
     }
@@ -93,9 +86,7 @@ impl ListResolversByFunctionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResolversByFunctionOutput`](crate::operation::list_resolvers_by_function::ListResolversByFunctionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resolvers_by_function::ListResolversByFunctionOutput {
+    pub fn build(self) -> crate::operation::list_resolvers_by_function::ListResolversByFunctionOutput {
         crate::operation::list_resolvers_by_function::ListResolversByFunctionOutput {
             resolvers: self.resolvers,
             next_token: self.next_token,

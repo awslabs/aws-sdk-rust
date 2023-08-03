@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateChannelFlowOutput {
 }
 impl UpdateChannelFlowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelFlowOutput`](crate::operation::update_channel_flow::UpdateChannelFlowOutput).
-    pub fn builder(
-    ) -> crate::operation::update_channel_flow::builders::UpdateChannelFlowOutputBuilder {
+    pub fn builder() -> crate::operation::update_channel_flow::builders::UpdateChannelFlowOutputBuilder {
         crate::operation::update_channel_flow::builders::UpdateChannelFlowOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateChannelFlowOutput`](crate::operation::update_channel_flow::UpdateChannelFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelFlowOutputBuilder {
     pub(crate) channel_flow_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateChannelFlowOutputBuilder {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_flow_arn = input;
         self
     }

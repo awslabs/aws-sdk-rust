@@ -26,7 +26,7 @@ impl ListSourceRepositoryBranchesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSourceRepositoryBranchesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesInputBuilder,
+    inner: crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesInputBuilder,
 }
 impl ListSourceRepositoryBranchesFluentBuilder {
     /// Creates a new `ListSourceRepositoryBranches`.
@@ -37,7 +37,7 @@ impl ListSourceRepositoryBranchesFluentBuilder {
         }
     }
     /// Access the ListSourceRepositoryBranches as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSourceRepositoryBranchesFluentBuilder {
             crate::operation::list_source_repository_branches::ListSourceRepositoryBranches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSourceRepositoryBranchesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSourceRepositoryBranchesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSourceRepositoryBranchesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListSourceRepositoryBranchesFluentBuilder {
             crate::operation::list_source_repository_branches::ListSourceRepositoryBranches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_source_repository_branches::paginator::ListSourceRepositoryBranchesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_source_repository_branches::paginator::ListSourceRepositoryBranchesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_source_repository_branches::paginator::ListSourceRepositoryBranchesPaginator {
         crate::operation::list_source_repository_branches::paginator::ListSourceRepositoryBranchesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the space.</p>
@@ -155,18 +144,12 @@ impl ListSourceRepositoryBranchesFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>The name of the source repository.</p>
-    pub fn source_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_repository_name(input.into());
         self
     }
     /// <p>The name of the source repository.</p>
-    pub fn set_source_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_repository_name(input);
         self
     }

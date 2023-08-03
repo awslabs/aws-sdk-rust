@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigOutput::last_modified_time): <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigOutput::creation_time): <p>A timestamp that tells when the lifecycle configuration was created.</p>
     /// - On failure, responds with [`SdkError<DescribeNotebookInstanceLifecycleConfigError>`](crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigError)
-    pub fn describe_notebook_instance_lifecycle_config(&self) -> crate::operation::describe_notebook_instance_lifecycle_config::builders::DescribeNotebookInstanceLifecycleConfigFluentBuilder{
-        crate::operation::describe_notebook_instance_lifecycle_config::builders::DescribeNotebookInstanceLifecycleConfigFluentBuilder::new(self.handle.clone())
+    pub fn describe_notebook_instance_lifecycle_config(
+        &self,
+    ) -> crate::operation::describe_notebook_instance_lifecycle_config::builders::DescribeNotebookInstanceLifecycleConfigFluentBuilder {
+        crate::operation::describe_notebook_instance_lifecycle_config::builders::DescribeNotebookInstanceLifecycleConfigFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

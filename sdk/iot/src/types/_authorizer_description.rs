@@ -18,9 +18,7 @@ pub struct AuthorizerDescription {
     pub token_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
     #[doc(hidden)]
-    pub token_signing_public_keys: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub token_signing_public_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the authorizer.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AuthorizerStatus>,
@@ -55,11 +53,7 @@ impl AuthorizerDescription {
         self.token_key_name.as_deref()
     }
     /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
-    pub fn token_signing_public_keys(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn token_signing_public_keys(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.token_signing_public_keys.as_ref()
     }
     /// <p>The status of the authorizer.</p>
@@ -92,17 +86,13 @@ impl AuthorizerDescription {
 
 /// A builder for [`AuthorizerDescription`](crate::types::AuthorizerDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizerDescriptionBuilder {
     pub(crate) authorizer_name: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) token_key_name: ::std::option::Option<::std::string::String>,
-    pub(crate) token_signing_public_keys: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) token_signing_public_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::AuthorizerStatus>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -111,18 +101,12 @@ pub struct AuthorizerDescriptionBuilder {
 }
 impl AuthorizerDescriptionBuilder {
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer name.</p>
-    pub fn set_authorizer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_name = input;
         self
     }
@@ -131,18 +115,12 @@ impl AuthorizerDescriptionBuilder {
         &self.authorizer_name
     }
     /// <p>The authorizer ARN.</p>
-    pub fn authorizer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer ARN.</p>
-    pub fn set_authorizer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_arn = input;
         self
     }
@@ -151,18 +129,12 @@ impl AuthorizerDescriptionBuilder {
         &self.authorizer_arn
     }
     /// <p>The authorizer's Lambda function ARN.</p>
-    pub fn authorizer_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer's Lambda function ARN.</p>
-    pub fn set_authorizer_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_function_arn = input;
         self
     }
@@ -171,18 +143,12 @@ impl AuthorizerDescriptionBuilder {
         &self.authorizer_function_arn
     }
     /// <p>The key used to extract the token from the HTTP headers.</p>
-    pub fn token_key_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key used to extract the token from the HTTP headers.</p>
-    pub fn set_token_key_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_token_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_key_name = input;
         self
     }
@@ -208,19 +174,13 @@ impl AuthorizerDescriptionBuilder {
     /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
     pub fn set_token_signing_public_keys(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.token_signing_public_keys = input;
         self
     }
     /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
-    pub fn get_token_signing_public_keys(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_token_signing_public_keys(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.token_signing_public_keys
     }
     /// <p>The status of the authorizer.</p>
@@ -229,10 +189,7 @@ impl AuthorizerDescriptionBuilder {
         self
     }
     /// <p>The status of the authorizer.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizerStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AuthorizerStatus>) -> Self {
         self.status = input;
         self
     }
@@ -246,10 +203,7 @@ impl AuthorizerDescriptionBuilder {
         self
     }
     /// <p>The UNIX timestamp of when the authorizer was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -263,10 +217,7 @@ impl AuthorizerDescriptionBuilder {
         self
     }
     /// <p>The UNIX timestamp of when the authorizer was last updated.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }

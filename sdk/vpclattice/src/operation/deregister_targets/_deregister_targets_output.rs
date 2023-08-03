@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DeregisterTargetsOutput {
 }
 impl DeregisterTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTargetsOutput`](crate::operation::deregister_targets::DeregisterTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder {
         crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterTargetsOutput`](crate::operation::deregister_targets::DeregisterTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTargetsOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>,
@@ -57,10 +54,7 @@ impl DeregisterTargetsOutputBuilder {
         self
     }
     /// <p>The targets that were successfully deregistered.</p>
-    pub fn set_successful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.successful = input;
         self
     }
@@ -80,17 +74,12 @@ impl DeregisterTargetsOutputBuilder {
         self
     }
     /// <p>The targets that the operation couldn't deregister.</p>
-    pub fn set_unsuccessful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>,
-    ) -> Self {
+    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>) -> Self {
         self.unsuccessful = input;
         self
     }
     /// <p>The targets that the operation couldn't deregister.</p>
-    pub fn get_unsuccessful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>> {
+    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>> {
         &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

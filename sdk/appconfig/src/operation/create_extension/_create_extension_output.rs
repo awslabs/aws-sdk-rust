@@ -20,17 +20,10 @@ pub struct CreateExtensionOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The actions defined in the extension.</p>
     #[doc(hidden)]
-    pub actions: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ActionPoint,
-            ::std::vec::Vec<crate::types::Action>,
-        >,
-    >,
+    pub actions: ::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Parameter>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>>,
     _request_id: Option<String>,
 }
 impl CreateExtensionOutput {
@@ -55,22 +48,11 @@ impl CreateExtensionOutput {
         self.description.as_deref()
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::ActionPoint,
-            ::std::vec::Vec<crate::types::Action>,
-        >,
-    > {
+    pub fn actions(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>> {
         self.actions.as_ref()
     }
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Parameter>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Parameter>> {
         self.parameters.as_ref()
     }
 }
@@ -88,24 +70,15 @@ impl CreateExtensionOutput {
 
 /// A builder for [`CreateExtensionOutput`](crate::operation::create_extension::CreateExtensionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExtensionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ActionPoint,
-            ::std::vec::Vec<crate::types::Action>,
-        >,
-    >,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Parameter>,
-    >,
+    pub(crate) actions: ::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>>,
     _request_id: Option<String>,
 }
 impl CreateExtensionOutputBuilder {
@@ -184,11 +157,7 @@ impl CreateExtensionOutputBuilder {
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(
-        mut self,
-        k: crate::types::ActionPoint,
-        v: ::std::vec::Vec<crate::types::Action>,
-    ) -> Self {
+    pub fn actions(mut self, k: crate::types::ActionPoint, v: ::std::vec::Vec<crate::types::Action>) -> Self {
         let mut hash_map = self.actions.unwrap_or_default();
         hash_map.insert(k, v);
         self.actions = ::std::option::Option::Some(hash_map);
@@ -197,12 +166,7 @@ impl CreateExtensionOutputBuilder {
     /// <p>The actions defined in the extension.</p>
     pub fn set_actions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ActionPoint,
-                ::std::vec::Vec<crate::types::Action>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
     ) -> Self {
         self.actions = input;
         self
@@ -210,12 +174,7 @@ impl CreateExtensionOutputBuilder {
     /// <p>The actions defined in the extension.</p>
     pub fn get_actions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ActionPoint,
-            ::std::vec::Vec<crate::types::Action>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>> {
         &self.actions
     }
     /// Adds a key-value pair to `parameters`.
@@ -223,11 +182,7 @@ impl CreateExtensionOutputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Parameter,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Parameter) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -236,19 +191,13 @@ impl CreateExtensionOutputBuilder {
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Parameter>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>>,
     ) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Parameter>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>> {
         &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

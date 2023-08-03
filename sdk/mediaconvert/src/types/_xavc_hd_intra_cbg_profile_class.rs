@@ -39,13 +39,7 @@
 /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum XavcHdIntraCbgProfileClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for XavcHdIntraCbgProfileClass {
             "CLASS_100" => XavcHdIntraCbgProfileClass::Class100,
             "CLASS_200" => XavcHdIntraCbgProfileClass::Class200,
             "CLASS_50" => XavcHdIntraCbgProfileClass::Class50,
-            other => XavcHdIntraCbgProfileClass::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => XavcHdIntraCbgProfileClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::arn): <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
     ///   - [`policy(Option<String>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::policy): <p>The policy that enables the external account to send events to your account.</p>
     /// - On failure, responds with [`SdkError<DescribeEventBusError>`](crate::operation::describe_event_bus::DescribeEventBusError)
-    pub fn describe_event_bus(
-        &self,
-    ) -> crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder {
-        crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_event_bus(&self) -> crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder {
+        crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder::new(self.handle.clone())
     }
 }

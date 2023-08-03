@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeploymentTargetType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DeploymentTargetType {
             "ECSTarget" => DeploymentTargetType::EcsTarget,
             "InstanceTarget" => DeploymentTargetType::InstanceTarget,
             "LambdaTarget" => DeploymentTargetType::LambdaTarget,
-            other => DeploymentTargetType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeploymentTargetType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl DeploymentTargetType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CloudFormationTarget",
-            "ECSTarget",
-            "InstanceTarget",
-            "LambdaTarget",
-        ]
+        &["CloudFormationTarget", "ECSTarget", "InstanceTarget", "LambdaTarget"]
     }
 }
 impl ::std::convert::AsRef<str> for DeploymentTargetType {

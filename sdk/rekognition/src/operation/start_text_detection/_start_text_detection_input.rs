@@ -29,9 +29,7 @@ impl StartTextDetectionInput {
         self.client_request_token.as_deref()
     }
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
-    pub fn notification_channel(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
@@ -45,17 +43,14 @@ impl StartTextDetectionInput {
 }
 impl StartTextDetectionInput {
     /// Creates a new builder-style object to manufacture [`StartTextDetectionInput`](crate::operation::start_text_detection::StartTextDetectionInput).
-    pub fn builder(
-    ) -> crate::operation::start_text_detection::builders::StartTextDetectionInputBuilder {
+    pub fn builder() -> crate::operation::start_text_detection::builders::StartTextDetectionInputBuilder {
         crate::operation::start_text_detection::builders::StartTextDetectionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartTextDetectionInput`](crate::operation::start_text_detection::StartTextDetectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTextDetectionInputBuilder {
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -79,18 +74,12 @@ impl StartTextDetectionInputBuilder {
         &self.video
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -104,17 +93,12 @@ impl StartTextDetectionInputBuilder {
         self
     }
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.notification_channel = input;
         self
     }
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         &self.notification_channel
     }
     /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
@@ -137,10 +121,7 @@ impl StartTextDetectionInputBuilder {
         self
     }
     /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTextDetectionFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::StartTextDetectionFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -151,18 +132,13 @@ impl StartTextDetectionInputBuilder {
     /// Consumes the builder and constructs a [`StartTextDetectionInput`](crate::operation::start_text_detection::StartTextDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_text_detection::StartTextDetectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_text_detection::StartTextDetectionInput {
-                video: self.video,
-                client_request_token: self.client_request_token,
-                notification_channel: self.notification_channel,
-                job_tag: self.job_tag,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_text_detection::StartTextDetectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_text_detection::StartTextDetectionInput {
+            video: self.video,
+            client_request_token: self.client_request_token,
+            notification_channel: self.notification_channel,
+            job_tag: self.job_tag,
+            filters: self.filters,
+        })
     }
 }

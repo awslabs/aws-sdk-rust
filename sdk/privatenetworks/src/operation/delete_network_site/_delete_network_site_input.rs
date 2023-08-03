@@ -22,35 +22,26 @@ impl DeleteNetworkSiteInput {
 }
 impl DeleteNetworkSiteInput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkSiteInput`](crate::operation::delete_network_site::DeleteNetworkSiteInput).
-    pub fn builder(
-    ) -> crate::operation::delete_network_site::builders::DeleteNetworkSiteInputBuilder {
+    pub fn builder() -> crate::operation::delete_network_site::builders::DeleteNetworkSiteInputBuilder {
         crate::operation::delete_network_site::builders::DeleteNetworkSiteInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkSiteInput`](crate::operation::delete_network_site::DeleteNetworkSiteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkSiteInputBuilder {
     pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNetworkSiteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_site_arn = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteNetworkSiteInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkSiteInput`](crate::operation::delete_network_site::DeleteNetworkSiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_network_site::DeleteNetworkSiteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_network_site::DeleteNetworkSiteInput {
-                network_site_arn: self.network_site_arn,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_network_site::DeleteNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_network_site::DeleteNetworkSiteInput {
+            network_site_arn: self.network_site_arn,
+            client_token: self.client_token,
+        })
     }
 }

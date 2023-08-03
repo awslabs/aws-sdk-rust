@@ -23,26 +23,18 @@ impl HubS3StorageConfig {
 
 /// A builder for [`HubS3StorageConfig`](crate::types::HubS3StorageConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HubS3StorageConfigBuilder {
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
 }
 impl HubS3StorageConfigBuilder {
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
-    pub fn s3_output_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
-    pub fn set_s3_output_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_output_path = input;
         self
     }

@@ -41,13 +41,7 @@
 /// Mpeg2 Adaptive Quantization
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mpeg2AdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for Mpeg2AdaptiveQuantization {
             "LOW" => Mpeg2AdaptiveQuantization::Low,
             "MEDIUM" => Mpeg2AdaptiveQuantization::Medium,
             "OFF" => Mpeg2AdaptiveQuantization::Off,
-            other => Mpeg2AdaptiveQuantization::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Mpeg2AdaptiveQuantization::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

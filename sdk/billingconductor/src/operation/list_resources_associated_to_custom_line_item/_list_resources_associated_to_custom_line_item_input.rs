@@ -37,46 +37,36 @@ impl ListResourcesAssociatedToCustomLineItemInput {
         self.next_token.as_deref()
     }
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListResourcesAssociatedToCustomLineItemFilter> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListResourcesAssociatedToCustomLineItemFilter> {
         self.filters.as_ref()
     }
 }
 impl ListResourcesAssociatedToCustomLineItemInput {
     /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemInput`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemInput).
-    pub fn builder() -> crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemInputBuilder{
+    pub fn builder() -> crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemInputBuilder
+    {
         crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourcesAssociatedToCustomLineItemInput`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemInputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter>,
+    pub(crate) filters: ::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter>,
 }
 impl ListResourcesAssociatedToCustomLineItemInputBuilder {
     /// <p> The billing period for which the resource associations will be listed. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The billing period for which the resource associations will be listed. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
@@ -127,42 +117,34 @@ impl ListResourcesAssociatedToCustomLineItemInputBuilder {
         &self.next_token
     }
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-    pub fn filters(
-        mut self,
-        input: crate::types::ListResourcesAssociatedToCustomLineItemFilter,
-    ) -> Self {
+    pub fn filters(mut self, input: crate::types::ListResourcesAssociatedToCustomLineItemFilter) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
     }
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter>) -> Self {
         self.filters = input;
         self
     }
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemInput`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemInput {
-                billing_period: self.billing_period
-                ,
-                arn: self.arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                filters: self.filters
-                ,
-            }
+                billing_period: self.billing_period,
+                arn: self.arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filters: self.filters,
+            },
         )
     }
 }

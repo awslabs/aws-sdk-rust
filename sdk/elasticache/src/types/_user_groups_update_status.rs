@@ -30,13 +30,10 @@ impl UserGroupsUpdateStatus {
 
 /// A builder for [`UserGroupsUpdateStatus`](crate::types::UserGroupsUpdateStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserGroupsUpdateStatusBuilder {
     pub(crate) user_group_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_group_ids_to_remove:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_group_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UserGroupsUpdateStatusBuilder {
     /// Appends an item to `user_group_ids_to_add`.
@@ -44,27 +41,19 @@ impl UserGroupsUpdateStatusBuilder {
     /// To override the contents of this collection use [`set_user_group_ids_to_add`](Self::set_user_group_ids_to_add).
     ///
     /// <p>The ID of the user group to add.</p>
-    pub fn user_group_ids_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_group_ids_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_group_ids_to_add.unwrap_or_default();
         v.push(input.into());
         self.user_group_ids_to_add = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the user group to add.</p>
-    pub fn set_user_group_ids_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_group_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_group_ids_to_add = input;
         self
     }
     /// <p>The ID of the user group to add.</p>
-    pub fn get_user_group_ids_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_group_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_group_ids_to_add
     }
     /// Appends an item to `user_group_ids_to_remove`.
@@ -72,27 +61,19 @@ impl UserGroupsUpdateStatusBuilder {
     /// To override the contents of this collection use [`set_user_group_ids_to_remove`](Self::set_user_group_ids_to_remove).
     ///
     /// <p>The ID of the user group to remove.</p>
-    pub fn user_group_ids_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_group_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_group_ids_to_remove.unwrap_or_default();
         v.push(input.into());
         self.user_group_ids_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the user group to remove.</p>
-    pub fn set_user_group_ids_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_group_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_group_ids_to_remove = input;
         self
     }
     /// <p>The ID of the user group to remove.</p>
-    pub fn get_user_group_ids_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_group_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_group_ids_to_remove
     }
     /// Consumes the builder and constructs a [`UserGroupsUpdateStatus`](crate::types::UserGroupsUpdateStatus).

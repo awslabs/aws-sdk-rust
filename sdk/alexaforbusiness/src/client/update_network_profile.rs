@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateNetworkProfileOutput`](crate::operation::update_network_profile::UpdateNetworkProfileOutput)
     /// - On failure, responds with [`SdkError<UpdateNetworkProfileError>`](crate::operation::update_network_profile::UpdateNetworkProfileError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn update_network_profile(
-        &self,
-    ) -> crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder {
-        crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_network_profile(&self) -> crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder {
+        crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder::new(self.handle.clone())
     }
 }

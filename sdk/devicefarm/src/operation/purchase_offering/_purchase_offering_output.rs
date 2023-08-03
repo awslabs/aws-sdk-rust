@@ -11,9 +11,7 @@ pub struct PurchaseOfferingOutput {
 }
 impl PurchaseOfferingOutput {
     /// <p>Represents the offering transaction for the purchase result.</p>
-    pub fn offering_transaction(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OfferingTransaction> {
+    pub fn offering_transaction(&self) -> ::std::option::Option<&crate::types::OfferingTransaction> {
         self.offering_transaction.as_ref()
     }
 }
@@ -24,17 +22,14 @@ impl ::aws_http::request_id::RequestId for PurchaseOfferingOutput {
 }
 impl PurchaseOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder {
         crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseOfferingOutputBuilder {
     pub(crate) offering_transaction: ::std::option::Option<crate::types::OfferingTransaction>,
     _request_id: Option<String>,
@@ -46,17 +41,12 @@ impl PurchaseOfferingOutputBuilder {
         self
     }
     /// <p>Represents the offering transaction for the purchase result.</p>
-    pub fn set_offering_transaction(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingTransaction>,
-    ) -> Self {
+    pub fn set_offering_transaction(mut self, input: ::std::option::Option<crate::types::OfferingTransaction>) -> Self {
         self.offering_transaction = input;
         self
     }
     /// <p>Represents the offering transaction for the purchase result.</p>
-    pub fn get_offering_transaction(
-        &self,
-    ) -> &::std::option::Option<crate::types::OfferingTransaction> {
+    pub fn get_offering_transaction(&self) -> &::std::option::Option<crate::types::OfferingTransaction> {
         &self.offering_transaction
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

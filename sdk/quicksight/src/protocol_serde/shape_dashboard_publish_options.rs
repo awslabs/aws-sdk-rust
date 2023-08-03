@@ -6,28 +6,19 @@ pub fn ser_dashboard_publish_options(
     if let Some(var_1) = &input.ad_hoc_filtering_option {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AdHocFilteringOption").start_object();
-        crate::protocol_serde::shape_ad_hoc_filtering_option::ser_ad_hoc_filtering_option(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_ad_hoc_filtering_option::ser_ad_hoc_filtering_option(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.export_to_csv_option {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ExportToCSVOption").start_object();
-        crate::protocol_serde::shape_export_to_csv_option::ser_export_to_csv_option(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_export_to_csv_option::ser_export_to_csv_option(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.sheet_controls_option {
         #[allow(unused_mut)]
         let mut object_6 = object.key("SheetControlsOption").start_object();
-        crate::protocol_serde::shape_sheet_controls_option::ser_sheet_controls_option(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_sheet_controls_option::ser_sheet_controls_option(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.visual_publish_options {
@@ -38,28 +29,20 @@ pub fn ser_dashboard_publish_options(
     }
     if let Some(var_9) = &input.sheet_layout_element_maximization_option {
         #[allow(unused_mut)]
-        let mut object_10 = object
-            .key("SheetLayoutElementMaximizationOption")
-            .start_object();
+        let mut object_10 = object.key("SheetLayoutElementMaximizationOption").start_object();
         crate::protocol_serde::shape_sheet_layout_element_maximization_option::ser_sheet_layout_element_maximization_option(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.visual_menu_option {
         #[allow(unused_mut)]
         let mut object_12 = object.key("VisualMenuOption").start_object();
-        crate::protocol_serde::shape_visual_menu_option::ser_visual_menu_option(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_visual_menu_option::ser_visual_menu_option(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.visual_axis_sort_option {
         #[allow(unused_mut)]
         let mut object_14 = object.key("VisualAxisSortOption").start_object();
-        crate::protocol_serde::shape_visual_axis_sort_option::ser_visual_axis_sort_option(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_visual_axis_sort_option::ser_visual_axis_sort_option(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.export_with_hidden_fields_option {
@@ -83,10 +66,7 @@ pub fn ser_dashboard_publish_options(
     if let Some(var_21) = &input.data_point_tooltip_option {
         #[allow(unused_mut)]
         let mut object_22 = object.key("DataPointTooltipOption").start_object();
-        crate::protocol_serde::shape_data_point_tooltip_option::ser_data_point_tooltip_option(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_data_point_tooltip_option::ser_data_point_tooltip_option(&mut object_22, var_21)?;
         object_22.finish();
     }
     Ok(())
@@ -94,17 +74,9 @@ pub fn ser_dashboard_publish_options(
 
 pub(crate) fn de_dashboard_publish_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::DashboardPublishOptions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::DashboardPublishOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -114,81 +86,74 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AdHocFilteringOption" => {
-                                builder = builder.set_ad_hoc_filtering_option(
-                                    crate::protocol_serde::shape_ad_hoc_filtering_option::de_ad_hoc_filtering_option(tokens)?
-                                );
-                            }
-                            "ExportToCSVOption" => {
-                                builder = builder.set_export_to_csv_option(
-                                    crate::protocol_serde::shape_export_to_csv_option::de_export_to_csv_option(tokens)?
-                                );
-                            }
-                            "SheetControlsOption" => {
-                                builder = builder.set_sheet_controls_option(
-                                    crate::protocol_serde::shape_sheet_controls_option::de_sheet_controls_option(tokens)?
-                                );
-                            }
-                            "VisualPublishOptions" => {
-                                builder = builder.set_visual_publish_options(
-                                    crate::protocol_serde::shape_dashboard_visual_publish_options::de_dashboard_visual_publish_options(tokens)?
-                                );
-                            }
-                            "SheetLayoutElementMaximizationOption" => {
-                                builder = builder.set_sheet_layout_element_maximization_option(
-                                    crate::protocol_serde::shape_sheet_layout_element_maximization_option::de_sheet_layout_element_maximization_option(tokens)?
-                                );
-                            }
-                            "VisualMenuOption" => {
-                                builder = builder.set_visual_menu_option(
-                                    crate::protocol_serde::shape_visual_menu_option::de_visual_menu_option(tokens)?
-                                );
-                            }
-                            "VisualAxisSortOption" => {
-                                builder = builder.set_visual_axis_sort_option(
-                                    crate::protocol_serde::shape_visual_axis_sort_option::de_visual_axis_sort_option(tokens)?
-                                );
-                            }
-                            "ExportWithHiddenFieldsOption" => {
-                                builder = builder.set_export_with_hidden_fields_option(
-                                    crate::protocol_serde::shape_export_with_hidden_fields_option::de_export_with_hidden_fields_option(tokens)?
-                                );
-                            }
-                            "DataPointDrillUpDownOption" => {
-                                builder = builder.set_data_point_drill_up_down_option(
-                                    crate::protocol_serde::shape_data_point_drill_up_down_option::de_data_point_drill_up_down_option(tokens)?
-                                );
-                            }
-                            "DataPointMenuLabelOption" => {
-                                builder = builder.set_data_point_menu_label_option(
-                                    crate::protocol_serde::shape_data_point_menu_label_option::de_data_point_menu_label_option(tokens)?
-                                );
-                            }
-                            "DataPointTooltipOption" => {
-                                builder = builder.set_data_point_tooltip_option(
-                                    crate::protocol_serde::shape_data_point_tooltip_option::de_data_point_tooltip_option(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AdHocFilteringOption" => {
+                            builder = builder.set_ad_hoc_filtering_option(
+                                crate::protocol_serde::shape_ad_hoc_filtering_option::de_ad_hoc_filtering_option(tokens)?,
+                            );
                         }
-                    }
+                        "ExportToCSVOption" => {
+                            builder =
+                                builder.set_export_to_csv_option(crate::protocol_serde::shape_export_to_csv_option::de_export_to_csv_option(tokens)?);
+                        }
+                        "SheetControlsOption" => {
+                            builder = builder
+                                .set_sheet_controls_option(crate::protocol_serde::shape_sheet_controls_option::de_sheet_controls_option(tokens)?);
+                        }
+                        "VisualPublishOptions" => {
+                            builder = builder.set_visual_publish_options(
+                                crate::protocol_serde::shape_dashboard_visual_publish_options::de_dashboard_visual_publish_options(tokens)?,
+                            );
+                        }
+                        "SheetLayoutElementMaximizationOption" => {
+                            builder = builder.set_sheet_layout_element_maximization_option(
+                                crate::protocol_serde::shape_sheet_layout_element_maximization_option::de_sheet_layout_element_maximization_option(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "VisualMenuOption" => {
+                            builder = builder.set_visual_menu_option(crate::protocol_serde::shape_visual_menu_option::de_visual_menu_option(tokens)?);
+                        }
+                        "VisualAxisSortOption" => {
+                            builder = builder.set_visual_axis_sort_option(
+                                crate::protocol_serde::shape_visual_axis_sort_option::de_visual_axis_sort_option(tokens)?,
+                            );
+                        }
+                        "ExportWithHiddenFieldsOption" => {
+                            builder = builder.set_export_with_hidden_fields_option(
+                                crate::protocol_serde::shape_export_with_hidden_fields_option::de_export_with_hidden_fields_option(tokens)?,
+                            );
+                        }
+                        "DataPointDrillUpDownOption" => {
+                            builder = builder.set_data_point_drill_up_down_option(
+                                crate::protocol_serde::shape_data_point_drill_up_down_option::de_data_point_drill_up_down_option(tokens)?,
+                            );
+                        }
+                        "DataPointMenuLabelOption" => {
+                            builder = builder.set_data_point_menu_label_option(
+                                crate::protocol_serde::shape_data_point_menu_label_option::de_data_point_menu_label_option(tokens)?,
+                            );
+                        }
+                        "DataPointTooltipOption" => {
+                            builder = builder.set_data_point_tooltip_option(
+                                crate::protocol_serde::shape_data_point_tooltip_option::de_data_point_tooltip_option(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

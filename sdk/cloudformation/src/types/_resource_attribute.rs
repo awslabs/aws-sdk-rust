@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ResourceAttribute {
             "Properties" => ResourceAttribute::Properties,
             "Tags" => ResourceAttribute::Tags,
             "UpdatePolicy" => ResourceAttribute::UpdatePolicy,
-            other => {
-                ResourceAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl ResourceAttribute {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CreationPolicy",
-            "DeletionPolicy",
-            "Metadata",
-            "Properties",
-            "Tags",
-            "UpdatePolicy",
-        ]
+        &["CreationPolicy", "DeletionPolicy", "Metadata", "Properties", "Tags", "UpdatePolicy"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceAttribute {

@@ -7,10 +7,7 @@ pub fn ser_dataset_org_attributes(
         crate::types::DatasetOrgAttributes::Vsam(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_4.key("vsam").start_object();
-            crate::protocol_serde::shape_vsam_attributes::ser_vsam_attributes(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_vsam_attributes::ser_vsam_attributes(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::DatasetOrgAttributes::Gdg(inner) => {
@@ -32,11 +29,9 @@ pub fn ser_dataset_org_attributes(
             object_4.finish();
         }
         crate::types::DatasetOrgAttributes::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "DatasetOrgAttributes",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "DatasetOrgAttributes",
+            ))
         }
     }
     Ok(())

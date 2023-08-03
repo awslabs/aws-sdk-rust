@@ -15,18 +15,14 @@ impl CreateRealtimeEndpointInput {
 }
 impl CreateRealtimeEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateRealtimeEndpointInput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder {
         crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRealtimeEndpointInput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRealtimeEndpointInputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl CreateRealtimeEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateRealtimeEndpointInput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput {
-                ml_model_id: self.ml_model_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput {
+            ml_model_id: self.ml_model_id,
+        })
     }
 }

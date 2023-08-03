@@ -15,7 +15,11 @@ impl super::Client {
     ///   - [`service_configuration(Option<ServiceConfiguration>)`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput::service_configuration): <p>Information about the service configuration.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     /// - On failure, responds with [`SdkError<CreateVpcEndpointServiceConfigurationError>`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError)
-    pub fn create_vpc_endpoint_service_configuration(&self) -> crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationFluentBuilder{
-        crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn create_vpc_endpoint_service_configuration(
+        &self,
+    ) -> crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationFluentBuilder {
+        crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

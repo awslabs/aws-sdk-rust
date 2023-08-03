@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SigningAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,9 +85,7 @@ impl ::std::convert::From<&str> for SigningAlgorithmSpec {
             "RSASSA_PSS_SHA_384" => SigningAlgorithmSpec::RsassaPssSha384,
             "RSASSA_PSS_SHA_512" => SigningAlgorithmSpec::RsassaPssSha512,
             "SM2DSA" => SigningAlgorithmSpec::Sm2Dsa,
-            other => SigningAlgorithmSpec::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SigningAlgorithmSpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`return_value(Option<bool>)`](crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput::return_value): <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     /// - On failure, responds with [`SdkError<DisassociateResourceSharePermissionError>`](crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError)
-    pub fn disassociate_resource_share_permission(&self) -> crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionFluentBuilder{
+    pub fn disassociate_resource_share_permission(
+        &self,
+    ) -> crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionFluentBuilder {
         crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionFluentBuilder::new(self.handle.clone())
     }
 }

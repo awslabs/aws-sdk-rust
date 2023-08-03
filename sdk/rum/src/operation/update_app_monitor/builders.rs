@@ -10,10 +10,7 @@ impl UpdateAppMonitorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_app_monitor::UpdateAppMonitorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_monitor::UpdateAppMonitorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_monitor::UpdateAppMonitorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_app_monitor();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl UpdateAppMonitorFluentBuilder {
         }
     }
     /// Access the UpdateAppMonitor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_app_monitor::builders::UpdateAppMonitorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_app_monitor::builders::UpdateAppMonitorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl UpdateAppMonitorFluentBuilder {
             crate::operation::update_app_monitor::UpdateAppMonitor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_monitor::UpdateAppMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_monitor::UpdateAppMonitorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl UpdateAppMonitorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl UpdateAppMonitorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_monitor::UpdateAppMonitorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_monitor::UpdateAppMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_monitor::UpdateAppMonitorError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl UpdateAppMonitorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_monitor::UpdateAppMonitorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_monitor::UpdateAppMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_monitor::UpdateAppMonitorError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl UpdateAppMonitorFluentBuilder {
             crate::operation::update_app_monitor::UpdateAppMonitor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_monitor::UpdateAppMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_monitor::UpdateAppMonitorError>,
     > {
         self.customize_middleware().await
     }
@@ -154,25 +138,17 @@ impl UpdateAppMonitorFluentBuilder {
         self.inner.get_domain()
     }
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
-    pub fn app_monitor_configuration(
-        mut self,
-        input: crate::types::AppMonitorConfiguration,
-    ) -> Self {
+    pub fn app_monitor_configuration(mut self, input: crate::types::AppMonitorConfiguration) -> Self {
         self.inner = self.inner.app_monitor_configuration(input);
         self
     }
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
-    pub fn set_app_monitor_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AppMonitorConfiguration>,
-    ) -> Self {
+    pub fn set_app_monitor_configuration(mut self, input: ::std::option::Option<crate::types::AppMonitorConfiguration>) -> Self {
         self.inner = self.inner.set_app_monitor_configuration(input);
         self
     }
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
-    pub fn get_app_monitor_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppMonitorConfiguration> {
+    pub fn get_app_monitor_configuration(&self) -> &::std::option::Option<crate::types::AppMonitorConfiguration> {
         self.inner.get_app_monitor_configuration()
     }
     /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
@@ -197,10 +173,7 @@ impl UpdateAppMonitorFluentBuilder {
     }
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
-    pub fn set_custom_events(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomEvents>,
-    ) -> Self {
+    pub fn set_custom_events(mut self, input: ::std::option::Option<crate::types::CustomEvents>) -> Self {
         self.inner = self.inner.set_custom_events(input);
         self
     }

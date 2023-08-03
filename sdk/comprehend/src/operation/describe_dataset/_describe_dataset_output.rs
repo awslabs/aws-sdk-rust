@@ -28,9 +28,7 @@ impl DescribeDatasetOutput {
 
 /// A builder for [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutputBuilder {
     pub(crate) dataset_properties: ::std::option::Option<crate::types::DatasetProperties>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p>The dataset properties.</p>
-    pub fn set_dataset_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetProperties>,
-    ) -> Self {
+    pub fn set_dataset_properties(mut self, input: ::std::option::Option<crate::types::DatasetProperties>) -> Self {
         self.dataset_properties = input;
         self
     }
     /// <p>The dataset properties.</p>
-    pub fn get_dataset_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatasetProperties> {
+    pub fn get_dataset_properties(&self) -> &::std::option::Option<crate::types::DatasetProperties> {
         &self.dataset_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

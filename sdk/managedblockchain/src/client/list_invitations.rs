@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`invitations(Option<Vec<Invitation>>)`](crate::operation::list_invitations::ListInvitationsOutput::invitations): <p>The invitations for the network.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_invitations::ListInvitationsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::operation::list_invitations::ListInvitationsError)
-    pub fn list_invitations(
-        &self,
-    ) -> crate::operation::list_invitations::builders::ListInvitationsFluentBuilder {
-        crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_invitations(&self) -> crate::operation::list_invitations::builders::ListInvitationsFluentBuilder {
+        crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(self.handle.clone())
     }
 }

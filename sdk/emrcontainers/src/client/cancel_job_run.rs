@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::cancel_job_run::CancelJobRunOutput::id): <p>The output contains the ID of the cancelled job run.</p>
     ///   - [`virtual_cluster_id(Option<String>)`](crate::operation::cancel_job_run::CancelJobRunOutput::virtual_cluster_id): <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
     /// - On failure, responds with [`SdkError<CancelJobRunError>`](crate::operation::cancel_job_run::CancelJobRunError)
-    pub fn cancel_job_run(
-        &self,
-    ) -> crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder {
-        crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_job_run(&self) -> crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder {
+        crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::deprecate_domain::builders::DeprecateDomainFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::deprecate_domain::builders::DeprecateDomainFluentBuilder::set_name): <p>The name of the domain to deprecate.</p>
     /// - On success, responds with [`DeprecateDomainOutput`](crate::operation::deprecate_domain::DeprecateDomainOutput)
     /// - On failure, responds with [`SdkError<DeprecateDomainError>`](crate::operation::deprecate_domain::DeprecateDomainError)
-    pub fn deprecate_domain(
-        &self,
-    ) -> crate::operation::deprecate_domain::builders::DeprecateDomainFluentBuilder {
-        crate::operation::deprecate_domain::builders::DeprecateDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deprecate_domain(&self) -> crate::operation::deprecate_domain::builders::DeprecateDomainFluentBuilder {
+        crate::operation::deprecate_domain::builders::DeprecateDomainFluentBuilder::new(self.handle.clone())
     }
 }

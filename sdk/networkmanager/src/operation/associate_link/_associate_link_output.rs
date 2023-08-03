@@ -28,9 +28,7 @@ impl AssociateLinkOutput {
 
 /// A builder for [`AssociateLinkOutput`](crate::operation::associate_link::AssociateLinkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateLinkOutputBuilder {
     pub(crate) link_association: ::std::option::Option<crate::types::LinkAssociation>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl AssociateLinkOutputBuilder {
         self
     }
     /// <p>The link association.</p>
-    pub fn set_link_association(
-        mut self,
-        input: ::std::option::Option<crate::types::LinkAssociation>,
-    ) -> Self {
+    pub fn set_link_association(mut self, input: ::std::option::Option<crate::types::LinkAssociation>) -> Self {
         self.link_association = input;
         self
     }

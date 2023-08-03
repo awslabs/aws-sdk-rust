@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`reject_reason(impl ::std::convert::Into<String>)`](crate::operation::reject_certificate_transfer::builders::RejectCertificateTransferFluentBuilder::reject_reason) / [`set_reject_reason(Option<String>)`](crate::operation::reject_certificate_transfer::builders::RejectCertificateTransferFluentBuilder::set_reject_reason): <p>The reason the certificate transfer was rejected.</p>
     /// - On success, responds with [`RejectCertificateTransferOutput`](crate::operation::reject_certificate_transfer::RejectCertificateTransferOutput)
     /// - On failure, responds with [`SdkError<RejectCertificateTransferError>`](crate::operation::reject_certificate_transfer::RejectCertificateTransferError)
-    pub fn reject_certificate_transfer(&self) -> crate::operation::reject_certificate_transfer::builders::RejectCertificateTransferFluentBuilder{
+    pub fn reject_certificate_transfer(&self) -> crate::operation::reject_certificate_transfer::builders::RejectCertificateTransferFluentBuilder {
         crate::operation::reject_certificate_transfer::builders::RejectCertificateTransferFluentBuilder::new(self.handle.clone())
     }
 }

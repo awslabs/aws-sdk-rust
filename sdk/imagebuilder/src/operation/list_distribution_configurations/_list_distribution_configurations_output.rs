@@ -8,8 +8,7 @@ pub struct ListDistributionConfigurationsOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of distributions.</p>
     #[doc(hidden)]
-    pub distribution_configuration_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DistributionConfigurationSummary>>,
+    pub distribution_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::DistributionConfigurationSummary>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ListDistributionConfigurationsOutput {
         self.request_id.as_deref()
     }
     /// <p>The list of distributions.</p>
-    pub fn distribution_configuration_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DistributionConfigurationSummary]> {
+    pub fn distribution_configuration_summary_list(&self) -> ::std::option::Option<&[crate::types::DistributionConfigurationSummary]> {
         self.distribution_configuration_summary_list.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -38,20 +35,17 @@ impl ::aws_http::request_id::RequestId for ListDistributionConfigurationsOutput 
 }
 impl ListDistributionConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionConfigurationsOutput`](crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsOutputBuilder {
         crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionConfigurationsOutput`](crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionConfigurationsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) distribution_configuration_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DistributionConfigurationSummary>>,
+    pub(crate) distribution_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::DistributionConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -75,13 +69,8 @@ impl ListDistributionConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_distribution_configuration_summary_list`](Self::set_distribution_configuration_summary_list).
     ///
     /// <p>The list of distributions.</p>
-    pub fn distribution_configuration_summary_list(
-        mut self,
-        input: crate::types::DistributionConfigurationSummary,
-    ) -> Self {
-        let mut v = self
-            .distribution_configuration_summary_list
-            .unwrap_or_default();
+    pub fn distribution_configuration_summary_list(mut self, input: crate::types::DistributionConfigurationSummary) -> Self {
+        let mut v = self.distribution_configuration_summary_list.unwrap_or_default();
         v.push(input);
         self.distribution_configuration_summary_list = ::std::option::Option::Some(v);
         self
@@ -89,9 +78,7 @@ impl ListDistributionConfigurationsOutputBuilder {
     /// <p>The list of distributions.</p>
     pub fn set_distribution_configuration_summary_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DistributionConfigurationSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DistributionConfigurationSummary>>,
     ) -> Self {
         self.distribution_configuration_summary_list = input;
         self
@@ -99,8 +86,7 @@ impl ListDistributionConfigurationsOutputBuilder {
     /// <p>The list of distributions.</p>
     pub fn get_distribution_configuration_summary_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributionConfigurationSummary>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributionConfigurationSummary>> {
         &self.distribution_configuration_summary_list
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -127,10 +113,7 @@ impl ListDistributionConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDistributionConfigurationsOutput`](crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput {
         crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput {
             request_id: self.request_id,
             distribution_configuration_summary_list: self.distribution_configuration_summary_list,

@@ -7,17 +7,13 @@ pub fn ser_update_chap_credentials_input(
         object.key("TargetARN").string(var_1.as_str());
     }
     if let Some(var_2) = &input.secret_to_authenticate_initiator {
-        object
-            .key("SecretToAuthenticateInitiator")
-            .string(var_2.as_str());
+        object.key("SecretToAuthenticateInitiator").string(var_2.as_str());
     }
     if let Some(var_3) = &input.initiator_name {
         object.key("InitiatorName").string(var_3.as_str());
     }
     if let Some(var_4) = &input.secret_to_authenticate_target {
-        object
-            .key("SecretToAuthenticateTarget")
-            .string(var_4.as_str());
+        object.key("SecretToAuthenticateTarget").string(var_4.as_str());
     }
     Ok(())
 }

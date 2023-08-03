@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`compute_environment(impl ::std::convert::Into<String>)`](crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentFluentBuilder::compute_environment) / [`set_compute_environment(Option<String>)`](crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentFluentBuilder::set_compute_environment): <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
     /// - On success, responds with [`DeleteComputeEnvironmentOutput`](crate::operation::delete_compute_environment::DeleteComputeEnvironmentOutput)
     /// - On failure, responds with [`SdkError<DeleteComputeEnvironmentError>`](crate::operation::delete_compute_environment::DeleteComputeEnvironmentError)
-    pub fn delete_compute_environment(
-        &self,
-    ) -> crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentFluentBuilder
-    {
+    pub fn delete_compute_environment(&self) -> crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentFluentBuilder {
         crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

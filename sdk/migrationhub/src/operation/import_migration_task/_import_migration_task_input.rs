@@ -29,18 +29,14 @@ impl ImportMigrationTaskInput {
 }
 impl ImportMigrationTaskInput {
     /// Creates a new builder-style object to manufacture [`ImportMigrationTaskInput`](crate::operation::import_migration_task::ImportMigrationTaskInput).
-    pub fn builder(
-    ) -> crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder {
-        crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder {
+        crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportMigrationTaskInput`](crate::operation::import_migration_task::ImportMigrationTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportMigrationTaskInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct ImportMigrationTaskInputBuilder {
 }
 impl ImportMigrationTaskInputBuilder {
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream = input;
         self
     }
@@ -68,18 +58,12 @@ impl ImportMigrationTaskInputBuilder {
         &self.progress_update_stream
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
@@ -104,16 +88,12 @@ impl ImportMigrationTaskInputBuilder {
     /// Consumes the builder and constructs a [`ImportMigrationTaskInput`](crate::operation::import_migration_task::ImportMigrationTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_migration_task::ImportMigrationTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_migration_task::ImportMigrationTaskInput {
-                progress_update_stream: self.progress_update_stream,
-                migration_task_name: self.migration_task_name,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_migration_task::ImportMigrationTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::import_migration_task::ImportMigrationTaskInput {
+            progress_update_stream: self.progress_update_stream,
+            migration_task_name: self.migration_task_name,
+            dry_run: self.dry_run.unwrap_or_default(),
+        })
     }
 }

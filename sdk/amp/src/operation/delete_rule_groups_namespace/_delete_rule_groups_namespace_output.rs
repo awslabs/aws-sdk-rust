@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRuleGroupsNamespaceOutput {
 }
 impl DeleteRuleGroupsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRuleGroupsNamespaceOutput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceOutput).
-    pub fn builder() -> crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceOutputBuilder{
+    pub fn builder() -> crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceOutputBuilder {
         crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRuleGroupsNamespaceOutput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRuleGroupsNamespaceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteRuleGroupsNamespaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRuleGroupsNamespaceOutput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceOutput {
+    pub fn build(self) -> crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceOutput {
         crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceOutput {
             _request_id: self._request_id,
         }

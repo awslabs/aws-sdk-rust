@@ -10,9 +10,7 @@ pub struct GetEventsConfigurationOutput {
 }
 impl GetEventsConfigurationOutput {
     /// <p>The events configuration details.</p>
-    pub fn events_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventsConfiguration> {
+    pub fn events_configuration(&self) -> ::std::option::Option<&crate::types::EventsConfiguration> {
         self.events_configuration.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetEventsConfigurationOutput {
 }
 impl GetEventsConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetEventsConfigurationOutput`](crate::operation::get_events_configuration::GetEventsConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_events_configuration::builders::GetEventsConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_events_configuration::builders::GetEventsConfigurationOutputBuilder {
         crate::operation::get_events_configuration::builders::GetEventsConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEventsConfigurationOutput`](crate::operation::get_events_configuration::GetEventsConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventsConfigurationOutputBuilder {
     pub(crate) events_configuration: ::std::option::Option<crate::types::EventsConfiguration>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetEventsConfigurationOutputBuilder {
         self
     }
     /// <p>The events configuration details.</p>
-    pub fn set_events_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EventsConfiguration>,
-    ) -> Self {
+    pub fn set_events_configuration(mut self, input: ::std::option::Option<crate::types::EventsConfiguration>) -> Self {
         self.events_configuration = input;
         self
     }
     /// <p>The events configuration details.</p>
-    pub fn get_events_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventsConfiguration> {
+    pub fn get_events_configuration(&self) -> &::std::option::Option<crate::types::EventsConfiguration> {
         &self.events_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

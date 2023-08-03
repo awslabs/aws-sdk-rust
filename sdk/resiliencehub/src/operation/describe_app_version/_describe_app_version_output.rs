@@ -13,9 +13,7 @@ pub struct DescribeAppVersionOutput {
     /// <p>Currently, this parameter supports only failover region and account.</p>
     /// </note>
     #[doc(hidden)]
-    pub additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl DescribeAppVersionOutput {
@@ -32,9 +30,7 @@ impl DescribeAppVersionOutput {
     /// </note>
     pub fn additional_info(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.additional_info.as_ref()
     }
 }
@@ -45,23 +41,18 @@ impl ::aws_http::request_id::RequestId for DescribeAppVersionOutput {
 }
 impl DescribeAppVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionOutput`](crate::operation::describe_app_version::DescribeAppVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_version::builders::DescribeAppVersionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_app_version::builders::DescribeAppVersionOutputBuilder {
         crate::operation::describe_app_version::builders::DescribeAppVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppVersionOutput`](crate::operation::describe_app_version::DescribeAppVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppVersionOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl DescribeAppVersionOutputBuilder {
@@ -100,11 +91,7 @@ impl DescribeAppVersionOutputBuilder {
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
     /// <p>Currently, this parameter supports only failover region and account.</p>
     /// </note>
-    pub fn additional_info(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.additional_info = ::std::option::Option::Some(hash_map);
@@ -115,12 +102,7 @@ impl DescribeAppVersionOutputBuilder {
     /// </note>
     pub fn set_additional_info(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.additional_info = input;
         self
@@ -130,9 +112,7 @@ impl DescribeAppVersionOutputBuilder {
     /// </note>
     pub fn get_additional_info(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.additional_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -6,10 +6,7 @@ pub fn ser_create_safety_rule_input(
     if let Some(var_1) = &input.assertion_rule {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AssertionRule").start_object();
-        crate::protocol_serde::shape_new_assertion_rule::ser_new_assertion_rule(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_new_assertion_rule::ser_new_assertion_rule(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.client_token {

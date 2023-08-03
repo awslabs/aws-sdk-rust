@@ -66,9 +66,7 @@ impl AwsNetworkFirewallRuleGroupDetails {
 
 /// A builder for [`AwsNetworkFirewallRuleGroupDetails`](crate::types::AwsNetworkFirewallRuleGroupDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallRuleGroupDetailsBuilder {
     pub(crate) capacity: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -113,10 +111,7 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
         self
     }
     /// <p>Details about the rule group.</p>
-    pub fn set_rule_group(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleGroupDetails>,
-    ) -> Self {
+    pub fn set_rule_group(mut self, input: ::std::option::Option<crate::types::RuleGroupDetails>) -> Self {
         self.rule_group = input;
         self
     }
@@ -125,18 +120,12 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
         &self.rule_group
     }
     /// <p>The ARN of the rule group.</p>
-    pub fn rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the rule group.</p>
-    pub fn set_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_arn = input;
         self
     }
@@ -145,18 +134,12 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
         &self.rule_group_arn
     }
     /// <p>The identifier of the rule group.</p>
-    pub fn rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the rule group.</p>
-    pub fn set_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_id = input;
         self
     }
@@ -165,18 +148,12 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
         &self.rule_group_id
     }
     /// <p>The descriptive name of the rule group.</p>
-    pub fn rule_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group.</p>
-    pub fn set_rule_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_name = input;
         self
     }

@@ -30,9 +30,7 @@ impl FlushStageCacheInput {
 
 /// A builder for [`FlushStageCacheInput`](crate::operation::flush_stage_cache::FlushStageCacheInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlushStageCacheInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl FlushStageCacheInputBuilder {
     /// Consumes the builder and constructs a [`FlushStageCacheInput`](crate::operation::flush_stage_cache::FlushStageCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::flush_stage_cache::FlushStageCacheInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::flush_stage_cache::FlushStageCacheInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::flush_stage_cache::FlushStageCacheInput {
             rest_api_id: self.rest_api_id,
             stage_name: self.stage_name,

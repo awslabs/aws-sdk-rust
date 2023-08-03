@@ -10,10 +10,7 @@ impl CreateMountTargetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_mount_target::CreateMountTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mount_target::CreateMountTargetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_mount_target::CreateMountTargetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_mount_target();
         fluent_builder.inner = self;
@@ -81,9 +78,7 @@ impl CreateMountTargetFluentBuilder {
         }
     }
     /// Access the CreateMountTarget as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_mount_target::builders::CreateMountTargetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_mount_target::builders::CreateMountTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -95,9 +90,7 @@ impl CreateMountTargetFluentBuilder {
             crate::operation::create_mount_target::CreateMountTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mount_target::CreateMountTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_mount_target::CreateMountTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -107,10 +100,7 @@ impl CreateMountTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -119,9 +109,7 @@ impl CreateMountTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_mount_target::CreateMountTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mount_target::CreateMountTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_mount_target::CreateMountTargetError>,
     > {
         let op = self
             .inner
@@ -144,9 +132,7 @@ impl CreateMountTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_mount_target::CreateMountTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mount_target::CreateMountTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_mount_target::CreateMountTargetError>,
     > {
         self.send_middleware().await
     }
@@ -160,25 +146,17 @@ impl CreateMountTargetFluentBuilder {
             crate::operation::create_mount_target::CreateMountTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mount_target::CreateMountTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_mount_target::CreateMountTargetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the file system for which to create the mount target.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the file system for which to create the mount target.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -219,25 +197,17 @@ impl CreateMountTargetFluentBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
 }

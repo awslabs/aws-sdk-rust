@@ -21,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeAvailabilityZonesOutput {
 }
 impl DescribeAvailabilityZonesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailabilityZonesOutput`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput).
-    pub fn builder() -> crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesOutputBuilder {
         crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAvailabilityZonesOutput`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityZonesOutputBuilder {
-    pub(crate) availability_zones:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     _request_id: Option<String>,
 }
 impl DescribeAvailabilityZonesOutputBuilder {
@@ -49,17 +46,12 @@ impl DescribeAvailabilityZonesOutputBuilder {
         self
     }
     /// <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
         &self.availability_zones
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +64,7 @@ impl DescribeAvailabilityZonesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAvailabilityZonesOutput`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput {
+    pub fn build(self) -> crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput {
         crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput {
             availability_zones: self.availability_zones,
             _request_id: self._request_id,

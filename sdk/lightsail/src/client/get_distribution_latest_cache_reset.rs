@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`status(Option<String>)`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput::status): <p>The status of the last cache reset.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput::create_time): <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
     /// - On failure, responds with [`SdkError<GetDistributionLatestCacheResetError>`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError)
-    pub fn get_distribution_latest_cache_reset(&self) -> crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetFluentBuilder{
+    pub fn get_distribution_latest_cache_reset(
+        &self,
+    ) -> crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetFluentBuilder {
         crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetFluentBuilder::new(self.handle.clone())
     }
 }

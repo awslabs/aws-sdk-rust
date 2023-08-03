@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::create_namespace::CreateNamespaceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::create_namespace::CreateNamespaceOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateNamespaceError>`](crate::operation::create_namespace::CreateNamespaceError)
-    pub fn create_namespace(
-        &self,
-    ) -> crate::operation::create_namespace::builders::CreateNamespaceFluentBuilder {
-        crate::operation::create_namespace::builders::CreateNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_namespace(&self) -> crate::operation::create_namespace::builders::CreateNamespaceFluentBuilder {
+        crate::operation::create_namespace::builders::CreateNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

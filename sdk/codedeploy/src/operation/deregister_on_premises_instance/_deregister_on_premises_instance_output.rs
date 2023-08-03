@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterOnPremisesInstanceOutput {
 }
 impl DeregisterOnPremisesInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterOnPremisesInstanceOutput`](crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput).
-    pub fn builder() -> crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceOutputBuilder {
         crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterOnPremisesInstanceOutput`](crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterOnPremisesInstanceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeregisterOnPremisesInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterOnPremisesInstanceOutput`](crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput {
+    pub fn build(self) -> crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput {
         crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput {
             _request_id: self._request_id,
         }

@@ -10,10 +10,7 @@ impl ListComponentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_components::ListComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_components::ListComponentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_components::ListComponentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_components();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListComponentsFluentBuilder {
         }
     }
     /// Access the ListComponents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_components::builders::ListComponentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_components::builders::ListComponentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListComponentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListComponentsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_components::paginator::ListComponentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_components::paginator::ListComponentsPaginator {
-        crate::operation::list_components::paginator::ListComponentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_components::paginator::ListComponentsPaginator {
+        crate::operation::list_components::paginator::ListComponentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The scope of the components to list.</p>
     /// <p>Default: <code>PRIVATE</code> </p>
@@ -133,10 +120,7 @@ impl ListComponentsFluentBuilder {
     }
     /// <p>The scope of the components to list.</p>
     /// <p>Default: <code>PRIVATE</code> </p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentVisibilityScope>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ComponentVisibilityScope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }

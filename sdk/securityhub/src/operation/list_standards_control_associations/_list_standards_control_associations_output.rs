@@ -5,8 +5,7 @@
 pub struct ListStandardsControlAssociationsOutput {
     /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
     #[doc(hidden)]
-    pub standards_control_association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
+    pub standards_control_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListStandardsControlAssociationsOutput {
 }
 impl ListStandardsControlAssociationsOutput {
     /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
-    pub fn standards_control_association_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StandardsControlAssociationSummary]> {
+    pub fn standards_control_association_summaries(&self) -> ::std::option::Option<&[crate::types::StandardsControlAssociationSummary]> {
         self.standards_control_association_summaries.as_deref()
     }
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStandardsControlAssociationsOutpu
 }
 impl ListStandardsControlAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListStandardsControlAssociationsOutput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput).
-    pub fn builder() -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsOutputBuilder {
         crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStandardsControlAssociationsOutput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStandardsControlAssociationsOutputBuilder {
-    pub(crate) standards_control_association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
+    pub(crate) standards_control_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +47,8 @@ impl ListStandardsControlAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_standards_control_association_summaries`](Self::set_standards_control_association_summaries).
     ///
     /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
-    pub fn standards_control_association_summaries(
-        mut self,
-        input: crate::types::StandardsControlAssociationSummary,
-    ) -> Self {
-        let mut v = self
-            .standards_control_association_summaries
-            .unwrap_or_default();
+    pub fn standards_control_association_summaries(mut self, input: crate::types::StandardsControlAssociationSummary) -> Self {
+        let mut v = self.standards_control_association_summaries.unwrap_or_default();
         v.push(input);
         self.standards_control_association_summaries = ::std::option::Option::Some(v);
         self
@@ -67,9 +56,7 @@ impl ListStandardsControlAssociationsOutputBuilder {
     /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
     pub fn set_standards_control_association_summaries(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StandardsControlAssociationSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
     ) -> Self {
         self.standards_control_association_summaries = input;
         self
@@ -77,8 +64,7 @@ impl ListStandardsControlAssociationsOutputBuilder {
     /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
     pub fn get_standards_control_association_summaries(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>> {
         &self.standards_control_association_summaries
     }
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
@@ -105,15 +91,10 @@ impl ListStandardsControlAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStandardsControlAssociationsOutput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput {
         crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput {
-            standards_control_association_summaries: self.standards_control_association_summaries
-            ,
-            next_token: self.next_token
-            ,
+            standards_control_association_summaries: self.standards_control_association_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

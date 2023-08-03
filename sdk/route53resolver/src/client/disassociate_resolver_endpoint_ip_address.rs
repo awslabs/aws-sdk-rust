@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DisassociateResolverEndpointIpAddressOutput`](crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput) with field(s):
     ///   - [`resolver_endpoint(Option<ResolverEndpoint>)`](crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput::resolver_endpoint): <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
     /// - On failure, responds with [`SdkError<DisassociateResolverEndpointIpAddressError>`](crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError)
-    pub fn disassociate_resolver_endpoint_ip_address(&self) -> crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressFluentBuilder{
-        crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_resolver_endpoint_ip_address(
+        &self,
+    ) -> crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressFluentBuilder {
+        crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

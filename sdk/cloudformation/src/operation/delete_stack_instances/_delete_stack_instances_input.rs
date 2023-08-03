@@ -59,9 +59,7 @@ impl DeleteStackInstancesInput {
         self.regions.as_deref()
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn operation_preferences(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
+    pub fn operation_preferences(&self) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
         self.operation_preferences.as_ref()
     }
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
@@ -88,42 +86,32 @@ impl DeleteStackInstancesInput {
 }
 impl DeleteStackInstancesInput {
     /// Creates a new builder-style object to manufacture [`DeleteStackInstancesInput`](crate::operation::delete_stack_instances::DeleteStackInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::delete_stack_instances::builders::DeleteStackInstancesInputBuilder {
+    pub fn builder() -> crate::operation::delete_stack_instances::builders::DeleteStackInstancesInputBuilder {
         crate::operation::delete_stack_instances::builders::DeleteStackInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStackInstancesInput`](crate::operation::delete_stack_instances::DeleteStackInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStackInstancesInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deployment_targets: ::std::option::Option<crate::types::DeploymentTargets>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) operation_preferences:
-        ::std::option::Option<crate::types::StackSetOperationPreferences>,
+    pub(crate) operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,
     pub(crate) retain_stacks: ::std::option::Option<bool>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl DeleteStackInstancesInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to delete stack instances for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to delete stack instances for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -145,10 +133,7 @@ impl DeleteStackInstancesInputBuilder {
     }
     /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accounts = input;
         self
     }
@@ -165,18 +150,13 @@ impl DeleteStackInstancesInputBuilder {
     }
     /// <p>[Service-managed permissions] The Organizations accounts from which to delete stack instances.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn set_deployment_targets(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentTargets>,
-    ) -> Self {
+    pub fn set_deployment_targets(mut self, input: ::std::option::Option<crate::types::DeploymentTargets>) -> Self {
         self.deployment_targets = input;
         self
     }
     /// <p>[Service-managed permissions] The Organizations accounts from which to delete stack instances.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn get_deployment_targets(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentTargets> {
+    pub fn get_deployment_targets(&self) -> &::std::option::Option<crate::types::DeploymentTargets> {
         &self.deployment_targets
     }
     /// Appends an item to `regions`.
@@ -191,10 +171,7 @@ impl DeleteStackInstancesInputBuilder {
         self
     }
     /// <p>The Amazon Web Services Regions where you want to delete stack set instances.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
@@ -203,25 +180,17 @@ impl DeleteStackInstancesInputBuilder {
         &self.regions
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn operation_preferences(
-        mut self,
-        input: crate::types::StackSetOperationPreferences,
-    ) -> Self {
+    pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.operation_preferences = ::std::option::Option::Some(input);
         self
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn set_operation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationPreferences>,
-    ) -> Self {
+    pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.operation_preferences = input;
         self
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn get_operation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+    pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         &self.operation_preferences
     }
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
@@ -296,21 +265,17 @@ impl DeleteStackInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStackInstancesInput`](crate::operation::delete_stack_instances::DeleteStackInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_stack_instances::DeleteStackInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_stack_instances::DeleteStackInstancesInput {
-                stack_set_name: self.stack_set_name,
-                accounts: self.accounts,
-                deployment_targets: self.deployment_targets,
-                regions: self.regions,
-                operation_preferences: self.operation_preferences,
-                retain_stacks: self.retain_stacks,
-                operation_id: self.operation_id,
-                call_as: self.call_as,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_stack_instances::DeleteStackInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_stack_instances::DeleteStackInstancesInput {
+            stack_set_name: self.stack_set_name,
+            accounts: self.accounts,
+            deployment_targets: self.deployment_targets,
+            regions: self.regions,
+            operation_preferences: self.operation_preferences,
+            retain_stacks: self.retain_stacks,
+            operation_id: self.operation_id,
+            call_as: self.call_as,
+        })
     }
 }

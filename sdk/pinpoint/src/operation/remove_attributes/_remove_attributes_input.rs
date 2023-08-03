@@ -33,45 +33,33 @@ impl RemoveAttributesInput {
         self.attribute_type.as_deref()
     }
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
-    pub fn update_attributes_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateAttributesRequest> {
+    pub fn update_attributes_request(&self) -> ::std::option::Option<&crate::types::UpdateAttributesRequest> {
         self.update_attributes_request.as_ref()
     }
 }
 impl RemoveAttributesInput {
     /// Creates a new builder-style object to manufacture [`RemoveAttributesInput`](crate::operation::remove_attributes::RemoveAttributesInput).
-    pub fn builder() -> crate::operation::remove_attributes::builders::RemoveAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_attributes::builders::RemoveAttributesInputBuilder {
         crate::operation::remove_attributes::builders::RemoveAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAttributesInput`](crate::operation::remove_attributes::RemoveAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAttributesInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<::std::string::String>,
-    pub(crate) update_attributes_request:
-        ::std::option::Option<crate::types::UpdateAttributesRequest>,
+    pub(crate) update_attributes_request: ::std::option::Option<crate::types::UpdateAttributesRequest>,
 }
 impl RemoveAttributesInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -85,10 +73,7 @@ impl RemoveAttributesInputBuilder {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
     /// </ul>
-    pub fn attribute_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -98,10 +83,7 @@ impl RemoveAttributesInputBuilder {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
     /// </ul>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_type = input;
         self
     }
@@ -115,34 +97,23 @@ impl RemoveAttributesInputBuilder {
         &self.attribute_type
     }
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
-    pub fn update_attributes_request(
-        mut self,
-        input: crate::types::UpdateAttributesRequest,
-    ) -> Self {
+    pub fn update_attributes_request(mut self, input: crate::types::UpdateAttributesRequest) -> Self {
         self.update_attributes_request = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
-    pub fn set_update_attributes_request(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateAttributesRequest>,
-    ) -> Self {
+    pub fn set_update_attributes_request(mut self, input: ::std::option::Option<crate::types::UpdateAttributesRequest>) -> Self {
         self.update_attributes_request = input;
         self
     }
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
-    pub fn get_update_attributes_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateAttributesRequest> {
+    pub fn get_update_attributes_request(&self) -> &::std::option::Option<crate::types::UpdateAttributesRequest> {
         &self.update_attributes_request
     }
     /// Consumes the builder and constructs a [`RemoveAttributesInput`](crate::operation::remove_attributes::RemoveAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_attributes::RemoveAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::remove_attributes::RemoveAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_attributes::RemoveAttributesInput {
             application_id: self.application_id,
             attribute_type: self.attribute_type,

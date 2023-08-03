@@ -30,9 +30,7 @@ impl EventTimeRange {
 
 /// A builder for [`EventTimeRange`](crate::types::EventTimeRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventTimeRangeBuilder {
     pub(crate) from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl EventTimeRangeBuilder {
         self
     }
     /// <p> The time when the event started. </p>
-    pub fn set_from_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.from_time = input;
         self
     }
@@ -61,10 +56,7 @@ impl EventTimeRangeBuilder {
         self
     }
     /// <p> The time when the event ended. </p>
-    pub fn set_to_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.to_time = input;
         self
     }

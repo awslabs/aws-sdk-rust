@@ -26,8 +26,7 @@ impl DeleteVpceConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVPCEConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder,
+    inner: crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder,
 }
 impl DeleteVPCEConfigurationFluentBuilder {
     /// Creates a new `DeleteVPCEConfiguration`.
@@ -38,10 +37,7 @@ impl DeleteVPCEConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteVPCEConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteVPCEConfigurationFluentBuilder {
             crate::operation::delete_vpce_configuration::DeleteVPCEConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpce_configuration::DeleteVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpce_configuration::DeleteVPCEConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteVPCEConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteVPCEConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpce_configuration::DeleteVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpce_configuration::DeleteVPCEConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteVPCEConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpce_configuration::DeleteVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpce_configuration::DeleteVPCEConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteVPCEConfigurationFluentBuilder {
             crate::operation::delete_vpce_configuration::DeleteVPCEConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpce_configuration::DeleteVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpce_configuration::DeleteVPCEConfigurationError>,
     > {
         self.customize_middleware().await
     }

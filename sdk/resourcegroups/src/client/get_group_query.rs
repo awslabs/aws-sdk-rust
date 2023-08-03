@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetGroupQueryOutput`](crate::operation::get_group_query::GetGroupQueryOutput) with field(s):
     ///   - [`group_query(Option<GroupQuery>)`](crate::operation::get_group_query::GetGroupQueryOutput::group_query): <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
     /// - On failure, responds with [`SdkError<GetGroupQueryError>`](crate::operation::get_group_query::GetGroupQueryError)
-    pub fn get_group_query(
-        &self,
-    ) -> crate::operation::get_group_query::builders::GetGroupQueryFluentBuilder {
-        crate::operation::get_group_query::builders::GetGroupQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_group_query(&self) -> crate::operation::get_group_query::builders::GetGroupQueryFluentBuilder {
+        crate::operation::get_group_query::builders::GetGroupQueryFluentBuilder::new(self.handle.clone())
     }
 }

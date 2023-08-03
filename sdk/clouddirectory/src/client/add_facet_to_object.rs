@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`object_reference(ObjectReference)`](crate::operation::add_facet_to_object::builders::AddFacetToObjectFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::add_facet_to_object::builders::AddFacetToObjectFluentBuilder::set_object_reference): <p>A reference to the object you are adding the specified facet to.</p>
     /// - On success, responds with [`AddFacetToObjectOutput`](crate::operation::add_facet_to_object::AddFacetToObjectOutput)
     /// - On failure, responds with [`SdkError<AddFacetToObjectError>`](crate::operation::add_facet_to_object::AddFacetToObjectError)
-    pub fn add_facet_to_object(
-        &self,
-    ) -> crate::operation::add_facet_to_object::builders::AddFacetToObjectFluentBuilder {
-        crate::operation::add_facet_to_object::builders::AddFacetToObjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_facet_to_object(&self) -> crate::operation::add_facet_to_object::builders::AddFacetToObjectFluentBuilder {
+        crate::operation::add_facet_to_object::builders::AddFacetToObjectFluentBuilder::new(self.handle.clone())
     }
 }

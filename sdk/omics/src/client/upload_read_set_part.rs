@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UploadReadSetPartOutput`](crate::operation::upload_read_set_part::UploadReadSetPartOutput) with field(s):
     ///   - [`checksum(Option<String>)`](crate::operation::upload_read_set_part::UploadReadSetPartOutput::checksum): <p> An identifier used to confirm that parts are being added to the intended upload. </p>
     /// - On failure, responds with [`SdkError<UploadReadSetPartError>`](crate::operation::upload_read_set_part::UploadReadSetPartError)
-    pub fn upload_read_set_part(
-        &self,
-    ) -> crate::operation::upload_read_set_part::builders::UploadReadSetPartFluentBuilder {
-        crate::operation::upload_read_set_part::builders::UploadReadSetPartFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn upload_read_set_part(&self) -> crate::operation::upload_read_set_part::builders::UploadReadSetPartFluentBuilder {
+        crate::operation::upload_read_set_part::builders::UploadReadSetPartFluentBuilder::new(self.handle.clone())
     }
 }

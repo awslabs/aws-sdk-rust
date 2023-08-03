@@ -34,16 +34,14 @@ impl UpdateLedgerPermissionsModeInput {
 }
 impl UpdateLedgerPermissionsModeInput {
     /// Creates a new builder-style object to manufacture [`UpdateLedgerPermissionsModeInput`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput).
-    pub fn builder() -> crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeInputBuilder{
+    pub fn builder() -> crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeInputBuilder {
         crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLedgerPermissionsModeInput`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLedgerPermissionsModeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) permissions_mode: ::std::option::Option<crate::types::PermissionsMode>,
@@ -81,10 +79,7 @@ impl UpdateLedgerPermissionsModeInputBuilder {
     /// </ul> <note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
-    pub fn set_permissions_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionsMode>,
-    ) -> Self {
+    pub fn set_permissions_mode(mut self, input: ::std::option::Option<crate::types::PermissionsMode>) -> Self {
         self.permissions_mode = input;
         self
     }
@@ -105,11 +100,9 @@ impl UpdateLedgerPermissionsModeInputBuilder {
         crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput {
-                name: self.name,
-                permissions_mode: self.permissions_mode,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput {
+            name: self.name,
+            permissions_mode: self.permissions_mode,
+        })
     }
 }

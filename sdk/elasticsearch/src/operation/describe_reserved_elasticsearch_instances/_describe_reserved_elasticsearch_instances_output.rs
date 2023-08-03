@@ -9,8 +9,7 @@ pub struct DescribeReservedElasticsearchInstancesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of reserved Elasticsearch instances.</p>
     #[doc(hidden)]
-    pub reserved_elasticsearch_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>>,
+    pub reserved_elasticsearch_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedElasticsearchInstancesOutput {
@@ -19,9 +18,7 @@ impl DescribeReservedElasticsearchInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>List of reserved Elasticsearch instances.</p>
-    pub fn reserved_elasticsearch_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedElasticsearchInstance]> {
+    pub fn reserved_elasticsearch_instances(&self) -> ::std::option::Option<&[crate::types::ReservedElasticsearchInstance]> {
         self.reserved_elasticsearch_instances.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReservedElasticsearchInstance
 }
 impl DescribeReservedElasticsearchInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstancesOutput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput).
-    pub fn builder() -> crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesOutputBuilder {
         crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedElasticsearchInstancesOutput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_elasticsearch_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>>,
+    pub(crate) reserved_elasticsearch_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedElasticsearchInstancesOutputBuilder {
@@ -68,10 +62,7 @@ impl DescribeReservedElasticsearchInstancesOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_elasticsearch_instances`](Self::set_reserved_elasticsearch_instances).
     ///
     /// <p>List of reserved Elasticsearch instances.</p>
-    pub fn reserved_elasticsearch_instances(
-        mut self,
-        input: crate::types::ReservedElasticsearchInstance,
-    ) -> Self {
+    pub fn reserved_elasticsearch_instances(mut self, input: crate::types::ReservedElasticsearchInstance) -> Self {
         let mut v = self.reserved_elasticsearch_instances.unwrap_or_default();
         v.push(input);
         self.reserved_elasticsearch_instances = ::std::option::Option::Some(v);
@@ -86,9 +77,7 @@ impl DescribeReservedElasticsearchInstancesOutputBuilder {
         self
     }
     /// <p>List of reserved Elasticsearch instances.</p>
-    pub fn get_reserved_elasticsearch_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>> {
+    pub fn get_reserved_elasticsearch_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>> {
         &self.reserved_elasticsearch_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,12 +90,10 @@ impl DescribeReservedElasticsearchInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstancesOutput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput).
-    pub fn build(self) -> crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput{
+    pub fn build(self) -> crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput {
         crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput {
-            next_token: self.next_token
-            ,
-            reserved_elasticsearch_instances: self.reserved_elasticsearch_instances
-            ,
+            next_token: self.next_token,
+            reserved_elasticsearch_instances: self.reserved_elasticsearch_instances,
             _request_id: self._request_id,
         }
     }

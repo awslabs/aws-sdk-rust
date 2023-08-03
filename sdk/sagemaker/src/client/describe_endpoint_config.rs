@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`explainer_config(Option<ExplainerConfig>)`](crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput::explainer_config): <p>The configuration parameters for an explainer.</p>
     ///   - [`shadow_production_variants(Option<Vec<ProductionVariant>>)`](crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput::shadow_production_variants): <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointConfigError>`](crate::operation::describe_endpoint_config::DescribeEndpointConfigError)
-    pub fn describe_endpoint_config(
-        &self,
-    ) -> crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigFluentBuilder
-    {
+    pub fn describe_endpoint_config(&self) -> crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigFluentBuilder {
         crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigFluentBuilder::new(self.handle.clone())
     }
 }

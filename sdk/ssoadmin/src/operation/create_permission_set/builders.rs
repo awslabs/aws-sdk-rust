@@ -39,9 +39,7 @@ impl CreatePermissionSetFluentBuilder {
         }
     }
     /// Access the CreatePermissionSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_permission_set::builders::CreatePermissionSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_permission_set::builders::CreatePermissionSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreatePermissionSetFluentBuilder {
             crate::operation::create_permission_set::CreatePermissionSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_set::CreatePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_set::CreatePermissionSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreatePermissionSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreatePermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_permission_set::CreatePermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_set::CreatePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_set::CreatePermissionSetError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreatePermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_permission_set::CreatePermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_set::CreatePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_set::CreatePermissionSetError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CreatePermissionSetFluentBuilder {
             crate::operation::create_permission_set::CreatePermissionSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_set::CreatePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_set::CreatePermissionSetError>,
     > {
         self.customize_middleware().await
     }
@@ -167,18 +154,12 @@ impl CreatePermissionSetFluentBuilder {
         self.inner.get_instance_arn()
     }
     /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
-    pub fn session_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_duration(input.into());
         self
     }
     /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
-    pub fn set_session_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_duration(input);
         self
     }
@@ -210,10 +191,7 @@ impl CreatePermissionSetFluentBuilder {
         self
     }
     /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

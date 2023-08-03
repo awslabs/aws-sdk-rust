@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateReturnShippingLabelOutput {
 }
 impl CreateReturnShippingLabelOutput {
     /// Creates a new builder-style object to manufacture [`CreateReturnShippingLabelOutput`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput).
-    pub fn builder() -> crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelOutputBuilder{
+    pub fn builder() -> crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelOutputBuilder {
         crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReturnShippingLabelOutput`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReturnShippingLabelOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ShippingLabelStatus>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateReturnShippingLabelOutputBuilder {
         self
     }
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ShippingLabelStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShippingLabelStatus>) -> Self {
         self.status = input;
         self
     }
@@ -63,9 +58,7 @@ impl CreateReturnShippingLabelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateReturnShippingLabelOutput`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput {
+    pub fn build(self) -> crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput {
         crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput {
             status: self.status,
             _request_id: self._request_id,

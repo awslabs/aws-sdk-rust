@@ -32,7 +32,7 @@ impl PutObjectLockConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutObjectLockConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_object_lock_configuration::builders::PutObjectLockConfigurationInputBuilder,
+    inner: crate::operation::put_object_lock_configuration::builders::PutObjectLockConfigurationInputBuilder,
 }
 impl PutObjectLockConfigurationFluentBuilder {
     /// Creates a new `PutObjectLockConfiguration`.
@@ -43,7 +43,7 @@ impl PutObjectLockConfigurationFluentBuilder {
         }
     }
     /// Access the PutObjectLockConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_object_lock_configuration::builders::PutObjectLockConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_object_lock_configuration::builders::PutObjectLockConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl PutObjectLockConfigurationFluentBuilder {
             crate::operation::put_object_lock_configuration::PutObjectLockConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl PutObjectLockConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl PutObjectLockConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_object_lock_configuration::PutObjectLockConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl PutObjectLockConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_object_lock_configuration::PutObjectLockConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +111,7 @@ impl PutObjectLockConfigurationFluentBuilder {
             crate::operation::put_object_lock_configuration::PutObjectLockConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +130,17 @@ impl PutObjectLockConfigurationFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>The Object Lock configuration that you want to apply to the specified bucket.</p>
-    pub fn object_lock_configuration(
-        mut self,
-        input: crate::types::ObjectLockConfiguration,
-    ) -> Self {
+    pub fn object_lock_configuration(mut self, input: crate::types::ObjectLockConfiguration) -> Self {
         self.inner = self.inner.object_lock_configuration(input);
         self
     }
     /// <p>The Object Lock configuration that you want to apply to the specified bucket.</p>
-    pub fn set_object_lock_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLockConfiguration>,
-    ) -> Self {
+    pub fn set_object_lock_configuration(mut self, input: ::std::option::Option<crate::types::ObjectLockConfiguration>) -> Self {
         self.inner = self.inner.set_object_lock_configuration(input);
         self
     }
     /// <p>The Object Lock configuration that you want to apply to the specified bucket.</p>
-    pub fn get_object_lock_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectLockConfiguration> {
+    pub fn get_object_lock_configuration(&self) -> &::std::option::Option<crate::types::ObjectLockConfiguration> {
         self.inner.get_object_lock_configuration()
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -168,10 +149,7 @@ impl PutObjectLockConfigurationFluentBuilder {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestPayer>,
-    ) -> Self {
+    pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
     }
@@ -218,33 +196,22 @@ impl PutObjectLockConfigurationFluentBuilder {
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         self.inner.get_checksum_algorithm()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }

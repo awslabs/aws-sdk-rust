@@ -26,8 +26,7 @@ impl CancelVariantImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelVariantImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobInputBuilder,
+    inner: crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobInputBuilder,
 }
 impl CancelVariantImportJobFluentBuilder {
     /// Creates a new `CancelVariantImportJob`.
@@ -38,10 +37,7 @@ impl CancelVariantImportJobFluentBuilder {
         }
     }
     /// Access the CancelVariantImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CancelVariantImportJobFluentBuilder {
             crate::operation::cancel_variant_import_job::CancelVariantImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_variant_import_job::CancelVariantImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_variant_import_job::CancelVariantImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CancelVariantImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CancelVariantImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_variant_import_job::CancelVariantImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_variant_import_job::CancelVariantImportJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CancelVariantImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_variant_import_job::CancelVariantImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_variant_import_job::CancelVariantImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CancelVariantImportJobFluentBuilder {
             crate::operation::cancel_variant_import_job::CancelVariantImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_variant_import_job::CancelVariantImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_variant_import_job::CancelVariantImportJobError>,
     > {
         self.customize_middleware().await
     }

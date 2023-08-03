@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTemplateSyncConfigOutput {
 }
 impl GetTemplateSyncConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSyncConfigOutput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigOutputBuilder {
         crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTemplateSyncConfigOutput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateSyncConfigOutputBuilder {
     pub(crate) template_sync_config: ::std::option::Option<crate::types::TemplateSyncConfig>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetTemplateSyncConfigOutputBuilder {
         self
     }
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    pub fn set_template_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateSyncConfig>,
-    ) -> Self {
+    pub fn set_template_sync_config(mut self, input: ::std::option::Option<crate::types::TemplateSyncConfig>) -> Self {
         self.template_sync_config = input;
         self
     }
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    pub fn get_template_sync_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateSyncConfig> {
+    pub fn get_template_sync_config(&self) -> &::std::option::Option<crate::types::TemplateSyncConfig> {
         &self.template_sync_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

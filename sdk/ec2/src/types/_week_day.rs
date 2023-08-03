@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WeekDay {
     #[allow(missing_docs)] // documentation missing in model
@@ -106,15 +100,7 @@ impl WeekDay {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "friday",
-            "monday",
-            "saturday",
-            "sunday",
-            "thursday",
-            "tuesday",
-            "wednesday",
-        ]
+        &["friday", "monday", "saturday", "sunday", "thursday", "tuesday", "wednesday"]
     }
 }
 impl ::std::convert::AsRef<str> for WeekDay {

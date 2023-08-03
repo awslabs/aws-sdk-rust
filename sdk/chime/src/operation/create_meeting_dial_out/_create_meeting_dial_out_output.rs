@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateMeetingDialOutOutput {
 }
 impl CreateMeetingDialOutOutput {
     /// Creates a new builder-style object to manufacture [`CreateMeetingDialOutOutput`](crate::operation::create_meeting_dial_out::CreateMeetingDialOutOutput).
-    pub fn builder(
-    ) -> crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutOutputBuilder {
         crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMeetingDialOutOutput`](crate::operation::create_meeting_dial_out::CreateMeetingDialOutOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMeetingDialOutOutputBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateMeetingDialOutOutputBuilder {
     /// <p>Unique ID that tracks API calls.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique ID that tracks API calls.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }

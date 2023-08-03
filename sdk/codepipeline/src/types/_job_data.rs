@@ -37,9 +37,7 @@ impl JobData {
         self.action_type_id.as_ref()
     }
     /// <p>Represents information about an action configuration.</p>
-    pub fn action_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ActionConfiguration> {
+    pub fn action_configuration(&self) -> ::std::option::Option<&crate::types::ActionConfiguration> {
         self.action_configuration.as_ref()
     }
     /// <p>Represents information about a pipeline to a job worker.</p> <note>
@@ -57,9 +55,7 @@ impl JobData {
         self.output_artifacts.as_deref()
     }
     /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.</p>
-    pub fn artifact_credentials(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsSessionCredentials> {
+    pub fn artifact_credentials(&self) -> ::std::option::Option<&crate::types::AwsSessionCredentials> {
         self.artifact_credentials.as_ref()
     }
     /// <p>A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.</p>
@@ -112,10 +108,7 @@ impl JobDataBuilder {
         self
     }
     /// <p>Represents information about an action type.</p>
-    pub fn set_action_type_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeId>,
-    ) -> Self {
+    pub fn set_action_type_id(mut self, input: ::std::option::Option<crate::types::ActionTypeId>) -> Self {
         self.action_type_id = input;
         self
     }
@@ -129,17 +122,12 @@ impl JobDataBuilder {
         self
     }
     /// <p>Represents information about an action configuration.</p>
-    pub fn set_action_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionConfiguration>,
-    ) -> Self {
+    pub fn set_action_configuration(mut self, input: ::std::option::Option<crate::types::ActionConfiguration>) -> Self {
         self.action_configuration = input;
         self
     }
     /// <p>Represents information about an action configuration.</p>
-    pub fn get_action_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActionConfiguration> {
+    pub fn get_action_configuration(&self) -> &::std::option::Option<crate::types::ActionConfiguration> {
         &self.action_configuration
     }
     /// <p>Represents information about a pipeline to a job worker.</p> <note>
@@ -152,10 +140,7 @@ impl JobDataBuilder {
     /// <p>Represents information about a pipeline to a job worker.</p> <note>
     /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
     /// </note>
-    pub fn set_pipeline_context(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineContext>,
-    ) -> Self {
+    pub fn set_pipeline_context(mut self, input: ::std::option::Option<crate::types::PipelineContext>) -> Self {
         self.pipeline_context = input;
         self
     }
@@ -177,17 +162,12 @@ impl JobDataBuilder {
         self
     }
     /// <p>The artifact supplied to the job.</p>
-    pub fn set_input_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>,
-    ) -> Self {
+    pub fn set_input_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>) -> Self {
         self.input_artifacts = input;
         self
     }
     /// <p>The artifact supplied to the job.</p>
-    pub fn get_input_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Artifact>> {
+    pub fn get_input_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Artifact>> {
         &self.input_artifacts
     }
     /// Appends an item to `output_artifacts`.
@@ -202,17 +182,12 @@ impl JobDataBuilder {
         self
     }
     /// <p>The output of the job.</p>
-    pub fn set_output_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>,
-    ) -> Self {
+    pub fn set_output_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>) -> Self {
         self.output_artifacts = input;
         self
     }
     /// <p>The output of the job.</p>
-    pub fn get_output_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Artifact>> {
+    pub fn get_output_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Artifact>> {
         &self.output_artifacts
     }
     /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.</p>
@@ -221,32 +196,21 @@ impl JobDataBuilder {
         self
     }
     /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.</p>
-    pub fn set_artifact_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSessionCredentials>,
-    ) -> Self {
+    pub fn set_artifact_credentials(mut self, input: ::std::option::Option<crate::types::AwsSessionCredentials>) -> Self {
         self.artifact_credentials = input;
         self
     }
     /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.</p>
-    pub fn get_artifact_credentials(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsSessionCredentials> {
+    pub fn get_artifact_credentials(&self) -> &::std::option::Option<crate::types::AwsSessionCredentials> {
         &self.artifact_credentials
     }
     /// <p>A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.</p>
-    pub fn continuation_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continuation_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.</p>
-    pub fn set_continuation_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continuation_token = input;
         self
     }
@@ -260,10 +224,7 @@ impl JobDataBuilder {
         self
     }
     /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key. </p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
         self.encryption_key = input;
         self
     }

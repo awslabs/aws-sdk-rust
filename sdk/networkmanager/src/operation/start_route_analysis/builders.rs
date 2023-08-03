@@ -10,10 +10,7 @@ impl StartRouteAnalysisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_route_analysis::StartRouteAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_route_analysis::StartRouteAnalysisError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_route_analysis::StartRouteAnalysisError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_route_analysis();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartRouteAnalysisFluentBuilder {
         }
     }
     /// Access the StartRouteAnalysis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_route_analysis::builders::StartRouteAnalysisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_route_analysis::builders::StartRouteAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartRouteAnalysisFluentBuilder {
             crate::operation::start_route_analysis::StartRouteAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_route_analysis::StartRouteAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_route_analysis::StartRouteAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartRouteAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartRouteAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_route_analysis::StartRouteAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_route_analysis::StartRouteAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_route_analysis::StartRouteAnalysisError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartRouteAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_route_analysis::StartRouteAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_route_analysis::StartRouteAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_route_analysis::StartRouteAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartRouteAnalysisFluentBuilder {
             crate::operation::start_route_analysis::StartRouteAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_route_analysis::StartRouteAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_route_analysis::StartRouteAnalysisError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -143,47 +121,31 @@ impl StartRouteAnalysisFluentBuilder {
         self.inner.get_global_network_id()
     }
     /// <p>The source from which traffic originates.</p>
-    pub fn source(
-        mut self,
-        input: crate::types::RouteAnalysisEndpointOptionsSpecification,
-    ) -> Self {
+    pub fn source(mut self, input: crate::types::RouteAnalysisEndpointOptionsSpecification) -> Self {
         self.inner = self.inner.source(input);
         self
     }
     /// <p>The source from which traffic originates.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
     /// <p>The source from which traffic originates.</p>
-    pub fn get_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification> {
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification> {
         self.inner.get_source()
     }
     /// <p>The destination.</p>
-    pub fn destination(
-        mut self,
-        input: crate::types::RouteAnalysisEndpointOptionsSpecification,
-    ) -> Self {
+    pub fn destination(mut self, input: crate::types::RouteAnalysisEndpointOptionsSpecification) -> Self {
         self.inner = self.inner.destination(input);
         self
     }
     /// <p>The destination.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
     /// <p>The destination.</p>
-    pub fn get_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification> {
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification> {
         self.inner.get_destination()
     }
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>

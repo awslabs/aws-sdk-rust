@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AppStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -101,14 +95,7 @@ impl AppStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATING",
-            "DELETED",
-            "DELETE_FAILED",
-            "DELETING",
-            "UPDATING",
-        ]
+        &["ACTIVE", "CREATING", "DELETED", "DELETE_FAILED", "DELETING", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for AppStatus {

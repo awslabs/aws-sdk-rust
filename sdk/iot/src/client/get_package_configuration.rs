@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetPackageConfigurationOutput`](crate::operation::get_package_configuration::GetPackageConfigurationOutput) with field(s):
     ///   - [`version_update_by_jobs_config(Option<VersionUpdateByJobsConfig>)`](crate::operation::get_package_configuration::GetPackageConfigurationOutput::version_update_by_jobs_config): <p>The version that is associated to a specific job.</p>
     /// - On failure, responds with [`SdkError<GetPackageConfigurationError>`](crate::operation::get_package_configuration::GetPackageConfigurationError)
-    pub fn get_package_configuration(
-        &self,
-    ) -> crate::operation::get_package_configuration::builders::GetPackageConfigurationFluentBuilder
-    {
+    pub fn get_package_configuration(&self) -> crate::operation::get_package_configuration::builders::GetPackageConfigurationFluentBuilder {
         crate::operation::get_package_configuration::builders::GetPackageConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteRegexPatternSetOutput {
 }
 impl DeleteRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetOutput`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetOutputBuilder {
         crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRegexPatternSetOutput`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRegexPatternSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

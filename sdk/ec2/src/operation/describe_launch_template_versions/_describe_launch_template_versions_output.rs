@@ -5,8 +5,7 @@
 pub struct DescribeLaunchTemplateVersionsOutput {
     /// <p>Information about the launch template versions.</p>
     #[doc(hidden)]
-    pub launch_template_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateVersion>>,
+    pub launch_template_versions: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateVersion>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeLaunchTemplateVersionsOutput {
 }
 impl DescribeLaunchTemplateVersionsOutput {
     /// <p>Information about the launch template versions.</p>
-    pub fn launch_template_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LaunchTemplateVersion]> {
+    pub fn launch_template_versions(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateVersion]> {
         self.launch_template_versions.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeLaunchTemplateVersionsOutput 
 }
 impl DescribeLaunchTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchTemplateVersionsOutput`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput).
-    pub fn builder() -> crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsOutputBuilder {
         crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLaunchTemplateVersionsOutput`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLaunchTemplateVersionsOutputBuilder {
-    pub(crate) launch_template_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateVersion>>,
+    pub(crate) launch_template_versions: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeLaunchTemplateVersionsOutputBuilder {
         self
     }
     /// <p>Information about the launch template versions.</p>
-    pub fn set_launch_template_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateVersion>>,
-    ) -> Self {
+    pub fn set_launch_template_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateVersion>>) -> Self {
         self.launch_template_versions = input;
         self
     }
     /// <p>Information about the launch template versions.</p>
-    pub fn get_launch_template_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateVersion>> {
+    pub fn get_launch_template_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateVersion>> {
         &self.launch_template_versions
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,10 +86,7 @@ impl DescribeLaunchTemplateVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLaunchTemplateVersionsOutput`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput {
         crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput {
             launch_template_versions: self.launch_template_versions,
             next_token: self.next_token,

@@ -52,22 +52,17 @@ impl DescribeHostReservationsInput {
 }
 impl DescribeHostReservationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeHostReservationsInput`](crate::operation::describe_host_reservations::DescribeHostReservationsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_host_reservations::builders::DescribeHostReservationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_host_reservations::builders::DescribeHostReservationsInputBuilder {
         crate::operation::describe_host_reservations::builders::DescribeHostReservationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHostReservationsInput`](crate::operation::describe_host_reservations::DescribeHostReservationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHostReservationsInputBuilder {
     pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) host_reservation_id_set:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) host_reservation_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -100,10 +95,7 @@ impl DescribeHostReservationsInputBuilder {
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filter = input;
         self
     }
@@ -124,27 +116,19 @@ impl DescribeHostReservationsInputBuilder {
     /// To override the contents of this collection use [`set_host_reservation_id_set`](Self::set_host_reservation_id_set).
     ///
     /// <p>The host reservation IDs.</p>
-    pub fn host_reservation_id_set(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_reservation_id_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.host_reservation_id_set.unwrap_or_default();
         v.push(input.into());
         self.host_reservation_id_set = ::std::option::Option::Some(v);
         self
     }
     /// <p>The host reservation IDs.</p>
-    pub fn set_host_reservation_id_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_reservation_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.host_reservation_id_set = input;
         self
     }
     /// <p>The host reservation IDs.</p>
-    pub fn get_host_reservation_id_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_reservation_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.host_reservation_id_set
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
@@ -182,13 +166,11 @@ impl DescribeHostReservationsInputBuilder {
         crate::operation::describe_host_reservations::DescribeHostReservationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_host_reservations::DescribeHostReservationsInput {
-                filter: self.filter,
-                host_reservation_id_set: self.host_reservation_id_set,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_host_reservations::DescribeHostReservationsInput {
+            filter: self.filter,
+            host_reservation_id_set: self.host_reservation_id_set,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -23,9 +23,7 @@ impl NodeExporterInfo {
 
 /// A builder for [`NodeExporterInfo`](crate::types::NodeExporterInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeExporterInfoBuilder {
     pub(crate) enabled_in_broker: ::std::option::Option<bool>,
 }

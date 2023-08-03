@@ -35,9 +35,7 @@ impl DeleteNamespaceOutput {
 
 /// A builder for [`DeleteNamespaceOutput`](crate::operation::delete_namespace::DeleteNamespaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNamespaceOutputBuilder {
     pub(crate) namespace_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct DeleteNamespaceOutputBuilder {
 }
 impl DeleteNamespaceOutputBuilder {
     /// <p>The ARN of the namespace to be deleted.</p>
-    pub fn namespace_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the namespace to be deleted.</p>
-    pub fn set_namespace_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_arn = input;
         self
     }
@@ -65,18 +57,12 @@ impl DeleteNamespaceOutputBuilder {
         &self.namespace_arn
     }
     /// <p>The name of the namespace to be deleted.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace to be deleted.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }

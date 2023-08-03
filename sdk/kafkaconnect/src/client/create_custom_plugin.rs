@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_custom_plugin::CreateCustomPluginOutput::name): <p>The name of the custom plugin.</p>
     ///   - [`revision(i64)`](crate::operation::create_custom_plugin::CreateCustomPluginOutput::revision): <p>The revision of the custom plugin.</p>
     /// - On failure, responds with [`SdkError<CreateCustomPluginError>`](crate::operation::create_custom_plugin::CreateCustomPluginError)
-    pub fn create_custom_plugin(
-        &self,
-    ) -> crate::operation::create_custom_plugin::builders::CreateCustomPluginFluentBuilder {
-        crate::operation::create_custom_plugin::builders::CreateCustomPluginFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_custom_plugin(&self) -> crate::operation::create_custom_plugin::builders::CreateCustomPluginFluentBuilder {
+        crate::operation::create_custom_plugin::builders::CreateCustomPluginFluentBuilder::new(self.handle.clone())
     }
 }

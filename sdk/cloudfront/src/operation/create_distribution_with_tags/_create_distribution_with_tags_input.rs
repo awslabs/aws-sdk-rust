@@ -6,54 +6,40 @@
 pub struct CreateDistributionWithTagsInput {
     /// <p>The distribution's configuration information.</p>
     #[doc(hidden)]
-    pub distribution_config_with_tags:
-        ::std::option::Option<crate::types::DistributionConfigWithTags>,
+    pub distribution_config_with_tags: ::std::option::Option<crate::types::DistributionConfigWithTags>,
 }
 impl CreateDistributionWithTagsInput {
     /// <p>The distribution's configuration information.</p>
-    pub fn distribution_config_with_tags(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DistributionConfigWithTags> {
+    pub fn distribution_config_with_tags(&self) -> ::std::option::Option<&crate::types::DistributionConfigWithTags> {
         self.distribution_config_with_tags.as_ref()
     }
 }
 impl CreateDistributionWithTagsInput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionWithTagsInput`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput).
-    pub fn builder() -> crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsInputBuilder{
+    pub fn builder() -> crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsInputBuilder {
         crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDistributionWithTagsInput`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDistributionWithTagsInputBuilder {
-    pub(crate) distribution_config_with_tags:
-        ::std::option::Option<crate::types::DistributionConfigWithTags>,
+    pub(crate) distribution_config_with_tags: ::std::option::Option<crate::types::DistributionConfigWithTags>,
 }
 impl CreateDistributionWithTagsInputBuilder {
     /// <p>The distribution's configuration information.</p>
-    pub fn distribution_config_with_tags(
-        mut self,
-        input: crate::types::DistributionConfigWithTags,
-    ) -> Self {
+    pub fn distribution_config_with_tags(mut self, input: crate::types::DistributionConfigWithTags) -> Self {
         self.distribution_config_with_tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn set_distribution_config_with_tags(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionConfigWithTags>,
-    ) -> Self {
+    pub fn set_distribution_config_with_tags(mut self, input: ::std::option::Option<crate::types::DistributionConfigWithTags>) -> Self {
         self.distribution_config_with_tags = input;
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn get_distribution_config_with_tags(
-        &self,
-    ) -> &::std::option::Option<crate::types::DistributionConfigWithTags> {
+    pub fn get_distribution_config_with_tags(&self) -> &::std::option::Option<crate::types::DistributionConfigWithTags> {
         &self.distribution_config_with_tags
     }
     /// Consumes the builder and constructs a [`CreateDistributionWithTagsInput`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput).
@@ -63,10 +49,8 @@ impl CreateDistributionWithTagsInputBuilder {
         crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput {
-                distribution_config_with_tags: self.distribution_config_with_tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput {
+            distribution_config_with_tags: self.distribution_config_with_tags,
+        })
     }
 }

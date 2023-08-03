@@ -5,19 +5,15 @@
 pub struct BatchGetResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
     #[doc(hidden)]
-    pub base_configuration_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
+    pub base_configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
     /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
     #[doc(hidden)]
-    pub unprocessed_resource_keys:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
+    pub unprocessed_resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
     _request_id: Option<String>,
 }
 impl BatchGetResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
-    pub fn base_configuration_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BaseConfigurationItem]> {
+    pub fn base_configuration_items(&self) -> ::std::option::Option<&[crate::types::BaseConfigurationItem]> {
         self.base_configuration_items.as_deref()
     }
     /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
@@ -32,23 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetResourceConfigOutput {
 }
 impl BatchGetResourceConfigOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetResourceConfigOutput`](crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigOutputBuilder {
         crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetResourceConfigOutput`](crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetResourceConfigOutputBuilder {
-    pub(crate) base_configuration_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
-    pub(crate) unprocessed_resource_keys:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
+    pub(crate) base_configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
+    pub(crate) unprocessed_resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
     _request_id: Option<String>,
 }
 impl BatchGetResourceConfigOutputBuilder {
@@ -64,17 +54,12 @@ impl BatchGetResourceConfigOutputBuilder {
         self
     }
     /// <p>A list that contains the current configuration of one or more resources.</p>
-    pub fn set_base_configuration_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
-    ) -> Self {
+    pub fn set_base_configuration_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>) -> Self {
         self.base_configuration_items = input;
         self
     }
     /// <p>A list that contains the current configuration of one or more resources.</p>
-    pub fn get_base_configuration_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>> {
+    pub fn get_base_configuration_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>> {
         &self.base_configuration_items
     }
     /// Appends an item to `unprocessed_resource_keys`.
@@ -89,17 +74,12 @@ impl BatchGetResourceConfigOutputBuilder {
         self
     }
     /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
-    pub fn set_unprocessed_resource_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
-    ) -> Self {
+    pub fn set_unprocessed_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
         self.unprocessed_resource_keys = input;
         self
     }
     /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
-    pub fn get_unprocessed_resource_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+    pub fn get_unprocessed_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
         &self.unprocessed_resource_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -112,9 +92,7 @@ impl BatchGetResourceConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetResourceConfigOutput`](crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput {
+    pub fn build(self) -> crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput {
         crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput {
             base_configuration_items: self.base_configuration_items,
             unprocessed_resource_keys: self.unprocessed_resource_keys,

@@ -10,10 +10,7 @@ impl DeleteSubscriberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_subscriber::DeleteSubscriberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscriber::DeleteSubscriberError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_subscriber::DeleteSubscriberError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_subscriber();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteSubscriberFluentBuilder {
         }
     }
     /// Access the DeleteSubscriber as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_subscriber::builders::DeleteSubscriberInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_subscriber::builders::DeleteSubscriberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteSubscriberFluentBuilder {
             crate::operation::delete_subscriber::DeleteSubscriber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscriber::DeleteSubscriberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_subscriber::DeleteSubscriberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteSubscriberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteSubscriberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_subscriber::DeleteSubscriberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscriber::DeleteSubscriberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_subscriber::DeleteSubscriberError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteSubscriberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_subscriber::DeleteSubscriberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscriber::DeleteSubscriberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_subscriber::DeleteSubscriberError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteSubscriberFluentBuilder {
             crate::operation::delete_subscriber::DeleteSubscriber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscriber::DeleteSubscriberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_subscriber::DeleteSubscriberError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
-    pub fn subscriber_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscriber_id(input.into());
         self
     }
     /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
-    pub fn set_subscriber_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscriber_id(input);
         self
     }

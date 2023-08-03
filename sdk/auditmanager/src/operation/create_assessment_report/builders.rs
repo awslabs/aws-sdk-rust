@@ -37,10 +37,7 @@ impl CreateAssessmentReportFluentBuilder {
         }
     }
     /// Access the CreateAssessmentReport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_assessment_report::builders::CreateAssessmentReportInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_assessment_report::builders::CreateAssessmentReportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateAssessmentReportFluentBuilder {
             crate::operation::create_assessment_report::CreateAssessmentReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_report::CreateAssessmentReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_report::CreateAssessmentReportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateAssessmentReportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateAssessmentReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assessment_report::CreateAssessmentReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_report::CreateAssessmentReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_report::CreateAssessmentReportError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateAssessmentReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assessment_report::CreateAssessmentReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_report::CreateAssessmentReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_report::CreateAssessmentReportError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateAssessmentReportFluentBuilder {
             crate::operation::create_assessment_report::CreateAssessmentReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_report::CreateAssessmentReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_report::CreateAssessmentReportError>,
     > {
         self.customize_middleware().await
     }
@@ -152,18 +138,12 @@ impl CreateAssessmentReportFluentBuilder {
         self.inner.get_description()
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
@@ -175,10 +155,7 @@ impl CreateAssessmentReportFluentBuilder {
     /// <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>
     /// <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p>
     /// <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
-    pub fn query_statement(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_statement(input.into());
         self
     }
@@ -186,10 +163,7 @@ impl CreateAssessmentReportFluentBuilder {
     /// <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>
     /// <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p>
     /// <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
-    pub fn set_query_statement(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_statement(input);
         self
     }

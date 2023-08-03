@@ -58,9 +58,7 @@ impl MetricDataResult {
 
 /// A builder for [`MetricDataResult`](crate::types::MetricDataResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDataResultBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
@@ -110,17 +108,12 @@ impl MetricDataResultBuilder {
         self
     }
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
-    pub fn set_timestamps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
         self.timestamps = input;
         self
     }
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
-    pub fn get_timestamps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
         &self.timestamps
     }
     /// Appends an item to `values`.
@@ -149,10 +142,7 @@ impl MetricDataResultBuilder {
         self
     }
     /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::StatusCode>) -> Self {
         self.status_code = input;
         self
     }
@@ -172,17 +162,12 @@ impl MetricDataResultBuilder {
         self
     }
     /// <p>A list of messages with additional information about the data returned.</p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageData>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageData>>) -> Self {
         self.messages = input;
         self
     }
     /// <p>A list of messages with additional information about the data returned.</p>
-    pub fn get_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageData>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageData>> {
         &self.messages
     }
     /// Consumes the builder and constructs a [`MetricDataResult`](crate::types::MetricDataResult).

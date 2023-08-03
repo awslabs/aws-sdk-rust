@@ -30,13 +30,10 @@ impl VpcConfiguration {
 
 /// A builder for [`VpcConfiguration`](crate::types::VpcConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConfigurationBuilder {
     pub(crate) subnet_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_group_id_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VpcConfigurationBuilder {
     /// Appends an item to `subnet_id_list`.
@@ -44,27 +41,19 @@ impl VpcConfigurationBuilder {
     /// To override the contents of this collection use [`set_subnet_id_list`](Self::set_subnet_id_list).
     ///
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
-    pub fn subnet_id_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_id_list.unwrap_or_default();
         v.push(input.into());
         self.subnet_id_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
-    pub fn set_subnet_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_id_list = input;
         self
     }
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
-    pub fn get_subnet_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_id_list
     }
     /// Appends an item to `security_group_id_list`.
@@ -72,27 +61,19 @@ impl VpcConfigurationBuilder {
     /// To override the contents of this collection use [`set_security_group_id_list`](Self::set_security_group_id_list).
     ///
     /// <p>An array of strings containing the list of security groups.</p>
-    pub fn security_group_id_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_id_list.unwrap_or_default();
         v.push(input.into());
         self.security_group_id_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings containing the list of security groups.</p>
-    pub fn set_security_group_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_id_list = input;
         self
     }
     /// <p>An array of strings containing the list of security groups.</p>
-    pub fn get_security_group_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_id_list
     }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).

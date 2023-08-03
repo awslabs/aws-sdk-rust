@@ -8,7 +8,10 @@ impl super::Client {
     /// - On success, responds with [`StartVpcEndpointServicePrivateDnsVerificationOutput`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput) with field(s):
     ///   - [`return_value(Option<bool>)`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput::return_value): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<StartVpcEndpointServicePrivateDnsVerificationError>`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationError)
-    pub fn start_vpc_endpoint_service_private_dns_verification(&self) -> crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationFluentBuilder{
+    pub fn start_vpc_endpoint_service_private_dns_verification(
+        &self,
+    ) -> crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationFluentBuilder
+    {
         crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationFluentBuilder::new(self.handle.clone())
     }
 }

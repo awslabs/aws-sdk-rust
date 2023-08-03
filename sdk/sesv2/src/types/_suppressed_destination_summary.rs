@@ -37,9 +37,7 @@ impl SuppressedDestinationSummary {
 
 /// A builder for [`SuppressedDestinationSummary`](crate::types::SuppressedDestinationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuppressedDestinationSummaryBuilder {
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::SuppressionListReason>,
@@ -47,18 +45,12 @@ pub struct SuppressedDestinationSummaryBuilder {
 }
 impl SuppressedDestinationSummaryBuilder {
     /// <p>The email address that's on the suppression list for your account.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that's on the suppression list for your account.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -72,10 +64,7 @@ impl SuppressedDestinationSummaryBuilder {
         self
     }
     /// <p>The reason that the address was added to the suppression list for your account.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::SuppressionListReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::SuppressionListReason>) -> Self {
         self.reason = input;
         self
     }
@@ -89,10 +78,7 @@ impl SuppressedDestinationSummaryBuilder {
         self
     }
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time format.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }

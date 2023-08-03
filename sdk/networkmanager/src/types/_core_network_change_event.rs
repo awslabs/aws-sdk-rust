@@ -58,9 +58,7 @@ impl CoreNetworkChangeEvent {
 
 /// A builder for [`CoreNetworkChangeEvent`](crate::types::CoreNetworkChangeEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeEventBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ChangeType>,
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
@@ -99,18 +97,12 @@ impl CoreNetworkChangeEventBuilder {
         &self.action
     }
     /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
-    pub fn identifier_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identifier_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
-    pub fn set_identifier_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identifier_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier_path = input;
         self
     }
@@ -124,10 +116,7 @@ impl CoreNetworkChangeEventBuilder {
         self
     }
     /// <p>The timestamp for an event change in status.</p>
-    pub fn set_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_time = input;
         self
     }
@@ -155,10 +144,7 @@ impl CoreNetworkChangeEventBuilder {
         self
     }
     /// <p>Details of the change event.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetworkChangeEventValues>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<crate::types::CoreNetworkChangeEventValues>) -> Self {
         self.values = input;
         self
     }

@@ -5,8 +5,7 @@
 pub struct ListMetricAttributionsOutput {
     /// <p>The list of metric attributions.</p>
     #[doc(hidden)]
-    pub metric_attributions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricAttributionSummary>>,
+    pub metric_attributions: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttributionSummary>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListMetricAttributionsOutput {
 }
 impl ListMetricAttributionsOutput {
     /// <p>The list of metric attributions.</p>
-    pub fn metric_attributions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetricAttributionSummary]> {
+    pub fn metric_attributions(&self) -> ::std::option::Option<&[crate::types::MetricAttributionSummary]> {
         self.metric_attributions.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMetricAttributionsOutput {
 }
 impl ListMetricAttributionsOutput {
     /// Creates a new builder-style object to manufacture [`ListMetricAttributionsOutput`](crate::operation::list_metric_attributions::ListMetricAttributionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_metric_attributions::builders::ListMetricAttributionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_metric_attributions::builders::ListMetricAttributionsOutputBuilder {
         crate::operation::list_metric_attributions::builders::ListMetricAttributionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMetricAttributionsOutput`](crate::operation::list_metric_attributions::ListMetricAttributionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricAttributionsOutputBuilder {
-    pub(crate) metric_attributions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricAttributionSummary>>,
+    pub(crate) metric_attributions: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttributionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListMetricAttributionsOutputBuilder {
         self
     }
     /// <p>The list of metric attributions.</p>
-    pub fn set_metric_attributions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttributionSummary>>,
-    ) -> Self {
+    pub fn set_metric_attributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttributionSummary>>) -> Self {
         self.metric_attributions = input;
         self
     }
     /// <p>The list of metric attributions.</p>
-    pub fn get_metric_attributions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttributionSummary>> {
+    pub fn get_metric_attributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttributionSummary>> {
         &self.metric_attributions
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>

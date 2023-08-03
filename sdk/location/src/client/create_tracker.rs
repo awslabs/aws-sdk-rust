@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`tracker_arn(Option<String>)`](crate::operation::create_tracker::CreateTrackerOutput::tracker_arn): <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>  </ul>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::create_tracker::CreateTrackerOutput::create_time): <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// - On failure, responds with [`SdkError<CreateTrackerError>`](crate::operation::create_tracker::CreateTrackerError)
-    pub fn create_tracker(
-        &self,
-    ) -> crate::operation::create_tracker::builders::CreateTrackerFluentBuilder {
-        crate::operation::create_tracker::builders::CreateTrackerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_tracker(&self) -> crate::operation::create_tracker::builders::CreateTrackerFluentBuilder {
+        crate::operation::create_tracker::builders::CreateTrackerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl CreateHapgInput {
 
 /// A builder for [`CreateHapgInput`](crate::operation::create_hapg::CreateHapgInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHapgInputBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl CreateHapgInputBuilder {
         &self.label
     }
     /// Consumes the builder and constructs a [`CreateHapgInput`](crate::operation::create_hapg::CreateHapgInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_hapg::CreateHapgInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_hapg::CreateHapgInput {
-            label: self.label,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_hapg::CreateHapgInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_hapg::CreateHapgInput { label: self.label })
     }
 }

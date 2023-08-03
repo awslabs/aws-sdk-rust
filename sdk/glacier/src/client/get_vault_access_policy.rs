@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetVaultAccessPolicyOutput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyOutput) with field(s):
     ///   - [`policy(Option<VaultAccessPolicy>)`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyOutput::policy): <p>Contains the returned vault access policy as a JSON string.</p>
     /// - On failure, responds with [`SdkError<GetVaultAccessPolicyError>`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyError)
-    pub fn get_vault_access_policy(
-        &self,
-    ) -> crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyFluentBuilder
-    {
-        crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_vault_access_policy(&self) -> crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyFluentBuilder {
+        crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

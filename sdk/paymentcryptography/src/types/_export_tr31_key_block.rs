@@ -23,26 +23,18 @@ impl ExportTr31KeyBlock {
 
 /// A builder for [`ExportTr31KeyBlock`](crate::types::ExportTr31KeyBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportTr31KeyBlockBuilder {
     pub(crate) wrapping_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ExportTr31KeyBlockBuilder {
     /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
-    pub fn wrapping_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wrapping_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
-    pub fn set_wrapping_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wrapping_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_identifier = input;
         self
     }

@@ -10,10 +10,7 @@ impl ListHealthEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_health_events::ListHealthEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_health_events::ListHealthEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_health_events::ListHealthEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_health_events();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListHealthEventsFluentBuilder {
         }
     }
     /// Access the ListHealthEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_health_events::builders::ListHealthEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_health_events::builders::ListHealthEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListHealthEventsFluentBuilder {
             crate::operation::list_health_events::ListHealthEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_health_events::ListHealthEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_health_events::ListHealthEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListHealthEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListHealthEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_health_events::ListHealthEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_health_events::ListHealthEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_health_events::ListHealthEventsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListHealthEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_health_events::ListHealthEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_health_events::ListHealthEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_health_events::ListHealthEventsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl ListHealthEventsFluentBuilder {
             crate::operation::list_health_events::ListHealthEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_health_events::ListHealthEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_health_events::ListHealthEventsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_health_events::paginator::ListHealthEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_health_events::paginator::ListHealthEventsPaginator {
-        crate::operation::list_health_events::paginator::ListHealthEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_health_events::paginator::ListHealthEventsPaginator {
+        crate::operation::list_health_events::paginator::ListHealthEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the monitor.</p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,10 +134,7 @@ impl ListHealthEventsFluentBuilder {
         self
     }
     /// <p>The time when a health event started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -172,10 +148,7 @@ impl ListHealthEventsFluentBuilder {
         self
     }
     /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -217,10 +190,7 @@ impl ListHealthEventsFluentBuilder {
         self
     }
     /// <p>The status of a health event.</p>
-    pub fn set_event_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthEventStatus>,
-    ) -> Self {
+    pub fn set_event_status(mut self, input: ::std::option::Option<crate::types::HealthEventStatus>) -> Self {
         self.inner = self.inner.set_event_status(input);
         self
     }

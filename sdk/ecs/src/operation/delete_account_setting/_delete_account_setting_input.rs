@@ -22,17 +22,14 @@ impl DeleteAccountSettingInput {
 }
 impl DeleteAccountSettingInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountSettingInput`](crate::operation::delete_account_setting::DeleteAccountSettingInput).
-    pub fn builder(
-    ) -> crate::operation::delete_account_setting::builders::DeleteAccountSettingInputBuilder {
+    pub fn builder() -> crate::operation::delete_account_setting::builders::DeleteAccountSettingInputBuilder {
         crate::operation::delete_account_setting::builders::DeleteAccountSettingInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountSettingInput`](crate::operation::delete_account_setting::DeleteAccountSettingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountSettingInputBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SettingName>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DeleteAccountSettingInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the principal. It can be an user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the principal. It can be an user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -75,15 +66,11 @@ impl DeleteAccountSettingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccountSettingInput`](crate::operation::delete_account_setting::DeleteAccountSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_account_setting::DeleteAccountSettingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_account_setting::DeleteAccountSettingInput {
-                name: self.name,
-                principal_arn: self.principal_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_account_setting::DeleteAccountSettingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_account_setting::DeleteAccountSettingInput {
+            name: self.name,
+            principal_arn: self.principal_arn,
+        })
     }
 }

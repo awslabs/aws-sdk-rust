@@ -19,18 +19,14 @@ impl DeprecateSystemTemplateInput {
 }
 impl DeprecateSystemTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeprecateSystemTemplateInput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder {
         crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeprecateSystemTemplateInput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateSystemTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -62,10 +58,6 @@ impl DeprecateSystemTemplateInputBuilder {
         crate::operation::deprecate_system_template::DeprecateSystemTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deprecate_system_template::DeprecateSystemTemplateInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deprecate_system_template::DeprecateSystemTemplateInput { id: self.id })
     }
 }

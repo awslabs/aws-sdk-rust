@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartMlEvaluationTaskRunOutput {
 }
 impl StartMlEvaluationTaskRunOutput {
     /// Creates a new builder-style object to manufacture [`StartMlEvaluationTaskRunOutput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput).
-    pub fn builder() -> crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunOutputBuilder{
+    pub fn builder() -> crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunOutputBuilder {
         crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMlEvaluationTaskRunOutput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMlEvaluationTaskRunOutputBuilder {
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StartMlEvaluationTaskRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartMlEvaluationTaskRunOutput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput {
+    pub fn build(self) -> crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput {
         crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput {
             task_run_id: self.task_run_id,
             _request_id: self._request_id,

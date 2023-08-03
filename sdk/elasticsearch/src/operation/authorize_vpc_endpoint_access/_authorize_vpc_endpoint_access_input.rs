@@ -23,16 +23,14 @@ impl AuthorizeVpcEndpointAccessInput {
 }
 impl AuthorizeVpcEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`AuthorizeVpcEndpointAccessInput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput).
-    pub fn builder() -> crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessInputBuilder{
+    pub fn builder() -> crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessInputBuilder {
         crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeVpcEndpointAccessInput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeVpcEndpointAccessInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
@@ -73,11 +71,9 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
         crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput {
-                domain_name: self.domain_name,
-                account: self.account,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput {
+            domain_name: self.domain_name,
+            account: self.account,
+        })
     }
 }

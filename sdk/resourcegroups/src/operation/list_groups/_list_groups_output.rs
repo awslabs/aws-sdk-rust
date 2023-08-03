@@ -48,12 +48,9 @@ impl ListGroupsOutput {
 
 /// A builder for [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupsOutputBuilder {
-    pub(crate) group_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub(crate) group_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -71,17 +68,12 @@ impl ListGroupsOutputBuilder {
         self
     }
     /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
-    pub fn set_group_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
-    ) -> Self {
+    pub fn set_group_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
         self.group_identifiers = input;
         self
     }
     /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
-    pub fn get_group_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+    pub fn get_group_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
         &self.group_identifiers
     }
     /// Appends an item to `groups`.
@@ -102,10 +94,7 @@ impl ListGroupsOutputBuilder {
     /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.groups = input;
         self
     }

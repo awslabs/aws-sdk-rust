@@ -9,10 +9,7 @@ pub fn ser_preset_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_audio_description::ser_audio_description(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_audio_description::ser_audio_description(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -33,19 +30,13 @@ pub fn ser_preset_settings(
     if let Some(var_9) = &input.container_settings {
         #[allow(unused_mut)]
         let mut object_10 = object.key("containerSettings").start_object();
-        crate::protocol_serde::shape_container_settings::ser_container_settings(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_container_settings::ser_container_settings(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.video_description {
         #[allow(unused_mut)]
         let mut object_12 = object.key("videoDescription").start_object();
-        crate::protocol_serde::shape_video_description::ser_video_description(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_video_description::ser_video_description(&mut object_12, var_11)?;
         object_12.finish();
     }
     Ok(())
@@ -53,17 +44,9 @@ pub fn ser_preset_settings(
 
 pub(crate) fn de_preset_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::PresetSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::PresetSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -73,46 +56,37 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "audioDescriptions" => {
-                                builder = builder.set_audio_descriptions(
-                                    crate::protocol_serde::shape___list_of_audio_description::de___list_of_audio_description(tokens)?
-                                );
-                            }
-                            "captionDescriptions" => {
-                                builder = builder.set_caption_descriptions(
-                                    crate::protocol_serde::shape___list_of_caption_description_preset::de___list_of_caption_description_preset(tokens)?
-                                );
-                            }
-                            "containerSettings" => {
-                                builder = builder.set_container_settings(
-                                    crate::protocol_serde::shape_container_settings::de_container_settings(tokens)?
-                                );
-                            }
-                            "videoDescription" => {
-                                builder = builder.set_video_description(
-                                    crate::protocol_serde::shape_video_description::de_video_description(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioDescriptions" => {
+                            builder = builder.set_audio_descriptions(
+                                crate::protocol_serde::shape___list_of_audio_description::de___list_of_audio_description(tokens)?,
+                            );
                         }
-                    }
+                        "captionDescriptions" => {
+                            builder = builder.set_caption_descriptions(
+                                crate::protocol_serde::shape___list_of_caption_description_preset::de___list_of_caption_description_preset(tokens)?,
+                            );
+                        }
+                        "containerSettings" => {
+                            builder = builder.set_container_settings(crate::protocol_serde::shape_container_settings::de_container_settings(tokens)?);
+                        }
+                        "videoDescription" => {
+                            builder = builder.set_video_description(crate::protocol_serde::shape_video_description::de_video_description(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

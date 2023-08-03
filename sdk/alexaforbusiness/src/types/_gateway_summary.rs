@@ -51,9 +51,7 @@ impl GatewaySummary {
 
 /// A builder for [`GatewaySummary`](crate::types::GatewaySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewaySummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -105,18 +103,12 @@ impl GatewaySummaryBuilder {
         &self.description
     }
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
-    pub fn gateway_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
-    pub fn set_gateway_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_group_arn = input;
         self
     }
@@ -125,18 +117,12 @@ impl GatewaySummaryBuilder {
         &self.gateway_group_arn
     }
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-    pub fn software_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn software_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.software_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-    pub fn set_software_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_software_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.software_version = input;
         self
     }

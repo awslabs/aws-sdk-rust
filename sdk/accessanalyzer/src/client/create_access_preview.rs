@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAccessPreviewOutput`](crate::operation::create_access_preview::CreateAccessPreviewOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_access_preview::CreateAccessPreviewOutput::id): <p>The unique ID for the access preview.</p>
     /// - On failure, responds with [`SdkError<CreateAccessPreviewError>`](crate::operation::create_access_preview::CreateAccessPreviewError)
-    pub fn create_access_preview(
-        &self,
-    ) -> crate::operation::create_access_preview::builders::CreateAccessPreviewFluentBuilder {
-        crate::operation::create_access_preview::builders::CreateAccessPreviewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_access_preview(&self) -> crate::operation::create_access_preview::builders::CreateAccessPreviewFluentBuilder {
+        crate::operation::create_access_preview::builders::CreateAccessPreviewFluentBuilder::new(self.handle.clone())
     }
 }

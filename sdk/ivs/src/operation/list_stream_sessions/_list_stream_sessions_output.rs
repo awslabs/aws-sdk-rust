@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStreamSessionsOutput {
 }
 impl ListStreamSessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamSessionsOutput`](crate::operation::list_stream_sessions::ListStreamSessionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_stream_sessions::builders::ListStreamSessionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_stream_sessions::builders::ListStreamSessionsOutputBuilder {
         crate::operation::list_stream_sessions::builders::ListStreamSessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamSessionsOutput`](crate::operation::list_stream_sessions::ListStreamSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamSessionsOutputBuilder {
-    pub(crate) stream_sessions:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>>,
+    pub(crate) stream_sessions: ::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListStreamSessionsOutputBuilder {
         self
     }
     /// <p>List of stream sessions.</p>
-    pub fn set_stream_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>>,
-    ) -> Self {
+    pub fn set_stream_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>>) -> Self {
         self.stream_sessions = input;
         self
     }
     /// <p>List of stream sessions.</p>
-    pub fn get_stream_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>> {
+    pub fn get_stream_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>> {
         &self.stream_sessions
     }
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>

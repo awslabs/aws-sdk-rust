@@ -22,8 +22,7 @@ pub struct DescribeStorageConfigurationOutput {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
-    pub disassociated_data_storage:
-        ::std::option::Option<crate::types::DisassociatedDataStorageState>,
+    pub disassociated_data_storage: ::std::option::Option<crate::types::DisassociatedDataStorageState>,
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
@@ -56,9 +55,7 @@ impl DescribeStorageConfigurationOutput {
     /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn disassociated_data_storage(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DisassociatedDataStorageState> {
+    pub fn disassociated_data_storage(&self) -> ::std::option::Option<&crate::types::DisassociatedDataStorageState> {
         self.disassociated_data_storage.as_ref()
     }
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
@@ -66,9 +63,7 @@ impl DescribeStorageConfigurationOutput {
         self.retention_period.as_ref()
     }
     /// <p>Contains current status information for the configuration.</p>
-    pub fn configuration_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationStatus> {
+    pub fn configuration_status(&self) -> ::std::option::Option<&crate::types::ConfigurationStatus> {
         self.configuration_status.as_ref()
     }
     /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
@@ -83,21 +78,18 @@ impl ::aws_http::request_id::RequestId for DescribeStorageConfigurationOutput {
 }
 impl DescribeStorageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageConfigurationOutput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder {
         crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStorageConfigurationOutput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStorageConfigurationOutputBuilder {
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
     pub(crate) multi_layer_storage: ::std::option::Option<crate::types::MultiLayerStorage>,
-    pub(crate) disassociated_data_storage:
-        ::std::option::Option<crate::types::DisassociatedDataStorageState>,
+    pub(crate) disassociated_data_storage: ::std::option::Option<crate::types::DisassociatedDataStorageState>,
     pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     pub(crate) configuration_status: ::std::option::Option<crate::types::ConfigurationStatus>,
     pub(crate) last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -118,10 +110,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
     /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
-    pub fn set_storage_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageType>,
-    ) -> Self {
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.storage_type = input;
         self
     }
@@ -139,17 +128,12 @@ impl DescribeStorageConfigurationOutputBuilder {
         self
     }
     /// <p>Contains information about the storage destination.</p>
-    pub fn set_multi_layer_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiLayerStorage>,
-    ) -> Self {
+    pub fn set_multi_layer_storage(mut self, input: ::std::option::Option<crate::types::MultiLayerStorage>) -> Self {
         self.multi_layer_storage = input;
         self
     }
     /// <p>Contains information about the storage destination.</p>
-    pub fn get_multi_layer_storage(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiLayerStorage> {
+    pub fn get_multi_layer_storage(&self) -> &::std::option::Option<crate::types::MultiLayerStorage> {
         &self.multi_layer_storage
     }
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
@@ -160,10 +144,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn disassociated_data_storage(
-        mut self,
-        input: crate::types::DisassociatedDataStorageState,
-    ) -> Self {
+    pub fn disassociated_data_storage(mut self, input: crate::types::DisassociatedDataStorageState) -> Self {
         self.disassociated_data_storage = ::std::option::Option::Some(input);
         self
     }
@@ -175,10 +156,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_disassociated_data_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::DisassociatedDataStorageState>,
-    ) -> Self {
+    pub fn set_disassociated_data_storage(mut self, input: ::std::option::Option<crate::types::DisassociatedDataStorageState>) -> Self {
         self.disassociated_data_storage = input;
         self
     }
@@ -190,9 +168,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_disassociated_data_storage(
-        &self,
-    ) -> &::std::option::Option<crate::types::DisassociatedDataStorageState> {
+    pub fn get_disassociated_data_storage(&self) -> &::std::option::Option<crate::types::DisassociatedDataStorageState> {
         &self.disassociated_data_storage
     }
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
@@ -201,10 +177,7 @@ impl DescribeStorageConfigurationOutputBuilder {
         self
     }
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.retention_period = input;
         self
     }
@@ -218,17 +191,12 @@ impl DescribeStorageConfigurationOutputBuilder {
         self
     }
     /// <p>Contains current status information for the configuration.</p>
-    pub fn set_configuration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationStatus>,
-    ) -> Self {
+    pub fn set_configuration_status(mut self, input: ::std::option::Option<crate::types::ConfigurationStatus>) -> Self {
         self.configuration_status = input;
         self
     }
     /// <p>Contains current status information for the configuration.</p>
-    pub fn get_configuration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationStatus> {
+    pub fn get_configuration_status(&self) -> &::std::option::Option<crate::types::ConfigurationStatus> {
         &self.configuration_status
     }
     /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
@@ -237,10 +205,7 @@ impl DescribeStorageConfigurationOutputBuilder {
         self
     }
     /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
-    pub fn set_last_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_date = input;
         self
     }
@@ -258,9 +223,7 @@ impl DescribeStorageConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStorageConfigurationOutput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput {
         crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput {
             storage_type: self.storage_type,
             multi_layer_storage: self.multi_layer_storage,

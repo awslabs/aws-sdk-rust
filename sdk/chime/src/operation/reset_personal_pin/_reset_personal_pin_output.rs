@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ResetPersonalPinOutput {
 }
 impl ResetPersonalPinOutput {
     /// Creates a new builder-style object to manufacture [`ResetPersonalPinOutput`](crate::operation::reset_personal_pin::ResetPersonalPinOutput).
-    pub fn builder() -> crate::operation::reset_personal_pin::builders::ResetPersonalPinOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_personal_pin::builders::ResetPersonalPinOutputBuilder {
         crate::operation::reset_personal_pin::builders::ResetPersonalPinOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetPersonalPinOutput`](crate::operation::reset_personal_pin::ResetPersonalPinOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetPersonalPinOutputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,

@@ -30,27 +30,19 @@ impl LifeCycleLastCutoverInitiated {
 
 /// A builder for [`LifeCycleLastCutoverInitiated`](crate::types::LifeCycleLastCutoverInitiated).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifeCycleLastCutoverInitiatedBuilder {
     pub(crate) api_call_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl LifeCycleLastCutoverInitiatedBuilder {
     /// <p></p>
-    pub fn api_call_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_call_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_call_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_api_call_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_call_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_call_date_time = input;
         self
     }

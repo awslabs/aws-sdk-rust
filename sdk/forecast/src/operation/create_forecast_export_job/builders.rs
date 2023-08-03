@@ -42,8 +42,7 @@ impl CreateForecastExportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateForecastExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder,
+    inner: crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder,
 }
 impl CreateForecastExportJobFluentBuilder {
     /// Creates a new `CreateForecastExportJob`.
@@ -54,10 +53,7 @@ impl CreateForecastExportJobFluentBuilder {
         }
     }
     /// Access the CreateForecastExportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,9 +65,7 @@ impl CreateForecastExportJobFluentBuilder {
             crate::operation::create_forecast_export_job::CreateForecastExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_forecast_export_job::CreateForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_forecast_export_job::CreateForecastExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -81,10 +75,7 @@ impl CreateForecastExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -93,9 +84,7 @@ impl CreateForecastExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_forecast_export_job::CreateForecastExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_forecast_export_job::CreateForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_forecast_export_job::CreateForecastExportJobError>,
     > {
         let op = self
             .inner
@@ -118,9 +107,7 @@ impl CreateForecastExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_forecast_export_job::CreateForecastExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_forecast_export_job::CreateForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_forecast_export_job::CreateForecastExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -134,25 +121,17 @@ impl CreateForecastExportJobFluentBuilder {
             crate::operation::create_forecast_export_job::CreateForecastExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_forecast_export_job::CreateForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_forecast_export_job::CreateForecastExportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name for the forecast export job.</p>
-    pub fn forecast_export_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_export_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_export_job_name(input.into());
         self
     }
     /// <p>The name for the forecast export job.</p>
-    pub fn set_forecast_export_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_export_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_forecast_export_job_name(input);
         self
     }
@@ -182,10 +161,7 @@ impl CreateForecastExportJobFluentBuilder {
     }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DataDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
@@ -224,10 +200,7 @@ impl CreateForecastExportJobFluentBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

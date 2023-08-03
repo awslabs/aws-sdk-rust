@@ -22,9 +22,7 @@ impl GetMetricStreamInput {
 
 /// A builder for [`GetMetricStreamInput`](crate::operation::get_metric_stream::GetMetricStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricStreamInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetMetricStreamInputBuilder {
     /// Consumes the builder and constructs a [`GetMetricStreamInput`](crate::operation::get_metric_stream::GetMetricStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_metric_stream::GetMetricStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_metric_stream::GetMetricStreamInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::get_metric_stream::GetMetricStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_metric_stream::GetMetricStreamInput { name: self.name })
     }
 }

@@ -6,25 +6,19 @@
 pub struct GetCampaignStateBatchOutput {
     /// List of successful response of campaign state
     #[doc(hidden)]
-    pub successful_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
+    pub successful_requests: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
     /// List of failed requests of campaign state
     #[doc(hidden)]
-    pub failed_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
+    pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
     _request_id: Option<String>,
 }
 impl GetCampaignStateBatchOutput {
     /// List of successful response of campaign state
-    pub fn successful_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SuccessfulCampaignStateResponse]> {
+    pub fn successful_requests(&self) -> ::std::option::Option<&[crate::types::SuccessfulCampaignStateResponse]> {
         self.successful_requests.as_deref()
     }
     /// List of failed requests of campaign state
-    pub fn failed_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FailedCampaignStateResponse]> {
+    pub fn failed_requests(&self) -> ::std::option::Option<&[crate::types::FailedCampaignStateResponse]> {
         self.failed_requests.as_deref()
     }
 }
@@ -35,23 +29,17 @@ impl ::aws_http::request_id::RequestId for GetCampaignStateBatchOutput {
 }
 impl GetCampaignStateBatchOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignStateBatchOutput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchOutput).
-    pub fn builder(
-    ) -> crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchOutputBuilder {
         crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCampaignStateBatchOutput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignStateBatchOutputBuilder {
-    pub(crate) successful_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
-    pub(crate) failed_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
+    pub(crate) successful_requests: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
+    pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
     _request_id: Option<String>,
 }
 impl GetCampaignStateBatchOutputBuilder {
@@ -60,30 +48,19 @@ impl GetCampaignStateBatchOutputBuilder {
     /// To override the contents of this collection use [`set_successful_requests`](Self::set_successful_requests).
     ///
     /// List of successful response of campaign state
-    pub fn successful_requests(
-        mut self,
-        input: crate::types::SuccessfulCampaignStateResponse,
-    ) -> Self {
+    pub fn successful_requests(mut self, input: crate::types::SuccessfulCampaignStateResponse) -> Self {
         let mut v = self.successful_requests.unwrap_or_default();
         v.push(input);
         self.successful_requests = ::std::option::Option::Some(v);
         self
     }
     /// List of successful response of campaign state
-    pub fn set_successful_requests(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>,
-        >,
-    ) -> Self {
+    pub fn set_successful_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>) -> Self {
         self.successful_requests = input;
         self
     }
     /// List of successful response of campaign state
-    pub fn get_successful_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>
-    {
+    pub fn get_successful_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>> {
         &self.successful_requests
     }
     /// Appends an item to `failed_requests`.
@@ -98,17 +75,12 @@ impl GetCampaignStateBatchOutputBuilder {
         self
     }
     /// List of failed requests of campaign state
-    pub fn set_failed_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
-    ) -> Self {
+    pub fn set_failed_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>) -> Self {
         self.failed_requests = input;
         self
     }
     /// List of failed requests of campaign state
-    pub fn get_failed_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>> {
+    pub fn get_failed_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>> {
         &self.failed_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

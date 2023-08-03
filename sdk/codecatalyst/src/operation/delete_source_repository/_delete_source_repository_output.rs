@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteSourceRepositoryOutput {
 }
 impl DeleteSourceRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceRepositoryOutput`](crate::operation::delete_source_repository::DeleteSourceRepositoryOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_source_repository::builders::DeleteSourceRepositoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_source_repository::builders::DeleteSourceRepositoryOutputBuilder {
         crate::operation::delete_source_repository::builders::DeleteSourceRepositoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSourceRepositoryOutput`](crate::operation::delete_source_repository::DeleteSourceRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSourceRepositoryOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

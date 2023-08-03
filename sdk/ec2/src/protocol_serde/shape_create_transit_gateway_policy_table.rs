@@ -9,7 +9,8 @@ pub fn de_create_transit_gateway_policy_table_http_error(
     crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableError::generic(generic))
@@ -27,16 +28,21 @@ pub fn de_create_transit_gateway_policy_table_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_transit_gateway_policy_table::de_create_transit_gateway_policy_table(_response_body, output).map_err(crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_transit_gateway_policy_table::de_create_transit_gateway_policy_table(_response_body, output)
+            .map_err(crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_create_transit_gateway_policy_table(inp: &[u8], mut builder: crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableOutputBuilder) -> Result<crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_create_transit_gateway_policy_table(
+    inp: &[u8],
+    mut builder: crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableOutputBuilder,
+) -> Result<
+    crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

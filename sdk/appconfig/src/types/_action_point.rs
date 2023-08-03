@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActionPoint {
     #[allow(missing_docs)] // documentation missing in model
@@ -77,9 +71,7 @@ impl ::std::convert::From<&str> for ActionPoint {
             "ON_DEPLOYMENT_ROLLED_BACK" => ActionPoint::OnDeploymentRolledBack,
             "ON_DEPLOYMENT_START" => ActionPoint::OnDeploymentStart,
             "ON_DEPLOYMENT_STEP" => ActionPoint::OnDeploymentStep,
-            "PRE_CREATE_HOSTED_CONFIGURATION_VERSION" => {
-                ActionPoint::PreCreateHostedConfigurationVersion
-            }
+            "PRE_CREATE_HOSTED_CONFIGURATION_VERSION" => ActionPoint::PreCreateHostedConfigurationVersion,
             "PRE_START_DEPLOYMENT" => ActionPoint::PreStartDeployment,
             other => ActionPoint::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -101,9 +93,7 @@ impl ActionPoint {
             ActionPoint::OnDeploymentRolledBack => "ON_DEPLOYMENT_ROLLED_BACK",
             ActionPoint::OnDeploymentStart => "ON_DEPLOYMENT_START",
             ActionPoint::OnDeploymentStep => "ON_DEPLOYMENT_STEP",
-            ActionPoint::PreCreateHostedConfigurationVersion => {
-                "PRE_CREATE_HOSTED_CONFIGURATION_VERSION"
-            }
+            ActionPoint::PreCreateHostedConfigurationVersion => "PRE_CREATE_HOSTED_CONFIGURATION_VERSION",
             ActionPoint::PreStartDeployment => "PRE_START_DEPLOYMENT",
             ActionPoint::Unknown(value) => value.as_str(),
         }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`created_date(Option<DateTime>)`](crate::operation::get_upload_status::GetUploadStatusOutput::created_date): <p>The date at which the upload was created.</p>
     /// - On failure, responds with [`SdkError<GetUploadStatusError>`](crate::operation::get_upload_status::GetUploadStatusError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn get_upload_status(
-        &self,
-    ) -> crate::operation::get_upload_status::builders::GetUploadStatusFluentBuilder {
-        crate::operation::get_upload_status::builders::GetUploadStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_upload_status(&self) -> crate::operation::get_upload_status::builders::GetUploadStatusFluentBuilder {
+        crate::operation::get_upload_status::builders::GetUploadStatusFluentBuilder::new(self.handle.clone())
     }
 }

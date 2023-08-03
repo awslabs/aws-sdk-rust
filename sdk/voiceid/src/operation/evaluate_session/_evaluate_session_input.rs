@@ -29,9 +29,7 @@ impl EvaluateSessionInput {
 
 /// A builder for [`EvaluateSessionInput`](crate::operation::evaluate_session::EvaluateSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateSessionInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_name_or_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl EvaluateSessionInputBuilder {
         &self.domain_id
     }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
-    pub fn session_name_or_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_name_or_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_name_or_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
-    pub fn set_session_name_or_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_name_or_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_name_or_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl EvaluateSessionInputBuilder {
     /// Consumes the builder and constructs a [`EvaluateSessionInput`](crate::operation::evaluate_session::EvaluateSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::evaluate_session::EvaluateSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::evaluate_session::EvaluateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_session::EvaluateSessionInput {
             domain_id: self.domain_id,
             session_name_or_id: self.session_name_or_id,

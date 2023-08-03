@@ -26,8 +26,7 @@ impl DescribeConnectorEntityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConnectorEntityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder,
+    inner: crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder,
 }
 impl DescribeConnectorEntityFluentBuilder {
     /// Creates a new `DescribeConnectorEntity`.
@@ -38,10 +37,7 @@ impl DescribeConnectorEntityFluentBuilder {
         }
     }
     /// Access the DescribeConnectorEntity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeConnectorEntityFluentBuilder {
             crate::operation::describe_connector_entity::DescribeConnectorEntity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connector_entity::DescribeConnectorEntityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connector_entity::DescribeConnectorEntityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeConnectorEntityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeConnectorEntityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connector_entity::DescribeConnectorEntityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connector_entity::DescribeConnectorEntityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connector_entity::DescribeConnectorEntityError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeConnectorEntityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connector_entity::DescribeConnectorEntityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connector_entity::DescribeConnectorEntityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connector_entity::DescribeConnectorEntityError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeConnectorEntityFluentBuilder {
             crate::operation::describe_connector_entity::DescribeConnectorEntity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connector_entity::DescribeConnectorEntityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connector_entity::DescribeConnectorEntityError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The entity name for that connector. </p>
-    pub fn connector_entity_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_entity_name(input.into());
         self
     }
     /// <p> The entity name for that connector. </p>
-    pub fn set_connector_entity_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_entity_name(input);
         self
     }
@@ -150,10 +129,7 @@ impl DescribeConnectorEntityFluentBuilder {
         self
     }
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
     }
@@ -162,18 +138,12 @@ impl DescribeConnectorEntityFluentBuilder {
         self.inner.get_connector_type()
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_name(input.into());
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }

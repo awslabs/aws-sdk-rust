@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`load_balancer_descriptions(Option<Vec<LoadBalancerDescription>>)`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput::load_balancer_descriptions): <p>Information about the load balancers.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput::next_marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeLoadBalancersError>`](crate::operation::describe_load_balancers::DescribeLoadBalancersError)
-    pub fn describe_load_balancers(
-        &self,
-    ) -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersFluentBuilder
-    {
-        crate::operation::describe_load_balancers::builders::DescribeLoadBalancersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_load_balancers(&self) -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersFluentBuilder {
+        crate::operation::describe_load_balancers::builders::DescribeLoadBalancersFluentBuilder::new(self.handle.clone())
     }
 }

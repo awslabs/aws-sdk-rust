@@ -10,10 +10,7 @@ impl ListIntentPathsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_intent_paths::ListIntentPathsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_intent_paths::ListIntentPathsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_intent_paths::ListIntentPathsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_intent_paths();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl ListIntentPathsFluentBuilder {
         }
     }
     /// Access the ListIntentPaths as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_intent_paths::builders::ListIntentPathsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_intent_paths::builders::ListIntentPathsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl ListIntentPathsFluentBuilder {
             crate::operation::list_intent_paths::ListIntentPaths,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_intent_paths::ListIntentPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_intent_paths::ListIntentPathsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl ListIntentPathsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl ListIntentPathsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_intent_paths::ListIntentPathsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_intent_paths::ListIntentPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_intent_paths::ListIntentPathsError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl ListIntentPathsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_intent_paths::ListIntentPathsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_intent_paths::ListIntentPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_intent_paths::ListIntentPathsError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl ListIntentPathsFluentBuilder {
             crate::operation::list_intent_paths::ListIntentPaths,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_intent_paths::ListIntentPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_intent_paths::ListIntentPathsError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +131,7 @@ impl ListIntentPathsFluentBuilder {
         self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date_time(input);
         self
     }
@@ -164,10 +145,7 @@ impl ListIntentPathsFluentBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date_time(input);
         self
     }
@@ -214,17 +192,12 @@ impl ListIntentPathsFluentBuilder {
         self
     }
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>> {
         self.inner.get_filters()
     }
 }

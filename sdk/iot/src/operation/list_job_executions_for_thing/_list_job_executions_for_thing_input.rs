@@ -58,16 +58,14 @@ impl ListJobExecutionsForThingInput {
 }
 impl ListJobExecutionsForThingInput {
     /// Creates a new builder-style object to manufacture [`ListJobExecutionsForThingInput`](crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput).
-    pub fn builder() -> crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder{
+    pub fn builder() -> crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder {
         crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder::default()
     }
 }
 
 /// A builder for [`ListJobExecutionsForThingInput`](crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobExecutionsForThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::JobExecutionStatus>,
@@ -97,10 +95,7 @@ impl ListJobExecutionsForThingInputBuilder {
         self
     }
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -183,15 +178,13 @@ impl ListJobExecutionsForThingInputBuilder {
         crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput {
-                thing_name: self.thing_name,
-                status: self.status,
-                namespace_id: self.namespace_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput {
+            thing_name: self.thing_name,
+            status: self.status,
+            namespace_id: self.namespace_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            job_id: self.job_id,
+        })
     }
 }

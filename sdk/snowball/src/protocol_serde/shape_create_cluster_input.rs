@@ -73,9 +73,7 @@ pub fn ser_create_cluster_input(
         array_21.finish();
     }
     if let Some(var_23) = &input.snowball_capacity_preference {
-        object
-            .key("SnowballCapacityPreference")
-            .string(var_23.as_str());
+        object.key("SnowballCapacityPreference").string(var_23.as_str());
     }
     Ok(())
 }

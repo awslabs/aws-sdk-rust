@@ -18,12 +18,7 @@ impl super::Client {
     ///   - [`contributors(Option<Vec<InsightRuleContributor>>)`](crate::operation::get_insight_rule_report::GetInsightRuleReportOutput::contributors): <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
     ///   - [`metric_datapoints(Option<Vec<InsightRuleMetricDatapoint>>)`](crate::operation::get_insight_rule_report::GetInsightRuleReportOutput::metric_datapoints): <p>A time series of metric data points that matches the time period in the rule request.</p>
     /// - On failure, responds with [`SdkError<GetInsightRuleReportError>`](crate::operation::get_insight_rule_report::GetInsightRuleReportError)
-    pub fn get_insight_rule_report(
-        &self,
-    ) -> crate::operation::get_insight_rule_report::builders::GetInsightRuleReportFluentBuilder
-    {
-        crate::operation::get_insight_rule_report::builders::GetInsightRuleReportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_insight_rule_report(&self) -> crate::operation::get_insight_rule_report::builders::GetInsightRuleReportFluentBuilder {
+        crate::operation::get_insight_rule_report::builders::GetInsightRuleReportFluentBuilder::new(self.handle.clone())
     }
 }

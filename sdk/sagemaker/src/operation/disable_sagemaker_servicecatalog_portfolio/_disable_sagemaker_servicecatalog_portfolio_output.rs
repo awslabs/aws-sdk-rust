@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableSagemakerServicecatalogPortfol
 }
 impl DisableSagemakerServicecatalogPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`DisableSagemakerServicecatalogPortfolioOutput`](crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput).
-    pub fn builder() -> crate::operation::disable_sagemaker_servicecatalog_portfolio::builders::DisableSagemakerServicecatalogPortfolioOutputBuilder{
+    pub fn builder() -> crate::operation::disable_sagemaker_servicecatalog_portfolio::builders::DisableSagemakerServicecatalogPortfolioOutputBuilder {
         crate::operation::disable_sagemaker_servicecatalog_portfolio::builders::DisableSagemakerServicecatalogPortfolioOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableSagemakerServicecatalogPortfolioOutput`](crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableSagemakerServicecatalogPortfolioOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisableSagemakerServicecatalogPortfolioOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableSagemakerServicecatalogPortfolioOutput`](crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput).
-    pub fn build(self) -> crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput{
+    pub fn build(self) -> crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput {
         crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput {
             _request_id: self._request_id,
         }

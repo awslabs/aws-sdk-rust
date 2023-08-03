@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`observability_configuration_summary_list(Option<Vec<ObservabilityConfigurationSummary>>)`](crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput::observability_configuration_summary_list): <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     /// - On failure, responds with [`SdkError<ListObservabilityConfigurationsError>`](crate::operation::list_observability_configurations::ListObservabilityConfigurationsError)
-    pub fn list_observability_configurations(&self) -> crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsFluentBuilder{
+    pub fn list_observability_configurations(
+        &self,
+    ) -> crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsFluentBuilder {
         crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

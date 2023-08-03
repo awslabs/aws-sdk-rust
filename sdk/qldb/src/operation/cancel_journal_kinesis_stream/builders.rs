@@ -27,7 +27,7 @@ impl CancelJournalKinesisStreamInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelJournalKinesisStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder,
+    inner: crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder,
 }
 impl CancelJournalKinesisStreamFluentBuilder {
     /// Creates a new `CancelJournalKinesisStream`.
@@ -38,7 +38,7 @@ impl CancelJournalKinesisStreamFluentBuilder {
         }
     }
     /// Access the CancelJournalKinesisStream as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CancelJournalKinesisStreamFluentBuilder {
             crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CancelJournalKinesisStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CancelJournalKinesisStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CancelJournalKinesisStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CancelJournalKinesisStreamFluentBuilder {
             crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError>,
     > {
         self.customize_middleware().await
     }

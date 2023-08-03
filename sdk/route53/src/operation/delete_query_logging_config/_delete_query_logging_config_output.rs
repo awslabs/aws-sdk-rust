@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteQueryLoggingConfigOutput {
 }
 impl DeleteQueryLoggingConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQueryLoggingConfigOutput`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigOutput).
-    pub fn builder() -> crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigOutputBuilder{
+    pub fn builder() -> crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigOutputBuilder {
         crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQueryLoggingConfigOutput`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQueryLoggingConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteQueryLoggingConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteQueryLoggingConfigOutput`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigOutput {
+    pub fn build(self) -> crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigOutput {
         crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigOutput {
             _request_id: self._request_id,
         }

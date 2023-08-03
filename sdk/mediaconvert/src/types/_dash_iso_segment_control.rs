@@ -38,13 +38,7 @@
 /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DashIsoSegmentControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for DashIsoSegmentControl {
         match s {
             "SEGMENTED_FILES" => DashIsoSegmentControl::SegmentedFiles,
             "SINGLE_FILE" => DashIsoSegmentControl::SingleFile,
-            other => DashIsoSegmentControl::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DashIsoSegmentControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

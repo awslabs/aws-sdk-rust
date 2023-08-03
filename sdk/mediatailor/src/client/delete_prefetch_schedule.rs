@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`playback_configuration_name(impl ::std::convert::Into<String>)`](crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleFluentBuilder::playback_configuration_name) / [`set_playback_configuration_name(Option<String>)`](crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleFluentBuilder::set_playback_configuration_name): <p>The name of the playback configuration for this prefetch schedule.</p>
     /// - On success, responds with [`DeletePrefetchScheduleOutput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleOutput)
     /// - On failure, responds with [`SdkError<DeletePrefetchScheduleError>`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleError)
-    pub fn delete_prefetch_schedule(
-        &self,
-    ) -> crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleFluentBuilder
-    {
+    pub fn delete_prefetch_schedule(&self) -> crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleFluentBuilder {
         crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleFluentBuilder::new(self.handle.clone())
     }
 }

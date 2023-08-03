@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateBudgetFromResourceOutput 
 }
 impl DisassociateBudgetFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateBudgetFromResourceOutput`](crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceOutput).
-    pub fn builder() -> crate::operation::disassociate_budget_from_resource::builders::DisassociateBudgetFromResourceOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_budget_from_resource::builders::DisassociateBudgetFromResourceOutputBuilder {
         crate::operation::disassociate_budget_from_resource::builders::DisassociateBudgetFromResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateBudgetFromResourceOutput`](crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateBudgetFromResourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisassociateBudgetFromResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateBudgetFromResourceOutput`](crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceOutput {
         crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceOutput {
             _request_id: self._request_id,
         }

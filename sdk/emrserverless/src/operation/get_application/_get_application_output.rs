@@ -28,9 +28,7 @@ impl GetApplicationOutput {
 
 /// A builder for [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationOutputBuilder {
     pub(crate) application: ::std::option::Option<crate::types::Application>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>The output displays information about the specified application.</p>
-    pub fn set_application(
-        mut self,
-        input: ::std::option::Option<crate::types::Application>,
-    ) -> Self {
+    pub fn set_application(mut self, input: ::std::option::Option<crate::types::Application>) -> Self {
         self.application = input;
         self
     }

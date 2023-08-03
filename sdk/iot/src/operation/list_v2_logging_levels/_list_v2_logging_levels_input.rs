@@ -29,18 +29,14 @@ impl ListV2LoggingLevelsInput {
 }
 impl ListV2LoggingLevelsInput {
     /// Creates a new builder-style object to manufacture [`ListV2LoggingLevelsInput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput).
-    pub fn builder(
-    ) -> crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsInputBuilder {
-        crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsInputBuilder {
+        crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListV2LoggingLevelsInput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListV2LoggingLevelsInputBuilder {
     pub(crate) target_type: ::std::option::Option<crate::types::LogTargetType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl ListV2LoggingLevelsInputBuilder {
         self
     }
     /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogTargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::LogTargetType>) -> Self {
         self.target_type = input;
         self
     }
@@ -95,16 +88,12 @@ impl ListV2LoggingLevelsInputBuilder {
     /// Consumes the builder and constructs a [`ListV2LoggingLevelsInput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput {
-                target_type: self.target_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput {
+            target_type: self.target_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

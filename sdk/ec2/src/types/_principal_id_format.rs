@@ -30,9 +30,7 @@ impl PrincipalIdFormat {
 
 /// A builder for [`PrincipalIdFormat`](crate::types::PrincipalIdFormat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrincipalIdFormatBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
@@ -64,10 +62,7 @@ impl PrincipalIdFormatBuilder {
         self
     }
     /// <p>PrincipalIdFormatStatuses description</p>
-    pub fn set_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
-    ) -> Self {
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>) -> Self {
         self.statuses = input;
         self
     }

@@ -22,7 +22,7 @@ impl ::std::fmt::Debug for BatchDetectDominantLanguageInput {
 }
 impl BatchDetectDominantLanguageInput {
     /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageInput`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput).
-    pub fn builder() -> crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder{
+    pub fn builder() -> crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder {
         crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder::default()
     }
 }
@@ -46,10 +46,7 @@ impl BatchDetectDominantLanguageInputBuilder {
         self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
-    pub fn set_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.text_list = input;
         self
     }
@@ -64,11 +61,7 @@ impl BatchDetectDominantLanguageInputBuilder {
         crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput {
-                text_list: self.text_list,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput { text_list: self.text_list })
     }
 }
 impl ::std::fmt::Debug for BatchDetectDominantLanguageInputBuilder {

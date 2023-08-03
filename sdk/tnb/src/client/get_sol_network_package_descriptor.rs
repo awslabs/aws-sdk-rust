@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`content_type(Option<DescriptorContentType>)`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput::content_type): <p>Indicates the media type of the resource.</p>
     ///   - [`nsd(Option<Blob>)`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput::nsd): <p>Contents of the network service descriptor in the network package.</p>
     /// - On failure, responds with [`SdkError<GetSolNetworkPackageDescriptorError>`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError)
-    pub fn get_sol_network_package_descriptor(&self) -> crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorFluentBuilder{
+    pub fn get_sol_network_package_descriptor(
+        &self,
+    ) -> crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorFluentBuilder {
         crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorFluentBuilder::new(self.handle.clone())
     }
 }

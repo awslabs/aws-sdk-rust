@@ -22,17 +22,14 @@ impl CreateWorkerBlockInput {
 }
 impl CreateWorkerBlockInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkerBlockInput`](crate::operation::create_worker_block::CreateWorkerBlockInput).
-    pub fn builder(
-    ) -> crate::operation::create_worker_block::builders::CreateWorkerBlockInputBuilder {
+    pub fn builder() -> crate::operation::create_worker_block::builders::CreateWorkerBlockInputBuilder {
         crate::operation::create_worker_block::builders::CreateWorkerBlockInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkerBlockInput`](crate::operation::create_worker_block::CreateWorkerBlockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkerBlockInputBuilder {
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl CreateWorkerBlockInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkerBlockInput`](crate::operation::create_worker_block::CreateWorkerBlockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_worker_block::CreateWorkerBlockInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_worker_block::CreateWorkerBlockInput {
-                worker_id: self.worker_id,
-                reason: self.reason,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_worker_block::CreateWorkerBlockInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_worker_block::CreateWorkerBlockInput {
+            worker_id: self.worker_id,
+            reason: self.reason,
+        })
     }
 }

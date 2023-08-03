@@ -22,35 +22,26 @@ impl ListRefreshSchedulesInput {
 }
 impl ListRefreshSchedulesInput {
     /// Creates a new builder-style object to manufacture [`ListRefreshSchedulesInput`](crate::operation::list_refresh_schedules::ListRefreshSchedulesInput).
-    pub fn builder(
-    ) -> crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesInputBuilder {
+    pub fn builder() -> crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesInputBuilder {
         crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRefreshSchedulesInput`](crate::operation::list_refresh_schedules::ListRefreshSchedulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRefreshSchedulesInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
 }
 impl ListRefreshSchedulesInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -75,15 +66,11 @@ impl ListRefreshSchedulesInputBuilder {
     /// Consumes the builder and constructs a [`ListRefreshSchedulesInput`](crate::operation::list_refresh_schedules::ListRefreshSchedulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_refresh_schedules::ListRefreshSchedulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_refresh_schedules::ListRefreshSchedulesInput {
-                aws_account_id: self.aws_account_id,
-                data_set_id: self.data_set_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_refresh_schedules::ListRefreshSchedulesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_refresh_schedules::ListRefreshSchedulesInput {
+            aws_account_id: self.aws_account_id,
+            data_set_id: self.data_set_id,
+        })
     }
 }

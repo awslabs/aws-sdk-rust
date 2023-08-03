@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`findings(Option<Vec<Finding>>)`](crate::operation::describe_findings::DescribeFindingsOutput::findings): <p>Information about the finding.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::describe_findings::DescribeFindingsOutput::failed_items): <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<DescribeFindingsError>`](crate::operation::describe_findings::DescribeFindingsError)
-    pub fn describe_findings(
-        &self,
-    ) -> crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder {
-        crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_findings(&self) -> crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder {
+        crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder::new(self.handle.clone())
     }
 }

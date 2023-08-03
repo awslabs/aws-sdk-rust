@@ -50,18 +50,14 @@ impl ListConnectorEntitiesInput {
 }
 impl ListConnectorEntitiesInput {
     /// Creates a new builder-style object to manufacture [`ListConnectorEntitiesInput`](crate::operation::list_connector_entities::ListConnectorEntitiesInput).
-    pub fn builder(
-    ) -> crate::operation::list_connector_entities::builders::ListConnectorEntitiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_connector_entities::builders::ListConnectorEntitiesInputBuilder {
         crate::operation::list_connector_entities::builders::ListConnectorEntitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConnectorEntitiesInput`](crate::operation::list_connector_entities::ListConnectorEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectorEntitiesInputBuilder {
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,
@@ -72,18 +68,12 @@ pub struct ListConnectorEntitiesInputBuilder {
 }
 impl ListConnectorEntitiesInputBuilder {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_name = input;
         self
     }
@@ -97,10 +87,7 @@ impl ListConnectorEntitiesInputBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.connector_type = input;
         self
     }
@@ -109,18 +96,12 @@ impl ListConnectorEntitiesInputBuilder {
         &self.connector_type
     }
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-    pub fn entities_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entities_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entities_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-    pub fn set_entities_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entities_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entities_path = input;
         self
     }
@@ -173,19 +154,15 @@ impl ListConnectorEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`ListConnectorEntitiesInput`](crate::operation::list_connector_entities::ListConnectorEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_connector_entities::ListConnectorEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_connector_entities::ListConnectorEntitiesInput {
-                connector_profile_name: self.connector_profile_name,
-                connector_type: self.connector_type,
-                entities_path: self.entities_path,
-                api_version: self.api_version,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_connector_entities::ListConnectorEntitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_connector_entities::ListConnectorEntitiesInput {
+            connector_profile_name: self.connector_profile_name,
+            connector_type: self.connector_type,
+            entities_path: self.entities_path,
+            api_version: self.api_version,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

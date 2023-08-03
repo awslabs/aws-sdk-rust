@@ -4,9 +4,7 @@ pub fn ser_stop_hyper_parameter_tuning_job_input(
     input: &crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.hyper_parameter_tuning_job_name {
-        object
-            .key("HyperParameterTuningJobName")
-            .string(var_1.as_str());
+        object.key("HyperParameterTuningJobName").string(var_1.as_str());
     }
     Ok(())
 }

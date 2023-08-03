@@ -10,10 +10,7 @@ impl GetEmailTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_email_template::GetEmailTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_email_template::GetEmailTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_email_template::GetEmailTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_email_template();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetEmailTemplateFluentBuilder {
         }
     }
     /// Access the GetEmailTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_email_template::builders::GetEmailTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_email_template::builders::GetEmailTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetEmailTemplateFluentBuilder {
             crate::operation::get_email_template::GetEmailTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_email_template::GetEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_email_template::GetEmailTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetEmailTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetEmailTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_email_template::GetEmailTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_email_template::GetEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_email_template::GetEmailTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetEmailTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_email_template::GetEmailTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_email_template::GetEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_email_template::GetEmailTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl GetEmailTemplateFluentBuilder {
             crate::operation::get_email_template::GetEmailTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_email_template::GetEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_email_template::GetEmailTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

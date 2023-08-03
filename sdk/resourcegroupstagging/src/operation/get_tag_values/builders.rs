@@ -10,10 +10,7 @@ impl GetTagValuesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_tag_values::GetTagValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_tag_values::GetTagValuesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_tag_values::GetTagValuesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_tag_values();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetTagValuesFluentBuilder {
         }
     }
     /// Access the GetTagValues as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_tag_values::builders::GetTagValuesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_tag_values::builders::GetTagValuesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl GetTagValuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,27 +110,16 @@ impl GetTagValuesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_tag_values::paginator::GetTagValuesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_tag_values::paginator::GetTagValuesPaginator {
-        crate::operation::get_tag_values::paginator::GetTagValuesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_tag_values::paginator::GetTagValuesPaginator {
+        crate::operation::get_tag_values::paginator::GetTagValuesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pagination_token(input.into());
         self
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pagination_token(input);
         self
     }

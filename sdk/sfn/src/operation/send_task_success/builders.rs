@@ -10,10 +10,7 @@ impl SendTaskSuccessInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_task_success::SendTaskSuccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_task_success::SendTaskSuccessError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_task_success::SendTaskSuccessError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_task_success();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SendTaskSuccessFluentBuilder {
         }
     }
     /// Access the SendTaskSuccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_task_success::builders::SendTaskSuccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_task_success::builders::SendTaskSuccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SendTaskSuccessFluentBuilder {
             crate::operation::send_task_success::SendTaskSuccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_task_success::SendTaskSuccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_task_success::SendTaskSuccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SendTaskSuccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SendTaskSuccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_task_success::SendTaskSuccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_task_success::SendTaskSuccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_task_success::SendTaskSuccessError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SendTaskSuccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_task_success::SendTaskSuccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_task_success::SendTaskSuccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_task_success::SendTaskSuccessError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl SendTaskSuccessFluentBuilder {
             crate::operation::send_task_success::SendTaskSuccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_task_success::SendTaskSuccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_task_success::SendTaskSuccessError>,
     > {
         self.customize_middleware().await
     }

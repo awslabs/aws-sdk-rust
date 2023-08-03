@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListProfileObjectTypeItem>>)`](crate::operation::list_profile_object_types::ListProfileObjectTypesOutput::items): <p>The list of ListProfileObjectTypes instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_object_types::ListProfileObjectTypesOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListProfileObjectTypesError>`](crate::operation::list_profile_object_types::ListProfileObjectTypesError)
-    pub fn list_profile_object_types(
-        &self,
-    ) -> crate::operation::list_profile_object_types::builders::ListProfileObjectTypesFluentBuilder
-    {
+    pub fn list_profile_object_types(&self) -> crate::operation::list_profile_object_types::builders::ListProfileObjectTypesFluentBuilder {
         crate::operation::list_profile_object_types::builders::ListProfileObjectTypesFluentBuilder::new(self.handle.clone())
     }
 }

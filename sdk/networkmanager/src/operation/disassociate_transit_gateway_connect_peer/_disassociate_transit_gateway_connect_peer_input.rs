@@ -22,34 +22,26 @@ impl DisassociateTransitGatewayConnectPeerInput {
 }
 impl DisassociateTransitGatewayConnectPeerInput {
     /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayConnectPeerInput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput).
-    pub fn builder() -> crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerInputBuilder {
         crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTransitGatewayConnectPeerInput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTransitGatewayConnectPeerInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_connect_peer_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateTransitGatewayConnectPeerInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -58,36 +50,31 @@ impl DisassociateTransitGatewayConnectPeerInputBuilder {
         &self.global_network_id
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
-    pub fn transit_gateway_connect_peer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_connect_peer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_connect_peer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
-    pub fn set_transit_gateway_connect_peer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_connect_peer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_connect_peer_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
-    pub fn get_transit_gateway_connect_peer_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_connect_peer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_connect_peer_arn
     }
     /// Consumes the builder and constructs a [`DisassociateTransitGatewayConnectPeerInput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput {
-                global_network_id: self.global_network_id
-                ,
-                transit_gateway_connect_peer_arn: self.transit_gateway_connect_peer_arn
-                ,
-            }
+                global_network_id: self.global_network_id,
+                transit_gateway_connect_peer_arn: self.transit_gateway_connect_peer_arn,
+            },
         )
     }
 }

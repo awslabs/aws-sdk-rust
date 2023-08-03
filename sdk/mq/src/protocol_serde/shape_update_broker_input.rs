@@ -27,10 +27,7 @@ pub fn ser_update_broker_input(
     if let Some(var_8) = &input.ldap_server_metadata {
         #[allow(unused_mut)]
         let mut object_9 = object.key("ldapServerMetadata").start_object();
-        crate::protocol_serde::shape_ldap_server_metadata_input::ser_ldap_server_metadata_input(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_ldap_server_metadata_input::ser_ldap_server_metadata_input(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.logs {
@@ -42,10 +39,7 @@ pub fn ser_update_broker_input(
     if let Some(var_12) = &input.maintenance_window_start_time {
         #[allow(unused_mut)]
         let mut object_13 = object.key("maintenanceWindowStartTime").start_object();
-        crate::protocol_serde::shape_weekly_start_time::ser_weekly_start_time(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_weekly_start_time::ser_weekly_start_time(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.security_groups {

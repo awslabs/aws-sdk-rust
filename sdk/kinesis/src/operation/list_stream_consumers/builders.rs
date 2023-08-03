@@ -38,9 +38,7 @@ impl ListStreamConsumersFluentBuilder {
         }
     }
     /// Access the ListStreamConsumers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_stream_consumers::builders::ListStreamConsumersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_stream_consumers::builders::ListStreamConsumersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListStreamConsumersFluentBuilder {
             crate::operation::list_stream_consumers::ListStreamConsumers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stream_consumers::ListStreamConsumersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stream_consumers::ListStreamConsumersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListStreamConsumersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListStreamConsumersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stream_consumers::ListStreamConsumersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stream_consumers::ListStreamConsumersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stream_consumers::ListStreamConsumersError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListStreamConsumersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stream_consumers::ListStreamConsumersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stream_consumers::ListStreamConsumersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stream_consumers::ListStreamConsumersError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListStreamConsumersFluentBuilder {
             crate::operation::list_stream_consumers::ListStreamConsumers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stream_consumers::ListStreamConsumersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stream_consumers::ListStreamConsumersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator {
-        crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator {
+        crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the Kinesis data stream for which you want to list the registered consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -196,18 +178,13 @@ impl ListStreamConsumersFluentBuilder {
     }
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the consumers for. </p>
     /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-    pub fn set_stream_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stream_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_stream_creation_timestamp(input);
         self
     }
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the consumers for. </p>
     /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-    pub fn get_stream_creation_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_stream_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_stream_creation_timestamp()
     }
 }

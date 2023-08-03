@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`sub_channel_id(impl ::std::convert::Into<String>)`](crate::operation::delete_channel_membership::builders::DeleteChannelMembershipFluentBuilder::sub_channel_id) / [`set_sub_channel_id(Option<String>)`](crate::operation::delete_channel_membership::builders::DeleteChannelMembershipFluentBuilder::set_sub_channel_id): <p>The ID of the SubChannel in the request.</p> <note>   <p>Only for use by moderators.</p>  </note>
     /// - On success, responds with [`DeleteChannelMembershipOutput`](crate::operation::delete_channel_membership::DeleteChannelMembershipOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelMembershipError>`](crate::operation::delete_channel_membership::DeleteChannelMembershipError)
-    pub fn delete_channel_membership(
-        &self,
-    ) -> crate::operation::delete_channel_membership::builders::DeleteChannelMembershipFluentBuilder
-    {
+    pub fn delete_channel_membership(&self) -> crate::operation::delete_channel_membership::builders::DeleteChannelMembershipFluentBuilder {
         crate::operation::delete_channel_membership::builders::DeleteChannelMembershipFluentBuilder::new(self.handle.clone())
     }
 }

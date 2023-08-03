@@ -5,8 +5,7 @@
 pub struct ListCodeReviewsOutput {
     /// <p>A list of code reviews that meet the criteria of the request.</p>
     #[doc(hidden)]
-    pub code_review_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CodeReviewSummary>>,
+    pub code_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CodeReviewSummary>>,
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCodeReviewsOutput {
 }
 impl ListCodeReviewsOutput {
     /// <p>A list of code reviews that meet the criteria of the request.</p>
-    pub fn code_review_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CodeReviewSummary]> {
+    pub fn code_review_summaries(&self) -> ::std::option::Option<&[crate::types::CodeReviewSummary]> {
         self.code_review_summaries.as_deref()
     }
     /// <p>Pagination token.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCodeReviewsOutput {
 }
 impl ListCodeReviewsOutput {
     /// Creates a new builder-style object to manufacture [`ListCodeReviewsOutput`](crate::operation::list_code_reviews::ListCodeReviewsOutput).
-    pub fn builder() -> crate::operation::list_code_reviews::builders::ListCodeReviewsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_code_reviews::builders::ListCodeReviewsOutputBuilder {
         crate::operation::list_code_reviews::builders::ListCodeReviewsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCodeReviewsOutput`](crate::operation::list_code_reviews::ListCodeReviewsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCodeReviewsOutputBuilder {
-    pub(crate) code_review_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CodeReviewSummary>>,
+    pub(crate) code_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CodeReviewSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListCodeReviewsOutputBuilder {
         self
     }
     /// <p>A list of code reviews that meet the criteria of the request.</p>
-    pub fn set_code_review_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeReviewSummary>>,
-    ) -> Self {
+    pub fn set_code_review_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeReviewSummary>>) -> Self {
         self.code_review_summaries = input;
         self
     }
     /// <p>A list of code reviews that meet the criteria of the request.</p>
-    pub fn get_code_review_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeReviewSummary>> {
+    pub fn get_code_review_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeReviewSummary>> {
         &self.code_review_summaries
     }
     /// <p>Pagination token.</p>

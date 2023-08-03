@@ -36,17 +36,14 @@ impl AssociateConnectPeerInput {
 }
 impl AssociateConnectPeerInput {
     /// Creates a new builder-style object to manufacture [`AssociateConnectPeerInput`](crate::operation::associate_connect_peer::AssociateConnectPeerInput).
-    pub fn builder(
-    ) -> crate::operation::associate_connect_peer::builders::AssociateConnectPeerInputBuilder {
+    pub fn builder() -> crate::operation::associate_connect_peer::builders::AssociateConnectPeerInputBuilder {
         crate::operation::associate_connect_peer::builders::AssociateConnectPeerInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateConnectPeerInput`](crate::operation::associate_connect_peer::AssociateConnectPeerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateConnectPeerInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) connect_peer_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct AssociateConnectPeerInputBuilder {
 }
 impl AssociateConnectPeerInputBuilder {
     /// <p>The ID of your global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of your global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -75,18 +66,12 @@ impl AssociateConnectPeerInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of the Connect peer.</p>
-    pub fn connect_peer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_peer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_peer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Connect peer.</p>
-    pub fn set_connect_peer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connect_peer_id = input;
         self
     }
@@ -125,17 +110,13 @@ impl AssociateConnectPeerInputBuilder {
     /// Consumes the builder and constructs a [`AssociateConnectPeerInput`](crate::operation::associate_connect_peer::AssociateConnectPeerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_connect_peer::AssociateConnectPeerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_connect_peer::AssociateConnectPeerInput {
-                global_network_id: self.global_network_id,
-                connect_peer_id: self.connect_peer_id,
-                device_id: self.device_id,
-                link_id: self.link_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_connect_peer::AssociateConnectPeerInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_connect_peer::AssociateConnectPeerInput {
+            global_network_id: self.global_network_id,
+            connect_peer_id: self.connect_peer_id,
+            device_id: self.device_id,
+            link_id: self.link_id,
+        })
     }
 }

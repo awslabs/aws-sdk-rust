@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeFlowLogsOutput {
 }
 impl DescribeFlowLogsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowLogsOutput`](crate::operation::describe_flow_logs::DescribeFlowLogsOutput).
-    pub fn builder() -> crate::operation::describe_flow_logs::builders::DescribeFlowLogsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_flow_logs::builders::DescribeFlowLogsOutputBuilder {
         crate::operation::describe_flow_logs::builders::DescribeFlowLogsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFlowLogsOutput`](crate::operation::describe_flow_logs::DescribeFlowLogsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFlowLogsOutputBuilder {
     pub(crate) flow_logs: ::std::option::Option<::std::vec::Vec<crate::types::FlowLog>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl DescribeFlowLogsOutputBuilder {
         self
     }
     /// <p>Information about the flow logs.</p>
-    pub fn set_flow_logs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FlowLog>>,
-    ) -> Self {
+    pub fn set_flow_logs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowLog>>) -> Self {
         self.flow_logs = input;
         self
     }

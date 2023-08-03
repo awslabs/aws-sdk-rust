@@ -5,8 +5,7 @@
 pub struct ListAppComponentRecommendationsOutput {
     /// <p>The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, configuration recommendations, and recommendation statuses.</p>
     #[doc(hidden)]
-    pub component_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentRecommendation>>,
+    pub component_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ComponentRecommendation>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAppComponentRecommendationsOutput {
 }
 impl ListAppComponentRecommendationsOutput {
     /// <p>The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, configuration recommendations, and recommendation statuses.</p>
-    pub fn component_recommendations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComponentRecommendation]> {
+    pub fn component_recommendations(&self) -> ::std::option::Option<&[crate::types::ComponentRecommendation]> {
         self.component_recommendations.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAppComponentRecommendationsOutput
 }
 impl ListAppComponentRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppComponentRecommendationsOutput`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput).
-    pub fn builder() -> crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsOutputBuilder {
         crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppComponentRecommendationsOutput`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppComponentRecommendationsOutputBuilder {
-    pub(crate) component_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentRecommendation>>,
+    pub(crate) component_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ComponentRecommendation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListAppComponentRecommendationsOutputBuilder {
     /// To override the contents of this collection use [`set_component_recommendations`](Self::set_component_recommendations).
     ///
     /// <p>The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, configuration recommendations, and recommendation statuses.</p>
-    pub fn component_recommendations(
-        mut self,
-        input: crate::types::ComponentRecommendation,
-    ) -> Self {
+    pub fn component_recommendations(mut self, input: crate::types::ComponentRecommendation) -> Self {
         let mut v = self.component_recommendations.unwrap_or_default();
         v.push(input);
         self.component_recommendations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, configuration recommendations, and recommendation statuses.</p>
-    pub fn set_component_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentRecommendation>>,
-    ) -> Self {
+    pub fn set_component_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentRecommendation>>) -> Self {
         self.component_recommendations = input;
         self
     }
     /// <p>The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, configuration recommendations, and recommendation statuses.</p>
-    pub fn get_component_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentRecommendation>> {
+    pub fn get_component_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentRecommendation>> {
         &self.component_recommendations
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -100,15 +86,10 @@ impl ListAppComponentRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppComponentRecommendationsOutput`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput {
         crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput {
-            component_recommendations: self.component_recommendations
-            ,
-            next_token: self.next_token
-            ,
+            component_recommendations: self.component_recommendations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

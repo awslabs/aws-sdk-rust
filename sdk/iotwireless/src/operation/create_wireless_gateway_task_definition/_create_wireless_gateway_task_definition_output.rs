@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateWirelessGatewayTaskDefinitionOu
 }
 impl CreateWirelessGatewayTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskDefinitionOutput`](crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionOutput).
-    pub fn builder() -> crate::operation::create_wireless_gateway_task_definition::builders::CreateWirelessGatewayTaskDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::create_wireless_gateway_task_definition::builders::CreateWirelessGatewayTaskDefinitionOutputBuilder {
         crate::operation::create_wireless_gateway_task_definition::builders::CreateWirelessGatewayTaskDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWirelessGatewayTaskDefinitionOutput`](crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskDefinitionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -82,12 +80,10 @@ impl CreateWirelessGatewayTaskDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskDefinitionOutput`](crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionOutput).
-    pub fn build(self) -> crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionOutput{
+    pub fn build(self) -> crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionOutput {
         crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionOutput {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
+            id: self.id,
+            arn: self.arn,
             _request_id: self._request_id,
         }
     }

@@ -31,18 +31,14 @@ impl SearchSystemInstancesInput {
 }
 impl SearchSystemInstancesInput {
     /// Creates a new builder-style object to manufacture [`SearchSystemInstancesInput`](crate::operation::search_system_instances::SearchSystemInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::search_system_instances::builders::SearchSystemInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_system_instances::builders::SearchSystemInstancesInputBuilder {
         crate::operation::search_system_instances::builders::SearchSystemInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchSystemInstancesInput`](crate::operation::search_system_instances::SearchSystemInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSystemInstancesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -63,18 +59,13 @@ impl SearchSystemInstancesInputBuilder {
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>> {
         &self.filters
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -108,16 +99,12 @@ impl SearchSystemInstancesInputBuilder {
     /// Consumes the builder and constructs a [`SearchSystemInstancesInput`](crate::operation::search_system_instances::SearchSystemInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_system_instances::SearchSystemInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_system_instances::SearchSystemInstancesInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_system_instances::SearchSystemInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_system_instances::SearchSystemInstancesInput {
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

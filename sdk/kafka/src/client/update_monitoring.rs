@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`cluster_arn(Option<String>)`](crate::operation::update_monitoring::UpdateMonitoringOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::operation::update_monitoring::UpdateMonitoringOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     /// - On failure, responds with [`SdkError<UpdateMonitoringError>`](crate::operation::update_monitoring::UpdateMonitoringError)
-    pub fn update_monitoring(
-        &self,
-    ) -> crate::operation::update_monitoring::builders::UpdateMonitoringFluentBuilder {
-        crate::operation::update_monitoring::builders::UpdateMonitoringFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_monitoring(&self) -> crate::operation::update_monitoring::builders::UpdateMonitoringFluentBuilder {
+        crate::operation::update_monitoring::builders::UpdateMonitoringFluentBuilder::new(self.handle.clone())
     }
 }

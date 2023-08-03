@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRoutingControlOutput`](crate::operation::update_routing_control::UpdateRoutingControlOutput) with field(s):
     ///   - [`routing_control(Option<RoutingControl>)`](crate::operation::update_routing_control::UpdateRoutingControlOutput::routing_control): <p>The routing control that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateRoutingControlError>`](crate::operation::update_routing_control::UpdateRoutingControlError)
-    pub fn update_routing_control(
-        &self,
-    ) -> crate::operation::update_routing_control::builders::UpdateRoutingControlFluentBuilder {
-        crate::operation::update_routing_control::builders::UpdateRoutingControlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_routing_control(&self) -> crate::operation::update_routing_control::builders::UpdateRoutingControlFluentBuilder {
+        crate::operation::update_routing_control::builders::UpdateRoutingControlFluentBuilder::new(self.handle.clone())
     }
 }

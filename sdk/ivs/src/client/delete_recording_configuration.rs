@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationFluentBuilder::set_arn): <p>ARN of the recording configuration to be deleted.</p>
     /// - On success, responds with [`DeleteRecordingConfigurationOutput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteRecordingConfigurationError>`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationError)
-    pub fn delete_recording_configuration(&self) -> crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationFluentBuilder{
+    pub fn delete_recording_configuration(
+        &self,
+    ) -> crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationFluentBuilder {
         crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

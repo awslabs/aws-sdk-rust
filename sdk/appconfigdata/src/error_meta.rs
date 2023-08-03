@@ -25,32 +25,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_latest_configuration::GetLatestConfigurationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_latest_configuration::GetLatestConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_latest_configuration::GetLatestConfigurationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_latest_configuration::GetLatestConfigurationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -61,39 +45,27 @@ impl From<crate::operation::get_latest_configuration::GetLatestConfigurationErro
     fn from(err: crate::operation::get_latest_configuration::GetLatestConfigurationError) -> Self {
         match err {
             crate::operation::get_latest_configuration::GetLatestConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_latest_configuration::GetLatestConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_latest_configuration::GetLatestConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_latest_configuration::GetLatestConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_latest_configuration::GetLatestConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_latest_configuration::GetLatestConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_latest_configuration::GetLatestConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_configuration_session::StartConfigurationSessionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_configuration_session::StartConfigurationSessionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::start_configuration_session::StartConfigurationSessionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_configuration_session::StartConfigurationSessionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -101,14 +73,20 @@ where
     }
 }
 impl From<crate::operation::start_configuration_session::StartConfigurationSessionError> for Error {
-    fn from(
-        err: crate::operation::start_configuration_session::StartConfigurationSessionError,
-    ) -> Self {
+    fn from(err: crate::operation::start_configuration_session::StartConfigurationSessionError) -> Self {
         match err {
-            crate::operation::start_configuration_session::StartConfigurationSessionError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::start_configuration_session::StartConfigurationSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::start_configuration_session::StartConfigurationSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::start_configuration_session::StartConfigurationSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_configuration_session::StartConfigurationSessionError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::start_configuration_session::StartConfigurationSessionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_configuration_session::StartConfigurationSessionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_configuration_session::StartConfigurationSessionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::start_configuration_session::StartConfigurationSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

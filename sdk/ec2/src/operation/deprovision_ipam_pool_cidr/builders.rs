@@ -26,8 +26,7 @@ impl DeprovisionIpamPoolCidrInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeprovisionIpamPoolCidrFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder,
+    inner: crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder,
 }
 impl DeprovisionIpamPoolCidrFluentBuilder {
     /// Creates a new `DeprovisionIpamPoolCidr`.
@@ -38,10 +37,7 @@ impl DeprovisionIpamPoolCidrFluentBuilder {
         }
     }
     /// Access the DeprovisionIpamPoolCidr as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeprovisionIpamPoolCidrFluentBuilder {
             crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeprovisionIpamPoolCidrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeprovisionIpamPoolCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeprovisionIpamPoolCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeprovisionIpamPoolCidrFluentBuilder {
             crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError>,
     > {
         self.customize_middleware().await
     }

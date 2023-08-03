@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDevicePoolOutput`](crate::operation::create_device_pool::CreateDevicePoolOutput) with field(s):
     ///   - [`device_pool(Option<DevicePool>)`](crate::operation::create_device_pool::CreateDevicePoolOutput::device_pool): <p>The newly created device pool.</p>
     /// - On failure, responds with [`SdkError<CreateDevicePoolError>`](crate::operation::create_device_pool::CreateDevicePoolError)
-    pub fn create_device_pool(
-        &self,
-    ) -> crate::operation::create_device_pool::builders::CreateDevicePoolFluentBuilder {
-        crate::operation::create_device_pool::builders::CreateDevicePoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_device_pool(&self) -> crate::operation::create_device_pool::builders::CreateDevicePoolFluentBuilder {
+        crate::operation::create_device_pool::builders::CreateDevicePoolFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum GeoSpatialDataRole {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for GeoSpatialDataRole {
             "LONGITUDE" => GeoSpatialDataRole::Longitude,
             "POSTCODE" => GeoSpatialDataRole::Postcode,
             "STATE" => GeoSpatialDataRole::State,
-            other => GeoSpatialDataRole::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => GeoSpatialDataRole::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl GeoSpatialDataRole {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CITY",
-            "COUNTRY",
-            "COUNTY",
-            "LATITUDE",
-            "LONGITUDE",
-            "POSTCODE",
-            "STATE",
-        ]
+        &["CITY", "COUNTRY", "COUNTY", "LATITUDE", "LONGITUDE", "POSTCODE", "STATE"]
     }
 }
 impl ::std::convert::AsRef<str> for GeoSpatialDataRole {

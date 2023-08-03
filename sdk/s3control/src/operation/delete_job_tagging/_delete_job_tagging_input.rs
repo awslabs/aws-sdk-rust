@@ -22,17 +22,14 @@ impl DeleteJobTaggingInput {
 }
 impl DeleteJobTaggingInput {
     /// Creates a new builder-style object to manufacture [`DeleteJobTaggingInput`](crate::operation::delete_job_tagging::DeleteJobTaggingInput).
-    pub fn builder() -> crate::operation::delete_job_tagging::builders::DeleteJobTaggingInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_job_tagging::builders::DeleteJobTaggingInputBuilder {
         crate::operation::delete_job_tagging::builders::DeleteJobTaggingInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteJobTaggingInput`](crate::operation::delete_job_tagging::DeleteJobTaggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteJobTaggingInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DeleteJobTaggingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteJobTaggingInput`](crate::operation::delete_job_tagging::DeleteJobTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_job_tagging::DeleteJobTaggingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_job_tagging::DeleteJobTaggingInput {
-                account_id: self.account_id,
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_job_tagging::DeleteJobTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_job_tagging::DeleteJobTaggingInput {
+            account_id: self.account_id,
+            job_id: self.job_id,
+        })
     }
 }

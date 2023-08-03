@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`changes(DatasetChanges)`](crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::changes) / [`set_changes(Option<DatasetChanges>)`](crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::set_changes): <p> The changes that you want to make to the dataset. </p>
     /// - On success, responds with [`UpdateDatasetEntriesOutput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesOutput)
     /// - On failure, responds with [`SdkError<UpdateDatasetEntriesError>`](crate::operation::update_dataset_entries::UpdateDatasetEntriesError)
-    pub fn update_dataset_entries(
-        &self,
-    ) -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder {
-        crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dataset_entries(&self) -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder {
+        crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::new(self.handle.clone())
     }
 }

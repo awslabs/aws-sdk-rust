@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFunctionUrlConfigOutput {
 }
 impl DeleteFunctionUrlConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionUrlConfigOutput`](crate::operation::delete_function_url_config::DeleteFunctionUrlConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_function_url_config::builders::DeleteFunctionUrlConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_function_url_config::builders::DeleteFunctionUrlConfigOutputBuilder {
         crate::operation::delete_function_url_config::builders::DeleteFunctionUrlConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFunctionUrlConfigOutput`](crate::operation::delete_function_url_config::DeleteFunctionUrlConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFunctionUrlConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteFunctionUrlConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteFunctionUrlConfigOutput`](crate::operation::delete_function_url_config::DeleteFunctionUrlConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_function_url_config::DeleteFunctionUrlConfigOutput {
+    pub fn build(self) -> crate::operation::delete_function_url_config::DeleteFunctionUrlConfigOutput {
         crate::operation::delete_function_url_config::DeleteFunctionUrlConfigOutput {
             _request_id: self._request_id,
         }

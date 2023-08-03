@@ -57,17 +57,14 @@ impl UpdateDevicePoolInput {
 }
 impl UpdateDevicePoolInput {
     /// Creates a new builder-style object to manufacture [`UpdateDevicePoolInput`](crate::operation::update_device_pool::UpdateDevicePoolInput).
-    pub fn builder() -> crate::operation::update_device_pool::builders::UpdateDevicePoolInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_device_pool::builders::UpdateDevicePoolInputBuilder {
         crate::operation::update_device_pool::builders::UpdateDevicePoolInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDevicePoolInput`](crate::operation::update_device_pool::UpdateDevicePoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDevicePoolInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -131,10 +128,7 @@ impl UpdateDevicePoolInputBuilder {
         self
     }
     /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -182,19 +176,14 @@ impl UpdateDevicePoolInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDevicePoolInput`](crate::operation::update_device_pool::UpdateDevicePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_device_pool::UpdateDevicePoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_device_pool::UpdateDevicePoolInput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                rules: self.rules,
-                max_devices: self.max_devices,
-                clear_max_devices: self.clear_max_devices,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_device_pool::UpdateDevicePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_device_pool::UpdateDevicePoolInput {
+            arn: self.arn,
+            name: self.name,
+            description: self.description,
+            rules: self.rules,
+            max_devices: self.max_devices,
+            clear_max_devices: self.clear_max_devices,
+        })
     }
 }

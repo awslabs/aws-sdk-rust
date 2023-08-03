@@ -28,27 +28,19 @@ impl RestoreTableOutput {
 
 /// A builder for [`RestoreTableOutput`](crate::operation::restore_table::RestoreTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreTableOutputBuilder {
     pub(crate) restored_table_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RestoreTableOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
-    pub fn restored_table_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn restored_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restored_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
-    pub fn set_restored_table_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_restored_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restored_table_arn = input;
         self
     }

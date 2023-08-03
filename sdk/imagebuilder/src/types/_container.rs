@@ -30,9 +30,7 @@ impl Container {
 
 /// A builder for [`Container`](crate::types::Container).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) image_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl ContainerBuilder {
         self
     }
     /// <p>A list of URIs for containers created in the context Region.</p>
-    pub fn set_image_uris(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_uris = input;
         self
     }

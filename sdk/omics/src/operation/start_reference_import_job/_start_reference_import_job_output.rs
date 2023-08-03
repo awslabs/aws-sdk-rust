@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for StartReferenceImportJobOutput {
 }
 impl StartReferenceImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartReferenceImportJobOutput`](crate::operation::start_reference_import_job::StartReferenceImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_reference_import_job::builders::StartReferenceImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_reference_import_job::builders::StartReferenceImportJobOutputBuilder {
         crate::operation::start_reference_import_job::builders::StartReferenceImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartReferenceImportJobOutput`](crate::operation::start_reference_import_job::StartReferenceImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReferenceImportJobOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,
@@ -85,18 +81,12 @@ impl StartReferenceImportJobOutputBuilder {
         &self.id
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's reference store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_store_id = input;
         self
     }
@@ -124,10 +114,7 @@ impl StartReferenceImportJobOutputBuilder {
         self
     }
     /// <p>The job's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceImportJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReferenceImportJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -141,10 +128,7 @@ impl StartReferenceImportJobOutputBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -162,9 +146,7 @@ impl StartReferenceImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartReferenceImportJobOutput`](crate::operation::start_reference_import_job::StartReferenceImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_reference_import_job::StartReferenceImportJobOutput {
+    pub fn build(self) -> crate::operation::start_reference_import_job::StartReferenceImportJobOutput {
         crate::operation::start_reference_import_job::StartReferenceImportJobOutput {
             id: self.id,
             reference_store_id: self.reference_store_id,

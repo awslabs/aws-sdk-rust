@@ -68,8 +68,7 @@ pub struct UpdateSiteRackPhysicalPropertiesInput {
     pub optical_standard: ::std::option::Option<crate::types::OpticalStandard>,
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
     #[doc(hidden)]
-    pub maximum_supported_weight_lbs:
-        ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
+    pub maximum_supported_weight_lbs: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
 }
 impl UpdateSiteRackPhysicalPropertiesInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
@@ -122,9 +121,7 @@ impl UpdateSiteRackPhysicalPropertiesInput {
         self.uplink_count.as_ref()
     }
     /// <p>The type of fiber that you will use to attach the Outpost to your network. </p>
-    pub fn fiber_optic_cable_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FiberOpticCableType> {
+    pub fn fiber_optic_cable_type(&self) -> ::std::option::Option<&crate::types::FiberOpticCableType> {
         self.fiber_optic_cable_type.as_ref()
     }
     /// <p>The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
@@ -147,24 +144,20 @@ impl UpdateSiteRackPhysicalPropertiesInput {
         self.optical_standard.as_ref()
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
-    pub fn maximum_supported_weight_lbs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaximumSupportedWeightLbs> {
+    pub fn maximum_supported_weight_lbs(&self) -> ::std::option::Option<&crate::types::MaximumSupportedWeightLbs> {
         self.maximum_supported_weight_lbs.as_ref()
     }
 }
 impl UpdateSiteRackPhysicalPropertiesInput {
     /// Creates a new builder-style object to manufacture [`UpdateSiteRackPhysicalPropertiesInput`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput).
-    pub fn builder() -> crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesInputBuilder{
+    pub fn builder() -> crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesInputBuilder {
         crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSiteRackPhysicalPropertiesInput`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSiteRackPhysicalPropertiesInputBuilder {
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
     pub(crate) power_draw_kva: ::std::option::Option<crate::types::PowerDrawKva>,
@@ -175,8 +168,7 @@ pub struct UpdateSiteRackPhysicalPropertiesInputBuilder {
     pub(crate) uplink_count: ::std::option::Option<crate::types::UplinkCount>,
     pub(crate) fiber_optic_cable_type: ::std::option::Option<crate::types::FiberOpticCableType>,
     pub(crate) optical_standard: ::std::option::Option<crate::types::OpticalStandard>,
-    pub(crate) maximum_supported_weight_lbs:
-        ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
+    pub(crate) maximum_supported_weight_lbs: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
 }
 impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
@@ -199,10 +191,7 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         self
     }
     /// <p>The power draw, in kVA, available at the hardware placement position for the rack.</p>
-    pub fn set_power_draw_kva(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerDrawKva>,
-    ) -> Self {
+    pub fn set_power_draw_kva(mut self, input: ::std::option::Option<crate::types::PowerDrawKva>) -> Self {
         self.power_draw_kva = input;
         self
     }
@@ -224,10 +213,7 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
     /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
     /// </ul>
-    pub fn set_power_phase(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerPhase>,
-    ) -> Self {
+    pub fn set_power_phase(mut self, input: ::std::option::Option<crate::types::PowerPhase>) -> Self {
         self.power_phase = input;
         self
     }
@@ -269,10 +255,7 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_power_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerConnector>,
-    ) -> Self {
+    pub fn set_power_connector(mut self, input: ::std::option::Option<crate::types::PowerConnector>) -> Self {
         self.power_connector = input;
         self
     }
@@ -298,10 +281,7 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         self
     }
     /// <p>Indicates whether the power feed comes above or below the rack. </p>
-    pub fn set_power_feed_drop(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerFeedDrop>,
-    ) -> Self {
+    pub fn set_power_feed_drop(mut self, input: ::std::option::Option<crate::types::PowerFeedDrop>) -> Self {
         self.power_feed_drop = input;
         self
     }
@@ -315,10 +295,7 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         self
     }
     /// <p>The uplink speed the rack should support for the connection to the Region. </p>
-    pub fn set_uplink_gbps(
-        mut self,
-        input: ::std::option::Option<crate::types::UplinkGbps>,
-    ) -> Self {
+    pub fn set_uplink_gbps(mut self, input: ::std::option::Option<crate::types::UplinkGbps>) -> Self {
         self.uplink_gbps = input;
         self
     }
@@ -342,10 +319,7 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
     /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
     /// </ul>
-    pub fn set_uplink_count(
-        mut self,
-        input: ::std::option::Option<crate::types::UplinkCount>,
-    ) -> Self {
+    pub fn set_uplink_count(mut self, input: ::std::option::Option<crate::types::UplinkCount>) -> Self {
         self.uplink_count = input;
         self
     }
@@ -364,17 +338,12 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         self
     }
     /// <p>The type of fiber that you will use to attach the Outpost to your network. </p>
-    pub fn set_fiber_optic_cable_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FiberOpticCableType>,
-    ) -> Self {
+    pub fn set_fiber_optic_cable_type(mut self, input: ::std::option::Option<crate::types::FiberOpticCableType>) -> Self {
         self.fiber_optic_cable_type = input;
         self
     }
     /// <p>The type of fiber that you will use to attach the Outpost to your network. </p>
-    pub fn get_fiber_optic_cable_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::FiberOpticCableType> {
+    pub fn get_fiber_optic_cable_type(&self) -> &::std::option::Option<crate::types::FiberOpticCableType> {
         &self.fiber_optic_cable_type
     }
     /// <p>The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
@@ -413,10 +382,7 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
     /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
     /// </ul>
-    pub fn set_optical_standard(
-        mut self,
-        input: ::std::option::Option<crate::types::OpticalStandard>,
-    ) -> Self {
+    pub fn set_optical_standard(mut self, input: ::std::option::Option<crate::types::OpticalStandard>) -> Self {
         self.optical_standard = input;
         self
     }
@@ -440,52 +406,39 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         &self.optical_standard
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
-    pub fn maximum_supported_weight_lbs(
-        mut self,
-        input: crate::types::MaximumSupportedWeightLbs,
-    ) -> Self {
+    pub fn maximum_supported_weight_lbs(mut self, input: crate::types::MaximumSupportedWeightLbs) -> Self {
         self.maximum_supported_weight_lbs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
-    pub fn set_maximum_supported_weight_lbs(
-        mut self,
-        input: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
-    ) -> Self {
+    pub fn set_maximum_supported_weight_lbs(mut self, input: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>) -> Self {
         self.maximum_supported_weight_lbs = input;
         self
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
-    pub fn get_maximum_supported_weight_lbs(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaximumSupportedWeightLbs> {
+    pub fn get_maximum_supported_weight_lbs(&self) -> &::std::option::Option<crate::types::MaximumSupportedWeightLbs> {
         &self.maximum_supported_weight_lbs
     }
     /// Consumes the builder and constructs a [`UpdateSiteRackPhysicalPropertiesInput`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput {
-                site_id: self.site_id
-                ,
-                power_draw_kva: self.power_draw_kva
-                ,
-                power_phase: self.power_phase
-                ,
-                power_connector: self.power_connector
-                ,
-                power_feed_drop: self.power_feed_drop
-                ,
-                uplink_gbps: self.uplink_gbps
-                ,
-                uplink_count: self.uplink_count
-                ,
-                fiber_optic_cable_type: self.fiber_optic_cable_type
-                ,
-                optical_standard: self.optical_standard
-                ,
-                maximum_supported_weight_lbs: self.maximum_supported_weight_lbs
-                ,
-            }
+                site_id: self.site_id,
+                power_draw_kva: self.power_draw_kva,
+                power_phase: self.power_phase,
+                power_connector: self.power_connector,
+                power_feed_drop: self.power_feed_drop,
+                uplink_gbps: self.uplink_gbps,
+                uplink_count: self.uplink_count,
+                fiber_optic_cable_type: self.fiber_optic_cable_type,
+                optical_standard: self.optical_standard,
+                maximum_supported_weight_lbs: self.maximum_supported_weight_lbs,
+            },
         )
     }
 }

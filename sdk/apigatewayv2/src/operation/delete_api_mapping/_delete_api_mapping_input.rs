@@ -22,35 +22,26 @@ impl DeleteApiMappingInput {
 }
 impl DeleteApiMappingInput {
     /// Creates a new builder-style object to manufacture [`DeleteApiMappingInput`](crate::operation::delete_api_mapping::DeleteApiMappingInput).
-    pub fn builder() -> crate::operation::delete_api_mapping::builders::DeleteApiMappingInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_api_mapping::builders::DeleteApiMappingInputBuilder {
         crate::operation::delete_api_mapping::builders::DeleteApiMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApiMappingInput`](crate::operation::delete_api_mapping::DeleteApiMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApiMappingInputBuilder {
     pub(crate) api_mapping_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApiMappingInputBuilder {
     /// <p>The API mapping identifier.</p>
-    pub fn api_mapping_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_mapping_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_mapping_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API mapping identifier.</p>
-    pub fn set_api_mapping_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_mapping_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_mapping_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteApiMappingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApiMappingInput`](crate::operation::delete_api_mapping::DeleteApiMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_api_mapping::DeleteApiMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_api_mapping::DeleteApiMappingInput {
-                api_mapping_id: self.api_mapping_id,
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_api_mapping::DeleteApiMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_api_mapping::DeleteApiMappingInput {
+            api_mapping_id: self.api_mapping_id,
+            domain_name: self.domain_name,
+        })
     }
 }

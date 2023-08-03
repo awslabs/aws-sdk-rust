@@ -15,16 +15,14 @@ impl StopSentimentDetectionJobInput {
 }
 impl StopSentimentDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopSentimentDetectionJobInput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput).
-    pub fn builder() -> crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder {
         crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopSentimentDetectionJobInput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSentimentDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl StopSentimentDetectionJobInputBuilder {
         crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput { job_id: self.job_id })
     }
 }

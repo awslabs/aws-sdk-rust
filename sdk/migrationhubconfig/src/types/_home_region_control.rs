@@ -44,9 +44,7 @@ impl HomeRegionControl {
 
 /// A builder for [`HomeRegionControl`](crate::types::HomeRegionControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HomeRegionControlBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
     pub(crate) home_region: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl HomeRegionControlBuilder {
         self
     }
     /// <p>A timestamp representing the time when the customer called <code>CreateHomeregionControl</code> and set the home region for the account.</p>
-    pub fn set_requested_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_requested_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.requested_time = input;
         self
     }

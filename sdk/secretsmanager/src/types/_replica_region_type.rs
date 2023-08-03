@@ -30,9 +30,7 @@ impl ReplicaRegionType {
 
 /// A builder for [`ReplicaRegionType`](crate::types::ReplicaRegionType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicaRegionTypeBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

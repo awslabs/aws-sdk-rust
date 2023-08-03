@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateSecurityHubConfigurationOutput 
 }
 impl UpdateSecurityHubConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityHubConfigurationOutput`](crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationOutput).
-    pub fn builder() -> crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationOutputBuilder {
         crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSecurityHubConfigurationOutput`](crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecurityHubConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateSecurityHubConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSecurityHubConfigurationOutput`](crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationOutput {
         crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationOutput {
             _request_id: self._request_id,
         }

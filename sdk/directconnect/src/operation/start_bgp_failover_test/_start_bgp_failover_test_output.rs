@@ -10,9 +10,7 @@ pub struct StartBgpFailoverTestOutput {
 }
 impl StartBgpFailoverTestOutput {
     /// <p>Information about the virtual interface failover test.</p>
-    pub fn virtual_interface_test(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VirtualInterfaceTestHistory> {
+    pub fn virtual_interface_test(&self) -> ::std::option::Option<&crate::types::VirtualInterfaceTestHistory> {
         self.virtual_interface_test.as_ref()
     }
 }
@@ -23,44 +21,31 @@ impl ::aws_http::request_id::RequestId for StartBgpFailoverTestOutput {
 }
 impl StartBgpFailoverTestOutput {
     /// Creates a new builder-style object to manufacture [`StartBgpFailoverTestOutput`](crate::operation::start_bgp_failover_test::StartBgpFailoverTestOutput).
-    pub fn builder(
-    ) -> crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestOutputBuilder {
         crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartBgpFailoverTestOutput`](crate::operation::start_bgp_failover_test::StartBgpFailoverTestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBgpFailoverTestOutputBuilder {
-    pub(crate) virtual_interface_test:
-        ::std::option::Option<crate::types::VirtualInterfaceTestHistory>,
+    pub(crate) virtual_interface_test: ::std::option::Option<crate::types::VirtualInterfaceTestHistory>,
     _request_id: Option<String>,
 }
 impl StartBgpFailoverTestOutputBuilder {
     /// <p>Information about the virtual interface failover test.</p>
-    pub fn virtual_interface_test(
-        mut self,
-        input: crate::types::VirtualInterfaceTestHistory,
-    ) -> Self {
+    pub fn virtual_interface_test(mut self, input: crate::types::VirtualInterfaceTestHistory) -> Self {
         self.virtual_interface_test = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the virtual interface failover test.</p>
-    pub fn set_virtual_interface_test(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualInterfaceTestHistory>,
-    ) -> Self {
+    pub fn set_virtual_interface_test(mut self, input: ::std::option::Option<crate::types::VirtualInterfaceTestHistory>) -> Self {
         self.virtual_interface_test = input;
         self
     }
     /// <p>Information about the virtual interface failover test.</p>
-    pub fn get_virtual_interface_test(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualInterfaceTestHistory> {
+    pub fn get_virtual_interface_test(&self) -> &::std::option::Option<crate::types::VirtualInterfaceTestHistory> {
         &self.virtual_interface_test
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

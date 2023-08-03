@@ -45,19 +45,16 @@ impl ::aws_http::request_id::RequestId for ListTrafficPolicyVersionsOutput {
 }
 impl ListTrafficPolicyVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTrafficPolicyVersionsOutput`](crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput).
-    pub fn builder() -> crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsOutputBuilder {
         crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrafficPolicyVersionsOutput`](crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrafficPolicyVersionsOutputBuilder {
-    pub(crate) traffic_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>>,
+    pub(crate) traffic_policies: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) traffic_policy_version_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -76,17 +73,12 @@ impl ListTrafficPolicyVersionsOutputBuilder {
         self
     }
     /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy version that is associated with the specified traffic policy.</p>
-    pub fn set_traffic_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>>,
-    ) -> Self {
+    pub fn set_traffic_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>>) -> Self {
         self.traffic_policies = input;
         self
     }
     /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy version that is associated with the specified traffic policy.</p>
-    pub fn get_traffic_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>> {
+    pub fn get_traffic_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>> {
         &self.traffic_policies
     }
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
@@ -105,27 +97,19 @@ impl ListTrafficPolicyVersionsOutputBuilder {
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    pub fn traffic_policy_version_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_version_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_version_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    pub fn set_traffic_policy_version_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_version_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_policy_version_marker = input;
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    pub fn get_traffic_policy_version_marker(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_traffic_policy_version_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.traffic_policy_version_marker
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced the current response.</p>
@@ -152,9 +136,7 @@ impl ListTrafficPolicyVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTrafficPolicyVersionsOutput`](crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput {
+    pub fn build(self) -> crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput {
         crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput {
             traffic_policies: self.traffic_policies,
             is_truncated: self.is_truncated.unwrap_or_default(),

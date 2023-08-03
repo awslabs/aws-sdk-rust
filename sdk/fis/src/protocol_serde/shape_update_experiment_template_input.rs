@@ -10,7 +10,10 @@ pub fn ser_update_experiment_template_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_update_experiment_template_action_input_item::ser_update_experiment_template_action_input_item(&mut object_5, value_4)?;
+                crate::protocol_serde::shape_update_experiment_template_action_input_item::ser_update_experiment_template_action_input_item(
+                    &mut object_5,
+                    value_4,
+                )?;
                 object_5.finish();
             }
         }
@@ -22,7 +25,10 @@ pub fn ser_update_experiment_template_input(
     if let Some(var_7) = &input.log_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("logConfiguration").start_object();
-        crate::protocol_serde::shape_update_experiment_template_log_configuration_input::ser_update_experiment_template_log_configuration_input(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_update_experiment_template_log_configuration_input::ser_update_experiment_template_log_configuration_input(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.role_arn {
@@ -34,7 +40,10 @@ pub fn ser_update_experiment_template_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_update_experiment_template_stop_condition_input::ser_update_experiment_template_stop_condition_input(&mut object_13, item_12)?;
+                crate::protocol_serde::shape_update_experiment_template_stop_condition_input::ser_update_experiment_template_stop_condition_input(
+                    &mut object_13,
+                    item_12,
+                )?;
                 object_13.finish();
             }
         }
@@ -47,7 +56,10 @@ pub fn ser_update_experiment_template_input(
             {
                 #[allow(unused_mut)]
                 let mut object_18 = object_15.key(key_16.as_str()).start_object();
-                crate::protocol_serde::shape_update_experiment_template_target_input::ser_update_experiment_template_target_input(&mut object_18, value_17)?;
+                crate::protocol_serde::shape_update_experiment_template_target_input::ser_update_experiment_template_target_input(
+                    &mut object_18,
+                    value_17,
+                )?;
                 object_18.finish();
             }
         }

@@ -26,7 +26,7 @@ impl DisableDomainTransferLockInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableDomainTransferLockFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disable_domain_transfer_lock::builders::DisableDomainTransferLockInputBuilder,
+    inner: crate::operation::disable_domain_transfer_lock::builders::DisableDomainTransferLockInputBuilder,
 }
 impl DisableDomainTransferLockFluentBuilder {
     /// Creates a new `DisableDomainTransferLock`.
@@ -37,7 +37,7 @@ impl DisableDomainTransferLockFluentBuilder {
         }
     }
     /// Access the DisableDomainTransferLock as a reference.
-    pub fn as_input(&self) -> &crate::operation::disable_domain_transfer_lock::builders::DisableDomainTransferLockInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disable_domain_transfer_lock::builders::DisableDomainTransferLockInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisableDomainTransferLockFluentBuilder {
             crate::operation::disable_domain_transfer_lock::DisableDomainTransferLock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisableDomainTransferLockFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisableDomainTransferLockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisableDomainTransferLockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisableDomainTransferLockFluentBuilder {
             crate::operation::disable_domain_transfer_lock::DisableDomainTransferLock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockError>,
     > {
         self.customize_middleware().await
     }

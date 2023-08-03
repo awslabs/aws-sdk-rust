@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteVocabularyOutput {
 }
 impl DeleteVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVocabularyOutput`](crate::operation::delete_vocabulary::DeleteVocabularyOutput).
-    pub fn builder() -> crate::operation::delete_vocabulary::builders::DeleteVocabularyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vocabulary::builders::DeleteVocabularyOutputBuilder {
         crate::operation::delete_vocabulary::builders::DeleteVocabularyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVocabularyOutput`](crate::operation::delete_vocabulary::DeleteVocabularyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVocabularyOutputBuilder {
     pub(crate) vocabulary_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ pub struct DeleteVocabularyOutputBuilder {
 }
 impl DeleteVocabularyOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
-    pub fn vocabulary_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
-    pub fn set_vocabulary_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_arn = input;
         self
     }
@@ -74,18 +65,12 @@ impl DeleteVocabularyOutputBuilder {
         &self.vocabulary_arn
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn vocabulary_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn set_vocabulary_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_id = input;
         self
     }
@@ -99,10 +84,7 @@ impl DeleteVocabularyOutputBuilder {
         self
     }
     /// <p>The current state of the custom vocabulary.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VocabularyState>) -> Self {
         self.state = input;
         self
     }

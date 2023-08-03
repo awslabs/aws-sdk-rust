@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`metadata(Option<DocumentMetadata>)`](crate::operation::get_document::GetDocumentOutput::metadata): <p>The metadata details of the document.</p>
     ///   - [`custom_metadata(Option<HashMap<String, String>>)`](crate::operation::get_document::GetDocumentOutput::custom_metadata): <p>The custom metadata on the document.</p>
     /// - On failure, responds with [`SdkError<GetDocumentError>`](crate::operation::get_document::GetDocumentError)
-    pub fn get_document(
-        &self,
-    ) -> crate::operation::get_document::builders::GetDocumentFluentBuilder {
+    pub fn get_document(&self) -> crate::operation::get_document::builders::GetDocumentFluentBuilder {
         crate::operation::get_document::builders::GetDocumentFluentBuilder::new(self.handle.clone())
     }
 }

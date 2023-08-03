@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WirelessGatewayTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for WirelessGatewayTaskStatus {
             "IN_PROGRESS" => WirelessGatewayTaskStatus::InProgress,
             "PENDING" => WirelessGatewayTaskStatus::Pending,
             "SECOND_RETRY" => WirelessGatewayTaskStatus::SecondRetry,
-            other => WirelessGatewayTaskStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WirelessGatewayTaskStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl WirelessGatewayTaskStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED",
-            "FAILED",
-            "FIRST_RETRY",
-            "IN_PROGRESS",
-            "PENDING",
-            "SECOND_RETRY",
-        ]
+        &["COMPLETED", "FAILED", "FIRST_RETRY", "IN_PROGRESS", "PENDING", "SECOND_RETRY"]
     }
 }
 impl ::std::convert::AsRef<str> for WirelessGatewayTaskStatus {

@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for GetSourceRepositoryOutput {
 }
 impl GetSourceRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`GetSourceRepositoryOutput`](crate::operation::get_source_repository::GetSourceRepositoryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder {
-        crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder {
+        crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSourceRepositoryOutput`](crate::operation::get_source_repository::GetSourceRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSourceRepositoryOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -140,10 +136,7 @@ impl GetSourceRepositoryOutputBuilder {
         self
     }
     /// <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -157,10 +150,7 @@ impl GetSourceRepositoryOutputBuilder {
         self
     }
     /// <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`summary(Option<FlowTemplateSummary>)`](crate::operation::update_flow_template::UpdateFlowTemplateOutput::summary): <p>An object containing summary information about the updated workflow.</p>
     /// - On failure, responds with [`SdkError<UpdateFlowTemplateError>`](crate::operation::update_flow_template::UpdateFlowTemplateError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn update_flow_template(
-        &self,
-    ) -> crate::operation::update_flow_template::builders::UpdateFlowTemplateFluentBuilder {
-        crate::operation::update_flow_template::builders::UpdateFlowTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_flow_template(&self) -> crate::operation::update_flow_template::builders::UpdateFlowTemplateFluentBuilder {
+        crate::operation::update_flow_template::builders::UpdateFlowTemplateFluentBuilder::new(self.handle.clone())
     }
 }

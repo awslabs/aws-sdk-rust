@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`custom_domain(Option<CustomDomain>)`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput::custom_domain): <p>A description of the domain name that's being disassociated.</p>
     ///   - [`vpc_dns_targets(Option<Vec<VpcDnsTarget>>)`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput::vpc_dns_targets): <p>DNS Target records for the custom domains of this Amazon VPC. </p>
     /// - On failure, responds with [`SdkError<DisassociateCustomDomainError>`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainError)
-    pub fn disassociate_custom_domain(
-        &self,
-    ) -> crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainFluentBuilder
-    {
+    pub fn disassociate_custom_domain(&self) -> crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainFluentBuilder {
         crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainFluentBuilder::new(self.handle.clone())
     }
 }

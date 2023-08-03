@@ -22,18 +22,14 @@ impl EvaluateMappingTemplateInput {
 }
 impl EvaluateMappingTemplateInput {
     /// Creates a new builder-style object to manufacture [`EvaluateMappingTemplateInput`](crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder {
         crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`EvaluateMappingTemplateInput`](crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateMappingTemplateInputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
     pub(crate) context: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl EvaluateMappingTemplateInputBuilder {
         crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput {
-                template: self.template,
-                context: self.context,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput {
+            template: self.template,
+            context: self.context,
+        })
     }
 }

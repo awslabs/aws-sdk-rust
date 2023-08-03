@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`fast_snapshot_restores(Option<Vec<DescribeFastSnapshotRestoreSuccessItem>>)`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput::fast_snapshot_restores): <p>Information about the state of fast snapshot restores.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeFastSnapshotRestoresError>`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresError)
-    pub fn describe_fast_snapshot_restores(&self) -> crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresFluentBuilder{
+    pub fn describe_fast_snapshot_restores(
+        &self,
+    ) -> crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresFluentBuilder {
         crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresFluentBuilder::new(self.handle.clone())
     }
 }

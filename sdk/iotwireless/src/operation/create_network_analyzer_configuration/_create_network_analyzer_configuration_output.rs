@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateNetworkAnalyzerConfigurationOut
 }
 impl CreateNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationOutput`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput).
-    pub fn builder() -> crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationOutputBuilder {
         crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkAnalyzerConfigurationOutput`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkAnalyzerConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -82,12 +80,10 @@ impl CreateNetworkAnalyzerConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateNetworkAnalyzerConfigurationOutput`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput).
-    pub fn build(self) -> crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput{
+    pub fn build(self) -> crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput {
         crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
+            arn: self.arn,
+            name: self.name,
             _request_id: self._request_id,
         }
     }

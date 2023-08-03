@@ -60,9 +60,7 @@ impl ListDeploymentsInput {
 
 /// A builder for [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentsInputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) history_filter: ::std::option::Option<crate::types::DeploymentHistoryFilter>,
@@ -101,10 +99,7 @@ impl ListDeploymentsInputBuilder {
     /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
     /// <p>Default: <code>LATEST_ONLY</code> </p>
-    pub fn set_history_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentHistoryFilter>,
-    ) -> Self {
+    pub fn set_history_filter(mut self, input: ::std::option::Option<crate::types::DeploymentHistoryFilter>) -> Self {
         self.history_filter = input;
         self
     }
@@ -114,24 +109,16 @@ impl ListDeploymentsInputBuilder {
     /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
     /// <p>Default: <code>LATEST_ONLY</code> </p>
-    pub fn get_history_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentHistoryFilter> {
+    pub fn get_history_filter(&self) -> &::std::option::Option<crate::types::DeploymentHistoryFilter> {
         &self.history_filter
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn parent_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn set_parent_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_target_arn = input;
         self
     }
@@ -170,10 +157,7 @@ impl ListDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_deployments::ListDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_deployments::ListDeploymentsInput {
             target_arn: self.target_arn,
             history_filter: self.history_filter,

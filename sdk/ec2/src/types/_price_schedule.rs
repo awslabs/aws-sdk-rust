@@ -46,9 +46,7 @@ impl PriceSchedule {
 
 /// A builder for [`PriceSchedule`](crate::types::PriceSchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PriceScheduleBuilder {
     pub(crate) active: ::std::option::Option<bool>,
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
@@ -79,10 +77,7 @@ impl PriceScheduleBuilder {
         self
     }
     /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrencyCodeValues>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
         self.currency_code = input;
         self
     }

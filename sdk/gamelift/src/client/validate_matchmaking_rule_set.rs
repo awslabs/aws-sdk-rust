@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`ValidateMatchmakingRuleSetOutput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput) with field(s):
     ///   - [`valid(Option<bool>)`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput::valid): <p>A response indicating whether the rule set is valid.</p>
     /// - On failure, responds with [`SdkError<ValidateMatchmakingRuleSetError>`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError)
-    pub fn validate_matchmaking_rule_set(&self) -> crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetFluentBuilder{
+    pub fn validate_matchmaking_rule_set(
+        &self,
+    ) -> crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetFluentBuilder {
         crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetFluentBuilder::new(self.handle.clone())
     }
 }

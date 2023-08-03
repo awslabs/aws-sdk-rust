@@ -10,10 +10,7 @@ impl UpdateUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_user::UpdateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user::UpdateUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_user();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_user::UpdateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_user::UpdateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl UpdateUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_user::UpdateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_user::UpdateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -194,10 +176,7 @@ impl UpdateUserFluentBuilder {
         self
     }
     /// <p>The amount of storage for the user.</p>
-    pub fn set_storage_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageRuleType>,
-    ) -> Self {
+    pub fn set_storage_rule(mut self, input: ::std::option::Option<crate::types::StorageRuleType>) -> Self {
         self.inner = self.inner.set_storage_rule(input);
         self
     }
@@ -239,17 +218,12 @@ impl UpdateUserFluentBuilder {
         self
     }
     /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
-    pub fn set_grant_poweruser_privileges(
-        mut self,
-        input: ::std::option::Option<crate::types::BooleanEnumType>,
-    ) -> Self {
+    pub fn set_grant_poweruser_privileges(mut self, input: ::std::option::Option<crate::types::BooleanEnumType>) -> Self {
         self.inner = self.inner.set_grant_poweruser_privileges(input);
         self
     }
     /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
-    pub fn get_grant_poweruser_privileges(
-        &self,
-    ) -> &::std::option::Option<crate::types::BooleanEnumType> {
+    pub fn get_grant_poweruser_privileges(&self) -> &::std::option::Option<crate::types::BooleanEnumType> {
         self.inner.get_grant_poweruser_privileges()
     }
 }

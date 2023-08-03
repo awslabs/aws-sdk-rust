@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeVpcPeeringAuthorizationsOutput`](crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput) with field(s):
     ///   - [`vpc_peering_authorizations(Option<Vec<VpcPeeringAuthorization>>)`](crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput::vpc_peering_authorizations): <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcPeeringAuthorizationsError>`](crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError)
-    pub fn describe_vpc_peering_authorizations(&self) -> crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsFluentBuilder{
+    pub fn describe_vpc_peering_authorizations(
+        &self,
+    ) -> crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsFluentBuilder {
         crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsFluentBuilder::new(self.handle.clone())
     }
 }

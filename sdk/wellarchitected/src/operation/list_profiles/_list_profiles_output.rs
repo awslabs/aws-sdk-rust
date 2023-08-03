@@ -35,12 +35,9 @@ impl ListProfilesOutput {
 
 /// A builder for [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfilesOutputBuilder {
-    pub(crate) profile_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileSummary>>,
+    pub(crate) profile_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListProfilesOutputBuilder {
         self
     }
     /// <p>Profile summaries.</p>
-    pub fn set_profile_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileSummary>>,
-    ) -> Self {
+    pub fn set_profile_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileSummary>>) -> Self {
         self.profile_summaries = input;
         self
     }
     /// <p>Profile summaries.</p>
-    pub fn get_profile_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileSummary>> {
+    pub fn get_profile_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileSummary>> {
         &self.profile_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateOpsMetadataOutput`](crate::operation::create_ops_metadata::CreateOpsMetadataOutput) with field(s):
     ///   - [`ops_metadata_arn(Option<String>)`](crate::operation::create_ops_metadata::CreateOpsMetadataOutput::ops_metadata_arn): <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
     /// - On failure, responds with [`SdkError<CreateOpsMetadataError>`](crate::operation::create_ops_metadata::CreateOpsMetadataError)
-    pub fn create_ops_metadata(
-        &self,
-    ) -> crate::operation::create_ops_metadata::builders::CreateOpsMetadataFluentBuilder {
-        crate::operation::create_ops_metadata::builders::CreateOpsMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ops_metadata(&self) -> crate::operation::create_ops_metadata::builders::CreateOpsMetadataFluentBuilder {
+        crate::operation::create_ops_metadata::builders::CreateOpsMetadataFluentBuilder::new(self.handle.clone())
     }
 }

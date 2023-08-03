@@ -27,7 +27,7 @@ impl CreateConferenceProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConferenceProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_conference_provider::builders::CreateConferenceProviderInputBuilder,
+    inner: crate::operation::create_conference_provider::builders::CreateConferenceProviderInputBuilder,
 }
 impl CreateConferenceProviderFluentBuilder {
     /// Creates a new `CreateConferenceProvider`.
@@ -38,10 +38,7 @@ impl CreateConferenceProviderFluentBuilder {
         }
     }
     /// Access the CreateConferenceProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_conference_provider::builders::CreateConferenceProviderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_conference_provider::builders::CreateConferenceProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateConferenceProviderFluentBuilder {
             crate::operation::create_conference_provider::CreateConferenceProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_conference_provider::CreateConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_conference_provider::CreateConferenceProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateConferenceProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateConferenceProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_conference_provider::CreateConferenceProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_conference_provider::CreateConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_conference_provider::CreateConferenceProviderError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateConferenceProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_conference_provider::CreateConferenceProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_conference_provider::CreateConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_conference_provider::CreateConferenceProviderError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl CreateConferenceProviderFluentBuilder {
             crate::operation::create_conference_provider::CreateConferenceProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_conference_provider::CreateConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_conference_provider::CreateConferenceProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the conference provider.</p>
-    pub fn conference_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conference_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conference_provider_name(input.into());
         self
     }
     /// <p>The name of the conference provider.</p>
-    pub fn set_conference_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conference_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conference_provider_name(input);
         self
     }
@@ -150,17 +130,12 @@ impl CreateConferenceProviderFluentBuilder {
         self
     }
     /// <p>Represents a type within a list of predefined types.</p>
-    pub fn set_conference_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConferenceProviderType>,
-    ) -> Self {
+    pub fn set_conference_provider_type(mut self, input: ::std::option::Option<crate::types::ConferenceProviderType>) -> Self {
         self.inner = self.inner.set_conference_provider_type(input);
         self
     }
     /// <p>Represents a type within a list of predefined types.</p>
-    pub fn get_conference_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConferenceProviderType> {
+    pub fn get_conference_provider_type(&self) -> &::std::option::Option<crate::types::ConferenceProviderType> {
         self.inner.get_conference_provider_type()
     }
     /// <p>The IP endpoint and protocol for calling.</p>
@@ -183,10 +158,7 @@ impl CreateConferenceProviderFluentBuilder {
         self
     }
     /// <p>The information for PSTN conferencing.</p>
-    pub fn set_pstn_dial_in(
-        mut self,
-        input: ::std::option::Option<crate::types::PstnDialIn>,
-    ) -> Self {
+    pub fn set_pstn_dial_in(mut self, input: ::std::option::Option<crate::types::PstnDialIn>) -> Self {
         self.inner = self.inner.set_pstn_dial_in(input);
         self
     }
@@ -200,10 +172,7 @@ impl CreateConferenceProviderFluentBuilder {
         self
     }
     /// <p>The meeting settings for the conference provider.</p>
-    pub fn set_meeting_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingSetting>,
-    ) -> Self {
+    pub fn set_meeting_setting(mut self, input: ::std::option::Option<crate::types::MeetingSetting>) -> Self {
         self.inner = self.inner.set_meeting_setting(input);
         self
     }
@@ -212,18 +181,12 @@ impl CreateConferenceProviderFluentBuilder {
         self.inner.get_meeting_setting()
     }
     /// <p>The request token of the client.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The request token of the client.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -241,10 +204,7 @@ impl CreateConferenceProviderFluentBuilder {
         self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

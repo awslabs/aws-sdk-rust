@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`client_vpn_endpoints(Option<Vec<ClientVpnEndpoint>>)`](crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput::client_vpn_endpoints): <p>Information about the Client VPN endpoints.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeClientVpnEndpointsError>`](crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError)
-    pub fn describe_client_vpn_endpoints(&self) -> crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsFluentBuilder{
+    pub fn describe_client_vpn_endpoints(
+        &self,
+    ) -> crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsFluentBuilder {
         crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

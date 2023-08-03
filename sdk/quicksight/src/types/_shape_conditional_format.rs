@@ -10,9 +10,7 @@ pub struct ShapeConditionalFormat {
 }
 impl ShapeConditionalFormat {
     /// <p>The conditional formatting for the shape background color of a filled map visual.</p>
-    pub fn background_color(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalFormattingColor> {
+    pub fn background_color(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingColor> {
         self.background_color.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl ShapeConditionalFormat {
 
 /// A builder for [`ShapeConditionalFormat`](crate::types::ShapeConditionalFormat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShapeConditionalFormatBuilder {
     pub(crate) background_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
 }
@@ -38,17 +34,12 @@ impl ShapeConditionalFormatBuilder {
         self
     }
     /// <p>The conditional formatting for the shape background color of a filled map visual.</p>
-    pub fn set_background_color(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalFormattingColor>,
-    ) -> Self {
+    pub fn set_background_color(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
         self.background_color = input;
         self
     }
     /// <p>The conditional formatting for the shape background color of a filled map visual.</p>
-    pub fn get_background_color(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
+    pub fn get_background_color(&self) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
         &self.background_color
     }
     /// Consumes the builder and constructs a [`ShapeConditionalFormat`](crate::types::ShapeConditionalFormat).

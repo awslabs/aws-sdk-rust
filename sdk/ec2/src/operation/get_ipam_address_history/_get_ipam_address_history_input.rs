@@ -64,18 +64,14 @@ impl GetIpamAddressHistoryInput {
 }
 impl GetIpamAddressHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetIpamAddressHistoryInput`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryInputBuilder {
         crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamAddressHistoryInput`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamAddressHistoryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
@@ -116,18 +112,12 @@ impl GetIpamAddressHistoryInputBuilder {
         &self.cidr
     }
     /// <p>The ID of the IPAM scope that the CIDR is in.</p>
-    pub fn ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the IPAM scope that the CIDR is in.</p>
-    pub fn set_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_scope_id = input;
         self
     }
@@ -155,10 +145,7 @@ impl GetIpamAddressHistoryInputBuilder {
         self
     }
     /// <p>The start of the time period for which you are looking for history. If you omit this option, it will default to the value of EndTime.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -172,10 +159,7 @@ impl GetIpamAddressHistoryInputBuilder {
         self
     }
     /// <p>The end of the time period for which you are looking for history. If you omit this option, it will default to the current time.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -214,21 +198,17 @@ impl GetIpamAddressHistoryInputBuilder {
     /// Consumes the builder and constructs a [`GetIpamAddressHistoryInput`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput {
-                dry_run: self.dry_run,
-                cidr: self.cidr,
-                ipam_scope_id: self.ipam_scope_id,
-                vpc_id: self.vpc_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput {
+            dry_run: self.dry_run,
+            cidr: self.cidr,
+            ipam_scope_id: self.ipam_scope_id,
+            vpc_id: self.vpc_id,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl MetadataKeyValuePair {
 
 /// A builder for [`MetadataKeyValuePair`](crate::types::MetadataKeyValuePair).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetadataKeyValuePairBuilder {
     pub(crate) metadata_key: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_value: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl MetadataKeyValuePairBuilder {
         &self.metadata_key
     }
     /// <p>A metadata key’s corresponding value.</p>
-    pub fn metadata_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A metadata key’s corresponding value.</p>
-    pub fn set_metadata_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_value = input;
         self
     }

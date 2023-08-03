@@ -17,9 +17,7 @@ pub fn ser_spot_fleet_request_config_data(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("SpotMaintenanceStrategies");
     if let Some(var_6) = &input.spot_maintenance_strategies {
-        crate::protocol_serde::shape_spot_maintenance_strategies::ser_spot_maintenance_strategies(
-            scope_5, var_6,
-        )?;
+        crate::protocol_serde::shape_spot_maintenance_strategies::ser_spot_maintenance_strategies(scope_5, var_6)?;
     }
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("ClientToken");
@@ -70,9 +68,7 @@ pub fn ser_spot_fleet_request_config_data(
         for item_24 in var_23 {
             #[allow(unused_mut)]
             let mut entry_26 = list_25.entry();
-            crate::protocol_serde::shape_launch_template_config::ser_launch_template_config(
-                entry_26, item_24,
-            )?;
+            crate::protocol_serde::shape_launch_template_config::ser_launch_template_config(entry_26, item_24)?;
         }
         list_25.finish();
     }
@@ -140,9 +136,7 @@ pub fn ser_spot_fleet_request_config_data(
     #[allow(unused_mut)]
     let mut scope_49 = writer.prefix("LoadBalancersConfig");
     if let Some(var_50) = &input.load_balancers_config {
-        crate::protocol_serde::shape_load_balancers_config::ser_load_balancers_config(
-            scope_49, var_50,
-        )?;
+        crate::protocol_serde::shape_load_balancers_config::ser_load_balancers_config(scope_49, var_50)?;
     }
     #[allow(unused_mut)]
     let mut scope_51 = writer.prefix("InstancePoolsToUseCount");
@@ -169,9 +163,7 @@ pub fn ser_spot_fleet_request_config_data(
         for item_59 in var_58 {
             #[allow(unused_mut)]
             let mut entry_61 = list_60.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(
-                entry_61, item_59,
-            )?;
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_61, item_59)?;
         }
         list_60.finish();
     }

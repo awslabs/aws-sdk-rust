@@ -8,10 +8,11 @@ pub fn ser_get_signaling_channel_endpoint_input(
     }
     if let Some(var_2) = &input.single_master_channel_endpoint_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("SingleMasterChannelEndpointConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_single_master_channel_endpoint_configuration::ser_single_master_channel_endpoint_configuration(&mut object_3, var_2)?;
+        let mut object_3 = object.key("SingleMasterChannelEndpointConfiguration").start_object();
+        crate::protocol_serde::shape_single_master_channel_endpoint_configuration::ser_single_master_channel_endpoint_configuration(
+            &mut object_3,
+            var_2,
+        )?;
         object_3.finish();
     }
     Ok(())

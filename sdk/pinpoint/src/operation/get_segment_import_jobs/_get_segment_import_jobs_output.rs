@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSegmentImportJobsOutput {
 }
 impl GetSegmentImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetSegmentImportJobsOutput`](crate::operation::get_segment_import_jobs::GetSegmentImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_segment_import_jobs::builders::GetSegmentImportJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_segment_import_jobs::builders::GetSegmentImportJobsOutputBuilder {
         crate::operation::get_segment_import_jobs::builders::GetSegmentImportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSegmentImportJobsOutput`](crate::operation::get_segment_import_jobs::GetSegmentImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSegmentImportJobsOutputBuilder {
     pub(crate) import_jobs_response: ::std::option::Option<crate::types::ImportJobsResponse>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetSegmentImportJobsOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
-    pub fn set_import_jobs_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportJobsResponse>,
-    ) -> Self {
+    pub fn set_import_jobs_response(mut self, input: ::std::option::Option<crate::types::ImportJobsResponse>) -> Self {
         self.import_jobs_response = input;
         self
     }
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
-    pub fn get_import_jobs_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportJobsResponse> {
+    pub fn get_import_jobs_response(&self) -> &::std::option::Option<crate::types::ImportJobsResponse> {
         &self.import_jobs_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

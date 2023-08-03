@@ -42,9 +42,7 @@ pub struct ChannelMessage {
     pub status: ::std::option::Option<crate::types::ChannelMessageStatusStructure>,
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub message_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-    >,
+    pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>The ID of the SubChannel.</p>
     #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
@@ -97,9 +95,7 @@ impl ChannelMessage {
         self.redacted
     }
     /// <p>The persistence setting for a channel message.</p>
-    pub fn persistence(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChannelMessagePersistenceType> {
+    pub fn persistence(&self) -> ::std::option::Option<&crate::types::ChannelMessagePersistenceType> {
         self.persistence.as_ref()
     }
     /// <p>The status of the channel message.</p>
@@ -109,9 +105,7 @@ impl ChannelMessage {
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn message_attributes(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
         self.message_attributes.as_ref()
     }
     /// <p>The ID of the SubChannel.</p>
@@ -172,9 +166,7 @@ pub struct ChannelMessageBuilder {
     pub(crate) redacted: ::std::option::Option<bool>,
     pub(crate) persistence: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
     pub(crate) status: ::std::option::Option<crate::types::ChannelMessageStatusStructure>,
-    pub(crate) message_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-    >,
+    pub(crate) message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     pub(crate) sub_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
@@ -242,10 +234,7 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The message type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMessageType>) -> Self {
         self.r#type = input;
         self
     }
@@ -259,10 +248,7 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The time at which the message was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -276,17 +262,12 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The time at which a message was edited.</p>
-    pub fn set_last_edited_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_edited_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_edited_timestamp = input;
         self
     }
     /// <p>The time at which a message was edited.</p>
-    pub fn get_last_edited_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_edited_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_edited_timestamp
     }
     /// <p>The time at which a message was updated.</p>
@@ -295,17 +276,12 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The time at which a message was updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>The time at which a message was updated.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// <p>The message sender.</p>
@@ -342,17 +318,12 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The persistence setting for a channel message.</p>
-    pub fn set_persistence(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
-    ) -> Self {
+    pub fn set_persistence(mut self, input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>) -> Self {
         self.persistence = input;
         self
     }
     /// <p>The persistence setting for a channel message.</p>
-    pub fn get_persistence(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
+    pub fn get_persistence(&self) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
         &self.persistence
     }
     /// <p>The status of the channel message.</p>
@@ -361,17 +332,12 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The status of the channel message.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageStatusStructure>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChannelMessageStatusStructure>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the channel message.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMessageStatusStructure> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChannelMessageStatusStructure> {
         &self.status
     }
     /// Adds a key-value pair to `message_attributes`.
@@ -379,11 +345,7 @@ impl ChannelMessageBuilder {
     /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
     ///
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
-    pub fn message_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MessageAttributeValue,
-    ) -> Self {
+    pub fn message_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MessageAttributeValue) -> Self {
         let mut hash_map = self.message_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.message_attributes = ::std::option::Option::Some(hash_map);
@@ -392,9 +354,7 @@ impl ChannelMessageBuilder {
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn set_message_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     ) -> Self {
         self.message_attributes = input;
         self
@@ -402,24 +362,16 @@ impl ChannelMessageBuilder {
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn get_message_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
         &self.message_attributes
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
@@ -453,10 +405,7 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.target = input;
         self
     }

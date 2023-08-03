@@ -10,10 +10,7 @@ impl UpdateFacetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_facet::UpdateFacetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_facet::UpdateFacetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_facet::UpdateFacetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_facet();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl UpdateFacetFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_facet::UpdateFacet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_facet::UpdateFacet, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_facet::UpdateFacetError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl UpdateFacetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl UpdateFacetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_facet::UpdateFacet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_facet::UpdateFacet, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_facet::UpdateFacetError>,
     > {
         self.customize_middleware().await
@@ -155,17 +143,12 @@ impl UpdateFacetFluentBuilder {
         self
     }
     /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
-    pub fn set_attribute_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>>,
-    ) -> Self {
+    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>>) -> Self {
         self.inner = self.inner.set_attribute_updates(input);
         self
     }
     /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
-    pub fn get_attribute_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>> {
+    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>> {
         self.inner.get_attribute_updates()
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
@@ -174,10 +157,7 @@ impl UpdateFacetFluentBuilder {
         self
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
-    pub fn set_object_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectType>,
-    ) -> Self {
+    pub fn set_object_type(mut self, input: ::std::option::Option<crate::types::ObjectType>) -> Self {
         self.inner = self.inner.set_object_type(input);
         self
     }

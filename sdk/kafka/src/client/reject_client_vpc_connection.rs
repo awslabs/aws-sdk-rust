@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`vpc_connection_arn(impl ::std::convert::Into<String>)`](crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionFluentBuilder::vpc_connection_arn) / [`set_vpc_connection_arn(Option<String>)`](crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionFluentBuilder::set_vpc_connection_arn): <p>The VPC connection ARN.</p>
     /// - On success, responds with [`RejectClientVpcConnectionOutput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionOutput)
     /// - On failure, responds with [`SdkError<RejectClientVpcConnectionError>`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError)
-    pub fn reject_client_vpc_connection(&self) -> crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionFluentBuilder{
+    pub fn reject_client_vpc_connection(&self) -> crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionFluentBuilder {
         crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionFluentBuilder::new(self.handle.clone())
     }
 }

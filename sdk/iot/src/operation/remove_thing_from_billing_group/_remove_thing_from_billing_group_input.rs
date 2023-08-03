@@ -36,16 +36,14 @@ impl RemoveThingFromBillingGroupInput {
 }
 impl RemoveThingFromBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`RemoveThingFromBillingGroupInput`](crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupInput).
-    pub fn builder() -> crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupInputBuilder{
+    pub fn builder() -> crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupInputBuilder {
         crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveThingFromBillingGroupInput`](crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveThingFromBillingGroupInputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct RemoveThingFromBillingGroupInputBuilder {
 }
 impl RemoveThingFromBillingGroupInputBuilder {
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_name = input;
         self
     }
@@ -74,18 +66,12 @@ impl RemoveThingFromBillingGroupInputBuilder {
         &self.billing_group_name
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn billing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn set_billing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_arn = input;
         self
     }
@@ -128,13 +114,11 @@ impl RemoveThingFromBillingGroupInputBuilder {
         crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupInput {
-                billing_group_name: self.billing_group_name,
-                billing_group_arn: self.billing_group_arn,
-                thing_name: self.thing_name,
-                thing_arn: self.thing_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupInput {
+            billing_group_name: self.billing_group_name,
+            billing_group_arn: self.billing_group_arn,
+            thing_name: self.thing_name,
+            thing_arn: self.thing_arn,
+        })
     }
 }

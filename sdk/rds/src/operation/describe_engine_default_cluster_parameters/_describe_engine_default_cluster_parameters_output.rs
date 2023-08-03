@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeEngineDefaultClusterParameter
 }
 impl DescribeEngineDefaultClusterParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultClusterParametersOutput`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput).
-    pub fn builder() -> crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersOutputBuilder {
         crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEngineDefaultClusterParametersOutput`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEngineDefaultClusterParametersOutputBuilder {
     pub(crate) engine_defaults: ::std::option::Option<crate::types::EngineDefaults>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeEngineDefaultClusterParametersOutputBuilder {
         self
     }
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
-    pub fn set_engine_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineDefaults>,
-    ) -> Self {
+    pub fn set_engine_defaults(mut self, input: ::std::option::Option<crate::types::EngineDefaults>) -> Self {
         self.engine_defaults = input;
         self
     }
@@ -63,10 +58,9 @@ impl DescribeEngineDefaultClusterParametersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEngineDefaultClusterParametersOutput`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput).
-    pub fn build(self) -> crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput{
+    pub fn build(self) -> crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput {
         crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput {
-            engine_defaults: self.engine_defaults
-            ,
+            engine_defaults: self.engine_defaults,
             _request_id: self._request_id,
         }
     }

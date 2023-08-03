@@ -44,9 +44,7 @@ impl ApiCallDetails {
 
 /// A builder for [`ApiCallDetails`](crate::types::ApiCallDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApiCallDetailsBuilder {
     pub(crate) api: ::std::option::Option<::std::string::String>,
     pub(crate) api_service_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl ApiCallDetailsBuilder {
         &self.api
     }
     /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
-    pub fn api_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
-    pub fn set_api_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_service_name = input;
         self
     }
@@ -94,10 +86,7 @@ impl ApiCallDetailsBuilder {
         self
     }
     /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
-    pub fn set_first_seen(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_first_seen(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.first_seen = input;
         self
     }
@@ -111,10 +100,7 @@ impl ApiCallDetailsBuilder {
         self
     }
     /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
-    pub fn set_last_seen(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_seen(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_seen = input;
         self
     }

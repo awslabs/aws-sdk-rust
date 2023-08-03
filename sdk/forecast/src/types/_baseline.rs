@@ -23,9 +23,7 @@ impl Baseline {
 
 /// A builder for [`Baseline`](crate::types::Baseline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BaselineBuilder {
     pub(crate) predictor_baseline: ::std::option::Option<crate::types::PredictorBaseline>,
 }
@@ -36,17 +34,12 @@ impl BaselineBuilder {
         self
     }
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    pub fn set_predictor_baseline(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictorBaseline>,
-    ) -> Self {
+    pub fn set_predictor_baseline(mut self, input: ::std::option::Option<crate::types::PredictorBaseline>) -> Self {
         self.predictor_baseline = input;
         self
     }
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    pub fn get_predictor_baseline(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictorBaseline> {
+    pub fn get_predictor_baseline(&self) -> &::std::option::Option<crate::types::PredictorBaseline> {
         &self.predictor_baseline
     }
     /// Consumes the builder and constructs a [`Baseline`](crate::types::Baseline).

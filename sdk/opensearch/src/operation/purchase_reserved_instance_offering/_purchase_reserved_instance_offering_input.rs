@@ -30,16 +30,14 @@ impl PurchaseReservedInstanceOfferingInput {
 }
 impl PurchaseReservedInstanceOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedInstanceOfferingInput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput).
-    pub fn builder() -> crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingInputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingInputBuilder {
         crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingInputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseReservedInstanceOfferingInput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseReservedInstanceOfferingInputBuilder {
     pub(crate) reserved_instance_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) reservation_name: ::std::option::Option<::std::string::String>,
@@ -47,40 +45,26 @@ pub struct PurchaseReservedInstanceOfferingInputBuilder {
 }
 impl PurchaseReservedInstanceOfferingInputBuilder {
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn reserved_instance_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instance_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instance_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn set_reserved_instance_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instance_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_instance_offering_id = input;
         self
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn get_reserved_instance_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_instance_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_instance_offering_id
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn reservation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn set_reservation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_name = input;
         self
     }
@@ -103,16 +87,18 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
         &self.instance_count
     }
     /// Consumes the builder and constructs a [`PurchaseReservedInstanceOfferingInput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput {
-                reserved_instance_offering_id: self.reserved_instance_offering_id
-                ,
-                reservation_name: self.reservation_name
-                ,
-                instance_count: self.instance_count
-                ,
-            }
+                reserved_instance_offering_id: self.reserved_instance_offering_id,
+                reservation_name: self.reservation_name,
+                instance_count: self.instance_count,
+            },
         )
     }
 }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateEnvironmentMembershipOutput {
 }
 impl CreateEnvironmentMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentMembershipOutput`](crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput).
-    pub fn builder() -> crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipOutputBuilder{
+    pub fn builder() -> crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipOutputBuilder {
         crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEnvironmentMembershipOutput`](crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEnvironmentMembershipOutputBuilder {
     pub(crate) membership: ::std::option::Option<crate::types::EnvironmentMember>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateEnvironmentMembershipOutputBuilder {
         self
     }
     /// <p>Information about the environment member that was added.</p>
-    pub fn set_membership(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentMember>,
-    ) -> Self {
+    pub fn set_membership(mut self, input: ::std::option::Option<crate::types::EnvironmentMember>) -> Self {
         self.membership = input;
         self
     }
@@ -63,9 +58,7 @@ impl CreateEnvironmentMembershipOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentMembershipOutput`](crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput {
+    pub fn build(self) -> crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput {
         crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput {
             membership: self.membership,
             _request_id: self._request_id,

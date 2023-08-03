@@ -31,9 +31,7 @@ impl MentionSentiment {
 
 /// A builder for [`MentionSentiment`](crate::types::MentionSentiment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MentionSentimentBuilder {
     pub(crate) sentiment: ::std::option::Option<crate::types::SentimentType>,
     pub(crate) sentiment_score: ::std::option::Option<crate::types::SentimentScore>,
@@ -45,10 +43,7 @@ impl MentionSentimentBuilder {
         self
     }
     /// <p>The sentiment of the mention. </p>
-    pub fn set_sentiment(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentType>,
-    ) -> Self {
+    pub fn set_sentiment(mut self, input: ::std::option::Option<crate::types::SentimentType>) -> Self {
         self.sentiment = input;
         self
     }
@@ -62,10 +57,7 @@ impl MentionSentimentBuilder {
         self
     }
     /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
-    pub fn set_sentiment_score(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentScore>,
-    ) -> Self {
+    pub fn set_sentiment_score(mut self, input: ::std::option::Option<crate::types::SentimentScore>) -> Self {
         self.sentiment_score = input;
         self
     }

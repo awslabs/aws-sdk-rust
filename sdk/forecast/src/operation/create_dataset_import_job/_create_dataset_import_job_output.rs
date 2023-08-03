@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateDatasetImportJobOutput {
 }
 impl CreateDatasetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetImportJobOutput`](crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobOutputBuilder {
         crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDatasetImportJobOutput`](crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatasetImportJobOutputBuilder {
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDatasetImportJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn dataset_import_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_import_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn set_dataset_import_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_import_job_arn = input;
         self
     }
@@ -68,9 +58,7 @@ impl CreateDatasetImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDatasetImportJobOutput`](crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput {
+    pub fn build(self) -> crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput {
         crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput {
             dataset_import_job_arn: self.dataset_import_job_arn,
             _request_id: self._request_id,

@@ -30,9 +30,7 @@ impl DeviceSummary {
 
 /// A builder for [`DeviceSummary`](crate::types::DeviceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceSummaryBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_status: ::std::option::Option<crate::types::DeviceStatus>,
@@ -58,10 +56,7 @@ impl DeviceSummaryBuilder {
         self
     }
     /// <p>The status of the device.</p>
-    pub fn set_device_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStatus>,
-    ) -> Self {
+    pub fn set_device_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
         self.device_status = input;
         self
     }

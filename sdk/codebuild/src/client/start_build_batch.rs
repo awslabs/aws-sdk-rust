@@ -37,11 +37,7 @@ impl super::Client {
     /// - On success, responds with [`StartBuildBatchOutput`](crate::operation::start_build_batch::StartBuildBatchOutput) with field(s):
     ///   - [`build_batch(Option<BuildBatch>)`](crate::operation::start_build_batch::StartBuildBatchOutput::build_batch): <p>A <code>BuildBatch</code> object that contains information about the batch build.</p>
     /// - On failure, responds with [`SdkError<StartBuildBatchError>`](crate::operation::start_build_batch::StartBuildBatchError)
-    pub fn start_build_batch(
-        &self,
-    ) -> crate::operation::start_build_batch::builders::StartBuildBatchFluentBuilder {
-        crate::operation::start_build_batch::builders::StartBuildBatchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_build_batch(&self) -> crate::operation::start_build_batch::builders::StartBuildBatchFluentBuilder {
+        crate::operation::start_build_batch::builders::StartBuildBatchFluentBuilder::new(self.handle.clone())
     }
 }

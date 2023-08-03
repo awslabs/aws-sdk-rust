@@ -66,13 +66,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FleetErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -142,45 +136,25 @@ impl ::std::convert::From<&str> for FleetErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "DOMAIN_JOIN_ERROR_ACCESS_DENIED" => FleetErrorCode::DomainJoinErrorAccessDenied,
-            "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED" => {
-                FleetErrorCode::DomainJoinErrorDsMachineAccountQuotaExceeded
-            }
+            "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED" => FleetErrorCode::DomainJoinErrorDsMachineAccountQuotaExceeded,
             "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND" => FleetErrorCode::DomainJoinErrorFileNotFound,
-            "DOMAIN_JOIN_ERROR_INVALID_PARAMETER" => {
-                FleetErrorCode::DomainJoinErrorInvalidParameter
-            }
+            "DOMAIN_JOIN_ERROR_INVALID_PARAMETER" => FleetErrorCode::DomainJoinErrorInvalidParameter,
             "DOMAIN_JOIN_ERROR_LOGON_FAILURE" => FleetErrorCode::DomainJoinErrorLogonFailure,
             "DOMAIN_JOIN_ERROR_MORE_DATA" => FleetErrorCode::DomainJoinErrorMoreData,
             "DOMAIN_JOIN_ERROR_NOT_SUPPORTED" => FleetErrorCode::DomainJoinErrorNotSupported,
             "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN" => FleetErrorCode::DomainJoinErrorNoSuchDomain,
             "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR" => FleetErrorCode::DomainJoinInternalServiceError,
-            "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME" => {
-                FleetErrorCode::DomainJoinNerrInvalidWorkgroupName
-            }
+            "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME" => FleetErrorCode::DomainJoinNerrInvalidWorkgroupName,
             "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED" => FleetErrorCode::DomainJoinNerrPasswordExpired,
-            "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED" => {
-                FleetErrorCode::DomainJoinNerrWorkstationNotStarted
-            }
-            "FLEET_INSTANCE_PROVISIONING_FAILURE" => {
-                FleetErrorCode::FleetInstanceProvisioningFailure
-            }
+            "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED" => FleetErrorCode::DomainJoinNerrWorkstationNotStarted,
+            "FLEET_INSTANCE_PROVISIONING_FAILURE" => FleetErrorCode::FleetInstanceProvisioningFailure,
             "FLEET_STOPPED" => FleetErrorCode::FleetStopped,
             "IAM_SERVICE_ROLE_IS_MISSING" => FleetErrorCode::IamServiceRoleIsMissing,
-            "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION" => {
-                FleetErrorCode::IamServiceRoleMissingDescribeSecurityGroupsAction
-            }
-            "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION" => {
-                FleetErrorCode::IamServiceRoleMissingDescribeSubnetAction
-            }
-            "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION" => {
-                FleetErrorCode::IamServiceRoleMissingEniCreateAction
-            }
-            "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION" => {
-                FleetErrorCode::IamServiceRoleMissingEniDeleteAction
-            }
-            "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION" => {
-                FleetErrorCode::IamServiceRoleMissingEniDescribeAction
-            }
+            "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION" => FleetErrorCode::IamServiceRoleMissingDescribeSecurityGroupsAction,
+            "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION" => FleetErrorCode::IamServiceRoleMissingDescribeSubnetAction,
+            "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION" => FleetErrorCode::IamServiceRoleMissingEniCreateAction,
+            "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION" => FleetErrorCode::IamServiceRoleMissingEniDeleteAction,
+            "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION" => FleetErrorCode::IamServiceRoleMissingEniDescribeAction,
             "IGW_NOT_ATTACHED" => FleetErrorCode::IgwNotAttached,
             "IMAGE_NOT_FOUND" => FleetErrorCode::ImageNotFound,
             "INTERNAL_SERVICE_ERROR" => FleetErrorCode::InternalServiceError,
@@ -189,13 +163,9 @@ impl ::std::convert::From<&str> for FleetErrorCode {
             "NETWORK_INTERFACE_LIMIT_EXCEEDED" => FleetErrorCode::NetworkInterfaceLimitExceeded,
             "SECURITY_GROUPS_NOT_FOUND" => FleetErrorCode::SecurityGroupsNotFound,
             "STS_DISABLED_IN_REGION" => FleetErrorCode::StsDisabledInRegion,
-            "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES" => {
-                FleetErrorCode::SubnetHasInsufficientIpAddresses
-            }
+            "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES" => FleetErrorCode::SubnetHasInsufficientIpAddresses,
             "SUBNET_NOT_FOUND" => FleetErrorCode::SubnetNotFound,
-            other => {
-                FleetErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => FleetErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -211,45 +181,25 @@ impl FleetErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             FleetErrorCode::DomainJoinErrorAccessDenied => "DOMAIN_JOIN_ERROR_ACCESS_DENIED",
-            FleetErrorCode::DomainJoinErrorDsMachineAccountQuotaExceeded => {
-                "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED"
-            }
+            FleetErrorCode::DomainJoinErrorDsMachineAccountQuotaExceeded => "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED",
             FleetErrorCode::DomainJoinErrorFileNotFound => "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND",
-            FleetErrorCode::DomainJoinErrorInvalidParameter => {
-                "DOMAIN_JOIN_ERROR_INVALID_PARAMETER"
-            }
+            FleetErrorCode::DomainJoinErrorInvalidParameter => "DOMAIN_JOIN_ERROR_INVALID_PARAMETER",
             FleetErrorCode::DomainJoinErrorLogonFailure => "DOMAIN_JOIN_ERROR_LOGON_FAILURE",
             FleetErrorCode::DomainJoinErrorMoreData => "DOMAIN_JOIN_ERROR_MORE_DATA",
             FleetErrorCode::DomainJoinErrorNotSupported => "DOMAIN_JOIN_ERROR_NOT_SUPPORTED",
             FleetErrorCode::DomainJoinErrorNoSuchDomain => "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN",
             FleetErrorCode::DomainJoinInternalServiceError => "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR",
-            FleetErrorCode::DomainJoinNerrInvalidWorkgroupName => {
-                "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME"
-            }
+            FleetErrorCode::DomainJoinNerrInvalidWorkgroupName => "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME",
             FleetErrorCode::DomainJoinNerrPasswordExpired => "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED",
-            FleetErrorCode::DomainJoinNerrWorkstationNotStarted => {
-                "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED"
-            }
-            FleetErrorCode::FleetInstanceProvisioningFailure => {
-                "FLEET_INSTANCE_PROVISIONING_FAILURE"
-            }
+            FleetErrorCode::DomainJoinNerrWorkstationNotStarted => "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED",
+            FleetErrorCode::FleetInstanceProvisioningFailure => "FLEET_INSTANCE_PROVISIONING_FAILURE",
             FleetErrorCode::FleetStopped => "FLEET_STOPPED",
             FleetErrorCode::IamServiceRoleIsMissing => "IAM_SERVICE_ROLE_IS_MISSING",
-            FleetErrorCode::IamServiceRoleMissingDescribeSecurityGroupsAction => {
-                "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION"
-            }
-            FleetErrorCode::IamServiceRoleMissingDescribeSubnetAction => {
-                "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION"
-            }
-            FleetErrorCode::IamServiceRoleMissingEniCreateAction => {
-                "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION"
-            }
-            FleetErrorCode::IamServiceRoleMissingEniDeleteAction => {
-                "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION"
-            }
-            FleetErrorCode::IamServiceRoleMissingEniDescribeAction => {
-                "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION"
-            }
+            FleetErrorCode::IamServiceRoleMissingDescribeSecurityGroupsAction => "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION",
+            FleetErrorCode::IamServiceRoleMissingDescribeSubnetAction => "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION",
+            FleetErrorCode::IamServiceRoleMissingEniCreateAction => "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION",
+            FleetErrorCode::IamServiceRoleMissingEniDeleteAction => "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION",
+            FleetErrorCode::IamServiceRoleMissingEniDescribeAction => "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION",
             FleetErrorCode::IgwNotAttached => "IGW_NOT_ATTACHED",
             FleetErrorCode::ImageNotFound => "IMAGE_NOT_FOUND",
             FleetErrorCode::InternalServiceError => "INTERNAL_SERVICE_ERROR",
@@ -258,9 +208,7 @@ impl FleetErrorCode {
             FleetErrorCode::NetworkInterfaceLimitExceeded => "NETWORK_INTERFACE_LIMIT_EXCEEDED",
             FleetErrorCode::SecurityGroupsNotFound => "SECURITY_GROUPS_NOT_FOUND",
             FleetErrorCode::StsDisabledInRegion => "STS_DISABLED_IN_REGION",
-            FleetErrorCode::SubnetHasInsufficientIpAddresses => {
-                "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES"
-            }
+            FleetErrorCode::SubnetHasInsufficientIpAddresses => "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES",
             FleetErrorCode::SubnetNotFound => "SUBNET_NOT_FOUND",
             FleetErrorCode::Unknown(value) => value.as_str(),
         }

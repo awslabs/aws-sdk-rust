@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AssetBundleExportJobStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -65,13 +59,9 @@ impl ::std::convert::From<&str> for AssetBundleExportJobStatus {
         match s {
             "FAILED" => AssetBundleExportJobStatus::Failed,
             "IN_PROGRESS" => AssetBundleExportJobStatus::InProgress,
-            "QUEUED_FOR_IMMEDIATE_EXECUTION" => {
-                AssetBundleExportJobStatus::QueuedForImmediateExecution
-            }
+            "QUEUED_FOR_IMMEDIATE_EXECUTION" => AssetBundleExportJobStatus::QueuedForImmediateExecution,
             "SUCCESSFUL" => AssetBundleExportJobStatus::Successful,
-            other => AssetBundleExportJobStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AssetBundleExportJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,21 +78,14 @@ impl AssetBundleExportJobStatus {
         match self {
             AssetBundleExportJobStatus::Failed => "FAILED",
             AssetBundleExportJobStatus::InProgress => "IN_PROGRESS",
-            AssetBundleExportJobStatus::QueuedForImmediateExecution => {
-                "QUEUED_FOR_IMMEDIATE_EXECUTION"
-            }
+            AssetBundleExportJobStatus::QueuedForImmediateExecution => "QUEUED_FOR_IMMEDIATE_EXECUTION",
             AssetBundleExportJobStatus::Successful => "SUCCESSFUL",
             AssetBundleExportJobStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED",
-            "IN_PROGRESS",
-            "QUEUED_FOR_IMMEDIATE_EXECUTION",
-            "SUCCESSFUL",
-        ]
+        &["FAILED", "IN_PROGRESS", "QUEUED_FOR_IMMEDIATE_EXECUTION", "SUCCESSFUL"]
     }
 }
 impl ::std::convert::AsRef<str> for AssetBundleExportJobStatus {

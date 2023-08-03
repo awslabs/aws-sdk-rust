@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput) with field(s):
     ///   - [`endpoint_address(Option<String>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::endpoint_address): <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointError>`](crate::operation::describe_endpoint::DescribeEndpointError)
-    pub fn describe_endpoint(
-        &self,
-    ) -> crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder {
-        crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_endpoint(&self) -> crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder {
+        crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::new(self.handle.clone())
     }
 }

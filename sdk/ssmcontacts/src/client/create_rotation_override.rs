@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRotationOverrideOutput`](crate::operation::create_rotation_override::CreateRotationOverrideOutput) with field(s):
     ///   - [`rotation_override_id(Option<String>)`](crate::operation::create_rotation_override::CreateRotationOverrideOutput::rotation_override_id): <p>The Amazon Resource Name (ARN) of the created rotation override.</p>
     /// - On failure, responds with [`SdkError<CreateRotationOverrideError>`](crate::operation::create_rotation_override::CreateRotationOverrideError)
-    pub fn create_rotation_override(
-        &self,
-    ) -> crate::operation::create_rotation_override::builders::CreateRotationOverrideFluentBuilder
-    {
+    pub fn create_rotation_override(&self) -> crate::operation::create_rotation_override::builders::CreateRotationOverrideFluentBuilder {
         crate::operation::create_rotation_override::builders::CreateRotationOverrideFluentBuilder::new(self.handle.clone())
     }
 }

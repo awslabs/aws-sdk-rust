@@ -28,9 +28,7 @@ impl CreateThemeOutput {
 
 /// A builder for [`CreateThemeOutput`](crate::operation::create_theme::CreateThemeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateThemeOutputBuilder {
     pub(crate) entity: ::std::option::Option<crate::types::Theme>,
     _request_id: Option<String>,

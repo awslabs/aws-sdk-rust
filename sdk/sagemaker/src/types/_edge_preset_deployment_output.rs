@@ -44,9 +44,7 @@ impl EdgePresetDeploymentOutput {
 
 /// A builder for [`EdgePresetDeploymentOutput`](crate::types::EdgePresetDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgePresetDeploymentOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EdgePresetDeploymentType>,
     pub(crate) artifact: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl EdgePresetDeploymentOutputBuilder {
         self
     }
     /// <p>The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgePresetDeploymentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EdgePresetDeploymentType>) -> Self {
         self.r#type = input;
         self
     }
@@ -91,10 +86,7 @@ impl EdgePresetDeploymentOutputBuilder {
         self
     }
     /// <p>The status of the deployable resource.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgePresetDeploymentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EdgePresetDeploymentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -103,18 +95,12 @@ impl EdgePresetDeploymentOutputBuilder {
         &self.status
     }
     /// <p>Returns a message describing the status of the deployed resource.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns a message describing the status of the deployed resource.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

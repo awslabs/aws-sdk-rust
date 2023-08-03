@@ -24,17 +24,14 @@ impl ResponseHeadersPolicyAccessControlAllowOrigins {
 }
 impl ResponseHeadersPolicyAccessControlAllowOrigins {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::types::ResponseHeadersPolicyAccessControlAllowOrigins).
-    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyAccessControlAllowOriginsBuilder
-    {
+    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyAccessControlAllowOriginsBuilder {
         crate::types::builders::ResponseHeadersPolicyAccessControlAllowOriginsBuilder::default()
     }
 }
 
 /// A builder for [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::types::ResponseHeadersPolicyAccessControlAllowOrigins).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowOriginsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -66,10 +63,7 @@ impl ResponseHeadersPolicyAccessControlAllowOriginsBuilder {
         self
     }
     /// <p>The list of origins (domain names). You can specify <code>*</code> to allow all origins.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.items = input;
         self
     }

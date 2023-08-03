@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetComponentVersionArtifactOutput`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput) with field(s):
     ///   - [`pre_signed_url(Option<String>)`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput::pre_signed_url): <p>The URL of the artifact.</p>
     /// - On failure, responds with [`SdkError<GetComponentVersionArtifactError>`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactError)
-    pub fn get_component_version_artifact(&self) -> crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactFluentBuilder{
+    pub fn get_component_version_artifact(
+        &self,
+    ) -> crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactFluentBuilder {
         crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactFluentBuilder::new(self.handle.clone())
     }
 }

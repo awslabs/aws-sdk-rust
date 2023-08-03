@@ -40,13 +40,7 @@
 /// <p>The property to use in a condition that filters the query results. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SearchResourcesSimpleCriterionKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -64,14 +58,10 @@ impl ::std::convert::From<&str> for SearchResourcesSimpleCriterionKey {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_ID" => SearchResourcesSimpleCriterionKey::AccountId,
-            "S3_BUCKET_EFFECTIVE_PERMISSION" => {
-                SearchResourcesSimpleCriterionKey::S3BucketEffectivePermission
-            }
+            "S3_BUCKET_EFFECTIVE_PERMISSION" => SearchResourcesSimpleCriterionKey::S3BucketEffectivePermission,
             "S3_BUCKET_NAME" => SearchResourcesSimpleCriterionKey::S3BucketName,
             "S3_BUCKET_SHARED_ACCESS" => SearchResourcesSimpleCriterionKey::S3BucketSharedAccess,
-            other => SearchResourcesSimpleCriterionKey::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => SearchResourcesSimpleCriterionKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -87,9 +77,7 @@ impl SearchResourcesSimpleCriterionKey {
     pub fn as_str(&self) -> &str {
         match self {
             SearchResourcesSimpleCriterionKey::AccountId => "ACCOUNT_ID",
-            SearchResourcesSimpleCriterionKey::S3BucketEffectivePermission => {
-                "S3_BUCKET_EFFECTIVE_PERMISSION"
-            }
+            SearchResourcesSimpleCriterionKey::S3BucketEffectivePermission => "S3_BUCKET_EFFECTIVE_PERMISSION",
             SearchResourcesSimpleCriterionKey::S3BucketName => "S3_BUCKET_NAME",
             SearchResourcesSimpleCriterionKey::S3BucketSharedAccess => "S3_BUCKET_SHARED_ACCESS",
             SearchResourcesSimpleCriterionKey::Unknown(value) => value.as_str(),

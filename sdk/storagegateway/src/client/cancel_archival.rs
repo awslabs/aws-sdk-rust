@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CancelArchivalOutput`](crate::operation::cancel_archival::CancelArchivalOutput) with field(s):
     ///   - [`tape_arn(Option<String>)`](crate::operation::cancel_archival::CancelArchivalOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape for which archiving was canceled.</p>
     /// - On failure, responds with [`SdkError<CancelArchivalError>`](crate::operation::cancel_archival::CancelArchivalError)
-    pub fn cancel_archival(
-        &self,
-    ) -> crate::operation::cancel_archival::builders::CancelArchivalFluentBuilder {
-        crate::operation::cancel_archival::builders::CancelArchivalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_archival(&self) -> crate::operation::cancel_archival::builders::CancelArchivalFluentBuilder {
+        crate::operation::cancel_archival::builders::CancelArchivalFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListResponsePlansOutput {
     /// <p>Details of each response plan.</p>
     #[doc(hidden)]
-    pub response_plan_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>>,
+    pub response_plan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>>,
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListResponsePlansOutput {
 }
 impl ListResponsePlansOutput {
     /// <p>Details of each response plan.</p>
-    pub fn response_plan_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResponsePlanSummary]> {
+    pub fn response_plan_summaries(&self) -> ::std::option::Option<&[crate::types::ResponsePlanSummary]> {
         self.response_plan_summaries.as_deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResponsePlansOutput {
 }
 impl ListResponsePlansOutput {
     /// Creates a new builder-style object to manufacture [`ListResponsePlansOutput`](crate::operation::list_response_plans::ListResponsePlansOutput).
-    pub fn builder(
-    ) -> crate::operation::list_response_plans::builders::ListResponsePlansOutputBuilder {
+    pub fn builder() -> crate::operation::list_response_plans::builders::ListResponsePlansOutputBuilder {
         crate::operation::list_response_plans::builders::ListResponsePlansOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResponsePlansOutput`](crate::operation::list_response_plans::ListResponsePlansOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResponsePlansOutputBuilder {
-    pub(crate) response_plan_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>>,
+    pub(crate) response_plan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListResponsePlansOutputBuilder {
         self
     }
     /// <p>Details of each response plan.</p>
-    pub fn set_response_plan_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>>,
-    ) -> Self {
+    pub fn set_response_plan_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>>) -> Self {
         self.response_plan_summaries = input;
         self
     }
     /// <p>Details of each response plan.</p>
-    pub fn get_response_plan_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>> {
+    pub fn get_response_plan_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>> {
         &self.response_plan_summaries
     }
     /// <p>The pagination token to continue to the next page of results.</p>

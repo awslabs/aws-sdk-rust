@@ -36,9 +36,7 @@ impl ListRunsOutput {
 
 /// A builder for [`ListRunsOutput`](crate::operation::list_runs::ListRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRunsOutputBuilder {
     pub(crate) runs: ::std::option::Option<::std::vec::Vec<crate::types::Run>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListRunsOutputBuilder {
         self
     }
     /// <p>Information about the runs.</p>
-    pub fn set_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Run>>,
-    ) -> Self {
+    pub fn set_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Run>>) -> Self {
         self.runs = input;
         self
     }

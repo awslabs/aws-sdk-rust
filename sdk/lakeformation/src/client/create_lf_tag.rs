@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tag_values(Vec<String>)`](crate::operation::create_lf_tag::builders::CreateLFTagFluentBuilder::tag_values) / [`set_tag_values(Option<Vec<String>>)`](crate::operation::create_lf_tag::builders::CreateLFTagFluentBuilder::set_tag_values): <p>A list of possible values an attribute can take.</p>
     /// - On success, responds with [`CreateLfTagOutput`](crate::operation::create_lf_tag::CreateLfTagOutput)
     /// - On failure, responds with [`SdkError<CreateLFTagError>`](crate::operation::create_lf_tag::CreateLFTagError)
-    pub fn create_lf_tag(
-        &self,
-    ) -> crate::operation::create_lf_tag::builders::CreateLFTagFluentBuilder {
-        crate::operation::create_lf_tag::builders::CreateLFTagFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_lf_tag(&self) -> crate::operation::create_lf_tag::builders::CreateLFTagFluentBuilder {
+        crate::operation::create_lf_tag::builders::CreateLFTagFluentBuilder::new(self.handle.clone())
     }
 }

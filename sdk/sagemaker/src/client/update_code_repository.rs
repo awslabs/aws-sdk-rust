@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateCodeRepositoryOutput`](crate::operation::update_code_repository::UpdateCodeRepositoryOutput) with field(s):
     ///   - [`code_repository_arn(Option<String>)`](crate::operation::update_code_repository::UpdateCodeRepositoryOutput::code_repository_arn): <p>The ARN of the Git repository.</p>
     /// - On failure, responds with [`SdkError<UpdateCodeRepositoryError>`](crate::operation::update_code_repository::UpdateCodeRepositoryError)
-    pub fn update_code_repository(
-        &self,
-    ) -> crate::operation::update_code_repository::builders::UpdateCodeRepositoryFluentBuilder {
-        crate::operation::update_code_repository::builders::UpdateCodeRepositoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_code_repository(&self) -> crate::operation::update_code_repository::builders::UpdateCodeRepositoryFluentBuilder {
+        crate::operation::update_code_repository::builders::UpdateCodeRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

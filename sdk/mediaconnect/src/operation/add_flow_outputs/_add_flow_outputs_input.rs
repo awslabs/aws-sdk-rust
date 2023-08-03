@@ -30,9 +30,7 @@ impl AddFlowOutputsInput {
 
 /// A builder for [`AddFlowOutputsInput`](crate::operation::add_flow_outputs::AddFlowOutputsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFlowOutputsInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>,
@@ -64,26 +62,18 @@ impl AddFlowOutputsInputBuilder {
         self
     }
     /// A list of outputs that you want to add.
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>) -> Self {
         self.outputs = input;
         self
     }
     /// A list of outputs that you want to add.
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
         &self.outputs
     }
     /// Consumes the builder and constructs a [`AddFlowOutputsInput`](crate::operation::add_flow_outputs::AddFlowOutputsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_flow_outputs::AddFlowOutputsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::add_flow_outputs::AddFlowOutputsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_flow_outputs::AddFlowOutputsInput {
             flow_arn: self.flow_arn,
             outputs: self.outputs,

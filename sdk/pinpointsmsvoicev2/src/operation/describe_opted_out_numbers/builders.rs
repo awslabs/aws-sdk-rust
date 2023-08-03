@@ -28,8 +28,7 @@ impl DescribeOptedOutNumbersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOptedOutNumbersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersInputBuilder,
+    inner: crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersInputBuilder,
 }
 impl DescribeOptedOutNumbersFluentBuilder {
     /// Creates a new `DescribeOptedOutNumbers`.
@@ -40,10 +39,7 @@ impl DescribeOptedOutNumbersFluentBuilder {
         }
     }
     /// Access the DescribeOptedOutNumbers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DescribeOptedOutNumbersFluentBuilder {
             crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DescribeOptedOutNumbersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DescribeOptedOutNumbersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DescribeOptedOutNumbersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError>,
     > {
         self.send_middleware().await
     }
@@ -120,34 +107,23 @@ impl DescribeOptedOutNumbersFluentBuilder {
             crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_opted_out_numbers::paginator::DescribeOptedOutNumbersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_opted_out_numbers::paginator::DescribeOptedOutNumbersPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_opted_out_numbers::paginator::DescribeOptedOutNumbersPaginator {
         crate::operation::describe_opted_out_numbers::paginator::DescribeOptedOutNumbersPaginator::new(self.handle, self.inner)
     }
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
@@ -160,25 +136,17 @@ impl DescribeOptedOutNumbersFluentBuilder {
     /// To override the contents of this collection use [`set_opted_out_numbers`](Self::set_opted_out_numbers).
     ///
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    pub fn opted_out_numbers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opted_out_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opted_out_numbers(input.into());
         self
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    pub fn set_opted_out_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_opted_out_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_opted_out_numbers(input);
         self
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    pub fn get_opted_out_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_opted_out_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_opted_out_numbers()
     }
     /// Appends an item to `Filters`.
@@ -191,17 +159,12 @@ impl DescribeOptedOutNumbersFluentBuilder {
         self
     }
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptedOutFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptedOutFilter>> {
         self.inner.get_filters()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>

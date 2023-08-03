@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`attributes(HashMap<String, String>)`](crate::operation::create_placement::builders::CreatePlacementFluentBuilder::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::operation::create_placement::builders::CreatePlacementFluentBuilder::set_attributes): <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
     /// - On success, responds with [`CreatePlacementOutput`](crate::operation::create_placement::CreatePlacementOutput)
     /// - On failure, responds with [`SdkError<CreatePlacementError>`](crate::operation::create_placement::CreatePlacementError)
-    pub fn create_placement(
-        &self,
-    ) -> crate::operation::create_placement::builders::CreatePlacementFluentBuilder {
-        crate::operation::create_placement::builders::CreatePlacementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_placement(&self) -> crate::operation::create_placement::builders::CreatePlacementFluentBuilder {
+        crate::operation::create_placement::builders::CreatePlacementFluentBuilder::new(self.handle.clone())
     }
 }

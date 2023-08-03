@@ -27,7 +27,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstancesFromSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotInputBuilder,
+    inner: crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotInputBuilder,
 }
 impl CreateInstancesFromSnapshotFluentBuilder {
     /// Creates a new `CreateInstancesFromSnapshot`.
@@ -38,7 +38,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         }
     }
     /// Access the CreateInstancesFromSnapshot as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
             crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
             crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError>,
     > {
         self.customize_middleware().await
     }
@@ -126,25 +115,17 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
     /// <p>The names for your new instances.</p>
-    pub fn instance_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_names(input.into());
         self
     }
     /// <p>The names for your new instances.</p>
-    pub fn set_instance_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_names(input);
         self
     }
     /// <p>The names for your new instances.</p>
-    pub fn get_instance_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_names()
     }
     /// Adds a key-value pair to `attachedDiskMapping`.
@@ -152,23 +133,14 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     /// To override the contents of this collection use [`set_attached_disk_mapping`](Self::set_attached_disk_mapping).
     ///
     /// <p>An object containing information about one or more disk mappings.</p>
-    pub fn attached_disk_mapping(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<crate::types::DiskMap>,
-    ) -> Self {
+    pub fn attached_disk_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::DiskMap>) -> Self {
         self.inner = self.inner.attached_disk_mapping(k.into(), v);
         self
     }
     /// <p>An object containing information about one or more disk mappings.</p>
     pub fn set_attached_disk_mapping(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::DiskMap>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DiskMap>>>,
     ) -> Self {
         self.inner = self.inner.set_attached_disk_mapping(input);
         self
@@ -176,24 +148,16 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     /// <p>An object containing information about one or more disk mappings.</p>
     pub fn get_attached_disk_mapping(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DiskMap>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DiskMap>>> {
         self.inner.get_attached_disk_mapping()
     }
     /// <p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -206,10 +170,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     /// <ul>
     /// <li> <p>This parameter cannot be defined together with the <code>source instance name</code> parameter. The <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.</p> </li>
     /// </ul>
-    pub fn instance_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_snapshot_name(input.into());
         self
     }
@@ -218,10 +179,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     /// <ul>
     /// <li> <p>This parameter cannot be defined together with the <code>source instance name</code> parameter. The <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.</p> </li>
     /// </ul>
-    pub fn set_instance_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_snapshot_name(input);
         self
     }
@@ -268,18 +226,12 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self.inner.get_user_data()
     }
     /// <p>The name for your key pair.</p>
-    pub fn key_pair_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_pair_name(input.into());
         self
     }
     /// <p>The name for your key pair.</p>
-    pub fn set_key_pair_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_pair_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_pair_name(input);
         self
     }
@@ -299,10 +251,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -321,17 +270,12 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self
     }
     /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-    pub fn set_add_ons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>,
-    ) -> Self {
+    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>) -> Self {
         self.inner = self.inner.set_add_ons(input);
         self
     }
     /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-    pub fn get_add_ons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
+    pub fn get_add_ons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
         self.inner.get_add_ons()
     }
     /// <p>The IP address type for the instance.</p>
@@ -344,10 +288,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     /// <p>The IP address type for the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
@@ -363,10 +304,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     /// <li> <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    pub fn source_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_instance_name(input.into());
         self
     }
@@ -376,10 +314,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     /// <li> <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    pub fn set_source_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_instance_name(input);
         self
     }
@@ -440,10 +375,7 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    pub fn set_use_latest_restorable_auto_snapshot(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_use_latest_restorable_auto_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_latest_restorable_auto_snapshot(input);
         self
     }

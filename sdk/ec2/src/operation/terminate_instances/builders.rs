@@ -10,10 +10,7 @@ impl TerminateInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::terminate_instances::TerminateInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_instances::TerminateInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_instances::TerminateInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.terminate_instances();
         fluent_builder.inner = self;
@@ -59,9 +56,7 @@ impl TerminateInstancesFluentBuilder {
         }
     }
     /// Access the TerminateInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::terminate_instances::builders::TerminateInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::terminate_instances::builders::TerminateInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl TerminateInstancesFluentBuilder {
             crate::operation::terminate_instances::TerminateInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_instances::TerminateInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_instances::TerminateInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -85,10 +78,7 @@ impl TerminateInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -97,9 +87,7 @@ impl TerminateInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_instances::TerminateInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_instances::TerminateInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_instances::TerminateInstancesError>,
     > {
         let op = self
             .inner
@@ -122,9 +110,7 @@ impl TerminateInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_instances::TerminateInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_instances::TerminateInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_instances::TerminateInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -138,9 +124,7 @@ impl TerminateInstancesFluentBuilder {
             crate::operation::terminate_instances::TerminateInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_instances::TerminateInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_instances::TerminateInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -156,18 +140,13 @@ impl TerminateInstancesFluentBuilder {
     }
     /// <p>The IDs of the instances.</p>
     /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>The IDs of the instances.</p>
     /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

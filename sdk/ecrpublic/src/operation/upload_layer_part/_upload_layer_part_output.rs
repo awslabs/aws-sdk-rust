@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for UploadLayerPartOutput {
 }
 impl UploadLayerPartOutput {
     /// Creates a new builder-style object to manufacture [`UploadLayerPartOutput`](crate::operation::upload_layer_part::UploadLayerPartOutput).
-    pub fn builder() -> crate::operation::upload_layer_part::builders::UploadLayerPartOutputBuilder
-    {
+    pub fn builder() -> crate::operation::upload_layer_part::builders::UploadLayerPartOutputBuilder {
         crate::operation::upload_layer_part::builders::UploadLayerPartOutputBuilder::default()
     }
 }
 
 /// A builder for [`UploadLayerPartOutput`](crate::operation::upload_layer_part::UploadLayerPartOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadLayerPartOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +73,12 @@ impl UploadLayerPartOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }

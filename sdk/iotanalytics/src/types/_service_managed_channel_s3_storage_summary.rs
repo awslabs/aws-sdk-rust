@@ -13,9 +13,7 @@ impl ServiceManagedChannelS3StorageSummary {
 
 /// A builder for [`ServiceManagedChannelS3StorageSummary`](crate::types::ServiceManagedChannelS3StorageSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceManagedChannelS3StorageSummaryBuilder {}
 impl ServiceManagedChannelS3StorageSummaryBuilder {
     /// Consumes the builder and constructs a [`ServiceManagedChannelS3StorageSummary`](crate::types::ServiceManagedChannelS3StorageSummary).

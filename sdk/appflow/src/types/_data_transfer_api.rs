@@ -70,9 +70,7 @@ impl DataTransferApi {
 
 /// A builder for [`DataTransferApi`](crate::types::DataTransferApi).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataTransferApiBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DataTransferApiType>,
@@ -138,10 +136,7 @@ impl DataTransferApiBuilder {
     /// <p>An asynchronous API. This type of API optimizes a flow for large datasets.</p>
     /// </dd>
     /// </dl>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataTransferApiType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataTransferApiType>) -> Self {
         self.r#type = input;
         self
     }

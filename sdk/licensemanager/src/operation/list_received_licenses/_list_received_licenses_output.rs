@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListReceivedLicensesOutput {
 }
 impl ListReceivedLicensesOutput {
     /// Creates a new builder-style object to manufacture [`ListReceivedLicensesOutput`](crate::operation::list_received_licenses::ListReceivedLicensesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_received_licenses::builders::ListReceivedLicensesOutputBuilder {
+    pub fn builder() -> crate::operation::list_received_licenses::builders::ListReceivedLicensesOutputBuilder {
         crate::operation::list_received_licenses::builders::ListReceivedLicensesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReceivedLicensesOutput`](crate::operation::list_received_licenses::ListReceivedLicensesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReceivedLicensesOutputBuilder {
     pub(crate) licenses: ::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListReceivedLicensesOutputBuilder {
         self
     }
     /// <p>Received license details.</p>
-    pub fn set_licenses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>>,
-    ) -> Self {
+    pub fn set_licenses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>>) -> Self {
         self.licenses = input;
         self
     }
     /// <p>Received license details.</p>
-    pub fn get_licenses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>> {
+    pub fn get_licenses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>> {
         &self.licenses
     }
     /// <p>Token for the next set of results.</p>

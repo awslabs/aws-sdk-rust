@@ -30,10 +30,7 @@ pub fn ser_create_rule_input(
     if let Some(var_9) = &input.trigger_event_source {
         #[allow(unused_mut)]
         let mut object_10 = object.key("TriggerEventSource").start_object();
-        crate::protocol_serde::shape_rule_trigger_event_source::ser_rule_trigger_event_source(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_rule_trigger_event_source::ser_rule_trigger_event_source(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

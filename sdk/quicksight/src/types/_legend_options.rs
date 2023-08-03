@@ -63,9 +63,7 @@ impl LegendOptions {
 
 /// A builder for [`LegendOptions`](crate::types::LegendOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LegendOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) title: ::std::option::Option<crate::types::LabelOptions>,
@@ -80,10 +78,7 @@ impl LegendOptionsBuilder {
         self
     }
     /// <p>Determines whether or not the legend is visible.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -123,10 +118,7 @@ impl LegendOptionsBuilder {
     /// <li> <p> <code>BOTTOM</code> </p> </li>
     /// <li> <p> <code>LEFT</code> </p> </li>
     /// </ul>
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::LegendPosition>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::LegendPosition>) -> Self {
         self.position = input;
         self
     }

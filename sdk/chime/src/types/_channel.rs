@@ -155,10 +155,7 @@ impl ChannelBuilder {
         self
     }
     /// <p>The channel's privacy setting.</p>
-    pub fn set_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelPrivacy>,
-    ) -> Self {
+    pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
         self.privacy = input;
         self
     }
@@ -200,10 +197,7 @@ impl ChannelBuilder {
         self
     }
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -217,17 +211,12 @@ impl ChannelBuilder {
         self
     }
     /// <p>The time at which a member sent the last message in the channel.</p>
-    pub fn set_last_message_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_message_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_message_timestamp = input;
         self
     }
     /// <p>The time at which a member sent the last message in the channel.</p>
-    pub fn get_last_message_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_message_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_message_timestamp
     }
     /// <p>The time at which a channel was last updated.</p>
@@ -236,17 +225,12 @@ impl ChannelBuilder {
         self
     }
     /// <p>The time at which a channel was last updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>The time at which a channel was last updated.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).

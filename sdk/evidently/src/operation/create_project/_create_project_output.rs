@@ -28,9 +28,7 @@ impl CreateProjectOutput {
 
 /// A builder for [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProjectOutputBuilder {
     pub(crate) project: ::std::option::Option<crate::types::Project>,
     _request_id: Option<String>,

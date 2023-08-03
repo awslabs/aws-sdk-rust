@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`job_tag(Option<String>)`](crate::operation::get_content_moderation::GetContentModerationOutput::job_tag): <p>A job identifier specified in the call to StartContentModeration and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     ///   - [`get_request_metadata(Option<GetContentModerationRequestMetadata>)`](crate::operation::get_content_moderation::GetContentModerationOutput::get_request_metadata): <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
     /// - On failure, responds with [`SdkError<GetContentModerationError>`](crate::operation::get_content_moderation::GetContentModerationError)
-    pub fn get_content_moderation(
-        &self,
-    ) -> crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder {
-        crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_content_moderation(&self) -> crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder {
+        crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::new(self.handle.clone())
     }
 }

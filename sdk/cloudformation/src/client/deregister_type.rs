@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`version_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_type::builders::DeregisterTypeFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::deregister_type::builders::DeregisterTypeFluentBuilder::set_version_id): <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
     /// - On success, responds with [`DeregisterTypeOutput`](crate::operation::deregister_type::DeregisterTypeOutput)
     /// - On failure, responds with [`SdkError<DeregisterTypeError>`](crate::operation::deregister_type::DeregisterTypeError)
-    pub fn deregister_type(
-        &self,
-    ) -> crate::operation::deregister_type::builders::DeregisterTypeFluentBuilder {
-        crate::operation::deregister_type::builders::DeregisterTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_type(&self) -> crate::operation::deregister_type::builders::DeregisterTypeFluentBuilder {
+        crate::operation::deregister_type::builders::DeregisterTypeFluentBuilder::new(self.handle.clone())
     }
 }

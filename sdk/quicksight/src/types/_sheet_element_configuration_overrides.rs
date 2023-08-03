@@ -31,9 +31,7 @@ impl SheetElementConfigurationOverrides {
 
 /// A builder for [`SheetElementConfigurationOverrides`](crate::types::SheetElementConfigurationOverrides).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SheetElementConfigurationOverridesBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
@@ -52,10 +50,7 @@ impl SheetElementConfigurationOverridesBuilder {
     /// <li> <p> <code>VISIBLE</code> </p> </li>
     /// <li> <p> <code>HIDDEN</code> </p> </li>
     /// </ul>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -69,8 +64,6 @@ impl SheetElementConfigurationOverridesBuilder {
     }
     /// Consumes the builder and constructs a [`SheetElementConfigurationOverrides`](crate::types::SheetElementConfigurationOverrides).
     pub fn build(self) -> crate::types::SheetElementConfigurationOverrides {
-        crate::types::SheetElementConfigurationOverrides {
-            visibility: self.visibility,
-        }
+        crate::types::SheetElementConfigurationOverrides { visibility: self.visibility }
     }
 }

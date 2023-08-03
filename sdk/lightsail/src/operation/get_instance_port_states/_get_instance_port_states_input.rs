@@ -15,35 +15,25 @@ impl GetInstancePortStatesInput {
 }
 impl GetInstancePortStatesInput {
     /// Creates a new builder-style object to manufacture [`GetInstancePortStatesInput`](crate::operation::get_instance_port_states::GetInstancePortStatesInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_port_states::builders::GetInstancePortStatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_instance_port_states::builders::GetInstancePortStatesInputBuilder {
         crate::operation::get_instance_port_states::builders::GetInstancePortStatesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstancePortStatesInput`](crate::operation::get_instance_port_states::GetInstancePortStatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstancePortStatesInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
 }
 impl GetInstancePortStatesInputBuilder {
     /// <p>The name of the instance for which to return firewall port states.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance for which to return firewall port states.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetInstancePortStatesInputBuilder {
     /// Consumes the builder and constructs a [`GetInstancePortStatesInput`](crate::operation::get_instance_port_states::GetInstancePortStatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_port_states::GetInstancePortStatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_instance_port_states::GetInstancePortStatesInput {
-                instance_name: self.instance_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_instance_port_states::GetInstancePortStatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_instance_port_states::GetInstancePortStatesInput {
+            instance_name: self.instance_name,
+        })
     }
 }

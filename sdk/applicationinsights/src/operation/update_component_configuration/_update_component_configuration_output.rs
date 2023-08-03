@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateComponentConfigurationOutput {
 }
 impl UpdateComponentConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateComponentConfigurationOutput`](crate::operation::update_component_configuration::UpdateComponentConfigurationOutput).
-    pub fn builder() -> crate::operation::update_component_configuration::builders::UpdateComponentConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_component_configuration::builders::UpdateComponentConfigurationOutputBuilder {
         crate::operation::update_component_configuration::builders::UpdateComponentConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateComponentConfigurationOutput`](crate::operation::update_component_configuration::UpdateComponentConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateComponentConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateComponentConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateComponentConfigurationOutput`](crate::operation::update_component_configuration::UpdateComponentConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_component_configuration::UpdateComponentConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_component_configuration::UpdateComponentConfigurationOutput {
         crate::operation::update_component_configuration::UpdateComponentConfigurationOutput {
             _request_id: self._request_id,
         }

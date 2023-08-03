@@ -12,10 +12,7 @@ pub fn ser_create_what_if_analysis_input(
     if let Some(var_3) = &input.time_series_selector {
         #[allow(unused_mut)]
         let mut object_4 = object.key("TimeSeriesSelector").start_object();
-        crate::protocol_serde::shape_time_series_selector::ser_time_series_selector(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_time_series_selector::ser_time_series_selector(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.tags {

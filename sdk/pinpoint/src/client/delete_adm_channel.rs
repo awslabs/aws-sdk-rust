@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAdmChannelOutput`](crate::operation::delete_adm_channel::DeleteAdmChannelOutput) with field(s):
     ///   - [`adm_channel_response(Option<AdmChannelResponse>)`](crate::operation::delete_adm_channel::DeleteAdmChannelOutput::adm_channel_response): <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteAdmChannelError>`](crate::operation::delete_adm_channel::DeleteAdmChannelError)
-    pub fn delete_adm_channel(
-        &self,
-    ) -> crate::operation::delete_adm_channel::builders::DeleteAdmChannelFluentBuilder {
-        crate::operation::delete_adm_channel::builders::DeleteAdmChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_adm_channel(&self) -> crate::operation::delete_adm_channel::builders::DeleteAdmChannelFluentBuilder {
+        crate::operation::delete_adm_channel::builders::DeleteAdmChannelFluentBuilder::new(self.handle.clone())
     }
 }

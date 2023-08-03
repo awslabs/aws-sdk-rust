@@ -30,9 +30,7 @@ impl AssociationStatus {
 
 /// A builder for [`AssociationStatus`](crate::types::AssociationStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociationStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AssociationStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl AssociationStatusBuilder {
         self
     }
     /// <p>The state of the target network association.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationStatusCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::AssociationStatusCode>) -> Self {
         self.code = input;
         self
     }

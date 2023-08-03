@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`discoverer_id(Option<String>)`](crate::operation::stop_discoverer::StopDiscovererOutput::discoverer_id): <p>The ID of the discoverer.</p>
     ///   - [`state(Option<DiscovererState>)`](crate::operation::stop_discoverer::StopDiscovererOutput::state): <p>The state of the discoverer.</p>
     /// - On failure, responds with [`SdkError<StopDiscovererError>`](crate::operation::stop_discoverer::StopDiscovererError)
-    pub fn stop_discoverer(
-        &self,
-    ) -> crate::operation::stop_discoverer::builders::StopDiscovererFluentBuilder {
-        crate::operation::stop_discoverer::builders::StopDiscovererFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_discoverer(&self) -> crate::operation::stop_discoverer::builders::StopDiscovererFluentBuilder {
+        crate::operation::stop_discoverer::builders::StopDiscovererFluentBuilder::new(self.handle.clone())
     }
 }

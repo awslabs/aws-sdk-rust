@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeregisterAccountOutput {
 }
 impl DeregisterAccountOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterAccountOutput`](crate::operation::deregister_account::DeregisterAccountOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_account::builders::DeregisterAccountOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_account::builders::DeregisterAccountOutputBuilder {
         crate::operation::deregister_account::builders::DeregisterAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterAccountOutput`](crate::operation::deregister_account::DeregisterAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterAccountOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AccountStatus>,
     _request_id: Option<String>,

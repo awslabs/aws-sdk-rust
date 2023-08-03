@@ -51,13 +51,10 @@ impl AnalysisPacketHeader {
 
 /// A builder for [`AnalysisPacketHeader`](crate::types::AnalysisPacketHeader).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisPacketHeaderBuilder {
     pub(crate) destination_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) destination_port_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub(crate) destination_port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) source_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) source_port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
@@ -68,27 +65,19 @@ impl AnalysisPacketHeaderBuilder {
     /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
     ///
     /// <p>The destination addresses.</p>
-    pub fn destination_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_addresses.unwrap_or_default();
         v.push(input.into());
         self.destination_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The destination addresses.</p>
-    pub fn set_destination_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destination_addresses = input;
         self
     }
     /// <p>The destination addresses.</p>
-    pub fn get_destination_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destination_addresses
     }
     /// Appends an item to `destination_port_ranges`.
@@ -103,17 +92,12 @@ impl AnalysisPacketHeaderBuilder {
         self
     }
     /// <p>The destination port ranges.</p>
-    pub fn set_destination_port_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
+    pub fn set_destination_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.destination_port_ranges = input;
         self
     }
     /// <p>The destination port ranges.</p>
-    pub fn get_destination_port_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_destination_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         &self.destination_port_ranges
     }
     /// <p>The protocol.</p>
@@ -135,27 +119,19 @@ impl AnalysisPacketHeaderBuilder {
     /// To override the contents of this collection use [`set_source_addresses`](Self::set_source_addresses).
     ///
     /// <p>The source addresses.</p>
-    pub fn source_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_addresses.unwrap_or_default();
         v.push(input.into());
         self.source_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The source addresses.</p>
-    pub fn set_source_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_addresses = input;
         self
     }
     /// <p>The source addresses.</p>
-    pub fn get_source_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_addresses
     }
     /// Appends an item to `source_port_ranges`.
@@ -170,17 +146,12 @@ impl AnalysisPacketHeaderBuilder {
         self
     }
     /// <p>The source port ranges.</p>
-    pub fn set_source_port_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
+    pub fn set_source_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.source_port_ranges = input;
         self
     }
     /// <p>The source port ranges.</p>
-    pub fn get_source_port_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_source_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         &self.source_port_ranges
     }
     /// Consumes the builder and constructs a [`AnalysisPacketHeader`](crate::types::AnalysisPacketHeader).

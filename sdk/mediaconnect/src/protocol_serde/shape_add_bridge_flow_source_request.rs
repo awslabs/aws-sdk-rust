@@ -9,10 +9,7 @@ pub fn ser_add_bridge_flow_source_request(
     if let Some(var_2) = &input.flow_vpc_interface_attachment {
         #[allow(unused_mut)]
         let mut object_3 = object.key("flowVpcInterfaceAttachment").start_object();
-        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.name {

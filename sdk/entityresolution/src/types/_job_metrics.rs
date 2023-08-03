@@ -44,9 +44,7 @@ impl JobMetrics {
 
 /// A builder for [`JobMetrics`](crate::types::JobMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobMetricsBuilder {
     pub(crate) input_records: ::std::option::Option<i32>,
     pub(crate) total_records_processed: ::std::option::Option<i32>,

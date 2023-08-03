@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_configs::ListConfigsOutput::next_token): <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     ///   - [`config_list(Option<Vec<ConfigListItem>>)`](crate::operation::list_configs::ListConfigsOutput::config_list): <p>List of <code>Config</code> items.</p>
     /// - On failure, responds with [`SdkError<ListConfigsError>`](crate::operation::list_configs::ListConfigsError)
-    pub fn list_configs(
-        &self,
-    ) -> crate::operation::list_configs::builders::ListConfigsFluentBuilder {
+    pub fn list_configs(&self) -> crate::operation::list_configs::builders::ListConfigsFluentBuilder {
         crate::operation::list_configs::builders::ListConfigsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`response_templates(Option<HashMap<String, String>>)`](crate::operation::put_integration_response::PutIntegrationResponseOutput::response_templates): <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
     ///   - [`content_handling(Option<ContentHandlingStrategy>)`](crate::operation::put_integration_response::PutIntegrationResponseOutput::content_handling): <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     /// - On failure, responds with [`SdkError<PutIntegrationResponseError>`](crate::operation::put_integration_response::PutIntegrationResponseError)
-    pub fn put_integration_response(
-        &self,
-    ) -> crate::operation::put_integration_response::builders::PutIntegrationResponseFluentBuilder
-    {
+    pub fn put_integration_response(&self) -> crate::operation::put_integration_response::builders::PutIntegrationResponseFluentBuilder {
         crate::operation::put_integration_response::builders::PutIntegrationResponseFluentBuilder::new(self.handle.clone())
     }
 }

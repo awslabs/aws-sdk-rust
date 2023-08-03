@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`sns_role_name(impl ::std::convert::Into<String>)`](crate::operation::put_notification_channel::builders::PutNotificationChannelFluentBuilder::sns_role_name) / [`set_sns_role_name(Option<String>)`](crate::operation::put_notification_channel::builders::PutNotificationChannelFluentBuilder::set_sns_role_name): <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
     /// - On success, responds with [`PutNotificationChannelOutput`](crate::operation::put_notification_channel::PutNotificationChannelOutput)
     /// - On failure, responds with [`SdkError<PutNotificationChannelError>`](crate::operation::put_notification_channel::PutNotificationChannelError)
-    pub fn put_notification_channel(
-        &self,
-    ) -> crate::operation::put_notification_channel::builders::PutNotificationChannelFluentBuilder
-    {
+    pub fn put_notification_channel(&self) -> crate::operation::put_notification_channel::builders::PutNotificationChannelFluentBuilder {
         crate::operation::put_notification_channel::builders::PutNotificationChannelFluentBuilder::new(self.handle.clone())
     }
 }

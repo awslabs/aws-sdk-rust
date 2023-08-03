@@ -37,9 +37,7 @@ impl VpcAttachment {
 
 /// A builder for [`VpcAttachment`](crate::types::VpcAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcAttachmentBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     pub(crate) subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,10 +50,7 @@ impl VpcAttachmentBuilder {
         self
     }
     /// <p>Provides details about the VPC attachment.</p>
-    pub fn set_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::Attachment>,
-    ) -> Self {
+    pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
         self.attachment = input;
         self
     }
@@ -75,17 +70,12 @@ impl VpcAttachmentBuilder {
         self
     }
     /// <p>The subnet ARNs.</p>
-    pub fn set_subnet_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_arns = input;
         self
     }
     /// <p>The subnet ARNs.</p>
-    pub fn get_subnet_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_arns
     }
     /// <p>Provides details about the VPC attachment.</p>

@@ -14,9 +14,7 @@ pub struct ValidationException {
 }
 impl ValidationException {
     /// <p>The type of ValidationException.</p>
-    pub fn validation_exception_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ValidationExceptionType> {
+    pub fn validation_exception_type(&self) -> ::std::option::Option<&crate::types::ValidationExceptionType> {
         self.validation_exception_type.as_ref()
     }
 }
@@ -58,13 +56,10 @@ impl ValidationException {
 
 /// A builder for [`ValidationException`](crate::types::error::ValidationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) validation_exception_type:
-        ::std::option::Option<crate::types::ValidationExceptionType>,
+    pub(crate) validation_exception_type: ::std::option::Option<crate::types::ValidationExceptionType>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
@@ -83,25 +78,17 @@ impl ValidationExceptionBuilder {
         &self.message
     }
     /// <p>The type of ValidationException.</p>
-    pub fn validation_exception_type(
-        mut self,
-        input: crate::types::ValidationExceptionType,
-    ) -> Self {
+    pub fn validation_exception_type(mut self, input: crate::types::ValidationExceptionType) -> Self {
         self.validation_exception_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of ValidationException.</p>
-    pub fn set_validation_exception_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationExceptionType>,
-    ) -> Self {
+    pub fn set_validation_exception_type(mut self, input: ::std::option::Option<crate::types::ValidationExceptionType>) -> Self {
         self.validation_exception_type = input;
         self
     }
     /// <p>The type of ValidationException.</p>
-    pub fn get_validation_exception_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ValidationExceptionType> {
+    pub fn get_validation_exception_type(&self) -> &::std::option::Option<crate::types::ValidationExceptionType> {
         &self.validation_exception_type
     }
     /// Sets error metadata
@@ -111,10 +98,7 @@ impl ValidationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

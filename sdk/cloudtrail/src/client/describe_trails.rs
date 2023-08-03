@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeTrailsOutput`](crate::operation::describe_trails::DescribeTrailsOutput) with field(s):
     ///   - [`trail_list(Option<Vec<Trail>>)`](crate::operation::describe_trails::DescribeTrailsOutput::trail_list): <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
     /// - On failure, responds with [`SdkError<DescribeTrailsError>`](crate::operation::describe_trails::DescribeTrailsError)
-    pub fn describe_trails(
-        &self,
-    ) -> crate::operation::describe_trails::builders::DescribeTrailsFluentBuilder {
-        crate::operation::describe_trails::builders::DescribeTrailsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_trails(&self) -> crate::operation::describe_trails::builders::DescribeTrailsFluentBuilder {
+        crate::operation::describe_trails::builders::DescribeTrailsFluentBuilder::new(self.handle.clone())
     }
 }

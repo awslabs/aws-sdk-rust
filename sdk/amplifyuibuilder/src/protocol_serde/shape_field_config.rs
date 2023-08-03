@@ -18,10 +18,7 @@ pub fn ser_field_config(
     if let Some(var_5) = &input.input_type {
         #[allow(unused_mut)]
         let mut object_6 = object.key("inputType").start_object();
-        crate::protocol_serde::shape_field_input_config::ser_field_input_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_field_input_config::ser_field_input_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.validations {
@@ -41,17 +38,9 @@ pub fn ser_field_config(
 
 pub(crate) fn de_field_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::FieldConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::FieldConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -61,59 +50,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "label" => {
-                                builder = builder.set_label(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "label" => {
+                            builder = builder.set_label(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "position" => {
-                                builder = builder.set_position(
-                                    crate::protocol_serde::shape_field_position::de_field_position(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "excluded" => {
-                                builder = builder.set_excluded(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "inputType" => {
-                                builder = builder.set_input_type(
-                                    crate::protocol_serde::shape_field_input_config::de_field_input_config(tokens)?
-                                );
-                            }
-                            "validations" => {
-                                builder = builder.set_validations(
-                                    crate::protocol_serde::shape_validations_list::de_validations_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "position" => {
+                            builder = builder.set_position(crate::protocol_serde::shape_field_position::de_field_position(tokens)?);
+                        }
+                        "excluded" => {
+                            builder = builder.set_excluded(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "inputType" => {
+                            builder = builder.set_input_type(crate::protocol_serde::shape_field_input_config::de_field_input_config(tokens)?);
+                        }
+                        "validations" => {
+                            builder = builder.set_validations(crate::protocol_serde::shape_validations_list::de_validations_list(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

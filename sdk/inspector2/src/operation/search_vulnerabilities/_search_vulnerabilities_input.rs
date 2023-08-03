@@ -12,9 +12,7 @@ pub struct SearchVulnerabilitiesInput {
 }
 impl SearchVulnerabilitiesInput {
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
-    pub fn filter_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SearchVulnerabilitiesFilterCriteria> {
+    pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::SearchVulnerabilitiesFilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -24,43 +22,31 @@ impl SearchVulnerabilitiesInput {
 }
 impl SearchVulnerabilitiesInput {
     /// Creates a new builder-style object to manufacture [`SearchVulnerabilitiesInput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput).
-    pub fn builder(
-    ) -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesInputBuilder {
+    pub fn builder() -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesInputBuilder {
         crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchVulnerabilitiesInput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesInputBuilder {
-    pub(crate) filter_criteria:
-        ::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria>,
+    pub(crate) filter_criteria: ::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchVulnerabilitiesInputBuilder {
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
-    pub fn filter_criteria(
-        mut self,
-        input: crate::types::SearchVulnerabilitiesFilterCriteria,
-    ) -> Self {
+    pub fn filter_criteria(mut self, input: crate::types::SearchVulnerabilitiesFilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria> {
         &self.filter_criteria
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -80,15 +66,11 @@ impl SearchVulnerabilitiesInputBuilder {
     /// Consumes the builder and constructs a [`SearchVulnerabilitiesInput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput {
-                filter_criteria: self.filter_criteria,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput {
+            filter_criteria: self.filter_criteria,
+            next_token: self.next_token,
+        })
     }
 }

@@ -9,9 +9,7 @@ pub struct OpsEntity {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The data returned by the query.</p>
     #[doc(hidden)]
-    pub data: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>,
-    >,
+    pub data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>>,
 }
 impl OpsEntity {
     /// <p>The query ID.</p>
@@ -19,11 +17,7 @@ impl OpsEntity {
         self.id.as_deref()
     }
     /// <p>The data returned by the query.</p>
-    pub fn data(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>,
-    > {
+    pub fn data(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>> {
         self.data.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl OpsEntity {
 
 /// A builder for [`OpsEntity`](crate::types::OpsEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsEntityBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) data: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>,
-    >,
+    pub(crate) data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>>,
 }
 impl OpsEntityBuilder {
     /// <p>The query ID.</p>
@@ -65,32 +55,19 @@ impl OpsEntityBuilder {
     /// To override the contents of this collection use [`set_data`](Self::set_data).
     ///
     /// <p>The data returned by the query.</p>
-    pub fn data(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::OpsEntityItem,
-    ) -> Self {
+    pub fn data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::OpsEntityItem) -> Self {
         let mut hash_map = self.data.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.data = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The data returned by the query.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>,
-        >,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>>) -> Self {
         self.data = input;
         self
     }
     /// <p>The data returned by the query.</p>
-    pub fn get_data(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>,
-    > {
+    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>> {
         &self.data
     }
     /// Consumes the builder and constructs a [`OpsEntity`](crate::types::OpsEntity).

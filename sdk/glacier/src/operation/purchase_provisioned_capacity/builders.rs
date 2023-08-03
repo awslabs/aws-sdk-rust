@@ -26,7 +26,7 @@ impl PurchaseProvisionedCapacityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseProvisionedCapacityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder,
+    inner: crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder,
 }
 impl PurchaseProvisionedCapacityFluentBuilder {
     /// Creates a new `PurchaseProvisionedCapacity`.
@@ -37,7 +37,7 @@ impl PurchaseProvisionedCapacityFluentBuilder {
         }
     }
     /// Access the PurchaseProvisionedCapacity as a reference.
-    pub fn as_input(&self) -> &crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PurchaseProvisionedCapacityFluentBuilder {
             crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PurchaseProvisionedCapacityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PurchaseProvisionedCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PurchaseProvisionedCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl PurchaseProvisionedCapacityFluentBuilder {
             crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError>,
     > {
         self.customize_middleware().await
     }

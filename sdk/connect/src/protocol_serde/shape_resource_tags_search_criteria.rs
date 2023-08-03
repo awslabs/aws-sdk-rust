@@ -6,10 +6,7 @@ pub fn ser_resource_tags_search_criteria(
     if let Some(var_1) = &input.tag_search_condition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TagSearchCondition").start_object();
-        crate::protocol_serde::shape_tag_search_condition::ser_tag_search_condition(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_tag_search_condition::ser_tag_search_condition(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

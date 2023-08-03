@@ -38,10 +38,7 @@ impl PutProfileObjectTypeFluentBuilder {
         }
     }
     /// Access the PutProfileObjectType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_profile_object_type::builders::PutProfileObjectTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_profile_object_type::builders::PutProfileObjectTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl PutProfileObjectTypeFluentBuilder {
             crate::operation::put_profile_object_type::PutProfileObjectType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_profile_object_type::PutProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_profile_object_type::PutProfileObjectTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl PutProfileObjectTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl PutProfileObjectTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_profile_object_type::PutProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_profile_object_type::PutProfileObjectTypeError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl PutProfileObjectTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_profile_object_type::PutProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_profile_object_type::PutProfileObjectTypeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl PutProfileObjectTypeFluentBuilder {
             crate::operation::put_profile_object_type::PutProfileObjectType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_profile_object_type::PutProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_profile_object_type::PutProfileObjectTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +125,12 @@ impl PutProfileObjectTypeFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_type_name(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_object_type_name(input);
         self
     }
@@ -201,18 +181,12 @@ impl PutProfileObjectTypeFluentBuilder {
         self.inner.get_expiration_days()
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_key(input.into());
         self
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
@@ -235,27 +209,17 @@ impl PutProfileObjectTypeFluentBuilder {
         self.inner.get_allow_profile_creation()
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
-    pub fn source_last_updated_timestamp_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .source_last_updated_timestamp_format(input.into());
+    pub fn source_last_updated_timestamp_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_last_updated_timestamp_format(input.into());
         self
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
-    pub fn set_source_last_updated_timestamp_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_last_updated_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_last_updated_timestamp_format(input);
         self
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
-    pub fn get_source_last_updated_timestamp_format(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_last_updated_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_last_updated_timestamp_format()
     }
     /// Adds a key-value pair to `Fields`.
@@ -263,30 +227,20 @@ impl PutProfileObjectTypeFluentBuilder {
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn fields(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ObjectTypeField,
-    ) -> Self {
+    pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ObjectTypeField) -> Self {
         self.inner = self.inner.fields(k.into(), v);
         self
     }
     /// <p>A map of the name and ObjectType field.</p>
     pub fn set_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
     ) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-    > {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
         self.inner.get_fields()
     }
     /// Adds a key-value pair to `Keys`.
@@ -294,23 +248,14 @@ impl PutProfileObjectTypeFluentBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<crate::types::ObjectTypeKey>,
-    ) -> Self {
+    pub fn keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::ObjectTypeKey>) -> Self {
         self.inner = self.inner.keys(k.into(), v);
         self
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     pub fn set_keys(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::ObjectTypeKey>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
     ) -> Self {
         self.inner = self.inner.set_keys(input);
         self
@@ -318,12 +263,7 @@ impl PutProfileObjectTypeFluentBuilder {
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     pub fn get_keys(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ObjectTypeKey>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>> {
         self.inner.get_keys()
     }
     /// Adds a key-value pair to `Tags`.
@@ -331,30 +271,17 @@ impl PutProfileObjectTypeFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

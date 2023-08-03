@@ -30,7 +30,7 @@ impl ListSubscribedRuleGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSubscribedRuleGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsInputBuilder,
+    inner: crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsInputBuilder,
 }
 impl ListSubscribedRuleGroupsFluentBuilder {
     /// Creates a new `ListSubscribedRuleGroups`.
@@ -41,7 +41,7 @@ impl ListSubscribedRuleGroupsFluentBuilder {
         }
     }
     /// Access the ListSubscribedRuleGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl ListSubscribedRuleGroupsFluentBuilder {
             crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl ListSubscribedRuleGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl ListSubscribedRuleGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl ListSubscribedRuleGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl ListSubscribedRuleGroupsFluentBuilder {
             crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError>,
     > {
         self.customize_middleware().await
     }

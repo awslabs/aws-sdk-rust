@@ -45,17 +45,14 @@ impl DescribePoliciesInput {
 }
 impl DescribePoliciesInput {
     /// Creates a new builder-style object to manufacture [`DescribePoliciesInput`](crate::operation::describe_policies::DescribePoliciesInput).
-    pub fn builder() -> crate::operation::describe_policies::builders::DescribePoliciesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_policies::builders::DescribePoliciesInputBuilder {
         crate::operation::describe_policies::builders::DescribePoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePoliciesInput`](crate::operation::describe_policies::DescribePoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePoliciesInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,18 +62,12 @@ pub struct DescribePoliciesInputBuilder {
 }
 impl DescribePoliciesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -98,18 +89,13 @@ impl DescribePoliciesInputBuilder {
     }
     /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     /// Appends an item to `policy_types`.
@@ -124,17 +110,12 @@ impl DescribePoliciesInputBuilder {
         self
     }
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    pub fn set_policy_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_types = input;
         self
     }
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    pub fn get_policy_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_types
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -168,10 +149,7 @@ impl DescribePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`DescribePoliciesInput`](crate::operation::describe_policies::DescribePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_policies::DescribePoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_policies::DescribePoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_policies::DescribePoliciesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             policy_names: self.policy_names,

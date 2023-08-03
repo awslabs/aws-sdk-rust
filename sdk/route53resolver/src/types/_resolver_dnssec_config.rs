@@ -43,9 +43,7 @@ impl ResolverDnssecConfig {
     /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
     /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
     /// </ul>
-    pub fn validation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResolverDnssecValidationStatus> {
+    pub fn validation_status(&self) -> ::std::option::Option<&crate::types::ResolverDnssecValidationStatus> {
         self.validation_status.as_ref()
     }
 }
@@ -58,15 +56,12 @@ impl ResolverDnssecConfig {
 
 /// A builder for [`ResolverDnssecConfig`](crate::types::ResolverDnssecConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolverDnssecConfigBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) validation_status:
-        ::std::option::Option<crate::types::ResolverDnssecValidationStatus>,
+    pub(crate) validation_status: ::std::option::Option<crate::types::ResolverDnssecValidationStatus>,
 }
 impl ResolverDnssecConfigBuilder {
     /// <p>The ID for a configuration for DNSSEC validation.</p>
@@ -118,10 +113,7 @@ impl ResolverDnssecConfigBuilder {
     /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
     /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
     /// </ul>
-    pub fn validation_status(
-        mut self,
-        input: crate::types::ResolverDnssecValidationStatus,
-    ) -> Self {
+    pub fn validation_status(mut self, input: crate::types::ResolverDnssecValidationStatus) -> Self {
         self.validation_status = ::std::option::Option::Some(input);
         self
     }
@@ -132,10 +124,7 @@ impl ResolverDnssecConfigBuilder {
     /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
     /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
     /// </ul>
-    pub fn set_validation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverDnssecValidationStatus>,
-    ) -> Self {
+    pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::ResolverDnssecValidationStatus>) -> Self {
         self.validation_status = input;
         self
     }
@@ -146,9 +135,7 @@ impl ResolverDnssecConfigBuilder {
     /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
     /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
     /// </ul>
-    pub fn get_validation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolverDnssecValidationStatus> {
+    pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::ResolverDnssecValidationStatus> {
         &self.validation_status
     }
     /// Consumes the builder and constructs a [`ResolverDnssecConfig`](crate::types::ResolverDnssecConfig).

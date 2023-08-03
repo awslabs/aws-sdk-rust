@@ -26,7 +26,7 @@ impl ListMonitoringExecutionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMonitoringExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsInputBuilder,
+    inner: crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsInputBuilder,
 }
 impl ListMonitoringExecutionsFluentBuilder {
     /// Creates a new `ListMonitoringExecutions`.
@@ -37,10 +37,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         }
     }
     /// Access the ListMonitoringExecutions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListMonitoringExecutionsFluentBuilder {
             crate::operation::list_monitoring_executions::ListMonitoringExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitoring_executions::ListMonitoringExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitoring_executions::ListMonitoringExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListMonitoringExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitoring_executions::ListMonitoringExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitoring_executions::ListMonitoringExecutionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitoring_executions::ListMonitoringExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitoring_executions::ListMonitoringExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,34 +105,23 @@ impl ListMonitoringExecutionsFluentBuilder {
             crate::operation::list_monitoring_executions::ListMonitoringExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitoring_executions::ListMonitoringExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitoring_executions::ListMonitoringExecutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_monitoring_executions::paginator::ListMonitoringExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_monitoring_executions::paginator::ListMonitoringExecutionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_monitoring_executions::paginator::ListMonitoringExecutionsPaginator {
         crate::operation::list_monitoring_executions::paginator::ListMonitoringExecutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Name of a specific schedule to fetch jobs for.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitoring_schedule_name(input.into());
         self
     }
     /// <p>Name of a specific schedule to fetch jobs for.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitoring_schedule_name(input);
         self
     }
@@ -153,18 +130,12 @@ impl ListMonitoringExecutionsFluentBuilder {
         self.inner.get_monitoring_schedule_name()
     }
     /// <p>Name of a specific endpoint to fetch jobs for.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>Name of a specific endpoint to fetch jobs for.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
@@ -178,10 +149,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringExecutionSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringExecutionSortKey>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -237,17 +205,12 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>Filter for jobs scheduled before a specified time.</p>
-    pub fn set_scheduled_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_time_before(input);
         self
     }
     /// <p>Filter for jobs scheduled before a specified time.</p>
-    pub fn get_scheduled_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_scheduled_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_scheduled_time_before()
     }
     /// <p>Filter for jobs scheduled after a specified time.</p>
@@ -256,10 +219,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>Filter for jobs scheduled after a specified time.</p>
-    pub fn set_scheduled_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_time_after(input);
         self
     }
@@ -273,10 +233,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only jobs created before a specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -290,10 +247,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only jobs created after a specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -307,17 +261,12 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only jobs modified after a specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>A filter that returns only jobs modified after a specified time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>A filter that returns only jobs modified before a specified time.</p>
@@ -326,17 +275,12 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only jobs modified before a specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>A filter that returns only jobs modified before a specified time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
@@ -345,10 +289,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
@@ -357,25 +298,17 @@ impl ListMonitoringExecutionsFluentBuilder {
         self.inner.get_status_equals()
     }
     /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
-    pub fn monitoring_job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitoring_job_definition_name(input.into());
         self
     }
     /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
-    pub fn set_monitoring_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitoring_job_definition_name(input);
         self
     }
     /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
-    pub fn get_monitoring_job_definition_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_monitoring_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitoring_job_definition_name()
     }
     /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
@@ -384,17 +317,12 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
-    pub fn set_monitoring_type_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringType>,
-    ) -> Self {
+    pub fn set_monitoring_type_equals(mut self, input: ::std::option::Option<crate::types::MonitoringType>) -> Self {
         self.inner = self.inner.set_monitoring_type_equals(input);
         self
     }
     /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
-    pub fn get_monitoring_type_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringType> {
+    pub fn get_monitoring_type_equals(&self) -> &::std::option::Option<crate::types::MonitoringType> {
         self.inner.get_monitoring_type_equals()
     }
 }

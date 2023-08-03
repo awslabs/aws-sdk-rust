@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteGitHubAccountTokenOutput {
 }
 impl DeleteGitHubAccountTokenOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGitHubAccountTokenOutput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput).
-    pub fn builder() -> crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenOutputBuilder{
+    pub fn builder() -> crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenOutputBuilder {
         crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGitHubAccountTokenOutput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGitHubAccountTokenOutputBuilder {
     pub(crate) token_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl DeleteGitHubAccountTokenOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteGitHubAccountTokenOutput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput {
+    pub fn build(self) -> crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput {
         crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput {
             token_name: self.token_name,
             _request_id: self._request_id,

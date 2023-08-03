@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateProfileShareOutput {
 }
 impl CreateProfileShareOutput {
     /// Creates a new builder-style object to manufacture [`CreateProfileShareOutput`](crate::operation::create_profile_share::CreateProfileShareOutput).
-    pub fn builder(
-    ) -> crate::operation::create_profile_share::builders::CreateProfileShareOutputBuilder {
+    pub fn builder() -> crate::operation::create_profile_share::builders::CreateProfileShareOutputBuilder {
         crate::operation::create_profile_share::builders::CreateProfileShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProfileShareOutput`](crate::operation::create_profile_share::CreateProfileShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProfileShareOutputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,

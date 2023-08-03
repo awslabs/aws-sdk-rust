@@ -27,8 +27,7 @@ pub struct EcsContainerOverride {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
     #[doc(hidden)]
-    pub resource_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::EcsResourceRequirement>>,
+    pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::EcsResourceRequirement>>,
 }
 impl EcsContainerOverride {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.</p>
@@ -60,9 +59,7 @@ impl EcsContainerOverride {
         self.name.as_deref()
     }
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-    pub fn resource_requirements(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EcsResourceRequirement]> {
+    pub fn resource_requirements(&self) -> ::std::option::Option<&[crate::types::EcsResourceRequirement]> {
         self.resource_requirements.as_deref()
     }
 }
@@ -75,21 +72,16 @@ impl EcsContainerOverride {
 
 /// A builder for [`EcsContainerOverride`](crate::types::EcsContainerOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsContainerOverrideBuilder {
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cpu: ::std::option::Option<i32>,
-    pub(crate) environment:
-        ::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentVariable>>,
-    pub(crate) environment_files:
-        ::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentFile>>,
+    pub(crate) environment: ::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentVariable>>,
+    pub(crate) environment_files: ::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentFile>>,
     pub(crate) memory: ::std::option::Option<i32>,
     pub(crate) memory_reservation: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::EcsResourceRequirement>>,
+    pub(crate) resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::EcsResourceRequirement>>,
 }
 impl EcsContainerOverrideBuilder {
     /// Appends an item to `command`.
@@ -104,10 +96,7 @@ impl EcsContainerOverrideBuilder {
         self
     }
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }
@@ -141,17 +130,12 @@ impl EcsContainerOverrideBuilder {
         self
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentVariable>>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentVariable>>) -> Self {
         self.environment = input;
         self
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentVariable>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentVariable>> {
         &self.environment
     }
     /// Appends an item to `environment_files`.
@@ -166,17 +150,12 @@ impl EcsContainerOverrideBuilder {
         self
     }
     /// <p>A list of files containing the environment variables to pass to a container, instead of the value from the container definition.</p>
-    pub fn set_environment_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentFile>>,
-    ) -> Self {
+    pub fn set_environment_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentFile>>) -> Self {
         self.environment_files = input;
         self
     }
     /// <p>A list of files containing the environment variables to pass to a container, instead of the value from the container definition.</p>
-    pub fn get_environment_files(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentFile>> {
+    pub fn get_environment_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentFile>> {
         &self.environment_files
     }
     /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default value from the task definition. If your container attempts to exceed the memory specified here, the container is killed. You must also specify a container name.</p>
@@ -233,17 +212,12 @@ impl EcsContainerOverrideBuilder {
         self
     }
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-    pub fn set_resource_requirements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsResourceRequirement>>,
-    ) -> Self {
+    pub fn set_resource_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsResourceRequirement>>) -> Self {
         self.resource_requirements = input;
         self
     }
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-    pub fn get_resource_requirements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsResourceRequirement>> {
+    pub fn get_resource_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsResourceRequirement>> {
         &self.resource_requirements
     }
     /// Consumes the builder and constructs a [`EcsContainerOverride`](crate::types::EcsContainerOverride).

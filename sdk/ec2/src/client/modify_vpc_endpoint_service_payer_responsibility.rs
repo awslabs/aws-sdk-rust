@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`ModifyVpcEndpointServicePayerResponsibilityOutput`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityOutput) with field(s):
     ///   - [`return_value(Option<bool>)`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityOutput::return_value): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<ModifyVpcEndpointServicePayerResponsibilityError>`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityError)
-    pub fn modify_vpc_endpoint_service_payer_responsibility(&self) -> crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityFluentBuilder{
-        crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityFluentBuilder::new(self.handle.clone())
+    pub fn modify_vpc_endpoint_service_payer_responsibility(
+        &self,
+    ) -> crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityFluentBuilder {
+        crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

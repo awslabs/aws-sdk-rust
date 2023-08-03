@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeClientPropertiesOutput`](crate::operation::describe_client_properties::DescribeClientPropertiesOutput) with field(s):
     ///   - [`client_properties_list(Option<Vec<ClientPropertiesResult>>)`](crate::operation::describe_client_properties::DescribeClientPropertiesOutput::client_properties_list): <p>Information about the specified Amazon WorkSpaces clients.</p>
     /// - On failure, responds with [`SdkError<DescribeClientPropertiesError>`](crate::operation::describe_client_properties::DescribeClientPropertiesError)
-    pub fn describe_client_properties(
-        &self,
-    ) -> crate::operation::describe_client_properties::builders::DescribeClientPropertiesFluentBuilder
-    {
+    pub fn describe_client_properties(&self) -> crate::operation::describe_client_properties::builders::DescribeClientPropertiesFluentBuilder {
         crate::operation::describe_client_properties::builders::DescribeClientPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,16 +29,14 @@ impl ListMulticastGroupsByFuotaTaskInput {
 }
 impl ListMulticastGroupsByFuotaTaskInput {
     /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskInput`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskInput).
-    pub fn builder() -> crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskInputBuilder{
+    pub fn builder() -> crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskInputBuilder {
         crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMulticastGroupsByFuotaTaskInput`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMulticastGroupsByFuotaTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,13 +94,10 @@ impl ListMulticastGroupsByFuotaTaskInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskInput {
-                id: self.id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                id: self.id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

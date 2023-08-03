@@ -15,35 +15,25 @@ impl DeleteResolverEndpointInput {
 }
 impl DeleteResolverEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteResolverEndpointInput`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointInputBuilder {
         crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResolverEndpointInput`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResolverEndpointInputBuilder {
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResolverEndpointInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to delete.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to delete.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_endpoint_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteResolverEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResolverEndpointInput`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput {
-                resolver_endpoint_id: self.resolver_endpoint_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput {
+            resolver_endpoint_id: self.resolver_endpoint_id,
+        })
     }
 }

@@ -84,9 +84,7 @@ impl ForecastComputation {
     /// <li> <p> <code>AUTOMATIC</code> </p> </li>
     /// <li> <p> <code>CUSTOM</code>: Checks the custom seasonality value.</p> </li>
     /// </ul>
-    pub fn seasonality(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ForecastComputationSeasonality> {
+    pub fn seasonality(&self) -> ::std::option::Option<&crate::types::ForecastComputationSeasonality> {
         self.seasonality.as_ref()
     }
     /// <p>The custom seasonality value setup of a forecast computation.</p>
@@ -103,9 +101,7 @@ impl ForecastComputation {
 
 /// A builder for [`ForecastComputation`](crate::types::ForecastComputation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForecastComputationBuilder {
     pub(crate) computation_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -121,18 +117,12 @@ pub struct ForecastComputationBuilder {
 }
 impl ForecastComputationBuilder {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn computation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a computation.</p>
-    pub fn set_computation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_computation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.computation_id = input;
         self
     }
@@ -266,10 +256,7 @@ impl ForecastComputationBuilder {
     /// <li> <p> <code>AUTOMATIC</code> </p> </li>
     /// <li> <p> <code>CUSTOM</code>: Checks the custom seasonality value.</p> </li>
     /// </ul>
-    pub fn set_seasonality(
-        mut self,
-        input: ::std::option::Option<crate::types::ForecastComputationSeasonality>,
-    ) -> Self {
+    pub fn set_seasonality(mut self, input: ::std::option::Option<crate::types::ForecastComputationSeasonality>) -> Self {
         self.seasonality = input;
         self
     }
@@ -278,9 +265,7 @@ impl ForecastComputationBuilder {
     /// <li> <p> <code>AUTOMATIC</code> </p> </li>
     /// <li> <p> <code>CUSTOM</code>: Checks the custom seasonality value.</p> </li>
     /// </ul>
-    pub fn get_seasonality(
-        &self,
-    ) -> &::std::option::Option<crate::types::ForecastComputationSeasonality> {
+    pub fn get_seasonality(&self) -> &::std::option::Option<crate::types::ForecastComputationSeasonality> {
         &self.seasonality
     }
     /// <p>The custom seasonality value setup of a forecast computation.</p>

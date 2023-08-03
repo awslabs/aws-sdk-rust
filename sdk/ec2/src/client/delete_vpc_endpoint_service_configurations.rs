@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DeleteVpcEndpointServiceConfigurationsOutput`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsOutput) with field(s):
     ///   - [`unsuccessful(Option<Vec<UnsuccessfulItem>>)`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsOutput::unsuccessful): <p>Information about the service configurations that were not deleted, if applicable.</p>
     /// - On failure, responds with [`SdkError<DeleteVpcEndpointServiceConfigurationsError>`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsError)
-    pub fn delete_vpc_endpoint_service_configurations(&self) -> crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsFluentBuilder{
-        crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsFluentBuilder::new(self.handle.clone())
+    pub fn delete_vpc_endpoint_service_configurations(
+        &self,
+    ) -> crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsFluentBuilder {
+        crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

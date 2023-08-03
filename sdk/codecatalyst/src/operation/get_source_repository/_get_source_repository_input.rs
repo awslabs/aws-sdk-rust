@@ -29,18 +29,14 @@ impl GetSourceRepositoryInput {
 }
 impl GetSourceRepositoryInput {
     /// Creates a new builder-style object to manufacture [`GetSourceRepositoryInput`](crate::operation::get_source_repository::GetSourceRepositoryInput).
-    pub fn builder(
-    ) -> crate::operation::get_source_repository::builders::GetSourceRepositoryInputBuilder {
-        crate::operation::get_source_repository::builders::GetSourceRepositoryInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_source_repository::builders::GetSourceRepositoryInputBuilder {
+        crate::operation::get_source_repository::builders::GetSourceRepositoryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSourceRepositoryInput`](crate::operation::get_source_repository::GetSourceRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSourceRepositoryInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl GetSourceRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`GetSourceRepositoryInput`](crate::operation::get_source_repository::GetSourceRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_source_repository::GetSourceRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_source_repository::GetSourceRepositoryInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_source_repository::GetSourceRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_source_repository::GetSourceRepositoryInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            name: self.name,
+        })
     }
 }

@@ -30,12 +30,9 @@ impl PolicyTypeScope {
 
 /// A builder for [`PolicyTypeScope`](crate::types::PolicyTypeScope).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyTypeScopeBuilder {
-    pub(crate) policy_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityServiceType>>,
+    pub(crate) policy_types: ::std::option::Option<::std::vec::Vec<crate::types::SecurityServiceType>>,
     pub(crate) all_policy_types_enabled: ::std::option::Option<bool>,
 }
 impl PolicyTypeScopeBuilder {
@@ -51,17 +48,12 @@ impl PolicyTypeScopeBuilder {
         self
     }
     /// <p>The list of policy types that the specified Firewall Manager administrator can manage.</p>
-    pub fn set_policy_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityServiceType>>,
-    ) -> Self {
+    pub fn set_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityServiceType>>) -> Self {
         self.policy_types = input;
         self
     }
     /// <p>The list of policy types that the specified Firewall Manager administrator can manage.</p>
-    pub fn get_policy_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityServiceType>> {
+    pub fn get_policy_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityServiceType>> {
         &self.policy_types
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Firewall Manager policy types, except for third-party policy types. Third-party policy types can only be managed by the Firewall Manager default administrator.</p>

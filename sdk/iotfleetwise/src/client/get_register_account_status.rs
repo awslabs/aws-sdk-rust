@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_register_account_status::GetRegisterAccountStatusOutput::creation_time): <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::get_register_account_status::GetRegisterAccountStatusOutput::last_modification_time): <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     /// - On failure, responds with [`SdkError<GetRegisterAccountStatusError>`](crate::operation::get_register_account_status::GetRegisterAccountStatusError)
-    pub fn get_register_account_status(&self) -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusFluentBuilder{
+    pub fn get_register_account_status(&self) -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusFluentBuilder {
         crate::operation::get_register_account_status::builders::GetRegisterAccountStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl CreateAssessmentFrameworkInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkInputBuilder,
+    inner: crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkInputBuilder,
 }
 impl CreateAssessmentFrameworkFluentBuilder {
     /// Creates a new `CreateAssessmentFramework`.
@@ -37,7 +37,7 @@ impl CreateAssessmentFrameworkFluentBuilder {
         }
     }
     /// Access the CreateAssessmentFramework as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateAssessmentFrameworkFluentBuilder {
             crate::operation::create_assessment_framework::CreateAssessmentFramework,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_framework::CreateAssessmentFrameworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateAssessmentFrameworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateAssessmentFrameworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_framework::CreateAssessmentFrameworkError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateAssessmentFrameworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_framework::CreateAssessmentFrameworkError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateAssessmentFrameworkFluentBuilder {
             crate::operation::create_assessment_framework::CreateAssessmentFramework,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_framework::CreateAssessmentFrameworkError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +138,12 @@ impl CreateAssessmentFrameworkFluentBuilder {
         self.inner.get_description()
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn compliance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compliance_type(input.into());
         self
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compliance_type(input);
         self
     }
@@ -173,28 +156,17 @@ impl CreateAssessmentFrameworkFluentBuilder {
     /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
     ///
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn control_sets(
-        mut self,
-        input: crate::types::CreateAssessmentFrameworkControlSet,
-    ) -> Self {
+    pub fn control_sets(mut self, input: crate::types::CreateAssessmentFrameworkControlSet) -> Self {
         self.inner = self.inner.control_sets(input);
         self
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn set_control_sets(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>,
-        >,
-    ) -> Self {
+    pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>) -> Self {
         self.inner = self.inner.set_control_sets(input);
         self
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn get_control_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>
-    {
+    pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>> {
         self.inner.get_control_sets()
     }
     /// Adds a key-value pair to `tags`.
@@ -202,30 +174,17 @@ impl CreateAssessmentFrameworkFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags that are associated with the framework. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags that are associated with the framework. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> The tags that are associated with the framework. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

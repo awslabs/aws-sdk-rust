@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeDashboardOutput {
 }
 impl DescribeDashboardOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardOutput`](crate::operation::describe_dashboard::DescribeDashboardOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder {
+    pub fn builder() -> crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder {
         crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDashboardOutput`](crate::operation::describe_dashboard::DescribeDashboardOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDashboardOutputBuilder {
     pub(crate) dashboard: ::std::option::Option<crate::types::Dashboard>,
     pub(crate) status: ::std::option::Option<i32>,

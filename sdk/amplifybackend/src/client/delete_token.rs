@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTokenOutput`](crate::operation::delete_token::DeleteTokenOutput) with field(s):
     ///   - [`is_success(Option<bool>)`](crate::operation::delete_token::DeleteTokenOutput::is_success): <p>Indicates whether the request succeeded or failed.</p>
     /// - On failure, responds with [`SdkError<DeleteTokenError>`](crate::operation::delete_token::DeleteTokenError)
-    pub fn delete_token(
-        &self,
-    ) -> crate::operation::delete_token::builders::DeleteTokenFluentBuilder {
+    pub fn delete_token(&self) -> crate::operation::delete_token::builders::DeleteTokenFluentBuilder {
         crate::operation::delete_token::builders::DeleteTokenFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RunStatementOutput`](crate::operation::run_statement::RunStatementOutput) with field(s):
     ///   - [`id(i32)`](crate::operation::run_statement::RunStatementOutput::id): <p>Returns the Id of the statement that was run.</p>
     /// - On failure, responds with [`SdkError<RunStatementError>`](crate::operation::run_statement::RunStatementError)
-    pub fn run_statement(
-        &self,
-    ) -> crate::operation::run_statement::builders::RunStatementFluentBuilder {
-        crate::operation::run_statement::builders::RunStatementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn run_statement(&self) -> crate::operation::run_statement::builders::RunStatementFluentBuilder {
+        crate::operation::run_statement::builders::RunStatementFluentBuilder::new(self.handle.clone())
     }
 }

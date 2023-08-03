@@ -10,10 +10,7 @@ impl DescribeConnectorsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_connectors::DescribeConnectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connectors::DescribeConnectorsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connectors::DescribeConnectorsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_connectors();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeConnectorsFluentBuilder {
         }
     }
     /// Access the DescribeConnectors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeConnectorsFluentBuilder {
             crate::operation::describe_connectors::DescribeConnectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connectors::DescribeConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connectors::DescribeConnectorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeConnectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeConnectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connectors::DescribeConnectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connectors::DescribeConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connectors::DescribeConnectorsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeConnectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connectors::DescribeConnectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connectors::DescribeConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connectors::DescribeConnectorsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeConnectorsFluentBuilder {
             crate::operation::describe_connectors::DescribeConnectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connectors::DescribeConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connectors::DescribeConnectorsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator {
-        crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator {
+        crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `connectorTypes`.
     ///
@@ -143,17 +122,12 @@ impl DescribeConnectorsFluentBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
-    ) -> Self {
+    pub fn set_connector_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>) -> Self {
         self.inner = self.inner.set_connector_types(input);
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn get_connector_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>> {
+    pub fn get_connector_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>> {
         self.inner.get_connector_types()
     }
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>

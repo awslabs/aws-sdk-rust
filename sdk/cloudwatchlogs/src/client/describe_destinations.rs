@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`destinations(Option<Vec<Destination>>)`](crate::operation::describe_destinations::DescribeDestinationsOutput::destinations): <p>The destinations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_destinations::DescribeDestinationsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeDestinationsError>`](crate::operation::describe_destinations::DescribeDestinationsError)
-    pub fn describe_destinations(
-        &self,
-    ) -> crate::operation::describe_destinations::builders::DescribeDestinationsFluentBuilder {
-        crate::operation::describe_destinations::builders::DescribeDestinationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_destinations(&self) -> crate::operation::describe_destinations::builders::DescribeDestinationsFluentBuilder {
+        crate::operation::describe_destinations::builders::DescribeDestinationsFluentBuilder::new(self.handle.clone())
     }
 }

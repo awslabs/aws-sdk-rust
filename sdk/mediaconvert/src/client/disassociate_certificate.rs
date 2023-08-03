@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder::set_arn): The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
     /// - On success, responds with [`DisassociateCertificateOutput`](crate::operation::disassociate_certificate::DisassociateCertificateOutput)
     /// - On failure, responds with [`SdkError<DisassociateCertificateError>`](crate::operation::disassociate_certificate::DisassociateCertificateError)
-    pub fn disassociate_certificate(
-        &self,
-    ) -> crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder
-    {
+    pub fn disassociate_certificate(&self) -> crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder {
         crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder::new(self.handle.clone())
     }
 }

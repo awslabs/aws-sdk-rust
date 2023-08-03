@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterGameServerOutput`](crate::operation::register_game_server::RegisterGameServerOutput) with field(s):
     ///   - [`game_server(Option<GameServer>)`](crate::operation::register_game_server::RegisterGameServerOutput::game_server): <p>Object that describes the newly registered game server.</p>
     /// - On failure, responds with [`SdkError<RegisterGameServerError>`](crate::operation::register_game_server::RegisterGameServerError)
-    pub fn register_game_server(
-        &self,
-    ) -> crate::operation::register_game_server::builders::RegisterGameServerFluentBuilder {
-        crate::operation::register_game_server::builders::RegisterGameServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_game_server(&self) -> crate::operation::register_game_server::builders::RegisterGameServerFluentBuilder {
+        crate::operation::register_game_server::builders::RegisterGameServerFluentBuilder::new(self.handle.clone())
     }
 }

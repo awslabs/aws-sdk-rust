@@ -23,9 +23,7 @@ impl UserPoolPolicyType {
 
 /// A builder for [`UserPoolPolicyType`](crate::types::UserPoolPolicyType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserPoolPolicyTypeBuilder {
     pub(crate) password_policy: ::std::option::Option<crate::types::PasswordPolicyType>,
 }
@@ -36,10 +34,7 @@ impl UserPoolPolicyTypeBuilder {
         self
     }
     /// <p>The password policy.</p>
-    pub fn set_password_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::PasswordPolicyType>,
-    ) -> Self {
+    pub fn set_password_policy(mut self, input: ::std::option::Option<crate::types::PasswordPolicyType>) -> Self {
         self.password_policy = input;
         self
     }

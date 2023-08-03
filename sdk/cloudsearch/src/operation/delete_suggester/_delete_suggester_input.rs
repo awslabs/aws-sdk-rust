@@ -30,9 +30,7 @@ impl DeleteSuggesterInput {
 
 /// A builder for [`DeleteSuggesterInput`](crate::operation::delete_suggester::DeleteSuggesterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSuggesterInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) suggester_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl DeleteSuggesterInputBuilder {
         &self.domain_name
     }
     /// <p>Specifies the name of the suggester you want to delete.</p>
-    pub fn suggester_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suggester_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suggester_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the suggester you want to delete.</p>
-    pub fn set_suggester_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suggester_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suggester_name = input;
         self
     }
@@ -75,10 +67,7 @@ impl DeleteSuggesterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSuggesterInput`](crate::operation::delete_suggester::DeleteSuggesterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_suggester::DeleteSuggesterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_suggester::DeleteSuggesterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_suggester::DeleteSuggesterInput {
             domain_name: self.domain_name,
             suggester_name: self.suggester_name,

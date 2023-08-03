@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HandshakeState {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for HandshakeState {
             "EXPIRED" => HandshakeState::Expired,
             "OPEN" => HandshakeState::Open,
             "REQUESTED" => HandshakeState::Requested,
-            other => {
-                HandshakeState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => HandshakeState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl HandshakeState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCEPTED",
-            "CANCELED",
-            "DECLINED",
-            "EXPIRED",
-            "OPEN",
-            "REQUESTED",
-        ]
+        &["ACCEPTED", "CANCELED", "DECLINED", "EXPIRED", "OPEN", "REQUESTED"]
     }
 }
 impl ::std::convert::AsRef<str> for HandshakeState {

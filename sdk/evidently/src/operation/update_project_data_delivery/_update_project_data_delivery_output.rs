@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateProjectDataDeliveryOutput {
 }
 impl UpdateProjectDataDeliveryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectDataDeliveryOutput`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput).
-    pub fn builder() -> crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryOutputBuilder{
+    pub fn builder() -> crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryOutputBuilder {
         crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProjectDataDeliveryOutput`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProjectDataDeliveryOutputBuilder {
     pub(crate) project: ::std::option::Option<crate::types::Project>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl UpdateProjectDataDeliveryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateProjectDataDeliveryOutput`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput {
+    pub fn build(self) -> crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput {
         crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput {
             project: self.project,
             _request_id: self._request_id,

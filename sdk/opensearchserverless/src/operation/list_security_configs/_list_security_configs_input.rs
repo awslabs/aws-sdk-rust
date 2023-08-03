@@ -29,18 +29,14 @@ impl ListSecurityConfigsInput {
 }
 impl ListSecurityConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityConfigsInput`](crate::operation::list_security_configs::ListSecurityConfigsInput).
-    pub fn builder(
-    ) -> crate::operation::list_security_configs::builders::ListSecurityConfigsInputBuilder {
-        crate::operation::list_security_configs::builders::ListSecurityConfigsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_security_configs::builders::ListSecurityConfigsInputBuilder {
+        crate::operation::list_security_configs::builders::ListSecurityConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityConfigsInput`](crate::operation::list_security_configs::ListSecurityConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityConfigsInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityConfigType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl ListSecurityConfigsInputBuilder {
         self
     }
     /// <p>The type of security configuration.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityConfigType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityConfigType>) -> Self {
         self.r#type = input;
         self
     }
@@ -95,16 +88,12 @@ impl ListSecurityConfigsInputBuilder {
     /// Consumes the builder and constructs a [`ListSecurityConfigsInput`](crate::operation::list_security_configs::ListSecurityConfigsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_security_configs::ListSecurityConfigsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_security_configs::ListSecurityConfigsInput {
-                r#type: self.r#type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_security_configs::ListSecurityConfigsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_security_configs::ListSecurityConfigsInput {
+            r#type: self.r#type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

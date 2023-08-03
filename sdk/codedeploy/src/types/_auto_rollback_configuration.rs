@@ -30,9 +30,7 @@ impl AutoRollbackConfiguration {
 
 /// A builder for [`AutoRollbackConfiguration`](crate::types::AutoRollbackConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoRollbackConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>>,
@@ -64,17 +62,12 @@ impl AutoRollbackConfigurationBuilder {
         self
     }
     /// <p>The event type or types that trigger a rollback.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>The event type or types that trigger a rollback.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`AutoRollbackConfiguration`](crate::types::AutoRollbackConfiguration).

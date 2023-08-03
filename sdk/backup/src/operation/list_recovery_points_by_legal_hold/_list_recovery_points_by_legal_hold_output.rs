@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRecoveryPointsByLegalHoldOutput {
 }
 impl ListRecoveryPointsByLegalHoldOutput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryPointsByLegalHoldOutput`](crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput).
-    pub fn builder() -> crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldOutputBuilder{
+    pub fn builder() -> crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldOutputBuilder {
         crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecoveryPointsByLegalHoldOutput`](crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByLegalHoldOutputBuilder {
-    pub(crate) recovery_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>>,
+    pub(crate) recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListRecoveryPointsByLegalHoldOutputBuilder {
         self
     }
     /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
-    pub fn set_recovery_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>>,
-    ) -> Self {
+    pub fn set_recovery_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>>) -> Self {
         self.recovery_points = input;
         self
     }
     /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
-    pub fn get_recovery_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>> {
+    pub fn get_recovery_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>> {
         &self.recovery_points
     }
     /// <p>This return is the next item following a partial list of returned resources.</p>
@@ -94,10 +86,7 @@ impl ListRecoveryPointsByLegalHoldOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRecoveryPointsByLegalHoldOutput`](crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput
-    {
+    pub fn build(self) -> crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput {
         crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput {
             recovery_points: self.recovery_points,
             next_token: self.next_token,

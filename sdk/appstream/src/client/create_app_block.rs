@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAppBlockOutput`](crate::operation::create_app_block::CreateAppBlockOutput) with field(s):
     ///   - [`app_block(Option<AppBlock>)`](crate::operation::create_app_block::CreateAppBlockOutput::app_block): <p>The app block.</p>
     /// - On failure, responds with [`SdkError<CreateAppBlockError>`](crate::operation::create_app_block::CreateAppBlockError)
-    pub fn create_app_block(
-        &self,
-    ) -> crate::operation::create_app_block::builders::CreateAppBlockFluentBuilder {
-        crate::operation::create_app_block::builders::CreateAppBlockFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_app_block(&self) -> crate::operation::create_app_block::builders::CreateAppBlockFluentBuilder {
+        crate::operation::create_app_block::builders::CreateAppBlockFluentBuilder::new(self.handle.clone())
     }
 }

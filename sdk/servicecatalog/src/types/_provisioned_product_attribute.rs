@@ -187,9 +187,7 @@ impl ProvisionedProductAttribute {
 
 /// A builder for [`ProvisionedProductAttribute`](crate::types::ProvisionedProductAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedProductAttributeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -288,10 +286,7 @@ impl ProvisionedProductAttributeBuilder {
     /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedProductStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProvisionedProductStatus>) -> Self {
         self.status = input;
         self
     }
@@ -307,18 +302,12 @@ impl ProvisionedProductAttributeBuilder {
         &self.status
     }
     /// <p>The current status message of the provisioned product.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status message of the provisioned product.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -332,10 +321,7 @@ impl ProvisionedProductAttributeBuilder {
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -344,18 +330,12 @@ impl ProvisionedProductAttributeBuilder {
         &self.created_time
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -364,18 +344,12 @@ impl ProvisionedProductAttributeBuilder {
         &self.idempotency_token
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
-    pub fn last_record_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_record_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
-    pub fn set_last_record_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_record_id = input;
         self
     }
@@ -390,10 +364,7 @@ impl ProvisionedProductAttributeBuilder {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn last_provisioning_record_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_provisioning_record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_provisioning_record_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -404,10 +375,7 @@ impl ProvisionedProductAttributeBuilder {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn set_last_provisioning_record_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_provisioning_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_provisioning_record_id = input;
         self
     }
@@ -428,10 +396,7 @@ impl ProvisionedProductAttributeBuilder {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn last_successful_provisioning_record_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_successful_provisioning_record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_successful_provisioning_record_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -442,10 +407,7 @@ impl ProvisionedProductAttributeBuilder {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn set_last_successful_provisioning_record_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_successful_provisioning_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_successful_provisioning_record_id = input;
         self
     }
@@ -456,9 +418,7 @@ impl ProvisionedProductAttributeBuilder {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn get_last_successful_provisioning_record_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_successful_provisioning_record_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_successful_provisioning_record_id
     }
     /// Appends an item to `tags`.
@@ -473,10 +433,7 @@ impl ProvisionedProductAttributeBuilder {
         self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -527,18 +484,12 @@ impl ProvisionedProductAttributeBuilder {
         &self.product_name
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
@@ -547,18 +498,12 @@ impl ProvisionedProductAttributeBuilder {
         &self.provisioning_artifact_id
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn provisioning_artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_name = input;
         self
     }
@@ -581,18 +526,12 @@ impl ProvisionedProductAttributeBuilder {
         &self.user_arn
     }
     /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
-    pub fn user_arn_session(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_arn_session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn_session = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
-    pub fn set_user_arn_session(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_arn_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn_session = input;
         self
     }

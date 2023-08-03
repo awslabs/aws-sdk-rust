@@ -22,34 +22,26 @@ impl DisassociatePhoneNumberContactFlowInput {
 }
 impl DisassociatePhoneNumberContactFlowInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumberContactFlowInput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput).
-    pub fn builder() -> crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowInputBuilder {
         crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociatePhoneNumberContactFlowInput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumberContactFlowInputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociatePhoneNumberContactFlowInputBuilder {
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the phone number.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -72,14 +64,17 @@ impl DisassociatePhoneNumberContactFlowInputBuilder {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumberContactFlowInput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput {
-                phone_number_id: self.phone_number_id
-                ,
-                instance_id: self.instance_id
-                ,
-            }
+                phone_number_id: self.phone_number_id,
+                instance_id: self.instance_id,
+            },
         )
     }
 }

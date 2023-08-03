@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AcceptVpcEndpointConnectionsOutput`](crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput) with field(s):
     ///   - [`unsuccessful(Option<Vec<UnsuccessfulItem>>)`](crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput::unsuccessful): <p>Information about the interface endpoints that were not accepted, if applicable.</p>
     /// - On failure, responds with [`SdkError<AcceptVpcEndpointConnectionsError>`](crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError)
-    pub fn accept_vpc_endpoint_connections(&self) -> crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsFluentBuilder{
+    pub fn accept_vpc_endpoint_connections(
+        &self,
+    ) -> crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsFluentBuilder {
         crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

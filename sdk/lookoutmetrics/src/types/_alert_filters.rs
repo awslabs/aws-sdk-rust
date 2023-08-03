@@ -9,8 +9,7 @@ pub struct AlertFilters {
     pub metric_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
     #[doc(hidden)]
-    pub dimension_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
+    pub dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
 }
 impl AlertFilters {
     /// <p>The list of measures that you want to get alerts for.</p>
@@ -31,13 +30,10 @@ impl AlertFilters {
 
 /// A builder for [`AlertFilters`](crate::types::AlertFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlertFiltersBuilder {
     pub(crate) metric_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) dimension_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
+    pub(crate) dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
 }
 impl AlertFiltersBuilder {
     /// Appends an item to `metric_list`.
@@ -52,17 +48,12 @@ impl AlertFiltersBuilder {
         self
     }
     /// <p>The list of measures that you want to get alerts for.</p>
-    pub fn set_metric_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_list = input;
         self
     }
     /// <p>The list of measures that you want to get alerts for.</p>
-    pub fn get_metric_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_list
     }
     /// Appends an item to `dimension_filter_list`.
@@ -77,17 +68,12 @@ impl AlertFiltersBuilder {
         self
     }
     /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
-    pub fn set_dimension_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
-    ) -> Self {
+    pub fn set_dimension_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>) -> Self {
         self.dimension_filter_list = input;
         self
     }
     /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
-    pub fn get_dimension_filter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
+    pub fn get_dimension_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
         &self.dimension_filter_list
     }
     /// Consumes the builder and constructs a [`AlertFilters`](crate::types::AlertFilters).

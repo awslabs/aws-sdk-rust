@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateNotebookInstanceOutput {
 }
 impl UpdateNotebookInstanceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNotebookInstanceOutput`](crate::operation::update_notebook_instance::UpdateNotebookInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceOutputBuilder {
         crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNotebookInstanceOutput`](crate::operation::update_notebook_instance::UpdateNotebookInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNotebookInstanceOutputBuilder {
     _request_id: Option<String>,
 }

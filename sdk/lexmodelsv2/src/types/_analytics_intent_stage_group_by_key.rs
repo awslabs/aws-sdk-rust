@@ -30,9 +30,7 @@ impl AnalyticsIntentStageGroupByKey {
 
 /// A builder for [`AnalyticsIntentStageGroupByKey`](crate::types::AnalyticsIntentStageGroupByKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsIntentStageGroupByKeyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentStageField>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl AnalyticsIntentStageGroupByKeyBuilder {
         self
     }
     /// <p>A category by which the intent stage analytics were grouped.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsIntentStageField>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentStageField>) -> Self {
         self.name = input;
         self
     }

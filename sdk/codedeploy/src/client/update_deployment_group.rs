@@ -24,12 +24,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDeploymentGroupOutput`](crate::operation::update_deployment_group::UpdateDeploymentGroupOutput) with field(s):
     ///   - [`hooks_not_cleaned_up(Option<Vec<AutoScalingGroup>>)`](crate::operation::update_deployment_group::UpdateDeploymentGroupOutput::hooks_not_cleaned_up): <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<UpdateDeploymentGroupError>`](crate::operation::update_deployment_group::UpdateDeploymentGroupError)
-    pub fn update_deployment_group(
-        &self,
-    ) -> crate::operation::update_deployment_group::builders::UpdateDeploymentGroupFluentBuilder
-    {
-        crate::operation::update_deployment_group::builders::UpdateDeploymentGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_deployment_group(&self) -> crate::operation::update_deployment_group::builders::UpdateDeploymentGroupFluentBuilder {
+        crate::operation::update_deployment_group::builders::UpdateDeploymentGroupFluentBuilder::new(self.handle.clone())
     }
 }

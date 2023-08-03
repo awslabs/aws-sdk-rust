@@ -20,9 +20,7 @@ impl PropertyValidationExceptionProperty {
         self.property_path.as_deref()
     }
     /// <p>Why the property is not valid.</p>
-    pub fn reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PropertyValidationExceptionReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::PropertyValidationExceptionReason> {
         self.reason.as_ref()
     }
     /// <p>A message describing why the property is not valid.</p>
@@ -39,9 +37,7 @@ impl PropertyValidationExceptionProperty {
 
 /// A builder for [`PropertyValidationExceptionProperty`](crate::types::PropertyValidationExceptionProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyValidationExceptionPropertyBuilder {
     pub(crate) property_path: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::PropertyValidationExceptionReason>,
@@ -49,18 +45,12 @@ pub struct PropertyValidationExceptionPropertyBuilder {
 }
 impl PropertyValidationExceptionPropertyBuilder {
     /// <p>The full property path.</p>
-    pub fn property_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full property path.</p>
-    pub fn set_property_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_path = input;
         self
     }
@@ -74,17 +64,12 @@ impl PropertyValidationExceptionPropertyBuilder {
         self
     }
     /// <p>Why the property is not valid.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyValidationExceptionReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::PropertyValidationExceptionReason>) -> Self {
         self.reason = input;
         self
     }
     /// <p>Why the property is not valid.</p>
-    pub fn get_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::PropertyValidationExceptionReason> {
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::PropertyValidationExceptionReason> {
         &self.reason
     }
     /// <p>A message describing why the property is not valid.</p>

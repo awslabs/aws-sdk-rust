@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`training_job_name(impl ::std::convert::Into<String>)`](crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder::training_job_name) / [`set_training_job_name(Option<String>)`](crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder::set_training_job_name): <p>The name of the training job to stop.</p>
     /// - On success, responds with [`StopTrainingJobOutput`](crate::operation::stop_training_job::StopTrainingJobOutput)
     /// - On failure, responds with [`SdkError<StopTrainingJobError>`](crate::operation::stop_training_job::StopTrainingJobError)
-    pub fn stop_training_job(
-        &self,
-    ) -> crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder {
-        crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_training_job(&self) -> crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder {
+        crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder::new(self.handle.clone())
     }
 }

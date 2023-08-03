@@ -6,14 +6,11 @@
 pub struct AwsManagedResources {
     /// <p> The choice of application destination that you specify. </p>
     #[doc(hidden)]
-    pub target_destination:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>>,
+    pub target_destination: ::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>>,
 }
 impl AwsManagedResources {
     /// <p> The choice of application destination that you specify. </p>
-    pub fn target_destination(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsManagedTargetDestination]> {
+    pub fn target_destination(&self) -> ::std::option::Option<&[crate::types::AwsManagedTargetDestination]> {
         self.target_destination.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl AwsManagedResources {
 
 /// A builder for [`AwsManagedResources`](crate::types::AwsManagedResources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsManagedResourcesBuilder {
-    pub(crate) target_destination:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>>,
+    pub(crate) target_destination: ::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>>,
 }
 impl AwsManagedResourcesBuilder {
     /// Appends an item to `target_destination`.
@@ -46,17 +40,12 @@ impl AwsManagedResourcesBuilder {
         self
     }
     /// <p> The choice of application destination that you specify. </p>
-    pub fn set_target_destination(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>>,
-    ) -> Self {
+    pub fn set_target_destination(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>>) -> Self {
         self.target_destination = input;
         self
     }
     /// <p> The choice of application destination that you specify. </p>
-    pub fn get_target_destination(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>> {
+    pub fn get_target_destination(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>> {
         &self.target_destination
     }
     /// Consumes the builder and constructs a [`AwsManagedResources`](crate::types::AwsManagedResources).

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateClassifierOutput {
 }
 impl UpdateClassifierOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClassifierOutput`](crate::operation::update_classifier::UpdateClassifierOutput).
-    pub fn builder() -> crate::operation::update_classifier::builders::UpdateClassifierOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_classifier::builders::UpdateClassifierOutputBuilder {
         crate::operation::update_classifier::builders::UpdateClassifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClassifierOutput`](crate::operation::update_classifier::UpdateClassifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClassifierOutputBuilder {
     _request_id: Option<String>,
 }

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDataSetImportTaskOutput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput::task_id): <p>The task identifier. This operation is asynchronous. Use this identifier with the <code>GetDataSetImportTask</code> operation to obtain the status of this task.</p>
     /// - On failure, responds with [`SdkError<CreateDataSetImportTaskError>`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskError)
-    pub fn create_data_set_import_task(
-        &self,
-    ) -> crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskFluentBuilder
-    {
+    pub fn create_data_set_import_task(&self) -> crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskFluentBuilder {
         crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskFluentBuilder::new(self.handle.clone())
     }
 }

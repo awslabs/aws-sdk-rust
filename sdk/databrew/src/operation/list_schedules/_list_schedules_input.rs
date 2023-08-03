@@ -36,9 +36,7 @@ impl ListSchedulesInput {
 
 /// A builder for [`ListSchedulesInput`](crate::operation::list_schedules::ListSchedulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchedulesInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -90,10 +88,7 @@ impl ListSchedulesInputBuilder {
     /// Consumes the builder and constructs a [`ListSchedulesInput`](crate::operation::list_schedules::ListSchedulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_schedules::ListSchedulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_schedules::ListSchedulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schedules::ListSchedulesInput {
             job_name: self.job_name,
             max_results: self.max_results,

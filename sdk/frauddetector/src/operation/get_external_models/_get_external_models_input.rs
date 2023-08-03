@@ -29,17 +29,14 @@ impl GetExternalModelsInput {
 }
 impl GetExternalModelsInput {
     /// Creates a new builder-style object to manufacture [`GetExternalModelsInput`](crate::operation::get_external_models::GetExternalModelsInput).
-    pub fn builder(
-    ) -> crate::operation::get_external_models::builders::GetExternalModelsInputBuilder {
+    pub fn builder() -> crate::operation::get_external_models::builders::GetExternalModelsInputBuilder {
         crate::operation::get_external_models::builders::GetExternalModelsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetExternalModelsInput`](crate::operation::get_external_models::GetExternalModelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExternalModelsInputBuilder {
     pub(crate) model_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct GetExternalModelsInputBuilder {
 }
 impl GetExternalModelsInputBuilder {
     /// <p>The Amazon SageMaker model endpoint.</p>
-    pub fn model_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon SageMaker model endpoint.</p>
-    pub fn set_model_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_endpoint = input;
         self
     }
@@ -97,16 +88,11 @@ impl GetExternalModelsInputBuilder {
     /// Consumes the builder and constructs a [`GetExternalModelsInput`](crate::operation::get_external_models::GetExternalModelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_external_models::GetExternalModelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_external_models::GetExternalModelsInput {
-                model_endpoint: self.model_endpoint,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_external_models::GetExternalModelsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_external_models::GetExternalModelsInput {
+            model_endpoint: self.model_endpoint,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

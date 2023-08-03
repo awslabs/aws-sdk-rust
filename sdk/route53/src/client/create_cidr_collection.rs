@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`collection(Option<CidrCollection>)`](crate::operation::create_cidr_collection::CreateCidrCollectionOutput::collection): <p>A complex type that contains information about the CIDR collection.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_cidr_collection::CreateCidrCollectionOutput::location): <p>A unique URL that represents the location for the CIDR collection.</p>
     /// - On failure, responds with [`SdkError<CreateCidrCollectionError>`](crate::operation::create_cidr_collection::CreateCidrCollectionError)
-    pub fn create_cidr_collection(
-        &self,
-    ) -> crate::operation::create_cidr_collection::builders::CreateCidrCollectionFluentBuilder {
-        crate::operation::create_cidr_collection::builders::CreateCidrCollectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_cidr_collection(&self) -> crate::operation::create_cidr_collection::builders::CreateCidrCollectionFluentBuilder {
+        crate::operation::create_cidr_collection::builders::CreateCidrCollectionFluentBuilder::new(self.handle.clone())
     }
 }

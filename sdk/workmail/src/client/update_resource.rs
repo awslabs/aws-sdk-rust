@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`booking_options(BookingOptions)`](crate::operation::update_resource::builders::UpdateResourceFluentBuilder::booking_options) / [`set_booking_options(Option<BookingOptions>)`](crate::operation::update_resource::builders::UpdateResourceFluentBuilder::set_booking_options): <p>The resource's booking options to be updated.</p>
     /// - On success, responds with [`UpdateResourceOutput`](crate::operation::update_resource::UpdateResourceOutput)
     /// - On failure, responds with [`SdkError<UpdateResourceError>`](crate::operation::update_resource::UpdateResourceError)
-    pub fn update_resource(
-        &self,
-    ) -> crate::operation::update_resource::builders::UpdateResourceFluentBuilder {
-        crate::operation::update_resource::builders::UpdateResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_resource(&self) -> crate::operation::update_resource::builders::UpdateResourceFluentBuilder {
+        crate::operation::update_resource::builders::UpdateResourceFluentBuilder::new(self.handle.clone())
     }
 }

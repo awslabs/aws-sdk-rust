@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteHumanTaskUiOutput {
 }
 impl DeleteHumanTaskUiOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHumanTaskUiOutput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiOutputBuilder {
+    pub fn builder() -> crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiOutputBuilder {
         crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHumanTaskUiOutput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHumanTaskUiOutputBuilder {
     _request_id: Option<String>,
 }

@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for UpdateTargetGroupOutput {
 }
 impl UpdateTargetGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTargetGroupOutput`](crate::operation::update_target_group::UpdateTargetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_target_group::builders::UpdateTargetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_target_group::builders::UpdateTargetGroupOutputBuilder {
         crate::operation::update_target_group::builders::UpdateTargetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTargetGroupOutput`](crate::operation::update_target_group::UpdateTargetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTargetGroupOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -139,10 +136,7 @@ impl UpdateTargetGroupOutputBuilder {
         self
     }
     /// <p>The target group configuration.</p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupConfig>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<crate::types::TargetGroupConfig>) -> Self {
         self.config = input;
         self
     }
@@ -156,10 +150,7 @@ impl UpdateTargetGroupOutputBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetGroupStatus>) -> Self {
         self.status = input;
         self
     }

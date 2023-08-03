@@ -10,10 +10,7 @@ impl StartRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_run::StartRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_run::StartRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_run::StartRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_run();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl StartRunFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_run::StartRun,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_run::StartRun, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_run::StartRunError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl StartRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl StartRunFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_run::StartRun,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_run::StartRun, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_run::StartRunError>,
     > {
         self.customize_middleware().await
@@ -132,10 +120,7 @@ impl StartRunFluentBuilder {
         self
     }
     /// <p>The run's workflows type.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.inner = self.inner.set_workflow_type(input);
         self
     }
@@ -219,10 +204,7 @@ impl StartRunFluentBuilder {
         self
     }
     /// <p>Parameters for the run.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Document>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -264,10 +246,7 @@ impl StartRunFluentBuilder {
         self
     }
     /// <p>A log level for the run.</p>
-    pub fn set_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::RunLogLevel>,
-    ) -> Self {
+    pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::RunLogLevel>) -> Self {
         self.inner = self.inner.set_log_level(input);
         self
     }
@@ -280,30 +259,17 @@ impl StartRunFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags for the run.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags for the run.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags for the run.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>

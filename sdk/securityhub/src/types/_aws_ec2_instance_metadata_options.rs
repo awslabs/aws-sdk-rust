@@ -51,9 +51,7 @@ impl AwsEc2InstanceMetadataOptions {
 
 /// A builder for [`AwsEc2InstanceMetadataOptions`](crate::types::AwsEc2InstanceMetadataOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2InstanceMetadataOptionsBuilder {
     pub(crate) http_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) http_protocol_ipv6: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct AwsEc2InstanceMetadataOptionsBuilder {
 }
 impl AwsEc2InstanceMetadataOptionsBuilder {
     /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
-    pub fn http_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
-    pub fn set_http_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_http_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_endpoint = input;
         self
     }
@@ -83,18 +75,12 @@ impl AwsEc2InstanceMetadataOptionsBuilder {
         &self.http_endpoint
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
-    pub fn http_protocol_ipv6(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_protocol_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_protocol_ipv6 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
-    pub fn set_http_protocol_ipv6(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_protocol_ipv6 = input;
         self
     }
@@ -131,18 +117,12 @@ impl AwsEc2InstanceMetadataOptionsBuilder {
         &self.http_tokens
     }
     /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
-    pub fn instance_metadata_tags(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_metadata_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_metadata_tags = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
-    pub fn set_instance_metadata_tags(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_metadata_tags(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_metadata_tags = input;
         self
     }

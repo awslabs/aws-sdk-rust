@@ -68,9 +68,7 @@ impl TestDnsAnswerInput {
 
 /// A builder for [`TestDnsAnswerInput`](crate::operation::test_dns_answer::TestDnsAnswerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestDnsAnswerInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) record_name: ::std::option::Option<::std::string::String>,
@@ -81,18 +79,12 @@ pub struct TestDnsAnswerInputBuilder {
 }
 impl TestDnsAnswerInputBuilder {
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -143,18 +135,12 @@ impl TestDnsAnswerInputBuilder {
         &self.resolver_ip
     }
     /// <p>If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
-    pub fn edns0_client_subnet_ip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edns0_client_subnet_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edns0_client_subnet_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
-    pub fn set_edns0_client_subnet_ip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edns0_client_subnet_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edns0_client_subnet_ip = input;
         self
     }
@@ -168,10 +154,7 @@ impl TestDnsAnswerInputBuilder {
     /// <li> <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li>
     /// <li> <p> <b>IPv6</b>: Specify a value between 0 and 128</p> </li>
     /// </ul>
-    pub fn edns0_client_subnet_mask(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edns0_client_subnet_mask(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edns0_client_subnet_mask = ::std::option::Option::Some(input.into());
         self
     }
@@ -181,10 +164,7 @@ impl TestDnsAnswerInputBuilder {
     /// <li> <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li>
     /// <li> <p> <b>IPv6</b>: Specify a value between 0 and 128</p> </li>
     /// </ul>
-    pub fn set_edns0_client_subnet_mask(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edns0_client_subnet_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edns0_client_subnet_mask = input;
         self
     }
@@ -200,10 +180,7 @@ impl TestDnsAnswerInputBuilder {
     /// Consumes the builder and constructs a [`TestDnsAnswerInput`](crate::operation::test_dns_answer::TestDnsAnswerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::test_dns_answer::TestDnsAnswerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::test_dns_answer::TestDnsAnswerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_dns_answer::TestDnsAnswerInput {
             hosted_zone_id: self.hosted_zone_id,
             record_name: self.record_name,

@@ -23,9 +23,7 @@ impl BorderStyle {
 
 /// A builder for [`BorderStyle`](crate::types::BorderStyle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BorderStyleBuilder {
     pub(crate) show: ::std::option::Option<bool>,
 }

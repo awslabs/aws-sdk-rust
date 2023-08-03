@@ -10,10 +10,7 @@ impl UpdateFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_findings::UpdateFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_findings::UpdateFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_findings::UpdateFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_findings();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateFindingsFluentBuilder {
         }
     }
     /// Access the UpdateFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_findings::builders::UpdateFindingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_findings::builders::UpdateFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdateFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -121,10 +113,7 @@ impl UpdateFindingsFluentBuilder {
         self
     }
     /// <p>A collection of attributes that specify which findings you want to update.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -152,10 +141,7 @@ impl UpdateFindingsFluentBuilder {
         self
     }
     /// <p>The updated record state for the finding.</p>
-    pub fn set_record_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordState>,
-    ) -> Self {
+    pub fn set_record_state(mut self, input: ::std::option::Option<crate::types::RecordState>) -> Self {
         self.inner = self.inner.set_record_state(input);
         self
     }

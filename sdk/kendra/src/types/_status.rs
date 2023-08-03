@@ -46,9 +46,7 @@ impl Status {
 
 /// A builder for [`Status`](crate::types::Status).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatusBuilder {
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) document_status: ::std::option::Option<crate::types::DocumentStatus>,
@@ -78,10 +76,7 @@ impl StatusBuilder {
     }
     /// <p>The current status of a document.</p>
     /// <p>If the document was submitted for deletion, the status is <code>NOT_FOUND</code> after the document is deleted.</p>
-    pub fn set_document_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentStatus>,
-    ) -> Self {
+    pub fn set_document_status(mut self, input: ::std::option::Option<crate::types::DocumentStatus>) -> Self {
         self.document_status = input;
         self
     }
@@ -105,18 +100,12 @@ impl StatusBuilder {
         &self.failure_code
     }
     /// <p>Provides detailed information about why the document couldn't be indexed. Use this information to correct the error before you resubmit the document for indexing.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides detailed information about why the document couldn't be indexed. Use this information to correct the error before you resubmit the document for indexing.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

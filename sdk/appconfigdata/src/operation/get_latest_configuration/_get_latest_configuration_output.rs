@@ -49,14 +49,8 @@ impl GetLatestConfigurationOutput {
 impl ::std::fmt::Debug for GetLatestConfigurationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetLatestConfigurationOutput");
-        formatter.field(
-            "next_poll_configuration_token",
-            &self.next_poll_configuration_token,
-        );
-        formatter.field(
-            "next_poll_interval_in_seconds",
-            &self.next_poll_interval_in_seconds,
-        );
+        formatter.field("next_poll_configuration_token", &self.next_poll_configuration_token);
+        formatter.field("next_poll_interval_in_seconds", &self.next_poll_interval_in_seconds);
         formatter.field("content_type", &self.content_type);
         formatter.field("configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("version_label", &self.version_label);
@@ -71,9 +65,7 @@ impl ::aws_http::request_id::RequestId for GetLatestConfigurationOutput {
 }
 impl GetLatestConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLatestConfigurationOutput`](crate::operation::get_latest_configuration::GetLatestConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_latest_configuration::builders::GetLatestConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_latest_configuration::builders::GetLatestConfigurationOutputBuilder {
         crate::operation::get_latest_configuration::builders::GetLatestConfigurationOutputBuilder::default()
     }
 }
@@ -93,29 +85,21 @@ impl GetLatestConfigurationOutputBuilder {
     /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
-    pub fn next_poll_configuration_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_poll_configuration_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_poll_configuration_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
-    pub fn set_next_poll_configuration_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_poll_configuration_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_poll_configuration_token = input;
         self
     }
     /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
-    pub fn get_next_poll_configuration_token(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_next_poll_configuration_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_poll_configuration_token
     }
     /// <p>The amount of time the client should wait before polling for configuration updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.</p>
@@ -152,10 +136,7 @@ impl GetLatestConfigurationOutputBuilder {
         self
     }
     /// <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.configuration = input;
         self
     }
@@ -164,18 +145,12 @@ impl GetLatestConfigurationOutputBuilder {
         &self.configuration
     }
     /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -207,14 +182,8 @@ impl GetLatestConfigurationOutputBuilder {
 impl ::std::fmt::Debug for GetLatestConfigurationOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetLatestConfigurationOutputBuilder");
-        formatter.field(
-            "next_poll_configuration_token",
-            &self.next_poll_configuration_token,
-        );
-        formatter.field(
-            "next_poll_interval_in_seconds",
-            &self.next_poll_interval_in_seconds,
-        );
+        formatter.field("next_poll_configuration_token", &self.next_poll_configuration_token);
+        formatter.field("next_poll_interval_in_seconds", &self.next_poll_interval_in_seconds);
         formatter.field("content_type", &self.content_type);
         formatter.field("configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("version_label", &self.version_label);

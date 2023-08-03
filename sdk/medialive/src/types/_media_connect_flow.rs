@@ -23,9 +23,7 @@ impl MediaConnectFlow {
 
 /// A builder for [`MediaConnectFlow`](crate::types::MediaConnectFlow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaConnectFlowBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl MediaConnectFlowBuilder {
     }
     /// Consumes the builder and constructs a [`MediaConnectFlow`](crate::types::MediaConnectFlow).
     pub fn build(self) -> crate::types::MediaConnectFlow {
-        crate::types::MediaConnectFlow {
-            flow_arn: self.flow_arn,
-        }
+        crate::types::MediaConnectFlow { flow_arn: self.flow_arn }
     }
 }

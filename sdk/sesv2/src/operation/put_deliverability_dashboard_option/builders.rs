@@ -5,16 +5,16 @@ pub use crate::operation::put_deliverability_dashboard_option::_put_deliverabili
 
 impl PutDeliverabilityDashboardOptionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_deliverability_dashboard_option();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl PutDeliverabilityDashboardOptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionInputBuilder,
+    inner: crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionInputBuilder,
 }
 impl PutDeliverabilityDashboardOptionFluentBuilder {
     /// Creates a new `PutDeliverabilityDashboardOption`.
@@ -38,15 +38,20 @@ impl PutDeliverabilityDashboardOptionFluentBuilder {
         }
     }
     /// Access the PutDeliverabilityDashboardOption as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOption, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOption,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl PutDeliverabilityDashboardOptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl PutDeliverabilityDashboardOptionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOption, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOption,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
@@ -114,28 +129,17 @@ impl PutDeliverabilityDashboardOptionFluentBuilder {
     /// To override the contents of this collection use [`set_subscribed_domains`](Self::set_subscribed_domains).
     ///
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    pub fn subscribed_domains(
-        mut self,
-        input: crate::types::DomainDeliverabilityTrackingOption,
-    ) -> Self {
+    pub fn subscribed_domains(mut self, input: crate::types::DomainDeliverabilityTrackingOption) -> Self {
         self.inner = self.inner.subscribed_domains(input);
         self
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    pub fn set_subscribed_domains(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>,
-        >,
-    ) -> Self {
+    pub fn set_subscribed_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>) -> Self {
         self.inner = self.inner.set_subscribed_domains(input);
         self
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    pub fn get_subscribed_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>
-    {
+    pub fn get_subscribed_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>> {
         self.inner.get_subscribed_domains()
     }
 }

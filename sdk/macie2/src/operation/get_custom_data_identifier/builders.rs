@@ -26,8 +26,7 @@ impl GetCustomDataIdentifierInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCustomDataIdentifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierInputBuilder,
+    inner: crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierInputBuilder,
 }
 impl GetCustomDataIdentifierFluentBuilder {
     /// Creates a new `GetCustomDataIdentifier`.
@@ -38,10 +37,7 @@ impl GetCustomDataIdentifierFluentBuilder {
         }
     }
     /// Access the GetCustomDataIdentifier as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetCustomDataIdentifierFluentBuilder {
             crate::operation::get_custom_data_identifier::GetCustomDataIdentifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_data_identifier::GetCustomDataIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_data_identifier::GetCustomDataIdentifierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetCustomDataIdentifierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetCustomDataIdentifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_data_identifier::GetCustomDataIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_data_identifier::GetCustomDataIdentifierError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetCustomDataIdentifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_data_identifier::GetCustomDataIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_data_identifier::GetCustomDataIdentifierError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetCustomDataIdentifierFluentBuilder {
             crate::operation::get_custom_data_identifier::GetCustomDataIdentifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_data_identifier::GetCustomDataIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_data_identifier::GetCustomDataIdentifierError>,
     > {
         self.customize_middleware().await
     }

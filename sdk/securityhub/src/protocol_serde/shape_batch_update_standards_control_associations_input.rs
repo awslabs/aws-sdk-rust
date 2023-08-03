@@ -4,9 +4,7 @@ pub fn ser_batch_update_standards_control_associations_input(
     input: &crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.standards_control_association_updates {
-        let mut array_2 = object
-            .key("StandardsControlAssociationUpdates")
-            .start_array();
+        let mut array_2 = object.key("StandardsControlAssociationUpdates").start_array();
         for item_3 in var_1 {
             {
                 #[allow(unused_mut)]

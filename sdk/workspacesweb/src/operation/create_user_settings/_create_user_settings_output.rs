@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateUserSettingsOutput {
 }
 impl CreateUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserSettingsOutput`](crate::operation::create_user_settings::CreateUserSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::create_user_settings::builders::CreateUserSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::create_user_settings::builders::CreateUserSettingsOutputBuilder {
         crate::operation::create_user_settings::builders::CreateUserSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserSettingsOutput`](crate::operation::create_user_settings::CreateUserSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserSettingsOutputBuilder {
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateUserSettingsOutputBuilder {
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn set_user_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_settings_arn = input;
         self
     }

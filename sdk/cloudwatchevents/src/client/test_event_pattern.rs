@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TestEventPatternOutput`](crate::operation::test_event_pattern::TestEventPatternOutput) with field(s):
     ///   - [`result(bool)`](crate::operation::test_event_pattern::TestEventPatternOutput::result): <p>Indicates whether the event matches the event pattern.</p>
     /// - On failure, responds with [`SdkError<TestEventPatternError>`](crate::operation::test_event_pattern::TestEventPatternError)
-    pub fn test_event_pattern(
-        &self,
-    ) -> crate::operation::test_event_pattern::builders::TestEventPatternFluentBuilder {
-        crate::operation::test_event_pattern::builders::TestEventPatternFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_event_pattern(&self) -> crate::operation::test_event_pattern::builders::TestEventPatternFluentBuilder {
+        crate::operation::test_event_pattern::builders::TestEventPatternFluentBuilder::new(self.handle.clone())
     }
 }

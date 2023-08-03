@@ -29,9 +29,7 @@ impl AsyncInferenceOutputConfig {
         self.s3_output_path.as_deref()
     }
     /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
-    pub fn notification_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AsyncInferenceNotificationConfig> {
+    pub fn notification_config(&self) -> ::std::option::Option<&crate::types::AsyncInferenceNotificationConfig> {
         self.notification_config.as_ref()
     }
     /// <p>The Amazon S3 location to upload failure inference responses to.</p>
@@ -48,14 +46,11 @@ impl AsyncInferenceOutputConfig {
 
 /// A builder for [`AsyncInferenceOutputConfig`](crate::types::AsyncInferenceOutputConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AsyncInferenceOutputConfigBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_config:
-        ::std::option::Option<crate::types::AsyncInferenceNotificationConfig>,
+    pub(crate) notification_config: ::std::option::Option<crate::types::AsyncInferenceNotificationConfig>,
     pub(crate) s3_failure_path: ::std::option::Option<::std::string::String>,
 }
 impl AsyncInferenceOutputConfigBuilder {
@@ -77,18 +72,12 @@ impl AsyncInferenceOutputConfigBuilder {
         &self.kms_key_id
     }
     /// <p>The Amazon S3 location to upload inference responses to.</p>
-    pub fn s3_output_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location to upload inference responses to.</p>
-    pub fn set_s3_output_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_output_path = input;
         self
     }
@@ -97,40 +86,26 @@ impl AsyncInferenceOutputConfigBuilder {
         &self.s3_output_path
     }
     /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
-    pub fn notification_config(
-        mut self,
-        input: crate::types::AsyncInferenceNotificationConfig,
-    ) -> Self {
+    pub fn notification_config(mut self, input: crate::types::AsyncInferenceNotificationConfig) -> Self {
         self.notification_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
-    pub fn set_notification_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncInferenceNotificationConfig>,
-    ) -> Self {
+    pub fn set_notification_config(mut self, input: ::std::option::Option<crate::types::AsyncInferenceNotificationConfig>) -> Self {
         self.notification_config = input;
         self
     }
     /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
-    pub fn get_notification_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AsyncInferenceNotificationConfig> {
+    pub fn get_notification_config(&self) -> &::std::option::Option<crate::types::AsyncInferenceNotificationConfig> {
         &self.notification_config
     }
     /// <p>The Amazon S3 location to upload failure inference responses to.</p>
-    pub fn s3_failure_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_failure_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_failure_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location to upload failure inference responses to.</p>
-    pub fn set_s3_failure_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_failure_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_failure_path = input;
         self
     }

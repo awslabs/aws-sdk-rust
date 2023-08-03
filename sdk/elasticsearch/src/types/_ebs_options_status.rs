@@ -30,9 +30,7 @@ impl EbsOptionsStatus {
 
 /// A builder for [`EbsOptionsStatus`](crate::types::EbsOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::EbsOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

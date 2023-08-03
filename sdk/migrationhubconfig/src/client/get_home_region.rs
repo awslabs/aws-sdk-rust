@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetHomeRegionOutput`](crate::operation::get_home_region::GetHomeRegionOutput) with field(s):
     ///   - [`home_region(Option<String>)`](crate::operation::get_home_region::GetHomeRegionOutput::home_region): <p>The name of the home region of the calling account.</p>
     /// - On failure, responds with [`SdkError<GetHomeRegionError>`](crate::operation::get_home_region::GetHomeRegionError)
-    pub fn get_home_region(
-        &self,
-    ) -> crate::operation::get_home_region::builders::GetHomeRegionFluentBuilder {
-        crate::operation::get_home_region::builders::GetHomeRegionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_home_region(&self) -> crate::operation::get_home_region::builders::GetHomeRegionFluentBuilder {
+        crate::operation::get_home_region::builders::GetHomeRegionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -20,15 +20,11 @@ impl FrameCaptureSettings {
         self.capture_interval
     }
     /// Unit for the frame capture interval.
-    pub fn capture_interval_units(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FrameCaptureIntervalUnit> {
+    pub fn capture_interval_units(&self) -> ::std::option::Option<&crate::types::FrameCaptureIntervalUnit> {
         self.capture_interval_units.as_ref()
     }
     /// Timecode burn-in settings
-    pub fn timecode_burnin_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimecodeBurninSettings> {
+    pub fn timecode_burnin_settings(&self) -> ::std::option::Option<&crate::types::TimecodeBurninSettings> {
         self.timecode_burnin_settings.as_ref()
     }
 }
@@ -41,15 +37,11 @@ impl FrameCaptureSettings {
 
 /// A builder for [`FrameCaptureSettings`](crate::types::FrameCaptureSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameCaptureSettingsBuilder {
     pub(crate) capture_interval: ::std::option::Option<i32>,
-    pub(crate) capture_interval_units:
-        ::std::option::Option<crate::types::FrameCaptureIntervalUnit>,
-    pub(crate) timecode_burnin_settings:
-        ::std::option::Option<crate::types::TimecodeBurninSettings>,
+    pub(crate) capture_interval_units: ::std::option::Option<crate::types::FrameCaptureIntervalUnit>,
+    pub(crate) timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
 }
 impl FrameCaptureSettingsBuilder {
     /// The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or milliseconds, as specified by captureIntervalUnits.
@@ -72,17 +64,12 @@ impl FrameCaptureSettingsBuilder {
         self
     }
     /// Unit for the frame capture interval.
-    pub fn set_capture_interval_units(
-        mut self,
-        input: ::std::option::Option<crate::types::FrameCaptureIntervalUnit>,
-    ) -> Self {
+    pub fn set_capture_interval_units(mut self, input: ::std::option::Option<crate::types::FrameCaptureIntervalUnit>) -> Self {
         self.capture_interval_units = input;
         self
     }
     /// Unit for the frame capture interval.
-    pub fn get_capture_interval_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::FrameCaptureIntervalUnit> {
+    pub fn get_capture_interval_units(&self) -> &::std::option::Option<crate::types::FrameCaptureIntervalUnit> {
         &self.capture_interval_units
     }
     /// Timecode burn-in settings
@@ -91,17 +78,12 @@ impl FrameCaptureSettingsBuilder {
         self
     }
     /// Timecode burn-in settings
-    pub fn set_timecode_burnin_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TimecodeBurninSettings>,
-    ) -> Self {
+    pub fn set_timecode_burnin_settings(mut self, input: ::std::option::Option<crate::types::TimecodeBurninSettings>) -> Self {
         self.timecode_burnin_settings = input;
         self
     }
     /// Timecode burn-in settings
-    pub fn get_timecode_burnin_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimecodeBurninSettings> {
+    pub fn get_timecode_burnin_settings(&self) -> &::std::option::Option<crate::types::TimecodeBurninSettings> {
         &self.timecode_burnin_settings
     }
     /// Consumes the builder and constructs a [`FrameCaptureSettings`](crate::types::FrameCaptureSettings).

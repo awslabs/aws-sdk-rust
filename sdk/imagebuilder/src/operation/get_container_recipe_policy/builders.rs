@@ -26,7 +26,7 @@ impl GetContainerRecipePolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetContainerRecipePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyInputBuilder,
+    inner: crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyInputBuilder,
 }
 impl GetContainerRecipePolicyFluentBuilder {
     /// Creates a new `GetContainerRecipePolicy`.
@@ -37,7 +37,7 @@ impl GetContainerRecipePolicyFluentBuilder {
         }
     }
     /// Access the GetContainerRecipePolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetContainerRecipePolicyFluentBuilder {
             crate::operation::get_container_recipe_policy::GetContainerRecipePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetContainerRecipePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetContainerRecipePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetContainerRecipePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetContainerRecipePolicyFluentBuilder {
             crate::operation::get_container_recipe_policy::GetContainerRecipePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
-    pub fn container_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_recipe_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
-    pub fn set_container_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_recipe_arn(input);
         self
     }

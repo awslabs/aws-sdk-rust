@@ -22,34 +22,26 @@ impl ListComponentProvisionedResourcesInput {
 }
 impl ListComponentProvisionedResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListComponentProvisionedResourcesInput`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesInput).
-    pub fn builder() -> crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesInputBuilder{
+    pub fn builder() -> crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesInputBuilder {
         crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentProvisionedResourcesInput`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentProvisionedResourcesInputBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComponentProvisionedResourcesInputBuilder {
     /// <p>The name of the component whose provisioned resources you want.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component whose provisioned resources you want.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -72,14 +64,17 @@ impl ListComponentProvisionedResourcesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListComponentProvisionedResourcesInput`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesInput {
-                component_name: self.component_name
-                ,
-                next_token: self.next_token
-                ,
-            }
+                component_name: self.component_name,
+                next_token: self.next_token,
+            },
         )
     }
 }

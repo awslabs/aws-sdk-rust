@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`resource_descriptions(Option<Vec<ResourceDescription>>)`](crate::operation::list_resources::ListResourcesOutput::resource_descriptions): <p>Information about the specified resources, including primary identifier and resource model.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resources::ListResourcesOutput::next_token): <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::operation::list_resources::ListResourcesError)
-    pub fn list_resources(
-        &self,
-    ) -> crate::operation::list_resources::builders::ListResourcesFluentBuilder {
-        crate::operation::list_resources::builders::ListResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resources(&self) -> crate::operation::list_resources::builders::ListResourcesFluentBuilder {
+        crate::operation::list_resources::builders::ListResourcesFluentBuilder::new(self.handle.clone())
     }
 }

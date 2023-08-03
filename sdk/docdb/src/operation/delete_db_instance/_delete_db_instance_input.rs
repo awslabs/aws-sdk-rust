@@ -24,17 +24,14 @@ impl DeleteDbInstanceInput {
 }
 impl DeleteDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
-    pub fn builder() -> crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder {
         crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -44,10 +41,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing instance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -56,10 +50,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing instance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -74,14 +65,9 @@ impl DeleteDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_db_instance::DeleteDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_db_instance::DeleteDbInstanceInput {
-                db_instance_identifier: self.db_instance_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_db_instance::DeleteDbInstanceInput {
+            db_instance_identifier: self.db_instance_identifier,
+        })
     }
 }

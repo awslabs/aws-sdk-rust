@@ -10,10 +10,7 @@ impl StopSuiteRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_suite_run::StopSuiteRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_suite_run::StopSuiteRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_suite_run::StopSuiteRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_suite_run();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StopSuiteRunFluentBuilder {
         }
     }
     /// Access the StopSuiteRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_suite_run::builders::StopSuiteRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_suite_run::builders::StopSuiteRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl StopSuiteRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -116,18 +108,12 @@ impl StopSuiteRunFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>Suite definition ID of the test suite run to be stopped.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_id(input.into());
         self
     }
     /// <p>Suite definition ID of the test suite run to be stopped.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }

@@ -10,10 +10,7 @@ impl ListLaunchProfilesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_launch_profiles::ListLaunchProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_launch_profiles::ListLaunchProfilesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_launch_profiles::ListLaunchProfilesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_launch_profiles();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListLaunchProfilesFluentBuilder {
         }
     }
     /// Access the ListLaunchProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_launch_profiles::builders::ListLaunchProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_launch_profiles::builders::ListLaunchProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListLaunchProfilesFluentBuilder {
             crate::operation::list_launch_profiles::ListLaunchProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_launch_profiles::ListLaunchProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_launch_profiles::ListLaunchProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListLaunchProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListLaunchProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_launch_profiles::ListLaunchProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_launch_profiles::ListLaunchProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_launch_profiles::ListLaunchProfilesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListLaunchProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_launch_profiles::ListLaunchProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_launch_profiles::ListLaunchProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_launch_profiles::ListLaunchProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListLaunchProfilesFluentBuilder {
             crate::operation::list_launch_profiles::ListLaunchProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_launch_profiles::ListLaunchProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_launch_profiles::ListLaunchProfilesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_launch_profiles::paginator::ListLaunchProfilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_launch_profiles::paginator::ListLaunchProfilesPaginator {
-        crate::operation::list_launch_profiles::paginator::ListLaunchProfilesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_launch_profiles::paginator::ListLaunchProfilesPaginator {
+        crate::operation::list_launch_profiles::paginator::ListLaunchProfilesPaginator::new(self.handle, self.inner)
     }
     /// <p>The max number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -185,17 +164,12 @@ impl ListLaunchProfilesFluentBuilder {
         self
     }
     /// <p>Filter this request to launch profiles in any of the given states.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
     /// <p>Filter this request to launch profiles in any of the given states.</p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>> {
         self.inner.get_states()
     }
     /// <p>The studio ID. </p>

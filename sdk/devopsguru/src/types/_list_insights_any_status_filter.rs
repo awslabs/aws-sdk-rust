@@ -30,9 +30,7 @@ impl ListInsightsAnyStatusFilter {
 
 /// A builder for [`ListInsightsAnyStatusFilter`](crate::types::ListInsightsAnyStatusFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInsightsAnyStatusFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InsightType>,
     pub(crate) start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
@@ -58,10 +56,7 @@ impl ListInsightsAnyStatusFilterBuilder {
         self
     }
     /// <p> A time range used to specify when the behavior of the filtered insights started. </p>
-    pub fn set_start_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTimeRange>,
-    ) -> Self {
+    pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.start_time_range = input;
         self
     }

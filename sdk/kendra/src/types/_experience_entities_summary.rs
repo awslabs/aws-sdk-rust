@@ -37,9 +37,7 @@ impl ExperienceEntitiesSummary {
 
 /// A builder for [`ExperienceEntitiesSummary`](crate::types::ExperienceEntitiesSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperienceEntitiesSummaryBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_type: ::std::option::Option<crate::types::EntityType>,
@@ -66,10 +64,7 @@ impl ExperienceEntitiesSummaryBuilder {
         self
     }
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
-    pub fn set_entity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityType>,
-    ) -> Self {
+    pub fn set_entity_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
         self.entity_type = input;
         self
     }
@@ -83,10 +78,7 @@ impl ExperienceEntitiesSummaryBuilder {
         self
     }
     /// <p>Information about the user entity.</p>
-    pub fn set_display_data(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityDisplayData>,
-    ) -> Self {
+    pub fn set_display_data(mut self, input: ::std::option::Option<crate::types::EntityDisplayData>) -> Self {
         self.display_data = input;
         self
     }

@@ -62,9 +62,7 @@ impl PutBotAliasOutput {
         self.checksum.as_deref()
     }
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
-    pub fn conversation_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConversationLogsResponse> {
+    pub fn conversation_logs(&self) -> ::std::option::Option<&crate::types::ConversationLogsResponse> {
         self.conversation_logs.as_ref()
     }
     /// <p>A list of tags associated with a bot.</p>
@@ -86,9 +84,7 @@ impl PutBotAliasOutput {
 
 /// A builder for [`PutBotAliasOutput`](crate::operation::put_bot_alias::PutBotAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBotAliasOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -164,10 +160,7 @@ impl PutBotAliasOutputBuilder {
         self
     }
     /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }
@@ -181,10 +174,7 @@ impl PutBotAliasOutputBuilder {
         self
     }
     /// <p>The date that the bot alias was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -212,17 +202,12 @@ impl PutBotAliasOutputBuilder {
         self
     }
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
-    pub fn set_conversation_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationLogsResponse>,
-    ) -> Self {
+    pub fn set_conversation_logs(mut self, input: ::std::option::Option<crate::types::ConversationLogsResponse>) -> Self {
         self.conversation_logs = input;
         self
     }
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
-    pub fn get_conversation_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationLogsResponse> {
+    pub fn get_conversation_logs(&self) -> &::std::option::Option<crate::types::ConversationLogsResponse> {
         &self.conversation_logs
     }
     /// Appends an item to `tags`.
@@ -237,10 +222,7 @@ impl PutBotAliasOutputBuilder {
         self
     }
     /// <p>A list of tags associated with a bot.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

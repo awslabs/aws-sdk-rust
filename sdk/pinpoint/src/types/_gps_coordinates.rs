@@ -30,9 +30,7 @@ impl GpsCoordinates {
 
 /// A builder for [`GpsCoordinates`](crate::types::GpsCoordinates).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GpsCoordinatesBuilder {
     pub(crate) latitude: ::std::option::Option<f64>,
     pub(crate) longitude: ::std::option::Option<f64>,

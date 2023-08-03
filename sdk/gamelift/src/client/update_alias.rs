@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAliasOutput`](crate::operation::update_alias::UpdateAliasOutput) with field(s):
     ///   - [`alias(Option<Alias>)`](crate::operation::update_alias::UpdateAliasOutput::alias): <p>The updated alias resource.</p>
     /// - On failure, responds with [`SdkError<UpdateAliasError>`](crate::operation::update_alias::UpdateAliasError)
-    pub fn update_alias(
-        &self,
-    ) -> crate::operation::update_alias::builders::UpdateAliasFluentBuilder {
+    pub fn update_alias(&self) -> crate::operation::update_alias::builders::UpdateAliasFluentBuilder {
         crate::operation::update_alias::builders::UpdateAliasFluentBuilder::new(self.handle.clone())
     }
 }

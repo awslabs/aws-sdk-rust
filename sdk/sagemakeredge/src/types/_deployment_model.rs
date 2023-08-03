@@ -72,9 +72,7 @@ impl DeploymentModel {
 
 /// A builder for [`DeploymentModel`](crate::types::DeploymentModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentModelBuilder {
     pub(crate) model_handle: ::std::option::Option<::std::string::String>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
@@ -115,18 +113,12 @@ impl DeploymentModelBuilder {
         &self.model_name
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -140,10 +132,7 @@ impl DeploymentModelBuilder {
         self
     }
     /// <p>The desired state of the model.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::ModelState>) -> Self {
         self.desired_state = input;
         self
     }
@@ -171,10 +160,7 @@ impl DeploymentModelBuilder {
         self
     }
     /// <p>Returns the deployment status of the model.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -183,18 +169,12 @@ impl DeploymentModelBuilder {
         &self.status
     }
     /// <p>Returns the error message for the deployment status result.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the error message for the deployment status result.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -203,18 +183,12 @@ impl DeploymentModelBuilder {
         &self.status_reason
     }
     /// <p>Returns the error message if there is a rollback.</p>
-    pub fn rollback_failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rollback_failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rollback_failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the error message if there is a rollback.</p>
-    pub fn set_rollback_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rollback_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rollback_failure_reason = input;
         self
     }

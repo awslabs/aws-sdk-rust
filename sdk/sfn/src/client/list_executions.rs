@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`executions(Option<Vec<ExecutionListItem>>)`](crate::operation::list_executions::ListExecutionsOutput::executions): <p>The list of matching executions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_executions::ListExecutionsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// - On failure, responds with [`SdkError<ListExecutionsError>`](crate::operation::list_executions::ListExecutionsError)
-    pub fn list_executions(
-        &self,
-    ) -> crate::operation::list_executions::builders::ListExecutionsFluentBuilder {
-        crate::operation::list_executions::builders::ListExecutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_executions(&self) -> crate::operation::list_executions::builders::ListExecutionsFluentBuilder {
+        crate::operation::list_executions::builders::ListExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

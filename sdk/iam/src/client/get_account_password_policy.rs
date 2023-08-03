@@ -6,7 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccountPasswordPolicyOutput`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput) with field(s):
     ///   - [`password_policy(Option<PasswordPolicy>)`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput::password_policy): <p>A structure that contains details about the account's password policy.</p>
     /// - On failure, responds with [`SdkError<GetAccountPasswordPolicyError>`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyError)
-    pub fn get_account_password_policy(&self) -> crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyFluentBuilder{
+    pub fn get_account_password_policy(&self) -> crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyFluentBuilder {
         crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyFluentBuilder::new(self.handle.clone())
     }
 }

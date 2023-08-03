@@ -37,10 +37,7 @@ impl ListBuildsForProjectFluentBuilder {
         }
     }
     /// Access the ListBuildsForProject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListBuildsForProjectFluentBuilder {
             crate::operation::list_builds_for_project::ListBuildsForProject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_builds_for_project::ListBuildsForProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_builds_for_project::ListBuildsForProjectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListBuildsForProjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListBuildsForProjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_builds_for_project::ListBuildsForProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_builds_for_project::ListBuildsForProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_builds_for_project::ListBuildsForProjectError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListBuildsForProjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_builds_for_project::ListBuildsForProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_builds_for_project::ListBuildsForProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_builds_for_project::ListBuildsForProjectError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListBuildsForProjectFluentBuilder {
             crate::operation::list_builds_for_project::ListBuildsForProject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_builds_for_project::ListBuildsForProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_builds_for_project::ListBuildsForProjectError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator {
-        crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator {
+        crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the CodeBuild project.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,10 +147,7 @@ impl ListBuildsForProjectFluentBuilder {
     /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
     /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

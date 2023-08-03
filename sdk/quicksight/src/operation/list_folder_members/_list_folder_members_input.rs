@@ -36,17 +36,14 @@ impl ListFolderMembersInput {
 }
 impl ListFolderMembersInput {
     /// Creates a new builder-style object to manufacture [`ListFolderMembersInput`](crate::operation::list_folder_members::ListFolderMembersInput).
-    pub fn builder(
-    ) -> crate::operation::list_folder_members::builders::ListFolderMembersInputBuilder {
+    pub fn builder() -> crate::operation::list_folder_members::builders::ListFolderMembersInputBuilder {
         crate::operation::list_folder_members::builders::ListFolderMembersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFolderMembersInput`](crate::operation::list_folder_members::ListFolderMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFolderMembersInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct ListFolderMembersInputBuilder {
 }
 impl ListFolderMembersInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -119,17 +110,12 @@ impl ListFolderMembersInputBuilder {
     /// Consumes the builder and constructs a [`ListFolderMembersInput`](crate::operation::list_folder_members::ListFolderMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_folder_members::ListFolderMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_folder_members::ListFolderMembersInput {
-                aws_account_id: self.aws_account_id,
-                folder_id: self.folder_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_folder_members::ListFolderMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_folder_members::ListFolderMembersInput {
+            aws_account_id: self.aws_account_id,
+            folder_id: self.folder_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

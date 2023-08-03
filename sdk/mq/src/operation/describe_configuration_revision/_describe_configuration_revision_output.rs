@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeConfigurationRevisionOutput {
 }
 impl DescribeConfigurationRevisionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput).
-    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionOutputBuilder {
         crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRevisionOutputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -61,18 +59,12 @@ pub struct DescribeConfigurationRevisionOutputBuilder {
 }
 impl DescribeConfigurationRevisionOutputBuilder {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_id = input;
         self
     }
@@ -86,10 +78,7 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self
     }
     /// <p>Required. The date and time of the configuration.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -135,10 +124,7 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput
-    {
+    pub fn build(self) -> crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput {
         crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput {
             configuration_id: self.configuration_id,
             created: self.created,

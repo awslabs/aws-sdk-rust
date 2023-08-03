@@ -9,8 +9,7 @@ pub struct DescribeClusterSecurityGroupsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
     #[doc(hidden)]
-    pub cluster_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroup>>,
+    pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterSecurityGroupsOutput {
@@ -19,9 +18,7 @@ impl DescribeClusterSecurityGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
-    pub fn cluster_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClusterSecurityGroup]> {
+    pub fn cluster_security_groups(&self) -> ::std::option::Option<&[crate::types::ClusterSecurityGroup]> {
         self.cluster_security_groups.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeClusterSecurityGroupsOutput {
 }
 impl DescribeClusterSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterSecurityGroupsOutput`](crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput).
-    pub fn builder() -> crate::operation::describe_cluster_security_groups::builders::DescribeClusterSecurityGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cluster_security_groups::builders::DescribeClusterSecurityGroupsOutputBuilder {
         crate::operation::describe_cluster_security_groups::builders::DescribeClusterSecurityGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterSecurityGroupsOutput`](crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterSecurityGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroup>>,
+    pub(crate) cluster_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterSecurityGroupsOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeClusterSecurityGroupsOutputBuilder {
         self
     }
     /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
-    pub fn set_cluster_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroup>>,
-    ) -> Self {
+    pub fn set_cluster_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroup>>) -> Self {
         self.cluster_security_groups = input;
         self
     }
     /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
-    pub fn get_cluster_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroup>> {
+    pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroup>> {
         &self.cluster_security_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,10 +87,7 @@ impl DescribeClusterSecurityGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClusterSecurityGroupsOutput`](crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput {
         crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput {
             marker: self.marker,
             cluster_security_groups: self.cluster_security_groups,

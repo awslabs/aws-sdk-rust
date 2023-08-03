@@ -8,8 +8,7 @@ pub struct ListComponentBuildVersionsOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of component summaries for the specified semantic version.</p>
     #[doc(hidden)]
-    pub component_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
+    pub component_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ListComponentBuildVersionsOutput {
         self.request_id.as_deref()
     }
     /// <p>The list of component summaries for the specified semantic version.</p>
-    pub fn component_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComponentSummary]> {
+    pub fn component_summary_list(&self) -> ::std::option::Option<&[crate::types::ComponentSummary]> {
         self.component_summary_list.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -38,20 +35,17 @@ impl ::aws_http::request_id::RequestId for ListComponentBuildVersionsOutput {
 }
 impl ListComponentBuildVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentBuildVersionsOutput`](crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput).
-    pub fn builder() -> crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsOutputBuilder {
         crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentBuildVersionsOutput`](crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentBuildVersionsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) component_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
+    pub(crate) component_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -82,17 +76,12 @@ impl ListComponentBuildVersionsOutputBuilder {
         self
     }
     /// <p>The list of component summaries for the specified semantic version.</p>
-    pub fn set_component_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
-    ) -> Self {
+    pub fn set_component_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>) -> Self {
         self.component_summary_list = input;
         self
     }
     /// <p>The list of component summaries for the specified semantic version.</p>
-    pub fn get_component_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
+    pub fn get_component_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
         &self.component_summary_list
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -119,9 +108,7 @@ impl ListComponentBuildVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListComponentBuildVersionsOutput`](crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput {
+    pub fn build(self) -> crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput {
         crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput {
             request_id: self.request_id,
             component_summary_list: self.component_summary_list,

@@ -15,17 +15,14 @@ impl DescribeFeedbackInput {
 }
 impl DescribeFeedbackInput {
     /// Creates a new builder-style object to manufacture [`DescribeFeedbackInput`](crate::operation::describe_feedback::DescribeFeedbackInput).
-    pub fn builder() -> crate::operation::describe_feedback::builders::DescribeFeedbackInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_feedback::builders::DescribeFeedbackInputBuilder {
         crate::operation::describe_feedback::builders::DescribeFeedbackInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFeedbackInput`](crate::operation::describe_feedback::DescribeFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFeedbackInputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DescribeFeedbackInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFeedbackInput`](crate::operation::describe_feedback::DescribeFeedbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_feedback::DescribeFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_feedback::DescribeFeedbackInput {
-            insight_id: self.insight_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_feedback::DescribeFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_feedback::DescribeFeedbackInput { insight_id: self.insight_id })
     }
 }

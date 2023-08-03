@@ -6,8 +6,7 @@
 pub struct DescribeSpotInstanceRequestsOutput {
     /// <p>The Spot Instance requests.</p>
     #[doc(hidden)]
-    pub spot_instance_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
+    pub spot_instance_requests: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct DescribeSpotInstanceRequestsOutput {
 }
 impl DescribeSpotInstanceRequestsOutput {
     /// <p>The Spot Instance requests.</p>
-    pub fn spot_instance_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SpotInstanceRequest]> {
+    pub fn spot_instance_requests(&self) -> ::std::option::Option<&[crate::types::SpotInstanceRequest]> {
         self.spot_instance_requests.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -32,19 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribeSpotInstanceRequestsOutput {
 }
 impl DescribeSpotInstanceRequestsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotInstanceRequestsOutput`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput).
-    pub fn builder() -> crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsOutputBuilder {
         crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpotInstanceRequestsOutput`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotInstanceRequestsOutputBuilder {
-    pub(crate) spot_instance_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
+    pub(crate) spot_instance_requests: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +55,12 @@ impl DescribeSpotInstanceRequestsOutputBuilder {
         self
     }
     /// <p>The Spot Instance requests.</p>
-    pub fn set_spot_instance_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
-    ) -> Self {
+    pub fn set_spot_instance_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>) -> Self {
         self.spot_instance_requests = input;
         self
     }
     /// <p>The Spot Instance requests.</p>
-    pub fn get_spot_instance_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>> {
+    pub fn get_spot_instance_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>> {
         &self.spot_instance_requests
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -98,9 +87,7 @@ impl DescribeSpotInstanceRequestsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSpotInstanceRequestsOutput`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput {
+    pub fn build(self) -> crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput {
         crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput {
             spot_instance_requests: self.spot_instance_requests,
             next_token: self.next_token,

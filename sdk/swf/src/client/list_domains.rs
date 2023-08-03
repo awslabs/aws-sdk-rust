@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`domain_infos(Option<Vec<DomainInfo>>)`](crate::operation::list_domains::ListDomainsOutput::domain_infos): <p>A list of DomainInfo structures.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
-    pub fn list_domains(
-        &self,
-    ) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
+    pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
         crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
     }
 }

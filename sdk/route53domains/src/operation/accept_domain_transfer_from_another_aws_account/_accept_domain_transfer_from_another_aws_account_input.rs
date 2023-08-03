@@ -23,16 +23,15 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
 }
 impl AcceptDomainTransferFromAnotherAwsAccountInput {
     /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput).
-    pub fn builder() -> crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
         crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
@@ -67,14 +66,17 @@ impl AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput {
-                domain_name: self.domain_name
-                ,
-                password: self.password
-                ,
-            }
+                domain_name: self.domain_name,
+                password: self.password,
+            },
         )
     }
 }

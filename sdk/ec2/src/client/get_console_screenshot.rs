@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`image_data(Option<String>)`](crate::operation::get_console_screenshot::GetConsoleScreenshotOutput::image_data): <p>The data that comprises the image.</p>
     ///   - [`instance_id(Option<String>)`](crate::operation::get_console_screenshot::GetConsoleScreenshotOutput::instance_id): <p>The ID of the instance.</p>
     /// - On failure, responds with [`SdkError<GetConsoleScreenshotError>`](crate::operation::get_console_screenshot::GetConsoleScreenshotError)
-    pub fn get_console_screenshot(
-        &self,
-    ) -> crate::operation::get_console_screenshot::builders::GetConsoleScreenshotFluentBuilder {
-        crate::operation::get_console_screenshot::builders::GetConsoleScreenshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_console_screenshot(&self) -> crate::operation::get_console_screenshot::builders::GetConsoleScreenshotFluentBuilder {
+        crate::operation::get_console_screenshot::builders::GetConsoleScreenshotFluentBuilder::new(self.handle.clone())
     }
 }

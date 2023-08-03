@@ -16,34 +16,25 @@ impl VerifyEmailAddressInput {
 }
 impl VerifyEmailAddressInput {
     /// Creates a new builder-style object to manufacture [`VerifyEmailAddressInput`](crate::operation::verify_email_address::VerifyEmailAddressInput).
-    pub fn builder(
-    ) -> crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder {
+    pub fn builder() -> crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder {
         crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder::default()
     }
 }
 
 /// A builder for [`VerifyEmailAddressInput`](crate::operation::verify_email_address::VerifyEmailAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyEmailAddressInputBuilder {
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
 }
 impl VerifyEmailAddressInputBuilder {
     /// <p>The email address to be verified.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address to be verified.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -54,14 +45,9 @@ impl VerifyEmailAddressInputBuilder {
     /// Consumes the builder and constructs a [`VerifyEmailAddressInput`](crate::operation::verify_email_address::VerifyEmailAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_email_address::VerifyEmailAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::verify_email_address::VerifyEmailAddressInput {
-                email_address: self.email_address,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::verify_email_address::VerifyEmailAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::verify_email_address::VerifyEmailAddressInput {
+            email_address: self.email_address,
+        })
     }
 }

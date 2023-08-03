@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`app_authorization_summary_list(Option<Vec<AppAuthorizationSummary>>)`](crate::operation::list_app_authorizations::ListAppAuthorizationsOutput::app_authorization_summary_list): <p>Contains a list of app authorization summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_authorizations::ListAppAuthorizationsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     /// - On failure, responds with [`SdkError<ListAppAuthorizationsError>`](crate::operation::list_app_authorizations::ListAppAuthorizationsError)
-    pub fn list_app_authorizations(
-        &self,
-    ) -> crate::operation::list_app_authorizations::builders::ListAppAuthorizationsFluentBuilder
-    {
-        crate::operation::list_app_authorizations::builders::ListAppAuthorizationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_app_authorizations(&self) -> crate::operation::list_app_authorizations::builders::ListAppAuthorizationsFluentBuilder {
+        crate::operation::list_app_authorizations::builders::ListAppAuthorizationsFluentBuilder::new(self.handle.clone())
     }
 }

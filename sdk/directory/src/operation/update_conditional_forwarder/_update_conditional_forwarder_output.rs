@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for UpdateConditionalForwarderOutput {
 }
 impl UpdateConditionalForwarderOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConditionalForwarderOutput`](crate::operation::update_conditional_forwarder::UpdateConditionalForwarderOutput).
-    pub fn builder() -> crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderOutputBuilder{
+    pub fn builder() -> crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderOutputBuilder {
         crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConditionalForwarderOutput`](crate::operation::update_conditional_forwarder::UpdateConditionalForwarderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConditionalForwarderOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl UpdateConditionalForwarderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateConditionalForwarderOutput`](crate::operation::update_conditional_forwarder::UpdateConditionalForwarderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_conditional_forwarder::UpdateConditionalForwarderOutput {
+    pub fn build(self) -> crate::operation::update_conditional_forwarder::UpdateConditionalForwarderOutput {
         crate::operation::update_conditional_forwarder::UpdateConditionalForwarderOutput {
             _request_id: self._request_id,
         }

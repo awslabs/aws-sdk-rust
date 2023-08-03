@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`status(Option<SchemaVersionStatus>)`](crate::operation::get_schema_version::GetSchemaVersionOutput::status): <p>The status of the schema version. </p>
     ///   - [`created_time(Option<String>)`](crate::operation::get_schema_version::GetSchemaVersionOutput::created_time): <p>The date and time the schema version was created.</p>
     /// - On failure, responds with [`SdkError<GetSchemaVersionError>`](crate::operation::get_schema_version::GetSchemaVersionError)
-    pub fn get_schema_version(
-        &self,
-    ) -> crate::operation::get_schema_version::builders::GetSchemaVersionFluentBuilder {
-        crate::operation::get_schema_version::builders::GetSchemaVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_schema_version(&self) -> crate::operation::get_schema_version::builders::GetSchemaVersionFluentBuilder {
+        crate::operation::get_schema_version::builders::GetSchemaVersionFluentBuilder::new(self.handle.clone())
     }
 }

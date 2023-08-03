@@ -24,10 +24,7 @@ pub fn ser_create_workflow_step_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_workflow_step_output::ser_workflow_step_output(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_workflow_step_output::ser_workflow_step_output(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -62,9 +59,7 @@ pub fn ser_create_workflow_step_input(
     }
     if let Some(var_19) = &input.workflow_step_automation_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object
-            .key("workflowStepAutomationConfiguration")
-            .start_object();
+        let mut object_20 = object.key("workflowStepAutomationConfiguration").start_object();
         crate::protocol_serde::shape_workflow_step_automation_configuration::ser_workflow_step_automation_configuration(&mut object_20, var_19)?;
         object_20.finish();
     }

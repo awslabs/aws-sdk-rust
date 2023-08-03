@@ -22,18 +22,14 @@ impl ProvideAnomalyFeedbackInput {
 }
 impl ProvideAnomalyFeedbackInput {
     /// Creates a new builder-style object to manufacture [`ProvideAnomalyFeedbackInput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput).
-    pub fn builder(
-    ) -> crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder
-    {
+    pub fn builder() -> crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder {
         crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder::default()
     }
 }
 
 /// A builder for [`ProvideAnomalyFeedbackInput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackInputBuilder {
     pub(crate) anomaly_id: ::std::option::Option<::std::string::String>,
     pub(crate) feedback: ::std::option::Option<crate::types::AnomalyFeedbackType>,
@@ -59,10 +55,7 @@ impl ProvideAnomalyFeedbackInputBuilder {
         self
     }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
-    pub fn set_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyFeedbackType>,
-    ) -> Self {
+    pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
         self.feedback = input;
         self
     }
@@ -73,15 +66,11 @@ impl ProvideAnomalyFeedbackInputBuilder {
     /// Consumes the builder and constructs a [`ProvideAnomalyFeedbackInput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput {
-                anomaly_id: self.anomaly_id,
-                feedback: self.feedback,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput {
+            anomaly_id: self.anomaly_id,
+            feedback: self.feedback,
+        })
     }
 }

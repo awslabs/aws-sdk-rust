@@ -24,9 +24,7 @@ impl GetSolVnfcResourceInfo {
 
 /// A builder for [`GetSolVnfcResourceInfo`](crate::types::GetSolVnfcResourceInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolVnfcResourceInfoBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>,
 }
@@ -37,23 +35,16 @@ impl GetSolVnfcResourceInfoBuilder {
         self
     }
     /// <p>The metadata of the network function compute.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The metadata of the network function compute.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`GetSolVnfcResourceInfo`](crate::types::GetSolVnfcResourceInfo).
     pub fn build(self) -> crate::types::GetSolVnfcResourceInfo {
-        crate::types::GetSolVnfcResourceInfo {
-            metadata: self.metadata,
-        }
+        crate::types::GetSolVnfcResourceInfo { metadata: self.metadata }
     }
 }

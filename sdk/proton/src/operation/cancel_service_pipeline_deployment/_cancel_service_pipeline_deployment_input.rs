@@ -15,16 +15,14 @@ impl CancelServicePipelineDeploymentInput {
 }
 impl CancelServicePipelineDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CancelServicePipelineDeploymentInput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentInput).
-    pub fn builder() -> crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentInputBuilder{
+    pub fn builder() -> crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentInputBuilder {
         crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelServicePipelineDeploymentInput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelServicePipelineDeploymentInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }
@@ -52,9 +50,8 @@ impl CancelServicePipelineDeploymentInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentInput {
-                service_name: self.service_name
-                ,
-            }
+                service_name: self.service_name,
+            },
         )
     }
 }

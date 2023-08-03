@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProfileOutput`](crate::operation::create_profile::CreateProfileOutput) with field(s):
     ///   - [`profile(Option<ProfileDetail>)`](crate::operation::create_profile::CreateProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<CreateProfileError>`](crate::operation::create_profile::CreateProfileError)
-    pub fn create_profile(
-        &self,
-    ) -> crate::operation::create_profile::builders::CreateProfileFluentBuilder {
-        crate::operation::create_profile::builders::CreateProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_profile(&self) -> crate::operation::create_profile::builders::CreateProfileFluentBuilder {
+        crate::operation::create_profile::builders::CreateProfileFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`environments(Option<Vec<KxEnvironment>>)`](crate::operation::list_kx_environments::ListKxEnvironmentsOutput::environments): <p>A list of environments in an account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_environments::ListKxEnvironmentsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListKxEnvironmentsError>`](crate::operation::list_kx_environments::ListKxEnvironmentsError)
-    pub fn list_kx_environments(
-        &self,
-    ) -> crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder {
-        crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_kx_environments(&self) -> crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder {
+        crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder::new(self.handle.clone())
     }
 }

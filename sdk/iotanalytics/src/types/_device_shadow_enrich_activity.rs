@@ -51,9 +51,7 @@ impl DeviceShadowEnrichActivity {
 
 /// A builder for [`DeviceShadowEnrichActivity`](crate::types::DeviceShadowEnrichActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceShadowEnrichActivityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute: ::std::option::Option<::std::string::String>,

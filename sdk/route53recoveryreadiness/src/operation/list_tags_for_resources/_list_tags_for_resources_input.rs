@@ -15,17 +15,14 @@ impl ListTagsForResourcesInput {
 }
 impl ListTagsForResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourcesInput`](crate::operation::list_tags_for_resources::ListTagsForResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesInputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesInputBuilder {
         crate::operation::list_tags_for_resources::builders::ListTagsForResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForResourcesInput`](crate::operation::list_tags_for_resources::ListTagsForResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForResourcesInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl ListTagsForResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsForResourcesInput`](crate::operation::list_tags_for_resources::ListTagsForResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tags_for_resources::ListTagsForResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_tags_for_resources::ListTagsForResourcesInput {
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_tags_for_resources::ListTagsForResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_resources::ListTagsForResourcesInput {
+            resource_arn: self.resource_arn,
+        })
     }
 }

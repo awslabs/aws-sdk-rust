@@ -10,10 +10,7 @@ impl SendTaskHeartbeatInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_task_heartbeat::SendTaskHeartbeatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_task_heartbeat::SendTaskHeartbeatError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_task_heartbeat::SendTaskHeartbeatError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_task_heartbeat();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl SendTaskHeartbeatFluentBuilder {
         }
     }
     /// Access the SendTaskHeartbeat as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_task_heartbeat::builders::SendTaskHeartbeatInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_task_heartbeat::builders::SendTaskHeartbeatInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl SendTaskHeartbeatFluentBuilder {
             crate::operation::send_task_heartbeat::SendTaskHeartbeat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_task_heartbeat::SendTaskHeartbeatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_task_heartbeat::SendTaskHeartbeatError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl SendTaskHeartbeatFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl SendTaskHeartbeatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_task_heartbeat::SendTaskHeartbeatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_task_heartbeat::SendTaskHeartbeatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_task_heartbeat::SendTaskHeartbeatError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl SendTaskHeartbeatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_task_heartbeat::SendTaskHeartbeatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_task_heartbeat::SendTaskHeartbeatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_task_heartbeat::SendTaskHeartbeatError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl SendTaskHeartbeatFluentBuilder {
             crate::operation::send_task_heartbeat::SendTaskHeartbeat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_task_heartbeat::SendTaskHeartbeatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_task_heartbeat::SendTaskHeartbeatError>,
     > {
         self.customize_middleware().await
     }

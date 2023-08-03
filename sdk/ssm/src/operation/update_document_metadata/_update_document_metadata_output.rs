@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDocumentMetadataOutput {
 }
 impl UpdateDocumentMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentMetadataOutput`](crate::operation::update_document_metadata::UpdateDocumentMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::update_document_metadata::builders::UpdateDocumentMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_document_metadata::builders::UpdateDocumentMetadataOutputBuilder {
         crate::operation::update_document_metadata::builders::UpdateDocumentMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDocumentMetadataOutput`](crate::operation::update_document_metadata::UpdateDocumentMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDocumentMetadataOutputBuilder {
     _request_id: Option<String>,
 }

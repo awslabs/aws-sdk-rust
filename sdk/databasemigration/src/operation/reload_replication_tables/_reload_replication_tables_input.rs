@@ -30,38 +30,27 @@ impl ReloadReplicationTablesInput {
 }
 impl ReloadReplicationTablesInput {
     /// Creates a new builder-style object to manufacture [`ReloadReplicationTablesInput`](crate::operation::reload_replication_tables::ReloadReplicationTablesInput).
-    pub fn builder(
-    ) -> crate::operation::reload_replication_tables::builders::ReloadReplicationTablesInputBuilder
-    {
+    pub fn builder() -> crate::operation::reload_replication_tables::builders::ReloadReplicationTablesInputBuilder {
         crate::operation::reload_replication_tables::builders::ReloadReplicationTablesInputBuilder::default()
     }
 }
 
 /// A builder for [`ReloadReplicationTablesInput`](crate::operation::reload_replication_tables::ReloadReplicationTablesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReloadReplicationTablesInputBuilder {
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tables_to_reload:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>,
+    pub(crate) tables_to_reload: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>,
     pub(crate) reload_option: ::std::option::Option<crate::types::ReloadOptionValue>,
 }
 impl ReloadReplicationTablesInputBuilder {
     /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_arn = input;
         self
     }
@@ -81,17 +70,12 @@ impl ReloadReplicationTablesInputBuilder {
         self
     }
     /// <p>The list of tables to reload.</p>
-    pub fn set_tables_to_reload(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>,
-    ) -> Self {
+    pub fn set_tables_to_reload(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>) -> Self {
         self.tables_to_reload = input;
         self
     }
     /// <p>The list of tables to reload.</p>
-    pub fn get_tables_to_reload(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
+    pub fn get_tables_to_reload(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
         &self.tables_to_reload
     }
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
@@ -100,10 +84,7 @@ impl ReloadReplicationTablesInputBuilder {
         self
     }
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
-    pub fn set_reload_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ReloadOptionValue>,
-    ) -> Self {
+    pub fn set_reload_option(mut self, input: ::std::option::Option<crate::types::ReloadOptionValue>) -> Self {
         self.reload_option = input;
         self
     }
@@ -118,12 +99,10 @@ impl ReloadReplicationTablesInputBuilder {
         crate::operation::reload_replication_tables::ReloadReplicationTablesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::reload_replication_tables::ReloadReplicationTablesInput {
-                replication_config_arn: self.replication_config_arn,
-                tables_to_reload: self.tables_to_reload,
-                reload_option: self.reload_option,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::reload_replication_tables::ReloadReplicationTablesInput {
+            replication_config_arn: self.replication_config_arn,
+            tables_to_reload: self.tables_to_reload,
+            reload_option: self.reload_option,
+        })
     }
 }

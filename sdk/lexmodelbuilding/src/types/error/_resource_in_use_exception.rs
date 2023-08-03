@@ -67,9 +67,7 @@ impl ResourceInUseException {
 
 /// A builder for [`ResourceInUseException`](crate::types::error::ResourceInUseException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceInUseExceptionBuilder {
     pub(crate) reference_type: ::std::option::Option<crate::types::ReferenceType>,
     pub(crate) example_reference: ::std::option::Option<crate::types::ResourceReference>,
@@ -83,10 +81,7 @@ impl ResourceInUseExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_reference_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceType>,
-    ) -> Self {
+    pub fn set_reference_type(mut self, input: ::std::option::Option<crate::types::ReferenceType>) -> Self {
         self.reference_type = input;
         self
     }
@@ -100,10 +95,7 @@ impl ResourceInUseExceptionBuilder {
         self
     }
     /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
-    pub fn set_example_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceReference>,
-    ) -> Self {
+    pub fn set_example_reference(mut self, input: ::std::option::Option<crate::types::ResourceReference>) -> Self {
         self.example_reference = input;
         self
     }
@@ -132,10 +124,7 @@ impl ResourceInUseExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

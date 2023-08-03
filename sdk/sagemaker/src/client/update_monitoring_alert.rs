@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`monitoring_schedule_arn(Option<String>)`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput::monitoring_schedule_arn): <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     ///   - [`monitoring_alert_name(Option<String>)`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput::monitoring_alert_name): <p>The name of a monitoring alert.</p>
     /// - On failure, responds with [`SdkError<UpdateMonitoringAlertError>`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertError)
-    pub fn update_monitoring_alert(
-        &self,
-    ) -> crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertFluentBuilder
-    {
-        crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_monitoring_alert(&self) -> crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertFluentBuilder {
+        crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertFluentBuilder::new(self.handle.clone())
     }
 }

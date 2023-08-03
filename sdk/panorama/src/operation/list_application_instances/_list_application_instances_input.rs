@@ -36,18 +36,14 @@ impl ListApplicationInstancesInput {
 }
 impl ListApplicationInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationInstancesInput`](crate::operation::list_application_instances::ListApplicationInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder {
         crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationInstancesInput`](crate::operation::list_application_instances::ListApplicationInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationInstancesInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) status_filter: ::std::option::Option<crate::types::StatusFilter>,
@@ -75,10 +71,7 @@ impl ListApplicationInstancesInputBuilder {
         self
     }
     /// <p>Only include instances with a specific status.</p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusFilter>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::StatusFilter>) -> Self {
         self.status_filter = input;
         self
     }
@@ -121,13 +114,11 @@ impl ListApplicationInstancesInputBuilder {
         crate::operation::list_application_instances::ListApplicationInstancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_application_instances::ListApplicationInstancesInput {
-                device_id: self.device_id,
-                status_filter: self.status_filter,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_application_instances::ListApplicationInstancesInput {
+            device_id: self.device_id,
+            status_filter: self.status_filter,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

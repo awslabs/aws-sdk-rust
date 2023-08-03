@@ -22,9 +22,7 @@ pub struct DeploymentTarget {
 }
 impl DeploymentTarget {
     /// <p>The deployment type that is specific to the deployment's compute platform or deployments initiated by a CloudFormation stack update.</p>
-    pub fn deployment_target_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentTargetType> {
+    pub fn deployment_target_type(&self) -> ::std::option::Option<&crate::types::DeploymentTargetType> {
         self.deployment_target_type.as_ref()
     }
     /// <p> Information about the target for a deployment that uses the EC2/On-premises compute platform. </p>
@@ -40,9 +38,7 @@ impl DeploymentTarget {
         self.ecs_target.as_ref()
     }
     /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
-    pub fn cloud_formation_target(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudFormationTarget> {
+    pub fn cloud_formation_target(&self) -> ::std::option::Option<&crate::types::CloudFormationTarget> {
         self.cloud_formation_target.as_ref()
     }
 }
@@ -55,9 +51,7 @@ impl DeploymentTarget {
 
 /// A builder for [`DeploymentTarget`](crate::types::DeploymentTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentTargetBuilder {
     pub(crate) deployment_target_type: ::std::option::Option<crate::types::DeploymentTargetType>,
     pub(crate) instance_target: ::std::option::Option<crate::types::InstanceTarget>,
@@ -72,17 +66,12 @@ impl DeploymentTargetBuilder {
         self
     }
     /// <p>The deployment type that is specific to the deployment's compute platform or deployments initiated by a CloudFormation stack update.</p>
-    pub fn set_deployment_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentTargetType>,
-    ) -> Self {
+    pub fn set_deployment_target_type(mut self, input: ::std::option::Option<crate::types::DeploymentTargetType>) -> Self {
         self.deployment_target_type = input;
         self
     }
     /// <p>The deployment type that is specific to the deployment's compute platform or deployments initiated by a CloudFormation stack update.</p>
-    pub fn get_deployment_target_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentTargetType> {
+    pub fn get_deployment_target_type(&self) -> &::std::option::Option<crate::types::DeploymentTargetType> {
         &self.deployment_target_type
     }
     /// <p> Information about the target for a deployment that uses the EC2/On-premises compute platform. </p>
@@ -91,10 +80,7 @@ impl DeploymentTargetBuilder {
         self
     }
     /// <p> Information about the target for a deployment that uses the EC2/On-premises compute platform. </p>
-    pub fn set_instance_target(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceTarget>,
-    ) -> Self {
+    pub fn set_instance_target(mut self, input: ::std::option::Option<crate::types::InstanceTarget>) -> Self {
         self.instance_target = input;
         self
     }
@@ -108,10 +94,7 @@ impl DeploymentTargetBuilder {
         self
     }
     /// <p> Information about the target for a deployment that uses the Lambda compute platform. </p>
-    pub fn set_lambda_target(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaTarget>,
-    ) -> Self {
+    pub fn set_lambda_target(mut self, input: ::std::option::Option<crate::types::LambdaTarget>) -> Self {
         self.lambda_target = input;
         self
     }
@@ -139,17 +122,12 @@ impl DeploymentTargetBuilder {
         self
     }
     /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
-    pub fn set_cloud_formation_target(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudFormationTarget>,
-    ) -> Self {
+    pub fn set_cloud_formation_target(mut self, input: ::std::option::Option<crate::types::CloudFormationTarget>) -> Self {
         self.cloud_formation_target = input;
         self
     }
     /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
-    pub fn get_cloud_formation_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudFormationTarget> {
+    pub fn get_cloud_formation_target(&self) -> &::std::option::Option<crate::types::CloudFormationTarget> {
         &self.cloud_formation_target
     }
     /// Consumes the builder and constructs a [`DeploymentTarget`](crate::types::DeploymentTarget).

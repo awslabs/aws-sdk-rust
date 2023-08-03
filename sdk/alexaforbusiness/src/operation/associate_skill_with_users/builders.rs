@@ -27,8 +27,7 @@ impl AssociateSkillWithUsersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateSkillWithUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersInputBuilder,
+    inner: crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersInputBuilder,
 }
 impl AssociateSkillWithUsersFluentBuilder {
     /// Creates a new `AssociateSkillWithUsers`.
@@ -39,10 +38,7 @@ impl AssociateSkillWithUsersFluentBuilder {
         }
     }
     /// Access the AssociateSkillWithUsers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl AssociateSkillWithUsersFluentBuilder {
             crate::operation::associate_skill_with_users::AssociateSkillWithUsers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_skill_with_users::AssociateSkillWithUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_skill_with_users::AssociateSkillWithUsersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl AssociateSkillWithUsersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl AssociateSkillWithUsersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_skill_with_users::AssociateSkillWithUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_skill_with_users::AssociateSkillWithUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_skill_with_users::AssociateSkillWithUsersError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl AssociateSkillWithUsersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_skill_with_users::AssociateSkillWithUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_skill_with_users::AssociateSkillWithUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_skill_with_users::AssociateSkillWithUsersError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl AssociateSkillWithUsersFluentBuilder {
             crate::operation::associate_skill_with_users::AssociateSkillWithUsers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_skill_with_users::AssociateSkillWithUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_skill_with_users::AssociateSkillWithUsersError>,
     > {
         self.customize_middleware().await
     }

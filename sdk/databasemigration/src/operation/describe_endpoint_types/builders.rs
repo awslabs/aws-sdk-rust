@@ -37,10 +37,7 @@ impl DescribeEndpointTypesFluentBuilder {
         }
     }
     /// Access the DescribeEndpointTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeEndpointTypesFluentBuilder {
             crate::operation::describe_endpoint_types::DescribeEndpointTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_types::DescribeEndpointTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_types::DescribeEndpointTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeEndpointTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeEndpointTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_types::DescribeEndpointTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_types::DescribeEndpointTypesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeEndpointTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_types::DescribeEndpointTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_types::DescribeEndpointTypesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl DescribeEndpointTypesFluentBuilder {
             crate::operation::describe_endpoint_types::DescribeEndpointTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_types::DescribeEndpointTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_types::DescribeEndpointTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_endpoint_types::paginator::DescribeEndpointTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_endpoint_types::paginator::DescribeEndpointTypesPaginator {
-        crate::operation::describe_endpoint_types::paginator::DescribeEndpointTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_endpoint_types::paginator::DescribeEndpointTypesPaginator {
+        crate::operation::describe_endpoint_types::paginator::DescribeEndpointTypesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -146,10 +127,7 @@ impl DescribeEndpointTypesFluentBuilder {
     }
     /// <p>Filters applied to the endpoint types.</p>
     /// <p>Valid filter names: engine-name | endpoint-type</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

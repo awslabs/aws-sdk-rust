@@ -15,17 +15,14 @@ impl DeletePricingRuleInput {
 }
 impl DeletePricingRuleInput {
     /// Creates a new builder-style object to manufacture [`DeletePricingRuleInput`](crate::operation::delete_pricing_rule::DeletePricingRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_pricing_rule::builders::DeletePricingRuleInputBuilder {
+    pub fn builder() -> crate::operation::delete_pricing_rule::builders::DeletePricingRuleInputBuilder {
         crate::operation::delete_pricing_rule::builders::DeletePricingRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePricingRuleInput`](crate::operation::delete_pricing_rule::DeletePricingRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePricingRuleInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeletePricingRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeletePricingRuleInput`](crate::operation::delete_pricing_rule::DeletePricingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pricing_rule::DeletePricingRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_pricing_rule::DeletePricingRuleInput { arn: self.arn },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_pricing_rule::DeletePricingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_pricing_rule::DeletePricingRuleInput { arn: self.arn })
     }
 }

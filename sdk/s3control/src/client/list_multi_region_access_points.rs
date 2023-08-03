@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`access_points(Option<Vec<MultiRegionAccessPointReport>>)`](crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput::access_points): <p>The list of Multi-Region Access Points associated with the user.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput::next_token): <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
     /// - On failure, responds with [`SdkError<ListMultiRegionAccessPointsError>`](crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError)
-    pub fn list_multi_region_access_points(&self) -> crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsFluentBuilder{
+    pub fn list_multi_region_access_points(
+        &self,
+    ) -> crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsFluentBuilder {
         crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsFluentBuilder::new(self.handle.clone())
     }
 }

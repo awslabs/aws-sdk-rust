@@ -9,12 +9,10 @@ pub struct AccountSettings {
     pub aws_account_number: ::std::option::Option<::std::string::String>,
     /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
     #[doc(hidden)]
-    pub unmetered_devices:
-        ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
+    pub unmetered_devices: ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
     /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
     #[doc(hidden)]
-    pub unmetered_remote_access_devices:
-        ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
+    pub unmetered_remote_access_devices: ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
     /// <p>The maximum number of minutes a test run executes before it times out.</p>
     #[doc(hidden)]
     pub max_job_timeout_minutes: ::std::option::Option<i32>,
@@ -38,17 +36,11 @@ impl AccountSettings {
         self.aws_account_number.as_deref()
     }
     /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
-    pub fn unmetered_devices(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DevicePlatform, i32>>
-    {
+    pub fn unmetered_devices(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DevicePlatform, i32>> {
         self.unmetered_devices.as_ref()
     }
     /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
-    pub fn unmetered_remote_access_devices(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DevicePlatform, i32>>
-    {
+    pub fn unmetered_remote_access_devices(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DevicePlatform, i32>> {
         self.unmetered_remote_access_devices.as_ref()
     }
     /// <p>The maximum number of minutes a test run executes before it times out.</p>
@@ -60,9 +52,7 @@ impl AccountSettings {
         self.trial_minutes.as_ref()
     }
     /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
-    pub fn max_slots(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn max_slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.max_slots.as_ref()
     }
     /// <p>The default number of minutes (at the account level) a test run executes before it times out. The default value is 150 minutes.</p>
@@ -84,36 +74,25 @@ impl AccountSettings {
 
 /// A builder for [`AccountSettings`](crate::types::AccountSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountSettingsBuilder {
     pub(crate) aws_account_number: ::std::option::Option<::std::string::String>,
-    pub(crate) unmetered_devices:
-        ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
-    pub(crate) unmetered_remote_access_devices:
-        ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
+    pub(crate) unmetered_devices: ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
+    pub(crate) unmetered_remote_access_devices: ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
     pub(crate) max_job_timeout_minutes: ::std::option::Option<i32>,
     pub(crate) trial_minutes: ::std::option::Option<crate::types::TrialMinutes>,
-    pub(crate) max_slots:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub(crate) max_slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     pub(crate) default_job_timeout_minutes: ::std::option::Option<i32>,
     pub(crate) skip_app_resign: ::std::option::Option<bool>,
 }
 impl AccountSettingsBuilder {
     /// <p>The AWS account number specified in the <code>AccountSettings</code> container.</p>
-    pub fn aws_account_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS account number specified in the <code>AccountSettings</code> container.</p>
-    pub fn set_aws_account_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_number = input;
         self
     }
@@ -133,20 +112,12 @@ impl AccountSettingsBuilder {
         self
     }
     /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
-    pub fn set_unmetered_devices(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::DevicePlatform, i32>,
-        >,
-    ) -> Self {
+    pub fn set_unmetered_devices(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>) -> Self {
         self.unmetered_devices = input;
         self
     }
     /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
-    pub fn get_unmetered_devices(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>
-    {
+    pub fn get_unmetered_devices(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>> {
         &self.unmetered_devices
     }
     /// Adds a key-value pair to `unmetered_remote_access_devices`.
@@ -154,11 +125,7 @@ impl AccountSettingsBuilder {
     /// To override the contents of this collection use [`set_unmetered_remote_access_devices`](Self::set_unmetered_remote_access_devices).
     ///
     /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
-    pub fn unmetered_remote_access_devices(
-        mut self,
-        k: crate::types::DevicePlatform,
-        v: i32,
-    ) -> Self {
+    pub fn unmetered_remote_access_devices(mut self, k: crate::types::DevicePlatform, v: i32) -> Self {
         let mut hash_map = self.unmetered_remote_access_devices.unwrap_or_default();
         hash_map.insert(k, v);
         self.unmetered_remote_access_devices = ::std::option::Option::Some(hash_map);
@@ -167,18 +134,13 @@ impl AccountSettingsBuilder {
     /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
     pub fn set_unmetered_remote_access_devices(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::DevicePlatform, i32>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
     ) -> Self {
         self.unmetered_remote_access_devices = input;
         self
     }
     /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
-    pub fn get_unmetered_remote_access_devices(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>
-    {
+    pub fn get_unmetered_remote_access_devices(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>> {
         &self.unmetered_remote_access_devices
     }
     /// <p>The maximum number of minutes a test run executes before it times out.</p>
@@ -201,10 +163,7 @@ impl AccountSettingsBuilder {
         self
     }
     /// <p>Information about an AWS account's usage of free trial device minutes.</p>
-    pub fn set_trial_minutes(
-        mut self,
-        input: ::std::option::Option<crate::types::TrialMinutes>,
-    ) -> Self {
+    pub fn set_trial_minutes(mut self, input: ::std::option::Option<crate::types::TrialMinutes>) -> Self {
         self.trial_minutes = input;
         self
     }
@@ -217,28 +176,19 @@ impl AccountSettingsBuilder {
     /// To override the contents of this collection use [`set_max_slots`](Self::set_max_slots).
     ///
     /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
-    pub fn max_slots(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: i32,
-    ) -> Self {
+    pub fn max_slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.max_slots.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.max_slots = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
-    pub fn set_max_slots(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
-    ) -> Self {
+    pub fn set_max_slots(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
         self.max_slots = input;
         self
     }
     /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
-    pub fn get_max_slots(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn get_max_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
         &self.max_slots
     }
     /// <p>The default number of minutes (at the account level) a test run executes before it times out. The default value is 150 minutes.</p>

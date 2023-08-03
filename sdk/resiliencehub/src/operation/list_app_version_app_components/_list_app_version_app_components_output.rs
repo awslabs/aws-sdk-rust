@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for ListAppVersionAppComponentsOutput {
 }
 impl ListAppVersionAppComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionAppComponentsOutput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput).
-    pub fn builder() -> crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsOutputBuilder{
+    pub fn builder() -> crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsOutputBuilder {
         crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppVersionAppComponentsOutput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppVersionAppComponentsOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -100,17 +98,12 @@ impl ListAppVersionAppComponentsOutputBuilder {
         self
     }
     /// <p>Defines an Application Component.</p>
-    pub fn set_app_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>,
-    ) -> Self {
+    pub fn set_app_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>) -> Self {
         self.app_components = input;
         self
     }
     /// <p>Defines an Application Component.</p>
-    pub fn get_app_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppComponent>> {
+    pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppComponent>> {
         &self.app_components
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -137,9 +130,7 @@ impl ListAppVersionAppComponentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppVersionAppComponentsOutput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput {
+    pub fn build(self) -> crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput {
         crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput {
             app_arn: self.app_arn,
             app_version: self.app_version,

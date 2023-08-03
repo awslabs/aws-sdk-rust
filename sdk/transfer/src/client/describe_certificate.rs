@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeCertificateOutput`](crate::operation::describe_certificate::DescribeCertificateOutput) with field(s):
     ///   - [`certificate(Option<DescribedCertificate>)`](crate::operation::describe_certificate::DescribeCertificateOutput::certificate): <p>The details for the specified certificate, returned as an object.</p>
     /// - On failure, responds with [`SdkError<DescribeCertificateError>`](crate::operation::describe_certificate::DescribeCertificateError)
-    pub fn describe_certificate(
-        &self,
-    ) -> crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder {
-        crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_certificate(&self) -> crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder {
+        crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeFpgaImageAttributeOutput`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput) with field(s):
     ///   - [`fpga_image_attribute(Option<FpgaImageAttribute>)`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput::fpga_image_attribute): <p>Information about the attribute.</p>
     /// - On failure, responds with [`SdkError<DescribeFpgaImageAttributeError>`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError)
-    pub fn describe_fpga_image_attribute(&self) -> crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeFluentBuilder{
+    pub fn describe_fpga_image_attribute(
+        &self,
+    ) -> crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeFluentBuilder {
         crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeImageBuildersOutput {
 }
 impl DescribeImageBuildersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageBuildersOutput`](crate::operation::describe_image_builders::DescribeImageBuildersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_builders::builders::DescribeImageBuildersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_image_builders::builders::DescribeImageBuildersOutputBuilder {
         crate::operation::describe_image_builders::builders::DescribeImageBuildersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImageBuildersOutput`](crate::operation::describe_image_builders::DescribeImageBuildersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageBuildersOutputBuilder {
     pub(crate) image_builders: ::std::option::Option<::std::vec::Vec<crate::types::ImageBuilder>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeImageBuildersOutputBuilder {
         self
     }
     /// <p>Information about the image builders.</p>
-    pub fn set_image_builders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageBuilder>>,
-    ) -> Self {
+    pub fn set_image_builders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageBuilder>>) -> Self {
         self.image_builders = input;
         self
     }
     /// <p>Information about the image builders.</p>
-    pub fn get_image_builders(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageBuilder>> {
+    pub fn get_image_builders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageBuilder>> {
         &self.image_builders
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>

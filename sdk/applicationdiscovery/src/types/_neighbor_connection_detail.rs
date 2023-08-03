@@ -51,9 +51,7 @@ impl NeighborConnectionDetail {
 
 /// A builder for [`NeighborConnectionDetail`](crate::types::NeighborConnectionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NeighborConnectionDetailBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_server_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct NeighborConnectionDetailBuilder {
 }
 impl NeighborConnectionDetailBuilder {
     /// <p>The ID of the server that opened the network connection.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the server that opened the network connection.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -83,18 +75,12 @@ impl NeighborConnectionDetailBuilder {
         &self.source_server_id
     }
     /// <p>The ID of the server that accepted the network connection.</p>
-    pub fn destination_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the server that accepted the network connection.</p>
-    pub fn set_destination_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_server_id = input;
         self
     }
@@ -117,18 +103,12 @@ impl NeighborConnectionDetailBuilder {
         &self.destination_port
     }
     /// <p>The network protocol used for the connection.</p>
-    pub fn transport_protocol(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transport_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transport_protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network protocol used for the connection.</p>
-    pub fn set_transport_protocol(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transport_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transport_protocol = input;
         self
     }

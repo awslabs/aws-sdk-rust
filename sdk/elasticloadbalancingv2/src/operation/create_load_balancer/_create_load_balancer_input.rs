@@ -99,17 +99,14 @@ impl CreateLoadBalancerInput {
 }
 impl CreateLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
-    pub fn builder(
-    ) -> crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
+    pub fn builder() -> crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
         crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -161,10 +158,7 @@ impl CreateLoadBalancerInputBuilder {
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }
@@ -199,10 +193,7 @@ impl CreateLoadBalancerInputBuilder {
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-    pub fn set_subnet_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
-    ) -> Self {
+    pub fn set_subnet_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>) -> Self {
         self.subnet_mappings = input;
         self
     }
@@ -212,9 +203,7 @@ impl CreateLoadBalancerInputBuilder {
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-    pub fn get_subnet_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
+    pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
         &self.subnet_mappings
     }
     /// Appends an item to `security_groups`.
@@ -222,27 +211,19 @@ impl CreateLoadBalancerInputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
@@ -257,10 +238,7 @@ impl CreateLoadBalancerInputBuilder {
     /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
     /// <p>The default is an Internet-facing load balancer.</p>
     /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
-    pub fn set_scheme(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerSchemeEnum>,
-    ) -> Self {
+    pub fn set_scheme(mut self, input: ::std::option::Option<crate::types::LoadBalancerSchemeEnum>) -> Self {
         self.scheme = input;
         self
     }
@@ -283,10 +261,7 @@ impl CreateLoadBalancerInputBuilder {
         self
     }
     /// <p>The tags to assign to the load balancer.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -300,10 +275,7 @@ impl CreateLoadBalancerInputBuilder {
         self
     }
     /// <p>The type of load balancer. The default is <code>application</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerTypeEnum>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::LoadBalancerTypeEnum>) -> Self {
         self.r#type = input;
         self
     }
@@ -317,10 +289,7 @@ impl CreateLoadBalancerInputBuilder {
         self
     }
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -329,18 +298,12 @@ impl CreateLoadBalancerInputBuilder {
         &self.ip_address_type
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
-    pub fn customer_owned_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
-    pub fn set_customer_owned_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = input;
         self
     }
@@ -351,22 +314,17 @@ impl CreateLoadBalancerInputBuilder {
     /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_load_balancer::CreateLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_load_balancer::CreateLoadBalancerInput {
-                name: self.name,
-                subnets: self.subnets,
-                subnet_mappings: self.subnet_mappings,
-                security_groups: self.security_groups,
-                scheme: self.scheme,
-                tags: self.tags,
-                r#type: self.r#type,
-                ip_address_type: self.ip_address_type,
-                customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_load_balancer::CreateLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_load_balancer::CreateLoadBalancerInput {
+            name: self.name,
+            subnets: self.subnets,
+            subnet_mappings: self.subnet_mappings,
+            security_groups: self.security_groups,
+            scheme: self.scheme,
+            tags: self.tags,
+            r#type: self.r#type,
+            ip_address_type: self.ip_address_type,
+            customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl DeleteDashboardInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_dashboard::DeleteDashboardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dashboard::DeleteDashboardError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dashboard::DeleteDashboardError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_dashboard();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteDashboardFluentBuilder {
         }
     }
     /// Access the DeleteDashboard as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_dashboard::builders::DeleteDashboardInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_dashboard::builders::DeleteDashboardInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteDashboardFluentBuilder {
             crate::operation::delete_dashboard::DeleteDashboard,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dashboard::DeleteDashboardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dashboard::DeleteDashboardError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteDashboardFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteDashboardFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dashboard::DeleteDashboardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dashboard::DeleteDashboardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dashboard::DeleteDashboardError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteDashboardFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dashboard::DeleteDashboardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dashboard::DeleteDashboardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dashboard::DeleteDashboardError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteDashboardFluentBuilder {
             crate::operation::delete_dashboard::DeleteDashboard,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dashboard::DeleteDashboardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dashboard::DeleteDashboardError>,
     > {
         self.customize_middleware().await
     }

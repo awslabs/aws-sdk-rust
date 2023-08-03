@@ -26,7 +26,7 @@ impl UpdateEventSourcesConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventSourcesConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigInputBuilder,
+    inner: crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigInputBuilder,
 }
 impl UpdateEventSourcesConfigFluentBuilder {
     /// Creates a new `UpdateEventSourcesConfig`.
@@ -37,7 +37,7 @@ impl UpdateEventSourcesConfigFluentBuilder {
         }
     }
     /// Access the UpdateEventSourcesConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateEventSourcesConfigFluentBuilder {
             crate::operation::update_event_sources_config::UpdateEventSourcesConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_sources_config::UpdateEventSourcesConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_sources_config::UpdateEventSourcesConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateEventSourcesConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateEventSourcesConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_sources_config::UpdateEventSourcesConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_sources_config::UpdateEventSourcesConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_sources_config::UpdateEventSourcesConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateEventSourcesConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_sources_config::UpdateEventSourcesConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_sources_config::UpdateEventSourcesConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_sources_config::UpdateEventSourcesConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateEventSourcesConfigFluentBuilder {
             crate::operation::update_event_sources_config::UpdateEventSourcesConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_sources_config::UpdateEventSourcesConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_sources_config::UpdateEventSourcesConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl UpdateEventSourcesConfigFluentBuilder {
         self
     }
     /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
-    pub fn set_event_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourcesConfig>,
-    ) -> Self {
+    pub fn set_event_sources(mut self, input: ::std::option::Option<crate::types::EventSourcesConfig>) -> Self {
         self.inner = self.inner.set_event_sources(input);
         self
     }

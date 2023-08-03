@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`item_counts(Option<MapRunItemCounts>)`](crate::operation::describe_map_run::DescribeMapRunOutput::item_counts): <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
     ///   - [`execution_counts(Option<MapRunExecutionCounts>)`](crate::operation::describe_map_run::DescribeMapRunOutput::execution_counts): <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeMapRunError>`](crate::operation::describe_map_run::DescribeMapRunError)
-    pub fn describe_map_run(
-        &self,
-    ) -> crate::operation::describe_map_run::builders::DescribeMapRunFluentBuilder {
-        crate::operation::describe_map_run::builders::DescribeMapRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_map_run(&self) -> crate::operation::describe_map_run::builders::DescribeMapRunFluentBuilder {
+        crate::operation::describe_map_run::builders::DescribeMapRunFluentBuilder::new(self.handle.clone())
     }
 }

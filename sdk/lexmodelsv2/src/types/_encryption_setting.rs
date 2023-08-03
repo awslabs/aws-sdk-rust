@@ -32,14 +32,8 @@ impl ::std::fmt::Debug for EncryptionSetting {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionSetting");
         formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field(
-            "bot_locale_export_password",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "associated_transcripts_password",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("bot_locale_export_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("associated_transcripts_password", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -74,18 +68,12 @@ impl EncryptionSettingBuilder {
         &self.kms_key_arn
     }
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
-    pub fn bot_locale_export_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_locale_export_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_locale_export_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
-    pub fn set_bot_locale_export_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_locale_export_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_locale_export_password = input;
         self
     }
@@ -94,25 +82,17 @@ impl EncryptionSettingBuilder {
         &self.bot_locale_export_password
     }
     /// <p>The password used to encrypt the associated transcript file.</p>
-    pub fn associated_transcripts_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_transcripts_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_transcripts_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password used to encrypt the associated transcript file.</p>
-    pub fn set_associated_transcripts_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_transcripts_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_transcripts_password = input;
         self
     }
     /// <p>The password used to encrypt the associated transcript file.</p>
-    pub fn get_associated_transcripts_password(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_associated_transcripts_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.associated_transcripts_password
     }
     /// Consumes the builder and constructs a [`EncryptionSetting`](crate::types::EncryptionSetting).
@@ -128,14 +108,8 @@ impl ::std::fmt::Debug for EncryptionSettingBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionSettingBuilder");
         formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field(
-            "bot_locale_export_password",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "associated_transcripts_password",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("bot_locale_export_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("associated_transcripts_password", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateLogSubscriptionOutput {
 }
 impl CreateLogSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLogSubscriptionOutput`](crate::operation::create_log_subscription::CreateLogSubscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_log_subscription::builders::CreateLogSubscriptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_log_subscription::builders::CreateLogSubscriptionOutputBuilder {
         crate::operation::create_log_subscription::builders::CreateLogSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLogSubscriptionOutput`](crate::operation::create_log_subscription::CreateLogSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLogSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

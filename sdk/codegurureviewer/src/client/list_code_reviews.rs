@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`code_review_summaries(Option<Vec<CodeReviewSummary>>)`](crate::operation::list_code_reviews::ListCodeReviewsOutput::code_review_summaries): <p>A list of code reviews that meet the criteria of the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_code_reviews::ListCodeReviewsOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<ListCodeReviewsError>`](crate::operation::list_code_reviews::ListCodeReviewsError)
-    pub fn list_code_reviews(
-        &self,
-    ) -> crate::operation::list_code_reviews::builders::ListCodeReviewsFluentBuilder {
-        crate::operation::list_code_reviews::builders::ListCodeReviewsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_code_reviews(&self) -> crate::operation::list_code_reviews::builders::ListCodeReviewsFluentBuilder {
+        crate::operation::list_code_reviews::builders::ListCodeReviewsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -59,9 +59,7 @@ impl ValidatePolicyFinding {
 
 /// A builder for [`ValidatePolicyFinding`](crate::types::ValidatePolicyFinding).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidatePolicyFindingBuilder {
     pub(crate) finding_details: ::std::option::Option<::std::string::String>,
     pub(crate) finding_type: ::std::option::Option<crate::types::ValidatePolicyFindingType>,
@@ -71,18 +69,12 @@ pub struct ValidatePolicyFindingBuilder {
 }
 impl ValidatePolicyFindingBuilder {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    pub fn finding_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    pub fn set_finding_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_finding_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_details = input;
         self
     }
@@ -104,10 +96,7 @@ impl ValidatePolicyFindingBuilder {
     /// <p>Errors report when a part of the policy is not functional.</p>
     /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
-    pub fn set_finding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidatePolicyFindingType>,
-    ) -> Self {
+    pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::ValidatePolicyFindingType>) -> Self {
         self.finding_type = input;
         self
     }
@@ -116,9 +105,7 @@ impl ValidatePolicyFindingBuilder {
     /// <p>Errors report when a part of the policy is not functional.</p>
     /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
-    pub fn get_finding_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ValidatePolicyFindingType> {
+    pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::ValidatePolicyFindingType> {
         &self.finding_type
     }
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
@@ -136,18 +123,12 @@ impl ValidatePolicyFindingBuilder {
         &self.issue_code
     }
     /// <p>A link to additional documentation about the type of finding.</p>
-    pub fn learn_more_link(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn learn_more_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.learn_more_link = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A link to additional documentation about the type of finding.</p>
-    pub fn set_learn_more_link(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_learn_more_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.learn_more_link = input;
         self
     }
@@ -167,10 +148,7 @@ impl ValidatePolicyFindingBuilder {
         self
     }
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
-    pub fn set_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Location>>,
-    ) -> Self {
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Location>>) -> Self {
         self.locations = input;
         self
     }

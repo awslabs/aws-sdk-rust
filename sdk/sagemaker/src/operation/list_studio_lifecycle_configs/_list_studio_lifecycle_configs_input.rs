@@ -48,9 +48,7 @@ impl ListStudioLifecycleConfigsInput {
         self.name_contains.as_deref()
     }
     /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
-    pub fn app_type_equals(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StudioLifecycleConfigAppType> {
+    pub fn app_type_equals(&self) -> ::std::option::Option<&crate::types::StudioLifecycleConfigAppType> {
         self.app_type_equals.as_ref()
     }
     /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
@@ -80,16 +78,14 @@ impl ListStudioLifecycleConfigsInput {
 }
 impl ListStudioLifecycleConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListStudioLifecycleConfigsInput`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsInput).
-    pub fn builder() -> crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsInputBuilder{
+    pub fn builder() -> crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsInputBuilder {
         crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStudioLifecycleConfigsInput`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudioLifecycleConfigsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -132,18 +128,12 @@ impl ListStudioLifecycleConfigsInputBuilder {
         &self.next_token
     }
     /// <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -157,17 +147,12 @@ impl ListStudioLifecycleConfigsInputBuilder {
         self
     }
     /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
-    pub fn set_app_type_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
-    ) -> Self {
+    pub fn set_app_type_equals(mut self, input: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>) -> Self {
         self.app_type_equals = input;
         self
     }
     /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
-    pub fn get_app_type_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::StudioLifecycleConfigAppType> {
+    pub fn get_app_type_equals(&self) -> &::std::option::Option<crate::types::StudioLifecycleConfigAppType> {
         &self.app_type_equals
     }
     /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
@@ -176,10 +161,7 @@ impl ListStudioLifecycleConfigsInputBuilder {
         self
     }
     /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -193,10 +175,7 @@ impl ListStudioLifecycleConfigsInputBuilder {
         self
     }
     /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -210,10 +189,7 @@ impl ListStudioLifecycleConfigsInputBuilder {
         self
     }
     /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
-    pub fn set_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_time_before = input;
         self
     }
@@ -227,10 +203,7 @@ impl ListStudioLifecycleConfigsInputBuilder {
         self
     }
     /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
-    pub fn set_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_time_after = input;
         self
     }
@@ -244,17 +217,12 @@ impl ListStudioLifecycleConfigsInputBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is CreationTime.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioLifecycleConfigSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::StudioLifecycleConfigSortKey>) -> Self {
         self.sort_by = input;
         self
     }
     /// <p>The property used to sort results. The default value is CreationTime.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::StudioLifecycleConfigSortKey> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::StudioLifecycleConfigSortKey> {
         &self.sort_by
     }
     /// <p>The sort order. The default value is Descending.</p>
@@ -278,19 +246,17 @@ impl ListStudioLifecycleConfigsInputBuilder {
         crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                name_contains: self.name_contains,
-                app_type_equals: self.app_type_equals,
-                creation_time_before: self.creation_time_before,
-                creation_time_after: self.creation_time_after,
-                modified_time_before: self.modified_time_before,
-                modified_time_after: self.modified_time_after,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            name_contains: self.name_contains,
+            app_type_equals: self.app_type_equals,
+            creation_time_before: self.creation_time_before,
+            creation_time_after: self.creation_time_after,
+            modified_time_before: self.modified_time_before,
+            modified_time_after: self.modified_time_after,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }

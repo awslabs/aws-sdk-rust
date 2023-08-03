@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`CreatePredictorBacktestExportJobOutput`](crate::operation::create_predictor_backtest_export_job::CreatePredictorBacktestExportJobOutput) with field(s):
     ///   - [`predictor_backtest_export_job_arn(Option<String>)`](crate::operation::create_predictor_backtest_export_job::CreatePredictorBacktestExportJobOutput::predictor_backtest_export_job_arn): <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
     /// - On failure, responds with [`SdkError<CreatePredictorBacktestExportJobError>`](crate::operation::create_predictor_backtest_export_job::CreatePredictorBacktestExportJobError)
-    pub fn create_predictor_backtest_export_job(&self) -> crate::operation::create_predictor_backtest_export_job::builders::CreatePredictorBacktestExportJobFluentBuilder{
+    pub fn create_predictor_backtest_export_job(
+        &self,
+    ) -> crate::operation::create_predictor_backtest_export_job::builders::CreatePredictorBacktestExportJobFluentBuilder {
         crate::operation::create_predictor_backtest_export_job::builders::CreatePredictorBacktestExportJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,15 +6,12 @@ pub fn ser_send_otp_message_request_parameters_http_payload(
         Some(t) => t,
         None => return Ok(crate::protocol_serde::rest_json_unsetpayload()),
     };
-    Ok(
-        crate::protocol_serde::shape_send_otp_message_input::ser_send_otp_message_request_parameters_payload(payload)?
-    )
+    Ok(crate::protocol_serde::shape_send_otp_message_input::ser_send_otp_message_request_parameters_payload(payload)?)
 }
 
 pub fn ser_send_otp_message_request_parameters_payload(
     input: &crate::types::SendOtpMessageRequestParameters,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_send_otp_message_request_parameters::ser_send_otp_message_request_parameters(&mut object, input)?;

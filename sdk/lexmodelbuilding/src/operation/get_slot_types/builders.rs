@@ -10,10 +10,7 @@ impl GetSlotTypesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_slot_types::GetSlotTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_slot_types::GetSlotTypesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_slot_types::GetSlotTypesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_slot_types();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl GetSlotTypesFluentBuilder {
         }
     }
     /// Access the GetSlotTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_slot_types::builders::GetSlotTypesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_slot_types::builders::GetSlotTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,10 +61,7 @@ impl GetSlotTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -122,13 +114,8 @@ impl GetSlotTypesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_slot_types::paginator::GetSlotTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_slot_types::paginator::GetSlotTypesPaginator {
-        crate::operation::get_slot_types::paginator::GetSlotTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_slot_types::paginator::GetSlotTypesPaginator {
+        crate::operation::get_slot_types::paginator::GetSlotTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,18 +146,12 @@ impl GetSlotTypesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`upload_id(impl ::std::convert::Into<String>)`](crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadFluentBuilder::upload_id) / [`set_upload_id(Option<String>)`](crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadFluentBuilder::set_upload_id): <p> The ID for the multipart upload. </p>
     /// - On success, responds with [`AbortMultipartReadSetUploadOutput`](crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput)
     /// - On failure, responds with [`SdkError<AbortMultipartReadSetUploadError>`](crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError)
-    pub fn abort_multipart_read_set_upload(&self) -> crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadFluentBuilder{
+    pub fn abort_multipart_read_set_upload(
+        &self,
+    ) -> crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadFluentBuilder {
         crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadFluentBuilder::new(self.handle.clone())
     }
 }

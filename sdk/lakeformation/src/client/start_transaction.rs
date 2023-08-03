@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartTransactionOutput`](crate::operation::start_transaction::StartTransactionOutput) with field(s):
     ///   - [`transaction_id(Option<String>)`](crate::operation::start_transaction::StartTransactionOutput::transaction_id): <p>An opaque identifier for the transaction.</p>
     /// - On failure, responds with [`SdkError<StartTransactionError>`](crate::operation::start_transaction::StartTransactionError)
-    pub fn start_transaction(
-        &self,
-    ) -> crate::operation::start_transaction::builders::StartTransactionFluentBuilder {
-        crate::operation::start_transaction::builders::StartTransactionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_transaction(&self) -> crate::operation::start_transaction::builders::StartTransactionFluentBuilder {
+        crate::operation::start_transaction::builders::StartTransactionFluentBuilder::new(self.handle.clone())
     }
 }

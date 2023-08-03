@@ -24,9 +24,7 @@ impl CancelHandshakeInput {
 
 /// A builder for [`CancelHandshakeInput`](crate::operation::cancel_handshake::CancelHandshakeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelHandshakeInputBuilder {
     pub(crate) handshake_id: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,7 @@ impl CancelHandshakeInputBuilder {
     /// Consumes the builder and constructs a [`CancelHandshakeInput`](crate::operation::cancel_handshake::CancelHandshakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_handshake::CancelHandshakeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::cancel_handshake::CancelHandshakeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_handshake::CancelHandshakeInput {
             handshake_id: self.handshake_id,
         })

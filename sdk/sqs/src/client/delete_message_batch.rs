@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`successful(Option<Vec<DeleteMessageBatchResultEntry>>)`](crate::operation::delete_message_batch::DeleteMessageBatchOutput::successful): <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
     ///   - [`failed(Option<Vec<BatchResultErrorEntry>>)`](crate::operation::delete_message_batch::DeleteMessageBatchOutput::failed): <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
     /// - On failure, responds with [`SdkError<DeleteMessageBatchError>`](crate::operation::delete_message_batch::DeleteMessageBatchError)
-    pub fn delete_message_batch(
-        &self,
-    ) -> crate::operation::delete_message_batch::builders::DeleteMessageBatchFluentBuilder {
-        crate::operation::delete_message_batch::builders::DeleteMessageBatchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_message_batch(&self) -> crate::operation::delete_message_batch::builders::DeleteMessageBatchFluentBuilder {
+        crate::operation::delete_message_batch::builders::DeleteMessageBatchFluentBuilder::new(self.handle.clone())
     }
 }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataRepositoryTaskFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DataRepositoryTaskFilterName {
             "file-cache-id" => DataRepositoryTaskFilterName::FileCacheId,
             "file-system-id" => DataRepositoryTaskFilterName::FileSystemId,
             "task-lifecycle" => DataRepositoryTaskFilterName::TaskLifecycle,
-            other => DataRepositoryTaskFilterName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DataRepositoryTaskFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl DataRepositoryTaskFilterName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "data-repository-association-id",
-            "file-cache-id",
-            "file-system-id",
-            "task-lifecycle",
-        ]
+        &["data-repository-association-id", "file-cache-id", "file-system-id", "task-lifecycle"]
     }
 }
 impl ::std::convert::AsRef<str> for DataRepositoryTaskFilterName {

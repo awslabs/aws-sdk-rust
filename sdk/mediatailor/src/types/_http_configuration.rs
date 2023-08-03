@@ -23,9 +23,7 @@ impl HttpConfiguration {
 
 /// A builder for [`HttpConfiguration`](crate::types::HttpConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpConfigurationBuilder {
     pub(crate) base_url: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl HttpConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`HttpConfiguration`](crate::types::HttpConfiguration).
     pub fn build(self) -> crate::types::HttpConfiguration {
-        crate::types::HttpConfiguration {
-            base_url: self.base_url,
-        }
+        crate::types::HttpConfiguration { base_url: self.base_url }
     }
 }

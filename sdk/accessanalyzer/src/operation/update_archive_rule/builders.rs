@@ -10,10 +10,7 @@ impl UpdateArchiveRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_archive_rule::UpdateArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_archive_rule::UpdateArchiveRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_archive_rule::UpdateArchiveRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_archive_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateArchiveRuleFluentBuilder {
         }
     }
     /// Access the UpdateArchiveRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_archive_rule::builders::UpdateArchiveRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_archive_rule::builders::UpdateArchiveRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateArchiveRuleFluentBuilder {
             crate::operation::update_archive_rule::UpdateArchiveRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_archive_rule::UpdateArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_archive_rule::UpdateArchiveRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateArchiveRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateArchiveRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_archive_rule::UpdateArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_archive_rule::UpdateArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_archive_rule::UpdateArchiveRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateArchiveRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_archive_rule::UpdateArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_archive_rule::UpdateArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_archive_rule::UpdateArchiveRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateArchiveRuleFluentBuilder {
             crate::operation::update_archive_rule::UpdateArchiveRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_archive_rule::UpdateArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_archive_rule::UpdateArchiveRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the analyzer to update the archive rules for.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analyzer_name(input.into());
         self
     }
     /// <p>The name of the analyzer to update the archive rules for.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analyzer_name(input);
         self
     }
@@ -161,30 +139,17 @@ impl UpdateArchiveRuleFluentBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Criterion,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         self.inner = self.inner.filter(k.into(), v);
         self
     }
     /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         self.inner.get_filter()
     }
     /// <p>A client token.</p>

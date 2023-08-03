@@ -63,25 +63,20 @@ impl GetTemplateSummaryInput {
         self.call_as.as_ref()
     }
     /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
-    pub fn template_summary_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TemplateSummaryConfig> {
+    pub fn template_summary_config(&self) -> ::std::option::Option<&crate::types::TemplateSummaryConfig> {
         self.template_summary_config.as_ref()
     }
 }
 impl GetTemplateSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSummaryInput`](crate::operation::get_template_summary::GetTemplateSummaryInput).
-    pub fn builder(
-    ) -> crate::operation::get_template_summary::builders::GetTemplateSummaryInputBuilder {
+    pub fn builder() -> crate::operation::get_template_summary::builders::GetTemplateSummaryInputBuilder {
         crate::operation::get_template_summary::builders::GetTemplateSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTemplateSummaryInput`](crate::operation::get_template_summary::GetTemplateSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateSummaryInputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) template_url: ::std::option::Option<::std::string::String>,
@@ -93,19 +88,13 @@ pub struct GetTemplateSummaryInputBuilder {
 impl GetTemplateSummaryInputBuilder {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -150,19 +139,13 @@ impl GetTemplateSummaryInputBuilder {
     }
     /// <p>The name or unique ID of the stack set from which the stack was created.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set from which the stack was created.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -206,35 +189,25 @@ impl GetTemplateSummaryInputBuilder {
         self
     }
     /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
-    pub fn set_template_summary_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateSummaryConfig>,
-    ) -> Self {
+    pub fn set_template_summary_config(mut self, input: ::std::option::Option<crate::types::TemplateSummaryConfig>) -> Self {
         self.template_summary_config = input;
         self
     }
     /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
-    pub fn get_template_summary_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateSummaryConfig> {
+    pub fn get_template_summary_config(&self) -> &::std::option::Option<crate::types::TemplateSummaryConfig> {
         &self.template_summary_config
     }
     /// Consumes the builder and constructs a [`GetTemplateSummaryInput`](crate::operation::get_template_summary::GetTemplateSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_template_summary::GetTemplateSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_template_summary::GetTemplateSummaryInput {
-                template_body: self.template_body,
-                template_url: self.template_url,
-                stack_name: self.stack_name,
-                stack_set_name: self.stack_set_name,
-                call_as: self.call_as,
-                template_summary_config: self.template_summary_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_template_summary::GetTemplateSummaryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_template_summary::GetTemplateSummaryInput {
+            template_body: self.template_body,
+            template_url: self.template_url,
+            stack_name: self.stack_name,
+            stack_set_name: self.stack_set_name,
+            call_as: self.call_as,
+            template_summary_config: self.template_summary_config,
+        })
     }
 }

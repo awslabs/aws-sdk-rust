@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`hsm_client_certificate_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateFluentBuilder::hsm_client_certificate_identifier) / [`set_hsm_client_certificate_identifier(Option<String>)`](crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateFluentBuilder::set_hsm_client_certificate_identifier): <p>The identifier of the HSM client certificate to be deleted.</p>
     /// - On success, responds with [`DeleteHsmClientCertificateOutput`](crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput)
     /// - On failure, responds with [`SdkError<DeleteHsmClientCertificateError>`](crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError)
-    pub fn delete_hsm_client_certificate(&self) -> crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateFluentBuilder{
+    pub fn delete_hsm_client_certificate(
+        &self,
+    ) -> crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateFluentBuilder {
         crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateFluentBuilder::new(self.handle.clone())
     }
 }

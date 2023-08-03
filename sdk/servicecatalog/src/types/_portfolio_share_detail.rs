@@ -59,9 +59,7 @@ impl PortfolioShareDetail {
 
 /// A builder for [`PortfolioShareDetail`](crate::types::PortfolioShareDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortfolioShareDetailBuilder {
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DescribePortfolioShareType>,
@@ -102,10 +100,7 @@ impl PortfolioShareDetailBuilder {
         self
     }
     /// <p>The type of the portfolio share.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribePortfolioShareType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DescribePortfolioShareType>) -> Self {
         self.r#type = input;
         self
     }

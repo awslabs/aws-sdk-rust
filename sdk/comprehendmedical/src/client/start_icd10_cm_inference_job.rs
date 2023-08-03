@@ -13,7 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StartIcd10CmInferenceJobOutput`](crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StartICD10CMInferenceJobError>`](crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError)
-    pub fn start_icd10_cm_inference_job(&self) -> crate::operation::start_icd10_cm_inference_job::builders::StartICD10CMInferenceJobFluentBuilder{
+    pub fn start_icd10_cm_inference_job(&self) -> crate::operation::start_icd10_cm_inference_job::builders::StartICD10CMInferenceJobFluentBuilder {
         crate::operation::start_icd10_cm_inference_job::builders::StartICD10CMInferenceJobFluentBuilder::new(self.handle.clone())
     }
 }

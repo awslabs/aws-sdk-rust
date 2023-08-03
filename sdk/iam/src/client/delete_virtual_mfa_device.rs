@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`serial_number(impl ::std::convert::Into<String>)`](crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMFADeviceFluentBuilder::serial_number) / [`set_serial_number(Option<String>)`](crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMFADeviceFluentBuilder::set_serial_number): <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
     /// - On success, responds with [`DeleteVirtualMfaDeviceOutput`](crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput)
     /// - On failure, responds with [`SdkError<DeleteVirtualMFADeviceError>`](crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError)
-    pub fn delete_virtual_mfa_device(
-        &self,
-    ) -> crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMFADeviceFluentBuilder
-    {
+    pub fn delete_virtual_mfa_device(&self) -> crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMFADeviceFluentBuilder {
         crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMFADeviceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`PromoteResourceShareCreatedFromPolicyOutput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput) with field(s):
     ///   - [`return_value(Option<bool>)`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput::return_value): <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     /// - On failure, responds with [`SdkError<PromoteResourceShareCreatedFromPolicyError>`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError)
-    pub fn promote_resource_share_created_from_policy(&self) -> crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyFluentBuilder{
-        crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyFluentBuilder::new(self.handle.clone())
+    pub fn promote_resource_share_created_from_policy(
+        &self,
+    ) -> crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyFluentBuilder {
+        crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

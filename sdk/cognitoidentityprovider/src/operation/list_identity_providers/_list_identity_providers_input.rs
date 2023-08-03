@@ -29,18 +29,14 @@ impl ListIdentityProvidersInput {
 }
 impl ListIdentityProvidersInput {
     /// Creates a new builder-style object to manufacture [`ListIdentityProvidersInput`](crate::operation::list_identity_providers::ListIdentityProvidersInput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_identity_providers::builders::ListIdentityProvidersInputBuilder {
         crate::operation::list_identity_providers::builders::ListIdentityProvidersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityProvidersInput`](crate::operation::list_identity_providers::ListIdentityProvidersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityProvidersInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +88,12 @@ impl ListIdentityProvidersInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentityProvidersInput`](crate::operation::list_identity_providers::ListIdentityProvidersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_identity_providers::ListIdentityProvidersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_identity_providers::ListIdentityProvidersInput {
-                user_pool_id: self.user_pool_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_identity_providers::ListIdentityProvidersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_identity_providers::ListIdentityProvidersInput {
+            user_pool_id: self.user_pool_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

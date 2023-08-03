@@ -29,9 +29,7 @@ impl DeleteArtifactInput {
 
 /// A builder for [`DeleteArtifactInput`](crate::operation::delete_artifact::DeleteArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteArtifactInputBuilder {
     pub(crate) artifact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::ArtifactSource>,
@@ -57,10 +55,7 @@ impl DeleteArtifactInputBuilder {
         self
     }
     /// <p>The URI of the source.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ArtifactSource>) -> Self {
         self.source = input;
         self
     }
@@ -71,10 +66,7 @@ impl DeleteArtifactInputBuilder {
     /// Consumes the builder and constructs a [`DeleteArtifactInput`](crate::operation::delete_artifact::DeleteArtifactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_artifact::DeleteArtifactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_artifact::DeleteArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_artifact::DeleteArtifactInput {
             artifact_arn: self.artifact_arn,
             source: self.source,

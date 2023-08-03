@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDatasetImportJobOutput`](crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput) with field(s):
     ///   - [`dataset_import_job_arn(Option<String>)`](crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput::dataset_import_job_arn): <p>The ARN of the dataset import job.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetImportJobError>`](crate::operation::create_dataset_import_job::CreateDatasetImportJobError)
-    pub fn create_dataset_import_job(
-        &self,
-    ) -> crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobFluentBuilder
-    {
+    pub fn create_dataset_import_job(&self) -> crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobFluentBuilder {
         crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobFluentBuilder::new(self.handle.clone())
     }
 }

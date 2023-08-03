@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`recursive_delete_option(bool)`](crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder::recursive_delete_option) / [`set_recursive_delete_option(Option<bool>)`](crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder::set_recursive_delete_option): <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     /// - On success, responds with [`DeleteWorkGroupOutput`](crate::operation::delete_work_group::DeleteWorkGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkGroupError>`](crate::operation::delete_work_group::DeleteWorkGroupError)
-    pub fn delete_work_group(
-        &self,
-    ) -> crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder {
-        crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_work_group(&self) -> crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder {
+        crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder::new(self.handle.clone())
     }
 }

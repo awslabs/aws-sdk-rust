@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`MonitorInstancesOutput`](crate::operation::monitor_instances::MonitorInstancesOutput) with field(s):
     ///   - [`instance_monitorings(Option<Vec<InstanceMonitoring>>)`](crate::operation::monitor_instances::MonitorInstancesOutput::instance_monitorings): <p>The monitoring information.</p>
     /// - On failure, responds with [`SdkError<MonitorInstancesError>`](crate::operation::monitor_instances::MonitorInstancesError)
-    pub fn monitor_instances(
-        &self,
-    ) -> crate::operation::monitor_instances::builders::MonitorInstancesFluentBuilder {
-        crate::operation::monitor_instances::builders::MonitorInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn monitor_instances(&self) -> crate::operation::monitor_instances::builders::MonitorInstancesFluentBuilder {
+        crate::operation::monitor_instances::builders::MonitorInstancesFluentBuilder::new(self.handle.clone())
     }
 }

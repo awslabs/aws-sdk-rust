@@ -15,17 +15,14 @@ impl BatchGetReportGroupsInput {
 }
 impl BatchGetReportGroupsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetReportGroupsInput`](crate::operation::batch_get_report_groups::BatchGetReportGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsInputBuilder {
         crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetReportGroupsInput`](crate::operation::batch_get_report_groups::BatchGetReportGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetReportGroupsInputBuilder {
     pub(crate) report_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,40 +32,28 @@ impl BatchGetReportGroupsInputBuilder {
     /// To override the contents of this collection use [`set_report_group_arns`](Self::set_report_group_arns).
     ///
     /// <p> An array of report group ARNs that identify the report groups to return. </p>
-    pub fn report_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.report_group_arns.unwrap_or_default();
         v.push(input.into());
         self.report_group_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of report group ARNs that identify the report groups to return. </p>
-    pub fn set_report_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_report_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.report_group_arns = input;
         self
     }
     /// <p> An array of report group ARNs that identify the report groups to return. </p>
-    pub fn get_report_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_report_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.report_group_arns
     }
     /// Consumes the builder and constructs a [`BatchGetReportGroupsInput`](crate::operation::batch_get_report_groups::BatchGetReportGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_report_groups::BatchGetReportGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_report_groups::BatchGetReportGroupsInput {
-                report_group_arns: self.report_group_arns,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_report_groups::BatchGetReportGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_report_groups::BatchGetReportGroupsInput {
+            report_group_arns: self.report_group_arns,
+        })
     }
 }

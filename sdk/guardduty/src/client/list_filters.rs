@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`filter_names(Option<Vec<String>>)`](crate::operation::list_filters::ListFiltersOutput::filter_names): <p>A list of filter names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_filters::ListFiltersOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     /// - On failure, responds with [`SdkError<ListFiltersError>`](crate::operation::list_filters::ListFiltersError)
-    pub fn list_filters(
-        &self,
-    ) -> crate::operation::list_filters::builders::ListFiltersFluentBuilder {
+    pub fn list_filters(&self) -> crate::operation::list_filters::builders::ListFiltersFluentBuilder {
         crate::operation::list_filters::builders::ListFiltersFluentBuilder::new(self.handle.clone())
     }
 }

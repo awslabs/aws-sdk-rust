@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEventIntegrationOutput`](crate::operation::create_event_integration::CreateEventIntegrationOutput) with field(s):
     ///   - [`event_integration_arn(Option<String>)`](crate::operation::create_event_integration::CreateEventIntegrationOutput::event_integration_arn): <p>The Amazon Resource Name (ARN) of the event integration. </p>
     /// - On failure, responds with [`SdkError<CreateEventIntegrationError>`](crate::operation::create_event_integration::CreateEventIntegrationError)
-    pub fn create_event_integration(
-        &self,
-    ) -> crate::operation::create_event_integration::builders::CreateEventIntegrationFluentBuilder
-    {
+    pub fn create_event_integration(&self) -> crate::operation::create_event_integration::builders::CreateEventIntegrationFluentBuilder {
         crate::operation::create_event_integration::builders::CreateEventIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

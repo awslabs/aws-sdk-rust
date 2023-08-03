@@ -5,8 +5,7 @@
 pub struct ListEdgeAgentConfigurationsOutput {
     /// <p>A description of a single stream's edge configuration.</p>
     #[doc(hidden)]
-    pub edge_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>>,
+    pub edge_configs: ::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>>,
     /// <p>If the response is truncated, the call returns this element with a given token. To get the next batch of edge configurations, use this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEdgeAgentConfigurationsOutput {
 }
 impl ListEdgeAgentConfigurationsOutput {
     /// <p>A description of a single stream's edge configuration.</p>
-    pub fn edge_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListEdgeAgentConfigurationsEdgeConfig]> {
+    pub fn edge_configs(&self) -> ::std::option::Option<&[crate::types::ListEdgeAgentConfigurationsEdgeConfig]> {
         self.edge_configs.as_deref()
     }
     /// <p>If the response is truncated, the call returns this element with a given token. To get the next batch of edge configurations, use this token in your next request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEdgeAgentConfigurationsOutput {
 }
 impl ListEdgeAgentConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListEdgeAgentConfigurationsOutput`](crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsOutputBuilder {
         crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEdgeAgentConfigurationsOutput`](crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEdgeAgentConfigurationsOutputBuilder {
-    pub(crate) edge_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>>,
+    pub(crate) edge_configs: ::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,30 +47,19 @@ impl ListEdgeAgentConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_edge_configs`](Self::set_edge_configs).
     ///
     /// <p>A description of a single stream's edge configuration.</p>
-    pub fn edge_configs(
-        mut self,
-        input: crate::types::ListEdgeAgentConfigurationsEdgeConfig,
-    ) -> Self {
+    pub fn edge_configs(mut self, input: crate::types::ListEdgeAgentConfigurationsEdgeConfig) -> Self {
         let mut v = self.edge_configs.unwrap_or_default();
         v.push(input);
         self.edge_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>A description of a single stream's edge configuration.</p>
-    pub fn set_edge_configs(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>,
-        >,
-    ) -> Self {
+    pub fn set_edge_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>>) -> Self {
         self.edge_configs = input;
         self
     }
     /// <p>A description of a single stream's edge configuration.</p>
-    pub fn get_edge_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>>
-    {
+    pub fn get_edge_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>> {
         &self.edge_configs
     }
     /// <p>If the response is truncated, the call returns this element with a given token. To get the next batch of edge configurations, use this token in your next request.</p>
@@ -103,9 +86,7 @@ impl ListEdgeAgentConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEdgeAgentConfigurationsOutput`](crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput {
         crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput {
             edge_configs: self.edge_configs,
             next_token: self.next_token,

@@ -37,9 +37,7 @@ impl FilterExpression {
 
 /// A builder for [`FilterExpression`](crate::types::FilterExpression).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterExpressionBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::FilterOperation>,
     pub(crate) negated: ::std::option::Option<bool>,
@@ -52,10 +50,7 @@ impl FilterExpressionBuilder {
         self
     }
     /// <p>The type of operation to perform in the expression.</p>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterOperation>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::FilterOperation>) -> Self {
         self.operation = input;
         self
     }
@@ -89,10 +84,7 @@ impl FilterExpressionBuilder {
         self
     }
     /// <p>A list of filter values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterValue>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterValue>>) -> Self {
         self.values = input;
         self
     }

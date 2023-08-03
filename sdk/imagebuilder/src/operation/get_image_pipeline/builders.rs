@@ -10,10 +10,7 @@ impl GetImagePipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_image_pipeline::GetImagePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_pipeline::GetImagePipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_image_pipeline::GetImagePipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_image_pipeline();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetImagePipelineFluentBuilder {
         }
     }
     /// Access the GetImagePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_image_pipeline::builders::GetImagePipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_image_pipeline::builders::GetImagePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetImagePipelineFluentBuilder {
             crate::operation::get_image_pipeline::GetImagePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_pipeline::GetImagePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_image_pipeline::GetImagePipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetImagePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetImagePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_image_pipeline::GetImagePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_pipeline::GetImagePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_image_pipeline::GetImagePipelineError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetImagePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_image_pipeline::GetImagePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_pipeline::GetImagePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_image_pipeline::GetImagePipelineError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetImagePipelineFluentBuilder {
             crate::operation::get_image_pipeline::GetImagePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_pipeline::GetImagePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_image_pipeline::GetImagePipelineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
-    pub fn image_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_pipeline_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
-    pub fn set_image_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_pipeline_arn(input);
         self
     }

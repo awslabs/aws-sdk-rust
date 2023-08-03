@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`training_job_summaries(Option<Vec<TrainingJobSummary>>)`](crate::operation::list_training_jobs::ListTrainingJobsOutput::training_job_summaries): <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_training_jobs::ListTrainingJobsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListTrainingJobsError>`](crate::operation::list_training_jobs::ListTrainingJobsError)
-    pub fn list_training_jobs(
-        &self,
-    ) -> crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder {
-        crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_training_jobs(&self) -> crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder {
+        crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::new(self.handle.clone())
     }
 }

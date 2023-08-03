@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAssessmentFrameworkOutput {
 }
 impl CreateAssessmentFrameworkOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssessmentFrameworkOutput`](crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput).
-    pub fn builder() -> crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkOutputBuilder{
+    pub fn builder() -> crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkOutputBuilder {
         crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAssessmentFrameworkOutput`](crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkOutputBuilder {
     pub(crate) framework: ::std::option::Option<crate::types::Framework>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CreateAssessmentFrameworkOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAssessmentFrameworkOutput`](crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput {
+    pub fn build(self) -> crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput {
         crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput {
             framework: self.framework,
             _request_id: self._request_id,

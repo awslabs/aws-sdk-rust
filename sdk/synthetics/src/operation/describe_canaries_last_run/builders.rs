@@ -28,8 +28,7 @@ impl DescribeCanariesLastRunInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCanariesLastRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunInputBuilder,
+    inner: crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunInputBuilder,
 }
 impl DescribeCanariesLastRunFluentBuilder {
     /// Creates a new `DescribeCanariesLastRun`.
@@ -40,10 +39,7 @@ impl DescribeCanariesLastRunFluentBuilder {
         }
     }
     /// Access the DescribeCanariesLastRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DescribeCanariesLastRunFluentBuilder {
             crate::operation::describe_canaries_last_run::DescribeCanariesLastRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_canaries_last_run::DescribeCanariesLastRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_canaries_last_run::DescribeCanariesLastRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DescribeCanariesLastRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DescribeCanariesLastRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_canaries_last_run::DescribeCanariesLastRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_canaries_last_run::DescribeCanariesLastRunError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DescribeCanariesLastRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_canaries_last_run::DescribeCanariesLastRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_canaries_last_run::DescribeCanariesLastRunError>,
     > {
         self.send_middleware().await
     }
@@ -120,19 +107,14 @@ impl DescribeCanariesLastRunFluentBuilder {
             crate::operation::describe_canaries_last_run::DescribeCanariesLastRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_canaries_last_run::DescribeCanariesLastRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_canaries_last_run::DescribeCanariesLastRunError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_canaries_last_run::paginator::DescribeCanariesLastRunPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_canaries_last_run::paginator::DescribeCanariesLastRunPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_canaries_last_run::paginator::DescribeCanariesLastRunPaginator {
         crate::operation::describe_canaries_last_run::paginator::DescribeCanariesLastRunPaginator::new(self.handle, self.inner)
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
@@ -177,10 +159,7 @@ impl DescribeCanariesLastRunFluentBuilder {
     /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
     /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
     /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

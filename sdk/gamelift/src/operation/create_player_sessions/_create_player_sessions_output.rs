@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePlayerSessionsOutput {
 }
 impl CreatePlayerSessionsOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionsOutput`](crate::operation::create_player_sessions::CreatePlayerSessionsOutput).
-    pub fn builder(
-    ) -> crate::operation::create_player_sessions::builders::CreatePlayerSessionsOutputBuilder {
+    pub fn builder() -> crate::operation::create_player_sessions::builders::CreatePlayerSessionsOutputBuilder {
         crate::operation::create_player_sessions::builders::CreatePlayerSessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePlayerSessionsOutput`](crate::operation::create_player_sessions::CreatePlayerSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePlayerSessionsOutputBuilder {
     pub(crate) player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::PlayerSession>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl CreatePlayerSessionsOutputBuilder {
         self
     }
     /// <p>A collection of player session objects created for the added players.</p>
-    pub fn set_player_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerSession>>,
-    ) -> Self {
+    pub fn set_player_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerSession>>) -> Self {
         self.player_sessions = input;
         self
     }
     /// <p>A collection of player session objects created for the added players.</p>
-    pub fn get_player_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerSession>> {
+    pub fn get_player_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerSession>> {
         &self.player_sessions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

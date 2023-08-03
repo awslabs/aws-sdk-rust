@@ -7,19 +7,13 @@ pub(crate) fn de_realtime_log_configs_payload(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::protocol_serde::shape_list_realtime_log_configs_output::de_realtime_log_configs(
-                body,
-            )
-            .map_err(
-                crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled,
-            )
+            crate::protocol_serde::shape_list_realtime_log_configs_output::de_realtime_log_configs(body)
+                .map_err(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled)
         })
         .transpose()
 }
 
-pub fn de_realtime_log_configs(
-    inp: &[u8],
-) -> Result<crate::types::RealtimeLogConfigs, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_realtime_log_configs(inp: &[u8]) -> Result<crate::types::RealtimeLogConfigs, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

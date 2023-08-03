@@ -4,9 +4,7 @@ pub fn ser_batch_disassociate_approval_rule_template_from_repositories_input(
     input: &crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.approval_rule_template_name {
-        object
-            .key("approvalRuleTemplateName")
-            .string(var_1.as_str());
+        object.key("approvalRuleTemplateName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.repository_names {
         let mut array_3 = object.key("repositoryNames").start_array();

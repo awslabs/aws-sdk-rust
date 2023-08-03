@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`rest_api_id(Option<String>)`](crate::operation::get_base_path_mapping::GetBasePathMappingOutput::rest_api_id): <p>The string identifier of the associated RestApi.</p>
     ///   - [`stage(Option<String>)`](crate::operation::get_base_path_mapping::GetBasePathMappingOutput::stage): <p>The name of the associated stage.</p>
     /// - On failure, responds with [`SdkError<GetBasePathMappingError>`](crate::operation::get_base_path_mapping::GetBasePathMappingError)
-    pub fn get_base_path_mapping(
-        &self,
-    ) -> crate::operation::get_base_path_mapping::builders::GetBasePathMappingFluentBuilder {
-        crate::operation::get_base_path_mapping::builders::GetBasePathMappingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_base_path_mapping(&self) -> crate::operation::get_base_path_mapping::builders::GetBasePathMappingFluentBuilder {
+        crate::operation::get_base_path_mapping::builders::GetBasePathMappingFluentBuilder::new(self.handle.clone())
     }
 }

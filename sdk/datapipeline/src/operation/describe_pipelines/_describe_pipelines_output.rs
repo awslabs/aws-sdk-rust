@@ -6,15 +6,12 @@
 pub struct DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
     #[doc(hidden)]
-    pub pipeline_description_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
+    pub pipeline_description_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
     _request_id: Option<String>,
 }
 impl DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
-    pub fn pipeline_description_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PipelineDescription]> {
+    pub fn pipeline_description_list(&self) -> ::std::option::Option<&[crate::types::PipelineDescription]> {
         self.pipeline_description_list.as_deref()
     }
 }
@@ -25,20 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribePipelinesOutput {
 }
 impl DescribePipelinesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePipelinesOutput`](crate::operation::describe_pipelines::DescribePipelinesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_pipelines::builders::DescribePipelinesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_pipelines::builders::DescribePipelinesOutputBuilder {
         crate::operation::describe_pipelines::builders::DescribePipelinesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePipelinesOutput`](crate::operation::describe_pipelines::DescribePipelinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePipelinesOutputBuilder {
-    pub(crate) pipeline_description_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
+    pub(crate) pipeline_description_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
     _request_id: Option<String>,
 }
 impl DescribePipelinesOutputBuilder {
@@ -54,17 +47,12 @@ impl DescribePipelinesOutputBuilder {
         self
     }
     /// <p>An array of descriptions for the specified pipelines.</p>
-    pub fn set_pipeline_description_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
-    ) -> Self {
+    pub fn set_pipeline_description_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>) -> Self {
         self.pipeline_description_list = input;
         self
     }
     /// <p>An array of descriptions for the specified pipelines.</p>
-    pub fn get_pipeline_description_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>> {
+    pub fn get_pipeline_description_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>> {
         &self.pipeline_description_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

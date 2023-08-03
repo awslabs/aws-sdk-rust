@@ -22,26 +22,18 @@ impl GetPullRequestInput {
 
 /// A builder for [`GetPullRequestInput`](crate::operation::get_pull_request::GetPullRequestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPullRequestInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPullRequestInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetPullRequestInputBuilder {
     /// Consumes the builder and constructs a [`GetPullRequestInput`](crate::operation::get_pull_request::GetPullRequestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_pull_request::GetPullRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_pull_request::GetPullRequestInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_pull_request::GetPullRequestInput {
             pull_request_id: self.pull_request_id,
         })

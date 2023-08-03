@@ -9,8 +9,7 @@ pub struct ShadowModeConfig {
     pub source_model_variant_name: ::std::option::Option<::std::string::String>,
     /// <p>List of shadow variant configurations.</p>
     #[doc(hidden)]
-    pub shadow_model_variants:
-        ::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
+    pub shadow_model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
 }
 impl ShadowModeConfig {
     /// <p> The name of the production variant, which takes all the inference requests. </p>
@@ -18,9 +17,7 @@ impl ShadowModeConfig {
         self.source_model_variant_name.as_deref()
     }
     /// <p>List of shadow variant configurations.</p>
-    pub fn shadow_model_variants(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ShadowModelVariantConfig]> {
+    pub fn shadow_model_variants(&self) -> ::std::option::Option<&[crate::types::ShadowModelVariantConfig]> {
         self.shadow_model_variants.as_deref()
     }
 }
@@ -33,28 +30,19 @@ impl ShadowModeConfig {
 
 /// A builder for [`ShadowModeConfig`](crate::types::ShadowModeConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShadowModeConfigBuilder {
     pub(crate) source_model_variant_name: ::std::option::Option<::std::string::String>,
-    pub(crate) shadow_model_variants:
-        ::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
+    pub(crate) shadow_model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
 }
 impl ShadowModeConfigBuilder {
     /// <p> The name of the production variant, which takes all the inference requests. </p>
-    pub fn source_model_variant_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_model_variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_model_variant_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the production variant, which takes all the inference requests. </p>
-    pub fn set_source_model_variant_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_model_variant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_model_variant_name = input;
         self
     }
@@ -74,17 +62,12 @@ impl ShadowModeConfigBuilder {
         self
     }
     /// <p>List of shadow variant configurations.</p>
-    pub fn set_shadow_model_variants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
-    ) -> Self {
+    pub fn set_shadow_model_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>>) -> Self {
         self.shadow_model_variants = input;
         self
     }
     /// <p>List of shadow variant configurations.</p>
-    pub fn get_shadow_model_variants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>> {
+    pub fn get_shadow_model_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>> {
         &self.shadow_model_variants
     }
     /// Consumes the builder and constructs a [`ShadowModeConfig`](crate::types::ShadowModeConfig).

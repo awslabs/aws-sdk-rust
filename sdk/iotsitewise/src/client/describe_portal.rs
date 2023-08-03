@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`notification_sender_email(Option<String>)`](crate::operation::describe_portal::DescribePortalOutput::notification_sender_email): <p>The email address that sends alarm notifications.</p>
     ///   - [`alarms(Option<Alarms>)`](crate::operation::describe_portal::DescribePortalOutput::alarms): <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
     /// - On failure, responds with [`SdkError<DescribePortalError>`](crate::operation::describe_portal::DescribePortalError)
-    pub fn describe_portal(
-        &self,
-    ) -> crate::operation::describe_portal::builders::DescribePortalFluentBuilder {
-        crate::operation::describe_portal::builders::DescribePortalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_portal(&self) -> crate::operation::describe_portal::builders::DescribePortalFluentBuilder {
+        crate::operation::describe_portal::builders::DescribePortalFluentBuilder::new(self.handle.clone())
     }
 }

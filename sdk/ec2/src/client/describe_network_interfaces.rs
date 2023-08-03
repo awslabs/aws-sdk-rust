@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`network_interfaces(Option<Vec<NetworkInterface>>)`](crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput::network_interfaces): <p>Information about one or more network interfaces.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeNetworkInterfacesError>`](crate::operation::describe_network_interfaces::DescribeNetworkInterfacesError)
-    pub fn describe_network_interfaces(&self) -> crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesFluentBuilder{
+    pub fn describe_network_interfaces(&self) -> crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesFluentBuilder {
         crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesFluentBuilder::new(self.handle.clone())
     }
 }

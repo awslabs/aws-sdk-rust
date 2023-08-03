@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCustomEntityTypeOutput`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput::name): <p>The name of the custom pattern you deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteCustomEntityTypeError>`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError)
-    pub fn delete_custom_entity_type(
-        &self,
-    ) -> crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeFluentBuilder
-    {
+    pub fn delete_custom_entity_type(&self) -> crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeFluentBuilder {
         crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeFluentBuilder::new(self.handle.clone())
     }
 }

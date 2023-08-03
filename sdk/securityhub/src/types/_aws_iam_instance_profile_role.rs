@@ -60,9 +60,7 @@ impl AwsIamInstanceProfileRole {
 
 /// A builder for [`AwsIamInstanceProfileRole`](crate::types::AwsIamInstanceProfileRole).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamInstanceProfileRoleBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) assume_role_policy_document: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ impl AwsIamInstanceProfileRoleBuilder {
         &self.arn
     }
     /// <p>The policy that grants an entity permission to assume the role.</p>
-    pub fn assume_role_policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assume_role_policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assume_role_policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy that grants an entity permission to assume the role.</p>
-    pub fn set_assume_role_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assume_role_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assume_role_policy_document = input;
         self
     }

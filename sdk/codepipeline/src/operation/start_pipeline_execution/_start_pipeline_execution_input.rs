@@ -23,18 +23,14 @@ impl StartPipelineExecutionInput {
 }
 impl StartPipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder {
         crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartPipelineExecutionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -55,18 +51,12 @@ impl StartPipelineExecutionInputBuilder {
         &self.name
     }
     /// <p>The system-generated unique ID used to identify a unique execution request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated unique ID used to identify a unique execution request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -77,15 +67,11 @@ impl StartPipelineExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_pipeline_execution::StartPipelineExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_pipeline_execution::StartPipelineExecutionInput {
-                name: self.name,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_pipeline_execution::StartPipelineExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_pipeline_execution::StartPipelineExecutionInput {
+            name: self.name,
+            client_request_token: self.client_request_token,
+        })
     }
 }

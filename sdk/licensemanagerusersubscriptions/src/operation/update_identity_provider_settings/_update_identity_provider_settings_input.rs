@@ -39,16 +39,14 @@ impl UpdateIdentityProviderSettingsInput {
 }
 impl UpdateIdentityProviderSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderSettingsInput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput).
-    pub fn builder() -> crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsInputBuilder{
+    pub fn builder() -> crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsInputBuilder {
         crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIdentityProviderSettingsInput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderSettingsInputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     pub(crate) product: ::std::option::Option<::std::string::String>,
@@ -61,10 +59,7 @@ impl UpdateIdentityProviderSettingsInputBuilder {
         self
     }
     /// <p>Details about an identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
@@ -102,10 +97,7 @@ impl UpdateIdentityProviderSettingsInputBuilder {
     /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
     /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
     /// </ul>
-    pub fn set_update_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateSettings>,
-    ) -> Self {
+    pub fn set_update_settings(mut self, input: ::std::option::Option<crate::types::UpdateSettings>) -> Self {
         self.update_settings = input;
         self
     }
@@ -125,15 +117,10 @@ impl UpdateIdentityProviderSettingsInputBuilder {
         crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput {
-                identity_provider: self.identity_provider
-                ,
-                product: self.product
-                ,
-                update_settings: self.update_settings
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput {
+            identity_provider: self.identity_provider,
+            product: self.product,
+            update_settings: self.update_settings,
+        })
     }
 }

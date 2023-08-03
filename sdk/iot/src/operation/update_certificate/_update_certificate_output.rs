@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateCertificateOutput {
 }
 impl UpdateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateOutput`](crate::operation::update_certificate::UpdateCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder {
         crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCertificateOutput`](crate::operation::update_certificate::UpdateCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCertificateOutputBuilder {
     _request_id: Option<String>,
 }

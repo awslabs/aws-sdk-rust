@@ -10,10 +10,7 @@ impl CreateDataViewInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_data_view::CreateDataViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_view::CreateDataViewError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_data_view();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDataViewFluentBuilder {
         }
     }
     /// Access the CreateDataView as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_data_view::builders::CreateDataViewInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_data_view::builders::CreateDataViewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDataViewFluentBuilder {
             crate::operation::create_data_view::CreateDataView,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_view::CreateDataViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDataViewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDataViewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_view::CreateDataViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_view::CreateDataViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDataViewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_view::CreateDataViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_view::CreateDataViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateDataViewFluentBuilder {
             crate::operation::create_data_view::CreateDataView,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_view::CreateDataViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>,
     > {
         self.customize_middleware().await
     }
@@ -174,17 +158,12 @@ impl CreateDataViewFluentBuilder {
         self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn set_sort_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sort_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sort_columns(input);
         self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn get_sort_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sort_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_sort_columns()
     }
     /// Appends an item to `partitionColumns`.
@@ -192,25 +171,17 @@ impl CreateDataViewFluentBuilder {
     /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
     ///
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partition_columns(input.into());
         self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn set_partition_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_partition_columns(input);
         self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn get_partition_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_partition_columns()
     }
     /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -228,25 +199,17 @@ impl CreateDataViewFluentBuilder {
         self.inner.get_as_of_timestamp()
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn destination_type_params(
-        mut self,
-        input: crate::types::DataViewDestinationTypeParams,
-    ) -> Self {
+    pub fn destination_type_params(mut self, input: crate::types::DataViewDestinationTypeParams) -> Self {
         self.inner = self.inner.destination_type_params(input);
         self
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn set_destination_type_params(
-        mut self,
-        input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
-    ) -> Self {
+    pub fn set_destination_type_params(mut self, input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>) -> Self {
         self.inner = self.inner.set_destination_type_params(input);
         self
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn get_destination_type_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
+    pub fn get_destination_type_params(&self) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
         self.inner.get_destination_type_params()
     }
 }

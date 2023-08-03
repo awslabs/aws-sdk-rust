@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_reports::ListReportsOutput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     ///   - [`reports(Option<Vec<String>>)`](crate::operation::list_reports::ListReportsOutput::reports): <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
     /// - On failure, responds with [`SdkError<ListReportsError>`](crate::operation::list_reports::ListReportsError)
-    pub fn list_reports(
-        &self,
-    ) -> crate::operation::list_reports::builders::ListReportsFluentBuilder {
+    pub fn list_reports(&self) -> crate::operation::list_reports::builders::ListReportsFluentBuilder {
         crate::operation::list_reports::builders::ListReportsFluentBuilder::new(self.handle.clone())
     }
 }

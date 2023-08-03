@@ -10,10 +10,7 @@ impl ExportImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::export_image::ExportImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_image::ExportImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_image::ExportImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.export_image();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ExportImageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::export_image::ExportImage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::export_image::ExportImage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::export_image::ExportImageError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ExportImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ExportImageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::export_image::ExportImage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::export_image::ExportImage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::export_image::ExportImageError>,
     > {
         self.customize_middleware().await
@@ -146,10 +134,7 @@ impl ExportImageFluentBuilder {
         self
     }
     /// <p>The disk image format.</p>
-    pub fn set_disk_image_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageFormat>,
-    ) -> Self {
+    pub fn set_disk_image_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
         self.inner = self.inner.set_disk_image_format(input);
         self
     }
@@ -191,17 +176,12 @@ impl ExportImageFluentBuilder {
         self
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
-    pub fn set_s3_export_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportTaskS3LocationRequest>,
-    ) -> Self {
+    pub fn set_s3_export_location(mut self, input: ::std::option::Option<crate::types::ExportTaskS3LocationRequest>) -> Self {
         self.inner = self.inner.set_s3_export_location(input);
         self
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
-    pub fn get_s3_export_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportTaskS3LocationRequest> {
+    pub fn get_s3_export_location(&self) -> &::std::option::Option<crate::types::ExportTaskS3LocationRequest> {
         self.inner.get_s3_export_location()
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.</p>
@@ -228,17 +208,12 @@ impl ExportImageFluentBuilder {
         self
     }
     /// <p>The tags to apply to the export image task during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the export image task during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

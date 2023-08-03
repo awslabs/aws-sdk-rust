@@ -5,16 +5,16 @@ pub use crate::operation::set_security_token_service_preferences::_set_security_
 
 impl SetSecurityTokenServicePreferencesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.set_security_token_service_preferences();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl SetSecurityTokenServicePreferencesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetSecurityTokenServicePreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_security_token_service_preferences::builders::SetSecurityTokenServicePreferencesInputBuilder,
+    inner: crate::operation::set_security_token_service_preferences::builders::SetSecurityTokenServicePreferencesInputBuilder,
 }
 impl SetSecurityTokenServicePreferencesFluentBuilder {
     /// Creates a new `SetSecurityTokenServicePreferences`.
@@ -40,15 +40,20 @@ impl SetSecurityTokenServicePreferencesFluentBuilder {
         }
     }
     /// Access the SetSecurityTokenServicePreferences as a reference.
-    pub fn as_input(&self) -> &crate::operation::set_security_token_service_preferences::builders::SetSecurityTokenServicePreferencesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::set_security_token_service_preferences::builders::SetSecurityTokenServicePreferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferences, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferences,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl SetSecurityTokenServicePreferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,42 +90,43 @@ impl SetSecurityTokenServicePreferencesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferences, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferences,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The version of the global endpoint token. Version 1 tokens are valid only in Amazon Web Services Regions that are available by default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect systems where you temporarily store tokens.</p>
     /// <p>For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
-    pub fn global_endpoint_token_version(
-        mut self,
-        input: crate::types::GlobalEndpointTokenVersion,
-    ) -> Self {
+    pub fn global_endpoint_token_version(mut self, input: crate::types::GlobalEndpointTokenVersion) -> Self {
         self.inner = self.inner.global_endpoint_token_version(input);
         self
     }
     /// <p>The version of the global endpoint token. Version 1 tokens are valid only in Amazon Web Services Regions that are available by default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect systems where you temporarily store tokens.</p>
     /// <p>For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_global_endpoint_token_version(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalEndpointTokenVersion>,
-    ) -> Self {
+    pub fn set_global_endpoint_token_version(mut self, input: ::std::option::Option<crate::types::GlobalEndpointTokenVersion>) -> Self {
         self.inner = self.inner.set_global_endpoint_token_version(input);
         self
     }
     /// <p>The version of the global endpoint token. Version 1 tokens are valid only in Amazon Web Services Regions that are available by default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect systems where you temporarily store tokens.</p>
     /// <p>For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
-    pub fn get_global_endpoint_token_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::GlobalEndpointTokenVersion> {
+    pub fn get_global_endpoint_token_version(&self) -> &::std::option::Option<crate::types::GlobalEndpointTokenVersion> {
         self.inner.get_global_endpoint_token_version()
     }
 }

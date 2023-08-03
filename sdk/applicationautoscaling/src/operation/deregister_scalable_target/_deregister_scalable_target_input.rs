@@ -113,18 +113,14 @@ impl DeregisterScalableTargetInput {
 }
 impl DeregisterScalableTargetInput {
     /// Creates a new builder-style object to manufacture [`DeregisterScalableTargetInput`](crate::operation::deregister_scalable_target::DeregisterScalableTargetInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetInputBuilder {
         crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterScalableTargetInput`](crate::operation::deregister_scalable_target::DeregisterScalableTargetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterScalableTargetInputBuilder {
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -137,10 +133,7 @@ impl DeregisterScalableTargetInputBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -271,10 +264,7 @@ impl DeregisterScalableTargetInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -302,9 +292,7 @@ impl DeregisterScalableTargetInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// Consumes the builder and constructs a [`DeregisterScalableTargetInput`](crate::operation::deregister_scalable_target::DeregisterScalableTargetInput).
@@ -314,12 +302,10 @@ impl DeregisterScalableTargetInputBuilder {
         crate::operation::deregister_scalable_target::DeregisterScalableTargetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_scalable_target::DeregisterScalableTargetInput {
-                service_namespace: self.service_namespace,
-                resource_id: self.resource_id,
-                scalable_dimension: self.scalable_dimension,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deregister_scalable_target::DeregisterScalableTargetInput {
+            service_namespace: self.service_namespace,
+            resource_id: self.resource_id,
+            scalable_dimension: self.scalable_dimension,
+        })
     }
 }

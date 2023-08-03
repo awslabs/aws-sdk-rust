@@ -65,9 +65,7 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) owning_account_id: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl ResourceBuilder {
         &self.arn
     }
     /// <p>The Amazon Web Services account that owns the resource.</p>
-    pub fn owning_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owning_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the resource.</p>
-    pub fn set_owning_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owning_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owning_account_id = input;
         self
     }
@@ -127,18 +119,12 @@ impl ResourceBuilder {
         &self.region
     }
     /// <p>The type of the resource.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -166,10 +152,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
-    pub fn set_last_reported_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_reported_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_reported_at = input;
         self
     }
@@ -189,17 +172,12 @@ impl ResourceBuilder {
         self
     }
     /// <p>A structure with additional type-specific details about the resource. These properties can be added by turning on integration between Resource Explorer and other Amazon Web Services services.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProperty>>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProperty>>) -> Self {
         self.properties = input;
         self
     }
     /// <p>A structure with additional type-specific details about the resource. These properties can be added by turning on integration between Resource Explorer and other Amazon Web Services services.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceProperty>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceProperty>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).

@@ -19,9 +19,7 @@ impl SendEventOutput {
 
 /// A builder for [`SendEventOutput`](crate::operation::send_event::SendEventOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendEventOutputBuilder {
     _request_id: Option<String>,
 }

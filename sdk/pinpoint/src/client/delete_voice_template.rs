@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVoiceTemplateOutput`](crate::operation::delete_voice_template::DeleteVoiceTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::delete_voice_template::DeleteVoiceTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<DeleteVoiceTemplateError>`](crate::operation::delete_voice_template::DeleteVoiceTemplateError)
-    pub fn delete_voice_template(
-        &self,
-    ) -> crate::operation::delete_voice_template::builders::DeleteVoiceTemplateFluentBuilder {
-        crate::operation::delete_voice_template::builders::DeleteVoiceTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_voice_template(&self) -> crate::operation::delete_voice_template::builders::DeleteVoiceTemplateFluentBuilder {
+        crate::operation::delete_voice_template::builders::DeleteVoiceTemplateFluentBuilder::new(self.handle.clone())
     }
 }

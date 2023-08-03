@@ -10,10 +10,7 @@ impl DescribeTestCasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_test_cases::DescribeTestCasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_cases::DescribeTestCasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_cases::DescribeTestCasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_test_cases();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeTestCasesFluentBuilder {
         }
     }
     /// Access the DescribeTestCases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_test_cases::builders::DescribeTestCasesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_test_cases::builders::DescribeTestCasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeTestCasesFluentBuilder {
             crate::operation::describe_test_cases::DescribeTestCases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_cases::DescribeTestCasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_cases::DescribeTestCasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeTestCasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeTestCasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_cases::DescribeTestCasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_cases::DescribeTestCasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_cases::DescribeTestCasesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeTestCasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_cases::DescribeTestCasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_cases::DescribeTestCasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_cases::DescribeTestCasesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeTestCasesFluentBuilder {
             crate::operation::describe_test_cases::DescribeTestCases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_cases::DescribeTestCasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_cases::DescribeTestCasesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_test_cases::paginator::DescribeTestCasesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_test_cases::paginator::DescribeTestCasesPaginator {
-        crate::operation::describe_test_cases::paginator::DescribeTestCasesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_test_cases::paginator::DescribeTestCasesPaginator {
+        crate::operation::describe_test_cases::paginator::DescribeTestCasesPaginator::new(self.handle, self.inner)
     }
     /// <p> The ARN of the report for which test cases are returned. </p>
     pub fn report_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,10 +160,7 @@ impl DescribeTestCasesFluentBuilder {
         self
     }
     /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TestCaseFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TestCaseFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

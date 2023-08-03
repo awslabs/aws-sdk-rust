@@ -10,10 +10,7 @@ impl CreateContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_contact::CreateContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact::CreateContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_contact();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateContactFluentBuilder {
         }
     }
     /// Access the CreateContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_contact::builders::CreateContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_contact::builders::CreateContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl CreateContactFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the contact list to which the contact should be added.</p>
-    pub fn contact_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_list_name(input.into());
         self
     }
     /// <p>The name of the contact list to which the contact should be added.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_list_name(input);
         self
     }
@@ -135,18 +121,12 @@ impl CreateContactFluentBuilder {
         self.inner.get_contact_list_name()
     }
     /// <p>The contact's email address.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>The contact's email address.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
@@ -164,17 +144,12 @@ impl CreateContactFluentBuilder {
         self
     }
     /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
-    pub fn set_topic_preferences(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
-    ) -> Self {
+    pub fn set_topic_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>) -> Self {
         self.inner = self.inner.set_topic_preferences(input);
         self
     }
     /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
-    pub fn get_topic_preferences(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>> {
+    pub fn get_topic_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>> {
         self.inner.get_topic_preferences()
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
@@ -192,18 +167,12 @@ impl CreateContactFluentBuilder {
         self.inner.get_unsubscribe_all()
     }
     /// <p>The attribute data attached to a contact.</p>
-    pub fn attributes_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes_data(input.into());
         self
     }
     /// <p>The attribute data attached to a contact.</p>
-    pub fn set_attributes_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attributes_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attributes_data(input);
         self
     }

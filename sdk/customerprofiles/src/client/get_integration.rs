@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`workflow_id(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::workflow_id): <p>Unique identifier for the workflow.</p>
     ///   - [`is_unstructured(Option<bool>)`](crate::operation::get_integration::GetIntegrationOutput::is_unstructured): <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
     /// - On failure, responds with [`SdkError<GetIntegrationError>`](crate::operation::get_integration::GetIntegrationError)
-    pub fn get_integration(
-        &self,
-    ) -> crate::operation::get_integration::builders::GetIntegrationFluentBuilder {
-        crate::operation::get_integration::builders::GetIntegrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_integration(&self) -> crate::operation::get_integration::builders::GetIntegrationFluentBuilder {
+        crate::operation::get_integration::builders::GetIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

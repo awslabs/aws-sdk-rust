@@ -34,16 +34,14 @@ impl ::aws_http::request_id::RequestId for GetBucketAccelerateConfigurationOutpu
 }
 impl GetBucketAccelerateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketAccelerateConfigurationOutput`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationOutput).
-    pub fn builder() -> crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationOutputBuilder {
         crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketAccelerateConfigurationOutput`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketAccelerateConfigurationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BucketAccelerateStatus>,
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
@@ -57,10 +55,7 @@ impl GetBucketAccelerateConfigurationOutputBuilder {
         self
     }
     /// <p>The accelerate configuration of the bucket.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketAccelerateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BucketAccelerateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -74,10 +69,7 @@ impl GetBucketAccelerateConfigurationOutputBuilder {
         self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn set_request_charged(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestCharged>,
-    ) -> Self {
+    pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
@@ -90,10 +82,7 @@ impl GetBucketAccelerateConfigurationOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }
@@ -107,15 +96,10 @@ impl GetBucketAccelerateConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBucketAccelerateConfigurationOutput`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationOutput {
         crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationOutput {
-            status: self.status
-            ,
-            request_charged: self.request_charged
-            ,
+            status: self.status,
+            request_charged: self.request_charged,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }

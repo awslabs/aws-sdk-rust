@@ -23,9 +23,7 @@ impl Video {
 
 /// A builder for [`Video`](crate::types::Video).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }
@@ -46,8 +44,6 @@ impl VideoBuilder {
     }
     /// Consumes the builder and constructs a [`Video`](crate::types::Video).
     pub fn build(self) -> crate::types::Video {
-        crate::types::Video {
-            s3_object: self.s3_object,
-        }
+        crate::types::Video { s3_object: self.s3_object }
     }
 }

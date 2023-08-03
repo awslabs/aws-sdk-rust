@@ -9,19 +9,13 @@ pub fn ser_create_cluster_v2_input(
     if let Some(var_2) = &input.provisioned {
         #[allow(unused_mut)]
         let mut object_3 = object.key("provisioned").start_object();
-        crate::protocol_serde::shape_provisioned_request::ser_provisioned_request(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_provisioned_request::ser_provisioned_request(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.serverless {
         #[allow(unused_mut)]
         let mut object_5 = object.key("serverless").start_object();
-        crate::protocol_serde::shape_serverless_request::ser_serverless_request(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_serverless_request::ser_serverless_request(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tags {

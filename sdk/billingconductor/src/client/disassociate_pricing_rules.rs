@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociatePricingRulesOutput`](crate::operation::disassociate_pricing_rules::DisassociatePricingRulesOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::disassociate_pricing_rules::DisassociatePricingRulesOutput::arn): <p> The Amazon Resource Name (ARN) of the pricing plan that the pricing rules successfully disassociated from. </p>
     /// - On failure, responds with [`SdkError<DisassociatePricingRulesError>`](crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError)
-    pub fn disassociate_pricing_rules(
-        &self,
-    ) -> crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesFluentBuilder
-    {
+    pub fn disassociate_pricing_rules(&self) -> crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesFluentBuilder {
         crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesFluentBuilder::new(self.handle.clone())
     }
 }

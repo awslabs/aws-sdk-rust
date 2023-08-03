@@ -9,58 +9,51 @@ pub fn de_reboot_cache_cluster_http_error(
     crate::operation::reboot_cache_cluster::RebootCacheClusterError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::reboot_cache_cluster::RebootCacheClusterError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::reboot_cache_cluster::RebootCacheClusterError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::reboot_cache_cluster::RebootCacheClusterError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::reboot_cache_cluster::RebootCacheClusterError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheClusterNotFound" => crate::operation::reboot_cache_cluster::RebootCacheClusterError::CacheClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CacheClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cache_cluster_not_found_fault::de_cache_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::reboot_cache_cluster::RebootCacheClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CacheClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cache_cluster_not_found_fault::de_cache_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::reboot_cache_cluster::RebootCacheClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidCacheClusterState" => crate::operation::reboot_cache_cluster::RebootCacheClusterError::InvalidCacheClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::reboot_cache_cluster::RebootCacheClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::reboot_cache_cluster::RebootCacheClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::reboot_cache_cluster::RebootCacheClusterError::generic(generic)
+        _ => crate::operation::reboot_cache_cluster::RebootCacheClusterError::generic(generic),
     })
 }
 
@@ -76,14 +69,9 @@ pub fn de_reboot_cache_cluster_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::reboot_cache_cluster::builders::RebootCacheClusterOutputBuilder::default();
-        output = crate::protocol_serde::shape_reboot_cache_cluster::de_reboot_cache_cluster(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::reboot_cache_cluster::RebootCacheClusterError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_reboot_cache_cluster::de_reboot_cache_cluster(_response_body, output)
+            .map_err(crate::operation::reboot_cache_cluster::RebootCacheClusterError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -92,10 +80,7 @@ pub fn de_reboot_cache_cluster_http_response_with_props(
 pub fn de_reboot_cache_cluster(
     inp: &[u8],
     mut builder: crate::operation::reboot_cache_cluster::builders::RebootCacheClusterOutputBuilder,
-) -> Result<
-    crate::operation::reboot_cache_cluster::builders::RebootCacheClusterOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::reboot_cache_cluster::builders::RebootCacheClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -132,9 +117,7 @@ pub fn de_reboot_cache_cluster(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected RebootCacheClusterResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected RebootCacheClusterResult tag"));
     };
     Ok(builder)
 }

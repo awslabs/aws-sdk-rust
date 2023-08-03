@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`streaming_url(Option<String>)`](crate::operation::create_streaming_url::CreateStreamingUrlOutput::streaming_url): <p>The URL to start the AppStream 2.0 streaming session.</p>
     ///   - [`expires(Option<DateTime>)`](crate::operation::create_streaming_url::CreateStreamingUrlOutput::expires): <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
     /// - On failure, responds with [`SdkError<CreateStreamingURLError>`](crate::operation::create_streaming_url::CreateStreamingURLError)
-    pub fn create_streaming_url(
-        &self,
-    ) -> crate::operation::create_streaming_url::builders::CreateStreamingURLFluentBuilder {
-        crate::operation::create_streaming_url::builders::CreateStreamingURLFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_streaming_url(&self) -> crate::operation::create_streaming_url::builders::CreateStreamingURLFluentBuilder {
+        crate::operation::create_streaming_url::builders::CreateStreamingURLFluentBuilder::new(self.handle.clone())
     }
 }

@@ -40,18 +40,14 @@ impl ListContactReferencesInput {
 }
 impl ListContactReferencesInput {
     /// Creates a new builder-style object to manufacture [`ListContactReferencesInput`](crate::operation::list_contact_references::ListContactReferencesInput).
-    pub fn builder(
-    ) -> crate::operation::list_contact_references::builders::ListContactReferencesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contact_references::builders::ListContactReferencesInputBuilder {
         crate::operation::list_contact_references::builders::ListContactReferencesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListContactReferencesInput`](crate::operation::list_contact_references::ListContactReferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactReferencesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
@@ -99,17 +95,12 @@ impl ListContactReferencesInputBuilder {
         self
     }
     /// <p>The type of reference.</p>
-    pub fn set_reference_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>>,
-    ) -> Self {
+    pub fn set_reference_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>>) -> Self {
         self.reference_types = input;
         self
     }
     /// <p>The type of reference.</p>
-    pub fn get_reference_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>> {
+    pub fn get_reference_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>> {
         &self.reference_types
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
@@ -135,17 +126,13 @@ impl ListContactReferencesInputBuilder {
     /// Consumes the builder and constructs a [`ListContactReferencesInput`](crate::operation::list_contact_references::ListContactReferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_contact_references::ListContactReferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_contact_references::ListContactReferencesInput {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                reference_types: self.reference_types,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_contact_references::ListContactReferencesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_contact_references::ListContactReferencesInput {
+            instance_id: self.instance_id,
+            contact_id: self.contact_id,
+            reference_types: self.reference_types,
+            next_token: self.next_token,
+        })
     }
 }

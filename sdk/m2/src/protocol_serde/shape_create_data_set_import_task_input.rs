@@ -9,10 +9,7 @@ pub fn ser_create_data_set_import_task_input(
     if let Some(var_2) = &input.import_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("importConfig").start_object();
-        crate::protocol_serde::shape_data_set_import_config::ser_data_set_import_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_data_set_import_config::ser_data_set_import_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

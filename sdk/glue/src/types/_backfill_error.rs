@@ -38,9 +38,7 @@ impl BackfillError {
 
 /// A builder for [`BackfillError`](crate::types::BackfillError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackfillErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::BackfillErrorCode>,
     pub(crate) partitions: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
@@ -52,10 +50,7 @@ impl BackfillErrorBuilder {
         self
     }
     /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::BackfillErrorCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::BackfillErrorCode>) -> Self {
         self.code = input;
         self
     }
@@ -75,17 +70,12 @@ impl BackfillErrorBuilder {
         self
     }
     /// <p>A list of a limited number of partitions in the response.</p>
-    pub fn set_partitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
-    ) -> Self {
+    pub fn set_partitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>) -> Self {
         self.partitions = input;
         self
     }
     /// <p>A list of a limited number of partitions in the response.</p>
-    pub fn get_partitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+    pub fn get_partitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
         &self.partitions
     }
     /// Consumes the builder and constructs a [`BackfillError`](crate::types::BackfillError).

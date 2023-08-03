@@ -10,10 +10,7 @@ impl ListTemplatesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_templates::ListTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_templates::ListTemplatesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_templates::ListTemplatesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_templates();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTemplatesFluentBuilder {
         }
     }
     /// Access the ListTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_templates::builders::ListTemplatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_templates::builders::ListTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl ListTemplatesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_templates::paginator::ListTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_templates::paginator::ListTemplatesPaginator {
-        crate::operation::list_templates::paginator::ListTemplatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_templates::paginator::ListTemplatesPaginator {
+        crate::operation::list_templates::paginator::ListTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

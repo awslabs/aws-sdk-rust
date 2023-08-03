@@ -16,18 +16,14 @@ impl EnableDomainTransferLockInput {
 }
 impl EnableDomainTransferLockInput {
     /// Creates a new builder-style object to manufacture [`EnableDomainTransferLockInput`](crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockInput).
-    pub fn builder(
-    ) -> crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockInputBuilder {
         crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableDomainTransferLockInput`](crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableDomainTransferLockInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,8 @@ impl EnableDomainTransferLockInputBuilder {
         crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockInput {
-                domain_name: self.domain_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockInput {
+            domain_name: self.domain_name,
+        })
     }
 }

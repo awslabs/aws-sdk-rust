@@ -6,10 +6,7 @@ pub fn ser_update_thing_input(
     if let Some(var_1) = &input.attribute_payload {
         #[allow(unused_mut)]
         let mut object_2 = object.key("attributePayload").start_object();
-        crate::protocol_serde::shape_attribute_payload::ser_attribute_payload(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_attribute_payload::ser_attribute_payload(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.expected_version {

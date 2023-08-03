@@ -26,7 +26,7 @@ impl PutAccountSendingAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAccountSendingAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesInputBuilder,
+    inner: crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesInputBuilder,
 }
 impl PutAccountSendingAttributesFluentBuilder {
     /// Creates a new `PutAccountSendingAttributes`.
@@ -37,7 +37,7 @@ impl PutAccountSendingAttributesFluentBuilder {
         }
     }
     /// Access the PutAccountSendingAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutAccountSendingAttributesFluentBuilder {
             crate::operation::put_account_sending_attributes::PutAccountSendingAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutAccountSendingAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutAccountSendingAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_sending_attributes::PutAccountSendingAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutAccountSendingAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_sending_attributes::PutAccountSendingAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl PutAccountSendingAttributesFluentBuilder {
             crate::operation::put_account_sending_attributes::PutAccountSendingAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError>,
     > {
         self.customize_middleware().await
     }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLensShareOutput {
 }
 impl DeleteLensShareOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLensShareOutput`](crate::operation::delete_lens_share::DeleteLensShareOutput).
-    pub fn builder() -> crate::operation::delete_lens_share::builders::DeleteLensShareOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_lens_share::builders::DeleteLensShareOutputBuilder {
         crate::operation::delete_lens_share::builders::DeleteLensShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLensShareOutput`](crate::operation::delete_lens_share::DeleteLensShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLensShareOutputBuilder {
     _request_id: Option<String>,
 }

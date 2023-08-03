@@ -5,16 +5,16 @@ pub use crate::operation::create_auto_scaling_configuration::_create_auto_scalin
 
 impl CreateAutoScalingConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_auto_scaling_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl CreateAutoScalingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAutoScalingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_auto_scaling_configuration::builders::CreateAutoScalingConfigurationInputBuilder,
+    inner: crate::operation::create_auto_scaling_configuration::builders::CreateAutoScalingConfigurationInputBuilder,
 }
 impl CreateAutoScalingConfigurationFluentBuilder {
     /// Creates a new `CreateAutoScalingConfiguration`.
@@ -40,15 +40,20 @@ impl CreateAutoScalingConfigurationFluentBuilder {
         }
     }
     /// Access the CreateAutoScalingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_auto_scaling_configuration::builders::CreateAutoScalingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_auto_scaling_configuration::builders::CreateAutoScalingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl CreateAutoScalingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,27 +90,33 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
     /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn auto_scaling_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_configuration_name(input.into());
         self
     }
@@ -112,10 +124,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn set_auto_scaling_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_configuration_name(input);
         self
     }
@@ -123,9 +132,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn get_auto_scaling_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_auto_scaling_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_auto_scaling_configuration_name()
     }
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
@@ -192,10 +199,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
         self
     }
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -23,9 +23,7 @@ impl TcpRouteMatch {
 
 /// A builder for [`TcpRouteMatch`](crate::types::TcpRouteMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TcpRouteMatchBuilder {
     pub(crate) port: ::std::option::Option<i32>,
 }

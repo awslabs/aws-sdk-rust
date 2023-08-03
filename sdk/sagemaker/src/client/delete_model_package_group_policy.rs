@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`model_package_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyFluentBuilder::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyFluentBuilder::set_model_package_group_name): <p>The name of the model group for which to delete the policy.</p>
     /// - On success, responds with [`DeleteModelPackageGroupPolicyOutput`](crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteModelPackageGroupPolicyError>`](crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyError)
-    pub fn delete_model_package_group_policy(&self) -> crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyFluentBuilder{
+    pub fn delete_model_package_group_policy(
+        &self,
+    ) -> crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyFluentBuilder {
         crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

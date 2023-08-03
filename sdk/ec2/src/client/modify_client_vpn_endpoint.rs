@@ -20,10 +20,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyClientVpnEndpointOutput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<ModifyClientVpnEndpointError>`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointError)
-    pub fn modify_client_vpn_endpoint(
-        &self,
-    ) -> crate::operation::modify_client_vpn_endpoint::builders::ModifyClientVpnEndpointFluentBuilder
-    {
+    pub fn modify_client_vpn_endpoint(&self) -> crate::operation::modify_client_vpn_endpoint::builders::ModifyClientVpnEndpointFluentBuilder {
         crate::operation::modify_client_vpn_endpoint::builders::ModifyClientVpnEndpointFluentBuilder::new(self.handle.clone())
     }
 }

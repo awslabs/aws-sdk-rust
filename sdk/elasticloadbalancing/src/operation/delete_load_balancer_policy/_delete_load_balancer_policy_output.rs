@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteLoadBalancerPolicyOutput {
 }
 impl DeleteLoadBalancerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerPolicyOutput`](crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput).
-    pub fn builder() -> crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyOutputBuilder {
         crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLoadBalancerPolicyOutput`](crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl DeleteLoadBalancerPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteLoadBalancerPolicyOutput`](crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput {
+    pub fn build(self) -> crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput {
         crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput {
             _request_id: self._request_id,
         }

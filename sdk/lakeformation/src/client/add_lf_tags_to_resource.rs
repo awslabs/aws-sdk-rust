@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AddLfTagsToResourceOutput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput) with field(s):
     ///   - [`failures(Option<Vec<LfTagError>>)`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput::failures): <p>A list of failures to tag the resource.</p>
     /// - On failure, responds with [`SdkError<AddLFTagsToResourceError>`](crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError)
-    pub fn add_lf_tags_to_resource(
-        &self,
-    ) -> crate::operation::add_lf_tags_to_resource::builders::AddLFTagsToResourceFluentBuilder {
-        crate::operation::add_lf_tags_to_resource::builders::AddLFTagsToResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_lf_tags_to_resource(&self) -> crate::operation::add_lf_tags_to_resource::builders::AddLFTagsToResourceFluentBuilder {
+        crate::operation::add_lf_tags_to_resource::builders::AddLFTagsToResourceFluentBuilder::new(self.handle.clone())
     }
 }

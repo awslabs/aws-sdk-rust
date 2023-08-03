@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::set_reason): <p>The reason that you're stopping the engagement.</p>
     /// - On success, responds with [`StopEngagementOutput`](crate::operation::stop_engagement::StopEngagementOutput)
     /// - On failure, responds with [`SdkError<StopEngagementError>`](crate::operation::stop_engagement::StopEngagementError)
-    pub fn stop_engagement(
-        &self,
-    ) -> crate::operation::stop_engagement::builders::StopEngagementFluentBuilder {
-        crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_engagement(&self) -> crate::operation::stop_engagement::builders::StopEngagementFluentBuilder {
+        crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::new(self.handle.clone())
     }
 }

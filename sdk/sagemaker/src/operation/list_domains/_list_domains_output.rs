@@ -35,9 +35,7 @@ impl ListDomainsOutput {
 
 /// A builder for [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsOutputBuilder {
     pub(crate) domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDomainsOutputBuilder {
         self
     }
     /// <p>The list of domains.</p>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainDetails>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainDetails>>) -> Self {
         self.domains = input;
         self
     }
     /// <p>The list of domains.</p>
-    pub fn get_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDetails>> {
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDetails>> {
         &self.domains
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>

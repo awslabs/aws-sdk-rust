@@ -41,9 +41,7 @@ impl WarningsListItem {
 
 /// A builder for [`WarningsListItem`](crate::types::WarningsListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WarningsListItemBuilder {
     pub(crate) page: ::std::option::Option<i32>,
     pub(crate) warn_code: ::std::option::Option<crate::types::PageBasedWarningCode>,
@@ -70,10 +68,7 @@ impl WarningsListItemBuilder {
         self
     }
     /// <p>The type of warning.</p>
-    pub fn set_warn_code(
-        mut self,
-        input: ::std::option::Option<crate::types::PageBasedWarningCode>,
-    ) -> Self {
+    pub fn set_warn_code(mut self, input: ::std::option::Option<crate::types::PageBasedWarningCode>) -> Self {
         self.warn_code = input;
         self
     }

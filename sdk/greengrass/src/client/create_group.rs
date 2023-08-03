@@ -16,9 +16,7 @@ impl super::Client {
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::create_group::CreateGroupOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::create_group::CreateGroupOutput::name): The name of the definition.
     /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::operation::create_group::CreateGroupError)
-    pub fn create_group(
-        &self,
-    ) -> crate::operation::create_group::builders::CreateGroupFluentBuilder {
+    pub fn create_group(&self) -> crate::operation::create_group::builders::CreateGroupFluentBuilder {
         crate::operation::create_group::builders::CreateGroupFluentBuilder::new(self.handle.clone())
     }
 }

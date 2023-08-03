@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCrossAccountAuthorizationOutput
 }
 impl DeleteCrossAccountAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCrossAccountAuthorizationOutput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput).
-    pub fn builder() -> crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationOutputBuilder {
         crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCrossAccountAuthorizationOutput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCrossAccountAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteCrossAccountAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCrossAccountAuthorizationOutput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput {
         crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput {
             _request_id: self._request_id,
         }

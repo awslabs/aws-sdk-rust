@@ -57,16 +57,14 @@ impl DescribeGameSessionDetailsInput {
 }
 impl DescribeGameSessionDetailsInput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionDetailsInput`](crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput).
-    pub fn builder() -> crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsInputBuilder{
+    pub fn builder() -> crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsInputBuilder {
         crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGameSessionDetailsInput`](crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameSessionDetailsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
@@ -92,18 +90,12 @@ impl DescribeGameSessionDetailsInputBuilder {
         &self.fleet_id
     }
     /// <p>A unique identifier for the game session to retrieve. </p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game session to retrieve. </p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
@@ -140,18 +132,12 @@ impl DescribeGameSessionDetailsInputBuilder {
         &self.location
     }
     /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
-    pub fn status_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_filter = input;
         self
     }
@@ -194,16 +180,14 @@ impl DescribeGameSessionDetailsInputBuilder {
         crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput {
-                fleet_id: self.fleet_id,
-                game_session_id: self.game_session_id,
-                alias_id: self.alias_id,
-                location: self.location,
-                status_filter: self.status_filter,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput {
+            fleet_id: self.fleet_id,
+            game_session_id: self.game_session_id,
+            alias_id: self.alias_id,
+            location: self.location,
+            status_filter: self.status_filter,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

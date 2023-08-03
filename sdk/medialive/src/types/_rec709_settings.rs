@@ -13,9 +13,7 @@ impl Rec709Settings {
 
 /// A builder for [`Rec709Settings`](crate::types::Rec709Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Rec709SettingsBuilder {}
 impl Rec709SettingsBuilder {
     /// Consumes the builder and constructs a [`Rec709Settings`](crate::types::Rec709Settings).

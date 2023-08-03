@@ -99,18 +99,12 @@ pub struct AddressBuilder {
 }
 impl AddressBuilder {
     /// <p>The street of the address.</p>
-    pub fn street_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn street_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.street_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The street of the address.</p>
-    pub fn set_street_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_street_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.street_address = input;
         self
     }

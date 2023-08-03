@@ -30,9 +30,7 @@ impl Participants {
 
 /// A builder for [`Participants`](crate::types::Participants).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParticipantsBuilder {
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::UserMetadata>>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>,
@@ -50,10 +48,7 @@ impl ParticipantsBuilder {
         self
     }
     /// <p>The list of users.</p>
-    pub fn set_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserMetadata>>,
-    ) -> Self {
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserMetadata>>) -> Self {
         self.users = input;
         self
     }
@@ -73,17 +68,12 @@ impl ParticipantsBuilder {
         self
     }
     /// <p>The list of user groups.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>The list of user groups.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>> {
         &self.groups
     }
     /// Consumes the builder and constructs a [`Participants`](crate::types::Participants).

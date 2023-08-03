@@ -35,9 +35,7 @@ impl ListDimensionsOutput {
 
 /// A builder for [`ListDimensionsOutput`](crate::operation::list_dimensions::ListDimensionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDimensionsOutputBuilder {
     pub(crate) dimension_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,27 +47,19 @@ impl ListDimensionsOutputBuilder {
     /// To override the contents of this collection use [`set_dimension_names`](Self::set_dimension_names).
     ///
     /// <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
-    pub fn dimension_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dimension_names.unwrap_or_default();
         v.push(input.into());
         self.dimension_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
-    pub fn set_dimension_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dimension_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dimension_names = input;
         self
     }
     /// <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
-    pub fn get_dimension_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dimension_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dimension_names
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>

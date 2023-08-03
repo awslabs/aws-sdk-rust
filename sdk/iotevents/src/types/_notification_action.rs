@@ -12,8 +12,7 @@ pub struct NotificationAction {
     pub sms_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SmsConfiguration>>,
     /// <p>Contains the configuration information of email notifications.</p>
     #[doc(hidden)]
-    pub email_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EmailConfiguration>>,
+    pub email_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EmailConfiguration>>,
 }
 impl NotificationAction {
     /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
@@ -25,9 +24,7 @@ impl NotificationAction {
         self.sms_configurations.as_deref()
     }
     /// <p>Contains the configuration information of email notifications.</p>
-    pub fn email_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EmailConfiguration]> {
+    pub fn email_configurations(&self) -> ::std::option::Option<&[crate::types::EmailConfiguration]> {
         self.email_configurations.as_deref()
     }
 }
@@ -40,15 +37,11 @@ impl NotificationAction {
 
 /// A builder for [`NotificationAction`](crate::types::NotificationAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationActionBuilder {
     pub(crate) action: ::std::option::Option<crate::types::NotificationTargetActions>,
-    pub(crate) sms_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SmsConfiguration>>,
-    pub(crate) email_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EmailConfiguration>>,
+    pub(crate) sms_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SmsConfiguration>>,
+    pub(crate) email_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EmailConfiguration>>,
 }
 impl NotificationActionBuilder {
     /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
@@ -57,10 +50,7 @@ impl NotificationActionBuilder {
         self
     }
     /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationTargetActions>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::NotificationTargetActions>) -> Self {
         self.action = input;
         self
     }
@@ -80,17 +70,12 @@ impl NotificationActionBuilder {
         self
     }
     /// <p>Contains the configuration information of SMS notifications.</p>
-    pub fn set_sms_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SmsConfiguration>>,
-    ) -> Self {
+    pub fn set_sms_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SmsConfiguration>>) -> Self {
         self.sms_configurations = input;
         self
     }
     /// <p>Contains the configuration information of SMS notifications.</p>
-    pub fn get_sms_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SmsConfiguration>> {
+    pub fn get_sms_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SmsConfiguration>> {
         &self.sms_configurations
     }
     /// Appends an item to `email_configurations`.
@@ -105,17 +90,12 @@ impl NotificationActionBuilder {
         self
     }
     /// <p>Contains the configuration information of email notifications.</p>
-    pub fn set_email_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EmailConfiguration>>,
-    ) -> Self {
+    pub fn set_email_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmailConfiguration>>) -> Self {
         self.email_configurations = input;
         self
     }
     /// <p>Contains the configuration information of email notifications.</p>
-    pub fn get_email_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EmailConfiguration>> {
+    pub fn get_email_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmailConfiguration>> {
         &self.email_configurations
     }
     /// Consumes the builder and constructs a [`NotificationAction`](crate::types::NotificationAction).

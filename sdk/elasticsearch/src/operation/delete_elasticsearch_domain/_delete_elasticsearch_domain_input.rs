@@ -16,16 +16,14 @@ impl DeleteElasticsearchDomainInput {
 }
 impl DeleteElasticsearchDomainInput {
     /// Creates a new builder-style object to manufacture [`DeleteElasticsearchDomainInput`](crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainInput).
-    pub fn builder() -> crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainInputBuilder{
+    pub fn builder() -> crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainInputBuilder {
         crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteElasticsearchDomainInput`](crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteElasticsearchDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,8 @@ impl DeleteElasticsearchDomainInputBuilder {
         crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainInput {
-                domain_name: self.domain_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainInput {
+            domain_name: self.domain_name,
+        })
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RespondActivityTaskFailedOutput {
 }
 impl RespondActivityTaskFailedOutput {
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedOutput`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput).
-    pub fn builder() -> crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedOutputBuilder{
+    pub fn builder() -> crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedOutputBuilder {
         crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedOutputBuilder::default()
     }
 }
 
 /// A builder for [`RespondActivityTaskFailedOutput`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RespondActivityTaskFailedOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RespondActivityTaskFailedOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RespondActivityTaskFailedOutput`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput {
+    pub fn build(self) -> crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput {
         crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput {
             _request_id: self._request_id,
         }

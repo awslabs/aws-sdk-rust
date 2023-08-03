@@ -26,7 +26,7 @@ impl GetPullRequestOverrideStateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPullRequestOverrideStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder,
+    inner: crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder,
 }
 impl GetPullRequestOverrideStateFluentBuilder {
     /// Creates a new `GetPullRequestOverrideState`.
@@ -37,7 +37,7 @@ impl GetPullRequestOverrideStateFluentBuilder {
         }
     }
     /// Access the GetPullRequestOverrideState as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetPullRequestOverrideStateFluentBuilder {
             crate::operation::get_pull_request_override_state::GetPullRequestOverrideState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetPullRequestOverrideStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetPullRequestOverrideStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetPullRequestOverrideStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetPullRequestOverrideStateFluentBuilder {
             crate::operation::get_pull_request_override_state::GetPullRequestOverrideState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }

@@ -21,10 +21,7 @@ pub fn ser_create_table_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_partition_index::ser_partition_index(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_partition_index::ser_partition_index(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -36,10 +33,7 @@ pub fn ser_create_table_input(
     if let Some(var_10) = &input.open_table_format_input {
         #[allow(unused_mut)]
         let mut object_11 = object.key("OpenTableFormatInput").start_object();
-        crate::protocol_serde::shape_open_table_format_input::ser_open_table_format_input(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_open_table_format_input::ser_open_table_format_input(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

@@ -35,9 +35,7 @@ impl DescribeBucketsOutput {
 
 /// A builder for [`DescribeBucketsOutput`](crate::operation::describe_buckets::DescribeBucketsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBucketsOutputBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::BucketMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeBucketsOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
-    pub fn set_buckets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BucketMetadata>>,
-    ) -> Self {
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BucketMetadata>>) -> Self {
         self.buckets = input;
         self
     }
     /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
-    pub fn get_buckets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BucketMetadata>> {
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BucketMetadata>> {
         &self.buckets
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>

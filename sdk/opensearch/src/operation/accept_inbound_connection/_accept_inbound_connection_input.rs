@@ -16,35 +16,25 @@ impl AcceptInboundConnectionInput {
 }
 impl AcceptInboundConnectionInput {
     /// Creates a new builder-style object to manufacture [`AcceptInboundConnectionInput`](crate::operation::accept_inbound_connection::AcceptInboundConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionInputBuilder {
         crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptInboundConnectionInput`](crate::operation::accept_inbound_connection::AcceptInboundConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptInboundConnectionInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptInboundConnectionInputBuilder {
     /// <p>The ID of the inbound connection to accept.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the inbound connection to accept.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -59,10 +49,8 @@ impl AcceptInboundConnectionInputBuilder {
         crate::operation::accept_inbound_connection::AcceptInboundConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::accept_inbound_connection::AcceptInboundConnectionInput {
-                connection_id: self.connection_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::accept_inbound_connection::AcceptInboundConnectionInput {
+            connection_id: self.connection_id,
+        })
     }
 }

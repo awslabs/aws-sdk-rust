@@ -5,25 +5,19 @@
 pub struct BatchAssociateResourcesToCustomLineItemOutput {
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
     #[doc(hidden)]
-    pub successfully_associated_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
+    pub successfully_associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
     #[doc(hidden)]
-    pub failed_associated_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
+    pub failed_associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateResourcesToCustomLineItemOutput {
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
-    pub fn successfully_associated_resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociateResourceResponseElement]> {
+    pub fn successfully_associated_resources(&self) -> ::std::option::Option<&[crate::types::AssociateResourceResponseElement]> {
         self.successfully_associated_resources.as_deref()
     }
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
-    pub fn failed_associated_resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociateResourceResponseElement]> {
+    pub fn failed_associated_resources(&self) -> ::std::option::Option<&[crate::types::AssociateResourceResponseElement]> {
         self.failed_associated_resources.as_deref()
     }
 }
@@ -34,21 +28,18 @@ impl ::aws_http::request_id::RequestId for BatchAssociateResourcesToCustomLineIt
 }
 impl BatchAssociateResourcesToCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateResourcesToCustomLineItemOutput`](crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput).
-    pub fn builder() -> crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemOutputBuilder{
+    pub fn builder() -> crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemOutputBuilder
+    {
         crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchAssociateResourcesToCustomLineItemOutput`](crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateResourcesToCustomLineItemOutputBuilder {
-    pub(crate) successfully_associated_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
-    pub(crate) failed_associated_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
+    pub(crate) successfully_associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
+    pub(crate) failed_associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateResourcesToCustomLineItemOutputBuilder {
@@ -57,10 +48,7 @@ impl BatchAssociateResourcesToCustomLineItemOutputBuilder {
     /// To override the contents of this collection use [`set_successfully_associated_resources`](Self::set_successfully_associated_resources).
     ///
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
-    pub fn successfully_associated_resources(
-        mut self,
-        input: crate::types::AssociateResourceResponseElement,
-    ) -> Self {
+    pub fn successfully_associated_resources(mut self, input: crate::types::AssociateResourceResponseElement) -> Self {
         let mut v = self.successfully_associated_resources.unwrap_or_default();
         v.push(input);
         self.successfully_associated_resources = ::std::option::Option::Some(v);
@@ -69,18 +57,13 @@ impl BatchAssociateResourcesToCustomLineItemOutputBuilder {
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
     pub fn set_successfully_associated_resources(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AssociateResourceResponseElement>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
     ) -> Self {
         self.successfully_associated_resources = input;
         self
     }
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
-    pub fn get_successfully_associated_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>
-    {
+    pub fn get_successfully_associated_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>> {
         &self.successfully_associated_resources
     }
     /// Appends an item to `failed_associated_resources`.
@@ -88,10 +71,7 @@ impl BatchAssociateResourcesToCustomLineItemOutputBuilder {
     /// To override the contents of this collection use [`set_failed_associated_resources`](Self::set_failed_associated_resources).
     ///
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
-    pub fn failed_associated_resources(
-        mut self,
-        input: crate::types::AssociateResourceResponseElement,
-    ) -> Self {
+    pub fn failed_associated_resources(mut self, input: crate::types::AssociateResourceResponseElement) -> Self {
         let mut v = self.failed_associated_resources.unwrap_or_default();
         v.push(input);
         self.failed_associated_resources = ::std::option::Option::Some(v);
@@ -100,18 +80,13 @@ impl BatchAssociateResourcesToCustomLineItemOutputBuilder {
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
     pub fn set_failed_associated_resources(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AssociateResourceResponseElement>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
     ) -> Self {
         self.failed_associated_resources = input;
         self
     }
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
-    pub fn get_failed_associated_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>
-    {
+    pub fn get_failed_associated_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>> {
         &self.failed_associated_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -124,12 +99,10 @@ impl BatchAssociateResourcesToCustomLineItemOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchAssociateResourcesToCustomLineItemOutput`](crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput).
-    pub fn build(self) -> crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput{
+    pub fn build(self) -> crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput {
         crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput {
-            successfully_associated_resources: self.successfully_associated_resources
-            ,
-            failed_associated_resources: self.failed_associated_resources
-            ,
+            successfully_associated_resources: self.successfully_associated_resources,
+            failed_associated_resources: self.failed_associated_resources,
             _request_id: self._request_id,
         }
     }

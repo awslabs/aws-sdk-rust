@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ListRealtimeLogConfigsOutput {
 }
 impl ListRealtimeLogConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListRealtimeLogConfigsOutput`](crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_realtime_log_configs::builders::ListRealtimeLogConfigsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_realtime_log_configs::builders::ListRealtimeLogConfigsOutputBuilder {
         crate::operation::list_realtime_log_configs::builders::ListRealtimeLogConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRealtimeLogConfigsOutput`](crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRealtimeLogConfigsOutputBuilder {
     pub(crate) realtime_log_configs: ::std::option::Option<crate::types::RealtimeLogConfigs>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl ListRealtimeLogConfigsOutputBuilder {
         self
     }
     /// <p>A list of real-time log configurations.</p>
-    pub fn set_realtime_log_configs(
-        mut self,
-        input: ::std::option::Option<crate::types::RealtimeLogConfigs>,
-    ) -> Self {
+    pub fn set_realtime_log_configs(mut self, input: ::std::option::Option<crate::types::RealtimeLogConfigs>) -> Self {
         self.realtime_log_configs = input;
         self
     }
     /// <p>A list of real-time log configurations.</p>
-    pub fn get_realtime_log_configs(
-        &self,
-    ) -> &::std::option::Option<crate::types::RealtimeLogConfigs> {
+    pub fn get_realtime_log_configs(&self) -> &::std::option::Option<crate::types::RealtimeLogConfigs> {
         &self.realtime_log_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl ListRealtimeLogConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRealtimeLogConfigsOutput`](crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput {
+    pub fn build(self) -> crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput {
         crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput {
             realtime_log_configs: self.realtime_log_configs,
             _request_id: self._request_id,

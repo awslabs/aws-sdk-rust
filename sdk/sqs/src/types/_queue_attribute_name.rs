@@ -58,13 +58,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum QueueAttributeName {
     #[allow(missing_docs)] // documentation missing in model
@@ -119,12 +113,8 @@ impl ::std::convert::From<&str> for QueueAttributeName {
         match s {
             "All" => QueueAttributeName::All,
             "ApproximateNumberOfMessages" => QueueAttributeName::ApproximateNumberOfMessages,
-            "ApproximateNumberOfMessagesDelayed" => {
-                QueueAttributeName::ApproximateNumberOfMessagesDelayed
-            }
-            "ApproximateNumberOfMessagesNotVisible" => {
-                QueueAttributeName::ApproximateNumberOfMessagesNotVisible
-            }
+            "ApproximateNumberOfMessagesDelayed" => QueueAttributeName::ApproximateNumberOfMessagesDelayed,
+            "ApproximateNumberOfMessagesNotVisible" => QueueAttributeName::ApproximateNumberOfMessagesNotVisible,
             "ContentBasedDeduplication" => QueueAttributeName::ContentBasedDeduplication,
             "CreatedTimestamp" => QueueAttributeName::CreatedTimestamp,
             "DeduplicationScope" => QueueAttributeName::DeduplicationScope,
@@ -143,9 +133,7 @@ impl ::std::convert::From<&str> for QueueAttributeName {
             "RedrivePolicy" => QueueAttributeName::RedrivePolicy,
             "SqsManagedSseEnabled" => QueueAttributeName::SqsManagedSseEnabled,
             "VisibilityTimeout" => QueueAttributeName::VisibilityTimeout,
-            other => QueueAttributeName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => QueueAttributeName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -162,12 +150,8 @@ impl QueueAttributeName {
         match self {
             QueueAttributeName::All => "All",
             QueueAttributeName::ApproximateNumberOfMessages => "ApproximateNumberOfMessages",
-            QueueAttributeName::ApproximateNumberOfMessagesDelayed => {
-                "ApproximateNumberOfMessagesDelayed"
-            }
-            QueueAttributeName::ApproximateNumberOfMessagesNotVisible => {
-                "ApproximateNumberOfMessagesNotVisible"
-            }
+            QueueAttributeName::ApproximateNumberOfMessagesDelayed => "ApproximateNumberOfMessagesDelayed",
+            QueueAttributeName::ApproximateNumberOfMessagesNotVisible => "ApproximateNumberOfMessagesNotVisible",
             QueueAttributeName::ContentBasedDeduplication => "ContentBasedDeduplication",
             QueueAttributeName::CreatedTimestamp => "CreatedTimestamp",
             QueueAttributeName::DeduplicationScope => "DeduplicationScope",

@@ -15,10 +15,7 @@ pub fn ser_create_configuration_set_input(
     if let Some(var_4) = &input.reputation_options {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ReputationOptions").start_object();
-        crate::protocol_serde::shape_reputation_options::ser_reputation_options(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_reputation_options::ser_reputation_options(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.sending_options {
@@ -30,10 +27,7 @@ pub fn ser_create_configuration_set_input(
     if let Some(var_8) = &input.suppression_options {
         #[allow(unused_mut)]
         let mut object_9 = object.key("SuppressionOptions").start_object();
-        crate::protocol_serde::shape_suppression_options::ser_suppression_options(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_suppression_options::ser_suppression_options(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.tags {
@@ -51,10 +45,7 @@ pub fn ser_create_configuration_set_input(
     if let Some(var_14) = &input.tracking_options {
         #[allow(unused_mut)]
         let mut object_15 = object.key("TrackingOptions").start_object();
-        crate::protocol_serde::shape_tracking_options::ser_tracking_options(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_tracking_options::ser_tracking_options(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.vdm_options {

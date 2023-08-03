@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`log_bucket(impl ::std::convert::Into<String>)`](crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder::log_bucket) / [`set_log_bucket(Option<String>)`](crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder::set_log_bucket): <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
     /// - On success, responds with [`DisassociateDrtLogBucketOutput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput)
     /// - On failure, responds with [`SdkError<DisassociateDRTLogBucketError>`](crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError)
-    pub fn disassociate_drt_log_bucket(&self) -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder{
+    pub fn disassociate_drt_log_bucket(&self) -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder {
         crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder::new(self.handle.clone())
     }
 }

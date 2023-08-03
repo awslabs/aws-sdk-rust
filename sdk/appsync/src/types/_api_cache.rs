@@ -124,9 +124,7 @@ impl ApiCache {
 
 /// A builder for [`ApiCache`](crate::types::ApiCache).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApiCacheBuilder {
     pub(crate) ttl: ::std::option::Option<i64>,
     pub(crate) api_caching_behavior: ::std::option::Option<crate::types::ApiCachingBehavior>,
@@ -167,10 +165,7 @@ impl ApiCacheBuilder {
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
-    pub fn set_api_caching_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiCachingBehavior>,
-    ) -> Self {
+    pub fn set_api_caching_behavior(mut self, input: ::std::option::Option<crate::types::ApiCachingBehavior>) -> Self {
         self.api_caching_behavior = input;
         self
     }
@@ -179,9 +174,7 @@ impl ApiCacheBuilder {
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
-    pub fn get_api_caching_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
+    pub fn get_api_caching_behavior(&self) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
         &self.api_caching_behavior
     }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
@@ -309,10 +302,7 @@ impl ApiCacheBuilder {
     /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li>
     /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiCacheStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApiCacheStatus>) -> Self {
         self.status = input;
         self
     }

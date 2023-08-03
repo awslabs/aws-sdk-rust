@@ -157,17 +157,12 @@ impl AdminGetUserOutputBuilder {
         self
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    pub fn set_user_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
-    ) -> Self {
+    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
         self.user_attributes = input;
         self
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    pub fn get_user_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
         &self.user_attributes
     }
     /// <p>The date the user was created.</p>
@@ -176,10 +171,7 @@ impl AdminGetUserOutputBuilder {
         self
     }
     /// <p>The date the user was created.</p>
-    pub fn set_user_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_user_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.user_create_date = input;
         self
     }
@@ -193,17 +185,12 @@ impl AdminGetUserOutputBuilder {
         self
     }
     /// <p>The date the user was last modified.</p>
-    pub fn set_user_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_user_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.user_last_modified_date = input;
         self
     }
     /// <p>The date the user was last modified.</p>
-    pub fn get_user_last_modified_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_user_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.user_last_modified_date
     }
     /// <p>Indicates that the status is <code>enabled</code>.</p>
@@ -242,10 +229,7 @@ impl AdminGetUserOutputBuilder {
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
     /// </ul>
-    pub fn set_user_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStatusType>,
-    ) -> Self {
+    pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatusType>) -> Self {
         self.user_status = input;
         self
     }
@@ -273,32 +257,21 @@ impl AdminGetUserOutputBuilder {
         self
     }
     /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
-    pub fn set_mfa_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
-    ) -> Self {
+    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
         self.mfa_options = input;
         self
     }
     /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
-    pub fn get_mfa_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
         &self.mfa_options
     }
     /// <p>The user's preferred MFA setting.</p>
-    pub fn preferred_mfa_setting(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_mfa_setting(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_mfa_setting = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's preferred MFA setting.</p>
-    pub fn set_preferred_mfa_setting(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_mfa_setting(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_mfa_setting = input;
         self
     }
@@ -311,27 +284,19 @@ impl AdminGetUserOutputBuilder {
     /// To override the contents of this collection use [`set_user_mfa_setting_list`](Self::set_user_mfa_setting_list).
     ///
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    pub fn user_mfa_setting_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_mfa_setting_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_mfa_setting_list.unwrap_or_default();
         v.push(input.into());
         self.user_mfa_setting_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    pub fn set_user_mfa_setting_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_mfa_setting_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_mfa_setting_list = input;
         self
     }
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    pub fn get_user_mfa_setting_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_mfa_setting_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_mfa_setting_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

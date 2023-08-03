@@ -55,9 +55,7 @@ impl WorkspaceRequest {
         self.root_volume_encryption_enabled
     }
     /// <p>The WorkSpace properties.</p>
-    pub fn workspace_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkspaceProperties> {
+    pub fn workspace_properties(&self) -> ::std::option::Option<&crate::types::WorkspaceProperties> {
         self.workspace_properties.as_ref()
     }
     /// <p>The tags for the WorkSpace.</p>
@@ -74,9 +72,7 @@ impl WorkspaceRequest {
 
 /// A builder for [`WorkspaceRequest`](crate::types::WorkspaceRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkspaceRequestBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
@@ -131,18 +127,12 @@ impl WorkspaceRequestBuilder {
         &self.bundle_id
     }
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
-    pub fn volume_encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
-    pub fn set_volume_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_encryption_key = input;
         self
     }
@@ -156,10 +146,7 @@ impl WorkspaceRequestBuilder {
         self
     }
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
-    pub fn set_user_volume_encryption_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_user_volume_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_volume_encryption_enabled = input;
         self
     }
@@ -173,10 +160,7 @@ impl WorkspaceRequestBuilder {
         self
     }
     /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
-    pub fn set_root_volume_encryption_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_root_volume_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.root_volume_encryption_enabled = input;
         self
     }
@@ -190,17 +174,12 @@ impl WorkspaceRequestBuilder {
         self
     }
     /// <p>The WorkSpace properties.</p>
-    pub fn set_workspace_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceProperties>,
-    ) -> Self {
+    pub fn set_workspace_properties(mut self, input: ::std::option::Option<crate::types::WorkspaceProperties>) -> Self {
         self.workspace_properties = input;
         self
     }
     /// <p>The WorkSpace properties.</p>
-    pub fn get_workspace_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkspaceProperties> {
+    pub fn get_workspace_properties(&self) -> &::std::option::Option<crate::types::WorkspaceProperties> {
         &self.workspace_properties
     }
     /// Appends an item to `tags`.
@@ -215,10 +194,7 @@ impl WorkspaceRequestBuilder {
         self
     }
     /// <p>The tags for the WorkSpace.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

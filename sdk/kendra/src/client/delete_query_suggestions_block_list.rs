@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListFluentBuilder::set_id): <p>The identifier of the block list you want to delete.</p>
     /// - On success, responds with [`DeleteQuerySuggestionsBlockListOutput`](crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput)
     /// - On failure, responds with [`SdkError<DeleteQuerySuggestionsBlockListError>`](crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListError)
-    pub fn delete_query_suggestions_block_list(&self) -> crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListFluentBuilder{
+    pub fn delete_query_suggestions_block_list(
+        &self,
+    ) -> crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListFluentBuilder {
         crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListFluentBuilder::new(self.handle.clone())
     }
 }

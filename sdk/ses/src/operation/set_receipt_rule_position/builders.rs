@@ -28,8 +28,7 @@ impl SetReceiptRulePositionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetReceiptRulePositionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionInputBuilder,
+    inner: crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionInputBuilder,
 }
 impl SetReceiptRulePositionFluentBuilder {
     /// Creates a new `SetReceiptRulePosition`.
@@ -40,10 +39,7 @@ impl SetReceiptRulePositionFluentBuilder {
         }
     }
     /// Access the SetReceiptRulePosition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl SetReceiptRulePositionFluentBuilder {
             crate::operation::set_receipt_rule_position::SetReceiptRulePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_receipt_rule_position::SetReceiptRulePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_receipt_rule_position::SetReceiptRulePositionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl SetReceiptRulePositionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl SetReceiptRulePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_receipt_rule_position::SetReceiptRulePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_receipt_rule_position::SetReceiptRulePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_receipt_rule_position::SetReceiptRulePositionError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl SetReceiptRulePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_receipt_rule_position::SetReceiptRulePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_receipt_rule_position::SetReceiptRulePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_receipt_rule_position::SetReceiptRulePositionError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +107,17 @@ impl SetReceiptRulePositionFluentBuilder {
             crate::operation::set_receipt_rule_position::SetReceiptRulePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_receipt_rule_position::SetReceiptRulePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_receipt_rule_position::SetReceiptRulePositionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_name(input.into());
         self
     }
     /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }

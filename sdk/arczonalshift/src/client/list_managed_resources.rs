@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ManagedResourceSummary>>)`](crate::operation::list_managed_resources::ListManagedResourcesOutput::items): <p>The items in the response list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_resources::ListManagedResourcesOutput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListManagedResourcesError>`](crate::operation::list_managed_resources::ListManagedResourcesError)
-    pub fn list_managed_resources(
-        &self,
-    ) -> crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder {
-        crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_managed_resources(&self) -> crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder {
+        crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder::new(self.handle.clone())
     }
 }

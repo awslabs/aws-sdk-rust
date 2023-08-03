@@ -29,18 +29,14 @@ impl ListPolicyTemplatesInput {
 }
 impl ListPolicyTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListPolicyTemplatesInput`](crate::operation::list_policy_templates::ListPolicyTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_policy_templates::builders::ListPolicyTemplatesInputBuilder {
-        crate::operation::list_policy_templates::builders::ListPolicyTemplatesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_policy_templates::builders::ListPolicyTemplatesInputBuilder {
+        crate::operation::list_policy_templates::builders::ListPolicyTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyTemplatesInput`](crate::operation::list_policy_templates::ListPolicyTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyTemplatesInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct ListPolicyTemplatesInputBuilder {
 }
 impl ListPolicyTemplatesInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the policy templates you want to list.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the policy templates you want to list.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl ListPolicyTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyTemplatesInput`](crate::operation::list_policy_templates::ListPolicyTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_policy_templates::ListPolicyTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_policy_templates::ListPolicyTemplatesInput {
-                policy_store_id: self.policy_store_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_policy_templates::ListPolicyTemplatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_policy_templates::ListPolicyTemplatesInput {
+            policy_store_id: self.policy_store_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

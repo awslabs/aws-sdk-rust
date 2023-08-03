@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for AcceptInvitationOutput {
 }
 impl AcceptInvitationOutput {
     /// Creates a new builder-style object to manufacture [`AcceptInvitationOutput`](crate::operation::accept_invitation::AcceptInvitationOutput).
-    pub fn builder() -> crate::operation::accept_invitation::builders::AcceptInvitationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::accept_invitation::builders::AcceptInvitationOutputBuilder {
         crate::operation::accept_invitation::builders::AcceptInvitationOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptInvitationOutput`](crate::operation::accept_invitation::AcceptInvitationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptInvitationOutputBuilder {
     _request_id: Option<String>,
 }

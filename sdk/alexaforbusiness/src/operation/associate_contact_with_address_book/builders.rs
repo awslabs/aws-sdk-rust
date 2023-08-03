@@ -5,16 +5,16 @@ pub use crate::operation::associate_contact_with_address_book::_associate_contac
 
 impl AssociateContactWithAddressBookInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_contact_with_address_book();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl AssociateContactWithAddressBookInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateContactWithAddressBookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookInputBuilder,
+    inner: crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookInputBuilder,
 }
 impl AssociateContactWithAddressBookFluentBuilder {
     /// Creates a new `AssociateContactWithAddressBook`.
@@ -38,15 +38,20 @@ impl AssociateContactWithAddressBookFluentBuilder {
         }
     }
     /// Access the AssociateContactWithAddressBook as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBook, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBook,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl AssociateContactWithAddressBookFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl AssociateContactWithAddressBookFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBook, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBook,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the contact to associate with an address book.</p>
@@ -110,18 +125,12 @@ impl AssociateContactWithAddressBookFluentBuilder {
         self.inner.get_contact_arn()
     }
     /// <p>The ARN of the address book with which to associate the contact.</p>
-    pub fn address_book_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address_book_arn(input.into());
         self
     }
     /// <p>The ARN of the address book with which to associate the contact.</p>
-    pub fn set_address_book_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_book_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address_book_arn(input);
         self
     }

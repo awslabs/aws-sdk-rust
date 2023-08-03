@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeTaskSetsOutput {
 }
 impl DescribeTaskSetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskSetsOutput`](crate::operation::describe_task_sets::DescribeTaskSetsOutput).
-    pub fn builder() -> crate::operation::describe_task_sets::builders::DescribeTaskSetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_task_sets::builders::DescribeTaskSetsOutputBuilder {
         crate::operation::describe_task_sets::builders::DescribeTaskSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTaskSetsOutput`](crate::operation::describe_task_sets::DescribeTaskSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTaskSetsOutputBuilder {
     pub(crate) task_sets: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
@@ -57,10 +54,7 @@ impl DescribeTaskSetsOutputBuilder {
         self
     }
     /// <p>The list of task sets described.</p>
-    pub fn set_task_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>,
-    ) -> Self {
+    pub fn set_task_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>) -> Self {
         self.task_sets = input;
         self
     }
@@ -80,10 +74,7 @@ impl DescribeTaskSetsOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
         self.failures = input;
         self
     }

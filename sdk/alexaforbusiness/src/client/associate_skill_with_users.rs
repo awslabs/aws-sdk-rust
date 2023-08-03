@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateSkillWithUsersOutput`](crate::operation::associate_skill_with_users::AssociateSkillWithUsersOutput)
     /// - On failure, responds with [`SdkError<AssociateSkillWithUsersError>`](crate::operation::associate_skill_with_users::AssociateSkillWithUsersError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn associate_skill_with_users(
-        &self,
-    ) -> crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersFluentBuilder
-    {
+    pub fn associate_skill_with_users(&self) -> crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersFluentBuilder {
         crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersFluentBuilder::new(self.handle.clone())
     }
 }

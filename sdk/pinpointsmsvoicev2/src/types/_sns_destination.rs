@@ -23,9 +23,7 @@ impl SnsDestination {
 
 /// A builder for [`SnsDestination`](crate::types::SnsDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnsDestinationBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl SnsDestinationBuilder {
     }
     /// Consumes the builder and constructs a [`SnsDestination`](crate::types::SnsDestination).
     pub fn build(self) -> crate::types::SnsDestination {
-        crate::types::SnsDestination {
-            topic_arn: self.topic_arn,
-        }
+        crate::types::SnsDestination { topic_arn: self.topic_arn }
     }
 }

@@ -10,10 +10,7 @@ impl PutEvaluationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_evaluations::PutEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_evaluations::PutEvaluationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_evaluations::PutEvaluationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_evaluations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutEvaluationsFluentBuilder {
         }
     }
     /// Access the PutEvaluations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_evaluations::builders::PutEvaluationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_evaluations::builders::PutEvaluationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl PutEvaluationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,17 +116,12 @@ impl PutEvaluationsFluentBuilder {
         self
     }
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
-    pub fn set_evaluations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
-    ) -> Self {
+    pub fn set_evaluations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>) -> Self {
         self.inner = self.inner.set_evaluations(input);
         self
     }
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
-    pub fn get_evaluations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Evaluation>> {
+    pub fn get_evaluations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Evaluation>> {
         self.inner.get_evaluations()
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>

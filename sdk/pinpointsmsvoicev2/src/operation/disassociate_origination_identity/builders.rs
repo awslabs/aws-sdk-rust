@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_origination_identity::_disassociate_origi
 
 impl DisassociateOriginationIdentityInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_origination_identity();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl DisassociateOriginationIdentityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateOriginationIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder,
+    inner: crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder,
 }
 impl DisassociateOriginationIdentityFluentBuilder {
     /// Creates a new `DisassociateOriginationIdentity`.
@@ -38,15 +38,20 @@ impl DisassociateOriginationIdentityFluentBuilder {
         }
     }
     /// Access the DisassociateOriginationIdentity as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentity, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_origination_identity::DisassociateOriginationIdentity,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl DisassociateOriginationIdentityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl DisassociateOriginationIdentityFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentity, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_origination_identity::DisassociateOriginationIdentity,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
@@ -110,18 +125,12 @@ impl DisassociateOriginationIdentityFluentBuilder {
         self.inner.get_pool_id()
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origination_identity(input.into());
         self
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
@@ -130,18 +139,12 @@ impl DisassociateOriginationIdentityFluentBuilder {
         self.inner.get_origination_identity()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iso_country_code(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn set_iso_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iso_country_code(input);
         self
     }

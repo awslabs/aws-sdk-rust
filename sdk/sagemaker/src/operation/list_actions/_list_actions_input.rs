@@ -71,9 +71,7 @@ impl ListActionsInput {
 
 /// A builder for [`ListActionsInput`](crate::operation::list_actions::ListActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActionsInputBuilder {
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
     pub(crate) action_type: ::std::option::Option<::std::string::String>,
@@ -119,10 +117,7 @@ impl ListActionsInputBuilder {
         self
     }
     /// <p>A filter that returns only actions created on or after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -136,10 +131,7 @@ impl ListActionsInputBuilder {
         self
     }
     /// <p>A filter that returns only actions created on or before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -153,10 +145,7 @@ impl ListActionsInputBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortActionsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortActionsBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -207,12 +196,7 @@ impl ListActionsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListActionsInput`](crate::operation::list_actions::ListActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_actions::ListActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_actions::ListActionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_actions::ListActionsInput {
             source_uri: self.source_uri,
             action_type: self.action_type,

@@ -37,9 +37,7 @@ impl UpdateDeviceInstanceFluentBuilder {
         }
     }
     /// Access the UpdateDeviceInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_device_instance::builders::UpdateDeviceInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_device_instance::builders::UpdateDeviceInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateDeviceInstanceFluentBuilder {
             crate::operation::update_device_instance::UpdateDeviceInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_instance::UpdateDeviceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_device_instance::UpdateDeviceInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateDeviceInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateDeviceInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_device_instance::UpdateDeviceInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_instance::UpdateDeviceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_device_instance::UpdateDeviceInstanceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateDeviceInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_device_instance::UpdateDeviceInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_instance::UpdateDeviceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_device_instance::UpdateDeviceInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateDeviceInstanceFluentBuilder {
             crate::operation::update_device_instance::UpdateDeviceInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_instance::UpdateDeviceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_device_instance::UpdateDeviceInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +147,7 @@ impl UpdateDeviceInstanceFluentBuilder {
         self
     }
     /// <p>An array of strings that you want to associate with the device instance.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_labels(input);
         self
     }

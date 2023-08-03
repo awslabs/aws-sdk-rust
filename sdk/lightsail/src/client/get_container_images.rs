@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetContainerImagesOutput`](crate::operation::get_container_images::GetContainerImagesOutput) with field(s):
     ///   - [`container_images(Option<Vec<ContainerImage>>)`](crate::operation::get_container_images::GetContainerImagesOutput::container_images): <p>An array of objects that describe container images that are registered to the container service.</p>
     /// - On failure, responds with [`SdkError<GetContainerImagesError>`](crate::operation::get_container_images::GetContainerImagesError)
-    pub fn get_container_images(
-        &self,
-    ) -> crate::operation::get_container_images::builders::GetContainerImagesFluentBuilder {
-        crate::operation::get_container_images::builders::GetContainerImagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_container_images(&self) -> crate::operation::get_container_images::builders::GetContainerImagesFluentBuilder {
+        crate::operation::get_container_images::builders::GetContainerImagesFluentBuilder::new(self.handle.clone())
     }
 }

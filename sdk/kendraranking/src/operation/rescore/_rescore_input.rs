@@ -36,9 +36,7 @@ impl RescoreInput {
 
 /// A builder for [`RescoreInput`](crate::operation::rescore::RescoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RescoreInputBuilder {
     pub(crate) rescore_execution_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) search_query: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct RescoreInputBuilder {
 }
 impl RescoreInputBuilder {
     /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    pub fn rescore_execution_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rescore_execution_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rescore_execution_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    pub fn set_rescore_execution_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rescore_execution_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rescore_execution_plan_id = input;
         self
     }
@@ -91,10 +83,7 @@ impl RescoreInputBuilder {
         self
     }
     /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
-    pub fn set_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
-    ) -> Self {
+    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
         self.documents = input;
         self
     }
@@ -103,12 +92,7 @@ impl RescoreInputBuilder {
         &self.documents
     }
     /// Consumes the builder and constructs a [`RescoreInput`](crate::operation::rescore::RescoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::rescore::RescoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::rescore::RescoreInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::rescore::RescoreInput {
             rescore_execution_plan_id: self.rescore_execution_plan_id,
             search_query: self.search_query,

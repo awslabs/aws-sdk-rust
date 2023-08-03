@@ -15,33 +15,25 @@ impl DescribeAcceleratorAttributesInput {
 }
 impl DescribeAcceleratorAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorAttributesInput`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput).
-    pub fn builder() -> crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesInputBuilder{
+    pub fn builder() -> crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesInputBuilder {
         crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAcceleratorAttributesInput`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorAttributesInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAcceleratorAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accelerator_arn = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeAcceleratorAttributesInputBuilder {
         crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput {
-                accelerator_arn: self.accelerator_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput {
+            accelerator_arn: self.accelerator_arn,
+        })
     }
 }

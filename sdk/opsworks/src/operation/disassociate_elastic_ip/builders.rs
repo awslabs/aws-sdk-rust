@@ -38,10 +38,7 @@ impl DisassociateElasticIpFluentBuilder {
         }
     }
     /// Access the DisassociateElasticIp as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DisassociateElasticIpFluentBuilder {
             crate::operation::disassociate_elastic_ip::DisassociateElasticIp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_elastic_ip::DisassociateElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_elastic_ip::DisassociateElasticIpError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DisassociateElasticIpFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DisassociateElasticIpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_elastic_ip::DisassociateElasticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_elastic_ip::DisassociateElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_elastic_ip::DisassociateElasticIpError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DisassociateElasticIpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_elastic_ip::DisassociateElasticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_elastic_ip::DisassociateElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_elastic_ip::DisassociateElasticIpError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DisassociateElasticIpFluentBuilder {
             crate::operation::disassociate_elastic_ip::DisassociateElasticIp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_elastic_ip::DisassociateElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_elastic_ip::DisassociateElasticIpError>,
     > {
         self.customize_middleware().await
     }

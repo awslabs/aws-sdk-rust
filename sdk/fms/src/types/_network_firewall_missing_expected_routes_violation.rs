@@ -30,17 +30,14 @@ impl NetworkFirewallMissingExpectedRoutesViolation {
 }
 impl NetworkFirewallMissingExpectedRoutesViolation {
     /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingExpectedRoutesViolation`](crate::types::NetworkFirewallMissingExpectedRoutesViolation).
-    pub fn builder() -> crate::types::builders::NetworkFirewallMissingExpectedRoutesViolationBuilder
-    {
+    pub fn builder() -> crate::types::builders::NetworkFirewallMissingExpectedRoutesViolationBuilder {
         crate::types::builders::NetworkFirewallMissingExpectedRoutesViolationBuilder::default()
     }
 }
 
 /// A builder for [`NetworkFirewallMissingExpectedRoutesViolation`](crate::types::NetworkFirewallMissingExpectedRoutesViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFirewallMissingExpectedRoutesViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) expected_routes: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>>,
@@ -48,18 +45,12 @@ pub struct NetworkFirewallMissingExpectedRoutesViolationBuilder {
 }
 impl NetworkFirewallMissingExpectedRoutesViolationBuilder {
     /// <p>The target of the violation.</p>
-    pub fn violation_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target of the violation.</p>
-    pub fn set_violation_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_violation_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_target = input;
         self
     }
@@ -79,17 +70,12 @@ impl NetworkFirewallMissingExpectedRoutesViolationBuilder {
         self
     }
     /// <p>The expected routes.</p>
-    pub fn set_expected_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>>,
-    ) -> Self {
+    pub fn set_expected_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>>) -> Self {
         self.expected_routes = input;
         self
     }
     /// <p>The expected routes.</p>
-    pub fn get_expected_routes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>> {
+    pub fn get_expected_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>> {
         &self.expected_routes
     }
     /// <p>Information about the VPC ID.</p>

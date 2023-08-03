@@ -42,9 +42,7 @@ impl JobAlbumArt {
 
 /// A builder for [`JobAlbumArt`](crate::types::JobAlbumArt).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobAlbumArtBuilder {
     pub(crate) merge_policy: ::std::option::Option<::std::string::String>,
     pub(crate) artwork: ::std::option::Option<::std::vec::Vec<crate::types::Artwork>>,
@@ -94,10 +92,7 @@ impl JobAlbumArtBuilder {
         self
     }
     /// <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code> </p>
-    pub fn set_artwork(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Artwork>>,
-    ) -> Self {
+    pub fn set_artwork(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Artwork>>) -> Self {
         self.artwork = input;
         self
     }

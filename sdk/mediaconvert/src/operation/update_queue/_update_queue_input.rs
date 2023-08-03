@@ -26,9 +26,7 @@ impl UpdateQueueInput {
         self.name.as_deref()
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    pub fn reservation_plan_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservationPlanSettings> {
+    pub fn reservation_plan_settings(&self) -> ::std::option::Option<&crate::types::ReservationPlanSettings> {
         self.reservation_plan_settings.as_ref()
     }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
@@ -45,14 +43,11 @@ impl UpdateQueueInput {
 
 /// A builder for [`UpdateQueueInput`](crate::operation::update_queue::UpdateQueueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQueueInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) reservation_plan_settings:
-        ::std::option::Option<crate::types::ReservationPlanSettings>,
+    pub(crate) reservation_plan_settings: ::std::option::Option<crate::types::ReservationPlanSettings>,
     pub(crate) status: ::std::option::Option<crate::types::QueueStatus>,
 }
 impl UpdateQueueInputBuilder {
@@ -85,25 +80,17 @@ impl UpdateQueueInputBuilder {
         &self.name
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    pub fn reservation_plan_settings(
-        mut self,
-        input: crate::types::ReservationPlanSettings,
-    ) -> Self {
+    pub fn reservation_plan_settings(mut self, input: crate::types::ReservationPlanSettings) -> Self {
         self.reservation_plan_settings = ::std::option::Option::Some(input);
         self
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    pub fn set_reservation_plan_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationPlanSettings>,
-    ) -> Self {
+    pub fn set_reservation_plan_settings(mut self, input: ::std::option::Option<crate::types::ReservationPlanSettings>) -> Self {
         self.reservation_plan_settings = input;
         self
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    pub fn get_reservation_plan_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservationPlanSettings> {
+    pub fn get_reservation_plan_settings(&self) -> &::std::option::Option<crate::types::ReservationPlanSettings> {
         &self.reservation_plan_settings
     }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
@@ -121,12 +108,7 @@ impl UpdateQueueInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateQueueInput`](crate::operation::update_queue::UpdateQueueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_queue::UpdateQueueInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_queue::UpdateQueueInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_queue::UpdateQueueInput {
             description: self.description,
             name: self.name,

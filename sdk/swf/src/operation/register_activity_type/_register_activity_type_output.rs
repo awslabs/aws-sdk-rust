@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterActivityTypeOutput {
 }
 impl RegisterActivityTypeOutput {
     /// Creates a new builder-style object to manufacture [`RegisterActivityTypeOutput`](crate::operation::register_activity_type::RegisterActivityTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::register_activity_type::builders::RegisterActivityTypeOutputBuilder {
+    pub fn builder() -> crate::operation::register_activity_type::builders::RegisterActivityTypeOutputBuilder {
         crate::operation::register_activity_type::builders::RegisterActivityTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterActivityTypeOutput`](crate::operation::register_activity_type::RegisterActivityTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterActivityTypeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,7 @@ pub struct UpdateRoomInput {
     pub message_review_handler: ::std::option::Option<crate::types::MessageReviewHandler>,
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
     #[doc(hidden)]
-    pub logging_configuration_identifiers:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub logging_configuration_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateRoomInput {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
@@ -41,15 +40,11 @@ impl UpdateRoomInput {
         self.maximum_message_length
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
-    pub fn message_review_handler(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MessageReviewHandler> {
+    pub fn message_review_handler(&self) -> ::std::option::Option<&crate::types::MessageReviewHandler> {
         self.message_review_handler.as_ref()
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn logging_configuration_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.logging_configuration_identifiers.as_deref()
     }
 }
@@ -62,17 +57,14 @@ impl UpdateRoomInput {
 
 /// A builder for [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoomInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_message_rate_per_second: ::std::option::Option<i32>,
     pub(crate) maximum_message_length: ::std::option::Option<i32>,
     pub(crate) message_review_handler: ::std::option::Option<crate::types::MessageReviewHandler>,
-    pub(crate) logging_configuration_identifiers:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) logging_configuration_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateRoomInputBuilder {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
@@ -109,10 +101,7 @@ impl UpdateRoomInputBuilder {
         self
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
-    pub fn set_maximum_message_rate_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_message_rate_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_message_rate_per_second = input;
         self
     }
@@ -140,17 +129,12 @@ impl UpdateRoomInputBuilder {
         self
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
-    pub fn set_message_review_handler(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageReviewHandler>,
-    ) -> Self {
+    pub fn set_message_review_handler(mut self, input: ::std::option::Option<crate::types::MessageReviewHandler>) -> Self {
         self.message_review_handler = input;
         self
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
-    pub fn get_message_review_handler(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageReviewHandler> {
+    pub fn get_message_review_handler(&self) -> &::std::option::Option<crate::types::MessageReviewHandler> {
         &self.message_review_handler
     }
     /// Appends an item to `logging_configuration_identifiers`.
@@ -158,42 +142,27 @@ impl UpdateRoomInputBuilder {
     /// To override the contents of this collection use [`set_logging_configuration_identifiers`](Self::set_logging_configuration_identifiers).
     ///
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logging_configuration_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.logging_configuration_identifiers.unwrap_or_default();
         v.push(input.into());
         self.logging_configuration_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn set_logging_configuration_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logging_configuration_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.logging_configuration_identifiers = input;
         self
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn get_logging_configuration_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logging_configuration_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.logging_configuration_identifiers
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_room::UpdateRoomInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_room::UpdateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_room::UpdateRoomInput {
             identifier: self.identifier,
             name: self.name,
-            maximum_message_rate_per_second: self
-                .maximum_message_rate_per_second
-                .unwrap_or_default(),
+            maximum_message_rate_per_second: self.maximum_message_rate_per_second.unwrap_or_default(),
             maximum_message_length: self.maximum_message_length.unwrap_or_default(),
             message_review_handler: self.message_review_handler,
             logging_configuration_identifiers: self.logging_configuration_identifiers,

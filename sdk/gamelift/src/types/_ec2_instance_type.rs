@@ -150,13 +150,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Ec2InstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -507,9 +501,7 @@ impl ::std::convert::From<&str> for Ec2InstanceType {
             "t2.medium" => Ec2InstanceType::T2Medium,
             "t2.micro" => Ec2InstanceType::T2Micro,
             "t2.small" => Ec2InstanceType::T2Small,
-            other => {
-                Ec2InstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Ec2InstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

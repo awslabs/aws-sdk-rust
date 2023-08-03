@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterCrossAccountAccessRoleOutput 
 }
 impl RegisterCrossAccountAccessRoleOutput {
     /// Creates a new builder-style object to manufacture [`RegisterCrossAccountAccessRoleOutput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput).
-    pub fn builder() -> crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleOutputBuilder{
+    pub fn builder() -> crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleOutputBuilder {
         crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterCrossAccountAccessRoleOutput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterCrossAccountAccessRoleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl RegisterCrossAccountAccessRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterCrossAccountAccessRoleOutput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput
-    {
+    pub fn build(self) -> crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput {
         crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput {
             _request_id: self._request_id,
         }

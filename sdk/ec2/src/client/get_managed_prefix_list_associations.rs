@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`prefix_list_associations(Option<Vec<PrefixListAssociation>>)`](crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsOutput::prefix_list_associations): <p>Information about the associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetManagedPrefixListAssociationsError>`](crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsError)
-    pub fn get_managed_prefix_list_associations(&self) -> crate::operation::get_managed_prefix_list_associations::builders::GetManagedPrefixListAssociationsFluentBuilder{
+    pub fn get_managed_prefix_list_associations(
+        &self,
+    ) -> crate::operation::get_managed_prefix_list_associations::builders::GetManagedPrefixListAssociationsFluentBuilder {
         crate::operation::get_managed_prefix_list_associations::builders::GetManagedPrefixListAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

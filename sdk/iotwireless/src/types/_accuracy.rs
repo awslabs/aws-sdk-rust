@@ -30,9 +30,7 @@ impl Accuracy {
 
 /// A builder for [`Accuracy`](crate::types::Accuracy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccuracyBuilder {
     pub(crate) horizontal_accuracy: ::std::option::Option<f32>,
     pub(crate) vertical_accuracy: ::std::option::Option<f32>,

@@ -34,9 +34,7 @@ impl RootDirectory {
 
 /// A builder for [`RootDirectory`](crate::types::RootDirectory).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RootDirectoryBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) creation_info: ::std::option::Option<crate::types::CreationInfo>,
@@ -66,10 +64,7 @@ impl RootDirectoryBuilder {
     /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important>
     /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p>
     /// </important>
-    pub fn set_creation_info(
-        mut self,
-        input: ::std::option::Option<crate::types::CreationInfo>,
-    ) -> Self {
+    pub fn set_creation_info(mut self, input: ::std::option::Option<crate::types::CreationInfo>) -> Self {
         self.creation_info = input;
         self
     }

@@ -38,13 +38,7 @@
 /// Global Configuration Output Timing Source
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum GlobalConfigurationOutputTimingSource {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for GlobalConfigurationOutputTimingSource {
         match s {
             "INPUT_CLOCK" => GlobalConfigurationOutputTimingSource::InputClock,
             "SYSTEM_CLOCK" => GlobalConfigurationOutputTimingSource::SystemClock,
-            other => GlobalConfigurationOutputTimingSource::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => GlobalConfigurationOutputTimingSource::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

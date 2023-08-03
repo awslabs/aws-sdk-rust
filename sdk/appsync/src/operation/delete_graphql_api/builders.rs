@@ -10,10 +10,7 @@ impl DeleteGraphqlApiInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_graphql_api::DeleteGraphqlApiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_graphql_api::DeleteGraphqlApiError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_graphql_api::DeleteGraphqlApiError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_graphql_api();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteGraphqlApiFluentBuilder {
         }
     }
     /// Access the DeleteGraphqlApi as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_graphql_api::builders::DeleteGraphqlApiInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_graphql_api::builders::DeleteGraphqlApiInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteGraphqlApiFluentBuilder {
             crate::operation::delete_graphql_api::DeleteGraphqlApi,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_graphql_api::DeleteGraphqlApiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_graphql_api::DeleteGraphqlApiError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteGraphqlApiFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteGraphqlApiFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_graphql_api::DeleteGraphqlApiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_graphql_api::DeleteGraphqlApiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_graphql_api::DeleteGraphqlApiError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteGraphqlApiFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_graphql_api::DeleteGraphqlApiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_graphql_api::DeleteGraphqlApiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_graphql_api::DeleteGraphqlApiError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteGraphqlApiFluentBuilder {
             crate::operation::delete_graphql_api::DeleteGraphqlApi,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_graphql_api::DeleteGraphqlApiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_graphql_api::DeleteGraphqlApiError>,
     > {
         self.customize_middleware().await
     }

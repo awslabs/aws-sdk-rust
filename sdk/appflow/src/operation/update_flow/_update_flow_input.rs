@@ -17,8 +17,7 @@ pub struct UpdateFlowInput {
     pub source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     #[doc(hidden)]
-    pub destination_flow_config_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
+    pub destination_flow_config_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
@@ -49,9 +48,7 @@ impl UpdateFlowInput {
         self.source_flow_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DestinationFlowConfig]> {
+    pub fn destination_flow_config_list(&self) -> ::std::option::Option<&[crate::types::DestinationFlowConfig]> {
         self.destination_flow_config_list.as_deref()
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
@@ -59,9 +56,7 @@ impl UpdateFlowInput {
         self.tasks.as_deref()
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn metadata_catalog_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MetadataCatalogConfig> {
+    pub fn metadata_catalog_config(&self) -> ::std::option::Option<&crate::types::MetadataCatalogConfig> {
         self.metadata_catalog_config.as_ref()
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
@@ -80,16 +75,13 @@ impl UpdateFlowInput {
 
 /// A builder for [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlowInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
     pub(crate) source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
-    pub(crate) destination_flow_config_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
+    pub(crate) destination_flow_config_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     pub(crate) metadata_catalog_config: ::std::option::Option<crate::types::MetadataCatalogConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -129,10 +121,7 @@ impl UpdateFlowInputBuilder {
         self
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn set_trigger_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerConfig>,
-    ) -> Self {
+    pub fn set_trigger_config(mut self, input: ::std::option::Option<crate::types::TriggerConfig>) -> Self {
         self.trigger_config = input;
         self
     }
@@ -146,10 +135,7 @@ impl UpdateFlowInputBuilder {
         self
     }
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
-    pub fn set_source_flow_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceFlowConfig>,
-    ) -> Self {
+    pub fn set_source_flow_config(mut self, input: ::std::option::Option<crate::types::SourceFlowConfig>) -> Self {
         self.source_flow_config = input;
         self
     }
@@ -162,27 +148,19 @@ impl UpdateFlowInputBuilder {
     /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
     ///
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(
-        mut self,
-        input: crate::types::DestinationFlowConfig,
-    ) -> Self {
+    pub fn destination_flow_config_list(mut self, input: crate::types::DestinationFlowConfig) -> Self {
         let mut v = self.destination_flow_config_list.unwrap_or_default();
         v.push(input);
         self.destination_flow_config_list = ::std::option::Option::Some(v);
         self
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn set_destination_flow_config_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
-    ) -> Self {
+    pub fn set_destination_flow_config_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>) -> Self {
         self.destination_flow_config_list = input;
         self
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn get_destination_flow_config_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
+    pub fn get_destination_flow_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
         &self.destination_flow_config_list
     }
     /// Appends an item to `tasks`.
@@ -197,10 +175,7 @@ impl UpdateFlowInputBuilder {
         self
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
         self.tasks = input;
         self
     }
@@ -214,17 +189,12 @@ impl UpdateFlowInputBuilder {
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn set_metadata_catalog_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataCatalogConfig>,
-    ) -> Self {
+    pub fn set_metadata_catalog_config(mut self, input: ::std::option::Option<crate::types::MetadataCatalogConfig>) -> Self {
         self.metadata_catalog_config = input;
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn get_metadata_catalog_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataCatalogConfig> {
+    pub fn get_metadata_catalog_config(&self) -> &::std::option::Option<crate::types::MetadataCatalogConfig> {
         &self.metadata_catalog_config
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
@@ -248,12 +218,7 @@ impl UpdateFlowInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_flow::UpdateFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_flow::UpdateFlowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flow::UpdateFlowInput {
             flow_name: self.flow_name,
             description: self.description,

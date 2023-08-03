@@ -39,9 +39,7 @@ impl UpdatePolicyTemplateFluentBuilder {
         }
     }
     /// Access the UpdatePolicyTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_policy_template::builders::UpdatePolicyTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_policy_template::builders::UpdatePolicyTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl UpdatePolicyTemplateFluentBuilder {
             crate::operation::update_policy_template::UpdatePolicyTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_policy_template::UpdatePolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_policy_template::UpdatePolicyTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl UpdatePolicyTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl UpdatePolicyTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_policy_template::UpdatePolicyTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_policy_template::UpdatePolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_policy_template::UpdatePolicyTemplateError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl UpdatePolicyTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_policy_template::UpdatePolicyTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_policy_template::UpdatePolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_policy_template::UpdatePolicyTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl UpdatePolicyTemplateFluentBuilder {
             crate::operation::update_policy_template::UpdatePolicyTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_policy_template::UpdatePolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_policy_template::UpdatePolicyTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -145,18 +126,12 @@ impl UpdatePolicyTemplateFluentBuilder {
         self.inner.get_policy_store_id()
     }
     /// <p>Specifies the ID of the policy template that you want to update.</p>
-    pub fn policy_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_template_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy template that you want to update.</p>
-    pub fn set_policy_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_template_id(input);
         self
     }

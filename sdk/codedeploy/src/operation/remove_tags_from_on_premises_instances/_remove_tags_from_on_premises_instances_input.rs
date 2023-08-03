@@ -23,16 +23,14 @@ impl RemoveTagsFromOnPremisesInstancesInput {
 }
 impl RemoveTagsFromOnPremisesInstancesInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromOnPremisesInstancesInput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput).
-    pub fn builder() -> crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder{
+    pub fn builder() -> crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder {
         crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromOnPremisesInstancesInput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromOnPremisesInstancesInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,10 +48,7 @@ impl RemoveTagsFromOnPremisesInstancesInputBuilder {
         self
     }
     /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -66,38 +61,33 @@ impl RemoveTagsFromOnPremisesInstancesInputBuilder {
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
     /// <p>The names of the on-premises instances from which to remove tags.</p>
-    pub fn instance_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
         v.push(input.into());
         self.instance_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the on-premises instances from which to remove tags.</p>
-    pub fn set_instance_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_names = input;
         self
     }
     /// <p>The names of the on-premises instances from which to remove tags.</p>
-    pub fn get_instance_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_names
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromOnPremisesInstancesInput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput {
-                tags: self.tags
-                ,
-                instance_names: self.instance_names
-                ,
-            }
+                tags: self.tags,
+                instance_names: self.instance_names,
+            },
         )
     }
 }

@@ -73,25 +73,20 @@ impl CreateDevEnvironmentInput {
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn persistent_storage(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PersistentStorageConfiguration> {
+    pub fn persistent_storage(&self) -> ::std::option::Option<&crate::types::PersistentStorageConfiguration> {
         self.persistent_storage.as_ref()
     }
 }
 impl CreateDevEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`CreateDevEnvironmentInput`](crate::operation::create_dev_environment::CreateDevEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder {
+    pub fn builder() -> crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder {
         crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDevEnvironmentInput`](crate::operation::create_dev_environment::CreateDevEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDevEnvironmentInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -101,8 +96,7 @@ pub struct CreateDevEnvironmentInputBuilder {
     pub(crate) ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) inactivity_timeout_minutes: ::std::option::Option<i32>,
-    pub(crate) persistent_storage:
-        ::std::option::Option<crate::types::PersistentStorageConfiguration>,
+    pub(crate) persistent_storage: ::std::option::Option<crate::types::PersistentStorageConfiguration>,
 }
 impl CreateDevEnvironmentInputBuilder {
     /// <p>The name of the space.</p>
@@ -145,17 +139,12 @@ impl CreateDevEnvironmentInputBuilder {
         self
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
-    pub fn set_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>,
-    ) -> Self {
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>) -> Self {
         self.repositories = input;
         self
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
-    pub fn get_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>> {
         &self.repositories
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
@@ -202,19 +191,14 @@ impl CreateDevEnvironmentInputBuilder {
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
-    pub fn set_ides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
-    ) -> Self {
+    pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>) -> Self {
         self.ides = input;
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
-    pub fn get_ides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
+    pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         &self.ides
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
@@ -223,10 +207,7 @@ impl CreateDevEnvironmentInputBuilder {
         self
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -251,50 +232,38 @@ impl CreateDevEnvironmentInputBuilder {
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn persistent_storage(
-        mut self,
-        input: crate::types::PersistentStorageConfiguration,
-    ) -> Self {
+    pub fn persistent_storage(mut self, input: crate::types::PersistentStorageConfiguration) -> Self {
         self.persistent_storage = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn set_persistent_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::PersistentStorageConfiguration>,
-    ) -> Self {
+    pub fn set_persistent_storage(mut self, input: ::std::option::Option<crate::types::PersistentStorageConfiguration>) -> Self {
         self.persistent_storage = input;
         self
     }
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn get_persistent_storage(
-        &self,
-    ) -> &::std::option::Option<crate::types::PersistentStorageConfiguration> {
+    pub fn get_persistent_storage(&self) -> &::std::option::Option<crate::types::PersistentStorageConfiguration> {
         &self.persistent_storage
     }
     /// Consumes the builder and constructs a [`CreateDevEnvironmentInput`](crate::operation::create_dev_environment::CreateDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dev_environment::CreateDevEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_dev_environment::CreateDevEnvironmentInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                repositories: self.repositories,
-                client_token: self.client_token,
-                alias: self.alias,
-                ides: self.ides,
-                instance_type: self.instance_type,
-                inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
-                persistent_storage: self.persistent_storage,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_dev_environment::CreateDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_dev_environment::CreateDevEnvironmentInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            repositories: self.repositories,
+            client_token: self.client_token,
+            alias: self.alias,
+            ides: self.ides,
+            instance_type: self.instance_type,
+            inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
+            persistent_storage: self.persistent_storage,
+        })
     }
 }

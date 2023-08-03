@@ -22,17 +22,14 @@ impl GetServiceInstanceInput {
 }
 impl GetServiceInstanceInput {
     /// Creates a new builder-style object to manufacture [`GetServiceInstanceInput`](crate::operation::get_service_instance::GetServiceInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::get_service_instance::builders::GetServiceInstanceInputBuilder {
+    pub fn builder() -> crate::operation::get_service_instance::builders::GetServiceInstanceInputBuilder {
         crate::operation::get_service_instance::builders::GetServiceInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceInstanceInput`](crate::operation::get_service_instance::GetServiceInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl GetServiceInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceInstanceInput`](crate::operation::get_service_instance::GetServiceInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_instance::GetServiceInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_service_instance::GetServiceInstanceInput {
-                name: self.name,
-                service_name: self.service_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_service_instance::GetServiceInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_service_instance::GetServiceInstanceInput {
+            name: self.name,
+            service_name: self.service_name,
+        })
     }
 }

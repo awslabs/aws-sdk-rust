@@ -32,17 +32,14 @@ impl DescribeDirectoriesInput {
 }
 impl DescribeDirectoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectoriesInput`](crate::operation::describe_directories::DescribeDirectoriesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_directories::builders::DescribeDirectoriesInputBuilder {
+    pub fn builder() -> crate::operation::describe_directories::builders::DescribeDirectoriesInputBuilder {
         crate::operation::describe_directories::builders::DescribeDirectoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDirectoriesInput`](crate::operation::describe_directories::DescribeDirectoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectoriesInputBuilder {
     pub(crate) directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -55,10 +52,7 @@ impl DescribeDirectoriesInputBuilder {
     ///
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn directory_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.directory_ids.unwrap_or_default();
         v.push(input.into());
         self.directory_ids = ::std::option::Option::Some(v);
@@ -66,18 +60,13 @@ impl DescribeDirectoriesInputBuilder {
     }
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn set_directory_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_directory_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.directory_ids = input;
         self
     }
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn get_directory_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_directory_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.directory_ids
     }
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
@@ -111,16 +100,12 @@ impl DescribeDirectoriesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDirectoriesInput`](crate::operation::describe_directories::DescribeDirectoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_directories::DescribeDirectoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_directories::DescribeDirectoriesInput {
-                directory_ids: self.directory_ids,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_directories::DescribeDirectoriesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_directories::DescribeDirectoriesInput {
+            directory_ids: self.directory_ids,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

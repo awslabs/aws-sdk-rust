@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateVerifiedAccessInstanceOutput`](crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceOutput) with field(s):
     ///   - [`verified_access_instance(Option<VerifiedAccessInstance>)`](crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceOutput::verified_access_instance): <p>The ID of the Verified Access instance.</p>
     /// - On failure, responds with [`SdkError<CreateVerifiedAccessInstanceError>`](crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError)
-    pub fn create_verified_access_instance(&self) -> crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceFluentBuilder{
+    pub fn create_verified_access_instance(
+        &self,
+    ) -> crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceFluentBuilder {
         crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceFluentBuilder::new(self.handle.clone())
     }
 }

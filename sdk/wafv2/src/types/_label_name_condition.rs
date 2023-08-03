@@ -23,9 +23,7 @@ impl LabelNameCondition {
 
 /// A builder for [`LabelNameCondition`](crate::types::LabelNameCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelNameConditionBuilder {
     pub(crate) label_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl LabelNameConditionBuilder {
     }
     /// Consumes the builder and constructs a [`LabelNameCondition`](crate::types::LabelNameCondition).
     pub fn build(self) -> crate::types::LabelNameCondition {
-        crate::types::LabelNameCondition {
-            label_name: self.label_name,
-        }
+        crate::types::LabelNameCondition { label_name: self.label_name }
     }
 }

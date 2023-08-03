@@ -10,10 +10,7 @@ impl CreateProductInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_product::CreateProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_product::CreateProductError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_product::CreateProductError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_product();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateProductFluentBuilder {
         }
     }
     /// Access the CreateProduct as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_product::builders::CreateProductInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_product::builders::CreateProductInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl CreateProductFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -121,10 +113,7 @@ impl CreateProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -133,10 +122,7 @@ impl CreateProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -205,18 +191,12 @@ impl CreateProductFluentBuilder {
         self.inner.get_distributor()
     }
     /// <p>The support information about the product.</p>
-    pub fn support_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn support_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.support_description(input.into());
         self
     }
     /// <p>The support information about the product.</p>
-    pub fn set_support_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_support_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_support_description(input);
         self
     }
@@ -225,18 +205,12 @@ impl CreateProductFluentBuilder {
         self.inner.get_support_description()
     }
     /// <p>The contact email for product support.</p>
-    pub fn support_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn support_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.support_email(input.into());
         self
     }
     /// <p>The contact email for product support.</p>
-    pub fn set_support_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_support_email(input);
         self
     }
@@ -267,10 +241,7 @@ impl CreateProductFluentBuilder {
         self
     }
     /// <p>The type of product.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductType>,
-    ) -> Self {
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::ProductType>) -> Self {
         self.inner = self.inner.set_product_type(input);
         self
     }
@@ -288,10 +259,7 @@ impl CreateProductFluentBuilder {
         self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -300,40 +268,26 @@ impl CreateProductFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The configuration of the provisioning artifact. </p>
-    pub fn provisioning_artifact_parameters(
-        mut self,
-        input: crate::types::ProvisioningArtifactProperties,
-    ) -> Self {
+    pub fn provisioning_artifact_parameters(mut self, input: crate::types::ProvisioningArtifactProperties) -> Self {
         self.inner = self.inner.provisioning_artifact_parameters(input);
         self
     }
     /// <p>The configuration of the provisioning artifact. </p>
-    pub fn set_provisioning_artifact_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_parameters(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactProperties>) -> Self {
         self.inner = self.inner.set_provisioning_artifact_parameters(input);
         self
     }
     /// <p>The configuration of the provisioning artifact. </p>
-    pub fn get_provisioning_artifact_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningArtifactProperties> {
+    pub fn get_provisioning_artifact_parameters(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactProperties> {
         self.inner.get_provisioning_artifact_parameters()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
@@ -355,10 +309,7 @@ impl CreateProductFluentBuilder {
     /// <li> <p> <code>Type</code> </p> </li>
     /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
-    pub fn set_source_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConnection>,
-    ) -> Self {
+    pub fn set_source_connection(mut self, input: ::std::option::Option<crate::types::SourceConnection>) -> Self {
         self.inner = self.inner.set_source_connection(input);
         self
     }

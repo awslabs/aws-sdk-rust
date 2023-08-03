@@ -35,22 +35,17 @@ impl ::aws_http::request_id::RequestId for DescribeFileSystemsOutput {
 }
 impl DescribeFileSystemsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemsOutput`](crate::operation::describe_file_systems::DescribeFileSystemsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_file_systems::builders::DescribeFileSystemsOutputBuilder {
-        crate::operation::describe_file_systems::builders::DescribeFileSystemsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_file_systems::builders::DescribeFileSystemsOutputBuilder {
+        crate::operation::describe_file_systems::builders::DescribeFileSystemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFileSystemsOutput`](crate::operation::describe_file_systems::DescribeFileSystemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFileSystemsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) file_systems:
-        ::std::option::Option<::std::vec::Vec<crate::types::FileSystemDescription>>,
+    pub(crate) file_systems: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemDescription>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -81,17 +76,12 @@ impl DescribeFileSystemsOutputBuilder {
         self
     }
     /// <p>An array of file system descriptions.</p>
-    pub fn set_file_systems(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemDescription>>,
-    ) -> Self {
+    pub fn set_file_systems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemDescription>>) -> Self {
         self.file_systems = input;
         self
     }
     /// <p>An array of file system descriptions.</p>
-    pub fn get_file_systems(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemDescription>> {
+    pub fn get_file_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemDescription>> {
         &self.file_systems
     }
     /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>

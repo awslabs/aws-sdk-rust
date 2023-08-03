@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetResourcePositionOutput {
 }
 impl GetResourcePositionOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePositionOutput`](crate::operation::get_resource_position::GetResourcePositionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_position::builders::GetResourcePositionOutputBuilder {
-        crate::operation::get_resource_position::builders::GetResourcePositionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_position::builders::GetResourcePositionOutputBuilder {
+        crate::operation::get_resource_position::builders::GetResourcePositionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePositionOutput`](crate::operation::get_resource_position::GetResourcePositionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePositionOutputBuilder {
     pub(crate) geo_json_payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetResourcePositionOutputBuilder {
         self
     }
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-    pub fn set_geo_json_payload(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_geo_json_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.geo_json_payload = input;
         self
     }

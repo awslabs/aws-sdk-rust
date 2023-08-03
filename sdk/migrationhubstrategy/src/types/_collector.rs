@@ -59,9 +59,7 @@ impl Collector {
         self.last_activity_time_stamp.as_deref()
     }
     /// <p>Summary of the collector configuration.</p>
-    pub fn configuration_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationSummary> {
+    pub fn configuration_summary(&self) -> ::std::option::Option<&crate::types::ConfigurationSummary> {
         self.configuration_summary.as_ref()
     }
 }
@@ -74,9 +72,7 @@ impl Collector {
 
 /// A builder for [`Collector`](crate::types::Collector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollectorBuilder {
     pub(crate) collector_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
@@ -136,10 +132,7 @@ impl CollectorBuilder {
         self
     }
     /// <p> Indicates the health of a collector. </p>
-    pub fn set_collector_health(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectorHealth>,
-    ) -> Self {
+    pub fn set_collector_health(mut self, input: ::std::option::Option<crate::types::CollectorHealth>) -> Self {
         self.collector_health = input;
         self
     }
@@ -148,18 +141,12 @@ impl CollectorBuilder {
         &self.collector_health
     }
     /// <p> Current version of the collector that is running in the environment that you specify. </p>
-    pub fn collector_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collector_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collector_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Current version of the collector that is running in the environment that you specify. </p>
-    pub fn set_collector_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collector_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collector_version = input;
         self
     }
@@ -168,18 +155,12 @@ impl CollectorBuilder {
         &self.collector_version
     }
     /// <p> Time when the collector registered with the service. </p>
-    pub fn registered_time_stamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_time_stamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_time_stamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Time when the collector registered with the service. </p>
-    pub fn set_registered_time_stamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_time_stamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_time_stamp = input;
         self
     }
@@ -188,18 +169,12 @@ impl CollectorBuilder {
         &self.registered_time_stamp
     }
     /// <p> Time when the collector last pinged the service. </p>
-    pub fn last_activity_time_stamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_activity_time_stamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_activity_time_stamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Time when the collector last pinged the service. </p>
-    pub fn set_last_activity_time_stamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_activity_time_stamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_activity_time_stamp = input;
         self
     }
@@ -213,17 +188,12 @@ impl CollectorBuilder {
         self
     }
     /// <p>Summary of the collector configuration.</p>
-    pub fn set_configuration_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationSummary>,
-    ) -> Self {
+    pub fn set_configuration_summary(mut self, input: ::std::option::Option<crate::types::ConfigurationSummary>) -> Self {
         self.configuration_summary = input;
         self
     }
     /// <p>Summary of the collector configuration.</p>
-    pub fn get_configuration_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationSummary> {
+    pub fn get_configuration_summary(&self) -> &::std::option::Option<crate::types::ConfigurationSummary> {
         &self.configuration_summary
     }
     /// Consumes the builder and constructs a [`Collector`](crate::types::Collector).

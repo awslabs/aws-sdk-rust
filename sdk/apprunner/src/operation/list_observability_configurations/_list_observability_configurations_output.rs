@@ -5,8 +5,7 @@
 pub struct ListObservabilityConfigurationsOutput {
     /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     #[doc(hidden)]
-    pub observability_configuration_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>>,
+    pub observability_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListObservabilityConfigurationsOutput {
 }
 impl ListObservabilityConfigurationsOutput {
     /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn observability_configuration_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ObservabilityConfigurationSummary]> {
+    pub fn observability_configuration_summary_list(&self) -> ::std::option::Option<&[crate::types::ObservabilityConfigurationSummary]> {
         self.observability_configuration_summary_list.as_deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListObservabilityConfigurationsOutput
 }
 impl ListObservabilityConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListObservabilityConfigurationsOutput`](crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsOutputBuilder {
         crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListObservabilityConfigurationsOutput`](crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObservabilityConfigurationsOutputBuilder {
-    pub(crate) observability_configuration_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>>,
+    pub(crate) observability_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +47,8 @@ impl ListObservabilityConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_observability_configuration_summary_list`](Self::set_observability_configuration_summary_list).
     ///
     /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn observability_configuration_summary_list(
-        mut self,
-        input: crate::types::ObservabilityConfigurationSummary,
-    ) -> Self {
-        let mut v = self
-            .observability_configuration_summary_list
-            .unwrap_or_default();
+    pub fn observability_configuration_summary_list(mut self, input: crate::types::ObservabilityConfigurationSummary) -> Self {
+        let mut v = self.observability_configuration_summary_list.unwrap_or_default();
         v.push(input);
         self.observability_configuration_summary_list = ::std::option::Option::Some(v);
         self
@@ -67,9 +56,7 @@ impl ListObservabilityConfigurationsOutputBuilder {
     /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub fn set_observability_configuration_summary_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>>,
     ) -> Self {
         self.observability_configuration_summary_list = input;
         self
@@ -77,8 +64,7 @@ impl ListObservabilityConfigurationsOutputBuilder {
     /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub fn get_observability_configuration_summary_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>> {
         &self.observability_configuration_summary_list
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
@@ -105,10 +91,7 @@ impl ListObservabilityConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListObservabilityConfigurationsOutput`](crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput {
         crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput {
             observability_configuration_summary_list: self.observability_configuration_summary_list,
             next_token: self.next_token,

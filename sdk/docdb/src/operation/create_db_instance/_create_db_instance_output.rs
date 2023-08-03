@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDbInstanceOutput {
 }
 impl CreateDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceOutput`](crate::operation::create_db_instance::CreateDbInstanceOutput).
-    pub fn builder() -> crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder {
         crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbInstanceOutput`](crate::operation::create_db_instance::CreateDbInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbInstanceOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateDbInstanceOutputBuilder {
         self
     }
     /// <p>Detailed information about an instance. </p>
-    pub fn set_db_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::DbInstance>,
-    ) -> Self {
+    pub fn set_db_instance(mut self, input: ::std::option::Option<crate::types::DbInstance>) -> Self {
         self.db_instance = input;
         self
     }

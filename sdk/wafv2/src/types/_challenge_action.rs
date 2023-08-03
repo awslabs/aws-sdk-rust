@@ -23,9 +23,7 @@ pub struct ChallengeAction {
 impl ChallengeAction {
     /// <p>Defines custom handling for the web request, used when the challenge inspection determines that the request's token is valid and unexpired.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn custom_request_handling(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomRequestHandling> {
+    pub fn custom_request_handling(&self) -> ::std::option::Option<&crate::types::CustomRequestHandling> {
         self.custom_request_handling.as_ref()
     }
 }
@@ -38,9 +36,7 @@ impl ChallengeAction {
 
 /// A builder for [`ChallengeAction`](crate::types::ChallengeAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChallengeActionBuilder {
     pub(crate) custom_request_handling: ::std::option::Option<crate::types::CustomRequestHandling>,
 }
@@ -53,18 +49,13 @@ impl ChallengeActionBuilder {
     }
     /// <p>Defines custom handling for the web request, used when the challenge inspection determines that the request's token is valid and unexpired.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn set_custom_request_handling(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomRequestHandling>,
-    ) -> Self {
+    pub fn set_custom_request_handling(mut self, input: ::std::option::Option<crate::types::CustomRequestHandling>) -> Self {
         self.custom_request_handling = input;
         self
     }
     /// <p>Defines custom handling for the web request, used when the challenge inspection determines that the request's token is valid and unexpired.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn get_custom_request_handling(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomRequestHandling> {
+    pub fn get_custom_request_handling(&self) -> &::std::option::Option<crate::types::CustomRequestHandling> {
         &self.custom_request_handling
     }
     /// Consumes the builder and constructs a [`ChallengeAction`](crate::types::ChallengeAction).

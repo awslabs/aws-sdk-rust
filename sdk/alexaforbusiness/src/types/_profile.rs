@@ -108,9 +108,7 @@ impl Profile {
         self.address_book_arn.as_deref()
     }
     /// <p>Meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MeetingRoomConfiguration> {
+    pub fn meeting_room_configuration(&self) -> ::std::option::Option<&crate::types::MeetingRoomConfiguration> {
         self.meeting_room_configuration.as_ref()
     }
 }
@@ -123,9 +121,7 @@ impl Profile {
 
 /// A builder for [`Profile`](crate::types::Profile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
@@ -141,8 +137,7 @@ pub struct ProfileBuilder {
     pub(crate) pstn_enabled: ::std::option::Option<bool>,
     pub(crate) data_retention_opt_in: ::std::option::Option<bool>,
     pub(crate) address_book_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) meeting_room_configuration:
-        ::std::option::Option<crate::types::MeetingRoomConfiguration>,
+    pub(crate) meeting_room_configuration: ::std::option::Option<crate::types::MeetingRoomConfiguration>,
 }
 impl ProfileBuilder {
     /// <p>The ARN of a room profile.</p>
@@ -221,10 +216,7 @@ impl ProfileBuilder {
         self
     }
     /// <p>The distance unit of a room profile.</p>
-    pub fn set_distance_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::DistanceUnit>,
-    ) -> Self {
+    pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.distance_unit = input;
         self
     }
@@ -238,10 +230,7 @@ impl ProfileBuilder {
         self
     }
     /// <p>The temperature unit of a room profile.</p>
-    pub fn set_temperature_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::TemperatureUnit>,
-    ) -> Self {
+    pub fn set_temperature_unit(mut self, input: ::std::option::Option<crate::types::TemperatureUnit>) -> Self {
         self.temperature_unit = input;
         self
     }
@@ -334,18 +323,12 @@ impl ProfileBuilder {
         &self.data_retention_opt_in
     }
     /// <p>The ARN of the address book.</p>
-    pub fn address_book_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_book_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the address book.</p>
-    pub fn set_address_book_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_book_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_book_arn = input;
         self
     }
@@ -354,25 +337,17 @@ impl ProfileBuilder {
         &self.address_book_arn
     }
     /// <p>Meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(
-        mut self,
-        input: crate::types::MeetingRoomConfiguration,
-    ) -> Self {
+    pub fn meeting_room_configuration(mut self, input: crate::types::MeetingRoomConfiguration) -> Self {
         self.meeting_room_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Meeting room settings of a room profile.</p>
-    pub fn set_meeting_room_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingRoomConfiguration>,
-    ) -> Self {
+    pub fn set_meeting_room_configuration(mut self, input: ::std::option::Option<crate::types::MeetingRoomConfiguration>) -> Self {
         self.meeting_room_configuration = input;
         self
     }
     /// <p>Meeting room settings of a room profile.</p>
-    pub fn get_meeting_room_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MeetingRoomConfiguration> {
+    pub fn get_meeting_room_configuration(&self) -> &::std::option::Option<crate::types::MeetingRoomConfiguration> {
         &self.meeting_room_configuration
     }
     /// Consumes the builder and constructs a [`Profile`](crate::types::Profile).

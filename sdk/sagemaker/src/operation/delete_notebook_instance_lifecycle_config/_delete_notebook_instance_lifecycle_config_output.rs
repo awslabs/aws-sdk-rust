@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteNotebookInstanceLifecycleConfig
 }
 impl DeleteNotebookInstanceLifecycleConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotebookInstanceLifecycleConfigOutput`](crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput).
-    pub fn builder() -> crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigOutputBuilder{
+    pub fn builder() -> crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigOutputBuilder {
         crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotebookInstanceLifecycleConfigOutput`](crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotebookInstanceLifecycleConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteNotebookInstanceLifecycleConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteNotebookInstanceLifecycleConfigOutput`](crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput).
-    pub fn build(self) -> crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput{
+    pub fn build(self) -> crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput {
         crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput {
             _request_id: self._request_id,
         }

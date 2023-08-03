@@ -55,17 +55,14 @@ impl GetCoipPoolUsageInput {
 }
 impl GetCoipPoolUsageInput {
     /// Creates a new builder-style object to manufacture [`GetCoipPoolUsageInput`](crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput).
-    pub fn builder() -> crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageInputBuilder {
         crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCoipPoolUsageInput`](crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoipPoolUsageInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -112,10 +109,7 @@ impl GetCoipPoolUsageInputBuilder {
     /// <li> <p> <code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p> </li>
     /// <li> <p> <code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -174,18 +168,13 @@ impl GetCoipPoolUsageInputBuilder {
     /// Consumes the builder and constructs a [`GetCoipPoolUsageInput`](crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput {
-                pool_id: self.pool_id,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput {
+            pool_id: self.pool_id,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            dry_run: self.dry_run,
+        })
     }
 }

@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListServiceTemplatesOutput {
 }
 impl ListServiceTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceTemplatesOutput`](crate::operation::list_service_templates::ListServiceTemplatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder {
+    pub fn builder() -> crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder {
         crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceTemplatesOutput`](crate::operation::list_service_templates::ListServiceTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>>,
+    pub(crate) templates: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>>,
     _request_id: Option<String>,
 }
 impl ListServiceTemplatesOutputBuilder {
@@ -72,17 +68,12 @@ impl ListServiceTemplatesOutputBuilder {
         self
     }
     /// <p>An array of service templates with detail data.</p>
-    pub fn set_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>>,
-    ) -> Self {
+    pub fn set_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>>) -> Self {
         self.templates = input;
         self
     }
     /// <p>An array of service templates with detail data.</p>
-    pub fn get_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>> {
+    pub fn get_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>> {
         &self.templates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

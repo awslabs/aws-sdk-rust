@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`snapshot_summaries(Option<Vec<SnapshotDetails>>)`](crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput::snapshot_summaries): <p>A collection of objects containing information about the application snapshots.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput::next_token): <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListApplicationSnapshotsError>`](crate::operation::list_application_snapshots::ListApplicationSnapshotsError)
-    pub fn list_application_snapshots(
-        &self,
-    ) -> crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsFluentBuilder
-    {
+    pub fn list_application_snapshots(&self) -> crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsFluentBuilder {
         crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

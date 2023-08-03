@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteActionTargetOutput`](crate::operation::delete_action_target::DeleteActionTargetOutput) with field(s):
     ///   - [`action_target_arn(Option<String>)`](crate::operation::delete_action_target::DeleteActionTargetOutput::action_target_arn): <p>The ARN of the custom action target that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteActionTargetError>`](crate::operation::delete_action_target::DeleteActionTargetError)
-    pub fn delete_action_target(
-        &self,
-    ) -> crate::operation::delete_action_target::builders::DeleteActionTargetFluentBuilder {
-        crate::operation::delete_action_target::builders::DeleteActionTargetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_action_target(&self) -> crate::operation::delete_action_target::builders::DeleteActionTargetFluentBuilder {
+        crate::operation::delete_action_target::builders::DeleteActionTargetFluentBuilder::new(self.handle.clone())
     }
 }

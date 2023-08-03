@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateCallAnalyticsCategoryOutput`](crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput) with field(s):
     ///   - [`category_properties(Option<CategoryProperties>)`](crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput::category_properties): <p>Provides you with the properties of the Call Analytics category you specified in your <code>UpdateCallAnalyticsCategory</code> request.</p>
     /// - On failure, responds with [`SdkError<UpdateCallAnalyticsCategoryError>`](crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError)
-    pub fn update_call_analytics_category(&self) -> crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryFluentBuilder{
+    pub fn update_call_analytics_category(
+        &self,
+    ) -> crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryFluentBuilder {
         crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetIdentityVerificationAttributesOutput`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput) with field(s):
     ///   - [`verification_attributes(Option<HashMap<String, IdentityVerificationAttributes>>)`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput::verification_attributes): <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     /// - On failure, responds with [`SdkError<GetIdentityVerificationAttributesError>`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesError)
-    pub fn get_identity_verification_attributes(&self) -> crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesFluentBuilder{
+    pub fn get_identity_verification_attributes(
+        &self,
+    ) -> crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesFluentBuilder {
         crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesFluentBuilder::new(self.handle.clone())
     }
 }

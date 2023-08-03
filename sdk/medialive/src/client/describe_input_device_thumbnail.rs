@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`e_tag(Option<String>)`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput::e_tag): The unique, cacheable version of this thumbnail.
     ///   - [`last_modified(Option<DateTime>)`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput::last_modified): The date and time the thumbnail was last updated at the device.
     /// - On failure, responds with [`SdkError<DescribeInputDeviceThumbnailError>`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError)
-    pub fn describe_input_device_thumbnail(&self) -> crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailFluentBuilder{
+    pub fn describe_input_device_thumbnail(
+        &self,
+    ) -> crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailFluentBuilder {
         crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailFluentBuilder::new(self.handle.clone())
     }
 }

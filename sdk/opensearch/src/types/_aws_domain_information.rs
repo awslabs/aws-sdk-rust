@@ -37,9 +37,7 @@ impl AwsDomainInformation {
 
 /// A builder for [`AwsDomainInformation`](crate::types::AwsDomainInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDomainInformationBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

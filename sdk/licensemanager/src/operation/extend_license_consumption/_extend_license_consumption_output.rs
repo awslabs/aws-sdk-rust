@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ExtendLicenseConsumptionOutput {
 }
 impl ExtendLicenseConsumptionOutput {
     /// Creates a new builder-style object to manufacture [`ExtendLicenseConsumptionOutput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput).
-    pub fn builder(
-    ) -> crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionOutputBuilder {
         crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExtendLicenseConsumptionOutput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExtendLicenseConsumptionOutputBuilder {
     pub(crate) license_consumption_token: ::std::option::Option<::std::string::String>,
     pub(crate) expiration: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct ExtendLicenseConsumptionOutputBuilder {
 }
 impl ExtendLicenseConsumptionOutputBuilder {
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_consumption_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_consumption_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>License consumption token.</p>
-    pub fn set_license_consumption_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_consumption_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_consumption_token = input;
         self
     }
@@ -90,9 +80,7 @@ impl ExtendLicenseConsumptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExtendLicenseConsumptionOutput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput {
+    pub fn build(self) -> crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput {
         crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput {
             license_consumption_token: self.license_consumption_token,
             expiration: self.expiration,

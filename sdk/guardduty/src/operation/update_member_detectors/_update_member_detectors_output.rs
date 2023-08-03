@@ -5,15 +5,12 @@
 pub struct UpdateMemberDetectorsOutput {
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     #[doc(hidden)]
-    pub unprocessed_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl UpdateMemberDetectorsOutput {
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn unprocessed_accounts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for UpdateMemberDetectorsOutput {
 }
 impl UpdateMemberDetectorsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMemberDetectorsOutput`](crate::operation::update_member_detectors::UpdateMemberDetectorsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_member_detectors::builders::UpdateMemberDetectorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_member_detectors::builders::UpdateMemberDetectorsOutputBuilder {
         crate::operation::update_member_detectors::builders::UpdateMemberDetectorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMemberDetectorsOutput`](crate::operation::update_member_detectors::UpdateMemberDetectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMemberDetectorsOutputBuilder {
-    pub(crate) unprocessed_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl UpdateMemberDetectorsOutputBuilder {
@@ -54,17 +46,12 @@ impl UpdateMemberDetectorsOutputBuilder {
         self
     }
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn set_unprocessed_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
-    ) -> Self {
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
         self.unprocessed_accounts = input;
         self
     }
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn get_unprocessed_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

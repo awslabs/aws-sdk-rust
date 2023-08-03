@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GetReadinessCheckResourceStatusOutput
 }
 impl GetReadinessCheckResourceStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetReadinessCheckResourceStatusOutput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput).
-    pub fn builder() -> crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusOutputBuilder {
         crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReadinessCheckResourceStatusOutput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReadinessCheckResourceStatusOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,
@@ -92,10 +90,7 @@ impl GetReadinessCheckResourceStatusOutputBuilder {
         self
     }
     /// <p>Details of the rule's results.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>) -> Self {
         self.rules = input;
         self
     }
@@ -113,17 +108,11 @@ impl GetReadinessCheckResourceStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetReadinessCheckResourceStatusOutput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput
-    {
+    pub fn build(self) -> crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput {
         crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput {
-            next_token: self.next_token
-            ,
-            readiness: self.readiness
-            ,
-            rules: self.rules
-            ,
+            next_token: self.next_token,
+            readiness: self.readiness,
+            rules: self.rules,
             _request_id: self._request_id,
         }
     }

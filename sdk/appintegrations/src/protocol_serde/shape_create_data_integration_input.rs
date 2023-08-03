@@ -12,10 +12,7 @@ pub fn ser_create_data_integration_input(
     if let Some(var_3) = &input.file_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("FileConfiguration").start_object();
-        crate::protocol_serde::shape_file_configuration::ser_file_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_file_configuration::ser_file_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.kms_key {
@@ -50,10 +47,7 @@ pub fn ser_create_data_integration_input(
     if let Some(var_16) = &input.schedule_config {
         #[allow(unused_mut)]
         let mut object_17 = object.key("ScheduleConfig").start_object();
-        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.source_uri {

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::update_kx_database::UpdateKxDatabaseOutput::description): <p>A description of the database.</p>
     ///   - [`last_modified_timestamp(Option<DateTime>)`](crate::operation::update_kx_database::UpdateKxDatabaseOutput::last_modified_timestamp): <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     /// - On failure, responds with [`SdkError<UpdateKxDatabaseError>`](crate::operation::update_kx_database::UpdateKxDatabaseError)
-    pub fn update_kx_database(
-        &self,
-    ) -> crate::operation::update_kx_database::builders::UpdateKxDatabaseFluentBuilder {
-        crate::operation::update_kx_database::builders::UpdateKxDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_kx_database(&self) -> crate::operation::update_kx_database::builders::UpdateKxDatabaseFluentBuilder {
+        crate::operation::update_kx_database::builders::UpdateKxDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

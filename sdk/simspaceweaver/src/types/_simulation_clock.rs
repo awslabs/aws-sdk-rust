@@ -30,9 +30,7 @@ impl SimulationClock {
 
 /// A builder for [`SimulationClock`](crate::types::SimulationClock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimulationClockBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClockStatus>,
     pub(crate) target_status: ::std::option::Option<crate::types::ClockTargetStatus>,
@@ -58,10 +56,7 @@ impl SimulationClockBuilder {
         self
     }
     /// <p>The desired status of the simulation clock.</p>
-    pub fn set_target_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClockTargetStatus>,
-    ) -> Self {
+    pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::ClockTargetStatus>) -> Self {
         self.target_status = input;
         self
     }

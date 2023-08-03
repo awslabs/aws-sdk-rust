@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`index_arn(Option<String>)`](crate::operation::create_place_index::CreatePlaceIndexOutput::index_arn): <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>  </ul>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::create_place_index::CreatePlaceIndexOutput::create_time): <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// - On failure, responds with [`SdkError<CreatePlaceIndexError>`](crate::operation::create_place_index::CreatePlaceIndexError)
-    pub fn create_place_index(
-        &self,
-    ) -> crate::operation::create_place_index::builders::CreatePlaceIndexFluentBuilder {
-        crate::operation::create_place_index::builders::CreatePlaceIndexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_place_index(&self) -> crate::operation::create_place_index::builders::CreatePlaceIndexFluentBuilder {
+        crate::operation::create_place_index::builders::CreatePlaceIndexFluentBuilder::new(self.handle.clone())
     }
 }

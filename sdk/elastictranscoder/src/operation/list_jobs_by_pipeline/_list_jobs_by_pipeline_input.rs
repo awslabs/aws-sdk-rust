@@ -30,17 +30,14 @@ impl ListJobsByPipelineInput {
 }
 impl ListJobsByPipelineInput {
     /// Creates a new builder-style object to manufacture [`ListJobsByPipelineInput`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput).
-    pub fn builder(
-    ) -> crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineInputBuilder {
+    pub fn builder() -> crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineInputBuilder {
         crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineInputBuilder::default()
     }
 }
 
 /// A builder for [`ListJobsByPipelineInput`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsByPipelineInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) ascending: ::std::option::Option<::std::string::String>,
@@ -92,16 +89,12 @@ impl ListJobsByPipelineInputBuilder {
     /// Consumes the builder and constructs a [`ListJobsByPipelineInput`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput {
-                pipeline_id: self.pipeline_id,
-                ascending: self.ascending,
-                page_token: self.page_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput {
+            pipeline_id: self.pipeline_id,
+            ascending: self.ascending,
+            page_token: self.page_token,
+        })
     }
 }

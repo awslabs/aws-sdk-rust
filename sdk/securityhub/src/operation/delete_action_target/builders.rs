@@ -10,10 +10,7 @@ impl DeleteActionTargetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_action_target::DeleteActionTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_action_target::DeleteActionTargetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_action_target::DeleteActionTargetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_action_target();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteActionTargetFluentBuilder {
         }
     }
     /// Access the DeleteActionTarget as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_action_target::builders::DeleteActionTargetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_action_target::builders::DeleteActionTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteActionTargetFluentBuilder {
             crate::operation::delete_action_target::DeleteActionTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_action_target::DeleteActionTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_action_target::DeleteActionTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteActionTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteActionTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_action_target::DeleteActionTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_action_target::DeleteActionTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_action_target::DeleteActionTargetError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteActionTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_action_target::DeleteActionTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_action_target::DeleteActionTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_action_target::DeleteActionTargetError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteActionTargetFluentBuilder {
             crate::operation::delete_action_target::DeleteActionTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_action_target::DeleteActionTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_action_target::DeleteActionTargetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
-    pub fn action_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_target_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
-    pub fn set_action_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_target_arn(input);
         self
     }

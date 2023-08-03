@@ -15,35 +15,25 @@ impl DescribeAppImageConfigInput {
 }
 impl DescribeAppImageConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppImageConfigInput`](crate::operation::describe_app_image_config::DescribeAppImageConfigInput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_image_config::builders::DescribeAppImageConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_app_image_config::builders::DescribeAppImageConfigInputBuilder {
         crate::operation::describe_app_image_config::builders::DescribeAppImageConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppImageConfigInput`](crate::operation::describe_app_image_config::DescribeAppImageConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppImageConfigInputBuilder {
     pub(crate) app_image_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAppImageConfigInputBuilder {
     /// <p>The name of the AppImageConfig to describe.</p>
-    pub fn app_image_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_image_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_image_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the AppImageConfig to describe.</p>
-    pub fn set_app_image_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_image_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_image_config_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl DescribeAppImageConfigInputBuilder {
         crate::operation::describe_app_image_config::DescribeAppImageConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_app_image_config::DescribeAppImageConfigInput {
-                app_image_config_name: self.app_image_config_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_app_image_config::DescribeAppImageConfigInput {
+            app_image_config_name: self.app_image_config_name,
+        })
     }
 }

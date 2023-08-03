@@ -27,7 +27,7 @@ impl CreateHsmClientCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHsmClientCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateInputBuilder,
+    inner: crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateInputBuilder,
 }
 impl CreateHsmClientCertificateFluentBuilder {
     /// Creates a new `CreateHsmClientCertificate`.
@@ -38,7 +38,7 @@ impl CreateHsmClientCertificateFluentBuilder {
         }
     }
     /// Access the CreateHsmClientCertificate as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateHsmClientCertificateFluentBuilder {
             crate::operation::create_hsm_client_certificate::CreateHsmClientCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateHsmClientCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateHsmClientCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateHsmClientCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -115,32 +106,22 @@ impl CreateHsmClientCertificateFluentBuilder {
             crate::operation::create_hsm_client_certificate::CreateHsmClientCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
-    pub fn hsm_client_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_client_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_client_certificate_identifier(input.into());
         self
     }
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
-    pub fn set_hsm_client_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_client_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_client_certificate_identifier(input);
         self
     }
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
-    pub fn get_hsm_client_certificate_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_client_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hsm_client_certificate_identifier()
     }
     /// Appends an item to `Tags`.
@@ -153,10 +134,7 @@ impl CreateHsmClientCertificateFluentBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

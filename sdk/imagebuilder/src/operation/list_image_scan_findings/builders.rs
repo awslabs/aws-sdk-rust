@@ -37,10 +37,7 @@ impl ListImageScanFindingsFluentBuilder {
         }
     }
     /// Access the ListImageScanFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_image_scan_findings::builders::ListImageScanFindingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_image_scan_findings::builders::ListImageScanFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListImageScanFindingsFluentBuilder {
             crate::operation::list_image_scan_findings::ListImageScanFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_findings::ListImageScanFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListImageScanFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListImageScanFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_image_scan_findings::ListImageScanFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_findings::ListImageScanFindingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListImageScanFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_image_scan_findings::ListImageScanFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_findings::ListImageScanFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListImageScanFindingsFluentBuilder {
             crate::operation::list_image_scan_findings::ListImageScanFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_findings::ListImageScanFindingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator {
-        crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator {
+        crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `filters`.
     ///
@@ -158,10 +139,7 @@ impl ListImageScanFindingsFluentBuilder {
     /// <li> <p> <code>severity</code> </p> </li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -173,9 +151,7 @@ impl ListImageScanFindingsFluentBuilder {
     /// <li> <p> <code>severity</code> </p> </li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum items to return in a request.</p>

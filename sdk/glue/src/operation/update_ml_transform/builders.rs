@@ -10,10 +10,7 @@ impl UpdateMlTransformInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_ml_transform::UpdateMlTransformOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ml_transform::UpdateMLTransformError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ml_transform::UpdateMLTransformError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_ml_transform();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateMLTransformFluentBuilder {
         }
     }
     /// Access the UpdateMLTransform as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_ml_transform::builders::UpdateMlTransformInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_ml_transform::builders::UpdateMlTransformInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateMLTransformFluentBuilder {
             crate::operation::update_ml_transform::UpdateMLTransform,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ml_transform::UpdateMLTransformError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ml_transform::UpdateMLTransformError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateMLTransformFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateMLTransformFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ml_transform::UpdateMlTransformOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ml_transform::UpdateMLTransformError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ml_transform::UpdateMLTransformError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateMLTransformFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ml_transform::UpdateMlTransformOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ml_transform::UpdateMLTransformError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ml_transform::UpdateMLTransformError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl UpdateMLTransformFluentBuilder {
             crate::operation::update_ml_transform::UpdateMLTransform,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ml_transform::UpdateMLTransformError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ml_transform::UpdateMLTransformError>,
     > {
         self.customize_middleware().await
     }
@@ -171,10 +155,7 @@ impl UpdateMLTransformFluentBuilder {
         self
     }
     /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformParameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::TransformParameters>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -243,10 +224,7 @@ impl UpdateMLTransformFluentBuilder {
     /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
     /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
-    pub fn set_worker_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerType>,
-    ) -> Self {
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.inner = self.inner.set_worker_type(input);
         self
     }

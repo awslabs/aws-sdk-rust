@@ -10,10 +10,7 @@ impl CreateResourceSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_resource_set::CreateResourceSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_set::CreateResourceSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_set::CreateResourceSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_resource_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateResourceSetFluentBuilder {
         }
     }
     /// Access the CreateResourceSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resource_set::builders::CreateResourceSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_resource_set::builders::CreateResourceSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateResourceSetFluentBuilder {
             crate::operation::create_resource_set::CreateResourceSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_set::CreateResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_set::CreateResourceSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateResourceSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateResourceSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_set::CreateResourceSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_set::CreateResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_set::CreateResourceSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateResourceSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_set::CreateResourceSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_set::CreateResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_set::CreateResourceSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateResourceSetFluentBuilder {
             crate::operation::create_resource_set::CreateResourceSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_set::CreateResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_set::CreateResourceSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the resource set to create.</p>
-    pub fn resource_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_set_name(input.into());
         self
     }
     /// <p>The name of the resource set to create.</p>
-    pub fn set_resource_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_set_name(input);
         self
     }
@@ -144,19 +122,13 @@ impl CreateResourceSetFluentBuilder {
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn resource_set_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_set_type(input.into());
         self
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn set_resource_set_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_set_type(input);
         self
     }
@@ -175,10 +147,7 @@ impl CreateResourceSetFluentBuilder {
         self
     }
     /// <p>A list of resource objects in the resource set.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }
@@ -191,30 +160,17 @@ impl CreateResourceSetFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag to associate with the parameters for a resource set.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A tag to associate with the parameters for a resource set.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A tag to associate with the parameters for a resource set.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

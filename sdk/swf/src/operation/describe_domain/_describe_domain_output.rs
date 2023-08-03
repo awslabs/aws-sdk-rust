@@ -36,9 +36,7 @@ impl DescribeDomainOutput {
 
 /// A builder for [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainOutputBuilder {
     pub(crate) domain_info: ::std::option::Option<crate::types::DomainInfo>,
     pub(crate) configuration: ::std::option::Option<crate::types::DomainConfiguration>,
@@ -51,10 +49,7 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
-    pub fn set_domain_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainInfo>,
-    ) -> Self {
+    pub fn set_domain_info(mut self, input: ::std::option::Option<crate::types::DomainInfo>) -> Self {
         self.domain_info = input;
         self
     }
@@ -68,10 +63,7 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::DomainConfiguration>) -> Self {
         self.configuration = input;
         self
     }

@@ -46,18 +46,14 @@ impl ::aws_http::request_id::RequestId for DescribeTypeRegistrationOutput {
 }
 impl DescribeTypeRegistrationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTypeRegistrationOutput`](crate::operation::describe_type_registration::DescribeTypeRegistrationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_type_registration::builders::DescribeTypeRegistrationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_type_registration::builders::DescribeTypeRegistrationOutputBuilder {
         crate::operation::describe_type_registration::builders::DescribeTypeRegistrationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTypeRegistrationOutput`](crate::operation::describe_type_registration::DescribeTypeRegistrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTypeRegistrationOutputBuilder {
     pub(crate) progress_status: ::std::option::Option<crate::types::RegistrationStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -72,10 +68,7 @@ impl DescribeTypeRegistrationOutputBuilder {
         self
     }
     /// <p>The current status of the extension registration request.</p>
-    pub fn set_progress_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_progress_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.progress_status = input;
         self
     }
@@ -116,19 +109,13 @@ impl DescribeTypeRegistrationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-    pub fn type_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-    pub fn set_type_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_version_arn = input;
         self
     }
@@ -147,9 +134,7 @@ impl DescribeTypeRegistrationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTypeRegistrationOutput`](crate::operation::describe_type_registration::DescribeTypeRegistrationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_type_registration::DescribeTypeRegistrationOutput {
+    pub fn build(self) -> crate::operation::describe_type_registration::DescribeTypeRegistrationOutput {
         crate::operation::describe_type_registration::DescribeTypeRegistrationOutput {
             progress_status: self.progress_status,
             description: self.description,

@@ -72,9 +72,7 @@ impl JobListDescriptor {
 
 /// A builder for [`JobListDescriptor`](crate::types::JobListDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobListDescriptorBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -120,10 +118,7 @@ impl JobListDescriptorBuilder {
         self
     }
     /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationName>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::OperationName>) -> Self {
         self.operation = input;
         self
     }
@@ -165,10 +160,7 @@ impl JobListDescriptorBuilder {
         self
     }
     /// <p>A timestamp indicating when the specified job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -182,10 +174,7 @@ impl JobListDescriptorBuilder {
         self
     }
     /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    pub fn set_termination_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_termination_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.termination_date = input;
         self
     }
@@ -199,10 +188,7 @@ impl JobListDescriptorBuilder {
         self
     }
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
-    pub fn set_progress_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::JobProgressSummary>,
-    ) -> Self {
+    pub fn set_progress_summary(mut self, input: ::std::option::Option<crate::types::JobProgressSummary>) -> Self {
         self.progress_summary = input;
         self
     }

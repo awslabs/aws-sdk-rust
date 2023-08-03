@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`RestoreTableFromBackupOutput`](crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput) with field(s):
     ///   - [`table_description(Option<TableDescription>)`](crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput::table_description): <p>The description of the table created from an existing backup.</p>
     /// - On failure, responds with [`SdkError<RestoreTableFromBackupError>`](crate::operation::restore_table_from_backup::RestoreTableFromBackupError)
-    pub fn restore_table_from_backup(
-        &self,
-    ) -> crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupFluentBuilder
-    {
+    pub fn restore_table_from_backup(&self) -> crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupFluentBuilder {
         crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupFluentBuilder::new(self.handle.clone())
     }
 }

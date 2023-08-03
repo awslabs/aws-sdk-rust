@@ -50,9 +50,7 @@ impl ScheduleKeyDeletionFluentBuilder {
         }
     }
     /// Access the ScheduleKeyDeletion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +62,7 @@ impl ScheduleKeyDeletionFluentBuilder {
             crate::operation::schedule_key_deletion::ScheduleKeyDeletion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::schedule_key_deletion::ScheduleKeyDeletionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +72,7 @@ impl ScheduleKeyDeletionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +81,7 @@ impl ScheduleKeyDeletionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::schedule_key_deletion::ScheduleKeyDeletionError>,
     > {
         let op = self
             .inner
@@ -113,9 +104,7 @@ impl ScheduleKeyDeletionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::schedule_key_deletion::ScheduleKeyDeletionError>,
     > {
         self.send_middleware().await
     }
@@ -129,9 +118,7 @@ impl ScheduleKeyDeletionFluentBuilder {
             crate::operation::schedule_key_deletion::ScheduleKeyDeletion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::schedule_key_deletion::ScheduleKeyDeletionError>,
     > {
         self.customize_middleware().await
     }

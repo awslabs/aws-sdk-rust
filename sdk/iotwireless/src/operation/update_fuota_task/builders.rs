@@ -10,10 +10,7 @@ impl UpdateFuotaTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_fuota_task::UpdateFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fuota_task::UpdateFuotaTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fuota_task::UpdateFuotaTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_fuota_task();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateFuotaTaskFluentBuilder {
         }
     }
     /// Access the UpdateFuotaTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_fuota_task::builders::UpdateFuotaTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_fuota_task::builders::UpdateFuotaTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateFuotaTaskFluentBuilder {
             crate::operation::update_fuota_task::UpdateFuotaTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fuota_task::UpdateFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fuota_task::UpdateFuotaTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateFuotaTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateFuotaTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fuota_task::UpdateFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fuota_task::UpdateFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fuota_task::UpdateFuotaTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateFuotaTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fuota_task::UpdateFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fuota_task::UpdateFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fuota_task::UpdateFuotaTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateFuotaTaskFluentBuilder {
             crate::operation::update_fuota_task::UpdateFuotaTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fuota_task::UpdateFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fuota_task::UpdateFuotaTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +154,7 @@ impl UpdateFuotaTaskFluentBuilder {
         self
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanFuotaTask>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanFuotaTask>) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }
@@ -182,18 +163,12 @@ impl UpdateFuotaTaskFluentBuilder {
         self.inner.get_lo_ra_wan()
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_image(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firmware_update_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firmware_update_image(input.into());
         self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn set_firmware_update_image(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firmware_update_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firmware_update_image(input);
         self
     }
@@ -202,18 +177,12 @@ impl UpdateFuotaTaskFluentBuilder {
         self.inner.get_firmware_update_image()
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firmware_update_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firmware_update_role(input.into());
         self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn set_firmware_update_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firmware_update_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firmware_update_role(input);
         self
     }

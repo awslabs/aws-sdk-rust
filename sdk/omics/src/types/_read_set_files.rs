@@ -37,9 +37,7 @@ impl ReadSetFiles {
 
 /// A builder for [`ReadSetFiles`](crate::types::ReadSetFiles).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadSetFilesBuilder {
     pub(crate) source1: ::std::option::Option<crate::types::FileInformation>,
     pub(crate) source2: ::std::option::Option<crate::types::FileInformation>,
@@ -52,10 +50,7 @@ impl ReadSetFilesBuilder {
         self
     }
     /// <p>The location of the first file in Amazon S3.</p>
-    pub fn set_source1(
-        mut self,
-        input: ::std::option::Option<crate::types::FileInformation>,
-    ) -> Self {
+    pub fn set_source1(mut self, input: ::std::option::Option<crate::types::FileInformation>) -> Self {
         self.source1 = input;
         self
     }
@@ -69,10 +64,7 @@ impl ReadSetFilesBuilder {
         self
     }
     /// <p>The location of the second file in Amazon S3.</p>
-    pub fn set_source2(
-        mut self,
-        input: ::std::option::Option<crate::types::FileInformation>,
-    ) -> Self {
+    pub fn set_source2(mut self, input: ::std::option::Option<crate::types::FileInformation>) -> Self {
         self.source2 = input;
         self
     }
@@ -86,10 +78,7 @@ impl ReadSetFilesBuilder {
         self
     }
     /// <p>The files' index.</p>
-    pub fn set_index(
-        mut self,
-        input: ::std::option::Option<crate::types::FileInformation>,
-    ) -> Self {
+    pub fn set_index(mut self, input: ::std::option::Option<crate::types::FileInformation>) -> Self {
         self.index = input;
         self
     }

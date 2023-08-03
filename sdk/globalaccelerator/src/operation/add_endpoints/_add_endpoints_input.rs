@@ -5,17 +5,14 @@
 pub struct AddEndpointsInput {
     /// <p>The list of endpoint objects.</p>
     #[doc(hidden)]
-    pub endpoint_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
+    pub endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl AddEndpointsInput {
     /// <p>The list of endpoint objects.</p>
-    pub fn endpoint_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EndpointConfiguration]> {
+    pub fn endpoint_configurations(&self) -> ::std::option::Option<&[crate::types::EndpointConfiguration]> {
         self.endpoint_configurations.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
@@ -32,12 +29,9 @@ impl AddEndpointsInput {
 
 /// A builder for [`AddEndpointsInput`](crate::operation::add_endpoints::AddEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddEndpointsInputBuilder {
-    pub(crate) endpoint_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
+    pub(crate) endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl AddEndpointsInputBuilder {
@@ -53,32 +47,21 @@ impl AddEndpointsInputBuilder {
         self
     }
     /// <p>The list of endpoint objects.</p>
-    pub fn set_endpoint_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
-    ) -> Self {
+    pub fn set_endpoint_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>) -> Self {
         self.endpoint_configurations = input;
         self
     }
     /// <p>The list of endpoint objects.</p>
-    pub fn get_endpoint_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>> {
+    pub fn get_endpoint_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>> {
         &self.endpoint_configurations
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_group_arn = input;
         self
     }
@@ -87,12 +70,7 @@ impl AddEndpointsInputBuilder {
         &self.endpoint_group_arn
     }
     /// Consumes the builder and constructs a [`AddEndpointsInput`](crate::operation::add_endpoints::AddEndpointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_endpoints::AddEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_endpoints::AddEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_endpoints::AddEndpointsInput {
             endpoint_configurations: self.endpoint_configurations,
             endpoint_group_arn: self.endpoint_group_arn,

@@ -30,22 +30,18 @@ impl UpdateDeploymentInput {
 }
 impl UpdateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeploymentInput`](crate::operation::update_deployment::UpdateDeploymentInput).
-    pub fn builder() -> crate::operation::update_deployment::builders::UpdateDeploymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_deployment::builders::UpdateDeploymentInputBuilder {
         crate::operation::update_deployment::builders::UpdateDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeploymentInput`](crate::operation::update_deployment::UpdateDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeploymentInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) patch_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateDeploymentInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -63,18 +59,12 @@ impl UpdateDeploymentInputBuilder {
         &self.rest_api_id
     }
     /// <p>The replacement identifier for the Deployment resource to change information about.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The replacement identifier for the Deployment resource to change information about.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -94,26 +84,18 @@ impl UpdateDeploymentInputBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.patch_operations = input;
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateDeploymentInput`](crate::operation::update_deployment::UpdateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_deployment::UpdateDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_deployment::UpdateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_deployment::UpdateDeploymentInput {
             rest_api_id: self.rest_api_id,
             deployment_id: self.deployment_id,

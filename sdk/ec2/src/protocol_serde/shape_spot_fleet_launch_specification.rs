@@ -27,9 +27,7 @@ pub fn ser_spot_fleet_launch_specification(
         for item_10 in var_9 {
             #[allow(unused_mut)]
             let mut entry_12 = list_11.entry();
-            crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(
-                entry_12, item_10,
-            )?;
+            crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_12, item_10)?;
         }
         list_11.finish();
     }
@@ -66,9 +64,7 @@ pub fn ser_spot_fleet_launch_specification(
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("Monitoring");
     if let Some(var_26) = &input.monitoring {
-        crate::protocol_serde::shape_spot_fleet_monitoring::ser_spot_fleet_monitoring(
-            scope_25, var_26,
-        )?;
+        crate::protocol_serde::shape_spot_fleet_monitoring::ser_spot_fleet_monitoring(scope_25, var_26)?;
     }
     #[allow(unused_mut)]
     let mut scope_27 = writer.prefix("NetworkInterfaceSet");
@@ -128,9 +124,7 @@ pub fn ser_spot_fleet_launch_specification(
     #[allow(unused_mut)]
     let mut scope_49 = writer.prefix("InstanceRequirements");
     if let Some(var_50) = &input.instance_requirements {
-        crate::protocol_serde::shape_instance_requirements::ser_instance_requirements(
-            scope_49, var_50,
-        )?;
+        crate::protocol_serde::shape_instance_requirements::ser_instance_requirements(scope_49, var_50)?;
     }
     Ok(())
 }

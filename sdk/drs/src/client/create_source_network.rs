@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSourceNetworkOutput`](crate::operation::create_source_network::CreateSourceNetworkOutput) with field(s):
     ///   - [`source_network_id(Option<String>)`](crate::operation::create_source_network::CreateSourceNetworkOutput::source_network_id): <p>ID of the created Source Network.</p>
     /// - On failure, responds with [`SdkError<CreateSourceNetworkError>`](crate::operation::create_source_network::CreateSourceNetworkError)
-    pub fn create_source_network(
-        &self,
-    ) -> crate::operation::create_source_network::builders::CreateSourceNetworkFluentBuilder {
-        crate::operation::create_source_network::builders::CreateSourceNetworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_source_network(&self) -> crate::operation::create_source_network::builders::CreateSourceNetworkFluentBuilder {
+        crate::operation::create_source_network::builders::CreateSourceNetworkFluentBuilder::new(self.handle.clone())
     }
 }

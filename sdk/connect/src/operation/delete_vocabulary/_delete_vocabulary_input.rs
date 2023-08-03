@@ -22,17 +22,14 @@ impl DeleteVocabularyInput {
 }
 impl DeleteVocabularyInput {
     /// Creates a new builder-style object to manufacture [`DeleteVocabularyInput`](crate::operation::delete_vocabulary::DeleteVocabularyInput).
-    pub fn builder() -> crate::operation::delete_vocabulary::builders::DeleteVocabularyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vocabulary::builders::DeleteVocabularyInputBuilder {
         crate::operation::delete_vocabulary::builders::DeleteVocabularyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVocabularyInput`](crate::operation::delete_vocabulary::DeleteVocabularyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVocabularyInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DeleteVocabularyInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn vocabulary_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn set_vocabulary_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_id = input;
         self
     }
@@ -75,10 +66,7 @@ impl DeleteVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVocabularyInput`](crate::operation::delete_vocabulary::DeleteVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vocabulary::DeleteVocabularyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_vocabulary::DeleteVocabularyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vocabulary::DeleteVocabularyInput {
             instance_id: self.instance_id,
             vocabulary_id: self.vocabulary_id,

@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`orderable_replication_instances(Option<Vec<OrderableReplicationInstance>>)`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput::orderable_replication_instances): <p>The order-able replication instances available.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeOrderableReplicationInstancesError>`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesError)
-    pub fn describe_orderable_replication_instances(&self) -> crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesFluentBuilder{
-        crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesFluentBuilder::new(self.handle.clone())
+    pub fn describe_orderable_replication_instances(
+        &self,
+    ) -> crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesFluentBuilder {
+        crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

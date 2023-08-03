@@ -15,18 +15,14 @@ impl DeleteWorkspaceBundleInput {
 }
 impl DeleteWorkspaceBundleInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceBundleInput`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleInputBuilder {
         crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkspaceBundleInput`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceBundleInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DeleteWorkspaceBundleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkspaceBundleInput`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput {
-                bundle_id: self.bundle_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput { bundle_id: self.bundle_id })
     }
 }

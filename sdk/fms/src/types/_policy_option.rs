@@ -13,15 +13,11 @@ pub struct PolicyOption {
 }
 impl PolicyOption {
     /// <p>Defines the deployment model to use for the firewall policy.</p>
-    pub fn network_firewall_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkFirewallPolicy> {
+    pub fn network_firewall_policy(&self) -> ::std::option::Option<&crate::types::NetworkFirewallPolicy> {
         self.network_firewall_policy.as_ref()
     }
     /// <p>Defines the policy options for a third-party firewall policy.</p>
-    pub fn third_party_firewall_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ThirdPartyFirewallPolicy> {
+    pub fn third_party_firewall_policy(&self) -> ::std::option::Option<&crate::types::ThirdPartyFirewallPolicy> {
         self.third_party_firewall_policy.as_ref()
     }
 }
@@ -34,13 +30,10 @@ impl PolicyOption {
 
 /// A builder for [`PolicyOption`](crate::types::PolicyOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyOptionBuilder {
     pub(crate) network_firewall_policy: ::std::option::Option<crate::types::NetworkFirewallPolicy>,
-    pub(crate) third_party_firewall_policy:
-        ::std::option::Option<crate::types::ThirdPartyFirewallPolicy>,
+    pub(crate) third_party_firewall_policy: ::std::option::Option<crate::types::ThirdPartyFirewallPolicy>,
 }
 impl PolicyOptionBuilder {
     /// <p>Defines the deployment model to use for the firewall policy.</p>
@@ -49,39 +42,26 @@ impl PolicyOptionBuilder {
         self
     }
     /// <p>Defines the deployment model to use for the firewall policy.</p>
-    pub fn set_network_firewall_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFirewallPolicy>,
-    ) -> Self {
+    pub fn set_network_firewall_policy(mut self, input: ::std::option::Option<crate::types::NetworkFirewallPolicy>) -> Self {
         self.network_firewall_policy = input;
         self
     }
     /// <p>Defines the deployment model to use for the firewall policy.</p>
-    pub fn get_network_firewall_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFirewallPolicy> {
+    pub fn get_network_firewall_policy(&self) -> &::std::option::Option<crate::types::NetworkFirewallPolicy> {
         &self.network_firewall_policy
     }
     /// <p>Defines the policy options for a third-party firewall policy.</p>
-    pub fn third_party_firewall_policy(
-        mut self,
-        input: crate::types::ThirdPartyFirewallPolicy,
-    ) -> Self {
+    pub fn third_party_firewall_policy(mut self, input: crate::types::ThirdPartyFirewallPolicy) -> Self {
         self.third_party_firewall_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the policy options for a third-party firewall policy.</p>
-    pub fn set_third_party_firewall_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ThirdPartyFirewallPolicy>,
-    ) -> Self {
+    pub fn set_third_party_firewall_policy(mut self, input: ::std::option::Option<crate::types::ThirdPartyFirewallPolicy>) -> Self {
         self.third_party_firewall_policy = input;
         self
     }
     /// <p>Defines the policy options for a third-party firewall policy.</p>
-    pub fn get_third_party_firewall_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThirdPartyFirewallPolicy> {
+    pub fn get_third_party_firewall_policy(&self) -> &::std::option::Option<crate::types::ThirdPartyFirewallPolicy> {
         &self.third_party_firewall_policy
     }
     /// Consumes the builder and constructs a [`PolicyOption`](crate::types::PolicyOption).

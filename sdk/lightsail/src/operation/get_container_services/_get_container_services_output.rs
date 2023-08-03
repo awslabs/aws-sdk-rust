@@ -21,20 +21,16 @@ impl ::aws_http::request_id::RequestId for GetContainerServicesOutput {
 }
 impl GetContainerServicesOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerServicesOutput`](crate::operation::get_container_services::GetContainerServicesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_container_services::builders::GetContainerServicesOutputBuilder {
+    pub fn builder() -> crate::operation::get_container_services::builders::GetContainerServicesOutputBuilder {
         crate::operation::get_container_services::builders::GetContainerServicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerServicesOutput`](crate::operation::get_container_services::GetContainerServicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerServicesOutputBuilder {
-    pub(crate) container_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerService>>,
+    pub(crate) container_services: ::std::option::Option<::std::vec::Vec<crate::types::ContainerService>>,
     _request_id: Option<String>,
 }
 impl GetContainerServicesOutputBuilder {
@@ -50,17 +46,12 @@ impl GetContainerServicesOutputBuilder {
         self
     }
     /// <p>An array of objects that describe one or more container services.</p>
-    pub fn set_container_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerService>>,
-    ) -> Self {
+    pub fn set_container_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerService>>) -> Self {
         self.container_services = input;
         self
     }
     /// <p>An array of objects that describe one or more container services.</p>
-    pub fn get_container_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerService>> {
+    pub fn get_container_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerService>> {
         &self.container_services
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

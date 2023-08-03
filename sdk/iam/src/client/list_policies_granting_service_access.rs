@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`is_truncated(bool)`](crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     /// - On failure, responds with [`SdkError<ListPoliciesGrantingServiceAccessError>`](crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError)
-    pub fn list_policies_granting_service_access(&self) -> crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessFluentBuilder{
+    pub fn list_policies_granting_service_access(
+        &self,
+    ) -> crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessFluentBuilder {
         crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessFluentBuilder::new(self.handle.clone())
     }
 }

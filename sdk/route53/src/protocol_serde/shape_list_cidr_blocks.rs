@@ -4,24 +4,15 @@ pub fn de_list_cidr_blocks_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_cidr_blocks::ListCidrBlocksOutput,
-    crate::operation::list_cidr_blocks::ListCidrBlocksError,
-> {
+) -> std::result::Result<crate::operation::list_cidr_blocks::ListCidrBlocksOutput, crate::operation::list_cidr_blocks::ListCidrBlocksError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_cidr_blocks::ListCidrBlocksError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_cidr_blocks::ListCidrBlocksError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::list_cidr_blocks::ListCidrBlocksError::unhandled(generic))
-        }
+        None => return Err(crate::operation::list_cidr_blocks::ListCidrBlocksError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
@@ -31,7 +22,22 @@ pub fn de_list_cidr_blocks_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
+                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_cidr_blocks::ListCidrBlocksError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NoSuchCidrCollectionException" => crate::operation::list_cidr_blocks::ListCidrBlocksError::NoSuchCidrCollectionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchCidrCollectionExceptionBuilder::default();
+                output = crate::protocol_serde::shape_no_such_cidr_collection_exception::de_no_such_cidr_collection_exception_xml_err(
                     _response_body,
                     output,
                 )
@@ -44,42 +50,22 @@ pub fn de_list_cidr_blocks_http_error(
             }
             tmp
         }),
-        "NoSuchCidrCollectionException" => {
-            crate::operation::list_cidr_blocks::ListCidrBlocksError::NoSuchCidrCollectionException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchCidrCollectionExceptionBuilder::default();
-                        output = crate::protocol_serde::shape_no_such_cidr_collection_exception::de_no_such_cidr_collection_exception_xml_err(_response_body, output).map_err(crate::operation::list_cidr_blocks::ListCidrBlocksError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "NoSuchCidrLocationException" => {
-            crate::operation::list_cidr_blocks::ListCidrBlocksError::NoSuchCidrLocationException({
+        "NoSuchCidrLocationException" => crate::operation::list_cidr_blocks::ListCidrBlocksError::NoSuchCidrLocationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NoSuchCidrLocationExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_no_such_cidr_location_exception::de_no_such_cidr_location_exception_xml_err(_response_body, output).map_err(crate::operation::list_cidr_blocks::ListCidrBlocksError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::NoSuchCidrLocationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_no_such_cidr_location_exception::de_no_such_cidr_location_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::list_cidr_blocks::ListCidrBlocksError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::list_cidr_blocks::ListCidrBlocksError::generic(generic),
     })
 }
@@ -89,22 +75,13 @@ pub fn de_list_cidr_blocks_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_cidr_blocks::ListCidrBlocksOutput,
-    crate::operation::list_cidr_blocks::ListCidrBlocksError,
-> {
+) -> std::result::Result<crate::operation::list_cidr_blocks::ListCidrBlocksOutput, crate::operation::list_cidr_blocks::ListCidrBlocksError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::list_cidr_blocks::builders::ListCidrBlocksOutputBuilder::default();
-        output = crate::protocol_serde::shape_list_cidr_blocks::de_list_cidr_blocks(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::list_cidr_blocks::ListCidrBlocksError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::list_cidr_blocks::builders::ListCidrBlocksOutputBuilder::default();
+        output = crate::protocol_serde::shape_list_cidr_blocks::de_list_cidr_blocks(_response_body, output)
+            .map_err(crate::operation::list_cidr_blocks::ListCidrBlocksError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -113,10 +90,7 @@ pub fn de_list_cidr_blocks_http_response_with_props(
 pub fn de_list_cidr_blocks(
     inp: &[u8],
     mut builder: crate::operation::list_cidr_blocks::builders::ListCidrBlocksOutputBuilder,
-) -> Result<
-    crate::operation::list_cidr_blocks::builders::ListCidrBlocksOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_cidr_blocks::builders::ListCidrBlocksOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -124,11 +98,10 @@ pub fn de_list_cidr_blocks(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("ListCidrBlocksResponse") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected ListCidrBlocksResponse but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected ListCidrBlocksResponse but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

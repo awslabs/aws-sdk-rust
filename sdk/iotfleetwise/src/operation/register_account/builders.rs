@@ -10,10 +10,7 @@ impl RegisterAccountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_account::RegisterAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_account::RegisterAccountError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_account();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl RegisterAccountFluentBuilder {
         }
     }
     /// Access the RegisterAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_account::builders::RegisterAccountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_account::builders::RegisterAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl RegisterAccountFluentBuilder {
             crate::operation::register_account::RegisterAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_account::RegisterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl RegisterAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl RegisterAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_account::RegisterAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_account::RegisterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl RegisterAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_account::RegisterAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_account::RegisterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl RegisterAccountFluentBuilder {
             crate::operation::register_account::RegisterAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_account::RegisterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,13 @@ impl RegisterAccountFluentBuilder {
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
-    pub fn set_timestream_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestreamResources>,
-    ) -> Self {
+    pub fn set_timestream_resources(mut self, input: ::std::option::Option<crate::types::TimestreamResources>) -> Self {
         self.inner = self.inner.set_timestream_resources(input);
         self
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
-    pub fn get_timestream_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimestreamResources> {
+    pub fn get_timestream_resources(&self) -> &::std::option::Option<crate::types::TimestreamResources> {
         self.inner.get_timestream_resources()
     }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
@@ -159,10 +138,7 @@ impl RegisterAccountFluentBuilder {
     }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     #[deprecated(note = "iamResources is no longer used or needed as input")]
-    pub fn set_iam_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::IamResources>,
-    ) -> Self {
+    pub fn set_iam_resources(mut self, input: ::std::option::Option<crate::types::IamResources>) -> Self {
         self.inner = self.inner.set_iam_resources(input);
         self
     }

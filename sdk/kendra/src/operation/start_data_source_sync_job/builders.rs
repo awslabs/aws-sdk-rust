@@ -26,8 +26,7 @@ impl StartDataSourceSyncJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDataSourceSyncJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobInputBuilder,
+    inner: crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobInputBuilder,
 }
 impl StartDataSourceSyncJobFluentBuilder {
     /// Creates a new `StartDataSourceSyncJob`.
@@ -38,10 +37,7 @@ impl StartDataSourceSyncJobFluentBuilder {
         }
     }
     /// Access the StartDataSourceSyncJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl StartDataSourceSyncJobFluentBuilder {
             crate::operation::start_data_source_sync_job::StartDataSourceSyncJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl StartDataSourceSyncJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl StartDataSourceSyncJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl StartDataSourceSyncJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl StartDataSourceSyncJobFluentBuilder {
             crate::operation::start_data_source_sync_job::StartDataSourceSyncJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError>,
     > {
         self.customize_middleware().await
     }

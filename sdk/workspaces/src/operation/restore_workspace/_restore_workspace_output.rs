@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RestoreWorkspaceOutput {
 }
 impl RestoreWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`RestoreWorkspaceOutput`](crate::operation::restore_workspace::RestoreWorkspaceOutput).
-    pub fn builder() -> crate::operation::restore_workspace::builders::RestoreWorkspaceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::restore_workspace::builders::RestoreWorkspaceOutputBuilder {
         crate::operation::restore_workspace::builders::RestoreWorkspaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreWorkspaceOutput`](crate::operation::restore_workspace::RestoreWorkspaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreWorkspaceOutputBuilder {
     _request_id: Option<String>,
 }

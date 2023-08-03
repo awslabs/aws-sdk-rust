@@ -29,7 +29,7 @@ impl AddCustomRoutingEndpointsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddCustomRoutingEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder,
+    inner: crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder,
 }
 impl AddCustomRoutingEndpointsFluentBuilder {
     /// Creates a new `AddCustomRoutingEndpoints`.
@@ -40,7 +40,7 @@ impl AddCustomRoutingEndpointsFluentBuilder {
         }
     }
     /// Access the AddCustomRoutingEndpoints as a reference.
-    pub fn as_input(&self) -> &crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl AddCustomRoutingEndpointsFluentBuilder {
             crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl AddCustomRoutingEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl AddCustomRoutingEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl AddCustomRoutingEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl AddCustomRoutingEndpointsFluentBuilder {
             crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,43 +117,29 @@ impl AddCustomRoutingEndpointsFluentBuilder {
     /// To override the contents of this collection use [`set_endpoint_configurations`](Self::set_endpoint_configurations).
     ///
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
-    pub fn endpoint_configurations(
-        mut self,
-        input: crate::types::CustomRoutingEndpointConfiguration,
-    ) -> Self {
+    pub fn endpoint_configurations(mut self, input: crate::types::CustomRoutingEndpointConfiguration) -> Self {
         self.inner = self.inner.endpoint_configurations(input);
         self
     }
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
     pub fn set_endpoint_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_endpoint_configurations(input);
         self
     }
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
-    pub fn get_endpoint_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>
-    {
+    pub fn get_endpoint_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>> {
         self.inner.get_endpoint_configurations()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
     }

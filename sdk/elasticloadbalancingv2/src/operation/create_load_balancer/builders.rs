@@ -10,10 +10,7 @@ impl CreateLoadBalancerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer::CreateLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_load_balancer();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl CreateLoadBalancerFluentBuilder {
         }
     }
     /// Access the CreateLoadBalancer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl CreateLoadBalancerFluentBuilder {
             crate::operation::create_load_balancer::CreateLoadBalancer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl CreateLoadBalancerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl CreateLoadBalancerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer::CreateLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl CreateLoadBalancerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer::CreateLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl CreateLoadBalancerFluentBuilder {
             crate::operation::create_load_balancer::CreateLoadBalancer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         self.customize_middleware().await
     }
@@ -166,10 +150,7 @@ impl CreateLoadBalancerFluentBuilder {
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnets(input);
         self
     }
@@ -202,10 +183,7 @@ impl CreateLoadBalancerFluentBuilder {
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-    pub fn set_subnet_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
-    ) -> Self {
+    pub fn set_subnet_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>) -> Self {
         self.inner = self.inner.set_subnet_mappings(input);
         self
     }
@@ -215,9 +193,7 @@ impl CreateLoadBalancerFluentBuilder {
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-    pub fn get_subnet_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
+    pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
         self.inner.get_subnet_mappings()
     }
     /// Appends an item to `SecurityGroups`.
@@ -225,25 +201,17 @@ impl CreateLoadBalancerFluentBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
@@ -258,10 +226,7 @@ impl CreateLoadBalancerFluentBuilder {
     /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
     /// <p>The default is an Internet-facing load balancer.</p>
     /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
-    pub fn set_scheme(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerSchemeEnum>,
-    ) -> Self {
+    pub fn set_scheme(mut self, input: ::std::option::Option<crate::types::LoadBalancerSchemeEnum>) -> Self {
         self.inner = self.inner.set_scheme(input);
         self
     }
@@ -282,10 +247,7 @@ impl CreateLoadBalancerFluentBuilder {
         self
     }
     /// <p>The tags to assign to the load balancer.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -299,10 +261,7 @@ impl CreateLoadBalancerFluentBuilder {
         self
     }
     /// <p>The type of load balancer. The default is <code>application</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerTypeEnum>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::LoadBalancerTypeEnum>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -316,10 +275,7 @@ impl CreateLoadBalancerFluentBuilder {
         self
     }
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
@@ -328,18 +284,12 @@ impl CreateLoadBalancerFluentBuilder {
         self.inner.get_ip_address_type()
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
-    pub fn customer_owned_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_owned_ipv4_pool(input.into());
         self
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
-    pub fn set_customer_owned_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_owned_ipv4_pool(input);
         self
     }

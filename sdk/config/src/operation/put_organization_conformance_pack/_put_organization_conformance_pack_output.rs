@@ -21,41 +21,31 @@ impl ::aws_http::request_id::RequestId for PutOrganizationConformancePackOutput 
 }
 impl PutOrganizationConformancePackOutput {
     /// Creates a new builder-style object to manufacture [`PutOrganizationConformancePackOutput`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput).
-    pub fn builder() -> crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackOutputBuilder{
+    pub fn builder() -> crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackOutputBuilder {
         crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutOrganizationConformancePackOutput`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutOrganizationConformancePackOutputBuilder {
     pub(crate) organization_conformance_pack_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutOrganizationConformancePackOutputBuilder {
     /// <p>ARN of the organization conformance pack.</p>
-    pub fn organization_conformance_pack_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_conformance_pack_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_conformance_pack_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the organization conformance pack.</p>
-    pub fn set_organization_conformance_pack_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_conformance_pack_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_conformance_pack_arn = input;
         self
     }
     /// <p>ARN of the organization conformance pack.</p>
-    pub fn get_organization_conformance_pack_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_organization_conformance_pack_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_conformance_pack_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,10 +58,7 @@ impl PutOrganizationConformancePackOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutOrganizationConformancePackOutput`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput
-    {
+    pub fn build(self) -> crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput {
         crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput {
             organization_conformance_pack_arn: self.organization_conformance_pack_arn,
             _request_id: self._request_id,

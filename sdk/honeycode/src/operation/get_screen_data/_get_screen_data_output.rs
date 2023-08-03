@@ -5,9 +5,7 @@
 pub struct GetScreenDataOutput {
     /// <p>A map of all the rows on the screen keyed by block name.</p>
     #[doc(hidden)]
-    pub results: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ResultSet>,
-    >,
+    pub results: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ResultSet>>,
     /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
@@ -18,11 +16,7 @@ pub struct GetScreenDataOutput {
 }
 impl GetScreenDataOutput {
     /// <p>A map of all the rows on the screen keyed by block name.</p>
-    pub fn results(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ResultSet>,
-    > {
+    pub fn results(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ResultSet>> {
         self.results.as_ref()
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
@@ -48,13 +42,9 @@ impl GetScreenDataOutput {
 
 /// A builder for [`GetScreenDataOutput`](crate::operation::get_screen_data::GetScreenDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetScreenDataOutputBuilder {
-    pub(crate) results: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ResultSet>,
-    >,
+    pub(crate) results: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ResultSet>>,
     pub(crate) workbook_cursor: ::std::option::Option<i64>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -65,32 +55,19 @@ impl GetScreenDataOutputBuilder {
     /// To override the contents of this collection use [`set_results`](Self::set_results).
     ///
     /// <p>A map of all the rows on the screen keyed by block name.</p>
-    pub fn results(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ResultSet,
-    ) -> Self {
+    pub fn results(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ResultSet) -> Self {
         let mut hash_map = self.results.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.results = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of all the rows on the screen keyed by block name.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ResultSet>,
-        >,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ResultSet>>) -> Self {
         self.results = input;
         self
     }
     /// <p>A map of all the rows on the screen keyed by block name.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ResultSet>,
-    > {
+    pub fn get_results(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ResultSet>> {
         &self.results
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>

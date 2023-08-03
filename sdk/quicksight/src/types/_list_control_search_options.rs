@@ -23,9 +23,7 @@ impl ListControlSearchOptions {
 
 /// A builder for [`ListControlSearchOptions`](crate::types::ListControlSearchOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListControlSearchOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
@@ -36,10 +34,7 @@ impl ListControlSearchOptionsBuilder {
         self
     }
     /// <p>The visibility configuration of the search options in a list control.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -49,8 +44,6 @@ impl ListControlSearchOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`ListControlSearchOptions`](crate::types::ListControlSearchOptions).
     pub fn build(self) -> crate::types::ListControlSearchOptions {
-        crate::types::ListControlSearchOptions {
-            visibility: self.visibility,
-        }
+        crate::types::ListControlSearchOptions { visibility: self.visibility }
     }
 }

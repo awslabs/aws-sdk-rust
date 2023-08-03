@@ -10,10 +10,7 @@ impl BatchGetWorkflowsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_workflows::BatchGetWorkflowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_workflows::BatchGetWorkflowsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_workflows::BatchGetWorkflowsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_workflows();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetWorkflowsFluentBuilder {
         }
     }
     /// Access the BatchGetWorkflows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetWorkflowsFluentBuilder {
             crate::operation::batch_get_workflows::BatchGetWorkflows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_workflows::BatchGetWorkflowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_workflows::BatchGetWorkflowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetWorkflowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetWorkflowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_workflows::BatchGetWorkflowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_workflows::BatchGetWorkflowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_workflows::BatchGetWorkflowsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetWorkflowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_workflows::BatchGetWorkflowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_workflows::BatchGetWorkflowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_workflows::BatchGetWorkflowsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetWorkflowsFluentBuilder {
             crate::operation::batch_get_workflows::BatchGetWorkflows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_workflows::BatchGetWorkflowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_workflows::BatchGetWorkflowsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl BatchGetWorkflowsFluentBuilder {
         self
     }
     /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

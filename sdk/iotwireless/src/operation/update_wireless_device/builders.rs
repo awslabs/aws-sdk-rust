@@ -37,9 +37,7 @@ impl UpdateWirelessDeviceFluentBuilder {
         }
     }
     /// Access the UpdateWirelessDevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_wireless_device::builders::UpdateWirelessDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_wireless_device::builders::UpdateWirelessDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateWirelessDeviceFluentBuilder {
             crate::operation::update_wireless_device::UpdateWirelessDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_wireless_device::UpdateWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device::UpdateWirelessDeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateWirelessDeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateWirelessDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_wireless_device::UpdateWirelessDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_wireless_device::UpdateWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device::UpdateWirelessDeviceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateWirelessDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_wireless_device::UpdateWirelessDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_wireless_device::UpdateWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device::UpdateWirelessDeviceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateWirelessDeviceFluentBuilder {
             crate::operation::update_wireless_device::UpdateWirelessDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_wireless_device::UpdateWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device::UpdateWirelessDeviceError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl UpdateWirelessDeviceFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The name of the new destination for the device.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_name(input.into());
         self
     }
     /// <p>The name of the new destination for the device.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_name(input);
         self
     }
@@ -190,10 +171,7 @@ impl UpdateWirelessDeviceFluentBuilder {
         self
     }
     /// <p>The updated wireless device's configuration.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanUpdateDevice>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanUpdateDevice>) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }
@@ -207,10 +185,7 @@ impl UpdateWirelessDeviceFluentBuilder {
         self
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    pub fn set_positioning(
-        mut self,
-        input: ::std::option::Option<crate::types::PositioningConfigStatus>,
-    ) -> Self {
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
         self.inner = self.inner.set_positioning(input);
         self
     }

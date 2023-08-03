@@ -12,10 +12,7 @@ pub fn ser_create_infrastructure_configuration_input(
     if let Some(var_3) = &input.instance_metadata_options {
         #[allow(unused_mut)]
         let mut object_4 = object.key("instanceMetadataOptions").start_object();
-        crate::protocol_serde::shape_instance_metadata_options::ser_instance_metadata_options(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_instance_metadata_options::ser_instance_metadata_options(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.instance_profile_name {

@@ -5,8 +5,7 @@
 pub struct ListAssociatedAssetsOutput {
     /// <p>A list that summarizes the associated assets.</p>
     #[doc(hidden)]
-    pub asset_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>>,
+    pub asset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssociatedAssetsOutput {
 }
 impl ListAssociatedAssetsOutput {
     /// <p>A list that summarizes the associated assets.</p>
-    pub fn asset_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociatedAssetsSummary]> {
+    pub fn asset_summaries(&self) -> ::std::option::Option<&[crate::types::AssociatedAssetsSummary]> {
         self.asset_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssociatedAssetsOutput {
 }
 impl ListAssociatedAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedAssetsOutput`](crate::operation::list_associated_assets::ListAssociatedAssetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_assets::builders::ListAssociatedAssetsOutputBuilder {
+    pub fn builder() -> crate::operation::list_associated_assets::builders::ListAssociatedAssetsOutputBuilder {
         crate::operation::list_associated_assets::builders::ListAssociatedAssetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedAssetsOutput`](crate::operation::list_associated_assets::ListAssociatedAssetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedAssetsOutputBuilder {
-    pub(crate) asset_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>>,
+    pub(crate) asset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListAssociatedAssetsOutputBuilder {
         self
     }
     /// <p>A list that summarizes the associated assets.</p>
-    pub fn set_asset_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>>,
-    ) -> Self {
+    pub fn set_asset_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>>) -> Self {
         self.asset_summaries = input;
         self
     }
     /// <p>A list that summarizes the associated assets.</p>
-    pub fn get_asset_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>> {
+    pub fn get_asset_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>> {
         &self.asset_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

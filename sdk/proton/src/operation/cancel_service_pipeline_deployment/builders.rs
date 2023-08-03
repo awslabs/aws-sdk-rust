@@ -5,16 +5,16 @@ pub use crate::operation::cancel_service_pipeline_deployment::_cancel_service_pi
 
 impl CancelServicePipelineDeploymentInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.cancel_service_pipeline_deployment();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -32,7 +32,7 @@ impl CancelServicePipelineDeploymentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelServicePipelineDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentInputBuilder,
+    inner: crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentInputBuilder,
 }
 impl CancelServicePipelineDeploymentFluentBuilder {
     /// Creates a new `CancelServicePipelineDeployment`.
@@ -43,15 +43,20 @@ impl CancelServicePipelineDeploymentFluentBuilder {
         }
     }
     /// Access the CancelServicePipelineDeployment as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeployment, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeployment,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -60,16 +65,17 @@ impl CancelServicePipelineDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError>,
+    > {
         let op = self
             .inner
             .build()
@@ -87,17 +93,26 @@ impl CancelServicePipelineDeploymentFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeployment, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeployment,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the service with the service pipeline deployment to cancel.</p>

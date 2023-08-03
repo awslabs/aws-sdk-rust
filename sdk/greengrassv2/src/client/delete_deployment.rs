@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`deployment_id(impl ::std::convert::Into<String>)`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::set_deployment_id): <p>The ID of the deployment.</p>
     /// - On success, responds with [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput)
     /// - On failure, responds with [`SdkError<DeleteDeploymentError>`](crate::operation::delete_deployment::DeleteDeploymentError)
-    pub fn delete_deployment(
-        &self,
-    ) -> crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder {
-        crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_deployment(&self) -> crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder {
+        crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

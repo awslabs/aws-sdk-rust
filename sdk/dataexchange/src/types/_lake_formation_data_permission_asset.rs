@@ -6,12 +6,10 @@
 pub struct LakeFormationDataPermissionAsset {
     /// <p>Details about the AWS Lake Formation data permission.</p>
     #[doc(hidden)]
-    pub lake_formation_data_permission_details:
-        ::std::option::Option<crate::types::LakeFormationDataPermissionDetails>,
+    pub lake_formation_data_permission_details: ::std::option::Option<crate::types::LakeFormationDataPermissionDetails>,
     /// <p>The data permission type.</p>
     #[doc(hidden)]
-    pub lake_formation_data_permission_type:
-        ::std::option::Option<crate::types::LakeFormationDataPermissionType>,
+    pub lake_formation_data_permission_type: ::std::option::Option<crate::types::LakeFormationDataPermissionType>,
     /// <p>The permissions granted to the subscribers on the resource.</p>
     #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::LfPermission>>,
@@ -21,15 +19,11 @@ pub struct LakeFormationDataPermissionAsset {
 }
 impl LakeFormationDataPermissionAsset {
     /// <p>Details about the AWS Lake Formation data permission.</p>
-    pub fn lake_formation_data_permission_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LakeFormationDataPermissionDetails> {
+    pub fn lake_formation_data_permission_details(&self) -> ::std::option::Option<&crate::types::LakeFormationDataPermissionDetails> {
         self.lake_formation_data_permission_details.as_ref()
     }
     /// <p>The data permission type.</p>
-    pub fn lake_formation_data_permission_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LakeFormationDataPermissionType> {
+    pub fn lake_formation_data_permission_type(&self) -> ::std::option::Option<&crate::types::LakeFormationDataPermissionType> {
         self.lake_formation_data_permission_type.as_ref()
     }
     /// <p>The permissions granted to the subscribers on the resource.</p>
@@ -50,23 +44,16 @@ impl LakeFormationDataPermissionAsset {
 
 /// A builder for [`LakeFormationDataPermissionAsset`](crate::types::LakeFormationDataPermissionAsset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LakeFormationDataPermissionAssetBuilder {
-    pub(crate) lake_formation_data_permission_details:
-        ::std::option::Option<crate::types::LakeFormationDataPermissionDetails>,
-    pub(crate) lake_formation_data_permission_type:
-        ::std::option::Option<crate::types::LakeFormationDataPermissionType>,
+    pub(crate) lake_formation_data_permission_details: ::std::option::Option<crate::types::LakeFormationDataPermissionDetails>,
+    pub(crate) lake_formation_data_permission_type: ::std::option::Option<crate::types::LakeFormationDataPermissionType>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::LfPermission>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl LakeFormationDataPermissionAssetBuilder {
     /// <p>Details about the AWS Lake Formation data permission.</p>
-    pub fn lake_formation_data_permission_details(
-        mut self,
-        input: crate::types::LakeFormationDataPermissionDetails,
-    ) -> Self {
+    pub fn lake_formation_data_permission_details(mut self, input: crate::types::LakeFormationDataPermissionDetails) -> Self {
         self.lake_formation_data_permission_details = ::std::option::Option::Some(input);
         self
     }
@@ -79,31 +66,21 @@ impl LakeFormationDataPermissionAssetBuilder {
         self
     }
     /// <p>Details about the AWS Lake Formation data permission.</p>
-    pub fn get_lake_formation_data_permission_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::LakeFormationDataPermissionDetails> {
+    pub fn get_lake_formation_data_permission_details(&self) -> &::std::option::Option<crate::types::LakeFormationDataPermissionDetails> {
         &self.lake_formation_data_permission_details
     }
     /// <p>The data permission type.</p>
-    pub fn lake_formation_data_permission_type(
-        mut self,
-        input: crate::types::LakeFormationDataPermissionType,
-    ) -> Self {
+    pub fn lake_formation_data_permission_type(mut self, input: crate::types::LakeFormationDataPermissionType) -> Self {
         self.lake_formation_data_permission_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data permission type.</p>
-    pub fn set_lake_formation_data_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LakeFormationDataPermissionType>,
-    ) -> Self {
+    pub fn set_lake_formation_data_permission_type(mut self, input: ::std::option::Option<crate::types::LakeFormationDataPermissionType>) -> Self {
         self.lake_formation_data_permission_type = input;
         self
     }
     /// <p>The data permission type.</p>
-    pub fn get_lake_formation_data_permission_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LakeFormationDataPermissionType> {
+    pub fn get_lake_formation_data_permission_type(&self) -> &::std::option::Option<crate::types::LakeFormationDataPermissionType> {
         &self.lake_formation_data_permission_type
     }
     /// Appends an item to `permissions`.
@@ -118,17 +95,12 @@ impl LakeFormationDataPermissionAssetBuilder {
         self
     }
     /// <p>The permissions granted to the subscribers on the resource.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfPermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfPermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The permissions granted to the subscribers on the resource.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LfPermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfPermission>> {
         &self.permissions
     }
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>

@@ -30,17 +30,13 @@ pub struct AwsElasticBeanstalkEnvironmentDetails {
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Links to other environments in the same group.</p>
     #[doc(hidden)]
-    pub environment_links: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>,
-    >,
+    pub environment_links: ::std::option::Option<::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>>,
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration setting for the environment.</p>
     #[doc(hidden)]
-    pub option_settings: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>,
-    >,
+    pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>>,
     /// <p>The ARN of the platform version for the environment.</p>
     #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
@@ -101,9 +97,7 @@ impl AwsElasticBeanstalkEnvironmentDetails {
         self.environment_id.as_deref()
     }
     /// <p>Links to other environments in the same group.</p>
-    pub fn environment_links(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink]> {
+    pub fn environment_links(&self) -> ::std::option::Option<&[crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink]> {
         self.environment_links.as_deref()
     }
     /// <p>The name of the environment.</p>
@@ -111,9 +105,7 @@ impl AwsElasticBeanstalkEnvironmentDetails {
         self.environment_name.as_deref()
     }
     /// <p>The configuration setting for the environment.</p>
-    pub fn option_settings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsElasticBeanstalkEnvironmentOptionSetting]> {
+    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::AwsElasticBeanstalkEnvironmentOptionSetting]> {
         self.option_settings.as_deref()
     }
     /// <p>The ARN of the platform version for the environment.</p>
@@ -156,9 +148,7 @@ impl AwsElasticBeanstalkEnvironmentDetails {
 
 /// A builder for [`AwsElasticBeanstalkEnvironmentDetails`](crate::types::AwsElasticBeanstalkEnvironmentDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElasticBeanstalkEnvironmentDetailsBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) cname: ::std::option::Option<::std::string::String>,
@@ -168,13 +158,9 @@ pub struct AwsElasticBeanstalkEnvironmentDetailsBuilder {
     pub(crate) endpoint_url: ::std::option::Option<::std::string::String>,
     pub(crate) environment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) environment_links: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>,
-    >,
+    pub(crate) environment_links: ::std::option::Option<::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) option_settings: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>,
-    >,
+    pub(crate) option_settings: ::std::option::Option<::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>>,
     pub(crate) platform_arn: ::std::option::Option<::std::string::String>,
     pub(crate) solution_stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -183,18 +169,12 @@ pub struct AwsElasticBeanstalkEnvironmentDetailsBuilder {
 }
 impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     /// <p>The name of the application that is associated with the environment.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application that is associated with the environment.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -273,18 +253,12 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
         &self.endpoint_url
     }
     /// <p>The ARN of the environment.</p>
-    pub fn environment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the environment.</p>
-    pub fn set_environment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_arn = input;
         self
     }
@@ -293,18 +267,12 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
         &self.environment_arn
     }
     /// <p>The identifier of the environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -317,10 +285,7 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     /// To override the contents of this collection use [`set_environment_links`](Self::set_environment_links).
     ///
     /// <p>Links to other environments in the same group.</p>
-    pub fn environment_links(
-        mut self,
-        input: crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink,
-    ) -> Self {
+    pub fn environment_links(mut self, input: crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink) -> Self {
         let mut v = self.environment_links.unwrap_or_default();
         v.push(input);
         self.environment_links = ::std::option::Option::Some(v);
@@ -329,34 +294,22 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     /// <p>Links to other environments in the same group.</p>
     pub fn set_environment_links(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>>,
     ) -> Self {
         self.environment_links = input;
         self
     }
     /// <p>Links to other environments in the same group.</p>
-    pub fn get_environment_links(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>,
-    > {
+    pub fn get_environment_links(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>> {
         &self.environment_links
     }
     /// <p>The name of the environment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -369,10 +322,7 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
     ///
     /// <p>The configuration setting for the environment.</p>
-    pub fn option_settings(
-        mut self,
-        input: crate::types::AwsElasticBeanstalkEnvironmentOptionSetting,
-    ) -> Self {
+    pub fn option_settings(mut self, input: crate::types::AwsElasticBeanstalkEnvironmentOptionSetting) -> Self {
         let mut v = self.option_settings.unwrap_or_default();
         v.push(input);
         self.option_settings = ::std::option::Option::Some(v);
@@ -381,19 +331,13 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     /// <p>The configuration setting for the environment.</p>
     pub fn set_option_settings(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>>,
     ) -> Self {
         self.option_settings = input;
         self
     }
     /// <p>The configuration setting for the environment.</p>
-    pub fn get_option_settings(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>,
-    > {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>> {
         &self.option_settings
     }
     /// <p>The ARN of the platform version for the environment.</p>
@@ -411,18 +355,12 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
         &self.platform_arn
     }
     /// <p>The name of the solution stack that is deployed with the environment.</p>
-    pub fn solution_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the solution stack that is deployed with the environment.</p>
-    pub fn set_solution_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_stack_name = input;
         self
     }
@@ -480,32 +418,21 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
         self
     }
     /// <p>The tier of the environment.</p>
-    pub fn set_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier>,
-    ) -> Self {
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier>) -> Self {
         self.tier = input;
         self
     }
     /// <p>The tier of the environment.</p>
-    pub fn get_tier(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier> {
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier> {
         &self.tier
     }
     /// <p>The application version of the environment.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application version of the environment.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }

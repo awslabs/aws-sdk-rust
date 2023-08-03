@@ -10,10 +10,7 @@ impl UpdateVoiceChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_voice_channel::UpdateVoiceChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_channel::UpdateVoiceChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_channel::UpdateVoiceChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_voice_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateVoiceChannelFluentBuilder {
         }
     }
     /// Access the UpdateVoiceChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_voice_channel::builders::UpdateVoiceChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_voice_channel::builders::UpdateVoiceChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateVoiceChannelFluentBuilder {
             crate::operation::update_voice_channel::UpdateVoiceChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_channel::UpdateVoiceChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_channel::UpdateVoiceChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateVoiceChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateVoiceChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_voice_channel::UpdateVoiceChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_channel::UpdateVoiceChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_channel::UpdateVoiceChannelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateVoiceChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_voice_channel::UpdateVoiceChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_channel::UpdateVoiceChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_channel::UpdateVoiceChannelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateVoiceChannelFluentBuilder {
             crate::operation::update_voice_channel::UpdateVoiceChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_channel::UpdateVoiceChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_channel::UpdateVoiceChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -148,17 +126,12 @@ impl UpdateVoiceChannelFluentBuilder {
         self
     }
     /// <p>Specifies the status and settings of the voice channel for an application.</p>
-    pub fn set_voice_channel_request(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceChannelRequest>,
-    ) -> Self {
+    pub fn set_voice_channel_request(mut self, input: ::std::option::Option<crate::types::VoiceChannelRequest>) -> Self {
         self.inner = self.inner.set_voice_channel_request(input);
         self
     }
     /// <p>Specifies the status and settings of the voice channel for an application.</p>
-    pub fn get_voice_channel_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceChannelRequest> {
+    pub fn get_voice_channel_request(&self) -> &::std::option::Option<crate::types::VoiceChannelRequest> {
         self.inner.get_voice_channel_request()
     }
 }

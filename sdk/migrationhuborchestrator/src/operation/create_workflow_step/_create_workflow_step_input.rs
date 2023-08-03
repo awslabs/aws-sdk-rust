@@ -20,8 +20,7 @@ pub struct CreateWorkflowStepInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The custom script to run tests on source or target environments.</p>
     #[doc(hidden)]
-    pub workflow_step_automation_configuration:
-        ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
+    pub workflow_step_automation_configuration: ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
     /// <p>The servers on which a step will be run.</p>
     #[doc(hidden)]
     pub step_target: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,9 +56,7 @@ impl CreateWorkflowStepInput {
         self.description.as_deref()
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn workflow_step_automation_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkflowStepAutomationConfiguration> {
+    pub fn workflow_step_automation_configuration(&self) -> ::std::option::Option<&crate::types::WorkflowStepAutomationConfiguration> {
         self.workflow_step_automation_configuration.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
@@ -81,25 +78,21 @@ impl CreateWorkflowStepInput {
 }
 impl CreateWorkflowStepInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkflowStepInput`](crate::operation::create_workflow_step::CreateWorkflowStepInput).
-    pub fn builder(
-    ) -> crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder {
+    pub fn builder() -> crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder {
         crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkflowStepInput`](crate::operation::create_workflow_step::CreateWorkflowStepInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkflowStepInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) step_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_action_type: ::std::option::Option<crate::types::StepActionType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) workflow_step_automation_configuration:
-        ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
+    pub(crate) workflow_step_automation_configuration: ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
     pub(crate) step_target: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>,
     pub(crate) previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -121,18 +114,12 @@ impl CreateWorkflowStepInputBuilder {
         &self.name
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_group_id = input;
         self
     }
@@ -160,10 +147,7 @@ impl CreateWorkflowStepInputBuilder {
         self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn set_step_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StepActionType>,
-    ) -> Self {
+    pub fn set_step_action_type(mut self, input: ::std::option::Option<crate::types::StepActionType>) -> Self {
         self.step_action_type = input;
         self
     }
@@ -186,10 +170,7 @@ impl CreateWorkflowStepInputBuilder {
         &self.description
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn workflow_step_automation_configuration(
-        mut self,
-        input: crate::types::WorkflowStepAutomationConfiguration,
-    ) -> Self {
+    pub fn workflow_step_automation_configuration(mut self, input: crate::types::WorkflowStepAutomationConfiguration) -> Self {
         self.workflow_step_automation_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -202,9 +183,7 @@ impl CreateWorkflowStepInputBuilder {
         self
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn get_workflow_step_automation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowStepAutomationConfiguration> {
+    pub fn get_workflow_step_automation_configuration(&self) -> &::std::option::Option<crate::types::WorkflowStepAutomationConfiguration> {
         &self.workflow_step_automation_configuration
     }
     /// Appends an item to `step_target`.
@@ -219,17 +198,12 @@ impl CreateWorkflowStepInputBuilder {
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn set_step_target(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_step_target(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.step_target = input;
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn get_step_target(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_step_target(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.step_target
     }
     /// Appends an item to `outputs`.
@@ -244,17 +218,12 @@ impl CreateWorkflowStepInputBuilder {
         self
     }
     /// <p>The key value pairs added for the expected output.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>) -> Self {
         self.outputs = input;
         self
     }
     /// <p>The key value pairs added for the expected output.</p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>> {
         &self.outputs
     }
     /// Appends an item to `previous`.
@@ -269,10 +238,7 @@ impl CreateWorkflowStepInputBuilder {
         self
     }
     /// <p>The previous step.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.previous = input;
         self
     }
@@ -292,10 +258,7 @@ impl CreateWorkflowStepInputBuilder {
         self
     }
     /// <p>The next step.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.next = input;
         self
     }
@@ -306,23 +269,18 @@ impl CreateWorkflowStepInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkflowStepInput`](crate::operation::create_workflow_step::CreateWorkflowStepInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workflow_step::CreateWorkflowStepInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_workflow_step::CreateWorkflowStepInput {
-                name: self.name,
-                step_group_id: self.step_group_id,
-                workflow_id: self.workflow_id,
-                step_action_type: self.step_action_type,
-                description: self.description,
-                workflow_step_automation_configuration: self.workflow_step_automation_configuration,
-                step_target: self.step_target,
-                outputs: self.outputs,
-                previous: self.previous,
-                next: self.next,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_workflow_step::CreateWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_workflow_step::CreateWorkflowStepInput {
+            name: self.name,
+            step_group_id: self.step_group_id,
+            workflow_id: self.workflow_id,
+            step_action_type: self.step_action_type,
+            description: self.description,
+            workflow_step_automation_configuration: self.workflow_step_automation_configuration,
+            step_target: self.step_target,
+            outputs: self.outputs,
+            previous: self.previous,
+            next: self.next,
+        })
     }
 }

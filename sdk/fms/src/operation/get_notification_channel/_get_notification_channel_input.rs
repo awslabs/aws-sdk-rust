@@ -5,29 +5,21 @@
 pub struct GetNotificationChannelInput {}
 impl GetNotificationChannelInput {
     /// Creates a new builder-style object to manufacture [`GetNotificationChannelInput`](crate::operation::get_notification_channel::GetNotificationChannelInput).
-    pub fn builder(
-    ) -> crate::operation::get_notification_channel::builders::GetNotificationChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_notification_channel::builders::GetNotificationChannelInputBuilder {
         crate::operation::get_notification_channel::builders::GetNotificationChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`GetNotificationChannelInput`](crate::operation::get_notification_channel::GetNotificationChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNotificationChannelInputBuilder {}
 impl GetNotificationChannelInputBuilder {
     /// Consumes the builder and constructs a [`GetNotificationChannelInput`](crate::operation::get_notification_channel::GetNotificationChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_notification_channel::GetNotificationChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_notification_channel::GetNotificationChannelInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::get_notification_channel::GetNotificationChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_notification_channel::GetNotificationChannelInput {})
     }
 }

@@ -22,34 +22,26 @@ impl DescribeDeviceEc2InstancesInput {
 }
 impl DescribeDeviceEc2InstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDeviceEc2InstancesInput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput).
-    pub fn builder() -> crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder {
         crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDeviceEc2InstancesInput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceEc2InstancesInputBuilder {
     pub(crate) managed_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDeviceEc2InstancesInputBuilder {
     /// <p>The ID of the managed device.</p>
-    pub fn managed_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the managed device.</p>
-    pub fn set_managed_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_managed_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_device_id = input;
         self
     }
@@ -69,17 +61,12 @@ impl DescribeDeviceEc2InstancesInputBuilder {
         self
     }
     /// <p>A list of instance IDs associated with the managed device.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>A list of instance IDs associated with the managed device.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// Consumes the builder and constructs a [`DescribeDeviceEc2InstancesInput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput).
@@ -89,11 +76,9 @@ impl DescribeDeviceEc2InstancesInputBuilder {
         crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput {
-                managed_device_id: self.managed_device_id,
-                instance_ids: self.instance_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput {
+            managed_device_id: self.managed_device_id,
+            instance_ids: self.instance_ids,
+        })
     }
 }

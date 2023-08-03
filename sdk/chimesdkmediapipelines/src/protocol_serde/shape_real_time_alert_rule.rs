@@ -9,19 +9,13 @@ pub fn ser_real_time_alert_rule(
     if let Some(var_2) = &input.keyword_match_configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("KeywordMatchConfiguration").start_object();
-        crate::protocol_serde::shape_keyword_match_configuration::ser_keyword_match_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_keyword_match_configuration::ser_keyword_match_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.sentiment_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("SentimentConfiguration").start_object();
-        crate::protocol_serde::shape_sentiment_configuration::ser_sentiment_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_sentiment_configuration::ser_sentiment_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.issue_detection_configuration {
@@ -35,17 +29,9 @@ pub fn ser_real_time_alert_rule(
 
 pub(crate) fn de_real_time_alert_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RealTimeAlertRule>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RealTimeAlertRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,54 +41,43 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Type" => {
-                                builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::RealTimeAlertRuleType::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RealTimeAlertRuleType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "KeywordMatchConfiguration" => {
-                                builder = builder.set_keyword_match_configuration(
-                                    crate::protocol_serde::shape_keyword_match_configuration::de_keyword_match_configuration(tokens)?
-                                );
-                            }
-                            "SentimentConfiguration" => {
-                                builder = builder.set_sentiment_configuration(
-                                    crate::protocol_serde::shape_sentiment_configuration::de_sentiment_configuration(tokens)?
-                                );
-                            }
-                            "IssueDetectionConfiguration" => {
-                                builder = builder.set_issue_detection_configuration(
-                                    crate::protocol_serde::shape_issue_detection_configuration::de_issue_detection_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "KeywordMatchConfiguration" => {
+                            builder = builder.set_keyword_match_configuration(
+                                crate::protocol_serde::shape_keyword_match_configuration::de_keyword_match_configuration(tokens)?,
+                            );
+                        }
+                        "SentimentConfiguration" => {
+                            builder = builder.set_sentiment_configuration(
+                                crate::protocol_serde::shape_sentiment_configuration::de_sentiment_configuration(tokens)?,
+                            );
+                        }
+                        "IssueDetectionConfiguration" => {
+                            builder = builder.set_issue_detection_configuration(
+                                crate::protocol_serde::shape_issue_detection_configuration::de_issue_detection_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -26,9 +26,7 @@ impl SiteMapsConfiguration {
 
 /// A builder for [`SiteMapsConfiguration`](crate::types::SiteMapsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SiteMapsConfigurationBuilder {
     pub(crate) site_maps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -47,10 +45,7 @@ impl SiteMapsConfigurationBuilder {
     }
     /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of three sitemap URLs.</p>
-    pub fn set_site_maps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_site_maps(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.site_maps = input;
         self
     }
@@ -61,8 +56,6 @@ impl SiteMapsConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`SiteMapsConfiguration`](crate::types::SiteMapsConfiguration).
     pub fn build(self) -> crate::types::SiteMapsConfiguration {
-        crate::types::SiteMapsConfiguration {
-            site_maps: self.site_maps,
-        }
+        crate::types::SiteMapsConfiguration { site_maps: self.site_maps }
     }
 }

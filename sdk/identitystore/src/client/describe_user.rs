@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`timezone(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::timezone): <p>The time zone for a user.</p>
     ///   - [`identity_store_id(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)
-    pub fn describe_user(
-        &self,
-    ) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
-        crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_user(&self) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
+        crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(self.handle.clone())
     }
 }

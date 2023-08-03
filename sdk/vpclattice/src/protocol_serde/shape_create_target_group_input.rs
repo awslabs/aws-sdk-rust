@@ -9,10 +9,7 @@ pub fn ser_create_target_group_input(
     if let Some(var_2) = &input.config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("config").start_object();
-        crate::protocol_serde::shape_target_group_config::ser_target_group_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_target_group_config::ser_target_group_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.name {

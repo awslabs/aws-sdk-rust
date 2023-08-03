@@ -26,7 +26,7 @@ impl SetPrincipalTagAttributeMapInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetPrincipalTagAttributeMapFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapInputBuilder,
+    inner: crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapInputBuilder,
 }
 impl SetPrincipalTagAttributeMapFluentBuilder {
     /// Creates a new `SetPrincipalTagAttributeMap`.
@@ -37,7 +37,7 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
         }
     }
     /// Access the SetPrincipalTagAttributeMap as a reference.
-    pub fn as_input(&self) -> &crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
             crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMap,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
             crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMap,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
         self.inner.get_identity_pool_id()
     }
     /// <p>The provider name you want to use for attribute mappings.</p>
-    pub fn identity_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_provider_name(input.into());
         self
     }
     /// <p>The provider name you want to use for attribute mappings.</p>
-    pub fn set_identity_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_provider_name(input);
         self
     }
@@ -190,19 +167,13 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
     /// <p>You can use this operation to add principal tags.</p>
     pub fn set_principal_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_principal_tags(input);
         self
     }
     /// <p>You can use this operation to add principal tags.</p>
-    pub fn get_principal_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_principal_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_principal_tags()
     }
 }

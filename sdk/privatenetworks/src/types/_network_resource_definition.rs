@@ -37,9 +37,7 @@ impl NetworkResourceDefinition {
 
 /// A builder for [`NetworkResourceDefinition`](crate::types::NetworkResourceDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkResourceDefinitionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
     pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
@@ -52,10 +50,7 @@ impl NetworkResourceDefinitionBuilder {
         self
     }
     /// <p>The type in the network resource definition.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkResourceDefinitionType>) -> Self {
         self.r#type = input;
         self
     }
@@ -75,17 +70,12 @@ impl NetworkResourceDefinitionBuilder {
         self
     }
     /// <p>The options in the network resource definition.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>) -> Self {
         self.options = input;
         self
     }
     /// <p>The options in the network resource definition.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>> {
         &self.options
     }
     /// <p>The count in the network resource definition.</p>

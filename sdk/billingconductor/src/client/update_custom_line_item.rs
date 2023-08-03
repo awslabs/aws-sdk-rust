@@ -17,12 +17,7 @@ impl super::Client {
     ///   - [`last_modified_time(i64)`](crate::operation::update_custom_line_item::UpdateCustomLineItemOutput::last_modified_time): <p> The most recent time when the custom line item was modified. </p>
     ///   - [`association_size(i64)`](crate::operation::update_custom_line_item::UpdateCustomLineItemOutput::association_size): <p> The number of resources that are associated to the custom line item. </p>
     /// - On failure, responds with [`SdkError<UpdateCustomLineItemError>`](crate::operation::update_custom_line_item::UpdateCustomLineItemError)
-    pub fn update_custom_line_item(
-        &self,
-    ) -> crate::operation::update_custom_line_item::builders::UpdateCustomLineItemFluentBuilder
-    {
-        crate::operation::update_custom_line_item::builders::UpdateCustomLineItemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_custom_line_item(&self) -> crate::operation::update_custom_line_item::builders::UpdateCustomLineItemFluentBuilder {
+        crate::operation::update_custom_line_item::builders::UpdateCustomLineItemFluentBuilder::new(self.handle.clone())
     }
 }

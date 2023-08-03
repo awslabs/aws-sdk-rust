@@ -28,9 +28,7 @@ impl GetConnectionOutput {
 
 /// A builder for [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetConnectionOutputBuilder {
         self
     }
     /// <p>The connection details, such as status, owner, and provider type.</p>
-    pub fn set_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::Connection>,
-    ) -> Self {
+    pub fn set_connection(mut self, input: ::std::option::Option<crate::types::Connection>) -> Self {
         self.connection = input;
         self
     }

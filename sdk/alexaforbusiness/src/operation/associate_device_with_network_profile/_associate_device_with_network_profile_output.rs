@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateDeviceWithNetworkProfileOutp
 }
 impl AssociateDeviceWithNetworkProfileOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDeviceWithNetworkProfileOutput`](crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileOutput).
-    pub fn builder() -> crate::operation::associate_device_with_network_profile::builders::AssociateDeviceWithNetworkProfileOutputBuilder{
+    pub fn builder() -> crate::operation::associate_device_with_network_profile::builders::AssociateDeviceWithNetworkProfileOutputBuilder {
         crate::operation::associate_device_with_network_profile::builders::AssociateDeviceWithNetworkProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDeviceWithNetworkProfileOutput`](crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithNetworkProfileOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AssociateDeviceWithNetworkProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateDeviceWithNetworkProfileOutput`](crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileOutput).
-    pub fn build(self) -> crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileOutput{
+    pub fn build(self) -> crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileOutput {
         crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileOutput {
             _request_id: self._request_id,
         }

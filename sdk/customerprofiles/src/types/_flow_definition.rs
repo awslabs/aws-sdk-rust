@@ -58,9 +58,7 @@ impl FlowDefinition {
 
 /// A builder for [`FlowDefinition`](crate::types::FlowDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlowDefinitionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
-    pub fn set_source_flow_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceFlowConfig>,
-    ) -> Self {
+    pub fn set_source_flow_config(mut self, input: ::std::option::Option<crate::types::SourceFlowConfig>) -> Self {
         self.source_flow_config = input;
         self
     }
@@ -141,10 +136,7 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
         self.tasks = input;
         self
     }
@@ -158,10 +150,7 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p>The trigger settings that determine how and when the flow runs.</p>
-    pub fn set_trigger_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerConfig>,
-    ) -> Self {
+    pub fn set_trigger_config(mut self, input: ::std::option::Option<crate::types::TriggerConfig>) -> Self {
         self.trigger_config = input;
         self
     }

@@ -43,30 +43,21 @@ impl UpdateFrameworkInput {
 
 /// A builder for [`UpdateFrameworkInput`](crate::operation::update_framework::UpdateFrameworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFrameworkInputBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
     pub(crate) framework_description: ::std::option::Option<::std::string::String>,
-    pub(crate) framework_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
+    pub(crate) framework_controls: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFrameworkInputBuilder {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn set_framework_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_name = input;
         self
     }
@@ -75,18 +66,12 @@ impl UpdateFrameworkInputBuilder {
         &self.framework_name
     }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
-    pub fn framework_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
-    pub fn set_framework_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_description = input;
         self
     }
@@ -106,32 +91,21 @@ impl UpdateFrameworkInputBuilder {
         self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn set_framework_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
-    ) -> Self {
+    pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>) -> Self {
         self.framework_controls = input;
         self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn get_framework_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
+    pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
         &self.framework_controls
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -142,10 +116,7 @@ impl UpdateFrameworkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFrameworkInput`](crate::operation::update_framework::UpdateFrameworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_framework::UpdateFrameworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_framework::UpdateFrameworkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_framework::UpdateFrameworkInput {
             framework_name: self.framework_name,
             framework_description: self.framework_description,

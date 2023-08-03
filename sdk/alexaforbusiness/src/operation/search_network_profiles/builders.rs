@@ -38,10 +38,7 @@ impl SearchNetworkProfilesFluentBuilder {
         }
     }
     /// Access the SearchNetworkProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_network_profiles::builders::SearchNetworkProfilesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::search_network_profiles::builders::SearchNetworkProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl SearchNetworkProfilesFluentBuilder {
             crate::operation::search_network_profiles::SearchNetworkProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_network_profiles::SearchNetworkProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_network_profiles::SearchNetworkProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl SearchNetworkProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl SearchNetworkProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_network_profiles::SearchNetworkProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_network_profiles::SearchNetworkProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_network_profiles::SearchNetworkProfilesError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl SearchNetworkProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_network_profiles::SearchNetworkProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_network_profiles::SearchNetworkProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_network_profiles::SearchNetworkProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl SearchNetworkProfilesFluentBuilder {
             crate::operation::search_network_profiles::SearchNetworkProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_network_profiles::SearchNetworkProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_network_profiles::SearchNetworkProfilesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_network_profiles::paginator::SearchNetworkProfilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_network_profiles::paginator::SearchNetworkProfilesPaginator {
-        crate::operation::search_network_profiles::paginator::SearchNetworkProfilesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_network_profiles::paginator::SearchNetworkProfilesPaginator {
+        crate::operation::search_network_profiles::paginator::SearchNetworkProfilesPaginator::new(self.handle, self.inner)
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,10 +154,7 @@ impl SearchNetworkProfilesFluentBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -194,10 +172,7 @@ impl SearchNetworkProfilesFluentBuilder {
         self
     }
     /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAssessmentReportOutput {
 }
 impl DeleteAssessmentReportOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentReportOutput`](crate::operation::delete_assessment_report::DeleteAssessmentReportOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_assessment_report::builders::DeleteAssessmentReportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_assessment_report::builders::DeleteAssessmentReportOutputBuilder {
         crate::operation::delete_assessment_report::builders::DeleteAssessmentReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssessmentReportOutput`](crate::operation::delete_assessment_report::DeleteAssessmentReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssessmentReportOutputBuilder {
     _request_id: Option<String>,
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`BatchCreatePartitionOutput`](crate::operation::batch_create_partition::BatchCreatePartitionOutput) with field(s):
     ///   - [`errors(Option<Vec<PartitionError>>)`](crate::operation::batch_create_partition::BatchCreatePartitionOutput::errors): <p>The errors encountered when trying to create the requested partitions.</p>
     /// - On failure, responds with [`SdkError<BatchCreatePartitionError>`](crate::operation::batch_create_partition::BatchCreatePartitionError)
-    pub fn batch_create_partition(
-        &self,
-    ) -> crate::operation::batch_create_partition::builders::BatchCreatePartitionFluentBuilder {
-        crate::operation::batch_create_partition::builders::BatchCreatePartitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_create_partition(&self) -> crate::operation::batch_create_partition::builders::BatchCreatePartitionFluentBuilder {
+        crate::operation::batch_create_partition::builders::BatchCreatePartitionFluentBuilder::new(self.handle.clone())
     }
 }

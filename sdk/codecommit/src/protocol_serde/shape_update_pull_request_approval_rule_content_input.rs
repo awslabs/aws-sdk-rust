@@ -10,9 +10,7 @@ pub fn ser_update_pull_request_approval_rule_content_input(
         object.key("approvalRuleName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.existing_rule_content_sha256 {
-        object
-            .key("existingRuleContentSha256")
-            .string(var_3.as_str());
+        object.key("existingRuleContentSha256").string(var_3.as_str());
     }
     if let Some(var_4) = &input.new_rule_content {
         object.key("newRuleContent").string(var_4.as_str());

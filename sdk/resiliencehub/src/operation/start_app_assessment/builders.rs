@@ -10,10 +10,7 @@ impl StartAppAssessmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_app_assessment::StartAppAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_assessment::StartAppAssessmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_app_assessment::StartAppAssessmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_app_assessment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartAppAssessmentFluentBuilder {
         }
     }
     /// Access the StartAppAssessment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_app_assessment::builders::StartAppAssessmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_app_assessment::builders::StartAppAssessmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartAppAssessmentFluentBuilder {
             crate::operation::start_app_assessment::StartAppAssessment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_assessment::StartAppAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_app_assessment::StartAppAssessmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartAppAssessmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartAppAssessmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_app_assessment::StartAppAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_assessment::StartAppAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_app_assessment::StartAppAssessmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartAppAssessmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_app_assessment::StartAppAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_assessment::StartAppAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_app_assessment::StartAppAssessmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartAppAssessmentFluentBuilder {
             crate::operation::start_app_assessment::StartAppAssessment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_assessment::StartAppAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_app_assessment::StartAppAssessmentError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl StartAppAssessmentFluentBuilder {
         self.inner.get_app_version()
     }
     /// <p>The name for the assessment.</p>
-    pub fn assessment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_name(input.into());
         self
     }
     /// <p>The name for the assessment.</p>
-    pub fn set_assessment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_name(input);
         self
     }
@@ -189,30 +167,17 @@ impl StartAppAssessmentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

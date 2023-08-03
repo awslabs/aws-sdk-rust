@@ -30,9 +30,7 @@ impl BuiltinSlotTypeMetadata {
 
 /// A builder for [`BuiltinSlotTypeMetadata`](crate::types::BuiltinSlotTypeMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuiltinSlotTypeMetadataBuilder {
     pub(crate) signature: ::std::option::Option<::std::string::String>,
     pub(crate) supported_locales: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>,
@@ -64,17 +62,12 @@ impl BuiltinSlotTypeMetadataBuilder {
         self
     }
     /// <p>A list of target locales for the slot. </p>
-    pub fn set_supported_locales(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>,
-    ) -> Self {
+    pub fn set_supported_locales(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>) -> Self {
         self.supported_locales = input;
         self
     }
     /// <p>A list of target locales for the slot. </p>
-    pub fn get_supported_locales(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Locale>> {
+    pub fn get_supported_locales(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Locale>> {
         &self.supported_locales
     }
     /// Consumes the builder and constructs a [`BuiltinSlotTypeMetadata`](crate::types::BuiltinSlotTypeMetadata).

@@ -9,8 +9,7 @@ pub struct Input {
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>. </p>
     #[doc(hidden)]
-    pub input_processing_configuration:
-        ::std::option::Option<crate::types::InputProcessingConfiguration>,
+    pub input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
     pub kinesis_streams_input: ::std::option::Option<crate::types::KinesisStreamsInput>,
@@ -31,21 +30,15 @@ impl Input {
         self.name_prefix.as_deref()
     }
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>. </p>
-    pub fn input_processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputProcessingConfiguration> {
+    pub fn input_processing_configuration(&self) -> ::std::option::Option<&crate::types::InputProcessingConfiguration> {
         self.input_processing_configuration.as_ref()
     }
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN). </p>
-    pub fn kinesis_streams_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisStreamsInput> {
+    pub fn kinesis_streams_input(&self) -> ::std::option::Option<&crate::types::KinesisStreamsInput> {
         self.kinesis_streams_input.as_ref()
     }
     /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
-    pub fn kinesis_firehose_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisFirehoseInput> {
+    pub fn kinesis_firehose_input(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseInput> {
         self.kinesis_firehose_input.as_ref()
     }
     /// <p>Describes the number of in-application streams to create. </p>
@@ -67,13 +60,10 @@ impl Input {
 
 /// A builder for [`Input`](crate::types::Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) input_processing_configuration:
-        ::std::option::Option<crate::types::InputProcessingConfiguration>,
+    pub(crate) input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
     pub(crate) kinesis_streams_input: ::std::option::Option<crate::types::KinesisStreamsInput>,
     pub(crate) kinesis_firehose_input: ::std::option::Option<crate::types::KinesisFirehoseInput>,
     pub(crate) input_parallelism: ::std::option::Option<crate::types::InputParallelism>,
@@ -95,25 +85,17 @@ impl InputBuilder {
         &self.name_prefix
     }
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>. </p>
-    pub fn input_processing_configuration(
-        mut self,
-        input: crate::types::InputProcessingConfiguration,
-    ) -> Self {
+    pub fn input_processing_configuration(mut self, input: crate::types::InputProcessingConfiguration) -> Self {
         self.input_processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>. </p>
-    pub fn set_input_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InputProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_input_processing_configuration(mut self, input: ::std::option::Option<crate::types::InputProcessingConfiguration>) -> Self {
         self.input_processing_configuration = input;
         self
     }
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>. </p>
-    pub fn get_input_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
+    pub fn get_input_processing_configuration(&self) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
         &self.input_processing_configuration
     }
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN). </p>
@@ -122,17 +104,12 @@ impl InputBuilder {
         self
     }
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN). </p>
-    pub fn set_kinesis_streams_input(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisStreamsInput>,
-    ) -> Self {
+    pub fn set_kinesis_streams_input(mut self, input: ::std::option::Option<crate::types::KinesisStreamsInput>) -> Self {
         self.kinesis_streams_input = input;
         self
     }
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN). </p>
-    pub fn get_kinesis_streams_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisStreamsInput> {
+    pub fn get_kinesis_streams_input(&self) -> &::std::option::Option<crate::types::KinesisStreamsInput> {
         &self.kinesis_streams_input
     }
     /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
@@ -141,17 +118,12 @@ impl InputBuilder {
         self
     }
     /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
-    pub fn set_kinesis_firehose_input(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisFirehoseInput>,
-    ) -> Self {
+    pub fn set_kinesis_firehose_input(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseInput>) -> Self {
         self.kinesis_firehose_input = input;
         self
     }
     /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
-    pub fn get_kinesis_firehose_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisFirehoseInput> {
+    pub fn get_kinesis_firehose_input(&self) -> &::std::option::Option<crate::types::KinesisFirehoseInput> {
         &self.kinesis_firehose_input
     }
     /// <p>Describes the number of in-application streams to create. </p>
@@ -160,10 +132,7 @@ impl InputBuilder {
         self
     }
     /// <p>Describes the number of in-application streams to create. </p>
-    pub fn set_input_parallelism(
-        mut self,
-        input: ::std::option::Option<crate::types::InputParallelism>,
-    ) -> Self {
+    pub fn set_input_parallelism(mut self, input: ::std::option::Option<crate::types::InputParallelism>) -> Self {
         self.input_parallelism = input;
         self
     }
@@ -179,10 +148,7 @@ impl InputBuilder {
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
-    pub fn set_input_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceSchema>,
-    ) -> Self {
+    pub fn set_input_schema(mut self, input: ::std::option::Option<crate::types::SourceSchema>) -> Self {
         self.input_schema = input;
         self
     }

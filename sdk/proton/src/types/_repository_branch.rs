@@ -44,9 +44,7 @@ impl RepositoryBranch {
 
 /// A builder for [`RepositoryBranch`](crate::types::RepositoryBranch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryBranchBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) provider: ::std::option::Option<crate::types::RepositoryProvider>,
@@ -74,10 +72,7 @@ impl RepositoryBranchBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.provider = input;
         self
     }

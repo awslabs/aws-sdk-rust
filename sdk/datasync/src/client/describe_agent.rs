@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`endpoint_type(Option<EndpointType>)`](crate::operation::describe_agent::DescribeAgentOutput::endpoint_type): <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
     ///   - [`private_link_config(Option<PrivateLinkConfig>)`](crate::operation::describe_agent::DescribeAgentOutput::private_link_config): <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
     /// - On failure, responds with [`SdkError<DescribeAgentError>`](crate::operation::describe_agent::DescribeAgentError)
-    pub fn describe_agent(
-        &self,
-    ) -> crate::operation::describe_agent::builders::DescribeAgentFluentBuilder {
-        crate::operation::describe_agent::builders::DescribeAgentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_agent(&self) -> crate::operation::describe_agent::builders::DescribeAgentFluentBuilder {
+        crate::operation::describe_agent::builders::DescribeAgentFluentBuilder::new(self.handle.clone())
     }
 }

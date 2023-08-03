@@ -65,9 +65,7 @@ impl S3Location {
 
 /// A builder for [`S3Location`](crate::types::S3Location).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3LocationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -120,10 +118,7 @@ impl S3LocationBuilder {
     /// <li> <p> <code>tgz</code>: A compressed tar archive file.</p> </li>
     /// <li> <p> <code>zip</code>: A zip archive file.</p> </li>
     /// </ul>
-    pub fn set_bundle_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BundleType>,
-    ) -> Self {
+    pub fn set_bundle_type(mut self, input: ::std::option::Option<crate::types::BundleType>) -> Self {
         self.bundle_type = input;
         self
     }

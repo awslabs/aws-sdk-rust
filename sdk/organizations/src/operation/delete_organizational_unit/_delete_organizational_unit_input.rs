@@ -17,37 +17,27 @@ impl DeleteOrganizationalUnitInput {
 }
 impl DeleteOrganizationalUnitInput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationalUnitInput`](crate::operation::delete_organizational_unit::DeleteOrganizationalUnitInput).
-    pub fn builder(
-    ) -> crate::operation::delete_organizational_unit::builders::DeleteOrganizationalUnitInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_organizational_unit::builders::DeleteOrganizationalUnitInputBuilder {
         crate::operation::delete_organizational_unit::builders::DeleteOrganizationalUnitInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOrganizationalUnitInput`](crate::operation::delete_organizational_unit::DeleteOrganizationalUnitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOrganizationalUnitInputBuilder {
     pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOrganizationalUnitInputBuilder {
     /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    pub fn organizational_unit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    pub fn set_organizational_unit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit_id = input;
         self
     }
@@ -63,10 +53,8 @@ impl DeleteOrganizationalUnitInputBuilder {
         crate::operation::delete_organizational_unit::DeleteOrganizationalUnitInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_organizational_unit::DeleteOrganizationalUnitInput {
-                organizational_unit_id: self.organizational_unit_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_organizational_unit::DeleteOrganizationalUnitInput {
+            organizational_unit_id: self.organizational_unit_id,
+        })
     }
 }

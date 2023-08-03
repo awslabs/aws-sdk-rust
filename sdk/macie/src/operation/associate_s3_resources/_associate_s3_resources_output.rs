@@ -21,20 +21,16 @@ impl ::aws_http::request_id::RequestId for AssociateS3ResourcesOutput {
 }
 impl AssociateS3ResourcesOutput {
     /// Creates a new builder-style object to manufacture [`AssociateS3ResourcesOutput`](crate::operation::associate_s3_resources::AssociateS3ResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_s3_resources::builders::AssociateS3ResourcesOutputBuilder {
+    pub fn builder() -> crate::operation::associate_s3_resources::builders::AssociateS3ResourcesOutputBuilder {
         crate::operation::associate_s3_resources::builders::AssociateS3ResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateS3ResourcesOutput`](crate::operation::associate_s3_resources::AssociateS3ResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateS3ResourcesOutputBuilder {
-    pub(crate) failed_s3_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>,
+    pub(crate) failed_s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>,
     _request_id: Option<String>,
 }
 impl AssociateS3ResourcesOutputBuilder {
@@ -50,17 +46,12 @@ impl AssociateS3ResourcesOutputBuilder {
         self
     }
     /// <p>(Discontinued) S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>
-    pub fn set_failed_s3_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>,
-    ) -> Self {
+    pub fn set_failed_s3_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>) -> Self {
         self.failed_s3_resources = input;
         self
     }
     /// <p>(Discontinued) S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>
-    pub fn get_failed_s3_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>> {
+    pub fn get_failed_s3_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>> {
         &self.failed_s3_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -10,10 +10,7 @@ impl UpdateKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_key::UpdateKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_key::UpdateKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_key();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateKeyFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_key::UpdateKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_key::UpdateKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateKeyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_key::UpdateKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_key::UpdateKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError>,
     > {
         self.customize_middleware().await
@@ -146,10 +134,7 @@ impl UpdateKeyFluentBuilder {
         self
     }
     /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_expire_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expire_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expire_time(input);
         self
     }
@@ -200,10 +185,7 @@ impl UpdateKeyFluentBuilder {
         self
     }
     /// <p>Updates the API key restrictions for the API key resource.</p>
-    pub fn set_restrictions(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiKeyRestrictions>,
-    ) -> Self {
+    pub fn set_restrictions(mut self, input: ::std::option::Option<crate::types::ApiKeyRestrictions>) -> Self {
         self.inner = self.inner.set_restrictions(input);
         self
     }

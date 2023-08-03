@@ -38,10 +38,7 @@ impl GetCachePolicyConfigFluentBuilder {
         }
     }
     /// Access the GetCachePolicyConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetCachePolicyConfigFluentBuilder {
             crate::operation::get_cache_policy_config::GetCachePolicyConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cache_policy_config::GetCachePolicyConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cache_policy_config::GetCachePolicyConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetCachePolicyConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetCachePolicyConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cache_policy_config::GetCachePolicyConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cache_policy_config::GetCachePolicyConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cache_policy_config::GetCachePolicyConfigError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetCachePolicyConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cache_policy_config::GetCachePolicyConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cache_policy_config::GetCachePolicyConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cache_policy_config::GetCachePolicyConfigError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl GetCachePolicyConfigFluentBuilder {
             crate::operation::get_cache_policy_config::GetCachePolicyConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cache_policy_config::GetCachePolicyConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cache_policy_config::GetCachePolicyConfigError>,
     > {
         self.customize_middleware().await
     }

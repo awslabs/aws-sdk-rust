@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDomainAssociationOutput`](crate::operation::update_domain_association::UpdateDomainAssociationOutput) with field(s):
     ///   - [`domain_association(Option<DomainAssociation>)`](crate::operation::update_domain_association::UpdateDomainAssociationOutput::domain_association): <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
     /// - On failure, responds with [`SdkError<UpdateDomainAssociationError>`](crate::operation::update_domain_association::UpdateDomainAssociationError)
-    pub fn update_domain_association(
-        &self,
-    ) -> crate::operation::update_domain_association::builders::UpdateDomainAssociationFluentBuilder
-    {
+    pub fn update_domain_association(&self) -> crate::operation::update_domain_association::builders::UpdateDomainAssociationFluentBuilder {
         crate::operation::update_domain_association::builders::UpdateDomainAssociationFluentBuilder::new(self.handle.clone())
     }
 }

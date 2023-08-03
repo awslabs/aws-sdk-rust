@@ -10,10 +10,7 @@ impl DisableAddOnInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_add_on::DisableAddOnOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_add_on::DisableAddOnError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_add_on::DisableAddOnError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disable_add_on();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DisableAddOnFluentBuilder {
         }
     }
     /// Access the DisableAddOn as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_add_on::builders::DisableAddOnInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disable_add_on::builders::DisableAddOnInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DisableAddOnFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,10 +112,7 @@ impl DisableAddOnFluentBuilder {
         self
     }
     /// <p>The add-on type to disable.</p>
-    pub fn set_add_on_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AddOnType>,
-    ) -> Self {
+    pub fn set_add_on_type(mut self, input: ::std::option::Option<crate::types::AddOnType>) -> Self {
         self.inner = self.inner.set_add_on_type(input);
         self
     }
@@ -132,18 +121,12 @@ impl DisableAddOnFluentBuilder {
         self.inner.get_add_on_type()
     }
     /// <p>The name of the source resource for which to disable the add-on.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of the source resource for which to disable the add-on.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }

@@ -100,18 +100,12 @@ impl EntityDisplayDataBuilder {
         &self.group_name
     }
     /// <p>The user name of the user.</p>
-    pub fn identified_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identified_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identified_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name of the user.</p>
-    pub fn set_identified_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identified_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identified_user_name = input;
         self
     }

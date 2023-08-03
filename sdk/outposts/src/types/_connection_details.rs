@@ -58,9 +58,7 @@ impl ConnectionDetails {
 
 /// A builder for [`ConnectionDetails`](crate::types::ConnectionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionDetailsBuilder {
     pub(crate) client_public_key: ::std::option::Option<::std::string::String>,
     pub(crate) server_public_key: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct ConnectionDetailsBuilder {
 }
 impl ConnectionDetailsBuilder {
     /// <p> The public key of the client. </p>
-    pub fn client_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The public key of the client. </p>
-    pub fn set_client_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_public_key = input;
         self
     }
@@ -91,18 +83,12 @@ impl ConnectionDetailsBuilder {
         &self.client_public_key
     }
     /// <p> The public key of the server. </p>
-    pub fn server_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The public key of the server. </p>
-    pub fn set_server_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_public_key = input;
         self
     }
@@ -111,18 +97,12 @@ impl ConnectionDetailsBuilder {
         &self.server_public_key
     }
     /// <p> The endpoint for the server. </p>
-    pub fn server_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The endpoint for the server. </p>
-    pub fn set_server_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_endpoint = input;
         self
     }
@@ -131,18 +111,12 @@ impl ConnectionDetailsBuilder {
         &self.server_endpoint
     }
     /// <p> The client tunnel address. </p>
-    pub fn client_tunnel_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_tunnel_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_tunnel_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The client tunnel address. </p>
-    pub fn set_client_tunnel_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_tunnel_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_tunnel_address = input;
         self
     }
@@ -151,18 +125,12 @@ impl ConnectionDetailsBuilder {
         &self.client_tunnel_address
     }
     /// <p> The server tunnel address. </p>
-    pub fn server_tunnel_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_tunnel_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_tunnel_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The server tunnel address. </p>
-    pub fn set_server_tunnel_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_tunnel_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_tunnel_address = input;
         self
     }
@@ -182,17 +150,12 @@ impl ConnectionDetailsBuilder {
         self
     }
     /// <p> The allowed IP addresses. </p>
-    pub fn set_allowed_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_ips = input;
         self
     }
     /// <p> The allowed IP addresses. </p>
-    pub fn get_allowed_ips(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_ips
     }
     /// Consumes the builder and constructs a [`ConnectionDetails`](crate::types::ConnectionDetails).

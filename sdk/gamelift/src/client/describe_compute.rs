@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeComputeOutput`](crate::operation::describe_compute::DescribeComputeOutput) with field(s):
     ///   - [`compute(Option<Compute>)`](crate::operation::describe_compute::DescribeComputeOutput::compute): <p>The details of the compute resource you registered to the specified fleet.</p>
     /// - On failure, responds with [`SdkError<DescribeComputeError>`](crate::operation::describe_compute::DescribeComputeError)
-    pub fn describe_compute(
-        &self,
-    ) -> crate::operation::describe_compute::builders::DescribeComputeFluentBuilder {
-        crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_compute(&self) -> crate::operation::describe_compute::builders::DescribeComputeFluentBuilder {
+        crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::new(self.handle.clone())
     }
 }

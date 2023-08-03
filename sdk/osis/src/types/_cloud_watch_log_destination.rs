@@ -23,9 +23,7 @@ impl CloudWatchLogDestination {
 
 /// A builder for [`CloudWatchLogDestination`](crate::types::CloudWatchLogDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogDestinationBuilder {
     pub(crate) log_group: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl CloudWatchLogDestinationBuilder {
     }
     /// Consumes the builder and constructs a [`CloudWatchLogDestination`](crate::types::CloudWatchLogDestination).
     pub fn build(self) -> crate::types::CloudWatchLogDestination {
-        crate::types::CloudWatchLogDestination {
-            log_group: self.log_group,
-        }
+        crate::types::CloudWatchLogDestination { log_group: self.log_group }
     }
 }

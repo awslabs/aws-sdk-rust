@@ -26,8 +26,7 @@ impl UpdateAssessmentControlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssessmentControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_assessment_control::builders::UpdateAssessmentControlInputBuilder,
+    inner: crate::operation::update_assessment_control::builders::UpdateAssessmentControlInputBuilder,
 }
 impl UpdateAssessmentControlFluentBuilder {
     /// Creates a new `UpdateAssessmentControl`.
@@ -38,10 +37,7 @@ impl UpdateAssessmentControlFluentBuilder {
         }
     }
     /// Access the UpdateAssessmentControl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_assessment_control::builders::UpdateAssessmentControlInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_assessment_control::builders::UpdateAssessmentControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateAssessmentControlFluentBuilder {
             crate::operation::update_assessment_control::UpdateAssessmentControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_control::UpdateAssessmentControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_control::UpdateAssessmentControlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateAssessmentControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateAssessmentControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment_control::UpdateAssessmentControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_control::UpdateAssessmentControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_control::UpdateAssessmentControlError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateAssessmentControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment_control::UpdateAssessmentControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_control::UpdateAssessmentControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_control::UpdateAssessmentControlError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl UpdateAssessmentControlFluentBuilder {
             crate::operation::update_assessment_control::UpdateAssessmentControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_control::UpdateAssessmentControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_control::UpdateAssessmentControlError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
@@ -145,18 +124,12 @@ impl UpdateAssessmentControlFluentBuilder {
         self.inner.get_assessment_id()
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_set_id(input.into());
         self
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
@@ -184,10 +157,7 @@ impl UpdateAssessmentControlFluentBuilder {
         self
     }
     /// <p> The status of the control. </p>
-    pub fn set_control_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlStatus>,
-    ) -> Self {
+    pub fn set_control_status(mut self, input: ::std::option::Option<crate::types::ControlStatus>) -> Self {
         self.inner = self.inner.set_control_status(input);
         self
     }

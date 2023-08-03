@@ -10,10 +10,7 @@ impl CreateApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_application();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateApplicationFluentBuilder {
         }
     }
     /// Access the CreateApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_application::builders::CreateApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_application::builders::CreateApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateApplicationFluentBuilder {
             crate::operation::create_application::CreateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateApplicationFluentBuilder {
             crate::operation::create_application::CreateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
@@ -171,18 +149,12 @@ impl CreateApplicationFluentBuilder {
         self.inner.get_cwe_monitor_enabled()
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
-    pub fn ops_item_sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_item_sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ops_item_sns_topic_arn(input.into());
         self
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
-    pub fn set_ops_item_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_item_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ops_item_sns_topic_arn(input);
         self
     }
@@ -200,10 +172,7 @@ impl CreateApplicationFluentBuilder {
         self
     }
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -245,10 +214,7 @@ impl CreateApplicationFluentBuilder {
         self
     }
     /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
-    pub fn set_grouping_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupingType>,
-    ) -> Self {
+    pub fn set_grouping_type(mut self, input: ::std::option::Option<crate::types::GroupingType>) -> Self {
         self.inner = self.inner.set_grouping_type(input);
         self
     }

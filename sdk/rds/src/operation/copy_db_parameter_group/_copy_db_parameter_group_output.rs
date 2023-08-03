@@ -23,18 +23,14 @@ impl ::aws_http::request_id::RequestId for CopyDbParameterGroupOutput {
 }
 impl CopyDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CopyDbParameterGroupOutput`](crate::operation::copy_db_parameter_group::CopyDbParameterGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::copy_db_parameter_group::builders::CopyDbParameterGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::copy_db_parameter_group::builders::CopyDbParameterGroupOutputBuilder {
         crate::operation::copy_db_parameter_group::builders::CopyDbParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CopyDbParameterGroupOutput`](crate::operation::copy_db_parameter_group::CopyDbParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyDbParameterGroupOutputBuilder {
     pub(crate) db_parameter_group: ::std::option::Option<crate::types::DbParameterGroup>,
     _request_id: Option<String>,
@@ -48,10 +44,7 @@ impl CopyDbParameterGroupOutputBuilder {
     }
     /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
-    pub fn set_db_parameter_group(
-        mut self,
-        input: ::std::option::Option<crate::types::DbParameterGroup>,
-    ) -> Self {
+    pub fn set_db_parameter_group(mut self, input: ::std::option::Option<crate::types::DbParameterGroup>) -> Self {
         self.db_parameter_group = input;
         self
     }

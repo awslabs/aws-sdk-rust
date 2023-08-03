@@ -35,12 +35,9 @@ impl ListContextsOutput {
 
 /// A builder for [`ListContextsOutput`](crate::operation::list_contexts::ListContextsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContextsOutputBuilder {
-    pub(crate) context_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContextSummary>>,
+    pub(crate) context_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ContextSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListContextsOutputBuilder {
         self
     }
     /// <p>A list of contexts and their properties.</p>
-    pub fn set_context_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContextSummary>>,
-    ) -> Self {
+    pub fn set_context_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContextSummary>>) -> Self {
         self.context_summaries = input;
         self
     }
     /// <p>A list of contexts and their properties.</p>
-    pub fn get_context_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextSummary>> {
+    pub fn get_context_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextSummary>> {
         &self.context_summaries
     }
     /// <p>A token for getting the next set of contexts, if there are any.</p>

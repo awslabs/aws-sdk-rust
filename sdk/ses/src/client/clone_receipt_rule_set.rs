@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`original_rule_set_name(impl ::std::convert::Into<String>)`](crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetFluentBuilder::original_rule_set_name) / [`set_original_rule_set_name(Option<String>)`](crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetFluentBuilder::set_original_rule_set_name): <p>The name of the rule set to clone.</p>
     /// - On success, responds with [`CloneReceiptRuleSetOutput`](crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetOutput)
     /// - On failure, responds with [`SdkError<CloneReceiptRuleSetError>`](crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError)
-    pub fn clone_receipt_rule_set(
-        &self,
-    ) -> crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetFluentBuilder {
-        crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn clone_receipt_rule_set(&self) -> crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetFluentBuilder {
+        crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetFluentBuilder::new(self.handle.clone())
     }
 }

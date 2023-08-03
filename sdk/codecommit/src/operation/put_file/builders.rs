@@ -10,10 +10,7 @@ impl PutFileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_file::PutFileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_file::PutFileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_file();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutFileFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_file::PutFile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_file::PutFile, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,15 @@ impl PutFileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_file::PutFileOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_file::PutFileOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError>>
+    {
         let op = self
             .inner
             .build()
@@ -92,10 +81,8 @@ impl PutFileFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_file::PutFileOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_file::PutFileOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError>>
+    {
         self.send_middleware().await
     }
 
@@ -104,27 +91,18 @@ impl PutFileFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_file::PutFile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_file::PutFile, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the repository where you want to add or update the file.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where you want to add or update the file.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -152,10 +130,7 @@ impl PutFileFluentBuilder {
         self
     }
     /// <p>The content of the file, in binary object format. </p>
-    pub fn set_file_content(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_file_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_file_content(input);
         self
     }
@@ -189,10 +164,7 @@ impl PutFileFluentBuilder {
         self
     }
     /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
-    pub fn set_file_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FileModeTypeEnum>,
-    ) -> Self {
+    pub fn set_file_mode(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
         self.inner = self.inner.set_file_mode(input);
         self
     }
@@ -202,19 +174,13 @@ impl PutFileFluentBuilder {
     }
     /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
-    pub fn parent_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_commit_id(input.into());
         self
     }
     /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
-    pub fn set_parent_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_commit_id(input);
         self
     }
@@ -224,18 +190,12 @@ impl PutFileFluentBuilder {
         self.inner.get_parent_commit_id()
     }
     /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
-    pub fn commit_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commit_message(input.into());
         self
     }
     /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
-    pub fn set_commit_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commit_message(input);
         self
     }

@@ -10,10 +10,7 @@ impl CreateUserProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_user_profile::CreateUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_profile::CreateUserProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_profile::CreateUserProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_user_profile();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateUserProfileFluentBuilder {
         }
     }
     /// Access the CreateUserProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateUserProfileFluentBuilder {
             crate::operation::create_user_profile::CreateUserProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_profile::CreateUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_profile::CreateUserProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateUserProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateUserProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_profile::CreateUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_profile::CreateUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_profile::CreateUserProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateUserProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_profile::CreateUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_profile::CreateUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_profile::CreateUserProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateUserProfileFluentBuilder {
             crate::operation::create_user_profile::CreateUserProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_profile::CreateUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_profile::CreateUserProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -152,18 +136,12 @@ impl CreateUserProfileFluentBuilder {
         self.inner.get_ssh_username()
     }
     /// <p>The user's public SSH key.</p>
-    pub fn ssh_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_public_key(input.into());
         self
     }
     /// <p>The user's public SSH key.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_public_key(input);
         self
     }

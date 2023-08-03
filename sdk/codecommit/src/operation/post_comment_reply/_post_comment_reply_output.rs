@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for PostCommentReplyOutput {
 }
 impl PostCommentReplyOutput {
     /// Creates a new builder-style object to manufacture [`PostCommentReplyOutput`](crate::operation::post_comment_reply::PostCommentReplyOutput).
-    pub fn builder() -> crate::operation::post_comment_reply::builders::PostCommentReplyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::post_comment_reply::builders::PostCommentReplyOutputBuilder {
         crate::operation::post_comment_reply::builders::PostCommentReplyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PostCommentReplyOutput`](crate::operation::post_comment_reply::PostCommentReplyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostCommentReplyOutputBuilder {
     pub(crate) comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,

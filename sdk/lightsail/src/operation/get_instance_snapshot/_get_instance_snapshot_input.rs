@@ -15,35 +15,25 @@ impl GetInstanceSnapshotInput {
 }
 impl GetInstanceSnapshotInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotInput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotInputBuilder {
-        crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotInputBuilder {
+        crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceSnapshotInput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceSnapshotInputBuilder {
     pub(crate) instance_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl GetInstanceSnapshotInputBuilder {
     /// <p>The name of the snapshot for which you are requesting information.</p>
-    pub fn instance_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot for which you are requesting information.</p>
-    pub fn set_instance_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_snapshot_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetInstanceSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceSnapshotInput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_snapshot::GetInstanceSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_instance_snapshot::GetInstanceSnapshotInput {
-                instance_snapshot_name: self.instance_snapshot_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_instance_snapshot::GetInstanceSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_instance_snapshot::GetInstanceSnapshotInput {
+            instance_snapshot_name: self.instance_snapshot_name,
+        })
     }
 }

@@ -29,9 +29,7 @@ impl GetAccessPolicyInput {
 
 /// A builder for [`GetAccessPolicyInput`](crate::operation::get_access_policy::GetAccessPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPolicyInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -43,10 +41,7 @@ impl GetAccessPolicyInputBuilder {
         self
     }
     /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -71,10 +66,7 @@ impl GetAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessPolicyInput`](crate::operation::get_access_policy::GetAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_access_policy::GetAccessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_access_policy::GetAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_access_policy::GetAccessPolicyInput {
             r#type: self.r#type,
             name: self.name,

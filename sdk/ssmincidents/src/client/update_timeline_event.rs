@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`event_references(Vec<EventReference>)`](crate::operation::update_timeline_event::builders::UpdateTimelineEventFluentBuilder::event_references) / [`set_event_references(Option<Vec<EventReference>>)`](crate::operation::update_timeline_event::builders::UpdateTimelineEventFluentBuilder::set_event_references): <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>   <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>  </important>
     /// - On success, responds with [`UpdateTimelineEventOutput`](crate::operation::update_timeline_event::UpdateTimelineEventOutput)
     /// - On failure, responds with [`SdkError<UpdateTimelineEventError>`](crate::operation::update_timeline_event::UpdateTimelineEventError)
-    pub fn update_timeline_event(
-        &self,
-    ) -> crate::operation::update_timeline_event::builders::UpdateTimelineEventFluentBuilder {
-        crate::operation::update_timeline_event::builders::UpdateTimelineEventFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_timeline_event(&self) -> crate::operation::update_timeline_event::builders::UpdateTimelineEventFluentBuilder {
+        crate::operation::update_timeline_event::builders::UpdateTimelineEventFluentBuilder::new(self.handle.clone())
     }
 }

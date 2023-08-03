@@ -38,9 +38,7 @@ impl PutDataLakeSettingsFluentBuilder {
         }
     }
     /// Access the PutDataLakeSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl PutDataLakeSettingsFluentBuilder {
             crate::operation::put_data_lake_settings::PutDataLakeSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_lake_settings::PutDataLakeSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_lake_settings::PutDataLakeSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl PutDataLakeSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl PutDataLakeSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_data_lake_settings::PutDataLakeSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_lake_settings::PutDataLakeSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_lake_settings::PutDataLakeSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl PutDataLakeSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_data_lake_settings::PutDataLakeSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_lake_settings::PutDataLakeSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_lake_settings::PutDataLakeSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl PutDataLakeSettingsFluentBuilder {
             crate::operation::put_data_lake_settings::PutDataLakeSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_lake_settings::PutDataLakeSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_lake_settings::PutDataLakeSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +130,7 @@ impl PutDataLakeSettingsFluentBuilder {
         self
     }
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
-    pub fn set_data_lake_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeSettings>,
-    ) -> Self {
+    pub fn set_data_lake_settings(mut self, input: ::std::option::Option<crate::types::DataLakeSettings>) -> Self {
         self.inner = self.inner.set_data_lake_settings(input);
         self
     }

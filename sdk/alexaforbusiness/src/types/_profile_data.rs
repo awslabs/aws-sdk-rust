@@ -79,9 +79,7 @@ impl ProfileData {
 
 /// A builder for [`ProfileData`](crate::types::ProfileData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileDataBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
@@ -170,10 +168,7 @@ impl ProfileDataBuilder {
         self
     }
     /// <p>The distance unit of a room profile.</p>
-    pub fn set_distance_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::DistanceUnit>,
-    ) -> Self {
+    pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.distance_unit = input;
         self
     }
@@ -187,10 +182,7 @@ impl ProfileDataBuilder {
         self
     }
     /// <p>The temperature unit of a room profile.</p>
-    pub fn set_temperature_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::TemperatureUnit>,
-    ) -> Self {
+    pub fn set_temperature_unit(mut self, input: ::std::option::Option<crate::types::TemperatureUnit>) -> Self {
         self.temperature_unit = input;
         self
     }

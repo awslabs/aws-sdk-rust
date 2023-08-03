@@ -14,9 +14,7 @@ pub struct CreateSqlInjectionMatchSetOutput {
 }
 impl CreateSqlInjectionMatchSetOutput {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
-    pub fn sql_injection_match_set(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SqlInjectionMatchSet> {
+    pub fn sql_injection_match_set(&self) -> ::std::option::Option<&crate::types::SqlInjectionMatchSet> {
         self.sql_injection_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -31,16 +29,14 @@ impl ::aws_http::request_id::RequestId for CreateSqlInjectionMatchSetOutput {
 }
 impl CreateSqlInjectionMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateSqlInjectionMatchSetOutput`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput).
-    pub fn builder() -> crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetOutputBuilder{
+    pub fn builder() -> crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetOutputBuilder {
         crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSqlInjectionMatchSetOutput`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSqlInjectionMatchSetOutputBuilder {
     pub(crate) sql_injection_match_set: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,12 @@ impl CreateSqlInjectionMatchSetOutputBuilder {
         self
     }
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
-    pub fn set_sql_injection_match_set(
-        mut self,
-        input: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
-    ) -> Self {
+    pub fn set_sql_injection_match_set(mut self, input: ::std::option::Option<crate::types::SqlInjectionMatchSet>) -> Self {
         self.sql_injection_match_set = input;
         self
     }
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
-    pub fn get_sql_injection_match_set(
-        &self,
-    ) -> &::std::option::Option<crate::types::SqlInjectionMatchSet> {
+    pub fn get_sql_injection_match_set(&self) -> &::std::option::Option<crate::types::SqlInjectionMatchSet> {
         &self.sql_injection_match_set
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -90,9 +81,7 @@ impl CreateSqlInjectionMatchSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSqlInjectionMatchSetOutput`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput {
+    pub fn build(self) -> crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput {
         crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput {
             sql_injection_match_set: self.sql_injection_match_set,
             change_token: self.change_token,

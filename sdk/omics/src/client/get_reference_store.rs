@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`sse_config(Option<SseConfig>)`](crate::operation::get_reference_store::GetReferenceStoreOutput::sse_config): <p>The store's server-side encryption (SSE) settings.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_reference_store::GetReferenceStoreOutput::creation_time): <p>When the store was created.</p>
     /// - On failure, responds with [`SdkError<GetReferenceStoreError>`](crate::operation::get_reference_store::GetReferenceStoreError)
-    pub fn get_reference_store(
-        &self,
-    ) -> crate::operation::get_reference_store::builders::GetReferenceStoreFluentBuilder {
-        crate::operation::get_reference_store::builders::GetReferenceStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_reference_store(&self) -> crate::operation::get_reference_store::builders::GetReferenceStoreFluentBuilder {
+        crate::operation::get_reference_store::builders::GetReferenceStoreFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeByoipCidrsOutput {
 }
 impl DescribeByoipCidrsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeByoipCidrsOutput`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsOutputBuilder {
         crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeByoipCidrsOutput`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeByoipCidrsOutputBuilder {
     pub(crate) byoip_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeByoipCidrsOutputBuilder {
         self
     }
     /// <p>Information about your address ranges.</p>
-    pub fn set_byoip_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>>,
-    ) -> Self {
+    pub fn set_byoip_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>>) -> Self {
         self.byoip_cidrs = input;
         self
     }
     /// <p>Information about your address ranges.</p>
-    pub fn get_byoip_cidrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>> {
+    pub fn get_byoip_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>> {
         &self.byoip_cidrs
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

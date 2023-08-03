@@ -26,7 +26,7 @@ impl RebootReplicationInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RebootReplicationInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceInputBuilder,
+    inner: crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceInputBuilder,
 }
 impl RebootReplicationInstanceFluentBuilder {
     /// Creates a new `RebootReplicationInstance`.
@@ -37,7 +37,7 @@ impl RebootReplicationInstanceFluentBuilder {
         }
     }
     /// Access the RebootReplicationInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RebootReplicationInstanceFluentBuilder {
             crate::operation::reboot_replication_instance::RebootReplicationInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_replication_instance::RebootReplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_replication_instance::RebootReplicationInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RebootReplicationInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RebootReplicationInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_replication_instance::RebootReplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_replication_instance::RebootReplicationInstanceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RebootReplicationInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_replication_instance::RebootReplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_replication_instance::RebootReplicationInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RebootReplicationInstanceFluentBuilder {
             crate::operation::reboot_replication_instance::RebootReplicationInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_replication_instance::RebootReplicationInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_replication_instance::RebootReplicationInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_instance_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
     }

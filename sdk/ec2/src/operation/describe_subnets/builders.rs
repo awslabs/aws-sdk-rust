@@ -10,10 +10,7 @@ impl DescribeSubnetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_subnets::DescribeSubnetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subnets::DescribeSubnetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subnets::DescribeSubnetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_subnets();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeSubnetsFluentBuilder {
         }
     }
     /// Access the DescribeSubnets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_subnets::builders::DescribeSubnetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_subnets::builders::DescribeSubnetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeSubnetsFluentBuilder {
             crate::operation::describe_subnets::DescribeSubnets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subnets::DescribeSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subnets::DescribeSubnetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeSubnetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeSubnetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subnets::DescribeSubnetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subnets::DescribeSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subnets::DescribeSubnetsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeSubnetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subnets::DescribeSubnetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subnets::DescribeSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subnets::DescribeSubnetsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl DescribeSubnetsFluentBuilder {
             crate::operation::describe_subnets::DescribeSubnets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subnets::DescribeSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subnets::DescribeSubnetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_subnets::paginator::DescribeSubnetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_subnets::paginator::DescribeSubnetsPaginator {
-        crate::operation::describe_subnets::paginator::DescribeSubnetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_subnets::paginator::DescribeSubnetsPaginator {
+        crate::operation::describe_subnets::paginator::DescribeSubnetsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -210,10 +189,7 @@ impl DescribeSubnetsFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC for the subnet.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -266,10 +242,7 @@ impl DescribeSubnetsFluentBuilder {
     }
     /// <p>The IDs of the subnets.</p>
     /// <p>Default: Describes all your subnets.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }

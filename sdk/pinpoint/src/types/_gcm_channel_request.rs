@@ -30,9 +30,7 @@ impl GcmChannelRequest {
 
 /// A builder for [`GcmChannelRequest`](crate::types::GcmChannelRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GcmChannelRequestBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

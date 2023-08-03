@@ -38,10 +38,7 @@ impl DescribeCompilationJobFluentBuilder {
         }
     }
     /// Access the DescribeCompilationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_compilation_job::builders::DescribeCompilationJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_compilation_job::builders::DescribeCompilationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeCompilationJobFluentBuilder {
             crate::operation::describe_compilation_job::DescribeCompilationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compilation_job::DescribeCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compilation_job::DescribeCompilationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeCompilationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeCompilationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_compilation_job::DescribeCompilationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compilation_job::DescribeCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compilation_job::DescribeCompilationJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeCompilationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_compilation_job::DescribeCompilationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compilation_job::DescribeCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compilation_job::DescribeCompilationJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DescribeCompilationJobFluentBuilder {
             crate::operation::describe_compilation_job::DescribeCompilationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compilation_job::DescribeCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compilation_job::DescribeCompilationJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the model compilation job that you want information about.</p>
-    pub fn compilation_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compilation_job_name(input.into());
         self
     }
     /// <p>The name of the model compilation job that you want information about.</p>
-    pub fn set_compilation_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compilation_job_name(input);
         self
     }

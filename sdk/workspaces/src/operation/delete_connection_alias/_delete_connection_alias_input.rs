@@ -15,18 +15,14 @@ impl DeleteConnectionAliasInput {
 }
 impl DeleteConnectionAliasInput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionAliasInput`](crate::operation::delete_connection_alias::DeleteConnectionAliasInput).
-    pub fn builder(
-    ) -> crate::operation::delete_connection_alias::builders::DeleteConnectionAliasInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_connection_alias::builders::DeleteConnectionAliasInputBuilder {
         crate::operation::delete_connection_alias::builders::DeleteConnectionAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectionAliasInput`](crate::operation::delete_connection_alias::DeleteConnectionAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectionAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DeleteConnectionAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConnectionAliasInput`](crate::operation::delete_connection_alias::DeleteConnectionAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_connection_alias::DeleteConnectionAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_connection_alias::DeleteConnectionAliasInput {
-                alias_id: self.alias_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_connection_alias::DeleteConnectionAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_connection_alias::DeleteConnectionAliasInput { alias_id: self.alias_id })
     }
 }

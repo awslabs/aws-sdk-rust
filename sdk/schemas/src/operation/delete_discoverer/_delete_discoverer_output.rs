@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDiscovererOutput {
 }
 impl DeleteDiscovererOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDiscovererOutput`](crate::operation::delete_discoverer::DeleteDiscovererOutput).
-    pub fn builder() -> crate::operation::delete_discoverer::builders::DeleteDiscovererOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_discoverer::builders::DeleteDiscovererOutputBuilder {
         crate::operation::delete_discoverer::builders::DeleteDiscovererOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDiscovererOutput`](crate::operation::delete_discoverer::DeleteDiscovererOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDiscovererOutputBuilder {
     _request_id: Option<String>,
 }

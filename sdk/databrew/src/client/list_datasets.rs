@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`datasets(Option<Vec<Dataset>>)`](crate::operation::list_datasets::ListDatasetsOutput::datasets): <p>A list of datasets that are defined.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
-    pub fn list_datasets(
-        &self,
-    ) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {
-        crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_datasets(&self) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {
+        crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(self.handle.clone())
     }
 }

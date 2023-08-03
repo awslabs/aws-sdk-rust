@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_api_destination::builders::DeleteApiDestinationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_api_destination::builders::DeleteApiDestinationFluentBuilder::set_name): <p>The name of the destination to delete.</p>
     /// - On success, responds with [`DeleteApiDestinationOutput`](crate::operation::delete_api_destination::DeleteApiDestinationOutput)
     /// - On failure, responds with [`SdkError<DeleteApiDestinationError>`](crate::operation::delete_api_destination::DeleteApiDestinationError)
-    pub fn delete_api_destination(
-        &self,
-    ) -> crate::operation::delete_api_destination::builders::DeleteApiDestinationFluentBuilder {
-        crate::operation::delete_api_destination::builders::DeleteApiDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_api_destination(&self) -> crate::operation::delete_api_destination::builders::DeleteApiDestinationFluentBuilder {
+        crate::operation::delete_api_destination::builders::DeleteApiDestinationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput::application_arn): <p>The application Amazon Resource Name (ARN).</p>
     ///   - [`application_version_id(Option<i64>)`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput::application_version_id): <p>The updated version ID of the application.</p>
     /// - On failure, responds with [`SdkError<DeleteApplicationReferenceDataSourceError>`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceError)
-    pub fn delete_application_reference_data_source(&self) -> crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceFluentBuilder{
-        crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceFluentBuilder::new(self.handle.clone())
+    pub fn delete_application_reference_data_source(
+        &self,
+    ) -> crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceFluentBuilder {
+        crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

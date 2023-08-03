@@ -26,7 +26,7 @@ impl DeleteAssessmentTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAssessmentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateInputBuilder,
+    inner: crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateInputBuilder,
 }
 impl DeleteAssessmentTemplateFluentBuilder {
     /// Creates a new `DeleteAssessmentTemplate`.
@@ -37,10 +37,7 @@ impl DeleteAssessmentTemplateFluentBuilder {
         }
     }
     /// Access the DeleteAssessmentTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteAssessmentTemplateFluentBuilder {
             crate::operation::delete_assessment_template::DeleteAssessmentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_template::DeleteAssessmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_template::DeleteAssessmentTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteAssessmentTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteAssessmentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assessment_template::DeleteAssessmentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_template::DeleteAssessmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_template::DeleteAssessmentTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteAssessmentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assessment_template::DeleteAssessmentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_template::DeleteAssessmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_template::DeleteAssessmentTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteAssessmentTemplateFluentBuilder {
             crate::operation::delete_assessment_template::DeleteAssessmentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_template::DeleteAssessmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_template::DeleteAssessmentTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
-    pub fn assessment_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_template_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
-    pub fn set_assessment_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_template_arn(input);
         self
     }

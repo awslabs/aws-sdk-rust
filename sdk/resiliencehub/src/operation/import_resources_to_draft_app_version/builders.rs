@@ -5,16 +5,16 @@ pub use crate::operation::import_resources_to_draft_app_version::_import_resourc
 
 impl ImportResourcesToDraftAppVersionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.import_resources_to_draft_app_version();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ImportResourcesToDraftAppVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportResourcesToDraftAppVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionInputBuilder,
+    inner: crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionInputBuilder,
 }
 impl ImportResourcesToDraftAppVersionFluentBuilder {
     /// Creates a new `ImportResourcesToDraftAppVersion`.
@@ -37,15 +37,20 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
         }
     }
     /// Access the ImportResourcesToDraftAppVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
@@ -118,17 +133,12 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the resources.</p>
-    pub fn set_source_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_source_arns(input);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the resources.</p>
-    pub fn get_source_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_source_arns()
     }
     /// Appends an item to `terraformSources`.
@@ -141,17 +151,12 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
         self
     }
     /// <p> A list of terraform file s3 URLs you need to import. </p>
-    pub fn set_terraform_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>,
-    ) -> Self {
+    pub fn set_terraform_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>) -> Self {
         self.inner = self.inner.set_terraform_sources(input);
         self
     }
     /// <p> A list of terraform file s3 URLs you need to import. </p>
-    pub fn get_terraform_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>> {
+    pub fn get_terraform_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>> {
         self.inner.get_terraform_sources()
     }
     /// <p>The import strategy you would like to set to import resources into Resilience Hub application.</p>
@@ -160,17 +165,12 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
         self
     }
     /// <p>The import strategy you would like to set to import resources into Resilience Hub application.</p>
-    pub fn set_import_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceImportStrategyType>,
-    ) -> Self {
+    pub fn set_import_strategy(mut self, input: ::std::option::Option<crate::types::ResourceImportStrategyType>) -> Self {
         self.inner = self.inner.set_import_strategy(input);
         self
     }
     /// <p>The import strategy you would like to set to import resources into Resilience Hub application.</p>
-    pub fn get_import_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceImportStrategyType> {
+    pub fn get_import_strategy(&self) -> &::std::option::Option<crate::types::ResourceImportStrategyType> {
         self.inner.get_import_strategy()
     }
     /// Appends an item to `eksSources`.
@@ -183,17 +183,12 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
         self
     }
     /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you need to import.</p>
-    pub fn set_eks_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EksSource>>,
-    ) -> Self {
+    pub fn set_eks_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksSource>>) -> Self {
         self.inner = self.inner.set_eks_sources(input);
         self
     }
     /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you need to import.</p>
-    pub fn get_eks_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksSource>> {
+    pub fn get_eks_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksSource>> {
         self.inner.get_eks_sources()
     }
 }

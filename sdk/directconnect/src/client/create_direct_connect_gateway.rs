@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CreateDirectConnectGatewayOutput`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput) with field(s):
     ///   - [`direct_connect_gateway(Option<DirectConnectGateway>)`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput::direct_connect_gateway): <p>The Direct Connect gateway.</p>
     /// - On failure, responds with [`SdkError<CreateDirectConnectGatewayError>`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError)
-    pub fn create_direct_connect_gateway(&self) -> crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayFluentBuilder{
+    pub fn create_direct_connect_gateway(
+        &self,
+    ) -> crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayFluentBuilder {
         crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayFluentBuilder::new(self.handle.clone())
     }
 }

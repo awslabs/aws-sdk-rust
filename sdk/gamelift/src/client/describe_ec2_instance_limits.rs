@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEc2InstanceLimitsOutput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput) with field(s):
     ///   - [`ec2_instance_limits(Option<Vec<Ec2InstanceLimit>>)`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput::ec2_instance_limits): <p>The maximum number of instances for the specified instance type.</p>
     /// - On failure, responds with [`SdkError<DescribeEC2InstanceLimitsError>`](crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError)
-    pub fn describe_ec2_instance_limits(&self) -> crate::operation::describe_ec2_instance_limits::builders::DescribeEC2InstanceLimitsFluentBuilder{
+    pub fn describe_ec2_instance_limits(&self) -> crate::operation::describe_ec2_instance_limits::builders::DescribeEC2InstanceLimitsFluentBuilder {
         crate::operation::describe_ec2_instance_limits::builders::DescribeEC2InstanceLimitsFluentBuilder::new(self.handle.clone())
     }
 }

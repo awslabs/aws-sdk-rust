@@ -5,16 +5,16 @@ pub use crate::operation::create_container_service_deployment::_create_container
 
 impl CreateContainerServiceDeploymentInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_container_service_deployment();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl CreateContainerServiceDeploymentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContainerServiceDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentInputBuilder,
+    inner: crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentInputBuilder,
 }
 impl CreateContainerServiceDeploymentFluentBuilder {
     /// Creates a new `CreateContainerServiceDeployment`.
@@ -39,15 +39,20 @@ impl CreateContainerServiceDeploymentFluentBuilder {
         }
     }
     /// Access the CreateContainerServiceDeployment as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_container_service_deployment::CreateContainerServiceDeployment, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_container_service_deployment::CreateContainerServiceDeployment,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl CreateContainerServiceDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +89,26 @@ impl CreateContainerServiceDeploymentFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_container_service_deployment::CreateContainerServiceDeployment, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_container_service_deployment::CreateContainerServiceDeployment,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the container service for which to create the deployment.</p>
@@ -115,30 +130,20 @@ impl CreateContainerServiceDeploymentFluentBuilder {
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
     ///
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
-    pub fn containers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Container,
-    ) -> Self {
+    pub fn containers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Container) -> Self {
         self.inner = self.inner.containers(k.into(), v);
         self
     }
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
     pub fn set_containers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Container>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     ) -> Self {
         self.inner = self.inner.set_containers(input);
         self
     }
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
-    > {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>> {
         self.inner.get_containers()
     }
     /// <p>An object that describes the settings of the public endpoint for the container service.</p>
@@ -147,10 +152,7 @@ impl CreateContainerServiceDeploymentFluentBuilder {
         self
     }
     /// <p>An object that describes the settings of the public endpoint for the container service.</p>
-    pub fn set_public_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointRequest>,
-    ) -> Self {
+    pub fn set_public_endpoint(mut self, input: ::std::option::Option<crate::types::EndpointRequest>) -> Self {
         self.inner = self.inner.set_public_endpoint(input);
         self
     }

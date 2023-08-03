@@ -5,8 +5,7 @@
 pub struct ListAssociationsForLicenseConfigurationOutput {
     /// <p>Information about the associations for the license configuration.</p>
     #[doc(hidden)]
-    pub license_configuration_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>,
+    pub license_configuration_associations: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssociationsForLicenseConfigurationOutput {
 }
 impl ListAssociationsForLicenseConfigurationOutput {
     /// <p>Information about the associations for the license configuration.</p>
-    pub fn license_configuration_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LicenseConfigurationAssociation]> {
+    pub fn license_configuration_associations(&self) -> ::std::option::Option<&[crate::types::LicenseConfigurationAssociation]> {
         self.license_configuration_associations.as_deref()
     }
     /// <p>Token for the next set of results.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for ListAssociationsForLicenseConfigurati
 }
 impl ListAssociationsForLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociationsForLicenseConfigurationOutput`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput).
-    pub fn builder() -> crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationOutputBuilder
+    {
         crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociationsForLicenseConfigurationOutput`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociationsForLicenseConfigurationOutputBuilder {
-    pub(crate) license_configuration_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>,
+    pub(crate) license_configuration_associations: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +48,7 @@ impl ListAssociationsForLicenseConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_license_configuration_associations`](Self::set_license_configuration_associations).
     ///
     /// <p>Information about the associations for the license configuration.</p>
-    pub fn license_configuration_associations(
-        mut self,
-        input: crate::types::LicenseConfigurationAssociation,
-    ) -> Self {
+    pub fn license_configuration_associations(mut self, input: crate::types::LicenseConfigurationAssociation) -> Self {
         let mut v = self.license_configuration_associations.unwrap_or_default();
         v.push(input);
         self.license_configuration_associations = ::std::option::Option::Some(v);
@@ -65,18 +57,13 @@ impl ListAssociationsForLicenseConfigurationOutputBuilder {
     /// <p>Information about the associations for the license configuration.</p>
     pub fn set_license_configuration_associations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::LicenseConfigurationAssociation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>,
     ) -> Self {
         self.license_configuration_associations = input;
         self
     }
     /// <p>Information about the associations for the license configuration.</p>
-    pub fn get_license_configuration_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>
-    {
+    pub fn get_license_configuration_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>> {
         &self.license_configuration_associations
     }
     /// <p>Token for the next set of results.</p>
@@ -103,12 +90,10 @@ impl ListAssociationsForLicenseConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssociationsForLicenseConfigurationOutput`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput).
-    pub fn build(self) -> crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput{
+    pub fn build(self) -> crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput {
         crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput {
-            license_configuration_associations: self.license_configuration_associations
-            ,
-            next_token: self.next_token
-            ,
+            license_configuration_associations: self.license_configuration_associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

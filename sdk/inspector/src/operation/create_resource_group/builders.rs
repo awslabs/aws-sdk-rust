@@ -37,9 +37,7 @@ impl CreateResourceGroupFluentBuilder {
         }
     }
     /// Access the CreateResourceGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resource_group::builders::CreateResourceGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_resource_group::builders::CreateResourceGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateResourceGroupFluentBuilder {
             crate::operation::create_resource_group::CreateResourceGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_group::CreateResourceGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_group::CreateResourceGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateResourceGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateResourceGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_group::CreateResourceGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_group::CreateResourceGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_group::CreateResourceGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateResourceGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_group::CreateResourceGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_group::CreateResourceGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_group::CreateResourceGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateResourceGroupFluentBuilder {
             crate::operation::create_resource_group::CreateResourceGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_group::CreateResourceGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_group::CreateResourceGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -134,18 +121,13 @@ impl CreateResourceGroupFluentBuilder {
     }
     /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-    pub fn set_resource_group_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>>,
-    ) -> Self {
+    pub fn set_resource_group_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>>) -> Self {
         self.inner = self.inner.set_resource_group_tags(input);
         self
     }
     /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-    pub fn get_resource_group_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>> {
+    pub fn get_resource_group_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>> {
         self.inner.get_resource_group_tags()
     }
 }

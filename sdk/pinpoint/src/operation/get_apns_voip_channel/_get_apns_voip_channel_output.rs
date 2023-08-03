@@ -10,9 +10,7 @@ pub struct GetApnsVoipChannelOutput {
 }
 impl GetApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn apns_voip_channel_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApnsVoipChannelResponse> {
+    pub fn apns_voip_channel_response(&self) -> ::std::option::Option<&crate::types::ApnsVoipChannelResponse> {
         self.apns_voip_channel_response.as_ref()
     }
 }
@@ -23,44 +21,31 @@ impl ::aws_http::request_id::RequestId for GetApnsVoipChannelOutput {
 }
 impl GetApnsVoipChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetApnsVoipChannelOutput`](crate::operation::get_apns_voip_channel::GetApnsVoipChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelOutputBuilder {
-        crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelOutputBuilder {
+        crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetApnsVoipChannelOutput`](crate::operation::get_apns_voip_channel::GetApnsVoipChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApnsVoipChannelOutputBuilder {
-    pub(crate) apns_voip_channel_response:
-        ::std::option::Option<crate::types::ApnsVoipChannelResponse>,
+    pub(crate) apns_voip_channel_response: ::std::option::Option<crate::types::ApnsVoipChannelResponse>,
     _request_id: Option<String>,
 }
 impl GetApnsVoipChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn apns_voip_channel_response(
-        mut self,
-        input: crate::types::ApnsVoipChannelResponse,
-    ) -> Self {
+    pub fn apns_voip_channel_response(mut self, input: crate::types::ApnsVoipChannelResponse) -> Self {
         self.apns_voip_channel_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn set_apns_voip_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ApnsVoipChannelResponse>,
-    ) -> Self {
+    pub fn set_apns_voip_channel_response(mut self, input: ::std::option::Option<crate::types::ApnsVoipChannelResponse>) -> Self {
         self.apns_voip_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn get_apns_voip_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApnsVoipChannelResponse> {
+    pub fn get_apns_voip_channel_response(&self) -> &::std::option::Option<crate::types::ApnsVoipChannelResponse> {
         &self.apns_voip_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

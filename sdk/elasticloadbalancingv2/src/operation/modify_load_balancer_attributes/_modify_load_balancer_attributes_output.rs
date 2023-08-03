@@ -21,19 +21,16 @@ impl ::aws_http::request_id::RequestId for ModifyLoadBalancerAttributesOutput {
 }
 impl ModifyLoadBalancerAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyLoadBalancerAttributesOutput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput).
-    pub fn builder() -> crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesOutputBuilder {
         crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyLoadBalancerAttributesOutput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesOutputBuilder {
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>,
     _request_id: Option<String>,
 }
 impl ModifyLoadBalancerAttributesOutputBuilder {
@@ -49,17 +46,12 @@ impl ModifyLoadBalancerAttributesOutputBuilder {
         self
     }
     /// <p>Information about the load balancer attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>Information about the load balancer attributes.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>> {
         &self.attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +64,7 @@ impl ModifyLoadBalancerAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesOutput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput {
+    pub fn build(self) -> crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput {
         crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput {
             attributes: self.attributes,
             _request_id: self._request_id,

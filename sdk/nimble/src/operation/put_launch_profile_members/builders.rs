@@ -26,8 +26,7 @@ impl PutLaunchProfileMembersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutLaunchProfileMembersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder,
+    inner: crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder,
 }
 impl PutLaunchProfileMembersFluentBuilder {
     /// Creates a new `PutLaunchProfileMembers`.
@@ -38,10 +37,7 @@ impl PutLaunchProfileMembersFluentBuilder {
         }
     }
     /// Access the PutLaunchProfileMembers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl PutLaunchProfileMembersFluentBuilder {
             crate::operation::put_launch_profile_members::PutLaunchProfileMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_launch_profile_members::PutLaunchProfileMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_launch_profile_members::PutLaunchProfileMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl PutLaunchProfileMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl PutLaunchProfileMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_launch_profile_members::PutLaunchProfileMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_launch_profile_members::PutLaunchProfileMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_launch_profile_members::PutLaunchProfileMembersError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl PutLaunchProfileMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_launch_profile_members::PutLaunchProfileMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_launch_profile_members::PutLaunchProfileMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_launch_profile_members::PutLaunchProfileMembersError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl PutLaunchProfileMembersFluentBuilder {
             crate::operation::put_launch_profile_members::PutLaunchProfileMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_launch_profile_members::PutLaunchProfileMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_launch_profile_members::PutLaunchProfileMembersError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl PutLaunchProfileMembersFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The ID of the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The ID of the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
@@ -159,18 +138,12 @@ impl PutLaunchProfileMembersFluentBuilder {
         self.inner.get_identity_store_id()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_profile_id(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_profile_id(input);
         self
     }
@@ -188,17 +161,12 @@ impl PutLaunchProfileMembersFluentBuilder {
         self
     }
     /// <p>A list of members.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>>) -> Self {
         self.inner = self.inner.set_members(input);
         self
     }
     /// <p>A list of members.</p>
-    pub fn get_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>> {
         self.inner.get_members()
     }
     /// <p>The studio ID. </p>

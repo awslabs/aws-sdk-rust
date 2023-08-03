@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyVpcTenancyOutput`](crate::operation::modify_vpc_tenancy::ModifyVpcTenancyOutput) with field(s):
     ///   - [`return_value(Option<bool>)`](crate::operation::modify_vpc_tenancy::ModifyVpcTenancyOutput::return_value): <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     /// - On failure, responds with [`SdkError<ModifyVpcTenancyError>`](crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError)
-    pub fn modify_vpc_tenancy(
-        &self,
-    ) -> crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyFluentBuilder {
-        crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_vpc_tenancy(&self) -> crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyFluentBuilder {
+        crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyFluentBuilder::new(self.handle.clone())
     }
 }

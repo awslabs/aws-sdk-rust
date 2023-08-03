@@ -23,17 +23,14 @@ impl UpdateRepositoryNameInput {
 }
 impl UpdateRepositoryNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
-    pub fn builder(
-    ) -> crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder {
+    pub fn builder() -> crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder {
         crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRepositoryNameInputBuilder {
     pub(crate) old_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_name: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,11 @@ impl UpdateRepositoryNameInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_repository_name::UpdateRepositoryNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_repository_name::UpdateRepositoryNameInput {
-                old_name: self.old_name,
-                new_name: self.new_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_repository_name::UpdateRepositoryNameInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_repository_name::UpdateRepositoryNameInput {
+            old_name: self.old_name,
+            new_name: self.new_name,
+        })
     }
 }

@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`properties_to_delete(Vec<DeletableCertificateBasedAuthProperty>)`](crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesFluentBuilder::properties_to_delete) / [`set_properties_to_delete(Option<Vec<DeletableCertificateBasedAuthProperty>>)`](crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesFluentBuilder::set_properties_to_delete): <p>The properties of the certificate-based authentication you want to delete.</p>
     /// - On success, responds with [`ModifyCertificateBasedAuthPropertiesOutput`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput)
     /// - On failure, responds with [`SdkError<ModifyCertificateBasedAuthPropertiesError>`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesError)
-    pub fn modify_certificate_based_auth_properties(&self) -> crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesFluentBuilder{
-        crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesFluentBuilder::new(self.handle.clone())
+    pub fn modify_certificate_based_auth_properties(
+        &self,
+    ) -> crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesFluentBuilder {
+        crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

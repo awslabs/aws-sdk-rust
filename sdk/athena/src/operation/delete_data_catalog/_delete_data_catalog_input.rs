@@ -15,17 +15,14 @@ impl DeleteDataCatalogInput {
 }
 impl DeleteDataCatalogInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataCatalogInput`](crate::operation::delete_data_catalog::DeleteDataCatalogInput).
-    pub fn builder(
-    ) -> crate::operation::delete_data_catalog::builders::DeleteDataCatalogInputBuilder {
+    pub fn builder() -> crate::operation::delete_data_catalog::builders::DeleteDataCatalogInputBuilder {
         crate::operation::delete_data_catalog::builders::DeleteDataCatalogInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataCatalogInput`](crate::operation::delete_data_catalog::DeleteDataCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeleteDataCatalogInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataCatalogInput`](crate::operation::delete_data_catalog::DeleteDataCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_data_catalog::DeleteDataCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_data_catalog::DeleteDataCatalogInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_data_catalog::DeleteDataCatalogInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_data_catalog::DeleteDataCatalogInput { name: self.name })
     }
 }

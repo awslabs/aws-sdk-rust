@@ -29,16 +29,14 @@ impl DescribeExportConfigurationsInput {
 }
 impl DescribeExportConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeExportConfigurationsInput`](crate::operation::describe_export_configurations::DescribeExportConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsInputBuilder {
         crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExportConfigurationsInput`](crate::operation::describe_export_configurations::DescribeExportConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExportConfigurationsInputBuilder {
     pub(crate) export_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -57,10 +55,7 @@ impl DescribeExportConfigurationsInputBuilder {
         self
     }
     /// <p>A list of continuous export IDs to search for.</p>
-    pub fn set_export_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_export_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.export_ids = input;
         self
     }
@@ -103,12 +98,10 @@ impl DescribeExportConfigurationsInputBuilder {
         crate::operation::describe_export_configurations::DescribeExportConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_export_configurations::DescribeExportConfigurationsInput {
-                export_ids: self.export_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_export_configurations::DescribeExportConfigurationsInput {
+            export_ids: self.export_ids,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

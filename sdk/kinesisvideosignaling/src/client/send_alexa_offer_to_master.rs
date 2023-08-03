@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`SendAlexaOfferToMasterOutput`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput) with field(s):
     ///   - [`answer(Option<String>)`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput::answer): <p>The base64-encoded SDP answer content.</p>
     /// - On failure, responds with [`SdkError<SendAlexaOfferToMasterError>`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError)
-    pub fn send_alexa_offer_to_master(
-        &self,
-    ) -> crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterFluentBuilder
-    {
+    pub fn send_alexa_offer_to_master(&self) -> crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterFluentBuilder {
         crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for GetHostedZoneLimitOutput {
 }
 impl GetHostedZoneLimitOutput {
     /// Creates a new builder-style object to manufacture [`GetHostedZoneLimitOutput`](crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput).
-    pub fn builder(
-    ) -> crate::operation::get_hosted_zone_limit::builders::GetHostedZoneLimitOutputBuilder {
-        crate::operation::get_hosted_zone_limit::builders::GetHostedZoneLimitOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_hosted_zone_limit::builders::GetHostedZoneLimitOutputBuilder {
+        crate::operation::get_hosted_zone_limit::builders::GetHostedZoneLimitOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetHostedZoneLimitOutput`](crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHostedZoneLimitOutputBuilder {
     pub(crate) limit: ::std::option::Option<crate::types::HostedZoneLimit>,
     pub(crate) count: ::std::option::Option<i64>,
@@ -53,10 +49,7 @@ impl GetHostedZoneLimitOutputBuilder {
         self
     }
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create in the specified hosted zone.</p>
-    pub fn set_limit(
-        mut self,
-        input: ::std::option::Option<crate::types::HostedZoneLimit>,
-    ) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<crate::types::HostedZoneLimit>) -> Self {
         self.limit = input;
         self
     }

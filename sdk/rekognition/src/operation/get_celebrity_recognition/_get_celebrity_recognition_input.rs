@@ -36,18 +36,14 @@ impl GetCelebrityRecognitionInput {
 }
 impl GetCelebrityRecognitionInput {
     /// Creates a new builder-style object to manufacture [`GetCelebrityRecognitionInput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionInput).
-    pub fn builder(
-    ) -> crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionInputBuilder {
         crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCelebrityRecognitionInput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCelebrityRecognitionInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -103,10 +99,7 @@ impl GetCelebrityRecognitionInputBuilder {
         self
     }
     /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::CelebrityRecognitionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::CelebrityRecognitionSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -121,13 +114,11 @@ impl GetCelebrityRecognitionInputBuilder {
         crate::operation::get_celebrity_recognition::GetCelebrityRecognitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_celebrity_recognition::GetCelebrityRecognitionInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_celebrity_recognition::GetCelebrityRecognitionInput {
+            job_id: self.job_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            sort_by: self.sort_by,
+        })
     }
 }

@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for RejectInboundConnectionOutput {
 }
 impl RejectInboundConnectionOutput {
     /// Creates a new builder-style object to manufacture [`RejectInboundConnectionOutput`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::reject_inbound_connection::builders::RejectInboundConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reject_inbound_connection::builders::RejectInboundConnectionOutputBuilder {
         crate::operation::reject_inbound_connection::builders::RejectInboundConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RejectInboundConnectionOutput`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectInboundConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl RejectInboundConnectionOutputBuilder {
         self
     }
     /// <p>Contains details about the rejected inbound connection.</p>
-    pub fn set_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::InboundConnection>,
-    ) -> Self {
+    pub fn set_connection(mut self, input: ::std::option::Option<crate::types::InboundConnection>) -> Self {
         self.connection = input;
         self
     }
@@ -66,9 +59,7 @@ impl RejectInboundConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RejectInboundConnectionOutput`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reject_inbound_connection::RejectInboundConnectionOutput {
+    pub fn build(self) -> crate::operation::reject_inbound_connection::RejectInboundConnectionOutput {
         crate::operation::reject_inbound_connection::RejectInboundConnectionOutput {
             connection: self.connection,
             _request_id: self._request_id,

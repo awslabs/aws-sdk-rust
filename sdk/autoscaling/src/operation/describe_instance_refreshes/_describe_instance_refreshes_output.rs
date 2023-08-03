@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeInstanceRefreshesOutput {
 }
 impl DescribeInstanceRefreshesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceRefreshesOutput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput).
-    pub fn builder() -> crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesOutputBuilder {
         crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceRefreshesOutput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceRefreshesOutputBuilder {
-    pub(crate) instance_refreshes:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceRefresh>>,
+    pub(crate) instance_refreshes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRefresh>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeInstanceRefreshesOutputBuilder {
         self
     }
     /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
-    pub fn set_instance_refreshes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRefresh>>,
-    ) -> Self {
+    pub fn set_instance_refreshes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRefresh>>) -> Self {
         self.instance_refreshes = input;
         self
     }
     /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
-    pub fn get_instance_refreshes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceRefresh>> {
+    pub fn get_instance_refreshes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceRefresh>> {
         &self.instance_refreshes
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -94,9 +86,7 @@ impl DescribeInstanceRefreshesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInstanceRefreshesOutput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput {
+    pub fn build(self) -> crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput {
         crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput {
             instance_refreshes: self.instance_refreshes,
             next_token: self.next_token,

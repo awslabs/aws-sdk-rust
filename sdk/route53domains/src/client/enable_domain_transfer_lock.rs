@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`EnableDomainTransferLockOutput`](crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput::operation_id): <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
     /// - On failure, responds with [`SdkError<EnableDomainTransferLockError>`](crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockError)
-    pub fn enable_domain_transfer_lock(&self) -> crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockFluentBuilder{
+    pub fn enable_domain_transfer_lock(&self) -> crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockFluentBuilder {
         crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockFluentBuilder::new(self.handle.clone())
     }
 }

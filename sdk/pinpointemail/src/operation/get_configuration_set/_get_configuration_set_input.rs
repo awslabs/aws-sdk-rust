@@ -16,35 +16,25 @@ impl GetConfigurationSetInput {
 }
 impl GetConfigurationSetInput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationSetInput`](crate::operation::get_configuration_set::GetConfigurationSetInput).
-    pub fn builder(
-    ) -> crate::operation::get_configuration_set::builders::GetConfigurationSetInputBuilder {
-        crate::operation::get_configuration_set::builders::GetConfigurationSetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_configuration_set::builders::GetConfigurationSetInputBuilder {
+        crate::operation::get_configuration_set::builders::GetConfigurationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConfigurationSetInput`](crate::operation::get_configuration_set::GetConfigurationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConfigurationSetInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl GetConfigurationSetInputBuilder {
     /// <p>The name of the configuration set that you want to obtain more information about.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set that you want to obtain more information about.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -55,14 +45,10 @@ impl GetConfigurationSetInputBuilder {
     /// Consumes the builder and constructs a [`GetConfigurationSetInput`](crate::operation::get_configuration_set::GetConfigurationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configuration_set::GetConfigurationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_configuration_set::GetConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_configuration_set::GetConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_configuration_set::GetConfigurationSetInput {
+            configuration_set_name: self.configuration_set_name,
+        })
     }
 }

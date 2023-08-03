@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`created_time(Option<DateTime>)`](crate::operation::describe_package::DescribePackageOutput::created_time): <p>When the package was created.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_package::DescribePackageOutput::tags): <p>The package's tags.</p>
     /// - On failure, responds with [`SdkError<DescribePackageError>`](crate::operation::describe_package::DescribePackageError)
-    pub fn describe_package(
-        &self,
-    ) -> crate::operation::describe_package::builders::DescribePackageFluentBuilder {
-        crate::operation::describe_package::builders::DescribePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_package(&self) -> crate::operation::describe_package::builders::DescribePackageFluentBuilder {
+        crate::operation::describe_package::builders::DescribePackageFluentBuilder::new(self.handle.clone())
     }
 }

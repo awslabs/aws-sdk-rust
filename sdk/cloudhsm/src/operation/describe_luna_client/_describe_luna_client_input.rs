@@ -22,17 +22,14 @@ impl DescribeLunaClientInput {
 }
 impl DescribeLunaClientInput {
     /// Creates a new builder-style object to manufacture [`DescribeLunaClientInput`](crate::operation::describe_luna_client::DescribeLunaClientInput).
-    pub fn builder(
-    ) -> crate::operation::describe_luna_client::builders::DescribeLunaClientInputBuilder {
+    pub fn builder() -> crate::operation::describe_luna_client::builders::DescribeLunaClientInputBuilder {
         crate::operation::describe_luna_client::builders::DescribeLunaClientInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLunaClientInput`](crate::operation::describe_luna_client::DescribeLunaClientInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLunaClientInputBuilder {
     pub(crate) client_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_fingerprint: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DescribeLunaClientInputBuilder {
         &self.client_arn
     }
     /// <p>The certificate fingerprint.</p>
-    pub fn certificate_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate fingerprint.</p>
-    pub fn set_certificate_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_fingerprint = input;
         self
     }
@@ -75,15 +66,10 @@ impl DescribeLunaClientInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLunaClientInput`](crate::operation::describe_luna_client::DescribeLunaClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_luna_client::DescribeLunaClientInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_luna_client::DescribeLunaClientInput {
-                client_arn: self.client_arn,
-                certificate_fingerprint: self.certificate_fingerprint,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_luna_client::DescribeLunaClientInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_luna_client::DescribeLunaClientInput {
+            client_arn: self.client_arn,
+            certificate_fingerprint: self.certificate_fingerprint,
+        })
     }
 }

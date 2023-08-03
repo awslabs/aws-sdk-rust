@@ -36,9 +36,7 @@ impl AssociateLinkInput {
 
 /// A builder for [`AssociateLinkInput`](crate::operation::associate_link::AssociateLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateLinkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct AssociateLinkInputBuilder {
 }
 impl AssociateLinkInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl AssociateLinkInputBuilder {
     /// Consumes the builder and constructs a [`AssociateLinkInput`](crate::operation::associate_link::AssociateLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_link::AssociateLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_link::AssociateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_link::AssociateLinkInput {
             global_network_id: self.global_network_id,
             device_id: self.device_id,

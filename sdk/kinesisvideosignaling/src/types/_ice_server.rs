@@ -44,9 +44,7 @@ impl IceServer {
 
 /// A builder for [`IceServer`](crate::types::IceServer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IceServerBuilder {
     pub(crate) uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
@@ -66,10 +64,7 @@ impl IceServerBuilder {
         self
     }
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-    pub fn set_uris(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.uris = input;
         self
     }

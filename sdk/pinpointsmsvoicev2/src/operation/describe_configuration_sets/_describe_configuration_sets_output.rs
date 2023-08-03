@@ -5,8 +5,7 @@
 pub struct DescribeConfigurationSetsOutput {
     /// <p>An array of ConfigurationSets objects.</p>
     #[doc(hidden)]
-    pub configuration_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetInformation>>,
+    pub configuration_sets: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeConfigurationSetsOutput {
 }
 impl DescribeConfigurationSetsOutput {
     /// <p>An array of ConfigurationSets objects.</p>
-    pub fn configuration_sets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfigurationSetInformation]> {
+    pub fn configuration_sets(&self) -> ::std::option::Option<&[crate::types::ConfigurationSetInformation]> {
         self.configuration_sets.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeConfigurationSetsOutput {
 }
 impl DescribeConfigurationSetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationSetsOutput`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput).
-    pub fn builder() -> crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsOutputBuilder {
         crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationSetsOutput`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSetsOutputBuilder {
-    pub(crate) configuration_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetInformation>>,
+    pub(crate) configuration_sets: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeConfigurationSetsOutputBuilder {
         self
     }
     /// <p>An array of ConfigurationSets objects.</p>
-    pub fn set_configuration_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetInformation>>,
-    ) -> Self {
+    pub fn set_configuration_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetInformation>>) -> Self {
         self.configuration_sets = input;
         self
     }
     /// <p>An array of ConfigurationSets objects.</p>
-    pub fn get_configuration_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetInformation>> {
+    pub fn get_configuration_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetInformation>> {
         &self.configuration_sets
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
@@ -97,9 +86,7 @@ impl DescribeConfigurationSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationSetsOutput`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput {
+    pub fn build(self) -> crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput {
         crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput {
             configuration_sets: self.configuration_sets,
             next_token: self.next_token,

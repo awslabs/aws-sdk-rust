@@ -48,26 +48,20 @@ impl UpdateVoiceTemplateInput {
         self.version.as_deref()
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-    pub fn voice_template_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VoiceTemplateRequest> {
+    pub fn voice_template_request(&self) -> ::std::option::Option<&crate::types::VoiceTemplateRequest> {
         self.voice_template_request.as_ref()
     }
 }
 impl UpdateVoiceTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceTemplateInput`](crate::operation::update_voice_template::UpdateVoiceTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_voice_template::builders::UpdateVoiceTemplateInputBuilder {
-        crate::operation::update_voice_template::builders::UpdateVoiceTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_voice_template::builders::UpdateVoiceTemplateInputBuilder {
+        crate::operation::update_voice_template::builders::UpdateVoiceTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVoiceTemplateInput`](crate::operation::update_voice_template::UpdateVoiceTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVoiceTemplateInputBuilder {
     pub(crate) create_new_version: ::std::option::Option<bool>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -93,18 +87,12 @@ impl UpdateVoiceTemplateInputBuilder {
         &self.create_new_version
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -156,33 +144,24 @@ impl UpdateVoiceTemplateInputBuilder {
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-    pub fn set_voice_template_request(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceTemplateRequest>,
-    ) -> Self {
+    pub fn set_voice_template_request(mut self, input: ::std::option::Option<crate::types::VoiceTemplateRequest>) -> Self {
         self.voice_template_request = input;
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-    pub fn get_voice_template_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceTemplateRequest> {
+    pub fn get_voice_template_request(&self) -> &::std::option::Option<crate::types::VoiceTemplateRequest> {
         &self.voice_template_request
     }
     /// Consumes the builder and constructs a [`UpdateVoiceTemplateInput`](crate::operation::update_voice_template::UpdateVoiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_voice_template::UpdateVoiceTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_voice_template::UpdateVoiceTemplateInput {
-                create_new_version: self.create_new_version,
-                template_name: self.template_name,
-                version: self.version,
-                voice_template_request: self.voice_template_request,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_voice_template::UpdateVoiceTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_voice_template::UpdateVoiceTemplateInput {
+            create_new_version: self.create_new_version,
+            template_name: self.template_name,
+            version: self.version,
+            voice_template_request: self.voice_template_request,
+        })
     }
 }

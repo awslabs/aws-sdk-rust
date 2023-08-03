@@ -7,14 +7,8 @@ impl super::Client {
     ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::set_domain_name): <p>The name of the domain.</p>
     /// - On success, responds with [`RestoreDomainAccessOutput`](crate::operation::restore_domain_access::RestoreDomainAccessOutput)
     /// - On failure, responds with [`SdkError<RestoreDomainAccessError>`](crate::operation::restore_domain_access::RestoreDomainAccessError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn restore_domain_access(
-        &self,
-    ) -> crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder {
-        crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn restore_domain_access(&self) -> crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder {
+        crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::new(self.handle.clone())
     }
 }

@@ -42,10 +42,7 @@ impl BatchExecuteStatementFluentBuilder {
         }
     }
     /// Access the BatchExecuteStatement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl BatchExecuteStatementFluentBuilder {
             crate::operation::batch_execute_statement::BatchExecuteStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl BatchExecuteStatementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl BatchExecuteStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_execute_statement::BatchExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl BatchExecuteStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_execute_statement::BatchExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl BatchExecuteStatementFluentBuilder {
             crate::operation::batch_execute_statement::BatchExecuteStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         self.customize_middleware().await
     }
@@ -231,10 +217,7 @@ impl BatchExecuteStatementFluentBuilder {
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn set_parameter_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>,
-    ) -> Self {
+    pub fn set_parameter_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>) -> Self {
         self.inner = self.inner.set_parameter_sets(input);
         self
     }
@@ -246,26 +229,18 @@ impl BatchExecuteStatementFluentBuilder {
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn get_parameter_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>> {
+    pub fn get_parameter_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>> {
         self.inner.get_parameter_sets()
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }

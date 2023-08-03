@@ -18,10 +18,7 @@ pub fn ser_visual_custom_action_operation(
     if let Some(var_5) = &input.url_operation {
         #[allow(unused_mut)]
         let mut object_6 = object.key("URLOperation").start_object();
-        crate::protocol_serde::shape_custom_action_url_operation::ser_custom_action_url_operation(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_custom_action_url_operation::ser_custom_action_url_operation(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.set_parameters_operation {
@@ -35,17 +32,9 @@ pub fn ser_visual_custom_action_operation(
 
 pub(crate) fn de_visual_custom_action_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VisualCustomActionOperation>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VisualCustomActionOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,46 +44,43 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "FilterOperation" => {
-                                builder = builder.set_filter_operation(
-                                    crate::protocol_serde::shape_custom_action_filter_operation::de_custom_action_filter_operation(tokens)?
-                                );
-                            }
-                            "NavigationOperation" => {
-                                builder = builder.set_navigation_operation(
-                                    crate::protocol_serde::shape_custom_action_navigation_operation::de_custom_action_navigation_operation(tokens)?
-                                );
-                            }
-                            "URLOperation" => {
-                                builder = builder.set_url_operation(
-                                    crate::protocol_serde::shape_custom_action_url_operation::de_custom_action_url_operation(tokens)?
-                                );
-                            }
-                            "SetParametersOperation" => {
-                                builder = builder.set_set_parameters_operation(
-                                    crate::protocol_serde::shape_custom_action_set_parameters_operation::de_custom_action_set_parameters_operation(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FilterOperation" => {
+                            builder = builder.set_filter_operation(
+                                crate::protocol_serde::shape_custom_action_filter_operation::de_custom_action_filter_operation(tokens)?,
+                            );
                         }
-                    }
+                        "NavigationOperation" => {
+                            builder = builder.set_navigation_operation(
+                                crate::protocol_serde::shape_custom_action_navigation_operation::de_custom_action_navigation_operation(tokens)?,
+                            );
+                        }
+                        "URLOperation" => {
+                            builder = builder.set_url_operation(
+                                crate::protocol_serde::shape_custom_action_url_operation::de_custom_action_url_operation(tokens)?,
+                            );
+                        }
+                        "SetParametersOperation" => {
+                            builder = builder.set_set_parameters_operation(
+                                crate::protocol_serde::shape_custom_action_set_parameters_operation::de_custom_action_set_parameters_operation(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

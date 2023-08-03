@@ -26,8 +26,7 @@ impl CreateManagedPrefixListInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateManagedPrefixListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder,
+    inner: crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder,
 }
 impl CreateManagedPrefixListFluentBuilder {
     /// Creates a new `CreateManagedPrefixList`.
@@ -38,10 +37,7 @@ impl CreateManagedPrefixListFluentBuilder {
         }
     }
     /// Access the CreateManagedPrefixList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateManagedPrefixListFluentBuilder {
             crate::operation::create_managed_prefix_list::CreateManagedPrefixList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_managed_prefix_list::CreateManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_managed_prefix_list::CreateManagedPrefixListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateManagedPrefixListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateManagedPrefixListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_managed_prefix_list::CreateManagedPrefixListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_managed_prefix_list::CreateManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_managed_prefix_list::CreateManagedPrefixListError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateManagedPrefixListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_managed_prefix_list::CreateManagedPrefixListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_managed_prefix_list::CreateManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_managed_prefix_list::CreateManagedPrefixListError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateManagedPrefixListFluentBuilder {
             crate::operation::create_managed_prefix_list::CreateManagedPrefixList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_managed_prefix_list::CreateManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_managed_prefix_list::CreateManagedPrefixListError>,
     > {
         self.customize_middleware().await
     }
@@ -140,19 +125,13 @@ impl CreateManagedPrefixListFluentBuilder {
     }
     /// <p>A name for the prefix list.</p>
     /// <p>Constraints: Up to 255 characters in length. The name cannot start with <code>com.amazonaws</code>.</p>
-    pub fn prefix_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix_list_name(input.into());
         self
     }
     /// <p>A name for the prefix list.</p>
     /// <p>Constraints: Up to 255 characters in length. The name cannot start with <code>com.amazonaws</code>.</p>
-    pub fn set_prefix_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix_list_name(input);
         self
     }
@@ -171,17 +150,12 @@ impl CreateManagedPrefixListFluentBuilder {
         self
     }
     /// <p>One or more entries for the prefix list.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>One or more entries for the prefix list.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>> {
         self.inner.get_entries()
     }
     /// <p>The maximum number of entries for the prefix list.</p>
@@ -208,34 +182,23 @@ impl CreateManagedPrefixListFluentBuilder {
         self
     }
     /// <p>The tags to apply to the prefix list during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the prefix list during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>The IP address type.</p>
     /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
-    pub fn address_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address_family(input.into());
         self
     }
     /// <p>The IP address type.</p>
     /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
-    pub fn set_address_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address_family(input);
         self
     }

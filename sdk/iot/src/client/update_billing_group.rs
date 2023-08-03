@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateBillingGroupOutput`](crate::operation::update_billing_group::UpdateBillingGroupOutput) with field(s):
     ///   - [`version(i64)`](crate::operation::update_billing_group::UpdateBillingGroupOutput::version): <p>The latest version of the billing group.</p>
     /// - On failure, responds with [`SdkError<UpdateBillingGroupError>`](crate::operation::update_billing_group::UpdateBillingGroupError)
-    pub fn update_billing_group(
-        &self,
-    ) -> crate::operation::update_billing_group::builders::UpdateBillingGroupFluentBuilder {
-        crate::operation::update_billing_group::builders::UpdateBillingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_billing_group(&self) -> crate::operation::update_billing_group::builders::UpdateBillingGroupFluentBuilder {
+        crate::operation::update_billing_group::builders::UpdateBillingGroupFluentBuilder::new(self.handle.clone())
     }
 }

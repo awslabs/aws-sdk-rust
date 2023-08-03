@@ -10,10 +10,7 @@ impl ListDeploymentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_deployments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDeploymentsFluentBuilder {
         }
     }
     /// Access the ListDeployments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDeploymentsFluentBuilder {
             crate::operation::list_deployments::ListDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDeploymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListDeploymentsFluentBuilder {
             crate::operation::list_deployments::ListDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_deployments::paginator::ListDeploymentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
-        crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
+        crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
     }
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the list of deployment that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl ListDeploymentsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The name of an environment for result list filtering. Proton returns deployments associated with the environment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of an environment for result list filtering. Proton returns deployments associated with the environment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -182,18 +155,12 @@ impl ListDeploymentsFluentBuilder {
         self.inner.get_service_name()
     }
     /// <p>The name of a service instance for result list filtering. Proton returns the deployments associated with the service instance.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_instance_name(input.into());
         self
     }
     /// <p>The name of a service instance for result list filtering. Proton returns the deployments associated with the service instance.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_instance_name(input);
         self
     }
@@ -202,18 +169,12 @@ impl ListDeploymentsFluentBuilder {
         self.inner.get_service_instance_name()
     }
     /// <p>The name of a component for result list filtering. Proton returns deployments associated with that component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_name(input.into());
         self
     }
     /// <p>The name of a component for result list filtering. Proton returns deployments associated with that component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
     }

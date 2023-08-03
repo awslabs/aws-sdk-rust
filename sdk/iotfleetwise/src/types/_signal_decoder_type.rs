@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SignalDecoderType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SignalDecoderType {
         match s {
             "CAN_SIGNAL" => SignalDecoderType::CanSignal,
             "OBD_SIGNAL" => SignalDecoderType::ObdSignal,
-            other => {
-                SignalDecoderType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SignalDecoderType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

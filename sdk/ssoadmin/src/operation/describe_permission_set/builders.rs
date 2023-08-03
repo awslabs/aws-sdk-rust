@@ -37,10 +37,7 @@ impl DescribePermissionSetFluentBuilder {
         }
     }
     /// Access the DescribePermissionSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_permission_set::builders::DescribePermissionSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_permission_set::builders::DescribePermissionSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribePermissionSetFluentBuilder {
             crate::operation::describe_permission_set::DescribePermissionSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_permission_set::DescribePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_permission_set::DescribePermissionSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribePermissionSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribePermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_permission_set::DescribePermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_permission_set::DescribePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_permission_set::DescribePermissionSetError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribePermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_permission_set::DescribePermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_permission_set::DescribePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_permission_set::DescribePermissionSetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribePermissionSetFluentBuilder {
             crate::operation::describe_permission_set::DescribePermissionSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_permission_set::DescribePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_permission_set::DescribePermissionSetError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DescribePermissionSetFluentBuilder {
         self.inner.get_instance_arn()
     }
     /// <p>The ARN of the permission set. </p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
     /// <p>The ARN of the permission set. </p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }

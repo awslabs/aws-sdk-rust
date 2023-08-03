@@ -22,17 +22,14 @@ impl PutProjectEventsInput {
 }
 impl PutProjectEventsInput {
     /// Creates a new builder-style object to manufacture [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
-    pub fn builder() -> crate::operation::put_project_events::builders::PutProjectEventsInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_project_events::builders::PutProjectEventsInputBuilder {
         crate::operation::put_project_events::builders::PutProjectEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutProjectEventsInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
@@ -64,10 +61,7 @@ impl PutProjectEventsInputBuilder {
         self
     }
     /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.events = input;
         self
     }
@@ -78,15 +72,10 @@ impl PutProjectEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_project_events::PutProjectEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_project_events::PutProjectEventsInput {
-                project: self.project,
-                events: self.events,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_project_events::PutProjectEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_project_events::PutProjectEventsInput {
+            project: self.project,
+            events: self.events,
+        })
     }
 }

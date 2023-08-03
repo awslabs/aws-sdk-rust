@@ -15,10 +15,7 @@ pub fn ser_update_portfolio_share_input(
     if let Some(var_4) = &input.organization_node {
         #[allow(unused_mut)]
         let mut object_5 = object.key("OrganizationNode").start_object();
-        crate::protocol_serde::shape_organization_node::ser_organization_node(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_organization_node::ser_organization_node(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.share_tag_options {

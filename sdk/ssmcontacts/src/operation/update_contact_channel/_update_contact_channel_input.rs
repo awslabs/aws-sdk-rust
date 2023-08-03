@@ -29,17 +29,14 @@ impl UpdateContactChannelInput {
 }
 impl UpdateContactChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactChannelInput`](crate::operation::update_contact_channel::UpdateContactChannelInput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_channel::builders::UpdateContactChannelInputBuilder {
+    pub fn builder() -> crate::operation::update_contact_channel::builders::UpdateContactChannelInputBuilder {
         crate::operation::update_contact_channel::builders::UpdateContactChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactChannelInput`](crate::operation::update_contact_channel::UpdateContactChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactChannelInputBuilder {
     pub(crate) contact_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct UpdateContactChannelInputBuilder {
 }
 impl UpdateContactChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
-    pub fn contact_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
-    pub fn set_contact_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_channel_id = input;
         self
     }
@@ -86,32 +77,23 @@ impl UpdateContactChannelInputBuilder {
         self
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn set_delivery_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactChannelAddress>,
-    ) -> Self {
+    pub fn set_delivery_address(mut self, input: ::std::option::Option<crate::types::ContactChannelAddress>) -> Self {
         self.delivery_address = input;
         self
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn get_delivery_address(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactChannelAddress> {
+    pub fn get_delivery_address(&self) -> &::std::option::Option<crate::types::ContactChannelAddress> {
         &self.delivery_address
     }
     /// Consumes the builder and constructs a [`UpdateContactChannelInput`](crate::operation::update_contact_channel::UpdateContactChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_contact_channel::UpdateContactChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_contact_channel::UpdateContactChannelInput {
-                contact_channel_id: self.contact_channel_id,
-                name: self.name,
-                delivery_address: self.delivery_address,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_contact_channel::UpdateContactChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_contact_channel::UpdateContactChannelInput {
+            contact_channel_id: self.contact_channel_id,
+            name: self.name,
+            delivery_address: self.delivery_address,
+        })
     }
 }

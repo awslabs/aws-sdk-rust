@@ -23,9 +23,7 @@ impl StatelessCustomPublishMetricActionDimension {
 
 /// A builder for [`StatelessCustomPublishMetricActionDimension`](crate::types::StatelessCustomPublishMetricActionDimension).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatelessCustomPublishMetricActionDimensionBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

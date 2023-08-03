@@ -69,10 +69,7 @@ impl HandshakePartyBuilder {
         self
     }
     /// <p>The type of party.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HandshakePartyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::HandshakePartyType>) -> Self {
         self.r#type = input;
         self
     }

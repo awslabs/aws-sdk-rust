@@ -26,13 +26,11 @@ impl DeleteVoiceConnectorGroupInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorGroup.html">DeleteVoiceConnectorGroup</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by DeleteVoiceConnectorGroup in the Amazon Chime SDK Voice Namespace"
-)]
+#[deprecated(note = "Replaced by DeleteVoiceConnectorGroup in the Amazon Chime SDK Voice Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupInputBuilder,
+    inner: crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupInputBuilder,
 }
 impl DeleteVoiceConnectorGroupFluentBuilder {
     /// Creates a new `DeleteVoiceConnectorGroup`.
@@ -43,7 +41,7 @@ impl DeleteVoiceConnectorGroupFluentBuilder {
         }
     }
     /// Access the DeleteVoiceConnectorGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl DeleteVoiceConnectorGroupFluentBuilder {
             crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl DeleteVoiceConnectorGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl DeleteVoiceConnectorGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl DeleteVoiceConnectorGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl DeleteVoiceConnectorGroupFluentBuilder {
             crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Chime Voice Connector group ID.</p>
-    pub fn voice_connector_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_group_id(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector group ID.</p>
-    pub fn set_voice_connector_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_group_id(input);
         self
     }

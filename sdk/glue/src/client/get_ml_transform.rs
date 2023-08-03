@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`max_retries(Option<i32>)`](crate::operation::get_ml_transform::GetMlTransformOutput::max_retries): <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
     ///   - [`transform_encryption(Option<TransformEncryption>)`](crate::operation::get_ml_transform::GetMlTransformOutput::transform_encryption): <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
     /// - On failure, responds with [`SdkError<GetMLTransformError>`](crate::operation::get_ml_transform::GetMLTransformError)
-    pub fn get_ml_transform(
-        &self,
-    ) -> crate::operation::get_ml_transform::builders::GetMLTransformFluentBuilder {
-        crate::operation::get_ml_transform::builders::GetMLTransformFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ml_transform(&self) -> crate::operation::get_ml_transform::builders::GetMLTransformFluentBuilder {
+        crate::operation::get_ml_transform::builders::GetMLTransformFluentBuilder::new(self.handle.clone())
     }
 }

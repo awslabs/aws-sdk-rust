@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteEvaluationResultsOutput {
 }
 impl DeleteEvaluationResultsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEvaluationResultsOutput`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsOutputBuilder {
         crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEvaluationResultsOutput`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEvaluationResultsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -39,9 +35,7 @@ impl DeleteEvaluationResultsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEvaluationResultsOutput`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput {
+    pub fn build(self) -> crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput {
         crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput {
             _request_id: self._request_id,
         }

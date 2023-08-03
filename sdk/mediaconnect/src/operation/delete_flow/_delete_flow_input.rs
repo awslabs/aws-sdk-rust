@@ -22,9 +22,7 @@ impl DeleteFlowInput {
 
 /// A builder for [`DeleteFlowInput`](crate::operation::delete_flow::DeleteFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFlowInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteFlowInputBuilder {
         &self.flow_arn
     }
     /// Consumes the builder and constructs a [`DeleteFlowInput`](crate::operation::delete_flow::DeleteFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_flow::DeleteFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_flow::DeleteFlowInput {
-            flow_arn: self.flow_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_flow::DeleteFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_flow::DeleteFlowInput { flow_arn: self.flow_arn })
     }
 }

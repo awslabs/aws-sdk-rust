@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput::kms_key_arn): <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     ///   - [`configuration_status(Option<ConfigurationStatus>)`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput::configuration_status): <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
     /// - On failure, responds with [`SdkError<PutDefaultEncryptionConfigurationError>`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError)
-    pub fn put_default_encryption_configuration(&self) -> crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationFluentBuilder{
+    pub fn put_default_encryption_configuration(
+        &self,
+    ) -> crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationFluentBuilder {
         crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

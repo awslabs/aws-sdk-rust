@@ -26,19 +26,16 @@ pub struct DescribeModelPackageOutput {
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>Details about the algorithm that was used to create the model package.</p>
     #[doc(hidden)]
-    pub source_algorithm_specification:
-        ::std::option::Option<crate::types::SourceAlgorithmSpecification>,
+    pub source_algorithm_specification: ::std::option::Option<crate::types::SourceAlgorithmSpecification>,
     /// <p>Configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
     #[doc(hidden)]
-    pub validation_specification:
-        ::std::option::Option<crate::types::ModelPackageValidationSpecification>,
+    pub validation_specification: ::std::option::Option<crate::types::ModelPackageValidationSpecification>,
     /// <p>The current status of the model package.</p>
     #[doc(hidden)]
     pub model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     /// <p>Details about the current status of the model package.</p>
     #[doc(hidden)]
-    pub model_package_status_details:
-        ::std::option::Option<crate::types::ModelPackageStatusDetails>,
+    pub model_package_status_details: ::std::option::Option<crate::types::ModelPackageStatusDetails>,
     /// <p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>
     #[doc(hidden)]
     pub certify_for_marketplace: bool,
@@ -65,9 +62,7 @@ pub struct DescribeModelPackageOutput {
     pub approval_description: ::std::option::Option<::std::string::String>,
     /// <p>The metadata properties associated with the model package versions.</p>
     #[doc(hidden)]
-    pub customer_metadata_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
     #[doc(hidden)]
     pub drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
@@ -82,9 +77,7 @@ pub struct DescribeModelPackageOutput {
     pub sample_payload_url: ::std::option::Option<::std::string::String>,
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     #[doc(hidden)]
-    pub additional_inference_specifications: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-    >,
+    pub additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageOutput {
@@ -113,21 +106,15 @@ impl DescribeModelPackageOutput {
         self.creation_time.as_ref()
     }
     /// <p>Details about inference jobs that can be run with models based on this model package.</p>
-    pub fn inference_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceSpecification> {
+    pub fn inference_specification(&self) -> ::std::option::Option<&crate::types::InferenceSpecification> {
         self.inference_specification.as_ref()
     }
     /// <p>Details about the algorithm that was used to create the model package.</p>
-    pub fn source_algorithm_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceAlgorithmSpecification> {
+    pub fn source_algorithm_specification(&self) -> ::std::option::Option<&crate::types::SourceAlgorithmSpecification> {
         self.source_algorithm_specification.as_ref()
     }
     /// <p>Configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
-    pub fn validation_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelPackageValidationSpecification> {
+    pub fn validation_specification(&self) -> ::std::option::Option<&crate::types::ModelPackageValidationSpecification> {
         self.validation_specification.as_ref()
     }
     /// <p>The current status of the model package.</p>
@@ -135,9 +122,7 @@ impl DescribeModelPackageOutput {
         self.model_package_status.as_ref()
     }
     /// <p>Details about the current status of the model package.</p>
-    pub fn model_package_status_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelPackageStatusDetails> {
+    pub fn model_package_status_details(&self) -> ::std::option::Option<&crate::types::ModelPackageStatusDetails> {
         self.model_package_status_details.as_ref()
     }
     /// <p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>
@@ -145,9 +130,7 @@ impl DescribeModelPackageOutput {
         self.certify_for_marketplace
     }
     /// <p>The approval status of the model package.</p>
-    pub fn model_approval_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
+    pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
@@ -175,17 +158,11 @@ impl DescribeModelPackageOutput {
         self.approval_description.as_deref()
     }
     /// <p>The metadata properties associated with the model package versions.</p>
-    pub fn customer_metadata_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn customer_metadata_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.customer_metadata_properties.as_ref()
     }
     /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
-    pub fn drift_check_baselines(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DriftCheckBaselines> {
+    pub fn drift_check_baselines(&self) -> ::std::option::Option<&crate::types::DriftCheckBaselines> {
         self.drift_check_baselines.as_ref()
     }
     /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
@@ -201,9 +178,7 @@ impl DescribeModelPackageOutput {
         self.sample_payload_url.as_deref()
     }
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    pub fn additional_inference_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdditionalInferenceSpecificationDefinition]> {
+    pub fn additional_inference_specifications(&self) -> ::std::option::Option<&[crate::types::AdditionalInferenceSpecificationDefinition]> {
         self.additional_inference_specifications.as_deref()
     }
 }
@@ -214,17 +189,14 @@ impl ::aws_http::request_id::RequestId for DescribeModelPackageOutput {
 }
 impl DescribeModelPackageOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelPackageOutput`](crate::operation::describe_model_package::DescribeModelPackageOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_model_package::builders::DescribeModelPackageOutputBuilder {
+    pub fn builder() -> crate::operation::describe_model_package::builders::DescribeModelPackageOutputBuilder {
         crate::operation::describe_model_package::builders::DescribeModelPackageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelPackageOutput`](crate::operation::describe_model_package::DescribeModelPackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelPackageOutputBuilder {
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
@@ -233,13 +205,10 @@ pub struct DescribeModelPackageOutputBuilder {
     pub(crate) model_package_description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
-    pub(crate) source_algorithm_specification:
-        ::std::option::Option<crate::types::SourceAlgorithmSpecification>,
-    pub(crate) validation_specification:
-        ::std::option::Option<crate::types::ModelPackageValidationSpecification>,
+    pub(crate) source_algorithm_specification: ::std::option::Option<crate::types::SourceAlgorithmSpecification>,
+    pub(crate) validation_specification: ::std::option::Option<crate::types::ModelPackageValidationSpecification>,
     pub(crate) model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
-    pub(crate) model_package_status_details:
-        ::std::option::Option<crate::types::ModelPackageStatusDetails>,
+    pub(crate) model_package_status_details: ::std::option::Option<crate::types::ModelPackageStatusDetails>,
     pub(crate) certify_for_marketplace: ::std::option::Option<bool>,
     pub(crate) model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
@@ -248,32 +217,22 @@ pub struct DescribeModelPackageOutputBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) approval_description: ::std::option::Option<::std::string::String>,
-    pub(crate) customer_metadata_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) task: ::std::option::Option<::std::string::String>,
     pub(crate) sample_payload_url: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_inference_specifications: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-    >,
+    pub(crate) additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageOutputBuilder {
     /// <p>The name of the model package being described.</p>
-    pub fn model_package_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model package being described.</p>
-    pub fn set_model_package_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_name = input;
         self
     }
@@ -282,18 +241,12 @@ impl DescribeModelPackageOutputBuilder {
         &self.model_package_name
     }
     /// <p>If the model is a versioned model, the name of the model group that the versioned model belongs to.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the model is a versioned model, the name of the model group that the versioned model belongs to.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
@@ -316,18 +269,12 @@ impl DescribeModelPackageOutputBuilder {
         &self.model_package_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn model_package_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn set_model_package_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_arn = input;
         self
     }
@@ -336,18 +283,12 @@ impl DescribeModelPackageOutputBuilder {
         &self.model_package_arn
     }
     /// <p>A brief summary of the model package.</p>
-    pub fn model_package_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief summary of the model package.</p>
-    pub fn set_model_package_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_description = input;
         self
     }
@@ -361,10 +302,7 @@ impl DescribeModelPackageOutputBuilder {
         self
     }
     /// <p>A timestamp specifying when the model package was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -378,61 +316,40 @@ impl DescribeModelPackageOutputBuilder {
         self
     }
     /// <p>Details about inference jobs that can be run with models based on this model package.</p>
-    pub fn set_inference_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceSpecification>,
-    ) -> Self {
+    pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
         self.inference_specification = input;
         self
     }
     /// <p>Details about inference jobs that can be run with models based on this model package.</p>
-    pub fn get_inference_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceSpecification> {
+    pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
         &self.inference_specification
     }
     /// <p>Details about the algorithm that was used to create the model package.</p>
-    pub fn source_algorithm_specification(
-        mut self,
-        input: crate::types::SourceAlgorithmSpecification,
-    ) -> Self {
+    pub fn source_algorithm_specification(mut self, input: crate::types::SourceAlgorithmSpecification) -> Self {
         self.source_algorithm_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the algorithm that was used to create the model package.</p>
-    pub fn set_source_algorithm_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceAlgorithmSpecification>,
-    ) -> Self {
+    pub fn set_source_algorithm_specification(mut self, input: ::std::option::Option<crate::types::SourceAlgorithmSpecification>) -> Self {
         self.source_algorithm_specification = input;
         self
     }
     /// <p>Details about the algorithm that was used to create the model package.</p>
-    pub fn get_source_algorithm_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceAlgorithmSpecification> {
+    pub fn get_source_algorithm_specification(&self) -> &::std::option::Option<crate::types::SourceAlgorithmSpecification> {
         &self.source_algorithm_specification
     }
     /// <p>Configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
-    pub fn validation_specification(
-        mut self,
-        input: crate::types::ModelPackageValidationSpecification,
-    ) -> Self {
+    pub fn validation_specification(mut self, input: crate::types::ModelPackageValidationSpecification) -> Self {
         self.validation_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
-    pub fn set_validation_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageValidationSpecification>,
-    ) -> Self {
+    pub fn set_validation_specification(mut self, input: ::std::option::Option<crate::types::ModelPackageValidationSpecification>) -> Self {
         self.validation_specification = input;
         self
     }
     /// <p>Configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
-    pub fn get_validation_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackageValidationSpecification> {
+    pub fn get_validation_specification(&self) -> &::std::option::Option<crate::types::ModelPackageValidationSpecification> {
         &self.validation_specification
     }
     /// <p>The current status of the model package.</p>
@@ -441,39 +358,26 @@ impl DescribeModelPackageOutputBuilder {
         self
     }
     /// <p>The current status of the model package.</p>
-    pub fn set_model_package_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageStatus>,
-    ) -> Self {
+    pub fn set_model_package_status(mut self, input: ::std::option::Option<crate::types::ModelPackageStatus>) -> Self {
         self.model_package_status = input;
         self
     }
     /// <p>The current status of the model package.</p>
-    pub fn get_model_package_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackageStatus> {
+    pub fn get_model_package_status(&self) -> &::std::option::Option<crate::types::ModelPackageStatus> {
         &self.model_package_status
     }
     /// <p>Details about the current status of the model package.</p>
-    pub fn model_package_status_details(
-        mut self,
-        input: crate::types::ModelPackageStatusDetails,
-    ) -> Self {
+    pub fn model_package_status_details(mut self, input: crate::types::ModelPackageStatusDetails) -> Self {
         self.model_package_status_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the current status of the model package.</p>
-    pub fn set_model_package_status_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageStatusDetails>,
-    ) -> Self {
+    pub fn set_model_package_status_details(mut self, input: ::std::option::Option<crate::types::ModelPackageStatusDetails>) -> Self {
         self.model_package_status_details = input;
         self
     }
     /// <p>Details about the current status of the model package.</p>
-    pub fn get_model_package_status_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackageStatusDetails> {
+    pub fn get_model_package_status_details(&self) -> &::std::option::Option<crate::types::ModelPackageStatusDetails> {
         &self.model_package_status_details
     }
     /// <p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>
@@ -496,17 +400,12 @@ impl DescribeModelPackageOutputBuilder {
         self
     }
     /// <p>The approval status of the model package.</p>
-    pub fn set_model_approval_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelApprovalStatus>,
-    ) -> Self {
+    pub fn set_model_approval_status(mut self, input: ::std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
         self.model_approval_status = input;
         self
     }
     /// <p>The approval status of the model package.</p>
-    pub fn get_model_approval_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
+    pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         &self.model_approval_status
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
@@ -515,10 +414,7 @@ impl DescribeModelPackageOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -532,17 +428,12 @@ impl DescribeModelPackageOutputBuilder {
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn set_metadata_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataProperties>,
-    ) -> Self {
+    pub fn set_metadata_properties(mut self, input: ::std::option::Option<crate::types::MetadataProperties>) -> Self {
         self.metadata_properties = input;
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn get_metadata_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+    pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         &self.metadata_properties
     }
     /// <p>Metrics for the model.</p>
@@ -551,10 +442,7 @@ impl DescribeModelPackageOutputBuilder {
         self
     }
     /// <p>Metrics for the model.</p>
-    pub fn set_model_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelMetrics>,
-    ) -> Self {
+    pub fn set_model_metrics(mut self, input: ::std::option::Option<crate::types::ModelMetrics>) -> Self {
         self.model_metrics = input;
         self
     }
@@ -568,10 +456,7 @@ impl DescribeModelPackageOutputBuilder {
         self
     }
     /// <p>The last time that the model package was modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -585,10 +470,7 @@ impl DescribeModelPackageOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -597,18 +479,12 @@ impl DescribeModelPackageOutputBuilder {
         &self.last_modified_by
     }
     /// <p>A description provided for the model approval.</p>
-    pub fn approval_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description provided for the model approval.</p>
-    pub fn set_approval_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_description = input;
         self
     }
@@ -634,9 +510,7 @@ impl DescribeModelPackageOutputBuilder {
     /// <p>The metadata properties associated with the model package versions.</p>
     pub fn set_customer_metadata_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.customer_metadata_properties = input;
         self
@@ -644,9 +518,7 @@ impl DescribeModelPackageOutputBuilder {
     /// <p>The metadata properties associated with the model package versions.</p>
     pub fn get_customer_metadata_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.customer_metadata_properties
     }
     /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
@@ -655,17 +527,12 @@ impl DescribeModelPackageOutputBuilder {
         self
     }
     /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
-    pub fn set_drift_check_baselines(
-        mut self,
-        input: ::std::option::Option<crate::types::DriftCheckBaselines>,
-    ) -> Self {
+    pub fn set_drift_check_baselines(mut self, input: ::std::option::Option<crate::types::DriftCheckBaselines>) -> Self {
         self.drift_check_baselines = input;
         self
     }
     /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
-    pub fn get_drift_check_baselines(
-        &self,
-    ) -> &::std::option::Option<crate::types::DriftCheckBaselines> {
+    pub fn get_drift_check_baselines(&self) -> &::std::option::Option<crate::types::DriftCheckBaselines> {
         &self.drift_check_baselines
     }
     /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
@@ -697,18 +564,12 @@ impl DescribeModelPackageOutputBuilder {
         &self.task
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn sample_payload_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sample_payload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_payload_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn set_sample_payload_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sample_payload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_payload_url = input;
         self
     }
@@ -721,10 +582,7 @@ impl DescribeModelPackageOutputBuilder {
     /// To override the contents of this collection use [`set_additional_inference_specifications`](Self::set_additional_inference_specifications).
     ///
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    pub fn additional_inference_specifications(
-        mut self,
-        input: crate::types::AdditionalInferenceSpecificationDefinition,
-    ) -> Self {
+    pub fn additional_inference_specifications(mut self, input: crate::types::AdditionalInferenceSpecificationDefinition) -> Self {
         let mut v = self.additional_inference_specifications.unwrap_or_default();
         v.push(input);
         self.additional_inference_specifications = ::std::option::Option::Some(v);
@@ -733,9 +591,7 @@ impl DescribeModelPackageOutputBuilder {
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     pub fn set_additional_inference_specifications(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     ) -> Self {
         self.additional_inference_specifications = input;
         self
@@ -743,9 +599,7 @@ impl DescribeModelPackageOutputBuilder {
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     pub fn get_additional_inference_specifications(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>> {
         &self.additional_inference_specifications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

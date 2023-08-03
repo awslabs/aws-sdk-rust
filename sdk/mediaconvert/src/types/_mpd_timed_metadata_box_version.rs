@@ -41,13 +41,7 @@
 /// When you specify Version 1, you must also set ID3 metadata to Passthrough.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MpdTimedMetadataBoxVersion {
     #[allow(missing_docs)] // documentation missing in model
@@ -62,9 +56,7 @@ impl ::std::convert::From<&str> for MpdTimedMetadataBoxVersion {
         match s {
             "VERSION_0" => MpdTimedMetadataBoxVersion::Version0,
             "VERSION_1" => MpdTimedMetadataBoxVersion::Version1,
-            other => MpdTimedMetadataBoxVersion::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MpdTimedMetadataBoxVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -8,8 +8,7 @@ pub struct AssignPrivateNatGatewayAddressOutput {
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>NAT gateway IP addresses.</p>
     #[doc(hidden)]
-    pub nat_gateway_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
+    pub nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
     _request_id: Option<String>,
 }
 impl AssignPrivateNatGatewayAddressOutput {
@@ -18,9 +17,7 @@ impl AssignPrivateNatGatewayAddressOutput {
         self.nat_gateway_id.as_deref()
     }
     /// <p>NAT gateway IP addresses.</p>
-    pub fn nat_gateway_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NatGatewayAddress]> {
+    pub fn nat_gateway_addresses(&self) -> ::std::option::Option<&[crate::types::NatGatewayAddress]> {
         self.nat_gateway_addresses.as_deref()
     }
 }
@@ -31,36 +28,27 @@ impl ::aws_http::request_id::RequestId for AssignPrivateNatGatewayAddressOutput 
 }
 impl AssignPrivateNatGatewayAddressOutput {
     /// Creates a new builder-style object to manufacture [`AssignPrivateNatGatewayAddressOutput`](crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput).
-    pub fn builder() -> crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressOutputBuilder{
+    pub fn builder() -> crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressOutputBuilder {
         crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssignPrivateNatGatewayAddressOutput`](crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssignPrivateNatGatewayAddressOutputBuilder {
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
-    pub(crate) nat_gateway_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
+    pub(crate) nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
     _request_id: Option<String>,
 }
 impl AssignPrivateNatGatewayAddressOutputBuilder {
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nat_gateway_id = input;
         self
     }
@@ -80,17 +68,12 @@ impl AssignPrivateNatGatewayAddressOutputBuilder {
         self
     }
     /// <p>NAT gateway IP addresses.</p>
-    pub fn set_nat_gateway_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
-    ) -> Self {
+    pub fn set_nat_gateway_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>) -> Self {
         self.nat_gateway_addresses = input;
         self
     }
     /// <p>NAT gateway IP addresses.</p>
-    pub fn get_nat_gateway_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>> {
+    pub fn get_nat_gateway_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>> {
         &self.nat_gateway_addresses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,10 +86,7 @@ impl AssignPrivateNatGatewayAddressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssignPrivateNatGatewayAddressOutput`](crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput
-    {
+    pub fn build(self) -> crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput {
         crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput {
             nat_gateway_id: self.nat_gateway_id,
             nat_gateway_addresses: self.nat_gateway_addresses,

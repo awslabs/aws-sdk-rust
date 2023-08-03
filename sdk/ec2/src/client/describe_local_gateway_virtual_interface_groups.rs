@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`local_gateway_virtual_interface_groups(Option<Vec<LocalGatewayVirtualInterfaceGroup>>)`](crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsOutput::local_gateway_virtual_interface_groups): <p>The virtual interface groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeLocalGatewayVirtualInterfaceGroupsError>`](crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsError)
-    pub fn describe_local_gateway_virtual_interface_groups(&self) -> crate::operation::describe_local_gateway_virtual_interface_groups::builders::DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder{
-        crate::operation::describe_local_gateway_virtual_interface_groups::builders::DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder::new(self.handle.clone())
+    pub fn describe_local_gateway_virtual_interface_groups(
+        &self,
+    ) -> crate::operation::describe_local_gateway_virtual_interface_groups::builders::DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder {
+        crate::operation::describe_local_gateway_virtual_interface_groups::builders::DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -26,9 +26,7 @@ impl RegistryCredential {
         self.credential.as_deref()
     }
     /// <p> The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
-    pub fn credential_provider(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CredentialProviderType> {
+    pub fn credential_provider(&self) -> ::std::option::Option<&crate::types::CredentialProviderType> {
         self.credential_provider.as_ref()
     }
 }
@@ -41,9 +39,7 @@ impl RegistryCredential {
 
 /// A builder for [`RegistryCredential`](crate::types::RegistryCredential).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistryCredentialBuilder {
     pub(crate) credential: ::std::option::Option<::std::string::String>,
     pub(crate) credential_provider: ::std::option::Option<crate::types::CredentialProviderType>,
@@ -75,17 +71,12 @@ impl RegistryCredentialBuilder {
         self
     }
     /// <p> The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
-    pub fn set_credential_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::CredentialProviderType>,
-    ) -> Self {
+    pub fn set_credential_provider(mut self, input: ::std::option::Option<crate::types::CredentialProviderType>) -> Self {
         self.credential_provider = input;
         self
     }
     /// <p> The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
-    pub fn get_credential_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::CredentialProviderType> {
+    pub fn get_credential_provider(&self) -> &::std::option::Option<crate::types::CredentialProviderType> {
         &self.credential_provider
     }
     /// Consumes the builder and constructs a [`RegistryCredential`](crate::types::RegistryCredential).

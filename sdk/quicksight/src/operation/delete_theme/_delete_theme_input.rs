@@ -38,9 +38,7 @@ impl DeleteThemeInput {
 
 /// A builder for [`DeleteThemeInput`](crate::operation::delete_theme::DeleteThemeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThemeInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +46,12 @@ pub struct DeleteThemeInputBuilder {
 }
 impl DeleteThemeInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -99,12 +91,7 @@ impl DeleteThemeInputBuilder {
         &self.version_number
     }
     /// Consumes the builder and constructs a [`DeleteThemeInput`](crate::operation::delete_theme::DeleteThemeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_theme::DeleteThemeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_theme::DeleteThemeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_theme::DeleteThemeInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

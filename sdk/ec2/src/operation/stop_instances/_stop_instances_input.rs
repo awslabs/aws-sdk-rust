@@ -47,9 +47,7 @@ impl StopInstancesInput {
 
 /// A builder for [`StopInstancesInput`](crate::operation::stop_instances::StopInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) hibernate: ::std::option::Option<bool>,
@@ -69,17 +67,12 @@ impl StopInstancesInputBuilder {
         self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -133,10 +126,7 @@ impl StopInstancesInputBuilder {
     /// Consumes the builder and constructs a [`StopInstancesInput`](crate::operation::stop_instances::StopInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_instances::StopInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_instances::StopInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_instances::StopInstancesInput {
             instance_ids: self.instance_ids,
             hibernate: self.hibernate,

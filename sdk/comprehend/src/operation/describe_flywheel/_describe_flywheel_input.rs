@@ -15,17 +15,14 @@ impl DescribeFlywheelInput {
 }
 impl DescribeFlywheelInput {
     /// Creates a new builder-style object to manufacture [`DescribeFlywheelInput`](crate::operation::describe_flywheel::DescribeFlywheelInput).
-    pub fn builder() -> crate::operation::describe_flywheel::builders::DescribeFlywheelInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_flywheel::builders::DescribeFlywheelInputBuilder {
         crate::operation::describe_flywheel::builders::DescribeFlywheelInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFlywheelInput`](crate::operation::describe_flywheel::DescribeFlywheelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFlywheelInputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl DescribeFlywheelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFlywheelInput`](crate::operation::describe_flywheel::DescribeFlywheelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_flywheel::DescribeFlywheelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_flywheel::DescribeFlywheelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_flywheel::DescribeFlywheelInput {
             flywheel_arn: self.flywheel_arn,
         })

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`groups(Option<Vec<GroupSummary>>)`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput::groups): <p>An array of structures that contain information about the groups that this canary is associated with.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAssociatedGroupsError>`](crate::operation::list_associated_groups::ListAssociatedGroupsError)
-    pub fn list_associated_groups(
-        &self,
-    ) -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder {
-        crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_associated_groups(&self) -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder {
+        crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::new(self.handle.clone())
     }
 }

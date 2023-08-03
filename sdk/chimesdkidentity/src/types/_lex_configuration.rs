@@ -57,9 +57,7 @@ impl LexConfiguration {
 
 /// A builder for [`LexConfiguration`](crate::types::LexConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LexConfigurationBuilder {
     pub(crate) responds_to: ::std::option::Option<crate::types::RespondsTo>,
     pub(crate) invoked_by: ::std::option::Option<crate::types::InvokedBy>,
@@ -80,10 +78,7 @@ impl LexConfigurationBuilder {
     /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
     /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
-    pub fn set_responds_to(
-        mut self,
-        input: ::std::option::Option<crate::types::RespondsTo>,
-    ) -> Self {
+    pub fn set_responds_to(mut self, input: ::std::option::Option<crate::types::RespondsTo>) -> Self {
         self.responds_to = input;
         self
     }
@@ -109,18 +104,12 @@ impl LexConfigurationBuilder {
         &self.invoked_by
     }
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
-    pub fn lex_bot_alias_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lex_bot_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lex_bot_alias_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
-    pub fn set_lex_bot_alias_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lex_bot_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lex_bot_alias_arn = input;
         self
     }
@@ -143,18 +132,12 @@ impl LexConfigurationBuilder {
         &self.locale_id
     }
     /// <p>The name of the welcome intent configured in the Amazon Lex V2 bot.</p>
-    pub fn welcome_intent(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn welcome_intent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.welcome_intent = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the welcome intent configured in the Amazon Lex V2 bot.</p>
-    pub fn set_welcome_intent(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_welcome_intent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.welcome_intent = input;
         self
     }

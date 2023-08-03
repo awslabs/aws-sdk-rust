@@ -15,9 +15,7 @@ pub struct ListDataQualityRuleRecommendationRunsInput {
 }
 impl ListDataQualityRuleRecommendationRunsInput {
     /// <p>The filter criteria.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataQualityRuleRecommendationRunFilter> {
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::DataQualityRuleRecommendationRunFilter> {
         self.filter.as_ref()
     }
     /// <p>A paginated token to offset the results.</p>
@@ -31,16 +29,14 @@ impl ListDataQualityRuleRecommendationRunsInput {
 }
 impl ListDataQualityRuleRecommendationRunsInput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityRuleRecommendationRunsInput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput).
-    pub fn builder() -> crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsInputBuilder{
+    pub fn builder() -> crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsInputBuilder {
         crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataQualityRuleRecommendationRunsInput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataQualityRuleRecommendationRunsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,12 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
         self
     }
     /// <p>The filter criteria.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunFilter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>The filter criteria.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataQualityRuleRecommendationRunFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::DataQualityRuleRecommendationRunFilter> {
         &self.filter
     }
     /// <p>A paginated token to offset the results.</p>
@@ -95,16 +86,18 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDataQualityRuleRecommendationRunsInput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput {
-                filter: self.filter
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

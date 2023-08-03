@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopMeetingTranscriptionOutput {
 }
 impl StopMeetingTranscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StopMeetingTranscriptionOutput`](crate::operation::stop_meeting_transcription::StopMeetingTranscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionOutputBuilder {
         crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopMeetingTranscriptionOutput`](crate::operation::stop_meeting_transcription::StopMeetingTranscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopMeetingTranscriptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl StopMeetingTranscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopMeetingTranscriptionOutput`](crate::operation::stop_meeting_transcription::StopMeetingTranscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_meeting_transcription::StopMeetingTranscriptionOutput {
+    pub fn build(self) -> crate::operation::stop_meeting_transcription::StopMeetingTranscriptionOutput {
         crate::operation::stop_meeting_transcription::StopMeetingTranscriptionOutput {
             _request_id: self._request_id,
         }

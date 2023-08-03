@@ -6,10 +6,7 @@ pub fn ser_suggestion_query(
     if let Some(var_1) = &input.property_name_query {
         #[allow(unused_mut)]
         let mut object_2 = object.key("PropertyNameQuery").start_object();
-        crate::protocol_serde::shape_property_name_query::ser_property_name_query(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_property_name_query::ser_property_name_query(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

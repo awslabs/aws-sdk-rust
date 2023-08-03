@@ -26,7 +26,7 @@ impl UpdateResourceCollectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResourceCollectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_resource_collection::builders::UpdateResourceCollectionInputBuilder,
+    inner: crate::operation::update_resource_collection::builders::UpdateResourceCollectionInputBuilder,
 }
 impl UpdateResourceCollectionFluentBuilder {
     /// Creates a new `UpdateResourceCollection`.
@@ -37,10 +37,7 @@ impl UpdateResourceCollectionFluentBuilder {
         }
     }
     /// Access the UpdateResourceCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resource_collection::builders::UpdateResourceCollectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_resource_collection::builders::UpdateResourceCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateResourceCollectionFluentBuilder {
             crate::operation::update_resource_collection::UpdateResourceCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_collection::UpdateResourceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_collection::UpdateResourceCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateResourceCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateResourceCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_collection::UpdateResourceCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_collection::UpdateResourceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_collection::UpdateResourceCollectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateResourceCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_collection::UpdateResourceCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_collection::UpdateResourceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_collection::UpdateResourceCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateResourceCollectionFluentBuilder {
             crate::operation::update_resource_collection::UpdateResourceCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_collection::UpdateResourceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_collection::UpdateResourceCollectionError>,
     > {
         self.customize_middleware().await
     }
@@ -129,39 +115,26 @@ impl UpdateResourceCollectionFluentBuilder {
         self
     }
     /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateResourceCollectionAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::UpdateResourceCollectionAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
     /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
-    pub fn get_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateResourceCollectionAction> {
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::UpdateResourceCollectionAction> {
         self.inner.get_action()
     }
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
-    pub fn resource_collection(
-        mut self,
-        input: crate::types::UpdateResourceCollectionFilter,
-    ) -> Self {
+    pub fn resource_collection(mut self, input: crate::types::UpdateResourceCollectionFilter) -> Self {
         self.inner = self.inner.resource_collection(input);
         self
     }
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateResourceCollectionFilter>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::UpdateResourceCollectionFilter>) -> Self {
         self.inner = self.inner.set_resource_collection(input);
         self
     }
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateResourceCollectionFilter> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::UpdateResourceCollectionFilter> {
         self.inner.get_resource_collection()
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`address_type(Option<AddressType>)`](crate::operation::get_site_address::GetSiteAddressOutput::address_type): <p>The type of the address you receive. </p>
     ///   - [`address(Option<Address>)`](crate::operation::get_site_address::GetSiteAddressOutput::address): <p> Information about the address. </p>
     /// - On failure, responds with [`SdkError<GetSiteAddressError>`](crate::operation::get_site_address::GetSiteAddressError)
-    pub fn get_site_address(
-        &self,
-    ) -> crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder {
-        crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_site_address(&self) -> crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder {
+        crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::new(self.handle.clone())
     }
 }

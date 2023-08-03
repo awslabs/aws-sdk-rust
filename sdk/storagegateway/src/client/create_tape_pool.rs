@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTapePoolOutput`](crate::operation::create_tape_pool::CreateTapePoolOutput) with field(s):
     ///   - [`pool_arn(Option<String>)`](crate::operation::create_tape_pool::CreateTapePoolOutput::pool_arn): <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of tape pools for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<CreateTapePoolError>`](crate::operation::create_tape_pool::CreateTapePoolError)
-    pub fn create_tape_pool(
-        &self,
-    ) -> crate::operation::create_tape_pool::builders::CreateTapePoolFluentBuilder {
-        crate::operation::create_tape_pool::builders::CreateTapePoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_tape_pool(&self) -> crate::operation::create_tape_pool::builders::CreateTapePoolFluentBuilder {
+        crate::operation::create_tape_pool::builders::CreateTapePoolFluentBuilder::new(self.handle.clone())
     }
 }

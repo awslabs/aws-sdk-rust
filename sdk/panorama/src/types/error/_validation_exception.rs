@@ -15,8 +15,7 @@ pub struct ValidationException {
     pub error_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes that led to the exception and their values.</p>
     #[doc(hidden)]
-    pub error_arguments:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionErrorArgument>>,
+    pub error_arguments: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionErrorArgument>>,
     /// <p>A list of request parameters that failed validation.</p>
     #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
@@ -32,9 +31,7 @@ impl ValidationException {
         self.error_id.as_deref()
     }
     /// <p>A list of attributes that led to the exception and their values.</p>
-    pub fn error_arguments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ValidationExceptionErrorArgument]> {
+    pub fn error_arguments(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionErrorArgument]> {
         self.error_arguments.as_deref()
     }
     /// <p>A list of request parameters that failed validation.</p>
@@ -80,17 +77,13 @@ impl ValidationException {
 
 /// A builder for [`ValidationException`](crate::types::error::ValidationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
     pub(crate) error_id: ::std::option::Option<::std::string::String>,
-    pub(crate) error_arguments:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionErrorArgument>>,
-    pub(crate) fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
+    pub(crate) error_arguments: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionErrorArgument>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
@@ -114,10 +107,7 @@ impl ValidationExceptionBuilder {
         self
     }
     /// <p>The reason that validation failed.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationExceptionReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ValidationExceptionReason>) -> Self {
         self.reason = input;
         self
     }
@@ -144,30 +134,19 @@ impl ValidationExceptionBuilder {
     /// To override the contents of this collection use [`set_error_arguments`](Self::set_error_arguments).
     ///
     /// <p>A list of attributes that led to the exception and their values.</p>
-    pub fn error_arguments(
-        mut self,
-        input: crate::types::ValidationExceptionErrorArgument,
-    ) -> Self {
+    pub fn error_arguments(mut self, input: crate::types::ValidationExceptionErrorArgument) -> Self {
         let mut v = self.error_arguments.unwrap_or_default();
         v.push(input);
         self.error_arguments = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of attributes that led to the exception and their values.</p>
-    pub fn set_error_arguments(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ValidationExceptionErrorArgument>,
-        >,
-    ) -> Self {
+    pub fn set_error_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionErrorArgument>>) -> Self {
         self.error_arguments = input;
         self
     }
     /// <p>A list of attributes that led to the exception and their values.</p>
-    pub fn get_error_arguments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionErrorArgument>>
-    {
+    pub fn get_error_arguments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionErrorArgument>> {
         &self.error_arguments
     }
     /// Appends an item to `fields`.
@@ -182,17 +161,12 @@ impl ValidationExceptionBuilder {
         self
     }
     /// <p>A list of request parameters that failed validation.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>A list of request parameters that failed validation.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
         &self.fields
     }
     /// Sets error metadata
@@ -202,10 +176,7 @@ impl ValidationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

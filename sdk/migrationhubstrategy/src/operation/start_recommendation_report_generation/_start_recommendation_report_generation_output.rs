@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartRecommendationReportGenerationOu
 }
 impl StartRecommendationReportGenerationOutput {
     /// Creates a new builder-style object to manufacture [`StartRecommendationReportGenerationOutput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput).
-    pub fn builder() -> crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationOutputBuilder{
+    pub fn builder() -> crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationOutputBuilder {
         crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartRecommendationReportGenerationOutput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRecommendationReportGenerationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl StartRecommendationReportGenerationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartRecommendationReportGenerationOutput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput).
-    pub fn build(self) -> crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput{
+    pub fn build(self) -> crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput {
         crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput {
-            id: self.id
-            ,
+            id: self.id,
             _request_id: self._request_id,
         }
     }

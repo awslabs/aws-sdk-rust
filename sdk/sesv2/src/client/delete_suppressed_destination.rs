@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`email_address(impl ::std::convert::Into<String>)`](crate::operation::delete_suppressed_destination::builders::DeleteSuppressedDestinationFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::delete_suppressed_destination::builders::DeleteSuppressedDestinationFluentBuilder::set_email_address): <p>The suppressed email destination to remove from the account suppression list.</p>
     /// - On success, responds with [`DeleteSuppressedDestinationOutput`](crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationOutput)
     /// - On failure, responds with [`SdkError<DeleteSuppressedDestinationError>`](crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError)
-    pub fn delete_suppressed_destination(&self) -> crate::operation::delete_suppressed_destination::builders::DeleteSuppressedDestinationFluentBuilder{
+    pub fn delete_suppressed_destination(
+        &self,
+    ) -> crate::operation::delete_suppressed_destination::builders::DeleteSuppressedDestinationFluentBuilder {
         crate::operation::delete_suppressed_destination::builders::DeleteSuppressedDestinationFluentBuilder::new(self.handle.clone())
     }
 }

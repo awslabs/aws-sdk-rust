@@ -49,9 +49,7 @@ impl RoutingStrategy {
 
 /// A builder for [`RoutingStrategy`](crate::types::RoutingStrategy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoutingStrategyBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RoutingStrategyType>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
@@ -74,10 +72,7 @@ impl RoutingStrategyBuilder {
     /// <li> <p> <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
     /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingStrategyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RoutingStrategyType>) -> Self {
         self.r#type = input;
         self
     }

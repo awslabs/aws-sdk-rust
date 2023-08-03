@@ -18,10 +18,7 @@ pub fn ser_start_test_set_generation_input(
     if let Some(var_5) = &input.storage_location {
         #[allow(unused_mut)]
         let mut object_6 = object.key("storageLocation").start_object();
-        crate::protocol_serde::shape_test_set_storage_location::ser_test_set_storage_location(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_test_set_storage_location::ser_test_set_storage_location(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.test_set_name {

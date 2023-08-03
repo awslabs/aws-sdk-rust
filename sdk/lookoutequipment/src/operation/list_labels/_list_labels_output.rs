@@ -35,9 +35,7 @@ impl ListLabelsOutput {
 
 /// A builder for [`ListLabelsOutput`](crate::operation::list_labels::ListLabelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLabelsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) label_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
@@ -70,17 +68,12 @@ impl ListLabelsOutputBuilder {
         self
     }
     /// <p> A summary of the items in the label group. </p>
-    pub fn set_label_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
-    ) -> Self {
+    pub fn set_label_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
         self.label_summaries = input;
         self
     }
     /// <p> A summary of the items in the label group. </p>
-    pub fn get_label_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+    pub fn get_label_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
         &self.label_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

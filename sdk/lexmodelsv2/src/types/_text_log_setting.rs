@@ -30,9 +30,7 @@ impl TextLogSetting {
 
 /// A builder for [`TextLogSetting`](crate::types::TextLogSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextLogSettingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) destination: ::std::option::Option<crate::types::TextLogDestination>,
@@ -58,10 +56,7 @@ impl TextLogSettingBuilder {
         self
     }
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::TextLogDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::TextLogDestination>) -> Self {
         self.destination = input;
         self
     }

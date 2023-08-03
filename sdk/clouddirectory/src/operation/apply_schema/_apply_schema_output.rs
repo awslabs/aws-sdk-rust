@@ -35,9 +35,7 @@ impl ApplySchemaOutput {
 
 /// A builder for [`ApplySchemaOutput`](crate::operation::apply_schema::ApplySchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplySchemaOutputBuilder {
     pub(crate) applied_schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct ApplySchemaOutputBuilder {
 }
 impl ApplySchemaOutputBuilder {
     /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
-    pub fn applied_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn applied_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.applied_schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
-    pub fn set_applied_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_applied_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.applied_schema_arn = input;
         self
     }
@@ -65,18 +57,12 @@ impl ApplySchemaOutputBuilder {
         &self.applied_schema_arn
     }
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }

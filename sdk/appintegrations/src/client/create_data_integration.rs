@@ -25,12 +25,7 @@ impl super::Client {
     ///   - [`file_configuration(Option<FileConfiguration>)`](crate::operation::create_data_integration::CreateDataIntegrationOutput::file_configuration): <p>The configuration for what files should be pulled from the source.</p>
     ///   - [`object_configuration(Option<HashMap<String, HashMap<String, Vec<String>>>>)`](crate::operation::create_data_integration::CreateDataIntegrationOutput::object_configuration): <p>The configuration for what data should be pulled from the source.</p>
     /// - On failure, responds with [`SdkError<CreateDataIntegrationError>`](crate::operation::create_data_integration::CreateDataIntegrationError)
-    pub fn create_data_integration(
-        &self,
-    ) -> crate::operation::create_data_integration::builders::CreateDataIntegrationFluentBuilder
-    {
-        crate::operation::create_data_integration::builders::CreateDataIntegrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_data_integration(&self) -> crate::operation::create_data_integration::builders::CreateDataIntegrationFluentBuilder {
+        crate::operation::create_data_integration::builders::CreateDataIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl LogSetup {
 
 /// A builder for [`LogSetup`](crate::types::LogSetup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogSetupBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -50,10 +48,7 @@ impl LogSetupBuilder {
         self
     }
     /// <p>The available cluster control plane log types.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>) -> Self {
         self.types = input;
         self
     }

@@ -39,9 +39,7 @@ impl GetKeyPairsOutput {
 
 /// A builder for [`GetKeyPairsOutput`](crate::operation::get_key_pairs::GetKeyPairsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyPairsOutputBuilder {
     pub(crate) key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::KeyPair>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl GetKeyPairsOutputBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about the key pairs.</p>
-    pub fn set_key_pairs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPair>>,
-    ) -> Self {
+    pub fn set_key_pairs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPair>>) -> Self {
         self.key_pairs = input;
         self
     }
@@ -74,20 +69,14 @@ impl GetKeyPairsOutputBuilder {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

@@ -12,19 +12,13 @@ pub fn ser_get_schema_versions_diff_input(
     if let Some(var_3) = &input.first_schema_version_number {
         #[allow(unused_mut)]
         let mut object_4 = object.key("FirstSchemaVersionNumber").start_object();
-        crate::protocol_serde::shape_schema_version_number::ser_schema_version_number(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_schema_version_number::ser_schema_version_number(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.second_schema_version_number {
         #[allow(unused_mut)]
         let mut object_6 = object.key("SecondSchemaVersionNumber").start_object();
-        crate::protocol_serde::shape_schema_version_number::ser_schema_version_number(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_schema_version_number::ser_schema_version_number(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.schema_diff_type {

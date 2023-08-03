@@ -28,9 +28,7 @@ impl UpdateContentOutput {
 
 /// A builder for [`UpdateContentOutput`](crate::operation::update_content::UpdateContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContentOutputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::ContentData>,
     _request_id: Option<String>,

@@ -10,10 +10,7 @@ impl SearchSchemasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_schemas::SearchSchemasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_schemas::SearchSchemasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_schemas::SearchSchemasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_schemas();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchSchemasFluentBuilder {
         }
     }
     /// Access the SearchSchemas as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_schemas::builders::SearchSchemasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_schemas::builders::SearchSchemasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl SearchSchemasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl SearchSchemasFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_schemas::paginator::SearchSchemasPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_schemas::paginator::SearchSchemasPaginator {
-        crate::operation::search_schemas::paginator::SearchSchemasPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_schemas::paginator::SearchSchemasPaginator {
+        crate::operation::search_schemas::paginator::SearchSchemasPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
     pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,18 +155,12 @@ impl SearchSchemasFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_name(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_name(input);
         self
     }

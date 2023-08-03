@@ -17,10 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRelationalDatabaseOutput`](crate::operation::create_relational_database::CreateRelationalDatabaseOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_relational_database::CreateRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateRelationalDatabaseError>`](crate::operation::create_relational_database::CreateRelationalDatabaseError)
-    pub fn create_relational_database(
-        &self,
-    ) -> crate::operation::create_relational_database::builders::CreateRelationalDatabaseFluentBuilder
-    {
+    pub fn create_relational_database(&self) -> crate::operation::create_relational_database::builders::CreateRelationalDatabaseFluentBuilder {
         crate::operation::create_relational_database::builders::CreateRelationalDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

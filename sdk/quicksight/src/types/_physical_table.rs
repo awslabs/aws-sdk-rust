@@ -36,9 +36,7 @@ impl PhysicalTable {
     }
     /// Tries to convert the enum instance into [`RelationalTable`](crate::types::PhysicalTable::RelationalTable), extracting the inner [`RelationalTable`](crate::types::RelationalTable).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_relational_table(
-        &self,
-    ) -> ::std::result::Result<&crate::types::RelationalTable, &Self> {
+    pub fn as_relational_table(&self) -> ::std::result::Result<&crate::types::RelationalTable, &Self> {
         if let PhysicalTable::RelationalTable(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

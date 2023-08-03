@@ -10,10 +10,7 @@ impl CreateChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_channel::CreateChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel::CreateChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateChannelFluentBuilder {
         }
     }
     /// Access the CreateChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -155,17 +147,12 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>One or more event data stores to which events arriving through a channel will be logged.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
     /// <p>One or more event data stores to which events arriving through a channel will be logged.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
         self.inner.get_destinations()
     }
     /// Appends an item to `Tags`.
@@ -178,10 +165,7 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>A list of tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

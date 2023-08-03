@@ -9,8 +9,7 @@ pub struct Action {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule for copying shared snapshots across Regions.</p>
     #[doc(hidden)]
-    pub cross_region_copy:
-        ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>,
+    pub cross_region_copy: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>,
 }
 impl Action {
     /// <p>A descriptive name for the action.</p>
@@ -18,9 +17,7 @@ impl Action {
         self.name.as_deref()
     }
     /// <p>The rule for copying shared snapshots across Regions.</p>
-    pub fn cross_region_copy(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CrossRegionCopyAction]> {
+    pub fn cross_region_copy(&self) -> ::std::option::Option<&[crate::types::CrossRegionCopyAction]> {
         self.cross_region_copy.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl Action {
 
 /// A builder for [`Action`](crate::types::Action).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) cross_region_copy:
-        ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>,
+    pub(crate) cross_region_copy: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>,
 }
 impl ActionBuilder {
     /// <p>A descriptive name for the action.</p>
@@ -68,17 +62,12 @@ impl ActionBuilder {
         self
     }
     /// <p>The rule for copying shared snapshots across Regions.</p>
-    pub fn set_cross_region_copy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>,
-    ) -> Self {
+    pub fn set_cross_region_copy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>) -> Self {
         self.cross_region_copy = input;
         self
     }
     /// <p>The rule for copying shared snapshots across Regions.</p>
-    pub fn get_cross_region_copy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>> {
+    pub fn get_cross_region_copy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>> {
         &self.cross_region_copy
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).

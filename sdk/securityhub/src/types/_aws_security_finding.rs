@@ -85,14 +85,10 @@ pub struct AwsSecurityFinding {
     /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     /// <p>Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters, and the value can contain up to 2048 characters.</p>
     #[doc(hidden)]
-    pub product_fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub product_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
     #[doc(hidden)]
-    pub user_defined_fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of malware related to a finding.</p>
     #[doc(hidden)]
     pub malware: ::std::option::Option<::std::vec::Vec<crate::types::Malware>>,
@@ -110,8 +106,7 @@ pub struct AwsSecurityFinding {
     pub threats: ::std::option::Option<::std::vec::Vec<crate::types::Threat>>,
     /// <p>Threat intelligence details related to a finding.</p>
     #[doc(hidden)]
-    pub threat_intel_indicators:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelIndicator>>,
+    pub threat_intel_indicators: ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelIndicator>>,
     /// <p>A set of resource data types that describe the resources that the finding refers to.</p>
     #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
@@ -251,19 +246,11 @@ impl AwsSecurityFinding {
     }
     /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     /// <p>Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters, and the value can contain up to 2048 characters.</p>
-    pub fn product_fields(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn product_fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.product_fields.as_ref()
     }
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
-    pub fn user_defined_fields(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn user_defined_fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.user_defined_fields.as_ref()
     }
     /// <p>A list of malware related to a finding.</p>
@@ -287,9 +274,7 @@ impl AwsSecurityFinding {
         self.threats.as_deref()
     }
     /// <p>Threat intelligence details related to a finding.</p>
-    pub fn threat_intel_indicators(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ThreatIntelIndicator]> {
+    pub fn threat_intel_indicators(&self) -> ::std::option::Option<&[crate::types::ThreatIntelIndicator]> {
         self.threat_intel_indicators.as_deref()
     }
     /// <p>A set of resource data types that describe the resources that the finding refers to.</p>
@@ -337,9 +322,7 @@ impl AwsSecurityFinding {
         self.action.as_ref()
     }
     /// <p>In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to provide and update their own values for confidence, criticality, related findings, severity, and types.</p>
-    pub fn finding_provider_fields(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingProviderFields> {
+    pub fn finding_provider_fields(&self) -> ::std::option::Option<&crate::types::FindingProviderFields> {
         self.finding_provider_fields.as_ref()
     }
     /// <p>Indicates whether the finding is a sample finding.</p>
@@ -356,9 +339,7 @@ impl AwsSecurityFinding {
 
 /// A builder for [`AwsSecurityFinding`](crate::types::AwsSecurityFinding).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsSecurityFindingBuilder {
     pub(crate) schema_version: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -380,28 +361,21 @@ pub struct AwsSecurityFindingBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) remediation: ::std::option::Option<crate::types::Remediation>,
     pub(crate) source_url: ::std::option::Option<::std::string::String>,
-    pub(crate) product_fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) user_defined_fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) product_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) malware: ::std::option::Option<::std::vec::Vec<crate::types::Malware>>,
     pub(crate) network: ::std::option::Option<crate::types::Network>,
-    pub(crate) network_path:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkPathComponent>>,
+    pub(crate) network_path: ::std::option::Option<::std::vec::Vec<crate::types::NetworkPathComponent>>,
     pub(crate) process: ::std::option::Option<crate::types::ProcessDetails>,
     pub(crate) threats: ::std::option::Option<::std::vec::Vec<crate::types::Threat>>,
-    pub(crate) threat_intel_indicators:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelIndicator>>,
+    pub(crate) threat_intel_indicators: ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelIndicator>>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) compliance: ::std::option::Option<crate::types::Compliance>,
     pub(crate) verification_state: ::std::option::Option<crate::types::VerificationState>,
     pub(crate) workflow_state: ::std::option::Option<crate::types::WorkflowState>,
     pub(crate) workflow: ::std::option::Option<crate::types::Workflow>,
     pub(crate) record_state: ::std::option::Option<crate::types::RecordState>,
-    pub(crate) related_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
+    pub(crate) related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
     pub(crate) note: ::std::option::Option<crate::types::Note>,
     pub(crate) vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>,
     pub(crate) patch_summary: ::std::option::Option<crate::types::PatchSummary>,
@@ -411,18 +385,12 @@ pub struct AwsSecurityFindingBuilder {
 }
 impl AwsSecurityFindingBuilder {
     /// <p>The schema version that a finding is formatted for.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema version that a finding is formatted for.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version = input;
         self
     }
@@ -530,18 +498,12 @@ impl AwsSecurityFindingBuilder {
         &self.generator_id
     }
     /// <p>The Amazon Web Services account ID that a finding is generated in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID that a finding is generated in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -563,10 +525,7 @@ impl AwsSecurityFindingBuilder {
     }
     /// <p>One or more finding types in the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
         self
     }
@@ -577,19 +536,13 @@ impl AwsSecurityFindingBuilder {
     }
     /// <p>Indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn first_observed_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn first_observed_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_observed_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_first_observed_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_first_observed_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_observed_at = input;
         self
     }
@@ -600,19 +553,13 @@ impl AwsSecurityFindingBuilder {
     }
     /// <p>Indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_observed_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_observed_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_observed_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_last_observed_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_observed_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_observed_at = input;
         self
     }
@@ -749,10 +696,7 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>A data type that describes the remediation options for a finding.</p>
-    pub fn set_remediation(
-        mut self,
-        input: ::std::option::Option<crate::types::Remediation>,
-    ) -> Self {
+    pub fn set_remediation(mut self, input: ::std::option::Option<crate::types::Remediation>) -> Self {
         self.remediation = input;
         self
     }
@@ -794,20 +738,14 @@ impl AwsSecurityFindingBuilder {
     /// <p>Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters, and the value can contain up to 2048 characters.</p>
     pub fn set_product_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.product_fields = input;
         self
     }
     /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     /// <p>Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters, and the value can contain up to 2048 characters.</p>
-    pub fn get_product_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_product_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.product_fields
     }
     /// Adds a key-value pair to `user_defined_fields`.
@@ -828,19 +766,13 @@ impl AwsSecurityFindingBuilder {
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
     pub fn set_user_defined_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.user_defined_fields = input;
         self
     }
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
-    pub fn get_user_defined_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.user_defined_fields
     }
     /// Appends an item to `malware`.
@@ -855,10 +787,7 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>A list of malware related to a finding.</p>
-    pub fn set_malware(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Malware>>,
-    ) -> Self {
+    pub fn set_malware(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Malware>>) -> Self {
         self.malware = input;
         self
     }
@@ -892,17 +821,12 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>Provides information about a network path that is relevant to a finding. Each entry under <code>NetworkPath</code> represents a component of that path.</p>
-    pub fn set_network_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkPathComponent>>,
-    ) -> Self {
+    pub fn set_network_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkPathComponent>>) -> Self {
         self.network_path = input;
         self
     }
     /// <p>Provides information about a network path that is relevant to a finding. Each entry under <code>NetworkPath</code> represents a component of that path.</p>
-    pub fn get_network_path(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkPathComponent>> {
+    pub fn get_network_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkPathComponent>> {
         &self.network_path
     }
     /// <p>The details of process-related information about a finding.</p>
@@ -911,10 +835,7 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>The details of process-related information about a finding.</p>
-    pub fn set_process(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessDetails>,
-    ) -> Self {
+    pub fn set_process(mut self, input: ::std::option::Option<crate::types::ProcessDetails>) -> Self {
         self.process = input;
         self
     }
@@ -934,10 +855,7 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat. </p>
-    pub fn set_threats(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Threat>>,
-    ) -> Self {
+    pub fn set_threats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Threat>>) -> Self {
         self.threats = input;
         self
     }
@@ -957,17 +875,12 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>Threat intelligence details related to a finding.</p>
-    pub fn set_threat_intel_indicators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelIndicator>>,
-    ) -> Self {
+    pub fn set_threat_intel_indicators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelIndicator>>) -> Self {
         self.threat_intel_indicators = input;
         self
     }
     /// <p>Threat intelligence details related to a finding.</p>
-    pub fn get_threat_intel_indicators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelIndicator>> {
+    pub fn get_threat_intel_indicators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelIndicator>> {
         &self.threat_intel_indicators
     }
     /// Appends an item to `resources`.
@@ -982,10 +895,7 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>A set of resource data types that describe the resources that the finding refers to.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }
@@ -999,10 +909,7 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>This data type is exclusive to findings that are generated as the result of a check run against a specific rule in a supported security standard, such as CIS Amazon Web Services Foundations. Contains security standard-related finding details.</p>
-    pub fn set_compliance(
-        mut self,
-        input: ::std::option::Option<crate::types::Compliance>,
-    ) -> Self {
+    pub fn set_compliance(mut self, input: ::std::option::Option<crate::types::Compliance>) -> Self {
         self.compliance = input;
         self
     }
@@ -1016,17 +923,12 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>Indicates the veracity of a finding. </p>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.verification_state = input;
         self
     }
     /// <p>Indicates the veracity of a finding. </p>
-    pub fn get_verification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationState> {
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         &self.verification_state
     }
     /// <p>The workflow state of a finding. </p>
@@ -1035,10 +937,7 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>The workflow state of a finding. </p>
-    pub fn set_workflow_state(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowState>,
-    ) -> Self {
+    pub fn set_workflow_state(mut self, input: ::std::option::Option<crate::types::WorkflowState>) -> Self {
         self.workflow_state = input;
         self
     }
@@ -1066,10 +965,7 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>The record state of a finding.</p>
-    pub fn set_record_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordState>,
-    ) -> Self {
+    pub fn set_record_state(mut self, input: ::std::option::Option<crate::types::RecordState>) -> Self {
         self.record_state = input;
         self
     }
@@ -1089,17 +985,12 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>A list of related findings.</p>
-    pub fn set_related_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
-    ) -> Self {
+    pub fn set_related_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>) -> Self {
         self.related_findings = input;
         self
     }
     /// <p>A list of related findings.</p>
-    pub fn get_related_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
+    pub fn get_related_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
         &self.related_findings
     }
     /// <p>A user-defined note added to a finding.</p>
@@ -1128,17 +1019,12 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>Provides a list of vulnerabilities associated with the findings.</p>
-    pub fn set_vulnerabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>,
-    ) -> Self {
+    pub fn set_vulnerabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>) -> Self {
         self.vulnerabilities = input;
         self
     }
     /// <p>Provides a list of vulnerabilities associated with the findings.</p>
-    pub fn get_vulnerabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>> {
+    pub fn get_vulnerabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>> {
         &self.vulnerabilities
     }
     /// <p>Provides an overview of the patch compliance status for an instance against a selected compliance standard.</p>
@@ -1147,10 +1033,7 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>Provides an overview of the patch compliance status for an instance against a selected compliance standard.</p>
-    pub fn set_patch_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchSummary>,
-    ) -> Self {
+    pub fn set_patch_summary(mut self, input: ::std::option::Option<crate::types::PatchSummary>) -> Self {
         self.patch_summary = input;
         self
     }
@@ -1178,17 +1061,12 @@ impl AwsSecurityFindingBuilder {
         self
     }
     /// <p>In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to provide and update their own values for confidence, criticality, related findings, severity, and types.</p>
-    pub fn set_finding_provider_fields(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingProviderFields>,
-    ) -> Self {
+    pub fn set_finding_provider_fields(mut self, input: ::std::option::Option<crate::types::FindingProviderFields>) -> Self {
         self.finding_provider_fields = input;
         self
     }
     /// <p>In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to provide and update their own values for confidence, criticality, related findings, severity, and types.</p>
-    pub fn get_finding_provider_fields(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingProviderFields> {
+    pub fn get_finding_provider_fields(&self) -> &::std::option::Option<crate::types::FindingProviderFields> {
         &self.finding_provider_fields
     }
     /// <p>Indicates whether the finding is a sample finding.</p>

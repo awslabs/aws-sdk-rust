@@ -35,34 +35,26 @@ impl AddSourceIdentifierToSubscriptionInput {
 }
 impl AddSourceIdentifierToSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`AddSourceIdentifierToSubscriptionInput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput).
-    pub fn builder() -> crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionInputBuilder {
         crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`AddSourceIdentifierToSubscriptionInput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddSourceIdentifierToSubscriptionInputBuilder {
     pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to add a source identifier to.</p>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to add a source identifier to.</p>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_name = input;
         self
     }
@@ -77,10 +69,7 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <li> <p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p> </li>
     /// <li> <p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>
     /// </ul>
-    pub fn source_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -91,10 +80,7 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <li> <p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p> </li>
     /// <li> <p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>
     /// </ul>
-    pub fn set_source_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identifier = input;
         self
     }
@@ -109,14 +95,17 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
         &self.source_identifier
     }
     /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionInput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput {
-                subscription_name: self.subscription_name
-                ,
-                source_identifier: self.source_identifier
-                ,
-            }
+                subscription_name: self.subscription_name,
+                source_identifier: self.source_identifier,
+            },
         )
     }
 }

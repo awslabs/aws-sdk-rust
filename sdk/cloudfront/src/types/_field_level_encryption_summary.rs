@@ -34,15 +34,11 @@ impl FieldLevelEncryptionSummary {
         self.comment.as_deref()
     }
     /// <p>A summary of a query argument-profile mapping.</p>
-    pub fn query_arg_profile_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::QueryArgProfileConfig> {
+    pub fn query_arg_profile_config(&self) -> ::std::option::Option<&crate::types::QueryArgProfileConfig> {
         self.query_arg_profile_config.as_ref()
     }
     /// <p>A summary of a content type-profile mapping.</p>
-    pub fn content_type_profile_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContentTypeProfileConfig> {
+    pub fn content_type_profile_config(&self) -> ::std::option::Option<&crate::types::ContentTypeProfileConfig> {
         self.content_type_profile_config.as_ref()
     }
 }
@@ -55,16 +51,13 @@ impl FieldLevelEncryptionSummary {
 
 /// A builder for [`FieldLevelEncryptionSummary`](crate::types::FieldLevelEncryptionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) query_arg_profile_config: ::std::option::Option<crate::types::QueryArgProfileConfig>,
-    pub(crate) content_type_profile_config:
-        ::std::option::Option<crate::types::ContentTypeProfileConfig>,
+    pub(crate) content_type_profile_config: ::std::option::Option<crate::types::ContentTypeProfileConfig>,
 }
 impl FieldLevelEncryptionSummaryBuilder {
     /// <p>The unique ID of a field-level encryption item.</p>
@@ -87,10 +80,7 @@ impl FieldLevelEncryptionSummaryBuilder {
         self
     }
     /// <p>The last time that the summary of field-level encryption items was modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -118,39 +108,26 @@ impl FieldLevelEncryptionSummaryBuilder {
         self
     }
     /// <p>A summary of a query argument-profile mapping.</p>
-    pub fn set_query_arg_profile_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryArgProfileConfig>,
-    ) -> Self {
+    pub fn set_query_arg_profile_config(mut self, input: ::std::option::Option<crate::types::QueryArgProfileConfig>) -> Self {
         self.query_arg_profile_config = input;
         self
     }
     /// <p>A summary of a query argument-profile mapping.</p>
-    pub fn get_query_arg_profile_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::QueryArgProfileConfig> {
+    pub fn get_query_arg_profile_config(&self) -> &::std::option::Option<crate::types::QueryArgProfileConfig> {
         &self.query_arg_profile_config
     }
     /// <p>A summary of a content type-profile mapping.</p>
-    pub fn content_type_profile_config(
-        mut self,
-        input: crate::types::ContentTypeProfileConfig,
-    ) -> Self {
+    pub fn content_type_profile_config(mut self, input: crate::types::ContentTypeProfileConfig) -> Self {
         self.content_type_profile_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A summary of a content type-profile mapping.</p>
-    pub fn set_content_type_profile_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentTypeProfileConfig>,
-    ) -> Self {
+    pub fn set_content_type_profile_config(mut self, input: ::std::option::Option<crate::types::ContentTypeProfileConfig>) -> Self {
         self.content_type_profile_config = input;
         self
     }
     /// <p>A summary of a content type-profile mapping.</p>
-    pub fn get_content_type_profile_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentTypeProfileConfig> {
+    pub fn get_content_type_profile_config(&self) -> &::std::option::Option<crate::types::ContentTypeProfileConfig> {
         &self.content_type_profile_config
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionSummary`](crate::types::FieldLevelEncryptionSummary).

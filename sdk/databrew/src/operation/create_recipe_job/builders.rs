@@ -10,10 +10,7 @@ impl CreateRecipeJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_recipe_job::CreateRecipeJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recipe_job::CreateRecipeJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recipe_job::CreateRecipeJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_recipe_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateRecipeJobFluentBuilder {
         }
     }
     /// Access the CreateRecipeJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_recipe_job::builders::CreateRecipeJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_recipe_job::builders::CreateRecipeJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateRecipeJobFluentBuilder {
             crate::operation::create_recipe_job::CreateRecipeJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recipe_job::CreateRecipeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recipe_job::CreateRecipeJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateRecipeJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateRecipeJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_recipe_job::CreateRecipeJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recipe_job::CreateRecipeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recipe_job::CreateRecipeJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateRecipeJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_recipe_job::CreateRecipeJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recipe_job::CreateRecipeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recipe_job::CreateRecipeJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateRecipeJobFluentBuilder {
             crate::operation::create_recipe_job::CreateRecipeJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recipe_job::CreateRecipeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recipe_job::CreateRecipeJobError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl CreateRecipeJobFluentBuilder {
         self.inner.get_dataset_name()
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_key_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn set_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_key_arn(input);
         self
     }
@@ -170,10 +148,7 @@ impl CreateRecipeJobFluentBuilder {
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionMode>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
         self
     }
@@ -205,10 +180,7 @@ impl CreateRecipeJobFluentBuilder {
         self
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    pub fn set_log_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::LogSubscription>,
-    ) -> Self {
+    pub fn set_log_subscription(mut self, input: ::std::option::Option<crate::types::LogSubscription>) -> Self {
         self.inner = self.inner.set_log_subscription(input);
         self
     }
@@ -254,10 +226,7 @@ impl CreateRecipeJobFluentBuilder {
         self
     }
     /// <p>One or more artifacts that represent the output from running the job.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
@@ -275,17 +244,12 @@ impl CreateRecipeJobFluentBuilder {
         self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn set_data_catalog_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
-    ) -> Self {
+    pub fn set_data_catalog_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>) -> Self {
         self.inner = self.inner.set_data_catalog_outputs(input);
         self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn get_data_catalog_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
+    pub fn get_data_catalog_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
         self.inner.get_data_catalog_outputs()
     }
     /// Appends an item to `DatabaseOutputs`.
@@ -298,17 +262,12 @@ impl CreateRecipeJobFluentBuilder {
         self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
-    pub fn set_database_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
-    ) -> Self {
+    pub fn set_database_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>) -> Self {
         self.inner = self.inner.set_database_outputs(input);
         self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
-    pub fn get_database_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
+    pub fn get_database_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
         self.inner.get_database_outputs()
     }
     /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
@@ -331,10 +290,7 @@ impl CreateRecipeJobFluentBuilder {
         self
     }
     /// <p>Represents the name and version of a DataBrew recipe.</p>
-    pub fn set_recipe_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::RecipeReference>,
-    ) -> Self {
+    pub fn set_recipe_reference(mut self, input: ::std::option::Option<crate::types::RecipeReference>) -> Self {
         self.inner = self.inner.set_recipe_reference(input);
         self
     }
@@ -361,30 +317,17 @@ impl CreateRecipeJobFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata tags to apply to this job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Metadata tags to apply to this job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Metadata tags to apply to this job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>

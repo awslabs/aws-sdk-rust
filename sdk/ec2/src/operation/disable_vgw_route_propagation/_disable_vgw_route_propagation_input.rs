@@ -30,16 +30,14 @@ impl DisableVgwRoutePropagationInput {
 }
 impl DisableVgwRoutePropagationInput {
     /// Creates a new builder-style object to manufacture [`DisableVgwRoutePropagationInput`](crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationInput).
-    pub fn builder() -> crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationInputBuilder{
+    pub fn builder() -> crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationInputBuilder {
         crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableVgwRoutePropagationInput`](crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableVgwRoutePropagationInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl DisableVgwRoutePropagationInputBuilder {
         &self.gateway_id
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_id = input;
         self
     }
@@ -101,12 +93,10 @@ impl DisableVgwRoutePropagationInputBuilder {
         crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationInput {
-                gateway_id: self.gateway_id,
-                route_table_id: self.route_table_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationInput {
+            gateway_id: self.gateway_id,
+            route_table_id: self.route_table_id,
+            dry_run: self.dry_run,
+        })
     }
 }

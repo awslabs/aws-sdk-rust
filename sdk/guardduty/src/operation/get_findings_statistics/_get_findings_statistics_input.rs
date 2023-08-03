@@ -8,8 +8,7 @@ pub struct GetFindingsStatisticsInput {
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The types of finding statistics to retrieve.</p>
     #[doc(hidden)]
-    pub finding_statistic_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>,
+    pub finding_statistic_types: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>,
     /// <p>Represents the criteria that is used for querying findings.</p>
     #[doc(hidden)]
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
@@ -20,9 +19,7 @@ impl GetFindingsStatisticsInput {
         self.detector_id.as_deref()
     }
     /// <p>The types of finding statistics to retrieve.</p>
-    pub fn finding_statistic_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FindingStatisticType]> {
+    pub fn finding_statistic_types(&self) -> ::std::option::Option<&[crate::types::FindingStatisticType]> {
         self.finding_statistic_types.as_deref()
     }
     /// <p>Represents the criteria that is used for querying findings.</p>
@@ -32,22 +29,17 @@ impl GetFindingsStatisticsInput {
 }
 impl GetFindingsStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetFindingsStatisticsInput`](crate::operation::get_findings_statistics::GetFindingsStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::get_findings_statistics::builders::GetFindingsStatisticsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_findings_statistics::builders::GetFindingsStatisticsInputBuilder {
         crate::operation::get_findings_statistics::builders::GetFindingsStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingsStatisticsInput`](crate::operation::get_findings_statistics::GetFindingsStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsStatisticsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
-    pub(crate) finding_statistic_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>,
+    pub(crate) finding_statistic_types: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>,
     pub(crate) finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
 }
 impl GetFindingsStatisticsInputBuilder {
@@ -77,17 +69,12 @@ impl GetFindingsStatisticsInputBuilder {
         self
     }
     /// <p>The types of finding statistics to retrieve.</p>
-    pub fn set_finding_statistic_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>,
-    ) -> Self {
+    pub fn set_finding_statistic_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>) -> Self {
         self.finding_statistic_types = input;
         self
     }
     /// <p>The types of finding statistics to retrieve.</p>
-    pub fn get_finding_statistic_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>> {
+    pub fn get_finding_statistic_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>> {
         &self.finding_statistic_types
     }
     /// <p>Represents the criteria that is used for querying findings.</p>
@@ -96,10 +83,7 @@ impl GetFindingsStatisticsInputBuilder {
         self
     }
     /// <p>Represents the criteria that is used for querying findings.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.finding_criteria = input;
         self
     }
@@ -110,16 +94,12 @@ impl GetFindingsStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetFindingsStatisticsInput`](crate::operation::get_findings_statistics::GetFindingsStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_findings_statistics::GetFindingsStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_findings_statistics::GetFindingsStatisticsInput {
-                detector_id: self.detector_id,
-                finding_statistic_types: self.finding_statistic_types,
-                finding_criteria: self.finding_criteria,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_findings_statistics::GetFindingsStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_findings_statistics::GetFindingsStatisticsInput {
+            detector_id: self.detector_id,
+            finding_statistic_types: self.finding_statistic_types,
+            finding_criteria: self.finding_criteria,
+        })
     }
 }

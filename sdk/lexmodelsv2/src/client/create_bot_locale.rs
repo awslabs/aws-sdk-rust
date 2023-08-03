@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`bot_locale_status(Option<BotLocaleStatus>)`](crate::operation::create_bot_locale::CreateBotLocaleOutput::bot_locale_status): <p>The status of the bot.</p>  <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>  <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>  <p>If there was a problem with building the bot, the status is <code>Failed</code>. If the bot was saved but not built, the status is <code>NotBuilt</code>.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::create_bot_locale::CreateBotLocaleOutput::creation_date_time): <p>A timestamp specifying the date and time that the bot locale was created.</p>
     /// - On failure, responds with [`SdkError<CreateBotLocaleError>`](crate::operation::create_bot_locale::CreateBotLocaleError)
-    pub fn create_bot_locale(
-        &self,
-    ) -> crate::operation::create_bot_locale::builders::CreateBotLocaleFluentBuilder {
-        crate::operation::create_bot_locale::builders::CreateBotLocaleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_bot_locale(&self) -> crate::operation::create_bot_locale::builders::CreateBotLocaleFluentBuilder {
+        crate::operation::create_bot_locale::builders::CreateBotLocaleFluentBuilder::new(self.handle.clone())
     }
 }

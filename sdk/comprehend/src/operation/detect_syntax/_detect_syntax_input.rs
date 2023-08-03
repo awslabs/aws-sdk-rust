@@ -63,10 +63,7 @@ impl DetectSyntaxInputBuilder {
         self
     }
     /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::SyntaxLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::SyntaxLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -75,12 +72,7 @@ impl DetectSyntaxInputBuilder {
         &self.language_code
     }
     /// Consumes the builder and constructs a [`DetectSyntaxInput`](crate::operation::detect_syntax::DetectSyntaxInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_syntax::DetectSyntaxInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_syntax::DetectSyntaxInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_syntax::DetectSyntaxInput {
             text: self.text,
             language_code: self.language_code,

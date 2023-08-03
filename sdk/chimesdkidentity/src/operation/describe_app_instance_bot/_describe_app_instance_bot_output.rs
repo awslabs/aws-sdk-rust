@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAppInstanceBotOutput {
 }
 impl DescribeAppInstanceBotOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceBotOutput`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotOutputBuilder {
         crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppInstanceBotOutput`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppInstanceBotOutputBuilder {
     pub(crate) app_instance_bot: ::std::option::Option<crate::types::AppInstanceBot>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeAppInstanceBotOutputBuilder {
         self
     }
     /// <p>The detials of the <code>AppInstanceBot</code>.</p>
-    pub fn set_app_instance_bot(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInstanceBot>,
-    ) -> Self {
+    pub fn set_app_instance_bot(mut self, input: ::std::option::Option<crate::types::AppInstanceBot>) -> Self {
         self.app_instance_bot = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeAppInstanceBotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAppInstanceBotOutput`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput {
+    pub fn build(self) -> crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput {
         crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput {
             app_instance_bot: self.app_instance_bot,
             _request_id: self._request_id,

@@ -10,10 +10,7 @@ impl AssociateProfilesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_profiles::AssociateProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_profiles::AssociateProfilesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_profiles::AssociateProfilesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_profiles();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AssociateProfilesFluentBuilder {
         }
     }
     /// Access the AssociateProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_profiles::builders::AssociateProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_profiles::builders::AssociateProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AssociateProfilesFluentBuilder {
             crate::operation::associate_profiles::AssociateProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_profiles::AssociateProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_profiles::AssociateProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AssociateProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AssociateProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_profiles::AssociateProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_profiles::AssociateProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_profiles::AssociateProfilesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AssociateProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_profiles::AssociateProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_profiles::AssociateProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_profiles::AssociateProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AssociateProfilesFluentBuilder {
             crate::operation::associate_profiles::AssociateProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_profiles::AssociateProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_profiles::AssociateProfilesError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl AssociateProfilesFluentBuilder {
         self
     }
     /// <p>The list of profile ARNs to associate with the workload.</p>
-    pub fn set_profile_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_profile_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_profile_arns(input);
         self
     }
     /// <p>The list of profile ARNs to associate with the workload.</p>
-    pub fn get_profile_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_profile_arns()
     }
 }

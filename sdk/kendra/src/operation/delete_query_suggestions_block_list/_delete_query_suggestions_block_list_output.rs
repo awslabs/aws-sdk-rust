@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteQuerySuggestionsBlockListOutput
 }
 impl DeleteQuerySuggestionsBlockListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQuerySuggestionsBlockListOutput`](crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput).
-    pub fn builder() -> crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListOutputBuilder{
+    pub fn builder() -> crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListOutputBuilder {
         crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQuerySuggestionsBlockListOutput`](crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQuerySuggestionsBlockListOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteQuerySuggestionsBlockListOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteQuerySuggestionsBlockListOutput`](crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput
-    {
+    pub fn build(self) -> crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput {
         crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput {
             _request_id: self._request_id,
         }

@@ -45,9 +45,7 @@ impl CreateBackendAuthOAuthConfig {
         self.redirect_sign_out_ur_is.as_deref()
     }
     /// <p>The settings for using social providers to access your Amplify app.</p>
-    pub fn social_provider_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SocialProviderSettings> {
+    pub fn social_provider_settings(&self) -> ::std::option::Option<&crate::types::SocialProviderSettings> {
         self.social_provider_settings.as_ref()
     }
 }
@@ -60,35 +58,23 @@ impl CreateBackendAuthOAuthConfig {
 
 /// A builder for [`CreateBackendAuthOAuthConfig`](crate::types::CreateBackendAuthOAuthConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackendAuthOAuthConfigBuilder {
     pub(crate) domain_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) o_auth_grant_type: ::std::option::Option<crate::types::OAuthGrantType>,
-    pub(crate) o_auth_scopes:
-        ::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>>,
-    pub(crate) redirect_sign_in_ur_is:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) redirect_sign_out_ur_is:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) social_provider_settings:
-        ::std::option::Option<crate::types::SocialProviderSettings>,
+    pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>>,
+    pub(crate) redirect_sign_in_ur_is: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) redirect_sign_out_ur_is: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) social_provider_settings: ::std::option::Option<crate::types::SocialProviderSettings>,
 }
 impl CreateBackendAuthOAuthConfigBuilder {
     /// <p>The domain prefix for your Amplify app.</p>
-    pub fn domain_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain prefix for your Amplify app.</p>
-    pub fn set_domain_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_prefix = input;
         self
     }
@@ -102,10 +88,7 @@ impl CreateBackendAuthOAuthConfigBuilder {
         self
     }
     /// <p>The OAuth grant type that you use to allow app users to authenticate from your Amplify app.</p>
-    pub fn set_o_auth_grant_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OAuthGrantType>,
-    ) -> Self {
+    pub fn set_o_auth_grant_type(mut self, input: ::std::option::Option<crate::types::OAuthGrantType>) -> Self {
         self.o_auth_grant_type = input;
         self
     }
@@ -125,17 +108,12 @@ impl CreateBackendAuthOAuthConfigBuilder {
         self
     }
     /// <p>List of OAuth-related flows used to allow your app users to authenticate from your Amplify app.</p>
-    pub fn set_o_auth_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>>,
-    ) -> Self {
+    pub fn set_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>>) -> Self {
         self.o_auth_scopes = input;
         self
     }
     /// <p>List of OAuth-related flows used to allow your app users to authenticate from your Amplify app.</p>
-    pub fn get_o_auth_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>> {
+    pub fn get_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>> {
         &self.o_auth_scopes
     }
     /// Appends an item to `redirect_sign_in_ur_is`.
@@ -143,27 +121,19 @@ impl CreateBackendAuthOAuthConfigBuilder {
     /// To override the contents of this collection use [`set_redirect_sign_in_ur_is`](Self::set_redirect_sign_in_ur_is).
     ///
     /// <p>The redirected URI for signing in to your Amplify app.</p>
-    pub fn redirect_sign_in_ur_is(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn redirect_sign_in_ur_is(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.redirect_sign_in_ur_is.unwrap_or_default();
         v.push(input.into());
         self.redirect_sign_in_ur_is = ::std::option::Option::Some(v);
         self
     }
     /// <p>The redirected URI for signing in to your Amplify app.</p>
-    pub fn set_redirect_sign_in_ur_is(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_redirect_sign_in_ur_is(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.redirect_sign_in_ur_is = input;
         self
     }
     /// <p>The redirected URI for signing in to your Amplify app.</p>
-    pub fn get_redirect_sign_in_ur_is(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_redirect_sign_in_ur_is(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.redirect_sign_in_ur_is
     }
     /// Appends an item to `redirect_sign_out_ur_is`.
@@ -171,27 +141,19 @@ impl CreateBackendAuthOAuthConfigBuilder {
     /// To override the contents of this collection use [`set_redirect_sign_out_ur_is`](Self::set_redirect_sign_out_ur_is).
     ///
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn redirect_sign_out_ur_is(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn redirect_sign_out_ur_is(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.redirect_sign_out_ur_is.unwrap_or_default();
         v.push(input.into());
         self.redirect_sign_out_ur_is = ::std::option::Option::Some(v);
         self
     }
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn set_redirect_sign_out_ur_is(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_redirect_sign_out_ur_is(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.redirect_sign_out_ur_is = input;
         self
     }
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn get_redirect_sign_out_ur_is(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_redirect_sign_out_ur_is(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.redirect_sign_out_ur_is
     }
     /// <p>The settings for using social providers to access your Amplify app.</p>
@@ -200,17 +162,12 @@ impl CreateBackendAuthOAuthConfigBuilder {
         self
     }
     /// <p>The settings for using social providers to access your Amplify app.</p>
-    pub fn set_social_provider_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SocialProviderSettings>,
-    ) -> Self {
+    pub fn set_social_provider_settings(mut self, input: ::std::option::Option<crate::types::SocialProviderSettings>) -> Self {
         self.social_provider_settings = input;
         self
     }
     /// <p>The settings for using social providers to access your Amplify app.</p>
-    pub fn get_social_provider_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::SocialProviderSettings> {
+    pub fn get_social_provider_settings(&self) -> &::std::option::Option<crate::types::SocialProviderSettings> {
         &self.social_provider_settings
     }
     /// Consumes the builder and constructs a [`CreateBackendAuthOAuthConfig`](crate::types::CreateBackendAuthOAuthConfig).

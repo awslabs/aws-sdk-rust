@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`job_flows(Option<Vec<JobFlowDetail>>)`](crate::operation::describe_job_flows::DescribeJobFlowsOutput::job_flows): <p>A list of job flows matching the parameters supplied.</p>
     /// - On failure, responds with [`SdkError<DescribeJobFlowsError>`](crate::operation::describe_job_flows::DescribeJobFlowsError)
     #[deprecated]
-    pub fn describe_job_flows(
-        &self,
-    ) -> crate::operation::describe_job_flows::builders::DescribeJobFlowsFluentBuilder {
-        crate::operation::describe_job_flows::builders::DescribeJobFlowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_job_flows(&self) -> crate::operation::describe_job_flows::builders::DescribeJobFlowsFluentBuilder {
+        crate::operation::describe_job_flows::builders::DescribeJobFlowsFluentBuilder::new(self.handle.clone())
     }
 }

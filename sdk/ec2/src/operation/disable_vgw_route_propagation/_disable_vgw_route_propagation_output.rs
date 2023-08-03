@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableVgwRoutePropagationOutput {
 }
 impl DisableVgwRoutePropagationOutput {
     /// Creates a new builder-style object to manufacture [`DisableVgwRoutePropagationOutput`](crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput).
-    pub fn builder() -> crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationOutputBuilder{
+    pub fn builder() -> crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationOutputBuilder {
         crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableVgwRoutePropagationOutput`](crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableVgwRoutePropagationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisableVgwRoutePropagationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableVgwRoutePropagationOutput`](crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput {
+    pub fn build(self) -> crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput {
         crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput {
             _request_id: self._request_id,
         }

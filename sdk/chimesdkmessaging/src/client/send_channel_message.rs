@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`status(Option<ChannelMessageStatusStructure>)`](crate::operation::send_channel_message::SendChannelMessageOutput::status): <p>The status of the channel message.</p>
     ///   - [`sub_channel_id(Option<String>)`](crate::operation::send_channel_message::SendChannelMessageOutput::sub_channel_id): <p>The ID of the SubChannel in the response.</p>
     /// - On failure, responds with [`SdkError<SendChannelMessageError>`](crate::operation::send_channel_message::SendChannelMessageError)
-    pub fn send_channel_message(
-        &self,
-    ) -> crate::operation::send_channel_message::builders::SendChannelMessageFluentBuilder {
-        crate::operation::send_channel_message::builders::SendChannelMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_channel_message(&self) -> crate::operation::send_channel_message::builders::SendChannelMessageFluentBuilder {
+        crate::operation::send_channel_message::builders::SendChannelMessageFluentBuilder::new(self.handle.clone())
     }
 }

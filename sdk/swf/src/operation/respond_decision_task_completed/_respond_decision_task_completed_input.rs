@@ -34,16 +34,14 @@ impl RespondDecisionTaskCompletedInput {
 }
 impl RespondDecisionTaskCompletedInput {
     /// Creates a new builder-style object to manufacture [`RespondDecisionTaskCompletedInput`](crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput).
-    pub fn builder() -> crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedInputBuilder{
+    pub fn builder() -> crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedInputBuilder {
         crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedInputBuilder::default()
     }
 }
 
 /// A builder for [`RespondDecisionTaskCompletedInput`](crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RespondDecisionTaskCompletedInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) decisions: ::std::option::Option<::std::vec::Vec<crate::types::Decision>>,
@@ -82,10 +80,7 @@ impl RespondDecisionTaskCompletedInputBuilder {
         self
     }
     /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
-    pub fn set_decisions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Decision>>,
-    ) -> Self {
+    pub fn set_decisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Decision>>) -> Self {
         self.decisions = input;
         self
     }
@@ -94,18 +89,12 @@ impl RespondDecisionTaskCompletedInputBuilder {
         &self.decisions
     }
     /// <p>User defined context to add to workflow execution.</p>
-    pub fn execution_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User defined context to add to workflow execution.</p>
-    pub fn set_execution_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_context = input;
         self
     }
@@ -120,12 +109,10 @@ impl RespondDecisionTaskCompletedInputBuilder {
         crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput {
-                task_token: self.task_token,
-                decisions: self.decisions,
-                execution_context: self.execution_context,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput {
+            task_token: self.task_token,
+            decisions: self.decisions,
+            execution_context: self.execution_context,
+        })
     }
 }

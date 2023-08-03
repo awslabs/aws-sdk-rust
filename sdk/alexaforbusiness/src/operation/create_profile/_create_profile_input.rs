@@ -41,8 +41,7 @@ pub struct CreateProfileInput {
     pub data_retention_opt_in: ::std::option::Option<bool>,
     /// <p>The meeting room settings of a room profile.</p>
     #[doc(hidden)]
-    pub meeting_room_configuration:
-        ::std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
+    pub meeting_room_configuration: ::std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
     /// <p>The tags for the profile.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -97,9 +96,7 @@ impl CreateProfileInput {
         self.data_retention_opt_in
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateMeetingRoomConfiguration> {
+    pub fn meeting_room_configuration(&self) -> ::std::option::Option<&crate::types::CreateMeetingRoomConfiguration> {
         self.meeting_room_configuration.as_ref()
     }
     /// <p>The tags for the profile.</p>
@@ -116,9 +113,7 @@ impl CreateProfileInput {
 
 /// A builder for [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProfileInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
@@ -132,8 +127,7 @@ pub struct CreateProfileInputBuilder {
     pub(crate) max_volume_limit: ::std::option::Option<i32>,
     pub(crate) pstn_enabled: ::std::option::Option<bool>,
     pub(crate) data_retention_opt_in: ::std::option::Option<bool>,
-    pub(crate) meeting_room_configuration:
-        ::std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
+    pub(crate) meeting_room_configuration: ::std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProfileInputBuilder {
@@ -185,10 +179,7 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The distance unit to be used by devices in the profile.</p>
-    pub fn set_distance_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::DistanceUnit>,
-    ) -> Self {
+    pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.distance_unit = input;
         self
     }
@@ -202,10 +193,7 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The temperature unit to be used by devices in the profile.</p>
-    pub fn set_temperature_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::TemperatureUnit>,
-    ) -> Self {
+    pub fn set_temperature_unit(mut self, input: ::std::option::Option<crate::types::TemperatureUnit>) -> Self {
         self.temperature_unit = input;
         self
     }
@@ -242,18 +230,12 @@ impl CreateProfileInputBuilder {
         &self.locale
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -318,25 +300,17 @@ impl CreateProfileInputBuilder {
         &self.data_retention_opt_in
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(
-        mut self,
-        input: crate::types::CreateMeetingRoomConfiguration,
-    ) -> Self {
+    pub fn meeting_room_configuration(mut self, input: crate::types::CreateMeetingRoomConfiguration) -> Self {
         self.meeting_room_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn set_meeting_room_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
-    ) -> Self {
+    pub fn set_meeting_room_configuration(mut self, input: ::std::option::Option<crate::types::CreateMeetingRoomConfiguration>) -> Self {
         self.meeting_room_configuration = input;
         self
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn get_meeting_room_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateMeetingRoomConfiguration> {
+    pub fn get_meeting_room_configuration(&self) -> &::std::option::Option<crate::types::CreateMeetingRoomConfiguration> {
         &self.meeting_room_configuration
     }
     /// Appends an item to `tags`.
@@ -351,10 +325,7 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The tags for the profile.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -365,10 +336,7 @@ impl CreateProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_profile::CreateProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileInput {
             profile_name: self.profile_name,
             timezone: self.timezone,

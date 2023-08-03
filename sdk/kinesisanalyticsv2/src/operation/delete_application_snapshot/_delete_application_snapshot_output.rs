@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteApplicationSnapshotOutput {
 }
 impl DeleteApplicationSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationSnapshotOutput`](crate::operation::delete_application_snapshot::DeleteApplicationSnapshotOutput).
-    pub fn builder() -> crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotOutputBuilder{
+    pub fn builder() -> crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotOutputBuilder {
         crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationSnapshotOutput`](crate::operation::delete_application_snapshot::DeleteApplicationSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationSnapshotOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteApplicationSnapshotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationSnapshotOutput`](crate::operation::delete_application_snapshot::DeleteApplicationSnapshotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_application_snapshot::DeleteApplicationSnapshotOutput {
+    pub fn build(self) -> crate::operation::delete_application_snapshot::DeleteApplicationSnapshotOutput {
         crate::operation::delete_application_snapshot::DeleteApplicationSnapshotOutput {
             _request_id: self._request_id,
         }

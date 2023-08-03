@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`metric_alarms(Option<Vec<MetricAlarm>>)`](crate::operation::describe_alarms::DescribeAlarmsOutput::metric_alarms): <p>The information about any metric alarms returned by the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_alarms::DescribeAlarmsOutput::next_token): <p>The token that marks the start of the next batch of returned results.</p>
     /// - On failure, responds with [`SdkError<DescribeAlarmsError>`](crate::operation::describe_alarms::DescribeAlarmsError)
-    pub fn describe_alarms(
-        &self,
-    ) -> crate::operation::describe_alarms::builders::DescribeAlarmsFluentBuilder {
-        crate::operation::describe_alarms::builders::DescribeAlarmsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_alarms(&self) -> crate::operation::describe_alarms::builders::DescribeAlarmsFluentBuilder {
+        crate::operation::describe_alarms::builders::DescribeAlarmsFluentBuilder::new(self.handle.clone())
     }
 }

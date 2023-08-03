@@ -26,8 +26,7 @@ impl AuthorizeEndpointAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeEndpointAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessInputBuilder,
+    inner: crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessInputBuilder,
 }
 impl AuthorizeEndpointAccessFluentBuilder {
     /// Creates a new `AuthorizeEndpointAccess`.
@@ -38,10 +37,7 @@ impl AuthorizeEndpointAccessFluentBuilder {
         }
     }
     /// Access the AuthorizeEndpointAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl AuthorizeEndpointAccessFluentBuilder {
             crate::operation::authorize_endpoint_access::AuthorizeEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl AuthorizeEndpointAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl AuthorizeEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl AuthorizeEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl AuthorizeEndpointAccessFluentBuilder {
             crate::operation::authorize_endpoint_access::AuthorizeEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The cluster identifier of the cluster to grant access to.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster to grant access to.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -168,10 +147,7 @@ impl AuthorizeEndpointAccessFluentBuilder {
         self
     }
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-    pub fn set_vpc_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_ids(input);
         self
     }

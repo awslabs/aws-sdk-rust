@@ -30,9 +30,7 @@ impl TrustedAdvisorCostOptimizingSummary {
 
 /// A builder for [`TrustedAdvisorCostOptimizingSummary`](crate::types::TrustedAdvisorCostOptimizingSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCostOptimizingSummaryBuilder {
     pub(crate) estimated_monthly_savings: ::std::option::Option<f64>,
     pub(crate) estimated_percent_monthly_savings: ::std::option::Option<f64>,
@@ -58,10 +56,7 @@ impl TrustedAdvisorCostOptimizingSummaryBuilder {
         self
     }
     /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
-    pub fn set_estimated_percent_monthly_savings(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_estimated_percent_monthly_savings(mut self, input: ::std::option::Option<f64>) -> Self {
         self.estimated_percent_monthly_savings = input;
         self
     }
@@ -73,9 +68,7 @@ impl TrustedAdvisorCostOptimizingSummaryBuilder {
     pub fn build(self) -> crate::types::TrustedAdvisorCostOptimizingSummary {
         crate::types::TrustedAdvisorCostOptimizingSummary {
             estimated_monthly_savings: self.estimated_monthly_savings.unwrap_or_default(),
-            estimated_percent_monthly_savings: self
-                .estimated_percent_monthly_savings
-                .unwrap_or_default(),
+            estimated_percent_monthly_savings: self.estimated_percent_monthly_savings.unwrap_or_default(),
         }
     }
 }

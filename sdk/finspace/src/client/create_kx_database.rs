@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::create_kx_database::CreateKxDatabaseOutput::created_timestamp): <p>The timestamp at which the database is created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     ///   - [`last_modified_timestamp(Option<DateTime>)`](crate::operation::create_kx_database::CreateKxDatabaseOutput::last_modified_timestamp): <p>The last time that the database was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     /// - On failure, responds with [`SdkError<CreateKxDatabaseError>`](crate::operation::create_kx_database::CreateKxDatabaseError)
-    pub fn create_kx_database(
-        &self,
-    ) -> crate::operation::create_kx_database::builders::CreateKxDatabaseFluentBuilder {
-        crate::operation::create_kx_database::builders::CreateKxDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_kx_database(&self) -> crate::operation::create_kx_database::builders::CreateKxDatabaseFluentBuilder {
+        crate::operation::create_kx_database::builders::CreateKxDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

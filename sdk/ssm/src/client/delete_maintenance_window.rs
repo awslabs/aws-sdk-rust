@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteMaintenanceWindowOutput`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowOutput) with field(s):
     ///   - [`window_id(Option<String>)`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowOutput::window_id): <p>The ID of the deleted maintenance window.</p>
     /// - On failure, responds with [`SdkError<DeleteMaintenanceWindowError>`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowError)
-    pub fn delete_maintenance_window(
-        &self,
-    ) -> crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowFluentBuilder
-    {
+    pub fn delete_maintenance_window(&self) -> crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowFluentBuilder {
         crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowFluentBuilder::new(self.handle.clone())
     }
 }

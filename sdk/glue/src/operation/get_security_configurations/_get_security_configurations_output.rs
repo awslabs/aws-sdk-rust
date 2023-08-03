@@ -5,8 +5,7 @@
 pub struct GetSecurityConfigurationsOutput {
     /// <p>A list of security configurations.</p>
     #[doc(hidden)]
-    pub security_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
+    pub security_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
     /// <p>A continuation token, if there are more security configurations to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetSecurityConfigurationsOutput {
 }
 impl GetSecurityConfigurationsOutput {
     /// <p>A list of security configurations.</p>
-    pub fn security_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityConfiguration]> {
+    pub fn security_configurations(&self) -> ::std::option::Option<&[crate::types::SecurityConfiguration]> {
         self.security_configurations.as_deref()
     }
     /// <p>A continuation token, if there are more security configurations to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetSecurityConfigurationsOutput {
 }
 impl GetSecurityConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`GetSecurityConfigurationsOutput`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput).
-    pub fn builder() -> crate::operation::get_security_configurations::builders::GetSecurityConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_security_configurations::builders::GetSecurityConfigurationsOutputBuilder {
         crate::operation::get_security_configurations::builders::GetSecurityConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSecurityConfigurationsOutput`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSecurityConfigurationsOutputBuilder {
-    pub(crate) security_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
+    pub(crate) security_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetSecurityConfigurationsOutputBuilder {
         self
     }
     /// <p>A list of security configurations.</p>
-    pub fn set_security_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
-    ) -> Self {
+    pub fn set_security_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>) -> Self {
         self.security_configurations = input;
         self
     }
     /// <p>A list of security configurations.</p>
-    pub fn get_security_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>> {
+    pub fn get_security_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>> {
         &self.security_configurations
     }
     /// <p>A continuation token, if there are more security configurations to return.</p>
@@ -97,9 +86,7 @@ impl GetSecurityConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSecurityConfigurationsOutput`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_security_configurations::GetSecurityConfigurationsOutput {
+    pub fn build(self) -> crate::operation::get_security_configurations::GetSecurityConfigurationsOutput {
         crate::operation::get_security_configurations::GetSecurityConfigurationsOutput {
             security_configurations: self.security_configurations,
             next_token: self.next_token,

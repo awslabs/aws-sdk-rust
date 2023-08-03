@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisableVpcClassicLinkOutput`](crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<DisableVpcClassicLinkError>`](crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError)
-    pub fn disable_vpc_classic_link(
-        &self,
-    ) -> crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkFluentBuilder
-    {
+    pub fn disable_vpc_classic_link(&self) -> crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkFluentBuilder {
         crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl Source {
 
 /// A builder for [`Source`](crate::types::Source).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::TrustAnchorType>,
     pub(crate) source_data: ::std::option::Option<crate::types::SourceData>,
@@ -44,10 +42,7 @@ impl SourceBuilder {
         self
     }
     /// <p>The type of the trust anchor. </p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustAnchorType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::TrustAnchorType>) -> Self {
         self.source_type = input;
         self
     }
@@ -61,10 +56,7 @@ impl SourceBuilder {
         self
     }
     /// <p>The data field of the trust anchor depending on its type. </p>
-    pub fn set_source_data(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceData>,
-    ) -> Self {
+    pub fn set_source_data(mut self, input: ::std::option::Option<crate::types::SourceData>) -> Self {
         self.source_data = input;
         self
     }

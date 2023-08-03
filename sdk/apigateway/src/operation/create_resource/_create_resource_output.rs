@@ -18,9 +18,7 @@ pub struct CreateResourceOutput {
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
     #[doc(hidden)]
-    pub resource_methods: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Method>,
-    >,
+    pub resource_methods: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Method>>,
     _request_id: Option<String>,
 }
 impl CreateResourceOutput {
@@ -41,11 +39,7 @@ impl CreateResourceOutput {
         self.path.as_deref()
     }
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
-    pub fn resource_methods(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Method>,
-    > {
+    pub fn resource_methods(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Method>> {
         self.resource_methods.as_ref()
     }
 }
@@ -63,17 +57,13 @@ impl CreateResourceOutput {
 
 /// A builder for [`CreateResourceOutput`](crate::operation::create_resource::CreateResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResourceOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) path_part: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_methods: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Method>,
-    >,
+    pub(crate) resource_methods: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Method>>,
     _request_id: Option<String>,
 }
 impl CreateResourceOutputBuilder {
@@ -138,11 +128,7 @@ impl CreateResourceOutputBuilder {
     /// To override the contents of this collection use [`set_resource_methods`](Self::set_resource_methods).
     ///
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
-    pub fn resource_methods(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Method,
-    ) -> Self {
+    pub fn resource_methods(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Method) -> Self {
         let mut hash_map = self.resource_methods.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.resource_methods = ::std::option::Option::Some(hash_map);
@@ -151,19 +137,13 @@ impl CreateResourceOutputBuilder {
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
     pub fn set_resource_methods(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Method>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Method>>,
     ) -> Self {
         self.resource_methods = input;
         self
     }
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
-    pub fn get_resource_methods(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Method>,
-    > {
+    pub fn get_resource_methods(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Method>> {
         &self.resource_methods
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

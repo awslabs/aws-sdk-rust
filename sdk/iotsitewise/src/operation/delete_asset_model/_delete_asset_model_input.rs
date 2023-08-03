@@ -22,35 +22,26 @@ impl DeleteAssetModelInput {
 }
 impl DeleteAssetModelInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssetModelInput`](crate::operation::delete_asset_model::DeleteAssetModelInput).
-    pub fn builder() -> crate::operation::delete_asset_model::builders::DeleteAssetModelInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_asset_model::builders::DeleteAssetModelInputBuilder {
         crate::operation::delete_asset_model::builders::DeleteAssetModelInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssetModelInput`](crate::operation::delete_asset_model::DeleteAssetModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssetModelInputBuilder {
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssetModelInputBuilder {
     /// <p>The ID of the asset model to delete.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asset model to delete.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteAssetModelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssetModelInput`](crate::operation::delete_asset_model::DeleteAssetModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_asset_model::DeleteAssetModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_asset_model::DeleteAssetModelInput {
-                asset_model_id: self.asset_model_id,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_asset_model::DeleteAssetModelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_asset_model::DeleteAssetModelInput {
+            asset_model_id: self.asset_model_id,
+            client_token: self.client_token,
+        })
     }
 }

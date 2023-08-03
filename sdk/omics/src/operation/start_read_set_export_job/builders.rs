@@ -37,10 +37,7 @@ impl StartReadSetExportJobFluentBuilder {
         }
     }
     /// Access the StartReadSetExportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_read_set_export_job::builders::StartReadSetExportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_read_set_export_job::builders::StartReadSetExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartReadSetExportJobFluentBuilder {
             crate::operation::start_read_set_export_job::StartReadSetExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_read_set_export_job::StartReadSetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_read_set_export_job::StartReadSetExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartReadSetExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartReadSetExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_read_set_export_job::StartReadSetExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_read_set_export_job::StartReadSetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_read_set_export_job::StartReadSetExportJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartReadSetExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_read_set_export_job::StartReadSetExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_read_set_export_job::StartReadSetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_read_set_export_job::StartReadSetExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl StartReadSetExportJobFluentBuilder {
             crate::operation::start_read_set_export_job::StartReadSetExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_read_set_export_job::StartReadSetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_read_set_export_job::StartReadSetExportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
@@ -195,17 +175,12 @@ impl StartReadSetExportJobFluentBuilder {
         self
     }
     /// <p>The job's source files.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>The job's source files.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>> {
         self.inner.get_sources()
     }
 }

@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for DomainStatus {
             "Pending" => DomainStatus::Pending,
             "Update_Failed" => DomainStatus::UpdateFailed,
             "Updating" => DomainStatus::Updating,
-            other => {
-                DomainStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DomainStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl DomainStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Delete_Failed",
-            "Deleting",
-            "Failed",
-            "InService",
-            "Pending",
-            "Update_Failed",
-            "Updating",
-        ]
+        &["Delete_Failed", "Deleting", "Failed", "InService", "Pending", "Update_Failed", "Updating"]
     }
 }
 impl ::std::convert::AsRef<str> for DomainStatus {

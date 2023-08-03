@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteScalingPolicyOutput {
 }
 impl DeleteScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyOutput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyOutputBuilder {
-        crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyOutputBuilder {
+        crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteScalingPolicyOutput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScalingPolicyOutputBuilder {
     _request_id: Option<String>,
 }

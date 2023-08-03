@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::operation::delete_outbound_cross_cluster_search_connection::DeleteOutboundCrossClusterSearchConnectionOutput) with field(s):
     ///   - [`cross_cluster_search_connection(Option<OutboundCrossClusterSearchConnection>)`](crate::operation::delete_outbound_cross_cluster_search_connection::DeleteOutboundCrossClusterSearchConnectionOutput::cross_cluster_search_connection): <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection. </p>
     /// - On failure, responds with [`SdkError<DeleteOutboundCrossClusterSearchConnectionError>`](crate::operation::delete_outbound_cross_cluster_search_connection::DeleteOutboundCrossClusterSearchConnectionError)
-    pub fn delete_outbound_cross_cluster_search_connection(&self) -> crate::operation::delete_outbound_cross_cluster_search_connection::builders::DeleteOutboundCrossClusterSearchConnectionFluentBuilder{
-        crate::operation::delete_outbound_cross_cluster_search_connection::builders::DeleteOutboundCrossClusterSearchConnectionFluentBuilder::new(self.handle.clone())
+    pub fn delete_outbound_cross_cluster_search_connection(
+        &self,
+    ) -> crate::operation::delete_outbound_cross_cluster_search_connection::builders::DeleteOutboundCrossClusterSearchConnectionFluentBuilder {
+        crate::operation::delete_outbound_cross_cluster_search_connection::builders::DeleteOutboundCrossClusterSearchConnectionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -37,14 +37,11 @@ impl CustomRoutingDestinationConfiguration {
 
 /// A builder for [`CustomRoutingDestinationConfiguration`](crate::types::CustomRoutingDestinationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomRoutingDestinationConfigurationBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,
-    pub(crate) protocols:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>,
 }
 impl CustomRoutingDestinationConfigurationBuilder {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
@@ -87,17 +84,12 @@ impl CustomRoutingDestinationConfigurationBuilder {
         self
     }
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub fn set_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>,
-    ) -> Self {
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>) -> Self {
         self.protocols = input;
         self
     }
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub fn get_protocols(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>> {
         &self.protocols
     }
     /// Consumes the builder and constructs a [`CustomRoutingDestinationConfiguration`](crate::types::CustomRoutingDestinationConfiguration).

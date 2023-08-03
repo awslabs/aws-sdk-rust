@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAssessmentOutput`](crate::operation::create_assessment::CreateAssessmentOutput) with field(s):
     ///   - [`assessment(Option<Assessment>)`](crate::operation::create_assessment::CreateAssessmentOutput::assessment): <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
     /// - On failure, responds with [`SdkError<CreateAssessmentError>`](crate::operation::create_assessment::CreateAssessmentError)
-    pub fn create_assessment(
-        &self,
-    ) -> crate::operation::create_assessment::builders::CreateAssessmentFluentBuilder {
-        crate::operation::create_assessment::builders::CreateAssessmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_assessment(&self) -> crate::operation::create_assessment::builders::CreateAssessmentFluentBuilder {
+        crate::operation::create_assessment::builders::CreateAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

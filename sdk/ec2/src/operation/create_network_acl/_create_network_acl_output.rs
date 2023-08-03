@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateNetworkAclOutput {
 }
 impl CreateNetworkAclOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkAclOutput`](crate::operation::create_network_acl::CreateNetworkAclOutput).
-    pub fn builder() -> crate::operation::create_network_acl::builders::CreateNetworkAclOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_network_acl::builders::CreateNetworkAclOutputBuilder {
         crate::operation::create_network_acl::builders::CreateNetworkAclOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkAclOutput`](crate::operation::create_network_acl::CreateNetworkAclOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkAclOutputBuilder {
     pub(crate) network_acl: ::std::option::Option<crate::types::NetworkAcl>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateNetworkAclOutputBuilder {
         self
     }
     /// <p>Information about the network ACL.</p>
-    pub fn set_network_acl(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkAcl>,
-    ) -> Self {
+    pub fn set_network_acl(mut self, input: ::std::option::Option<crate::types::NetworkAcl>) -> Self {
         self.network_acl = input;
         self
     }

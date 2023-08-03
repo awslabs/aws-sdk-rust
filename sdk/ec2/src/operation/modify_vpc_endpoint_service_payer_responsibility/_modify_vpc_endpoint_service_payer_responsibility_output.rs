@@ -21,16 +21,15 @@ impl ::aws_http::request_id::RequestId for ModifyVpcEndpointServicePayerResponsi
 }
 impl ModifyVpcEndpointServicePayerResponsibilityOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointServicePayerResponsibilityOutput`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityOutput).
-    pub fn builder() -> crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityOutputBuilder {
         crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcEndpointServicePayerResponsibilityOutput`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointServicePayerResponsibilityOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +59,9 @@ impl ModifyVpcEndpointServicePayerResponsibilityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePayerResponsibilityOutput`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityOutput).
-    pub fn build(self) -> crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityOutput{
+    pub fn build(self) -> crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityOutput {
         crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityOutput {
-            return_value: self.return_value
-            ,
+            return_value: self.return_value,
             _request_id: self._request_id,
         }
     }

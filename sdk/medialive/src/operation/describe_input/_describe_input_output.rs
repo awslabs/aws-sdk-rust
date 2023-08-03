@@ -48,9 +48,7 @@ pub struct DescribeInputOutput {
     pub state: ::std::option::Option<crate::types::InputState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InputType>,
@@ -114,11 +112,7 @@ impl DescribeInputOutput {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// The different types of inputs that AWS Elemental MediaLive supports.
@@ -140,29 +134,23 @@ impl DescribeInputOutput {
 
 /// A builder for [`DescribeInputOutput`](crate::operation::describe_input::DescribeInputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInputOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) attached_channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::InputDestination>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) input_class: ::std::option::Option<crate::types::InputClass>,
-    pub(crate) input_devices:
-        ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>,
+    pub(crate) input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>,
     pub(crate) input_partner_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) input_source_type: ::std::option::Option<crate::types::InputSourceType>,
-    pub(crate) media_connect_flows:
-        ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlow>>,
+    pub(crate) media_connect_flows: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlow>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
     pub(crate) state: ::std::option::Option<crate::types::InputState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::InputType>,
     _request_id: Option<String>,
 }
@@ -186,27 +174,19 @@ impl DescribeInputOutputBuilder {
     /// To override the contents of this collection use [`set_attached_channels`](Self::set_attached_channels).
     ///
     /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
-    pub fn attached_channels(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attached_channels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attached_channels.unwrap_or_default();
         v.push(input.into());
         self.attached_channels = ::std::option::Option::Some(v);
         self
     }
     /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
-    pub fn set_attached_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attached_channels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attached_channels = input;
         self
     }
     /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
-    pub fn get_attached_channels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attached_channels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attached_channels
     }
     /// Appends an item to `destinations`.
@@ -221,17 +201,12 @@ impl DescribeInputOutputBuilder {
         self
     }
     /// A list of the destinations of the input (PUSH-type).
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDestination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDestination>>) -> Self {
         self.destinations = input;
         self
     }
     /// A list of the destinations of the input (PUSH-type).
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDestination>> {
         &self.destinations
     }
     /// The generated ID of the input (unique for user account, immutable).
@@ -254,10 +229,7 @@ impl DescribeInputOutputBuilder {
         self
     }
     /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
-    pub fn set_input_class(
-        mut self,
-        input: ::std::option::Option<crate::types::InputClass>,
-    ) -> Self {
+    pub fn set_input_class(mut self, input: ::std::option::Option<crate::types::InputClass>) -> Self {
         self.input_class = input;
         self
     }
@@ -277,17 +249,12 @@ impl DescribeInputOutputBuilder {
         self
     }
     /// Settings for the input devices.
-    pub fn set_input_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>,
-    ) -> Self {
+    pub fn set_input_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>) -> Self {
         self.input_devices = input;
         self
     }
     /// Settings for the input devices.
-    pub fn get_input_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>> {
+    pub fn get_input_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>> {
         &self.input_devices
     }
     /// Appends an item to `input_partner_ids`.
@@ -295,27 +262,19 @@ impl DescribeInputOutputBuilder {
     /// To override the contents of this collection use [`set_input_partner_ids`](Self::set_input_partner_ids).
     ///
     /// A list of IDs for all Inputs which are partners of this one.
-    pub fn input_partner_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_partner_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.input_partner_ids.unwrap_or_default();
         v.push(input.into());
         self.input_partner_ids = ::std::option::Option::Some(v);
         self
     }
     /// A list of IDs for all Inputs which are partners of this one.
-    pub fn set_input_partner_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_input_partner_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.input_partner_ids = input;
         self
     }
     /// A list of IDs for all Inputs which are partners of this one.
-    pub fn get_input_partner_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_input_partner_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.input_partner_ids
     }
     /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
@@ -324,10 +283,7 @@ impl DescribeInputOutputBuilder {
         self
     }
     /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
-    pub fn set_input_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InputSourceType>,
-    ) -> Self {
+    pub fn set_input_source_type(mut self, input: ::std::option::Option<crate::types::InputSourceType>) -> Self {
         self.input_source_type = input;
         self
     }
@@ -347,17 +303,12 @@ impl DescribeInputOutputBuilder {
         self
     }
     /// A list of MediaConnect Flows for this input.
-    pub fn set_media_connect_flows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlow>>,
-    ) -> Self {
+    pub fn set_media_connect_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlow>>) -> Self {
         self.media_connect_flows = input;
         self
     }
     /// A list of MediaConnect Flows for this input.
-    pub fn get_media_connect_flows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlow>> {
+    pub fn get_media_connect_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlow>> {
         &self.media_connect_flows
     }
     /// The user-assigned name (This is a mutable value).
@@ -393,27 +344,19 @@ impl DescribeInputOutputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// A list of IDs for all the Input Security Groups attached to the input.
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// A list of IDs for all the Input Security Groups attached to the input.
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// A list of IDs for all the Input Security Groups attached to the input.
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// Appends an item to `sources`.
@@ -428,17 +371,12 @@ impl DescribeInputOutputBuilder {
         self
     }
     /// A list of the sources of the input (PULL-type).
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>) -> Self {
         self.sources = input;
         self
     }
     /// A list of the sources of the input (PULL-type).
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSource>> {
         &self.sources
     }
     /// Placeholder documentation for InputState
@@ -460,32 +398,19 @@ impl DescribeInputOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// The different types of inputs that AWS Elemental MediaLive supports.

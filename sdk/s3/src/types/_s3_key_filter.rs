@@ -23,9 +23,7 @@ impl S3KeyFilter {
 
 /// A builder for [`S3KeyFilter`](crate::types::S3KeyFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3KeyFilterBuilder {
     pub(crate) filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
 }
@@ -42,17 +40,12 @@ impl S3KeyFilterBuilder {
         self
     }
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
-    pub fn set_filter_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    ) -> Self {
+    pub fn set_filter_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.filter_rules = input;
         self
     }
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
-    pub fn get_filter_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_filter_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.filter_rules
     }
     /// Consumes the builder and constructs a [`S3KeyFilter`](crate::types::S3KeyFilter).

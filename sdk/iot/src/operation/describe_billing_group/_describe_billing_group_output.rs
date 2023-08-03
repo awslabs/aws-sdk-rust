@@ -41,15 +41,11 @@ impl DescribeBillingGroupOutput {
         self.version
     }
     /// <p>The properties of the billing group.</p>
-    pub fn billing_group_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BillingGroupProperties> {
+    pub fn billing_group_properties(&self) -> ::std::option::Option<&crate::types::BillingGroupProperties> {
         self.billing_group_properties.as_ref()
     }
     /// <p>Additional information about the billing group.</p>
-    pub fn billing_group_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BillingGroupMetadata> {
+    pub fn billing_group_metadata(&self) -> ::std::option::Option<&crate::types::BillingGroupMetadata> {
         self.billing_group_metadata.as_ref()
     }
 }
@@ -60,41 +56,31 @@ impl ::aws_http::request_id::RequestId for DescribeBillingGroupOutput {
 }
 impl DescribeBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBillingGroupOutput`](crate::operation::describe_billing_group::DescribeBillingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_billing_group::builders::DescribeBillingGroupOutputBuilder {
+    pub fn builder() -> crate::operation::describe_billing_group::builders::DescribeBillingGroupOutputBuilder {
         crate::operation::describe_billing_group::builders::DescribeBillingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBillingGroupOutput`](crate::operation::describe_billing_group::DescribeBillingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBillingGroupOutputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i64>,
-    pub(crate) billing_group_properties:
-        ::std::option::Option<crate::types::BillingGroupProperties>,
+    pub(crate) billing_group_properties: ::std::option::Option<crate::types::BillingGroupProperties>,
     pub(crate) billing_group_metadata: ::std::option::Option<crate::types::BillingGroupMetadata>,
     _request_id: Option<String>,
 }
 impl DescribeBillingGroupOutputBuilder {
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_name = input;
         self
     }
@@ -103,18 +89,12 @@ impl DescribeBillingGroupOutputBuilder {
         &self.billing_group_name
     }
     /// <p>The ID of the billing group.</p>
-    pub fn billing_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the billing group.</p>
-    pub fn set_billing_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_id = input;
         self
     }
@@ -123,18 +103,12 @@ impl DescribeBillingGroupOutputBuilder {
         &self.billing_group_id
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn billing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn set_billing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_arn = input;
         self
     }
@@ -162,17 +136,12 @@ impl DescribeBillingGroupOutputBuilder {
         self
     }
     /// <p>The properties of the billing group.</p>
-    pub fn set_billing_group_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingGroupProperties>,
-    ) -> Self {
+    pub fn set_billing_group_properties(mut self, input: ::std::option::Option<crate::types::BillingGroupProperties>) -> Self {
         self.billing_group_properties = input;
         self
     }
     /// <p>The properties of the billing group.</p>
-    pub fn get_billing_group_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::BillingGroupProperties> {
+    pub fn get_billing_group_properties(&self) -> &::std::option::Option<crate::types::BillingGroupProperties> {
         &self.billing_group_properties
     }
     /// <p>Additional information about the billing group.</p>
@@ -181,17 +150,12 @@ impl DescribeBillingGroupOutputBuilder {
         self
     }
     /// <p>Additional information about the billing group.</p>
-    pub fn set_billing_group_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingGroupMetadata>,
-    ) -> Self {
+    pub fn set_billing_group_metadata(mut self, input: ::std::option::Option<crate::types::BillingGroupMetadata>) -> Self {
         self.billing_group_metadata = input;
         self
     }
     /// <p>Additional information about the billing group.</p>
-    pub fn get_billing_group_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::BillingGroupMetadata> {
+    pub fn get_billing_group_metadata(&self) -> &::std::option::Option<crate::types::BillingGroupMetadata> {
         &self.billing_group_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

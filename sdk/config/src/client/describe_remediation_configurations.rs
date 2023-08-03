@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeRemediationConfigurationsOutput`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput) with field(s):
     ///   - [`remediation_configurations(Option<Vec<RemediationConfiguration>>)`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput::remediation_configurations): <p>Returns a remediation configuration object.</p>
     /// - On failure, responds with [`SdkError<DescribeRemediationConfigurationsError>`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError)
-    pub fn describe_remediation_configurations(&self) -> crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsFluentBuilder{
+    pub fn describe_remediation_configurations(
+        &self,
+    ) -> crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsFluentBuilder {
         crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

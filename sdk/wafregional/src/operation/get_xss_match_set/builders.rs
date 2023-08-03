@@ -10,10 +10,7 @@ impl GetXssMatchSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_xss_match_set::GetXssMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_xss_match_set::GetXssMatchSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_xss_match_set::GetXssMatchSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_xss_match_set();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl GetXssMatchSetFluentBuilder {
         }
     }
     /// Access the GetXssMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_xss_match_set::builders::GetXssMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_xss_match_set::builders::GetXssMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl GetXssMatchSetFluentBuilder {
             crate::operation::get_xss_match_set::GetXssMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_xss_match_set::GetXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_xss_match_set::GetXssMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl GetXssMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl GetXssMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_xss_match_set::GetXssMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_xss_match_set::GetXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_xss_match_set::GetXssMatchSetError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl GetXssMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_xss_match_set::GetXssMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_xss_match_set::GetXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_xss_match_set::GetXssMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl GetXssMatchSetFluentBuilder {
             crate::operation::get_xss_match_set::GetXssMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_xss_match_set::GetXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_xss_match_set::GetXssMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn xss_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.xss_match_set_id(input.into());
         self
     }
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn set_xss_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_xss_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_xss_match_set_id(input);
         self
     }

@@ -10,10 +10,7 @@ impl ListChangedBlocksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_changed_blocks::ListChangedBlocksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_changed_blocks::ListChangedBlocksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_changed_blocks::ListChangedBlocksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_changed_blocks();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListChangedBlocksFluentBuilder {
         }
     }
     /// Access the ListChangedBlocks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_changed_blocks::builders::ListChangedBlocksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_changed_blocks::builders::ListChangedBlocksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListChangedBlocksFluentBuilder {
             crate::operation::list_changed_blocks::ListChangedBlocks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_changed_blocks::ListChangedBlocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_changed_blocks::ListChangedBlocksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListChangedBlocksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListChangedBlocksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_changed_blocks::ListChangedBlocksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_changed_blocks::ListChangedBlocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_changed_blocks::ListChangedBlocksError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListChangedBlocksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_changed_blocks::ListChangedBlocksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_changed_blocks::ListChangedBlocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_changed_blocks::ListChangedBlocksError>,
     > {
         self.send_middleware().await
     }
@@ -116,40 +102,27 @@ impl ListChangedBlocksFluentBuilder {
             crate::operation::list_changed_blocks::ListChangedBlocks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_changed_blocks::ListChangedBlocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_changed_blocks::ListChangedBlocksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_changed_blocks::paginator::ListChangedBlocksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_changed_blocks::paginator::ListChangedBlocksPaginator {
-        crate::operation::list_changed_blocks::paginator::ListChangedBlocksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_changed_blocks::paginator::ListChangedBlocksPaginator {
+        crate::operation::list_changed_blocks::paginator::ListChangedBlocksPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
-    pub fn first_snapshot_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn first_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.first_snapshot_id(input.into());
         self
     }
     /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
-    pub fn set_first_snapshot_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_first_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_first_snapshot_id(input);
         self
     }
@@ -162,20 +135,14 @@ impl ListChangedBlocksFluentBuilder {
     /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
-    pub fn second_snapshot_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn second_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.second_snapshot_id(input.into());
         self
     }
     /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
-    pub fn set_second_snapshot_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_second_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_second_snapshot_id(input);
         self
     }

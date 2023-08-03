@@ -19,9 +19,7 @@ impl AssignInstanceOutput {
 
 /// A builder for [`AssignInstanceOutput`](crate::operation::assign_instance::AssignInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssignInstanceOutputBuilder {
     _request_id: Option<String>,
 }

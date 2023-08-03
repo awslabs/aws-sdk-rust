@@ -9,16 +9,13 @@ pub struct DataLakeConfiguration {
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
     #[doc(hidden)]
-    pub encryption_configuration:
-        ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
+    pub encryption_configuration: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
     #[doc(hidden)]
-    pub lifecycle_configuration:
-        ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
+    pub lifecycle_configuration: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
     /// <p>Provides replication details of Amazon Security Lake object.</p>
     #[doc(hidden)]
-    pub replication_configuration:
-        ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
+    pub replication_configuration: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
 }
 impl DataLakeConfiguration {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
@@ -26,21 +23,15 @@ impl DataLakeConfiguration {
         self.region.as_deref()
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataLakeEncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeEncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    pub fn lifecycle_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataLakeLifecycleConfiguration> {
+    pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeLifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    pub fn replication_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataLakeReplicationConfiguration> {
+    pub fn replication_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeReplicationConfiguration> {
         self.replication_configuration.as_ref()
     }
 }
@@ -53,17 +44,12 @@ impl DataLakeConfiguration {
 
 /// A builder for [`DataLakeConfiguration`](crate::types::DataLakeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeConfigurationBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
-    pub(crate) lifecycle_configuration:
-        ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
-    pub(crate) replication_configuration:
-        ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
+    pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
+    pub(crate) replication_configuration: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
 }
 impl DataLakeConfigurationBuilder {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
@@ -81,69 +67,45 @@ impl DataLakeConfigurationBuilder {
         &self.region
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::DataLakeEncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::DataLakeEncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataLakeEncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::DataLakeEncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    pub fn lifecycle_configuration(
-        mut self,
-        input: crate::types::DataLakeLifecycleConfiguration,
-    ) -> Self {
+    pub fn lifecycle_configuration(mut self, input: crate::types::DataLakeLifecycleConfiguration) -> Self {
         self.lifecycle_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    pub fn set_lifecycle_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
-    ) -> Self {
+    pub fn set_lifecycle_configuration(mut self, input: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>) -> Self {
         self.lifecycle_configuration = input;
         self
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    pub fn get_lifecycle_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataLakeLifecycleConfiguration> {
+    pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::DataLakeLifecycleConfiguration> {
         &self.lifecycle_configuration
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    pub fn replication_configuration(
-        mut self,
-        input: crate::types::DataLakeReplicationConfiguration,
-    ) -> Self {
+    pub fn replication_configuration(mut self, input: crate::types::DataLakeReplicationConfiguration) -> Self {
         self.replication_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    pub fn set_replication_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
-    ) -> Self {
+    pub fn set_replication_configuration(mut self, input: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>) -> Self {
         self.replication_configuration = input;
         self
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    pub fn get_replication_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataLakeReplicationConfiguration> {
+    pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::DataLakeReplicationConfiguration> {
         &self.replication_configuration
     }
     /// Consumes the builder and constructs a [`DataLakeConfiguration`](crate::types::DataLakeConfiguration).

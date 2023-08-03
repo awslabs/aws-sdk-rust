@@ -37,9 +37,7 @@ impl DescribeInputDeviceFluentBuilder {
         }
     }
     /// Access the DescribeInputDevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_input_device::builders::DescribeInputDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_input_device::builders::DescribeInputDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeInputDeviceFluentBuilder {
             crate::operation::describe_input_device::DescribeInputDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_device::DescribeInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_device::DescribeInputDeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeInputDeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeInputDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_input_device::DescribeInputDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_device::DescribeInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_device::DescribeInputDeviceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeInputDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_input_device::DescribeInputDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_device::DescribeInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_device::DescribeInputDeviceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeInputDeviceFluentBuilder {
             crate::operation::describe_input_device::DescribeInputDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_device::DescribeInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_device::DescribeInputDeviceError>,
     > {
         self.customize_middleware().await
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_device_id(input.into());
         self
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
     }

@@ -23,18 +23,14 @@ impl SwitchoverReadReplicaInput {
 }
 impl SwitchoverReadReplicaInput {
     /// Creates a new builder-style object to manufacture [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
-    pub fn builder(
-    ) -> crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder
-    {
+    pub fn builder() -> crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder {
         crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder::default()
     }
 }
 
 /// A builder for [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SwitchoverReadReplicaInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -44,10 +40,7 @@ impl SwitchoverReadReplicaInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -56,10 +49,7 @@ impl SwitchoverReadReplicaInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -74,14 +64,10 @@ impl SwitchoverReadReplicaInputBuilder {
     /// Consumes the builder and constructs a [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::switchover_read_replica::SwitchoverReadReplicaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::switchover_read_replica::SwitchoverReadReplicaInput {
-                db_instance_identifier: self.db_instance_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::switchover_read_replica::SwitchoverReadReplicaInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::switchover_read_replica::SwitchoverReadReplicaInput {
+            db_instance_identifier: self.db_instance_identifier,
+        })
     }
 }

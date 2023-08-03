@@ -23,17 +23,14 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetail {
 }
 impl RecommendationRelatedCloudWatchMetricsSourceDetail {
     /// Creates a new builder-style object to manufacture [`RecommendationRelatedCloudWatchMetricsSourceDetail`](crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail).
-    pub fn builder(
-    ) -> crate::types::builders::RecommendationRelatedCloudWatchMetricsSourceDetailBuilder {
+    pub fn builder() -> crate::types::builders::RecommendationRelatedCloudWatchMetricsSourceDetailBuilder {
         crate::types::builders::RecommendationRelatedCloudWatchMetricsSourceDetailBuilder::default()
     }
 }
 
 /// A builder for [`RecommendationRelatedCloudWatchMetricsSourceDetail`](crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationRelatedCloudWatchMetricsSourceDetailBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

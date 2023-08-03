@@ -37,14 +37,11 @@ impl LendingField {
 
 /// A builder for [`LendingField`](crate::types::LendingField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LendingFieldBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) key_detection: ::std::option::Option<crate::types::LendingDetection>,
-    pub(crate) value_detections:
-        ::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>>,
+    pub(crate) value_detections: ::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>>,
 }
 impl LendingFieldBuilder {
     /// <p>The type of the lending document.</p>
@@ -67,10 +64,7 @@ impl LendingFieldBuilder {
         self
     }
     /// <p>The results extracted for a lending document.</p>
-    pub fn set_key_detection(
-        mut self,
-        input: ::std::option::Option<crate::types::LendingDetection>,
-    ) -> Self {
+    pub fn set_key_detection(mut self, input: ::std::option::Option<crate::types::LendingDetection>) -> Self {
         self.key_detection = input;
         self
     }
@@ -90,17 +84,12 @@ impl LendingFieldBuilder {
         self
     }
     /// <p>An array of LendingDetection objects.</p>
-    pub fn set_value_detections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>>,
-    ) -> Self {
+    pub fn set_value_detections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>>) -> Self {
         self.value_detections = input;
         self
     }
     /// <p>An array of LendingDetection objects.</p>
-    pub fn get_value_detections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>> {
+    pub fn get_value_detections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>> {
         &self.value_detections
     }
     /// Consumes the builder and constructs a [`LendingField`](crate::types::LendingField).

@@ -23,9 +23,7 @@ impl S3ClassificationScope {
 
 /// A builder for [`S3ClassificationScope`](crate::types::S3ClassificationScope).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ClassificationScopeBuilder {
     pub(crate) excludes: ::std::option::Option<crate::types::S3ClassificationScopeExclusion>,
 }
@@ -36,23 +34,16 @@ impl S3ClassificationScopeBuilder {
         self
     }
     /// <p>The S3 buckets that are excluded.</p>
-    pub fn set_excludes(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ClassificationScopeExclusion>,
-    ) -> Self {
+    pub fn set_excludes(mut self, input: ::std::option::Option<crate::types::S3ClassificationScopeExclusion>) -> Self {
         self.excludes = input;
         self
     }
     /// <p>The S3 buckets that are excluded.</p>
-    pub fn get_excludes(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ClassificationScopeExclusion> {
+    pub fn get_excludes(&self) -> &::std::option::Option<crate::types::S3ClassificationScopeExclusion> {
         &self.excludes
     }
     /// Consumes the builder and constructs a [`S3ClassificationScope`](crate::types::S3ClassificationScope).
     pub fn build(self) -> crate::types::S3ClassificationScope {
-        crate::types::S3ClassificationScope {
-            excludes: self.excludes,
-        }
+        crate::types::S3ClassificationScope { excludes: self.excludes }
     }
 }

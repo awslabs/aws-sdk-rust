@@ -41,13 +41,7 @@
 /// State of a workspace.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WorkspaceStatusCode {
     /// Workspace has been created and is usable.
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for WorkspaceStatusCode {
             "CREATION_FAILED" => WorkspaceStatusCode::CreationFailed,
             "DELETING" => WorkspaceStatusCode::Deleting,
             "UPDATING" => WorkspaceStatusCode::Updating,
-            other => WorkspaceStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WorkspaceStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl WorkspaceStatusCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATING",
-            "CREATION_FAILED",
-            "DELETING",
-            "UPDATING",
-        ]
+        &["ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for WorkspaceStatusCode {

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`application_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_application_fleet::builders::DisassociateApplicationFleetFluentBuilder::application_arn) / [`set_application_arn(Option<String>)`](crate::operation::disassociate_application_fleet::builders::DisassociateApplicationFleetFluentBuilder::set_application_arn): <p>The ARN of the application.</p>
     /// - On success, responds with [`DisassociateApplicationFleetOutput`](crate::operation::disassociate_application_fleet::DisassociateApplicationFleetOutput)
     /// - On failure, responds with [`SdkError<DisassociateApplicationFleetError>`](crate::operation::disassociate_application_fleet::DisassociateApplicationFleetError)
-    pub fn disassociate_application_fleet(&self) -> crate::operation::disassociate_application_fleet::builders::DisassociateApplicationFleetFluentBuilder{
+    pub fn disassociate_application_fleet(
+        &self,
+    ) -> crate::operation::disassociate_application_fleet::builders::DisassociateApplicationFleetFluentBuilder {
         crate::operation::disassociate_application_fleet::builders::DisassociateApplicationFleetFluentBuilder::new(self.handle.clone())
     }
 }

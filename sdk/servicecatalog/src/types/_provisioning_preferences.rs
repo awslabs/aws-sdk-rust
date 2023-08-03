@@ -100,9 +100,7 @@ impl ProvisioningPreferences {
 
 /// A builder for [`ProvisioningPreferences`](crate::types::ProvisioningPreferences).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisioningPreferencesBuilder {
     pub(crate) stack_set_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) stack_set_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -120,10 +118,7 @@ impl ProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
-    pub fn stack_set_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stack_set_accounts.unwrap_or_default();
         v.push(input.into());
         self.stack_set_accounts = ::std::option::Option::Some(v);
@@ -133,10 +128,7 @@ impl ProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
-    pub fn set_stack_set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_stack_set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stack_set_accounts = input;
         self
     }
@@ -144,9 +136,7 @@ impl ProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
-    pub fn get_stack_set_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_stack_set_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stack_set_accounts
     }
     /// Appends an item to `stack_set_regions`.
@@ -157,10 +147,7 @@ impl ProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
-    pub fn stack_set_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stack_set_regions.unwrap_or_default();
         v.push(input.into());
         self.stack_set_regions = ::std::option::Option::Some(v);
@@ -170,10 +157,7 @@ impl ProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
-    pub fn set_stack_set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_stack_set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stack_set_regions = input;
         self
     }
@@ -181,9 +165,7 @@ impl ProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
-    pub fn get_stack_set_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_stack_set_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stack_set_regions
     }
     /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
@@ -198,10 +180,7 @@ impl ProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
-    pub fn set_stack_set_failure_tolerance_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_stack_set_failure_tolerance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stack_set_failure_tolerance_count = input;
         self
     }
@@ -224,10 +203,7 @@ impl ProvisioningPreferencesBuilder {
     /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
-    pub fn set_stack_set_failure_tolerance_percentage(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_stack_set_failure_tolerance_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stack_set_failure_tolerance_percentage = input;
         self
     }
@@ -250,10 +226,7 @@ impl ProvisioningPreferencesBuilder {
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
-    pub fn set_stack_set_max_concurrency_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_stack_set_max_concurrency_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stack_set_max_concurrency_count = input;
         self
     }
@@ -278,10 +251,7 @@ impl ProvisioningPreferencesBuilder {
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
-    pub fn set_stack_set_max_concurrency_percentage(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_stack_set_max_concurrency_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stack_set_max_concurrency_percentage = input;
         self
     }

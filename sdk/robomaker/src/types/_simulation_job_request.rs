@@ -38,12 +38,10 @@ pub struct SimulationJobRequest {
     pub use_default_applications: ::std::option::Option<bool>,
     /// <p>The robot applications to use in the simulation job.</p>
     #[doc(hidden)]
-    pub robot_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
+    pub robot_applications: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
     /// <p>The simulation applications to use in the simulation job.</p>
     #[doc(hidden)]
-    pub simulation_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>,
+    pub simulation_applications: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>,
     /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
@@ -57,9 +55,7 @@ pub struct SimulationJobRequest {
     pub compute: ::std::option::Option<crate::types::Compute>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SimulationJobRequest {
     /// <p>The output location.</p>
@@ -101,15 +97,11 @@ impl SimulationJobRequest {
         self.use_default_applications
     }
     /// <p>The robot applications to use in the simulation job.</p>
-    pub fn robot_applications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RobotApplicationConfig]> {
+    pub fn robot_applications(&self) -> ::std::option::Option<&[crate::types::RobotApplicationConfig]> {
         self.robot_applications.as_deref()
     }
     /// <p>The simulation applications to use in the simulation job.</p>
-    pub fn simulation_applications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SimulationApplicationConfig]> {
+    pub fn simulation_applications(&self) -> ::std::option::Option<&[crate::types::SimulationApplicationConfig]> {
         self.simulation_applications.as_deref()
     }
     /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
@@ -127,11 +119,7 @@ impl SimulationJobRequest {
         self.compute.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -144,9 +132,7 @@ impl SimulationJobRequest {
 
 /// A builder for [`SimulationJobRequest`](crate::types::SimulationJobRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimulationJobRequestBuilder {
     pub(crate) output_location: ::std::option::Option<crate::types::OutputLocation>,
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
@@ -154,16 +140,12 @@ pub struct SimulationJobRequestBuilder {
     pub(crate) iam_role: ::std::option::Option<::std::string::String>,
     pub(crate) failure_behavior: ::std::option::Option<crate::types::FailureBehavior>,
     pub(crate) use_default_applications: ::std::option::Option<bool>,
-    pub(crate) robot_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
-    pub(crate) simulation_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>,
+    pub(crate) robot_applications: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
+    pub(crate) simulation_applications: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>,
     pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) compute: ::std::option::Option<crate::types::Compute>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SimulationJobRequestBuilder {
     /// <p>The output location.</p>
@@ -172,10 +154,7 @@ impl SimulationJobRequestBuilder {
         self
     }
     /// <p>The output location.</p>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocation>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::OutputLocation>) -> Self {
         self.output_location = input;
         self
     }
@@ -189,10 +168,7 @@ impl SimulationJobRequestBuilder {
         self
     }
     /// <p>The logging configuration.</p>
-    pub fn set_logging_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfig>,
-    ) -> Self {
+    pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::LoggingConfig>) -> Self {
         self.logging_config = input;
         self
     }
@@ -262,10 +238,7 @@ impl SimulationJobRequestBuilder {
     /// <p>Stop the simulation job and terminate the instance.</p>
     /// </dd>
     /// </dl>
-    pub fn set_failure_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureBehavior>,
-    ) -> Self {
+    pub fn set_failure_behavior(mut self, input: ::std::option::Option<crate::types::FailureBehavior>) -> Self {
         self.failure_behavior = input;
         self
     }
@@ -313,17 +286,12 @@ impl SimulationJobRequestBuilder {
         self
     }
     /// <p>The robot applications to use in the simulation job.</p>
-    pub fn set_robot_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
-    ) -> Self {
+    pub fn set_robot_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>) -> Self {
         self.robot_applications = input;
         self
     }
     /// <p>The robot applications to use in the simulation job.</p>
-    pub fn get_robot_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>> {
+    pub fn get_robot_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>> {
         &self.robot_applications
     }
     /// Appends an item to `simulation_applications`.
@@ -331,27 +299,19 @@ impl SimulationJobRequestBuilder {
     /// To override the contents of this collection use [`set_simulation_applications`](Self::set_simulation_applications).
     ///
     /// <p>The simulation applications to use in the simulation job.</p>
-    pub fn simulation_applications(
-        mut self,
-        input: crate::types::SimulationApplicationConfig,
-    ) -> Self {
+    pub fn simulation_applications(mut self, input: crate::types::SimulationApplicationConfig) -> Self {
         let mut v = self.simulation_applications.unwrap_or_default();
         v.push(input);
         self.simulation_applications = ::std::option::Option::Some(v);
         self
     }
     /// <p>The simulation applications to use in the simulation job.</p>
-    pub fn set_simulation_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>,
-    ) -> Self {
+    pub fn set_simulation_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>) -> Self {
         self.simulation_applications = input;
         self
     }
     /// <p>The simulation applications to use in the simulation job.</p>
-    pub fn get_simulation_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>> {
+    pub fn get_simulation_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>> {
         &self.simulation_applications
     }
     /// Appends an item to `data_sources`.
@@ -370,19 +330,14 @@ impl SimulationJobRequestBuilder {
     /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>>) -> Self {
         self.data_sources = input;
         self
     }
     /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>> {
         &self.data_sources
     }
     /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
@@ -418,32 +373,19 @@ impl SimulationJobRequestBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`SimulationJobRequest`](crate::types::SimulationJobRequest).

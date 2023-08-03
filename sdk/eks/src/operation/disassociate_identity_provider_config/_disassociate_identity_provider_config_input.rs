@@ -19,9 +19,7 @@ impl DisassociateIdentityProviderConfigInput {
         self.cluster_name.as_deref()
     }
     /// <p>An object representing an identity provider configuration.</p>
-    pub fn identity_provider_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentityProviderConfig> {
+    pub fn identity_provider_config(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfig> {
         self.identity_provider_config.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -31,20 +29,17 @@ impl DisassociateIdentityProviderConfigInput {
 }
 impl DisassociateIdentityProviderConfigInput {
     /// Creates a new builder-style object to manufacture [`DisassociateIdentityProviderConfigInput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigInput).
-    pub fn builder() -> crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigInputBuilder {
         crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateIdentityProviderConfigInput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateIdentityProviderConfigInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
-    pub(crate) identity_provider_config:
-        ::std::option::Option<crate::types::IdentityProviderConfig>,
+    pub(crate) identity_provider_config: ::std::option::Option<crate::types::IdentityProviderConfig>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateIdentityProviderConfigInputBuilder {
@@ -68,32 +63,21 @@ impl DisassociateIdentityProviderConfigInputBuilder {
         self
     }
     /// <p>An object representing an identity provider configuration.</p>
-    pub fn set_identity_provider_config(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderConfig>,
-    ) -> Self {
+    pub fn set_identity_provider_config(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfig>) -> Self {
         self.identity_provider_config = input;
         self
     }
     /// <p>An object representing an identity provider configuration.</p>
-    pub fn get_identity_provider_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderConfig> {
+    pub fn get_identity_provider_config(&self) -> &::std::option::Option<crate::types::IdentityProviderConfig> {
         &self.identity_provider_config
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -102,16 +86,18 @@ impl DisassociateIdentityProviderConfigInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`DisassociateIdentityProviderConfigInput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigInput {
-                cluster_name: self.cluster_name
-                ,
-                identity_provider_config: self.identity_provider_config
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
+                cluster_name: self.cluster_name,
+                identity_provider_config: self.identity_provider_config,
+                client_request_token: self.client_request_token,
+            },
         )
     }
 }

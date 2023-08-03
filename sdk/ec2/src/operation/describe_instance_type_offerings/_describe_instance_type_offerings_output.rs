@@ -5,8 +5,7 @@
 pub struct DescribeInstanceTypeOfferingsOutput {
     /// <p>The instance types offered.</p>
     #[doc(hidden)]
-    pub instance_type_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>>,
+    pub instance_type_offerings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeInstanceTypeOfferingsOutput {
 }
 impl DescribeInstanceTypeOfferingsOutput {
     /// <p>The instance types offered.</p>
-    pub fn instance_type_offerings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceTypeOffering]> {
+    pub fn instance_type_offerings(&self) -> ::std::option::Option<&[crate::types::InstanceTypeOffering]> {
         self.instance_type_offerings.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeInstanceTypeOfferingsOutput {
 }
 impl DescribeInstanceTypeOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceTypeOfferingsOutput`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput).
-    pub fn builder() -> crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsOutputBuilder {
         crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceTypeOfferingsOutput`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypeOfferingsOutputBuilder {
-    pub(crate) instance_type_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>>,
+    pub(crate) instance_type_offerings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeInstanceTypeOfferingsOutputBuilder {
         self
     }
     /// <p>The instance types offered.</p>
-    pub fn set_instance_type_offerings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>>,
-    ) -> Self {
+    pub fn set_instance_type_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>>) -> Self {
         self.instance_type_offerings = input;
         self
     }
     /// <p>The instance types offered.</p>
-    pub fn get_instance_type_offerings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>> {
+    pub fn get_instance_type_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>> {
         &self.instance_type_offerings
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -97,10 +86,7 @@ impl DescribeInstanceTypeOfferingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInstanceTypeOfferingsOutput`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput {
         crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput {
             instance_type_offerings: self.instance_type_offerings,
             next_token: self.next_token,

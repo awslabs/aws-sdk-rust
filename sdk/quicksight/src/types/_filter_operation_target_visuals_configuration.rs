@@ -7,14 +7,11 @@
 pub struct FilterOperationTargetVisualsConfiguration {
     /// <p>The configuration of the same-sheet target visuals that you want to be filtered.</p>
     #[doc(hidden)]
-    pub same_sheet_target_visual_configuration:
-        ::std::option::Option<crate::types::SameSheetTargetVisualConfiguration>,
+    pub same_sheet_target_visual_configuration: ::std::option::Option<crate::types::SameSheetTargetVisualConfiguration>,
 }
 impl FilterOperationTargetVisualsConfiguration {
     /// <p>The configuration of the same-sheet target visuals that you want to be filtered.</p>
-    pub fn same_sheet_target_visual_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SameSheetTargetVisualConfiguration> {
+    pub fn same_sheet_target_visual_configuration(&self) -> ::std::option::Option<&crate::types::SameSheetTargetVisualConfiguration> {
         self.same_sheet_target_visual_configuration.as_ref()
     }
 }
@@ -27,19 +24,13 @@ impl FilterOperationTargetVisualsConfiguration {
 
 /// A builder for [`FilterOperationTargetVisualsConfiguration`](crate::types::FilterOperationTargetVisualsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterOperationTargetVisualsConfigurationBuilder {
-    pub(crate) same_sheet_target_visual_configuration:
-        ::std::option::Option<crate::types::SameSheetTargetVisualConfiguration>,
+    pub(crate) same_sheet_target_visual_configuration: ::std::option::Option<crate::types::SameSheetTargetVisualConfiguration>,
 }
 impl FilterOperationTargetVisualsConfigurationBuilder {
     /// <p>The configuration of the same-sheet target visuals that you want to be filtered.</p>
-    pub fn same_sheet_target_visual_configuration(
-        mut self,
-        input: crate::types::SameSheetTargetVisualConfiguration,
-    ) -> Self {
+    pub fn same_sheet_target_visual_configuration(mut self, input: crate::types::SameSheetTargetVisualConfiguration) -> Self {
         self.same_sheet_target_visual_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -52,9 +43,7 @@ impl FilterOperationTargetVisualsConfigurationBuilder {
         self
     }
     /// <p>The configuration of the same-sheet target visuals that you want to be filtered.</p>
-    pub fn get_same_sheet_target_visual_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SameSheetTargetVisualConfiguration> {
+    pub fn get_same_sheet_target_visual_configuration(&self) -> &::std::option::Option<crate::types::SameSheetTargetVisualConfiguration> {
         &self.same_sheet_target_visual_configuration
     }
     /// Consumes the builder and constructs a [`FilterOperationTargetVisualsConfiguration`](crate::types::FilterOperationTargetVisualsConfiguration).

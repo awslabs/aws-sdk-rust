@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetFindingHistoryOutput {
 }
 impl GetFindingHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingHistoryOutput`](crate::operation::get_finding_history::GetFindingHistoryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_finding_history::builders::GetFindingHistoryOutputBuilder {
+    pub fn builder() -> crate::operation::get_finding_history::builders::GetFindingHistoryOutputBuilder {
         crate::operation::get_finding_history::builders::GetFindingHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingHistoryOutput`](crate::operation::get_finding_history::GetFindingHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingHistoryOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetFindingHistoryOutputBuilder {
         self
     }
     /// <p> A list of events that altered the specified finding during the specified time period. </p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryRecord>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryRecord>>) -> Self {
         self.records = input;
         self
     }
     /// <p> A list of events that altered the specified finding during the specified time period. </p>
-    pub fn get_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryRecord>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryRecord>> {
         &self.records
     }
     /// <p> A token for pagination purposes. Provide this token in the subsequent request to <code>GetFindingsHistory</code> to get up to an additional 100 results of history for the same finding that you specified in your initial request. </p>

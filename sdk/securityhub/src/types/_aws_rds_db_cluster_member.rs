@@ -44,9 +44,7 @@ impl AwsRdsDbClusterMember {
 
 /// A builder for [`AwsRdsDbClusterMember`](crate::types::AwsRdsDbClusterMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterMemberBuilder {
     pub(crate) is_cluster_writer: ::std::option::Option<bool>,
     pub(crate) promotion_tier: ::std::option::Option<i32>,
@@ -83,18 +81,12 @@ impl AwsRdsDbClusterMemberBuilder {
         &self.promotion_tier
     }
     /// <p>The instance identifier for this member of the DB cluster.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance identifier for this member of the DB cluster.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -103,25 +95,17 @@ impl AwsRdsDbClusterMemberBuilder {
         &self.db_instance_identifier
     }
     /// <p>The status of the DB cluster parameter group for this member of the DB cluster.</p>
-    pub fn db_cluster_parameter_group_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the DB cluster parameter group for this member of the DB cluster.</p>
-    pub fn set_db_cluster_parameter_group_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_status = input;
         self
     }
     /// <p>The status of the DB cluster parameter group for this member of the DB cluster.</p>
-    pub fn get_db_cluster_parameter_group_status(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_status
     }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterMember`](crate::types::AwsRdsDbClusterMember).

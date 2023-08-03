@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`event_orchestration(EventOrchestration)`](crate::operation::put_event_type::builders::PutEventTypeFluentBuilder::event_orchestration) / [`set_event_orchestration(Option<EventOrchestration>)`](crate::operation::put_event_type::builders::PutEventTypeFluentBuilder::set_event_orchestration): <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
     /// - On success, responds with [`PutEventTypeOutput`](crate::operation::put_event_type::PutEventTypeOutput)
     /// - On failure, responds with [`SdkError<PutEventTypeError>`](crate::operation::put_event_type::PutEventTypeError)
-    pub fn put_event_type(
-        &self,
-    ) -> crate::operation::put_event_type::builders::PutEventTypeFluentBuilder {
-        crate::operation::put_event_type::builders::PutEventTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_event_type(&self) -> crate::operation::put_event_type::builders::PutEventTypeFluentBuilder {
+        crate::operation::put_event_type::builders::PutEventTypeFluentBuilder::new(self.handle.clone())
     }
 }

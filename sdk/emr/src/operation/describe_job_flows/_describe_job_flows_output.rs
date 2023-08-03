@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeJobFlowsOutput {
 }
 impl DescribeJobFlowsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobFlowsOutput`](crate::operation::describe_job_flows::DescribeJobFlowsOutput).
-    pub fn builder() -> crate::operation::describe_job_flows::builders::DescribeJobFlowsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_job_flows::builders::DescribeJobFlowsOutputBuilder {
         crate::operation::describe_job_flows::builders::DescribeJobFlowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobFlowsOutput`](crate::operation::describe_job_flows::DescribeJobFlowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobFlowsOutputBuilder {
     pub(crate) job_flows: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>,
     _request_id: Option<String>,
@@ -50,17 +47,12 @@ impl DescribeJobFlowsOutputBuilder {
         self
     }
     /// <p>A list of job flows matching the parameters supplied.</p>
-    pub fn set_job_flows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>,
-    ) -> Self {
+    pub fn set_job_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>) -> Self {
         self.job_flows = input;
         self
     }
     /// <p>A list of job flows matching the parameters supplied.</p>
-    pub fn get_job_flows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>> {
+    pub fn get_job_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>> {
         &self.job_flows
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

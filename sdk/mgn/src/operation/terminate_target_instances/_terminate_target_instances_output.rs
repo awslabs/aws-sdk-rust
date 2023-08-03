@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for TerminateTargetInstancesOutput {
 }
 impl TerminateTargetInstancesOutput {
     /// Creates a new builder-style object to manufacture [`TerminateTargetInstancesOutput`](crate::operation::terminate_target_instances::TerminateTargetInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::terminate_target_instances::builders::TerminateTargetInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::terminate_target_instances::builders::TerminateTargetInstancesOutputBuilder {
         crate::operation::terminate_target_instances::builders::TerminateTargetInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateTargetInstancesOutput`](crate::operation::terminate_target_instances::TerminateTargetInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateTargetInstancesOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl TerminateTargetInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TerminateTargetInstancesOutput`](crate::operation::terminate_target_instances::TerminateTargetInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::terminate_target_instances::TerminateTargetInstancesOutput {
+    pub fn build(self) -> crate::operation::terminate_target_instances::TerminateTargetInstancesOutput {
         crate::operation::terminate_target_instances::TerminateTargetInstancesOutput {
             job: self.job,
             _request_id: self._request_id,

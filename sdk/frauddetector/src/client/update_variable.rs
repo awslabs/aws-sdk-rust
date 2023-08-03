@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`variable_type(impl ::std::convert::Into<String>)`](crate::operation::update_variable::builders::UpdateVariableFluentBuilder::variable_type) / [`set_variable_type(Option<String>)`](crate::operation::update_variable::builders::UpdateVariableFluentBuilder::set_variable_type): <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     /// - On success, responds with [`UpdateVariableOutput`](crate::operation::update_variable::UpdateVariableOutput)
     /// - On failure, responds with [`SdkError<UpdateVariableError>`](crate::operation::update_variable::UpdateVariableError)
-    pub fn update_variable(
-        &self,
-    ) -> crate::operation::update_variable::builders::UpdateVariableFluentBuilder {
-        crate::operation::update_variable::builders::UpdateVariableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_variable(&self) -> crate::operation::update_variable::builders::UpdateVariableFluentBuilder {
+        crate::operation::update_variable::builders::UpdateVariableFluentBuilder::new(self.handle.clone())
     }
 }

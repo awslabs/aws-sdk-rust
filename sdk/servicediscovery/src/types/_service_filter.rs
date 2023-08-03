@@ -43,9 +43,7 @@ impl ServiceFilter {
 
 /// A builder for [`ServiceFilter`](crate::types::ServiceFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ServiceFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -58,10 +56,7 @@ impl ServiceFilterBuilder {
         self
     }
     /// <p>Specify <code>NAMESPACE_ID</code>.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ServiceFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -81,10 +76,7 @@ impl ServiceFilterBuilder {
         self
     }
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -104,10 +96,7 @@ impl ServiceFilterBuilder {
     /// <ul>
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
     /// </ul>
-    pub fn set_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.condition = input;
         self
     }

@@ -36,18 +36,14 @@ impl RegisterRdsDbInstanceInput {
 }
 impl RegisterRdsDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`RegisterRdsDbInstanceInput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceInputBuilder {
         crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterRdsDbInstanceInput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterRdsDbInstanceInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) rds_db_instance_arn: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl RegisterRdsDbInstanceInputBuilder {
         &self.stack_id
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn rds_db_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rds_db_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn set_rds_db_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rds_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rds_db_instance_arn = input;
         self
     }
@@ -120,17 +110,13 @@ impl RegisterRdsDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`RegisterRdsDbInstanceInput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput {
-                stack_id: self.stack_id,
-                rds_db_instance_arn: self.rds_db_instance_arn,
-                db_user: self.db_user,
-                db_password: self.db_password,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput {
+            stack_id: self.stack_id,
+            rds_db_instance_arn: self.rds_db_instance_arn,
+            db_user: self.db_user,
+            db_password: self.db_password,
+        })
     }
 }

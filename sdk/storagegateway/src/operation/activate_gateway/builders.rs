@@ -10,10 +10,7 @@ impl ActivateGatewayInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::activate_gateway::ActivateGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_gateway::ActivateGatewayError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_gateway::ActivateGatewayError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.activate_gateway();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ActivateGatewayFluentBuilder {
         }
     }
     /// Access the ActivateGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::activate_gateway::builders::ActivateGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::activate_gateway::builders::ActivateGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ActivateGatewayFluentBuilder {
             crate::operation::activate_gateway::ActivateGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_gateway::ActivateGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_gateway::ActivateGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ActivateGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ActivateGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_gateway::ActivateGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_gateway::ActivateGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_gateway::ActivateGatewayError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ActivateGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_gateway::ActivateGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_gateway::ActivateGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_gateway::ActivateGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -118,27 +104,19 @@ impl ActivateGatewayFluentBuilder {
             crate::operation::activate_gateway::ActivateGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_gateway::ActivateGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_gateway::ActivateGatewayError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
-    pub fn activation_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn activation_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.activation_key(input.into());
         self
     }
     /// <p>Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
-    pub fn set_activation_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_activation_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_activation_key(input);
         self
     }
@@ -162,18 +140,12 @@ impl ActivateGatewayFluentBuilder {
         self.inner.get_gateway_name()
     }
     /// <p>A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.</p>
-    pub fn gateway_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_timezone(input.into());
         self
     }
     /// <p>A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.</p>
-    pub fn set_gateway_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_timezone(input);
         self
     }
@@ -183,19 +155,13 @@ impl ActivateGatewayFluentBuilder {
     }
     /// <p>A value that indicates the Amazon Web Services Region where you want to store your data. The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region as the Amazon Web Services Region in your <code>Host</code> header in the request. For more information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn gateway_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_region(input.into());
         self
     }
     /// <p>A value that indicates the Amazon Web Services Region where you want to store your data. The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region as the Amazon Web Services Region in your <code>Host</code> header in the request. For more information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn set_gateway_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_region(input);
         self
     }
@@ -223,19 +189,13 @@ impl ActivateGatewayFluentBuilder {
     }
     /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
-    pub fn tape_drive_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tape_drive_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tape_drive_type(input.into());
         self
     }
     /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
-    pub fn set_tape_drive_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tape_drive_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tape_drive_type(input);
         self
     }
@@ -246,19 +206,13 @@ impl ActivateGatewayFluentBuilder {
     }
     /// <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
-    pub fn medium_changer_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn medium_changer_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.medium_changer_type(input.into());
         self
     }
     /// <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
-    pub fn set_medium_changer_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_medium_changer_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_medium_changer_type(input);
         self
     }
@@ -281,10 +235,7 @@ impl ActivateGatewayFluentBuilder {
     /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

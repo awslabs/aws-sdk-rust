@@ -32,9 +32,7 @@ impl UpdateEmailTemplateInput {
         self.create_new_version
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn email_template_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EmailTemplateRequest> {
+    pub fn email_template_request(&self) -> ::std::option::Option<&crate::types::EmailTemplateRequest> {
         self.email_template_request.as_ref()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -56,18 +54,14 @@ impl UpdateEmailTemplateInput {
 }
 impl UpdateEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateEmailTemplateInput`](crate::operation::update_email_template::UpdateEmailTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder {
-        crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder {
+        crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEmailTemplateInput`](crate::operation::update_email_template::UpdateEmailTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEmailTemplateInputBuilder {
     pub(crate) create_new_version: ::std::option::Option<bool>,
     pub(crate) email_template_request: ::std::option::Option<crate::types::EmailTemplateRequest>,
@@ -98,32 +92,21 @@ impl UpdateEmailTemplateInputBuilder {
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn set_email_template_request(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailTemplateRequest>,
-    ) -> Self {
+    pub fn set_email_template_request(mut self, input: ::std::option::Option<crate::types::EmailTemplateRequest>) -> Self {
         self.email_template_request = input;
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn get_email_template_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::EmailTemplateRequest> {
+    pub fn get_email_template_request(&self) -> &::std::option::Option<crate::types::EmailTemplateRequest> {
         &self.email_template_request
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -172,17 +155,13 @@ impl UpdateEmailTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEmailTemplateInput`](crate::operation::update_email_template::UpdateEmailTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_email_template::UpdateEmailTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_email_template::UpdateEmailTemplateInput {
-                create_new_version: self.create_new_version,
-                email_template_request: self.email_template_request,
-                template_name: self.template_name,
-                version: self.version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_email_template::UpdateEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_email_template::UpdateEmailTemplateInput {
+            create_new_version: self.create_new_version,
+            email_template_request: self.email_template_request,
+            template_name: self.template_name,
+            version: self.version,
+        })
     }
 }

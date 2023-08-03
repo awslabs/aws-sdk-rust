@@ -36,9 +36,7 @@ impl ListFeaturesInput {
 
 /// A builder for [`ListFeaturesInput`](crate::operation::list_features::ListFeaturesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFeaturesInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,12 +86,7 @@ impl ListFeaturesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFeaturesInput`](crate::operation::list_features::ListFeaturesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_features::ListFeaturesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_features::ListFeaturesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_features::ListFeaturesInput {
             project: self.project,
             max_results: self.max_results,

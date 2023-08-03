@@ -36,17 +36,14 @@ impl StartSchemaExtensionInput {
 }
 impl StartSchemaExtensionInput {
     /// Creates a new builder-style object to manufacture [`StartSchemaExtensionInput`](crate::operation::start_schema_extension::StartSchemaExtensionInput).
-    pub fn builder(
-    ) -> crate::operation::start_schema_extension::builders::StartSchemaExtensionInputBuilder {
+    pub fn builder() -> crate::operation::start_schema_extension::builders::StartSchemaExtensionInputBuilder {
         crate::operation::start_schema_extension::builders::StartSchemaExtensionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartSchemaExtensionInput`](crate::operation::start_schema_extension::StartSchemaExtensionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSchemaExtensionInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) create_snapshot_before_schema_extension: ::std::option::Option<bool>,
@@ -74,10 +71,7 @@ impl StartSchemaExtensionInputBuilder {
         self
     }
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
-    pub fn set_create_snapshot_before_schema_extension(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_create_snapshot_before_schema_extension(mut self, input: ::std::option::Option<bool>) -> Self {
         self.create_snapshot_before_schema_extension = input;
         self
     }
@@ -116,18 +110,13 @@ impl StartSchemaExtensionInputBuilder {
     /// Consumes the builder and constructs a [`StartSchemaExtensionInput`](crate::operation::start_schema_extension::StartSchemaExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_schema_extension::StartSchemaExtensionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_schema_extension::StartSchemaExtensionInput {
-                directory_id: self.directory_id,
-                create_snapshot_before_schema_extension: self
-                    .create_snapshot_before_schema_extension,
-                ldif_content: self.ldif_content,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_schema_extension::StartSchemaExtensionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_schema_extension::StartSchemaExtensionInput {
+            directory_id: self.directory_id,
+            create_snapshot_before_schema_extension: self.create_snapshot_before_schema_extension,
+            ldif_content: self.ldif_content,
+            description: self.description,
+        })
     }
 }

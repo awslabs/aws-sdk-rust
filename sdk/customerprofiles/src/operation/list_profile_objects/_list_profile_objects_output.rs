@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListProfileObjectsOutput {
 }
 impl ListProfileObjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectsOutput`](crate::operation::list_profile_objects::ListProfileObjectsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_profile_objects::builders::ListProfileObjectsOutputBuilder {
+    pub fn builder() -> crate::operation::list_profile_objects::builders::ListProfileObjectsOutputBuilder {
         crate::operation::list_profile_objects::builders::ListProfileObjectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileObjectsOutput`](crate::operation::list_profile_objects::ListProfileObjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileObjectsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectsItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListProfileObjectsOutputBuilder {
         self
     }
     /// <p>The list of ListProfileObject instances.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectsItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectsItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of ListProfileObject instances.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectsItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectsItem>> {
         &self.items
     }
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>

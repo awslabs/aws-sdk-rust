@@ -5,8 +5,7 @@
 pub struct ListInstanceStorageConfigsOutput {
     /// <p>A valid storage type.</p>
     #[doc(hidden)]
-    pub storage_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStorageConfig>>,
+    pub storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStorageConfig>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListInstanceStorageConfigsOutput {
 }
 impl ListInstanceStorageConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceStorageConfigsOutput`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput).
-    pub fn builder() -> crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsOutputBuilder{
+    pub fn builder() -> crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsOutputBuilder {
         crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceStorageConfigsOutput`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceStorageConfigsOutputBuilder {
-    pub(crate) storage_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStorageConfig>>,
+    pub(crate) storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStorageConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListInstanceStorageConfigsOutputBuilder {
         self
     }
     /// <p>A valid storage type.</p>
-    pub fn set_storage_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStorageConfig>>,
-    ) -> Self {
+    pub fn set_storage_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStorageConfig>>) -> Self {
         self.storage_configs = input;
         self
     }
     /// <p>A valid storage type.</p>
-    pub fn get_storage_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStorageConfig>> {
+    pub fn get_storage_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStorageConfig>> {
         &self.storage_configs
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -95,9 +86,7 @@ impl ListInstanceStorageConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInstanceStorageConfigsOutput`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput {
+    pub fn build(self) -> crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput {
         crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput {
             storage_configs: self.storage_configs,
             next_token: self.next_token,

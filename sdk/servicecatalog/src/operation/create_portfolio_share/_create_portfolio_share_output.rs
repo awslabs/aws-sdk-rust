@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreatePortfolioShareOutput {
 }
 impl CreatePortfolioShareOutput {
     /// Creates a new builder-style object to manufacture [`CreatePortfolioShareOutput`](crate::operation::create_portfolio_share::CreatePortfolioShareOutput).
-    pub fn builder(
-    ) -> crate::operation::create_portfolio_share::builders::CreatePortfolioShareOutputBuilder {
+    pub fn builder() -> crate::operation::create_portfolio_share::builders::CreatePortfolioShareOutputBuilder {
         crate::operation::create_portfolio_share::builders::CreatePortfolioShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePortfolioShareOutput`](crate::operation::create_portfolio_share::CreatePortfolioShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePortfolioShareOutputBuilder {
     pub(crate) portfolio_share_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePortfolioShareOutputBuilder {
     /// <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
-    pub fn portfolio_share_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portfolio_share_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_share_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
-    pub fn set_portfolio_share_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portfolio_share_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portfolio_share_token = input;
         self
     }

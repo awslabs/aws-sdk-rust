@@ -66,9 +66,7 @@ impl Mapping {
 
 /// A builder for [`Mapping`](crate::types::Mapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MappingBuilder {
     pub(crate) to_key: ::std::option::Option<::std::string::String>,
     pub(crate) from_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -104,10 +102,7 @@ impl MappingBuilder {
         self
     }
     /// <p>The table or column to be modified.</p>
-    pub fn set_from_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_from_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.from_path = input;
         self
     }
@@ -177,10 +172,7 @@ impl MappingBuilder {
     /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
     /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
-    pub fn set_children(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>,
-    ) -> Self {
+    pub fn set_children(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>) -> Self {
         self.children = input;
         self
     }

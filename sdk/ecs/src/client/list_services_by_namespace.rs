@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`service_arns(Option<Vec<String>>)`](crate::operation::list_services_by_namespace::ListServicesByNamespaceOutput::service_arns): <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_services_by_namespace::ListServicesByNamespaceOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListServicesByNamespaceError>`](crate::operation::list_services_by_namespace::ListServicesByNamespaceError)
-    pub fn list_services_by_namespace(
-        &self,
-    ) -> crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceFluentBuilder
-    {
+    pub fn list_services_by_namespace(&self) -> crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceFluentBuilder {
         crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

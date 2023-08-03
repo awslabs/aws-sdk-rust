@@ -28,18 +28,14 @@ impl AssociateTrackerConsumerInput {
 }
 impl AssociateTrackerConsumerInput {
     /// Creates a new builder-style object to manufacture [`AssociateTrackerConsumerInput`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput).
-    pub fn builder(
-    ) -> crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder {
         crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTrackerConsumerInput`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTrackerConsumerInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_arn: ::std::option::Option<::std::string::String>,
@@ -89,11 +85,9 @@ impl AssociateTrackerConsumerInputBuilder {
         crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput {
-                tracker_name: self.tracker_name,
-                consumer_arn: self.consumer_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput {
+            tracker_name: self.tracker_name,
+            consumer_arn: self.consumer_arn,
+        })
     }
 }

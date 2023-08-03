@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DisassociateResourceOutput {
 }
 impl DisassociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceOutput`](crate::operation::disassociate_resource::DisassociateResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_resource::builders::DisassociateResourceOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_resource::builders::DisassociateResourceOutputBuilder {
         crate::operation::disassociate_resource::builders::DisassociateResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateResourceOutput`](crate::operation::disassociate_resource::DisassociateResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateResourceOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct DisassociateResourceOutputBuilder {
 }
 impl DisassociateResourceOutputBuilder {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }

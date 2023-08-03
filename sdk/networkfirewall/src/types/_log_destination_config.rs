@@ -18,9 +18,7 @@ pub struct LogDestinationConfig {
     /// <li> <p>For a Kinesis Data Firehose delivery stream, provide the name of the delivery stream, with key <code>deliveryStream</code>. The following example specifies a delivery stream named <code>alert-delivery-stream</code>: </p> <p> <code>"LogDestination": { "deliveryStream": "alert-delivery-stream" }</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub log_destination: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub log_destination: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LogDestinationConfig {
     /// <p>The type of log to send. Alert logs report traffic that matches a <code>StatefulRule</code> with an action setting that sends an alert log message. Flow logs are standard network traffic flow logs. </p>
@@ -37,11 +35,7 @@ impl LogDestinationConfig {
     /// <li> <p>For a CloudWatch log group, provide the name of the CloudWatch log group, with key <code>logGroup</code>. The following example specifies a log group named <code>alert-log-group</code>: </p> <p> <code>"LogDestination": { "logGroup": "alert-log-group" }</code> </p> </li>
     /// <li> <p>For a Kinesis Data Firehose delivery stream, provide the name of the delivery stream, with key <code>deliveryStream</code>. The following example specifies a delivery stream named <code>alert-delivery-stream</code>: </p> <p> <code>"LogDestination": { "deliveryStream": "alert-delivery-stream" }</code> </p> </li>
     /// </ul>
-    pub fn log_destination(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn log_destination(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.log_destination.as_ref()
     }
 }
@@ -54,15 +48,11 @@ impl LogDestinationConfig {
 
 /// A builder for [`LogDestinationConfig`](crate::types::LogDestinationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogDestinationConfigBuilder {
     pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
     pub(crate) log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
-    pub(crate) log_destination: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) log_destination: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LogDestinationConfigBuilder {
     /// <p>The type of log to send. Alert logs report traffic that matches a <code>StatefulRule</code> with an action setting that sends an alert log message. Flow logs are standard network traffic flow logs. </p>
@@ -85,17 +75,12 @@ impl LogDestinationConfigBuilder {
         self
     }
     /// <p>The type of storage destination to send these logs to. You can send logs to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
-    pub fn set_log_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogDestinationType>,
-    ) -> Self {
+    pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
         self.log_destination_type = input;
         self
     }
     /// <p>The type of storage destination to send these logs to. You can send logs to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
-    pub fn get_log_destination_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogDestinationType> {
+    pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
         &self.log_destination_type
     }
     /// Adds a key-value pair to `log_destination`.
@@ -126,9 +111,7 @@ impl LogDestinationConfigBuilder {
     /// </ul>
     pub fn set_log_destination(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.log_destination = input;
         self
@@ -139,11 +122,7 @@ impl LogDestinationConfigBuilder {
     /// <li> <p>For a CloudWatch log group, provide the name of the CloudWatch log group, with key <code>logGroup</code>. The following example specifies a log group named <code>alert-log-group</code>: </p> <p> <code>"LogDestination": { "logGroup": "alert-log-group" }</code> </p> </li>
     /// <li> <p>For a Kinesis Data Firehose delivery stream, provide the name of the delivery stream, with key <code>deliveryStream</code>. The following example specifies a delivery stream named <code>alert-delivery-stream</code>: </p> <p> <code>"LogDestination": { "deliveryStream": "alert-delivery-stream" }</code> </p> </li>
     /// </ul>
-    pub fn get_log_destination(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_log_destination(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.log_destination
     }
     /// Consumes the builder and constructs a [`LogDestinationConfig`](crate::types::LogDestinationConfig).

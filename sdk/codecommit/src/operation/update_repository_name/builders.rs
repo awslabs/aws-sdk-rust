@@ -37,9 +37,7 @@ impl UpdateRepositoryNameFluentBuilder {
         }
     }
     /// Access the UpdateRepositoryName as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateRepositoryNameFluentBuilder {
             crate::operation::update_repository_name::UpdateRepositoryName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_repository_name::UpdateRepositoryNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_repository_name::UpdateRepositoryNameError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateRepositoryNameFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateRepositoryNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_repository_name::UpdateRepositoryNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_repository_name::UpdateRepositoryNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_repository_name::UpdateRepositoryNameError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateRepositoryNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_repository_name::UpdateRepositoryNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_repository_name::UpdateRepositoryNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_repository_name::UpdateRepositoryNameError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateRepositoryNameFluentBuilder {
             crate::operation::update_repository_name::UpdateRepositoryName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_repository_name::UpdateRepositoryNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_repository_name::UpdateRepositoryNameError>,
     > {
         self.customize_middleware().await
     }

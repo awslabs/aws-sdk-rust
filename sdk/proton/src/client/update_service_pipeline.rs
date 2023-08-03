@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateServicePipelineOutput`](crate::operation::update_service_pipeline::UpdateServicePipelineOutput) with field(s):
     ///   - [`pipeline(Option<ServicePipeline>)`](crate::operation::update_service_pipeline::UpdateServicePipelineOutput::pipeline): <p>The pipeline details that are returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateServicePipelineError>`](crate::operation::update_service_pipeline::UpdateServicePipelineError)
-    pub fn update_service_pipeline(
-        &self,
-    ) -> crate::operation::update_service_pipeline::builders::UpdateServicePipelineFluentBuilder
-    {
-        crate::operation::update_service_pipeline::builders::UpdateServicePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_service_pipeline(&self) -> crate::operation::update_service_pipeline::builders::UpdateServicePipelineFluentBuilder {
+        crate::operation::update_service_pipeline::builders::UpdateServicePipelineFluentBuilder::new(self.handle.clone())
     }
 }

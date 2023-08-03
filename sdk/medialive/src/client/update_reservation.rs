@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateReservationOutput`](crate::operation::update_reservation::UpdateReservationOutput) with field(s):
     ///   - [`reservation(Option<Reservation>)`](crate::operation::update_reservation::UpdateReservationOutput::reservation): Reserved resources available to use
     /// - On failure, responds with [`SdkError<UpdateReservationError>`](crate::operation::update_reservation::UpdateReservationError)
-    pub fn update_reservation(
-        &self,
-    ) -> crate::operation::update_reservation::builders::UpdateReservationFluentBuilder {
-        crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_reservation(&self) -> crate::operation::update_reservation::builders::UpdateReservationFluentBuilder {
+        crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::new(self.handle.clone())
     }
 }

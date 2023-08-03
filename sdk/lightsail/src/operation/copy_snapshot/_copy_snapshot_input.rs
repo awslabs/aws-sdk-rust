@@ -95,9 +95,7 @@ impl CopySnapshotInput {
 
 /// A builder for [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopySnapshotInputBuilder {
     pub(crate) source_snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_resource_name: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl CopySnapshotInputBuilder {
     /// <ul>
     /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li>
     /// </ul>
-    pub fn source_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -124,10 +119,7 @@ impl CopySnapshotInputBuilder {
     /// <ul>
     /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li>
     /// </ul>
-    pub fn set_source_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_snapshot_name = input;
         self
     }
@@ -144,10 +136,7 @@ impl CopySnapshotInputBuilder {
     /// <ul>
     /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    pub fn source_resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_resource_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -156,10 +145,7 @@ impl CopySnapshotInputBuilder {
     /// <ul>
     /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    pub fn set_source_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_resource_name = input;
         self
     }
@@ -219,10 +205,7 @@ impl CopySnapshotInputBuilder {
     /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    pub fn set_use_latest_restorable_auto_snapshot(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_use_latest_restorable_auto_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_latest_restorable_auto_snapshot = input;
         self
     }
@@ -236,18 +219,12 @@ impl CopySnapshotInputBuilder {
         &self.use_latest_restorable_auto_snapshot
     }
     /// <p>The name of the new manual snapshot to be created as a copy.</p>
-    pub fn target_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the new manual snapshot to be created as a copy.</p>
-    pub fn set_target_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_snapshot_name = input;
         self
     }
@@ -261,10 +238,7 @@ impl CopySnapshotInputBuilder {
         self
     }
     /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionName>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<crate::types::RegionName>) -> Self {
         self.source_region = input;
         self
     }
@@ -273,12 +247,7 @@ impl CopySnapshotInputBuilder {
         &self.source_region
     }
     /// Consumes the builder and constructs a [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_snapshot::CopySnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_snapshot::CopySnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_snapshot::CopySnapshotInput {
             source_snapshot_name: self.source_snapshot_name,
             source_resource_name: self.source_resource_name,

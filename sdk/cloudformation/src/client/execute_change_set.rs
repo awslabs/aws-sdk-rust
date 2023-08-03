@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`disable_rollback(bool)`](crate::operation::execute_change_set::builders::ExecuteChangeSetFluentBuilder::disable_rollback) / [`set_disable_rollback(Option<bool>)`](crate::operation::execute_change_set::builders::ExecuteChangeSetFluentBuilder::set_disable_rollback): <p>Preserves the state of previously provisioned resources when an operation fails. This parameter can't be specified when the <code>OnStackFailure</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a> API operation was specified.</p>  <ul>   <li> <p> <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a> API operation.</p> </li>   <li> <p> <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a> API operation.</p> </li>  </ul>  <p>Default: <code>True</code> </p>
     /// - On success, responds with [`ExecuteChangeSetOutput`](crate::operation::execute_change_set::ExecuteChangeSetOutput)
     /// - On failure, responds with [`SdkError<ExecuteChangeSetError>`](crate::operation::execute_change_set::ExecuteChangeSetError)
-    pub fn execute_change_set(
-        &self,
-    ) -> crate::operation::execute_change_set::builders::ExecuteChangeSetFluentBuilder {
-        crate::operation::execute_change_set::builders::ExecuteChangeSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn execute_change_set(&self) -> crate::operation::execute_change_set::builders::ExecuteChangeSetFluentBuilder {
+        crate::operation::execute_change_set::builders::ExecuteChangeSetFluentBuilder::new(self.handle.clone())
     }
 }

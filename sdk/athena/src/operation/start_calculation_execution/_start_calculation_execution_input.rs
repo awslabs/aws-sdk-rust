@@ -33,9 +33,7 @@ impl StartCalculationExecutionInput {
     }
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
-    pub fn calculation_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CalculationConfiguration> {
+    pub fn calculation_configuration(&self) -> ::std::option::Option<&crate::types::CalculationConfiguration> {
         self.calculation_configuration.as_ref()
     }
     /// <p>A string that contains the code of the calculation.</p>
@@ -51,21 +49,18 @@ impl StartCalculationExecutionInput {
 }
 impl StartCalculationExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartCalculationExecutionInput`](crate::operation::start_calculation_execution::StartCalculationExecutionInput).
-    pub fn builder() -> crate::operation::start_calculation_execution::builders::StartCalculationExecutionInputBuilder{
+    pub fn builder() -> crate::operation::start_calculation_execution::builders::StartCalculationExecutionInputBuilder {
         crate::operation::start_calculation_execution::builders::StartCalculationExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartCalculationExecutionInput`](crate::operation::start_calculation_execution::StartCalculationExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCalculationExecutionInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) calculation_configuration:
-        ::std::option::Option<crate::types::CalculationConfiguration>,
+    pub(crate) calculation_configuration: ::std::option::Option<crate::types::CalculationConfiguration>,
     pub(crate) code_block: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
@@ -100,27 +95,19 @@ impl StartCalculationExecutionInputBuilder {
     }
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
-    pub fn calculation_configuration(
-        mut self,
-        input: crate::types::CalculationConfiguration,
-    ) -> Self {
+    pub fn calculation_configuration(mut self, input: crate::types::CalculationConfiguration) -> Self {
         self.calculation_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
-    pub fn set_calculation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationConfiguration>,
-    ) -> Self {
+    pub fn set_calculation_configuration(mut self, input: ::std::option::Option<crate::types::CalculationConfiguration>) -> Self {
         self.calculation_configuration = input;
         self
     }
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
-    pub fn get_calculation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CalculationConfiguration> {
+    pub fn get_calculation_configuration(&self) -> &::std::option::Option<crate::types::CalculationConfiguration> {
         &self.calculation_configuration
     }
     /// <p>A string that contains the code of the calculation.</p>
@@ -140,20 +127,14 @@ impl StartCalculationExecutionInputBuilder {
     /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -170,14 +151,12 @@ impl StartCalculationExecutionInputBuilder {
         crate::operation::start_calculation_execution::StartCalculationExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_calculation_execution::StartCalculationExecutionInput {
-                session_id: self.session_id,
-                description: self.description,
-                calculation_configuration: self.calculation_configuration,
-                code_block: self.code_block,
-                client_request_token: self.client_request_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_calculation_execution::StartCalculationExecutionInput {
+            session_id: self.session_id,
+            description: self.description,
+            calculation_configuration: self.calculation_configuration,
+            code_block: self.code_block,
+            client_request_token: self.client_request_token,
+        })
     }
 }

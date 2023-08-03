@@ -41,9 +41,7 @@ impl StatefulRuleGroupReference {
 
 /// A builder for [`StatefulRuleGroupReference`](crate::types::StatefulRuleGroupReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatefulRuleGroupReferenceBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -90,10 +88,7 @@ impl StatefulRuleGroupReferenceBuilder {
         self
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
-    pub fn set_override(
-        mut self,
-        input: ::std::option::Option<crate::types::StatefulRuleGroupOverride>,
-    ) -> Self {
+    pub fn set_override(mut self, input: ::std::option::Option<crate::types::StatefulRuleGroupOverride>) -> Self {
         self.r#override = input;
         self
     }

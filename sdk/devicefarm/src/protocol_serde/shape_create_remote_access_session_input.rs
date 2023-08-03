@@ -33,7 +33,10 @@ pub fn ser_create_remote_access_session_input(
     if let Some(var_10) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("configuration").start_object();
-        crate::protocol_serde::shape_create_remote_access_session_configuration::ser_create_remote_access_session_configuration(&mut object_11, var_10)?;
+        crate::protocol_serde::shape_create_remote_access_session_configuration::ser_create_remote_access_session_configuration(
+            &mut object_11,
+            var_10,
+        )?;
         object_11.finish();
     }
     if let Some(var_12) = &input.interaction_mode {

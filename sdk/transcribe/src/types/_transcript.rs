@@ -46,9 +46,7 @@ impl Transcript {
 
 /// A builder for [`Transcript`](crate::types::Transcript).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranscriptBuilder {
     pub(crate) transcript_file_uri: ::std::option::Option<::std::string::String>,
     pub(crate) redacted_transcript_file_uri: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl TranscriptBuilder {
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    pub fn transcript_file_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transcript_file_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transcript_file_uri = ::std::option::Option::Some(input.into());
         self
     }
@@ -71,10 +66,7 @@ impl TranscriptBuilder {
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    pub fn set_transcript_file_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transcript_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transcript_file_uri = input;
         self
     }
@@ -91,10 +83,7 @@ impl TranscriptBuilder {
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>RedactedTranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    pub fn redacted_transcript_file_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn redacted_transcript_file_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.redacted_transcript_file_uri = ::std::option::Option::Some(input.into());
         self
     }
@@ -103,10 +92,7 @@ impl TranscriptBuilder {
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>RedactedTranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    pub fn set_redacted_transcript_file_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_redacted_transcript_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.redacted_transcript_file_uri = input;
         self
     }
@@ -115,9 +101,7 @@ impl TranscriptBuilder {
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>RedactedTranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    pub fn get_redacted_transcript_file_uri(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_redacted_transcript_file_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.redacted_transcript_file_uri
     }
     /// Consumes the builder and constructs a [`Transcript`](crate::types::Transcript).

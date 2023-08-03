@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartModelPackagingJobOutput {
 }
 impl StartModelPackagingJobOutput {
     /// Creates a new builder-style object to manufacture [`StartModelPackagingJobOutput`](crate::operation::start_model_packaging_job::StartModelPackagingJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_model_packaging_job::builders::StartModelPackagingJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_model_packaging_job::builders::StartModelPackagingJobOutputBuilder {
         crate::operation::start_model_packaging_job::builders::StartModelPackagingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartModelPackagingJobOutput`](crate::operation::start_model_packaging_job::StartModelPackagingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartModelPackagingJobOutputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl StartModelPackagingJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartModelPackagingJobOutput`](crate::operation::start_model_packaging_job::StartModelPackagingJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_model_packaging_job::StartModelPackagingJobOutput {
+    pub fn build(self) -> crate::operation::start_model_packaging_job::StartModelPackagingJobOutput {
         crate::operation::start_model_packaging_job::StartModelPackagingJobOutput {
             job_name: self.job_name,
             _request_id: self._request_id,

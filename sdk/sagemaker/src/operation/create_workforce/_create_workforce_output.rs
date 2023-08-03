@@ -28,27 +28,19 @@ impl CreateWorkforceOutput {
 
 /// A builder for [`CreateWorkforceOutput`](crate::operation::create_workforce::CreateWorkforceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkforceOutputBuilder {
     pub(crate) workforce_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateWorkforceOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
-    pub fn workforce_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workforce_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
-    pub fn set_workforce_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workforce_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workforce_arn = input;
         self
     }

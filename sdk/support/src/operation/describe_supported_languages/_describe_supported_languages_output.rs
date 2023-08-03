@@ -5,8 +5,7 @@
 pub struct DescribeSupportedLanguagesOutput {
     /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
     #[doc(hidden)]
-    pub supported_languages:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>,
+    pub supported_languages: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>,
     _request_id: Option<String>,
 }
 impl DescribeSupportedLanguagesOutput {
@@ -22,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeSupportedLanguagesOutput {
 }
 impl DescribeSupportedLanguagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSupportedLanguagesOutput`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput).
-    pub fn builder() -> crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesOutputBuilder {
         crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSupportedLanguagesOutput`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSupportedLanguagesOutputBuilder {
-    pub(crate) supported_languages:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>,
+    pub(crate) supported_languages: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>,
     _request_id: Option<String>,
 }
 impl DescribeSupportedLanguagesOutputBuilder {
@@ -50,17 +46,12 @@ impl DescribeSupportedLanguagesOutputBuilder {
         self
     }
     /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
-    pub fn set_supported_languages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>,
-    ) -> Self {
+    pub fn set_supported_languages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>) -> Self {
         self.supported_languages = input;
         self
     }
     /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
-    pub fn get_supported_languages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>> {
+    pub fn get_supported_languages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>> {
         &self.supported_languages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +64,7 @@ impl DescribeSupportedLanguagesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSupportedLanguagesOutput`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput {
+    pub fn build(self) -> crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput {
         crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput {
             supported_languages: self.supported_languages,
             _request_id: self._request_id,

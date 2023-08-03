@@ -9,8 +9,7 @@ pub struct MediaCapturePipelineSourceConfiguration {
     pub media_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
     #[doc(hidden)]
-    pub chime_sdk_meeting_configuration:
-        ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>,
+    pub chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>,
 }
 impl MediaCapturePipelineSourceConfiguration {
     /// <p>The media pipeline ARN in the configuration object of a media capture pipeline.</p>
@@ -18,9 +17,7 @@ impl MediaCapturePipelineSourceConfiguration {
         self.media_pipeline_arn.as_deref()
     }
     /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
-    pub fn chime_sdk_meeting_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChimeSdkMeetingConcatenationConfiguration> {
+    pub fn chime_sdk_meeting_configuration(&self) -> ::std::option::Option<&crate::types::ChimeSdkMeetingConcatenationConfiguration> {
         self.chime_sdk_meeting_configuration.as_ref()
     }
 }
@@ -28,10 +25,7 @@ impl ::std::fmt::Debug for MediaCapturePipelineSourceConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaCapturePipelineSourceConfiguration");
         formatter.field("media_pipeline_arn", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "chime_sdk_meeting_configuration",
-            &self.chime_sdk_meeting_configuration,
-        );
+        formatter.field("chime_sdk_meeting_configuration", &self.chime_sdk_meeting_configuration);
         formatter.finish()
     }
 }
@@ -47,23 +41,16 @@ impl MediaCapturePipelineSourceConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MediaCapturePipelineSourceConfigurationBuilder {
     pub(crate) media_pipeline_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) chime_sdk_meeting_configuration:
-        ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>,
+    pub(crate) chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>,
 }
 impl MediaCapturePipelineSourceConfigurationBuilder {
     /// <p>The media pipeline ARN in the configuration object of a media capture pipeline.</p>
-    pub fn media_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The media pipeline ARN in the configuration object of a media capture pipeline.</p>
-    pub fn set_media_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_pipeline_arn = input;
         self
     }
@@ -72,10 +59,7 @@ impl MediaCapturePipelineSourceConfigurationBuilder {
         &self.media_pipeline_arn
     }
     /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
-    pub fn chime_sdk_meeting_configuration(
-        mut self,
-        input: crate::types::ChimeSdkMeetingConcatenationConfiguration,
-    ) -> Self {
+    pub fn chime_sdk_meeting_configuration(mut self, input: crate::types::ChimeSdkMeetingConcatenationConfiguration) -> Self {
         self.chime_sdk_meeting_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -88,9 +72,7 @@ impl MediaCapturePipelineSourceConfigurationBuilder {
         self
     }
     /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
-    pub fn get_chime_sdk_meeting_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration> {
+    pub fn get_chime_sdk_meeting_configuration(&self) -> &::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration> {
         &self.chime_sdk_meeting_configuration
     }
     /// Consumes the builder and constructs a [`MediaCapturePipelineSourceConfiguration`](crate::types::MediaCapturePipelineSourceConfiguration).
@@ -105,10 +87,7 @@ impl ::std::fmt::Debug for MediaCapturePipelineSourceConfigurationBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaCapturePipelineSourceConfigurationBuilder");
         formatter.field("media_pipeline_arn", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "chime_sdk_meeting_configuration",
-            &self.chime_sdk_meeting_configuration,
-        );
+        formatter.field("chime_sdk_meeting_configuration", &self.chime_sdk_meeting_configuration);
         formatter.finish()
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetRegexPatternSetOutput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetOutput) with field(s):
     ///   - [`regex_pattern_set(Option<RegexPatternSet>)`](crate::operation::get_regex_pattern_set::GetRegexPatternSetOutput::regex_pattern_set): <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
     /// - On failure, responds with [`SdkError<GetRegexPatternSetError>`](crate::operation::get_regex_pattern_set::GetRegexPatternSetError)
-    pub fn get_regex_pattern_set(
-        &self,
-    ) -> crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetFluentBuilder {
-        crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_regex_pattern_set(&self) -> crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetFluentBuilder {
+        crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetFluentBuilder::new(self.handle.clone())
     }
 }

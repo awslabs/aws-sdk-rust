@@ -20,15 +20,11 @@ impl SankeyDiagramSortConfiguration {
         self.weight_sort.as_deref()
     }
     /// <p>The limit on the number of source nodes that are displayed in a sankey diagram.</p>
-    pub fn source_items_limit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    pub fn source_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.source_items_limit.as_ref()
     }
     /// <p>The limit on the number of destination nodes that are displayed in a sankey diagram.</p>
-    pub fn destination_items_limit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    pub fn destination_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.destination_items_limit.as_ref()
     }
 }
@@ -41,14 +37,11 @@ impl SankeyDiagramSortConfiguration {
 
 /// A builder for [`SankeyDiagramSortConfiguration`](crate::types::SankeyDiagramSortConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SankeyDiagramSortConfigurationBuilder {
     pub(crate) weight_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) source_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
-    pub(crate) destination_items_limit:
-        ::std::option::Option<crate::types::ItemsLimitConfiguration>,
+    pub(crate) destination_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl SankeyDiagramSortConfigurationBuilder {
     /// Appends an item to `weight_sort`.
@@ -63,17 +56,12 @@ impl SankeyDiagramSortConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of the weight fields.</p>
-    pub fn set_weight_sort(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
-    ) -> Self {
+    pub fn set_weight_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
         self.weight_sort = input;
         self
     }
     /// <p>The sort configuration of the weight fields.</p>
-    pub fn get_weight_sort(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_weight_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
         &self.weight_sort
     }
     /// <p>The limit on the number of source nodes that are displayed in a sankey diagram.</p>
@@ -82,17 +70,12 @@ impl SankeyDiagramSortConfigurationBuilder {
         self
     }
     /// <p>The limit on the number of source nodes that are displayed in a sankey diagram.</p>
-    pub fn set_source_items_limit(
-        mut self,
-        input: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
-    ) -> Self {
+    pub fn set_source_items_limit(mut self, input: ::std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
         self.source_items_limit = input;
         self
     }
     /// <p>The limit on the number of source nodes that are displayed in a sankey diagram.</p>
-    pub fn get_source_items_limit(
-        &self,
-    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+    pub fn get_source_items_limit(&self) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
         &self.source_items_limit
     }
     /// <p>The limit on the number of destination nodes that are displayed in a sankey diagram.</p>
@@ -101,17 +84,12 @@ impl SankeyDiagramSortConfigurationBuilder {
         self
     }
     /// <p>The limit on the number of destination nodes that are displayed in a sankey diagram.</p>
-    pub fn set_destination_items_limit(
-        mut self,
-        input: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
-    ) -> Self {
+    pub fn set_destination_items_limit(mut self, input: ::std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
         self.destination_items_limit = input;
         self
     }
     /// <p>The limit on the number of destination nodes that are displayed in a sankey diagram.</p>
-    pub fn get_destination_items_limit(
-        &self,
-    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+    pub fn get_destination_items_limit(&self) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
         &self.destination_items_limit
     }
     /// Consumes the builder and constructs a [`SankeyDiagramSortConfiguration`](crate::types::SankeyDiagramSortConfiguration).

@@ -51,9 +51,7 @@ impl ImportFailureListItem {
 
 /// A builder for [`ImportFailureListItem`](crate::types::ImportFailureListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportFailureListItemBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ImportFailureStatus>,
@@ -82,10 +80,7 @@ impl ImportFailureListItemBuilder {
         self
     }
     /// <p> The status of the import. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportFailureStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImportFailureStatus>) -> Self {
         self.status = input;
         self
     }
@@ -108,18 +103,12 @@ impl ImportFailureListItemBuilder {
         &self.error_type
     }
     /// <p> Provides the reason the import failed. </p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Provides the reason the import failed. </p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -133,10 +122,7 @@ impl ImportFailureListItemBuilder {
         self
     }
     /// <p> When the import was last updated. </p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

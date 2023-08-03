@@ -5,16 +5,16 @@ pub use crate::operation::list_organizational_units_for_parent::_list_organizati
 
 impl ListOrganizationalUnitsForParentInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_organizational_units_for_parent();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl ListOrganizationalUnitsForParentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOrganizationalUnitsForParentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentInputBuilder,
+    inner: crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentInputBuilder,
 }
 impl ListOrganizationalUnitsForParentFluentBuilder {
     /// Creates a new `ListOrganizationalUnitsForParent`.
@@ -40,15 +40,20 @@ impl ListOrganizationalUnitsForParentFluentBuilder {
         }
     }
     /// Access the ListOrganizationalUnitsForParent as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParent, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParent,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl ListOrganizationalUnitsForParentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,23 +90,32 @@ impl ListOrganizationalUnitsForParentFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParent, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParent,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_organizational_units_for_parent::paginator::ListOrganizationalUnitsForParentPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_organizational_units_for_parent::paginator::ListOrganizationalUnitsForParentPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_organizational_units_for_parent::paginator::ListOrganizationalUnitsForParentPaginator {
         crate::operation::list_organizational_units_for_parent::paginator::ListOrganizationalUnitsForParentPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier (ID) of the root or OU whose child OUs you want to list.</p>

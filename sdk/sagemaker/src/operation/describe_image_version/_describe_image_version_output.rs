@@ -156,17 +156,14 @@ impl ::aws_http::request_id::RequestId for DescribeImageVersionOutput {
 }
 impl DescribeImageVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageVersionOutput`](crate::operation::describe_image_version::DescribeImageVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_version::builders::DescribeImageVersionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_image_version::builders::DescribeImageVersionOutputBuilder {
         crate::operation::describe_image_version::builders::DescribeImageVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImageVersionOutput`](crate::operation::describe_image_version::DescribeImageVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageVersionOutputBuilder {
     pub(crate) base_image: ::std::option::Option<::std::string::String>,
     pub(crate) container_image: ::std::option::Option<::std::string::String>,
@@ -202,18 +199,12 @@ impl DescribeImageVersionOutputBuilder {
         &self.base_image
     }
     /// <p>The registry path of the container image that contains this image version.</p>
-    pub fn container_image(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The registry path of the container image that contains this image version.</p>
-    pub fn set_container_image(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_image = input;
         self
     }
@@ -227,10 +218,7 @@ impl DescribeImageVersionOutputBuilder {
         self
     }
     /// <p>When the version was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -239,18 +227,12 @@ impl DescribeImageVersionOutputBuilder {
         &self.creation_time
     }
     /// <p>When a create or delete operation fails, the reason for the failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When a create or delete operation fails, the reason for the failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -273,18 +255,12 @@ impl DescribeImageVersionOutputBuilder {
         &self.image_arn
     }
     /// <p>The ARN of the version.</p>
-    pub fn image_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the version.</p>
-    pub fn set_image_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_version_arn = input;
         self
     }
@@ -298,17 +274,12 @@ impl DescribeImageVersionOutputBuilder {
         self
     }
     /// <p>The status of the version.</p>
-    pub fn set_image_version_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageVersionStatus>,
-    ) -> Self {
+    pub fn set_image_version_status(mut self, input: ::std::option::Option<crate::types::ImageVersionStatus>) -> Self {
         self.image_version_status = input;
         self
     }
     /// <p>The status of the version.</p>
-    pub fn get_image_version_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageVersionStatus> {
+    pub fn get_image_version_status(&self) -> &::std::option::Option<crate::types::ImageVersionStatus> {
         &self.image_version_status
     }
     /// <p>When the version was last modified.</p>
@@ -317,10 +288,7 @@ impl DescribeImageVersionOutputBuilder {
         self
     }
     /// <p>When the version was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -360,10 +328,7 @@ impl DescribeImageVersionOutputBuilder {
     /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
     /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
-    pub fn set_vendor_guidance(
-        mut self,
-        input: ::std::option::Option<crate::types::VendorGuidance>,
-    ) -> Self {
+    pub fn set_vendor_guidance(mut self, input: ::std::option::Option<crate::types::VendorGuidance>) -> Self {
         self.vendor_guidance = input;
         self
     }
@@ -421,18 +386,12 @@ impl DescribeImageVersionOutputBuilder {
         &self.ml_framework
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn programming_lang(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn programming_lang(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.programming_lang = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn set_programming_lang(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_programming_lang(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.programming_lang = input;
         self
     }
@@ -481,18 +440,12 @@ impl DescribeImageVersionOutputBuilder {
         &self.horovod
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn release_notes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn set_release_notes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_notes = input;
         self
     }

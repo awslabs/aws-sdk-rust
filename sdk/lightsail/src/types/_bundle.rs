@@ -104,9 +104,7 @@ impl Bundle {
 
 /// A builder for [`Bundle`](crate::types::Bundle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BundleBuilder {
     pub(crate) price: ::std::option::Option<f32>,
     pub(crate) cpu_count: ::std::option::Option<i32>,
@@ -118,10 +116,8 @@ pub struct BundleBuilder {
     pub(crate) power: ::std::option::Option<i32>,
     pub(crate) ram_size_in_gb: ::std::option::Option<f32>,
     pub(crate) transfer_per_month_in_gb: ::std::option::Option<i32>,
-    pub(crate) supported_platforms:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
-    pub(crate) supported_app_categories:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
+    pub(crate) supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
+    pub(crate) supported_app_categories: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
 }
 impl BundleBuilder {
     /// <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
@@ -181,18 +177,12 @@ impl BundleBuilder {
         &self.bundle_id
     }
     /// <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -282,17 +272,12 @@ impl BundleBuilder {
         self
     }
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
-    pub fn set_supported_platforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
-    ) -> Self {
+    pub fn set_supported_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>) -> Self {
         self.supported_platforms = input;
         self
     }
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
-    pub fn get_supported_platforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>> {
+    pub fn get_supported_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>> {
         &self.supported_platforms
     }
     /// Appends an item to `supported_app_categories`.
@@ -311,19 +296,14 @@ impl BundleBuilder {
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn set_supported_app_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
-    ) -> Self {
+    pub fn set_supported_app_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>) -> Self {
         self.supported_app_categories = input;
         self
     }
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn get_supported_app_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppCategory>> {
+    pub fn get_supported_app_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppCategory>> {
         &self.supported_app_categories
     }
     /// Consumes the builder and constructs a [`Bundle`](crate::types::Bundle).

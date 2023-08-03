@@ -10,10 +10,7 @@ impl SearchEntitiesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_entities::SearchEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_entities::SearchEntitiesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_entities::SearchEntitiesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_entities();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SearchEntitiesFluentBuilder {
         }
     }
     /// Access the SearchEntities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_entities::builders::SearchEntitiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_entities::builders::SearchEntitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl SearchEntitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl SearchEntitiesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_entities::paginator::SearchEntitiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_entities::paginator::SearchEntitiesPaginator {
-        crate::operation::search_entities::paginator::SearchEntitiesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_entities::paginator::SearchEntitiesPaginator {
+        crate::operation::search_entities::paginator::SearchEntitiesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `entityTypes`.
     ///
@@ -136,17 +123,12 @@ impl SearchEntitiesFluentBuilder {
         self
     }
     /// <p>The entity types for which to search.</p>
-    pub fn set_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
-    ) -> Self {
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>) -> Self {
         self.inner = self.inner.set_entity_types(input);
         self
     }
     /// <p>The entity types for which to search.</p>
-    pub fn get_entity_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
         self.inner.get_entity_types()
     }
     /// Appends an item to `filters`.
@@ -161,18 +143,13 @@ impl SearchEntitiesFluentBuilder {
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>> {
         self.inner.get_filters()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>

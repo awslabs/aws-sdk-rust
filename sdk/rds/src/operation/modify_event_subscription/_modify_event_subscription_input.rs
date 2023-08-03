@@ -46,18 +46,14 @@ impl ModifyEventSubscriptionInput {
 }
 impl ModifyEventSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`ModifyEventSubscriptionInput`](crate::operation::modify_event_subscription::ModifyEventSubscriptionInput).
-    pub fn builder(
-    ) -> crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder {
         crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyEventSubscriptionInput`](crate::operation::modify_event_subscription::ModifyEventSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyEventSubscriptionInputBuilder {
     pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
@@ -67,18 +63,12 @@ pub struct ModifyEventSubscriptionInputBuilder {
 }
 impl ModifyEventSubscriptionInputBuilder {
     /// <p>The name of the RDS event notification subscription.</p>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the RDS event notification subscription.</p>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_name = input;
         self
     }
@@ -87,18 +77,12 @@ impl ModifyEventSubscriptionInputBuilder {
         &self.subscription_name
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -128,27 +112,19 @@ impl ModifyEventSubscriptionInputBuilder {
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
     /// <p>A list of event categories for a source type (<code>SourceType</code>) that you want to subscribe to. You can see a list of the categories for a given source type in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code> operation.</p>
-    pub fn event_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
         v.push(input.into());
         self.event_categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of event categories for a source type (<code>SourceType</code>) that you want to subscribe to. You can see a list of the categories for a given source type in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code> operation.</p>
-    pub fn set_event_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_categories = input;
         self
     }
     /// <p>A list of event categories for a source type (<code>SourceType</code>) that you want to subscribe to. You can see a list of the categories for a given source type in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code> operation.</p>
-    pub fn get_event_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_categories
     }
     /// <p>A value that indicates whether to activate the subscription.</p>
@@ -172,14 +148,12 @@ impl ModifyEventSubscriptionInputBuilder {
         crate::operation::modify_event_subscription::ModifyEventSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_event_subscription::ModifyEventSubscriptionInput {
-                subscription_name: self.subscription_name,
-                sns_topic_arn: self.sns_topic_arn,
-                source_type: self.source_type,
-                event_categories: self.event_categories,
-                enabled: self.enabled,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_event_subscription::ModifyEventSubscriptionInput {
+            subscription_name: self.subscription_name,
+            sns_topic_arn: self.sns_topic_arn,
+            source_type: self.source_type,
+            event_categories: self.event_categories,
+            enabled: self.enabled,
+        })
     }
 }

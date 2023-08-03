@@ -9,8 +9,7 @@ pub struct AwsElasticsearchDomainDetails {
     pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>Additional options for the domain endpoint.</p>
     #[doc(hidden)]
-    pub domain_endpoint_options:
-        ::std::option::Option<crate::types::AwsElasticsearchDomainDomainEndpointOptions>,
+    pub domain_endpoint_options: ::std::option::Option<crate::types::AwsElasticsearchDomainDomainEndpointOptions>,
     /// <p>Unique identifier for an Elasticsearch domain.</p>
     #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
@@ -26,33 +25,25 @@ pub struct AwsElasticsearchDomainDetails {
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair that exists if the Elasticsearch domain uses VPC endpoints.</p>
     #[doc(hidden)]
-    pub endpoints: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>OpenSearch version.</p>
     #[doc(hidden)]
     pub elasticsearch_version: ::std::option::Option<::std::string::String>,
     /// <p>Information about an OpenSearch cluster configuration.</p>
     #[doc(hidden)]
-    pub elasticsearch_cluster_config: ::std::option::Option<
-        crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails,
-    >,
+    pub elasticsearch_cluster_config: ::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails>,
     /// <p>Details about the configuration for encryption at rest.</p>
     #[doc(hidden)]
-    pub encryption_at_rest_options:
-        ::std::option::Option<crate::types::AwsElasticsearchDomainEncryptionAtRestOptions>,
+    pub encryption_at_rest_options: ::std::option::Option<crate::types::AwsElasticsearchDomainEncryptionAtRestOptions>,
     /// <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub log_publishing_options:
-        ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptions>,
+    pub log_publishing_options: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptions>,
     /// <p>Details about the configuration for node-to-node encryption.</p>
     #[doc(hidden)]
-    pub node_to_node_encryption_options:
-        ::std::option::Option<crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions>,
+    pub node_to_node_encryption_options: ::std::option::Option<crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions>,
     /// <p>Information about the status of a domain relative to the latest service software.</p>
     #[doc(hidden)]
-    pub service_software_options:
-        ::std::option::Option<crate::types::AwsElasticsearchDomainServiceSoftwareOptions>,
+    pub service_software_options: ::std::option::Option<crate::types::AwsElasticsearchDomainServiceSoftwareOptions>,
     /// <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.</p>
     #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::AwsElasticsearchDomainVpcOptions>,
@@ -63,9 +54,7 @@ impl AwsElasticsearchDomainDetails {
         self.access_policies.as_deref()
     }
     /// <p>Additional options for the domain endpoint.</p>
-    pub fn domain_endpoint_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainDomainEndpointOptions> {
+    pub fn domain_endpoint_options(&self) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainDomainEndpointOptions> {
         self.domain_endpoint_options.as_ref()
     }
     /// <p>Unique identifier for an Elasticsearch domain.</p>
@@ -85,11 +74,7 @@ impl AwsElasticsearchDomainDetails {
         self.endpoint.as_deref()
     }
     /// <p>The key-value pair that exists if the Elasticsearch domain uses VPC endpoints.</p>
-    pub fn endpoints(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn endpoints(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.endpoints.as_ref()
     }
     /// <p>OpenSearch version.</p>
@@ -97,41 +82,27 @@ impl AwsElasticsearchDomainDetails {
         self.elasticsearch_version.as_deref()
     }
     /// <p>Information about an OpenSearch cluster configuration.</p>
-    pub fn elasticsearch_cluster_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails>
-    {
+    pub fn elasticsearch_cluster_config(&self) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails> {
         self.elasticsearch_cluster_config.as_ref()
     }
     /// <p>Details about the configuration for encryption at rest.</p>
-    pub fn encryption_at_rest_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainEncryptionAtRestOptions> {
+    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainEncryptionAtRestOptions> {
         self.encryption_at_rest_options.as_ref()
     }
     /// <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
-    pub fn log_publishing_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainLogPublishingOptions> {
+    pub fn log_publishing_options(&self) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainLogPublishingOptions> {
         self.log_publishing_options.as_ref()
     }
     /// <p>Details about the configuration for node-to-node encryption.</p>
-    pub fn node_to_node_encryption_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions>
-    {
+    pub fn node_to_node_encryption_options(&self) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions> {
         self.node_to_node_encryption_options.as_ref()
     }
     /// <p>Information about the status of a domain relative to the latest service software.</p>
-    pub fn service_software_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainServiceSoftwareOptions> {
+    pub fn service_software_options(&self) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainServiceSoftwareOptions> {
         self.service_software_options.as_ref()
     }
     /// <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.</p>
-    pub fn vpc_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainVpcOptions> {
+    pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainVpcOptions> {
         self.vpc_options.as_ref()
     }
 }
@@ -144,47 +115,30 @@ impl AwsElasticsearchDomainDetails {
 
 /// A builder for [`AwsElasticsearchDomainDetails`](crate::types::AwsElasticsearchDomainDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainDetailsBuilder {
     pub(crate) access_policies: ::std::option::Option<::std::string::String>,
-    pub(crate) domain_endpoint_options:
-        ::std::option::Option<crate::types::AwsElasticsearchDomainDomainEndpointOptions>,
+    pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::AwsElasticsearchDomainDomainEndpointOptions>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoints: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) elasticsearch_version: ::std::option::Option<::std::string::String>,
-    pub(crate) elasticsearch_cluster_config: ::std::option::Option<
-        crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails,
-    >,
-    pub(crate) encryption_at_rest_options:
-        ::std::option::Option<crate::types::AwsElasticsearchDomainEncryptionAtRestOptions>,
-    pub(crate) log_publishing_options:
-        ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptions>,
-    pub(crate) node_to_node_encryption_options:
-        ::std::option::Option<crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions>,
-    pub(crate) service_software_options:
-        ::std::option::Option<crate::types::AwsElasticsearchDomainServiceSoftwareOptions>,
+    pub(crate) elasticsearch_cluster_config: ::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails>,
+    pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::AwsElasticsearchDomainEncryptionAtRestOptions>,
+    pub(crate) log_publishing_options: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptions>,
+    pub(crate) node_to_node_encryption_options: ::std::option::Option<crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions>,
+    pub(crate) service_software_options: ::std::option::Option<crate::types::AwsElasticsearchDomainServiceSoftwareOptions>,
     pub(crate) vpc_options: ::std::option::Option<crate::types::AwsElasticsearchDomainVpcOptions>,
 }
 impl AwsElasticsearchDomainDetailsBuilder {
     /// <p>IAM policy document specifying the access policies for the new Elasticsearch domain.</p>
-    pub fn access_policies(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policies = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>IAM policy document specifying the access policies for the new Elasticsearch domain.</p>
-    pub fn set_access_policies(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policies(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_policies = input;
         self
     }
@@ -193,25 +147,17 @@ impl AwsElasticsearchDomainDetailsBuilder {
         &self.access_policies
     }
     /// <p>Additional options for the domain endpoint.</p>
-    pub fn domain_endpoint_options(
-        mut self,
-        input: crate::types::AwsElasticsearchDomainDomainEndpointOptions,
-    ) -> Self {
+    pub fn domain_endpoint_options(mut self, input: crate::types::AwsElasticsearchDomainDomainEndpointOptions) -> Self {
         self.domain_endpoint_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional options for the domain endpoint.</p>
-    pub fn set_domain_endpoint_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElasticsearchDomainDomainEndpointOptions>,
-    ) -> Self {
+    pub fn set_domain_endpoint_options(mut self, input: ::std::option::Option<crate::types::AwsElasticsearchDomainDomainEndpointOptions>) -> Self {
         self.domain_endpoint_options = input;
         self
     }
     /// <p>Additional options for the domain endpoint.</p>
-    pub fn get_domain_endpoint_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainDomainEndpointOptions> {
+    pub fn get_domain_endpoint_options(&self) -> &::std::option::Option<crate::types::AwsElasticsearchDomainDomainEndpointOptions> {
         &self.domain_endpoint_options
     }
     /// <p>Unique identifier for an Elasticsearch domain.</p>
@@ -273,47 +219,28 @@ impl AwsElasticsearchDomainDetailsBuilder {
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
     ///
     /// <p>The key-value pair that exists if the Elasticsearch domain uses VPC endpoints.</p>
-    pub fn endpoints(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoints(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.endpoints.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.endpoints = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The key-value pair that exists if the Elasticsearch domain uses VPC endpoints.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>The key-value pair that exists if the Elasticsearch domain uses VPC endpoints.</p>
-    pub fn get_endpoints(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.endpoints
     }
     /// <p>OpenSearch version.</p>
-    pub fn elasticsearch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elasticsearch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elasticsearch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>OpenSearch version.</p>
-    pub fn set_elasticsearch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elasticsearch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elasticsearch_version = input;
         self
     }
@@ -322,35 +249,24 @@ impl AwsElasticsearchDomainDetailsBuilder {
         &self.elasticsearch_version
     }
     /// <p>Information about an OpenSearch cluster configuration.</p>
-    pub fn elasticsearch_cluster_config(
-        mut self,
-        input: crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails,
-    ) -> Self {
+    pub fn elasticsearch_cluster_config(mut self, input: crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails) -> Self {
         self.elasticsearch_cluster_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about an OpenSearch cluster configuration.</p>
     pub fn set_elasticsearch_cluster_config(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails>,
     ) -> Self {
         self.elasticsearch_cluster_config = input;
         self
     }
     /// <p>Information about an OpenSearch cluster configuration.</p>
-    pub fn get_elasticsearch_cluster_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails>
-    {
+    pub fn get_elasticsearch_cluster_config(&self) -> &::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails> {
         &self.elasticsearch_cluster_config
     }
     /// <p>Details about the configuration for encryption at rest.</p>
-    pub fn encryption_at_rest_options(
-        mut self,
-        input: crate::types::AwsElasticsearchDomainEncryptionAtRestOptions,
-    ) -> Self {
+    pub fn encryption_at_rest_options(mut self, input: crate::types::AwsElasticsearchDomainEncryptionAtRestOptions) -> Self {
         self.encryption_at_rest_options = ::std::option::Option::Some(input);
         self
     }
@@ -363,78 +279,52 @@ impl AwsElasticsearchDomainDetailsBuilder {
         self
     }
     /// <p>Details about the configuration for encryption at rest.</p>
-    pub fn get_encryption_at_rest_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainEncryptionAtRestOptions> {
+    pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::AwsElasticsearchDomainEncryptionAtRestOptions> {
         &self.encryption_at_rest_options
     }
     /// <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
-    pub fn log_publishing_options(
-        mut self,
-        input: crate::types::AwsElasticsearchDomainLogPublishingOptions,
-    ) -> Self {
+    pub fn log_publishing_options(mut self, input: crate::types::AwsElasticsearchDomainLogPublishingOptions) -> Self {
         self.log_publishing_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
-    pub fn set_log_publishing_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptions>,
-    ) -> Self {
+    pub fn set_log_publishing_options(mut self, input: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptions>) -> Self {
         self.log_publishing_options = input;
         self
     }
     /// <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
-    pub fn get_log_publishing_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptions> {
+    pub fn get_log_publishing_options(&self) -> &::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptions> {
         &self.log_publishing_options
     }
     /// <p>Details about the configuration for node-to-node encryption.</p>
-    pub fn node_to_node_encryption_options(
-        mut self,
-        input: crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions,
-    ) -> Self {
+    pub fn node_to_node_encryption_options(mut self, input: crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions) -> Self {
         self.node_to_node_encryption_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the configuration for node-to-node encryption.</p>
     pub fn set_node_to_node_encryption_options(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions,
-        >,
+        input: ::std::option::Option<crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions>,
     ) -> Self {
         self.node_to_node_encryption_options = input;
         self
     }
     /// <p>Details about the configuration for node-to-node encryption.</p>
-    pub fn get_node_to_node_encryption_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions>
-    {
+    pub fn get_node_to_node_encryption_options(&self) -> &::std::option::Option<crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions> {
         &self.node_to_node_encryption_options
     }
     /// <p>Information about the status of a domain relative to the latest service software.</p>
-    pub fn service_software_options(
-        mut self,
-        input: crate::types::AwsElasticsearchDomainServiceSoftwareOptions,
-    ) -> Self {
+    pub fn service_software_options(mut self, input: crate::types::AwsElasticsearchDomainServiceSoftwareOptions) -> Self {
         self.service_software_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the status of a domain relative to the latest service software.</p>
-    pub fn set_service_software_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElasticsearchDomainServiceSoftwareOptions>,
-    ) -> Self {
+    pub fn set_service_software_options(mut self, input: ::std::option::Option<crate::types::AwsElasticsearchDomainServiceSoftwareOptions>) -> Self {
         self.service_software_options = input;
         self
     }
     /// <p>Information about the status of a domain relative to the latest service software.</p>
-    pub fn get_service_software_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainServiceSoftwareOptions> {
+    pub fn get_service_software_options(&self) -> &::std::option::Option<crate::types::AwsElasticsearchDomainServiceSoftwareOptions> {
         &self.service_software_options
     }
     /// <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.</p>
@@ -443,17 +333,12 @@ impl AwsElasticsearchDomainDetailsBuilder {
         self
     }
     /// <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.</p>
-    pub fn set_vpc_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElasticsearchDomainVpcOptions>,
-    ) -> Self {
+    pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::AwsElasticsearchDomainVpcOptions>) -> Self {
         self.vpc_options = input;
         self
     }
     /// <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.</p>
-    pub fn get_vpc_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainVpcOptions> {
+    pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::AwsElasticsearchDomainVpcOptions> {
         &self.vpc_options
     }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainDetails`](crate::types::AwsElasticsearchDomainDetails).

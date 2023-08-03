@@ -38,16 +38,14 @@ impl GetCapacityReservationUsageInput {
 }
 impl GetCapacityReservationUsageInput {
     /// Creates a new builder-style object to manufacture [`GetCapacityReservationUsageInput`](crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageInput).
-    pub fn builder() -> crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageInputBuilder{
+    pub fn builder() -> crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageInputBuilder {
         crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCapacityReservationUsageInput`](crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCapacityReservationUsageInputBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct GetCapacityReservationUsageInputBuilder {
 }
 impl GetCapacityReservationUsageInputBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_id = input;
         self
     }
@@ -127,13 +119,11 @@ impl GetCapacityReservationUsageInputBuilder {
         crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageInput {
-                capacity_reservation_id: self.capacity_reservation_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageInput {
+            capacity_reservation_id: self.capacity_reservation_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            dry_run: self.dry_run,
+        })
     }
 }

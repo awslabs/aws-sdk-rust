@@ -23,9 +23,7 @@ impl PublishMetricAction {
 
 /// A builder for [`PublishMetricAction`](crate::types::PublishMetricAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishMetricActionBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
 }
@@ -42,23 +40,16 @@ impl PublishMetricActionBuilder {
         self
     }
     /// <p></p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p></p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`PublishMetricAction`](crate::types::PublishMetricAction).
     pub fn build(self) -> crate::types::PublishMetricAction {
-        crate::types::PublishMetricAction {
-            dimensions: self.dimensions,
-        }
+        crate::types::PublishMetricAction { dimensions: self.dimensions }
     }
 }

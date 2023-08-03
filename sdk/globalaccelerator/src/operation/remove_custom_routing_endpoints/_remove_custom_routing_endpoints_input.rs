@@ -22,16 +22,14 @@ impl RemoveCustomRoutingEndpointsInput {
 }
 impl RemoveCustomRoutingEndpointsInput {
     /// Creates a new builder-style object to manufacture [`RemoveCustomRoutingEndpointsInput`](crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput).
-    pub fn builder() -> crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsInputBuilder{
+    pub fn builder() -> crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsInputBuilder {
         crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveCustomRoutingEndpointsInput`](crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveCustomRoutingEndpointsInputBuilder {
     pub(crate) endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
@@ -49,32 +47,21 @@ impl RemoveCustomRoutingEndpointsInputBuilder {
         self
     }
     /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
-    pub fn set_endpoint_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.endpoint_ids = input;
         self
     }
     /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
-    pub fn get_endpoint_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.endpoint_ids
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_group_arn = input;
         self
     }
@@ -89,11 +76,9 @@ impl RemoveCustomRoutingEndpointsInputBuilder {
         crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput {
-                endpoint_ids: self.endpoint_ids,
-                endpoint_group_arn: self.endpoint_group_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput {
+            endpoint_ids: self.endpoint_ids,
+            endpoint_group_arn: self.endpoint_group_arn,
+        })
     }
 }

@@ -23,9 +23,7 @@ impl NetworkFirewallStatefulRuleGroupOverride {
 
 /// A builder for [`NetworkFirewallStatefulRuleGroupOverride`](crate::types::NetworkFirewallStatefulRuleGroupOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFirewallStatefulRuleGroupOverrideBuilder {
     pub(crate) action: ::std::option::Option<crate::types::NetworkFirewallOverrideAction>,
 }
@@ -36,23 +34,16 @@ impl NetworkFirewallStatefulRuleGroupOverrideBuilder {
         self
     }
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFirewallOverrideAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::NetworkFirewallOverrideAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
-    pub fn get_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFirewallOverrideAction> {
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::NetworkFirewallOverrideAction> {
         &self.action
     }
     /// Consumes the builder and constructs a [`NetworkFirewallStatefulRuleGroupOverride`](crate::types::NetworkFirewallStatefulRuleGroupOverride).
     pub fn build(self) -> crate::types::NetworkFirewallStatefulRuleGroupOverride {
-        crate::types::NetworkFirewallStatefulRuleGroupOverride {
-            action: self.action,
-        }
+        crate::types::NetworkFirewallStatefulRuleGroupOverride { action: self.action }
     }
 }

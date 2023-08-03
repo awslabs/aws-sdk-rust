@@ -10,10 +10,7 @@ impl CreatePricingRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_pricing_rule::CreatePricingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_rule::CreatePricingRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_rule::CreatePricingRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_pricing_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreatePricingRuleFluentBuilder {
         }
     }
     /// Access the CreatePricingRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreatePricingRuleFluentBuilder {
             crate::operation::create_pricing_rule::CreatePricingRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_rule::CreatePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_rule::CreatePricingRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreatePricingRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreatePricingRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pricing_rule::CreatePricingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_rule::CreatePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_rule::CreatePricingRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreatePricingRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pricing_rule::CreatePricingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_rule::CreatePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_rule::CreatePricingRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreatePricingRuleFluentBuilder {
             crate::operation::create_pricing_rule::CreatePricingRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_rule::CreatePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_rule::CreatePricingRuleError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +154,7 @@ impl CreatePricingRuleFluentBuilder {
         self
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingRuleScope>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::PricingRuleScope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
@@ -228,45 +209,26 @@ impl CreatePricingRuleFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn billing_entity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_entity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_entity(input.into());
         self
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn set_billing_entity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_entity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_entity(input);
         self
     }
@@ -280,10 +242,7 @@ impl CreatePricingRuleFluentBuilder {
         self
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn set_tiering(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateTieringInput>,
-    ) -> Self {
+    pub fn set_tiering(mut self, input: ::std::option::Option<crate::types::CreateTieringInput>) -> Self {
         self.inner = self.inner.set_tiering(input);
         self
     }

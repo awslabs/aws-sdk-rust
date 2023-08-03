@@ -10,10 +10,7 @@ impl GetTokenBalanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_token_balance::GetTokenBalanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_token_balance::GetTokenBalanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_token_balance::GetTokenBalanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_token_balance();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetTokenBalanceFluentBuilder {
         }
     }
     /// Access the GetTokenBalance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_token_balance::builders::GetTokenBalanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_token_balance::builders::GetTokenBalanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetTokenBalanceFluentBuilder {
             crate::operation::get_token_balance::GetTokenBalance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_token_balance::GetTokenBalanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_token_balance::GetTokenBalanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetTokenBalanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetTokenBalanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_token_balance::GetTokenBalanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_token_balance::GetTokenBalanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_token_balance::GetTokenBalanceError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetTokenBalanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_token_balance::GetTokenBalanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_token_balance::GetTokenBalanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_token_balance::GetTokenBalanceError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl GetTokenBalanceFluentBuilder {
             crate::operation::get_token_balance::GetTokenBalance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_token_balance::GetTokenBalanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_token_balance::GetTokenBalanceError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +114,7 @@ impl GetTokenBalanceFluentBuilder {
         self
     }
     /// <p>The container for the identifier for the token, including the unique token ID and its blockchain network.</p>
-    pub fn set_token_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::TokenIdentifier>,
-    ) -> Self {
+    pub fn set_token_identifier(mut self, input: ::std::option::Option<crate::types::TokenIdentifier>) -> Self {
         self.inner = self.inner.set_token_identifier(input);
         self
     }
@@ -147,10 +128,7 @@ impl GetTokenBalanceFluentBuilder {
         self
     }
     /// <p>The container for the identifier for the owner.</p>
-    pub fn set_owner_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnerIdentifier>,
-    ) -> Self {
+    pub fn set_owner_identifier(mut self, input: ::std::option::Option<crate::types::OwnerIdentifier>) -> Self {
         self.inner = self.inner.set_owner_identifier(input);
         self
     }
@@ -168,19 +146,14 @@ impl GetTokenBalanceFluentBuilder {
     /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
-    pub fn set_at_blockchain_instant(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockchainInstant>,
-    ) -> Self {
+    pub fn set_at_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
         self.inner = self.inner.set_at_blockchain_instant(input);
         self
     }
     /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
-    pub fn get_at_blockchain_instant(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+    pub fn get_at_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
         self.inner.get_at_blockchain_instant()
     }
 }

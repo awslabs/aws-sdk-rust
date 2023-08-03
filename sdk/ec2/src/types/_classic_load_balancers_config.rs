@@ -6,14 +6,11 @@
 pub struct ClassicLoadBalancersConfig {
     /// <p>One or more Classic Load Balancers.</p>
     #[doc(hidden)]
-    pub classic_load_balancers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>>,
+    pub classic_load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>>,
 }
 impl ClassicLoadBalancersConfig {
     /// <p>One or more Classic Load Balancers.</p>
-    pub fn classic_load_balancers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClassicLoadBalancer]> {
+    pub fn classic_load_balancers(&self) -> ::std::option::Option<&[crate::types::ClassicLoadBalancer]> {
         self.classic_load_balancers.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl ClassicLoadBalancersConfig {
 
 /// A builder for [`ClassicLoadBalancersConfig`](crate::types::ClassicLoadBalancersConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassicLoadBalancersConfigBuilder {
-    pub(crate) classic_load_balancers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>>,
+    pub(crate) classic_load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>>,
 }
 impl ClassicLoadBalancersConfigBuilder {
     /// Appends an item to `classic_load_balancers`.
@@ -46,17 +40,12 @@ impl ClassicLoadBalancersConfigBuilder {
         self
     }
     /// <p>One or more Classic Load Balancers.</p>
-    pub fn set_classic_load_balancers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>>,
-    ) -> Self {
+    pub fn set_classic_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>>) -> Self {
         self.classic_load_balancers = input;
         self
     }
     /// <p>One or more Classic Load Balancers.</p>
-    pub fn get_classic_load_balancers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>> {
+    pub fn get_classic_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>> {
         &self.classic_load_balancers
     }
     /// Consumes the builder and constructs a [`ClassicLoadBalancersConfig`](crate::types::ClassicLoadBalancersConfig).

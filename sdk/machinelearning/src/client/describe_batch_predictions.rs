@@ -19,10 +19,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<BatchPrediction>>)`](crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput::results): <p>A list of <code>BatchPrediction</code> objects that meet the search criteria. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput::next_token): <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     /// - On failure, responds with [`SdkError<DescribeBatchPredictionsError>`](crate::operation::describe_batch_predictions::DescribeBatchPredictionsError)
-    pub fn describe_batch_predictions(
-        &self,
-    ) -> crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsFluentBuilder
-    {
+    pub fn describe_batch_predictions(&self) -> crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsFluentBuilder {
         crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsFluentBuilder::new(self.handle.clone())
     }
 }

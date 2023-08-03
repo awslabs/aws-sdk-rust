@@ -9,9 +9,7 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDe
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A tag that is assigned to matching objects.</p>
     #[doc(hidden)]
-    pub tag: ::std::option::Option<
-        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails,
-    >,
+    pub tag: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails>,
     /// <p>The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or <code>LifecycleTagPredicate</code>.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -22,7 +20,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails 
         self.prefix.as_deref()
     }
     /// <p>A tag that is assigned to matching objects.</p>
-    pub fn tag(&self) -> ::std::option::Option<& crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails>{
+    pub fn tag(&self) -> ::std::option::Option<&crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails> {
         self.tag.as_ref()
     }
     /// <p>The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or <code>LifecycleTagPredicate</code>.</p>
@@ -32,21 +30,17 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails 
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
-    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsBuilder {
         crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) tag: ::std::option::Option<
-        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails,
-    >,
+    pub(crate) tag: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsBuilder {
@@ -65,10 +59,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsB
         &self.prefix
     }
     /// <p>A tag that is assigned to matching objects.</p>
-    pub fn tag(
-        mut self,
-        input: crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails,
-    ) -> Self {
+    pub fn tag(mut self, input: crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails) -> Self {
         self.tag = ::std::option::Option::Some(input);
         self
     }
@@ -81,11 +72,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsB
         self
     }
     /// <p>A tag that is assigned to matching objects.</p>
-    pub fn get_tag(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails,
-    > {
+    pub fn get_tag(&self) -> &::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails> {
         &self.tag
     }
     /// <p>The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or <code>LifecycleTagPredicate</code>.</p>
@@ -103,10 +90,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsB
         &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails
-    {
+    pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails {
             prefix: self.prefix,
             tag: self.tag,

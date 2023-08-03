@@ -5,16 +5,16 @@ pub use crate::operation::put_email_identity_dkim_signing_attributes::_put_email
 
 impl PutEmailIdentityDkimSigningAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_email_identity_dkim_signing_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -34,7 +34,7 @@ impl PutEmailIdentityDkimSigningAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutEmailIdentityDkimSigningAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_email_identity_dkim_signing_attributes::builders::PutEmailIdentityDkimSigningAttributesInputBuilder,
+    inner: crate::operation::put_email_identity_dkim_signing_attributes::builders::PutEmailIdentityDkimSigningAttributesInputBuilder,
 }
 impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
     /// Creates a new `PutEmailIdentityDkimSigningAttributes`.
@@ -45,15 +45,22 @@ impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
         }
     }
     /// Access the PutEmailIdentityDkimSigningAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_email_identity_dkim_signing_attributes::builders::PutEmailIdentityDkimSigningAttributesInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_email_identity_dkim_signing_attributes::builders::PutEmailIdentityDkimSigningAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -62,16 +69,17 @@ impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -89,32 +97,35 @@ impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The email identity.</p>
-    pub fn email_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_identity(input.into());
         self
     }
     /// <p>The email identity.</p>
-    pub fn set_email_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_identity(input);
         self
     }
@@ -127,10 +138,7 @@ impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
     /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
     /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
-    pub fn signing_attributes_origin(
-        mut self,
-        input: crate::types::DkimSigningAttributesOrigin,
-    ) -> Self {
+    pub fn signing_attributes_origin(mut self, input: crate::types::DkimSigningAttributesOrigin) -> Self {
         self.inner = self.inner.signing_attributes_origin(input);
         self
     }
@@ -139,10 +147,7 @@ impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
     /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
     /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
-    pub fn set_signing_attributes_origin(
-        mut self,
-        input: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
-    ) -> Self {
+    pub fn set_signing_attributes_origin(mut self, input: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>) -> Self {
         self.inner = self.inner.set_signing_attributes_origin(input);
         self
     }
@@ -151,9 +156,7 @@ impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
     /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
     /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
-    pub fn get_signing_attributes_origin(
-        &self,
-    ) -> &::std::option::Option<crate::types::DkimSigningAttributesOrigin> {
+    pub fn get_signing_attributes_origin(&self) -> &::std::option::Option<crate::types::DkimSigningAttributesOrigin> {
         self.inner.get_signing_attributes_origin()
     }
     /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
@@ -162,17 +165,12 @@ impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
         self
     }
     /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-    pub fn set_signing_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::DkimSigningAttributes>,
-    ) -> Self {
+    pub fn set_signing_attributes(mut self, input: ::std::option::Option<crate::types::DkimSigningAttributes>) -> Self {
         self.inner = self.inner.set_signing_attributes(input);
         self
     }
     /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-    pub fn get_signing_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::DkimSigningAttributes> {
+    pub fn get_signing_attributes(&self) -> &::std::option::Option<crate::types::DkimSigningAttributes> {
         self.inner.get_signing_attributes()
     }
 }

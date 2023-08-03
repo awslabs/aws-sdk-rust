@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateTagsForDomainOutput {
 }
 impl UpdateTagsForDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTagsForDomainOutput`](crate::operation::update_tags_for_domain::UpdateTagsForDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainOutputBuilder {
+    pub fn builder() -> crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainOutputBuilder {
         crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTagsForDomainOutput`](crate::operation::update_tags_for_domain::UpdateTagsForDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTagsForDomainOutputBuilder {
     _request_id: Option<String>,
 }

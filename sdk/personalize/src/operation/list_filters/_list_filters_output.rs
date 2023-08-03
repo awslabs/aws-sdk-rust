@@ -35,9 +35,7 @@ impl ListFiltersOutput {
 
 /// A builder for [`ListFiltersOutput`](crate::operation::list_filters::ListFiltersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFiltersOutputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::FilterSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFiltersOutputBuilder {
         self
     }
     /// <p>A list of returned filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterSummary>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterSummary>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of returned filters.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterSummary>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterSummary>> {
         &self.filters
     }
     /// <p>A token for getting the next set of filters (if they exist).</p>

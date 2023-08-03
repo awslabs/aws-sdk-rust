@@ -37,10 +37,7 @@ impl CreatePublicIpv4PoolFluentBuilder {
         }
     }
     /// Access the CreatePublicIpv4Pool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreatePublicIpv4PoolFluentBuilder {
             crate::operation::create_public_ipv4_pool::CreatePublicIpv4Pool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreatePublicIpv4PoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreatePublicIpv4PoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreatePublicIpv4PoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreatePublicIpv4PoolFluentBuilder {
             crate::operation::create_public_ipv4_pool::CreatePublicIpv4Pool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl CreatePublicIpv4PoolFluentBuilder {
         self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

@@ -35,12 +35,9 @@ impl ListAppsListsOutput {
 
 /// A builder for [`ListAppsListsOutput`](crate::operation::list_apps_lists::ListAppsListsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppsListsOutputBuilder {
-    pub(crate) apps_lists:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppsListDataSummary>>,
+    pub(crate) apps_lists: ::std::option::Option<::std::vec::Vec<crate::types::AppsListDataSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListAppsListsOutputBuilder {
         self
     }
     /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
-    pub fn set_apps_lists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppsListDataSummary>>,
-    ) -> Self {
+    pub fn set_apps_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppsListDataSummary>>) -> Self {
         self.apps_lists = input;
         self
     }
     /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
-    pub fn get_apps_lists(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppsListDataSummary>> {
+    pub fn get_apps_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppsListDataSummary>> {
         &self.apps_lists
     }
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>

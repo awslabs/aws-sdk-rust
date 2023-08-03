@@ -54,9 +54,7 @@ impl LoadBalancerTlsPolicy {
 
 /// A builder for [`LoadBalancerTlsPolicy`](crate::types::LoadBalancerTlsPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsPolicyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) is_default: ::std::option::Option<bool>,
@@ -119,10 +117,7 @@ impl LoadBalancerTlsPolicyBuilder {
         self
     }
     /// <p>The protocols used in a given TLS security policy.</p>
-    pub fn set_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.protocols = input;
         self
     }
@@ -144,10 +139,7 @@ impl LoadBalancerTlsPolicyBuilder {
     }
     /// <p>The ciphers used by the TLS security policy.</p>
     /// <p>The ciphers are listed in order of preference.</p>
-    pub fn set_ciphers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ciphers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ciphers = input;
         self
     }

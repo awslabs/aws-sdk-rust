@@ -10,10 +10,7 @@ impl UpdateChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_channel::UpdateChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel::UpdateChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateChannelFluentBuilder {
         }
     }
     /// Access the UpdateChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -148,10 +140,7 @@ impl UpdateChannelFluentBuilder {
         self
     }
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
-    pub fn set_latency_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelLatencyMode>,
-    ) -> Self {
+    pub fn set_latency_mode(mut self, input: ::std::option::Option<crate::types::ChannelLatencyMode>) -> Self {
         self.inner = self.inner.set_latency_mode(input);
         self
     }
@@ -221,18 +210,12 @@ impl UpdateChannelFluentBuilder {
         self.inner.get_authorized()
     }
     /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
-    pub fn recording_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recording_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recording_configuration_arn(input.into());
         self
     }
     /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
-    pub fn set_recording_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recording_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recording_configuration_arn(input);
         self
     }
@@ -260,10 +243,7 @@ impl UpdateChannelFluentBuilder {
         self
     }
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
-    pub fn set_preset(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscodePreset>,
-    ) -> Self {
+    pub fn set_preset(mut self, input: ::std::option::Option<crate::types::TranscodePreset>) -> Self {
         self.inner = self.inner.set_preset(input);
         self
     }

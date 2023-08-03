@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`asset_status(Option<AssetStatus>)`](crate::operation::describe_asset::DescribeAssetOutput::asset_status): <p>The current status of the asset, which contains a state and any error message.</p>
     ///   - [`asset_description(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::asset_description): <p>A description for the asset.</p>
     /// - On failure, responds with [`SdkError<DescribeAssetError>`](crate::operation::describe_asset::DescribeAssetError)
-    pub fn describe_asset(
-        &self,
-    ) -> crate::operation::describe_asset::builders::DescribeAssetFluentBuilder {
-        crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_asset(&self) -> crate::operation::describe_asset::builders::DescribeAssetFluentBuilder {
+        crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::new(self.handle.clone())
     }
 }

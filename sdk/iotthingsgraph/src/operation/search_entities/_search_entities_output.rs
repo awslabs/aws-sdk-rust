@@ -35,12 +35,9 @@ impl SearchEntitiesOutput {
 
 /// A builder for [`SearchEntitiesOutput`](crate::operation::search_entities::SearchEntitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchEntitiesOutputBuilder {
-    pub(crate) descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>>,
+    pub(crate) descriptions: ::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl SearchEntitiesOutputBuilder {
         self
     }
     /// <p>An array of descriptions for each entity returned in the search result.</p>
-    pub fn set_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>>,
-    ) -> Self {
+    pub fn set_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>>) -> Self {
         self.descriptions = input;
         self
     }
     /// <p>An array of descriptions for each entity returned in the search result.</p>
-    pub fn get_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>> {
+    pub fn get_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>> {
         &self.descriptions
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>

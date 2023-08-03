@@ -16,12 +16,8 @@ pub struct ListUniqueProblemsOutput {
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub unique_problems: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ExecutionResult,
-            ::std::vec::Vec<crate::types::UniqueProblem>,
-        >,
-    >,
+    pub unique_problems:
+        ::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -41,12 +37,7 @@ impl ListUniqueProblemsOutput {
     /// </ul>
     pub fn unique_problems(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::ExecutionResult,
-            ::std::vec::Vec<crate::types::UniqueProblem>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>> {
         self.unique_problems.as_ref()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
@@ -61,24 +52,17 @@ impl ::aws_http::request_id::RequestId for ListUniqueProblemsOutput {
 }
 impl ListUniqueProblemsOutput {
     /// Creates a new builder-style object to manufacture [`ListUniqueProblemsOutput`](crate::operation::list_unique_problems::ListUniqueProblemsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_unique_problems::builders::ListUniqueProblemsOutputBuilder {
+    pub fn builder() -> crate::operation::list_unique_problems::builders::ListUniqueProblemsOutputBuilder {
         crate::operation::list_unique_problems::builders::ListUniqueProblemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUniqueProblemsOutput`](crate::operation::list_unique_problems::ListUniqueProblemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUniqueProblemsOutputBuilder {
-    pub(crate) unique_problems: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ExecutionResult,
-            ::std::vec::Vec<crate::types::UniqueProblem>,
-        >,
-    >,
+    pub(crate) unique_problems:
+        ::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -98,11 +82,7 @@ impl ListUniqueProblemsOutputBuilder {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    pub fn unique_problems(
-        mut self,
-        k: crate::types::ExecutionResult,
-        v: ::std::vec::Vec<crate::types::UniqueProblem>,
-    ) -> Self {
+    pub fn unique_problems(mut self, k: crate::types::ExecutionResult, v: ::std::vec::Vec<crate::types::UniqueProblem>) -> Self {
         let mut hash_map = self.unique_problems.unwrap_or_default();
         hash_map.insert(k, v);
         self.unique_problems = ::std::option::Option::Some(hash_map);
@@ -121,12 +101,7 @@ impl ListUniqueProblemsOutputBuilder {
     /// </ul>
     pub fn set_unique_problems(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ExecutionResult,
-                ::std::vec::Vec<crate::types::UniqueProblem>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>>,
     ) -> Self {
         self.unique_problems = input;
         self
@@ -144,12 +119,7 @@ impl ListUniqueProblemsOutputBuilder {
     /// </ul>
     pub fn get_unique_problems(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ExecutionResult,
-            ::std::vec::Vec<crate::types::UniqueProblem>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>> {
         &self.unique_problems
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>

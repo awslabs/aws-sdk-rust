@@ -10,10 +10,7 @@ impl ListSchedulesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_schedules::ListSchedulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schedules::ListSchedulesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schedules::ListSchedulesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_schedules();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSchedulesFluentBuilder {
         }
     }
     /// Access the ListSchedules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_schedules::builders::ListSchedulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_schedules::builders::ListSchedulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListSchedulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListSchedulesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_schedules::paginator::ListSchedulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_schedules::paginator::ListSchedulesPaginator {
-        crate::operation::list_schedules::paginator::ListSchedulesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_schedules::paginator::ListSchedulesPaginator {
+        crate::operation::list_schedules::paginator::ListSchedulesPaginator::new(self.handle, self.inner)
     }
     /// <p>If specified, only lists the schedules whose associated schedule group matches the given filter.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

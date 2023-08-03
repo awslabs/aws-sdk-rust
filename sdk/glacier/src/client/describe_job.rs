@@ -29,9 +29,7 @@ impl super::Client {
     ///   - [`select_parameters(Option<SelectParameters>)`](crate::operation::describe_job::DescribeJobOutput::select_parameters): <p>Contains the parameters used for a select.</p>
     ///   - [`output_location(Option<OutputLocation>)`](crate::operation::describe_job::DescribeJobOutput::output_location): <p>Contains the location where the data from the select job is stored.</p>
     /// - On failure, responds with [`SdkError<DescribeJobError>`](crate::operation::describe_job::DescribeJobError)
-    pub fn describe_job(
-        &self,
-    ) -> crate::operation::describe_job::builders::DescribeJobFluentBuilder {
+    pub fn describe_job(&self) -> crate::operation::describe_job::builders::DescribeJobFluentBuilder {
         crate::operation::describe_job::builders::DescribeJobFluentBuilder::new(self.handle.clone())
     }
 }

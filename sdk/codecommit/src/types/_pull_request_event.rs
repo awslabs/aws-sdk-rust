@@ -18,32 +18,25 @@ pub struct PullRequestEvent {
     pub actor_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the source and destination branches for the pull request.</p>
     #[doc(hidden)]
-    pub pull_request_created_event_metadata:
-        ::std::option::Option<crate::types::PullRequestCreatedEventMetadata>,
+    pub pull_request_created_event_metadata: ::std::option::Option<crate::types::PullRequestCreatedEventMetadata>,
     /// <p>Information about the change in status for the pull request event.</p>
     #[doc(hidden)]
-    pub pull_request_status_changed_event_metadata:
-        ::std::option::Option<crate::types::PullRequestStatusChangedEventMetadata>,
+    pub pull_request_status_changed_event_metadata: ::std::option::Option<crate::types::PullRequestStatusChangedEventMetadata>,
     /// <p>Information about the updated source branch for the pull request event. </p>
     #[doc(hidden)]
-    pub pull_request_source_reference_updated_event_metadata:
-        ::std::option::Option<crate::types::PullRequestSourceReferenceUpdatedEventMetadata>,
+    pub pull_request_source_reference_updated_event_metadata: ::std::option::Option<crate::types::PullRequestSourceReferenceUpdatedEventMetadata>,
     /// <p>Information about the change in mergability state for the pull request event.</p>
     #[doc(hidden)]
-    pub pull_request_merged_state_changed_event_metadata:
-        ::std::option::Option<crate::types::PullRequestMergedStateChangedEventMetadata>,
+    pub pull_request_merged_state_changed_event_metadata: ::std::option::Option<crate::types::PullRequestMergedStateChangedEventMetadata>,
     /// <p>Information about a pull request event.</p>
     #[doc(hidden)]
-    pub approval_rule_event_metadata:
-        ::std::option::Option<crate::types::ApprovalRuleEventMetadata>,
+    pub approval_rule_event_metadata: ::std::option::Option<crate::types::ApprovalRuleEventMetadata>,
     /// <p>Information about an approval state change for a pull request.</p>
     #[doc(hidden)]
-    pub approval_state_changed_event_metadata:
-        ::std::option::Option<crate::types::ApprovalStateChangedEventMetadata>,
+    pub approval_state_changed_event_metadata: ::std::option::Option<crate::types::ApprovalStateChangedEventMetadata>,
     /// <p>Information about an approval rule override event for a pull request.</p>
     #[doc(hidden)]
-    pub approval_rule_overridden_event_metadata:
-        ::std::option::Option<crate::types::ApprovalRuleOverriddenEventMetadata>,
+    pub approval_rule_overridden_event_metadata: ::std::option::Option<crate::types::ApprovalRuleOverriddenEventMetadata>,
 }
 impl PullRequestEvent {
     /// <p>The system-generated ID of the pull request.</p>
@@ -55,9 +48,7 @@ impl PullRequestEvent {
         self.event_date.as_ref()
     }
     /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
-    pub fn pull_request_event_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PullRequestEventType> {
+    pub fn pull_request_event_type(&self) -> ::std::option::Option<&crate::types::PullRequestEventType> {
         self.pull_request_event_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
@@ -65,47 +56,35 @@ impl PullRequestEvent {
         self.actor_arn.as_deref()
     }
     /// <p>Information about the source and destination branches for the pull request.</p>
-    pub fn pull_request_created_event_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PullRequestCreatedEventMetadata> {
+    pub fn pull_request_created_event_metadata(&self) -> ::std::option::Option<&crate::types::PullRequestCreatedEventMetadata> {
         self.pull_request_created_event_metadata.as_ref()
     }
     /// <p>Information about the change in status for the pull request event.</p>
-    pub fn pull_request_status_changed_event_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PullRequestStatusChangedEventMetadata> {
+    pub fn pull_request_status_changed_event_metadata(&self) -> ::std::option::Option<&crate::types::PullRequestStatusChangedEventMetadata> {
         self.pull_request_status_changed_event_metadata.as_ref()
     }
     /// <p>Information about the updated source branch for the pull request event. </p>
     pub fn pull_request_source_reference_updated_event_metadata(
         &self,
     ) -> ::std::option::Option<&crate::types::PullRequestSourceReferenceUpdatedEventMetadata> {
-        self.pull_request_source_reference_updated_event_metadata
-            .as_ref()
+        self.pull_request_source_reference_updated_event_metadata.as_ref()
     }
     /// <p>Information about the change in mergability state for the pull request event.</p>
     pub fn pull_request_merged_state_changed_event_metadata(
         &self,
     ) -> ::std::option::Option<&crate::types::PullRequestMergedStateChangedEventMetadata> {
-        self.pull_request_merged_state_changed_event_metadata
-            .as_ref()
+        self.pull_request_merged_state_changed_event_metadata.as_ref()
     }
     /// <p>Information about a pull request event.</p>
-    pub fn approval_rule_event_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApprovalRuleEventMetadata> {
+    pub fn approval_rule_event_metadata(&self) -> ::std::option::Option<&crate::types::ApprovalRuleEventMetadata> {
         self.approval_rule_event_metadata.as_ref()
     }
     /// <p>Information about an approval state change for a pull request.</p>
-    pub fn approval_state_changed_event_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApprovalStateChangedEventMetadata> {
+    pub fn approval_state_changed_event_metadata(&self) -> ::std::option::Option<&crate::types::ApprovalStateChangedEventMetadata> {
         self.approval_state_changed_event_metadata.as_ref()
     }
     /// <p>Information about an approval rule override event for a pull request.</p>
-    pub fn approval_rule_overridden_event_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApprovalRuleOverriddenEventMetadata> {
+    pub fn approval_rule_overridden_event_metadata(&self) -> ::std::option::Option<&crate::types::ApprovalRuleOverriddenEventMetadata> {
         self.approval_rule_overridden_event_metadata.as_ref()
     }
 }
@@ -118,43 +97,29 @@ impl PullRequestEvent {
 
 /// A builder for [`PullRequestEvent`](crate::types::PullRequestEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PullRequestEventBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) pull_request_event_type: ::std::option::Option<crate::types::PullRequestEventType>,
     pub(crate) actor_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) pull_request_created_event_metadata:
-        ::std::option::Option<crate::types::PullRequestCreatedEventMetadata>,
-    pub(crate) pull_request_status_changed_event_metadata:
-        ::std::option::Option<crate::types::PullRequestStatusChangedEventMetadata>,
+    pub(crate) pull_request_created_event_metadata: ::std::option::Option<crate::types::PullRequestCreatedEventMetadata>,
+    pub(crate) pull_request_status_changed_event_metadata: ::std::option::Option<crate::types::PullRequestStatusChangedEventMetadata>,
     pub(crate) pull_request_source_reference_updated_event_metadata:
         ::std::option::Option<crate::types::PullRequestSourceReferenceUpdatedEventMetadata>,
-    pub(crate) pull_request_merged_state_changed_event_metadata:
-        ::std::option::Option<crate::types::PullRequestMergedStateChangedEventMetadata>,
-    pub(crate) approval_rule_event_metadata:
-        ::std::option::Option<crate::types::ApprovalRuleEventMetadata>,
-    pub(crate) approval_state_changed_event_metadata:
-        ::std::option::Option<crate::types::ApprovalStateChangedEventMetadata>,
-    pub(crate) approval_rule_overridden_event_metadata:
-        ::std::option::Option<crate::types::ApprovalRuleOverriddenEventMetadata>,
+    pub(crate) pull_request_merged_state_changed_event_metadata: ::std::option::Option<crate::types::PullRequestMergedStateChangedEventMetadata>,
+    pub(crate) approval_rule_event_metadata: ::std::option::Option<crate::types::ApprovalRuleEventMetadata>,
+    pub(crate) approval_state_changed_event_metadata: ::std::option::Option<crate::types::ApprovalStateChangedEventMetadata>,
+    pub(crate) approval_rule_overridden_event_metadata: ::std::option::Option<crate::types::ApprovalRuleOverriddenEventMetadata>,
 }
 impl PullRequestEventBuilder {
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -168,10 +133,7 @@ impl PullRequestEventBuilder {
         self
     }
     /// <p>The day and time of the pull request event, in timestamp format.</p>
-    pub fn set_event_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_date = input;
         self
     }
@@ -185,17 +147,12 @@ impl PullRequestEventBuilder {
         self
     }
     /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
-    pub fn set_pull_request_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequestEventType>,
-    ) -> Self {
+    pub fn set_pull_request_event_type(mut self, input: ::std::option::Option<crate::types::PullRequestEventType>) -> Self {
         self.pull_request_event_type = input;
         self
     }
     /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
-    pub fn get_pull_request_event_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PullRequestEventType> {
+    pub fn get_pull_request_event_type(&self) -> &::std::option::Option<crate::types::PullRequestEventType> {
         &self.pull_request_event_type
     }
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
@@ -213,32 +170,21 @@ impl PullRequestEventBuilder {
         &self.actor_arn
     }
     /// <p>Information about the source and destination branches for the pull request.</p>
-    pub fn pull_request_created_event_metadata(
-        mut self,
-        input: crate::types::PullRequestCreatedEventMetadata,
-    ) -> Self {
+    pub fn pull_request_created_event_metadata(mut self, input: crate::types::PullRequestCreatedEventMetadata) -> Self {
         self.pull_request_created_event_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the source and destination branches for the pull request.</p>
-    pub fn set_pull_request_created_event_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequestCreatedEventMetadata>,
-    ) -> Self {
+    pub fn set_pull_request_created_event_metadata(mut self, input: ::std::option::Option<crate::types::PullRequestCreatedEventMetadata>) -> Self {
         self.pull_request_created_event_metadata = input;
         self
     }
     /// <p>Information about the source and destination branches for the pull request.</p>
-    pub fn get_pull_request_created_event_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::PullRequestCreatedEventMetadata> {
+    pub fn get_pull_request_created_event_metadata(&self) -> &::std::option::Option<crate::types::PullRequestCreatedEventMetadata> {
         &self.pull_request_created_event_metadata
     }
     /// <p>Information about the change in status for the pull request event.</p>
-    pub fn pull_request_status_changed_event_metadata(
-        mut self,
-        input: crate::types::PullRequestStatusChangedEventMetadata,
-    ) -> Self {
+    pub fn pull_request_status_changed_event_metadata(mut self, input: crate::types::PullRequestStatusChangedEventMetadata) -> Self {
         self.pull_request_status_changed_event_metadata = ::std::option::Option::Some(input);
         self
     }
@@ -251,9 +197,7 @@ impl PullRequestEventBuilder {
         self
     }
     /// <p>Information about the change in status for the pull request event.</p>
-    pub fn get_pull_request_status_changed_event_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::PullRequestStatusChangedEventMetadata> {
+    pub fn get_pull_request_status_changed_event_metadata(&self) -> &::std::option::Option<crate::types::PullRequestStatusChangedEventMetadata> {
         &self.pull_request_status_changed_event_metadata
     }
     /// <p>Information about the updated source branch for the pull request event. </p>
@@ -261,8 +205,7 @@ impl PullRequestEventBuilder {
         mut self,
         input: crate::types::PullRequestSourceReferenceUpdatedEventMetadata,
     ) -> Self {
-        self.pull_request_source_reference_updated_event_metadata =
-            ::std::option::Option::Some(input);
+        self.pull_request_source_reference_updated_event_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the updated source branch for the pull request event. </p>
@@ -280,10 +223,7 @@ impl PullRequestEventBuilder {
         &self.pull_request_source_reference_updated_event_metadata
     }
     /// <p>Information about the change in mergability state for the pull request event.</p>
-    pub fn pull_request_merged_state_changed_event_metadata(
-        mut self,
-        input: crate::types::PullRequestMergedStateChangedEventMetadata,
-    ) -> Self {
+    pub fn pull_request_merged_state_changed_event_metadata(mut self, input: crate::types::PullRequestMergedStateChangedEventMetadata) -> Self {
         self.pull_request_merged_state_changed_event_metadata = ::std::option::Option::Some(input);
         self
     }
@@ -302,32 +242,21 @@ impl PullRequestEventBuilder {
         &self.pull_request_merged_state_changed_event_metadata
     }
     /// <p>Information about a pull request event.</p>
-    pub fn approval_rule_event_metadata(
-        mut self,
-        input: crate::types::ApprovalRuleEventMetadata,
-    ) -> Self {
+    pub fn approval_rule_event_metadata(mut self, input: crate::types::ApprovalRuleEventMetadata) -> Self {
         self.approval_rule_event_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a pull request event.</p>
-    pub fn set_approval_rule_event_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalRuleEventMetadata>,
-    ) -> Self {
+    pub fn set_approval_rule_event_metadata(mut self, input: ::std::option::Option<crate::types::ApprovalRuleEventMetadata>) -> Self {
         self.approval_rule_event_metadata = input;
         self
     }
     /// <p>Information about a pull request event.</p>
-    pub fn get_approval_rule_event_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApprovalRuleEventMetadata> {
+    pub fn get_approval_rule_event_metadata(&self) -> &::std::option::Option<crate::types::ApprovalRuleEventMetadata> {
         &self.approval_rule_event_metadata
     }
     /// <p>Information about an approval state change for a pull request.</p>
-    pub fn approval_state_changed_event_metadata(
-        mut self,
-        input: crate::types::ApprovalStateChangedEventMetadata,
-    ) -> Self {
+    pub fn approval_state_changed_event_metadata(mut self, input: crate::types::ApprovalStateChangedEventMetadata) -> Self {
         self.approval_state_changed_event_metadata = ::std::option::Option::Some(input);
         self
     }
@@ -340,16 +269,11 @@ impl PullRequestEventBuilder {
         self
     }
     /// <p>Information about an approval state change for a pull request.</p>
-    pub fn get_approval_state_changed_event_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApprovalStateChangedEventMetadata> {
+    pub fn get_approval_state_changed_event_metadata(&self) -> &::std::option::Option<crate::types::ApprovalStateChangedEventMetadata> {
         &self.approval_state_changed_event_metadata
     }
     /// <p>Information about an approval rule override event for a pull request.</p>
-    pub fn approval_rule_overridden_event_metadata(
-        mut self,
-        input: crate::types::ApprovalRuleOverriddenEventMetadata,
-    ) -> Self {
+    pub fn approval_rule_overridden_event_metadata(mut self, input: crate::types::ApprovalRuleOverriddenEventMetadata) -> Self {
         self.approval_rule_overridden_event_metadata = ::std::option::Option::Some(input);
         self
     }
@@ -362,9 +286,7 @@ impl PullRequestEventBuilder {
         self
     }
     /// <p>Information about an approval rule override event for a pull request.</p>
-    pub fn get_approval_rule_overridden_event_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApprovalRuleOverriddenEventMetadata> {
+    pub fn get_approval_rule_overridden_event_metadata(&self) -> &::std::option::Option<crate::types::ApprovalRuleOverriddenEventMetadata> {
         &self.approval_rule_overridden_event_metadata
     }
     /// Consumes the builder and constructs a [`PullRequestEvent`](crate::types::PullRequestEvent).
@@ -375,12 +297,9 @@ impl PullRequestEventBuilder {
             pull_request_event_type: self.pull_request_event_type,
             actor_arn: self.actor_arn,
             pull_request_created_event_metadata: self.pull_request_created_event_metadata,
-            pull_request_status_changed_event_metadata: self
-                .pull_request_status_changed_event_metadata,
-            pull_request_source_reference_updated_event_metadata: self
-                .pull_request_source_reference_updated_event_metadata,
-            pull_request_merged_state_changed_event_metadata: self
-                .pull_request_merged_state_changed_event_metadata,
+            pull_request_status_changed_event_metadata: self.pull_request_status_changed_event_metadata,
+            pull_request_source_reference_updated_event_metadata: self.pull_request_source_reference_updated_event_metadata,
+            pull_request_merged_state_changed_event_metadata: self.pull_request_merged_state_changed_event_metadata,
             approval_rule_event_metadata: self.approval_rule_event_metadata,
             approval_state_changed_event_metadata: self.approval_state_changed_event_metadata,
             approval_rule_overridden_event_metadata: self.approval_rule_overridden_event_metadata,

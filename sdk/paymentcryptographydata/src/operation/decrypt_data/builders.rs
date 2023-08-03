@@ -10,10 +10,7 @@ impl DecryptDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::decrypt_data::DecryptDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decrypt_data::DecryptDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decrypt_data::DecryptDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.decrypt_data();
         fluent_builder.inner = self;
@@ -55,10 +52,7 @@ impl DecryptDataFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::decrypt_data::DecryptData,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::decrypt_data::DecryptData, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::decrypt_data::DecryptDataError>,
     > {
         let handle = self.handle.clone();
@@ -69,10 +63,7 @@ impl DecryptDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -114,27 +105,18 @@ impl DecryptDataFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::decrypt_data::DecryptData,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::decrypt_data::DecryptData, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::decrypt_data::DecryptDataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
@@ -157,25 +139,17 @@ impl DecryptDataFluentBuilder {
         self.inner.get_cipher_text()
     }
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
-    pub fn decryption_attributes(
-        mut self,
-        input: crate::types::EncryptionDecryptionAttributes,
-    ) -> Self {
+    pub fn decryption_attributes(mut self, input: crate::types::EncryptionDecryptionAttributes) -> Self {
         self.inner = self.inner.decryption_attributes(input);
         self
     }
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
-    pub fn set_decryption_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>,
-    ) -> Self {
+    pub fn set_decryption_attributes(mut self, input: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>) -> Self {
         self.inner = self.inner.set_decryption_attributes(input);
         self
     }
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
-    pub fn get_decryption_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
+    pub fn get_decryption_attributes(&self) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
         self.inner.get_decryption_attributes()
     }
 }

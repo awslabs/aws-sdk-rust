@@ -28,9 +28,7 @@ impl ModifyClusterOutput {
 
 /// A builder for [`ModifyClusterOutput`](crate::operation::modify_cluster::ModifyClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterOutputBuilder {
     pub(crate) step_concurrency_level: ::std::option::Option<i32>,
     _request_id: Option<String>,

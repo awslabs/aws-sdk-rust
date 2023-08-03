@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::put_bucket_inventory_configuration::builders::PutBucketInventoryConfigurationFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::put_bucket_inventory_configuration::builders::PutBucketInventoryConfigurationFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`PutBucketInventoryConfigurationOutput`](crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutBucketInventoryConfigurationError>`](crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationError)
-    pub fn put_bucket_inventory_configuration(&self) -> crate::operation::put_bucket_inventory_configuration::builders::PutBucketInventoryConfigurationFluentBuilder{
+    pub fn put_bucket_inventory_configuration(
+        &self,
+    ) -> crate::operation::put_bucket_inventory_configuration::builders::PutBucketInventoryConfigurationFluentBuilder {
         crate::operation::put_bucket_inventory_configuration::builders::PutBucketInventoryConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

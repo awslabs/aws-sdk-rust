@@ -29,16 +29,14 @@ impl UpdateUserHierarchyGroupNameInput {
 }
 impl UpdateUserHierarchyGroupNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserHierarchyGroupNameInput`](crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput).
-    pub fn builder() -> crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameInputBuilder{
+    pub fn builder() -> crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameInputBuilder {
         crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserHierarchyGroupNameInput`](crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserHierarchyGroupNameInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_group_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl UpdateUserHierarchyGroupNameInputBuilder {
         &self.name
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn set_hierarchy_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_group_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl UpdateUserHierarchyGroupNameInputBuilder {
         crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput {
-                name: self.name,
-                hierarchy_group_id: self.hierarchy_group_id,
-                instance_id: self.instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput {
+            name: self.name,
+            hierarchy_group_id: self.hierarchy_group_id,
+            instance_id: self.instance_id,
+        })
     }
 }

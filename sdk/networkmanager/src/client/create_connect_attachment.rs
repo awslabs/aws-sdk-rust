@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateConnectAttachmentOutput`](crate::operation::create_connect_attachment::CreateConnectAttachmentOutput) with field(s):
     ///   - [`connect_attachment(Option<ConnectAttachment>)`](crate::operation::create_connect_attachment::CreateConnectAttachmentOutput::connect_attachment): <p>The response to a Connect attachment request.</p>
     /// - On failure, responds with [`SdkError<CreateConnectAttachmentError>`](crate::operation::create_connect_attachment::CreateConnectAttachmentError)
-    pub fn create_connect_attachment(
-        &self,
-    ) -> crate::operation::create_connect_attachment::builders::CreateConnectAttachmentFluentBuilder
-    {
+    pub fn create_connect_attachment(&self) -> crate::operation::create_connect_attachment::builders::CreateConnectAttachmentFluentBuilder {
         crate::operation::create_connect_attachment::builders::CreateConnectAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

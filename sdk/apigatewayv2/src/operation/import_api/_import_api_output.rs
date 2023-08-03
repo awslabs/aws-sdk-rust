@@ -44,9 +44,7 @@ pub struct ImportApiOutput {
     pub route_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>A collection of tags associated with the API.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A version identifier for the API.</p>
     #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
@@ -109,11 +107,7 @@ impl ImportApiOutput {
         self.route_selection_expression.as_deref()
     }
     /// <p>A collection of tags associated with the API.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A version identifier for the API.</p>
@@ -139,9 +133,7 @@ impl ImportApiOutput {
 
 /// A builder for [`ImportApiOutput`](crate::operation::import_api::ImportApiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportApiOutputBuilder {
     pub(crate) api_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) api_gateway_managed: ::std::option::Option<bool>,
@@ -156,9 +148,7 @@ pub struct ImportApiOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     pub(crate) route_selection_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -207,25 +197,17 @@ impl ImportApiOutputBuilder {
         &self.api_id
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn api_key_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_key_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_selection_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn set_api_key_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_key_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key_selection_expression = input;
         self
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn get_api_key_selection_expression(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_api_key_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_selection_expression
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
@@ -234,10 +216,7 @@ impl ImportApiOutputBuilder {
         self
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
-    pub fn set_cors_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::Cors>,
-    ) -> Self {
+    pub fn set_cors_configuration(mut self, input: ::std::option::Option<crate::types::Cors>) -> Self {
         self.cors_configuration = input;
         self
     }
@@ -251,10 +230,7 @@ impl ImportApiOutputBuilder {
         self
     }
     /// <p>The timestamp when the API was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -316,17 +292,12 @@ impl ImportApiOutputBuilder {
         self
     }
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
-    pub fn set_import_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_import_info(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.import_info = input;
         self
     }
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
-    pub fn get_import_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_info(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.import_info
     }
     /// <p>The name of the API.</p>
@@ -349,10 +320,7 @@ impl ImportApiOutputBuilder {
         self
     }
     /// <p>The API protocol.</p>
-    pub fn set_protocol_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolType>,
-    ) -> Self {
+    pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::ProtocolType>) -> Self {
         self.protocol_type = input;
         self
     }
@@ -361,18 +329,12 @@ impl ImportApiOutputBuilder {
         &self.protocol_type
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    pub fn route_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_selection_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    pub fn set_route_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_selection_expression = input;
         self
     }
@@ -385,32 +347,19 @@ impl ImportApiOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of tags associated with the API.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A collection of tags associated with the API.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A collection of tags associated with the API.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A version identifier for the API.</p>
@@ -439,10 +388,7 @@ impl ImportApiOutputBuilder {
         self
     }
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.warnings = input;
         self
     }

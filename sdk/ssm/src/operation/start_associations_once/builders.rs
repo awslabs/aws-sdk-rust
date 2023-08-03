@@ -37,10 +37,7 @@ impl StartAssociationsOnceFluentBuilder {
         }
     }
     /// Access the StartAssociationsOnce as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_associations_once::builders::StartAssociationsOnceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_associations_once::builders::StartAssociationsOnceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartAssociationsOnceFluentBuilder {
             crate::operation::start_associations_once::StartAssociationsOnce,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_associations_once::StartAssociationsOnceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_associations_once::StartAssociationsOnceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartAssociationsOnceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartAssociationsOnceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_associations_once::StartAssociationsOnceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_associations_once::StartAssociationsOnceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_associations_once::StartAssociationsOnceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartAssociationsOnceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_associations_once::StartAssociationsOnceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_associations_once::StartAssociationsOnceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_associations_once::StartAssociationsOnceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartAssociationsOnceFluentBuilder {
             crate::operation::start_associations_once::StartAssociationsOnce,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_associations_once::StartAssociationsOnceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_associations_once::StartAssociationsOnceError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +114,17 @@ impl StartAssociationsOnceFluentBuilder {
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
     ///
     /// <p>The association IDs that you want to run immediately and only one time.</p>
-    pub fn association_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_ids(input.into());
         self
     }
     /// <p>The association IDs that you want to run immediately and only one time.</p>
-    pub fn set_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_association_ids(input);
         self
     }
     /// <p>The association IDs that you want to run immediately and only one time.</p>
-    pub fn get_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_association_ids()
     }
 }

@@ -22,35 +22,26 @@ impl GetInAppMessagesInput {
 }
 impl GetInAppMessagesInput {
     /// Creates a new builder-style object to manufacture [`GetInAppMessagesInput`](crate::operation::get_in_app_messages::GetInAppMessagesInput).
-    pub fn builder() -> crate::operation::get_in_app_messages::builders::GetInAppMessagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_in_app_messages::builders::GetInAppMessagesInputBuilder {
         crate::operation::get_in_app_messages::builders::GetInAppMessagesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInAppMessagesInput`](crate::operation::get_in_app_messages::GetInAppMessagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInAppMessagesInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl GetInAppMessagesInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl GetInAppMessagesInputBuilder {
     /// Consumes the builder and constructs a [`GetInAppMessagesInput`](crate::operation::get_in_app_messages::GetInAppMessagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_in_app_messages::GetInAppMessagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_in_app_messages::GetInAppMessagesInput {
-                application_id: self.application_id,
-                endpoint_id: self.endpoint_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_in_app_messages::GetInAppMessagesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_in_app_messages::GetInAppMessagesInput {
+            application_id: self.application_id,
+            endpoint_id: self.endpoint_id,
+        })
     }
 }

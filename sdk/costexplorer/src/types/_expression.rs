@@ -94,9 +94,7 @@ impl Expression {
 
 /// A builder for [`Expression`](crate::types::Expression).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExpressionBuilder {
     pub(crate) or: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
     pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
@@ -118,10 +116,7 @@ impl ExpressionBuilder {
         self
     }
     /// <p>Return results that match either <code>Dimension</code> object.</p>
-    pub fn set_or(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
-    ) -> Self {
+    pub fn set_or(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>) -> Self {
         self.or = input;
         self
     }
@@ -141,10 +136,7 @@ impl ExpressionBuilder {
         self
     }
     /// <p>Return results that match both <code>Dimension</code> objects.</p>
-    pub fn set_and(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
-    ) -> Self {
+    pub fn set_and(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>) -> Self {
         self.and = input;
         self
     }
@@ -153,18 +145,12 @@ impl ExpressionBuilder {
         &self.and
     }
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
-    pub fn not(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Expression>>,
-    ) -> Self {
+    pub fn not(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Expression>>) -> Self {
         self.not = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
-    pub fn set_not(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::Expression>>,
-    ) -> Self {
+    pub fn set_not(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::Expression>>) -> Self {
         self.not = input;
         self
     }
@@ -178,10 +164,7 @@ impl ExpressionBuilder {
         self
     }
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionValues>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<crate::types::DimensionValues>) -> Self {
         self.dimensions = input;
         self
     }
@@ -209,10 +192,7 @@ impl ExpressionBuilder {
         self
     }
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
-    pub fn set_cost_categories(
-        mut self,
-        input: ::std::option::Option<crate::types::CostCategoryValues>,
-    ) -> Self {
+    pub fn set_cost_categories(mut self, input: ::std::option::Option<crate::types::CostCategoryValues>) -> Self {
         self.cost_categories = input;
         self
     }

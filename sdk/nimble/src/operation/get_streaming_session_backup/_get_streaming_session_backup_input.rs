@@ -22,16 +22,14 @@ impl GetStreamingSessionBackupInput {
 }
 impl GetStreamingSessionBackupInput {
     /// Creates a new builder-style object to manufacture [`GetStreamingSessionBackupInput`](crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput).
-    pub fn builder() -> crate::operation::get_streaming_session_backup::builders::GetStreamingSessionBackupInputBuilder{
+    pub fn builder() -> crate::operation::get_streaming_session_backup::builders::GetStreamingSessionBackupInputBuilder {
         crate::operation::get_streaming_session_backup::builders::GetStreamingSessionBackupInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStreamingSessionBackupInput`](crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStreamingSessionBackupInputBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl GetStreamingSessionBackupInputBuilder {
         crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput {
-                backup_id: self.backup_id,
-                studio_id: self.studio_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput {
+            backup_id: self.backup_id,
+            studio_id: self.studio_id,
+        })
     }
 }

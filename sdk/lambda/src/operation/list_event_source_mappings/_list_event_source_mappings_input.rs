@@ -68,18 +68,14 @@ impl ListEventSourceMappingsInput {
 }
 impl ListEventSourceMappingsInput {
     /// Creates a new builder-style object to manufacture [`ListEventSourceMappingsInput`](crate::operation::list_event_source_mappings::ListEventSourceMappingsInput).
-    pub fn builder(
-    ) -> crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder {
         crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventSourceMappingsInput`](crate::operation::list_event_source_mappings::ListEventSourceMappingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventSourceMappingsInputBuilder {
     pub(crate) event_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
@@ -96,10 +92,7 @@ impl ListEventSourceMappingsInputBuilder {
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -112,10 +105,7 @@ impl ListEventSourceMappingsInputBuilder {
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source_arn = input;
         self
     }
@@ -140,10 +130,7 @@ impl ListEventSourceMappingsInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -156,10 +143,7 @@ impl ListEventSourceMappingsInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -210,13 +194,11 @@ impl ListEventSourceMappingsInputBuilder {
         crate::operation::list_event_source_mappings::ListEventSourceMappingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_event_source_mappings::ListEventSourceMappingsInput {
-                event_source_arn: self.event_source_arn,
-                function_name: self.function_name,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_event_source_mappings::ListEventSourceMappingsInput {
+            event_source_arn: self.event_source_arn,
+            function_name: self.function_name,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

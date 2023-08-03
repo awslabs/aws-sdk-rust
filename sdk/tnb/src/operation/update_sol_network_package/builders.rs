@@ -28,8 +28,7 @@ impl UpdateSolNetworkPackageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSolNetworkPackageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageInputBuilder,
+    inner: crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageInputBuilder,
 }
 impl UpdateSolNetworkPackageFluentBuilder {
     /// Creates a new `UpdateSolNetworkPackage`.
@@ -40,10 +39,7 @@ impl UpdateSolNetworkPackageFluentBuilder {
         }
     }
     /// Access the UpdateSolNetworkPackage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl UpdateSolNetworkPackageFluentBuilder {
             crate::operation::update_sol_network_package::UpdateSolNetworkPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_package::UpdateSolNetworkPackageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl UpdateSolNetworkPackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl UpdateSolNetworkPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_package::UpdateSolNetworkPackageError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl UpdateSolNetworkPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_package::UpdateSolNetworkPackageError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl UpdateSolNetworkPackageFluentBuilder {
             crate::operation::update_sol_network_package::UpdateSolNetworkPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_package::UpdateSolNetworkPackageError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +131,12 @@ impl UpdateSolNetworkPackageFluentBuilder {
         self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn set_nsd_operational_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NsdOperationalState>,
-    ) -> Self {
+    pub fn set_nsd_operational_state(mut self, input: ::std::option::Option<crate::types::NsdOperationalState>) -> Self {
         self.inner = self.inner.set_nsd_operational_state(input);
         self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn get_nsd_operational_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::NsdOperationalState> {
+    pub fn get_nsd_operational_state(&self) -> &::std::option::Option<crate::types::NsdOperationalState> {
         self.inner.get_nsd_operational_state()
     }
 }

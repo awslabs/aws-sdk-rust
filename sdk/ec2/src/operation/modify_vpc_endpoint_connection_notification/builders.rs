@@ -5,16 +5,16 @@ pub use crate::operation::modify_vpc_endpoint_connection_notification::_modify_v
 
 impl ModifyVpcEndpointConnectionNotificationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.modify_vpc_endpoint_connection_notification();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointConnectionNotificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder,
+    inner: crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder,
 }
 impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
     /// Creates a new `ModifyVpcEndpointConnectionNotification`.
@@ -37,15 +37,24 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
         }
     }
     /// Access the ModifyVpcEndpointConnectionNotification as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotification, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotification,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotification, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotification,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -109,18 +134,12 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the notification.</p>
-    pub fn connection_notification_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_notification_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_notification_id(input.into());
         self
     }
     /// <p>The ID of the notification.</p>
-    pub fn set_connection_notification_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_notification_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_notification_id(input);
         self
     }
@@ -129,18 +148,12 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
         self.inner.get_connection_notification_id()
     }
     /// <p>The ARN for the SNS topic for the notification.</p>
-    pub fn connection_notification_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_notification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_notification_arn(input.into());
         self
     }
     /// <p>The ARN for the SNS topic for the notification.</p>
-    pub fn set_connection_notification_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_notification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_notification_arn(input);
         self
     }
@@ -153,25 +166,17 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
     /// To override the contents of this collection use [`set_connection_events`](Self::set_connection_events).
     ///
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn connection_events(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_events(input.into());
         self
     }
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn set_connection_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connection_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_connection_events(input);
         self
     }
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn get_connection_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connection_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_connection_events()
     }
 }

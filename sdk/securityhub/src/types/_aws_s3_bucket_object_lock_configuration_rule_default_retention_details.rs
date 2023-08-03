@@ -30,18 +30,14 @@ impl AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
 }
 impl AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsBuilder {
         crate::types::builders::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsBuilder {
     pub(crate) days: ::std::option::Option<i32>,
     pub(crate) mode: ::std::option::Option<::std::string::String>,
@@ -91,9 +87,7 @@ impl AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsBuilder {
         &self.years
     }
     /// Consumes the builder and constructs a [`AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
+    pub fn build(self) -> crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
         crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
             days: self.days.unwrap_or_default(),
             mode: self.mode,

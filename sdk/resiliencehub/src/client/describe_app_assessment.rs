@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAppAssessmentOutput`](crate::operation::describe_app_assessment::DescribeAppAssessmentOutput) with field(s):
     ///   - [`assessment(Option<AppAssessment>)`](crate::operation::describe_app_assessment::DescribeAppAssessmentOutput::assessment): <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
     /// - On failure, responds with [`SdkError<DescribeAppAssessmentError>`](crate::operation::describe_app_assessment::DescribeAppAssessmentError)
-    pub fn describe_app_assessment(
-        &self,
-    ) -> crate::operation::describe_app_assessment::builders::DescribeAppAssessmentFluentBuilder
-    {
-        crate::operation::describe_app_assessment::builders::DescribeAppAssessmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_app_assessment(&self) -> crate::operation::describe_app_assessment::builders::DescribeAppAssessmentFluentBuilder {
+        crate::operation::describe_app_assessment::builders::DescribeAppAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

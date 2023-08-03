@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<GenerateEmbedUrlForRegisteredUserError>`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError)
-    pub fn generate_embed_url_for_registered_user(&self) -> crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserFluentBuilder{
+    pub fn generate_embed_url_for_registered_user(
+        &self,
+    ) -> crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserFluentBuilder {
         crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserFluentBuilder::new(self.handle.clone())
     }
 }

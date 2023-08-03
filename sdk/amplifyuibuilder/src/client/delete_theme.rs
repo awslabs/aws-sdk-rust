@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::set_id): <p>The unique ID of the theme to delete.</p>
     /// - On success, responds with [`DeleteThemeOutput`](crate::operation::delete_theme::DeleteThemeOutput)
     /// - On failure, responds with [`SdkError<DeleteThemeError>`](crate::operation::delete_theme::DeleteThemeError)
-    pub fn delete_theme(
-        &self,
-    ) -> crate::operation::delete_theme::builders::DeleteThemeFluentBuilder {
+    pub fn delete_theme(&self) -> crate::operation::delete_theme::builders::DeleteThemeFluentBuilder {
         crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::new(self.handle.clone())
     }
 }

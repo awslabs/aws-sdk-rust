@@ -51,18 +51,14 @@ impl RegisterContainerImageInput {
 }
 impl RegisterContainerImageInput {
     /// Creates a new builder-style object to manufacture [`RegisterContainerImageInput`](crate::operation::register_container_image::RegisterContainerImageInput).
-    pub fn builder(
-    ) -> crate::operation::register_container_image::builders::RegisterContainerImageInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_container_image::builders::RegisterContainerImageInputBuilder {
         crate::operation::register_container_image::builders::RegisterContainerImageInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterContainerImageInput`](crate::operation::register_container_image::RegisterContainerImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterContainerImageInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
@@ -147,16 +143,12 @@ impl RegisterContainerImageInputBuilder {
     /// Consumes the builder and constructs a [`RegisterContainerImageInput`](crate::operation::register_container_image::RegisterContainerImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_container_image::RegisterContainerImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_container_image::RegisterContainerImageInput {
-                service_name: self.service_name,
-                label: self.label,
-                digest: self.digest,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_container_image::RegisterContainerImageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::register_container_image::RegisterContainerImageInput {
+            service_name: self.service_name,
+            label: self.label,
+            digest: self.digest,
+        })
     }
 }

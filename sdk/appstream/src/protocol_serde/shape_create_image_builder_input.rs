@@ -36,10 +36,7 @@ pub fn ser_create_image_builder_input(
     if let Some(var_11) = &input.domain_join_info {
         #[allow(unused_mut)]
         let mut object_12 = object.key("DomainJoinInfo").start_object();
-        crate::protocol_serde::shape_domain_join_info::ser_domain_join_info(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_domain_join_info::ser_domain_join_info(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.appstream_agent_version {
@@ -61,10 +58,7 @@ pub fn ser_create_image_builder_input(
             {
                 #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_access_endpoint::ser_access_endpoint(
-                    &mut object_21,
-                    item_20,
-                )?;
+                crate::protocol_serde::shape_access_endpoint::ser_access_endpoint(&mut object_21, item_20)?;
                 object_21.finish();
             }
         }

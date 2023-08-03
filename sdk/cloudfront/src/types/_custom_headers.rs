@@ -30,9 +30,7 @@ impl CustomHeaders {
 
 /// A builder for [`CustomHeaders`](crate::types::CustomHeaders).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomHeadersBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>>,
@@ -64,17 +62,12 @@ impl CustomHeadersBuilder {
         self
     }
     /// <p> <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>>) -> Self {
         self.items = input;
         self
     }
     /// <p> <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`CustomHeaders`](crate::types::CustomHeaders).

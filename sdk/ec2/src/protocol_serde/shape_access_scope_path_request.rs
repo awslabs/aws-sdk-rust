@@ -7,16 +7,12 @@ pub fn ser_access_scope_path_request(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Source");
     if let Some(var_2) = &input.source {
-        crate::protocol_serde::shape_path_statement_request::ser_path_statement_request(
-            scope_1, var_2,
-        )?;
+        crate::protocol_serde::shape_path_statement_request::ser_path_statement_request(scope_1, var_2)?;
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Destination");
     if let Some(var_4) = &input.destination {
-        crate::protocol_serde::shape_path_statement_request::ser_path_statement_request(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_path_statement_request::ser_path_statement_request(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("ThroughResource");

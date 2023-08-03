@@ -30,7 +30,7 @@ impl DeleteMatchmakingRuleSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMatchmakingRuleSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetInputBuilder,
+    inner: crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetInputBuilder,
 }
 impl DeleteMatchmakingRuleSetFluentBuilder {
     /// Creates a new `DeleteMatchmakingRuleSet`.
@@ -41,7 +41,7 @@ impl DeleteMatchmakingRuleSetFluentBuilder {
         }
     }
     /// Access the DeleteMatchmakingRuleSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl DeleteMatchmakingRuleSetFluentBuilder {
             crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl DeleteMatchmakingRuleSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl DeleteMatchmakingRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl DeleteMatchmakingRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl DeleteMatchmakingRuleSetFluentBuilder {
             crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError>,
     > {
         self.customize_middleware().await
     }

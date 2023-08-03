@@ -30,27 +30,19 @@ impl GetCommitInput {
 
 /// A builder for [`GetCommitInput`](crate::operation::get_commit::GetCommitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCommitInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCommitInputBuilder {
     /// <p>The name of the repository to which the commit was made.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to which the commit was made.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -73,12 +65,7 @@ impl GetCommitInputBuilder {
         &self.commit_id
     }
     /// Consumes the builder and constructs a [`GetCommitInput`](crate::operation::get_commit::GetCommitInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_commit::GetCommitInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_commit::GetCommitInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_commit::GetCommitInput {
             repository_name: self.repository_name,
             commit_id: self.commit_id,

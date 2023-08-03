@@ -5,16 +5,16 @@ pub use crate::operation::associate_website_authorization_provider::_associate_w
 
 impl AssociateWebsiteAuthorizationProviderInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_website_authorization_provider();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -23,13 +23,11 @@ impl AssociateWebsiteAuthorizationProviderInputBuilder {
 /// Fluent builder constructing a request to `AssociateWebsiteAuthorizationProvider`.
 ///
 /// <p>Associates a website authorization provider with a specified fleet. This is used to authorize users against associated websites in the company network.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateWebsiteAuthorizationProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderInputBuilder,
+    inner: crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderInputBuilder,
 }
 impl AssociateWebsiteAuthorizationProviderFluentBuilder {
     /// Creates a new `AssociateWebsiteAuthorizationProvider`.
@@ -40,15 +38,22 @@ impl AssociateWebsiteAuthorizationProviderFluentBuilder {
         }
     }
     /// Access the AssociateWebsiteAuthorizationProvider as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProvider, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProvider,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl AssociateWebsiteAuthorizationProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +90,26 @@ impl AssociateWebsiteAuthorizationProviderFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProvider, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProvider,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the fleet.</p>
@@ -112,25 +127,17 @@ impl AssociateWebsiteAuthorizationProviderFluentBuilder {
         self.inner.get_fleet_arn()
     }
     /// <p>The authorization provider type.</p>
-    pub fn authorization_provider_type(
-        mut self,
-        input: crate::types::AuthorizationProviderType,
-    ) -> Self {
+    pub fn authorization_provider_type(mut self, input: crate::types::AuthorizationProviderType) -> Self {
         self.inner = self.inner.authorization_provider_type(input);
         self
     }
     /// <p>The authorization provider type.</p>
-    pub fn set_authorization_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizationProviderType>,
-    ) -> Self {
+    pub fn set_authorization_provider_type(mut self, input: ::std::option::Option<crate::types::AuthorizationProviderType>) -> Self {
         self.inner = self.inner.set_authorization_provider_type(input);
         self
     }
     /// <p>The authorization provider type.</p>
-    pub fn get_authorization_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthorizationProviderType> {
+    pub fn get_authorization_provider_type(&self) -> &::std::option::Option<crate::types::AuthorizationProviderType> {
         self.inner.get_authorization_provider_type()
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>

@@ -9,8 +9,7 @@ pub struct ListFirewallRuleGroupAssociationsOutput {
     /// <p>A list of your firewall rule group associations.</p>
     /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
-    pub firewall_rule_group_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupAssociation>>,
+    pub firewall_rule_group_associations: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupAssociation>>,
     _request_id: Option<String>,
 }
 impl ListFirewallRuleGroupAssociationsOutput {
@@ -20,9 +19,7 @@ impl ListFirewallRuleGroupAssociationsOutput {
     }
     /// <p>A list of your firewall rule group associations.</p>
     /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_rule_group_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FirewallRuleGroupAssociation]> {
+    pub fn firewall_rule_group_associations(&self) -> ::std::option::Option<&[crate::types::FirewallRuleGroupAssociation]> {
         self.firewall_rule_group_associations.as_deref()
     }
 }
@@ -33,20 +30,17 @@ impl ::aws_http::request_id::RequestId for ListFirewallRuleGroupAssociationsOutp
 }
 impl ListFirewallRuleGroupAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupAssociationsOutput`](crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsOutput).
-    pub fn builder() -> crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsOutputBuilder {
         crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallRuleGroupAssociationsOutput`](crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallRuleGroupAssociationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) firewall_rule_group_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupAssociation>>,
+    pub(crate) firewall_rule_group_associations: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupAssociation>>,
     _request_id: Option<String>,
 }
 impl ListFirewallRuleGroupAssociationsOutputBuilder {
@@ -70,10 +64,7 @@ impl ListFirewallRuleGroupAssociationsOutputBuilder {
     ///
     /// <p>A list of your firewall rule group associations.</p>
     /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_rule_group_associations(
-        mut self,
-        input: crate::types::FirewallRuleGroupAssociation,
-    ) -> Self {
+    pub fn firewall_rule_group_associations(mut self, input: crate::types::FirewallRuleGroupAssociation) -> Self {
         let mut v = self.firewall_rule_group_associations.unwrap_or_default();
         v.push(input);
         self.firewall_rule_group_associations = ::std::option::Option::Some(v);
@@ -90,9 +81,7 @@ impl ListFirewallRuleGroupAssociationsOutputBuilder {
     }
     /// <p>A list of your firewall rule group associations.</p>
     /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
-    pub fn get_firewall_rule_group_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupAssociation>> {
+    pub fn get_firewall_rule_group_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupAssociation>> {
         &self.firewall_rule_group_associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -105,12 +94,10 @@ impl ListFirewallRuleGroupAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFirewallRuleGroupAssociationsOutput`](crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsOutput).
-    pub fn build(self) -> crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsOutput{
+    pub fn build(self) -> crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsOutput {
         crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsOutput {
-            next_token: self.next_token
-            ,
-            firewall_rule_group_associations: self.firewall_rule_group_associations
-            ,
+            next_token: self.next_token,
+            firewall_rule_group_associations: self.firewall_rule_group_associations,
             _request_id: self._request_id,
         }
     }

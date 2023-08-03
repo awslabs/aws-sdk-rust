@@ -44,9 +44,7 @@ impl Route {
 
 /// A builder for [`Route`](crate::types::Route).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteBuilder {
     pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,
     pub(crate) target_type: ::std::option::Option<crate::types::TargetType>,
@@ -60,10 +58,7 @@ impl RouteBuilder {
         self
     }
     /// <p>The type of destination for the route.</p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationType>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
         self.destination_type = input;
         self
     }
@@ -77,10 +72,7 @@ impl RouteBuilder {
         self
     }
     /// <p>The type of target for the route.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
         self.target_type = input;
         self
     }

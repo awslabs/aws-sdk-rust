@@ -31,16 +31,14 @@ impl ::aws_http::request_id::RequestId for DescribeDetectorModelAnalysisOutput {
 }
 impl DescribeDetectorModelAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorModelAnalysisOutput`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput).
-    pub fn builder() -> crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisOutputBuilder{
+    pub fn builder() -> crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisOutputBuilder {
         crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDetectorModelAnalysisOutput`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDetectorModelAnalysisOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AnalysisStatus>,
     _request_id: Option<String>,
@@ -62,10 +60,7 @@ impl DescribeDetectorModelAnalysisOutputBuilder {
     /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
     /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AnalysisStatus>) -> Self {
         self.status = input;
         self
     }
@@ -88,10 +83,7 @@ impl DescribeDetectorModelAnalysisOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDetectorModelAnalysisOutput`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput
-    {
+    pub fn build(self) -> crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput {
         crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput {
             status: self.status,
             _request_id: self._request_id,

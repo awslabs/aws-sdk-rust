@@ -58,9 +58,7 @@ impl Node {
 
 /// A builder for [`Node`](crate::types::Node).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeBuilder {
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<crate::types::Endpoint>,
@@ -104,10 +102,7 @@ impl NodeBuilder {
         self
     }
     /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
-    pub fn set_node_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_node_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.node_create_time = input;
         self
     }
@@ -116,18 +111,12 @@ impl NodeBuilder {
         &self.node_create_time
     }
     /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -150,18 +139,12 @@ impl NodeBuilder {
         &self.node_status
     }
     /// <p>The status of the parameter group associated with this node. For example, <code>in-sync</code>.</p>
-    pub fn parameter_group_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the parameter group associated with this node. For example, <code>in-sync</code>.</p>
-    pub fn set_parameter_group_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_status = input;
         self
     }

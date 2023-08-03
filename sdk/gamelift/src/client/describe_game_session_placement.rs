@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeGameSessionPlacementOutput`](crate::operation::describe_game_session_placement::DescribeGameSessionPlacementOutput) with field(s):
     ///   - [`game_session_placement(Option<GameSessionPlacement>)`](crate::operation::describe_game_session_placement::DescribeGameSessionPlacementOutput::game_session_placement): <p>Object that describes the requested game session placement.</p>
     /// - On failure, responds with [`SdkError<DescribeGameSessionPlacementError>`](crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError)
-    pub fn describe_game_session_placement(&self) -> crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementFluentBuilder{
+    pub fn describe_game_session_placement(
+        &self,
+    ) -> crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementFluentBuilder {
         crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementFluentBuilder::new(self.handle.clone())
     }
 }

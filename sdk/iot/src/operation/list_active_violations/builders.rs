@@ -38,9 +38,7 @@ impl ListActiveViolationsFluentBuilder {
         }
     }
     /// Access the ListActiveViolations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_active_violations::builders::ListActiveViolationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_active_violations::builders::ListActiveViolationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListActiveViolationsFluentBuilder {
             crate::operation::list_active_violations::ListActiveViolations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_active_violations::ListActiveViolationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_active_violations::ListActiveViolationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListActiveViolationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListActiveViolationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_active_violations::ListActiveViolationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_active_violations::ListActiveViolationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_active_violations::ListActiveViolationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListActiveViolationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_active_violations::ListActiveViolationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_active_violations::ListActiveViolationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_active_violations::ListActiveViolationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListActiveViolationsFluentBuilder {
             crate::operation::list_active_violations::ListActiveViolations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_active_violations::ListActiveViolationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_active_violations::ListActiveViolationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_active_violations::paginator::ListActiveViolationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_active_violations::paginator::ListActiveViolationsPaginator {
-        crate::operation::list_active_violations::paginator::ListActiveViolationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_active_violations::paginator::ListActiveViolationsPaginator {
+        crate::operation::list_active_violations::paginator::ListActiveViolationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the thing whose active violations are listed.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,18 +131,12 @@ impl ListActiveViolationsFluentBuilder {
         self.inner.get_thing_name()
     }
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_name(input.into());
         self
     }
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
@@ -174,17 +150,12 @@ impl ListActiveViolationsFluentBuilder {
         self
     }
     /// <p> The criteria for a behavior. </p>
-    pub fn set_behavior_criteria_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BehaviorCriteriaType>,
-    ) -> Self {
+    pub fn set_behavior_criteria_type(mut self, input: ::std::option::Option<crate::types::BehaviorCriteriaType>) -> Self {
         self.inner = self.inner.set_behavior_criteria_type(input);
         self
     }
     /// <p> The criteria for a behavior. </p>
-    pub fn get_behavior_criteria_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::BehaviorCriteriaType> {
+    pub fn get_behavior_criteria_type(&self) -> &::std::option::Option<crate::types::BehaviorCriteriaType> {
         self.inner.get_behavior_criteria_type()
     }
     /// <p> A list of all suppressed alerts. </p>
@@ -207,17 +178,12 @@ impl ListActiveViolationsFluentBuilder {
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.inner = self.inner.set_verification_state(input);
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn get_verification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationState> {
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         self.inner.get_verification_state()
     }
     /// <p>The token for the next set of results.</p>

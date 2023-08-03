@@ -62,16 +62,14 @@ impl ModifyCurrentDbClusterCapacityInput {
 }
 impl ModifyCurrentDbClusterCapacityInput {
     /// Creates a new builder-style object to manufacture [`ModifyCurrentDbClusterCapacityInput`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityInput).
-    pub fn builder() -> crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityInputBuilder{
+    pub fn builder() -> crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityInputBuilder {
         crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyCurrentDbClusterCapacityInput`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyCurrentDbClusterCapacityInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) capacity: ::std::option::Option<i32>,
@@ -84,10 +82,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -96,10 +91,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -163,20 +155,14 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-    pub fn timeout_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timeout_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timeout_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-    pub fn set_timeout_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timeout_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timeout_action = input;
         self
     }
@@ -195,15 +181,11 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityInput {
-                db_cluster_identifier: self.db_cluster_identifier
-                ,
-                capacity: self.capacity
-                ,
-                seconds_before_timeout: self.seconds_before_timeout
-                ,
-                timeout_action: self.timeout_action
-                ,
-            }
+                db_cluster_identifier: self.db_cluster_identifier,
+                capacity: self.capacity,
+                seconds_before_timeout: self.seconds_before_timeout,
+                timeout_action: self.timeout_action,
+            },
         )
     }
 }

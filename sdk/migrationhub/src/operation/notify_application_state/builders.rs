@@ -37,10 +37,7 @@ impl NotifyApplicationStateFluentBuilder {
         }
     }
     /// Access the NotifyApplicationState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl NotifyApplicationStateFluentBuilder {
             crate::operation::notify_application_state::NotifyApplicationState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_application_state::NotifyApplicationStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_application_state::NotifyApplicationStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl NotifyApplicationStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl NotifyApplicationStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_application_state::NotifyApplicationStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_application_state::NotifyApplicationStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_application_state::NotifyApplicationStateError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl NotifyApplicationStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_application_state::NotifyApplicationStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_application_state::NotifyApplicationStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_application_state::NotifyApplicationStateError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl NotifyApplicationStateFluentBuilder {
             crate::operation::notify_application_state::NotifyApplicationState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_application_state::NotifyApplicationStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_application_state::NotifyApplicationStateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -149,10 +129,7 @@ impl NotifyApplicationStateFluentBuilder {
         self
     }
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -166,10 +143,7 @@ impl NotifyApplicationStateFluentBuilder {
         self
     }
     /// <p>The timestamp when the application state changed.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_update_date_time(input);
         self
     }

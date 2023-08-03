@@ -15,33 +15,25 @@ impl DescribeModelBiasJobDefinitionInput {
 }
 impl DescribeModelBiasJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelBiasJobDefinitionInput`](crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionInput).
-    pub fn builder() -> crate::operation::describe_model_bias_job_definition::builders::DescribeModelBiasJobDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_model_bias_job_definition::builders::DescribeModelBiasJobDefinitionInputBuilder {
         crate::operation::describe_model_bias_job_definition::builders::DescribeModelBiasJobDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelBiasJobDefinitionInput`](crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelBiasJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelBiasJobDefinitionInputBuilder {
     /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition_name = input;
         self
     }
@@ -58,9 +50,8 @@ impl DescribeModelBiasJobDefinitionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionInput {
-                job_definition_name: self.job_definition_name
-                ,
-            }
+                job_definition_name: self.job_definition_name,
+            },
         )
     }
 }

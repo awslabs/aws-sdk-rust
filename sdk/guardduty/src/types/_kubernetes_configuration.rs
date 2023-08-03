@@ -10,9 +10,7 @@ pub struct KubernetesConfiguration {
 }
 impl KubernetesConfiguration {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
-    pub fn audit_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KubernetesAuditLogsConfiguration> {
+    pub fn audit_logs(&self) -> ::std::option::Option<&crate::types::KubernetesAuditLogsConfiguration> {
         self.audit_logs.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl KubernetesConfiguration {
 
 /// A builder for [`KubernetesConfiguration`](crate::types::KubernetesConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KubernetesConfigurationBuilder {
     pub(crate) audit_logs: ::std::option::Option<crate::types::KubernetesAuditLogsConfiguration>,
 }
@@ -38,23 +34,16 @@ impl KubernetesConfigurationBuilder {
         self
     }
     /// <p>The status of Kubernetes audit logs as a data source.</p>
-    pub fn set_audit_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::KubernetesAuditLogsConfiguration>,
-    ) -> Self {
+    pub fn set_audit_logs(mut self, input: ::std::option::Option<crate::types::KubernetesAuditLogsConfiguration>) -> Self {
         self.audit_logs = input;
         self
     }
     /// <p>The status of Kubernetes audit logs as a data source.</p>
-    pub fn get_audit_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::KubernetesAuditLogsConfiguration> {
+    pub fn get_audit_logs(&self) -> &::std::option::Option<crate::types::KubernetesAuditLogsConfiguration> {
         &self.audit_logs
     }
     /// Consumes the builder and constructs a [`KubernetesConfiguration`](crate::types::KubernetesConfiguration).
     pub fn build(self) -> crate::types::KubernetesConfiguration {
-        crate::types::KubernetesConfiguration {
-            audit_logs: self.audit_logs,
-        }
+        crate::types::KubernetesConfiguration { audit_logs: self.audit_logs }
     }
 }

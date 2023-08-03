@@ -30,9 +30,7 @@ impl GetServiceSettingsOutput {
         self.sns_topic_arn.as_deref()
     }
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-    pub fn organization_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationConfiguration> {
+    pub fn organization_configuration(&self) -> ::std::option::Option<&crate::types::OrganizationConfiguration> {
         self.organization_configuration.as_ref()
     }
     /// <p>Indicates whether cross-account discovery is enabled.</p>
@@ -51,40 +49,30 @@ impl ::aws_http::request_id::RequestId for GetServiceSettingsOutput {
 }
 impl GetServiceSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingsOutput`](crate::operation::get_service_settings::GetServiceSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_service_settings::builders::GetServiceSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::get_service_settings::builders::GetServiceSettingsOutputBuilder {
         crate::operation::get_service_settings::builders::GetServiceSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceSettingsOutput`](crate::operation::get_service_settings::GetServiceSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceSettingsOutputBuilder {
     pub(crate) s3_bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) organization_configuration:
-        ::std::option::Option<crate::types::OrganizationConfiguration>,
+    pub(crate) organization_configuration: ::std::option::Option<crate::types::OrganizationConfiguration>,
     pub(crate) enable_cross_accounts_discovery: ::std::option::Option<bool>,
     pub(crate) license_manager_resource_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetServiceSettingsOutputBuilder {
     /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
-    pub fn s3_bucket_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
-    pub fn set_s3_bucket_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_arn = input;
         self
     }
@@ -93,18 +81,12 @@ impl GetServiceSettingsOutputBuilder {
         &self.s3_bucket_arn
     }
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -113,25 +95,17 @@ impl GetServiceSettingsOutputBuilder {
         &self.sns_topic_arn
     }
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-    pub fn organization_configuration(
-        mut self,
-        input: crate::types::OrganizationConfiguration,
-    ) -> Self {
+    pub fn organization_configuration(mut self, input: crate::types::OrganizationConfiguration) -> Self {
         self.organization_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-    pub fn set_organization_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationConfiguration>,
-    ) -> Self {
+    pub fn set_organization_configuration(mut self, input: ::std::option::Option<crate::types::OrganizationConfiguration>) -> Self {
         self.organization_configuration = input;
         self
     }
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-    pub fn get_organization_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
+    pub fn get_organization_configuration(&self) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
         &self.organization_configuration
     }
     /// <p>Indicates whether cross-account discovery is enabled.</p>
@@ -140,10 +114,7 @@ impl GetServiceSettingsOutputBuilder {
         self
     }
     /// <p>Indicates whether cross-account discovery is enabled.</p>
-    pub fn set_enable_cross_accounts_discovery(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_cross_accounts_discovery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_cross_accounts_discovery = input;
         self
     }
@@ -152,25 +123,17 @@ impl GetServiceSettingsOutputBuilder {
         &self.enable_cross_accounts_discovery
     }
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
-    pub fn license_manager_resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_manager_resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_manager_resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
-    pub fn set_license_manager_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_manager_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_manager_resource_share_arn = input;
         self
     }
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
-    pub fn get_license_manager_resource_share_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_license_manager_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_manager_resource_share_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

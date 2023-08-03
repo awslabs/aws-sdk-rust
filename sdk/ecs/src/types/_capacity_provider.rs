@@ -70,9 +70,7 @@ impl CapacityProvider {
         self.status.as_ref()
     }
     /// <p>The Auto Scaling group settings for the capacity provider.</p>
-    pub fn auto_scaling_group_provider(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoScalingGroupProvider> {
+    pub fn auto_scaling_group_provider(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupProvider> {
         self.auto_scaling_group_provider.as_ref()
     }
     /// <p>The update status of the capacity provider. The following are the possible states that is returned.</p>
@@ -96,9 +94,7 @@ impl CapacityProvider {
     /// <p>The capacity provider can't be deleted. The update status reason provides further details about why the delete failed.</p>
     /// </dd>
     /// </dl>
-    pub fn update_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityProviderUpdateStatus> {
+    pub fn update_status(&self) -> ::std::option::Option<&crate::types::CapacityProviderUpdateStatus> {
         self.update_status.as_ref()
     }
     /// <p>The update status reason. This provides further details about the update status for the capacity provider.</p>
@@ -129,33 +125,24 @@ impl CapacityProvider {
 
 /// A builder for [`CapacityProvider`](crate::types::CapacityProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityProviderBuilder {
     pub(crate) capacity_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CapacityProviderStatus>,
-    pub(crate) auto_scaling_group_provider:
-        ::std::option::Option<crate::types::AutoScalingGroupProvider>,
+    pub(crate) auto_scaling_group_provider: ::std::option::Option<crate::types::AutoScalingGroupProvider>,
     pub(crate) update_status: ::std::option::Option<crate::types::CapacityProviderUpdateStatus>,
     pub(crate) update_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CapacityProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the capacity provider.</p>
-    pub fn capacity_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the capacity provider.</p>
-    pub fn set_capacity_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_provider_arn = input;
         self
     }
@@ -183,10 +170,7 @@ impl CapacityProviderBuilder {
         self
     }
     /// <p>The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code> status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityProviderStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CapacityProviderStatus>) -> Self {
         self.status = input;
         self
     }
@@ -195,25 +179,17 @@ impl CapacityProviderBuilder {
         &self.status
     }
     /// <p>The Auto Scaling group settings for the capacity provider.</p>
-    pub fn auto_scaling_group_provider(
-        mut self,
-        input: crate::types::AutoScalingGroupProvider,
-    ) -> Self {
+    pub fn auto_scaling_group_provider(mut self, input: crate::types::AutoScalingGroupProvider) -> Self {
         self.auto_scaling_group_provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Auto Scaling group settings for the capacity provider.</p>
-    pub fn set_auto_scaling_group_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingGroupProvider>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_provider(mut self, input: ::std::option::Option<crate::types::AutoScalingGroupProvider>) -> Self {
         self.auto_scaling_group_provider = input;
         self
     }
     /// <p>The Auto Scaling group settings for the capacity provider.</p>
-    pub fn get_auto_scaling_group_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingGroupProvider> {
+    pub fn get_auto_scaling_group_provider(&self) -> &::std::option::Option<crate::types::AutoScalingGroupProvider> {
         &self.auto_scaling_group_provider
     }
     /// <p>The update status of the capacity provider. The following are the possible states that is returned.</p>
@@ -262,10 +238,7 @@ impl CapacityProviderBuilder {
     /// <p>The capacity provider can't be deleted. The update status reason provides further details about why the delete failed.</p>
     /// </dd>
     /// </dl>
-    pub fn set_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityProviderUpdateStatus>,
-    ) -> Self {
+    pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::CapacityProviderUpdateStatus>) -> Self {
         self.update_status = input;
         self
     }
@@ -290,24 +263,16 @@ impl CapacityProviderBuilder {
     /// <p>The capacity provider can't be deleted. The update status reason provides further details about why the delete failed.</p>
     /// </dd>
     /// </dl>
-    pub fn get_update_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityProviderUpdateStatus> {
+    pub fn get_update_status(&self) -> &::std::option::Option<crate::types::CapacityProviderUpdateStatus> {
         &self.update_status
     }
     /// <p>The update status reason. This provides further details about the update status for the capacity provider.</p>
-    pub fn update_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn update_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The update status reason. This provides further details about the update status for the capacity provider.</p>
-    pub fn set_update_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_update_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_status_reason = input;
         self
     }
@@ -347,10 +312,7 @@ impl CapacityProviderBuilder {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

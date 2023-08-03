@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for StartReplicationOutput {
 }
 impl StartReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput).
-    pub fn builder() -> crate::operation::start_replication::builders::StartReplicationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_replication::builders::StartReplicationOutputBuilder {
         crate::operation::start_replication::builders::StartReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReplicationOutputBuilder {
     pub(crate) replication: ::std::option::Option<crate::types::Replication>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl StartReplicationOutputBuilder {
         self
     }
     /// <p>The replication that DMS started.</p>
-    pub fn set_replication(
-        mut self,
-        input: ::std::option::Option<crate::types::Replication>,
-    ) -> Self {
+    pub fn set_replication(mut self, input: ::std::option::Option<crate::types::Replication>) -> Self {
         self.replication = input;
         self
     }

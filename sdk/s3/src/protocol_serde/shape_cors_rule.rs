@@ -164,8 +164,7 @@ pub fn ser_cors_rule(
     }
     if input.max_age_seconds != 0 {
         let mut inner_writer = scope.start_el("MaxAgeSeconds").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.max_age_seconds).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.max_age_seconds).encode());
     }
     scope.finish();
     Ok(())

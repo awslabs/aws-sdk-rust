@@ -30,9 +30,7 @@ impl StartCodegenJobInput {
         self.client_token.as_deref()
     }
     /// <p>The code generation job resource configuration.</p>
-    pub fn codegen_job_to_create(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StartCodegenJobData> {
+    pub fn codegen_job_to_create(&self) -> ::std::option::Option<&crate::types::StartCodegenJobData> {
         self.codegen_job_to_create.as_ref()
     }
 }
@@ -45,9 +43,7 @@ impl StartCodegenJobInput {
 
 /// A builder for [`StartCodegenJobInput`](crate::operation::start_codegen_job::StartCodegenJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCodegenJobInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl StartCodegenJobInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -109,26 +99,18 @@ impl StartCodegenJobInputBuilder {
         self
     }
     /// <p>The code generation job resource configuration.</p>
-    pub fn set_codegen_job_to_create(
-        mut self,
-        input: ::std::option::Option<crate::types::StartCodegenJobData>,
-    ) -> Self {
+    pub fn set_codegen_job_to_create(mut self, input: ::std::option::Option<crate::types::StartCodegenJobData>) -> Self {
         self.codegen_job_to_create = input;
         self
     }
     /// <p>The code generation job resource configuration.</p>
-    pub fn get_codegen_job_to_create(
-        &self,
-    ) -> &::std::option::Option<crate::types::StartCodegenJobData> {
+    pub fn get_codegen_job_to_create(&self) -> &::std::option::Option<crate::types::StartCodegenJobData> {
         &self.codegen_job_to_create
     }
     /// Consumes the builder and constructs a [`StartCodegenJobInput`](crate::operation::start_codegen_job::StartCodegenJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_codegen_job::StartCodegenJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_codegen_job::StartCodegenJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_codegen_job::StartCodegenJobInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

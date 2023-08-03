@@ -20,9 +20,7 @@ pub struct CreateCustomLineItemInput {
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
     #[doc(hidden)]
     pub charge_details: ::std::option::Option<crate::types::CustomLineItemChargeDetails>,
@@ -45,23 +43,15 @@ impl CreateCustomLineItemInput {
         self.billing_group_arn.as_deref()
     }
     /// <p> A time range for which the custom line item is effective. </p>
-    pub fn billing_period_range(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
+    pub fn billing_period_range(&self) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
     }
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
-    pub fn charge_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomLineItemChargeDetails> {
+    pub fn charge_details(&self) -> ::std::option::Option<&crate::types::CustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
 }
@@ -80,8 +70,7 @@ impl ::std::fmt::Debug for CreateCustomLineItemInput {
 }
 impl CreateCustomLineItemInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomLineItemInput`](crate::operation::create_custom_line_item::CreateCustomLineItemInput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder {
+    pub fn builder() -> crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder {
         crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder::default()
     }
 }
@@ -94,11 +83,8 @@ pub struct CreateCustomLineItemInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) billing_period_range:
-        ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) charge_details: ::std::option::Option<crate::types::CustomLineItemChargeDetails>,
 }
 impl CreateCustomLineItemInputBuilder {
@@ -145,18 +131,12 @@ impl CreateCustomLineItemInputBuilder {
         &self.description
     }
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
-    pub fn billing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
-    pub fn set_billing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_arn = input;
         self
     }
@@ -165,25 +145,17 @@ impl CreateCustomLineItemInputBuilder {
         &self.billing_group_arn
     }
     /// <p> A time range for which the custom line item is effective. </p>
-    pub fn billing_period_range(
-        mut self,
-        input: crate::types::CustomLineItemBillingPeriodRange,
-    ) -> Self {
+    pub fn billing_period_range(mut self, input: crate::types::CustomLineItemBillingPeriodRange) -> Self {
         self.billing_period_range = ::std::option::Option::Some(input);
         self
     }
     /// <p> A time range for which the custom line item is effective. </p>
-    pub fn set_billing_period_range(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
-    ) -> Self {
+    pub fn set_billing_period_range(mut self, input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>) -> Self {
         self.billing_period_range = input;
         self
     }
     /// <p> A time range for which the custom line item is effective. </p>
-    pub fn get_billing_period_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+    pub fn get_billing_period_range(&self) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
         &self.billing_period_range
     }
     /// Adds a key-value pair to `tags`.
@@ -191,32 +163,19 @@ impl CreateCustomLineItemInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
@@ -225,37 +184,28 @@ impl CreateCustomLineItemInputBuilder {
         self
     }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
-    pub fn set_charge_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLineItemChargeDetails>,
-    ) -> Self {
+    pub fn set_charge_details(mut self, input: ::std::option::Option<crate::types::CustomLineItemChargeDetails>) -> Self {
         self.charge_details = input;
         self
     }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
-    pub fn get_charge_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLineItemChargeDetails> {
+    pub fn get_charge_details(&self) -> &::std::option::Option<crate::types::CustomLineItemChargeDetails> {
         &self.charge_details
     }
     /// Consumes the builder and constructs a [`CreateCustomLineItemInput`](crate::operation::create_custom_line_item::CreateCustomLineItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_line_item::CreateCustomLineItemInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_custom_line_item::CreateCustomLineItemInput {
-                client_token: self.client_token,
-                name: self.name,
-                description: self.description,
-                billing_group_arn: self.billing_group_arn,
-                billing_period_range: self.billing_period_range,
-                tags: self.tags,
-                charge_details: self.charge_details,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_custom_line_item::CreateCustomLineItemInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_custom_line_item::CreateCustomLineItemInput {
+            client_token: self.client_token,
+            name: self.name,
+            description: self.description,
+            billing_group_arn: self.billing_group_arn,
+            billing_period_range: self.billing_period_range,
+            tags: self.tags,
+            charge_details: self.charge_details,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateCustomLineItemInputBuilder {

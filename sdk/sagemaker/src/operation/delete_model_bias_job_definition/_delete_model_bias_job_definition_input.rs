@@ -15,33 +15,25 @@ impl DeleteModelBiasJobDefinitionInput {
 }
 impl DeleteModelBiasJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelBiasJobDefinitionInput`](crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionInput).
-    pub fn builder() -> crate::operation::delete_model_bias_job_definition::builders::DeleteModelBiasJobDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::delete_model_bias_job_definition::builders::DeleteModelBiasJobDefinitionInputBuilder {
         crate::operation::delete_model_bias_job_definition::builders::DeleteModelBiasJobDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelBiasJobDefinitionInput`](crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelBiasJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteModelBiasJobDefinitionInputBuilder {
     /// <p>The name of the model bias job definition to delete.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model bias job definition to delete.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteModelBiasJobDefinitionInputBuilder {
         crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionInput {
-                job_definition_name: self.job_definition_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionInput {
+            job_definition_name: self.job_definition_name,
+        })
     }
 }

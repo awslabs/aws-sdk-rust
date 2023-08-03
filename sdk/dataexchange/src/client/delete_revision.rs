@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`revision_id(impl ::std::convert::Into<String>)`](crate::operation::delete_revision::builders::DeleteRevisionFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::delete_revision::builders::DeleteRevisionFluentBuilder::set_revision_id): <p>The unique identifier for a revision.</p>
     /// - On success, responds with [`DeleteRevisionOutput`](crate::operation::delete_revision::DeleteRevisionOutput)
     /// - On failure, responds with [`SdkError<DeleteRevisionError>`](crate::operation::delete_revision::DeleteRevisionError)
-    pub fn delete_revision(
-        &self,
-    ) -> crate::operation::delete_revision::builders::DeleteRevisionFluentBuilder {
-        crate::operation::delete_revision::builders::DeleteRevisionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_revision(&self) -> crate::operation::delete_revision::builders::DeleteRevisionFluentBuilder {
+        crate::operation::delete_revision::builders::DeleteRevisionFluentBuilder::new(self.handle.clone())
     }
 }

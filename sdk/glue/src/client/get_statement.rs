@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetStatementOutput`](crate::operation::get_statement::GetStatementOutput) with field(s):
     ///   - [`statement(Option<Statement>)`](crate::operation::get_statement::GetStatementOutput::statement): <p>Returns the statement.</p>
     /// - On failure, responds with [`SdkError<GetStatementError>`](crate::operation::get_statement::GetStatementError)
-    pub fn get_statement(
-        &self,
-    ) -> crate::operation::get_statement::builders::GetStatementFluentBuilder {
-        crate::operation::get_statement::builders::GetStatementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_statement(&self) -> crate::operation::get_statement::builders::GetStatementFluentBuilder {
+        crate::operation::get_statement::builders::GetStatementFluentBuilder::new(self.handle.clone())
     }
 }

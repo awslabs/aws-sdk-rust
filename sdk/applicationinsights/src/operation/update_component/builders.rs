@@ -10,10 +10,7 @@ impl UpdateComponentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_component::UpdateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component::UpdateComponentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component::UpdateComponentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_component();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateComponentFluentBuilder {
         }
     }
     /// Access the UpdateComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_component::builders::UpdateComponentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_component::builders::UpdateComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateComponentFluentBuilder {
             crate::operation::update_component::UpdateComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component::UpdateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component::UpdateComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_component::UpdateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component::UpdateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component::UpdateComponentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_component::UpdateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component::UpdateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component::UpdateComponentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateComponentFluentBuilder {
             crate::operation::update_component::UpdateComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component::UpdateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component::UpdateComponentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateComponentFluentBuilder {
         self.inner.get_resource_group_name()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_name(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
     }
@@ -163,18 +135,12 @@ impl UpdateComponentFluentBuilder {
         self.inner.get_component_name()
     }
     /// <p>The new name of the component.</p>
-    pub fn new_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_component_name(input.into());
         self
     }
     /// <p>The new name of the component.</p>
-    pub fn set_new_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_component_name(input);
         self
     }
@@ -187,25 +153,17 @@ impl UpdateComponentFluentBuilder {
     /// To override the contents of this collection use [`set_resource_list`](Self::set_resource_list).
     ///
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn resource_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_list(input.into());
         self
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn set_resource_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_list(input);
         self
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn get_resource_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_list()
     }
 }

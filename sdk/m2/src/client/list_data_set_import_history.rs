@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`data_set_import_tasks(Option<Vec<DataSetImportTask>>)`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput::data_set_import_tasks): <p>The data set import tasks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListDataSetImportHistoryError>`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryError)
-    pub fn list_data_set_import_history(&self) -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder{
+    pub fn list_data_set_import_history(&self) -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder {
         crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder::new(self.handle.clone())
     }
 }

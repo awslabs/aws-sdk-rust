@@ -12,19 +12,13 @@ pub struct Action {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The action parameters, if applicable.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>>,
     /// <p>The supported targets for the action.</p>
     #[doc(hidden)]
-    pub targets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>,
-    >,
+    pub targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>>,
     /// <p>The tags for the action.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Action {
     /// <p>The ID of the action.</p>
@@ -36,27 +30,15 @@ impl Action {
         self.description.as_deref()
     }
     /// <p>The action parameters, if applicable.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>> {
         self.parameters.as_ref()
     }
     /// <p>The supported targets for the action.</p>
-    pub fn targets(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>,
-    > {
+    pub fn targets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>> {
         self.targets.as_ref()
     }
     /// <p>The tags for the action.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -69,21 +51,13 @@ impl Action {
 
 /// A builder for [`Action`](crate::types::Action).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>,
-    >,
-    pub(crate) targets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>,
-    >,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>>,
+    pub(crate) targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActionBuilder {
     /// <p>The ID of the action.</p>
@@ -119,11 +93,7 @@ impl ActionBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The action parameters, if applicable.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ActionParameter,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ActionParameter) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -132,19 +102,13 @@ impl ActionBuilder {
     /// <p>The action parameters, if applicable.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>>,
     ) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The action parameters, if applicable.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>> {
         &self.parameters
     }
     /// Adds a key-value pair to `targets`.
@@ -152,11 +116,7 @@ impl ActionBuilder {
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
     /// <p>The supported targets for the action.</p>
-    pub fn targets(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ActionTarget,
-    ) -> Self {
+    pub fn targets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ActionTarget) -> Self {
         let mut hash_map = self.targets.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.targets = ::std::option::Option::Some(hash_map);
@@ -165,19 +125,13 @@ impl ActionBuilder {
     /// <p>The supported targets for the action.</p>
     pub fn set_targets(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>>,
     ) -> Self {
         self.targets = input;
         self
     }
     /// <p>The supported targets for the action.</p>
-    pub fn get_targets(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>,
-    > {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>> {
         &self.targets
     }
     /// Adds a key-value pair to `tags`.
@@ -185,32 +139,19 @@ impl ActionBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the action.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags for the action.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags for the action.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).

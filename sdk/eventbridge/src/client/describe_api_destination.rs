@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_api_destination::DescribeApiDestinationOutput::creation_time): <p>A time stamp for the time that the API destination was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_api_destination::DescribeApiDestinationOutput::last_modified_time): <p>A time stamp for the time that the API destination was last modified.</p>
     /// - On failure, responds with [`SdkError<DescribeApiDestinationError>`](crate::operation::describe_api_destination::DescribeApiDestinationError)
-    pub fn describe_api_destination(
-        &self,
-    ) -> crate::operation::describe_api_destination::builders::DescribeApiDestinationFluentBuilder
-    {
+    pub fn describe_api_destination(&self) -> crate::operation::describe_api_destination::builders::DescribeApiDestinationFluentBuilder {
         crate::operation::describe_api_destination::builders::DescribeApiDestinationFluentBuilder::new(self.handle.clone())
     }
 }

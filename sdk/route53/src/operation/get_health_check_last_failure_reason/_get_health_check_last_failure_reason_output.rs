@@ -6,15 +6,12 @@
 pub struct GetHealthCheckLastFailureReasonOutput {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     #[doc(hidden)]
-    pub health_check_observations:
-        ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
+    pub health_check_observations: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckLastFailureReasonOutput {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
-    pub fn health_check_observations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HealthCheckObservation]> {
+    pub fn health_check_observations(&self) -> ::std::option::Option<&[crate::types::HealthCheckObservation]> {
         self.health_check_observations.as_deref()
     }
 }
@@ -25,19 +22,16 @@ impl ::aws_http::request_id::RequestId for GetHealthCheckLastFailureReasonOutput
 }
 impl GetHealthCheckLastFailureReasonOutput {
     /// Creates a new builder-style object to manufacture [`GetHealthCheckLastFailureReasonOutput`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput).
-    pub fn builder() -> crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonOutputBuilder{
+    pub fn builder() -> crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonOutputBuilder {
         crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetHealthCheckLastFailureReasonOutput`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHealthCheckLastFailureReasonOutputBuilder {
-    pub(crate) health_check_observations:
-        ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
+    pub(crate) health_check_observations: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckLastFailureReasonOutputBuilder {
@@ -46,27 +40,19 @@ impl GetHealthCheckLastFailureReasonOutputBuilder {
     /// To override the contents of this collection use [`set_health_check_observations`](Self::set_health_check_observations).
     ///
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
-    pub fn health_check_observations(
-        mut self,
-        input: crate::types::HealthCheckObservation,
-    ) -> Self {
+    pub fn health_check_observations(mut self, input: crate::types::HealthCheckObservation) -> Self {
         let mut v = self.health_check_observations.unwrap_or_default();
         v.push(input);
         self.health_check_observations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
-    pub fn set_health_check_observations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
-    ) -> Self {
+    pub fn set_health_check_observations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>) -> Self {
         self.health_check_observations = input;
         self
     }
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
-    pub fn get_health_check_observations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>> {
+    pub fn get_health_check_observations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>> {
         &self.health_check_observations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -79,13 +65,9 @@ impl GetHealthCheckLastFailureReasonOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetHealthCheckLastFailureReasonOutput`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput
-    {
+    pub fn build(self) -> crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput {
         crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput {
-            health_check_observations: self.health_check_observations
-            ,
+            health_check_observations: self.health_check_observations,
             _request_id: self._request_id,
         }
     }

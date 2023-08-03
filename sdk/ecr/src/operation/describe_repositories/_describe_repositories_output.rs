@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeRepositoriesOutput {
 }
 impl DescribeRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRepositoriesOutput`](crate::operation::describe_repositories::DescribeRepositoriesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_repositories::builders::DescribeRepositoriesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_repositories::builders::DescribeRepositoriesOutputBuilder {
         crate::operation::describe_repositories::builders::DescribeRepositoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRepositoriesOutput`](crate::operation::describe_repositories::DescribeRepositoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRepositoriesOutputBuilder {
     pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::Repository>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeRepositoriesOutputBuilder {
         self
     }
     /// <p>A list of repository objects corresponding to valid repositories.</p>
-    pub fn set_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Repository>>,
-    ) -> Self {
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Repository>>) -> Self {
         self.repositories = input;
         self
     }
     /// <p>A list of repository objects corresponding to valid repositories.</p>
-    pub fn get_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Repository>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Repository>> {
         &self.repositories
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

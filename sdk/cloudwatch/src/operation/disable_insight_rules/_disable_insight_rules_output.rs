@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DisableInsightRulesOutput {
 }
 impl DisableInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`DisableInsightRulesOutput`](crate::operation::disable_insight_rules::DisableInsightRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_insight_rules::builders::DisableInsightRulesOutputBuilder {
-        crate::operation::disable_insight_rules::builders::DisableInsightRulesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disable_insight_rules::builders::DisableInsightRulesOutputBuilder {
+        crate::operation::disable_insight_rules::builders::DisableInsightRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableInsightRulesOutput`](crate::operation::disable_insight_rules::DisableInsightRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableInsightRulesOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl DisableInsightRulesOutputBuilder {
         self
     }
     /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>) -> Self {
         self.failures = input;
         self
     }
     /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

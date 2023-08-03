@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeClusterV2Output {
 }
 impl DescribeClusterV2Output {
     /// Creates a new builder-style object to manufacture [`DescribeClusterV2Output`](crate::operation::describe_cluster_v2::DescribeClusterV2Output).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_v2::builders::DescribeClusterV2OutputBuilder {
+    pub fn builder() -> crate::operation::describe_cluster_v2::builders::DescribeClusterV2OutputBuilder {
         crate::operation::describe_cluster_v2::builders::DescribeClusterV2OutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterV2Output`](crate::operation::describe_cluster_v2::DescribeClusterV2Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterV2OutputBuilder {
     pub(crate) cluster_info: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput) with field(s):
     ///   - [`domain(Option<DomainDescription>)`](crate::operation::describe_domain::DescribeDomainOutput::domain): <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::operation::describe_domain::DescribeDomainError)
-    pub fn describe_domain(
-        &self,
-    ) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
-        crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_domain(&self) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
+        crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(self.handle.clone())
     }
 }

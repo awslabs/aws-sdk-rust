@@ -22,35 +22,26 @@ impl CreateReplicationConfigurationInput {
 }
 impl CreateReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationConfigurationInput`](crate::operation::create_replication_configuration::CreateReplicationConfigurationInput).
-    pub fn builder() -> crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationInputBuilder {
         crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplicationConfigurationInput`](crate::operation::create_replication_configuration::CreateReplicationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicationConfigurationInputBuilder {
     pub(crate) source_file_system_id: ::std::option::Option<::std::string::String>,
-    pub(crate) destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>>,
 }
 impl CreateReplicationConfigurationInputBuilder {
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
-    pub fn source_file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
-    pub fn set_source_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_file_system_id = input;
         self
     }
@@ -70,17 +61,12 @@ impl CreateReplicationConfigurationInputBuilder {
         self
     }
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>> {
         &self.destinations
     }
     /// Consumes the builder and constructs a [`CreateReplicationConfigurationInput`](crate::operation::create_replication_configuration::CreateReplicationConfigurationInput).
@@ -90,13 +76,9 @@ impl CreateReplicationConfigurationInputBuilder {
         crate::operation::create_replication_configuration::CreateReplicationConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_replication_configuration::CreateReplicationConfigurationInput {
-                source_file_system_id: self.source_file_system_id
-                ,
-                destinations: self.destinations
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_replication_configuration::CreateReplicationConfigurationInput {
+            source_file_system_id: self.source_file_system_id,
+            destinations: self.destinations,
+        })
     }
 }

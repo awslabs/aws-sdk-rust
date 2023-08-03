@@ -29,17 +29,14 @@ impl AwsCodeBuildProjectEnvironmentRegistryCredential {
 }
 impl AwsCodeBuildProjectEnvironmentRegistryCredential {
     /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential).
-    pub fn builder(
-    ) -> crate::types::builders::AwsCodeBuildProjectEnvironmentRegistryCredentialBuilder {
+    pub fn builder() -> crate::types::builders::AwsCodeBuildProjectEnvironmentRegistryCredentialBuilder {
         crate::types::builders::AwsCodeBuildProjectEnvironmentRegistryCredentialBuilder::default()
     }
 }
 
 /// A builder for [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectEnvironmentRegistryCredentialBuilder {
     pub(crate) credential: ::std::option::Option<::std::string::String>,
     pub(crate) credential_provider: ::std::option::Option<::std::string::String>,
@@ -67,19 +64,13 @@ impl AwsCodeBuildProjectEnvironmentRegistryCredentialBuilder {
     }
     /// <p>The service that created the credentials to access a private Docker registry.</p>
     /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
-    pub fn credential_provider(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credential_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credential_provider = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service that created the credentials to access a private Docker registry.</p>
     /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
-    pub fn set_credential_provider(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_credential_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credential_provider = input;
         self
     }

@@ -37,9 +37,7 @@ impl UpdateSecurityPolicyFluentBuilder {
         }
     }
     /// Access the UpdateSecurityPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_security_policy::builders::UpdateSecurityPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_security_policy::builders::UpdateSecurityPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateSecurityPolicyFluentBuilder {
             crate::operation::update_security_policy::UpdateSecurityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_policy::UpdateSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_policy::UpdateSecurityPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateSecurityPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateSecurityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_security_policy::UpdateSecurityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_policy::UpdateSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_policy::UpdateSecurityPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateSecurityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_security_policy::UpdateSecurityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_policy::UpdateSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_policy::UpdateSecurityPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateSecurityPolicyFluentBuilder {
             crate::operation::update_security_policy::UpdateSecurityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_policy::UpdateSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_policy::UpdateSecurityPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl UpdateSecurityPolicyFluentBuilder {
         self
     }
     /// <p>The type of access policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityPolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -154,18 +138,12 @@ impl UpdateSecurityPolicyFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The version of the policy being updated.</p>
-    pub fn policy_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_version(input.into());
         self
     }
     /// <p>The version of the policy being updated.</p>
-    pub fn set_policy_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_version(input);
         self
     }

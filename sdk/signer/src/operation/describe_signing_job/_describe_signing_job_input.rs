@@ -15,17 +15,14 @@ impl DescribeSigningJobInput {
 }
 impl DescribeSigningJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeSigningJobInput`](crate::operation::describe_signing_job::DescribeSigningJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_signing_job::builders::DescribeSigningJobInputBuilder {
+    pub fn builder() -> crate::operation::describe_signing_job::builders::DescribeSigningJobInputBuilder {
         crate::operation::describe_signing_job::builders::DescribeSigningJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSigningJobInput`](crate::operation::describe_signing_job::DescribeSigningJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSigningJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl DescribeSigningJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSigningJobInput`](crate::operation::describe_signing_job::DescribeSigningJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_signing_job::DescribeSigningJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_signing_job::DescribeSigningJobInput {
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_signing_job::DescribeSigningJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_signing_job::DescribeSigningJobInput { job_id: self.job_id })
     }
 }

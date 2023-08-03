@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`access_log_subscription_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionFluentBuilder::access_log_subscription_identifier) / [`set_access_log_subscription_identifier(Option<String>)`](crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionFluentBuilder::set_access_log_subscription_identifier): <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
     /// - On success, responds with [`DeleteAccessLogSubscriptionOutput`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessLogSubscriptionError>`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError)
-    pub fn delete_access_log_subscription(&self) -> crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionFluentBuilder{
+    pub fn delete_access_log_subscription(
+        &self,
+    ) -> crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionFluentBuilder {
         crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

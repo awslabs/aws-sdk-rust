@@ -15,17 +15,14 @@ impl StopAppReplicationInput {
 }
 impl StopAppReplicationInput {
     /// Creates a new builder-style object to manufacture [`StopAppReplicationInput`](crate::operation::stop_app_replication::StopAppReplicationInput).
-    pub fn builder(
-    ) -> crate::operation::stop_app_replication::builders::StopAppReplicationInputBuilder {
+    pub fn builder() -> crate::operation::stop_app_replication::builders::StopAppReplicationInputBuilder {
         crate::operation::stop_app_replication::builders::StopAppReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`StopAppReplicationInput`](crate::operation::stop_app_replication::StopAppReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopAppReplicationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl StopAppReplicationInputBuilder {
     /// Consumes the builder and constructs a [`StopAppReplicationInput`](crate::operation::stop_app_replication::StopAppReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_app_replication::StopAppReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_app_replication::StopAppReplicationInput {
-                app_id: self.app_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_app_replication::StopAppReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_app_replication::StopAppReplicationInput { app_id: self.app_id })
     }
 }

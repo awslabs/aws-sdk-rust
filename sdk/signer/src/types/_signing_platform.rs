@@ -54,9 +54,7 @@ impl SigningPlatform {
         self.category.as_ref()
     }
     /// <p>The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>
-    pub fn signing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SigningConfiguration> {
+    pub fn signing_configuration(&self) -> ::std::option::Option<&crate::types::SigningConfiguration> {
         self.signing_configuration.as_ref()
     }
     /// <p>The image format of a code signing platform or profile.</p>
@@ -81,9 +79,7 @@ impl SigningPlatform {
 
 /// A builder for [`SigningPlatform`](crate::types::SigningPlatform).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigningPlatformBuilder {
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -172,17 +168,12 @@ impl SigningPlatformBuilder {
         self
     }
     /// <p>The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>
-    pub fn set_signing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningConfiguration>,
-    ) -> Self {
+    pub fn set_signing_configuration(mut self, input: ::std::option::Option<crate::types::SigningConfiguration>) -> Self {
         self.signing_configuration = input;
         self
     }
     /// <p>The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>
-    pub fn get_signing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SigningConfiguration> {
+    pub fn get_signing_configuration(&self) -> &::std::option::Option<crate::types::SigningConfiguration> {
         &self.signing_configuration
     }
     /// <p>The image format of a code signing platform or profile.</p>
@@ -191,17 +182,12 @@ impl SigningPlatformBuilder {
         self
     }
     /// <p>The image format of a code signing platform or profile.</p>
-    pub fn set_signing_image_format(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningImageFormat>,
-    ) -> Self {
+    pub fn set_signing_image_format(mut self, input: ::std::option::Option<crate::types::SigningImageFormat>) -> Self {
         self.signing_image_format = input;
         self
     }
     /// <p>The image format of a code signing platform or profile.</p>
-    pub fn get_signing_image_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::SigningImageFormat> {
+    pub fn get_signing_image_format(&self) -> &::std::option::Option<crate::types::SigningImageFormat> {
         &self.signing_image_format
     }
     /// <p>The maximum size (in MB) of code that can be signed by a code signing platform.</p>

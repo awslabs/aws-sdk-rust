@@ -35,21 +35,16 @@ impl ::aws_http::request_id::RequestId for SearchRoutingProfilesOutput {
 }
 impl SearchRoutingProfilesOutput {
     /// Creates a new builder-style object to manufacture [`SearchRoutingProfilesOutput`](crate::operation::search_routing_profiles::SearchRoutingProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::search_routing_profiles::builders::SearchRoutingProfilesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_routing_profiles::builders::SearchRoutingProfilesOutputBuilder {
         crate::operation::search_routing_profiles::builders::SearchRoutingProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchRoutingProfilesOutput`](crate::operation::search_routing_profiles::SearchRoutingProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchRoutingProfilesOutputBuilder {
-    pub(crate) routing_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfile>>,
+    pub(crate) routing_profiles: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -67,17 +62,12 @@ impl SearchRoutingProfilesOutputBuilder {
         self
     }
     /// <p>Information about the routing profiles.</p>
-    pub fn set_routing_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfile>>,
-    ) -> Self {
+    pub fn set_routing_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfile>>) -> Self {
         self.routing_profiles = input;
         self
     }
     /// <p>Information about the routing profiles.</p>
-    pub fn get_routing_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfile>> {
+    pub fn get_routing_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfile>> {
         &self.routing_profiles
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

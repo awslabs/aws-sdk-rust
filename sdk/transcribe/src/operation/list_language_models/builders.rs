@@ -10,10 +10,7 @@ impl ListLanguageModelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_language_models::ListLanguageModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_language_models::ListLanguageModelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_language_models::ListLanguageModelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_language_models();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListLanguageModelsFluentBuilder {
         }
     }
     /// Access the ListLanguageModels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_language_models::builders::ListLanguageModelsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_language_models::builders::ListLanguageModelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListLanguageModelsFluentBuilder {
             crate::operation::list_language_models::ListLanguageModels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_language_models::ListLanguageModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_language_models::ListLanguageModelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListLanguageModelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListLanguageModelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_language_models::ListLanguageModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_language_models::ListLanguageModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_language_models::ListLanguageModelsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListLanguageModelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_language_models::ListLanguageModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_language_models::ListLanguageModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_language_models::ListLanguageModelsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListLanguageModelsFluentBuilder {
             crate::operation::list_language_models::ListLanguageModels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_language_models::ListLanguageModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_language_models::ListLanguageModelsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_language_models::paginator::ListLanguageModelsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_language_models::paginator::ListLanguageModelsPaginator {
-        crate::operation::list_language_models::paginator::ListLanguageModelsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_language_models::paginator::ListLanguageModelsPaginator {
+        crate::operation::list_language_models::paginator::ListLanguageModelsPaginator::new(self.handle, self.inner)
     }
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>, all custom language models are returned.</p>
     pub fn status_equals(mut self, input: crate::types::ModelStatus) -> Self {
@@ -140,10 +119,7 @@ impl ListLanguageModelsFluentBuilder {
         self
     }
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>, all custom language models are returned.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
@@ -152,18 +128,12 @@ impl ListLanguageModelsFluentBuilder {
         self.inner.get_status_equals()
     }
     /// <p>Returns only the custom language models that contain the specified string. The search is not case sensitive.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Returns only the custom language models that contain the specified string. The search is not case sensitive.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }

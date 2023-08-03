@@ -15,8 +15,7 @@ pub struct ModelDashboardModel {
     pub last_batch_transform_job: ::std::option::Option<crate::types::TransformJob>,
     /// <p>The monitoring schedules for a model.</p>
     #[doc(hidden)]
-    pub monitoring_schedules:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
+    pub monitoring_schedules: ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
     /// <p>The model card for a model.</p>
     #[doc(hidden)]
     pub model_card: ::std::option::Option<crate::types::ModelDashboardModelCard>,
@@ -35,9 +34,7 @@ impl ModelDashboardModel {
         self.last_batch_transform_job.as_ref()
     }
     /// <p>The monitoring schedules for a model.</p>
-    pub fn monitoring_schedules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ModelDashboardMonitoringSchedule]> {
+    pub fn monitoring_schedules(&self) -> ::std::option::Option<&[crate::types::ModelDashboardMonitoringSchedule]> {
         self.monitoring_schedules.as_deref()
     }
     /// <p>The model card for a model.</p>
@@ -54,16 +51,12 @@ impl ModelDashboardModel {
 
 /// A builder for [`ModelDashboardModel`](crate::types::ModelDashboardModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelDashboardModelBuilder {
     pub(crate) model: ::std::option::Option<crate::types::Model>,
-    pub(crate) endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
+    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
     pub(crate) last_batch_transform_job: ::std::option::Option<crate::types::TransformJob>,
-    pub(crate) monitoring_schedules:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
+    pub(crate) monitoring_schedules: ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
     pub(crate) model_card: ::std::option::Option<crate::types::ModelDashboardModelCard>,
 }
 impl ModelDashboardModelBuilder {
@@ -93,17 +86,12 @@ impl ModelDashboardModelBuilder {
         self
     }
     /// <p>The endpoints that host a model.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>>) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>The endpoints that host a model.</p>
-    pub fn get_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>> {
         &self.endpoints
     }
     /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
@@ -112,17 +100,12 @@ impl ModelDashboardModelBuilder {
         self
     }
     /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
-    pub fn set_last_batch_transform_job(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformJob>,
-    ) -> Self {
+    pub fn set_last_batch_transform_job(mut self, input: ::std::option::Option<crate::types::TransformJob>) -> Self {
         self.last_batch_transform_job = input;
         self
     }
     /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
-    pub fn get_last_batch_transform_job(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformJob> {
+    pub fn get_last_batch_transform_job(&self) -> &::std::option::Option<crate::types::TransformJob> {
         &self.last_batch_transform_job
     }
     /// Appends an item to `monitoring_schedules`.
@@ -130,30 +113,19 @@ impl ModelDashboardModelBuilder {
     /// To override the contents of this collection use [`set_monitoring_schedules`](Self::set_monitoring_schedules).
     ///
     /// <p>The monitoring schedules for a model.</p>
-    pub fn monitoring_schedules(
-        mut self,
-        input: crate::types::ModelDashboardMonitoringSchedule,
-    ) -> Self {
+    pub fn monitoring_schedules(mut self, input: crate::types::ModelDashboardMonitoringSchedule) -> Self {
         let mut v = self.monitoring_schedules.unwrap_or_default();
         v.push(input);
         self.monitoring_schedules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The monitoring schedules for a model.</p>
-    pub fn set_monitoring_schedules(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>,
-        >,
-    ) -> Self {
+    pub fn set_monitoring_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>) -> Self {
         self.monitoring_schedules = input;
         self
     }
     /// <p>The monitoring schedules for a model.</p>
-    pub fn get_monitoring_schedules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>
-    {
+    pub fn get_monitoring_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>> {
         &self.monitoring_schedules
     }
     /// <p>The model card for a model.</p>
@@ -162,10 +134,7 @@ impl ModelDashboardModelBuilder {
         self
     }
     /// <p>The model card for a model.</p>
-    pub fn set_model_card(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelDashboardModelCard>,
-    ) -> Self {
+    pub fn set_model_card(mut self, input: ::std::option::Option<crate::types::ModelDashboardModelCard>) -> Self {
         self.model_card = input;
         self
     }

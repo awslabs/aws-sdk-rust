@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SetTypeDefaultVersionOutput {
 }
 impl SetTypeDefaultVersionOutput {
     /// Creates a new builder-style object to manufacture [`SetTypeDefaultVersionOutput`](crate::operation::set_type_default_version::SetTypeDefaultVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::set_type_default_version::builders::SetTypeDefaultVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_type_default_version::builders::SetTypeDefaultVersionOutputBuilder {
         crate::operation::set_type_default_version::builders::SetTypeDefaultVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetTypeDefaultVersionOutput`](crate::operation::set_type_default_version::SetTypeDefaultVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTypeDefaultVersionOutputBuilder {
     _request_id: Option<String>,
 }

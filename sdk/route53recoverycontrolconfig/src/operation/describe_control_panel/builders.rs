@@ -37,9 +37,7 @@ impl DescribeControlPanelFluentBuilder {
         }
     }
     /// Access the DescribeControlPanel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_control_panel::builders::DescribeControlPanelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_control_panel::builders::DescribeControlPanelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeControlPanelFluentBuilder {
             crate::operation::describe_control_panel::DescribeControlPanel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_control_panel::DescribeControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_control_panel::DescribeControlPanelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeControlPanelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeControlPanelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_control_panel::DescribeControlPanelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_control_panel::DescribeControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_control_panel::DescribeControlPanelError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeControlPanelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_control_panel::DescribeControlPanelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_control_panel::DescribeControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_control_panel::DescribeControlPanelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeControlPanelFluentBuilder {
             crate::operation::describe_control_panel::DescribeControlPanel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_control_panel::DescribeControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_control_panel::DescribeControlPanelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_panel_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_panel_arn(input);
         self
     }

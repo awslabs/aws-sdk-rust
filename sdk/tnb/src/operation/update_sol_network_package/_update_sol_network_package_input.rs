@@ -16,26 +16,20 @@ impl UpdateSolNetworkPackageInput {
         self.nsd_info_id.as_deref()
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn nsd_operational_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NsdOperationalState> {
+    pub fn nsd_operational_state(&self) -> ::std::option::Option<&crate::types::NsdOperationalState> {
         self.nsd_operational_state.as_ref()
     }
 }
 impl UpdateSolNetworkPackageInput {
     /// Creates a new builder-style object to manufacture [`UpdateSolNetworkPackageInput`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput).
-    pub fn builder(
-    ) -> crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageInputBuilder {
         crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSolNetworkPackageInput`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSolNetworkPackageInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
     pub(crate) nsd_operational_state: ::std::option::Option<crate::types::NsdOperationalState>,
@@ -61,17 +55,12 @@ impl UpdateSolNetworkPackageInputBuilder {
         self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn set_nsd_operational_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NsdOperationalState>,
-    ) -> Self {
+    pub fn set_nsd_operational_state(mut self, input: ::std::option::Option<crate::types::NsdOperationalState>) -> Self {
         self.nsd_operational_state = input;
         self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn get_nsd_operational_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::NsdOperationalState> {
+    pub fn get_nsd_operational_state(&self) -> &::std::option::Option<crate::types::NsdOperationalState> {
         &self.nsd_operational_state
     }
     /// Consumes the builder and constructs a [`UpdateSolNetworkPackageInput`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput).
@@ -81,11 +70,9 @@ impl UpdateSolNetworkPackageInputBuilder {
         crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput {
-                nsd_info_id: self.nsd_info_id,
-                nsd_operational_state: self.nsd_operational_state,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput {
+            nsd_info_id: self.nsd_info_id,
+            nsd_operational_state: self.nsd_operational_state,
+        })
     }
 }

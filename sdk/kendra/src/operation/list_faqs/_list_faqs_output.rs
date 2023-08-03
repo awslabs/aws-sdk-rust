@@ -35,9 +35,7 @@ impl ListFaqsOutput {
 
 /// A builder for [`ListFaqsOutput`](crate::operation::list_faqs::ListFaqsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFaqsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) faq_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>>,
@@ -70,17 +68,12 @@ impl ListFaqsOutputBuilder {
         self
     }
     /// <p>information about the FAQs associated with the specified index.</p>
-    pub fn set_faq_summary_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>>,
-    ) -> Self {
+    pub fn set_faq_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>>) -> Self {
         self.faq_summary_items = input;
         self
     }
     /// <p>information about the FAQs associated with the specified index.</p>
-    pub fn get_faq_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>> {
+    pub fn get_faq_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>> {
         &self.faq_summary_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

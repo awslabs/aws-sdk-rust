@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput::next_token): <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     ///   - [`worker_configurations(Option<Vec<WorkerConfigurationSummary>>)`](crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput::worker_configurations): <p>An array of worker configuration descriptions.</p>
     /// - On failure, responds with [`SdkError<ListWorkerConfigurationsError>`](crate::operation::list_worker_configurations::ListWorkerConfigurationsError)
-    pub fn list_worker_configurations(
-        &self,
-    ) -> crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsFluentBuilder
-    {
+    pub fn list_worker_configurations(&self) -> crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsFluentBuilder {
         crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`clusters(Option<Vec<String>>)`](crate::operation::list_clusters::ListClustersOutput::clusters): <p>A list of all of the clusters for your account in the specified Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
-    pub fn list_clusters(
-        &self,
-    ) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
-        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_clusters(&self) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
+        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
     }
 }

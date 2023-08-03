@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for CreateOtaUpdateOutput {
 }
 impl CreateOtaUpdateOutput {
     /// Creates a new builder-style object to manufacture [`CreateOtaUpdateOutput`](crate::operation::create_ota_update::CreateOtaUpdateOutput).
-    pub fn builder() -> crate::operation::create_ota_update::builders::CreateOtaUpdateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_ota_update::builders::CreateOtaUpdateOutputBuilder {
         crate::operation::create_ota_update::builders::CreateOtaUpdateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOtaUpdateOutput`](crate::operation::create_ota_update::CreateOtaUpdateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOtaUpdateOutputBuilder {
     pub(crate) ota_update_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_iot_job_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +67,12 @@ pub struct CreateOtaUpdateOutputBuilder {
 }
 impl CreateOtaUpdateOutputBuilder {
     /// <p>The OTA update ID.</p>
-    pub fn ota_update_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ota_update_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ota_update_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OTA update ID.</p>
-    pub fn set_ota_update_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ota_update_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ota_update_id = input;
         self
     }
@@ -90,18 +81,12 @@ impl CreateOtaUpdateOutputBuilder {
         &self.ota_update_id
     }
     /// <p>The IoT job ID associated with the OTA update.</p>
-    pub fn aws_iot_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_iot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_iot_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IoT job ID associated with the OTA update.</p>
-    pub fn set_aws_iot_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_iot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_iot_job_id = input;
         self
     }
@@ -110,18 +95,12 @@ impl CreateOtaUpdateOutputBuilder {
         &self.aws_iot_job_id
     }
     /// <p>The OTA update ARN.</p>
-    pub fn ota_update_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ota_update_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ota_update_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OTA update ARN.</p>
-    pub fn set_ota_update_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ota_update_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ota_update_arn = input;
         self
     }
@@ -130,18 +109,12 @@ impl CreateOtaUpdateOutputBuilder {
         &self.ota_update_arn
     }
     /// <p>The IoT job ARN associated with the OTA update.</p>
-    pub fn aws_iot_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_iot_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_iot_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IoT job ARN associated with the OTA update.</p>
-    pub fn set_aws_iot_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_iot_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_iot_job_arn = input;
         self
     }
@@ -155,10 +128,7 @@ impl CreateOtaUpdateOutputBuilder {
         self
     }
     /// <p>The OTA update status.</p>
-    pub fn set_ota_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OtaUpdateStatus>,
-    ) -> Self {
+    pub fn set_ota_update_status(mut self, input: ::std::option::Option<crate::types::OtaUpdateStatus>) -> Self {
         self.ota_update_status = input;
         self
     }

@@ -6,16 +6,14 @@
 pub struct DescribeAccountConfigurationInput {}
 impl DescribeAccountConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountConfigurationInput`](crate::operation::describe_account_configuration::DescribeAccountConfigurationInput).
-    pub fn builder() -> crate::operation::describe_account_configuration::builders::DescribeAccountConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_account_configuration::builders::DescribeAccountConfigurationInputBuilder {
         crate::operation::describe_account_configuration::builders::DescribeAccountConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountConfigurationInput`](crate::operation::describe_account_configuration::DescribeAccountConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountConfigurationInputBuilder {}
 impl DescribeAccountConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountConfigurationInput`](crate::operation::describe_account_configuration::DescribeAccountConfigurationInput).
@@ -25,8 +23,6 @@ impl DescribeAccountConfigurationInputBuilder {
         crate::operation::describe_account_configuration::DescribeAccountConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_account_configuration::DescribeAccountConfigurationInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::describe_account_configuration::DescribeAccountConfigurationInput {})
     }
 }

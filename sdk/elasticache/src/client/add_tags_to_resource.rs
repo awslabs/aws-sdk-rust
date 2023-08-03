@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput) with field(s):
     ///   - [`tag_list(Option<Vec<Tag>>)`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput::tag_list): <p>A list of tags as key-value pairs.</p>
     /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::operation::add_tags_to_resource::AddTagsToResourceError)
-    pub fn add_tags_to_resource(
-        &self,
-    ) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder {
-        crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_tags_to_resource(&self) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder {
+        crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::new(self.handle.clone())
     }
 }

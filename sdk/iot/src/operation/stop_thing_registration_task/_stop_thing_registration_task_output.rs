@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StopThingRegistrationTaskOutput {
 }
 impl StopThingRegistrationTaskOutput {
     /// Creates a new builder-style object to manufacture [`StopThingRegistrationTaskOutput`](crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput).
-    pub fn builder() -> crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskOutputBuilder{
+    pub fn builder() -> crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskOutputBuilder {
         crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopThingRegistrationTaskOutput`](crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopThingRegistrationTaskOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl StopThingRegistrationTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopThingRegistrationTaskOutput`](crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput {
+    pub fn build(self) -> crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput {
         crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput {
             _request_id: self._request_id,
         }

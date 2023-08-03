@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListManagedSchemaArnsOutput {
 }
 impl ListManagedSchemaArnsOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedSchemaArnsOutput`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsOutputBuilder {
         crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedSchemaArnsOutput`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedSchemaArnsOutputBuilder {
     pub(crate) schema_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListManagedSchemaArnsOutputBuilder {
         self
     }
     /// <p>The ARNs for all AWS managed schemas.</p>
-    pub fn set_schema_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_schema_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.schema_arns = input;
         self
     }
     /// <p>The ARNs for all AWS managed schemas.</p>
-    pub fn get_schema_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_schema_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.schema_arns
     }
     /// <p>The pagination token.</p>

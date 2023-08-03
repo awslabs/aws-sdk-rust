@@ -10,10 +10,7 @@ impl CreateLabelGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_label_group::CreateLabelGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_label_group::CreateLabelGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_label_group::CreateLabelGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_label_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateLabelGroupFluentBuilder {
         }
     }
     /// Access the CreateLabelGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_label_group::builders::CreateLabelGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_label_group::builders::CreateLabelGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateLabelGroupFluentBuilder {
             crate::operation::create_label_group::CreateLabelGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_label_group::CreateLabelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_label_group::CreateLabelGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateLabelGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateLabelGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_label_group::CreateLabelGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_label_group::CreateLabelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_label_group::CreateLabelGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateLabelGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_label_group::CreateLabelGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_label_group::CreateLabelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_label_group::CreateLabelGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl CreateLabelGroupFluentBuilder {
             crate::operation::create_label_group::CreateLabelGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_label_group::CreateLabelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_label_group::CreateLabelGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p> Names a group of labels.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
     /// <p> Names a group of labels.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn set_label_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
@@ -157,18 +135,13 @@ impl CreateLabelGroupFluentBuilder {
     }
     /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn set_fault_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fault_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fault_codes(input);
         self
     }
     /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn get_fault_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fault_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_fault_codes()
     }
     /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
@@ -197,10 +170,7 @@ impl CreateLabelGroupFluentBuilder {
     }
     /// <p> Tags that provide metadata about the label group you are creating. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

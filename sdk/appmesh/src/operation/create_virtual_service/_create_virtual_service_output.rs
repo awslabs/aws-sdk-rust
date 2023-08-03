@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateVirtualServiceOutput {
 }
 impl CreateVirtualServiceOutput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualServiceOutput`](crate::operation::create_virtual_service::CreateVirtualServiceOutput).
-    pub fn builder(
-    ) -> crate::operation::create_virtual_service::builders::CreateVirtualServiceOutputBuilder {
+    pub fn builder() -> crate::operation::create_virtual_service::builders::CreateVirtualServiceOutputBuilder {
         crate::operation::create_virtual_service::builders::CreateVirtualServiceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVirtualServiceOutput`](crate::operation::create_virtual_service::CreateVirtualServiceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVirtualServiceOutputBuilder {
     pub(crate) virtual_service: ::std::option::Option<crate::types::VirtualServiceData>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateVirtualServiceOutputBuilder {
         self
     }
     /// <p>The full description of your virtual service following the create call.</p>
-    pub fn set_virtual_service(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualServiceData>,
-    ) -> Self {
+    pub fn set_virtual_service(mut self, input: ::std::option::Option<crate::types::VirtualServiceData>) -> Self {
         self.virtual_service = input;
         self
     }

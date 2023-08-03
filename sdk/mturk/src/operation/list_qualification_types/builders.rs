@@ -37,10 +37,7 @@ impl ListQualificationTypesFluentBuilder {
         }
     }
     /// Access the ListQualificationTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_qualification_types::builders::ListQualificationTypesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_qualification_types::builders::ListQualificationTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListQualificationTypesFluentBuilder {
             crate::operation::list_qualification_types::ListQualificationTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_qualification_types::ListQualificationTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_qualification_types::ListQualificationTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListQualificationTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListQualificationTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_qualification_types::ListQualificationTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_qualification_types::ListQualificationTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_qualification_types::ListQualificationTypesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListQualificationTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_qualification_types::ListQualificationTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_qualification_types::ListQualificationTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_qualification_types::ListQualificationTypesError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListQualificationTypesFluentBuilder {
             crate::operation::list_qualification_types::ListQualificationTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_qualification_types::ListQualificationTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_qualification_types::ListQualificationTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator
-    {
-        crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator {
+        crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator::new(self.handle, self.inner)
     }
     /// <p> A text query against all of the searchable attributes of Qualification types. </p>
     pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

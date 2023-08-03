@@ -10,10 +10,7 @@ impl UpdateTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_template::UpdateTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template::UpdateTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template::UpdateTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_template();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateTemplateFluentBuilder {
         }
     }
     /// Access the UpdateTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_template::builders::UpdateTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_template::builders::UpdateTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl UpdateTemplateFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -156,10 +142,7 @@ impl UpdateTemplateFluentBuilder {
     }
     /// <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
-    pub fn set_source_entity(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateSourceEntity>,
-    ) -> Self {
+    pub fn set_source_entity(mut self, input: ::std::option::Option<crate::types::TemplateSourceEntity>) -> Self {
         self.inner = self.inner.set_source_entity(input);
         self
     }
@@ -169,18 +152,12 @@ impl UpdateTemplateFluentBuilder {
         self.inner.get_source_entity()
     }
     /// <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
-    pub fn version_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_description(input.into());
         self
     }
     /// <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
-    pub fn set_version_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_description(input);
         self
     }
@@ -210,18 +187,13 @@ impl UpdateTemplateFluentBuilder {
     }
     /// <p>The definition of a template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateVersionDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::TemplateVersionDefinition>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
     /// <p>The definition of a template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn get_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateVersionDefinition> {
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::TemplateVersionDefinition> {
         self.inner.get_definition()
     }
 }

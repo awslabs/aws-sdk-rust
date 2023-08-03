@@ -17,9 +17,7 @@ pub fn ser_s3_grant(
     Ok(())
 }
 
-pub fn de_s3_grant(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::S3Grant, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_s3_grant(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::S3Grant, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::S3Grant::builder();
     while let Some(mut tag) = decoder.next_tag() {

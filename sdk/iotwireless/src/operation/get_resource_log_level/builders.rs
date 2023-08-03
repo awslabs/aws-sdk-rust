@@ -37,9 +37,7 @@ impl GetResourceLogLevelFluentBuilder {
         }
     }
     /// Access the GetResourceLogLevel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetResourceLogLevelFluentBuilder {
             crate::operation::get_resource_log_level::GetResourceLogLevel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_log_level::GetResourceLogLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_log_level::GetResourceLogLevelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetResourceLogLevelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetResourceLogLevelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_log_level::GetResourceLogLevelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_log_level::GetResourceLogLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_log_level::GetResourceLogLevelError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetResourceLogLevelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_log_level::GetResourceLogLevelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_log_level::GetResourceLogLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_log_level::GetResourceLogLevelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetResourceLogLevelFluentBuilder {
             crate::operation::get_resource_log_level::GetResourceLogLevel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_log_level::GetResourceLogLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_log_level::GetResourceLogLevelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
@@ -143,18 +124,12 @@ impl GetResourceLogLevelFluentBuilder {
         self.inner.get_resource_identifier()
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

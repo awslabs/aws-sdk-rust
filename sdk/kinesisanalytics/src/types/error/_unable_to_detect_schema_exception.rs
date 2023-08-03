@@ -63,14 +63,11 @@ impl UnableToDetectSchemaException {
 
 /// A builder for [`UnableToDetectSchemaException`](crate::types::error::UnableToDetectSchemaException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnableToDetectSchemaExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) raw_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) processed_input_records:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) processed_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl UnableToDetectSchemaExceptionBuilder {
@@ -92,54 +89,38 @@ impl UnableToDetectSchemaExceptionBuilder {
     ///
     /// To override the contents of this collection use [`set_raw_input_records`](Self::set_raw_input_records).
     ///
-    pub fn raw_input_records(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn raw_input_records(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.raw_input_records.unwrap_or_default();
         v.push(input.into());
         self.raw_input_records = ::std::option::Option::Some(v);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_raw_input_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_raw_input_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.raw_input_records = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_raw_input_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_raw_input_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.raw_input_records
     }
     /// Appends an item to `processed_input_records`.
     ///
     /// To override the contents of this collection use [`set_processed_input_records`](Self::set_processed_input_records).
     ///
-    pub fn processed_input_records(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn processed_input_records(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.processed_input_records.unwrap_or_default();
         v.push(input.into());
         self.processed_input_records = ::std::option::Option::Some(v);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_processed_input_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_processed_input_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.processed_input_records = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_processed_input_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_processed_input_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.processed_input_records
     }
     /// Sets error metadata
@@ -149,10 +130,7 @@ impl UnableToDetectSchemaExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

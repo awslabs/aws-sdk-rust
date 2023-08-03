@@ -72,9 +72,7 @@ impl Preset {
 
 /// A builder for [`Preset`](crate::types::Preset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PresetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
@@ -120,10 +118,7 @@ impl PresetBuilder {
         self
     }
     /// The timestamp in epoch seconds for preset creation.
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -151,10 +146,7 @@ impl PresetBuilder {
         self
     }
     /// The timestamp in epoch seconds when the preset was last updated.
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -182,10 +174,7 @@ impl PresetBuilder {
         self
     }
     /// Settings for preset
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::PresetSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::PresetSettings>) -> Self {
         self.settings = input;
         self
     }

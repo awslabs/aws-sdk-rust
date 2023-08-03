@@ -18,9 +18,7 @@ pub struct S3ObjectMetadata {
     pub content_language: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub user_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p></p>
     #[doc(hidden)]
     pub content_length: ::std::option::Option<i64>,
@@ -58,11 +56,7 @@ impl S3ObjectMetadata {
         self.content_language.as_deref()
     }
     /// <p></p>
-    pub fn user_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn user_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.user_metadata.as_ref()
     }
     /// <p></p>
@@ -99,17 +93,13 @@ impl S3ObjectMetadata {
 
 /// A builder for [`S3ObjectMetadata`](crate::types::S3ObjectMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ObjectMetadataBuilder {
     pub(crate) cache_control: ::std::option::Option<::std::string::String>,
     pub(crate) content_disposition: ::std::option::Option<::std::string::String>,
     pub(crate) content_encoding: ::std::option::Option<::std::string::String>,
     pub(crate) content_language: ::std::option::Option<::std::string::String>,
-    pub(crate) user_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) content_length: ::std::option::Option<i64>,
     pub(crate) content_md5: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
@@ -119,18 +109,12 @@ pub struct S3ObjectMetadataBuilder {
 }
 impl S3ObjectMetadataBuilder {
     /// <p></p>
-    pub fn cache_control(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_control = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_cache_control(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_control = input;
         self
     }
@@ -139,18 +123,12 @@ impl S3ObjectMetadataBuilder {
         &self.cache_control
     }
     /// <p></p>
-    pub fn content_disposition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_disposition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_disposition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_content_disposition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_disposition = input;
         self
     }
@@ -159,18 +137,12 @@ impl S3ObjectMetadataBuilder {
         &self.content_disposition
     }
     /// <p></p>
-    pub fn content_encoding(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_encoding = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_content_encoding(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_encoding = input;
         self
     }
@@ -179,18 +151,12 @@ impl S3ObjectMetadataBuilder {
         &self.content_encoding
     }
     /// <p></p>
-    pub fn content_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_language = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_content_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_language = input;
         self
     }
@@ -203,11 +169,7 @@ impl S3ObjectMetadataBuilder {
     /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).
     ///
     /// <p></p>
-    pub fn user_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.user_metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.user_metadata = ::std::option::Option::Some(hash_map);
@@ -216,19 +178,13 @@ impl S3ObjectMetadataBuilder {
     /// <p></p>
     pub fn set_user_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.user_metadata = input;
         self
     }
     /// <p></p>
-    pub fn get_user_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.user_metadata
     }
     /// <p></p>
@@ -279,10 +235,7 @@ impl S3ObjectMetadataBuilder {
         self
     }
     /// <p></p>
-    pub fn set_http_expires_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_http_expires_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.http_expires_date = input;
         self
     }
@@ -310,10 +263,7 @@ impl S3ObjectMetadataBuilder {
         self
     }
     /// <p></p>
-    pub fn set_sse_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SseAlgorithm>,
-    ) -> Self {
+    pub fn set_sse_algorithm(mut self, input: ::std::option::Option<crate::types::S3SseAlgorithm>) -> Self {
         self.sse_algorithm = input;
         self
     }

@@ -29,16 +29,14 @@ impl ListMultiRegionAccessPointsInput {
 }
 impl ListMultiRegionAccessPointsInput {
     /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsInput`](crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput).
-    pub fn builder() -> crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsInputBuilder{
+    pub fn builder() -> crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsInputBuilder {
         crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMultiRegionAccessPointsInput`](crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultiRegionAccessPointsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl ListMultiRegionAccessPointsInputBuilder {
         crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput {
-                account_id: self.account_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput {
+            account_id: self.account_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

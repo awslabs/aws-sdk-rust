@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetApiCacheOutput`](crate::operation::get_api_cache::GetApiCacheOutput) with field(s):
     ///   - [`api_cache(Option<ApiCache>)`](crate::operation::get_api_cache::GetApiCacheOutput::api_cache): <p>The <code>ApiCache</code> object.</p>
     /// - On failure, responds with [`SdkError<GetApiCacheError>`](crate::operation::get_api_cache::GetApiCacheError)
-    pub fn get_api_cache(
-        &self,
-    ) -> crate::operation::get_api_cache::builders::GetApiCacheFluentBuilder {
-        crate::operation::get_api_cache::builders::GetApiCacheFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_api_cache(&self) -> crate::operation::get_api_cache::builders::GetApiCacheFluentBuilder {
+        crate::operation::get_api_cache::builders::GetApiCacheFluentBuilder::new(self.handle.clone())
     }
 }

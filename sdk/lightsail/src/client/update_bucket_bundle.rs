@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateBucketBundleOutput`](crate::operation::update_bucket_bundle::UpdateBucketBundleOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::update_bucket_bundle::UpdateBucketBundleOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateBucketBundleError>`](crate::operation::update_bucket_bundle::UpdateBucketBundleError)
-    pub fn update_bucket_bundle(
-        &self,
-    ) -> crate::operation::update_bucket_bundle::builders::UpdateBucketBundleFluentBuilder {
-        crate::operation::update_bucket_bundle::builders::UpdateBucketBundleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_bucket_bundle(&self) -> crate::operation::update_bucket_bundle::builders::UpdateBucketBundleFluentBuilder {
+        crate::operation::update_bucket_bundle::builders::UpdateBucketBundleFluentBuilder::new(self.handle.clone())
     }
 }

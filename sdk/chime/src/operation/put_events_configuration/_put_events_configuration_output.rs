@@ -10,9 +10,7 @@ pub struct PutEventsConfigurationOutput {
 }
 impl PutEventsConfigurationOutput {
     /// <p>The configuration that allows a bot to receive outgoing events. Can be an HTTPS endpoint or an AWS Lambda function ARN.</p>
-    pub fn events_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventsConfiguration> {
+    pub fn events_configuration(&self) -> ::std::option::Option<&crate::types::EventsConfiguration> {
         self.events_configuration.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for PutEventsConfigurationOutput {
 }
 impl PutEventsConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutEventsConfigurationOutput`](crate::operation::put_events_configuration::PutEventsConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::put_events_configuration::builders::PutEventsConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_events_configuration::builders::PutEventsConfigurationOutputBuilder {
         crate::operation::put_events_configuration::builders::PutEventsConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutEventsConfigurationOutput`](crate::operation::put_events_configuration::PutEventsConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEventsConfigurationOutputBuilder {
     pub(crate) events_configuration: ::std::option::Option<crate::types::EventsConfiguration>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl PutEventsConfigurationOutputBuilder {
         self
     }
     /// <p>The configuration that allows a bot to receive outgoing events. Can be an HTTPS endpoint or an AWS Lambda function ARN.</p>
-    pub fn set_events_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EventsConfiguration>,
-    ) -> Self {
+    pub fn set_events_configuration(mut self, input: ::std::option::Option<crate::types::EventsConfiguration>) -> Self {
         self.events_configuration = input;
         self
     }
     /// <p>The configuration that allows a bot to receive outgoing events. Can be an HTTPS endpoint or an AWS Lambda function ARN.</p>
-    pub fn get_events_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventsConfiguration> {
+    pub fn get_events_configuration(&self) -> &::std::option::Option<crate::types::EventsConfiguration> {
         &self.events_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -30,9 +30,7 @@ impl UpdateRegistryInput {
 
 /// A builder for [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRegistryInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl UpdateRegistryInputBuilder {
         &self.description
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -75,10 +67,7 @@ impl UpdateRegistryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_registry::UpdateRegistryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_registry::UpdateRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_registry::UpdateRegistryInput {
             description: self.description,
             registry_name: self.registry_name,

@@ -23,9 +23,7 @@ impl UserSettings {
 
 /// A builder for [`UserSettings`](crate::types::UserSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserSettingsBuilder {
     pub(crate) telephony: ::std::option::Option<crate::types::TelephonySettings>,
 }
@@ -36,10 +34,7 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>The telephony settings associated with the user.</p>
-    pub fn set_telephony(
-        mut self,
-        input: ::std::option::Option<crate::types::TelephonySettings>,
-    ) -> Self {
+    pub fn set_telephony(mut self, input: ::std::option::Option<crate::types::TelephonySettings>) -> Self {
         self.telephony = input;
         self
     }
@@ -49,8 +44,6 @@ impl UserSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     pub fn build(self) -> crate::types::UserSettings {
-        crate::types::UserSettings {
-            telephony: self.telephony,
-        }
+        crate::types::UserSettings { telephony: self.telephony }
     }
 }

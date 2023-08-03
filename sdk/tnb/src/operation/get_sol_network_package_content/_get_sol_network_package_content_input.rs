@@ -22,16 +22,14 @@ impl GetSolNetworkPackageContentInput {
 }
 impl GetSolNetworkPackageContentInput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkPackageContentInput`](crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput).
-    pub fn builder() -> crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentInputBuilder{
+    pub fn builder() -> crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentInputBuilder {
         crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolNetworkPackageContentInput`](crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageContentInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
     pub(crate) accept: ::std::option::Option<crate::types::PackageContentType>,
@@ -57,10 +55,7 @@ impl GetSolNetworkPackageContentInputBuilder {
         self
     }
     /// <p>The format of the package you want to download from the network package.</p>
-    pub fn set_accept(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
+    pub fn set_accept(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
         self.accept = input;
         self
     }
@@ -75,11 +70,9 @@ impl GetSolNetworkPackageContentInputBuilder {
         crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput {
-                nsd_info_id: self.nsd_info_id,
-                accept: self.accept,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput {
+            nsd_info_id: self.nsd_info_id,
+            accept: self.accept,
+        })
     }
 }

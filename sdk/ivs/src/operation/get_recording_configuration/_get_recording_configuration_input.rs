@@ -15,16 +15,14 @@ impl GetRecordingConfigurationInput {
 }
 impl GetRecordingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetRecordingConfigurationInput`](crate::operation::get_recording_configuration::GetRecordingConfigurationInput).
-    pub fn builder() -> crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder {
         crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecordingConfigurationInput`](crate::operation::get_recording_configuration::GetRecordingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecordingConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl GetRecordingConfigurationInputBuilder {
         crate::operation::get_recording_configuration::GetRecordingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_recording_configuration::GetRecordingConfigurationInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_recording_configuration::GetRecordingConfigurationInput { arn: self.arn })
     }
 }

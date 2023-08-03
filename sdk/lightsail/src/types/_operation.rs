@@ -100,9 +100,7 @@ impl Operation {
 
 /// A builder for [`Operation`](crate::types::Operation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
@@ -133,18 +131,12 @@ impl OperationBuilder {
         &self.id
     }
     /// <p>The resource name.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource name.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -158,10 +150,7 @@ impl OperationBuilder {
         self
     }
     /// <p>The resource type. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -175,10 +164,7 @@ impl OperationBuilder {
         self
     }
     /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -192,10 +178,7 @@ impl OperationBuilder {
         self
     }
     /// <p>The Amazon Web Services Region and Availability Zone.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
@@ -218,18 +201,12 @@ impl OperationBuilder {
         &self.is_terminal
     }
     /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
-    pub fn operation_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operation_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
-    pub fn set_operation_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operation_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_details = input;
         self
     }
@@ -243,10 +220,7 @@ impl OperationBuilder {
         self
     }
     /// <p>The type of operation. </p>
-    pub fn set_operation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationType>,
-    ) -> Self {
+    pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.operation_type = input;
         self
     }
@@ -260,10 +234,7 @@ impl OperationBuilder {
         self
     }
     /// <p>The status of the operation. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -277,10 +248,7 @@ impl OperationBuilder {
         self
     }
     /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
-    pub fn set_status_changed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_status_changed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.status_changed_at = input;
         self
     }
@@ -303,18 +271,12 @@ impl OperationBuilder {
         &self.error_code
     }
     /// <p>The error details.</p>
-    pub fn error_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error details.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_details = input;
         self
     }

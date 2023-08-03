@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLaunchProfileMemberOutput {
 }
 impl DeleteLaunchProfileMemberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchProfileMemberOutput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput).
-    pub fn builder() -> crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberOutputBuilder{
+    pub fn builder() -> crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberOutputBuilder {
         crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLaunchProfileMemberOutput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLaunchProfileMemberOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteLaunchProfileMemberOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteLaunchProfileMemberOutput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput {
+    pub fn build(self) -> crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput {
         crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput {
             _request_id: self._request_id,
         }

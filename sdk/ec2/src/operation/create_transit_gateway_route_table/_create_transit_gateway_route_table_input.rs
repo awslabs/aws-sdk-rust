@@ -29,36 +29,27 @@ impl CreateTransitGatewayRouteTableInput {
 }
 impl CreateTransitGatewayRouteTableInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableInput`](crate::operation::create_transit_gateway_route_table::CreateTransitGatewayRouteTableInput).
-    pub fn builder() -> crate::operation::create_transit_gateway_route_table::builders::CreateTransitGatewayRouteTableInputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_route_table::builders::CreateTransitGatewayRouteTableInputBuilder {
         crate::operation::create_transit_gateway_route_table::builders::CreateTransitGatewayRouteTableInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayRouteTableInput`](crate::operation::create_transit_gateway_route_table::CreateTransitGatewayRouteTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteTableInputBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateTransitGatewayRouteTableInputBuilder {
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -78,17 +69,12 @@ impl CreateTransitGatewayRouteTableInputBuilder {
         self
     }
     /// <p>The tags to apply to the transit gateway route table.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the transit gateway route table.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -114,13 +100,10 @@ impl CreateTransitGatewayRouteTableInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_route_table::CreateTransitGatewayRouteTableInput {
-                transit_gateway_id: self.transit_gateway_id
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_id: self.transit_gateway_id,
+                tag_specifications: self.tag_specifications,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

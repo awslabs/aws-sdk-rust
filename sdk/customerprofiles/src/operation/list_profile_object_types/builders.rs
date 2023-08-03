@@ -26,8 +26,7 @@ impl ListProfileObjectTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProfileObjectTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_profile_object_types::builders::ListProfileObjectTypesInputBuilder,
+    inner: crate::operation::list_profile_object_types::builders::ListProfileObjectTypesInputBuilder,
 }
 impl ListProfileObjectTypesFluentBuilder {
     /// Creates a new `ListProfileObjectTypes`.
@@ -38,10 +37,7 @@ impl ListProfileObjectTypesFluentBuilder {
         }
     }
     /// Access the ListProfileObjectTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_profile_object_types::builders::ListProfileObjectTypesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_profile_object_types::builders::ListProfileObjectTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListProfileObjectTypesFluentBuilder {
             crate::operation::list_profile_object_types::ListProfileObjectTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_object_types::ListProfileObjectTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_object_types::ListProfileObjectTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListProfileObjectTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListProfileObjectTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_profile_object_types::ListProfileObjectTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_object_types::ListProfileObjectTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_object_types::ListProfileObjectTypesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListProfileObjectTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_profile_object_types::ListProfileObjectTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_object_types::ListProfileObjectTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_object_types::ListProfileObjectTypesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ListProfileObjectTypesFluentBuilder {
             crate::operation::list_profile_object_types::ListProfileObjectTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_object_types::ListProfileObjectTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_object_types::ListProfileObjectTypesError>,
     > {
         self.customize_middleware().await
     }

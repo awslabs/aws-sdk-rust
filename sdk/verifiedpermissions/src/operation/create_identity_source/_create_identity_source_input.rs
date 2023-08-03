@@ -46,17 +46,14 @@ impl CreateIdentitySourceInput {
 }
 impl CreateIdentitySourceInput {
     /// Creates a new builder-style object to manufacture [`CreateIdentitySourceInput`](crate::operation::create_identity_source::CreateIdentitySourceInput).
-    pub fn builder(
-    ) -> crate::operation::create_identity_source::builders::CreateIdentitySourceInputBuilder {
+    pub fn builder() -> crate::operation::create_identity_source::builders::CreateIdentitySourceInputBuilder {
         crate::operation::create_identity_source::builders::CreateIdentitySourceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateIdentitySourceInput`](crate::operation::create_identity_source::CreateIdentitySourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIdentitySourceInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
@@ -85,18 +82,12 @@ impl CreateIdentitySourceInputBuilder {
         &self.client_token
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -116,10 +107,7 @@ impl CreateIdentitySourceInputBuilder {
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::Configuration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::Configuration>) -> Self {
         self.configuration = input;
         self
     }
@@ -131,18 +119,12 @@ impl CreateIdentitySourceInputBuilder {
         &self.configuration
     }
     /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
-    pub fn principal_entity_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_entity_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
-    pub fn set_principal_entity_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_entity_type = input;
         self
     }
@@ -153,17 +135,13 @@ impl CreateIdentitySourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateIdentitySourceInput`](crate::operation::create_identity_source::CreateIdentitySourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_identity_source::CreateIdentitySourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_identity_source::CreateIdentitySourceInput {
-                client_token: self.client_token,
-                policy_store_id: self.policy_store_id,
-                configuration: self.configuration,
-                principal_entity_type: self.principal_entity_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_identity_source::CreateIdentitySourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_identity_source::CreateIdentitySourceInput {
+            client_token: self.client_token,
+            policy_store_id: self.policy_store_id,
+            configuration: self.configuration,
+            principal_entity_type: self.principal_entity_type,
+        })
     }
 }

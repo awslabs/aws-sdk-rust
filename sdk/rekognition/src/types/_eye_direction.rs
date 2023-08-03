@@ -37,9 +37,7 @@ impl EyeDirection {
 
 /// A builder for [`EyeDirection`](crate::types::EyeDirection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EyeDirectionBuilder {
     pub(crate) yaw: ::std::option::Option<f32>,
     pub(crate) pitch: ::std::option::Option<f32>,

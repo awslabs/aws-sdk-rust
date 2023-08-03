@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`application_version_id(Option<i64>)`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput::application_version_id): <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
     ///   - [`cloud_watch_logging_option_descriptions(Option<Vec<CloudWatchLoggingOptionDescription>>)`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput::cloud_watch_logging_option_descriptions): <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
     /// - On failure, responds with [`SdkError<AddApplicationCloudWatchLoggingOptionError>`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError)
-    pub fn add_application_cloud_watch_logging_option(&self) -> crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionFluentBuilder{
-        crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionFluentBuilder::new(self.handle.clone())
+    pub fn add_application_cloud_watch_logging_option(
+        &self,
+    ) -> crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionFluentBuilder {
+        crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

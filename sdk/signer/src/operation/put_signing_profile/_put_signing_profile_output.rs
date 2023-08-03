@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for PutSigningProfileOutput {
 }
 impl PutSigningProfileOutput {
     /// Creates a new builder-style object to manufacture [`PutSigningProfileOutput`](crate::operation::put_signing_profile::PutSigningProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::put_signing_profile::builders::PutSigningProfileOutputBuilder {
+    pub fn builder() -> crate::operation::put_signing_profile::builders::PutSigningProfileOutputBuilder {
         crate::operation::put_signing_profile::builders::PutSigningProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutSigningProfileOutput`](crate::operation::put_signing_profile::PutSigningProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSigningProfileOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,
@@ -68,18 +65,12 @@ impl PutSigningProfileOutputBuilder {
         &self.arn
     }
     /// <p>The version of the signing profile being created.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the signing profile being created.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version = input;
         self
     }
@@ -88,18 +79,12 @@ impl PutSigningProfileOutputBuilder {
         &self.profile_version
     }
     /// <p>The signing profile ARN, including the profile version.</p>
-    pub fn profile_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signing profile ARN, including the profile version.</p>
-    pub fn set_profile_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version_arn = input;
         self
     }

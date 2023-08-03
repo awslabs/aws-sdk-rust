@@ -30,34 +30,24 @@ impl MobileDeviceAccessMatchedRule {
 
 /// A builder for [`MobileDeviceAccessMatchedRule`](crate::types::MobileDeviceAccessMatchedRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MobileDeviceAccessMatchedRuleBuilder {
     pub(crate) mobile_device_access_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl MobileDeviceAccessMatchedRuleBuilder {
     /// <p>Identifier of the rule that a simulated user matches.</p>
-    pub fn mobile_device_access_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mobile_device_access_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mobile_device_access_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the rule that a simulated user matches.</p>
-    pub fn set_mobile_device_access_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mobile_device_access_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mobile_device_access_rule_id = input;
         self
     }
     /// <p>Identifier of the rule that a simulated user matches.</p>
-    pub fn get_mobile_device_access_rule_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_mobile_device_access_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.mobile_device_access_rule_id
     }
     /// <p>Name of a rule that a simulated user matches.</p>

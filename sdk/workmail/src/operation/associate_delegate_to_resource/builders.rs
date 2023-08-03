@@ -26,7 +26,7 @@ impl AssociateDelegateToResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDelegateToResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder,
+    inner: crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder,
 }
 impl AssociateDelegateToResourceFluentBuilder {
     /// Creates a new `AssociateDelegateToResource`.
@@ -37,7 +37,7 @@ impl AssociateDelegateToResourceFluentBuilder {
         }
     }
     /// Access the AssociateDelegateToResource as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateDelegateToResourceFluentBuilder {
             crate::operation::associate_delegate_to_resource::AssociateDelegateToResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateDelegateToResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateDelegateToResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateDelegateToResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl AssociateDelegateToResourceFluentBuilder {
             crate::operation::associate_delegate_to_resource::AssociateDelegateToResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The organization under which the resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The organization under which the resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

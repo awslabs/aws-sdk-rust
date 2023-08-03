@@ -10,10 +10,7 @@ impl GetInsightEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_insight_events::GetInsightEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_events::GetInsightEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_events::GetInsightEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_insight_events();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetInsightEventsFluentBuilder {
         }
     }
     /// Access the GetInsightEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_insight_events::builders::GetInsightEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_insight_events::builders::GetInsightEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetInsightEventsFluentBuilder {
             crate::operation::get_insight_events::GetInsightEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_events::GetInsightEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_events::GetInsightEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetInsightEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetInsightEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insight_events::GetInsightEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_events::GetInsightEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_events::GetInsightEventsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetInsightEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insight_events::GetInsightEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_events::GetInsightEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_events::GetInsightEventsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetInsightEventsFluentBuilder {
             crate::operation::get_insight_events::GetInsightEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_events::GetInsightEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_events::GetInsightEventsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_insight_events::paginator::GetInsightEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_insight_events::paginator::GetInsightEventsPaginator {
-        crate::operation::get_insight_events::paginator::GetInsightEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_insight_events::paginator::GetInsightEventsPaginator {
+        crate::operation::get_insight_events::paginator::GetInsightEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

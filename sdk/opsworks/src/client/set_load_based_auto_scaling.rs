@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`down_scaling(AutoScalingThresholds)`](crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingFluentBuilder::down_scaling) / [`set_down_scaling(Option<AutoScalingThresholds>)`](crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingFluentBuilder::set_down_scaling): <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
     /// - On success, responds with [`SetLoadBasedAutoScalingOutput`](crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingOutput)
     /// - On failure, responds with [`SdkError<SetLoadBasedAutoScalingError>`](crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError)
-    pub fn set_load_based_auto_scaling(
-        &self,
-    ) -> crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingFluentBuilder
-    {
+    pub fn set_load_based_auto_scaling(&self) -> crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingFluentBuilder {
         crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingFluentBuilder::new(self.handle.clone())
     }
 }

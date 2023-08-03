@@ -30,9 +30,7 @@ impl DetailedError {
 
 /// A builder for [`DetailedError`](crate::types::DetailedError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetailedErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::DetailedErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl DetailedErrorBuilder {
         self
     }
     /// <p>The error code. </p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DetailedErrorCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::DetailedErrorCode>) -> Self {
         self.code = input;
         self
     }

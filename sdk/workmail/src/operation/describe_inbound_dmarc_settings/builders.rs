@@ -26,7 +26,7 @@ impl DescribeInboundDmarcSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInboundDmarcSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsInputBuilder,
+    inner: crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsInputBuilder,
 }
 impl DescribeInboundDmarcSettingsFluentBuilder {
     /// Creates a new `DescribeInboundDmarcSettings`.
@@ -37,7 +37,7 @@ impl DescribeInboundDmarcSettingsFluentBuilder {
         }
     }
     /// Access the DescribeInboundDmarcSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeInboundDmarcSettingsFluentBuilder {
             crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeInboundDmarcSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeInboundDmarcSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeInboundDmarcSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeInboundDmarcSettingsFluentBuilder {
             crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Lists the ID of the given organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>Lists the ID of the given organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

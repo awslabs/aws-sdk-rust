@@ -25,10 +25,7 @@ pub fn ser_start_replay_input(
     if let Some(var_6) = &input.destination {
         #[allow(unused_mut)]
         let mut object_7 = object.key("Destination").start_object();
-        crate::protocol_serde::shape_replay_destination::ser_replay_destination(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_replay_destination::ser_replay_destination(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

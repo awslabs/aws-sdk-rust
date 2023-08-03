@@ -26,7 +26,7 @@ impl DescribeInboundConnectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInboundConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsInputBuilder,
+    inner: crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsInputBuilder,
 }
 impl DescribeInboundConnectionsFluentBuilder {
     /// Creates a new `DescribeInboundConnections`.
@@ -37,7 +37,7 @@ impl DescribeInboundConnectionsFluentBuilder {
         }
     }
     /// Access the DescribeInboundConnections as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeInboundConnectionsFluentBuilder {
             crate::operation::describe_inbound_connections::DescribeInboundConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inbound_connections::DescribeInboundConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_connections::DescribeInboundConnectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeInboundConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeInboundConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inbound_connections::DescribeInboundConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inbound_connections::DescribeInboundConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_connections::DescribeInboundConnectionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeInboundConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inbound_connections::DescribeInboundConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inbound_connections::DescribeInboundConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_connections::DescribeInboundConnectionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeInboundConnectionsFluentBuilder {
             crate::operation::describe_inbound_connections::DescribeInboundConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inbound_connections::DescribeInboundConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_connections::DescribeInboundConnectionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_inbound_connections::paginator::DescribeInboundConnectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_inbound_connections::paginator::DescribeInboundConnectionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_inbound_connections::paginator::DescribeInboundConnectionsPaginator {
         crate::operation::describe_inbound_connections::paginator::DescribeInboundConnectionsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -136,10 +125,7 @@ impl DescribeInboundConnectionsFluentBuilder {
         self
     }
     /// <p> A list of filters used to match properties for inbound cross-cluster connections.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

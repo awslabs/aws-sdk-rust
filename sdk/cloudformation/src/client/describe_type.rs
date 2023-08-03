@@ -38,11 +38,7 @@ impl super::Client {
     ///   - [`is_activated(Option<bool>)`](crate::operation::describe_type::DescribeTypeOutput::is_activated): <p>Whether the extension is activated in the account and Region.</p>  <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
     ///   - [`auto_update(Option<bool>)`](crate::operation::describe_type::DescribeTypeOutput::auto_update): <p>Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DescribeTypeError>`](crate::operation::describe_type::DescribeTypeError)
-    pub fn describe_type(
-        &self,
-    ) -> crate::operation::describe_type::builders::DescribeTypeFluentBuilder {
-        crate::operation::describe_type::builders::DescribeTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_type(&self) -> crate::operation::describe_type::builders::DescribeTypeFluentBuilder {
+        crate::operation::describe_type::builders::DescribeTypeFluentBuilder::new(self.handle.clone())
     }
 }

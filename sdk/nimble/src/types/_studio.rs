@@ -38,8 +38,7 @@ pub struct Studio {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of the encryption method that is used for the studio.</p>
     #[doc(hidden)]
-    pub studio_encryption_configuration:
-        ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
+    pub studio_encryption_configuration: ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
     /// <p>The unique identifier for a studio resource. In Nimble Studio, all other resources are contained in a studio resource.</p>
     #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
@@ -51,9 +50,7 @@ pub struct Studio {
     pub studio_url: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -99,9 +96,7 @@ impl Studio {
         self.status_message.as_deref()
     }
     /// <p>Configuration of the encryption method that is used for the studio.</p>
-    pub fn studio_encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StudioEncryptionConfiguration> {
+    pub fn studio_encryption_configuration(&self) -> ::std::option::Option<&crate::types::StudioEncryptionConfiguration> {
         self.studio_encryption_configuration.as_ref()
     }
     /// <p>The unique identifier for a studio resource. In Nimble Studio, all other resources are contained in a studio resource.</p>
@@ -117,11 +112,7 @@ impl Studio {
         self.studio_url.as_deref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
@@ -145,10 +136,7 @@ impl ::std::fmt::Debug for Studio {
         formatter.field("state", &self.state);
         formatter.field("status_code", &self.status_code);
         formatter.field("status_message", &self.status_message);
-        formatter.field(
-            "studio_encryption_configuration",
-            &self.studio_encryption_configuration,
-        );
+        formatter.field("studio_encryption_configuration", &self.studio_encryption_configuration);
         formatter.field("studio_id", &self.studio_id);
         formatter.field("studio_name", &self.studio_name);
         formatter.field("studio_url", &self.studio_url);
@@ -178,31 +166,22 @@ pub struct StudioBuilder {
     pub(crate) state: ::std::option::Option<crate::types::StudioState>,
     pub(crate) status_code: ::std::option::Option<crate::types::StudioStatusCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) studio_encryption_configuration:
-        ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
+    pub(crate) studio_encryption_configuration: ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_name: ::std::option::Option<::std::string::String>,
     pub(crate) studio_url: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) user_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StudioBuilder {
     /// <p>The IAM role that studio admins assume when logging in to the Nimble Studio portal.</p>
-    pub fn admin_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that studio admins assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_admin_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_role_arn = input;
         self
     }
@@ -230,10 +209,7 @@ impl StudioBuilder {
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -270,18 +246,12 @@ impl StudioBuilder {
         &self.home_region
     }
     /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.</p>
-    pub fn sso_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sso_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sso_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.</p>
-    pub fn set_sso_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sso_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sso_client_id = input;
         self
     }
@@ -309,10 +279,7 @@ impl StudioBuilder {
         self
     }
     /// <p>Status codes that provide additional detail on the studio state.</p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::StudioStatusCode>) -> Self {
         self.status_code = input;
         self
     }
@@ -321,18 +288,12 @@ impl StudioBuilder {
         &self.status_code
     }
     /// <p>Additional detail on the studio state.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional detail on the studio state.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -341,25 +302,17 @@ impl StudioBuilder {
         &self.status_message
     }
     /// <p>Configuration of the encryption method that is used for the studio.</p>
-    pub fn studio_encryption_configuration(
-        mut self,
-        input: crate::types::StudioEncryptionConfiguration,
-    ) -> Self {
+    pub fn studio_encryption_configuration(mut self, input: crate::types::StudioEncryptionConfiguration) -> Self {
         self.studio_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration of the encryption method that is used for the studio.</p>
-    pub fn set_studio_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_studio_encryption_configuration(mut self, input: ::std::option::Option<crate::types::StudioEncryptionConfiguration>) -> Self {
         self.studio_encryption_configuration = input;
         self
     }
     /// <p>Configuration of the encryption method that is used for the studio.</p>
-    pub fn get_studio_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StudioEncryptionConfiguration> {
+    pub fn get_studio_encryption_configuration(&self) -> &::std::option::Option<crate::types::StudioEncryptionConfiguration> {
         &self.studio_encryption_configuration
     }
     /// <p>The unique identifier for a studio resource. In Nimble Studio, all other resources are contained in a studio resource.</p>
@@ -409,32 +362,19 @@ impl StudioBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
@@ -443,10 +383,7 @@ impl StudioBuilder {
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -455,18 +392,12 @@ impl StudioBuilder {
         &self.updated_at
     }
     /// <p>The IAM role that studio users assume when logging in to the Nimble Studio portal.</p>
-    pub fn user_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that studio users assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_user_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_role_arn = input;
         self
     }
@@ -508,10 +439,7 @@ impl ::std::fmt::Debug for StudioBuilder {
         formatter.field("state", &self.state);
         formatter.field("status_code", &self.status_code);
         formatter.field("status_message", &self.status_message);
-        formatter.field(
-            "studio_encryption_configuration",
-            &self.studio_encryption_configuration,
-        );
+        formatter.field("studio_encryption_configuration", &self.studio_encryption_configuration);
         formatter.field("studio_id", &self.studio_id);
         formatter.field("studio_name", &self.studio_name);
         formatter.field("studio_url", &self.studio_url);

@@ -15,35 +15,25 @@ impl DeleteDatasetImportJobInput {
 }
 impl DeleteDatasetImportJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteDatasetImportJobInput`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobInputBuilder {
         crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDatasetImportJobInput`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDatasetImportJobInputBuilder {
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDatasetImportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-    pub fn dataset_import_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_import_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-    pub fn set_dataset_import_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_import_job_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteDatasetImportJobInputBuilder {
         crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput {
-                dataset_import_job_arn: self.dataset_import_job_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput {
+            dataset_import_job_arn: self.dataset_import_job_arn,
+        })
     }
 }

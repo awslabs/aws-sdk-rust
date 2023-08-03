@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`policy(Option<String>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::policy): <p>The JSON structure that contains the resource policy. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::revision_id): <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
     /// - On failure, responds with [`SdkError<DescribeResourcePolicyError>`](crate::operation::describe_resource_policy::DescribeResourcePolicyError)
-    pub fn describe_resource_policy(
-        &self,
-    ) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder
-    {
+    pub fn describe_resource_policy(&self) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder {
         crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

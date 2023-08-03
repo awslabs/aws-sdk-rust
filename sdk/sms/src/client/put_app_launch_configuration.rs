@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`server_group_launch_configurations(Vec<ServerGroupLaunchConfiguration>)`](crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationFluentBuilder::server_group_launch_configurations) / [`set_server_group_launch_configurations(Option<Vec<ServerGroupLaunchConfiguration>>)`](crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationFluentBuilder::set_server_group_launch_configurations): <p>Information about the launch configurations for server groups in the application.</p>
     /// - On success, responds with [`PutAppLaunchConfigurationOutput`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutAppLaunchConfigurationError>`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError)
-    pub fn put_app_launch_configuration(&self) -> crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationFluentBuilder{
+    pub fn put_app_launch_configuration(&self) -> crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationFluentBuilder {
         crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

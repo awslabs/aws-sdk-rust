@@ -15,34 +15,25 @@ impl NotifyWhenUploadedInput {
 }
 impl NotifyWhenUploadedInput {
     /// Creates a new builder-style object to manufacture [`NotifyWhenUploadedInput`](crate::operation::notify_when_uploaded::NotifyWhenUploadedInput).
-    pub fn builder(
-    ) -> crate::operation::notify_when_uploaded::builders::NotifyWhenUploadedInputBuilder {
+    pub fn builder() -> crate::operation::notify_when_uploaded::builders::NotifyWhenUploadedInputBuilder {
         crate::operation::notify_when_uploaded::builders::NotifyWhenUploadedInputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyWhenUploadedInput`](crate::operation::notify_when_uploaded::NotifyWhenUploadedInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyWhenUploadedInputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
 }
 impl NotifyWhenUploadedInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn file_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn set_file_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl NotifyWhenUploadedInputBuilder {
     /// Consumes the builder and constructs a [`NotifyWhenUploadedInput`](crate::operation::notify_when_uploaded::NotifyWhenUploadedInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_when_uploaded::NotifyWhenUploadedInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::notify_when_uploaded::NotifyWhenUploadedInput {
-                file_share_arn: self.file_share_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::notify_when_uploaded::NotifyWhenUploadedInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::notify_when_uploaded::NotifyWhenUploadedInput {
+            file_share_arn: self.file_share_arn,
+        })
     }
 }

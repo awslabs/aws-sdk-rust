@@ -28,9 +28,7 @@ impl CreateViewOutput {
 
 /// A builder for [`CreateViewOutput`](crate::operation::create_view::CreateViewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateViewOutputBuilder {
     pub(crate) view: ::std::option::Option<crate::types::View>,
     _request_id: Option<String>,

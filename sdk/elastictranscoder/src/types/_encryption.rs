@@ -78,9 +78,7 @@ impl Encryption {
 
 /// A builder for [`Encryption`](crate::types::Encryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionBuilder {
     pub(crate) mode: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -182,18 +180,12 @@ impl EncryptionBuilder {
         &self.key_md5
     }
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you used to encrypt your input files or that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
-    pub fn initialization_vector(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initialization_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initialization_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you used to encrypt your input files or that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
-    pub fn set_initialization_vector(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initialization_vector = input;
         self
     }

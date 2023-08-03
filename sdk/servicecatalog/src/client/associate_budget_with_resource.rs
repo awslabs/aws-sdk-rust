@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder::set_resource_id): <p> The resource identifier. Either a portfolio-id or a product-id.</p>
     /// - On success, responds with [`AssociateBudgetWithResourceOutput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput)
     /// - On failure, responds with [`SdkError<AssociateBudgetWithResourceError>`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceError)
-    pub fn associate_budget_with_resource(&self) -> crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder{
+    pub fn associate_budget_with_resource(
+        &self,
+    ) -> crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder {
         crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder::new(self.handle.clone())
     }
 }

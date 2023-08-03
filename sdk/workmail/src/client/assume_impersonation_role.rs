@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`token(Option<String>)`](crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput::token): <p>The authentication token for the impersonation role.</p>
     ///   - [`expires_in(Option<i64>)`](crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput::expires_in): <p>The authentication token's validity, in seconds.</p>
     /// - On failure, responds with [`SdkError<AssumeImpersonationRoleError>`](crate::operation::assume_impersonation_role::AssumeImpersonationRoleError)
-    pub fn assume_impersonation_role(
-        &self,
-    ) -> crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleFluentBuilder
-    {
+    pub fn assume_impersonation_role(&self) -> crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleFluentBuilder {
         crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,9 +43,7 @@ impl ListFleetsInput {
 
 /// A builder for [`ListFleetsInput`](crate::operation::list_fleets::ListFleetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFleetsInputBuilder {
     pub(crate) build_id: ::std::option::Option<::std::string::String>,
     pub(crate) script_id: ::std::option::Option<::std::string::String>,
@@ -110,12 +108,7 @@ impl ListFleetsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFleetsInput`](crate::operation::list_fleets::ListFleetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_fleets::ListFleetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_fleets::ListFleetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_fleets::ListFleetsInput {
             build_id: self.build_id,
             script_id: self.script_id,

@@ -5,25 +5,19 @@
 pub struct BatchStopUpdateActionOutput {
     /// <p>Update actions that have been processed successfully</p>
     #[doc(hidden)]
-    pub processed_update_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>>,
+    pub processed_update_actions: ::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>>,
     /// <p>Update actions that haven't been processed successfully</p>
     #[doc(hidden)]
-    pub unprocessed_update_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>>,
+    pub unprocessed_update_actions: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>>,
     _request_id: Option<String>,
 }
 impl BatchStopUpdateActionOutput {
     /// <p>Update actions that have been processed successfully</p>
-    pub fn processed_update_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProcessedUpdateAction]> {
+    pub fn processed_update_actions(&self) -> ::std::option::Option<&[crate::types::ProcessedUpdateAction]> {
         self.processed_update_actions.as_deref()
     }
     /// <p>Update actions that haven't been processed successfully</p>
-    pub fn unprocessed_update_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedUpdateAction]> {
+    pub fn unprocessed_update_actions(&self) -> ::std::option::Option<&[crate::types::UnprocessedUpdateAction]> {
         self.unprocessed_update_actions.as_deref()
     }
 }
@@ -34,23 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchStopUpdateActionOutput {
 }
 impl BatchStopUpdateActionOutput {
     /// Creates a new builder-style object to manufacture [`BatchStopUpdateActionOutput`](crate::operation::batch_stop_update_action::BatchStopUpdateActionOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionOutputBuilder {
         crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchStopUpdateActionOutput`](crate::operation::batch_stop_update_action::BatchStopUpdateActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStopUpdateActionOutputBuilder {
-    pub(crate) processed_update_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>>,
-    pub(crate) unprocessed_update_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>>,
+    pub(crate) processed_update_actions: ::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>>,
+    pub(crate) unprocessed_update_actions: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>>,
     _request_id: Option<String>,
 }
 impl BatchStopUpdateActionOutputBuilder {
@@ -66,17 +54,12 @@ impl BatchStopUpdateActionOutputBuilder {
         self
     }
     /// <p>Update actions that have been processed successfully</p>
-    pub fn set_processed_update_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>>,
-    ) -> Self {
+    pub fn set_processed_update_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>>) -> Self {
         self.processed_update_actions = input;
         self
     }
     /// <p>Update actions that have been processed successfully</p>
-    pub fn get_processed_update_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>> {
+    pub fn get_processed_update_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>> {
         &self.processed_update_actions
     }
     /// Appends an item to `unprocessed_update_actions`.
@@ -84,27 +67,19 @@ impl BatchStopUpdateActionOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_update_actions`](Self::set_unprocessed_update_actions).
     ///
     /// <p>Update actions that haven't been processed successfully</p>
-    pub fn unprocessed_update_actions(
-        mut self,
-        input: crate::types::UnprocessedUpdateAction,
-    ) -> Self {
+    pub fn unprocessed_update_actions(mut self, input: crate::types::UnprocessedUpdateAction) -> Self {
         let mut v = self.unprocessed_update_actions.unwrap_or_default();
         v.push(input);
         self.unprocessed_update_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Update actions that haven't been processed successfully</p>
-    pub fn set_unprocessed_update_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>>,
-    ) -> Self {
+    pub fn set_unprocessed_update_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>>) -> Self {
         self.unprocessed_update_actions = input;
         self
     }
     /// <p>Update actions that haven't been processed successfully</p>
-    pub fn get_unprocessed_update_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>> {
+    pub fn get_unprocessed_update_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>> {
         &self.unprocessed_update_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

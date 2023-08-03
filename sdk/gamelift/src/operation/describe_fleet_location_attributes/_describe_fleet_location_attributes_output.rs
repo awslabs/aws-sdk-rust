@@ -14,8 +14,7 @@ pub struct DescribeFleetLocationAttributesOutput {
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p> Location-specific information on the requested fleet's remote locations.</p>
     #[doc(hidden)]
-    pub location_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>,
+    pub location_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -34,9 +33,7 @@ impl DescribeFleetLocationAttributesOutput {
         self.fleet_arn.as_deref()
     }
     /// <p> Location-specific information on the requested fleet's remote locations.</p>
-    pub fn location_attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LocationAttributes]> {
+    pub fn location_attributes(&self) -> ::std::option::Option<&[crate::types::LocationAttributes]> {
         self.location_attributes.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -51,21 +48,18 @@ impl ::aws_http::request_id::RequestId for DescribeFleetLocationAttributesOutput
 }
 impl DescribeFleetLocationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationAttributesOutput`](crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput).
-    pub fn builder() -> crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesOutputBuilder {
         crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetLocationAttributesOutput`](crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationAttributesOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) location_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>,
+    pub(crate) location_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -119,17 +113,12 @@ impl DescribeFleetLocationAttributesOutputBuilder {
         self
     }
     /// <p> Location-specific information on the requested fleet's remote locations.</p>
-    pub fn set_location_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>,
-    ) -> Self {
+    pub fn set_location_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>) -> Self {
         self.location_attributes = input;
         self
     }
     /// <p> Location-specific information on the requested fleet's remote locations.</p>
-    pub fn get_location_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>> {
+    pub fn get_location_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>> {
         &self.location_attributes
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -156,19 +145,12 @@ impl DescribeFleetLocationAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetLocationAttributesOutput`](crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput {
         crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput {
-            fleet_id: self.fleet_id
-            ,
-            fleet_arn: self.fleet_arn
-            ,
-            location_attributes: self.location_attributes
-            ,
-            next_token: self.next_token
-            ,
+            fleet_id: self.fleet_id,
+            fleet_arn: self.fleet_arn,
+            location_attributes: self.location_attributes,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

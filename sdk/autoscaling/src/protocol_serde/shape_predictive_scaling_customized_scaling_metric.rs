@@ -20,10 +20,7 @@ pub fn ser_predictive_scaling_customized_scaling_metric(
 
 pub fn de_predictive_scaling_customized_scaling_metric(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::PredictiveScalingCustomizedScalingMetric,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::PredictiveScalingCustomizedScalingMetric, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::PredictiveScalingCustomizedScalingMetric::builder();
     while let Some(mut tag) = decoder.next_tag() {

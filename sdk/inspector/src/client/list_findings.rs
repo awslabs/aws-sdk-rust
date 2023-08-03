@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`finding_arns(Option<Vec<String>>)`](crate::operation::list_findings::ListFindingsOutput::finding_arns): <p>A list of ARNs that specifies the findings returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_findings::ListFindingsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::operation::list_findings::ListFindingsError)
-    pub fn list_findings(
-        &self,
-    ) -> crate::operation::list_findings::builders::ListFindingsFluentBuilder {
-        crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_findings(&self) -> crate::operation::list_findings::builders::ListFindingsFluentBuilder {
+        crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl ListApprovedOriginsInput {
 }
 impl ListApprovedOriginsInput {
     /// Creates a new builder-style object to manufacture [`ListApprovedOriginsInput`](crate::operation::list_approved_origins::ListApprovedOriginsInput).
-    pub fn builder(
-    ) -> crate::operation::list_approved_origins::builders::ListApprovedOriginsInputBuilder {
-        crate::operation::list_approved_origins::builders::ListApprovedOriginsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_approved_origins::builders::ListApprovedOriginsInputBuilder {
+        crate::operation::list_approved_origins::builders::ListApprovedOriginsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApprovedOriginsInput`](crate::operation::list_approved_origins::ListApprovedOriginsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApprovedOriginsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListApprovedOriginsInputBuilder {
     /// Consumes the builder and constructs a [`ListApprovedOriginsInput`](crate::operation::list_approved_origins::ListApprovedOriginsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_approved_origins::ListApprovedOriginsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_approved_origins::ListApprovedOriginsInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_approved_origins::ListApprovedOriginsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_approved_origins::ListApprovedOriginsInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

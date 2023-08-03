@@ -131,9 +131,7 @@ impl ParameterDefinition {
 
 /// A builder for [`ParameterDefinition`](crate::types::ParameterDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterDefinitionBuilder {
     pub(crate) allowed_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -146,24 +144,17 @@ pub struct ParameterDefinitionBuilder {
     pub(crate) min_value: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) no_echo: ::std::option::Option<bool>,
-    pub(crate) referenced_by_resources:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) referenced_by_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl ParameterDefinitionBuilder {
     /// <p>A regular expression that represents the patterns to allow for String types.</p>
-    pub fn allowed_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression that represents the patterns to allow for String types.</p>
-    pub fn set_allowed_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_pattern = input;
         self
     }
@@ -176,37 +167,26 @@ impl ParameterDefinitionBuilder {
     /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
     ///
     /// <p>An array containing the list of values allowed for the parameter.</p>
-    pub fn allowed_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
         v.push(input.into());
         self.allowed_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array containing the list of values allowed for the parameter.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_values = input;
         self
     }
     /// <p>An array containing the list of values allowed for the parameter.</p>
-    pub fn get_allowed_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_values
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
     /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
     /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
-    pub fn constraint_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn constraint_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.constraint_description = ::std::option::Option::Some(input.into());
         self
     }
@@ -214,10 +194,7 @@ impl ParameterDefinitionBuilder {
     /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
     /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
-    pub fn set_constraint_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_constraint_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.constraint_description = input;
         self
     }
@@ -229,18 +206,12 @@ impl ParameterDefinitionBuilder {
         &self.constraint_description
     }
     /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
@@ -351,27 +322,19 @@ impl ParameterDefinitionBuilder {
     /// To override the contents of this collection use [`set_referenced_by_resources`](Self::set_referenced_by_resources).
     ///
     /// <p>A list of AWS SAM resources that use this parameter.</p>
-    pub fn referenced_by_resources(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn referenced_by_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.referenced_by_resources.unwrap_or_default();
         v.push(input.into());
         self.referenced_by_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of AWS SAM resources that use this parameter.</p>
-    pub fn set_referenced_by_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_referenced_by_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.referenced_by_resources = input;
         self
     }
     /// <p>A list of AWS SAM resources that use this parameter.</p>
-    pub fn get_referenced_by_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_referenced_by_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.referenced_by_resources
     }
     /// <p>The type of the parameter.</p>

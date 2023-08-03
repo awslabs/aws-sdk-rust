@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`channel_arn(impl ::std::convert::Into<String>)`](crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder::set_channel_arn): <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
     /// - On success, responds with [`JoinStorageSessionOutput`](crate::operation::join_storage_session::JoinStorageSessionOutput)
     /// - On failure, responds with [`SdkError<JoinStorageSessionError>`](crate::operation::join_storage_session::JoinStorageSessionError)
-    pub fn join_storage_session(
-        &self,
-    ) -> crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder {
-        crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn join_storage_session(&self) -> crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder {
+        crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder::new(self.handle.clone())
     }
 }

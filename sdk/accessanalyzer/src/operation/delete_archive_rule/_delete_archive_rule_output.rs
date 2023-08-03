@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteArchiveRuleOutput {
 }
 impl DeleteArchiveRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteArchiveRuleOutput`](crate::operation::delete_archive_rule::DeleteArchiveRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_archive_rule::builders::DeleteArchiveRuleOutputBuilder {
+    pub fn builder() -> crate::operation::delete_archive_rule::builders::DeleteArchiveRuleOutputBuilder {
         crate::operation::delete_archive_rule::builders::DeleteArchiveRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteArchiveRuleOutput`](crate::operation::delete_archive_rule::DeleteArchiveRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteArchiveRuleOutputBuilder {
     _request_id: Option<String>,
 }

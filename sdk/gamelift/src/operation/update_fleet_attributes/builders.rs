@@ -41,10 +41,7 @@ impl UpdateFleetAttributesFluentBuilder {
         }
     }
     /// Access the UpdateFleetAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl UpdateFleetAttributesFluentBuilder {
             crate::operation::update_fleet_attributes::UpdateFleetAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_attributes::UpdateFleetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_attributes::UpdateFleetAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl UpdateFleetAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl UpdateFleetAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_attributes::UpdateFleetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_attributes::UpdateFleetAttributesError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl UpdateFleetAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_attributes::UpdateFleetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_attributes::UpdateFleetAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl UpdateFleetAttributesFluentBuilder {
             crate::operation::update_fleet_attributes::UpdateFleetAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_attributes::UpdateFleetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_attributes::UpdateFleetAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -174,10 +160,7 @@ impl UpdateFleetAttributesFluentBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn new_game_session_protection_policy(
-        mut self,
-        input: crate::types::ProtectionPolicy,
-    ) -> Self {
+    pub fn new_game_session_protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.inner = self.inner.new_game_session_protection_policy(input);
         self
     }
@@ -186,10 +169,7 @@ impl UpdateFleetAttributesFluentBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn set_new_game_session_protection_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionPolicy>,
-    ) -> Self {
+    pub fn set_new_game_session_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.inner = self.inner.set_new_game_session_protection_policy(input);
         self
     }
@@ -198,31 +178,21 @@ impl UpdateFleetAttributesFluentBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn get_new_game_session_protection_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectionPolicy> {
+    pub fn get_new_game_session_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         self.inner.get_new_game_session_protection_policy()
     }
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
-    pub fn resource_creation_limit_policy(
-        mut self,
-        input: crate::types::ResourceCreationLimitPolicy,
-    ) -> Self {
+    pub fn resource_creation_limit_policy(mut self, input: crate::types::ResourceCreationLimitPolicy) -> Self {
         self.inner = self.inner.resource_creation_limit_policy(input);
         self
     }
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
-    pub fn set_resource_creation_limit_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
-    ) -> Self {
+    pub fn set_resource_creation_limit_policy(mut self, input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>) -> Self {
         self.inner = self.inner.set_resource_creation_limit_policy(input);
         self
     }
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
-    pub fn get_resource_creation_limit_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
+    pub fn get_resource_creation_limit_policy(&self) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
         self.inner.get_resource_creation_limit_policy()
     }
     /// Appends an item to `MetricGroups`.
@@ -230,25 +200,17 @@ impl UpdateFleetAttributesFluentBuilder {
     /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
     ///
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
-    pub fn metric_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_groups(input.into());
         self
     }
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
-    pub fn set_metric_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_metric_groups(input);
         self
     }
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
-    pub fn get_metric_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_metric_groups()
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
@@ -257,17 +219,12 @@ impl UpdateFleetAttributesFluentBuilder {
         self
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
-    pub fn set_anywhere_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AnywhereConfiguration>,
-    ) -> Self {
+    pub fn set_anywhere_configuration(mut self, input: ::std::option::Option<crate::types::AnywhereConfiguration>) -> Self {
         self.inner = self.inner.set_anywhere_configuration(input);
         self
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
-    pub fn get_anywhere_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
+    pub fn get_anywhere_configuration(&self) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
         self.inner.get_anywhere_configuration()
     }
 }

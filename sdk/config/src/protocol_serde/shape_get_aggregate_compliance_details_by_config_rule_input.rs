@@ -4,9 +4,7 @@ pub fn ser_get_aggregate_compliance_details_by_config_rule_input(
     input: &crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.configuration_aggregator_name {
-        object
-            .key("ConfigurationAggregatorName")
-            .string(var_1.as_str());
+        object.key("ConfigurationAggregatorName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.config_rule_name {
         object.key("ConfigRuleName").string(var_2.as_str());

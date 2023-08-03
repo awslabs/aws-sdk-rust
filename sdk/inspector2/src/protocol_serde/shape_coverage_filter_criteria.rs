@@ -9,10 +9,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -39,10 +33,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -54,10 +45,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -69,10 +57,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(
-                    &mut object_20,
-                    item_19,
-                )?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_20, item_19)?;
                 object_20.finish();
             }
         }
@@ -84,10 +69,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(
-                    &mut object_24,
-                    item_23,
-                )?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_24, item_23)?;
                 object_24.finish();
             }
         }
@@ -99,10 +81,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(
-                    &mut object_28,
-                    item_27,
-                )?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_28, item_27)?;
                 object_28.finish();
             }
         }
@@ -114,10 +93,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(
-                    &mut object_32,
-                    item_31,
-                )?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_32, item_31)?;
                 object_32.finish();
             }
         }
@@ -129,10 +105,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_36 = array_34.value().start_object();
-                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(
-                    &mut object_36,
-                    item_35,
-                )?;
+                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(&mut object_36, item_35)?;
                 object_36.finish();
             }
         }
@@ -144,10 +117,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_40 = array_38.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(
-                    &mut object_40,
-                    item_39,
-                )?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_40, item_39)?;
                 object_40.finish();
             }
         }
@@ -159,10 +129,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_44 = array_42.value().start_object();
-                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(
-                    &mut object_44,
-                    item_43,
-                )?;
+                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(&mut object_44, item_43)?;
                 object_44.finish();
             }
         }
@@ -174,10 +141,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_48 = array_46.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(
-                    &mut object_48,
-                    item_47,
-                )?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_48, item_47)?;
                 object_48.finish();
             }
         }
@@ -189,10 +153,7 @@ pub fn ser_coverage_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_52 = array_50.value().start_object();
-                crate::protocol_serde::shape_coverage_date_filter::ser_coverage_date_filter(
-                    &mut object_52,
-                    item_51,
-                )?;
+                crate::protocol_serde::shape_coverage_date_filter::ser_coverage_date_filter(&mut object_52, item_51)?;
                 object_52.finish();
             }
         }

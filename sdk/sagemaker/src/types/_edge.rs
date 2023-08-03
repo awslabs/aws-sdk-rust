@@ -37,9 +37,7 @@ impl Edge {
 
 /// A builder for [`Edge`](crate::types::Edge).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgeBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl EdgeBuilder {
         &self.source_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -86,17 +78,12 @@ impl EdgeBuilder {
         self
     }
     /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>, <code>Produced</code>, or <code>DerivedFrom</code>.</p>
-    pub fn set_association_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationEdgeType>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::AssociationEdgeType>) -> Self {
         self.association_type = input;
         self
     }
     /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>, <code>Produced</code>, or <code>DerivedFrom</code>.</p>
-    pub fn get_association_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+    pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationEdgeType> {
         &self.association_type
     }
     /// Consumes the builder and constructs a [`Edge`](crate::types::Edge).

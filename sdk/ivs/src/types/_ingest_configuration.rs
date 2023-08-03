@@ -30,9 +30,7 @@ impl IngestConfiguration {
 
 /// A builder for [`IngestConfiguration`](crate::types::IngestConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestConfigurationBuilder {
     pub(crate) video: ::std::option::Option<crate::types::VideoConfiguration>,
     pub(crate) audio: ::std::option::Option<crate::types::AudioConfiguration>,
@@ -44,10 +42,7 @@ impl IngestConfigurationBuilder {
         self
     }
     /// <p>Encoder settings for video.</p>
-    pub fn set_video(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoConfiguration>,
-    ) -> Self {
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoConfiguration>) -> Self {
         self.video = input;
         self
     }
@@ -61,10 +56,7 @@ impl IngestConfigurationBuilder {
         self
     }
     /// <p>Encoder settings for audio.</p>
-    pub fn set_audio(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioConfiguration>,
-    ) -> Self {
+    pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioConfiguration>) -> Self {
         self.audio = input;
         self
     }

@@ -22,16 +22,14 @@ impl DescribeFraudsterRegistrationJobInput {
 }
 impl DescribeFraudsterRegistrationJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeFraudsterRegistrationJobInput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput).
-    pub fn builder() -> crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobInputBuilder {
         crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFraudsterRegistrationJobInput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFraudsterRegistrationJobInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DescribeFraudsterRegistrationJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeFraudsterRegistrationJobInput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput {
-                domain_id: self.domain_id
-                ,
-                job_id: self.job_id
-                ,
-            }
+                domain_id: self.domain_id,
+                job_id: self.job_id,
+            },
         )
     }
 }

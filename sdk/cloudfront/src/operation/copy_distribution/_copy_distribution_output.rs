@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CopyDistributionOutput {
 }
 impl CopyDistributionOutput {
     /// Creates a new builder-style object to manufacture [`CopyDistributionOutput`](crate::operation::copy_distribution::CopyDistributionOutput).
-    pub fn builder() -> crate::operation::copy_distribution::builders::CopyDistributionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::copy_distribution::builders::CopyDistributionOutputBuilder {
         crate::operation::copy_distribution::builders::CopyDistributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CopyDistributionOutput`](crate::operation::copy_distribution::CopyDistributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyDistributionOutputBuilder {
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -59,10 +56,7 @@ impl CopyDistributionOutputBuilder {
         self
     }
     /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
-    pub fn set_distribution(
-        mut self,
-        input: ::std::option::Option<crate::types::Distribution>,
-    ) -> Self {
+    pub fn set_distribution(mut self, input: ::std::option::Option<crate::types::Distribution>) -> Self {
         self.distribution = input;
         self
     }

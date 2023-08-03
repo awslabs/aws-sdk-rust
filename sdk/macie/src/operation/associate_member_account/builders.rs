@@ -37,10 +37,7 @@ impl AssociateMemberAccountFluentBuilder {
         }
     }
     /// Access the AssociateMemberAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_member_account::builders::AssociateMemberAccountInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_member_account::builders::AssociateMemberAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AssociateMemberAccountFluentBuilder {
             crate::operation::associate_member_account::AssociateMemberAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_member_account::AssociateMemberAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_member_account::AssociateMemberAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AssociateMemberAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AssociateMemberAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_member_account::AssociateMemberAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_member_account::AssociateMemberAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_member_account::AssociateMemberAccountError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AssociateMemberAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_member_account::AssociateMemberAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_member_account::AssociateMemberAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_member_account::AssociateMemberAccountError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl AssociateMemberAccountFluentBuilder {
             crate::operation::associate_member_account::AssociateMemberAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_member_account::AssociateMemberAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_member_account::AssociateMemberAccountError>,
     > {
         self.customize_middleware().await
     }
     /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_account_id(input.into());
         self
     }
     /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_account_id(input);
         self
     }

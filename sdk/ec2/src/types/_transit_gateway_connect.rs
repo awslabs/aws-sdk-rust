@@ -65,13 +65,10 @@ impl TransitGatewayConnect {
 
 /// A builder for [`TransitGatewayConnect`](crate::types::TransitGatewayConnect).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayConnectBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) transport_transit_gateway_attachment_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::TransitGatewayAttachmentState>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -80,62 +77,40 @@ pub struct TransitGatewayConnectBuilder {
 }
 impl TransitGatewayConnectBuilder {
     /// <p>The ID of the Connect attachment.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Connect attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the Connect attachment.</p>
-    pub fn get_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_attachment_id
     }
     /// <p>The ID of the attachment from which the Connect attachment was created.</p>
-    pub fn transport_transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transport_transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transport_transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment from which the Connect attachment was created.</p>
-    pub fn set_transport_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transport_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transport_transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the attachment from which the Connect attachment was created.</p>
-    pub fn get_transport_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transport_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transport_transit_gateway_attachment_id
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -149,10 +124,7 @@ impl TransitGatewayConnectBuilder {
         self
     }
     /// <p>The state of the attachment.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayAttachmentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayAttachmentState>) -> Self {
         self.state = input;
         self
     }
@@ -166,10 +138,7 @@ impl TransitGatewayConnectBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -183,17 +152,12 @@ impl TransitGatewayConnectBuilder {
         self
     }
     /// <p>The Connect attachment options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayConnectOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::TransitGatewayConnectOptions>) -> Self {
         self.options = input;
         self
     }
     /// <p>The Connect attachment options.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayConnectOptions> {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::TransitGatewayConnectOptions> {
         &self.options
     }
     /// Appends an item to `tags`.
@@ -208,10 +172,7 @@ impl TransitGatewayConnectBuilder {
         self
     }
     /// <p>The tags for the attachment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

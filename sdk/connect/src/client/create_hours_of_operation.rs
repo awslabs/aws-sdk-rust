@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`hours_of_operation_id(Option<String>)`](crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput::hours_of_operation_id): <p>The identifier for the hours of operation.</p>
     ///   - [`hours_of_operation_arn(Option<String>)`](crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput::hours_of_operation_arn): <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
     /// - On failure, responds with [`SdkError<CreateHoursOfOperationError>`](crate::operation::create_hours_of_operation::CreateHoursOfOperationError)
-    pub fn create_hours_of_operation(
-        &self,
-    ) -> crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationFluentBuilder
-    {
+    pub fn create_hours_of_operation(&self) -> crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationFluentBuilder {
         crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationFluentBuilder::new(self.handle.clone())
     }
 }

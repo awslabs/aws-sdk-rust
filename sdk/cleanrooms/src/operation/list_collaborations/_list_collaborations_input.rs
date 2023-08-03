@@ -29,17 +29,14 @@ impl ListCollaborationsInput {
 }
 impl ListCollaborationsInput {
     /// Creates a new builder-style object to manufacture [`ListCollaborationsInput`](crate::operation::list_collaborations::ListCollaborationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_collaborations::builders::ListCollaborationsInputBuilder {
+    pub fn builder() -> crate::operation::list_collaborations::builders::ListCollaborationsInputBuilder {
         crate::operation::list_collaborations::builders::ListCollaborationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCollaborationsInput`](crate::operation::list_collaborations::ListCollaborationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollaborationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -80,32 +77,22 @@ impl ListCollaborationsInputBuilder {
         self
     }
     /// <p>The caller's status in a collaboration.</p>
-    pub fn set_member_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterableMemberStatus>,
-    ) -> Self {
+    pub fn set_member_status(mut self, input: ::std::option::Option<crate::types::FilterableMemberStatus>) -> Self {
         self.member_status = input;
         self
     }
     /// <p>The caller's status in a collaboration.</p>
-    pub fn get_member_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterableMemberStatus> {
+    pub fn get_member_status(&self) -> &::std::option::Option<crate::types::FilterableMemberStatus> {
         &self.member_status
     }
     /// Consumes the builder and constructs a [`ListCollaborationsInput`](crate::operation::list_collaborations::ListCollaborationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_collaborations::ListCollaborationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_collaborations::ListCollaborationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                member_status: self.member_status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_collaborations::ListCollaborationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_collaborations::ListCollaborationsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            member_status: self.member_status,
+        })
     }
 }

@@ -52,10 +52,7 @@ pub fn ser_create_trigger_input(
     if let Some(var_17) = &input.event_batching_condition {
         #[allow(unused_mut)]
         let mut object_18 = object.key("EventBatchingCondition").start_object();
-        crate::protocol_serde::shape_event_batching_condition::ser_event_batching_condition(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_event_batching_condition::ser_event_batching_condition(&mut object_18, var_17)?;
         object_18.finish();
     }
     Ok(())

@@ -19,9 +19,7 @@ pub struct DialogAction {
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>Map of the slots that have been gathered and their values. </p>
     #[doc(hidden)]
-    pub slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the slot that should be elicited from the user.</p>
     #[doc(hidden)]
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
@@ -62,11 +60,7 @@ impl DialogAction {
         self.intent_name.as_deref()
     }
     /// <p>Map of the slots that have been gathered and their values. </p>
-    pub fn slots(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.slots.as_ref()
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
@@ -122,9 +116,7 @@ impl DialogAction {
 pub struct DialogActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DialogActionType>,
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
-    pub(crate) slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) slot_to_elicit: ::std::option::Option<::std::string::String>,
     pub(crate) fulfillment_state: ::std::option::Option<crate::types::FulfillmentState>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -151,10 +143,7 @@ impl DialogActionBuilder {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogActionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DialogActionType>) -> Self {
         self.r#type = input;
         self
     }
@@ -188,47 +177,28 @@ impl DialogActionBuilder {
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
     ///
     /// <p>Map of the slots that have been gathered and their values. </p>
-    pub fn slots(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.slots = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Map of the slots that have been gathered and their values. </p>
-    pub fn set_slots(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_slots(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.slots = input;
         self
     }
     /// <p>Map of the slots that have been gathered and their values. </p>
-    pub fn get_slots(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.slots
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn slot_to_elicit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slot_to_elicit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_to_elicit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn set_slot_to_elicit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_slot_to_elicit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_to_elicit = input;
         self
     }
@@ -252,10 +222,7 @@ impl DialogActionBuilder {
     /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
     /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
-    pub fn set_fulfillment_state(
-        mut self,
-        input: ::std::option::Option<crate::types::FulfillmentState>,
-    ) -> Self {
+    pub fn set_fulfillment_state(mut self, input: ::std::option::Option<crate::types::FulfillmentState>) -> Self {
         self.fulfillment_state = input;
         self
     }
@@ -298,10 +265,7 @@ impl DialogActionBuilder {
     /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
     /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
     /// </ul>
-    pub fn set_message_format(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageFormatType>,
-    ) -> Self {
+    pub fn set_message_format(mut self, input: ::std::option::Option<crate::types::MessageFormatType>) -> Self {
         self.message_format = input;
         self
     }

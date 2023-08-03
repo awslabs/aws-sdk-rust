@@ -88,9 +88,7 @@ impl ListTasksInput {
 
 /// A builder for [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTasksInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container_instance: ::std::option::Option<::std::string::String>,
@@ -118,18 +116,12 @@ impl ListTasksInputBuilder {
         &self.cluster
     }
     /// <p>The container instance ID or full ARN of the container instance to use when filtering the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container instance.</p>
-    pub fn container_instance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_instance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The container instance ID or full ARN of the container instance to use when filtering the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container instance.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_instance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_instance = input;
         self
     }
@@ -226,10 +218,7 @@ impl ListTasksInputBuilder {
     /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
     /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
     /// </note>
-    pub fn set_desired_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DesiredStatus>,
-    ) -> Self {
+    pub fn set_desired_status(mut self, input: ::std::option::Option<crate::types::DesiredStatus>) -> Self {
         self.desired_status = input;
         self
     }
@@ -245,10 +234,7 @@ impl ListTasksInputBuilder {
         self
     }
     /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
-    pub fn set_launch_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchType>,
-    ) -> Self {
+    pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
         self.launch_type = input;
         self
     }
@@ -257,12 +243,7 @@ impl ListTasksInputBuilder {
         &self.launch_type
     }
     /// Consumes the builder and constructs a [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tasks::ListTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tasks::ListTasksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tasks::ListTasksInput {
             cluster: self.cluster,
             container_instance: self.container_instance,

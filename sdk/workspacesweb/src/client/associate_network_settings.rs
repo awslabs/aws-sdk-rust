@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`portal_arn(Option<String>)`](crate::operation::associate_network_settings::AssociateNetworkSettingsOutput::portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`network_settings_arn(Option<String>)`](crate::operation::associate_network_settings::AssociateNetworkSettingsOutput::network_settings_arn): <p>The ARN of the network settings.</p>
     /// - On failure, responds with [`SdkError<AssociateNetworkSettingsError>`](crate::operation::associate_network_settings::AssociateNetworkSettingsError)
-    pub fn associate_network_settings(
-        &self,
-    ) -> crate::operation::associate_network_settings::builders::AssociateNetworkSettingsFluentBuilder
-    {
+    pub fn associate_network_settings(&self) -> crate::operation::associate_network_settings::builders::AssociateNetworkSettingsFluentBuilder {
         crate::operation::associate_network_settings::builders::AssociateNetworkSettingsFluentBuilder::new(self.handle.clone())
     }
 }

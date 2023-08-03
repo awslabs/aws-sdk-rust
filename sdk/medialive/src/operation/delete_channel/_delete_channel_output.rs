@@ -18,8 +18,7 @@ pub struct DeleteChannelOutput {
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
     #[doc(hidden)]
-    pub egress_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>>,
+    pub egress_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>>,
     /// Encoder Settings
     #[doc(hidden)]
     pub encoder_settings: ::std::option::Option<crate::types::EncoderSettings>,
@@ -55,9 +54,7 @@ pub struct DeleteChannelOutput {
     pub state: ::std::option::Option<crate::types::ChannelState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Settings for VPC output
     #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
@@ -69,9 +66,7 @@ impl DeleteChannelOutput {
         self.arn.as_deref()
     }
     /// Specification of CDI inputs for this channel
-    pub fn cdi_input_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CdiInputSpecification> {
+    pub fn cdi_input_specification(&self) -> ::std::option::Option<&crate::types::CdiInputSpecification> {
         self.cdi_input_specification.as_ref()
     }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
@@ -83,9 +78,7 @@ impl DeleteChannelOutput {
         self.destinations.as_deref()
     }
     /// The endpoints where outgoing connections initiate from
-    pub fn egress_endpoints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChannelEgressEndpoint]> {
+    pub fn egress_endpoints(&self) -> ::std::option::Option<&[crate::types::ChannelEgressEndpoint]> {
         self.egress_endpoints.as_deref()
     }
     /// Encoder Settings
@@ -133,11 +126,7 @@ impl DeleteChannelOutput {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// Settings for VPC output
@@ -159,33 +148,25 @@ impl DeleteChannelOutput {
 
 /// A builder for [`DeleteChannelOutput`](crate::operation::delete_channel::DeleteChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChannelOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) cdi_input_specification: ::std::option::Option<crate::types::CdiInputSpecification>,
     pub(crate) channel_class: ::std::option::Option<crate::types::ChannelClass>,
-    pub(crate) destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
-    pub(crate) egress_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
+    pub(crate) egress_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>>,
     pub(crate) encoder_settings: ::std::option::Option<crate::types::EncoderSettings>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) input_attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
+    pub(crate) input_attachments: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
     pub(crate) input_specification: ::std::option::Option<crate::types::InputSpecification>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
     pub(crate) maintenance: ::std::option::Option<crate::types::MaintenanceStatus>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) pipeline_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>>,
+    pub(crate) pipeline_details: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>>,
     pub(crate) pipelines_running_count: ::std::option::Option<i32>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ChannelState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     _request_id: Option<String>,
 }
@@ -210,17 +191,12 @@ impl DeleteChannelOutputBuilder {
         self
     }
     /// Specification of CDI inputs for this channel
-    pub fn set_cdi_input_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CdiInputSpecification>,
-    ) -> Self {
+    pub fn set_cdi_input_specification(mut self, input: ::std::option::Option<crate::types::CdiInputSpecification>) -> Self {
         self.cdi_input_specification = input;
         self
     }
     /// Specification of CDI inputs for this channel
-    pub fn get_cdi_input_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CdiInputSpecification> {
+    pub fn get_cdi_input_specification(&self) -> &::std::option::Option<crate::types::CdiInputSpecification> {
         &self.cdi_input_specification
     }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
@@ -229,10 +205,7 @@ impl DeleteChannelOutputBuilder {
         self
     }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    pub fn set_channel_class(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelClass>,
-    ) -> Self {
+    pub fn set_channel_class(mut self, input: ::std::option::Option<crate::types::ChannelClass>) -> Self {
         self.channel_class = input;
         self
     }
@@ -252,17 +225,12 @@ impl DeleteChannelOutputBuilder {
         self
     }
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>) -> Self {
         self.destinations = input;
         self
     }
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
         &self.destinations
     }
     /// Appends an item to `egress_endpoints`.
@@ -277,17 +245,12 @@ impl DeleteChannelOutputBuilder {
         self
     }
     /// The endpoints where outgoing connections initiate from
-    pub fn set_egress_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>>,
-    ) -> Self {
+    pub fn set_egress_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>>) -> Self {
         self.egress_endpoints = input;
         self
     }
     /// The endpoints where outgoing connections initiate from
-    pub fn get_egress_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>> {
+    pub fn get_egress_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>> {
         &self.egress_endpoints
     }
     /// Encoder Settings
@@ -296,10 +259,7 @@ impl DeleteChannelOutputBuilder {
         self
     }
     /// Encoder Settings
-    pub fn set_encoder_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::EncoderSettings>,
-    ) -> Self {
+    pub fn set_encoder_settings(mut self, input: ::std::option::Option<crate::types::EncoderSettings>) -> Self {
         self.encoder_settings = input;
         self
     }
@@ -333,17 +293,12 @@ impl DeleteChannelOutputBuilder {
         self
     }
     /// List of input attachments for channel.
-    pub fn set_input_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
-    ) -> Self {
+    pub fn set_input_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>) -> Self {
         self.input_attachments = input;
         self
     }
     /// List of input attachments for channel.
-    pub fn get_input_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>> {
+    pub fn get_input_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>> {
         &self.input_attachments
     }
     /// Specification of network and file inputs for this channel
@@ -352,17 +307,12 @@ impl DeleteChannelOutputBuilder {
         self
     }
     /// Specification of network and file inputs for this channel
-    pub fn set_input_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::InputSpecification>,
-    ) -> Self {
+    pub fn set_input_specification(mut self, input: ::std::option::Option<crate::types::InputSpecification>) -> Self {
         self.input_specification = input;
         self
     }
     /// Specification of network and file inputs for this channel
-    pub fn get_input_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputSpecification> {
+    pub fn get_input_specification(&self) -> &::std::option::Option<crate::types::InputSpecification> {
         &self.input_specification
     }
     /// The log level being written to CloudWatch Logs.
@@ -385,10 +335,7 @@ impl DeleteChannelOutputBuilder {
         self
     }
     /// Maintenance settings for this channel.
-    pub fn set_maintenance(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceStatus>,
-    ) -> Self {
+    pub fn set_maintenance(mut self, input: ::std::option::Option<crate::types::MaintenanceStatus>) -> Self {
         self.maintenance = input;
         self
     }
@@ -422,17 +369,12 @@ impl DeleteChannelOutputBuilder {
         self
     }
     /// Runtime details for the pipelines of a running channel.
-    pub fn set_pipeline_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>>,
-    ) -> Self {
+    pub fn set_pipeline_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>>) -> Self {
         self.pipeline_details = input;
         self
     }
     /// Runtime details for the pipelines of a running channel.
-    pub fn get_pipeline_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>> {
+    pub fn get_pipeline_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>> {
         &self.pipeline_details
     }
     /// The number of currently healthy pipelines.
@@ -482,32 +424,19 @@ impl DeleteChannelOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Settings for VPC output
@@ -516,10 +445,7 @@ impl DeleteChannelOutputBuilder {
         self
     }
     /// Settings for VPC output
-    pub fn set_vpc(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
-    ) -> Self {
+    pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::VpcOutputSettingsDescription>) -> Self {
         self.vpc = input;
         self
     }

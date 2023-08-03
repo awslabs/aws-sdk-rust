@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeprecateSystemTemplateOutput {
 }
 impl DeprecateSystemTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeprecateSystemTemplateOutput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateOutputBuilder {
         crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeprecateSystemTemplateOutput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateSystemTemplateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeprecateSystemTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeprecateSystemTemplateOutput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput {
+    pub fn build(self) -> crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput {
         crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput {
             _request_id: self._request_id,
         }

@@ -10,10 +10,7 @@ impl ListProxySessionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_proxy_sessions::ListProxySessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_proxy_sessions::ListProxySessionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_proxy_sessions::ListProxySessionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_proxy_sessions();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl ListProxySessionsFluentBuilder {
         }
     }
     /// Access the ListProxySessions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_proxy_sessions::builders::ListProxySessionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_proxy_sessions::builders::ListProxySessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl ListProxySessionsFluentBuilder {
             crate::operation::list_proxy_sessions::ListProxySessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_proxy_sessions::ListProxySessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_proxy_sessions::ListProxySessionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl ListProxySessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl ListProxySessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_proxy_sessions::ListProxySessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_proxy_sessions::ListProxySessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_proxy_sessions::ListProxySessionsError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl ListProxySessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_proxy_sessions::ListProxySessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_proxy_sessions::ListProxySessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_proxy_sessions::ListProxySessionsError>,
     > {
         self.send_middleware().await
     }
@@ -120,36 +106,23 @@ impl ListProxySessionsFluentBuilder {
             crate::operation::list_proxy_sessions::ListProxySessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_proxy_sessions::ListProxySessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_proxy_sessions::ListProxySessionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_proxy_sessions::paginator::ListProxySessionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_proxy_sessions::paginator::ListProxySessionsPaginator {
-        crate::operation::list_proxy_sessions::paginator::ListProxySessionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_proxy_sessions::paginator::ListProxySessionsPaginator {
+        crate::operation::list_proxy_sessions::paginator::ListProxySessionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
@@ -163,10 +136,7 @@ impl ListProxySessionsFluentBuilder {
         self
     }
     /// <p>The proxy session status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProxySessionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProxySessionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

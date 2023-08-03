@@ -12,8 +12,7 @@ pub struct InstanceGroupModifyConfig {
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
     #[doc(hidden)]
-    pub ec2_instance_ids_to_terminate:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ec2_instance_ids_to_terminate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Policy for customizing shrink operations.</p>
     #[doc(hidden)]
     pub shrink_policy: ::std::option::Option<crate::types::ShrinkPolicy>,
@@ -42,9 +41,7 @@ impl InstanceGroupModifyConfig {
         self.shrink_policy.as_ref()
     }
     /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
-    pub fn reconfiguration_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReconfigurationType> {
+    pub fn reconfiguration_type(&self) -> ::std::option::Option<&crate::types::ReconfigurationType> {
         self.reconfiguration_type.as_ref()
     }
     /// <p>A list of new or modified configurations to apply for an instance group.</p>
@@ -61,32 +58,23 @@ impl InstanceGroupModifyConfig {
 
 /// A builder for [`InstanceGroupModifyConfig`](crate::types::InstanceGroupModifyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceGroupModifyConfigBuilder {
     pub(crate) instance_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_count: ::std::option::Option<i32>,
-    pub(crate) ec2_instance_ids_to_terminate:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ec2_instance_ids_to_terminate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) shrink_policy: ::std::option::Option<crate::types::ShrinkPolicy>,
     pub(crate) reconfiguration_type: ::std::option::Option<crate::types::ReconfigurationType>,
     pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
 }
 impl InstanceGroupModifyConfigBuilder {
     /// <p>Unique ID of the instance group to modify.</p>
-    pub fn instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique ID of the instance group to modify.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_group_id = input;
         self
     }
@@ -113,27 +101,19 @@ impl InstanceGroupModifyConfigBuilder {
     /// To override the contents of this collection use [`set_ec2_instance_ids_to_terminate`](Self::set_ec2_instance_ids_to_terminate).
     ///
     /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
-    pub fn ec2_instance_ids_to_terminate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_instance_ids_to_terminate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ec2_instance_ids_to_terminate.unwrap_or_default();
         v.push(input.into());
         self.ec2_instance_ids_to_terminate = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
-    pub fn set_ec2_instance_ids_to_terminate(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ec2_instance_ids_to_terminate(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ec2_instance_ids_to_terminate = input;
         self
     }
     /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
-    pub fn get_ec2_instance_ids_to_terminate(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ec2_instance_ids_to_terminate(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ec2_instance_ids_to_terminate
     }
     /// <p>Policy for customizing shrink operations.</p>
@@ -142,10 +122,7 @@ impl InstanceGroupModifyConfigBuilder {
         self
     }
     /// <p>Policy for customizing shrink operations.</p>
-    pub fn set_shrink_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ShrinkPolicy>,
-    ) -> Self {
+    pub fn set_shrink_policy(mut self, input: ::std::option::Option<crate::types::ShrinkPolicy>) -> Self {
         self.shrink_policy = input;
         self
     }
@@ -159,17 +136,12 @@ impl InstanceGroupModifyConfigBuilder {
         self
     }
     /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
-    pub fn set_reconfiguration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReconfigurationType>,
-    ) -> Self {
+    pub fn set_reconfiguration_type(mut self, input: ::std::option::Option<crate::types::ReconfigurationType>) -> Self {
         self.reconfiguration_type = input;
         self
     }
     /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
-    pub fn get_reconfiguration_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReconfigurationType> {
+    pub fn get_reconfiguration_type(&self) -> &::std::option::Option<crate::types::ReconfigurationType> {
         &self.reconfiguration_type
     }
     /// Appends an item to `configurations`.
@@ -184,17 +156,12 @@ impl InstanceGroupModifyConfigBuilder {
         self
     }
     /// <p>A list of new or modified configurations to apply for an instance group.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
-    ) -> Self {
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
         self.configurations = input;
         self
     }
     /// <p>A list of new or modified configurations to apply for an instance group.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
         &self.configurations
     }
     /// Consumes the builder and constructs a [`InstanceGroupModifyConfig`](crate::types::InstanceGroupModifyConfig).

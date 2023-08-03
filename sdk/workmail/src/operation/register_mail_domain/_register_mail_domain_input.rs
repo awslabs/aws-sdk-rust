@@ -29,17 +29,14 @@ impl RegisterMailDomainInput {
 }
 impl RegisterMailDomainInput {
     /// Creates a new builder-style object to manufacture [`RegisterMailDomainInput`](crate::operation::register_mail_domain::RegisterMailDomainInput).
-    pub fn builder(
-    ) -> crate::operation::register_mail_domain::builders::RegisterMailDomainInputBuilder {
+    pub fn builder() -> crate::operation::register_mail_domain::builders::RegisterMailDomainInputBuilder {
         crate::operation::register_mail_domain::builders::RegisterMailDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterMailDomainInput`](crate::operation::register_mail_domain::RegisterMailDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterMailDomainInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl RegisterMailDomainInputBuilder {
         &self.client_token
     }
     /// <p>The WorkMail organization under which you're creating the domain.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization under which you're creating the domain.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl RegisterMailDomainInputBuilder {
     /// Consumes the builder and constructs a [`RegisterMailDomainInput`](crate::operation::register_mail_domain::RegisterMailDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_mail_domain::RegisterMailDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_mail_domain::RegisterMailDomainInput {
-                client_token: self.client_token,
-                organization_id: self.organization_id,
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_mail_domain::RegisterMailDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::register_mail_domain::RegisterMailDomainInput {
+            client_token: self.client_token,
+            organization_id: self.organization_id,
+            domain_name: self.domain_name,
+        })
     }
 }

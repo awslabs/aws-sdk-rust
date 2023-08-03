@@ -51,12 +51,9 @@ impl RollbackConfiguration {
 
 /// A builder for [`RollbackConfiguration`](crate::types::RollbackConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RollbackConfigurationBuilder {
-    pub(crate) rollback_triggers:
-        ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
+    pub(crate) rollback_triggers: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
     pub(crate) monitoring_time_in_minutes: ::std::option::Option<i32>,
 }
 impl RollbackConfigurationBuilder {
@@ -86,10 +83,7 @@ impl RollbackConfigurationBuilder {
     /// <li> <p>To remove all currently specified triggers, specify an empty list for this parameter.</p> </li>
     /// </ul>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
-    pub fn set_rollback_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
-    ) -> Self {
+    pub fn set_rollback_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>) -> Self {
         self.rollback_triggers = input;
         self
     }
@@ -101,9 +95,7 @@ impl RollbackConfigurationBuilder {
     /// <li> <p>To remove all currently specified triggers, specify an empty list for this parameter.</p> </li>
     /// </ul>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
-    pub fn get_rollback_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>> {
+    pub fn get_rollback_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>> {
         &self.rollback_triggers
     }
     /// <p>The amount of time, in minutes, during which CloudFormation should monitor all the rollback triggers after the stack creation or update operation deploys all necessary resources.</p>

@@ -35,12 +35,9 @@ impl ListWatchlistsOutput {
 
 /// A builder for [`ListWatchlistsOutput`](crate::operation::list_watchlists::ListWatchlistsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWatchlistsOutputBuilder {
-    pub(crate) watchlist_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>>,
+    pub(crate) watchlist_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListWatchlistsOutputBuilder {
         self
     }
     /// <p>A list that contains details about each watchlist in the Amazon Web Services account. </p>
-    pub fn set_watchlist_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>>,
-    ) -> Self {
+    pub fn set_watchlist_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>>) -> Self {
         self.watchlist_summaries = input;
         self
     }
     /// <p>A list that contains details about each watchlist in the Amazon Web Services account. </p>
-    pub fn get_watchlist_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>> {
+    pub fn get_watchlist_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>> {
         &self.watchlist_summaries
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>

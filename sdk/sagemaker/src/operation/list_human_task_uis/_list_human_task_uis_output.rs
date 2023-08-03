@@ -5,8 +5,7 @@
 pub struct ListHumanTaskUisOutput {
     /// <p>An array of objects describing the human task user interfaces.</p>
     #[doc(hidden)]
-    pub human_task_ui_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>>,
+    pub human_task_ui_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>>,
     /// <p>A token to resume pagination.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListHumanTaskUisOutput {
 }
 impl ListHumanTaskUisOutput {
     /// <p>An array of objects describing the human task user interfaces.</p>
-    pub fn human_task_ui_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HumanTaskUiSummary]> {
+    pub fn human_task_ui_summaries(&self) -> ::std::option::Option<&[crate::types::HumanTaskUiSummary]> {
         self.human_task_ui_summaries.as_deref()
     }
     /// <p>A token to resume pagination.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListHumanTaskUisOutput {
 }
 impl ListHumanTaskUisOutput {
     /// Creates a new builder-style object to manufacture [`ListHumanTaskUisOutput`](crate::operation::list_human_task_uis::ListHumanTaskUisOutput).
-    pub fn builder(
-    ) -> crate::operation::list_human_task_uis::builders::ListHumanTaskUisOutputBuilder {
+    pub fn builder() -> crate::operation::list_human_task_uis::builders::ListHumanTaskUisOutputBuilder {
         crate::operation::list_human_task_uis::builders::ListHumanTaskUisOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHumanTaskUisOutput`](crate::operation::list_human_task_uis::ListHumanTaskUisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHumanTaskUisOutputBuilder {
-    pub(crate) human_task_ui_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>>,
+    pub(crate) human_task_ui_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListHumanTaskUisOutputBuilder {
         self
     }
     /// <p>An array of objects describing the human task user interfaces.</p>
-    pub fn set_human_task_ui_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>>,
-    ) -> Self {
+    pub fn set_human_task_ui_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>>) -> Self {
         self.human_task_ui_summaries = input;
         self
     }
     /// <p>An array of objects describing the human task user interfaces.</p>
-    pub fn get_human_task_ui_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>> {
+    pub fn get_human_task_ui_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>> {
         &self.human_task_ui_summaries
     }
     /// <p>A token to resume pagination.</p>

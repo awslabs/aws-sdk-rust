@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`content_id(impl ::std::convert::Into<String>)`](crate::operation::delete_content::builders::DeleteContentFluentBuilder::content_id) / [`set_content_id(Option<String>)`](crate::operation::delete_content::builders::DeleteContentFluentBuilder::set_content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`DeleteContentOutput`](crate::operation::delete_content::DeleteContentOutput)
     /// - On failure, responds with [`SdkError<DeleteContentError>`](crate::operation::delete_content::DeleteContentError)
-    pub fn delete_content(
-        &self,
-    ) -> crate::operation::delete_content::builders::DeleteContentFluentBuilder {
-        crate::operation::delete_content::builders::DeleteContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_content(&self) -> crate::operation::delete_content::builders::DeleteContentFluentBuilder {
+        crate::operation::delete_content::builders::DeleteContentFluentBuilder::new(self.handle.clone())
     }
 }

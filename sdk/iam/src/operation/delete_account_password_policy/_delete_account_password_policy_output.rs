@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccountPasswordPolicyOutput {
 }
 impl DeleteAccountPasswordPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountPasswordPolicyOutput`](crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput).
-    pub fn builder() -> crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyOutputBuilder {
         crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountPasswordPolicyOutput`](crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountPasswordPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteAccountPasswordPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAccountPasswordPolicyOutput`](crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput {
+    pub fn build(self) -> crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput {
         crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput {
             _request_id: self._request_id,
         }

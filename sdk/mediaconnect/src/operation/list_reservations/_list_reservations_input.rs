@@ -22,17 +22,14 @@ impl ListReservationsInput {
 }
 impl ListReservationsInput {
     /// Creates a new builder-style object to manufacture [`ListReservationsInput`](crate::operation::list_reservations::ListReservationsInput).
-    pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsInputBuilder {
         crate::operation::list_reservations::builders::ListReservationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReservationsInput`](crate::operation::list_reservations::ListReservationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReservationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,10 +66,7 @@ impl ListReservationsInputBuilder {
     /// Consumes the builder and constructs a [`ListReservationsInput`](crate::operation::list_reservations::ListReservationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_reservations::ListReservationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_reservations::ListReservationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_reservations::ListReservationsInput {
             max_results: self.max_results,
             next_token: self.next_token,

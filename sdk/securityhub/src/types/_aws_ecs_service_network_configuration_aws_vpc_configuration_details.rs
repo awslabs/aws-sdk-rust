@@ -36,18 +36,14 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
 }
 impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
         crate::types::builders::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
     pub(crate) assign_public_ip: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -56,19 +52,13 @@ pub struct AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
 impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
     /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code> </p>
-    pub fn assign_public_ip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assign_public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assign_public_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
     /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code> </p>
-    pub fn set_assign_public_ip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assign_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assign_public_ip = input;
         self
     }
@@ -83,10 +73,7 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
     ///
     /// <p>The IDs of the security groups associated with the task or service.</p>
     /// <p>You can provide up to five security groups.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
@@ -94,18 +81,13 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
     }
     /// <p>The IDs of the security groups associated with the task or service.</p>
     /// <p>You can provide up to five security groups.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The IDs of the security groups associated with the task or service.</p>
     /// <p>You can provide up to five security groups.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// Appends an item to `subnets`.
@@ -122,10 +104,7 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
     }
     /// <p>The IDs of the subnets associated with the task or service.</p>
     /// <p>You can provide up to 16 subnets.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }
@@ -135,9 +114,7 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
         &self.subnets
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
+    pub fn build(self) -> crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
         crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
             assign_public_ip: self.assign_public_ip,
             security_groups: self.security_groups,

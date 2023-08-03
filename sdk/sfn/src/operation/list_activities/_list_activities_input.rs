@@ -31,9 +31,7 @@ impl ListActivitiesInput {
 
 /// A builder for [`ListActivitiesInput`](crate::operation::list_activities::ListActivitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActivitiesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -73,10 +71,7 @@ impl ListActivitiesInputBuilder {
     /// Consumes the builder and constructs a [`ListActivitiesInput`](crate::operation::list_activities::ListActivitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_activities::ListActivitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_activities::ListActivitiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_activities::ListActivitiesInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -40,18 +40,14 @@ impl ScheduleKeyDeletionInput {
 }
 impl ScheduleKeyDeletionInput {
     /// Creates a new builder-style object to manufacture [`ScheduleKeyDeletionInput`](crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput).
-    pub fn builder(
-    ) -> crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionInputBuilder {
-        crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionInputBuilder {
+        crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionInputBuilder::default()
     }
 }
 
 /// A builder for [`ScheduleKeyDeletionInput`](crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleKeyDeletionInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) pending_window_in_days: ::std::option::Option<i32>,
@@ -115,15 +111,11 @@ impl ScheduleKeyDeletionInputBuilder {
     /// Consumes the builder and constructs a [`ScheduleKeyDeletionInput`](crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput {
-                key_id: self.key_id,
-                pending_window_in_days: self.pending_window_in_days,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput {
+            key_id: self.key_id,
+            pending_window_in_days: self.pending_window_in_days,
+        })
     }
 }

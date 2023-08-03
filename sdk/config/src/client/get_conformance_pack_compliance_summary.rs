@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`conformance_pack_compliance_summary_list(Option<Vec<ConformancePackComplianceSummary>>)`](crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput::conformance_pack_compliance_summary_list): <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput::next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<GetConformancePackComplianceSummaryError>`](crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError)
-    pub fn get_conformance_pack_compliance_summary(&self) -> crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryFluentBuilder{
-        crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryFluentBuilder::new(self.handle.clone())
+    pub fn get_conformance_pack_compliance_summary(
+        &self,
+    ) -> crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryFluentBuilder {
+        crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

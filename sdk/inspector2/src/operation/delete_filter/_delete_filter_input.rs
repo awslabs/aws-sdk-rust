@@ -22,9 +22,7 @@ impl DeleteFilterInput {
 
 /// A builder for [`DeleteFilterInput`](crate::operation::delete_filter::DeleteFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFilterInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteFilterInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteFilterInput`](crate::operation::delete_filter::DeleteFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_filter::DeleteFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_filter::DeleteFilterInput {
-            arn: self.arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_filter::DeleteFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_filter::DeleteFilterInput { arn: self.arn })
     }
 }

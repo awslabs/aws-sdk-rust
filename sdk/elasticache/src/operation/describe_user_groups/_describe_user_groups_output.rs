@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeUserGroupsOutput {
 }
 impl DescribeUserGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserGroupsOutput`](crate::operation::describe_user_groups::DescribeUserGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_user_groups::builders::DescribeUserGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_user_groups::builders::DescribeUserGroupsOutputBuilder {
         crate::operation::describe_user_groups::builders::DescribeUserGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserGroupsOutput`](crate::operation::describe_user_groups::DescribeUserGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserGroupsOutputBuilder {
     pub(crate) user_groups: ::std::option::Option<::std::vec::Vec<crate::types::UserGroup>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeUserGroupsOutputBuilder {
         self
     }
     /// <p>Returns a list of user groups.</p>
-    pub fn set_user_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserGroup>>,
-    ) -> Self {
+    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserGroup>>) -> Self {
         self.user_groups = input;
         self
     }
     /// <p>Returns a list of user groups.</p>
-    pub fn get_user_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserGroup>> {
+    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserGroup>> {
         &self.user_groups
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>

@@ -47,8 +47,7 @@ pub struct DescribeBotLocaleOutput {
     pub last_build_submitted_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
     #[doc(hidden)]
-    pub bot_locale_history_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleHistoryEvent>>,
+    pub bot_locale_history_events: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleHistoryEvent>>,
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
     #[doc(hidden)]
     pub recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -108,15 +107,11 @@ impl DescribeBotLocaleOutput {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The date and time that the locale was last submitted for building.</p>
-    pub fn last_build_submitted_date_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_build_submitted_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_build_submitted_date_time.as_ref()
     }
     /// <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
-    pub fn bot_locale_history_events(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BotLocaleHistoryEvent]> {
+    pub fn bot_locale_history_events(&self) -> ::std::option::Option<&[crate::types::BotLocaleHistoryEvent]> {
         self.bot_locale_history_events.as_deref()
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
@@ -131,17 +126,14 @@ impl ::aws_http::request_id::RequestId for DescribeBotLocaleOutput {
 }
 impl DescribeBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotLocaleOutput`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_bot_locale::builders::DescribeBotLocaleOutputBuilder {
+    pub fn builder() -> crate::operation::describe_bot_locale::builders::DescribeBotLocaleOutputBuilder {
         crate::operation::describe_bot_locale::builders::DescribeBotLocaleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBotLocaleOutput`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBotLocaleOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -157,8 +149,7 @@ pub struct DescribeBotLocaleOutputBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_build_submitted_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) bot_locale_history_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleHistoryEvent>>,
+    pub(crate) bot_locale_history_events: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleHistoryEvent>>,
     pub(crate) recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -239,10 +230,7 @@ impl DescribeBotLocaleOutputBuilder {
         self
     }
     /// <p>The confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
-    pub fn set_nlu_intent_confidence_threshold(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.nlu_intent_confidence_threshold = input;
         self
     }
@@ -256,10 +244,7 @@ impl DescribeBotLocaleOutputBuilder {
         self
     }
     /// <p>The Amazon Polly voice Amazon Lex uses for voice interaction with the user.</p>
-    pub fn set_voice_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceSettings>,
-    ) -> Self {
+    pub fn set_voice_settings(mut self, input: ::std::option::Option<crate::types::VoiceSettings>) -> Self {
         self.voice_settings = input;
         self
     }
@@ -301,10 +286,7 @@ impl DescribeBotLocaleOutputBuilder {
         self
     }
     /// <p>The status of the bot. If the status is <code>Failed</code>, the reasons for the failure are listed in the <code>failureReasons</code> field.</p>
-    pub fn set_bot_locale_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BotLocaleStatus>,
-    ) -> Self {
+    pub fn set_bot_locale_status(mut self, input: ::std::option::Option<crate::types::BotLocaleStatus>) -> Self {
         self.bot_locale_status = input;
         self
     }
@@ -317,27 +299,19 @@ impl DescribeBotLocaleOutputBuilder {
     /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
     ///
     /// <p>if <code>botLocaleStatus</code> is <code>Failed</code>, Amazon Lex explains why it failed to build the bot.</p>
-    pub fn failure_reasons(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
         v.push(input.into());
         self.failure_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>if <code>botLocaleStatus</code> is <code>Failed</code>, Amazon Lex explains why it failed to build the bot.</p>
-    pub fn set_failure_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_reasons = input;
         self
     }
     /// <p>if <code>botLocaleStatus</code> is <code>Failed</code>, Amazon Lex explains why it failed to build the bot.</p>
-    pub fn get_failure_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reasons
     }
     /// <p>The date and time that the locale was created.</p>
@@ -346,10 +320,7 @@ impl DescribeBotLocaleOutputBuilder {
         self
     }
     /// <p>The date and time that the locale was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -363,17 +334,12 @@ impl DescribeBotLocaleOutputBuilder {
         self
     }
     /// <p>The date and time that the locale was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the locale was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>The date and time that the locale was last submitted for building.</p>
@@ -382,17 +348,12 @@ impl DescribeBotLocaleOutputBuilder {
         self
     }
     /// <p>The date and time that the locale was last submitted for building.</p>
-    pub fn set_last_build_submitted_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_build_submitted_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_build_submitted_date_time = input;
         self
     }
     /// <p>The date and time that the locale was last submitted for building.</p>
-    pub fn get_last_build_submitted_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_build_submitted_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_build_submitted_date_time
     }
     /// Appends an item to `bot_locale_history_events`.
@@ -407,17 +368,12 @@ impl DescribeBotLocaleOutputBuilder {
         self
     }
     /// <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
-    pub fn set_bot_locale_history_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleHistoryEvent>>,
-    ) -> Self {
+    pub fn set_bot_locale_history_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleHistoryEvent>>) -> Self {
         self.bot_locale_history_events = input;
         self
     }
     /// <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
-    pub fn get_bot_locale_history_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotLocaleHistoryEvent>> {
+    pub fn get_bot_locale_history_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotLocaleHistoryEvent>> {
         &self.bot_locale_history_events
     }
     /// Appends an item to `recommended_actions`.
@@ -425,27 +381,19 @@ impl DescribeBotLocaleOutputBuilder {
     /// To override the contents of this collection use [`set_recommended_actions`](Self::set_recommended_actions).
     ///
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn recommended_actions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recommended_actions.unwrap_or_default();
         v.push(input.into());
         self.recommended_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn set_recommended_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recommended_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.recommended_actions = input;
         self
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn get_recommended_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recommended_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.recommended_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

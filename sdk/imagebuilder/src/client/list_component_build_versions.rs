@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`component_summary_list(Option<Vec<ComponentSummary>>)`](crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput::component_summary_list): <p>The list of component summaries for the specified semantic version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListComponentBuildVersionsError>`](crate::operation::list_component_build_versions::ListComponentBuildVersionsError)
-    pub fn list_component_build_versions(&self) -> crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsFluentBuilder{
+    pub fn list_component_build_versions(
+        &self,
+    ) -> crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsFluentBuilder {
         crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsFluentBuilder::new(self.handle.clone())
     }
 }

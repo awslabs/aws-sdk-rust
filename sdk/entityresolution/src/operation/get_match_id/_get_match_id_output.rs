@@ -28,9 +28,7 @@ impl GetMatchIdOutput {
 
 /// A builder for [`GetMatchIdOutput`](crate::operation::get_match_id::GetMatchIdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMatchIdOutputBuilder {
     pub(crate) match_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

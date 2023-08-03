@@ -28,9 +28,7 @@ impl UpdateTaskSetOutput {
 
 /// A builder for [`UpdateTaskSetOutput`](crate::operation::update_task_set::UpdateTaskSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTaskSetOutputBuilder {
     pub(crate) task_set: ::std::option::Option<crate::types::TaskSet>,
     _request_id: Option<String>,

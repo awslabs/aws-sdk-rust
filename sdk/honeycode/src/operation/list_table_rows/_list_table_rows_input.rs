@@ -56,9 +56,7 @@ impl ListTableRowsInput {
 
 /// A builder for [`ListTableRowsInput`](crate::operation::list_table_rows::ListTableRowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableRowsInputBuilder {
     pub(crate) workbook_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_id: ::std::option::Option<::std::string::String>,
@@ -113,10 +111,7 @@ impl ListTableRowsInputBuilder {
         self
     }
     /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
-    pub fn set_row_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_row_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.row_ids = input;
         self
     }
@@ -158,10 +153,7 @@ impl ListTableRowsInputBuilder {
     /// Consumes the builder and constructs a [`ListTableRowsInput`](crate::operation::list_table_rows::ListTableRowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_table_rows::ListTableRowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_table_rows::ListTableRowsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_table_rows::ListTableRowsInput {
             workbook_id: self.workbook_id,
             table_id: self.table_id,

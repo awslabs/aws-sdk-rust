@@ -50,18 +50,14 @@ impl ListRepositoriesInDomainInput {
 }
 impl ListRepositoriesInDomainInput {
     /// Creates a new builder-style object to manufacture [`ListRepositoriesInDomainInput`](crate::operation::list_repositories_in_domain::ListRepositoriesInDomainInput).
-    pub fn builder(
-    ) -> crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainInputBuilder {
         crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositoriesInDomainInput`](crate::operation::list_repositories_in_domain::ListRepositoriesInDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositoriesInDomainInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -100,18 +96,12 @@ impl ListRepositoriesInDomainInputBuilder {
         &self.domain_owner
     }
     /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
-    pub fn administrator_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn administrator_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administrator_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
-    pub fn set_administrator_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_administrator_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.administrator_account = input;
         self
     }
@@ -120,18 +110,12 @@ impl ListRepositoriesInDomainInputBuilder {
         &self.administrator_account
     }
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
-    pub fn repository_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
-    pub fn set_repository_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_prefix = input;
         self
     }
@@ -174,15 +158,13 @@ impl ListRepositoriesInDomainInputBuilder {
         crate::operation::list_repositories_in_domain::ListRepositoriesInDomainInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_repositories_in_domain::ListRepositoriesInDomainInput {
-                domain: self.domain,
-                domain_owner: self.domain_owner,
-                administrator_account: self.administrator_account,
-                repository_prefix: self.repository_prefix,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_repositories_in_domain::ListRepositoriesInDomainInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+            administrator_account: self.administrator_account,
+            repository_prefix: self.repository_prefix,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

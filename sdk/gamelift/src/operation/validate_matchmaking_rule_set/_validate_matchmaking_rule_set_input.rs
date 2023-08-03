@@ -15,33 +15,25 @@ impl ValidateMatchmakingRuleSetInput {
 }
 impl ValidateMatchmakingRuleSetInput {
     /// Creates a new builder-style object to manufacture [`ValidateMatchmakingRuleSetInput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput).
-    pub fn builder() -> crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder{
+    pub fn builder() -> crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder {
         crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateMatchmakingRuleSetInput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateMatchmakingRuleSetInputBuilder {
     pub(crate) rule_set_body: ::std::option::Option<::std::string::String>,
 }
 impl ValidateMatchmakingRuleSetInputBuilder {
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
-    pub fn rule_set_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
-    pub fn set_rule_set_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_body = input;
         self
     }
@@ -56,10 +48,8 @@ impl ValidateMatchmakingRuleSetInputBuilder {
         crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput {
-                rule_set_body: self.rule_set_body,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput {
+            rule_set_body: self.rule_set_body,
+        })
     }
 }

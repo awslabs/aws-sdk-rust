@@ -43,9 +43,7 @@ impl PublishSchemaInput {
 
 /// A builder for [`PublishSchemaInput`](crate::operation::publish_schema::PublishSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishSchemaInputBuilder {
     pub(crate) development_schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct PublishSchemaInputBuilder {
 }
 impl PublishSchemaInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
-    pub fn development_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn development_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.development_schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
-    pub fn set_development_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_development_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.development_schema_arn = input;
         self
     }
@@ -88,18 +80,12 @@ impl PublishSchemaInputBuilder {
         &self.version
     }
     /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minor_version = input;
         self
     }
@@ -124,10 +110,7 @@ impl PublishSchemaInputBuilder {
     /// Consumes the builder and constructs a [`PublishSchemaInput`](crate::operation::publish_schema::PublishSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::publish_schema::PublishSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::publish_schema::PublishSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_schema::PublishSchemaInput {
             development_schema_arn: self.development_schema_arn,
             version: self.version,

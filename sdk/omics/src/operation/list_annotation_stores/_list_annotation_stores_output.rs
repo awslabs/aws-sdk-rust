@@ -5,8 +5,7 @@
 pub struct ListAnnotationStoresOutput {
     /// <p>A list of stores.</p>
     #[doc(hidden)]
-    pub annotation_stores:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>>,
+    pub annotation_stores: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>>,
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAnnotationStoresOutput {
 }
 impl ListAnnotationStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListAnnotationStoresOutput`](crate::operation::list_annotation_stores::ListAnnotationStoresOutput).
-    pub fn builder(
-    ) -> crate::operation::list_annotation_stores::builders::ListAnnotationStoresOutputBuilder {
+    pub fn builder() -> crate::operation::list_annotation_stores::builders::ListAnnotationStoresOutputBuilder {
         crate::operation::list_annotation_stores::builders::ListAnnotationStoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnnotationStoresOutput`](crate::operation::list_annotation_stores::ListAnnotationStoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnnotationStoresOutputBuilder {
-    pub(crate) annotation_stores:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>>,
+    pub(crate) annotation_stores: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListAnnotationStoresOutputBuilder {
         self
     }
     /// <p>A list of stores.</p>
-    pub fn set_annotation_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>>,
-    ) -> Self {
+    pub fn set_annotation_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>>) -> Self {
         self.annotation_stores = input;
         self
     }
     /// <p>A list of stores.</p>
-    pub fn get_annotation_stores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>> {
+    pub fn get_annotation_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>> {
         &self.annotation_stores
     }
     /// <p>A pagination token that's included if more results are available.</p>

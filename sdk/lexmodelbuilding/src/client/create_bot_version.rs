@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`enable_model_improvements(Option<bool>)`](crate::operation::create_bot_version::CreateBotVersionOutput::enable_model_improvements): <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
     ///   - [`detect_sentiment(Option<bool>)`](crate::operation::create_bot_version::CreateBotVersionOutput::detect_sentiment): <p>Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.</p>
     /// - On failure, responds with [`SdkError<CreateBotVersionError>`](crate::operation::create_bot_version::CreateBotVersionError)
-    pub fn create_bot_version(
-        &self,
-    ) -> crate::operation::create_bot_version::builders::CreateBotVersionFluentBuilder {
-        crate::operation::create_bot_version::builders::CreateBotVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_bot_version(&self) -> crate::operation::create_bot_version::builders::CreateBotVersionFluentBuilder {
+        crate::operation::create_bot_version::builders::CreateBotVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`state_machine_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
     /// - On success, responds with [`DeleteStateMachineOutput`](crate::operation::delete_state_machine::DeleteStateMachineOutput)
     /// - On failure, responds with [`SdkError<DeleteStateMachineError>`](crate::operation::delete_state_machine::DeleteStateMachineError)
-    pub fn delete_state_machine(
-        &self,
-    ) -> crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder {
-        crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_state_machine(&self) -> crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder {
+        crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder::new(self.handle.clone())
     }
 }

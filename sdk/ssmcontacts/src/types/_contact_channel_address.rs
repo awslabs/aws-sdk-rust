@@ -33,9 +33,7 @@ impl ContactChannelAddress {
 
 /// A builder for [`ContactChannelAddress`](crate::types::ContactChannelAddress).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactChannelAddressBuilder {
     pub(crate) simple_address: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl ContactChannelAddressBuilder {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
-    pub fn simple_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn simple_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simple_address = ::std::option::Option::Some(input.into());
         self
     }
@@ -59,10 +54,7 @@ impl ContactChannelAddressBuilder {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
-    pub fn set_simple_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_simple_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.simple_address = input;
         self
     }

@@ -26,18 +26,14 @@ impl ListFirewallRuleGroupsInput {
 }
 impl ListFirewallRuleGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupsInput`](crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsInputBuilder {
         crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallRuleGroupsInput`](crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallRuleGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -84,11 +80,9 @@ impl ListFirewallRuleGroupsInputBuilder {
         crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

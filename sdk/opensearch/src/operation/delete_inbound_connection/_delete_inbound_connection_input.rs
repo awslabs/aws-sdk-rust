@@ -16,35 +16,25 @@ impl DeleteInboundConnectionInput {
 }
 impl DeleteInboundConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteInboundConnectionInput`](crate::operation::delete_inbound_connection::DeleteInboundConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionInputBuilder {
         crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInboundConnectionInput`](crate::operation::delete_inbound_connection::DeleteInboundConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInboundConnectionInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInboundConnectionInputBuilder {
     /// <p>The ID of the inbound connection to permanently delete.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the inbound connection to permanently delete.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -59,10 +49,8 @@ impl DeleteInboundConnectionInputBuilder {
         crate::operation::delete_inbound_connection::DeleteInboundConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_inbound_connection::DeleteInboundConnectionInput {
-                connection_id: self.connection_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_inbound_connection::DeleteInboundConnectionInput {
+            connection_id: self.connection_id,
+        })
     }
 }

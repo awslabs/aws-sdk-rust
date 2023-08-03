@@ -57,16 +57,14 @@ impl ::aws_http::request_id::RequestId for DescribeConfigurationRevisionOutput {
 }
 impl DescribeConfigurationRevisionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput).
-    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionOutputBuilder {
         crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRevisionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -96,10 +94,7 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -149,10 +144,7 @@ impl DescribeConfigurationRevisionOutputBuilder {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn set_server_properties(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_server_properties(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.server_properties = input;
         self
     }
@@ -174,10 +166,7 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput
-    {
+    pub fn build(self) -> crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput {
         crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput {
             arn: self.arn,
             creation_time: self.creation_time,

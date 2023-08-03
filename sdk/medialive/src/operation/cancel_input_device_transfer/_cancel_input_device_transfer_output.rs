@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for CancelInputDeviceTransferOutput {
 }
 impl CancelInputDeviceTransferOutput {
     /// Creates a new builder-style object to manufacture [`CancelInputDeviceTransferOutput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput).
-    pub fn builder() -> crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferOutputBuilder {
         crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelInputDeviceTransferOutput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelInputDeviceTransferOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl CancelInputDeviceTransferOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelInputDeviceTransferOutput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput {
+    pub fn build(self) -> crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput {
         crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput {
             _request_id: self._request_id,
         }

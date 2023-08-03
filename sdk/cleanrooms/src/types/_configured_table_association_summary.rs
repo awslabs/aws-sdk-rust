@@ -72,9 +72,7 @@ impl ConfiguredTableAssociationSummary {
 
 /// A builder for [`ConfiguredTableAssociationSummary`](crate::types::ConfiguredTableAssociationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfiguredTableAssociationSummaryBuilder {
     pub(crate) configured_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) membership_id: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct ConfiguredTableAssociationSummaryBuilder {
 }
 impl ConfiguredTableAssociationSummaryBuilder {
     /// <p>The unique configured table ID that this configured table association refers to.</p>
-    pub fn configured_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique configured table ID that this configured table association refers to.</p>
-    pub fn set_configured_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_table_id = input;
         self
     }
@@ -107,18 +99,12 @@ impl ConfiguredTableAssociationSummaryBuilder {
         &self.configured_table_id
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn membership_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn set_membership_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_id = input;
         self
     }
@@ -127,18 +113,12 @@ impl ConfiguredTableAssociationSummaryBuilder {
         &self.membership_id
     }
     /// <p>The unique ARN for the membership that the configured table association belongs to.</p>
-    pub fn membership_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN for the membership that the configured table association belongs to.</p>
-    pub fn set_membership_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_arn = input;
         self
     }
@@ -166,10 +146,7 @@ impl ConfiguredTableAssociationSummaryBuilder {
         self
     }
     /// <p>The time the configured table association was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -183,10 +160,7 @@ impl ConfiguredTableAssociationSummaryBuilder {
         self
     }
     /// <p>The time the configured table association was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

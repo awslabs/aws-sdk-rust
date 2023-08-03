@@ -5,8 +5,7 @@
 pub struct ListModelMetadataOutput {
     /// <p>A structure that holds model metadata.</p>
     #[doc(hidden)]
-    pub model_metadata_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataSummary>>,
+    pub model_metadata_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataSummary>>,
     /// <p>A token for getting the next set of recommendations, if there are any.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListModelMetadataOutput {
 }
 impl ListModelMetadataOutput {
     /// <p>A structure that holds model metadata.</p>
-    pub fn model_metadata_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ModelMetadataSummary]> {
+    pub fn model_metadata_summaries(&self) -> ::std::option::Option<&[crate::types::ModelMetadataSummary]> {
         self.model_metadata_summaries.as_deref()
     }
     /// <p>A token for getting the next set of recommendations, if there are any.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListModelMetadataOutput {
 }
 impl ListModelMetadataOutput {
     /// Creates a new builder-style object to manufacture [`ListModelMetadataOutput`](crate::operation::list_model_metadata::ListModelMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::list_model_metadata::builders::ListModelMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::list_model_metadata::builders::ListModelMetadataOutputBuilder {
         crate::operation::list_model_metadata::builders::ListModelMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelMetadataOutput`](crate::operation::list_model_metadata::ListModelMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelMetadataOutputBuilder {
-    pub(crate) model_metadata_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataSummary>>,
+    pub(crate) model_metadata_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListModelMetadataOutputBuilder {
         self
     }
     /// <p>A structure that holds model metadata.</p>
-    pub fn set_model_metadata_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataSummary>>,
-    ) -> Self {
+    pub fn set_model_metadata_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataSummary>>) -> Self {
         self.model_metadata_summaries = input;
         self
     }
     /// <p>A structure that holds model metadata.</p>
-    pub fn get_model_metadata_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataSummary>> {
+    pub fn get_model_metadata_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataSummary>> {
         &self.model_metadata_summaries
     }
     /// <p>A token for getting the next set of recommendations, if there are any.</p>

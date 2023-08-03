@@ -36,16 +36,14 @@ impl DescribeReservedNodeExchangeStatusInput {
 }
 impl DescribeReservedNodeExchangeStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodeExchangeStatusInput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput).
-    pub fn builder() -> crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusInputBuilder {
         crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedNodeExchangeStatusInput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedNodeExchangeStatusInputBuilder {
     pub(crate) reserved_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_node_exchange_request_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct DescribeReservedNodeExchangeStatusInputBuilder {
 }
 impl DescribeReservedNodeExchangeStatusInputBuilder {
     /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_id = input;
         self
     }
@@ -74,25 +66,17 @@ impl DescribeReservedNodeExchangeStatusInputBuilder {
         &self.reserved_node_id
     }
     /// <p>The identifier of the reserved-node exchange request.</p>
-    pub fn reserved_node_exchange_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_exchange_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_exchange_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the reserved-node exchange request.</p>
-    pub fn set_reserved_node_exchange_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_exchange_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_exchange_request_id = input;
         self
     }
     /// <p>The identifier of the reserved-node exchange request.</p>
-    pub fn get_reserved_node_exchange_request_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_node_exchange_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_node_exchange_request_id
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
@@ -124,18 +108,19 @@ impl DescribeReservedNodeExchangeStatusInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReservedNodeExchangeStatusInput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput {
-                reserved_node_id: self.reserved_node_id
-                ,
-                reserved_node_exchange_request_id: self.reserved_node_exchange_request_id
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                reserved_node_id: self.reserved_node_id,
+                reserved_node_exchange_request_id: self.reserved_node_exchange_request_id,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

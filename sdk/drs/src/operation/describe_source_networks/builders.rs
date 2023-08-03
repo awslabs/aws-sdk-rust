@@ -37,10 +37,7 @@ impl DescribeSourceNetworksFluentBuilder {
         }
     }
     /// Access the DescribeSourceNetworks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_source_networks::builders::DescribeSourceNetworksInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_source_networks::builders::DescribeSourceNetworksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeSourceNetworksFluentBuilder {
             crate::operation::describe_source_networks::DescribeSourceNetworks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_networks::DescribeSourceNetworksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_networks::DescribeSourceNetworksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeSourceNetworksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeSourceNetworksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_source_networks::DescribeSourceNetworksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_networks::DescribeSourceNetworksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_networks::DescribeSourceNetworksError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeSourceNetworksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_source_networks::DescribeSourceNetworksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_networks::DescribeSourceNetworksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_networks::DescribeSourceNetworksError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl DescribeSourceNetworksFluentBuilder {
             crate::operation::describe_source_networks::DescribeSourceNetworks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_networks::DescribeSourceNetworksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_networks::DescribeSourceNetworksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_source_networks::paginator::DescribeSourceNetworksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_source_networks::paginator::DescribeSourceNetworksPaginator
-    {
-        crate::operation::describe_source_networks::paginator::DescribeSourceNetworksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_source_networks::paginator::DescribeSourceNetworksPaginator {
+        crate::operation::describe_source_networks::paginator::DescribeSourceNetworksPaginator::new(self.handle, self.inner)
     }
     /// <p>A set of filters by which to return Source Networks.</p>
     pub fn filters(mut self, input: crate::types::DescribeSourceNetworksRequestFilters) -> Self {
@@ -141,17 +121,12 @@ impl DescribeSourceNetworksFluentBuilder {
         self
     }
     /// <p>A set of filters by which to return Source Networks.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A set of filters by which to return Source Networks.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters> {
         self.inner.get_filters()
     }
     /// <p>Maximum number of Source Networks to retrieve.</p>

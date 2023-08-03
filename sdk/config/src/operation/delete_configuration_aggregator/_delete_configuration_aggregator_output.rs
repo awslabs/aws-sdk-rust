@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConfigurationAggregatorOutput {
 }
 impl DeleteConfigurationAggregatorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationAggregatorOutput`](crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorOutput).
-    pub fn builder() -> crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorOutputBuilder{
+    pub fn builder() -> crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorOutputBuilder {
         crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfigurationAggregatorOutput`](crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigurationAggregatorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteConfigurationAggregatorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationAggregatorOutput`](crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorOutput
-    {
+    pub fn build(self) -> crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorOutput {
         crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorOutput {
             _request_id: self._request_id,
         }

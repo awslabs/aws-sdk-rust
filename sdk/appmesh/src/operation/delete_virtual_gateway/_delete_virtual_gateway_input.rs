@@ -29,17 +29,14 @@ impl DeleteVirtualGatewayInput {
 }
 impl DeleteVirtualGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualGatewayInput`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayInputBuilder {
+    pub fn builder() -> crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayInputBuilder {
         crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualGatewayInput`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualGatewayInputBuilder {
     pub(crate) virtual_gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct DeleteVirtualGatewayInputBuilder {
 }
 impl DeleteVirtualGatewayInputBuilder {
     /// <p>The name of the virtual gateway to delete.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual gateway to delete.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_gateway_name = input;
         self
     }
@@ -97,16 +88,12 @@ impl DeleteVirtualGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualGatewayInput`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput {
-                virtual_gateway_name: self.virtual_gateway_name,
-                mesh_name: self.mesh_name,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput {
+            virtual_gateway_name: self.virtual_gateway_name,
+            mesh_name: self.mesh_name,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

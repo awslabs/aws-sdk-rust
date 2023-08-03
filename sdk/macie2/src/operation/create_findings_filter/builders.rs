@@ -37,9 +37,7 @@ impl CreateFindingsFilterFluentBuilder {
         }
     }
     /// Access the CreateFindingsFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_findings_filter::builders::CreateFindingsFilterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_findings_filter::builders::CreateFindingsFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateFindingsFilterFluentBuilder {
             crate::operation::create_findings_filter::CreateFindingsFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_filter::CreateFindingsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_findings_filter::CreateFindingsFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateFindingsFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateFindingsFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_findings_filter::CreateFindingsFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_filter::CreateFindingsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_findings_filter::CreateFindingsFilterError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateFindingsFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_findings_filter::CreateFindingsFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_filter::CreateFindingsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_findings_filter::CreateFindingsFilterError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateFindingsFilterFluentBuilder {
             crate::operation::create_findings_filter::CreateFindingsFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_filter::CreateFindingsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_findings_filter::CreateFindingsFilterError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl CreateFindingsFilterFluentBuilder {
         self
     }
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingsFilterAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::FindingsFilterAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
@@ -176,10 +160,7 @@ impl CreateFindingsFilterFluentBuilder {
         self
     }
     /// <p>The criteria to use to filter findings.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.inner = self.inner.set_finding_criteria(input);
         self
     }
@@ -224,32 +205,19 @@ impl CreateFindingsFilterFluentBuilder {
     ///
     /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
     /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
     /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
     /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

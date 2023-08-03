@@ -10,10 +10,7 @@ impl RecognizeUtteranceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::recognize_utterance::RecognizeUtteranceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::recognize_utterance::RecognizeUtteranceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.recognize_utterance();
         fluent_builder.inner = self;
@@ -58,9 +55,7 @@ impl RecognizeUtteranceFluentBuilder {
         }
     }
     /// Access the RecognizeUtterance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::recognize_utterance::builders::RecognizeUtteranceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::recognize_utterance::builders::RecognizeUtteranceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -72,9 +67,7 @@ impl RecognizeUtteranceFluentBuilder {
             crate::operation::recognize_utterance::RecognizeUtterance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::recognize_utterance::RecognizeUtteranceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::recognize_utterance::RecognizeUtteranceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -84,10 +77,7 @@ impl RecognizeUtteranceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -96,9 +86,7 @@ impl RecognizeUtteranceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::recognize_utterance::RecognizeUtteranceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::recognize_utterance::RecognizeUtteranceError>,
     > {
         let op = self
             .inner
@@ -121,9 +109,7 @@ impl RecognizeUtteranceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::recognize_utterance::RecognizeUtteranceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::recognize_utterance::RecognizeUtteranceError>,
     > {
         self.send_middleware().await
     }
@@ -137,9 +123,7 @@ impl RecognizeUtteranceFluentBuilder {
             crate::operation::recognize_utterance::RecognizeUtterance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::recognize_utterance::RecognizeUtteranceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::recognize_utterance::RecognizeUtteranceError>,
     > {
         self.customize_middleware().await
     }
@@ -201,19 +185,13 @@ impl RecognizeUtteranceFluentBuilder {
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn session_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_state(input.into());
         self
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn set_session_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_state(input);
         self
     }
@@ -225,20 +203,14 @@ impl RecognizeUtteranceFluentBuilder {
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
     /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn request_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_attributes(input.into());
         self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
     /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn set_request_attributes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_attributes(input);
         self
     }
@@ -265,10 +237,7 @@ impl RecognizeUtteranceFluentBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn request_content_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_content_type(input.into());
         self
     }
@@ -289,10 +258,7 @@ impl RecognizeUtteranceFluentBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_request_content_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_content_type(input);
         self
     }
@@ -330,10 +296,7 @@ impl RecognizeUtteranceFluentBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn response_content_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_content_type(input.into());
         self
     }
@@ -351,10 +314,7 @@ impl RecognizeUtteranceFluentBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_response_content_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_content_type(input);
         self
     }
@@ -381,17 +341,12 @@ impl RecognizeUtteranceFluentBuilder {
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn set_input_stream(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_input_stream(input);
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn get_input_stream(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         self.inner.get_input_stream()
     }
 }

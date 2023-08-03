@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`discovery_job_arn(impl ::std::convert::Into<String>)`](crate::operation::stop_discovery_job::builders::StopDiscoveryJobFluentBuilder::discovery_job_arn) / [`set_discovery_job_arn(Option<String>)`](crate::operation::stop_discovery_job::builders::StopDiscoveryJobFluentBuilder::set_discovery_job_arn): <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
     /// - On success, responds with [`StopDiscoveryJobOutput`](crate::operation::stop_discovery_job::StopDiscoveryJobOutput)
     /// - On failure, responds with [`SdkError<StopDiscoveryJobError>`](crate::operation::stop_discovery_job::StopDiscoveryJobError)
-    pub fn stop_discovery_job(
-        &self,
-    ) -> crate::operation::stop_discovery_job::builders::StopDiscoveryJobFluentBuilder {
-        crate::operation::stop_discovery_job::builders::StopDiscoveryJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_discovery_job(&self) -> crate::operation::stop_discovery_job::builders::StopDiscoveryJobFluentBuilder {
+        crate::operation::stop_discovery_job::builders::StopDiscoveryJobFluentBuilder::new(self.handle.clone())
     }
 }

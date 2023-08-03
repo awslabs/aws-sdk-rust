@@ -26,8 +26,7 @@ impl GetSpeechSynthesisTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSpeechSynthesisTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder,
+    inner: crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder,
 }
 impl GetSpeechSynthesisTaskFluentBuilder {
     /// Creates a new `GetSpeechSynthesisTask`.
@@ -38,10 +37,7 @@ impl GetSpeechSynthesisTaskFluentBuilder {
         }
     }
     /// Access the GetSpeechSynthesisTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetSpeechSynthesisTaskFluentBuilder {
             crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetSpeechSynthesisTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetSpeechSynthesisTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetSpeechSynthesisTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetSpeechSynthesisTaskFluentBuilder {
             crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError>,
     > {
         self.customize_middleware().await
     }

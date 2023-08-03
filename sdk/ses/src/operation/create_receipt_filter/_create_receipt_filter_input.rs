@@ -16,18 +16,14 @@ impl CreateReceiptFilterInput {
 }
 impl CreateReceiptFilterInput {
     /// Creates a new builder-style object to manufacture [`CreateReceiptFilterInput`](crate::operation::create_receipt_filter::CreateReceiptFilterInput).
-    pub fn builder(
-    ) -> crate::operation::create_receipt_filter::builders::CreateReceiptFilterInputBuilder {
-        crate::operation::create_receipt_filter::builders::CreateReceiptFilterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_receipt_filter::builders::CreateReceiptFilterInputBuilder {
+        crate::operation::create_receipt_filter::builders::CreateReceiptFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReceiptFilterInput`](crate::operation::create_receipt_filter::CreateReceiptFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReceiptFilterInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ReceiptFilter>,
 }
@@ -49,14 +45,8 @@ impl CreateReceiptFilterInputBuilder {
     /// Consumes the builder and constructs a [`CreateReceiptFilterInput`](crate::operation::create_receipt_filter::CreateReceiptFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_receipt_filter::CreateReceiptFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_receipt_filter::CreateReceiptFilterInput {
-                filter: self.filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_receipt_filter::CreateReceiptFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_receipt_filter::CreateReceiptFilterInput { filter: self.filter })
     }
 }

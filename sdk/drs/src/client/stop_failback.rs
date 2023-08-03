@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`recovery_instance_id(impl ::std::convert::Into<String>)`](crate::operation::stop_failback::builders::StopFailbackFluentBuilder::recovery_instance_id) / [`set_recovery_instance_id(Option<String>)`](crate::operation::stop_failback::builders::StopFailbackFluentBuilder::set_recovery_instance_id): <p>The ID of the Recovery Instance we want to stop failback for.</p>
     /// - On success, responds with [`StopFailbackOutput`](crate::operation::stop_failback::StopFailbackOutput)
     /// - On failure, responds with [`SdkError<StopFailbackError>`](crate::operation::stop_failback::StopFailbackError)
-    pub fn stop_failback(
-        &self,
-    ) -> crate::operation::stop_failback::builders::StopFailbackFluentBuilder {
-        crate::operation::stop_failback::builders::StopFailbackFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_failback(&self) -> crate::operation::stop_failback::builders::StopFailbackFluentBuilder {
+        crate::operation::stop_failback::builders::StopFailbackFluentBuilder::new(self.handle.clone())
     }
 }

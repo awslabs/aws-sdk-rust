@@ -27,8 +27,7 @@ impl AdminUserGlobalSignOutInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminUserGlobalSignOutFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutInputBuilder,
+    inner: crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutInputBuilder,
 }
 impl AdminUserGlobalSignOutFluentBuilder {
     /// Creates a new `AdminUserGlobalSignOut`.
@@ -39,10 +38,7 @@ impl AdminUserGlobalSignOutFluentBuilder {
         }
     }
     /// Access the AdminUserGlobalSignOut as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl AdminUserGlobalSignOutFluentBuilder {
             crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOut,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl AdminUserGlobalSignOutFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl AdminUserGlobalSignOutFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl AdminUserGlobalSignOutFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl AdminUserGlobalSignOutFluentBuilder {
             crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOut,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError>,
     > {
         self.customize_middleware().await
     }

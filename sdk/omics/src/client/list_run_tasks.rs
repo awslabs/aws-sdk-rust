@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<TaskListItem>>)`](crate::operation::list_run_tasks::ListRunTasksOutput::items): <p>A list of tasks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_run_tasks::ListRunTasksOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListRunTasksError>`](crate::operation::list_run_tasks::ListRunTasksError)
-    pub fn list_run_tasks(
-        &self,
-    ) -> crate::operation::list_run_tasks::builders::ListRunTasksFluentBuilder {
-        crate::operation::list_run_tasks::builders::ListRunTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_run_tasks(&self) -> crate::operation::list_run_tasks::builders::ListRunTasksFluentBuilder {
+        crate::operation::list_run_tasks::builders::ListRunTasksFluentBuilder::new(self.handle.clone())
     }
 }

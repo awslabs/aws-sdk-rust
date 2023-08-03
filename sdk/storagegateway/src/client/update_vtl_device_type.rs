@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVtlDeviceTypeOutput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeOutput) with field(s):
     ///   - [`vtl_device_arn(Option<String>)`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeOutput::vtl_device_arn): <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
     /// - On failure, responds with [`SdkError<UpdateVTLDeviceTypeError>`](crate::operation::update_vtl_device_type::UpdateVTLDeviceTypeError)
-    pub fn update_vtl_device_type(
-        &self,
-    ) -> crate::operation::update_vtl_device_type::builders::UpdateVTLDeviceTypeFluentBuilder {
-        crate::operation::update_vtl_device_type::builders::UpdateVTLDeviceTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_vtl_device_type(&self) -> crate::operation::update_vtl_device_type::builders::UpdateVTLDeviceTypeFluentBuilder {
+        crate::operation::update_vtl_device_type::builders::UpdateVTLDeviceTypeFluentBuilder::new(self.handle.clone())
     }
 }

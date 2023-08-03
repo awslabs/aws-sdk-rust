@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeElasticIpsOutput {
 }
 impl DescribeElasticIpsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticIpsOutput`](crate::operation::describe_elastic_ips::DescribeElasticIpsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_elastic_ips::builders::DescribeElasticIpsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_elastic_ips::builders::DescribeElasticIpsOutputBuilder {
         crate::operation::describe_elastic_ips::builders::DescribeElasticIpsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeElasticIpsOutput`](crate::operation::describe_elastic_ips::DescribeElasticIpsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticIpsOutputBuilder {
     pub(crate) elastic_ips: ::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>>,
     _request_id: Option<String>,
@@ -50,17 +47,12 @@ impl DescribeElasticIpsOutputBuilder {
         self
     }
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
-    pub fn set_elastic_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>>,
-    ) -> Self {
+    pub fn set_elastic_ips(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>>) -> Self {
         self.elastic_ips = input;
         self
     }
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
-    pub fn get_elastic_ips(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>> {
+    pub fn get_elastic_ips(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>> {
         &self.elastic_ips
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

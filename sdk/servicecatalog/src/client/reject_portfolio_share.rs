@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`portfolio_share_type(PortfolioShareType)`](crate::operation::reject_portfolio_share::builders::RejectPortfolioShareFluentBuilder::portfolio_share_type) / [`set_portfolio_share_type(Option<PortfolioShareType>)`](crate::operation::reject_portfolio_share::builders::RejectPortfolioShareFluentBuilder::set_portfolio_share_type): <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>  <ul>   <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your organization.</p> </li>   <li> <p> <code>IMPORTED</code> - Reject imported portfolios.</p> </li>   <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>  </ul>  <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
     /// - On success, responds with [`RejectPortfolioShareOutput`](crate::operation::reject_portfolio_share::RejectPortfolioShareOutput)
     /// - On failure, responds with [`SdkError<RejectPortfolioShareError>`](crate::operation::reject_portfolio_share::RejectPortfolioShareError)
-    pub fn reject_portfolio_share(
-        &self,
-    ) -> crate::operation::reject_portfolio_share::builders::RejectPortfolioShareFluentBuilder {
-        crate::operation::reject_portfolio_share::builders::RejectPortfolioShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reject_portfolio_share(&self) -> crate::operation::reject_portfolio_share::builders::RejectPortfolioShareFluentBuilder {
+        crate::operation::reject_portfolio_share::builders::RejectPortfolioShareFluentBuilder::new(self.handle.clone())
     }
 }

@@ -25,9 +25,7 @@ impl RulesConfigurationType {
 
 /// A builder for [`RulesConfigurationType`](crate::types::RulesConfigurationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RulesConfigurationTypeBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::MappingRule>>,
 }
@@ -46,10 +44,7 @@ impl RulesConfigurationTypeBuilder {
     }
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MappingRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MappingRule>>) -> Self {
         self.rules = input;
         self
     }

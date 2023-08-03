@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::creation_time): <p>When the store was created.</p>
     ///   - [`fallback_location(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::fallback_location): <p> An S3 location that is used to store files that have failed a direct upload. </p>
     /// - On failure, responds with [`SdkError<GetSequenceStoreError>`](crate::operation::get_sequence_store::GetSequenceStoreError)
-    pub fn get_sequence_store(
-        &self,
-    ) -> crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder {
-        crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sequence_store(&self) -> crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder {
+        crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::new(self.handle.clone())
     }
 }

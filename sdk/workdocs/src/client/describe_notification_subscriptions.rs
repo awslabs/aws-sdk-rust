@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput::subscriptions): <p>The subscriptions.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeNotificationSubscriptionsError>`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError)
-    pub fn describe_notification_subscriptions(&self) -> crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder{
+    pub fn describe_notification_subscriptions(
+        &self,
+    ) -> crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder {
         crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`max_results(Option<i32>)`](crate::operation::list_resolver_endpoints::ListResolverEndpointsOutput::max_results): <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     ///   - [`resolver_endpoints(Option<Vec<ResolverEndpoint>>)`](crate::operation::list_resolver_endpoints::ListResolverEndpointsOutput::resolver_endpoints): <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     /// - On failure, responds with [`SdkError<ListResolverEndpointsError>`](crate::operation::list_resolver_endpoints::ListResolverEndpointsError)
-    pub fn list_resolver_endpoints(
-        &self,
-    ) -> crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsFluentBuilder
-    {
-        crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resolver_endpoints(&self) -> crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsFluentBuilder {
+        crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,10 +15,7 @@ pub fn ser_add_application_reference_data_source_input(
     if let Some(var_3) = &input.reference_data_source {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ReferenceDataSource").start_object();
-        crate::protocol_serde::shape_reference_data_source::ser_reference_data_source(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_reference_data_source::ser_reference_data_source(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

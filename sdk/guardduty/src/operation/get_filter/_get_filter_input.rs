@@ -29,9 +29,7 @@ impl GetFilterInput {
 
 /// A builder for [`GetFilterInput`](crate::operation::get_filter::GetFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFilterInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) filter_name: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetFilterInputBuilder {
         &self.filter_name
     }
     /// Consumes the builder and constructs a [`GetFilterInput`](crate::operation::get_filter::GetFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_filter::GetFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_filter::GetFilterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_filter::GetFilterInput {
             detector_id: self.detector_id,
             filter_name: self.filter_name,

@@ -38,10 +38,7 @@ impl UpdateLifecyclePolicyFluentBuilder {
         }
     }
     /// Access the UpdateLifecyclePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateLifecyclePolicyFluentBuilder {
             crate::operation::update_lifecycle_policy::UpdateLifecyclePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateLifecyclePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl UpdateLifecyclePolicyFluentBuilder {
             crate::operation::update_lifecycle_policy::UpdateLifecyclePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +125,12 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self.inner.get_policy_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -164,10 +144,7 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self
     }
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SettablePolicyStateValues>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::SettablePolicyStateValues>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
@@ -195,10 +172,7 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self
     }
     /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
-    pub fn set_policy_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyDetails>,
-    ) -> Self {
+    pub fn set_policy_details(mut self, input: ::std::option::Option<crate::types::PolicyDetails>) -> Self {
         self.inner = self.inner.set_policy_details(input);
         self
     }

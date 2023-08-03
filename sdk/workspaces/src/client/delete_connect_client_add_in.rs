@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInFluentBuilder::set_resource_id): <p>The directory identifier for which the client add-in is configured.</p>
     /// - On success, responds with [`DeleteConnectClientAddInOutput`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput)
     /// - On failure, responds with [`SdkError<DeleteConnectClientAddInError>`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInError)
-    pub fn delete_connect_client_add_in(&self) -> crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInFluentBuilder{
+    pub fn delete_connect_client_add_in(&self) -> crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInFluentBuilder {
         crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInFluentBuilder::new(self.handle.clone())
     }
 }

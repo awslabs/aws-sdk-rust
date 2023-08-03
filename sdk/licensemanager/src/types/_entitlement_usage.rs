@@ -44,9 +44,7 @@ impl EntitlementUsage {
 
 /// A builder for [`EntitlementUsage`](crate::types::EntitlementUsage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntitlementUsageBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) consumed_value: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl EntitlementUsageBuilder {
         &self.name
     }
     /// <p>Resource usage consumed.</p>
-    pub fn consumed_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumed_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumed_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Resource usage consumed.</p>
-    pub fn set_consumed_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumed_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumed_value = input;
         self
     }
@@ -108,10 +100,7 @@ impl EntitlementUsageBuilder {
         self
     }
     /// <p>Entitlement usage unit.</p>
-    pub fn set_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitlementDataUnit>,
-    ) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::EntitlementDataUnit>) -> Self {
         self.unit = input;
         self
     }

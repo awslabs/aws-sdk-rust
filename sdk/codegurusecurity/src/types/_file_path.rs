@@ -51,9 +51,7 @@ impl FilePath {
 
 /// A builder for [`FilePath`](crate::types::FilePath).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilePathBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
@@ -130,17 +128,12 @@ impl FilePathBuilder {
         self
     }
     /// <p>A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.</p>
-    pub fn set_code_snippet(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeLine>>,
-    ) -> Self {
+    pub fn set_code_snippet(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeLine>>) -> Self {
         self.code_snippet = input;
         self
     }
     /// <p>A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.</p>
-    pub fn get_code_snippet(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeLine>> {
+    pub fn get_code_snippet(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeLine>> {
         &self.code_snippet
     }
     /// Consumes the builder and constructs a [`FilePath`](crate::types::FilePath).

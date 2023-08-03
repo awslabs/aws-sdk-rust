@@ -21,8 +21,7 @@ pub struct AwsCloudFrontDistributionOriginCustomOriginConfig {
     pub origin_read_timeout: i32,
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. </p>
     #[doc(hidden)]
-    pub origin_ssl_protocols:
-        ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
+    pub origin_ssl_protocols: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
 }
 impl AwsCloudFrontDistributionOriginCustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. </p>
@@ -46,33 +45,27 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfig {
         self.origin_read_timeout
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. </p>
-    pub fn origin_ssl_protocols(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsCloudFrontDistributionOriginSslProtocols> {
+    pub fn origin_ssl_protocols(&self) -> ::std::option::Option<&crate::types::AwsCloudFrontDistributionOriginSslProtocols> {
         self.origin_ssl_protocols.as_ref()
     }
 }
 impl AwsCloudFrontDistributionOriginCustomOriginConfig {
     /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig).
-    pub fn builder(
-    ) -> crate::types::builders::AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
+    pub fn builder() -> crate::types::builders::AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
         crate::types::builders::AwsCloudFrontDistributionOriginCustomOriginConfigBuilder::default()
     }
 }
 
 /// A builder for [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
     pub(crate) http_port: ::std::option::Option<i32>,
     pub(crate) https_port: ::std::option::Option<i32>,
     pub(crate) origin_keepalive_timeout: ::std::option::Option<i32>,
     pub(crate) origin_protocol_policy: ::std::option::Option<::std::string::String>,
     pub(crate) origin_read_timeout: ::std::option::Option<i32>,
-    pub(crate) origin_ssl_protocols:
-        ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
+    pub(crate) origin_ssl_protocols: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
 }
 impl AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. </p>
@@ -118,18 +111,12 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
         &self.origin_keepalive_timeout
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. </p>
-    pub fn origin_protocol_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_protocol_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_protocol_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. </p>
-    pub fn set_origin_protocol_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_protocol_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_protocol_policy = input;
         self
     }
@@ -152,25 +139,17 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
         &self.origin_read_timeout
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. </p>
-    pub fn origin_ssl_protocols(
-        mut self,
-        input: crate::types::AwsCloudFrontDistributionOriginSslProtocols,
-    ) -> Self {
+    pub fn origin_ssl_protocols(mut self, input: crate::types::AwsCloudFrontDistributionOriginSslProtocols) -> Self {
         self.origin_ssl_protocols = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. </p>
-    pub fn set_origin_ssl_protocols(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
-    ) -> Self {
+    pub fn set_origin_ssl_protocols(mut self, input: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>) -> Self {
         self.origin_ssl_protocols = input;
         self
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. </p>
-    pub fn get_origin_ssl_protocols(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols> {
+    pub fn get_origin_ssl_protocols(&self) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols> {
         &self.origin_ssl_protocols
     }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig).

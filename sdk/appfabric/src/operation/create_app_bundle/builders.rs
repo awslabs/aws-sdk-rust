@@ -10,10 +10,7 @@ impl CreateAppBundleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_app_bundle::CreateAppBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_bundle::CreateAppBundleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_bundle::CreateAppBundleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_app_bundle();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateAppBundleFluentBuilder {
         }
     }
     /// Access the CreateAppBundle as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_app_bundle::builders::CreateAppBundleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_app_bundle::builders::CreateAppBundleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateAppBundleFluentBuilder {
             crate::operation::create_app_bundle::CreateAppBundle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_bundle::CreateAppBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_bundle::CreateAppBundleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateAppBundleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateAppBundleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_bundle::CreateAppBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_bundle::CreateAppBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_bundle::CreateAppBundleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateAppBundleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_bundle::CreateAppBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_bundle::CreateAppBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_bundle::CreateAppBundleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateAppBundleFluentBuilder {
             crate::operation::create_app_bundle::CreateAppBundle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_bundle::CreateAppBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_bundle::CreateAppBundleError>,
     > {
         self.customize_middleware().await
     }
@@ -143,25 +127,17 @@ impl CreateAppBundleFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.</p>
-    pub fn customer_managed_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_managed_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_managed_key_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.</p>
-    pub fn set_customer_managed_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_managed_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_managed_key_identifier(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.</p>
-    pub fn get_customer_managed_key_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_customer_managed_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_managed_key_identifier()
     }
     /// Appends an item to `tags`.
@@ -174,10 +150,7 @@ impl CreateAppBundleFluentBuilder {
         self
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

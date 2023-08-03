@@ -35,9 +35,7 @@ impl SearchThingsOutput {
 
 /// A builder for [`SearchThingsOutput`](crate::operation::search_things::SearchThingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchThingsOutputBuilder {
     pub(crate) things: ::std::option::Option<::std::vec::Vec<crate::types::Thing>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl SearchThingsOutputBuilder {
         self
     }
     /// <p>An array of things in the result set.</p>
-    pub fn set_things(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Thing>>,
-    ) -> Self {
+    pub fn set_things(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Thing>>) -> Self {
         self.things = input;
         self
     }

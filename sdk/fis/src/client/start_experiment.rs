@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartExperimentOutput`](crate::operation::start_experiment::StartExperimentOutput) with field(s):
     ///   - [`experiment(Option<Experiment>)`](crate::operation::start_experiment::StartExperimentOutput::experiment): <p>Information about the experiment.</p>
     /// - On failure, responds with [`SdkError<StartExperimentError>`](crate::operation::start_experiment::StartExperimentError)
-    pub fn start_experiment(
-        &self,
-    ) -> crate::operation::start_experiment::builders::StartExperimentFluentBuilder {
-        crate::operation::start_experiment::builders::StartExperimentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_experiment(&self) -> crate::operation::start_experiment::builders::StartExperimentFluentBuilder {
+        crate::operation::start_experiment::builders::StartExperimentFluentBuilder::new(self.handle.clone())
     }
 }

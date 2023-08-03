@@ -23,9 +23,7 @@ impl DeleteMultiRegionAccessPointInput {
 
 /// A builder for [`DeleteMultiRegionAccessPointInput`](crate::types::DeleteMultiRegionAccessPointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMultiRegionAccessPointInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

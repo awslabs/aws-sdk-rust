@@ -15,18 +15,14 @@ impl StopReplicationToReplicaInput {
 }
 impl StopReplicationToReplicaInput {
     /// Creates a new builder-style object to manufacture [`StopReplicationToReplicaInput`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput).
-    pub fn builder(
-    ) -> crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaInputBuilder {
         crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaInputBuilder::default()
     }
 }
 
 /// A builder for [`StopReplicationToReplicaInput`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopReplicationToReplicaInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl StopReplicationToReplicaInputBuilder {
         crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput {
-                secret_id: self.secret_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput { secret_id: self.secret_id })
     }
 }

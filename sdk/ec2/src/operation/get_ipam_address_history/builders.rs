@@ -37,10 +37,7 @@ impl GetIpamAddressHistoryFluentBuilder {
         }
     }
     /// Access the GetIpamAddressHistory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetIpamAddressHistoryFluentBuilder {
             crate::operation::get_ipam_address_history::GetIpamAddressHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_address_history::GetIpamAddressHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_address_history::GetIpamAddressHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetIpamAddressHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetIpamAddressHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_address_history::GetIpamAddressHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_address_history::GetIpamAddressHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_address_history::GetIpamAddressHistoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetIpamAddressHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_address_history::GetIpamAddressHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_address_history::GetIpamAddressHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_address_history::GetIpamAddressHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl GetIpamAddressHistoryFluentBuilder {
             crate::operation::get_ipam_address_history::GetIpamAddressHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_address_history::GetIpamAddressHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_address_history::GetIpamAddressHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_address_history::paginator::GetIpamAddressHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_ipam_address_history::paginator::GetIpamAddressHistoryPaginator {
-        crate::operation::get_ipam_address_history::paginator::GetIpamAddressHistoryPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_ipam_address_history::paginator::GetIpamAddressHistoryPaginator {
+        crate::operation::get_ipam_address_history::paginator::GetIpamAddressHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -163,18 +144,12 @@ impl GetIpamAddressHistoryFluentBuilder {
         self.inner.get_cidr()
     }
     /// <p>The ID of the IPAM scope that the CIDR is in.</p>
-    pub fn ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_scope_id(input.into());
         self
     }
     /// <p>The ID of the IPAM scope that the CIDR is in.</p>
-    pub fn set_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_scope_id(input);
         self
     }
@@ -202,10 +177,7 @@ impl GetIpamAddressHistoryFluentBuilder {
         self
     }
     /// <p>The start of the time period for which you are looking for history. If you omit this option, it will default to the value of EndTime.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -219,10 +191,7 @@ impl GetIpamAddressHistoryFluentBuilder {
         self
     }
     /// <p>The end of the time period for which you are looking for history. If you omit this option, it will default to the current time.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

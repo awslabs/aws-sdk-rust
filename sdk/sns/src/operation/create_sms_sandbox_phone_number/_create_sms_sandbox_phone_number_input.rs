@@ -22,16 +22,14 @@ impl CreateSmsSandboxPhoneNumberInput {
 }
 impl CreateSmsSandboxPhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`CreateSmsSandboxPhoneNumberInput`](crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberInput).
-    pub fn builder() -> crate::operation::create_sms_sandbox_phone_number::builders::CreateSmsSandboxPhoneNumberInputBuilder{
+    pub fn builder() -> crate::operation::create_sms_sandbox_phone_number::builders::CreateSmsSandboxPhoneNumberInputBuilder {
         crate::operation::create_sms_sandbox_phone_number::builders::CreateSmsSandboxPhoneNumberInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSmsSandboxPhoneNumberInput`](crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSmsSandboxPhoneNumberInputBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCodeString>,
@@ -57,10 +55,7 @@ impl CreateSmsSandboxPhoneNumberInputBuilder {
         self
     }
     /// <p>The language to use for sending the OTP. The default value is <code>en-US</code>.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCodeString>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCodeString>) -> Self {
         self.language_code = input;
         self
     }
@@ -75,11 +70,9 @@ impl CreateSmsSandboxPhoneNumberInputBuilder {
         crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberInput {
-                phone_number: self.phone_number,
-                language_code: self.language_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberInput {
+            phone_number: self.phone_number,
+            language_code: self.language_code,
+        })
     }
 }

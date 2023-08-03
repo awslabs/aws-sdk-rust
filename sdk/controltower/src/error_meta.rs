@@ -34,32 +34,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_control::DisableControlError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disable_control::DisableControlError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_control::DisableControlError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disable_control::DisableControlError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -73,39 +57,25 @@ impl From<crate::operation::disable_control::DisableControlError> for Error {
             crate::operation::disable_control::DisableControlError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::disable_control::DisableControlError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::disable_control::DisableControlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::disable_control::DisableControlError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::disable_control::DisableControlError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::disable_control::DisableControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disable_control::DisableControlError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::disable_control::DisableControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_control::EnableControlError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::enable_control::EnableControlError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_control::EnableControlError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::enable_control::EnableControlError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -115,59 +85,27 @@ where
 impl From<crate::operation::enable_control::EnableControlError> for Error {
     fn from(err: crate::operation::enable_control::EnableControlError) -> Self {
         match err {
-            crate::operation::enable_control::EnableControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::enable_control::EnableControlError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::enable_control::EnableControlError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::enable_control::EnableControlError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::enable_control::EnableControlError::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::enable_control::EnableControlError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::enable_control::EnableControlError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::enable_control::EnableControlError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::enable_control::EnableControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::enable_control::EnableControlError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::enable_control::EnableControlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::enable_control::EnableControlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::enable_control::EnableControlError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::enable_control::EnableControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::enable_control::EnableControlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::enable_control::EnableControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_control_operation::GetControlOperationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_control_operation::GetControlOperationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_control_operation::GetControlOperationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_control_operation::GetControlOperationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -178,40 +116,28 @@ impl From<crate::operation::get_control_operation::GetControlOperationError> for
     fn from(err: crate::operation::get_control_operation::GetControlOperationError) -> Self {
         match err {
             crate::operation::get_control_operation::GetControlOperationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_control_operation::GetControlOperationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_control_operation::GetControlOperationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_control_operation::GetControlOperationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_control_operation::GetControlOperationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_control_operation::GetControlOperationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_control_operation::GetControlOperationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_control_operation::GetControlOperationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_enabled_controls::ListEnabledControlsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_enabled_controls::ListEnabledControlsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_enabled_controls::ListEnabledControlsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_enabled_controls::ListEnabledControlsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -222,8 +148,12 @@ impl From<crate::operation::list_enabled_controls::ListEnabledControlsError> for
     fn from(err: crate::operation::list_enabled_controls::ListEnabledControlsError) -> Self {
         match err {
             crate::operation::list_enabled_controls::ListEnabledControlsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_enabled_controls::ListEnabledControlsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_enabled_controls::ListEnabledControlsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_enabled_controls::ListEnabledControlsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_enabled_controls::ListEnabledControlsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_enabled_controls::ListEnabledControlsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_enabled_controls::ListEnabledControlsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_enabled_controls::ListEnabledControlsError::Unhandled(inner) => Error::Unhandled(inner),

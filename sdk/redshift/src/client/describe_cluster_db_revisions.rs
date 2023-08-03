@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput::marker): <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
     ///   - [`cluster_db_revisions(Option<Vec<ClusterDbRevision>>)`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput::cluster_db_revisions): <p>A list of revisions.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterDbRevisionsError>`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError)
-    pub fn describe_cluster_db_revisions(&self) -> crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsFluentBuilder{
+    pub fn describe_cluster_db_revisions(
+        &self,
+    ) -> crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsFluentBuilder {
         crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsFluentBuilder::new(self.handle.clone())
     }
 }

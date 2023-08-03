@@ -37,9 +37,7 @@ impl ListCidrCollectionsFluentBuilder {
         }
     }
     /// Access the ListCidrCollections as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_cidr_collections::builders::ListCidrCollectionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_cidr_collections::builders::ListCidrCollectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListCidrCollectionsFluentBuilder {
             crate::operation::list_cidr_collections::ListCidrCollections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_collections::ListCidrCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_collections::ListCidrCollectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListCidrCollectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListCidrCollectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_cidr_collections::ListCidrCollectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_collections::ListCidrCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_collections::ListCidrCollectionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListCidrCollectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_cidr_collections::ListCidrCollectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_collections::ListCidrCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_collections::ListCidrCollectionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListCidrCollectionsFluentBuilder {
             crate::operation::list_cidr_collections::ListCidrCollections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_collections::ListCidrCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_collections::ListCidrCollectionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator {
-        crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator {
+        crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>

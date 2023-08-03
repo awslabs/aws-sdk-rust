@@ -6,28 +6,20 @@
 pub struct ListReceiptFiltersInput {}
 impl ListReceiptFiltersInput {
     /// Creates a new builder-style object to manufacture [`ListReceiptFiltersInput`](crate::operation::list_receipt_filters::ListReceiptFiltersInput).
-    pub fn builder(
-    ) -> crate::operation::list_receipt_filters::builders::ListReceiptFiltersInputBuilder {
+    pub fn builder() -> crate::operation::list_receipt_filters::builders::ListReceiptFiltersInputBuilder {
         crate::operation::list_receipt_filters::builders::ListReceiptFiltersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReceiptFiltersInput`](crate::operation::list_receipt_filters::ListReceiptFiltersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReceiptFiltersInputBuilder {}
 impl ListReceiptFiltersInputBuilder {
     /// Consumes the builder and constructs a [`ListReceiptFiltersInput`](crate::operation::list_receipt_filters::ListReceiptFiltersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_receipt_filters::ListReceiptFiltersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_receipt_filters::ListReceiptFiltersInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::list_receipt_filters::ListReceiptFiltersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_receipt_filters::ListReceiptFiltersInput {})
     }
 }

@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeFhirDatastoreOutput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput) with field(s):
     ///   - [`datastore_properties(Option<DatastoreProperties>)`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput::datastore_properties): <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
     /// - On failure, responds with [`SdkError<DescribeFHIRDatastoreError>`](crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError)
-    pub fn describe_fhir_datastore(
-        &self,
-    ) -> crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder
-    {
-        crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_fhir_datastore(&self) -> crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder {
+        crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder::new(self.handle.clone())
     }
 }

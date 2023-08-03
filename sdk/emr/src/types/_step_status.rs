@@ -23,9 +23,7 @@ impl StepStatus {
         self.state.as_ref()
     }
     /// <p>The reason for the step execution status change.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StepStateChangeReason> {
+    pub fn state_change_reason(&self) -> ::std::option::Option<&crate::types::StepStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
@@ -46,9 +44,7 @@ impl StepStatus {
 
 /// A builder for [`StepStatus`](crate::types::StepStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::StepState>,
     pub(crate) state_change_reason: ::std::option::Option<crate::types::StepStateChangeReason>,
@@ -76,17 +72,12 @@ impl StepStatusBuilder {
         self
     }
     /// <p>The reason for the step execution status change.</p>
-    pub fn set_state_change_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::StepStateChangeReason>,
-    ) -> Self {
+    pub fn set_state_change_reason(mut self, input: ::std::option::Option<crate::types::StepStateChangeReason>) -> Self {
         self.state_change_reason = input;
         self
     }
     /// <p>The reason for the step execution status change.</p>
-    pub fn get_state_change_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::StepStateChangeReason> {
+    pub fn get_state_change_reason(&self) -> &::std::option::Option<crate::types::StepStateChangeReason> {
         &self.state_change_reason
     }
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
@@ -95,10 +86,7 @@ impl StepStatusBuilder {
         self
     }
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::FailureDetails>) -> Self {
         self.failure_details = input;
         self
     }
@@ -112,10 +100,7 @@ impl StepStatusBuilder {
         self
     }
     /// <p>The timeline of the cluster step status over time.</p>
-    pub fn set_timeline(
-        mut self,
-        input: ::std::option::Option<crate::types::StepTimeline>,
-    ) -> Self {
+    pub fn set_timeline(mut self, input: ::std::option::Option<crate::types::StepTimeline>) -> Self {
         self.timeline = input;
         self
     }

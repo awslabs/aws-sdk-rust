@@ -22,34 +22,26 @@ impl AssociateSkillWithSkillGroupInput {
 }
 impl AssociateSkillWithSkillGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateSkillWithSkillGroupInput`](crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupInput).
-    pub fn builder() -> crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupInputBuilder{
+    pub fn builder() -> crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupInputBuilder {
         crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSkillWithSkillGroupInput`](crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSkillWithSkillGroupInputBuilder {
     pub(crate) skill_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) skill_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSkillWithSkillGroupInputBuilder {
     /// <p>The ARN of the skill group to associate the skill to. Required.</p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the skill group to associate the skill to. Required.</p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_group_arn = input;
         self
     }
@@ -78,11 +70,9 @@ impl AssociateSkillWithSkillGroupInputBuilder {
         crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupInput {
-                skill_group_arn: self.skill_group_arn,
-                skill_id: self.skill_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupInput {
+            skill_group_arn: self.skill_group_arn,
+            skill_id: self.skill_id,
+        })
     }
 }

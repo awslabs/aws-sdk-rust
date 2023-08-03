@@ -31,11 +31,7 @@ impl super::Client {
     ///   - [`availability_zone_id(Option<String>)`](crate::operation::create_file_system::CreateFileSystemOutput::availability_zone_id): <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_file_system::CreateFileSystemOutput::tags): <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
     /// - On failure, responds with [`SdkError<CreateFileSystemError>`](crate::operation::create_file_system::CreateFileSystemError)
-    pub fn create_file_system(
-        &self,
-    ) -> crate::operation::create_file_system::builders::CreateFileSystemFluentBuilder {
-        crate::operation::create_file_system::builders::CreateFileSystemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_file_system(&self) -> crate::operation::create_file_system::builders::CreateFileSystemFluentBuilder {
+        crate::operation::create_file_system::builders::CreateFileSystemFluentBuilder::new(self.handle.clone())
     }
 }

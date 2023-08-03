@@ -51,10 +51,7 @@ impl DeprecateActivityTypeFluentBuilder {
         }
     }
     /// Access the DeprecateActivityType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +63,7 @@ impl DeprecateActivityTypeFluentBuilder {
             crate::operation::deprecate_activity_type::DeprecateActivityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_activity_type::DeprecateActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_activity_type::DeprecateActivityTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +73,7 @@ impl DeprecateActivityTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +82,7 @@ impl DeprecateActivityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprecate_activity_type::DeprecateActivityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_activity_type::DeprecateActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_activity_type::DeprecateActivityTypeError>,
     > {
         let op = self
             .inner
@@ -115,9 +105,7 @@ impl DeprecateActivityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprecate_activity_type::DeprecateActivityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_activity_type::DeprecateActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_activity_type::DeprecateActivityTypeError>,
     > {
         self.send_middleware().await
     }
@@ -131,9 +119,7 @@ impl DeprecateActivityTypeFluentBuilder {
             crate::operation::deprecate_activity_type::DeprecateActivityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_activity_type::DeprecateActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_activity_type::DeprecateActivityTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +143,7 @@ impl DeprecateActivityTypeFluentBuilder {
         self
     }
     /// <p>The activity type to deprecate.</p>
-    pub fn set_activity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityType>,
-    ) -> Self {
+    pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
         self.inner = self.inner.set_activity_type(input);
         self
     }

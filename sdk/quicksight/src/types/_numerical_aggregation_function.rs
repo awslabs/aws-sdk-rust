@@ -19,8 +19,7 @@ pub struct NumericalAggregationFunction {
     /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub simple_numerical_aggregation:
-        ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
+    pub simple_numerical_aggregation: ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
     #[doc(hidden)]
     pub percentile_aggregation: ::std::option::Option<crate::types::PercentileAggregation>,
@@ -40,15 +39,11 @@ impl NumericalAggregationFunction {
     /// <li> <p> <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p> </li>
     /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
-    pub fn simple_numerical_aggregation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SimpleNumericalAggregationFunction> {
+    pub fn simple_numerical_aggregation(&self) -> ::std::option::Option<&crate::types::SimpleNumericalAggregationFunction> {
         self.simple_numerical_aggregation.as_ref()
     }
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
-    pub fn percentile_aggregation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PercentileAggregation> {
+    pub fn percentile_aggregation(&self) -> ::std::option::Option<&crate::types::PercentileAggregation> {
         self.percentile_aggregation.as_ref()
     }
 }
@@ -61,12 +56,9 @@ impl NumericalAggregationFunction {
 
 /// A builder for [`NumericalAggregationFunction`](crate::types::NumericalAggregationFunction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumericalAggregationFunctionBuilder {
-    pub(crate) simple_numerical_aggregation:
-        ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
+    pub(crate) simple_numerical_aggregation: ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
     pub(crate) percentile_aggregation: ::std::option::Option<crate::types::PercentileAggregation>,
 }
 impl NumericalAggregationFunctionBuilder {
@@ -84,10 +76,7 @@ impl NumericalAggregationFunctionBuilder {
     /// <li> <p> <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p> </li>
     /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
-    pub fn simple_numerical_aggregation(
-        mut self,
-        input: crate::types::SimpleNumericalAggregationFunction,
-    ) -> Self {
+    pub fn simple_numerical_aggregation(mut self, input: crate::types::SimpleNumericalAggregationFunction) -> Self {
         self.simple_numerical_aggregation = ::std::option::Option::Some(input);
         self
     }
@@ -105,10 +94,7 @@ impl NumericalAggregationFunctionBuilder {
     /// <li> <p> <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p> </li>
     /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
-    pub fn set_simple_numerical_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
-    ) -> Self {
+    pub fn set_simple_numerical_aggregation(mut self, input: ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>) -> Self {
         self.simple_numerical_aggregation = input;
         self
     }
@@ -126,9 +112,7 @@ impl NumericalAggregationFunctionBuilder {
     /// <li> <p> <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p> </li>
     /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
-    pub fn get_simple_numerical_aggregation(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimpleNumericalAggregationFunction> {
+    pub fn get_simple_numerical_aggregation(&self) -> &::std::option::Option<crate::types::SimpleNumericalAggregationFunction> {
         &self.simple_numerical_aggregation
     }
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
@@ -137,17 +121,12 @@ impl NumericalAggregationFunctionBuilder {
         self
     }
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
-    pub fn set_percentile_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::PercentileAggregation>,
-    ) -> Self {
+    pub fn set_percentile_aggregation(mut self, input: ::std::option::Option<crate::types::PercentileAggregation>) -> Self {
         self.percentile_aggregation = input;
         self
     }
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
-    pub fn get_percentile_aggregation(
-        &self,
-    ) -> &::std::option::Option<crate::types::PercentileAggregation> {
+    pub fn get_percentile_aggregation(&self) -> &::std::option::Option<crate::types::PercentileAggregation> {
         &self.percentile_aggregation
     }
     /// Consumes the builder and constructs a [`NumericalAggregationFunction`](crate::types::NumericalAggregationFunction).

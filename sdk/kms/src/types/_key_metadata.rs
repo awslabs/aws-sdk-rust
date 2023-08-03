@@ -63,13 +63,11 @@ pub struct KeyMetadata {
     /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
     #[doc(hidden)]
-    pub encryption_algorithms:
-        ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
+    pub encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
     /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
     /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
     #[doc(hidden)]
-    pub signing_algorithms:
-        ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
+    pub signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -162,9 +160,7 @@ impl KeyMetadata {
     /// <p>Instead, use the <code>KeySpec</code> field.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
-    pub fn customer_master_key_spec(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomerMasterKeySpec> {
+    pub fn customer_master_key_spec(&self) -> ::std::option::Option<&crate::types::CustomerMasterKeySpec> {
         self.customer_master_key_spec.as_ref()
     }
     /// <p>Describes the type of key material in the KMS key.</p>
@@ -173,16 +169,12 @@ impl KeyMetadata {
     }
     /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
-    pub fn encryption_algorithms(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EncryptionAlgorithmSpec]> {
+    pub fn encryption_algorithms(&self) -> ::std::option::Option<&[crate::types::EncryptionAlgorithmSpec]> {
         self.encryption_algorithms.as_deref()
     }
     /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
     /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
-    pub fn signing_algorithms(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SigningAlgorithmSpec]> {
+    pub fn signing_algorithms(&self) -> ::std::option::Option<&[crate::types::SigningAlgorithmSpec]> {
         self.signing_algorithms.as_deref()
     }
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
@@ -197,9 +189,7 @@ impl KeyMetadata {
     /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
     /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
     /// </ul>
-    pub fn multi_region_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiRegionConfiguration> {
+    pub fn multi_region_configuration(&self) -> ::std::option::Option<&crate::types::MultiRegionConfiguration> {
         self.multi_region_configuration.as_ref()
     }
     /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
@@ -214,9 +204,7 @@ impl KeyMetadata {
     }
     /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn xks_key_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::XksKeyConfigurationType> {
+    pub fn xks_key_configuration(&self) -> ::std::option::Option<&crate::types::XksKeyConfigurationType> {
         self.xks_key_configuration.as_ref()
     }
 }
@@ -229,9 +217,7 @@ impl KeyMetadata {
 
 /// A builder for [`KeyMetadata`](crate::types::KeyMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyMetadataBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
@@ -250,32 +236,22 @@ pub struct KeyMetadataBuilder {
     pub(crate) key_manager: ::std::option::Option<crate::types::KeyManagerType>,
     pub(crate) customer_master_key_spec: ::std::option::Option<crate::types::CustomerMasterKeySpec>,
     pub(crate) key_spec: ::std::option::Option<crate::types::KeySpec>,
-    pub(crate) encryption_algorithms:
-        ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
-    pub(crate) signing_algorithms:
-        ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
+    pub(crate) encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
+    pub(crate) signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
     pub(crate) multi_region: ::std::option::Option<bool>,
-    pub(crate) multi_region_configuration:
-        ::std::option::Option<crate::types::MultiRegionConfiguration>,
+    pub(crate) multi_region_configuration: ::std::option::Option<crate::types::MultiRegionConfiguration>,
     pub(crate) pending_deletion_window_in_days: ::std::option::Option<i32>,
-    pub(crate) mac_algorithms:
-        ::std::option::Option<::std::vec::Vec<crate::types::MacAlgorithmSpec>>,
+    pub(crate) mac_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::MacAlgorithmSpec>>,
     pub(crate) xks_key_configuration: ::std::option::Option<crate::types::XksKeyConfigurationType>,
 }
 impl KeyMetadataBuilder {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -317,10 +293,7 @@ impl KeyMetadataBuilder {
         self
     }
     /// <p>The date and time when the KMS key was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -362,10 +335,7 @@ impl KeyMetadataBuilder {
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
-    pub fn set_key_usage(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyUsageType>,
-    ) -> Self {
+    pub fn set_key_usage(mut self, input: ::std::option::Option<crate::types::KeyUsageType>) -> Self {
         self.key_usage = input;
         self
     }
@@ -398,10 +368,7 @@ impl KeyMetadataBuilder {
     }
     /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
     /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
-    pub fn set_deletion_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deletion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deletion_date = input;
         self
     }
@@ -416,10 +383,7 @@ impl KeyMetadataBuilder {
         self
     }
     /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
-    pub fn set_valid_to(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_to = input;
         self
     }
@@ -442,18 +406,12 @@ impl KeyMetadataBuilder {
         &self.origin
     }
     /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
-    pub fn custom_key_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
-    pub fn set_custom_key_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_key_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_key_store_id = input;
         self
     }
@@ -462,18 +420,12 @@ impl KeyMetadataBuilder {
         &self.custom_key_store_id
     }
     /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
-    pub fn cloud_hsm_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_hsm_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_hsm_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
-    pub fn set_cloud_hsm_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_hsm_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_hsm_cluster_id = input;
         self
     }
@@ -487,17 +439,12 @@ impl KeyMetadataBuilder {
         self
     }
     /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
-    pub fn set_expiration_model(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationModelType>,
-    ) -> Self {
+    pub fn set_expiration_model(mut self, input: ::std::option::Option<crate::types::ExpirationModelType>) -> Self {
         self.expiration_model = input;
         self
     }
     /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
-    pub fn get_expiration_model(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationModelType> {
+    pub fn get_expiration_model(&self) -> &::std::option::Option<crate::types::ExpirationModelType> {
         &self.expiration_model
     }
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -506,10 +453,7 @@ impl KeyMetadataBuilder {
         self
     }
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn set_key_manager(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyManagerType>,
-    ) -> Self {
+    pub fn set_key_manager(mut self, input: ::std::option::Option<crate::types::KeyManagerType>) -> Self {
         self.key_manager = input;
         self
     }
@@ -527,19 +471,14 @@ impl KeyMetadataBuilder {
     /// <p>Instead, use the <code>KeySpec</code> field.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
-    pub fn set_customer_master_key_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerMasterKeySpec>,
-    ) -> Self {
+    pub fn set_customer_master_key_spec(mut self, input: ::std::option::Option<crate::types::CustomerMasterKeySpec>) -> Self {
         self.customer_master_key_spec = input;
         self
     }
     /// <p>Instead, use the <code>KeySpec</code> field.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
-    pub fn get_customer_master_key_spec(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomerMasterKeySpec> {
+    pub fn get_customer_master_key_spec(&self) -> &::std::option::Option<crate::types::CustomerMasterKeySpec> {
         &self.customer_master_key_spec
     }
     /// <p>Describes the type of key material in the KMS key.</p>
@@ -570,18 +509,13 @@ impl KeyMetadataBuilder {
     }
     /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
-    pub fn set_encryption_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
-    ) -> Self {
+    pub fn set_encryption_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>) -> Self {
         self.encryption_algorithms = input;
         self
     }
     /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
-    pub fn get_encryption_algorithms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>> {
+    pub fn get_encryption_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>> {
         &self.encryption_algorithms
     }
     /// Appends an item to `signing_algorithms`.
@@ -598,18 +532,13 @@ impl KeyMetadataBuilder {
     }
     /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
     /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
-    pub fn set_signing_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
-    ) -> Self {
+    pub fn set_signing_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>) -> Self {
         self.signing_algorithms = input;
         self
     }
     /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
     /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
-    pub fn get_signing_algorithms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>> {
+    pub fn get_signing_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>> {
         &self.signing_algorithms
     }
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
@@ -636,10 +565,7 @@ impl KeyMetadataBuilder {
     /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
     /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
     /// </ul>
-    pub fn multi_region_configuration(
-        mut self,
-        input: crate::types::MultiRegionConfiguration,
-    ) -> Self {
+    pub fn multi_region_configuration(mut self, input: crate::types::MultiRegionConfiguration) -> Self {
         self.multi_region_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -650,10 +576,7 @@ impl KeyMetadataBuilder {
     /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
     /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
     /// </ul>
-    pub fn set_multi_region_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiRegionConfiguration>,
-    ) -> Self {
+    pub fn set_multi_region_configuration(mut self, input: ::std::option::Option<crate::types::MultiRegionConfiguration>) -> Self {
         self.multi_region_configuration = input;
         self
     }
@@ -664,9 +587,7 @@ impl KeyMetadataBuilder {
     /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
     /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
     /// </ul>
-    pub fn get_multi_region_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiRegionConfiguration> {
+    pub fn get_multi_region_configuration(&self) -> &::std::option::Option<crate::types::MultiRegionConfiguration> {
         &self.multi_region_configuration
     }
     /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
@@ -677,10 +598,7 @@ impl KeyMetadataBuilder {
     }
     /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
     /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
-    pub fn set_pending_deletion_window_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_pending_deletion_window_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pending_deletion_window_in_days = input;
         self
     }
@@ -703,18 +621,13 @@ impl KeyMetadataBuilder {
     }
     /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
-    pub fn set_mac_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MacAlgorithmSpec>>,
-    ) -> Self {
+    pub fn set_mac_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MacAlgorithmSpec>>) -> Self {
         self.mac_algorithms = input;
         self
     }
     /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
-    pub fn get_mac_algorithms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MacAlgorithmSpec>> {
+    pub fn get_mac_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacAlgorithmSpec>> {
         &self.mac_algorithms
     }
     /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
@@ -725,18 +638,13 @@ impl KeyMetadataBuilder {
     }
     /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn set_xks_key_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::XksKeyConfigurationType>,
-    ) -> Self {
+    pub fn set_xks_key_configuration(mut self, input: ::std::option::Option<crate::types::XksKeyConfigurationType>) -> Self {
         self.xks_key_configuration = input;
         self
     }
     /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn get_xks_key_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::XksKeyConfigurationType> {
+    pub fn get_xks_key_configuration(&self) -> &::std::option::Option<crate::types::XksKeyConfigurationType> {
         &self.xks_key_configuration
     }
     /// Consumes the builder and constructs a [`KeyMetadata`](crate::types::KeyMetadata).

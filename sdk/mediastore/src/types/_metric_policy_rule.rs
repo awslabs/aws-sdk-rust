@@ -30,9 +30,7 @@ impl MetricPolicyRule {
 
 /// A builder for [`MetricPolicyRule`](crate::types::MetricPolicyRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricPolicyRuleBuilder {
     pub(crate) object_group: ::std::option::Option<::std::string::String>,
     pub(crate) object_group_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl MetricPolicyRuleBuilder {
         &self.object_group
     }
     /// <p>A name that allows you to refer to the object group.</p>
-    pub fn object_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name that allows you to refer to the object group.</p>
-    pub fn set_object_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_group_name = input;
         self
     }

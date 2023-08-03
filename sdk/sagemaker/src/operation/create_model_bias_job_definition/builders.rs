@@ -26,7 +26,7 @@ impl CreateModelBiasJobDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelBiasJobDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionInputBuilder,
+    inner: crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionInputBuilder,
 }
 impl CreateModelBiasJobDefinitionFluentBuilder {
     /// Creates a new `CreateModelBiasJobDefinition`.
@@ -37,7 +37,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         }
     }
     /// Access the CreateModelBiasJobDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
             crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
             crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_definition_name(input.into());
         self
     }
     /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_definition_name(input);
         self
     }
@@ -141,47 +124,31 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self.inner.get_job_definition_name()
     }
     /// <p>The baseline configuration for a model bias job.</p>
-    pub fn model_bias_baseline_config(
-        mut self,
-        input: crate::types::ModelBiasBaselineConfig,
-    ) -> Self {
+    pub fn model_bias_baseline_config(mut self, input: crate::types::ModelBiasBaselineConfig) -> Self {
         self.inner = self.inner.model_bias_baseline_config(input);
         self
     }
     /// <p>The baseline configuration for a model bias job.</p>
-    pub fn set_model_bias_baseline_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelBiasBaselineConfig>,
-    ) -> Self {
+    pub fn set_model_bias_baseline_config(mut self, input: ::std::option::Option<crate::types::ModelBiasBaselineConfig>) -> Self {
         self.inner = self.inner.set_model_bias_baseline_config(input);
         self
     }
     /// <p>The baseline configuration for a model bias job.</p>
-    pub fn get_model_bias_baseline_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelBiasBaselineConfig> {
+    pub fn get_model_bias_baseline_config(&self) -> &::std::option::Option<crate::types::ModelBiasBaselineConfig> {
         self.inner.get_model_bias_baseline_config()
     }
     /// <p>Configures the model bias job to run a specified Docker container image.</p>
-    pub fn model_bias_app_specification(
-        mut self,
-        input: crate::types::ModelBiasAppSpecification,
-    ) -> Self {
+    pub fn model_bias_app_specification(mut self, input: crate::types::ModelBiasAppSpecification) -> Self {
         self.inner = self.inner.model_bias_app_specification(input);
         self
     }
     /// <p>Configures the model bias job to run a specified Docker container image.</p>
-    pub fn set_model_bias_app_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelBiasAppSpecification>,
-    ) -> Self {
+    pub fn set_model_bias_app_specification(mut self, input: ::std::option::Option<crate::types::ModelBiasAppSpecification>) -> Self {
         self.inner = self.inner.set_model_bias_app_specification(input);
         self
     }
     /// <p>Configures the model bias job to run a specified Docker container image.</p>
-    pub fn get_model_bias_app_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelBiasAppSpecification> {
+    pub fn get_model_bias_app_specification(&self) -> &::std::option::Option<crate::types::ModelBiasAppSpecification> {
         self.inner.get_model_bias_app_specification()
     }
     /// <p>Inputs for the model bias job.</p>
@@ -190,39 +157,26 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self
     }
     /// <p>Inputs for the model bias job.</p>
-    pub fn set_model_bias_job_input(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelBiasJobInput>,
-    ) -> Self {
+    pub fn set_model_bias_job_input(mut self, input: ::std::option::Option<crate::types::ModelBiasJobInput>) -> Self {
         self.inner = self.inner.set_model_bias_job_input(input);
         self
     }
     /// <p>Inputs for the model bias job.</p>
-    pub fn get_model_bias_job_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelBiasJobInput> {
+    pub fn get_model_bias_job_input(&self) -> &::std::option::Option<crate::types::ModelBiasJobInput> {
         self.inner.get_model_bias_job_input()
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn model_bias_job_output_config(
-        mut self,
-        input: crate::types::MonitoringOutputConfig,
-    ) -> Self {
+    pub fn model_bias_job_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
         self.inner = self.inner.model_bias_job_output_config(input);
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn set_model_bias_job_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringOutputConfig>,
-    ) -> Self {
+    pub fn set_model_bias_job_output_config(mut self, input: ::std::option::Option<crate::types::MonitoringOutputConfig>) -> Self {
         self.inner = self.inner.set_model_bias_job_output_config(input);
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn get_model_bias_job_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
+    pub fn get_model_bias_job_output_config(&self) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
         self.inner.get_model_bias_job_output_config()
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
@@ -231,10 +185,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    pub fn set_job_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringResources>,
-    ) -> Self {
+    pub fn set_job_resources(mut self, input: ::std::option::Option<crate::types::MonitoringResources>) -> Self {
         self.inner = self.inner.set_job_resources(input);
         self
     }
@@ -248,17 +199,12 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self
     }
     /// <p>Networking options for a model bias job.</p>
-    pub fn set_network_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
-    ) -> Self {
+    pub fn set_network_config(mut self, input: ::std::option::Option<crate::types::MonitoringNetworkConfig>) -> Self {
         self.inner = self.inner.set_network_config(input);
         self
     }
     /// <p>Networking options for a model bias job.</p>
-    pub fn get_network_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
+    pub fn get_network_config(&self) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
         self.inner.get_network_config()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
@@ -281,17 +227,12 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
-    ) -> Self {
+    pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::MonitoringStoppingCondition>) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn get_stopping_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
+    pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
         self.inner.get_stopping_condition()
     }
     /// Appends an item to `Tags`.
@@ -304,10 +245,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

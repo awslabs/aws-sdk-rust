@@ -15,33 +15,25 @@ impl DisconnectRecoveryInstanceInput {
 }
 impl DisconnectRecoveryInstanceInput {
     /// Creates a new builder-style object to manufacture [`DisconnectRecoveryInstanceInput`](crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput).
-    pub fn builder() -> crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceInputBuilder{
+    pub fn builder() -> crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceInputBuilder {
         crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DisconnectRecoveryInstanceInput`](crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisconnectRecoveryInstanceInputBuilder {
     pub(crate) recovery_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectRecoveryInstanceInputBuilder {
     /// <p>The ID of the Recovery Instance to disconnect.</p>
-    pub fn recovery_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Recovery Instance to disconnect.</p>
-    pub fn set_recovery_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_instance_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DisconnectRecoveryInstanceInputBuilder {
         crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput {
-                recovery_instance_id: self.recovery_instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput {
+            recovery_instance_id: self.recovery_instance_id,
+        })
     }
 }

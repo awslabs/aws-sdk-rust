@@ -9,46 +9,32 @@ pub fn de_update_ssh_public_key_http_error(
     crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => {
-            crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::NoSuchEntityException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
-                        output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output).map_err(crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
+        "NoSuchEntity" => crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::NoSuchEntityException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::generic(generic),
     })
 }
@@ -65,9 +51,7 @@ pub fn de_update_ssh_public_key_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_ssh_public_key::builders::UpdateSshPublicKeyOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

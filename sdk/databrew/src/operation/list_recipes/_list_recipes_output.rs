@@ -35,9 +35,7 @@ impl ListRecipesOutput {
 
 /// A builder for [`ListRecipesOutput`](crate::operation::list_recipes::ListRecipesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecipesOutputBuilder {
     pub(crate) recipes: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListRecipesOutputBuilder {
         self
     }
     /// <p>A list of recipes that are defined.</p>
-    pub fn set_recipes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>,
-    ) -> Self {
+    pub fn set_recipes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>) -> Self {
         self.recipes = input;
         self
     }

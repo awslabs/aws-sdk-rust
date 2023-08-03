@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::reboot_instances::builders::RebootInstancesFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::reboot_instances::builders::RebootInstancesFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`RebootInstancesOutput`](crate::operation::reboot_instances::RebootInstancesOutput)
     /// - On failure, responds with [`SdkError<RebootInstancesError>`](crate::operation::reboot_instances::RebootInstancesError)
-    pub fn reboot_instances(
-        &self,
-    ) -> crate::operation::reboot_instances::builders::RebootInstancesFluentBuilder {
-        crate::operation::reboot_instances::builders::RebootInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reboot_instances(&self) -> crate::operation::reboot_instances::builders::RebootInstancesFluentBuilder {
+        crate::operation::reboot_instances::builders::RebootInstancesFluentBuilder::new(self.handle.clone())
     }
 }

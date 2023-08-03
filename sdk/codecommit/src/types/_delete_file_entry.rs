@@ -23,9 +23,7 @@ impl DeleteFileEntry {
 
 /// A builder for [`DeleteFileEntry`](crate::types::DeleteFileEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileEntryBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DeleteFileEntryBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteFileEntry`](crate::types::DeleteFileEntry).
     pub fn build(self) -> crate::types::DeleteFileEntry {
-        crate::types::DeleteFileEntry {
-            file_path: self.file_path,
-        }
+        crate::types::DeleteFileEntry { file_path: self.file_path }
     }
 }

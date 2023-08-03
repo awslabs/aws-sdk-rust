@@ -44,9 +44,7 @@ impl UserContext {
 
 /// A builder for [`UserContext`](crate::types::UserContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserContextBuilder {
     pub(crate) user_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct UserContextBuilder {
 }
 impl UserContextBuilder {
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-    pub fn user_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-    pub fn set_user_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_arn = input;
         self
     }
@@ -75,18 +67,12 @@ impl UserContextBuilder {
         &self.user_profile_arn
     }
     /// <p>The name of the user's profile.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user's profile.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_name = input;
         self
     }
@@ -114,10 +100,7 @@ impl UserContextBuilder {
         self
     }
     /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
-    pub fn set_iam_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::IamIdentity>,
-    ) -> Self {
+    pub fn set_iam_identity(mut self, input: ::std::option::Option<crate::types::IamIdentity>) -> Self {
         self.iam_identity = input;
         self
     }

@@ -38,9 +38,7 @@ impl DeployedImage {
 
 /// A builder for [`DeployedImage`](crate::types::DeployedImage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeployedImageBuilder {
     pub(crate) specified_image: ::std::option::Option<::std::string::String>,
     pub(crate) resolved_image: ::std::option::Option<::std::string::String>,
@@ -48,18 +46,12 @@ pub struct DeployedImageBuilder {
 }
 impl DeployedImageBuilder {
     /// <p>The image path you specified when you created the model.</p>
-    pub fn specified_image(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn specified_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.specified_image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The image path you specified when you created the model.</p>
-    pub fn set_specified_image(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_specified_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.specified_image = input;
         self
     }
@@ -68,18 +60,12 @@ impl DeployedImageBuilder {
         &self.specified_image
     }
     /// <p>The specific digest path of the image hosted in this <code>ProductionVariant</code>.</p>
-    pub fn resolved_image(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolved_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific digest path of the image hosted in this <code>ProductionVariant</code>.</p>
-    pub fn set_resolved_image(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolved_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolved_image = input;
         self
     }
@@ -93,10 +79,7 @@ impl DeployedImageBuilder {
         self
     }
     /// <p>The date and time when the image path for the model resolved to the <code>ResolvedImage</code> </p>
-    pub fn set_resolution_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_resolution_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.resolution_time = input;
         self
     }

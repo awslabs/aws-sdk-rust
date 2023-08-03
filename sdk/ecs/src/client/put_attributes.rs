@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutAttributesOutput`](crate::operation::put_attributes::PutAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<Attribute>>)`](crate::operation::put_attributes::PutAttributesOutput::attributes): <p>The attributes applied to your resource.</p>
     /// - On failure, responds with [`SdkError<PutAttributesError>`](crate::operation::put_attributes::PutAttributesError)
-    pub fn put_attributes(
-        &self,
-    ) -> crate::operation::put_attributes::builders::PutAttributesFluentBuilder {
-        crate::operation::put_attributes::builders::PutAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_attributes(&self) -> crate::operation::put_attributes::builders::PutAttributesFluentBuilder {
+        crate::operation::put_attributes::builders::PutAttributesFluentBuilder::new(self.handle.clone())
     }
 }

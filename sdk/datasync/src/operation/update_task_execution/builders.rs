@@ -39,9 +39,7 @@ impl UpdateTaskExecutionFluentBuilder {
         }
     }
     /// Access the UpdateTaskExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl UpdateTaskExecutionFluentBuilder {
             crate::operation::update_task_execution::UpdateTaskExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_task_execution::UpdateTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_task_execution::UpdateTaskExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl UpdateTaskExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl UpdateTaskExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_task_execution::UpdateTaskExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_task_execution::UpdateTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_task_execution::UpdateTaskExecutionError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl UpdateTaskExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_task_execution::UpdateTaskExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_task_execution::UpdateTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_task_execution::UpdateTaskExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl UpdateTaskExecutionFluentBuilder {
             crate::operation::update_task_execution::UpdateTaskExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_task_execution::UpdateTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_task_execution::UpdateTaskExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
-    pub fn task_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_execution_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
-    pub fn set_task_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_execution_arn(input);
         self
     }

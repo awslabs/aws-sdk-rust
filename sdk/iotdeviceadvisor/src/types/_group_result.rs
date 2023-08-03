@@ -37,9 +37,7 @@ impl GroupResult {
 
 /// A builder for [`GroupResult`](crate::types::GroupResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupResultBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl GroupResultBuilder {
         self
     }
     /// <p>Tests under Group Result.</p>
-    pub fn set_tests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>>,
-    ) -> Self {
+    pub fn set_tests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>>) -> Self {
         self.tests = input;
         self
     }

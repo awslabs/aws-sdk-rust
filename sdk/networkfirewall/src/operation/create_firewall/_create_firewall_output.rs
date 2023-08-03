@@ -35,9 +35,7 @@ impl CreateFirewallOutput {
 
 /// A builder for [`CreateFirewallOutput`](crate::operation::create_firewall::CreateFirewallOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFirewallOutputBuilder {
     pub(crate) firewall: ::std::option::Option<crate::types::Firewall>,
     pub(crate) firewall_status: ::std::option::Option<crate::types::FirewallStatus>,
@@ -64,10 +62,7 @@ impl CreateFirewallOutputBuilder {
         self
     }
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
-    pub fn set_firewall_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallStatus>,
-    ) -> Self {
+    pub fn set_firewall_status(mut self, input: ::std::option::Option<crate::types::FirewallStatus>) -> Self {
         self.firewall_status = input;
         self
     }

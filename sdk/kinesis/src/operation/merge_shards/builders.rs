@@ -10,10 +10,7 @@ impl MergeShardsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::merge_shards::MergeShardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::merge_shards::MergeShardsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::merge_shards::MergeShardsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.merge_shards();
         fluent_builder.inner = self;
@@ -54,10 +51,7 @@ impl MergeShardsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::merge_shards::MergeShards,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::merge_shards::MergeShards, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::merge_shards::MergeShardsError>,
     > {
         let handle = self.handle.clone();
@@ -68,10 +62,7 @@ impl MergeShardsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -113,10 +104,7 @@ impl MergeShardsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::merge_shards::MergeShards,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::merge_shards::MergeShards, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::merge_shards::MergeShardsError>,
     > {
         self.customize_middleware().await
@@ -136,18 +124,12 @@ impl MergeShardsFluentBuilder {
         self.inner.get_stream_name()
     }
     /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
-    pub fn shard_to_merge(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shard_to_merge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shard_to_merge(input.into());
         self
     }
     /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
-    pub fn set_shard_to_merge(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shard_to_merge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shard_to_merge(input);
         self
     }
@@ -156,18 +138,12 @@ impl MergeShardsFluentBuilder {
         self.inner.get_shard_to_merge()
     }
     /// <p>The shard ID of the adjacent shard for the merge.</p>
-    pub fn adjacent_shard_to_merge(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn adjacent_shard_to_merge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.adjacent_shard_to_merge(input.into());
         self
     }
     /// <p>The shard ID of the adjacent shard for the merge.</p>
-    pub fn set_adjacent_shard_to_merge(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_adjacent_shard_to_merge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_adjacent_shard_to_merge(input);
         self
     }

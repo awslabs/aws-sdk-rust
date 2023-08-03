@@ -46,17 +46,14 @@ impl CreateDiskSnapshotInput {
 }
 impl CreateDiskSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateDiskSnapshotInput`](crate::operation::create_disk_snapshot::CreateDiskSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotInputBuilder {
+    pub fn builder() -> crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotInputBuilder {
         crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDiskSnapshotInput`](crate::operation::create_disk_snapshot::CreateDiskSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDiskSnapshotInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
     pub(crate) disk_snapshot_name: ::std::option::Option<::std::string::String>,
@@ -85,18 +82,12 @@ impl CreateDiskSnapshotInputBuilder {
         &self.disk_name
     }
     /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
-    pub fn disk_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
-    pub fn set_disk_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disk_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_snapshot_name = input;
         self
     }
@@ -107,20 +98,14 @@ impl CreateDiskSnapshotInputBuilder {
     /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -144,10 +129,7 @@ impl CreateDiskSnapshotInputBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -159,17 +141,12 @@ impl CreateDiskSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateDiskSnapshotInput`](crate::operation::create_disk_snapshot::CreateDiskSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_disk_snapshot::CreateDiskSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_disk_snapshot::CreateDiskSnapshotInput {
-                disk_name: self.disk_name,
-                disk_snapshot_name: self.disk_snapshot_name,
-                instance_name: self.instance_name,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_disk_snapshot::CreateDiskSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_disk_snapshot::CreateDiskSnapshotInput {
+            disk_name: self.disk_name,
+            disk_snapshot_name: self.disk_snapshot_name,
+            instance_name: self.instance_name,
+            tags: self.tags,
+        })
     }
 }

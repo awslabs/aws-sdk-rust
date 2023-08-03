@@ -37,9 +37,7 @@ impl SubDomain {
 
 /// A builder for [`SubDomain`](crate::types::SubDomain).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubDomainBuilder {
     pub(crate) sub_domain_setting: ::std::option::Option<crate::types::SubDomainSetting>,
     pub(crate) verified: ::std::option::Option<bool>,
@@ -52,10 +50,7 @@ impl SubDomainBuilder {
         self
     }
     /// <p> Describes the settings for the subdomain. </p>
-    pub fn set_sub_domain_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::SubDomainSetting>,
-    ) -> Self {
+    pub fn set_sub_domain_setting(mut self, input: ::std::option::Option<crate::types::SubDomainSetting>) -> Self {
         self.sub_domain_setting = input;
         self
     }

@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListVersionsByFunctionOutput {
 }
 impl ListVersionsByFunctionOutput {
     /// Creates a new builder-style object to manufacture [`ListVersionsByFunctionOutput`](crate::operation::list_versions_by_function::ListVersionsByFunctionOutput).
-    pub fn builder(
-    ) -> crate::operation::list_versions_by_function::builders::ListVersionsByFunctionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_versions_by_function::builders::ListVersionsByFunctionOutputBuilder {
         crate::operation::list_versions_by_function::builders::ListVersionsByFunctionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVersionsByFunctionOutput`](crate::operation::list_versions_by_function::ListVersionsByFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVersionsByFunctionOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
+    pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListVersionsByFunctionOutputBuilder {
@@ -73,17 +68,12 @@ impl ListVersionsByFunctionOutputBuilder {
         self
     }
     /// <p>A list of Lambda function versions.</p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>) -> Self {
         self.versions = input;
         self
     }
     /// <p>A list of Lambda function versions.</p>
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>> {
         &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +86,7 @@ impl ListVersionsByFunctionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVersionsByFunctionOutput`](crate::operation::list_versions_by_function::ListVersionsByFunctionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_versions_by_function::ListVersionsByFunctionOutput {
+    pub fn build(self) -> crate::operation::list_versions_by_function::ListVersionsByFunctionOutput {
         crate::operation::list_versions_by_function::ListVersionsByFunctionOutput {
             next_marker: self.next_marker,
             versions: self.versions,

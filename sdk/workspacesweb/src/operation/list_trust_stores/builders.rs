@@ -10,10 +10,7 @@ impl ListTrustStoresInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_trust_stores::ListTrustStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trust_stores::ListTrustStoresError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trust_stores::ListTrustStoresError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_trust_stores();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTrustStoresFluentBuilder {
         }
     }
     /// Access the ListTrustStores as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_trust_stores::builders::ListTrustStoresInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_trust_stores::builders::ListTrustStoresInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTrustStoresFluentBuilder {
             crate::operation::list_trust_stores::ListTrustStores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trust_stores::ListTrustStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trust_stores::ListTrustStoresError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTrustStoresFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTrustStoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_trust_stores::ListTrustStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trust_stores::ListTrustStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trust_stores::ListTrustStoresError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTrustStoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_trust_stores::ListTrustStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trust_stores::ListTrustStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trust_stores::ListTrustStoresError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListTrustStoresFluentBuilder {
             crate::operation::list_trust_stores::ListTrustStores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trust_stores::ListTrustStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trust_stores::ListTrustStoresError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_trust_stores::paginator::ListTrustStoresPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_trust_stores::paginator::ListTrustStoresPaginator {
-        crate::operation::list_trust_stores::paginator::ListTrustStoresPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_trust_stores::paginator::ListTrustStoresPaginator {
+        crate::operation::list_trust_stores::paginator::ListTrustStoresPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

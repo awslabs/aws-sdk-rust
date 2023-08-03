@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateMemberOutput`](crate::operation::associate_member::AssociateMemberOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::operation::associate_member::AssociateMemberOutput::account_id): <p>The Amazon Web Services account ID of the successfully associated member account.</p>
     /// - On failure, responds with [`SdkError<AssociateMemberError>`](crate::operation::associate_member::AssociateMemberError)
-    pub fn associate_member(
-        &self,
-    ) -> crate::operation::associate_member::builders::AssociateMemberFluentBuilder {
-        crate::operation::associate_member::builders::AssociateMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_member(&self) -> crate::operation::associate_member::builders::AssociateMemberFluentBuilder {
+        crate::operation::associate_member::builders::AssociateMemberFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`current_version(impl ::std::convert::Into<String>)`](crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelFluentBuilder::current_version) / [`set_current_version(Option<String>)`](crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelFluentBuilder::set_current_version): <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
     /// - On success, responds with [`DeleteSignalingChannelOutput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelOutput)
     /// - On failure, responds with [`SdkError<DeleteSignalingChannelError>`](crate::operation::delete_signaling_channel::DeleteSignalingChannelError)
-    pub fn delete_signaling_channel(
-        &self,
-    ) -> crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelFluentBuilder
-    {
+    pub fn delete_signaling_channel(&self) -> crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelFluentBuilder {
         crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelFluentBuilder::new(self.handle.clone())
     }
 }

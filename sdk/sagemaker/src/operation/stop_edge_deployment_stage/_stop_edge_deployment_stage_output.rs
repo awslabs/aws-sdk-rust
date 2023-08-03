@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopEdgeDeploymentStageOutput {
 }
 impl StopEdgeDeploymentStageOutput {
     /// Creates a new builder-style object to manufacture [`StopEdgeDeploymentStageOutput`](crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageOutputBuilder {
         crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopEdgeDeploymentStageOutput`](crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEdgeDeploymentStageOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl StopEdgeDeploymentStageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopEdgeDeploymentStageOutput`](crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput {
+    pub fn build(self) -> crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput {
         crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput {
             _request_id: self._request_id,
         }

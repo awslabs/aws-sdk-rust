@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDirectoryConfigOutput`](crate::operation::create_directory_config::CreateDirectoryConfigOutput) with field(s):
     ///   - [`directory_config(Option<DirectoryConfig>)`](crate::operation::create_directory_config::CreateDirectoryConfigOutput::directory_config): <p>Information about the directory configuration.</p>
     /// - On failure, responds with [`SdkError<CreateDirectoryConfigError>`](crate::operation::create_directory_config::CreateDirectoryConfigError)
-    pub fn create_directory_config(
-        &self,
-    ) -> crate::operation::create_directory_config::builders::CreateDirectoryConfigFluentBuilder
-    {
-        crate::operation::create_directory_config::builders::CreateDirectoryConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_directory_config(&self) -> crate::operation::create_directory_config::builders::CreateDirectoryConfigFluentBuilder {
+        crate::operation::create_directory_config::builders::CreateDirectoryConfigFluentBuilder::new(self.handle.clone())
     }
 }

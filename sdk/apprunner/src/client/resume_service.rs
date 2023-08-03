@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`service(Option<Service>)`](crate::operation::resume_service::ResumeServiceOutput::service): <p>A description of the App Runner service that this request just resumed.</p>
     ///   - [`operation_id(Option<String>)`](crate::operation::resume_service::ResumeServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     /// - On failure, responds with [`SdkError<ResumeServiceError>`](crate::operation::resume_service::ResumeServiceError)
-    pub fn resume_service(
-        &self,
-    ) -> crate::operation::resume_service::builders::ResumeServiceFluentBuilder {
-        crate::operation::resume_service::builders::ResumeServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resume_service(&self) -> crate::operation::resume_service::builders::ResumeServiceFluentBuilder {
+        crate::operation::resume_service::builders::ResumeServiceFluentBuilder::new(self.handle.clone())
     }
 }

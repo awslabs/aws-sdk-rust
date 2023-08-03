@@ -10,10 +10,7 @@ impl GetTimelineEventInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_timeline_event::GetTimelineEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_timeline_event::GetTimelineEventError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_timeline_event::GetTimelineEventError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_timeline_event();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetTimelineEventFluentBuilder {
         }
     }
     /// Access the GetTimelineEvent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_timeline_event::builders::GetTimelineEventInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_timeline_event::builders::GetTimelineEventInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetTimelineEventFluentBuilder {
             crate::operation::get_timeline_event::GetTimelineEvent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_timeline_event::GetTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_timeline_event::GetTimelineEventError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetTimelineEventFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetTimelineEventFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_timeline_event::GetTimelineEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_timeline_event::GetTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_timeline_event::GetTimelineEventError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetTimelineEventFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_timeline_event::GetTimelineEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_timeline_event::GetTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_timeline_event::GetTimelineEventError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetTimelineEventFluentBuilder {
             crate::operation::get_timeline_event::GetTimelineEvent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_timeline_event::GetTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_timeline_event::GetTimelineEventError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_record_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }

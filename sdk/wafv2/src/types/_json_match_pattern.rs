@@ -40,9 +40,7 @@ impl JsonMatchPattern {
 
 /// A builder for [`JsonMatchPattern`](crate::types::JsonMatchPattern).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JsonMatchPatternBuilder {
     pub(crate) all: ::std::option::Option<crate::types::All>,
     pub(crate) included_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -74,10 +72,7 @@ impl JsonMatchPatternBuilder {
     /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting. </p>
     /// </note>
-    pub fn included_paths(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn included_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.included_paths.unwrap_or_default();
         v.push(input.into());
         self.included_paths = ::std::option::Option::Some(v);
@@ -88,10 +83,7 @@ impl JsonMatchPatternBuilder {
     /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting. </p>
     /// </note>
-    pub fn set_included_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_included_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.included_paths = input;
         self
     }
@@ -100,9 +92,7 @@ impl JsonMatchPatternBuilder {
     /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting. </p>
     /// </note>
-    pub fn get_included_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_included_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.included_paths
     }
     /// Consumes the builder and constructs a [`JsonMatchPattern`](crate::types::JsonMatchPattern).

@@ -30,7 +30,7 @@ impl CreateVpcPeeringConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVpcPeeringConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionInputBuilder,
+    inner: crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionInputBuilder,
 }
 impl CreateVpcPeeringConnectionFluentBuilder {
     /// Creates a new `CreateVpcPeeringConnection`.
@@ -41,7 +41,7 @@ impl CreateVpcPeeringConnectionFluentBuilder {
         }
     }
     /// Access the CreateVpcPeeringConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl CreateVpcPeeringConnectionFluentBuilder {
             crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl CreateVpcPeeringConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl CreateVpcPeeringConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl CreateVpcPeeringConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl CreateVpcPeeringConnectionFluentBuilder {
             crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +128,12 @@ impl CreateVpcPeeringConnectionFluentBuilder {
         self.inner.get_fleet_id()
     }
     /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn peer_vpc_aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peer_vpc_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.peer_vpc_aws_account_id(input.into());
         self
     }
     /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn set_peer_vpc_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_peer_vpc_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_peer_vpc_aws_account_id(input);
         self
     }

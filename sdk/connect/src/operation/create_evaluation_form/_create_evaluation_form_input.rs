@@ -40,9 +40,7 @@ impl CreateEvaluationFormInput {
         self.items.as_deref()
     }
     /// <p>A scoring strategy of the evaluation form.</p>
-    pub fn scoring_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvaluationFormScoringStrategy> {
+    pub fn scoring_strategy(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringStrategy> {
         self.scoring_strategy.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -52,17 +50,14 @@ impl CreateEvaluationFormInput {
 }
 impl CreateEvaluationFormInput {
     /// Creates a new builder-style object to manufacture [`CreateEvaluationFormInput`](crate::operation::create_evaluation_form::CreateEvaluationFormInput).
-    pub fn builder(
-    ) -> crate::operation::create_evaluation_form::builders::CreateEvaluationFormInputBuilder {
+    pub fn builder() -> crate::operation::create_evaluation_form::builders::CreateEvaluationFormInputBuilder {
         crate::operation::create_evaluation_form::builders::CreateEvaluationFormInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEvaluationFormInput`](crate::operation::create_evaluation_form::CreateEvaluationFormInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEvaluationFormInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -126,17 +121,12 @@ impl CreateEvaluationFormInputBuilder {
         self
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
         &self.items
     }
     /// <p>A scoring strategy of the evaluation form.</p>
@@ -145,17 +135,12 @@ impl CreateEvaluationFormInputBuilder {
         self
     }
     /// <p>A scoring strategy of the evaluation form.</p>
-    pub fn set_scoring_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
-    ) -> Self {
+    pub fn set_scoring_strategy(mut self, input: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>) -> Self {
         self.scoring_strategy = input;
         self
     }
     /// <p>A scoring strategy of the evaluation form.</p>
-    pub fn get_scoring_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
+    pub fn get_scoring_strategy(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
         &self.scoring_strategy
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -175,19 +160,15 @@ impl CreateEvaluationFormInputBuilder {
     /// Consumes the builder and constructs a [`CreateEvaluationFormInput`](crate::operation::create_evaluation_form::CreateEvaluationFormInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_evaluation_form::CreateEvaluationFormInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_evaluation_form::CreateEvaluationFormInput {
-                instance_id: self.instance_id,
-                title: self.title,
-                description: self.description,
-                items: self.items,
-                scoring_strategy: self.scoring_strategy,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_evaluation_form::CreateEvaluationFormInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_evaluation_form::CreateEvaluationFormInput {
+            instance_id: self.instance_id,
+            title: self.title,
+            description: self.description,
+            items: self.items,
+            scoring_strategy: self.scoring_strategy,
+            client_token: self.client_token,
+        })
     }
 }

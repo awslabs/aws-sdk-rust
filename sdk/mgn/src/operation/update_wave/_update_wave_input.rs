@@ -43,9 +43,7 @@ impl UpdateWaveInput {
 
 /// A builder for [`UpdateWaveInput`](crate::operation::update_wave::UpdateWaveInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWaveInputBuilder {
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -110,12 +108,7 @@ impl UpdateWaveInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateWaveInput`](crate::operation::update_wave::UpdateWaveInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_wave::UpdateWaveInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_wave::UpdateWaveInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_wave::UpdateWaveInput {
             wave_id: self.wave_id,
             name: self.name,

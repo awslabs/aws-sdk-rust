@@ -9,14 +9,11 @@ pub fn de_get_capacity_reservation_usage_http_error(
     crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(
-        crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError::generic(
-            generic,
-        ),
-    )
+    Err(crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -31,16 +28,21 @@ pub fn de_get_capacity_reservation_usage_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_capacity_reservation_usage::de_get_capacity_reservation_usage(_response_body, output).map_err(crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_get_capacity_reservation_usage::de_get_capacity_reservation_usage(_response_body, output)
+            .map_err(crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_get_capacity_reservation_usage(inp: &[u8], mut builder: crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder) -> Result<crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_get_capacity_reservation_usage(
+    inp: &[u8],
+    mut builder: crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder,
+) -> Result<
+    crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

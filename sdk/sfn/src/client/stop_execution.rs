@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StopExecutionOutput`](crate::operation::stop_execution::StopExecutionOutput) with field(s):
     ///   - [`stop_date(Option<DateTime>)`](crate::operation::stop_execution::StopExecutionOutput::stop_date): <p>The date the execution is stopped.</p>
     /// - On failure, responds with [`SdkError<StopExecutionError>`](crate::operation::stop_execution::StopExecutionError)
-    pub fn stop_execution(
-        &self,
-    ) -> crate::operation::stop_execution::builders::StopExecutionFluentBuilder {
-        crate::operation::stop_execution::builders::StopExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_execution(&self) -> crate::operation::stop_execution::builders::StopExecutionFluentBuilder {
+        crate::operation::stop_execution::builders::StopExecutionFluentBuilder::new(self.handle.clone())
     }
 }

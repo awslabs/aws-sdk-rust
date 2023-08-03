@@ -43,9 +43,7 @@ impl DescribeVoicesInput {
 
 /// A builder for [`DescribeVoicesInput`](crate::operation::describe_voices::DescribeVoicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVoicesInputBuilder {
     pub(crate) engine: ::std::option::Option<crate::types::Engine>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
@@ -73,10 +71,7 @@ impl DescribeVoicesInputBuilder {
         self
     }
     /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -90,10 +85,7 @@ impl DescribeVoicesInputBuilder {
         self
     }
     /// <p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>
-    pub fn set_include_additional_language_codes(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_additional_language_codes(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_additional_language_codes = input;
         self
     }
@@ -118,10 +110,7 @@ impl DescribeVoicesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVoicesInput`](crate::operation::describe_voices::DescribeVoicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_voices::DescribeVoicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_voices::DescribeVoicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_voices::DescribeVoicesInput {
             engine: self.engine,
             language_code: self.language_code,

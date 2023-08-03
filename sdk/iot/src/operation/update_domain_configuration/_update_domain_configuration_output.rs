@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateDomainConfigurationOutput {
 }
 impl UpdateDomainConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigurationOutput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput).
-    pub fn builder() -> crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationOutputBuilder {
         crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainConfigurationOutput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigurationOutputBuilder {
     pub(crate) domain_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_configuration_arn: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct UpdateDomainConfigurationOutputBuilder {
 }
 impl UpdateDomainConfigurationOutputBuilder {
     /// <p>The name of the domain configuration that was updated.</p>
-    pub fn domain_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain configuration that was updated.</p>
-    pub fn set_domain_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_configuration_name = input;
         self
     }
@@ -65,18 +57,12 @@ impl UpdateDomainConfigurationOutputBuilder {
         &self.domain_configuration_name
     }
     /// <p>The ARN of the domain configuration that was updated.</p>
-    pub fn domain_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the domain configuration that was updated.</p>
-    pub fn set_domain_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_configuration_arn = input;
         self
     }
@@ -94,9 +80,7 @@ impl UpdateDomainConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDomainConfigurationOutput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput {
         crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput {
             domain_configuration_name: self.domain_configuration_name,
             domain_configuration_arn: self.domain_configuration_arn,

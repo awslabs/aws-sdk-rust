@@ -43,18 +43,14 @@ impl DescribePatchPropertiesInput {
 }
 impl DescribePatchPropertiesInput {
     /// Creates a new builder-style object to manufacture [`DescribePatchPropertiesInput`](crate::operation::describe_patch_properties::DescribePatchPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder {
         crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePatchPropertiesInput`](crate::operation::describe_patch_properties::DescribePatchPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePatchPropertiesInputBuilder {
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     pub(crate) property: ::std::option::Option<crate::types::PatchProperty>,
@@ -69,10 +65,7 @@ impl DescribePatchPropertiesInputBuilder {
         self
     }
     /// <p>The operating system type for which to list patches.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -86,10 +79,7 @@ impl DescribePatchPropertiesInputBuilder {
         self
     }
     /// <p>The patch property for which you want to view patch details. </p>
-    pub fn set_property(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchProperty>,
-    ) -> Self {
+    pub fn set_property(mut self, input: ::std::option::Option<crate::types::PatchProperty>) -> Self {
         self.property = input;
         self
     }
@@ -146,14 +136,12 @@ impl DescribePatchPropertiesInputBuilder {
         crate::operation::describe_patch_properties::DescribePatchPropertiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_patch_properties::DescribePatchPropertiesInput {
-                operating_system: self.operating_system,
-                property: self.property,
-                patch_set: self.patch_set,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_patch_properties::DescribePatchPropertiesInput {
+            operating_system: self.operating_system,
+            property: self.property,
+            patch_set: self.patch_set,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

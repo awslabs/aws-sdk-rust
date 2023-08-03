@@ -26,7 +26,7 @@ impl ListKeyPhrasesDetectionJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeyPhrasesDetectionJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsInputBuilder,
+    inner: crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsInputBuilder,
 }
 impl ListKeyPhrasesDetectionJobsFluentBuilder {
     /// Creates a new `ListKeyPhrasesDetectionJobs`.
@@ -37,7 +37,7 @@ impl ListKeyPhrasesDetectionJobsFluentBuilder {
         }
     }
     /// Access the ListKeyPhrasesDetectionJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListKeyPhrasesDetectionJobsFluentBuilder {
             crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListKeyPhrasesDetectionJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListKeyPhrasesDetectionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListKeyPhrasesDetectionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListKeyPhrasesDetectionJobsFluentBuilder {
             crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_key_phrases_detection_jobs::paginator::ListKeyPhrasesDetectionJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_key_phrases_detection_jobs::paginator::ListKeyPhrasesDetectionJobsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_key_phrases_detection_jobs::paginator::ListKeyPhrasesDetectionJobsPaginator {
         crate::operation::list_key_phrases_detection_jobs::paginator::ListKeyPhrasesDetectionJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
@@ -132,10 +121,7 @@ impl ListKeyPhrasesDetectionJobsFluentBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyPhrasesDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::KeyPhrasesDetectionJobFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

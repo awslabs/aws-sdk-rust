@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`sensitive_data_occurrences(Option<HashMap<String, Vec<DetectedDataDetails>>>)`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput::sensitive_data_occurrences): <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
     ///   - [`status(Option<RevealRequestStatus>)`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput::status): <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>  <ul>  <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>   <li><p>PROCESSING - Macie is processing the request.</p></li>   <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li> </ul>
     /// - On failure, responds with [`SdkError<GetSensitiveDataOccurrencesError>`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError)
-    pub fn get_sensitive_data_occurrences(&self) -> crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesFluentBuilder{
+    pub fn get_sensitive_data_occurrences(
+        &self,
+    ) -> crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesFluentBuilder {
         crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesFluentBuilder::new(self.handle.clone())
     }
 }

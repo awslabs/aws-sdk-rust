@@ -27,9 +27,7 @@ impl ExperimentResultsData {
         self.treatment_name.as_deref()
     }
     /// <p>The experiment statistic that these results pertain to.</p>
-    pub fn result_stat(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExperimentResultResponseType> {
+    pub fn result_stat(&self) -> ::std::option::Option<&crate::types::ExperimentResultResponseType> {
         self.result_stat.as_ref()
     }
     /// <p>The values for the <code>metricName</code> that were recorded in the experiment.</p>
@@ -46,9 +44,7 @@ impl ExperimentResultsData {
 
 /// A builder for [`ExperimentResultsData`](crate::types::ExperimentResultsData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentResultsDataBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) treatment_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +67,12 @@ impl ExperimentResultsDataBuilder {
         &self.metric_name
     }
     /// <p>The treatment, or variation, that returned the <code>values</code> in this structure.</p>
-    pub fn treatment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn treatment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.treatment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The treatment, or variation, that returned the <code>values</code> in this structure.</p>
-    pub fn set_treatment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_treatment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treatment_name = input;
         self
     }
@@ -96,17 +86,12 @@ impl ExperimentResultsDataBuilder {
         self
     }
     /// <p>The experiment statistic that these results pertain to.</p>
-    pub fn set_result_stat(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentResultResponseType>,
-    ) -> Self {
+    pub fn set_result_stat(mut self, input: ::std::option::Option<crate::types::ExperimentResultResponseType>) -> Self {
         self.result_stat = input;
         self
     }
     /// <p>The experiment statistic that these results pertain to.</p>
-    pub fn get_result_stat(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperimentResultResponseType> {
+    pub fn get_result_stat(&self) -> &::std::option::Option<crate::types::ExperimentResultResponseType> {
         &self.result_stat
     }
     /// Appends an item to `values`.

@@ -26,7 +26,7 @@ impl DeleteUserByPrincipalIdInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserByPrincipalIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdInputBuilder,
+    inner: crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdInputBuilder,
 }
 impl DeleteUserByPrincipalIdFluentBuilder {
     /// Creates a new `DeleteUserByPrincipalId`.
@@ -37,10 +37,7 @@ impl DeleteUserByPrincipalIdFluentBuilder {
         }
     }
     /// Access the DeleteUserByPrincipalId as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteUserByPrincipalIdFluentBuilder {
             crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalId,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteUserByPrincipalIdFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteUserByPrincipalIdFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteUserByPrincipalIdFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteUserByPrincipalIdFluentBuilder {
             crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalId,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeleteUserByPrincipalIdFluentBuilder {
         self.inner.get_principal_id()
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

@@ -28,9 +28,7 @@ impl SnapshotFileSheetSelection {
     /// <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li>
     /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV.</p> </li>
     /// </ul>
-    pub fn selection_scope(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SnapshotFileSheetSelectionScope> {
+    pub fn selection_scope(&self) -> ::std::option::Option<&crate::types::SnapshotFileSheetSelectionScope> {
         self.selection_scope.as_ref()
     }
     /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV. This value supports a maximum of 1 visual ID. </p>
@@ -47,13 +45,10 @@ impl SnapshotFileSheetSelection {
 
 /// A builder for [`SnapshotFileSheetSelection`](crate::types::SnapshotFileSheetSelection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotFileSheetSelectionBuilder {
     pub(crate) sheet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) selection_scope:
-        ::std::option::Option<crate::types::SnapshotFileSheetSelectionScope>,
+    pub(crate) selection_scope: ::std::option::Option<crate::types::SnapshotFileSheetSelectionScope>,
     pub(crate) visual_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SnapshotFileSheetSelectionBuilder {
@@ -85,10 +80,7 @@ impl SnapshotFileSheetSelectionBuilder {
     /// <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li>
     /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV.</p> </li>
     /// </ul>
-    pub fn set_selection_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotFileSheetSelectionScope>,
-    ) -> Self {
+    pub fn set_selection_scope(mut self, input: ::std::option::Option<crate::types::SnapshotFileSheetSelectionScope>) -> Self {
         self.selection_scope = input;
         self
     }
@@ -97,9 +89,7 @@ impl SnapshotFileSheetSelectionBuilder {
     /// <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li>
     /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV.</p> </li>
     /// </ul>
-    pub fn get_selection_scope(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotFileSheetSelectionScope> {
+    pub fn get_selection_scope(&self) -> &::std::option::Option<crate::types::SnapshotFileSheetSelectionScope> {
         &self.selection_scope
     }
     /// Appends an item to `visual_ids`.
@@ -114,10 +104,7 @@ impl SnapshotFileSheetSelectionBuilder {
         self
     }
     /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV. This value supports a maximum of 1 visual ID. </p>
-    pub fn set_visual_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_visual_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.visual_ids = input;
         self
     }

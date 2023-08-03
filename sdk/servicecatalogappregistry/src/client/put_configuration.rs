@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`configuration(AppRegistryConfiguration)`](crate::operation::put_configuration::builders::PutConfigurationFluentBuilder::configuration) / [`set_configuration(Option<AppRegistryConfiguration>)`](crate::operation::put_configuration::builders::PutConfigurationFluentBuilder::set_configuration): <p> Associates a <code>TagKey</code> configuration to an account. </p>
     /// - On success, responds with [`PutConfigurationOutput`](crate::operation::put_configuration::PutConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutConfigurationError>`](crate::operation::put_configuration::PutConfigurationError)
-    pub fn put_configuration(
-        &self,
-    ) -> crate::operation::put_configuration::builders::PutConfigurationFluentBuilder {
-        crate::operation::put_configuration::builders::PutConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_configuration(&self) -> crate::operation::put_configuration::builders::PutConfigurationFluentBuilder {
+        crate::operation::put_configuration::builders::PutConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

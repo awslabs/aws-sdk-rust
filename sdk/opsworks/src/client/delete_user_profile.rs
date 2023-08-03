@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`iam_user_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::iam_user_arn) / [`set_iam_user_arn(Option<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::set_iam_user_arn): <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     /// - On success, responds with [`DeleteUserProfileOutput`](crate::operation::delete_user_profile::DeleteUserProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteUserProfileError>`](crate::operation::delete_user_profile::DeleteUserProfileError)
-    pub fn delete_user_profile(
-        &self,
-    ) -> crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder {
-        crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_user_profile(&self) -> crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder {
+        crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

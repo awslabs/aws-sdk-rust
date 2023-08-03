@@ -43,16 +43,14 @@ impl ListSourceRepositoryBranchesInput {
 }
 impl ListSourceRepositoryBranchesInput {
     /// Creates a new builder-style object to manufacture [`ListSourceRepositoryBranchesInput`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesInput).
-    pub fn builder() -> crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesInputBuilder{
+    pub fn builder() -> crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesInputBuilder {
         crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSourceRepositoryBranchesInput`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceRepositoryBranchesInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -90,18 +88,12 @@ impl ListSourceRepositoryBranchesInputBuilder {
         &self.project_name
     }
     /// <p>The name of the source repository.</p>
-    pub fn source_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source repository.</p>
-    pub fn set_source_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_repository_name = input;
         self
     }
@@ -144,14 +136,12 @@ impl ListSourceRepositoryBranchesInputBuilder {
         crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                source_repository_name: self.source_repository_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            source_repository_name: self.source_repository_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

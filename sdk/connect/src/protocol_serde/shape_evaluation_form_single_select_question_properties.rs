@@ -9,7 +9,10 @@ pub fn ser_evaluation_form_single_select_question_properties(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_evaluation_form_single_select_question_option::ser_evaluation_form_single_select_question_option(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_evaluation_form_single_select_question_option::ser_evaluation_form_single_select_question_option(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }
@@ -21,7 +24,10 @@ pub fn ser_evaluation_form_single_select_question_properties(
     if let Some(var_6) = &input.automation {
         #[allow(unused_mut)]
         let mut object_7 = object.key("Automation").start_object();
-        crate::protocol_serde::shape_evaluation_form_single_select_question_automation::ser_evaluation_form_single_select_question_automation(&mut object_7, var_6)?;
+        crate::protocol_serde::shape_evaluation_form_single_select_question_automation::ser_evaluation_form_single_select_question_automation(
+            &mut object_7,
+            var_6,
+        )?;
         object_7.finish();
     }
     Ok(())
@@ -29,17 +35,9 @@ pub fn ser_evaluation_form_single_select_question_properties(
 
 pub(crate) fn de_evaluation_form_single_select_question_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::EvaluationFormSingleSelectQuestionProperties>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::EvaluationFormSingleSelectQuestionProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,45 +47,41 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Options" => {
-                                builder = builder.set_options(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Options" => {
+                            builder = builder.set_options(
                                     crate::protocol_serde::shape_evaluation_form_single_select_question_option_list::de_evaluation_form_single_select_question_option_list(tokens)?
                                 );
-                            }
-                            "DisplayAs" => {
-                                builder = builder.set_display_as(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            crate::types::EvaluationFormSingleSelectQuestionDisplayMode::from(u.as_ref())
-                                        )
-                                    ).transpose()?
-                                );
-                            }
-                            "Automation" => {
-                                builder = builder.set_automation(
+                        }
+                        "DisplayAs" => {
+                            builder = builder.set_display_as(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::EvaluationFormSingleSelectQuestionDisplayMode::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "Automation" => {
+                            builder = builder.set_automation(
                                     crate::protocol_serde::shape_evaluation_form_single_select_question_automation::de_evaluation_form_single_select_question_automation(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

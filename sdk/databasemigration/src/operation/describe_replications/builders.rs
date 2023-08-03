@@ -37,9 +37,7 @@ impl DescribeReplicationsFluentBuilder {
         }
     }
     /// Access the DescribeReplications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_replications::builders::DescribeReplicationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_replications::builders::DescribeReplicationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeReplicationsFluentBuilder {
             crate::operation::describe_replications::DescribeReplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replications::DescribeReplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replications::DescribeReplicationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeReplicationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeReplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_replications::DescribeReplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replications::DescribeReplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replications::DescribeReplicationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeReplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_replications::DescribeReplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replications::DescribeReplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replications::DescribeReplicationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl DescribeReplicationsFluentBuilder {
             crate::operation::describe_replications::DescribeReplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replications::DescribeReplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replications::DescribeReplicationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_replications::paginator::DescribeReplicationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_replications::paginator::DescribeReplicationsPaginator {
-        crate::operation::describe_replications::paginator::DescribeReplicationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_replications::paginator::DescribeReplicationsPaginator {
+        crate::operation::describe_replications::paginator::DescribeReplicationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -143,10 +125,7 @@ impl DescribeReplicationsFluentBuilder {
         self
     }
     /// <p>Filters applied to the replications.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

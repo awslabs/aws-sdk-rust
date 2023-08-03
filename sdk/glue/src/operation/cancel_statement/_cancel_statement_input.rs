@@ -36,9 +36,7 @@ impl CancelStatementInput {
 
 /// A builder for [`CancelStatementInput`](crate::operation::cancel_statement::CancelStatementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelStatementInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<i32>,
@@ -74,18 +72,12 @@ impl CancelStatementInputBuilder {
         &self.id
     }
     /// <p>The origin of the request to cancel the statement.</p>
-    pub fn request_origin(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_origin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origin of the request to cancel the statement.</p>
-    pub fn set_request_origin(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_origin = input;
         self
     }
@@ -96,10 +88,7 @@ impl CancelStatementInputBuilder {
     /// Consumes the builder and constructs a [`CancelStatementInput`](crate::operation::cancel_statement::CancelStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_statement::CancelStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::cancel_statement::CancelStatementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_statement::CancelStatementInput {
             session_id: self.session_id,
             id: self.id,

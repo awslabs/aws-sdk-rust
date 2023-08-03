@@ -10,10 +10,7 @@ impl ListJobsByPipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_jobs_by_pipeline();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListJobsByPipelineFluentBuilder {
         }
     }
     /// Access the ListJobsByPipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListJobsByPipelineFluentBuilder {
             crate::operation::list_jobs_by_pipeline::ListJobsByPipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListJobsByPipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListJobsByPipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListJobsByPipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListJobsByPipelineFluentBuilder {
             crate::operation::list_jobs_by_pipeline::ListJobsByPipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator {
-        crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator {
+        crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the pipeline for which you want to get job information.</p>
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

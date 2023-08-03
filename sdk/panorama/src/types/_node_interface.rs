@@ -30,9 +30,7 @@ impl NodeInterface {
 
 /// A builder for [`NodeInterface`](crate::types::NodeInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeInterfaceBuilder {
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>>,
@@ -50,17 +48,12 @@ impl NodeInterfaceBuilder {
         self
     }
     /// <p>The node interface's inputs.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>>) -> Self {
         self.inputs = input;
         self
     }
     /// <p>The node interface's inputs.</p>
-    pub fn get_inputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>> {
         &self.inputs
     }
     /// Appends an item to `outputs`.
@@ -75,17 +68,12 @@ impl NodeInterfaceBuilder {
         self
     }
     /// <p>The node interface's outputs.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>>) -> Self {
         self.outputs = input;
         self
     }
     /// <p>The node interface's outputs.</p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>> {
         &self.outputs
     }
     /// Consumes the builder and constructs a [`NodeInterface`](crate::types::NodeInterface).

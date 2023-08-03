@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::archive_application::ArchiveApplicationOutput::tags): <p>Application tags.</p>
     ///   - [`wave_id(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::wave_id): <p>Application wave ID.</p>
     /// - On failure, responds with [`SdkError<ArchiveApplicationError>`](crate::operation::archive_application::ArchiveApplicationError)
-    pub fn archive_application(
-        &self,
-    ) -> crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder {
-        crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn archive_application(&self) -> crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder {
+        crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::new(self.handle.clone())
     }
 }

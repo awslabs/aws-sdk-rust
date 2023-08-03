@@ -23,34 +23,26 @@ impl DeregisterInstancesFromLoadBalancerInput {
 }
 impl DeregisterInstancesFromLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`DeregisterInstancesFromLoadBalancerInput`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerInput).
-    pub fn builder() -> crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerInputBuilder{
+    pub fn builder() -> crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerInputBuilder {
         crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterInstancesFromLoadBalancerInput`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterInstancesFromLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
 }
 impl DeregisterInstancesFromLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -70,10 +62,7 @@ impl DeregisterInstancesFromLoadBalancerInputBuilder {
         self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
         self.instances = input;
         self
     }
@@ -82,14 +71,17 @@ impl DeregisterInstancesFromLoadBalancerInputBuilder {
         &self.instances
     }
     /// Consumes the builder and constructs a [`DeregisterInstancesFromLoadBalancerInput`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerInput {
-                load_balancer_name: self.load_balancer_name
-                ,
-                instances: self.instances
-                ,
-            }
+                load_balancer_name: self.load_balancer_name,
+                instances: self.instances,
+            },
         )
     }
 }

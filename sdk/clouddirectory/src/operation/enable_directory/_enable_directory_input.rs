@@ -22,26 +22,18 @@ impl EnableDirectoryInput {
 
 /// A builder for [`EnableDirectoryInput`](crate::operation::enable_directory::EnableDirectoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableDirectoryInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
 }
 impl EnableDirectoryInputBuilder {
     /// <p>The ARN of the directory to enable.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the directory to enable.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -52,10 +44,7 @@ impl EnableDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`EnableDirectoryInput`](crate::operation::enable_directory::EnableDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_directory::EnableDirectoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::enable_directory::EnableDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_directory::EnableDirectoryInput {
             directory_arn: self.directory_arn,
         })

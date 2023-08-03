@@ -10,9 +10,7 @@ pub struct CreateCollectionOutput {
 }
 impl CreateCollectionOutput {
     /// <p>Details about the collection.</p>
-    pub fn create_collection_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateCollectionDetail> {
+    pub fn create_collection_detail(&self) -> ::std::option::Option<&crate::types::CreateCollectionDetail> {
         self.create_collection_detail.as_ref()
     }
 }
@@ -23,20 +21,16 @@ impl ::aws_http::request_id::RequestId for CreateCollectionOutput {
 }
 impl CreateCollectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCollectionOutput`](crate::operation::create_collection::CreateCollectionOutput).
-    pub fn builder() -> crate::operation::create_collection::builders::CreateCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_collection::builders::CreateCollectionOutputBuilder {
         crate::operation::create_collection::builders::CreateCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCollectionOutput`](crate::operation::create_collection::CreateCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCollectionOutputBuilder {
-    pub(crate) create_collection_detail:
-        ::std::option::Option<crate::types::CreateCollectionDetail>,
+    pub(crate) create_collection_detail: ::std::option::Option<crate::types::CreateCollectionDetail>,
     _request_id: Option<String>,
 }
 impl CreateCollectionOutputBuilder {
@@ -46,17 +40,12 @@ impl CreateCollectionOutputBuilder {
         self
     }
     /// <p>Details about the collection.</p>
-    pub fn set_create_collection_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateCollectionDetail>,
-    ) -> Self {
+    pub fn set_create_collection_detail(mut self, input: ::std::option::Option<crate::types::CreateCollectionDetail>) -> Self {
         self.create_collection_detail = input;
         self
     }
     /// <p>Details about the collection.</p>
-    pub fn get_create_collection_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateCollectionDetail> {
+    pub fn get_create_collection_detail(&self) -> &::std::option::Option<crate::types::CreateCollectionDetail> {
         &self.create_collection_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

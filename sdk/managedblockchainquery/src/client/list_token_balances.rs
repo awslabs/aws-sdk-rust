@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`token_balances(Option<Vec<TokenBalance>>)`](crate::operation::list_token_balances::ListTokenBalancesOutput::token_balances): <p>An array of <code>TokenBalance</code> objects. Each object contains details about the token balance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_token_balances::ListTokenBalancesOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListTokenBalancesError>`](crate::operation::list_token_balances::ListTokenBalancesError)
-    pub fn list_token_balances(
-        &self,
-    ) -> crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder {
-        crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_token_balances(&self) -> crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder {
+        crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::new(self.handle.clone())
     }
 }

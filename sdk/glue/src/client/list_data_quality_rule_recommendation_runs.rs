@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`runs(Option<Vec<DataQualityRuleRecommendationRunDescription>>)`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput::runs): <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput::next_token): <p>A pagination token, if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListDataQualityRuleRecommendationRunsError>`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsError)
-    pub fn list_data_quality_rule_recommendation_runs(&self) -> crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder{
-        crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::new(self.handle.clone())
+    pub fn list_data_quality_rule_recommendation_runs(
+        &self,
+    ) -> crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder {
+        crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

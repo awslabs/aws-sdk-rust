@@ -23,9 +23,7 @@ impl InforNexusConnectorProfileProperties {
 
 /// A builder for [`InforNexusConnectorProfileProperties`](crate::types::InforNexusConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InforNexusConnectorProfilePropertiesBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
 }

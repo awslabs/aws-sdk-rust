@@ -15,34 +15,25 @@ impl ValidatePipelineInput {
 }
 impl ValidatePipelineInput {
     /// Creates a new builder-style object to manufacture [`ValidatePipelineInput`](crate::operation::validate_pipeline::ValidatePipelineInput).
-    pub fn builder() -> crate::operation::validate_pipeline::builders::ValidatePipelineInputBuilder
-    {
+    pub fn builder() -> crate::operation::validate_pipeline::builders::ValidatePipelineInputBuilder {
         crate::operation::validate_pipeline::builders::ValidatePipelineInputBuilder::default()
     }
 }
 
 /// A builder for [`ValidatePipelineInput`](crate::operation::validate_pipeline::ValidatePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidatePipelineInputBuilder {
     pub(crate) pipeline_configuration_body: ::std::option::Option<::std::string::String>,
 }
 impl ValidatePipelineInputBuilder {
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    pub fn pipeline_configuration_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_configuration_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_configuration_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    pub fn set_pipeline_configuration_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_configuration_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_configuration_body = input;
         self
     }
@@ -53,10 +44,7 @@ impl ValidatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`ValidatePipelineInput`](crate::operation::validate_pipeline::ValidatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_pipeline::ValidatePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::validate_pipeline::ValidatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::validate_pipeline::ValidatePipelineInput {
             pipeline_configuration_body: self.pipeline_configuration_body,
         })

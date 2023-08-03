@@ -40,9 +40,7 @@ impl S3ExportConfiguration {
         self.prefix.as_deref()
     }
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::S3EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
@@ -55,14 +53,11 @@ impl S3ExportConfiguration {
 
 /// A builder for [`S3ExportConfiguration`](crate::types::S3ExportConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ExportConfigurationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::S3EncryptionConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::S3EncryptionConfiguration>,
 }
 impl S3ExportConfigurationBuilder {
     /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
@@ -118,25 +113,17 @@ impl S3ExportConfigurationBuilder {
         &self.prefix
     }
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::S3EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::S3EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::S3EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::S3EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`S3ExportConfiguration`](crate::types::S3ExportConfiguration).

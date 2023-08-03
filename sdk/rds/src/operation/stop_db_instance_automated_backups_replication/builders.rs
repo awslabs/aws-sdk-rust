@@ -5,16 +5,16 @@ pub use crate::operation::stop_db_instance_automated_backups_replication::_stop_
 
 impl StopDbInstanceAutomatedBackupsReplicationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.stop_db_instance_automated_backups_replication();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl StopDbInstanceAutomatedBackupsReplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopDBInstanceAutomatedBackupsReplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationInputBuilder,
+    inner: crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationInputBuilder,
 }
 impl StopDBInstanceAutomatedBackupsReplicationFluentBuilder {
     /// Creates a new `StopDBInstanceAutomatedBackupsReplication`.
@@ -39,15 +39,24 @@ impl StopDBInstanceAutomatedBackupsReplicationFluentBuilder {
         }
     }
     /// Access the StopDBInstanceAutomatedBackupsReplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplication,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +65,19 @@ impl StopDBInstanceAutomatedBackupsReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -83,32 +95,39 @@ impl StopDBInstanceAutomatedBackupsReplicationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplication,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-    pub fn source_db_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_instance_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-    pub fn set_source_db_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_instance_arn(input);
         self
     }

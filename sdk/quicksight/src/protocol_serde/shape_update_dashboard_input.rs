@@ -6,10 +6,7 @@ pub fn ser_update_dashboard_input(
     if let Some(var_1) = &input.dashboard_publish_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DashboardPublishOptions").start_object();
-        crate::protocol_serde::shape_dashboard_publish_options::ser_dashboard_publish_options(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_dashboard_publish_options::ser_dashboard_publish_options(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.definition {
@@ -30,10 +27,7 @@ pub fn ser_update_dashboard_input(
     if let Some(var_8) = &input.source_entity {
         #[allow(unused_mut)]
         let mut object_9 = object.key("SourceEntity").start_object();
-        crate::protocol_serde::shape_dashboard_source_entity::ser_dashboard_source_entity(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_dashboard_source_entity::ser_dashboard_source_entity(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.theme_arn {

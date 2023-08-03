@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateFileCacheOutput`](crate::operation::update_file_cache::UpdateFileCacheOutput) with field(s):
     ///   - [`file_cache(Option<FileCache>)`](crate::operation::update_file_cache::UpdateFileCacheOutput::file_cache): <p>A description of the cache that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateFileCacheError>`](crate::operation::update_file_cache::UpdateFileCacheError)
-    pub fn update_file_cache(
-        &self,
-    ) -> crate::operation::update_file_cache::builders::UpdateFileCacheFluentBuilder {
-        crate::operation::update_file_cache::builders::UpdateFileCacheFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_file_cache(&self) -> crate::operation::update_file_cache::builders::UpdateFileCacheFluentBuilder {
+        crate::operation::update_file_cache::builders::UpdateFileCacheFluentBuilder::new(self.handle.clone())
     }
 }

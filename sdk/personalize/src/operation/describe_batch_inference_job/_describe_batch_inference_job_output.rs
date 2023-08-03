@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeBatchInferenceJobOutput {
 }
 impl DescribeBatchInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBatchInferenceJobOutput`](crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput).
-    pub fn builder() -> crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobOutputBuilder {
         crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBatchInferenceJobOutput`](crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBatchInferenceJobOutputBuilder {
     pub(crate) batch_inference_job: ::std::option::Option<crate::types::BatchInferenceJob>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DescribeBatchInferenceJobOutputBuilder {
         self
     }
     /// <p>Information on the specified batch inference job.</p>
-    pub fn set_batch_inference_job(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchInferenceJob>,
-    ) -> Self {
+    pub fn set_batch_inference_job(mut self, input: ::std::option::Option<crate::types::BatchInferenceJob>) -> Self {
         self.batch_inference_job = input;
         self
     }
     /// <p>Information on the specified batch inference job.</p>
-    pub fn get_batch_inference_job(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchInferenceJob> {
+    pub fn get_batch_inference_job(&self) -> &::std::option::Option<crate::types::BatchInferenceJob> {
         &self.batch_inference_job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl DescribeBatchInferenceJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBatchInferenceJobOutput`](crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput {
+    pub fn build(self) -> crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput {
         crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput {
             batch_inference_job: self.batch_inference_job,
             _request_id: self._request_id,

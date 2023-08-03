@@ -23,35 +23,26 @@ impl ListCustomLineItemVersionsBillingPeriodRangeFilter {
 }
 impl ListCustomLineItemVersionsBillingPeriodRangeFilter {
     /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsBillingPeriodRangeFilter`](crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter).
-    pub fn builder(
-    ) -> crate::types::builders::ListCustomLineItemVersionsBillingPeriodRangeFilterBuilder {
+    pub fn builder() -> crate::types::builders::ListCustomLineItemVersionsBillingPeriodRangeFilterBuilder {
         crate::types::builders::ListCustomLineItemVersionsBillingPeriodRangeFilterBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomLineItemVersionsBillingPeriodRangeFilter`](crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsBillingPeriodRangeFilterBuilder {
     pub(crate) start_billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) end_billing_period: ::std::option::Option<::std::string::String>,
 }
 impl ListCustomLineItemVersionsBillingPeriodRangeFilterBuilder {
     /// <p>The inclusive start billing period that defines a billing period range where a custom line item version is applied.</p>
-    pub fn start_billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inclusive start billing period that defines a billing period range where a custom line item version is applied.</p>
-    pub fn set_start_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_billing_period = input;
         self
     }
@@ -60,18 +51,12 @@ impl ListCustomLineItemVersionsBillingPeriodRangeFilterBuilder {
         &self.start_billing_period
     }
     /// <p>The exclusive end billing period that defines a billing period range where a custom line item version is applied.</p>
-    pub fn end_billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn end_billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The exclusive end billing period that defines a billing period range where a custom line item version is applied.</p>
-    pub fn set_end_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_end_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_billing_period = input;
         self
     }

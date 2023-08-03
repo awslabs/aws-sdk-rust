@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UndeploySystemInstanceOutput {
 }
 impl UndeploySystemInstanceOutput {
     /// Creates a new builder-style object to manufacture [`UndeploySystemInstanceOutput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceOutputBuilder {
         crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UndeploySystemInstanceOutput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UndeploySystemInstanceOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UndeploySystemInstanceOutputBuilder {
         self
     }
     /// <p>An object that contains summary information about the system instance that was removed from its target.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemInstanceSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SystemInstanceSummary>) -> Self {
         self.summary = input;
         self
     }

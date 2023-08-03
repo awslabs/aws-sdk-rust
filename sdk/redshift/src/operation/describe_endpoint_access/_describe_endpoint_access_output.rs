@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeEndpointAccessOutput {
 }
 impl DescribeEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointAccessOutput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessOutputBuilder {
         crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointAccessOutput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointAccessOutputBuilder {
-    pub(crate) endpoint_access_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>>,
+    pub(crate) endpoint_access_list: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeEndpointAccessOutputBuilder {
         self
     }
     /// <p>The list of endpoints with access to the cluster.</p>
-    pub fn set_endpoint_access_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>>,
-    ) -> Self {
+    pub fn set_endpoint_access_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>>) -> Self {
         self.endpoint_access_list = input;
         self
     }
     /// <p>The list of endpoints with access to the cluster.</p>
-    pub fn get_endpoint_access_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>> {
+    pub fn get_endpoint_access_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>> {
         &self.endpoint_access_list
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>

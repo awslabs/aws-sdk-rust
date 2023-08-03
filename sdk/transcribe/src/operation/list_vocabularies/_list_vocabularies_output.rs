@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for ListVocabulariesOutput {
 }
 impl ListVocabulariesOutput {
     /// Creates a new builder-style object to manufacture [`ListVocabulariesOutput`](crate::operation::list_vocabularies::ListVocabulariesOutput).
-    pub fn builder() -> crate::operation::list_vocabularies::builders::ListVocabulariesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vocabularies::builders::ListVocabulariesOutputBuilder {
         crate::operation::list_vocabularies::builders::ListVocabulariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVocabulariesOutput`](crate::operation::list_vocabularies::ListVocabulariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVocabulariesOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VocabularyState>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +56,7 @@ impl ListVocabulariesOutputBuilder {
         self
     }
     /// <p>Lists all custom vocabularies that have the status specified in your request. Vocabularies are ordered by creation date, with the newest vocabulary first.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyState>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VocabularyState>) -> Self {
         self.status = input;
         self
     }
@@ -96,17 +90,12 @@ impl ListVocabulariesOutputBuilder {
         self
     }
     /// <p>Provides information about the custom vocabularies that match the criteria specified in your request.</p>
-    pub fn set_vocabularies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyInfo>>,
-    ) -> Self {
+    pub fn set_vocabularies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyInfo>>) -> Self {
         self.vocabularies = input;
         self
     }
     /// <p>Provides information about the custom vocabularies that match the criteria specified in your request.</p>
-    pub fn get_vocabularies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularyInfo>> {
+    pub fn get_vocabularies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularyInfo>> {
         &self.vocabularies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

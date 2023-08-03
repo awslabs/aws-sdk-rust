@@ -8,11 +8,9 @@ pub fn ser_external_location(
             object_4.key("s3Location").string(inner.as_str());
         }
         crate::types::ExternalLocation::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ExternalLocation",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ExternalLocation",
+            ))
         }
     }
     Ok(())

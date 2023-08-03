@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`thing_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupFluentBuilder::thing_arn) / [`set_thing_arn(Option<String>)`](crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupFluentBuilder::set_thing_arn): <p>The ARN of the thing to remove from the group.</p>
     /// - On success, responds with [`RemoveThingFromThingGroupOutput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput)
     /// - On failure, responds with [`SdkError<RemoveThingFromThingGroupError>`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError)
-    pub fn remove_thing_from_thing_group(&self) -> crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupFluentBuilder{
+    pub fn remove_thing_from_thing_group(&self) -> crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupFluentBuilder {
         crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupFluentBuilder::new(self.handle.clone())
     }
 }

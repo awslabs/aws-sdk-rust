@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`RegisterTransitGatewayMulticastGroupMembersOutput`](crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput) with field(s):
     ///   - [`registered_multicast_group_members(Option<TransitGatewayMulticastRegisteredGroupMembers>)`](crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput::registered_multicast_group_members): <p>Information about the registered transit gateway multicast group members.</p>
     /// - On failure, responds with [`SdkError<RegisterTransitGatewayMulticastGroupMembersError>`](crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError)
-    pub fn register_transit_gateway_multicast_group_members(&self) -> crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersFluentBuilder{
-        crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersFluentBuilder::new(self.handle.clone())
+    pub fn register_transit_gateway_multicast_group_members(
+        &self,
+    ) -> crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersFluentBuilder {
+        crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

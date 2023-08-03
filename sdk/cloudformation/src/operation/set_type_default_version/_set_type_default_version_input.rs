@@ -42,18 +42,14 @@ impl SetTypeDefaultVersionInput {
 }
 impl SetTypeDefaultVersionInput {
     /// Creates a new builder-style object to manufacture [`SetTypeDefaultVersionInput`](crate::operation::set_type_default_version::SetTypeDefaultVersionInput).
-    pub fn builder(
-    ) -> crate::operation::set_type_default_version::builders::SetTypeDefaultVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_type_default_version::builders::SetTypeDefaultVersionInputBuilder {
         crate::operation::set_type_default_version::builders::SetTypeDefaultVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`SetTypeDefaultVersionInput`](crate::operation::set_type_default_version::SetTypeDefaultVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTypeDefaultVersionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RegistryType>,
@@ -129,17 +125,13 @@ impl SetTypeDefaultVersionInputBuilder {
     /// Consumes the builder and constructs a [`SetTypeDefaultVersionInput`](crate::operation::set_type_default_version::SetTypeDefaultVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_type_default_version::SetTypeDefaultVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_type_default_version::SetTypeDefaultVersionInput {
-                arn: self.arn,
-                r#type: self.r#type,
-                type_name: self.type_name,
-                version_id: self.version_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_type_default_version::SetTypeDefaultVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_type_default_version::SetTypeDefaultVersionInput {
+            arn: self.arn,
+            r#type: self.r#type,
+            type_name: self.type_name,
+            version_id: self.version_id,
+        })
     }
 }

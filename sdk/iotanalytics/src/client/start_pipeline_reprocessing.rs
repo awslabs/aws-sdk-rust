@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartPipelineReprocessingOutput`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput) with field(s):
     ///   - [`reprocessing_id(Option<String>)`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput::reprocessing_id): <p>The ID of the pipeline reprocessing activity that was started.</p>
     /// - On failure, responds with [`SdkError<StartPipelineReprocessingError>`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError)
-    pub fn start_pipeline_reprocessing(&self) -> crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingFluentBuilder{
+    pub fn start_pipeline_reprocessing(&self) -> crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingFluentBuilder {
         crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl MetricLevelImpact {
 
 /// A builder for [`MetricLevelImpact`](crate::types::MetricLevelImpact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricLevelImpactBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) num_time_series: ::std::option::Option<i32>,
@@ -80,17 +78,12 @@ impl MetricLevelImpactBuilder {
         self
     }
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
-    pub fn set_contribution_matrix(
-        mut self,
-        input: ::std::option::Option<crate::types::ContributionMatrix>,
-    ) -> Self {
+    pub fn set_contribution_matrix(mut self, input: ::std::option::Option<crate::types::ContributionMatrix>) -> Self {
         self.contribution_matrix = input;
         self
     }
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
-    pub fn get_contribution_matrix(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContributionMatrix> {
+    pub fn get_contribution_matrix(&self) -> &::std::option::Option<crate::types::ContributionMatrix> {
         &self.contribution_matrix
     }
     /// Consumes the builder and constructs a [`MetricLevelImpact`](crate::types::MetricLevelImpact).

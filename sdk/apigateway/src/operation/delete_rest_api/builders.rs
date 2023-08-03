@@ -10,10 +10,7 @@ impl DeleteRestApiInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_rest_api::DeleteRestApiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rest_api::DeleteRestApiError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rest_api::DeleteRestApiError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_rest_api();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteRestApiFluentBuilder {
         }
     }
     /// Access the DeleteRestApi as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_rest_api::builders::DeleteRestApiInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_rest_api::builders::DeleteRestApiInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DeleteRestApiFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

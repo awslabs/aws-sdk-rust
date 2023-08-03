@@ -15,18 +15,14 @@ impl GetAppliedSchemaVersionInput {
 }
 impl GetAppliedSchemaVersionInput {
     /// Creates a new builder-style object to manufacture [`GetAppliedSchemaVersionInput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput).
-    pub fn builder(
-    ) -> crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionInputBuilder {
         crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppliedSchemaVersionInput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppliedSchemaVersionInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetAppliedSchemaVersionInputBuilder {
         crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput {
-                schema_arn: self.schema_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput { schema_arn: self.schema_arn })
     }
 }

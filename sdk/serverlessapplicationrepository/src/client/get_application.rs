@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`verified_author_url(Option<String>)`](crate::operation::get_application::GetApplicationOutput::verified_author_url): <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
     ///   - [`version(Option<Version>)`](crate::operation::get_application::GetApplicationOutput::version): <p>Version information about the application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
-    pub fn get_application(
-        &self,
-    ) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
-        crate::operation::get_application::builders::GetApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
+        crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())
     }
 }

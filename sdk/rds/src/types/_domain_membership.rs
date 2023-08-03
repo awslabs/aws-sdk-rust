@@ -65,9 +65,7 @@ impl DomainMembership {
 
 /// A builder for [`DomainMembership`](crate::types::DomainMembership).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainMembershipBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -121,18 +119,12 @@ impl DomainMembershipBuilder {
         &self.fqdn
     }
     /// <p>The name of the IAM role used when making API calls to the Directory Service.</p>
-    pub fn iam_role_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IAM role used when making API calls to the Directory Service.</p>
-    pub fn set_iam_role_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_name = input;
         self
     }
@@ -155,18 +147,12 @@ impl DomainMembershipBuilder {
         &self.ou
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user that's a member of the domain.</p>
-    pub fn auth_secret_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auth_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_secret_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user that's a member of the domain.</p>
-    pub fn set_auth_secret_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auth_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_secret_arn = input;
         self
     }
@@ -186,10 +172,7 @@ impl DomainMembershipBuilder {
         self
     }
     /// <p>The IPv4 DNS IP addresses of the primary and secondary Active Directory domain controllers.</p>
-    pub fn set_dns_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ips = input;
         self
     }

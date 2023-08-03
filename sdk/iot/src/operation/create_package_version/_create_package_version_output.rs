@@ -17,9 +17,7 @@ pub struct CreatePackageVersionOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
@@ -46,11 +44,7 @@ impl CreatePackageVersionOutput {
         self.description.as_deref()
     }
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
@@ -83,8 +77,7 @@ impl ::aws_http::request_id::RequestId for CreatePackageVersionOutput {
 }
 impl CreatePackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePackageVersionOutput`](crate::operation::create_package_version::CreatePackageVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_package_version::builders::CreatePackageVersionOutputBuilder {
+    pub fn builder() -> crate::operation::create_package_version::builders::CreatePackageVersionOutputBuilder {
         crate::operation::create_package_version::builders::CreatePackageVersionOutputBuilder::default()
     }
 }
@@ -97,27 +90,19 @@ pub struct CreatePackageVersionOutputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::PackageVersionStatus>,
     pub(crate) error_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePackageVersionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
-    pub fn package_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
-    pub fn set_package_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version_arn = input;
         self
     }
@@ -172,32 +157,19 @@ impl CreatePackageVersionOutputBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
@@ -206,10 +178,7 @@ impl CreatePackageVersionOutputBuilder {
         self
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.status = input;
         self
     }

@@ -30,7 +30,7 @@ impl GetRateBasedRuleManagedKeysInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysInputBuilder,
+    inner: crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysInputBuilder,
 }
 impl GetRateBasedRuleManagedKeysFluentBuilder {
     /// Creates a new `GetRateBasedRuleManagedKeys`.
@@ -41,7 +41,7 @@ impl GetRateBasedRuleManagedKeysFluentBuilder {
         }
     }
     /// Access the GetRateBasedRuleManagedKeys as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl GetRateBasedRuleManagedKeysFluentBuilder {
             crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl GetRateBasedRuleManagedKeysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl GetRateBasedRuleManagedKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl GetRateBasedRuleManagedKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl GetRateBasedRuleManagedKeysFluentBuilder {
             crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError>,
     > {
         self.customize_middleware().await
     }

@@ -23,9 +23,7 @@ impl InputWhitelistRuleCidr {
 
 /// A builder for [`InputWhitelistRuleCidr`](crate::types::InputWhitelistRuleCidr).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputWhitelistRuleCidrBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
 }

@@ -19,9 +19,7 @@ impl DeleteReportOutput {
 
 /// A builder for [`DeleteReportOutput`](crate::operation::delete_report::DeleteReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReportOutputBuilder {
     _request_id: Option<String>,
 }

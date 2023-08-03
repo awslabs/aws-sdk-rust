@@ -29,18 +29,14 @@ impl DeprovisionIpamPoolCidrInput {
 }
 impl DeprovisionIpamPoolCidrInput {
     /// Creates a new builder-style object to manufacture [`DeprovisionIpamPoolCidrInput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput).
-    pub fn builder(
-    ) -> crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder
-    {
+    pub fn builder() -> crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder {
         crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder::default()
     }
 }
 
 /// A builder for [`DeprovisionIpamPoolCidrInput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprovisionIpamPoolCidrInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl DeprovisionIpamPoolCidrInputBuilder {
         crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput {
-                dry_run: self.dry_run,
-                ipam_pool_id: self.ipam_pool_id,
-                cidr: self.cidr,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput {
+            dry_run: self.dry_run,
+            ipam_pool_id: self.ipam_pool_id,
+            cidr: self.cidr,
+        })
     }
 }

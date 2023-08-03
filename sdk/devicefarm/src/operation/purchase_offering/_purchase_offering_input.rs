@@ -30,17 +30,14 @@ impl PurchaseOfferingInput {
 }
 impl PurchaseOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
-    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder
-    {
+    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder {
         crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseOfferingInputBuilder {
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) quantity: ::std::option::Option<i32>,
@@ -76,18 +73,12 @@ impl PurchaseOfferingInputBuilder {
         &self.quantity
     }
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
-    pub fn offering_promotion_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_promotion_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_promotion_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
-    pub fn set_offering_promotion_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_promotion_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_promotion_id = input;
         self
     }
@@ -98,10 +89,7 @@ impl PurchaseOfferingInputBuilder {
     /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::purchase_offering::PurchaseOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::purchase_offering::PurchaseOfferingInput {
             offering_id: self.offering_id,
             quantity: self.quantity,

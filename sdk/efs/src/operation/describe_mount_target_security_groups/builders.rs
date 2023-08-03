@@ -5,16 +5,16 @@ pub use crate::operation::describe_mount_target_security_groups::_describe_mount
 
 impl DescribeMountTargetSecurityGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_mount_target_security_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -31,7 +31,7 @@ impl DescribeMountTargetSecurityGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMountTargetSecurityGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsInputBuilder,
+    inner: crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsInputBuilder,
 }
 impl DescribeMountTargetSecurityGroupsFluentBuilder {
     /// Creates a new `DescribeMountTargetSecurityGroups`.
@@ -42,15 +42,20 @@ impl DescribeMountTargetSecurityGroupsFluentBuilder {
         }
     }
     /// Access the DescribeMountTargetSecurityGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -59,16 +64,17 @@ impl DescribeMountTargetSecurityGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -86,32 +92,35 @@ impl DescribeMountTargetSecurityGroupsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
-    pub fn mount_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mount_target_id(input.into());
         self
     }
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
-    pub fn set_mount_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mount_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mount_target_id(input);
         self
     }

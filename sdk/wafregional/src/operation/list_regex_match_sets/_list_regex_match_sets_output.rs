@@ -8,8 +8,7 @@ pub struct ListRegexMatchSetsOutput {
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
     #[doc(hidden)]
-    pub regex_match_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetSummary>>,
+    pub regex_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListRegexMatchSetsOutput {
@@ -29,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListRegexMatchSetsOutput {
 }
 impl ListRegexMatchSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListRegexMatchSetsOutput`](crate::operation::list_regex_match_sets::ListRegexMatchSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsOutputBuilder {
-        crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsOutputBuilder {
+        crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRegexMatchSetsOutput`](crate::operation::list_regex_match_sets::ListRegexMatchSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegexMatchSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) regex_match_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetSummary>>,
+    pub(crate) regex_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListRegexMatchSetsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListRegexMatchSetsOutputBuilder {
         self
     }
     /// <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
-    pub fn set_regex_match_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetSummary>>,
-    ) -> Self {
+    pub fn set_regex_match_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetSummary>>) -> Self {
         self.regex_match_sets = input;
         self
     }
     /// <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
-    pub fn get_regex_match_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetSummary>> {
+    pub fn get_regex_match_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetSummary>> {
         &self.regex_match_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

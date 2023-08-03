@@ -10,10 +10,7 @@ impl GetIceServerConfigInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_ice_server_config::GetIceServerConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ice_server_config::GetIceServerConfigError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ice_server_config::GetIceServerConfigError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_ice_server_config();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetIceServerConfigFluentBuilder {
         }
     }
     /// Access the GetIceServerConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetIceServerConfigFluentBuilder {
             crate::operation::get_ice_server_config::GetIceServerConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ice_server_config::GetIceServerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ice_server_config::GetIceServerConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetIceServerConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetIceServerConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ice_server_config::GetIceServerConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ice_server_config::GetIceServerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ice_server_config::GetIceServerConfigError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetIceServerConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ice_server_config::GetIceServerConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ice_server_config::GetIceServerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ice_server_config::GetIceServerConfigError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl GetIceServerConfigFluentBuilder {
             crate::operation::get_ice_server_config::GetIceServerConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ice_server_config::GetIceServerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ice_server_config::GetIceServerConfigError>,
     > {
         self.customize_middleware().await
     }

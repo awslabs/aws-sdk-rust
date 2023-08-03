@@ -26,7 +26,7 @@ impl StartOnDemandAppReplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartOnDemandAppReplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationInputBuilder,
+    inner: crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationInputBuilder,
 }
 impl StartOnDemandAppReplicationFluentBuilder {
     /// Creates a new `StartOnDemandAppReplication`.
@@ -37,7 +37,7 @@ impl StartOnDemandAppReplicationFluentBuilder {
         }
     }
     /// Access the StartOnDemandAppReplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartOnDemandAppReplicationFluentBuilder {
             crate::operation::start_on_demand_app_replication::StartOnDemandAppReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartOnDemandAppReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartOnDemandAppReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartOnDemandAppReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartOnDemandAppReplicationFluentBuilder {
             crate::operation::start_on_demand_app_replication::StartOnDemandAppReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError>,
     > {
         self.customize_middleware().await
     }

@@ -37,10 +37,7 @@ impl PutImageRecipePolicyFluentBuilder {
         }
     }
     /// Access the PutImageRecipePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl PutImageRecipePolicyFluentBuilder {
             crate::operation::put_image_recipe_policy::PutImageRecipePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_recipe_policy::PutImageRecipePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl PutImageRecipePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl PutImageRecipePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_image_recipe_policy::PutImageRecipePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_recipe_policy::PutImageRecipePolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl PutImageRecipePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_image_recipe_policy::PutImageRecipePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_recipe_policy::PutImageRecipePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl PutImageRecipePolicyFluentBuilder {
             crate::operation::put_image_recipe_policy::PutImageRecipePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_recipe_policy::PutImageRecipePolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
-    pub fn image_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_recipe_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
-    pub fn set_image_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_recipe_arn(input);
         self
     }

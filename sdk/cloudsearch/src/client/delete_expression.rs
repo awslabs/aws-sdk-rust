@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteExpressionOutput`](crate::operation::delete_expression::DeleteExpressionOutput) with field(s):
     ///   - [`expression(Option<ExpressionStatus>)`](crate::operation::delete_expression::DeleteExpressionOutput::expression): <p>The status of the expression being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteExpressionError>`](crate::operation::delete_expression::DeleteExpressionError)
-    pub fn delete_expression(
-        &self,
-    ) -> crate::operation::delete_expression::builders::DeleteExpressionFluentBuilder {
-        crate::operation::delete_expression::builders::DeleteExpressionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_expression(&self) -> crate::operation::delete_expression::builders::DeleteExpressionFluentBuilder {
+        crate::operation::delete_expression::builders::DeleteExpressionFluentBuilder::new(self.handle.clone())
     }
 }

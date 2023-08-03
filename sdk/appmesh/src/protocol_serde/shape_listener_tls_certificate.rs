@@ -23,11 +23,9 @@ pub fn ser_listener_tls_certificate(
             object_3.finish();
         }
         crate::types::ListenerTlsCertificate::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ListenerTlsCertificate",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ListenerTlsCertificate",
+            ))
         }
     }
     Ok(())
@@ -35,17 +33,9 @@ pub fn ser_listener_tls_certificate(
 
 pub(crate) fn de_listener_tls_certificate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ListenerTlsCertificate>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ListenerTlsCertificate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -55,53 +45,41 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "acm" => {
-                                Some(crate::types::ListenerTlsCertificate::Acm(
-                                    crate::protocol_serde::shape_listener_tls_acm_certificate::de_listener_tls_acm_certificate(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'acm' cannot be null"))?
-                                ))
-                            }
-                            "file" => {
-                                Some(crate::types::ListenerTlsCertificate::File(
-                                    crate::protocol_serde::shape_listener_tls_file_certificate::de_listener_tls_file_certificate(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'file' cannot be null"))?
-                                ))
-                            }
-                            "sds" => {
-                                Some(crate::types::ListenerTlsCertificate::Sds(
-                                    crate::protocol_serde::shape_listener_tls_sds_certificate::de_listener_tls_sds_certificate(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sds' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::ListenerTlsCertificate::Unknown)
-                                                                    }
-                        };
+                        "acm" => Some(crate::types::ListenerTlsCertificate::Acm(
+                            crate::protocol_serde::shape_listener_tls_acm_certificate::de_listener_tls_acm_certificate(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'acm' cannot be null"))?,
+                        )),
+                        "file" => Some(crate::types::ListenerTlsCertificate::File(
+                            crate::protocol_serde::shape_listener_tls_file_certificate::de_listener_tls_file_certificate(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'file' cannot be null"))?,
+                        )),
+                        "sds" => Some(crate::types::ListenerTlsCertificate::Sds(
+                            crate::protocol_serde::shape_listener_tls_sds_certificate::de_listener_tls_sds_certificate(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sds' cannot be null"))?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::ListenerTlsCertificate::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

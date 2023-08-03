@@ -29,27 +29,19 @@ impl GetExtensionInput {
 
 /// A builder for [`GetExtensionInput`](crate::operation::get_extension::GetExtensionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExtensionInputBuilder {
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i32>,
 }
 impl GetExtensionInputBuilder {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn set_extension_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extension_identifier = input;
         self
     }
@@ -72,12 +64,7 @@ impl GetExtensionInputBuilder {
         &self.version_number
     }
     /// Consumes the builder and constructs a [`GetExtensionInput`](crate::operation::get_extension::GetExtensionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_extension::GetExtensionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_extension::GetExtensionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_extension::GetExtensionInput {
             extension_identifier: self.extension_identifier,
             version_number: self.version_number,

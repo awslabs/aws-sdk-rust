@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`blueprints(Option<Vec<String>>)`](crate::operation::list_blueprints::ListBlueprintsOutput::blueprints): <p>List of names of blueprints in the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_blueprints::ListBlueprintsOutput::next_token): <p>A continuation token, if not all blueprint names have been returned.</p>
     /// - On failure, responds with [`SdkError<ListBlueprintsError>`](crate::operation::list_blueprints::ListBlueprintsError)
-    pub fn list_blueprints(
-        &self,
-    ) -> crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder {
-        crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_blueprints(&self) -> crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder {
+        crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::new(self.handle.clone())
     }
 }

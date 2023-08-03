@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`initial_contact_id(impl ::std::convert::Into<String>)`](crate::operation::stop_contact_recording::builders::StopContactRecordingFluentBuilder::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::operation::stop_contact_recording::builders::StopContactRecordingFluentBuilder::set_initial_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     /// - On success, responds with [`StopContactRecordingOutput`](crate::operation::stop_contact_recording::StopContactRecordingOutput)
     /// - On failure, responds with [`SdkError<StopContactRecordingError>`](crate::operation::stop_contact_recording::StopContactRecordingError)
-    pub fn stop_contact_recording(
-        &self,
-    ) -> crate::operation::stop_contact_recording::builders::StopContactRecordingFluentBuilder {
-        crate::operation::stop_contact_recording::builders::StopContactRecordingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_contact_recording(&self) -> crate::operation::stop_contact_recording::builders::StopContactRecordingFluentBuilder {
+        crate::operation::stop_contact_recording::builders::StopContactRecordingFluentBuilder::new(self.handle.clone())
     }
 }

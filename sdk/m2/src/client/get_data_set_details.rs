@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::last_updated_time): <p>The last time the data set was updated.</p>
     ///   - [`last_referenced_time(Option<DateTime>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::last_referenced_time): <p>The last time the data set was referenced.</p>
     /// - On failure, responds with [`SdkError<GetDataSetDetailsError>`](crate::operation::get_data_set_details::GetDataSetDetailsError)
-    pub fn get_data_set_details(
-        &self,
-    ) -> crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder {
-        crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_data_set_details(&self) -> crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder {
+        crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::new(self.handle.clone())
     }
 }

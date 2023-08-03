@@ -39,9 +39,7 @@ impl ModifyGlobalClusterFluentBuilder {
         }
     }
     /// Access the ModifyGlobalCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl ModifyGlobalClusterFluentBuilder {
             crate::operation::modify_global_cluster::ModifyGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_cluster::ModifyGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_cluster::ModifyGlobalClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl ModifyGlobalClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl ModifyGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_global_cluster::ModifyGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_cluster::ModifyGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_cluster::ModifyGlobalClusterError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl ModifyGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_global_cluster::ModifyGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_cluster::ModifyGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_cluster::ModifyGlobalClusterError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl ModifyGlobalClusterFluentBuilder {
             crate::operation::modify_global_cluster::ModifyGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_cluster::ModifyGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_cluster::ModifyGlobalClusterError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +116,7 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
     /// </ul>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
@@ -141,10 +125,7 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
     /// </ul>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
@@ -161,10 +142,7 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn new_global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_global_cluster_identifier(input.into());
         self
     }
@@ -173,10 +151,7 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn set_new_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_global_cluster_identifier(input);
         self
     }
@@ -185,9 +160,7 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn get_new_global_cluster_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_new_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_new_global_cluster_identifier()
     }
     /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>

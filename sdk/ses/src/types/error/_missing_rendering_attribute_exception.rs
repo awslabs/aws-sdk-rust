@@ -42,9 +42,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::MissingRendering
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MissingRenderingAttributeException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MissingRenderingAttributeException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -58,9 +56,7 @@ impl MissingRenderingAttributeException {
 
 /// A builder for [`MissingRenderingAttributeException`](crate::types::error::MissingRenderingAttributeException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MissingRenderingAttributeExceptionBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -68,18 +64,12 @@ pub struct MissingRenderingAttributeExceptionBuilder {
 }
 impl MissingRenderingAttributeExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -108,10 +98,7 @@ impl MissingRenderingAttributeExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

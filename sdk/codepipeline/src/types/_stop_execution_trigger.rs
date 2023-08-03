@@ -23,9 +23,7 @@ impl StopExecutionTrigger {
 
 /// A builder for [`StopExecutionTrigger`](crate::types::StopExecutionTrigger).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopExecutionTriggerBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl StopExecutionTriggerBuilder {
     }
     /// Consumes the builder and constructs a [`StopExecutionTrigger`](crate::types::StopExecutionTrigger).
     pub fn build(self) -> crate::types::StopExecutionTrigger {
-        crate::types::StopExecutionTrigger {
-            reason: self.reason,
-        }
+        crate::types::StopExecutionTrigger { reason: self.reason }
     }
 }

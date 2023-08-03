@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAssessmentControlOutput {
 }
 impl UpdateAssessmentControlOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssessmentControlOutput`](crate::operation::update_assessment_control::UpdateAssessmentControlOutput).
-    pub fn builder(
-    ) -> crate::operation::update_assessment_control::builders::UpdateAssessmentControlOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_assessment_control::builders::UpdateAssessmentControlOutputBuilder {
         crate::operation::update_assessment_control::builders::UpdateAssessmentControlOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssessmentControlOutput`](crate::operation::update_assessment_control::UpdateAssessmentControlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssessmentControlOutputBuilder {
     pub(crate) control: ::std::option::Option<crate::types::AssessmentControl>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateAssessmentControlOutputBuilder {
         self
     }
     /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
-    pub fn set_control(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentControl>,
-    ) -> Self {
+    pub fn set_control(mut self, input: ::std::option::Option<crate::types::AssessmentControl>) -> Self {
         self.control = input;
         self
     }
@@ -65,9 +58,7 @@ impl UpdateAssessmentControlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentControlOutput`](crate::operation::update_assessment_control::UpdateAssessmentControlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_assessment_control::UpdateAssessmentControlOutput {
+    pub fn build(self) -> crate::operation::update_assessment_control::UpdateAssessmentControlOutput {
         crate::operation::update_assessment_control::UpdateAssessmentControlOutput {
             control: self.control,
             _request_id: self._request_id,

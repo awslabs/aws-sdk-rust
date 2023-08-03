@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeListenerOutput`](crate::operation::describe_listener::DescribeListenerOutput) with field(s):
     ///   - [`listener(Option<Listener>)`](crate::operation::describe_listener::DescribeListenerOutput::listener): <p>The description of a listener.</p>
     /// - On failure, responds with [`SdkError<DescribeListenerError>`](crate::operation::describe_listener::DescribeListenerError)
-    pub fn describe_listener(
-        &self,
-    ) -> crate::operation::describe_listener::builders::DescribeListenerFluentBuilder {
-        crate::operation::describe_listener::builders::DescribeListenerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_listener(&self) -> crate::operation::describe_listener::builders::DescribeListenerFluentBuilder {
+        crate::operation::describe_listener::builders::DescribeListenerFluentBuilder::new(self.handle.clone())
     }
 }

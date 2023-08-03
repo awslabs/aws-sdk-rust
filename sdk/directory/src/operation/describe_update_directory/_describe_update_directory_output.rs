@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeUpdateDirectoryOutput {
 }
 impl DescribeUpdateDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUpdateDirectoryOutput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryOutputBuilder {
         crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUpdateDirectoryOutput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUpdateDirectoryOutputBuilder {
-    pub(crate) update_activities:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>>,
+    pub(crate) update_activities: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeUpdateDirectoryOutputBuilder {
         self
     }
     /// <p> The list of update activities on a directory for the requested update type. </p>
-    pub fn set_update_activities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>>,
-    ) -> Self {
+    pub fn set_update_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>>) -> Self {
         self.update_activities = input;
         self
     }
     /// <p> The list of update activities on a directory for the requested update type. </p>
-    pub fn get_update_activities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>> {
+    pub fn get_update_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>> {
         &self.update_activities
     }
     /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
@@ -96,9 +86,7 @@ impl DescribeUpdateDirectoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeUpdateDirectoryOutput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput {
+    pub fn build(self) -> crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput {
         crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput {
             update_activities: self.update_activities,
             next_token: self.next_token,

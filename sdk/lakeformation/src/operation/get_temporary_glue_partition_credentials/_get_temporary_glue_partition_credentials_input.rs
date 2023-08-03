@@ -20,8 +20,7 @@ pub struct GetTemporaryGluePartitionCredentialsInput {
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
     #[doc(hidden)]
-    pub supported_permission_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetTemporaryGluePartitionCredentialsInput {
     /// <p>The ARN of the partitions' table.</p>
@@ -45,32 +44,27 @@ impl GetTemporaryGluePartitionCredentialsInput {
         self.audit_context.as_ref()
     }
     /// <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    pub fn supported_permission_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PermissionType]> {
+    pub fn supported_permission_types(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
         self.supported_permission_types.as_deref()
     }
 }
 impl GetTemporaryGluePartitionCredentialsInput {
     /// Creates a new builder-style object to manufacture [`GetTemporaryGluePartitionCredentialsInput`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsInput).
-    pub fn builder() -> crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsInputBuilder {
         crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTemporaryGluePartitionCredentialsInput`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemporaryGluePartitionCredentialsInputBuilder {
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) partition: ::std::option::Option<crate::types::PartitionValueList>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
-    pub(crate) supported_permission_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetTemporaryGluePartitionCredentialsInputBuilder {
     /// <p>The ARN of the partitions' table.</p>
@@ -93,10 +87,7 @@ impl GetTemporaryGluePartitionCredentialsInputBuilder {
         self
     }
     /// <p>A list of partition values identifying a single partition.</p>
-    pub fn set_partition(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionValueList>,
-    ) -> Self {
+    pub fn set_partition(mut self, input: ::std::option::Option<crate::types::PartitionValueList>) -> Self {
         self.partition = input;
         self
     }
@@ -116,17 +107,12 @@ impl GetTemporaryGluePartitionCredentialsInputBuilder {
         self
     }
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
     /// <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
@@ -149,10 +135,7 @@ impl GetTemporaryGluePartitionCredentialsInputBuilder {
         self
     }
     /// <p>A structure representing context to access a resource (column names, query ID, etc).</p>
-    pub fn set_audit_context(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditContext>,
-    ) -> Self {
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
         self.audit_context = input;
         self
     }
@@ -172,36 +155,30 @@ impl GetTemporaryGluePartitionCredentialsInputBuilder {
         self
     }
     /// <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    pub fn set_supported_permission_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.supported_permission_types = input;
         self
     }
     /// <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    pub fn get_supported_permission_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.supported_permission_types
     }
     /// Consumes the builder and constructs a [`GetTemporaryGluePartitionCredentialsInput`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsInput {
-                table_arn: self.table_arn
-                ,
-                partition: self.partition
-                ,
-                permissions: self.permissions
-                ,
-                duration_seconds: self.duration_seconds
-                ,
-                audit_context: self.audit_context
-                ,
-                supported_permission_types: self.supported_permission_types
-                ,
-            }
+                table_arn: self.table_arn,
+                partition: self.partition,
+                permissions: self.permissions,
+                duration_seconds: self.duration_seconds,
+                audit_context: self.audit_context,
+                supported_permission_types: self.supported_permission_types,
+            },
         )
     }
 }

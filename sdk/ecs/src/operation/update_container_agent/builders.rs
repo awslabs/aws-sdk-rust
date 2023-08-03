@@ -42,9 +42,7 @@ impl UpdateContainerAgentFluentBuilder {
         }
     }
     /// Access the UpdateContainerAgent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_container_agent::builders::UpdateContainerAgentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_container_agent::builders::UpdateContainerAgentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl UpdateContainerAgentFluentBuilder {
             crate::operation::update_container_agent::UpdateContainerAgent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_container_agent::UpdateContainerAgentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_container_agent::UpdateContainerAgentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl UpdateContainerAgentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl UpdateContainerAgentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_container_agent::UpdateContainerAgentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_container_agent::UpdateContainerAgentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_container_agent::UpdateContainerAgentError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl UpdateContainerAgentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_container_agent::UpdateContainerAgentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_container_agent::UpdateContainerAgentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_container_agent::UpdateContainerAgentError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +110,7 @@ impl UpdateContainerAgentFluentBuilder {
             crate::operation::update_container_agent::UpdateContainerAgent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_container_agent::UpdateContainerAgentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_container_agent::UpdateContainerAgentError>,
     > {
         self.customize_middleware().await
     }
@@ -142,18 +129,12 @@ impl UpdateContainerAgentFluentBuilder {
         self.inner.get_cluster()
     }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
-    pub fn container_instance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_instance(input.into());
         self
     }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_instance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_instance(input);
         self
     }

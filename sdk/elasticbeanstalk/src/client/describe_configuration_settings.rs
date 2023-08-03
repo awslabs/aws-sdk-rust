@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeConfigurationSettingsOutput`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput) with field(s):
     ///   - [`configuration_settings(Option<Vec<ConfigurationSettingsDescription>>)`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput::configuration_settings): <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationSettingsError>`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError)
-    pub fn describe_configuration_settings(&self) -> crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsFluentBuilder{
+    pub fn describe_configuration_settings(
+        &self,
+    ) -> crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsFluentBuilder {
         crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsFluentBuilder::new(self.handle.clone())
     }
 }

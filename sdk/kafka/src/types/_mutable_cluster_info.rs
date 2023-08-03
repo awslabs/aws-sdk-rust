@@ -6,8 +6,7 @@
 pub struct MutableClusterInfo {
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
     #[doc(hidden)]
-    pub broker_ebs_volume_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>,
+    pub broker_ebs_volume_info: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>,
     /// <p>Information about the changes in the configuration of the brokers.</p>
     #[doc(hidden)]
     pub configuration_info: ::std::option::Option<crate::types::ConfigurationInfo>,
@@ -44,9 +43,7 @@ pub struct MutableClusterInfo {
 }
 impl MutableClusterInfo {
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
-    pub fn broker_ebs_volume_info(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BrokerEbsVolumeInfo]> {
+    pub fn broker_ebs_volume_info(&self) -> ::std::option::Option<&[crate::types::BrokerEbsVolumeInfo]> {
         self.broker_ebs_volume_info.as_deref()
     }
     /// <p>Information about the changes in the configuration of the brokers.</p>
@@ -78,9 +75,7 @@ impl MutableClusterInfo {
         self.instance_type.as_deref()
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn client_authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClientAuthentication> {
+    pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::ClientAuthentication> {
         self.client_authentication.as_ref()
     }
     /// <p>Includes all encryption-related information.</p>
@@ -105,12 +100,9 @@ impl MutableClusterInfo {
 
 /// A builder for [`MutableClusterInfo`](crate::types::MutableClusterInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MutableClusterInfoBuilder {
-    pub(crate) broker_ebs_volume_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>,
+    pub(crate) broker_ebs_volume_info: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>,
     pub(crate) configuration_info: ::std::option::Option<crate::types::ConfigurationInfo>,
     pub(crate) number_of_broker_nodes: ::std::option::Option<i32>,
     pub(crate) enhanced_monitoring: ::std::option::Option<crate::types::EnhancedMonitoring>,
@@ -136,17 +128,12 @@ impl MutableClusterInfoBuilder {
         self
     }
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
-    pub fn set_broker_ebs_volume_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>,
-    ) -> Self {
+    pub fn set_broker_ebs_volume_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>) -> Self {
         self.broker_ebs_volume_info = input;
         self
     }
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
-    pub fn get_broker_ebs_volume_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>> {
+    pub fn get_broker_ebs_volume_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>> {
         &self.broker_ebs_volume_info
     }
     /// <p>Information about the changes in the configuration of the brokers.</p>
@@ -155,17 +142,12 @@ impl MutableClusterInfoBuilder {
         self
     }
     /// <p>Information about the changes in the configuration of the brokers.</p>
-    pub fn set_configuration_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationInfo>,
-    ) -> Self {
+    pub fn set_configuration_info(mut self, input: ::std::option::Option<crate::types::ConfigurationInfo>) -> Self {
         self.configuration_info = input;
         self
     }
     /// <p>Information about the changes in the configuration of the brokers.</p>
-    pub fn get_configuration_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationInfo> {
+    pub fn get_configuration_info(&self) -> &::std::option::Option<crate::types::ConfigurationInfo> {
         &self.configuration_info
     }
     /// <p>The number of broker nodes in the cluster.</p>
@@ -188,17 +170,12 @@ impl MutableClusterInfoBuilder {
         self
     }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    pub fn set_enhanced_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::EnhancedMonitoring>,
-    ) -> Self {
+    pub fn set_enhanced_monitoring(mut self, input: ::std::option::Option<crate::types::EnhancedMonitoring>) -> Self {
         self.enhanced_monitoring = input;
         self
     }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    pub fn get_enhanced_monitoring(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+    pub fn get_enhanced_monitoring(&self) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
         &self.enhanced_monitoring
     }
     /// <p>The settings for open monitoring.</p>
@@ -207,10 +184,7 @@ impl MutableClusterInfoBuilder {
         self
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn set_open_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenMonitoring>,
-    ) -> Self {
+    pub fn set_open_monitoring(mut self, input: ::std::option::Option<crate::types::OpenMonitoring>) -> Self {
         self.open_monitoring = input;
         self
     }
@@ -219,18 +193,12 @@ impl MutableClusterInfoBuilder {
         &self.open_monitoring
     }
     /// <p>The Apache Kafka version.</p>
-    pub fn kafka_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kafka_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kafka_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Apache Kafka version.</p>
-    pub fn set_kafka_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kafka_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kafka_version = input;
         self
     }
@@ -244,10 +212,7 @@ impl MutableClusterInfoBuilder {
         self
     }
     /// <p>You can configure your MSK cluster to send broker logs to different destination types. This is a container for the configuration details related to broker logs.</p>
-    pub fn set_logging_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingInfo>,
-    ) -> Self {
+    pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.logging_info = input;
         self
     }
@@ -256,18 +221,12 @@ impl MutableClusterInfoBuilder {
         &self.logging_info
     }
     /// <p>Information about the Amazon MSK broker type.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the Amazon MSK broker type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -281,17 +240,12 @@ impl MutableClusterInfoBuilder {
         self
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn set_client_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAuthentication>,
-    ) -> Self {
+    pub fn set_client_authentication(mut self, input: ::std::option::Option<crate::types::ClientAuthentication>) -> Self {
         self.client_authentication = input;
         self
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn get_client_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+    pub fn get_client_authentication(&self) -> &::std::option::Option<crate::types::ClientAuthentication> {
         &self.client_authentication
     }
     /// <p>Includes all encryption-related information.</p>
@@ -300,10 +254,7 @@ impl MutableClusterInfoBuilder {
         self
     }
     /// <p>Includes all encryption-related information.</p>
-    pub fn set_encryption_info(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionInfo>,
-    ) -> Self {
+    pub fn set_encryption_info(mut self, input: ::std::option::Option<crate::types::EncryptionInfo>) -> Self {
         self.encryption_info = input;
         self
     }
@@ -317,10 +268,7 @@ impl MutableClusterInfoBuilder {
         self
     }
     /// <p>Information about the broker access configuration.</p>
-    pub fn set_connectivity_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectivityInfo>,
-    ) -> Self {
+    pub fn set_connectivity_info(mut self, input: ::std::option::Option<crate::types::ConnectivityInfo>) -> Self {
         self.connectivity_info = input;
         self
     }
@@ -334,10 +282,7 @@ impl MutableClusterInfoBuilder {
         self
     }
     /// <p>This controls storage mode for supported storage tiers.</p>
-    pub fn set_storage_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageMode>,
-    ) -> Self {
+    pub fn set_storage_mode(mut self, input: ::std::option::Option<crate::types::StorageMode>) -> Self {
         self.storage_mode = input;
         self
     }

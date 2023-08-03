@@ -28,11 +28,7 @@ impl super::Client {
     ///   - [`resolved_attributes(Option<AutoMlResolvedAttributes>)`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output::resolved_attributes): <p>Returns the resolved attributes used by the AutoML job V2.</p>
     ///   - [`auto_ml_problem_type_config_name(Option<AutoMlProblemTypeConfigName>)`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output::auto_ml_problem_type_config_name): <p>Returns the name of the problem type configuration set for the AutoML job V2.</p>
     /// - On failure, responds with [`SdkError<DescribeAutoMLJobV2Error>`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error)
-    pub fn describe_auto_ml_job_v2(
-        &self,
-    ) -> crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder {
-        crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_auto_ml_job_v2(&self) -> crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder {
+        crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder::new(self.handle.clone())
     }
 }

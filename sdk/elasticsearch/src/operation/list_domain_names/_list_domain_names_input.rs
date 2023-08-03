@@ -23,9 +23,7 @@ impl ListDomainNamesInput {
 
 /// A builder for [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainNamesInputBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
 }
@@ -36,10 +34,7 @@ impl ListDomainNamesInputBuilder {
         self
     }
     /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
         self.engine_type = input;
         self
     }
@@ -50,10 +45,7 @@ impl ListDomainNamesInputBuilder {
     /// Consumes the builder and constructs a [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_domain_names::ListDomainNamesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_domain_names::ListDomainNamesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_domain_names::ListDomainNamesInput {
             engine_type: self.engine_type,
         })

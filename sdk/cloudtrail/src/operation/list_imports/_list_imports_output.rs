@@ -35,9 +35,7 @@ impl ListImportsOutput {
 
 /// A builder for [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportsOutputBuilder {
     pub(crate) imports: ::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListImportsOutputBuilder {
         self
     }
     /// <p> The list of returned imports. </p>
-    pub fn set_imports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>>,
-    ) -> Self {
+    pub fn set_imports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>>) -> Self {
         self.imports = input;
         self
     }
     /// <p> The list of returned imports. </p>
-    pub fn get_imports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>> {
+    pub fn get_imports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>> {
         &self.imports
     }
     /// <p> A token you can use to get the next page of import results. </p>

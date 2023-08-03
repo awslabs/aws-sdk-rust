@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`package_details_list(Option<Vec<PackageDetails>>)`](crate::operation::describe_packages::DescribePackagesOutput::package_details_list): <p>Basic information about a package.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_packages::DescribePackagesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<DescribePackagesError>`](crate::operation::describe_packages::DescribePackagesError)
-    pub fn describe_packages(
-        &self,
-    ) -> crate::operation::describe_packages::builders::DescribePackagesFluentBuilder {
-        crate::operation::describe_packages::builders::DescribePackagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_packages(&self) -> crate::operation::describe_packages::builders::DescribePackagesFluentBuilder {
+        crate::operation::describe_packages::builders::DescribePackagesFluentBuilder::new(self.handle.clone())
     }
 }

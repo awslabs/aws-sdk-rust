@@ -37,10 +37,7 @@ impl ModifyClientPropertiesFluentBuilder {
         }
     }
     /// Access the ModifyClientProperties as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_client_properties::builders::ModifyClientPropertiesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_client_properties::builders::ModifyClientPropertiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ModifyClientPropertiesFluentBuilder {
             crate::operation::modify_client_properties::ModifyClientProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_client_properties::ModifyClientPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_client_properties::ModifyClientPropertiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ModifyClientPropertiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ModifyClientPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_client_properties::ModifyClientPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_client_properties::ModifyClientPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_client_properties::ModifyClientPropertiesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ModifyClientPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_client_properties::ModifyClientPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_client_properties::ModifyClientPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_client_properties::ModifyClientPropertiesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ModifyClientPropertiesFluentBuilder {
             crate::operation::modify_client_properties::ModifyClientProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_client_properties::ModifyClientPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_client_properties::ModifyClientPropertiesError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl ModifyClientPropertiesFluentBuilder {
         self
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
-    pub fn set_client_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientProperties>,
-    ) -> Self {
+    pub fn set_client_properties(mut self, input: ::std::option::Option<crate::types::ClientProperties>) -> Self {
         self.inner = self.inner.set_client_properties(input);
         self
     }

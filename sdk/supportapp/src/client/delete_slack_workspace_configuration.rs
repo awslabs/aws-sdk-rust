@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`team_id(impl ::std::convert::Into<String>)`](crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationFluentBuilder::team_id) / [`set_team_id(Option<String>)`](crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationFluentBuilder::set_team_id): <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     /// - On success, responds with [`DeleteSlackWorkspaceConfigurationOutput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteSlackWorkspaceConfigurationError>`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError)
-    pub fn delete_slack_workspace_configuration(&self) -> crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationFluentBuilder{
+    pub fn delete_slack_workspace_configuration(
+        &self,
+    ) -> crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationFluentBuilder {
         crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

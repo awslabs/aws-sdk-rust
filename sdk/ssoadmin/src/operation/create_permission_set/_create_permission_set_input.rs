@@ -50,18 +50,14 @@ impl CreatePermissionSetInput {
 }
 impl CreatePermissionSetInput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionSetInput`](crate::operation::create_permission_set::CreatePermissionSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_permission_set::builders::CreatePermissionSetInputBuilder {
-        crate::operation::create_permission_set::builders::CreatePermissionSetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_permission_set::builders::CreatePermissionSetInputBuilder {
+        crate::operation::create_permission_set::builders::CreatePermissionSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePermissionSetInput`](crate::operation::create_permission_set::CreatePermissionSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePermissionSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -114,18 +110,12 @@ impl CreatePermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
-    pub fn session_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
-    pub fn set_session_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_duration = input;
         self
     }
@@ -159,10 +149,7 @@ impl CreatePermissionSetInputBuilder {
         self
     }
     /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -173,19 +160,15 @@ impl CreatePermissionSetInputBuilder {
     /// Consumes the builder and constructs a [`CreatePermissionSetInput`](crate::operation::create_permission_set::CreatePermissionSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_permission_set::CreatePermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_permission_set::CreatePermissionSetInput {
-                name: self.name,
-                description: self.description,
-                instance_arn: self.instance_arn,
-                session_duration: self.session_duration,
-                relay_state: self.relay_state,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_permission_set::CreatePermissionSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_permission_set::CreatePermissionSetInput {
+            name: self.name,
+            description: self.description,
+            instance_arn: self.instance_arn,
+            session_duration: self.session_duration,
+            relay_state: self.relay_state,
+            tags: self.tags,
+        })
     }
 }

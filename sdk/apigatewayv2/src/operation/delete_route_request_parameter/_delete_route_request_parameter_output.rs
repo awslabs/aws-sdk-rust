@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRouteRequestParameterOutput {
 }
 impl DeleteRouteRequestParameterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteRequestParameterOutput`](crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput).
-    pub fn builder() -> crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterOutputBuilder{
+    pub fn builder() -> crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterOutputBuilder {
         crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRouteRequestParameterOutput`](crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRouteRequestParameterOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteRouteRequestParameterOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRouteRequestParameterOutput`](crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput {
+    pub fn build(self) -> crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput {
         crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput {
             _request_id: self._request_id,
         }

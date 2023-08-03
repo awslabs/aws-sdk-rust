@@ -23,9 +23,7 @@ impl RelatedObservations {
 
 /// A builder for [`RelatedObservations`](crate::types::RelatedObservations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelatedObservationsBuilder {
     pub(crate) observation_list: ::std::option::Option<::std::vec::Vec<crate::types::Observation>>,
 }
@@ -42,17 +40,12 @@ impl RelatedObservationsBuilder {
         self
     }
     /// <p>The list of observations related to the problem.</p>
-    pub fn set_observation_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Observation>>,
-    ) -> Self {
+    pub fn set_observation_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Observation>>) -> Self {
         self.observation_list = input;
         self
     }
     /// <p>The list of observations related to the problem.</p>
-    pub fn get_observation_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Observation>> {
+    pub fn get_observation_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Observation>> {
         &self.observation_list
     }
     /// Consumes the builder and constructs a [`RelatedObservations`](crate::types::RelatedObservations).

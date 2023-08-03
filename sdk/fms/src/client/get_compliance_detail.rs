@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetComplianceDetailOutput`](crate::operation::get_compliance_detail::GetComplianceDetailOutput) with field(s):
     ///   - [`policy_compliance_detail(Option<PolicyComplianceDetail>)`](crate::operation::get_compliance_detail::GetComplianceDetailOutput::policy_compliance_detail): <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
     /// - On failure, responds with [`SdkError<GetComplianceDetailError>`](crate::operation::get_compliance_detail::GetComplianceDetailError)
-    pub fn get_compliance_detail(
-        &self,
-    ) -> crate::operation::get_compliance_detail::builders::GetComplianceDetailFluentBuilder {
-        crate::operation::get_compliance_detail::builders::GetComplianceDetailFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_compliance_detail(&self) -> crate::operation::get_compliance_detail::builders::GetComplianceDetailFluentBuilder {
+        crate::operation::get_compliance_detail::builders::GetComplianceDetailFluentBuilder::new(self.handle.clone())
     }
 }

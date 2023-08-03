@@ -26,7 +26,7 @@ impl CreatePublishingDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePublishingDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_publishing_destination::builders::CreatePublishingDestinationInputBuilder,
+    inner: crate::operation::create_publishing_destination::builders::CreatePublishingDestinationInputBuilder,
 }
 impl CreatePublishingDestinationFluentBuilder {
     /// Creates a new `CreatePublishingDestination`.
@@ -37,7 +37,7 @@ impl CreatePublishingDestinationFluentBuilder {
         }
     }
     /// Access the CreatePublishingDestination as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_publishing_destination::builders::CreatePublishingDestinationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_publishing_destination::builders::CreatePublishingDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreatePublishingDestinationFluentBuilder {
             crate::operation::create_publishing_destination::CreatePublishingDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_publishing_destination::CreatePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_publishing_destination::CreatePublishingDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreatePublishingDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreatePublishingDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_publishing_destination::CreatePublishingDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_publishing_destination::CreatePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_publishing_destination::CreatePublishingDestinationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreatePublishingDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_publishing_destination::CreatePublishingDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_publishing_destination::CreatePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_publishing_destination::CreatePublishingDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreatePublishingDestinationFluentBuilder {
             crate::operation::create_publishing_destination::CreatePublishingDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_publishing_destination::CreatePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_publishing_destination::CreatePublishingDestinationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl CreatePublishingDestinationFluentBuilder {
         self
     }
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationType>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
         self.inner = self.inner.set_destination_type(input);
         self
     }
@@ -157,17 +143,12 @@ impl CreatePublishingDestinationFluentBuilder {
         self
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
-    pub fn set_destination_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationProperties>,
-    ) -> Self {
+    pub fn set_destination_properties(mut self, input: ::std::option::Option<crate::types::DestinationProperties>) -> Self {
         self.inner = self.inner.set_destination_properties(input);
         self
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
-    pub fn get_destination_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationProperties> {
+    pub fn get_destination_properties(&self) -> &::std::option::Option<crate::types::DestinationProperties> {
         self.inner.get_destination_properties()
     }
     /// <p>The idempotency token for the request.</p>

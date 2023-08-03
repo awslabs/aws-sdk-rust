@@ -64,9 +64,7 @@ impl GetPositionOutput {
 
 /// A builder for [`GetPositionOutput`](crate::operation::get_position::GetPositionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPositionOutputBuilder {
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f32>>,
     pub(crate) accuracy: ::std::option::Option<crate::types::Accuracy>,
@@ -117,10 +115,7 @@ impl GetPositionOutputBuilder {
         self
     }
     /// <p>The type of solver used to identify the position of the resource.</p>
-    pub fn set_solver_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionSolverType>,
-    ) -> Self {
+    pub fn set_solver_type(mut self, input: ::std::option::Option<crate::types::PositionSolverType>) -> Self {
         self.solver_type = input;
         self
     }
@@ -134,32 +129,21 @@ impl GetPositionOutputBuilder {
         self
     }
     /// <p>The vendor of the positioning solver.</p>
-    pub fn set_solver_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionSolverProvider>,
-    ) -> Self {
+    pub fn set_solver_provider(mut self, input: ::std::option::Option<crate::types::PositionSolverProvider>) -> Self {
         self.solver_provider = input;
         self
     }
     /// <p>The vendor of the positioning solver.</p>
-    pub fn get_solver_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::PositionSolverProvider> {
+    pub fn get_solver_provider(&self) -> &::std::option::Option<crate::types::PositionSolverProvider> {
         &self.solver_provider
     }
     /// <p>The version of the positioning solver.</p>
-    pub fn solver_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solver_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solver_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the positioning solver.</p>
-    pub fn set_solver_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solver_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solver_version = input;
         self
     }

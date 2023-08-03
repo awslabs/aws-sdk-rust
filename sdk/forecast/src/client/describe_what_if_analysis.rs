@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
     ///   - [`time_series_selector(Option<TimeSeriesSelector>)`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput::time_series_selector): <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>  <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>  <ul>   <li> <p> <code>DataSource</code> </p> </li>   <li> <p> <code>Format</code> </p> </li>   <li> <p> <code>Schema</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeWhatIfAnalysisError>`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisError)
-    pub fn describe_what_if_analysis(
-        &self,
-    ) -> crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisFluentBuilder
-    {
+    pub fn describe_what_if_analysis(&self) -> crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisFluentBuilder {
         crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,40 +15,30 @@ impl GetMedicalTranscriptionJobInput {
 }
 impl GetMedicalTranscriptionJobInput {
     /// Creates a new builder-style object to manufacture [`GetMedicalTranscriptionJobInput`](crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobInput).
-    pub fn builder() -> crate::operation::get_medical_transcription_job::builders::GetMedicalTranscriptionJobInputBuilder{
+    pub fn builder() -> crate::operation::get_medical_transcription_job::builders::GetMedicalTranscriptionJobInputBuilder {
         crate::operation::get_medical_transcription_job::builders::GetMedicalTranscriptionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMedicalTranscriptionJobInput`](crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMedicalTranscriptionJobInputBuilder {
     pub(crate) medical_transcription_job_name: ::std::option::Option<::std::string::String>,
 }
 impl GetMedicalTranscriptionJobInputBuilder {
     /// <p>The name of the medical transcription job you want information about. Job names are case sensitive.</p>
-    pub fn medical_transcription_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn medical_transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.medical_transcription_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the medical transcription job you want information about. Job names are case sensitive.</p>
-    pub fn set_medical_transcription_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_medical_transcription_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.medical_transcription_job_name = input;
         self
     }
     /// <p>The name of the medical transcription job you want information about. Job names are case sensitive.</p>
-    pub fn get_medical_transcription_job_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_medical_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.medical_transcription_job_name
     }
     /// Consumes the builder and constructs a [`GetMedicalTranscriptionJobInput`](crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobInput).
@@ -58,10 +48,8 @@ impl GetMedicalTranscriptionJobInputBuilder {
         crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobInput {
-                medical_transcription_job_name: self.medical_transcription_job_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobInput {
+            medical_transcription_job_name: self.medical_transcription_job_name,
+        })
     }
 }

@@ -22,35 +22,26 @@ impl DescribeLiveSourceInput {
 }
 impl DescribeLiveSourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeLiveSourceInput`](crate::operation::describe_live_source::DescribeLiveSourceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_live_source::builders::DescribeLiveSourceInputBuilder {
+    pub fn builder() -> crate::operation::describe_live_source::builders::DescribeLiveSourceInputBuilder {
         crate::operation::describe_live_source::builders::DescribeLiveSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLiveSourceInput`](crate::operation::describe_live_source::DescribeLiveSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLiveSourceInputBuilder {
     pub(crate) live_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLiveSourceInputBuilder {
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the live source.</p>
-    pub fn set_live_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.live_source_name = input;
         self
     }
@@ -59,18 +50,12 @@ impl DescribeLiveSourceInputBuilder {
         &self.live_source_name
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -81,15 +66,10 @@ impl DescribeLiveSourceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLiveSourceInput`](crate::operation::describe_live_source::DescribeLiveSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_live_source::DescribeLiveSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_live_source::DescribeLiveSourceInput {
-                live_source_name: self.live_source_name,
-                source_location_name: self.source_location_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_live_source::DescribeLiveSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_live_source::DescribeLiveSourceInput {
+            live_source_name: self.live_source_name,
+            source_location_name: self.source_location_name,
+        })
     }
 }

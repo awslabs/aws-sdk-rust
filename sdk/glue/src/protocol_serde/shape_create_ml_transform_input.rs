@@ -24,10 +24,7 @@ pub fn ser_create_ml_transform_input(
     if let Some(var_7) = &input.parameters {
         #[allow(unused_mut)]
         let mut object_8 = object.key("Parameters").start_object();
-        crate::protocol_serde::shape_transform_parameters::ser_transform_parameters(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_transform_parameters::ser_transform_parameters(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.role {
@@ -76,10 +73,7 @@ pub fn ser_create_ml_transform_input(
     if let Some(var_20) = &input.transform_encryption {
         #[allow(unused_mut)]
         let mut object_21 = object.key("TransformEncryption").start_object();
-        crate::protocol_serde::shape_transform_encryption::ser_transform_encryption(
-            &mut object_21,
-            var_20,
-        )?;
+        crate::protocol_serde::shape_transform_encryption::ser_transform_encryption(&mut object_21, var_20)?;
         object_21.finish();
     }
     Ok(())

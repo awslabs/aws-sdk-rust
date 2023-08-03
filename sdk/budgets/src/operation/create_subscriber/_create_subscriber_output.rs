@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for CreateSubscriberOutput {
 }
 impl CreateSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberOutput`](crate::operation::create_subscriber::CreateSubscriberOutput).
-    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberOutputBuilder {
         crate::operation::create_subscriber::builders::CreateSubscriberOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubscriberOutput`](crate::operation::create_subscriber::CreateSubscriberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubscriberOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,34 +22,26 @@ impl RegisterCertificateWithoutCaInput {
 }
 impl RegisterCertificateWithoutCaInput {
     /// Creates a new builder-style object to manufacture [`RegisterCertificateWithoutCaInput`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput).
-    pub fn builder() -> crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder{
+    pub fn builder() -> crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder {
         crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterCertificateWithoutCaInput`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterCertificateWithoutCaInputBuilder {
     pub(crate) certificate_pem: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CertificateStatus>,
 }
 impl RegisterCertificateWithoutCaInputBuilder {
     /// <p>The certificate data, in PEM format.</p>
-    pub fn certificate_pem(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_pem = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate data, in PEM format.</p>
-    pub fn set_certificate_pem(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_pem = input;
         self
     }
@@ -63,10 +55,7 @@ impl RegisterCertificateWithoutCaInputBuilder {
         self
     }
     /// <p>The status of the register certificate request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -81,11 +70,9 @@ impl RegisterCertificateWithoutCaInputBuilder {
         crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput {
-                certificate_pem: self.certificate_pem,
-                status: self.status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput {
+            certificate_pem: self.certificate_pem,
+            status: self.status,
+        })
     }
 }

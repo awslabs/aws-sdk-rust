@@ -26,8 +26,7 @@ impl AddAttributesToFindingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddAttributesToFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder,
+    inner: crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder,
 }
 impl AddAttributesToFindingsFluentBuilder {
     /// Creates a new `AddAttributesToFindings`.
@@ -38,10 +37,7 @@ impl AddAttributesToFindingsFluentBuilder {
         }
     }
     /// Access the AddAttributesToFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl AddAttributesToFindingsFluentBuilder {
             crate::operation::add_attributes_to_findings::AddAttributesToFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_attributes_to_findings::AddAttributesToFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl AddAttributesToFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl AddAttributesToFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_attributes_to_findings::AddAttributesToFindingsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl AddAttributesToFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_attributes_to_findings::AddAttributesToFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl AddAttributesToFindingsFluentBuilder {
             crate::operation::add_attributes_to_findings::AddAttributesToFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_attributes_to_findings::AddAttributesToFindingsError>,
     > {
         self.customize_middleware().await
     }
@@ -134,17 +119,12 @@ impl AddAttributesToFindingsFluentBuilder {
         self
     }
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn set_finding_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_arns(input);
         self
     }
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn get_finding_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_arns()
     }
     /// Appends an item to `attributes`.
@@ -157,17 +137,12 @@ impl AddAttributesToFindingsFluentBuilder {
         self
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         self.inner.get_attributes()
     }
 }

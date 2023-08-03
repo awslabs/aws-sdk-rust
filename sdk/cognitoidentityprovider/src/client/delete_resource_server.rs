@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_resource_server::builders::DeleteResourceServerFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_resource_server::builders::DeleteResourceServerFluentBuilder::set_identifier): <p>The identifier for the resource server.</p>
     /// - On success, responds with [`DeleteResourceServerOutput`](crate::operation::delete_resource_server::DeleteResourceServerOutput)
     /// - On failure, responds with [`SdkError<DeleteResourceServerError>`](crate::operation::delete_resource_server::DeleteResourceServerError)
-    pub fn delete_resource_server(
-        &self,
-    ) -> crate::operation::delete_resource_server::builders::DeleteResourceServerFluentBuilder {
-        crate::operation::delete_resource_server::builders::DeleteResourceServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_resource_server(&self) -> crate::operation::delete_resource_server::builders::DeleteResourceServerFluentBuilder {
+        crate::operation::delete_resource_server::builders::DeleteResourceServerFluentBuilder::new(self.handle.clone())
     }
 }

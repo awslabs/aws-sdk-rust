@@ -6,24 +6,18 @@
 pub struct CustomActionFilterOperation {
     /// <p>The configuration that chooses the fields to be filtered.</p>
     #[doc(hidden)]
-    pub selected_fields_configuration:
-        ::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
+    pub selected_fields_configuration: ::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
     /// <p>The configuration that chooses the target visuals to be filtered.</p>
     #[doc(hidden)]
-    pub target_visuals_configuration:
-        ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
+    pub target_visuals_configuration: ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
 }
 impl CustomActionFilterOperation {
     /// <p>The configuration that chooses the fields to be filtered.</p>
-    pub fn selected_fields_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FilterOperationSelectedFieldsConfiguration> {
+    pub fn selected_fields_configuration(&self) -> ::std::option::Option<&crate::types::FilterOperationSelectedFieldsConfiguration> {
         self.selected_fields_configuration.as_ref()
     }
     /// <p>The configuration that chooses the target visuals to be filtered.</p>
-    pub fn target_visuals_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FilterOperationTargetVisualsConfiguration> {
+    pub fn target_visuals_configuration(&self) -> ::std::option::Option<&crate::types::FilterOperationTargetVisualsConfiguration> {
         self.target_visuals_configuration.as_ref()
     }
 }
@@ -36,21 +30,14 @@ impl CustomActionFilterOperation {
 
 /// A builder for [`CustomActionFilterOperation`](crate::types::CustomActionFilterOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomActionFilterOperationBuilder {
-    pub(crate) selected_fields_configuration:
-        ::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
-    pub(crate) target_visuals_configuration:
-        ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
+    pub(crate) selected_fields_configuration: ::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
+    pub(crate) target_visuals_configuration: ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
 }
 impl CustomActionFilterOperationBuilder {
     /// <p>The configuration that chooses the fields to be filtered.</p>
-    pub fn selected_fields_configuration(
-        mut self,
-        input: crate::types::FilterOperationSelectedFieldsConfiguration,
-    ) -> Self {
+    pub fn selected_fields_configuration(mut self, input: crate::types::FilterOperationSelectedFieldsConfiguration) -> Self {
         self.selected_fields_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -63,31 +50,21 @@ impl CustomActionFilterOperationBuilder {
         self
     }
     /// <p>The configuration that chooses the fields to be filtered.</p>
-    pub fn get_selected_fields_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration> {
+    pub fn get_selected_fields_configuration(&self) -> &::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration> {
         &self.selected_fields_configuration
     }
     /// <p>The configuration that chooses the target visuals to be filtered.</p>
-    pub fn target_visuals_configuration(
-        mut self,
-        input: crate::types::FilterOperationTargetVisualsConfiguration,
-    ) -> Self {
+    pub fn target_visuals_configuration(mut self, input: crate::types::FilterOperationTargetVisualsConfiguration) -> Self {
         self.target_visuals_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that chooses the target visuals to be filtered.</p>
-    pub fn set_target_visuals_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
-    ) -> Self {
+    pub fn set_target_visuals_configuration(mut self, input: ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>) -> Self {
         self.target_visuals_configuration = input;
         self
     }
     /// <p>The configuration that chooses the target visuals to be filtered.</p>
-    pub fn get_target_visuals_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration> {
+    pub fn get_target_visuals_configuration(&self) -> &::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration> {
         &self.target_visuals_configuration
     }
     /// Consumes the builder and constructs a [`CustomActionFilterOperation`](crate::types::CustomActionFilterOperation).

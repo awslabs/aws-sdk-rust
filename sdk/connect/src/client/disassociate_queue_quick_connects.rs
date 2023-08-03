@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`quick_connect_ids(Vec<String>)`](crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsFluentBuilder::quick_connect_ids) / [`set_quick_connect_ids(Option<Vec<String>>)`](crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsFluentBuilder::set_quick_connect_ids): <p>The quick connects to disassociate from the queue.</p>
     /// - On success, responds with [`DisassociateQueueQuickConnectsOutput`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsOutput)
     /// - On failure, responds with [`SdkError<DisassociateQueueQuickConnectsError>`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsError)
-    pub fn disassociate_queue_quick_connects(&self) -> crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsFluentBuilder{
+    pub fn disassociate_queue_quick_connects(
+        &self,
+    ) -> crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsFluentBuilder {
         crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsFluentBuilder::new(self.handle.clone())
     }
 }

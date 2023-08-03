@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateShareInvitationOutput {
 }
 impl UpdateShareInvitationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateShareInvitationOutput`](crate::operation::update_share_invitation::UpdateShareInvitationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_share_invitation::builders::UpdateShareInvitationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_share_invitation::builders::UpdateShareInvitationOutputBuilder {
         crate::operation::update_share_invitation::builders::UpdateShareInvitationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateShareInvitationOutput`](crate::operation::update_share_invitation::UpdateShareInvitationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateShareInvitationOutputBuilder {
     pub(crate) share_invitation: ::std::option::Option<crate::types::ShareInvitation>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateShareInvitationOutputBuilder {
         self
     }
     /// <p>The updated workload or custom lens share invitation.</p>
-    pub fn set_share_invitation(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareInvitation>,
-    ) -> Self {
+    pub fn set_share_invitation(mut self, input: ::std::option::Option<crate::types::ShareInvitation>) -> Self {
         self.share_invitation = input;
         self
     }

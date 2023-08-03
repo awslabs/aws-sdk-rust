@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateCustomMetadataOutput {
 }
 impl CreateCustomMetadataOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomMetadataOutput`](crate::operation::create_custom_metadata::CreateCustomMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_metadata::builders::CreateCustomMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::create_custom_metadata::builders::CreateCustomMetadataOutputBuilder {
         crate::operation::create_custom_metadata::builders::CreateCustomMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomMetadataOutput`](crate::operation::create_custom_metadata::CreateCustomMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomMetadataOutputBuilder {
     _request_id: Option<String>,
 }

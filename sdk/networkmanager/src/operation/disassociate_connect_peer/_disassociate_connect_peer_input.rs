@@ -22,36 +22,26 @@ impl DisassociateConnectPeerInput {
 }
 impl DisassociateConnectPeerInput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectPeerInput`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerInputBuilder {
         crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateConnectPeerInput`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateConnectPeerInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) connect_peer_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateConnectPeerInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -60,18 +50,12 @@ impl DisassociateConnectPeerInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
-    pub fn connect_peer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_peer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_peer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
-    pub fn set_connect_peer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connect_peer_id = input;
         self
     }
@@ -86,11 +70,9 @@ impl DisassociateConnectPeerInputBuilder {
         crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput {
-                global_network_id: self.global_network_id,
-                connect_peer_id: self.connect_peer_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput {
+            global_network_id: self.global_network_id,
+            connect_peer_id: self.connect_peer_id,
+        })
     }
 }

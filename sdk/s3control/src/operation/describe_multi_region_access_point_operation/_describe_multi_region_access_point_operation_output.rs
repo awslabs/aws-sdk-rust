@@ -21,16 +21,15 @@ impl ::aws_http::request_id::RequestId for DescribeMultiRegionAccessPointOperati
 }
 impl DescribeMultiRegionAccessPointOperationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationOutput`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput).
-    pub fn builder() -> crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationOutputBuilder
+    {
         crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMultiRegionAccessPointOperationOutput`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMultiRegionAccessPointOperationOutputBuilder {
     pub(crate) async_operation: ::std::option::Option<crate::types::AsyncOperation>,
     _request_id: Option<String>,
@@ -42,10 +41,7 @@ impl DescribeMultiRegionAccessPointOperationOutputBuilder {
         self
     }
     /// <p>A container element containing the details of the asynchronous operation.</p>
-    pub fn set_async_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncOperation>,
-    ) -> Self {
+    pub fn set_async_operation(mut self, input: ::std::option::Option<crate::types::AsyncOperation>) -> Self {
         self.async_operation = input;
         self
     }
@@ -63,10 +59,9 @@ impl DescribeMultiRegionAccessPointOperationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMultiRegionAccessPointOperationOutput`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput).
-    pub fn build(self) -> crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput{
+    pub fn build(self) -> crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput {
         crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput {
-            async_operation: self.async_operation
-            ,
+            async_operation: self.async_operation,
             _request_id: self._request_id,
         }
     }

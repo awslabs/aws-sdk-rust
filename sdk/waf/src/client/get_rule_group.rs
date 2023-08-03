@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetRuleGroupOutput`](crate::operation::get_rule_group::GetRuleGroupOutput) with field(s):
     ///   - [`rule_group(Option<RuleGroup>)`](crate::operation::get_rule_group::GetRuleGroupOutput::rule_group): <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     /// - On failure, responds with [`SdkError<GetRuleGroupError>`](crate::operation::get_rule_group::GetRuleGroupError)
-    pub fn get_rule_group(
-        &self,
-    ) -> crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder {
-        crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_rule_group(&self) -> crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder {
+        crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

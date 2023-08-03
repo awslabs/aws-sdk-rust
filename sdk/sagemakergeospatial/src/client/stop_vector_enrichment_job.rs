@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     /// - On success, responds with [`StopVectorEnrichmentJobOutput`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput)
     /// - On failure, responds with [`SdkError<StopVectorEnrichmentJobError>`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError)
-    pub fn stop_vector_enrichment_job(
-        &self,
-    ) -> crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobFluentBuilder
-    {
+    pub fn stop_vector_enrichment_job(&self) -> crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobFluentBuilder {
         crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobFluentBuilder::new(self.handle.clone())
     }
 }

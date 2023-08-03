@@ -20,9 +20,7 @@ impl BrokerEbsVolumeInfo {
         self.kafka_broker_node_id.as_deref()
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn provisioned_throughput(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
+    pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>Size of the EBS volume to update.</p>
@@ -39,9 +37,7 @@ impl BrokerEbsVolumeInfo {
 
 /// A builder for [`BrokerEbsVolumeInfo`](crate::types::BrokerEbsVolumeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BrokerEbsVolumeInfoBuilder {
     pub(crate) kafka_broker_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
@@ -49,18 +45,12 @@ pub struct BrokerEbsVolumeInfoBuilder {
 }
 impl BrokerEbsVolumeInfoBuilder {
     /// <p>The ID of the broker to update.</p>
-    pub fn kafka_broker_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kafka_broker_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kafka_broker_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the broker to update.</p>
-    pub fn set_kafka_broker_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kafka_broker_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kafka_broker_node_id = input;
         self
     }
@@ -74,17 +64,12 @@ impl BrokerEbsVolumeInfoBuilder {
         self
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn set_provisioned_throughput(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedThroughput>,
-    ) -> Self {
+    pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
         self.provisioned_throughput = input;
         self
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn get_provisioned_throughput(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+    pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         &self.provisioned_throughput
     }
     /// <p>Size of the EBS volume to update.</p>

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`mutual_tls_authentication(Option<MutualTlsAuthentication>)`](crate::operation::get_domain_name::GetDomainNameOutput::mutual_tls_authentication): <p>The mutual TLS authentication configuration for a custom domain name.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_domain_name::GetDomainNameOutput::tags): <p>The collection of tags associated with a domain name.</p>
     /// - On failure, responds with [`SdkError<GetDomainNameError>`](crate::operation::get_domain_name::GetDomainNameError)
-    pub fn get_domain_name(
-        &self,
-    ) -> crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder {
-        crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_domain_name(&self) -> crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder {
+        crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::new(self.handle.clone())
     }
 }

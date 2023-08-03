@@ -10,10 +10,7 @@ impl GetArchiveRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_archive_rule::GetArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_archive_rule::GetArchiveRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_archive_rule::GetArchiveRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_archive_rule();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetArchiveRuleFluentBuilder {
         }
     }
     /// Access the GetArchiveRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_archive_rule::builders::GetArchiveRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_archive_rule::builders::GetArchiveRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetArchiveRuleFluentBuilder {
             crate::operation::get_archive_rule::GetArchiveRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_archive_rule::GetArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_archive_rule::GetArchiveRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetArchiveRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetArchiveRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_archive_rule::GetArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_archive_rule::GetArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_archive_rule::GetArchiveRuleError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetArchiveRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_archive_rule::GetArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_archive_rule::GetArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_archive_rule::GetArchiveRuleError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl GetArchiveRuleFluentBuilder {
             crate::operation::get_archive_rule::GetArchiveRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_archive_rule::GetArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_archive_rule::GetArchiveRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analyzer_name(input.into());
         self
     }
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analyzer_name(input);
         self
     }

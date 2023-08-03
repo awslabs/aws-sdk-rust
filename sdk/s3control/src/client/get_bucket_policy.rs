@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBucketPolicyOutput`](crate::operation::get_bucket_policy::GetBucketPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_bucket_policy::GetBucketPolicyOutput::policy): <p>The policy of the Outposts bucket.</p>
     /// - On failure, responds with [`SdkError<GetBucketPolicyError>`](crate::operation::get_bucket_policy::GetBucketPolicyError)
-    pub fn get_bucket_policy(
-        &self,
-    ) -> crate::operation::get_bucket_policy::builders::GetBucketPolicyFluentBuilder {
-        crate::operation::get_bucket_policy::builders::GetBucketPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_policy(&self) -> crate::operation::get_bucket_policy::builders::GetBucketPolicyFluentBuilder {
+        crate::operation::get_bucket_policy::builders::GetBucketPolicyFluentBuilder::new(self.handle.clone())
     }
 }

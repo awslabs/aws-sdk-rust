@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`authorized_principal_list(Option<Vec<AuthorizedPrincipal>>)`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput::authorized_principal_list): <p>A list of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principals</a> that can currently access the domain.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListVpcEndpointAccessError>`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError)
-    pub fn list_vpc_endpoint_access(
-        &self,
-    ) -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessFluentBuilder
-    {
+    pub fn list_vpc_endpoint_access(&self) -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessFluentBuilder {
         crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

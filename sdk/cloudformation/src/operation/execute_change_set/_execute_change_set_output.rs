@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for ExecuteChangeSetOutput {
 }
 impl ExecuteChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteChangeSetOutput`](crate::operation::execute_change_set::ExecuteChangeSetOutput).
-    pub fn builder() -> crate::operation::execute_change_set::builders::ExecuteChangeSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::execute_change_set::builders::ExecuteChangeSetOutputBuilder {
         crate::operation::execute_change_set::builders::ExecuteChangeSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteChangeSetOutput`](crate::operation::execute_change_set::ExecuteChangeSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteChangeSetOutputBuilder {
     _request_id: Option<String>,
 }

@@ -6,17 +6,11 @@
 pub struct PolicyVariables {
     /// <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you might want to override the <code>HOME_NET</code> variable with the CIDRs of your home networks. If you don't override <code>HOME_NET</code> with your own CIDRs, Network Firewall by default uses the CIDR of your inspection VPC.</p>
     #[doc(hidden)]
-    pub rule_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
-    >,
+    pub rule_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>>,
 }
 impl PolicyVariables {
     /// <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you might want to override the <code>HOME_NET</code> variable with the CIDRs of your home networks. If you don't override <code>HOME_NET</code> with your own CIDRs, Network Firewall by default uses the CIDR of your inspection VPC.</p>
-    pub fn rule_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
-    > {
+    pub fn rule_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IpSet>> {
         self.rule_variables.as_ref()
     }
 }
@@ -29,13 +23,9 @@ impl PolicyVariables {
 
 /// A builder for [`PolicyVariables`](crate::types::PolicyVariables).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyVariablesBuilder {
-    pub(crate) rule_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
-    >,
+    pub(crate) rule_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>>,
 }
 impl PolicyVariablesBuilder {
     /// Adds a key-value pair to `rule_variables`.
@@ -43,11 +33,7 @@ impl PolicyVariablesBuilder {
     /// To override the contents of this collection use [`set_rule_variables`](Self::set_rule_variables).
     ///
     /// <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you might want to override the <code>HOME_NET</code> variable with the CIDRs of your home networks. If you don't override <code>HOME_NET</code> with your own CIDRs, Network Firewall by default uses the CIDR of your inspection VPC.</p>
-    pub fn rule_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::IpSet,
-    ) -> Self {
+    pub fn rule_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::IpSet) -> Self {
         let mut hash_map = self.rule_variables.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.rule_variables = ::std::option::Option::Some(hash_map);
@@ -56,19 +42,13 @@ impl PolicyVariablesBuilder {
     /// <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you might want to override the <code>HOME_NET</code> variable with the CIDRs of your home networks. If you don't override <code>HOME_NET</code> with your own CIDRs, Network Firewall by default uses the CIDR of your inspection VPC.</p>
     pub fn set_rule_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>>,
     ) -> Self {
         self.rule_variables = input;
         self
     }
     /// <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you might want to override the <code>HOME_NET</code> variable with the CIDRs of your home networks. If you don't override <code>HOME_NET</code> with your own CIDRs, Network Firewall by default uses the CIDR of your inspection VPC.</p>
-    pub fn get_rule_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
-    > {
+    pub fn get_rule_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>> {
         &self.rule_variables
     }
     /// Consumes the builder and constructs a [`PolicyVariables`](crate::types::PolicyVariables).

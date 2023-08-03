@@ -23,9 +23,7 @@ impl AutoTerminationPolicy {
 
 /// A builder for [`AutoTerminationPolicy`](crate::types::AutoTerminationPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoTerminationPolicyBuilder {
     pub(crate) idle_timeout: ::std::option::Option<i64>,
 }

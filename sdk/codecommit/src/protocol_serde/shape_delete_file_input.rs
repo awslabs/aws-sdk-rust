@@ -16,9 +16,7 @@ pub fn ser_delete_file_input(
         object.key("parentCommitId").string(var_4.as_str());
     }
     if input.keep_empty_folders {
-        object
-            .key("keepEmptyFolders")
-            .boolean(input.keep_empty_folders);
+        object.key("keepEmptyFolders").boolean(input.keep_empty_folders);
     }
     if let Some(var_5) = &input.commit_message {
         object.key("commitMessage").string(var_5.as_str());

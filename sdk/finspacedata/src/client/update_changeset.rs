@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`changeset_id(Option<String>)`](crate::operation::update_changeset::UpdateChangesetOutput::changeset_id): <p>The unique identifier for the Changeset to update.</p>
     ///   - [`dataset_id(Option<String>)`](crate::operation::update_changeset::UpdateChangesetOutput::dataset_id): <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
     /// - On failure, responds with [`SdkError<UpdateChangesetError>`](crate::operation::update_changeset::UpdateChangesetError)
-    pub fn update_changeset(
-        &self,
-    ) -> crate::operation::update_changeset::builders::UpdateChangesetFluentBuilder {
-        crate::operation::update_changeset::builders::UpdateChangesetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_changeset(&self) -> crate::operation::update_changeset::builders::UpdateChangesetFluentBuilder {
+        crate::operation::update_changeset::builders::UpdateChangesetFluentBuilder::new(self.handle.clone())
     }
 }

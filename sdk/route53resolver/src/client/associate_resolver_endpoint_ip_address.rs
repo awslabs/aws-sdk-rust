@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateResolverEndpointIpAddressOutput`](crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput) with field(s):
     ///   - [`resolver_endpoint(Option<ResolverEndpoint>)`](crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput::resolver_endpoint): <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
     /// - On failure, responds with [`SdkError<AssociateResolverEndpointIpAddressError>`](crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError)
-    pub fn associate_resolver_endpoint_ip_address(&self) -> crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressFluentBuilder{
+    pub fn associate_resolver_endpoint_ip_address(
+        &self,
+    ) -> crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressFluentBuilder {
         crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,7 +16,11 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     ///   - [`error(Option<ErrorDetails>)`](crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput::error): <p>An object that contains details about the reason the operation failed.</p>
     /// - On failure, responds with [`SdkError<GetServiceLastAccessedDetailsWithEntitiesError>`](crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesError)
-    pub fn get_service_last_accessed_details_with_entities(&self) -> crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesFluentBuilder{
-        crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesFluentBuilder::new(self.handle.clone())
+    pub fn get_service_last_accessed_details_with_entities(
+        &self,
+    ) -> crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesFluentBuilder {
+        crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

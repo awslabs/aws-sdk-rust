@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PropertyValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,21 +65,11 @@ impl ::std::convert::From<&str> for PropertyValidationExceptionReason {
         match s {
             "INVALID_FORMAT" => PropertyValidationExceptionReason::InvalidFormat,
             "NOT_SUPPORTED" => PropertyValidationExceptionReason::NotSupported,
-            "REFERENCED_RESOURCE_NOT_FOUND" => {
-                PropertyValidationExceptionReason::ReferencedResourceNotFound
-            }
-            "REQUIRED_PROPERTY_MISSING" => {
-                PropertyValidationExceptionReason::RequiredPropertyMissing
-            }
-            "RESOURCE_NAME_ALREADY_EXISTS" => {
-                PropertyValidationExceptionReason::ResourceNameAlreadyExists
-            }
-            "UNIQUE_CONSTRAINT_VIOLATED" => {
-                PropertyValidationExceptionReason::UniqueConstraintViolated
-            }
-            other => PropertyValidationExceptionReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "REFERENCED_RESOURCE_NOT_FOUND" => PropertyValidationExceptionReason::ReferencedResourceNotFound,
+            "REQUIRED_PROPERTY_MISSING" => PropertyValidationExceptionReason::RequiredPropertyMissing,
+            "RESOURCE_NAME_ALREADY_EXISTS" => PropertyValidationExceptionReason::ResourceNameAlreadyExists,
+            "UNIQUE_CONSTRAINT_VIOLATED" => PropertyValidationExceptionReason::UniqueConstraintViolated,
+            other => PropertyValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -102,18 +86,10 @@ impl PropertyValidationExceptionReason {
         match self {
             PropertyValidationExceptionReason::InvalidFormat => "INVALID_FORMAT",
             PropertyValidationExceptionReason::NotSupported => "NOT_SUPPORTED",
-            PropertyValidationExceptionReason::ReferencedResourceNotFound => {
-                "REFERENCED_RESOURCE_NOT_FOUND"
-            }
-            PropertyValidationExceptionReason::RequiredPropertyMissing => {
-                "REQUIRED_PROPERTY_MISSING"
-            }
-            PropertyValidationExceptionReason::ResourceNameAlreadyExists => {
-                "RESOURCE_NAME_ALREADY_EXISTS"
-            }
-            PropertyValidationExceptionReason::UniqueConstraintViolated => {
-                "UNIQUE_CONSTRAINT_VIOLATED"
-            }
+            PropertyValidationExceptionReason::ReferencedResourceNotFound => "REFERENCED_RESOURCE_NOT_FOUND",
+            PropertyValidationExceptionReason::RequiredPropertyMissing => "REQUIRED_PROPERTY_MISSING",
+            PropertyValidationExceptionReason::ResourceNameAlreadyExists => "RESOURCE_NAME_ALREADY_EXISTS",
+            PropertyValidationExceptionReason::UniqueConstraintViolated => "UNIQUE_CONSTRAINT_VIOLATED",
             PropertyValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`flywheel_summary_list(Option<Vec<FlywheelSummary>>)`](crate::operation::list_flywheels::ListFlywheelsOutput::flywheel_summary_list): <p>A list of flywheel properties retrieved by the service in response to the request. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_flywheels::ListFlywheelsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListFlywheelsError>`](crate::operation::list_flywheels::ListFlywheelsError)
-    pub fn list_flywheels(
-        &self,
-    ) -> crate::operation::list_flywheels::builders::ListFlywheelsFluentBuilder {
-        crate::operation::list_flywheels::builders::ListFlywheelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_flywheels(&self) -> crate::operation::list_flywheels::builders::ListFlywheelsFluentBuilder {
+        crate::operation::list_flywheels::builders::ListFlywheelsFluentBuilder::new(self.handle.clone())
     }
 }

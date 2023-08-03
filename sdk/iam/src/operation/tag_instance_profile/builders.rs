@@ -10,10 +10,7 @@ impl TagInstanceProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::tag_instance_profile::TagInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_instance_profile::TagInstanceProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_instance_profile::TagInstanceProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.tag_instance_profile();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl TagInstanceProfileFluentBuilder {
         }
     }
     /// Access the TagInstanceProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::tag_instance_profile::builders::TagInstanceProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::tag_instance_profile::builders::TagInstanceProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl TagInstanceProfileFluentBuilder {
             crate::operation::tag_instance_profile::TagInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_instance_profile::TagInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_instance_profile::TagInstanceProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl TagInstanceProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl TagInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_instance_profile::TagInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_instance_profile::TagInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_instance_profile::TagInstanceProfileError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl TagInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_instance_profile::TagInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_instance_profile::TagInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_instance_profile::TagInstanceProfileError>,
     > {
         self.send_middleware().await
     }
@@ -126,27 +112,19 @@ impl TagInstanceProfileFluentBuilder {
             crate::operation::tag_instance_profile::TagInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_instance_profile::TagInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_instance_profile::TagInstanceProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the IAM instance profile to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_profile_name(input.into());
         self
     }
     /// <p>The name of the IAM instance profile to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_profile_name(input);
         self
     }
@@ -165,10 +143,7 @@ impl TagInstanceProfileFluentBuilder {
         self
     }
     /// <p>The list of tags that you want to attach to the IAM instance profile. Each tag consists of a key name and an associated value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

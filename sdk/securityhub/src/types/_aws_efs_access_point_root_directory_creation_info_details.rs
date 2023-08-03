@@ -30,17 +30,14 @@ impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {
 }
 impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {
     /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder {
         crate::types::builders::AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder {
     pub(crate) owner_gid: ::std::option::Option<::std::string::String>,
     pub(crate) owner_uid: ::std::option::Option<::std::string::String>,

@@ -38,7 +38,7 @@ impl RespondActivityTaskCanceledInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RespondActivityTaskCanceledFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledInputBuilder,
+    inner: crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledInputBuilder,
 }
 impl RespondActivityTaskCanceledFluentBuilder {
     /// Creates a new `RespondActivityTaskCanceled`.
@@ -49,7 +49,7 @@ impl RespondActivityTaskCanceledFluentBuilder {
         }
     }
     /// Access the RespondActivityTaskCanceled as a reference.
-    pub fn as_input(&self) -> &crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +61,7 @@ impl RespondActivityTaskCanceledFluentBuilder {
             crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceled,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +71,7 @@ impl RespondActivityTaskCanceledFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +80,7 @@ impl RespondActivityTaskCanceledFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError>,
     > {
         let op = self
             .inner
@@ -110,9 +103,7 @@ impl RespondActivityTaskCanceledFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +117,7 @@ impl RespondActivityTaskCanceledFluentBuilder {
             crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceled,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError>,
     > {
         self.customize_middleware().await
     }

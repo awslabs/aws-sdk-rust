@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListOpsMetadataOutput {
 }
 impl ListOpsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`ListOpsMetadataOutput`](crate::operation::list_ops_metadata::ListOpsMetadataOutput).
-    pub fn builder() -> crate::operation::list_ops_metadata::builders::ListOpsMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_ops_metadata::builders::ListOpsMetadataOutputBuilder {
         crate::operation::list_ops_metadata::builders::ListOpsMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOpsMetadataOutput`](crate::operation::list_ops_metadata::ListOpsMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOpsMetadataOutputBuilder {
     pub(crate) ops_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListOpsMetadataOutputBuilder {
         self
     }
     /// <p>Returns a list of OpsMetadata objects.</p>
-    pub fn set_ops_metadata_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadata>>,
-    ) -> Self {
+    pub fn set_ops_metadata_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadata>>) -> Self {
         self.ops_metadata_list = input;
         self
     }
     /// <p>Returns a list of OpsMetadata objects.</p>
-    pub fn get_ops_metadata_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsMetadata>> {
+    pub fn get_ops_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsMetadata>> {
         &self.ops_metadata_list
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>

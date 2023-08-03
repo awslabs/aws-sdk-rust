@@ -29,18 +29,14 @@ impl DeleteMailboxPermissionsInput {
 }
 impl DeleteMailboxPermissionsInput {
     /// Creates a new builder-style object to manufacture [`DeleteMailboxPermissionsInput`](crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsInputBuilder {
         crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMailboxPermissionsInput`](crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMailboxPermissionsInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct DeleteMailboxPermissionsInputBuilder {
 }
 impl DeleteMailboxPermissionsInputBuilder {
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -102,12 +92,10 @@ impl DeleteMailboxPermissionsInputBuilder {
         crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput {
-                organization_id: self.organization_id,
-                entity_id: self.entity_id,
-                grantee_id: self.grantee_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput {
+            organization_id: self.organization_id,
+            entity_id: self.entity_id,
+            grantee_id: self.grantee_id,
+        })
     }
 }

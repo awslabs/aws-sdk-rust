@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ImportGameConfigurationOutput`](crate::operation::import_game_configuration::ImportGameConfigurationOutput) with field(s):
     ///   - [`game_configuration(Option<GameConfigurationDetails>)`](crate::operation::import_game_configuration::ImportGameConfigurationOutput::game_configuration): <p>Details about the game configuration.</p>
     /// - On failure, responds with [`SdkError<ImportGameConfigurationError>`](crate::operation::import_game_configuration::ImportGameConfigurationError)
-    pub fn import_game_configuration(
-        &self,
-    ) -> crate::operation::import_game_configuration::builders::ImportGameConfigurationFluentBuilder
-    {
+    pub fn import_game_configuration(&self) -> crate::operation::import_game_configuration::builders::ImportGameConfigurationFluentBuilder {
         crate::operation::import_game_configuration::builders::ImportGameConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

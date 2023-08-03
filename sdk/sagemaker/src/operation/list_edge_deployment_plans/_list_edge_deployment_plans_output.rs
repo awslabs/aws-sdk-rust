@@ -5,8 +5,7 @@
 pub struct ListEdgeDeploymentPlansOutput {
     /// <p>List of summaries of edge deployment plans.</p>
     #[doc(hidden)]
-    pub edge_deployment_plan_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentPlanSummary>>,
+    pub edge_deployment_plan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentPlanSummary>>,
     /// <p>The token to use when calling the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEdgeDeploymentPlansOutput {
 }
 impl ListEdgeDeploymentPlansOutput {
     /// <p>List of summaries of edge deployment plans.</p>
-    pub fn edge_deployment_plan_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EdgeDeploymentPlanSummary]> {
+    pub fn edge_deployment_plan_summaries(&self) -> ::std::option::Option<&[crate::types::EdgeDeploymentPlanSummary]> {
         self.edge_deployment_plan_summaries.as_deref()
     }
     /// <p>The token to use when calling the next page of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEdgeDeploymentPlansOutput {
 }
 impl ListEdgeDeploymentPlansOutput {
     /// Creates a new builder-style object to manufacture [`ListEdgeDeploymentPlansOutput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput).
-    pub fn builder(
-    ) -> crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansOutputBuilder {
         crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEdgeDeploymentPlansOutput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEdgeDeploymentPlansOutputBuilder {
-    pub(crate) edge_deployment_plan_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentPlanSummary>>,
+    pub(crate) edge_deployment_plan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentPlanSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListEdgeDeploymentPlansOutputBuilder {
     /// To override the contents of this collection use [`set_edge_deployment_plan_summaries`](Self::set_edge_deployment_plan_summaries).
     ///
     /// <p>List of summaries of edge deployment plans.</p>
-    pub fn edge_deployment_plan_summaries(
-        mut self,
-        input: crate::types::EdgeDeploymentPlanSummary,
-    ) -> Self {
+    pub fn edge_deployment_plan_summaries(mut self, input: crate::types::EdgeDeploymentPlanSummary) -> Self {
         let mut v = self.edge_deployment_plan_summaries.unwrap_or_default();
         v.push(input);
         self.edge_deployment_plan_summaries = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListEdgeDeploymentPlansOutputBuilder {
         self
     }
     /// <p>List of summaries of edge deployment plans.</p>
-    pub fn get_edge_deployment_plan_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentPlanSummary>> {
+    pub fn get_edge_deployment_plan_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentPlanSummary>> {
         &self.edge_deployment_plan_summaries
     }
     /// <p>The token to use when calling the next page of results.</p>
@@ -102,9 +89,7 @@ impl ListEdgeDeploymentPlansOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEdgeDeploymentPlansOutput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput {
+    pub fn build(self) -> crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput {
         crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput {
             edge_deployment_plan_summaries: self.edge_deployment_plan_summaries,
             next_token: self.next_token,

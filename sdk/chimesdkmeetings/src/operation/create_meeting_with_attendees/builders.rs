@@ -26,7 +26,7 @@ impl CreateMeetingWithAttendeesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMeetingWithAttendeesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder,
+    inner: crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder,
 }
 impl CreateMeetingWithAttendeesFluentBuilder {
     /// Creates a new `CreateMeetingWithAttendees`.
@@ -37,7 +37,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         }
     }
     /// Access the CreateMeetingWithAttendees as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
             crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendees,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateMeetingWithAttendeesFluentBuilder {
             crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendees,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -161,18 +144,12 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self.inner.get_media_region()
     }
     /// <p>Reserved.</p>
-    pub fn meeting_host_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn meeting_host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.meeting_host_id(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_meeting_host_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_meeting_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_meeting_host_id(input);
         self
     }
@@ -183,20 +160,14 @@ impl CreateMeetingWithAttendeesFluentBuilder {
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    pub fn external_meeting_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_meeting_id(input.into());
         self
     }
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    pub fn set_external_meeting_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_meeting_id(input);
         self
     }
@@ -212,39 +183,26 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self
     }
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    pub fn set_meeting_features(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingFeaturesConfiguration>,
-    ) -> Self {
+    pub fn set_meeting_features(mut self, input: ::std::option::Option<crate::types::MeetingFeaturesConfiguration>) -> Self {
         self.inner = self.inner.set_meeting_features(input);
         self
     }
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    pub fn get_meeting_features(
-        &self,
-    ) -> &::std::option::Option<crate::types::MeetingFeaturesConfiguration> {
+    pub fn get_meeting_features(&self) -> &::std::option::Option<crate::types::MeetingFeaturesConfiguration> {
         self.inner.get_meeting_features()
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn notifications_configuration(
-        mut self,
-        input: crate::types::NotificationsConfiguration,
-    ) -> Self {
+    pub fn notifications_configuration(mut self, input: crate::types::NotificationsConfiguration) -> Self {
         self.inner = self.inner.notifications_configuration(input);
         self
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn set_notifications_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationsConfiguration>,
-    ) -> Self {
+    pub fn set_notifications_configuration(mut self, input: ::std::option::Option<crate::types::NotificationsConfiguration>) -> Self {
         self.inner = self.inner.set_notifications_configuration(input);
         self
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn get_notifications_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationsConfiguration> {
+    pub fn get_notifications_configuration(&self) -> &::std::option::Option<crate::types::NotificationsConfiguration> {
         self.inner.get_notifications_configuration()
     }
     /// Appends an item to `Attendees`.
@@ -257,32 +215,21 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self
     }
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn set_attendees(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
-    ) -> Self {
+    pub fn set_attendees(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>) -> Self {
         self.inner = self.inner.set_attendees(input);
         self
     }
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn get_attendees(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
+    pub fn get_attendees(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
         self.inner.get_attendees()
     }
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    pub fn primary_meeting_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_meeting_id(input.into());
         self
     }
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    pub fn set_primary_meeting_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_meeting_id(input);
         self
     }
@@ -300,10 +247,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self
     }
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    pub fn set_tenant_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tenant_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tenant_ids(input);
         self
     }
@@ -321,10 +265,7 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self
     }
     /// <p>The tags in the request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

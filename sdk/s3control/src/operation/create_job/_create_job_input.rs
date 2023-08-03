@@ -92,9 +92,7 @@ impl CreateJobInput {
 
 /// A builder for [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) confirmation_required: ::std::option::Option<bool>,
@@ -143,10 +141,7 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::JobOperation>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::JobOperation>) -> Self {
         self.operation = input;
         self
     }
@@ -169,18 +164,12 @@ impl CreateJobInputBuilder {
         &self.report
     }
     /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -256,10 +245,7 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -273,26 +259,16 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
-    pub fn set_manifest_generator(
-        mut self,
-        input: ::std::option::Option<crate::types::JobManifestGenerator>,
-    ) -> Self {
+    pub fn set_manifest_generator(mut self, input: ::std::option::Option<crate::types::JobManifestGenerator>) -> Self {
         self.manifest_generator = input;
         self
     }
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
-    pub fn get_manifest_generator(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobManifestGenerator> {
+    pub fn get_manifest_generator(&self) -> &::std::option::Option<crate::types::JobManifestGenerator> {
         &self.manifest_generator
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_job::CreateJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
             account_id: self.account_id,
             confirmation_required: self.confirmation_required,

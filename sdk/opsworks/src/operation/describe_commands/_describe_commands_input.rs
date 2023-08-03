@@ -29,17 +29,14 @@ impl DescribeCommandsInput {
 }
 impl DescribeCommandsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCommandsInput`](crate::operation::describe_commands::DescribeCommandsInput).
-    pub fn builder() -> crate::operation::describe_commands::builders::DescribeCommandsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_commands::builders::DescribeCommandsInputBuilder {
         crate::operation::describe_commands::builders::DescribeCommandsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCommandsInput`](crate::operation::describe_commands::DescribeCommandsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCommandsInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct DescribeCommandsInputBuilder {
 }
 impl DescribeCommandsInputBuilder {
     /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -92,26 +83,18 @@ impl DescribeCommandsInputBuilder {
         self
     }
     /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
-    pub fn set_command_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command_ids = input;
         self
     }
     /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
-    pub fn get_command_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_command_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.command_ids
     }
     /// Consumes the builder and constructs a [`DescribeCommandsInput`](crate::operation::describe_commands::DescribeCommandsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_commands::DescribeCommandsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_commands::DescribeCommandsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_commands::DescribeCommandsInput {
             deployment_id: self.deployment_id,
             instance_id: self.instance_id,

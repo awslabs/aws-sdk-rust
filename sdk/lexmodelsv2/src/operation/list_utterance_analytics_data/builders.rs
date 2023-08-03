@@ -37,7 +37,7 @@ impl ListUtteranceAnalyticsDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUtteranceAnalyticsDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataInputBuilder,
+    inner: crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataInputBuilder,
 }
 impl ListUtteranceAnalyticsDataFluentBuilder {
     /// Creates a new `ListUtteranceAnalyticsData`.
@@ -48,7 +48,7 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
         }
     }
     /// Access the ListUtteranceAnalyticsData as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +60,7 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
             crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +70,7 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +79,7 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError>,
     > {
         let op = self
             .inner
@@ -109,9 +102,7 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError>,
     > {
         self.send_middleware().await
     }
@@ -125,16 +116,14 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
             crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_utterance_analytics_data::paginator::ListUtteranceAnalyticsDataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_utterance_analytics_data::paginator::ListUtteranceAnalyticsDataPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_utterance_analytics_data::paginator::ListUtteranceAnalyticsDataPaginator {
         crate::operation::list_utterance_analytics_data::paginator::ListUtteranceAnalyticsDataPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the bot for which you want to retrieve utterance analytics.</p>
@@ -157,10 +146,7 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
         self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see utterance analytics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date_time(input);
         self
     }
@@ -174,10 +160,7 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see utterance analytics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date_time(input);
         self
     }
@@ -191,10 +174,7 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
         self
     }
     /// <p>An object specifying the measure and method by which to sort the utterance analytics data.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UtteranceDataSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::UtteranceDataSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -212,17 +192,12 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>

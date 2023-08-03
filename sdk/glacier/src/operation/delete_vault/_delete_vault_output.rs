@@ -19,9 +19,7 @@ impl DeleteVaultOutput {
 
 /// A builder for [`DeleteVaultOutput`](crate::operation::delete_vault::DeleteVaultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVaultOutputBuilder {
     _request_id: Option<String>,
 }

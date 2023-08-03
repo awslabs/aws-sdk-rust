@@ -42,9 +42,7 @@ impl ReplicateKeyOutput {
 
 /// A builder for [`ReplicateKeyOutput`](crate::operation::replicate_key::ReplicateKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicateKeyOutputBuilder {
     pub(crate) replica_key_metadata: ::std::option::Option<crate::types::KeyMetadata>,
     pub(crate) replica_policy: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl ReplicateKeyOutputBuilder {
         self
     }
     /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
-    pub fn set_replica_key_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyMetadata>,
-    ) -> Self {
+    pub fn set_replica_key_metadata(mut self, input: ::std::option::Option<crate::types::KeyMetadata>) -> Self {
         self.replica_key_metadata = input;
         self
     }
@@ -70,18 +65,12 @@ impl ReplicateKeyOutputBuilder {
         &self.replica_key_metadata
     }
     /// <p>The key policy of the new replica key. The value is a key policy document in JSON format.</p>
-    pub fn replica_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replica_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replica_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key policy of the new replica key. The value is a key policy document in JSON format.</p>
-    pub fn set_replica_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replica_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replica_policy = input;
         self
     }
@@ -101,10 +90,7 @@ impl ReplicateKeyOutputBuilder {
         self
     }
     /// <p>The tags on the new replica key. The value is a list of tag key and tag value pairs.</p>
-    pub fn set_replica_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_replica_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.replica_tags = input;
         self
     }

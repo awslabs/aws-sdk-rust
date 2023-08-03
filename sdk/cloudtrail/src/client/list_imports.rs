@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`imports(Option<Vec<ImportsListItem>>)`](crate::operation::list_imports::ListImportsOutput::imports): <p> The list of returned imports. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_imports::ListImportsOutput::next_token): <p> A token you can use to get the next page of import results. </p>
     /// - On failure, responds with [`SdkError<ListImportsError>`](crate::operation::list_imports::ListImportsError)
-    pub fn list_imports(
-        &self,
-    ) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {
+    pub fn list_imports(&self) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {
         crate::operation::list_imports::builders::ListImportsFluentBuilder::new(self.handle.clone())
     }
 }

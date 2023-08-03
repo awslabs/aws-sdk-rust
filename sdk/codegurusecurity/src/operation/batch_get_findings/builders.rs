@@ -10,10 +10,7 @@ impl BatchGetFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_findings::BatchGetFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_findings::BatchGetFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_findings::BatchGetFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_findings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetFindingsFluentBuilder {
         }
     }
     /// Access the BatchGetFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_findings::builders::BatchGetFindingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_findings::builders::BatchGetFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetFindingsFluentBuilder {
             crate::operation::batch_get_findings::BatchGetFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_findings::BatchGetFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_findings::BatchGetFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_findings::BatchGetFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_findings::BatchGetFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_findings::BatchGetFindingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_findings::BatchGetFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_findings::BatchGetFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_findings::BatchGetFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetFindingsFluentBuilder {
             crate::operation::batch_get_findings::BatchGetFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_findings::BatchGetFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_findings::BatchGetFindingsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl BatchGetFindingsFluentBuilder {
         self
     }
     /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
-    pub fn set_finding_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>>,
-    ) -> Self {
+    pub fn set_finding_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>>) -> Self {
         self.inner = self.inner.set_finding_identifiers(input);
         self
     }
     /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
-    pub fn get_finding_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>> {
+    pub fn get_finding_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>> {
         self.inner.get_finding_identifiers()
     }
 }

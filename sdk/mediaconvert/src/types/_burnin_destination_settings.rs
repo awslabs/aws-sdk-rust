@@ -74,15 +74,11 @@ impl BurninDestinationSettings {
         self.alignment.as_ref()
     }
     /// Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
-    pub fn apply_font_color(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BurninSubtitleApplyFontColor> {
+    pub fn apply_font_color(&self) -> ::std::option::Option<&crate::types::BurninSubtitleApplyFontColor> {
         self.apply_font_color.as_ref()
     }
     /// Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to enabled to use the background color data from your input captions, if present.
-    pub fn background_color(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BurninSubtitleBackgroundColor> {
+    pub fn background_color(&self) -> ::std::option::Option<&crate::types::BurninSubtitleBackgroundColor> {
         self.background_color.as_ref()
     }
     /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions.
@@ -90,9 +86,7 @@ impl BurninDestinationSettings {
         self.background_opacity
     }
     /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
-    pub fn fallback_font(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BurninSubtitleFallbackFont> {
+    pub fn fallback_font(&self) -> ::std::option::Option<&crate::types::BurninSubtitleFallbackFont> {
         self.fallback_font.as_ref()
     }
     /// Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present.
@@ -120,9 +114,7 @@ impl BurninDestinationSettings {
         self.hex_font_color.as_deref()
     }
     /// Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font outline color data from your input captions, if present.
-    pub fn outline_color(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BurninSubtitleOutlineColor> {
+    pub fn outline_color(&self) -> ::std::option::Option<&crate::types::BurninSubtitleOutlineColor> {
         self.outline_color.as_ref()
     }
     /// Specify the Outline size of the caption text, in pixels. Leave Outline size blank and set Style passthrough to enabled to use the outline size data from your input captions, if present.
@@ -146,15 +138,11 @@ impl BurninDestinationSettings {
         self.shadow_y_offset
     }
     /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
-    pub fn style_passthrough(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BurnInSubtitleStylePassthrough> {
+    pub fn style_passthrough(&self) -> ::std::option::Option<&crate::types::BurnInSubtitleStylePassthrough> {
         self.style_passthrough.as_ref()
     }
     /// Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read for closed captions.
-    pub fn teletext_spacing(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BurninSubtitleTeletextSpacing> {
+    pub fn teletext_spacing(&self) -> ::std::option::Option<&crate::types::BurninSubtitleTeletextSpacing> {
         self.teletext_spacing.as_ref()
     }
     /// Specify the horizontal position of the captions, relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit x_position is provided, the horizontal caption position will be determined by the alignment parameter.
@@ -175,9 +163,7 @@ impl BurninDestinationSettings {
 
 /// A builder for [`BurninDestinationSettings`](crate::types::BurninDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BurninDestinationSettingsBuilder {
     pub(crate) alignment: ::std::option::Option<crate::types::BurninSubtitleAlignment>,
     pub(crate) apply_font_color: ::std::option::Option<crate::types::BurninSubtitleApplyFontColor>,
@@ -196,8 +182,7 @@ pub struct BurninDestinationSettingsBuilder {
     pub(crate) shadow_opacity: ::std::option::Option<i32>,
     pub(crate) shadow_x_offset: ::std::option::Option<i32>,
     pub(crate) shadow_y_offset: ::std::option::Option<i32>,
-    pub(crate) style_passthrough:
-        ::std::option::Option<crate::types::BurnInSubtitleStylePassthrough>,
+    pub(crate) style_passthrough: ::std::option::Option<crate::types::BurnInSubtitleStylePassthrough>,
     pub(crate) teletext_spacing: ::std::option::Option<crate::types::BurninSubtitleTeletextSpacing>,
     pub(crate) x_position: ::std::option::Option<i32>,
     pub(crate) y_position: ::std::option::Option<i32>,
@@ -209,10 +194,7 @@ impl BurninDestinationSettingsBuilder {
         self
     }
     /// Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates.
-    pub fn set_alignment(
-        mut self,
-        input: ::std::option::Option<crate::types::BurninSubtitleAlignment>,
-    ) -> Self {
+    pub fn set_alignment(mut self, input: ::std::option::Option<crate::types::BurninSubtitleAlignment>) -> Self {
         self.alignment = input;
         self
     }
@@ -226,17 +208,12 @@ impl BurninDestinationSettingsBuilder {
         self
     }
     /// Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
-    pub fn set_apply_font_color(
-        mut self,
-        input: ::std::option::Option<crate::types::BurninSubtitleApplyFontColor>,
-    ) -> Self {
+    pub fn set_apply_font_color(mut self, input: ::std::option::Option<crate::types::BurninSubtitleApplyFontColor>) -> Self {
         self.apply_font_color = input;
         self
     }
     /// Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
-    pub fn get_apply_font_color(
-        &self,
-    ) -> &::std::option::Option<crate::types::BurninSubtitleApplyFontColor> {
+    pub fn get_apply_font_color(&self) -> &::std::option::Option<crate::types::BurninSubtitleApplyFontColor> {
         &self.apply_font_color
     }
     /// Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to enabled to use the background color data from your input captions, if present.
@@ -245,17 +222,12 @@ impl BurninDestinationSettingsBuilder {
         self
     }
     /// Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to enabled to use the background color data from your input captions, if present.
-    pub fn set_background_color(
-        mut self,
-        input: ::std::option::Option<crate::types::BurninSubtitleBackgroundColor>,
-    ) -> Self {
+    pub fn set_background_color(mut self, input: ::std::option::Option<crate::types::BurninSubtitleBackgroundColor>) -> Self {
         self.background_color = input;
         self
     }
     /// Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to enabled to use the background color data from your input captions, if present.
-    pub fn get_background_color(
-        &self,
-    ) -> &::std::option::Option<crate::types::BurninSubtitleBackgroundColor> {
+    pub fn get_background_color(&self) -> &::std::option::Option<crate::types::BurninSubtitleBackgroundColor> {
         &self.background_color
     }
     /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions.
@@ -278,17 +250,12 @@ impl BurninDestinationSettingsBuilder {
         self
     }
     /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
-    pub fn set_fallback_font(
-        mut self,
-        input: ::std::option::Option<crate::types::BurninSubtitleFallbackFont>,
-    ) -> Self {
+    pub fn set_fallback_font(mut self, input: ::std::option::Option<crate::types::BurninSubtitleFallbackFont>) -> Self {
         self.fallback_font = input;
         self
     }
     /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
-    pub fn get_fallback_font(
-        &self,
-    ) -> &::std::option::Option<crate::types::BurninSubtitleFallbackFont> {
+    pub fn get_fallback_font(&self) -> &::std::option::Option<crate::types::BurninSubtitleFallbackFont> {
         &self.fallback_font
     }
     /// Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present.
@@ -297,10 +264,7 @@ impl BurninDestinationSettingsBuilder {
         self
     }
     /// Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present.
-    pub fn set_font_color(
-        mut self,
-        input: ::std::option::Option<crate::types::BurninSubtitleFontColor>,
-    ) -> Self {
+    pub fn set_font_color(mut self, input: ::std::option::Option<crate::types::BurninSubtitleFontColor>) -> Self {
         self.font_color = input;
         self
     }
@@ -342,10 +306,7 @@ impl BurninDestinationSettingsBuilder {
         self
     }
     /// Set Font script to Automatically determined, or leave blank, to automatically determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese.
-    pub fn set_font_script(
-        mut self,
-        input: ::std::option::Option<crate::types::FontScript>,
-    ) -> Self {
+    pub fn set_font_script(mut self, input: ::std::option::Option<crate::types::FontScript>) -> Self {
         self.font_script = input;
         self
     }
@@ -368,18 +329,12 @@ impl BurninDestinationSettingsBuilder {
         &self.font_size
     }
     /// Ignore this setting unless your Font color is set to Hex. Enter either six or eight hexidecimal digits, representing red, green, and blue, with two optional extra digits for alpha. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
-    pub fn hex_font_color(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hex_font_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hex_font_color = ::std::option::Option::Some(input.into());
         self
     }
     /// Ignore this setting unless your Font color is set to Hex. Enter either six or eight hexidecimal digits, representing red, green, and blue, with two optional extra digits for alpha. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
-    pub fn set_hex_font_color(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hex_font_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hex_font_color = input;
         self
     }
@@ -393,17 +348,12 @@ impl BurninDestinationSettingsBuilder {
         self
     }
     /// Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font outline color data from your input captions, if present.
-    pub fn set_outline_color(
-        mut self,
-        input: ::std::option::Option<crate::types::BurninSubtitleOutlineColor>,
-    ) -> Self {
+    pub fn set_outline_color(mut self, input: ::std::option::Option<crate::types::BurninSubtitleOutlineColor>) -> Self {
         self.outline_color = input;
         self
     }
     /// Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font outline color data from your input captions, if present.
-    pub fn get_outline_color(
-        &self,
-    ) -> &::std::option::Option<crate::types::BurninSubtitleOutlineColor> {
+    pub fn get_outline_color(&self) -> &::std::option::Option<crate::types::BurninSubtitleOutlineColor> {
         &self.outline_color
     }
     /// Specify the Outline size of the caption text, in pixels. Leave Outline size blank and set Style passthrough to enabled to use the outline size data from your input captions, if present.
@@ -426,17 +376,12 @@ impl BurninDestinationSettingsBuilder {
         self
     }
     /// Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to enabled to use the shadow color data from your input captions, if present.
-    pub fn set_shadow_color(
-        mut self,
-        input: ::std::option::Option<crate::types::BurninSubtitleShadowColor>,
-    ) -> Self {
+    pub fn set_shadow_color(mut self, input: ::std::option::Option<crate::types::BurninSubtitleShadowColor>) -> Self {
         self.shadow_color = input;
         self
     }
     /// Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to enabled to use the shadow color data from your input captions, if present.
-    pub fn get_shadow_color(
-        &self,
-    ) -> &::std::option::Option<crate::types::BurninSubtitleShadowColor> {
+    pub fn get_shadow_color(&self) -> &::std::option::Option<crate::types::BurninSubtitleShadowColor> {
         &self.shadow_color
     }
     /// Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to Enabled, leave Shadow opacity blank to pass through the shadow style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all shadows from your output captions.
@@ -482,25 +427,17 @@ impl BurninDestinationSettingsBuilder {
         &self.shadow_y_offset
     }
     /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
-    pub fn style_passthrough(
-        mut self,
-        input: crate::types::BurnInSubtitleStylePassthrough,
-    ) -> Self {
+    pub fn style_passthrough(mut self, input: crate::types::BurnInSubtitleStylePassthrough) -> Self {
         self.style_passthrough = ::std::option::Option::Some(input);
         self
     }
     /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
-    pub fn set_style_passthrough(
-        mut self,
-        input: ::std::option::Option<crate::types::BurnInSubtitleStylePassthrough>,
-    ) -> Self {
+    pub fn set_style_passthrough(mut self, input: ::std::option::Option<crate::types::BurnInSubtitleStylePassthrough>) -> Self {
         self.style_passthrough = input;
         self
     }
     /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
-    pub fn get_style_passthrough(
-        &self,
-    ) -> &::std::option::Option<crate::types::BurnInSubtitleStylePassthrough> {
+    pub fn get_style_passthrough(&self) -> &::std::option::Option<crate::types::BurnInSubtitleStylePassthrough> {
         &self.style_passthrough
     }
     /// Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read for closed captions.
@@ -509,17 +446,12 @@ impl BurninDestinationSettingsBuilder {
         self
     }
     /// Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read for closed captions.
-    pub fn set_teletext_spacing(
-        mut self,
-        input: ::std::option::Option<crate::types::BurninSubtitleTeletextSpacing>,
-    ) -> Self {
+    pub fn set_teletext_spacing(mut self, input: ::std::option::Option<crate::types::BurninSubtitleTeletextSpacing>) -> Self {
         self.teletext_spacing = input;
         self
     }
     /// Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read for closed captions.
-    pub fn get_teletext_spacing(
-        &self,
-    ) -> &::std::option::Option<crate::types::BurninSubtitleTeletextSpacing> {
+    pub fn get_teletext_spacing(&self) -> &::std::option::Option<crate::types::BurninSubtitleTeletextSpacing> {
         &self.teletext_spacing
     }
     /// Specify the horizontal position of the captions, relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit x_position is provided, the horizontal caption position will be determined by the alignment parameter.

@@ -37,9 +37,7 @@ impl ListDocumentVersionsFluentBuilder {
         }
     }
     /// Access the ListDocumentVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_document_versions::builders::ListDocumentVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_document_versions::builders::ListDocumentVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListDocumentVersionsFluentBuilder {
             crate::operation::list_document_versions::ListDocumentVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_versions::ListDocumentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_versions::ListDocumentVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListDocumentVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListDocumentVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_document_versions::ListDocumentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_versions::ListDocumentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_versions::ListDocumentVersionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListDocumentVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_document_versions::ListDocumentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_versions::ListDocumentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_versions::ListDocumentVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListDocumentVersionsFluentBuilder {
             crate::operation::list_document_versions::ListDocumentVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_versions::ListDocumentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_versions::ListDocumentVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator {
-        crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator {
+        crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

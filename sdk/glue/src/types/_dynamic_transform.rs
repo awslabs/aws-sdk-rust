@@ -72,15 +72,12 @@ impl DynamicTransform {
 
 /// A builder for [`DynamicTransform`](crate::types::DynamicTransform).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynamicTransformBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) transform_name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -102,18 +99,12 @@ impl DynamicTransformBuilder {
         &self.name
     }
     /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
-    pub fn transform_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transform_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
-    pub fn set_transform_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transform_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transform_name = input;
         self
     }
@@ -133,10 +124,7 @@ impl DynamicTransformBuilder {
         self
     }
     /// <p>Specifies the inputs for the dynamic transform that are required.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -156,32 +144,21 @@ impl DynamicTransformBuilder {
         self
     }
     /// <p>Specifies the parameters of the dynamic transform.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>Specifies the parameters of the dynamic transform.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>> {
         &self.parameters
     }
     /// <p>Specifies the name of the function of the dynamic transform.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the function of the dynamic transform.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -229,17 +206,12 @@ impl DynamicTransformBuilder {
         self
     }
     /// <p>Specifies the data schema for the dynamic transform.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
     /// <p>Specifies the data schema for the dynamic transform.</p>
-    pub fn get_output_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`DynamicTransform`](crate::types::DynamicTransform).

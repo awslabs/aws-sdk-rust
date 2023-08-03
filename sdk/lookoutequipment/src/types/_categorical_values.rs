@@ -30,9 +30,7 @@ impl CategoricalValues {
 
 /// A builder for [`CategoricalValues`](crate::types::CategoricalValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CategoricalValuesBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     pub(crate) number_of_category: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl CategoricalValuesBuilder {
         self
     }
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticalIssueStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatisticalIssueStatus>) -> Self {
         self.status = input;
         self
     }

@@ -10,10 +10,7 @@ impl DeleteFileSystemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_file_system::DeleteFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_system::DeleteFileSystemError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_system::DeleteFileSystemError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_file_system();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl DeleteFileSystemFluentBuilder {
         }
     }
     /// Access the DeleteFileSystem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl DeleteFileSystemFluentBuilder {
             crate::operation::delete_file_system::DeleteFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_system::DeleteFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_system::DeleteFileSystemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl DeleteFileSystemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl DeleteFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_file_system::DeleteFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_system::DeleteFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_system::DeleteFileSystemError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl DeleteFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_file_system::DeleteFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_system::DeleteFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_system::DeleteFileSystemError>,
     > {
         self.send_middleware().await
     }
@@ -123,25 +109,17 @@ impl DeleteFileSystemFluentBuilder {
             crate::operation::delete_file_system::DeleteFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_system::DeleteFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_system::DeleteFileSystemError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the file system you want to delete.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the file system you want to delete.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }

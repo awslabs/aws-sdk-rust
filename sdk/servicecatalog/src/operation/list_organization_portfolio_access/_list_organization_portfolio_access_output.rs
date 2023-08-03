@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListOrganizationPortfolioAccessOutput
 }
 impl ListOrganizationPortfolioAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationPortfolioAccessOutput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput).
-    pub fn builder() -> crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessOutputBuilder{
+    pub fn builder() -> crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessOutputBuilder {
         crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOrganizationPortfolioAccessOutput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrganizationPortfolioAccessOutputBuilder {
-    pub(crate) organization_nodes:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrganizationNode>>,
+    pub(crate) organization_nodes: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationNode>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,32 +54,21 @@ impl ListOrganizationPortfolioAccessOutputBuilder {
         self
     }
     /// <p>Displays information about the organization nodes.</p>
-    pub fn set_organization_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationNode>>,
-    ) -> Self {
+    pub fn set_organization_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationNode>>) -> Self {
         self.organization_nodes = input;
         self
     }
     /// <p>Displays information about the organization nodes.</p>
-    pub fn get_organization_nodes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationNode>> {
+    pub fn get_organization_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationNode>> {
         &self.organization_nodes
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -100,15 +86,10 @@ impl ListOrganizationPortfolioAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListOrganizationPortfolioAccessOutput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput
-    {
+    pub fn build(self) -> crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput {
         crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput {
-            organization_nodes: self.organization_nodes
-            ,
-            next_page_token: self.next_page_token
-            ,
+            organization_nodes: self.organization_nodes,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }

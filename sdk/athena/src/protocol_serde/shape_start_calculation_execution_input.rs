@@ -12,10 +12,7 @@ pub fn ser_start_calculation_execution_input(
     if let Some(var_3) = &input.calculation_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("CalculationConfiguration").start_object();
-        crate::protocol_serde::shape_calculation_configuration::ser_calculation_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_calculation_configuration::ser_calculation_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.code_block {

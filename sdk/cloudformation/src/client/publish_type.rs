@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PublishTypeOutput`](crate::operation::publish_type::PublishTypeOutput) with field(s):
     ///   - [`public_type_arn(Option<String>)`](crate::operation::publish_type::PublishTypeOutput::public_type_arn): <p>The Amazon Resource Name (ARN) assigned to the public extension upon publication.</p>
     /// - On failure, responds with [`SdkError<PublishTypeError>`](crate::operation::publish_type::PublishTypeError)
-    pub fn publish_type(
-        &self,
-    ) -> crate::operation::publish_type::builders::PublishTypeFluentBuilder {
+    pub fn publish_type(&self) -> crate::operation::publish_type::builders::PublishTypeFluentBuilder {
         crate::operation::publish_type::builders::PublishTypeFluentBuilder::new(self.handle.clone())
     }
 }

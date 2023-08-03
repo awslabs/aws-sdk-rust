@@ -48,9 +48,7 @@ impl UpdateReplicationJobInput {
         self.frequency
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn next_replication_run_start_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn next_replication_run_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.next_replication_run_start_time.as_ref()
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
@@ -87,17 +85,14 @@ impl UpdateReplicationJobInput {
 }
 impl UpdateReplicationJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateReplicationJobInput`](crate::operation::update_replication_job::UpdateReplicationJobInput).
-    pub fn builder(
-    ) -> crate::operation::update_replication_job::builders::UpdateReplicationJobInputBuilder {
+    pub fn builder() -> crate::operation::update_replication_job::builders::UpdateReplicationJobInputBuilder {
         crate::operation::update_replication_job::builders::UpdateReplicationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateReplicationJobInput`](crate::operation::update_replication_job::UpdateReplicationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateReplicationJobInputBuilder {
     pub(crate) replication_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) frequency: ::std::option::Option<i32>,
@@ -111,18 +106,12 @@ pub struct UpdateReplicationJobInputBuilder {
 }
 impl UpdateReplicationJobInputBuilder {
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_job_id = input;
         self
     }
@@ -150,17 +139,12 @@ impl UpdateReplicationJobInputBuilder {
         self
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn set_next_replication_run_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_next_replication_run_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.next_replication_run_start_time = input;
         self
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn get_next_replication_run_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_next_replication_run_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.next_replication_run_start_time
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
@@ -169,10 +153,7 @@ impl UpdateReplicationJobInputBuilder {
         self
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    pub fn set_license_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseType>,
-    ) -> Self {
+    pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
         self.license_type = input;
         self
     }
@@ -274,22 +255,18 @@ impl UpdateReplicationJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReplicationJobInput`](crate::operation::update_replication_job::UpdateReplicationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_replication_job::UpdateReplicationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_replication_job::UpdateReplicationJobInput {
-                replication_job_id: self.replication_job_id,
-                frequency: self.frequency,
-                next_replication_run_start_time: self.next_replication_run_start_time,
-                license_type: self.license_type,
-                role_name: self.role_name,
-                description: self.description,
-                number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep,
-                encrypted: self.encrypted,
-                kms_key_id: self.kms_key_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_replication_job::UpdateReplicationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_replication_job::UpdateReplicationJobInput {
+            replication_job_id: self.replication_job_id,
+            frequency: self.frequency,
+            next_replication_run_start_time: self.next_replication_run_start_time,
+            license_type: self.license_type,
+            role_name: self.role_name,
+            description: self.description,
+            number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep,
+            encrypted: self.encrypted,
+            kms_key_id: self.kms_key_id,
+        })
     }
 }

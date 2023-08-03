@@ -6,8 +6,7 @@
 pub struct AwsIamGroupDetails {
     /// <p>A list of the managed policies that are attached to the IAM group.</p>
     #[doc(hidden)]
-    pub attached_managed_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
+    pub attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
     /// <p>Indicates when the IAM group was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
@@ -27,9 +26,7 @@ pub struct AwsIamGroupDetails {
 }
 impl AwsIamGroupDetails {
     /// <p>A list of the managed policies that are attached to the IAM group.</p>
-    pub fn attached_managed_policies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsIamAttachedManagedPolicy]> {
+    pub fn attached_managed_policies(&self) -> ::std::option::Option<&[crate::types::AwsIamAttachedManagedPolicy]> {
         self.attached_managed_policies.as_deref()
     }
     /// <p>Indicates when the IAM group was created.</p>
@@ -63,17 +60,13 @@ impl AwsIamGroupDetails {
 
 /// A builder for [`AwsIamGroupDetails`](crate::types::AwsIamGroupDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamGroupDetailsBuilder {
-    pub(crate) attached_managed_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
+    pub(crate) attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
     pub(crate) create_date: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) group_policy_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamGroupPolicy>>,
+    pub(crate) group_policy_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamGroupPolicy>>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamGroupDetailsBuilder {
@@ -82,27 +75,19 @@ impl AwsIamGroupDetailsBuilder {
     /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
     ///
     /// <p>A list of the managed policies that are attached to the IAM group.</p>
-    pub fn attached_managed_policies(
-        mut self,
-        input: crate::types::AwsIamAttachedManagedPolicy,
-    ) -> Self {
+    pub fn attached_managed_policies(mut self, input: crate::types::AwsIamAttachedManagedPolicy) -> Self {
         let mut v = self.attached_managed_policies.unwrap_or_default();
         v.push(input);
         self.attached_managed_policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the managed policies that are attached to the IAM group.</p>
-    pub fn set_attached_managed_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
-    ) -> Self {
+    pub fn set_attached_managed_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>) -> Self {
         self.attached_managed_policies = input;
         self
     }
     /// <p>A list of the managed policies that are attached to the IAM group.</p>
-    pub fn get_attached_managed_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>> {
+    pub fn get_attached_managed_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>> {
         &self.attached_managed_policies
     }
     /// <p>Indicates when the IAM group was created.</p>
@@ -162,17 +147,12 @@ impl AwsIamGroupDetailsBuilder {
         self
     }
     /// <p>The list of inline policies that are embedded in the group.</p>
-    pub fn set_group_policy_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamGroupPolicy>>,
-    ) -> Self {
+    pub fn set_group_policy_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamGroupPolicy>>) -> Self {
         self.group_policy_list = input;
         self
     }
     /// <p>The list of inline policies that are embedded in the group.</p>
-    pub fn get_group_policy_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamGroupPolicy>> {
+    pub fn get_group_policy_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamGroupPolicy>> {
         &self.group_policy_list
     }
     /// <p>The path to the group.</p>

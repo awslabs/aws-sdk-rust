@@ -37,9 +37,7 @@ impl ServerGroup {
 
 /// A builder for [`ServerGroup`](crate::types::ServerGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerGroupBuilder {
     pub(crate) server_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct ServerGroupBuilder {
 }
 impl ServerGroupBuilder {
     /// <p>The ID of a server group.</p>
-    pub fn server_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a server group.</p>
-    pub fn set_server_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_group_id = input;
         self
     }
@@ -92,10 +84,7 @@ impl ServerGroupBuilder {
         self
     }
     /// <p>The servers that belong to a server group.</p>
-    pub fn set_server_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
-    ) -> Self {
+    pub fn set_server_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Server>>) -> Self {
         self.server_list = input;
         self
     }

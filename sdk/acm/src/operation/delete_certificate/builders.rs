@@ -10,10 +10,7 @@ impl DeleteCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_certificate::DeleteCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate::DeleteCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_certificate();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteCertificateFluentBuilder {
         }
     }
     /// Access the DeleteCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeleteCertificateFluentBuilder {
             crate::operation::delete_certificate::DeleteCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate::DeleteCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeleteCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeleteCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_certificate::DeleteCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate::DeleteCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeleteCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_certificate::DeleteCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate::DeleteCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -118,29 +104,21 @@ impl DeleteCertificateFluentBuilder {
             crate::operation::delete_certificate::DeleteCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate::DeleteCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }

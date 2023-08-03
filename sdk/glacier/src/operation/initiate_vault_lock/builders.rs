@@ -10,10 +10,7 @@ impl InitiateVaultLockInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::initiate_vault_lock::InitiateVaultLockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_vault_lock::InitiateVaultLockError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.initiate_vault_lock();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl InitiateVaultLockFluentBuilder {
         }
     }
     /// Access the InitiateVaultLock as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::initiate_vault_lock::builders::InitiateVaultLockInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::initiate_vault_lock::builders::InitiateVaultLockInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl InitiateVaultLockFluentBuilder {
             crate::operation::initiate_vault_lock::InitiateVaultLock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_vault_lock::InitiateVaultLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl InitiateVaultLockFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl InitiateVaultLockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::initiate_vault_lock::InitiateVaultLockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_vault_lock::InitiateVaultLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl InitiateVaultLockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::initiate_vault_lock::InitiateVaultLockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_vault_lock::InitiateVaultLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +112,7 @@ impl InitiateVaultLockFluentBuilder {
             crate::operation::initiate_vault_lock::InitiateVaultLock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_vault_lock::InitiateVaultLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError>,
     > {
         self.customize_middleware().await
     }
@@ -166,10 +150,7 @@ impl InitiateVaultLockFluentBuilder {
         self
     }
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::VaultLockPolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::VaultLockPolicy>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }

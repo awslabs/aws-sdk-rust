@@ -26,8 +26,7 @@ impl UpdateScalingParametersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateScalingParametersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_scaling_parameters::builders::UpdateScalingParametersInputBuilder,
+    inner: crate::operation::update_scaling_parameters::builders::UpdateScalingParametersInputBuilder,
 }
 impl UpdateScalingParametersFluentBuilder {
     /// Creates a new `UpdateScalingParameters`.
@@ -38,10 +37,7 @@ impl UpdateScalingParametersFluentBuilder {
         }
     }
     /// Access the UpdateScalingParameters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_scaling_parameters::builders::UpdateScalingParametersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_scaling_parameters::builders::UpdateScalingParametersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateScalingParametersFluentBuilder {
             crate::operation::update_scaling_parameters::UpdateScalingParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scaling_parameters::UpdateScalingParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scaling_parameters::UpdateScalingParametersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateScalingParametersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateScalingParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scaling_parameters::UpdateScalingParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scaling_parameters::UpdateScalingParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scaling_parameters::UpdateScalingParametersError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateScalingParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scaling_parameters::UpdateScalingParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scaling_parameters::UpdateScalingParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scaling_parameters::UpdateScalingParametersError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateScalingParametersFluentBuilder {
             crate::operation::update_scaling_parameters::UpdateScalingParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scaling_parameters::UpdateScalingParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scaling_parameters::UpdateScalingParametersError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +129,12 @@ impl UpdateScalingParametersFluentBuilder {
         self
     }
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-    pub fn set_scaling_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingParameters>,
-    ) -> Self {
+    pub fn set_scaling_parameters(mut self, input: ::std::option::Option<crate::types::ScalingParameters>) -> Self {
         self.inner = self.inner.set_scaling_parameters(input);
         self
     }
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-    pub fn get_scaling_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalingParameters> {
+    pub fn get_scaling_parameters(&self) -> &::std::option::Option<crate::types::ScalingParameters> {
         self.inner.get_scaling_parameters()
     }
 }

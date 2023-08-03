@@ -23,9 +23,7 @@ impl MarginStyle {
 
 /// A builder for [`MarginStyle`](crate::types::MarginStyle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MarginStyleBuilder {
     pub(crate) show: ::std::option::Option<bool>,
 }

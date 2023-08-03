@@ -41,17 +41,14 @@ impl ListGeoLocationsInput {
 }
 impl ListGeoLocationsInput {
     /// Creates a new builder-style object to manufacture [`ListGeoLocationsInput`](crate::operation::list_geo_locations::ListGeoLocationsInput).
-    pub fn builder() -> crate::operation::list_geo_locations::builders::ListGeoLocationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_geo_locations::builders::ListGeoLocationsInputBuilder {
         crate::operation::list_geo_locations::builders::ListGeoLocationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGeoLocationsInput`](crate::operation::list_geo_locations::ListGeoLocationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGeoLocationsInputBuilder {
     pub(crate) start_continent_code: ::std::option::Option<::std::string::String>,
     pub(crate) start_country_code: ::std::option::Option<::std::string::String>,
@@ -61,19 +58,13 @@ pub struct ListGeoLocationsInputBuilder {
 impl ListGeoLocationsInputBuilder {
     /// <p>The code for the continent with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p>
     /// <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.</p>
-    pub fn start_continent_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_continent_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the continent with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p>
     /// <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.</p>
-    pub fn set_start_continent_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_continent_code = input;
         self
     }
@@ -83,18 +74,12 @@ impl ListGeoLocationsInputBuilder {
         &self.start_continent_code
     }
     /// <p>The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value in <code>startcountrycode</code> to return the next page of results.</p>
-    pub fn start_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value in <code>startcountrycode</code> to return the next page of results.</p>
-    pub fn set_start_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_country_code = input;
         self
     }
@@ -104,19 +89,13 @@ impl ListGeoLocationsInputBuilder {
     }
     /// <p>The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.</p>
     /// <p>To list subdivisions (U.S. states), you must include both <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
-    pub fn start_subdivision_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_subdivision_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_subdivision_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.</p>
     /// <p>To list subdivisions (U.S. states), you must include both <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
-    pub fn set_start_subdivision_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_subdivision_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_subdivision_code = input;
         self
     }
@@ -142,17 +121,12 @@ impl ListGeoLocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListGeoLocationsInput`](crate::operation::list_geo_locations::ListGeoLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_geo_locations::ListGeoLocationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_geo_locations::ListGeoLocationsInput {
-                start_continent_code: self.start_continent_code,
-                start_country_code: self.start_country_code,
-                start_subdivision_code: self.start_subdivision_code,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_geo_locations::ListGeoLocationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_geo_locations::ListGeoLocationsInput {
+            start_continent_code: self.start_continent_code,
+            start_country_code: self.start_country_code,
+            start_subdivision_code: self.start_subdivision_code,
+            max_items: self.max_items,
+        })
     }
 }

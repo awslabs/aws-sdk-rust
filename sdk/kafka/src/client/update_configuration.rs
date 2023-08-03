@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::update_configuration::UpdateConfigurationOutput::arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`latest_revision(Option<ConfigurationRevision>)`](crate::operation::update_configuration::UpdateConfigurationOutput::latest_revision): <p>Latest revision of the configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateConfigurationError>`](crate::operation::update_configuration::UpdateConfigurationError)
-    pub fn update_configuration(
-        &self,
-    ) -> crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder {
-        crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_configuration(&self) -> crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder {
+        crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

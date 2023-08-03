@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`RejectVpcEndpointConnectionsOutput`](crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput) with field(s):
     ///   - [`unsuccessful(Option<Vec<UnsuccessfulItem>>)`](crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput::unsuccessful): <p>Information about the endpoints that were not rejected, if applicable.</p>
     /// - On failure, responds with [`SdkError<RejectVpcEndpointConnectionsError>`](crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError)
-    pub fn reject_vpc_endpoint_connections(&self) -> crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsFluentBuilder{
+    pub fn reject_vpc_endpoint_connections(
+        &self,
+    ) -> crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsFluentBuilder {
         crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

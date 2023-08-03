@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EnrollmentStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for EnrollmentStatus {
             "INITIALIZED" => EnrollmentStatus::Initialized,
             "PENDING" => EnrollmentStatus::Pending,
             "REGISTERED" => EnrollmentStatus::Registered,
-            other => {
-                EnrollmentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EnrollmentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl EnrollmentStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEREGISTERING",
-            "DISASSOCIATING",
-            "INITIALIZED",
-            "PENDING",
-            "REGISTERED",
-        ]
+        &["DEREGISTERING", "DISASSOCIATING", "INITIALIZED", "PENDING", "REGISTERED"]
     }
 }
 impl ::std::convert::AsRef<str> for EnrollmentStatus {

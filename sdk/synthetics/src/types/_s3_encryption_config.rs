@@ -33,9 +33,7 @@ impl S3EncryptionConfig {
 
 /// A builder for [`S3EncryptionConfig`](crate::types::S3EncryptionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3EncryptionConfigBuilder {
     pub(crate) encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
@@ -49,10 +47,7 @@ impl S3EncryptionConfigBuilder {
     }
     /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
     /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used. </p>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionMode>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.encryption_mode = input;
         self
     }

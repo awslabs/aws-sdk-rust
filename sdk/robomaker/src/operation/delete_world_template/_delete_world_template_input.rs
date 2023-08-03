@@ -15,18 +15,14 @@ impl DeleteWorldTemplateInput {
 }
 impl DeleteWorldTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorldTemplateInput`](crate::operation::delete_world_template::DeleteWorldTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_world_template::builders::DeleteWorldTemplateInputBuilder {
-        crate::operation::delete_world_template::builders::DeleteWorldTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_world_template::builders::DeleteWorldTemplateInputBuilder {
+        crate::operation::delete_world_template::builders::DeleteWorldTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorldTemplateInput`](crate::operation::delete_world_template::DeleteWorldTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorldTemplateInputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DeleteWorldTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorldTemplateInput`](crate::operation::delete_world_template::DeleteWorldTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_world_template::DeleteWorldTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_world_template::DeleteWorldTemplateInput {
-                template: self.template,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_world_template::DeleteWorldTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_world_template::DeleteWorldTemplateInput { template: self.template })
     }
 }

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum JobErrorLimitName {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,20 +60,12 @@ pub enum JobErrorLimitName {
 impl ::std::convert::From<&str> for JobErrorLimitName {
     fn from(s: &str) -> Self {
         match s {
-            "AWS Lake Formation data permission assets per revision" => {
-                JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision
-            }
-            "Amazon Redshift datashare assets per revision" => {
-                JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision
-            }
-            "Amazon S3 data access assets per revision" => {
-                JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision
-            }
+            "AWS Lake Formation data permission assets per revision" => JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
+            "Amazon Redshift datashare assets per revision" => JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision,
+            "Amazon S3 data access assets per revision" => JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision,
             "Asset size in GB" => JobErrorLimitName::AssetSizeInGb,
             "Assets per revision" => JobErrorLimitName::AssetsPerRevision,
-            other => {
-                JobErrorLimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => JobErrorLimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -94,15 +80,9 @@ impl JobErrorLimitName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision => {
-                "AWS Lake Formation data permission assets per revision"
-            }
-            JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision => {
-                "Amazon Redshift datashare assets per revision"
-            }
-            JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision => {
-                "Amazon S3 data access assets per revision"
-            }
+            JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision => "AWS Lake Formation data permission assets per revision",
+            JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision => "Amazon Redshift datashare assets per revision",
+            JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision => "Amazon S3 data access assets per revision",
             JobErrorLimitName::AssetSizeInGb => "Asset size in GB",
             JobErrorLimitName::AssetsPerRevision => "Assets per revision",
             JobErrorLimitName::Unknown(value) => value.as_str(),

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDbProxyOutput`](crate::operation::delete_db_proxy::DeleteDbProxyOutput) with field(s):
     ///   - [`db_proxy(Option<DbProxy>)`](crate::operation::delete_db_proxy::DeleteDbProxyOutput::db_proxy): <p>The data structure representing the details of the DB proxy that you delete.</p>
     /// - On failure, responds with [`SdkError<DeleteDBProxyError>`](crate::operation::delete_db_proxy::DeleteDBProxyError)
-    pub fn delete_db_proxy(
-        &self,
-    ) -> crate::operation::delete_db_proxy::builders::DeleteDBProxyFluentBuilder {
-        crate::operation::delete_db_proxy::builders::DeleteDBProxyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_db_proxy(&self) -> crate::operation::delete_db_proxy::builders::DeleteDBProxyFluentBuilder {
+        crate::operation::delete_db_proxy::builders::DeleteDBProxyFluentBuilder::new(self.handle.clone())
     }
 }

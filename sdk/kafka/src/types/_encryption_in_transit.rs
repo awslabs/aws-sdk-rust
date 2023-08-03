@@ -40,9 +40,7 @@ impl EncryptionInTransit {
 
 /// A builder for [`EncryptionInTransit`](crate::types::EncryptionInTransit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionInTransitBuilder {
     pub(crate) client_broker: ::std::option::Option<crate::types::ClientBroker>,
     pub(crate) in_cluster: ::std::option::Option<bool>,
@@ -62,10 +60,7 @@ impl EncryptionInTransitBuilder {
     /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
     /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
-    pub fn set_client_broker(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientBroker>,
-    ) -> Self {
+    pub fn set_client_broker(mut self, input: ::std::option::Option<crate::types::ClientBroker>) -> Self {
         self.client_broker = input;
         self
     }

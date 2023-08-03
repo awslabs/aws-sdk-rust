@@ -30,27 +30,19 @@ impl NetworkFabricAttributes {
 
 /// A builder for [`NetworkFabricAttributes`](crate::types::NetworkFabricAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFabricAttributesBuilder {
     pub(crate) ordering_service_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) edition: ::std::option::Option<crate::types::Edition>,
 }
 impl NetworkFabricAttributesBuilder {
     /// <p>The endpoint of the ordering service for the network.</p>
-    pub fn ordering_service_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ordering_service_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ordering_service_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the ordering service for the network.</p>
-    pub fn set_ordering_service_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ordering_service_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ordering_service_endpoint = input;
         self
     }

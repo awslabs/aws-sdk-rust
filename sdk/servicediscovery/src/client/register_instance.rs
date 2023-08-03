@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterInstanceOutput`](crate::operation::register_instance::RegisterInstanceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::register_instance::RegisterInstanceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<RegisterInstanceError>`](crate::operation::register_instance::RegisterInstanceError)
-    pub fn register_instance(
-        &self,
-    ) -> crate::operation::register_instance::builders::RegisterInstanceFluentBuilder {
-        crate::operation::register_instance::builders::RegisterInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_instance(&self) -> crate::operation::register_instance::builders::RegisterInstanceFluentBuilder {
+        crate::operation::register_instance::builders::RegisterInstanceFluentBuilder::new(self.handle.clone())
     }
 }

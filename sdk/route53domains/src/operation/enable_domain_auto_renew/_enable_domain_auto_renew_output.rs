@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for EnableDomainAutoRenewOutput {
 }
 impl EnableDomainAutoRenewOutput {
     /// Creates a new builder-style object to manufacture [`EnableDomainAutoRenewOutput`](crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_domain_auto_renew::builders::EnableDomainAutoRenewOutputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_domain_auto_renew::builders::EnableDomainAutoRenewOutputBuilder {
         crate::operation::enable_domain_auto_renew::builders::EnableDomainAutoRenewOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableDomainAutoRenewOutput`](crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableDomainAutoRenewOutputBuilder {
     _request_id: Option<String>,
 }

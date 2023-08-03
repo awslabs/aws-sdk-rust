@@ -27,8 +27,7 @@ impl ListOnPremisesInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOnPremisesInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder,
+    inner: crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder,
 }
 impl ListOnPremisesInstancesFluentBuilder {
     /// Creates a new `ListOnPremisesInstances`.
@@ -39,10 +38,7 @@ impl ListOnPremisesInstancesFluentBuilder {
         }
     }
     /// Access the ListOnPremisesInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ListOnPremisesInstancesFluentBuilder {
             crate::operation::list_on_premises_instances::ListOnPremisesInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_on_premises_instances::ListOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_on_premises_instances::ListOnPremisesInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ListOnPremisesInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ListOnPremisesInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_on_premises_instances::ListOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_on_premises_instances::ListOnPremisesInstancesError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ListOnPremisesInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_on_premises_instances::ListOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_on_premises_instances::ListOnPremisesInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl ListOnPremisesInstancesFluentBuilder {
             crate::operation::list_on_premises_instances::ListOnPremisesInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_on_premises_instances::ListOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_on_premises_instances::ListOnPremisesInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -139,10 +124,7 @@ impl ListOnPremisesInstancesFluentBuilder {
     /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
     /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
-    pub fn set_registration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.inner = self.inner.set_registration_status(input);
         self
     }
@@ -151,9 +133,7 @@ impl ListOnPremisesInstancesFluentBuilder {
     /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
     /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
-    pub fn get_registration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+    pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         self.inner.get_registration_status()
     }
     /// Appends an item to `tagFilters`.
@@ -166,17 +146,12 @@ impl ListOnPremisesInstancesFluentBuilder {
         self
     }
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
-    pub fn set_tag_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
-    ) -> Self {
+    pub fn set_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
         self.inner = self.inner.set_tag_filters(input);
         self
     }
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
-    pub fn get_tag_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+    pub fn get_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
         self.inner.get_tag_filters()
     }
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>

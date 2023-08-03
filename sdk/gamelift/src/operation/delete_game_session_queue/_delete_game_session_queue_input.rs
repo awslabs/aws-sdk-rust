@@ -15,18 +15,14 @@ impl DeleteGameSessionQueueInput {
 }
 impl DeleteGameSessionQueueInput {
     /// Creates a new builder-style object to manufacture [`DeleteGameSessionQueueInput`](crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput).
-    pub fn builder(
-    ) -> crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder {
         crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGameSessionQueueInput`](crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGameSessionQueueInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteGameSessionQueueInputBuilder {
         crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput { name: self.name })
     }
 }

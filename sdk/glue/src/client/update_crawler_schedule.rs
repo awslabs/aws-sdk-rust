@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`schedule(impl ::std::convert::Into<String>)`](crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleFluentBuilder::schedule) / [`set_schedule(Option<String>)`](crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleFluentBuilder::set_schedule): <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// - On success, responds with [`UpdateCrawlerScheduleOutput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleOutput)
     /// - On failure, responds with [`SdkError<UpdateCrawlerScheduleError>`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleError)
-    pub fn update_crawler_schedule(
-        &self,
-    ) -> crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleFluentBuilder
-    {
-        crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_crawler_schedule(&self) -> crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleFluentBuilder {
+        crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleFluentBuilder::new(self.handle.clone())
     }
 }

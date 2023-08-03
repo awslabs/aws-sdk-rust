@@ -15,8 +15,7 @@ pub struct AwsVpcSecurityGroupViolation {
     pub partial_matches: ::std::option::Option<::std::vec::Vec<crate::types::PartialMatch>>,
     /// <p>Remediation options for the rule specified in the <code>ViolationTarget</code>.</p>
     #[doc(hidden)]
-    pub possible_security_group_remediation_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRemediationAction>>,
+    pub possible_security_group_remediation_actions: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRemediationAction>>,
 }
 impl AwsVpcSecurityGroupViolation {
     /// <p>The security group rule that is being evaluated.</p>
@@ -32,9 +31,7 @@ impl AwsVpcSecurityGroupViolation {
         self.partial_matches.as_deref()
     }
     /// <p>Remediation options for the rule specified in the <code>ViolationTarget</code>.</p>
-    pub fn possible_security_group_remediation_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityGroupRemediationAction]> {
+    pub fn possible_security_group_remediation_actions(&self) -> ::std::option::Option<&[crate::types::SecurityGroupRemediationAction]> {
         self.possible_security_group_remediation_actions.as_deref()
     }
 }
@@ -47,30 +44,21 @@ impl AwsVpcSecurityGroupViolation {
 
 /// A builder for [`AwsVpcSecurityGroupViolation`](crate::types::AwsVpcSecurityGroupViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsVpcSecurityGroupViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) violation_target_description: ::std::option::Option<::std::string::String>,
     pub(crate) partial_matches: ::std::option::Option<::std::vec::Vec<crate::types::PartialMatch>>,
-    pub(crate) possible_security_group_remediation_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRemediationAction>>,
+    pub(crate) possible_security_group_remediation_actions: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRemediationAction>>,
 }
 impl AwsVpcSecurityGroupViolationBuilder {
     /// <p>The security group rule that is being evaluated.</p>
-    pub fn violation_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security group rule that is being evaluated.</p>
-    pub fn set_violation_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_violation_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_target = input;
         self
     }
@@ -79,25 +67,17 @@ impl AwsVpcSecurityGroupViolationBuilder {
         &self.violation_target
     }
     /// <p>A description of the security group that violates the policy.</p>
-    pub fn violation_target_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_target_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_target_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the security group that violates the policy.</p>
-    pub fn set_violation_target_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_violation_target_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_target_description = input;
         self
     }
     /// <p>A description of the security group that violates the policy.</p>
-    pub fn get_violation_target_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_violation_target_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.violation_target_description
     }
     /// Appends an item to `partial_matches`.
@@ -112,17 +92,12 @@ impl AwsVpcSecurityGroupViolationBuilder {
         self
     }
     /// <p>List of rules specified in the security group of the Firewall Manager policy that partially match the <code>ViolationTarget</code> rule.</p>
-    pub fn set_partial_matches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartialMatch>>,
-    ) -> Self {
+    pub fn set_partial_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartialMatch>>) -> Self {
         self.partial_matches = input;
         self
     }
     /// <p>List of rules specified in the security group of the Firewall Manager policy that partially match the <code>ViolationTarget</code> rule.</p>
-    pub fn get_partial_matches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialMatch>> {
+    pub fn get_partial_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialMatch>> {
         &self.partial_matches
     }
     /// Appends an item to `possible_security_group_remediation_actions`.
@@ -130,13 +105,8 @@ impl AwsVpcSecurityGroupViolationBuilder {
     /// To override the contents of this collection use [`set_possible_security_group_remediation_actions`](Self::set_possible_security_group_remediation_actions).
     ///
     /// <p>Remediation options for the rule specified in the <code>ViolationTarget</code>.</p>
-    pub fn possible_security_group_remediation_actions(
-        mut self,
-        input: crate::types::SecurityGroupRemediationAction,
-    ) -> Self {
-        let mut v = self
-            .possible_security_group_remediation_actions
-            .unwrap_or_default();
+    pub fn possible_security_group_remediation_actions(mut self, input: crate::types::SecurityGroupRemediationAction) -> Self {
+        let mut v = self.possible_security_group_remediation_actions.unwrap_or_default();
         v.push(input);
         self.possible_security_group_remediation_actions = ::std::option::Option::Some(v);
         self
@@ -161,8 +131,7 @@ impl AwsVpcSecurityGroupViolationBuilder {
             violation_target: self.violation_target,
             violation_target_description: self.violation_target_description,
             partial_matches: self.partial_matches,
-            possible_security_group_remediation_actions: self
-                .possible_security_group_remediation_actions,
+            possible_security_group_remediation_actions: self.possible_security_group_remediation_actions,
         }
     }
 }

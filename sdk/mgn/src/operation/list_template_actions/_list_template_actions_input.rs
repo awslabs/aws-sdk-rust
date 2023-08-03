@@ -36,18 +36,14 @@ impl ListTemplateActionsInput {
 }
 impl ListTemplateActionsInput {
     /// Creates a new builder-style object to manufacture [`ListTemplateActionsInput`](crate::operation::list_template_actions::ListTemplateActionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder {
-        crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder {
+        crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTemplateActionsInput`](crate::operation::list_template_actions::ListTemplateActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplateActionsInputBuilder {
     pub(crate) launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::TemplateActionsRequestFilters>,
@@ -56,25 +52,17 @@ pub struct ListTemplateActionsInputBuilder {
 }
 impl ListTemplateActionsInputBuilder {
     /// <p>Launch configuration template ID.</p>
-    pub fn launch_configuration_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Launch configuration template ID.</p>
-    pub fn set_launch_configuration_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_configuration_template_id = input;
         self
     }
     /// <p>Launch configuration template ID.</p>
-    pub fn get_launch_configuration_template_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_configuration_template_id
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
@@ -83,17 +71,12 @@ impl ListTemplateActionsInputBuilder {
         self
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateActionsRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::TemplateActionsRequestFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateActionsRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::TemplateActionsRequestFilters> {
         &self.filters
     }
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
@@ -127,17 +110,13 @@ impl ListTemplateActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplateActionsInput`](crate::operation::list_template_actions::ListTemplateActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_template_actions::ListTemplateActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_template_actions::ListTemplateActionsInput {
-                launch_configuration_template_id: self.launch_configuration_template_id,
-                filters: self.filters,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_template_actions::ListTemplateActionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_template_actions::ListTemplateActionsInput {
+            launch_configuration_template_id: self.launch_configuration_template_id,
+            filters: self.filters,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

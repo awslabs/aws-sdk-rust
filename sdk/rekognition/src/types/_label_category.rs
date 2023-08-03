@@ -23,9 +23,7 @@ impl LabelCategory {
 
 /// A builder for [`LabelCategory`](crate::types::LabelCategory).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelCategoryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

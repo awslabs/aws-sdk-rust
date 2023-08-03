@@ -10,10 +10,7 @@ impl UpdateDomainNameInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_domain_name::UpdateDomainNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_name::UpdateDomainNameError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_name::UpdateDomainNameError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_domain_name();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDomainNameFluentBuilder {
         }
     }
     /// Access the UpdateDomainName as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateDomainNameFluentBuilder {
             crate::operation::update_domain_name::UpdateDomainName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_name::UpdateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_name::UpdateDomainNameError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateDomainNameFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateDomainNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_name::UpdateDomainNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_name::UpdateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_name::UpdateDomainNameError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateDomainNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_name::UpdateDomainNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_name::UpdateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_name::UpdateDomainNameError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateDomainNameFluentBuilder {
             crate::operation::update_domain_name::UpdateDomainName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_name::UpdateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_name::UpdateDomainNameError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl UpdateDomainNameFluentBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         self.inner.get_patch_operations()
     }
 }

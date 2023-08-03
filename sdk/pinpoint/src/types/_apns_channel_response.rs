@@ -100,9 +100,7 @@ impl ApnsChannelResponse {
 
 /// A builder for [`ApnsChannelResponse`](crate::types::ApnsChannelResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApnsChannelResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
@@ -119,18 +117,12 @@ pub struct ApnsChannelResponseBuilder {
 }
 impl ApnsChannelResponseBuilder {
     /// <p>The unique identifier for the application that the APNs channel applies to.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that the APNs channel applies to.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -139,18 +131,12 @@ impl ApnsChannelResponseBuilder {
         &self.application_id
     }
     /// <p>The date and time when the APNs channel was enabled.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the APNs channel was enabled.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -159,25 +145,17 @@ impl ApnsChannelResponseBuilder {
         &self.creation_date
     }
     /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or certificate.</p>
-    pub fn default_authentication_method(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_authentication_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_authentication_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or certificate.</p>
-    pub fn set_default_authentication_method(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_authentication_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_authentication_method = input;
         self
     }
     /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or certificate.</p>
-    pub fn get_default_authentication_method(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_authentication_method(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_authentication_method
     }
     /// <p>Specifies whether the APNs channel is enabled for the application.</p>
@@ -251,18 +229,12 @@ impl ApnsChannelResponseBuilder {
         &self.is_archived
     }
     /// <p>The user who last modified the APNs channel.</p>
-    pub fn last_modified_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user who last modified the APNs channel.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -271,18 +243,12 @@ impl ApnsChannelResponseBuilder {
         &self.last_modified_by
     }
     /// <p>The date and time when the APNs channel was last modified.</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the APNs channel was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date = input;
         self
     }

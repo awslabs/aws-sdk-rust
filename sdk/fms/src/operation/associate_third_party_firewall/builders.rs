@@ -26,7 +26,7 @@ impl AssociateThirdPartyFirewallInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateThirdPartyFirewallFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallInputBuilder,
+    inner: crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallInputBuilder,
 }
 impl AssociateThirdPartyFirewallFluentBuilder {
     /// Creates a new `AssociateThirdPartyFirewall`.
@@ -37,7 +37,7 @@ impl AssociateThirdPartyFirewallFluentBuilder {
         }
     }
     /// Access the AssociateThirdPartyFirewall as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateThirdPartyFirewallFluentBuilder {
             crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewall,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateThirdPartyFirewallFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateThirdPartyFirewallFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateThirdPartyFirewallFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociateThirdPartyFirewallFluentBuilder {
             crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewall,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallError>,
     > {
         self.customize_middleware().await
     }
@@ -126,17 +115,12 @@ impl AssociateThirdPartyFirewallFluentBuilder {
         self
     }
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn set_third_party_firewall(
-        mut self,
-        input: ::std::option::Option<crate::types::ThirdPartyFirewall>,
-    ) -> Self {
+    pub fn set_third_party_firewall(mut self, input: ::std::option::Option<crate::types::ThirdPartyFirewall>) -> Self {
         self.inner = self.inner.set_third_party_firewall(input);
         self
     }
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn get_third_party_firewall(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
+    pub fn get_third_party_firewall(&self) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
         self.inner.get_third_party_firewall()
     }
 }

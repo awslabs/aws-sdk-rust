@@ -29,18 +29,14 @@ impl DescribeVirtualRouterInput {
 }
 impl DescribeVirtualRouterInput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualRouterInput`](crate::operation::describe_virtual_router::DescribeVirtualRouterInput).
-    pub fn builder(
-    ) -> crate::operation::describe_virtual_router::builders::DescribeVirtualRouterInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_virtual_router::builders::DescribeVirtualRouterInputBuilder {
         crate::operation::describe_virtual_router::builders::DescribeVirtualRouterInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVirtualRouterInput`](crate::operation::describe_virtual_router::DescribeVirtualRouterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVirtualRouterInputBuilder {
     pub(crate) virtual_router_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct DescribeVirtualRouterInputBuilder {
 }
 impl DescribeVirtualRouterInputBuilder {
     /// <p>The name of the virtual router to describe.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual router to describe.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_router_name = input;
         self
     }
@@ -98,16 +88,12 @@ impl DescribeVirtualRouterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualRouterInput`](crate::operation::describe_virtual_router::DescribeVirtualRouterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_virtual_router::DescribeVirtualRouterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_virtual_router::DescribeVirtualRouterInput {
-                virtual_router_name: self.virtual_router_name,
-                mesh_name: self.mesh_name,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_virtual_router::DescribeVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_virtual_router::DescribeVirtualRouterInput {
+            virtual_router_name: self.virtual_router_name,
+            mesh_name: self.mesh_name,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

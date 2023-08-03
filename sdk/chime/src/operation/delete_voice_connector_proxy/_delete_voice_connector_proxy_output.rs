@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVoiceConnectorProxyOutput {
 }
 impl DeleteVoiceConnectorProxyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorProxyOutput`](crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyOutput).
-    pub fn builder() -> crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyOutputBuilder{
+    pub fn builder() -> crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyOutputBuilder {
         crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceConnectorProxyOutput`](crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorProxyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteVoiceConnectorProxyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorProxyOutput`](crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyOutput {
+    pub fn build(self) -> crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyOutput {
         crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyOutput {
             _request_id: self._request_id,
         }

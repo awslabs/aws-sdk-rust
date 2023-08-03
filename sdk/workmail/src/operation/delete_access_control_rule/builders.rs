@@ -28,8 +28,7 @@ impl DeleteAccessControlRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccessControlRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleInputBuilder,
+    inner: crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleInputBuilder,
 }
 impl DeleteAccessControlRuleFluentBuilder {
     /// Creates a new `DeleteAccessControlRule`.
@@ -40,10 +39,7 @@ impl DeleteAccessControlRuleFluentBuilder {
         }
     }
     /// Access the DeleteAccessControlRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DeleteAccessControlRuleFluentBuilder {
             crate::operation::delete_access_control_rule::DeleteAccessControlRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_control_rule::DeleteAccessControlRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_control_rule::DeleteAccessControlRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DeleteAccessControlRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DeleteAccessControlRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_control_rule::DeleteAccessControlRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_control_rule::DeleteAccessControlRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_control_rule::DeleteAccessControlRuleError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DeleteAccessControlRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_control_rule::DeleteAccessControlRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_control_rule::DeleteAccessControlRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_control_rule::DeleteAccessControlRuleError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +107,17 @@ impl DeleteAccessControlRuleFluentBuilder {
             crate::operation::delete_access_control_rule::DeleteAccessControlRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_control_rule::DeleteAccessControlRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_control_rule::DeleteAccessControlRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier for the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

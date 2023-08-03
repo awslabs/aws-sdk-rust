@@ -10,10 +10,7 @@ impl SearchJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_jobs::SearchJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_jobs::SearchJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_jobs::SearchJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_jobs();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl SearchJobsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_jobs::SearchJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_jobs::SearchJobs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_jobs::SearchJobsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl SearchJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl SearchJobsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_jobs::SearchJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_jobs::SearchJobs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_jobs::SearchJobsError>,
     > {
         self.customize_middleware().await
@@ -156,17 +144,12 @@ impl SearchJobsFluentBuilder {
         self
     }
     /// <p>The filter values to use when searching for a job.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filter values to use when searching for a job.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>> {
         self.inner.get_filters()
     }
 }

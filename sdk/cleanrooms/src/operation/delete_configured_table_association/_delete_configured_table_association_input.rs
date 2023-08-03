@@ -22,57 +22,40 @@ impl DeleteConfiguredTableAssociationInput {
 }
 impl DeleteConfiguredTableAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredTableAssociationInput`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationInput).
-    pub fn builder() -> crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationInputBuilder{
+    pub fn builder() -> crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationInputBuilder {
         crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfiguredTableAssociationInput`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfiguredTableAssociationInputBuilder {
-    pub(crate) configured_table_association_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) configured_table_association_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfiguredTableAssociationInputBuilder {
     /// <p>The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</p>
-    pub fn configured_table_association_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_association_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</p>
-    pub fn set_configured_table_association_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_table_association_identifier = input;
         self
     }
     /// <p>The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</p>
-    pub fn get_configured_table_association_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configured_table_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_table_association_identifier
     }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_identifier = input;
         self
     }
@@ -81,14 +64,17 @@ impl DeleteConfiguredTableAssociationInputBuilder {
         &self.membership_identifier
     }
     /// Consumes the builder and constructs a [`DeleteConfiguredTableAssociationInput`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationInput {
-                configured_table_association_identifier: self.configured_table_association_identifier
-                ,
-                membership_identifier: self.membership_identifier
-                ,
-            }
+                configured_table_association_identifier: self.configured_table_association_identifier,
+                membership_identifier: self.membership_identifier,
+            },
         )
     }
 }

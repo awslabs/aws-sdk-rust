@@ -30,9 +30,7 @@ impl HttpHeader {
 
 /// A builder for [`HttpHeader`](crate::types::HttpHeader).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpHeaderBuilder {
     pub(crate) header_name: ::std::option::Option<::std::string::String>,
     pub(crate) header_value: ::std::option::Option<::std::string::String>,

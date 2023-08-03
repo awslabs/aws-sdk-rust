@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput) with field(s):
     ///   - [`campaign(Option<Campaign>)`](crate::operation::describe_campaign::DescribeCampaignOutput::campaign): <p>The properties of the campaign.</p>
     /// - On failure, responds with [`SdkError<DescribeCampaignError>`](crate::operation::describe_campaign::DescribeCampaignError)
-    pub fn describe_campaign(
-        &self,
-    ) -> crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder {
-        crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_campaign(&self) -> crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder {
+        crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::new(self.handle.clone())
     }
 }

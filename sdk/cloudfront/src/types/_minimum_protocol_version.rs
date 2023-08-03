@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MinimumProtocolVersion {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for MinimumProtocolVersion {
             "TLSv1.2_2019" => MinimumProtocolVersion::TlSv122019,
             "TLSv1.2_2021" => MinimumProtocolVersion::TlSv122021,
             "TLSv1_2016" => MinimumProtocolVersion::TlSv12016,
-            other => MinimumProtocolVersion::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MinimumProtocolVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

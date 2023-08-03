@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tag_key(impl ::std::convert::Into<String>)`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::tag_key) / [`set_tag_key(Option<String>)`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::set_tag_key): <p>The key-name for the LF-tag to delete.</p>
     /// - On success, responds with [`DeleteLfTagOutput`](crate::operation::delete_lf_tag::DeleteLfTagOutput)
     /// - On failure, responds with [`SdkError<DeleteLFTagError>`](crate::operation::delete_lf_tag::DeleteLFTagError)
-    pub fn delete_lf_tag(
-        &self,
-    ) -> crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder {
-        crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_lf_tag(&self) -> crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder {
+        crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::new(self.handle.clone())
     }
 }

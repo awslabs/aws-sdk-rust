@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<RestApi>>)`](crate::operation::get_rest_apis::GetRestApisOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_rest_apis::GetRestApisOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetRestApisError>`](crate::operation::get_rest_apis::GetRestApisError)
-    pub fn get_rest_apis(
-        &self,
-    ) -> crate::operation::get_rest_apis::builders::GetRestApisFluentBuilder {
-        crate::operation::get_rest_apis::builders::GetRestApisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_rest_apis(&self) -> crate::operation::get_rest_apis::builders::GetRestApisFluentBuilder {
+        crate::operation::get_rest_apis::builders::GetRestApisFluentBuilder::new(self.handle.clone())
     }
 }

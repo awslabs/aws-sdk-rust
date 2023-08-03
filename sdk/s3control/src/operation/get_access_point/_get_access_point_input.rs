@@ -53,9 +53,7 @@ impl GetAccessPointInput {
 
 /// A builder for [`GetAccessPointInput`](crate::operation::get_access_point::GetAccessPointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPointInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -128,10 +126,7 @@ impl GetAccessPointInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessPointInput`](crate::operation::get_access_point::GetAccessPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_access_point::GetAccessPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_access_point::GetAccessPointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_access_point::GetAccessPointInput {
             account_id: self.account_id,
             name: self.name,

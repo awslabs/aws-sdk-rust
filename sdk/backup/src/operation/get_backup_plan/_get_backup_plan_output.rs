@@ -29,8 +29,7 @@ pub struct GetBackupPlanOutput {
     pub last_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type. The list is populated only if the advanced option is set for the backup plan.</p>
     #[doc(hidden)]
-    pub advanced_backup_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
     _request_id: Option<String>,
 }
 impl GetBackupPlanOutput {
@@ -67,9 +66,7 @@ impl GetBackupPlanOutput {
         self.last_execution_date.as_ref()
     }
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type. The list is populated only if the advanced option is set for the backup plan.</p>
-    pub fn advanced_backup_settings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdvancedBackupSetting]> {
+    pub fn advanced_backup_settings(&self) -> ::std::option::Option<&[crate::types::AdvancedBackupSetting]> {
         self.advanced_backup_settings.as_deref()
     }
 }
@@ -87,9 +84,7 @@ impl GetBackupPlanOutput {
 
 /// A builder for [`GetBackupPlanOutput`](crate::operation::get_backup_plan::GetBackupPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackupPlanOutputBuilder {
     pub(crate) backup_plan: ::std::option::Option<crate::types::BackupPlan>,
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
@@ -99,8 +94,7 @@ pub struct GetBackupPlanOutputBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deletion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) advanced_backup_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    pub(crate) advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
     _request_id: Option<String>,
 }
 impl GetBackupPlanOutputBuilder {
@@ -110,10 +104,7 @@ impl GetBackupPlanOutputBuilder {
         self
     }
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
-    pub fn set_backup_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupPlan>,
-    ) -> Self {
+    pub fn set_backup_plan(mut self, input: ::std::option::Option<crate::types::BackupPlan>) -> Self {
         self.backup_plan = input;
         self
     }
@@ -122,18 +113,12 @@ impl GetBackupPlanOutputBuilder {
         &self.backup_plan
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
@@ -142,18 +127,12 @@ impl GetBackupPlanOutputBuilder {
         &self.backup_plan_id
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
-    pub fn backup_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
-    pub fn set_backup_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_arn = input;
         self
     }
@@ -176,18 +155,12 @@ impl GetBackupPlanOutputBuilder {
         &self.version_id
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -201,10 +174,7 @@ impl GetBackupPlanOutputBuilder {
         self
     }
     /// <p>The date and time that a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -218,10 +188,7 @@ impl GetBackupPlanOutputBuilder {
         self
     }
     /// <p>The date and time that a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_deletion_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deletion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deletion_date = input;
         self
     }
@@ -235,10 +202,7 @@ impl GetBackupPlanOutputBuilder {
         self
     }
     /// <p>The last time a job to back up resources was run with this backup plan. A date and time, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_last_execution_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_execution_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_execution_date = input;
         self
     }
@@ -258,17 +222,12 @@ impl GetBackupPlanOutputBuilder {
         self
     }
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type. The list is populated only if the advanced option is set for the backup plan.</p>
-    pub fn set_advanced_backup_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
-    ) -> Self {
+    pub fn set_advanced_backup_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>) -> Self {
         self.advanced_backup_settings = input;
         self
     }
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type. The list is populated only if the advanced option is set for the backup plan.</p>
-    pub fn get_advanced_backup_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>> {
+    pub fn get_advanced_backup_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>> {
         &self.advanced_backup_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`layer_id(impl ::std::convert::Into<String>)`](crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerFluentBuilder::layer_id) / [`set_layer_id(Option<String>)`](crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerFluentBuilder::set_layer_id): <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
     /// - On success, responds with [`AttachElasticLoadBalancerOutput`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput)
     /// - On failure, responds with [`SdkError<AttachElasticLoadBalancerError>`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerError)
-    pub fn attach_elastic_load_balancer(&self) -> crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerFluentBuilder{
+    pub fn attach_elastic_load_balancer(&self) -> crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerFluentBuilder {
         crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerFluentBuilder::new(self.handle.clone())
     }
 }

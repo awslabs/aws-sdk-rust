@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput::next_token): <p>The token from the previous call to describe-export-tasks.</p>
     /// - On failure, responds with [`SdkError<DescribeExportConfigurationsError>`](crate::operation::describe_export_configurations::DescribeExportConfigurationsError)
     #[deprecated]
-    pub fn describe_export_configurations(&self) -> crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder{
+    pub fn describe_export_configurations(
+        &self,
+    ) -> crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder {
         crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

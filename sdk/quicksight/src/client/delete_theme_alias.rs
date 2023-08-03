@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::delete_theme_alias::DeleteThemeAliasOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`theme_id(Option<String>)`](crate::operation::delete_theme_alias::DeleteThemeAliasOutput::theme_id): <p>An ID for the theme associated with the deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteThemeAliasError>`](crate::operation::delete_theme_alias::DeleteThemeAliasError)
-    pub fn delete_theme_alias(
-        &self,
-    ) -> crate::operation::delete_theme_alias::builders::DeleteThemeAliasFluentBuilder {
-        crate::operation::delete_theme_alias::builders::DeleteThemeAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_theme_alias(&self) -> crate::operation::delete_theme_alias::builders::DeleteThemeAliasFluentBuilder {
+        crate::operation::delete_theme_alias::builders::DeleteThemeAliasFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,17 +29,14 @@ impl GetInsightEventsInput {
 }
 impl GetInsightEventsInput {
     /// Creates a new builder-style object to manufacture [`GetInsightEventsInput`](crate::operation::get_insight_events::GetInsightEventsInput).
-    pub fn builder() -> crate::operation::get_insight_events::builders::GetInsightEventsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_insight_events::builders::GetInsightEventsInputBuilder {
         crate::operation::get_insight_events::builders::GetInsightEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightEventsInput`](crate::operation::get_insight_events::GetInsightEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightEventsInputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,11 @@ impl GetInsightEventsInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightEventsInput`](crate::operation::get_insight_events::GetInsightEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_insight_events::GetInsightEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_insight_events::GetInsightEventsInput {
-                insight_id: self.insight_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_insight_events::GetInsightEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_insight_events::GetInsightEventsInput {
+            insight_id: self.insight_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

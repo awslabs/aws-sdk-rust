@@ -26,7 +26,7 @@ impl ListResourceSharePermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceSharePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_resource_share_permissions::builders::ListResourceSharePermissionsInputBuilder,
+    inner: crate::operation::list_resource_share_permissions::builders::ListResourceSharePermissionsInputBuilder,
 }
 impl ListResourceSharePermissionsFluentBuilder {
     /// Creates a new `ListResourceSharePermissions`.
@@ -37,7 +37,7 @@ impl ListResourceSharePermissionsFluentBuilder {
         }
     }
     /// Access the ListResourceSharePermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_resource_share_permissions::builders::ListResourceSharePermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_resource_share_permissions::builders::ListResourceSharePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListResourceSharePermissionsFluentBuilder {
             crate::operation::list_resource_share_permissions::ListResourceSharePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListResourceSharePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListResourceSharePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_share_permissions::ListResourceSharePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListResourceSharePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_share_permissions::ListResourceSharePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListResourceSharePermissionsFluentBuilder {
             crate::operation::list_resource_share_permissions::ListResourceSharePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resource_share_permissions::paginator::ListResourceSharePermissionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_resource_share_permissions::paginator::ListResourceSharePermissionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_resource_share_permissions::paginator::ListResourceSharePermissionsPaginator {
         crate::operation::list_resource_share_permissions::paginator::ListResourceSharePermissionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_share_arn(input);
         self
     }

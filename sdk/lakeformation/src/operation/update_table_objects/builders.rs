@@ -10,10 +10,7 @@ impl UpdateTableObjectsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_table_objects::UpdateTableObjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_objects::UpdateTableObjectsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_objects::UpdateTableObjectsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_table_objects();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateTableObjectsFluentBuilder {
         }
     }
     /// Access the UpdateTableObjects as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateTableObjectsFluentBuilder {
             crate::operation::update_table_objects::UpdateTableObjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_objects::UpdateTableObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_objects::UpdateTableObjectsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateTableObjectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateTableObjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_table_objects::UpdateTableObjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_objects::UpdateTableObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_objects::UpdateTableObjectsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateTableObjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_table_objects::UpdateTableObjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_objects::UpdateTableObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_objects::UpdateTableObjectsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateTableObjectsFluentBuilder {
             crate::operation::update_table_objects::UpdateTableObjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_objects::UpdateTableObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_objects::UpdateTableObjectsError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateTableObjectsFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The database containing the governed table to update.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The database containing the governed table to update.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -171,18 +149,12 @@ impl UpdateTableObjectsFluentBuilder {
         self.inner.get_table_name()
     }
     /// <p>The transaction at which to do the write.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The transaction at which to do the write.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
@@ -200,17 +172,12 @@ impl UpdateTableObjectsFluentBuilder {
         self
     }
     /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
-    pub fn set_write_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>>,
-    ) -> Self {
+    pub fn set_write_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>>) -> Self {
         self.inner = self.inner.set_write_operations(input);
         self
     }
     /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
-    pub fn get_write_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>> {
+    pub fn get_write_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>> {
         self.inner.get_write_operations()
     }
 }

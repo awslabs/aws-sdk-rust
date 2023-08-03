@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`role_arn(impl ::std::convert::Into<String>)`](crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListFluentBuilder::set_role_arn): <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
     /// - On success, responds with [`UpdateQuerySuggestionsBlockListOutput`](crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput)
     /// - On failure, responds with [`SdkError<UpdateQuerySuggestionsBlockListError>`](crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError)
-    pub fn update_query_suggestions_block_list(&self) -> crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListFluentBuilder{
+    pub fn update_query_suggestions_block_list(
+        &self,
+    ) -> crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListFluentBuilder {
         crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListFluentBuilder::new(self.handle.clone())
     }
 }

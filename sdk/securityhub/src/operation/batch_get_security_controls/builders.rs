@@ -26,7 +26,7 @@ impl BatchGetSecurityControlsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetSecurityControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsInputBuilder,
+    inner: crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsInputBuilder,
 }
 impl BatchGetSecurityControlsFluentBuilder {
     /// Creates a new `BatchGetSecurityControls`.
@@ -37,7 +37,7 @@ impl BatchGetSecurityControlsFluentBuilder {
         }
     }
     /// Access the BatchGetSecurityControls as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchGetSecurityControlsFluentBuilder {
             crate::operation::batch_get_security_controls::BatchGetSecurityControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_security_controls::BatchGetSecurityControlsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchGetSecurityControlsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchGetSecurityControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_security_controls::BatchGetSecurityControlsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchGetSecurityControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_security_controls::BatchGetSecurityControlsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchGetSecurityControlsFluentBuilder {
             crate::operation::batch_get_security_controls::BatchGetSecurityControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_security_controls::BatchGetSecurityControlsError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl BatchGetSecurityControlsFluentBuilder {
     /// To override the contents of this collection use [`set_security_control_ids`](Self::set_security_control_ids).
     ///
     /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-    pub fn security_control_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_control_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_control_ids(input.into());
         self
     }
     /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-    pub fn set_security_control_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_control_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_control_ids(input);
         self
     }
     /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-    pub fn get_security_control_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_control_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_control_ids()
     }
 }

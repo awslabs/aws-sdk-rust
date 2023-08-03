@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`transactions(Option<Vec<TransactionOutputItem>>)`](crate::operation::list_transactions::ListTransactionsOutput::transactions): <p>The array of transactions returned by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_transactions::ListTransactionsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListTransactionsError>`](crate::operation::list_transactions::ListTransactionsError)
-    pub fn list_transactions(
-        &self,
-    ) -> crate::operation::list_transactions::builders::ListTransactionsFluentBuilder {
-        crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_transactions(&self) -> crate::operation::list_transactions::builders::ListTransactionsFluentBuilder {
+        crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::new(self.handle.clone())
     }
 }

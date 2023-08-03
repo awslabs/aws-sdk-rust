@@ -45,9 +45,7 @@ pub struct ActivityResponse {
     pub treatment_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object that contains metrics relating to the campaign execution for this campaign activity. For information about the structure and contents of the results, see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub execution_metrics: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub execution_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActivityResponse {
     /// <p>The unique identifier for the application that the campaign applies to.</p>
@@ -103,11 +101,7 @@ impl ActivityResponse {
         self.treatment_id.as_deref()
     }
     /// <p>A JSON object that contains metrics relating to the campaign execution for this campaign activity. For information about the structure and contents of the results, see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
-    pub fn execution_metrics(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn execution_metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.execution_metrics.as_ref()
     }
 }
@@ -120,9 +114,7 @@ impl ActivityResponse {
 
 /// A builder for [`ActivityResponse`](crate::types::ActivityResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivityResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
@@ -137,24 +129,16 @@ pub struct ActivityResponseBuilder {
     pub(crate) timezones_total_count: ::std::option::Option<i32>,
     pub(crate) total_endpoint_count: ::std::option::Option<i32>,
     pub(crate) treatment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) execution_metrics: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) execution_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActivityResponseBuilder {
     /// <p>The unique identifier for the application that the campaign applies to.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that the campaign applies to.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -219,18 +203,12 @@ impl ActivityResponseBuilder {
         &self.result
     }
     /// <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
-    pub fn scheduled_start(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_start = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
-    pub fn set_scheduled_start(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_start = input;
         self
     }
@@ -354,19 +332,13 @@ impl ActivityResponseBuilder {
     /// <p>A JSON object that contains metrics relating to the campaign execution for this campaign activity. For information about the structure and contents of the results, see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
     pub fn set_execution_metrics(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.execution_metrics = input;
         self
     }
     /// <p>A JSON object that contains metrics relating to the campaign execution for this campaign activity. For information about the structure and contents of the results, see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
-    pub fn get_execution_metrics(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_execution_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.execution_metrics
     }
     /// Consumes the builder and constructs a [`ActivityResponse`](crate::types::ActivityResponse).

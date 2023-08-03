@@ -10,10 +10,7 @@ impl UpdateJobQueueInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_job_queue::UpdateJobQueueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_queue::UpdateJobQueueError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_queue::UpdateJobQueueError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_job_queue();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateJobQueueFluentBuilder {
         }
     }
     /// Access the UpdateJobQueue as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_job_queue::builders::UpdateJobQueueInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_job_queue::builders::UpdateJobQueueInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateJobQueueFluentBuilder {
             crate::operation::update_job_queue::UpdateJobQueue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_queue::UpdateJobQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_queue::UpdateJobQueueError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateJobQueueFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateJobQueueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_job_queue::UpdateJobQueueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_queue::UpdateJobQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_queue::UpdateJobQueueError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateJobQueueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_job_queue::UpdateJobQueueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_queue::UpdateJobQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_queue::UpdateJobQueueError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateJobQueueFluentBuilder {
             crate::operation::update_job_queue::UpdateJobQueue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_queue::UpdateJobQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_queue::UpdateJobQueueError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl UpdateJobQueueFluentBuilder {
         self.inner.get_state()
     }
     /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    pub fn scheduling_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduling_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduling_policy_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    pub fn set_scheduling_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduling_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduling_policy_arn(input);
         self
     }
@@ -191,29 +169,21 @@ impl UpdateJobQueueFluentBuilder {
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    pub fn compute_environment_order(
-        mut self,
-        input: crate::types::ComputeEnvironmentOrder,
-    ) -> Self {
+    pub fn compute_environment_order(mut self, input: crate::types::ComputeEnvironmentOrder) -> Self {
         self.inner = self.inner.compute_environment_order(input);
         self
     }
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    pub fn set_compute_environment_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
-    ) -> Self {
+    pub fn set_compute_environment_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>) -> Self {
         self.inner = self.inner.set_compute_environment_order(input);
         self
     }
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    pub fn get_compute_environment_order(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>> {
+    pub fn get_compute_environment_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>> {
         self.inner.get_compute_environment_order()
     }
 }

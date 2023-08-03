@@ -51,16 +51,13 @@ impl PutAssetPropertyValueEntry {
 
 /// A builder for [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAssetPropertyValueEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_alias: ::std::option::Option<::std::string::String>,
-    pub(crate) property_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub(crate) property_values: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
 }
 impl PutAssetPropertyValueEntryBuilder {
     /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
@@ -106,18 +103,12 @@ impl PutAssetPropertyValueEntryBuilder {
         &self.property_id
     }
     /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
-    pub fn property_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
-    pub fn set_property_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_alias = input;
         self
     }
@@ -137,17 +128,12 @@ impl PutAssetPropertyValueEntryBuilder {
         self
     }
     /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
-    pub fn set_property_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
-    ) -> Self {
+    pub fn set_property_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>) -> Self {
         self.property_values = input;
         self
     }
     /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
-    pub fn get_property_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
+    pub fn get_property_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
         &self.property_values
     }
     /// Consumes the builder and constructs a [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).

@@ -35,9 +35,7 @@ impl GetCrawlersOutput {
 
 /// A builder for [`GetCrawlersOutput`](crate::operation::get_crawlers::GetCrawlersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCrawlersOutputBuilder {
     pub(crate) crawlers: ::std::option::Option<::std::vec::Vec<crate::types::Crawler>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetCrawlersOutputBuilder {
         self
     }
     /// <p>A list of crawler metadata.</p>
-    pub fn set_crawlers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Crawler>>,
-    ) -> Self {
+    pub fn set_crawlers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Crawler>>) -> Self {
         self.crawlers = input;
         self
     }

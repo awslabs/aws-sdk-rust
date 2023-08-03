@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomRoutingEndpointGroupOutpu
 }
 impl DeleteCustomRoutingEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingEndpointGroupOutput`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput).
-    pub fn builder() -> crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupOutputBuilder{
+    pub fn builder() -> crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupOutputBuilder {
         crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomRoutingEndpointGroupOutput`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomRoutingEndpointGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteCustomRoutingEndpointGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCustomRoutingEndpointGroupOutput`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput).
-    pub fn build(self) -> crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput{
+    pub fn build(self) -> crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput {
         crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput {
             _request_id: self._request_id,
         }

@@ -29,17 +29,14 @@ impl DescribeUserGroupsInput {
 }
 impl DescribeUserGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserGroupsInput`](crate::operation::describe_user_groups::DescribeUserGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_user_groups::builders::DescribeUserGroupsInputBuilder {
+    pub fn builder() -> crate::operation::describe_user_groups::builders::DescribeUserGroupsInputBuilder {
         crate::operation::describe_user_groups::builders::DescribeUserGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserGroupsInput`](crate::operation::describe_user_groups::DescribeUserGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserGroupsInputBuilder {
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -47,18 +44,12 @@ pub struct DescribeUserGroupsInputBuilder {
 }
 impl DescribeUserGroupsInputBuilder {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user group.</p>
-    pub fn set_user_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_group_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl DescribeUserGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUserGroupsInput`](crate::operation::describe_user_groups::DescribeUserGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_user_groups::DescribeUserGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_user_groups::DescribeUserGroupsInput {
-                user_group_id: self.user_group_id,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_user_groups::DescribeUserGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_user_groups::DescribeUserGroupsInput {
+            user_group_id: self.user_group_id,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

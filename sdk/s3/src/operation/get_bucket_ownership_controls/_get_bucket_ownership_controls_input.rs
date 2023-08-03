@@ -22,16 +22,14 @@ impl GetBucketOwnershipControlsInput {
 }
 impl GetBucketOwnershipControlsInput {
     /// Creates a new builder-style object to manufacture [`GetBucketOwnershipControlsInput`](crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsInput).
-    pub fn builder() -> crate::operation::get_bucket_ownership_controls::builders::GetBucketOwnershipControlsInputBuilder{
+    pub fn builder() -> crate::operation::get_bucket_ownership_controls::builders::GetBucketOwnershipControlsInputBuilder {
         crate::operation::get_bucket_ownership_controls::builders::GetBucketOwnershipControlsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketOwnershipControlsInput`](crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketOwnershipControlsInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl GetBucketOwnershipControlsInputBuilder {
         &self.bucket
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -78,11 +70,9 @@ impl GetBucketOwnershipControlsInputBuilder {
         crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsInput {
-                bucket: self.bucket,
-                expected_bucket_owner: self.expected_bucket_owner,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsInput {
+            bucket: self.bucket,
+            expected_bucket_owner: self.expected_bucket_owner,
+        })
     }
 }

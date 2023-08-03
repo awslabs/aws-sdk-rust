@@ -10,10 +10,7 @@ impl StartFuotaTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_fuota_task::StartFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fuota_task::StartFuotaTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fuota_task::StartFuotaTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_fuota_task();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartFuotaTaskFluentBuilder {
         }
     }
     /// Access the StartFuotaTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_fuota_task::builders::StartFuotaTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_fuota_task::builders::StartFuotaTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartFuotaTaskFluentBuilder {
             crate::operation::start_fuota_task::StartFuotaTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fuota_task::StartFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fuota_task::StartFuotaTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartFuotaTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartFuotaTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_fuota_task::StartFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fuota_task::StartFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fuota_task::StartFuotaTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartFuotaTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_fuota_task::StartFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fuota_task::StartFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fuota_task::StartFuotaTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartFuotaTaskFluentBuilder {
             crate::operation::start_fuota_task::StartFuotaTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fuota_task::StartFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fuota_task::StartFuotaTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl StartFuotaTaskFluentBuilder {
         self
     }
     /// <p>The LoRaWAN information used to start a FUOTA task.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanStartFuotaTask>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanStartFuotaTask>) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }

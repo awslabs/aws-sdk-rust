@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`started_at(Option<DateTime>)`](crate::operation::describe_execution::DescribeExecutionOutput::started_at): <p>When the execution began.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::describe_execution::DescribeExecutionOutput::last_updated_at): <p>When the status of the execution was last updated.</p>
     /// - On failure, responds with [`SdkError<DescribeExecutionError>`](crate::operation::describe_execution::DescribeExecutionError)
-    pub fn describe_execution(
-        &self,
-    ) -> crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder {
-        crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_execution(&self) -> crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder {
+        crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::new(self.handle.clone())
     }
 }

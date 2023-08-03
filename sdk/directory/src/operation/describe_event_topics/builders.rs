@@ -38,9 +38,7 @@ impl DescribeEventTopicsFluentBuilder {
         }
     }
     /// Access the DescribeEventTopics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_event_topics::builders::DescribeEventTopicsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_event_topics::builders::DescribeEventTopicsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeEventTopicsFluentBuilder {
             crate::operation::describe_event_topics::DescribeEventTopics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_topics::DescribeEventTopicsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_topics::DescribeEventTopicsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeEventTopicsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeEventTopicsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_topics::DescribeEventTopicsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_topics::DescribeEventTopicsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_topics::DescribeEventTopicsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeEventTopicsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_topics::DescribeEventTopicsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_topics::DescribeEventTopicsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_topics::DescribeEventTopicsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DescribeEventTopicsFluentBuilder {
             crate::operation::describe_event_topics::DescribeEventTopics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_topics::DescribeEventTopicsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_topics::DescribeEventTopicsError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +136,13 @@ impl DescribeEventTopicsFluentBuilder {
     }
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn set_topic_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_topic_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_topic_names(input);
         self
     }
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn get_topic_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_topic_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_topic_names()
     }
 }

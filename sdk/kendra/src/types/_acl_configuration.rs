@@ -23,26 +23,18 @@ impl AclConfiguration {
 
 /// A builder for [`AclConfiguration`](crate::types::AclConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AclConfigurationBuilder {
     pub(crate) allowed_groups_column_name: ::std::option::Option<::std::string::String>,
 }
 impl AclConfigurationBuilder {
     /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
-    pub fn allowed_groups_column_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_groups_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_groups_column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
-    pub fn set_allowed_groups_column_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_groups_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_groups_column_name = input;
         self
     }

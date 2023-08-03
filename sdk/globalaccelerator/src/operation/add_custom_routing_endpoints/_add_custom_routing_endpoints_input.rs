@@ -5,17 +5,14 @@
 pub struct AddCustomRoutingEndpointsInput {
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
     #[doc(hidden)]
-    pub endpoint_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>,
+    pub endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
     #[doc(hidden)]
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl AddCustomRoutingEndpointsInput {
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
-    pub fn endpoint_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CustomRoutingEndpointConfiguration]> {
+    pub fn endpoint_configurations(&self) -> ::std::option::Option<&[crate::types::CustomRoutingEndpointConfiguration]> {
         self.endpoint_configurations.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
@@ -25,19 +22,16 @@ impl AddCustomRoutingEndpointsInput {
 }
 impl AddCustomRoutingEndpointsInput {
     /// Creates a new builder-style object to manufacture [`AddCustomRoutingEndpointsInput`](crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsInput).
-    pub fn builder() -> crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder{
+    pub fn builder() -> crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder {
         crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`AddCustomRoutingEndpointsInput`](crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddCustomRoutingEndpointsInputBuilder {
-    pub(crate) endpoint_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>,
+    pub(crate) endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl AddCustomRoutingEndpointsInputBuilder {
@@ -46,10 +40,7 @@ impl AddCustomRoutingEndpointsInputBuilder {
     /// To override the contents of this collection use [`set_endpoint_configurations`](Self::set_endpoint_configurations).
     ///
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
-    pub fn endpoint_configurations(
-        mut self,
-        input: crate::types::CustomRoutingEndpointConfiguration,
-    ) -> Self {
+    pub fn endpoint_configurations(mut self, input: crate::types::CustomRoutingEndpointConfiguration) -> Self {
         let mut v = self.endpoint_configurations.unwrap_or_default();
         v.push(input);
         self.endpoint_configurations = ::std::option::Option::Some(v);
@@ -58,33 +49,22 @@ impl AddCustomRoutingEndpointsInputBuilder {
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
     pub fn set_endpoint_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>,
     ) -> Self {
         self.endpoint_configurations = input;
         self
     }
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
-    pub fn get_endpoint_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>
-    {
+    pub fn get_endpoint_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>> {
         &self.endpoint_configurations
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_group_arn = input;
         self
     }
@@ -99,11 +79,9 @@ impl AddCustomRoutingEndpointsInputBuilder {
         crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsInput {
-                endpoint_configurations: self.endpoint_configurations,
-                endpoint_group_arn: self.endpoint_group_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsInput {
+            endpoint_configurations: self.endpoint_configurations,
+            endpoint_group_arn: self.endpoint_group_arn,
+        })
     }
 }

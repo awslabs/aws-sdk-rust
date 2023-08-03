@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayConnectPeerOutput`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput) with field(s):
     ///   - [`transit_gateway_connect_peer(Option<TransitGatewayConnectPeer>)`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput::transit_gateway_connect_peer): <p>Information about the Connect peer.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayConnectPeerError>`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerError)
-    pub fn create_transit_gateway_connect_peer(&self) -> crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerFluentBuilder{
+    pub fn create_transit_gateway_connect_peer(
+        &self,
+    ) -> crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerFluentBuilder {
         crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerFluentBuilder::new(self.handle.clone())
     }
 }

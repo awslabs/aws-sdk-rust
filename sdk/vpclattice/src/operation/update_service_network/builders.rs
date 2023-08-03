@@ -37,9 +37,7 @@ impl UpdateServiceNetworkFluentBuilder {
         }
     }
     /// Access the UpdateServiceNetwork as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_service_network::builders::UpdateServiceNetworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_service_network::builders::UpdateServiceNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateServiceNetworkFluentBuilder {
             crate::operation::update_service_network::UpdateServiceNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_network::UpdateServiceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_network::UpdateServiceNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateServiceNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateServiceNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_network::UpdateServiceNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_network::UpdateServiceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_network::UpdateServiceNetworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateServiceNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_network::UpdateServiceNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_network::UpdateServiceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_network::UpdateServiceNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateServiceNetworkFluentBuilder {
             crate::operation::update_service_network::UpdateServiceNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_network::UpdateServiceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_network::UpdateServiceNetworkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_network_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn set_service_network_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_network_identifier(input);
         self
     }

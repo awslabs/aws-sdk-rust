@@ -36,25 +36,18 @@ impl ::aws_http::request_id::RequestId for GetPipelineDefinitionOutput {
 }
 impl GetPipelineDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetPipelineDefinitionOutput`](crate::operation::get_pipeline_definition::GetPipelineDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionOutputBuilder {
         crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPipelineDefinitionOutput`](crate::operation::get_pipeline_definition::GetPipelineDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPipelineDefinitionOutputBuilder {
-    pub(crate) pipeline_objects:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
-    pub(crate) parameter_objects:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
-    pub(crate) parameter_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
+    pub(crate) pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
+    pub(crate) parameter_objects: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
+    pub(crate) parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
     _request_id: Option<String>,
 }
 impl GetPipelineDefinitionOutputBuilder {
@@ -70,17 +63,12 @@ impl GetPipelineDefinitionOutputBuilder {
         self
     }
     /// <p>The objects defined in the pipeline.</p>
-    pub fn set_pipeline_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
-    ) -> Self {
+    pub fn set_pipeline_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>) -> Self {
         self.pipeline_objects = input;
         self
     }
     /// <p>The objects defined in the pipeline.</p>
-    pub fn get_pipeline_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
+    pub fn get_pipeline_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
         &self.pipeline_objects
     }
     /// Appends an item to `parameter_objects`.
@@ -95,17 +83,12 @@ impl GetPipelineDefinitionOutputBuilder {
         self
     }
     /// <p>The parameter objects used in the pipeline definition.</p>
-    pub fn set_parameter_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
-    ) -> Self {
+    pub fn set_parameter_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>) -> Self {
         self.parameter_objects = input;
         self
     }
     /// <p>The parameter objects used in the pipeline definition.</p>
-    pub fn get_parameter_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
+    pub fn get_parameter_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
         &self.parameter_objects
     }
     /// Appends an item to `parameter_values`.
@@ -120,17 +103,12 @@ impl GetPipelineDefinitionOutputBuilder {
         self
     }
     /// <p>The parameter values used in the pipeline definition.</p>
-    pub fn set_parameter_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
-    ) -> Self {
+    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>) -> Self {
         self.parameter_values = input;
         self
     }
     /// <p>The parameter values used in the pipeline definition.</p>
-    pub fn get_parameter_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
         &self.parameter_values
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -40,8 +40,7 @@ pub struct CreateProductInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The configuration of the provisioning artifact. </p>
     #[doc(hidden)]
-    pub provisioning_artifact_parameters:
-        ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
+    pub provisioning_artifact_parameters: ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
@@ -100,9 +99,7 @@ impl CreateProductInput {
         self.tags.as_deref()
     }
     /// <p>The configuration of the provisioning artifact. </p>
-    pub fn provisioning_artifact_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisioningArtifactProperties> {
+    pub fn provisioning_artifact_parameters(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactProperties> {
         self.provisioning_artifact_parameters.as_ref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
@@ -127,9 +124,7 @@ impl CreateProductInput {
 
 /// A builder for [`CreateProductInput`](crate::operation::create_product::CreateProductInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProductInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -141,8 +136,7 @@ pub struct CreateProductInputBuilder {
     pub(crate) support_url: ::std::option::Option<::std::string::String>,
     pub(crate) product_type: ::std::option::Option<crate::types::ProductType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) provisioning_artifact_parameters:
-        ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
+    pub(crate) provisioning_artifact_parameters: ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
     pub(crate) source_connection: ::std::option::Option<crate::types::SourceConnection>,
 }
@@ -152,10 +146,7 @@ impl CreateProductInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -164,10 +155,7 @@ impl CreateProductInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -236,18 +224,12 @@ impl CreateProductInputBuilder {
         &self.distributor
     }
     /// <p>The support information about the product.</p>
-    pub fn support_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn support_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support information about the product.</p>
-    pub fn set_support_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_support_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_description = input;
         self
     }
@@ -256,18 +238,12 @@ impl CreateProductInputBuilder {
         &self.support_description
     }
     /// <p>The contact email for product support.</p>
-    pub fn support_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn support_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contact email for product support.</p>
-    pub fn set_support_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_email = input;
         self
     }
@@ -298,10 +274,7 @@ impl CreateProductInputBuilder {
         self
     }
     /// <p>The type of product.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductType>,
-    ) -> Self {
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::ProductType>) -> Self {
         self.product_type = input;
         self
     }
@@ -321,10 +294,7 @@ impl CreateProductInputBuilder {
         self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -333,40 +303,26 @@ impl CreateProductInputBuilder {
         &self.tags
     }
     /// <p>The configuration of the provisioning artifact. </p>
-    pub fn provisioning_artifact_parameters(
-        mut self,
-        input: crate::types::ProvisioningArtifactProperties,
-    ) -> Self {
+    pub fn provisioning_artifact_parameters(mut self, input: crate::types::ProvisioningArtifactProperties) -> Self {
         self.provisioning_artifact_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the provisioning artifact. </p>
-    pub fn set_provisioning_artifact_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_parameters(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactProperties>) -> Self {
         self.provisioning_artifact_parameters = input;
         self
     }
     /// <p>The configuration of the provisioning artifact. </p>
-    pub fn get_provisioning_artifact_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningArtifactProperties> {
+    pub fn get_provisioning_artifact_parameters(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactProperties> {
         &self.provisioning_artifact_parameters
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -388,10 +344,7 @@ impl CreateProductInputBuilder {
     /// <li> <p> <code>Type</code> </p> </li>
     /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
-    pub fn set_source_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConnection>,
-    ) -> Self {
+    pub fn set_source_connection(mut self, input: ::std::option::Option<crate::types::SourceConnection>) -> Self {
         self.source_connection = input;
         self
     }
@@ -406,10 +359,7 @@ impl CreateProductInputBuilder {
     /// Consumes the builder and constructs a [`CreateProductInput`](crate::operation::create_product::CreateProductInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_product::CreateProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_product::CreateProductInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_product::CreateProductInput {
             accept_language: self.accept_language,
             name: self.name,

@@ -36,16 +36,14 @@ impl DisassociateNatGatewayAddressInput {
 }
 impl DisassociateNatGatewayAddressInput {
     /// Creates a new builder-style object to manufacture [`DisassociateNatGatewayAddressInput`](crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressInput).
-    pub fn builder() -> crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder {
         crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateNatGatewayAddressInput`](crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateNatGatewayAddressInputBuilder {
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,18 +52,12 @@ pub struct DisassociateNatGatewayAddressInputBuilder {
 }
 impl DisassociateNatGatewayAddressInputBuilder {
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nat_gateway_id = input;
         self
     }
@@ -78,27 +70,19 @@ impl DisassociateNatGatewayAddressInputBuilder {
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
     ///
     /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
-    pub fn association_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.association_ids.unwrap_or_default();
         v.push(input.into());
         self.association_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
-    pub fn set_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.association_ids = input;
         self
     }
     /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
-    pub fn get_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.association_ids
     }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
@@ -136,17 +120,11 @@ impl DisassociateNatGatewayAddressInputBuilder {
         crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressInput {
-                nat_gateway_id: self.nat_gateway_id
-                ,
-                association_ids: self.association_ids
-                ,
-                max_drain_duration_seconds: self.max_drain_duration_seconds
-                ,
-                dry_run: self.dry_run
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressInput {
+            nat_gateway_id: self.nat_gateway_id,
+            association_ids: self.association_ids,
+            max_drain_duration_seconds: self.max_drain_duration_seconds,
+            dry_run: self.dry_run,
+        })
     }
 }

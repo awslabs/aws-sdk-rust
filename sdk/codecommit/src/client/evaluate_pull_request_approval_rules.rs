@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`EvaluatePullRequestApprovalRulesOutput`](crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput) with field(s):
     ///   - [`evaluation(Option<Evaluation>)`](crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput::evaluation): <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     /// - On failure, responds with [`SdkError<EvaluatePullRequestApprovalRulesError>`](crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError)
-    pub fn evaluate_pull_request_approval_rules(&self) -> crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesFluentBuilder{
+    pub fn evaluate_pull_request_approval_rules(
+        &self,
+    ) -> crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesFluentBuilder {
         crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesFluentBuilder::new(self.handle.clone())
     }
 }

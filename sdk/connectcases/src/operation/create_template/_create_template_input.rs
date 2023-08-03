@@ -36,9 +36,7 @@ impl CreateTemplateInput {
         self.description.as_deref()
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn layout_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LayoutConfiguration> {
+    pub fn layout_configuration(&self) -> ::std::option::Option<&crate::types::LayoutConfiguration> {
         self.layout_configuration.as_ref()
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
@@ -59,9 +57,7 @@ impl CreateTemplateInput {
 
 /// A builder for [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTemplateInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -119,17 +115,12 @@ impl CreateTemplateInputBuilder {
         self
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn set_layout_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutConfiguration>,
-    ) -> Self {
+    pub fn set_layout_configuration(mut self, input: ::std::option::Option<crate::types::LayoutConfiguration>) -> Self {
         self.layout_configuration = input;
         self
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn get_layout_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LayoutConfiguration> {
+    pub fn get_layout_configuration(&self) -> &::std::option::Option<crate::types::LayoutConfiguration> {
         &self.layout_configuration
     }
     /// Appends an item to `required_fields`.
@@ -144,17 +135,12 @@ impl CreateTemplateInputBuilder {
         self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn set_required_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
-    ) -> Self {
+    pub fn set_required_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>) -> Self {
         self.required_fields = input;
         self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn get_required_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
+    pub fn get_required_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
         &self.required_fields
     }
     /// <p>The status of the template.</p>
@@ -163,10 +149,7 @@ impl CreateTemplateInputBuilder {
         self
     }
     /// <p>The status of the template.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -177,10 +160,7 @@ impl CreateTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_template::CreateTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_template::CreateTemplateInput {
             domain_id: self.domain_id,
             name: self.name,

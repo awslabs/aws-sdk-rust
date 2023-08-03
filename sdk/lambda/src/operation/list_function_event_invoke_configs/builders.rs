@@ -5,16 +5,16 @@ pub use crate::operation::list_function_event_invoke_configs::_list_function_eve
 
 impl ListFunctionEventInvokeConfigsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_function_event_invoke_configs();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListFunctionEventInvokeConfigsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFunctionEventInvokeConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsInputBuilder,
+    inner: crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsInputBuilder,
 }
 impl ListFunctionEventInvokeConfigsFluentBuilder {
     /// Creates a new `ListFunctionEventInvokeConfigs`.
@@ -38,15 +38,20 @@ impl ListFunctionEventInvokeConfigsFluentBuilder {
         }
     }
     /// Access the ListFunctionEventInvokeConfigs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigs, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigs,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ListFunctionEventInvokeConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,23 +88,32 @@ impl ListFunctionEventInvokeConfigsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigs, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigs,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_function_event_invoke_configs::paginator::ListFunctionEventInvokeConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_function_event_invoke_configs::paginator::ListFunctionEventInvokeConfigsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_function_event_invoke_configs::paginator::ListFunctionEventInvokeConfigsPaginator {
         crate::operation::list_function_event_invoke_configs::paginator::ListFunctionEventInvokeConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the Lambda function.</p>
@@ -109,10 +124,7 @@ impl ListFunctionEventInvokeConfigsFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -124,10 +136,7 @@ impl ListFunctionEventInvokeConfigsFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

@@ -16,9 +16,7 @@ pub struct DescribeIamPolicyAssignmentOutput {
 }
 impl DescribeIamPolicyAssignmentOutput {
     /// <p>Information describing the IAM policy assignment.</p>
-    pub fn iam_policy_assignment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IamPolicyAssignment> {
+    pub fn iam_policy_assignment(&self) -> ::std::option::Option<&crate::types::IamPolicyAssignment> {
         self.iam_policy_assignment.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -37,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeIamPolicyAssignmentOutput {
 }
 impl DescribeIamPolicyAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIamPolicyAssignmentOutput`](crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput).
-    pub fn builder() -> crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentOutputBuilder{
+    pub fn builder() -> crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentOutputBuilder {
         crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIamPolicyAssignmentOutput`](crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIamPolicyAssignmentOutputBuilder {
     pub(crate) iam_policy_assignment: ::std::option::Option<crate::types::IamPolicyAssignment>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -60,17 +56,12 @@ impl DescribeIamPolicyAssignmentOutputBuilder {
         self
     }
     /// <p>Information describing the IAM policy assignment.</p>
-    pub fn set_iam_policy_assignment(
-        mut self,
-        input: ::std::option::Option<crate::types::IamPolicyAssignment>,
-    ) -> Self {
+    pub fn set_iam_policy_assignment(mut self, input: ::std::option::Option<crate::types::IamPolicyAssignment>) -> Self {
         self.iam_policy_assignment = input;
         self
     }
     /// <p>Information describing the IAM policy assignment.</p>
-    pub fn get_iam_policy_assignment(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamPolicyAssignment> {
+    pub fn get_iam_policy_assignment(&self) -> &::std::option::Option<crate::types::IamPolicyAssignment> {
         &self.iam_policy_assignment
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -111,9 +102,7 @@ impl DescribeIamPolicyAssignmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeIamPolicyAssignmentOutput`](crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput {
+    pub fn build(self) -> crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput {
         crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput {
             iam_policy_assignment: self.iam_policy_assignment,
             request_id: self.request_id,

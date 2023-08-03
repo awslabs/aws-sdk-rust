@@ -44,9 +44,7 @@ impl SidewalkDeviceMetadata {
 
 /// A builder for [`SidewalkDeviceMetadata`](crate::types::SidewalkDeviceMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SidewalkDeviceMetadataBuilder {
     pub(crate) rssi: ::std::option::Option<i32>,
     pub(crate) battery_level: ::std::option::Option<crate::types::BatteryLevel>,
@@ -74,10 +72,7 @@ impl SidewalkDeviceMetadataBuilder {
         self
     }
     /// <p>Sidewalk device battery level.</p>
-    pub fn set_battery_level(
-        mut self,
-        input: ::std::option::Option<crate::types::BatteryLevel>,
-    ) -> Self {
+    pub fn set_battery_level(mut self, input: ::std::option::Option<crate::types::BatteryLevel>) -> Self {
         self.battery_level = input;
         self
     }
@@ -105,10 +100,7 @@ impl SidewalkDeviceMetadataBuilder {
         self
     }
     /// <p>Device state defines the device status of sidewalk device.</p>
-    pub fn set_device_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceState>,
-    ) -> Self {
+    pub fn set_device_state(mut self, input: ::std::option::Option<crate::types::DeviceState>) -> Self {
         self.device_state = input;
         self
     }

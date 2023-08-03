@@ -42,9 +42,7 @@ impl ListProblemsOutput {
 
 /// A builder for [`ListProblemsOutput`](crate::operation::list_problems::ListProblemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProblemsOutputBuilder {
     pub(crate) problem_list: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,17 +62,12 @@ impl ListProblemsOutputBuilder {
         self
     }
     /// <p>The list of problems. </p>
-    pub fn set_problem_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>,
-    ) -> Self {
+    pub fn set_problem_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>) -> Self {
         self.problem_list = input;
         self
     }
     /// <p>The list of problems. </p>
-    pub fn get_problem_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Problem>> {
+    pub fn get_problem_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Problem>> {
         &self.problem_list
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
@@ -92,18 +85,12 @@ impl ListProblemsOutputBuilder {
         &self.next_token
     }
     /// <p> The name of the resource group. </p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the resource group. </p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }

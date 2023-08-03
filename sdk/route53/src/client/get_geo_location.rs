@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetGeoLocationOutput`](crate::operation::get_geo_location::GetGeoLocationOutput) with field(s):
     ///   - [`geo_location_details(Option<GeoLocationDetails>)`](crate::operation::get_geo_location::GetGeoLocationOutput::geo_location_details): <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
     /// - On failure, responds with [`SdkError<GetGeoLocationError>`](crate::operation::get_geo_location::GetGeoLocationError)
-    pub fn get_geo_location(
-        &self,
-    ) -> crate::operation::get_geo_location::builders::GetGeoLocationFluentBuilder {
-        crate::operation::get_geo_location::builders::GetGeoLocationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_geo_location(&self) -> crate::operation::get_geo_location::builders::GetGeoLocationFluentBuilder {
+        crate::operation::get_geo_location::builders::GetGeoLocationFluentBuilder::new(self.handle.clone())
     }
 }

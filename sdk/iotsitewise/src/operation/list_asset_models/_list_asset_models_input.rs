@@ -31,9 +31,7 @@ impl ListAssetModelsInput {
 
 /// A builder for [`ListAssetModelsInput`](crate::operation::list_asset_models::ListAssetModelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetModelsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -73,10 +71,7 @@ impl ListAssetModelsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssetModelsInput`](crate::operation::list_asset_models::ListAssetModelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_asset_models::ListAssetModelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_asset_models::ListAssetModelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_asset_models::ListAssetModelsInput {
             next_token: self.next_token,
             max_results: self.max_results,

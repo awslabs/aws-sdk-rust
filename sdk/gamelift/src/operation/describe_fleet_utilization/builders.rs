@@ -38,7 +38,7 @@ impl DescribeFleetUtilizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetUtilizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationInputBuilder,
+    inner: crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationInputBuilder,
 }
 impl DescribeFleetUtilizationFluentBuilder {
     /// Creates a new `DescribeFleetUtilization`.
@@ -49,10 +49,7 @@ impl DescribeFleetUtilizationFluentBuilder {
         }
     }
     /// Access the DescribeFleetUtilization as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +61,7 @@ impl DescribeFleetUtilizationFluentBuilder {
             crate::operation::describe_fleet_utilization::DescribeFleetUtilization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +71,7 @@ impl DescribeFleetUtilizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +80,7 @@ impl DescribeFleetUtilizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError>,
     > {
         let op = self
             .inner
@@ -113,9 +103,7 @@ impl DescribeFleetUtilizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError>,
     > {
         self.send_middleware().await
     }
@@ -129,19 +117,14 @@ impl DescribeFleetUtilizationFluentBuilder {
             crate::operation::describe_fleet_utilization::DescribeFleetUtilization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator {
         crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `FleetIds`.
@@ -154,10 +137,7 @@ impl DescribeFleetUtilizationFluentBuilder {
         self
     }
     /// <p>A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
-    pub fn set_fleet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fleet_ids(input);
         self
     }

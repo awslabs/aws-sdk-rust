@@ -39,16 +39,14 @@ impl UpdatePipelineNotificationsInput {
 }
 impl UpdatePipelineNotificationsInput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineNotificationsInput`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsInput).
-    pub fn builder() -> crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsInputBuilder{
+    pub fn builder() -> crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsInputBuilder {
         crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePipelineNotificationsInput`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipelineNotificationsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) notifications: ::std::option::Option<crate::types::Notifications>,
@@ -90,10 +88,7 @@ impl UpdatePipelineNotificationsInputBuilder {
     /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
-    pub fn set_notifications(
-        mut self,
-        input: ::std::option::Option<crate::types::Notifications>,
-    ) -> Self {
+    pub fn set_notifications(mut self, input: ::std::option::Option<crate::types::Notifications>) -> Self {
         self.notifications = input;
         self
     }
@@ -116,11 +111,9 @@ impl UpdatePipelineNotificationsInputBuilder {
         crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsInput {
-                id: self.id,
-                notifications: self.notifications,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsInput {
+            id: self.id,
+            notifications: self.notifications,
+        })
     }
 }

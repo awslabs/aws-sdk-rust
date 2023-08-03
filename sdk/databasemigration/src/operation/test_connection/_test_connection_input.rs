@@ -30,27 +30,19 @@ impl TestConnectionInput {
 
 /// A builder for [`TestConnectionInput`](crate::operation::test_connection::TestConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestConnectionInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl TestConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_arn = input;
         self
     }
@@ -75,10 +67,7 @@ impl TestConnectionInputBuilder {
     /// Consumes the builder and constructs a [`TestConnectionInput`](crate::operation::test_connection::TestConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::test_connection::TestConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::test_connection::TestConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_connection::TestConnectionInput {
             replication_instance_arn: self.replication_instance_arn,
             endpoint_arn: self.endpoint_arn,

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StopSnomedctInferenceJobOutput {
 }
 impl StopSnomedctInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobOutput`](crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobOutput).
-    pub fn builder() -> crate::operation::stop_snomedct_inference_job::builders::StopSnomedctInferenceJobOutputBuilder{
+    pub fn builder() -> crate::operation::stop_snomedct_inference_job::builders::StopSnomedctInferenceJobOutputBuilder {
         crate::operation::stop_snomedct_inference_job::builders::StopSnomedctInferenceJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopSnomedctInferenceJobOutput`](crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSnomedctInferenceJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StopSnomedctInferenceJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopSnomedctInferenceJobOutput`](crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobOutput {
+    pub fn build(self) -> crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobOutput {
         crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobOutput {
             job_id: self.job_id,
             _request_id: self._request_id,

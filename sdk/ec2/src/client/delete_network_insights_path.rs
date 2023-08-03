@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteNetworkInsightsPathOutput`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput) with field(s):
     ///   - [`network_insights_path_id(Option<String>)`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput::network_insights_path_id): <p>The ID of the path.</p>
     /// - On failure, responds with [`SdkError<DeleteNetworkInsightsPathError>`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathError)
-    pub fn delete_network_insights_path(&self) -> crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathFluentBuilder{
+    pub fn delete_network_insights_path(&self) -> crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathFluentBuilder {
         crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathFluentBuilder::new(self.handle.clone())
     }
 }

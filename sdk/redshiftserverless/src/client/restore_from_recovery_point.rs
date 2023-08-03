@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`recovery_point_id(Option<String>)`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput::recovery_point_id): <p>The unique identifier of the recovery point used for the restore.</p>
     ///   - [`namespace(Option<Namespace>)`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput::namespace): <p>The namespace that data was restored into.</p>
     /// - On failure, responds with [`SdkError<RestoreFromRecoveryPointError>`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError)
-    pub fn restore_from_recovery_point(&self) -> crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointFluentBuilder{
+    pub fn restore_from_recovery_point(&self) -> crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointFluentBuilder {
         crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointFluentBuilder::new(self.handle.clone())
     }
 }

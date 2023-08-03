@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAppAuthorizationOutput {
 }
 impl UpdateAppAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppAuthorizationOutput`](crate::operation::update_app_authorization::UpdateAppAuthorizationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_app_authorization::builders::UpdateAppAuthorizationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_app_authorization::builders::UpdateAppAuthorizationOutputBuilder {
         crate::operation::update_app_authorization::builders::UpdateAppAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAppAuthorizationOutput`](crate::operation::update_app_authorization::UpdateAppAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAppAuthorizationOutputBuilder {
     pub(crate) app_authorization: ::std::option::Option<crate::types::AppAuthorization>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateAppAuthorizationOutputBuilder {
         self
     }
     /// <p>Contains information about an app authorization.</p>
-    pub fn set_app_authorization(
-        mut self,
-        input: ::std::option::Option<crate::types::AppAuthorization>,
-    ) -> Self {
+    pub fn set_app_authorization(mut self, input: ::std::option::Option<crate::types::AppAuthorization>) -> Self {
         self.app_authorization = input;
         self
     }

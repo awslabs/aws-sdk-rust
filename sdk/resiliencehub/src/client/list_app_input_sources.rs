@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`app_input_sources(Option<Vec<AppInputSource>>)`](crate::operation::list_app_input_sources::ListAppInputSourcesOutput::app_input_sources): <p>The list of Resilience Hub application input sources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_input_sources::ListAppInputSourcesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAppInputSourcesError>`](crate::operation::list_app_input_sources::ListAppInputSourcesError)
-    pub fn list_app_input_sources(
-        &self,
-    ) -> crate::operation::list_app_input_sources::builders::ListAppInputSourcesFluentBuilder {
-        crate::operation::list_app_input_sources::builders::ListAppInputSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_app_input_sources(&self) -> crate::operation::list_app_input_sources::builders::ListAppInputSourcesFluentBuilder {
+        crate::operation::list_app_input_sources::builders::ListAppInputSourcesFluentBuilder::new(self.handle.clone())
     }
 }

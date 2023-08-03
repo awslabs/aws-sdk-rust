@@ -43,18 +43,14 @@ impl ListRotationOverridesInput {
 }
 impl ListRotationOverridesInput {
     /// Creates a new builder-style object to manufacture [`ListRotationOverridesInput`](crate::operation::list_rotation_overrides::ListRotationOverridesInput).
-    pub fn builder(
-    ) -> crate::operation::list_rotation_overrides::builders::ListRotationOverridesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_rotation_overrides::builders::ListRotationOverridesInputBuilder {
         crate::operation::list_rotation_overrides::builders::ListRotationOverridesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRotationOverridesInput`](crate::operation::list_rotation_overrides::ListRotationOverridesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRotationOverridesInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -83,10 +79,7 @@ impl ListRotationOverridesInputBuilder {
         self
     }
     /// <p>The date and time for the beginning of a time range for listing overrides.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -100,10 +93,7 @@ impl ListRotationOverridesInputBuilder {
         self
     }
     /// <p>The date and time for the end of a time range for listing overrides.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -142,18 +132,14 @@ impl ListRotationOverridesInputBuilder {
     /// Consumes the builder and constructs a [`ListRotationOverridesInput`](crate::operation::list_rotation_overrides::ListRotationOverridesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rotation_overrides::ListRotationOverridesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_rotation_overrides::ListRotationOverridesInput {
-                rotation_id: self.rotation_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_rotation_overrides::ListRotationOverridesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_rotation_overrides::ListRotationOverridesInput {
+            rotation_id: self.rotation_id,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

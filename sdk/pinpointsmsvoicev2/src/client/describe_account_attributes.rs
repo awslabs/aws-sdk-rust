@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`account_attributes(Option<Vec<AccountAttribute>>)`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput::account_attributes): <p>An array of AccountAttributes objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountAttributesError>`](crate::operation::describe_account_attributes::DescribeAccountAttributesError)
-    pub fn describe_account_attributes(&self) -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder{
+    pub fn describe_account_attributes(&self) -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder {
         crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,7 +27,7 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBlueGreenDeploymentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsInputBuilder,
+    inner: crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsInputBuilder,
 }
 impl DescribeBlueGreenDeploymentsFluentBuilder {
     /// Creates a new `DescribeBlueGreenDeployments`.
@@ -38,7 +38,7 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
         }
     }
     /// Access the DescribeBlueGreenDeployments as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
             crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
             crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_blue_green_deployments::paginator::DescribeBlueGreenDeploymentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_blue_green_deployments::paginator::DescribeBlueGreenDeploymentsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_blue_green_deployments::paginator::DescribeBlueGreenDeploymentsPaginator {
         crate::operation::describe_blue_green_deployments::paginator::DescribeBlueGreenDeploymentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
@@ -132,10 +121,7 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn blue_green_deployment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blue_green_deployment_identifier(input.into());
         self
     }
@@ -144,10 +130,7 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn set_blue_green_deployment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_blue_green_deployment_identifier(input);
         self
     }
@@ -156,9 +139,7 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn get_blue_green_deployment_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_blue_green_deployment_identifier()
     }
     /// Appends an item to `Filters`.
@@ -185,10 +166,7 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
     /// <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>
     /// <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

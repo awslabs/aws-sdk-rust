@@ -40,9 +40,7 @@ impl ResourcePermission {
 
 /// A builder for [`ResourcePermission`](crate::types::ResourcePermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourcePermissionBuilder {
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -89,10 +87,7 @@ impl ResourcePermissionBuilder {
         self
     }
     /// <p>The IAM action to grant or revoke permissions on.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.actions = input;
         self
     }

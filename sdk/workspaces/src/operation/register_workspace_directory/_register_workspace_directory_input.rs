@@ -50,16 +50,14 @@ impl RegisterWorkspaceDirectoryInput {
 }
 impl RegisterWorkspaceDirectoryInput {
     /// Creates a new builder-style object to manufacture [`RegisterWorkspaceDirectoryInput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryInput).
-    pub fn builder() -> crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryInputBuilder{
+    pub fn builder() -> crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryInputBuilder {
         crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterWorkspaceDirectoryInput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterWorkspaceDirectoryInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -95,10 +93,7 @@ impl RegisterWorkspaceDirectoryInputBuilder {
         self
     }
     /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -160,10 +155,7 @@ impl RegisterWorkspaceDirectoryInputBuilder {
         self
     }
     /// <p>The tags associated with the directory.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -178,15 +170,13 @@ impl RegisterWorkspaceDirectoryInputBuilder {
         crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryInput {
-                directory_id: self.directory_id,
-                subnet_ids: self.subnet_ids,
-                enable_work_docs: self.enable_work_docs,
-                enable_self_service: self.enable_self_service,
-                tenancy: self.tenancy,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryInput {
+            directory_id: self.directory_id,
+            subnet_ids: self.subnet_ids,
+            enable_work_docs: self.enable_work_docs,
+            enable_self_service: self.enable_self_service,
+            tenancy: self.tenancy,
+            tags: self.tags,
+        })
     }
 }

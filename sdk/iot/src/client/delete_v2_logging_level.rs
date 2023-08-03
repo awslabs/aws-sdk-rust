@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`target_name(impl ::std::convert::Into<String>)`](crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder::target_name) / [`set_target_name(Option<String>)`](crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder::set_target_name): <p>The name of the resource for which you are configuring logging.</p>
     /// - On success, responds with [`DeleteV2LoggingLevelOutput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelOutput)
     /// - On failure, responds with [`SdkError<DeleteV2LoggingLevelError>`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError)
-    pub fn delete_v2_logging_level(
-        &self,
-    ) -> crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder
-    {
-        crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_v2_logging_level(&self) -> crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder {
+        crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder::new(self.handle.clone())
     }
 }

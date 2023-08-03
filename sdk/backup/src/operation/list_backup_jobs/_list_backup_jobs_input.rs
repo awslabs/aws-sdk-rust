@@ -129,9 +129,7 @@ impl ListBackupJobsInput {
 
 /// A builder for [`ListBackupJobsInput`](crate::operation::list_backup_jobs::ListBackupJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -176,18 +174,12 @@ impl ListBackupJobsInputBuilder {
         &self.max_results
     }
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn by_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn set_by_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_resource_arn = input;
         self
     }
@@ -201,10 +193,7 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
-    pub fn set_by_state(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupJobState>,
-    ) -> Self {
+    pub fn set_by_state(mut self, input: ::std::option::Option<crate::types::BackupJobState>) -> Self {
         self.by_state = input;
         self
     }
@@ -213,18 +202,12 @@ impl ListBackupJobsInputBuilder {
         &self.by_state
     }
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn by_backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_by_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_backup_vault_name = input;
         self
     }
@@ -238,10 +221,7 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs that were created before the specified date.</p>
-    pub fn set_by_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_created_before = input;
         self
     }
@@ -255,10 +235,7 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs that were created after the specified date.</p>
-    pub fn set_by_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_created_after = input;
         self
     }
@@ -281,10 +258,7 @@ impl ListBackupJobsInputBuilder {
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    pub fn by_resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_resource_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -303,10 +277,7 @@ impl ListBackupJobsInputBuilder {
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    pub fn set_by_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_resource_type = input;
         self
     }
@@ -330,19 +301,13 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
-    pub fn by_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
-    pub fn set_by_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_account_id = input;
         self
     }
@@ -357,10 +322,7 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_complete_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_complete_after = input;
         self
     }
@@ -374,10 +336,7 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_complete_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_complete_before = input;
         self
     }
@@ -386,18 +345,12 @@ impl ListBackupJobsInputBuilder {
         &self.by_complete_before
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    pub fn by_parent_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_parent_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_parent_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    pub fn set_by_parent_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_parent_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_parent_job_id = input;
         self
     }
@@ -408,10 +361,7 @@ impl ListBackupJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListBackupJobsInput`](crate::operation::list_backup_jobs::ListBackupJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_backup_jobs::ListBackupJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_backup_jobs::ListBackupJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_backup_jobs::ListBackupJobsInput {
             next_token: self.next_token,
             max_results: self.max_results,

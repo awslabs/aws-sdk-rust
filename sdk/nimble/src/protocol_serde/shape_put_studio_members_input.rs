@@ -12,10 +12,7 @@ pub fn ser_put_studio_members_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_new_studio_member::ser_new_studio_member(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_new_studio_member::ser_new_studio_member(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

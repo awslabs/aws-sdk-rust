@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`new_password(impl ::std::convert::Into<String>)`](crate::operation::reset_user_password::builders::ResetUserPasswordFluentBuilder::new_password) / [`set_new_password(Option<String>)`](crate::operation::reset_user_password::builders::ResetUserPasswordFluentBuilder::set_new_password): <p>The new password that will be reset.</p>
     /// - On success, responds with [`ResetUserPasswordOutput`](crate::operation::reset_user_password::ResetUserPasswordOutput)
     /// - On failure, responds with [`SdkError<ResetUserPasswordError>`](crate::operation::reset_user_password::ResetUserPasswordError)
-    pub fn reset_user_password(
-        &self,
-    ) -> crate::operation::reset_user_password::builders::ResetUserPasswordFluentBuilder {
-        crate::operation::reset_user_password::builders::ResetUserPasswordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reset_user_password(&self) -> crate::operation::reset_user_password::builders::ResetUserPasswordFluentBuilder {
+        crate::operation::reset_user_password::builders::ResetUserPasswordFluentBuilder::new(self.handle.clone())
     }
 }

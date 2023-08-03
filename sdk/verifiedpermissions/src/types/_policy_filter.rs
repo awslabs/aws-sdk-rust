@@ -45,9 +45,7 @@ impl PolicyFilter {
 
 /// A builder for [`PolicyFilter`](crate::types::PolicyFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyFilterBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::EntityReference>,
     pub(crate) resource: ::std::option::Option<crate::types::EntityReference>,
@@ -61,10 +59,7 @@ impl PolicyFilterBuilder {
         self
     }
     /// <p>Filters the output to only policies that reference the specified principal.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityReference>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::EntityReference>) -> Self {
         self.principal = input;
         self
     }
@@ -78,10 +73,7 @@ impl PolicyFilterBuilder {
         self
     }
     /// <p>Filters the output to only policies that reference the specified resource.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityReference>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityReference>) -> Self {
         self.resource = input;
         self
     }
@@ -95,10 +87,7 @@ impl PolicyFilterBuilder {
         self
     }
     /// <p>Filters the output to only policies of the specified type.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
@@ -107,18 +96,12 @@ impl PolicyFilterBuilder {
         &self.policy_type
     }
     /// <p>Filters the output to only template-linked policies that were instantiated from the specified policy template.</p>
-    pub fn policy_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the output to only template-linked policies that were instantiated from the specified policy template.</p>
-    pub fn set_policy_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_template_id = input;
         self
     }

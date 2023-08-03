@@ -17,9 +17,7 @@ impl ClassificationType {
         self.one_time.as_ref()
     }
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>
-    pub fn continuous(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3ContinuousClassificationType> {
+    pub fn continuous(&self) -> ::std::option::Option<&crate::types::S3ContinuousClassificationType> {
         self.continuous.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl ClassificationType {
 
 /// A builder for [`ClassificationType`](crate::types::ClassificationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassificationTypeBuilder {
     pub(crate) one_time: ::std::option::Option<crate::types::S3OneTimeClassificationType>,
     pub(crate) continuous: ::std::option::Option<crate::types::S3ContinuousClassificationType>,
@@ -46,17 +42,12 @@ impl ClassificationTypeBuilder {
         self
     }
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
-    pub fn set_one_time(
-        mut self,
-        input: ::std::option::Option<crate::types::S3OneTimeClassificationType>,
-    ) -> Self {
+    pub fn set_one_time(mut self, input: ::std::option::Option<crate::types::S3OneTimeClassificationType>) -> Self {
         self.one_time = input;
         self
     }
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
-    pub fn get_one_time(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3OneTimeClassificationType> {
+    pub fn get_one_time(&self) -> &::std::option::Option<crate::types::S3OneTimeClassificationType> {
         &self.one_time
     }
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>
@@ -65,17 +56,12 @@ impl ClassificationTypeBuilder {
         self
     }
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>
-    pub fn set_continuous(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ContinuousClassificationType>,
-    ) -> Self {
+    pub fn set_continuous(mut self, input: ::std::option::Option<crate::types::S3ContinuousClassificationType>) -> Self {
         self.continuous = input;
         self
     }
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>
-    pub fn get_continuous(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ContinuousClassificationType> {
+    pub fn get_continuous(&self) -> &::std::option::Option<crate::types::S3ContinuousClassificationType> {
         &self.continuous
     }
     /// Consumes the builder and constructs a [`ClassificationType`](crate::types::ClassificationType).

@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`update_time(Option<DateTime>)`](crate::operation::get_geofence::GetGeofenceOutput::update_time): <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     ///   - [`geofence_properties(Option<HashMap<String, String>>)`](crate::operation::get_geofence::GetGeofenceOutput::geofence_properties): <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>  <p>Format: <code>"key" : "value"</code> </p>
     /// - On failure, responds with [`SdkError<GetGeofenceError>`](crate::operation::get_geofence::GetGeofenceError)
-    pub fn get_geofence(
-        &self,
-    ) -> crate::operation::get_geofence::builders::GetGeofenceFluentBuilder {
+    pub fn get_geofence(&self) -> crate::operation::get_geofence::builders::GetGeofenceFluentBuilder {
         crate::operation::get_geofence::builders::GetGeofenceFluentBuilder::new(self.handle.clone())
     }
 }

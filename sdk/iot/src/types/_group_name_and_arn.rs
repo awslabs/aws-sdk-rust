@@ -30,9 +30,7 @@ impl GroupNameAndArn {
 
 /// A builder for [`GroupNameAndArn`](crate::types::GroupNameAndArn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupNameAndArnBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,

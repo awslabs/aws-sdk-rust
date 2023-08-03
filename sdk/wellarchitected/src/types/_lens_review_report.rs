@@ -47,9 +47,7 @@ impl LensReviewReport {
 
 /// A builder for [`LensReviewReport`](crate::types::LensReviewReport).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LensReviewReportBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
@@ -96,20 +94,14 @@ impl LensReviewReportBuilder {
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
     /// <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
-    pub fn base64_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base64_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base64_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
     /// <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
-    pub fn set_base64_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_base64_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base64_string = input;
         self
     }

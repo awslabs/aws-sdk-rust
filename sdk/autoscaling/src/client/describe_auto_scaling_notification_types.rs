@@ -6,7 +6,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeAutoScalingNotificationTypesOutput`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput) with field(s):
     ///   - [`auto_scaling_notification_types(Option<Vec<String>>)`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput::auto_scaling_notification_types): <p>The notification types.</p>
     /// - On failure, responds with [`SdkError<DescribeAutoScalingNotificationTypesError>`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesError)
-    pub fn describe_auto_scaling_notification_types(&self) -> crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesFluentBuilder{
-        crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesFluentBuilder::new(self.handle.clone())
+    pub fn describe_auto_scaling_notification_types(
+        &self,
+    ) -> crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesFluentBuilder {
+        crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

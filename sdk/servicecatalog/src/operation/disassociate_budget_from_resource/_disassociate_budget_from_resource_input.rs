@@ -22,16 +22,14 @@ impl DisassociateBudgetFromResourceInput {
 }
 impl DisassociateBudgetFromResourceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateBudgetFromResourceInput`](crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput).
-    pub fn builder() -> crate::operation::disassociate_budget_from_resource::builders::DisassociateBudgetFromResourceInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_budget_from_resource::builders::DisassociateBudgetFromResourceInputBuilder {
         crate::operation::disassociate_budget_from_resource::builders::DisassociateBudgetFromResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateBudgetFromResourceInput`](crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateBudgetFromResourceInputBuilder {
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -72,13 +70,9 @@ impl DisassociateBudgetFromResourceInputBuilder {
         crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput {
-                budget_name: self.budget_name
-                ,
-                resource_id: self.resource_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput {
+            budget_name: self.budget_name,
+            resource_id: self.resource_id,
+        })
     }
 }

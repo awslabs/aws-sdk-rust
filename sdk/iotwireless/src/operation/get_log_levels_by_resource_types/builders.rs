@@ -26,7 +26,7 @@ impl GetLogLevelsByResourceTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLogLevelsByResourceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesInputBuilder,
+    inner: crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesInputBuilder,
 }
 impl GetLogLevelsByResourceTypesFluentBuilder {
     /// Creates a new `GetLogLevelsByResourceTypes`.
@@ -37,7 +37,7 @@ impl GetLogLevelsByResourceTypesFluentBuilder {
         }
     }
     /// Access the GetLogLevelsByResourceTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetLogLevelsByResourceTypesFluentBuilder {
             crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetLogLevelsByResourceTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetLogLevelsByResourceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetLogLevelsByResourceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetLogLevelsByResourceTypesFluentBuilder {
             crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError>,
     > {
         self.customize_middleware().await
     }

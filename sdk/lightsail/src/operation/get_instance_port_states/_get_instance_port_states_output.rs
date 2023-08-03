@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetInstancePortStatesOutput {
 }
 impl GetInstancePortStatesOutput {
     /// Creates a new builder-style object to manufacture [`GetInstancePortStatesOutput`](crate::operation::get_instance_port_states::GetInstancePortStatesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_port_states::builders::GetInstancePortStatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_instance_port_states::builders::GetInstancePortStatesOutputBuilder {
         crate::operation::get_instance_port_states::builders::GetInstancePortStatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstancePortStatesOutput`](crate::operation::get_instance_port_states::GetInstancePortStatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstancePortStatesOutputBuilder {
     pub(crate) port_states: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl GetInstancePortStatesOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
-    pub fn set_port_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>>,
-    ) -> Self {
+    pub fn set_port_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>>) -> Self {
         self.port_states = input;
         self
     }
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
-    pub fn get_port_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>> {
+    pub fn get_port_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>> {
         &self.port_states
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -26,7 +26,7 @@ impl ListApplicationRevisionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationRevisionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder,
+    inner: crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder,
 }
 impl ListApplicationRevisionsFluentBuilder {
     /// Creates a new `ListApplicationRevisions`.
@@ -37,10 +37,7 @@ impl ListApplicationRevisionsFluentBuilder {
         }
     }
     /// Access the ListApplicationRevisions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListApplicationRevisionsFluentBuilder {
             crate::operation::list_application_revisions::ListApplicationRevisions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_revisions::ListApplicationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_revisions::ListApplicationRevisionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListApplicationRevisionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListApplicationRevisionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_revisions::ListApplicationRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_revisions::ListApplicationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_revisions::ListApplicationRevisionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListApplicationRevisionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_revisions::ListApplicationRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_revisions::ListApplicationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_revisions::ListApplicationRevisionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,34 +105,23 @@ impl ListApplicationRevisionsFluentBuilder {
             crate::operation::list_application_revisions::ListApplicationRevisions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_revisions::ListApplicationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_revisions::ListApplicationRevisionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator {
         crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::new(self.handle, self.inner)
     }
     /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -170,10 +147,7 @@ impl ListApplicationRevisionsFluentBuilder {
     /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
     /// </ul>
     /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationRevisionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ApplicationRevisionSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -237,18 +211,12 @@ impl ListApplicationRevisionsFluentBuilder {
         self.inner.get_s3_bucket()
     }
     /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
         self
     }
     /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
     }
@@ -272,10 +240,7 @@ impl ListApplicationRevisionsFluentBuilder {
     /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
     /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
     /// </ul>
-    pub fn set_deployed(
-        mut self,
-        input: ::std::option::Option<crate::types::ListStateFilterAction>,
-    ) -> Self {
+    pub fn set_deployed(mut self, input: ::std::option::Option<crate::types::ListStateFilterAction>) -> Self {
         self.inner = self.inner.set_deployed(input);
         self
     }

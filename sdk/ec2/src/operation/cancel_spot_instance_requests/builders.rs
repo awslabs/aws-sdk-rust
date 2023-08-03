@@ -28,7 +28,7 @@ impl CancelSpotInstanceRequestsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelSpotInstanceRequestsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsInputBuilder,
+    inner: crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsInputBuilder,
 }
 impl CancelSpotInstanceRequestsFluentBuilder {
     /// Creates a new `CancelSpotInstanceRequests`.
@@ -39,7 +39,7 @@ impl CancelSpotInstanceRequestsFluentBuilder {
         }
     }
     /// Access the CancelSpotInstanceRequests as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CancelSpotInstanceRequestsFluentBuilder {
             crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CancelSpotInstanceRequestsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CancelSpotInstanceRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CancelSpotInstanceRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl CancelSpotInstanceRequestsFluentBuilder {
             crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +130,17 @@ impl CancelSpotInstanceRequestsFluentBuilder {
     /// To override the contents of this collection use [`set_spot_instance_request_ids`](Self::set_spot_instance_request_ids).
     ///
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn spot_instance_request_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_instance_request_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spot_instance_request_ids(input.into());
         self
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn set_spot_instance_request_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_spot_instance_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_spot_instance_request_ids(input);
         self
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn get_spot_instance_request_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_spot_instance_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_spot_instance_request_ids()
     }
 }

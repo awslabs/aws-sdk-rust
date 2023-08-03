@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<ListVPCConnectionsError>`](crate::operation::list_vpc_connections::ListVPCConnectionsError)
-    pub fn list_vpc_connections(
-        &self,
-    ) -> crate::operation::list_vpc_connections::builders::ListVPCConnectionsFluentBuilder {
-        crate::operation::list_vpc_connections::builders::ListVPCConnectionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_vpc_connections(&self) -> crate::operation::list_vpc_connections::builders::ListVPCConnectionsFluentBuilder {
+        crate::operation::list_vpc_connections::builders::ListVPCConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

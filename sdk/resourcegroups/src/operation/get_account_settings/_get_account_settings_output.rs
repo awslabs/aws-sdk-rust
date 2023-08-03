@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAccountSettingsOutput {
 }
 impl GetAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountSettingsOutput`](crate::operation::get_account_settings::GetAccountSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder {
         crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountSettingsOutput`](crate::operation::get_account_settings::GetAccountSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountSettingsOutputBuilder {
     pub(crate) account_settings: ::std::option::Option<crate::types::AccountSettings>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetAccountSettingsOutputBuilder {
         self
     }
     /// <p>The current settings for the optional features in Resource Groups.</p>
-    pub fn set_account_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountSettings>,
-    ) -> Self {
+    pub fn set_account_settings(mut self, input: ::std::option::Option<crate::types::AccountSettings>) -> Self {
         self.account_settings = input;
         self
     }

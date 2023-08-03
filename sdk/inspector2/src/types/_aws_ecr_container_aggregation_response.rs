@@ -65,9 +65,7 @@ impl AwsEcrContainerAggregationResponse {
 
 /// A builder for [`AwsEcrContainerAggregationResponse`](crate::types::AwsEcrContainerAggregationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcrContainerAggregationResponseBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_sha: ::std::option::Option<::std::string::String>,
@@ -146,10 +144,7 @@ impl AwsEcrContainerAggregationResponseBuilder {
         self
     }
     /// <p>The container image stags.</p>
-    pub fn set_image_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_tags = input;
         self
     }
@@ -177,10 +172,7 @@ impl AwsEcrContainerAggregationResponseBuilder {
         self
     }
     /// <p>The number of finding by severity.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
         self.severity_counts = input;
         self
     }

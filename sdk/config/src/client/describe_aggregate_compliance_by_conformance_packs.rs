@@ -12,7 +12,10 @@ impl super::Client {
     ///   - [`aggregate_compliance_by_conformance_packs(Option<Vec<AggregateComplianceByConformancePack>>)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksOutput::aggregate_compliance_by_conformance_packs): <p>Returns the <code>AggregateComplianceByConformancePack</code> object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribeAggregateComplianceByConformancePacksError>`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError)
-    pub fn describe_aggregate_compliance_by_conformance_packs(&self) -> crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder{
+    pub fn describe_aggregate_compliance_by_conformance_packs(
+        &self,
+    ) -> crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder
+    {
         crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::new(self.handle.clone())
     }
 }

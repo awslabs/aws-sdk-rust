@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`volume_arn(Option<String>)`](crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the configured volume.</p>
     ///   - [`target_arn(Option<String>)`](crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeOutput::target_arn): <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
     /// - On failure, responds with [`SdkError<CreateCachediSCSIVolumeError>`](crate::operation::create_cachedi_scsi_volume::CreateCachediSCSIVolumeError)
-    pub fn create_cachedi_scsi_volume(
-        &self,
-    ) -> crate::operation::create_cachedi_scsi_volume::builders::CreateCachediSCSIVolumeFluentBuilder
-    {
+    pub fn create_cachedi_scsi_volume(&self) -> crate::operation::create_cachedi_scsi_volume::builders::CreateCachediSCSIVolumeFluentBuilder {
         crate::operation::create_cachedi_scsi_volume::builders::CreateCachediSCSIVolumeFluentBuilder::new(self.handle.clone())
     }
 }

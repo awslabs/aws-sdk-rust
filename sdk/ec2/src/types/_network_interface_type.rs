@@ -53,13 +53,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NetworkInterfaceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -103,9 +97,7 @@ impl ::std::convert::From<&str> for NetworkInterfaceType {
     fn from(s: &str) -> Self {
         match s {
             "api_gateway_managed" => NetworkInterfaceType::ApiGatewayManaged,
-            "aws_codestar_connections_managed" => {
-                NetworkInterfaceType::AwsCodestarConnectionsManaged
-            }
+            "aws_codestar_connections_managed" => NetworkInterfaceType::AwsCodestarConnectionsManaged,
             "branch" => NetworkInterfaceType::Branch,
             "efa" => NetworkInterfaceType::Efa,
             "gateway_load_balancer" => NetworkInterfaceType::GatewayLoadBalancer,
@@ -121,9 +113,7 @@ impl ::std::convert::From<&str> for NetworkInterfaceType {
             "transit_gateway" => NetworkInterfaceType::TransitGateway,
             "trunk" => NetworkInterfaceType::Trunk,
             "vpc_endpoint" => NetworkInterfaceType::VpcEndpoint,
-            other => NetworkInterfaceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NetworkInterfaceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -139,9 +129,7 @@ impl NetworkInterfaceType {
     pub fn as_str(&self) -> &str {
         match self {
             NetworkInterfaceType::ApiGatewayManaged => "api_gateway_managed",
-            NetworkInterfaceType::AwsCodestarConnectionsManaged => {
-                "aws_codestar_connections_managed"
-            }
+            NetworkInterfaceType::AwsCodestarConnectionsManaged => "aws_codestar_connections_managed",
             NetworkInterfaceType::Branch => "branch",
             NetworkInterfaceType::Efa => "efa",
             NetworkInterfaceType::GatewayLoadBalancer => "gateway_load_balancer",

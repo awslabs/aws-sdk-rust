@@ -23,9 +23,7 @@ impl AwsElbLoadBalancerInstance {
 
 /// A builder for [`AwsElbLoadBalancerInstance`](crate::types::AwsElbLoadBalancerInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerInstanceBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }

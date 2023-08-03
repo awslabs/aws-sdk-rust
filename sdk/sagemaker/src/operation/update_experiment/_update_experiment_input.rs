@@ -29,17 +29,14 @@ impl UpdateExperimentInput {
 }
 impl UpdateExperimentInput {
     /// Creates a new builder-style object to manufacture [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
-    pub fn builder() -> crate::operation::update_experiment::builders::UpdateExperimentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_experiment::builders::UpdateExperimentInputBuilder {
         crate::operation::update_experiment::builders::UpdateExperimentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExperimentInputBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct UpdateExperimentInputBuilder {
 }
 impl UpdateExperimentInputBuilder {
     /// <p>The name of the experiment to update.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment to update.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_name = input;
         self
     }
@@ -97,10 +88,7 @@ impl UpdateExperimentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_experiment::UpdateExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_experiment::UpdateExperimentInput {
             experiment_name: self.experiment_name,
             display_name: self.display_name,

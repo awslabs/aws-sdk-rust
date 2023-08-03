@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVoiceProfileOutput {
 }
 impl DeleteVoiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceProfileOutput`](crate::operation::delete_voice_profile::DeleteVoiceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_voice_profile::builders::DeleteVoiceProfileOutputBuilder {
+    pub fn builder() -> crate::operation::delete_voice_profile::builders::DeleteVoiceProfileOutputBuilder {
         crate::operation::delete_voice_profile::builders::DeleteVoiceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceProfileOutput`](crate::operation::delete_voice_profile::DeleteVoiceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceProfileOutputBuilder {
     _request_id: Option<String>,
 }

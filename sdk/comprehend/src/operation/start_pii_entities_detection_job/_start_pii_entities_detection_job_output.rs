@@ -61,16 +61,14 @@ impl ::aws_http::request_id::RequestId for StartPiiEntitiesDetectionJobOutput {
 }
 impl StartPiiEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartPiiEntitiesDetectionJobOutput`](crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobOutput).
-    pub fn builder() -> crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobOutputBuilder {
         crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartPiiEntitiesDetectionJobOutput`](crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartPiiEntitiesDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -169,10 +167,7 @@ impl StartPiiEntitiesDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartPiiEntitiesDetectionJobOutput`](crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobOutput
-    {
+    pub fn build(self) -> crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobOutput {
         crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobOutput {
             job_id: self.job_id,
             job_arn: self.job_arn,

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_tags): <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     /// - On success, responds with [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput)
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::operation::create_project::CreateProjectError)
-    pub fn create_project(
-        &self,
-    ) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
-        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_project(&self) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
+        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(self.handle.clone())
     }
 }

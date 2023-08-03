@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`StartStudioSsoConfigurationRepairOutput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput) with field(s):
     ///   - [`studio(Option<Studio>)`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput::studio): <p>Information about a studio.</p>
     /// - On failure, responds with [`SdkError<StartStudioSSOConfigurationRepairError>`](crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError)
-    pub fn start_studio_sso_configuration_repair(&self) -> crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSSOConfigurationRepairFluentBuilder{
+    pub fn start_studio_sso_configuration_repair(
+        &self,
+    ) -> crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSSOConfigurationRepairFluentBuilder {
         crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSSOConfigurationRepairFluentBuilder::new(self.handle.clone())
     }
 }

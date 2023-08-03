@@ -30,9 +30,7 @@ impl TransitGatewayRegistrationStateReason {
 
 /// A builder for [`TransitGatewayRegistrationStateReason`](crate::types::TransitGatewayRegistrationStateReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayRegistrationStateReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::TransitGatewayRegistrationState>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,17 +42,12 @@ impl TransitGatewayRegistrationStateReasonBuilder {
         self
     }
     /// <p>The code for the state reason.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayRegistrationState>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::TransitGatewayRegistrationState>) -> Self {
         self.code = input;
         self
     }
     /// <p>The code for the state reason.</p>
-    pub fn get_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayRegistrationState> {
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::TransitGatewayRegistrationState> {
         &self.code
     }
     /// <p>The message for the state reason.</p>

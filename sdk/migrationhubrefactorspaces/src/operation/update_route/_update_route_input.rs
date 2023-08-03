@@ -43,9 +43,7 @@ impl UpdateRouteInput {
 
 /// A builder for [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRouteInputBuilder {
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) application_identifier: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct UpdateRouteInputBuilder {
 }
 impl UpdateRouteInputBuilder {
     /// <p> The ID of the environment in which the route is being updated. </p>
-    pub fn environment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the environment in which the route is being updated. </p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_identifier = input;
         self
     }
@@ -74,18 +66,12 @@ impl UpdateRouteInputBuilder {
         &self.environment_identifier
     }
     /// <p> The ID of the application within which the route is being updated. </p>
-    pub fn application_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the application within which the route is being updated. </p>
-    pub fn set_application_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_identifier = input;
         self
     }
@@ -94,18 +80,12 @@ impl UpdateRouteInputBuilder {
         &self.application_identifier
     }
     /// <p> The unique identifier of the route to update. </p>
-    pub fn route_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of the route to update. </p>
-    pub fn set_route_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_identifier = input;
         self
     }
@@ -119,26 +99,16 @@ impl UpdateRouteInputBuilder {
         self
     }
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
-    pub fn set_activation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteActivationState>,
-    ) -> Self {
+    pub fn set_activation_state(mut self, input: ::std::option::Option<crate::types::RouteActivationState>) -> Self {
         self.activation_state = input;
         self
     }
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
-    pub fn get_activation_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteActivationState> {
+    pub fn get_activation_state(&self) -> &::std::option::Option<crate::types::RouteActivationState> {
         &self.activation_state
     }
     /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_route::UpdateRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_route::UpdateRouteInput {
             environment_identifier: self.environment_identifier,
             application_identifier: self.application_identifier,

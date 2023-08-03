@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`route_response_id(impl ::std::convert::Into<String>)`](crate::operation::delete_route_response::builders::DeleteRouteResponseFluentBuilder::route_response_id) / [`set_route_response_id(Option<String>)`](crate::operation::delete_route_response::builders::DeleteRouteResponseFluentBuilder::set_route_response_id): <p>The route response ID.</p>
     /// - On success, responds with [`DeleteRouteResponseOutput`](crate::operation::delete_route_response::DeleteRouteResponseOutput)
     /// - On failure, responds with [`SdkError<DeleteRouteResponseError>`](crate::operation::delete_route_response::DeleteRouteResponseError)
-    pub fn delete_route_response(
-        &self,
-    ) -> crate::operation::delete_route_response::builders::DeleteRouteResponseFluentBuilder {
-        crate::operation::delete_route_response::builders::DeleteRouteResponseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_route_response(&self) -> crate::operation::delete_route_response::builders::DeleteRouteResponseFluentBuilder {
+        crate::operation::delete_route_response::builders::DeleteRouteResponseFluentBuilder::new(self.handle.clone())
     }
 }

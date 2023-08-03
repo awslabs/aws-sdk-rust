@@ -51,9 +51,7 @@ impl MonitoredResourceIdentifier {
 
 /// A builder for [`MonitoredResourceIdentifier`](crate::types::MonitoredResourceIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoredResourceIdentifierBuilder {
     pub(crate) monitored_resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct MonitoredResourceIdentifierBuilder {
 }
 impl MonitoredResourceIdentifierBuilder {
     /// <p> The name of the resource being monitored. </p>
-    pub fn monitored_resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitored_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitored_resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the resource being monitored. </p>
-    pub fn set_monitored_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitored_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitored_resource_name = input;
         self
     }
@@ -102,17 +94,12 @@ impl MonitoredResourceIdentifierBuilder {
         self
     }
     /// <p> The permission status of a resource. </p>
-    pub fn set_resource_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourcePermission>,
-    ) -> Self {
+    pub fn set_resource_permission(mut self, input: ::std::option::Option<crate::types::ResourcePermission>) -> Self {
         self.resource_permission = input;
         self
     }
     /// <p> The permission status of a resource. </p>
-    pub fn get_resource_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourcePermission> {
+    pub fn get_resource_permission(&self) -> &::std::option::Option<crate::types::ResourcePermission> {
         &self.resource_permission
     }
     /// <p> The time at which DevOps Guru last updated this resource. </p>
@@ -121,10 +108,7 @@ impl MonitoredResourceIdentifierBuilder {
         self
     }
     /// <p> The time at which DevOps Guru last updated this resource. </p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -138,17 +122,12 @@ impl MonitoredResourceIdentifierBuilder {
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCollection>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::ResourceCollection>) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCollection> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::ResourceCollection> {
         &self.resource_collection
     }
     /// Consumes the builder and constructs a [`MonitoredResourceIdentifier`](crate::types::MonitoredResourceIdentifier).

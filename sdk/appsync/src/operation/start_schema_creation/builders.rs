@@ -38,9 +38,7 @@ impl StartSchemaCreationFluentBuilder {
         }
     }
     /// Access the StartSchemaCreation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl StartSchemaCreationFluentBuilder {
             crate::operation::start_schema_creation::StartSchemaCreation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_schema_creation::StartSchemaCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_schema_creation::StartSchemaCreationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl StartSchemaCreationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl StartSchemaCreationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_schema_creation::StartSchemaCreationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_schema_creation::StartSchemaCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_schema_creation::StartSchemaCreationError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl StartSchemaCreationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_schema_creation::StartSchemaCreationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_schema_creation::StartSchemaCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_schema_creation::StartSchemaCreationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl StartSchemaCreationFluentBuilder {
             crate::operation::start_schema_creation::StartSchemaCreation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_schema_creation::StartSchemaCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_schema_creation::StartSchemaCreationError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +130,7 @@ impl StartSchemaCreationFluentBuilder {
         self
     }
     /// <p>The schema definition, in GraphQL schema language format.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }

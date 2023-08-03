@@ -4,17 +4,10 @@ pub fn de_create_key_pair_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_key_pair::CreateKeyPairOutput,
-    crate::operation::create_key_pair::CreateKeyPairError,
-> {
+) -> std::result::Result<crate::operation::create_key_pair::CreateKeyPairOutput, crate::operation::create_key_pair::CreateKeyPairError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_key_pair::CreateKeyPairError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_key_pair::CreateKeyPairError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::create_key_pair::CreateKeyPairError::generic(generic))
@@ -25,22 +18,13 @@ pub fn de_create_key_pair_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_key_pair::CreateKeyPairOutput,
-    crate::operation::create_key_pair::CreateKeyPairError,
-> {
+) -> std::result::Result<crate::operation::create_key_pair::CreateKeyPairOutput, crate::operation::create_key_pair::CreateKeyPairError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::create_key_pair::builders::CreateKeyPairOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_key_pair::de_create_key_pair(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::create_key_pair::CreateKeyPairError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::create_key_pair::builders::CreateKeyPairOutputBuilder::default();
+        output = crate::protocol_serde::shape_create_key_pair::de_create_key_pair(_response_body, output)
+            .map_err(crate::operation::create_key_pair::CreateKeyPairError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -49,10 +33,7 @@ pub fn de_create_key_pair_http_response_with_props(
 pub fn de_create_key_pair(
     inp: &[u8],
     mut builder: crate::operation::create_key_pair::builders::CreateKeyPairOutputBuilder,
-) -> Result<
-    crate::operation::create_key_pair::builders::CreateKeyPairOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_key_pair::builders::CreateKeyPairOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -10,10 +10,7 @@ impl DescribePortfolioInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_portfolio::DescribePortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio::DescribePortfolioError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio::DescribePortfolioError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_portfolio();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribePortfolioFluentBuilder {
         }
     }
     /// Access the DescribePortfolio as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_portfolio::builders::DescribePortfolioInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_portfolio::builders::DescribePortfolioInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribePortfolioFluentBuilder {
             crate::operation::describe_portfolio::DescribePortfolio,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio::DescribePortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio::DescribePortfolioError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribePortfolioFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribePortfolioFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_portfolio::DescribePortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio::DescribePortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio::DescribePortfolioError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribePortfolioFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_portfolio::DescribePortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio::DescribePortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio::DescribePortfolioError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DescribePortfolioFluentBuilder {
             crate::operation::describe_portfolio::DescribePortfolio,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio::DescribePortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio::DescribePortfolioError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl DescribePortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -140,10 +121,7 @@ impl DescribePortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

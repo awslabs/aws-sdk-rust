@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -64,9 +58,7 @@ impl ::std::convert::From<&str> for ReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "AWS_SERVICE_ACCESS_DISABLED" => ReasonCode::AwsServiceAccessDisabled,
-            "DELEGATED_ADMINISTRATOR_DEREGISTERED" => {
-                ReasonCode::DelegatedAdministratorDeregistered
-            }
+            "DELEGATED_ADMINISTRATOR_DEREGISTERED" => ReasonCode::DelegatedAdministratorDeregistered,
             "ORGANIZATION_DELETED" => ReasonCode::OrganizationDeleted,
             "SERVICE_LINKED_ROLE_CREATION_FAILED" => ReasonCode::ServiceLinkedRoleCreationFailed,
             other => ReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -85,9 +77,7 @@ impl ReasonCode {
     pub fn as_str(&self) -> &str {
         match self {
             ReasonCode::AwsServiceAccessDisabled => "AWS_SERVICE_ACCESS_DISABLED",
-            ReasonCode::DelegatedAdministratorDeregistered => {
-                "DELEGATED_ADMINISTRATOR_DEREGISTERED"
-            }
+            ReasonCode::DelegatedAdministratorDeregistered => "DELEGATED_ADMINISTRATOR_DEREGISTERED",
             ReasonCode::OrganizationDeleted => "ORGANIZATION_DELETED",
             ReasonCode::ServiceLinkedRoleCreationFailed => "SERVICE_LINKED_ROLE_CREATION_FAILED",
             ReasonCode::Unknown(value) => value.as_str(),

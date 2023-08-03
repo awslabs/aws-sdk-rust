@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GenerateOrganizationsAccessReportOutput`](crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput::job_id): <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
     /// - On failure, responds with [`SdkError<GenerateOrganizationsAccessReportError>`](crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError)
-    pub fn generate_organizations_access_report(&self) -> crate::operation::generate_organizations_access_report::builders::GenerateOrganizationsAccessReportFluentBuilder{
+    pub fn generate_organizations_access_report(
+        &self,
+    ) -> crate::operation::generate_organizations_access_report::builders::GenerateOrganizationsAccessReportFluentBuilder {
         crate::operation::generate_organizations_access_report::builders::GenerateOrganizationsAccessReportFluentBuilder::new(self.handle.clone())
     }
 }

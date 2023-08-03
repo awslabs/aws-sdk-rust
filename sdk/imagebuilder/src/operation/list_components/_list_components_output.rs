@@ -21,8 +21,7 @@ pub struct ListComponentsOutput {
     /// </major></p>
     /// </note>
     #[doc(hidden)]
-    pub component_version_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
+    pub component_version_list: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -47,9 +46,7 @@ impl ListComponentsOutput {
     /// </minor>
     /// </major></p>
     /// </note>
-    pub fn component_version_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComponentVersion]> {
+    pub fn component_version_list(&self) -> ::std::option::Option<&[crate::types::ComponentVersion]> {
         self.component_version_list.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -71,13 +68,10 @@ impl ListComponentsOutput {
 
 /// A builder for [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) component_version_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
+    pub(crate) component_version_list: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -134,10 +128,7 @@ impl ListComponentsOutputBuilder {
     /// </minor>
     /// </major></p>
     /// </note>
-    pub fn set_component_version_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
-    ) -> Self {
+    pub fn set_component_version_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>) -> Self {
         self.component_version_list = input;
         self
     }
@@ -155,9 +146,7 @@ impl ListComponentsOutputBuilder {
     /// </minor>
     /// </major></p>
     /// </note>
-    pub fn get_component_version_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>> {
+    pub fn get_component_version_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>> {
         &self.component_version_list
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>

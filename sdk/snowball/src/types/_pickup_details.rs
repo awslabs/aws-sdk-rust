@@ -44,9 +44,7 @@ impl PickupDetails {
         self.identification_number.as_deref()
     }
     /// <p>Expiration date of the credential identifying the person picking up the device.</p>
-    pub fn identification_expiration_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn identification_expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.identification_expiration_date.as_ref()
     }
     /// <p>Organization that issued the credential identifying the person picking up the device.</p>
@@ -65,14 +63,8 @@ impl ::std::fmt::Debug for PickupDetails {
         formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("identification_number", &self.identification_number);
-        formatter.field(
-            "identification_expiration_date",
-            &self.identification_expiration_date,
-        );
-        formatter.field(
-            "identification_issuing_org",
-            &self.identification_issuing_org,
-        );
+        formatter.field("identification_expiration_date", &self.identification_expiration_date);
+        formatter.field("identification_issuing_org", &self.identification_issuing_org);
         formatter.field("device_pickup_id", &self.device_pickup_id);
         formatter.finish()
     }
@@ -140,18 +132,12 @@ impl PickupDetailsBuilder {
         &self.email
     }
     /// <p>The number on the credential identifying the person picking up the device.</p>
-    pub fn identification_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identification_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identification_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number on the credential identifying the person picking up the device.</p>
-    pub fn set_identification_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identification_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identification_number = input;
         self
     }
@@ -165,32 +151,21 @@ impl PickupDetailsBuilder {
         self
     }
     /// <p>Expiration date of the credential identifying the person picking up the device.</p>
-    pub fn set_identification_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_identification_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.identification_expiration_date = input;
         self
     }
     /// <p>Expiration date of the credential identifying the person picking up the device.</p>
-    pub fn get_identification_expiration_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_identification_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.identification_expiration_date
     }
     /// <p>Organization that issued the credential identifying the person picking up the device.</p>
-    pub fn identification_issuing_org(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identification_issuing_org(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identification_issuing_org = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Organization that issued the credential identifying the person picking up the device.</p>
-    pub fn set_identification_issuing_org(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identification_issuing_org(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identification_issuing_org = input;
         self
     }
@@ -199,18 +174,12 @@ impl PickupDetailsBuilder {
         &self.identification_issuing_org
     }
     /// <p>The unique ID for a device that will be picked up.</p>
-    pub fn device_pickup_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_pickup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_pickup_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for a device that will be picked up.</p>
-    pub fn set_device_pickup_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_pickup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_pickup_id = input;
         self
     }
@@ -238,14 +207,8 @@ impl ::std::fmt::Debug for PickupDetailsBuilder {
         formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("identification_number", &self.identification_number);
-        formatter.field(
-            "identification_expiration_date",
-            &self.identification_expiration_date,
-        );
-        formatter.field(
-            "identification_issuing_org",
-            &self.identification_issuing_org,
-        );
+        formatter.field("identification_expiration_date", &self.identification_expiration_date);
+        formatter.field("identification_issuing_org", &self.identification_issuing_org);
         formatter.field("device_pickup_id", &self.device_pickup_id);
         formatter.finish()
     }

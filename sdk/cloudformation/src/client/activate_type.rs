@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`ActivateTypeOutput`](crate::operation::activate_type::ActivateTypeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::activate_type::ActivateTypeOutput::arn): <p>The Amazon Resource Name (ARN) of the activated extension, in this account and Region.</p>
     /// - On failure, responds with [`SdkError<ActivateTypeError>`](crate::operation::activate_type::ActivateTypeError)
-    pub fn activate_type(
-        &self,
-    ) -> crate::operation::activate_type::builders::ActivateTypeFluentBuilder {
-        crate::operation::activate_type::builders::ActivateTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn activate_type(&self) -> crate::operation::activate_type::builders::ActivateTypeFluentBuilder {
+        crate::operation::activate_type::builders::ActivateTypeFluentBuilder::new(self.handle.clone())
     }
 }

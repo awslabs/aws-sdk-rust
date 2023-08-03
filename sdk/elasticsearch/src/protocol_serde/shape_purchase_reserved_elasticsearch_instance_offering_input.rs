@@ -13,9 +13,7 @@ pub fn ser_purchase_reserved_elasticsearch_instance_offering_input(
         object.key("ReservationName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.reserved_elasticsearch_instance_offering_id {
-        object
-            .key("ReservedElasticsearchInstanceOfferingId")
-            .string(var_3.as_str());
+        object.key("ReservedElasticsearchInstanceOfferingId").string(var_3.as_str());
     }
     Ok(())
 }

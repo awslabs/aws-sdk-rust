@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
         crate::operation::list_applications::builders::ListApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsOutputBuilder {
-    pub(crate) applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListApplicationsOutputBuilder {
         self
     }
     /// <p>The output lists the specified applications.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>The output lists the specified applications.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
         &self.applications
     }
     /// <p>The output displays the token for the next set of application results. This is required for pagination and is available as a response of the previous request.</p>

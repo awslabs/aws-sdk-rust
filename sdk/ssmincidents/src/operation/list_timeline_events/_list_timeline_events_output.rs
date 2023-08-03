@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTimelineEventsOutput {
 }
 impl ListTimelineEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListTimelineEventsOutput`](crate::operation::list_timeline_events::ListTimelineEventsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_timeline_events::builders::ListTimelineEventsOutputBuilder {
+    pub fn builder() -> crate::operation::list_timeline_events::builders::ListTimelineEventsOutputBuilder {
         crate::operation::list_timeline_events::builders::ListTimelineEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTimelineEventsOutput`](crate::operation::list_timeline_events::ListTimelineEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTimelineEventsOutputBuilder {
     pub(crate) event_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EventSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListTimelineEventsOutputBuilder {
         self
     }
     /// <p>Details about each event that occurred during the incident.</p>
-    pub fn set_event_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventSummary>>,
-    ) -> Self {
+    pub fn set_event_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSummary>>) -> Self {
         self.event_summaries = input;
         self
     }
     /// <p>Details about each event that occurred during the incident.</p>
-    pub fn get_event_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSummary>> {
+    pub fn get_event_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSummary>> {
         &self.event_summaries
     }
     /// <p>The pagination token to continue to the next page of results.</p>

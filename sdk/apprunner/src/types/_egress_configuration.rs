@@ -34,9 +34,7 @@ impl EgressConfiguration {
 
 /// A builder for [`EgressConfiguration`](crate::types::EgressConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EgressConfigurationBuilder {
     pub(crate) egress_type: ::std::option::Option<crate::types::EgressType>,
     pub(crate) vpc_connector_arn: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl EgressConfigurationBuilder {
     /// <p>The type of egress configuration.</p>
     /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
     /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
-    pub fn set_egress_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EgressType>,
-    ) -> Self {
+    pub fn set_egress_type(mut self, input: ::std::option::Option<crate::types::EgressType>) -> Self {
         self.egress_type = input;
         self
     }
@@ -66,18 +61,12 @@ impl EgressConfigurationBuilder {
         &self.egress_type
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
-    pub fn vpc_connector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
-    pub fn set_vpc_connector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_connector_arn = input;
         self
     }

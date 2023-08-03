@@ -29,9 +29,7 @@ impl DescribeBundleOutput {
 
 /// A builder for [`DescribeBundleOutput`](crate::operation::describe_bundle::DescribeBundleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBundleOutputBuilder {
     pub(crate) details: ::std::option::Option<crate::types::BundleDetails>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl DescribeBundleOutputBuilder {
         self
     }
     /// <p> The details of the bundle. </p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::BundleDetails>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::BundleDetails>) -> Self {
         self.details = input;
         self
     }

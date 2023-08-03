@@ -35,12 +35,9 @@ impl SearchSessionsOutput {
 
 /// A builder for [`SearchSessionsOutput`](crate::operation::search_sessions::SearchSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSessionsOutputBuilder {
-    pub(crate) session_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>,
+    pub(crate) session_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl SearchSessionsOutputBuilder {
         self
     }
     /// <p>Summary information about the sessions.</p>
-    pub fn set_session_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>,
-    ) -> Self {
+    pub fn set_session_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>) -> Self {
         self.session_summaries = input;
         self
     }
     /// <p>Summary information about the sessions.</p>
-    pub fn get_session_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>> {
+    pub fn get_session_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>> {
         &self.session_summaries
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WebhookFilterType {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for WebhookFilterType {
             "EVENT" => WebhookFilterType::Event,
             "FILE_PATH" => WebhookFilterType::FilePath,
             "HEAD_REF" => WebhookFilterType::HeadRef,
-            other => {
-                WebhookFilterType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => WebhookFilterType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl WebhookFilterType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTOR_ACCOUNT_ID",
-            "BASE_REF",
-            "COMMIT_MESSAGE",
-            "EVENT",
-            "FILE_PATH",
-            "HEAD_REF",
-        ]
+        &["ACTOR_ACCOUNT_ID", "BASE_REF", "COMMIT_MESSAGE", "EVENT", "FILE_PATH", "HEAD_REF"]
     }
 }
 impl ::std::convert::AsRef<str> for WebhookFilterType {

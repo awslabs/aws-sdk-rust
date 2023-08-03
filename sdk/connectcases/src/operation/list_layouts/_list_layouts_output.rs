@@ -35,9 +35,7 @@ impl ListLayoutsOutput {
 
 /// A builder for [`ListLayoutsOutput`](crate::operation::list_layouts::ListLayoutsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLayoutsOutputBuilder {
     pub(crate) layouts: ::std::option::Option<::std::vec::Vec<crate::types::LayoutSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListLayoutsOutputBuilder {
         self
     }
     /// <p>The layouts for the domain.</p>
-    pub fn set_layouts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LayoutSummary>>,
-    ) -> Self {
+    pub fn set_layouts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LayoutSummary>>) -> Self {
         self.layouts = input;
         self
     }
     /// <p>The layouts for the domain.</p>
-    pub fn get_layouts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LayoutSummary>> {
+    pub fn get_layouts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LayoutSummary>> {
         &self.layouts
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartBuildBatchOutput {
 }
 impl StartBuildBatchOutput {
     /// Creates a new builder-style object to manufacture [`StartBuildBatchOutput`](crate::operation::start_build_batch::StartBuildBatchOutput).
-    pub fn builder() -> crate::operation::start_build_batch::builders::StartBuildBatchOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_build_batch::builders::StartBuildBatchOutputBuilder {
         crate::operation::start_build_batch::builders::StartBuildBatchOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartBuildBatchOutput`](crate::operation::start_build_batch::StartBuildBatchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBuildBatchOutputBuilder {
     pub(crate) build_batch: ::std::option::Option<crate::types::BuildBatch>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl StartBuildBatchOutputBuilder {
         self
     }
     /// <p>A <code>BuildBatch</code> object that contains information about the batch build.</p>
-    pub fn set_build_batch(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildBatch>,
-    ) -> Self {
+    pub fn set_build_batch(mut self, input: ::std::option::Option<crate::types::BuildBatch>) -> Self {
         self.build_batch = input;
         self
     }

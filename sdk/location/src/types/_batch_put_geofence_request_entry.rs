@@ -15,9 +15,7 @@ pub struct BatchPutGeofenceRequestEntry {
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
     #[doc(hidden)]
-    pub geofence_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub geofence_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl BatchPutGeofenceRequestEntry {
     /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
@@ -32,11 +30,7 @@ impl BatchPutGeofenceRequestEntry {
     }
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
-    pub fn geofence_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn geofence_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.geofence_properties.as_ref()
     }
 }
@@ -62,9 +56,7 @@ impl BatchPutGeofenceRequestEntry {
 pub struct BatchPutGeofenceRequestEntryBuilder {
     pub(crate) geofence_id: ::std::option::Option<::std::string::String>,
     pub(crate) geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
-    pub(crate) geofence_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) geofence_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl BatchPutGeofenceRequestEntryBuilder {
     /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
@@ -91,10 +83,7 @@ impl BatchPutGeofenceRequestEntryBuilder {
     /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
-    pub fn set_geometry(
-        mut self,
-        input: ::std::option::Option<crate::types::GeofenceGeometry>,
-    ) -> Self {
+    pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::GeofenceGeometry>) -> Self {
         self.geometry = input;
         self
     }
@@ -124,20 +113,14 @@ impl BatchPutGeofenceRequestEntryBuilder {
     /// <p>Format: <code>"key" : "value"</code> </p>
     pub fn set_geofence_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.geofence_properties = input;
         self
     }
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
-    pub fn get_geofence_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_geofence_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.geofence_properties
     }
     /// Consumes the builder and constructs a [`BatchPutGeofenceRequestEntry`](crate::types::BatchPutGeofenceRequestEntry).

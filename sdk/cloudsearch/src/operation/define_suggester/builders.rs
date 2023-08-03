@@ -10,10 +10,7 @@ impl DefineSuggesterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::define_suggester::DefineSuggesterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_suggester::DefineSuggesterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_suggester::DefineSuggesterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.define_suggester();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DefineSuggesterFluentBuilder {
         }
     }
     /// Access the DefineSuggester as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::define_suggester::builders::DefineSuggesterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::define_suggester::builders::DefineSuggesterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DefineSuggesterFluentBuilder {
             crate::operation::define_suggester::DefineSuggester,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_suggester::DefineSuggesterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_suggester::DefineSuggesterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DefineSuggesterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DefineSuggesterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::define_suggester::DefineSuggesterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_suggester::DefineSuggesterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_suggester::DefineSuggesterError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DefineSuggesterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::define_suggester::DefineSuggesterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_suggester::DefineSuggesterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_suggester::DefineSuggesterError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DefineSuggesterFluentBuilder {
             crate::operation::define_suggester::DefineSuggester,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_suggester::DefineSuggesterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_suggester::DefineSuggesterError>,
     > {
         self.customize_middleware().await
     }

@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RequestThrottledExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -61,13 +55,9 @@ impl ::std::convert::From<&str> for RequestThrottledExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_THROTTLED" => RequestThrottledExceptionReason::AccountThrottled,
-            "DEPENDENCY_REQUEST_THROTTLED" => {
-                RequestThrottledExceptionReason::DependencyRequestThrottled
-            }
+            "DEPENDENCY_REQUEST_THROTTLED" => RequestThrottledExceptionReason::DependencyRequestThrottled,
             "RESOURCE_LEVEL_THROTTLE" => RequestThrottledExceptionReason::ResourceLevelThrottle,
-            other => RequestThrottledExceptionReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => RequestThrottledExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -83,20 +73,14 @@ impl RequestThrottledExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             RequestThrottledExceptionReason::AccountThrottled => "ACCOUNT_THROTTLED",
-            RequestThrottledExceptionReason::DependencyRequestThrottled => {
-                "DEPENDENCY_REQUEST_THROTTLED"
-            }
+            RequestThrottledExceptionReason::DependencyRequestThrottled => "DEPENDENCY_REQUEST_THROTTLED",
             RequestThrottledExceptionReason::ResourceLevelThrottle => "RESOURCE_LEVEL_THROTTLE",
             RequestThrottledExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_THROTTLED",
-            "DEPENDENCY_REQUEST_THROTTLED",
-            "RESOURCE_LEVEL_THROTTLE",
-        ]
+        &["ACCOUNT_THROTTLED", "DEPENDENCY_REQUEST_THROTTLED", "RESOURCE_LEVEL_THROTTLE"]
     }
 }
 impl ::std::convert::AsRef<str> for RequestThrottledExceptionReason {

@@ -37,9 +37,7 @@ impl FailedS3Resource {
 
 /// A builder for [`FailedS3Resource`](crate::types::FailedS3Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedS3ResourceBuilder {
     pub(crate) failed_item: ::std::option::Option<crate::types::S3Resource>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl FailedS3ResourceBuilder {
         self
     }
     /// <p>(Discontinued) The failed S3 resources.</p>
-    pub fn set_failed_item(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Resource>,
-    ) -> Self {
+    pub fn set_failed_item(mut self, input: ::std::option::Option<crate::types::S3Resource>) -> Self {
         self.failed_item = input;
         self
     }
@@ -78,18 +73,12 @@ impl FailedS3ResourceBuilder {
         &self.error_code
     }
     /// <p>(Discontinued) The error message of a failed item.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Discontinued) The error message of a failed item.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

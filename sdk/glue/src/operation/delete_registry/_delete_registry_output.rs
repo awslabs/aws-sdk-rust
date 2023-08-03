@@ -42,9 +42,7 @@ impl DeleteRegistryOutput {
 
 /// A builder for [`DeleteRegistryOutput`](crate::operation::delete_registry::DeleteRegistryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRegistryOutputBuilder {
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
     pub(crate) registry_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ pub struct DeleteRegistryOutputBuilder {
 }
 impl DeleteRegistryOutputBuilder {
     /// <p>The name of the registry being deleted.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry being deleted.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -92,10 +84,7 @@ impl DeleteRegistryOutputBuilder {
         self
     }
     /// <p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistryStatus>) -> Self {
         self.status = input;
         self
     }

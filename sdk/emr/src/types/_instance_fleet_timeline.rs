@@ -39,9 +39,7 @@ impl InstanceFleetTimeline {
 
 /// A builder for [`InstanceFleetTimeline`](crate::types::InstanceFleetTimeline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceFleetTimelineBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ready_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -54,10 +52,7 @@ impl InstanceFleetTimelineBuilder {
         self
     }
     /// <p>The time and date the instance fleet was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -71,10 +66,7 @@ impl InstanceFleetTimelineBuilder {
         self
     }
     /// <p>The time and date the instance fleet was ready to run jobs.</p>
-    pub fn set_ready_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ready_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ready_date_time = input;
         self
     }
@@ -88,10 +80,7 @@ impl InstanceFleetTimelineBuilder {
         self
     }
     /// <p>The time and date the instance fleet terminated.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }

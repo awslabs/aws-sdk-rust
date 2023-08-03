@@ -10,10 +10,7 @@ impl UpdateListenerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_listener::UpdateListenerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_listener::UpdateListenerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_listener::UpdateListenerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_listener();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateListenerFluentBuilder {
         }
     }
     /// Access the UpdateListener as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_listener::builders::UpdateListenerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_listener::builders::UpdateListenerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateListenerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,17 +130,12 @@ impl UpdateListenerFluentBuilder {
         self
     }
     /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
-    pub fn set_port_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
+    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.inner = self.inner.set_port_ranges(input);
         self
     }
     /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
-    pub fn get_port_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         self.inner.get_port_ranges()
     }
     /// <p>The updated protocol for the connections from clients to the accelerator.</p>
@@ -177,10 +164,7 @@ impl UpdateListenerFluentBuilder {
     /// <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
     /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
-    pub fn set_client_affinity(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAffinity>,
-    ) -> Self {
+    pub fn set_client_affinity(mut self, input: ::std::option::Option<crate::types::ClientAffinity>) -> Self {
         self.inner = self.inner.set_client_affinity(input);
         self
     }

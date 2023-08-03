@@ -48,9 +48,7 @@ impl UploadMultipartPartFluentBuilder {
         }
     }
     /// Access the UploadMultipartPart as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::upload_multipart_part::builders::UploadMultipartPartInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::upload_multipart_part::builders::UploadMultipartPartInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +60,7 @@ impl UploadMultipartPartFluentBuilder {
             crate::operation::upload_multipart_part::UploadMultipartPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_multipart_part::UploadMultipartPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_multipart_part::UploadMultipartPartError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +70,7 @@ impl UploadMultipartPartFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +79,7 @@ impl UploadMultipartPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_multipart_part::UploadMultipartPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_multipart_part::UploadMultipartPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_multipart_part::UploadMultipartPartError>,
     > {
         let op = self
             .inner
@@ -111,9 +102,7 @@ impl UploadMultipartPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_multipart_part::UploadMultipartPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_multipart_part::UploadMultipartPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_multipart_part::UploadMultipartPartError>,
     > {
         self.send_middleware().await
     }
@@ -127,9 +116,7 @@ impl UploadMultipartPartFluentBuilder {
             crate::operation::upload_multipart_part::UploadMultipartPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_multipart_part::UploadMultipartPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_multipart_part::UploadMultipartPartError>,
     > {
         self.customize_middleware().await
     }
@@ -209,10 +196,7 @@ impl UploadMultipartPartFluentBuilder {
         self
     }
     /// <p>The data to upload.</p>
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_body(input);
         self
     }

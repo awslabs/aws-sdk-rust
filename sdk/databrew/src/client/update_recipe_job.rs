@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRecipeJobOutput`](crate::operation::update_recipe_job::UpdateRecipeJobOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::update_recipe_job::UpdateRecipeJobOutput::name): <p>The name of the job that you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateRecipeJobError>`](crate::operation::update_recipe_job::UpdateRecipeJobError)
-    pub fn update_recipe_job(
-        &self,
-    ) -> crate::operation::update_recipe_job::builders::UpdateRecipeJobFluentBuilder {
-        crate::operation::update_recipe_job::builders::UpdateRecipeJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_recipe_job(&self) -> crate::operation::update_recipe_job::builders::UpdateRecipeJobFluentBuilder {
+        crate::operation::update_recipe_job::builders::UpdateRecipeJobFluentBuilder::new(self.handle.clone())
     }
 }

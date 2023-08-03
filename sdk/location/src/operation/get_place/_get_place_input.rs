@@ -138,12 +138,7 @@ impl GetPlaceInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetPlaceInput`](crate::operation::get_place::GetPlaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_place::GetPlaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_place::GetPlaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_place::GetPlaceInput {
             index_name: self.index_name,
             place_id: self.place_id,

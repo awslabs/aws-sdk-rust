@@ -11,8 +11,7 @@ pub struct GetCoverageStatisticsInput {
     pub filter_criteria: ::std::option::Option<crate::types::CoverageFilterCriteria>,
     /// <p>Represents the statistics type used to aggregate the coverage details.</p>
     #[doc(hidden)]
-    pub statistics_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>,
+    pub statistics_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>,
 }
 impl GetCoverageStatisticsInput {
     /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
@@ -24,31 +23,24 @@ impl GetCoverageStatisticsInput {
         self.filter_criteria.as_ref()
     }
     /// <p>Represents the statistics type used to aggregate the coverage details.</p>
-    pub fn statistics_type(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CoverageStatisticsType]> {
+    pub fn statistics_type(&self) -> ::std::option::Option<&[crate::types::CoverageStatisticsType]> {
         self.statistics_type.as_deref()
     }
 }
 impl GetCoverageStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetCoverageStatisticsInput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsInputBuilder {
         crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCoverageStatisticsInput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoverageStatisticsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) filter_criteria: ::std::option::Option<crate::types::CoverageFilterCriteria>,
-    pub(crate) statistics_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>,
+    pub(crate) statistics_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>,
 }
 impl GetCoverageStatisticsInputBuilder {
     /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
@@ -71,17 +63,12 @@ impl GetCoverageStatisticsInputBuilder {
         self
     }
     /// <p>Represents the criteria used to filter the coverage statistics</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
     /// <p>Represents the criteria used to filter the coverage statistics</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
         &self.filter_criteria
     }
     /// Appends an item to `statistics_type`.
@@ -96,32 +83,23 @@ impl GetCoverageStatisticsInputBuilder {
         self
     }
     /// <p>Represents the statistics type used to aggregate the coverage details.</p>
-    pub fn set_statistics_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>,
-    ) -> Self {
+    pub fn set_statistics_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>) -> Self {
         self.statistics_type = input;
         self
     }
     /// <p>Represents the statistics type used to aggregate the coverage details.</p>
-    pub fn get_statistics_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>> {
+    pub fn get_statistics_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>> {
         &self.statistics_type
     }
     /// Consumes the builder and constructs a [`GetCoverageStatisticsInput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_coverage_statistics::GetCoverageStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_coverage_statistics::GetCoverageStatisticsInput {
-                detector_id: self.detector_id,
-                filter_criteria: self.filter_criteria,
-                statistics_type: self.statistics_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_coverage_statistics::GetCoverageStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_coverage_statistics::GetCoverageStatisticsInput {
+            detector_id: self.detector_id,
+            filter_criteria: self.filter_criteria,
+            statistics_type: self.statistics_type,
+        })
     }
 }

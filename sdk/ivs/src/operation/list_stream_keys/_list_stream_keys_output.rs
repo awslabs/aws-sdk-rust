@@ -35,9 +35,7 @@ impl ListStreamKeysOutput {
 
 /// A builder for [`ListStreamKeysOutput`](crate::operation::list_stream_keys::ListStreamKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamKeysOutputBuilder {
     pub(crate) stream_keys: ::std::option::Option<::std::vec::Vec<crate::types::StreamKeySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListStreamKeysOutputBuilder {
         self
     }
     /// <p>List of stream keys.</p>
-    pub fn set_stream_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamKeySummary>>,
-    ) -> Self {
+    pub fn set_stream_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamKeySummary>>) -> Self {
         self.stream_keys = input;
         self
     }
     /// <p>List of stream keys.</p>
-    pub fn get_stream_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamKeySummary>> {
+    pub fn get_stream_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamKeySummary>> {
         &self.stream_keys
     }
     /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>

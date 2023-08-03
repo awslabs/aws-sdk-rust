@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAcceleratorOutput {
 }
 impl DescribeAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorOutput`](crate::operation::describe_accelerator::DescribeAcceleratorOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_accelerator::builders::DescribeAcceleratorOutputBuilder {
-        crate::operation::describe_accelerator::builders::DescribeAcceleratorOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_accelerator::builders::DescribeAcceleratorOutputBuilder {
+        crate::operation::describe_accelerator::builders::DescribeAcceleratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAcceleratorOutput`](crate::operation::describe_accelerator::DescribeAcceleratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorOutputBuilder {
     pub(crate) accelerator: ::std::option::Option<crate::types::Accelerator>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeAcceleratorOutputBuilder {
         self
     }
     /// <p>The description of the accelerator.</p>
-    pub fn set_accelerator(
-        mut self,
-        input: ::std::option::Option<crate::types::Accelerator>,
-    ) -> Self {
+    pub fn set_accelerator(mut self, input: ::std::option::Option<crate::types::Accelerator>) -> Self {
         self.accelerator = input;
         self
     }

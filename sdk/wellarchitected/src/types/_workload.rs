@@ -104,9 +104,7 @@ pub struct Workload {
     pub share_invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the workload.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Discovery configuration associated to the workload.</p>
     #[doc(hidden)]
     pub discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
@@ -118,8 +116,7 @@ pub struct Workload {
     pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     #[doc(hidden)]
-    pub prioritized_risk_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl Workload {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -219,15 +216,11 @@ impl Workload {
         self.notes.as_deref()
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn improvement_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkloadImprovementStatus> {
+    pub fn improvement_status(&self) -> ::std::option::Option<&crate::types::WorkloadImprovementStatus> {
         self.improvement_status.as_ref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn risk_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -247,17 +240,11 @@ impl Workload {
         self.share_invitation_id.as_deref()
     }
     /// <p>The tags associated with the workload.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Discovery configuration associated to the workload.</p>
-    pub fn discovery_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkloadDiscoveryConfig> {
+    pub fn discovery_config(&self) -> ::std::option::Option<&crate::types::WorkloadDiscoveryConfig> {
         self.discovery_config.as_ref()
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
@@ -269,9 +256,7 @@ impl Workload {
         self.profiles.as_deref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn prioritized_risk_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn prioritized_risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.prioritized_risk_counts.as_ref()
     }
 }
@@ -284,9 +269,7 @@ impl Workload {
 
 /// A builder for [`Workload`](crate::types::Workload).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkloadBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_arn: ::std::option::Option<::std::string::String>,
@@ -305,20 +288,16 @@ pub struct WorkloadBuilder {
     pub(crate) industry: ::std::option::Option<::std::string::String>,
     pub(crate) notes: ::std::option::Option<::std::string::String>,
     pub(crate) improvement_status: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
-    pub(crate) risk_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     pub(crate) pillar_priorities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) share_invitation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
-    pub(crate) prioritized_risk_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl WorkloadBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -351,19 +330,13 @@ impl WorkloadBuilder {
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn set_workload_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_name = input;
         self
     }
@@ -392,10 +365,7 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The environment for the workload.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkloadEnvironment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::WorkloadEnvironment>) -> Self {
         self.environment = input;
         self
     }
@@ -409,10 +379,7 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -432,17 +399,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `aws_regions`.
@@ -457,17 +419,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn set_aws_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.aws_regions = input;
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn get_aws_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.aws_regions
     }
     /// Appends an item to `non_aws_regions`.
@@ -475,42 +432,28 @@ impl WorkloadBuilder {
     /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
     ///
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn non_aws_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn non_aws_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.non_aws_regions.unwrap_or_default();
         v.push(input.into());
         self.non_aws_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn set_non_aws_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_non_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.non_aws_regions = input;
         self
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn get_non_aws_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_non_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.non_aws_regions
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn architectural_design(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn architectural_design(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.architectural_design = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn set_architectural_design(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_architectural_design(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.architectural_design = input;
         self
     }
@@ -538,17 +481,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_review_restriction_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_review_restriction_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.review_restriction_date = input;
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn get_review_restriction_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_review_restriction_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.review_restriction_date
     }
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
@@ -559,10 +497,7 @@ impl WorkloadBuilder {
     }
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
-    pub fn set_is_review_owner_update_acknowledged(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_is_review_owner_update_acknowledged(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_review_owner_update_acknowledged = input;
         self
     }
@@ -602,10 +537,7 @@ impl WorkloadBuilder {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    pub fn industry_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn industry_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.industry_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -640,10 +572,7 @@ impl WorkloadBuilder {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    pub fn set_industry_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_industry_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.industry_type = input;
         self
     }
@@ -715,17 +644,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn set_improvement_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
-    ) -> Self {
+    pub fn set_improvement_status(mut self, input: ::std::option::Option<crate::types::WorkloadImprovementStatus>) -> Self {
         self.improvement_status = input;
         self
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn get_improvement_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkloadImprovementStatus> {
+    pub fn get_improvement_status(&self) -> &::std::option::Option<crate::types::WorkloadImprovementStatus> {
         &self.improvement_status
     }
     /// Adds a key-value pair to `risk_counts`.
@@ -740,17 +664,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_risk_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
-    ) -> Self {
+    pub fn set_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
         self.risk_counts = input;
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_risk_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
         &self.risk_counts
     }
     /// Appends an item to `pillar_priorities`.
@@ -758,27 +677,19 @@ impl WorkloadBuilder {
     /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
     ///
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_priorities(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pillar_priorities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pillar_priorities.unwrap_or_default();
         v.push(input.into());
         self.pillar_priorities = ::std::option::Option::Some(v);
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn set_pillar_priorities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pillar_priorities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pillar_priorities = input;
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn get_pillar_priorities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pillar_priorities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pillar_priorities
     }
     /// Appends an item to `lenses`.
@@ -793,10 +704,7 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lenses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.lenses = input;
         self
     }
@@ -819,18 +727,12 @@ impl WorkloadBuilder {
         &self.owner
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn share_invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn set_share_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_share_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_invitation_id = input;
         self
     }
@@ -843,32 +745,19 @@ impl WorkloadBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the workload.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags associated with the workload.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags associated with the workload.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Discovery configuration associated to the workload.</p>
@@ -877,17 +766,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>Discovery configuration associated to the workload.</p>
-    pub fn set_discovery_config(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
-    ) -> Self {
+    pub fn set_discovery_config(mut self, input: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>) -> Self {
         self.discovery_config = input;
         self
     }
     /// <p>Discovery configuration associated to the workload.</p>
-    pub fn get_discovery_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkloadDiscoveryConfig> {
+    pub fn get_discovery_config(&self) -> &::std::option::Option<crate::types::WorkloadDiscoveryConfig> {
         &self.discovery_config
     }
     /// Appends an item to `applications`.
@@ -902,17 +786,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.applications
     }
     /// Appends an item to `profiles`.
@@ -927,17 +806,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>Profile associated with a workload.</p>
-    pub fn set_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
-    ) -> Self {
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>) -> Self {
         self.profiles = input;
         self
     }
     /// <p>Profile associated with a workload.</p>
-    pub fn get_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>> {
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>> {
         &self.profiles
     }
     /// Adds a key-value pair to `prioritized_risk_counts`.
@@ -952,17 +826,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_prioritized_risk_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
-    ) -> Self {
+    pub fn set_prioritized_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
         self.prioritized_risk_counts = input;
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_prioritized_risk_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_prioritized_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
         &self.prioritized_risk_counts
     }
     /// Consumes the builder and constructs a [`Workload`](crate::types::Workload).
@@ -980,9 +849,7 @@ impl WorkloadBuilder {
             architectural_design: self.architectural_design,
             review_owner: self.review_owner,
             review_restriction_date: self.review_restriction_date,
-            is_review_owner_update_acknowledged: self
-                .is_review_owner_update_acknowledged
-                .unwrap_or_default(),
+            is_review_owner_update_acknowledged: self.is_review_owner_update_acknowledged.unwrap_or_default(),
             industry_type: self.industry_type,
             industry: self.industry,
             notes: self.notes,

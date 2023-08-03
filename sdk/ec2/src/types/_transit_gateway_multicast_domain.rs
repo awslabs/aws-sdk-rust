@@ -47,15 +47,11 @@ impl TransitGatewayMulticastDomain {
         self.owner_id.as_deref()
     }
     /// <p>The options for the transit gateway multicast domain.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDomainOptions> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDomainOptions> {
         self.options.as_ref()
     }
     /// <p>The state of the transit gateway multicast domain.</p>
-    pub fn state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDomainState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDomainState> {
         self.state.as_ref()
     }
     /// <p>The time the transit gateway multicast domain was created.</p>
@@ -76,9 +72,7 @@ impl TransitGatewayMulticastDomain {
 
 /// A builder for [`TransitGatewayMulticastDomain`](crate::types::TransitGatewayMulticastDomain).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayMulticastDomainBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
@@ -91,40 +85,26 @@ pub struct TransitGatewayMulticastDomainBuilder {
 }
 impl TransitGatewayMulticastDomainBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_multicast_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_multicast_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = input;
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn get_transit_gateway_multicast_domain_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_multicast_domain_id
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -133,25 +113,17 @@ impl TransitGatewayMulticastDomainBuilder {
         &self.transit_gateway_id
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_multicast_domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_multicast_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
-    pub fn get_transit_gateway_multicast_domain_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_multicast_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_multicast_domain_arn
     }
     /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
@@ -174,17 +146,12 @@ impl TransitGatewayMulticastDomainBuilder {
         self
     }
     /// <p>The options for the transit gateway multicast domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayMulticastDomainOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::TransitGatewayMulticastDomainOptions>) -> Self {
         self.options = input;
         self
     }
     /// <p>The options for the transit gateway multicast domain.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayMulticastDomainOptions> {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::TransitGatewayMulticastDomainOptions> {
         &self.options
     }
     /// <p>The state of the transit gateway multicast domain.</p>
@@ -193,17 +160,12 @@ impl TransitGatewayMulticastDomainBuilder {
         self
     }
     /// <p>The state of the transit gateway multicast domain.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayMulticastDomainState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayMulticastDomainState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of the transit gateway multicast domain.</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayMulticastDomainState> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayMulticastDomainState> {
         &self.state
     }
     /// <p>The time the transit gateway multicast domain was created.</p>
@@ -212,10 +174,7 @@ impl TransitGatewayMulticastDomainBuilder {
         self
     }
     /// <p>The time the transit gateway multicast domain was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -235,10 +194,7 @@ impl TransitGatewayMulticastDomainBuilder {
         self
     }
     /// <p>The tags for the transit gateway multicast domain.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

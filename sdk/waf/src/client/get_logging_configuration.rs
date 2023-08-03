@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetLoggingConfigurationOutput`](crate::operation::get_logging_configuration::GetLoggingConfigurationOutput) with field(s):
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::operation::get_logging_configuration::GetLoggingConfigurationOutput::logging_configuration): <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
     /// - On failure, responds with [`SdkError<GetLoggingConfigurationError>`](crate::operation::get_logging_configuration::GetLoggingConfigurationError)
-    pub fn get_logging_configuration(
-        &self,
-    ) -> crate::operation::get_logging_configuration::builders::GetLoggingConfigurationFluentBuilder
-    {
+    pub fn get_logging_configuration(&self) -> crate::operation::get_logging_configuration::builders::GetLoggingConfigurationFluentBuilder {
         crate::operation::get_logging_configuration::builders::GetLoggingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

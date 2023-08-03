@@ -30,9 +30,7 @@ impl IdentityDocumentField {
 
 /// A builder for [`IdentityDocumentField`](crate::types::IdentityDocumentField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityDocumentFieldBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AnalyzeIdDetections>,
     pub(crate) value_detection: ::std::option::Option<crate::types::AnalyzeIdDetections>,
@@ -44,10 +42,7 @@ impl IdentityDocumentFieldBuilder {
         self
     }
     /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyzeIdDetections>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AnalyzeIdDetections>) -> Self {
         self.r#type = input;
         self
     }
@@ -61,10 +56,7 @@ impl IdentityDocumentFieldBuilder {
         self
     }
     /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
-    pub fn set_value_detection(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyzeIdDetections>,
-    ) -> Self {
+    pub fn set_value_detection(mut self, input: ::std::option::Option<crate::types::AnalyzeIdDetections>) -> Self {
         self.value_detection = input;
         self
     }

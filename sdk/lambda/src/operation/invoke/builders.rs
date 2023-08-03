@@ -10,10 +10,7 @@ impl InvokeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::invoke::InvokeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invoke::InvokeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invoke::InvokeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.invoke();
         fluent_builder.inner = self;
@@ -51,10 +48,7 @@ impl InvokeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::invoke::Invoke,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::invoke::Invoke, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::invoke::InvokeError>,
     > {
         let handle = self.handle.clone();
@@ -65,20 +59,15 @@ impl InvokeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::invoke::InvokeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::invoke::InvokeError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::invoke::InvokeOutput, ::aws_smithy_http::result::SdkError<crate::operation::invoke::InvokeError>>
+    {
         let op = self
             .inner
             .build()
@@ -98,10 +87,8 @@ impl InvokeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::invoke::InvokeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::invoke::InvokeError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::invoke::InvokeOutput, ::aws_smithy_http::result::SdkError<crate::operation::invoke::InvokeError>>
+    {
         self.send_middleware().await
     }
 
@@ -110,10 +97,7 @@ impl InvokeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::invoke::Invoke,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::invoke::Invoke, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::invoke::InvokeError>,
     > {
         self.customize_middleware().await
@@ -126,10 +110,7 @@ impl InvokeFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -141,10 +122,7 @@ impl InvokeFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
@@ -175,10 +153,7 @@ impl InvokeFluentBuilder {
     /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li>
     /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    pub fn set_invocation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InvocationType>,
-    ) -> Self {
+    pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::InvocationType>) -> Self {
         self.inner = self.inner.set_invocation_type(input);
         self
     }
@@ -206,18 +181,12 @@ impl InvokeFluentBuilder {
         self.inner.get_log_type()
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
-    pub fn client_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_context(input.into());
         self
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
-    pub fn set_client_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_context(input);
         self
     }

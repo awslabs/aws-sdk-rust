@@ -37,9 +37,7 @@ impl DataBarsOptions {
 
 /// A builder for [`DataBarsOptions`](crate::types::DataBarsOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataBarsOptionsBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) positive_color: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl DataBarsOptionsBuilder {
         &self.field_id
     }
     /// <p>The color of the positive data bar.</p>
-    pub fn positive_color(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn positive_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.positive_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The color of the positive data bar.</p>
-    pub fn set_positive_color(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_positive_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.positive_color = input;
         self
     }
@@ -81,18 +73,12 @@ impl DataBarsOptionsBuilder {
         &self.positive_color
     }
     /// <p>The color of the negative data bar.</p>
-    pub fn negative_color(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn negative_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.negative_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The color of the negative data bar.</p>
-    pub fn set_negative_color(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_negative_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.negative_color = input;
         self
     }

@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`application_component_infos(Option<Vec<ApplicationComponentDetail>>)`](crate::operation::list_application_components::ListApplicationComponentsOutput::application_component_infos): <p> The list of application components with detailed information about each component. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_components::ListApplicationComponentsOutput::next_token): <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListApplicationComponentsError>`](crate::operation::list_application_components::ListApplicationComponentsError)
-    pub fn list_application_components(&self) -> crate::operation::list_application_components::builders::ListApplicationComponentsFluentBuilder{
+    pub fn list_application_components(&self) -> crate::operation::list_application_components::builders::ListApplicationComponentsFluentBuilder {
         crate::operation::list_application_components::builders::ListApplicationComponentsFluentBuilder::new(self.handle.clone())
     }
 }

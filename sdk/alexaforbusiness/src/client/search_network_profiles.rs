@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`total_count(Option<i32>)`](crate::operation::search_network_profiles::SearchNetworkProfilesOutput::total_count): <p>The total number of network profiles returned.</p>
     /// - On failure, responds with [`SdkError<SearchNetworkProfilesError>`](crate::operation::search_network_profiles::SearchNetworkProfilesError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn search_network_profiles(
-        &self,
-    ) -> crate::operation::search_network_profiles::builders::SearchNetworkProfilesFluentBuilder
-    {
-        crate::operation::search_network_profiles::builders::SearchNetworkProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_network_profiles(&self) -> crate::operation::search_network_profiles::builders::SearchNetworkProfilesFluentBuilder {
+        crate::operation::search_network_profiles::builders::SearchNetworkProfilesFluentBuilder::new(self.handle.clone())
     }
 }

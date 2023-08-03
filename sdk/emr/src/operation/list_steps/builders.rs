@@ -10,10 +10,7 @@ impl ListStepsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_steps::ListStepsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_steps::ListStepsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_steps::ListStepsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_steps();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListStepsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_steps::ListSteps,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_steps::ListSteps, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_steps::ListStepsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListStepsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListStepsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_steps::ListSteps,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_steps::ListSteps, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_steps::ListStepsError>,
     > {
         self.customize_middleware().await
@@ -142,17 +130,12 @@ impl ListStepsFluentBuilder {
         self
     }
     /// <p>The filter to limit the step list based on certain states.</p>
-    pub fn set_step_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>,
-    ) -> Self {
+    pub fn set_step_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>) -> Self {
         self.inner = self.inner.set_step_states(input);
         self
     }
     /// <p>The filter to limit the step list based on certain states.</p>
-    pub fn get_step_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StepState>> {
+    pub fn get_step_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepState>> {
         self.inner.get_step_states()
     }
     /// Appends an item to `StepIds`.
@@ -165,10 +148,7 @@ impl ListStepsFluentBuilder {
         self
     }
     /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
-    pub fn set_step_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_step_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_step_ids(input);
         self
     }

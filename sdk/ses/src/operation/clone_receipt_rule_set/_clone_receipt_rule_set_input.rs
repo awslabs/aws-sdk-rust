@@ -33,18 +33,14 @@ impl CloneReceiptRuleSetInput {
 }
 impl CloneReceiptRuleSetInput {
     /// Creates a new builder-style object to manufacture [`CloneReceiptRuleSetInput`](crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput).
-    pub fn builder(
-    ) -> crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetInputBuilder {
-        crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetInputBuilder {
+        crate::operation::clone_receipt_rule_set::builders::CloneReceiptRuleSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CloneReceiptRuleSetInput`](crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloneReceiptRuleSetInputBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) original_rule_set_name: ::std::option::Option<::std::string::String>,
@@ -56,10 +52,7 @@ impl CloneReceiptRuleSetInputBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -69,10 +62,7 @@ impl CloneReceiptRuleSetInputBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_name = input;
         self
     }
@@ -86,18 +76,12 @@ impl CloneReceiptRuleSetInputBuilder {
         &self.rule_set_name
     }
     /// <p>The name of the rule set to clone.</p>
-    pub fn original_rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn original_rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rule set to clone.</p>
-    pub fn set_original_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_original_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_rule_set_name = input;
         self
     }
@@ -108,15 +92,11 @@ impl CloneReceiptRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`CloneReceiptRuleSetInput`](crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput {
-                rule_set_name: self.rule_set_name,
-                original_rule_set_name: self.original_rule_set_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput {
+            rule_set_name: self.rule_set_name,
+            original_rule_set_name: self.original_rule_set_name,
+        })
     }
 }

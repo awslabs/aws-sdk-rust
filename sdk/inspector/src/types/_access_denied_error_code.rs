@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccessDeniedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -76,20 +70,14 @@ impl ::std::convert::From<&str> for AccessDeniedErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED_TO_ASSESSMENT_RUN" => AccessDeniedErrorCode::AccessDeniedToAssessmentRun,
-            "ACCESS_DENIED_TO_ASSESSMENT_TARGET" => {
-                AccessDeniedErrorCode::AccessDeniedToAssessmentTarget
-            }
-            "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE" => {
-                AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate
-            }
+            "ACCESS_DENIED_TO_ASSESSMENT_TARGET" => AccessDeniedErrorCode::AccessDeniedToAssessmentTarget,
+            "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE" => AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate,
             "ACCESS_DENIED_TO_FINDING" => AccessDeniedErrorCode::AccessDeniedToFinding,
             "ACCESS_DENIED_TO_IAM_ROLE" => AccessDeniedErrorCode::AccessDeniedToIamRole,
             "ACCESS_DENIED_TO_RESOURCE_GROUP" => AccessDeniedErrorCode::AccessDeniedToResourceGroup,
             "ACCESS_DENIED_TO_RULES_PACKAGE" => AccessDeniedErrorCode::AccessDeniedToRulesPackage,
             "ACCESS_DENIED_TO_SNS_TOPIC" => AccessDeniedErrorCode::AccessDeniedToSnsTopic,
-            other => AccessDeniedErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AccessDeniedErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -105,12 +93,8 @@ impl AccessDeniedErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             AccessDeniedErrorCode::AccessDeniedToAssessmentRun => "ACCESS_DENIED_TO_ASSESSMENT_RUN",
-            AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => {
-                "ACCESS_DENIED_TO_ASSESSMENT_TARGET"
-            }
-            AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => {
-                "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE"
-            }
+            AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => "ACCESS_DENIED_TO_ASSESSMENT_TARGET",
+            AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE",
             AccessDeniedErrorCode::AccessDeniedToFinding => "ACCESS_DENIED_TO_FINDING",
             AccessDeniedErrorCode::AccessDeniedToIamRole => "ACCESS_DENIED_TO_IAM_ROLE",
             AccessDeniedErrorCode::AccessDeniedToResourceGroup => "ACCESS_DENIED_TO_RESOURCE_GROUP",

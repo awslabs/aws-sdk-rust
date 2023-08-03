@@ -44,9 +44,7 @@ impl CmafPackage {
 
 /// A builder for [`CmafPackage`](crate::types::CmafPackage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CmafPackageBuilder {
     pub(crate) encryption: ::std::option::Option<crate::types::CmafEncryption>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
@@ -60,10 +58,7 @@ impl CmafPackageBuilder {
         self
     }
     /// A CMAF encryption configuration.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::CmafEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::CmafEncryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -83,17 +78,12 @@ impl CmafPackageBuilder {
         self
     }
     /// A list of HLS manifest configurations.
-    pub fn set_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
-    ) -> Self {
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>) -> Self {
         self.hls_manifests = input;
         self
     }
     /// A list of HLS manifest configurations.
-    pub fn get_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>> {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>> {
         &self.hls_manifests
     }
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
@@ -102,10 +92,7 @@ impl CmafPackageBuilder {
         self
     }
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
-    pub fn set_include_encoder_configuration_in_segments(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_encoder_configuration_in_segments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_encoder_configuration_in_segments = input;
         self
     }
@@ -132,8 +119,7 @@ impl CmafPackageBuilder {
         crate::types::CmafPackage {
             encryption: self.encryption,
             hls_manifests: self.hls_manifests,
-            include_encoder_configuration_in_segments: self
-                .include_encoder_configuration_in_segments,
+            include_encoder_configuration_in_segments: self.include_encoder_configuration_in_segments,
             segment_duration_seconds: self.segment_duration_seconds,
         }
     }

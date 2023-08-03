@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`total_record_count(Option<i64>)`](crate::operation::get_batch_prediction::GetBatchPredictionOutput::total_record_count): <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
     ///   - [`invalid_record_count(Option<i64>)`](crate::operation::get_batch_prediction::GetBatchPredictionOutput::invalid_record_count): <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
     /// - On failure, responds with [`SdkError<GetBatchPredictionError>`](crate::operation::get_batch_prediction::GetBatchPredictionError)
-    pub fn get_batch_prediction(
-        &self,
-    ) -> crate::operation::get_batch_prediction::builders::GetBatchPredictionFluentBuilder {
-        crate::operation::get_batch_prediction::builders::GetBatchPredictionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_batch_prediction(&self) -> crate::operation::get_batch_prediction::builders::GetBatchPredictionFluentBuilder {
+        crate::operation::get_batch_prediction::builders::GetBatchPredictionFluentBuilder::new(self.handle.clone())
     }
 }

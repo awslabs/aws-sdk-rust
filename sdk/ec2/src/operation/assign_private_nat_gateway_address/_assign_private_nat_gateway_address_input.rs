@@ -36,16 +36,14 @@ impl AssignPrivateNatGatewayAddressInput {
 }
 impl AssignPrivateNatGatewayAddressInput {
     /// Creates a new builder-style object to manufacture [`AssignPrivateNatGatewayAddressInput`](crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressInput).
-    pub fn builder() -> crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressInputBuilder{
+    pub fn builder() -> crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressInputBuilder {
         crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressInputBuilder::default()
     }
 }
 
 /// A builder for [`AssignPrivateNatGatewayAddressInput`](crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssignPrivateNatGatewayAddressInputBuilder {
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,18 +52,12 @@ pub struct AssignPrivateNatGatewayAddressInputBuilder {
 }
 impl AssignPrivateNatGatewayAddressInputBuilder {
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nat_gateway_id = input;
         self
     }
@@ -78,27 +70,19 @@ impl AssignPrivateNatGatewayAddressInputBuilder {
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
     ///
     /// <p>The private IPv4 addresses you want to assign to the private NAT gateway.</p>
-    pub fn private_ip_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
         v.push(input.into());
         self.private_ip_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The private IPv4 addresses you want to assign to the private NAT gateway.</p>
-    pub fn set_private_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.private_ip_addresses = input;
         self
     }
     /// <p>The private IPv4 addresses you want to assign to the private NAT gateway.</p>
-    pub fn get_private_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.private_ip_addresses
     }
     /// <p>The number of private IP addresses to assign to the NAT gateway. You can't specify this parameter when also specifying private IP addresses.</p>
@@ -138,15 +122,11 @@ impl AssignPrivateNatGatewayAddressInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressInput {
-                nat_gateway_id: self.nat_gateway_id
-                ,
-                private_ip_addresses: self.private_ip_addresses
-                ,
-                private_ip_address_count: self.private_ip_address_count
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                nat_gateway_id: self.nat_gateway_id,
+                private_ip_addresses: self.private_ip_addresses,
+                private_ip_address_count: self.private_ip_address_count,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

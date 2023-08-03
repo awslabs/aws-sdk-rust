@@ -36,18 +36,12 @@ pub struct TrendmicroConnectorProfileCredentialsBuilder {
 }
 impl TrendmicroConnectorProfileCredentialsBuilder {
     /// <p> The Secret Access Key portion of the credentials. </p>
-    pub fn api_secret_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_secret_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Secret Access Key portion of the credentials. </p>
-    pub fn set_api_secret_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_secret_key = input;
         self
     }

@@ -22,36 +22,26 @@ impl GetDashboardForJobRunInput {
 }
 impl GetDashboardForJobRunInput {
     /// Creates a new builder-style object to manufacture [`GetDashboardForJobRunInput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput).
-    pub fn builder(
-    ) -> crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunInputBuilder {
         crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDashboardForJobRunInput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDashboardForJobRunInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDashboardForJobRunInputBuilder {
     /// <p>The ID of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl GetDashboardForJobRunInputBuilder {
     /// Consumes the builder and constructs a [`GetDashboardForJobRunInput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput {
-                application_id: self.application_id,
-                job_run_id: self.job_run_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput {
+            application_id: self.application_id,
+            job_run_id: self.job_run_id,
+        })
     }
 }

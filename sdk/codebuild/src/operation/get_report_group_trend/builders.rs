@@ -37,9 +37,7 @@ impl GetReportGroupTrendFluentBuilder {
         }
     }
     /// Access the GetReportGroupTrend as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetReportGroupTrendFluentBuilder {
             crate::operation::get_report_group_trend::GetReportGroupTrend,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_report_group_trend::GetReportGroupTrendError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_report_group_trend::GetReportGroupTrendError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetReportGroupTrendFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetReportGroupTrendFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_report_group_trend::GetReportGroupTrendOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_report_group_trend::GetReportGroupTrendError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_report_group_trend::GetReportGroupTrendError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetReportGroupTrendFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_report_group_trend::GetReportGroupTrendOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_report_group_trend::GetReportGroupTrendError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_report_group_trend::GetReportGroupTrendError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetReportGroupTrendFluentBuilder {
             crate::operation::get_report_group_trend::GetReportGroupTrend,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_report_group_trend::GetReportGroupTrendError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_report_group_trend::GetReportGroupTrendError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
-    pub fn report_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_group_arn(input.into());
         self
     }
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
-    pub fn set_report_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_group_arn(input);
         self
     }
@@ -309,10 +290,7 @@ impl GetReportGroupTrendFluentBuilder {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn set_trend_field(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportGroupTrendFieldType>,
-    ) -> Self {
+    pub fn set_trend_field(mut self, input: ::std::option::Option<crate::types::ReportGroupTrendFieldType>) -> Self {
         self.inner = self.inner.set_trend_field(input);
         self
     }
@@ -389,9 +367,7 @@ impl GetReportGroupTrendFluentBuilder {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn get_trend_field(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReportGroupTrendFieldType> {
+    pub fn get_trend_field(&self) -> &::std::option::Option<crate::types::ReportGroupTrendFieldType> {
         self.inner.get_trend_field()
     }
 }

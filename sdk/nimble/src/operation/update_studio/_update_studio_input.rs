@@ -71,18 +71,12 @@ pub struct UpdateStudioInputBuilder {
 }
 impl UpdateStudioInputBuilder {
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn admin_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_admin_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_role_arn = input;
         self
     }
@@ -133,18 +127,12 @@ impl UpdateStudioInputBuilder {
         &self.studio_id
     }
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn user_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_user_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_role_arn = input;
         self
     }
@@ -153,12 +141,7 @@ impl UpdateStudioInputBuilder {
         &self.user_role_arn
     }
     /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_studio::UpdateStudioInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_studio::UpdateStudioInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_studio::UpdateStudioInput {
             admin_role_arn: self.admin_role_arn,
             client_token: self.client_token,

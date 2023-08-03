@@ -26,7 +26,7 @@ impl DescribeStackSetOperationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStackSetOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationInputBuilder,
+    inner: crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationInputBuilder,
 }
 impl DescribeStackSetOperationFluentBuilder {
     /// Creates a new `DescribeStackSetOperation`.
@@ -37,7 +37,7 @@ impl DescribeStackSetOperationFluentBuilder {
         }
     }
     /// Access the DescribeStackSetOperation as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeStackSetOperationFluentBuilder {
             crate::operation::describe_stack_set_operation::DescribeStackSetOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_set_operation::DescribeStackSetOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_set_operation::DescribeStackSetOperationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeStackSetOperationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeStackSetOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_set_operation::DescribeStackSetOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_set_operation::DescribeStackSetOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_set_operation::DescribeStackSetOperationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeStackSetOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_set_operation::DescribeStackSetOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_set_operation::DescribeStackSetOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_set_operation::DescribeStackSetOperationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeStackSetOperationFluentBuilder {
             crate::operation::describe_stack_set_operation::DescribeStackSetOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_set_operation::DescribeStackSetOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_set_operation::DescribeStackSetOperationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }

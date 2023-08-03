@@ -10,8 +10,7 @@ pub struct GetMetricDataOutput {
     /// <p>Information about the historical metrics.</p>
     /// <p>If no grouping is specified, a summary of metric data is returned.</p>
     #[doc(hidden)]
-    pub metric_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>>,
+    pub metric_results: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>>,
     _request_id: Option<String>,
 }
 impl GetMetricDataOutput {
@@ -40,13 +39,10 @@ impl GetMetricDataOutput {
 
 /// A builder for [`GetMetricDataOutput`](crate::operation::get_metric_data::GetMetricDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricDataOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>>,
+    pub(crate) metric_results: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>>,
     _request_id: Option<String>,
 }
 impl GetMetricDataOutputBuilder {
@@ -81,18 +77,13 @@ impl GetMetricDataOutputBuilder {
     }
     /// <p>Information about the historical metrics.</p>
     /// <p>If no grouping is specified, a summary of metric data is returned.</p>
-    pub fn set_metric_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>>,
-    ) -> Self {
+    pub fn set_metric_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>>) -> Self {
         self.metric_results = input;
         self
     }
     /// <p>Information about the historical metrics.</p>
     /// <p>If no grouping is specified, a summary of metric data is returned.</p>
-    pub fn get_metric_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>> {
+    pub fn get_metric_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>> {
         &self.metric_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

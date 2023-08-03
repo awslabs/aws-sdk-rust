@@ -37,9 +37,7 @@ impl AssociateCertificateFluentBuilder {
         }
     }
     /// Access the AssociateCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_certificate::builders::AssociateCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_certificate::builders::AssociateCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl AssociateCertificateFluentBuilder {
             crate::operation::associate_certificate::AssociateCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_certificate::AssociateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_certificate::AssociateCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl AssociateCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl AssociateCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_certificate::AssociateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_certificate::AssociateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_certificate::AssociateCertificateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl AssociateCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_certificate::AssociateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_certificate::AssociateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_certificate::AssociateCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl AssociateCertificateFluentBuilder {
             crate::operation::associate_certificate::AssociateCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_certificate::AssociateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_certificate::AssociateCertificateError>,
     > {
         self.customize_middleware().await
     }

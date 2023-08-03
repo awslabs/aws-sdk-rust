@@ -6,10 +6,7 @@ pub fn ser_virtual_node_spec(
     if let Some(var_1) = &input.service_discovery {
         #[allow(unused_mut)]
         let mut object_2 = object.key("serviceDiscovery").start_object();
-        crate::protocol_serde::shape_service_discovery::ser_service_discovery(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_service_discovery::ser_service_discovery(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.listeners {
@@ -39,10 +36,7 @@ pub fn ser_virtual_node_spec(
     if let Some(var_11) = &input.backend_defaults {
         #[allow(unused_mut)]
         let mut object_12 = object.key("backendDefaults").start_object();
-        crate::protocol_serde::shape_backend_defaults::ser_backend_defaults(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_backend_defaults::ser_backend_defaults(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.logging {
@@ -56,17 +50,9 @@ pub fn ser_virtual_node_spec(
 
 pub(crate) fn de_virtual_node_spec<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VirtualNodeSpec>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VirtualNodeSpec>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -76,51 +62,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "serviceDiscovery" => {
-                                builder = builder.set_service_discovery(
-                                    crate::protocol_serde::shape_service_discovery::de_service_discovery(tokens)?
-                                );
-                            }
-                            "listeners" => {
-                                builder = builder.set_listeners(
-                                    crate::protocol_serde::shape_listeners::de_listeners(tokens)?,
-                                );
-                            }
-                            "backends" => {
-                                builder = builder.set_backends(
-                                    crate::protocol_serde::shape_backends::de_backends(tokens)?,
-                                );
-                            }
-                            "backendDefaults" => {
-                                builder = builder.set_backend_defaults(
-                                    crate::protocol_serde::shape_backend_defaults::de_backend_defaults(tokens)?
-                                );
-                            }
-                            "logging" => {
-                                builder = builder.set_logging(
-                                    crate::protocol_serde::shape_logging::de_logging(tokens)?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "serviceDiscovery" => {
+                            builder = builder.set_service_discovery(crate::protocol_serde::shape_service_discovery::de_service_discovery(tokens)?);
                         }
-                    }
+                        "listeners" => {
+                            builder = builder.set_listeners(crate::protocol_serde::shape_listeners::de_listeners(tokens)?);
+                        }
+                        "backends" => {
+                            builder = builder.set_backends(crate::protocol_serde::shape_backends::de_backends(tokens)?);
+                        }
+                        "backendDefaults" => {
+                            builder = builder.set_backend_defaults(crate::protocol_serde::shape_backend_defaults::de_backend_defaults(tokens)?);
+                        }
+                        "logging" => {
+                            builder = builder.set_logging(crate::protocol_serde::shape_logging::de_logging(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

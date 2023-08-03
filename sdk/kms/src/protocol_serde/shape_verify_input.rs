@@ -7,17 +7,13 @@ pub fn ser_verify_input(
         object.key("KeyId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.message {
-        object
-            .key("Message")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("Message").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.message_type {
         object.key("MessageType").string(var_3.as_str());
     }
     if let Some(var_4) = &input.signature {
-        object
-            .key("Signature")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_4));
+        object.key("Signature").string_unchecked(&::aws_smithy_types::base64::encode(var_4));
     }
     if let Some(var_5) = &input.signing_algorithm {
         object.key("SigningAlgorithm").string(var_5.as_str());

@@ -44,9 +44,7 @@ impl ListUseCasesInput {
 
 /// A builder for [`ListUseCasesInput`](crate::operation::list_use_cases::ListUseCasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUseCasesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl ListUseCasesInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn integration_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn set_integration_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_association_id = input;
         self
     }
@@ -119,10 +111,7 @@ impl ListUseCasesInputBuilder {
     /// Consumes the builder and constructs a [`ListUseCasesInput`](crate::operation::list_use_cases::ListUseCasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_use_cases::ListUseCasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_use_cases::ListUseCasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_use_cases::ListUseCasesInput {
             instance_id: self.instance_id,
             integration_association_id: self.integration_association_id,

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteUsagePlanKeyOutput {
 }
 impl DeleteUsagePlanKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUsagePlanKeyOutput`](crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyOutputBuilder {
-        crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyOutputBuilder {
+        crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUsagePlanKeyOutput`](crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUsagePlanKeyOutputBuilder {
     _request_id: Option<String>,
 }

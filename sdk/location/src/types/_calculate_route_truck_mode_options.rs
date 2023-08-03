@@ -52,9 +52,7 @@ impl CalculateRouteTruckModeOptions {
 
 /// A builder for [`CalculateRouteTruckModeOptions`](crate::types::CalculateRouteTruckModeOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculateRouteTruckModeOptionsBuilder {
     pub(crate) avoid_ferries: ::std::option::Option<bool>,
     pub(crate) avoid_tolls: ::std::option::Option<bool>,
@@ -108,10 +106,7 @@ impl CalculateRouteTruckModeOptionsBuilder {
         self
     }
     /// <p>Specifies the truck's dimension specifications including length, height, width, and unit of measurement. Used to avoid roads that can't support the truck's dimensions.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<crate::types::TruckDimensions>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<crate::types::TruckDimensions>) -> Self {
         self.dimensions = input;
         self
     }

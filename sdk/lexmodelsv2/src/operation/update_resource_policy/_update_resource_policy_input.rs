@@ -33,17 +33,14 @@ impl UpdateResourcePolicyInput {
 }
 impl UpdateResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourcePolicyInput`](crate::operation::update_resource_policy::UpdateResourcePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_policy::builders::UpdateResourcePolicyInputBuilder {
+    pub fn builder() -> crate::operation::update_resource_policy::builders::UpdateResourcePolicyInputBuilder {
         crate::operation::update_resource_policy::builders::UpdateResourcePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourcePolicyInput`](crate::operation::update_resource_policy::UpdateResourcePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourcePolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -83,19 +80,13 @@ impl UpdateResourcePolicyInputBuilder {
     }
     /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    pub fn expected_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    pub fn set_expected_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_revision_id = input;
         self
     }
@@ -107,16 +98,12 @@ impl UpdateResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourcePolicyInput`](crate::operation::update_resource_policy::UpdateResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource_policy::UpdateResourcePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resource_policy::UpdateResourcePolicyInput {
-                resource_arn: self.resource_arn,
-                policy: self.policy,
-                expected_revision_id: self.expected_revision_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_resource_policy::UpdateResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_resource_policy::UpdateResourcePolicyInput {
+            resource_arn: self.resource_arn,
+            policy: self.policy,
+            expected_revision_id: self.expected_revision_id,
+        })
     }
 }

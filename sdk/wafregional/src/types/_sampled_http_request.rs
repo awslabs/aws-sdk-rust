@@ -55,9 +55,7 @@ impl SampledHttpRequest {
 
 /// A builder for [`SampledHttpRequest`](crate::types::SampledHttpRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SampledHttpRequestBuilder {
     pub(crate) request: ::std::option::Option<crate::types::HttpRequest>,
     pub(crate) weight: ::std::option::Option<i64>,
@@ -100,10 +98,7 @@ impl SampledHttpRequestBuilder {
         self
     }
     /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -126,18 +121,12 @@ impl SampledHttpRequestBuilder {
         &self.action
     }
     /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
-    pub fn rule_within_rule_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_within_rule_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_within_rule_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
-    pub fn set_rule_within_rule_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_within_rule_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_within_rule_group = input;
         self
     }

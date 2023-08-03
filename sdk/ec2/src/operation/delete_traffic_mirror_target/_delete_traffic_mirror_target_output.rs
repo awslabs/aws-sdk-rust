@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for DeleteTrafficMirrorTargetOutput {
 }
 impl DeleteTrafficMirrorTargetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficMirrorTargetOutput`](crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetOutput).
-    pub fn builder() -> crate::operation::delete_traffic_mirror_target::builders::DeleteTrafficMirrorTargetOutputBuilder{
+    pub fn builder() -> crate::operation::delete_traffic_mirror_target::builders::DeleteTrafficMirrorTargetOutputBuilder {
         crate::operation::delete_traffic_mirror_target::builders::DeleteTrafficMirrorTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrafficMirrorTargetOutput`](crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrafficMirrorTargetOutputBuilder {
     pub(crate) traffic_mirror_target_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteTrafficMirrorTargetOutputBuilder {
     /// <p>The ID of the deleted Traffic Mirror target.</p>
-    pub fn traffic_mirror_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deleted Traffic Mirror target.</p>
-    pub fn set_traffic_mirror_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_target_id = input;
         self
     }
@@ -66,9 +58,7 @@ impl DeleteTrafficMirrorTargetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteTrafficMirrorTargetOutput`](crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetOutput {
+    pub fn build(self) -> crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetOutput {
         crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetOutput {
             traffic_mirror_target_id: self.traffic_mirror_target_id,
             _request_id: self._request_id,

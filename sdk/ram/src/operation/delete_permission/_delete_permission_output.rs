@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DeletePermissionOutput {
 }
 impl DeletePermissionOutput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionOutput`](crate::operation::delete_permission::DeletePermissionOutput).
-    pub fn builder() -> crate::operation::delete_permission::builders::DeletePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_permission::builders::DeletePermissionOutputBuilder {
         crate::operation::delete_permission::builders::DeletePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePermissionOutput`](crate::operation::delete_permission::DeletePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePermissionOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -87,10 +84,7 @@ impl DeletePermissionOutputBuilder {
         self
     }
     /// <p>This operation is performed asynchronously, and this response parameter indicates the current status.</p>
-    pub fn set_permission_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionStatus>,
-    ) -> Self {
+    pub fn set_permission_status(mut self, input: ::std::option::Option<crate::types::PermissionStatus>) -> Self {
         self.permission_status = input;
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`pagination_token(Option<String>)`](crate::operation::get_tag_values::GetTagValuesOutput::pagination_token): <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     ///   - [`tag_values(Option<Vec<String>>)`](crate::operation::get_tag_values::GetTagValuesOutput::tag_values): <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services Region for the calling account.</p>
     /// - On failure, responds with [`SdkError<GetTagValuesError>`](crate::operation::get_tag_values::GetTagValuesError)
-    pub fn get_tag_values(
-        &self,
-    ) -> crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder {
-        crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_tag_values(&self) -> crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder {
+        crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder::new(self.handle.clone())
     }
 }

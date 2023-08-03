@@ -121,9 +121,7 @@ impl DocumentIdentifier {
 
 /// A builder for [`DocumentIdentifier`](crate::types::DocumentIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentIdentifierBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -162,10 +160,7 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>The date the SSM document was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -227,32 +222,21 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>The operating system platform. </p>
-    pub fn set_platform_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
-    ) -> Self {
+    pub fn set_platform_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>) -> Self {
         self.platform_types = input;
         self
     }
     /// <p>The operating system platform. </p>
-    pub fn get_platform_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
+    pub fn get_platform_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
         &self.platform_types
     }
     /// <p>The document version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The document version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -266,10 +250,7 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>The document type.</p>
-    pub fn set_document_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentType>,
-    ) -> Self {
+    pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::DocumentType>) -> Self {
         self.document_type = input;
         self
     }
@@ -278,18 +259,12 @@ impl DocumentIdentifierBuilder {
         &self.document_type
     }
     /// <p>The schema version.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema version.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version = input;
         self
     }
@@ -303,10 +278,7 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>The document format, either JSON or YAML.</p>
-    pub fn set_document_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentFormat>,
-    ) -> Self {
+    pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.document_format = input;
         self
     }
@@ -340,10 +312,7 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>The tags, or metadata, that have been applied to the document.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -363,17 +332,12 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn set_requires(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
-    ) -> Self {
+    pub fn set_requires(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>) -> Self {
         self.requires = input;
         self
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn get_requires(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
+    pub fn get_requires(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
         &self.requires
     }
     /// <p>The current status of a document review.</p>
@@ -382,10 +346,7 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>The current status of a document review.</p>
-    pub fn set_review_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewStatus>,
-    ) -> Self {
+    pub fn set_review_status(mut self, input: ::std::option::Option<crate::types::ReviewStatus>) -> Self {
         self.review_status = input;
         self
     }

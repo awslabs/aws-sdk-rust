@@ -27,7 +27,7 @@ impl GetReusableDelegationSetLimitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReusableDelegationSetLimitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder,
+    inner: crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder,
 }
 impl GetReusableDelegationSetLimitFluentBuilder {
     /// Creates a new `GetReusableDelegationSetLimit`.
@@ -38,7 +38,7 @@ impl GetReusableDelegationSetLimitFluentBuilder {
         }
     }
     /// Access the GetReusableDelegationSetLimit as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetReusableDelegationSetLimitFluentBuilder {
             crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetReusableDelegationSetLimitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetReusableDelegationSetLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetReusableDelegationSetLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetReusableDelegationSetLimitFluentBuilder {
             crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +116,7 @@ impl GetReusableDelegationSetLimitFluentBuilder {
         self
     }
     /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -139,18 +125,12 @@ impl GetReusableDelegationSetLimitFluentBuilder {
         self.inner.get_type()
     }
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
-    pub fn delegation_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegation_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delegation_set_id(input.into());
         self
     }
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
-    pub fn set_delegation_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegation_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delegation_set_id(input);
         self
     }

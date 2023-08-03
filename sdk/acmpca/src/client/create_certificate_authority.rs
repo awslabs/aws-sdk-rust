@@ -13,7 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCertificateAuthorityOutput`](crate::operation::create_certificate_authority::CreateCertificateAuthorityOutput) with field(s):
     ///   - [`certificate_authority_arn(Option<String>)`](crate::operation::create_certificate_authority::CreateCertificateAuthorityOutput::certificate_authority_arn): <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     /// - On failure, responds with [`SdkError<CreateCertificateAuthorityError>`](crate::operation::create_certificate_authority::CreateCertificateAuthorityError)
-    pub fn create_certificate_authority(&self) -> crate::operation::create_certificate_authority::builders::CreateCertificateAuthorityFluentBuilder{
+    pub fn create_certificate_authority(&self) -> crate::operation::create_certificate_authority::builders::CreateCertificateAuthorityFluentBuilder {
         crate::operation::create_certificate_authority::builders::CreateCertificateAuthorityFluentBuilder::new(self.handle.clone())
     }
 }

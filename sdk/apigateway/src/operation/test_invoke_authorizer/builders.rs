@@ -37,9 +37,7 @@ impl TestInvokeAuthorizerFluentBuilder {
         }
     }
     /// Access the TestInvokeAuthorizer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl TestInvokeAuthorizerFluentBuilder {
             crate::operation::test_invoke_authorizer::TestInvokeAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl TestInvokeAuthorizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl TestInvokeAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl TestInvokeAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl TestInvokeAuthorizerFluentBuilder {
             crate::operation::test_invoke_authorizer::TestInvokeAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl TestInvokeAuthorizerFluentBuilder {
         self.inner.get_rest_api_id()
     }
     /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
-    pub fn authorizer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorizer_id(input.into());
         self
     }
     /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
-    pub fn set_authorizer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorizer_id(input);
         self
     }
@@ -161,30 +142,17 @@ impl TestInvokeAuthorizerFluentBuilder {
     /// To override the contents of this collection use [`set_headers`](Self::set_headers).
     ///
     /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
-    pub fn headers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.headers(k.into(), v.into());
         self
     }
     /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
-    pub fn set_headers(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_headers(input);
         self
     }
     /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
-    pub fn get_headers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_headers()
     }
     /// Adds a key-value pair to `multiValueHeaders`.
@@ -192,23 +160,14 @@ impl TestInvokeAuthorizerFluentBuilder {
     /// To override the contents of this collection use [`set_multi_value_headers`](Self::set_multi_value_headers).
     ///
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
-    pub fn multi_value_headers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn multi_value_headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.multi_value_headers(k.into(), v);
         self
     }
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
     pub fn set_multi_value_headers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_multi_value_headers(input);
         self
@@ -216,24 +175,16 @@ impl TestInvokeAuthorizerFluentBuilder {
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
     pub fn get_multi_value_headers(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_multi_value_headers()
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-    pub fn path_with_query_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn path_with_query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.path_with_query_string(input.into());
         self
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-    pub fn set_path_with_query_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_path_with_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_path_with_query_string(input);
         self
     }
@@ -271,19 +222,13 @@ impl TestInvokeAuthorizerFluentBuilder {
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
     pub fn set_stage_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_stage_variables(input);
         self
     }
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
-    pub fn get_stage_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_stage_variables()
     }
     /// Adds a key-value pair to `additionalContext`.
@@ -302,19 +247,13 @@ impl TestInvokeAuthorizerFluentBuilder {
     /// <p>A key-value map of additional context variables.</p>
     pub fn set_additional_context(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_additional_context(input);
         self
     }
     /// <p>A key-value map of additional context variables.</p>
-    pub fn get_additional_context(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_additional_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_additional_context()
     }
 }

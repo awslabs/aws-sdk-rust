@@ -173,9 +173,7 @@ impl ByteMatchTuple {
     /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p>
     /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>TargetString</code> must appear at the end of the specified part of the web request.</p>
-    pub fn positional_constraint(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PositionalConstraint> {
+    pub fn positional_constraint(&self) -> ::std::option::Option<&crate::types::PositionalConstraint> {
         self.positional_constraint.as_ref()
     }
 }
@@ -188,9 +186,7 @@ impl ByteMatchTuple {
 
 /// A builder for [`ByteMatchTuple`](crate::types::ByteMatchTuple).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ByteMatchTupleBuilder {
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     pub(crate) target_string: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -204,10 +200,7 @@ impl ByteMatchTupleBuilder {
         self
     }
     /// <p>The part of a web request that you want AWS WAF to search, such as a specified header or a query string. For more information, see <code>FieldToMatch</code>.</p>
-    pub fn set_field_to_match(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldToMatch>,
-    ) -> Self {
+    pub fn set_field_to_match(mut self, input: ::std::option::Option<crate::types::FieldToMatch>) -> Self {
         self.field_to_match = input;
         self
     }
@@ -253,10 +246,7 @@ impl ByteMatchTupleBuilder {
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p>
     /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p>
     /// <p>The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
-    pub fn set_target_string(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_target_string(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.target_string = input;
         self
     }
@@ -360,10 +350,7 @@ impl ByteMatchTupleBuilder {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn set_text_transformation(
-        mut self,
-        input: ::std::option::Option<crate::types::TextTransformation>,
-    ) -> Self {
+    pub fn set_text_transformation(mut self, input: ::std::option::Option<crate::types::TextTransformation>) -> Self {
         self.text_transformation = input;
         self
     }
@@ -405,9 +392,7 @@ impl ByteMatchTupleBuilder {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn get_text_transformation(
-        &self,
-    ) -> &::std::option::Option<crate::types::TextTransformation> {
+    pub fn get_text_transformation(&self) -> &::std::option::Option<crate::types::TextTransformation> {
         &self.text_transformation
     }
     /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p>
@@ -448,10 +433,7 @@ impl ByteMatchTupleBuilder {
     /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p>
     /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>TargetString</code> must appear at the end of the specified part of the web request.</p>
-    pub fn set_positional_constraint(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionalConstraint>,
-    ) -> Self {
+    pub fn set_positional_constraint(mut self, input: ::std::option::Option<crate::types::PositionalConstraint>) -> Self {
         self.positional_constraint = input;
         self
     }
@@ -472,9 +454,7 @@ impl ByteMatchTupleBuilder {
     /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p>
     /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>TargetString</code> must appear at the end of the specified part of the web request.</p>
-    pub fn get_positional_constraint(
-        &self,
-    ) -> &::std::option::Option<crate::types::PositionalConstraint> {
+    pub fn get_positional_constraint(&self) -> &::std::option::Option<crate::types::PositionalConstraint> {
         &self.positional_constraint
     }
     /// Consumes the builder and constructs a [`ByteMatchTuple`](crate::types::ByteMatchTuple).

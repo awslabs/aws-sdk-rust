@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDetectorVersionOutput {
 }
 impl UpdateDetectorVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionOutput`](crate::operation::update_detector_version::UpdateDetectorVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_detector_version::builders::UpdateDetectorVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_detector_version::builders::UpdateDetectorVersionOutputBuilder {
         crate::operation::update_detector_version::builders::UpdateDetectorVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDetectorVersionOutput`](crate::operation::update_detector_version::UpdateDetectorVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDetectorVersionOutputBuilder {
     _request_id: Option<String>,
 }

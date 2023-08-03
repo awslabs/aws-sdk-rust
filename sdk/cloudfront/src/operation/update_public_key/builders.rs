@@ -10,10 +10,7 @@ impl UpdatePublicKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_public_key::UpdatePublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_key::UpdatePublicKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_key::UpdatePublicKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_public_key();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdatePublicKeyFluentBuilder {
         }
     }
     /// Access the UpdatePublicKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_public_key::builders::UpdatePublicKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_public_key::builders::UpdatePublicKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdatePublicKeyFluentBuilder {
             crate::operation::update_public_key::UpdatePublicKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_key::UpdatePublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_key::UpdatePublicKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdatePublicKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdatePublicKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_public_key::UpdatePublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_key::UpdatePublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_key::UpdatePublicKeyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdatePublicKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_public_key::UpdatePublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_key::UpdatePublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_key::UpdatePublicKeyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdatePublicKeyFluentBuilder {
             crate::operation::update_public_key::UpdatePublicKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_key::UpdatePublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_key::UpdatePublicKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl UpdatePublicKeyFluentBuilder {
         self
     }
     /// <p>A public key configuration.</p>
-    pub fn set_public_key_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicKeyConfig>,
-    ) -> Self {
+    pub fn set_public_key_config(mut self, input: ::std::option::Option<crate::types::PublicKeyConfig>) -> Self {
         self.inner = self.inner.set_public_key_config(input);
         self
     }

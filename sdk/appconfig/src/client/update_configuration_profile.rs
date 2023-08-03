@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`validators(Option<Vec<Validator>>)`](crate::operation::update_configuration_profile::UpdateConfigurationProfileOutput::validators): <p>A list of methods for validating the configuration.</p>
     ///   - [`r#type(Option<String>)`](crate::operation::update_configuration_profile::UpdateConfigurationProfileOutput::type): <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>  <p> <code>AWS.AppConfig.FeatureFlags</code> </p>  <p> <code>AWS.Freeform</code> </p>
     /// - On failure, responds with [`SdkError<UpdateConfigurationProfileError>`](crate::operation::update_configuration_profile::UpdateConfigurationProfileError)
-    pub fn update_configuration_profile(&self) -> crate::operation::update_configuration_profile::builders::UpdateConfigurationProfileFluentBuilder{
+    pub fn update_configuration_profile(&self) -> crate::operation::update_configuration_profile::builders::UpdateConfigurationProfileFluentBuilder {
         crate::operation::update_configuration_profile::builders::UpdateConfigurationProfileFluentBuilder::new(self.handle.clone())
     }
 }

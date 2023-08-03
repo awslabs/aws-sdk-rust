@@ -30,9 +30,7 @@ impl NumericAxisOptions {
 
 /// A builder for [`NumericAxisOptions`](crate::types::NumericAxisOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumericAxisOptionsBuilder {
     pub(crate) scale: ::std::option::Option<crate::types::AxisScale>,
     pub(crate) range: ::std::option::Option<crate::types::AxisDisplayRange>,
@@ -58,10 +56,7 @@ impl NumericAxisOptionsBuilder {
         self
     }
     /// <p>The range setup of a numeric axis.</p>
-    pub fn set_range(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisDisplayRange>,
-    ) -> Self {
+    pub fn set_range(mut self, input: ::std::option::Option<crate::types::AxisDisplayRange>) -> Self {
         self.range = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`workflow_id(impl ::std::convert::Into<String>)`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::set_workflow_id): <p>Unique identifier for the workflow.</p>
     /// - On success, responds with [`DeleteWorkflowOutput`](crate::operation::delete_workflow::DeleteWorkflowOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkflowError>`](crate::operation::delete_workflow::DeleteWorkflowError)
-    pub fn delete_workflow(
-        &self,
-    ) -> crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder {
-        crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workflow(&self) -> crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder {
+        crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

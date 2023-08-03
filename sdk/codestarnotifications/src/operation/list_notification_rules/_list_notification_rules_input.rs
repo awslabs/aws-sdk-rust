@@ -33,21 +33,16 @@ impl ListNotificationRulesInput {
 }
 impl ListNotificationRulesInput {
     /// Creates a new builder-style object to manufacture [`ListNotificationRulesInput`](crate::operation::list_notification_rules::ListNotificationRulesInput).
-    pub fn builder(
-    ) -> crate::operation::list_notification_rules::builders::ListNotificationRulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_notification_rules::builders::ListNotificationRulesInputBuilder {
         crate::operation::list_notification_rules::builders::ListNotificationRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotificationRulesInput`](crate::operation::list_notification_rules::ListNotificationRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotificationRulesInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -68,19 +63,14 @@ impl ListNotificationRulesInputBuilder {
     /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>> {
         &self.filters
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
@@ -114,16 +104,12 @@ impl ListNotificationRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListNotificationRulesInput`](crate::operation::list_notification_rules::ListNotificationRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_notification_rules::ListNotificationRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_notification_rules::ListNotificationRulesInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_notification_rules::ListNotificationRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_notification_rules::ListNotificationRulesInput {
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

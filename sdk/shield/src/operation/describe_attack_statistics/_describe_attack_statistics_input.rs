@@ -5,18 +5,14 @@
 pub struct DescribeAttackStatisticsInput {}
 impl DescribeAttackStatisticsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAttackStatisticsInput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsInputBuilder {
         crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAttackStatisticsInput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAttackStatisticsInputBuilder {}
 impl DescribeAttackStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAttackStatisticsInput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput).
@@ -26,8 +22,6 @@ impl DescribeAttackStatisticsInputBuilder {
         crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput {})
     }
 }

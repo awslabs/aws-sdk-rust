@@ -5,8 +5,7 @@
 pub struct DescribeContinuousExportsOutput {
     /// <p>A list of continuous export descriptions.</p>
     #[doc(hidden)]
-    pub descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>>,
+    pub descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>>,
     /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeContinuousExportsOutput {
 }
 impl DescribeContinuousExportsOutput {
     /// <p>A list of continuous export descriptions.</p>
-    pub fn descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ContinuousExportDescription]> {
+    pub fn descriptions(&self) -> ::std::option::Option<&[crate::types::ContinuousExportDescription]> {
         self.descriptions.as_deref()
     }
     /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeContinuousExportsOutput {
 }
 impl DescribeContinuousExportsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContinuousExportsOutput`](crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput).
-    pub fn builder() -> crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsOutputBuilder {
         crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeContinuousExportsOutput`](crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContinuousExportsOutputBuilder {
-    pub(crate) descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>>,
+    pub(crate) descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeContinuousExportsOutputBuilder {
         self
     }
     /// <p>A list of continuous export descriptions.</p>
-    pub fn set_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>>,
-    ) -> Self {
+    pub fn set_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>>) -> Self {
         self.descriptions = input;
         self
     }
     /// <p>A list of continuous export descriptions.</p>
-    pub fn get_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>> {
+    pub fn get_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>> {
         &self.descriptions
     }
     /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
@@ -97,9 +86,7 @@ impl DescribeContinuousExportsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeContinuousExportsOutput`](crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput {
+    pub fn build(self) -> crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput {
         crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput {
             descriptions: self.descriptions,
             next_token: self.next_token,

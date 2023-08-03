@@ -5,9 +5,7 @@
 pub struct NotifyTerminateProvisionedProductEngineWorkflowResultOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId
-    for NotifyTerminateProvisionedProductEngineWorkflowResultOutput
-{
+impl ::aws_http::request_id::RequestId for NotifyTerminateProvisionedProductEngineWorkflowResultOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,9 +19,7 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultOutput {
 
 /// A builder for [`NotifyTerminateProvisionedProductEngineWorkflowResultOutput`](crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyTerminateProvisionedProductEngineWorkflowResultOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,7 +34,10 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`NotifyTerminateProvisionedProductEngineWorkflowResultOutput`](crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput).
-    pub fn build(self) -> crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput
+    {
         crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput {
             _request_id: self._request_id,
         }

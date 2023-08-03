@@ -22,16 +22,14 @@ impl DescribeAddonConfigurationInput {
 }
 impl DescribeAddonConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAddonConfigurationInput`](crate::operation::describe_addon_configuration::DescribeAddonConfigurationInput).
-    pub fn builder() -> crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationInputBuilder {
         crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddonConfigurationInput`](crate::operation::describe_addon_configuration::DescribeAddonConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddonConfigurationInputBuilder {
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,
     pub(crate) addon_version: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DescribeAddonConfigurationInputBuilder {
         &self.addon_name
     }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
-    pub fn addon_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn addon_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
-    pub fn set_addon_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_addon_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_version = input;
         self
     }
@@ -78,11 +70,9 @@ impl DescribeAddonConfigurationInputBuilder {
         crate::operation::describe_addon_configuration::DescribeAddonConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_addon_configuration::DescribeAddonConfigurationInput {
-                addon_name: self.addon_name,
-                addon_version: self.addon_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_addon_configuration::DescribeAddonConfigurationInput {
+            addon_name: self.addon_name,
+            addon_version: self.addon_version,
+        })
     }
 }

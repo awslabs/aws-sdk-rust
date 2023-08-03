@@ -24,18 +24,14 @@ impl DeleteBucketAccessKeyInput {
 }
 impl DeleteBucketAccessKeyInput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketAccessKeyInput`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyInputBuilder {
         crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBucketAccessKeyInput`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBucketAccessKeyInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
@@ -57,19 +53,13 @@ impl DeleteBucketAccessKeyInputBuilder {
     }
     /// <p>The ID of the access key to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the access key to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_key_id = input;
         self
     }
@@ -81,15 +71,11 @@ impl DeleteBucketAccessKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketAccessKeyInput`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput {
-                bucket_name: self.bucket_name,
-                access_key_id: self.access_key_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput {
+            bucket_name: self.bucket_name,
+            access_key_id: self.access_key_id,
+        })
     }
 }

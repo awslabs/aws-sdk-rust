@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
         crate::operation::list_applications::builders::ListApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListApplicationsOutputBuilder {
         self
     }
     /// <p>Applications list.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.items = input;
         self
     }

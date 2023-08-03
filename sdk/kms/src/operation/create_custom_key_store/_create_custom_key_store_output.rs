@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateCustomKeyStoreOutput {
 }
 impl CreateCustomKeyStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomKeyStoreOutput`](crate::operation::create_custom_key_store::CreateCustomKeyStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_key_store::builders::CreateCustomKeyStoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_custom_key_store::builders::CreateCustomKeyStoreOutputBuilder {
         crate::operation::create_custom_key_store::builders::CreateCustomKeyStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomKeyStoreOutput`](crate::operation::create_custom_key_store::CreateCustomKeyStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomKeyStoreOutputBuilder {
     pub(crate) custom_key_store_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateCustomKeyStoreOutputBuilder {
     /// <p>A unique identifier for the new custom key store.</p>
-    pub fn custom_key_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the new custom key store.</p>
-    pub fn set_custom_key_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_key_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_key_store_id = input;
         self
     }

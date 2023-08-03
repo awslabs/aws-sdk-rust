@@ -31,9 +31,7 @@ impl NumericalDimensionField {
         self.hierarchy_id.as_deref()
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumberFormatConfiguration> {
+    pub fn format_configuration(&self) -> ::std::option::Option<&crate::types::NumberFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl NumericalDimensionField {
 
 /// A builder for [`NumericalDimensionField`](crate::types::NumericalDimensionField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumericalDimensionFieldBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
@@ -76,10 +72,7 @@ impl NumericalDimensionFieldBuilder {
         self
     }
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.column = input;
         self
     }
@@ -107,17 +100,12 @@ impl NumericalDimensionFieldBuilder {
         self
     }
     /// <p>The format configuration of the field.</p>
-    pub fn set_format_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NumberFormatConfiguration>,
-    ) -> Self {
+    pub fn set_format_configuration(mut self, input: ::std::option::Option<crate::types::NumberFormatConfiguration>) -> Self {
         self.format_configuration = input;
         self
     }
     /// <p>The format configuration of the field.</p>
-    pub fn get_format_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumberFormatConfiguration> {
+    pub fn get_format_configuration(&self) -> &::std::option::Option<crate::types::NumberFormatConfiguration> {
         &self.format_configuration
     }
     /// Consumes the builder and constructs a [`NumericalDimensionField`](crate::types::NumericalDimensionField).

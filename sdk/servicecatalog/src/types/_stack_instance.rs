@@ -34,9 +34,7 @@ impl StackInstance {
     /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
     /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
-    pub fn stack_instance_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackInstanceStatus> {
+    pub fn stack_instance_status(&self) -> ::std::option::Option<&crate::types::StackInstanceStatus> {
         self.stack_instance_status.as_ref()
     }
 }
@@ -49,9 +47,7 @@ impl StackInstance {
 
 /// A builder for [`StackInstance`](crate::types::StackInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackInstanceBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -102,10 +98,7 @@ impl StackInstanceBuilder {
     /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
     /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
-    pub fn set_stack_instance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackInstanceStatus>,
-    ) -> Self {
+    pub fn set_stack_instance_status(mut self, input: ::std::option::Option<crate::types::StackInstanceStatus>) -> Self {
         self.stack_instance_status = input;
         self
     }
@@ -115,9 +108,7 @@ impl StackInstanceBuilder {
     /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
     /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
-    pub fn get_stack_instance_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackInstanceStatus> {
+    pub fn get_stack_instance_status(&self) -> &::std::option::Option<crate::types::StackInstanceStatus> {
         &self.stack_instance_status
     }
     /// Consumes the builder and constructs a [`StackInstance`](crate::types::StackInstance).

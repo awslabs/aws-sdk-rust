@@ -30,17 +30,14 @@ impl FailedMemberAccountEc2DeepInspectionStatusState {
 }
 impl FailedMemberAccountEc2DeepInspectionStatusState {
     /// Creates a new builder-style object to manufacture [`FailedMemberAccountEc2DeepInspectionStatusState`](crate::types::FailedMemberAccountEc2DeepInspectionStatusState).
-    pub fn builder(
-    ) -> crate::types::builders::FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
+    pub fn builder() -> crate::types::builders::FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
         crate::types::builders::FailedMemberAccountEc2DeepInspectionStatusStateBuilder::default()
     }
 }
 
 /// A builder for [`FailedMemberAccountEc2DeepInspectionStatusState`](crate::types::FailedMemberAccountEc2DeepInspectionStatusState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_scan_status: ::std::option::Option<crate::types::Status>,
@@ -67,10 +64,7 @@ impl FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
         self
     }
     /// <p>The status of EC2 scanning in the account that failed to activate Amazon Inspector deep inspection.</p>
-    pub fn set_ec2_scan_status(
-        mut self,
-        input: ::std::option::Option<crate::types::Status>,
-    ) -> Self {
+    pub fn set_ec2_scan_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.ec2_scan_status = input;
         self
     }
@@ -79,18 +73,12 @@ impl FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
         &self.ec2_scan_status
     }
     /// <p>The error message explaining why the account failed to activate Amazon Inspector deep inspection.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message explaining why the account failed to activate Amazon Inspector deep inspection.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

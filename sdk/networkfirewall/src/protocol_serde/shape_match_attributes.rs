@@ -69,10 +69,7 @@ pub fn ser_match_attributes(
             {
                 #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_tcp_flag_field::ser_tcp_flag_field(
-                    &mut object_23,
-                    item_22,
-                )?;
+                crate::protocol_serde::shape_tcp_flag_field::ser_tcp_flag_field(&mut object_23, item_22)?;
                 object_23.finish();
             }
         }
@@ -83,17 +80,9 @@ pub fn ser_match_attributes(
 
 pub(crate) fn de_match_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::MatchAttributes>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::MatchAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -103,59 +92,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Sources" => {
-                            builder = builder.set_sources(
-                                crate::protocol_serde::shape_addresses::de_addresses(tokens)?,
-                            );
+                            builder = builder.set_sources(crate::protocol_serde::shape_addresses::de_addresses(tokens)?);
                         }
                         "Destinations" => {
-                            builder = builder.set_destinations(
-                                crate::protocol_serde::shape_addresses::de_addresses(tokens)?,
-                            );
+                            builder = builder.set_destinations(crate::protocol_serde::shape_addresses::de_addresses(tokens)?);
                         }
                         "SourcePorts" => {
-                            builder = builder.set_source_ports(
-                                crate::protocol_serde::shape_port_ranges::de_port_ranges(tokens)?,
-                            );
+                            builder = builder.set_source_ports(crate::protocol_serde::shape_port_ranges::de_port_ranges(tokens)?);
                         }
                         "DestinationPorts" => {
-                            builder = builder.set_destination_ports(
-                                crate::protocol_serde::shape_port_ranges::de_port_ranges(tokens)?,
-                            );
+                            builder = builder.set_destination_ports(crate::protocol_serde::shape_port_ranges::de_port_ranges(tokens)?);
                         }
                         "Protocols" => {
-                            builder = builder.set_protocols(
-                                crate::protocol_serde::shape_protocol_numbers::de_protocol_numbers(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_protocols(crate::protocol_serde::shape_protocol_numbers::de_protocol_numbers(tokens)?);
                         }
                         "TCPFlags" => {
-                            builder = builder.set_tcp_flags(
-                                crate::protocol_serde::shape_tcp_flags::de_tcp_flags(tokens)?,
-                            );
+                            builder = builder.set_tcp_flags(crate::protocol_serde::shape_tcp_flags::de_tcp_flags(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

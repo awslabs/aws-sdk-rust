@@ -36,16 +36,14 @@ impl UpdateCompanyNetworkConfigurationInput {
 }
 impl UpdateCompanyNetworkConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateCompanyNetworkConfigurationInput`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationInput).
-    pub fn builder() -> crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationInputBuilder {
         crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCompanyNetworkConfigurationInput`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCompanyNetworkConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -93,10 +91,7 @@ impl UpdateCompanyNetworkConfigurationInputBuilder {
         self
     }
     /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -109,42 +104,35 @@ impl UpdateCompanyNetworkConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The security groups associated with access to the provided subnets.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups associated with access to the provided subnets.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The security groups associated with access to the provided subnets.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`UpdateCompanyNetworkConfigurationInput`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationInput {
-                fleet_arn: self.fleet_arn
-                ,
-                vpc_id: self.vpc_id
-                ,
-                subnet_ids: self.subnet_ids
-                ,
-                security_group_ids: self.security_group_ids
-                ,
-            }
+                fleet_arn: self.fleet_arn,
+                vpc_id: self.vpc_id,
+                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids,
+            },
         )
     }
 }

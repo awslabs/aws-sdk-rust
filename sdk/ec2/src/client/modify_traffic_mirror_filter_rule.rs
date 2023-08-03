@@ -18,7 +18,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyTrafficMirrorFilterRuleOutput`](crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleOutput) with field(s):
     ///   - [`traffic_mirror_filter_rule(Option<TrafficMirrorFilterRule>)`](crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleOutput::traffic_mirror_filter_rule): <p>Modifies a Traffic Mirror rule.</p>
     /// - On failure, responds with [`SdkError<ModifyTrafficMirrorFilterRuleError>`](crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleError)
-    pub fn modify_traffic_mirror_filter_rule(&self) -> crate::operation::modify_traffic_mirror_filter_rule::builders::ModifyTrafficMirrorFilterRuleFluentBuilder{
+    pub fn modify_traffic_mirror_filter_rule(
+        &self,
+    ) -> crate::operation::modify_traffic_mirror_filter_rule::builders::ModifyTrafficMirrorFilterRuleFluentBuilder {
         crate::operation::modify_traffic_mirror_filter_rule::builders::ModifyTrafficMirrorFilterRuleFluentBuilder::new(self.handle.clone())
     }
 }

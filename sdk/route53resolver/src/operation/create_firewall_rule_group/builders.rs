@@ -26,8 +26,7 @@ impl CreateFirewallRuleGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFirewallRuleGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_firewall_rule_group::builders::CreateFirewallRuleGroupInputBuilder,
+    inner: crate::operation::create_firewall_rule_group::builders::CreateFirewallRuleGroupInputBuilder,
 }
 impl CreateFirewallRuleGroupFluentBuilder {
     /// Creates a new `CreateFirewallRuleGroup`.
@@ -38,10 +37,7 @@ impl CreateFirewallRuleGroupFluentBuilder {
         }
     }
     /// Access the CreateFirewallRuleGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_firewall_rule_group::builders::CreateFirewallRuleGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_firewall_rule_group::builders::CreateFirewallRuleGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateFirewallRuleGroupFluentBuilder {
             crate::operation::create_firewall_rule_group::CreateFirewallRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateFirewallRuleGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateFirewallRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateFirewallRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl CreateFirewallRuleGroupFluentBuilder {
             crate::operation::create_firewall_rule_group::CreateFirewallRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -168,10 +147,7 @@ impl CreateFirewallRuleGroupFluentBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to associate with the rule group. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

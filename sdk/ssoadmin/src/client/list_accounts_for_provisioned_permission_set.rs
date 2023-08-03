@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`account_ids(Option<Vec<String>>)`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput::account_ids): <p>The list of AWS <code>AccountIds</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListAccountsForProvisionedPermissionSetError>`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError)
-    pub fn list_accounts_for_provisioned_permission_set(&self) -> crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder{
-        crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::new(self.handle.clone())
+    pub fn list_accounts_for_provisioned_permission_set(
+        &self,
+    ) -> crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder {
+        crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

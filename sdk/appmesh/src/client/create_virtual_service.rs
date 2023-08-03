@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVirtualServiceOutput`](crate::operation::create_virtual_service::CreateVirtualServiceOutput) with field(s):
     ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::operation::create_virtual_service::CreateVirtualServiceOutput::virtual_service): <p>The full description of your virtual service following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateVirtualServiceError>`](crate::operation::create_virtual_service::CreateVirtualServiceError)
-    pub fn create_virtual_service(
-        &self,
-    ) -> crate::operation::create_virtual_service::builders::CreateVirtualServiceFluentBuilder {
-        crate::operation::create_virtual_service::builders::CreateVirtualServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_virtual_service(&self) -> crate::operation::create_virtual_service::builders::CreateVirtualServiceFluentBuilder {
+        crate::operation::create_virtual_service::builders::CreateVirtualServiceFluentBuilder::new(self.handle.clone())
     }
 }

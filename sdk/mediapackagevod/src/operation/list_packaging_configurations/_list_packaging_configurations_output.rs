@@ -8,8 +8,7 @@ pub struct ListPackagingConfigurationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of MediaPackage VOD PackagingConfiguration resources.
     #[doc(hidden)]
-    pub packaging_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>>,
+    pub packaging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListPackagingConfigurationsOutput {
@@ -18,9 +17,7 @@ impl ListPackagingConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// A list of MediaPackage VOD PackagingConfiguration resources.
-    pub fn packaging_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PackagingConfiguration]> {
+    pub fn packaging_configurations(&self) -> ::std::option::Option<&[crate::types::PackagingConfiguration]> {
         self.packaging_configurations.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListPackagingConfigurationsOutput {
 }
 impl ListPackagingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPackagingConfigurationsOutput`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsOutputBuilder {
         crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackagingConfigurationsOutput`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackagingConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) packaging_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>>,
+    pub(crate) packaging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListPackagingConfigurationsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListPackagingConfigurationsOutputBuilder {
         self
     }
     /// A list of MediaPackage VOD PackagingConfiguration resources.
-    pub fn set_packaging_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>>,
-    ) -> Self {
+    pub fn set_packaging_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>>) -> Self {
         self.packaging_configurations = input;
         self
     }
     /// A list of MediaPackage VOD PackagingConfiguration resources.
-    pub fn get_packaging_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>> {
+    pub fn get_packaging_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>> {
         &self.packaging_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl ListPackagingConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPackagingConfigurationsOutput`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput {
         crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput {
             next_token: self.next_token,
             packaging_configurations: self.packaging_configurations,

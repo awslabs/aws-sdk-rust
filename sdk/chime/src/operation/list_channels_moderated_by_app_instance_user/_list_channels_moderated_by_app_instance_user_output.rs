@@ -5,9 +5,7 @@
 pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
     #[doc(hidden)]
-    pub channels: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>,
-    >,
+    pub channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>>,
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +13,7 @@ pub struct ListChannelsModeratedByAppInstanceUserOutput {
 }
 impl ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
-    pub fn channels(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChannelModeratedByAppInstanceUserSummary]> {
+    pub fn channels(&self) -> ::std::option::Option<&[crate::types::ChannelModeratedByAppInstanceUserSummary]> {
         self.channels.as_deref()
     }
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
@@ -41,7 +37,8 @@ impl ::aws_http::request_id::RequestId for ListChannelsModeratedByAppInstanceUse
 }
 impl ListChannelsModeratedByAppInstanceUserOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelsModeratedByAppInstanceUserOutput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput).
-    pub fn builder() -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserOutputBuilder{
+    pub fn builder() -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserOutputBuilder
+    {
         crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserOutputBuilder::default()
     }
 }
@@ -50,9 +47,7 @@ impl ListChannelsModeratedByAppInstanceUserOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListChannelsModeratedByAppInstanceUserOutputBuilder {
-    pub(crate) channels: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>,
-    >,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,31 +57,19 @@ impl ListChannelsModeratedByAppInstanceUserOutputBuilder {
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
     ///
     /// <p>The moderated channels in the request.</p>
-    pub fn channels(
-        mut self,
-        input: crate::types::ChannelModeratedByAppInstanceUserSummary,
-    ) -> Self {
+    pub fn channels(mut self, input: crate::types::ChannelModeratedByAppInstanceUserSummary) -> Self {
         let mut v = self.channels.unwrap_or_default();
         v.push(input);
         self.channels = ::std::option::Option::Some(v);
         self
     }
     /// <p>The moderated channels in the request.</p>
-    pub fn set_channels(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>,
-        >,
-    ) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>>) -> Self {
         self.channels = input;
         self
     }
     /// <p>The moderated channels in the request.</p>
-    pub fn get_channels(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>,
-    > {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>> {
         &self.channels
     }
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
@@ -113,12 +96,10 @@ impl ListChannelsModeratedByAppInstanceUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListChannelsModeratedByAppInstanceUserOutput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput).
-    pub fn build(self) -> crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput{
+    pub fn build(self) -> crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput {
         crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput {
-            channels: self.channels
-            ,
-            next_token: self.next_token
-            ,
+            channels: self.channels,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

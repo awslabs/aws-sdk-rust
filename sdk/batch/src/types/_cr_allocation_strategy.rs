@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CrAllocationStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for CrAllocationStrategy {
             "BEST_FIT" => CrAllocationStrategy::BestFit,
             "BEST_FIT_PROGRESSIVE" => CrAllocationStrategy::BestFitProgressive,
             "SPOT_CAPACITY_OPTIMIZED" => CrAllocationStrategy::SpotCapacityOptimized,
-            other => CrAllocationStrategy::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CrAllocationStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl CrAllocationStrategy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BEST_FIT",
-            "BEST_FIT_PROGRESSIVE",
-            "SPOT_CAPACITY_OPTIMIZED",
-        ]
+        &["BEST_FIT", "BEST_FIT_PROGRESSIVE", "SPOT_CAPACITY_OPTIMIZED"]
     }
 }
 impl ::std::convert::AsRef<str> for CrAllocationStrategy {

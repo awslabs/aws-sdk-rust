@@ -19,7 +19,9 @@ impl super::Client {
     /// - On success, responds with [`CreateInstancesFromSnapshotOutput`](crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateInstancesFromSnapshotError>`](crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError)
-    pub fn create_instances_from_snapshot(&self) -> crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotFluentBuilder{
+    pub fn create_instances_from_snapshot(
+        &self,
+    ) -> crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotFluentBuilder {
         crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,27 +30,19 @@ impl BuiltInSlotTypeSummary {
 
 /// A builder for [`BuiltInSlotTypeSummary`](crate::types::BuiltInSlotTypeSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuiltInSlotTypeSummaryBuilder {
     pub(crate) slot_type_signature: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl BuiltInSlotTypeSummaryBuilder {
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
-    pub fn slot_type_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slot_type_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_type_signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
-    pub fn set_slot_type_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_slot_type_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_type_signature = input;
         self
     }

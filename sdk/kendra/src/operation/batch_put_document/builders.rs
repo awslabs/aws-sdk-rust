@@ -10,10 +10,7 @@ impl BatchPutDocumentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_put_document::BatchPutDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_document::BatchPutDocumentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_document::BatchPutDocumentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_put_document();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl BatchPutDocumentFluentBuilder {
         }
     }
     /// Access the BatchPutDocument as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_put_document::builders::BatchPutDocumentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_put_document::builders::BatchPutDocumentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl BatchPutDocumentFluentBuilder {
             crate::operation::batch_put_document::BatchPutDocument,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_document::BatchPutDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_document::BatchPutDocumentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl BatchPutDocumentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl BatchPutDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_document::BatchPutDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_document::BatchPutDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_document::BatchPutDocumentError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl BatchPutDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_document::BatchPutDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_document::BatchPutDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_document::BatchPutDocumentError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl BatchPutDocumentFluentBuilder {
             crate::operation::batch_put_document::BatchPutDocument,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_document::BatchPutDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_document::BatchPutDocumentError>,
     > {
         self.customize_middleware().await
     }
@@ -175,10 +159,7 @@ impl BatchPutDocumentFluentBuilder {
     /// <li> <p>5 MB extracted text for any file</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    pub fn set_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
-    ) -> Self {
+    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
         self.inner = self.inner.set_documents(input);
         self
     }
@@ -194,10 +175,7 @@ impl BatchPutDocumentFluentBuilder {
     }
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn custom_document_enrichment_configuration(
-        mut self,
-        input: crate::types::CustomDocumentEnrichmentConfiguration,
-    ) -> Self {
+    pub fn custom_document_enrichment_configuration(mut self, input: crate::types::CustomDocumentEnrichmentConfiguration) -> Self {
         self.inner = self.inner.custom_document_enrichment_configuration(input);
         self
     }
@@ -207,16 +185,12 @@ impl BatchPutDocumentFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_custom_document_enrichment_configuration(input);
+        self.inner = self.inner.set_custom_document_enrichment_configuration(input);
         self
     }
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn get_custom_document_enrichment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
+    pub fn get_custom_document_enrichment_configuration(&self) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
         self.inner.get_custom_document_enrichment_configuration()
     }
 }

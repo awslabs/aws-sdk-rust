@@ -38,7 +38,7 @@ impl ::std::fmt::Debug for AdminRemoveUserFromGroupInput {
 }
 impl AdminRemoveUserFromGroupInput {
     /// Creates a new builder-style object to manufacture [`AdminRemoveUserFromGroupInput`](crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput).
-    pub fn builder() -> crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupInputBuilder{
+    pub fn builder() -> crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupInputBuilder {
         crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupInputBuilder::default()
     }
 }
@@ -101,13 +101,11 @@ impl AdminRemoveUserFromGroupInputBuilder {
         crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-                group_name: self.group_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput {
+            user_pool_id: self.user_pool_id,
+            username: self.username,
+            group_name: self.group_name,
+        })
     }
 }
 impl ::std::fmt::Debug for AdminRemoveUserFromGroupInputBuilder {

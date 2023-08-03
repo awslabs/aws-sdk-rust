@@ -29,7 +29,7 @@ impl RemoveThingFromBillingGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveThingFromBillingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupInputBuilder,
+    inner: crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupInputBuilder,
 }
 impl RemoveThingFromBillingGroupFluentBuilder {
     /// Creates a new `RemoveThingFromBillingGroup`.
@@ -40,7 +40,7 @@ impl RemoveThingFromBillingGroupFluentBuilder {
         }
     }
     /// Access the RemoveThingFromBillingGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl RemoveThingFromBillingGroupFluentBuilder {
             crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl RemoveThingFromBillingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl RemoveThingFromBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl RemoveThingFromBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +108,17 @@ impl RemoveThingFromBillingGroupFluentBuilder {
             crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_group_name(input.into());
         self
     }
     /// <p>The name of the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_group_name(input);
         self
     }
@@ -144,18 +127,12 @@ impl RemoveThingFromBillingGroupFluentBuilder {
         self.inner.get_billing_group_name()
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn billing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_group_arn(input.into());
         self
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn set_billing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_group_arn(input);
         self
     }

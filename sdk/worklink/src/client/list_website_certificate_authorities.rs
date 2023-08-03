@@ -11,10 +11,10 @@ impl super::Client {
     ///   - [`website_certificate_authorities(Option<Vec<WebsiteCaSummary>>)`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput::website_certificate_authorities): <p>Information about the certificates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListWebsiteCertificateAuthoritiesError>`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn list_website_certificate_authorities(&self) -> crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder{
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn list_website_certificate_authorities(
+        &self,
+    ) -> crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder {
         crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder::new(self.handle.clone())
     }
 }

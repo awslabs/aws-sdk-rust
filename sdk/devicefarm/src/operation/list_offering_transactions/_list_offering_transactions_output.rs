@@ -6,8 +6,7 @@
 pub struct ListOfferingTransactionsOutput {
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
     #[doc(hidden)]
-    pub offering_transactions:
-        ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
+    pub offering_transactions: ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListOfferingTransactionsOutput {
 }
 impl ListOfferingTransactionsOutput {
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
-    pub fn offering_transactions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OfferingTransaction]> {
+    pub fn offering_transactions(&self) -> ::std::option::Option<&[crate::types::OfferingTransaction]> {
         self.offering_transactions.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -32,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListOfferingTransactionsOutput {
 }
 impl ListOfferingTransactionsOutput {
     /// Creates a new builder-style object to manufacture [`ListOfferingTransactionsOutput`](crate::operation::list_offering_transactions::ListOfferingTransactionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_offering_transactions::builders::ListOfferingTransactionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_offering_transactions::builders::ListOfferingTransactionsOutputBuilder {
         crate::operation::list_offering_transactions::builders::ListOfferingTransactionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOfferingTransactionsOutput`](crate::operation::list_offering_transactions::ListOfferingTransactionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOfferingTransactionsOutputBuilder {
-    pub(crate) offering_transactions:
-        ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
+    pub(crate) offering_transactions: ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,17 +55,12 @@ impl ListOfferingTransactionsOutputBuilder {
         self
     }
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
-    pub fn set_offering_transactions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
-    ) -> Self {
+    pub fn set_offering_transactions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>) -> Self {
         self.offering_transactions = input;
         self
     }
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
-    pub fn get_offering_transactions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>> {
+    pub fn get_offering_transactions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>> {
         &self.offering_transactions
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -100,9 +87,7 @@ impl ListOfferingTransactionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListOfferingTransactionsOutput`](crate::operation::list_offering_transactions::ListOfferingTransactionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_offering_transactions::ListOfferingTransactionsOutput {
+    pub fn build(self) -> crate::operation::list_offering_transactions::ListOfferingTransactionsOutput {
         crate::operation::list_offering_transactions::ListOfferingTransactionsOutput {
             offering_transactions: self.offering_transactions,
             next_token: self.next_token,

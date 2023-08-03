@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateAddressBookOutput {
 }
 impl CreateAddressBookOutput {
     /// Creates a new builder-style object to manufacture [`CreateAddressBookOutput`](crate::operation::create_address_book::CreateAddressBookOutput).
-    pub fn builder(
-    ) -> crate::operation::create_address_book::builders::CreateAddressBookOutputBuilder {
+    pub fn builder() -> crate::operation::create_address_book::builders::CreateAddressBookOutputBuilder {
         crate::operation::create_address_book::builders::CreateAddressBookOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAddressBookOutput`](crate::operation::create_address_book::CreateAddressBookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAddressBookOutputBuilder {
     pub(crate) address_book_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAddressBookOutputBuilder {
     /// <p>The ARN of the newly created address book.</p>
-    pub fn address_book_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_book_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the newly created address book.</p>
-    pub fn set_address_book_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_book_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_book_arn = input;
         self
     }

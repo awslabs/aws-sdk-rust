@@ -23,16 +23,14 @@ impl DescribeDomainEndpointOptionsInput {
 }
 impl DescribeDomainEndpointOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsInput`](crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput).
-    pub fn builder() -> crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder {
         crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDomainEndpointOptionsInput`](crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainEndpointOptionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployed: ::std::option::Option<bool>,
@@ -73,13 +71,9 @@ impl DescribeDomainEndpointOptionsInputBuilder {
         crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput {
-                domain_name: self.domain_name
-                ,
-                deployed: self.deployed
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput {
+            domain_name: self.domain_name,
+            deployed: self.deployed,
+        })
     }
 }

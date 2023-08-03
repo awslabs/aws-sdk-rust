@@ -37,10 +37,7 @@ impl GetKxConnectionStringFluentBuilder {
         }
     }
     /// Access the GetKxConnectionString as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_kx_connection_string::builders::GetKxConnectionStringInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_kx_connection_string::builders::GetKxConnectionStringInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetKxConnectionStringFluentBuilder {
             crate::operation::get_kx_connection_string::GetKxConnectionString,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_connection_string::GetKxConnectionStringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_connection_string::GetKxConnectionStringError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetKxConnectionStringFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetKxConnectionStringFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_kx_connection_string::GetKxConnectionStringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_connection_string::GetKxConnectionStringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_connection_string::GetKxConnectionStringError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetKxConnectionStringFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_kx_connection_string::GetKxConnectionStringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_connection_string::GetKxConnectionStringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_connection_string::GetKxConnectionStringError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetKxConnectionStringFluentBuilder {
             crate::operation::get_kx_connection_string::GetKxConnectionString,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_connection_string::GetKxConnectionStringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_connection_string::GetKxConnectionStringError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl GetKxConnectionStringFluentBuilder {
         self.inner.get_user_arn()
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }

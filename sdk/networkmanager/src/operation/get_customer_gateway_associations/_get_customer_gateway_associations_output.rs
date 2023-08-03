@@ -5,8 +5,7 @@
 pub struct GetCustomerGatewayAssociationsOutput {
     /// <p>The customer gateway associations.</p>
     #[doc(hidden)]
-    pub customer_gateway_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomerGatewayAssociation>>,
+    pub customer_gateway_associations: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGatewayAssociation>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetCustomerGatewayAssociationsOutput {
 }
 impl GetCustomerGatewayAssociationsOutput {
     /// <p>The customer gateway associations.</p>
-    pub fn customer_gateway_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CustomerGatewayAssociation]> {
+    pub fn customer_gateway_associations(&self) -> ::std::option::Option<&[crate::types::CustomerGatewayAssociation]> {
         self.customer_gateway_associations.as_deref()
     }
     /// <p>The token for the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetCustomerGatewayAssociationsOutput 
 }
 impl GetCustomerGatewayAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetCustomerGatewayAssociationsOutput`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput).
-    pub fn builder() -> crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsOutputBuilder {
         crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCustomerGatewayAssociationsOutput`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCustomerGatewayAssociationsOutputBuilder {
-    pub(crate) customer_gateway_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomerGatewayAssociation>>,
+    pub(crate) customer_gateway_associations: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGatewayAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl GetCustomerGatewayAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_customer_gateway_associations`](Self::set_customer_gateway_associations).
     ///
     /// <p>The customer gateway associations.</p>
-    pub fn customer_gateway_associations(
-        mut self,
-        input: crate::types::CustomerGatewayAssociation,
-    ) -> Self {
+    pub fn customer_gateway_associations(mut self, input: crate::types::CustomerGatewayAssociation) -> Self {
         let mut v = self.customer_gateway_associations.unwrap_or_default();
         v.push(input);
         self.customer_gateway_associations = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl GetCustomerGatewayAssociationsOutputBuilder {
         self
     }
     /// <p>The customer gateway associations.</p>
-    pub fn get_customer_gateway_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerGatewayAssociation>> {
+    pub fn get_customer_gateway_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerGatewayAssociation>> {
         &self.customer_gateway_associations
     }
     /// <p>The token for the next page of results.</p>
@@ -100,10 +89,7 @@ impl GetCustomerGatewayAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCustomerGatewayAssociationsOutput`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput
-    {
+    pub fn build(self) -> crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput {
         crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput {
             customer_gateway_associations: self.customer_gateway_associations,
             next_token: self.next_token,

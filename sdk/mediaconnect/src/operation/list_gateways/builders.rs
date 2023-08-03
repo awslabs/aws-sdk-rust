@@ -10,10 +10,7 @@ impl ListGatewaysInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_gateways::ListGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_gateways::ListGatewaysError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_gateways::ListGatewaysError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_gateways();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListGatewaysFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_gateways::ListGateways,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_gateways::ListGateways, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_gateways::ListGatewaysError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListGatewaysFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_gateways::ListGateways,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_gateways::ListGateways, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_gateways::ListGatewaysError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListGatewaysFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_gateways::paginator::ListGatewaysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_gateways::paginator::ListGatewaysPaginator {
-        crate::operation::list_gateways::paginator::ListGatewaysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_gateways::paginator::ListGatewaysPaginator {
+        crate::operation::list_gateways::paginator::ListGatewaysPaginator::new(self.handle, self.inner)
     }
     /// The maximum number of results to return per API request. For example, you submit a ListGateways request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
     pub fn max_results(mut self, input: i32) -> Self {

@@ -72,9 +72,7 @@ impl UserSettingsSummary {
 
 /// A builder for [`UserSettingsSummary`](crate::types::UserSettingsSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserSettingsSummaryBuilder {
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) copy_allowed: ::std::option::Option<crate::types::EnabledType>,
@@ -87,18 +85,12 @@ pub struct UserSettingsSummaryBuilder {
 }
 impl UserSettingsSummaryBuilder {
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn set_user_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_settings_arn = input;
         self
     }
@@ -112,10 +104,7 @@ impl UserSettingsSummaryBuilder {
         self
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
-    pub fn set_copy_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_copy_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.copy_allowed = input;
         self
     }
@@ -129,10 +118,7 @@ impl UserSettingsSummaryBuilder {
         self
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
-    pub fn set_paste_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_paste_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.paste_allowed = input;
         self
     }
@@ -146,10 +132,7 @@ impl UserSettingsSummaryBuilder {
         self
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
-    pub fn set_download_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_download_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.download_allowed = input;
         self
     }
@@ -163,10 +146,7 @@ impl UserSettingsSummaryBuilder {
         self
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
-    pub fn set_upload_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_upload_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.upload_allowed = input;
         self
     }
@@ -180,10 +160,7 @@ impl UserSettingsSummaryBuilder {
         self
     }
     /// <p>Specifies whether the user can print to the local device.</p>
-    pub fn set_print_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_print_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.print_allowed = input;
         self
     }
@@ -211,10 +188,7 @@ impl UserSettingsSummaryBuilder {
         self
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
-    pub fn set_idle_disconnect_timeout_in_minutes(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_idle_disconnect_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.idle_disconnect_timeout_in_minutes = input;
         self
     }

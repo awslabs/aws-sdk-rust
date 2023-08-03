@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`delivery_stream_name(impl ::std::convert::Into<String>)`](crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionFluentBuilder::set_delivery_stream_name): <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
     /// - On success, responds with [`StopDeliveryStreamEncryptionOutput`](crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput)
     /// - On failure, responds with [`SdkError<StopDeliveryStreamEncryptionError>`](crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError)
-    pub fn stop_delivery_stream_encryption(&self) -> crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionFluentBuilder{
+    pub fn stop_delivery_stream_encryption(
+        &self,
+    ) -> crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionFluentBuilder {
         crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionFluentBuilder::new(self.handle.clone())
     }
 }

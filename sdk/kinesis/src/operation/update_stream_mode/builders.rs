@@ -10,10 +10,7 @@ impl UpdateStreamModeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_stream_mode::UpdateStreamModeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_stream_mode::UpdateStreamModeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stream_mode::UpdateStreamModeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_stream_mode();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateStreamModeFluentBuilder {
         }
     }
     /// Access the UpdateStreamMode as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_stream_mode::builders::UpdateStreamModeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_stream_mode::builders::UpdateStreamModeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateStreamModeFluentBuilder {
             crate::operation::update_stream_mode::UpdateStreamMode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_stream_mode::UpdateStreamModeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stream_mode::UpdateStreamModeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateStreamModeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateStreamModeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_stream_mode::UpdateStreamModeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_stream_mode::UpdateStreamModeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stream_mode::UpdateStreamModeError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateStreamModeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_stream_mode::UpdateStreamModeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_stream_mode::UpdateStreamModeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stream_mode::UpdateStreamModeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateStreamModeFluentBuilder {
             crate::operation::update_stream_mode::UpdateStreamMode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_stream_mode::UpdateStreamModeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stream_mode::UpdateStreamModeError>,
     > {
         self.customize_middleware().await
     }
@@ -142,17 +126,12 @@ impl UpdateStreamModeFluentBuilder {
         self
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn set_stream_mode_details(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamModeDetails>,
-    ) -> Self {
+    pub fn set_stream_mode_details(mut self, input: ::std::option::Option<crate::types::StreamModeDetails>) -> Self {
         self.inner = self.inner.set_stream_mode_details(input);
         self
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn get_stream_mode_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamModeDetails> {
+    pub fn get_stream_mode_details(&self) -> &::std::option::Option<crate::types::StreamModeDetails> {
         self.inner.get_stream_mode_details()
     }
 }

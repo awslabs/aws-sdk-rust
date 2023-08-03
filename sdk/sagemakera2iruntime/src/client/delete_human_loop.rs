@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`human_loop_name(impl ::std::convert::Into<String>)`](crate::operation::delete_human_loop::builders::DeleteHumanLoopFluentBuilder::human_loop_name) / [`set_human_loop_name(Option<String>)`](crate::operation::delete_human_loop::builders::DeleteHumanLoopFluentBuilder::set_human_loop_name): <p>The name of the human loop that you want to delete.</p>
     /// - On success, responds with [`DeleteHumanLoopOutput`](crate::operation::delete_human_loop::DeleteHumanLoopOutput)
     /// - On failure, responds with [`SdkError<DeleteHumanLoopError>`](crate::operation::delete_human_loop::DeleteHumanLoopError)
-    pub fn delete_human_loop(
-        &self,
-    ) -> crate::operation::delete_human_loop::builders::DeleteHumanLoopFluentBuilder {
-        crate::operation::delete_human_loop::builders::DeleteHumanLoopFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_human_loop(&self) -> crate::operation::delete_human_loop::builders::DeleteHumanLoopFluentBuilder {
+        crate::operation::delete_human_loop::builders::DeleteHumanLoopFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,16 +23,14 @@ impl BatchAssociateScramSecretInput {
 }
 impl BatchAssociateScramSecretInput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateScramSecretInput`](crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretInput).
-    pub fn builder() -> crate::operation::batch_associate_scram_secret::builders::BatchAssociateScramSecretInputBuilder{
+    pub fn builder() -> crate::operation::batch_associate_scram_secret::builders::BatchAssociateScramSecretInputBuilder {
         crate::operation::batch_associate_scram_secret::builders::BatchAssociateScramSecretInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchAssociateScramSecretInput`](crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateScramSecretInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,27 +55,19 @@ impl BatchAssociateScramSecretInputBuilder {
     /// To override the contents of this collection use [`set_secret_arn_list`](Self::set_secret_arn_list).
     ///
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
-    pub fn secret_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.secret_arn_list.unwrap_or_default();
         v.push(input.into());
         self.secret_arn_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
-    pub fn set_secret_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_secret_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.secret_arn_list = input;
         self
     }
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
-    pub fn get_secret_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_secret_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.secret_arn_list
     }
     /// Consumes the builder and constructs a [`BatchAssociateScramSecretInput`](crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretInput).
@@ -87,11 +77,9 @@ impl BatchAssociateScramSecretInputBuilder {
         crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretInput {
-                cluster_arn: self.cluster_arn,
-                secret_arn_list: self.secret_arn_list,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretInput {
+            cluster_arn: self.cluster_arn,
+            secret_arn_list: self.secret_arn_list,
+        })
     }
 }

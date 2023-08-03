@@ -37,9 +37,7 @@ impl StartInstanceRefreshInput {
     /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
     /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
-    pub fn desired_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DesiredConfiguration> {
+    pub fn desired_configuration(&self) -> ::std::option::Option<&crate::types::DesiredConfiguration> {
         self.desired_configuration.as_ref()
     }
     /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
@@ -54,17 +52,14 @@ impl StartInstanceRefreshInput {
 }
 impl StartInstanceRefreshInput {
     /// Creates a new builder-style object to manufacture [`StartInstanceRefreshInput`](crate::operation::start_instance_refresh::StartInstanceRefreshInput).
-    pub fn builder(
-    ) -> crate::operation::start_instance_refresh::builders::StartInstanceRefreshInputBuilder {
+    pub fn builder() -> crate::operation::start_instance_refresh::builders::StartInstanceRefreshInputBuilder {
         crate::operation::start_instance_refresh::builders::StartInstanceRefreshInputBuilder::default()
     }
 }
 
 /// A builder for [`StartInstanceRefreshInput`](crate::operation::start_instance_refresh::StartInstanceRefreshInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartInstanceRefreshInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) strategy: ::std::option::Option<crate::types::RefreshStrategy>,
@@ -73,18 +68,12 @@ pub struct StartInstanceRefreshInputBuilder {
 }
 impl StartInstanceRefreshInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -98,10 +87,7 @@ impl StartInstanceRefreshInputBuilder {
         self
     }
     /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
-    pub fn set_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshStrategy>,
-    ) -> Self {
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::RefreshStrategy>) -> Self {
         self.strategy = input;
         self
     }
@@ -121,10 +107,7 @@ impl StartInstanceRefreshInputBuilder {
     /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
     /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
-    pub fn set_desired_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DesiredConfiguration>,
-    ) -> Self {
+    pub fn set_desired_configuration(mut self, input: ::std::option::Option<crate::types::DesiredConfiguration>) -> Self {
         self.desired_configuration = input;
         self
     }
@@ -132,9 +115,7 @@ impl StartInstanceRefreshInputBuilder {
     /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
     /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
-    pub fn get_desired_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DesiredConfiguration> {
+    pub fn get_desired_configuration(&self) -> &::std::option::Option<crate::types::DesiredConfiguration> {
         &self.desired_configuration
     }
     /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
@@ -153,10 +134,7 @@ impl StartInstanceRefreshInputBuilder {
     /// <li> <p>Checkpoints</p> </li>
     /// <li> <p>Skip matching</p> </li>
     /// </ul>
-    pub fn set_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshPreferences>,
-    ) -> Self {
+    pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::RefreshPreferences>) -> Self {
         self.preferences = input;
         self
     }
@@ -172,17 +150,13 @@ impl StartInstanceRefreshInputBuilder {
     /// Consumes the builder and constructs a [`StartInstanceRefreshInput`](crate::operation::start_instance_refresh::StartInstanceRefreshInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_instance_refresh::StartInstanceRefreshInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_instance_refresh::StartInstanceRefreshInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                strategy: self.strategy,
-                desired_configuration: self.desired_configuration,
-                preferences: self.preferences,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_instance_refresh::StartInstanceRefreshInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_instance_refresh::StartInstanceRefreshInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            strategy: self.strategy,
+            desired_configuration: self.desired_configuration,
+            preferences: self.preferences,
+        })
     }
 }

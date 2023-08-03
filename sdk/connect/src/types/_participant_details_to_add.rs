@@ -30,9 +30,7 @@ impl ParticipantDetailsToAdd {
 
 /// A builder for [`ParticipantDetailsToAdd`](crate::types::ParticipantDetailsToAdd).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParticipantDetailsToAddBuilder {
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ParticipantDetailsToAddBuilder {
         self
     }
     /// <p>The role of the participant being added.</p>
-    pub fn set_participant_role(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantRole>,
-    ) -> Self {
+    pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
         self.participant_role = input;
         self
     }

@@ -121,9 +121,7 @@ impl EventLogEntry {
 
 /// A builder for [`EventLogEntry`](crate::types::EventLogEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventLogEntryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) event_name: ::std::option::Option<::std::string::String>,
@@ -185,18 +183,12 @@ impl EventLogEntryBuilder {
         &self.event_type
     }
     /// <p>The category for the event.</p>
-    pub fn event_category(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category for the event.</p>
-    pub fn set_event_category(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_category = input;
         self
     }
@@ -224,10 +216,7 @@ impl EventLogEntryBuilder {
         self
     }
     /// <p>The time the event took place, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn set_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_time = input;
         self
     }
@@ -241,10 +230,7 @@ impl EventLogEntryBuilder {
         self
     }
     /// <p>The type of the event.</p>
-    pub fn set_operation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationType>,
-    ) -> Self {
+    pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.operation_type = input;
         self
     }
@@ -258,10 +244,7 @@ impl EventLogEntryBuilder {
         self
     }
     /// <p>The system-generated unique ID of the user whose actions are recorded in the event.</p>
-    pub fn set_user_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::UserIdentity>,
-    ) -> Self {
+    pub fn set_user_identity(mut self, input: ::std::option::Option<crate::types::UserIdentity>) -> Self {
         self.user_identity = input;
         self
     }
@@ -275,17 +258,12 @@ impl EventLogEntryBuilder {
         self
     }
     /// <p>Information about the project where the event occurred.</p>
-    pub fn set_project_information(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectInformation>,
-    ) -> Self {
+    pub fn set_project_information(mut self, input: ::std::option::Option<crate::types::ProjectInformation>) -> Self {
         self.project_information = input;
         self
     }
     /// <p>Information about the project where the event occurred.</p>
-    pub fn get_project_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProjectInformation> {
+    pub fn get_project_information(&self) -> &::std::option::Option<crate::types::ProjectInformation> {
         &self.project_information
     }
     /// <p>The system-generated unique ID of the request.</p>
@@ -308,10 +286,7 @@ impl EventLogEntryBuilder {
         self
     }
     /// <p>Information about the payload of the request.</p>
-    pub fn set_request_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::EventPayload>,
-    ) -> Self {
+    pub fn set_request_payload(mut self, input: ::std::option::Option<crate::types::EventPayload>) -> Self {
         self.request_payload = input;
         self
     }
@@ -325,10 +300,7 @@ impl EventLogEntryBuilder {
         self
     }
     /// <p>Information about the payload of the response, if any.</p>
-    pub fn set_response_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::EventPayload>,
-    ) -> Self {
+    pub fn set_response_payload(mut self, input: ::std::option::Option<crate::types::EventPayload>) -> Self {
         self.response_payload = input;
         self
     }
@@ -351,18 +323,12 @@ impl EventLogEntryBuilder {
         &self.error_code
     }
     /// <p>The IP address of the user whose actions are recorded in the event.</p>
-    pub fn source_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address of the user whose actions are recorded in the event.</p>
-    pub fn set_source_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_ip_address = input;
         self
     }

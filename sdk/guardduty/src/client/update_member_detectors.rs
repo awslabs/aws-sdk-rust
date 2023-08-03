@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateMemberDetectorsOutput`](crate::operation::update_member_detectors::UpdateMemberDetectorsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::update_member_detectors::UpdateMemberDetectorsOutput::unprocessed_accounts): <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     /// - On failure, responds with [`SdkError<UpdateMemberDetectorsError>`](crate::operation::update_member_detectors::UpdateMemberDetectorsError)
-    pub fn update_member_detectors(
-        &self,
-    ) -> crate::operation::update_member_detectors::builders::UpdateMemberDetectorsFluentBuilder
-    {
-        crate::operation::update_member_detectors::builders::UpdateMemberDetectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_member_detectors(&self) -> crate::operation::update_member_detectors::builders::UpdateMemberDetectorsFluentBuilder {
+        crate::operation::update_member_detectors::builders::UpdateMemberDetectorsFluentBuilder::new(self.handle.clone())
     }
 }

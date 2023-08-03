@@ -22,17 +22,14 @@ impl ListJournalS3ExportsInput {
 }
 impl ListJournalS3ExportsInput {
     /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsInput`](crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput).
-    pub fn builder(
-    ) -> crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsInputBuilder {
+    pub fn builder() -> crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsInputBuilder {
         crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListJournalS3ExportsInput`](crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJournalS3ExportsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl ListJournalS3ExportsInputBuilder {
     /// Consumes the builder and constructs a [`ListJournalS3ExportsInput`](crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

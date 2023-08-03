@@ -29,9 +29,7 @@ impl ResolveRoomInput {
 
 /// A builder for [`ResolveRoomInput`](crate::operation::resolve_room::ResolveRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolveRoomInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) skill_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl ResolveRoomInputBuilder {
         &self.skill_id
     }
     /// Consumes the builder and constructs a [`ResolveRoomInput`](crate::operation::resolve_room::ResolveRoomInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::resolve_room::ResolveRoomInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::resolve_room::ResolveRoomInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::resolve_room::ResolveRoomInput {
             user_id: self.user_id,
             skill_id: self.skill_id,

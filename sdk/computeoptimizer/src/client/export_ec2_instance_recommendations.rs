@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput::job_id): <p>The identification number of the export job.</p>  <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
     ///   - [`s3_destination(Option<S3Destination>)`](crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput::s3_destination): <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
     /// - On failure, responds with [`SdkError<ExportEC2InstanceRecommendationsError>`](crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError)
-    pub fn export_ec2_instance_recommendations(&self) -> crate::operation::export_ec2_instance_recommendations::builders::ExportEC2InstanceRecommendationsFluentBuilder{
+    pub fn export_ec2_instance_recommendations(
+        &self,
+    ) -> crate::operation::export_ec2_instance_recommendations::builders::ExportEC2InstanceRecommendationsFluentBuilder {
         crate::operation::export_ec2_instance_recommendations::builders::ExportEC2InstanceRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

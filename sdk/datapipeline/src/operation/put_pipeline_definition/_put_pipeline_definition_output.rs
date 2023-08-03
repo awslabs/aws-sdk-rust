@@ -9,8 +9,7 @@ pub struct PutPipelineDefinitionOutput {
     pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
     #[doc(hidden)]
-    pub validation_warnings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
+    pub validation_warnings: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     #[doc(hidden)]
     pub errored: bool,
@@ -37,23 +36,17 @@ impl ::aws_http::request_id::RequestId for PutPipelineDefinitionOutput {
 }
 impl PutPipelineDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`PutPipelineDefinitionOutput`](crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionOutputBuilder {
         crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutPipelineDefinitionOutput`](crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPipelineDefinitionOutputBuilder {
-    pub(crate) validation_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
-    pub(crate) validation_warnings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
+    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
+    pub(crate) validation_warnings: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
     pub(crate) errored: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -70,17 +63,12 @@ impl PutPipelineDefinitionOutputBuilder {
         self
     }
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn set_validation_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
-    ) -> Self {
+    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>) -> Self {
         self.validation_errors = input;
         self
     }
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn get_validation_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
         &self.validation_errors
     }
     /// Appends an item to `validation_warnings`.
@@ -95,17 +83,12 @@ impl PutPipelineDefinitionOutputBuilder {
         self
     }
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn set_validation_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
-    ) -> Self {
+    pub fn set_validation_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>) -> Self {
         self.validation_warnings = input;
         self
     }
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn get_validation_warnings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>> {
+    pub fn get_validation_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>> {
         &self.validation_warnings
     }
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>

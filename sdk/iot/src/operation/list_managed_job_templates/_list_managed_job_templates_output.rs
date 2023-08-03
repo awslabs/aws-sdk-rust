@@ -5,8 +5,7 @@
 pub struct ListManagedJobTemplatesOutput {
     /// <p>A list of managed job templates that are returned.</p>
     #[doc(hidden)]
-    pub managed_job_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedJobTemplateSummary>>,
+    pub managed_job_templates: ::std::option::Option<::std::vec::Vec<crate::types::ManagedJobTemplateSummary>>,
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListManagedJobTemplatesOutput {
 }
 impl ListManagedJobTemplatesOutput {
     /// <p>A list of managed job templates that are returned.</p>
-    pub fn managed_job_templates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ManagedJobTemplateSummary]> {
+    pub fn managed_job_templates(&self) -> ::std::option::Option<&[crate::types::ManagedJobTemplateSummary]> {
         self.managed_job_templates.as_deref()
     }
     /// <p>The token to retrieve the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListManagedJobTemplatesOutput {
 }
 impl ListManagedJobTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedJobTemplatesOutput`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesOutputBuilder {
         crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedJobTemplatesOutput`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedJobTemplatesOutputBuilder {
-    pub(crate) managed_job_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedJobTemplateSummary>>,
+    pub(crate) managed_job_templates: ::std::option::Option<::std::vec::Vec<crate::types::ManagedJobTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListManagedJobTemplatesOutputBuilder {
         self
     }
     /// <p>A list of managed job templates that are returned.</p>
-    pub fn set_managed_job_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedJobTemplateSummary>>,
-    ) -> Self {
+    pub fn set_managed_job_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedJobTemplateSummary>>) -> Self {
         self.managed_job_templates = input;
         self
     }
     /// <p>A list of managed job templates that are returned.</p>
-    pub fn get_managed_job_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedJobTemplateSummary>> {
+    pub fn get_managed_job_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedJobTemplateSummary>> {
         &self.managed_job_templates
     }
     /// <p>The token to retrieve the next set of results.</p>
@@ -99,9 +86,7 @@ impl ListManagedJobTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListManagedJobTemplatesOutput`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput {
+    pub fn build(self) -> crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput {
         crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput {
             managed_job_templates: self.managed_job_templates,
             next_token: self.next_token,

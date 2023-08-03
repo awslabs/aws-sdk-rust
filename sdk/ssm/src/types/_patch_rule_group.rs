@@ -23,9 +23,7 @@ impl PatchRuleGroup {
 
 /// A builder for [`PatchRuleGroup`](crate::types::PatchRuleGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchRuleGroupBuilder {
     pub(crate) patch_rules: ::std::option::Option<::std::vec::Vec<crate::types::PatchRule>>,
 }
@@ -42,17 +40,12 @@ impl PatchRuleGroupBuilder {
         self
     }
     /// <p>The rules that make up the rule group.</p>
-    pub fn set_patch_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchRule>>,
-    ) -> Self {
+    pub fn set_patch_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchRule>>) -> Self {
         self.patch_rules = input;
         self
     }
     /// <p>The rules that make up the rule group.</p>
-    pub fn get_patch_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchRule>> {
+    pub fn get_patch_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchRule>> {
         &self.patch_rules
     }
     /// Consumes the builder and constructs a [`PatchRuleGroup`](crate::types::PatchRuleGroup).

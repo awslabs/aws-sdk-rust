@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<UsageRecordResult>>)`](crate::operation::batch_meter_usage::BatchMeterUsageOutput::results): <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
     ///   - [`unprocessed_records(Option<Vec<UsageRecord>>)`](crate::operation::batch_meter_usage::BatchMeterUsageOutput::unprocessed_records): <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
     /// - On failure, responds with [`SdkError<BatchMeterUsageError>`](crate::operation::batch_meter_usage::BatchMeterUsageError)
-    pub fn batch_meter_usage(
-        &self,
-    ) -> crate::operation::batch_meter_usage::builders::BatchMeterUsageFluentBuilder {
-        crate::operation::batch_meter_usage::builders::BatchMeterUsageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_meter_usage(&self) -> crate::operation::batch_meter_usage::builders::BatchMeterUsageFluentBuilder {
+        crate::operation::batch_meter_usage::builders::BatchMeterUsageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,17 +37,14 @@ impl CreateApiMappingInput {
 }
 impl CreateApiMappingInput {
     /// Creates a new builder-style object to manufacture [`CreateApiMappingInput`](crate::operation::create_api_mapping::CreateApiMappingInput).
-    pub fn builder() -> crate::operation::create_api_mapping::builders::CreateApiMappingInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_api_mapping::builders::CreateApiMappingInputBuilder {
         crate::operation::create_api_mapping::builders::CreateApiMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApiMappingInput`](crate::operation::create_api_mapping::CreateApiMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApiMappingInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_mapping_key: ::std::option::Option<::std::string::String>,
@@ -70,18 +67,12 @@ impl CreateApiMappingInputBuilder {
         &self.api_id
     }
     /// The API mapping key.
-    pub fn api_mapping_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_mapping_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_mapping_key = ::std::option::Option::Some(input.into());
         self
     }
     /// The API mapping key.
-    pub fn set_api_mapping_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_mapping_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_mapping_key = input;
         self
     }
@@ -120,17 +111,12 @@ impl CreateApiMappingInputBuilder {
     /// Consumes the builder and constructs a [`CreateApiMappingInput`](crate::operation::create_api_mapping::CreateApiMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_api_mapping::CreateApiMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_api_mapping::CreateApiMappingInput {
-                api_id: self.api_id,
-                api_mapping_key: self.api_mapping_key,
-                domain_name: self.domain_name,
-                stage: self.stage,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_api_mapping::CreateApiMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_api_mapping::CreateApiMappingInput {
+            api_id: self.api_id,
+            api_mapping_key: self.api_mapping_key,
+            domain_name: self.domain_name,
+            stage: self.stage,
+        })
     }
 }

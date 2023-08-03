@@ -10,9 +10,7 @@ pub struct GetEmailTemplateOutput {
 }
 impl GetEmailTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn email_template_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EmailTemplateResponse> {
+    pub fn email_template_response(&self) -> ::std::option::Option<&crate::types::EmailTemplateResponse> {
         self.email_template_response.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetEmailTemplateOutput {
 }
 impl GetEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailTemplateOutput`](crate::operation::get_email_template::GetEmailTemplateOutput).
-    pub fn builder() -> crate::operation::get_email_template::builders::GetEmailTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_email_template::builders::GetEmailTemplateOutputBuilder {
         crate::operation::get_email_template::builders::GetEmailTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEmailTemplateOutput`](crate::operation::get_email_template::GetEmailTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEmailTemplateOutputBuilder {
     pub(crate) email_template_response: ::std::option::Option<crate::types::EmailTemplateResponse>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl GetEmailTemplateOutputBuilder {
         self
     }
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn set_email_template_response(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailTemplateResponse>,
-    ) -> Self {
+    pub fn set_email_template_response(mut self, input: ::std::option::Option<crate::types::EmailTemplateResponse>) -> Self {
         self.email_template_response = input;
         self
     }
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn get_email_template_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::EmailTemplateResponse> {
+    pub fn get_email_template_response(&self) -> &::std::option::Option<crate::types::EmailTemplateResponse> {
         &self.email_template_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

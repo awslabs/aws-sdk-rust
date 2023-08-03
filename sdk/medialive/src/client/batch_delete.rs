@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`failed(Option<Vec<BatchFailedResultModel>>)`](crate::operation::batch_delete::BatchDeleteOutput::failed): List of failed operations
     ///   - [`successful(Option<Vec<BatchSuccessfulResultModel>>)`](crate::operation::batch_delete::BatchDeleteOutput::successful): List of successful operations
     /// - On failure, responds with [`SdkError<BatchDeleteError>`](crate::operation::batch_delete::BatchDeleteError)
-    pub fn batch_delete(
-        &self,
-    ) -> crate::operation::batch_delete::builders::BatchDeleteFluentBuilder {
+    pub fn batch_delete(&self) -> crate::operation::batch_delete::builders::BatchDeleteFluentBuilder {
         crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::new(self.handle.clone())
     }
 }

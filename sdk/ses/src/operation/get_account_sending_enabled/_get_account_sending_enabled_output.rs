@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for GetAccountSendingEnabledOutput {
 }
 impl GetAccountSendingEnabledOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountSendingEnabledOutput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput).
-    pub fn builder() -> crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledOutputBuilder{
+    pub fn builder() -> crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledOutputBuilder {
         crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountSendingEnabledOutput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountSendingEnabledOutputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl GetAccountSendingEnabledOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAccountSendingEnabledOutput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput {
+    pub fn build(self) -> crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput {
         crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput {
             enabled: self.enabled.unwrap_or_default(),
             _request_id: self._request_id,

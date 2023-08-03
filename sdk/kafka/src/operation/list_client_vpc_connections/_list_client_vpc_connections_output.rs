@@ -5,8 +5,7 @@
 pub struct ListClientVpcConnectionsOutput {
     /// <p>List of client VPC connections.</p>
     #[doc(hidden)]
-    pub client_vpc_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClientVpcConnection>>,
+    pub client_vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpcConnection>>,
     /// <p>The paginated results marker. When the result of a ListClientVpcConnections operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListClientVpcConnectionsOutput {
 }
 impl ListClientVpcConnectionsOutput {
     /// <p>List of client VPC connections.</p>
-    pub fn client_vpc_connections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClientVpcConnection]> {
+    pub fn client_vpc_connections(&self) -> ::std::option::Option<&[crate::types::ClientVpcConnection]> {
         self.client_vpc_connections.as_deref()
     }
     /// <p>The paginated results marker. When the result of a ListClientVpcConnections operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListClientVpcConnectionsOutput {
 }
 impl ListClientVpcConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListClientVpcConnectionsOutput`](crate::operation::list_client_vpc_connections::ListClientVpcConnectionsOutput).
-    pub fn builder() -> crate::operation::list_client_vpc_connections::builders::ListClientVpcConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_client_vpc_connections::builders::ListClientVpcConnectionsOutputBuilder {
         crate::operation::list_client_vpc_connections::builders::ListClientVpcConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListClientVpcConnectionsOutput`](crate::operation::list_client_vpc_connections::ListClientVpcConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClientVpcConnectionsOutputBuilder {
-    pub(crate) client_vpc_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClientVpcConnection>>,
+    pub(crate) client_vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpcConnection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListClientVpcConnectionsOutputBuilder {
         self
     }
     /// <p>List of client VPC connections.</p>
-    pub fn set_client_vpc_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpcConnection>>,
-    ) -> Self {
+    pub fn set_client_vpc_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpcConnection>>) -> Self {
         self.client_vpc_connections = input;
         self
     }
     /// <p>List of client VPC connections.</p>
-    pub fn get_client_vpc_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientVpcConnection>> {
+    pub fn get_client_vpc_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientVpcConnection>> {
         &self.client_vpc_connections
     }
     /// <p>The paginated results marker. When the result of a ListClientVpcConnections operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
@@ -97,9 +86,7 @@ impl ListClientVpcConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListClientVpcConnectionsOutput`](crate::operation::list_client_vpc_connections::ListClientVpcConnectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_client_vpc_connections::ListClientVpcConnectionsOutput {
+    pub fn build(self) -> crate::operation::list_client_vpc_connections::ListClientVpcConnectionsOutput {
         crate::operation::list_client_vpc_connections::ListClientVpcConnectionsOutput {
             client_vpc_connections: self.client_vpc_connections,
             next_token: self.next_token,

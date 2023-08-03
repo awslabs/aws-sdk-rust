@@ -29,12 +29,10 @@ pub struct DescribeTaskOutput {
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
     #[doc(hidden)]
-    pub source_network_interface_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_network_interface_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
     #[doc(hidden)]
-    pub destination_network_interface_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub destination_network_interface_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
     /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
     #[doc(hidden)]
@@ -95,9 +93,7 @@ impl DescribeTaskOutput {
         self.source_network_interface_arns.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn destination_network_interface_arns(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn destination_network_interface_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.destination_network_interface_arns.as_deref()
     }
     /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
@@ -144,9 +140,7 @@ impl DescribeTaskOutput {
 
 /// A builder for [`DescribeTaskOutput`](crate::operation::describe_task::DescribeTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTaskOutputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatus>,
@@ -155,10 +149,8 @@ pub struct DescribeTaskOutputBuilder {
     pub(crate) source_location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) source_network_interface_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) destination_network_interface_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_network_interface_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) destination_network_interface_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) options: ::std::option::Option<crate::types::Options>,
     pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     pub(crate) schedule: ::std::option::Option<crate::types::TaskSchedule>,
@@ -215,18 +207,12 @@ impl DescribeTaskOutputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
-    pub fn current_task_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_task_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
-    pub fn set_current_task_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_task_execution_arn = input;
         self
     }
@@ -235,18 +221,12 @@ impl DescribeTaskOutputBuilder {
         &self.current_task_execution_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
-    pub fn source_location_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
-    pub fn set_source_location_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_arn = input;
         self
     }
@@ -255,18 +235,12 @@ impl DescribeTaskOutputBuilder {
         &self.source_location_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
-    pub fn destination_location_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_location_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
-    pub fn set_destination_location_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_location_arn = input;
         self
     }
@@ -276,19 +250,13 @@ impl DescribeTaskOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
     /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
     /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }
@@ -302,27 +270,19 @@ impl DescribeTaskOutputBuilder {
     /// To override the contents of this collection use [`set_source_network_interface_arns`](Self::set_source_network_interface_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn source_network_interface_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_interface_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_network_interface_arns.unwrap_or_default();
         v.push(input.into());
         self.source_network_interface_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn set_source_network_interface_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_network_interface_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_network_interface_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn get_source_network_interface_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_network_interface_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_network_interface_arns
     }
     /// Appends an item to `destination_network_interface_arns`.
@@ -330,27 +290,19 @@ impl DescribeTaskOutputBuilder {
     /// To override the contents of this collection use [`set_destination_network_interface_arns`](Self::set_destination_network_interface_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn destination_network_interface_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_network_interface_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_network_interface_arns.unwrap_or_default();
         v.push(input.into());
         self.destination_network_interface_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn set_destination_network_interface_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destination_network_interface_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destination_network_interface_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn get_destination_network_interface_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_network_interface_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destination_network_interface_arns
     }
     /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
@@ -382,17 +334,12 @@ impl DescribeTaskOutputBuilder {
         self
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn set_excludes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    ) -> Self {
+    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.excludes = input;
         self
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn get_excludes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.excludes
     }
     /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
@@ -401,10 +348,7 @@ impl DescribeTaskOutputBuilder {
         self
     }
     /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskSchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::TaskSchedule>) -> Self {
         self.schedule = input;
         self
     }
@@ -446,10 +390,7 @@ impl DescribeTaskOutputBuilder {
         self
     }
     /// <p>The time that the task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -469,17 +410,12 @@ impl DescribeTaskOutputBuilder {
         self
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn set_includes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    ) -> Self {
+    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.includes = input;
         self
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn get_includes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.includes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -37,10 +37,7 @@ impl DeleteNetworkInterfaceFluentBuilder {
         }
     }
     /// Access the DeleteNetworkInterface as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteNetworkInterfaceFluentBuilder {
             crate::operation::delete_network_interface::DeleteNetworkInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_interface::DeleteNetworkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_interface::DeleteNetworkInterfaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteNetworkInterfaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteNetworkInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_interface::DeleteNetworkInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_interface::DeleteNetworkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_interface::DeleteNetworkInterfaceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteNetworkInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_interface::DeleteNetworkInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_interface::DeleteNetworkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_interface::DeleteNetworkInterfaceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteNetworkInterfaceFluentBuilder {
             crate::operation::delete_network_interface::DeleteNetworkInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_interface::DeleteNetworkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_interface::DeleteNetworkInterfaceError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeleteNetworkInterfaceFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }

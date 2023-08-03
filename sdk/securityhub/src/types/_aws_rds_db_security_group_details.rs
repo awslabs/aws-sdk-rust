@@ -15,12 +15,10 @@ pub struct AwsRdsDbSecurityGroupDetails {
     pub db_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of EC2 security groups.</p>
     #[doc(hidden)]
-    pub ec2_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup>>,
+    pub ec2_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup>>,
     /// <p>Contains a list of IP ranges.</p>
     #[doc(hidden)]
-    pub ip_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupIpRange>>,
+    pub ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupIpRange>>,
     /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
     #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
@@ -42,15 +40,11 @@ impl AwsRdsDbSecurityGroupDetails {
         self.db_security_group_name.as_deref()
     }
     /// <p>Contains a list of EC2 security groups.</p>
-    pub fn ec2_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup]> {
+    pub fn ec2_security_groups(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup]> {
         self.ec2_security_groups.as_deref()
     }
     /// <p>Contains a list of IP ranges.</p>
-    pub fn ip_ranges(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRdsDbSecurityGroupIpRange]> {
+    pub fn ip_ranges(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbSecurityGroupIpRange]> {
         self.ip_ranges.as_deref()
     }
     /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
@@ -71,34 +65,24 @@ impl AwsRdsDbSecurityGroupDetails {
 
 /// A builder for [`AwsRdsDbSecurityGroupDetails`](crate::types::AwsRdsDbSecurityGroupDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbSecurityGroupDetailsBuilder {
     pub(crate) db_security_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_security_group_description: ::std::option::Option<::std::string::String>,
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) ec2_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup>>,
-    pub(crate) ip_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupIpRange>>,
+    pub(crate) ec2_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup>>,
+    pub(crate) ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupIpRange>>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSecurityGroupDetailsBuilder {
     /// <p>The ARN for the DB security group.</p>
-    pub fn db_security_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the DB security group.</p>
-    pub fn set_db_security_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_arn = input;
         self
     }
@@ -107,40 +91,26 @@ impl AwsRdsDbSecurityGroupDetailsBuilder {
         &self.db_security_group_arn
     }
     /// <p>Provides the description of the DB security group.</p>
-    pub fn db_security_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the description of the DB security group.</p>
-    pub fn set_db_security_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_description = input;
         self
     }
     /// <p>Provides the description of the DB security group.</p>
-    pub fn get_db_security_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_security_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_security_group_description
     }
     /// <p>Specifies the name of the DB security group.</p>
-    pub fn db_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the DB security group.</p>
-    pub fn set_db_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_name = input;
         self
     }
@@ -153,10 +123,7 @@ impl AwsRdsDbSecurityGroupDetailsBuilder {
     /// To override the contents of this collection use [`set_ec2_security_groups`](Self::set_ec2_security_groups).
     ///
     /// <p>Contains a list of EC2 security groups.</p>
-    pub fn ec2_security_groups(
-        mut self,
-        input: crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup,
-    ) -> Self {
+    pub fn ec2_security_groups(mut self, input: crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup) -> Self {
         let mut v = self.ec2_security_groups.unwrap_or_default();
         v.push(input);
         self.ec2_security_groups = ::std::option::Option::Some(v);
@@ -165,18 +132,13 @@ impl AwsRdsDbSecurityGroupDetailsBuilder {
     /// <p>Contains a list of EC2 security groups.</p>
     pub fn set_ec2_security_groups(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup>>,
     ) -> Self {
         self.ec2_security_groups = input;
         self
     }
     /// <p>Contains a list of EC2 security groups.</p>
-    pub fn get_ec2_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup>>
-    {
+    pub fn get_ec2_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup>> {
         &self.ec2_security_groups
     }
     /// Appends an item to `ip_ranges`.
@@ -191,17 +153,12 @@ impl AwsRdsDbSecurityGroupDetailsBuilder {
         self
     }
     /// <p>Contains a list of IP ranges.</p>
-    pub fn set_ip_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupIpRange>>,
-    ) -> Self {
+    pub fn set_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupIpRange>>) -> Self {
         self.ip_ranges = input;
         self
     }
     /// <p>Contains a list of IP ranges.</p>
-    pub fn get_ip_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupIpRange>> {
+    pub fn get_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupIpRange>> {
         &self.ip_ranges
     }
     /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>

@@ -35,9 +35,7 @@ impl ListTemplatesOutput {
 
 /// A builder for [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplatesOutputBuilder {
     pub(crate) templates: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListTemplatesOutputBuilder {
         self
     }
     /// <p>List of template summary objects.</p>
-    pub fn set_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
-    ) -> Self {
+    pub fn set_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>) -> Self {
         self.templates = input;
         self
     }
     /// <p>List of template summary objects.</p>
-    pub fn get_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
+    pub fn get_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
         &self.templates
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>

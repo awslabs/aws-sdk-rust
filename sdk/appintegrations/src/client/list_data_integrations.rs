@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`data_integrations(Option<Vec<DataIntegrationSummary>>)`](crate::operation::list_data_integrations::ListDataIntegrationsOutput::data_integrations): <p>The DataIntegrations associated with this account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_integrations::ListDataIntegrationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDataIntegrationsError>`](crate::operation::list_data_integrations::ListDataIntegrationsError)
-    pub fn list_data_integrations(
-        &self,
-    ) -> crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder {
-        crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_data_integrations(&self) -> crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder {
+        crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder::new(self.handle.clone())
     }
 }

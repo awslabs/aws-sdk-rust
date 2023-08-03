@@ -5,16 +5,16 @@ pub use crate::operation::put_email_identity_configuration_set_attributes::_put_
 
 impl PutEmailIdentityConfigurationSetAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_email_identity_configuration_set_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl PutEmailIdentityConfigurationSetAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutEmailIdentityConfigurationSetAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesInputBuilder,
+    inner: crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesInputBuilder,
 }
 impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
     /// Creates a new `PutEmailIdentityConfigurationSetAttributes`.
@@ -37,15 +37,24 @@ impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
         }
     }
     /// Access the PutEmailIdentityConfigurationSetAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +93,39 @@ impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The email address or domain to associate with a configuration set.</p>
-    pub fn email_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_identity(input.into());
         self
     }
     /// <p>The email address or domain to associate with a configuration set.</p>
-    pub fn set_email_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_identity(input);
         self
     }
@@ -115,18 +134,12 @@ impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
         self.inner.get_email_identity()
     }
     /// <p>The configuration set to associate with an email identity.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The configuration set to associate with an email identity.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }

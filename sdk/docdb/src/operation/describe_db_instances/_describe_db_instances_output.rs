@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeDbInstancesOutput {
 }
 impl DescribeDbInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbInstancesOutput`](crate::operation::describe_db_instances::DescribeDbInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_instances::builders::DescribeDbInstancesOutputBuilder {
-        crate::operation::describe_db_instances::builders::DescribeDbInstancesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_db_instances::builders::DescribeDbInstancesOutputBuilder {
+        crate::operation::describe_db_instances::builders::DescribeDbInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbInstancesOutput`](crate::operation::describe_db_instances::DescribeDbInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbInstancesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_instances: ::std::option::Option<::std::vec::Vec<crate::types::DbInstance>>,
@@ -73,17 +69,12 @@ impl DescribeDbInstancesOutputBuilder {
         self
     }
     /// <p>Detailed information about one or more instances. </p>
-    pub fn set_db_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbInstance>>,
-    ) -> Self {
+    pub fn set_db_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbInstance>>) -> Self {
         self.db_instances = input;
         self
     }
     /// <p>Detailed information about one or more instances. </p>
-    pub fn get_db_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstance>> {
+    pub fn get_db_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstance>> {
         &self.db_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

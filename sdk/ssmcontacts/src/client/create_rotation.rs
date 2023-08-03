@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRotationOutput`](crate::operation::create_rotation::CreateRotationOutput) with field(s):
     ///   - [`rotation_arn(Option<String>)`](crate::operation::create_rotation::CreateRotationOutput::rotation_arn): <p>The Amazon Resource Name (ARN) of the created rotation.</p>
     /// - On failure, responds with [`SdkError<CreateRotationError>`](crate::operation::create_rotation::CreateRotationError)
-    pub fn create_rotation(
-        &self,
-    ) -> crate::operation::create_rotation::builders::CreateRotationFluentBuilder {
-        crate::operation::create_rotation::builders::CreateRotationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_rotation(&self) -> crate::operation::create_rotation::builders::CreateRotationFluentBuilder {
+        crate::operation::create_rotation::builders::CreateRotationFluentBuilder::new(self.handle.clone())
     }
 }

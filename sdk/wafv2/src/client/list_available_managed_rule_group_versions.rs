@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`versions(Option<Vec<ManagedRuleGroupVersion>>)`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput::versions): <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     ///   - [`current_default_version(Option<String>)`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput::current_default_version): <p>The name of the version that's currently set as the default. </p>
     /// - On failure, responds with [`SdkError<ListAvailableManagedRuleGroupVersionsError>`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError)
-    pub fn list_available_managed_rule_group_versions(&self) -> crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsFluentBuilder{
-        crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsFluentBuilder::new(self.handle.clone())
+    pub fn list_available_managed_rule_group_versions(
+        &self,
+    ) -> crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsFluentBuilder {
+        crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

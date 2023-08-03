@@ -23,9 +23,7 @@ pub fn ser_batch_put_document_input(
     }
     if let Some(var_7) = &input.custom_document_enrichment_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object
-            .key("CustomDocumentEnrichmentConfiguration")
-            .start_object();
+        let mut object_8 = object.key("CustomDocumentEnrichmentConfiguration").start_object();
         crate::protocol_serde::shape_custom_document_enrichment_configuration::ser_custom_document_enrichment_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }

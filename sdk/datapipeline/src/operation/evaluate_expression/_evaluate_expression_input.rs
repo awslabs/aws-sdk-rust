@@ -30,17 +30,14 @@ impl EvaluateExpressionInput {
 }
 impl EvaluateExpressionInput {
     /// Creates a new builder-style object to manufacture [`EvaluateExpressionInput`](crate::operation::evaluate_expression::EvaluateExpressionInput).
-    pub fn builder(
-    ) -> crate::operation::evaluate_expression::builders::EvaluateExpressionInputBuilder {
+    pub fn builder() -> crate::operation::evaluate_expression::builders::EvaluateExpressionInputBuilder {
         crate::operation::evaluate_expression::builders::EvaluateExpressionInputBuilder::default()
     }
 }
 
 /// A builder for [`EvaluateExpressionInput`](crate::operation::evaluate_expression::EvaluateExpressionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateExpressionInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_id: ::std::option::Option<::std::string::String>,
@@ -92,16 +89,11 @@ impl EvaluateExpressionInputBuilder {
     /// Consumes the builder and constructs a [`EvaluateExpressionInput`](crate::operation::evaluate_expression::EvaluateExpressionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::evaluate_expression::EvaluateExpressionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::evaluate_expression::EvaluateExpressionInput {
-                pipeline_id: self.pipeline_id,
-                object_id: self.object_id,
-                expression: self.expression,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::evaluate_expression::EvaluateExpressionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::evaluate_expression::EvaluateExpressionInput {
+            pipeline_id: self.pipeline_id,
+            object_id: self.object_id,
+            expression: self.expression,
+        })
     }
 }

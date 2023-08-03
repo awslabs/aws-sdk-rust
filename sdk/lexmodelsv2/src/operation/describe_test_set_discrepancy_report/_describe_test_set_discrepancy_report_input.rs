@@ -15,49 +15,43 @@ impl DescribeTestSetDiscrepancyReportInput {
 }
 impl DescribeTestSetDiscrepancyReportInput {
     /// Creates a new builder-style object to manufacture [`DescribeTestSetDiscrepancyReportInput`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput).
-    pub fn builder() -> crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportInputBuilder{
+    pub fn builder() -> crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportInputBuilder {
         crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTestSetDiscrepancyReportInput`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTestSetDiscrepancyReportInputBuilder {
     pub(crate) test_set_discrepancy_report_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTestSetDiscrepancyReportInputBuilder {
     /// <p>The unique identifier of the test set discrepancy report.</p>
-    pub fn test_set_discrepancy_report_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_discrepancy_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_discrepancy_report_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the test set discrepancy report.</p>
-    pub fn set_test_set_discrepancy_report_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_set_discrepancy_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_set_discrepancy_report_id = input;
         self
     }
     /// <p>The unique identifier of the test set discrepancy report.</p>
-    pub fn get_test_set_discrepancy_report_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_test_set_discrepancy_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.test_set_discrepancy_report_id
     }
     /// Consumes the builder and constructs a [`DescribeTestSetDiscrepancyReportInput`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput {
-                test_set_discrepancy_report_id: self.test_set_discrepancy_report_id
-                ,
-            }
+                test_set_discrepancy_report_id: self.test_set_discrepancy_report_id,
+            },
         )
     }
 }

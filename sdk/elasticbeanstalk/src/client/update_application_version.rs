@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateApplicationVersionOutput`](crate::operation::update_application_version::UpdateApplicationVersionOutput) with field(s):
     ///   - [`application_version(Option<ApplicationVersionDescription>)`](crate::operation::update_application_version::UpdateApplicationVersionOutput::application_version): <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     /// - On failure, responds with [`SdkError<UpdateApplicationVersionError>`](crate::operation::update_application_version::UpdateApplicationVersionError)
-    pub fn update_application_version(
-        &self,
-    ) -> crate::operation::update_application_version::builders::UpdateApplicationVersionFluentBuilder
-    {
+    pub fn update_application_version(&self) -> crate::operation::update_application_version::builders::UpdateApplicationVersionFluentBuilder {
         crate::operation::update_application_version::builders::UpdateApplicationVersionFluentBuilder::new(self.handle.clone())
     }
 }

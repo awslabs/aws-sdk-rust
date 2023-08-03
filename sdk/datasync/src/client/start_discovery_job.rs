@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartDiscoveryJobOutput`](crate::operation::start_discovery_job::StartDiscoveryJobOutput) with field(s):
     ///   - [`discovery_job_arn(Option<String>)`](crate::operation::start_discovery_job::StartDiscoveryJobOutput::discovery_job_arn): <p>The ARN of the discovery job that you started.</p>
     /// - On failure, responds with [`SdkError<StartDiscoveryJobError>`](crate::operation::start_discovery_job::StartDiscoveryJobError)
-    pub fn start_discovery_job(
-        &self,
-    ) -> crate::operation::start_discovery_job::builders::StartDiscoveryJobFluentBuilder {
-        crate::operation::start_discovery_job::builders::StartDiscoveryJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_discovery_job(&self) -> crate::operation::start_discovery_job::builders::StartDiscoveryJobFluentBuilder {
+        crate::operation::start_discovery_job::builders::StartDiscoveryJobFluentBuilder::new(self.handle.clone())
     }
 }

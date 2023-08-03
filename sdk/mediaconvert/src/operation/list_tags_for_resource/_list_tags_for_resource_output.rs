@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
         crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutputBuilder {
     pub(crate) resource_tags: ::std::option::Option<crate::types::ResourceTags>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl ListTagsForResourceOutputBuilder {
         self
     }
     /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTags>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<crate::types::ResourceTags>) -> Self {
         self.resource_tags = input;
         self
     }

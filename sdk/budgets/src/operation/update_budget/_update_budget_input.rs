@@ -30,9 +30,7 @@ impl UpdateBudgetInput {
 
 /// A builder for [`UpdateBudgetInput`](crate::operation::update_budget::UpdateBudgetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBudgetInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_budget: ::std::option::Option<crate::types::Budget>,
@@ -67,12 +65,7 @@ impl UpdateBudgetInputBuilder {
         &self.new_budget
     }
     /// Consumes the builder and constructs a [`UpdateBudgetInput`](crate::operation::update_budget::UpdateBudgetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_budget::UpdateBudgetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_budget::UpdateBudgetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_budget::UpdateBudgetInput {
             account_id: self.account_id,
             new_budget: self.new_budget,

@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`audit_report_id(Option<String>)`](crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput::audit_report_id): <p>An alphanumeric string that contains a report identifier.</p>
     ///   - [`s3_key(Option<String>)`](crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput::s3_key): <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
     /// - On failure, responds with [`SdkError<CreateCertificateAuthorityAuditReportError>`](crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError)
-    pub fn create_certificate_authority_audit_report(&self) -> crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportFluentBuilder{
-        crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportFluentBuilder::new(self.handle.clone())
+    pub fn create_certificate_authority_audit_report(
+        &self,
+    ) -> crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportFluentBuilder {
+        crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

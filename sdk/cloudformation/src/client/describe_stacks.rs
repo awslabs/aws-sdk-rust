@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`stacks(Option<Vec<Stack>>)`](crate::operation::describe_stacks::DescribeStacksOutput::stacks): <p>A list of stack structures.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_stacks::DescribeStacksOutput::next_token): <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeStacksError>`](crate::operation::describe_stacks::DescribeStacksError)
-    pub fn describe_stacks(
-        &self,
-    ) -> crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder {
-        crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_stacks(&self) -> crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder {
+        crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::new(self.handle.clone())
     }
 }

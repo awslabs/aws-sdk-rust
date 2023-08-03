@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for EnableHealthServiceAccessForOrganizat
 }
 impl EnableHealthServiceAccessForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`EnableHealthServiceAccessForOrganizationOutput`](crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput).
-    pub fn builder() -> crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationOutputBuilder {
         crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableHealthServiceAccessForOrganizationOutput`](crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableHealthServiceAccessForOrganizationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl EnableHealthServiceAccessForOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableHealthServiceAccessForOrganizationOutput`](crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput).
-    pub fn build(self) -> crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput{
+    pub fn build(self) -> crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput {
         crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput {
             _request_id: self._request_id,
         }

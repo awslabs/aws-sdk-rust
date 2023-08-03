@@ -22,35 +22,26 @@ impl DiscoverPollEndpointInput {
 }
 impl DiscoverPollEndpointInput {
     /// Creates a new builder-style object to manufacture [`DiscoverPollEndpointInput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointInputBuilder {
+    pub fn builder() -> crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointInputBuilder {
         crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DiscoverPollEndpointInput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiscoverPollEndpointInputBuilder {
     pub(crate) container_instance: ::std::option::Option<::std::string::String>,
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
 }
 impl DiscoverPollEndpointInputBuilder {
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn container_instance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_instance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_instance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_instance = input;
         self
     }
@@ -75,15 +66,11 @@ impl DiscoverPollEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DiscoverPollEndpointInput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput {
-                container_instance: self.container_instance,
-                cluster: self.cluster,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput {
+            container_instance: self.container_instance,
+            cluster: self.cluster,
+        })
     }
 }

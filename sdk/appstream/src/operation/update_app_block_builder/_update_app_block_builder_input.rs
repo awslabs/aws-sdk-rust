@@ -42,8 +42,7 @@ pub struct UpdateAppBlockBuilderInput {
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
     /// <p>The attributes to delete from the app block builder.</p>
     #[doc(hidden)]
-    pub attributes_to_delete:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>>,
+    pub attributes_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>>,
 }
 impl UpdateAppBlockBuilderInput {
     /// <p>The unique name for the app block builder.</p>
@@ -93,26 +92,20 @@ impl UpdateAppBlockBuilderInput {
         self.access_endpoints.as_deref()
     }
     /// <p>The attributes to delete from the app block builder.</p>
-    pub fn attributes_to_delete(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppBlockBuilderAttribute]> {
+    pub fn attributes_to_delete(&self) -> ::std::option::Option<&[crate::types::AppBlockBuilderAttribute]> {
         self.attributes_to_delete.as_deref()
     }
 }
 impl UpdateAppBlockBuilderInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppBlockBuilderInput`](crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput).
-    pub fn builder(
-    ) -> crate::operation::update_app_block_builder::builders::UpdateAppBlockBuilderInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_app_block_builder::builders::UpdateAppBlockBuilderInputBuilder {
         crate::operation::update_app_block_builder::builders::UpdateAppBlockBuilderInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAppBlockBuilderInput`](crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAppBlockBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -122,10 +115,8 @@ pub struct UpdateAppBlockBuilderInputBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) enable_default_internet_access: ::std::option::Option<bool>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) access_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    pub(crate) attributes_to_delete:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>>,
+    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) attributes_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>>,
 }
 impl UpdateAppBlockBuilderInputBuilder {
     /// <p>The unique name for the app block builder.</p>
@@ -178,10 +169,7 @@ impl UpdateAppBlockBuilderInputBuilder {
     }
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformType>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
         self.platform = input;
         self
     }
@@ -198,10 +186,7 @@ impl UpdateAppBlockBuilderInputBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -213,10 +198,7 @@ impl UpdateAppBlockBuilderInputBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -254,10 +236,7 @@ impl UpdateAppBlockBuilderInputBuilder {
         self
     }
     /// <p>Enables or disables default internet access for the app block builder.</p>
-    pub fn set_enable_default_internet_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_default_internet_access = input;
         self
     }
@@ -294,17 +273,12 @@ impl UpdateAppBlockBuilderInputBuilder {
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    ) -> Self {
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
         self.access_endpoints = input;
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
     /// Appends an item to `attributes_to_delete`.
@@ -319,39 +293,30 @@ impl UpdateAppBlockBuilderInputBuilder {
         self
     }
     /// <p>The attributes to delete from the app block builder.</p>
-    pub fn set_attributes_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>>,
-    ) -> Self {
+    pub fn set_attributes_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>>) -> Self {
         self.attributes_to_delete = input;
         self
     }
     /// <p>The attributes to delete from the app block builder.</p>
-    pub fn get_attributes_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>> {
+    pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>> {
         &self.attributes_to_delete
     }
     /// Consumes the builder and constructs a [`UpdateAppBlockBuilderInput`](crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput {
-                name: self.name,
-                description: self.description,
-                display_name: self.display_name,
-                platform: self.platform,
-                instance_type: self.instance_type,
-                vpc_config: self.vpc_config,
-                enable_default_internet_access: self.enable_default_internet_access,
-                iam_role_arn: self.iam_role_arn,
-                access_endpoints: self.access_endpoints,
-                attributes_to_delete: self.attributes_to_delete,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput {
+            name: self.name,
+            description: self.description,
+            display_name: self.display_name,
+            platform: self.platform,
+            instance_type: self.instance_type,
+            vpc_config: self.vpc_config,
+            enable_default_internet_access: self.enable_default_internet_access,
+            iam_role_arn: self.iam_role_arn,
+            access_endpoints: self.access_endpoints,
+            attributes_to_delete: self.attributes_to_delete,
+        })
     }
 }

@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`PutAccountPreferencesOutput`](crate::operation::put_account_preferences::PutAccountPreferencesOutput) with field(s):
     ///   - [`resource_id_preference(Option<ResourceIdPreference>)`](crate::operation::put_account_preferences::PutAccountPreferencesOutput::resource_id_preference): <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<PutAccountPreferencesError>`](crate::operation::put_account_preferences::PutAccountPreferencesError)
-    pub fn put_account_preferences(
-        &self,
-    ) -> crate::operation::put_account_preferences::builders::PutAccountPreferencesFluentBuilder
-    {
-        crate::operation::put_account_preferences::builders::PutAccountPreferencesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_account_preferences(&self) -> crate::operation::put_account_preferences::builders::PutAccountPreferencesFluentBuilder {
+        crate::operation::put_account_preferences::builders::PutAccountPreferencesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAlgorithmOutput`](crate::operation::describe_algorithm::DescribeAlgorithmOutput) with field(s):
     ///   - [`algorithm(Option<Algorithm>)`](crate::operation::describe_algorithm::DescribeAlgorithmOutput::algorithm): <p>A listing of the properties of the algorithm.</p>
     /// - On failure, responds with [`SdkError<DescribeAlgorithmError>`](crate::operation::describe_algorithm::DescribeAlgorithmError)
-    pub fn describe_algorithm(
-        &self,
-    ) -> crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder {
-        crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_algorithm(&self) -> crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder {
+        crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::new(self.handle.clone())
     }
 }

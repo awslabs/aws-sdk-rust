@@ -8,8 +8,7 @@ pub struct ListIndexInput {
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
     #[doc(hidden)]
-    pub ranges_on_indexed_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
+    pub ranges_on_indexed_values: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
     /// <p>The reference to the index to list.</p>
     #[doc(hidden)]
     pub index_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -29,9 +28,7 @@ impl ListIndexInput {
         self.directory_arn.as_deref()
     }
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    pub fn ranges_on_indexed_values(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ObjectAttributeRange]> {
+    pub fn ranges_on_indexed_values(&self) -> ::std::option::Option<&[crate::types::ObjectAttributeRange]> {
         self.ranges_on_indexed_values.as_deref()
     }
     /// <p>The reference to the index to list.</p>
@@ -60,13 +57,10 @@ impl ListIndexInput {
 
 /// A builder for [`ListIndexInput`](crate::operation::list_index::ListIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIndexInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) ranges_on_indexed_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
+    pub(crate) ranges_on_indexed_values: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
     pub(crate) index_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,18 +68,12 @@ pub struct ListIndexInputBuilder {
 }
 impl ListIndexInputBuilder {
     /// <p>The ARN of the directory that the index exists in.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the directory that the index exists in.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -105,17 +93,12 @@ impl ListIndexInputBuilder {
         self
     }
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    pub fn set_ranges_on_indexed_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
-    ) -> Self {
+    pub fn set_ranges_on_indexed_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>) -> Self {
         self.ranges_on_indexed_values = input;
         self
     }
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    pub fn get_ranges_on_indexed_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>> {
+    pub fn get_ranges_on_indexed_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>> {
         &self.ranges_on_indexed_values
     }
     /// <p>The reference to the index to list.</p>
@@ -124,10 +107,7 @@ impl ListIndexInputBuilder {
         self
     }
     /// <p>The reference to the index to list.</p>
-    pub fn set_index_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_index_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.index_reference = input;
         self
     }
@@ -169,10 +149,7 @@ impl ListIndexInputBuilder {
         self
     }
     /// <p>The consistency level to execute the request at.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.consistency_level = input;
         self
     }
@@ -181,12 +158,7 @@ impl ListIndexInputBuilder {
         &self.consistency_level
     }
     /// Consumes the builder and constructs a [`ListIndexInput`](crate::operation::list_index::ListIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_index::ListIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_index::ListIndexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_index::ListIndexInput {
             directory_arn: self.directory_arn,
             ranges_on_indexed_values: self.ranges_on_indexed_values,

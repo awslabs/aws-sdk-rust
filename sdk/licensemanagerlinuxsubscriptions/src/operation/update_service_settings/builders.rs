@@ -37,10 +37,7 @@ impl UpdateServiceSettingsFluentBuilder {
         }
     }
     /// Access the UpdateServiceSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateServiceSettingsFluentBuilder {
             crate::operation::update_service_settings::UpdateServiceSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateServiceSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateServiceSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateServiceSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,39 +105,26 @@ impl UpdateServiceSettingsFluentBuilder {
             crate::operation::update_service_settings::UpdateServiceSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    pub fn linux_subscriptions_discovery(
-        mut self,
-        input: crate::types::LinuxSubscriptionsDiscovery,
-    ) -> Self {
+    pub fn linux_subscriptions_discovery(mut self, input: crate::types::LinuxSubscriptionsDiscovery) -> Self {
         self.inner = self.inner.linux_subscriptions_discovery(input);
         self
     }
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    pub fn set_linux_subscriptions_discovery(
-        mut self,
-        input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscovery>,
-    ) -> Self {
+    pub fn set_linux_subscriptions_discovery(mut self, input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscovery>) -> Self {
         self.inner = self.inner.set_linux_subscriptions_discovery(input);
         self
     }
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    pub fn get_linux_subscriptions_discovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscovery> {
+    pub fn get_linux_subscriptions_discovery(&self) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscovery> {
         self.inner.get_linux_subscriptions_discovery()
     }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    pub fn linux_subscriptions_discovery_settings(
-        mut self,
-        input: crate::types::LinuxSubscriptionsDiscoverySettings,
-    ) -> Self {
+    pub fn linux_subscriptions_discovery_settings(mut self, input: crate::types::LinuxSubscriptionsDiscoverySettings) -> Self {
         self.inner = self.inner.linux_subscriptions_discovery_settings(input);
         self
     }
@@ -162,9 +137,7 @@ impl UpdateServiceSettingsFluentBuilder {
         self
     }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    pub fn get_linux_subscriptions_discovery_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings> {
+    pub fn get_linux_subscriptions_discovery_settings(&self) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings> {
         self.inner.get_linux_subscriptions_discovery_settings()
     }
     /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>

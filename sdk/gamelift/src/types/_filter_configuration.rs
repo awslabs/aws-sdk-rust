@@ -23,9 +23,7 @@ impl FilterConfiguration {
 
 /// A builder for [`FilterConfiguration`](crate::types::FilterConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterConfigurationBuilder {
     pub(crate) allowed_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,27 +33,19 @@ impl FilterConfigurationBuilder {
     /// To override the contents of this collection use [`set_allowed_locations`](Self::set_allowed_locations).
     ///
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-    pub fn allowed_locations(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_locations.unwrap_or_default();
         v.push(input.into());
         self.allowed_locations = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-    pub fn set_allowed_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_locations = input;
         self
     }
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-    pub fn get_allowed_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_locations
     }
     /// Consumes the builder and constructs a [`FilterConfiguration`](crate::types::FilterConfiguration).

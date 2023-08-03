@@ -36,16 +36,14 @@ impl UpdateUserDefinedFunctionInput {
 }
 impl UpdateUserDefinedFunctionInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserDefinedFunctionInput`](crate::operation::update_user_defined_function::UpdateUserDefinedFunctionInput).
-    pub fn builder() -> crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder{
+    pub fn builder() -> crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder {
         crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserDefinedFunctionInput`](crate::operation::update_user_defined_function::UpdateUserDefinedFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserDefinedFunctionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl UpdateUserDefinedFunctionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the function to be updated is located.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database where the function to be updated is located.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -88,18 +80,12 @@ impl UpdateUserDefinedFunctionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the function.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the function.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -113,17 +99,12 @@ impl UpdateUserDefinedFunctionInputBuilder {
         self
     }
     /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
-    pub fn set_function_input(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDefinedFunctionInput>,
-    ) -> Self {
+    pub fn set_function_input(mut self, input: ::std::option::Option<crate::types::UserDefinedFunctionInput>) -> Self {
         self.function_input = input;
         self
     }
     /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
-    pub fn get_function_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserDefinedFunctionInput> {
+    pub fn get_function_input(&self) -> &::std::option::Option<crate::types::UserDefinedFunctionInput> {
         &self.function_input
     }
     /// Consumes the builder and constructs a [`UpdateUserDefinedFunctionInput`](crate::operation::update_user_defined_function::UpdateUserDefinedFunctionInput).
@@ -133,13 +114,11 @@ impl UpdateUserDefinedFunctionInputBuilder {
         crate::operation::update_user_defined_function::UpdateUserDefinedFunctionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_user_defined_function::UpdateUserDefinedFunctionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                function_name: self.function_name,
-                function_input: self.function_input,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_user_defined_function::UpdateUserDefinedFunctionInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            function_name: self.function_name,
+            function_input: self.function_input,
+        })
     }
 }

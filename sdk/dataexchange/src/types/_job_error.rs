@@ -65,9 +65,7 @@ impl JobError {
 
 /// A builder for [`JobError`](crate::types::JobError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::Code>,
     pub(crate) details: ::std::option::Option<crate::types::Details>,
@@ -112,10 +110,7 @@ impl JobErrorBuilder {
         self
     }
     /// <p>The name of the limit that was reached.</p>
-    pub fn set_limit_name(
-        mut self,
-        input: ::std::option::Option<crate::types::JobErrorLimitName>,
-    ) -> Self {
+    pub fn set_limit_name(mut self, input: ::std::option::Option<crate::types::JobErrorLimitName>) -> Self {
         self.limit_name = input;
         self
     }
@@ -171,10 +166,7 @@ impl JobErrorBuilder {
         self
     }
     /// <p>The type of resource related to the error.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::JobErrorResourceTypes>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::JobErrorResourceTypes>) -> Self {
         self.resource_type = input;
         self
     }

@@ -11,9 +11,7 @@ pub struct UpdateScalingParametersOutput {
 }
 impl UpdateScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
-    pub fn scaling_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScalingParametersStatus> {
+    pub fn scaling_parameters(&self) -> ::std::option::Option<&crate::types::ScalingParametersStatus> {
         self.scaling_parameters.as_ref()
     }
 }
@@ -24,18 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateScalingParametersOutput {
 }
 impl UpdateScalingParametersOutput {
     /// Creates a new builder-style object to manufacture [`UpdateScalingParametersOutput`](crate::operation::update_scaling_parameters::UpdateScalingParametersOutput).
-    pub fn builder(
-    ) -> crate::operation::update_scaling_parameters::builders::UpdateScalingParametersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_scaling_parameters::builders::UpdateScalingParametersOutputBuilder {
         crate::operation::update_scaling_parameters::builders::UpdateScalingParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateScalingParametersOutput`](crate::operation::update_scaling_parameters::UpdateScalingParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateScalingParametersOutputBuilder {
     pub(crate) scaling_parameters: ::std::option::Option<crate::types::ScalingParametersStatus>,
     _request_id: Option<String>,
@@ -47,17 +41,12 @@ impl UpdateScalingParametersOutputBuilder {
         self
     }
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
-    pub fn set_scaling_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingParametersStatus>,
-    ) -> Self {
+    pub fn set_scaling_parameters(mut self, input: ::std::option::Option<crate::types::ScalingParametersStatus>) -> Self {
         self.scaling_parameters = input;
         self
     }
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
-    pub fn get_scaling_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalingParametersStatus> {
+    pub fn get_scaling_parameters(&self) -> &::std::option::Option<crate::types::ScalingParametersStatus> {
         &self.scaling_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -70,9 +59,7 @@ impl UpdateScalingParametersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateScalingParametersOutput`](crate::operation::update_scaling_parameters::UpdateScalingParametersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_scaling_parameters::UpdateScalingParametersOutput {
+    pub fn build(self) -> crate::operation::update_scaling_parameters::UpdateScalingParametersOutput {
         crate::operation::update_scaling_parameters::UpdateScalingParametersOutput {
             scaling_parameters: self.scaling_parameters,
             _request_id: self._request_id,

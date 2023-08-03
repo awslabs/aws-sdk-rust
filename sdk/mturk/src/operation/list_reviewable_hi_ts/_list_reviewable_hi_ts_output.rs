@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for ListReviewableHiTsOutput {
 }
 impl ListReviewableHiTsOutput {
     /// Creates a new builder-style object to manufacture [`ListReviewableHiTsOutput`](crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsOutputBuilder {
-        crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsOutputBuilder {
+        crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReviewableHiTsOutput`](crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReviewableHiTsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) num_results: ::std::option::Option<i32>,
@@ -94,10 +90,7 @@ impl ListReviewableHiTsOutputBuilder {
         self
     }
     /// <p> The list of HIT elements returned by the query.</p>
-    pub fn set_hi_ts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>,
-    ) -> Self {
+    pub fn set_hi_ts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>) -> Self {
         self.hi_ts = input;
         self
     }

@@ -23,9 +23,7 @@ impl MatchingResource {
 
 /// A builder for [`MatchingResource`](crate::types::MatchingResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchingResourceBuilder {
     pub(crate) matching_bucket: ::std::option::Option<crate::types::MatchingBucket>,
 }
@@ -36,10 +34,7 @@ impl MatchingResourceBuilder {
         self
     }
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
-    pub fn set_matching_bucket(
-        mut self,
-        input: ::std::option::Option<crate::types::MatchingBucket>,
-    ) -> Self {
+    pub fn set_matching_bucket(mut self, input: ::std::option::Option<crate::types::MatchingBucket>) -> Self {
         self.matching_bucket = input;
         self
     }

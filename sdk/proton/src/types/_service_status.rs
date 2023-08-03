@@ -50,13 +50,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ServiceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -107,9 +101,7 @@ impl ::std::convert::From<&str> for ServiceStatus {
             "UPDATE_FAILED_CLEANUP_FAILED" => ServiceStatus::UpdateFailedCleanupFailed,
             "UPDATE_FAILED_CLEANUP_IN_PROGRESS" => ServiceStatus::UpdateFailedCleanupInProgress,
             "UPDATE_IN_PROGRESS" => ServiceStatus::UpdateInProgress,
-            other => {
-                ServiceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ServiceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

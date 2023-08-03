@@ -24,10 +24,7 @@ pub fn ser_create_network_input(
     if let Some(var_7) = &input.member_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("MemberConfiguration").start_object();
-        crate::protocol_serde::shape_member_configuration::ser_member_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_member_configuration::ser_member_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.name {

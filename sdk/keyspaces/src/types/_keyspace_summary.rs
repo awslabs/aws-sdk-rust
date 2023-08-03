@@ -44,9 +44,7 @@ impl KeyspaceSummary {
 
 /// A builder for [`KeyspaceSummary`](crate::types::KeyspaceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyspaceSummaryBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct KeyspaceSummaryBuilder {
 }
 impl KeyspaceSummaryBuilder {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyspace_name = input;
         self
     }
@@ -94,10 +86,7 @@ impl KeyspaceSummaryBuilder {
         self
     }
     /// <p> This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-    pub fn set_replication_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::Rs>,
-    ) -> Self {
+    pub fn set_replication_strategy(mut self, input: ::std::option::Option<crate::types::Rs>) -> Self {
         self.replication_strategy = input;
         self
     }
@@ -110,27 +99,19 @@ impl KeyspaceSummaryBuilder {
     /// To override the contents of this collection use [`set_replication_regions`](Self::set_replication_regions).
     ///
     /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
-    pub fn replication_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_regions.unwrap_or_default();
         v.push(input.into());
         self.replication_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
-    pub fn set_replication_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_regions = input;
         self
     }
     /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
-    pub fn get_replication_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_regions
     }
     /// Consumes the builder and constructs a [`KeyspaceSummary`](crate::types::KeyspaceSummary).

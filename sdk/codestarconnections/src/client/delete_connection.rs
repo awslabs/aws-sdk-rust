@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`connection_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_arn) / [`set_connection_arn(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_arn): <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>   <p>The ARN is never reused if the connection is deleted.</p>  </note>
     /// - On success, responds with [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput)
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::operation::delete_connection::DeleteConnectionError)
-    pub fn delete_connection(
-        &self,
-    ) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {
-        crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_connection(&self) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {
+        crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::new(self.handle.clone())
     }
 }

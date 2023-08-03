@@ -27,7 +27,7 @@ impl GenerateMobileSdkReleaseUrlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateMobileSdkReleaseUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlInputBuilder,
+    inner: crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlInputBuilder,
 }
 impl GenerateMobileSdkReleaseUrlFluentBuilder {
     /// Creates a new `GenerateMobileSdkReleaseUrl`.
@@ -38,7 +38,7 @@ impl GenerateMobileSdkReleaseUrlFluentBuilder {
         }
     }
     /// Access the GenerateMobileSdkReleaseUrl as a reference.
-    pub fn as_input(&self) -> &crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GenerateMobileSdkReleaseUrlFluentBuilder {
             crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GenerateMobileSdkReleaseUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GenerateMobileSdkReleaseUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GenerateMobileSdkReleaseUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GenerateMobileSdkReleaseUrlFluentBuilder {
             crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlError>,
     > {
         self.customize_middleware().await
     }
@@ -136,18 +125,12 @@ impl GenerateMobileSdkReleaseUrlFluentBuilder {
         self.inner.get_platform()
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
-    pub fn release_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.release_version(input.into());
         self
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
-    pub fn set_release_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_release_version(input);
         self
     }

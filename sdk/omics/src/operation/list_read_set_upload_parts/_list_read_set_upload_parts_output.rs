@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListReadSetUploadPartsOutput {
 }
 impl ListReadSetUploadPartsOutput {
     /// Creates a new builder-style object to manufacture [`ListReadSetUploadPartsOutput`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsOutputBuilder {
         crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReadSetUploadPartsOutput`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReadSetUploadPartsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) parts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>>,
+    pub(crate) parts: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>>,
     _request_id: Option<String>,
 }
 impl ListReadSetUploadPartsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListReadSetUploadPartsOutputBuilder {
         self
     }
     /// <p> An array of upload parts. </p>
-    pub fn set_parts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>>,
-    ) -> Self {
+    pub fn set_parts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>>) -> Self {
         self.parts = input;
         self
     }
     /// <p> An array of upload parts. </p>
-    pub fn get_parts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>> {
+    pub fn get_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>> {
         &self.parts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +86,7 @@ impl ListReadSetUploadPartsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReadSetUploadPartsOutput`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput {
+    pub fn build(self) -> crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput {
         crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput {
             next_token: self.next_token,
             parts: self.parts,

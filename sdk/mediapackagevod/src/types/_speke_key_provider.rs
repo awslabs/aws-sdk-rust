@@ -6,8 +6,7 @@
 pub struct SpekeKeyProvider {
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
     #[doc(hidden)]
-    pub encryption_contract_configuration:
-        ::std::option::Option<crate::types::EncryptionContractConfiguration>,
+    pub encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct SpekeKeyProvider {
 }
 impl SpekeKeyProvider {
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    pub fn encryption_contract_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionContractConfiguration> {
+    pub fn encryption_contract_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionContractConfiguration> {
         self.encryption_contract_configuration.as_ref()
     }
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
@@ -47,37 +44,26 @@ impl SpekeKeyProvider {
 
 /// A builder for [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpekeKeyProviderBuilder {
-    pub(crate) encryption_contract_configuration:
-        ::std::option::Option<crate::types::EncryptionContractConfiguration>,
+    pub(crate) encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl SpekeKeyProviderBuilder {
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    pub fn encryption_contract_configuration(
-        mut self,
-        input: crate::types::EncryptionContractConfiguration,
-    ) -> Self {
+    pub fn encryption_contract_configuration(mut self, input: crate::types::EncryptionContractConfiguration) -> Self {
         self.encryption_contract_configuration = ::std::option::Option::Some(input);
         self
     }
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    pub fn set_encryption_contract_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_contract_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionContractConfiguration>) -> Self {
         self.encryption_contract_configuration = input;
         self
     }
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    pub fn get_encryption_contract_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionContractConfiguration> {
+    pub fn get_encryption_contract_configuration(&self) -> &::std::option::Option<crate::types::EncryptionContractConfiguration> {
         &self.encryption_contract_configuration
     }
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
@@ -106,10 +92,7 @@ impl SpekeKeyProviderBuilder {
         self
     }
     /// The system IDs to include in key requests.
-    pub fn set_system_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.system_ids = input;
         self
     }

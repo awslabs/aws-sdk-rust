@@ -105,9 +105,7 @@ impl DescribeReplayOutput {
 
 /// A builder for [`DescribeReplayOutput`](crate::operation::describe_replay::DescribeReplayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplayOutputBuilder {
     pub(crate) replay_name: ::std::option::Option<::std::string::String>,
     pub(crate) replay_arn: ::std::option::Option<::std::string::String>,
@@ -195,18 +193,12 @@ impl DescribeReplayOutputBuilder {
         &self.state_reason
     }
     /// <p>The ARN of the archive events were replayed from.</p>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the archive events were replayed from.</p>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source_arn = input;
         self
     }
@@ -220,10 +212,7 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplayDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::ReplayDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -237,10 +226,7 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>The time stamp of the first event that was last replayed from the archive.</p>
-    pub fn set_event_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_start_time = input;
         self
     }
@@ -254,10 +240,7 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>The time stamp for the last event that was replayed from the archive.</p>
-    pub fn set_event_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_end_time = input;
         self
     }
@@ -271,17 +254,12 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>The time that the event was last replayed.</p>
-    pub fn set_event_last_replayed_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_last_replayed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_last_replayed_time = input;
         self
     }
     /// <p>The time that the event was last replayed.</p>
-    pub fn get_event_last_replayed_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_event_last_replayed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.event_last_replayed_time
     }
     /// <p>A time stamp for the time that the replay started.</p>
@@ -290,10 +268,7 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the replay started.</p>
-    pub fn set_replay_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_replay_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.replay_start_time = input;
         self
     }
@@ -307,10 +282,7 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the replay stopped.</p>
-    pub fn set_replay_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_replay_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.replay_end_time = input;
         self
     }

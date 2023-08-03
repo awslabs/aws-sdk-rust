@@ -15,35 +15,25 @@ impl GetSipMediaApplicationInput {
 }
 impl GetSipMediaApplicationInput {
     /// Creates a new builder-style object to manufacture [`GetSipMediaApplicationInput`](crate::operation::get_sip_media_application::GetSipMediaApplicationInput).
-    pub fn builder(
-    ) -> crate::operation::get_sip_media_application::builders::GetSipMediaApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sip_media_application::builders::GetSipMediaApplicationInputBuilder {
         crate::operation::get_sip_media_application::builders::GetSipMediaApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSipMediaApplicationInput`](crate::operation::get_sip_media_application::GetSipMediaApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSipMediaApplicationInputBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSipMediaApplicationInputBuilder {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sip_media_application_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl GetSipMediaApplicationInputBuilder {
         crate::operation::get_sip_media_application::GetSipMediaApplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sip_media_application::GetSipMediaApplicationInput {
-                sip_media_application_id: self.sip_media_application_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_sip_media_application::GetSipMediaApplicationInput {
+            sip_media_application_id: self.sip_media_application_id,
+        })
     }
 }

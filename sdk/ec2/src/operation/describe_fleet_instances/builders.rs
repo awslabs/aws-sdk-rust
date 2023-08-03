@@ -38,10 +38,7 @@ impl DescribeFleetInstancesFluentBuilder {
         }
     }
     /// Access the DescribeFleetInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeFleetInstancesFluentBuilder {
             crate::operation::describe_fleet_instances::DescribeFleetInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_instances::DescribeFleetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_instances::DescribeFleetInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeFleetInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeFleetInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_instances::DescribeFleetInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_instances::DescribeFleetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_instances::DescribeFleetInstancesError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeFleetInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_instances::DescribeFleetInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_instances::DescribeFleetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_instances::DescribeFleetInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DescribeFleetInstancesFluentBuilder {
             crate::operation::describe_fleet_instances::DescribeFleetInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_instances::DescribeFleetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_instances::DescribeFleetInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -196,10 +182,7 @@ impl DescribeFleetInstancesFluentBuilder {
     /// <ul>
     /// <li> <p> <code>instance-type</code> - The instance type.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

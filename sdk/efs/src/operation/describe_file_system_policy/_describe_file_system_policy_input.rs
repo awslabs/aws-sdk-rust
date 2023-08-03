@@ -15,35 +15,25 @@ impl DescribeFileSystemPolicyInput {
 }
 impl DescribeFileSystemPolicyInput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemPolicyInput`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyInputBuilder {
         crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFileSystemPolicyInput`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFileSystemPolicyInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFileSystemPolicyInputBuilder {
     /// <p>Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl DescribeFileSystemPolicyInputBuilder {
         crate::operation::describe_file_system_policy::DescribeFileSystemPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_file_system_policy::DescribeFileSystemPolicyInput {
-                file_system_id: self.file_system_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_file_system_policy::DescribeFileSystemPolicyInput {
+            file_system_id: self.file_system_id,
+        })
     }
 }

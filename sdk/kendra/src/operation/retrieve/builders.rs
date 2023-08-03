@@ -10,10 +10,7 @@ impl RetrieveInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::retrieve::RetrieveOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve::RetrieveError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve::RetrieveError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.retrieve();
         fluent_builder.inner = self;
@@ -53,10 +50,7 @@ impl RetrieveFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::retrieve::Retrieve,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::retrieve::Retrieve, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::retrieve::RetrieveError>,
     > {
         let handle = self.handle.clone();
@@ -67,10 +61,7 @@ impl RetrieveFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -112,10 +103,7 @@ impl RetrieveFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::retrieve::Retrieve,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::retrieve::Retrieve, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::retrieve::RetrieveError>,
     > {
         self.customize_middleware().await
@@ -156,10 +144,7 @@ impl RetrieveFluentBuilder {
     }
     /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
     /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
-    pub fn set_attribute_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeFilter>,
-    ) -> Self {
+    pub fn set_attribute_filter(mut self, input: ::std::option::Option<crate::types::AttributeFilter>) -> Self {
         self.inner = self.inner.set_attribute_filter(input);
         self
     }
@@ -173,25 +158,17 @@ impl RetrieveFluentBuilder {
     /// To override the contents of this collection use [`set_requested_document_attributes`](Self::set_requested_document_attributes).
     ///
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
-    pub fn requested_document_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requested_document_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requested_document_attributes(input.into());
         self
     }
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
-    pub fn set_requested_document_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_requested_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_requested_document_attributes(input);
         self
     }
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
-    pub fn get_requested_document_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requested_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_requested_document_attributes()
     }
     /// Appends an item to `DocumentRelevanceOverrideConfigurations`.
@@ -201,10 +178,7 @@ impl RetrieveFluentBuilder {
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn document_relevance_override_configurations(
-        mut self,
-        input: crate::types::DocumentRelevanceConfiguration,
-    ) -> Self {
+    pub fn document_relevance_override_configurations(mut self, input: crate::types::DocumentRelevanceConfiguration) -> Self {
         self.inner = self.inner.document_relevance_override_configurations(input);
         self
     }
@@ -215,9 +189,7 @@ impl RetrieveFluentBuilder {
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_document_relevance_override_configurations(input);
+        self.inner = self.inner.set_document_relevance_override_configurations(input);
         self
     }
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
@@ -262,10 +234,7 @@ impl RetrieveFluentBuilder {
         self
     }
     /// <p>The user context token or user and group information.</p>
-    pub fn set_user_context(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_user_context(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.inner = self.inner.set_user_context(input);
         self
     }

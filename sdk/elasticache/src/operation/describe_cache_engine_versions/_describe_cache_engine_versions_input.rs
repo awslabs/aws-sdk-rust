@@ -71,16 +71,14 @@ impl DescribeCacheEngineVersionsInput {
 }
 impl DescribeCacheEngineVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheEngineVersionsInput`](crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsInput).
-    pub fn builder() -> crate::operation::describe_cache_engine_versions::builders::DescribeCacheEngineVersionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_cache_engine_versions::builders::DescribeCacheEngineVersionsInputBuilder {
         crate::operation::describe_cache_engine_versions::builders::DescribeCacheEngineVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCacheEngineVersionsInput`](crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheEngineVersionsInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -106,19 +104,13 @@ impl DescribeCacheEngineVersionsInputBuilder {
     }
     /// <p>The cache engine version to return.</p>
     /// <p>Example: <code>1.4.14</code> </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cache engine version to return.</p>
     /// <p>Example: <code>1.4.14</code> </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -135,10 +127,7 @@ impl DescribeCacheEngineVersionsInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn cache_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
@@ -150,10 +139,7 @@ impl DescribeCacheEngineVersionsInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn set_cache_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_family = input;
         self
     }
@@ -165,9 +151,7 @@ impl DescribeCacheEngineVersionsInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn get_cache_parameter_group_family(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cache_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_parameter_group_family
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -225,15 +209,13 @@ impl DescribeCacheEngineVersionsInputBuilder {
         crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsInput {
-                engine: self.engine,
-                engine_version: self.engine_version,
-                cache_parameter_group_family: self.cache_parameter_group_family,
-                max_records: self.max_records,
-                marker: self.marker,
-                default_only: self.default_only.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsInput {
+            engine: self.engine,
+            engine_version: self.engine_version,
+            cache_parameter_group_family: self.cache_parameter_group_family,
+            max_records: self.max_records,
+            marker: self.marker,
+            default_only: self.default_only.unwrap_or_default(),
+        })
     }
 }

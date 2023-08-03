@@ -15,16 +15,14 @@ impl DeletePlaybackConfigurationInput {
 }
 impl DeletePlaybackConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeletePlaybackConfigurationInput`](crate::operation::delete_playback_configuration::DeletePlaybackConfigurationInput).
-    pub fn builder() -> crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationInputBuilder {
         crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlaybackConfigurationInput`](crate::operation::delete_playback_configuration::DeletePlaybackConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlaybackConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DeletePlaybackConfigurationInputBuilder {
         crate::operation::delete_playback_configuration::DeletePlaybackConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_playback_configuration::DeletePlaybackConfigurationInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_playback_configuration::DeletePlaybackConfigurationInput { name: self.name })
     }
 }

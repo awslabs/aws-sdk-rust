@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateContactWithAddressBookOutput
 }
 impl AssociateContactWithAddressBookOutput {
     /// Creates a new builder-style object to manufacture [`AssociateContactWithAddressBookOutput`](crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput).
-    pub fn builder() -> crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookOutputBuilder{
+    pub fn builder() -> crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookOutputBuilder {
         crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateContactWithAddressBookOutput`](crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateContactWithAddressBookOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AssociateContactWithAddressBookOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateContactWithAddressBookOutput`](crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput
-    {
+    pub fn build(self) -> crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput {
         crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput {
             _request_id: self._request_id,
         }

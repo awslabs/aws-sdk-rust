@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteModelPackageOutput {
 }
 impl DeleteModelPackageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelPackageOutput`](crate::operation::delete_model_package::DeleteModelPackageOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_model_package::builders::DeleteModelPackageOutputBuilder {
+    pub fn builder() -> crate::operation::delete_model_package::builders::DeleteModelPackageOutputBuilder {
         crate::operation::delete_model_package::builders::DeleteModelPackageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelPackageOutput`](crate::operation::delete_model_package::DeleteModelPackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelPackageOutputBuilder {
     _request_id: Option<String>,
 }

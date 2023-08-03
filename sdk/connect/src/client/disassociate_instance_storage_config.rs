@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`resource_type(InstanceStorageResourceType)`](crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigFluentBuilder::resource_type) / [`set_resource_type(Option<InstanceStorageResourceType>)`](crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigFluentBuilder::set_resource_type): <p>A valid resource type.</p>
     /// - On success, responds with [`DisassociateInstanceStorageConfigOutput`](crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput)
     /// - On failure, responds with [`SdkError<DisassociateInstanceStorageConfigError>`](crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError)
-    pub fn disassociate_instance_storage_config(&self) -> crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigFluentBuilder{
+    pub fn disassociate_instance_storage_config(
+        &self,
+    ) -> crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigFluentBuilder {
         crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigFluentBuilder::new(self.handle.clone())
     }
 }

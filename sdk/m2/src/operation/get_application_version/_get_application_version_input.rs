@@ -22,36 +22,26 @@ impl GetApplicationVersionInput {
 }
 impl GetApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`GetApplicationVersionInput`](crate::operation::get_application_version::GetApplicationVersionInput).
-    pub fn builder(
-    ) -> crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder {
         crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetApplicationVersionInput`](crate::operation::get_application_version::GetApplicationVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationVersionInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<i32>,
 }
 impl GetApplicationVersionInputBuilder {
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl GetApplicationVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetApplicationVersionInput`](crate::operation::get_application_version::GetApplicationVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_application_version::GetApplicationVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_application_version::GetApplicationVersionInput {
-                application_id: self.application_id,
-                application_version: self.application_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_application_version::GetApplicationVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_application_version::GetApplicationVersionInput {
+            application_id: self.application_id,
+            application_version: self.application_version,
+        })
     }
 }

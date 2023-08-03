@@ -17,9 +17,7 @@ impl EventIncludedData {
         self.case_data.as_ref()
     }
     /// <p>Details of what related item data is published through the case event stream.</p>
-    pub fn related_item_data(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RelatedItemEventIncludedData> {
+    pub fn related_item_data(&self) -> ::std::option::Option<&crate::types::RelatedItemEventIncludedData> {
         self.related_item_data.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl EventIncludedData {
 
 /// A builder for [`EventIncludedData`](crate::types::EventIncludedData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventIncludedDataBuilder {
     pub(crate) case_data: ::std::option::Option<crate::types::CaseEventIncludedData>,
     pub(crate) related_item_data: ::std::option::Option<crate::types::RelatedItemEventIncludedData>,
@@ -46,10 +42,7 @@ impl EventIncludedDataBuilder {
         self
     }
     /// <p>Details of what case data is published through the case event stream.</p>
-    pub fn set_case_data(
-        mut self,
-        input: ::std::option::Option<crate::types::CaseEventIncludedData>,
-    ) -> Self {
+    pub fn set_case_data(mut self, input: ::std::option::Option<crate::types::CaseEventIncludedData>) -> Self {
         self.case_data = input;
         self
     }
@@ -63,17 +56,12 @@ impl EventIncludedDataBuilder {
         self
     }
     /// <p>Details of what related item data is published through the case event stream.</p>
-    pub fn set_related_item_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RelatedItemEventIncludedData>,
-    ) -> Self {
+    pub fn set_related_item_data(mut self, input: ::std::option::Option<crate::types::RelatedItemEventIncludedData>) -> Self {
         self.related_item_data = input;
         self
     }
     /// <p>Details of what related item data is published through the case event stream.</p>
-    pub fn get_related_item_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelatedItemEventIncludedData> {
+    pub fn get_related_item_data(&self) -> &::std::option::Option<crate::types::RelatedItemEventIncludedData> {
         &self.related_item_data
     }
     /// Consumes the builder and constructs a [`EventIncludedData`](crate::types::EventIncludedData).

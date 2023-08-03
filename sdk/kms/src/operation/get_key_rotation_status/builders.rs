@@ -54,10 +54,7 @@ impl GetKeyRotationStatusFluentBuilder {
         }
     }
     /// Access the GetKeyRotationStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,9 +66,7 @@ impl GetKeyRotationStatusFluentBuilder {
             crate::operation::get_key_rotation_status::GetKeyRotationStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_key_rotation_status::GetKeyRotationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_key_rotation_status::GetKeyRotationStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -81,10 +76,7 @@ impl GetKeyRotationStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -93,9 +85,7 @@ impl GetKeyRotationStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_key_rotation_status::GetKeyRotationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_key_rotation_status::GetKeyRotationStatusError>,
     > {
         let op = self
             .inner
@@ -118,9 +108,7 @@ impl GetKeyRotationStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_key_rotation_status::GetKeyRotationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_key_rotation_status::GetKeyRotationStatusError>,
     > {
         self.send_middleware().await
     }
@@ -134,9 +122,7 @@ impl GetKeyRotationStatusFluentBuilder {
             crate::operation::get_key_rotation_status::GetKeyRotationStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_key_rotation_status::GetKeyRotationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_key_rotation_status::GetKeyRotationStatusError>,
     > {
         self.customize_middleware().await
     }

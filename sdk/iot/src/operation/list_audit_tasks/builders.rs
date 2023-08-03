@@ -10,10 +10,7 @@ impl ListAuditTasksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_audit_tasks::ListAuditTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_tasks::ListAuditTasksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_tasks::ListAuditTasksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_audit_tasks();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListAuditTasksFluentBuilder {
         }
     }
     /// Access the ListAuditTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_audit_tasks::builders::ListAuditTasksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_audit_tasks::builders::ListAuditTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListAuditTasksFluentBuilder {
             crate::operation::list_audit_tasks::ListAuditTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_tasks::ListAuditTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_tasks::ListAuditTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListAuditTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListAuditTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_audit_tasks::ListAuditTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_tasks::ListAuditTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_tasks::ListAuditTasksError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListAuditTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_audit_tasks::ListAuditTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_tasks::ListAuditTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_tasks::ListAuditTasksError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListAuditTasksFluentBuilder {
             crate::operation::list_audit_tasks::ListAuditTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_tasks::ListAuditTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_tasks::ListAuditTasksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator {
-        crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator {
+        crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::new(self.handle, self.inner)
     }
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -140,10 +119,7 @@ impl ListAuditTasksFluentBuilder {
         self
     }
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -157,10 +133,7 @@ impl ListAuditTasksFluentBuilder {
         self
     }
     /// <p>The end of the time period.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -174,10 +147,7 @@ impl ListAuditTasksFluentBuilder {
         self
     }
     /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
-    pub fn set_task_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditTaskType>,
-    ) -> Self {
+    pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::AuditTaskType>) -> Self {
         self.inner = self.inner.set_task_type(input);
         self
     }
@@ -191,10 +161,7 @@ impl ListAuditTasksFluentBuilder {
         self
     }
     /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditTaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::AuditTaskStatus>) -> Self {
         self.inner = self.inner.set_task_status(input);
         self
     }

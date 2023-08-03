@@ -32,9 +32,7 @@ pub struct CreateDeploymentStrategyInput {
     pub replicate_to: ::std::option::Option<crate::types::ReplicateTo>,
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDeploymentStrategyInput {
     /// <p>A name for the deployment strategy.</p>
@@ -72,28 +70,20 @@ impl CreateDeploymentStrategyInput {
         self.replicate_to.as_ref()
     }
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateDeploymentStrategyInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentStrategyInput`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput).
-    pub fn builder(
-    ) -> crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder {
         crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeploymentStrategyInput`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeploymentStrategyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -102,9 +92,7 @@ pub struct CreateDeploymentStrategyInputBuilder {
     pub(crate) growth_factor: ::std::option::Option<f32>,
     pub(crate) growth_type: ::std::option::Option<crate::types::GrowthType>,
     pub(crate) replicate_to: ::std::option::Option<crate::types::ReplicateTo>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDeploymentStrategyInputBuilder {
     /// <p>A name for the deployment strategy.</p>
@@ -195,10 +183,7 @@ impl CreateDeploymentStrategyInputBuilder {
     /// <p> <code>2*(2^1)</code> </p>
     /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
-    pub fn set_growth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GrowthType>,
-    ) -> Self {
+    pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
         self.growth_type = input;
         self
     }
@@ -218,10 +203,7 @@ impl CreateDeploymentStrategyInputBuilder {
         self
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    pub fn set_replicate_to(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicateTo>,
-    ) -> Self {
+    pub fn set_replicate_to(mut self, input: ::std::option::Option<crate::types::ReplicateTo>) -> Self {
         self.replicate_to = input;
         self
     }
@@ -234,32 +216,19 @@ impl CreateDeploymentStrategyInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDeploymentStrategyInput`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput).
@@ -269,17 +238,15 @@ impl CreateDeploymentStrategyInputBuilder {
         crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput {
-                name: self.name,
-                description: self.description,
-                deployment_duration_in_minutes: self.deployment_duration_in_minutes,
-                final_bake_time_in_minutes: self.final_bake_time_in_minutes,
-                growth_factor: self.growth_factor,
-                growth_type: self.growth_type,
-                replicate_to: self.replicate_to,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput {
+            name: self.name,
+            description: self.description,
+            deployment_duration_in_minutes: self.deployment_duration_in_minutes,
+            final_bake_time_in_minutes: self.final_bake_time_in_minutes,
+            growth_factor: self.growth_factor,
+            growth_type: self.growth_type,
+            replicate_to: self.replicate_to,
+            tags: self.tags,
+        })
     }
 }

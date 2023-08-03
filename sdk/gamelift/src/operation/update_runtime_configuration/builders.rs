@@ -30,7 +30,7 @@ impl UpdateRuntimeConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRuntimeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder,
+    inner: crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder,
 }
 impl UpdateRuntimeConfigurationFluentBuilder {
     /// Creates a new `UpdateRuntimeConfiguration`.
@@ -41,7 +41,7 @@ impl UpdateRuntimeConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateRuntimeConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl UpdateRuntimeConfigurationFluentBuilder {
             crate::operation::update_runtime_configuration::UpdateRuntimeConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl UpdateRuntimeConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl UpdateRuntimeConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl UpdateRuntimeConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl UpdateRuntimeConfigurationFluentBuilder {
             crate::operation::update_runtime_configuration::UpdateRuntimeConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +133,12 @@ impl UpdateRuntimeConfigurationFluentBuilder {
         self
     }
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
-    pub fn set_runtime_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RuntimeConfiguration>,
-    ) -> Self {
+    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
         self.inner = self.inner.set_runtime_configuration(input);
         self
     }
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
-    pub fn get_runtime_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
+    pub fn get_runtime_configuration(&self) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
         self.inner.get_runtime_configuration()
     }
 }

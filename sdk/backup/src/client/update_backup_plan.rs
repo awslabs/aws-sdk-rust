@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`version_id(Option<String>)`](crate::operation::update_backup_plan::UpdateBackupPlanOutput::version_id): <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot be edited.</p>
     ///   - [`advanced_backup_settings(Option<Vec<AdvancedBackupSetting>>)`](crate::operation::update_backup_plan::UpdateBackupPlanOutput::advanced_backup_settings): <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
     /// - On failure, responds with [`SdkError<UpdateBackupPlanError>`](crate::operation::update_backup_plan::UpdateBackupPlanError)
-    pub fn update_backup_plan(
-        &self,
-    ) -> crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder {
-        crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_backup_plan(&self) -> crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder {
+        crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder::new(self.handle.clone())
     }
 }

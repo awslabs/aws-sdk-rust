@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for OperatingSystem {
             "AMAZON_LINUX_2023" => OperatingSystem::AmazonLinux2023,
             "WINDOWS_2012" => OperatingSystem::Windows2012,
             "WINDOWS_2016" => OperatingSystem::Windows2016,
-            other => {
-                OperatingSystem::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => OperatingSystem::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl OperatingSystem {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AMAZON_LINUX",
-            "AMAZON_LINUX_2",
-            "AMAZON_LINUX_2023",
-            "WINDOWS_2012",
-            "WINDOWS_2016",
-        ]
+        &["AMAZON_LINUX", "AMAZON_LINUX_2", "AMAZON_LINUX_2023", "WINDOWS_2012", "WINDOWS_2016"]
     }
 }
 impl ::std::convert::AsRef<str> for OperatingSystem {

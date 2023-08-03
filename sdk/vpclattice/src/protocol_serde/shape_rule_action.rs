@@ -3,12 +3,7 @@ pub(crate) fn de_rule_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::RuleAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -18,47 +13,39 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "forward" => {
-                                Some(crate::types::RuleAction::Forward(
-                                    crate::protocol_serde::shape_forward_action::de_forward_action(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'forward' cannot be null"))?
-                                ))
-                            }
-                            "fixedResponse" => {
-                                Some(crate::types::RuleAction::FixedResponse(
-                                    crate::protocol_serde::shape_fixed_response_action::de_fixed_response_action(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fixedResponse' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::RuleAction::Unknown)
-                                                                    }
-                        };
+                        "forward" => Some(crate::types::RuleAction::Forward(
+                            crate::protocol_serde::shape_forward_action::de_forward_action(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'forward' cannot be null")
+                            })?,
+                        )),
+                        "fixedResponse" => Some(crate::types::RuleAction::FixedResponse(
+                            crate::protocol_serde::shape_fixed_response_action::de_fixed_response_action(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fixedResponse' cannot be null")
+                            })?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::RuleAction::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)
@@ -78,19 +65,10 @@ pub fn ser_rule_action(
         crate::types::RuleAction::FixedResponse(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_3.key("fixedResponse").start_object();
-            crate::protocol_serde::shape_fixed_response_action::ser_fixed_response_action(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_fixed_response_action::ser_fixed_response_action(&mut object_2, inner)?;
             object_2.finish();
         }
-        crate::types::RuleAction::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "RuleAction",
-                ),
-            )
-        }
+        crate::types::RuleAction::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("RuleAction")),
     }
     Ok(())
 }

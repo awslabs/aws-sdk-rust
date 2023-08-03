@@ -26,7 +26,7 @@ impl UpdateCampaignDialerConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCampaignDialerConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigInputBuilder,
+    inner: crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigInputBuilder,
 }
 impl UpdateCampaignDialerConfigFluentBuilder {
     /// Creates a new `UpdateCampaignDialerConfig`.
@@ -37,7 +37,7 @@ impl UpdateCampaignDialerConfigFluentBuilder {
         }
     }
     /// Access the UpdateCampaignDialerConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateCampaignDialerConfigFluentBuilder {
             crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateCampaignDialerConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateCampaignDialerConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateCampaignDialerConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateCampaignDialerConfigFluentBuilder {
             crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl UpdateCampaignDialerConfigFluentBuilder {
         self
     }
     /// The possible types of dialer config parameters
-    pub fn set_dialer_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DialerConfig>,
-    ) -> Self {
+    pub fn set_dialer_config(mut self, input: ::std::option::Option<crate::types::DialerConfig>) -> Self {
         self.inner = self.inner.set_dialer_config(input);
         self
     }

@@ -15,34 +15,25 @@ impl DescribeApplicationInput {
 }
 impl DescribeApplicationInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_application::builders::DescribeApplicationInputBuilder {
+    pub fn builder() -> crate::operation::describe_application::builders::DescribeApplicationInputBuilder {
         crate::operation::describe_application::builders::DescribeApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeApplicationInputBuilder {
     /// <p>The unique Id of the web application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique Id of the web application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeApplicationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_application::DescribeApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_application::DescribeApplicationInput {
-                application_id: self.application_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_application::DescribeApplicationInput {
+            application_id: self.application_id,
+        })
     }
 }

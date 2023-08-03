@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::operation::list_recommendations::ListRecommendationsOutput::recommendations): <p>The recommendations applicable to your account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommendations::ListRecommendationsOutput::next_token): <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
     /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::operation::list_recommendations::ListRecommendationsError)
-    pub fn list_recommendations(
-        &self,
-    ) -> crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder {
-        crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_recommendations(&self) -> crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder {
+        crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

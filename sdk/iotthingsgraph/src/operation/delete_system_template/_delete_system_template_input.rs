@@ -19,17 +19,14 @@ impl DeleteSystemTemplateInput {
 }
 impl DeleteSystemTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteSystemTemplateInput`](crate::operation::delete_system_template::DeleteSystemTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_system_template::builders::DeleteSystemTemplateInputBuilder {
+    pub fn builder() -> crate::operation::delete_system_template::builders::DeleteSystemTemplateInputBuilder {
         crate::operation::delete_system_template::builders::DeleteSystemTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSystemTemplateInput`](crate::operation::delete_system_template::DeleteSystemTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSystemTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -57,12 +54,8 @@ impl DeleteSystemTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSystemTemplateInput`](crate::operation::delete_system_template::DeleteSystemTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_system_template::DeleteSystemTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_system_template::DeleteSystemTemplateInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_system_template::DeleteSystemTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_system_template::DeleteSystemTemplateInput { id: self.id })
     }
 }

@@ -10,9 +10,7 @@ pub struct DescribeFhirExportJobOutput {
 }
 impl DescribeFhirExportJobOutput {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
-    pub fn export_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExportJobProperties> {
+    pub fn export_job_properties(&self) -> ::std::option::Option<&crate::types::ExportJobProperties> {
         self.export_job_properties.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeFhirExportJobOutput {
 }
 impl DescribeFhirExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirExportJobOutput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobOutputBuilder {
         crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFhirExportJobOutput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFhirExportJobOutputBuilder {
     pub(crate) export_job_properties: ::std::option::Option<crate::types::ExportJobProperties>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl DescribeFhirExportJobOutputBuilder {
         self
     }
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
-    pub fn set_export_job_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportJobProperties>,
-    ) -> Self {
+    pub fn set_export_job_properties(mut self, input: ::std::option::Option<crate::types::ExportJobProperties>) -> Self {
         self.export_job_properties = input;
         self
     }
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
-    pub fn get_export_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportJobProperties> {
+    pub fn get_export_job_properties(&self) -> &::std::option::Option<crate::types::ExportJobProperties> {
         &self.export_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

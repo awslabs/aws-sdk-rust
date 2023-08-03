@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateIpamResourceDiscoveryOutput`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryOutput) with field(s):
     ///   - [`ipam_resource_discovery_association(Option<IpamResourceDiscoveryAssociation>)`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryOutput::ipam_resource_discovery_association): <p>A resource discovery association.</p>
     /// - On failure, responds with [`SdkError<DisassociateIpamResourceDiscoveryError>`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryError)
-    pub fn disassociate_ipam_resource_discovery(&self) -> crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryFluentBuilder{
+    pub fn disassociate_ipam_resource_discovery(
+        &self,
+    ) -> crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryFluentBuilder {
         crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,8 +26,7 @@ impl DisableHostedZoneDnssecInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableHostedZoneDNSSECFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecInputBuilder,
+    inner: crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecInputBuilder,
 }
 impl DisableHostedZoneDNSSECFluentBuilder {
     /// Creates a new `DisableHostedZoneDNSSEC`.
@@ -38,10 +37,7 @@ impl DisableHostedZoneDNSSECFluentBuilder {
         }
     }
     /// Access the DisableHostedZoneDNSSEC as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DisableHostedZoneDNSSECFluentBuilder {
             crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSEC,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DisableHostedZoneDNSSECFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DisableHostedZoneDNSSECFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DisableHostedZoneDNSSECFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DisableHostedZoneDNSSECFluentBuilder {
             crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSEC,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }

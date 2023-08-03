@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateResolverRuleOutput {
 }
 impl UpdateResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverRuleOutput`](crate::operation::update_resolver_rule::UpdateResolverRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_resolver_rule::builders::UpdateResolverRuleOutputBuilder {
+    pub fn builder() -> crate::operation::update_resolver_rule::builders::UpdateResolverRuleOutputBuilder {
         crate::operation::update_resolver_rule::builders::UpdateResolverRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResolverRuleOutput`](crate::operation::update_resolver_rule::UpdateResolverRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResolverRuleOutputBuilder {
     pub(crate) resolver_rule: ::std::option::Option<crate::types::ResolverRule>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateResolverRuleOutputBuilder {
         self
     }
     /// <p>The response to an <code>UpdateResolverRule</code> request.</p>
-    pub fn set_resolver_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverRule>,
-    ) -> Self {
+    pub fn set_resolver_rule(mut self, input: ::std::option::Option<crate::types::ResolverRule>) -> Self {
         self.resolver_rule = input;
         self
     }

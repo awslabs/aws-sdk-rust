@@ -24,9 +24,7 @@ impl DeleteInventoryOutput {
         self.type_name.as_deref()
     }
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn deletion_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InventoryDeletionSummary> {
+    pub fn deletion_summary(&self) -> ::std::option::Option<&crate::types::InventoryDeletionSummary> {
         self.deletion_summary.as_ref()
     }
 }
@@ -44,9 +42,7 @@ impl DeleteInventoryOutput {
 
 /// A builder for [`DeleteInventoryOutput`](crate::operation::delete_inventory::DeleteInventoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInventoryOutputBuilder {
     pub(crate) deletion_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -88,17 +84,12 @@ impl DeleteInventoryOutputBuilder {
         self
     }
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_deletion_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryDeletionSummary>,
-    ) -> Self {
+    pub fn set_deletion_summary(mut self, input: ::std::option::Option<crate::types::InventoryDeletionSummary>) -> Self {
         self.deletion_summary = input;
         self
     }
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_deletion_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::InventoryDeletionSummary> {
+    pub fn get_deletion_summary(&self) -> &::std::option::Option<crate::types::InventoryDeletionSummary> {
         &self.deletion_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

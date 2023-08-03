@@ -30,9 +30,7 @@ impl TextDetectionResult {
 
 /// A builder for [`TextDetectionResult`](crate::types::TextDetectionResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextDetectionResultBuilder {
     pub(crate) timestamp: ::std::option::Option<i64>,
     pub(crate) text_detection: ::std::option::Option<crate::types::TextDetection>,
@@ -58,10 +56,7 @@ impl TextDetectionResultBuilder {
         self
     }
     /// <p>Details about text detected in a video.</p>
-    pub fn set_text_detection(
-        mut self,
-        input: ::std::option::Option<crate::types::TextDetection>,
-    ) -> Self {
+    pub fn set_text_detection(mut self, input: ::std::option::Option<crate::types::TextDetection>) -> Self {
         self.text_detection = input;
         self
     }

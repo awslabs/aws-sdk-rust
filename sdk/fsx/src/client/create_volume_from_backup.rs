@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVolumeFromBackupOutput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput) with field(s):
     ///   - [`volume(Option<Volume>)`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput::volume): <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation, describing the volume just created.</p>
     /// - On failure, responds with [`SdkError<CreateVolumeFromBackupError>`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupError)
-    pub fn create_volume_from_backup(
-        &self,
-    ) -> crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupFluentBuilder
-    {
+    pub fn create_volume_from_backup(&self) -> crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupFluentBuilder {
         crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupFluentBuilder::new(self.handle.clone())
     }
 }

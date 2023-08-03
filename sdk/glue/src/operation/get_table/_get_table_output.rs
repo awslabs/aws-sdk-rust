@@ -28,9 +28,7 @@ impl GetTableOutput {
 
 /// A builder for [`GetTableOutput`](crate::operation::get_table::GetTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableOutputBuilder {
     pub(crate) table: ::std::option::Option<crate::types::Table>,
     _request_id: Option<String>,

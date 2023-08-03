@@ -13,9 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAlertOutput`](crate::operation::create_alert::CreateAlertOutput) with field(s):
     ///   - [`alert_arn(Option<String>)`](crate::operation::create_alert::CreateAlertOutput::alert_arn): <p>The ARN of the alert.</p>
     /// - On failure, responds with [`SdkError<CreateAlertError>`](crate::operation::create_alert::CreateAlertError)
-    pub fn create_alert(
-        &self,
-    ) -> crate::operation::create_alert::builders::CreateAlertFluentBuilder {
+    pub fn create_alert(&self) -> crate::operation::create_alert::builders::CreateAlertFluentBuilder {
         crate::operation::create_alert::builders::CreateAlertFluentBuilder::new(self.handle.clone())
     }
 }

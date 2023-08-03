@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`buckets(Option<Vec<BucketMetadata>>)`](crate::operation::describe_buckets::DescribeBucketsOutput::buckets): <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_buckets::DescribeBucketsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<DescribeBucketsError>`](crate::operation::describe_buckets::DescribeBucketsError)
-    pub fn describe_buckets(
-        &self,
-    ) -> crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder {
-        crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_buckets(&self) -> crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder {
+        crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::new(self.handle.clone())
     }
 }

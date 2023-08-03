@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CancelBundleTaskOutput {
 }
 impl CancelBundleTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelBundleTaskOutput`](crate::operation::cancel_bundle_task::CancelBundleTaskOutput).
-    pub fn builder() -> crate::operation::cancel_bundle_task::builders::CancelBundleTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_bundle_task::builders::CancelBundleTaskOutputBuilder {
         crate::operation::cancel_bundle_task::builders::CancelBundleTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelBundleTaskOutput`](crate::operation::cancel_bundle_task::CancelBundleTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelBundleTaskOutputBuilder {
     pub(crate) bundle_task: ::std::option::Option<crate::types::BundleTask>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl CancelBundleTaskOutputBuilder {
         self
     }
     /// <p>Information about the bundle task.</p>
-    pub fn set_bundle_task(
-        mut self,
-        input: ::std::option::Option<crate::types::BundleTask>,
-    ) -> Self {
+    pub fn set_bundle_task(mut self, input: ::std::option::Option<crate::types::BundleTask>) -> Self {
         self.bundle_task = input;
         self
     }

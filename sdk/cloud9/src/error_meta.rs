@@ -37,32 +37,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_environment_ec2::CreateEnvironmentEC2Error, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_environment_ec2::CreateEnvironmentEC2Error, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -75,90 +59,74 @@ impl From<crate::operation::create_environment_ec2::CreateEnvironmentEC2Error> f
             crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
-            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::create_environment_ec2::CreateEnvironmentEC2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_environment_membership::CreateEnvironmentMembershipError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_environment_membership::CreateEnvironmentMembershipError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::create_environment_membership::CreateEnvironmentMembershipError>
-    for Error
-{
-    fn from(
-        err: crate::operation::create_environment_membership::CreateEnvironmentMembershipError,
-    ) -> Self {
+impl From<crate::operation::create_environment_membership::CreateEnvironmentMembershipError> for Error {
+    fn from(err: crate::operation::create_environment_membership::CreateEnvironmentMembershipError) -> Self {
         match err {
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::create_environment_membership::CreateEnvironmentMembershipError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::create_environment_membership::CreateEnvironmentMembershipError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment::DeleteEnvironmentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_environment::DeleteEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment::DeleteEnvironmentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_environment::DeleteEnvironmentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -171,7 +139,9 @@ impl From<crate::operation::delete_environment::DeleteEnvironmentError> for Erro
             crate::operation::delete_environment::DeleteEnvironmentError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::delete_environment::DeleteEnvironmentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_environment::DeleteEnvironmentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::delete_environment::DeleteEnvironmentError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_environment::DeleteEnvironmentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
             crate::operation::delete_environment::DeleteEnvironmentError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::delete_environment::DeleteEnvironmentError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_environment::DeleteEnvironmentError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -179,132 +149,107 @@ impl From<crate::operation::delete_environment::DeleteEnvironmentError> for Erro
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError>
-    for Error
-{
-    fn from(
-        err: crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError,
-    ) -> Self {
+impl From<crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError> for Error {
+    fn from(err: crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError) -> Self {
         match err {
-            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
-            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
-    ) -> Self {
+impl From<crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError> for Error {
+    fn from(err: crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError) -> Self {
         match err {
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environments::DescribeEnvironmentsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_environments::DescribeEnvironmentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environments::DescribeEnvironmentsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_environments::DescribeEnvironmentsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -317,40 +262,28 @@ impl From<crate::operation::describe_environments::DescribeEnvironmentsError> fo
             crate::operation::describe_environments::DescribeEnvironmentsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::describe_environments::DescribeEnvironmentsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::describe_environments::DescribeEnvironmentsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::describe_environments::DescribeEnvironmentsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_environments::DescribeEnvironmentsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
             crate::operation::describe_environments::DescribeEnvironmentsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::describe_environments::DescribeEnvironmentsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::describe_environments::DescribeEnvironmentsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_environments::DescribeEnvironmentsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::describe_environments::DescribeEnvironmentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_status::DescribeEnvironmentStatusError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_environment_status::DescribeEnvironmentStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_status::DescribeEnvironmentStatusError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_status::DescribeEnvironmentStatusError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -358,47 +291,43 @@ where
     }
 }
 impl From<crate::operation::describe_environment_status::DescribeEnvironmentStatusError> for Error {
-    fn from(
-        err: crate::operation::describe_environment_status::DescribeEnvironmentStatusError,
-    ) -> Self {
+    fn from(err: crate::operation::describe_environment_status::DescribeEnvironmentStatusError) -> Self {
         match err {
-            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
-            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_environment_status::DescribeEnvironmentStatusError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::describe_environment_status::DescribeEnvironmentStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environments::ListEnvironmentsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_environments::ListEnvironmentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environments::ListEnvironmentsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_environments::ListEnvironmentsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -411,7 +340,9 @@ impl From<crate::operation::list_environments::ListEnvironmentsError> for Error 
             crate::operation::list_environments::ListEnvironmentsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_environments::ListEnvironmentsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::list_environments::ListEnvironmentsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_environments::ListEnvironmentsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_environments::ListEnvironmentsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
             crate::operation::list_environments::ListEnvironmentsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::list_environments::ListEnvironmentsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_environments::ListEnvironmentsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -419,32 +350,16 @@ impl From<crate::operation::list_environments::ListEnvironmentsError> for Error 
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -455,34 +370,24 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -492,50 +397,24 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ConcurrentAccessException(inner) => {
-                Error::ConcurrentAccessException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::tag_resource::TagResourceError::ConcurrentAccessException(inner) => Error::ConcurrentAccessException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -545,50 +424,24 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::ConcurrentAccessException(
-                inner,
-            ) => Error::ConcurrentAccessException(inner),
-            crate::operation::untag_resource::UntagResourceError::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::untag_resource::UntagResourceError::ConcurrentAccessException(inner) => Error::ConcurrentAccessException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -601,7 +454,9 @@ impl From<crate::operation::update_environment::UpdateEnvironmentError> for Erro
             crate::operation::update_environment::UpdateEnvironmentError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::update_environment::UpdateEnvironmentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_environment::UpdateEnvironmentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::update_environment::UpdateEnvironmentError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_environment::UpdateEnvironmentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
             crate::operation::update_environment::UpdateEnvironmentError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_environment::UpdateEnvironmentError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_environment::UpdateEnvironmentError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -609,52 +464,46 @@ impl From<crate::operation::update_environment::UpdateEnvironmentError> for Erro
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_environment_membership::UpdateEnvironmentMembershipError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_environment_membership::UpdateEnvironmentMembershipError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::update_environment_membership::UpdateEnvironmentMembershipError>
-    for Error
-{
-    fn from(
-        err: crate::operation::update_environment_membership::UpdateEnvironmentMembershipError,
-    ) -> Self {
+impl From<crate::operation::update_environment_membership::UpdateEnvironmentMembershipError> for Error {
+    fn from(err: crate::operation::update_environment_membership::UpdateEnvironmentMembershipError) -> Self {
         match err {
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::update_environment_membership::UpdateEnvironmentMembershipError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

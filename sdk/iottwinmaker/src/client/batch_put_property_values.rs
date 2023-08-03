@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchPutPropertyValuesOutput`](crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput) with field(s):
     ///   - [`error_entries(Option<Vec<BatchPutPropertyErrorEntry>>)`](crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput::error_entries): <p>Entries that caused errors in the batch put operation.</p>
     /// - On failure, responds with [`SdkError<BatchPutPropertyValuesError>`](crate::operation::batch_put_property_values::BatchPutPropertyValuesError)
-    pub fn batch_put_property_values(
-        &self,
-    ) -> crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesFluentBuilder
-    {
+    pub fn batch_put_property_values(&self) -> crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesFluentBuilder {
         crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesFluentBuilder::new(self.handle.clone())
     }
 }

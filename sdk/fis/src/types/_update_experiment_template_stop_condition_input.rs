@@ -30,9 +30,7 @@ impl UpdateExperimentTemplateStopConditionInput {
 
 /// A builder for [`UpdateExperimentTemplateStopConditionInput`](crate::types::UpdateExperimentTemplateStopConditionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExperimentTemplateStopConditionInputBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

@@ -36,9 +36,7 @@ impl ListStreamKeysInput {
 
 /// A builder for [`ListStreamKeysInput`](crate::operation::list_stream_keys::ListStreamKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamKeysInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl ListStreamKeysInputBuilder {
     /// Consumes the builder and constructs a [`ListStreamKeysInput`](crate::operation::list_stream_keys::ListStreamKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stream_keys::ListStreamKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_stream_keys::ListStreamKeysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stream_keys::ListStreamKeysInput {
             channel_arn: self.channel_arn,
             next_token: self.next_token,

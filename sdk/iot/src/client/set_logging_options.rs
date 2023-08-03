@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`logging_options_payload(LoggingOptionsPayload)`](crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder::logging_options_payload) / [`set_logging_options_payload(Option<LoggingOptionsPayload>)`](crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder::set_logging_options_payload): <p>The logging options payload.</p>
     /// - On success, responds with [`SetLoggingOptionsOutput`](crate::operation::set_logging_options::SetLoggingOptionsOutput)
     /// - On failure, responds with [`SdkError<SetLoggingOptionsError>`](crate::operation::set_logging_options::SetLoggingOptionsError)
-    pub fn set_logging_options(
-        &self,
-    ) -> crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder {
-        crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_logging_options(&self) -> crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder {
+        crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder::new(self.handle.clone())
     }
 }

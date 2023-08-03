@@ -10,10 +10,7 @@ impl UpdateAssetModelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_asset_model::UpdateAssetModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_asset_model::UpdateAssetModelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_asset_model::UpdateAssetModelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_asset_model();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl UpdateAssetModelFluentBuilder {
         }
     }
     /// Access the UpdateAssetModel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_asset_model::builders::UpdateAssetModelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_asset_model::builders::UpdateAssetModelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl UpdateAssetModelFluentBuilder {
             crate::operation::update_asset_model::UpdateAssetModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_asset_model::UpdateAssetModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_asset_model::UpdateAssetModelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl UpdateAssetModelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl UpdateAssetModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_asset_model::UpdateAssetModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_asset_model::UpdateAssetModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_asset_model::UpdateAssetModelError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl UpdateAssetModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_asset_model::UpdateAssetModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_asset_model::UpdateAssetModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_asset_model::UpdateAssetModelError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl UpdateAssetModelFluentBuilder {
             crate::operation::update_asset_model::UpdateAssetModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_asset_model::UpdateAssetModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_asset_model::UpdateAssetModelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the asset model to update.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_model_id(input.into());
         self
     }
     /// <p>The ID of the asset model to update.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_model_id(input);
         self
     }
@@ -146,18 +124,12 @@ impl UpdateAssetModelFluentBuilder {
         self.inner.get_asset_model_id()
     }
     /// <p>A unique, friendly name for the asset model.</p>
-    pub fn asset_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_model_name(input.into());
         self
     }
     /// <p>A unique, friendly name for the asset model.</p>
-    pub fn set_asset_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_model_name(input);
         self
     }
@@ -166,18 +138,12 @@ impl UpdateAssetModelFluentBuilder {
         self.inner.get_asset_model_name()
     }
     /// <p>A description for the asset model.</p>
-    pub fn asset_model_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_model_description(input.into());
         self
     }
     /// <p>A description for the asset model.</p>
-    pub fn set_asset_model_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_model_description(input);
         self
     }
@@ -197,18 +163,13 @@ impl UpdateAssetModelFluentBuilder {
     }
     /// <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_asset_model_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
-    ) -> Self {
+    pub fn set_asset_model_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>) -> Self {
         self.inner = self.inner.set_asset_model_properties(input);
         self
     }
     /// <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_asset_model_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>> {
+    pub fn get_asset_model_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>> {
         self.inner.get_asset_model_properties()
     }
     /// Appends an item to `assetModelHierarchies`.
@@ -223,18 +184,13 @@ impl UpdateAssetModelFluentBuilder {
     }
     /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_asset_model_hierarchies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>>,
-    ) -> Self {
+    pub fn set_asset_model_hierarchies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>>) -> Self {
         self.inner = self.inner.set_asset_model_hierarchies(input);
         self
     }
     /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_asset_model_hierarchies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>> {
+    pub fn get_asset_model_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>> {
         self.inner.get_asset_model_hierarchies()
     }
     /// Appends an item to `assetModelCompositeModels`.
@@ -242,25 +198,17 @@ impl UpdateAssetModelFluentBuilder {
     /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
     ///
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
-    pub fn asset_model_composite_models(
-        mut self,
-        input: crate::types::AssetModelCompositeModel,
-    ) -> Self {
+    pub fn asset_model_composite_models(mut self, input: crate::types::AssetModelCompositeModel) -> Self {
         self.inner = self.inner.asset_model_composite_models(input);
         self
     }
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
-    pub fn set_asset_model_composite_models(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>,
-    ) -> Self {
+    pub fn set_asset_model_composite_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>) -> Self {
         self.inner = self.inner.set_asset_model_composite_models(input);
         self
     }
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
-    pub fn get_asset_model_composite_models(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>> {
+    pub fn get_asset_model_composite_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>> {
         self.inner.get_asset_model_composite_models()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>

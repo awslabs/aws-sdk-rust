@@ -43,9 +43,7 @@ impl UpdateResourceInput {
 
 /// A builder for [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct UpdateResourceInputBuilder {
 }
 impl UpdateResourceInputBuilder {
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -107,10 +99,7 @@ impl UpdateResourceInputBuilder {
         self
     }
     /// <p>The resource's booking options to be updated.</p>
-    pub fn set_booking_options(
-        mut self,
-        input: ::std::option::Option<crate::types::BookingOptions>,
-    ) -> Self {
+    pub fn set_booking_options(mut self, input: ::std::option::Option<crate::types::BookingOptions>) -> Self {
         self.booking_options = input;
         self
     }
@@ -121,10 +110,7 @@ impl UpdateResourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource::UpdateResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_resource::UpdateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_resource::UpdateResourceInput {
             organization_id: self.organization_id,
             resource_id: self.resource_id,

@@ -19,12 +19,7 @@ impl super::Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::last_updated_at): <p>The timestamp of when the domain was most recently edited.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetProfileObjectTypeError>`](crate::operation::get_profile_object_type::GetProfileObjectTypeError)
-    pub fn get_profile_object_type(
-        &self,
-    ) -> crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder
-    {
-        crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_profile_object_type(&self) -> crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder {
+        crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteContactFlowOutput {
 }
 impl DeleteContactFlowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContactFlowOutput`](crate::operation::delete_contact_flow::DeleteContactFlowOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_contact_flow::builders::DeleteContactFlowOutputBuilder {
+    pub fn builder() -> crate::operation::delete_contact_flow::builders::DeleteContactFlowOutputBuilder {
         crate::operation::delete_contact_flow::builders::DeleteContactFlowOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContactFlowOutput`](crate::operation::delete_contact_flow::DeleteContactFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContactFlowOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,17 +22,14 @@ impl ListStorageSystemsInput {
 }
 impl ListStorageSystemsInput {
     /// Creates a new builder-style object to manufacture [`ListStorageSystemsInput`](crate::operation::list_storage_systems::ListStorageSystemsInput).
-    pub fn builder(
-    ) -> crate::operation::list_storage_systems::builders::ListStorageSystemsInputBuilder {
+    pub fn builder() -> crate::operation::list_storage_systems::builders::ListStorageSystemsInputBuilder {
         crate::operation::list_storage_systems::builders::ListStorageSystemsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStorageSystemsInput`](crate::operation::list_storage_systems::ListStorageSystemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStorageSystemsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl ListStorageSystemsInputBuilder {
     /// Consumes the builder and constructs a [`ListStorageSystemsInput`](crate::operation::list_storage_systems::ListStorageSystemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_storage_systems::ListStorageSystemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_storage_systems::ListStorageSystemsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_storage_systems::ListStorageSystemsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_storage_systems::ListStorageSystemsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

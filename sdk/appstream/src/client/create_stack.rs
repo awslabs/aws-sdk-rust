@@ -18,9 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStackOutput`](crate::operation::create_stack::CreateStackOutput) with field(s):
     ///   - [`stack(Option<Stack>)`](crate::operation::create_stack::CreateStackOutput::stack): <p>Information about the stack.</p>
     /// - On failure, responds with [`SdkError<CreateStackError>`](crate::operation::create_stack::CreateStackError)
-    pub fn create_stack(
-        &self,
-    ) -> crate::operation::create_stack::builders::CreateStackFluentBuilder {
+    pub fn create_stack(&self) -> crate::operation::create_stack::builders::CreateStackFluentBuilder {
         crate::operation::create_stack::builders::CreateStackFluentBuilder::new(self.handle.clone())
     }
 }

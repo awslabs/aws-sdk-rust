@@ -23,9 +23,7 @@ impl OverallTestResults {
 
 /// A builder for [`OverallTestResults`](crate::types::OverallTestResults).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OverallTestResultsBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::OverallTestResultItem>>,
 }
@@ -42,17 +40,12 @@ impl OverallTestResultsBuilder {
         self
     }
     /// <p>A list of the overall test results.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OverallTestResultItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OverallTestResultItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A list of the overall test results.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OverallTestResultItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OverallTestResultItem>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`OverallTestResults`](crate::types::OverallTestResults).

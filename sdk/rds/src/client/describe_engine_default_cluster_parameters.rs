@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeEngineDefaultClusterParametersOutput`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput) with field(s):
     ///   - [`engine_defaults(Option<EngineDefaults>)`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput::engine_defaults): <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     /// - On failure, responds with [`SdkError<DescribeEngineDefaultClusterParametersError>`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersError)
-    pub fn describe_engine_default_cluster_parameters(&self) -> crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersFluentBuilder{
-        crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersFluentBuilder::new(self.handle.clone())
+    pub fn describe_engine_default_cluster_parameters(
+        &self,
+    ) -> crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersFluentBuilder {
+        crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

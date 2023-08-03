@@ -22,26 +22,18 @@ impl DeleteAppBundleInput {
 
 /// A builder for [`DeleteAppBundleInput`](crate::operation::delete_app_bundle::DeleteAppBundleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppBundleInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppBundleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_identifier = input;
         self
     }
@@ -52,10 +44,7 @@ impl DeleteAppBundleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppBundleInput`](crate::operation::delete_app_bundle::DeleteAppBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_app_bundle::DeleteAppBundleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_app_bundle::DeleteAppBundleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_app_bundle::DeleteAppBundleInput {
             app_bundle_identifier: self.app_bundle_identifier,
         })

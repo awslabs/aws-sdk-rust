@@ -35,9 +35,7 @@ impl ListStatementsOutput {
 
 /// A builder for [`ListStatementsOutput`](crate::operation::list_statements::ListStatementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStatementsOutputBuilder {
     pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListStatementsOutputBuilder {
         self
     }
     /// <p>Returns the list of statements.</p>
-    pub fn set_statements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
-    ) -> Self {
+    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>) -> Self {
         self.statements = input;
         self
     }
     /// <p>Returns the list of statements.</p>
-    pub fn get_statements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Statement>> {
+    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Statement>> {
         &self.statements
     }
     /// <p>A continuation token, if not all statements have yet been returned.</p>

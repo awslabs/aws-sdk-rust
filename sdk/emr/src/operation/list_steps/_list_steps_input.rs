@@ -44,9 +44,7 @@ impl ListStepsInput {
 
 /// A builder for [`ListStepsInput`](crate::operation::list_steps::ListStepsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStepsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_states: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>,
@@ -80,17 +78,12 @@ impl ListStepsInputBuilder {
         self
     }
     /// <p>The filter to limit the step list based on certain states.</p>
-    pub fn set_step_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>,
-    ) -> Self {
+    pub fn set_step_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>) -> Self {
         self.step_states = input;
         self
     }
     /// <p>The filter to limit the step list based on certain states.</p>
-    pub fn get_step_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StepState>> {
+    pub fn get_step_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepState>> {
         &self.step_states
     }
     /// Appends an item to `step_ids`.
@@ -105,10 +98,7 @@ impl ListStepsInputBuilder {
         self
     }
     /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
-    pub fn set_step_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_step_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.step_ids = input;
         self
     }
@@ -131,12 +121,7 @@ impl ListStepsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListStepsInput`](crate::operation::list_steps::ListStepsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_steps::ListStepsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_steps::ListStepsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_steps::ListStepsInput {
             cluster_id: self.cluster_id,
             step_states: self.step_states,

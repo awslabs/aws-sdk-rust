@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeBatchLoadTaskOutput`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskOutput) with field(s):
     ///   - [`batch_load_task_description(Option<BatchLoadTaskDescription>)`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskOutput::batch_load_task_description): <p>Description of the batch load task.</p>
     /// - On failure, responds with [`SdkError<DescribeBatchLoadTaskError>`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError)
-    pub fn describe_batch_load_task(
-        &self,
-    ) -> crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskFluentBuilder
-    {
+    pub fn describe_batch_load_task(&self) -> crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskFluentBuilder {
         crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskFluentBuilder::new(self.handle.clone())
     }
 }

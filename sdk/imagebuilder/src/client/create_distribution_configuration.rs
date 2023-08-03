@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::create_distribution_configuration::CreateDistributionConfigurationOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
     ///   - [`distribution_configuration_arn(Option<String>)`](crate::operation::create_distribution_configuration::CreateDistributionConfigurationOutput::distribution_configuration_arn): <p>The Amazon Resource Name (ARN) of the distribution configuration that was created by this request.</p>
     /// - On failure, responds with [`SdkError<CreateDistributionConfigurationError>`](crate::operation::create_distribution_configuration::CreateDistributionConfigurationError)
-    pub fn create_distribution_configuration(&self) -> crate::operation::create_distribution_configuration::builders::CreateDistributionConfigurationFluentBuilder{
+    pub fn create_distribution_configuration(
+        &self,
+    ) -> crate::operation::create_distribution_configuration::builders::CreateDistributionConfigurationFluentBuilder {
         crate::operation::create_distribution_configuration::builders::CreateDistributionConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

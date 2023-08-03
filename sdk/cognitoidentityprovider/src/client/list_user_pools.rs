@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`user_pools(Option<Vec<UserPoolDescriptionType>>)`](crate::operation::list_user_pools::ListUserPoolsOutput::user_pools): <p>The user pools from the response to list users.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_pools::ListUserPoolsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListUserPoolsError>`](crate::operation::list_user_pools::ListUserPoolsError)
-    pub fn list_user_pools(
-        &self,
-    ) -> crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder {
-        crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_user_pools(&self) -> crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder {
+        crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder::new(self.handle.clone())
     }
 }

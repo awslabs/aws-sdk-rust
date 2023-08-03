@@ -29,16 +29,14 @@ impl GetVoiceToneAnalysisTaskInput {
 }
 impl GetVoiceToneAnalysisTaskInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceToneAnalysisTaskInput`](crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput).
-    pub fn builder() -> crate::operation::get_voice_tone_analysis_task::builders::GetVoiceToneAnalysisTaskInputBuilder{
+    pub fn builder() -> crate::operation::get_voice_tone_analysis_task::builders::GetVoiceToneAnalysisTaskInputBuilder {
         crate::operation::get_voice_tone_analysis_task::builders::GetVoiceToneAnalysisTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceToneAnalysisTaskInput`](crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceToneAnalysisTaskInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) voice_tone_analysis_task_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct GetVoiceToneAnalysisTaskInputBuilder {
 }
 impl GetVoiceToneAnalysisTaskInputBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The ID of the voice tone anlysis task.</p>
-    pub fn voice_tone_analysis_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_tone_analysis_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_tone_analysis_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice tone anlysis task.</p>
-    pub fn set_voice_tone_analysis_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_tone_analysis_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_tone_analysis_task_id = input;
         self
     }
@@ -106,12 +92,10 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
         crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput {
-                voice_connector_id: self.voice_connector_id,
-                voice_tone_analysis_task_id: self.voice_tone_analysis_task_id,
-                is_caller: self.is_caller,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput {
+            voice_connector_id: self.voice_connector_id,
+            voice_tone_analysis_task_id: self.voice_tone_analysis_task_id,
+            is_caller: self.is_caller,
+        })
     }
 }

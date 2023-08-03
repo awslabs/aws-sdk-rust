@@ -10,10 +10,7 @@ impl DescribeSchemasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_schemas::DescribeSchemasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_schemas::DescribeSchemasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_schemas::DescribeSchemasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_schemas();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeSchemasFluentBuilder {
         }
     }
     /// Access the DescribeSchemas as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_schemas::builders::DescribeSchemasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_schemas::builders::DescribeSchemasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeSchemasFluentBuilder {
             crate::operation::describe_schemas::DescribeSchemas,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_schemas::DescribeSchemasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_schemas::DescribeSchemasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeSchemasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeSchemasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_schemas::DescribeSchemasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_schemas::DescribeSchemasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_schemas::DescribeSchemasError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeSchemasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_schemas::DescribeSchemasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_schemas::DescribeSchemasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_schemas::DescribeSchemasError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl DescribeSchemasFluentBuilder {
             crate::operation::describe_schemas::DescribeSchemas,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_schemas::DescribeSchemasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_schemas::DescribeSchemasError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_schemas::paginator::DescribeSchemasPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_schemas::paginator::DescribeSchemasPaginator {
-        crate::operation::describe_schemas::paginator::DescribeSchemasPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_schemas::paginator::DescribeSchemasPaginator {
+        crate::operation::describe_schemas::paginator::DescribeSchemasPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

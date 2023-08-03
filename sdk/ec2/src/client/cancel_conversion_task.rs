@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`reason_message(impl ::std::convert::Into<String>)`](crate::operation::cancel_conversion_task::builders::CancelConversionTaskFluentBuilder::reason_message) / [`set_reason_message(Option<String>)`](crate::operation::cancel_conversion_task::builders::CancelConversionTaskFluentBuilder::set_reason_message): <p>The reason for canceling the conversion task.</p>
     /// - On success, responds with [`CancelConversionTaskOutput`](crate::operation::cancel_conversion_task::CancelConversionTaskOutput)
     /// - On failure, responds with [`SdkError<CancelConversionTaskError>`](crate::operation::cancel_conversion_task::CancelConversionTaskError)
-    pub fn cancel_conversion_task(
-        &self,
-    ) -> crate::operation::cancel_conversion_task::builders::CancelConversionTaskFluentBuilder {
-        crate::operation::cancel_conversion_task::builders::CancelConversionTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_conversion_task(&self) -> crate::operation::cancel_conversion_task::builders::CancelConversionTaskFluentBuilder {
+        crate::operation::cancel_conversion_task::builders::CancelConversionTaskFluentBuilder::new(self.handle.clone())
     }
 }

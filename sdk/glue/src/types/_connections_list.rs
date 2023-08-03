@@ -23,9 +23,7 @@ impl ConnectionsList {
 
 /// A builder for [`ConnectionsList`](crate::types::ConnectionsList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionsListBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,17 +40,12 @@ impl ConnectionsListBuilder {
         self
     }
     /// <p>A list of connections used by the job.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.connections = input;
         self
     }
     /// <p>A list of connections used by the job.</p>
-    pub fn get_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.connections
     }
     /// Consumes the builder and constructs a [`ConnectionsList`](crate::types::ConnectionsList).

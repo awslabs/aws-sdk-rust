@@ -37,9 +37,7 @@ impl GetMaintenanceWindowFluentBuilder {
         }
     }
     /// Access the GetMaintenanceWindow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_maintenance_window::builders::GetMaintenanceWindowInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_maintenance_window::builders::GetMaintenanceWindowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetMaintenanceWindowFluentBuilder {
             crate::operation::get_maintenance_window::GetMaintenanceWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window::GetMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window::GetMaintenanceWindowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetMaintenanceWindowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetMaintenanceWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_maintenance_window::GetMaintenanceWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window::GetMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window::GetMaintenanceWindowError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetMaintenanceWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_maintenance_window::GetMaintenanceWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window::GetMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window::GetMaintenanceWindowError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetMaintenanceWindowFluentBuilder {
             crate::operation::get_maintenance_window::GetMaintenanceWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window::GetMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window::GetMaintenanceWindowError>,
     > {
         self.customize_middleware().await
     }

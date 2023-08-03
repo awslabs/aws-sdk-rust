@@ -27,8 +27,7 @@ impl StartTextTranslationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTextTranslationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder,
+    inner: crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder,
 }
 impl StartTextTranslationJobFluentBuilder {
     /// Creates a new `StartTextTranslationJob`.
@@ -39,10 +38,7 @@ impl StartTextTranslationJobFluentBuilder {
         }
     }
     /// Access the StartTextTranslationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl StartTextTranslationJobFluentBuilder {
             crate::operation::start_text_translation_job::StartTextTranslationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_text_translation_job::StartTextTranslationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_text_translation_job::StartTextTranslationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl StartTextTranslationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl StartTextTranslationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_text_translation_job::StartTextTranslationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_text_translation_job::StartTextTranslationJobError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl StartTextTranslationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_text_translation_job::StartTextTranslationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_text_translation_job::StartTextTranslationJobError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl StartTextTranslationJobFluentBuilder {
             crate::operation::start_text_translation_job::StartTextTranslationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_text_translation_job::StartTextTranslationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_text_translation_job::StartTextTranslationJobError>,
     > {
         self.customize_middleware().await
     }
@@ -145,10 +130,7 @@ impl StartTextTranslationJobFluentBuilder {
         self
     }
     /// <p>Specifies the format and location of the input documents for the translation job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -162,10 +144,7 @@ impl StartTextTranslationJobFluentBuilder {
         self
     }
     /// <p>Specifies the S3 folder to which your job output will be saved. </p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -174,18 +153,12 @@ impl StartTextTranslationJobFluentBuilder {
         self.inner.get_output_data_config()
     }
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access management </a>.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access management </a>.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -194,18 +167,12 @@ impl StartTextTranslationJobFluentBuilder {
         self.inner.get_data_access_role_arn()
     }
     /// <p>The language code of the input language. Specify the language if all input documents share the same language. If you don't know the language of the source files, or your input documents contains different source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn source_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_language_code(input.into());
         self
     }
     /// <p>The language code of the input language. Specify the language if all input documents share the same language. If you don't know the language of the source files, or your input documents contains different source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn set_source_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_language_code(input);
         self
     }
@@ -219,27 +186,19 @@ impl StartTextTranslationJobFluentBuilder {
     ///
     /// <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p>
     /// <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn target_language_codes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_language_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_language_codes(input.into());
         self
     }
     /// <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p>
     /// <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn set_target_language_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_language_codes(input);
         self
     }
     /// <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p>
     /// <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn get_target_language_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_language_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_language_codes()
     }
     /// Appends an item to `TerminologyNames`.
@@ -251,10 +210,7 @@ impl StartTextTranslationJobFluentBuilder {
     /// <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p>
     /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    pub fn terminology_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn terminology_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.terminology_names(input.into());
         self
     }
@@ -263,10 +219,7 @@ impl StartTextTranslationJobFluentBuilder {
     /// <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p>
     /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    pub fn set_terminology_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_terminology_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_terminology_names(input);
         self
     }
@@ -275,9 +228,7 @@ impl StartTextTranslationJobFluentBuilder {
     /// <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p>
     /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    pub fn get_terminology_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_terminology_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_terminology_names()
     }
     /// Appends an item to `ParallelDataNames`.
@@ -291,10 +242,7 @@ impl StartTextTranslationJobFluentBuilder {
     /// </note>
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
-    pub fn parallel_data_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parallel_data_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parallel_data_names(input.into());
         self
     }
@@ -305,10 +253,7 @@ impl StartTextTranslationJobFluentBuilder {
     /// </note>
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
-    pub fn set_parallel_data_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_parallel_data_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_parallel_data_names(input);
         self
     }
@@ -319,9 +264,7 @@ impl StartTextTranslationJobFluentBuilder {
     /// </note>
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
-    pub fn get_parallel_data_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parallel_data_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_parallel_data_names()
     }
     /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
@@ -344,10 +287,7 @@ impl StartTextTranslationJobFluentBuilder {
         self
     }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TranslationSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }

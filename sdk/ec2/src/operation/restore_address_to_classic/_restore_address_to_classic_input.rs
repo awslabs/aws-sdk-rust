@@ -22,18 +22,14 @@ impl RestoreAddressToClassicInput {
 }
 impl RestoreAddressToClassicInput {
     /// Creates a new builder-style object to manufacture [`RestoreAddressToClassicInput`](crate::operation::restore_address_to_classic::RestoreAddressToClassicInput).
-    pub fn builder(
-    ) -> crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicInputBuilder
-    {
+    pub fn builder() -> crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicInputBuilder {
         crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreAddressToClassicInput`](crate::operation::restore_address_to_classic::RestoreAddressToClassicInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreAddressToClassicInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl RestoreAddressToClassicInputBuilder {
         crate::operation::restore_address_to_classic::RestoreAddressToClassicInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::restore_address_to_classic::RestoreAddressToClassicInput {
-                dry_run: self.dry_run,
-                public_ip: self.public_ip,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::restore_address_to_classic::RestoreAddressToClassicInput {
+            dry_run: self.dry_run,
+            public_ip: self.public_ip,
+        })
     }
 }

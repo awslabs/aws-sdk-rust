@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`PutRetentionConfigurationOutput`](crate::operation::put_retention_configuration::PutRetentionConfigurationOutput) with field(s):
     ///   - [`retention_configuration(Option<RetentionConfiguration>)`](crate::operation::put_retention_configuration::PutRetentionConfigurationOutput::retention_configuration): <p>Returns a retention configuration object.</p>
     /// - On failure, responds with [`SdkError<PutRetentionConfigurationError>`](crate::operation::put_retention_configuration::PutRetentionConfigurationError)
-    pub fn put_retention_configuration(&self) -> crate::operation::put_retention_configuration::builders::PutRetentionConfigurationFluentBuilder{
+    pub fn put_retention_configuration(&self) -> crate::operation::put_retention_configuration::builders::PutRetentionConfigurationFluentBuilder {
         crate::operation::put_retention_configuration::builders::PutRetentionConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

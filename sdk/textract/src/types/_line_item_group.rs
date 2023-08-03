@@ -30,9 +30,7 @@ impl LineItemGroup {
 
 /// A builder for [`LineItemGroup`](crate::types::LineItemGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineItemGroupBuilder {
     pub(crate) line_item_group_index: ::std::option::Option<i32>,
     pub(crate) line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>>,
@@ -64,17 +62,12 @@ impl LineItemGroupBuilder {
         self
     }
     /// <p>The breakdown of information on a particular line of a table. </p>
-    pub fn set_line_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>>,
-    ) -> Self {
+    pub fn set_line_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>>) -> Self {
         self.line_items = input;
         self
     }
     /// <p>The breakdown of information on a particular line of a table. </p>
-    pub fn get_line_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>> {
+    pub fn get_line_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>> {
         &self.line_items
     }
     /// Consumes the builder and constructs a [`LineItemGroup`](crate::types::LineItemGroup).

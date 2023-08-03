@@ -22,9 +22,7 @@ impl DisableCrlInput {
 
 /// A builder for [`DisableCrlInput`](crate::operation::disable_crl::DisableCrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableCrlInputBuilder {
     pub(crate) crl_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DisableCrlInputBuilder {
         &self.crl_id
     }
     /// Consumes the builder and constructs a [`DisableCrlInput`](crate::operation::disable_crl::DisableCrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_crl::DisableCrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_crl::DisableCrlInput {
-            crl_id: self.crl_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_crl::DisableCrlInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disable_crl::DisableCrlInput { crl_id: self.crl_id })
     }
 }

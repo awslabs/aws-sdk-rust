@@ -10,10 +10,7 @@ impl CreateClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_cluster::CreateClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster::CreateClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_cluster();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CreateClusterFluentBuilder {
         }
     }
     /// Access the CreateCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_cluster::builders::CreateClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_cluster::builders::CreateClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl CreateClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -172,39 +164,26 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
-    pub fn set_resources_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfigRequest>,
-    ) -> Self {
+    pub fn set_resources_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigRequest>) -> Self {
         self.inner = self.inner.set_resources_vpc_config(input);
         self
     }
     /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
-    pub fn get_resources_vpc_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcConfigRequest> {
+    pub fn get_resources_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigRequest> {
         self.inner.get_resources_vpc_config()
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn kubernetes_network_config(
-        mut self,
-        input: crate::types::KubernetesNetworkConfigRequest,
-    ) -> Self {
+    pub fn kubernetes_network_config(mut self, input: crate::types::KubernetesNetworkConfigRequest) -> Self {
         self.inner = self.inner.kubernetes_network_config(input);
         self
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn set_kubernetes_network_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
-    ) -> Self {
+    pub fn set_kubernetes_network_config(mut self, input: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>) -> Self {
         self.inner = self.inner.set_kubernetes_network_config(input);
         self
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn get_kubernetes_network_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::KubernetesNetworkConfigRequest> {
+    pub fn get_kubernetes_network_config(&self) -> &::std::option::Option<crate::types::KubernetesNetworkConfigRequest> {
         self.inner.get_kubernetes_network_config()
     }
     /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
@@ -228,18 +207,12 @@ impl CreateClusterFluentBuilder {
         self.inner.get_logging()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -252,30 +225,17 @@ impl CreateClusterFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Appends an item to `encryptionConfig`.
@@ -288,17 +248,12 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The encryption configuration for the cluster.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>) -> Self {
         self.inner = self.inner.set_encryption_config(input);
         self
     }
     /// <p>The encryption configuration for the cluster.</p>
-    pub fn get_encryption_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
+    pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
         self.inner.get_encryption_config()
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
@@ -307,10 +262,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
-    pub fn set_outpost_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutpostConfigRequest>,
-    ) -> Self {
+    pub fn set_outpost_config(mut self, input: ::std::option::Option<crate::types::OutpostConfigRequest>) -> Self {
         self.inner = self.inner.set_outpost_config(input);
         self
     }

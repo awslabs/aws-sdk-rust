@@ -93,18 +93,14 @@ impl CreateAppAuthorizationInput {
 }
 impl CreateAppAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`CreateAppAuthorizationInput`](crate::operation::create_app_authorization::CreateAppAuthorizationInput).
-    pub fn builder(
-    ) -> crate::operation::create_app_authorization::builders::CreateAppAuthorizationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_authorization::builders::CreateAppAuthorizationInputBuilder {
         crate::operation::create_app_authorization::builders::CreateAppAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppAuthorizationInput`](crate::operation::create_app_authorization::CreateAppAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppAuthorizationInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) app: ::std::option::Option<::std::string::String>,
@@ -116,18 +112,12 @@ pub struct CreateAppAuthorizationInputBuilder {
 }
 impl CreateAppAuthorizationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_identifier = input;
         self
     }
@@ -202,10 +192,7 @@ impl CreateAppAuthorizationInputBuilder {
     }
     /// <p>Contains credentials for the application, such as an API key or OAuth2 client ID and secret.</p>
     /// <p>Specify credentials that match the authorization type for your request. For example, if the authorization type for your request is OAuth2 (<code>oauth2</code>), then you should provide only the OAuth2 credentials.</p>
-    pub fn set_credential(
-        mut self,
-        input: ::std::option::Option<crate::types::Credential>,
-    ) -> Self {
+    pub fn set_credential(mut self, input: ::std::option::Option<crate::types::Credential>) -> Self {
         self.credential = input;
         self
     }
@@ -274,10 +261,7 @@ impl CreateAppAuthorizationInputBuilder {
         self
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -288,20 +272,16 @@ impl CreateAppAuthorizationInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppAuthorizationInput`](crate::operation::create_app_authorization::CreateAppAuthorizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_app_authorization::CreateAppAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_app_authorization::CreateAppAuthorizationInput {
-                app_bundle_identifier: self.app_bundle_identifier,
-                app: self.app,
-                credential: self.credential,
-                tenant: self.tenant,
-                auth_type: self.auth_type,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_app_authorization::CreateAppAuthorizationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_app_authorization::CreateAppAuthorizationInput {
+            app_bundle_identifier: self.app_bundle_identifier,
+            app: self.app,
+            credential: self.credential,
+            tenant: self.tenant,
+            auth_type: self.auth_type,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

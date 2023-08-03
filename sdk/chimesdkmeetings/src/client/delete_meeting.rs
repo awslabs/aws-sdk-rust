@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`meeting_id(impl ::std::convert::Into<String>)`](crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
     /// - On success, responds with [`DeleteMeetingOutput`](crate::operation::delete_meeting::DeleteMeetingOutput)
     /// - On failure, responds with [`SdkError<DeleteMeetingError>`](crate::operation::delete_meeting::DeleteMeetingError)
-    pub fn delete_meeting(
-        &self,
-    ) -> crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder {
-        crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_meeting(&self) -> crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder {
+        crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder::new(self.handle.clone())
     }
 }

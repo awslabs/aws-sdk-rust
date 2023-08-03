@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput::permissions): <p>Information about the permissions for the folder.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<UpdateFolderPermissionsError>`](crate::operation::update_folder_permissions::UpdateFolderPermissionsError)
-    pub fn update_folder_permissions(
-        &self,
-    ) -> crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsFluentBuilder
-    {
+    pub fn update_folder_permissions(&self) -> crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsFluentBuilder {
         crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

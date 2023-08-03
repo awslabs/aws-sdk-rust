@@ -23,9 +23,7 @@ impl ColdStorageOptions {
 
 /// A builder for [`ColdStorageOptions`](crate::types::ColdStorageOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColdStorageOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl ColdStorageOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`ColdStorageOptions`](crate::types::ColdStorageOptions).
     pub fn build(self) -> crate::types::ColdStorageOptions {
-        crate::types::ColdStorageOptions {
-            enabled: self.enabled,
-        }
+        crate::types::ColdStorageOptions { enabled: self.enabled }
     }
 }

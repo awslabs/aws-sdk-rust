@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`repository_name(Option<String>)`](crate::operation::put_image_tag_mutability::PutImageTagMutabilityOutput::repository_name): <p>The repository name associated with the request.</p>
     ///   - [`image_tag_mutability(Option<ImageTagMutability>)`](crate::operation::put_image_tag_mutability::PutImageTagMutabilityOutput::image_tag_mutability): <p>The image tag mutability setting for the repository.</p>
     /// - On failure, responds with [`SdkError<PutImageTagMutabilityError>`](crate::operation::put_image_tag_mutability::PutImageTagMutabilityError)
-    pub fn put_image_tag_mutability(
-        &self,
-    ) -> crate::operation::put_image_tag_mutability::builders::PutImageTagMutabilityFluentBuilder
-    {
+    pub fn put_image_tag_mutability(&self) -> crate::operation::put_image_tag_mutability::builders::PutImageTagMutabilityFluentBuilder {
         crate::operation::put_image_tag_mutability::builders::PutImageTagMutabilityFluentBuilder::new(self.handle.clone())
     }
 }

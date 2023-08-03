@@ -35,9 +35,7 @@ impl ListConnectionsOutput {
 
 /// A builder for [`ListConnectionsOutput`](crate::operation::list_connections::ListConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectionsOutputBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListConnectionsOutputBuilder {
         self
     }
     /// <p>An array of connections objects that include details about the connections.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>) -> Self {
         self.connections = input;
         self
     }
     /// <p>An array of connections objects that include details about the connections.</p>
-    pub fn get_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
         &self.connections
     }
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>

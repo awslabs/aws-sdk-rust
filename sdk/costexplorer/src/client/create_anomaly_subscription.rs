@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAnomalySubscriptionOutput`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput) with field(s):
     ///   - [`subscription_arn(Option<String>)`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput::subscription_arn): <p>The unique identifier of your newly created cost anomaly subscription. </p>
     /// - On failure, responds with [`SdkError<CreateAnomalySubscriptionError>`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError)
-    pub fn create_anomaly_subscription(&self) -> crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionFluentBuilder{
+    pub fn create_anomaly_subscription(&self) -> crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionFluentBuilder {
         crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

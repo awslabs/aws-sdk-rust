@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVcenterClientOutput {
 }
 impl DeleteVcenterClientOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVcenterClientOutput`](crate::operation::delete_vcenter_client::DeleteVcenterClientOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vcenter_client::builders::DeleteVcenterClientOutputBuilder {
-        crate::operation::delete_vcenter_client::builders::DeleteVcenterClientOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_vcenter_client::builders::DeleteVcenterClientOutputBuilder {
+        crate::operation::delete_vcenter_client::builders::DeleteVcenterClientOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVcenterClientOutput`](crate::operation::delete_vcenter_client::DeleteVcenterClientOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVcenterClientOutputBuilder {
     _request_id: Option<String>,
 }

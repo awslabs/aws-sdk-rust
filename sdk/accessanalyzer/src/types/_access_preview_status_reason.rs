@@ -23,9 +23,7 @@ impl AccessPreviewStatusReason {
 
 /// A builder for [`AccessPreviewStatusReason`](crate::types::AccessPreviewStatusReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessPreviewStatusReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
 }
@@ -36,10 +34,7 @@ impl AccessPreviewStatusReasonBuilder {
         self
     }
     /// <p>The reason code for the current status of the access preview.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::AccessPreviewStatusReasonCode>) -> Self {
         self.code = input;
         self
     }

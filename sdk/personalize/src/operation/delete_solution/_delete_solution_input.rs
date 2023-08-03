@@ -22,9 +22,7 @@ impl DeleteSolutionInput {
 
 /// A builder for [`DeleteSolutionInput`](crate::operation::delete_solution::DeleteSolutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSolutionInputBuilder {
     pub(crate) solution_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteSolutionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSolutionInput`](crate::operation::delete_solution::DeleteSolutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_solution::DeleteSolutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_solution::DeleteSolutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_solution::DeleteSolutionInput {
             solution_arn: self.solution_arn,
         })

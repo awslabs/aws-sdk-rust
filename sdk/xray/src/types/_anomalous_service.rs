@@ -23,9 +23,7 @@ impl AnomalousService {
 
 /// A builder for [`AnomalousService`](crate::types::AnomalousService).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalousServiceBuilder {
     pub(crate) service_id: ::std::option::Option<crate::types::ServiceId>,
 }
@@ -46,8 +44,6 @@ impl AnomalousServiceBuilder {
     }
     /// Consumes the builder and constructs a [`AnomalousService`](crate::types::AnomalousService).
     pub fn build(self) -> crate::types::AnomalousService {
-        crate::types::AnomalousService {
-            service_id: self.service_id,
-        }
+        crate::types::AnomalousService { service_id: self.service_id }
     }
 }

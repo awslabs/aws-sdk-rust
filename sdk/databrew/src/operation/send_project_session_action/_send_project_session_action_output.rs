@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for SendProjectSessionActionOutput {
 }
 impl SendProjectSessionActionOutput {
     /// Creates a new builder-style object to manufacture [`SendProjectSessionActionOutput`](crate::operation::send_project_session_action::SendProjectSessionActionOutput).
-    pub fn builder() -> crate::operation::send_project_session_action::builders::SendProjectSessionActionOutputBuilder{
+    pub fn builder() -> crate::operation::send_project_session_action::builders::SendProjectSessionActionOutputBuilder {
         crate::operation::send_project_session_action::builders::SendProjectSessionActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendProjectSessionActionOutput`](crate::operation::send_project_session_action::SendProjectSessionActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendProjectSessionActionOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -104,9 +102,7 @@ impl SendProjectSessionActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendProjectSessionActionOutput`](crate::operation::send_project_session_action::SendProjectSessionActionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::send_project_session_action::SendProjectSessionActionOutput {
+    pub fn build(self) -> crate::operation::send_project_session_action::SendProjectSessionActionOutput {
         crate::operation::send_project_session_action::SendProjectSessionActionOutput {
             result: self.result,
             name: self.name,

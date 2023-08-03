@@ -37,10 +37,7 @@ impl UpdateAssessmentStatusFluentBuilder {
         }
     }
     /// Access the UpdateAssessmentStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_assessment_status::builders::UpdateAssessmentStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_assessment_status::builders::UpdateAssessmentStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateAssessmentStatusFluentBuilder {
             crate::operation::update_assessment_status::UpdateAssessmentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_status::UpdateAssessmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_status::UpdateAssessmentStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateAssessmentStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateAssessmentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment_status::UpdateAssessmentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_status::UpdateAssessmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_status::UpdateAssessmentStatusError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateAssessmentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment_status::UpdateAssessmentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_status::UpdateAssessmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_status::UpdateAssessmentStatusError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateAssessmentStatusFluentBuilder {
             crate::operation::update_assessment_status::UpdateAssessmentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_status::UpdateAssessmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_status::UpdateAssessmentStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
@@ -149,10 +129,7 @@ impl UpdateAssessmentStatusFluentBuilder {
         self
     }
     /// <p> The current status of the assessment. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetSiteToSiteVpnAttachmentOutput`](crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentOutput) with field(s):
     ///   - [`site_to_site_vpn_attachment(Option<SiteToSiteVpnAttachment>)`](crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentOutput::site_to_site_vpn_attachment): <p>Describes the site-to-site attachment.</p>
     /// - On failure, responds with [`SdkError<GetSiteToSiteVpnAttachmentError>`](crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentError)
-    pub fn get_site_to_site_vpn_attachment(&self) -> crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentFluentBuilder{
+    pub fn get_site_to_site_vpn_attachment(
+        &self,
+    ) -> crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentFluentBuilder {
         crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

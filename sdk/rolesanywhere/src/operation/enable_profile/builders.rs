@@ -10,10 +10,7 @@ impl EnableProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_profile::EnableProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_profile::EnableProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_profile::EnableProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_profile();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl EnableProfileFluentBuilder {
         }
     }
     /// Access the EnableProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_profile::builders::EnableProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_profile::builders::EnableProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl EnableProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

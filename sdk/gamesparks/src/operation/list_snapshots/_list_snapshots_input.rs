@@ -40,9 +40,7 @@ impl ListSnapshotsInput {
 
 /// A builder for [`ListSnapshotsInput`](crate::operation::list_snapshots::ListSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSnapshotsInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -100,10 +98,7 @@ impl ListSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`ListSnapshotsInput`](crate::operation::list_snapshots::ListSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_snapshots::ListSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_snapshots::ListSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_snapshots::ListSnapshotsInput {
             game_name: self.game_name,
             max_results: self.max_results,

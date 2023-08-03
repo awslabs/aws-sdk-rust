@@ -2,8 +2,7 @@
 pub fn ser_get_public_access_block_headers(
     input: &crate::operation::get_public_access_block::GetPublicAccessBlockInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_get_public_access_block_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "account_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-account-id", header_value);
@@ -33,44 +29,39 @@ pub fn de_get_public_access_block_http_error(
     crate::operation::get_public_access_block::GetPublicAccessBlockError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_public_access_block::GetPublicAccessBlockError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_public_access_block::GetPublicAccessBlockError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::get_public_access_block::GetPublicAccessBlockError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::get_public_access_block::GetPublicAccessBlockError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchPublicAccessBlockConfiguration" => crate::operation::get_public_access_block::GetPublicAccessBlockError::NoSuchPublicAccessBlockConfiguration({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "NoSuchPublicAccessBlockConfiguration" => {
+            crate::operation::get_public_access_block::GetPublicAccessBlockError::NoSuchPublicAccessBlockConfiguration({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchPublicAccessBlockConfigurationBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_public_access_block_configuration::de_no_such_public_access_block_configuration_xml_err(_response_body, output).map_err(crate::operation::get_public_access_block::GetPublicAccessBlockError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_no_such_public_access_block_configuration::de_no_such_public_access_block_configuration_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::get_public_access_block::GetPublicAccessBlockError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::get_public_access_block::GetPublicAccessBlockError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::get_public_access_block::GetPublicAccessBlockError::generic(generic),
     })
 }
 
@@ -87,11 +78,9 @@ pub fn de_get_public_access_block_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::get_public_access_block::builders::GetPublicAccessBlockOutputBuilder::default();
         output = output.set_public_access_block_configuration(
-            crate::protocol_serde::shape_get_public_access_block_output::de_public_access_block_configuration_payload(_response_body)?
+            crate::protocol_serde::shape_get_public_access_block_output::de_public_access_block_configuration_payload(_response_body)?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -10,10 +10,7 @@ impl ListPackagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_packages::ListPackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packages::ListPackagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packages::ListPackagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_packages();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListPackagesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_packages::ListPackages,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_packages::ListPackages, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_packages::ListPackagesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListPackagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListPackagesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_packages::ListPackages,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_packages::ListPackages, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_packages::ListPackagesError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListPackagesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_packages::paginator::ListPackagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_packages::paginator::ListPackagesPaginator {
-        crate::operation::list_packages::paginator::ListPackagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_packages::paginator::ListPackagesPaginator {
+        crate::operation::list_packages::paginator::ListPackagesPaginator::new(self.handle, self.inner)
     }
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -215,18 +198,12 @@ impl ListPackagesFluentBuilder {
         self.inner.get_namespace()
     }
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
-    pub fn package_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_prefix(input.into());
         self
     }
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
-    pub fn set_package_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_prefix(input);
         self
     }
@@ -282,10 +259,7 @@ impl ListPackagesFluentBuilder {
         self
     }
     /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
-    pub fn set_upstream(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowUpstream>,
-    ) -> Self {
+    pub fn set_upstream(mut self, input: ::std::option::Option<crate::types::AllowUpstream>) -> Self {
         self.inner = self.inner.set_upstream(input);
         self
     }

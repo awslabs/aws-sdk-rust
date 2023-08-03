@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetSendStatisticsOutput`](crate::operation::get_send_statistics::GetSendStatisticsOutput) with field(s):
     ///   - [`send_data_points(Option<Vec<SendDataPoint>>)`](crate::operation::get_send_statistics::GetSendStatisticsOutput::send_data_points): <p>A list of data points, each of which represents 15 minutes of activity.</p>
     /// - On failure, responds with [`SdkError<GetSendStatisticsError>`](crate::operation::get_send_statistics::GetSendStatisticsError)
-    pub fn get_send_statistics(
-        &self,
-    ) -> crate::operation::get_send_statistics::builders::GetSendStatisticsFluentBuilder {
-        crate::operation::get_send_statistics::builders::GetSendStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_send_statistics(&self) -> crate::operation::get_send_statistics::builders::GetSendStatisticsFluentBuilder {
+        crate::operation::get_send_statistics::builders::GetSendStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

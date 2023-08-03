@@ -43,18 +43,14 @@ impl UpdateSignalCatalogInput {
 }
 impl UpdateSignalCatalogInput {
     /// Creates a new builder-style object to manufacture [`UpdateSignalCatalogInput`](crate::operation::update_signal_catalog::UpdateSignalCatalogInput).
-    pub fn builder(
-    ) -> crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder {
-        crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder {
+        crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSignalCatalogInput`](crate::operation::update_signal_catalog::UpdateSignalCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSignalCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -103,10 +99,7 @@ impl UpdateSignalCatalogInputBuilder {
         self
     }
     /// <p> A list of information about nodes to add to the signal catalog. </p>
-    pub fn set_nodes_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.nodes_to_add = input;
         self
     }
@@ -126,17 +119,12 @@ impl UpdateSignalCatalogInputBuilder {
         self
     }
     /// <p> A list of information about nodes to update in the signal catalog. </p>
-    pub fn set_nodes_to_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_nodes_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.nodes_to_update = input;
         self
     }
     /// <p> A list of information about nodes to update in the signal catalog. </p>
-    pub fn get_nodes_to_update(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+    pub fn get_nodes_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
         &self.nodes_to_update
     }
     /// Appends an item to `nodes_to_remove`.
@@ -144,44 +132,32 @@ impl UpdateSignalCatalogInputBuilder {
     /// To override the contents of this collection use [`set_nodes_to_remove`](Self::set_nodes_to_remove).
     ///
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    pub fn nodes_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodes_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.nodes_to_remove.unwrap_or_default();
         v.push(input.into());
         self.nodes_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    pub fn set_nodes_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.nodes_to_remove = input;
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    pub fn get_nodes_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.nodes_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateSignalCatalogInput`](crate::operation::update_signal_catalog::UpdateSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_signal_catalog::UpdateSignalCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_signal_catalog::UpdateSignalCatalogInput {
-                name: self.name,
-                description: self.description,
-                nodes_to_add: self.nodes_to_add,
-                nodes_to_update: self.nodes_to_update,
-                nodes_to_remove: self.nodes_to_remove,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_signal_catalog::UpdateSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_signal_catalog::UpdateSignalCatalogInput {
+            name: self.name,
+            description: self.description,
+            nodes_to_add: self.nodes_to_add,
+            nodes_to_update: self.nodes_to_update,
+            nodes_to_remove: self.nodes_to_remove,
+        })
     }
 }

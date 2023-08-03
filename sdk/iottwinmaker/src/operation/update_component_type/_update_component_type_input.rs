@@ -17,22 +17,16 @@ pub struct UpdateComponentTypeInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     #[doc(hidden)]
-    pub property_definitions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionRequest>,
-    >,
+    pub property_definitions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionRequest>>,
     /// <p>Specifies the component type that this component type extends.</p>
     #[doc(hidden)]
     pub extends_from: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     #[doc(hidden)]
-    pub functions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>,
-    >,
+    pub functions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>>,
     /// <p>The property groups.</p>
     #[doc(hidden)]
-    pub property_groups: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>,
-    >,
+    pub property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>>,
     /// <p>The component type name.</p>
     #[doc(hidden)]
     pub component_type_name: ::std::option::Option<::std::string::String>,
@@ -57,12 +51,7 @@ impl UpdateComponentTypeInput {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn property_definitions(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::PropertyDefinitionRequest,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionRequest>> {
         self.property_definitions.as_ref()
     }
     /// <p>Specifies the component type that this component type extends.</p>
@@ -70,19 +59,11 @@ impl UpdateComponentTypeInput {
         self.extends_from.as_deref()
     }
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn functions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>,
-    > {
+    pub fn functions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>> {
         self.functions.as_ref()
     }
     /// <p>The property groups.</p>
-    pub fn property_groups(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>,
-    > {
+    pub fn property_groups(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>> {
         self.property_groups.as_ref()
     }
     /// <p>The component type name.</p>
@@ -92,33 +73,24 @@ impl UpdateComponentTypeInput {
 }
 impl UpdateComponentTypeInput {
     /// Creates a new builder-style object to manufacture [`UpdateComponentTypeInput`](crate::operation::update_component_type::UpdateComponentTypeInput).
-    pub fn builder(
-    ) -> crate::operation::update_component_type::builders::UpdateComponentTypeInputBuilder {
-        crate::operation::update_component_type::builders::UpdateComponentTypeInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_component_type::builders::UpdateComponentTypeInputBuilder {
+        crate::operation::update_component_type::builders::UpdateComponentTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateComponentTypeInput`](crate::operation::update_component_type::UpdateComponentTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateComponentTypeInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_singleton: ::std::option::Option<bool>,
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) property_definitions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionRequest>,
-    >,
+    pub(crate) property_definitions:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionRequest>>,
     pub(crate) extends_from: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) functions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>,
-    >,
-    pub(crate) property_groups: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>,
-    >,
+    pub(crate) functions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>>,
+    pub(crate) property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>>,
     pub(crate) component_type_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateComponentTypeInputBuilder {
@@ -151,18 +123,12 @@ impl UpdateComponentTypeInputBuilder {
         &self.is_singleton
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type_id = input;
         self
     }
@@ -189,11 +155,7 @@ impl UpdateComponentTypeInputBuilder {
     /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
     ///
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn property_definitions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::PropertyDefinitionRequest,
-    ) -> Self {
+    pub fn property_definitions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PropertyDefinitionRequest) -> Self {
         let mut hash_map = self.property_definitions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.property_definitions = ::std::option::Option::Some(hash_map);
@@ -202,12 +164,7 @@ impl UpdateComponentTypeInputBuilder {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn set_property_definitions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::PropertyDefinitionRequest,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionRequest>>,
     ) -> Self {
         self.property_definitions = input;
         self
@@ -215,9 +172,7 @@ impl UpdateComponentTypeInputBuilder {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn get_property_definitions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionRequest>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionRequest>> {
         &self.property_definitions
     }
     /// Appends an item to `extends_from`.
@@ -232,17 +187,12 @@ impl UpdateComponentTypeInputBuilder {
         self
     }
     /// <p>Specifies the component type that this component type extends.</p>
-    pub fn set_extends_from(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_extends_from(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.extends_from = input;
         self
     }
     /// <p>Specifies the component type that this component type extends.</p>
-    pub fn get_extends_from(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_extends_from(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.extends_from
     }
     /// Adds a key-value pair to `functions`.
@@ -250,11 +200,7 @@ impl UpdateComponentTypeInputBuilder {
     /// To override the contents of this collection use [`set_functions`](Self::set_functions).
     ///
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn functions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::FunctionRequest,
-    ) -> Self {
+    pub fn functions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FunctionRequest) -> Self {
         let mut hash_map = self.functions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.functions = ::std::option::Option::Some(hash_map);
@@ -263,19 +209,13 @@ impl UpdateComponentTypeInputBuilder {
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn set_functions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>>,
     ) -> Self {
         self.functions = input;
         self
     }
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn get_functions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>,
-    > {
+    pub fn get_functions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>> {
         &self.functions
     }
     /// Adds a key-value pair to `property_groups`.
@@ -283,11 +223,7 @@ impl UpdateComponentTypeInputBuilder {
     /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
     ///
     /// <p>The property groups.</p>
-    pub fn property_groups(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::PropertyGroupRequest,
-    ) -> Self {
+    pub fn property_groups(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PropertyGroupRequest) -> Self {
         let mut hash_map = self.property_groups.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.property_groups = ::std::option::Option::Some(hash_map);
@@ -296,9 +232,7 @@ impl UpdateComponentTypeInputBuilder {
     /// <p>The property groups.</p>
     pub fn set_property_groups(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>>,
     ) -> Self {
         self.property_groups = input;
         self
@@ -306,24 +240,16 @@ impl UpdateComponentTypeInputBuilder {
     /// <p>The property groups.</p>
     pub fn get_property_groups(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>> {
         &self.property_groups
     }
     /// <p>The component type name.</p>
-    pub fn component_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The component type name.</p>
-    pub fn set_component_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type_name = input;
         self
     }
@@ -334,22 +260,18 @@ impl UpdateComponentTypeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateComponentTypeInput`](crate::operation::update_component_type::UpdateComponentTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_component_type::UpdateComponentTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_component_type::UpdateComponentTypeInput {
-                workspace_id: self.workspace_id,
-                is_singleton: self.is_singleton,
-                component_type_id: self.component_type_id,
-                description: self.description,
-                property_definitions: self.property_definitions,
-                extends_from: self.extends_from,
-                functions: self.functions,
-                property_groups: self.property_groups,
-                component_type_name: self.component_type_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_component_type::UpdateComponentTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_component_type::UpdateComponentTypeInput {
+            workspace_id: self.workspace_id,
+            is_singleton: self.is_singleton,
+            component_type_id: self.component_type_id,
+            description: self.description,
+            property_definitions: self.property_definitions,
+            extends_from: self.extends_from,
+            functions: self.functions,
+            property_groups: self.property_groups,
+            component_type_name: self.component_type_name,
+        })
     }
 }

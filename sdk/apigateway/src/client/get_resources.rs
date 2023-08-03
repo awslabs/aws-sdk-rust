@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<Resource>>)`](crate::operation::get_resources::GetResourcesOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_resources::GetResourcesOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetResourcesError>`](crate::operation::get_resources::GetResourcesError)
-    pub fn get_resources(
-        &self,
-    ) -> crate::operation::get_resources::builders::GetResourcesFluentBuilder {
-        crate::operation::get_resources::builders::GetResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resources(&self) -> crate::operation::get_resources::builders::GetResourcesFluentBuilder {
+        crate::operation::get_resources::builders::GetResourcesFluentBuilder::new(self.handle.clone())
     }
 }

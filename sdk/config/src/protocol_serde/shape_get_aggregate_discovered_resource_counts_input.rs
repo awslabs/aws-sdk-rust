@@ -4,17 +4,12 @@ pub fn ser_get_aggregate_discovered_resource_counts_input(
     input: &crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.configuration_aggregator_name {
-        object
-            .key("ConfigurationAggregatorName")
-            .string(var_1.as_str());
+        object.key("ConfigurationAggregatorName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.filters {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Filters").start_object();
-        crate::protocol_serde::shape_resource_count_filters::ser_resource_count_filters(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_resource_count_filters::ser_resource_count_filters(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.group_by_key {

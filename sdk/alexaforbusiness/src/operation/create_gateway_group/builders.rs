@@ -10,10 +10,7 @@ impl CreateGatewayGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_gateway_group::CreateGatewayGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gateway_group::CreateGatewayGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway_group::CreateGatewayGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_gateway_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateGatewayGroupFluentBuilder {
         }
     }
     /// Access the CreateGatewayGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_gateway_group::builders::CreateGatewayGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_gateway_group::builders::CreateGatewayGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateGatewayGroupFluentBuilder {
             crate::operation::create_gateway_group::CreateGatewayGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gateway_group::CreateGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway_group::CreateGatewayGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateGatewayGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateGatewayGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_gateway_group::CreateGatewayGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gateway_group::CreateGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway_group::CreateGatewayGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateGatewayGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_gateway_group::CreateGatewayGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gateway_group::CreateGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway_group::CreateGatewayGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateGatewayGroupFluentBuilder {
             crate::operation::create_gateway_group::CreateGatewayGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gateway_group::CreateGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway_group::CreateGatewayGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -152,18 +136,12 @@ impl CreateGatewayGroupFluentBuilder {
         self.inner.get_description()
     }
     /// <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -181,10 +159,7 @@ impl CreateGatewayGroupFluentBuilder {
         self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

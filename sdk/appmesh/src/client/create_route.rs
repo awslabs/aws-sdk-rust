@@ -13,9 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRouteOutput`](crate::operation::create_route::CreateRouteOutput) with field(s):
     ///   - [`route(Option<RouteData>)`](crate::operation::create_route::CreateRouteOutput::route): <p>The full description of your mesh following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateRouteError>`](crate::operation::create_route::CreateRouteError)
-    pub fn create_route(
-        &self,
-    ) -> crate::operation::create_route::builders::CreateRouteFluentBuilder {
+    pub fn create_route(&self) -> crate::operation::create_route::builders::CreateRouteFluentBuilder {
         crate::operation::create_route::builders::CreateRouteFluentBuilder::new(self.handle.clone())
     }
 }

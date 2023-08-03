@@ -29,9 +29,7 @@ impl DeleteCoipPoolInput {
 
 /// A builder for [`DeleteCoipPoolInput`](crate::operation::delete_coip_pool::DeleteCoipPoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCoipPoolInputBuilder {
     pub(crate) coip_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -68,10 +66,7 @@ impl DeleteCoipPoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCoipPoolInput`](crate::operation::delete_coip_pool::DeleteCoipPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_coip_pool::DeleteCoipPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_coip_pool::DeleteCoipPoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_coip_pool::DeleteCoipPoolInput {
             coip_pool_id: self.coip_pool_id,
             dry_run: self.dry_run,

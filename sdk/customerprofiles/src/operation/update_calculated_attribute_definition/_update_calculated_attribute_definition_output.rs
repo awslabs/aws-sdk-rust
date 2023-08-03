@@ -29,9 +29,7 @@ pub struct UpdateCalculatedAttributeDefinitionOutput {
     pub attribute_details: ::std::option::Option<crate::types::AttributeDetails>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateCalculatedAttributeDefinitionOutput {
@@ -68,11 +66,7 @@ impl UpdateCalculatedAttributeDefinitionOutput {
         self.attribute_details.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -83,16 +77,14 @@ impl ::aws_http::request_id::RequestId for UpdateCalculatedAttributeDefinitionOu
 }
 impl UpdateCalculatedAttributeDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCalculatedAttributeDefinitionOutput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput).
-    pub fn builder() -> crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionOutputBuilder {
         crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCalculatedAttributeDefinitionOutput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCalculatedAttributeDefinitionOutputBuilder {
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -102,25 +94,17 @@ pub struct UpdateCalculatedAttributeDefinitionOutputBuilder {
     pub(crate) statistic: ::std::option::Option<crate::types::Statistic>,
     pub(crate) conditions: ::std::option::Option<crate::types::Conditions>,
     pub(crate) attribute_details: ::std::option::Option<crate::types::AttributeDetails>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn set_calculated_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculated_attribute_name = input;
         self
     }
@@ -162,10 +146,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
         self
     }
     /// <p>The timestamp of when the calculated attribute definition was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -179,10 +160,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
         self
     }
     /// <p>The timestamp of when the calculated attribute definition was most recently edited.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -210,10 +188,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
         self
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
-    pub fn set_conditions(
-        mut self,
-        input: ::std::option::Option<crate::types::Conditions>,
-    ) -> Self {
+    pub fn set_conditions(mut self, input: ::std::option::Option<crate::types::Conditions>) -> Self {
         self.conditions = input;
         self
     }
@@ -227,10 +202,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
         self
     }
     /// <p>The mathematical expression and a list of attribute items specified in that expression.</p>
-    pub fn set_attribute_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeDetails>,
-    ) -> Self {
+    pub fn set_attribute_details(mut self, input: ::std::option::Option<crate::types::AttributeDetails>) -> Self {
         self.attribute_details = input;
         self
     }
@@ -243,32 +215,19 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -281,26 +240,17 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCalculatedAttributeDefinitionOutput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput).
-    pub fn build(self) -> crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput{
+    pub fn build(self) -> crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput {
         crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput {
-            calculated_attribute_name: self.calculated_attribute_name
-            ,
-            display_name: self.display_name
-            ,
-            description: self.description
-            ,
-            created_at: self.created_at
-            ,
-            last_updated_at: self.last_updated_at
-            ,
-            statistic: self.statistic
-            ,
-            conditions: self.conditions
-            ,
-            attribute_details: self.attribute_details
-            ,
-            tags: self.tags
-            ,
+            calculated_attribute_name: self.calculated_attribute_name,
+            display_name: self.display_name,
+            description: self.description,
+            created_at: self.created_at,
+            last_updated_at: self.last_updated_at,
+            statistic: self.statistic,
+            conditions: self.conditions,
+            attribute_details: self.attribute_details,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }

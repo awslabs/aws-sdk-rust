@@ -23,9 +23,7 @@ pub struct GetEmailIdentityOutput {
     pub mail_from_attributes: ::std::option::Option<crate::types::MailFromAttributes>,
     /// <p>A map of policy names to policies.</p>
     #[doc(hidden)]
-    pub policies: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -68,11 +66,7 @@ impl GetEmailIdentityOutput {
         self.mail_from_attributes.as_ref()
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn policies(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.policies.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
@@ -102,26 +96,21 @@ impl ::aws_http::request_id::RequestId for GetEmailIdentityOutput {
 }
 impl GetEmailIdentityOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailIdentityOutput`](crate::operation::get_email_identity::GetEmailIdentityOutput).
-    pub fn builder() -> crate::operation::get_email_identity::builders::GetEmailIdentityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_email_identity::builders::GetEmailIdentityOutputBuilder {
         crate::operation::get_email_identity::builders::GetEmailIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEmailIdentityOutput`](crate::operation::get_email_identity::GetEmailIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEmailIdentityOutputBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) feedback_forwarding_status: ::std::option::Option<bool>,
     pub(crate) verified_for_sending_status: ::std::option::Option<bool>,
     pub(crate) dkim_attributes: ::std::option::Option<crate::types::DkimAttributes>,
     pub(crate) mail_from_attributes: ::std::option::Option<crate::types::MailFromAttributes>,
-    pub(crate) policies: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) verification_status: ::std::option::Option<crate::types::VerificationStatus>,
@@ -134,10 +123,7 @@ impl GetEmailIdentityOutputBuilder {
         self
     }
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -185,10 +171,7 @@ impl GetEmailIdentityOutputBuilder {
         self
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
-    pub fn set_dkim_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::DkimAttributes>,
-    ) -> Self {
+    pub fn set_dkim_attributes(mut self, input: ::std::option::Option<crate::types::DkimAttributes>) -> Self {
         self.dkim_attributes = input;
         self
     }
@@ -202,17 +185,12 @@ impl GetEmailIdentityOutputBuilder {
         self
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
-    pub fn set_mail_from_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::MailFromAttributes>,
-    ) -> Self {
+    pub fn set_mail_from_attributes(mut self, input: ::std::option::Option<crate::types::MailFromAttributes>) -> Self {
         self.mail_from_attributes = input;
         self
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
-    pub fn get_mail_from_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::MailFromAttributes> {
+    pub fn get_mail_from_attributes(&self) -> &::std::option::Option<crate::types::MailFromAttributes> {
         &self.mail_from_attributes
     }
     /// Adds a key-value pair to `policies`.
@@ -220,32 +198,19 @@ impl GetEmailIdentityOutputBuilder {
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
     ///
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.policies.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.policies = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn get_policies(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.policies
     }
     /// Appends an item to `tags`.
@@ -260,10 +225,7 @@ impl GetEmailIdentityOutputBuilder {
         self
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -272,18 +234,12 @@ impl GetEmailIdentityOutputBuilder {
         &self.tags
     }
     /// <p>The configuration set used by default when sending from this identity.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration set used by default when sending from this identity.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -311,10 +267,7 @@ impl GetEmailIdentityOutputBuilder {
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
     /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
     /// </ul>
-    pub fn set_verification_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationStatus>,
-    ) -> Self {
+    pub fn set_verification_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
         self.verification_status = input;
         self
     }
@@ -326,9 +279,7 @@ impl GetEmailIdentityOutputBuilder {
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
     /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
     /// </ul>
-    pub fn get_verification_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationStatus> {
+    pub fn get_verification_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
         &self.verification_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

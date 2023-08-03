@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ResetFpgaImageAttributeOutput {
 }
 impl ResetFpgaImageAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ResetFpgaImageAttributeOutput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder {
         crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetFpgaImageAttributeOutput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetFpgaImageAttributeOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl ResetFpgaImageAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResetFpgaImageAttributeOutput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput {
+    pub fn build(self) -> crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput {
         crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

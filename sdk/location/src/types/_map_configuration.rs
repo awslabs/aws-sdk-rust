@@ -106,9 +106,7 @@ impl MapConfiguration {
 
 /// A builder for [`MapConfiguration`](crate::types::MapConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MapConfigurationBuilder {
     pub(crate) style: ::std::option::Option<::std::string::String>,
     pub(crate) political_view: ::std::option::Option<::std::string::String>,
@@ -237,10 +235,7 @@ impl MapConfigurationBuilder {
     /// <p>Default is unset.</p> <note>
     /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
-    pub fn political_view(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn political_view(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.political_view = ::std::option::Option::Some(input.into());
         self
     }
@@ -248,10 +243,7 @@ impl MapConfigurationBuilder {
     /// <p>Default is unset.</p> <note>
     /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
-    pub fn set_political_view(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_political_view(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.political_view = input;
         self
     }

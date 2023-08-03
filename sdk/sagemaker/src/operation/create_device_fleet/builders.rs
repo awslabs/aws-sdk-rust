@@ -10,10 +10,7 @@ impl CreateDeviceFleetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_device_fleet::CreateDeviceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_fleet::CreateDeviceFleetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_fleet::CreateDeviceFleetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_device_fleet();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDeviceFleetFluentBuilder {
         }
     }
     /// Access the CreateDeviceFleet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_device_fleet::builders::CreateDeviceFleetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_device_fleet::builders::CreateDeviceFleetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDeviceFleetFluentBuilder {
             crate::operation::create_device_fleet::CreateDeviceFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_fleet::CreateDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_fleet::CreateDeviceFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDeviceFleetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDeviceFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_device_fleet::CreateDeviceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_fleet::CreateDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_fleet::CreateDeviceFleetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDeviceFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_device_fleet::CreateDeviceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_fleet::CreateDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_fleet::CreateDeviceFleetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateDeviceFleetFluentBuilder {
             crate::operation::create_device_fleet::CreateDeviceFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_fleet::CreateDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_fleet::CreateDeviceFleetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name(input.into());
         self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }
@@ -176,10 +154,7 @@ impl CreateDeviceFleetFluentBuilder {
         self
     }
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
@@ -197,10 +172,7 @@ impl CreateDeviceFleetFluentBuilder {
         self
     }
     /// <p>Creates tags for the specified fleet.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

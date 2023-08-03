@@ -35,9 +35,7 @@ impl ListUsersOutput {
 
 /// A builder for [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsersOutputBuilder {
     pub(crate) user_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListUsersOutputBuilder {
         self
     }
     /// <p>Information about the users.</p>
-    pub fn set_user_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>>,
-    ) -> Self {
+    pub fn set_user_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>>) -> Self {
         self.user_summary_list = input;
         self
     }
     /// <p>Information about the users.</p>
-    pub fn get_user_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSummary>> {
+    pub fn get_user_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSummary>> {
         &self.user_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

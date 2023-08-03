@@ -44,9 +44,7 @@ impl AddonVersionInfo {
 
 /// A builder for [`AddonVersionInfo`](crate::types::AddonVersionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddonVersionInfoBuilder {
     pub(crate) addon_version: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -55,18 +53,12 @@ pub struct AddonVersionInfoBuilder {
 }
 impl AddonVersionInfoBuilder {
     /// <p>The version of the add-on.</p>
-    pub fn addon_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn addon_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the add-on.</p>
-    pub fn set_addon_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_addon_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_version = input;
         self
     }
@@ -86,17 +78,12 @@ impl AddonVersionInfoBuilder {
         self
     }
     /// <p>The architectures that the version supports.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.architecture = input;
         self
     }
     /// <p>The architectures that the version supports.</p>
-    pub fn get_architecture(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.architecture
     }
     /// Appends an item to `compatibilities`.
@@ -111,17 +98,12 @@ impl AddonVersionInfoBuilder {
         self
     }
     /// <p>An object representing the compatibilities of a version.</p>
-    pub fn set_compatibilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
-    ) -> Self {
+    pub fn set_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>) -> Self {
         self.compatibilities = input;
         self
     }
     /// <p>An object representing the compatibilities of a version.</p>
-    pub fn get_compatibilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Compatibility>> {
+    pub fn get_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compatibility>> {
         &self.compatibilities
     }
     /// <p>Whether the add-on requires configuration.</p>

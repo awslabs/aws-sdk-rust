@@ -6,10 +6,7 @@ pub fn ser_create_bulk_import_job_input(
     if let Some(var_1) = &input.error_report_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("errorReportLocation").start_object();
-        crate::protocol_serde::shape_error_report_location::ser_error_report_location(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_error_report_location::ser_error_report_location(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.files {
@@ -27,10 +24,7 @@ pub fn ser_create_bulk_import_job_input(
     if let Some(var_7) = &input.job_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("jobConfiguration").start_object();
-        crate::protocol_serde::shape_job_configuration::ser_job_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_job_configuration::ser_job_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.job_name {

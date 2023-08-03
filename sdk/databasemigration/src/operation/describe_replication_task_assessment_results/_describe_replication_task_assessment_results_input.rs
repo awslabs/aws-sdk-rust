@@ -34,16 +34,15 @@ impl DescribeReplicationTaskAssessmentResultsInput {
 }
 impl DescribeReplicationTaskAssessmentResultsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskAssessmentResultsInput`](crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput).
-    pub fn builder() -> crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsInputBuilder
+    {
         crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationTaskAssessmentResultsInput`](crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTaskAssessmentResultsInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -51,18 +50,12 @@ pub struct DescribeReplicationTaskAssessmentResultsInputBuilder {
 }
 impl DescribeReplicationTaskAssessmentResultsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
@@ -105,16 +98,18 @@ impl DescribeReplicationTaskAssessmentResultsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReplicationTaskAssessmentResultsInput`](crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput {
-                replication_task_arn: self.replication_task_arn
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                replication_task_arn: self.replication_task_arn,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

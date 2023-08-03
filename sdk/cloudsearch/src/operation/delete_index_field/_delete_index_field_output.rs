@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteIndexFieldOutput {
 }
 impl DeleteIndexFieldOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIndexFieldOutput`](crate::operation::delete_index_field::DeleteIndexFieldOutput).
-    pub fn builder() -> crate::operation::delete_index_field::builders::DeleteIndexFieldOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_index_field::builders::DeleteIndexFieldOutputBuilder {
         crate::operation::delete_index_field::builders::DeleteIndexFieldOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIndexFieldOutput`](crate::operation::delete_index_field::DeleteIndexFieldOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIndexFieldOutputBuilder {
     pub(crate) index_field: ::std::option::Option<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl DeleteIndexFieldOutputBuilder {
         self
     }
     /// <p>The status of the index field being deleted.</p>
-    pub fn set_index_field(
-        mut self,
-        input: ::std::option::Option<crate::types::IndexFieldStatus>,
-    ) -> Self {
+    pub fn set_index_field(mut self, input: ::std::option::Option<crate::types::IndexFieldStatus>) -> Self {
         self.index_field = input;
         self
     }

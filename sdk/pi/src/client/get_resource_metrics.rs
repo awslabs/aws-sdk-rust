@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`metric_list(Option<Vec<MetricKeyDataPoints>>)`](crate::operation::get_resource_metrics::GetResourceMetricsOutput::metric_list): <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_resource_metrics::GetResourceMetricsOutput::next_token): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     /// - On failure, responds with [`SdkError<GetResourceMetricsError>`](crate::operation::get_resource_metrics::GetResourceMetricsError)
-    pub fn get_resource_metrics(
-        &self,
-    ) -> crate::operation::get_resource_metrics::builders::GetResourceMetricsFluentBuilder {
-        crate::operation::get_resource_metrics::builders::GetResourceMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_metrics(&self) -> crate::operation::get_resource_metrics::builders::GetResourceMetricsFluentBuilder {
+        crate::operation::get_resource_metrics::builders::GetResourceMetricsFluentBuilder::new(self.handle.clone())
     }
 }

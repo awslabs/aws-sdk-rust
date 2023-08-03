@@ -60,9 +60,7 @@ impl AlarmState {
 
 /// A builder for [`AlarmState`](crate::types::AlarmState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmStateBuilder {
     pub(crate) state_name: ::std::option::Option<crate::types::AlarmStateName>,
     pub(crate) rule_evaluation: ::std::option::Option<crate::types::RuleEvaluation>,
@@ -92,10 +90,7 @@ impl AlarmStateBuilder {
     /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
     /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
-    pub fn set_state_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmStateName>,
-    ) -> Self {
+    pub fn set_state_name(mut self, input: ::std::option::Option<crate::types::AlarmStateName>) -> Self {
         self.state_name = input;
         self
     }
@@ -117,10 +112,7 @@ impl AlarmStateBuilder {
         self
     }
     /// <p>Information needed to evaluate data.</p>
-    pub fn set_rule_evaluation(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleEvaluation>,
-    ) -> Self {
+    pub fn set_rule_evaluation(mut self, input: ::std::option::Option<crate::types::RuleEvaluation>) -> Self {
         self.rule_evaluation = input;
         self
     }
@@ -134,10 +126,7 @@ impl AlarmStateBuilder {
         self
     }
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
-    pub fn set_customer_action(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerAction>,
-    ) -> Self {
+    pub fn set_customer_action(mut self, input: ::std::option::Option<crate::types::CustomerAction>) -> Self {
         self.customer_action = input;
         self
     }
@@ -151,10 +140,7 @@ impl AlarmStateBuilder {
         self
     }
     /// <p>Contains information about alarm state changes.</p>
-    pub fn set_system_event(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemEvent>,
-    ) -> Self {
+    pub fn set_system_event(mut self, input: ::std::option::Option<crate::types::SystemEvent>) -> Self {
         self.system_event = input;
         self
     }

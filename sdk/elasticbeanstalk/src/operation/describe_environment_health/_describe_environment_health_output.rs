@@ -71,16 +71,14 @@ impl ::aws_http::request_id::RequestId for DescribeEnvironmentHealthOutput {
 }
 impl DescribeEnvironmentHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentHealthOutput`](crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput).
-    pub fn builder() -> crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthOutputBuilder{
+    pub fn builder() -> crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthOutputBuilder {
         crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentHealthOutput`](crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentHealthOutputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) health_status: ::std::option::Option<::std::string::String>,
@@ -94,18 +92,12 @@ pub struct DescribeEnvironmentHealthOutputBuilder {
 }
 impl DescribeEnvironmentHealthOutputBuilder {
     /// <p>The environment's name.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment's name.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -114,18 +106,12 @@ impl DescribeEnvironmentHealthOutputBuilder {
         &self.environment_name
     }
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
-    pub fn health_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
-    pub fn set_health_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_status = input;
         self
     }
@@ -139,10 +125,7 @@ impl DescribeEnvironmentHealthOutputBuilder {
         self
     }
     /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentHealth>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentHealth>) -> Self {
         self.status = input;
         self
     }
@@ -176,10 +159,7 @@ impl DescribeEnvironmentHealthOutputBuilder {
         self
     }
     /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
-    pub fn set_causes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_causes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.causes = input;
         self
     }
@@ -193,17 +173,12 @@ impl DescribeEnvironmentHealthOutputBuilder {
         self
     }
     /// <p>Application request metrics for the environment.</p>
-    pub fn set_application_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationMetrics>,
-    ) -> Self {
+    pub fn set_application_metrics(mut self, input: ::std::option::Option<crate::types::ApplicationMetrics>) -> Self {
         self.application_metrics = input;
         self
     }
     /// <p>Application request metrics for the environment.</p>
-    pub fn get_application_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationMetrics> {
+    pub fn get_application_metrics(&self) -> &::std::option::Option<crate::types::ApplicationMetrics> {
         &self.application_metrics
     }
     /// <p>Summary health information for the instances in the environment.</p>
@@ -212,17 +187,12 @@ impl DescribeEnvironmentHealthOutputBuilder {
         self
     }
     /// <p>Summary health information for the instances in the environment.</p>
-    pub fn set_instances_health(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceHealthSummary>,
-    ) -> Self {
+    pub fn set_instances_health(mut self, input: ::std::option::Option<crate::types::InstanceHealthSummary>) -> Self {
         self.instances_health = input;
         self
     }
     /// <p>Summary health information for the instances in the environment.</p>
-    pub fn get_instances_health(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceHealthSummary> {
+    pub fn get_instances_health(&self) -> &::std::option::Option<crate::types::InstanceHealthSummary> {
         &self.instances_health
     }
     /// <p>The date and time that the health information was retrieved.</p>
@@ -231,10 +201,7 @@ impl DescribeEnvironmentHealthOutputBuilder {
         self
     }
     /// <p>The date and time that the health information was retrieved.</p>
-    pub fn set_refreshed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_refreshed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.refreshed_at = input;
         self
     }
@@ -252,9 +219,7 @@ impl DescribeEnvironmentHealthOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentHealthOutput`](crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput {
+    pub fn build(self) -> crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput {
         crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput {
             environment_name: self.environment_name,
             health_status: self.health_status,

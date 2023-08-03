@@ -70,12 +70,10 @@ pub struct ScalingPolicy {
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>A step scaling policy.</p>
     #[doc(hidden)]
-    pub step_scaling_policy_configuration:
-        ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
+    pub step_scaling_policy_configuration: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
     /// <p>A target tracking scaling policy.</p>
     #[doc(hidden)]
-    pub target_tracking_scaling_policy_configuration:
-        ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
+    pub target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
     #[doc(hidden)]
     pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
@@ -154,15 +152,11 @@ impl ScalingPolicy {
         self.policy_type.as_ref()
     }
     /// <p>A step scaling policy.</p>
-    pub fn step_scaling_policy_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StepScalingPolicyConfiguration> {
+    pub fn step_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::StepScalingPolicyConfiguration> {
         self.step_scaling_policy_configuration.as_ref()
     }
     /// <p>A target tracking scaling policy.</p>
-    pub fn target_tracking_scaling_policy_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetTrackingScalingPolicyConfiguration> {
+    pub fn target_tracking_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::TargetTrackingScalingPolicyConfiguration> {
         self.target_tracking_scaling_policy_configuration.as_ref()
     }
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
@@ -183,9 +177,7 @@ impl ScalingPolicy {
 
 /// A builder for [`ScalingPolicy`](crate::types::ScalingPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingPolicyBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -193,10 +185,8 @@ pub struct ScalingPolicyBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
-    pub(crate) step_scaling_policy_configuration:
-        ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
-    pub(crate) target_tracking_scaling_policy_configuration:
-        ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
+    pub(crate) step_scaling_policy_configuration: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
+    pub(crate) target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
     pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -235,10 +225,7 @@ impl ScalingPolicyBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -369,10 +356,7 @@ impl ScalingPolicyBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -400,9 +384,7 @@ impl ScalingPolicyBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// <p>The scaling policy type.</p>
@@ -417,10 +399,7 @@ impl ScalingPolicyBuilder {
     /// <p>The following policy types are supported: </p>
     /// <p> <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p>
     /// <p> <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
@@ -432,32 +411,21 @@ impl ScalingPolicyBuilder {
         &self.policy_type
     }
     /// <p>A step scaling policy.</p>
-    pub fn step_scaling_policy_configuration(
-        mut self,
-        input: crate::types::StepScalingPolicyConfiguration,
-    ) -> Self {
+    pub fn step_scaling_policy_configuration(mut self, input: crate::types::StepScalingPolicyConfiguration) -> Self {
         self.step_scaling_policy_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A step scaling policy.</p>
-    pub fn set_step_scaling_policy_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
-    ) -> Self {
+    pub fn set_step_scaling_policy_configuration(mut self, input: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>) -> Self {
         self.step_scaling_policy_configuration = input;
         self
     }
     /// <p>A step scaling policy.</p>
-    pub fn get_step_scaling_policy_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StepScalingPolicyConfiguration> {
+    pub fn get_step_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::StepScalingPolicyConfiguration> {
         &self.step_scaling_policy_configuration
     }
     /// <p>A target tracking scaling policy.</p>
-    pub fn target_tracking_scaling_policy_configuration(
-        mut self,
-        input: crate::types::TargetTrackingScalingPolicyConfiguration,
-    ) -> Self {
+    pub fn target_tracking_scaling_policy_configuration(mut self, input: crate::types::TargetTrackingScalingPolicyConfiguration) -> Self {
         self.target_tracking_scaling_policy_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -470,9 +438,7 @@ impl ScalingPolicyBuilder {
         self
     }
     /// <p>A target tracking scaling policy.</p>
-    pub fn get_target_tracking_scaling_policy_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration> {
+    pub fn get_target_tracking_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration> {
         &self.target_tracking_scaling_policy_configuration
     }
     /// Appends an item to `alarms`.
@@ -487,10 +453,7 @@ impl ScalingPolicyBuilder {
         self
     }
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
-    pub fn set_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
-    ) -> Self {
+    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>) -> Self {
         self.alarms = input;
         self
     }
@@ -504,10 +467,7 @@ impl ScalingPolicyBuilder {
         self
     }
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -525,8 +485,7 @@ impl ScalingPolicyBuilder {
             scalable_dimension: self.scalable_dimension,
             policy_type: self.policy_type,
             step_scaling_policy_configuration: self.step_scaling_policy_configuration,
-            target_tracking_scaling_policy_configuration: self
-                .target_tracking_scaling_policy_configuration,
+            target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration,
             alarms: self.alarms,
             creation_time: self.creation_time,
         }

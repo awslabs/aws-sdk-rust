@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`bulk_publish_status(Option<BulkPublishStatus>)`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsOutput::bulk_publish_status): Status of the last bulk publish operation, valid values are:  <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>  <p>IN_PROGRESS - Data is being published to the configured stream</p>  <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>  <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
     ///   - [`failure_message(Option<String>)`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsOutput::failure_message): If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
     /// - On failure, responds with [`SdkError<GetBulkPublishDetailsError>`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError)
-    pub fn get_bulk_publish_details(
-        &self,
-    ) -> crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsFluentBuilder
-    {
+    pub fn get_bulk_publish_details(&self) -> crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsFluentBuilder {
         crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsFluentBuilder::new(self.handle.clone())
     }
 }

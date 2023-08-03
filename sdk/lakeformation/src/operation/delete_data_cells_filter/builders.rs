@@ -37,10 +37,7 @@ impl DeleteDataCellsFilterFluentBuilder {
         }
     }
     /// Access the DeleteDataCellsFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteDataCellsFilterFluentBuilder {
             crate::operation::delete_data_cells_filter::DeleteDataCellsFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteDataCellsFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteDataCellsFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_cells_filter::DeleteDataCellsFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteDataCellsFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_cells_filter::DeleteDataCellsFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteDataCellsFilterFluentBuilder {
             crate::operation::delete_data_cells_filter::DeleteDataCellsFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn table_catalog_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_catalog_id(input.into());
         self
     }
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn set_table_catalog_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_catalog_id(input);
         self
     }
@@ -144,18 +124,12 @@ impl DeleteDataCellsFilterFluentBuilder {
         self.inner.get_table_catalog_id()
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

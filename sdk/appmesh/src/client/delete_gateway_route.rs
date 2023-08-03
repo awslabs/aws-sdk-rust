@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteGatewayRouteOutput`](crate::operation::delete_gateway_route::DeleteGatewayRouteOutput) with field(s):
     ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::operation::delete_gateway_route::DeleteGatewayRouteOutput::gateway_route): <p>The gateway route that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteGatewayRouteError>`](crate::operation::delete_gateway_route::DeleteGatewayRouteError)
-    pub fn delete_gateway_route(
-        &self,
-    ) -> crate::operation::delete_gateway_route::builders::DeleteGatewayRouteFluentBuilder {
-        crate::operation::delete_gateway_route::builders::DeleteGatewayRouteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_gateway_route(&self) -> crate::operation::delete_gateway_route::builders::DeleteGatewayRouteFluentBuilder {
+        crate::operation::delete_gateway_route::builders::DeleteGatewayRouteFluentBuilder::new(self.handle.clone())
     }
 }

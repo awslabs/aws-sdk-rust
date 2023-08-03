@@ -43,9 +43,7 @@ impl ListHarvestJobsInput {
 
 /// A builder for [`ListHarvestJobsInput`](crate::operation::list_harvest_jobs::ListHarvestJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHarvestJobsInputBuilder {
     pub(crate) include_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) include_status: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListHarvestJobsInputBuilder {
 }
 impl ListHarvestJobsInputBuilder {
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
-    pub fn include_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn include_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.include_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
-    pub fn set_include_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_include_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.include_channel_id = input;
         self
     }
@@ -74,18 +66,12 @@ impl ListHarvestJobsInputBuilder {
         &self.include_channel_id
     }
     /// When specified, the request will return only HarvestJobs in the given status.
-    pub fn include_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn include_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.include_status = ::std::option::Option::Some(input.into());
         self
     }
     /// When specified, the request will return only HarvestJobs in the given status.
-    pub fn set_include_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_include_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.include_status = input;
         self
     }
@@ -124,10 +110,7 @@ impl ListHarvestJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListHarvestJobsInput`](crate::operation::list_harvest_jobs::ListHarvestJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_harvest_jobs::ListHarvestJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_harvest_jobs::ListHarvestJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_harvest_jobs::ListHarvestJobsInput {
             include_channel_id: self.include_channel_id,
             include_status: self.include_status,

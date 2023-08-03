@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateDistributionWithStagingConfigOu
 }
 impl UpdateDistributionWithStagingConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionWithStagingConfigOutput`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput).
-    pub fn builder() -> crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigOutputBuilder{
+    pub fn builder() -> crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigOutputBuilder {
         crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDistributionWithStagingConfigOutput`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDistributionWithStagingConfigOutputBuilder {
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl UpdateDistributionWithStagingConfigOutputBuilder {
         self
     }
     /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
-    pub fn set_distribution(
-        mut self,
-        input: ::std::option::Option<crate::types::Distribution>,
-    ) -> Self {
+    pub fn set_distribution(mut self, input: ::std::option::Option<crate::types::Distribution>) -> Self {
         self.distribution = input;
         self
     }
@@ -85,12 +80,10 @@ impl UpdateDistributionWithStagingConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDistributionWithStagingConfigOutput`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput).
-    pub fn build(self) -> crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput{
+    pub fn build(self) -> crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput {
         crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput {
-            distribution: self.distribution
-            ,
-            e_tag: self.e_tag
-            ,
+            distribution: self.distribution,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }

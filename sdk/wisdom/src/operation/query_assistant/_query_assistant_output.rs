@@ -35,9 +35,7 @@ impl QueryAssistantOutput {
 
 /// A builder for [`QueryAssistantOutput`](crate::operation::query_assistant::QueryAssistantOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryAssistantOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::ResultData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl QueryAssistantOutputBuilder {
         self
     }
     /// <p>The results of the query.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultData>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultData>>) -> Self {
         self.results = input;
         self
     }

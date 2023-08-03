@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`available_balance(Option<String>)`](crate::operation::get_account_balance::GetAccountBalanceOutput::available_balance): <p>A string representing a currency amount.</p>
     ///   - [`on_hold_balance(Option<String>)`](crate::operation::get_account_balance::GetAccountBalanceOutput::on_hold_balance): <p>A string representing a currency amount.</p>
     /// - On failure, responds with [`SdkError<GetAccountBalanceError>`](crate::operation::get_account_balance::GetAccountBalanceError)
-    pub fn get_account_balance(
-        &self,
-    ) -> crate::operation::get_account_balance::builders::GetAccountBalanceFluentBuilder {
-        crate::operation::get_account_balance::builders::GetAccountBalanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_account_balance(&self) -> crate::operation::get_account_balance::builders::GetAccountBalanceFluentBuilder {
+        crate::operation::get_account_balance::builders::GetAccountBalanceFluentBuilder::new(self.handle.clone())
     }
 }

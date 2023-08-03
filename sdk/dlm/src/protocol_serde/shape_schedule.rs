@@ -48,10 +48,7 @@ pub fn ser_schedule(
     if let Some(var_14) = &input.fast_restore_rule {
         #[allow(unused_mut)]
         let mut object_15 = object.key("FastRestoreRule").start_object();
-        crate::protocol_serde::shape_fast_restore_rule::ser_fast_restore_rule(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_fast_restore_rule::ser_fast_restore_rule(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.cross_region_copy_rules {
@@ -60,10 +57,7 @@ pub fn ser_schedule(
             {
                 #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_cross_region_copy_rule::ser_cross_region_copy_rule(
-                    &mut object_19,
-                    item_18,
-                )?;
+                crate::protocol_serde::shape_cross_region_copy_rule::ser_cross_region_copy_rule(&mut object_19, item_18)?;
                 object_19.finish();
             }
         }
@@ -100,12 +94,7 @@ pub(crate) fn de_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Schedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -115,92 +104,60 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Name" => {
                             builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "CopyTags" => {
-                            builder = builder.set_copy_tags(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_copy_tags(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "TagsToAdd" => {
-                            builder = builder.set_tags_to_add(
-                                crate::protocol_serde::shape_tags_to_add_list::de_tags_to_add_list(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_tags_to_add(crate::protocol_serde::shape_tags_to_add_list::de_tags_to_add_list(tokens)?);
                         }
                         "VariableTags" => {
-                            builder = builder.set_variable_tags(
-                                    crate::protocol_serde::shape_variable_tags_list::de_variable_tags_list(tokens)?
-                                );
+                            builder = builder.set_variable_tags(crate::protocol_serde::shape_variable_tags_list::de_variable_tags_list(tokens)?);
                         }
                         "CreateRule" => {
-                            builder = builder.set_create_rule(
-                                crate::protocol_serde::shape_create_rule::de_create_rule(tokens)?,
-                            );
+                            builder = builder.set_create_rule(crate::protocol_serde::shape_create_rule::de_create_rule(tokens)?);
                         }
                         "RetainRule" => {
-                            builder = builder.set_retain_rule(
-                                crate::protocol_serde::shape_retain_rule::de_retain_rule(tokens)?,
-                            );
+                            builder = builder.set_retain_rule(crate::protocol_serde::shape_retain_rule::de_retain_rule(tokens)?);
                         }
                         "FastRestoreRule" => {
-                            builder = builder.set_fast_restore_rule(
-                                    crate::protocol_serde::shape_fast_restore_rule::de_fast_restore_rule(tokens)?
-                                );
+                            builder = builder.set_fast_restore_rule(crate::protocol_serde::shape_fast_restore_rule::de_fast_restore_rule(tokens)?);
                         }
                         "CrossRegionCopyRules" => {
                             builder = builder.set_cross_region_copy_rules(
-                                    crate::protocol_serde::shape_cross_region_copy_rules::de_cross_region_copy_rules(tokens)?
-                                );
+                                crate::protocol_serde::shape_cross_region_copy_rules::de_cross_region_copy_rules(tokens)?,
+                            );
                         }
                         "ShareRules" => {
-                            builder = builder.set_share_rules(
-                                crate::protocol_serde::shape_share_rules::de_share_rules(tokens)?,
-                            );
+                            builder = builder.set_share_rules(crate::protocol_serde::shape_share_rules::de_share_rules(tokens)?);
                         }
                         "DeprecateRule" => {
-                            builder = builder.set_deprecate_rule(
-                                crate::protocol_serde::shape_deprecate_rule::de_deprecate_rule(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_deprecate_rule(crate::protocol_serde::shape_deprecate_rule::de_deprecate_rule(tokens)?);
                         }
                         "ArchiveRule" => {
-                            builder = builder.set_archive_rule(
-                                crate::protocol_serde::shape_archive_rule::de_archive_rule(tokens)?,
-                            );
+                            builder = builder.set_archive_rule(crate::protocol_serde::shape_archive_rule::de_archive_rule(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

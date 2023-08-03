@@ -5,8 +5,7 @@
 pub struct ListPermissionVersionsOutput {
     /// <p>An array of objects that contain details for each of the available versions.</p>
     #[doc(hidden)]
-    pub permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListPermissionVersionsOutput {
 }
 impl ListPermissionVersionsOutput {
     /// <p>An array of objects that contain details for each of the available versions.</p>
-    pub fn permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceSharePermissionSummary]> {
+    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourceSharePermissionSummary]> {
         self.permissions.as_deref()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPermissionVersionsOutput {
 }
 impl ListPermissionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionVersionsOutput`](crate::operation::list_permission_versions::ListPermissionVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_permission_versions::builders::ListPermissionVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_permission_versions::builders::ListPermissionVersionsOutputBuilder {
         crate::operation::list_permission_versions::builders::ListPermissionVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionVersionsOutput`](crate::operation::list_permission_versions::ListPermissionVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionVersionsOutputBuilder {
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListPermissionVersionsOutputBuilder {
         self
     }
     /// <p>An array of objects that contain details for each of the available versions.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>An array of objects that contain details for each of the available versions.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>> {
         &self.permissions
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>

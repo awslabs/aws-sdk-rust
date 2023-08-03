@@ -10,10 +10,7 @@ impl AcceptInvitationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::accept_invitation::AcceptInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_invitation::AcceptInvitationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_invitation::AcceptInvitationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.accept_invitation();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AcceptInvitationFluentBuilder {
         }
     }
     /// Access the AcceptInvitation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AcceptInvitationFluentBuilder {
             crate::operation::accept_invitation::AcceptInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_invitation::AcceptInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_invitation::AcceptInvitationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AcceptInvitationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AcceptInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_invitation::AcceptInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_invitation::AcceptInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_invitation::AcceptInvitationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AcceptInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_invitation::AcceptInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_invitation::AcceptInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_invitation::AcceptInvitationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl AcceptInvitationFluentBuilder {
             crate::operation::accept_invitation::AcceptInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_invitation::AcceptInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_invitation::AcceptInvitationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-    pub fn administrator_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn administrator_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.administrator_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-    pub fn set_administrator_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_administrator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_administrator_account_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl AcceptInvitationFluentBuilder {
         self.inner.get_administrator_account_id()
     }
     /// <p>The unique identifier for the invitation to accept.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.invitation_id(input.into());
         self
     }
     /// <p>The unique identifier for the invitation to accept.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_invitation_id(input);
         self
     }
@@ -163,18 +135,12 @@ impl AcceptInvitationFluentBuilder {
         self.inner.get_invitation_id()
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    pub fn master_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_account(input.into());
         self
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    pub fn set_master_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_account(input);
         self
     }

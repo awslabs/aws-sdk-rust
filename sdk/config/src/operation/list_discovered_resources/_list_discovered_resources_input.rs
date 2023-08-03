@@ -51,18 +51,14 @@ impl ListDiscoveredResourcesInput {
 }
 impl ListDiscoveredResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder {
         crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -78,10 +74,7 @@ impl ListDiscoveredResourcesInputBuilder {
         self
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -101,32 +94,21 @@ impl ListDiscoveredResourcesInputBuilder {
         self
     }
     /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }
     /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -183,15 +165,13 @@ impl ListDiscoveredResourcesInputBuilder {
         crate::operation::list_discovered_resources::ListDiscoveredResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
-                resource_type: self.resource_type,
-                resource_ids: self.resource_ids,
-                resource_name: self.resource_name,
-                limit: self.limit,
-                include_deleted_resources: self.include_deleted_resources,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
+            resource_type: self.resource_type,
+            resource_ids: self.resource_ids,
+            resource_name: self.resource_name,
+            limit: self.limit,
+            include_deleted_resources: self.include_deleted_resources,
+            next_token: self.next_token,
+        })
     }
 }

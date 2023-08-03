@@ -58,9 +58,7 @@ impl DetectMitigationActionExecution {
         self.execution_end_date.as_ref()
     }
     /// <p> The status of a mitigation action. </p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DetectMitigationActionExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DetectMitigationActionExecutionStatus> {
         self.status.as_ref()
     }
     /// <p> The error code of a mitigation action. </p>
@@ -81,9 +79,7 @@ impl DetectMitigationActionExecution {
 
 /// A builder for [`DetectMitigationActionExecution`](crate::types::DetectMitigationActionExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectMitigationActionExecutionBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) violation_id: ::std::option::Option<::std::string::String>,
@@ -158,10 +154,7 @@ impl DetectMitigationActionExecutionBuilder {
         self
     }
     /// <p> The date a mitigation action was started. </p>
-    pub fn set_execution_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_execution_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_start_date = input;
         self
     }
@@ -175,10 +168,7 @@ impl DetectMitigationActionExecutionBuilder {
         self
     }
     /// <p> The date a mitigation action ended. </p>
-    pub fn set_execution_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_execution_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_end_date = input;
         self
     }
@@ -192,17 +182,12 @@ impl DetectMitigationActionExecutionBuilder {
         self
     }
     /// <p> The status of a mitigation action. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectMitigationActionExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetectMitigationActionExecutionStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p> The status of a mitigation action. </p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectMitigationActionExecutionStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectMitigationActionExecutionStatus> {
         &self.status
     }
     /// <p> The error code of a mitigation action. </p>

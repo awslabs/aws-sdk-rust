@@ -29,9 +29,7 @@ impl GetStageSessionInput {
 
 /// A builder for [`GetStageSessionInput`](crate::operation::get_stage_session::GetStageSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStageSessionInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetStageSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetStageSessionInput`](crate::operation::get_stage_session::GetStageSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_stage_session::GetStageSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_stage_session::GetStageSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stage_session::GetStageSessionInput {
             stage_arn: self.stage_arn,
             session_id: self.session_id,

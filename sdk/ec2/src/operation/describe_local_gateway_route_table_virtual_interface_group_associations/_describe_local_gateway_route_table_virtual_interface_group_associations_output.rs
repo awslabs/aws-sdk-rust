@@ -5,9 +5,8 @@
 pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
     /// <p>Information about the associations.</p>
     #[doc(hidden)]
-    pub local_gateway_route_table_virtual_interface_group_associations: ::std::option::Option<
-        ::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
-    >,
+    pub local_gateway_route_table_virtual_interface_group_associations:
+        ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,20 +16,15 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
     /// <p>Information about the associations.</p>
     pub fn local_gateway_route_table_virtual_interface_group_associations(
         &self,
-    ) -> ::std::option::Option<
-        &[crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation],
-    > {
-        self.local_gateway_route_table_virtual_interface_group_associations
-            .as_deref()
+    ) -> ::std::option::Option<&[crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation]> {
+        self.local_gateway_route_table_virtual_interface_group_associations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId
-    for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput
-{
+impl ::aws_http::request_id::RequestId for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -44,14 +38,10 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
 
 /// A builder for [`DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput`](crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutputBuilder {
     pub(crate) local_gateway_route_table_virtual_interface_group_associations:
-        ::std::option::Option<
-            ::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
-        >,
+        ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -65,20 +55,15 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutputBuilde
         mut self,
         input: crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
     ) -> Self {
-        let mut v = self
-            .local_gateway_route_table_virtual_interface_group_associations
-            .unwrap_or_default();
+        let mut v = self.local_gateway_route_table_virtual_interface_group_associations.unwrap_or_default();
         v.push(input);
-        self.local_gateway_route_table_virtual_interface_group_associations =
-            ::std::option::Option::Some(v);
+        self.local_gateway_route_table_virtual_interface_group_associations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the associations.</p>
     pub fn set_local_gateway_route_table_virtual_interface_group_associations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>>,
     ) -> Self {
         self.local_gateway_route_table_virtual_interface_group_associations = input;
         self
@@ -86,9 +71,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutputBuilde
     /// <p>Information about the associations.</p>
     pub fn get_local_gateway_route_table_virtual_interface_group_associations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>> {
         &self.local_gateway_route_table_virtual_interface_group_associations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

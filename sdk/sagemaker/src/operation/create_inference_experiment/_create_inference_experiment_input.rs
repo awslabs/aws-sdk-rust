@@ -30,8 +30,7 @@ pub struct CreateInferenceExperimentInput {
     /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
     /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
     #[doc(hidden)]
-    pub data_storage_config:
-        ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
+    pub data_storage_config: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
     #[doc(hidden)]
     pub shadow_mode_config: ::std::option::Option<crate::types::ShadowModeConfig>,
@@ -84,9 +83,7 @@ impl CreateInferenceExperimentInput {
     }
     /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
     /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
-    pub fn data_storage_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceExperimentDataStorageConfig> {
+    pub fn data_storage_config(&self) -> ::std::option::Option<&crate::types::InferenceExperimentDataStorageConfig> {
         self.data_storage_config.as_ref()
     }
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
@@ -112,16 +109,14 @@ impl CreateInferenceExperimentInput {
 }
 impl CreateInferenceExperimentInput {
     /// Creates a new builder-style object to manufacture [`CreateInferenceExperimentInput`](crate::operation::create_inference_experiment::CreateInferenceExperimentInput).
-    pub fn builder() -> crate::operation::create_inference_experiment::builders::CreateInferenceExperimentInputBuilder{
+    pub fn builder() -> crate::operation::create_inference_experiment::builders::CreateInferenceExperimentInputBuilder {
         crate::operation::create_inference_experiment::builders::CreateInferenceExperimentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInferenceExperimentInput`](crate::operation::create_inference_experiment::CreateInferenceExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInferenceExperimentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::InferenceExperimentType>,
@@ -129,10 +124,8 @@ pub struct CreateInferenceExperimentInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
-    pub(crate) model_variants:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
-    pub(crate) data_storage_config:
-        ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
+    pub(crate) model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
+    pub(crate) data_storage_config: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
     pub(crate) shadow_mode_config: ::std::option::Option<crate::types::ShadowModeConfig>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -164,10 +157,7 @@ impl CreateInferenceExperimentInputBuilder {
     /// <ul>
     /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::InferenceExperimentType>) -> Self {
         self.r#type = input;
         self
     }
@@ -184,17 +174,12 @@ impl CreateInferenceExperimentInputBuilder {
         self
     }
     /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentSchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::InferenceExperimentSchedule>) -> Self {
         self.schedule = input;
         self
     }
     /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
-    pub fn get_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
         &self.schedule
     }
     /// <p>A description for the inference experiment.</p>
@@ -226,18 +211,12 @@ impl CreateInferenceExperimentInputBuilder {
         &self.role_arn
     }
     /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -257,42 +236,29 @@ impl CreateInferenceExperimentInputBuilder {
         self
     }
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
-    pub fn set_model_variants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
-    ) -> Self {
+    pub fn set_model_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>) -> Self {
         self.model_variants = input;
         self
     }
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
-    pub fn get_model_variants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
+    pub fn get_model_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
         &self.model_variants
     }
     /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
     /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
-    pub fn data_storage_config(
-        mut self,
-        input: crate::types::InferenceExperimentDataStorageConfig,
-    ) -> Self {
+    pub fn data_storage_config(mut self, input: crate::types::InferenceExperimentDataStorageConfig) -> Self {
         self.data_storage_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
     /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
-    pub fn set_data_storage_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
-    ) -> Self {
+    pub fn set_data_storage_config(mut self, input: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>) -> Self {
         self.data_storage_config = input;
         self
     }
     /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
     /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
-    pub fn get_data_storage_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceExperimentDataStorageConfig> {
+    pub fn get_data_storage_config(&self) -> &::std::option::Option<crate::types::InferenceExperimentDataStorageConfig> {
         &self.data_storage_config
     }
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
@@ -301,10 +267,7 @@ impl CreateInferenceExperimentInputBuilder {
         self
     }
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
-    pub fn set_shadow_mode_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ShadowModeConfig>,
-    ) -> Self {
+    pub fn set_shadow_mode_config(mut self, input: ::std::option::Option<crate::types::ShadowModeConfig>) -> Self {
         self.shadow_mode_config = input;
         self
     }
@@ -362,10 +325,7 @@ impl CreateInferenceExperimentInputBuilder {
         self
     }
     /// <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -380,20 +340,18 @@ impl CreateInferenceExperimentInputBuilder {
         crate::operation::create_inference_experiment::CreateInferenceExperimentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_inference_experiment::CreateInferenceExperimentInput {
-                name: self.name,
-                r#type: self.r#type,
-                schedule: self.schedule,
-                description: self.description,
-                role_arn: self.role_arn,
-                endpoint_name: self.endpoint_name,
-                model_variants: self.model_variants,
-                data_storage_config: self.data_storage_config,
-                shadow_mode_config: self.shadow_mode_config,
-                kms_key: self.kms_key,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_inference_experiment::CreateInferenceExperimentInput {
+            name: self.name,
+            r#type: self.r#type,
+            schedule: self.schedule,
+            description: self.description,
+            role_arn: self.role_arn,
+            endpoint_name: self.endpoint_name,
+            model_variants: self.model_variants,
+            data_storage_config: self.data_storage_config,
+            shadow_mode_config: self.shadow_mode_config,
+            kms_key: self.kms_key,
+            tags: self.tags,
+        })
     }
 }

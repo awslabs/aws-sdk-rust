@@ -34,7 +34,7 @@ impl GetMultiRegionAccessPointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointInputBuilder,
+    inner: crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointInputBuilder,
 }
 impl GetMultiRegionAccessPointFluentBuilder {
     /// Creates a new `GetMultiRegionAccessPoint`.
@@ -45,7 +45,7 @@ impl GetMultiRegionAccessPointFluentBuilder {
         }
     }
     /// Access the GetMultiRegionAccessPoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl GetMultiRegionAccessPointFluentBuilder {
             crate::operation::get_multi_region_access_point::GetMultiRegionAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl GetMultiRegionAccessPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl GetMultiRegionAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl GetMultiRegionAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl GetMultiRegionAccessPointFluentBuilder {
             crate::operation::get_multi_region_access_point::GetMultiRegionAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError>,
     > {
         self.customize_middleware().await
     }

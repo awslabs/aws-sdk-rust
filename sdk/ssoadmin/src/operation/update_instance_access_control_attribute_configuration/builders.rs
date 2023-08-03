@@ -5,16 +5,16 @@ pub use crate::operation::update_instance_access_control_attribute_configuration
 
 impl UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_instance_access_control_attribute_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -42,10 +42,17 @@ impl UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,19 @@ impl UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +91,30 @@ impl UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
@@ -109,13 +132,8 @@ impl UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
         self.inner.get_instance_arn()
     }
     /// <p>Updates the attributes for your ABAC configuration.</p>
-    pub fn instance_access_control_attribute_configuration(
-        mut self,
-        input: crate::types::InstanceAccessControlAttributeConfiguration,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .instance_access_control_attribute_configuration(input);
+    pub fn instance_access_control_attribute_configuration(mut self, input: crate::types::InstanceAccessControlAttributeConfiguration) -> Self {
+        self.inner = self.inner.instance_access_control_attribute_configuration(input);
         self
     }
     /// <p>Updates the attributes for your ABAC configuration.</p>
@@ -123,16 +141,13 @@ impl UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_instance_access_control_attribute_configuration(input);
+        self.inner = self.inner.set_instance_access_control_attribute_configuration(input);
         self
     }
     /// <p>Updates the attributes for your ABAC configuration.</p>
     pub fn get_instance_access_control_attribute_configuration(
         &self,
     ) -> &::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration> {
-        self.inner
-            .get_instance_access_control_attribute_configuration()
+        self.inner.get_instance_access_control_attribute_configuration()
     }
 }

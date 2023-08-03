@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DisableImageDeprecationOutput {
 }
 impl DisableImageDeprecationOutput {
     /// Creates a new builder-style object to manufacture [`DisableImageDeprecationOutput`](crate::operation::disable_image_deprecation::DisableImageDeprecationOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_image_deprecation::builders::DisableImageDeprecationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_image_deprecation::builders::DisableImageDeprecationOutputBuilder {
         crate::operation::disable_image_deprecation::builders::DisableImageDeprecationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableImageDeprecationOutput`](crate::operation::disable_image_deprecation::DisableImageDeprecationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableImageDeprecationOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl DisableImageDeprecationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableImageDeprecationOutput`](crate::operation::disable_image_deprecation::DisableImageDeprecationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_image_deprecation::DisableImageDeprecationOutput {
+    pub fn build(self) -> crate::operation::disable_image_deprecation::DisableImageDeprecationOutput {
         crate::operation::disable_image_deprecation::DisableImageDeprecationOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

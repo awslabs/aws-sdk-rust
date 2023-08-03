@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelJobExecutionOutput {
 }
 impl CancelJobExecutionOutput {
     /// Creates a new builder-style object to manufacture [`CancelJobExecutionOutput`](crate::operation::cancel_job_execution::CancelJobExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_job_execution::builders::CancelJobExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_job_execution::builders::CancelJobExecutionOutputBuilder {
         crate::operation::cancel_job_execution::builders::CancelJobExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelJobExecutionOutput`](crate::operation::cancel_job_execution::CancelJobExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelJobExecutionOutputBuilder {
     _request_id: Option<String>,
 }

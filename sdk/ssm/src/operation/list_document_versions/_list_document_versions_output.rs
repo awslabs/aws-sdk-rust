@@ -5,8 +5,7 @@
 pub struct ListDocumentVersionsOutput {
     /// <p>The document versions.</p>
     #[doc(hidden)]
-    pub document_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionInfo>>,
+    pub document_versions: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionInfo>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDocumentVersionsOutput {
 }
 impl ListDocumentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentVersionsOutput`](crate::operation::list_document_versions::ListDocumentVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_document_versions::builders::ListDocumentVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_document_versions::builders::ListDocumentVersionsOutputBuilder {
         crate::operation::list_document_versions::builders::ListDocumentVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDocumentVersionsOutput`](crate::operation::list_document_versions::ListDocumentVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDocumentVersionsOutputBuilder {
-    pub(crate) document_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionInfo>>,
+    pub(crate) document_versions: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListDocumentVersionsOutputBuilder {
         self
     }
     /// <p>The document versions.</p>
-    pub fn set_document_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionInfo>>,
-    ) -> Self {
+    pub fn set_document_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionInfo>>) -> Self {
         self.document_versions = input;
         self
     }
     /// <p>The document versions.</p>
-    pub fn get_document_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionInfo>> {
+    pub fn get_document_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionInfo>> {
         &self.document_versions
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>

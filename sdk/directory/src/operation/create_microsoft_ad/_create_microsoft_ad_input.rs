@@ -73,8 +73,7 @@ impl ::std::fmt::Debug for CreateMicrosoftAdInput {
 }
 impl CreateMicrosoftAdInput {
     /// Creates a new builder-style object to manufacture [`CreateMicrosoftAdInput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdInput).
-    pub fn builder(
-    ) -> crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdInputBuilder {
+    pub fn builder() -> crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdInputBuilder {
         crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdInputBuilder::default()
     }
 }
@@ -157,10 +156,7 @@ impl CreateMicrosoftAdInputBuilder {
         self
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    pub fn set_vpc_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryVpcSettings>,
-    ) -> Self {
+    pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
         self.vpc_settings = input;
         self
     }
@@ -174,10 +170,7 @@ impl CreateMicrosoftAdInputBuilder {
         self
     }
     /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
-    pub fn set_edition(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryEdition>,
-    ) -> Self {
+    pub fn set_edition(mut self, input: ::std::option::Option<crate::types::DirectoryEdition>) -> Self {
         self.edition = input;
         self
     }
@@ -197,10 +190,7 @@ impl CreateMicrosoftAdInputBuilder {
         self
     }
     /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -211,21 +201,16 @@ impl CreateMicrosoftAdInputBuilder {
     /// Consumes the builder and constructs a [`CreateMicrosoftAdInput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_microsoft_ad::CreateMicrosoftAdInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_microsoft_ad::CreateMicrosoftAdInput {
-                name: self.name,
-                short_name: self.short_name,
-                password: self.password,
-                description: self.description,
-                vpc_settings: self.vpc_settings,
-                edition: self.edition,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_microsoft_ad::CreateMicrosoftAdInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_microsoft_ad::CreateMicrosoftAdInput {
+            name: self.name,
+            short_name: self.short_name,
+            password: self.password,
+            description: self.description,
+            vpc_settings: self.vpc_settings,
+            edition: self.edition,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateMicrosoftAdInputBuilder {

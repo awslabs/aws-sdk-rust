@@ -23,9 +23,7 @@ impl NtpPayload {
 
 /// A builder for [`NtpPayload`](crate::types::NtpPayload).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NtpPayloadBuilder {
     pub(crate) ntp_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,17 +40,12 @@ impl NtpPayloadBuilder {
         self
     }
     /// <p>NTP servers to use, in order of preference.</p>
-    pub fn set_ntp_servers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ntp_servers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ntp_servers = input;
         self
     }
     /// <p>NTP servers to use, in order of preference.</p>
-    pub fn get_ntp_servers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ntp_servers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ntp_servers
     }
     /// Consumes the builder and constructs a [`NtpPayload`](crate::types::NtpPayload).

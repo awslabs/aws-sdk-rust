@@ -36,9 +36,7 @@ impl DescribeBackupsOutput {
 
 /// A builder for [`DescribeBackupsOutput`](crate::operation::describe_backups::DescribeBackupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBackupsOutputBuilder {
     pub(crate) backups: ::std::option::Option<::std::vec::Vec<crate::types::Backup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl DescribeBackupsOutputBuilder {
         self
     }
     /// <p>An array of backups.</p>
-    pub fn set_backups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Backup>>,
-    ) -> Self {
+    pub fn set_backups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Backup>>) -> Self {
         self.backups = input;
         self
     }

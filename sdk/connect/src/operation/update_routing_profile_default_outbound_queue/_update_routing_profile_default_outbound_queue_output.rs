@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for UpdateRoutingProfileDefaultOutboundQu
 }
 impl UpdateRoutingProfileDefaultOutboundQueueOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingProfileDefaultOutboundQueueOutput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueOutput).
-    pub fn builder() -> crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueOutputBuilder {
         crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRoutingProfileDefaultOutboundQueueOutput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoutingProfileDefaultOutboundQueueOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl UpdateRoutingProfileDefaultOutboundQueueOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileDefaultOutboundQueueOutput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueOutput).
-    pub fn build(self) -> crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueOutput{
+    pub fn build(self) -> crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueOutput {
         crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueOutput {
             _request_id: self._request_id,
         }

@@ -19,9 +19,7 @@ impl StopServerOutput {
 
 /// A builder for [`StopServerOutput`](crate::operation::stop_server::StopServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopServerOutputBuilder {
     _request_id: Option<String>,
 }

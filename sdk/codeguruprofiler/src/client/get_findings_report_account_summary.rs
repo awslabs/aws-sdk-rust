@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`report_summaries(Option<Vec<FindingsReportSummary>>)`](crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput::report_summaries): <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetFindingsReportAccountSummaryError>`](crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryError)
-    pub fn get_findings_report_account_summary(&self) -> crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryFluentBuilder{
+    pub fn get_findings_report_account_summary(
+        &self,
+    ) -> crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryFluentBuilder {
         crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryFluentBuilder::new(self.handle.clone())
     }
 }

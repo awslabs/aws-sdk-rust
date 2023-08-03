@@ -75,10 +75,7 @@ impl TestGridSessionArtifactBuilder {
         self
     }
     /// <p>The kind of artifact.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridSessionArtifactType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestGridSessionArtifactType>) -> Self {
         self.r#type = input;
         self
     }

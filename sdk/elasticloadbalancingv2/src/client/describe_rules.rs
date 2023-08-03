@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`rules(Option<Vec<Rule>>)`](crate::operation::describe_rules::DescribeRulesOutput::rules): <p>Information about the rules.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_rules::DescribeRulesOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     /// - On failure, responds with [`SdkError<DescribeRulesError>`](crate::operation::describe_rules::DescribeRulesError)
-    pub fn describe_rules(
-        &self,
-    ) -> crate::operation::describe_rules::builders::DescribeRulesFluentBuilder {
-        crate::operation::describe_rules::builders::DescribeRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_rules(&self) -> crate::operation::describe_rules::builders::DescribeRulesFluentBuilder {
+        crate::operation::describe_rules::builders::DescribeRulesFluentBuilder::new(self.handle.clone())
     }
 }

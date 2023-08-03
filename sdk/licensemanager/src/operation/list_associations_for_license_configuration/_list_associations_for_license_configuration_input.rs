@@ -29,16 +29,14 @@ impl ListAssociationsForLicenseConfigurationInput {
 }
 impl ListAssociationsForLicenseConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ListAssociationsForLicenseConfigurationInput`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationInput).
-    pub fn builder() -> crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationInputBuilder {
         crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociationsForLicenseConfigurationInput`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociationsForLicenseConfigurationInputBuilder {
     pub(crate) license_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListAssociationsForLicenseConfigurationInputBuilder {
 }
 impl ListAssociationsForLicenseConfigurationInputBuilder {
     /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
-    pub fn license_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_configuration_arn = input;
         self
     }
@@ -94,16 +86,18 @@ impl ListAssociationsForLicenseConfigurationInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAssociationsForLicenseConfigurationInput`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationInput {
-                license_configuration_arn: self.license_configuration_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                license_configuration_arn: self.license_configuration_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

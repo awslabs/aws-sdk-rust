@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReplicaStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -76,14 +70,10 @@ impl ::std::convert::From<&str> for ReplicaStatus {
             "CREATING" => ReplicaStatus::Creating,
             "CREATION_FAILED" => ReplicaStatus::CreationFailed,
             "DELETING" => ReplicaStatus::Deleting,
-            "INACCESSIBLE_ENCRYPTION_CREDENTIALS" => {
-                ReplicaStatus::InaccessibleEncryptionCredentials
-            }
+            "INACCESSIBLE_ENCRYPTION_CREDENTIALS" => ReplicaStatus::InaccessibleEncryptionCredentials,
             "REGION_DISABLED" => ReplicaStatus::RegionDisabled,
             "UPDATING" => ReplicaStatus::Updating,
-            other => {
-                ReplicaStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReplicaStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -102,9 +92,7 @@ impl ReplicaStatus {
             ReplicaStatus::Creating => "CREATING",
             ReplicaStatus::CreationFailed => "CREATION_FAILED",
             ReplicaStatus::Deleting => "DELETING",
-            ReplicaStatus::InaccessibleEncryptionCredentials => {
-                "INACCESSIBLE_ENCRYPTION_CREDENTIALS"
-            }
+            ReplicaStatus::InaccessibleEncryptionCredentials => "INACCESSIBLE_ENCRYPTION_CREDENTIALS",
             ReplicaStatus::RegionDisabled => "REGION_DISABLED",
             ReplicaStatus::Updating => "UPDATING",
             ReplicaStatus::Unknown(value) => value.as_str(),

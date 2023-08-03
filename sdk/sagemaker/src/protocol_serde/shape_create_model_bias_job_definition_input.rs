@@ -9,10 +9,7 @@ pub fn ser_create_model_bias_job_definition_input(
     if let Some(var_2) = &input.model_bias_baseline_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ModelBiasBaselineConfig").start_object();
-        crate::protocol_serde::shape_model_bias_baseline_config::ser_model_bias_baseline_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_model_bias_baseline_config::ser_model_bias_baseline_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.model_bias_app_specification {
@@ -24,37 +21,25 @@ pub fn ser_create_model_bias_job_definition_input(
     if let Some(var_6) = &input.model_bias_job_input {
         #[allow(unused_mut)]
         let mut object_7 = object.key("ModelBiasJobInput").start_object();
-        crate::protocol_serde::shape_model_bias_job_input::ser_model_bias_job_input(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_model_bias_job_input::ser_model_bias_job_input(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.model_bias_job_output_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("ModelBiasJobOutputConfig").start_object();
-        crate::protocol_serde::shape_monitoring_output_config::ser_monitoring_output_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_monitoring_output_config::ser_monitoring_output_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.job_resources {
         #[allow(unused_mut)]
         let mut object_11 = object.key("JobResources").start_object();
-        crate::protocol_serde::shape_monitoring_resources::ser_monitoring_resources(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_monitoring_resources::ser_monitoring_resources(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.network_config {
         #[allow(unused_mut)]
         let mut object_13 = object.key("NetworkConfig").start_object();
-        crate::protocol_serde::shape_monitoring_network_config::ser_monitoring_network_config(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_monitoring_network_config::ser_monitoring_network_config(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.role_arn {

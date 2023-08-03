@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for GetSimilarProfilesOutput {
 }
 impl GetSimilarProfilesOutput {
     /// Creates a new builder-style object to manufacture [`GetSimilarProfilesOutput`](crate::operation::get_similar_profiles::GetSimilarProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_similar_profiles::builders::GetSimilarProfilesOutputBuilder {
+    pub fn builder() -> crate::operation::get_similar_profiles::builders::GetSimilarProfilesOutputBuilder {
         crate::operation::get_similar_profiles::builders::GetSimilarProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSimilarProfilesOutput`](crate::operation::get_similar_profiles::GetSimilarProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSimilarProfilesOutputBuilder {
     pub(crate) profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) match_id: ::std::option::Option<::std::string::String>,
@@ -89,17 +86,12 @@ impl GetSimilarProfilesOutputBuilder {
         self
     }
     /// <p>Set of <code>profileId</code>s that belong to the same matching group.</p>
-    pub fn set_profile_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_profile_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.profile_ids = input;
         self
     }
     /// <p>Set of <code>profileId</code>s that belong to the same matching group.</p>
-    pub fn get_profile_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.profile_ids
     }
     /// <p>The string <code>matchId</code> that the similar profiles belong to.</p>

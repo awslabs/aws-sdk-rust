@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreatePartnerInputOutput {
 }
 impl CreatePartnerInputOutput {
     /// Creates a new builder-style object to manufacture [`CreatePartnerInputOutput`](crate::operation::create_partner_input::CreatePartnerInputOutput).
-    pub fn builder(
-    ) -> crate::operation::create_partner_input::builders::CreatePartnerInputOutputBuilder {
+    pub fn builder() -> crate::operation::create_partner_input::builders::CreatePartnerInputOutputBuilder {
         crate::operation::create_partner_input::builders::CreatePartnerInputOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePartnerInputOutput`](crate::operation::create_partner_input::CreatePartnerInputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePartnerInputOutputBuilder {
     pub(crate) input: ::std::option::Option<crate::types::Input>,
     _request_id: Option<String>,

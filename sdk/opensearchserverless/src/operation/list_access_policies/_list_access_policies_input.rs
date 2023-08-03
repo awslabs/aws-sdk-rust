@@ -36,17 +36,14 @@ impl ListAccessPoliciesInput {
 }
 impl ListAccessPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
+    pub fn builder() -> crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
         crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPoliciesInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     pub(crate) resource: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -60,10 +57,7 @@ impl ListAccessPoliciesInputBuilder {
         self
     }
     /// <p>The type of access policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -83,10 +77,7 @@ impl ListAccessPoliciesInputBuilder {
         self
     }
     /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource = input;
         self
     }
@@ -125,17 +116,12 @@ impl ListAccessPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_access_policies::ListAccessPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_access_policies::ListAccessPoliciesInput {
-                r#type: self.r#type,
-                resource: self.resource,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_access_policies::ListAccessPoliciesInput {
+            r#type: self.r#type,
+            resource: self.resource,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

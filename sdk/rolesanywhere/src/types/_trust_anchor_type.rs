@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TrustAnchorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for TrustAnchorType {
             "AWS_ACM_PCA" => TrustAnchorType::AwsAcmPca,
             "CERTIFICATE_BUNDLE" => TrustAnchorType::CertificateBundle,
             "SELF_SIGNED_REPOSITORY" => TrustAnchorType::SelfSignedRepository,
-            other => {
-                TrustAnchorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TrustAnchorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl TrustAnchorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_ACM_PCA",
-            "CERTIFICATE_BUNDLE",
-            "SELF_SIGNED_REPOSITORY",
-        ]
+        &["AWS_ACM_PCA", "CERTIFICATE_BUNDLE", "SELF_SIGNED_REPOSITORY"]
     }
 }
 impl ::std::convert::AsRef<str> for TrustAnchorType {

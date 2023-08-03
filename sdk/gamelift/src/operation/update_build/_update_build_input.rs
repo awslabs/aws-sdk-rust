@@ -36,9 +36,7 @@ impl UpdateBuildInput {
 
 /// A builder for [`UpdateBuildInput`](crate::operation::update_build::UpdateBuildInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBuildInputBuilder {
     pub(crate) build_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl UpdateBuildInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`UpdateBuildInput`](crate::operation::update_build::UpdateBuildInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_build::UpdateBuildInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_build::UpdateBuildInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_build::UpdateBuildInput {
             build_id: self.build_id,
             name: self.name,

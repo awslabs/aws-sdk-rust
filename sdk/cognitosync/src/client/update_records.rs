@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRecordsOutput`](crate::operation::update_records::UpdateRecordsOutput) with field(s):
     ///   - [`records(Option<Vec<Record>>)`](crate::operation::update_records::UpdateRecordsOutput::records): A list of records that have been updated.
     /// - On failure, responds with [`SdkError<UpdateRecordsError>`](crate::operation::update_records::UpdateRecordsError)
-    pub fn update_records(
-        &self,
-    ) -> crate::operation::update_records::builders::UpdateRecordsFluentBuilder {
-        crate::operation::update_records::builders::UpdateRecordsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_records(&self) -> crate::operation::update_records::builders::UpdateRecordsFluentBuilder {
+        crate::operation::update_records::builders::UpdateRecordsFluentBuilder::new(self.handle.clone())
     }
 }

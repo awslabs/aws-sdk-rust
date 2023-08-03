@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_schema_versions::ListSchemaVersionsOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`schema_versions(Option<Vec<SchemaVersionSummary>>)`](crate::operation::list_schema_versions::ListSchemaVersionsOutput::schema_versions): <p>An array of schema version summaries.</p>
     /// - On failure, responds with [`SdkError<ListSchemaVersionsError>`](crate::operation::list_schema_versions::ListSchemaVersionsError)
-    pub fn list_schema_versions(
-        &self,
-    ) -> crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder {
-        crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_schema_versions(&self) -> crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder {
+        crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::new(self.handle.clone())
     }
 }

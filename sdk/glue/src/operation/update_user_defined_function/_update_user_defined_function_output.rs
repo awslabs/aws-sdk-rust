@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateUserDefinedFunctionOutput {
 }
 impl UpdateUserDefinedFunctionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserDefinedFunctionOutput`](crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput).
-    pub fn builder() -> crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionOutputBuilder{
+    pub fn builder() -> crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionOutputBuilder {
         crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserDefinedFunctionOutput`](crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserDefinedFunctionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateUserDefinedFunctionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateUserDefinedFunctionOutput`](crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput {
+    pub fn build(self) -> crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput {
         crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput {
             _request_id: self._request_id,
         }

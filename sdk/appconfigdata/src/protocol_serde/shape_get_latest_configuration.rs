@@ -9,91 +9,82 @@ pub fn de_get_latest_configuration_http_error(
     crate::operation::get_latest_configuration::GetLatestConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::operation::get_latest_configuration::GetLatestConfigurationError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::get_latest_configuration::GetLatestConfigurationError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_latest_configuration::GetLatestConfigurationError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::get_latest_configuration::GetLatestConfigurationError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::get_latest_configuration::GetLatestConfigurationError::generic(generic)
+        _ => crate::operation::get_latest_configuration::GetLatestConfigurationError::generic(generic),
     })
 }
 
@@ -109,42 +100,42 @@ pub fn de_get_latest_configuration_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_latest_configuration::builders::GetLatestConfigurationOutputBuilder::default();
-        output = output.set_configuration(
-            crate::protocol_serde::shape_get_latest_configuration_output::de_configuration_payload(
-                _response_body,
-            )?,
-        );
+        output = output.set_configuration(crate::protocol_serde::shape_get_latest_configuration_output::de_configuration_payload(
+            _response_body,
+        )?);
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_latest_configuration_output::de_content_type_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_get_latest_configuration_output::de_content_type_header(_response_headers).map_err(|_| {
                 crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled(
                     "Failed to parse ContentType from header `Content-Type",
                 )
             })?,
         );
         output = output.set_next_poll_configuration_token(
-            crate::protocol_serde::shape_get_latest_configuration_output::de_next_poll_configuration_token_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled("Failed to parse NextPollConfigurationToken from header `Next-Poll-Configuration-Token"))?
+            crate::protocol_serde::shape_get_latest_configuration_output::de_next_poll_configuration_token_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled(
+                        "Failed to parse NextPollConfigurationToken from header `Next-Poll-Configuration-Token",
+                    )
+                },
+            )?,
         );
         output = output.set_next_poll_interval_in_seconds(
-            crate::protocol_serde::shape_get_latest_configuration_output::de_next_poll_interval_in_seconds_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled("Failed to parse NextPollIntervalInSeconds from header `Next-Poll-Interval-In-Seconds"))?
+            crate::protocol_serde::shape_get_latest_configuration_output::de_next_poll_interval_in_seconds_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled(
+                        "Failed to parse NextPollIntervalInSeconds from header `Next-Poll-Interval-In-Seconds",
+                    )
+                },
+            )?,
         );
         output = output.set_version_label(
-            crate::protocol_serde::shape_get_latest_configuration_output::de_version_label_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_get_latest_configuration_output::de_version_label_header(_response_headers).map_err(|_| {
                 crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled(
                     "Failed to parse VersionLabel from header `Version-Label",
                 )
             })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

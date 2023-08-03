@@ -20,9 +20,7 @@ impl AutoMlProblemTypeResolvedAttributes {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`TabularResolvedAttributes`](crate::types::AutoMlProblemTypeResolvedAttributes::TabularResolvedAttributes), extracting the inner [`TabularResolvedAttributes`](crate::types::TabularResolvedAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tabular_resolved_attributes(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TabularResolvedAttributes, &Self> {
+    pub fn as_tabular_resolved_attributes(&self) -> ::std::result::Result<&crate::types::TabularResolvedAttributes, &Self> {
         if let AutoMlProblemTypeResolvedAttributes::TabularResolvedAttributes(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

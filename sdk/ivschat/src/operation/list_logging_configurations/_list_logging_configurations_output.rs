@@ -5,8 +5,7 @@
 pub struct ListLoggingConfigurationsOutput {
     /// <p>List of the matching logging configurations (summary information only). There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
     #[doc(hidden)]
-    pub logging_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>>,
+    pub logging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>>,
     /// <p>If there are more logging configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListLoggingConfigurationsOutput {
 }
 impl ListLoggingConfigurationsOutput {
     /// <p>List of the matching logging configurations (summary information only). There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn logging_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LoggingConfigurationSummary]> {
+    pub fn logging_configurations(&self) -> ::std::option::Option<&[crate::types::LoggingConfigurationSummary]> {
         self.logging_configurations.as_deref()
     }
     /// <p>If there are more logging configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLoggingConfigurationsOutput {
 }
 impl ListLoggingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsOutput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsOutputBuilder {
         crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLoggingConfigurationsOutput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLoggingConfigurationsOutputBuilder {
-    pub(crate) logging_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>>,
+    pub(crate) logging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListLoggingConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_logging_configurations`](Self::set_logging_configurations).
     ///
     /// <p>List of the matching logging configurations (summary information only). There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn logging_configurations(
-        mut self,
-        input: crate::types::LoggingConfigurationSummary,
-    ) -> Self {
+    pub fn logging_configurations(mut self, input: crate::types::LoggingConfigurationSummary) -> Self {
         let mut v = self.logging_configurations.unwrap_or_default();
         v.push(input);
         self.logging_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of the matching logging configurations (summary information only). There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn set_logging_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>>,
-    ) -> Self {
+    pub fn set_logging_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>>) -> Self {
         self.logging_configurations = input;
         self
     }
     /// <p>List of the matching logging configurations (summary information only). There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn get_logging_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>> {
+    pub fn get_logging_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>> {
         &self.logging_configurations
     }
     /// <p>If there are more logging configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -100,9 +86,7 @@ impl ListLoggingConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLoggingConfigurationsOutput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput {
         crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput {
             logging_configurations: self.logging_configurations,
             next_token: self.next_token,

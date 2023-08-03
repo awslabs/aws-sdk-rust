@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`index_id(impl ::std::convert::Into<String>)`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::set_index_id): <p>The identifier of the index for the thesaurus.</p>
     /// - On success, responds with [`DeleteThesaurusOutput`](crate::operation::delete_thesaurus::DeleteThesaurusOutput)
     /// - On failure, responds with [`SdkError<DeleteThesaurusError>`](crate::operation::delete_thesaurus::DeleteThesaurusError)
-    pub fn delete_thesaurus(
-        &self,
-    ) -> crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder {
-        crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_thesaurus(&self) -> crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder {
+        crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::new(self.handle.clone())
     }
 }

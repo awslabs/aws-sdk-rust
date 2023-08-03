@@ -26,7 +26,7 @@ impl GetJourneyRunExecutionMetricsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetJourneyRunExecutionMetricsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_journey_run_execution_metrics::builders::GetJourneyRunExecutionMetricsInputBuilder,
+    inner: crate::operation::get_journey_run_execution_metrics::builders::GetJourneyRunExecutionMetricsInputBuilder,
 }
 impl GetJourneyRunExecutionMetricsFluentBuilder {
     /// Creates a new `GetJourneyRunExecutionMetrics`.
@@ -37,7 +37,7 @@ impl GetJourneyRunExecutionMetricsFluentBuilder {
         }
     }
     /// Access the GetJourneyRunExecutionMetrics as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_journey_run_execution_metrics::builders::GetJourneyRunExecutionMetricsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_journey_run_execution_metrics::builders::GetJourneyRunExecutionMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetJourneyRunExecutionMetricsFluentBuilder {
             crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetJourneyRunExecutionMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetJourneyRunExecutionMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetJourneyRunExecutionMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetJourneyRunExecutionMetricsFluentBuilder {
             crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

@@ -38,13 +38,7 @@
 /// Choose Insert for this setting to include color metadata in this output. Choose Ignore to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ColorMetadata {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ColorMetadata {
         match s {
             "IGNORE" => ColorMetadata::Ignore,
             "INSERT" => ColorMetadata::Insert,
-            other => {
-                ColorMetadata::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ColorMetadata::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

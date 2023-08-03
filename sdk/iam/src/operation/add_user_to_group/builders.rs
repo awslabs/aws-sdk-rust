@@ -10,10 +10,7 @@ impl AddUserToGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_user_to_group::AddUserToGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_user_to_group::AddUserToGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_user_to_group::AddUserToGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_user_to_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AddUserToGroupFluentBuilder {
         }
     }
     /// Access the AddUserToGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_user_to_group::builders::AddUserToGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_user_to_group::builders::AddUserToGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AddUserToGroupFluentBuilder {
             crate::operation::add_user_to_group::AddUserToGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_user_to_group::AddUserToGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_user_to_group::AddUserToGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AddUserToGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AddUserToGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_user_to_group::AddUserToGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_user_to_group::AddUserToGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_user_to_group::AddUserToGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AddUserToGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_user_to_group::AddUserToGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_user_to_group::AddUserToGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_user_to_group::AddUserToGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AddUserToGroupFluentBuilder {
             crate::operation::add_user_to_group::AddUserToGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_user_to_group::AddUserToGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_user_to_group::AddUserToGroupError>,
     > {
         self.customize_middleware().await
     }

@@ -43,17 +43,14 @@ impl UpdateVirtualNodeInput {
 }
 impl UpdateVirtualNodeInput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualNodeInput`](crate::operation::update_virtual_node::UpdateVirtualNodeInput).
-    pub fn builder(
-    ) -> crate::operation::update_virtual_node::builders::UpdateVirtualNodeInputBuilder {
+    pub fn builder() -> crate::operation::update_virtual_node::builders::UpdateVirtualNodeInputBuilder {
         crate::operation::update_virtual_node::builders::UpdateVirtualNodeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVirtualNodeInput`](crate::operation::update_virtual_node::UpdateVirtualNodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVirtualNodeInputBuilder {
     pub(crate) virtual_node_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ pub struct UpdateVirtualNodeInputBuilder {
 }
 impl UpdateVirtualNodeInputBuilder {
     /// <p>The name of the virtual node to update.</p>
-    pub fn virtual_node_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_node_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual node to update.</p>
-    pub fn set_virtual_node_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_node_name = input;
         self
     }
@@ -141,18 +132,13 @@ impl UpdateVirtualNodeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVirtualNodeInput`](crate::operation::update_virtual_node::UpdateVirtualNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_virtual_node::UpdateVirtualNodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_virtual_node::UpdateVirtualNodeInput {
-                virtual_node_name: self.virtual_node_name,
-                mesh_name: self.mesh_name,
-                spec: self.spec,
-                client_token: self.client_token,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_virtual_node::UpdateVirtualNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_virtual_node::UpdateVirtualNodeInput {
+            virtual_node_name: self.virtual_node_name,
+            mesh_name: self.mesh_name,
+            spec: self.spec,
+            client_token: self.client_token,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

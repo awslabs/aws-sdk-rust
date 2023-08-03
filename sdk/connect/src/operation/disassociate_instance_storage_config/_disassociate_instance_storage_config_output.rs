@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateInstanceStorageConfigOutp
 }
 impl DisassociateInstanceStorageConfigOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateInstanceStorageConfigOutput`](crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput).
-    pub fn builder() -> crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigOutputBuilder {
         crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateInstanceStorageConfigOutput`](crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateInstanceStorageConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociateInstanceStorageConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateInstanceStorageConfigOutput`](crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput).
-    pub fn build(self) -> crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput{
+    pub fn build(self) -> crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput {
         crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput {
             _request_id: self._request_id,
         }

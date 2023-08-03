@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`flow_arn(Option<String>)`](crate::operation::update_flow_output::UpdateFlowOutputOutput::flow_arn): The ARN of the flow that is associated with the updated output.
     ///   - [`output(Option<Output>)`](crate::operation::update_flow_output::UpdateFlowOutputOutput::output): The new settings of the output that you updated.
     /// - On failure, responds with [`SdkError<UpdateFlowOutputError>`](crate::operation::update_flow_output::UpdateFlowOutputError)
-    pub fn update_flow_output(
-        &self,
-    ) -> crate::operation::update_flow_output::builders::UpdateFlowOutputFluentBuilder {
-        crate::operation::update_flow_output::builders::UpdateFlowOutputFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_flow_output(&self) -> crate::operation::update_flow_output::builders::UpdateFlowOutputFluentBuilder {
+        crate::operation::update_flow_output::builders::UpdateFlowOutputFluentBuilder::new(self.handle.clone())
     }
 }

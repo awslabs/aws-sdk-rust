@@ -54,8 +54,7 @@ impl ::std::fmt::Debug for CreateChannelFlowInput {
 }
 impl CreateChannelFlowInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelFlowInput`](crate::operation::create_channel_flow::CreateChannelFlowInput).
-    pub fn builder(
-    ) -> crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder {
+    pub fn builder() -> crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder {
         crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder::default()
     }
 }
@@ -72,18 +71,12 @@ pub struct CreateChannelFlowInputBuilder {
 }
 impl CreateChannelFlowInputBuilder {
     /// <p>The ARN of the channel flow request.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel flow request.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -103,17 +96,12 @@ impl CreateChannelFlowInputBuilder {
         self
     }
     /// <p>Information about the processor Lambda functions.</p>
-    pub fn set_processors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
-    ) -> Self {
+    pub fn set_processors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>) -> Self {
         self.processors = input;
         self
     }
     /// <p>Information about the processor Lambda functions.</p>
-    pub fn get_processors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+    pub fn get_processors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
         &self.processors
     }
     /// <p>The name of the channel flow.</p>
@@ -142,10 +130,7 @@ impl CreateChannelFlowInputBuilder {
         self
     }
     /// <p>The tags for the creation request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -154,18 +139,12 @@ impl CreateChannelFlowInputBuilder {
         &self.tags
     }
     /// <p>The client token for the request. An Idempotency token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client token for the request. An Idempotency token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -176,19 +155,14 @@ impl CreateChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelFlowInput`](crate::operation::create_channel_flow::CreateChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_channel_flow::CreateChannelFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_channel_flow::CreateChannelFlowInput {
-                app_instance_arn: self.app_instance_arn,
-                processors: self.processors,
-                name: self.name,
-                tags: self.tags,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_channel_flow::CreateChannelFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_channel_flow::CreateChannelFlowInput {
+            app_instance_arn: self.app_instance_arn,
+            processors: self.processors,
+            name: self.name,
+            tags: self.tags,
+            client_request_token: self.client_request_token,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateChannelFlowInputBuilder {

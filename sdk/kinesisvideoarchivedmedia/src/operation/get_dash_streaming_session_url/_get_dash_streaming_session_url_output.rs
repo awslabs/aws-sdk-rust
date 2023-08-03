@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for GetDashStreamingSessionUrlOutput {
 }
 impl GetDashStreamingSessionUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetDashStreamingSessionUrlOutput`](crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput).
-    pub fn builder() -> crate::operation::get_dash_streaming_session_url::builders::GetDashStreamingSessionUrlOutputBuilder{
+    pub fn builder() -> crate::operation::get_dash_streaming_session_url::builders::GetDashStreamingSessionUrlOutputBuilder {
         crate::operation::get_dash_streaming_session_url::builders::GetDashStreamingSessionUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDashStreamingSessionUrlOutput`](crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDashStreamingSessionUrlOutputBuilder {
     pub(crate) dash_streaming_session_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDashStreamingSessionUrlOutputBuilder {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
-    pub fn dash_streaming_session_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dash_streaming_session_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dash_streaming_session_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
-    pub fn set_dash_streaming_session_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dash_streaming_session_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dash_streaming_session_url = input;
         self
     }
@@ -66,9 +58,7 @@ impl GetDashStreamingSessionUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDashStreamingSessionUrlOutput`](crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput {
+    pub fn build(self) -> crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput {
         crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput {
             dash_streaming_session_url: self.dash_streaming_session_url,
             _request_id: self._request_id,

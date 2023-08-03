@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeLogStreamsOutput {
 }
 impl DescribeLogStreamsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLogStreamsOutput`](crate::operation::describe_log_streams::DescribeLogStreamsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_log_streams::builders::DescribeLogStreamsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_log_streams::builders::DescribeLogStreamsOutputBuilder {
         crate::operation::describe_log_streams::builders::DescribeLogStreamsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLogStreamsOutput`](crate::operation::describe_log_streams::DescribeLogStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLogStreamsOutputBuilder {
     pub(crate) log_streams: ::std::option::Option<::std::vec::Vec<crate::types::LogStream>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeLogStreamsOutputBuilder {
         self
     }
     /// <p>The log streams.</p>
-    pub fn set_log_streams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogStream>>,
-    ) -> Self {
+    pub fn set_log_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogStream>>) -> Self {
         self.log_streams = input;
         self
     }
     /// <p>The log streams.</p>
-    pub fn get_log_streams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogStream>> {
+    pub fn get_log_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogStream>> {
         &self.log_streams
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>

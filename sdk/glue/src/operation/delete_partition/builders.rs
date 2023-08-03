@@ -10,10 +10,7 @@ impl DeletePartitionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_partition::DeletePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partition::DeletePartitionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partition::DeletePartitionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_partition();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeletePartitionFluentBuilder {
         }
     }
     /// Access the DeletePartition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_partition::builders::DeletePartitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_partition::builders::DeletePartitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeletePartitionFluentBuilder {
             crate::operation::delete_partition::DeletePartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partition::DeletePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partition::DeletePartitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeletePartitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeletePartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_partition::DeletePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partition::DeletePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partition::DeletePartitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeletePartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_partition::DeletePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partition::DeletePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partition::DeletePartitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeletePartitionFluentBuilder {
             crate::operation::delete_partition::DeletePartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partition::DeletePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partition::DeletePartitionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeletePartitionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -175,25 +153,17 @@ impl DeletePartitionFluentBuilder {
     /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
     ///
     /// <p>The values that define the partition.</p>
-    pub fn partition_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partition_values(input.into());
         self
     }
     /// <p>The values that define the partition.</p>
-    pub fn set_partition_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_partition_values(input);
         self
     }
     /// <p>The values that define the partition.</p>
-    pub fn get_partition_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_partition_values()
     }
 }

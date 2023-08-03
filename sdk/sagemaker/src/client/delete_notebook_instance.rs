@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`notebook_instance_name(impl ::std::convert::Into<String>)`](crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceFluentBuilder::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceFluentBuilder::set_notebook_instance_name): <p>The name of the SageMaker notebook instance to delete.</p>
     /// - On success, responds with [`DeleteNotebookInstanceOutput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceOutput)
     /// - On failure, responds with [`SdkError<DeleteNotebookInstanceError>`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceError)
-    pub fn delete_notebook_instance(
-        &self,
-    ) -> crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceFluentBuilder
-    {
+    pub fn delete_notebook_instance(&self) -> crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceFluentBuilder {
         crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceFluentBuilder::new(self.handle.clone())
     }
 }

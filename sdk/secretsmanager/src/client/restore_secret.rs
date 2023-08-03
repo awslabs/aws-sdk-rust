@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::restore_secret::RestoreSecretOutput::arn): <p>The ARN of the secret that was restored.</p>
     ///   - [`name(Option<String>)`](crate::operation::restore_secret::RestoreSecretOutput::name): <p>The name of the secret that was restored.</p>
     /// - On failure, responds with [`SdkError<RestoreSecretError>`](crate::operation::restore_secret::RestoreSecretError)
-    pub fn restore_secret(
-        &self,
-    ) -> crate::operation::restore_secret::builders::RestoreSecretFluentBuilder {
-        crate::operation::restore_secret::builders::RestoreSecretFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restore_secret(&self) -> crate::operation::restore_secret::builders::RestoreSecretFluentBuilder {
+        crate::operation::restore_secret::builders::RestoreSecretFluentBuilder::new(self.handle.clone())
     }
 }

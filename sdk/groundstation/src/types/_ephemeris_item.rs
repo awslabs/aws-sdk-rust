@@ -69,9 +69,7 @@ impl EphemerisItem {
 
 /// A builder for [`EphemerisItem`](crate::types::EphemerisItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EphemerisItemBuilder {
     pub(crate) ephemeris_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EphemerisStatus>,
@@ -102,10 +100,7 @@ impl EphemerisItemBuilder {
         self
     }
     /// <p>The status of the ephemeris.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EphemerisStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EphemerisStatus>) -> Self {
         self.status = input;
         self
     }
@@ -153,10 +148,7 @@ impl EphemerisItemBuilder {
         self
     }
     /// <p>The time the ephemeris was uploaded in UTC.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -184,10 +176,7 @@ impl EphemerisItemBuilder {
         self
     }
     /// <p>Source S3 object used for the ephemeris.</p>
-    pub fn set_source_s3_object(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Object>,
-    ) -> Self {
+    pub fn set_source_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.source_s3_object = input;
         self
     }

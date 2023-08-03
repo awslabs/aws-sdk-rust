@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`metric_set_summary_list(Option<Vec<MetricSetSummary>>)`](crate::operation::list_metric_sets::ListMetricSetsOutput::metric_set_summary_list): <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_metric_sets::ListMetricSetsOutput::next_token): <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
     /// - On failure, responds with [`SdkError<ListMetricSetsError>`](crate::operation::list_metric_sets::ListMetricSetsError)
-    pub fn list_metric_sets(
-        &self,
-    ) -> crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder {
-        crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_metric_sets(&self) -> crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder {
+        crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,17 +9,17 @@ mod test {
     fn test_1() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -29,10 +29,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -49,17 +46,17 @@ mod test {
     fn test_2() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -69,10 +66,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -89,17 +83,17 @@ mod test {
     fn test_3() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -109,10 +103,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -129,17 +120,17 @@ mod test {
     fn test_4() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("cn-north-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("cn-north-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -149,10 +140,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -169,17 +157,17 @@ mod test {
     fn test_5() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -189,10 +177,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -209,17 +194,17 @@ mod test {
     fn test_6() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts-fips.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -229,10 +214,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -249,18 +231,19 @@ mod test {
     fn test_7() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-gov-west-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .access_point_name(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string(),
+            )
+            .account_id("123456789012".to_string())
+            .region("us-gov-west-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://s3-outposts-fips.us-gov-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -270,17 +253,11 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-east-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out
                     })]
                 )
@@ -293,17 +270,17 @@ mod test {
     fn test_8() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("cn-north-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("cn-north-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -313,10 +290,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -333,18 +307,17 @@ mod test {
     fn test_9() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("cn-north-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("cn-north-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://s3-outposts-fips.cn-north-1.amazonaws.com.cn",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -354,10 +327,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -374,18 +344,19 @@ mod test {
     fn test_10() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-gov-west-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .access_point_name(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string(),
+            )
+            .account_id("123456789012".to_string())
+            .region("us-gov-west-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://s3-outposts-fips.us-gov-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -395,17 +366,11 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-east-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out
                     })]
                 )
@@ -418,17 +383,17 @@ mod test {
     fn test_11() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("af-south-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("af-south-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts.af-south-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.af-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -438,10 +403,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -458,17 +420,17 @@ mod test {
     fn test_12() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("af-south-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("af-south-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts-fips.af-south-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.af-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -478,10 +440,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -498,18 +457,19 @@ mod test {
     fn test_13() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-gov-west-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .access_point_name(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string(),
+            )
+            .account_id("123456789012".to_string())
+            .region("us-gov-west-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://s3-outposts-fips.us-gov-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -519,17 +479,11 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-east-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out
                     })]
                 )
@@ -552,8 +506,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -561,10 +514,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -591,8 +541,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -600,10 +549,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -629,8 +575,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-control.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-control.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -638,10 +583,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -668,8 +610,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -677,10 +618,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -706,8 +644,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.s3-control.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.s3-control.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -715,10 +652,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -745,8 +679,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -754,10 +687,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -774,13 +704,14 @@ mod test {
     fn test_20() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(true)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid configuration: Outpost Access Points do not support dual-stack [outpost access points do not support dualstack@us-west-2]");
@@ -795,13 +726,14 @@ mod test {
     fn test_21() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("cn-north-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(true)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("cn-north-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid configuration: Outpost Access Points do not support dual-stack [outpost access points do not support dualstack@cn-north-1]");
@@ -816,13 +748,14 @@ mod test {
     fn test_22() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("af-south-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(true)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("af-south-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid configuration: Outpost Access Points do not support dual-stack [outpost access points do not support dualstack@af-south-1]");
@@ -847,11 +780,9 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: The Outpost Id was not set [invalid ARN: must be include outpost ID@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: The Outpost Id was not set"
-        )
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: The Outpost Id was not set [invalid ARN: must be include outpost ID@us-west-2]");
+        assert_eq!(format!("{}", error), "Invalid ARN: The Outpost Id was not set")
     }
 
     /// invalid ARN: must specify access point@us-west-2
@@ -859,10 +790,7 @@ mod test {
     fn test_24() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .access_point_name(
-                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456"
-                    .to_string(),
-            )
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -871,11 +799,9 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: Expected a 4-component resource [invalid ARN: must specify access point@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: Expected a 4-component resource"
-        )
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: Expected a 4-component resource [invalid ARN: must specify access point@us-west-2]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Expected a 4-component resource")
     }
 
     /// invalid ARN@us-west-2
@@ -883,9 +809,7 @@ mod test {
     fn test_25() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .access_point_name(
-                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint".to_string(),
-            )
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -894,13 +818,8 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid ARN: Expected a 4-component resource [invalid ARN@us-west-2]",
-        );
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: Expected a 4-component resource"
-        )
+        let error = endpoint.expect_err("expected error: Invalid ARN: Expected a 4-component resource [invalid ARN@us-west-2]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Expected a 4-component resource")
     }
 
     /// when set, AccountId drives AP construction@us-west-2
@@ -918,9 +837,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://myid-1234.s3-control.us-west-2.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://myid-1234.s3-control.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -928,10 +845,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -948,18 +862,18 @@ mod test {
     fn test_27() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_arn_region(false)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_arn_region(false)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -969,10 +883,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -989,18 +900,22 @@ mod test {
     fn test_28() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("9999999".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_arn_region(false)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("9999999".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_arn_region(false)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`) [Account ID set inline and in ARN and they do not match@us-west-2]");
-        assert_eq!(format!("{}", error), "Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`)")
+        assert_eq!(
+            format!("{}", error),
+            "Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`)"
+        )
     }
 
     /// get access point prefixed with account id using endpoint url@us-west-2
@@ -1010,9 +925,7 @@ mod test {
         let params = crate::endpoint::Params::builder()
             .access_point_name("apname".to_string())
             .account_id("123456789012".to_string())
-            .endpoint(
-                "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com".to_string(),
-            )
+            .endpoint("https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -1022,16 +935,23 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com");
-        assert_eq!(endpoint, ::aws_smithy_types::endpoint::Endpoint::builder().url("https://123456789012.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com")
-    .property("authSchemes", vec![::aws_smithy_types::Document::from( {
-        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-        out.insert("disableDoubleEncoding".to_string(), true.into());
-        out.insert("name".to_string(), "sigv4".to_string().into());
-        out.insert("signingName".to_string(), "s3".to_string().into());
-        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-        out
-    })])
-    .build());
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out
+                    })]
+                )
+                .build()
+        );
     }
 
     /// endpoint url with s3-outposts@us-west-2
@@ -1039,14 +959,15 @@ mod test {
     fn test_30() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .endpoint("https://beta.example.com".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .endpoint("https://beta.example.com".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint.expect("Expected valid endpoint: https://beta.example.com");
@@ -1059,10 +980,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1079,20 +997,19 @@ mod test {
     fn test_31() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .endpoint("beta.example.com".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .endpoint("beta.example.com".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Expected an outpost type `accesspoint`, found `bucket` [access point name with a bucket arn@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Expected an outpost type `accesspoint`, found `bucket`"
-        )
+        let error = endpoint
+            .expect_err("expected error: Expected an outpost type `accesspoint`, found `bucket` [access point name with a bucket arn@us-west-2]");
+        assert_eq!(format!("{}", error), "Expected an outpost type `accesspoint`, found `bucket`")
     }
 
     /// bucket arn with access point name@us-west-2
@@ -1100,16 +1017,19 @@ mod test {
     fn test_32() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .endpoint("beta.example.com".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .endpoint("beta.example.com".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: Expected an outpost type `bucket`, found `accesspoint` [bucket arn with access point name@us-west-2]");
+        let error = endpoint.expect_err(
+            "expected error: Invalid ARN: Expected an outpost type `bucket`, found `accesspoint` [bucket arn with access point name@us-west-2]",
+        );
         assert_eq!(
             format!("{}", error),
             "Invalid ARN: Expected an outpost type `bucket`, found `accesspoint`"
@@ -1140,10 +1060,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1160,13 +1077,14 @@ mod test {
     fn test_34() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .endpoint("https://beta.example.com".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .endpoint("https://beta.example.com".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint.expect("Expected valid endpoint: https://beta.example.com");
@@ -1179,10 +1097,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1218,10 +1133,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1257,10 +1169,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1296,10 +1205,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1316,13 +1222,14 @@ mod test {
     fn test_38() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .endpoint("https://beta.example.com".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(true)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .endpoint("https://beta.example.com".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid configuration: Outpost Access Points do not support dual-stack [dualstack cannot be used with outposts when an endpoint URL is set@us-west-2.]");
@@ -1348,11 +1255,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid configuration: Outposts do not support dual-stack [Dual-stack cannot be used with outposts@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid configuration: Outposts do not support dual-stack"
-        )
+        let error = endpoint.expect_err(
+            "expected error: Invalid configuration: Outposts do not support dual-stack [Dual-stack cannot be used with outposts@us-west-2]",
+        );
+        assert_eq!(format!("{}", error), "Invalid configuration: Outposts do not support dual-stack")
     }
 
     /// vanilla bucket arn requires account id@us-west-2
@@ -1360,16 +1266,16 @@ mod test {
     fn test_40() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1379,10 +1285,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1399,16 +1302,16 @@ mod test {
     fn test_41() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1418,10 +1321,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1438,16 +1338,16 @@ mod test {
     fn test_42() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-gov-east-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-gov-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts.us-gov-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1457,17 +1357,11 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-east-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out
                     })]
                 )
@@ -1480,17 +1374,16 @@ mod test {
     fn test_43() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-gov-west-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .bucket("arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-gov-west-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://s3-outposts-fips.us-gov-west-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1500,17 +1393,11 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-west-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
                     })]
                 )
@@ -1523,16 +1410,16 @@ mod test {
     fn test_44() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-east-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-east-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1542,10 +1429,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1562,19 +1446,19 @@ mod test {
     fn test_45() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(true)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid configuration: Outpost buckets do not support dual-stack [Outposts do not support dualstack@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid configuration: Outpost buckets do not support dual-stack"
-        )
+        let error = endpoint.expect_err(
+            "expected error: Invalid configuration: Outpost buckets do not support dual-stack [Outposts do not support dualstack@us-west-2]",
+        );
+        assert_eq!(format!("{}", error), "Invalid configuration: Outpost buckets do not support dual-stack")
     }
 
     /// vanilla bucket arn requires account id@cn-north-1
@@ -1582,16 +1466,16 @@ mod test {
     fn test_46() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("cn-north-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("cn-north-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1601,10 +1485,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1621,16 +1502,16 @@ mod test {
     fn test_47() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1640,10 +1521,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1660,16 +1538,16 @@ mod test {
     fn test_48() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-gov-east-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-gov-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts.us-gov-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1679,17 +1557,11 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-east-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out
                     })]
                 )
@@ -1702,17 +1574,16 @@ mod test {
     fn test_49() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-gov-west-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .bucket("arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-gov-west-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://s3-outposts-fips.us-gov-west-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1722,17 +1593,11 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-west-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
                     })]
                 )
@@ -1745,16 +1610,16 @@ mod test {
     fn test_50() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-east-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-east-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1764,10 +1629,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1784,19 +1646,19 @@ mod test {
     fn test_51() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(true)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid configuration: Outpost buckets do not support dual-stack [Outposts do not support dualstack@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid configuration: Outpost buckets do not support dual-stack"
-        )
+        let error = endpoint.expect_err(
+            "expected error: Invalid configuration: Outpost buckets do not support dual-stack [Outposts do not support dualstack@us-west-2]",
+        );
+        assert_eq!(format!("{}", error), "Invalid configuration: Outpost buckets do not support dual-stack")
     }
 
     /// vanilla bucket arn requires account id@af-south-1
@@ -1804,16 +1666,16 @@ mod test {
     fn test_52() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("af-south-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("af-south-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts.af-south-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.af-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1823,10 +1685,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1843,16 +1702,16 @@ mod test {
     fn test_53() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1862,10 +1721,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -1882,16 +1738,16 @@ mod test {
     fn test_54() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-gov-east-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-gov-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts.us-gov-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1901,17 +1757,11 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-east-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out
                     })]
                 )
@@ -1924,17 +1774,16 @@ mod test {
     fn test_55() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-gov-west-1".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .bucket("arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-gov-west-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://s3-outposts-fips.us-gov-west-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1944,17 +1793,11 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-west-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
                     })]
                 )
@@ -1967,16 +1810,16 @@ mod test {
     fn test_56() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-east-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(true)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-east-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1986,10 +1829,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -2006,19 +1846,19 @@ mod test {
     fn test_57() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(true)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid configuration: Outpost buckets do not support dual-stack [Outposts do not support dualstack@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid configuration: Outpost buckets do not support dual-stack"
-        )
+        let error = endpoint.expect_err(
+            "expected error: Invalid configuration: Outpost buckets do not support dual-stack [Outposts do not support dualstack@us-west-2]",
+        );
+        assert_eq!(format!("{}", error), "Invalid configuration: Outpost buckets do not support dual-stack")
     }
 
     /// Invalid ARN: missing outpost id and bucket@us-west-2
@@ -2035,11 +1875,9 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: The Outpost Id was not set [Invalid ARN: missing outpost id and bucket@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: The Outpost Id was not set"
-        )
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: The Outpost Id was not set [Invalid ARN: missing outpost id and bucket@us-west-2]");
+        assert_eq!(format!("{}", error), "Invalid ARN: The Outpost Id was not set")
     }
 
     /// Invalid ARN: missing bucket@us-west-2
@@ -2047,10 +1885,7 @@ mod test {
     fn test_59() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .bucket(
-                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456"
-                    .to_string(),
-            )
+            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -2060,10 +1895,7 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid ARN: Expected a 4-component resource [Invalid ARN: missing bucket@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: Expected a 4-component resource"
-        )
+        assert_eq!(format!("{}", error), "Invalid ARN: Expected a 4-component resource")
     }
 
     /// Invalid ARN: missing outpost and bucket ids@us-west-2
@@ -2080,11 +1912,9 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: Expected a 4-component resource [Invalid ARN: missing outpost and bucket ids@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: Expected a 4-component resource"
-        )
+        let error = endpoint
+            .expect_err("expected error: Invalid ARN: Expected a 4-component resource [Invalid ARN: missing outpost and bucket ids@us-west-2]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Expected a 4-component resource")
     }
 
     /// Invalid ARN: missing bucket id@us-west-2
@@ -2092,10 +1922,7 @@ mod test {
     fn test_61() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .bucket(
-                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket"
-                    .to_string(),
-            )
+            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -2122,9 +1949,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://1234567890.s3-control.us-west-2.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890.s3-control.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2132,10 +1957,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2169,10 +1991,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2198,9 +2017,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://1234567890.s3-control-fips.us-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890.s3-control-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2208,10 +2025,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2245,10 +2059,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2270,8 +2081,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-control.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-control.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2279,10 +2089,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2305,8 +2112,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-control-fips.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-control-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2314,10 +2120,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2340,9 +2143,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://s3-control.dualstack.us-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-control.dualstack.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2350,10 +2151,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2377,9 +2175,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://s3-control-fips.dualstack.us-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-control-fips.dualstack.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2387,10 +2183,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2412,8 +2205,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://s3-control.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-control.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2421,10 +2213,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2448,8 +2237,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint
-            .expect_err("expected error: Partition does not support FIPS [fips @ cn-north-1]");
+        let error = endpoint.expect_err("expected error: Partition does not support FIPS [fips @ cn-north-1]");
         assert_eq!(format!("{}", error), "Partition does not support FIPS")
     }
 
@@ -2467,9 +2255,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://1234567890-aBC.s3-control.us-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890-aBC.s3-control.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2477,10 +2263,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2507,10 +2290,7 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: AccountId must only contain a-z, A-Z, 0-9 and `-`. [invalid account id prefix @us-east-1]");
-        assert_eq!(
-            format!("{}", error),
-            "AccountId must only contain a-z, A-Z, 0-9 and `-`."
-        )
+        assert_eq!(format!("{}", error), "AccountId must only contain a-z, A-Z, 0-9 and `-`.")
     }
 
     /// custom account id prefix with fips@us-east-1
@@ -2535,10 +2315,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2572,10 +2349,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2600,8 +2374,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://1234567890-aBC.example.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890-aBC.example.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2609,10 +2382,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2651,7 +2421,8 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: AccountId is required but not set [RequiresAccountId with AccountId unset and custom endpoint]");
+        let error =
+            endpoint.expect_err("expected error: AccountId is required but not set [RequiresAccountId with AccountId unset and custom endpoint]");
         assert_eq!(format!("{}", error), "AccountId is required but not set")
     }
 
@@ -2668,11 +2439,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: AccountId must only contain a-z, A-Z, 0-9 and `-`. [RequiresAccountId with invalid AccountId and custom endpoint]");
-        assert_eq!(
-            format!("{}", error),
-            "AccountId must only contain a-z, A-Z, 0-9 and `-`."
-        )
+        let error = endpoint.expect_err(
+            "expected error: AccountId must only contain a-z, A-Z, 0-9 and `-`. [RequiresAccountId with invalid AccountId and custom endpoint]",
+        );
+        assert_eq!(format!("{}", error), "AccountId must only contain a-z, A-Z, 0-9 and `-`.")
     }
 
     /// account id with custom endpoint, fips and dualstack
@@ -2689,8 +2459,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://1234567890-aBC.example.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890-aBC.example.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2698,10 +2467,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2733,10 +2499,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2768,10 +2531,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2803,10 +2563,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2822,9 +2579,7 @@ mod test {
     #[test]
     fn test_84() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .build()
-            .expect("invalid params");
+        let params = crate::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Region must be set [region not set]");
@@ -2841,13 +2596,8 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid region: region was not a valid DNS name. [invalid partition]",
-        );
-        assert_eq!(
-            format!("{}", error),
-            "Invalid region: region was not a valid DNS name."
-        )
+        let error = endpoint.expect_err("expected error: Invalid region: region was not a valid DNS name. [invalid partition]");
+        assert_eq!(format!("{}", error), "Invalid region: region was not a valid DNS name.")
     }
 
     /// ListRegionalBuckets + OutpostId without accountId set.
@@ -2883,11 +2633,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: AccountId must only contain a-z, A-Z, 0-9 and `-`. [ListRegionalBuckets + OutpostId with invalid accountId set.]");
-        assert_eq!(
-            format!("{}", error),
-            "AccountId must only contain a-z, A-Z, 0-9 and `-`."
-        )
+        let error = endpoint.expect_err(
+            "expected error: AccountId must only contain a-z, A-Z, 0-9 and `-`. [ListRegionalBuckets + OutpostId with invalid accountId set.]",
+        );
+        assert_eq!(format!("{}", error), "AccountId must only contain a-z, A-Z, 0-9 and `-`.")
     }
 
     /// accesspoint set but missing accountId
@@ -2913,10 +2662,7 @@ mod test {
     fn test_89() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .access_point_name(
-                "arn:aws:s3-outposts:us-west-2::outpost:op-01234567890123456:outpost:op1"
-                    .to_string(),
-            )
+            .access_point_name("arn:aws:s3-outposts:us-west-2::outpost:op-01234567890123456:outpost:op1".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -2934,10 +2680,7 @@ mod test {
     fn test_90() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .access_point_name(
-                "arn:aws:s3-outposts:us-west-2::outpost:op-01234567890123456:bucket:mybucket"
-                    .to_string(),
-            )
+            .access_point_name("arn:aws:s3-outposts:us-west-2::outpost:op-01234567890123456:bucket:mybucket".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -2946,9 +2689,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid ARN: missing account ID [bucket ARN with missing accountId]",
-        );
+        let error = endpoint.expect_err("expected error: Invalid ARN: missing account ID [bucket ARN with missing accountId]");
         assert_eq!(format!("{}", error), "Invalid ARN: missing account ID")
     }
 
@@ -2968,8 +2709,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://123456789012.beta.example.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.beta.example.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2977,10 +2717,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -2997,13 +2734,14 @@ mod test {
     fn test_92() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .endpoint("https://beta.example.com".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .endpoint("https://beta.example.com".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint.expect("Expected valid endpoint: https://beta.example.com");
@@ -3016,10 +2754,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -3059,20 +2794,18 @@ mod test {
     fn test_94() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .endpoint("https://beta.example.com".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(true)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .endpoint("https://beta.example.com".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid configuration: Outpost buckets do not support dual-stack [get bucket with endpoint_url and dualstack is not supported@us-west-2]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid configuration: Outpost buckets do not support dual-stack"
-        )
+        assert_eq!(format!("{}", error), "Invalid configuration: Outpost buckets do not support dual-stack")
     }
 
     /// ListRegionalBuckets + OutpostId with fips in CN.
@@ -3109,11 +2842,9 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: OutpostId must only contain a-z, A-Z, 0-9 and `-`. [ListRegionalBuckets + invalid OutpostId.]");
-        assert_eq!(
-            format!("{}", error),
-            "OutpostId must only contain a-z, A-Z, 0-9 and `-`."
-        )
+        let error =
+            endpoint.expect_err("expected error: OutpostId must only contain a-z, A-Z, 0-9 and `-`. [ListRegionalBuckets + invalid OutpostId.]");
+        assert_eq!(format!("{}", error), "OutpostId must only contain a-z, A-Z, 0-9 and `-`.")
     }
 
     /// bucket ARN with mismatched accountId
@@ -3121,10 +2852,7 @@ mod test {
     fn test_97() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .bucket(
-                "arn:aws:s3-outposts:us-west-2:999999:outpost:op-01234567890123456:bucket:mybucket"
-                    .to_string(),
-            )
+            .bucket("arn:aws:s3-outposts:us-west-2:999999:outpost:op-01234567890123456:bucket:mybucket".to_string())
             .account_id("0123456789012".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
@@ -3135,7 +2863,10 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`) [bucket ARN with mismatched accountId]");
-        assert_eq!(format!("{}", error), "Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`)")
+        assert_eq!(
+            format!("{}", error),
+            "Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`)"
+        )
     }
 
     /// OutpostId with invalid region
@@ -3154,10 +2885,7 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid region: region was not a valid DNS name. [OutpostId with invalid region]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid region: region was not a valid DNS name."
-        )
+        assert_eq!(format!("{}", error), "Invalid region: region was not a valid DNS name.")
     }
 
     /// OutpostId with RequireAccountId unset
@@ -3173,8 +2901,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -3182,10 +2909,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -3202,18 +2926,22 @@ mod test {
     fn test_100() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_arn_region(false)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_arn_region(false)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false]");
-        assert_eq!(format!("{}", error), "Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")
+        assert_eq!(
+            format!("{}", error),
+            "Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"
+        )
     }
 
     /// Outpost Bucket ARN with arn region and client region mismatch with UseArnRegion=false
@@ -3221,18 +2949,22 @@ mod test {
     fn test_101() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .endpoint("https://beta.example.com".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_arn_region(false)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .endpoint("https://beta.example.com".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_arn_region(false)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [Outpost Bucket ARN with arn region and client region mismatch with UseArnRegion=false]");
-        assert_eq!(format!("{}", error), "Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")
+        assert_eq!(
+            format!("{}", error),
+            "Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"
+        )
     }
 
     /// Accesspoint ARN with region mismatch and UseArnRegion unset
@@ -3240,17 +2972,17 @@ mod test {
     fn test_102() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -3260,10 +2992,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -3280,16 +3009,16 @@ mod test {
     fn test_103() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -3299,10 +3028,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -3319,20 +3045,18 @@ mod test {
     fn test_104() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_arn_region(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_arn_region(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Client was configured for partition `aws` but ARN has `aws-cn` [Outpost Bucket ARN with partition mismatch with UseArnRegion=true]");
-        assert_eq!(
-            format!("{}", error),
-            "Client was configured for partition `aws` but ARN has `aws-cn`"
-        )
+        assert_eq!(format!("{}", error), "Client was configured for partition `aws` but ARN has `aws-cn`")
     }
 
     /// Accesspoint ARN with partition mismatch and UseArnRegion=true
@@ -3340,21 +3064,19 @@ mod test {
     fn test_105() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .account_id("123456789012".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_arn_region(true)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_arn_region(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Client was configured for partition `aws` but ARN has `aws-cn` [Accesspoint ARN with partition mismatch and UseArnRegion=true]");
-        assert_eq!(
-            format!("{}", error),
-            "Client was configured for partition `aws` but ARN has `aws-cn`"
-        )
+        assert_eq!(format!("{}", error), "Client was configured for partition `aws` but ARN has `aws-cn`")
     }
 
     /// Accesspoint ARN with region mismatch, UseArnRegion=false and custom endpoint
@@ -3362,18 +3084,22 @@ mod test {
     fn test_106() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .access_point_name("arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-    .region("us-west-2".to_string())
-    .endpoint("https://example.com".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_arn_region(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .access_point_name("arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .region("us-west-2".to_string())
+            .endpoint("https://example.com".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_arn_region(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false` [Accesspoint ARN with region mismatch, UseArnRegion=false and custom endpoint]");
-        assert_eq!(format!("{}", error), "Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false`")
+        assert_eq!(
+            format!("{}", error),
+            "Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false`"
+        )
     }
 
     /// outpost bucket arn@us-west-2
@@ -3381,16 +3107,16 @@ mod test {
     fn test_107() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-    .region("us-west-2".to_string())
-    .requires_account_id(true)
-    .use_dual_stack(false)
-    .use_fips(false)
-    .build().expect("invalid params");
+            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-west-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -3400,10 +3126,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -3437,10 +3160,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -3473,10 +3193,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -3510,10 +3227,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -3547,10 +3261,7 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
@@ -3576,9 +3287,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: S3 Snow does not support FIPS [S3 Snow Control with FIPS enabled]",
-        );
+        let error = endpoint.expect_err("expected error: S3 Snow does not support FIPS [S3 Snow Control with FIPS enabled]");
         assert_eq!(format!("{}", error), "S3 Snow does not support FIPS")
     }
 
@@ -3689,19 +3398,13 @@ impl DefaultResolver {
 impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params> for DefaultResolver {
     fn resolve_endpoint(&self, params: &Params) -> ::aws_smithy_http::endpoint::Result {
         let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
-        crate::endpoint::internals::resolve_endpoint(
-            params,
-            &mut diagnostic_collector,
-            &self.partition_resolver,
-        )
-        .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))
+        crate::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)
+            .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))
     }
 }
 
 /// Builder for [`Params`]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParamsBuilder {
     region: ::std::option::Option<::std::string::String>,
     use_fips: ::std::option::Option<bool>,
@@ -3716,9 +3419,7 @@ pub struct ParamsBuilder {
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
+    pub fn build(self) -> ::std::result::Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::endpoint::Params {
@@ -3906,9 +3607,7 @@ pub struct InvalidParams {
 impl InvalidParams {
     #[allow(dead_code)]
     fn missing(field: &'static str) -> Self {
-        Self {
-            field: field.into(),
-        }
+        Self { field: field.into() }
     }
 }
 

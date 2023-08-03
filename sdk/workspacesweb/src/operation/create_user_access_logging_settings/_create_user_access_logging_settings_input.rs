@@ -31,16 +31,14 @@ impl CreateUserAccessLoggingSettingsInput {
 }
 impl CreateUserAccessLoggingSettingsInput {
     /// Creates a new builder-style object to manufacture [`CreateUserAccessLoggingSettingsInput`](crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsInput).
-    pub fn builder() -> crate::operation::create_user_access_logging_settings::builders::CreateUserAccessLoggingSettingsInputBuilder{
+    pub fn builder() -> crate::operation::create_user_access_logging_settings::builders::CreateUserAccessLoggingSettingsInputBuilder {
         crate::operation::create_user_access_logging_settings::builders::CreateUserAccessLoggingSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserAccessLoggingSettingsInput`](crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserAccessLoggingSettingsInputBuilder {
     pub(crate) kinesis_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -48,18 +46,12 @@ pub struct CreateUserAccessLoggingSettingsInputBuilder {
 }
 impl CreateUserAccessLoggingSettingsInputBuilder {
     /// <p>The ARN of the Kinesis stream.</p>
-    pub fn kinesis_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kinesis_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kinesis_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Kinesis stream.</p>
-    pub fn set_kinesis_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kinesis_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kinesis_stream_arn = input;
         self
     }
@@ -79,10 +71,7 @@ impl CreateUserAccessLoggingSettingsInputBuilder {
         self
     }
     /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -116,13 +105,10 @@ impl CreateUserAccessLoggingSettingsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsInput {
-                kinesis_stream_arn: self.kinesis_stream_arn
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-            }
+                kinesis_stream_arn: self.kinesis_stream_arn,
+                tags: self.tags,
+                client_token: self.client_token,
+            },
         )
     }
 }

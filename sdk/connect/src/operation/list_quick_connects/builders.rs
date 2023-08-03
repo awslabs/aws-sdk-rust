@@ -10,10 +10,7 @@ impl ListQuickConnectsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_quick_connects::ListQuickConnectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_quick_connects::ListQuickConnectsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_quick_connects::ListQuickConnectsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_quick_connects();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListQuickConnectsFluentBuilder {
         }
     }
     /// Access the ListQuickConnects as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_quick_connects::builders::ListQuickConnectsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_quick_connects::builders::ListQuickConnectsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListQuickConnectsFluentBuilder {
             crate::operation::list_quick_connects::ListQuickConnects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_quick_connects::ListQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_quick_connects::ListQuickConnectsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListQuickConnectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListQuickConnectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_quick_connects::ListQuickConnectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_quick_connects::ListQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_quick_connects::ListQuickConnectsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListQuickConnectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_quick_connects::ListQuickConnectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_quick_connects::ListQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_quick_connects::ListQuickConnectsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListQuickConnectsFluentBuilder {
             crate::operation::list_quick_connects::ListQuickConnects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_quick_connects::ListQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_quick_connects::ListQuickConnectsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_quick_connects::paginator::ListQuickConnectsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_quick_connects::paginator::ListQuickConnectsPaginator {
-        crate::operation::list_quick_connects::paginator::ListQuickConnectsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_quick_connects::paginator::ListQuickConnectsPaginator {
+        crate::operation::list_quick_connects::paginator::ListQuickConnectsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,17 +164,12 @@ impl ListQuickConnectsFluentBuilder {
         self
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn set_quick_connect_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>,
-    ) -> Self {
+    pub fn set_quick_connect_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>) -> Self {
         self.inner = self.inner.set_quick_connect_types(input);
         self
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn get_quick_connect_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>> {
+    pub fn get_quick_connect_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>> {
         self.inner.get_quick_connect_types()
     }
 }

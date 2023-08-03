@@ -90,9 +90,7 @@ impl ActionExecution {
 
 /// A builder for [`ActionExecution`](crate::types::ActionExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionExecutionBuilder {
     pub(crate) action_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ActionExecutionStatus>,
@@ -109,20 +107,14 @@ impl ActionExecutionBuilder {
     /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
     /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
     /// </note>
-    pub fn action_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
     /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
     /// </note>
-    pub fn set_action_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_execution_id = input;
         self
     }
@@ -138,10 +130,7 @@ impl ActionExecutionBuilder {
         self
     }
     /// <p>The status of the action, or for a completed action, the last status of the action.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -169,10 +158,7 @@ impl ActionExecutionBuilder {
         self
     }
     /// <p>The last status change of the action.</p>
-    pub fn set_last_status_change(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_status_change(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_status_change = input;
         self
     }
@@ -195,18 +181,12 @@ impl ActionExecutionBuilder {
         &self.token
     }
     /// <p>The ARN of the user who last changed the pipeline.</p>
-    pub fn last_updated_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user who last changed the pipeline.</p>
-    pub fn set_last_updated_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_by = input;
         self
     }
@@ -215,18 +195,12 @@ impl ActionExecutionBuilder {
         &self.last_updated_by
     }
     /// <p>The external ID of the run of the action.</p>
-    pub fn external_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external ID of the run of the action.</p>
-    pub fn set_external_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_execution_id = input;
         self
     }
@@ -235,18 +209,12 @@ impl ActionExecutionBuilder {
         &self.external_execution_id
     }
     /// <p>The URL of a resource external to Amazon Web Services that is used when running the action (for example, an external repository URL).</p>
-    pub fn external_execution_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_execution_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_execution_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of a resource external to Amazon Web Services that is used when running the action (for example, an external repository URL).</p>
-    pub fn set_external_execution_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_execution_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_execution_url = input;
         self
     }
@@ -274,10 +242,7 @@ impl ActionExecutionBuilder {
         self
     }
     /// <p>The details of an error returned by a URL external to Amazon Web Services.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorDetails>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error_details = input;
         self
     }

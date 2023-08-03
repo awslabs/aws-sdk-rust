@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`mobile_device_access_rule_id(impl ::std::convert::Into<String>)`](crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleFluentBuilder::mobile_device_access_rule_id) / [`set_mobile_device_access_rule_id(Option<String>)`](crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleFluentBuilder::set_mobile_device_access_rule_id): <p>The identifier of the rule to be deleted.</p>
     /// - On success, responds with [`DeleteMobileDeviceAccessRuleOutput`](crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteMobileDeviceAccessRuleError>`](crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError)
-    pub fn delete_mobile_device_access_rule(&self) -> crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleFluentBuilder{
+    pub fn delete_mobile_device_access_rule(
+        &self,
+    ) -> crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleFluentBuilder {
         crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeAvailablePatchesOutput {
 }
 impl DescribeAvailablePatchesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailablePatchesOutput`](crate::operation::describe_available_patches::DescribeAvailablePatchesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_available_patches::builders::DescribeAvailablePatchesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_available_patches::builders::DescribeAvailablePatchesOutputBuilder {
         crate::operation::describe_available_patches::builders::DescribeAvailablePatchesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAvailablePatchesOutput`](crate::operation::describe_available_patches::DescribeAvailablePatchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAvailablePatchesOutputBuilder {
     pub(crate) patches: ::std::option::Option<::std::vec::Vec<crate::types::Patch>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl DescribeAvailablePatchesOutputBuilder {
         self
     }
     /// <p>An array of patches. Each entry in the array is a patch structure.</p>
-    pub fn set_patches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Patch>>,
-    ) -> Self {
+    pub fn set_patches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Patch>>) -> Self {
         self.patches = input;
         self
     }
@@ -93,9 +86,7 @@ impl DescribeAvailablePatchesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAvailablePatchesOutput`](crate::operation::describe_available_patches::DescribeAvailablePatchesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_available_patches::DescribeAvailablePatchesOutput {
+    pub fn build(self) -> crate::operation::describe_available_patches::DescribeAvailablePatchesOutput {
         crate::operation::describe_available_patches::DescribeAvailablePatchesOutput {
             patches: self.patches,
             next_token: self.next_token,

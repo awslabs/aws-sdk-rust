@@ -10,10 +10,7 @@ impl DeleteUserSettingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_user_settings::DeleteUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_settings::DeleteUserSettingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_settings::DeleteUserSettingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_user_settings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteUserSettingsFluentBuilder {
         }
     }
     /// Access the DeleteUserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_user_settings::builders::DeleteUserSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_user_settings::builders::DeleteUserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteUserSettingsFluentBuilder {
             crate::operation::delete_user_settings::DeleteUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_settings::DeleteUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_settings::DeleteUserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteUserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_settings::DeleteUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_settings::DeleteUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_settings::DeleteUserSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_settings::DeleteUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_settings::DeleteUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_settings::DeleteUserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteUserSettingsFluentBuilder {
             crate::operation::delete_user_settings::DeleteUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_settings::DeleteUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_settings::DeleteUserSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn set_user_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_settings_arn(input);
         self
     }

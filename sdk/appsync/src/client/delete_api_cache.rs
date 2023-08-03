@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_api_cache::builders::DeleteApiCacheFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_api_cache::builders::DeleteApiCacheFluentBuilder::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`DeleteApiCacheOutput`](crate::operation::delete_api_cache::DeleteApiCacheOutput)
     /// - On failure, responds with [`SdkError<DeleteApiCacheError>`](crate::operation::delete_api_cache::DeleteApiCacheError)
-    pub fn delete_api_cache(
-        &self,
-    ) -> crate::operation::delete_api_cache::builders::DeleteApiCacheFluentBuilder {
-        crate::operation::delete_api_cache::builders::DeleteApiCacheFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_api_cache(&self) -> crate::operation::delete_api_cache::builders::DeleteApiCacheFluentBuilder {
+        crate::operation::delete_api_cache::builders::DeleteApiCacheFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl OrStatement {
 
 /// A builder for [`OrStatement`](crate::types::OrStatement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrStatementBuilder {
     pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
 }
@@ -42,23 +40,16 @@ impl OrStatementBuilder {
         self
     }
     /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
-    pub fn set_statements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
-    ) -> Self {
+    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>) -> Self {
         self.statements = input;
         self
     }
     /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
-    pub fn get_statements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Statement>> {
+    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Statement>> {
         &self.statements
     }
     /// Consumes the builder and constructs a [`OrStatement`](crate::types::OrStatement).
     pub fn build(self) -> crate::types::OrStatement {
-        crate::types::OrStatement {
-            statements: self.statements,
-        }
+        crate::types::OrStatement { statements: self.statements }
     }
 }

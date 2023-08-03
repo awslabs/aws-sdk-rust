@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for EnableAllFeaturesOutput {
 }
 impl EnableAllFeaturesOutput {
     /// Creates a new builder-style object to manufacture [`EnableAllFeaturesOutput`](crate::operation::enable_all_features::EnableAllFeaturesOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_all_features::builders::EnableAllFeaturesOutputBuilder {
+    pub fn builder() -> crate::operation::enable_all_features::builders::EnableAllFeaturesOutputBuilder {
         crate::operation::enable_all_features::builders::EnableAllFeaturesOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableAllFeaturesOutput`](crate::operation::enable_all_features::EnableAllFeaturesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAllFeaturesOutputBuilder {
     pub(crate) handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,

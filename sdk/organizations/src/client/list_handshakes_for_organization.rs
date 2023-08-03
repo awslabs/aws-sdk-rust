@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`handshakes(Option<Vec<Handshake>>)`](crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput::handshakes): <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListHandshakesForOrganizationError>`](crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError)
-    pub fn list_handshakes_for_organization(&self) -> crate::operation::list_handshakes_for_organization::builders::ListHandshakesForOrganizationFluentBuilder{
+    pub fn list_handshakes_for_organization(
+        &self,
+    ) -> crate::operation::list_handshakes_for_organization::builders::ListHandshakesForOrganizationFluentBuilder {
         crate::operation::list_handshakes_for_organization::builders::ListHandshakesForOrganizationFluentBuilder::new(self.handle.clone())
     }
 }

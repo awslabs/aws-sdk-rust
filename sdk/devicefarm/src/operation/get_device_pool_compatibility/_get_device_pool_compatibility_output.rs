@@ -6,25 +6,19 @@
 pub struct GetDevicePoolCompatibilityOutput {
     /// <p>Information about compatible devices.</p>
     #[doc(hidden)]
-    pub compatible_devices:
-        ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
+    pub compatible_devices: ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
     /// <p>Information about incompatible devices.</p>
     #[doc(hidden)]
-    pub incompatible_devices:
-        ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
+    pub incompatible_devices: ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
     _request_id: Option<String>,
 }
 impl GetDevicePoolCompatibilityOutput {
     /// <p>Information about compatible devices.</p>
-    pub fn compatible_devices(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DevicePoolCompatibilityResult]> {
+    pub fn compatible_devices(&self) -> ::std::option::Option<&[crate::types::DevicePoolCompatibilityResult]> {
         self.compatible_devices.as_deref()
     }
     /// <p>Information about incompatible devices.</p>
-    pub fn incompatible_devices(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DevicePoolCompatibilityResult]> {
+    pub fn incompatible_devices(&self) -> ::std::option::Option<&[crate::types::DevicePoolCompatibilityResult]> {
         self.incompatible_devices.as_deref()
     }
 }
@@ -35,21 +29,17 @@ impl ::aws_http::request_id::RequestId for GetDevicePoolCompatibilityOutput {
 }
 impl GetDevicePoolCompatibilityOutput {
     /// Creates a new builder-style object to manufacture [`GetDevicePoolCompatibilityOutput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput).
-    pub fn builder() -> crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityOutputBuilder{
+    pub fn builder() -> crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityOutputBuilder {
         crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDevicePoolCompatibilityOutput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevicePoolCompatibilityOutputBuilder {
-    pub(crate) compatible_devices:
-        ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
-    pub(crate) incompatible_devices:
-        ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
+    pub(crate) compatible_devices: ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
+    pub(crate) incompatible_devices: ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
     _request_id: Option<String>,
 }
 impl GetDevicePoolCompatibilityOutputBuilder {
@@ -58,27 +48,19 @@ impl GetDevicePoolCompatibilityOutputBuilder {
     /// To override the contents of this collection use [`set_compatible_devices`](Self::set_compatible_devices).
     ///
     /// <p>Information about compatible devices.</p>
-    pub fn compatible_devices(
-        mut self,
-        input: crate::types::DevicePoolCompatibilityResult,
-    ) -> Self {
+    pub fn compatible_devices(mut self, input: crate::types::DevicePoolCompatibilityResult) -> Self {
         let mut v = self.compatible_devices.unwrap_or_default();
         v.push(input);
         self.compatible_devices = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about compatible devices.</p>
-    pub fn set_compatible_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
-    ) -> Self {
+    pub fn set_compatible_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>) -> Self {
         self.compatible_devices = input;
         self
     }
     /// <p>Information about compatible devices.</p>
-    pub fn get_compatible_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>> {
+    pub fn get_compatible_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>> {
         &self.compatible_devices
     }
     /// Appends an item to `incompatible_devices`.
@@ -86,27 +68,19 @@ impl GetDevicePoolCompatibilityOutputBuilder {
     /// To override the contents of this collection use [`set_incompatible_devices`](Self::set_incompatible_devices).
     ///
     /// <p>Information about incompatible devices.</p>
-    pub fn incompatible_devices(
-        mut self,
-        input: crate::types::DevicePoolCompatibilityResult,
-    ) -> Self {
+    pub fn incompatible_devices(mut self, input: crate::types::DevicePoolCompatibilityResult) -> Self {
         let mut v = self.incompatible_devices.unwrap_or_default();
         v.push(input);
         self.incompatible_devices = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about incompatible devices.</p>
-    pub fn set_incompatible_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
-    ) -> Self {
+    pub fn set_incompatible_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>) -> Self {
         self.incompatible_devices = input;
         self
     }
     /// <p>Information about incompatible devices.</p>
-    pub fn get_incompatible_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>> {
+    pub fn get_incompatible_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>> {
         &self.incompatible_devices
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -119,9 +93,7 @@ impl GetDevicePoolCompatibilityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDevicePoolCompatibilityOutput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput {
+    pub fn build(self) -> crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput {
         crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput {
             compatible_devices: self.compatible_devices,
             incompatible_devices: self.incompatible_devices,

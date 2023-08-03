@@ -35,9 +35,7 @@ impl GetLinksOutput {
 
 /// A builder for [`GetLinksOutput`](crate::operation::get_links::GetLinksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLinksOutputBuilder {
     pub(crate) links: ::std::option::Option<::std::vec::Vec<crate::types::Link>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetLinksOutputBuilder {
         self
     }
     /// <p>The links.</p>
-    pub fn set_links(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Link>>,
-    ) -> Self {
+    pub fn set_links(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Link>>) -> Self {
         self.links = input;
         self
     }

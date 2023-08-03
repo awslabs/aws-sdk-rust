@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`number_of_auto_scaling_groups(Option<i32>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::number_of_auto_scaling_groups): <p>The current number of groups for your account.</p>
     ///   - [`number_of_launch_configurations(Option<i32>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::number_of_launch_configurations): <p>The current number of launch configurations for your account.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountLimitsError>`](crate::operation::describe_account_limits::DescribeAccountLimitsError)
-    pub fn describe_account_limits(
-        &self,
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder
-    {
-        crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_account_limits(&self) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder {
+        crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::new(self.handle.clone())
     }
 }

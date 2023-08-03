@@ -35,9 +35,7 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
 
 /// A builder for [`DescribeAwsNetworkPerformanceMetricSubscriptionsOutput`](crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAwsNetworkPerformanceMetricSubscriptionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
@@ -70,17 +68,12 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsOutputBuilder {
         self
     }
     /// <p>Describes the current Infrastructure Performance subscriptions.</p>
-    pub fn set_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
-    ) -> Self {
+    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
         self.subscriptions = input;
         self
     }
     /// <p>Describes the current Infrastructure Performance subscriptions.</p>
-    pub fn get_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
         &self.subscriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,12 +86,12 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAwsNetworkPerformanceMetricSubscriptionsOutput`](crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput).
-    pub fn build(self) -> crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
         crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
-            next_token: self.next_token
-            ,
-            subscriptions: self.subscriptions
-            ,
+            next_token: self.next_token,
+            subscriptions: self.subscriptions,
             _request_id: self._request_id,
         }
     }

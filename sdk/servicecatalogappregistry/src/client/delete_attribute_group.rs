@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAttributeGroupOutput`](crate::operation::delete_attribute_group::DeleteAttributeGroupOutput) with field(s):
     ///   - [`attribute_group(Option<AttributeGroupSummary>)`](crate::operation::delete_attribute_group::DeleteAttributeGroupOutput::attribute_group): <p>Information about the deleted attribute group.</p>
     /// - On failure, responds with [`SdkError<DeleteAttributeGroupError>`](crate::operation::delete_attribute_group::DeleteAttributeGroupError)
-    pub fn delete_attribute_group(
-        &self,
-    ) -> crate::operation::delete_attribute_group::builders::DeleteAttributeGroupFluentBuilder {
-        crate::operation::delete_attribute_group::builders::DeleteAttributeGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_attribute_group(&self) -> crate::operation::delete_attribute_group::builders::DeleteAttributeGroupFluentBuilder {
+        crate::operation::delete_attribute_group::builders::DeleteAttributeGroupFluentBuilder::new(self.handle.clone())
     }
 }

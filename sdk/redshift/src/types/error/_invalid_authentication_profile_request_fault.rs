@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InvalidAuthenticationProfileRequestFault {
     }
 }
 impl ::std::error::Error for InvalidAuthenticationProfileRequestFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidAuthenticationProfileRequestFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidAuthenticationProfileRequestFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidAuthenticationProfileRequestFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidAuthenticationProfileRequestFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidAuthenticationProfileRequestFault {
     /// Creates a new builder-style object to manufacture [`InvalidAuthenticationProfileRequestFault`](crate::types::error::InvalidAuthenticationProfileRequestFault).
-    pub fn builder(
-    ) -> crate::types::error::builders::InvalidAuthenticationProfileRequestFaultBuilder {
+    pub fn builder() -> crate::types::error::builders::InvalidAuthenticationProfileRequestFaultBuilder {
         crate::types::error::builders::InvalidAuthenticationProfileRequestFaultBuilder::default()
     }
 }
 
 /// A builder for [`InvalidAuthenticationProfileRequestFault`](crate::types::error::InvalidAuthenticationProfileRequestFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidAuthenticationProfileRequestFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidAuthenticationProfileRequestFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

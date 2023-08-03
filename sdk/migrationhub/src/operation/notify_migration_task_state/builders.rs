@@ -31,7 +31,7 @@ impl NotifyMigrationTaskStateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyMigrationTaskStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateInputBuilder,
+    inner: crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateInputBuilder,
 }
 impl NotifyMigrationTaskStateFluentBuilder {
     /// Creates a new `NotifyMigrationTaskState`.
@@ -42,7 +42,7 @@ impl NotifyMigrationTaskStateFluentBuilder {
         }
     }
     /// Access the NotifyMigrationTaskState as a reference.
-    pub fn as_input(&self) -> &crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl NotifyMigrationTaskStateFluentBuilder {
             crate::operation::notify_migration_task_state::NotifyMigrationTaskState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_migration_task_state::NotifyMigrationTaskStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_migration_task_state::NotifyMigrationTaskStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl NotifyMigrationTaskStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl NotifyMigrationTaskStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_migration_task_state::NotifyMigrationTaskStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_migration_task_state::NotifyMigrationTaskStateError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl NotifyMigrationTaskStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_migration_task_state::NotifyMigrationTaskStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_migration_task_state::NotifyMigrationTaskStateError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +110,17 @@ impl NotifyMigrationTaskStateFluentBuilder {
             crate::operation::notify_migration_task_state::NotifyMigrationTaskState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_migration_task_state::NotifyMigrationTaskStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_migration_task_state::NotifyMigrationTaskStateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
@@ -146,18 +129,12 @@ impl NotifyMigrationTaskStateFluentBuilder {
         self.inner.get_progress_update_stream()
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }
@@ -185,10 +162,7 @@ impl NotifyMigrationTaskStateFluentBuilder {
         self
     }
     /// <p>The timestamp when the task was gathered.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_update_date_time(input);
         self
     }

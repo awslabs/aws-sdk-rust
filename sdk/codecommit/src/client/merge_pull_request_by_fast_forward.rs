@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`MergePullRequestByFastForwardOutput`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput) with field(s):
     ///   - [`pull_request(Option<PullRequest>)`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput::pull_request): <p>Information about the specified pull request, including the merge.</p>
     /// - On failure, responds with [`SdkError<MergePullRequestByFastForwardError>`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError)
-    pub fn merge_pull_request_by_fast_forward(&self) -> crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardFluentBuilder{
+    pub fn merge_pull_request_by_fast_forward(
+        &self,
+    ) -> crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardFluentBuilder {
         crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardFluentBuilder::new(self.handle.clone())
     }
 }

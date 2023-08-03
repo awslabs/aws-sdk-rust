@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutScheduledActionOutput {
 }
 impl PutScheduledActionOutput {
     /// Creates a new builder-style object to manufacture [`PutScheduledActionOutput`](crate::operation::put_scheduled_action::PutScheduledActionOutput).
-    pub fn builder(
-    ) -> crate::operation::put_scheduled_action::builders::PutScheduledActionOutputBuilder {
+    pub fn builder() -> crate::operation::put_scheduled_action::builders::PutScheduledActionOutputBuilder {
         crate::operation::put_scheduled_action::builders::PutScheduledActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutScheduledActionOutput`](crate::operation::put_scheduled_action::PutScheduledActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutScheduledActionOutputBuilder {
     _request_id: Option<String>,
 }

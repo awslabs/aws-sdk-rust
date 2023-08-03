@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for TestWirelessDeviceOutput {
 }
 impl TestWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`TestWirelessDeviceOutput`](crate::operation::test_wireless_device::TestWirelessDeviceOutput).
-    pub fn builder(
-    ) -> crate::operation::test_wireless_device::builders::TestWirelessDeviceOutputBuilder {
+    pub fn builder() -> crate::operation::test_wireless_device::builders::TestWirelessDeviceOutputBuilder {
         crate::operation::test_wireless_device::builders::TestWirelessDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestWirelessDeviceOutput`](crate::operation::test_wireless_device::TestWirelessDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestWirelessDeviceOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

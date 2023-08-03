@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GetGroupCertificateAuthorityOutput {
 }
 impl GetGroupCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupCertificateAuthorityOutput`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityOutputBuilder {
         crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetGroupCertificateAuthorityOutput`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupCertificateAuthorityOutputBuilder {
     pub(crate) group_certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) group_certificate_authority_id: ::std::option::Option<::std::string::String>,
@@ -53,62 +51,40 @@ pub struct GetGroupCertificateAuthorityOutputBuilder {
 }
 impl GetGroupCertificateAuthorityOutputBuilder {
     /// The ARN of the certificate authority for the group.
-    pub fn group_certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the certificate authority for the group.
-    pub fn set_group_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_certificate_authority_arn = input;
         self
     }
     /// The ARN of the certificate authority for the group.
-    pub fn get_group_certificate_authority_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_group_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_certificate_authority_arn
     }
     /// The ID of the certificate authority for the group.
-    pub fn group_certificate_authority_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_certificate_authority_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_certificate_authority_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the certificate authority for the group.
-    pub fn set_group_certificate_authority_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_certificate_authority_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_certificate_authority_id = input;
         self
     }
     /// The ID of the certificate authority for the group.
-    pub fn get_group_certificate_authority_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_group_certificate_authority_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_certificate_authority_id
     }
     /// The PEM encoded certificate for the group.
-    pub fn pem_encoded_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pem_encoded_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pem_encoded_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// The PEM encoded certificate for the group.
-    pub fn set_pem_encoded_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pem_encoded_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pem_encoded_certificate = input;
         self
     }
@@ -126,9 +102,7 @@ impl GetGroupCertificateAuthorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetGroupCertificateAuthorityOutput`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput {
+    pub fn build(self) -> crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput {
         crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput {
             group_certificate_authority_arn: self.group_certificate_authority_arn,
             group_certificate_authority_id: self.group_certificate_authority_id,

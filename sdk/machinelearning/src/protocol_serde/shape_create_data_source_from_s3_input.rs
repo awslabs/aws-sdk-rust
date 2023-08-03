@@ -16,9 +16,7 @@ pub fn ser_create_data_source_from_s3_input(
         object_4.finish();
     }
     if input.compute_statistics {
-        object
-            .key("ComputeStatistics")
-            .boolean(input.compute_statistics);
+        object.key("ComputeStatistics").boolean(input.compute_statistics);
     }
     Ok(())
 }

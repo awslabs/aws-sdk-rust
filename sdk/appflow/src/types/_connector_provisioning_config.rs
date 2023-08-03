@@ -10,9 +10,7 @@ pub struct ConnectorProvisioningConfig {
 }
 impl ConnectorProvisioningConfig {
     /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-    pub fn lambda(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LambdaConnectorProvisioningConfig> {
+    pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaConnectorProvisioningConfig> {
         self.lambda.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl ConnectorProvisioningConfig {
 
 /// A builder for [`ConnectorProvisioningConfig`](crate::types::ConnectorProvisioningConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorProvisioningConfigBuilder {
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaConnectorProvisioningConfig>,
 }
@@ -38,23 +34,16 @@ impl ConnectorProvisioningConfigBuilder {
         self
     }
     /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-    pub fn set_lambda(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaConnectorProvisioningConfig>,
-    ) -> Self {
+    pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::LambdaConnectorProvisioningConfig>) -> Self {
         self.lambda = input;
         self
     }
     /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-    pub fn get_lambda(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaConnectorProvisioningConfig> {
+    pub fn get_lambda(&self) -> &::std::option::Option<crate::types::LambdaConnectorProvisioningConfig> {
         &self.lambda
     }
     /// Consumes the builder and constructs a [`ConnectorProvisioningConfig`](crate::types::ConnectorProvisioningConfig).
     pub fn build(self) -> crate::types::ConnectorProvisioningConfig {
-        crate::types::ConnectorProvisioningConfig {
-            lambda: self.lambda,
-        }
+        crate::types::ConnectorProvisioningConfig { lambda: self.lambda }
     }
 }

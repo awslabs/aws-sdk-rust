@@ -35,9 +35,7 @@ impl GetCachePolicyOutput {
 
 /// A builder for [`GetCachePolicyOutput`](crate::operation::get_cache_policy::GetCachePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCachePolicyOutputBuilder {
     pub(crate) cache_policy: ::std::option::Option<crate::types::CachePolicy>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl GetCachePolicyOutputBuilder {
         self
     }
     /// <p>The cache policy.</p>
-    pub fn set_cache_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicy>,
-    ) -> Self {
+    pub fn set_cache_policy(mut self, input: ::std::option::Option<crate::types::CachePolicy>) -> Self {
         self.cache_policy = input;
         self
     }

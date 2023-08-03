@@ -6,14 +6,11 @@
 pub struct FilledMapConditionalFormatting {
     /// <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
     #[doc(hidden)]
-    pub conditional_formatting_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::FilledMapConditionalFormattingOption>>,
+    pub conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::FilledMapConditionalFormattingOption>>,
 }
 impl FilledMapConditionalFormatting {
     /// <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-    pub fn conditional_formatting_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FilledMapConditionalFormattingOption]> {
+    pub fn conditional_formatting_options(&self) -> ::std::option::Option<&[crate::types::FilledMapConditionalFormattingOption]> {
         self.conditional_formatting_options.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl FilledMapConditionalFormatting {
 
 /// A builder for [`FilledMapConditionalFormatting`](crate::types::FilledMapConditionalFormatting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilledMapConditionalFormattingBuilder {
-    pub(crate) conditional_formatting_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::FilledMapConditionalFormattingOption>>,
+    pub(crate) conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::FilledMapConditionalFormattingOption>>,
 }
 impl FilledMapConditionalFormattingBuilder {
     /// Appends an item to `conditional_formatting_options`.
@@ -39,10 +33,7 @@ impl FilledMapConditionalFormattingBuilder {
     /// To override the contents of this collection use [`set_conditional_formatting_options`](Self::set_conditional_formatting_options).
     ///
     /// <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-    pub fn conditional_formatting_options(
-        mut self,
-        input: crate::types::FilledMapConditionalFormattingOption,
-    ) -> Self {
+    pub fn conditional_formatting_options(mut self, input: crate::types::FilledMapConditionalFormattingOption) -> Self {
         let mut v = self.conditional_formatting_options.unwrap_or_default();
         v.push(input);
         self.conditional_formatting_options = ::std::option::Option::Some(v);
@@ -51,18 +42,13 @@ impl FilledMapConditionalFormattingBuilder {
     /// <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
     pub fn set_conditional_formatting_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::FilledMapConditionalFormattingOption>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FilledMapConditionalFormattingOption>>,
     ) -> Self {
         self.conditional_formatting_options = input;
         self
     }
     /// <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-    pub fn get_conditional_formatting_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilledMapConditionalFormattingOption>>
-    {
+    pub fn get_conditional_formatting_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilledMapConditionalFormattingOption>> {
         &self.conditional_formatting_options
     }
     /// Consumes the builder and constructs a [`FilledMapConditionalFormatting`](crate::types::FilledMapConditionalFormatting).

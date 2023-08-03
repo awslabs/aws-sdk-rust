@@ -23,9 +23,7 @@ impl HlsS3Settings {
 
 /// A builder for [`HlsS3Settings`](crate::types::HlsS3Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsS3SettingsBuilder {
     pub(crate) canned_acl: ::std::option::Option<crate::types::S3CannedAcl>,
 }
@@ -36,10 +34,7 @@ impl HlsS3SettingsBuilder {
         self
     }
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
-    pub fn set_canned_acl(
-        mut self,
-        input: ::std::option::Option<crate::types::S3CannedAcl>,
-    ) -> Self {
+    pub fn set_canned_acl(mut self, input: ::std::option::Option<crate::types::S3CannedAcl>) -> Self {
         self.canned_acl = input;
         self
     }
@@ -49,8 +44,6 @@ impl HlsS3SettingsBuilder {
     }
     /// Consumes the builder and constructs a [`HlsS3Settings`](crate::types::HlsS3Settings).
     pub fn build(self) -> crate::types::HlsS3Settings {
-        crate::types::HlsS3Settings {
-            canned_acl: self.canned_acl,
-        }
+        crate::types::HlsS3Settings { canned_acl: self.canned_acl }
     }
 }

@@ -10,10 +10,7 @@ impl GetTaskTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_task_template::GetTaskTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_task_template::GetTaskTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_task_template::GetTaskTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_task_template();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetTaskTemplateFluentBuilder {
         }
     }
     /// Access the GetTaskTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_task_template::builders::GetTaskTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_task_template::builders::GetTaskTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetTaskTemplateFluentBuilder {
             crate::operation::get_task_template::GetTaskTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_task_template::GetTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_task_template::GetTaskTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetTaskTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetTaskTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_task_template::GetTaskTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_task_template::GetTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_task_template::GetTaskTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetTaskTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_task_template::GetTaskTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_task_template::GetTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_task_template::GetTaskTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetTaskTemplateFluentBuilder {
             crate::operation::get_task_template::GetTaskTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_task_template::GetTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_task_template::GetTaskTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl GetTaskTemplateFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn task_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_template_id(input.into());
         self
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn set_task_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_template_id(input);
         self
     }
@@ -157,18 +135,12 @@ impl GetTaskTemplateFluentBuilder {
         self.inner.get_task_template_id()
     }
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
-    pub fn snapshot_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_version(input.into());
         self
     }
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
-    pub fn set_snapshot_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_version(input);
         self
     }

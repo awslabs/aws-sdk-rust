@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ListConflictingAliasesOutput`](crate::operation::list_conflicting_aliases::ListConflictingAliasesOutput) with field(s):
     ///   - [`conflicting_aliases_list(Option<ConflictingAliasesList>)`](crate::operation::list_conflicting_aliases::ListConflictingAliasesOutput::conflicting_aliases_list): <p>A list of conflicting aliases.</p>
     /// - On failure, responds with [`SdkError<ListConflictingAliasesError>`](crate::operation::list_conflicting_aliases::ListConflictingAliasesError)
-    pub fn list_conflicting_aliases(
-        &self,
-    ) -> crate::operation::list_conflicting_aliases::builders::ListConflictingAliasesFluentBuilder
-    {
+    pub fn list_conflicting_aliases(&self) -> crate::operation::list_conflicting_aliases::builders::ListConflictingAliasesFluentBuilder {
         crate::operation::list_conflicting_aliases::builders::ListConflictingAliasesFluentBuilder::new(self.handle.clone())
     }
 }

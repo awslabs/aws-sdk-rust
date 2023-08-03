@@ -15,35 +15,25 @@ impl DescribeEndpointGroupInput {
 }
 impl DescribeEndpointGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointGroupInput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupInputBuilder {
         crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointGroupInput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointGroupInputBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEndpointGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_group_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeEndpointGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointGroupInput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_endpoint_group::DescribeEndpointGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_endpoint_group::DescribeEndpointGroupInput {
-                endpoint_group_arn: self.endpoint_group_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_endpoint_group::DescribeEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_endpoint_group::DescribeEndpointGroupInput {
+            endpoint_group_arn: self.endpoint_group_arn,
+        })
     }
 }

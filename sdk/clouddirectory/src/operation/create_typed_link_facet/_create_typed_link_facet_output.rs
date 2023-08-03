@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateTypedLinkFacetOutput {
 }
 impl CreateTypedLinkFacetOutput {
     /// Creates a new builder-style object to manufacture [`CreateTypedLinkFacetOutput`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetOutputBuilder {
         crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTypedLinkFacetOutput`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTypedLinkFacetOutputBuilder {
     _request_id: Option<String>,
 }

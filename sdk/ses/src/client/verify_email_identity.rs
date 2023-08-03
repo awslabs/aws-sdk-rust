@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`email_address(impl ::std::convert::Into<String>)`](crate::operation::verify_email_identity::builders::VerifyEmailIdentityFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::verify_email_identity::builders::VerifyEmailIdentityFluentBuilder::set_email_address): <p>The email address to be verified.</p>
     /// - On success, responds with [`VerifyEmailIdentityOutput`](crate::operation::verify_email_identity::VerifyEmailIdentityOutput)
     /// - On failure, responds with [`SdkError<VerifyEmailIdentityError>`](crate::operation::verify_email_identity::VerifyEmailIdentityError)
-    pub fn verify_email_identity(
-        &self,
-    ) -> crate::operation::verify_email_identity::builders::VerifyEmailIdentityFluentBuilder {
-        crate::operation::verify_email_identity::builders::VerifyEmailIdentityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn verify_email_identity(&self) -> crate::operation::verify_email_identity::builders::VerifyEmailIdentityFluentBuilder {
+        crate::operation::verify_email_identity::builders::VerifyEmailIdentityFluentBuilder::new(self.handle.clone())
     }
 }

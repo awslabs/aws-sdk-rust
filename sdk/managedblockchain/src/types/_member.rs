@@ -22,8 +22,7 @@ pub struct Member {
     pub framework_attributes: ::std::option::Option<crate::types::MemberFrameworkAttributes>,
     /// <p>Configuration properties for logging events associated with a member.</p>
     #[doc(hidden)]
-    pub log_publishing_configuration:
-        ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
+    pub log_publishing_configuration: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
     /// <p>The status of a member.</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
@@ -42,9 +41,7 @@ pub struct Member {
     /// <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -71,15 +68,11 @@ impl Member {
         self.description.as_deref()
     }
     /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
-    pub fn framework_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MemberFrameworkAttributes> {
+    pub fn framework_attributes(&self) -> ::std::option::Option<&crate::types::MemberFrameworkAttributes> {
         self.framework_attributes.as_ref()
     }
     /// <p>Configuration properties for logging events associated with a member.</p>
-    pub fn log_publishing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MemberLogPublishingConfiguration> {
+    pub fn log_publishing_configuration(&self) -> ::std::option::Option<&crate::types::MemberLogPublishingConfiguration> {
         self.log_publishing_configuration.as_ref()
     }
     /// <p>The status of a member.</p>
@@ -101,11 +94,7 @@ impl Member {
     }
     /// <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -127,22 +116,17 @@ impl Member {
 
 /// A builder for [`Member`](crate::types::Member).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) framework_attributes: ::std::option::Option<crate::types::MemberFrameworkAttributes>,
-    pub(crate) log_publishing_configuration:
-        ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
+    pub(crate) log_publishing_configuration: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::MemberStatus>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
@@ -209,39 +193,26 @@ impl MemberBuilder {
         self
     }
     /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
-    pub fn set_framework_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberFrameworkAttributes>,
-    ) -> Self {
+    pub fn set_framework_attributes(mut self, input: ::std::option::Option<crate::types::MemberFrameworkAttributes>) -> Self {
         self.framework_attributes = input;
         self
     }
     /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
-    pub fn get_framework_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::MemberFrameworkAttributes> {
+    pub fn get_framework_attributes(&self) -> &::std::option::Option<crate::types::MemberFrameworkAttributes> {
         &self.framework_attributes
     }
     /// <p>Configuration properties for logging events associated with a member.</p>
-    pub fn log_publishing_configuration(
-        mut self,
-        input: crate::types::MemberLogPublishingConfiguration,
-    ) -> Self {
+    pub fn log_publishing_configuration(mut self, input: crate::types::MemberLogPublishingConfiguration) -> Self {
         self.log_publishing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration properties for logging events associated with a member.</p>
-    pub fn set_log_publishing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
-    ) -> Self {
+    pub fn set_log_publishing_configuration(mut self, input: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>) -> Self {
         self.log_publishing_configuration = input;
         self
     }
     /// <p>Configuration properties for logging events associated with a member.</p>
-    pub fn get_log_publishing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MemberLogPublishingConfiguration> {
+    pub fn get_log_publishing_configuration(&self) -> &::std::option::Option<crate::types::MemberLogPublishingConfiguration> {
         &self.log_publishing_configuration
     }
     /// <p>The status of a member.</p>
@@ -291,10 +262,7 @@ impl MemberBuilder {
         self
     }
     /// <p>The date and time that the member was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -308,11 +276,7 @@ impl MemberBuilder {
     ///
     /// <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -320,22 +284,13 @@ impl MemberBuilder {
     }
     /// <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>

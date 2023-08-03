@@ -22,17 +22,14 @@ impl DeleteTaskTemplateInput {
 }
 impl DeleteTaskTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteTaskTemplateInput`](crate::operation::delete_task_template::DeleteTaskTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_task_template::builders::DeleteTaskTemplateInputBuilder {
+    pub fn builder() -> crate::operation::delete_task_template::builders::DeleteTaskTemplateInputBuilder {
         crate::operation::delete_task_template::builders::DeleteTaskTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTaskTemplateInput`](crate::operation::delete_task_template::DeleteTaskTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTaskTemplateInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_template_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DeleteTaskTemplateInputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn task_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn set_task_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_template_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteTaskTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTaskTemplateInput`](crate::operation::delete_task_template::DeleteTaskTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_task_template::DeleteTaskTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_task_template::DeleteTaskTemplateInput {
-                instance_id: self.instance_id,
-                task_template_id: self.task_template_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_task_template::DeleteTaskTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_task_template::DeleteTaskTemplateInput {
+            instance_id: self.instance_id,
+            task_template_id: self.task_template_id,
+        })
     }
 }

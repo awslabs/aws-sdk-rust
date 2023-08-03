@@ -10,10 +10,7 @@ impl StartHumanLoopInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_human_loop::StartHumanLoopOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_human_loop::StartHumanLoopError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_human_loop();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartHumanLoopFluentBuilder {
         }
     }
     /// Access the StartHumanLoop as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_human_loop::builders::StartHumanLoopInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_human_loop::builders::StartHumanLoopInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartHumanLoopFluentBuilder {
             crate::operation::start_human_loop::StartHumanLoop,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_human_loop::StartHumanLoopError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartHumanLoopFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartHumanLoopFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_human_loop::StartHumanLoopOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_human_loop::StartHumanLoopError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartHumanLoopFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_human_loop::StartHumanLoopOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_human_loop::StartHumanLoopError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartHumanLoopFluentBuilder {
             crate::operation::start_human_loop::StartHumanLoop,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_human_loop::StartHumanLoopError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the human loop.</p>
-    pub fn human_loop_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.human_loop_name(input.into());
         self
     }
     /// <p>The name of the human loop.</p>
-    pub fn set_human_loop_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_loop_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_human_loop_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl StartHumanLoopFluentBuilder {
         self.inner.get_human_loop_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
-    pub fn flow_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_definition_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
-    pub fn set_flow_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_definition_arn(input);
         self
     }
@@ -168,10 +140,7 @@ impl StartHumanLoopFluentBuilder {
         self
     }
     /// <p>An object that contains information about the human loop.</p>
-    pub fn set_human_loop_input(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopInput>,
-    ) -> Self {
+    pub fn set_human_loop_input(mut self, input: ::std::option::Option<crate::types::HumanLoopInput>) -> Self {
         self.inner = self.inner.set_human_loop_input(input);
         self
     }
@@ -185,17 +154,12 @@ impl StartHumanLoopFluentBuilder {
         self
     }
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
-    pub fn set_data_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
-    ) -> Self {
+    pub fn set_data_attributes(mut self, input: ::std::option::Option<crate::types::HumanLoopDataAttributes>) -> Self {
         self.inner = self.inner.set_data_attributes(input);
         self
     }
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
-    pub fn get_data_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::HumanLoopDataAttributes> {
+    pub fn get_data_attributes(&self) -> &::std::option::Option<crate::types::HumanLoopDataAttributes> {
         self.inner.get_data_attributes()
     }
 }

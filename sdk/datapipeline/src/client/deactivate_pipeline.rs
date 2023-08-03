@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`cancel_active(bool)`](crate::operation::deactivate_pipeline::builders::DeactivatePipelineFluentBuilder::cancel_active) / [`set_cancel_active(Option<bool>)`](crate::operation::deactivate_pipeline::builders::DeactivatePipelineFluentBuilder::set_cancel_active): <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     /// - On success, responds with [`DeactivatePipelineOutput`](crate::operation::deactivate_pipeline::DeactivatePipelineOutput)
     /// - On failure, responds with [`SdkError<DeactivatePipelineError>`](crate::operation::deactivate_pipeline::DeactivatePipelineError)
-    pub fn deactivate_pipeline(
-        &self,
-    ) -> crate::operation::deactivate_pipeline::builders::DeactivatePipelineFluentBuilder {
-        crate::operation::deactivate_pipeline::builders::DeactivatePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deactivate_pipeline(&self) -> crate::operation::deactivate_pipeline::builders::DeactivatePipelineFluentBuilder {
+        crate::operation::deactivate_pipeline::builders::DeactivatePipelineFluentBuilder::new(self.handle.clone())
     }
 }

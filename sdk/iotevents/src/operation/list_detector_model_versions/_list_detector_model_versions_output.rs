@@ -5,8 +5,7 @@
 pub struct ListDetectorModelVersionsOutput {
     /// <p>Summary information about the detector model versions.</p>
     #[doc(hidden)]
-    pub detector_model_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorModelVersionSummary>>,
+    pub detector_model_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DetectorModelVersionSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDetectorModelVersionsOutput {
 }
 impl ListDetectorModelVersionsOutput {
     /// <p>Summary information about the detector model versions.</p>
-    pub fn detector_model_version_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DetectorModelVersionSummary]> {
+    pub fn detector_model_version_summaries(&self) -> ::std::option::Option<&[crate::types::DetectorModelVersionSummary]> {
         self.detector_model_version_summaries.as_deref()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDetectorModelVersionsOutput {
 }
 impl ListDetectorModelVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDetectorModelVersionsOutput`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput).
-    pub fn builder() -> crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsOutputBuilder {
         crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDetectorModelVersionsOutput`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDetectorModelVersionsOutputBuilder {
-    pub(crate) detector_model_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorModelVersionSummary>>,
+    pub(crate) detector_model_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DetectorModelVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListDetectorModelVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_detector_model_version_summaries`](Self::set_detector_model_version_summaries).
     ///
     /// <p>Summary information about the detector model versions.</p>
-    pub fn detector_model_version_summaries(
-        mut self,
-        input: crate::types::DetectorModelVersionSummary,
-    ) -> Self {
+    pub fn detector_model_version_summaries(mut self, input: crate::types::DetectorModelVersionSummary) -> Self {
         let mut v = self.detector_model_version_summaries.unwrap_or_default();
         v.push(input);
         self.detector_model_version_summaries = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListDetectorModelVersionsOutputBuilder {
         self
     }
     /// <p>Summary information about the detector model versions.</p>
-    pub fn get_detector_model_version_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorModelVersionSummary>> {
+    pub fn get_detector_model_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorModelVersionSummary>> {
         &self.detector_model_version_summaries
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
@@ -100,9 +89,7 @@ impl ListDetectorModelVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDetectorModelVersionsOutput`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput {
+    pub fn build(self) -> crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput {
         crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput {
             detector_model_version_summaries: self.detector_model_version_summaries,
             next_token: self.next_token,

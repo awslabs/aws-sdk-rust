@@ -19,9 +19,7 @@ impl DeleteMonitorOutput {
 
 /// A builder for [`DeleteMonitorOutput`](crate::operation::delete_monitor::DeleteMonitorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMonitorOutputBuilder {
     _request_id: Option<String>,
 }

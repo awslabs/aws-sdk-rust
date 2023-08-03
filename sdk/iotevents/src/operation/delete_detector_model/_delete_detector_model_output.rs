@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDetectorModelOutput {
 }
 impl DeleteDetectorModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDetectorModelOutput`](crate::operation::delete_detector_model::DeleteDetectorModelOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_detector_model::builders::DeleteDetectorModelOutputBuilder {
-        crate::operation::delete_detector_model::builders::DeleteDetectorModelOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_detector_model::builders::DeleteDetectorModelOutputBuilder {
+        crate::operation::delete_detector_model::builders::DeleteDetectorModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDetectorModelOutput`](crate::operation::delete_detector_model::DeleteDetectorModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDetectorModelOutputBuilder {
     _request_id: Option<String>,
 }

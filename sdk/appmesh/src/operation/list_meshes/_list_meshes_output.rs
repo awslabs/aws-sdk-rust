@@ -35,9 +35,7 @@ impl ListMeshesOutput {
 
 /// A builder for [`ListMeshesOutput`](crate::operation::list_meshes::ListMeshesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMeshesOutputBuilder {
     pub(crate) meshes: ::std::option::Option<::std::vec::Vec<crate::types::MeshRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListMeshesOutputBuilder {
         self
     }
     /// <p>The list of existing service meshes.</p>
-    pub fn set_meshes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeshRef>>,
-    ) -> Self {
+    pub fn set_meshes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeshRef>>) -> Self {
         self.meshes = input;
         self
     }

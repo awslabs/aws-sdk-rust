@@ -26,7 +26,7 @@ impl CreatePrivateDnsNamespaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePrivateDnsNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder,
+    inner: crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder,
 }
 impl CreatePrivateDnsNamespaceFluentBuilder {
     /// Creates a new `CreatePrivateDnsNamespace`.
@@ -37,7 +37,7 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
         }
     }
     /// Access the CreatePrivateDnsNamespace as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
             crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
             crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
         self.inner.get_name()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -192,10 +175,7 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
         self
     }
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -209,17 +189,12 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
         self
     }
     /// <p>Properties for the private DNS namespace.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivateDnsNamespaceProperties>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<crate::types::PrivateDnsNamespaceProperties>) -> Self {
         self.inner = self.inner.set_properties(input);
         self
     }
     /// <p>Properties for the private DNS namespace.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::PrivateDnsNamespaceProperties> {
+    pub fn get_properties(&self) -> &::std::option::Option<crate::types::PrivateDnsNamespaceProperties> {
         self.inner.get_properties()
     }
 }

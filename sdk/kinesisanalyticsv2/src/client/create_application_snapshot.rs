@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`snapshot_name(impl ::std::convert::Into<String>)`](crate::operation::create_application_snapshot::builders::CreateApplicationSnapshotFluentBuilder::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::operation::create_application_snapshot::builders::CreateApplicationSnapshotFluentBuilder::set_snapshot_name): <p>An identifier for the application snapshot.</p>
     /// - On success, responds with [`CreateApplicationSnapshotOutput`](crate::operation::create_application_snapshot::CreateApplicationSnapshotOutput)
     /// - On failure, responds with [`SdkError<CreateApplicationSnapshotError>`](crate::operation::create_application_snapshot::CreateApplicationSnapshotError)
-    pub fn create_application_snapshot(&self) -> crate::operation::create_application_snapshot::builders::CreateApplicationSnapshotFluentBuilder{
+    pub fn create_application_snapshot(&self) -> crate::operation::create_application_snapshot::builders::CreateApplicationSnapshotFluentBuilder {
         crate::operation::create_application_snapshot::builders::CreateApplicationSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

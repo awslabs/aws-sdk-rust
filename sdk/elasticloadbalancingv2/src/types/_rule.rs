@@ -51,9 +51,7 @@ impl Rule {
 
 /// A builder for [`Rule`](crate::types::Rule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<::std::string::String>,
@@ -102,17 +100,12 @@ impl RuleBuilder {
         self
     }
     /// <p>The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and <code>query-string</code>.</p>
-    pub fn set_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
-    ) -> Self {
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>) -> Self {
         self.conditions = input;
         self
     }
     /// <p>The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and <code>query-string</code>.</p>
-    pub fn get_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
         &self.conditions
     }
     /// Appends an item to `actions`.
@@ -127,10 +120,7 @@ impl RuleBuilder {
         self
     }
     /// <p>The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }

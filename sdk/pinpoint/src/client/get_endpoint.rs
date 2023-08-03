@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetEndpointOutput`](crate::operation::get_endpoint::GetEndpointOutput) with field(s):
     ///   - [`endpoint_response(Option<EndpointResponse>)`](crate::operation::get_endpoint::GetEndpointOutput::endpoint_response): <p>Provides information about the channel type and other settings for an endpoint.</p>
     /// - On failure, responds with [`SdkError<GetEndpointError>`](crate::operation::get_endpoint::GetEndpointError)
-    pub fn get_endpoint(
-        &self,
-    ) -> crate::operation::get_endpoint::builders::GetEndpointFluentBuilder {
+    pub fn get_endpoint(&self) -> crate::operation::get_endpoint::builders::GetEndpointFluentBuilder {
         crate::operation::get_endpoint::builders::GetEndpointFluentBuilder::new(self.handle.clone())
     }
 }

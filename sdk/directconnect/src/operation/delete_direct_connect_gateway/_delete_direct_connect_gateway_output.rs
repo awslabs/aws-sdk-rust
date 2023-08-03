@@ -10,9 +10,7 @@ pub struct DeleteDirectConnectGatewayOutput {
 }
 impl DeleteDirectConnectGatewayOutput {
     /// <p>The Direct Connect gateway.</p>
-    pub fn direct_connect_gateway(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectConnectGateway> {
+    pub fn direct_connect_gateway(&self) -> ::std::option::Option<&crate::types::DirectConnectGateway> {
         self.direct_connect_gateway.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteDirectConnectGatewayOutput {
 }
 impl DeleteDirectConnectGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayOutput`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayOutput).
-    pub fn builder() -> crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayOutputBuilder{
+    pub fn builder() -> crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayOutputBuilder {
         crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDirectConnectGatewayOutput`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayOutputBuilder {
     pub(crate) direct_connect_gateway: ::std::option::Option<crate::types::DirectConnectGateway>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DeleteDirectConnectGatewayOutputBuilder {
         self
     }
     /// <p>The Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectConnectGateway>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway(mut self, input: ::std::option::Option<crate::types::DirectConnectGateway>) -> Self {
         self.direct_connect_gateway = input;
         self
     }
     /// <p>The Direct Connect gateway.</p>
-    pub fn get_direct_connect_gateway(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectConnectGateway> {
+    pub fn get_direct_connect_gateway(&self) -> &::std::option::Option<crate::types::DirectConnectGateway> {
         &self.direct_connect_gateway
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl DeleteDirectConnectGatewayOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayOutput`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayOutput {
+    pub fn build(self) -> crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayOutput {
         crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayOutput {
             direct_connect_gateway: self.direct_connect_gateway,
             _request_id: self._request_id,

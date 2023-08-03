@@ -29,16 +29,14 @@ impl ValidateSolNetworkPackageContentInput {
 }
 impl ValidateSolNetworkPackageContentInput {
     /// Creates a new builder-style object to manufacture [`ValidateSolNetworkPackageContentInput`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput).
-    pub fn builder() -> crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder{
+    pub fn builder() -> crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder {
         crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateSolNetworkPackageContentInput`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateSolNetworkPackageContentInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<crate::types::PackageContentType>,
@@ -65,10 +63,7 @@ impl ValidateSolNetworkPackageContentInputBuilder {
         self
     }
     /// <p>Network package content type.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -91,16 +86,18 @@ impl ValidateSolNetworkPackageContentInputBuilder {
         &self.file
     }
     /// Consumes the builder and constructs a [`ValidateSolNetworkPackageContentInput`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput {
-                nsd_info_id: self.nsd_info_id
-                ,
-                content_type: self.content_type
-                ,
-                file: self.file
-                ,
-            }
+                nsd_info_id: self.nsd_info_id,
+                content_type: self.content_type,
+                file: self.file,
+            },
         )
     }
 }

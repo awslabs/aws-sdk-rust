@@ -30,9 +30,7 @@ impl ListPresetsInput {
 
 /// A builder for [`ListPresetsInput`](crate::operation::list_presets::ListPresetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPresetsInputBuilder {
     pub(crate) ascending: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
@@ -67,12 +65,7 @@ impl ListPresetsInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`ListPresetsInput`](crate::operation::list_presets::ListPresetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_presets::ListPresetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_presets::ListPresetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_presets::ListPresetsInput {
             ascending: self.ascending,
             page_token: self.page_token,

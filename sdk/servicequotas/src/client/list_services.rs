@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     ///   - [`services(Option<Vec<ServiceInfo>>)`](crate::operation::list_services::ListServicesOutput::services): <p>Information about the services.</p>
     /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
-    pub fn list_services(
-        &self,
-    ) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
-        crate::operation::list_services::builders::ListServicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_services(&self) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
+        crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())
     }
 }

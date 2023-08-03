@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateLicenseOutput {
 }
 impl DisassociateLicenseOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateLicenseOutput`](crate::operation::disassociate_license::DisassociateLicenseOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_license::builders::DisassociateLicenseOutputBuilder {
-        crate::operation::disassociate_license::builders::DisassociateLicenseOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disassociate_license::builders::DisassociateLicenseOutputBuilder {
+        crate::operation::disassociate_license::builders::DisassociateLicenseOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateLicenseOutput`](crate::operation::disassociate_license::DisassociateLicenseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateLicenseOutputBuilder {
     pub(crate) workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DisassociateLicenseOutputBuilder {
         self
     }
     /// <p>A structure containing information about the workspace.</p>
-    pub fn set_workspace(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceDescription>,
-    ) -> Self {
+    pub fn set_workspace(mut self, input: ::std::option::Option<crate::types::WorkspaceDescription>) -> Self {
         self.workspace = input;
         self
     }

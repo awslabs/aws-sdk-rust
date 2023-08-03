@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`PutObjectLegalHoldOutput`](crate::operation::put_object_legal_hold::PutObjectLegalHoldOutput) with field(s):
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::put_object_legal_hold::PutObjectLegalHoldOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<PutObjectLegalHoldError>`](crate::operation::put_object_legal_hold::PutObjectLegalHoldError)
-    pub fn put_object_legal_hold(
-        &self,
-    ) -> crate::operation::put_object_legal_hold::builders::PutObjectLegalHoldFluentBuilder {
-        crate::operation::put_object_legal_hold::builders::PutObjectLegalHoldFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_object_legal_hold(&self) -> crate::operation::put_object_legal_hold::builders::PutObjectLegalHoldFluentBuilder {
+        crate::operation::put_object_legal_hold::builders::PutObjectLegalHoldFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,9 +22,7 @@ impl InferSnomedctInput {
 
 /// A builder for [`InferSnomedctInput`](crate::operation::infer_snomedct::InferSnomedctInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferSnomedctInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl InferSnomedctInputBuilder {
     /// Consumes the builder and constructs a [`InferSnomedctInput`](crate::operation::infer_snomedct::InferSnomedctInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::infer_snomedct::InferSnomedctInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::infer_snomedct::InferSnomedctInput {
-            text: self.text,
-        })
+    ) -> ::std::result::Result<crate::operation::infer_snomedct::InferSnomedctInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::infer_snomedct::InferSnomedctInput { text: self.text })
     }
 }

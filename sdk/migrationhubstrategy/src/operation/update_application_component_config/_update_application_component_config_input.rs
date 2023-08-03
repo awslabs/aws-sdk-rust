@@ -70,7 +70,7 @@ impl ::std::fmt::Debug for UpdateApplicationComponentConfigInput {
 }
 impl UpdateApplicationComponentConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationComponentConfigInput`](crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput).
-    pub fn builder() -> crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigInputBuilder{
+    pub fn builder() -> crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigInputBuilder {
         crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigInputBuilder::default()
     }
 }
@@ -89,18 +89,12 @@ pub struct UpdateApplicationComponentConfigInputBuilder {
 }
 impl UpdateApplicationComponentConfigInputBuilder {
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
-    pub fn application_component_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
-    pub fn set_application_component_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_component_id = input;
         self
     }
@@ -114,10 +108,7 @@ impl UpdateApplicationComponentConfigInputBuilder {
         self
     }
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
-    pub fn set_inclusion_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InclusionStatus>,
-    ) -> Self {
+    pub fn set_inclusion_status(mut self, input: ::std::option::Option<crate::types::InclusionStatus>) -> Self {
         self.inclusion_status = input;
         self
     }
@@ -131,10 +122,7 @@ impl UpdateApplicationComponentConfigInputBuilder {
         self
     }
     /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
-    pub fn set_strategy_option(
-        mut self,
-        input: ::std::option::Option<crate::types::StrategyOption>,
-    ) -> Self {
+    pub fn set_strategy_option(mut self, input: ::std::option::Option<crate::types::StrategyOption>) -> Self {
         self.strategy_option = input;
         self
     }
@@ -154,32 +142,21 @@ impl UpdateApplicationComponentConfigInputBuilder {
         self
     }
     /// <p> The list of source code configurations to update for the application component. </p>
-    pub fn set_source_code_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceCode>>,
-    ) -> Self {
+    pub fn set_source_code_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceCode>>) -> Self {
         self.source_code_list = input;
         self
     }
     /// <p> The list of source code configurations to update for the application component. </p>
-    pub fn get_source_code_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceCode>> {
+    pub fn get_source_code_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceCode>> {
         &self.source_code_list
     }
     /// <p> Database credentials. </p>
-    pub fn secrets_manager_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secrets_manager_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Database credentials. </p>
-    pub fn set_secrets_manager_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secrets_manager_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_key = input;
         self
     }
@@ -216,24 +193,22 @@ impl UpdateApplicationComponentConfigInputBuilder {
         &self.app_type
     }
     /// Consumes the builder and constructs a [`UpdateApplicationComponentConfigInput`](crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput {
-                application_component_id: self.application_component_id
-                ,
-                inclusion_status: self.inclusion_status
-                ,
-                strategy_option: self.strategy_option
-                ,
-                source_code_list: self.source_code_list
-                ,
-                secrets_manager_key: self.secrets_manager_key
-                ,
-                configure_only: self.configure_only
-                ,
-                app_type: self.app_type
-                ,
-            }
+                application_component_id: self.application_component_id,
+                inclusion_status: self.inclusion_status,
+                strategy_option: self.strategy_option,
+                source_code_list: self.source_code_list,
+                secrets_manager_key: self.secrets_manager_key,
+                configure_only: self.configure_only,
+                app_type: self.app_type,
+            },
         )
     }
 }

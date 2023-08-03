@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`file_cache_id(Option<String>)`](crate::operation::delete_file_cache::DeleteFileCacheOutput::file_cache_id): <p>The ID of the cache that's being deleted.</p>
     ///   - [`lifecycle(Option<FileCacheLifecycle>)`](crate::operation::delete_file_cache::DeleteFileCacheOutput::lifecycle): <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteFileCacheError>`](crate::operation::delete_file_cache::DeleteFileCacheError)
-    pub fn delete_file_cache(
-        &self,
-    ) -> crate::operation::delete_file_cache::builders::DeleteFileCacheFluentBuilder {
-        crate::operation::delete_file_cache::builders::DeleteFileCacheFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_file_cache(&self) -> crate::operation::delete_file_cache::builders::DeleteFileCacheFluentBuilder {
+        crate::operation::delete_file_cache::builders::DeleteFileCacheFluentBuilder::new(self.handle.clone())
     }
 }

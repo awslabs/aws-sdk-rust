@@ -38,9 +38,7 @@ impl ListExplainabilitiesFluentBuilder {
         }
     }
     /// Access the ListExplainabilities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_explainabilities::builders::ListExplainabilitiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_explainabilities::builders::ListExplainabilitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListExplainabilitiesFluentBuilder {
             crate::operation::list_explainabilities::ListExplainabilities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_explainabilities::ListExplainabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_explainabilities::ListExplainabilitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListExplainabilitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListExplainabilitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_explainabilities::ListExplainabilitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_explainabilities::ListExplainabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_explainabilities::ListExplainabilitiesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListExplainabilitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_explainabilities::ListExplainabilitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_explainabilities::ListExplainabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_explainabilities::ListExplainabilitiesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListExplainabilitiesFluentBuilder {
             crate::operation::list_explainabilities::ListExplainabilities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_explainabilities::ListExplainabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_explainabilities::ListExplainabilitiesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_explainabilities::paginator::ListExplainabilitiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_explainabilities::paginator::ListExplainabilitiesPaginator {
-        crate::operation::list_explainabilities::paginator::ListExplainabilitiesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_explainabilities::paginator::ListExplainabilitiesPaginator {
+        crate::operation::list_explainabilities::paginator::ListExplainabilitiesPaginator::new(self.handle, self.inner)
     }
     /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -184,10 +166,7 @@ impl ListExplainabilitiesFluentBuilder {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

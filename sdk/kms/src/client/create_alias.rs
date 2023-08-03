@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`target_key_id(impl ::std::convert::Into<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::target_key_id) / [`set_target_key_id(Option<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::set_target_key_id): <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region. </p>  <p>A valid key ID is required. If you supply a null or empty string value, this operation returns an error.</p>  <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>  <p>Specify the key ID or key ARN of the KMS key.</p>  <p>For example:</p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>  </ul>  <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     /// - On success, responds with [`CreateAliasOutput`](crate::operation::create_alias::CreateAliasOutput)
     /// - On failure, responds with [`SdkError<CreateAliasError>`](crate::operation::create_alias::CreateAliasError)
-    pub fn create_alias(
-        &self,
-    ) -> crate::operation::create_alias::builders::CreateAliasFluentBuilder {
+    pub fn create_alias(&self) -> crate::operation::create_alias::builders::CreateAliasFluentBuilder {
         crate::operation::create_alias::builders::CreateAliasFluentBuilder::new(self.handle.clone())
     }
 }

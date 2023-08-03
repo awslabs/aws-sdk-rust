@@ -5,16 +5,14 @@
 pub struct DisableProactiveEngagementInput {}
 impl DisableProactiveEngagementInput {
     /// Creates a new builder-style object to manufacture [`DisableProactiveEngagementInput`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementInput).
-    pub fn builder() -> crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementInputBuilder{
+    pub fn builder() -> crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementInputBuilder {
         crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableProactiveEngagementInput`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableProactiveEngagementInputBuilder {}
 impl DisableProactiveEngagementInputBuilder {
     /// Consumes the builder and constructs a [`DisableProactiveEngagementInput`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementInput).
@@ -24,8 +22,6 @@ impl DisableProactiveEngagementInputBuilder {
         crate::operation::disable_proactive_engagement::DisableProactiveEngagementInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_proactive_engagement::DisableProactiveEngagementInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::disable_proactive_engagement::DisableProactiveEngagementInput {})
     }
 }

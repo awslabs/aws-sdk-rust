@@ -24,9 +24,7 @@ pub struct TestSetImportResourceSpecification {
     pub modality: ::std::option::Option<crate::types::TestSetModality>,
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     #[doc(hidden)]
-    pub test_set_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub test_set_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TestSetImportResourceSpecification {
     /// <p>The name of the test set.</p>
@@ -46,9 +44,7 @@ impl TestSetImportResourceSpecification {
         self.storage_location.as_ref()
     }
     /// <p>Contains information about the input location from where test-set should be imported.</p>
-    pub fn import_input_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestSetImportInputLocation> {
+    pub fn import_input_location(&self) -> ::std::option::Option<&crate::types::TestSetImportInputLocation> {
         self.import_input_location.as_ref()
     }
     /// <p>Specifies whether the test-set being imported contains written or spoken data.</p>
@@ -56,11 +52,7 @@ impl TestSetImportResourceSpecification {
         self.modality.as_ref()
     }
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn test_set_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn test_set_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.test_set_tags.as_ref()
     }
 }
@@ -73,35 +65,24 @@ impl TestSetImportResourceSpecification {
 
 /// A builder for [`TestSetImportResourceSpecification`](crate::types::TestSetImportResourceSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSetImportResourceSpecificationBuilder {
     pub(crate) test_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
-    pub(crate) import_input_location:
-        ::std::option::Option<crate::types::TestSetImportInputLocation>,
+    pub(crate) import_input_location: ::std::option::Option<crate::types::TestSetImportInputLocation>,
     pub(crate) modality: ::std::option::Option<crate::types::TestSetModality>,
-    pub(crate) test_set_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) test_set_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TestSetImportResourceSpecificationBuilder {
     /// <p>The name of the test set.</p>
-    pub fn test_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the test set.</p>
-    pub fn set_test_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_set_name = input;
         self
     }
@@ -143,39 +124,26 @@ impl TestSetImportResourceSpecificationBuilder {
         self
     }
     /// <p>Contains information about the location that Amazon Lex uses to store the test-set.</p>
-    pub fn set_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetStorageLocation>,
-    ) -> Self {
+    pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::TestSetStorageLocation>) -> Self {
         self.storage_location = input;
         self
     }
     /// <p>Contains information about the location that Amazon Lex uses to store the test-set.</p>
-    pub fn get_storage_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
+    pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
         &self.storage_location
     }
     /// <p>Contains information about the input location from where test-set should be imported.</p>
-    pub fn import_input_location(
-        mut self,
-        input: crate::types::TestSetImportInputLocation,
-    ) -> Self {
+    pub fn import_input_location(mut self, input: crate::types::TestSetImportInputLocation) -> Self {
         self.import_input_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the input location from where test-set should be imported.</p>
-    pub fn set_import_input_location(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetImportInputLocation>,
-    ) -> Self {
+    pub fn set_import_input_location(mut self, input: ::std::option::Option<crate::types::TestSetImportInputLocation>) -> Self {
         self.import_input_location = input;
         self
     }
     /// <p>Contains information about the input location from where test-set should be imported.</p>
-    pub fn get_import_input_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestSetImportInputLocation> {
+    pub fn get_import_input_location(&self) -> &::std::option::Option<crate::types::TestSetImportInputLocation> {
         &self.import_input_location
     }
     /// <p>Specifies whether the test-set being imported contains written or spoken data.</p>
@@ -184,10 +152,7 @@ impl TestSetImportResourceSpecificationBuilder {
         self
     }
     /// <p>Specifies whether the test-set being imported contains written or spoken data.</p>
-    pub fn set_modality(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetModality>,
-    ) -> Self {
+    pub fn set_modality(mut self, input: ::std::option::Option<crate::types::TestSetModality>) -> Self {
         self.modality = input;
         self
     }
@@ -200,11 +165,7 @@ impl TestSetImportResourceSpecificationBuilder {
     /// To override the contents of this collection use [`set_test_set_tags`](Self::set_test_set_tags).
     ///
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn test_set_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.test_set_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.test_set_tags = ::std::option::Option::Some(hash_map);
@@ -213,19 +174,13 @@ impl TestSetImportResourceSpecificationBuilder {
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     pub fn set_test_set_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.test_set_tags = input;
         self
     }
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn get_test_set_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_test_set_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.test_set_tags
     }
     /// Consumes the builder and constructs a [`TestSetImportResourceSpecification`](crate::types::TestSetImportResourceSpecification).

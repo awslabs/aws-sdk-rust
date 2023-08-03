@@ -44,9 +44,7 @@ impl MonitoringJobDefinitionSummary {
 
 /// A builder for [`MonitoringJobDefinitionSummary`](crate::types::MonitoringJobDefinitionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringJobDefinitionSummaryBuilder {
     pub(crate) monitoring_job_definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring_job_definition_arn: ::std::option::Option<::std::string::String>,
@@ -55,47 +53,31 @@ pub struct MonitoringJobDefinitionSummaryBuilder {
 }
 impl MonitoringJobDefinitionSummaryBuilder {
     /// <p>The name of the monitoring job.</p>
-    pub fn monitoring_job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the monitoring job.</p>
-    pub fn set_monitoring_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_job_definition_name = input;
         self
     }
     /// <p>The name of the monitoring job.</p>
-    pub fn get_monitoring_job_definition_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_monitoring_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_job_definition_name
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
-    pub fn monitoring_job_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_job_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_job_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
-    pub fn set_monitoring_job_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_job_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_job_definition_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
-    pub fn get_monitoring_job_definition_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_monitoring_job_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_job_definition_arn
     }
     /// <p>The time that the monitoring job was created.</p>
@@ -104,10 +86,7 @@ impl MonitoringJobDefinitionSummaryBuilder {
         self
     }
     /// <p>The time that the monitoring job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -116,18 +95,12 @@ impl MonitoringJobDefinitionSummaryBuilder {
         &self.creation_time
     }
     /// <p>The name of the endpoint that the job monitors.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint that the job monitors.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }

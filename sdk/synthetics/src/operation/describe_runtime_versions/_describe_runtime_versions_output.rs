@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeRuntimeVersionsOutput {
 }
 impl DescribeRuntimeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRuntimeVersionsOutput`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsOutputBuilder {
         crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRuntimeVersionsOutput`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRuntimeVersionsOutputBuilder {
-    pub(crate) runtime_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::RuntimeVersion>>,
+    pub(crate) runtime_versions: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeRuntimeVersionsOutputBuilder {
         self
     }
     /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
-    pub fn set_runtime_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeVersion>>,
-    ) -> Self {
+    pub fn set_runtime_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeVersion>>) -> Self {
         self.runtime_versions = input;
         self
     }
     /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
-    pub fn get_runtime_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuntimeVersion>> {
+    pub fn get_runtime_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuntimeVersion>> {
         &self.runtime_versions
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
@@ -96,9 +86,7 @@ impl DescribeRuntimeVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRuntimeVersionsOutput`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput {
+    pub fn build(self) -> crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput {
         crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput {
             runtime_versions: self.runtime_versions,
             next_token: self.next_token,

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateDefaultViewOutput {
 }
 impl DisassociateDefaultViewOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDefaultViewOutput`](crate::operation::disassociate_default_view::DisassociateDefaultViewOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_default_view::builders::DisassociateDefaultViewOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_default_view::builders::DisassociateDefaultViewOutputBuilder {
         crate::operation::disassociate_default_view::builders::DisassociateDefaultViewOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDefaultViewOutput`](crate::operation::disassociate_default_view::DisassociateDefaultViewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDefaultViewOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisassociateDefaultViewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateDefaultViewOutput`](crate::operation::disassociate_default_view::DisassociateDefaultViewOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_default_view::DisassociateDefaultViewOutput {
+    pub fn build(self) -> crate::operation::disassociate_default_view::DisassociateDefaultViewOutput {
         crate::operation::disassociate_default_view::DisassociateDefaultViewOutput {
             _request_id: self._request_id,
         }

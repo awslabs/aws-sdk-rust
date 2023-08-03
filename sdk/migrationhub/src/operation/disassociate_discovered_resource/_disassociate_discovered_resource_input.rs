@@ -36,16 +36,14 @@ impl DisassociateDiscoveredResourceInput {
 }
 impl DisassociateDiscoveredResourceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDiscoveredResourceInput`](crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput).
-    pub fn builder() -> crate::operation::disassociate_discovered_resource::builders::DisassociateDiscoveredResourceInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_discovered_resource::builders::DisassociateDiscoveredResourceInputBuilder {
         crate::operation::disassociate_discovered_resource::builders::DisassociateDiscoveredResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDiscoveredResourceInput`](crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDiscoveredResourceInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct DisassociateDiscoveredResourceInputBuilder {
 }
 impl DisassociateDiscoveredResourceInputBuilder {
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream = input;
         self
     }
@@ -74,18 +66,12 @@ impl DisassociateDiscoveredResourceInputBuilder {
         &self.progress_update_stream
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
@@ -94,18 +80,12 @@ impl DisassociateDiscoveredResourceInputBuilder {
         &self.migration_task_name
     }
     /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_id = input;
         self
     }
@@ -134,18 +114,11 @@ impl DisassociateDiscoveredResourceInputBuilder {
         crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput {
-                progress_update_stream: self.progress_update_stream
-                ,
-                migration_task_name: self.migration_task_name
-                ,
-                configuration_id: self.configuration_id
-                ,
-                dry_run: self.dry_run
-                    .unwrap_or_default()
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput {
+            progress_update_stream: self.progress_update_stream,
+            migration_task_name: self.migration_task_name,
+            configuration_id: self.configuration_id,
+            dry_run: self.dry_run.unwrap_or_default(),
+        })
     }
 }

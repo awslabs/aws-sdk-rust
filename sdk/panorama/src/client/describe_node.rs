@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`created_time(Option<DateTime>)`](crate::operation::describe_node::DescribeNodeOutput::created_time): <p>When the node was created.</p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::describe_node::DescribeNodeOutput::last_updated_time): <p>When the node was updated.</p>
     /// - On failure, responds with [`SdkError<DescribeNodeError>`](crate::operation::describe_node::DescribeNodeError)
-    pub fn describe_node(
-        &self,
-    ) -> crate::operation::describe_node::builders::DescribeNodeFluentBuilder {
-        crate::operation::describe_node::builders::DescribeNodeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_node(&self) -> crate::operation::describe_node::builders::DescribeNodeFluentBuilder {
+        crate::operation::describe_node::builders::DescribeNodeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,9 +22,7 @@ impl GetFuotaTaskInput {
 
 /// A builder for [`GetFuotaTaskInput`](crate::operation::get_fuota_task::GetFuotaTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFuotaTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetFuotaTaskInputBuilder {
     /// Consumes the builder and constructs a [`GetFuotaTaskInput`](crate::operation::get_fuota_task::GetFuotaTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_fuota_task::GetFuotaTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_fuota_task::GetFuotaTaskInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_fuota_task::GetFuotaTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_fuota_task::GetFuotaTaskInput { id: self.id })
     }
 }

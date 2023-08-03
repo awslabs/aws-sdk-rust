@@ -28,9 +28,7 @@ impl GetEulaOutput {
 
 /// A builder for [`GetEulaOutput`](crate::operation::get_eula::GetEulaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEulaOutputBuilder {
     pub(crate) eula: ::std::option::Option<crate::types::Eula>,
     _request_id: Option<String>,

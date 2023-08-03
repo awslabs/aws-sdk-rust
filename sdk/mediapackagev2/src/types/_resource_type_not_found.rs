@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceTypeNotFound {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for ResourceTypeNotFound {
             "CHANNEL" => ResourceTypeNotFound::Channel,
             "CHANNEL_GROUP" => ResourceTypeNotFound::ChannelGroup,
             "ORIGIN_ENDPOINT" => ResourceTypeNotFound::OriginEndpoint,
-            other => ResourceTypeNotFound::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceTypeNotFound::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

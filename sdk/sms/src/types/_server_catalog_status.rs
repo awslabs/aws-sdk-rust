@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ServerCatalogStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ServerCatalogStatus {
             "EXPIRED" => ServerCatalogStatus::Expired,
             "IMPORTING" => ServerCatalogStatus::Importing,
             "NOT_IMPORTED" => ServerCatalogStatus::NotImported,
-            other => ServerCatalogStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ServerCatalogStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ServerCatalogStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "DELETED",
-            "EXPIRED",
-            "IMPORTING",
-            "NOT_IMPORTED",
-        ]
+        &["AVAILABLE", "DELETED", "EXPIRED", "IMPORTING", "NOT_IMPORTED"]
     }
 }
 impl ::std::convert::AsRef<str> for ServerCatalogStatus {

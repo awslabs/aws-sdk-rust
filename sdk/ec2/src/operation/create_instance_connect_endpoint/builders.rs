@@ -27,7 +27,7 @@ impl CreateInstanceConnectEndpointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstanceConnectEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointInputBuilder,
+    inner: crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointInputBuilder,
 }
 impl CreateInstanceConnectEndpointFluentBuilder {
     /// Creates a new `CreateInstanceConnectEndpoint`.
@@ -38,7 +38,7 @@ impl CreateInstanceConnectEndpointFluentBuilder {
         }
     }
     /// Access the CreateInstanceConnectEndpoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateInstanceConnectEndpointFluentBuilder {
             crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateInstanceConnectEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateInstanceConnectEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateInstanceConnectEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateInstanceConnectEndpointFluentBuilder {
             crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -154,25 +143,17 @@ impl CreateInstanceConnectEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>One or more security groups to associate with the endpoint. If you don't specify a security group, the default security group for your VPC will be associated with the endpoint.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>One or more security groups to associate with the endpoint. If you don't specify a security group, the default security group for your VPC will be associated with the endpoint.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>One or more security groups to associate with the endpoint. If you don't specify a security group, the default security group for your VPC will be associated with the endpoint.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
@@ -228,17 +209,12 @@ impl CreateInstanceConnectEndpointFluentBuilder {
         self
     }
     /// <p>The tags to apply to the EC2 Instance Connect Endpoint during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the EC2 Instance Connect Endpoint during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

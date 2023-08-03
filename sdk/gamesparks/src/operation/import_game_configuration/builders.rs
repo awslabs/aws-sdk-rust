@@ -27,8 +27,7 @@ impl ImportGameConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportGameConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::import_game_configuration::builders::ImportGameConfigurationInputBuilder,
+    inner: crate::operation::import_game_configuration::builders::ImportGameConfigurationInputBuilder,
 }
 impl ImportGameConfigurationFluentBuilder {
     /// Creates a new `ImportGameConfiguration`.
@@ -39,10 +38,7 @@ impl ImportGameConfigurationFluentBuilder {
         }
     }
     /// Access the ImportGameConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_game_configuration::builders::ImportGameConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::import_game_configuration::builders::ImportGameConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ImportGameConfigurationFluentBuilder {
             crate::operation::import_game_configuration::ImportGameConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_game_configuration::ImportGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_game_configuration::ImportGameConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ImportGameConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ImportGameConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_game_configuration::ImportGameConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_game_configuration::ImportGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_game_configuration::ImportGameConfigurationError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ImportGameConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_game_configuration::ImportGameConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_game_configuration::ImportGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_game_configuration::ImportGameConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl ImportGameConfigurationFluentBuilder {
             crate::operation::import_game_configuration::ImportGameConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_game_configuration::ImportGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_game_configuration::ImportGameConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -145,17 +130,12 @@ impl ImportGameConfigurationFluentBuilder {
         self
     }
     /// <p>The source used to import configuration sections.</p>
-    pub fn set_import_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportGameConfigurationSource>,
-    ) -> Self {
+    pub fn set_import_source(mut self, input: ::std::option::Option<crate::types::ImportGameConfigurationSource>) -> Self {
         self.inner = self.inner.set_import_source(input);
         self
     }
     /// <p>The source used to import configuration sections.</p>
-    pub fn get_import_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportGameConfigurationSource> {
+    pub fn get_import_source(&self) -> &::std::option::Option<crate::types::ImportGameConfigurationSource> {
         self.inner.get_import_source()
     }
 }

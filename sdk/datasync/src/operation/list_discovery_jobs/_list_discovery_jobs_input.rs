@@ -29,17 +29,14 @@ impl ListDiscoveryJobsInput {
 }
 impl ListDiscoveryJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveryJobsInput`](crate::operation::list_discovery_jobs::ListDiscoveryJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsInputBuilder {
+    pub fn builder() -> crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsInputBuilder {
         crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDiscoveryJobsInput`](crate::operation::list_discovery_jobs::ListDiscoveryJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDiscoveryJobsInputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -47,18 +44,12 @@ pub struct ListDiscoveryJobsInputBuilder {
 }
 impl ListDiscoveryJobsInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_system_arn = input;
         self
     }
@@ -97,16 +88,11 @@ impl ListDiscoveryJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListDiscoveryJobsInput`](crate::operation::list_discovery_jobs::ListDiscoveryJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_discovery_jobs::ListDiscoveryJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_discovery_jobs::ListDiscoveryJobsInput {
-                storage_system_arn: self.storage_system_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_discovery_jobs::ListDiscoveryJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_discovery_jobs::ListDiscoveryJobsInput {
+            storage_system_arn: self.storage_system_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

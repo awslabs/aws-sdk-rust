@@ -81,9 +81,7 @@ impl TransformFilterCriteria {
 
 /// A builder for [`TransformFilterCriteria`](crate::types::TransformFilterCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformFilterCriteriaBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) transform_type: ::std::option::Option<crate::types::TransformType>,
@@ -116,10 +114,7 @@ impl TransformFilterCriteriaBuilder {
         self
     }
     /// <p>The type of machine learning transform that is used to filter the machine learning transforms.</p>
-    pub fn set_transform_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformType>,
-    ) -> Self {
+    pub fn set_transform_type(mut self, input: ::std::option::Option<crate::types::TransformType>) -> Self {
         self.transform_type = input;
         self
     }
@@ -133,10 +128,7 @@ impl TransformFilterCriteriaBuilder {
         self
     }
     /// <p>Filters the list of machine learning transforms by the last known status of the transforms (to indicate whether a transform can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TransformStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -164,10 +156,7 @@ impl TransformFilterCriteriaBuilder {
         self
     }
     /// <p>The time and date before which the transforms were created.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -181,10 +170,7 @@ impl TransformFilterCriteriaBuilder {
         self
     }
     /// <p>The time and date after which the transforms were created.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -198,10 +184,7 @@ impl TransformFilterCriteriaBuilder {
         self
     }
     /// <p>Filter on transforms last modified before this date.</p>
-    pub fn set_last_modified_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_before = input;
         self
     }
@@ -215,10 +198,7 @@ impl TransformFilterCriteriaBuilder {
         self
     }
     /// <p>Filter on transforms last modified after this date.</p>
-    pub fn set_last_modified_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_after = input;
         self
     }
@@ -240,18 +220,13 @@ impl TransformFilterCriteriaBuilder {
     }
     /// <p>Filters on datasets with a specific schema. The <code>Map
     /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
-    pub fn set_schema(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>,
-    ) -> Self {
+    pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>) -> Self {
         self.schema = input;
         self
     }
     /// <p>Filters on datasets with a specific schema. The <code>Map
     /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
-    pub fn get_schema(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>> {
+    pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>> {
         &self.schema
     }
     /// Consumes the builder and constructs a [`TransformFilterCriteria`](crate::types::TransformFilterCriteria).

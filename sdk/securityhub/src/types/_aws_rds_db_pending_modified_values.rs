@@ -45,12 +45,10 @@ pub struct AwsRdsDbPendingModifiedValues {
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that are being enabled or disabled.</p>
     #[doc(hidden)]
-    pub pending_cloud_watch_logs_exports:
-        ::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports>,
+    pub pending_cloud_watch_logs_exports: ::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports>,
     /// <p>Processor features that are being updated.</p>
     #[doc(hidden)]
-    pub processor_features:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
+    pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
 }
 impl AwsRdsDbPendingModifiedValues {
     /// <p>The new DB instance class for the DB instance.</p>
@@ -106,15 +104,11 @@ impl AwsRdsDbPendingModifiedValues {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>A list of log types that are being enabled or disabled.</p>
-    pub fn pending_cloud_watch_logs_exports(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsRdsPendingCloudWatchLogsExports> {
+    pub fn pending_cloud_watch_logs_exports(&self) -> ::std::option::Option<&crate::types::AwsRdsPendingCloudWatchLogsExports> {
         self.pending_cloud_watch_logs_exports.as_ref()
     }
     /// <p>Processor features that are being updated.</p>
-    pub fn processor_features(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRdsDbProcessorFeature]> {
+    pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbProcessorFeature]> {
         self.processor_features.as_deref()
     }
 }
@@ -127,9 +121,7 @@ impl AwsRdsDbPendingModifiedValues {
 
 /// A builder for [`AwsRdsDbPendingModifiedValues`](crate::types::AwsRdsDbPendingModifiedValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbPendingModifiedValuesBuilder {
     pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
@@ -144,25 +136,17 @@ pub struct AwsRdsDbPendingModifiedValuesBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) pending_cloud_watch_logs_exports:
-        ::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports>,
-    pub(crate) processor_features:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
+    pub(crate) pending_cloud_watch_logs_exports: ::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports>,
+    pub(crate) processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
 }
 impl AwsRdsDbPendingModifiedValuesBuilder {
     /// <p>The new DB instance class for the DB instance.</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new DB instance class for the DB instance.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_class = input;
         self
     }
@@ -185,18 +169,12 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
         &self.allocated_storage
     }
     /// <p>The new master user password for the DB instance.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new master user password for the DB instance.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
@@ -247,18 +225,12 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
         &self.multi_az
     }
     /// <p>The new engine version for the DB instance.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new engine version for the DB instance.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -267,18 +239,12 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
         &self.engine_version
     }
     /// <p>The new license model value for the DB instance.</p>
-    pub fn license_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new license model value for the DB instance.</p>
-    pub fn set_license_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
@@ -301,18 +267,12 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
         &self.iops
     }
     /// <p>The new DB instance identifier for the DB instance.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new DB instance identifier for the DB instance.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -335,18 +295,12 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
         &self.storage_type
     }
     /// <p>The new CA certificate identifier for the DB instance.</p>
-    pub fn ca_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new CA certificate identifier for the DB instance.</p>
-    pub fn set_ca_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_certificate_identifier = input;
         self
     }
@@ -355,18 +309,12 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
         &self.ca_certificate_identifier
     }
     /// <p>The name of the new subnet group for the DB instance.</p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the new subnet group for the DB instance.</p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
@@ -375,25 +323,17 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
         &self.db_subnet_group_name
     }
     /// <p>A list of log types that are being enabled or disabled.</p>
-    pub fn pending_cloud_watch_logs_exports(
-        mut self,
-        input: crate::types::AwsRdsPendingCloudWatchLogsExports,
-    ) -> Self {
+    pub fn pending_cloud_watch_logs_exports(mut self, input: crate::types::AwsRdsPendingCloudWatchLogsExports) -> Self {
         self.pending_cloud_watch_logs_exports = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of log types that are being enabled or disabled.</p>
-    pub fn set_pending_cloud_watch_logs_exports(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports>,
-    ) -> Self {
+    pub fn set_pending_cloud_watch_logs_exports(mut self, input: ::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports>) -> Self {
         self.pending_cloud_watch_logs_exports = input;
         self
     }
     /// <p>A list of log types that are being enabled or disabled.</p>
-    pub fn get_pending_cloud_watch_logs_exports(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports> {
+    pub fn get_pending_cloud_watch_logs_exports(&self) -> &::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports> {
         &self.pending_cloud_watch_logs_exports
     }
     /// Appends an item to `processor_features`.
@@ -408,17 +348,12 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
         self
     }
     /// <p>Processor features that are being updated.</p>
-    pub fn set_processor_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
-    ) -> Self {
+    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>) -> Self {
         self.processor_features = input;
         self
     }
     /// <p>Processor features that are being updated.</p>
-    pub fn get_processor_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>> {
+    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>> {
         &self.processor_features
     }
     /// Consumes the builder and constructs a [`AwsRdsDbPendingModifiedValues`](crate::types::AwsRdsDbPendingModifiedValues).

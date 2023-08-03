@@ -21,9 +21,7 @@ pub struct AwsApiCallAction {
     pub domain_details: ::std::option::Option<crate::types::AwsApiCallActionDomainDetails>,
     /// <p>Identifies the resources that were affected by the API call.</p>
     #[doc(hidden)]
-    pub affected_resources: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub affected_resources: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
@@ -51,17 +49,11 @@ impl AwsApiCallAction {
         self.remote_ip_details.as_ref()
     }
     /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
-    pub fn domain_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsApiCallActionDomainDetails> {
+    pub fn domain_details(&self) -> ::std::option::Option<&crate::types::AwsApiCallActionDomainDetails> {
         self.domain_details.as_ref()
     }
     /// <p>Identifies the resources that were affected by the API call.</p>
-    pub fn affected_resources(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn affected_resources(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.affected_resources.as_ref()
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
@@ -84,18 +76,14 @@ impl AwsApiCallAction {
 
 /// A builder for [`AwsApiCallAction`](crate::types::AwsApiCallAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiCallActionBuilder {
     pub(crate) api: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) caller_type: ::std::option::Option<::std::string::String>,
     pub(crate) remote_ip_details: ::std::option::Option<crate::types::ActionRemoteIpDetails>,
     pub(crate) domain_details: ::std::option::Option<crate::types::AwsApiCallActionDomainDetails>,
-    pub(crate) affected_resources: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) affected_resources: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) first_seen: ::std::option::Option<::std::string::String>,
     pub(crate) last_seen: ::std::option::Option<::std::string::String>,
 }
@@ -148,17 +136,12 @@ impl AwsApiCallActionBuilder {
         self
     }
     /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
-    pub fn set_remote_ip_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionRemoteIpDetails>,
-    ) -> Self {
+    pub fn set_remote_ip_details(mut self, input: ::std::option::Option<crate::types::ActionRemoteIpDetails>) -> Self {
         self.remote_ip_details = input;
         self
     }
     /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
-    pub fn get_remote_ip_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActionRemoteIpDetails> {
+    pub fn get_remote_ip_details(&self) -> &::std::option::Option<crate::types::ActionRemoteIpDetails> {
         &self.remote_ip_details
     }
     /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
@@ -167,17 +150,12 @@ impl AwsApiCallActionBuilder {
         self
     }
     /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
-    pub fn set_domain_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsApiCallActionDomainDetails>,
-    ) -> Self {
+    pub fn set_domain_details(mut self, input: ::std::option::Option<crate::types::AwsApiCallActionDomainDetails>) -> Self {
         self.domain_details = input;
         self
     }
     /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
-    pub fn get_domain_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsApiCallActionDomainDetails> {
+    pub fn get_domain_details(&self) -> &::std::option::Option<crate::types::AwsApiCallActionDomainDetails> {
         &self.domain_details
     }
     /// Adds a key-value pair to `affected_resources`.
@@ -198,19 +176,13 @@ impl AwsApiCallActionBuilder {
     /// <p>Identifies the resources that were affected by the API call.</p>
     pub fn set_affected_resources(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.affected_resources = input;
         self
     }
     /// <p>Identifies the resources that were affected by the API call.</p>
-    pub fn get_affected_resources(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_affected_resources(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.affected_resources
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>

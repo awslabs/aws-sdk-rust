@@ -131,9 +131,7 @@ impl Ec2InstanceConnectEndpoint {
 
 /// A builder for [`Ec2InstanceConnectEndpoint`](crate::types::Ec2InstanceConnectEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2InstanceConnectEndpointBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_connect_endpoint_id: ::std::option::Option<::std::string::String>,
@@ -167,47 +165,31 @@ impl Ec2InstanceConnectEndpointBuilder {
         &self.owner_id
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint.</p>
-    pub fn instance_connect_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_connect_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_connect_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint.</p>
-    pub fn set_instance_connect_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_connect_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_connect_endpoint_id = input;
         self
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint.</p>
-    pub fn get_instance_connect_endpoint_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_instance_connect_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_connect_endpoint_id
     }
     /// <p>The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint.</p>
-    pub fn instance_connect_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_connect_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_connect_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint.</p>
-    pub fn set_instance_connect_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_connect_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_connect_endpoint_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint.</p>
-    pub fn get_instance_connect_endpoint_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_instance_connect_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_connect_endpoint_arn
     }
     /// <p>The current state of the EC2 Instance Connect Endpoint.</p>
@@ -216,32 +198,21 @@ impl Ec2InstanceConnectEndpointBuilder {
         self
     }
     /// <p>The current state of the EC2 Instance Connect Endpoint.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceConnectEndpointState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::Ec2InstanceConnectEndpointState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The current state of the EC2 Instance Connect Endpoint.</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::Ec2InstanceConnectEndpointState> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::Ec2InstanceConnectEndpointState> {
         &self.state
     }
     /// <p>The message for the current state of the EC2 Instance Connect Endpoint. Can include a failure message.</p>
-    pub fn state_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message for the current state of the EC2 Instance Connect Endpoint. Can include a failure message.</p>
-    pub fn set_state_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_message = input;
         self
     }
@@ -264,18 +235,12 @@ impl Ec2InstanceConnectEndpointBuilder {
         &self.dns_name
     }
     /// <p></p>
-    pub fn fips_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fips_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fips_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_fips_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fips_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fips_dns_name = input;
         self
     }
@@ -288,27 +253,19 @@ impl Ec2InstanceConnectEndpointBuilder {
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
     ///
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
-    pub fn network_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.network_interface_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
-    pub fn set_network_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_interface_ids = input;
         self
     }
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
-    pub fn get_network_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_interface_ids
     }
     /// <p>The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p>
@@ -326,18 +283,12 @@ impl Ec2InstanceConnectEndpointBuilder {
         &self.vpc_id
     }
     /// <p>The Availability Zone of the EC2 Instance Connect Endpoint.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the EC2 Instance Connect Endpoint.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -351,10 +302,7 @@ impl Ec2InstanceConnectEndpointBuilder {
         self
     }
     /// <p>The date and time that the EC2 Instance Connect Endpoint was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -410,27 +358,19 @@ impl Ec2InstanceConnectEndpointBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `tags`.
@@ -445,10 +385,7 @@ impl Ec2InstanceConnectEndpointBuilder {
         self
     }
     /// <p>The tags assigned to the EC2 Instance Connect Endpoint.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

@@ -29,18 +29,14 @@ impl DescribeTemplateAliasInput {
 }
 impl DescribeTemplateAliasInput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplateAliasInput`](crate::operation::describe_template_alias::DescribeTemplateAliasInput).
-    pub fn builder(
-    ) -> crate::operation::describe_template_alias::builders::DescribeTemplateAliasInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_template_alias::builders::DescribeTemplateAliasInputBuilder {
         crate::operation::describe_template_alias::builders::DescribeTemplateAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTemplateAliasInput`](crate::operation::describe_template_alias::DescribeTemplateAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTemplateAliasInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct DescribeTemplateAliasInputBuilder {
 }
 impl DescribeTemplateAliasInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl DescribeTemplateAliasInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTemplateAliasInput`](crate::operation::describe_template_alias::DescribeTemplateAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_template_alias::DescribeTemplateAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_template_alias::DescribeTemplateAliasInput {
-                aws_account_id: self.aws_account_id,
-                template_id: self.template_id,
-                alias_name: self.alias_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_template_alias::DescribeTemplateAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_template_alias::DescribeTemplateAliasInput {
+            aws_account_id: self.aws_account_id,
+            template_id: self.template_id,
+            alias_name: self.alias_name,
+        })
     }
 }

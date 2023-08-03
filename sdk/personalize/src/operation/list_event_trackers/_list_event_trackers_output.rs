@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEventTrackersOutput {
 }
 impl ListEventTrackersOutput {
     /// Creates a new builder-style object to manufacture [`ListEventTrackersOutput`](crate::operation::list_event_trackers::ListEventTrackersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_event_trackers::builders::ListEventTrackersOutputBuilder {
+    pub fn builder() -> crate::operation::list_event_trackers::builders::ListEventTrackersOutputBuilder {
         crate::operation::list_event_trackers::builders::ListEventTrackersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventTrackersOutput`](crate::operation::list_event_trackers::ListEventTrackersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventTrackersOutputBuilder {
-    pub(crate) event_trackers:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventTrackerSummary>>,
+    pub(crate) event_trackers: ::std::option::Option<::std::vec::Vec<crate::types::EventTrackerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListEventTrackersOutputBuilder {
         self
     }
     /// <p>A list of event trackers.</p>
-    pub fn set_event_trackers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventTrackerSummary>>,
-    ) -> Self {
+    pub fn set_event_trackers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTrackerSummary>>) -> Self {
         self.event_trackers = input;
         self
     }
     /// <p>A list of event trackers.</p>
-    pub fn get_event_trackers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTrackerSummary>> {
+    pub fn get_event_trackers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTrackerSummary>> {
         &self.event_trackers
     }
     /// <p>A token for getting the next set of event trackers (if they exist).</p>

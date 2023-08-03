@@ -28,9 +28,7 @@ impl GetTypeOutput {
 
 /// A builder for [`GetTypeOutput`](crate::operation::get_type::GetTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTypeOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
     _request_id: Option<String>,

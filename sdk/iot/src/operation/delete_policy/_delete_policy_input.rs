@@ -23,9 +23,7 @@ impl DeletePolicyInput {
 
 /// A builder for [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl DeletePolicyInputBuilder {
         &self.policy_name
     }
     /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_policy::DeletePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_policy::DeletePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_policy::DeletePolicyInput {
             policy_name: self.policy_name,
         })

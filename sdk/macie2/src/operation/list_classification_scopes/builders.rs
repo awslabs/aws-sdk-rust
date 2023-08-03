@@ -26,7 +26,7 @@ impl ListClassificationScopesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListClassificationScopesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder,
+    inner: crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder,
 }
 impl ListClassificationScopesFluentBuilder {
     /// Creates a new `ListClassificationScopes`.
@@ -37,10 +37,7 @@ impl ListClassificationScopesFluentBuilder {
         }
     }
     /// Access the ListClassificationScopes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListClassificationScopesFluentBuilder {
             crate::operation::list_classification_scopes::ListClassificationScopes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_classification_scopes::ListClassificationScopesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_classification_scopes::ListClassificationScopesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListClassificationScopesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListClassificationScopesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_classification_scopes::ListClassificationScopesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_classification_scopes::ListClassificationScopesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_classification_scopes::ListClassificationScopesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListClassificationScopesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_classification_scopes::ListClassificationScopesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_classification_scopes::ListClassificationScopesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_classification_scopes::ListClassificationScopesError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl ListClassificationScopesFluentBuilder {
             crate::operation::list_classification_scopes::ListClassificationScopes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_classification_scopes::ListClassificationScopesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_classification_scopes::ListClassificationScopesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_classification_scopes::paginator::ListClassificationScopesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_classification_scopes::paginator::ListClassificationScopesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_classification_scopes::paginator::ListClassificationScopesPaginator {
         crate::operation::list_classification_scopes::paginator::ListClassificationScopesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the classification scope to retrieve the unique identifier for.</p>

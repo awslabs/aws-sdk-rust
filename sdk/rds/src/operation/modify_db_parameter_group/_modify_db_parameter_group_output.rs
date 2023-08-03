@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for ModifyDbParameterGroupOutput {
 }
 impl ModifyDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbParameterGroupOutput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupOutputBuilder {
         crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbParameterGroupOutput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbParameterGroupOutputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ModifyDbParameterGroupOutputBuilder {
     /// <p>The name of the DB parameter group.</p>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB parameter group.</p>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
         self
     }
@@ -69,9 +59,7 @@ impl ModifyDbParameterGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyDbParameterGroupOutput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput {
+    pub fn build(self) -> crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput {
         crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput {
             db_parameter_group_name: self.db_parameter_group_name,
             _request_id: self._request_id,

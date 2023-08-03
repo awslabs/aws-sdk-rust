@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NotebookInstanceAcceleratorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for NotebookInstanceAcceleratorType {
             "ml.eia2.large" => NotebookInstanceAcceleratorType::MlEia2Large,
             "ml.eia2.medium" => NotebookInstanceAcceleratorType::MlEia2Medium,
             "ml.eia2.xlarge" => NotebookInstanceAcceleratorType::MlEia2Xlarge,
-            other => NotebookInstanceAcceleratorType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => NotebookInstanceAcceleratorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

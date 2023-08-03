@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`partner_type(PartnerType)`](crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::partner_type) / [`set_partner_type(Option<PartnerType>)`](crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::set_partner_type): <p>The partner type.</p>
     /// - On success, responds with [`UpdatePartnerAccountOutput`](crate::operation::update_partner_account::UpdatePartnerAccountOutput)
     /// - On failure, responds with [`SdkError<UpdatePartnerAccountError>`](crate::operation::update_partner_account::UpdatePartnerAccountError)
-    pub fn update_partner_account(
-        &self,
-    ) -> crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder {
-        crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_partner_account(&self) -> crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder {
+        crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::new(self.handle.clone())
     }
 }

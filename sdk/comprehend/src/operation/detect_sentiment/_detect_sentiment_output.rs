@@ -57,10 +57,7 @@ impl DetectSentimentOutputBuilder {
         self
     }
     /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
-    pub fn set_sentiment(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentType>,
-    ) -> Self {
+    pub fn set_sentiment(mut self, input: ::std::option::Option<crate::types::SentimentType>) -> Self {
         self.sentiment = input;
         self
     }
@@ -74,10 +71,7 @@ impl DetectSentimentOutputBuilder {
         self
     }
     /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
-    pub fn set_sentiment_score(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentScore>,
-    ) -> Self {
+    pub fn set_sentiment_score(mut self, input: ::std::option::Option<crate::types::SentimentScore>) -> Self {
         self.sentiment_score = input;
         self
     }

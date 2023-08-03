@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`core_network_policy_versions(Option<Vec<CoreNetworkPolicyVersion>>)`](crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsOutput::core_network_policy_versions): <p>Describes core network policy versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListCoreNetworkPolicyVersionsError>`](crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsError)
-    pub fn list_core_network_policy_versions(&self) -> crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsFluentBuilder{
+    pub fn list_core_network_policy_versions(
+        &self,
+    ) -> crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsFluentBuilder {
         crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsFluentBuilder::new(self.handle.clone())
     }
 }

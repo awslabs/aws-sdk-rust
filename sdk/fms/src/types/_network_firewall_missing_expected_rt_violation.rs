@@ -51,9 +51,7 @@ impl NetworkFirewallMissingExpectedRtViolation {
 
 /// A builder for [`NetworkFirewallMissingExpectedRtViolation`](crate::types::NetworkFirewallMissingExpectedRtViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFirewallMissingExpectedRtViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct NetworkFirewallMissingExpectedRtViolationBuilder {
 }
 impl NetworkFirewallMissingExpectedRtViolationBuilder {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-    pub fn violation_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-    pub fn set_violation_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_violation_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_target = input;
         self
     }
@@ -97,18 +89,12 @@ impl NetworkFirewallMissingExpectedRtViolationBuilder {
         &self.vpc
     }
     /// <p>The Availability Zone of a violating subnet. </p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of a violating subnet. </p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -117,18 +103,12 @@ impl NetworkFirewallMissingExpectedRtViolationBuilder {
         &self.availability_zone
     }
     /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
-    pub fn current_route_table(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_route_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_route_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
-    pub fn set_current_route_table(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_route_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_route_table = input;
         self
     }
@@ -137,18 +117,12 @@ impl NetworkFirewallMissingExpectedRtViolationBuilder {
         &self.current_route_table
     }
     /// <p>The resource ID of the route table that should be associated with the subnet.</p>
-    pub fn expected_route_table(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_route_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_route_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource ID of the route table that should be associated with the subnet.</p>
-    pub fn set_expected_route_table(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_route_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_route_table = input;
         self
     }

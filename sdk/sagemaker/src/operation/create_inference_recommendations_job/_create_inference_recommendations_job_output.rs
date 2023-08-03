@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateInferenceRecommendationsJobOutp
 }
 impl CreateInferenceRecommendationsJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateInferenceRecommendationsJobOutput`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput).
-    pub fn builder() -> crate::operation::create_inference_recommendations_job::builders::CreateInferenceRecommendationsJobOutputBuilder{
+    pub fn builder() -> crate::operation::create_inference_recommendations_job::builders::CreateInferenceRecommendationsJobOutputBuilder {
         crate::operation::create_inference_recommendations_job::builders::CreateInferenceRecommendationsJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInferenceRecommendationsJobOutput`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInferenceRecommendationsJobOutputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl CreateInferenceRecommendationsJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateInferenceRecommendationsJobOutput`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput).
-    pub fn build(self) -> crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput{
+    pub fn build(self) -> crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput {
         crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput {
-            job_arn: self.job_arn
-            ,
+            job_arn: self.job_arn,
             _request_id: self._request_id,
         }
     }

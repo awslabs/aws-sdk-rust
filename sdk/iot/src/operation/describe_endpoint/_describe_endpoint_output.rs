@@ -22,35 +22,26 @@ impl ::aws_http::request_id::RequestId for DescribeEndpointOutput {
 }
 impl DescribeEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
-    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder {
         crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointOutputBuilder {
     pub(crate) endpoint_address: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointOutputBuilder {
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
-    pub fn endpoint_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
-    pub fn set_endpoint_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_address = input;
         self
     }

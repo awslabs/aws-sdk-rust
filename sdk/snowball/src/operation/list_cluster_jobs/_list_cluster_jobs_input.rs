@@ -36,9 +36,7 @@ impl ListClusterJobsInput {
 
 /// A builder for [`ListClusterJobsInput`](crate::operation::list_cluster_jobs::ListClusterJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClusterJobsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -90,10 +88,7 @@ impl ListClusterJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListClusterJobsInput`](crate::operation::list_cluster_jobs::ListClusterJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cluster_jobs::ListClusterJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_cluster_jobs::ListClusterJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_cluster_jobs::ListClusterJobsInput {
             cluster_id: self.cluster_id,
             max_results: self.max_results,

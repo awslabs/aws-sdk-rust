@@ -40,10 +40,7 @@ impl DeletePrincipalMappingFluentBuilder {
         }
     }
     /// Access the DeletePrincipalMapping as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl DeletePrincipalMappingFluentBuilder {
             crate::operation::delete_principal_mapping::DeletePrincipalMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_principal_mapping::DeletePrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_principal_mapping::DeletePrincipalMappingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl DeletePrincipalMappingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl DeletePrincipalMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_principal_mapping::DeletePrincipalMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_principal_mapping::DeletePrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_principal_mapping::DeletePrincipalMappingError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl DeletePrincipalMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_principal_mapping::DeletePrincipalMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_principal_mapping::DeletePrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_principal_mapping::DeletePrincipalMappingError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl DeletePrincipalMappingFluentBuilder {
             crate::operation::delete_principal_mapping::DeletePrincipalMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_principal_mapping::DeletePrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_principal_mapping::DeletePrincipalMappingError>,
     > {
         self.customize_middleware().await
     }
@@ -142,19 +128,13 @@ impl DeletePrincipalMappingFluentBuilder {
     }
     /// <p>The identifier of the data source you want to delete a group from.</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>The identifier of the data source you want to delete a group from.</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }

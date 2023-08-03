@@ -10,10 +10,7 @@ impl UpdateArchiveInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_archive::UpdateArchiveOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_archive::UpdateArchiveError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_archive::UpdateArchiveError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_archive();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateArchiveFluentBuilder {
         }
     }
     /// Access the UpdateArchive as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_archive::builders::UpdateArchiveInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_archive::builders::UpdateArchiveInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateArchiveFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -143,18 +135,12 @@ impl UpdateArchiveFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The event pattern to use to filter events sent to the archive.</p>
-    pub fn event_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_pattern(input.into());
         self
     }
     /// <p>The event pattern to use to filter events sent to the archive.</p>
-    pub fn set_event_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_pattern(input);
         self
     }

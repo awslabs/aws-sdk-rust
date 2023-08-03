@@ -38,10 +38,7 @@ impl DeleteMitigationActionFluentBuilder {
         }
     }
     /// Access the DeleteMitigationAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_mitigation_action::builders::DeleteMitigationActionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_mitigation_action::builders::DeleteMitigationActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteMitigationActionFluentBuilder {
             crate::operation::delete_mitigation_action::DeleteMitigationAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mitigation_action::DeleteMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mitigation_action::DeleteMitigationActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteMitigationActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteMitigationActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mitigation_action::DeleteMitigationActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mitigation_action::DeleteMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mitigation_action::DeleteMitigationActionError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteMitigationActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mitigation_action::DeleteMitigationActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mitigation_action::DeleteMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mitigation_action::DeleteMitigationActionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeleteMitigationActionFluentBuilder {
             crate::operation::delete_mitigation_action::DeleteMitigationAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mitigation_action::DeleteMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mitigation_action::DeleteMitigationActionError>,
     > {
         self.customize_middleware().await
     }

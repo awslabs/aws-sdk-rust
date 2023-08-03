@@ -44,9 +44,7 @@ impl IpamPoolAllocation {
         self.resource_id.as_deref()
     }
     /// <p>The type of the resource.</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpamPoolAllocationResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::IpamPoolAllocationResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The Amazon Web Services Region of the resource.</p>
@@ -67,9 +65,7 @@ impl IpamPoolAllocation {
 
 /// A builder for [`IpamPoolAllocation`](crate::types::IpamPoolAllocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpamPoolAllocationBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_pool_allocation_id: ::std::option::Option<::std::string::String>,
@@ -95,18 +91,12 @@ impl IpamPoolAllocationBuilder {
         &self.cidr
     }
     /// <p>The ID of an allocation.</p>
-    pub fn ipam_pool_allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_pool_allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an allocation.</p>
-    pub fn set_ipam_pool_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_pool_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_pool_allocation_id = input;
         self
     }
@@ -148,32 +138,21 @@ impl IpamPoolAllocationBuilder {
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolAllocationResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::IpamPoolAllocationResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamPoolAllocationResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::IpamPoolAllocationResourceType> {
         &self.resource_type
     }
     /// <p>The Amazon Web Services Region of the resource.</p>
-    pub fn resource_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region of the resource.</p>
-    pub fn set_resource_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_region = input;
         self
     }
@@ -182,18 +161,12 @@ impl IpamPoolAllocationBuilder {
         &self.resource_region
     }
     /// <p>The owner of the resource.</p>
-    pub fn resource_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner of the resource.</p>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner = input;
         self
     }

@@ -37,9 +37,7 @@ impl ListPickupLocationsFluentBuilder {
         }
     }
     /// Access the ListPickupLocations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_pickup_locations::builders::ListPickupLocationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_pickup_locations::builders::ListPickupLocationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListPickupLocationsFluentBuilder {
             crate::operation::list_pickup_locations::ListPickupLocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pickup_locations::ListPickupLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pickup_locations::ListPickupLocationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListPickupLocationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListPickupLocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pickup_locations::ListPickupLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pickup_locations::ListPickupLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pickup_locations::ListPickupLocationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListPickupLocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pickup_locations::ListPickupLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pickup_locations::ListPickupLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pickup_locations::ListPickupLocationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListPickupLocationsFluentBuilder {
             crate::operation::list_pickup_locations::ListPickupLocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pickup_locations::ListPickupLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pickup_locations::ListPickupLocationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_pickup_locations::paginator::ListPickupLocationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_pickup_locations::paginator::ListPickupLocationsPaginator {
-        crate::operation::list_pickup_locations::paginator::ListPickupLocationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_pickup_locations::paginator::ListPickupLocationsPaginator {
+        crate::operation::list_pickup_locations::paginator::ListPickupLocationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of locations to list per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {

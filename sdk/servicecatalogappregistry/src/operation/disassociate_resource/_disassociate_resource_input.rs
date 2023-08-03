@@ -29,18 +29,14 @@ impl DisassociateResourceInput {
 }
 impl DisassociateResourceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder {
-        crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder {
+        crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateResourceInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -67,10 +63,7 @@ impl DisassociateResourceInputBuilder {
         self
     }
     /// <p>The type of the resource that is being disassociated.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -95,16 +88,12 @@ impl DisassociateResourceInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_resource::DisassociateResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_resource::DisassociateResourceInput {
-                application: self.application,
-                resource_type: self.resource_type,
-                resource: self.resource,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_resource::DisassociateResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_resource::DisassociateResourceInput {
+            application: self.application,
+            resource_type: self.resource_type,
+            resource: self.resource,
+        })
     }
 }

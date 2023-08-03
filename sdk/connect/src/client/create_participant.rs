@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`participant_credentials(Option<ParticipantTokenCredentials>)`](crate::operation::create_participant::CreateParticipantOutput::participant_credentials): <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
     ///   - [`participant_id(Option<String>)`](crate::operation::create_participant::CreateParticipantOutput::participant_id): <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     /// - On failure, responds with [`SdkError<CreateParticipantError>`](crate::operation::create_participant::CreateParticipantError)
-    pub fn create_participant(
-        &self,
-    ) -> crate::operation::create_participant::builders::CreateParticipantFluentBuilder {
-        crate::operation::create_participant::builders::CreateParticipantFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_participant(&self) -> crate::operation::create_participant::builders::CreateParticipantFluentBuilder {
+        crate::operation::create_participant::builders::CreateParticipantFluentBuilder::new(self.handle.clone())
     }
 }

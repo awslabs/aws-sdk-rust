@@ -22,9 +22,7 @@ impl DescribeContextInput {
 
 /// A builder for [`DescribeContextInput`](crate::operation::describe_context::DescribeContextInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContextInputBuilder {
     pub(crate) context_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DescribeContextInputBuilder {
     /// Consumes the builder and constructs a [`DescribeContextInput`](crate::operation::describe_context::DescribeContextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_context::DescribeContextInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_context::DescribeContextInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_context::DescribeContextInput {
             context_name: self.context_name,
         })

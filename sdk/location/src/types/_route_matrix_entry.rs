@@ -37,9 +37,7 @@ impl RouteMatrixEntry {
 
 /// A builder for [`RouteMatrixEntry`](crate::types::RouteMatrixEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteMatrixEntryBuilder {
     pub(crate) distance: ::std::option::Option<f64>,
     pub(crate) duration_seconds: ::std::option::Option<f64>,
@@ -80,10 +78,7 @@ impl RouteMatrixEntryBuilder {
         self
     }
     /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteMatrixEntryError>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::RouteMatrixEntryError>) -> Self {
         self.error = input;
         self
     }

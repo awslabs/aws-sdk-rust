@@ -10,10 +10,7 @@ impl ListServicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_services::ListServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_services::ListServicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_services::ListServicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_services();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListServicesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_services::ListServices,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_services::ListServices, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_services::ListServicesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListServicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListServicesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_services::ListServices,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_services::ListServices, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_services::ListServicesError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListServicesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_services::paginator::ListServicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_services::paginator::ListServicesPaginator {
-        crate::operation::list_services::paginator::ListServicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_services::paginator::ListServicesPaginator {
+        crate::operation::list_services::paginator::ListServicesPaginator::new(self.handle, self.inner)
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,10 +160,7 @@ impl ListServicesFluentBuilder {
         self
     }
     /// <p>The launch type to use when filtering the <code>ListServices</code> results.</p>
-    pub fn set_launch_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchType>,
-    ) -> Self {
+    pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
         self.inner = self.inner.set_launch_type(input);
         self
     }
@@ -194,17 +174,12 @@ impl ListServicesFluentBuilder {
         self
     }
     /// <p>The scheduling strategy to use when filtering the <code>ListServices</code> results.</p>
-    pub fn set_scheduling_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SchedulingStrategy>,
-    ) -> Self {
+    pub fn set_scheduling_strategy(mut self, input: ::std::option::Option<crate::types::SchedulingStrategy>) -> Self {
         self.inner = self.inner.set_scheduling_strategy(input);
         self
     }
     /// <p>The scheduling strategy to use when filtering the <code>ListServices</code> results.</p>
-    pub fn get_scheduling_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchedulingStrategy> {
+    pub fn get_scheduling_strategy(&self) -> &::std::option::Option<crate::types::SchedulingStrategy> {
         self.inner.get_scheduling_strategy()
     }
 }

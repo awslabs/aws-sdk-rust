@@ -45,9 +45,7 @@ impl TriggerUpdate {
         self.predicate.as_ref()
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn event_batching_condition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventBatchingCondition> {
+    pub fn event_batching_condition(&self) -> ::std::option::Option<&crate::types::EventBatchingCondition> {
         self.event_batching_condition.as_ref()
     }
 }
@@ -60,17 +58,14 @@ impl TriggerUpdate {
 
 /// A builder for [`TriggerUpdate`](crate::types::TriggerUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TriggerUpdateBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     pub(crate) predicate: ::std::option::Option<crate::types::Predicate>,
-    pub(crate) event_batching_condition:
-        ::std::option::Option<crate::types::EventBatchingCondition>,
+    pub(crate) event_batching_condition: ::std::option::Option<crate::types::EventBatchingCondition>,
 }
 impl TriggerUpdateBuilder {
     /// <p>Reserved for future use.</p>
@@ -127,10 +122,7 @@ impl TriggerUpdateBuilder {
         self
     }
     /// <p>The actions initiated by this trigger.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
@@ -158,17 +150,12 @@ impl TriggerUpdateBuilder {
         self
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn set_event_batching_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::EventBatchingCondition>,
-    ) -> Self {
+    pub fn set_event_batching_condition(mut self, input: ::std::option::Option<crate::types::EventBatchingCondition>) -> Self {
         self.event_batching_condition = input;
         self
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn get_event_batching_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventBatchingCondition> {
+    pub fn get_event_batching_condition(&self) -> &::std::option::Option<crate::types::EventBatchingCondition> {
         &self.event_batching_condition
     }
     /// Consumes the builder and constructs a [`TriggerUpdate`](crate::types::TriggerUpdate).

@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`loa(Option<Loa>)`](crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput::loa): <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     /// - On failure, responds with [`SdkError<DescribeInterconnectLoaError>`](crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError)
     #[deprecated]
-    pub fn describe_interconnect_loa(
-        &self,
-    ) -> crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaFluentBuilder
-    {
+    pub fn describe_interconnect_loa(&self) -> crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaFluentBuilder {
         crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaFluentBuilder::new(self.handle.clone())
     }
 }

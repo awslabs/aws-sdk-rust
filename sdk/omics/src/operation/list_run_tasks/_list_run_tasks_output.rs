@@ -35,9 +35,7 @@ impl ListRunTasksOutput {
 
 /// A builder for [`ListRunTasksOutput`](crate::operation::list_run_tasks::ListRunTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRunTasksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::TaskListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListRunTasksOutputBuilder {
         self
     }
     /// <p>A list of tasks.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskListItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskListItem>>) -> Self {
         self.items = input;
         self
     }

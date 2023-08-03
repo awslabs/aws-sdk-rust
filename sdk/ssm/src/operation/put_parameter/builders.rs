@@ -10,10 +10,7 @@ impl PutParameterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_parameter::PutParameterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_parameter::PutParameterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_parameter::PutParameterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_parameter();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutParameterFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_parameter::PutParameter,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_parameter::PutParameter, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_parameter::PutParameterError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl PutParameterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl PutParameterFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_parameter::PutParameter,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_parameter::PutParameter, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_parameter::PutParameterError>,
     > {
         self.customize_middleware().await
@@ -272,18 +260,12 @@ impl PutParameterFluentBuilder {
         self.inner.get_overwrite()
     }
     /// <p>A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
-    pub fn allowed_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allowed_pattern(input.into());
         self
     }
     /// <p>A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
-    pub fn set_allowed_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_allowed_pattern(input);
         self
     }
@@ -315,10 +297,7 @@ impl PutParameterFluentBuilder {
     /// </ul> <note>
     /// <p>To add tags to an existing Systems Manager parameter, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -42,18 +42,14 @@ impl DescribeExportTasksInput {
 }
 impl DescribeExportTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
-        crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
+        crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExportTasksInputBuilder {
     pub(crate) export_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
@@ -73,10 +69,7 @@ impl DescribeExportTasksInputBuilder {
         self
     }
     /// <p>One or more unique identifiers used to query the status of an export request.</p>
-    pub fn set_export_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_export_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.export_ids = input;
         self
     }
@@ -102,10 +95,7 @@ impl DescribeExportTasksInputBuilder {
     /// <ul>
     /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -113,9 +103,7 @@ impl DescribeExportTasksInputBuilder {
     /// <ul>
     /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
         &self.filters
     }
     /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
@@ -149,17 +137,13 @@ impl DescribeExportTasksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_export_tasks::DescribeExportTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_export_tasks::DescribeExportTasksInput {
-                export_ids: self.export_ids,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_export_tasks::DescribeExportTasksInput {
+            export_ids: self.export_ids,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

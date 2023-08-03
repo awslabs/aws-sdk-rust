@@ -26,7 +26,7 @@ impl DeleteAccessLogSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccessLogSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder,
+    inner: crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder,
 }
 impl DeleteAccessLogSubscriptionFluentBuilder {
     /// Creates a new `DeleteAccessLogSubscription`.
@@ -37,7 +37,7 @@ impl DeleteAccessLogSubscriptionFluentBuilder {
         }
     }
     /// Access the DeleteAccessLogSubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteAccessLogSubscriptionFluentBuilder {
             crate::operation::delete_access_log_subscription::DeleteAccessLogSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteAccessLogSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteAccessLogSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteAccessLogSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl DeleteAccessLogSubscriptionFluentBuilder {
             crate::operation::delete_access_log_subscription::DeleteAccessLogSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_log_subscription_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_log_subscription_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn set_access_log_subscription_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_log_subscription_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_log_subscription_identifier(input);
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn get_access_log_subscription_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_access_log_subscription_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_log_subscription_identifier()
     }
 }

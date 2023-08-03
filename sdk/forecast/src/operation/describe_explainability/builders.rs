@@ -37,10 +37,7 @@ impl DescribeExplainabilityFluentBuilder {
         }
     }
     /// Access the DescribeExplainability as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_explainability::builders::DescribeExplainabilityInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_explainability::builders::DescribeExplainabilityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeExplainabilityFluentBuilder {
             crate::operation::describe_explainability::DescribeExplainability,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_explainability::DescribeExplainabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_explainability::DescribeExplainabilityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeExplainabilityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeExplainabilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_explainability::DescribeExplainabilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_explainability::DescribeExplainabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_explainability::DescribeExplainabilityError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeExplainabilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_explainability::DescribeExplainabilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_explainability::DescribeExplainabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_explainability::DescribeExplainabilityError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeExplainabilityFluentBuilder {
             crate::operation::describe_explainability::DescribeExplainability,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_explainability::DescribeExplainabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_explainability::DescribeExplainabilityError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
-    pub fn explainability_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.explainability_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
-    pub fn set_explainability_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_explainability_arn(input);
         self
     }

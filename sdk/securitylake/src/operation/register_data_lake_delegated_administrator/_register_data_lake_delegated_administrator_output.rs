@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterDataLakeDelegatedAdministrato
 }
 impl RegisterDataLakeDelegatedAdministratorOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDataLakeDelegatedAdministratorOutput`](crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorOutput).
-    pub fn builder() -> crate::operation::register_data_lake_delegated_administrator::builders::RegisterDataLakeDelegatedAdministratorOutputBuilder{
+    pub fn builder() -> crate::operation::register_data_lake_delegated_administrator::builders::RegisterDataLakeDelegatedAdministratorOutputBuilder {
         crate::operation::register_data_lake_delegated_administrator::builders::RegisterDataLakeDelegatedAdministratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterDataLakeDelegatedAdministratorOutput`](crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterDataLakeDelegatedAdministratorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl RegisterDataLakeDelegatedAdministratorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterDataLakeDelegatedAdministratorOutput`](crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorOutput).
-    pub fn build(self) -> crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorOutput{
+    pub fn build(self) -> crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorOutput {
         crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorOutput {
             _request_id: self._request_id,
         }

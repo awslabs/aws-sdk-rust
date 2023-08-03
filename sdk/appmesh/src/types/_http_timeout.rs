@@ -30,9 +30,7 @@ impl HttpTimeout {
 
 /// A builder for [`HttpTimeout`](crate::types::HttpTimeout).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpTimeoutBuilder {
     pub(crate) per_request: ::std::option::Option<crate::types::Duration>,
     pub(crate) idle: ::std::option::Option<crate::types::Duration>,

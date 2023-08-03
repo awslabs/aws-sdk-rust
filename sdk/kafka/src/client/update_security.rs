@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`cluster_arn(Option<String>)`](crate::operation::update_security::UpdateSecurityOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::operation::update_security::UpdateSecurityOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     /// - On failure, responds with [`SdkError<UpdateSecurityError>`](crate::operation::update_security::UpdateSecurityError)
-    pub fn update_security(
-        &self,
-    ) -> crate::operation::update_security::builders::UpdateSecurityFluentBuilder {
-        crate::operation::update_security::builders::UpdateSecurityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_security(&self) -> crate::operation::update_security::builders::UpdateSecurityFluentBuilder {
+        crate::operation::update_security::builders::UpdateSecurityFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,7 +30,7 @@ impl PutConfigurationRecorderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConfigurationRecorderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderInputBuilder,
+    inner: crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderInputBuilder,
 }
 impl PutConfigurationRecorderFluentBuilder {
     /// Creates a new `PutConfigurationRecorder`.
@@ -41,10 +41,7 @@ impl PutConfigurationRecorderFluentBuilder {
         }
     }
     /// Access the PutConfigurationRecorder as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl PutConfigurationRecorderFluentBuilder {
             crate::operation::put_configuration_recorder::PutConfigurationRecorder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_recorder::PutConfigurationRecorderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_recorder::PutConfigurationRecorderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl PutConfigurationRecorderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl PutConfigurationRecorderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_recorder::PutConfigurationRecorderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_recorder::PutConfigurationRecorderError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl PutConfigurationRecorderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_recorder::PutConfigurationRecorderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_recorder::PutConfigurationRecorderError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl PutConfigurationRecorderFluentBuilder {
             crate::operation::put_configuration_recorder::PutConfigurationRecorder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_recorder::PutConfigurationRecorderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_recorder::PutConfigurationRecorderError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +119,12 @@ impl PutConfigurationRecorderFluentBuilder {
         self
     }
     /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
-    pub fn set_configuration_recorder(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationRecorder>,
-    ) -> Self {
+    pub fn set_configuration_recorder(mut self, input: ::std::option::Option<crate::types::ConfigurationRecorder>) -> Self {
         self.inner = self.inner.set_configuration_recorder(input);
         self
     }
     /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
-    pub fn get_configuration_recorder(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationRecorder> {
+    pub fn get_configuration_recorder(&self) -> &::std::option::Option<crate::types::ConfigurationRecorder> {
         self.inner.get_configuration_recorder()
     }
 }

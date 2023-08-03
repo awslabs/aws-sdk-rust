@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput::next_token): <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`scheduled_instance_set(Option<Vec<ScheduledInstance>>)`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput::scheduled_instance_set): <p>Information about the Scheduled Instances.</p>
     /// - On failure, responds with [`SdkError<DescribeScheduledInstancesError>`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesError)
-    pub fn describe_scheduled_instances(&self) -> crate::operation::describe_scheduled_instances::builders::DescribeScheduledInstancesFluentBuilder{
+    pub fn describe_scheduled_instances(&self) -> crate::operation::describe_scheduled_instances::builders::DescribeScheduledInstancesFluentBuilder {
         crate::operation::describe_scheduled_instances::builders::DescribeScheduledInstancesFluentBuilder::new(self.handle.clone())
     }
 }

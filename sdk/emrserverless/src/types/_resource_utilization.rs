@@ -37,9 +37,7 @@ impl ResourceUtilization {
 
 /// A builder for [`ResourceUtilization`](crate::types::ResourceUtilization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceUtilizationBuilder {
     pub(crate) v_cpu_hour: ::std::option::Option<f64>,
     pub(crate) memory_gb_hour: ::std::option::Option<f64>,

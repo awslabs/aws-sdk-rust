@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`RecordActivityTaskHeartbeatOutput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput) with field(s):
     ///   - [`cancel_requested(bool)`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput::cancel_requested): <p>Set to <code>true</code> if cancellation of the task is requested.</p>
     /// - On failure, responds with [`SdkError<RecordActivityTaskHeartbeatError>`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatError)
-    pub fn record_activity_task_heartbeat(&self) -> crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatFluentBuilder{
+    pub fn record_activity_task_heartbeat(
+        &self,
+    ) -> crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatFluentBuilder {
         crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatFluentBuilder::new(self.handle.clone())
     }
 }

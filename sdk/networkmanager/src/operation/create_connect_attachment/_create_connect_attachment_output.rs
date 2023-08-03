@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateConnectAttachmentOutput {
 }
 impl CreateConnectAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectAttachmentOutput`](crate::operation::create_connect_attachment::CreateConnectAttachmentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_connect_attachment::builders::CreateConnectAttachmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connect_attachment::builders::CreateConnectAttachmentOutputBuilder {
         crate::operation::create_connect_attachment::builders::CreateConnectAttachmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectAttachmentOutput`](crate::operation::create_connect_attachment::CreateConnectAttachmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectAttachmentOutputBuilder {
     pub(crate) connect_attachment: ::std::option::Option<crate::types::ConnectAttachment>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateConnectAttachmentOutputBuilder {
         self
     }
     /// <p>The response to a Connect attachment request.</p>
-    pub fn set_connect_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectAttachment>,
-    ) -> Self {
+    pub fn set_connect_attachment(mut self, input: ::std::option::Option<crate::types::ConnectAttachment>) -> Self {
         self.connect_attachment = input;
         self
     }
     /// <p>The response to a Connect attachment request.</p>
-    pub fn get_connect_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectAttachment> {
+    pub fn get_connect_attachment(&self) -> &::std::option::Option<crate::types::ConnectAttachment> {
         &self.connect_attachment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateConnectAttachmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateConnectAttachmentOutput`](crate::operation::create_connect_attachment::CreateConnectAttachmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_connect_attachment::CreateConnectAttachmentOutput {
+    pub fn build(self) -> crate::operation::create_connect_attachment::CreateConnectAttachmentOutput {
         crate::operation::create_connect_attachment::CreateConnectAttachmentOutput {
             connect_attachment: self.connect_attachment,
             _request_id: self._request_id,

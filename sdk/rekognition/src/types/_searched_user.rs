@@ -23,9 +23,7 @@ impl SearchedUser {
 
 /// A builder for [`SearchedUser`](crate::types::SearchedUser).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchedUserBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl SearchedUserBuilder {
     }
     /// Consumes the builder and constructs a [`SearchedUser`](crate::types::SearchedUser).
     pub fn build(self) -> crate::types::SearchedUser {
-        crate::types::SearchedUser {
-            user_id: self.user_id,
-        }
+        crate::types::SearchedUser { user_id: self.user_id }
     }
 }

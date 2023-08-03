@@ -26,7 +26,7 @@ impl DeleteFleetAdvisorDatabasesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFleetAdvisorDatabasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesInputBuilder,
+    inner: crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesInputBuilder,
 }
 impl DeleteFleetAdvisorDatabasesFluentBuilder {
     /// Creates a new `DeleteFleetAdvisorDatabases`.
@@ -37,7 +37,7 @@ impl DeleteFleetAdvisorDatabasesFluentBuilder {
         }
     }
     /// Access the DeleteFleetAdvisorDatabases as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteFleetAdvisorDatabasesFluentBuilder {
             crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteFleetAdvisorDatabasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteFleetAdvisorDatabasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteFleetAdvisorDatabasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteFleetAdvisorDatabasesFluentBuilder {
             crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +119,12 @@ impl DeleteFleetAdvisorDatabasesFluentBuilder {
         self
     }
     /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-    pub fn set_database_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_database_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_database_ids(input);
         self
     }
     /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-    pub fn get_database_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_database_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_database_ids()
     }
 }

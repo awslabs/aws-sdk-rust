@@ -46,18 +46,14 @@ impl CreateDbSecurityGroupInput {
 }
 impl CreateDbSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateDbSecurityGroupInput`](crate::operation::create_db_security_group::CreateDbSecurityGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_db_security_group::builders::CreateDbSecurityGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_db_security_group::builders::CreateDbSecurityGroupInputBuilder {
         crate::operation::create_db_security_group::builders::CreateDbSecurityGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbSecurityGroupInput`](crate::operation::create_db_security_group::CreateDbSecurityGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbSecurityGroupInputBuilder {
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_security_group_description: ::std::option::Option<::std::string::String>,
@@ -73,10 +69,7 @@ impl CreateDbSecurityGroupInputBuilder {
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
     /// <p>Example: <code>mysecuritygroup</code> </p>
-    pub fn db_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -89,10 +82,7 @@ impl CreateDbSecurityGroupInputBuilder {
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
     /// <p>Example: <code>mysecuritygroup</code> </p>
-    pub fn set_db_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_name = input;
         self
     }
@@ -109,25 +99,17 @@ impl CreateDbSecurityGroupInputBuilder {
         &self.db_security_group_name
     }
     /// <p>The description for the DB security group.</p>
-    pub fn db_security_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the DB security group.</p>
-    pub fn set_db_security_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_description = input;
         self
     }
     /// <p>The description for the DB security group.</p>
-    pub fn get_db_security_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_security_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_security_group_description
     }
     /// Appends an item to `tags`.
@@ -142,10 +124,7 @@ impl CreateDbSecurityGroupInputBuilder {
         self
     }
     /// <p>Tags to assign to the DB security group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -156,16 +135,12 @@ impl CreateDbSecurityGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbSecurityGroupInput`](crate::operation::create_db_security_group::CreateDbSecurityGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_security_group::CreateDbSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_db_security_group::CreateDbSecurityGroupInput {
-                db_security_group_name: self.db_security_group_name,
-                db_security_group_description: self.db_security_group_description,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_db_security_group::CreateDbSecurityGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_db_security_group::CreateDbSecurityGroupInput {
+            db_security_group_name: self.db_security_group_name,
+            db_security_group_description: self.db_security_group_description,
+            tags: self.tags,
+        })
     }
 }

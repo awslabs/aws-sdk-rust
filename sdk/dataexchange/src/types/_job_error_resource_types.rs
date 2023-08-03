@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum JobErrorResourceTypes {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for JobErrorResourceTypes {
             "ASSET" => JobErrorResourceTypes::Asset,
             "DATA_SET" => JobErrorResourceTypes::DataSet,
             "REVISION" => JobErrorResourceTypes::Revision,
-            other => JobErrorResourceTypes::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => JobErrorResourceTypes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

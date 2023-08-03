@@ -42,21 +42,16 @@ impl ::aws_http::request_id::RequestId for ListTemplateAliasesOutput {
 }
 impl ListTemplateAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateAliasesOutput`](crate::operation::list_template_aliases::ListTemplateAliasesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_template_aliases::builders::ListTemplateAliasesOutputBuilder {
-        crate::operation::list_template_aliases::builders::ListTemplateAliasesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_template_aliases::builders::ListTemplateAliasesOutputBuilder {
+        crate::operation::list_template_aliases::builders::ListTemplateAliasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTemplateAliasesOutput`](crate::operation::list_template_aliases::ListTemplateAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplateAliasesOutputBuilder {
-    pub(crate) template_alias_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>>,
+    pub(crate) template_alias_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -75,17 +70,12 @@ impl ListTemplateAliasesOutputBuilder {
         self
     }
     /// <p>A structure containing the list of the template's aliases.</p>
-    pub fn set_template_alias_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>>,
-    ) -> Self {
+    pub fn set_template_alias_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>>) -> Self {
         self.template_alias_list = input;
         self
     }
     /// <p>A structure containing the list of the template's aliases.</p>
-    pub fn get_template_alias_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>> {
+    pub fn get_template_alias_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>> {
         &self.template_alias_list
     }
     /// <p>The HTTP status of the request.</p>

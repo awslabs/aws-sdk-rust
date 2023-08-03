@@ -27,10 +27,7 @@ pub fn ser_response_headers_policy_xss_protection(
 
 pub fn de_response_headers_policy_xss_protection(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ResponseHeadersPolicyXssProtection,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ResponseHeadersPolicyXssProtection, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyXssProtection::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`images(Option<Vec<Image>>)`](crate::operation::describe_images::DescribeImagesOutput::images): <p>Information about the images.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_images::DescribeImagesOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeImagesError>`](crate::operation::describe_images::DescribeImagesError)
-    pub fn describe_images(
-        &self,
-    ) -> crate::operation::describe_images::builders::DescribeImagesFluentBuilder {
-        crate::operation::describe_images::builders::DescribeImagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_images(&self) -> crate::operation::describe_images::builders::DescribeImagesFluentBuilder {
+        crate::operation::describe_images::builders::DescribeImagesFluentBuilder::new(self.handle.clone())
     }
 }

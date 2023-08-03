@@ -114,16 +114,13 @@ impl RequestInspectionAcfp {
 
 /// A builder for [`RequestInspectionAcfp`](crate::types::RequestInspectionAcfp).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestInspectionAcfpBuilder {
     pub(crate) payload_type: ::std::option::Option<crate::types::PayloadType>,
     pub(crate) username_field: ::std::option::Option<crate::types::UsernameField>,
     pub(crate) password_field: ::std::option::Option<crate::types::PasswordField>,
     pub(crate) email_field: ::std::option::Option<crate::types::EmailField>,
-    pub(crate) phone_number_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>>,
+    pub(crate) phone_number_fields: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>>,
     pub(crate) address_fields: ::std::option::Option<::std::vec::Vec<crate::types::AddressField>>,
 }
 impl RequestInspectionAcfpBuilder {
@@ -133,10 +130,7 @@ impl RequestInspectionAcfpBuilder {
         self
     }
     /// <p>The payload type for your account creation endpoint, either JSON or form encoded.</p>
-    pub fn set_payload_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PayloadType>,
-    ) -> Self {
+    pub fn set_payload_type(mut self, input: ::std::option::Option<crate::types::PayloadType>) -> Self {
         self.payload_type = input;
         self
     }
@@ -160,10 +154,7 @@ impl RequestInspectionAcfpBuilder {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>. </p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code> </p> </li>
     /// </ul>
-    pub fn set_username_field(
-        mut self,
-        input: ::std::option::Option<crate::types::UsernameField>,
-    ) -> Self {
+    pub fn set_username_field(mut self, input: ::std::option::Option<crate::types::UsernameField>) -> Self {
         self.username_field = input;
         self
     }
@@ -192,10 +183,7 @@ impl RequestInspectionAcfpBuilder {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p> </li>
     /// </ul>
-    pub fn set_password_field(
-        mut self,
-        input: ::std::option::Option<crate::types::PasswordField>,
-    ) -> Self {
+    pub fn set_password_field(mut self, input: ::std::option::Option<crate::types::PasswordField>) -> Self {
         self.password_field = input;
         self
     }
@@ -224,10 +212,7 @@ impl RequestInspectionAcfpBuilder {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "email": "THE_EMAIL" } }</code>, the email field specification is <code>/form/email</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>email1</code>, the email field specification is <code>email1</code>.</p> </li>
     /// </ul>
-    pub fn set_email_field(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailField>,
-    ) -> Self {
+    pub fn set_email_field(mut self, input: ::std::option::Option<crate::types::EmailField>) -> Self {
         self.email_field = input;
         self
     }
@@ -264,10 +249,7 @@ impl RequestInspectionAcfpBuilder {
     /// <li> <p>For JSON payloads, specify the field identifiers in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "primaryphoneline1": "THE_PHONE1", "primaryphoneline2": "THE_PHONE2", "primaryphoneline3": "THE_PHONE3" } }</code>, the phone number field identifiers are <code>/form/primaryphoneline1</code>, <code>/form/primaryphoneline2</code>, and <code>/form/primaryphoneline3</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>. </p> </li>
     /// </ul>
-    pub fn set_phone_number_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>>,
-    ) -> Self {
+    pub fn set_phone_number_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>>) -> Self {
         self.phone_number_fields = input;
         self
     }
@@ -278,9 +260,7 @@ impl RequestInspectionAcfpBuilder {
     /// <li> <p>For JSON payloads, specify the field identifiers in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "primaryphoneline1": "THE_PHONE1", "primaryphoneline2": "THE_PHONE2", "primaryphoneline3": "THE_PHONE3" } }</code>, the phone number field identifiers are <code>/form/primaryphoneline1</code>, <code>/form/primaryphoneline2</code>, and <code>/form/primaryphoneline3</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>. </p> </li>
     /// </ul>
-    pub fn get_phone_number_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>> {
+    pub fn get_phone_number_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>> {
         &self.phone_number_fields
     }
     /// Appends an item to `address_fields`.
@@ -307,10 +287,7 @@ impl RequestInspectionAcfpBuilder {
     /// <li> <p>For JSON payloads, specify the field identifiers in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "primaryaddressline1": "THE_ADDRESS1", "primaryaddressline2": "THE_ADDRESS2", "primaryaddressline3": "THE_ADDRESS3" } }</code>, the address field idenfiers are <code>/form/primaryaddressline1</code>, <code>/form/primaryaddressline2</code>, and <code>/form/primaryaddressline3</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>. </p> </li>
     /// </ul>
-    pub fn set_address_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddressField>>,
-    ) -> Self {
+    pub fn set_address_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddressField>>) -> Self {
         self.address_fields = input;
         self
     }
@@ -321,9 +298,7 @@ impl RequestInspectionAcfpBuilder {
     /// <li> <p>For JSON payloads, specify the field identifiers in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "primaryaddressline1": "THE_ADDRESS1", "primaryaddressline2": "THE_ADDRESS2", "primaryaddressline3": "THE_ADDRESS3" } }</code>, the address field idenfiers are <code>/form/primaryaddressline1</code>, <code>/form/primaryaddressline2</code>, and <code>/form/primaryaddressline3</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>. </p> </li>
     /// </ul>
-    pub fn get_address_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddressField>> {
+    pub fn get_address_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddressField>> {
         &self.address_fields
     }
     /// Consumes the builder and constructs a [`RequestInspectionAcfp`](crate::types::RequestInspectionAcfp).

@@ -65,9 +65,7 @@ impl RoleAliasDescription {
 
 /// A builder for [`RoleAliasDescription`](crate::types::RoleAliasDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoleAliasDescriptionBuilder {
     pub(crate) role_alias: ::std::option::Option<::std::string::String>,
     pub(crate) role_alias_arn: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl RoleAliasDescriptionBuilder {
         &self.role_alias
     }
     /// <p>The ARN of the role alias.</p>
-    pub fn role_alias_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn role_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_alias_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role alias.</p>
-    pub fn set_role_alias_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_role_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_alias_arn = input;
         self
     }
@@ -160,10 +152,7 @@ impl RoleAliasDescriptionBuilder {
         self
     }
     /// <p>The UNIX timestamp of when the role alias was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -177,10 +166,7 @@ impl RoleAliasDescriptionBuilder {
         self
     }
     /// <p>The UNIX timestamp of when the role alias was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }

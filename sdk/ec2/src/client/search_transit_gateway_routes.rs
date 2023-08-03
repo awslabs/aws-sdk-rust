@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`routes(Option<Vec<TransitGatewayRoute>>)`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput::routes): <p>Information about the routes.</p>
     ///   - [`additional_routes_available(Option<bool>)`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput::additional_routes_available): <p>Indicates whether there are additional routes available.</p>
     /// - On failure, responds with [`SdkError<SearchTransitGatewayRoutesError>`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError)
-    pub fn search_transit_gateway_routes(&self) -> crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesFluentBuilder{
+    pub fn search_transit_gateway_routes(
+        &self,
+    ) -> crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesFluentBuilder {
         crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesFluentBuilder::new(self.handle.clone())
     }
 }

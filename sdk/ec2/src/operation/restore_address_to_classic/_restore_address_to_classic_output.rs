@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for RestoreAddressToClassicOutput {
 }
 impl RestoreAddressToClassicOutput {
     /// Creates a new builder-style object to manufacture [`RestoreAddressToClassicOutput`](crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput).
-    pub fn builder(
-    ) -> crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder
-    {
+    pub fn builder() -> crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder {
         crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreAddressToClassicOutput`](crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreAddressToClassicOutputBuilder {
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
@@ -84,9 +80,7 @@ impl RestoreAddressToClassicOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreAddressToClassicOutput`](crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput {
+    pub fn build(self) -> crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput {
         crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput {
             public_ip: self.public_ip,
             status: self.status,

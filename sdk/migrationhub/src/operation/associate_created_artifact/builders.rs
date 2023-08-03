@@ -31,7 +31,7 @@ impl AssociateCreatedArtifactInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateCreatedArtifactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactInputBuilder,
+    inner: crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactInputBuilder,
 }
 impl AssociateCreatedArtifactFluentBuilder {
     /// Creates a new `AssociateCreatedArtifact`.
@@ -42,10 +42,7 @@ impl AssociateCreatedArtifactFluentBuilder {
         }
     }
     /// Access the AssociateCreatedArtifact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl AssociateCreatedArtifactFluentBuilder {
             crate::operation::associate_created_artifact::AssociateCreatedArtifact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_created_artifact::AssociateCreatedArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_created_artifact::AssociateCreatedArtifactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl AssociateCreatedArtifactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl AssociateCreatedArtifactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_created_artifact::AssociateCreatedArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_created_artifact::AssociateCreatedArtifactError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl AssociateCreatedArtifactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_created_artifact::AssociateCreatedArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_created_artifact::AssociateCreatedArtifactError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +110,17 @@ impl AssociateCreatedArtifactFluentBuilder {
             crate::operation::associate_created_artifact::AssociateCreatedArtifact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_created_artifact::AssociateCreatedArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_created_artifact::AssociateCreatedArtifactError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
@@ -149,18 +129,12 @@ impl AssociateCreatedArtifactFluentBuilder {
         self.inner.get_progress_update_stream()
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }
@@ -174,10 +148,7 @@ impl AssociateCreatedArtifactFluentBuilder {
         self
     }
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
-    pub fn set_created_artifact(
-        mut self,
-        input: ::std::option::Option<crate::types::CreatedArtifact>,
-    ) -> Self {
+    pub fn set_created_artifact(mut self, input: ::std::option::Option<crate::types::CreatedArtifact>) -> Self {
         self.inner = self.inner.set_created_artifact(input);
         self
     }

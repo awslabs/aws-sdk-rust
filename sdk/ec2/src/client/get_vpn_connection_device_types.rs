@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`vpn_connection_device_types(Option<Vec<VpnConnectionDeviceType>>)`](crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput::vpn_connection_device_types): <p>List of customer gateway devices that have a sample configuration file available for use.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput::next_token): <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetVpnConnectionDeviceTypesError>`](crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError)
-    pub fn get_vpn_connection_device_types(&self) -> crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesFluentBuilder{
+    pub fn get_vpn_connection_device_types(
+        &self,
+    ) -> crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesFluentBuilder {
         crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,17 +30,14 @@ impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
 }
 impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
     /// Creates a new builder-style object to manufacture [`DisassociateClientDeviceFromCoreDeviceErrorEntry`](crate::types::DisassociateClientDeviceFromCoreDeviceErrorEntry).
-    pub fn builder(
-    ) -> crate::types::builders::DisassociateClientDeviceFromCoreDeviceErrorEntryBuilder {
+    pub fn builder() -> crate::types::builders::DisassociateClientDeviceFromCoreDeviceErrorEntryBuilder {
         crate::types::builders::DisassociateClientDeviceFromCoreDeviceErrorEntryBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateClientDeviceFromCoreDeviceErrorEntry`](crate::types::DisassociateClientDeviceFromCoreDeviceErrorEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateClientDeviceFromCoreDeviceErrorEntryBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

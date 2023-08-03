@@ -29,18 +29,14 @@ impl ListAlarmModelVersionsInput {
 }
 impl ListAlarmModelVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListAlarmModelVersionsInput`](crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsInputBuilder {
         crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAlarmModelVersionsInput`](crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlarmModelVersionsInputBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct ListAlarmModelVersionsInputBuilder {
 }
 impl ListAlarmModelVersionsInputBuilder {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_name = input;
         self
     }
@@ -102,12 +92,10 @@ impl ListAlarmModelVersionsInputBuilder {
         crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput {
-                alarm_model_name: self.alarm_model_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput {
+            alarm_model_name: self.alarm_model_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

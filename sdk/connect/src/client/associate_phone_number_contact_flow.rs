@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`contact_flow_id(impl ::std::convert::Into<String>)`](crate::operation::associate_phone_number_contact_flow::builders::AssociatePhoneNumberContactFlowFluentBuilder::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::operation::associate_phone_number_contact_flow::builders::AssociatePhoneNumberContactFlowFluentBuilder::set_contact_flow_id): <p>The identifier of the flow.</p>
     /// - On success, responds with [`AssociatePhoneNumberContactFlowOutput`](crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowOutput)
     /// - On failure, responds with [`SdkError<AssociatePhoneNumberContactFlowError>`](crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError)
-    pub fn associate_phone_number_contact_flow(&self) -> crate::operation::associate_phone_number_contact_flow::builders::AssociatePhoneNumberContactFlowFluentBuilder{
+    pub fn associate_phone_number_contact_flow(
+        &self,
+    ) -> crate::operation::associate_phone_number_contact_flow::builders::AssociatePhoneNumberContactFlowFluentBuilder {
         crate::operation::associate_phone_number_contact_flow::builders::AssociatePhoneNumberContactFlowFluentBuilder::new(self.handle.clone())
     }
 }

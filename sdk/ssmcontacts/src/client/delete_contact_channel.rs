@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`contact_channel_id(impl ::std::convert::Into<String>)`](crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     /// - On success, responds with [`DeleteContactChannelOutput`](crate::operation::delete_contact_channel::DeleteContactChannelOutput)
     /// - On failure, responds with [`SdkError<DeleteContactChannelError>`](crate::operation::delete_contact_channel::DeleteContactChannelError)
-    pub fn delete_contact_channel(
-        &self,
-    ) -> crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder {
-        crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_contact_channel(&self) -> crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder {
+        crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder::new(self.handle.clone())
     }
 }

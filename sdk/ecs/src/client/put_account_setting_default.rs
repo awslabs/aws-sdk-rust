@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutAccountSettingDefaultOutput`](crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput) with field(s):
     ///   - [`setting(Option<Setting>)`](crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput::setting): <p>The current setting for a resource.</p>
     /// - On failure, responds with [`SdkError<PutAccountSettingDefaultError>`](crate::operation::put_account_setting_default::PutAccountSettingDefaultError)
-    pub fn put_account_setting_default(&self) -> crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultFluentBuilder{
+    pub fn put_account_setting_default(&self) -> crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultFluentBuilder {
         crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultFluentBuilder::new(self.handle.clone())
     }
 }

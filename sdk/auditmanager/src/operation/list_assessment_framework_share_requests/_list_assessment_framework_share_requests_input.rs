@@ -29,16 +29,14 @@ impl ListAssessmentFrameworkShareRequestsInput {
 }
 impl ListAssessmentFrameworkShareRequestsInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworkShareRequestsInput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput).
-    pub fn builder() -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder{
+    pub fn builder() -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder {
         crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentFrameworkShareRequestsInput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentFrameworkShareRequestsInputBuilder {
     pub(crate) request_type: ::std::option::Option<crate::types::ShareRequestType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl ListAssessmentFrameworkShareRequestsInputBuilder {
         self
     }
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
-    pub fn set_request_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareRequestType>,
-    ) -> Self {
+    pub fn set_request_type(mut self, input: ::std::option::Option<crate::types::ShareRequestType>) -> Self {
         self.request_type = input;
         self
     }
@@ -91,16 +86,18 @@ impl ListAssessmentFrameworkShareRequestsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssessmentFrameworkShareRequestsInput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput {
-                request_type: self.request_type
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                request_type: self.request_type,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

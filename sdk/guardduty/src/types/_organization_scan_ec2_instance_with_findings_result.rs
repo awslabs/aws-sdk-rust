@@ -10,25 +10,20 @@ pub struct OrganizationScanEc2InstanceWithFindingsResult {
 }
 impl OrganizationScanEc2InstanceWithFindingsResult {
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-    pub fn ebs_volumes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationEbsVolumesResult> {
+    pub fn ebs_volumes(&self) -> ::std::option::Option<&crate::types::OrganizationEbsVolumesResult> {
         self.ebs_volumes.as_ref()
     }
 }
 impl OrganizationScanEc2InstanceWithFindingsResult {
     /// Creates a new builder-style object to manufacture [`OrganizationScanEc2InstanceWithFindingsResult`](crate::types::OrganizationScanEc2InstanceWithFindingsResult).
-    pub fn builder() -> crate::types::builders::OrganizationScanEc2InstanceWithFindingsResultBuilder
-    {
+    pub fn builder() -> crate::types::builders::OrganizationScanEc2InstanceWithFindingsResultBuilder {
         crate::types::builders::OrganizationScanEc2InstanceWithFindingsResultBuilder::default()
     }
 }
 
 /// A builder for [`OrganizationScanEc2InstanceWithFindingsResult`](crate::types::OrganizationScanEc2InstanceWithFindingsResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationScanEc2InstanceWithFindingsResultBuilder {
     pub(crate) ebs_volumes: ::std::option::Option<crate::types::OrganizationEbsVolumesResult>,
 }
@@ -39,17 +34,12 @@ impl OrganizationScanEc2InstanceWithFindingsResultBuilder {
         self
     }
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-    pub fn set_ebs_volumes(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationEbsVolumesResult>,
-    ) -> Self {
+    pub fn set_ebs_volumes(mut self, input: ::std::option::Option<crate::types::OrganizationEbsVolumesResult>) -> Self {
         self.ebs_volumes = input;
         self
     }
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-    pub fn get_ebs_volumes(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationEbsVolumesResult> {
+    pub fn get_ebs_volumes(&self) -> &::std::option::Option<crate::types::OrganizationEbsVolumesResult> {
         &self.ebs_volumes
     }
     /// Consumes the builder and constructs a [`OrganizationScanEc2InstanceWithFindingsResult`](crate::types::OrganizationScanEc2InstanceWithFindingsResult).

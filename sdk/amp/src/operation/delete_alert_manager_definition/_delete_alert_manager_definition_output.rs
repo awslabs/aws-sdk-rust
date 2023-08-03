@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAlertManagerDefinitionOutput {
 }
 impl DeleteAlertManagerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAlertManagerDefinitionOutput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionOutput).
-    pub fn builder() -> crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionOutputBuilder {
         crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAlertManagerDefinitionOutput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlertManagerDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteAlertManagerDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAlertManagerDefinitionOutput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionOutput {
+    pub fn build(self) -> crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionOutput {
         crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionOutput {
             _request_id: self._request_id,
         }

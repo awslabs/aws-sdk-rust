@@ -11,11 +11,9 @@ pub fn ser_update_participant_role_config_channel_info(
             object_1.finish();
         }
         crate::types::UpdateParticipantRoleConfigChannelInfo::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "UpdateParticipantRoleConfigChannelInfo",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "UpdateParticipantRoleConfigChannelInfo",
+            ))
         }
     }
     Ok(())

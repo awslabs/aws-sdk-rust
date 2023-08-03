@@ -59,17 +59,14 @@ impl CreateExportTaskInput {
 }
 impl CreateExportTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateExportTaskInput`](crate::operation::create_export_task::CreateExportTaskInput).
-    pub fn builder() -> crate::operation::create_export_task::builders::CreateExportTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_export_task::builders::CreateExportTaskInputBuilder {
         crate::operation::create_export_task::builders::CreateExportTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExportTaskInput`](crate::operation::create_export_task::CreateExportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExportTaskInputBuilder {
     pub(crate) task_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
@@ -95,18 +92,12 @@ impl CreateExportTaskInputBuilder {
         &self.task_name
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -115,18 +106,12 @@ impl CreateExportTaskInputBuilder {
         &self.log_group_name
     }
     /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn log_stream_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn set_log_stream_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream_name_prefix = input;
         self
     }
@@ -180,18 +165,12 @@ impl CreateExportTaskInputBuilder {
         &self.destination
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
-    pub fn destination_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
-    pub fn set_destination_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix = input;
         self
     }
@@ -202,20 +181,15 @@ impl CreateExportTaskInputBuilder {
     /// Consumes the builder and constructs a [`CreateExportTaskInput`](crate::operation::create_export_task::CreateExportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_export_task::CreateExportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_export_task::CreateExportTaskInput {
-                task_name: self.task_name,
-                log_group_name: self.log_group_name,
-                log_stream_name_prefix: self.log_stream_name_prefix,
-                from: self.from,
-                to: self.to,
-                destination: self.destination,
-                destination_prefix: self.destination_prefix,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_export_task::CreateExportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_export_task::CreateExportTaskInput {
+            task_name: self.task_name,
+            log_group_name: self.log_group_name,
+            log_stream_name_prefix: self.log_stream_name_prefix,
+            from: self.from,
+            to: self.to,
+            destination: self.destination,
+            destination_prefix: self.destination_prefix,
+        })
     }
 }

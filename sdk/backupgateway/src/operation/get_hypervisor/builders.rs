@@ -10,10 +10,7 @@ impl GetHypervisorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_hypervisor::GetHypervisorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_hypervisor::GetHypervisorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_hypervisor::GetHypervisorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_hypervisor();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetHypervisorFluentBuilder {
         }
     }
     /// Access the GetHypervisor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_hypervisor::builders::GetHypervisorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_hypervisor::builders::GetHypervisorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetHypervisorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetHypervisorFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hypervisor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hypervisor_arn(input);
         self
     }

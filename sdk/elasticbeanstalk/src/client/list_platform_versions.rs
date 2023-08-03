@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`platform_summary_list(Option<Vec<PlatformSummary>>)`](crate::operation::list_platform_versions::ListPlatformVersionsOutput::platform_summary_list): <p>Summary information about the platform versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_platform_versions::ListPlatformVersionsOutput::next_token): <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
     /// - On failure, responds with [`SdkError<ListPlatformVersionsError>`](crate::operation::list_platform_versions::ListPlatformVersionsError)
-    pub fn list_platform_versions(
-        &self,
-    ) -> crate::operation::list_platform_versions::builders::ListPlatformVersionsFluentBuilder {
-        crate::operation::list_platform_versions::builders::ListPlatformVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_platform_versions(&self) -> crate::operation::list_platform_versions::builders::ListPlatformVersionsFluentBuilder {
+        crate::operation::list_platform_versions::builders::ListPlatformVersionsFluentBuilder::new(self.handle.clone())
     }
 }

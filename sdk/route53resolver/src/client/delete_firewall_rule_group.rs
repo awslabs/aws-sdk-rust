@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteFirewallRuleGroupOutput`](crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupOutput) with field(s):
     ///   - [`firewall_rule_group(Option<FirewallRuleGroup>)`](crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupOutput::firewall_rule_group): <p>A collection of rules used to filter DNS network traffic. </p>
     /// - On failure, responds with [`SdkError<DeleteFirewallRuleGroupError>`](crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError)
-    pub fn delete_firewall_rule_group(
-        &self,
-    ) -> crate::operation::delete_firewall_rule_group::builders::DeleteFirewallRuleGroupFluentBuilder
-    {
+    pub fn delete_firewall_rule_group(&self) -> crate::operation::delete_firewall_rule_group::builders::DeleteFirewallRuleGroupFluentBuilder {
         crate::operation::delete_firewall_rule_group::builders::DeleteFirewallRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateFeatureOutput`](crate::operation::update_feature::UpdateFeatureOutput) with field(s):
     ///   - [`feature(Option<Feature>)`](crate::operation::update_feature::UpdateFeatureOutput::feature): <p>A structure that contains information about the updated feature.</p>
     /// - On failure, responds with [`SdkError<UpdateFeatureError>`](crate::operation::update_feature::UpdateFeatureError)
-    pub fn update_feature(
-        &self,
-    ) -> crate::operation::update_feature::builders::UpdateFeatureFluentBuilder {
-        crate::operation::update_feature::builders::UpdateFeatureFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_feature(&self) -> crate::operation::update_feature::builders::UpdateFeatureFluentBuilder {
+        crate::operation::update_feature::builders::UpdateFeatureFluentBuilder::new(self.handle.clone())
     }
 }

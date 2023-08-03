@@ -7,10 +7,7 @@ pub fn ser_select_parameters(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.input_serialization {
         let inner_writer = scope.start_el("InputSerialization");
-        crate::protocol_serde::shape_input_serialization::ser_input_serialization(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_input_serialization::ser_input_serialization(var_1, inner_writer)?
     }
     if let Some(var_2) = &input.expression_type {
         let mut inner_writer = scope.start_el("ExpressionType").finish();
@@ -22,10 +19,7 @@ pub fn ser_select_parameters(
     }
     if let Some(var_4) = &input.output_serialization {
         let inner_writer = scope.start_el("OutputSerialization");
-        crate::protocol_serde::shape_output_serialization::ser_output_serialization(
-            var_4,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_output_serialization::ser_output_serialization(var_4, inner_writer)?
     }
     scope.finish();
     Ok(())

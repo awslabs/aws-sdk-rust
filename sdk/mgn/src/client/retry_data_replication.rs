@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`user_provided_id(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::user_provided_id): <p>Source server user provided ID.</p>
     ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<RetryDataReplicationError>`](crate::operation::retry_data_replication::RetryDataReplicationError)
-    pub fn retry_data_replication(
-        &self,
-    ) -> crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder {
-        crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn retry_data_replication(&self) -> crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder {
+        crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::new(self.handle.clone())
     }
 }

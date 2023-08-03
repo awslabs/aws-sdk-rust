@@ -10,10 +10,7 @@ impl ListRecommendationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_recommendations::ListRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendations::ListRecommendationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_recommendations();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListRecommendationsFluentBuilder {
         }
     }
     /// Access the ListRecommendations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListRecommendationsFluentBuilder {
             crate::operation::list_recommendations::ListRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendations::ListRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recommendations::ListRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendations::ListRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recommendations::ListRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendations::ListRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,45 +103,29 @@ impl ListRecommendationsFluentBuilder {
             crate::operation::list_recommendations::ListRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendations::ListRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_recommendations::paginator::ListRecommendationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_recommendations::paginator::ListRecommendationsPaginator {
-        crate::operation::list_recommendations::paginator::ListRecommendationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_recommendations::paginator::ListRecommendationsPaginator {
+        crate::operation::list_recommendations::paginator::ListRecommendationsPaginator::new(self.handle, self.inner)
     }
     /// Adds a key-value pair to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
-    pub fn filter(
-        mut self,
-        k: crate::types::ListRecommendationsFilterKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter(mut self, k: crate::types::ListRecommendationsFilterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k, v.into());
         self
     }
     /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
     pub fn set_filter(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ListRecommendationsFilterKey,
-                ::std::string::String,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ListRecommendationsFilterKey, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
@@ -163,12 +133,7 @@ impl ListRecommendationsFluentBuilder {
     /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
     pub fn get_filter(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ListRecommendationsFilterKey,
-            ::std::string::String,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ListRecommendationsFilterKey, ::std::string::String>> {
         self.inner.get_filter()
     }
     /// <p>A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations.</p>

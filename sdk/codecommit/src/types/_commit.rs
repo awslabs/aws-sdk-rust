@@ -67,9 +67,7 @@ impl Commit {
 
 /// A builder for [`Commit`](crate::types::Commit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommitBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,
@@ -120,10 +118,7 @@ impl CommitBuilder {
         self
     }
     /// <p>A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.</p>
-    pub fn set_parents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_parents(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.parents = input;
         self
     }
@@ -177,18 +172,12 @@ impl CommitBuilder {
         &self.committer
     }
     /// <p>Any other data associated with the specified commit.</p>
-    pub fn additional_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Any other data associated with the specified commit.</p>
-    pub fn set_additional_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_data = input;
         self
     }

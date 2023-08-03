@@ -44,9 +44,7 @@ impl HadoopJarStepConfig {
 
 /// A builder for [`HadoopJarStepConfig`](crate::types::HadoopJarStepConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HadoopJarStepConfigBuilder {
     pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
     pub(crate) jar: ::std::option::Option<::std::string::String>,
@@ -66,17 +64,12 @@ impl HadoopJarStepConfigBuilder {
         self
     }
     /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>) -> Self {
         self.properties = input;
         self
     }
     /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValue>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValue>> {
         &self.properties
     }
     /// <p>A path to a JAR file run during the step.</p>
@@ -119,10 +112,7 @@ impl HadoopJarStepConfigBuilder {
         self
     }
     /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
-    pub fn set_args(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.args = input;
         self
     }

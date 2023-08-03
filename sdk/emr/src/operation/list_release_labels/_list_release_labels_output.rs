@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListReleaseLabelsOutput {
 }
 impl ListReleaseLabelsOutput {
     /// Creates a new builder-style object to manufacture [`ListReleaseLabelsOutput`](crate::operation::list_release_labels::ListReleaseLabelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_release_labels::builders::ListReleaseLabelsOutputBuilder {
+    pub fn builder() -> crate::operation::list_release_labels::builders::ListReleaseLabelsOutputBuilder {
         crate::operation::list_release_labels::builders::ListReleaseLabelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReleaseLabelsOutput`](crate::operation::list_release_labels::ListReleaseLabelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReleaseLabelsOutputBuilder {
     pub(crate) release_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListReleaseLabelsOutputBuilder {
     /// To override the contents of this collection use [`set_release_labels`](Self::set_release_labels).
     ///
     /// <p>The returned release labels.</p>
-    pub fn release_labels(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.release_labels.unwrap_or_default();
         v.push(input.into());
         self.release_labels = ::std::option::Option::Some(v);
         self
     }
     /// <p>The returned release labels.</p>
-    pub fn set_release_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_release_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.release_labels = input;
         self
     }
     /// <p>The returned release labels.</p>
-    pub fn get_release_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_release_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.release_labels
     }
     /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>

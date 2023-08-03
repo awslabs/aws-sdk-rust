@@ -4,24 +4,15 @@ pub fn de_add_permission_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::add_permission::AddPermissionOutput,
-    crate::operation::add_permission::AddPermissionError,
-> {
+) -> std::result::Result<crate::operation::add_permission::AddPermissionOutput, crate::operation::add_permission::AddPermissionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::add_permission::AddPermissionError::unhandled(generic))
-        }
+        None => return Err(crate::operation::add_permission::AddPermissionError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
@@ -31,11 +22,8 @@ pub fn de_add_permission_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::OverLimitBuilder::default();
-                output = crate::protocol_serde::shape_over_limit::de_over_limit_xml_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
+                output = crate::protocol_serde::shape_over_limit::de_over_limit_xml_err(_response_body, output)
+                    .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -53,17 +41,11 @@ pub fn de_add_permission_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::add_permission::AddPermissionOutput,
-    crate::operation::add_permission::AddPermissionError,
-> {
+) -> std::result::Result<crate::operation::add_permission::AddPermissionOutput, crate::operation::add_permission::AddPermissionError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::add_permission::builders::AddPermissionOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::add_permission::builders::AddPermissionOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

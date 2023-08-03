@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SetVisibleToAllUsersOutput {
 }
 impl SetVisibleToAllUsersOutput {
     /// Creates a new builder-style object to manufacture [`SetVisibleToAllUsersOutput`](crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput).
-    pub fn builder(
-    ) -> crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersOutputBuilder {
         crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetVisibleToAllUsersOutput`](crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetVisibleToAllUsersOutputBuilder {
     _request_id: Option<String>,
 }

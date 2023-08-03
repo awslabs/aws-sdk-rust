@@ -39,9 +39,7 @@ impl UpdateResourceServerFluentBuilder {
         }
     }
     /// Access the UpdateResourceServer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resource_server::builders::UpdateResourceServerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_resource_server::builders::UpdateResourceServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl UpdateResourceServerFluentBuilder {
             crate::operation::update_resource_server::UpdateResourceServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_server::UpdateResourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_server::UpdateResourceServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl UpdateResourceServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl UpdateResourceServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_server::UpdateResourceServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_server::UpdateResourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_server::UpdateResourceServerError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl UpdateResourceServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_server::UpdateResourceServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_server::UpdateResourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_server::UpdateResourceServerError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl UpdateResourceServerFluentBuilder {
             crate::operation::update_resource_server::UpdateResourceServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_server::UpdateResourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_server::UpdateResourceServerError>,
     > {
         self.customize_middleware().await
     }
@@ -176,17 +163,12 @@ impl UpdateResourceServerFluentBuilder {
         self
     }
     /// <p>The scope values to be set for the resource server.</p>
-    pub fn set_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
-    ) -> Self {
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>) -> Self {
         self.inner = self.inner.set_scopes(input);
         self
     }
     /// <p>The scope values to be set for the resource server.</p>
-    pub fn get_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
         self.inner.get_scopes()
     }
 }

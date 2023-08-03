@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`users(Option<Vec<User>>)`](crate::operation::describe_users::DescribeUsersOutput::users): <p>A list of users.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_users::DescribeUsersOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     /// - On failure, responds with [`SdkError<DescribeUsersError>`](crate::operation::describe_users::DescribeUsersError)
-    pub fn describe_users(
-        &self,
-    ) -> crate::operation::describe_users::builders::DescribeUsersFluentBuilder {
-        crate::operation::describe_users::builders::DescribeUsersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_users(&self) -> crate::operation::describe_users::builders::DescribeUsersFluentBuilder {
+        crate::operation::describe_users::builders::DescribeUsersFluentBuilder::new(self.handle.clone())
     }
 }

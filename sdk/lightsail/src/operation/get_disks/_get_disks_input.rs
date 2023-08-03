@@ -24,9 +24,7 @@ impl GetDisksInput {
 
 /// A builder for [`GetDisksInput`](crate::operation::get_disks::GetDisksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDisksInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +47,7 @@ impl GetDisksInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`GetDisksInput`](crate::operation::get_disks::GetDisksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_disks::GetDisksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_disks::GetDisksInput {
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_disks::GetDisksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_disks::GetDisksInput { page_token: self.page_token })
     }
 }

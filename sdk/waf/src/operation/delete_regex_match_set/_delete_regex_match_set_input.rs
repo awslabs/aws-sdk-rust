@@ -22,36 +22,26 @@ impl DeleteRegexMatchSetInput {
 }
 impl DeleteRegexMatchSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteRegexMatchSetInput`](crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_regex_match_set::builders::DeleteRegexMatchSetInputBuilder {
-        crate::operation::delete_regex_match_set::builders::DeleteRegexMatchSetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_regex_match_set::builders::DeleteRegexMatchSetInputBuilder {
+        crate::operation::delete_regex_match_set::builders::DeleteRegexMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRegexMatchSetInput`](crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRegexMatchSetInputBuilder {
     pub(crate) regex_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRegexMatchSetInputBuilder {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to delete. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn regex_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regex_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to delete. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn set_regex_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regex_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex_match_set_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl DeleteRegexMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegexMatchSetInput`](crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput {
-                regex_match_set_id: self.regex_match_set_id,
-                change_token: self.change_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput {
+            regex_match_set_id: self.regex_match_set_id,
+            change_token: self.change_token,
+        })
     }
 }

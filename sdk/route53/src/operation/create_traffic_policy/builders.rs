@@ -37,9 +37,7 @@ impl CreateTrafficPolicyFluentBuilder {
         }
     }
     /// Access the CreateTrafficPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_traffic_policy::builders::CreateTrafficPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_traffic_policy::builders::CreateTrafficPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateTrafficPolicyFluentBuilder {
             crate::operation::create_traffic_policy::CreateTrafficPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_policy::CreateTrafficPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_policy::CreateTrafficPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateTrafficPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateTrafficPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_policy::CreateTrafficPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_policy::CreateTrafficPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_policy::CreateTrafficPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateTrafficPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_policy::CreateTrafficPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_policy::CreateTrafficPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_policy::CreateTrafficPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateTrafficPolicyFluentBuilder {
             crate::operation::create_traffic_policy::CreateTrafficPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_policy::CreateTrafficPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_policy::CreateTrafficPolicyError>,
     > {
         self.customize_middleware().await
     }

@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`package_version_history_list(Option<Vec<PackageVersionHistory>>)`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput::package_version_history_list): <p>A list of package versions, along with their creation time and commit message.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<GetPackageVersionHistoryError>`](crate::operation::get_package_version_history::GetPackageVersionHistoryError)
-    pub fn get_package_version_history(&self) -> crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder{
+    pub fn get_package_version_history(&self) -> crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder {
         crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::new(self.handle.clone())
     }
 }

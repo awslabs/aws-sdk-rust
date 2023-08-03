@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetInstanceAccessOutput`](crate::operation::get_instance_access::GetInstanceAccessOutput) with field(s):
     ///   - [`instance_access(Option<InstanceAccess>)`](crate::operation::get_instance_access::GetInstanceAccessOutput::instance_access): <p>The connection information for a fleet instance, including IP address and access credentials.</p>
     /// - On failure, responds with [`SdkError<GetInstanceAccessError>`](crate::operation::get_instance_access::GetInstanceAccessError)
-    pub fn get_instance_access(
-        &self,
-    ) -> crate::operation::get_instance_access::builders::GetInstanceAccessFluentBuilder {
-        crate::operation::get_instance_access::builders::GetInstanceAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_instance_access(&self) -> crate::operation::get_instance_access::builders::GetInstanceAccessFluentBuilder {
+        crate::operation::get_instance_access::builders::GetInstanceAccessFluentBuilder::new(self.handle.clone())
     }
 }

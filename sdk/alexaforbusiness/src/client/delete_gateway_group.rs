@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteGatewayGroupOutput`](crate::operation::delete_gateway_group::DeleteGatewayGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteGatewayGroupError>`](crate::operation::delete_gateway_group::DeleteGatewayGroupError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn delete_gateway_group(
-        &self,
-    ) -> crate::operation::delete_gateway_group::builders::DeleteGatewayGroupFluentBuilder {
-        crate::operation::delete_gateway_group::builders::DeleteGatewayGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_gateway_group(&self) -> crate::operation::delete_gateway_group::builders::DeleteGatewayGroupFluentBuilder {
+        crate::operation::delete_gateway_group::builders::DeleteGatewayGroupFluentBuilder::new(self.handle.clone())
     }
 }

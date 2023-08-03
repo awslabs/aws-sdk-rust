@@ -65,9 +65,7 @@ impl Face {
 
 /// A builder for [`Face`](crate::types::Face).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FaceBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
@@ -98,10 +96,7 @@ impl FaceBuilder {
         self
     }
     /// <p>Bounding box of the face.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }
@@ -124,18 +119,12 @@ impl FaceBuilder {
         &self.image_id
     }
     /// <p>Identifier that you assign to all the faces in the input image.</p>
-    pub fn external_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier that you assign to all the faces in the input image.</p>
-    pub fn set_external_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_image_id = input;
         self
     }
@@ -158,18 +147,12 @@ impl FaceBuilder {
         &self.confidence
     }
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
-    pub fn index_faces_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn index_faces_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_faces_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
-    pub fn set_index_faces_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_index_faces_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_faces_model_version = input;
         self
     }

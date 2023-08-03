@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelUpdateStackOutput {
 }
 impl CancelUpdateStackOutput {
     /// Creates a new builder-style object to manufacture [`CancelUpdateStackOutput`](crate::operation::cancel_update_stack::CancelUpdateStackOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_update_stack::builders::CancelUpdateStackOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_update_stack::builders::CancelUpdateStackOutputBuilder {
         crate::operation::cancel_update_stack::builders::CancelUpdateStackOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelUpdateStackOutput`](crate::operation::cancel_update_stack::CancelUpdateStackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelUpdateStackOutputBuilder {
     _request_id: Option<String>,
 }

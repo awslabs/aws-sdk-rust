@@ -126,9 +126,7 @@ impl DataRepositoryTask {
         self.paths.as_deref()
     }
     /// <p>Failure message describing why the task failed, it is populated only when <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
-    pub fn failure_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataRepositoryTaskFailureDetails> {
+    pub fn failure_details(&self) -> ::std::option::Option<&crate::types::DataRepositoryTaskFailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>Provides the status of the number of files that the task has processed successfully and failed to process.</p>
@@ -157,9 +155,7 @@ impl DataRepositoryTask {
 
 /// A builder for [`DataRepositoryTask`](crate::types::DataRepositoryTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataRepositoryTaskBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::DataRepositoryTaskLifecycle>,
@@ -171,8 +167,7 @@ pub struct DataRepositoryTaskBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) failure_details:
-        ::std::option::Option<crate::types::DataRepositoryTaskFailureDetails>,
+    pub(crate) failure_details: ::std::option::Option<crate::types::DataRepositoryTaskFailureDetails>,
     pub(crate) status: ::std::option::Option<crate::types::DataRepositoryTaskStatus>,
     pub(crate) report: ::std::option::Option<crate::types::CompletionReport>,
     pub(crate) capacity_to_release: ::std::option::Option<i64>,
@@ -219,10 +214,7 @@ impl DataRepositoryTaskBuilder {
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryTaskLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -237,9 +229,7 @@ impl DataRepositoryTaskBuilder {
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
-    pub fn get_lifecycle(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataRepositoryTaskLifecycle> {
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskLifecycle> {
         &self.lifecycle
     }
     /// <p>The type of data repository task.</p>
@@ -260,10 +250,7 @@ impl DataRepositoryTaskBuilder {
     /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
     /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryTaskType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskType>) -> Self {
         self.r#type = input;
         self
     }
@@ -283,10 +270,7 @@ impl DataRepositoryTaskBuilder {
         self
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -300,10 +284,7 @@ impl DataRepositoryTaskBuilder {
         self
     }
     /// <p>The time the system began processing the task.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -317,10 +298,7 @@ impl DataRepositoryTaskBuilder {
         self
     }
     /// <p>The time the system completed processing the task, populated after the task is complete.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -354,10 +332,7 @@ impl DataRepositoryTaskBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -366,18 +341,12 @@ impl DataRepositoryTaskBuilder {
         &self.tags
     }
     /// <p>The globally unique ID of the file system.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique ID of the file system.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -399,10 +368,7 @@ impl DataRepositoryTaskBuilder {
     }
     /// <p>An array of paths that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
     /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
-    pub fn set_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.paths = input;
         self
     }
@@ -412,25 +378,17 @@ impl DataRepositoryTaskBuilder {
         &self.paths
     }
     /// <p>Failure message describing why the task failed, it is populated only when <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
-    pub fn failure_details(
-        mut self,
-        input: crate::types::DataRepositoryTaskFailureDetails,
-    ) -> Self {
+    pub fn failure_details(mut self, input: crate::types::DataRepositoryTaskFailureDetails) -> Self {
         self.failure_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Failure message describing why the task failed, it is populated only when <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryTaskFailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskFailureDetails>) -> Self {
         self.failure_details = input;
         self
     }
     /// <p>Failure message describing why the task failed, it is populated only when <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
-    pub fn get_failure_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataRepositoryTaskFailureDetails> {
+    pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskFailureDetails> {
         &self.failure_details
     }
     /// <p>Provides the status of the number of files that the task has processed successfully and failed to process.</p>
@@ -439,10 +397,7 @@ impl DataRepositoryTaskBuilder {
         self
     }
     /// <p>Provides the status of the number of files that the task has processed successfully and failed to process.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryTaskStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskStatus>) -> Self {
         self.status = input;
         self
     }
@@ -456,10 +411,7 @@ impl DataRepositoryTaskBuilder {
         self
     }
     /// <p>Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>
-    pub fn set_report(
-        mut self,
-        input: ::std::option::Option<crate::types::CompletionReport>,
-    ) -> Self {
+    pub fn set_report(mut self, input: ::std::option::Option<crate::types::CompletionReport>) -> Self {
         self.report = input;
         self
     }
@@ -482,18 +434,12 @@ impl DataRepositoryTaskBuilder {
         &self.capacity_to_release
     }
     /// <p>The system-generated, unique ID of the cache.</p>
-    pub fn file_cache_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_cache_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_cache_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated, unique ID of the cache.</p>
-    pub fn set_file_cache_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_cache_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_cache_id = input;
         self
     }

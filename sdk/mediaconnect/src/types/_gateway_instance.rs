@@ -72,17 +72,14 @@ impl GatewayInstance {
 
 /// A builder for [`GatewayInstance`](crate::types::GatewayInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewayInstanceBuilder {
     pub(crate) bridge_placement: ::std::option::Option<crate::types::BridgePlacement>,
     pub(crate) connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_messages:
-        ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
+    pub(crate) instance_messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
     pub(crate) instance_state: ::std::option::Option<crate::types::InstanceState>,
     pub(crate) running_bridge_count: ::std::option::Option<i32>,
 }
@@ -93,10 +90,7 @@ impl GatewayInstanceBuilder {
         self
     }
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
-    pub fn set_bridge_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::BridgePlacement>,
-    ) -> Self {
+    pub fn set_bridge_placement(mut self, input: ::std::option::Option<crate::types::BridgePlacement>) -> Self {
         self.bridge_placement = input;
         self
     }
@@ -110,10 +104,7 @@ impl GatewayInstanceBuilder {
         self
     }
     /// The connection state of the instance.
-    pub fn set_connection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionStatus>,
-    ) -> Self {
+    pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
         self.connection_status = input;
         self
     }
@@ -136,18 +127,12 @@ impl GatewayInstanceBuilder {
         &self.gateway_arn
     }
     /// The Amazon Resource Name (ARN) of the gateway.
-    pub fn gateway_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the gateway.
-    pub fn set_gateway_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_instance_arn = input;
         self
     }
@@ -180,17 +165,12 @@ impl GatewayInstanceBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_instance_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
-    ) -> Self {
+    pub fn set_instance_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>) -> Self {
         self.instance_messages = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_instance_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>> {
+    pub fn get_instance_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>> {
         &self.instance_messages
     }
     /// The status of the instance.
@@ -199,10 +179,7 @@ impl GatewayInstanceBuilder {
         self
     }
     /// The status of the instance.
-    pub fn set_instance_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceState>,
-    ) -> Self {
+    pub fn set_instance_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
         self.instance_state = input;
         self
     }

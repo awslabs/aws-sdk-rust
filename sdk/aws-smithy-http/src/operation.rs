@@ -9,6 +9,7 @@
 use crate::body::SdkBody;
 use crate::property_bag::{PropertyBag, SharedPropertyBag};
 use crate::retry::DefaultResponseRetryClassifier;
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::borrow::Cow;
 use std::ops::{Deref, DerefMut};
 
@@ -42,6 +43,10 @@ impl Metadata {
             service: service.into(),
         }
     }
+}
+
+impl Storable for Metadata {
+    type Storer = StoreReplace<Self>;
 }
 
 /// Non-request parts of an [`Operation`].

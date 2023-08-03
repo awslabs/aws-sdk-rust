@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AuditMitigationActionsExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for AuditMitigationActionsExecutionStatus {
             "IN_PROGRESS" => AuditMitigationActionsExecutionStatus::InProgress,
             "PENDING" => AuditMitigationActionsExecutionStatus::Pending,
             "SKIPPED" => AuditMitigationActionsExecutionStatus::Skipped,
-            other => AuditMitigationActionsExecutionStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => AuditMitigationActionsExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl AuditMitigationActionsExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED",
-            "COMPLETED",
-            "FAILED",
-            "IN_PROGRESS",
-            "PENDING",
-            "SKIPPED",
-        ]
+        &["CANCELED", "COMPLETED", "FAILED", "IN_PROGRESS", "PENDING", "SKIPPED"]
     }
 }
 impl ::std::convert::AsRef<str> for AuditMitigationActionsExecutionStatus {

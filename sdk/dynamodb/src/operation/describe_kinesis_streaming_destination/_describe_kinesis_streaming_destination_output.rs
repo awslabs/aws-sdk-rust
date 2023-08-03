@@ -8,8 +8,7 @@ pub struct DescribeKinesisStreamingDestinationOutput {
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of replica structures for the table being described.</p>
     #[doc(hidden)]
-    pub kinesis_data_stream_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>>,
+    pub kinesis_data_stream_destinations: ::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>>,
     _request_id: Option<String>,
 }
 impl DescribeKinesisStreamingDestinationOutput {
@@ -18,9 +17,7 @@ impl DescribeKinesisStreamingDestinationOutput {
         self.table_name.as_deref()
     }
     /// <p>The list of replica structures for the table being described.</p>
-    pub fn kinesis_data_stream_destinations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::KinesisDataStreamDestination]> {
+    pub fn kinesis_data_stream_destinations(&self) -> ::std::option::Option<&[crate::types::KinesisDataStreamDestination]> {
         self.kinesis_data_stream_destinations.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeKinesisStreamingDestinationOu
 }
 impl DescribeKinesisStreamingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKinesisStreamingDestinationOutput`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput).
-    pub fn builder() -> crate::operation::describe_kinesis_streaming_destination::builders::DescribeKinesisStreamingDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_kinesis_streaming_destination::builders::DescribeKinesisStreamingDestinationOutputBuilder {
         crate::operation::describe_kinesis_streaming_destination::builders::DescribeKinesisStreamingDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeKinesisStreamingDestinationOutput`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeKinesisStreamingDestinationOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) kinesis_data_stream_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>>,
+    pub(crate) kinesis_data_stream_destinations: ::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>>,
     _request_id: Option<String>,
 }
 impl DescribeKinesisStreamingDestinationOutputBuilder {
@@ -67,10 +61,7 @@ impl DescribeKinesisStreamingDestinationOutputBuilder {
     /// To override the contents of this collection use [`set_kinesis_data_stream_destinations`](Self::set_kinesis_data_stream_destinations).
     ///
     /// <p>The list of replica structures for the table being described.</p>
-    pub fn kinesis_data_stream_destinations(
-        mut self,
-        input: crate::types::KinesisDataStreamDestination,
-    ) -> Self {
+    pub fn kinesis_data_stream_destinations(mut self, input: crate::types::KinesisDataStreamDestination) -> Self {
         let mut v = self.kinesis_data_stream_destinations.unwrap_or_default();
         v.push(input);
         self.kinesis_data_stream_destinations = ::std::option::Option::Some(v);
@@ -85,9 +76,7 @@ impl DescribeKinesisStreamingDestinationOutputBuilder {
         self
     }
     /// <p>The list of replica structures for the table being described.</p>
-    pub fn get_kinesis_data_stream_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>> {
+    pub fn get_kinesis_data_stream_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>> {
         &self.kinesis_data_stream_destinations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,12 +89,10 @@ impl DescribeKinesisStreamingDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeKinesisStreamingDestinationOutput`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput).
-    pub fn build(self) -> crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput{
+    pub fn build(self) -> crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput {
         crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput {
-            table_name: self.table_name
-            ,
-            kinesis_data_stream_destinations: self.kinesis_data_stream_destinations
-            ,
+            table_name: self.table_name,
+            kinesis_data_stream_destinations: self.kinesis_data_stream_destinations,
             _request_id: self._request_id,
         }
     }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`next_subdivision_code(Option<String>)`](crate::operation::list_geo_locations::ListGeoLocationsOutput::next_subdivision_code): <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
     ///   - [`max_items(Option<i32>)`](crate::operation::list_geo_locations::ListGeoLocationsOutput::max_items): <p>The value that you specified for <code>MaxItems</code> in the request.</p>
     /// - On failure, responds with [`SdkError<ListGeoLocationsError>`](crate::operation::list_geo_locations::ListGeoLocationsError)
-    pub fn list_geo_locations(
-        &self,
-    ) -> crate::operation::list_geo_locations::builders::ListGeoLocationsFluentBuilder {
-        crate::operation::list_geo_locations::builders::ListGeoLocationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_geo_locations(&self) -> crate::operation::list_geo_locations::builders::ListGeoLocationsFluentBuilder {
+        crate::operation::list_geo_locations::builders::ListGeoLocationsFluentBuilder::new(self.handle.clone())
     }
 }

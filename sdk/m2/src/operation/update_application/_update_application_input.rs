@@ -36,17 +36,14 @@ impl UpdateApplicationInput {
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         crate::operation::update_application::builders::UpdateApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The unique identifier of the application you want to update.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application you want to update.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -108,10 +99,7 @@ impl UpdateApplicationInputBuilder {
         self
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::Definition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::Definition>) -> Self {
         self.definition = input;
         self
     }
@@ -122,17 +110,12 @@ impl UpdateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_application::UpdateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_application::UpdateApplicationInput {
-                application_id: self.application_id,
-                description: self.description,
-                current_application_version: self.current_application_version,
-                definition: self.definition,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
+            application_id: self.application_id,
+            description: self.description,
+            current_application_version: self.current_application_version,
+            definition: self.definition,
+        })
     }
 }

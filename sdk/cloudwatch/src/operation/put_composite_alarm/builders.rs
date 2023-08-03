@@ -10,10 +10,7 @@ impl PutCompositeAlarmInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_composite_alarm::PutCompositeAlarmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_composite_alarm::PutCompositeAlarmError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_composite_alarm::PutCompositeAlarmError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_composite_alarm();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl PutCompositeAlarmFluentBuilder {
         }
     }
     /// Access the PutCompositeAlarm as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_composite_alarm::builders::PutCompositeAlarmInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_composite_alarm::builders::PutCompositeAlarmInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl PutCompositeAlarmFluentBuilder {
             crate::operation::put_composite_alarm::PutCompositeAlarm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_composite_alarm::PutCompositeAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_composite_alarm::PutCompositeAlarmError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl PutCompositeAlarmFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl PutCompositeAlarmFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_composite_alarm::PutCompositeAlarmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_composite_alarm::PutCompositeAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_composite_alarm::PutCompositeAlarmError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl PutCompositeAlarmFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_composite_alarm::PutCompositeAlarmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_composite_alarm::PutCompositeAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_composite_alarm::PutCompositeAlarmError>,
     > {
         self.send_middleware().await
     }
@@ -127,9 +113,7 @@ impl PutCompositeAlarmFluentBuilder {
             crate::operation::put_composite_alarm::PutCompositeAlarm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_composite_alarm::PutCompositeAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_composite_alarm::PutCompositeAlarmError>,
     > {
         self.customize_middleware().await
     }
@@ -153,42 +137,28 @@ impl PutCompositeAlarmFluentBuilder {
     ///
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
-    pub fn alarm_actions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_actions(input.into());
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
-    pub fn set_alarm_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_alarm_actions(input);
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
-    pub fn get_alarm_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_alarm_actions()
     }
     /// <p>The description for the composite alarm.</p>
-    pub fn alarm_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_description(input.into());
         self
     }
     /// <p>The description for the composite alarm.</p>
-    pub fn set_alarm_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alarm_description(input);
         self
     }
@@ -284,27 +254,19 @@ impl PutCompositeAlarmFluentBuilder {
     ///
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
-    pub fn insufficient_data_actions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn insufficient_data_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.insufficient_data_actions(input.into());
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
-    pub fn set_insufficient_data_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_insufficient_data_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_insufficient_data_actions(input);
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
-    pub fn get_insufficient_data_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_insufficient_data_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_insufficient_data_actions()
     }
     /// Appends an item to `OKActions`.
@@ -319,10 +281,7 @@ impl PutCompositeAlarmFluentBuilder {
     }
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
-    pub fn set_ok_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ok_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ok_actions(input);
         self
     }
@@ -343,10 +302,7 @@ impl PutCompositeAlarmFluentBuilder {
     }
     /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -356,18 +312,12 @@ impl PutCompositeAlarmFluentBuilder {
         self.inner.get_tags()
     }
     /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
-    pub fn actions_suppressor(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn actions_suppressor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.actions_suppressor(input.into());
         self
     }
     /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
-    pub fn set_actions_suppressor(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_actions_suppressor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_actions_suppressor(input);
         self
     }
@@ -405,10 +355,7 @@ impl PutCompositeAlarmFluentBuilder {
     /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
     /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
     /// </important>
-    pub fn set_actions_suppressor_extension_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_actions_suppressor_extension_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_actions_suppressor_extension_period(input);
         self
     }

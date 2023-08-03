@@ -27,7 +27,7 @@ impl CreateClusterSecurityGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterSecurityGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupInputBuilder,
+    inner: crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupInputBuilder,
 }
 impl CreateClusterSecurityGroupFluentBuilder {
     /// Creates a new `CreateClusterSecurityGroup`.
@@ -38,7 +38,7 @@ impl CreateClusterSecurityGroupFluentBuilder {
         }
     }
     /// Access the CreateClusterSecurityGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateClusterSecurityGroupFluentBuilder {
             crate::operation::create_cluster_security_group::CreateClusterSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateClusterSecurityGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateClusterSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateClusterSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateClusterSecurityGroupFluentBuilder {
             crate::operation::create_cluster_security_group::CreateClusterSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +118,7 @@ impl CreateClusterSecurityGroupFluentBuilder {
     /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesecuritygroup</code> </p>
-    pub fn cluster_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_security_group_name(input.into());
         self
     }
@@ -144,10 +130,7 @@ impl CreateClusterSecurityGroupFluentBuilder {
     /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesecuritygroup</code> </p>
-    pub fn set_cluster_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_security_group_name(input);
         self
     }
@@ -186,10 +169,7 @@ impl CreateClusterSecurityGroupFluentBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

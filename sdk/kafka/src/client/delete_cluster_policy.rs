@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`cluster_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyFluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     /// - On success, responds with [`DeleteClusterPolicyOutput`](crate::operation::delete_cluster_policy::DeleteClusterPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteClusterPolicyError>`](crate::operation::delete_cluster_policy::DeleteClusterPolicyError)
-    pub fn delete_cluster_policy(
-        &self,
-    ) -> crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyFluentBuilder {
-        crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_cluster_policy(&self) -> crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyFluentBuilder {
+        crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -56,9 +56,7 @@ impl ConflictException {
 
 /// A builder for [`ConflictException`](crate::types::error::ConflictException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConflictExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConflict>>,
@@ -91,17 +89,12 @@ impl ConflictExceptionBuilder {
         self
     }
     /// <p>The list of resources referenced with this failed request.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConflict>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConflict>>) -> Self {
         self.resources = input;
         self
     }
     /// <p>The list of resources referenced with this failed request.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceConflict>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceConflict>> {
         &self.resources
     }
     /// Sets error metadata
@@ -111,10 +104,7 @@ impl ConflictExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

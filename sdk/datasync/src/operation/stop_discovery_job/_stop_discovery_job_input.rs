@@ -15,34 +15,25 @@ impl StopDiscoveryJobInput {
 }
 impl StopDiscoveryJobInput {
     /// Creates a new builder-style object to manufacture [`StopDiscoveryJobInput`](crate::operation::stop_discovery_job::StopDiscoveryJobInput).
-    pub fn builder() -> crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder {
         crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopDiscoveryJobInput`](crate::operation::stop_discovery_job::StopDiscoveryJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDiscoveryJobInputBuilder {
     pub(crate) discovery_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopDiscoveryJobInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discovery_job_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl StopDiscoveryJobInputBuilder {
     /// Consumes the builder and constructs a [`StopDiscoveryJobInput`](crate::operation::stop_discovery_job::StopDiscoveryJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_discovery_job::StopDiscoveryJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_discovery_job::StopDiscoveryJobInput {
-                discovery_job_arn: self.discovery_job_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_discovery_job::StopDiscoveryJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_discovery_job::StopDiscoveryJobInput {
+            discovery_job_arn: self.discovery_job_arn,
+        })
     }
 }

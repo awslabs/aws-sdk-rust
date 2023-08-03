@@ -21,10 +21,7 @@ pub fn ser_list_audit_suppressions_input(
     if let Some(var_5) = &input.resource_identifier {
         #[allow(unused_mut)]
         let mut object_6 = object.key("resourceIdentifier").start_object();
-        crate::protocol_serde::shape_resource_identifier::ser_resource_identifier(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_resource_identifier::ser_resource_identifier(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

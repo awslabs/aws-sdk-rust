@@ -29,19 +29,16 @@ impl ListResourceComplianceSummariesInput {
 }
 impl ListResourceComplianceSummariesInput {
     /// Creates a new builder-style object to manufacture [`ListResourceComplianceSummariesInput`](crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesInput).
-    pub fn builder() -> crate::operation::list_resource_compliance_summaries::builders::ListResourceComplianceSummariesInputBuilder{
+    pub fn builder() -> crate::operation::list_resource_compliance_summaries::builders::ListResourceComplianceSummariesInputBuilder {
         crate::operation::list_resource_compliance_summaries::builders::ListResourceComplianceSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceComplianceSummariesInput`](crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceComplianceSummariesInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -58,17 +55,12 @@ impl ListResourceComplianceSummariesInputBuilder {
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
         &self.filters
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -108,13 +100,10 @@ impl ListResourceComplianceSummariesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesInput {
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

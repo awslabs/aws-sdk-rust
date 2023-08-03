@@ -37,9 +37,7 @@ impl PhoneNumberValidateFluentBuilder {
         }
     }
     /// Access the PhoneNumberValidate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::phone_number_validate::builders::PhoneNumberValidateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::phone_number_validate::builders::PhoneNumberValidateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl PhoneNumberValidateFluentBuilder {
             crate::operation::phone_number_validate::PhoneNumberValidate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::phone_number_validate::PhoneNumberValidateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::phone_number_validate::PhoneNumberValidateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl PhoneNumberValidateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl PhoneNumberValidateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::phone_number_validate::PhoneNumberValidateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::phone_number_validate::PhoneNumberValidateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::phone_number_validate::PhoneNumberValidateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl PhoneNumberValidateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::phone_number_validate::PhoneNumberValidateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::phone_number_validate::PhoneNumberValidateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::phone_number_validate::PhoneNumberValidateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl PhoneNumberValidateFluentBuilder {
             crate::operation::phone_number_validate::PhoneNumberValidate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::phone_number_validate::PhoneNumberValidateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::phone_number_validate::PhoneNumberValidateError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +115,12 @@ impl PhoneNumberValidateFluentBuilder {
         self
     }
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
-    pub fn set_number_validate_request(
-        mut self,
-        input: ::std::option::Option<crate::types::NumberValidateRequest>,
-    ) -> Self {
+    pub fn set_number_validate_request(mut self, input: ::std::option::Option<crate::types::NumberValidateRequest>) -> Self {
         self.inner = self.inner.set_number_validate_request(input);
         self
     }
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
-    pub fn get_number_validate_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumberValidateRequest> {
+    pub fn get_number_validate_request(&self) -> &::std::option::Option<crate::types::NumberValidateRequest> {
         self.inner.get_number_validate_request()
     }
 }

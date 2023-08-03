@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeBackupPolicyOutput {
 }
 impl DescribeBackupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBackupPolicyOutput`](crate::operation::describe_backup_policy::DescribeBackupPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_backup_policy::builders::DescribeBackupPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::describe_backup_policy::builders::DescribeBackupPolicyOutputBuilder {
         crate::operation::describe_backup_policy::builders::DescribeBackupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBackupPolicyOutput`](crate::operation::describe_backup_policy::DescribeBackupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBackupPolicyOutputBuilder {
     pub(crate) backup_policy: ::std::option::Option<crate::types::BackupPolicy>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeBackupPolicyOutputBuilder {
         self
     }
     /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
-    pub fn set_backup_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupPolicy>,
-    ) -> Self {
+    pub fn set_backup_policy(mut self, input: ::std::option::Option<crate::types::BackupPolicy>) -> Self {
         self.backup_policy = input;
         self
     }

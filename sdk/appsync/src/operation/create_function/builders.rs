@@ -10,10 +10,7 @@ impl CreateFunctionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_function::CreateFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_function::CreateFunctionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_function();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateFunctionFluentBuilder {
         }
     }
     /// Access the CreateFunction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_function::builders::CreateFunctionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_function::builders::CreateFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -158,18 +150,12 @@ impl CreateFunctionFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
-    pub fn data_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_name(input.into());
         self
     }
     /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
-    pub fn set_data_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_name(input);
         self
     }
@@ -178,18 +164,12 @@ impl CreateFunctionFluentBuilder {
         self.inner.get_data_source_name()
     }
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-    pub fn request_mapping_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_mapping_template(input.into());
         self
     }
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-    pub fn set_request_mapping_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_mapping_template(input);
         self
     }
@@ -198,18 +178,12 @@ impl CreateFunctionFluentBuilder {
         self.inner.get_request_mapping_template()
     }
     /// <p>The <code>Function</code> response mapping template.</p>
-    pub fn response_mapping_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_mapping_template(input.into());
         self
     }
     /// <p>The <code>Function</code> response mapping template.</p>
-    pub fn set_response_mapping_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_mapping_template(input);
         self
     }
@@ -218,18 +192,12 @@ impl CreateFunctionFluentBuilder {
         self.inner.get_response_mapping_template()
     }
     /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
-    pub fn function_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_version(input.into());
         self
     }
     /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
-    pub fn set_function_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_version(input);
         self
     }
@@ -245,10 +213,7 @@ impl CreateFunctionFluentBuilder {
     }
     /// <p>Describes a Sync configuration for a resolver.</p>
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
-    pub fn set_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncConfig>,
-    ) -> Self {
+    pub fn set_sync_config(mut self, input: ::std::option::Option<crate::types::SyncConfig>) -> Self {
         self.inner = self.inner.set_sync_config(input);
         self
     }
@@ -277,10 +242,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    pub fn set_runtime(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSyncRuntime>,
-    ) -> Self {
+    pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::AppSyncRuntime>) -> Self {
         self.inner = self.inner.set_runtime(input);
         self
     }

@@ -17,10 +17,7 @@ impl DbSubnetGroupDoesNotCoverEnoughAZs {
 }
 impl ::std::fmt::Display for DbSubnetGroupDoesNotCoverEnoughAZs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "DbSubnetGroupDoesNotCoverEnoughAZs [DBSubnetGroupDoesNotCoverEnoughAZs]"
-        )?;
+        ::std::write!(f, "DbSubnetGroupDoesNotCoverEnoughAZs [DBSubnetGroupDoesNotCoverEnoughAZs]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -36,9 +33,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::DbSubnetGroupDoe
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DbSubnetGroupDoesNotCoverEnoughAZs
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DbSubnetGroupDoesNotCoverEnoughAZs {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -52,9 +47,7 @@ impl DbSubnetGroupDoesNotCoverEnoughAZs {
 
 /// A builder for [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbSubnetGroupDoesNotCoverEnoughAZsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl DbSubnetGroupDoesNotCoverEnoughAZsBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

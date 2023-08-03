@@ -30,9 +30,7 @@ impl LfResourceDetails {
 
 /// A builder for [`LfResourceDetails`](crate::types::LfResourceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LfResourceDetailsBuilder {
     pub(crate) database: ::std::option::Option<crate::types::DatabaseLfTagPolicy>,
     pub(crate) table: ::std::option::Option<crate::types::TableLfTagPolicy>,
@@ -44,10 +42,7 @@ impl LfResourceDetailsBuilder {
         self
     }
     /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
-    pub fn set_database(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseLfTagPolicy>,
-    ) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<crate::types::DatabaseLfTagPolicy>) -> Self {
         self.database = input;
         self
     }
@@ -61,10 +56,7 @@ impl LfResourceDetailsBuilder {
         self
     }
     /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
-    pub fn set_table(
-        mut self,
-        input: ::std::option::Option<crate::types::TableLfTagPolicy>,
-    ) -> Self {
+    pub fn set_table(mut self, input: ::std::option::Option<crate::types::TableLfTagPolicy>) -> Self {
         self.table = input;
         self
     }

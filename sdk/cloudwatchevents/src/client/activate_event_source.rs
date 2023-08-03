@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder::set_name): <p>The name of the partner event source to activate.</p>
     /// - On success, responds with [`ActivateEventSourceOutput`](crate::operation::activate_event_source::ActivateEventSourceOutput)
     /// - On failure, responds with [`SdkError<ActivateEventSourceError>`](crate::operation::activate_event_source::ActivateEventSourceError)
-    pub fn activate_event_source(
-        &self,
-    ) -> crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder {
-        crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn activate_event_source(&self) -> crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder {
+        crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder::new(self.handle.clone())
     }
 }

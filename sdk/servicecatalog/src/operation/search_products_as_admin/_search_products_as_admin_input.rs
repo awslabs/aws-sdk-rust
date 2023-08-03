@@ -15,12 +15,7 @@ pub struct SearchProductsAsAdminInput {
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
     #[doc(hidden)]
-    pub filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
     #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ProductViewSortBy>,
@@ -53,12 +48,7 @@ impl SearchProductsAsAdminInput {
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
     pub fn filters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::ProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>> {
         self.filters.as_ref()
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
@@ -84,27 +74,18 @@ impl SearchProductsAsAdminInput {
 }
 impl SearchProductsAsAdminInput {
     /// Creates a new builder-style object to manufacture [`SearchProductsAsAdminInput`](crate::operation::search_products_as_admin::SearchProductsAsAdminInput).
-    pub fn builder(
-    ) -> crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder {
         crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchProductsAsAdminInput`](crate::operation::search_products_as_admin::SearchProductsAsAdminInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchProductsAsAdminInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub(crate) filters: ::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ProductViewSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
@@ -117,10 +98,7 @@ impl SearchProductsAsAdminInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -129,10 +107,7 @@ impl SearchProductsAsAdminInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -163,11 +138,7 @@ impl SearchProductsAsAdminInputBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
-    pub fn filters(
-        mut self,
-        k: crate::types::ProductViewFilterBy,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::ProductViewFilterBy, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
         hash_map.insert(k, v);
         self.filters = ::std::option::Option::Some(hash_map);
@@ -176,12 +147,7 @@ impl SearchProductsAsAdminInputBuilder {
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ProductViewFilterBy,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.filters = input;
         self
@@ -189,12 +155,7 @@ impl SearchProductsAsAdminInputBuilder {
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
     pub fn get_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>> {
         &self.filters
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
@@ -203,10 +164,7 @@ impl SearchProductsAsAdminInputBuilder {
         self
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductViewSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ProductViewSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -262,10 +220,7 @@ impl SearchProductsAsAdminInputBuilder {
         self
     }
     /// <p>Access level of the source of the product.</p>
-    pub fn set_product_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductSource>,
-    ) -> Self {
+    pub fn set_product_source(mut self, input: ::std::option::Option<crate::types::ProductSource>) -> Self {
         self.product_source = input;
         self
     }
@@ -276,21 +231,17 @@ impl SearchProductsAsAdminInputBuilder {
     /// Consumes the builder and constructs a [`SearchProductsAsAdminInput`](crate::operation::search_products_as_admin::SearchProductsAsAdminInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_products_as_admin::SearchProductsAsAdminInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_products_as_admin::SearchProductsAsAdminInput {
-                accept_language: self.accept_language,
-                portfolio_id: self.portfolio_id,
-                filters: self.filters,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                page_token: self.page_token,
-                page_size: self.page_size,
-                product_source: self.product_source,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_products_as_admin::SearchProductsAsAdminInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_products_as_admin::SearchProductsAsAdminInput {
+            accept_language: self.accept_language,
+            portfolio_id: self.portfolio_id,
+            filters: self.filters,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            page_token: self.page_token,
+            page_size: self.page_size,
+            product_source: self.product_source,
+        })
     }
 }

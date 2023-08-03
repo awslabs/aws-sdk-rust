@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput) with field(s):
     ///   - [`account_attributes(Option<Vec<AccountAttribute>>)`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput::account_attributes): <p>A list of attributes assigned to an account.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountAttributesError>`](crate::operation::describe_account_attributes::DescribeAccountAttributesError)
-    pub fn describe_account_attributes(&self) -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder{
+    pub fn describe_account_attributes(&self) -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder {
         crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::new(self.handle.clone())
     }
 }

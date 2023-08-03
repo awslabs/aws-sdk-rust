@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`rest_api_id(Option<String>)`](crate::operation::update_base_path_mapping::UpdateBasePathMappingOutput::rest_api_id): <p>The string identifier of the associated RestApi.</p>
     ///   - [`stage(Option<String>)`](crate::operation::update_base_path_mapping::UpdateBasePathMappingOutput::stage): <p>The name of the associated stage.</p>
     /// - On failure, responds with [`SdkError<UpdateBasePathMappingError>`](crate::operation::update_base_path_mapping::UpdateBasePathMappingError)
-    pub fn update_base_path_mapping(
-        &self,
-    ) -> crate::operation::update_base_path_mapping::builders::UpdateBasePathMappingFluentBuilder
-    {
+    pub fn update_base_path_mapping(&self) -> crate::operation::update_base_path_mapping::builders::UpdateBasePathMappingFluentBuilder {
         crate::operation::update_base_path_mapping::builders::UpdateBasePathMappingFluentBuilder::new(self.handle.clone())
     }
 }

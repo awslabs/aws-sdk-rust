@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateMetricSetOutput`](crate::operation::update_metric_set::UpdateMetricSetOutput) with field(s):
     ///   - [`metric_set_arn(Option<String>)`](crate::operation::update_metric_set::UpdateMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
     /// - On failure, responds with [`SdkError<UpdateMetricSetError>`](crate::operation::update_metric_set::UpdateMetricSetError)
-    pub fn update_metric_set(
-        &self,
-    ) -> crate::operation::update_metric_set::builders::UpdateMetricSetFluentBuilder {
-        crate::operation::update_metric_set::builders::UpdateMetricSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_metric_set(&self) -> crate::operation::update_metric_set::builders::UpdateMetricSetFluentBuilder {
+        crate::operation::update_metric_set::builders::UpdateMetricSetFluentBuilder::new(self.handle.clone())
     }
 }

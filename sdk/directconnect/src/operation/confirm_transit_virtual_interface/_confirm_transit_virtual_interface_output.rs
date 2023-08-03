@@ -32,9 +32,7 @@ impl ConfirmTransitVirtualInterfaceOutput {
     /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> ::std::option::Option<&crate::types::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
 }
@@ -45,16 +43,14 @@ impl ::aws_http::request_id::RequestId for ConfirmTransitVirtualInterfaceOutput 
 }
 impl ConfirmTransitVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmTransitVirtualInterfaceOutput`](crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceOutput).
-    pub fn builder() -> crate::operation::confirm_transit_virtual_interface::builders::ConfirmTransitVirtualInterfaceOutputBuilder{
+    pub fn builder() -> crate::operation::confirm_transit_virtual_interface::builders::ConfirmTransitVirtualInterfaceOutputBuilder {
         crate::operation::confirm_transit_virtual_interface::builders::ConfirmTransitVirtualInterfaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmTransitVirtualInterfaceOutput`](crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmTransitVirtualInterfaceOutputBuilder {
     pub(crate) virtual_interface_state: ::std::option::Option<crate::types::VirtualInterfaceState>,
     _request_id: Option<String>,
@@ -88,10 +84,7 @@ impl ConfirmTransitVirtualInterfaceOutputBuilder {
     /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
-    pub fn set_virtual_interface_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualInterfaceState>,
-    ) -> Self {
+    pub fn set_virtual_interface_state(mut self, input: ::std::option::Option<crate::types::VirtualInterfaceState>) -> Self {
         self.virtual_interface_state = input;
         self
     }
@@ -107,9 +100,7 @@ impl ConfirmTransitVirtualInterfaceOutputBuilder {
     /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
-    pub fn get_virtual_interface_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualInterfaceState> {
+    pub fn get_virtual_interface_state(&self) -> &::std::option::Option<crate::types::VirtualInterfaceState> {
         &self.virtual_interface_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -122,10 +113,7 @@ impl ConfirmTransitVirtualInterfaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConfirmTransitVirtualInterfaceOutput`](crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceOutput
-    {
+    pub fn build(self) -> crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceOutput {
         crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceOutput {
             virtual_interface_state: self.virtual_interface_state,
             _request_id: self._request_id,

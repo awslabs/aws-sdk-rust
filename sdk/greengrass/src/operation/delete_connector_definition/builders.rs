@@ -26,7 +26,7 @@ impl DeleteConnectorDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConnectorDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_connector_definition::builders::DeleteConnectorDefinitionInputBuilder,
+    inner: crate::operation::delete_connector_definition::builders::DeleteConnectorDefinitionInputBuilder,
 }
 impl DeleteConnectorDefinitionFluentBuilder {
     /// Creates a new `DeleteConnectorDefinition`.
@@ -37,7 +37,7 @@ impl DeleteConnectorDefinitionFluentBuilder {
         }
     }
     /// Access the DeleteConnectorDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_connector_definition::builders::DeleteConnectorDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_connector_definition::builders::DeleteConnectorDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteConnectorDefinitionFluentBuilder {
             crate::operation::delete_connector_definition::DeleteConnectorDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connector_definition::DeleteConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connector_definition::DeleteConnectorDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteConnectorDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteConnectorDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connector_definition::DeleteConnectorDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connector_definition::DeleteConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connector_definition::DeleteConnectorDefinitionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteConnectorDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connector_definition::DeleteConnectorDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connector_definition::DeleteConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connector_definition::DeleteConnectorDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteConnectorDefinitionFluentBuilder {
             crate::operation::delete_connector_definition::DeleteConnectorDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connector_definition::DeleteConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connector_definition::DeleteConnectorDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the connector definition.
-    pub fn connector_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_definition_id(input.into());
         self
     }
     /// The ID of the connector definition.
-    pub fn set_connector_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_definition_id(input);
         self
     }

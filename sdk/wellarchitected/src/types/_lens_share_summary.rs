@@ -44,9 +44,7 @@ impl LensShareSummary {
 
 /// A builder for [`LensShareSummary`](crate::types::LensShareSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LensShareSummaryBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ impl LensShareSummaryBuilder {
         &self.status
     }
     /// <p>Optional message to compliment the Status field.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional message to compliment the Status field.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

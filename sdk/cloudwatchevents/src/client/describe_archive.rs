@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`event_count(i64)`](crate::operation::describe_archive::DescribeArchiveOutput::event_count): <p>The number of events in the archive.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_archive::DescribeArchiveOutput::creation_time): <p>The time at which the archive was created.</p>
     /// - On failure, responds with [`SdkError<DescribeArchiveError>`](crate::operation::describe_archive::DescribeArchiveError)
-    pub fn describe_archive(
-        &self,
-    ) -> crate::operation::describe_archive::builders::DescribeArchiveFluentBuilder {
-        crate::operation::describe_archive::builders::DescribeArchiveFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_archive(&self) -> crate::operation::describe_archive::builders::DescribeArchiveFluentBuilder {
+        crate::operation::describe_archive::builders::DescribeArchiveFluentBuilder::new(self.handle.clone())
     }
 }

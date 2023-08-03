@@ -27,8 +27,7 @@ impl SetDataRetrievalPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetDataRetrievalPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder,
+    inner: crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder,
 }
 impl SetDataRetrievalPolicyFluentBuilder {
     /// Creates a new `SetDataRetrievalPolicy`.
@@ -39,10 +38,7 @@ impl SetDataRetrievalPolicyFluentBuilder {
         }
     }
     /// Access the SetDataRetrievalPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl SetDataRetrievalPolicyFluentBuilder {
             crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl SetDataRetrievalPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl SetDataRetrievalPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl SetDataRetrievalPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl SetDataRetrievalPolicyFluentBuilder {
             crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -145,10 +130,7 @@ impl SetDataRetrievalPolicyFluentBuilder {
         self
     }
     /// <p>The data retrieval policy in JSON format.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRetrievalPolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::DataRetrievalPolicy>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }

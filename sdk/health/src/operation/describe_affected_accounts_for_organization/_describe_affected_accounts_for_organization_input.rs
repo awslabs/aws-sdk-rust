@@ -33,16 +33,14 @@ impl DescribeAffectedAccountsForOrganizationInput {
 }
 impl DescribeAffectedAccountsForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationInput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput).
-    pub fn builder() -> crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationInputBuilder {
         crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAffectedAccountsForOrganizationInput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAffectedAccountsForOrganizationInputBuilder {
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -98,16 +96,18 @@ impl DescribeAffectedAccountsForOrganizationInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeAffectedAccountsForOrganizationInput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput {
-                event_arn: self.event_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                event_arn: self.event_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

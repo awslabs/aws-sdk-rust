@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeAccountPoliciesOutput {
 }
 impl DescribeAccountPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountPoliciesOutput`](crate::operation::describe_account_policies::DescribeAccountPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_policies::builders::DescribeAccountPoliciesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_policies::builders::DescribeAccountPoliciesOutputBuilder {
         crate::operation::describe_account_policies::builders::DescribeAccountPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountPoliciesOutput`](crate::operation::describe_account_policies::DescribeAccountPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountPoliciesOutputBuilder {
-    pub(crate) account_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>>,
+    pub(crate) account_policies: ::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>>,
     _request_id: Option<String>,
 }
 impl DescribeAccountPoliciesOutputBuilder {
@@ -51,17 +46,12 @@ impl DescribeAccountPoliciesOutputBuilder {
         self
     }
     /// <p>An array of structures that contain information about the CloudWatch Logs account policies that match the specified filters.</p>
-    pub fn set_account_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>>,
-    ) -> Self {
+    pub fn set_account_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>>) -> Self {
         self.account_policies = input;
         self
     }
     /// <p>An array of structures that contain information about the CloudWatch Logs account policies that match the specified filters.</p>
-    pub fn get_account_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>> {
+    pub fn get_account_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>> {
         &self.account_policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +64,7 @@ impl DescribeAccountPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountPoliciesOutput`](crate::operation::describe_account_policies::DescribeAccountPoliciesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_account_policies::DescribeAccountPoliciesOutput {
+    pub fn build(self) -> crate::operation::describe_account_policies::DescribeAccountPoliciesOutput {
         crate::operation::describe_account_policies::DescribeAccountPoliciesOutput {
             account_policies: self.account_policies,
             _request_id: self._request_id,

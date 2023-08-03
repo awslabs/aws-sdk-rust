@@ -15,9 +15,7 @@ pub struct DescribeBudgetPerformanceHistoryOutput {
 impl DescribeBudgetPerformanceHistoryOutput {
     /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
     /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
-    pub fn budget_performance_history(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BudgetPerformanceHistory> {
+    pub fn budget_performance_history(&self) -> ::std::option::Option<&crate::types::BudgetPerformanceHistory> {
         self.budget_performance_history.as_ref()
     }
     /// <p> A generic string.</p>
@@ -32,46 +30,35 @@ impl ::aws_http::request_id::RequestId for DescribeBudgetPerformanceHistoryOutpu
 }
 impl DescribeBudgetPerformanceHistoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetPerformanceHistoryOutput`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput).
-    pub fn builder() -> crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryOutputBuilder {
         crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBudgetPerformanceHistoryOutput`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetPerformanceHistoryOutputBuilder {
-    pub(crate) budget_performance_history:
-        ::std::option::Option<crate::types::BudgetPerformanceHistory>,
+    pub(crate) budget_performance_history: ::std::option::Option<crate::types::BudgetPerformanceHistory>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBudgetPerformanceHistoryOutputBuilder {
     /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
     /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
-    pub fn budget_performance_history(
-        mut self,
-        input: crate::types::BudgetPerformanceHistory,
-    ) -> Self {
+    pub fn budget_performance_history(mut self, input: crate::types::BudgetPerformanceHistory) -> Self {
         self.budget_performance_history = ::std::option::Option::Some(input);
         self
     }
     /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
     /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
-    pub fn set_budget_performance_history(
-        mut self,
-        input: ::std::option::Option<crate::types::BudgetPerformanceHistory>,
-    ) -> Self {
+    pub fn set_budget_performance_history(mut self, input: ::std::option::Option<crate::types::BudgetPerformanceHistory>) -> Self {
         self.budget_performance_history = input;
         self
     }
     /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
     /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
-    pub fn get_budget_performance_history(
-        &self,
-    ) -> &::std::option::Option<crate::types::BudgetPerformanceHistory> {
+    pub fn get_budget_performance_history(&self) -> &::std::option::Option<crate::types::BudgetPerformanceHistory> {
         &self.budget_performance_history
     }
     /// <p> A generic string.</p>
@@ -98,15 +85,10 @@ impl DescribeBudgetPerformanceHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBudgetPerformanceHistoryOutput`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput
-    {
+    pub fn build(self) -> crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput {
         crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput {
-            budget_performance_history: self.budget_performance_history
-            ,
-            next_token: self.next_token
-            ,
+            budget_performance_history: self.budget_performance_history,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

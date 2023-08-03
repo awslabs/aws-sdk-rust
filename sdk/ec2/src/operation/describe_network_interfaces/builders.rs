@@ -26,7 +26,7 @@ impl DescribeNetworkInterfacesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesInputBuilder,
+    inner: crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesInputBuilder,
 }
 impl DescribeNetworkInterfacesFluentBuilder {
     /// Creates a new `DescribeNetworkInterfaces`.
@@ -37,7 +37,7 @@ impl DescribeNetworkInterfacesFluentBuilder {
         }
     }
     /// Access the DescribeNetworkInterfaces as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeNetworkInterfacesFluentBuilder {
             crate::operation::describe_network_interfaces::DescribeNetworkInterfaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_interfaces::DescribeNetworkInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interfaces::DescribeNetworkInterfacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeNetworkInterfacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeNetworkInterfacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_interfaces::DescribeNetworkInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interfaces::DescribeNetworkInterfacesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeNetworkInterfacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_interfaces::DescribeNetworkInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interfaces::DescribeNetworkInterfacesError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl DescribeNetworkInterfacesFluentBuilder {
             crate::operation::describe_network_interfaces::DescribeNetworkInterfaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_interfaces::DescribeNetworkInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interfaces::DescribeNetworkInterfacesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_network_interfaces::paginator::DescribeNetworkInterfacesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_network_interfaces::paginator::DescribeNetworkInterfacesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_network_interfaces::paginator::DescribeNetworkInterfacesPaginator {
         crate::operation::describe_network_interfaces::paginator::DescribeNetworkInterfacesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -225,10 +211,7 @@ impl DescribeNetworkInterfacesFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC for the network interface.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -299,27 +282,19 @@ impl DescribeNetworkInterfacesFluentBuilder {
     ///
     /// <p>The network interface IDs.</p>
     /// <p>Default: Describes all your network interfaces.</p>
-    pub fn network_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_ids(input.into());
         self
     }
     /// <p>The network interface IDs.</p>
     /// <p>Default: Describes all your network interfaces.</p>
-    pub fn set_network_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_network_interface_ids(input);
         self
     }
     /// <p>The network interface IDs.</p>
     /// <p>Default: Describes all your network interfaces.</p>
-    pub fn get_network_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_network_interface_ids()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>

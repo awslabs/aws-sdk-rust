@@ -10,10 +10,7 @@ impl ListPagesByContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_pages_by_contact::ListPagesByContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pages_by_contact::ListPagesByContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pages_by_contact::ListPagesByContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_pages_by_contact();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListPagesByContactFluentBuilder {
         }
     }
     /// Access the ListPagesByContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_pages_by_contact::builders::ListPagesByContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_pages_by_contact::builders::ListPagesByContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListPagesByContactFluentBuilder {
             crate::operation::list_pages_by_contact::ListPagesByContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pages_by_contact::ListPagesByContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pages_by_contact::ListPagesByContactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListPagesByContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListPagesByContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pages_by_contact::ListPagesByContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pages_by_contact::ListPagesByContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pages_by_contact::ListPagesByContactError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListPagesByContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pages_by_contact::ListPagesByContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pages_by_contact::ListPagesByContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pages_by_contact::ListPagesByContactError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListPagesByContactFluentBuilder {
             crate::operation::list_pages_by_contact::ListPagesByContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pages_by_contact::ListPagesByContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pages_by_contact::ListPagesByContactError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_pages_by_contact::paginator::ListPagesByContactPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_pages_by_contact::paginator::ListPagesByContactPaginator {
-        crate::operation::list_pages_by_contact::paginator::ListPagesByContactPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_pages_by_contact::paginator::ListPagesByContactPaginator {
+        crate::operation::list_pages_by_contact::paginator::ListPagesByContactPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

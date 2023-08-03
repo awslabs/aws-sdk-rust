@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeRecoverySnapshotsOutput {
 }
 impl DescribeRecoverySnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecoverySnapshotsOutput`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput).
-    pub fn builder() -> crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsOutputBuilder {
         crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecoverySnapshotsOutput`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecoverySnapshotsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecoverySnapshot>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeRecoverySnapshotsOutputBuilder {
         self
     }
     /// <p>An array of Recovery Snapshots.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecoverySnapshot>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoverySnapshot>>) -> Self {
         self.items = input;
         self
     }
     /// <p>An array of Recovery Snapshots.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoverySnapshot>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoverySnapshot>> {
         &self.items
     }
     /// <p>The token of the next Recovery Snapshot to retrieve.</p>
@@ -93,9 +86,7 @@ impl DescribeRecoverySnapshotsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRecoverySnapshotsOutput`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput {
+    pub fn build(self) -> crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput {
         crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput {
             items: self.items,
             next_token: self.next_token,

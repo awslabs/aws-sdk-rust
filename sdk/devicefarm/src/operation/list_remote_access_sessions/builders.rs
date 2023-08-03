@@ -26,7 +26,7 @@ impl ListRemoteAccessSessionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRemoteAccessSessionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsInputBuilder,
+    inner: crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsInputBuilder,
 }
 impl ListRemoteAccessSessionsFluentBuilder {
     /// Creates a new `ListRemoteAccessSessions`.
@@ -37,7 +37,7 @@ impl ListRemoteAccessSessionsFluentBuilder {
         }
     }
     /// Access the ListRemoteAccessSessions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListRemoteAccessSessionsFluentBuilder {
             crate::operation::list_remote_access_sessions::ListRemoteAccessSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListRemoteAccessSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListRemoteAccessSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListRemoteAccessSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListRemoteAccessSessionsFluentBuilder {
             crate::operation::list_remote_access_sessions::ListRemoteAccessSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsError>,
     > {
         self.customize_middleware().await
     }

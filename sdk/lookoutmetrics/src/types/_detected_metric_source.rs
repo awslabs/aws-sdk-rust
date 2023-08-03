@@ -23,9 +23,7 @@ impl DetectedMetricSource {
 
 /// A builder for [`DetectedMetricSource`](crate::types::DetectedMetricSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectedMetricSourceBuilder {
     pub(crate) s3_source_config: ::std::option::Option<crate::types::DetectedS3SourceConfig>,
 }
@@ -36,17 +34,12 @@ impl DetectedMetricSourceBuilder {
         self
     }
     /// <p>The data source's source configuration.</p>
-    pub fn set_s3_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedS3SourceConfig>,
-    ) -> Self {
+    pub fn set_s3_source_config(mut self, input: ::std::option::Option<crate::types::DetectedS3SourceConfig>) -> Self {
         self.s3_source_config = input;
         self
     }
     /// <p>The data source's source configuration.</p>
-    pub fn get_s3_source_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectedS3SourceConfig> {
+    pub fn get_s3_source_config(&self) -> &::std::option::Option<crate::types::DetectedS3SourceConfig> {
         &self.s3_source_config
     }
     /// Consumes the builder and constructs a [`DetectedMetricSource`](crate::types::DetectedMetricSource).

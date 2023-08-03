@@ -37,9 +37,7 @@ impl DashboardError {
 
 /// A builder for [`DashboardError`](crate::types::DashboardError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashboardErrorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DashboardErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl DashboardErrorBuilder {
         self
     }
     /// <p>Type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DashboardErrorType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DashboardErrorType>) -> Self {
         self.r#type = input;
         self
     }
@@ -89,17 +84,12 @@ impl DashboardErrorBuilder {
         self
     }
     /// <p>Lists the violated entities that caused the dashboard error.</p>
-    pub fn set_violated_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
+    pub fn set_violated_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
         self.violated_entities = input;
         self
     }
     /// <p>Lists the violated entities that caused the dashboard error.</p>
-    pub fn get_violated_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+    pub fn get_violated_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
         &self.violated_entities
     }
     /// Consumes the builder and constructs a [`DashboardError`](crate::types::DashboardError).

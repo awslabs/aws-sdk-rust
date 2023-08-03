@@ -45,9 +45,7 @@ impl ResponseInspectionJson {
 
 /// A builder for [`ResponseInspectionJson`](crate::types::ResponseInspectionJson).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseInspectionJsonBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) success_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -77,10 +75,7 @@ impl ResponseInspectionJsonBuilder {
     ///
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> </p>
-    pub fn success_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn success_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.success_values.unwrap_or_default();
         v.push(input.into());
         self.success_values = ::std::option::Option::Some(v);
@@ -88,18 +83,13 @@ impl ResponseInspectionJsonBuilder {
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> </p>
-    pub fn set_success_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_success_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.success_values = input;
         self
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> </p>
-    pub fn get_success_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_success_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.success_values
     }
     /// Appends an item to `failure_values`.
@@ -108,10 +98,7 @@ impl ResponseInspectionJsonBuilder {
     ///
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> </p>
-    pub fn failure_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_values.unwrap_or_default();
         v.push(input.into());
         self.failure_values = ::std::option::Option::Some(v);
@@ -119,18 +106,13 @@ impl ResponseInspectionJsonBuilder {
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> </p>
-    pub fn set_failure_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_values = input;
         self
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> </p>
-    pub fn get_failure_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_values
     }
     /// Consumes the builder and constructs a [`ResponseInspectionJson`](crate::types::ResponseInspectionJson).

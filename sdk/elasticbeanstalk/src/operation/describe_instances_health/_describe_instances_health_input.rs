@@ -12,8 +12,7 @@ pub struct DescribeInstancesHealthInput {
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
     #[doc(hidden)]
-    pub attribute_names:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>,
+    pub attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>,
     /// <p>Specify the pagination token returned by a previous call.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -28,9 +27,7 @@ impl DescribeInstancesHealthInput {
         self.environment_id.as_deref()
     }
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    pub fn attribute_names(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstancesHealthAttribute]> {
+    pub fn attribute_names(&self) -> ::std::option::Option<&[crate::types::InstancesHealthAttribute]> {
         self.attribute_names.as_deref()
     }
     /// <p>Specify the pagination token returned by a previous call.</p>
@@ -40,39 +37,28 @@ impl DescribeInstancesHealthInput {
 }
 impl DescribeInstancesHealthInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesHealthInput`](crate::operation::describe_instances_health::DescribeInstancesHealthInput).
-    pub fn builder(
-    ) -> crate::operation::describe_instances_health::builders::DescribeInstancesHealthInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instances_health::builders::DescribeInstancesHealthInputBuilder {
         crate::operation::describe_instances_health::builders::DescribeInstancesHealthInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancesHealthInput`](crate::operation::describe_instances_health::DescribeInstancesHealthInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancesHealthInputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attribute_names:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInstancesHealthInputBuilder {
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -81,18 +67,12 @@ impl DescribeInstancesHealthInputBuilder {
         &self.environment_name
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -112,17 +92,12 @@ impl DescribeInstancesHealthInputBuilder {
         self
     }
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    pub fn set_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>,
-    ) -> Self {
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>) -> Self {
         self.attribute_names = input;
         self
     }
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    pub fn get_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>> {
         &self.attribute_names
     }
     /// <p>Specify the pagination token returned by a previous call.</p>
@@ -146,13 +121,11 @@ impl DescribeInstancesHealthInputBuilder {
         crate::operation::describe_instances_health::DescribeInstancesHealthInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instances_health::DescribeInstancesHealthInput {
-                environment_name: self.environment_name,
-                environment_id: self.environment_id,
-                attribute_names: self.attribute_names,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_instances_health::DescribeInstancesHealthInput {
+            environment_name: self.environment_name,
+            environment_id: self.environment_id,
+            attribute_names: self.attribute_names,
+            next_token: self.next_token,
+        })
     }
 }

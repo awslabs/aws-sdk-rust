@@ -58,17 +58,14 @@ impl LoRaWanDeviceMetadata {
 
 /// A builder for [`LoRaWanDeviceMetadata`](crate::types::LoRaWanDeviceMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanDeviceMetadataBuilder {
     pub(crate) dev_eui: ::std::option::Option<::std::string::String>,
     pub(crate) f_port: ::std::option::Option<i32>,
     pub(crate) data_rate: ::std::option::Option<i32>,
     pub(crate) frequency: ::std::option::Option<i32>,
     pub(crate) timestamp: ::std::option::Option<::std::string::String>,
-    pub(crate) gateways:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
+    pub(crate) gateways: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
 }
 impl LoRaWanDeviceMetadataBuilder {
     /// <p>The DevEUI value.</p>
@@ -153,17 +150,12 @@ impl LoRaWanDeviceMetadataBuilder {
         self
     }
     /// <p>Information about the gateways accessed by the device.</p>
-    pub fn set_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
-    ) -> Self {
+    pub fn set_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>) -> Self {
         self.gateways = input;
         self
     }
     /// <p>Information about the gateways accessed by the device.</p>
-    pub fn get_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>> {
+    pub fn get_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>> {
         &self.gateways
     }
     /// Consumes the builder and constructs a [`LoRaWanDeviceMetadata`](crate::types::LoRaWanDeviceMetadata).

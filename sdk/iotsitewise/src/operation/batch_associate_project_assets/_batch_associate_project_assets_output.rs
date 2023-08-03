@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchAssociateProjectAssetsOutput {
 }
 impl BatchAssociateProjectAssetsOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateProjectAssetsOutput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput).
-    pub fn builder() -> crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsOutputBuilder {
         crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchAssociateProjectAssetsOutput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateProjectAssetsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl BatchAssociateProjectAssetsOutputBuilder {
         self
     }
     /// <p>A list of associated error information, if any.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of associated error information, if any.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +64,7 @@ impl BatchAssociateProjectAssetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchAssociateProjectAssetsOutput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput {
+    pub fn build(self) -> crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput {
         crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput {
             errors: self.errors,
             _request_id: self._request_id,

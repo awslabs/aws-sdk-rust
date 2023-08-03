@@ -10,10 +10,7 @@ impl CreateComponentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_component::CreateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_component();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CreateComponentFluentBuilder {
         }
     }
     /// Access the CreateComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_component::builders::CreateComponentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_component::builders::CreateComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl CreateComponentFluentBuilder {
             crate::operation::create_component::CreateComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl CreateComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl CreateComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_component::CreateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl CreateComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_component::CreateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl CreateComponentFluentBuilder {
             crate::operation::create_component::CreateComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl CreateComponentFluentBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
@@ -179,10 +160,7 @@ impl CreateComponentFluentBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
@@ -220,18 +198,12 @@ impl CreateComponentFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn change_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_description(input.into());
         self
     }
     /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn set_change_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_description(input);
         self
     }
@@ -258,25 +230,17 @@ impl CreateComponentFluentBuilder {
     /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
     ///
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    pub fn supported_os_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_os_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.supported_os_versions(input.into());
         self
     }
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    pub fn set_supported_os_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_os_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_supported_os_versions(input);
         self
     }
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    pub fn get_supported_os_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_os_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_supported_os_versions()
     }
     /// <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
@@ -329,30 +293,17 @@ impl CreateComponentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that apply to the component.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The idempotency token of the component.</p>

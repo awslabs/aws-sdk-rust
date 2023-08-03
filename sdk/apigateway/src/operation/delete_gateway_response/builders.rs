@@ -37,10 +37,7 @@ impl DeleteGatewayResponseFluentBuilder {
         }
     }
     /// Access the DeleteGatewayResponse as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_gateway_response::builders::DeleteGatewayResponseInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_gateway_response::builders::DeleteGatewayResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteGatewayResponseFluentBuilder {
             crate::operation::delete_gateway_response::DeleteGatewayResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_response::DeleteGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_response::DeleteGatewayResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteGatewayResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteGatewayResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_gateway_response::DeleteGatewayResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_response::DeleteGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_response::DeleteGatewayResponseError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteGatewayResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_gateway_response::DeleteGatewayResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_response::DeleteGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_response::DeleteGatewayResponseError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteGatewayResponseFluentBuilder {
             crate::operation::delete_gateway_response::DeleteGatewayResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_response::DeleteGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_response::DeleteGatewayResponseError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl DeleteGatewayResponseFluentBuilder {
         self
     }
     /// <p>The response type of the associated GatewayResponse.</p>
-    pub fn set_response_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayResponseType>,
-    ) -> Self {
+    pub fn set_response_type(mut self, input: ::std::option::Option<crate::types::GatewayResponseType>) -> Self {
         self.inner = self.inner.set_response_type(input);
         self
     }

@@ -5,8 +5,7 @@
 pub struct GetIpamDiscoveredResourceCidrsOutput {
     /// <p>Discovered resource CIDRs.</p>
     #[doc(hidden)]
-    pub ipam_discovered_resource_cidrs:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredResourceCidr>>,
+    pub ipam_discovered_resource_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredResourceCidr>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetIpamDiscoveredResourceCidrsOutput {
 }
 impl GetIpamDiscoveredResourceCidrsOutput {
     /// <p>Discovered resource CIDRs.</p>
-    pub fn ipam_discovered_resource_cidrs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IpamDiscoveredResourceCidr]> {
+    pub fn ipam_discovered_resource_cidrs(&self) -> ::std::option::Option<&[crate::types::IpamDiscoveredResourceCidr]> {
         self.ipam_discovered_resource_cidrs.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetIpamDiscoveredResourceCidrsOutput 
 }
 impl GetIpamDiscoveredResourceCidrsOutput {
     /// Creates a new builder-style object to manufacture [`GetIpamDiscoveredResourceCidrsOutput`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput).
-    pub fn builder() -> crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsOutputBuilder{
+    pub fn builder() -> crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsOutputBuilder {
         crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamDiscoveredResourceCidrsOutput`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamDiscoveredResourceCidrsOutputBuilder {
-    pub(crate) ipam_discovered_resource_cidrs:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredResourceCidr>>,
+    pub(crate) ipam_discovered_resource_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredResourceCidr>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl GetIpamDiscoveredResourceCidrsOutputBuilder {
     /// To override the contents of this collection use [`set_ipam_discovered_resource_cidrs`](Self::set_ipam_discovered_resource_cidrs).
     ///
     /// <p>Discovered resource CIDRs.</p>
-    pub fn ipam_discovered_resource_cidrs(
-        mut self,
-        input: crate::types::IpamDiscoveredResourceCidr,
-    ) -> Self {
+    pub fn ipam_discovered_resource_cidrs(mut self, input: crate::types::IpamDiscoveredResourceCidr) -> Self {
         let mut v = self.ipam_discovered_resource_cidrs.unwrap_or_default();
         v.push(input);
         self.ipam_discovered_resource_cidrs = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl GetIpamDiscoveredResourceCidrsOutputBuilder {
         self
     }
     /// <p>Discovered resource CIDRs.</p>
-    pub fn get_ipam_discovered_resource_cidrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredResourceCidr>> {
+    pub fn get_ipam_discovered_resource_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredResourceCidr>> {
         &self.ipam_discovered_resource_cidrs
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -100,10 +89,7 @@ impl GetIpamDiscoveredResourceCidrsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIpamDiscoveredResourceCidrsOutput`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput
-    {
+    pub fn build(self) -> crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput {
         crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput {
             ipam_discovered_resource_cidrs: self.ipam_discovered_resource_cidrs,
             next_token: self.next_token,

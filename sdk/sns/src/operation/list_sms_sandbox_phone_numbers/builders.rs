@@ -27,7 +27,7 @@ impl ListSmsSandboxPhoneNumbersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSMSSandboxPhoneNumbersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_sms_sandbox_phone_numbers::builders::ListSmsSandboxPhoneNumbersInputBuilder,
+    inner: crate::operation::list_sms_sandbox_phone_numbers::builders::ListSmsSandboxPhoneNumbersInputBuilder,
 }
 impl ListSMSSandboxPhoneNumbersFluentBuilder {
     /// Creates a new `ListSMSSandboxPhoneNumbers`.
@@ -38,7 +38,7 @@ impl ListSMSSandboxPhoneNumbersFluentBuilder {
         }
     }
     /// Access the ListSMSSandboxPhoneNumbers as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_sms_sandbox_phone_numbers::builders::ListSmsSandboxPhoneNumbersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_sms_sandbox_phone_numbers::builders::ListSmsSandboxPhoneNumbersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListSMSSandboxPhoneNumbersFluentBuilder {
             crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListSMSSandboxPhoneNumbersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListSMSSandboxPhoneNumbersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListSMSSandboxPhoneNumbersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl ListSMSSandboxPhoneNumbersFluentBuilder {
             crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_sms_sandbox_phone_numbers::paginator::ListSmsSandboxPhoneNumbersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_sms_sandbox_phone_numbers::paginator::ListSmsSandboxPhoneNumbersPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_sms_sandbox_phone_numbers::paginator::ListSmsSandboxPhoneNumbersPaginator {
         crate::operation::list_sms_sandbox_phone_numbers::paginator::ListSmsSandboxPhoneNumbersPaginator::new(self.handle, self.inner)
     }
     /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request returns.</p>

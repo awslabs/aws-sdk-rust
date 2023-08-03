@@ -35,9 +35,7 @@ impl GetPartitionsOutput {
 
 /// A builder for [`GetPartitionsOutput`](crate::operation::get_partitions::GetPartitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPartitionsOutputBuilder {
     pub(crate) partitions: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetPartitionsOutputBuilder {
         self
     }
     /// <p>A list of requested partitions.</p>
-    pub fn set_partitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>,
-    ) -> Self {
+    pub fn set_partitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>) -> Self {
         self.partitions = input;
         self
     }
     /// <p>A list of requested partitions.</p>
-    pub fn get_partitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Partition>> {
+    pub fn get_partitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Partition>> {
         &self.partitions
     }
     /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>

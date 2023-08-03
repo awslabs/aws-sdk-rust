@@ -23,35 +23,26 @@ impl DeleteCacheClusterInput {
 }
 impl DeleteCacheClusterInput {
     /// Creates a new builder-style object to manufacture [`DeleteCacheClusterInput`](crate::operation::delete_cache_cluster::DeleteCacheClusterInput).
-    pub fn builder(
-    ) -> crate::operation::delete_cache_cluster::builders::DeleteCacheClusterInputBuilder {
+    pub fn builder() -> crate::operation::delete_cache_cluster::builders::DeleteCacheClusterInputBuilder {
         crate::operation::delete_cache_cluster::builders::DeleteCacheClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCacheClusterInput`](crate::operation::delete_cache_cluster::DeleteCacheClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCacheClusterInputBuilder {
     pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) final_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCacheClusterInputBuilder {
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_id = input;
         self
     }
@@ -60,18 +51,12 @@ impl DeleteCacheClusterInputBuilder {
         &self.cache_cluster_id
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
-    pub fn final_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
-    pub fn set_final_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_snapshot_identifier = input;
         self
     }
@@ -82,15 +67,10 @@ impl DeleteCacheClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCacheClusterInput`](crate::operation::delete_cache_cluster::DeleteCacheClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cache_cluster::DeleteCacheClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_cache_cluster::DeleteCacheClusterInput {
-                cache_cluster_id: self.cache_cluster_id,
-                final_snapshot_identifier: self.final_snapshot_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_cache_cluster::DeleteCacheClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_cache_cluster::DeleteCacheClusterInput {
+            cache_cluster_id: self.cache_cluster_id,
+            final_snapshot_identifier: self.final_snapshot_identifier,
+        })
     }
 }

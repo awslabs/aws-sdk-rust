@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`BatchUpdatePartitionOutput`](crate::operation::batch_update_partition::BatchUpdatePartitionOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchUpdatePartitionFailureEntry>>)`](crate::operation::batch_update_partition::BatchUpdatePartitionOutput::errors): <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
     /// - On failure, responds with [`SdkError<BatchUpdatePartitionError>`](crate::operation::batch_update_partition::BatchUpdatePartitionError)
-    pub fn batch_update_partition(
-        &self,
-    ) -> crate::operation::batch_update_partition::builders::BatchUpdatePartitionFluentBuilder {
-        crate::operation::batch_update_partition::builders::BatchUpdatePartitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_update_partition(&self) -> crate::operation::batch_update_partition::builders::BatchUpdatePartitionFluentBuilder {
+        crate::operation::batch_update_partition::builders::BatchUpdatePartitionFluentBuilder::new(self.handle.clone())
     }
 }

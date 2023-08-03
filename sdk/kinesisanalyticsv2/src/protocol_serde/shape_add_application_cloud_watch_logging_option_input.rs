@@ -15,10 +15,7 @@ pub fn ser_add_application_cloud_watch_logging_option_input(
     if let Some(var_3) = &input.cloud_watch_logging_option {
         #[allow(unused_mut)]
         let mut object_4 = object.key("CloudWatchLoggingOption").start_object();
-        crate::protocol_serde::shape_cloud_watch_logging_option::ser_cloud_watch_logging_option(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_logging_option::ser_cloud_watch_logging_option(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.conditional_token {

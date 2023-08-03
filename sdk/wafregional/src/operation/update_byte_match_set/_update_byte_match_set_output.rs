@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateByteMatchSetOutput {
 }
 impl UpdateByteMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateByteMatchSetOutput`](crate::operation::update_byte_match_set::UpdateByteMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::update_byte_match_set::builders::UpdateByteMatchSetOutputBuilder {
-        crate::operation::update_byte_match_set::builders::UpdateByteMatchSetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_byte_match_set::builders::UpdateByteMatchSetOutputBuilder {
+        crate::operation::update_byte_match_set::builders::UpdateByteMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateByteMatchSetOutput`](crate::operation::update_byte_match_set::UpdateByteMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateByteMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

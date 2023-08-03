@@ -103,9 +103,7 @@ impl AppBlock {
 
 /// A builder for [`AppBlock`](crate::types::AppBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppBlockBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -182,10 +180,7 @@ impl AppBlockBuilder {
         self
     }
     /// <p>The source S3 location of the app block.</p>
-    pub fn set_source_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_source_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.source_s3_location = input;
         self
     }
@@ -201,10 +196,7 @@ impl AppBlockBuilder {
     }
     /// <p>The setup script details of the app block.</p>
     /// <p>This only applies to app blocks with PackagingType <code>CUSTOM</code>.</p>
-    pub fn set_setup_script_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ScriptDetails>,
-    ) -> Self {
+    pub fn set_setup_script_details(mut self, input: ::std::option::Option<crate::types::ScriptDetails>) -> Self {
         self.setup_script_details = input;
         self
     }
@@ -219,10 +211,7 @@ impl AppBlockBuilder {
         self
     }
     /// <p>The created time of the app block.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -238,18 +227,13 @@ impl AppBlockBuilder {
     }
     /// <p>The post setup script details of the app block.</p>
     /// <p>This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.</p>
-    pub fn set_post_setup_script_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ScriptDetails>,
-    ) -> Self {
+    pub fn set_post_setup_script_details(mut self, input: ::std::option::Option<crate::types::ScriptDetails>) -> Self {
         self.post_setup_script_details = input;
         self
     }
     /// <p>The post setup script details of the app block.</p>
     /// <p>This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.</p>
-    pub fn get_post_setup_script_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScriptDetails> {
+    pub fn get_post_setup_script_details(&self) -> &::std::option::Option<crate::types::ScriptDetails> {
         &self.post_setup_script_details
     }
     /// <p>The packaging type of the app block.</p>
@@ -258,10 +242,7 @@ impl AppBlockBuilder {
         self
     }
     /// <p>The packaging type of the app block.</p>
-    pub fn set_packaging_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackagingType>,
-    ) -> Self {
+    pub fn set_packaging_type(mut self, input: ::std::option::Option<crate::types::PackagingType>) -> Self {
         self.packaging_type = input;
         self
     }
@@ -301,17 +282,12 @@ impl AppBlockBuilder {
         self
     }
     /// <p>The errors of the app block.</p>
-    pub fn set_app_block_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>,
-    ) -> Self {
+    pub fn set_app_block_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>) -> Self {
         self.app_block_errors = input;
         self
     }
     /// <p>The errors of the app block.</p>
-    pub fn get_app_block_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>> {
+    pub fn get_app_block_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>> {
         &self.app_block_errors
     }
     /// Consumes the builder and constructs a [`AppBlock`](crate::types::AppBlock).

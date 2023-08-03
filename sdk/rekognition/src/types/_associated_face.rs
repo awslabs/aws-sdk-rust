@@ -23,9 +23,7 @@ impl AssociatedFace {
 
 /// A builder for [`AssociatedFace`](crate::types::AssociatedFace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatedFaceBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AssociatedFaceBuilder {
     }
     /// Consumes the builder and constructs a [`AssociatedFace`](crate::types::AssociatedFace).
     pub fn build(self) -> crate::types::AssociatedFace {
-        crate::types::AssociatedFace {
-            face_id: self.face_id,
-        }
+        crate::types::AssociatedFace { face_id: self.face_id }
     }
 }

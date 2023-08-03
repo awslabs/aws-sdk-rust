@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`ena_srd_specification(EnaSrdSpecification)`](crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeFluentBuilder::ena_srd_specification) / [`set_ena_srd_specification(Option<EnaSrdSpecification>)`](crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeFluentBuilder::set_ena_srd_specification): <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
     /// - On success, responds with [`ModifyNetworkInterfaceAttributeOutput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput)
     /// - On failure, responds with [`SdkError<ModifyNetworkInterfaceAttributeError>`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError)
-    pub fn modify_network_interface_attribute(&self) -> crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeFluentBuilder{
+    pub fn modify_network_interface_attribute(
+        &self,
+    ) -> crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeFluentBuilder {
         crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`delete_all(bool)`](crate::operation::delete_custom_metadata::builders::DeleteCustomMetadataFluentBuilder::delete_all) / [`set_delete_all(Option<bool>)`](crate::operation::delete_custom_metadata::builders::DeleteCustomMetadataFluentBuilder::set_delete_all): <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     /// - On success, responds with [`DeleteCustomMetadataOutput`](crate::operation::delete_custom_metadata::DeleteCustomMetadataOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomMetadataError>`](crate::operation::delete_custom_metadata::DeleteCustomMetadataError)
-    pub fn delete_custom_metadata(
-        &self,
-    ) -> crate::operation::delete_custom_metadata::builders::DeleteCustomMetadataFluentBuilder {
-        crate::operation::delete_custom_metadata::builders::DeleteCustomMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_custom_metadata(&self) -> crate::operation::delete_custom_metadata::builders::DeleteCustomMetadataFluentBuilder {
+        crate::operation::delete_custom_metadata::builders::DeleteCustomMetadataFluentBuilder::new(self.handle.clone())
     }
 }

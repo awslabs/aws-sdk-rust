@@ -23,9 +23,7 @@ impl DvbSubSourceSettings {
 
 /// A builder for [`DvbSubSourceSettings`](crate::types::DvbSubSourceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DvbSubSourceSettingsBuilder {
     pub(crate) pid: ::std::option::Option<i32>,
 }

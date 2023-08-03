@@ -6,14 +6,11 @@
 pub struct SageMakerPipelineParameters {
     /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_parameter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
+    pub pipeline_parameter_list: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
 }
 impl SageMakerPipelineParameters {
     /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
-    pub fn pipeline_parameter_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SageMakerPipelineParameter]> {
+    pub fn pipeline_parameter_list(&self) -> ::std::option::Option<&[crate::types::SageMakerPipelineParameter]> {
         self.pipeline_parameter_list.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl SageMakerPipelineParameters {
 
 /// A builder for [`SageMakerPipelineParameters`](crate::types::SageMakerPipelineParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SageMakerPipelineParametersBuilder {
-    pub(crate) pipeline_parameter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
+    pub(crate) pipeline_parameter_list: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
 }
 impl SageMakerPipelineParametersBuilder {
     /// Appends an item to `pipeline_parameter_list`.
@@ -39,27 +33,19 @@ impl SageMakerPipelineParametersBuilder {
     /// To override the contents of this collection use [`set_pipeline_parameter_list`](Self::set_pipeline_parameter_list).
     ///
     /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
-    pub fn pipeline_parameter_list(
-        mut self,
-        input: crate::types::SageMakerPipelineParameter,
-    ) -> Self {
+    pub fn pipeline_parameter_list(mut self, input: crate::types::SageMakerPipelineParameter) -> Self {
         let mut v = self.pipeline_parameter_list.unwrap_or_default();
         v.push(input);
         self.pipeline_parameter_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
-    pub fn set_pipeline_parameter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
-    ) -> Self {
+    pub fn set_pipeline_parameter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>) -> Self {
         self.pipeline_parameter_list = input;
         self
     }
     /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
-    pub fn get_pipeline_parameter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>> {
+    pub fn get_pipeline_parameter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>> {
         &self.pipeline_parameter_list
     }
     /// Consumes the builder and constructs a [`SageMakerPipelineParameters`](crate::types::SageMakerPipelineParameters).

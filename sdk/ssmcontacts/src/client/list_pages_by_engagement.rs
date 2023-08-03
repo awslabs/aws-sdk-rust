@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`pages(Option<Vec<Page>>)`](crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput::pages): <p>The list of engagements to contact channels.</p>
     /// - On failure, responds with [`SdkError<ListPagesByEngagementError>`](crate::operation::list_pages_by_engagement::ListPagesByEngagementError)
-    pub fn list_pages_by_engagement(
-        &self,
-    ) -> crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementFluentBuilder
-    {
+    pub fn list_pages_by_engagement(&self) -> crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementFluentBuilder {
         crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementFluentBuilder::new(self.handle.clone())
     }
 }

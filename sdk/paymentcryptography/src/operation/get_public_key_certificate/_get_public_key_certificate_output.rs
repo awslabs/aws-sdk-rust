@@ -37,9 +37,7 @@ impl ::aws_http::request_id::RequestId for GetPublicKeyCertificateOutput {
 }
 impl GetPublicKeyCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetPublicKeyCertificateOutput`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateOutputBuilder {
         crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateOutputBuilder::default()
     }
 }
@@ -54,18 +52,12 @@ pub struct GetPublicKeyCertificateOutputBuilder {
 }
 impl GetPublicKeyCertificateOutputBuilder {
     /// <p>The public key component of the asymmetric key pair in a certificate (PEM) format. It is signed by the root certificate authority (CA) within your service account. The certificate expires in 90 days.</p>
-    pub fn key_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public key component of the asymmetric key pair in a certificate (PEM) format. It is signed by the root certificate authority (CA) within your service account. The certificate expires in 90 days.</p>
-    pub fn set_key_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_certificate = input;
         self
     }
@@ -74,18 +66,12 @@ impl GetPublicKeyCertificateOutputBuilder {
         &self.key_certificate
     }
     /// <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
-    pub fn key_certificate_chain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
-    pub fn set_key_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_certificate_chain = input;
         self
     }
@@ -103,9 +89,7 @@ impl GetPublicKeyCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPublicKeyCertificateOutput`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput {
+    pub fn build(self) -> crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput {
         crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput {
             key_certificate: self.key_certificate,
             key_certificate_chain: self.key_certificate_chain,

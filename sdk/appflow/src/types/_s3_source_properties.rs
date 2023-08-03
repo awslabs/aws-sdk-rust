@@ -24,9 +24,7 @@ impl S3SourceProperties {
         self.bucket_prefix.as_deref()
     }
     /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
-    pub fn s3_input_format_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3InputFormatConfig> {
+    pub fn s3_input_format_config(&self) -> ::std::option::Option<&crate::types::S3InputFormatConfig> {
         self.s3_input_format_config.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl S3SourceProperties {
 
 /// A builder for [`S3SourceProperties`](crate::types::S3SourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3SourcePropertiesBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_prefix: ::std::option::Option<::std::string::String>,
@@ -63,18 +59,12 @@ impl S3SourcePropertiesBuilder {
         &self.bucket_name
     }
     /// <p> The object key for the Amazon S3 bucket in which the source files are stored. </p>
-    pub fn bucket_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The object key for the Amazon S3 bucket in which the source files are stored. </p>
-    pub fn set_bucket_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_prefix = input;
         self
     }
@@ -88,17 +78,12 @@ impl S3SourcePropertiesBuilder {
         self
     }
     /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
-    pub fn set_s3_input_format_config(
-        mut self,
-        input: ::std::option::Option<crate::types::S3InputFormatConfig>,
-    ) -> Self {
+    pub fn set_s3_input_format_config(mut self, input: ::std::option::Option<crate::types::S3InputFormatConfig>) -> Self {
         self.s3_input_format_config = input;
         self
     }
     /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
-    pub fn get_s3_input_format_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3InputFormatConfig> {
+    pub fn get_s3_input_format_config(&self) -> &::std::option::Option<crate::types::S3InputFormatConfig> {
         &self.s3_input_format_config
     }
     /// Consumes the builder and constructs a [`S3SourceProperties`](crate::types::S3SourceProperties).

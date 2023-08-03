@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListIdentityProvidersOutput {
 }
 impl ListIdentityProvidersOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder {
         crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityProvidersOutputBuilder {
     pub(crate) providers: ::std::option::Option<::std::vec::Vec<crate::types::ProviderDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListIdentityProvidersOutputBuilder {
         self
     }
     /// <p>A list of IdP objects.</p>
-    pub fn set_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderDescription>>,
-    ) -> Self {
+    pub fn set_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderDescription>>) -> Self {
         self.providers = input;
         self
     }
     /// <p>A list of IdP objects.</p>
-    pub fn get_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderDescription>> {
+    pub fn get_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderDescription>> {
         &self.providers
     }
     /// <p>A pagination token.</p>

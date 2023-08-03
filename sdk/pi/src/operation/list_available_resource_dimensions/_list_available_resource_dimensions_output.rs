@@ -5,8 +5,7 @@
 pub struct ListAvailableResourceDimensionsOutput {
     /// <p>The dimension information returned for requested metric types.</p>
     #[doc(hidden)]
-    pub metric_dimensions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDimensionGroups>>,
+    pub metric_dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimensionGroups>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAvailableResourceDimensionsOutput {
 }
 impl ListAvailableResourceDimensionsOutput {
     /// <p>The dimension information returned for requested metric types.</p>
-    pub fn metric_dimensions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetricDimensionGroups]> {
+    pub fn metric_dimensions(&self) -> ::std::option::Option<&[crate::types::MetricDimensionGroups]> {
         self.metric_dimensions.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAvailableResourceDimensionsOutput
 }
 impl ListAvailableResourceDimensionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsOutput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsOutput).
-    pub fn builder() -> crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsOutputBuilder {
         crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableResourceDimensionsOutput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableResourceDimensionsOutputBuilder {
-    pub(crate) metric_dimensions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDimensionGroups>>,
+    pub(crate) metric_dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimensionGroups>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListAvailableResourceDimensionsOutputBuilder {
         self
     }
     /// <p>The dimension information returned for requested metric types.</p>
-    pub fn set_metric_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimensionGroups>>,
-    ) -> Self {
+    pub fn set_metric_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimensionGroups>>) -> Self {
         self.metric_dimensions = input;
         self
     }
     /// <p>The dimension information returned for requested metric types.</p>
-    pub fn get_metric_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimensionGroups>> {
+    pub fn get_metric_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimensionGroups>> {
         &self.metric_dimensions
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
@@ -97,15 +86,10 @@ impl ListAvailableResourceDimensionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAvailableResourceDimensionsOutput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsOutput {
         crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsOutput {
-            metric_dimensions: self.metric_dimensions
-            ,
-            next_token: self.next_token
-            ,
+            metric_dimensions: self.metric_dimensions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -6,7 +6,10 @@ pub fn ser_request_details(
     if let Some(var_1) = &input.export_asset_to_signed_url {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ExportAssetToSignedUrl").start_object();
-        crate::protocol_serde::shape_export_asset_to_signed_url_request_details::ser_export_asset_to_signed_url_request_details(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_export_asset_to_signed_url_request_details::ser_export_asset_to_signed_url_request_details(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.export_assets_to_s3 {
@@ -24,7 +27,10 @@ pub fn ser_request_details(
     if let Some(var_7) = &input.import_asset_from_signed_url {
         #[allow(unused_mut)]
         let mut object_8 = object.key("ImportAssetFromSignedUrl").start_object();
-        crate::protocol_serde::shape_import_asset_from_signed_url_request_details::ser_import_asset_from_signed_url_request_details(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_import_asset_from_signed_url_request_details::ser_import_asset_from_signed_url_request_details(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.import_assets_from_s3 {
@@ -35,29 +41,31 @@ pub fn ser_request_details(
     }
     if let Some(var_11) = &input.import_assets_from_redshift_data_shares {
         #[allow(unused_mut)]
-        let mut object_12 = object
-            .key("ImportAssetsFromRedshiftDataShares")
-            .start_object();
+        let mut object_12 = object.key("ImportAssetsFromRedshiftDataShares").start_object();
         crate::protocol_serde::shape_import_assets_from_redshift_data_shares_request_details::ser_import_assets_from_redshift_data_shares_request_details(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.import_asset_from_api_gateway_api {
         #[allow(unused_mut)]
         let mut object_14 = object.key("ImportAssetFromApiGatewayApi").start_object();
-        crate::protocol_serde::shape_import_asset_from_api_gateway_api_request_details::ser_import_asset_from_api_gateway_api_request_details(&mut object_14, var_13)?;
+        crate::protocol_serde::shape_import_asset_from_api_gateway_api_request_details::ser_import_asset_from_api_gateway_api_request_details(
+            &mut object_14,
+            var_13,
+        )?;
         object_14.finish();
     }
     if let Some(var_15) = &input.create_s3_data_access_from_s3_bucket {
         #[allow(unused_mut)]
         let mut object_16 = object.key("CreateS3DataAccessFromS3Bucket").start_object();
-        crate::protocol_serde::shape_create_s3_data_access_from_s3_bucket_request_details::ser_create_s3_data_access_from_s3_bucket_request_details(&mut object_16, var_15)?;
+        crate::protocol_serde::shape_create_s3_data_access_from_s3_bucket_request_details::ser_create_s3_data_access_from_s3_bucket_request_details(
+            &mut object_16,
+            var_15,
+        )?;
         object_16.finish();
     }
     if let Some(var_17) = &input.import_assets_from_lake_formation_tag_policy {
         #[allow(unused_mut)]
-        let mut object_18 = object
-            .key("ImportAssetsFromLakeFormationTagPolicy")
-            .start_object();
+        let mut object_18 = object.key("ImportAssetsFromLakeFormationTagPolicy").start_object();
         crate::protocol_serde::shape_import_assets_from_lake_formation_tag_policy_request_details::ser_import_assets_from_lake_formation_tag_policy_request_details(&mut object_18, var_17)?;
         object_18.finish();
     }

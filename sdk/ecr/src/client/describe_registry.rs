@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`registry_id(Option<String>)`](crate::operation::describe_registry::DescribeRegistryOutput::registry_id): <p>The ID of the registry.</p>
     ///   - [`replication_configuration(Option<ReplicationConfiguration>)`](crate::operation::describe_registry::DescribeRegistryOutput::replication_configuration): <p>The replication configuration for the registry.</p>
     /// - On failure, responds with [`SdkError<DescribeRegistryError>`](crate::operation::describe_registry::DescribeRegistryError)
-    pub fn describe_registry(
-        &self,
-    ) -> crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder {
-        crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_registry(&self) -> crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder {
+        crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder::new(self.handle.clone())
     }
 }

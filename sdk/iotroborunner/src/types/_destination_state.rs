@@ -39,13 +39,7 @@
 /// State of the destination.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DestinationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DestinationState {
             "DECOMMISSIONED" => DestinationState::Decommissioned,
             "DISABLED" => DestinationState::Disabled,
             "ENABLED" => DestinationState::Enabled,
-            other => {
-                DestinationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DestinationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

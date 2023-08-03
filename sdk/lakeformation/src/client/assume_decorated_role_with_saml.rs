@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`session_token(Option<String>)`](crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlOutput::session_token): <p>The session token for the temporary credentials.</p>
     ///   - [`expiration(Option<DateTime>)`](crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlOutput::expiration): <p>The date and time when the temporary credentials expire.</p>
     /// - On failure, responds with [`SdkError<AssumeDecoratedRoleWithSAMLError>`](crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError)
-    pub fn assume_decorated_role_with_saml(&self) -> crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSAMLFluentBuilder{
+    pub fn assume_decorated_role_with_saml(
+        &self,
+    ) -> crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSAMLFluentBuilder {
         crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSAMLFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::operation::list_function_definitions::ListFunctionDefinitionsOutput::definitions): Information about a definition.
     ///   - [`next_token(Option<String>)`](crate::operation::list_function_definitions::ListFunctionDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     /// - On failure, responds with [`SdkError<ListFunctionDefinitionsError>`](crate::operation::list_function_definitions::ListFunctionDefinitionsError)
-    pub fn list_function_definitions(
-        &self,
-    ) -> crate::operation::list_function_definitions::builders::ListFunctionDefinitionsFluentBuilder
-    {
+    pub fn list_function_definitions(&self) -> crate::operation::list_function_definitions::builders::ListFunctionDefinitionsFluentBuilder {
         crate::operation::list_function_definitions::builders::ListFunctionDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

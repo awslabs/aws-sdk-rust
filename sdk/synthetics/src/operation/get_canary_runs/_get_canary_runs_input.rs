@@ -36,9 +36,7 @@ impl GetCanaryRunsInput {
 
 /// A builder for [`GetCanaryRunsInput`](crate::operation::get_canary_runs::GetCanaryRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCanaryRunsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl GetCanaryRunsInputBuilder {
     /// Consumes the builder and constructs a [`GetCanaryRunsInput`](crate::operation::get_canary_runs::GetCanaryRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_canary_runs::GetCanaryRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_canary_runs::GetCanaryRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_canary_runs::GetCanaryRunsInput {
             name: self.name,
             next_token: self.next_token,

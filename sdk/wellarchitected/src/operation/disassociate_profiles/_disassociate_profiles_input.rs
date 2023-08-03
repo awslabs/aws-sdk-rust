@@ -22,18 +22,14 @@ impl DisassociateProfilesInput {
 }
 impl DisassociateProfilesInput {
     /// Creates a new builder-style object to manufacture [`DisassociateProfilesInput`](crate::operation::disassociate_profiles::DisassociateProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_profiles::builders::DisassociateProfilesInputBuilder {
-        crate::operation::disassociate_profiles::builders::DisassociateProfilesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disassociate_profiles::builders::DisassociateProfilesInputBuilder {
+        crate::operation::disassociate_profiles::builders::DisassociateProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateProfilesInput`](crate::operation::disassociate_profiles::DisassociateProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateProfilesInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,31 +61,22 @@ impl DisassociateProfilesInputBuilder {
         self
     }
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
-    pub fn set_profile_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_profile_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.profile_arns = input;
         self
     }
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
-    pub fn get_profile_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.profile_arns
     }
     /// Consumes the builder and constructs a [`DisassociateProfilesInput`](crate::operation::disassociate_profiles::DisassociateProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_profiles::DisassociateProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_profiles::DisassociateProfilesInput {
-                workload_id: self.workload_id,
-                profile_arns: self.profile_arns,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_profiles::DisassociateProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_profiles::DisassociateProfilesInput {
+            workload_id: self.workload_id,
+            profile_arns: self.profile_arns,
+        })
     }
 }

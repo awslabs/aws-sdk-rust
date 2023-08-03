@@ -9,97 +9,100 @@ pub fn de_get_sol_network_package_descriptor_http_error(
     crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AccessDeniedException" => {
+            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InternalServerException" => crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ThrottlingException" => crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::generic(generic)
+        _ => crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::generic(generic),
     })
 }
 
@@ -116,17 +119,16 @@ pub fn de_get_sol_network_package_descriptor_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorOutputBuilder::default();
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_sol_network_package_descriptor_output::de_content_type_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled("Failed to parse contentType from header `Content-Type"))?
+            crate::protocol_serde::shape_get_sol_network_package_descriptor_output::de_content_type_header(_response_headers).map_err(|_| {
+                crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::unhandled(
+                    "Failed to parse contentType from header `Content-Type",
+                )
+            })?,
         );
-        output = output.set_nsd(
-            crate::protocol_serde::shape_get_sol_network_package_descriptor_output::de_nsd_payload(
-                _response_body,
-            )?,
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = output.set_nsd(crate::protocol_serde::shape_get_sol_network_package_descriptor_output::de_nsd_payload(
+            _response_body,
+        )?);
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

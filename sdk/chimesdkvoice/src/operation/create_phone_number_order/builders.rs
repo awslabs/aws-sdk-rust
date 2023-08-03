@@ -26,8 +26,7 @@ impl CreatePhoneNumberOrderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePhoneNumberOrderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder,
+    inner: crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder,
 }
 impl CreatePhoneNumberOrderFluentBuilder {
     /// Creates a new `CreatePhoneNumberOrder`.
@@ -38,10 +37,7 @@ impl CreatePhoneNumberOrderFluentBuilder {
         }
     }
     /// Access the CreatePhoneNumberOrder as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreatePhoneNumberOrderFluentBuilder {
             crate::operation::create_phone_number_order::CreatePhoneNumberOrder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_phone_number_order::CreatePhoneNumberOrderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_phone_number_order::CreatePhoneNumberOrderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreatePhoneNumberOrderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreatePhoneNumberOrderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_phone_number_order::CreatePhoneNumberOrderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_phone_number_order::CreatePhoneNumberOrderError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreatePhoneNumberOrderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_phone_number_order::CreatePhoneNumberOrderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_phone_number_order::CreatePhoneNumberOrderError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreatePhoneNumberOrderFluentBuilder {
             crate::operation::create_phone_number_order::CreatePhoneNumberOrder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_phone_number_order::CreatePhoneNumberOrderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_phone_number_order::CreatePhoneNumberOrderError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +115,7 @@ impl CreatePhoneNumberOrderFluentBuilder {
         self
     }
     /// <p>The phone number product type.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberProductType>,
-    ) -> Self {
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
         self.inner = self.inner.set_product_type(input);
         self
     }
@@ -146,25 +128,17 @@ impl CreatePhoneNumberOrderFluentBuilder {
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
     ///
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn e164_phone_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.e164_phone_numbers(input.into());
         self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn set_e164_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_e164_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_e164_phone_numbers(input);
         self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn get_e164_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_e164_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_e164_phone_numbers()
     }
 }

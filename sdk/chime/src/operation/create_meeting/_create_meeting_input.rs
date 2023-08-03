@@ -21,8 +21,7 @@ pub struct CreateMeetingInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
     #[doc(hidden)]
-    pub notifications_configuration:
-        ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
+    pub notifications_configuration: ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
 }
 impl CreateMeetingInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -47,9 +46,7 @@ impl CreateMeetingInput {
         self.tags.as_deref()
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn notifications_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MeetingNotificationConfiguration> {
+    pub fn notifications_configuration(&self) -> ::std::option::Option<&crate::types::MeetingNotificationConfiguration> {
         self.notifications_configuration.as_ref()
     }
 }
@@ -61,10 +58,7 @@ impl ::std::fmt::Debug for CreateMeetingInput {
         formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
         formatter.field("media_region", &self.media_region);
         formatter.field("tags", &self.tags);
-        formatter.field(
-            "notifications_configuration",
-            &self.notifications_configuration,
-        );
+        formatter.field("notifications_configuration", &self.notifications_configuration);
         formatter.finish()
     }
 }
@@ -84,23 +78,16 @@ pub struct CreateMeetingInputBuilder {
     pub(crate) meeting_host_id: ::std::option::Option<::std::string::String>,
     pub(crate) media_region: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) notifications_configuration:
-        ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
+    pub(crate) notifications_configuration: ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
 }
 impl CreateMeetingInputBuilder {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -109,18 +96,12 @@ impl CreateMeetingInputBuilder {
         &self.client_request_token
     }
     /// <p>The external meeting ID.</p>
-    pub fn external_meeting_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_meeting_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external meeting ID.</p>
-    pub fn set_external_meeting_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_meeting_id = input;
         self
     }
@@ -129,18 +110,12 @@ impl CreateMeetingInputBuilder {
         &self.external_meeting_id
     }
     /// <p>Reserved.</p>
-    pub fn meeting_host_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn meeting_host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_host_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_meeting_host_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_meeting_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.meeting_host_id = input;
         self
     }
@@ -177,10 +152,7 @@ impl CreateMeetingInputBuilder {
         self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -189,34 +161,23 @@ impl CreateMeetingInputBuilder {
         &self.tags
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn notifications_configuration(
-        mut self,
-        input: crate::types::MeetingNotificationConfiguration,
-    ) -> Self {
+    pub fn notifications_configuration(mut self, input: crate::types::MeetingNotificationConfiguration) -> Self {
         self.notifications_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn set_notifications_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notifications_configuration(mut self, input: ::std::option::Option<crate::types::MeetingNotificationConfiguration>) -> Self {
         self.notifications_configuration = input;
         self
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn get_notifications_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MeetingNotificationConfiguration> {
+    pub fn get_notifications_configuration(&self) -> &::std::option::Option<crate::types::MeetingNotificationConfiguration> {
         &self.notifications_configuration
     }
     /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::operation::create_meeting::CreateMeetingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_meeting::CreateMeetingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_meeting::CreateMeetingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_meeting::CreateMeetingInput {
             client_request_token: self.client_request_token,
             external_meeting_id: self.external_meeting_id,
@@ -235,10 +196,7 @@ impl ::std::fmt::Debug for CreateMeetingInputBuilder {
         formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
         formatter.field("media_region", &self.media_region);
         formatter.field("tags", &self.tags);
-        formatter.field(
-            "notifications_configuration",
-            &self.notifications_configuration,
-        );
+        formatter.field("notifications_configuration", &self.notifications_configuration);
         formatter.finish()
     }
 }

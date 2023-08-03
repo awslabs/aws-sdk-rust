@@ -30,9 +30,7 @@ impl SavingsPlanOfferingProperty {
 
 /// A builder for [`SavingsPlanOfferingProperty`](crate::types::SavingsPlanOfferingProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlanOfferingPropertyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SavingsPlanOfferingPropertyKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl SavingsPlanOfferingPropertyBuilder {
         self
     }
     /// <p>The property name.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanOfferingPropertyKey>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SavingsPlanOfferingPropertyKey>) -> Self {
         self.name = input;
         self
     }

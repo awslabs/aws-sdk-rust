@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBackendEnvironmentOutput`](crate::operation::get_backend_environment::GetBackendEnvironmentOutput) with field(s):
     ///   - [`backend_environment(Option<BackendEnvironment>)`](crate::operation::get_backend_environment::GetBackendEnvironmentOutput::backend_environment): <p> Describes the backend environment for an Amplify app. </p>
     /// - On failure, responds with [`SdkError<GetBackendEnvironmentError>`](crate::operation::get_backend_environment::GetBackendEnvironmentError)
-    pub fn get_backend_environment(
-        &self,
-    ) -> crate::operation::get_backend_environment::builders::GetBackendEnvironmentFluentBuilder
-    {
-        crate::operation::get_backend_environment::builders::GetBackendEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_backend_environment(&self) -> crate::operation::get_backend_environment::builders::GetBackendEnvironmentFluentBuilder {
+        crate::operation::get_backend_environment::builders::GetBackendEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

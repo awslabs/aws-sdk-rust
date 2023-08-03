@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for TestAvailabilityConfigurationOutput {
 }
 impl TestAvailabilityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`TestAvailabilityConfigurationOutput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput).
-    pub fn builder() -> crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationOutputBuilder {
         crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestAvailabilityConfigurationOutput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestAvailabilityConfigurationOutputBuilder {
     pub(crate) test_passed: ::std::option::Option<bool>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl TestAvailabilityConfigurationOutputBuilder {
         &self.test_passed
     }
     /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -88,10 +80,7 @@ impl TestAvailabilityConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TestAvailabilityConfigurationOutput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput {
         crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput {
             test_passed: self.test_passed.unwrap_or_default(),
             failure_reason: self.failure_reason,

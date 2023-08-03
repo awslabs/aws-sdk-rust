@@ -27,7 +27,7 @@ impl UpdateTerminationProtectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTerminationProtectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_termination_protection::builders::UpdateTerminationProtectionInputBuilder,
+    inner: crate::operation::update_termination_protection::builders::UpdateTerminationProtectionInputBuilder,
 }
 impl UpdateTerminationProtectionFluentBuilder {
     /// Creates a new `UpdateTerminationProtection`.
@@ -38,7 +38,7 @@ impl UpdateTerminationProtectionFluentBuilder {
         }
     }
     /// Access the UpdateTerminationProtection as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_termination_protection::builders::UpdateTerminationProtectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_termination_protection::builders::UpdateTerminationProtectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateTerminationProtectionFluentBuilder {
             crate::operation::update_termination_protection::UpdateTerminationProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_termination_protection::UpdateTerminationProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_termination_protection::UpdateTerminationProtectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateTerminationProtectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateTerminationProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_termination_protection::UpdateTerminationProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_termination_protection::UpdateTerminationProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_termination_protection::UpdateTerminationProtectionError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateTerminationProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_termination_protection::UpdateTerminationProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_termination_protection::UpdateTerminationProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_termination_protection::UpdateTerminationProtectionError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdateTerminationProtectionFluentBuilder {
             crate::operation::update_termination_protection::UpdateTerminationProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_termination_protection::UpdateTerminationProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_termination_protection::UpdateTerminationProtectionError>,
     > {
         self.customize_middleware().await
     }

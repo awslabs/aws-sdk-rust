@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProvisioningStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,15 +51,9 @@ pub enum ProvisioningStatus {
 impl ::std::convert::From<&str> for ProvisioningStatus {
     fn from(s: &str) -> Self {
         match s {
-            "LATEST_PERMISSION_SET_NOT_PROVISIONED" => {
-                ProvisioningStatus::LatestPermissionSetNotProvisioned
-            }
-            "LATEST_PERMISSION_SET_PROVISIONED" => {
-                ProvisioningStatus::LatestPermissionSetProvisioned
-            }
-            other => ProvisioningStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "LATEST_PERMISSION_SET_NOT_PROVISIONED" => ProvisioningStatus::LatestPermissionSetNotProvisioned,
+            "LATEST_PERMISSION_SET_PROVISIONED" => ProvisioningStatus::LatestPermissionSetProvisioned,
+            other => ProvisioningStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -80,21 +68,14 @@ impl ProvisioningStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ProvisioningStatus::LatestPermissionSetNotProvisioned => {
-                "LATEST_PERMISSION_SET_NOT_PROVISIONED"
-            }
-            ProvisioningStatus::LatestPermissionSetProvisioned => {
-                "LATEST_PERMISSION_SET_PROVISIONED"
-            }
+            ProvisioningStatus::LatestPermissionSetNotProvisioned => "LATEST_PERMISSION_SET_NOT_PROVISIONED",
+            ProvisioningStatus::LatestPermissionSetProvisioned => "LATEST_PERMISSION_SET_PROVISIONED",
             ProvisioningStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "LATEST_PERMISSION_SET_NOT_PROVISIONED",
-            "LATEST_PERMISSION_SET_PROVISIONED",
-        ]
+        &["LATEST_PERMISSION_SET_NOT_PROVISIONED", "LATEST_PERMISSION_SET_PROVISIONED"]
     }
 }
 impl ::std::convert::AsRef<str> for ProvisioningStatus {

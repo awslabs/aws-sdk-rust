@@ -28,8 +28,7 @@ impl DescribePortfolioSharesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePortfolioSharesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder,
+    inner: crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder,
 }
 impl DescribePortfolioSharesFluentBuilder {
     /// Creates a new `DescribePortfolioShares`.
@@ -40,10 +39,7 @@ impl DescribePortfolioSharesFluentBuilder {
         }
     }
     /// Access the DescribePortfolioShares as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DescribePortfolioSharesFluentBuilder {
             crate::operation::describe_portfolio_shares::DescribePortfolioShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio_shares::DescribePortfolioSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio_shares::DescribePortfolioSharesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DescribePortfolioSharesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DescribePortfolioSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio_shares::DescribePortfolioSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio_shares::DescribePortfolioSharesError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DescribePortfolioSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio_shares::DescribePortfolioSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio_shares::DescribePortfolioSharesError>,
     > {
         self.send_middleware().await
     }
@@ -120,19 +107,14 @@ impl DescribePortfolioSharesFluentBuilder {
             crate::operation::describe_portfolio_shares::DescribePortfolioShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio_shares::DescribePortfolioSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio_shares::DescribePortfolioSharesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_portfolio_shares::paginator::DescribePortfolioSharesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_portfolio_shares::paginator::DescribePortfolioSharesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_portfolio_shares::paginator::DescribePortfolioSharesPaginator {
         crate::operation::describe_portfolio_shares::paginator::DescribePortfolioSharesPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
@@ -163,10 +145,7 @@ impl DescribePortfolioSharesFluentBuilder {
     /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
     /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
     /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribePortfolioShareType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DescribePortfolioShareType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`session_policy_arn(impl ::std::convert::Into<String>)`](crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingFluentBuilder::session_policy_arn) / [`set_session_policy_arn(Option<String>)`](crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingFluentBuilder::set_session_policy_arn): <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
     /// - On success, responds with [`CreateStudioSessionMappingOutput`](crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput)
     /// - On failure, responds with [`SdkError<CreateStudioSessionMappingError>`](crate::operation::create_studio_session_mapping::CreateStudioSessionMappingError)
-    pub fn create_studio_session_mapping(&self) -> crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingFluentBuilder{
+    pub fn create_studio_session_mapping(
+        &self,
+    ) -> crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingFluentBuilder {
         crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingFluentBuilder::new(self.handle.clone())
     }
 }

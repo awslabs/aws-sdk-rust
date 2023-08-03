@@ -5,16 +5,16 @@ pub use crate::operation::update_resource_event_configuration::_update_resource_
 
 impl UpdateResourceEventConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_resource_event_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateResourceEventConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResourceEventConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationInputBuilder,
+    inner: crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationInputBuilder,
 }
 impl UpdateResourceEventConfigurationFluentBuilder {
     /// Creates a new `UpdateResourceEventConfiguration`.
@@ -37,15 +37,20 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateResourceEventConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_resource_event_configuration::UpdateResourceEventConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_resource_event_configuration::UpdateResourceEventConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateResourceEventConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl UpdateResourceEventConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_resource_event_configuration::UpdateResourceEventConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_resource_event_configuration::UpdateResourceEventConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Resource identifier to opt in for event messaging.</p>
@@ -114,10 +129,7 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         self
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    pub fn set_identifier_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentifierType>,
-    ) -> Self {
+    pub fn set_identifier_type(mut self, input: ::std::option::Option<crate::types::IdentifierType>) -> Self {
         self.inner = self.inner.set_identifier_type(input);
         self
     }
@@ -131,39 +143,26 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         self
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
-    pub fn set_partner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EventNotificationPartnerType>,
-    ) -> Self {
+    pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::EventNotificationPartnerType>) -> Self {
         self.inner = self.inner.set_partner_type(input);
         self
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
-    pub fn get_partner_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
+    pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
         self.inner.get_partner_type()
     }
     /// <p>Event configuration for the device registration state event.</p>
-    pub fn device_registration_state(
-        mut self,
-        input: crate::types::DeviceRegistrationStateEventConfiguration,
-    ) -> Self {
+    pub fn device_registration_state(mut self, input: crate::types::DeviceRegistrationStateEventConfiguration) -> Self {
         self.inner = self.inner.device_registration_state(input);
         self
     }
     /// <p>Event configuration for the device registration state event.</p>
-    pub fn set_device_registration_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration>,
-    ) -> Self {
+    pub fn set_device_registration_state(mut self, input: ::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration>) -> Self {
         self.inner = self.inner.set_device_registration_state(input);
         self
     }
     /// <p>Event configuration for the device registration state event.</p>
-    pub fn get_device_registration_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration> {
+    pub fn get_device_registration_state(&self) -> &::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration> {
         self.inner.get_device_registration_state()
     }
     /// <p>Event configuration for the proximity event.</p>
@@ -172,17 +171,12 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         self
     }
     /// <p>Event configuration for the proximity event.</p>
-    pub fn set_proximity(
-        mut self,
-        input: ::std::option::Option<crate::types::ProximityEventConfiguration>,
-    ) -> Self {
+    pub fn set_proximity(mut self, input: ::std::option::Option<crate::types::ProximityEventConfiguration>) -> Self {
         self.inner = self.inner.set_proximity(input);
         self
     }
     /// <p>Event configuration for the proximity event.</p>
-    pub fn get_proximity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProximityEventConfiguration> {
+    pub fn get_proximity(&self) -> &::std::option::Option<crate::types::ProximityEventConfiguration> {
         self.inner.get_proximity()
     }
     /// <p>Event configuration for the join event.</p>
@@ -191,10 +185,7 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         self
     }
     /// <p>Event configuration for the join event.</p>
-    pub fn set_join(
-        mut self,
-        input: ::std::option::Option<crate::types::JoinEventConfiguration>,
-    ) -> Self {
+    pub fn set_join(mut self, input: ::std::option::Option<crate::types::JoinEventConfiguration>) -> Self {
         self.inner = self.inner.set_join(input);
         self
     }
@@ -203,47 +194,31 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         self.inner.get_join()
     }
     /// <p>Event configuration for the connection status event.</p>
-    pub fn connection_status(
-        mut self,
-        input: crate::types::ConnectionStatusEventConfiguration,
-    ) -> Self {
+    pub fn connection_status(mut self, input: crate::types::ConnectionStatusEventConfiguration) -> Self {
         self.inner = self.inner.connection_status(input);
         self
     }
     /// <p>Event configuration for the connection status event.</p>
-    pub fn set_connection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionStatusEventConfiguration>,
-    ) -> Self {
+    pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatusEventConfiguration>) -> Self {
         self.inner = self.inner.set_connection_status(input);
         self
     }
     /// <p>Event configuration for the connection status event.</p>
-    pub fn get_connection_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionStatusEventConfiguration> {
+    pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatusEventConfiguration> {
         self.inner.get_connection_status()
     }
     /// <p>Event configuration for the message delivery status event.</p>
-    pub fn message_delivery_status(
-        mut self,
-        input: crate::types::MessageDeliveryStatusEventConfiguration,
-    ) -> Self {
+    pub fn message_delivery_status(mut self, input: crate::types::MessageDeliveryStatusEventConfiguration) -> Self {
         self.inner = self.inner.message_delivery_status(input);
         self
     }
     /// <p>Event configuration for the message delivery status event.</p>
-    pub fn set_message_delivery_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageDeliveryStatusEventConfiguration>,
-    ) -> Self {
+    pub fn set_message_delivery_status(mut self, input: ::std::option::Option<crate::types::MessageDeliveryStatusEventConfiguration>) -> Self {
         self.inner = self.inner.set_message_delivery_status(input);
         self
     }
     /// <p>Event configuration for the message delivery status event.</p>
-    pub fn get_message_delivery_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageDeliveryStatusEventConfiguration> {
+    pub fn get_message_delivery_status(&self) -> &::std::option::Option<crate::types::MessageDeliveryStatusEventConfiguration> {
         self.inner.get_message_delivery_status()
     }
 }

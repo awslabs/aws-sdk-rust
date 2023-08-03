@@ -37,10 +37,7 @@ impl AddFlowVpcInterfacesFluentBuilder {
         }
     }
     /// Access the AddFlowVpcInterfaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AddFlowVpcInterfacesFluentBuilder {
             crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AddFlowVpcInterfacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AddFlowVpcInterfacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AddFlowVpcInterfacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl AddFlowVpcInterfacesFluentBuilder {
             crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl AddFlowVpcInterfacesFluentBuilder {
         self
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn set_vpc_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
-    ) -> Self {
+    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>) -> Self {
         self.inner = self.inner.set_vpc_interfaces(input);
         self
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn get_vpc_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
+    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
         self.inner.get_vpc_interfaces()
     }
 }

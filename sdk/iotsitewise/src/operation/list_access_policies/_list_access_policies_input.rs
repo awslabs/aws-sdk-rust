@@ -59,17 +59,14 @@ impl ListAccessPoliciesInput {
 }
 impl ListAccessPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
+    pub fn builder() -> crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
         crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPoliciesInputBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -86,10 +83,7 @@ impl ListAccessPoliciesInputBuilder {
         self
     }
     /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -117,10 +111,7 @@ impl ListAccessPoliciesInputBuilder {
         self
     }
     /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -190,20 +181,15 @@ impl ListAccessPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_access_policies::ListAccessPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_access_policies::ListAccessPoliciesInput {
-                identity_type: self.identity_type,
-                identity_id: self.identity_id,
-                resource_type: self.resource_type,
-                resource_id: self.resource_id,
-                iam_arn: self.iam_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_access_policies::ListAccessPoliciesInput {
+            identity_type: self.identity_type,
+            identity_id: self.identity_id,
+            resource_type: self.resource_type,
+            resource_id: self.resource_id,
+            iam_arn: self.iam_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

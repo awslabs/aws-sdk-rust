@@ -10,10 +10,7 @@ impl GetParametersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_parameters::GetParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameters::GetParametersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameters::GetParametersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_parameters();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetParametersFluentBuilder {
         }
     }
     /// Access the GetParameters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_parameters::builders::GetParametersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_parameters::builders::GetParametersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl GetParametersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -128,10 +120,7 @@ impl GetParametersFluentBuilder {
     }
     /// <p>Names of the parameters for which you want to query information.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

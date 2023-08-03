@@ -37,9 +37,7 @@ impl UpdateDirectorySetupFluentBuilder {
         }
     }
     /// Access the UpdateDirectorySetup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_directory_setup::builders::UpdateDirectorySetupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_directory_setup::builders::UpdateDirectorySetupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateDirectorySetupFluentBuilder {
             crate::operation::update_directory_setup::UpdateDirectorySetup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_directory_setup::UpdateDirectorySetupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_directory_setup::UpdateDirectorySetupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateDirectorySetupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateDirectorySetupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_directory_setup::UpdateDirectorySetupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_directory_setup::UpdateDirectorySetupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_directory_setup::UpdateDirectorySetupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateDirectorySetupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_directory_setup::UpdateDirectorySetupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_directory_setup::UpdateDirectorySetupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_directory_setup::UpdateDirectorySetupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateDirectorySetupFluentBuilder {
             crate::operation::update_directory_setup::UpdateDirectorySetup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_directory_setup::UpdateDirectorySetupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_directory_setup::UpdateDirectorySetupError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +129,7 @@ impl UpdateDirectorySetupFluentBuilder {
         self
     }
     /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
-    pub fn set_update_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateType>,
-    ) -> Self {
+    pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
         self.inner = self.inner.set_update_type(input);
         self
     }
@@ -159,10 +143,7 @@ impl UpdateDirectorySetupFluentBuilder {
         self
     }
     /// <p> The settings for the OS update that needs to be performed on the directory. </p>
-    pub fn set_os_update_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::OsUpdateSettings>,
-    ) -> Self {
+    pub fn set_os_update_settings(mut self, input: ::std::option::Option<crate::types::OsUpdateSettings>) -> Self {
         self.inner = self.inner.set_os_update_settings(input);
         self
     }

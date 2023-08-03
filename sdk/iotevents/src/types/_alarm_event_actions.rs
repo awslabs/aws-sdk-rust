@@ -23,9 +23,7 @@ impl AlarmEventActions {
 
 /// A builder for [`AlarmEventActions`](crate::types::AlarmEventActions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmEventActionsBuilder {
     pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>>,
 }
@@ -42,17 +40,12 @@ impl AlarmEventActionsBuilder {
         self
     }
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
-    pub fn set_alarm_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>>,
-    ) -> Self {
+    pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>>) -> Self {
         self.alarm_actions = input;
         self
     }
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
-    pub fn get_alarm_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>> {
+    pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>> {
         &self.alarm_actions
     }
     /// Consumes the builder and constructs a [`AlarmEventActions`](crate::types::AlarmEventActions).

@@ -37,9 +37,7 @@ impl IpAddressBasedRemoteInfo {
 
 /// A builder for [`IpAddressBasedRemoteInfo`](crate::types::IpAddressBasedRemoteInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpAddressBasedRemoteInfoBuilder {
     pub(crate) ip_address_configuration_time_stamp: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,
@@ -47,25 +45,17 @@ pub struct IpAddressBasedRemoteInfoBuilder {
 }
 impl IpAddressBasedRemoteInfoBuilder {
     /// <p>The time stamp of the configuration.</p>
-    pub fn ip_address_configuration_time_stamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_address_configuration_time_stamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address_configuration_time_stamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time stamp of the configuration.</p>
-    pub fn set_ip_address_configuration_time_stamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_address_configuration_time_stamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address_configuration_time_stamp = input;
         self
     }
     /// <p>The time stamp of the configuration.</p>
-    pub fn get_ip_address_configuration_time_stamp(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ip_address_configuration_time_stamp(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address_configuration_time_stamp
     }
     /// <p>The type of authorization.</p>

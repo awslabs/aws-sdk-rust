@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`contains_old_group_versions(bool)`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsOutput::contains_old_group_versions): <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<GetTimeSeriesServiceStatisticsError>`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsError)
-    pub fn get_time_series_service_statistics(&self) -> crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder{
+    pub fn get_time_series_service_statistics(
+        &self,
+    ) -> crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder {
         crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

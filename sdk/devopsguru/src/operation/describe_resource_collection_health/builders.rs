@@ -5,16 +5,16 @@ pub use crate::operation::describe_resource_collection_health::_describe_resourc
 
 impl DescribeResourceCollectionHealthInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_resource_collection_health();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeResourceCollectionHealthInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeResourceCollectionHealthFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthInputBuilder,
+    inner: crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthInputBuilder,
 }
 impl DescribeResourceCollectionHealthFluentBuilder {
     /// Creates a new `DescribeResourceCollectionHealth`.
@@ -37,15 +37,20 @@ impl DescribeResourceCollectionHealthFluentBuilder {
         }
     }
     /// Access the DescribeResourceCollectionHealth as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealth, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealth,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeResourceCollectionHealthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl DescribeResourceCollectionHealthFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealth, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealth,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator {
         crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator::new(self.handle, self.inner)
     }
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
@@ -106,17 +121,12 @@ impl DescribeResourceCollectionHealthFluentBuilder {
         self
     }
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCollectionType>,
-    ) -> Self {
+    pub fn set_resource_collection_type(mut self, input: ::std::option::Option<crate::types::ResourceCollectionType>) -> Self {
         self.inner = self.inner.set_resource_collection_type(input);
         self
     }
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn get_resource_collection_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCollectionType> {
+    pub fn get_resource_collection_type(&self) -> &::std::option::Option<crate::types::ResourceCollectionType> {
         self.inner.get_resource_collection_type()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>

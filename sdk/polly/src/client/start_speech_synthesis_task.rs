@@ -18,7 +18,7 @@ impl super::Client {
     /// - On success, responds with [`StartSpeechSynthesisTaskOutput`](crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput) with field(s):
     ///   - [`synthesis_task(Option<SynthesisTask>)`](crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput::synthesis_task): <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
     /// - On failure, responds with [`SdkError<StartSpeechSynthesisTaskError>`](crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError)
-    pub fn start_speech_synthesis_task(&self) -> crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskFluentBuilder{
+    pub fn start_speech_synthesis_task(&self) -> crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskFluentBuilder {
         crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskFluentBuilder::new(self.handle.clone())
     }
 }

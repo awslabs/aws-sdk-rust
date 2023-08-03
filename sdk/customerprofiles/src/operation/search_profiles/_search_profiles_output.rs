@@ -35,9 +35,7 @@ impl SearchProfilesOutput {
 
 /// A builder for [`SearchProfilesOutput`](crate::operation::search_profiles::SearchProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchProfilesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Profile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl SearchProfilesOutputBuilder {
         self
     }
     /// <p>The list of Profiles matching the search criteria.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Profile>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Profile>>) -> Self {
         self.items = input;
         self
     }

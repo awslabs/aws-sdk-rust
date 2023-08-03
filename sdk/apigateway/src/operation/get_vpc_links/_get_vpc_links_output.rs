@@ -36,9 +36,7 @@ impl GetVpcLinksOutput {
 
 /// A builder for [`GetVpcLinksOutput`](crate::operation::get_vpc_links::GetVpcLinksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVpcLinksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::VpcLink>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl GetVpcLinksOutputBuilder {
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcLink>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcLink>>) -> Self {
         self.items = input;
         self
     }

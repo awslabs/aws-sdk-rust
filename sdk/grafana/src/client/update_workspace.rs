@@ -21,11 +21,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateWorkspaceOutput`](crate::operation::update_workspace::UpdateWorkspaceOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::operation::update_workspace::UpdateWorkspaceOutput::workspace): <p>A structure containing data about the workspace that was created.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkspaceError>`](crate::operation::update_workspace::UpdateWorkspaceError)
-    pub fn update_workspace(
-        &self,
-    ) -> crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder {
-        crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workspace(&self) -> crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder {
+        crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

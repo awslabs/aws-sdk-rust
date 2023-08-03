@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`PutVoiceConnectorProxyOutput`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput) with field(s):
     ///   - [`proxy(Option<Proxy>)`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput::proxy): <p>The proxy configuration details.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorProxyError>`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyError)
-    pub fn put_voice_connector_proxy(
-        &self,
-    ) -> crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyFluentBuilder
-    {
+    pub fn put_voice_connector_proxy(&self) -> crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyFluentBuilder {
         crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyFluentBuilder::new(self.handle.clone())
     }
 }

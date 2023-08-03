@@ -36,17 +36,14 @@ impl GetWorkflowStepsInput {
 }
 impl GetWorkflowStepsInput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowStepsInput`](crate::operation::get_workflow_steps::GetWorkflowStepsInput).
-    pub fn builder() -> crate::operation::get_workflow_steps::builders::GetWorkflowStepsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_workflow_steps::builders::GetWorkflowStepsInputBuilder {
         crate::operation::get_workflow_steps::builders::GetWorkflowStepsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowStepsInput`](crate::operation::get_workflow_steps::GetWorkflowStepsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowStepsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -113,17 +110,12 @@ impl GetWorkflowStepsInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkflowStepsInput`](crate::operation::get_workflow_steps::GetWorkflowStepsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workflow_steps::GetWorkflowStepsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_workflow_steps::GetWorkflowStepsInput {
-                domain_name: self.domain_name,
-                workflow_id: self.workflow_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_workflow_steps::GetWorkflowStepsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_workflow_steps::GetWorkflowStepsInput {
+            domain_name: self.domain_name,
+            workflow_id: self.workflow_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

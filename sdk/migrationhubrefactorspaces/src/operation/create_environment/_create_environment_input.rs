@@ -14,9 +14,7 @@ pub struct CreateEnvironmentInput {
     pub network_fabric_type: ::std::option::Option<crate::types::NetworkFabricType>,
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -35,11 +33,7 @@ impl CreateEnvironmentInput {
         self.network_fabric_type.as_ref()
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -60,8 +54,7 @@ impl ::std::fmt::Debug for CreateEnvironmentInput {
 }
 impl CreateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
-    pub fn builder() -> crate::operation::create_environment::builders::CreateEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
         crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::default()
     }
 }
@@ -73,9 +66,7 @@ pub struct CreateEnvironmentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) network_fabric_type: ::std::option::Option<crate::types::NetworkFabricType>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentInputBuilder {
@@ -113,17 +104,12 @@ impl CreateEnvironmentInputBuilder {
         self
     }
     /// <p>The network fabric type of the environment.</p>
-    pub fn set_network_fabric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFabricType>,
-    ) -> Self {
+    pub fn set_network_fabric_type(mut self, input: ::std::option::Option<crate::types::NetworkFabricType>) -> Self {
         self.network_fabric_type = input;
         self
     }
     /// <p>The network fabric type of the environment.</p>
-    pub fn get_network_fabric_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFabricType> {
+    pub fn get_network_fabric_type(&self) -> &::std::option::Option<crate::types::NetworkFabricType> {
         &self.network_fabric_type
     }
     /// Adds a key-value pair to `tags`.
@@ -131,32 +117,19 @@ impl CreateEnvironmentInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -176,19 +149,14 @@ impl CreateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_environment::CreateEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_environment::CreateEnvironmentInput {
-                name: self.name,
-                description: self.description,
-                network_fabric_type: self.network_fabric_type,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
+            name: self.name,
+            description: self.description,
+            network_fabric_type: self.network_fabric_type,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateEnvironmentInputBuilder {

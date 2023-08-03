@@ -28,7 +28,7 @@ impl AcceptAdministratorInvitationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptAdministratorInvitationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationInputBuilder,
+    inner: crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationInputBuilder,
 }
 impl AcceptAdministratorInvitationFluentBuilder {
     /// Creates a new `AcceptAdministratorInvitation`.
@@ -39,7 +39,7 @@ impl AcceptAdministratorInvitationFluentBuilder {
         }
     }
     /// Access the AcceptAdministratorInvitation as a reference.
-    pub fn as_input(&self) -> &crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl AcceptAdministratorInvitationFluentBuilder {
             crate::operation::accept_administrator_invitation::AcceptAdministratorInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl AcceptAdministratorInvitationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl AcceptAdministratorInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl AcceptAdministratorInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl AcceptAdministratorInvitationFluentBuilder {
             crate::operation::accept_administrator_invitation::AcceptAdministratorInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-    pub fn administrator_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn administrator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.administrator_id(input.into());
         self
     }
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-    pub fn set_administrator_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_administrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_administrator_id(input);
         self
     }
@@ -143,18 +126,12 @@ impl AcceptAdministratorInvitationFluentBuilder {
         self.inner.get_administrator_id()
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.invitation_id(input.into());
         self
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_invitation_id(input);
         self
     }

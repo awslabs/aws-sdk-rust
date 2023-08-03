@@ -16,9 +16,7 @@ pub struct TextConditionalFormat {
 }
 impl TextConditionalFormat {
     /// <p>The conditional formatting for the text background color.</p>
-    pub fn background_color(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalFormattingColor> {
+    pub fn background_color(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingColor> {
         self.background_color.as_ref()
     }
     /// <p>The conditional formatting for the text color.</p>
@@ -39,9 +37,7 @@ impl TextConditionalFormat {
 
 /// A builder for [`TextConditionalFormat`](crate::types::TextConditionalFormat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextConditionalFormatBuilder {
     pub(crate) background_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     pub(crate) text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
@@ -54,17 +50,12 @@ impl TextConditionalFormatBuilder {
         self
     }
     /// <p>The conditional formatting for the text background color.</p>
-    pub fn set_background_color(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalFormattingColor>,
-    ) -> Self {
+    pub fn set_background_color(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
         self.background_color = input;
         self
     }
     /// <p>The conditional formatting for the text background color.</p>
-    pub fn get_background_color(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
+    pub fn get_background_color(&self) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
         &self.background_color
     }
     /// <p>The conditional formatting for the text color.</p>
@@ -73,17 +64,12 @@ impl TextConditionalFormatBuilder {
         self
     }
     /// <p>The conditional formatting for the text color.</p>
-    pub fn set_text_color(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalFormattingColor>,
-    ) -> Self {
+    pub fn set_text_color(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
         self.text_color = input;
         self
     }
     /// <p>The conditional formatting for the text color.</p>
-    pub fn get_text_color(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
+    pub fn get_text_color(&self) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
         &self.text_color
     }
     /// <p>The conditional formatting for the icon.</p>
@@ -92,10 +78,7 @@ impl TextConditionalFormatBuilder {
         self
     }
     /// <p>The conditional formatting for the icon.</p>
-    pub fn set_icon(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalFormattingIcon>,
-    ) -> Self {
+    pub fn set_icon(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingIcon>) -> Self {
         self.icon = input;
         self
     }

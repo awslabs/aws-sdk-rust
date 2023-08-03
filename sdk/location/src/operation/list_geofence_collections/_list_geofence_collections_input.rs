@@ -26,18 +26,14 @@ impl ListGeofenceCollectionsInput {
 }
 impl ListGeofenceCollectionsInput {
     /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsInput`](crate::operation::list_geofence_collections::ListGeofenceCollectionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsInputBuilder {
         crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGeofenceCollectionsInput`](crate::operation::list_geofence_collections::ListGeofenceCollectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGeofenceCollectionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -84,11 +80,9 @@ impl ListGeofenceCollectionsInputBuilder {
         crate::operation::list_geofence_collections::ListGeofenceCollectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_geofence_collections::ListGeofenceCollectionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

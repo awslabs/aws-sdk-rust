@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`schema_version(impl ::std::convert::Into<String>)`](crate::operation::delete_schema_version::builders::DeleteSchemaVersionFluentBuilder::schema_version) / [`set_schema_version(Option<String>)`](crate::operation::delete_schema_version::builders::DeleteSchemaVersionFluentBuilder::set_schema_version): The version number of the schema
     /// - On success, responds with [`DeleteSchemaVersionOutput`](crate::operation::delete_schema_version::DeleteSchemaVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteSchemaVersionError>`](crate::operation::delete_schema_version::DeleteSchemaVersionError)
-    pub fn delete_schema_version(
-        &self,
-    ) -> crate::operation::delete_schema_version::builders::DeleteSchemaVersionFluentBuilder {
-        crate::operation::delete_schema_version::builders::DeleteSchemaVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_schema_version(&self) -> crate::operation::delete_schema_version::builders::DeleteSchemaVersionFluentBuilder {
+        crate::operation::delete_schema_version::builders::DeleteSchemaVersionFluentBuilder::new(self.handle.clone())
     }
 }

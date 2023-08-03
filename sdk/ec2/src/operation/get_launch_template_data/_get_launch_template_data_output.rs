@@ -10,9 +10,7 @@ pub struct GetLaunchTemplateDataOutput {
 }
 impl GetLaunchTemplateDataOutput {
     /// <p>The instance data.</p>
-    pub fn launch_template_data(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseLaunchTemplateData> {
+    pub fn launch_template_data(&self) -> ::std::option::Option<&crate::types::ResponseLaunchTemplateData> {
         self.launch_template_data.as_ref()
     }
 }
@@ -23,21 +21,16 @@ impl ::aws_http::request_id::RequestId for GetLaunchTemplateDataOutput {
 }
 impl GetLaunchTemplateDataOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchTemplateDataOutput`](crate::operation::get_launch_template_data::GetLaunchTemplateDataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataOutputBuilder {
         crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLaunchTemplateDataOutput`](crate::operation::get_launch_template_data::GetLaunchTemplateDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLaunchTemplateDataOutputBuilder {
-    pub(crate) launch_template_data:
-        ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
+    pub(crate) launch_template_data: ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
     _request_id: Option<String>,
 }
 impl GetLaunchTemplateDataOutputBuilder {
@@ -47,17 +40,12 @@ impl GetLaunchTemplateDataOutputBuilder {
         self
     }
     /// <p>The instance data.</p>
-    pub fn set_launch_template_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
-    ) -> Self {
+    pub fn set_launch_template_data(mut self, input: ::std::option::Option<crate::types::ResponseLaunchTemplateData>) -> Self {
         self.launch_template_data = input;
         self
     }
     /// <p>The instance data.</p>
-    pub fn get_launch_template_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseLaunchTemplateData> {
+    pub fn get_launch_template_data(&self) -> &::std::option::Option<crate::types::ResponseLaunchTemplateData> {
         &self.launch_template_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

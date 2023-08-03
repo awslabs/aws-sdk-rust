@@ -30,9 +30,7 @@ impl InstanceStateChangeReason {
 
 /// A builder for [`InstanceStateChangeReason`](crate::types::InstanceStateChangeReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::InstanceStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl InstanceStateChangeReasonBuilder {
         self
     }
     /// <p>The programmable code for the state change reason.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStateChangeReasonCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::InstanceStateChangeReasonCode>) -> Self {
         self.code = input;
         self
     }

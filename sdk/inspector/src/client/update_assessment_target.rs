@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`resource_group_arn(impl ::std::convert::Into<String>)`](crate::operation::update_assessment_target::builders::UpdateAssessmentTargetFluentBuilder::resource_group_arn) / [`set_resource_group_arn(Option<String>)`](crate::operation::update_assessment_target::builders::UpdateAssessmentTargetFluentBuilder::set_resource_group_arn): <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
     /// - On success, responds with [`UpdateAssessmentTargetOutput`](crate::operation::update_assessment_target::UpdateAssessmentTargetOutput)
     /// - On failure, responds with [`SdkError<UpdateAssessmentTargetError>`](crate::operation::update_assessment_target::UpdateAssessmentTargetError)
-    pub fn update_assessment_target(
-        &self,
-    ) -> crate::operation::update_assessment_target::builders::UpdateAssessmentTargetFluentBuilder
-    {
+    pub fn update_assessment_target(&self) -> crate::operation::update_assessment_target::builders::UpdateAssessmentTargetFluentBuilder {
         crate::operation::update_assessment_target::builders::UpdateAssessmentTargetFluentBuilder::new(self.handle.clone())
     }
 }

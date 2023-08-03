@@ -27,8 +27,7 @@ impl GetTopicRuleDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTopicRuleDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationInputBuilder,
+    inner: crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationInputBuilder,
 }
 impl GetTopicRuleDestinationFluentBuilder {
     /// Creates a new `GetTopicRuleDestination`.
@@ -39,10 +38,7 @@ impl GetTopicRuleDestinationFluentBuilder {
         }
     }
     /// Access the GetTopicRuleDestination as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl GetTopicRuleDestinationFluentBuilder {
             crate::operation::get_topic_rule_destination::GetTopicRuleDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_topic_rule_destination::GetTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_topic_rule_destination::GetTopicRuleDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl GetTopicRuleDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl GetTopicRuleDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_topic_rule_destination::GetTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_topic_rule_destination::GetTopicRuleDestinationError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl GetTopicRuleDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_topic_rule_destination::GetTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_topic_rule_destination::GetTopicRuleDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl GetTopicRuleDestinationFluentBuilder {
             crate::operation::get_topic_rule_destination::GetTopicRuleDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_topic_rule_destination::GetTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_topic_rule_destination::GetTopicRuleDestinationError>,
     > {
         self.customize_middleware().await
     }

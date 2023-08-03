@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetWorkUnitResultsOutput`](crate::operation::get_work_unit_results::GetWorkUnitResultsOutput) with field(s):
     ///   - [`result_stream(ByteStream)`](crate::operation::get_work_unit_results::GetWorkUnitResultsOutput::result_stream): <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
     /// - On failure, responds with [`SdkError<GetWorkUnitResultsError>`](crate::operation::get_work_unit_results::GetWorkUnitResultsError)
-    pub fn get_work_unit_results(
-        &self,
-    ) -> crate::operation::get_work_unit_results::builders::GetWorkUnitResultsFluentBuilder {
-        crate::operation::get_work_unit_results::builders::GetWorkUnitResultsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_work_unit_results(&self) -> crate::operation::get_work_unit_results::builders::GetWorkUnitResultsFluentBuilder {
+        crate::operation::get_work_unit_results::builders::GetWorkUnitResultsFluentBuilder::new(self.handle.clone())
     }
 }

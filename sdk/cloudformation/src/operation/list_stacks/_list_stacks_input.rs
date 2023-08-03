@@ -30,13 +30,10 @@ impl ListStacksInput {
 
 /// A builder for [`ListStacksInput`](crate::operation::list_stacks::ListStacksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStacksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) stack_status_filter:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackStatus>>,
+    pub(crate) stack_status_filter: ::std::option::Option<::std::vec::Vec<crate::types::StackStatus>>,
 }
 impl ListStacksInputBuilder {
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
@@ -65,26 +62,16 @@ impl ListStacksInputBuilder {
         self
     }
     /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
-    pub fn set_stack_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackStatus>>,
-    ) -> Self {
+    pub fn set_stack_status_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackStatus>>) -> Self {
         self.stack_status_filter = input;
         self
     }
     /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
-    pub fn get_stack_status_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackStatus>> {
+    pub fn get_stack_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackStatus>> {
         &self.stack_status_filter
     }
     /// Consumes the builder and constructs a [`ListStacksInput`](crate::operation::list_stacks::ListStacksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stacks::ListStacksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stacks::ListStacksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stacks::ListStacksInput {
             next_token: self.next_token,
             stack_status_filter: self.stack_status_filter,

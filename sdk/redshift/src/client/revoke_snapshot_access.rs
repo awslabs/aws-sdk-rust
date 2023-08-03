@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`RevokeSnapshotAccessOutput`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessOutput) with field(s):
     ///   - [`snapshot(Option<Snapshot>)`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessOutput::snapshot): <p>Describes a snapshot.</p>
     /// - On failure, responds with [`SdkError<RevokeSnapshotAccessError>`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError)
-    pub fn revoke_snapshot_access(
-        &self,
-    ) -> crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessFluentBuilder {
-        crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn revoke_snapshot_access(&self) -> crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessFluentBuilder {
+        crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DisassociateLexBotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_lex_bot::DisassociateLexBotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lex_bot::DisassociateLexBotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lex_bot::DisassociateLexBotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disassociate_lex_bot();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DisassociateLexBotFluentBuilder {
         }
     }
     /// Access the DisassociateLexBot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_lex_bot::builders::DisassociateLexBotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_lex_bot::builders::DisassociateLexBotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DisassociateLexBotFluentBuilder {
             crate::operation::disassociate_lex_bot::DisassociateLexBot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lex_bot::DisassociateLexBotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lex_bot::DisassociateLexBotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DisassociateLexBotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DisassociateLexBotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_lex_bot::DisassociateLexBotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lex_bot::DisassociateLexBotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lex_bot::DisassociateLexBotError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DisassociateLexBotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_lex_bot::DisassociateLexBotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lex_bot::DisassociateLexBotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lex_bot::DisassociateLexBotError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DisassociateLexBotFluentBuilder {
             crate::operation::disassociate_lex_bot::DisassociateLexBot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lex_bot::DisassociateLexBotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lex_bot::DisassociateLexBotError>,
     > {
         self.customize_middleware().await
     }

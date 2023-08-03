@@ -37,9 +37,7 @@ impl UpdateCoreDefinitionFluentBuilder {
         }
     }
     /// Access the UpdateCoreDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_core_definition::builders::UpdateCoreDefinitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_core_definition::builders::UpdateCoreDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateCoreDefinitionFluentBuilder {
             crate::operation::update_core_definition::UpdateCoreDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_core_definition::UpdateCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_core_definition::UpdateCoreDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateCoreDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateCoreDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_core_definition::UpdateCoreDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_core_definition::UpdateCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_core_definition::UpdateCoreDefinitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateCoreDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_core_definition::UpdateCoreDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_core_definition::UpdateCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_core_definition::UpdateCoreDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateCoreDefinitionFluentBuilder {
             crate::operation::update_core_definition::UpdateCoreDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_core_definition::UpdateCoreDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_core_definition::UpdateCoreDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the core definition.
-    pub fn core_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_definition_id(input.into());
         self
     }
     /// The ID of the core definition.
-    pub fn set_core_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_definition_id(input);
         self
     }

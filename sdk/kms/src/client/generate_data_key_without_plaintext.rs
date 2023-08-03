@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`ciphertext_blob(Option<Blob>)`](crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextOutput::ciphertext_blob): <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     ///   - [`key_id(Option<String>)`](crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextOutput::key_id): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     /// - On failure, responds with [`SdkError<GenerateDataKeyWithoutPlaintextError>`](crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextError)
-    pub fn generate_data_key_without_plaintext(&self) -> crate::operation::generate_data_key_without_plaintext::builders::GenerateDataKeyWithoutPlaintextFluentBuilder{
+    pub fn generate_data_key_without_plaintext(
+        &self,
+    ) -> crate::operation::generate_data_key_without_plaintext::builders::GenerateDataKeyWithoutPlaintextFluentBuilder {
         crate::operation::generate_data_key_without_plaintext::builders::GenerateDataKeyWithoutPlaintextFluentBuilder::new(self.handle.clone())
     }
 }

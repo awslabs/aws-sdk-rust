@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for AttachVpnGatewayOutput {
 }
 impl AttachVpnGatewayOutput {
     /// Creates a new builder-style object to manufacture [`AttachVpnGatewayOutput`](crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput).
-    pub fn builder() -> crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder {
         crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachVpnGatewayOutput`](crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachVpnGatewayOutputBuilder {
     pub(crate) vpc_attachment: ::std::option::Option<crate::types::VpcAttachment>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl AttachVpnGatewayOutputBuilder {
         self
     }
     /// <p>Information about the attachment.</p>
-    pub fn set_vpc_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcAttachment>,
-    ) -> Self {
+    pub fn set_vpc_attachment(mut self, input: ::std::option::Option<crate::types::VpcAttachment>) -> Self {
         self.vpc_attachment = input;
         self
     }

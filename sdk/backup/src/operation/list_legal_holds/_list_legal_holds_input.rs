@@ -29,9 +29,7 @@ impl ListLegalHoldsInput {
 
 /// A builder for [`ListLegalHoldsInput`](crate::operation::list_legal_holds::ListLegalHoldsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLegalHoldsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl ListLegalHoldsInputBuilder {
     /// Consumes the builder and constructs a [`ListLegalHoldsInput`](crate::operation::list_legal_holds::ListLegalHoldsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_legal_holds::ListLegalHoldsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_legal_holds::ListLegalHoldsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_legal_holds::ListLegalHoldsInput {
             next_token: self.next_token,
             max_results: self.max_results,

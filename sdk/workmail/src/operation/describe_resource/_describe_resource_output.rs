@@ -70,17 +70,14 @@ impl ::aws_http::request_id::RequestId for DescribeResourceOutput {
 }
 impl DescribeResourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput).
-    pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceOutputBuilder {
         crate::operation::describe_resource::builders::DescribeResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourceOutputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) email: ::std::option::Option<::std::string::String>,
@@ -155,10 +152,7 @@ impl DescribeResourceOutputBuilder {
         self
     }
     /// <p>The booking options for the described resource.</p>
-    pub fn set_booking_options(
-        mut self,
-        input: ::std::option::Option<crate::types::BookingOptions>,
-    ) -> Self {
+    pub fn set_booking_options(mut self, input: ::std::option::Option<crate::types::BookingOptions>) -> Self {
         self.booking_options = input;
         self
     }
@@ -186,10 +180,7 @@ impl DescribeResourceOutputBuilder {
         self
     }
     /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
-    pub fn set_enabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.enabled_date = input;
         self
     }
@@ -203,10 +194,7 @@ impl DescribeResourceOutputBuilder {
         self
     }
     /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
-    pub fn set_disabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_disabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.disabled_date = input;
         self
     }

@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`statistics_configurations(Option<Vec<MetricStreamStatisticsConfiguration>>)`](crate::operation::get_metric_stream::GetMetricStreamOutput::statistics_configurations): <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
     ///   - [`include_linked_accounts_metrics(Option<bool>)`](crate::operation::get_metric_stream::GetMetricStreamOutput::include_linked_accounts_metrics): <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
     /// - On failure, responds with [`SdkError<GetMetricStreamError>`](crate::operation::get_metric_stream::GetMetricStreamError)
-    pub fn get_metric_stream(
-        &self,
-    ) -> crate::operation::get_metric_stream::builders::GetMetricStreamFluentBuilder {
-        crate::operation::get_metric_stream::builders::GetMetricStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_metric_stream(&self) -> crate::operation::get_metric_stream::builders::GetMetricStreamFluentBuilder {
+        crate::operation::get_metric_stream::builders::GetMetricStreamFluentBuilder::new(self.handle.clone())
     }
 }

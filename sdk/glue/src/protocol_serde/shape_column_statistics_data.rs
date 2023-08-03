@@ -15,10 +15,7 @@ pub fn ser_column_statistics_data(
     if let Some(var_4) = &input.date_column_statistics_data {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DateColumnStatisticsData").start_object();
-        crate::protocol_serde::shape_date_column_statistics_data::ser_date_column_statistics_data(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_date_column_statistics_data::ser_date_column_statistics_data(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.decimal_column_statistics_data {
@@ -36,10 +33,7 @@ pub fn ser_column_statistics_data(
     if let Some(var_10) = &input.long_column_statistics_data {
         #[allow(unused_mut)]
         let mut object_11 = object.key("LongColumnStatisticsData").start_object();
-        crate::protocol_serde::shape_long_column_statistics_data::ser_long_column_statistics_data(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_long_column_statistics_data::ser_long_column_statistics_data(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.string_column_statistics_data {
@@ -59,17 +53,9 @@ pub fn ser_column_statistics_data(
 
 pub(crate) fn de_column_statistics_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ColumnStatisticsData>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ColumnStatisticsData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -79,74 +65,63 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Type" => {
-                                builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ColumnStatisticsType::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ColumnStatisticsType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "BooleanColumnStatisticsData" => {
-                                builder = builder.set_boolean_column_statistics_data(
-                                    crate::protocol_serde::shape_boolean_column_statistics_data::de_boolean_column_statistics_data(tokens)?
-                                );
-                            }
-                            "DateColumnStatisticsData" => {
-                                builder = builder.set_date_column_statistics_data(
-                                    crate::protocol_serde::shape_date_column_statistics_data::de_date_column_statistics_data(tokens)?
-                                );
-                            }
-                            "DecimalColumnStatisticsData" => {
-                                builder = builder.set_decimal_column_statistics_data(
-                                    crate::protocol_serde::shape_decimal_column_statistics_data::de_decimal_column_statistics_data(tokens)?
-                                );
-                            }
-                            "DoubleColumnStatisticsData" => {
-                                builder = builder.set_double_column_statistics_data(
-                                    crate::protocol_serde::shape_double_column_statistics_data::de_double_column_statistics_data(tokens)?
-                                );
-                            }
-                            "LongColumnStatisticsData" => {
-                                builder = builder.set_long_column_statistics_data(
-                                    crate::protocol_serde::shape_long_column_statistics_data::de_long_column_statistics_data(tokens)?
-                                );
-                            }
-                            "StringColumnStatisticsData" => {
-                                builder = builder.set_string_column_statistics_data(
-                                    crate::protocol_serde::shape_string_column_statistics_data::de_string_column_statistics_data(tokens)?
-                                );
-                            }
-                            "BinaryColumnStatisticsData" => {
-                                builder = builder.set_binary_column_statistics_data(
-                                    crate::protocol_serde::shape_binary_column_statistics_data::de_binary_column_statistics_data(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "BooleanColumnStatisticsData" => {
+                            builder = builder.set_boolean_column_statistics_data(
+                                crate::protocol_serde::shape_boolean_column_statistics_data::de_boolean_column_statistics_data(tokens)?,
+                            );
+                        }
+                        "DateColumnStatisticsData" => {
+                            builder = builder.set_date_column_statistics_data(
+                                crate::protocol_serde::shape_date_column_statistics_data::de_date_column_statistics_data(tokens)?,
+                            );
+                        }
+                        "DecimalColumnStatisticsData" => {
+                            builder = builder.set_decimal_column_statistics_data(
+                                crate::protocol_serde::shape_decimal_column_statistics_data::de_decimal_column_statistics_data(tokens)?,
+                            );
+                        }
+                        "DoubleColumnStatisticsData" => {
+                            builder = builder.set_double_column_statistics_data(
+                                crate::protocol_serde::shape_double_column_statistics_data::de_double_column_statistics_data(tokens)?,
+                            );
+                        }
+                        "LongColumnStatisticsData" => {
+                            builder = builder.set_long_column_statistics_data(
+                                crate::protocol_serde::shape_long_column_statistics_data::de_long_column_statistics_data(tokens)?,
+                            );
+                        }
+                        "StringColumnStatisticsData" => {
+                            builder = builder.set_string_column_statistics_data(
+                                crate::protocol_serde::shape_string_column_statistics_data::de_string_column_statistics_data(tokens)?,
+                            );
+                        }
+                        "BinaryColumnStatisticsData" => {
+                            builder = builder.set_binary_column_statistics_data(
+                                crate::protocol_serde::shape_binary_column_statistics_data::de_binary_column_statistics_data(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

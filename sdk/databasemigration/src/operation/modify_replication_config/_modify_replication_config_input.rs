@@ -72,18 +72,14 @@ impl ModifyReplicationConfigInput {
 }
 impl ModifyReplicationConfigInput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationConfigInput`](crate::operation::modify_replication_config::ModifyReplicationConfigInput).
-    pub fn builder(
-    ) -> crate::operation::modify_replication_config::builders::ModifyReplicationConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_replication_config::builders::ModifyReplicationConfigInputBuilder {
         crate::operation::modify_replication_config::builders::ModifyReplicationConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyReplicationConfigInput`](crate::operation::modify_replication_config::ModifyReplicationConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyReplicationConfigInputBuilder {
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_config_identifier: ::std::option::Option<::std::string::String>,
@@ -97,18 +93,12 @@ pub struct ModifyReplicationConfigInputBuilder {
 }
 impl ModifyReplicationConfigInputBuilder {
     /// <p>The Amazon Resource Name of the replication to modify.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the replication to modify.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_arn = input;
         self
     }
@@ -117,25 +107,17 @@ impl ModifyReplicationConfigInputBuilder {
         &self.replication_config_arn
     }
     /// <p>The new replication config to apply to the replication.</p>
-    pub fn replication_config_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new replication config to apply to the replication.</p>
-    pub fn set_replication_config_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_identifier = input;
         self
     }
     /// <p>The new replication config to apply to the replication.</p>
-    pub fn get_replication_config_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_config_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_config_identifier
     }
     /// <p>The type of replication.</p>
@@ -144,10 +126,7 @@ impl ModifyReplicationConfigInputBuilder {
         self
     }
     /// <p>The type of replication.</p>
-    pub fn set_replication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationTypeValue>,
-    ) -> Self {
+    pub fn set_replication_type(mut self, input: ::std::option::Option<crate::types::MigrationTypeValue>) -> Self {
         self.replication_type = input;
         self
     }
@@ -156,18 +135,12 @@ impl ModifyReplicationConfigInputBuilder {
         &self.replication_type
     }
     /// <p>Table mappings specified in the replication.</p>
-    pub fn table_mappings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_mappings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_mappings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Table mappings specified in the replication.</p>
-    pub fn set_table_mappings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_mappings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_mappings = input;
         self
     }
@@ -176,18 +149,12 @@ impl ModifyReplicationConfigInputBuilder {
         &self.table_mappings
     }
     /// <p>The settings for the replication.</p>
-    pub fn replication_settings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_settings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The settings for the replication.</p>
-    pub fn set_replication_settings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_settings = input;
         self
     }
@@ -196,18 +163,12 @@ impl ModifyReplicationConfigInputBuilder {
         &self.replication_settings
     }
     /// <p>Additional settings for the replication.</p>
-    pub fn supplemental_settings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supplemental_settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.supplemental_settings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional settings for the replication.</p>
-    pub fn set_supplemental_settings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_supplemental_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.supplemental_settings = input;
         self
     }
@@ -221,10 +182,7 @@ impl ModifyReplicationConfigInputBuilder {
         self
     }
     /// <p>Configuration parameters for provisioning an DMS Serverless replication.</p>
-    pub fn set_compute_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeConfig>,
-    ) -> Self {
+    pub fn set_compute_config(mut self, input: ::std::option::Option<crate::types::ComputeConfig>) -> Self {
         self.compute_config = input;
         self
     }
@@ -233,18 +191,12 @@ impl ModifyReplicationConfigInputBuilder {
         &self.compute_config
     }
     /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS serverless replication configuration.</p>
-    pub fn source_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS serverless replication configuration.</p>
-    pub fn set_source_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_endpoint_arn = input;
         self
     }
@@ -253,18 +205,12 @@ impl ModifyReplicationConfigInputBuilder {
         &self.source_endpoint_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
-    pub fn target_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
-    pub fn set_target_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_endpoint_arn = input;
         self
     }
@@ -279,18 +225,16 @@ impl ModifyReplicationConfigInputBuilder {
         crate::operation::modify_replication_config::ModifyReplicationConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_replication_config::ModifyReplicationConfigInput {
-                replication_config_arn: self.replication_config_arn,
-                replication_config_identifier: self.replication_config_identifier,
-                replication_type: self.replication_type,
-                table_mappings: self.table_mappings,
-                replication_settings: self.replication_settings,
-                supplemental_settings: self.supplemental_settings,
-                compute_config: self.compute_config,
-                source_endpoint_arn: self.source_endpoint_arn,
-                target_endpoint_arn: self.target_endpoint_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_replication_config::ModifyReplicationConfigInput {
+            replication_config_arn: self.replication_config_arn,
+            replication_config_identifier: self.replication_config_identifier,
+            replication_type: self.replication_type,
+            table_mappings: self.table_mappings,
+            replication_settings: self.replication_settings,
+            supplemental_settings: self.supplemental_settings,
+            compute_config: self.compute_config,
+            source_endpoint_arn: self.source_endpoint_arn,
+            target_endpoint_arn: self.target_endpoint_arn,
+        })
     }
 }

@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`GetIdentityMailFromDomainAttributesOutput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput) with field(s):
     ///   - [`mail_from_domain_attributes(Option<HashMap<String, IdentityMailFromDomainAttributes>>)`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput::mail_from_domain_attributes): <p>A map of identities to custom MAIL FROM attributes.</p>
     /// - On failure, responds with [`SdkError<GetIdentityMailFromDomainAttributesError>`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesError)
-    pub fn get_identity_mail_from_domain_attributes(&self) -> crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesFluentBuilder{
-        crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesFluentBuilder::new(self.handle.clone())
+    pub fn get_identity_mail_from_domain_attributes(
+        &self,
+    ) -> crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesFluentBuilder {
+        crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

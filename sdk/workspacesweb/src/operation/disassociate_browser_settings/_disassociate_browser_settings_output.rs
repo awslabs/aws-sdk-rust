@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateBrowserSettingsOutput {
 }
 impl DisassociateBrowserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateBrowserSettingsOutput`](crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsOutput).
-    pub fn builder() -> crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsOutputBuilder {
         crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateBrowserSettingsOutput`](crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateBrowserSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateBrowserSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateBrowserSettingsOutput`](crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsOutput {
+    pub fn build(self) -> crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsOutput {
         crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsOutput {
             _request_id: self._request_id,
         }

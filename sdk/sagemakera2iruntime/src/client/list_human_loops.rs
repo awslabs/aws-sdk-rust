@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`human_loop_summaries(Option<Vec<HumanLoopSummary>>)`](crate::operation::list_human_loops::ListHumanLoopsOutput::human_loop_summaries): <p>An array of objects that contain information about the human loops.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_human_loops::ListHumanLoopsOutput::next_token): <p>A token to display the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListHumanLoopsError>`](crate::operation::list_human_loops::ListHumanLoopsError)
-    pub fn list_human_loops(
-        &self,
-    ) -> crate::operation::list_human_loops::builders::ListHumanLoopsFluentBuilder {
-        crate::operation::list_human_loops::builders::ListHumanLoopsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_human_loops(&self) -> crate::operation::list_human_loops::builders::ListHumanLoopsFluentBuilder {
+        crate::operation::list_human_loops::builders::ListHumanLoopsFluentBuilder::new(self.handle.clone())
     }
 }

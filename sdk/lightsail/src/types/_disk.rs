@@ -158,9 +158,7 @@ impl Disk {
 
 /// A builder for [`Disk`](crate::types::Disk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiskBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -230,10 +228,7 @@ impl DiskBuilder {
         self
     }
     /// <p>The date when the disk was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -247,10 +242,7 @@ impl DiskBuilder {
         self
     }
     /// <p>The AWS Region and Availability Zone where the disk is located.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
@@ -264,10 +256,7 @@ impl DiskBuilder {
         self
     }
     /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -287,10 +276,7 @@ impl DiskBuilder {
         self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -310,10 +296,7 @@ impl DiskBuilder {
         self
     }
     /// <p>An array of objects representing the add-ons enabled on the disk.</p>
-    pub fn set_add_ons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>,
-    ) -> Self {
+    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>) -> Self {
         self.add_ons = input;
         self
     }
@@ -423,10 +406,7 @@ impl DiskBuilder {
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
-    pub fn attachment_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_state = ::std::option::Option::Some(input.into());
         self
     }
@@ -434,10 +414,7 @@ impl DiskBuilder {
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
-    pub fn set_attachment_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_state = input;
         self
     }
@@ -481,10 +458,7 @@ impl DiskBuilder {
     /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn set_auto_mount_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMountStatus>,
-    ) -> Self {
+    pub fn set_auto_mount_status(mut self, input: ::std::option::Option<crate::types::AutoMountStatus>) -> Self {
         self.auto_mount_status = input;
         self
     }

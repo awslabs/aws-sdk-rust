@@ -8,8 +8,7 @@ pub struct ListContainerRecipesOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of container recipes returned for the request.</p>
     #[doc(hidden)]
-    pub container_recipe_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecipeSummary>>,
+    pub container_recipe_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecipeSummary>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ListContainerRecipesOutput {
         self.request_id.as_deref()
     }
     /// <p>The list of container recipes returned for the request.</p>
-    pub fn container_recipe_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ContainerRecipeSummary]> {
+    pub fn container_recipe_summary_list(&self) -> ::std::option::Option<&[crate::types::ContainerRecipeSummary]> {
         self.container_recipe_summary_list.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -38,21 +35,17 @@ impl ::aws_http::request_id::RequestId for ListContainerRecipesOutput {
 }
 impl ListContainerRecipesOutput {
     /// Creates a new builder-style object to manufacture [`ListContainerRecipesOutput`](crate::operation::list_container_recipes::ListContainerRecipesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_container_recipes::builders::ListContainerRecipesOutputBuilder {
+    pub fn builder() -> crate::operation::list_container_recipes::builders::ListContainerRecipesOutputBuilder {
         crate::operation::list_container_recipes::builders::ListContainerRecipesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListContainerRecipesOutput`](crate::operation::list_container_recipes::ListContainerRecipesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContainerRecipesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) container_recipe_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecipeSummary>>,
+    pub(crate) container_recipe_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecipeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -76,27 +69,19 @@ impl ListContainerRecipesOutputBuilder {
     /// To override the contents of this collection use [`set_container_recipe_summary_list`](Self::set_container_recipe_summary_list).
     ///
     /// <p>The list of container recipes returned for the request.</p>
-    pub fn container_recipe_summary_list(
-        mut self,
-        input: crate::types::ContainerRecipeSummary,
-    ) -> Self {
+    pub fn container_recipe_summary_list(mut self, input: crate::types::ContainerRecipeSummary) -> Self {
         let mut v = self.container_recipe_summary_list.unwrap_or_default();
         v.push(input);
         self.container_recipe_summary_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of container recipes returned for the request.</p>
-    pub fn set_container_recipe_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecipeSummary>>,
-    ) -> Self {
+    pub fn set_container_recipe_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecipeSummary>>) -> Self {
         self.container_recipe_summary_list = input;
         self
     }
     /// <p>The list of container recipes returned for the request.</p>
-    pub fn get_container_recipe_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerRecipeSummary>> {
+    pub fn get_container_recipe_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerRecipeSummary>> {
         &self.container_recipe_summary_list
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>

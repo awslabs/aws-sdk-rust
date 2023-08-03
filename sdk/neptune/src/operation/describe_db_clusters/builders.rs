@@ -10,10 +10,7 @@ impl DescribeDbClustersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_db_clusters::DescribeDbClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_clusters::DescribeDBClustersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_clusters::DescribeDBClustersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_db_clusters();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeDBClustersFluentBuilder {
         }
     }
     /// Access the DescribeDBClusters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_db_clusters::builders::DescribeDbClustersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_db_clusters::builders::DescribeDbClustersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeDBClustersFluentBuilder {
             crate::operation::describe_db_clusters::DescribeDBClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_clusters::DescribeDBClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_clusters::DescribeDBClustersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeDBClustersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeDBClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_clusters::DescribeDbClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_clusters::DescribeDBClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_clusters::DescribeDBClustersError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeDBClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_clusters::DescribeDbClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_clusters::DescribeDBClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_clusters::DescribeDBClustersError>,
     > {
         self.send_middleware().await
     }
@@ -118,32 +104,22 @@ impl DescribeDBClustersFluentBuilder {
             crate::operation::describe_db_clusters::DescribeDBClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_clusters::DescribeDBClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_clusters::DescribeDBClustersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_clusters::paginator::DescribeDbClustersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_clusters::paginator::DescribeDbClustersPaginator {
-        crate::operation::describe_db_clusters::paginator::DescribeDbClustersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_db_clusters::paginator::DescribeDbClustersPaginator {
+        crate::operation::describe_db_clusters::paginator::DescribeDbClustersPaginator::new(self.handle, self.inner)
     }
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -152,10 +128,7 @@ impl DescribeDBClustersFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -189,10 +162,7 @@ impl DescribeDBClustersFluentBuilder {
     /// <li> <p> <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p> </li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you could use the following command:</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -23,35 +23,26 @@ impl AwsEc2NetworkInterfacePrivateIpAddressDetail {
 }
 impl AwsEc2NetworkInterfacePrivateIpAddressDetail {
     /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail).
-    pub fn builder() -> crate::types::builders::AwsEc2NetworkInterfacePrivateIpAddressDetailBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2NetworkInterfacePrivateIpAddressDetailBuilder {
         crate::types::builders::AwsEc2NetworkInterfacePrivateIpAddressDetailBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfacePrivateIpAddressDetailBuilder {
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2NetworkInterfacePrivateIpAddressDetailBuilder {
     /// <p>The IP address.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
@@ -60,18 +51,12 @@ impl AwsEc2NetworkInterfacePrivateIpAddressDetailBuilder {
         &self.private_ip_address
     }
     /// <p>The private DNS name for the IP address.</p>
-    pub fn private_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private DNS name for the IP address.</p>
-    pub fn set_private_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_dns_name = input;
         self
     }

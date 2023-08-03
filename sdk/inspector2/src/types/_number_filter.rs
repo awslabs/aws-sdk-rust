@@ -30,9 +30,7 @@ impl NumberFilter {
 
 /// A builder for [`NumberFilter`](crate::types::NumberFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumberFilterBuilder {
     pub(crate) upper_inclusive: ::std::option::Option<f64>,
     pub(crate) lower_inclusive: ::std::option::Option<f64>,

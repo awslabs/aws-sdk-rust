@@ -10,10 +10,7 @@ impl DeleteCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_certificate::DeleteCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate::DeleteCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_certificate();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteCertificateFluentBuilder {
         }
     }
     /// Access the DeleteCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeleteCertificateFluentBuilder {
             crate::operation::delete_certificate::DeleteCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate::DeleteCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeleteCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeleteCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_certificate::DeleteCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate::DeleteCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeleteCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_certificate::DeleteCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate::DeleteCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl DeleteCertificateFluentBuilder {
             crate::operation::delete_certificate::DeleteCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate::DeleteCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }

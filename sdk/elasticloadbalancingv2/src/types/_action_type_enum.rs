@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActionTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ActionTypeEnum {
             "fixed-response" => ActionTypeEnum::FixedResponse,
             "forward" => ActionTypeEnum::Forward,
             "redirect" => ActionTypeEnum::Redirect,
-            other => {
-                ActionTypeEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ActionTypeEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ActionTypeEnum {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "authenticate-cognito",
-            "authenticate-oidc",
-            "fixed-response",
-            "forward",
-            "redirect",
-        ]
+        &["authenticate-cognito", "authenticate-oidc", "fixed-response", "forward", "redirect"]
     }
 }
 impl ::std::convert::AsRef<str> for ActionTypeEnum {

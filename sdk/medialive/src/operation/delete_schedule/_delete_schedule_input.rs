@@ -23,9 +23,7 @@ impl DeleteScheduleInput {
 
 /// A builder for [`DeleteScheduleInput`](crate::operation::delete_schedule::DeleteScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScheduleInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl DeleteScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScheduleInput`](crate::operation::delete_schedule::DeleteScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_schedule::DeleteScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_schedule::DeleteScheduleInput {
-            channel_id: self.channel_id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_schedule::DeleteScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_schedule::DeleteScheduleInput { channel_id: self.channel_id })
     }
 }

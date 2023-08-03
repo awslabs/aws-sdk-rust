@@ -22,26 +22,18 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
 
 /// A builder for [`DeleteVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -50,12 +42,16 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         &self.voice_connector_id
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+            },
         )
     }
 }

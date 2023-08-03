@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`target_product_id(Option<String>)`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput::target_product_id): <p>The identifier of the copied product.</p>
     ///   - [`status_detail(Option<String>)`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput::status_detail): <p>The status message.</p>
     /// - On failure, responds with [`SdkError<DescribeCopyProductStatusError>`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusError)
-    pub fn describe_copy_product_status(&self) -> crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusFluentBuilder{
+    pub fn describe_copy_product_status(&self) -> crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusFluentBuilder {
         crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusFluentBuilder::new(self.handle.clone())
     }
 }

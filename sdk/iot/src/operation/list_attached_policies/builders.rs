@@ -38,9 +38,7 @@ impl ListAttachedPoliciesFluentBuilder {
         }
     }
     /// Access the ListAttachedPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_attached_policies::builders::ListAttachedPoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_attached_policies::builders::ListAttachedPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListAttachedPoliciesFluentBuilder {
             crate::operation::list_attached_policies::ListAttachedPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_policies::ListAttachedPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_policies::ListAttachedPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListAttachedPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListAttachedPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_policies::ListAttachedPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_policies::ListAttachedPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_policies::ListAttachedPoliciesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListAttachedPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_policies::ListAttachedPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_policies::ListAttachedPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_policies::ListAttachedPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListAttachedPoliciesFluentBuilder {
             crate::operation::list_attached_policies::ListAttachedPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_policies::ListAttachedPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_policies::ListAttachedPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_attached_policies::paginator::ListAttachedPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_attached_policies::paginator::ListAttachedPoliciesPaginator {
-        crate::operation::list_attached_policies::paginator::ListAttachedPoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_attached_policies::paginator::ListAttachedPoliciesPaginator {
+        crate::operation::list_attached_policies::paginator::ListAttachedPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

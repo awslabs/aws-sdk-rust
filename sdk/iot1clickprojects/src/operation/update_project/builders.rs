@@ -10,10 +10,7 @@ impl UpdateProjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_project::UpdateProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project::UpdateProjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project::UpdateProjectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_project();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateProjectFluentBuilder {
         }
     }
     /// Access the UpdateProject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_project::builders::UpdateProjectInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_project::builders::UpdateProjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateProjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -148,17 +140,12 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
-    pub fn set_placement_template(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementTemplate>,
-    ) -> Self {
+    pub fn set_placement_template(mut self, input: ::std::option::Option<crate::types::PlacementTemplate>) -> Self {
         self.inner = self.inner.set_placement_template(input);
         self
     }
     /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
-    pub fn get_placement_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::PlacementTemplate> {
+    pub fn get_placement_template(&self) -> &::std::option::Option<crate::types::PlacementTemplate> {
         self.inner.get_placement_template()
     }
 }

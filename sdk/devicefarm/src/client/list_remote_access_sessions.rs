@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`remote_access_sessions(Option<Vec<RemoteAccessSession>>)`](crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput::remote_access_sessions): <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListRemoteAccessSessionsError>`](crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsError)
-    pub fn list_remote_access_sessions(&self) -> crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsFluentBuilder{
+    pub fn list_remote_access_sessions(&self) -> crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsFluentBuilder {
         crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`expires_in(i32)`](crate::operation::start_device_authorization::StartDeviceAuthorizationOutput::expires_in): <p>Indicates the number of seconds in which the verification code will become invalid.</p>
     ///   - [`interval(i32)`](crate::operation::start_device_authorization::StartDeviceAuthorizationOutput::interval): <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
     /// - On failure, responds with [`SdkError<StartDeviceAuthorizationError>`](crate::operation::start_device_authorization::StartDeviceAuthorizationError)
-    pub fn start_device_authorization(
-        &self,
-    ) -> crate::operation::start_device_authorization::builders::StartDeviceAuthorizationFluentBuilder
-    {
+    pub fn start_device_authorization(&self) -> crate::operation::start_device_authorization::builders::StartDeviceAuthorizationFluentBuilder {
         crate::operation::start_device_authorization::builders::StartDeviceAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

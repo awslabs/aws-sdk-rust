@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`ipam_resource_discovery_associations(Option<Vec<IpamResourceDiscoveryAssociation>>)`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput::ipam_resource_discovery_associations): <p>The resource discovery associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeIpamResourceDiscoveryAssociationsError>`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError)
-    pub fn describe_ipam_resource_discovery_associations(&self) -> crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder{
-        crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_ipam_resource_discovery_associations(
+        &self,
+    ) -> crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder {
+        crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

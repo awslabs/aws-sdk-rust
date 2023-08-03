@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetDataCatalogEncryptionSettingsOutput`](crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsOutput) with field(s):
     ///   - [`data_catalog_encryption_settings(Option<DataCatalogEncryptionSettings>)`](crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsOutput::data_catalog_encryption_settings): <p>The requested security configuration.</p>
     /// - On failure, responds with [`SdkError<GetDataCatalogEncryptionSettingsError>`](crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsError)
-    pub fn get_data_catalog_encryption_settings(&self) -> crate::operation::get_data_catalog_encryption_settings::builders::GetDataCatalogEncryptionSettingsFluentBuilder{
+    pub fn get_data_catalog_encryption_settings(
+        &self,
+    ) -> crate::operation::get_data_catalog_encryption_settings::builders::GetDataCatalogEncryptionSettingsFluentBuilder {
         crate::operation::get_data_catalog_encryption_settings::builders::GetDataCatalogEncryptionSettingsFluentBuilder::new(self.handle.clone())
     }
 }

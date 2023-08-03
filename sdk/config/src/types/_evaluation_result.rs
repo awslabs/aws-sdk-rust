@@ -6,8 +6,7 @@
 pub struct EvaluationResult {
     /// <p>Uniquely identifies the evaluation result.</p>
     #[doc(hidden)]
-    pub evaluation_result_identifier:
-        ::std::option::Option<crate::types::EvaluationResultIdentifier>,
+    pub evaluation_result_identifier: ::std::option::Option<crate::types::EvaluationResultIdentifier>,
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
     /// <p>For the <code>EvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data type.</p>
     #[doc(hidden)]
@@ -27,9 +26,7 @@ pub struct EvaluationResult {
 }
 impl EvaluationResult {
     /// <p>Uniquely identifies the evaluation result.</p>
-    pub fn evaluation_result_identifier(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvaluationResultIdentifier> {
+    pub fn evaluation_result_identifier(&self) -> ::std::option::Option<&crate::types::EvaluationResultIdentifier> {
         self.evaluation_result_identifier.as_ref()
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
@@ -63,12 +60,9 @@ impl EvaluationResult {
 
 /// A builder for [`EvaluationResult`](crate::types::EvaluationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationResultBuilder {
-    pub(crate) evaluation_result_identifier:
-        ::std::option::Option<crate::types::EvaluationResultIdentifier>,
+    pub(crate) evaluation_result_identifier: ::std::option::Option<crate::types::EvaluationResultIdentifier>,
     pub(crate) compliance_type: ::std::option::Option<crate::types::ComplianceType>,
     pub(crate) result_recorded_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) config_rule_invoked_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -77,25 +71,17 @@ pub struct EvaluationResultBuilder {
 }
 impl EvaluationResultBuilder {
     /// <p>Uniquely identifies the evaluation result.</p>
-    pub fn evaluation_result_identifier(
-        mut self,
-        input: crate::types::EvaluationResultIdentifier,
-    ) -> Self {
+    pub fn evaluation_result_identifier(mut self, input: crate::types::EvaluationResultIdentifier) -> Self {
         self.evaluation_result_identifier = ::std::option::Option::Some(input);
         self
     }
     /// <p>Uniquely identifies the evaluation result.</p>
-    pub fn set_evaluation_result_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationResultIdentifier>,
-    ) -> Self {
+    pub fn set_evaluation_result_identifier(mut self, input: ::std::option::Option<crate::types::EvaluationResultIdentifier>) -> Self {
         self.evaluation_result_identifier = input;
         self
     }
     /// <p>Uniquely identifies the evaluation result.</p>
-    pub fn get_evaluation_result_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationResultIdentifier> {
+    pub fn get_evaluation_result_identifier(&self) -> &::std::option::Option<crate::types::EvaluationResultIdentifier> {
         &self.evaluation_result_identifier
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
@@ -106,10 +92,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
     /// <p>For the <code>EvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data type.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceType>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ComplianceType>) -> Self {
         self.compliance_type = input;
         self
     }
@@ -124,10 +107,7 @@ impl EvaluationResultBuilder {
         self
     }
     /// <p>The time when Config recorded the evaluation result.</p>
-    pub fn set_result_recorded_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_result_recorded_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.result_recorded_time = input;
         self
     }
@@ -141,17 +121,12 @@ impl EvaluationResultBuilder {
         self
     }
     /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
-    pub fn set_config_rule_invoked_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_config_rule_invoked_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.config_rule_invoked_time = input;
         self
     }
     /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
-    pub fn get_config_rule_invoked_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_config_rule_invoked_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.config_rule_invoked_time
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>

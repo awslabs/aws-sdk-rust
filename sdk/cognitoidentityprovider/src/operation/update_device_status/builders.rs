@@ -10,10 +10,7 @@ impl UpdateDeviceStatusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_device_status::UpdateDeviceStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_status::UpdateDeviceStatusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_device_status::UpdateDeviceStatusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_device_status();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDeviceStatusFluentBuilder {
         }
     }
     /// Access the UpdateDeviceStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_device_status::builders::UpdateDeviceStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_device_status::builders::UpdateDeviceStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateDeviceStatusFluentBuilder {
             crate::operation::update_device_status::UpdateDeviceStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_status::UpdateDeviceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_device_status::UpdateDeviceStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateDeviceStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateDeviceStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_device_status::UpdateDeviceStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_status::UpdateDeviceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_device_status::UpdateDeviceStatusError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateDeviceStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_device_status::UpdateDeviceStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_status::UpdateDeviceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_device_status::UpdateDeviceStatusError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateDeviceStatusFluentBuilder {
             crate::operation::update_device_status::UpdateDeviceStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_status::UpdateDeviceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_device_status::UpdateDeviceStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -151,25 +135,17 @@ impl UpdateDeviceStatusFluentBuilder {
         self.inner.get_device_key()
     }
     /// <p>The status of whether a device is remembered.</p>
-    pub fn device_remembered_status(
-        mut self,
-        input: crate::types::DeviceRememberedStatusType,
-    ) -> Self {
+    pub fn device_remembered_status(mut self, input: crate::types::DeviceRememberedStatusType) -> Self {
         self.inner = self.inner.device_remembered_status(input);
         self
     }
     /// <p>The status of whether a device is remembered.</p>
-    pub fn set_device_remembered_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceRememberedStatusType>,
-    ) -> Self {
+    pub fn set_device_remembered_status(mut self, input: ::std::option::Option<crate::types::DeviceRememberedStatusType>) -> Self {
         self.inner = self.inner.set_device_remembered_status(input);
         self
     }
     /// <p>The status of whether a device is remembered.</p>
-    pub fn get_device_remembered_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceRememberedStatusType> {
+    pub fn get_device_remembered_status(&self) -> &::std::option::Option<crate::types::DeviceRememberedStatusType> {
         self.inner.get_device_remembered_status()
     }
 }

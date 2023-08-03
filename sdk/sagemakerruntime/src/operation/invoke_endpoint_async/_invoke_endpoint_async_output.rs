@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for InvokeEndpointAsyncOutput {
 }
 impl InvokeEndpointAsyncOutput {
     /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncOutput`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput).
-    pub fn builder(
-    ) -> crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder {
-        crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder {
+        crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder::default()
     }
 }
 
 /// A builder for [`InvokeEndpointAsyncOutput`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvokeEndpointAsyncOutputBuilder {
     pub(crate) inference_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_location: ::std::option::Option<::std::string::String>,
@@ -69,18 +65,12 @@ impl InvokeEndpointAsyncOutputBuilder {
         &self.inference_id
     }
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
-    pub fn output_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_location = input;
         self
     }
@@ -89,18 +79,12 @@ impl InvokeEndpointAsyncOutputBuilder {
         &self.output_location
     }
     /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
-    pub fn failure_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
-    pub fn set_failure_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_location = input;
         self
     }

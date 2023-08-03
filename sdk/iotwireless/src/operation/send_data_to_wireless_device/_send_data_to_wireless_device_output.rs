@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for SendDataToWirelessDeviceOutput {
 }
 impl SendDataToWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceOutput`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput).
-    pub fn builder() -> crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceOutputBuilder{
+    pub fn builder() -> crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceOutputBuilder {
         crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendDataToWirelessDeviceOutput`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendDataToWirelessDeviceOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl SendDataToWirelessDeviceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendDataToWirelessDeviceOutput`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput {
+    pub fn build(self) -> crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput {
         crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput {
             message_id: self.message_id,
             _request_id: self._request_id,

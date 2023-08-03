@@ -10,10 +10,7 @@ impl DeleteCacheClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_cache_cluster::DeleteCacheClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cache_cluster::DeleteCacheClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cache_cluster::DeleteCacheClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_cache_cluster();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl DeleteCacheClusterFluentBuilder {
         }
     }
     /// Access the DeleteCacheCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_cache_cluster::builders::DeleteCacheClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_cache_cluster::builders::DeleteCacheClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl DeleteCacheClusterFluentBuilder {
             crate::operation::delete_cache_cluster::DeleteCacheCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cache_cluster::DeleteCacheClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cache_cluster::DeleteCacheClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl DeleteCacheClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl DeleteCacheClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cache_cluster::DeleteCacheClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cache_cluster::DeleteCacheClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cache_cluster::DeleteCacheClusterError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl DeleteCacheClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cache_cluster::DeleteCacheClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cache_cluster::DeleteCacheClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cache_cluster::DeleteCacheClusterError>,
     > {
         self.send_middleware().await
     }
@@ -126,25 +112,17 @@ impl DeleteCacheClusterFluentBuilder {
             crate::operation::delete_cache_cluster::DeleteCacheCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cache_cluster::DeleteCacheClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cache_cluster::DeleteCacheClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_cluster_id(input.into());
         self
     }
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_cluster_id(input);
         self
     }
@@ -153,18 +131,12 @@ impl DeleteCacheClusterFluentBuilder {
         self.inner.get_cache_cluster_id()
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
-    pub fn final_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.final_snapshot_identifier(input.into());
         self
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
-    pub fn set_final_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_final_snapshot_identifier(input);
         self
     }

@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetConnectivityInfoOutput {
 }
 impl GetConnectivityInfoOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectivityInfoOutput`](crate::operation::get_connectivity_info::GetConnectivityInfoOutput).
-    pub fn builder(
-    ) -> crate::operation::get_connectivity_info::builders::GetConnectivityInfoOutputBuilder {
-        crate::operation::get_connectivity_info::builders::GetConnectivityInfoOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_connectivity_info::builders::GetConnectivityInfoOutputBuilder {
+        crate::operation::get_connectivity_info::builders::GetConnectivityInfoOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConnectivityInfoOutput`](crate::operation::get_connectivity_info::GetConnectivityInfoOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectivityInfoOutputBuilder {
-    pub(crate) connectivity_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
+    pub(crate) connectivity_info: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl GetConnectivityInfoOutputBuilder {
         self
     }
     /// <p>The connectivity information for the core device.</p>
-    pub fn set_connectivity_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
-    ) -> Self {
+    pub fn set_connectivity_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>) -> Self {
         self.connectivity_info = input;
         self
     }
     /// <p>The connectivity information for the core device.</p>
-    pub fn get_connectivity_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>> {
+    pub fn get_connectivity_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>> {
         &self.connectivity_info
     }
     /// <p>A message about the connectivity information request.</p>

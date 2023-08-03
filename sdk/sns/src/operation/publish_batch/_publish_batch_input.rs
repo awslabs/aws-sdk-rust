@@ -8,8 +8,7 @@ pub struct PublishBatchInput {
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
     #[doc(hidden)]
-    pub publish_batch_request_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
+    pub publish_batch_request_entries: ::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
 }
 impl PublishBatchInput {
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
@@ -17,9 +16,7 @@ impl PublishBatchInput {
         self.topic_arn.as_deref()
     }
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
-    pub fn publish_batch_request_entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PublishBatchRequestEntry]> {
+    pub fn publish_batch_request_entries(&self) -> ::std::option::Option<&[crate::types::PublishBatchRequestEntry]> {
         self.publish_batch_request_entries.as_deref()
     }
 }
@@ -32,13 +29,10 @@ impl PublishBatchInput {
 
 /// A builder for [`PublishBatchInput`](crate::operation::publish_batch::PublishBatchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishBatchInputBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) publish_batch_request_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
+    pub(crate) publish_batch_request_entries: ::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
 }
 impl PublishBatchInputBuilder {
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
@@ -60,10 +54,7 @@ impl PublishBatchInputBuilder {
     /// To override the contents of this collection use [`set_publish_batch_request_entries`](Self::set_publish_batch_request_entries).
     ///
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
-    pub fn publish_batch_request_entries(
-        mut self,
-        input: crate::types::PublishBatchRequestEntry,
-    ) -> Self {
+    pub fn publish_batch_request_entries(mut self, input: crate::types::PublishBatchRequestEntry) -> Self {
         let mut v = self.publish_batch_request_entries.unwrap_or_default();
         v.push(input);
         self.publish_batch_request_entries = ::std::option::Option::Some(v);
@@ -78,18 +69,11 @@ impl PublishBatchInputBuilder {
         self
     }
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
-    pub fn get_publish_batch_request_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>> {
+    pub fn get_publish_batch_request_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>> {
         &self.publish_batch_request_entries
     }
     /// Consumes the builder and constructs a [`PublishBatchInput`](crate::operation::publish_batch::PublishBatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::publish_batch::PublishBatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::publish_batch::PublishBatchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_batch::PublishBatchInput {
             topic_arn: self.topic_arn,
             publish_batch_request_entries: self.publish_batch_request_entries,

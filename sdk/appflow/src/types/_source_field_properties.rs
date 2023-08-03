@@ -37,9 +37,7 @@ impl SourceFieldProperties {
 
 /// A builder for [`SourceFieldProperties`](crate::types::SourceFieldProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceFieldPropertiesBuilder {
     pub(crate) is_retrievable: ::std::option::Option<bool>,
     pub(crate) is_queryable: ::std::option::Option<bool>,
@@ -80,10 +78,7 @@ impl SourceFieldPropertiesBuilder {
         self
     }
     /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
-    pub fn set_is_timestamp_field_for_incremental_queries(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_is_timestamp_field_for_incremental_queries(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_timestamp_field_for_incremental_queries = input;
         self
     }
@@ -96,9 +91,7 @@ impl SourceFieldPropertiesBuilder {
         crate::types::SourceFieldProperties {
             is_retrievable: self.is_retrievable.unwrap_or_default(),
             is_queryable: self.is_queryable.unwrap_or_default(),
-            is_timestamp_field_for_incremental_queries: self
-                .is_timestamp_field_for_incremental_queries
-                .unwrap_or_default(),
+            is_timestamp_field_for_incremental_queries: self.is_timestamp_field_for_incremental_queries.unwrap_or_default(),
         }
     }
 }

@@ -9,8 +9,7 @@ pub struct DirectoryConfig {
     pub directory_name: ::std::option::Option<::std::string::String>,
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
     #[doc(hidden)]
-    pub organizational_unit_distinguished_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub organizational_unit_distinguished_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     #[doc(hidden)]
     pub service_account_credentials: ::std::option::Option<crate::types::ServiceAccountCredentials>,
@@ -19,8 +18,7 @@ pub struct DirectoryConfig {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
     #[doc(hidden)]
-    pub certificate_based_auth_properties:
-        ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
 }
 impl DirectoryConfig {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -28,15 +26,11 @@ impl DirectoryConfig {
         self.directory_name.as_deref()
     }
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
-    pub fn organizational_unit_distinguished_names(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn organizational_unit_distinguished_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.organizational_unit_distinguished_names.as_deref()
     }
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
-    pub fn service_account_credentials(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceAccountCredentials> {
+    pub fn service_account_credentials(&self) -> ::std::option::Option<&crate::types::ServiceAccountCredentials> {
         self.service_account_credentials.as_ref()
     }
     /// <p>The time the directory configuration was created.</p>
@@ -44,9 +38,7 @@ impl DirectoryConfig {
         self.created_time.as_ref()
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
-    pub fn certificate_based_auth_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateBasedAuthProperties> {
+    pub fn certificate_based_auth_properties(&self) -> ::std::option::Option<&crate::types::CertificateBasedAuthProperties> {
         self.certificate_based_auth_properties.as_ref()
     }
 }
@@ -59,33 +51,22 @@ impl DirectoryConfig {
 
 /// A builder for [`DirectoryConfig`](crate::types::DirectoryConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectoryConfigBuilder {
     pub(crate) directory_name: ::std::option::Option<::std::string::String>,
-    pub(crate) organizational_unit_distinguished_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) service_account_credentials:
-        ::std::option::Option<crate::types::ServiceAccountCredentials>,
+    pub(crate) organizational_unit_distinguished_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_account_credentials: ::std::option::Option<crate::types::ServiceAccountCredentials>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) certificate_based_auth_properties:
-        ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub(crate) certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
 }
 impl DirectoryConfigBuilder {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-    pub fn directory_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-    pub fn set_directory_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_name = input;
         self
     }
@@ -98,51 +79,33 @@ impl DirectoryConfigBuilder {
     /// To override the contents of this collection use [`set_organizational_unit_distinguished_names`](Self::set_organizational_unit_distinguished_names).
     ///
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
-    pub fn organizational_unit_distinguished_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .organizational_unit_distinguished_names
-            .unwrap_or_default();
+    pub fn organizational_unit_distinguished_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.organizational_unit_distinguished_names.unwrap_or_default();
         v.push(input.into());
         self.organizational_unit_distinguished_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
-    pub fn set_organizational_unit_distinguished_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organizational_unit_distinguished_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.organizational_unit_distinguished_names = input;
         self
     }
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
-    pub fn get_organizational_unit_distinguished_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_distinguished_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.organizational_unit_distinguished_names
     }
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
-    pub fn service_account_credentials(
-        mut self,
-        input: crate::types::ServiceAccountCredentials,
-    ) -> Self {
+    pub fn service_account_credentials(mut self, input: crate::types::ServiceAccountCredentials) -> Self {
         self.service_account_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
-    pub fn set_service_account_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceAccountCredentials>,
-    ) -> Self {
+    pub fn set_service_account_credentials(mut self, input: ::std::option::Option<crate::types::ServiceAccountCredentials>) -> Self {
         self.service_account_credentials = input;
         self
     }
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
-    pub fn get_service_account_credentials(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceAccountCredentials> {
+    pub fn get_service_account_credentials(&self) -> &::std::option::Option<crate::types::ServiceAccountCredentials> {
         &self.service_account_credentials
     }
     /// <p>The time the directory configuration was created.</p>
@@ -151,10 +114,7 @@ impl DirectoryConfigBuilder {
         self
     }
     /// <p>The time the directory configuration was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -163,25 +123,17 @@ impl DirectoryConfigBuilder {
         &self.created_time
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
-    pub fn certificate_based_auth_properties(
-        mut self,
-        input: crate::types::CertificateBasedAuthProperties,
-    ) -> Self {
+    pub fn certificate_based_auth_properties(mut self, input: crate::types::CertificateBasedAuthProperties) -> Self {
         self.certificate_based_auth_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
-    pub fn set_certificate_based_auth_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
-    ) -> Self {
+    pub fn set_certificate_based_auth_properties(mut self, input: ::std::option::Option<crate::types::CertificateBasedAuthProperties>) -> Self {
         self.certificate_based_auth_properties = input;
         self
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
-    pub fn get_certificate_based_auth_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
+    pub fn get_certificate_based_auth_properties(&self) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
         &self.certificate_based_auth_properties
     }
     /// Consumes the builder and constructs a [`DirectoryConfig`](crate::types::DirectoryConfig).

@@ -37,9 +37,7 @@ impl DeleteAppAssessmentFluentBuilder {
         }
     }
     /// Access the DeleteAppAssessment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_app_assessment::builders::DeleteAppAssessmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_app_assessment::builders::DeleteAppAssessmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteAppAssessmentFluentBuilder {
             crate::operation::delete_app_assessment::DeleteAppAssessment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_assessment::DeleteAppAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_assessment::DeleteAppAssessmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteAppAssessmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteAppAssessmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_assessment::DeleteAppAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_assessment::DeleteAppAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_assessment::DeleteAppAssessmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteAppAssessmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_assessment::DeleteAppAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_assessment::DeleteAppAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_assessment::DeleteAppAssessmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteAppAssessmentFluentBuilder {
             crate::operation::delete_app_assessment::DeleteAppAssessment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_assessment::DeleteAppAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_assessment::DeleteAppAssessmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_arn(input);
         self
     }

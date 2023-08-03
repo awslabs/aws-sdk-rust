@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelKeyDeletionOutput`](crate::operation::cancel_key_deletion::CancelKeyDeletionOutput) with field(s):
     ///   - [`key_id(Option<String>)`](crate::operation::cancel_key_deletion::CancelKeyDeletionOutput::key_id): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is canceled.</p>
     /// - On failure, responds with [`SdkError<CancelKeyDeletionError>`](crate::operation::cancel_key_deletion::CancelKeyDeletionError)
-    pub fn cancel_key_deletion(
-        &self,
-    ) -> crate::operation::cancel_key_deletion::builders::CancelKeyDeletionFluentBuilder {
-        crate::operation::cancel_key_deletion::builders::CancelKeyDeletionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_key_deletion(&self) -> crate::operation::cancel_key_deletion::builders::CancelKeyDeletionFluentBuilder {
+        crate::operation::cancel_key_deletion::builders::CancelKeyDeletionFluentBuilder::new(self.handle.clone())
     }
 }

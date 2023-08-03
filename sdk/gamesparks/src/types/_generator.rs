@@ -39,9 +39,7 @@ impl Generator {
 
 /// A builder for [`Generator`](crate::types::Generator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeneratorBuilder {
     pub(crate) target_platform: ::std::option::Option<::std::string::String>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
@@ -49,18 +47,12 @@ pub struct GeneratorBuilder {
 }
 impl GeneratorBuilder {
     /// <p>The platform that will be used to run the generated code.</p>
-    pub fn target_platform(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_platform = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform that will be used to run the generated code.</p>
-    pub fn set_target_platform(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_platform = input;
         self
     }
@@ -86,18 +78,12 @@ impl GeneratorBuilder {
         &self.language
     }
     /// <p>The target version of the GameSparks Game SDK.</p>
-    pub fn game_sdk_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_sdk_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_sdk_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target version of the GameSparks Game SDK.</p>
-    pub fn set_game_sdk_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_sdk_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_sdk_version = input;
         self
     }

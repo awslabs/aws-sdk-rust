@@ -37,9 +37,7 @@ impl DriftCheckBias {
 
 /// A builder for [`DriftCheckBias`](crate::types::DriftCheckBias).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DriftCheckBiasBuilder {
     pub(crate) config_file: ::std::option::Option<crate::types::FileSource>,
     pub(crate) pre_training_constraints: ::std::option::Option<crate::types::MetricsSource>,
@@ -52,10 +50,7 @@ impl DriftCheckBiasBuilder {
         self
     }
     /// <p>The bias config file for a model.</p>
-    pub fn set_config_file(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSource>,
-    ) -> Self {
+    pub fn set_config_file(mut self, input: ::std::option::Option<crate::types::FileSource>) -> Self {
         self.config_file = input;
         self
     }
@@ -69,17 +64,12 @@ impl DriftCheckBiasBuilder {
         self
     }
     /// <p>The pre-training constraints.</p>
-    pub fn set_pre_training_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsSource>,
-    ) -> Self {
+    pub fn set_pre_training_constraints(mut self, input: ::std::option::Option<crate::types::MetricsSource>) -> Self {
         self.pre_training_constraints = input;
         self
     }
     /// <p>The pre-training constraints.</p>
-    pub fn get_pre_training_constraints(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricsSource> {
+    pub fn get_pre_training_constraints(&self) -> &::std::option::Option<crate::types::MetricsSource> {
         &self.pre_training_constraints
     }
     /// <p>The post-training constraints.</p>
@@ -88,17 +78,12 @@ impl DriftCheckBiasBuilder {
         self
     }
     /// <p>The post-training constraints.</p>
-    pub fn set_post_training_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsSource>,
-    ) -> Self {
+    pub fn set_post_training_constraints(mut self, input: ::std::option::Option<crate::types::MetricsSource>) -> Self {
         self.post_training_constraints = input;
         self
     }
     /// <p>The post-training constraints.</p>
-    pub fn get_post_training_constraints(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricsSource> {
+    pub fn get_post_training_constraints(&self) -> &::std::option::Option<crate::types::MetricsSource> {
         &self.post_training_constraints
     }
     /// Consumes the builder and constructs a [`DriftCheckBias`](crate::types::DriftCheckBias).

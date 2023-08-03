@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListServiceInstanceOutputsOutput {
 }
 impl ListServiceInstanceOutputsOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceInstanceOutputsOutput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput).
-    pub fn builder() -> crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsOutputBuilder{
+    pub fn builder() -> crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsOutputBuilder {
         crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceInstanceOutputsOutput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceInstanceOutputsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
@@ -70,10 +68,7 @@ impl ListServiceInstanceOutputsOutputBuilder {
         self
     }
     /// <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }
@@ -91,9 +86,7 @@ impl ListServiceInstanceOutputsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceInstanceOutputsOutput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput {
+    pub fn build(self) -> crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput {
         crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput {
             next_token: self.next_token,
             outputs: self.outputs,

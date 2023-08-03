@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_inference_executions::ListInferenceExecutionsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
     ///   - [`inference_execution_summaries(Option<Vec<InferenceExecutionSummary>>)`](crate::operation::list_inference_executions::ListInferenceExecutionsOutput::inference_execution_summaries): <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
     /// - On failure, responds with [`SdkError<ListInferenceExecutionsError>`](crate::operation::list_inference_executions::ListInferenceExecutionsError)
-    pub fn list_inference_executions(
-        &self,
-    ) -> crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder
-    {
+    pub fn list_inference_executions(&self) -> crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder {
         crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -55,9 +55,7 @@ impl LogicalResourceId {
 
 /// A builder for [`LogicalResourceId`](crate::types::LogicalResourceId).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogicalResourceIdBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) logical_stack_name: ::std::option::Option<::std::string::String>,
@@ -81,18 +79,12 @@ impl LogicalResourceIdBuilder {
         &self.identifier
     }
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
-    pub fn logical_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
-    pub fn set_logical_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_stack_name = input;
         self
     }
@@ -101,18 +93,12 @@ impl LogicalResourceIdBuilder {
         &self.logical_stack_name
     }
     /// <p>The name of the resource group that this resource belongs to.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group that this resource belongs to.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -121,18 +107,12 @@ impl LogicalResourceIdBuilder {
         &self.resource_group_name
     }
     /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
-    pub fn terraform_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn terraform_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.terraform_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
-    pub fn set_terraform_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_terraform_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.terraform_source_name = input;
         self
     }
@@ -143,20 +123,14 @@ impl LogicalResourceIdBuilder {
     /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
-    pub fn eks_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn eks_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eks_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
-    pub fn set_eks_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_eks_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eks_source_name = input;
         self
     }

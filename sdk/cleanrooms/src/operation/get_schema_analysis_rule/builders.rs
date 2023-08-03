@@ -37,10 +37,7 @@ impl GetSchemaAnalysisRuleFluentBuilder {
         }
     }
     /// Access the GetSchemaAnalysisRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetSchemaAnalysisRuleFluentBuilder {
             crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetSchemaAnalysisRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetSchemaAnalysisRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetSchemaAnalysisRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetSchemaAnalysisRuleFluentBuilder {
             crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collaboration_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collaboration_identifier(input);
         self
     }
@@ -163,10 +143,7 @@ impl GetSchemaAnalysisRuleFluentBuilder {
         self
     }
     /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisRuleType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AnalysisRuleType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

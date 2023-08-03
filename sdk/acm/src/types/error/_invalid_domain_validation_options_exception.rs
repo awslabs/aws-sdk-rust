@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InvalidDomainValidationOptionsException {
     }
 }
 impl ::std::error::Error for InvalidDomainValidationOptionsException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidDomainValidationOptionsException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidDomainValidationOptionsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidDomainValidationOptionsException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidDomainValidationOptionsException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidDomainValidationOptionsException {
     /// Creates a new builder-style object to manufacture [`InvalidDomainValidationOptionsException`](crate::types::error::InvalidDomainValidationOptionsException).
-    pub fn builder() -> crate::types::error::builders::InvalidDomainValidationOptionsExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InvalidDomainValidationOptionsExceptionBuilder {
         crate::types::error::builders::InvalidDomainValidationOptionsExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidDomainValidationOptionsException`](crate::types::error::InvalidDomainValidationOptionsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidDomainValidationOptionsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidDomainValidationOptionsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

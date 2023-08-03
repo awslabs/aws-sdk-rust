@@ -26,9 +26,7 @@ impl UpdateWorkGroupInput {
         self.description.as_deref()
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    pub fn configuration_updates(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkGroupConfigurationUpdates> {
+    pub fn configuration_updates(&self) -> ::std::option::Option<&crate::types::WorkGroupConfigurationUpdates> {
         self.configuration_updates.as_ref()
     }
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
@@ -45,14 +43,11 @@ impl UpdateWorkGroupInput {
 
 /// A builder for [`UpdateWorkGroupInput`](crate::operation::update_work_group::UpdateWorkGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkGroupInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_updates:
-        ::std::option::Option<crate::types::WorkGroupConfigurationUpdates>,
+    pub(crate) configuration_updates: ::std::option::Option<crate::types::WorkGroupConfigurationUpdates>,
     pub(crate) state: ::std::option::Option<crate::types::WorkGroupState>,
 }
 impl UpdateWorkGroupInputBuilder {
@@ -85,25 +80,17 @@ impl UpdateWorkGroupInputBuilder {
         &self.description
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    pub fn configuration_updates(
-        mut self,
-        input: crate::types::WorkGroupConfigurationUpdates,
-    ) -> Self {
+    pub fn configuration_updates(mut self, input: crate::types::WorkGroupConfigurationUpdates) -> Self {
         self.configuration_updates = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    pub fn set_configuration_updates(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkGroupConfigurationUpdates>,
-    ) -> Self {
+    pub fn set_configuration_updates(mut self, input: ::std::option::Option<crate::types::WorkGroupConfigurationUpdates>) -> Self {
         self.configuration_updates = input;
         self
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    pub fn get_configuration_updates(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkGroupConfigurationUpdates> {
+    pub fn get_configuration_updates(&self) -> &::std::option::Option<crate::types::WorkGroupConfigurationUpdates> {
         &self.configuration_updates
     }
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
@@ -123,10 +110,7 @@ impl UpdateWorkGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkGroupInput`](crate::operation::update_work_group::UpdateWorkGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_work_group::UpdateWorkGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_work_group::UpdateWorkGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_work_group::UpdateWorkGroupInput {
             work_group: self.work_group,
             description: self.description,

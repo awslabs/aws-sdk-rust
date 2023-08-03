@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`SendUsersMessagesOutput`](crate::operation::send_users_messages::SendUsersMessagesOutput) with field(s):
     ///   - [`send_users_message_response(Option<SendUsersMessageResponse>)`](crate::operation::send_users_messages::SendUsersMessagesOutput::send_users_message_response): <p>Provides information about which users and endpoints a message was sent to.</p>
     /// - On failure, responds with [`SdkError<SendUsersMessagesError>`](crate::operation::send_users_messages::SendUsersMessagesError)
-    pub fn send_users_messages(
-        &self,
-    ) -> crate::operation::send_users_messages::builders::SendUsersMessagesFluentBuilder {
-        crate::operation::send_users_messages::builders::SendUsersMessagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_users_messages(&self) -> crate::operation::send_users_messages::builders::SendUsersMessagesFluentBuilder {
+        crate::operation::send_users_messages::builders::SendUsersMessagesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,13 +38,7 @@
 /// Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DvbSubtitlingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for DvbSubtitlingType {
         match s {
             "HEARING_IMPAIRED" => DvbSubtitlingType::HearingImpaired,
             "STANDARD" => DvbSubtitlingType::Standard,
-            other => {
-                DvbSubtitlingType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DvbSubtitlingType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

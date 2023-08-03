@@ -52,13 +52,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceAttributeName {
     #[allow(missing_docs)] // documentation missing in model
@@ -106,9 +100,7 @@ impl ::std::convert::From<&str> for InstanceAttributeName {
             "enaSupport" => InstanceAttributeName::EnaSupport,
             "enclaveOptions" => InstanceAttributeName::EnclaveOptions,
             "groupSet" => InstanceAttributeName::GroupSet,
-            "instanceInitiatedShutdownBehavior" => {
-                InstanceAttributeName::InstanceInitiatedShutdownBehavior
-            }
+            "instanceInitiatedShutdownBehavior" => InstanceAttributeName::InstanceInitiatedShutdownBehavior,
             "instanceType" => InstanceAttributeName::InstanceType,
             "kernel" => InstanceAttributeName::Kernel,
             "productCodes" => InstanceAttributeName::ProductCodes,
@@ -117,9 +109,7 @@ impl ::std::convert::From<&str> for InstanceAttributeName {
             "sourceDestCheck" => InstanceAttributeName::SourceDestCheck,
             "sriovNetSupport" => InstanceAttributeName::SriovNetSupport,
             "userData" => InstanceAttributeName::UserData,
-            other => InstanceAttributeName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InstanceAttributeName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -141,9 +131,7 @@ impl InstanceAttributeName {
             InstanceAttributeName::EnaSupport => "enaSupport",
             InstanceAttributeName::EnclaveOptions => "enclaveOptions",
             InstanceAttributeName::GroupSet => "groupSet",
-            InstanceAttributeName::InstanceInitiatedShutdownBehavior => {
-                "instanceInitiatedShutdownBehavior"
-            }
+            InstanceAttributeName::InstanceInitiatedShutdownBehavior => "instanceInitiatedShutdownBehavior",
             InstanceAttributeName::InstanceType => "instanceType",
             InstanceAttributeName::Kernel => "kernel",
             InstanceAttributeName::ProductCodes => "productCodes",

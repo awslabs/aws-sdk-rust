@@ -27,18 +27,14 @@ impl ListSchedulingPoliciesInput {
 }
 impl ListSchedulingPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListSchedulingPoliciesInput`](crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_scheduling_policies::builders::ListSchedulingPoliciesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_scheduling_policies::builders::ListSchedulingPoliciesInputBuilder {
         crate::operation::list_scheduling_policies::builders::ListSchedulingPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSchedulingPoliciesInput`](crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchedulingPoliciesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -81,15 +77,11 @@ impl ListSchedulingPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListSchedulingPoliciesInput`](crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

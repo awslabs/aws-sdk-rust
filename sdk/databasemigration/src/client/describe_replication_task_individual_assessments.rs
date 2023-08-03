@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsOutput::marker): <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     ///   - [`replication_task_individual_assessments(Option<Vec<ReplicationTaskIndividualAssessment>>)`](crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsOutput::replication_task_individual_assessments): <p>One or more individual assessments as specified by <code>Filters</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationTaskIndividualAssessmentsError>`](crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsError)
-    pub fn describe_replication_task_individual_assessments(&self) -> crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsFluentBuilder{
-        crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsFluentBuilder::new(self.handle.clone())
+    pub fn describe_replication_task_individual_assessments(
+        &self,
+    ) -> crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsFluentBuilder {
+        crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

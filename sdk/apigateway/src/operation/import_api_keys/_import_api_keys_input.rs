@@ -37,9 +37,7 @@ impl ImportApiKeysInput {
 
 /// A builder for [`ImportApiKeysInput`](crate::operation::import_api_keys::ImportApiKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportApiKeysInputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) format: ::std::option::Option<crate::types::ApiKeysFormat>,
@@ -91,10 +89,7 @@ impl ImportApiKeysInputBuilder {
     /// Consumes the builder and constructs a [`ImportApiKeysInput`](crate::operation::import_api_keys::ImportApiKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_api_keys::ImportApiKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::import_api_keys::ImportApiKeysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_api_keys::ImportApiKeysInput {
             body: self.body,
             format: self.format,

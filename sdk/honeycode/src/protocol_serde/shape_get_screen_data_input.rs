@@ -25,10 +25,7 @@ pub fn ser_get_screen_data_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_variable_value::ser_variable_value(
-                    &mut object_9,
-                    value_8,
-                )?;
+                crate::protocol_serde::shape_variable_value::ser_variable_value(&mut object_9, value_8)?;
                 object_9.finish();
             }
         }

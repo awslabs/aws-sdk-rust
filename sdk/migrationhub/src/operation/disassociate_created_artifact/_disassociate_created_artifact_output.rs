@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateCreatedArtifactOutput {
 }
 impl DisassociateCreatedArtifactOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateCreatedArtifactOutput`](crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactOutput).
-    pub fn builder() -> crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactOutputBuilder {
         crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateCreatedArtifactOutput`](crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateCreatedArtifactOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateCreatedArtifactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateCreatedArtifactOutput`](crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactOutput {
+    pub fn build(self) -> crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactOutput {
         crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactOutput {
             _request_id: self._request_id,
         }

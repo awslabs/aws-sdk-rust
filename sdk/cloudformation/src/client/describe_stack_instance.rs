@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStackInstanceOutput`](crate::operation::describe_stack_instance::DescribeStackInstanceOutput) with field(s):
     ///   - [`stack_instance(Option<StackInstance>)`](crate::operation::describe_stack_instance::DescribeStackInstanceOutput::stack_instance): <p>The stack instance that matches the specified request parameters.</p>
     /// - On failure, responds with [`SdkError<DescribeStackInstanceError>`](crate::operation::describe_stack_instance::DescribeStackInstanceError)
-    pub fn describe_stack_instance(
-        &self,
-    ) -> crate::operation::describe_stack_instance::builders::DescribeStackInstanceFluentBuilder
-    {
-        crate::operation::describe_stack_instance::builders::DescribeStackInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_stack_instance(&self) -> crate::operation::describe_stack_instance::builders::DescribeStackInstanceFluentBuilder {
+        crate::operation::describe_stack_instance::builders::DescribeStackInstanceFluentBuilder::new(self.handle.clone())
     }
 }

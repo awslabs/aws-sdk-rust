@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartMailboxExportJobOutput {
 }
 impl StartMailboxExportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartMailboxExportJobOutput`](crate::operation::start_mailbox_export_job::StartMailboxExportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobOutputBuilder {
         crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMailboxExportJobOutput`](crate::operation::start_mailbox_export_job::StartMailboxExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMailboxExportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

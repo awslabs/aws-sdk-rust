@@ -29,21 +29,17 @@ impl ::aws_http::request_id::RequestId for BatchMeterUsageOutput {
 }
 impl BatchMeterUsageOutput {
     /// Creates a new builder-style object to manufacture [`BatchMeterUsageOutput`](crate::operation::batch_meter_usage::BatchMeterUsageOutput).
-    pub fn builder() -> crate::operation::batch_meter_usage::builders::BatchMeterUsageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_meter_usage::builders::BatchMeterUsageOutputBuilder {
         crate::operation::batch_meter_usage::builders::BatchMeterUsageOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchMeterUsageOutput`](crate::operation::batch_meter_usage::BatchMeterUsageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchMeterUsageOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>>,
-    pub(crate) unprocessed_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
+    pub(crate) unprocessed_records: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
     _request_id: Option<String>,
 }
 impl BatchMeterUsageOutputBuilder {
@@ -59,17 +55,12 @@ impl BatchMeterUsageOutputBuilder {
         self
     }
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>> {
         &self.results
     }
     /// Appends an item to `unprocessed_records`.
@@ -84,17 +75,12 @@ impl BatchMeterUsageOutputBuilder {
         self
     }
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
-    pub fn set_unprocessed_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
-    ) -> Self {
+    pub fn set_unprocessed_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>) -> Self {
         self.unprocessed_records = input;
         self
     }
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
-    pub fn get_unprocessed_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
+    pub fn get_unprocessed_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
         &self.unprocessed_records
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

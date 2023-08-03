@@ -35,20 +35,16 @@ impl ::aws_http::request_id::RequestId for ListRefreshSchedulesOutput {
 }
 impl ListRefreshSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`ListRefreshSchedulesOutput`](crate::operation::list_refresh_schedules::ListRefreshSchedulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesOutputBuilder {
+    pub fn builder() -> crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesOutputBuilder {
         crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRefreshSchedulesOutput`](crate::operation::list_refresh_schedules::ListRefreshSchedulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRefreshSchedulesOutputBuilder {
-    pub(crate) refresh_schedules:
-        ::std::option::Option<::std::vec::Vec<crate::types::RefreshSchedule>>,
+    pub(crate) refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::RefreshSchedule>>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -66,17 +62,12 @@ impl ListRefreshSchedulesOutputBuilder {
         self
     }
     /// <p>The list of refresh schedules for the dataset.</p>
-    pub fn set_refresh_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RefreshSchedule>>,
-    ) -> Self {
+    pub fn set_refresh_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RefreshSchedule>>) -> Self {
         self.refresh_schedules = input;
         self
     }
     /// <p>The list of refresh schedules for the dataset.</p>
-    pub fn get_refresh_schedules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RefreshSchedule>> {
+    pub fn get_refresh_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RefreshSchedule>> {
         &self.refresh_schedules
     }
     /// <p>The HTTP status of the request.</p>

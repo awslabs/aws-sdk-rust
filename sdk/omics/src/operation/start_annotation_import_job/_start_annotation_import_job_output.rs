@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartAnnotationImportJobOutput {
 }
 impl StartAnnotationImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartAnnotationImportJobOutput`](crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput).
-    pub fn builder() -> crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobOutputBuilder {
         crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartAnnotationImportJobOutput`](crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAnnotationImportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StartAnnotationImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartAnnotationImportJobOutput`](crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput {
+    pub fn build(self) -> crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput {
         crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput {
             job_id: self.job_id,
             _request_id: self._request_id,

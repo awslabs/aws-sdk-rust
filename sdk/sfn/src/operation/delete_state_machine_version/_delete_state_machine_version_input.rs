@@ -15,33 +15,25 @@ impl DeleteStateMachineVersionInput {
 }
 impl DeleteStateMachineVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteStateMachineVersionInput`](crate::operation::delete_state_machine_version::DeleteStateMachineVersionInput).
-    pub fn builder() -> crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionInputBuilder{
+    pub fn builder() -> crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionInputBuilder {
         crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStateMachineVersionInput`](crate::operation::delete_state_machine_version::DeleteStateMachineVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStateMachineVersionInputBuilder {
     pub(crate) state_machine_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStateMachineVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine version to delete.</p>
-    pub fn state_machine_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine version to delete.</p>
-    pub fn set_state_machine_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_version_arn = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteStateMachineVersionInputBuilder {
         crate::operation::delete_state_machine_version::DeleteStateMachineVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_state_machine_version::DeleteStateMachineVersionInput {
-                state_machine_version_arn: self.state_machine_version_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_state_machine_version::DeleteStateMachineVersionInput {
+            state_machine_version_arn: self.state_machine_version_arn,
+        })
     }
 }

@@ -5,8 +5,7 @@
 pub struct DescribeDocumentVersionsOutput {
     /// <p>The document versions.</p>
     #[doc(hidden)]
-    pub document_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>>,
+    pub document_versions: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeDocumentVersionsOutput {
 }
 impl DescribeDocumentVersionsOutput {
     /// <p>The document versions.</p>
-    pub fn document_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DocumentVersionMetadata]> {
+    pub fn document_versions(&self) -> ::std::option::Option<&[crate::types::DocumentVersionMetadata]> {
         self.document_versions.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeDocumentVersionsOutput {
 }
 impl DescribeDocumentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentVersionsOutput`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_document_versions::builders::DescribeDocumentVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_document_versions::builders::DescribeDocumentVersionsOutputBuilder {
         crate::operation::describe_document_versions::builders::DescribeDocumentVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDocumentVersionsOutput`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDocumentVersionsOutputBuilder {
-    pub(crate) document_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>>,
+    pub(crate) document_versions: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl DescribeDocumentVersionsOutputBuilder {
         self
     }
     /// <p>The document versions.</p>
-    pub fn set_document_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>>,
-    ) -> Self {
+    pub fn set_document_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>>) -> Self {
         self.document_versions = input;
         self
     }
     /// <p>The document versions.</p>
-    pub fn get_document_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>> {
+    pub fn get_document_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>> {
         &self.document_versions
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -99,9 +86,7 @@ impl DescribeDocumentVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDocumentVersionsOutput`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_document_versions::DescribeDocumentVersionsOutput {
+    pub fn build(self) -> crate::operation::describe_document_versions::DescribeDocumentVersionsOutput {
         crate::operation::describe_document_versions::DescribeDocumentVersionsOutput {
             document_versions: self.document_versions,
             marker: self.marker,

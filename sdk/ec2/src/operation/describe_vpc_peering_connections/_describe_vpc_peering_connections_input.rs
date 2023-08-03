@@ -85,21 +85,18 @@ impl DescribeVpcPeeringConnectionsInput {
 }
 impl DescribeVpcPeeringConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringConnectionsInput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput).
-    pub fn builder() -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder {
         crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcPeeringConnectionsInput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) vpc_peering_connection_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_peering_connection_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -156,10 +153,7 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-peering-connection-id</code> - The ID of the VPC peering connection.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -207,10 +201,7 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
     ///
     /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
-    pub fn vpc_peering_connection_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_peering_connection_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_peering_connection_ids = ::std::option::Option::Some(v);
@@ -218,18 +209,13 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
     }
     /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
-    pub fn set_vpc_peering_connection_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_peering_connection_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_peering_connection_ids = input;
         self
     }
     /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
-    pub fn get_vpc_peering_connection_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_peering_connection_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_peering_connection_ids
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -267,19 +253,12 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
         crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput {
-                filters: self.filters
-                ,
-                dry_run: self.dry_run
-                ,
-                vpc_peering_connection_ids: self.vpc_peering_connection_ids
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput {
+            filters: self.filters,
+            dry_run: self.dry_run,
+            vpc_peering_connection_ids: self.vpc_peering_connection_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

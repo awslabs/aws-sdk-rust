@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartFaceSearchOutput {
 }
 impl StartFaceSearchOutput {
     /// Creates a new builder-style object to manufacture [`StartFaceSearchOutput`](crate::operation::start_face_search::StartFaceSearchOutput).
-    pub fn builder() -> crate::operation::start_face_search::builders::StartFaceSearchOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_face_search::builders::StartFaceSearchOutputBuilder {
         crate::operation::start_face_search::builders::StartFaceSearchOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartFaceSearchOutput`](crate::operation::start_face_search::StartFaceSearchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFaceSearchOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

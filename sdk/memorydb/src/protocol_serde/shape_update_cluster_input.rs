@@ -54,10 +54,7 @@ pub fn ser_update_cluster_input(
     if let Some(var_16) = &input.shard_configuration {
         #[allow(unused_mut)]
         let mut object_17 = object.key("ShardConfiguration").start_object();
-        crate::protocol_serde::shape_shard_configuration_request::ser_shard_configuration_request(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_shard_configuration_request::ser_shard_configuration_request(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.acl_name {

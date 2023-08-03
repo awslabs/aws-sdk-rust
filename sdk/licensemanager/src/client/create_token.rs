@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`token_type(Option<TokenType>)`](crate::operation::create_token::CreateTokenOutput::token_type): <p>Token type.</p>
     ///   - [`token(Option<String>)`](crate::operation::create_token::CreateTokenOutput::token): <p>Refresh token, encoded as a JWT token.</p>
     /// - On failure, responds with [`SdkError<CreateTokenError>`](crate::operation::create_token::CreateTokenError)
-    pub fn create_token(
-        &self,
-    ) -> crate::operation::create_token::builders::CreateTokenFluentBuilder {
+    pub fn create_token(&self) -> crate::operation::create_token::builders::CreateTokenFluentBuilder {
         crate::operation::create_token::builders::CreateTokenFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`pool_infos(Option<Vec<PoolInfo>>)`](crate::operation::list_tape_pools::ListTapePoolsOutput::pool_infos): <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array. </p>
     ///   - [`marker(Option<String>)`](crate::operation::list_tape_pools::ListTapePoolsOutput::marker): <p>A string that indicates the position at which to begin the returned list of tape pools. Use the marker in your next request to continue pagination of tape pools. If there are no more tape pools to list, this element does not appear in the response body. </p>
     /// - On failure, responds with [`SdkError<ListTapePoolsError>`](crate::operation::list_tape_pools::ListTapePoolsError)
-    pub fn list_tape_pools(
-        &self,
-    ) -> crate::operation::list_tape_pools::builders::ListTapePoolsFluentBuilder {
-        crate::operation::list_tape_pools::builders::ListTapePoolsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tape_pools(&self) -> crate::operation::list_tape_pools::builders::ListTapePoolsFluentBuilder {
+        crate::operation::list_tape_pools::builders::ListTapePoolsFluentBuilder::new(self.handle.clone())
     }
 }

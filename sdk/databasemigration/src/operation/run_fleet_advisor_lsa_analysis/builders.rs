@@ -26,7 +26,7 @@ impl RunFleetAdvisorLsaAnalysisInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RunFleetAdvisorLsaAnalysisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisInputBuilder,
+    inner: crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisInputBuilder,
 }
 impl RunFleetAdvisorLsaAnalysisFluentBuilder {
     /// Creates a new `RunFleetAdvisorLsaAnalysis`.
@@ -37,7 +37,7 @@ impl RunFleetAdvisorLsaAnalysisFluentBuilder {
         }
     }
     /// Access the RunFleetAdvisorLsaAnalysis as a reference.
-    pub fn as_input(&self) -> &crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RunFleetAdvisorLsaAnalysisFluentBuilder {
             crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RunFleetAdvisorLsaAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RunFleetAdvisorLsaAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RunFleetAdvisorLsaAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RunFleetAdvisorLsaAnalysisFluentBuilder {
             crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError>,
     > {
         self.customize_middleware().await
     }

@@ -22,9 +22,7 @@ impl DeleteLexiconInput {
 
 /// A builder for [`DeleteLexiconInput`](crate::operation::delete_lexicon::DeleteLexiconInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLexiconInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteLexiconInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLexiconInput`](crate::operation::delete_lexicon::DeleteLexiconInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_lexicon::DeleteLexiconInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_lexicon::DeleteLexiconInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_lexicon::DeleteLexiconInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_lexicon::DeleteLexiconInput { name: self.name })
     }
 }

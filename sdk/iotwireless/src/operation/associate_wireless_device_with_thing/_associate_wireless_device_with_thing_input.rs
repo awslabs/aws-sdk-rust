@@ -22,16 +22,14 @@ impl AssociateWirelessDeviceWithThingInput {
 }
 impl AssociateWirelessDeviceWithThingInput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingInput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput).
-    pub fn builder() -> crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingInputBuilder{
+    pub fn builder() -> crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingInputBuilder {
         crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWirelessDeviceWithThingInput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithThingInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl AssociateWirelessDeviceWithThingInputBuilder {
         &self.thing_arn
     }
     /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithThingInput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput {
-                id: self.id
-                ,
-                thing_arn: self.thing_arn
-                ,
-            }
+                id: self.id,
+                thing_arn: self.thing_arn,
+            },
         )
     }
 }

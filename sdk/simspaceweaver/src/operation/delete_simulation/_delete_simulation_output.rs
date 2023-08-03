@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSimulationOutput {
 }
 impl DeleteSimulationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSimulationOutput`](crate::operation::delete_simulation::DeleteSimulationOutput).
-    pub fn builder() -> crate::operation::delete_simulation::builders::DeleteSimulationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_simulation::builders::DeleteSimulationOutputBuilder {
         crate::operation::delete_simulation::builders::DeleteSimulationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSimulationOutput`](crate::operation::delete_simulation::DeleteSimulationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSimulationOutputBuilder {
     _request_id: Option<String>,
 }

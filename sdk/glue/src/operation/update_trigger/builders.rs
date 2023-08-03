@@ -10,10 +10,7 @@ impl UpdateTriggerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_trigger::UpdateTriggerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_trigger::UpdateTriggerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_trigger::UpdateTriggerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_trigger();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateTriggerFluentBuilder {
         }
     }
     /// Access the UpdateTrigger as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_trigger::builders::UpdateTriggerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_trigger::builders::UpdateTriggerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateTriggerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -134,10 +126,7 @@ impl UpdateTriggerFluentBuilder {
         self
     }
     /// <p>The new values with which to update the trigger.</p>
-    pub fn set_trigger_update(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerUpdate>,
-    ) -> Self {
+    pub fn set_trigger_update(mut self, input: ::std::option::Option<crate::types::TriggerUpdate>) -> Self {
         self.inner = self.inner.set_trigger_update(input);
         self
     }

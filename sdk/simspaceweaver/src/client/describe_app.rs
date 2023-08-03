@@ -16,9 +16,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::describe_app::DescribeAppOutput::description): <p>The description of the app.</p>
     ///   - [`endpoint_info(Option<SimulationAppEndpointInfo>)`](crate::operation::describe_app::DescribeAppOutput::endpoint_info): <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
     /// - On failure, responds with [`SdkError<DescribeAppError>`](crate::operation::describe_app::DescribeAppError)
-    pub fn describe_app(
-        &self,
-    ) -> crate::operation::describe_app::builders::DescribeAppFluentBuilder {
+    pub fn describe_app(&self) -> crate::operation::describe_app::builders::DescribeAppFluentBuilder {
         crate::operation::describe_app::builders::DescribeAppFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateJobShipmentStateOutput {
 }
 impl UpdateJobShipmentStateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobShipmentStateOutput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateOutputBuilder {
         crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJobShipmentStateOutput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJobShipmentStateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateJobShipmentStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateJobShipmentStateOutput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput {
+    pub fn build(self) -> crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput {
         crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput {
             _request_id: self._request_id,
         }

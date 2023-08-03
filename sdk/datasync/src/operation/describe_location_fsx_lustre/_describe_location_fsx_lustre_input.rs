@@ -15,16 +15,14 @@ impl DescribeLocationFsxLustreInput {
 }
 impl DescribeLocationFsxLustreInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxLustreInput`](crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreInput).
-    pub fn builder() -> crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreInputBuilder{
+    pub fn builder() -> crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreInputBuilder {
         crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationFsxLustreInput`](crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxLustreInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DescribeLocationFsxLustreInputBuilder {
         crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreInput {
-                location_arn: self.location_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreInput {
+            location_arn: self.location_arn,
+        })
     }
 }

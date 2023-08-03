@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`extensions(Option<Vec<ExtensionDetails>>)`](crate::operation::list_extensions::ListExtensionsOutput::extensions): <p>The list of extensions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_extensions::ListExtensionsOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     /// - On failure, responds with [`SdkError<ListExtensionsError>`](crate::operation::list_extensions::ListExtensionsError)
-    pub fn list_extensions(
-        &self,
-    ) -> crate::operation::list_extensions::builders::ListExtensionsFluentBuilder {
-        crate::operation::list_extensions::builders::ListExtensionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_extensions(&self) -> crate::operation::list_extensions::builders::ListExtensionsFluentBuilder {
+        crate::operation::list_extensions::builders::ListExtensionsFluentBuilder::new(self.handle.clone())
     }
 }

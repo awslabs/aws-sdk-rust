@@ -44,9 +44,7 @@ impl S3OnDeviceServiceConfiguration {
 
 /// A builder for [`S3OnDeviceServiceConfiguration`](crate::types::S3OnDeviceServiceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3OnDeviceServiceConfigurationBuilder {
     pub(crate) storage_limit: ::std::option::Option<f64>,
     pub(crate) storage_unit: ::std::option::Option<crate::types::StorageUnit>,
@@ -74,10 +72,7 @@ impl S3OnDeviceServiceConfigurationBuilder {
         self
     }
     /// <p>Storage unit. Currently the only supported unit is TB.</p>
-    pub fn set_storage_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageUnit>,
-    ) -> Self {
+    pub fn set_storage_unit(mut self, input: ::std::option::Option<crate::types::StorageUnit>) -> Self {
         self.storage_unit = input;
         self
     }

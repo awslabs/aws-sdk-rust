@@ -29,9 +29,7 @@ impl GetJobBookmarkInput {
 
 /// A builder for [`GetJobBookmarkInput`](crate::operation::get_job_bookmark::GetJobBookmarkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobBookmarkInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetJobBookmarkInputBuilder {
     /// Consumes the builder and constructs a [`GetJobBookmarkInput`](crate::operation::get_job_bookmark::GetJobBookmarkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_job_bookmark::GetJobBookmarkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_job_bookmark::GetJobBookmarkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_bookmark::GetJobBookmarkInput {
             job_name: self.job_name,
             run_id: self.run_id,

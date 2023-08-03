@@ -23,9 +23,7 @@ impl InspectorScoreDetails {
 
 /// A builder for [`InspectorScoreDetails`](crate::types::InspectorScoreDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InspectorScoreDetailsBuilder {
     pub(crate) adjusted_cvss: ::std::option::Option<crate::types::CvssScoreDetails>,
 }
@@ -36,10 +34,7 @@ impl InspectorScoreDetailsBuilder {
         self
     }
     /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
-    pub fn set_adjusted_cvss(
-        mut self,
-        input: ::std::option::Option<crate::types::CvssScoreDetails>,
-    ) -> Self {
+    pub fn set_adjusted_cvss(mut self, input: ::std::option::Option<crate::types::CvssScoreDetails>) -> Self {
         self.adjusted_cvss = input;
         self
     }

@@ -2,8 +2,7 @@
 pub fn ser_initiate_document_version_upload_headers(
     input: &crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.authentication_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_initiate_document_version_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "authentication_token",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("Authentication", header_value);
@@ -25,8 +21,7 @@ pub fn ser_initiate_document_version_upload_headers(
 
 pub fn ser_initiate_document_version_upload_input(
     input: &crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_initiate_document_version_upload_input::ser_initiate_document_version_upload_input(&mut object, input)?;
@@ -44,241 +39,278 @@ pub fn de_initiate_document_version_upload_http_error(
     crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DraftUploadOutOfSyncException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::DraftUploadOutOfSyncException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DraftUploadOutOfSyncException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::DraftUploadOutOfSyncException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DraftUploadOutOfSyncExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_draft_upload_out_of_sync_exception::de_draft_upload_out_of_sync_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_draft_upload_out_of_sync_exception::de_draft_upload_out_of_sync_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "EntityAlreadyExistsException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::EntityAlreadyExistsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "EntityAlreadyExistsException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::EntityAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EntityAlreadyExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "EntityNotExistsException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::EntityNotExistsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "EntityNotExistsException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::EntityNotExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EntityNotExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "FailedDependencyException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::FailedDependencyException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "FailedDependencyException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::FailedDependencyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FailedDependencyExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_failed_dependency_exception::de_failed_dependency_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_failed_dependency_exception::de_failed_dependency_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidArgumentException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::InvalidArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidPasswordException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::InvalidPasswordException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidPasswordException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::InvalidPasswordException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPasswordExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_password_exception::de_invalid_password_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_password_exception::de_invalid_password_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "LimitExceededException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "ProhibitedStateException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::ProhibitedStateException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ProhibitedStateException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::ProhibitedStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ProhibitedStateExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_prohibited_state_exception::de_prohibited_state_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_prohibited_state_exception::de_prohibited_state_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceAlreadyCheckedOutException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::ResourceAlreadyCheckedOutException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceAlreadyCheckedOutException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::ResourceAlreadyCheckedOutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceAlreadyCheckedOutExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_already_checked_out_exception::de_resource_already_checked_out_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_already_checked_out_exception::de_resource_already_checked_out_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ServiceUnavailableException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "StorageLimitExceededException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::StorageLimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "StorageLimitExceededException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::StorageLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::StorageLimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_storage_limit_exceeded_exception::de_storage_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_storage_limit_exceeded_exception::de_storage_limit_exceeded_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "StorageLimitWillExceedException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::StorageLimitWillExceedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "StorageLimitWillExceedException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::StorageLimitWillExceedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::StorageLimitWillExceedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_storage_limit_will_exceed_exception::de_storage_limit_will_exceed_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_storage_limit_will_exceed_exception::de_storage_limit_will_exceed_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "UnauthorizedOperationException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::UnauthorizedOperationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedOperationException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::UnauthorizedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "UnauthorizedResourceAccessException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::UnauthorizedResourceAccessException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedResourceAccessException" => {
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::UnauthorizedResourceAccessException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedResourceAccessExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::generic(generic),
     })
 }
 
@@ -294,58 +326,47 @@ pub fn de_initiate_document_version_upload_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder::default();
-        output = crate::protocol_serde::shape_initiate_document_version_upload::de_initiate_document_version_upload(_response_body, output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_initiate_document_version_upload::de_initiate_document_version_upload(_response_body, output)
+            .map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
-pub(crate) fn de_initiate_document_version_upload(value: &[u8], mut builder: crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder) -> Result<crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+pub(crate) fn de_initiate_document_version_upload(
+    value: &[u8],
+    mut builder: crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder,
+) -> Result<
+    crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "Metadata" => {
-                        builder = builder.set_metadata(
-                            crate::protocol_serde::shape_document_metadata::de_document_metadata(
-                                tokens,
-                            )?,
-                        );
-                    }
-                    "UploadMetadata" => {
-                        builder = builder.set_upload_metadata(
-                            crate::protocol_serde::shape_upload_metadata::de_upload_metadata(
-                                tokens,
-                            )?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "Metadata" => {
+                    builder = builder.set_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens)?);
                 }
-            }
+                "UploadMetadata" => {
+                    builder = builder.set_upload_metadata(crate::protocol_serde::shape_upload_metadata::de_upload_metadata(tokens)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

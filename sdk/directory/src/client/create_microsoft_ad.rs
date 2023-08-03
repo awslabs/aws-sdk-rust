@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMicrosoftAdOutput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput::directory_id): <p>The identifier of the directory that was created.</p>
     /// - On failure, responds with [`SdkError<CreateMicrosoftADError>`](crate::operation::create_microsoft_ad::CreateMicrosoftADError)
-    pub fn create_microsoft_ad(
-        &self,
-    ) -> crate::operation::create_microsoft_ad::builders::CreateMicrosoftADFluentBuilder {
-        crate::operation::create_microsoft_ad::builders::CreateMicrosoftADFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_microsoft_ad(&self) -> crate::operation::create_microsoft_ad::builders::CreateMicrosoftADFluentBuilder {
+        crate::operation::create_microsoft_ad::builders::CreateMicrosoftADFluentBuilder::new(self.handle.clone())
     }
 }

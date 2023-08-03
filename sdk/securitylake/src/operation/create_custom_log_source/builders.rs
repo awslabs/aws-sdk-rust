@@ -37,10 +37,7 @@ impl CreateCustomLogSourceFluentBuilder {
         }
     }
     /// Access the CreateCustomLogSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateCustomLogSourceFluentBuilder {
             crate::operation::create_custom_log_source::CreateCustomLogSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_log_source::CreateCustomLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_log_source::CreateCustomLogSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateCustomLogSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateCustomLogSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_log_source::CreateCustomLogSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_log_source::CreateCustomLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_log_source::CreateCustomLogSourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateCustomLogSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_log_source::CreateCustomLogSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_log_source::CreateCustomLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_log_source::CreateCustomLogSourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateCustomLogSourceFluentBuilder {
             crate::operation::create_custom_log_source::CreateCustomLogSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_log_source::CreateCustomLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_log_source::CreateCustomLogSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl CreateCustomLogSourceFluentBuilder {
         self.inner.get_source_name()
     }
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }
@@ -193,10 +173,7 @@ impl CreateCustomLogSourceFluentBuilder {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn event_classes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_classes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_classes(input.into());
         self
     }
@@ -232,10 +209,7 @@ impl CreateCustomLogSourceFluentBuilder {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn set_event_classes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_classes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_classes(input);
         self
     }
@@ -271,9 +245,7 @@ impl CreateCustomLogSourceFluentBuilder {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn get_event_classes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_classes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_classes()
     }
     /// <p>The configuration for the third-party custom source.</p>
@@ -282,17 +254,12 @@ impl CreateCustomLogSourceFluentBuilder {
         self
     }
     /// <p>The configuration for the third-party custom source.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLogSourceConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CustomLogSourceConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>The configuration for the third-party custom source.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLogSourceConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CustomLogSourceConfiguration> {
         self.inner.get_configuration()
     }
 }

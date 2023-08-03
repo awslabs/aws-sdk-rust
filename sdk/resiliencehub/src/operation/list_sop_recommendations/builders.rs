@@ -37,10 +37,7 @@ impl ListSopRecommendationsFluentBuilder {
         }
     }
     /// Access the ListSopRecommendations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_sop_recommendations::builders::ListSopRecommendationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_sop_recommendations::builders::ListSopRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListSopRecommendationsFluentBuilder {
             crate::operation::list_sop_recommendations::ListSopRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sop_recommendations::ListSopRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sop_recommendations::ListSopRecommendationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListSopRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListSopRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sop_recommendations::ListSopRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sop_recommendations::ListSopRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sop_recommendations::ListSopRecommendationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListSopRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sop_recommendations::ListSopRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sop_recommendations::ListSopRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sop_recommendations::ListSopRecommendationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListSopRecommendationsFluentBuilder {
             crate::operation::list_sop_recommendations::ListSopRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sop_recommendations::ListSopRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sop_recommendations::ListSopRecommendationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_sop_recommendations::paginator::ListSopRecommendationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_sop_recommendations::paginator::ListSopRecommendationsPaginator
-    {
-        crate::operation::list_sop_recommendations::paginator::ListSopRecommendationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_sop_recommendations::paginator::ListSopRecommendationsPaginator {
+        crate::operation::list_sop_recommendations::paginator::ListSopRecommendationsPaginator::new(self.handle, self.inner)
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,18 +144,12 @@ impl ListSopRecommendationsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_arn(input);
         self
     }

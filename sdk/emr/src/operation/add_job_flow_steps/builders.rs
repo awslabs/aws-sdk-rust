@@ -10,10 +10,7 @@ impl AddJobFlowStepsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_job_flow_steps::AddJobFlowStepsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_job_flow_steps::AddJobFlowStepsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_job_flow_steps::AddJobFlowStepsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_job_flow_steps();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl AddJobFlowStepsFluentBuilder {
         }
     }
     /// Access the AddJobFlowSteps as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_job_flow_steps::builders::AddJobFlowStepsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_job_flow_steps::builders::AddJobFlowStepsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl AddJobFlowStepsFluentBuilder {
             crate::operation::add_job_flow_steps::AddJobFlowSteps,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_job_flow_steps::AddJobFlowStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_job_flow_steps::AddJobFlowStepsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl AddJobFlowStepsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl AddJobFlowStepsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_job_flow_steps::AddJobFlowStepsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_job_flow_steps::AddJobFlowStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_job_flow_steps::AddJobFlowStepsError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl AddJobFlowStepsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_job_flow_steps::AddJobFlowStepsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_job_flow_steps::AddJobFlowStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_job_flow_steps::AddJobFlowStepsError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl AddJobFlowStepsFluentBuilder {
             crate::operation::add_job_flow_steps::AddJobFlowSteps,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_job_flow_steps::AddJobFlowStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_job_flow_steps::AddJobFlowStepsError>,
     > {
         self.customize_middleware().await
     }
@@ -152,10 +136,7 @@ impl AddJobFlowStepsFluentBuilder {
         self
     }
     /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepConfig>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepConfig>>) -> Self {
         self.inner = self.inner.set_steps(input);
         self
     }
@@ -165,19 +146,13 @@ impl AddJobFlowStepsFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
     /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
     /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }

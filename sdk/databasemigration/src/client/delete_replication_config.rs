@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteReplicationConfigOutput`](crate::operation::delete_replication_config::DeleteReplicationConfigOutput) with field(s):
     ///   - [`replication_config(Option<ReplicationConfig>)`](crate::operation::delete_replication_config::DeleteReplicationConfigOutput::replication_config): <p>Configuration parameters returned for the DMS Serverless replication after it is deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteReplicationConfigError>`](crate::operation::delete_replication_config::DeleteReplicationConfigError)
-    pub fn delete_replication_config(
-        &self,
-    ) -> crate::operation::delete_replication_config::builders::DeleteReplicationConfigFluentBuilder
-    {
+    pub fn delete_replication_config(&self) -> crate::operation::delete_replication_config::builders::DeleteReplicationConfigFluentBuilder {
         crate::operation::delete_replication_config::builders::DeleteReplicationConfigFluentBuilder::new(self.handle.clone())
     }
 }

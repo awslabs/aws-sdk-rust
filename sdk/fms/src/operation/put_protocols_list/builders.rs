@@ -10,10 +10,7 @@ impl PutProtocolsListInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_protocols_list::PutProtocolsListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_protocols_list::PutProtocolsListError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_protocols_list::PutProtocolsListError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_protocols_list();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutProtocolsListFluentBuilder {
         }
     }
     /// Access the PutProtocolsList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_protocols_list::builders::PutProtocolsListInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_protocols_list::builders::PutProtocolsListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutProtocolsListFluentBuilder {
             crate::operation::put_protocols_list::PutProtocolsList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_protocols_list::PutProtocolsListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_protocols_list::PutProtocolsListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutProtocolsListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutProtocolsListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_protocols_list::PutProtocolsListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_protocols_list::PutProtocolsListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_protocols_list::PutProtocolsListError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutProtocolsListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_protocols_list::PutProtocolsListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_protocols_list::PutProtocolsListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_protocols_list::PutProtocolsListError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutProtocolsListFluentBuilder {
             crate::operation::put_protocols_list::PutProtocolsList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_protocols_list::PutProtocolsListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_protocols_list::PutProtocolsListError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl PutProtocolsListFluentBuilder {
         self
     }
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
-    pub fn set_protocols_list(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolsListData>,
-    ) -> Self {
+    pub fn set_protocols_list(mut self, input: ::std::option::Option<crate::types::ProtocolsListData>) -> Self {
         self.inner = self.inner.set_protocols_list(input);
         self
     }
@@ -149,10 +130,7 @@ impl PutProtocolsListFluentBuilder {
         self
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
     }

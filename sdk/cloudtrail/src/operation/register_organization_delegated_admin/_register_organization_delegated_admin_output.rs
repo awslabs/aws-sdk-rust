@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for RegisterOrganizationDelegatedAdminOut
 }
 impl RegisterOrganizationDelegatedAdminOutput {
     /// Creates a new builder-style object to manufacture [`RegisterOrganizationDelegatedAdminOutput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput).
-    pub fn builder() -> crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminOutputBuilder{
+    pub fn builder() -> crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminOutputBuilder {
         crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterOrganizationDelegatedAdminOutput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterOrganizationDelegatedAdminOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl RegisterOrganizationDelegatedAdminOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterOrganizationDelegatedAdminOutput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput).
-    pub fn build(self) -> crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput{
+    pub fn build(self) -> crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput {
         crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput {
             _request_id: self._request_id,
         }

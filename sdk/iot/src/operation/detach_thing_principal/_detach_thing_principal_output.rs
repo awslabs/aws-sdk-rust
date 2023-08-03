@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for DetachThingPrincipalOutput {
 }
 impl DetachThingPrincipalOutput {
     /// Creates a new builder-style object to manufacture [`DetachThingPrincipalOutput`](crate::operation::detach_thing_principal::DetachThingPrincipalOutput).
-    pub fn builder(
-    ) -> crate::operation::detach_thing_principal::builders::DetachThingPrincipalOutputBuilder {
+    pub fn builder() -> crate::operation::detach_thing_principal::builders::DetachThingPrincipalOutputBuilder {
         crate::operation::detach_thing_principal::builders::DetachThingPrincipalOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachThingPrincipalOutput`](crate::operation::detach_thing_principal::DetachThingPrincipalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachThingPrincipalOutputBuilder {
     _request_id: Option<String>,
 }

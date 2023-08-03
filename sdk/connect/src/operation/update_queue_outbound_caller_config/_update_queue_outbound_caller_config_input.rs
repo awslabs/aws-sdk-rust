@@ -23,24 +23,20 @@ impl UpdateQueueOutboundCallerConfigInput {
         self.queue_id.as_deref()
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-    pub fn outbound_caller_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutboundCallerConfig> {
+    pub fn outbound_caller_config(&self) -> ::std::option::Option<&crate::types::OutboundCallerConfig> {
         self.outbound_caller_config.as_ref()
     }
 }
 impl UpdateQueueOutboundCallerConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateQueueOutboundCallerConfigInput`](crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigInput).
-    pub fn builder() -> crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigInputBuilder{
+    pub fn builder() -> crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigInputBuilder {
         crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQueueOutboundCallerConfigInput`](crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQueueOutboundCallerConfigInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
@@ -81,17 +77,12 @@ impl UpdateQueueOutboundCallerConfigInputBuilder {
         self
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-    pub fn set_outbound_caller_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutboundCallerConfig>,
-    ) -> Self {
+    pub fn set_outbound_caller_config(mut self, input: ::std::option::Option<crate::types::OutboundCallerConfig>) -> Self {
         self.outbound_caller_config = input;
         self
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-    pub fn get_outbound_caller_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutboundCallerConfig> {
+    pub fn get_outbound_caller_config(&self) -> &::std::option::Option<crate::types::OutboundCallerConfig> {
         &self.outbound_caller_config
     }
     /// Consumes the builder and constructs a [`UpdateQueueOutboundCallerConfigInput`](crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigInput).
@@ -103,13 +94,10 @@ impl UpdateQueueOutboundCallerConfigInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigInput {
-                instance_id: self.instance_id
-                ,
-                queue_id: self.queue_id
-                ,
-                outbound_caller_config: self.outbound_caller_config
-                ,
-            }
+                instance_id: self.instance_id,
+                queue_id: self.queue_id,
+                outbound_caller_config: self.outbound_caller_config,
+            },
         )
     }
 }

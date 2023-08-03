@@ -18,10 +18,7 @@ pub fn ser_create_security_profile_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_metric_to_retain::ser_metric_to_retain(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_metric_to_retain::ser_metric_to_retain(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -34,10 +31,7 @@ pub fn ser_create_security_profile_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = object_9.key(key_10.as_str()).start_object();
-                crate::protocol_serde::shape_alert_target::ser_alert_target(
-                    &mut object_12,
-                    value_11,
-                )?;
+                crate::protocol_serde::shape_alert_target::ser_alert_target(&mut object_12, value_11)?;
                 object_12.finish();
             }
         }
@@ -56,9 +50,7 @@ pub fn ser_create_security_profile_input(
         array_14.finish();
     }
     if let Some(var_17) = &input.security_profile_description {
-        object
-            .key("securityProfileDescription")
-            .string(var_17.as_str());
+        object.key("securityProfileDescription").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
         let mut array_19 = object.key("tags").start_array();

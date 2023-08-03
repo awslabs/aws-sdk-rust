@@ -21,20 +21,16 @@ impl ::aws_http::request_id::RequestId for GetEffectivePoliciesOutput {
 }
 impl GetEffectivePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetEffectivePoliciesOutput`](crate::operation::get_effective_policies::GetEffectivePoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_effective_policies::builders::GetEffectivePoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::get_effective_policies::builders::GetEffectivePoliciesOutputBuilder {
         crate::operation::get_effective_policies::builders::GetEffectivePoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEffectivePoliciesOutput`](crate::operation::get_effective_policies::GetEffectivePoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEffectivePoliciesOutputBuilder {
-    pub(crate) effective_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::EffectivePolicy>>,
+    pub(crate) effective_policies: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePolicy>>,
     _request_id: Option<String>,
 }
 impl GetEffectivePoliciesOutputBuilder {
@@ -50,17 +46,12 @@ impl GetEffectivePoliciesOutputBuilder {
         self
     }
     /// <p>The effective policies.</p>
-    pub fn set_effective_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePolicy>>,
-    ) -> Self {
+    pub fn set_effective_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePolicy>>) -> Self {
         self.effective_policies = input;
         self
     }
     /// <p>The effective policies.</p>
-    pub fn get_effective_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EffectivePolicy>> {
+    pub fn get_effective_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EffectivePolicy>> {
         &self.effective_policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
